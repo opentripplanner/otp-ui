@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input renders correctly 1`] = `
+.c0 {
+  position: relative;
+}
+
+.c1 {
+  border: 3px solid #62bd19;
+  width: 25px;
+  height: 25px;
+  background-color: #62bd19;
+  border-radius: 50%;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+}
+
+.c2 {
+  border: 3px solid #62bd19;
+  width: 25px;
+  height: 25px;
+  border-color: #62bd19;
+  border-radius: 50%;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  -webkit-animation: eGhXTC 1.5s ease-out;
+  animation: eGhXTC 1.5s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  opacity: 0;
+}
+
+<span
+  className="c0"
+>
+  <span
+    className="c1"
+  />
+  <span
+    className="c2"
+  />
+</span>
+`;
