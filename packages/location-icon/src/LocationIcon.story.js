@@ -12,13 +12,5 @@ storiesOf("LocationIcon", module)
       text: "A simple component used to show the from or to location icon"
     }
   })
-  .add("From LocationIcon", () => (
-    <div style={{ width: 25 }}>
-      <LocationIcon type="from" />
-    </div>
-  ))
-  .add("To LocationIcon", () => (
-    <div style={{ width: 25 }}>
-      <LocationIcon type="to" />
-    </div>
-  ));
+  .add("From LocationIcon", () => <LocationIcon type="from" size={25} />)
+  .add("To LocationIcon", () => <LocationIcon type="to" size={25} />);
