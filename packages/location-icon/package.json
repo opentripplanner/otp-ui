@@ -1,5 +1,5 @@
 {
-  "name": "location-icon",
+  "name": "@otp-ui/location-icon",
   "version": "1.0.0",
   "description": "A component to display a location icon for either the to or from location",
   "main": "lib/index.js",
@@ -7,7 +7,7 @@
   "repository": "https://github.com/trimet-sandbox/otp-ui.git",
   "author": "Evan Siroky",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "dependencies": {
     "styled-icons": "^9.0.1"
   }
