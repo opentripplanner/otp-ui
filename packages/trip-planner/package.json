@@ -1,0 +1,45 @@
+{
+  "name": "itinerary",
+  "version": "0.0.1",
+  "description": "Sample Component",
+  "keywords": [
+    "sample",
+    "component"
+  ],
+  "author": "c-harper <charper@mapyours.com>",
+  "homepage": "https://github.com/TriMetPDX/otp-ui#readme",
+  "license": "MIT",
+  "main": "lib/sample.js",
+  "module": "src/sample.js",
+  "peerDependencies": {
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.27",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.4.1"
+  },
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TriMetPDX/otp-ui.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/TriMetPDX/otp-ui/issues"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^5.2.8",
+    "@storybook/addon-actions": "^5.2.8",
+    "@storybook/addon-info": "^5.2.8",
+    "babel-plugin-root-import": "^6.4.1",
+    "storybook-addon-styled-component-theme": "^1.2.5"
+  },
+  "dependencies": {
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.27"
+  }
+}

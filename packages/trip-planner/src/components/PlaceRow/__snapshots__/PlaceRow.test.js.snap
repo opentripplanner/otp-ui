@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Place Row Component should match the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-htpNat dluyAv"
+  >
+    <div
+      class="sc-bxivhb hjAAiM"
+    >
+      4:42 pm
+    </div>
+    <div
+      class="sc-ifAKCX fLNOhX"
+    >
+      <div
+        class="sc-htoDjs hIELFT"
+      >
+        <div
+          class="sc-dnqmqq kfYVVq"
+          mode="WALK"
+        />
+        <div
+          class="sc-iwsKbI dZIZQa"
+        >
+          <div
+            aria-label="Travel by WALK"
+            class="sc-gZMcBi iObVEa"
+            mode="WALK"
+          >
+            <svg
+              class="sc-gqjmRU hnZXkc"
+              fill="black"
+              height="18"
+              mode="WALK"
+              viewBox="0 0 390 390"
+              width="18"
+            >
+              <title>
+                Travel by WALK
+              </title>
+              <path
+                d="M209 0c17.8 0 32.3 14.5 32.3 32.3S226.8 64.6 209 64.6s-32.3-14.5-32.3-32.3S191.2 0 209 0zm98.5 201.8c-4.5 6.6-13.5 8.3-20.1 3.8 0 0-44.7-30.5-47.9-32.7-3.2-2.2-5.1-6.8-6.5-9.8-1-2-6-11.8-9.3-18.3l-4 17-10.4 47.1s55.7 65.6 56.8 66.9c1.6 1.8 2.5 5.5 3.2 8.3.7 2.7 14.9 79.9 14.9 79.9 2.2 11.9-5.7 23.4-17.6 25.7-11.9 2.2-23.4-5.7-25.7-17.6l-14.2-76.3-46.3-50.6s-10.3 48.1-10.5 49.1-.7 2.5-1.3 3.9c-.6 1.3-47.6 81.1-47.6 81.1-6.2 10.4-19.7 13.9-30.2 7.7-10.4-6.2-13.9-19.7-7.7-30.2l41.8-70.3 33.6-152.1-22.6 18-12.5 55.1c0 7.8-8.8 12.9-16.6 11.2-7.8-1.7-12.4-4.9-10.6-17.1h.2s13-61.2 14-63.9c.9-2.7 2.3-5.7 3.7-6.8 9.4-7.6 45.8-37.4 56.5-46 12.3-10 17.7-13.7 28.2-13.7 7.9 0 16.5 2.4 25.6 11.8 4 4.1 6.9 10.8 8.9 15 2 4.1 27.1 53.7 27.1 53.7l43.3 30c6.6 4.5 8.3 13.5 3.8 20.1z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-EHOje sc-bZQynM bskRhG"
+    >
+      <div
+        class="sc-VigVT ikvPWi"
+      >
+        <div
+          class="sc-jTzLTM dEKRsC"
+        >
+          <div
+            class="sc-jzJRlG kkcrZI"
+          >
+            3520 NE Broadway, Portland, OR, USA 97232
+          </div>
+        </div>
+        <div
+          class="sc-kGXeez gskIpl"
+        >
+          <button
+            aria-pressed="false"
+            class="sc-bdVaJa sc-ckVGcZ kGRRRi"
+          >
+            Walk  0.3 miles to NE Sandy & Cesar Chavez Blvd
+          </button>
+          <button
+            aria-pressed="false"
+            class="sc-bdVaJa sc-kpOJdX livvEA"
+          >
+            <span
+              class="sc-eHgmQL bQBtas"
+            >
+              Click to expand steps for this leg.
+            </span>
+            6 min walk
+            <svg
+              class="sc-dxgOiQ czQwWJ"
+              expanded="false"
+              fill="#484848"
+              height="10"
+              mode="WALK"
+              viewBox="0 0 24 24"
+              width="10"
+            >
+              <path
+                d="M0 7.33L2.829 4.5l9.175 9.339L21.171 4.5 24 7.33 12.004 19.5z"
+              />
+            </svg>
+          </button>
+          <div
+            class="sc-jKJlTe bBOoMC"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-EHOje sc-gzVnrw fAkadq"
+    >
+      <button
+        class="sc-bdVaJa sc-chPdSV pNQnJ"
+      >
+        <svg
+          class="sc-kgoBCf kVSTZj"
+          fill="#fff"
+          height="15"
+          role="img"
+          viewBox="0 0 390 390"
+          width="15"
+        >
+          <title>
+            Frame this Itinerary Leg
+          </title>
+          <path
+            d="M260.4 54.2L129.6 0 6.6 50.9v335.8l123-50.9L260.4 390l123-50.9V3.3l-123 50.9zM139.2 25l111.5 46.2v294L139.2 319V25zM25.9 63.9l94.1-39v294l-94.1 39v-294zm338.2 262.2l-94.1 39V71.2l94.1-39v293.9z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
