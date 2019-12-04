@@ -1,7 +1,10 @@
 const STORAGE_PREFIX = "tora";
 
 export function storeItem(key, object) {
-  window.localStorage.setItem(`${STORAGE_PREFIX}.${key}`, JSON.stringify(object));
+  window.localStorage.setItem(
+    `${STORAGE_PREFIX}.${key}`,
+    JSON.stringify(object)
+  );
 }
 
 export function getItem(key, notFoundValue = null) {

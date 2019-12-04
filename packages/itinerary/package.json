@@ -1,5 +1,5 @@
 {
-  "name": "itinerary",
+  "name": "@opentripplanner/itinerary",
   "version": "0.0.1",
   "description": "Sample Component",
   "keywords": [
