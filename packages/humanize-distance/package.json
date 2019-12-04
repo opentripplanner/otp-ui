@@ -1,5 +1,5 @@
 {
-  "name": "@otp-ui/humanize-distance",
+  "name": "@opentripplanner/humanize-distance",
   "version": "0.0.1",
   "description": "Pretty print a string for a certain distance",
   "main": "lib/index.js",

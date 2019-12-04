@@ -1,5 +1,5 @@
 {
-  "name": "@otp-ui/geocoder",
+  "name": "@opentripplanner/geocoder",
   "version": "0.0.1",
   "description": "Geocoding tools for multiple geocoding providers",
   "main": "lib/index.js",

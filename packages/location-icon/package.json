@@ -1,5 +1,5 @@
 {
-  "name": "@otp-ui/location-icon",
+  "name": "@opentripplanner/location-icon",
   "version": "1.0.0",
   "description": "A component to display a location icon for either the to or from location",
   "main": "lib/index.js",

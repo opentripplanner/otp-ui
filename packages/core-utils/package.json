@@ -1,5 +1,5 @@
 {
-  "name": "@otp-ui/core-utils",
+  "name": "@opentripplanner/core-utils",
   "version": "0.0.1",
   "description": "Core functionality that is shared among numerous UI components",
   "main": "lib/index.js",
