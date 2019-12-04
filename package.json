@@ -1,5 +1,5 @@
 {
-  "name": "root",
+  "name": "@opentripplanner/kitchen-sink",
   "private": true,
   "workspaces": [
     "packages/*"
