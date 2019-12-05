@@ -15,8 +15,9 @@ const TransitLegBody = ({
   // eslint-disable-next-line no-unused-vars
   timeFormat
 }) => {
-  const [stopsExpanded, setStopsExpanded] = useState(false);
-  // const [alertsExpanded, setAlertsExpanded] = useState(false);
+  const stopsExpanded = false
+  const setStopsExpanded = () => console.log('expand!')
+  // const [stopsExpanded, setStopsExpanded] = useState(false)
   const {
     agencyBrandingUrl,
     // eslint-disable-next-line no-unused-vars
@@ -58,7 +59,7 @@ const TransitLegBody = ({
       )}
 
       {/* Agency information */}
-      {/* TODO: Marketing is checking to see if they plan show show/hide this. 
+      {/* TODO: Marketing is checking to see if they plan show show/hide this.
         It's ready to go if they want to keep it */}
       {/*
         <Styled.AgencyInfo>
@@ -72,8 +73,8 @@ const TransitLegBody = ({
         </Styled.AgencyInfo>
       */}
 
-      {/* 
-        TODO: In the mocks, alerts look to be shown as a list of service alerts 
+      {/*
+        TODO: In the mocks, alerts look to be shown as a list of service alerts
         while in OTP-RR this is a collapsible list -- need for figure out which direction
         we're going in for this. Have a question into their design team about this
       */}

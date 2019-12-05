@@ -19,8 +19,8 @@ const ItineraryBody = ({
   customIcons
 }) => {
   /*
-    TODO: replace component should update logic? companies is simply used to 
-    trigger a rerender of this component itinerary is also another criteria 
+    TODO: replace component should update logic? companies is simply used to
+    trigger a rerender of this component itinerary is also another criteria
     that is used to trigger a rerender but has more reuse than companies here
   */
   const rows = [];

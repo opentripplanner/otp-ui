@@ -4,8 +4,8 @@ we want to allow prop spreading */
 
 import React from "react";
 import PropTypes from "prop-types";
-import ArrowLeft from "~/packages/trip-planner/src/common/components/GeneratedIcons/generic/ArrowLeft";
-import ArrowDown from "~/packages/trip-planner/src/common/components/GeneratedIcons/generic/ArrowDown";
+import ArrowLeft from "../../common/components/GeneratedIcons/generic/ArrowLeft";
+import ArrowDown from "../../common/components/GeneratedIcons/generic/ArrowDown";
 
 const ExpandIcon = props => {
   const { expanded } = props;

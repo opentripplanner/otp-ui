@@ -1,4 +1,4 @@
-import * as Storage from "~/packages/trip-planner/src/common/utils/storage";
+import * as Storage from "../utils/storage";
 
 const useStorage = () => {
   const storeItem = (key, object) => {

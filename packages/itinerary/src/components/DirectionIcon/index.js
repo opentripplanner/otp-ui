@@ -3,18 +3,18 @@ we want to allow prop spreading */
 /* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import PropTypes from "prop-types";
-import CircleClockwise from "~/packages/trip-planner/src/common/components/GeneratedIcons/directions/CircleClockwise";
-import CircleCounterclockwise from "~/packages/trip-planner/src/common/components/GeneratedIcons/directions/CircleCounterclockwise";
-import Elevator from "~/packages/trip-planner/src/common/components/GeneratedIcons/directions/Elevator";
-import HardLeft from "~/packages/trip-planner/src/common/components/GeneratedIcons/directions/HardLeft";
-import HardRight from "~/packages/trip-planner/src/common/components/GeneratedIcons/directions/HardRight";
-import Left from "~/packages/trip-planner/src/common/components/GeneratedIcons/directions/Left";
-import Right from "~/packages/trip-planner/src/common/components/GeneratedIcons/directions/Right";
-import SlightLeft from "~/packages/trip-planner/src/common/components/GeneratedIcons/directions/SlightLeft";
-import SlightRight from "~/packages/trip-planner/src/common/components/GeneratedIcons/directions/SlightRight";
-import Straight from "~/packages/trip-planner/src/common/components/GeneratedIcons/directions/Straight";
-import UTurnLeft from "~/packages/trip-planner/src/common/components/GeneratedIcons/directions/UTurnLeft";
-import UTurnRight from "~/packages/trip-planner/src/common/components/GeneratedIcons/directions/UTurnRight";
+import CircleClockwise from "../../common/components/GeneratedIcons/directions/CircleClockwise";
+import CircleCounterclockwise from "../../common/components/GeneratedIcons/directions/CircleCounterclockwise";
+import Elevator from "../../common/components/GeneratedIcons/directions/Elevator";
+import HardLeft from "../../common/components/GeneratedIcons/directions/HardLeft";
+import HardRight from "../../common/components/GeneratedIcons/directions/HardRight";
+import Left from "../../common/components/GeneratedIcons/directions/Left";
+import Right from "../../common/components/GeneratedIcons/directions/Right";
+import SlightLeft from "../../common/components/GeneratedIcons/directions/SlightLeft";
+import SlightRight from "../../common/components/GeneratedIcons/directions/SlightRight";
+import Straight from "../../common/components/GeneratedIcons/directions/Straight";
+import UTurnLeft from "../../common/components/GeneratedIcons/directions/UTurnLeft";
+import UTurnRight from "../../common/components/GeneratedIcons/directions/UTurnRight";
 
 const DirectionIcon = props => {
   const { direction } = props;

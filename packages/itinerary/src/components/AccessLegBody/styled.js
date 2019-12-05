@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ClearButton } from "~/packages/trip-planner/src/common/components/Styled";
+import { ClearButton } from "../../common/components/Styled";
 import BaseExpandIcon from "../ExpandIcon";
 import BaseDirectionIcon from "../DirectionIcon";
 import { toModeBorderColor } from "../../utils/mode";

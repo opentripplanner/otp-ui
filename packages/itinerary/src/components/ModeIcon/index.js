@@ -3,15 +3,15 @@ we want to allow prop spreading */
 /* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import PropTypes from "prop-types";
-import BusIcon from "~/packages/trip-planner/src/common/components/GeneratedIcons/trimet/Bus";
-import WalkIcon from "~/packages/trip-planner/src/common/components/GeneratedIcons/trimet/Walk";
-import AerialTramIcon from "~/packages/trip-planner/src/common/components/GeneratedIcons/trimet/AerialTram";
-import BicycleIcon from "~/packages/trip-planner/src/common/components/GeneratedIcons/trimet/Bicycle";
-import CarIcon from "~/packages/trip-planner/src/common/components/GeneratedIcons/trimet/Car";
-import MaxIcon from "~/packages/trip-planner/src/common/components/GeneratedIcons/trimet/Max";
-import StreetcarIcon from "~/packages/trip-planner/src/common/components/GeneratedIcons/trimet/Streetcar";
-import MicromobilityIcon from "~/packages/trip-planner/src/common/components/GeneratedIcons/trimet/Micromobility";
-import FerryIcon from "~/packages/trip-planner/src/common/components/GeneratedIcons/trimet/Ferry";
+import BusIcon from "../../common/components/GeneratedIcons/trimet/Bus";
+import WalkIcon from "../../common/components/GeneratedIcons/trimet/Walk";
+import AerialTramIcon from "../../common/components/GeneratedIcons/trimet/AerialTram";
+import BicycleIcon from "../../common/components/GeneratedIcons/trimet/Bicycle";
+import CarIcon from "../../common/components/GeneratedIcons/trimet/Car";
+import MaxIcon from "../../common/components/GeneratedIcons/trimet/Max";
+import StreetcarIcon from "../../common/components/GeneratedIcons/trimet/Streetcar";
+import MicromobilityIcon from "../../common/components/GeneratedIcons/trimet/Micromobility";
+import FerryIcon from "../../common/components/GeneratedIcons/trimet/Ferry";
 
 const ModeIcon = props => {
   const { mode } = props;

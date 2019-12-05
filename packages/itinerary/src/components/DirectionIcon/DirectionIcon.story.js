@@ -4,12 +4,12 @@ import { storiesOf } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
 import { withInfo } from "@storybook/addon-info";
 // import { withThemesProvider } from "storybook-addon-styled-component-theme";
-import MainStyleDecorator from "~/packages/trip-planner/src/common/components/MainStyleDecorator";
+import MainStyleDecorator from "../../common/components/MainStyleDecorator";
 // import {
 //   LIGHT_THEME,
 //   DARK_THEME
-// } from "~/packages/trip-planner/src/common/constants";
-import ThemeShim from "~/packages/trip-planner/src/common/components/ThemeShim";
+// } from "../../common/constants";
+import ThemeShim from "../../common/components/ThemeShim";
 import DirectionIcon from ".";
 
 storiesOf("Itinerary|DirectionIcon", module)

@@ -5,10 +5,10 @@ import { formatTime } from "../../utils/time";
 import { getPlaceName, getOperatorFromConfig } from "../../utils/itinerary";
 import AccessLegBody from "../AccessLegBody";
 import TransitLegBody from "../TransitLegBody";
-import RouteBadge from "~/packages/trip-planner/src/common/components/RouteBadge";
+import RouteBadge from "../../common/components/RouteBadge";
 
 /*
-  TODO: Wondering if it's possible for us to destructure the time 
+  TODO: Wondering if it's possible for us to destructure the time
   preferences from the config object and avoid making the props list so long
 */
 const PlaceRow = ({
@@ -71,9 +71,9 @@ const PlaceRow = ({
         <Styled.PlaceDetails>
           {/* Dot separating interlined segments, if applicable */}
           <Styled.PlaceHeader>
-            {/* 
+            {/*
               TODO: Need to rework this -- Need to display a marker
-              for an interline place 
+              for an interline place
             */}
             {interline && <Styled.InterlineDot>&bull;</Styled.InterlineDot>}
             <Styled.PlaceName>
@@ -90,8 +90,8 @@ const PlaceRow = ({
                 <Styled.StopIdSpan>
                   ID {place.stopId.split(":")[1]}
                 </Styled.StopIdSpan>
-                /* 
-                TODO: There is no explicit stop button on the mocks. 
+                /*
+                TODO: There is no explicit stop button on the mocks.
                 Have a question out to marketing as to whether the above StopID
                 is a button to navigate the user to the arrival list for the stop
                 Thats what the button below does

@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { ThemeProvider } from "styled-components";
-import MOCK_THEME from "~/packages/trip-planner/src/common/__mocks__/theme";
+import MOCK_THEME from "../../common/__mocks__/theme";
 import ItineraryBody from ".";
 import itinerary from "../../__mocks__/itinerary";
 import config from "../../__mocks__/config";

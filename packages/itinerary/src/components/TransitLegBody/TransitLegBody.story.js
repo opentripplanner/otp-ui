@@ -6,12 +6,12 @@ import { action } from "@storybook/addon-actions";
 import { withThemesProvider } from "storybook-addon-styled-component-theme";
 import TransitLegBody from ".";
 import itinerary from "../../__mocks__/itinerary";
-import ThemeShim from "~/packages/trip-planner/src/common/components/ThemeShim";
-import MainStyleDecorator from "~/packages/trip-planner/src/common/components/MainStyleDecorator";
+import ThemeShim from "../../common/components/ThemeShim";
+import MainStyleDecorator from "../../common/components/MainStyleDecorator";
 import {
   LIGHT_THEME,
   DARK_THEME
-} from "~/packages/trip-planner/src/common/constants";
+} from "../../common/constants";
 
 const setActiveLeg = action("setActiveLeg");
 const leg = itinerary.legs[1];

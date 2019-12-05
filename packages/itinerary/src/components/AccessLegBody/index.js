@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import * as Styled from "./styled";
 import { formatDuration } from "../../utils/time";
-import * as Accessibility from "~/packages/trip-planner/src/common/components/Accessibility";
+import * as Accessibility from "../../common/components/Accessibility";
 import {
   getLegModeLabel,
   getPlaceName,
@@ -12,7 +12,7 @@ import {
 import { distanceString } from "../../utils/distance";
 
 /*
- TODO: Since we're still working on this component, 
+ TODO: Since we're still working on this component,
  let's retain the original set of props to match OTP-RR
 */
 const AccessLegBody = ({
@@ -31,7 +31,9 @@ const AccessLegBody = ({
   // eslint-disable-next-line no-unused-vars
   setActiveLeg
 }) => {
-  const [expanded, setExpanded] = useState(false);
+  const expanded = false
+  const setExpanded = () => console.log('expand!')
+  // const [expanded, setExpanded] = useState(false)
 
   return (
     <Styled.LegBody>

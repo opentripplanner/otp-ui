@@ -5,12 +5,12 @@ import { withInfo } from "@storybook/addon-info";
 import { withThemesProvider } from "storybook-addon-styled-component-theme";
 import { action } from "@storybook/addon-actions";
 import PlaceRow from ".";
-import MainStyleDecorator from "~/packages/trip-planner/src/common/components/MainStyleDecorator";
+import MainStyleDecorator from "../../common/components/MainStyleDecorator";
 import {
   LIGHT_THEME,
   DARK_THEME
-} from "~/packages/trip-planner/src/common/constants";
-import ThemeShim from "~/packages/trip-planner/src/common/components/ThemeShim";
+} from "../../common/constants";
+import ThemeShim from "../../common/components/ThemeShim";
 import itinerary from "../../__mocks__/itinerary";
 import config from "../../__mocks__/config";
 

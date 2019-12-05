@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { toModeBorder, toModeColor } from "../../utils/mode";
-import { ClearButton } from "~/packages/trip-planner/src/common/components/Styled";
-import BaseMapIcon from "~/packages/trip-planner/src/common/components/GeneratedIcons/trimet/Map";
+import { ClearButton } from "../../common/components/Styled";
+import BaseMapIcon from "../../common/components/GeneratedIcons/trimet/Map";
 import BaseModeIcon from "../ModeIcon";
 
 export const TestDiv = styled.div`

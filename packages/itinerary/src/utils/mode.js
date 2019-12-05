@@ -1,7 +1,7 @@
 import {
   DEFAULT_MODE_BORDER_COLOR,
   DEFAULT_ROUTE_COLOR
-} from "~/packages/trip-planner/src/common/constants";
+} from "../common/constants";
 
 export const toModeColor = (mode, routeColor) => {
   switch (mode) {
