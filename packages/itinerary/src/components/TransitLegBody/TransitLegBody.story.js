@@ -8,10 +8,7 @@ import TransitLegBody from ".";
 import itinerary from "../../__mocks__/itinerary";
 import ThemeShim from "../../common/components/ThemeShim";
 import MainStyleDecorator from "../../common/components/MainStyleDecorator";
-import {
-  LIGHT_THEME,
-  DARK_THEME
-} from "../../common/constants";
+import { LIGHT_THEME, DARK_THEME } from "../../common/constants";
 
 const setActiveLeg = action("setActiveLeg");
 const leg = itinerary.legs[1];

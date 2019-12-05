@@ -15,9 +15,7 @@ const TransitLegBody = ({
   // eslint-disable-next-line no-unused-vars
   timeFormat
 }) => {
-  const stopsExpanded = false
-  const setStopsExpanded = () => console.log('expand!')
-  // const [stopsExpanded, setStopsExpanded] = useState(false)
+  const [stopsExpanded, setStopsExpanded] = useState(false)
   const {
     agencyBrandingUrl,
     // eslint-disable-next-line no-unused-vars

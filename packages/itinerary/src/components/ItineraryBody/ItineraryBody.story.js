@@ -8,10 +8,7 @@ import ItineraryBody from ".";
 import itinerary from "../../__mocks__/itinerary";
 import ThemeShim from "../../common/components/ThemeShim";
 import MainStyleDecorator from "../../common/components/MainStyleDecorator";
-import {
-  LIGHT_THEME,
-  DARK_THEME
-} from "../../common/constants";
+import { LIGHT_THEME, DARK_THEME } from "../../common/constants";
 import config from "../../__mocks__/config";
 
 const setActiveLeg = action("setActiveLeg");

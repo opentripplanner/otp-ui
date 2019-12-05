@@ -5,10 +5,7 @@ import { withA11y } from "@storybook/addon-a11y";
 import { withInfo } from "@storybook/addon-info";
 import { withThemesProvider } from "storybook-addon-styled-component-theme";
 import MainStyleDecorator from "../../common/components/MainStyleDecorator";
-import {
-  LIGHT_THEME,
-  DARK_THEME
-} from "../../common/constants";
+import { LIGHT_THEME, DARK_THEME } from "../../common/constants";
 import ThemeShim from "../../common/components/ThemeShim";
 import ModeIcon from ".";
 

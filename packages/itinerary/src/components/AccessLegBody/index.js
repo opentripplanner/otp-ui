@@ -31,9 +31,7 @@ const AccessLegBody = ({
   // eslint-disable-next-line no-unused-vars
   setActiveLeg
 }) => {
-  const expanded = false
-  const setExpanded = () => console.log('expand!')
-  // const [expanded, setExpanded] = useState(false)
+  const [expanded, setExpanded] = useState(false)
 
   return (
     <Styled.LegBody>
