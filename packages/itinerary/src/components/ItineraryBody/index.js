@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import PlaceRow from '../PlaceRow'
-import TripDetails from '../TripDetails'
-import TripTools from '../TripTools'
-import * as Styled from './styled'
+import React from "react";
+import PropTypes from "prop-types";
+import PlaceRow from "../PlaceRow";
+import TripDetails from "../TripDetails";
+import TripTools from "../TripTools";
+import * as Styled from "./styled";
 
 const ItineraryBody = ({
   itinerary,
@@ -14,7 +14,7 @@ const ItineraryBody = ({
   */
   // eslint-disable-next-line no-unused-vars
   companies,
-  routingType = 'ITINERARY',
+  routingType = "ITINERARY",
   frameLeg,
   toRouteAbbreviation,
   config,
