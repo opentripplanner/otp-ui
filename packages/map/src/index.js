@@ -1,164 +1,120 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-//import isEqual from 'lodash.isequal'
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable react/no-string-refs */
+/* eslint-disable func-names */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/sort-comp */
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable object-shorthand */
+/* eslint-disable react/forbid-prop-types */
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
-import { Map, TileLayer, LayersControl, Popup, CircleMarker } from 'react-leaflet'
+// eslint-disable-next-line prettier/prettier
+import { Map, Marker, TileLayer, LayersControl, Popup, CircleMarker } from "react-leaflet";
 
-import LocationIcon from '@opentripplanner/location-icon'
-import { constructLocation } from '@opentripplanner/core-utils/lib/map'
-import { getItineraryBounds, getLegBounds, legLocationAtDistance } from '@opentripplanner/core-utils/lib/itinerary'
+import LocationIcon from "@opentripplanner/location-icon";
+import { constructLocation } from "@opentripplanner/core-utils/lib/map";
+import { legLocationAtDistance } from "@opentripplanner/core-utils/lib/itinerary";
 
-import L from 'leaflet'
+import L from "leaflet";
 
-L.Evented.addInitHook(function () {
-  if (this) this._singleClickTimeout = null
-  this.on('click', this._scheduleSingleClick, this)
-  this.on('dblclick dragstart zoomstart', this._cancelSingleClick, this)
-})
+L.Evented.addInitHook(function() {
+  if (this) this._singleClickTimeout = null;
+  this.on("click", this._scheduleSingleClick, this);
+  this.on("dblclick dragstart zoomstart", this._cancelSingleClick, this);
+});
 
 L.Evented.include({
-  _cancelSingleClick: function () {
+  _cancelSingleClick: function() {
     // This timeout is key to workaround an issue where double-click events
     // are fired in this order on some touch browsers: ['click', 'dblclick', 'click']
     // instead of ['click', 'click', 'dblclick']
-    setTimeout(this._clearSingleClickTimeout.bind(this), 0)
+    setTimeout(this._clearSingleClickTimeout.bind(this), 0);
   },
 
-  _scheduleSingleClick: function (e) {
-    this._clearSingleClickTimeout()
+  _scheduleSingleClick: function(e) {
+    this._clearSingleClickTimeout();
 
     this._singleClickTimeout = setTimeout(
       this._fireSingleClick.bind(this, e),
-      (this.options.singleClickTimeout || 500)
-    )
+      this.options.singleClickTimeout || 500
+    );
   },
 
-  _fireSingleClick: function (e) {
+  _fireSingleClick: function(e) {
     if (!e.originalEvent._stopped) {
-      this.fire('singleclick', L.Util.extend(e, { type: 'singleclick' }))
+      this.fire("singleclick", L.Util.extend(e, { type: "singleclick" }));
     }
   },
 
-  _clearSingleClickTimeout: function () {
+  _clearSingleClickTimeout: function() {
     if (this._singleClickTimeout !== null) {
-      clearTimeout(this._singleClickTimeout)
-      this._singleClickTimeout = null
+      clearTimeout(this._singleClickTimeout);
+      this._singleClickTimeout = null;
     }
   }
-})
+});
 
-  const defaultConfig = { "autoPlan": false, "debouncePlanTimeMs": 0, "language": {}, "operators": [], "realtimeEffectsDisplayThreshold": 120, "routingTypes": [ { "key": "ITINERARY", "text": "Exact Time" } ], "stopViewer": { "numberOfDepartures": 3, "timeRange": 345600 }, "api": { "host": "https://maps.trimet.org", "path": "/otp_mod" }, "homeTimezone": "America/Los_Angeles", 
-  "map": { "initLat": 45.52, "initLon": -122.682, 
-    "baseLayers": [ { "name": "Streets", "url": "//cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}@2x.png", "subdomains": "abcd", "attribution": "Map tiles: &copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a>, &copy; <a href=\"https://carto.com/attributions\">CARTO</a>", "maxZoom": 20, "hasRetinaSupport": true }, { "name": "Stamen Toner Lite", "url": "http://tile.stamen.com/toner-lite/%7Bz%7D/%7Bx%7D/%7By%7D.png", "attribution": "Map tiles by <a href=\"http://stamen.com\">Stamen Design</a>, under <a href=\"http://creativecommons.org/licenses/by/3.0\">CC BY 3.0</a>. Data by <a href=\"http://openstreetmap.org\">OpenStreetMap</a>, under <a href=\"http://www.openstreetmap.org/copyright\">ODbL</a>." } ], "overlays": [ { "type": "bike-rental", "name": "Biketown Locations", "modes": [ "BICYCLE_RENT" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#FF2E28", "dockStrokeColor": "#000000" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#FF2E28", "dockStrokeColor": "#000000" }, { "maxZoom": 999, "minZoom": 18, "type": "hubAndFloatingBike" } ] }, { "type": "micromobility-rental", "name": "Bolt eScooter Locations", "modes": [ "MICROMOBILITY_RENT" ], "companies": [ "BOLT" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#FEE502", "strokeColor": "#000000" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#FEE502", "strokeColor": "#000000" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#FEE502", "type": "marker" } ] }, { "type": "micromobility-rental", "name": "Gruv eScooter Locations", "modes": [ "MICROMOBILITY_RENT" ], "companies": [ "CLEVR" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#0171bc", "strokeColor": "#CCCCCC" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#0171bc", "strokeColor": "#CCCCCC" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#0171bc", "type": "marker" } ] }, { "type": "micromobility-rental", "name": "Lime eScooter Locations", "modes": [ "MICROMOBILITY_RENT" ], "companies": [ "LIME" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#24D000", "strokeColor": "#CCCCCC" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#24D000", "strokeColor": "#CCCCCC" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#24D000", "type": "marker" } ] }, { "type": "micromobility-rental", "name": "Razor eScooter Locations", "modes": [ "MICROMOBILITY_RENT" ], "companies": [ "RAZOR" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#EE2D15", "strokeColor": "#CCCCCC" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#EE2D15", "strokeColor": "#CCCCCC" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#EE2D15", "type": "marker" } ] }, { "type": "micromobility-rental", "name": "shared eScooter Locations", "modes": [ "MICROMOBILITY_RENT" ], "companies": [ "SHARED" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#F80600", "strokeColor": "#CCCCCC" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#F80600", "strokeColor": "#CCCCCC" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#F80600", "type": "marker" } ] }, { "type": "micromobility-rental", "name": "Spin eScooter Locations", "modes": [ "MICROMOBILITY_RENT" ], "companies": [ "SPIN" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#FF6D01", "strokeColor": "#CCCCCC" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#FF6D01", "strokeColor": "#CCCCCC" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#FF6D01", "type": "marker" } ] }, { "type": "car-rental", "name": "car2go Locations", "modes": [ "CAR_RENT" ], "companies": [ "CAR2GO" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#009cde" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#009cde" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#009cde", "type": "marker" } ] }, { "type": "car-rental", "name": "REACH NOW Locations", "modes": [ "CAR_RENT" ], "companies": [ "REACHNOW" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#007fa3" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#007fa3" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#007fa3", "type": "marker" } ] }, { "type": "park-and-ride", "name": "Park & Ride Locations", "maxTransitDistance": 1000, "modes": [ "CAR_PARK" ] }, { "type": "stops", "name": "Transit Stops", "visible": true }, { "type": "tile", "name": "Transit Routes", "tileUrl": "https://d2dyq00q2cz8yt.cloudfront.net/%7Bz%7D_%7Bx%7D_%7By%7D@2x.png" }, { "type": "zipcar", "name": "Zipcar Locations", "api": "https://modbeta.trimet.org/ws/carshare/zipcar/data.json" 
-  } 
-  ], 
-  "initZoom": 11 
-  }, 
-  "geocoder": { 
-  "type": "ARCGIS" 
-  }, 
-  "modes": { 
-  "transitModes": [ 
-  { 
-  "mode": "BUS", 
-  "label": "Bus" 
-  }, 
-  { 
-  "mode": "TRAM", 
-  "label": "MAX & Streetcar" 
-  }, 
-  { 
-  "mode": "RAIL", 
-  "label": "WES" 
-  }, 
-  { 
-  "mode": "GONDOLA", 
-  "label": "Aerial Tram" 
-  } 
-  ], 
-  "accessModes": [ 
-  { 
-  "mode": "BICYCLE", 
-  "label": "Transit + Bike" 
-  } 
-  ], 
-  "bicycleModes": [ 
-  { 
-  "mode": "BICYCLE", 
-  "label": "Own Bike", 
-  "iconWidth": 18 
-  } 
-  ] 
-  } 
+export const defaultMapConfig = {
+  initLat: 45.52,
+  initLon: -122.682,
+  baseLayers: [
+    // eslint-disable-next-line prettier/prettier
+    { "name": "Streets", "url": "//cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}@2x.png", "subdomains": "abcd", "attribution": "Map tiles: &copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a>, &copy; <a href=\"https://carto.com/attributions\">CARTO</a>", "maxZoom": 20, "hasRetinaSupport": true },
+    // eslint-disable-next-line prettier/prettier
+    { "name": "Stamen Toner Lite", "url": "http://tile.stamen.com/toner-lite/%7Bz%7D/%7Bx%7D/%7By%7D.png", "attribution": "Map tiles by <a href=\"http://stamen.com\">Stamen Design</a>, under <a href=\"http://creativecommons.org/licenses/by/3.0\">CC BY 3.0</a>. Data by <a href=\"http://openstreetmap.org\">OpenStreetMap</a>, under <a href=\"http://www.openstreetmap.org/copyright\">ODbL</a>." }
+  ],
+  overlays: [
+    // eslint-disable-next-line prettier/prettier
+    { "type": "bike-rental", "name": "Biketown Locations", "modes": [ "BICYCLE_RENT" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#FF2E28", "dockStrokeColor": "#000000" },{ "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#FF2E28", "dockStrokeColor": "#000000" }, { "maxZoom": 999, "minZoom": 18, "type": "hubAndFloatingBike" } ] }, { "type": "micromobility-rental", "name": "Bolt eScooter Locations", "modes": [ "MICROMOBILITY_RENT" ], "companies": [ "BOLT" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#FEE502", "strokeColor": "#000000" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#FEE502", "strokeColor": "#000000" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#FEE502", "type": "marker" } ] }, { "type": "micromobility-rental", "name": "Gruv eScooter Locations", "modes": [ "MICROMOBILITY_RENT" ], "companies": [ "CLEVR" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#0171bc", "strokeColor": "#CCCCCC" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#0171bc", "strokeColor": "#CCCCCC" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#0171bc", "type": "marker" } ] }, { "type": "micromobility-rental", "name": "Lime eScooter Locations", "modes": [ "MICROMOBILITY_RENT" ], "companies": [ "LIME" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#24D000", "strokeColor": "#CCCCCC" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#24D000", "strokeColor": "#CCCCCC" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#24D000", "type": "marker" } ] }, { "type": "micromobility-rental", "name": "Razor eScooter Locations", "modes": [ "MICROMOBILITY_RENT" ], "companies": [ "RAZOR" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#EE2D15", "strokeColor": "#CCCCCC" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#EE2D15", "strokeColor": "#CCCCCC" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#EE2D15", "type": "marker" } ] }, { "type": "micromobility-rental", "name": "shared eScooter Locations", "modes": [ "MICROMOBILITY_RENT" ], "companies": [ "SHARED" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#F80600", "strokeColor": "#CCCCCC" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#F80600", "strokeColor": "#CCCCCC" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#F80600", "type": "marker" } ] }, { "type": "micromobility-rental", "name": "Spin eScooter Locations", "modes": [ "MICROMOBILITY_RENT" ], "companies": [ "SPIN" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#FF6D01", "strokeColor": "#CCCCCC" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#FF6D01", "strokeColor": "#CCCCCC" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#FF6D01", "type": "marker" } ] }, { "type": "car-rental", "name": "car2go Locations", "modes": [ "CAR_RENT" ], "companies": [ "CAR2GO" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#009cde" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#009cde" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#009cde", "type": "marker" } ] }, { "type": "car-rental", "name": "REACH NOW Locations", "modes": [ "CAR_RENT" ], "companies": [ "REACHNOW" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#007fa3" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#007fa3" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#007fa3", "type": "marker" } ] }, { "type": "park-and-ride", "name": "Park & Ride Locations", "maxTransitDistance": 1000, "modes": [ "CAR_PARK" ] }, { "type": "stops", "name": "Transit Stops", "visible": true }, { "type": "tile", "name": "Transit Routes", "tileUrl": "https://d2dyq00q2cz8yt.cloudfront.net/%7Bz%7D_%7Bx%7D_%7By%7D@2x.png" }, { "type": "zipcar", "name": "Zipcar Locations", "api": "https://modbeta.trimet.org/ws/carshare/zipcar/data.json" 
   }
-
-  const defaultMapConfig = {
-    "initLat": 45.52, "initLon": -122.682, 
-    "baseLayers": [ { "name": "Streets", "url": "//cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}@2x.png", "subdomains": "abcd", "attribution": "Map tiles: &copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a>, &copy; <a href=\"https://carto.com/attributions\">CARTO</a>", "maxZoom": 20, "hasRetinaSupport": true }, { "name": "Stamen Toner Lite", "url": "http://tile.stamen.com/toner-lite/%7Bz%7D/%7Bx%7D/%7By%7D.png", "attribution": "Map tiles by <a href=\"http://stamen.com\">Stamen Design</a>, under <a href=\"http://creativecommons.org/licenses/by/3.0\">CC BY 3.0</a>. Data by <a href=\"http://openstreetmap.org\">OpenStreetMap</a>, under <a href=\"http://www.openstreetmap.org/copyright\">ODbL</a>." } ], "overlays": [ { "type": "bike-rental", "name": "Biketown Locations", "modes": [ "BICYCLE_RENT" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#FF2E28", "dockStrokeColor": "#000000" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#FF2E28", "dockStrokeColor": "#000000" }, { "maxZoom": 999, "minZoom": 18, "type": "hubAndFloatingBike" } ] }, { "type": "micromobility-rental", "name": "Bolt eScooter Locations", "modes": [ "MICROMOBILITY_RENT" ], "companies": [ "BOLT" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#FEE502", "strokeColor": "#000000" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#FEE502", "strokeColor": "#000000" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#FEE502", "type": "marker" } ] }, { "type": "micromobility-rental", "name": "Gruv eScooter Locations", "modes": [ "MICROMOBILITY_RENT" ], "companies": [ "CLEVR" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#0171bc", "strokeColor": "#CCCCCC" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#0171bc", "strokeColor": "#CCCCCC" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#0171bc", "type": "marker" } ] }, { "type": "micromobility-rental", "name": "Lime eScooter Locations", "modes": [ "MICROMOBILITY_RENT" ], "companies": [ "LIME" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#24D000", "strokeColor": "#CCCCCC" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#24D000", "strokeColor": "#CCCCCC" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#24D000", "type": "marker" } ] }, { "type": "micromobility-rental", "name": "Razor eScooter Locations", "modes": [ "MICROMOBILITY_RENT" ], "companies": [ "RAZOR" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#EE2D15", "strokeColor": "#CCCCCC" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#EE2D15", "strokeColor": "#CCCCCC" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#EE2D15", "type": "marker" } ] }, { "type": "micromobility-rental", "name": "shared eScooter Locations", "modes": [ "MICROMOBILITY_RENT" ], "companies": [ "SHARED" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#F80600", "strokeColor": "#CCCCCC" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#F80600", "strokeColor": "#CCCCCC" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#F80600", "type": "marker" } ] }, { "type": "micromobility-rental", "name": "Spin eScooter Locations", "modes": [ "MICROMOBILITY_RENT" ], "companies": [ "SPIN" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#FF6D01", "strokeColor": "#CCCCCC" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#FF6D01", "strokeColor": "#CCCCCC" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#FF6D01", "type": "marker" } ] }, { "type": "car-rental", "name": "car2go Locations", "modes": [ "CAR_RENT" ], "companies": [ "CAR2GO" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#009cde" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#009cde" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#009cde", "type": "marker" } ] }, { "type": "car-rental", "name": "REACH NOW Locations", "modes": [ "CAR_RENT" ], "companies": [ "REACHNOW" ], "mapSymbols": [ { "maxZoom": 13, "minZoom": 0, "type": "circle", "pixels": 4, "fillColor": "#007fa3" }, { "maxZoom": 17, "minZoom": 14, "type": "circle", "pixels": 6, "fillColor": "#007fa3" }, { "maxZoom": 999, "minZoom": 18, "fillColor": "#007fa3", "type": "marker" } ] }, { "type": "park-and-ride", "name": "Park & Ride Locations", "maxTransitDistance": 1000, "modes": [ "CAR_PARK" ] }, { "type": "stops", "name": "Transit Stops", "visible": true }, { "type": "tile", "name": "Transit Routes", "tileUrl": "https://d2dyq00q2cz8yt.cloudfront.net/%7Bz%7D_%7Bx%7D_%7By%7D@2x.png" }, { "type": "zipcar", "name": "Zipcar Locations", "api": "https://modbeta.trimet.org/ws/carshare/zipcar/data.json" 
-  } 
-  ], 
-  "initZoom": 11 
-  }
+  ],
+  initZoom: 11
+};
 
 class BaseMap extends Component {
-
-
-  static defaultProps = {
-    activeLeg: null,
-    activeStep: null,
-    mapConfig: defaultMapConfig,
-    diagramLeg: null,
-    elevationPoint: null,
-    mapState: null, //state.otp.mapState,
-    isFromSet: false,
-    isToSet: false,
-    itinerary: null,
-    overlays: [],
-    popupLocation: null,
-    query: null,
-    setLocation: ()=> {},
-    setMapPopupLocation: ()=> {},
-    setMapPopupLocationAndGeocode: ()=> {},
-    setMapZoom: ()=> {},
-    updateOverlayVisibility: ()=> {}
-  }
-
-  
   /* Internal Methods */
 
-  _setLocationFromPopup = (type) => {
-    const { setMapPopupLocation, setLocation, popupLocation: location } = this.props
-    setMapPopupLocation({ location: null })
-    setLocation({ type, location, reverseGeocode: true })
-    if (typeof this.props.onSetLocation === 'function') {
-      this.props.onSetLocation({type, location})
+  _setLocationFromPopup = type => {
+    // eslint-disable-next-line prettier/prettier
+    const { setMapPopupLocation, setLocation, popupLocation: location } = this.props;
+    setMapPopupLocation({ location: null });
+    setLocation({ type, location, reverseGeocode: true });
+    if (typeof this.props.onSetLocation === "function") {
+      this.props.onSetLocation({ type, location });
     }
-  }
+  };
 
-  _onClickTo = () => this._setLocationFromPopup('to')
+  _onClickTo = () => this._setLocationFromPopup("to");
 
-  _onClickFrom = () => this._setLocationFromPopup('from')
+  _onClickFrom = () => this._setLocationFromPopup("from");
 
-  _onLeftClick = (e) => {
-    this.props.setMapPopupLocationAndGeocode({ location: constructLocation(e.latlng) })
-    if (typeof this.props.onClick === 'function') this.props.onClick(e)
-  }
+  _onLeftClick = e => {
+    this.props.setMapPopupLocationAndGeocode({
+      location: constructLocation(e.latlng)
+    });
+    if (typeof this.props.onClick === "function") this.props.onClick(e);
+  };
 
-  _onOverlayAdd = ({ name }) => this.props.updateOverlayVisibility({ [name]: true })
+  _onOverlayAdd = ({ name }) =>
+    this.props.updateOverlayVisibility({ [name]: true });
 
-  _onOverlayRemove = ({ name }) => this.props.updateOverlayVisibility({ [name]: false })
+  _onOverlayRemove = ({ name }) =>
+    this.props.updateOverlayVisibility({ [name]: false });
 
   // TODO: make map controlled component
   _mapBoundsChanged = e => {
-    const bounds = e.target.getBounds()
+    const bounds = e.target.getBounds();
     if (!bounds.equals(this.props.mapState.bounds)) {
-      this.props.updateMapState({ bounds })
+      this.props.updateMapState({ bounds });
     }
-  }
+  };
 
-  _onViewportChanged = ({ zoom }) => this.props.setMapZoom({ zoom })
+  _onViewportChanged = ({ zoom }) => this.props.setMapZoom({ zoom });
 
-/*  _updateBounds (oldProps, newProps) {
+  /* _updateBounds (oldProps, newProps) {
     // TODO: maybe setting bounds ought to be handled in map props...
 
     oldProps = oldProps || {}
@@ -216,14 +172,14 @@ class BaseMap extends Component {
     }
   }
 */
-  _popupClosed = () => this.props.setMapPopupLocation({ location: null })
+  _popupClosed = () => this.props.setMapPopupLocation({ location: null });
 
   /**
    * Checks whether the modes have changed between old and new queries and
    * whether to update the map overlays accordingly (e.g., to show rental vehicle
    * options on the map).
    */
-/*  _handleQueryChange = (oldQuery, newQuery) => {
+  /* _handleQueryChange = (oldQuery, newQuery) => {
     const { overlays } = this.props
     if (overlays && oldQuery.mode) {
       // Determine any added/removed modes
@@ -271,73 +227,75 @@ class BaseMap extends Component {
 */
   /* React Lifecycle methods */
 
-  componentDidMount () {
-//    this._updateBounds(null, this.props)
+  componentDidMount() {
+    //    this._updateBounds(null, this.props)
 
-    const lmap = this.refs.map.leafletElement
-    lmap.options.singleClickTimeout = 250
-    lmap.on('singleclick', (e) => { this._onLeftClick(e) })
+    const lmap = this.refs.map.leafletElement;
+    lmap.options.singleClickTimeout = 250;
+    lmap.on("singleclick", e => {
+      this._onLeftClick(e);
+    });
   }
 
-  componentDidUpdate (prevProps) {
-//    this._updateBounds(prevProps, this.props)
+  componentDidUpdate(/* prevProps */) {
+    //    this._updateBounds(prevProps, this.props)
     // Check if any overlays should be toggled due to mode change
-//    this._handleQueryChange(prevProps.query, this.props.query)
+    //    this._handleQueryChange(prevProps.query, this.props.query)
   }
 
   // remove custom overlays on unmount
   // TODO: Is this needed? It may have something to do with mobile vs desktop views
-  componentWillUnmount () {
-    const lmap = this.refs.map.leafletElement
-    lmap.eachLayer((layer) => {
-      lmap.removeLayer(layer)
-    })
+  componentWillUnmount() {
+    const lmap = this.refs.map.leafletElement;
+    lmap.eachLayer(layer => {
+      lmap.removeLayer(layer);
+    });
   }
 
-  render () {
-
-    const { mapConfig, children, diagramLeg, elevationPoint, popupLocation } = this.props
-    const { baseLayers } = mapConfig
+  render() {
+    // eslint-disable-next-line prettier/prettier
+    const { mapConfig, children, diagramLeg, elevationPoint, popupLocation } = this.props;
+    const { baseLayers } = mapConfig;
     const showElevationProfile = false; // Boolean(config.elevationProfile)
     // Separate overlay layers into user-controlled (those with a checkbox in
     // the layer control) and those that are needed by the app (e.g., stop viewer
     // and itinerary overlay).
-    const userControlledOverlays = []
-    const fixedOverlays = []
-    React.Children
-      .toArray(children)
-      .forEach(child => {
-        if (child.props.name) userControlledOverlays.push(child)
-        else fixedOverlays.push(child)
-      })
+    const userControlledOverlays = [];
+    const fixedOverlays = [];
+    React.Children.toArray(children).forEach(child => {
+      if (child.props.name) userControlledOverlays.push(child);
+      else fixedOverlays.push(child);
+    });
 
-    const center = mapConfig && mapConfig.initLat && mapConfig.initLon
-      ? [mapConfig.initLat, mapConfig.initLon]
-      : null
+    const center =
+      mapConfig && mapConfig.initLat && mapConfig.initLon
+        ? [mapConfig.initLat, mapConfig.initLon]
+        : null;
 
     // Compute the elevation point marker, if activeLeg and elevation profile is enabled.
-    let elevationPointMarker = null
+    let elevationPointMarker = null;
     if (showElevationProfile && diagramLeg && elevationPoint) {
-      const pos = legLocationAtDistance(diagramLeg, elevationPoint)
+      const pos = legLocationAtDistance(diagramLeg, elevationPoint);
       if (pos) {
         elevationPointMarker = (
           <CircleMarker
             center={pos}
-            fillColor='#084c8d'
+            fillColor="#084c8d"
             weight={6}
-            color='#555'
+            color="#555"
             opacity={0.4}
             radius={5}
             fill
-            fillOpacity={1} />
-        )
+            fillOpacity={1}
+          />
+        );
       }
     }
 
     return (
       <Map
-        ref='map'
-        className='map'
+        ref="map"
+        className="map"
         center={center}
         // onClick={this._onLeftClick}
         zoom={mapConfig.initZoom || 13}
@@ -348,71 +306,93 @@ class BaseMap extends Component {
         /* Note: Map-click is handled via single-click plugin, set up in componentDidMount() */
       >
         {/* Create the layers control, including base map layers and any
-          * user-controlled overlays. */}
-        <LayersControl position='topright'>
-          {/* base layers */
-            baseLayers && baseLayers.map((layer, i) => {
+         * user-controlled overlays. */}
+        <LayersControl position="topright">
+          {/* base layers */}
+          {baseLayers &&
+            baseLayers.map((layer, i) => {
               // Fix tile size/zoom offset: https://stackoverflow.com/a/37043490/915811
-              const retinaProps = L.Browser.retina && layer.hasRetinaSupport
-                ? { tileSize: 512, zoomOffset: -1 }
-                : {}
+              const retinaProps =
+                L.Browser.retina && layer.hasRetinaSupport
+                  ? { tileSize: 512, zoomOffset: -1 }
+                  : {};
               return (
                 <LayersControl.BaseLayer
                   name={layer.name}
                   checked={i === 0}
-                  key={i}>
+                  key={i}
+                >
                   <TileLayer
                     url={layer.url}
                     attribution={layer.attribution}
                     maxZoom={layer.maxZoom}
                     {...retinaProps}
-                    detectRetina />
+                    detectRetina
+                  />
                 </LayersControl.BaseLayer>
-              )
-            })
-          }
+              );
+            })}
 
-          {/* user-controlled overlay layers (e.g., vehicle locations, stops) */
-            userControlledOverlays.map((child, i) => {
-              return (
-                <LayersControl.Overlay
-                  key={i}
-                  name={child.props.name}
-                  checked={child.props.visible}
-                >
-                  {child}
-                </LayersControl.Overlay>
-              )
-            })
-          }
+          {/* user-controlled overlay layers (e.g., vehicle locations, stops) */}
+          {userControlledOverlays.map((child, i) => (
+            <LayersControl.Overlay
+              key={i}
+              name={child.props.name}
+              checked={child.props.visible}
+            >
+              {child}
+            </LayersControl.Overlay>
+          ))}
         </LayersControl>
+
+        {/* Beacon representing the user position is so specified */}
+        {/* TODO: clicking elements that are inside the beacon (right it prevents clicks on items inside beacon from working.) */}
+        {mapConfig.showBeacon ? (
+          <CircleMarker center={center} radius={100}>
+            <Marker position={center} />
+          </CircleMarker>
+        ) : null}
 
         {/* Add the fixed, i.e. non-user-controllable, overlays (e.g., itinerary overlay) */}
         {fixedOverlays}
 
         {/* Add the location selection popup, if visible */}
         {popupLocation && (
-          <Popup ref='clickPopup'
+          <Popup
+            ref="clickPopup"
             position={[popupLocation.lat, popupLocation.lon]}
             onClose={this._popupClosed}
           >
             <div style={{ width: 240 }}>
               <div style={{ fontSize: 14, marginBottom: 6 }}>
-                {popupLocation.name.split(',').length > 3
-                  ? popupLocation.name.split(',').splice(0, 3).join(',')
-                  : popupLocation.name
-                }
+                {popupLocation.name.split(",").length > 3
+                  ? popupLocation.name
+                      .split(",")
+                      .splice(0, 3)
+                      .join(",")
+                  : popupLocation.name}
               </div>
               <div>
                 Plan a trip:
-                <span style={{ margin: '0px 5px' }}><LocationIcon type='from' /></span>
-                <button className='link-button'
-                  onClick={this._onClickFrom}>
+                <span style={{ margin: "0px 5px" }}>
+                  <LocationIcon type="from" />
+                </span>
+                <button
+                  type="button"
+                  className="link-button"
+                  onClick={this._onClickFrom}
+                >
                   From here
-                </button>{' '}|{' '}
-                <span style={{ margin: '0px 5px' }}><LocationIcon type='to' /></span>
-                <button className='link-button'
-                  onClick={this._onClickTo}>
+                </button>{" "}
+                {/* TODO: Merge with From/To picker. */}|{" "}
+                <span style={{ margin: "0px 5px" }}>
+                  <LocationIcon type="to" />
+                </span>
+                <button
+                  type="button"
+                  className="link-button"
+                  onClick={this._onClickTo}
+                >
                   To here
                 </button>
               </div>
@@ -423,7 +403,7 @@ class BaseMap extends Component {
         {/* Add the elevation point marker */}
         {elevationPointMarker}
       </Map>
-    )
+    );
   }
 }
 
@@ -466,10 +446,49 @@ const mapDispatchToProps = {
 */
 
 BaseMap.propTypes = {
-  config: PropTypes.object,
+  activeLeg: PropTypes.object,
+  activeStep: PropTypes.object,
+  mapConfig: PropTypes.object,
+  diagramLeg: PropTypes.object,
+  elevationPoint: PropTypes.object,
+  mapState: PropTypes.object,
+  isFromSet: PropTypes.bool,
+  isToSet: PropTypes.bool,
+  itinerary: PropTypes.object,
   mapClick: PropTypes.func,
-  setLocation: PropTypes.func, // TODO: rename from action name to avoid namespace conflict?
+  onSetLocation: PropTypes.func,
+  overlays: PropTypes.arrayOf(PropTypes.object),
+  popupLocation: PropTypes.object,
+  query: PropTypes.object,
+  setLocation: PropTypes.func,
+  setMapPopupLocation: PropTypes.func,
+  setMapPopupLocationAndGeocode: PropTypes.func,
+  setMapZoom: PropTypes.func,
+  updateOverlayVisibility: PropTypes.func,
   toggleName: PropTypes.element
-}
+};
 
-export default BaseMap; // connect(mapStateToProps, mapDispatchToProps)(BaseMap)
+BaseMap.defaultProps = {
+  activeLeg: null,
+  activeStep: null,
+  mapConfig: defaultMapConfig,
+  diagramLeg: null,
+  elevationPoint: null,
+  mapState: null, // TODO: state.otp.mapState,
+  isFromSet: false,
+  isToSet: false,
+  itinerary: null,
+  overlays: [],
+  popupLocation: null,
+  query: null,
+  toggleName: null,
+  mapClick: () => {},
+  onSetLocation: () => {},
+  setLocation: () => {},
+  setMapPopupLocation: () => {},
+  setMapPopupLocationAndGeocode: () => {},
+  setMapZoom: () => {},
+  updateOverlayVisibility: () => {}
+};
+
+export default BaseMap;
