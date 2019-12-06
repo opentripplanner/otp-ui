@@ -12,11 +12,14 @@
   "main": "lib/sample.js",
   "module": "src/sample.js",
   "peerDependencies": {
+    "bowser": "^2.7.0",
+    "copy-to-clipboard": "^3.2.0",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.27",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "styled-components": "^4.4.1"
+    "styled-components": "^4.4.1",
+    "velocity-react": "^1.4.3"
   },
   "publishConfig": {
     "registry": "https://registry.yarnpkg.com"

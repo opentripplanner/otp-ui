@@ -1,7 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import PlaceRow from "../PlaceRow";
-import * as Styled from "./styled";
+import React from 'react'
+import PropTypes from 'prop-types'
+import PlaceRow from '../PlaceRow'
+import TripDetails from '../TripDetails'
+import TripTools from '../TripTools'
+import * as Styled from './styled'
 
 const ItineraryBody = ({
   itinerary,
@@ -12,11 +14,13 @@ const ItineraryBody = ({
   */
   // eslint-disable-next-line no-unused-vars
   companies,
-  routingType,
+  routingType = 'ITINERARY',
   frameLeg,
   toRouteAbbreviation,
   config,
-  customIcons
+  customIcons,
+  showTripDetails = true,
+  showTripTools = true
 }) => {
   /*
     TODO: replace component should update logic? companies is simply used to
@@ -65,8 +69,8 @@ const ItineraryBody = ({
     <Styled.ItineraryBody>
       {rows}
       {/* TODO: Reincorporate these components as required by TORA project */}
-      {/* <TripDetails itinerary={itinerary} />
-      <TripTools itinerary={itinerary} /> */}
+      {showTripDetails && <TripDetails itinerary={itinerary} />}
+      {showTripTools && <TripTools itinerary={itinerary} />}
     </Styled.ItineraryBody>
   );
 };
@@ -83,7 +87,7 @@ ItineraryBody.propTypes = {
     ).isRequired
   }).isRequired,
   /** TODO: Routing Type is usually 'ITINERARY' but we should get more details on what this does */
-  routingType: PropTypes.string.isRequired,
+  routingType: PropTypes.string,
   // New Props below
   /** Contains OTP configuration details. */
   config: PropTypes.shape({
@@ -98,7 +102,8 @@ ItineraryBody.propTypes = {
   /** Frames a specific leg in an associated map view */
   frameLeg: PropTypes.func.isRequired,
   /** Converts a route's ID to its accepted badge abbreviation */
-  toRouteAbbreviation: PropTypes.func.isRequired
+  toRouteAbbreviation: PropTypes.func.isRequired,
+  showTripDetails: PropTypes.bool
 };
 
 export default ItineraryBody;
