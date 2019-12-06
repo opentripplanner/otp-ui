@@ -1,0 +1,18 @@
+{
+  "name": "@opentripplanner/core-utils",
+  "version": "0.0.1",
+  "description": "Core functionality that is shared among numerous UI components",
+  "main": "lib/index.js",
+  "repository": "https://github.com/trimet-sandbox/otp-ui.git",
+  "author": "Evan Siroky",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@mapbox/polyline": "^1.1.0",
+    "@turf/along": "^6.0.1",
+    "bowser": "^2.7.0",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.27",
+    "qs": "^6.9.1"
+  }
+}
