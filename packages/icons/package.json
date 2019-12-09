@@ -1,0 +1,36 @@
+{
+  "name": "icons",
+  "version": "0.0.1",
+  "private": false,
+  "description": "Icons Component",
+  "keywords": [
+    "icons",
+    "component"
+  ],
+  "author": "binh-dam-ibigroup <binh.dam@ibigroup.com>",
+  "homepage": "https://github.com/TriMetPDX/otp-ui#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.4.1"
+  },
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TriMetPDX/otp-ui.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/TriMetPDX/otp-ui/issues"
+  },
+  "dependencies": {
+    "styled-icons": "^9.0.1"
+  }
+}
