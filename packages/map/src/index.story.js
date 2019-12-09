@@ -1,5 +1,5 @@
 import React from "react";
-import { Marker, Popup, FeatureGroup } from "react-leaflet";
+import { Marker, CircleMarker, Popup, FeatureGroup } from "react-leaflet";
 import L from "leaflet";
 
 import BaseMap, { defaultMapConfig } from ".";
@@ -13,9 +13,10 @@ const mapConfig = {
   ...defaultMapConfig,
   initLat: 33.758189,
   initLon: -84.38361,
-  initZoom: 13,
-  showBeacon: false
+  initZoom: 13
 };
+
+const center = [mapConfig.initLat, mapConfig.initLon];
 
 const vehicleData = [
   {
@@ -60,9 +61,15 @@ const AllVehiclesOverlay = () => {
   );
 };
 
-export const noBeacon = () => <BaseMap mapConfig={mapConfig} />;
+const beacon = (
+  <CircleMarker center={center} radius={100} interactive={false}>
+    <Marker position={center} />
+  </CircleMarker>
+);
+
+export const empty = () => <BaseMap mapConfig={mapConfig} />;
 export const withBeacon = () => (
-  <BaseMap mapConfig={{ ...mapConfig, showBeacon: true }} />
+  <BaseMap mapConfig={mapConfig}>{beacon}</BaseMap>
 );
 export const RTVehiclesDemo = () => (
   <BaseMap mapConfig={mapConfig}>
@@ -71,7 +78,8 @@ export const RTVehiclesDemo = () => (
   </BaseMap>
 );
 export const RTVehiclesDemoWithBeacon = () => (
-  <BaseMap mapConfig={{ ...mapConfig, showBeacon: true }}>
+  <BaseMap mapConfig={mapConfig}>
+    {beacon}
     <AllVehiclesOverlay name="Simple vehicle layer" />
     <SelectVehicles name="Fancier vehicle layer" visible />
   </BaseMap>

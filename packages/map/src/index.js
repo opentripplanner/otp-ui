@@ -12,7 +12,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 // eslint-disable-next-line prettier/prettier
-import { Map, Marker, TileLayer, LayersControl, Popup, CircleMarker } from "react-leaflet";
+import { Map, TileLayer, LayersControl, Popup, CircleMarker } from "react-leaflet";
 
 import LocationIcon from "@opentripplanner/location-icon";
 import { constructLocation } from "@opentripplanner/core-utils/lib/map";
@@ -344,14 +344,6 @@ class BaseMap extends Component {
             </LayersControl.Overlay>
           ))}
         </LayersControl>
-
-        {/* Beacon representing the user position is so specified */}
-        {/* TODO: clicking elements that are inside the beacon (right it prevents clicks on items inside beacon from working.) */}
-        {mapConfig.showBeacon ? (
-          <CircleMarker center={center} radius={100}>
-            <Marker position={center} />
-          </CircleMarker>
-        ) : null}
 
         {/* Add the fixed, i.e. non-user-controllable, overlays (e.g., itinerary overlay) */}
         {fixedOverlays}

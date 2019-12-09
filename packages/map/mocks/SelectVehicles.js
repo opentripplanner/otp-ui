@@ -1,4 +1,3 @@
-import "leaflet";
 import React from "react";
 import { FeatureGroup, MapLayer, withLeaflet } from "react-leaflet";
 
