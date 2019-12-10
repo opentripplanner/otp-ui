@@ -9,10 +9,10 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@opentripplanner/core-utils": "0.0.1",
-    "@opentripplanner/geocoder": "0.0.1",
-    "@opentripplanner/humanize-distance": "0.0.1",
-    "@opentripplanner/location-icon": "0.0.1",
+    "@opentripplanner/core-utils": "^0.0.1",
+    "@opentripplanner/geocoder": "^0.0.1",
+    "@opentripplanner/humanize-distance": "^0.0.1",
+    "@opentripplanner/location-icon": "^0.0.1",
     "prop-types": "^15.7.2",
     "styled-icons": "^9.0.1",
     "throttle-debounce": "^2.1.0"
