@@ -17,7 +17,7 @@ const Dropdown = ({ children, open, onToggle, title }) => {
   return (
     <DropdownContainer>
       <DropdownButton onClick={onToggle}>{title}</DropdownButton>
-      {open && <DropdownList>{children}</DropdownList>}
+      {open && <MenuItemList>{children}</MenuItemList>}
     </DropdownContainer>
   );
 };
@@ -41,25 +41,6 @@ const DropdownContainer = styled.span`
   position: relative;
 `;
 
-const DropdownList = styled.ul`
-  background-clip: padding-box;
-  background-color: #fff;
-  border-radius: 4px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  float: left;
-  font-size: 14px;
-  left: 0;
-  list-style: none;
-  margin: 2px 0 0;
-  min-width: 160px;
-  padding: 5px 0;
-  position: absolute;
-  text-align: left;
-  top: 100%;
-  z-index: 1000;
-`;
-
 const FormGroup = styled.div`
   border-collapse: separate;
   display: table;
@@ -78,26 +59,36 @@ const InputGroup = styled.span`
   border-bottom: 1px solid #000;
   border-collapse: separate;
   display: table;
-  font-family: system-ui;
   position: relative;
 `;
 
 const InputGroupAddon = styled.span`
-  border: none;
   background: none;
+  border-radius: 4px;
+  border: none;
   color: #888;
   cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  padding: 6px 12px;
+  text-align: center;
 `;
 
 const MenuItem = ({ active, centeredText, children, header, onClick }) => {
   return header ? (
-    <MenuItemHeader centeredText={centeredText}>children</MenuItemHeader>
+    <MenuItemHeader centeredText={centeredText}>{children}</MenuItemHeader>
   ) : (
-    <li>
-      <MenuItemA active={active} onClick={onClick}>
+    <MenuItemLi role="presentation">
+      <MenuItemA
+        active={active}
+        onClick={onClick}
+        role="menuitem"
+        tabIndex={-1}
+      >
         {children}
       </MenuItemA>
-    </li>
+    </MenuItemLi>
   );
 };
 
@@ -139,6 +130,49 @@ const MenuItemHeader = styled.li`
   white-space: nowrap;
 `;
 
+const MenuItemLi = styled.li`
+  &:hover {
+    background-color: #f5f5f5;
+  }
+`;
+
+const MenuItemList = styled.ul`
+  background-clip: padding-box;
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  float: left;
+  font-size: 14px;
+  left: 0;
+  list-style: none;
+  margin: 2px 0 0;
+  min-width: 160px;
+  padding: 5px 0;
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  z-index: 1000;
+`;
+
+const RouteName = styled.span`
+  background-color: gray;
+  color: white;
+  padding: 2px 3px 0px;
+  margin-right: 5px;
+`;
+
+const StaticMenuItemList = styled(MenuItemList)`
+  border: none;
+  box-shadow: none;
+  display: block;
+  position: static;
+
+  li:hover {
+    background-color: transparent;
+  }
+`;
+
 export {
   Button,
   Dropdown,
@@ -146,5 +180,8 @@ export {
   Input,
   InputGroup,
   InputGroupAddon,
-  MenuItem
+  MenuItem,
+  MenuItemList,
+  RouteName,
+  StaticMenuItemList
 };

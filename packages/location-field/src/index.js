@@ -76,9 +76,9 @@ function createTransitStopOption(stop, onClick, isActive) {
             {(stop.routes || []).map(route => {
               const name = route.shortName || route.longName;
               return (
-                <span key={`route-${name}`} className="route">
+                <Styled.RouteName key={`route-${name}`}>
                   {name}
-                </span>
+                </Styled.RouteName>
               );
             })}
           </div>
@@ -134,13 +134,14 @@ class LocationField extends Component {
   }
 
   getFormControlClassname() {
-    const { type } = this.props;
-    return `${type}-form-control`;
+    const { locationType } = this.props;
+    return `${locationType}-form-control`;
   }
 
   setLocation(location) {
-    const { onLocationSelected, type } = this.props;
-    onLocationSelected({ type, location });
+    const { onLocationSelected, locationType } = this.props;
+    onLocationSelected({ locationType, location });
+    this.setState({ menuVisible: false });
   }
 
   useCurrentLocation = () => {
@@ -148,18 +149,18 @@ class LocationField extends Component {
       currentPosition,
       getCurrentPosition,
       onLocationSelected,
-      type
+      locationType
     } = this.props;
     const location = currentPositionToLocation(currentPosition);
     if (location) {
       // If geolocation is successful (i.e., user has granted app geolocation
       // permission and coords exist), set location.
-      onLocationSelected({ type, location });
+      onLocationSelected({ locationType, location });
     } else {
-      // Call geolocation.getCurrentPosition and set as from/to type
-      // FIXME? getCurrentPosition needs to add payload to onLocationSelected
-      getCurrentPosition(type, onLocationSelected);
+      // Call geolocation.getCurrentPosition and set as from/to locationType
+      getCurrentPosition(locationType);
     }
+    this.setState({ menuVisible: false });
   };
 
   /**
@@ -176,8 +177,8 @@ class LocationField extends Component {
   };
 
   onClearButtonClick = () => {
-    const { clearLocation, type } = this.props;
-    clearLocation({ type });
+    const { clearLocation, locationType } = this.props;
+    clearLocation({ locationType });
     this.setState({
       value: "",
       geocodedFeatures: []
@@ -187,12 +188,9 @@ class LocationField extends Component {
     this.onTextInputClick();
   };
 
-  onDropdownToggle = (v, e) => {
+  onDropdownToggle = () => {
     const { menuVisible } = this.state;
-    // if clicked on input form control, keep dropdown open; otherwise, toggle
-    const targetIsInput =
-      e.target.className.indexOf(this.getFormControlClassname()) !== -1;
-    this.setState({ menuVisible: targetIsInput ? true : !menuVisible });
+    this.setState({ menuVisible: !menuVisible });
   };
 
   /**
@@ -222,9 +220,9 @@ class LocationField extends Component {
       findNearbyStops,
       geocoderConfig,
       nearbyStops,
-      onClick
+      onTextInputClick
     } = this.props;
-    if (typeof onClick === "function") onClick();
+    if (typeof onTextInputClick === "function") onTextInputClick();
     this.setState({ menuVisible: true });
     if (nearbyStops.length === 0 && currentPosition && currentPosition.coords) {
       findNearbyStops({
@@ -335,23 +333,18 @@ class LocationField extends Component {
       addLocationSearch,
       currentPosition,
       geocoderConfig,
-      label,
+      inputPlaceholder,
       location,
+      locationType,
       showClearButton,
       showUserSettings,
       static: isStatic,
       stopsIndex,
       suppressNearby,
-      type,
-      userLocations,
-      userRecentPlaces,
+      userLocationsAndRecentPlaces,
       nearbyStops
     } = this.props;
     const { menuVisible, value } = this.state;
-    const userLocationsAndRecentPlaces = [
-      ...userLocations,
-      ...userRecentPlaces
-    ];
     const { activeIndex } = this.state;
     let { geocodedFeatures } = this.state;
     if (geocodedFeatures.length > 5)
@@ -508,7 +501,7 @@ class LocationField extends Component {
           // Create and return the option menu item
           const option = createOption(
             icon,
-            formatStoredPlaceName(location),
+            formatStoredPlaceName(userLocation),
             locationSelected,
             itemIndex === activeIndex,
             i === userLocationsAndRecentPlaces.length - 1
@@ -555,10 +548,9 @@ class LocationField extends Component {
     this.menuItemCount = itemIndex;
 
     /** the text input element * */
-    const placeholder =
-      currentPosition.fetching === type
-        ? "Fetching location..."
-        : label || type;
+    const placeholder = currentPosition.fetching
+      ? "Fetching location..."
+      : inputPlaceholder || locationType;
     const textControl = (
       <Styled.Input
         ref={ref => {
@@ -586,19 +578,17 @@ class LocationField extends Component {
     if (isStatic) {
       // 'static' mode (menu is displayed alongside input, e.g., for mobile view)
       return (
-        <div className="location-field static">
-          <form>
-            <Styled.FormGroup>
-              <Styled.InputGroup>
-                <Styled.InputGroupAddon>
-                  <LocationIcon type={type} />
-                </Styled.InputGroupAddon>
-                {textControl}
-                {clearButton}
-              </Styled.InputGroup>
-            </Styled.FormGroup>
-          </form>
-          <ul className="dropdown-menu" style={{ width: "100%" }}>
+        <div>
+          <Styled.FormGroup>
+            <Styled.InputGroup>
+              <Styled.InputGroupAddon>
+                <LocationIcon size={13} type={locationType} />
+              </Styled.InputGroupAddon>
+              {textControl}
+              {clearButton}
+            </Styled.InputGroup>
+          </Styled.FormGroup>
+          <Styled.StaticMenuItemList>
             {menuItems.length > 0 ? ( // Show typing prompt to avoid empty screen
               menuItems
             ) : (
@@ -606,42 +596,77 @@ class LocationField extends Component {
                 Begin typing to search for locations
               </Styled.MenuItem>
             )}
-          </ul>
+          </Styled.StaticMenuItemList>
         </div>
       );
     }
+
     // default display mode with dropdown menu
     return (
-      <form>
-        <Styled.FormGroup
-          onBlur={this.onBlurFormGroup}
-          className="location-field"
-        >
-          <Styled.InputGroup>
-            {/* location field icon -- also serves as dropdown anchor */}
-            <Styled.Dropdown
-              open={menuVisible}
-              onToggle={this.onDropdownToggle}
-              title={<LocationIcon type={type} />}
-            >
-              {menuItems}
-            </Styled.Dropdown>
-            {textControl}
-            {clearButton}
-          </Styled.InputGroup>
-        </Styled.FormGroup>
-      </form>
+      <Styled.FormGroup
+        onBlur={this.onBlurFormGroup}
+        className="location-field"
+      >
+        <Styled.InputGroup>
+          {/* location field icon -- also serves as dropdown anchor */}
+          <Styled.Dropdown
+            open={menuVisible}
+            onToggle={this.onDropdownToggle}
+            title={<LocationIcon size={13} type={locationType} />}
+          >
+            {menuItems}
+          </Styled.Dropdown>
+          {textControl}
+          {clearButton}
+        </Styled.InputGroup>
+      </Styled.FormGroup>
     );
   }
 }
 
 LocationField.propTypes = {
+  /**
+   * Dispatched upon selecting a geocoded result
+   * Provides an argument in the format:
+   *
+   * ```js
+   * { location: geocodedLocation }
+   * ```
+   */
+  addLocationSearch: PropTypes.func,
+  /**
+   * Dispatched whenever the clear location button is clicked.
+   * Provides an argument in the format:
+   *
+   * ```js
+   * { locationType: string }
+   * ```
+   */
+  clearLocation: PropTypes.func,
+  /**
+   * The current position of the user if it is available.
+   */
   currentPosition: PropTypes.shape({
     coords: PropTypes.arrayOf(PropTypes.number),
     error: PropTypes.string,
     fetching: PropTypes.bool.isRequired
   }),
+  /**
+   * Invoked whenever the currentPosition is set, but the nearbyStops are not.
+   * Sends the following argument:
+   *
+   * ```js
+   * {
+   *   lat: currentPosition.coords.latitude,
+   *   lon: currentPosition.coords.longitude,
+   *   max: geocoderConfig.maxNearbyStops || 4
+   * }
+   * ```
+   */
   findNearbyStops: PropTypes.func,
+  /**
+   * A configuration object describing what geocoder should be used.
+   */
   geocoderConfig: PropTypes.shape({
     baseUrl: PropTypes.string,
     boundary: PropTypes.shape({
@@ -655,71 +680,149 @@ LocationField.propTypes = {
     }),
     maxNearbyStops: PropTypes.number,
     type: PropTypes.string.isRequired
-  }),
-  getCurrentPosition: PropTypes.func,
+  }).isRequired,
+  /**
+   * This is dispatched when the current position is null. This indicates that
+   * the user has requested to use the current position, but that the current
+   * position is not currently available. This method sends back the
+   * locationType value supplied to the component.
+   */
+  getCurrentPosition: PropTypes.func.isRequired,
+  /**
+   * Whether the provided location (if one is provided) should not be shown upon
+   * initial render.
+   */
   hideExistingValue: PropTypes.bool,
+  /**
+   * Placeholder text to show in the input element. If the current position is
+   * set to have a true fetching property, then the text "Fetching location..."
+   * will display. If this value isn't provided, the locationType will be shown.
+   */
+  inputPlaceholder: PropTypes.string,
+  /**
+   * The location that this component is currently set with.
+   */
   location: PropTypes.shape({
+    lat: PropTypes.number,
+    lon: PropTypes.number,
     name: PropTypes.string
   }),
-  label: PropTypes.string,
-  nearbyStops: PropTypes.arrayOf(PropTypes.shape({})),
-  sessionSearches: PropTypes.arrayOf(PropTypes.shape({})),
+  /**
+   * Either `from` or `to`
+   */
+  locationType: PropTypes.string.isRequired,
+  /**
+   * A list of stopIds of the stops that should be shown as being nearby. These
+   * must be referencable in the stopsIndex prop.
+   */
+  nearbyStops: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * Invoked whenever the text input is clicked or when the clear button is
+   * clicked.
+   */
+  onTextInputClick: PropTypes.func,
+  /**
+   * A function to handle when a location is selected. This is always dispatched
+   * with an object of the following form:
+   *
+   * ```js
+   * {
+   *  locationType: string,
+   *  location: object
+   * }
+   * '''
+   */
+  onLocationSelected: PropTypes.func.isRequired,
+  /**
+   * A list of recent searches to show to the user
+   */
+  sessionSearches: PropTypes.arrayOf(
+    PropTypes.shape({
+      lat: PropTypes.number,
+      lon: PropTypes.number,
+      name: PropTypes.string
+    })
+  ),
+  /**
+   * Whether or not to show the clear button
+   */
   showClearButton: PropTypes.bool,
+  /**
+   * Whether or not to show user settings dialog
+   */
   showUserSettings: PropTypes.bool,
-  static: PropTypes.bool, // show autocomplete options as fixed/inline element rather than dropdown
-  stopsIndex: PropTypes.shape({}),
+  /*
+   * show autocomplete options as fixed/inline element rather than dropdown
+   */
+  static: PropTypes.bool,
+  /**
+   * An index of stops by StopId
+   */
+  stopsIndex: PropTypes.objectOf(
+    PropTypes.shape({
+      /**
+       * The stop code if the stop has one
+       */
+      code: PropTypes.string,
+      /**
+       * The distance from the user to the stop in meters
+       */
+      dist: PropTypes.number,
+      lat: PropTypes.number,
+      lon: PropTypes.number,
+      name: PropTypes.string,
+      routes: PropTypes.arrayOf(
+        PropTypes.shape({
+          longName: PropTypes.string,
+          shortName: PropTypes.string
+        })
+      )
+    })
+  ),
+  /**
+   * If true, do not show nearbyStops or current location as options
+   */
   suppressNearby: PropTypes.bool,
-  type: PropTypes.string.isRequired, // replace with locationType?
-  userLocations: PropTypes.arrayOf(PropTypes.shape({})),
-  userRecentPlaces: PropTypes.arrayOf(PropTypes.shape({})),
-
-  // callbacks
-  onClick: PropTypes.func,
-  onLocationSelected: PropTypes.func,
-
-  // dispatch
-  addLocationSearch: PropTypes.func,
-  clearLocation: PropTypes.func
+  userLocationsAndRecentPlaces: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      /**
+       * Can be either 'home', 'work', or null
+       */
+      icon: PropTypes.string,
+      lat: PropTypes.number.isRequired,
+      lon: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      /**
+       * This represents the last time that this location was selected in a
+       * search
+       */
+      timestamp: PropTypes.number.isRequired,
+      /**
+       * One of: 'home', 'work', 'stop' or 'recent'
+       */
+      type: PropTypes.string.isRequired
+    })
+  )
 };
 
 LocationField.defaultProps = {
   addLocationSearch: () => {},
   clearLocation: () => {},
-  currentPosition: {
-    coords: null,
-    error: null,
-    fetching: false
-  },
+  currentPosition: null,
   findNearbyStops: () => {},
-  geocoderConfig: {
-    baseUrl: "https://ws-st.trimet.org/pelias/v1", // TriMet-specific default
-    boundary: {
-      // TriMet-specific default
-      rect: {
-        minLon: -123.2034,
-        maxLon: -122.135,
-        minLat: 45.273,
-        maxLat: 45.7445
-      }
-    },
-    maxNearbyStops: 4,
-    type: "PELIAS"
-  },
-  getCurrentPosition: () => {},
   hideExistingValue: false,
-  label: null,
+  inputPlaceholder: null,
   location: null,
   nearbyStops: [],
-  onClick: () => {},
-  onLocationSelected: payload => console.log("location selected", payload),
+  onTextInputClick: null,
   sessionSearches: [],
   showClearButton: true,
   showUserSettings: false,
   static: false,
   stopsIndex: null,
   suppressNearby: false,
-  userLocations: [],
-  userRecentPlaces: []
+  userLocationsAndRecentPlaces: []
 };
 
 export default LocationField;
