@@ -1,0 +1,17 @@
+{
+  "name": "@opentripplanner/geocoder",
+  "version": "0.0.1",
+  "description": "Geocoding tools for multiple geocoding providers",
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "repository": "https://github.com/trimet-sandbox/otp-ui.git",
+  "author": "Evan Siroky",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@conveyal/geocoder-arcgis-geojson": "^0.0.2",
+    "@conveyal/lonlat": "^1.4.0",
+    "isomorphic-mapzen-search": "^1.4.1",
+    "lodash.memoize": "^4.1.2"
+  }
+}
