@@ -751,7 +751,7 @@ LocationField.propTypes = {
    * Whether or not to show user settings dialog
    */
   showUserSettings: PropTypes.bool,
-  /*
+  /**
    * show autocomplete options as fixed/inline element rather than dropdown
    */
   static: PropTypes.bool,
@@ -783,6 +783,9 @@ LocationField.propTypes = {
    * If true, do not show nearbyStops or current location as options
    */
   suppressNearby: PropTypes.bool,
+  /**
+   * An array of recent locations and places a user has searched for.
+   */
   userLocationsAndRecentPlaces: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
