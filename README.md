@@ -1,5 +1,24 @@
 # OTP-UI React Component Library
 
+## Description
+
+React component library, which can be used to build trip planner webapps. See https://github.com/opentripplanner/otp-react-redux for a reference implementation of otp-ui (IMPORTANT: WIP / TBD...on using otp-ui in otp-rr). See https://www.npmjs.com/org/opentripplanner for current releases.
+
+## Getting Started
+
+```bash
+ git checkout
+ yarn install
+ yarn build
+ yarn dev
+```
+
+## Storybook Demo
+
+> see https://ibi-group.github.io/otp-ui
+
+## Stack
+
 > A Monorepo with multiple packages and a shared build, test, and release process.
 
 - 🐉 [Lerna](https://lernajs.io/)  - The Monorepo manager
