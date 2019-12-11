@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import { Button } from 'react-bootstrap'
 import copyToClipboard from 'copy-to-clipboard'
 import bowser from 'bowser'
 

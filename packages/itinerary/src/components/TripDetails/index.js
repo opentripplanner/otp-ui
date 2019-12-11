@@ -1,23 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { VelocityTransitionGroup } from 'velocity-react'
 import moment from 'moment'
+import { calculateFares, calculatePhysicalActivity, getTimeZoneOffset } from '@opentripplanner/core-utils/lib/itinerary'
+import { formatTime, getTimeFormat, getLongDateFormat } from '@opentripplanner/core-utils/lib/time'
 
-import { calculateFares, calculatePhysicalActivity, getTimeZoneOffset } from '../../util/itinerary'
-import { formatTime, getTimeFormat, getLongDateFormat } from '../../util/time'
-
-
-
-export default class TripDetails extends Component {
-  static propTypes = {
-    routingType: PropTypes.any,
-    tnc: PropTypes.any,
-    timeFormat: PropTypes.any,
-    longDateFormat: PropTypes.any
-  }
-
+class TripDetails extends Component {
   static defaultProps = {
-    routingType: 'ITINERARY'
+    longDateFormat: 'MMMM D, YYYY',
+    routingType: 'ITINERARY',
+    timeFormat: 'h:mm a'
   }
 
   render () {
@@ -136,7 +127,7 @@ class TripDetail extends Component {
               <i className='fa fa-question-circle' />
             </button>
           )}
-          <VelocityTransitionGroup enter={{animation: 'slideDown'}} leave={{animation: 'slideUp'}}>
+          <div>
             {this.state.expanded && (
               <div className='description'>
                 <button
@@ -148,9 +139,19 @@ class TripDetail extends Component {
                 {description}
               </div>
             )}
-          </VelocityTransitionGroup>
+          </div>
         </div>
       </div>
     )
   }
 }
+
+TripDetails.propTypes = {
+  itinerary: PropTypes.any,
+  routingType: PropTypes.any,
+  tnc: PropTypes.any,
+  timeFormat: PropTypes.any,
+  longDateFormat: PropTypes.any
+}
+
+export default TripDetails

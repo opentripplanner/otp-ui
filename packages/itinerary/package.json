@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "moment": "^2.24.0",
-    "moment-timezone": "^0.5.27"
+    "moment-timezone": "^0.5.27",
+    "styled-icons": "^9.0.1"
   }
 }
