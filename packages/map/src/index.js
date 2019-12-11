@@ -12,9 +12,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 // eslint-disable-next-line prettier/prettier
-import { Map, TileLayer, LayersControl, Popup, CircleMarker } from "react-leaflet";
+import { Map, TileLayer, LayersControl, Popup, CircleMarker, withLeaflet } from "react-leaflet";
 
-import LocationIcon from "@opentripplanner/location-icon";
 import { constructLocation } from "@opentripplanner/core-utils/lib/map";
 import { legLocationAtDistance } from "@opentripplanner/core-utils/lib/itinerary";
 
@@ -230,7 +229,7 @@ class BaseMap extends Component {
   componentDidMount() {
     //    this._updateBounds(null, this.props)
 
-    const lmap = this.refs.map.leafletElement;
+    const lmap = this.props.leaflet; // this.refs.map.leafletElement;
     lmap.options.singleClickTimeout = 250;
     lmap.on("singleclick", e => {
       this._onLeftClick(e);
@@ -246,7 +245,7 @@ class BaseMap extends Component {
   // remove custom overlays on unmount
   // TODO: Is this needed? It may have something to do with mobile vs desktop views
   componentWillUnmount() {
-    const lmap = this.refs.map.leafletElement;
+    const lmap = this.props.leaflet; // this.refs.map.leafletElement;
     lmap.eachLayer(layer => {
       lmap.removeLayer(layer);
     });
@@ -254,7 +253,7 @@ class BaseMap extends Component {
 
   render() {
     // eslint-disable-next-line prettier/prettier
-    const { mapConfig, children, diagramLeg, elevationPoint, popupLocation } = this.props;
+    const { mapConfig, children, diagramLeg, elevationPoint, popupLocation, popupContent } = this.props;
     const { baseLayers } = mapConfig;
     const showElevationProfile = false; // Boolean(config.elevationProfile)
     // Separate overlay layers into user-controlled (those with a checkbox in
@@ -294,7 +293,7 @@ class BaseMap extends Component {
 
     return (
       <Map
-        ref="map"
+        ref000="map"
         className="map"
         center={center}
         // onClick={this._onLeftClick}
@@ -352,43 +351,10 @@ class BaseMap extends Component {
         {popupLocation && (
           <Popup
             ref="clickPopup"
-            position={[popupLocation.lat, popupLocation.lon]}
+            position={popupLocation}
             onClose={this._popupClosed}
           >
-            <div style={{ width: 240 }}>
-              <div style={{ fontSize: 14, marginBottom: 6 }}>
-                {popupLocation.name.split(",").length > 3
-                  ? popupLocation.name
-                      .split(",")
-                      .splice(0, 3)
-                      .join(",")
-                  : popupLocation.name}
-              </div>
-              <div>
-                Plan a trip:
-                <span style={{ margin: "0px 5px" }}>
-                  <LocationIcon type="from" />
-                </span>
-                <button
-                  type="button"
-                  className="link-button"
-                  onClick={this._onClickFrom}
-                >
-                  From here
-                </button>{" "}
-                {/* TODO: Merge with From/To picker. */}|{" "}
-                <span style={{ margin: "0px 5px" }}>
-                  <LocationIcon type="to" />
-                </span>
-                <button
-                  type="button"
-                  className="link-button"
-                  onClick={this._onClickTo}
-                >
-                  To here
-                </button>
-              </div>
-            </div>
+            {popupContent}
           </Popup>
         )}
 
@@ -447,7 +413,7 @@ BaseMap.propTypes = {
   isFromSet: PropTypes.bool,
   isToSet: PropTypes.bool,
   itinerary: PropTypes.object,
-  mapClick: PropTypes.func,
+  onClick: PropTypes.func,
   onSetLocation: PropTypes.func,
   overlays: PropTypes.arrayOf(PropTypes.object),
   popupLocation: PropTypes.object,
@@ -474,7 +440,7 @@ BaseMap.defaultProps = {
   popupLocation: null,
   query: null,
   toggleName: null,
-  mapClick: () => {},
+  onClick: () => {},
   onSetLocation: () => {},
   setLocation: () => {},
   setMapPopupLocation: () => {},
@@ -483,4 +449,4 @@ BaseMap.defaultProps = {
   updateOverlayVisibility: () => {}
 };
 
-export default BaseMap;
+export default withLeaflet(BaseMap);
