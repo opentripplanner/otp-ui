@@ -1,11 +1,15 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
+import { withInfo } from "@storybook/addon-info";
 
 import FromToLocationPicker from ".";
 
 import "../mocks/trimet-mock.css";
 
-export default { title: "From-To-Picker" };
+export default {
+  title: "From-To-Picker",
+  decorators: [withInfo]
+};
 
 const onFromClick = action("onFromClick");
 const onToClick = action("onToClick");
@@ -16,6 +20,7 @@ export const fromTo = () => (
 
 export const smallTextSansSerif = () => (
   <span style={{ "font-size": "75%", "font-family": "sans-serif" }}>
+    Plan a trip:
     <FromToLocationPicker onFromClick={onFromClick} onToClick={onToClick} />
   </span>
 );
