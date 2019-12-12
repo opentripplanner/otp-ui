@@ -7,20 +7,20 @@ import { LocationPickerSpan, Button, FromToPickerSpan } from "./styled";
 const iconSize = "0.9em";
 
 const FromToLocationPicker = ({
-  fromText = "From here",
-  toText = "To here",
-  showIcons = true,
+  fromText,
+  toText,
+  showIcons,
   onFromClick,
   onToClick
 }) => {
   return (
     <FromToPickerSpan>
       <LocationPickerSpan>
-        {showIcons ? <LocationIcon type="from" size={iconSize} /> : null}
+        {showIcons && <LocationIcon type="from" size={iconSize} />}
         <Button onClick={onFromClick}>{fromText}</Button>
       </LocationPickerSpan>
       <LocationPickerSpan>
-        {showIcons ? <LocationIcon type="to" size={iconSize} /> : null}
+        {showIcons && <LocationIcon type="to" size={iconSize} />}
         <Button onClick={onToClick}>{toText}</Button>
       </LocationPickerSpan>
     </FromToPickerSpan>
