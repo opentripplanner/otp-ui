@@ -49,9 +49,7 @@ class BaseMap extends Component {
   componentDidMount() {
     const lmap = this.refs.map.leafletElement;
     lmap.options.singleClickTimeout = 250;
-    lmap.on("singleclick", e => {
-      this.onLeftClick(e);
-    });
+    lmap.on("singleclick", this.onLeftClick);
   }
 
   componentDidUpdate() {}
@@ -60,9 +58,7 @@ class BaseMap extends Component {
   // TODO: Is this needed? It may have something to do with mobile vs desktop views
   componentWillUnmount() {
     const lmap = this.refs.map.leafletElement;
-    lmap.eachLayer(layer => {
-      lmap.removeLayer(layer);
-    });
+    lmap.eachLayer(lmap.removeLayer);
   }
 
   onLeftClick = e => {
@@ -93,10 +89,9 @@ class BaseMap extends Component {
       else fixedOverlays.push(child);
     });
 
-    const center =
-      mapConfig && mapConfig.initLat && mapConfig.initLon
-        ? [mapConfig.initLat, mapConfig.initLon]
-        : null;
+    const center = mapConfig &&
+      mapConfig.initLat &&
+      mapConfig.initLon && [mapConfig.initLat, mapConfig.initLon];
 
     return (
       <Map
