@@ -1,6 +1,3 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable react/no-string-refs */
-
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { LayersControl, Map, MapLayer, Popup, TileLayer } from "react-leaflet";
@@ -188,15 +185,18 @@ BaseMap.propTypes = {
   }),
 
   /**
-   * Triggered when the user clicks on the map. See leaflet for details on how to get the coordinates.
+   * Triggered when the user clicks on the map.
+   * See https://leafletjs.com/reference-1.6.0.html#map-click for details.
    */
   onClick: PropTypes.func,
   /**
    * Triggered when the user makes an overlay visible using the map's layers control.
+   * See https://leafletjs.com/reference-1.6.0.html#map-overlayadd for details.
    */
   onOverlayAdded: PropTypes.func,
   /**
    * Triggered when the user hides an overlay using the map's layers control.
+   * See https://leafletjs.com/reference-1.6.0.html#map-overlayremove for details.
    */
   onOverlayRemoved: PropTypes.func,
   /**
@@ -204,7 +204,8 @@ BaseMap.propTypes = {
    */
   onPopupClosed: PropTypes.func,
   /**
-   * Triggered when the user pans the map. See leaflet for more details.
+   * Triggered when the user pans the map or changes zoom level.
+   * See https://github.com/PaulLeCam/react-leaflet/blob/master/example/components/viewport.js for more details.
    */
   onViewportChanged: PropTypes.func,
   /**
@@ -212,7 +213,7 @@ BaseMap.propTypes = {
    */
   popupContent: PropTypes.node,
   /**
-   * The coordinates of the popup object to display, in `[lat, lng]` array format.
+   * The coordinates of the popup object to display, as a [lat, lng] array.
    */
   popupLocation: PropTypes.arrayOf(PropTypes.number)
 };
