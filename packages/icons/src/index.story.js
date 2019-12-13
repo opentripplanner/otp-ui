@@ -3,77 +3,373 @@ import { storiesOf } from "@storybook/react";
 
 import * as Icons from ".";
 
+function Container({ children }) {
+  return <div style={{ width: 40 }}>{children}</div>;
+}
+
 storiesOf("Icons", module)
-  .add("Accessible", () => <Icons.Accessible />)
-  .add("AerialTram", () => <Icons.AerialTram />)
-  .add("Alert", () => <Icons.Alert />)
-  .add("AlertSolid", () => <Icons.AlertSolid />)
-  .add("App", () => <Icons.App />)
-  .add("ArrowDown", () => <Icons.ArrowDown />)
-  .add("ArrowLeft", () => <Icons.ArrowLeft />)
-  .add("Bicycle", () => <Icons.Bicycle />)
-  .add("Bike", () => <Icons.Bike />)
-  .add("BikeAndRide", () => <Icons.BikeAndRide />)
-  .add("BikeLocker", () => <Icons.BikeLocker />)
-  .add("BikeParking", () => <Icons.BikeParking />)
-  .add("BikeStaple", () => <Icons.BikeStaple />)
-  .add("Bird", () => <Icons.Bird />)
-  .add("Bolt", () => <Icons.Bolt />)
-  .add("Bus", () => <Icons.Bus />)
-  .add("BusCircle", () => <Icons.BusCircle />)
-  .add("Car", () => <Icons.Car />)
-  .add("Car2go", () => <Icons.Car2go />)
-  .add("Circle", () => <Icons.Circle />)
-  .add("CircleClockwise", () => <Icons.CircleClockwise />)
-  .add("CircleCounterclockwise", () => <Icons.CircleCounterclockwise />)
-  .add("Elevator", () => <Icons.Elevator />)
-  .add("Email", () => <Icons.Email />)
-  .add("Feedback", () => <Icons.Feedback />)
-  .add("Ferry", () => <Icons.Ferry />)
-  .add("Gruv", () => <Icons.Gruv />)
-  .add("HardLeft", () => <Icons.HardLeft />)
-  .add("HardRight", () => <Icons.HardRight />)
-  .add("Help", () => <Icons.Help />)
-  .add("HelpSolid", () => <Icons.HelpSolid />)
-  .add("Hopr", () => <Icons.Hopr />)
-  .add("Info", () => <Icons.Info />)
-  .add("Left", () => <Icons.Left />)
-  .add("Lime", () => <Icons.Lime />)
-  .add("Lyft", () => <Icons.Lyft />)
-  .add("Map", () => <Icons.Map />)
-  .add("MapMarker", () => <Icons.MapMarker />)
-  .add("MapMarkerSolid", () => <Icons.MapMarkerSolid />)
-  .add("Max", () => <Icons.Max />)
-  .add("MaxCircle", () => <Icons.MaxCircle />)
-  .add("Micromobility", () => <Icons.Micromobility />)
-  .add("Parking", () => <Icons.Parking />)
-  .add("Phone", () => <Icons.Phone />)
-  .add("Plane", () => <Icons.Plane />)
-  .add("Razor", () => <Icons.Razor />)
-  .add("Reachnow", () => <Icons.Reachnow />)
-  .add("Refresh", () => <Icons.Refresh />)
-  .add("Right", () => <Icons.Right />)
-  .add("Schedule", () => <Icons.Schedule />)
-  .add("Shared", () => <Icons.Shared />)
-  .add("SlightLeft", () => <Icons.SlightLeft />)
-  .add("SlightRight", () => <Icons.SlightRight />)
-  .add("Snow", () => <Icons.Snow />)
-  .add("Spin", () => <Icons.Spin />)
-  .add("Star", () => <Icons.Star />)
-  .add("StopStation", () => <Icons.StopStation />)
-  .add("StopStationSolid", () => <Icons.StopStationSolid />)
-  .add("Straight", () => <Icons.Straight />)
-  .add("Streetcar", () => <Icons.Streetcar />)
-  .add("StreetcarCircle", () => <Icons.StreetcarCircle />)
-  .add("Transittracker", () => <Icons.Transittracker />)
-  .add("TransittrackerSolid", () => <Icons.TransittrackerSolid />)
-  .add("TripPlanner", () => <Icons.TripPlanner />)
-  .add("TripPlannerSolid", () => <Icons.TripPlannerSolid />)
-  .add("UTurnLeft", () => <Icons.UTurnLeft />)
-  .add("UTurnRight", () => <Icons.UTurnRight />)
-  .add("Uber", () => <Icons.Uber />)
-  .add("Walk", () => <Icons.Walk />)
-  .add("Wes", () => <Icons.Wes />)
-  .add("WesCircle", () => <Icons.WesCircle />)
-  .add("Zoom", () => <Icons.Zoom />)
-  .add("ZoomAngle", () => <Icons.ZoomAngle />);
+  .add("Accessible", () => (
+    <Container>
+      <Icons.Accessible />
+    </Container>
+  ))
+  .add("AerialTram", () => (
+    <Container>
+      <Icons.AerialTram />
+    </Container>
+  ))
+  .add("Alert", () => (
+    <Container>
+      <Icons.Alert />
+    </Container>
+  ))
+  .add("AlertSolid", () => (
+    <Container>
+      <Icons.AlertSolid />
+    </Container>
+  ))
+  .add("App", () => (
+    <Container>
+      <Icons.App />
+    </Container>
+  ))
+  .add("ArrowDown", () => (
+    <Container>
+      <Icons.ArrowDown />
+    </Container>
+  ))
+  .add("ArrowLeft", () => (
+    <Container>
+      <Icons.ArrowLeft />
+    </Container>
+  ))
+  .add("Bicycle", () => (
+    <Container>
+      <Icons.Bicycle />
+    </Container>
+  ))
+  .add("Bike", () => (
+    <Container>
+      <Icons.Bike />
+    </Container>
+  ))
+  .add("BikeAndRide", () => (
+    <Container>
+      <Icons.BikeAndRide />
+    </Container>
+  ))
+  .add("BikeLocker", () => (
+    <Container>
+      <Icons.BikeLocker />
+    </Container>
+  ))
+  .add("BikeParking", () => (
+    <Container>
+      <Icons.BikeParking />
+    </Container>
+  ))
+  .add("BikeStaple", () => (
+    <Container>
+      <Icons.BikeStaple />
+    </Container>
+  ))
+  .add("Bird", () => (
+    <Container>
+      <Icons.Bird />
+    </Container>
+  ))
+  .add("Bolt", () => (
+    <Container>
+      <Icons.Bolt />
+    </Container>
+  ))
+  .add("Bus", () => (
+    <Container>
+      <Icons.Bus />
+    </Container>
+  ))
+  .add("BusCircle", () => (
+    <Container>
+      <Icons.BusCircle />
+    </Container>
+  ))
+  .add("Car", () => (
+    <Container>
+      <Icons.Car />
+    </Container>
+  ))
+  .add("Car2go", () => (
+    <Container>
+      <Icons.Car2go />
+    </Container>
+  ))
+  .add("Circle", () => (
+    <Container>
+      <Icons.Circle />
+    </Container>
+  ))
+  .add("CircleClockwise", () => (
+    <Container>
+      <Icons.CircleClockwise />
+    </Container>
+  ))
+  .add("CircleCounterclockwise", () => (
+    <Container>
+      <Icons.CircleCounterclockwise />
+    </Container>
+  ))
+  .add("Elevator", () => (
+    <Container>
+      <Icons.Elevator />
+    </Container>
+  ))
+  .add("Email", () => (
+    <Container>
+      <Icons.Email />
+    </Container>
+  ))
+  .add("Feedback", () => (
+    <Container>
+      <Icons.Feedback />
+    </Container>
+  ))
+  .add("Ferry", () => (
+    <Container>
+      <Icons.Ferry />
+    </Container>
+  ))
+  .add("Gruv", () => (
+    <Container>
+      <Icons.Gruv />
+    </Container>
+  ))
+  .add("HardLeft", () => (
+    <Container>
+      <Icons.HardLeft />
+    </Container>
+  ))
+  .add("HardRight", () => (
+    <Container>
+      <Icons.HardRight />
+    </Container>
+  ))
+  .add("Help", () => (
+    <Container>
+      <Icons.Help />
+    </Container>
+  ))
+  .add("HelpSolid", () => (
+    <Container>
+      <Icons.HelpSolid />
+    </Container>
+  ))
+  .add("Hopr", () => (
+    <Container>
+      <Icons.Hopr />
+    </Container>
+  ))
+  .add("Info", () => (
+    <Container>
+      <Icons.Info />
+    </Container>
+  ))
+  .add("Left", () => (
+    <Container>
+      <Icons.Left />
+    </Container>
+  ))
+  .add("Lime", () => (
+    <Container>
+      <Icons.Lime />
+    </Container>
+  ))
+  .add("Lyft", () => (
+    <Container>
+      <Icons.Lyft />
+    </Container>
+  ))
+  .add("Map", () => (
+    <Container>
+      <Icons.Map />
+    </Container>
+  ))
+  .add("MapMarker", () => (
+    <Container>
+      <Icons.MapMarker />
+    </Container>
+  ))
+  .add("MapMarkerSolid", () => (
+    <Container>
+      <Icons.MapMarkerSolid />
+    </Container>
+  ))
+  .add("Max", () => (
+    <Container>
+      <Icons.Max />
+    </Container>
+  ))
+  .add("MaxCircle", () => (
+    <Container>
+      <Icons.MaxCircle />
+    </Container>
+  ))
+  .add("Micromobility", () => (
+    <Container>
+      <Icons.Micromobility />
+    </Container>
+  ))
+  .add("Parking", () => (
+    <Container>
+      <Icons.Parking />
+    </Container>
+  ))
+  .add("Phone", () => (
+    <Container>
+      <Icons.Phone />
+    </Container>
+  ))
+  .add("Plane", () => (
+    <Container>
+      <Icons.Plane />
+    </Container>
+  ))
+  .add("Razor", () => (
+    <Container>
+      <Icons.Razor />
+    </Container>
+  ))
+  .add("Reachnow", () => (
+    <Container>
+      <Icons.Reachnow />
+    </Container>
+  ))
+  .add("Refresh", () => (
+    <Container>
+      <Icons.Refresh />
+    </Container>
+  ))
+  .add("Right", () => (
+    <Container>
+      <Icons.Right />
+    </Container>
+  ))
+  .add("Schedule", () => (
+    <Container>
+      <Icons.Schedule />
+    </Container>
+  ))
+  .add("Shared", () => (
+    <Container>
+      <Icons.Shared />
+    </Container>
+  ))
+  .add("SlightLeft", () => (
+    <Container>
+      <Icons.SlightLeft />
+    </Container>
+  ))
+  .add("SlightRight", () => (
+    <Container>
+      <Icons.SlightRight />
+    </Container>
+  ))
+  .add("Snow", () => (
+    <Container>
+      <Icons.Snow />
+    </Container>
+  ))
+  .add("Spin", () => (
+    <Container>
+      <Icons.Spin />
+    </Container>
+  ))
+  .add("Star", () => (
+    <Container>
+      <Icons.Star />
+    </Container>
+  ))
+  .add("StopStation", () => (
+    <Container>
+      <Icons.StopStation />
+    </Container>
+  ))
+  .add("StopStationSolid", () => (
+    <Container>
+      <Icons.StopStationSolid />
+    </Container>
+  ))
+  .add("Straight", () => (
+    <Container>
+      <Icons.Straight />
+    </Container>
+  ))
+  .add("Streetcar", () => (
+    <Container>
+      <Icons.Streetcar />
+    </Container>
+  ))
+  .add("StreetcarCircle", () => (
+    <Container>
+      <Icons.StreetcarCircle />
+    </Container>
+  ))
+  .add("Transittracker", () => (
+    <Container>
+      <Icons.Transittracker />
+    </Container>
+  ))
+  .add("TransittrackerSolid", () => (
+    <Container>
+      <Icons.TransittrackerSolid />
+    </Container>
+  ))
+  .add("TripPlanner", () => (
+    <Container>
+      <Icons.TripPlanner />
+    </Container>
+  ))
+  .add("TripPlannerSolid", () => (
+    <Container>
+      <Icons.TripPlannerSolid />
+    </Container>
+  ))
+  .add("UTurnLeft", () => (
+    <Container>
+      <Icons.UTurnLeft />
+    </Container>
+  ))
+  .add("UTurnRight", () => (
+    <Container>
+      <Icons.UTurnRight />
+    </Container>
+  ))
+  .add("Uber", () => (
+    <Container>
+      <Icons.Uber />
+    </Container>
+  ))
+  .add("Walk", () => (
+    <Container>
+      <Icons.Walk />
+    </Container>
+  ))
+  .add("Wes", () => (
+    <Container>
+      <Icons.Wes />
+    </Container>
+  ))
+  .add("WesCircle", () => (
+    <Container>
+      <Icons.WesCircle />
+    </Container>
+  ))
+  .add("Zoom", () => (
+    <Container>
+      <Icons.Zoom />
+    </Container>
+  ))
+  .add("ZoomAngle", () => (
+    <Container>
+      <Icons.ZoomAngle />
+    </Container>
+  ));
