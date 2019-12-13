@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Base Map Component",
   "author": "@binh-dam-ibigroup",
-  "homepage": "https://github.com/trimet-sandbox/otp-ui/#readme",
+  "homepage": "https://github.com/opentripplanner/otp-ui/#readme",
   "license": "MIT",
   "main": "index.js",
   "module": "src/index.js",
