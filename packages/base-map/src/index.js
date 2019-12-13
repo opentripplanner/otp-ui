@@ -1,9 +1,6 @@
-/* eslint-disable func-names */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/no-string-refs */
 
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable object-shorthand */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { LayersControl, Map, MapLayer, Popup, TileLayer } from "react-leaflet";
@@ -11,57 +8,56 @@ import L from "leaflet";
 
 // eslint-disable-next-line func-names
 L.Evented.addInitHook(function() {
-  if (this) this._singleClickTimeout = null;
-  this.on("click", this._scheduleSingleClick, this);
-  this.on("dblclick dragstart zoomstart", this._cancelSingleClick, this);
+  if (this) this.singleClickTimeout = null;
+  this.on("click", this.scheduleSingleClick, this);
+  this.on("dblclick dragstart zoomstart", this.cancelSingleClick, this);
 });
 
 L.Evented.include({
-  _cancelSingleClick: function() {
+  cancelSingleClick() {
     // This timeout is key to workaround an issue where double-click events
     // are fired in this order on some touch browsers: ['click', 'dblclick', 'click']
     // instead of ['click', 'click', 'dblclick']
-    setTimeout(this._clearSingleClickTimeout.bind(this), 0);
+    setTimeout(this.clearSingleClickTimeout.bind(this), 0);
   },
 
-  _scheduleSingleClick: function(e) {
-    this._clearSingleClickTimeout();
+  scheduleSingleClick(e) {
+    this.clearSingleClickTimeout();
 
-    this._singleClickTimeout = setTimeout(
-      this._fireSingleClick.bind(this, e),
+    this.singleClickTimeout = setTimeout(
+      this.fireSingleClick.bind(this, e),
       this.options.singleClickTimeout || 500
     );
   },
 
-  _fireSingleClick: function(e) {
+  fireSingleClick(e) {
+    // eslint-disable-next-line no-underscore-dangle
     if (!e.originalEvent._stopped) {
       this.fire("singleclick", L.Util.extend(e, { type: "singleclick" }));
     }
   },
 
-  _clearSingleClickTimeout: function() {
-    if (this._singleClickTimeout !== null) {
-      clearTimeout(this._singleClickTimeout);
-      this._singleClickTimeout = null;
+  clearSingleClickTimeout() {
+    if (this.singleClickTimeout !== null) {
+      clearTimeout(this.singleClickTimeout);
+      this.singleClickTimeout = null;
     }
   }
 });
 
 class BaseMap extends Component {
-  /* React Lifecycle methods */
-
   componentDidMount() {
     const lmap = this.refs.map.leafletElement;
     lmap.options.singleClickTimeout = 250;
     lmap.on("singleclick", e => {
-      this._onLeftClick(e);
+      this.onLeftClick(e);
     });
   }
 
   componentDidUpdate() {}
+
   // remove custom overlays on unmount
   // TODO: Is this needed? It may have something to do with mobile vs desktop views
-
   componentWillUnmount() {
     const lmap = this.refs.map.leafletElement;
     lmap.eachLayer(layer => {
@@ -69,13 +65,7 @@ class BaseMap extends Component {
     });
   }
 
-  /* Internal Methods */
-
-  _onClickTo = () => this._setLocationFromPopup("to");
-
-  _onClickFrom = () => this._setLocationFromPopup("from");
-
-  _onLeftClick = e => {
+  onLeftClick = e => {
     const { onClick } = this.props;
     if (typeof onClick === "function") onClick(e);
   };
@@ -113,10 +103,10 @@ class BaseMap extends Component {
         ref="map"
         className="map"
         center={center}
-        // onClick={this._onLeftClick}
-        // Note: Map-click is handled via single-click plugin, set up in componentDidMount()
         zoom={mapConfig.initZoom || 13}
         maxZoom={mapConfig.maxZoom}
+        // onClick={this.onLeftClick}
+        // Note: Map-click is handled via single-click plugin, set up in componentDidMount()
         onOverlayAdd={onOverlayAdded}
         onOverlayRemove={onOverlayRemoved}
         onViewportChanged={onViewportChanged}
@@ -165,7 +155,7 @@ class BaseMap extends Component {
         {/* Add the fixed, i.e. non-user-controllable, overlays (e.g., itinerary overlay) */}
         {fixedOverlays}
 
-        {/* Add the location selection popup, if visible */}
+        {/* Add the location selection popup and content, if both are set. */}
         {popupLocation && popupContent && (
           <Popup position={popupLocation} onClose={onPopupClosed}>
             {popupContent}
@@ -183,7 +173,7 @@ BaseMap.propTypes = {
     PropTypes.arrayOf(PropTypes.instanceOf(MapLayer))
   ),
   /**
-   * The configuration properties for the map. See otp-react-redux for details.
+   * The configuration properties for the map.
    */
   mapConfig: PropTypes.shape({
     baseLayers: PropTypes.arrayOf(

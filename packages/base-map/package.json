@@ -17,12 +17,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/trimet-sandbox/otp-ui.git"
+    "url": "git+https://github.com/opentripplanner/otp-ui.git"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
-    "url": "https://github.com/TriMetPDX/otp-ui/issues"
+    "url": "https://github.com/opentripplanner/otp-ui/issues"
   }
 }
