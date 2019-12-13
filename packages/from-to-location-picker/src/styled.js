@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const LocationPickerSpan = styled.span`
   :first-of-type {
-    padding-left: 0;
     border-left: none;
   }
 `;
@@ -20,6 +19,7 @@ export const Button = styled.button`
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  padding-left: 0.2em;
 
   :hover {
     text-decoration: underline;
