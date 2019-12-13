@@ -5,7 +5,6 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "0.0.1",
     "@opentripplanner/location-icon": "0.0.1",
     "leaflet": "^1.6.0",
     "react-leaflet": "^2.6.0"
