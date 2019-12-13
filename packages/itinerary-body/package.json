@@ -1,0 +1,31 @@
+{
+  "name": "@opentripplanner/itinerary-body",
+  "version": "0.0.1",
+  "description": "A component for displaying an itinerary body of a trip planning result",
+  "keywords": [
+    "otp",
+    "itinerary"
+  ],
+  "author": "Evan Siroky",
+  "homepage": "https://github.com/TriMetPDX/otp-ui#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TriMetPDX/otp-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TriMetPDX/otp-ui/issues"
+  },
+  "dependencies": {
+    "@opentripplanner/core-utils": "0.0.1",
+    "@opentripplanner/icons": "0.0.1",
+    "currency-formatter": "^1.5.5",
+    "moment": "^2.24.0",
+    "velocity-react": "^1.4.3"
+  }
+}
