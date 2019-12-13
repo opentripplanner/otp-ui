@@ -1,0 +1,28 @@
+{
+  "name": "@opentripplanner/base-map",
+  "version": "0.0.1",
+  "description": "Base Map Component",
+  "author": "@binh-dam-ibigroup",
+  "homepage": "https://github.com/trimet-sandbox/otp-ui/#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "module": "src/index.js",
+  "private": false,
+  "dependencies": {
+    "leaflet": "^1.6.0",
+    "react-leaflet": "^2.6.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trimet-sandbox/otp-ui.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/TriMetPDX/otp-ui/issues"
+  }
+}
