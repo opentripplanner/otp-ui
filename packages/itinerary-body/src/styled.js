@@ -155,8 +155,8 @@ export const AccessBadge = styled.div.attrs(props => ({
   background-color: ${props => toModeColor(props.mode, props.routeColor)};
   border: 2px solid #bbb;
   text-align: center;
-  min-width: 25px;
-  min-height: 25px;
+  width: 25px;
+  height: 25px;
   font-size: 1.2em;
   border-radius: 50%;
   display: flex;
@@ -164,6 +164,10 @@ export const AccessBadge = styled.div.attrs(props => ({
   justify-content: center;
   padding-left: 1px;
   /* Add in border for dark mode */
+`;
+
+export const Destination = styled.div`
+  text-align: center;
 `;
 
 // export const ModeIcon = styled(BaseModeIcon).attrs(props => ({
@@ -211,6 +215,7 @@ export const StopIdSpan = styled.span`
 export const MapButton = styled(ClearButton)`
   padding: 3px 10px 3px 10px;
   border: 0;
+  margin-top: -15px;
   width: 35px;
   height: 35px;
 `;

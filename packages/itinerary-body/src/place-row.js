@@ -5,7 +5,8 @@ import { formatTime } from "@opentripplanner/core-utils/lib/time";
 import {
   getPlaceName,
   getOperatorFromConfig
-} from "@opentripplanner/core-utils/lib//itinerary";
+} from "@opentripplanner/core-utils/lib/itinerary";
+import LocationIcon from "@opentripplanner/location-icon";
 
 import * as Styled from "./styled";
 import AccessLegBody from "./AccessLegBody";
@@ -18,8 +19,8 @@ import RouteBadge from "./RouteBadge";
 */
 const PlaceRow = ({
   config,
-  customIcons,
   leg,
+  LegIcon,
   legIndex,
   place,
   time,
@@ -62,13 +63,20 @@ const PlaceRow = ({
             )}
             {!interline && leg && !leg.transitLeg && (
               <Styled.AccessBadge mode={leg.mode} routeColor={leg.routeColor}>
-                <Styled.ModeIcon
-                  mode={leg.mode}
-                  title={`Travel by ${leg.mode}`}
-                />
+                {
+                  <LegIcon
+                    leg={leg}
+                    title={`Travel by ${leg.mode}`}
+                    width="66%"
+                  />
+                }
               </Styled.AccessBadge>
             )}
-            {/* TODO: If there is no leg then this is the destination, use destination icon */}
+            {!leg && (
+              <Styled.Destination>
+                <LocationIcon size={25} type="to" />
+              </Styled.Destination>
+            )}
           </Styled.LineBadgeContainer>
         </Styled.LegLine>
       </Styled.LineColumn>
@@ -129,9 +137,9 @@ const PlaceRow = ({
               /* This is an access (e.g. walk/bike/etc.) leg */
               <AccessLegBody
                 config={config}
-                customIcons={customIcons}
                 followsTransit={followsTransit}
                 leg={leg}
+                LegIcon={LegIcon}
                 legIndex={legIndex}
                 routingType={routingType}
                 setActiveLeg={setActiveLeg}
@@ -158,8 +166,6 @@ PlaceRow.propTypes = {
       timeFormat: PropTypes.string.isRequired
     }).isRequired
   }).isRequired,
-  /** May be used to override icons included in this library */
-  customIcons: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   /** Contains details about leg object that is being displayed */
   leg: PropTypes.shape({
     interlineWithPreviousLeg: PropTypes.bool.isRequired,
@@ -172,7 +178,9 @@ PlaceRow.propTypes = {
     rentedCar: PropTypes.bool.isRequired,
     rentedBike: PropTypes.bool.isRequired,
     agencyId: PropTypes.string
-  }).isRequired,
+  }),
+  /** A component class used to render the icon for a leg */
+  LegIcon: PropTypes.elementType.isRequired,
   /** The index value of this specific leg within the itinerary */
   legIndex: PropTypes.number.isRequired,
   /** Contains details about the place being featured in this block */
@@ -194,6 +202,10 @@ PlaceRow.propTypes = {
   frameLeg: PropTypes.func.isRequired,
   /** Converts a route's ID to its accepted badge abbreviation */
   toRouteAbbreviation: PropTypes.func.isRequired
+};
+
+PlaceRow.defaultProps = {
+  leg: null
 };
 
 export default PlaceRow;

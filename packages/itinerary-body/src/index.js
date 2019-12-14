@@ -7,7 +7,9 @@ import PlaceRow from "./place-row";
 import * as Styled from "./styled";
 
 const ItineraryBody = ({
+  config,
   itinerary,
+  LegIcon,
   setActiveLeg,
   timeOptions,
   /*
@@ -17,9 +19,7 @@ const ItineraryBody = ({
   companies,
   routingType,
   frameLeg,
-  toRouteAbbreviation,
-  config,
-  customIcons // ,
+  toRouteAbbreviation // ,
   // showTripDetails,
   // showTripTools
 }) => {
@@ -39,6 +39,7 @@ const ItineraryBody = ({
         place={leg.from}
         time={leg.startTime}
         leg={leg}
+        LegIcon={LegIcon}
         legIndex={i}
         followsTransit={followsTransit}
         timeOptions={timeOptions}
@@ -47,23 +48,23 @@ const ItineraryBody = ({
         frameLeg={frameLeg}
         toRouteAbbreviation={toRouteAbbreviation}
         config={config}
-        customIcons={customIcons}
       />
     );
     // TODO: reconcile special props for lastrow
     // If this is the last leg, create a special PlaceRow for the destination only
-    // if (i === itinerary.legs.length - 1) {
-    //   rows.push(
-    //     <PlaceRow
-    //       place={leg.to}
-    //       time={leg.endTime}
-    //       timeOptions={timeOptions}
-    //       setActiveLeg={setActiveLeg}
-    //       // eslint-disable-next-line react/no-array-index-key
-    //       key={i + 1}
-    //     />
-    //   );
-    // }
+    if (i === itinerary.legs.length - 1) {
+      rows.push(
+        <PlaceRow
+          config={config}
+          place={leg.to}
+          time={leg.endTime}
+          timeOptions={timeOptions}
+          setActiveLeg={setActiveLeg}
+          // eslint-disable-next-line react/no-array-index-key
+          key={i + 1}
+        />
+      );
+    }
     if (leg.transitLeg) followsTransit = true;
   });
   return (
@@ -87,6 +88,8 @@ ItineraryBody.propTypes = {
       }).isRequired
     ).isRequired
   }).isRequired,
+  /** A component class that is used to render icons for legs of an itinerary */
+  LegIcon: PropTypes.elementType.isRequired,
   /** TODO: Routing Type is usually 'ITINERARY' but we should get more details on what this does */
   routingType: PropTypes.string,
   // New Props below
@@ -96,8 +99,6 @@ ItineraryBody.propTypes = {
   }).isRequired,
   /** Contains the preferred format string for time display -- may be able to get this from config */
   timeOptions: PropTypes.shape({}).isRequired,
-  /** May be used to override icons included in this library */
-  customIcons: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   /** Sets the active leg */
   setActiveLeg: PropTypes.func.isRequired,
   /** Frames a specific leg in an associated map view */

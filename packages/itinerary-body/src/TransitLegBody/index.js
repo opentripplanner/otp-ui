@@ -1,12 +1,15 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { VelocityTransitionGroup } from "velocity-react";
 import moment from "moment";
+import {
+  customIconsType,
+  legType
+} from "@opentripplanner/core-utils/lib/types";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import { VelocityTransitionGroup } from "velocity-react";
 
 import { formatDuration } from "@opentripplanner/core-utils/lib/time";
 
 import ViewTripButton from "./view-trip-button";
-import { customIconsType, legType } from "../types";
 
 function getIcon() {
   // TODO have this be a prop?

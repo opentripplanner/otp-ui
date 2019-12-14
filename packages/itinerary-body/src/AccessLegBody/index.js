@@ -1,30 +1,30 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { VelocityTransitionGroup } from "velocity-react";
 import currencyFormatter from "currency-formatter";
-
-import LegDiagramPreview from "../leg-diagram-preview";
-
-import { distanceString } from "../../../util/distance";
 import {
   getLegModeLabel,
-  getLegIcon,
   getPlaceName,
   getStepDirection,
   getStepStreetName
-} from "../../../util/itinerary";
-import { formatDuration, formatTime } from "../../../util/time";
-import { isMobile } from "../../../util/ui";
-
-import DirectionIcon from "../../icons/direction-icon";
-
+} from "@opentripplanner/core-utils/lib/itinerary";
+import {
+  formatDuration,
+  formatTime
+} from "@opentripplanner/core-utils/lib/time";
 import {
   configType,
-  customIconsType,
   legType,
   stepsType,
   timeOptionsType
-} from "../types";
+} from "@opentripplanner/core-utils/lib/types";
+import { isMobile } from "@opentripplanner/core-utils/lib/ui";
+import { humainzeDistanceString } from "@opentripplanner/humanize-distance";
+import { DirectionIcon } from "@opentripplanner/icons/lib/directions";
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { CaretDown, CaretUp } from "styled-icons/fa-solid";
+import { VelocityTransitionGroup } from "velocity-react";
+
+import LegDiagramPreview from "./leg-diagram-preview";
+import * as Styled from "./styled";
 
 /**
  * Component for access (e.g. walk/bike/etc.) leg in narrative itinerary. This
@@ -37,7 +37,7 @@ export default class AccessLegBody extends Component {
     this.state = { expanded: false };
   }
 
-  _onStepsHeaderClick = () => {
+  onStepsHeaderClick = () => {
     const { expanded } = this.state;
     this.setState({ expanded: !expanded });
   };
@@ -50,9 +50,9 @@ export default class AccessLegBody extends Component {
   render() {
     const {
       config,
-      customIcons,
       followsTransit,
       leg,
+      LegIcon,
       routingType,
       timeOptions
     } = this.props;
@@ -66,30 +66,27 @@ export default class AccessLegBody extends Component {
           onSummaryClick={this.onSummaryClick}
           timeOptions={timeOptions}
           followsTransit={followsTransit}
-          customIcons={customIcons}
         />
       );
     }
 
     return (
-      <div className="leg-body">
+      <Styled.LegBody>
         <AccessLegSummary
           config={config}
           leg={leg}
+          LegIcon={LegIcon}
           onSummaryClick={this.onSummaryClick}
-          customIcons={customIcons}
         />
-
-        {/* eslint-disable-next-line */}
-        <div onClick={this._onStepsHeaderClick} className="steps-header">
+        <Styled.StepsHeader onClick={this.onStepsHeaderClick}>
           {formatDuration(leg.duration)}
           {leg.steps && (
             <span>
               {" "}
-              <i className={`fa fa-caret-${expanded ? "up" : "down"}`} />
+              {expanded ? <CaretUp size={15} /> : <CaretDown size={15} />}
             </span>
           )}
-        </div>
+        </Styled.StepsHeader>
 
         {routingType === "ITINERARY" && <LegDiagramPreview leg={leg} />}
         <VelocityTransitionGroup
@@ -98,16 +95,16 @@ export default class AccessLegBody extends Component {
         >
           {expanded && <AccessLegSteps steps={leg.steps} />}
         </VelocityTransitionGroup>
-      </div>
+      </Styled.LegBody>
     );
   }
 }
 
 AccessLegBody.propTypes = {
   config: configType.isRequired,
-  customIcons: customIconsType.isRequired,
   followsTransit: PropTypes.bool,
   leg: legType.isRequired,
+  LegIcon: PropTypes.elementType.isRequired,
   legIndex: PropTypes.number.isRequired,
   routingType: PropTypes.string.isRequired,
   setActiveLeg: PropTypes.func.isRequired,
@@ -122,7 +119,6 @@ function TNCLeg({
   config,
   LYFT_CLIENT_ID,
   UBER_CLIENT_ID,
-  customIcons,
   followsTransit,
   leg,
   onSummaryClick,
@@ -159,7 +155,6 @@ function TNCLeg({
           config={config}
           leg={leg}
           onSummaryClick={onSummaryClick}
-          customIcons={customIcons}
         />
 
         {/* The "Book Ride" button */}
@@ -267,7 +262,6 @@ TNCLeg.propTypes = {
   config: configType.isRequired,
   LYFT_CLIENT_ID: PropTypes.string,
   UBER_CLIENT_ID: PropTypes.string,
-  customIcons: customIconsType.isRequired,
   followsTransit: PropTypes.bool.isRequired,
   leg: legType.isRequired,
   onSummaryClick: PropTypes.func.isRequired,
@@ -279,60 +273,58 @@ TNCLeg.defaultProps = {
   UBER_CLIENT_ID: ""
 };
 
-function AccessLegSummary({ config, customIcons, leg, onSummaryClick }) {
+function AccessLegSummary({ config, leg, /* LegIcon, */ onSummaryClick }) {
   return (
-    /* eslint-disable-next-line */
-    <div className="summary leg-description" onClick={onSummaryClick}>
-      {/* Mode-specific icon */}
+    <Styled.AccessLegClickable onClick={onSummaryClick}>
+      {/* Mode-specific icon
       <div>
-        <div className="icon">{getLegIcon(leg, customIcons)}</div>
-      </div>
+        <Styled.LegIconContainer>
+          <LegIcon leg={leg} />
+        </Styled.LegIconContainer>
+      </div> */}
 
       {/* Leg description, e.g. "Walk 0.5 mi to..." */}
       <div>
         {getLegModeLabel(leg)}{" "}
-        {leg.distance > 0 && <span> {distanceString(leg.distance)}</span>}
+        {leg.distance > 0 && (
+          <span> {humainzeDistanceString(leg.distance)}</span>
+        )}
         {` to ${getPlaceName(leg.to, config.companies)}`}
       </div>
-    </div>
+    </Styled.AccessLegClickable>
   );
 }
 
 AccessLegSummary.propTypes = {
   config: configType.isRequired,
-  customIcons: customIconsType.isRequired,
   leg: legType.isRequired,
+  // LegIcon: PropTypes.elementType.isRequired,
   onSummaryClick: PropTypes.func.isRequired
 };
 
 function AccessLegSteps({ steps }) {
   return (
-    <div className="steps">
+    <Styled.Steps>
       {steps.map((step, k) => {
         return (
-          <div className="step-row" key={k}>
-            <div
-              style={{
-                width: 16,
-                height: 16,
-                float: "left",
-                fill: "#999999"
-              }}
-            >
+          <Styled.StepRow key={k}>
+            <Styled.StepIconContainer>
               <DirectionIcon relativeDirection={step.relativeDirection} />
-            </div>
+            </Styled.StepIconContainer>
 
-            <div style={{ marginLeft: 24, lineHeight: 1.25, paddingTop: 1 }}>
+            <Styled.StepDescriptionContainer>
               {getStepDirection(step)}
               <span>
                 {step.relativeDirection === "ELEVATOR" ? " to " : " on "}
               </span>
-              <span style={{ fontWeight: 500 }}>{getStepStreetName(step)}</span>
-            </div>
-          </div>
+              <Styled.StepStreetName>
+                {getStepStreetName(step)}
+              </Styled.StepStreetName>
+            </Styled.StepDescriptionContainer>
+          </Styled.StepRow>
         );
       })}
-    </div>
+    </Styled.Steps>
   );
 }
 
