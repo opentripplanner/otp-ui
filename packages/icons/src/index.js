@@ -2,6 +2,8 @@ import * as companies from "./companies";
 import * as directions from "./directions";
 import * as generic from "./generic";
 import * as trimet from "./trimet";
+import TriMetLegIcon from "./trimet-leg-icon";
+import TriMetModeIcon from "./trimet-mode-icon";
 
 const {
   Bird,
@@ -144,6 +146,8 @@ export {
   StreetcarCircle,
   Transittracker,
   TransittrackerSolid,
+  TriMetLegIcon,
+  TriMetModeIcon,
   TripPlanner,
   TripPlannerSolid,
   UTurnLeft,

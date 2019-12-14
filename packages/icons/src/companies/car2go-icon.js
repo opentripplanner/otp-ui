@@ -1,7 +1,14 @@
 import React from "react";
 
-const Car2goIcon = () => (
-  <svg version="1.1" viewBox="0 0 1024 672" height="100%" width="100%">
+const Car2goIcon = ({ title, ...props }) => (
+  <svg
+    version="1.1"
+    viewBox="0 0 1024 672"
+    height="100%"
+    width="100%"
+    {...props}
+  >
+    {title ? <title>{title}</title> : null}
     <path
       id="path7755"
       d="M92.5,0C45.8,0,0,45.8,0,92.5v124.3c0,46.7,45.8,92.5,92.5,92.5h216.8v-60.6H92.5c-30.6,0-31.8-28.6-31.9-31.9V92.5c0-3.2,1.2-31.9,31.9-31.9h216.8V0H92.5z"

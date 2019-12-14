@@ -1,13 +1,15 @@
 import React from "react";
 
-const LimeIcon = () => (
+const LimeIcon = ({ title, ...props }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="100%"
     height="100%"
     viewBox="0 0 700 700"
     version="1.1"
+    {...props}
   >
+    {title ? <title>{title}</title> : null}
     <g id="GreenText_Clear-Bg_Vector_H" stroke="none" strokeWidth="1">
       <g id="Page-1" transform="translate(16.000000, 16.000000)">
         <path d="M335.490942,671.40948 C150.213309,671.40948 0,521.09988 0,335.70348 C0,150.29028 150.213309,-0.00252 335.490942,-0.00252 C520.776969,-0.00252 670.981883,150.29028 670.981883,335.70348 C670.981883,521.09988 520.776969,671.40948 335.490942,671.40948" />

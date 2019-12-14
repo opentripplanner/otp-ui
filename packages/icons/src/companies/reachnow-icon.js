@@ -1,7 +1,8 @@
 import React from "react";
 
-const ReachNowIcon = () => (
-  <svg viewBox="0 0 83.7 85.1" height="100%" width="100%">
+const ReachNowIcon = ({ title, ...props }) => (
+  <svg viewBox="0 0 83.7 85.1" height="100%" width="100%" {...props}>
+    {title ? <title>{title}</title> : null}
     <path
       d="M42.9,331l-4.5-15a3,3,0,0,1,.6-2.6l18.9-21.2a2.43,2.43,0,0,1,2.4-.8l10.2,2,2.9-15.9H32.6a10.82,10.82,0,0,0-10.7,10.9v49.87Z"
       transform="translate(-21.9 -277.5)"
