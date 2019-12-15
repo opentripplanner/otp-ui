@@ -43,6 +43,16 @@ React component library, which can be used to build trip planner webapps. See ht
 - `lerna diff` - Show specifically what files have cause the packages to change.
 - `lerna create <packageName>` - Creates new package and walks through setting up package.json
 
+## Lerna Publish to NPM
+
+Some commands you might need to execute for npm:
+
+```bash
+ npm login
+ npm config set access public
+ npx lerna publish
+```
+
 ## Linking
 
 When linking inside of the Monorepo, everything works as expected. If you are trying to consume packages from this Monorepo _in a different application_ locally, using `npm link` or `yarn link` [does not work as expected](https://github.com/yarnpkg/yarn/issues/5538). However, we have a workaround for the time being.

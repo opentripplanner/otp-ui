@@ -1,32 +1,16 @@
 {
-  "name": "sample",
+  "name": "@opentripplanner/pulse-dot",
   "version": "0.0.1",
-  "description": "Sample Component",
-  "keywords": [
-    "sample",
-    "component"
-  ],
-  "author": "c-harper <charper@mapyours.com>",
-  "homepage": "https://github.com/TriMetPDX/otp-ui#readme",
+  "description": "A pulsating dot icon",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "repository": "https://github.com/opentripplanner/otp-ui.git",
+  "author": "Cole Harper <charper@mapyours.com>",
   "license": "MIT",
-  "main": "lib/sample.js",
-  "module": "src/sample.js",
+  "private": false,
   "peerDependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "styled-components": "^4.4.1"
-  },
-  "publishConfig": {
-    "registry": "https://registry.yarnpkg.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TriMetPDX/otp-ui.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
-  },
-  "bugs": {
-    "url": "https://github.com/TriMetPDX/otp-ui/issues"
+    "styled-components": "^4.3.2"
   }
 }

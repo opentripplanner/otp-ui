@@ -1,11 +1,8 @@
-# `sample`
-
-> TODO: description
-
 ## Usage
 
 ```
-const sample = require('sample');
-
-// TODO: DEMONSTRATE API
+    <PulseDot>
+      <PulseCircle inputColor="red"></PulseCircle>
+      <PulseRing inputColor="pink"></PulseRing>
+    </PulseDot>
 ```
