@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/pulse-dot",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A pulsating dot icon",
   "main": "lib/index.js",
   "module": "lib/index.js",

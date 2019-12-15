@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/humanize-distance",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Pretty print a string for a certain distance",
   "main": "lib/index.js",
   "module": "lib/index.js",
