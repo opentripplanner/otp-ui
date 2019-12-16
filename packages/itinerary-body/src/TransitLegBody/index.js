@@ -1,26 +1,20 @@
 import moment from "moment";
-import {
-  customIconsType,
-  legType
-} from "@opentripplanner/core-utils/lib/types";
+import { legType } from "@opentripplanner/core-utils/lib/types";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
+import { ExclamationTriangle } from "styled-icons/fa-solid";
 import { VelocityTransitionGroup } from "velocity-react";
 
 import { formatDuration } from "@opentripplanner/core-utils/lib/time";
 
+import * as Styled from "./styled";
+import * as StyledLegs from "../styled-legs";
 import ViewTripButton from "./view-trip-button";
-
-function getIcon() {
-  // TODO have this be a prop?
-}
 
 // TODO use pluralize that for internationalization (and complex plurals, i.e., not just adding 's')
 function pluralize(str, list) {
   return `${str}${list.length > 1 ? "s" : ""}`;
 }
-
-// TODO: support multi-route legs for profile routing
 
 class TransitLegBody extends Component {
   constructor(props) {
@@ -48,10 +42,10 @@ class TransitLegBody extends Component {
 
   render() {
     const {
-      customIcons,
       leg,
       longDateFormat,
       operator,
+      setViewedTrip,
       timeFormat
     } = this.props;
     const {
@@ -59,7 +53,6 @@ class TransitLegBody extends Component {
       agencyName,
       agencyUrl,
       alerts,
-      mode,
       routeShortName,
       routeLongName,
       headsign
@@ -72,21 +65,18 @@ class TransitLegBody extends Component {
       operator && operator.logo ? operator.logo : agencyBrandingUrl;
 
     // get the iconKey for the leg's icon
-    let iconKey = mode;
-    if (typeof customIcons.customIconForLeg === "function") {
-      const customIcon = customIcons.customIconForLeg(leg);
-      if (customIcon) iconKey = customIcon;
-    }
+    // let iconKey = mode;
+    // if (typeof customIcons.customIconForLeg === "function") {
+    //   const customIcon = customIcons.customIconForLeg(leg);
+    //   if (customIcon) iconKey = customIcon;
+    // }
 
     return (
-      <div className="leg-body">
+      <StyledLegs.LegBody>
         {/* The Route Icon/Name Bar; clickable to set as active leg */}
         {/* eslint-disable-next-line */}
-        <div className="summary" onClick={this.onSummaryClick}>
+        <StyledLegs.LegClickable onClick={this.onSummaryClick}>
           <div className="route-name leg-description">
-            <div>
-              <div className="icon">{getIcon(iconKey, customIcons)}</div>
-            </div>
             {routeShortName && (
               <div>
                 <span className="route-short-name">{routeShortName}</span>
@@ -102,11 +92,11 @@ class TransitLegBody extends Component {
               )}
             </div>
           </div>
-        </div>
+        </StyledLegs.LegClickable>
 
         {/* Agency information */}
         {
-          <div className="agency-info">
+          <Styled.AgencyInfo>
             Service operated by{" "}
             <a href={agencyUrl} rel="noopener noreferrer" target="_blank">
               {agencyName}
@@ -119,19 +109,16 @@ class TransitLegBody extends Component {
                 />
               )}
             </a>
-          </div>
+          </Styled.AgencyInfo>
         }
 
         {/* Alerts toggle */}
         {alerts && alerts.length > 0 && (
-          <div
-            nClick={this.onToggleAlertsClick}
-            className="transit-alerts-toggle"
-          >
-            <i className="fa fa-exclamation-triangle" /> {alerts.length}{" "}
+          <Styled.TransitAlertToggle onClick={this.onToggleAlertsClick}>
+            <ExclamationTriangle size={15} /> {alerts.length}{" "}
             {pluralize("alert", alerts)}{" "}
-            <i className={`fa fa-caret-${alertsExpanded ? "up" : "down"}`} />
-          </div>
+            <StyledLegs.CaretToggle expaned={alertsExpanded} />
+          </Styled.TransitAlertToggle>
         )}
 
         {/* The Alerts body, if visible */}
@@ -159,9 +146,7 @@ class TransitLegBody extends Component {
                   {" / "}
                   {leg.intermediateStops.length + 1}
                   {" stops "}
-                  <i
-                    className={`fa fa-caret-${stopsExpanded ? "up" : "down"}`}
-                  />
+                  <StyledLegs.CaretToggle expanded={stopsExpanded} />
                 </span>
               )}
 
@@ -169,6 +154,7 @@ class TransitLegBody extends Component {
               <ViewTripButton
                 tripId={leg.tripId}
                 fromIndex={leg.from.stopIndex}
+                setViewedTrip={setViewedTrip}
                 toIndex={leg.to.stopIndex}
               />
             </div>
@@ -188,33 +174,35 @@ class TransitLegBody extends Component {
             )}
           </div>
         )}
-      </div>
+      </StyledLegs.LegBody>
     );
   }
 }
 
 TransitLegBody.propTypes = {
-  customIcons: customIconsType.isRequired,
   leg: legType.isRequired,
   legIndex: PropTypes.number.isRequired,
   longDateFormat: PropTypes.string.isRequired,
   operator: PropTypes.string.isRequired,
   setActiveLeg: PropTypes.func.isRequired,
+  setViewedTrip: PropTypes.func.isRequired,
   timeFormat: PropTypes.string.isRequired
 };
 
+export default TransitLegBody;
+
 function IntermediateStops({ stops }) {
   return (
-    <div className="intermediate-stops">
+    <Styled.IntermediateStops>
       {stops.map((stop, k) => {
         return (
-          <div className="stop-row" key={k}>
-            <div className="stop-marker">&bull;</div>
-            <div className="stop-name">{stop.name}</div>
-          </div>
+          <Styled.StopRow key={k}>
+            <Styled.StopMarker>&bull;</Styled.StopMarker>
+            <Styled.StopName>{stop.name}</Styled.StopName>
+          </Styled.StopRow>
         );
       })}
-    </div>
+    </Styled.IntermediateStops>
   );
 }
 
@@ -224,7 +212,7 @@ IntermediateStops.propTypes = {
 
 function AlertsBody({ alerts, longDateFormat, timeFormat }) {
   return (
-    <div className="transit-alerts">
+    <Styled.TransitAlerts>
       {alerts
         .sort((a, b) => b.effectiveStartDate - a.effectiveStartDate)
         .map((alert, i) => {
@@ -242,19 +230,25 @@ function AlertsBody({ alerts, longDateFormat, timeFormat }) {
           );
           const effectiveDateString = `Effective as of ${dateTimeString}`;
           return (
-            <div key={i} className="transit-alert">
-              <div className="alert-icon">
-                <i className="fa fa-exclamation-triangle" />
-              </div>
+            <Styled.TransitAlert key={i}>
+              <Styled.TransitAlertIconContainer>
+                <ExclamationTriangle size={18} />
+              </Styled.TransitAlertIconContainer>
               {alert.alertHeaderText ? (
-                <div className="alert-header">{alert.alertHeaderText}</div>
+                <Styled.TransitAlertHeader>
+                  {alert.alertHeaderText}
+                </Styled.TransitAlertHeader>
               ) : null}
-              <div className="alert-body">{alert.alertDescriptionText}</div>
-              <div className="effective-date">{effectiveDateString}</div>
-            </div>
+              <Styled.TransitAlertBody>
+                {alert.alertDescriptionText}
+              </Styled.TransitAlertBody>
+              <Styled.TransitAlertEffectiveDate>
+                {effectiveDateString}
+              </Styled.TransitAlertEffectiveDate>
+            </Styled.TransitAlert>
           );
         })}
-    </div>
+    </Styled.TransitAlerts>
   );
 }
 

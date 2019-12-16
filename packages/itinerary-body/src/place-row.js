@@ -2,16 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { formatTime } from "@opentripplanner/core-utils/lib/time";
-import {
-  getPlaceName,
-  getOperatorFromConfig
-} from "@opentripplanner/core-utils/lib/itinerary";
+import { getPlaceName } from "@opentripplanner/core-utils/lib/itinerary";
 import LocationIcon from "@opentripplanner/location-icon";
 
 import * as Styled from "./styled";
 import AccessLegBody from "./AccessLegBody";
 import TransitLegBody from "./TransitLegBody";
 import RouteBadge from "./RouteBadge";
+
+/** Looks up an operator from the provided configuration */
+const getOperatorFromConfig = (id, config) =>
+  config.operators.find(operator => operator.id === id) || null;
 
 /*
   TODO: Wondering if it's possible for us to destructure the time
@@ -27,6 +28,7 @@ const PlaceRow = ({
   timeOptions,
   followsTransit,
   setActiveLeg,
+  setViewedTrip,
   routingType,
   frameLeg,
   toRouteAbbreviation
@@ -58,7 +60,7 @@ const PlaceRow = ({
                 abbreviation={toRouteAbbreviation(
                   parseInt(leg.route, 10) || leg.route
                 )}
-                name={leg.routeLongName}
+                name={leg.routeLongName || ""}
               />
             )}
             {!interline && leg && !leg.transitLeg && (
@@ -131,6 +133,7 @@ const PlaceRow = ({
                 operator={
                   leg.agencyId && getOperatorFromConfig(leg.agencyId, config)
                 }
+                setViewedTrip={setViewedTrip}
                 timeFormat={timeFormat}
               />
             ) : (
@@ -198,6 +201,8 @@ PlaceRow.propTypes = {
   setActiveLeg: PropTypes.func.isRequired,
   /** TODO: Routing Type is usually 'ITINERARY' but we should get more details on what this does */
   routingType: PropTypes.string.isRequired,
+  /** Fired when a user clicks on a view trip button of a transit leg */
+  setViewedTrip: PropTypes.func.isRequired,
   /** Frames a specific leg in an associated map view */
   frameLeg: PropTypes.func.isRequired,
   /** Converts a route's ID to its accepted badge abbreviation */

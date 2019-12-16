@@ -1,53 +1,7 @@
 import BaseMapIcon from "@opentripplanner/icons/lib/trimet/Map";
 import styled from "styled-components";
 
-export const toModeColor = (mode, routeColor) => {
-  switch (mode) {
-    case "WALK":
-      return `#e9e9e9`;
-    case "BICYCLE":
-    case "BICYCLE_RENT":
-      return `red`;
-    case "CAR":
-      return `grey`;
-    case "MICROMOBILITY":
-    case "MICROMOBILITY_RENT":
-      return `#f5a729`;
-    default:
-      return routeColor || "#084c8d";
-  }
-};
-
-export const toModeBorderColor = (mode, routeColor) => {
-  switch (mode) {
-    case "WALK":
-      return `#484848`;
-    case "BICYCLE":
-    case "BICYCLE_RENT":
-      return `red`;
-    case "CAR":
-      return `grey`;
-    case "MICROMOBILITY":
-    case "MICROMOBILITY_RENT":
-      return `#f5a729`;
-    default:
-      return routeColor || "#008ab0";
-  }
-};
-
-export const toModeBorder = (mode, routeColor) => {
-  switch (mode) {
-    case "WALK":
-    case "BICYCLE":
-    case "BICYCLE_RENT":
-    case "CAR":
-    case "MICROMOBILITY":
-    case "MICROMOBILITY_RENT":
-      return `dotted 4px ${toModeBorderColor(mode, routeColor)}`;
-    default:
-      return `solid 8px ${toModeBorderColor(mode, routeColor)}`;
-  }
-};
+import { toModeBorder, toModeColor } from "./util";
 
 export const ClearButton = styled.button`
   background: transparent;
@@ -113,7 +67,7 @@ export const LightBorderDiv = styled.div`
 export const DetailsColumn = styled(LightBorderDiv)`
   /* flexbox column -- remaining space */
   flex: 2 2 auto;
-  overflow: hidden;
+  /* overflow: hidden; this is commented out in order to show Intermediate Stop Markers */
 `;
 
 export const MapButtonColumn = styled(LightBorderDiv)`

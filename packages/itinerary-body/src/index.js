@@ -11,6 +11,7 @@ const ItineraryBody = ({
   itinerary,
   LegIcon,
   setActiveLeg,
+  setViewedTrip,
   timeOptions,
   /*
     this triggers a rerender but is not consumed by children
@@ -44,6 +45,7 @@ const ItineraryBody = ({
         followsTransit={followsTransit}
         timeOptions={timeOptions}
         setActiveLeg={setActiveLeg}
+        setViewedTrip={setViewedTrip}
         routingType={routingType}
         frameLeg={frameLeg}
         toRouteAbbreviation={toRouteAbbreviation}
@@ -60,6 +62,7 @@ const ItineraryBody = ({
           time={leg.endTime}
           timeOptions={timeOptions}
           setActiveLeg={setActiveLeg}
+          toRouteAbbreviation={toRouteAbbreviation}
           // eslint-disable-next-line react/no-array-index-key
           key={i + 1}
         />
@@ -101,6 +104,8 @@ ItineraryBody.propTypes = {
   timeOptions: PropTypes.shape({}).isRequired,
   /** Sets the active leg */
   setActiveLeg: PropTypes.func.isRequired,
+  /** Fired when a user clicks on a view trip button of a transit leg */
+  setViewedTrip: PropTypes.func.isRequired,
   /** Frames a specific leg in an associated map view */
   frameLeg: PropTypes.func.isRequired,
   /** Converts a route's ID to its accepted badge abbreviation */

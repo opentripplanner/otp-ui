@@ -20,11 +20,11 @@ import { humainzeDistanceString } from "@opentripplanner/humanize-distance";
 import { DirectionIcon } from "@opentripplanner/icons/lib/directions";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { CaretDown, CaretUp } from "styled-icons/fa-solid";
 import { VelocityTransitionGroup } from "velocity-react";
 
 import LegDiagramPreview from "./leg-diagram-preview";
 import * as Styled from "./styled";
+import * as StyledLegs from "../styled-legs";
 
 /**
  * Component for access (e.g. walk/bike/etc.) leg in narrative itinerary. This
@@ -71,7 +71,7 @@ export default class AccessLegBody extends Component {
     }
 
     return (
-      <Styled.LegBody>
+      <StyledLegs.LegBody>
         <AccessLegSummary
           config={config}
           leg={leg}
@@ -83,7 +83,7 @@ export default class AccessLegBody extends Component {
           {leg.steps && (
             <span>
               {" "}
-              {expanded ? <CaretUp size={15} /> : <CaretDown size={15} />}
+              <StyledLegs.CaretToggle expanded />
             </span>
           )}
         </Styled.StepsHeader>
@@ -95,7 +95,7 @@ export default class AccessLegBody extends Component {
         >
           {expanded && <AccessLegSteps steps={leg.steps} />}
         </VelocityTransitionGroup>
-      </Styled.LegBody>
+      </StyledLegs.LegBody>
     );
   }
 }
@@ -275,7 +275,7 @@ TNCLeg.defaultProps = {
 
 function AccessLegSummary({ config, leg, /* LegIcon, */ onSummaryClick }) {
   return (
-    <Styled.AccessLegClickable onClick={onSummaryClick}>
+    <StyledLegs.LegClickable onClick={onSummaryClick}>
       {/* Mode-specific icon
       <div>
         <Styled.LegIconContainer>
@@ -291,7 +291,7 @@ function AccessLegSummary({ config, leg, /* LegIcon, */ onSummaryClick }) {
         )}
         {` to ${getPlaceName(leg.to, config.companies)}`}
       </div>
-    </Styled.AccessLegClickable>
+    </StyledLegs.LegClickable>
   );
 }
 

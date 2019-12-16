@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+import * as Styled from "./styled";
+
 class ViewTripButton extends Component {
   onClick = () => {
     const { fromIndex, setViewedTrip, toIndex, tripId } = this.props;
@@ -9,9 +11,9 @@ class ViewTripButton extends Component {
 
   render() {
     return (
-      <button onClick={this.onClick} type="button">
+      <Styled.ViewTripButton onClick={this.onClick} type="button">
         Trip Viewer
-      </button>
+      </Styled.ViewTripButton>
     );
   }
 }

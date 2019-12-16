@@ -1,22 +1,6 @@
 import styled from "styled-components";
 
-export const TransparentButton = styled.button`
-  background: transparent;
-  color: inherit;
-  border: 0;
-  text-decoration: none;
-`;
-
-export const AccessLegClickable = styled(TransparentButton)`
-  cursor: pointer;
-  display: table;
-`;
-
-export const LegBody = styled.div`
-  color: #999;
-  font-size: 13px;
-  padding: 12px 0 18px 4px;
-`;
+import * as StyledLegs from "../styled-legs";
 
 export const LegIconContainer = styled.div`
   height: 24px;
@@ -35,7 +19,7 @@ export const StepDescriptionContainer = styled.div`
   padding-top: 1px;
 `;
 
-export const StepsHeader = styled(TransparentButton)`
+export const StepsHeader = styled(StyledLegs.TransparentButton)`
   font-size: 13px;
   margin-top: 10px;
   color: #999;
