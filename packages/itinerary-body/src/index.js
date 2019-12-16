@@ -1,3 +1,4 @@
+import { itineraryType, legType } from "@opentripplanner/core-utils/lib/types";
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -8,10 +9,13 @@ import * as Styled from "./styled";
 
 const ItineraryBody = ({
   config,
+  diagramVisible,
   itinerary,
   LegIcon,
   setActiveLeg,
+  setLegDiagram,
   setViewedTrip,
+  showElevationProfile,
   timeOptions,
   /*
     this triggers a rerender but is not consumed by children
@@ -37,19 +41,22 @@ const ItineraryBody = ({
       <PlaceRow
         // eslint-disable-next-line react/no-array-index-key
         key={i}
-        place={leg.from}
-        time={leg.startTime}
+        config={config}
+        diagramVisible={diagramVisible}
+        followsTransit={followsTransit}
+        frameLeg={frameLeg}
         leg={leg}
         LegIcon={LegIcon}
         legIndex={i}
-        followsTransit={followsTransit}
-        timeOptions={timeOptions}
-        setActiveLeg={setActiveLeg}
-        setViewedTrip={setViewedTrip}
+        place={leg.from}
         routingType={routingType}
-        frameLeg={frameLeg}
+        setActiveLeg={setActiveLeg}
+        setLegDiagram={setLegDiagram}
+        setViewedTrip={setViewedTrip}
+        showElevationProfile={showElevationProfile}
+        time={leg.startTime}
+        timeOptions={timeOptions}
         toRouteAbbreviation={toRouteAbbreviation}
-        config={config}
       />
     );
     // TODO: reconcile special props for lastrow
@@ -57,14 +64,18 @@ const ItineraryBody = ({
     if (i === itinerary.legs.length - 1) {
       rows.push(
         <PlaceRow
-          config={config}
-          place={leg.to}
-          time={leg.endTime}
-          timeOptions={timeOptions}
-          setActiveLeg={setActiveLeg}
-          toRouteAbbreviation={toRouteAbbreviation}
           // eslint-disable-next-line react/no-array-index-key
           key={i + 1}
+          config={config}
+          diagramVisible={diagramVisible}
+          place={leg.to}
+          routingType={routingType}
+          setActiveLeg={setActiveLeg}
+          setLegDiagram={setLegDiagram}
+          showElevationProfile={showElevationProfile}
+          time={leg.endTime}
+          timeOptions={timeOptions}
+          toRouteAbbreviation={toRouteAbbreviation}
         />
       );
     }
@@ -83,14 +94,13 @@ const ItineraryBody = ({
 ItineraryBody.propTypes = {
   /** Companies that the user has selected their trip options for their query */
   companies: PropTypes.string.isRequired,
+  /**
+   * Should be either null or a legType. Indicates that a particular leg diagram
+   * has been selected and is active.
+   */
+  diagramVisible: legType,
   /** Itinerary that the user has selected to view, contains multiple legs */
-  itinerary: PropTypes.shape({
-    legs: PropTypes.arrayOf(
-      PropTypes.shape({
-        transitLeg: PropTypes.bool.isRequired
-      }).isRequired
-    ).isRequired
-  }).isRequired,
+  itinerary: itineraryType.isRequired,
   /** A component class that is used to render icons for legs of an itinerary */
   LegIcon: PropTypes.elementType.isRequired,
   /** TODO: Routing Type is usually 'ITINERARY' but we should get more details on what this does */
@@ -104,8 +114,12 @@ ItineraryBody.propTypes = {
   timeOptions: PropTypes.shape({}).isRequired,
   /** Sets the active leg */
   setActiveLeg: PropTypes.func.isRequired,
+  /** Handler for when a leg diagram is selected. */
+  setLegDiagram: PropTypes.func.isRequired,
   /** Fired when a user clicks on a view trip button of a transit leg */
   setViewedTrip: PropTypes.func.isRequired,
+  /** If true, will show the elevation profile for walk/bike legs */
+  showElevationProfile: PropTypes.bool,
   /** Frames a specific leg in an associated map view */
   frameLeg: PropTypes.func.isRequired,
   /** Converts a route's ID to its accepted badge abbreviation */
@@ -115,7 +129,9 @@ ItineraryBody.propTypes = {
 };
 
 ItineraryBody.defaultProps = {
-  routingType: "ITINERARY" // ,
+  diagramVisible: null,
+  routingType: "ITINERARY",
+  showElevationProfile: false // ,
   // showTripDetails: true,
   // showTripTools: true
 };

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import { formatTime } from "@opentripplanner/core-utils/lib/time";
 import { getPlaceName } from "@opentripplanner/core-utils/lib/itinerary";
+import { configType, legType } from "@opentripplanner/core-utils/lib/types";
 import LocationIcon from "@opentripplanner/location-icon";
 
 import * as Styled from "./styled";
@@ -20,17 +21,20 @@ const getOperatorFromConfig = (id, config) =>
 */
 const PlaceRow = ({
   config,
+  diagramVisible,
+  followsTransit,
+  frameLeg,
   leg,
   LegIcon,
   legIndex,
   place,
+  routingType,
+  setActiveLeg,
+  setLegDiagram,
+  setViewedTrip,
+  showElevationProfile,
   time,
   timeOptions,
-  followsTransit,
-  setActiveLeg,
-  setViewedTrip,
-  routingType,
-  frameLeg,
   toRouteAbbreviation
 }) => {
   // NOTE: Previously there was a check for itineraries that changed vehicles
@@ -140,12 +144,15 @@ const PlaceRow = ({
               /* This is an access (e.g. walk/bike/etc.) leg */
               <AccessLegBody
                 config={config}
+                diagramVisible={diagramVisible}
                 followsTransit={followsTransit}
                 leg={leg}
                 LegIcon={LegIcon}
                 legIndex={legIndex}
                 routingType={routingType}
                 setActiveLeg={setActiveLeg}
+                setLegDiagram={setLegDiagram}
+                showElevationProfile={showElevationProfile}
                 timeOptions={timeOptions}
               />
             ))}
@@ -162,26 +169,18 @@ const PlaceRow = ({
 
 PlaceRow.propTypes = {
   /** Contains OTP configuration details. */
-  config: PropTypes.shape({
-    companies: PropTypes.arrayOf(PropTypes.shape({})),
-    dateTime: PropTypes.shape({
-      longDateFormat: PropTypes.string.isRequired,
-      timeFormat: PropTypes.string.isRequired
-    }).isRequired
-  }).isRequired,
+  config: configType.isRequired,
+  /**
+   * Should be either null or a legType. Indicates that a particular leg diagram
+   * has been selected and is active.
+   */
+  diagramVisible: legType,
+  /** Indicates whether this leg directly follows a transit leg */
+  followsTransit: PropTypes.bool.isRequired,
+  /** Frames a specific leg in an associated map view */
+  frameLeg: PropTypes.func.isRequired,
   /** Contains details about leg object that is being displayed */
-  leg: PropTypes.shape({
-    interlineWithPreviousLeg: PropTypes.bool.isRequired,
-    mode: PropTypes.string.isRequired,
-    routeColor: PropTypes.string,
-    transitLeg: PropTypes.bool.isRequired,
-    route: PropTypes.string.isRequired,
-    routeLongName: PropTypes.string,
-    rentedVehicle: PropTypes.bool.isRequired,
-    rentedCar: PropTypes.bool.isRequired,
-    rentedBike: PropTypes.bool.isRequired,
-    agencyId: PropTypes.string
-  }),
+  leg: legType,
   /** A component class used to render the icon for a leg */
   LegIcon: PropTypes.elementType.isRequired,
   /** The index value of this specific leg within the itinerary */
@@ -191,26 +190,28 @@ PlaceRow.propTypes = {
     stopId: PropTypes.string,
     name: PropTypes.string.isRequired
   }).isRequired,
+  /** TODO: Routing Type is usually 'ITINERARY' but we should get more details on what this does */
+  routingType: PropTypes.string.isRequired,
+  /** Sets the active leg */
+  setActiveLeg: PropTypes.func.isRequired,
+  /** Fired when a user clicks on a view trip button of a transit leg */
+  setViewedTrip: PropTypes.func.isRequired,
+  /** If true, will show the elevation profile for walk/bike legs */
+  showElevationProfile: PropTypes.bool,
+  /** Handler for when a leg diagram is selected. */
+  setLegDiagram: PropTypes.func.isRequired,
   /** A unit timestamp of the time being featured in this block */
   time: PropTypes.number.isRequired,
   /** Contains the preferred format string for time display -- may be able to get this from config */
   timeOptions: PropTypes.shape({}).isRequired,
-  /** Indicates whether this leg directly follows a transit leg */
-  followsTransit: PropTypes.bool.isRequired,
-  /** Sets the active leg */
-  setActiveLeg: PropTypes.func.isRequired,
-  /** TODO: Routing Type is usually 'ITINERARY' but we should get more details on what this does */
-  routingType: PropTypes.string.isRequired,
-  /** Fired when a user clicks on a view trip button of a transit leg */
-  setViewedTrip: PropTypes.func.isRequired,
-  /** Frames a specific leg in an associated map view */
-  frameLeg: PropTypes.func.isRequired,
   /** Converts a route's ID to its accepted badge abbreviation */
   toRouteAbbreviation: PropTypes.func.isRequired
 };
 
 PlaceRow.defaultProps = {
-  leg: null
+  diagramVisible: null,
+  leg: null,
+  showElevationProfile: false
 };
 
 export default PlaceRow;

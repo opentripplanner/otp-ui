@@ -50,10 +50,13 @@ export default class AccessLegBody extends Component {
   render() {
     const {
       config,
+      diagramVisible,
       followsTransit,
       leg,
       LegIcon,
       routingType,
+      setLegDiagram,
+      showElevationProfile,
       timeOptions
     } = this.props;
     const { expanded } = this.state;
@@ -88,7 +91,14 @@ export default class AccessLegBody extends Component {
           )}
         </Styled.StepsHeader>
 
-        {routingType === "ITINERARY" && <LegDiagramPreview leg={leg} />}
+        {routingType === "ITINERARY" && (
+          <LegDiagramPreview
+            diagramVisible={diagramVisible}
+            leg={leg}
+            setLegDiagram={setLegDiagram}
+            showElevationProfile={showElevationProfile}
+          />
+        )}
         <VelocityTransitionGroup
           enter={{ animation: "slideDown" }}
           leave={{ animation: "slideUp" }}
@@ -102,17 +112,26 @@ export default class AccessLegBody extends Component {
 
 AccessLegBody.propTypes = {
   config: configType.isRequired,
+  /**
+   * Should be either null or a legType. Indicates that a particular leg diagram
+   * has been selected and is active.
+   */
+  diagramVisible: legType,
   followsTransit: PropTypes.bool,
   leg: legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired,
   legIndex: PropTypes.number.isRequired,
   routingType: PropTypes.string.isRequired,
   setActiveLeg: PropTypes.func.isRequired,
+  setLegDiagram: PropTypes.func.isRequired,
+  showElevationProfile: PropTypes.bool,
   timeOptions: timeOptionsType.isRequired
 };
 
 AccessLegBody.defaultProps = {
-  followsTransit: false
+  diagramVisible: null,
+  followsTransit: false,
+  showElevationProfile: false
 };
 
 function TNCLeg({

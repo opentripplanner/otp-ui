@@ -9,4 +9,7 @@ export const legType = PropTypes.shape({
   mode: PropTypes.string.isRequired,
   steps: stepsType.isRequired
 });
+export const itineraryType = PropTypes.shape({
+  legs: PropTypes.arrayOf(legType).isRequired
+});
 export const timeOptionsType = PropTypes.shape({});

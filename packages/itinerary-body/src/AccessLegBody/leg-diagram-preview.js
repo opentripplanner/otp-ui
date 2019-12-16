@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import React, { Component } from "react";
 import ReactResizeDetector from "react-resize-detector";
 
+import * as Styled from "./styled";
+
 const METERS_TO_FEET = 3.28084;
 
 function generateSvg(profile, width) {
@@ -53,9 +55,9 @@ class LegDiagramPreview extends Component {
   };
 
   onExpandClick = () => {
-    const { leg, showLegDiagram } = this.props;
-    if (this.isActive()) showLegDiagram(null);
-    else showLegDiagram(leg);
+    const { leg, setLegDiagram } = this.props;
+    if (this.isActive()) setLegDiagram(null);
+    else setLegDiagram(leg);
   };
 
   /** Round elevation to whole number and add symbol. */
@@ -70,11 +72,10 @@ class LegDiagramPreview extends Component {
     if (leg.distance < 500 || leg.mode === "CAR") return null;
 
     return (
-      <div className={`leg-diagram-preview ${this.isActive() ? "on" : ""}`}>
+      <Styled.PreviewContainer active={this.isActive()}>
         {/* The preview elevation SVG */}
         {/* eslint-disable-next-line */}
-        <div
-          className="diagram"
+        <Styled.PreviewDiagram
           tabIndex="0"
           title="Toggle elevation chart"
           role="button"
@@ -94,17 +95,21 @@ class LegDiagramPreview extends Component {
             ? generateSvg(profile, width)
             : "No elevation data available."}
           <ReactResizeDetector handleWidth onResize={this.onResize} />
-        </div>
-      </div>
+        </Styled.PreviewDiagram>
+      </Styled.PreviewContainer>
     );
   }
 }
 
 LegDiagramPreview.propTypes = {
-  diagramVisible: PropTypes.bool.isRequired,
+  diagramVisible: legType,
   leg: legType.isRequired,
-  showElevationProfile: PropTypes.bool.isRequired,
-  showLegDiagram: PropTypes.func.isRequired
+  setLegDiagram: PropTypes.func.isRequired,
+  showElevationProfile: PropTypes.bool.isRequired
+};
+
+LegDiagramPreview.defaultProps = {
+  diagramVisible: null
 };
 
 export default LegDiagramPreview;

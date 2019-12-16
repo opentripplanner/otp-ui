@@ -9,6 +9,31 @@ export const LegIconContainer = styled.div`
   margin-right: 6px;
 `;
 
+export const PreviewContainer = styled.div`
+  background-color: ${props => props.active && "#eee"};
+  border-color: ${props => (props.active ? "#d1d5da" : "#fff")};
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  display: inline-block;
+  font-style: normal;
+  margin: 0 4px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  width: 75%;
+
+  &:hover {
+    border-color: #d1d5da;
+    background-color: #f6f8fa;
+  }
+`;
+
+export const PreviewDiagram = styled(StyledLegs.TransparentButton)`
+  padding: 2px;
+  width: 100%;
+`;
+
 export const Steps = styled.div`
   display: block;
 `;
@@ -20,11 +45,12 @@ export const StepDescriptionContainer = styled.div`
 `;
 
 export const StepsHeader = styled(StyledLegs.TransparentButton)`
-  font-size: 13px;
-  margin-top: 10px;
   color: #999;
-  font-style: normal;
   display: inline-block;
+  font-size: 13px;
+  font-style: normal;
+  margin-top: 10px;
+  vertical-align: bottom;
 `;
 
 export const StepIconContainer = styled.div`
