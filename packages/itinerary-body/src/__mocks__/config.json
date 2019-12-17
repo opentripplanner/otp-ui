@@ -1,8 +1,8 @@
 {
   "companies": [
     {
-      "id": "BOLT",
-      "label": "Bolt",
+      "id": "RAZOR",
+      "label": "Razor",
       "modes": "MICROMOBILITY_RENT"
     }
   ],
