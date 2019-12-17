@@ -66,6 +66,7 @@ export default class AccessLegBody extends Component {
         <TNCLeg
           config={config}
           leg={leg}
+          LegIcon={LegIcon}
           onSummaryClick={this.onSummaryClick}
           timeOptions={timeOptions}
           followsTransit={followsTransit}
@@ -140,6 +141,7 @@ function TNCLeg({
   UBER_CLIENT_ID,
   followsTransit,
   leg,
+  LegIcon,
   onSummaryClick,
   timeOptions
 }) {
@@ -160,106 +162,53 @@ function TNCLeg({
   if (!tncData || !tncData.estimatedArrival) return null;
   return (
     <div>
-      <div className="place-subheader">
+      <StyledLegs.PlaceSubheader>
         Wait{" "}
         {!followsTransit && (
           <span>{Math.round(tncData.estimatedArrival / 60)} minutes </span>
         )}
         for {tncData.displayName} pickup
-      </div>
+      </StyledLegs.PlaceSubheader>
 
-      <div className="leg-body">
+      <StyledLegs.LegBody>
         {/* The icon/summary row */}
         <AccessLegSummary
           config={config}
           leg={leg}
+          LegIcon={LegIcon}
           onSummaryClick={onSummaryClick}
         />
 
         {/* The "Book Ride" button */}
-        <div
-          style={{
-            marginTop: 10,
-            marginBottom: 10,
-            height: 32,
-            position: "relative"
-          }}
-        >
-          <a
-            className="btn btn-default"
+        <Styled.BookTNCRideButtonContainer>
+          <Styled.BookTNCRideButton
             href={universalLinks[tncData.company]}
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              height: 32,
-              paddingTop: 4,
-              width: 90,
-              textAlign: "center"
-            }}
             target={isMobile() ? "_self" : "_blank"}
           >
             Book Ride
-          </a>
+          </Styled.BookTNCRideButton>
+          {followsTransit && <Styled.BookLaterPointer />}
           {followsTransit && (
-            <div
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 94,
-                width: 0,
-                height: 0,
-                borderTop: "16px solid transparent",
-                borderBottom: "16px solid transparent",
-                borderRight: "16px solid #fcf9d3"
-              }}
-            />
-          )}
-          {followsTransit && (
-            <div
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 110,
-                right: 0,
-                bottom: 0
-              }}
-            >
-              <div
-                style={{
-                  display: "table",
-                  backgroundColor: "#fcf9d3",
-                  width: "100%",
-                  height: "100%"
-                }}
-              >
-                <div
-                  style={{
-                    padding: "0px 2px",
-                    display: "table-cell",
-                    verticalAlign: "middle",
-                    color: "#444",
-                    fontStyle: "italic",
-                    lineHeight: 0.95
-                  }}
-                >
+            <Styled.BookLaterContainer>
+              <Styled.BookLaterInnerContainer>
+                <Styled.BookLaterText>
                   Wait until{" "}
                   {formatTime(
                     leg.startTime - tncData.estimatedArrival * 1000,
                     timeOptions
                   )}{" "}
                   to book
-                </div>
-              </div>
-            </div>
+                </Styled.BookLaterText>
+              </Styled.BookLaterInnerContainer>
+            </Styled.BookLaterContainer>
           )}
-        </div>
+        </Styled.BookTNCRideButtonContainer>
 
         {/* The estimated travel time */}
-        <div className="steps-header">
+        <Styled.StepsHeader>
           Estimated travel time: {formatDuration(leg.duration)} (does not
           account for traffic)
-        </div>
+        </Styled.StepsHeader>
 
         {/* The estimated travel cost */}
         {tncData.minCost && (
@@ -272,7 +221,7 @@ function TNCLeg({
             })}`}
           </p>
         )}
-      </div>
+      </StyledLegs.LegBody>
     </div>
   );
 }
@@ -283,6 +232,7 @@ TNCLeg.propTypes = {
   UBER_CLIENT_ID: PropTypes.string,
   followsTransit: PropTypes.bool.isRequired,
   leg: legType.isRequired,
+  LegIcon: PropTypes.elementType.isRequired,
   onSummaryClick: PropTypes.func.isRequired,
   timeOptions: timeOptionsType.isRequired
 };

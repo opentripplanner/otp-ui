@@ -27,3 +27,11 @@ export const LegBody = styled.div`
   font-size: 13px;
   padding: 12px 0 18px 4px;
 `;
+
+export const PlaceSubheader = styled.div`
+  color: grey;
+  font-size: 12px;
+  font-weight: 300;
+  padding-left: 4px;
+  padding-top: 1px;
+`;

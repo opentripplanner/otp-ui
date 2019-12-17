@@ -18,6 +18,7 @@ const bikeTransitBikeItinerary = require("./__mocks__/intineraries/bike-transit-
 const eScooterRentalItinerary = require("./__mocks__/intineraries/e-scooter-rental.json");
 const eScooterRentalTransiteScooterRentalItinerary = require("./__mocks__/intineraries/e-scooter-transit-e-scooter.json");
 const parkAndRideItinerary = require("./__mocks__/intineraries/park-and-ride.json");
+const tncTransitTncItinerary = require("./__mocks__/intineraries/tnc-transit-tnc.json");
 const walkInterlinedTransitItinerary = require("./__mocks__/intineraries/walk-interlined-transit-walk.json");
 const walkOnlyItinerary = require("./__mocks__/intineraries/walk-only.json");
 const walkTransitWalkItinerary = require("./__mocks__/intineraries/walk-transit-walk.json");
@@ -97,4 +98,7 @@ storiesOf("ItineraryBody", module)
     <ItineraryBodyDefaultsWrapper
       itinerary={eScooterRentalTransiteScooterRentalItinerary}
     />
+  ))
+  .add("ItineraryBody with TNC + transit itinerary", () => (
+    <ItineraryBodyDefaultsWrapper itinerary={tncTransitTncItinerary} />
   ));
