@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { LayersControl, Map, MapLayer, Popup, TileLayer } from "react-leaflet";
+import { LayersControl, Map, Popup, TileLayer } from "react-leaflet";
 import L from "leaflet";
 
 // eslint-disable-next-line func-names
@@ -55,7 +55,10 @@ class BaseMap extends Component {
   // TODO: Is this needed? It may have something to do with mobile vs desktop views
   componentWillUnmount() {
     const lmap = this.refs.map.leafletElement;
-    lmap.eachLayer(lmap.removeLayer);
+    lmap.eachLayer(layer => {
+      // Do not inline, there is a 'this' implied.
+      lmap.removeLayer(layer);
+    });
   }
 
   onLeftClick = e => {
@@ -159,11 +162,10 @@ class BaseMap extends Component {
 }
 
 BaseMap.propTypes = {
-  children: PropTypes.oneOf(
-    [],
-    null,
-    PropTypes.arrayOf(PropTypes.instanceOf(MapLayer))
-  ),
+  children: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.arrayOf(PropTypes.object)
+  ]),
   /**
    * The configuration properties for the map.
    */
@@ -183,7 +185,6 @@ BaseMap.propTypes = {
     initZoom: PropTypes.number,
     maxZoom: PropTypes.number
   }),
-
   /**
    * Triggered when the user clicks on the map.
    * See https://leafletjs.com/reference-1.6.0.html#map-click for details.
