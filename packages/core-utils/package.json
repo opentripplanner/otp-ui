@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Core functionality that is shared among numerous UI components",
   "main": "lib/index.js",
-  "repository": "https://github.com/trimet-sandbox/otp-ui.git",
+  "repository": "https://github.com/opentripplanner/otp-ui.git",
   "author": "Evan Siroky",
   "license": "MIT",
   "private": false,

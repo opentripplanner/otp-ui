@@ -7,19 +7,18 @@
     "itinerary"
   ],
   "author": "Evan Siroky",
-  "homepage": "https://github.com/TriMetPDX/otp-ui#readme",
+  "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "license": "MIT",
   "main": "lib/index.js",
-  "module": "src/index.js",
   "publishConfig": {
     "registry": "https://registry.yarnpkg.com"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TriMetPDX/otp-ui.git"
+    "url": "git+https://github.com/opentripplanner/otp-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/TriMetPDX/otp-ui/issues"
+    "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
   "dependencies": {
     "@opentripplanner/core-utils": "0.0.1",
