@@ -4,9 +4,9 @@
  * symbol.
  */
 export const toSafeRouteColor = routeColor => {
-  return routeColor && routeColor.startsWith("#")
-    ? routeColor
-    : `#${routeColor}`;
+  return (
+    routeColor && (routeColor.startsWith("#") ? routeColor : `#${routeColor}`)
+  );
 };
 
 export const toModeColor = (mode, routeColor) => {

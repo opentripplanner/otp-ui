@@ -13,6 +13,7 @@ const config = require("./__mocks__/config.json");
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("./__mocks__/intineraries/bike-only.json");
 const bikeRentalItinerary = require("./__mocks__/intineraries/bike-rental.json");
+const bikeRentalTransitBikeRentalItinerary = require("./__mocks__/intineraries/bike-rental-transit-bike-rental.json");
 const bikeTransitBikeItinerary = require("./__mocks__/intineraries/bike-transit-bike.json");
 const eScooterRentalItinerary = require("./__mocks__/intineraries/e-scooter-rental.json");
 const parkAndRideItinerary = require("./__mocks__/intineraries/park-and-ride.json");
@@ -85,4 +86,9 @@ storiesOf("ItineraryBody", module)
   ))
   .add("ItineraryBody with park and ride itinerary", () => (
     <ItineraryBodyDefaultsWrapper itinerary={parkAndRideItinerary} />
+  ))
+  .add("ItineraryBody with bike rental + transit itinerary", () => (
+    <ItineraryBodyDefaultsWrapper
+      itinerary={bikeRentalTransitBikeRentalItinerary}
+    />
   ));
