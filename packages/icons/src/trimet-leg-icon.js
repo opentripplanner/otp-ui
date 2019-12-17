@@ -1,8 +1,36 @@
 import { legType } from "@opentripplanner/core-utils/lib/types";
 import React from "react";
 
-import { getCompanyIcon } from "./companies";
+import Biketown from "./companies/biketown-icon";
+import Bird from "./companies/bird-icon";
+import Bolt from "./companies/bolt-icon";
+// import Car2go from "./companies/car2go-icon";
+import Gruv from "./companies/gruv-icon";
+import Lime from "./companies/lime-icon";
+// import Lyft from "./companies/lyft-icon";
+import Razor from "./companies/razor-icon";
+import Shared from "./companies/shared-icon";
+import Spin from "./companies/spin-icon";
+import Uber from "./companies/uber-icon";
 import TriMetModeIcon from "./trimet-mode-icon";
+
+const companyLookup = {
+  biketown: Biketown,
+  bird: Bird,
+  bolt: Bolt,
+  // car2go: Car2go,
+  gruv: Gruv,
+  lime: Lime,
+  // lyft: Lyft,
+  razor: Razor,
+  shared: Shared,
+  spin: Spin,
+  uber: Uber
+};
+
+function getCompanyIcon(name) {
+  return companyLookup[name.toLowerCase()];
+}
 
 const TriMetLegIcon = ({ leg, ...props }) => {
   let iconStr = leg.mode;
