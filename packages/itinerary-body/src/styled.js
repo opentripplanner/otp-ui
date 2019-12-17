@@ -161,6 +161,14 @@ export const PlaceName = styled.div`
   flex: 1 1 auto;
 `;
 
+export const PlaceSubheader = styled.div`
+  color: grey;
+  font-size: 12px;
+  font-weight: 300;
+  padding-left: 4px;
+  padding-top: 1px;
+`;
+
 export const InterlineName = styled.div`
   /* special messaging, not sure yet */
 `;

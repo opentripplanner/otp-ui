@@ -19,10 +19,16 @@ const TriMetLegIcon = ({ leg, ...props }) => {
   ) {
     iconStr = leg.from.networks[0];
   }
+
+  // this if / else if block is specific to TriMet
   if (leg.routeLongName && leg.routeLongName.startsWith("Portland Streetcar")) {
     iconStr = "STREETCAR";
   } else if (leg.rentedBike) {
-    iconStr = "BICYCLE";
+    if (leg.from.networks && leg.from.networks[0] === "GBFS") {
+      iconStr = "BIKETOWN";
+    } else {
+      iconStr = "BICYCLE";
+    }
   }
 
   // try to see if the iconStr has a matching company icon. If so, return that.
