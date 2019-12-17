@@ -112,25 +112,35 @@ class BaseMap extends Component {
           {/* base layers */}
           {baseLayers &&
             baseLayers.map((layer, i) => {
-              // Fix tile size/zoom offset: https://stackoverflow.com/a/37043490/915811
-              const { tileSize, zoomOffset } =
-                L.Browser.retina && layer.hasRetinaSupport
-                  ? { tileSize: 512, zoomOffset: -1 }
-                  : { tileSize: null, zoomOffset: null };
               return (
                 <LayersControl.BaseLayer
                   name={layer.name}
                   checked={i === 0}
                   key={i}
                 >
-                  <TileLayer
-                    url={layer.url}
-                    attribution={layer.attribution}
-                    maxZoom={layer.maxZoom}
-                    tileSize={tileSize}
-                    zoomOffset={zoomOffset}
-                    detectRetina
-                  />
+                  {
+                    // Fix tile size/zoom offset: https://stackoverflow.com/a/37043490/915811
+                    // Also, split the declaration between the two
+                    // outcomes to avoid error 'attempted to load an infinite number of tiles'
+                    // if the tiles cannot be loaded for any reason.
+                  }
+                  {L.Browser.retina && layer.hasRetinaSupport ? (
+                    <TileLayer
+                      url={layer.url}
+                      attribution={layer.attribution}
+                      maxZoom={layer.maxZoom}
+                      tileSize={512}
+                      zoomOffset={-1}
+                      detectRetina
+                    />
+                  ) : (
+                    <TileLayer
+                      url={layer.url}
+                      attribution={layer.attribution}
+                      maxZoom={layer.maxZoom}
+                      detectRetina
+                    />
+                  )}
                 </LayersControl.BaseLayer>
               );
             })}

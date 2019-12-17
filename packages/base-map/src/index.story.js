@@ -4,8 +4,8 @@ import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
 
 import BaseMap from ".";
-import SelectVehicles from "../mocks/SelectVehicles";
-import AllVehiclesOverlay from "../mocks/AllVehicles";
+import SelectVehicles from "../__mocks__/SelectVehicles";
+import AllVehiclesOverlay from "../__mocks__/AllVehicles";
 
 import "../assets/map.css";
 
@@ -28,7 +28,7 @@ const mapConfig = {
     },
     {
       name: "Stamen Toner Lite",
-      url: "http://tile.stamen.com/toner-lite/%7Bz%7D/%7Bx%7D/%7By%7D.png",
+      url: "http://tile.stamen.com/toner-lite/{z}/{x}/{y}.png",
       attribution:
         'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
     }

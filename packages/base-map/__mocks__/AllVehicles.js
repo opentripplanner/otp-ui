@@ -2,20 +2,7 @@ import React from "react";
 import { Marker, Popup, FeatureGroup } from "react-leaflet";
 import L from "leaflet";
 
-const vehicleData = [
-  {
-    vehicleID: 1742,
-    routeNumber: "40",
-    latitude: 33.755558,
-    longitude: -84.393716
-  },
-  {
-    vehicleID: 7024,
-    routeNumber: "03",
-    latitude: 33.754399,
-    longitude: -84.37547
-  }
-];
+const vehicleData = require("./vehicle-data/all-vehicles.json");
 
 const AllVehiclesOverlay = () => {
   // Render is according to this file:
