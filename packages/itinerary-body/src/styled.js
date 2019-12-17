@@ -143,7 +143,12 @@ export const PlaceHeader = styled.div`
 `;
 
 export const InterlineDot = styled.div`
+  color: #fff;
   flex: 0 0 15px;
+  margin-left: -33px;
+  margin-right: 18px;
+  position: relative;
+  z-index: 30;
 `;
 
 export const PlaceName = styled.div`

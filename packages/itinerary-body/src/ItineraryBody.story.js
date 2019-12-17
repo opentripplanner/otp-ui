@@ -13,6 +13,7 @@ const config = require("./__mocks__/config.json");
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("./__mocks__/intineraries/bike-only.json");
 const bikeTransitBikeItinerary = require("./__mocks__/intineraries/bike-transit-bike.json");
+const walkInterlinedTransitItinerary = require("./__mocks__/intineraries/walk-interlined-transit-walk.json");
 const walkOnlyItinerary = require("./__mocks__/intineraries/walk-only.json");
 const walkTransitWalkItinerary = require("./__mocks__/intineraries/walk-transit-walk.json");
 
@@ -63,4 +64,7 @@ storiesOf("ItineraryBody", module)
   ))
   .add("ItineraryBody with bike-transit-bike itinerary", () => (
     <ItineraryBodyDefaultsWrapper itinerary={bikeTransitBikeItinerary} />
+  ))
+  .add("ItineraryBody with walk-interlined-transit itinerary", () => (
+    <ItineraryBodyDefaultsWrapper itinerary={walkInterlinedTransitItinerary} />
   ));
