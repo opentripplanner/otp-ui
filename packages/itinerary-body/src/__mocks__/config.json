@@ -4,6 +4,11 @@
       "id": "RAZOR",
       "label": "Razor",
       "modes": "MICROMOBILITY_RENT"
+    },
+    {
+      "id": "SHARED",
+      "label": "Shared",
+      "modes": "MICROMOBILITY_RENT"
     }
   ],
   "operators": [
