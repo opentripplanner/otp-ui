@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { LayersControl, Map, Popup, TileLayer } from "react-leaflet";
+import { LatlngPropType } from "@opentripplanner/core-utils/lib/react-props";
 import L from "leaflet";
 
 // eslint-disable-next-line func-names
@@ -169,24 +170,6 @@ class BaseMap extends Component {
   }
 }
 
-const twoNumberArrayChecker = (
-  propValue,
-  key,
-  componentName,
-  location,
-  propFullName
-) => {
-  // Source: https://reactjs.org/docs/typechecking-with-proptypes.html#react.proptypes
-  if (
-    !Array.isArray(propValue) ||
-    propValue.length !== 2 ||
-    !Number.isFinite(propValue[key])
-  ) {
-    return new Error(`${propFullName} needs to be an array of two numbers`);
-  }
-  return null;
-};
-
 BaseMap.propTypes = {
   /**
    * Zero, one, or multiple components that extend { MapLayer } from 'react-leaflet'.
@@ -214,7 +197,7 @@ BaseMap.propTypes = {
   /**
    * The center of the map, as a [lat, lng] array.
    */
-  center: PropTypes.arrayOf(twoNumberArrayChecker).isRequired,
+  center: LatlngPropType.isRequired,
   /**
    * The maximum zoom level allowed on the map.
    */
@@ -250,7 +233,7 @@ BaseMap.propTypes = {
   /**
    * The coordinates of the popup object to display, as a [lat, lng] array.
    */
-  popupLocation: PropTypes.arrayOf(twoNumberArrayChecker),
+  popupLocation: LatlngPropType,
   /**
    * The zoom level of the map.
    */
