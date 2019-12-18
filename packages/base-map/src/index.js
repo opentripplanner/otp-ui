@@ -68,16 +68,18 @@ class BaseMap extends Component {
 
   render() {
     const {
-      mapConfig,
+      baseLayers,
+      center,
       children,
+      maxZoom,
       popupLocation,
       popupContent,
       onPopupClosed,
       onOverlayAdded,
       onOverlayRemoved,
-      onViewportChanged
+      onViewportChanged,
+      zoom
     } = this.props;
-    const { baseLayers } = mapConfig;
 
     // Separate overlay layers into user-controlled (those with a checkbox in
     // the layer control) and those that are needed by the app (e.g., stop viewer
@@ -89,17 +91,13 @@ class BaseMap extends Component {
       else fixedOverlays.push(child);
     });
 
-    const center = mapConfig &&
-      mapConfig.initLat &&
-      mapConfig.initLon && [mapConfig.initLat, mapConfig.initLon];
-
     return (
       <Map
         ref="map"
         className="map"
         center={center}
-        zoom={mapConfig.initZoom || 13}
-        maxZoom={mapConfig.maxZoom}
+        zoom={zoom}
+        maxZoom={maxZoom}
         // onClick={this.onLeftClick}
         // Note: Map-click is handled via single-click plugin, set up in componentDidMount()
         onOverlayAdd={onOverlayAdded}
@@ -171,9 +169,27 @@ class BaseMap extends Component {
   }
 }
 
+const twoNumberArrayChecker = (
+  propValue,
+  key,
+  componentName,
+  location,
+  propFullName
+) => {
+  // Source: https://reactjs.org/docs/typechecking-with-proptypes.html#react.proptypes
+  if (
+    !Array.isArray(propValue) ||
+    propValue.length !== 2 ||
+    !Number.isFinite(propValue[key])
+  ) {
+    return new Error(`${propFullName} needs to be an array of two numbers`);
+  }
+  return null;
+};
+
 BaseMap.propTypes = {
   /**
-   * Zero, one, or multiple components that derives from { MapLayer } from 'react-leaflet'.
+   * Zero, one, or multiple components that extend { MapLayer } from 'react-leaflet'.
    */
   children: PropTypes.oneOfType([
     // Ideally, the types below should be MapLayer,
@@ -183,24 +199,26 @@ BaseMap.propTypes = {
     PropTypes.arrayOf(PropTypes.object)
   ]),
   /**
-   * The configuration properties for the map.
+   * The base (background) layers for the map.
    */
-  mapConfig: PropTypes.shape({
-    baseLayers: PropTypes.arrayOf(
-      PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        url: PropTypes.string.isRequired,
-        subdomains: PropTypes.string,
-        attribution: PropTypes.string,
-        maxZoom: PropTypes.number,
-        hasRetinaSupport: PropTypes.bool
-      })
-    ),
-    initLat: PropTypes.number.isRequired,
-    initLon: PropTypes.number.isRequired,
-    initZoom: PropTypes.number,
-    maxZoom: PropTypes.number
-  }),
+  baseLayers: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+      subdomains: PropTypes.string,
+      attribution: PropTypes.string,
+      maxZoom: PropTypes.number,
+      hasRetinaSupport: PropTypes.bool
+    })
+  ),
+  /**
+   * The center of the map, as a [lat, lng] array.
+   */
+  center: PropTypes.arrayOf(twoNumberArrayChecker).isRequired,
+  /**
+   * The maximum zoom level allowed on the map.
+   */
+  maxZoom: PropTypes.number,
   /**
    * Triggered when the user clicks on the map.
    * See https://leafletjs.com/reference-1.6.0.html#map-click for details.
@@ -232,33 +250,35 @@ BaseMap.propTypes = {
   /**
    * The coordinates of the popup object to display, as a [lat, lng] array.
    */
-  popupLocation: PropTypes.arrayOf(PropTypes.number)
+  popupLocation: PropTypes.arrayOf(twoNumberArrayChecker),
+  /**
+   * The zoom level of the map.
+   */
+  zoom: PropTypes.number
 };
 
 BaseMap.defaultProps = {
   children: null,
-  mapConfig: {
-    baseLayers: [
-      {
-        name: "Streets",
-        url:
-          "//cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}@2x.png",
-        attribution:
-          'Map tiles: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        maxZoom: 20,
-        hasRetinaSupport: true
-      }
-    ],
-    initZoom: 13,
-    maxZoom: 20
-  },
+  baseLayers: [
+    {
+      name: "Streets",
+      url:
+        "//cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}@2x.png",
+      attribution:
+        'Map tiles: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      maxZoom: 20,
+      hasRetinaSupport: true
+    }
+  ],
+  maxZoom: 20,
   onClick: null,
   onOverlayAdded: null,
   onOverlayRemoved: null,
   onPopupClosed: null,
   onViewportChanged: null,
   popupContent: null,
-  popupLocation: null
+  popupLocation: null,
+  zoom: 13
 };
 
 export default BaseMap;

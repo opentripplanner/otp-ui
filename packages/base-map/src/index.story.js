@@ -26,31 +26,26 @@ export default {
   }
 };
 
-const mapConfig = {
-  baseLayers: [
-    {
-      name: "Streets",
-      url:
-        "//cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}@2x.png",
-      subdomains: "abcd",
-      attribution:
-        'Map tiles: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>',
-      maxZoom: 20,
-      hasRetinaSupport: true
-    },
-    {
-      name: "Stamen Toner Lite",
-      url: "http://tile.stamen.com/toner-lite/{z}/{x}/{y}.png",
-      attribution:
-        'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
-    }
-  ],
-  initLat: 33.758189,
-  initLon: -84.38361,
-  initZoom: 13
-};
+const twoBaseLayers = [
+  {
+    name: "Streets",
+    url:
+      "//cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}@2x.png",
+    subdomains: "abcd",
+    attribution:
+      'Map tiles: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    maxZoom: 20,
+    hasRetinaSupport: true
+  },
+  {
+    name: "Stamen Toner Lite",
+    url: "http://tile.stamen.com/toner-lite/{z}/{x}/{y}.png",
+    attribution:
+      'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
+  }
+];
 
-const center = [mapConfig.initLat, mapConfig.initLon];
+const center = [33.758189, -84.38361];
 
 const sampleMarkers = (
   <CircleMarker center={center} radius={100} interactive={false}>
@@ -73,10 +68,24 @@ const onOverlayAdded = action("onOverlayAdded");
 const onOverlayRemoved = action("onOverlayRemoved");
 const onViewportChanged = action("onViewportChanged");
 
-export const mapAlone = () => <BaseMap mapConfig={mapConfig} />;
+export const clickAndViewportchangedEvents = () => (
+  <BaseMap
+    center={center}
+    onClick={onClick}
+    onViewportChanged={onViewportChanged}
+  ></BaseMap>
+);
+
+export const zoomed = () => <BaseMap center={center} zoom={17} />;
+
+export const maxZoom = () => <BaseMap center={center} maxZoom={18} zoom={30} />;
+
+export const withTwoBaseLayers = () => (
+  <BaseMap baseLayers={twoBaseLayers} center={center} />
+);
 
 export const withSampleMarkers = () => (
-  <BaseMap mapConfig={mapConfig}>{sampleMarkers}</BaseMap>
+  <BaseMap center={center}>{sampleMarkers}</BaseMap>
 );
 
 export const withTwoOverlaysFromTrimetTransitComponents = () => (
@@ -86,7 +95,7 @@ export const withTwoOverlaysFromTrimetTransitComponents = () => (
       events.
     </div>
     <BaseMap
-      mapConfig={mapConfig}
+      center={center}
       onOverlayAdded={onOverlayAdded}
       onOverlayRemoved={onOverlayRemoved}
     >
@@ -103,7 +112,7 @@ export const withOverlaysOverlappingOtherMarkers = () => (
       the blue circle.
     </div>
     <BaseMap
-      mapConfig={mapConfig}
+      center={center}
       onOverlayAdded={onOverlayAdded}
       onOverlayRemoved={onOverlayRemoved}
     >
@@ -116,7 +125,7 @@ export const withOverlaysOverlappingOtherMarkers = () => (
 
 export const customLocationPopupContent = () => (
   <BaseMap
-    mapConfig={mapConfig}
+    center={center}
     popupLocation={center}
     popupContent={samplePopup}
     onPopupClosed={onPopupClosed}
@@ -124,17 +133,9 @@ export const customLocationPopupContent = () => (
 );
 
 export const customLocationPopupNoContent = () => (
-  <BaseMap mapConfig={mapConfig} popupLocation={center} />
+  <BaseMap center={center} popupLocation={center} />
 );
 
 export const customPopupContentNoLocation = () => (
-  <BaseMap mapConfig={mapConfig} popupContent={samplePopup} />
-);
-
-export const clickAndViewportchangedEvents = () => (
-  <BaseMap
-    mapConfig={mapConfig}
-    onClick={onClick}
-    onViewportChanged={onViewportChanged}
-  ></BaseMap>
+  <BaseMap center={center} popupContent={samplePopup} />
 );
