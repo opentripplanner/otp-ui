@@ -4,9 +4,12 @@ import L from "leaflet";
 
 const vehicleData = require("./vehicle-data/all-vehicles.json");
 
+/**
+ * This component demonstrates a example map overlay that shows real-time transit vehicle locations on a leaflet map.
+ * It is modeled after the component available in this file:
+ * https://github.com/OpenTransitTools/transit-components/blob/master/lib/vehicles/AllVehicles.js
+ */
 const AllVehiclesOverlay = () => {
-  // Render is according to this file:
-  // https://github.com/OpenTransitTools/transit-components/blob/master/lib/vehicles/AllVehicles.js
   return (
     <FeatureGroup className="vehicles">
       {vehicleData.map(vehicle => {

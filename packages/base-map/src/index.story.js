@@ -10,8 +10,20 @@ import AllVehiclesOverlay from "../__mocks__/AllVehicles";
 import "../assets/map.css";
 
 export default {
-  title: "Map",
-  decorators: [withInfo]
+  title: "BaseMap",
+  component: BaseMap,
+  decorators: [withInfo],
+  parameters: {
+    info: {
+      text: `
+      The BaseMap component renders a Leaflet map with overlays and other ad-hoc markers
+      that are declared as child elements of the BaseMap element.
+      
+      Overlays are groups of similar React-Leaflet markers, e.g. vehicle location markers, bus stop markers, etc.
+      Overlays are automatically added to the overlay control displayed by the BaseMap. The user uses that control to turn overlays on or off.
+      `
+    }
+  }
 };
 
 const mapConfig = {
@@ -61,7 +73,7 @@ const onOverlayAdded = action("onOverlayAdded");
 const onOverlayRemoved = action("onOverlayRemoved");
 const onViewportChanged = action("onViewportChanged");
 
-export const noProps = () => <BaseMap />;
+export const mapAlone = () => <BaseMap mapConfig={mapConfig} />;
 
 export const withSampleMarkers = () => (
   <BaseMap mapConfig={mapConfig}>{sampleMarkers}</BaseMap>

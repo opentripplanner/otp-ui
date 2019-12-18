@@ -3,6 +3,11 @@
 import React from "react";
 import { Circle, Popup, Tooltip, withLeaflet } from "react-leaflet";
 
+/**
+ * This component demonstrates a custom marker used in the SelectVehicles overlay provided as an example.
+ * It is modeled after the component available in this file:
+ * https://github.com/OpenTransitTools/transit-components/blob/master/lib/vehicles/VehicleMarker.js
+ */
 class VehicleMarker extends React.Component {
   getLastReportDate(v) {
     return `${v.seconds} seconds ago`;

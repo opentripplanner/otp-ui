@@ -5,8 +5,11 @@ import VehicleMarker from "./VehicleMarker";
 
 const vehicleData = require("./vehicle-data/select-vehicles.json");
 
-// Render is according to this file:
-// https://github.com/OpenTransitTools/transit-components/blob/master/lib/vehicles/SelectVehicles.js
+/**
+ * This component demonstrates an example map overlay that shows real-time transit vehicle locations on a leaflet map.
+ * It is modeled after the component available in this file:
+ * https://github.com/OpenTransitTools/transit-components/blob/master/lib/vehicles/SelectVehicles.js
+ */
 class SelectVehicles extends MapLayer {
   state = {
     selectedRoutes: [],

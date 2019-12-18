@@ -9,7 +9,12 @@
   "module": "src/index.js",
   "private": false,
   "dependencies": {
-    "@opentripplanner/location-icon": "0.0.1"
+    "@opentripplanner/location-icon": "^0.0.1",
+    "prop-types": "^15.7.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "styled-components": "^4.3.1"
   },
   "publishConfig": {
     "registry": "https://registry.yarnpkg.com"

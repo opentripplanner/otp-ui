@@ -172,7 +172,13 @@ class BaseMap extends Component {
 }
 
 BaseMap.propTypes = {
+  /**
+   * Zero, one, or multiple components that derives from { MapLayer } from 'react-leaflet'.
+   */
   children: PropTypes.oneOfType([
+    // Ideally, the types below should be MapLayer,
+    // however, during type validation in the browser,
+    // MapLayer components all seem to resolve to Object.
     PropTypes.object,
     PropTypes.arrayOf(PropTypes.object)
   ]),
@@ -190,8 +196,8 @@ BaseMap.propTypes = {
         hasRetinaSupport: PropTypes.bool
       })
     ),
-    initLat: PropTypes.number,
-    initLon: PropTypes.number,
+    initLat: PropTypes.number.isRequired,
+    initLon: PropTypes.number.isRequired,
     initZoom: PropTypes.number,
     maxZoom: PropTypes.number
   }),
@@ -232,8 +238,6 @@ BaseMap.propTypes = {
 BaseMap.defaultProps = {
   children: null,
   mapConfig: {
-    initLat: 45.52,
-    initLon: -122.682,
     baseLayers: [
       {
         name: "Streets",
@@ -245,7 +249,8 @@ BaseMap.defaultProps = {
         hasRetinaSupport: true
       }
     ],
-    initZoom: 13
+    initZoom: 13,
+    maxZoom: 20
   },
   onClick: null,
   onOverlayAdded: null,
