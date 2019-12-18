@@ -1,0 +1,29 @@
+{
+  "name": "@opentripplanner/icons",
+  "version": "0.0.1",
+  "description": "Icons for otp-ui",
+  "keywords": [
+    "icons"
+  ],
+  "author": "Evan Siroky <evan.siroky@yahoo.com>",
+  "homepage": "https://github.com/opentripplanner/otp-ui#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opentripplanner/otp-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/opentripplanner/otp-ui/issues"
+  },
+  "dependencies": {
+    "@opentripplanner/core-utils": "^0.0.2",
+    "prop-types": "^15.7.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6"
+  }
+}

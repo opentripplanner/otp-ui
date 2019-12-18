@@ -1,5 +1,5 @@
 {
-  "name": "root",
+  "name": "@opentripplanner/otp-ui",
   "version": "0.0.1",
   "private": true,
   "workspaces": [
@@ -55,7 +55,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap --use-workspaces",
-    "build": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.story.js,**/*.spec.js",
+    "prepublish": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.story.js,**/*.spec.js",
     "check-eslint-config": "eslint --print-config jestconfig.js | eslint-config-prettier-check",
     "coverage": "jest --coverage",
     "deploy-storybook": "storybook-to-ghpages",
@@ -81,9 +81,11 @@
       "no-nested-ternary": 0,
       "no-param-reassign": 0,
       "no-plusplus": 0,
+      "prefer-destructuring": 0,
       "prettier/prettier": [
         "error"
       ],
+      "react/no-array-index-key": 0,
       "react/jsx-filename-extension": [
         1,
         {

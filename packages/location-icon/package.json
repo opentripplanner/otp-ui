@@ -3,12 +3,15 @@
   "version": "0.0.2",
   "description": "A component to display a location icon for either the to or from location",
   "main": "lib/index.js",
-  "module": "lib/index.js",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
   "author": "Evan Siroky",
   "license": "MIT",
   "private": false,
   "dependencies": {
     "styled-icons": "^9.0.1"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "styled-components": "^4.3.1"
   }
 }
