@@ -9,5 +9,9 @@
   "private": false,
   "dependencies": {
     "styled-icons": "^9.0.1"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "styled-components": "^4.3.1"
   }
 }

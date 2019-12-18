@@ -15,5 +15,9 @@
     "prop-types": "^15.7.2",
     "styled-icons": "^9.0.1",
     "throttle-debounce": "^2.1.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "styled-components": "^4.3.1"
   }
 }
