@@ -1,10 +1,9 @@
 {
   "name": "@opentripplanner/humanize-distance",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Pretty print a string for a certain distance",
   "main": "lib/index.js",
-  "module": "src/index.js",
-  "repository": "https://github.com/trimet-sandbox/otp-ui.git",
+  "repository": "https://github.com/opentripplanner/otp-ui.git",
   "author": "Evan Siroky",
   "license": "MIT",
   "private": false

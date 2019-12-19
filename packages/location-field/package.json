@@ -1,20 +1,23 @@
 {
   "name": "@opentripplanner/location-field",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A component for display and finding a location",
   "main": "lib/index.js",
-  "module": "src/index.js",
-  "repository": "https://github.com/trimet-sandbox/otp-ui.git",
+  "repository": "https://github.com/opentripplanner/otp-ui.git",
   "author": "Evan Siroky",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "0.0.1",
-    "@opentripplanner/geocoder": "0.0.1",
-    "@opentripplanner/humanize-distance": "0.0.1",
-    "@opentripplanner/location-icon": "0.0.1",
+    "@opentripplanner/core-utils": "^0.0.2",
+    "@opentripplanner/geocoder": "^0.0.2",
+    "@opentripplanner/humanize-distance": "^0.0.2",
+    "@opentripplanner/location-icon": "^0.0.2",
     "prop-types": "^15.7.2",
     "styled-icons": "^9.0.1",
     "throttle-debounce": "^2.1.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "styled-components": "^4.3.1"
   }
 }
