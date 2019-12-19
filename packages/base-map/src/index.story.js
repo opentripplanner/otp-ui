@@ -21,6 +21,7 @@ export default {
       
       Overlays are groups of similar React-Leaflet markers, e.g. vehicle location markers, bus stop markers, etc.
       Overlays are automatically added to the overlay control displayed by the BaseMap. The user uses that control to turn overlays on or off.
+      See the [Two Overlays From TriMet Transit Components](./?path=/story/basemap--with-two-overlays-from-trimet-transit-components) example for more information on overlays.
       `
     }
   }

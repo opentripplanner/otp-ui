@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { LayersControl, Map, Popup, TileLayer } from "react-leaflet";
-import { LatlngPropType } from "@opentripplanner/core-utils/lib/react-props";
+import { latlngType } from "@opentripplanner/core-utils/lib/types";
 import L from "leaflet";
 
 // eslint-disable-next-line func-names
@@ -173,6 +173,7 @@ class BaseMap extends Component {
 BaseMap.propTypes = {
   /**
    * Zero, one, or multiple components that extend { MapLayer } from 'react-leaflet'.
+   * Children can be overlays or loose markers.
    */
   children: PropTypes.oneOfType([
     // Ideally, the types below should be MapLayer,
@@ -197,7 +198,7 @@ BaseMap.propTypes = {
   /**
    * The center of the map, as a [lat, lng] array.
    */
-  center: LatlngPropType.isRequired,
+  center: latlngType.isRequired,
   /**
    * The maximum zoom level allowed on the map.
    */
@@ -233,7 +234,7 @@ BaseMap.propTypes = {
   /**
    * The coordinates of the popup object to display, as a [lat, lng] array.
    */
-  popupLocation: LatlngPropType,
+  popupLocation: latlngType,
   /**
    * The zoom level of the map.
    */

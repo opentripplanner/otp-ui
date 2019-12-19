@@ -1,5 +1,20 @@
+import PropTypes from "prop-types";
 import { ReactPropTypeLocationNames } from "react";
 import { isValidLatLng } from "./map";
+
+export const configType = PropTypes.shape({});
+export const customIconsType = PropTypes.shape({});
+export const stepsType = PropTypes.arrayOf(PropTypes.shape({}));
+export const legType = PropTypes.shape({
+  duration: PropTypes.number.isRequired,
+  hailedCar: PropTypes.string,
+  mode: PropTypes.string.isRequired,
+  steps: stepsType.isRequired
+});
+export const itineraryType = PropTypes.shape({
+  legs: PropTypes.arrayOf(legType).isRequired
+});
+export const timeOptionsType = PropTypes.shape({});
 
 /**
  * Utility function to help create chained validators
@@ -27,7 +42,7 @@ export function createChainableTypeChecker(validator) {
   return chainedCheckType;
 }
 
-export const LatlngPropType = createChainableTypeChecker((props, propName) => {
+export const latlngType = createChainableTypeChecker((props, propName) => {
   // Source: https://reactjs.org/docs/typechecking-with-proptypes.html#react.proptypes
   if (!isValidLatLng(props[propName])) {
     return new Error(`${propName} needs to be a [lat, lng] array`);
