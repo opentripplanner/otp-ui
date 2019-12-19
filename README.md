@@ -7,10 +7,9 @@ React component library, which can be used to build trip planner webapps. See ht
 ## Getting Started
 
 ```bash
- git checkout
+ git checkout https://github.com/opentripplanner/otp-ui.git
  yarn install
- yarn build
- yarn dev
+ yarn dev # (opens storybook to running component library on localhost:5555)
 ```
 
 ## Storybook Demo
