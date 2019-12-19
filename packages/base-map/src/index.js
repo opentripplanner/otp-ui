@@ -76,8 +76,7 @@ class BaseMap extends Component {
       center,
       children,
       maxZoom,
-      popupLocation,
-      popupContent,
+      popup,
       onPopupClosed,
       onOverlayAdded,
       onOverlayRemoved,
@@ -163,9 +162,9 @@ class BaseMap extends Component {
         {fixedOverlays}
 
         {/* Add the location selection popup and content, if both are set. */}
-        {popupLocation && popupContent && (
-          <Popup position={popupLocation} onClose={onPopupClosed}>
-            {popupContent}
+        {popup && popup.location && popup.contents && (
+          <Popup position={popup.location} onClose={onPopupClosed}>
+            {popup.contents}
           </Popup>
         )}
       </Map>
@@ -231,13 +230,12 @@ BaseMap.propTypes = {
    */
   onViewportChanged: PropTypes.func,
   /**
-   * The contents to render in the popup.
+   * The contents and location (in [lat, lng] format) of the popup to display, or null if no popup is displayed.
    */
-  popupContent: PropTypes.node,
-  /**
-   * The coordinates of the popup object to display, as a [lat, lng] array.
-   */
-  popupLocation: latlngType,
+  popup: PropTypes.shape({
+    contents: PropTypes.node.isRequired,
+    location: latlngType.isRequired
+  }),
   /**
    * The zoom level of the map.
    */
@@ -263,8 +261,7 @@ BaseMap.defaultProps = {
   onOverlayRemoved: null,
   onPopupClosed: null,
   onViewportChanged: null,
-  popupContent: null,
-  popupLocation: null,
+  popup: null,
   zoom: 13
 };
 

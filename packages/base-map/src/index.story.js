@@ -92,8 +92,8 @@ export const withSampleMarkers = () => (
 export const withTwoOverlaysFromTrimetTransitComponents = () => (
   <div>
     <div>
-      Click the layers button to toggle layers. Check actions log for overlay
-      events.
+      Click the layers button to toggle overlays. Overlays manage their own
+      tooltips and popups. Check actions log for overlay events.
     </div>
     <BaseMap
       center={center}
@@ -127,16 +127,7 @@ export const withOverlaysOverlappingOtherMarkers = () => (
 export const customLocationPopupContent = () => (
   <BaseMap
     center={center}
-    popupLocation={center}
-    popupContent={samplePopup}
+    popup={{ location: center, contents: samplePopup }}
     onPopupClosed={onPopupClosed}
   />
-);
-
-export const customLocationPopupNoContent = () => (
-  <BaseMap center={center} popupLocation={center} />
-);
-
-export const customPopupContentNoLocation = () => (
-  <BaseMap center={center} popupContent={samplePopup} />
 );
