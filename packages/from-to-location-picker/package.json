@@ -9,7 +9,7 @@
   "module": "src/index.js",
   "private": false,
   "dependencies": {
-    "@opentripplanner/location-icon": "^0.0.1",
+    "@opentripplanner/location-icon": "^0.0.3",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {
