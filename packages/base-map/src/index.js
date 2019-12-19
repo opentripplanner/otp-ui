@@ -43,6 +43,9 @@ L.Evented.include({
   }
 });
 
+/**
+ * The base OpenTripPlanner map on which everything else is rendered.
+ */
 class BaseMap extends Component {
   componentDidMount() {
     const lmap = this.refs.map.leafletElement;
