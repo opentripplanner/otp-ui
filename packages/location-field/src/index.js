@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import {
   Ban,
   Briefcase,
-  Bus,
   Home,
   LocationArrow,
   MapMarker,
@@ -18,76 +17,12 @@ import {
   currentPositionToLocation,
   formatStoredPlaceName
 } from "@opentripplanner/core-utils/lib/map";
-import { isIE } from "@opentripplanner/core-utils/lib/ui";
+import { transitIndexStopWithRoutes } from "@opentripplanner/core-utils/lib/types";
 import getGeocoder from "@opentripplanner/geocoder";
-import { humanizeDistanceStringImperial } from "@opentripplanner/humanize-distance";
 import LocationIcon from "@opentripplanner/location-icon";
 
+import { Option, TransitStopOption } from "./options";
 import * as Styled from "./styled";
-
-// helper functions for dropdown options
-
-let itemKey = 0;
-
-function createOption(icon, title, onClick, isActive) {
-  return (
-    <Styled.MenuItem onClick={onClick} key={itemKey++} active={isActive}>
-      {isIE() ? (
-        // In internet explorer 11, some really weird stuff is happening where it
-        // is not possible to click the text of the title, but if you click just
-        // above it, then it works. So, if using IE 11, just return the title text
-        // and avoid all the extra fancy stuff.
-        // See https://github.com/ibi-group/trimet-mod-otp/issues/237
-        title
-      ) : (
-        <div style={{ paddingTop: "5px", paddingBottom: "3px" }}>
-          <div style={{ float: "left" }}>{icon}</div>
-          <div
-            style={{
-              marginLeft: "30px",
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-              whiteSpace: "nowrap"
-            }}
-          >
-            {title}
-          </div>
-        </div>
-      )}
-    </Styled.MenuItem>
-  );
-}
-
-function createTransitStopOption(stop, onClick, isActive) {
-  return (
-    <Styled.MenuItem onClick={onClick} key={itemKey++} active={isActive}>
-      <div>
-        <div style={{ float: "left", paddingTop: "3px" }}>
-          <Bus size={13} />
-          <div style={{ fontSize: "8px" }}>
-            {humanizeDistanceStringImperial(stop.dist, true)}
-          </div>
-        </div>
-        <div style={{ marginLeft: "30px" }}>
-          <div>
-            {stop.name} ({stop.code})
-          </div>
-          <div style={{ fontSize: "9px" }}>
-            {(stop.routes || []).map(route => {
-              const name = route.shortName || route.longName;
-              return (
-                <Styled.RouteName key={`route-${name}`}>
-                  {name}
-                </Styled.RouteName>
-              );
-            })}
-          </div>
-        </div>
-        <div style={{ clear: "both" }} />
-      </div>
-    </Styled.MenuItem>
-  );
-}
 
 class LocationField extends Component {
   geocodeAutocomplete = throttle(1000, text => {
@@ -369,7 +304,7 @@ class LocationField extends Component {
 
       // Iterate through the geocoder results
       menuItems = menuItems.concat(
-        geocodedFeatures.map((feature, i) => {
+        geocodedFeatures.map(feature => {
           // Create the selection handler
           const locationSelected = () => {
             getGeocoder(geocoderConfig)
@@ -386,12 +321,13 @@ class LocationField extends Component {
           this.locationSelectedLookup[itemIndex] = locationSelected;
 
           // Create and return the option menu item
-          const option = createOption(
-            <MapPin size={13} />,
-            feature.properties.label,
-            locationSelected,
-            itemIndex === activeIndex,
-            i === geocodedFeatures.length - 1
+          const option = (
+            <Option
+              icon={<MapPin size={13} />}
+              title={feature.properties.label}
+              onClick={locationSelected}
+              isActive={itemIndex === activeIndex}
+            />
           );
           itemIndex++;
           return option;
@@ -410,7 +346,7 @@ class LocationField extends Component {
 
       // Iterate through the found nearby stops
       menuItems = menuItems.concat(
-        nearbyStops.map((stopId, i) => {
+        nearbyStops.map(stopId => {
           // Constuct the location
           const stop = stopsIndex[stopId];
           const stopLocation = {
@@ -428,11 +364,12 @@ class LocationField extends Component {
           this.locationSelectedLookup[itemIndex] = locationSelected;
 
           // Create and return the option menu item
-          const option = createTransitStopOption(
-            stop,
-            locationSelected,
-            itemIndex === activeIndex,
-            i === nearbyStops.length - 1
+          const option = (
+            <TransitStopOption
+              stop={stop}
+              onClick={locationSelected}
+              isActive={itemIndex === activeIndex}
+            />
           );
           itemIndex++;
           return option;
@@ -451,7 +388,7 @@ class LocationField extends Component {
 
       // Iterate through any saved locations
       menuItems = menuItems.concat(
-        sessionSearches.map((sessionLocation, i) => {
+        sessionSearches.map(sessionLocation => {
           // Create the location-selected handler
           const locationSelected = () => {
             this.setLocation(sessionLocation);
@@ -461,12 +398,13 @@ class LocationField extends Component {
           this.locationSelectedLookup[itemIndex] = locationSelected;
 
           // Create and return the option menu item
-          const option = createOption(
-            <Search size={13} />,
-            sessionLocation.name,
-            locationSelected,
-            itemIndex === activeIndex,
-            i === sessionSearches.length - 1
+          const option = (
+            <Option
+              icon={<Search size={13} />}
+              title={sessionLocation.name}
+              onClick={locationSelected}
+              isActive={itemIndex === activeIndex}
+            />
           );
           itemIndex++;
           return option;
@@ -485,7 +423,7 @@ class LocationField extends Component {
 
       // Iterate through any saved locations
       menuItems = menuItems.concat(
-        userLocationsAndRecentPlaces.map((userLocation, i) => {
+        userLocationsAndRecentPlaces.map(userLocation => {
           // Create the location-selected handler
           const locationSelected = () => {
             this.setLocation(location);
@@ -499,12 +437,13 @@ class LocationField extends Component {
           else if (userLocation.icon === "home") icon = <Home size={13} />;
 
           // Create and return the option menu item
-          const option = createOption(
-            icon,
-            formatStoredPlaceName(userLocation),
-            locationSelected,
-            itemIndex === activeIndex,
-            i === userLocationsAndRecentPlaces.length - 1
+          const option = (
+            <Option
+              icon={icon}
+              title={formatStoredPlaceName(userLocation)}
+              onClick={locationSelected}
+              isActive={itemIndex === activeIndex}
+            />
           );
           itemIndex++;
           return option;
@@ -534,11 +473,13 @@ class LocationField extends Component {
 
     if (!suppressNearby) {
       // Create and add the option item to the menu items array
-      const currentLocationOption = createOption(
-        optionIcon,
-        optionTitle,
-        locationSelected,
-        itemIndex === activeIndex
+      const currentLocationOption = (
+        <Option
+          icon={optionIcon}
+          title={optionTitle}
+          onClick={locationSelected}
+          isActive={itemIndex === activeIndex}
+        />
       );
       menuItems.push(currentLocationOption);
       itemIndex++;
@@ -758,27 +699,7 @@ LocationField.propTypes = {
   /**
    * An index of stops by StopId
    */
-  stopsIndex: PropTypes.objectOf(
-    PropTypes.shape({
-      /**
-       * The stop code if the stop has one
-       */
-      code: PropTypes.string,
-      /**
-       * The distance from the user to the stop in meters
-       */
-      dist: PropTypes.number,
-      lat: PropTypes.number,
-      lon: PropTypes.number,
-      name: PropTypes.string,
-      routes: PropTypes.arrayOf(
-        PropTypes.shape({
-          longName: PropTypes.string,
-          shortName: PropTypes.string
-        })
-      )
-    })
-  ),
+  stopsIndex: PropTypes.objectOf(transitIndexStopWithRoutes),
   /**
    * If true, do not show nearbyStops or current location as options
    */
