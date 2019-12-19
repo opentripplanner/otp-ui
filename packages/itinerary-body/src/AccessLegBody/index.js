@@ -16,7 +16,7 @@ import {
   timeOptionsType
 } from "@opentripplanner/core-utils/lib/types";
 import { isMobile } from "@opentripplanner/core-utils/lib/ui";
-import { humainzeDistanceString } from "@opentripplanner/humanize-distance";
+import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
 import { DirectionIcon } from "@opentripplanner/icons/lib/directions";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
@@ -256,7 +256,7 @@ function AccessLegSummary({ config, leg, /* LegIcon, */ onSummaryClick }) {
       <div>
         {getLegModeLabel(leg)}{" "}
         {leg.distance > 0 && (
-          <span> {humainzeDistanceString(leg.distance)}</span>
+          <span> {humanizeDistanceString(leg.distance)}</span>
         )}
         {` to ${getPlaceName(leg.to, config.companies)}`}
       </div>

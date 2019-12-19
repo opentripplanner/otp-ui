@@ -1,11 +1,11 @@
-export function humainzeDistanceStringImperial(meters, abbreviate) {
+export function humanizeDistanceStringImperial(meters, abbreviate) {
   const feet = meters * 3.28084;
   if (feet < 528)
     return Math.round(feet) + (abbreviate === true ? " ft" : " feet");
   return Math.round(feet / 528) / 10 + (abbreviate === true ? " mi" : " miles");
 }
 
-export function humainzeDistanceStringMetric(meters) {
+export function humanizeDistanceStringMetric(meters) {
   let km = meters / 1000;
   if (km > 100) {
     // 100 km => 999999999 km
@@ -21,8 +21,8 @@ export function humainzeDistanceStringMetric(meters) {
   return `${meters.toFixed(0)} m`;
 }
 
-export function humainzeDistanceString(meters, outputMetricUntis = false) {
+export function humanizeDistanceString(meters, outputMetricUntis = false) {
   return outputMetricUntis === true
-    ? humainzeDistanceStringMetric(meters)
-    : humainzeDistanceStringImperial(meters);
+    ? humanizeDistanceStringMetric(meters)
+    : humanizeDistanceStringImperial(meters);
 }

@@ -20,7 +20,7 @@ import {
 } from "@opentripplanner/core-utils/lib/map";
 import { isIE } from "@opentripplanner/core-utils/lib/ui";
 import getGeocoder from "@opentripplanner/geocoder";
-import { humainzeDistanceStringImperial } from "@opentripplanner/humanize-distance";
+import { humanizeDistanceStringImperial } from "@opentripplanner/humanize-distance";
 import LocationIcon from "@opentripplanner/location-icon";
 
 import * as Styled from "./styled";
@@ -65,7 +65,7 @@ function createTransitStopOption(stop, onClick, isActive) {
         <div style={{ float: "left", paddingTop: "3px" }}>
           <Bus size={13} />
           <div style={{ fontSize: "8px" }}>
-            {humainzeDistanceStringImperial(stop.dist, true)}
+            {humanizeDistanceStringImperial(stop.dist, true)}
           </div>
         </div>
         <div style={{ marginLeft: "30px" }}>
