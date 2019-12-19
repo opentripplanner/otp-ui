@@ -455,17 +455,20 @@ class LocationField extends Component {
     let locationSelected;
     let optionIcon;
     let optionTitle;
+    let positionUnavailable;
 
-    if (!currentPosition.error) {
+    if (currentPosition && !currentPosition.error) {
       // current position detected successfully
       locationSelected = this.useCurrentLocation;
       optionIcon = <LocationArrow size={13} />;
       optionTitle = "Use Current Location";
+      positionUnavailable = false;
     } else {
       // error detecting current position
       locationSelected = this.geolocationAlert;
       optionIcon = <Ban size={13} />;
       optionTitle = "Current location not available";
+      positionUnavailable = true;
     }
 
     // Add to the selection handler lookup (for use in onKeyDown)
@@ -479,6 +482,7 @@ class LocationField extends Component {
           title={optionTitle}
           onClick={locationSelected}
           isActive={itemIndex === activeIndex}
+          disabled={positionUnavailable}
         />
       );
       menuItems.push(currentLocationOption);
@@ -489,9 +493,10 @@ class LocationField extends Component {
     this.menuItemCount = itemIndex;
 
     /** the text input element * */
-    const placeholder = currentPosition.fetching
-      ? "Fetching location..."
-      : inputPlaceholder || locationType;
+    const placeholder =
+      currentPosition && currentPosition.fetching
+        ? "Fetching location..."
+        : inputPlaceholder || locationType;
     const textControl = (
       <Styled.Input
         ref={ref => {

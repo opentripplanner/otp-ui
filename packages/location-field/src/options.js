@@ -9,9 +9,14 @@ import * as Styled from "./styled";
 
 let itemKey = 0;
 
-export function Option({ icon, title, onClick, isActive }) {
+export function Option({ disabled, icon, isActive, onClick, title }) {
   return (
-    <Styled.MenuItem onClick={onClick} key={itemKey++} active={isActive}>
+    <Styled.MenuItem
+      onClick={onClick}
+      key={itemKey++}
+      active={isActive}
+      disabled={disabled}
+    >
       {isIE() ? (
         // In internet explorer 11, some really weird stuff is happening where it
         // is not possible to click the text of the title, but if you click just
@@ -39,6 +44,7 @@ export function Option({ icon, title, onClick, isActive }) {
 }
 
 Option.propTypes = {
+  disabled: PropTypes.bool,
   icon: PropTypes.node,
   isActive: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
@@ -46,6 +52,7 @@ Option.propTypes = {
 };
 
 Option.defaultProps = {
+  disabled: false,
   icon: null,
   isActive: false,
   title: null

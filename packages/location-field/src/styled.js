@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 
 const BaseButton = styled.button`
@@ -75,33 +75,36 @@ export const InputGroupAddon = styled.span`
   text-align: center;
 `;
 
-export const MenuItem = ({
-  active,
-  centeredText,
-  children,
-  header,
-  onClick
-}) => {
-  return header ? (
-    <MenuItemHeader centeredText={centeredText}>{children}</MenuItemHeader>
-  ) : (
-    <MenuItemLi role="presentation">
-      <MenuItemA
-        active={active}
-        onClick={onClick}
-        role="menuitem"
-        tabIndex={-1}
-      >
-        {children}
-      </MenuItemA>
-    </MenuItemLi>
-  );
-};
+export class MenuItem extends Component {
+  onClick = () => {
+    const { disabled, onClick } = this.props;
+    if (!disabled) onClick();
+  };
+
+  render() {
+    const { active, centeredText, children, disabled, header } = this.props;
+    return header ? (
+      <MenuItemHeader centeredText={centeredText}>{children}</MenuItemHeader>
+    ) : (
+      <MenuItemLi disabled={disabled} role="presentation">
+        <MenuItemA
+          active={active}
+          onClick={this.onClick}
+          role="menuitem"
+          tabIndex={-1}
+        >
+          {children}
+        </MenuItemA>
+      </MenuItemLi>
+    );
+  }
+}
 
 MenuItem.propTypes = {
   active: PropTypes.bool,
   centeredText: PropTypes.bool,
   children: PropTypes.node.isRequired,
+  disabled: PropTypes.bool,
   header: PropTypes.bool,
   onClick: PropTypes.func
 };
@@ -109,6 +112,7 @@ MenuItem.propTypes = {
 MenuItem.defaultProps = {
   active: false,
   centeredText: false,
+  disabled: false,
   header: false,
   onClick: null
 };
@@ -138,7 +142,7 @@ const MenuItemHeader = styled.li`
 
 const MenuItemLi = styled.li`
   &:hover {
-    background-color: #f5f5f5;
+    background-color: ${props => !props.disabled && "#f5f5f5"};
   }
 `;
 

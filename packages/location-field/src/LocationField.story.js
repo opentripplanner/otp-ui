@@ -85,6 +85,17 @@ storiesOf("LocationField", module)
       onLocationSelected={onLocationSelected}
     />
   ))
+  .add(
+    "LocationField in desktop context (current position unavailable)",
+    () => (
+      <LocationField
+        geocoderConfig={geocoderConfig}
+        inputPlaceholder="Select from location"
+        locationType="from"
+        onLocationSelected={onLocationSelected}
+      />
+    )
+  )
   .add("LocationField in mobile context", () => (
     <LocationField
       currentPosition={currentPosition}
