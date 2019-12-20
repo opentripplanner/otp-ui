@@ -24,6 +24,9 @@ import LocationIcon from "@opentripplanner/location-icon";
 import { Option, TransitStopOption } from "./options";
 import * as Styled from "./styled";
 
+// FIXME have a better key generator for options
+let optionKey = 0;
+
 class LocationField extends Component {
   geocodeAutocomplete = throttle(1000, text => {
     if (!text) {
@@ -324,6 +327,7 @@ class LocationField extends Component {
           const option = (
             <Option
               icon={<MapPin size={13} />}
+              key={optionKey++}
               title={feature.properties.label}
               onClick={locationSelected}
               isActive={itemIndex === activeIndex}
@@ -366,9 +370,10 @@ class LocationField extends Component {
           // Create and return the option menu item
           const option = (
             <TransitStopOption
-              stop={stop}
-              onClick={locationSelected}
               isActive={itemIndex === activeIndex}
+              key={optionKey++}
+              onClick={locationSelected}
+              stop={stop}
             />
           );
           itemIndex++;
@@ -401,6 +406,7 @@ class LocationField extends Component {
           const option = (
             <Option
               icon={<Search size={13} />}
+              key={optionKey++}
               title={sessionLocation.name}
               onClick={locationSelected}
               isActive={itemIndex === activeIndex}
@@ -426,7 +432,7 @@ class LocationField extends Component {
         userLocationsAndRecentPlaces.map(userLocation => {
           // Create the location-selected handler
           const locationSelected = () => {
-            this.setLocation(location);
+            this.setLocation(userLocation);
           };
 
           // Add to the selection handler lookup (for use in onKeyDown)
@@ -440,6 +446,7 @@ class LocationField extends Component {
           const option = (
             <Option
               icon={icon}
+              key={optionKey++}
               title={formatStoredPlaceName(userLocation)}
               onClick={locationSelected}
               isActive={itemIndex === activeIndex}
@@ -479,6 +486,7 @@ class LocationField extends Component {
       const currentLocationOption = (
         <Option
           icon={optionIcon}
+          key={optionKey++}
           title={optionTitle}
           onClick={locationSelected}
           isActive={itemIndex === activeIndex}
@@ -593,9 +601,12 @@ LocationField.propTypes = {
    * The current position of the user if it is available.
    */
   currentPosition: PropTypes.shape({
-    coords: PropTypes.arrayOf(PropTypes.number),
+    coords: PropTypes.shape({
+      latitude: PropTypes.number,
+      longitude: PropTypes.number
+    }),
     error: PropTypes.string,
-    fetching: PropTypes.bool.isRequired
+    fetching: PropTypes.bool
   }),
   /**
    * Invoked whenever the currentPosition is set, but the nearbyStops are not.
@@ -726,7 +737,7 @@ LocationField.propTypes = {
        * This represents the last time that this location was selected in a
        * search
        */
-      timestamp: PropTypes.number.isRequired,
+      timestamp: PropTypes.number,
       /**
        * One of: 'home', 'work', 'stop' or 'recent'
        */

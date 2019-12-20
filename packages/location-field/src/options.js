@@ -7,16 +7,9 @@ import { Bus } from "styled-icons/fa-solid";
 
 import * as Styled from "./styled";
 
-let itemKey = 0;
-
 export function Option({ disabled, icon, isActive, onClick, title }) {
   return (
-    <Styled.MenuItem
-      onClick={onClick}
-      key={itemKey++}
-      active={isActive}
-      disabled={disabled}
-    >
+    <Styled.MenuItem onClick={onClick} active={isActive} disabled={disabled}>
       {isIE() ? (
         // In internet explorer 11, some really weird stuff is happening where it
         // is not possible to click the text of the title, but if you click just
@@ -60,7 +53,7 @@ Option.defaultProps = {
 
 export function TransitStopOption({ stop, onClick, isActive }) {
   return (
-    <Styled.MenuItem onClick={onClick} key={itemKey++} active={isActive}>
+    <Styled.MenuItem onClick={onClick} active={isActive}>
       <div>
         <div style={{ float: "left", paddingTop: "3px" }}>
           <Bus size={13} />
