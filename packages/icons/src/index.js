@@ -6,6 +6,7 @@ import TriMetLegIcon from "./trimet-leg-icon";
 import TriMetModeIcon from "./trimet-mode-icon";
 
 const {
+  Biketown,
   Bird,
   Bolt,
   Car2go,
@@ -73,6 +74,7 @@ const {
   StreetcarCircle,
   Transittracker,
   TransittrackerSolid,
+  TriMet,
   TripPlanner,
   TripPlannerSolid,
   Walk,
@@ -96,6 +98,7 @@ export {
   BikeLocker,
   BikeParking,
   BikeStaple,
+  Biketown,
   Bird,
   Bolt,
   Bus,
@@ -146,6 +149,7 @@ export {
   StreetcarCircle,
   Transittracker,
   TransittrackerSolid,
+  TriMet,
   TriMetLegIcon,
   TriMetModeIcon,
   TripPlanner,

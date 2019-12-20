@@ -73,6 +73,11 @@ storiesOf("Icons", module)
       <Icons.BikeStaple />
     </Container>
   ))
+  .add("Biketown", () => (
+    <Container>
+      <Icons.Biketown />
+    </Container>
+  ))
   .add("Bird", () => (
     <Container>
       <Icons.Bird />
@@ -326,6 +331,11 @@ storiesOf("Icons", module)
   .add("TripPlanner", () => (
     <Container>
       <Icons.TripPlanner />
+    </Container>
+  ))
+  .add("TriMet", () => (
+    <Container>
+      <Icons.TriMet />
     </Container>
   ))
   .add("TripPlannerSolid", () => (
