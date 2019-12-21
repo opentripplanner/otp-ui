@@ -244,3 +244,20 @@ export function itineraryToTransitive(itin) {
 export function isBikeshareStation(place) {
   return place.place_id.lastIndexOf("bicycle_rent_station") !== -1;
 }
+
+export function isValidLat(lat) {
+  return Number.isFinite(lat) && lat >= -90 && lat <= 90;
+}
+
+export function isValidLng(lng) {
+  return Number.isFinite(lng) && lng >= -180 && lng <= 180;
+}
+
+export function isValidLatLng(arr) {
+  return (
+    Array.isArray(arr) &&
+    arr.length === 2 &&
+    isValidLat(arr[0]) &&
+    isValidLng(arr[1])
+  );
+}
