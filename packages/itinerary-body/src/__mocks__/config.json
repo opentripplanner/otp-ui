@@ -11,7 +11,7 @@
       "modes": "MICROMOBILITY_RENT"
     }
   ],
-  "operators": [
+  "transitOperators": [
     {
       "id": "TRIMET",
       "name": "TriMet",

@@ -50,10 +50,7 @@ export const BookTNCRideButton = styled.a`
   left: 0;
   line-height: 1.42857143;
   margin-bottom: 0;
-  padding-bottom: 12px;
-  padding-left: 6px;
-  padding-right: 6px;
-  padding-top: 4px;
+  padding: 4px 6px;
   position: absolute;
   text-align: center;
   text-decoration: none;

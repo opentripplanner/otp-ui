@@ -41,9 +41,11 @@ class ItineraryBodyDefaultsWrapper extends Component {
       <ItineraryBody
         config={config}
         diagramVisible={diagramVisible}
+        frameLeg={action("frameLeg")}
         itinerary={itinerary}
         LegIcon={TriMetLegIcon}
         routingType="ITINERARY"
+        setActiveLeg={action("setActiveLeg")}
         setLegDiagram={this.setLegDiagram}
         setViewedTrip={action("setViewedTrip")}
         showElevationProfile
