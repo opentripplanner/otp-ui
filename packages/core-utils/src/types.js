@@ -16,6 +16,10 @@ export const transitOperatorType = PropTypes.shape({
   order: PropTypes.number
 });
 
+export const languageConfigType = PropTypes.shape({
+  stopViewer: PropTypes.string
+});
+
 /**
  * Represents the expected configuration of the webapp
  */
