@@ -1,0 +1,33 @@
+{
+  "name": "@opentripplanner/base-map",
+  "version": "0.0.1",
+  "description": "Base Map Component",
+  "author": "@binh-dam-ibigroup",
+  "homepage": "https://github.com/opentripplanner/otp-ui/#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "private": false,
+  "dependencies": {
+    "leaflet": "^1.6.0",
+    "react-leaflet": "^2.6.0",
+    "prop-types": "^15.7.2",
+    "@opentripplanner/core-utils": "^0.0.3"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "styled-components": "^4.3.1"
+  },
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opentripplanner/otp-ui.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/opentripplanner/otp-ui/issues"
+  }
+}

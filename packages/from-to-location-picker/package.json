@@ -1,0 +1,32 @@
+{
+  "name": "@opentripplanner/from-to-location-picker",
+  "version": "0.0.1",
+  "description": "Location Picker Component",
+  "author": "@binh-dam-ibigroup",
+  "homepage": "https://github.com/opentripplanner/otp-ui/#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "private": false,
+  "dependencies": {
+    "@opentripplanner/location-icon": "^0.0.3",
+    "prop-types": "^15.7.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "styled-components": "^4.3.1"
+  },
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opentripplanner/otp-ui.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/opentripplanner/otp-ui/issues"
+  }
+}
