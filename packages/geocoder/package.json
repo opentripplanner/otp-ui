@@ -1,10 +1,10 @@
 {
   "name": "@opentripplanner/geocoder",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Geocoding tools for multiple geocoding providers",
   "main": "lib/index.js",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
-  "author": "Evan Siroky",
+  "author": "Evan  Siroky",
   "license": "MIT",
   "private": false,
   "dependencies": {

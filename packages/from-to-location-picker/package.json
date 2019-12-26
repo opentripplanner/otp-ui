@@ -9,7 +9,7 @@
   "module": "src/index.js",
   "private": false,
   "dependencies": {
-    "@opentripplanner/location-icon": "^0.0.3",
+    "@opentripplanner/location-icon": "^0.0.4",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {
@@ -28,5 +28,6 @@
   },
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"
-  }
+  },
+  "gitHead": "429519bef3a02e9b53c601ee3738d8385afd7a45"
 }
