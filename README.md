@@ -50,5 +50,5 @@ Some commands you might need to execute for lerna to publish to npm:
  npm config set access public
  npx lerna changed
  npx lerna publish
- npx deploy-storybook
+ yarn deploy-storybook
 ```
