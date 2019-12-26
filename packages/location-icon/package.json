@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/location-icon",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A component to display a location icon for either the to or from location",
   "main": "lib/index.js",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
