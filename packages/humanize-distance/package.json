@@ -6,5 +6,6 @@
   "repository": "https://github.com/opentripplanner/otp-ui.git",
   "author": "Evan  Siroky",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "gitHead": "644c72e0d08f8daf93b44eaf0deec88a1e16f414"
 }

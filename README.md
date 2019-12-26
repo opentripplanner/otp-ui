@@ -48,7 +48,7 @@ Some commands you might need to execute for lerna to publish to npm:
 ```bash
  npm login
  npm config set access public
- yarn lerna changed
- yarn lerna publish
- yarn deploy-storybook
+ npx lerna changed
+ npx lerna publish
+ npx deploy-storybook
 ```
