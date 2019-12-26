@@ -4,7 +4,7 @@ import { withInfo } from "@storybook/addon-info";
 
 import FromToLocationPicker from ".";
 
-import "../mocks/trimet-mock.css";
+import "../__mocks__/trimet-mock.css";
 
 export default {
   title: "From-To-Picker",
