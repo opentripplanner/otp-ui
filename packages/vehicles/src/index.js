@@ -1,4 +1,3 @@
-
-export function hg() {
+export default function todo() {
   return 1;
 }
