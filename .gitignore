@@ -1,6 +1,8 @@
 .log
 .DS_Store
 .jest-*
+.idea
+*~
 lib
 node_modules
 lerna-debug.log
