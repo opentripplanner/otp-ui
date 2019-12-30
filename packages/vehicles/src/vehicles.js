@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { FeatureGroup } from "react-leaflet";
 
 import VehicleMarker from "./vehicle-marker";
@@ -12,5 +13,9 @@ function Vehicles(props) {
     </FeatureGroup>
   );
 }
+
+Vehicles.propTypes = {
+  vehicles: PropTypes.arrayOf(PropTypes.shape({})).isRequired
+};
 
 export default Vehicles;
