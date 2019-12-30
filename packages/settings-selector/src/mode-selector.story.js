@@ -1,4 +1,5 @@
 import React from "react";
+import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
 
 import ModeSelector, { getModeOptions } from "./mode-selector";
@@ -21,6 +22,8 @@ const selectedModes = ["BICYCLE", "TRAM", "RAIL", "BUS"];
 
 const modeOptions = getModeOptions(commonModes, selectedModes);
 
+const onChange = action("onChange");
+
 export default {
   title: "Mode Selector",
   decorators: [withInfo, background],
@@ -34,4 +37,6 @@ export default {
   }
 };
 
-export const normal = () => <ModeSelector modes={modeOptions} />;
+export const normal = () => (
+  <ModeSelector modes={modeOptions} onChange={onChange} />
+);
