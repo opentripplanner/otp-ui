@@ -1,7 +1,8 @@
 import React from "react";
 import { withInfo } from "@storybook/addon-info";
 
-import ModeSelector from "./mode-selector";
+import ModeSelector, { getModeOptions } from "./mode-selector";
+import { commonModes } from "./modes";
 
 const background = story => (
   <div
@@ -18,6 +19,8 @@ const background = story => (
 
 const selectedModes = ["BICYCLE", "TRAM", "RAIL", "BUS"];
 
+const modeOptions = getModeOptions(commonModes, selectedModes);
+
 export default {
   title: "Mode Selector",
   decorators: [withInfo, background],
@@ -31,4 +34,4 @@ export default {
   }
 };
 
-export const normal = () => <ModeSelector selectedModes={selectedModes} />;
+export const normal = () => <ModeSelector modes={modeOptions} />;

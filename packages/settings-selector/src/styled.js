@@ -78,6 +78,7 @@ export const SecondaryModeRow = styled(ModeRow)`
 
 export const TertiaryModeRow = styled(ModeRow)`
   font-size: 90%;
+  text-align: center;
   > * {
     height: 48px;
   }
