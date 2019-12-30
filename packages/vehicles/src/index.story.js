@@ -47,19 +47,34 @@ function routeExample() {
 function animateExample() {
   const [vehicleData, setVehicleData] = React.useState(null);
 
-  // when state of vehicle data is null (new) set the data updates here
-  // this makes sure we only have 1 updater interval (else chaos ensues)
-  // NOTE: because we're setting state below, this function is going to get called multiple times by react
-  //       if we don't have the gate of vehicleData == null, then we'll get multiple setInterval calls
-  if (vehicleData == null) {
-    let i = 0;
-    setVehicleData(v[i]);
-    setInterval(() => {
-      i += 1;
-      if (i >= v.length) i = 0;
+  // the code below w/in useEffect is a simplified version of what's in vehcile-action.js / VechicleAction component
+  // note: we wrap the setInterval / clearInterval w/in a useEffect, since that will work our component lifecycle.
+  React.useEffect(() => {
+    let getDataInterval = null;
+
+    // when state of vehicle data is null (new) set the data updates here
+    // this makes sure we only have 1 updater interval (else chaos ensues)
+    // NOTE: because we're setting state below, this function is going to get called multiple times by react
+    //       if we don't have the gate of vehicleData == null, then we'll get multiple setInterval calls
+    if (vehicleData == null) {
+      let i = 0;
       setVehicleData(v[i]);
-    }, 3000);
-  }
+      getDataInterval = setInterval(() => {
+        i += 1;
+        if (i >= v.length) i = 0;
+        console.log(`using vehicle bundle: ${i + 1}`);
+        setVehicleData(v[i]);
+      }, 3000);
+    }
+
+    return () => {
+      // before vehicle view component unmounts, clear the interval...
+      if (getDataInterval) {
+        clearInterval(getDataInterval);
+        getDataInterval = null;
+      }
+    };
+  }, []);
 
   const retVal = <Map center={portland} vehicles={vehicleData}></Map>;
   return retVal;
