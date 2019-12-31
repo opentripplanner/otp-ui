@@ -18,7 +18,7 @@ const background = story => (
 );
 
 export default {
-  title: "Mode Button",
+  title: "ModeButton",
   component: "ModeButton",
   decorators: [withInfo, background],
   parameters: {

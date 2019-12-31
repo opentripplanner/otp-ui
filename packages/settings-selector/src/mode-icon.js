@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import * as Icons from "@opentripplanner/icons";
 
 /**
- * A generic icon component that displays an icon for the specified mode.
+ * A generic icon component that displays an icon for the specified transportation mode.
  */
 const ModeIcon = props => {
   const { mode } = props;
@@ -39,12 +39,8 @@ const ModeIcon = props => {
 
 ModeIcon.propTypes = {
   /**
-   * The mode to depict. Can be one of the supported values,
-   * in any combination of upper-case and lower-case letters.
-   * Nothing is displayed if the mode is not one of the supported values.
-   */
-  mode: PropTypes.oneOf([
-    "bus",
+   * One of the supported modes (case-insensitive):
+   * "bus",
     "tram",
     "rail",
     "subway",
@@ -57,7 +53,8 @@ ModeIcon.propTypes = {
     "car_hail",
     "micromobility",
     "micromobility_rent"
-  ]).isRequired
+   */
+  mode: PropTypes.string.isRequired
 };
 
 export default ModeIcon;

@@ -18,14 +18,30 @@ const background = story => (
   </div>
 );
 
-const selectedModes = ["BICYCLE", "TRAM", "RAIL", "BUS"];
+let selectedModes = ["BICYCLE", "TRAM", "RAIL", "BUS"];
 
-const modeOptions = getModeOptions(commonModes, selectedModes);
+let modeOptions = getModeOptions(commonModes, selectedModes);
 
-const onChange = action("onChange");
+const onChange = id => {
+  const newModes = id.split("+");
+  let finalModes = [];
+
+  if (newModes[0] === "TRANSIT") {
+    newModes.shift();
+    finalModes = ["TRAM", "RAIL", "BUS"].concat(newModes);
+  } else {
+    finalModes = newModes;
+  }
+
+  selectedModes = finalModes;
+
+  modeOptions = getModeOptions(commonModes, selectedModes);
+
+  action("onChange")(id);
+};
 
 export default {
-  title: "Mode Selector",
+  title: "ModeSelector",
   decorators: [withInfo, background],
   parameters: {
     info: {

@@ -61,7 +61,7 @@ function getExclusiveModeOptions(modes, selectedModes) {
     .filter(mode => exclusiveModes.includes(mode.mode))
     .map(modeObj => ({
       id: modeObj.mode,
-      selected: selectedModes === [modeObj.mode],
+      selected: selectedModes.length === 1 && selectedModes[0] === modeObj.mode,
       showTitle: false,
       text: (
         <span>
