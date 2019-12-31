@@ -4,7 +4,7 @@ import { FeatureGroup } from "react-leaflet";
 
 import VehicleMarker from "./vehicle-marker";
 
-function Vehicles(props) {
+function VehicleLayer(props) {
   const { vehicles } = props;
 
   return (
@@ -14,8 +14,8 @@ function Vehicles(props) {
   );
 }
 
-Vehicles.propTypes = {
+VehicleLayer.propTypes = {
   vehicles: PropTypes.arrayOf(PropTypes.shape({})).isRequired
 };
 
-export default Vehicles;
+export default VehicleLayer;
