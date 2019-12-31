@@ -7,7 +7,8 @@ import { storiesOf } from "@storybook/react";
 import BaseMap from "@opentripplanner/base-map";
 
 import VehicleLayer from "./vehicle-layer";
-import { getVehicles } from "./vehicle-utils";
+import VehicleAction from "./vehicle-action";
+
 import "@opentripplanner/base-map/assets/map.css";
 
 const line = require("../__mocks__/line100.json");
@@ -39,13 +40,22 @@ function routeExample() {
   return retVal;
 }
 
-function animateExample() {
+function rtExample() {
+  const retVal = (
+    <BaseMap center={portland}>
+      <VehicleAction />
+    </BaseMap>
+  );
+  return retVal;
+}
+
+function animatedExample() {
   const [vehicleData, setVehicleData] = React.useState(null);
 
   // the code below w/in useEffect is a simplified version of what's in vehcile-action.js / VechicleAction component
   // note: we wrap the setInterval / clearInterval w/in a useEffect, since that will work our component lifecycle.
   React.useEffect(() => {
-    let getDataInterval = null;
+    let interval = null;
 
     // when state of vehicle data is null (new) set the data updates here
     // this makes sure we only have 1 updater interval (else chaos ensues)
@@ -53,22 +63,20 @@ function animateExample() {
     //       if we don't have the gate of vehicleData == null, then we'll get multiple setInterval calls
     if (vehicleData == null) {
       let i = 0;
-      // setVehicleData(v[i]);
-      getVehicles(setVehicleData);
-      getDataInterval = setInterval(() => {
+      setVehicleData(v[i]);
+      interval = setInterval(() => {
         i += 1;
         if (i >= v.length) i = 0;
         console.log(`using vehicle bundle: ${i + 1}`);
-        // setVehicleData(v[i]);
-        getVehicles(setVehicleData);
-      }, 5000);
+        setVehicleData(v[i]);
+      }, 500);
     }
 
     return () => {
       // before vehicle view component unmounts, clear the interval...
-      if (getDataInterval) {
-        clearInterval(getDataInterval);
-        getDataInterval = null;
+      if (interval) {
+        clearInterval(interval);
+        interval = null;
       }
     };
   }, []);
@@ -90,4 +98,5 @@ storiesOf("Realtime VehicleLayer", module)
   .addDecorator(withInfo)
   .add("by Route", routeExample)
   .add("all Routes", allExample)
-  .add("animate VehicleLayer", animateExample);
+  .add("animated VehicleLayer", animatedExample)
+  .add("real-time VehicleAction layer", rtExample);

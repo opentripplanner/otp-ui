@@ -1,4 +1,4 @@
-function getVehicles(setState, url) {
+export function getVehicles(setState, url) {
   const d = Date.now();
   url = url || "https://maps.trimet.org/gtfs/rt/vehicles/routes/all";
   url = url.indexOf("?") ? `${url}?` : `${url}&`;
@@ -31,12 +31,26 @@ function getVehicles(setState, url) {
 }
 
 /**
+ * get refresh values (default 10 seconds), and convert from secs to millisecs
+ */
+export function checkRefreshInteval(inverval, defInterval = 10000) {
+  let retVal = defInterval;
+  if (inverval) {
+    let r = inverval;
+    if (r > 0 && r <= 100) r *= 1000;
+    if (r >= 1000 && r < 100000) retVal = r;
+    else retVal = defInterval;
+  }
+  return retVal;
+}
+
+/**
  * will build up a gtfsdb url for rt vehicles
  * certain rules exist around the various filters
  * url:
  *   https://maps.trimet.org/gtfs/rt/vehicles/routes/all
  */
-function makeWsUrl(
+export function makeWsUrl(
   url,
   routes = null,
   blocks = null,
@@ -53,5 +67,3 @@ function makeWsUrl(
   const retVal = url + filter;
   return retVal;
 }
-
-export { getVehicles, makeWsUrl };
