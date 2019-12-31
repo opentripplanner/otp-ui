@@ -5,44 +5,13 @@ import { withInfo } from "@storybook/addon-info";
 import ModeSelector, { getModeOptions } from "./mode-selector";
 import { commonModes } from "./modes";
 
-const background = story => (
-  <div
-    style={{
-      backgroundColor: "#F0F0F0",
-      height: "200px",
-      padding: "15px",
-      fontFamily: "Hind, sans-serif"
-    }}
-  >
-    {story()}
-  </div>
-);
-
-let selectedModes = ["BICYCLE", "TRAM", "RAIL", "BUS"];
-
-let modeOptions = getModeOptions(commonModes, selectedModes);
-
-const onChange = id => {
-  const newModes = id.split("+");
-  let finalModes = [];
-
-  if (newModes[0] === "TRANSIT") {
-    newModes.shift();
-    finalModes = ["TRAM", "RAIL", "BUS"].concat(newModes);
-  } else {
-    finalModes = newModes;
-  }
-
-  selectedModes = finalModes;
-
-  modeOptions = getModeOptions(commonModes, selectedModes);
-
-  action("onChange")(id);
-};
+const selectedModes = ["BICYCLE", "TRAM", "RAIL", "BUS"];
+const modeOptions = getModeOptions(commonModes, selectedModes);
+const onChange = action("onChange");
 
 export default {
   title: "ModeSelector",
-  decorators: [withInfo, background],
+  decorators: [withInfo],
   parameters: {
     info: {
       text: `

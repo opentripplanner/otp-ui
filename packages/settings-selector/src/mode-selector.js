@@ -103,6 +103,7 @@ const ModeSelector = props => {
 
   const makeButton = option => (
     <ModeButton
+      key={option.id /* Triggers a React Dev Tool warning without the key. */}
       selected={option.selected}
       showTitle={option.showTitle}
       title={option.title}
@@ -119,7 +120,6 @@ const ModeSelector = props => {
       {secondary && (
         <SecondaryModeRow>{secondary.map(makeButton)}</SecondaryModeRow>
       )}
-
       {tertiary && (
         <TertiaryModeRow>{tertiary.map(makeButton)}</TertiaryModeRow>
       )}
