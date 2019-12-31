@@ -7,21 +7,17 @@ function getVehicles(setState, url) {
   url = url.indexOf("?") ? `${url}?` : `${url}&`;
   url = `${url}__time__=${d}`;
 
-  function catchFetchErrors(response) {
-    // :see: https://www.tjvantoll.com/2015/09/13/fetch-and-errors/
-    if (!response.ok) {
-      throw Error(response.statusText);
-    }
-    return response;
-  }
-
-  // eg: https://maps.trimet.org/gtfs/rt/vehicles/routes/100
-  let retVal = null;
   fetch(url)
-    .then(catchFetchErrors)
+    .then(res => {
+      if (!res.ok) {
+        console.log(res.statusText);
+        throw Error(res.statusText);
+      }
+      return res;
+    })
     .then(res => {
       // if(this.isNewer(res))
-      retVal = res.json();
+      let retVal = res.json();
       return retVal;
     })
     .then(json => {
