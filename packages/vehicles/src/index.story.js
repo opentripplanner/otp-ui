@@ -8,6 +8,7 @@ import { storiesOf } from "@storybook/react";
 import BaseMap from "@opentripplanner/base-map";
 
 import VehicleLayer from "./vehicle-layer";
+import { getVehicles } from "./vehicle-action";
 import "@opentripplanner/base-map/assets/map.css";
 
 const line = require("../__mocks__/line100.json");
@@ -62,12 +63,14 @@ function animateExample() {
     //       if we don't have the gate of vehicleData == null, then we'll get multiple setInterval calls
     if (vehicleData == null) {
       let i = 0;
-      setVehicleData(v[i]);
+      // setVehicleData(v[i]);
+      getVehicles(setVehicleData);
       getDataInterval = setInterval(() => {
         i += 1;
         if (i >= v.length) i = 0;
         console.log(`using vehicle bundle: ${i + 1}`);
-        setVehicleData(v[i]);
+        // setVehicleData(v[i]);
+        getVehicles(setVehicleData);
       }, 3000);
     }
 

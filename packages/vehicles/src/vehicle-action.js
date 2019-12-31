@@ -1,6 +1,42 @@
 import React from "react";
 // import PropTypes from "prop-types";
 
+function getVehicles(setState, url) {
+  const d = Date.now();
+  url = url || "https://maps.trimet.org/gtfs/rt/vehicles/routes/all";
+  url = url.indexOf("?") ? `${url}?` : `${url}&`;
+  url = `${url}__time__=${d}`;
+
+  function catchFetchErrors(response) {
+    // :see: https://www.tjvantoll.com/2015/09/13/fetch-and-errors/
+    if (!response.ok) {
+      throw Error(response.statusText);
+    }
+    return response;
+  }
+
+  // eg: https://maps.trimet.org/gtfs/rt/vehicles/routes/100
+  let retVal = null;
+  fetch(url)
+    .then(catchFetchErrors)
+    .then(res => {
+      // if(this.isNewer(res))
+      retVal = res.json();
+      return retVal;
+    })
+    .then(json => {
+      if (json && json.length > 0) {
+        console.log(`updating state with ${json.length} vehicles`);
+        setState(json);
+      } else {
+        console.log("get vehicle data is suspect");
+      }
+    })
+    .catch(error => {
+      console.log(`VEH fetch() error: ${error}`);
+    });
+}
+
 function VehicleAction() {
   const [vehicleData, setVehicleData] = React.useState(null);
 
@@ -36,4 +72,4 @@ function VehicleAction() {
   return retVal;
 }
 
-export default VehicleAction;
+export { VehicleAction, getVehicles };
