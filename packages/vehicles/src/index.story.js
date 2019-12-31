@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import { withA11y } from "@storybook/addon-a11y";
 import { withInfo } from "@storybook/addon-info";
@@ -8,44 +7,35 @@ import { storiesOf } from "@storybook/react";
 import BaseMap from "@opentripplanner/base-map";
 
 import VehicleLayer from "./vehicle-layer";
-import { getVehicles } from "./vehicle-action";
+import { getVehicles } from "./vehicle-utils";
 import "@opentripplanner/base-map/assets/map.css";
 
 const line = require("../__mocks__/line100.json");
 const all = require("../__mocks__/all.json");
+
 const v1 = require("../__mocks__/all1.json");
 const v2 = require("../__mocks__/all2.json");
 const v3 = require("../__mocks__/all3.json");
 
 const v = [v1, v2, v3];
+
 const portland = [45.523, -122.671];
 
-function Map(props) {
-  const { center } = props;
-  const { vehicles } = props;
-  return (
-    <BaseMap center={center}>
-      <VehicleLayer
-        name="Real-Time Buses and Trains"
-        vehicles={vehicles}
-        visible
-      />
+function allExample() {
+  const retVal = (
+    <BaseMap center={portland}>
+      <VehicleLayer name="Real-Time Buses and Trains" vehicles={all} visible />
     </BaseMap>
   );
-}
-
-Map.propTypes = {
-  center: PropTypes.arrayOf(PropTypes.number).isRequired,
-  vehicles: PropTypes.arrayOf(PropTypes.shape({})).isRequired
-};
-
-function allExample() {
-  const retVal = <Map center={portland} vehicles={all} />;
   return retVal;
 }
 
 function routeExample() {
-  const retVal = <Map center={portland} vehicles={line} />;
+  const retVal = (
+    <BaseMap center={portland}>
+      <VehicleLayer name="Real-Time Buses and Trains" vehicles={line} visible />
+    </BaseMap>
+  );
   return retVal;
 }
 
@@ -71,7 +61,7 @@ function animateExample() {
         console.log(`using vehicle bundle: ${i + 1}`);
         // setVehicleData(v[i]);
         getVehicles(setVehicleData);
-      }, 3000);
+      }, 5000);
     }
 
     return () => {
@@ -83,7 +73,15 @@ function animateExample() {
     };
   }, []);
 
-  const retVal = <Map center={portland} vehicles={vehicleData}></Map>;
+  const retVal = (
+    <BaseMap center={portland}>
+      <VehicleLayer
+        name="Real-Time Buses and Trains"
+        vehicles={vehicleData}
+        visible
+      />
+    </BaseMap>
+  );
   return retVal;
 }
 

@@ -1,38 +1,6 @@
 import React from "react";
 // import PropTypes from "prop-types";
 
-function getVehicles(setState, url) {
-  const d = Date.now();
-  url = url || "https://maps.trimet.org/gtfs/rt/vehicles/routes/all";
-  url = url.indexOf("?") ? `${url}?` : `${url}&`;
-  url = `${url}__time__=${d}`;
-
-  fetch(url)
-    .then(res => {
-      if (!res.ok) {
-        console.log(res.statusText);
-        throw Error(res.statusText);
-      }
-      return res;
-    })
-    .then(res => {
-      // if(this.isNewer(res))
-      let retVal = res.json();
-      return retVal;
-    })
-    .then(json => {
-      if (json && json.length > 0) {
-        console.log(`updating state with ${json.length} vehicles`);
-        setState(json);
-      } else {
-        console.log("get vehicle data is suspect");
-      }
-    })
-    .catch(error => {
-      console.log(`VEH fetch() error: ${error}`);
-    });
-}
-
 function VehicleAction() {
   const [vehicleData, setVehicleData] = React.useState(null);
 
@@ -50,7 +18,7 @@ function VehicleAction() {
       getDataInterval = setInterval(() => {
         console.log(`using vehicle load X`);
         // setVehicleData(v[i]);
-      }, 3000);
+      }, 5000);
     }
 
     return () => {
@@ -68,4 +36,17 @@ function VehicleAction() {
   return retVal;
 }
 
-export { VehicleAction, getVehicles };
+/*
+function Map(props) {
+  const { center } = props;
+  const { vehicles } = props;
+  //return ();
+}
+
+Map.propTypes = {
+  center: PropTypes.arrayOf(PropTypes.number).isRequired,
+  vehicles: PropTypes.arrayOf(PropTypes.shape({})).isRequired
+};
+*/
+
+export default VehicleAction;
