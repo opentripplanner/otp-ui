@@ -7,7 +7,7 @@ import { storiesOf } from "@storybook/react";
 
 import BaseMap from "@opentripplanner/base-map";
 
-import Vehicles from "./vehicles";
+import VehicleLayer from "./vehicle-layer";
 import "@opentripplanner/base-map/assets/map.css";
 
 const line = require("../__mocks__/line100.json");
@@ -24,7 +24,11 @@ function Map(props) {
   const { vehicles } = props;
   return (
     <BaseMap center={center}>
-      <Vehicles name="Real-Time Buses and Trains" vehicles={vehicles} visible />
+      <VehicleLayer
+        name="Real-Time Buses and Trains"
+        vehicles={vehicles}
+        visible
+      />
     </BaseMap>
   );
 }
@@ -80,9 +84,9 @@ function animateExample() {
   return retVal;
 }
 
-storiesOf("Realtime Vehicles", module)
+storiesOf("Realtime VehicleLayer", module)
   .addDecorator(withA11y)
   .addDecorator(withInfo)
   .add("by Route", routeExample)
   .add("all Routes", allExample)
-  .add("animate Vehicles", animateExample);
+  .add("animate VehicleLayer", animateExample);
