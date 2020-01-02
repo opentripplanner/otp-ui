@@ -38,9 +38,8 @@ function VehicleAction(props) {
 
   const retVal = (
     <VehicleLayer
-      name="Real-Time Buses and Trains"
       vehicles={vehicleData}
-      visible
+      {...props}
     />
   );
   return retVal;
