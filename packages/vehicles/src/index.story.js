@@ -40,15 +40,6 @@ function routeExample() {
   return retVal;
 }
 
-function rtExample() {
-  const retVal = (
-    <BaseMap center={portland}>
-      <VehicleAction />
-    </BaseMap>
-  );
-  return retVal;
-}
-
 function animatedExample() {
   const [vehicleData, setVehicleData] = React.useState(null);
 
@@ -92,6 +83,20 @@ function animatedExample() {
   );
   return retVal;
 }
+
+function rtExample() {
+  const retVal = (
+    <BaseMap center={portland}>
+      <VehicleAction
+        name="Real-Time Buses and Trains"
+        visible
+      />
+    </BaseMap>
+  );
+  return retVal;
+}
+
+
 
 storiesOf("Realtime VehicleLayer", module)
   .addDecorator(withA11y)
