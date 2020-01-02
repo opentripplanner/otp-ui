@@ -12,7 +12,9 @@ const ModeIcon = props => {
     case "bus":
       return <Icons.Bus />;
     case "tram":
+      return <Icons.Max />;
     case "rail":
+      return <Icons.Wes />;
     case "subway":
       return <Icons.Streetcar />;
     case "walk":
@@ -32,6 +34,8 @@ const ModeIcon = props => {
     case "micromobility":
     case "micromobility_rent":
       return <Icons.Micromobility />;
+    case "transit":
+      return <Icons.TriMet />;
     default:
       return null;
   }

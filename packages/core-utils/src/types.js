@@ -20,6 +20,7 @@ export const itineraryType = PropTypes.shape({
 export const timeOptionsType = PropTypes.shape({});
 
 export const modeOptionType = PropTypes.shape({
+  id: PropTypes.string.isRequired,
   selected: PropTypes.bool,
   showTitle: PropTypes.bool,
   text: PropTypes.node.isRequired,

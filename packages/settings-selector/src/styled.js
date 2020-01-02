@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+export const ModeIconWrap = styled.div`
+  width: 100px;
+  svg {
+    width: 100%;
+  }
+`;
+
 export const ModeButtonContainer = styled.div`
   display: inline-block;
   text-align: center;
@@ -30,7 +37,7 @@ export const ModeButtonBtn = styled.button`
   svg {
     vertical-align: middle;
     width: 1.25em;
-    margin: 0 5px;
+    margin: 0 0.25em;
   }
   &.disabled {
     cursor: default;
@@ -83,3 +90,21 @@ export const TertiaryModeRow = styled(ModeRow)`
     height: 48px;
   }
 `;
+
+export const SubmodeRow = styled(ModeRow)`
+  font-size: 90%;
+`;
+
+/**
+ *   > * {
+    width: inherit;
+    padding: 3px 5px 3px 0;
+  }
+  button {
+    padding: 6px 12px;
+  }
+  svg {
+    margin-left: 0px;
+  }
+
+ */

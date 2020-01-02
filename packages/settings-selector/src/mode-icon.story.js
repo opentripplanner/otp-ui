@@ -2,11 +2,14 @@ import React from "react";
 import { withKnobs, object } from "@storybook/addon-knobs";
 import { withInfo } from "@storybook/addon-info";
 
+import { ModeIconWrap } from "./styled";
 import ModeIcon from "./mode-icon";
+
+const background = story => <ModeIconWrap>{story()}</ModeIconWrap>;
 
 export default {
   title: "ModeIcon",
-  decorators: [withInfo, withKnobs],
+  decorators: [withInfo, withKnobs, background],
   parameters: {
     info: {
       text:

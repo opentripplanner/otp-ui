@@ -2,11 +2,9 @@ import React from "react";
 import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
 
-import ModeSelector, { getModeOptions } from "./mode-selector";
-import { commonModes } from "./modes";
+import ModeSelector from "./mode-selector";
+import modeOptions from "./__mocks__/mode-options";
 
-const selectedModes = ["BICYCLE", "TRAM", "RAIL", "BUS"];
-const modeOptions = getModeOptions(commonModes, selectedModes);
 const onChange = action("onChange");
 
 export default {

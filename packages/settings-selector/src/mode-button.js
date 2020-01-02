@@ -10,13 +10,21 @@ import { ModeButtonContainer, ModeButtonBtn, ModeButtonTitle } from "./styled";
  * A ModeButton can be enabled or disabled, active or inactive.
  */
 const ModeButton = props => {
-  const { selected, children, enabled, showTitle, title, onClick } = props;
+  const {
+    className,
+    selected,
+    children,
+    enabled,
+    showTitle,
+    title,
+    onClick
+  } = props;
 
   const activeClassName = selected ? "active" : "";
   const disabledClassName = enabled ? "" : "disabled";
 
   return (
-    <ModeButtonContainer>
+    <ModeButtonContainer className={className}>
       <ModeButtonBtn
         className={`${activeClassName} ${disabledClassName}`}
         onClick={onClick}
@@ -42,6 +50,10 @@ ModeButton.propTypes = {
     PropTypes.arrayOf(PropTypes.node)
   ]),
   /**
+   * The CSS class name to apply to this element.
+   */
+  className: PropTypes.string,
+  /**
    * Determines whether the button is currently enabled.
    */
   enabled: PropTypes.bool,
@@ -66,6 +78,7 @@ ModeButton.propTypes = {
 
 ModeButton.defaultProps = {
   children: null,
+  className: null,
   enabled: true,
   onClick: null,
   selected: false,
