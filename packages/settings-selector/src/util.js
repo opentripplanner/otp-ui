@@ -1,5 +1,6 @@
 import React from "react";
 import { isTransit } from "@opentripplanner/core-utils/lib/itinerary";
+import * as Icons from "@opentripplanner/icons";
 
 import ModeIcon from "./mode-icon";
 import supportedExclusiveModes from "./exclusive-modes";
@@ -102,4 +103,23 @@ export function getModeOptions(modes, selectedModes) {
     secondary: getTransitCombinedModeOptions(modes, selectedModes),
     tertiary: getExclusiveModeOptions(modes, selectedModes)
   };
+}
+
+export function getCompaniesOptions(companies, modes, selectedCompanies) {
+  return companies
+    .filter(comp => modes.includes(comp.modes))
+    .map(comp => {
+      const IconTag = Icons[comp.id];
+
+      return {
+        id: comp.id,
+        selected: selectedCompanies.includes(comp.id),
+        text: (
+          <span>
+            <IconTag /> {comp.label}
+          </span>
+        ),
+        title: comp.label
+      };
+    });
 }

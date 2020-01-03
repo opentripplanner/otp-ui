@@ -65,7 +65,8 @@ export const SubmodeRow = styled(ModeRow)`
   button {
     padding: 6px 12px;
   }
-  svg {
+  svg,
+  img {
     margin-left: 0px;
   }
 `;
@@ -92,10 +93,12 @@ export const ModeButtonBtn = styled.button`
     border: 2px solid rgb(0, 0, 0);
     background-color: rgb(173, 216, 230);
   }
-  svg {
+  svg,
+  img {
     vertical-align: middle;
-    width: 1.25em;
+    max-width: 1.25em;
     margin: 0 0.25em;
+    height: 1.25em;
   }
   &.disabled {
     cursor: default;

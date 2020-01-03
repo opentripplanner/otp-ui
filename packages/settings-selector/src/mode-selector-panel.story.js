@@ -1,4 +1,5 @@
 import React from "react";
+import { action } from "@storybook/addon-actions";
 
 import ModeSelectorPanel from "./mode-selector-panel";
 
@@ -15,9 +16,11 @@ const background = story => (
   </div>
 );
 
+const onChange = action("onChange");
+
 export default {
   title: "ModeSelectorPanel",
   decorators: [background]
 };
 
-export const container = () => <ModeSelectorPanel />;
+export const container = () => <ModeSelectorPanel onChange={onChange} />;

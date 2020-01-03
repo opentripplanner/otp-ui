@@ -4,8 +4,13 @@ import { isTransit } from "@opentripplanner/core-utils/lib/itinerary";
 
 import ModeSelector from "./mode-selector";
 import SubmodeSelector from "./submode-selector";
-import { getModeOptions, getTransitSubmodeOptions } from "./util";
+import {
+  getModeOptions,
+  getTransitSubmodeOptions,
+  getCompaniesOptions
+} from "./util";
 import commonModes from "./__mocks__/modes"; // FIXME: Replace with ref to configuration.
+import commonCompanies from "./__mocks__/companies"; // FIXME: Replace with ref to configuration.
 
 const defaultTransitModes = [
   "TRAM", // FIXME: Take these from the 'registered' transit modes in core-utils/itinerary.
@@ -18,35 +23,44 @@ export default class ModeSelectorPanel extends Component {
   constructor(props) {
     super(props);
 
-    const { selectedModes } = props;
+    const { selectedModes, selectedCompanies } = props;
 
     this.state = {
-      selectedModes,
+      selectedModes: selectedModes || [],
+      selectedCompanies: selectedCompanies || [],
       selectedTransitModes: []
     };
   }
 
   mainModeChangeHandler = id => {
-    const { selectedModes } = this.state;
-    let { selectedTransitModes } = this.state;
-    const activeTransitModes = selectedModes.filter(isTransit);
-    if (selectedTransitModes.length === 0) {
-      selectedTransitModes = selectedTransitModes.concat(defaultTransitModes);
-    }
-
     const { onChange } = this.props;
     if (onChange) onChange(id);
 
     const newModes = id.split("+");
     if (newModes[0] === "TRANSIT") {
+      const { selectedModes } = this.state;
+      let { selectedTransitModes } = this.state;
+      const activeTransitModes = selectedModes.filter(isTransit);
+      if (selectedTransitModes.length === 0) {
+        selectedTransitModes = selectedTransitModes.concat(defaultTransitModes);
+      }
+
       // Add previously selected transit modes only if none were active.
+      const nonTransitModes = newModes.length > 1 ? [newModes[1]] : ["WALK"];
       const finalModes = (activeTransitModes.length > 0
         ? activeTransitModes
         : selectedTransitModes
-      ).concat(newModes.length > 1 ? [newModes[1]] : ["WALK"]);
+      ).concat(nonTransitModes);
+
+      const selectedCompanies = getCompaniesOptions(
+        commonCompanies,
+        nonTransitModes,
+        []
+      ).map(comp => comp.id);
 
       this.setState({
-        selectedModes: finalModes
+        selectedModes: finalModes,
+        selectedCompanies
       });
     } else {
       this.setState({
@@ -68,8 +82,20 @@ export default class ModeSelectorPanel extends Component {
     });
   };
 
+  companiesChangeHandler = id => {
+    const { selectedCompanies } = this.state;
+    const newModesArray = this.toggleSubmode(id, selectedCompanies);
+
+    const { onChange } = this.props;
+    if (onChange) onChange(id);
+
+    this.setState({
+      selectedCompanies: newModesArray
+    });
+  };
+
   toggleSubmode(id, submodes, filter = o => o) {
-    const newSubmodes = submodes.concat([]);
+    const newSubmodes = [].concat(submodes);
     const idx = newSubmodes.indexOf(id);
 
     // If clicked mode is selected, then remove it, o/w add it.
@@ -88,10 +114,16 @@ export default class ModeSelectorPanel extends Component {
 
   render() {
     const { className } = this.props;
-    const { selectedModes } = this.state;
+    const { selectedModes, selectedCompanies } = this.state;
 
     const modeOptions = getModeOptions(commonModes, selectedModes);
     const transitModes = getTransitSubmodeOptions(commonModes, selectedModes);
+    const nonTransitModes = selectedModes.filter(m => !isTransit(m));
+    const companies = getCompaniesOptions(
+      commonCompanies,
+      nonTransitModes,
+      selectedCompanies
+    );
 
     return (
       <div className={className}>
@@ -102,17 +134,17 @@ export default class ModeSelectorPanel extends Component {
 
         <div>Travel Preferences</div>
 
-        {selectedModes.some(isTransit) && (
+        {companies.length >= 2 && (
           <div>
             Use companies:
             <SubmodeSelector
-              modes={transitModes}
-              onChange={this.transitModeChangeHandler}
+              modes={companies}
+              onChange={this.companiesChangeHandler}
             />
           </div>
         )}
 
-        {selectedModes.some(isTransit) && (
+        {selectedModes.some(isTransit) && transitModes.length >= 2 && (
           <div>
             Use:
             <SubmodeSelector
@@ -133,7 +165,11 @@ ModeSelectorPanel.propTypes = {
   className: PropTypes.string,
   onChange: PropTypes.func, // onChange(<SETTING_ID>)
   /**
-   * A comma-separated list of selected modes, no whitespaces (corresponds to the mode URL parameter).
+   * An array of selected providers for ride-hailing or rentals, no whitespaces (corresponds to the companies URL parameter).
+   */
+  selectedCompanies: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * An array of selected modes, no whitespaces (corresponds to the mode URL parameter).
    */
   selectedModes: PropTypes.arrayOf(PropTypes.string)
 };
@@ -141,5 +177,6 @@ ModeSelectorPanel.propTypes = {
 ModeSelectorPanel.defaultProps = {
   className: null,
   onChange: null,
-  selectedModes: defaultTransitModes
+  selectedCompanies: null,
+  selectedModes: null
 };
