@@ -1,5 +1,8 @@
 import React from "react";
 
+/**
+ * For the company http://bolt.miami/
+ */
 const BoltIcon = ({ title, ...props }) => (
   <img
     alt={title ? <title>{title}</title> : "Bird icon"}
