@@ -22,7 +22,9 @@ const geocoderConfig = {
   maxNearbyStops: 4,
   type: "PELIAS"
 };
+const getCurrentPosition = action("getCurrentPosition");
 const nearbyStops = ["1", "2"];
+const onLocationSelected = action("onLocationSelected");
 const selectedLocation = { name: "123 Main St" };
 const sessionSearches = [
   {
@@ -72,69 +74,80 @@ const userLocationsAndRecentPlaces = [
   }
 ];
 
-function LocationFieldStoryWrapper(props) {
-  return (
-    <LocationField
-      geocoderConfig={geocoderConfig}
-      getCurrentPosition={action("getCurrentPosition")}
-      inputPlaceholder="Select from location"
-      locationType="from"
-      onLocationSelected={action("onLocationSelected")}
-      /* eslint-disable-next-line react/jsx-props-no-spreading */
-      {...props}
-    />
-  );
-}
-
 storiesOf("LocationField", module)
   .addDecorator(withA11y)
   .addDecorator(withInfo)
   .add("LocationField in desktop context", () => (
-    <LocationFieldStoryWrapper currentPosition={currentPosition} />
+    <LocationField
+      currentPosition={currentPosition}
+      geocoderConfig={geocoderConfig}
+      getCurrentPosition={getCurrentPosition}
+      inputPlaceholder="Select from location"
+      locationType="from"
+      onLocationSelected={onLocationSelected}
+    />
   ))
-  .add(
-    "LocationField in desktop context (current position unavailable)",
-    () => <LocationFieldStoryWrapper />
-  )
   .add("LocationField in mobile context", () => (
-    <LocationFieldStoryWrapper currentPosition={currentPosition} static />
+    <LocationField
+      currentPosition={currentPosition}
+      geocoderConfig={geocoderConfig}
+      getCurrentPosition={getCurrentPosition}
+      locationType="from"
+      onLocationSelected={onLocationSelected}
+      static
+    />
   ))
   .add("LocationField with selected location in desktop context", () => (
-    <LocationFieldStoryWrapper
+    <LocationField
       currentPosition={currentPosition}
+      geocoderConfig={geocoderConfig}
+      getCurrentPosition={getCurrentPosition}
       location={selectedLocation}
       locationType="to"
+      onLocationSelected={onLocationSelected}
     />
   ))
   .add("LocationField with selected location in mobile context", () => (
-    <LocationFieldStoryWrapper
+    <LocationField
       currentPosition={currentPosition}
+      geocoderConfig={geocoderConfig}
+      getCurrentPosition={getCurrentPosition}
       location={selectedLocation}
       locationType="to"
+      onLocationSelected={onLocationSelected}
       static
     />
   ))
   .add("LocationField with nearby stops in mobile context", () => (
-    <LocationFieldStoryWrapper
+    <LocationField
       currentPosition={currentPosition}
+      geocoderConfig={geocoderConfig}
+      getCurrentPosition={getCurrentPosition}
       locationType="to"
       nearbyStops={nearbyStops}
+      onLocationSelected={onLocationSelected}
       static
       stopsIndex={stopsIndex}
     />
   ))
   .add("LocationField with session searches in mobile context", () => (
-    <LocationFieldStoryWrapper
+    <LocationField
       currentPosition={currentPosition}
+      geocoderConfig={geocoderConfig}
+      getCurrentPosition={getCurrentPosition}
       locationType="to"
+      onLocationSelected={onLocationSelected}
       sessionSearches={sessionSearches}
       static
     />
   ))
   .add("LocationField with user settings in mobile context", () => (
-    <LocationFieldStoryWrapper
+    <LocationField
       currentPosition={currentPosition}
+      geocoderConfig={geocoderConfig}
+      getCurrentPosition={getCurrentPosition}
       locationType="to"
+      onLocationSelected={onLocationSelected}
       showUserSettings
       static
       userLocationsAndRecentPlaces={userLocationsAndRecentPlaces}
