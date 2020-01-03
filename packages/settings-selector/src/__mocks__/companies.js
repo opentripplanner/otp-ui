@@ -1,4 +1,15 @@
 const commonCompanies = [
+  // The first two should not be displayed (no rent or hail).
+  {
+    id: "MyBike1",
+    label: "MyBike1",
+    modes: "BICYCLE"
+  },
+  {
+    id: "MyBike2",
+    label: "MyBike2",
+    modes: "BICYCLE"
+  },
   {
     id: "Biketown",
     label: "Biketown",

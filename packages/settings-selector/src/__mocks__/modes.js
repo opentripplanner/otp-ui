@@ -18,6 +18,7 @@ const commonModes = {
     }
   ],
   accessModes: [
+    // Biketown and Uber should be displayed the same despite Biketown company set in companies.
     {
       mode: "BICYCLE",
       label: "Transit + Personal Bike"
@@ -36,10 +37,22 @@ const commonModes = {
     },
     {
       mode: "CAR_HAIL",
-      label: "Transit + Uber"
+      label: "Transit + Uber",
+      company: "Uber"
     }
   ],
-  exclusiveModes: ["WALK", "BICYCLE"]
+  exclusiveModes: ["WALK", "BICYCLE"],
+
+  bicycleModes: [
+    {
+      mode: "BICYCLE",
+      label: "Own Bike"
+    },
+    {
+      mode: "BICYCLE_RENT",
+      label: "Biketown"
+    }
+  ]
 };
 
 export default commonModes;

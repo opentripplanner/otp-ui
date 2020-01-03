@@ -28,7 +28,8 @@ export default class ModeSelectorPanel extends Component {
     this.state = {
       selectedModes: selectedModes || [],
       selectedCompanies: selectedCompanies || [],
-      selectedTransitModes: []
+      defaultCompany: null,
+      lastTransitModes: []
     };
   }
 
@@ -39,28 +40,31 @@ export default class ModeSelectorPanel extends Component {
     const newModes = id.split("+");
     if (newModes[0] === "TRANSIT") {
       const { selectedModes } = this.state;
-      let { selectedTransitModes } = this.state;
+      let { lastTransitModes } = this.state;
       const activeTransitModes = selectedModes.filter(isTransit);
-      if (selectedTransitModes.length === 0) {
-        selectedTransitModes = selectedTransitModes.concat(defaultTransitModes);
+      if (lastTransitModes.length === 0) {
+        lastTransitModes = lastTransitModes.concat(defaultTransitModes);
       }
 
+      const nonTransitModes = newModes.length > 1 ? [newModes[1]] : ["WALK"]; // TODO: also accommodate WALK+DRIVE, WALK+e-scooter??
+      const defaultCompany = newModes.length > 2 ? [newModes[2]] : null; // To accommodate companies defined under accessModes.
+
       // Add previously selected transit modes only if none were active.
-      const nonTransitModes = newModes.length > 1 ? [newModes[1]] : ["WALK"];
       const finalModes = (activeTransitModes.length > 0
         ? activeTransitModes
-        : selectedTransitModes
+        : lastTransitModes
       ).concat(nonTransitModes);
 
-      const selectedCompanies = getCompaniesOptions(
-        commonCompanies,
-        nonTransitModes,
-        []
-      ).map(comp => comp.id);
+      const selectedCompanies =
+        defaultCompany ||
+        getCompaniesOptions(commonCompanies, nonTransitModes, []).map(
+          comp => comp.id
+        );
 
       this.setState({
         selectedModes: finalModes,
-        selectedCompanies
+        selectedCompanies,
+        defaultCompany: defaultCompany && defaultCompany[0]
       });
     } else {
       this.setState({
@@ -78,7 +82,7 @@ export default class ModeSelectorPanel extends Component {
 
     this.setState({
       selectedModes: newModesArray,
-      selectedTransitModes: newModesArray.filter(isTransit)
+      lastTransitModes: newModesArray.filter(isTransit)
     });
   };
 
@@ -114,13 +118,15 @@ export default class ModeSelectorPanel extends Component {
 
   render() {
     const { className } = this.props;
-    const { selectedModes, selectedCompanies } = this.state;
+    const { selectedModes, selectedCompanies, defaultCompany } = this.state;
 
     const modeOptions = getModeOptions(commonModes, selectedModes);
     const transitModes = getTransitSubmodeOptions(commonModes, selectedModes);
     const nonTransitModes = selectedModes.filter(m => !isTransit(m));
     const companies = getCompaniesOptions(
-      commonCompanies,
+      commonCompanies.filter(comp =>
+        defaultCompany ? comp.id === defaultCompany : true
+      ),
       nonTransitModes,
       selectedCompanies
     );

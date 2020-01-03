@@ -1,5 +1,9 @@
 import React from "react";
-import { isTransit } from "@opentripplanner/core-utils/lib/itinerary";
+import {
+  hasRental,
+  hasHail,
+  isTransit
+} from "@opentripplanner/core-utils/lib/itinerary";
 import * as Icons from "@opentripplanner/icons";
 
 import ModeIcon from "./mode-icon";
@@ -62,7 +66,7 @@ function getTransitCombinedModeOptions(modes, selectedModes) {
   return accessModes.map(modeObj => {
     const modeStr = getModeString(modeObj);
     return {
-      id: `TRANSIT+${modeStr}`,
+      id: `TRANSIT+${modeStr}${modeObj.company ? `+${modeObj.company}` : ""}`,
       selected: modesHaveTransit && selectedModes.includes(modeStr),
       text: (
         <span>
@@ -107,7 +111,10 @@ export function getModeOptions(modes, selectedModes) {
 
 export function getCompaniesOptions(companies, modes, selectedCompanies) {
   return companies
-    .filter(comp => modes.includes(comp.modes))
+    .filter(
+      comp => comp.modes.split(",").filter(m => modes.includes(m)).length > 0
+    )
+    .filter(comp => hasRental(comp.modes) || hasHail(comp.modes))
     .map(comp => {
       const IconTag = Icons[comp.id];
 
