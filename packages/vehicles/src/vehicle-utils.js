@@ -67,3 +67,20 @@ export function makeWsUrl(
   const retVal = url + filter;
   return retVal;
 }
+
+export function formatTime(seconds) {
+  let retVal = "";
+  if(seconds >= 60) {
+    const min = Math.floor(seconds / 60);
+    const sec = seconds - min * 60;
+    const minStr = min == 1 ? "minute" : "minutes";
+
+    if(sec > 0)
+      retVal = `${min} ${minStr} & ${sec} seconds ago`;
+    else
+      retVal = `${min} ${minStr} ago`;
+  } else {
+    retVal = `${seconds} seconds ago`;
+  }
+  return retVal;
+}

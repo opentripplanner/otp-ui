@@ -1,10 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { withLeaflet } from "react-leaflet";
-
 import VehicleLayer from "./vehicle-layer";
-
 import { getVehicles, checkRefreshInteval } from "./vehicle-utils";
 
 function VehicleAction(props) {
