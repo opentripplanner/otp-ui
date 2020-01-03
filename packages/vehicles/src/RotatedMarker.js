@@ -1,12 +1,9 @@
 /**
  * @see https://github.com/verdie-g/react-leaflet-rotatedmarker/issues/1
  */
-
-
 import React from 'react';
 import { Marker as LeafletMarker } from 'leaflet';
-import { LeafletProvider, MapLayer } from 'react-leaflet';
-import myWithLeaflet from './MyWithLeaflet';
+import { LeafletProvider, MapLayer, withLeaflet } from 'react-leaflet';
 import 'leaflet-rotatedmarker';
 
 class RotatedMarker extends MapLayer {
@@ -56,4 +53,4 @@ class RotatedMarker extends MapLayer {
   }
 }
 
-export default myWithLeaflet(RotatedMarker);
+export default withLeaflet(RotatedMarker);

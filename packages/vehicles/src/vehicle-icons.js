@@ -1,39 +1,41 @@
 import React from "react";
+import ReactDOMServer from 'react-dom/server';
 
-import TriMetLegIcon from "@opentripplanner/icons/lib/trimet-leg-icon";
+import L from 'leaflet';
 
-import AerialTram from "./trimet/AerialTram";
-import Bicycle from "./trimet/Bicycle";
-import Bus from "./trimet/Bus";
-import Car from "./trimet/Car";
-import Ferry from "./trimet/Ferry";
-import Max from "./trimet/Max";
-import Micromobility from "./trimet/Micromobility";
-import Walk from "./trimet/Walk";
+import {
+  AerialTram,
+  Bus,
+  Streetcar,
+  Max,
+  Wes
+} from "@opentripplanner/icons";
 
 /**
- *
+ * find icons based on gtfsdb mode types
+ * TODO: both icon names and these modes need to align better to standards
+ * TODO: icons using trimet stuff needs to get away from MAX / WES / AERIALTRAM names, etc...
  */
-function makeVehicleIcon(cls, mode, defStr) {
+export default function makeVehicleIcon(cls, mode, defStr) {
   let icon = null;
   switch(mode) {
     case "BUS":
-      icon = <BusIcon/>;
+      icon = <Bus/>;
       break;
     case "TRAM":
-      icon = <TramIcon/>
+      icon = <Max/>
       break;
     case "SC":
-      icon = <StreetcarIcon/>;
+      icon = <Streetcar/>;
       break;
     case "GONDOLA":
-      icon = <GondolaIcon/>;
+      icon = <AerialTram/>;
       break;
     case "RAIL":
-      icon = <RailIcon/>;
+      icon = <Wes/>;
       break;
     default:
-      icon = <BusIcon/>;
+      icon = <Bus/>;
       break;
   }
 
