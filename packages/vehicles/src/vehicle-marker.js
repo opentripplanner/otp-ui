@@ -2,8 +2,10 @@
 /* eslint-disable react/destructuring-assignment */
 import React from "react";
 import { divIcon } from "leaflet";
-import { Marker, CircleMarker, Popup, Tooltip } from "react-leaflet";
+import { Marker, CircleMarker, Popup, Tooltip, withLeaflet } from "react-leaflet";
+import RotatedMarker from "./RotatedMarker";
 
+import makeVehicleIcon from "./vehicle-icons";
 import { formatTime } from "./vehicle-utils";
 import "../assets/vehicles.css";
 
@@ -104,6 +106,7 @@ class VehicleMarker extends React.Component {
     const position = [v.lat, v.lon];
     let zPos = 0;
 
+    //let heading = Math.abs(v.heading / 2); // NOTE: added this div by 2 from strange otp-ui crap
     let heading = v.heading;
     if(heading == null || heading < 0 || heading >= 360)
       heading = 0;
@@ -137,25 +140,25 @@ class VehicleMarker extends React.Component {
       retVal = zoom;
     }
     catch (e) {
-      // console.log(e);
+      console.log(e);
     }
     return retVal;
   }
 
   makeMarker() {
     const zoom = this.getZoom();
-    if(zoom >= this.props.closeZoom)
+    const closeZoom = this.props.closeZoom || 15;
+    const midZoom = this.props.midZoom || 13;
+    const farZoom = this.props.farZoom || 10;
+
+    if(zoom >= closeZoom)
       return this.makeRotatedMarker();
-    else if(zoom >= this.props.midZoom)
+    else if(zoom >= midZoom)
       return this.makeCircleMarker(13.0);
-    else if(zoom >= this.props.farZoom)
+    else if(zoom >= farZoom)
       return this.makeCircleMarker(9.0);
     else
       return this.makeCircleMarker(5.0);
-  }
-
-  makeMarker() {
-    return this.makeCircleMarker(9.0);
   }
 
   render() {
@@ -163,5 +166,4 @@ class VehicleMarker extends React.Component {
   }
 }
 
-//export default withLeaflet(VehicleMarker);
-export default VehicleMarker;
+export default withLeaflet(VehicleMarker);
