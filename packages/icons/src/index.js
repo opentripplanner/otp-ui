@@ -8,6 +8,7 @@ import TriMetModeIcon from "./trimet-mode-icon";
 const {
   Bird,
   Bolt,
+  BoltEu,
   Car2go,
   Gruv,
   Hopr,
@@ -98,6 +99,7 @@ export {
   BikeStaple,
   Bird,
   Bolt,
+  BoltEu,
   Bus,
   BusCircle,
   Car,

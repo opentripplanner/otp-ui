@@ -22,6 +22,7 @@ const geocoderConfig = {
   maxNearbyStops: 4,
   type: "PELIAS"
 };
+const getCurrentPosition = action("getCurrentPosition");
 const nearbyStops = ["1", "2"];
 const onLocationSelected = action("onLocationSelected");
 const selectedLocation = { name: "123 Main St" };
@@ -33,16 +34,16 @@ const sessionSearches = [
   }
 ];
 const stopsIndex = {
-  1: {
-    code: 1,
+  "1": {
+    code: "1",
     dist: 123,
     lat: 12.34,
     lon: 34.56,
     name: "1st & Main",
     routes: [{ shortName: "1" }]
   },
-  2: {
-    code: 2,
+  "2": {
+    code: "2",
     dist: 345,
     lat: 23.45,
     lon: 67.89,
@@ -80,6 +81,7 @@ storiesOf("LocationField", module)
     <LocationField
       currentPosition={currentPosition}
       geocoderConfig={geocoderConfig}
+      getCurrentPosition={getCurrentPosition}
       inputPlaceholder="Select from location"
       locationType="from"
       onLocationSelected={onLocationSelected}
@@ -89,6 +91,7 @@ storiesOf("LocationField", module)
     <LocationField
       currentPosition={currentPosition}
       geocoderConfig={geocoderConfig}
+      getCurrentPosition={getCurrentPosition}
       locationType="from"
       onLocationSelected={onLocationSelected}
       static
@@ -98,6 +101,7 @@ storiesOf("LocationField", module)
     <LocationField
       currentPosition={currentPosition}
       geocoderConfig={geocoderConfig}
+      getCurrentPosition={getCurrentPosition}
       location={selectedLocation}
       locationType="to"
       onLocationSelected={onLocationSelected}
@@ -107,6 +111,7 @@ storiesOf("LocationField", module)
     <LocationField
       currentPosition={currentPosition}
       geocoderConfig={geocoderConfig}
+      getCurrentPosition={getCurrentPosition}
       location={selectedLocation}
       locationType="to"
       onLocationSelected={onLocationSelected}
@@ -117,6 +122,7 @@ storiesOf("LocationField", module)
     <LocationField
       currentPosition={currentPosition}
       geocoderConfig={geocoderConfig}
+      getCurrentPosition={getCurrentPosition}
       locationType="to"
       nearbyStops={nearbyStops}
       onLocationSelected={onLocationSelected}
@@ -128,6 +134,7 @@ storiesOf("LocationField", module)
     <LocationField
       currentPosition={currentPosition}
       geocoderConfig={geocoderConfig}
+      getCurrentPosition={getCurrentPosition}
       locationType="to"
       onLocationSelected={onLocationSelected}
       sessionSearches={sessionSearches}
@@ -138,6 +145,7 @@ storiesOf("LocationField", module)
     <LocationField
       currentPosition={currentPosition}
       geocoderConfig={geocoderConfig}
+      getCurrentPosition={getCurrentPosition}
       locationType="to"
       onLocationSelected={onLocationSelected}
       showUserSettings

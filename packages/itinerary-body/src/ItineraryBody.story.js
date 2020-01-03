@@ -11,18 +11,18 @@ import ItineraryBody from ".";
 const config = require("./__mocks__/config.json");
 
 // import mock itinaries. These are all trip plan outputs from OTP.
-const bikeOnlyItinerary = require("./__mocks__/intineraries/bike-only.json");
-const bikeRentalItinerary = require("./__mocks__/intineraries/bike-rental.json");
-const bikeRentalTransitBikeRentalItinerary = require("./__mocks__/intineraries/bike-rental-transit-bike-rental.json");
-const bikeTransitBikeItinerary = require("./__mocks__/intineraries/bike-transit-bike.json");
-const eScooterRentalItinerary = require("./__mocks__/intineraries/e-scooter-rental.json");
-const eScooterRentalTransiteScooterRentalItinerary = require("./__mocks__/intineraries/e-scooter-transit-e-scooter.json");
-const parkAndRideItinerary = require("./__mocks__/intineraries/park-and-ride.json");
-const tncTransitTncItinerary = require("./__mocks__/intineraries/tnc-transit-tnc.json");
-const walkInterlinedTransitItinerary = require("./__mocks__/intineraries/walk-interlined-transit-walk.json");
-const walkOnlyItinerary = require("./__mocks__/intineraries/walk-only.json");
-const walkTransitWalkItinerary = require("./__mocks__/intineraries/walk-transit-walk.json");
-const walkTransitWalkTransitWalkItinerary = require("./__mocks__/intineraries/walk-transit-walk-transit-walk.json");
+const bikeOnlyItinerary = require("./__mocks__/itineraries/bike-only.json");
+const bikeRentalItinerary = require("./__mocks__/itineraries/bike-rental.json");
+const bikeRentalTransitBikeRentalItinerary = require("./__mocks__/itineraries/bike-rental-transit-bike-rental.json");
+const bikeTransitBikeItinerary = require("./__mocks__/itineraries/bike-transit-bike.json");
+const eScooterRentalItinerary = require("./__mocks__/itineraries/e-scooter-rental.json");
+const eScooterRentalTransiteScooterRentalItinerary = require("./__mocks__/itineraries/e-scooter-transit-e-scooter.json");
+const parkAndRideItinerary = require("./__mocks__/itineraries/park-and-ride.json");
+const tncTransitTncItinerary = require("./__mocks__/itineraries/tnc-transit-tnc.json");
+const walkInterlinedTransitItinerary = require("./__mocks__/itineraries/walk-interlined-transit-walk.json");
+const walkOnlyItinerary = require("./__mocks__/itineraries/walk-only.json");
+const walkTransitWalkItinerary = require("./__mocks__/itineraries/walk-transit-walk.json");
+const walkTransitWalkTransitWalkItinerary = require("./__mocks__/itineraries/walk-transit-walk-transit-walk.json");
 
 class ItineraryBodyDefaultsWrapper extends Component {
   constructor() {
@@ -41,9 +41,11 @@ class ItineraryBodyDefaultsWrapper extends Component {
       <ItineraryBody
         config={config}
         diagramVisible={diagramVisible}
+        frameLeg={action("frameLeg")}
         itinerary={itinerary}
         LegIcon={TriMetLegIcon}
         routingType="ITINERARY"
+        setActiveLeg={action("setActiveLeg")}
         setLegDiagram={this.setLegDiagram}
         setViewedTrip={action("setViewedTrip")}
         showElevationProfile

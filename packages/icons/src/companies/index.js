@@ -1,6 +1,7 @@
 import Biketown from "./biketown-icon";
 import Bird from "./bird-icon";
 import Bolt from "./bolt-icon";
+import BoltEu from "./bolt-eu-icon";
 import Car2go from "./car2go-icon";
 import Gruv from "./gruv-icon";
 import Hopr from "./hopr-icon";
@@ -16,6 +17,7 @@ const companyLookup = {
   biketown: Biketown,
   bird: Bird,
   bolt: Bolt,
+  boltEu: BoltEu,
   car2go: Car2go,
   gruv: Gruv,
   hopr: Hopr,
@@ -36,6 +38,7 @@ export {
   Biketown,
   Bird,
   Bolt,
+  BoltEu,
   Car2go,
   getCompanyIcon,
   Gruv,

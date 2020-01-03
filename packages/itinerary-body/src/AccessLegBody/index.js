@@ -16,7 +16,7 @@ import {
   timeOptionsType
 } from "@opentripplanner/core-utils/lib/types";
 import { isMobile } from "@opentripplanner/core-utils/lib/ui";
-import { humainzeDistanceString } from "@opentripplanner/humanize-distance";
+import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
 import { DirectionIcon } from "@opentripplanner/icons/lib/directions";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
@@ -126,13 +126,14 @@ AccessLegBody.propTypes = {
   setActiveLeg: PropTypes.func.isRequired,
   setLegDiagram: PropTypes.func.isRequired,
   showElevationProfile: PropTypes.bool,
-  timeOptions: timeOptionsType.isRequired
+  timeOptions: timeOptionsType
 };
 
 AccessLegBody.defaultProps = {
   diagramVisible: null,
   followsTransit: false,
-  showElevationProfile: false
+  showElevationProfile: false,
+  timeOptions: null
 };
 
 function TNCLeg({
@@ -234,12 +235,13 @@ TNCLeg.propTypes = {
   leg: legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired,
   onSummaryClick: PropTypes.func.isRequired,
-  timeOptions: timeOptionsType.isRequired
+  timeOptions: timeOptionsType
 };
 
 TNCLeg.defaultProps = {
   LYFT_CLIENT_ID: "",
-  UBER_CLIENT_ID: ""
+  UBER_CLIENT_ID: "",
+  timeOptions: null
 };
 
 function AccessLegSummary({ config, leg, /* LegIcon, */ onSummaryClick }) {
@@ -256,7 +258,7 @@ function AccessLegSummary({ config, leg, /* LegIcon, */ onSummaryClick }) {
       <div>
         {getLegModeLabel(leg)}{" "}
         {leg.distance > 0 && (
-          <span> {humainzeDistanceString(leg.distance)}</span>
+          <span> {humanizeDistanceString(leg.distance)}</span>
         )}
         {` to ${getPlaceName(leg.to, config.companies)}`}
       </div>
