@@ -13,40 +13,6 @@ export const ModeButtonContainer = styled.div`
   box-sizing: border-box;
 `;
 
-export const ModeButtonBtn = styled.button`
-  border: 1px solid rgb(187, 187, 187);
-  padding: 3px;
-  border-radius: 3px;
-  width: 100%;
-  height: 100%;
-  font-size: inherit;
-  font-family: inherit;
-  background: none;
-  outline: none;
-  cursor: pointer;
-  box-sizing: border-box;
-
-  :hover {
-    background-color: rgb(173, 216, 230);
-  }
-
-  &.active {
-    border: 2px solid rgb(0, 0, 0);
-    background-color: rgb(173, 216, 230);
-  }
-  svg {
-    vertical-align: middle;
-    width: 1.25em;
-    margin: 0 0.25em;
-  }
-  &.disabled {
-    cursor: default;
-  }
-  &.disabled svg {
-    fill: #ccc;
-  }
-`;
-
 export const ModeButtonTitle = styled.div`
   font-size: 10px;
   padding: 4px;
@@ -93,9 +59,12 @@ export const TertiaryModeRow = styled(ModeRow)`
 
 export const SubmodeRow = styled(ModeRow)`
   button {
+    font-size: 90%;
     padding: 6px 12px;
   }
-  font-size: 90%;
+  svg {
+    margin-left: 0px;
+  }
 `;
 
 /**
@@ -111,3 +80,37 @@ export const SubmodeRow = styled(ModeRow)`
   }
 
  */
+
+export const ModeButtonBtn = styled.button`
+  border: 1px solid rgb(187, 187, 187);
+  padding: 3px;
+  border-radius: 3px;
+  width: 100%;
+  height: 100%;
+  font-size: inherit;
+  font-family: inherit;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  box-sizing: border-box;
+
+  :hover {
+    background-color: rgb(173, 216, 230);
+  }
+
+  &.active {
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgb(173, 216, 230);
+  }
+  svg {
+    vertical-align: middle;
+    width: 1.25em;
+    margin: 0 0.25em;
+  }
+  &.disabled {
+    cursor: default;
+  }
+  &.disabled svg {
+    fill: #ccc;
+  }
+`;
