@@ -21,8 +21,8 @@ export function humanizeDistanceStringMetric(meters) {
   return `${meters.toFixed(0)} m`;
 }
 
-export function humanizeDistanceString(meters, outputMetricUntis = false) {
-  return outputMetricUntis === true
+export function humanizeDistanceString(meters, outputMetricUnits = false) {
+  return outputMetricUnits
     ? humanizeDistanceStringMetric(meters)
     : humanizeDistanceStringImperial(meters);
 }
