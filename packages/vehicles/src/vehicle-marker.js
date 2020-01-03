@@ -147,9 +147,9 @@ class VehicleMarker extends React.Component {
 
   makeMarker() {
     const zoom = this.getZoom();
-    const closeZoom = this.props.closeZoom || 15;
-    const midZoom = this.props.midZoom || 13;
-    const farZoom = this.props.farZoom || 10;
+    const closeZoom = this.props.closeZoom || 14;
+    const midZoom = this.props.midZoom || 12;
+    const farZoom = this.props.farZoom || 9;
 
     if(zoom >= closeZoom)
       return this.makeRotatedMarker();
