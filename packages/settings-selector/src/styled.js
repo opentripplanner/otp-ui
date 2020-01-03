@@ -92,11 +92,14 @@ export const TertiaryModeRow = styled(ModeRow)`
 `;
 
 export const SubmodeRow = styled(ModeRow)`
+  button {
+    padding: 6px 12px;
+  }
   font-size: 90%;
 `;
 
 /**
- *   > * {
+    > * {
     width: inherit;
     padding: 3px 5px 3px 0;
   }
