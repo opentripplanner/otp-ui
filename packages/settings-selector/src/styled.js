@@ -57,9 +57,13 @@ export const TertiaryModeRow = styled(ModeRow)`
   }
 `;
 
+/* This one must appear before the stuff in ModeButtonBtn (no-descending-specificity) */
 export const SubmodeRow = styled(ModeRow)`
+  > * {
+    width: inherit;
+    padding: 3px 5px 3px 0;
+  }
   button {
-    font-size: 90%;
     padding: 6px 12px;
   }
   svg {
