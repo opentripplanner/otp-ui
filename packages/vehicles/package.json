@@ -8,16 +8,18 @@
   "main": "lib/index.js",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^0.0.7",
+    "@mapbox/polyline": "^1.1.0",
     "@opentripplanner/base-map": "^0.0.7",
+    "@opentripplanner/core-utils": "^0.0.7",
+    "@turf/nearest-point-on-line": "^6.0.2",
     "leaflet-rotatedmarker": "^0.2.0"
   },
   "peerDependencies": {
-    "react": "^16.8.6",
-    "styled-components": "^4.3.1",
     "leaflet": "^1.6.0",
     "prop-types": "^15.7.2",
-    "react-leaflet": "^2.6.0"
+    "react": "^16.8.6",
+    "react-leaflet": "^2.6.0",
+    "styled-components": "^4.3.1"
   },
   "repository": {
     "type": "git",

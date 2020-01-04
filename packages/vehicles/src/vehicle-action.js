@@ -8,6 +8,7 @@ function VehicleAction(props) {
   const refreshDelay = checkRefreshInteval(props.refreshDelay);
 
   const [vehicleData, setVehicleData] = React.useState(null);
+  const [trackedVehicle, setTrackedVehicle] = React.useState(null);
 
   // the code below w/in useEffect is a simplified version of what's in vehcile-action.js / VechicleAction component
   // note: we wrap the setInterval / clearInterval w/in a useEffect, since that will work our component lifecycle.
@@ -18,9 +19,17 @@ function VehicleAction(props) {
     //       if we don't have the gate of vehicleData == null, then we'll get multiple setInterval calls
     let interval = null;
     if (vehicleData == null) {
-      getVehicles(setVehicleData);
+      getVehicles(
+        setVehicleData,
+        setTrackedVehicle,
+        "either trip/block/vech number"
+      );
       interval = setInterval(() => {
-        getVehicles(setVehicleData);
+        getVehicles(
+          setVehicleData,
+          setTrackedVehicle,
+          "either trip/block/vech number"
+        );
       }, refreshDelay);
     }
 
@@ -28,16 +37,14 @@ function VehicleAction(props) {
       // before vehicle view component unmounts, clear the interval...
       if (interval) {
         clearInterval(interval);
+        setTrackedVehicle(null);
         interval = null;
       }
     };
   }, []);
 
   const retVal = (
-    <VehicleLayer
-      vehicles={vehicleData}
-      {...props}
-    />
+    <VehicleLayer vehicles={vehicleData} tracked={trackedVehicle} {...props} />
   );
   return retVal;
 }
