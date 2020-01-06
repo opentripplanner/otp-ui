@@ -1,12 +1,5 @@
 import styled from "styled-components";
 
-export const ModeIconWrap = styled.div`
-  width: 100px;
-  svg {
-    width: 100%;
-  }
-`;
-
 export const ModeButtonContainer = styled.div`
   display: inline-block;
   text-align: center;
@@ -22,56 +15,6 @@ export const ModeButtonTitle = styled.div`
   }
 `;
 
-const ModeRow = styled.div`
-  margin-bottom: 10px;
-  > * {
-    width: 33.333333%;
-    padding: 5px;
-    box-sizing: border-box;
-  }
-`;
-
-export const MainModeRow = styled.div`
-  padding: 5px;
-  font-size: 200%;
-  margin-bottom: 10px;
-  box-sizing: border-box;
-  > * {
-    width: 100%;
-    height: 55px;
-  }
-`;
-
-export const SecondaryModeRow = styled(ModeRow)`
-  font-size: 150%;
-  > * {
-    height: 58px;
-  }
-`;
-
-export const TertiaryModeRow = styled(ModeRow)`
-  font-size: 90%;
-  text-align: center;
-  > * {
-    height: 48px;
-  }
-`;
-
-export const SubmodeRow = styled(ModeRow)`
-  > * {
-    width: inherit;
-    padding: 3px 5px 3px 0;
-  }
-  button {
-    padding: 6px 12px;
-  }
-  svg,
-  img {
-    margin-left: 0px;
-  }
-`;
-
-/* This one must appear after the other svg styles (no-descending-specificity) */
 export const ModeButtonBtn = styled.button`
   border: 1px solid rgb(187, 187, 187);
   padding: 3px;

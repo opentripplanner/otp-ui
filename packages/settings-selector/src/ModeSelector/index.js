@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { modeSelectorOptionsType } from "@opentripplanner/core-utils/lib/types";
 
 import { MainModeRow, SecondaryModeRow, TertiaryModeRow } from "./styled";
-import ModeButton from "./mode-button";
+import ModeButton from "../ModeButton";
 
 /**
  * ModeSelector is the control container where the OTP user selects

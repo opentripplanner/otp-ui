@@ -3,7 +3,7 @@ import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
 import * as Icons from "@opentripplanner/icons";
 
-import ModeButton from "./mode-button";
+import ModeButton from ".";
 
 const background = story => (
   <div

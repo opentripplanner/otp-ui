@@ -1,7 +1,7 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 
-import ModeSelectorPanel from "./mode-selector-panel";
+import ModeSelectorPanel from ".";
 
 const background = story => (
   <div

@@ -2,8 +2,8 @@ import React from "react";
 import { withKnobs, object } from "@storybook/addon-knobs";
 import { withInfo } from "@storybook/addon-info";
 
-import { ModeIconWrap } from "./styled";
-import ModeIcon from "./mode-icon";
+import ModeIconWrap from "./styled";
+import ModeIcon from ".";
 
 const background = story => <ModeIconWrap>{story()}</ModeIconWrap>;
 

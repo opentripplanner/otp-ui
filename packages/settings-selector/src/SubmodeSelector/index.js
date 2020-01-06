@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { modeOptionType } from "@opentripplanner/core-utils/lib/types";
 
 import { SubmodeRow } from "./styled";
-import ModeButton from "./mode-button";
+import ModeButton from "../ModeButton";
 
 /**
  * SubmodeSelector is the control container where the OTP user selects

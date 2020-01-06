@@ -6,7 +6,7 @@ import {
 } from "@opentripplanner/core-utils/lib/itinerary";
 import * as Icons from "@opentripplanner/icons";
 
-import ModeIcon from "./mode-icon";
+import ModeIcon from "./ModeIcon";
 import supportedExclusiveModes from "./exclusive-modes";
 
 /**

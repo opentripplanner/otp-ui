@@ -2,8 +2,8 @@ import React from "react";
 import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
 
-import SubmodeSelector from "./submode-selector";
-import submodeOptions from "./__mocks__/submode-options";
+import SubmodeSelector from ".";
+import submodeOptions from "../__mocks__/submode-options";
 
 const onChange = action("onChange");
 

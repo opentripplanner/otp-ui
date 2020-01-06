@@ -2,8 +2,8 @@ import React from "react";
 import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
 
-import ModeSelector from "./mode-selector";
-import modeOptions from "./__mocks__/mode-options";
+import ModeSelector from ".";
+import modeOptions from "../__mocks__/mode-options";
 
 const onChange = action("onChange");
 

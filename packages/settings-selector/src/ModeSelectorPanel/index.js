@@ -2,15 +2,15 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { isTransit } from "@opentripplanner/core-utils/lib/itinerary";
 
-import ModeSelector from "./mode-selector";
-import SubmodeSelector from "./submode-selector";
+import ModeSelector from "../ModeSelector";
+import SubmodeSelector from "../SubmodeSelector";
 import {
   getModeOptions,
   getTransitSubmodeOptions,
   getCompaniesOptions
-} from "./util";
-import commonModes from "./__mocks__/modes"; // FIXME: Replace with ref to configuration.
-import commonCompanies from "./__mocks__/companies"; // FIXME: Replace with ref to configuration.
+} from "../util";
+import commonModes from "../__mocks__/modes"; // FIXME: Replace with ref to configuration.
+import commonCompanies from "../__mocks__/companies"; // FIXME: Replace with ref to configuration.
 
 const defaultTransitModes = [
   "TRAM", // FIXME: Take these from the 'registered' transit modes in core-utils/itinerary.
