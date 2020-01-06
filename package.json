@@ -96,6 +96,14 @@
           ]
         }
       ],
+      "react/prop-types": [
+        2,
+        {
+          "ignore": [
+            "style"
+          ]
+        }
+      ],
       "node/no-extraneous-import": "off",
       "import/no-extraneous-dependencies": "off",
       "import/no-unresolved": "off"
