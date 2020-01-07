@@ -17,8 +17,13 @@ function VehicleLayer(props) {
   );
 }
 
+VehicleLayer.defaultProps = {
+  vehicles: [],
+  tracked: null
+};
+
 VehicleLayer.propTypes = {
-  vehicles: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  vehicles: PropTypes.arrayOf(PropTypes.shape({})),
   tracked: PropTypes.shape({})
 };
 

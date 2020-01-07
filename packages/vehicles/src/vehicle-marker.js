@@ -1,13 +1,8 @@
 import React from "react";
-import {L, divIcon } from "leaflet";
-import {
-  Marker,
-  CircleMarker,
-  Popup,
-  Tooltip,
-  withLeaflet
-} from "react-leaflet";
+import PropTypes from "prop-types";
 
+import L, { divIcon } from "leaflet";
+import { Marker, Popup, Tooltip, withLeaflet } from "react-leaflet";
 import RotatedMarker from "./RotatedMarker"; // TODO: move to either base-map and/or utils and/or own npm & repo
 
 import makeVehicleIcon from "./vehicle-icons";
@@ -20,68 +15,84 @@ import "../assets/vehicles.css";
  * https://github.com/OpenTransitTools/transit-components/blob/master/lib/vehicles/VehicleMarker.js
  */
 class VehicleMarker extends React.Component {
-  makeToolTip() {
-    const v = this.props.vehicle;
+  getZoom() {
+    let retVal = 15;
+    try {
+      const { leaflet } = this.props;
+      retVal = leaflet.map.getZoom();
+    } catch (e) {
+      console.log(e);
+    }
+    return retVal;
+  }
 
-    let rsn = v.routeShortName;
-    if (rsn != null && rsn.length <= 3) rsn = `Line ${rsn}`;
+  makeToolTip() {
+    const { vehicle } = this.props;
+
+    let rsn = vehicle.routeShortName;
+    if (rsn != null && rsn.length <= 3) {
+      rsn = `Line ${rsn}`;
+    }
 
     return (
       <Tooltip>
         <span>
-          <b>{rsn}</b>: {formatTime(v.seconds)}
+          <b>{rsn}</b>: {formatTime(vehicle.seconds)}
         </span>
       </Tooltip>
     );
   }
 
   makePopup() {
-    const v = this.props.vehicle;
+    const { vehicle } = this.props;
 
     let status = "unknown";
-    if (v.status === "IN_TRANSIT_TO") {
+    if (vehicle.status === "IN_TRANSIT_TO") {
       status = "en-route to stop ";
-    } else if (v.status === "STOPPED_AT") {
-      if (v.stopSequence === 1)
+    } else if (vehicle.status === "STOPPED_AT") {
+      if (vehicle.stopSequence === 1) {
         status = "beginning route from stop ";
-      else
+      } else {
         status = "stopped at ";
+      }
     }
 
-    let vehicle = "";
-    if (v.vehicleId.indexOf("+") > 0)
-      vehicle = `Vehicles: ${v.vehicleId.replace(/\+/g, ", ")}`;
-    else vehicle = `Vehicle: ${v.vehicleId}`;
+    let vid = "";
+    if (vehicle.vehicleId.indexOf("+") > 0) {
+      vid = `Vehicles: ${vehicle.vehicleId.replace(/\+/g, ", ")}`;
+    } else {
+      vid = `Vehicle: ${vehicle.vehicleId}`;
+    }
 
-    const stopLink = `https://trimet.org/ride/stop.html?stop_id=${v.stopId}`;
+    const stopLink = `https://trimet.org/ride/stop.html?stop_id=${vehicle.stopId}`;
 
     return (
       <Popup>
         <div>
           <span>
-            <b>{v.routeLongName}</b>
+            <b>{vehicle.routeLongName}</b>
           </span>
           <br />
-          <span>Last reported: {formatTime(v.seconds)}</span>
+          <span>Last reported: {formatTime(vehicle.seconds)}</span>
           <br />
-          <span>Report date: {v.reportDate}</span>
+          <span>Report date: {vehicle.reportDate}</span>
           <br />
           <span>
             Status: {status}{" "}
             <a target="#" href={stopLink}>
-              {v.stopId}
+              {vehicle.stopId}
             </a>
           </span>
           <br />
           <span>
-            Trip: {v.tripId}, Block: {v.blockId}
+            Trip: {vehicle.tripId}, Block: {vehicle.blockId}
           </span>
           <br />
-          <span>{vehicle}</span> <br />
+          <span>{vid}</span> <br />
         </div>
       </Popup>
     );
-    // <VehicleTracker vehicle={v} marker={this} controller={this.props.controller} />  <br/>
+    // <VehicleTracker vehicle={vehicle} marker={this} controller={this.props.controller} />  <br/>
   }
 
   isTracking() {
@@ -91,9 +102,9 @@ class VehicleMarker extends React.Component {
   }
 
   makeCircleMarker(size) {
-    const v = this.props.vehicle;
+    const { vehicle } = this.props;
 
-    const position = [v.lat, v.lon];
+    const position = [vehicle.lat, vehicle.lon];
     let zPos = 0;
 
     let classnames = "vehicle-marker vehicle-circle";
@@ -115,14 +126,15 @@ class VehicleMarker extends React.Component {
   }
 
   makeRotatedMarker() {
-    const v = this.props.vehicle;
+    const { vehicle } = this.props;
 
-    const position = [v.lat, v.lon];
+    const position = [vehicle.lat, vehicle.lon];
     let zPos = 0;
 
-    // let heading = Math.abs(v.heading / 2); // NOTE: added this div by 2 from strange otp-ui crap
-    let heading = v.heading;
-    if (heading == null || heading < 0 || heading >= 360) heading = 0;
+    let heading = vehicle.heading;
+    if (heading == null || heading < 0 || heading >= 360) {
+      heading = 0;
+    }
 
     let classnames = "vehicle-marker vehicle-icon";
     if (this.isTracking()) {
@@ -130,7 +142,11 @@ class VehicleMarker extends React.Component {
       zPos = 1000;
     }
 
-    const icon = makeVehicleIcon(classnames, v.routeType, v.routeShortName);
+    const icon = makeVehicleIcon(
+      classnames,
+      vehicle.routeType,
+      vehicle.routeShortName
+    );
 
     return (
       <RotatedMarker
@@ -146,23 +162,9 @@ class VehicleMarker extends React.Component {
     );
   }
 
-  getZoom() {
-    let retVal = 15;
-    try {
-      const zoom = this.props.leaflet.map.getZoom();
-      retVal = zoom;
-    } catch (e) {
-      console.log(e);
-    }
-    return retVal;
-  }
-
   makeMarker() {
+    const { closeZoom, midZoom, farZoom } = this.props;
     const zoom = this.getZoom();
-    const closeZoom = this.props.closeZoom || 14;
-    const midZoom = this.props.midZoom || 12;
-    const farZoom = this.props.farZoom || 9;
-
     if (zoom >= closeZoom) return this.makeRotatedMarker();
     if (zoom >= midZoom) return this.makeCircleMarker(13.0);
     if (zoom >= farZoom) return this.makeCircleMarker(9.0);
@@ -173,5 +175,44 @@ class VehicleMarker extends React.Component {
     return this.makeMarker();
   }
 }
+
+VehicleMarker.propTypes = {
+  vehicle: PropTypes.shape({
+    routeShortName: PropTypes.string,
+    routeLongName: PropTypes.string,
+    routeType: PropTypes.string,
+
+    status: PropTypes.string,
+    reportDate: PropTypes.string,
+    seconds: PropTypes.number,
+
+    stopSequence: PropTypes.number,
+    stopId: PropTypes.string,
+    vehicleId: PropTypes.string,
+    tripId: PropTypes.string,
+    blockId: PropTypes.string,
+
+    lat: PropTypes.number,
+    lon: PropTypes.number,
+    heading: PropTypes.number
+  }),
+  leaflet: PropTypes.shape({
+    map: PropTypes.shape({
+      getZoom: PropTypes.shape({})
+    })
+  }),
+
+  closeZoom: PropTypes.number,
+  midZoom: PropTypes.number,
+  farZoom: PropTypes.number
+};
+
+VehicleMarker.defaultProps = {
+  vehicle: null,
+  leaflet: null,
+  closeZoom: 14,
+  midZoom: 12,
+  farZoom: 9
+};
 
 export default withLeaflet(VehicleMarker);

@@ -106,3 +106,21 @@ export function formatTime(seconds) {
   }
   return retVal;
 }
+
+export function directions() {
+  function isNorthbound(heading) {
+    return heading <= 45.0 || heading >= 315.0;
+  }
+
+  function isSouthbound(heading) {
+    return heading >= 135.0 && heading <= 225.0;
+  }
+
+  function isEastbound(heading) {
+    return heading > 45.0 && heading < 135.0;
+  }
+
+  function isWestbound(heading) {
+    return heading > 225.0 && heading < 315.0;
+  }
+}

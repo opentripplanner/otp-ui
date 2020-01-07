@@ -19,9 +19,13 @@ class VehicleGeometry extends MapLayer {
   patterns = [];
 
   componentDidMount() {}
+
   componentWillUnmount() {}
+
   componentWillReceiveProps() {}
+
   createLeafletElement() {}
+
   updateLeafletElement() {}
 
   cachePatternEncoded(pat, key) {
@@ -30,13 +34,16 @@ class VehicleGeometry extends MapLayer {
     this.patterns[key] = pts;
   }
 
+  /**
+   * will cache the [[lat,lon], [lat,lon], etc...] coords
+   * note: geojson uses [lon,lat] (e.g., [X, Y], so must reverse that to match encoded coords
+   */
   cachePatternGeojson(pat, key) {
-    /**
-     * will cache the [[lat,lon], [lat,lon], etc...] coords
-     * note: geojson uses [lon,lat] (e.g., [X, Y], so must reverse that to match encoded coords
-     */
     const revCoords = [];
-    for (const c of pat.coordinates) revCoords.push(c.reverse());
+    for (let i = 0; i < pat.coordinates.length; i++) {
+      const c = pat.coordinates[i].reverse();
+      revCoords.push(c);
+    }
     this.patterns[key] = revCoords;
   }
 
@@ -54,22 +61,6 @@ class VehicleGeometry extends MapLayer {
     return retVal;
   }
 
-  isNorthbound(vehicle) {
-    return vehicle.heading <= 45.0 || vehicle.heading >= 315.0;
-  }
-
-  isSouthbound(vehicle) {
-    return vehicle.heading >= 135.0 && vehicle.heading <= 225.0;
-  }
-
-  isEastbound(vehicle) {
-    return vehicle.heading > 45.0 && vehicle.heading < 135.0;
-  }
-
-  isWestbound(vehicle) {
-    return vehicle.heading > 225.0 && vehicle.heading < 315.0;
-  }
-
   callGeometryWS(vehicle) {
     // https://maps.trimet.org/otp_mod/index/patterns/TriMet:190:0:04/geometry
     let retVal = null;
@@ -84,9 +75,11 @@ class VehicleGeometry extends MapLayer {
         return retVal;
       })
       .then(json => {
-        if (geomWsUrl.indexOf("geojson") >= 0)
+        if (geomWsUrl.indexOf("geojson") >= 0) {
           this.cachePatternGeojson(json, ap);
-        else this.cachePatternEncoded(json, ap);
+        } else {
+          this.cachePatternEncoded(json, ap);
+        }
       })
       .catch(error => {
         console.log(`VEH GEOMETRY fetch() error: ${error}`);
