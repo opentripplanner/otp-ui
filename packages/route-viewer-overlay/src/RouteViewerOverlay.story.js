@@ -19,4 +19,16 @@ storiesOf("RouteViewerOverlay", module)
     <BaseMap center={center} zoom={zoom}>
       <RouteViewerOverlay routeData={routeData} visible />
     </BaseMap>
+  ))
+  .add("RouteViewerOverlay with path styling", () => (
+    <BaseMap center={center} zoom={zoom}>
+      <RouteViewerOverlay
+        path={{
+          opacity: 0.5,
+          weight: 10
+        }}
+        routeData={routeData}
+        visible
+      />
+    </BaseMap>
   ));
