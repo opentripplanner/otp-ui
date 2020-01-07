@@ -7,6 +7,9 @@ const DropdownSelectorWrap = styled.div`
     padding: 5px;
     box-sizing: border-box;
   }
+  select {
+    width: 100%;
+  }
 `;
 
 export default DropdownSelectorWrap;
