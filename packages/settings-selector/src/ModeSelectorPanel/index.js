@@ -4,10 +4,13 @@ import { isTransit } from "@opentripplanner/core-utils/lib/itinerary";
 
 import ModeSelector from "../ModeSelector";
 import SubmodeSelector from "../SubmodeSelector";
+import GeneralSettingsPanel from "../GeneralSettingsPanel";
 import {
   getModeOptions,
   getTransitSubmodeOptions,
-  getCompaniesOptions
+  getCompaniesOptions,
+  getBicycleModeOptions,
+  isBike
 } from "../util";
 import commonModes from "../__mocks__/modes"; // FIXME: Replace with ref to configuration.
 import commonCompanies from "../__mocks__/companies"; // FIXME: Replace with ref to configuration.
@@ -34,8 +37,8 @@ export default class ModeSelectorPanel extends Component {
   }
 
   mainModeChangeHandler = id => {
-    const { onChange } = this.props;
-    if (onChange) onChange(id);
+    const { onQueryParamChange } = this.props;
+    const isEventValid = typeof onQueryParamChange === "function";
 
     const newModes = id.split("+");
     if (newModes[0] === "TRANSIT") {
@@ -46,7 +49,7 @@ export default class ModeSelectorPanel extends Component {
         lastTransitModes = lastTransitModes.concat(defaultTransitModes);
       }
 
-      const nonTransitModes = newModes.length > 1 ? [newModes[1]] : ["WALK"]; // TODO: also accommodate WALK+DRIVE, WALK+e-scooter??
+      const nonTransitModes = newModes.length > 1 ? [newModes[1]] : ["WALK"]; // TODO: also accommodate WALK+DRIVE, WALK+e-scooter?? They already seem to work without WALK right now.
       const defaultCompany = newModes.length > 2 ? [newModes[2]] : null; // To accommodate companies defined under accessModes.
 
       // Add previously selected transit modes only if none were active.
@@ -61,12 +64,26 @@ export default class ModeSelectorPanel extends Component {
           comp => comp.id
         );
 
+      if (isEventValid) {
+        onQueryParamChange({
+          mode: finalModes.join(","),
+          companies: selectedCompanies.join(",")
+        });
+      }
+
       this.setState({
         selectedModes: finalModes,
         selectedCompanies,
         defaultCompany: defaultCompany && defaultCompany[0]
       });
     } else {
+      if (isEventValid) {
+        onQueryParamChange({
+          mode: newModes.join(","),
+          companies: "" // New req: Don't list companies with this mode?
+        });
+      }
+
       this.setState({
         selectedModes: newModes
       });
@@ -75,34 +92,41 @@ export default class ModeSelectorPanel extends Component {
 
   transitModeChangeHandler = id => {
     const { selectedModes } = this.state;
-    const newModesArray = this.toggleSubmode(id, selectedModes, isTransit);
-
-    const { onChange } = this.props;
-    if (onChange) onChange(id);
-
-    this.setState({
-      selectedModes: newModesArray,
-      lastTransitModes: newModesArray.filter(isTransit)
+    this.toggleSubmode("mode", id, selectedModes, isTransit, newModes => {
+      this.setState({
+        selectedModes: newModes,
+        lastTransitModes: newModes.filter(isTransit)
+      });
     });
   };
 
   companiesChangeHandler = id => {
     const { selectedCompanies } = this.state;
-    const newModesArray = this.toggleSubmode(id, selectedCompanies);
-
-    const { onChange } = this.props;
-    if (onChange) onChange(id);
-
-    this.setState({
-      selectedCompanies: newModesArray
-    });
+    this.toggleSubmode(
+      "companies",
+      id,
+      selectedCompanies,
+      undefined,
+      newCompanies => {
+        this.setState({
+          selectedCompanies: newCompanies
+        });
+      }
+    );
   };
 
-  toggleSubmode(id, submodes, filter = o => o) {
+  queryParamChangeHandler = queryParam => {
+    const { onQueryParamChange } = this.props;
+    if (typeof onQueryParamChange === "function") {
+      onQueryParamChange(queryParam);
+    }
+  };
+
+  toggleSubmode = (name, id, submodes, filter = o => o, after) => {
     const newSubmodes = [].concat(submodes);
     const idx = newSubmodes.indexOf(id);
 
-    // If clicked mode is selected, then remove it, o/w add it.
+    // If the clicked mode is selected, then unselect it, o/w select it.
     // Leave at least one selected, as in newplanner.trimet.org.
     if (idx >= 0) {
       const subset = newSubmodes.filter(filter);
@@ -113,8 +137,17 @@ export default class ModeSelectorPanel extends Component {
       newSubmodes.push(id);
     }
 
-    return newSubmodes;
-  }
+    if (newSubmodes.length !== submodes.length) {
+      const { onQueryParamChange } = this.props;
+      if (typeof onQueryParamChange === "function") {
+        onQueryParamChange({
+          [name]: newSubmodes.join(",")
+        });
+      }
+
+      if (after) after(newSubmodes);
+    }
+  };
 
   render() {
     const { className } = this.props;
@@ -130,6 +163,15 @@ export default class ModeSelectorPanel extends Component {
       nonTransitModes,
       selectedCompanies
     );
+    const bicycleModeOptions = getBicycleModeOptions(
+      commonModes,
+      selectedModes
+    );
+
+    const queriedModes = {
+      mode: selectedModes.join(","),
+      routingType: "ITINERARY"
+    };
 
     return (
       <div className={className}>
@@ -159,6 +201,25 @@ export default class ModeSelectorPanel extends Component {
             />
           </div>
         )}
+
+        {/* The bike trip type selector */}
+        {selectedModes.some(isBike) && !selectedModes.some(isTransit) && (
+          <div>
+            <div className="setting-label" style={{ float: "left" }}>
+              Use:
+            </div>
+            <SubmodeSelector
+              style={{ textAlign: "right" }}
+              modes={bicycleModeOptions}
+              onChange={this.mainModeChangeHandler}
+            />
+          </div>
+        )}
+
+        <GeneralSettingsPanel
+          query={queriedModes}
+          onQueryParamChange={this.queryParamChangeHandler}
+        />
       </div>
     );
   }
@@ -169,7 +230,11 @@ ModeSelectorPanel.propTypes = {
    * The CSS class name to apply to this element.
    */
   className: PropTypes.string,
-  onChange: PropTypes.func, // onChange(<SETTING_ID>)
+  /**
+   * Triggered when a query parameter is changed.
+   * @param params An object that contains the new values for the parameter(s) that has (have) changed.
+   */
+  onQueryParamChange: PropTypes.func,
   /**
    * An array of selected providers for ride-hailing or rentals, no whitespaces (corresponds to the companies URL parameter).
    */
@@ -182,7 +247,7 @@ ModeSelectorPanel.propTypes = {
 
 ModeSelectorPanel.defaultProps = {
   className: null,
-  onChange: null,
+  onQueryParamChange: null,
   selectedCompanies: null,
   selectedModes: null
 };

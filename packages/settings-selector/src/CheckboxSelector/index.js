@@ -5,7 +5,7 @@ class CheckboxSelector extends Component {
   onChangeHandler = evt => {
     const { name, onChange } = this.props;
 
-    if (onChange) {
+    if (typeof onChange === "function") {
       onChange({
         [name]: evt.target.checked
       });

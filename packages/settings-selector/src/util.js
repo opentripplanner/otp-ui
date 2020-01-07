@@ -2,12 +2,37 @@ import React from "react";
 import {
   hasRental,
   hasHail,
-  isTransit
+  isBicycle,
+  isBicycleRent,
+  isMicromobility,
+  isTransit,
+  isWalk
 } from "@opentripplanner/core-utils/lib/itinerary";
 import * as Icons from "@opentripplanner/icons";
 
 import ModeIcon from "./ModeIcon";
-import supportedExclusiveModes from "./exclusive-modes";
+
+export function isBike(mode) {
+  return isBicycle(mode) || isBicycleRent(mode);
+}
+
+const supportedExclusiveModes = [
+  {
+    mode: "WALK",
+    label: "Walk Only",
+    isActive: isWalk
+  },
+  {
+    mode: "BICYCLE",
+    label: "Bike Only",
+    isActive: isBike
+  },
+  {
+    mode: "MICROMOBILITY",
+    label: "E-Scooter Only",
+    isActive: isMicromobility
+  }
+];
 
 /**
  * Obtains the mode-as-a-string from a mode object found in the configuration.
@@ -85,7 +110,8 @@ function getExclusiveModeOptions(modes, selectedModes) {
     .filter(mode => exclusiveModes.includes(mode.mode))
     .map(modeObj => ({
       id: modeObj.mode,
-      selected: selectedModes.length === 1 && selectedModes[0] === modeObj.mode,
+      selected:
+        !selectedModes.some(isTransit) && selectedModes.some(modeObj.isActive),
       showTitle: false,
       text: (
         <span>
@@ -129,4 +155,21 @@ export function getCompaniesOptions(companies, modes, selectedCompanies) {
         title: comp.label
       };
     });
+}
+
+export function getBicycleModeOptions(modes, selectedModes) {
+  const { bicycleModes } = modes;
+
+  return bicycleModes.map(mode => {
+    return {
+      id: mode.mode,
+      selected: selectedModes.includes(mode.mode),
+      text: (
+        <span>
+          <ModeIcon mode={mode.mode} /> {mode.label}
+        </span>
+      ),
+      title: mode.label
+    };
+  });
 }

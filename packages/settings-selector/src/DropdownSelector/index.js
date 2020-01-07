@@ -9,7 +9,7 @@ class DropdownSelector extends Component {
     const val = evt.target.value;
     const { name, onChange } = this.props;
 
-    if (onChange) {
+    if (typeof onChange === "function") {
       onChange({
         [name]: Global.isNaN(val) ? val : parseFloat(val)
       });
@@ -19,6 +19,7 @@ class DropdownSelector extends Component {
   render() {
     const { className, label, name, options, style, value } = this.props;
     const id = `id-query-param-${name}`;
+    // const defaultValue = value || (options && options[0].value);
 
     return (
       <DropdownSelectorWrap className={className} style={style}>

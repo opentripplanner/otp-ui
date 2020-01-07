@@ -16,11 +16,13 @@ const background = story => (
   </div>
 );
 
-const onChange = action("onChange");
+const onQueryParamChange = action("onQueryParamChange");
 
 export default {
   title: "ModeSelectorPanel",
   decorators: [background]
 };
 
-export const container = () => <ModeSelectorPanel onChange={onChange} />;
+export const container = () => (
+  <ModeSelectorPanel onQueryParamChange={onQueryParamChange} />
+);

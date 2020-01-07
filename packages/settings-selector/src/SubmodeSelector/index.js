@@ -10,10 +10,10 @@ import ModeButton from "../ModeButton";
  * the submodes (e.g. train, bus) for transit, or the providers for TNC and rental companies.
  */
 const SubmodeSelector = props => {
-  const { className, modes, onChange } = props;
+  const { className, modes, onChange, style } = props;
 
   return (
-    <SubmodeRow className={className}>
+    <SubmodeRow className={className} style={style}>
       {modes &&
         modes.map(option => (
           <ModeButton

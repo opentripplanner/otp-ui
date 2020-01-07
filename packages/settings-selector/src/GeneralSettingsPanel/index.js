@@ -15,7 +15,7 @@ class GeneralSettingsPanel extends Component {
   onChangeHandler = queryParam => {
     const { onQueryParamChange } = this.props;
 
-    if (onQueryParamChange) {
+    if (typeof onQueryParamChange === "function") {
       onQueryParamChange(queryParam);
     }
   };
