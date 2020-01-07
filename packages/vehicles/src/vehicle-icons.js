@@ -1,15 +1,9 @@
 import React from "react";
-import ReactDOMServer from 'react-dom/server';
+import ReactDOMServer from "react-dom/server";
 
-import L from 'leaflet';
+import L from "leaflet";
 
-import {
-  AerialTram,
-  Bus,
-  Streetcar,
-  Max,
-  Wes
-} from "@opentripplanner/icons";
+import { AerialTram, Bus, Streetcar, Max, Wes } from "@opentripplanner/icons";
 
 /**
  * find icons based on gtfsdb mode types
@@ -18,29 +12,29 @@ import {
  */
 export default function makeVehicleIcon(cls, mode, defStr) {
   let icon = null;
-  switch(mode) {
+  switch (mode) {
     case "BUS":
-      icon = <Bus/>;
+      icon = <Bus />;
       break;
     case "TRAM":
-      icon = <Max/>
+      icon = <Max />;
       break;
     case "SC":
-      icon = <Streetcar/>;
+      icon = <Streetcar />;
       break;
     case "GONDOLA":
-      icon = <AerialTram/>;
+      icon = <AerialTram />;
       break;
     case "RAIL":
-      icon = <Wes/>;
+      icon = <Wes />;
       break;
     default:
-      icon = <Bus/>;
+      icon = <Bus />;
       break;
   }
 
   let retVal = null;
-  if(mode != null)
+  if (mode != null)
     retVal = L.divIcon({
       html: ReactDOMServer.renderToString(icon),
       className: cls,
@@ -50,8 +44,8 @@ export default function makeVehicleIcon(cls, mode, defStr) {
     });
   else
     retVal = L.divIcon({
-      html: `<span>${defStr || 'fxp'}</span>`,
-     });
+      html: `<span>${defStr || "fxp"}</span>`
+    });
 
   return retVal;
 }

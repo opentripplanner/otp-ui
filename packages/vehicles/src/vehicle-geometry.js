@@ -15,22 +15,13 @@ const tiUrl = "https://newplanner.trimet.org/ws/ti/v0/index"; // TODO: FIX ME !!
 // const geojson = "";  // use this setting if want to use encoded vs. geojson
 const geojson = "/geojson";
 
-// TODO WHY?
-Number.prototype.round = function(places) {
-  return +`${Math.round(`${this}e+${places}`)}e-${places}`;
-};
-
 class VehicleGeometry extends MapLayer {
   patterns = [];
 
   componentDidMount() {}
-
   componentWillUnmount() {}
-
-  componentWillReceiveProps(nextProps) {}
-
+  componentWillReceiveProps() {}
   createLeafletElement() {}
-
   updateLeafletElement() {}
 
   cachePatternEncoded(pat, key) {

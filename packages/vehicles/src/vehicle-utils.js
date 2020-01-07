@@ -30,6 +30,7 @@ export function getVehicles(setState, setTrackedVehicle, trackId, url) {
       if (vehicleList && vehicleList.length > 0) {
         console.log(`updating state with ${vehicleList.length} vehicles`);
         setState(vehicleList);
+
         if (trackId) {
           // step 1: find vehicle record via either trip_id, block_id or vehicle_id
           const tracked = findVehicleRecord(vehicleList, trackId);
@@ -38,7 +39,7 @@ export function getVehicles(setState, setTrackedVehicle, trackId, url) {
           if (tracked) setTrackedVehicle(vehicleList[0]);
           else
             console.log(
-              `WARN: couldn't find vehicle with an id (trip/block/vehicle) of ${trackId}`
+              `WARN: couldn't find vehicle with id (trip/block/vehicle) of ${trackId}`
             );
         } else {
           // step 3 (important): if not tracking, make sure a previous tracked vehicle is cleared from state
@@ -96,7 +97,7 @@ export function formatTime(seconds) {
   if (seconds >= 60) {
     const min = Math.floor(seconds / 60);
     const sec = seconds - min * 60;
-    const minStr = min == 1 ? "minute" : "minutes";
+    const minStr = min === 1 ? "minute" : "minutes";
 
     if (sec > 0) retVal = `${min} ${minStr} & ${sec} seconds ago`;
     else retVal = `${min} ${minStr} ago`;

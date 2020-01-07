@@ -87,16 +87,11 @@ function animatedExample() {
 function rtExample() {
   const retVal = (
     <BaseMap center={portland}>
-      <VehicleAction
-        name="Real-Time Buses and Trains"
-        visible
-      />
+      <VehicleAction name="Real-Time Buses and Trains" visible />
     </BaseMap>
   );
   return retVal;
 }
-
-
 
 storiesOf("Realtime VehicleLayer", module)
   .addDecorator(withA11y)

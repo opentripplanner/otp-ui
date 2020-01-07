@@ -1,7 +1,5 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
 import React from "react";
-import { divIcon } from "leaflet";
+import {L, divIcon } from "leaflet";
 import {
   Marker,
   CircleMarker,
@@ -12,14 +10,13 @@ import {
 
 import RotatedMarker from "./RotatedMarker"; // TODO: move to either base-map and/or utils and/or own npm & repo
 
-import VehicleGeometry from "./vehicle-geometry";
 import makeVehicleIcon from "./vehicle-icons";
 import { formatTime } from "./vehicle-utils";
 import "../assets/vehicles.css";
 
 /**
- * This component demonstrates a custom marker used in the SelectVehicles overlay provided as an example.
- * It is modeled after the component available in this file:
+ * This component demonstrates a custom marker used in the SelectVehicles overlay provided as
+ * an example. It is modeled after the component available in this file:
  * https://github.com/OpenTransitTools/transit-components/blob/master/lib/vehicles/VehicleMarker.js
  */
 class VehicleMarker extends React.Component {
@@ -42,10 +39,14 @@ class VehicleMarker extends React.Component {
     const v = this.props.vehicle;
 
     let status = "unknown";
-    if (v.status == "IN_TRANSIT_TO") status = "en-route to stop ";
-    else if (v.status == "STOPPED_AT")
-      if (v.stopSequence == 1) status = "beginning route from stop ";
-      else status = "stopped at ";
+    if (v.status === "IN_TRANSIT_TO") {
+      status = "en-route to stop ";
+    } else if (v.status === "STOPPED_AT") {
+      if (v.stopSequence === 1)
+        status = "beginning route from stop ";
+      else
+        status = "stopped at ";
+    }
 
     let vehicle = "";
     if (v.vehicleId.indexOf("+") > 0)

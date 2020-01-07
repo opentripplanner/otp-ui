@@ -1,16 +1,12 @@
 /**
  * @see https://github.com/verdie-g/react-leaflet-rotatedmarker/issues/1
  */
-import React from 'react';
-import { Marker as LeafletMarker } from 'leaflet';
-import { LeafletProvider, MapLayer, withLeaflet } from 'react-leaflet';
-import 'leaflet-rotatedmarker';
+import React from "react";
+import { Marker as LeafletMarker } from "leaflet";
+import { LeafletProvider, MapLayer, withLeaflet } from "react-leaflet";
+import "leaflet-rotatedmarker";
 
 class RotatedMarker extends MapLayer {
-  static defaultProps = {
-    rotationOrigin: 'center',
-  };
-
   createLeafletElement(props) {
     const el = new LeafletMarker(props.position, this.getOptions(props));
     this.contextValue = { ...props.leaflet, popupContainer: el };
@@ -52,5 +48,9 @@ class RotatedMarker extends MapLayer {
     );
   }
 }
+
+RotatedMarker.defaultProps = {
+  rotationOrigin: "center"
+};
 
 export default withLeaflet(RotatedMarker);
