@@ -107,7 +107,7 @@ export function formatTime(seconds) {
   return retVal;
 }
 
-export function directions() {
+export function directions(dir) {
   function isNorthbound(heading) {
     return heading <= 45.0 || heading >= 315.0;
   }
@@ -123,4 +123,13 @@ export function directions() {
   function isWestbound(heading) {
     return heading > 225.0 && heading < 315.0;
   }
+
+  let retVal = "";
+  if (isNorthbound(dir)) retVal = "Northbound";
+  else if (isSouthbound(dir)) retVal = "Southbound";
+  else if (isEastbound(dir)) retVal = "Eastbound";
+  else if (isWestbound(dir)) retVal = "Northbound";
+  else retVal = "Roundbound";
+
+  return retVal;
 }
