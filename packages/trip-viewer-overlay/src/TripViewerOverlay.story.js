@@ -19,4 +19,17 @@ storiesOf("TripViewerOverlay", module)
     <BaseMap center={center} zoom={zoom}>
       <TripViewerOverlay tripData={tripData} visible />
     </BaseMap>
+  ))
+  .add("TripViewerOverlay with path styling", () => (
+    <BaseMap center={center} zoom={zoom}>
+      <TripViewerOverlay
+        path={{
+          color: "#000",
+          opacity: 0.2,
+          weight: 20
+        }}
+        tripData={tripData}
+        visible
+      />
+    </BaseMap>
   ));

@@ -5,6 +5,9 @@ import { FeatureGroup, MapLayer, Polyline, withLeaflet } from "react-leaflet";
 
 import polyline from "@mapbox/polyline";
 
+/**
+ * An overlay that will display the geometry of a trip.
+ */
 class TripViewerOverlay extends MapLayer {
   componentDidMount() {}
 
@@ -24,23 +27,54 @@ class TripViewerOverlay extends MapLayer {
   updateLeafletElement() {}
 
   render() {
-    const { tripData } = this.props;
+    const { path, tripData } = this.props;
+    const { color, opacity, weight } = path;
 
     if (!tripData || !tripData.geometry) return <FeatureGroup />;
 
     const pts = polyline.decode(tripData.geometry.points);
     return (
       <FeatureGroup>
-        <Polyline positions={pts} weight={8} color="#00bfff" opacity={0.6} />
+        <Polyline
+          color={color}
+          opacity={opacity}
+          positions={pts}
+          weight={weight}
+        />
       </FeatureGroup>
     );
   }
 }
 
 TripViewerOverlay.propTypes = {
+  /**
+   * Leaflet path properties to use to style each polyline that represents the
+   * trip. This is a non-exclusive list of items that can be used to style a
+   * polyline.
+   *
+   * See https://leafletjs.com/reference-1.6.0.html#path
+   */
+  path: PropTypes.shape({
+    color: PropTypes.string,
+    opacity: PropTypes.number,
+    weight: PropTypes.number
+  }),
+  /**
+   * This represents data about a trip as obtained from a transit index.
+   * Typically a trip has more data than these items, so this is only a list of
+   * the properties that this component actually uses.
+   */
   tripData: PropTypes.shape({
     geometry: encodedPolylineType
   })
+};
+
+TripViewerOverlay.defaultProps = {
+  path: {
+    color: "#00bfff",
+    opacity: 0.6,
+    weight: 8
+  }
 };
 
 export default withLeaflet(TripViewerOverlay);
