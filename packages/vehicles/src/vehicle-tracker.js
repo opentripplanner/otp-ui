@@ -1,42 +1,45 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-class VehicleTracker extends React.Component {
-  state = {
-    buttonText: null
-  };
+function getButtonText(isTracked) {
+  return isTracked ? "Track Vehicle" : "Stop Tracking";
+}
 
-  handleClick() {
-    let txt = null;
-    let veh = null;
+function VehicleTracker(props) {
+  const [buttonText, setButtonText] = React.useState(getButtonText(false));
+  const { vehicle } = props;
 
-    if (this.isTracking()) {
-      txt = this.getButtonText(false);
-      veh = null;
-    } else {
-      txt = this.getButtonText(true);
-      veh = this.props.vehicle;
-    }
+  function isTracking() {
+    let retVal = false;
 
-    this.setState({ buttonText: txt });
-    this.props.controller.setState({ trackedVehicle: veh });
-  }
+    if (vehicle === null) retVal = false;
 
-  isTracking() {
-    const retVal = this.props.controller.isTrackingVehicle(this.props.vehicle);
+    // TODO remove this
+    if (buttonText === getButtonText(false)) retVal = true;
+
     return retVal;
   }
 
-  getButtonText(isTracked) {
-    let buttonText = null;
-    if (isTracked) buttonText = "Stop Tracking";
-    else buttonText = "Track Vehicle";
-    return buttonText;
+  function handleClick() {
+    const txt = getButtonText(isTracking());
+    setButtonText(txt);
   }
 
-  render() {
-    const buttonText = this.getButtonText(this.isTracking());
-    return <button onClick={e => this.handleClick(e)}>{buttonText}</button>;
-  }
+  return (
+    <button type="button" onClick={e => handleClick(e)}>
+      {buttonText}
+    </button>
+  );
 }
+
+VehicleTracker.propTypes = {
+  vehicle: PropTypes.shape({}),
+  marker: PropTypes.shape({})
+};
+
+VehicleTracker.defaultProps = {
+  vehicle: null,
+  marker: null
+};
 
 export default VehicleTracker;

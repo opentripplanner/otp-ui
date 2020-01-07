@@ -5,6 +5,7 @@ import L, { divIcon } from "leaflet";
 import { Marker, Popup, Tooltip, withLeaflet } from "react-leaflet";
 import RotatedMarker from "./RotatedMarker"; // TODO: move to either base-map and/or utils and/or own npm & repo
 
+import VehicleTracker from "./vehicle-tracker";
 import makeVehicleIcon from "./vehicle-icons";
 import { formatTime } from "./vehicle-utils";
 import "../assets/vehicles.css";
@@ -89,10 +90,10 @@ class VehicleMarker extends React.Component {
           </span>
           <br />
           <span>{vid}</span> <br />
+          <VehicleTracker vehicle={vehicle} marker={this} /> <br />
         </div>
       </Popup>
     );
-    // <VehicleTracker vehicle={vehicle} marker={this} controller={this.props.controller} />  <br/>
   }
 
   isTracking() {
