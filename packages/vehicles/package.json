@@ -9,8 +9,8 @@
   "private": false,
   "dependencies": {
     "@mapbox/polyline": "^1.1.0",
-    "@opentripplanner/base-map": "^0.0.7",
-    "@opentripplanner/core-utils": "^0.0.7",
+    "@opentripplanner/base-map": "^0.0.8",
+    "@opentripplanner/core-utils": "^0.0.8",
     "@turf/nearest-point-on-line": "^6.0.2",
     "leaflet-rotatedmarker": "^0.2.0"
   },
@@ -18,7 +18,7 @@
     "leaflet": "^1.6.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
-    "react-leaflet": "^2.6.0",
+    "react-leaflet": "^2.6.1",
     "styled-components": "^4.3.1"
   },
   "repository": {
