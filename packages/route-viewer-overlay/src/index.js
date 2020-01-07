@@ -75,32 +75,13 @@ class RouteViewerOverlay extends MapLayer {
 
 RouteViewerOverlay.propTypes = {
   routeData: PropTypes.shape({
-    agency: PropTypes.shape({
-      fareUrl: PropTypes.string.isRequired,
-      id: PropTypes.string.isRequired,
-      lang: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      phone: PropTypes.string.isRequired,
-      timezone: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired
-    }).isRequired,
-    bikesAllowed: PropTypes.number.isRequired,
-    color: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-    longName: PropTypes.string.isRequired,
+    color: PropTypes.string,
     patterns: PropTypes.objectOf(
       PropTypes.shape({
-        desc: PropTypes.string.isRequired,
-        geometry: encodedPolylineType.isRequired,
+        geometry: encodedPolylineType,
         id: PropTypes.string.isRequired
       }).isRequired
-    ).isRequired,
-    routeBikesAllowed: PropTypes.number.isRequired,
-    sortOrder: PropTypes.number.isRequired,
-    sortOrderSet: PropTypes.bool.isRequired,
-    textColor: PropTypes.string.isRequired,
-    type: PropTypes.number.isRequired,
-    url: PropTypes.string.isRequired
+    )
   })
 };
 
