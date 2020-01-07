@@ -16,6 +16,9 @@ const isGeomComplete = routeData => {
   );
 };
 
+/**
+ * An overlay that will display all polylines of the patterns of a route.
+ */
 class RouteViewerOverlay extends MapLayer {
   componentDidMount() {}
 
@@ -43,22 +46,23 @@ class RouteViewerOverlay extends MapLayer {
   updateLeafletElement() {}
 
   render() {
-    const { routeData } = this.props;
+    const { path, routeData } = this.props;
+    const { color, opacity, weight } = path;
 
     if (!routeData || !routeData.patterns) return <FeatureGroup />;
 
-    const routeColor = routeData.color ? `#${routeData.color}` : "#00bfff";
+    const routeColor = routeData.color ? `#${routeData.color}` : color;
     const segments = [];
     Object.values(routeData.patterns).forEach(pattern => {
       if (!pattern.geometry) return;
       const pts = polyline.decode(pattern.geometry.points);
       segments.push(
         <Polyline
-          positions={pts}
-          weight={4}
           color={routeColor}
-          opacity={1}
           key={pattern.id}
+          opacity={opacity}
+          positions={pts}
+          weight={weight}
         />
       );
     });
@@ -74,6 +78,23 @@ class RouteViewerOverlay extends MapLayer {
 }
 
 RouteViewerOverlay.propTypes = {
+  /**
+   * Leaflet path properties to use to style each polyline that represents a
+   * pattern of the route. This is a non-exclusive list of items that can be
+   * used to style a polyline.
+   *
+   * See https://leafletjs.com/reference-1.6.0.html#path
+   */
+  path: PropTypes.shape({
+    color: PropTypes.string,
+    opacity: PropTypes.number,
+    weight: PropTypes.number
+  }),
+  /**
+   * This represents data about a route as obtained from a transit index.
+   * Typically a route has more data than these items, so this is only a list of
+   * the properties that this component actually uses.
+   */
   routeData: PropTypes.shape({
     color: PropTypes.string,
     patterns: PropTypes.objectOf(
@@ -83,6 +104,14 @@ RouteViewerOverlay.propTypes = {
       }).isRequired
     )
   })
+};
+
+RouteViewerOverlay.defaultProps = {
+  path: {
+    color: "#00bfff",
+    opacity: 1,
+    weight: 4
+  }
 };
 
 export default withLeaflet(RouteViewerOverlay);
