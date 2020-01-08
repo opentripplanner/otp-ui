@@ -19,13 +19,6 @@ import {
 import commonModes from "../__mocks__/modes"; // FIXME: Replace with ref to configuration.
 import commonCompanies from "../__mocks__/companies"; // FIXME: Replace with ref to configuration.
 
-const defaultTransitModes = [
-  "TRAM", // FIXME: Take these from the 'registered' transit modes in core-utils/itinerary.
-  "RAIL",
-  "BUS",
-  "GONDOLA"
-];
-
 export default class ModeSelectorPanel extends Component {
   constructor(props) {
     super(props);
@@ -67,10 +60,15 @@ export default class ModeSelectorPanel extends Component {
     const newModes = id.split("+");
     if (newModes[0] === "TRANSIT") {
       const selectedModes = this.getSelectedModes();
-      let { lastTransitModes } = this.state;
       const activeTransitModes = selectedModes.filter(isTransit);
+
+      let { lastTransitModes } = this.state;
       if (lastTransitModes.length === 0) {
-        lastTransitModes = lastTransitModes.concat(defaultTransitModes);
+        const allTransitModes = commonModes.transitModes.map(
+          modeObj => modeObj.mode
+        );
+
+        lastTransitModes = lastTransitModes.concat(allTransitModes);
       }
 
       const nonTransitModes = newModes.length > 1 ? [newModes[1]] : ["WALK"]; // TODO: also accommodate WALK+DRIVE, WALK+e-scooter?? They already seem to work without WALK right now.

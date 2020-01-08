@@ -19,7 +19,7 @@ const background = story => (
 const onQueryParamChange = action("onQueryParamChange");
 
 const queryParams = {
-  mode: "WALK,BUS,TRAM",
+  mode: "WALK",
   routingType: "ITINERARY"
 };
 
