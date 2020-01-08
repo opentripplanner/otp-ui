@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { isTransit } from "@opentripplanner/core-utils/lib/itinerary";
+import {
+  isMicromobility,
+  isTransit
+} from "@opentripplanner/core-utils/lib/itinerary";
 import { queryType } from "@opentripplanner/core-utils/lib/types";
 
 import ModeSelector from "../ModeSelector";
@@ -10,7 +13,7 @@ import {
   getModeOptions,
   getTransitSubmodeOptions,
   getCompaniesOptions,
-  getBicycleModeOptions,
+  getBicycleOrMicromobilityModeOptions,
   isBike
 } from "../util";
 import commonModes from "../__mocks__/modes"; // FIXME: Replace with ref to configuration.
@@ -161,8 +164,12 @@ export default class ModeSelectorPanel extends Component {
       nonTransitModes,
       selectedCompanies
     );
-    const bicycleModeOptions = getBicycleModeOptions(
-      commonModes,
+    const bicycleModeOptions = getBicycleOrMicromobilityModeOptions(
+      commonModes.bicycleModes,
+      selectedModes
+    );
+    const micromobilityModeOptions = getBicycleOrMicromobilityModeOptions(
+      commonModes.micromobilityModes,
       selectedModes
     );
 
@@ -175,19 +182,9 @@ export default class ModeSelectorPanel extends Component {
 
         <div>Travel Preferences</div>
 
-        {companies.length >= 2 && (
-          <div>
-            Use companies:
-            <SubmodeSelector
-              modes={companies}
-              onChange={this.companiesChangeHandler}
-            />
-          </div>
-        )}
-
         {selectedModes.some(isTransit) && transitModes.length >= 2 && (
           <div>
-            Use:
+            <div className="setting-label">Use:</div>
             <SubmodeSelector
               modes={transitModes}
               onChange={this.transitModeChangeHandler}
@@ -196,6 +193,7 @@ export default class ModeSelectorPanel extends Component {
         )}
 
         {/* The bike trip type selector */}
+        {/* TODO: Handle different bikeshare networks */}
         {selectedModes.some(isBike) && !selectedModes.some(isTransit) && (
           <div>
             <div className="setting-label" style={{ float: "left" }}>
@@ -205,6 +203,32 @@ export default class ModeSelectorPanel extends Component {
               style={{ textAlign: "right" }}
               modes={bicycleModeOptions}
               onChange={this.mainModeChangeHandler}
+            />
+          </div>
+        )}
+
+        {/* The micromobility trip type selector */}
+        {/* TODO: Handle different micromobility networks */}
+        {selectedModes.some(isMicromobility) && !selectedModes.some(isTransit) && (
+          <div>
+            <div className="setting-label" style={{ float: "left" }}>
+              Use:
+            </div>
+            <SubmodeSelector
+              style={{ textAlign: "right" }}
+              modes={micromobilityModeOptions}
+              onChange={this.mainModeChangeHandler}
+            />
+          </div>
+        )}
+
+        {/* This order is probably better. */}
+        {companies.length >= 2 && (
+          <div>
+            <div className="setting-label">Use companies:</div>
+            <SubmodeSelector
+              modes={companies}
+              onChange={this.companiesChangeHandler}
             />
           </div>
         )}

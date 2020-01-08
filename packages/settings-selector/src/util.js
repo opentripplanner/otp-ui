@@ -157,10 +157,8 @@ export function getCompaniesOptions(companies, modes, selectedCompanies) {
     });
 }
 
-export function getBicycleModeOptions(modes, selectedModes) {
-  const { bicycleModes } = modes;
-
-  return bicycleModes.map(mode => {
+export function getBicycleOrMicromobilityModeOptions(modes, selectedModes) {
+  return modes.map(mode => {
     return {
       id: mode.mode,
       selected: selectedModes.includes(mode.mode),

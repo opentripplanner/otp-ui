@@ -41,7 +41,7 @@ const commonModes = {
       company: "Uber"
     }
   ],
-  exclusiveModes: ["WALK", "BICYCLE"],
+  exclusiveModes: ["WALK", "BICYCLE", "MICROMOBILITY"],
 
   bicycleModes: [
     {
@@ -51,6 +51,17 @@ const commonModes = {
     {
       mode: "BICYCLE_RENT",
       label: "Biketown"
+    }
+  ],
+  // Not used with TriMet.
+  micromobilityModes: [
+    {
+      mode: "MICROMOBILITY",
+      label: "Own E-Scooter"
+    },
+    {
+      mode: "MICROMOBILITY_RENT",
+      label: "Razor"
     }
   ]
 };
