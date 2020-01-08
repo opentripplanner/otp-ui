@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { isTransit } from "@opentripplanner/core-utils/lib/itinerary";
+import { queryType } from "@opentripplanner/core-utils/lib/types";
 
 import ModeSelector from "../ModeSelector";
 import SubmodeSelector from "../SubmodeSelector";
@@ -26,23 +27,43 @@ export default class ModeSelectorPanel extends Component {
   constructor(props) {
     super(props);
 
-    const { selectedModes, selectedCompanies } = props;
+    const { queryParams } = props;
 
     this.state = {
-      selectedModes: selectedModes || [],
-      selectedCompanies: selectedCompanies || [],
       defaultCompany: null,
-      lastTransitModes: []
+      lastTransitModes: [],
+      queryParams
     };
   }
 
-  mainModeChangeHandler = id => {
-    const { onQueryParamChange } = this.props;
-    const isEventValid = typeof onQueryParamChange === "function";
+  getNewQueryParams = queryParam => {
+    const { queryParams } = this.state;
+    return { ...queryParams, ...queryParam };
+  };
 
+  getSelectedCompanies() {
+    const { queryParams } = this.state;
+    const { companies } = queryParams;
+    return companies ? companies.split(",") : [];
+  }
+
+  getSelectedModes() {
+    const { queryParams } = this.state;
+    const { mode } = queryParams;
+    return mode ? mode.split(",") : [];
+  }
+
+  raiseOnQueryParamChange = queryParam => {
+    const { onQueryParamChange } = this.props;
+    if (typeof onQueryParamChange === "function") {
+      onQueryParamChange(queryParam);
+    }
+  };
+
+  mainModeChangeHandler = id => {
     const newModes = id.split("+");
     if (newModes[0] === "TRANSIT") {
-      const { selectedModes } = this.state;
+      const selectedModes = this.getSelectedModes();
       let { lastTransitModes } = this.state;
       const activeTransitModes = selectedModes.filter(isTransit);
       if (lastTransitModes.length === 0) {
@@ -64,62 +85,41 @@ export default class ModeSelectorPanel extends Component {
           comp => comp.id
         );
 
-      if (isEventValid) {
-        onQueryParamChange({
-          mode: finalModes.join(","),
-          companies: selectedCompanies.join(",")
-        });
-      }
+      this.queryParamChangeHandler({
+        mode: finalModes.join(","),
+        companies: selectedCompanies.join(",")
+      });
 
       this.setState({
-        selectedModes: finalModes,
-        selectedCompanies,
         defaultCompany: defaultCompany && defaultCompany[0]
       });
     } else {
-      if (isEventValid) {
-        onQueryParamChange({
-          mode: newModes.join(","),
-          companies: "" // New req: Don't list companies with this mode?
-        });
-      }
-
-      this.setState({
-        selectedModes: newModes
+      this.queryParamChangeHandler({
+        mode: newModes.join(","),
+        companies: "" // New req: Don't list companies with this mode?
       });
     }
   };
 
   transitModeChangeHandler = id => {
-    const { selectedModes } = this.state;
+    const selectedModes = this.getSelectedModes();
     this.toggleSubmode("mode", id, selectedModes, isTransit, newModes => {
       this.setState({
-        selectedModes: newModes,
         lastTransitModes: newModes.filter(isTransit)
       });
     });
   };
 
   companiesChangeHandler = id => {
-    const { selectedCompanies } = this.state;
-    this.toggleSubmode(
-      "companies",
-      id,
-      selectedCompanies,
-      undefined,
-      newCompanies => {
-        this.setState({
-          selectedCompanies: newCompanies
-        });
-      }
-    );
+    const selectedCompanies = this.getSelectedCompanies();
+    this.toggleSubmode("companies", id, selectedCompanies, undefined, () => {});
   };
 
   queryParamChangeHandler = queryParam => {
-    const { onQueryParamChange } = this.props;
-    if (typeof onQueryParamChange === "function") {
-      onQueryParamChange(queryParam);
-    }
+    this.raiseOnQueryParamChange(queryParam);
+    this.setState({
+      queryParams: this.getNewQueryParams(queryParam)
+    });
   };
 
   toggleSubmode = (name, id, submodes, filter = o => o, after) => {
@@ -138,20 +138,18 @@ export default class ModeSelectorPanel extends Component {
     }
 
     if (newSubmodes.length !== submodes.length) {
-      const { onQueryParamChange } = this.props;
-      if (typeof onQueryParamChange === "function") {
-        onQueryParamChange({
-          [name]: newSubmodes.join(",")
-        });
-      }
-
+      this.queryParamChangeHandler({
+        [name]: newSubmodes.join(",")
+      });
       if (after) after(newSubmodes);
     }
   };
 
   render() {
-    const { className } = this.props;
-    const { selectedModes, selectedCompanies, defaultCompany } = this.state;
+    const { className, style } = this.props;
+    const { defaultCompany, queryParams } = this.state;
+    const selectedModes = this.getSelectedModes();
+    const selectedCompanies = this.getSelectedCompanies();
 
     const modeOptions = getModeOptions(commonModes, selectedModes);
     const transitModes = getTransitSubmodeOptions(commonModes, selectedModes);
@@ -168,13 +166,8 @@ export default class ModeSelectorPanel extends Component {
       selectedModes
     );
 
-    const queriedModes = {
-      mode: selectedModes.join(","),
-      routingType: "ITINERARY"
-    };
-
     return (
-      <div className={className}>
+      <div className={className} style={style}>
         <ModeSelector
           modes={modeOptions}
           onChange={this.mainModeChangeHandler}
@@ -217,7 +210,7 @@ export default class ModeSelectorPanel extends Component {
         )}
 
         <GeneralSettingsPanel
-          query={queriedModes}
+          query={queryParams}
           onQueryParamChange={this.queryParamChangeHandler}
         />
       </div>
@@ -236,18 +229,13 @@ ModeSelectorPanel.propTypes = {
    */
   onQueryParamChange: PropTypes.func,
   /**
-   * An array of selected providers for ride-hailing or rentals, no whitespaces (corresponds to the companies URL parameter).
+   * An object whose attributes correspond to query parameters.
    */
-  selectedCompanies: PropTypes.arrayOf(PropTypes.string),
-  /**
-   * An array of selected modes, no whitespaces (corresponds to the mode URL parameter).
-   */
-  selectedModes: PropTypes.arrayOf(PropTypes.string)
+  queryParams: queryType
 };
 
 ModeSelectorPanel.defaultProps = {
   className: null,
   onQueryParamChange: null,
-  selectedCompanies: null,
-  selectedModes: null
+  queryParams: null
 };

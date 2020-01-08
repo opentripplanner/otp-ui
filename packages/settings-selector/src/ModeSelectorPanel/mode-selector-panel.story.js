@@ -18,11 +18,19 @@ const background = story => (
 
 const onQueryParamChange = action("onQueryParamChange");
 
+const queryParams = {
+  mode: "WALK,BUS,TRAM",
+  routingType: "ITINERARY"
+};
+
 export default {
   title: "ModeSelectorPanel",
   decorators: [background]
 };
 
 export const container = () => (
-  <ModeSelectorPanel onQueryParamChange={onQueryParamChange} />
+  <ModeSelectorPanel
+    queryParams={queryParams}
+    onQueryParamChange={onQueryParamChange}
+  />
 );

@@ -45,10 +45,10 @@ export const bikeAndTransit = () => (
 const queryBikeRentAndTransitFixedOptimize = {
   mode: "BICYCLE_RENT,BUS,TRAM,SUBWAY",
   routingType: "ITINERARY",
-  optimizeBike: "SAFE"
+  optimizeBike: "QUICK"
 };
 
-export const bikeRentAndTransitFixedOptimize = () => (
+export const bikeRentAndTransitFixedOptimizeSpeed = () => (
   <GeneralSettingsPanel
     query={queryBikeRentAndTransitFixedOptimize}
     onQueryParamChange={onQueryParamChange}

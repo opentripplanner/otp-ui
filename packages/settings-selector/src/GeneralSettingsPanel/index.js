@@ -35,8 +35,9 @@ class GeneralSettingsPanel extends Component {
           if (
             typeof paramInfo.applicable === "function" &&
             !paramInfo.applicable(query, configWrapper)
-          )
+          ) {
             return null;
+          }
 
           // Create the UI component based on the selector type
           switch (paramInfo.selector) {
@@ -45,7 +46,7 @@ class GeneralSettingsPanel extends Component {
                 <DropdownSelector
                   key={paramInfo.name}
                   name={paramInfo.name}
-                  value={query[paramInfo.name]}
+                  value={query[paramInfo.name] || paramInfo.default}
                   label={getQueryParamProperty(paramInfo, "label", query)}
                   options={getQueryParamProperty(paramInfo, "options", query)}
                   onChange={this.onChangeHandler}
