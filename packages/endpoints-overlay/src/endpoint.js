@@ -101,13 +101,13 @@ export default class Endpoint extends Component {
         {type === "from" ? (
           // From icon should have white circle background
           <>
-            <Styled.StackedCircle size={32} />
-            <Styled.StackedLocationIcon size={32} type={type} />
+            <Styled.StackedCircle size={24} />
+            <Styled.StackedLocationIcon size={24} type={type} />
           </>
         ) : (
           <>
-            <Styled.StackedToIcon size={32} type="to" />
-            <Styled.ToIcon size={28} type={type} />
+            <Styled.StackedToIcon size={24} type="to" />
+            <Styled.ToIcon size={20} type={type} />
           </>
         )}
       </Styled.StackedIconContainer>
