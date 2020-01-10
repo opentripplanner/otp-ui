@@ -160,6 +160,12 @@ const placeType = PropTypes.shape({
 });
 
 TransitiveCanvasOverlay.propTypes = {
+  /**
+   * The transitiveData object is assumed to be the result of converting an
+   * OpenTripPlanner itinerary result into a transitive-readable format. This is
+   * typically done using the @opentripplanner/core-utils/map#itineraryToTransitive
+   * function.
+   */
   transitiveData: PropTypes.shape({
     journeys: PropTypes.arrayOf(
       PropTypes.shape({
