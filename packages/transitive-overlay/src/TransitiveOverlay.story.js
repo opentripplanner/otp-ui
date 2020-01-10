@@ -1,6 +1,8 @@
 import BaseMap from "@opentripplanner/base-map";
 import { itineraryToTransitive } from "@opentripplanner/core-utils/lib/map";
+import EndpointsOverlay from "@opentripplanner/endpoints-overlay";
 import React from "react";
+import { action } from "@storybook/addon-actions";
 import { withA11y } from "@storybook/addon-a11y";
 import { withInfo } from "@storybook/addon-info";
 import { storiesOf } from "@storybook/react";
@@ -36,11 +38,27 @@ const companies = [
   }
 ];
 
+const setLocation = action("setLocation");
+
+function getFromLocation(itinerary) {
+  return itinerary.legs[0].from;
+}
+
+function getToLocation(itinerary) {
+  return itinerary.legs[itinerary.legs.length - 1].to;
+}
+
 storiesOf("TransitiveOverlay", module)
   .addDecorator(withA11y)
   .addDecorator(withInfo)
   .add("TransitiveOverlay with walking itinerary", () => (
     <BaseMap center={[45.518841, -122.679302]} zoom={19}>
+      <EndpointsOverlay
+        fromLocation={getFromLocation(walkOnlyItinerary)}
+        setLocation={setLocation}
+        toLocation={getToLocation(walkOnlyItinerary)}
+        visible
+      />
       <TransitiveOverlay
         transitiveData={itineraryToTransitive(walkOnlyItinerary, companies)}
         visible
@@ -49,6 +67,12 @@ storiesOf("TransitiveOverlay", module)
   ))
   .add("TransitiveOverlay with bike-only itinerary", () => (
     <BaseMap center={[45.520441, -122.68302]} zoom={16}>
+      <EndpointsOverlay
+        fromLocation={getFromLocation(bikeOnlyItinerary)}
+        setLocation={setLocation}
+        toLocation={getToLocation(bikeOnlyItinerary)}
+        visible
+      />
       <TransitiveOverlay
         transitiveData={itineraryToTransitive(bikeOnlyItinerary, companies)}
         visible
@@ -57,6 +81,12 @@ storiesOf("TransitiveOverlay", module)
   ))
   .add("TransitiveOverlay with walk-transit-walk itinerary", () => (
     <BaseMap center={[45.520441, -122.68302]} zoom={16}>
+      <EndpointsOverlay
+        fromLocation={getFromLocation(walkTransitWalkItinerary)}
+        setLocation={setLocation}
+        toLocation={getToLocation(walkTransitWalkItinerary)}
+        visible
+      />
       <TransitiveOverlay
         transitiveData={itineraryToTransitive(
           walkTransitWalkItinerary,
@@ -68,6 +98,12 @@ storiesOf("TransitiveOverlay", module)
   ))
   .add("TransitiveOverlay with bike-transit-bike itinerary", () => (
     <BaseMap center={[45.520441, -122.68302]} zoom={16}>
+      <EndpointsOverlay
+        fromLocation={getFromLocation(bikeTransitBikeItinerary)}
+        setLocation={setLocation}
+        toLocation={getToLocation(bikeTransitBikeItinerary)}
+        visible
+      />
       <TransitiveOverlay
         transitiveData={itineraryToTransitive(
           bikeTransitBikeItinerary,
@@ -79,6 +115,12 @@ storiesOf("TransitiveOverlay", module)
   ))
   .add("TransitiveOverlay with walk-interlined-transit itinerary", () => (
     <BaseMap center={[45.511841, -122.679302]} zoom={14}>
+      <EndpointsOverlay
+        fromLocation={getFromLocation(walkInterlinedTransitItinerary)}
+        setLocation={setLocation}
+        toLocation={getToLocation(walkInterlinedTransitItinerary)}
+        visible
+      />
       <TransitiveOverlay
         transitiveData={itineraryToTransitive(
           walkInterlinedTransitItinerary,
@@ -90,6 +132,12 @@ storiesOf("TransitiveOverlay", module)
   ))
   .add("TransitiveOverlay with walk-transit-transfer itinerary", () => (
     <BaseMap center={[45.505841, -122.631302]} zoom={14}>
+      <EndpointsOverlay
+        fromLocation={getFromLocation(walkTransitWalkTransitWalkItinerary)}
+        setLocation={setLocation}
+        toLocation={getToLocation(walkTransitWalkTransitWalkItinerary)}
+        visible
+      />
       <TransitiveOverlay
         transitiveData={itineraryToTransitive(
           walkTransitWalkTransitWalkItinerary,
@@ -101,6 +149,12 @@ storiesOf("TransitiveOverlay", module)
   ))
   .add("TransitiveOverlay with bike-rental itinerary", () => (
     <BaseMap center={[45.508841, -122.631302]} zoom={14}>
+      <EndpointsOverlay
+        fromLocation={getFromLocation(bikeRentalItinerary)}
+        setLocation={setLocation}
+        toLocation={getToLocation(bikeRentalItinerary)}
+        visible
+      />
       <TransitiveOverlay
         transitiveData={itineraryToTransitive(bikeRentalItinerary, companies)}
         visible
@@ -109,6 +163,12 @@ storiesOf("TransitiveOverlay", module)
   ))
   .add("TransitiveOverlay with E-scooter-rental itinerary", () => (
     <BaseMap center={[45.52041, -122.675302]} zoom={16}>
+      <EndpointsOverlay
+        fromLocation={getFromLocation(eScooterRentalItinerary)}
+        setLocation={setLocation}
+        toLocation={getToLocation(eScooterRentalItinerary)}
+        visible
+      />
       <TransitiveOverlay
         transitiveData={itineraryToTransitive(
           eScooterRentalItinerary,
@@ -120,6 +180,12 @@ storiesOf("TransitiveOverlay", module)
   ))
   .add("TransitiveOverlay with park and ride itinerary", () => (
     <BaseMap center={[45.515841, -122.75302]} zoom={13}>
+      <EndpointsOverlay
+        fromLocation={getFromLocation(parkAndRideItinerary)}
+        setLocation={setLocation}
+        toLocation={getToLocation(parkAndRideItinerary)}
+        visible
+      />
       <TransitiveOverlay
         transitiveData={itineraryToTransitive(parkAndRideItinerary, companies)}
         visible
@@ -128,6 +194,12 @@ storiesOf("TransitiveOverlay", module)
   ))
   .add("TransitiveOverlay with bike rental + transit itinerary", () => (
     <BaseMap center={[45.538841, -122.6302]} zoom={12}>
+      <EndpointsOverlay
+        fromLocation={getFromLocation(bikeRentalTransitBikeRentalItinerary)}
+        setLocation={setLocation}
+        toLocation={getToLocation(bikeRentalTransitBikeRentalItinerary)}
+        visible
+      />
       <TransitiveOverlay
         transitiveData={itineraryToTransitive(
           bikeRentalTransitBikeRentalItinerary,
@@ -139,6 +211,14 @@ storiesOf("TransitiveOverlay", module)
   ))
   .add("TransitiveOverlay with E-scooter rental + transit itinerary", () => (
     <BaseMap center={[45.538841, -122.6302]} zoom={12}>
+      <EndpointsOverlay
+        fromLocation={getFromLocation(
+          eScooterRentalTransiteScooterRentalItinerary
+        )}
+        setLocation={setLocation}
+        toLocation={getToLocation(eScooterRentalTransiteScooterRentalItinerary)}
+        visible
+      />
       <TransitiveOverlay
         transitiveData={itineraryToTransitive(
           eScooterRentalTransiteScooterRentalItinerary,
@@ -150,6 +230,12 @@ storiesOf("TransitiveOverlay", module)
   ))
   .add("TransitiveOverlay with TNC + transit itinerary", () => (
     <BaseMap center={[45.538841, -122.6302]} zoom={12}>
+      <EndpointsOverlay
+        fromLocation={getFromLocation(tncTransitTncItinerary)}
+        setLocation={setLocation}
+        toLocation={getToLocation(tncTransitTncItinerary)}
+        visible
+      />
       <TransitiveOverlay
         transitiveData={itineraryToTransitive(
           tncTransitTncItinerary,

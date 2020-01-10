@@ -28,6 +28,7 @@
     "react": "^16.8.6"
   },
   "devDependencies": {
+    "@opentripplanner/endpoints-overlay": "^0.0.1",
     "@opentripplanner/itinerary-body": "^0.0.8"
   }
 }
