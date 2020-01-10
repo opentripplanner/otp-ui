@@ -9,8 +9,8 @@
   "module": "src/index.js",
   "private": false,
   "dependencies": {
-    "@opentripplanner/icons": "^0.0.1",
-    "@opentripplanner/core-utils": "^0.0.2"
+    "@opentripplanner/icons": "^0.0.8",
+    "@opentripplanner/core-utils": "^0.0.8"
   },
   "publishConfig": {
     "registry": "https://registry.yarnpkg.com"
