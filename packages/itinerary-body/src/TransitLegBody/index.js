@@ -1,5 +1,8 @@
 import moment from "moment";
-import { legType } from "@opentripplanner/core-utils/lib/types";
+import {
+  legType,
+  transitOperatorType
+} from "@opentripplanner/core-utils/lib/types";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { ExclamationTriangle } from "styled-icons/fa-solid";
@@ -44,9 +47,9 @@ class TransitLegBody extends Component {
     const {
       leg,
       longDateFormat,
-      operator,
       setViewedTrip,
-      timeFormat
+      timeFormat,
+      transitOperator
     } = this.props;
     const {
       agencyBrandingUrl,
@@ -62,7 +65,9 @@ class TransitLegBody extends Component {
     // If the config contains an operator with a logo URL, prefer that over the
     // one provided by OTP (which is derived from agency.txt#agency_branding_url)
     const logoUrl =
-      operator && operator.logo ? operator.logo : agencyBrandingUrl;
+      transitOperator && transitOperator.logo
+        ? transitOperator.logo
+        : agencyBrandingUrl;
 
     // get the iconKey for the leg's icon
     // let iconKey = mode;
@@ -117,7 +122,7 @@ class TransitLegBody extends Component {
           <Styled.TransitAlertToggle onClick={this.onToggleAlertsClick}>
             <ExclamationTriangle size={15} /> {alerts.length}{" "}
             {pluralize("alert", alerts)}{" "}
-            <StyledLegs.CaretToggle expaned={alertsExpanded} />
+            <StyledLegs.CaretToggle expanded={alertsExpanded} />
           </Styled.TransitAlertToggle>
         )}
 
@@ -183,10 +188,14 @@ TransitLegBody.propTypes = {
   leg: legType.isRequired,
   legIndex: PropTypes.number.isRequired,
   longDateFormat: PropTypes.string.isRequired,
-  operator: PropTypes.string.isRequired,
   setActiveLeg: PropTypes.func.isRequired,
   setViewedTrip: PropTypes.func.isRequired,
-  timeFormat: PropTypes.string.isRequired
+  timeFormat: PropTypes.string.isRequired,
+  transitOperator: transitOperatorType
+};
+
+TransitLegBody.defaultProps = {
+  transitOperator: null
 };
 
 export default TransitLegBody;

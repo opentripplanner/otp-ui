@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 
 const BaseButton = styled.button`
@@ -7,13 +7,13 @@ const BaseButton = styled.button`
   background: none;
 `;
 
-const Button = styled(BaseButton)`
+export const Button = styled(BaseButton)`
   color: #888;
   margin: 0;
   padding: 2px 5px;
 `;
 
-const Dropdown = ({ children, open, onToggle, title }) => {
+export const Dropdown = ({ children, open, onToggle, title }) => {
   return (
     <DropdownContainer>
       <DropdownButton onClick={onToggle}>{title}</DropdownButton>
@@ -41,28 +41,28 @@ const DropdownContainer = styled.span`
   position: relative;
 `;
 
-const FormGroup = styled.div`
+export const FormGroup = styled.div`
   border-collapse: separate;
   display: table;
   margin-bottom: 15px;
   position: relative;
 `;
 
-const Input = styled.input`
+export const Input = styled.input`
   border: none;
   box-shadow: none;
   font-size: 17px;
   outline: none;
 `;
 
-const InputGroup = styled.span`
+export const InputGroup = styled.span`
   border-bottom: 1px solid #000;
   border-collapse: separate;
   display: table;
   position: relative;
 `;
 
-const InputGroupAddon = styled.span`
+export const InputGroupAddon = styled.span`
   background: none;
   border-radius: 4px;
   border: none;
@@ -75,27 +75,36 @@ const InputGroupAddon = styled.span`
   text-align: center;
 `;
 
-const MenuItem = ({ active, centeredText, children, header, onClick }) => {
-  return header ? (
-    <MenuItemHeader centeredText={centeredText}>{children}</MenuItemHeader>
-  ) : (
-    <MenuItemLi role="presentation">
-      <MenuItemA
-        active={active}
-        onClick={onClick}
-        role="menuitem"
-        tabIndex={-1}
-      >
-        {children}
-      </MenuItemA>
-    </MenuItemLi>
-  );
-};
+export class MenuItem extends Component {
+  onClick = () => {
+    const { disabled, onClick } = this.props;
+    if (!disabled) onClick();
+  };
+
+  render() {
+    const { active, centeredText, children, disabled, header } = this.props;
+    return header ? (
+      <MenuItemHeader centeredText={centeredText}>{children}</MenuItemHeader>
+    ) : (
+      <MenuItemLi disabled={disabled} role="presentation">
+        <MenuItemA
+          active={active}
+          onClick={this.onClick}
+          role="menuitem"
+          tabIndex={-1}
+        >
+          {children}
+        </MenuItemA>
+      </MenuItemLi>
+    );
+  }
+}
 
 MenuItem.propTypes = {
   active: PropTypes.bool,
   centeredText: PropTypes.bool,
   children: PropTypes.node.isRequired,
+  disabled: PropTypes.bool,
   header: PropTypes.bool,
   onClick: PropTypes.func
 };
@@ -103,6 +112,7 @@ MenuItem.propTypes = {
 MenuItem.defaultProps = {
   active: false,
   centeredText: false,
+  disabled: false,
   header: false,
   onClick: null
 };
@@ -132,11 +142,11 @@ const MenuItemHeader = styled.li`
 
 const MenuItemLi = styled.li`
   &:hover {
-    background-color: #f5f5f5;
+    background-color: ${props => !props.disabled && "#f5f5f5"};
   }
 `;
 
-const MenuItemList = styled.ul`
+export const MenuItemList = styled.ul`
   background-clip: padding-box;
   background-color: #fff;
   border-radius: 4px;
@@ -155,14 +165,19 @@ const MenuItemList = styled.ul`
   z-index: 1000;
 `;
 
-const RouteName = styled.span`
+export const OptionContainer = styled.div`
+  padding-top: 5px;
+  padding-bottom: 3px;
+`;
+
+export const RouteName = styled.span`
   background-color: gray;
   color: white;
   padding: 2px 3px 0px;
   margin-right: 5px;
 `;
 
-const StaticMenuItemList = styled(MenuItemList)`
+export const StaticMenuItemList = styled(MenuItemList)`
   border: none;
   box-shadow: none;
   display: block;
@@ -172,16 +187,3 @@ const StaticMenuItemList = styled(MenuItemList)`
     background-color: transparent;
   }
 `;
-
-export {
-  Button,
-  Dropdown,
-  FormGroup,
-  Input,
-  InputGroup,
-  InputGroupAddon,
-  MenuItem,
-  MenuItemList,
-  RouteName,
-  StaticMenuItemList
-};

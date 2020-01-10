@@ -3,7 +3,7 @@ import React from "react";
 
 import Biketown from "./companies/biketown-icon";
 import Bird from "./companies/bird-icon";
-import Bolt from "./companies/bolt-icon";
+// import Bolt from "./companies/bolt-icon";
 // import Car2go from "./companies/car2go-icon";
 import Gruv from "./companies/gruv-icon";
 import Lime from "./companies/lime-icon";
@@ -17,7 +17,7 @@ import TriMetModeIcon from "./trimet-mode-icon";
 const companyLookup = {
   biketown: Biketown,
   bird: Bird,
-  bolt: Bolt,
+  // bolt: Bolt,
   // car2go: Car2go,
   gruv: Gruv,
   lime: Lime,

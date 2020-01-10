@@ -7,7 +7,11 @@ import {
   getModeForPlace,
   getPlaceName
 } from "@opentripplanner/core-utils/lib/itinerary";
-import { configType, legType } from "@opentripplanner/core-utils/lib/types";
+import {
+  configType,
+  legType,
+  timeOptionsType
+} from "@opentripplanner/core-utils/lib/types";
 import LocationIcon from "@opentripplanner/location-icon";
 
 import * as Styled from "./styled";
@@ -17,8 +21,9 @@ import TransitLegBody from "./TransitLegBody";
 import RouteBadge from "./RouteBadge";
 
 /** Looks up an operator from the provided configuration */
-const getOperatorFromConfig = (id, config) =>
-  config.operators.find(operator => operator.id === id) || null;
+const getTransitOperatorFromConfig = (id, config) =>
+  config.transitOperators.find(transitOperator => transitOperator.id === id) ||
+  null;
 
 /**
  * A component to display vehicle rental data. The word "Vehicle" has been used
@@ -121,8 +126,7 @@ const PlaceRow = ({
   const hideBorder = interline || !legIndex;
   const { longDateFormat, timeFormat } = config.dateTime;
   return (
-    // TODO: I think it should be OK to use leg index here
-    <Styled.PlaceRowWrapper key={legIndex}>
+    <Styled.PlaceRowWrapper key={legIndex || "destination-place"}>
       <Styled.TimeColumn>
         {time && formatTime(time, timeOptions)}
       </Styled.TimeColumn>
@@ -208,11 +212,12 @@ const PlaceRow = ({
                 legIndex={legIndex}
                 setActiveLeg={setActiveLeg}
                 longDateFormat={longDateFormat}
-                operator={
-                  leg.agencyId && getOperatorFromConfig(leg.agencyId, config)
-                }
                 setViewedTrip={setViewedTrip}
                 timeFormat={timeFormat}
+                transitOperator={
+                  leg.agencyId &&
+                  getTransitOperatorFromConfig(leg.agencyId, config)
+                }
               />
             ) : (
               /* This is an access (e.g. walk/bike/etc.) leg */
@@ -250,15 +255,15 @@ PlaceRow.propTypes = {
    */
   diagramVisible: legType,
   /** Indicates whether this leg directly follows a transit leg */
-  followsTransit: PropTypes.bool.isRequired,
-  /** Frames a specific leg in an associated map view */
+  followsTransit: PropTypes.bool,
+  /** Called upon clicking the map icon. Called with an argument of the click event. */
   frameLeg: PropTypes.func.isRequired,
   /** Contains details about leg object that is being displayed */
   leg: legType,
   /** A component class used to render the icon for a leg */
   LegIcon: PropTypes.elementType.isRequired,
   /** The index value of this specific leg within the itinerary */
-  legIndex: PropTypes.number.isRequired,
+  legIndex: PropTypes.number,
   /** Contains details about the place being featured in this block */
   place: PropTypes.shape({
     stopId: PropTypes.string,
@@ -266,7 +271,10 @@ PlaceRow.propTypes = {
   }).isRequired,
   /** TODO: Routing Type is usually 'ITINERARY' but we should get more details on what this does */
   routingType: PropTypes.string.isRequired,
-  /** Sets the active leg */
+  /**
+   * Sets the active leg and legIndex.
+   * Called with 2 arguments: (legIndex, leg)
+   */
   setActiveLeg: PropTypes.func.isRequired,
   /** Fired when a user clicks on a view trip button of a transit leg */
   setViewedTrip: PropTypes.func.isRequired,
@@ -276,16 +284,21 @@ PlaceRow.propTypes = {
   setLegDiagram: PropTypes.func.isRequired,
   /** A unit timestamp of the time being featured in this block */
   time: PropTypes.number.isRequired,
-  /** Contains the preferred format string for time display -- may be able to get this from config */
-  timeOptions: PropTypes.shape({}).isRequired,
+  /** Contains the preferred format string for time display and a timezone offset */
+  timeOptions: timeOptionsType,
   /** Converts a route's ID to its accepted badge abbreviation */
   toRouteAbbreviation: PropTypes.func.isRequired
 };
 
 PlaceRow.defaultProps = {
   diagramVisible: null,
+  followsTransit: false,
+  // can be null if this is the destination place
   leg: null,
-  showElevationProfile: false
+  // can be null if this is the destination place
+  legIndex: null,
+  showElevationProfile: false,
+  timeOptions: null
 };
 
 export default PlaceRow;

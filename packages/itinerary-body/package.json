@@ -1,30 +1,18 @@
 {
   "name": "@opentripplanner/itinerary-body",
-  "version": "0.0.1",
+  "version": "0.0.8",
   "description": "A component for displaying an itinerary body of a trip planning result",
-  "keywords": [
-    "otp",
-    "itinerary"
-  ],
-  "author": "Evan Siroky",
-  "homepage": "https://github.com/opentripplanner/otp-ui#readme",
-  "license": "MIT",
   "main": "lib/index.js",
-  "publishConfig": {
-    "registry": "https://registry.yarnpkg.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/opentripplanner/otp-ui.git"
-  },
-  "bugs": {
-    "url": "https://github.com/opentripplanner/otp-ui/issues"
-  },
+  "repository": "https://github.com/opentripplanner/otp-ui.git",
+  "homepage": "https://github.com/opentripplanner/otp-ui#readme",
+  "author": "Evan Siroky",
+  "license": "MIT",
+  "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^0.0.2",
-    "@opentripplanner/humanize-distance": "^0.0.2",
-    "@opentripplanner/icons": "^0.0.1",
-    "@opentripplanner/location-icon": "^0.0.2",
+    "@opentripplanner/core-utils": "^0.0.8",
+    "@opentripplanner/humanize-distance": "^0.0.8",
+    "@opentripplanner/icons": "^0.0.8",
+    "@opentripplanner/location-icon": "^0.0.7",
     "currency-formatter": "^1.5.5",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
@@ -34,5 +22,9 @@
   "peerDependencies": {
     "react": "^16.8.6",
     "styled-components": "^4.3.1"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/opentripplanner/otp-ui/issues"
+  },
+  "gitHead": "644c72e0d08f8daf93b44eaf0deec88a1e16f414"
 }

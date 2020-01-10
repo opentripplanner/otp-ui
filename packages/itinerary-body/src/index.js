@@ -1,4 +1,9 @@
-import { itineraryType, legType } from "@opentripplanner/core-utils/lib/types";
+import {
+  configType,
+  itineraryType,
+  legType,
+  timeOptionsType
+} from "@opentripplanner/core-utils/lib/types";
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -17,11 +22,6 @@ const ItineraryBody = ({
   setViewedTrip,
   showElevationProfile,
   timeOptions,
-  /*
-    this triggers a rerender but is not consumed by children
-  */
-  // eslint-disable-next-line no-unused-vars
-  companies,
   routingType,
   frameLeg,
   toRouteAbbreviation // ,
@@ -68,10 +68,13 @@ const ItineraryBody = ({
           key={i + 1}
           config={config}
           diagramVisible={diagramVisible}
+          frameLeg={frameLeg}
+          LegIcon={LegIcon}
           place={leg.to}
           routingType={routingType}
           setActiveLeg={setActiveLeg}
           setLegDiagram={setLegDiagram}
+          setViewedTrip={setViewedTrip}
           showElevationProfile={showElevationProfile}
           time={leg.endTime}
           timeOptions={timeOptions}
@@ -92,27 +95,25 @@ const ItineraryBody = ({
 };
 
 ItineraryBody.propTypes = {
-  /** Companies that the user has selected their trip options for their query */
-  companies: PropTypes.string.isRequired,
+  /** Contains OTP configuration details. */
+  config: configType.isRequired,
   /**
    * Should be either null or a legType. Indicates that a particular leg diagram
    * has been selected and is active.
    */
   diagramVisible: legType,
+  /** Called upon clicking the map icon. Called with an argument of the click event. */
+  frameLeg: PropTypes.func.isRequired,
   /** Itinerary that the user has selected to view, contains multiple legs */
   itinerary: itineraryType.isRequired,
   /** A component class that is used to render icons for legs of an itinerary */
   LegIcon: PropTypes.elementType.isRequired,
   /** TODO: Routing Type is usually 'ITINERARY' but we should get more details on what this does */
   routingType: PropTypes.string,
-  // New Props below
-  /** Contains OTP configuration details. */
-  config: PropTypes.shape({
-    companies: PropTypes.arrayOf(PropTypes.shape({}))
-  }).isRequired,
-  /** Contains the preferred format string for time display -- may be able to get this from config */
-  timeOptions: PropTypes.shape({}).isRequired,
-  /** Sets the active leg */
+  /**
+   * Sets the active leg and legIndex.
+   * Called with 2 arguments: (legIndex, leg)
+   */
   setActiveLeg: PropTypes.func.isRequired,
   /** Handler for when a leg diagram is selected. */
   setLegDiagram: PropTypes.func.isRequired,
@@ -120,8 +121,8 @@ ItineraryBody.propTypes = {
   setViewedTrip: PropTypes.func.isRequired,
   /** If true, will show the elevation profile for walk/bike legs */
   showElevationProfile: PropTypes.bool,
-  /** Frames a specific leg in an associated map view */
-  frameLeg: PropTypes.func.isRequired,
+  /** Contains the preferred format string for time display and a timezone offset */
+  timeOptions: timeOptionsType,
   /** Converts a route's ID to its accepted badge abbreviation */
   toRouteAbbreviation: PropTypes.func.isRequired // ,
   // showTripDetails: PropTypes.bool,
@@ -131,9 +132,10 @@ ItineraryBody.propTypes = {
 ItineraryBody.defaultProps = {
   diagramVisible: null,
   routingType: "ITINERARY",
-  showElevationProfile: false // ,
+  showElevationProfile: false,
   // showTripDetails: true,
-  // showTripTools: true
+  // showTripTools: true,
+  timeOptions: null
 };
 
 export default ItineraryBody;
