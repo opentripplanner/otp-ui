@@ -4,7 +4,7 @@ import React from "react";
 
 import Endpoint from "./endpoint";
 
-export default function EndpointsOverlay({
+function EndpointsOverlay({
   clearLocation,
   forgetPlace,
   fromLocation,
@@ -98,3 +98,5 @@ EndpointsOverlay.defaultProps = {
   locations: [],
   showUserSettings: false
 };
+
+export default EndpointsOverlay;
