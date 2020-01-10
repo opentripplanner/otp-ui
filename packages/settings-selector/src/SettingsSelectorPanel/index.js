@@ -264,7 +264,9 @@ SettingsSelectorPanel.propTypes = {
    */
   onQueryParamChange: PropTypes.func,
   /**
-   * An object whose attributes correspond to query parameters.
+   * An object {parameterName: value, ...} whose attributes correspond to query parameters.
+   * For query parameter names and value formats,
+   * see https://github.com/opentripplanner/otp-ui/blob/master/packages/core-utils/src/query-params.js#L65
    */
   queryParams: queryType,
   /**

@@ -56,7 +56,8 @@ ModeIcon.propTypes = {
     "car_park",
     "car_hail",
     "micromobility",
-    "micromobility_rent"
+    "micromobility_rent",
+    "transit"
    */
   mode: PropTypes.string.isRequired
 };

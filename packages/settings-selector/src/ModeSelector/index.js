@@ -10,7 +10,7 @@ import ModeButton from "../ModeButton";
  * the transportation modes for a trip query, e.g. transit+bike, walk, micromobility...
  */
 const ModeSelector = props => {
-  const { className, modes, onChange } = props;
+  const { className, modes, onChange, style } = props;
   const { primary, secondary, tertiary } = modes || {
     primary: null,
     secondary: null,
@@ -37,7 +37,7 @@ const ModeSelector = props => {
   );
 
   return (
-    <div className={className}>
+    <div className={className} style={style}>
       {primary && <MainModeRow>{makeButton(primary)}</MainModeRow>}
 
       {secondary && (

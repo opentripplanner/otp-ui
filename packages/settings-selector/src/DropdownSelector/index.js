@@ -4,6 +4,9 @@ import Global from "core-js";
 
 import DropdownSelectorWrap from "./styled";
 
+/**
+ * A wrapper that includes a <select> dropdown control and a <label> for the dropdown control.
+ */
 class DropdownSelector extends Component {
   onChangeHandler = evt => {
     const val = evt.target.value;
@@ -19,7 +22,6 @@ class DropdownSelector extends Component {
   render() {
     const { className, label, name, options, style, value } = this.props;
     const id = `id-query-param-${name}`;
-    // const defaultValue = value || (options && options[0].value);
 
     return (
       <DropdownSelectorWrap className={className} style={style}>
@@ -43,16 +45,35 @@ class DropdownSelector extends Component {
 }
 
 DropdownSelector.propTypes = {
+  /**
+   * The CSS class name to apply to this element.
+   */
   className: PropTypes.string,
+  /**
+   * A unique name for the setting.
+   */
   name: PropTypes.string,
+  /**
+   * The initially-selected value for the contained <select> control.
+   */
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /**
+   * The contents of the contained <label> control.
+   */
   label: PropTypes.string,
+  /**
+   * A list of {text, value} options for the <select> control.
+   */
   options: PropTypes.arrayOf(
     PropTypes.shape({
       text: PropTypes.string,
       value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     })
   ),
+  /**
+   * Triggered when the value of the <select> control changes.
+   * @param arg The data {name: value} for the selected option.
+   */
   onChange: PropTypes.func
 };
 

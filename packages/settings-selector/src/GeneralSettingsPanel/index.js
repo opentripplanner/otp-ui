@@ -11,6 +11,9 @@ import CheckboxSelector from "../CheckboxSelector";
 import DropdownSelector from "../DropdownSelector";
 import commonModes from "../__mocks__/modes"; // FIXME: Replace with ref to configuration.
 
+/**
+ * The general settings panel for setting speed and routing optimization controls.
+ */
 class GeneralSettingsPanel extends Component {
   onChangeHandler = queryParam => {
     const { onQueryParamChange } = this.props;
@@ -72,9 +75,25 @@ class GeneralSettingsPanel extends Component {
 }
 
 GeneralSettingsPanel.propTypes = {
+  /**
+   * The CSS class name to apply to this element.
+   */
   className: PropTypes.string,
+  /**
+   * An object {parameterName: value, ...} whose attributes correspond to query parameters.
+   * For query parameter names and value formats,
+   * see https://github.com/opentripplanner/otp-ui/blob/master/packages/core-utils/src/query-params.js#L65
+   */
   query: queryType,
+  /**
+   * An array of parameter names to support in the settings panel.
+   * See the `query` parameter for more on query parameter names.
+   */
   paramNames: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * Triggered when the value of a trip setting is changed by the user.
+   * @param arg The data {name: value} of the changed trip setting.
+   */
   onQueryParamChange: PropTypes.func
 };
 

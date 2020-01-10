@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+/**
+ * A wrapper that includes an <input type="select" /> control and a <label> for the input control.
+ */
 class CheckboxSelector extends Component {
   onChangeHandler = evt => {
     const { name, onChange } = this.props;
@@ -33,10 +36,26 @@ class CheckboxSelector extends Component {
 }
 
 CheckboxSelector.propTypes = {
+  /**
+   * The CSS class name to apply to this element.
+   */
   className: PropTypes.string,
+  /**
+   * A unique name for the setting.
+   */
   name: PropTypes.string,
+  /**
+   * The initial value for the contained <input> control.
+   */
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /**
+   * The contents of the contained <label> control.
+   */
   label: PropTypes.string,
+  /**
+   * Triggered when the value of the <input> control changes.
+   * @param e The data for the HTML checkbox onchange event.
+   */
   onChange: PropTypes.func
 };
 
