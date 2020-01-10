@@ -4,7 +4,11 @@ import {
   isMicromobility,
   isTransit
 } from "@opentripplanner/core-utils/lib/itinerary";
-import { queryType } from "@opentripplanner/core-utils/lib/types";
+import {
+  configuredCompanyType,
+  configuredModesType,
+  queryType
+} from "@opentripplanner/core-utils/lib/types";
 
 import ModeSelector from "../ModeSelector";
 import SubmodeSelector from "../SubmodeSelector";
@@ -12,14 +16,17 @@ import GeneralSettingsPanel from "../GeneralSettingsPanel";
 import {
   getModeOptions,
   getTransitSubmodeOptions,
+  getCompanies,
   getCompaniesOptions,
   getBicycleOrMicromobilityModeOptions,
   isBike
 } from "../util";
-import commonModes from "../__mocks__/modes"; // FIXME: Replace with ref to configuration.
-import commonCompanies from "../__mocks__/companies"; // FIXME: Replace with ref to configuration.
 
-export default class ModeSelectorPanel extends Component {
+/**
+ * The Settings Selector Panel allows the user to set trip search preferences,
+ * such as modes, providers, and speed preferences.
+ */
+export default class SettingsSelectorPanel extends Component {
   constructor(props) {
     super(props);
 
@@ -57,14 +64,16 @@ export default class ModeSelectorPanel extends Component {
   };
 
   mainModeChangeHandler = id => {
+    const { supportedModes, supportedCompanies } = this.props;
     const newModes = id.split("+");
+
     if (newModes[0] === "TRANSIT") {
       const selectedModes = this.getSelectedModes();
       const activeTransitModes = selectedModes.filter(isTransit);
 
       let { lastTransitModes } = this.state;
       if (lastTransitModes.length === 0) {
-        const allTransitModes = commonModes.transitModes.map(
+        const allTransitModes = supportedModes.transitModes.map(
           modeObj => modeObj.mode
         );
 
@@ -80,11 +89,12 @@ export default class ModeSelectorPanel extends Component {
         : lastTransitModes
       ).concat(nonTransitModes);
 
+      // If there are multiple (scooter | bikeshare) providers,
+      // then if one is specified by the mode button, select it,
+      // o/w select all providers.
       const selectedCompanies =
         defaultCompany ||
-        getCompaniesOptions(commonCompanies, nonTransitModes, []).map(
-          comp => comp.id
-        );
+        getCompanies(supportedCompanies, nonTransitModes).map(comp => comp.id);
 
       this.queryParamChangeHandler({
         mode: finalModes.join(","),
@@ -147,27 +157,30 @@ export default class ModeSelectorPanel extends Component {
   };
 
   render() {
-    const { className, style } = this.props;
+    const { className, supportedModes, supportedCompanies, style } = this.props;
     const { defaultCompany, queryParams } = this.state;
     const selectedModes = this.getSelectedModes();
     const selectedCompanies = this.getSelectedCompanies();
 
-    const modeOptions = getModeOptions(commonModes, selectedModes);
-    const transitModes = getTransitSubmodeOptions(commonModes, selectedModes);
+    const modeOptions = getModeOptions(supportedModes, selectedModes);
+    const transitModes = getTransitSubmodeOptions(
+      supportedModes,
+      selectedModes
+    );
     const nonTransitModes = selectedModes.filter(m => !isTransit(m));
     const companies = getCompaniesOptions(
-      commonCompanies.filter(comp =>
+      supportedCompanies.filter(comp =>
         defaultCompany ? comp.id === defaultCompany : true
       ),
       nonTransitModes,
       selectedCompanies
     );
     const bicycleModeOptions = getBicycleOrMicromobilityModeOptions(
-      commonModes.bicycleModes,
+      supportedModes.bicycleModes,
       selectedModes
     );
     const micromobilityModeOptions = getBicycleOrMicromobilityModeOptions(
-      commonModes.micromobilityModes,
+      supportedModes.micromobilityModes,
       selectedModes
     );
 
@@ -240,7 +253,7 @@ export default class ModeSelectorPanel extends Component {
   }
 }
 
-ModeSelectorPanel.propTypes = {
+SettingsSelectorPanel.propTypes = {
   /**
    * The CSS class name to apply to this element.
    */
@@ -253,11 +266,20 @@ ModeSelectorPanel.propTypes = {
   /**
    * An object whose attributes correspond to query parameters.
    */
-  queryParams: queryType
+  queryParams: queryType,
+  /**
+   * An array of supported companies that will be displayed as options where applicable.
+   */
+  supportedCompanies: PropTypes.arrayOf(configuredCompanyType),
+  /**
+   * An array of supported modes that will be displayed as options.
+   */
+  supportedModes: configuredModesType.isRequired
 };
 
-ModeSelectorPanel.defaultProps = {
+SettingsSelectorPanel.defaultProps = {
   className: null,
   onQueryParamChange: null,
-  queryParams: null
+  queryParams: null,
+  supportedCompanies: null
 };

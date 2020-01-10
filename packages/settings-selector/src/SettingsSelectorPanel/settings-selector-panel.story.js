@@ -1,7 +1,10 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
+import { withInfo } from "@storybook/addon-info";
 
-import ModeSelectorPanel from ".";
+import SettingsSelectorPanel from ".";
+import commonModes from "../__mocks__/modes";
+import commonCompanies from "../__mocks__/companies";
 
 const background = story => (
   <div
@@ -24,13 +27,15 @@ const queryParams = {
 };
 
 export default {
-  title: "ModeSelectorPanel",
-  decorators: [background]
+  title: "SettingsSelectorPanel",
+  decorators: [background, withInfo]
 };
 
 export const container = () => (
-  <ModeSelectorPanel
+  <SettingsSelectorPanel
     queryParams={queryParams}
+    supportedModes={commonModes}
+    supportedCompanies={commonCompanies}
     onQueryParamChange={onQueryParamChange}
   />
 );

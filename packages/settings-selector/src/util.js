@@ -39,9 +39,9 @@ const supportedExclusiveModes = [
  * In config.yaml, you can write either:
  *   transitModes:    -or-   transitModes:
  *   - BUS                   - mode: BUS
- *   - RAIL                    label: "Bus"
+ *   - RAIL                    label: Bus
  *                           - mode: RAIL
- *                             label: "Commuter Rail"
+ *                             label: Commuter Rail
  *
  * @param modeObj The mode object per the configuration to convert.
  */
@@ -135,26 +135,29 @@ export function getModeOptions(modes, selectedModes) {
   };
 }
 
-export function getCompaniesOptions(companies, modes, selectedCompanies) {
+export function getCompanies(companies, modes) {
   return companies
     .filter(
       comp => comp.modes.split(",").filter(m => modes.includes(m)).length > 0
     )
-    .filter(comp => hasRental(comp.modes) || hasHail(comp.modes))
-    .map(comp => {
-      const IconTag = Icons[comp.id];
+    .filter(comp => hasRental(comp.modes) || hasHail(comp.modes));
+}
 
-      return {
-        id: comp.id,
-        selected: selectedCompanies.includes(comp.id),
-        text: (
-          <span>
-            <IconTag /> {comp.label}
-          </span>
-        ),
-        title: comp.label
-      };
-    });
+export function getCompaniesOptions(companies, modes, selectedCompanies) {
+  return getCompanies(companies, modes).map(comp => {
+    const IconTag = Icons[comp.id];
+
+    return {
+      id: comp.id,
+      selected: selectedCompanies.includes(comp.id),
+      text: (
+        <span>
+          <IconTag /> {comp.label}
+        </span>
+      ),
+      title: comp.label
+    };
+  });
 }
 
 export function getBicycleOrMicromobilityModeOptions(modes, selectedModes) {

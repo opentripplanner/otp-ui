@@ -57,3 +57,26 @@ export const queryType = PropTypes.shape({
   companies: PropTypes.string,
   wheelchair: PropTypes.bool
 });
+
+export const configuredModeType = PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.shape({
+    mode: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    company: PropTypes.string
+  })
+]);
+
+export const configuredModesType = PropTypes.shape({
+  transitModes: PropTypes.arrayOf(configuredModeType),
+  accessModes: PropTypes.arrayOf(configuredModeType),
+  exclusiveModes: PropTypes.arrayOf(configuredModeType),
+  bicycleModes: PropTypes.arrayOf(configuredModeType),
+  micromobilityModes: PropTypes.arrayOf(configuredModeType)
+});
+
+export const configuredCompanyType = PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  modes: PropTypes.string.isRequired
+});
