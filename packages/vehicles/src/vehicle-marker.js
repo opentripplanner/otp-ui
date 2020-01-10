@@ -5,6 +5,8 @@ import L, { divIcon } from "leaflet";
 import { Marker, Popup, Tooltip, withLeaflet } from "react-leaflet";
 import RotatedMarker from "./RotatedMarker"; // TODO: move to either base-map and/or utils and/or own npm & repo
 
+import { vehicleType } from "./types";
+
 import VehicleTracker from "./vehicle-tracker";
 import makeVehicleIcon from "./vehicle-icons";
 import { formatTime } from "./vehicle-utils";
@@ -46,6 +48,8 @@ class VehicleMarker extends React.Component {
 
   makePopup() {
     const { vehicle } = this.props;
+    const { tracked } = this.props;
+    const { setTracked } = this.props;
 
     let status = "unknown";
     if (vehicle.status === "IN_TRANSIT_TO") {
@@ -90,26 +94,26 @@ class VehicleMarker extends React.Component {
           </span>
           <br />
           <span>{vid}</span> <br />
-          <VehicleTracker vehicle={vehicle} marker={this} /> <br />
+          <VehicleTracker
+            vehicle={vehicle}
+            tracked={tracked}
+            setTracked={setTracked}
+          />
+          <br />
         </div>
       </Popup>
     );
   }
 
-  isTracking() {
-    // const retVal = this.props.controller.isTrackingVehicle(this.props.vehicle);
-    const retVal = false;
-    return retVal;
-  }
-
   makeCircleMarker(size) {
     const { vehicle } = this.props;
+    const { tracked } = this.props;
 
     const position = [vehicle.lat, vehicle.lon];
     let zPos = 0;
 
     let classnames = "vehicle-marker vehicle-circle";
-    if (this.isTracking()) {
+    if (tracked) {
       classnames += " vehicle-circle-selected";
       zPos = 1000;
     }
@@ -128,6 +132,7 @@ class VehicleMarker extends React.Component {
 
   makeRotatedMarker() {
     const { vehicle } = this.props;
+    const { tracked } = this.props;
 
     const position = [vehicle.lat, vehicle.lon];
     let zPos = 0;
@@ -138,7 +143,7 @@ class VehicleMarker extends React.Component {
     }
 
     let classnames = "vehicle-marker vehicle-icon";
-    if (this.isTracking()) {
+    if (tracked) {
       classnames += " vehicle-icon-selected";
       zPos = 1000;
     }
@@ -178,25 +183,10 @@ class VehicleMarker extends React.Component {
 }
 
 VehicleMarker.propTypes = {
-  vehicle: PropTypes.shape({
-    routeShortName: PropTypes.string,
-    routeLongName: PropTypes.string,
-    routeType: PropTypes.string,
+  tracked: PropTypes.bool,
+  setTracked: PropTypes.func.isRequired,
+  vehicle: vehicleType,
 
-    status: PropTypes.string,
-    reportDate: PropTypes.string,
-    seconds: PropTypes.number,
-
-    stopSequence: PropTypes.number,
-    stopId: PropTypes.string,
-    vehicleId: PropTypes.string,
-    tripId: PropTypes.string,
-    blockId: PropTypes.string,
-
-    lat: PropTypes.number,
-    lon: PropTypes.number,
-    heading: PropTypes.number
-  }),
   leaflet: PropTypes.shape({
     map: PropTypes.shape({
       getZoom: PropTypes.shape({})
@@ -209,6 +199,7 @@ VehicleMarker.propTypes = {
 };
 
 VehicleMarker.defaultProps = {
+  tracked: false,
   vehicle: null,
   leaflet: null,
   closeZoom: 14,

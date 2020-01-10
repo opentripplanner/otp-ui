@@ -1,44 +1,41 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function makeButtonText(isTracked) {
-  return isTracked ? "Track Vehicle" : "Stop Tracking";
+import { vehicleType } from "./types";
+
+function makeButtonText(tracked) {
+  return tracked ? "Stop Tracking" : "Track Vehicle";
 }
 
 function VehicleTracker(props) {
-  const [buttonText, setButtonText] = React.useState(makeButtonText(false));
-
   const { vehicle } = props;
-  const { isTracking } = props;
+  const { tracked } = props;
   const { setTracked } = props;
 
   function handleClick() {
-    let tracked = false;
-    if (vehicle) {
-      if (isTracking(vehicle)) {
-        setTracked(null);
-      } else {
-        tracked = setTracked(vehicle);
-      }
+    if (tracked) {
+      setTracked(null);
+    } else {
+      setTracked(vehicle);
     }
-    setButtonText(makeButtonText(tracked));
   }
 
   return (
     <button type="button" onClick={e => handleClick(e)}>
-      {buttonText}
+      {makeButtonText(tracked)}
     </button>
   );
 }
 
 VehicleTracker.propTypes = {
-  vehicle: PropTypes.shape({}),
-  isTracking: PropTypes.func.isRequired,
+  vehicle: vehicleType,
+  tracked: PropTypes.bool,
   setTracked: PropTypes.func.isRequired
 };
 
 VehicleTracker.defaultProps = {
-  vehicle: null
+  vehicle: null,
+  tracked: false
 };
 
 export default VehicleTracker;
