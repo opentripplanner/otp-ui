@@ -34,10 +34,6 @@ const getStationMarkerByColor = memoize(color =>
   })
 );
 
-function locationCacheKeyResolver(location) {
-  return `${location.name}${location.x}${location.y}`;
-}
-
 class VehicleRentalOverlay extends MapLayer {
   createLeafletElement() {}
 
@@ -76,35 +72,13 @@ class VehicleRentalOverlay extends MapLayer {
     }
   }
 
-  onFromClick = memoize(
-    location => () => {
-      this.props.setLocation({
-        type: "from",
-        location,
-        reverseGeocode: false
-      });
-    },
-    locationCacheKeyResolver
-  );
-
-  onToClick = memoize(
-    location => () => {
-      this.props.setLocation({
-        type: "to",
-        location,
-        reverseGeocode: false
-      });
-    },
-    locationCacheKeyResolver
-  );
-
   /**
    * Render some popup html for a station. This contains custom logic for
    * displaying rental vehicles in the TriMet MOD website that might not be
    * applicable to other regions.
    */
   renderPopupForStation = (station, stationIsHub = false) => {
-    const { configCompanies } = this.props;
+    const { configCompanies, setLocation } = this.props;
     const stationNetworks = getCompaniesLabelFromNetworks(
       station.networks,
       configCompanies
@@ -142,8 +116,7 @@ class VehicleRentalOverlay extends MapLayer {
           <BaseMapStyled.PopupRow>
             <FromToLocationPicker
               location={location}
-              onFromClick={this.onFromClick(location)}
-              onToClick={this.onToClick(location)}
+              setLocation={setLocation}
             />
           </BaseMapStyled.PopupRow>
         </BaseMapStyled.MapOverlayPopup>

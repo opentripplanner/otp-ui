@@ -254,6 +254,20 @@ export const itineraryType = PropTypes.shape({
 });
 
 /**
+ * Used to model a location that is used in planning a trip.
+ */
+export const locationType = PropTypes.shape({
+  lat: PropTypes.number.isRequired,
+  lon: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  /**
+   * This is only used location that a user has saved. Can be either:
+   * "home" or "work"
+   */
+  type: PropTypes.string
+});
+
+/**
  * Used to help display the time of day within the context of a particular itinerary.
  */
 export const timeOptionsType = PropTypes.shape({
