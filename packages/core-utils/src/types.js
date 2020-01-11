@@ -2,6 +2,13 @@ import PropTypes from "prop-types";
 import { ReactPropTypeLocationNames } from "react";
 import { isValidLatLng } from "./map";
 
+export const companyType = PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  /* a comma-separated string listing the modes that this company has */
+  modes: PropTypes.string.isRequired
+});
+
 /**
  * Describes some options to help display data about a transit agency that is
  * configured in an opentripplanner instance.
@@ -20,22 +27,64 @@ export const languageConfigType = PropTypes.shape({
   stopViewer: PropTypes.string
 });
 
+export const mapSymbolsType = PropTypes.arrayOf(
+  PropTypes.shape({
+    dockStrokeColor: PropTypes.string,
+    fillColor: PropTypes.string,
+    maxZoom: PropTypes.number.isRequired,
+    minZoom: PropTypes.number.isRequired,
+    pixels: PropTypes.number,
+    type: PropTypes.string.isRequired
+  }).isRequired
+);
+
 /**
- * Represents the expected configuration of the webapp
+ * Represents the expected configuration of the webapp.
+ *
+ * Note: this is an incomplete type mapping.
  */
 export const configType = PropTypes.shape({
-  companies: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-      /* a comma-separated string listing the modes that this company has */
-      modes: PropTypes.string.isRequired
-    }).isRequired
-  ),
+  companies: PropTypes.arrayOf(companyType.isRequired),
   dateTime: PropTypes.shape({
     timeFormat: PropTypes.string,
     dateFormat: PropTypes.string,
     longDateFormat: PropTypes.string
+  }),
+  // TODO: add full typing
+  map: PropTypes.shape({
+    overlays: PropTypes.arrayOf(
+      PropTypes.shape({
+        /**
+         * The applicable companies this overlay covers. Only applicable in
+         * certain vehicle rental overlays.
+         */
+        companies: PropTypes.arrayOf(PropTypes.string.isRequired),
+        name: PropTypes.string.isRequired,
+        /**
+         * The applicable map symbols. Only applicable in vehicle rental
+         * overlays.
+         */
+        mapSymbols: mapSymbolsType,
+        /**
+         * Only used during park and ride queries. This will filter out P&Rs
+         * that are futher than the specified number of meters from a transit
+         * stop.
+         */
+        maxTransitDistance: PropTypes.number,
+        /**
+         * The applicable modes this overlay covers. Only applicable in certain
+         * vehicle rental overlays.
+         */
+        modes: PropTypes.arrayOf(PropTypes.string.isRequired),
+        /**
+         * The type of overlay. Currently valid values include:
+         *
+         * "bike-rental", "car-rental", "micromobility-rental", "park-and-ride",
+         * "stops", "tile"
+         */
+        type: PropTypes.string.isRequired
+      })
+    )
   }),
   transitOperators: PropTypes.arrayOf(transitOperatorType)
 });
@@ -242,6 +291,25 @@ export const transitIndexStopWithRoutes = PropTypes.shape({
     })
   )
 });
+
+/**
+ * This models data about vehicle rental stations as obtained from various
+ * vehicle rental API endpoints from OTP.
+ */
+export const stationsType = PropTypes.arrayOf(
+  PropTypes.shape({
+    bikesAvailable: PropTypes.number,
+    id: PropTypes.string.isRequired,
+    isFloatingBike: PropTypes.bool,
+    isFloatingCar: PropTypes.bool,
+    isFloatingVehicle: PropTypes.bool,
+    name: PropTypes.string,
+    networks: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+    spacesAvailable: PropTypes.number,
+    x: PropTypes.number.isRequired,
+    y: PropTypes.number.isRequired
+  }).isRequired
+);
 
 /**
  * Utility function to help create chained validators

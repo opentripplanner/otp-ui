@@ -1,3 +1,4 @@
+import * as BaseMapStyled from "@opentripplanner/base-map/lib/styled";
 import { languageConfigType } from "@opentripplanner/core-utils/lib/types";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 import PropTypes from "prop-types";
@@ -48,28 +49,28 @@ export default class StopMarker extends Component {
         weight={1}
       >
         <Popup>
-          <Styled.MapOverlayPopup>
-            <Styled.PopupTitle>{name}</Styled.PopupTitle>
-            <Styled.PopupRow>
+          <BaseMapStyled.MapOverlayPopup>
+            <BaseMapStyled.PopupTitle>{name}</BaseMapStyled.PopupTitle>
+            <BaseMapStyled.PopupRow>
               <b>Agency:</b> {idArr[0]}
-            </Styled.PopupRow>
-            <Styled.PopupRow>
+            </BaseMapStyled.PopupRow>
+            <BaseMapStyled.PopupRow>
               <span>
                 <b>Stop ID:</b> {idArr[1]}
               </span>
               <Styled.ViewStopButton onClick={this.onClickView}>
                 {languageConfig.stopViewer || "Stop Viewer"}
               </Styled.ViewStopButton>
-            </Styled.PopupRow>
+            </BaseMapStyled.PopupRow>
 
             {/* The "Set as [from/to]" ButtonGroup */}
-            <Styled.PopupRow>
+            <BaseMapStyled.PopupRow>
               <FromToLocationPicker
                 onFromClick={this.onFromClick}
                 onToClick={this.onToClick}
               />
-            </Styled.PopupRow>
-          </Styled.MapOverlayPopup>
+            </BaseMapStyled.PopupRow>
+          </BaseMapStyled.MapOverlayPopup>
         </Popup>
       </CircleMarker>
     );
