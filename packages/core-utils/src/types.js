@@ -45,7 +45,7 @@ const feedScopedIdType = PropTypes.shape({
   id: PropTypes.string
 });
 
-const encodedPolylineType = PropTypes.shape({
+export const encodedPolylineType = PropTypes.shape({
   length: PropTypes.number.isRequired,
   points: PropTypes.string.isRequired
 });
