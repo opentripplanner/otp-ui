@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-syntax */
+/* lint rule ignored b/c it's stupid ... for in loop below is best */
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -5,9 +7,20 @@ import VehicleLayer from "./vehicle-layer";
 import { checkRefreshInteval } from "./vehicle-utils";
 
 function findVehicleRecord(vehicleList, trackId) {
-  const retVal = null;
-  trackId = 1;
-  return retVal && trackId;
+  let retVal = null;
+  if (trackId && vehicleList) {
+    for (const v of vehicleList) {
+      if (
+        trackId === v.vehicleId ||
+        trackId === v.tripId ||
+        trackId === v.blockId
+      ) {
+        retVal = v;
+        break;
+      }
+    }
+  }
+  return retVal;
 }
 
 function getVehicles(setState, setTrackedVehicle, trackId, url) {
@@ -30,24 +43,22 @@ function getVehicles(setState, setTrackedVehicle, trackId, url) {
     })
     .then(vehicleList => {
       if (vehicleList && vehicleList.length > 0) {
+        // step 1: set the vehicle list (triggers vehicle points redraw)
         console.log(`updating state with ${vehicleList.length} vehicles`);
         setState(vehicleList);
 
         if (trackId) {
-          // step 1: find vehicle record via either trip_id, block_id or vehicle_id
+          // step 2: find vehicle record via either trip, block or vehicle ids
           const tracked = findVehicleRecord(vehicleList, trackId);
 
-          // step 2: add to state
+          // step 3: add updated tracked vehicle to state (triggers pattern line redraw)
           if (tracked) {
             setTrackedVehicle(tracked);
           } else {
             console.log(
-              `WARN: couldn't find vehicle with id (trip/block/vehicle) of ${trackId}`
+              `WARN: vehicle w/ trip/block/vehicle = ${trackId} not found`
             );
           }
-        } else {
-          // step 3 (important): if not tracking, make sure a previous tracked vehicle is cleared from state
-          setTrackedVehicle(null);
         }
       } else {
         console.log("get vehicle data is suspect");
@@ -64,6 +75,26 @@ function VehicleAction(props) {
   const [vehicleData, setVehicleData] = React.useState(null);
   const [trackedVehicle, setTrackedVehicle] = React.useState(null);
 
+  // allows us to get a current handle on the trackedVehicle state
+  const trackedVehicleRef = React.useRef(trackedVehicle);
+  React.useEffect(() => {
+    trackedVehicleRef.current = trackedVehicle;
+  }, [trackedVehicle]);
+
+  function getTrackedVehicle() {
+    let retVal = null;
+    if (trackedVehicleRef && trackedVehicleRef.current)
+      retVal = trackedVehicleRef.current;
+    return retVal;
+  }
+
+  function getTrackedVehicleId() {
+    let retVal = null;
+    const t = getTrackedVehicle();
+    if (t && t.vehicleId) retVal = t.vehicleId;
+    return retVal;
+  }
+
   // the code below w/in useEffect is a simplified version of what's in vehcile-action.js / VechicleAction component
   // note: we wrap the setInterval / clearInterval w/in a useEffect, since that will work our component lifecycle.
   React.useEffect(() => {
@@ -73,17 +104,9 @@ function VehicleAction(props) {
     //       if we don't have the gate of vehicleData == null, then we'll get multiple setInterval calls
     let interval = null;
     if (vehicleData == null) {
-      getVehicles(
-        setVehicleData,
-        setTrackedVehicle,
-        "either trip/block/vech number"
-      );
+      getVehicles(setVehicleData, setTrackedVehicle, props.tracked);
       interval = setInterval(() => {
-        getVehicles(
-          setVehicleData,
-          setTrackedVehicle,
-          "either trip/block/vech number"
-        );
+        getVehicles(setVehicleData, setTrackedVehicle, getTrackedVehicleId());
       }, refreshDelay);
     }
 
@@ -108,7 +131,8 @@ function VehicleAction(props) {
 }
 
 VehicleAction.propTypes = {
-  refreshDelay: PropTypes.number
+  refreshDelay: PropTypes.number,
+  tracked: PropTypes.string
 };
 
 export default VehicleAction;
