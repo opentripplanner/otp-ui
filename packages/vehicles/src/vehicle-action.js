@@ -1,4 +1,4 @@
-/* eslint-disable no-restricted-syntax */
+/* xxeslint-disable no-restricted-syntax */
 /* lint rule ignored b/c it's stupid ... for in loop below is best */
 import React from "react";
 import PropTypes from "prop-types";
@@ -34,12 +34,13 @@ function getVehicles(setVehicleData, setTrackedVehicle, trackId, url) {
           let tracked = null;
 
           // step 2: find vehicle record via either tripId or vehicleId
-          for (const v of vehicleList) {
+          vehicleList.some(v => {
             if (trackId === v.vehicleId || trackId === v.tripId) {
               tracked = v;
-              break;
+              return true;
             }
-          }
+            return false
+          });
 
           // step 3: add updated tracked vehicle to state (triggers pattern line redraw)
           if (tracked) {
