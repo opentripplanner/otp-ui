@@ -6,24 +6,7 @@ import PropTypes from "prop-types";
 import VehicleLayer from "./vehicle-layer";
 import { checkRefreshInteval } from "./vehicle-utils";
 
-function findVehicleRecord(vehicleList, trackId) {
-  let retVal = null;
-  if (trackId && vehicleList) {
-    for (const v of vehicleList) {
-      if (
-        trackId === v.vehicleId ||
-        trackId === v.tripId ||
-        trackId === v.blockId
-      ) {
-        retVal = v;
-        break;
-      }
-    }
-  }
-  return retVal;
-}
-
-function getVehicles(setState, setTrackedVehicle, trackId, url) {
+function getVehicles(setVehicleData, setTrackedVehicle, trackId, url) {
   const d = Date.now();
   url = url || "https://maps.trimet.org/gtfs/rt/vehicles/routes/all";
   url = url.indexOf("?") ? `${url}?` : `${url}&`;
@@ -45,19 +28,24 @@ function getVehicles(setState, setTrackedVehicle, trackId, url) {
       if (vehicleList && vehicleList.length > 0) {
         // step 1: set the vehicle list (triggers vehicle points redraw)
         console.log(`updating state with ${vehicleList.length} vehicles`);
-        setState(vehicleList);
+        setVehicleData(vehicleList);
 
         if (trackId) {
-          // step 2: find vehicle record via either trip, block or vehicle ids
-          const tracked = findVehicleRecord(vehicleList, trackId);
+          let tracked = null;
+
+          // step 2: find vehicle record via either tripId or vehicleId
+          for (const v of vehicleList) {
+            if (trackId === v.vehicleId || trackId === v.tripId) {
+              tracked = v;
+              break;
+            }
+          }
 
           // step 3: add updated tracked vehicle to state (triggers pattern line redraw)
           if (tracked) {
             setTrackedVehicle(tracked);
           } else {
-            console.log(
-              `WARN: vehicle w/ trip/block/vehicle = ${trackId} not found`
-            );
+            console.log(`WARN: can't find tripId or vehicleId ${trackId}`);
           }
         }
       } else {
@@ -95,7 +83,6 @@ function VehicleAction(props) {
     return retVal;
   }
 
-  // the code below w/in useEffect is a simplified version of what's in vehcile-action.js / VechicleAction component
   // note: we wrap the setInterval / clearInterval w/in a useEffect, since that will work our component lifecycle.
   React.useEffect(() => {
     // when state of vehicle data is null (new) set the data updates here
@@ -111,7 +98,7 @@ function VehicleAction(props) {
     }
 
     return () => {
-      // before vehicle view component unmounts, clear the interval...
+      // before vehicle view component un-mounts, clear the interval...
       if (interval) {
         clearInterval(interval);
         setTrackedVehicle(null);
@@ -129,6 +116,11 @@ function VehicleAction(props) {
   );
   return retVal;
 }
+
+VehicleAction.defaultProps = {
+  refreshDelay: 3000,
+  tracked: "3942"
+};
 
 VehicleAction.propTypes = {
   refreshDelay: PropTypes.number,
