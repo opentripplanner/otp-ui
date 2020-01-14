@@ -2,11 +2,11 @@ import React from "react";
 import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
 
-import SettingsSelectorPanel from ".";
-import commonModes from "../__mocks__/modes";
-import commonCompanies from "../__mocks__/companies";
+import SettingsSelectorPanel from "./SettingsSelectorPanel";
+import commonModes from "./__mocks__/modes";
+import commonCompanies from "./__mocks__/companies";
 
-import "../__mocks__/trimet-mock.css";
+import "./__mocks__/trimet-mock.css";
 
 const background = story => (
   <div
@@ -35,7 +35,7 @@ export default {
   decorators: [background, withInfo]
 };
 
-export const container = () => (
+export const settingsSelectorPanel = () => (
   <SettingsSelectorPanel
     queryParams={queryParams}
     supportedModes={commonModes}

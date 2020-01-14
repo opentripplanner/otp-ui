@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Global from "core-js";
 
 import { SelectCtrl, DropdownSelectorWrap } from "./styled";
-import { SettingLabel } from "../SettingLabel/styled";
+import { SettingLabel } from "../SettingsComponents";
 
 /**
  * A wrapper that includes a <select> dropdown control and a <label> for the dropdown control.

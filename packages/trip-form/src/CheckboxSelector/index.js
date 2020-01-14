@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import { SettingLabel } from "../SettingLabel/styled";
+import { SettingLabel } from "../SettingsComponents";
 
 /**
  * A wrapper that includes an <input type="select" /> control and a <label> for the input control.

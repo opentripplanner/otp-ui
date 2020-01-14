@@ -17,7 +17,7 @@ import {
   SettingLabel,
   SettingsHeader,
   SettingsSection
-} from "../SettingLabel/styled";
+} from "../SettingsComponents";
 import {
   getModeOptions,
   getTransitSubmodeOptions,
