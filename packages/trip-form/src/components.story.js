@@ -63,6 +63,7 @@ export const dropdownSelector = () => (
       }
     ]}
     onChange={onChange}
+    value="Value2"
   />
 );
 

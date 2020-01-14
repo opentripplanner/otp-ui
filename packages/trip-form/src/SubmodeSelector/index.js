@@ -38,7 +38,6 @@ SubmodeSelector.propTypes = {
   className: PropTypes.string,
   /**
    * An array of submodes for the trip query, i.e. transit modes, TNC, or rental companies.
-   * modes should be populated using getModeOptions(modes, selectedModes).
    */
   modes: PropTypes.arrayOf(modeOptionType),
   /**

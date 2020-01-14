@@ -44,11 +44,6 @@ export default class SettingsSelectorPanel extends Component {
     };
   }
 
-  getNewQueryParams = queryParam => {
-    const { queryParams } = this.state;
-    return { ...queryParams, ...queryParam };
-  };
-
   getSelectedCompanies() {
     const { queryParams } = this.state;
     const { companies } = queryParams;
@@ -60,6 +55,11 @@ export default class SettingsSelectorPanel extends Component {
     const { mode } = queryParams;
     return mode ? mode.split(",") : [];
   }
+
+  makeNewQueryParams = queryParam => {
+    const { queryParams } = this.state;
+    return { ...queryParams, ...queryParam };
+  };
 
   raiseOnQueryParamChange = queryParam => {
     const { onQueryParamChange } = this.props;
@@ -96,7 +96,7 @@ export default class SettingsSelectorPanel extends Component {
 
       // If there are multiple (scooter | bikeshare) providers,
       // then if one is specified by the mode button, select it,
-      // o/w select all providers.
+      // othewise select all providers.
       const selectedCompanies =
         defaultCompany ||
         getCompanies(supportedCompanies, nonTransitModes).map(comp => comp.id);
@@ -134,7 +134,7 @@ export default class SettingsSelectorPanel extends Component {
   queryParamChangeHandler = queryParam => {
     this.raiseOnQueryParamChange(queryParam);
     this.setState({
-      queryParams: this.getNewQueryParams(queryParam)
+      queryParams: this.makeNewQueryParams(queryParam)
     });
   };
 
@@ -161,11 +161,26 @@ export default class SettingsSelectorPanel extends Component {
     }
   };
 
+  renderSubmodes = (
+    modes,
+    onChange,
+    labelStyle = null,
+    selectorStyle = null
+  ) => (
+    <SettingsSection>
+      <SettingLabel style={labelStyle}>Use</SettingLabel>
+      <SubmodeSelector
+        style={selectorStyle}
+        modes={modes}
+        onChange={onChange}
+      />
+    </SettingsSection>
+  );
+
   render() {
     const { className, supportedModes, supportedCompanies, style } = this.props;
     const { defaultCompany, queryParams } = this.state;
     const selectedModes = this.getSelectedModes();
-    const selectedCompanies = this.getSelectedCompanies();
 
     const modeOptions = getModeOptions(supportedModes, selectedModes);
     const transitModes = getTransitSubmodeOptions(
@@ -178,16 +193,23 @@ export default class SettingsSelectorPanel extends Component {
         defaultCompany ? comp.id === defaultCompany : true
       ),
       nonTransitModes,
-      selectedCompanies
+      this.getSelectedCompanies()
     );
-    const bicycleModeOptions = getBicycleOrMicromobilityModeOptions(
+    const bikeModes = getBicycleOrMicromobilityModeOptions(
       supportedModes.bicycleModes,
       selectedModes
     );
-    const micromobilityModeOptions = getBicycleOrMicromobilityModeOptions(
+    const scooterModes = getBicycleOrMicromobilityModeOptions(
       supportedModes.micromobilityModes,
       selectedModes
     );
+
+    const floatLabel = { float: "left", paddingTop: "9px" };
+    const tightSelector = {
+      textAlign: "right",
+      fontSize: "12px",
+      margin: "-3px 0px"
+    };
 
     return (
       <div className={className} style={style}>
@@ -199,68 +221,35 @@ export default class SettingsSelectorPanel extends Component {
 
         <SettingsHeader>Travel Preferences</SettingsHeader>
 
-        {selectedModes.some(isTransit) && transitModes.length >= 2 && (
-          <SettingsSection>
-            <div>
-              <SettingLabel>Use</SettingLabel>
-            </div>
-            <SubmodeSelector
-              modes={transitModes}
-              onChange={this.transitModeChangeHandler}
-            />
-          </SettingsSection>
-        )}
+        {selectedModes.some(isTransit) &&
+          transitModes.length >= 2 &&
+          this.renderSubmodes(transitModes, this.transitModeChangeHandler)}
 
         {/* The bike trip type selector */}
         {/* TODO: Handle different bikeshare networks */}
-        {selectedModes.some(isBike) && !selectedModes.some(isTransit) && (
-          <SettingsSection>
-            <SettingLabel style={{ float: "left", paddingTop: "9px" }}>
-              Use
-            </SettingLabel>
-            <SubmodeSelector
-              style={{
-                textAlign: "right",
-                fontSize: "12px",
-                margin: "-3px 0px"
-              }}
-              modes={bicycleModeOptions}
-              onChange={this.mainModeChangeHandler}
-            />
-          </SettingsSection>
-        )}
+        {selectedModes.some(isBike) &&
+          !selectedModes.some(isTransit) &&
+          this.renderSubmodes(
+            bikeModes,
+            this.mainModeChangeHandler,
+            floatLabel,
+            tightSelector
+          )}
 
         {/* The micromobility trip type selector */}
         {/* TODO: Handle different micromobility networks */}
-        {selectedModes.some(isMicromobility) && !selectedModes.some(isTransit) && (
-          <SettingsSection>
-            <SettingLabel style={{ float: "left", paddingTop: "9px" }}>
-              Use
-            </SettingLabel>
-            <SubmodeSelector
-              style={{
-                textAlign: "right",
-                fontSize: "12px",
-                margin: "-3px 0px"
-              }}
-              modes={micromobilityModeOptions}
-              onChange={this.mainModeChangeHandler}
-            />
-          </SettingsSection>
-        )}
+        {selectedModes.some(isMicromobility) &&
+          !selectedModes.some(isTransit) &&
+          this.renderSubmodes(
+            scooterModes,
+            this.mainModeChangeHandler,
+            floatLabel,
+            tightSelector
+          )}
 
         {/* This order is probably better. */}
-        {companies.length >= 2 && (
-          <SettingsSection>
-            <div>
-              <SettingLabel>Use companies</SettingLabel>
-            </div>
-            <SubmodeSelector
-              modes={companies}
-              onChange={this.companiesChangeHandler}
-            />
-          </SettingsSection>
-        )}
+        {companies.length >= 2 &&
+          this.renderSubmodes(companies, this.companiesChangeHandler)}
 
         <GeneralSettingsPanel
           query={queryParams}

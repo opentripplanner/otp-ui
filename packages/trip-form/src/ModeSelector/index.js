@@ -57,7 +57,6 @@ ModeSelector.propTypes = {
   className: PropTypes.string,
   /**
    * An object that defines the primary mode, and secondary and tertiary modes for the trip query.
-   * modes should be populated using getModeOptions(modes, selectedModes).
    */
   modes: modeSelectorOptionsType,
   /**
