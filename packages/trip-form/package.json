@@ -1,7 +1,7 @@
 {
-  "name": "@opentripplanner/settings-selector",
+  "name": "@opentripplanner/trip-form",
   "version": "0.0.1",
-  "description": "Trip Settings Selector and Related Components",
+  "description": "Trip Settings Form and Related Components",
   "author": "@binh-dam-ibigroup",
   "homepage": "https://github.com/opentripplanner/otp-ui/#readme",
   "license": "MIT",
