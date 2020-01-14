@@ -93,7 +93,11 @@ class LocationField extends Component {
     if (location) {
       // If geolocation is successful (i.e., user has granted app geolocation
       // permission and coords exist), set location.
-      onLocationSelected({ locationType, location });
+      onLocationSelected({
+        locationType,
+        location,
+        resultType: "CURRENT_LOCATION"
+      });
     } else {
       // Call geolocation.getCurrentPosition and set as from/to locationType
       getCurrentPosition(locationType);
@@ -707,10 +711,11 @@ LocationField.propTypes = {
    * The resultType string indicates the type of location that was selected.
    * It can be one of the following:
    *
+   * "CURRENT_LOCATION": The user's current location.
    * "GEOCODE": A location that was found via a geocode search result
+   * "SAVED": A location that was saved by the user.
    * "SESSION": A geocoded search result that was recently selected by the user.
    * "STOP": A transit stop
-   * "SAVED": A location that was saved by the user.
    */
   onLocationSelected: PropTypes.func.isRequired,
   /**
