@@ -76,9 +76,9 @@ class LocationField extends Component {
     return `${locationType}-form-control`;
   }
 
-  setLocation(location) {
+  setLocation(location, resultType) {
     const { onLocationSelected, locationType } = this.props;
-    onLocationSelected({ locationType, location });
+    onLocationSelected({ locationType, location, resultType });
     this.setState({ menuVisible: false });
   }
 
@@ -314,8 +314,9 @@ class LocationField extends Component {
               .getLocationFromGeocodedFeature(feature)
               .then(geocodedLocation => {
                 // Set the current location
-                this.setLocation(geocodedLocation);
-                // Add to the location search history
+                this.setLocation(geocodedLocation, "GEOCODE");
+                // Add to the location search history. This is intended to
+                // populate the sessionSearches array.
                 addLocationSearch({ location: geocodedLocation });
               });
           };
@@ -354,14 +355,15 @@ class LocationField extends Component {
           // Constuct the location
           const stop = stopsIndex[stopId];
           const stopLocation = {
-            name: stop.name,
+            id: stopId,
             lat: stop.lat,
-            lon: stop.lon
+            lon: stop.lon,
+            name: stop.name
           };
 
           // Create the location selected handler
           const locationSelected = () => {
-            this.setLocation(stopLocation);
+            this.setLocation(stopLocation, "STOP");
           };
 
           // Add to the selection handler lookup (for use in onKeyDown)
@@ -396,7 +398,7 @@ class LocationField extends Component {
         sessionSearches.map(sessionLocation => {
           // Create the location-selected handler
           const locationSelected = () => {
-            this.setLocation(sessionLocation);
+            this.setLocation(sessionLocation, "SESSION");
           };
 
           // Add to the selection handler lookup (for use in onKeyDown)
@@ -432,7 +434,7 @@ class LocationField extends Component {
         userLocationsAndRecentPlaces.map(userLocation => {
           // Create the location-selected handler
           const locationSelected = () => {
-            this.setLocation(userLocation);
+            this.setLocation(userLocation, "SAVED");
           };
 
           // Add to the selection handler lookup (for use in onKeyDown)
@@ -685,19 +687,41 @@ LocationField.propTypes = {
    * ```js
    * {
    *  locationType: string,
-   *  location: object
+   *  location: object,
+   *  resultType: string
    * }
    * '''
+   *
+   * The locationType string will be either "from" or "to" as was set by the
+   * locationType prop for the instance of this component.
+   *
+   * The location object will be an object in the form below:
+   * ```js
+   * {
+   *  id: string, // only populated for stops and user-saved locations
+   *  lat: number,
+   *  lon: number,
+   *  name: string
+   * }
+   *
+   * The resultType string indicates the type of location that was selected.
+   * It can be one of the following:
+   *
+   * "GEOCODE": A location that was found via a geocode search result
+   * "SESSION": A geocoded search result that was recently selected by the user.
+   * "STOP": A transit stop
+   * "SAVED": A location that was saved by the user.
    */
   onLocationSelected: PropTypes.func.isRequired,
   /**
-   * A list of recent searches to show to the user
+   * A list of recent searches to show to the user. These are typically only
+   * geocode results that a user has previously selected.
    */
   sessionSearches: PropTypes.arrayOf(
     PropTypes.shape({
-      lat: PropTypes.number,
-      lon: PropTypes.number,
-      name: PropTypes.string
+      lat: PropTypes.number.isRequired,
+      lon: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired
     })
   ),
   /**
