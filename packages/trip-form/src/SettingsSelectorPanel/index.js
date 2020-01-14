@@ -13,11 +13,7 @@ import {
 import ModeSelector from "../ModeSelector";
 import SubmodeSelector from "../SubmodeSelector";
 import GeneralSettingsPanel from "../GeneralSettingsPanel";
-import {
-  SettingLabel,
-  SettingsHeader,
-  SettingsSection
-} from "../SettingsComponents";
+import { SettingsHeader } from "../SettingsComponents";
 import {
   getModeOptions,
   getTransitSubmodeOptions,
@@ -161,22 +157,6 @@ export default class SettingsSelectorPanel extends Component {
     }
   };
 
-  renderSubmodes = (
-    modes,
-    onChange,
-    labelStyle = null,
-    selectorStyle = null
-  ) => (
-    <SettingsSection>
-      <SettingLabel style={labelStyle}>Use</SettingLabel>
-      <SubmodeSelector
-        style={selectorStyle}
-        modes={modes}
-        onChange={onChange}
-      />
-    </SettingsSection>
-  );
-
   render() {
     const { className, supportedModes, supportedCompanies, style } = this.props;
     const { defaultCompany, queryParams } = this.state;
@@ -204,13 +184,6 @@ export default class SettingsSelectorPanel extends Component {
       selectedModes
     );
 
-    const floatLabel = { float: "left", paddingTop: "9px" };
-    const tightSelector = {
-      textAlign: "right",
-      fontSize: "12px",
-      margin: "-3px 0px"
-    };
-
     return (
       <div className={className} style={style}>
         <ModeSelector
@@ -221,35 +194,45 @@ export default class SettingsSelectorPanel extends Component {
 
         <SettingsHeader>Travel Preferences</SettingsHeader>
 
-        {selectedModes.some(isTransit) &&
-          transitModes.length >= 2 &&
-          this.renderSubmodes(transitModes, this.transitModeChangeHandler)}
+        {selectedModes.some(isTransit) && transitModes.length >= 2 && (
+          <SubmodeSelector
+            label="Use"
+            modes={transitModes}
+            onChange={this.transitModeChangeHandler}
+          />
+        )}
 
         {/* The bike trip type selector */}
         {/* TODO: Handle different bikeshare networks */}
-        {selectedModes.some(isBike) &&
-          !selectedModes.some(isTransit) &&
-          this.renderSubmodes(
-            bikeModes,
-            this.mainModeChangeHandler,
-            floatLabel,
-            tightSelector
-          )}
+        {selectedModes.some(isBike) && !selectedModes.some(isTransit) && (
+          <SubmodeSelector
+            label="Use"
+            inline
+            modes={bikeModes}
+            onChange={this.mainModeChangeHandler}
+          />
+        )}
 
         {/* The micromobility trip type selector */}
         {/* TODO: Handle different micromobility networks */}
         {selectedModes.some(isMicromobility) &&
-          !selectedModes.some(isTransit) &&
-          this.renderSubmodes(
-            scooterModes,
-            this.mainModeChangeHandler,
-            floatLabel,
-            tightSelector
+          !selectedModes.some(isTransit) && (
+            <SubmodeSelector
+              label="Use"
+              inline
+              modes={scooterModes}
+              onChange={this.mainModeChangeHandler}
+            />
           )}
 
         {/* This order is probably better. */}
-        {companies.length >= 2 &&
-          this.renderSubmodes(companies, this.companiesChangeHandler)}
+        {companies.length >= 2 && (
+          <SubmodeSelector
+            label="Use companies"
+            modes={companies}
+            onChange={this.companiesChangeHandler}
+          />
+        )}
 
         <GeneralSettingsPanel
           query={queryParams}

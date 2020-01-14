@@ -125,5 +125,9 @@ export const modeSelector = () => (
 );
 
 export const submodeSelector = () => (
-  <SubmodeSelector modes={submodeOptions} onChange={onChange} />
+  <SubmodeSelector
+    label="Submodes:"
+    modes={submodeOptions}
+    onChange={onChange}
+  />
 );

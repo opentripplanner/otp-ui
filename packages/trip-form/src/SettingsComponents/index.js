@@ -17,3 +17,8 @@ export const SettingLabel = styled.label`
   text-transform: uppercase;
   letter-spacing: 1px;
 `;
+
+export const FloatingSettingLabel = styled(SettingLabel)`
+  float: left;
+  padding-top: 9px;
+`;
