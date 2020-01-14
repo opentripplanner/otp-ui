@@ -5,6 +5,9 @@ export const SubmodeRow = styled.div`
     width: inherit;
     padding: 3px 5px 3px 0px;
   }
+  > :last-child {
+    padding-right: 0px;
+  }
   button {
     padding: 6px 12px;
   }

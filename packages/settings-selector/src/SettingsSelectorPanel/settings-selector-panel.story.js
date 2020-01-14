@@ -6,13 +6,17 @@ import SettingsSelectorPanel from ".";
 import commonModes from "../__mocks__/modes";
 import commonCompanies from "../__mocks__/companies";
 
+import "../__mocks__/trimet-mock.css";
+
 const background = story => (
   <div
     style={{
       backgroundColor: "#F0F0F0",
-      height: "300px",
+      height: "500px",
       padding: "15px",
-      fontFamily: "Hind, sans-serif"
+      fontFamily: "Hind, sans-serif",
+      fontSize: "14px",
+      fontWeight: "300"
     }}
   >
     {story()}

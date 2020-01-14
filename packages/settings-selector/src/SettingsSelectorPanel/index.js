@@ -14,6 +14,11 @@ import ModeSelector from "../ModeSelector";
 import SubmodeSelector from "../SubmodeSelector";
 import GeneralSettingsPanel from "../GeneralSettingsPanel";
 import {
+  SettingLabel,
+  SettingsHeader,
+  SettingsSection
+} from "../SettingLabel/styled";
+import {
   getModeOptions,
   getTransitSubmodeOptions,
   getCompanies,
@@ -189,59 +194,72 @@ export default class SettingsSelectorPanel extends Component {
         <ModeSelector
           modes={modeOptions}
           onChange={this.mainModeChangeHandler}
+          style={{ margin: "0px -5px", paddingBottom: "8px" }}
         />
 
-        <div>Travel Preferences</div>
+        <SettingsHeader>Travel Preferences</SettingsHeader>
 
         {selectedModes.some(isTransit) && transitModes.length >= 2 && (
-          <div>
-            <div className="setting-label">Use:</div>
+          <SettingsSection>
+            <div>
+              <SettingLabel>Use</SettingLabel>
+            </div>
             <SubmodeSelector
               modes={transitModes}
               onChange={this.transitModeChangeHandler}
             />
-          </div>
+          </SettingsSection>
         )}
 
         {/* The bike trip type selector */}
         {/* TODO: Handle different bikeshare networks */}
         {selectedModes.some(isBike) && !selectedModes.some(isTransit) && (
-          <div>
-            <div className="setting-label" style={{ float: "left" }}>
-              Use:
-            </div>
+          <SettingsSection>
+            <SettingLabel style={{ float: "left", paddingTop: "9px" }}>
+              Use
+            </SettingLabel>
             <SubmodeSelector
-              style={{ textAlign: "right" }}
+              style={{
+                textAlign: "right",
+                fontSize: "12px",
+                margin: "-3px 0px"
+              }}
               modes={bicycleModeOptions}
               onChange={this.mainModeChangeHandler}
             />
-          </div>
+          </SettingsSection>
         )}
 
         {/* The micromobility trip type selector */}
         {/* TODO: Handle different micromobility networks */}
         {selectedModes.some(isMicromobility) && !selectedModes.some(isTransit) && (
-          <div>
-            <div className="setting-label" style={{ float: "left" }}>
-              Use:
-            </div>
+          <SettingsSection>
+            <SettingLabel style={{ float: "left", paddingTop: "9px" }}>
+              Use
+            </SettingLabel>
             <SubmodeSelector
-              style={{ textAlign: "right" }}
+              style={{
+                textAlign: "right",
+                fontSize: "12px",
+                margin: "-3px 0px"
+              }}
               modes={micromobilityModeOptions}
               onChange={this.mainModeChangeHandler}
             />
-          </div>
+          </SettingsSection>
         )}
 
         {/* This order is probably better. */}
         {companies.length >= 2 && (
-          <div>
-            <div className="setting-label">Use companies:</div>
+          <SettingsSection>
+            <div>
+              <SettingLabel>Use companies</SettingLabel>
+            </div>
             <SubmodeSelector
               modes={companies}
               onChange={this.companiesChangeHandler}
             />
-          </div>
+          </SettingsSection>
         )}
 
         <GeneralSettingsPanel

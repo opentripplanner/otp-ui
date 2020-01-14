@@ -4,11 +4,17 @@ export const ModeButtonContainer = styled.div`
   display: inline-block;
   text-align: center;
   box-sizing: border-box;
+  > * {
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 `;
 
 export const ModeButtonTitle = styled.div`
   font-size: 10px;
-  padding: 4px;
+  line-height: 12px;
+  padding: 4px 0px 0px;
 
   &.disabled {
     color: #ccc;
@@ -23,18 +29,16 @@ export const ModeButtonBtn = styled.button`
   height: 100%;
   font-size: inherit;
   font-family: inherit;
+  font-weight: inherit;
   background: none;
   outline: none;
   cursor: pointer;
-  box-sizing: border-box;
-
-  :hover {
-    background-color: rgb(173, 216, 230);
-  }
 
   &.active {
     border: 2px solid rgb(0, 0, 0);
     background-color: rgb(173, 216, 230);
+    font-weight: 600;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   }
   svg,
   img {

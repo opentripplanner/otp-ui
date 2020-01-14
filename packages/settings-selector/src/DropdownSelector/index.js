@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Global from "core-js";
 
-import DropdownSelectorWrap from "./styled";
+import { SelectCtrl, DropdownSelectorWrap } from "./styled";
+import { SettingLabel } from "../SettingLabel/styled";
 
 /**
  * A wrapper that includes a <select> dropdown control and a <label> for the dropdown control.
@@ -26,18 +27,18 @@ class DropdownSelector extends Component {
     return (
       <DropdownSelectorWrap className={className} style={style}>
         <div>
-          <label htmlFor={id}>{label}</label>
+          <SettingLabel htmlFor={id}>{label}</SettingLabel>
         </div>
 
         <div>
-          <select id={id} value={value} onChange={this.onChangeHandler}>
+          <SelectCtrl id={id} value={value} onChange={this.onChangeHandler}>
             {options &&
               options.map((o, i) => (
                 <option key={i} value={o.value}>
                   {o.text}
                 </option>
               ))}
-          </select>
+          </SelectCtrl>
         </div>
       </DropdownSelectorWrap>
     );

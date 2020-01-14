@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+import { SettingLabel } from "../SettingLabel/styled";
+
 /**
  * A wrapper that includes an <input type="select" /> control and a <label> for the input control.
  */
@@ -29,7 +31,7 @@ class CheckboxSelector extends Component {
           checked={value}
           onChange={this.onChangeHandler}
         />
-        <label htmlFor={id}>{label}</label>
+        <SettingLabel htmlFor={id}>{label}</SettingLabel>
       </div>
     );
   }
