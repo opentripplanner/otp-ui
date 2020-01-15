@@ -9,7 +9,7 @@ import { SettingLabel } from "../SettingsComponents";
  * A wrapper that includes a <select> dropdown control and a <label> for the dropdown control.
  */
 class DropdownSelector extends Component {
-  onChangeHandler = evt => {
+  handleChange = evt => {
     const val = evt.target.value;
     const { name, onChange } = this.props;
 
@@ -31,7 +31,7 @@ class DropdownSelector extends Component {
         </div>
 
         <div>
-          <SelectCtrl id={id} value={value} onChange={this.onChangeHandler}>
+          <SelectCtrl id={id} value={value} onChange={this.handleChange}>
             {options &&
               options.map((o, i) => (
                 <option key={i} value={o.value}>

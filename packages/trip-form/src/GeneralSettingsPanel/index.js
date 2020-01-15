@@ -15,7 +15,7 @@ import commonModes from "../__mocks__/modes"; // FIXME: Replace with ref to conf
  * The general settings panel for setting speed and routing optimization controls.
  */
 class GeneralSettingsPanel extends Component {
-  onChangeHandler = queryParam => {
+  handleChange = queryParam => {
     const { onQueryParamChange } = this.props;
 
     if (typeof onQueryParamChange === "function") {
@@ -52,7 +52,7 @@ class GeneralSettingsPanel extends Component {
                   value={query[paramInfo.name] || paramInfo.default}
                   label={getQueryParamProperty(paramInfo, "label", query)}
                   options={getQueryParamProperty(paramInfo, "options", query)}
-                  onChange={this.onChangeHandler}
+                  onChange={this.handleChange}
                 />
               );
             case "CHECKBOX":
@@ -62,7 +62,7 @@ class GeneralSettingsPanel extends Component {
                   name={paramInfo.name}
                   value={query[paramInfo.name]}
                   label={getQueryParamProperty(paramInfo, "label", query)}
-                  onChange={this.onChangeHandler}
+                  onChange={this.handleChange}
                 />
               );
             default:

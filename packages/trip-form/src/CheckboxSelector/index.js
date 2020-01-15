@@ -7,7 +7,7 @@ import { SettingLabel } from "../SettingsComponents";
  * A wrapper that includes an <input type="select" /> control and a <label> for the input control.
  */
 class CheckboxSelector extends Component {
-  onChangeHandler = evt => {
+  handleChange = evt => {
     const { name, onChange } = this.props;
 
     if (typeof onChange === "function") {
@@ -29,7 +29,7 @@ class CheckboxSelector extends Component {
           id={id}
           type="checkbox"
           checked={value}
-          onChange={this.onChangeHandler}
+          onChange={this.handleChange}
         />
         <SettingLabel htmlFor={id}>{label}</SettingLabel>
       </div>

@@ -17,8 +17,8 @@ const ModeSelector = props => {
     tertiary: null
   };
 
-  const onClickHandler = option => {
-    if (!option.selected) {
+  const handleClick = option => {
+    if (!option.selected && typeof onChange === "function") {
       onChange(option.id);
     }
   };
@@ -30,7 +30,7 @@ const ModeSelector = props => {
       selected={option.selected}
       showTitle={option.showTitle}
       title={option.title}
-      onClick={() => onClickHandler(option)}
+      onClick={() => handleClick(option)}
     >
       {option.text}
     </ModeButton>

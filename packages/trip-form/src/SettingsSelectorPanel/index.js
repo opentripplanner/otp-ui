@@ -64,7 +64,7 @@ export default class SettingsSelectorPanel extends Component {
     }
   };
 
-  mainModeChangeHandler = id => {
+  handleMainModeChange = id => {
     const { supportedModes, supportedCompanies } = this.props;
     const newModes = id.split("+");
 
@@ -97,7 +97,7 @@ export default class SettingsSelectorPanel extends Component {
         defaultCompany ||
         getCompanies(supportedCompanies, nonTransitModes).map(comp => comp.id);
 
-      this.queryParamChangeHandler({
+      this.handleQueryParamChange({
         mode: finalModes.join(","),
         companies: selectedCompanies.join(",")
       });
@@ -106,14 +106,14 @@ export default class SettingsSelectorPanel extends Component {
         defaultCompany: defaultCompany && defaultCompany[0]
       });
     } else {
-      this.queryParamChangeHandler({
+      this.handleQueryParamChange({
         mode: newModes.join(","),
         companies: "" // New req: Don't list companies with this mode?
       });
     }
   };
 
-  transitModeChangeHandler = id => {
+  handleTransitModeChange = id => {
     const selectedModes = this.getSelectedModes();
     this.toggleSubmode("mode", id, selectedModes, isTransit, newModes => {
       this.setState({
@@ -122,12 +122,12 @@ export default class SettingsSelectorPanel extends Component {
     });
   };
 
-  companiesChangeHandler = id => {
+  handleCompanyChange = id => {
     const selectedCompanies = this.getSelectedCompanies();
     this.toggleSubmode("companies", id, selectedCompanies, undefined, () => {});
   };
 
-  queryParamChangeHandler = queryParam => {
+  handleQueryParamChange = queryParam => {
     this.raiseOnQueryParamChange(queryParam);
     this.setState({
       queryParams: this.makeNewQueryParams(queryParam)
@@ -150,7 +150,7 @@ export default class SettingsSelectorPanel extends Component {
     }
 
     if (newSubmodes.length !== submodes.length) {
-      this.queryParamChangeHandler({
+      this.handleQueryParamChange({
         [name]: newSubmodes.join(",")
       });
       if (after) after(newSubmodes);
@@ -188,7 +188,7 @@ export default class SettingsSelectorPanel extends Component {
       <div className={className} style={style}>
         <ModeSelector
           modes={modeOptions}
-          onChange={this.mainModeChangeHandler}
+          onChange={this.handleMainModeChange}
           style={{ margin: "0px -5px", paddingBottom: "8px" }}
         />
 
@@ -198,7 +198,7 @@ export default class SettingsSelectorPanel extends Component {
           <SubmodeSelector
             label="Use"
             modes={transitModes}
-            onChange={this.transitModeChangeHandler}
+            onChange={this.handleTransitModeChange}
           />
         )}
 
@@ -209,7 +209,7 @@ export default class SettingsSelectorPanel extends Component {
             label="Use"
             inline
             modes={bikeModes}
-            onChange={this.mainModeChangeHandler}
+            onChange={this.handleMainModeChange}
           />
         )}
 
@@ -221,7 +221,7 @@ export default class SettingsSelectorPanel extends Component {
               label="Use"
               inline
               modes={scooterModes}
-              onChange={this.mainModeChangeHandler}
+              onChange={this.handleMainModeChange}
             />
           )}
 
@@ -230,13 +230,13 @@ export default class SettingsSelectorPanel extends Component {
           <SubmodeSelector
             label="Use companies"
             modes={companies}
-            onChange={this.companiesChangeHandler}
+            onChange={this.handleCompanyChange}
           />
         )}
 
         <GeneralSettingsPanel
           query={queryParams}
-          onQueryParamChange={this.queryParamChangeHandler}
+          onQueryParamChange={this.handleQueryParamChange}
         />
       </div>
     );
