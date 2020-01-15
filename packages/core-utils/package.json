@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/core-utils",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Core functionality that is shared among numerous UI components",
   "main": "lib/index.js",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
@@ -11,6 +11,7 @@
     "@mapbox/polyline": "^1.1.0",
     "@turf/along": "^6.0.1",
     "bowser": "^2.7.0",
+    "lodash.isequal": "^4.5.0",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.27",
     "prop-types": "^15.7.2",
