@@ -10,10 +10,12 @@ import GeneralSettingsPanel from "./GeneralSettingsPanel";
 
 import ModeButton from "./ModeButton";
 import ModeIcon from "./ModeIcon";
-import ModeIconWrap from "./__mocks__/mode-icon-wrap";
-import modeOptions from "./__mocks__/mode-options";
 import ModeSelector from "./ModeSelector";
 import SubmodeSelector from "./SubmodeSelector";
+
+import ModeIconWrap from "./__mocks__/mode-icon-wrap";
+import modeOptions from "./__mocks__/mode-options";
+import commonModes from "./__mocks__/modes";
 import submodeOptions from "./__mocks__/submode-options";
 
 const background = story => (
@@ -74,6 +76,7 @@ export const generalSettingsPanel = () => (
       routingType: "ITINERARY"
     }}
     onQueryParamChange={onQueryParamChange}
+    supportedModes={commonModes}
   />
 );
 

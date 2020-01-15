@@ -26,7 +26,6 @@ const SubmodeSelector = props => {
         {modes &&
           modes.map(option => (
             <ModeButton
-              /* If key is missing, a warning in React Dev Tools is triggered. */
               key={option.id}
               selected={option.selected}
               showTitle={false}

@@ -18,7 +18,6 @@ const commonModes = {
     }
   ],
   accessModes: [
-    // Biketown and Uber should be displayed the same despite Biketown company set in companies.
     {
       mode: "BICYCLE",
       label: "Transit + Personal Bike"
@@ -26,6 +25,8 @@ const commonModes = {
     {
       mode: "BICYCLE_RENT",
       label: "Transit + Biketown"
+      // No company required here.
+      // If the user selects this, "companies" should default to Biketown.
     },
     {
       mode: "MICROMOBILITY_RENT",
@@ -38,7 +39,8 @@ const commonModes = {
     {
       mode: "CAR_HAIL",
       label: "Transit + Uber",
-      company: "Uber"
+      company: "Uber" // Optional.
+      // If not set and the user selects this, "companies" should default to Uber.
     }
   ],
   exclusiveModes: ["WALK", "BICYCLE", "MICROMOBILITY"],
@@ -53,7 +55,7 @@ const commonModes = {
       label: "Biketown"
     }
   ],
-  // Not used with TriMet.
+  // Micromobility-only modes are not used with TriMet.
   micromobilityModes: [
     {
       mode: "MICROMOBILITY",

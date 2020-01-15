@@ -5,11 +5,13 @@ import {
   defaultParams,
   getQueryParamProperty
 } from "@opentripplanner/core-utils/lib/query";
-import { queryType } from "@opentripplanner/core-utils/lib/types";
+import {
+  configuredModesType,
+  queryType
+} from "@opentripplanner/core-utils/lib/types";
 
 import CheckboxSelector from "../CheckboxSelector";
 import DropdownSelector from "../DropdownSelector";
-import commonModes from "../__mocks__/modes"; // FIXME: Replace with ref to configuration.
 
 /**
  * The general settings panel for setting speed and routing optimization controls.
@@ -24,8 +26,8 @@ class GeneralSettingsPanel extends Component {
   };
 
   render() {
-    const { className, paramNames, query, style /* , config */ } = this.props;
-    const configWrapper = { modes: commonModes };
+    const { className, paramNames, query, style, supportedModes } = this.props;
+    const configWrapper = { modes: supportedModes };
 
     return (
       <div className={className} style={style}>
@@ -94,7 +96,11 @@ GeneralSettingsPanel.propTypes = {
    * Triggered when the value of a trip setting is changed by the user.
    * @param arg The data {name: value} of the changed trip setting.
    */
-  onQueryParamChange: PropTypes.func
+  onQueryParamChange: PropTypes.func,
+  /**
+   * An array of supported modes that will be displayed as options.
+   */
+  supportedModes: configuredModesType.isRequired
 };
 
 GeneralSettingsPanel.defaultProps = {

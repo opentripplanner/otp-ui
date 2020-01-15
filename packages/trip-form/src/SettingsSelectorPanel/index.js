@@ -236,6 +236,7 @@ export default class SettingsSelectorPanel extends Component {
 
         <GeneralSettingsPanel
           query={queryParams}
+          supportedModes={supportedModes}
           onQueryParamChange={this.handleQueryParamChange}
         />
       </div>
