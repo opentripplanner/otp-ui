@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React, { Component } from "react";
 import styled from "styled-components";
 
-const BaseButton = styled.button`
+export const BaseButton = styled.button`
   border: none;
   background: none;
 `;
@@ -33,11 +33,11 @@ Dropdown.defaultProps = {
   onToggle: () => {}
 };
 
-const DropdownButton = styled(BaseButton)`
+export const DropdownButton = styled(BaseButton)`
   width: 30px;
 `;
 
-const DropdownContainer = styled.span`
+export const DropdownContainer = styled.span`
   position: relative;
 `;
 
@@ -117,7 +117,7 @@ MenuItem.defaultProps = {
   onClick: null
 };
 
-const MenuItemA = styled.a`
+export const MenuItemA = styled.a`
   background-color: ${props => (props.active ? "#337ab7" : "transparent")};
   clear: both;
   color: ${props => (props.active ? "#fff" : "#333")};
@@ -129,7 +129,7 @@ const MenuItemA = styled.a`
   white-space: nowrap;
 `;
 
-const MenuItemHeader = styled.li`
+export const MenuItemHeader = styled.li`
   color: navy;
   display: block;
   font-size: 14px;
@@ -140,7 +140,7 @@ const MenuItemHeader = styled.li`
   white-space: nowrap;
 `;
 
-const MenuItemLi = styled.li`
+export const MenuItemLi = styled.li`
   &:hover {
     background-color: ${props => !props.disabled && "#f5f5f5"};
   }

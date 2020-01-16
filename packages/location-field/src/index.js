@@ -273,6 +273,7 @@ class LocationField extends Component {
   render() {
     const {
       addLocationSearch,
+      className,
       currentPosition,
       geocoderConfig,
       inputPlaceholder,
@@ -538,7 +539,7 @@ class LocationField extends Component {
     if (isStatic) {
       // 'static' mode (menu is displayed alongside input, e.g., for mobile view)
       return (
-        <div>
+        <div className={className}>
           <Styled.FormGroup>
             <Styled.InputGroup>
               <Styled.InputGroupAddon>
@@ -563,10 +564,7 @@ class LocationField extends Component {
 
     // default display mode with dropdown menu
     return (
-      <Styled.FormGroup
-        onBlur={this.onBlurFormGroup}
-        className="location-field"
-      >
+      <Styled.FormGroup onBlur={this.onBlurFormGroup} className={className}>
         <Styled.InputGroup>
           {/* location field icon -- also serves as dropdown anchor */}
           <Styled.Dropdown
@@ -594,6 +592,10 @@ LocationField.propTypes = {
    * ```
    */
   addLocationSearch: PropTypes.func,
+  /**
+   * Used for additional styling with styled components for example.
+   */
+  className: PropTypes.string,
   /**
    * Dispatched whenever the clear location button is clicked.
    * Provides an argument in the format:
@@ -777,6 +779,7 @@ LocationField.propTypes = {
 
 LocationField.defaultProps = {
   addLocationSearch: () => {},
+  className: null,
   clearLocation: () => {},
   currentPosition: null,
   findNearbyStops: () => {},
