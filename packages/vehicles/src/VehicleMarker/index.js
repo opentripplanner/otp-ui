@@ -107,6 +107,8 @@ class VehicleMarker extends React.Component {
   makeCircleMarker(size) {
     const { vehicle } = this.props;
     const { tracked } = this.props;
+    const { hasTooltip } = this.props;
+    const { hasPopup } = this.props;
 
     const position = [vehicle.lat, vehicle.lon];
     let zPos = 0;
@@ -123,8 +125,8 @@ class VehicleMarker extends React.Component {
     });
     return (
       <Marker icon={icon} position={position} zIndexOffset={zPos}>
-        {this.makePopup()}
-        {L.Browser.mobile !== true && this.makeToolTip()}
+        {hasPopup && this.makePopup()}
+        {hasTooltip && L.Browser.mobile !== true && this.makeToolTip()}
       </Marker>
     );
   }
@@ -132,6 +134,8 @@ class VehicleMarker extends React.Component {
   makeRotatedMarker() {
     const { vehicle } = this.props;
     const { tracked } = this.props;
+    const { hasTooltip } = this.props;
+    const { hasPopup } = this.props;
 
     const position = [vehicle.lat, vehicle.lon];
     let zPos = 0;
@@ -161,8 +165,8 @@ class VehicleMarker extends React.Component {
         position={position}
         zIndexOffset={zPos}
       >
-        {this.makePopup()}
-        {L.Browser.mobile !== true && this.makeToolTip()}
+        {hasPopup && this.makePopup()}
+        {hasTooltip && L.Browser.mobile !== true && this.makeToolTip()}
       </RotatedMarker>
     );
   }
@@ -192,6 +196,9 @@ VehicleMarker.propTypes = {
     })
   }),
 
+  hasTooltip: PropTypes.bool,
+  hasPopup: PropTypes.bool,
+
   closeZoom: PropTypes.number,
   midZoom: PropTypes.number,
   farZoom: PropTypes.number
@@ -201,6 +208,8 @@ VehicleMarker.defaultProps = {
   tracked: false,
   vehicle: null,
   leaflet: null,
+  hasTooltip: true,
+  hasPopup: true,
   closeZoom: 14,
   midZoom: 12,
   farZoom: 9

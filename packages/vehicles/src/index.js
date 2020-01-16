@@ -119,7 +119,7 @@ function Vehicles(props) {
 
 Vehicles.defaultProps = {
   refreshDelay: 3000,
-  tracked: "3942"
+  tracked: "9605379"
 };
 
 Vehicles.propTypes = {
