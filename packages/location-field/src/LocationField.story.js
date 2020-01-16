@@ -3,7 +3,10 @@ import { storiesOf } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
 import { withInfo } from "@storybook/addon-info";
 import { action } from "@storybook/addon-actions";
+import styled from "styled-components";
+
 import LocationField from ".";
+import * as LocationFieldClasses from "./styled";
 
 const currentPosition = {
   coords: { latitude: 45.508246, longitude: -122.711574 }
@@ -74,6 +77,13 @@ const userLocationsAndRecentPlaces = [
   }
 ];
 
+const StyledLocationField = styled(LocationField)`
+  ${LocationFieldClasses.OptionContainer} {
+    font-size: 24px;
+    background-color: pink;
+  }
+`;
+
 storiesOf("LocationField", module)
   .addDecorator(withA11y)
   .addDecorator(withInfo)
@@ -89,6 +99,16 @@ storiesOf("LocationField", module)
   ))
   .add("LocationField in mobile context", () => (
     <LocationField
+      currentPosition={currentPosition}
+      geocoderConfig={geocoderConfig}
+      getCurrentPosition={getCurrentPosition}
+      locationType="from"
+      onLocationSelected={onLocationSelected}
+      static
+    />
+  ))
+  .add("Styled LocationField in mobile context", () => (
+    <StyledLocationField
       currentPosition={currentPosition}
       geocoderConfig={geocoderConfig}
       getCurrentPosition={getCurrentPosition}
