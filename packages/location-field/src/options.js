@@ -1,11 +1,18 @@
-import { transitIndexStopWithRoutes } from "@opentripplanner/core-utils/lib/types";
+import {
+  transitIndexStopWithRoutes,
+  userLocationType
+} from "@opentripplanner/core-utils/lib/types";
 import { isIE } from "@opentripplanner/core-utils/lib/ui";
 import { humanizeDistanceStringImperial } from "@opentripplanner/humanize-distance";
 import PropTypes from "prop-types";
 import React from "react";
-import { Bus } from "styled-icons/fa-solid";
+import { Briefcase, Home, MapMarker, MapPin } from "styled-icons/fa-solid";
 
 import * as Styled from "./styled";
+
+export function GeocodedOptionIcon() {
+  return <MapPin size={13} />;
+}
 
 export function Option({ disabled, icon, isActive, onClick, title }) {
   return (
@@ -42,11 +49,11 @@ Option.defaultProps = {
   title: null
 };
 
-export function TransitStopOption({ stop, onClick, isActive }) {
+export function TransitStopOption({ isActive, onClick, stop, stopOptionIcon }) {
   return (
     <Styled.MenuItem onClick={onClick} active={isActive}>
       <Styled.StopIconAndDistanceContainer>
-        <Bus size={13} />
+        {stopOptionIcon}
         <Styled.StopDistance>
           {humanizeDistanceStringImperial(stop.dist, true)}
         </Styled.StopDistance>
@@ -70,11 +77,22 @@ export function TransitStopOption({ stop, onClick, isActive }) {
 }
 
 TransitStopOption.propTypes = {
-  stop: transitIndexStopWithRoutes.isRequired,
+  isActive: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
-  isActive: PropTypes.bool
+  stop: transitIndexStopWithRoutes.isRequired,
+  stopOptionIcon: PropTypes.node.isRequired
 };
 
 TransitStopOption.defaultProps = {
   isActive: false
+};
+
+export function UserLocationIcon({ userLocation }) {
+  if (userLocation.icon === "work") return <Briefcase size={13} />;
+  if (userLocation.icon === "home") return <Home size={13} />;
+  return <MapMarker size={13} />;
+}
+
+UserLocationIcon.propTypes = {
+  userLocation: userLocationType.isRequired
 };

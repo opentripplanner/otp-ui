@@ -1,9 +1,26 @@
+import {
+  geocodedFeatureType,
+  userLocationType
+} from "@opentripplanner/core-utils/lib/types";
+import PropTypes from "prop-types";
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
 import { withInfo } from "@storybook/addon-info";
 import { action } from "@storybook/addon-actions";
 import styled from "styled-components";
+import {
+  Building,
+  Clock,
+  Crosshairs,
+  MapPin,
+  MapSigns,
+  PlaneArrival,
+  PlaneDeparture,
+  SkullCrossbones,
+  Star,
+  Train
+} from "styled-icons/fa-solid";
 
 import LocationField from ".";
 import * as LocationFieldClasses from "./styled";
@@ -83,6 +100,34 @@ const StyledLocationField = styled(LocationField)`
     background-color: pink;
   }
 `;
+
+function GeocodedOptionIconComponent({ feature }) {
+  if (feature.properties.layer === "stops") return <MapSigns size={13} />;
+  if (feature.properties.layer === "station") return <Train size={13} />;
+  return <MapPin size={13} />;
+}
+
+GeocodedOptionIconComponent.propTypes = {
+  feature: geocodedFeatureType.isRequired
+};
+
+function LocationIconComponent({ locationType }) {
+  if (locationType === "from") return <PlaneDeparture size={13} />;
+  return <PlaneArrival size={13} />;
+}
+
+LocationIconComponent.propTypes = {
+  locationType: PropTypes.string.isRequired
+};
+
+function UserLocationIconComponent({ userLocation }) {
+  if (userLocation.icon === "work") return <Building size={13} />;
+  return <Star size={13} />;
+}
+
+UserLocationIconComponent.propTypes = {
+  userLocation: userLocationType.isRequired
+};
 
 storiesOf("LocationField", module)
   .addDecorator(withA11y)
@@ -171,5 +216,27 @@ storiesOf("LocationField", module)
       showUserSettings
       static
       userLocationsAndRecentPlaces={userLocationsAndRecentPlaces}
+    />
+  ))
+  .add("LocationField with in mobile context with custom icons", () => (
+    <LocationField
+      currentPosition={currentPosition}
+      currentPositionIcon={<Crosshairs size={13} />}
+      currentPositionUnavailableIcon={<SkullCrossbones size={13} />}
+      GeocodedOptionIconComponent={GeocodedOptionIconComponent}
+      geocoderConfig={geocoderConfig}
+      getCurrentPosition={getCurrentPosition}
+      LocationIconComponent={LocationIconComponent}
+      locationType="to"
+      nearbyStops={nearbyStops}
+      onLocationSelected={onLocationSelected}
+      sessionOptionIcon={<Clock size={13} />}
+      sessionSearches={sessionSearches}
+      showUserSettings
+      static
+      stopsIndex={stopsIndex}
+      stopOptionIcon={<MapSigns size={13} />}
+      userLocationsAndRecentPlaces={userLocationsAndRecentPlaces}
+      UserLocationIconComponent={UserLocationIconComponent}
     />
   ));
