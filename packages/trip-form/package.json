@@ -12,9 +12,6 @@
     "@opentripplanner/core-utils": "^0.0.10",
     "@opentripplanner/icons": "^0.0.10"
   },
-  "publishConfig": {
-    "registry": "https://registry.yarnpkg.com"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/opentripplanner/otp-ui.git"
@@ -24,5 +21,6 @@
   },
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"
-  }
+  },
+  "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"
 }

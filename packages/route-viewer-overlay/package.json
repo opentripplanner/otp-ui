@@ -25,5 +25,6 @@
   "peerDependencies": {
     "@opentripplanner/base-map": "^0.0.8",
     "react": "^16.8.6"
-  }
+  },
+  "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"
 }
