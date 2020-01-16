@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FeatureGroup } from "react-leaflet";
 
-import { vehicleType } from "./types";
-import VehicleMarker from "./VehicleMarker";
-import VehicleGeometry from "./vehicle-geometry";
+import { vehicleType } from "../types";
+import VehicleMarker from "../VehicleMarker";
+import VehicleGeometry from "./geometry";
 
 function VehicleLayer(props) {
   const { vehicles } = props;

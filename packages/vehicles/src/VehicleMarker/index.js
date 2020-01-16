@@ -8,7 +8,7 @@ import RotatedMarker from "./RotatedMarker"; // TODO: maybe move to either base-
 import VehicleTracker from "./tracker";
 import makeVehicleIcon from "./icons";
 import { vehicleType } from "../types";
-import { formatTime } from "../vehicle-utils";
+import { formatTime } from "../utils";
 import "./vehicles.css";
 
 

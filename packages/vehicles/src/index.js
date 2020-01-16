@@ -1,7 +1,5 @@
 import React from "react";
-// import PropTypes from "prop-types";
 
-// import VehicleLayer from "./vehicle-layer";
 import VehicleAction from "./vehicle-action";
 
 function Vehicles() {

@@ -4,7 +4,6 @@ import { FeatureGroup, MapLayer, Polyline } from "react-leaflet";
 import polyline from "@mapbox/polyline";
 import * as turf from "@turf/helpers";
 import nearestPointOnLine from "@turf/nearest-point-on-line";
-
 turf.nearestPointOnLine = nearestPointOnLine;
 
 // const tiUrl = "https://maps.trimet.org/otp_mod/index";

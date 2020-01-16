@@ -3,8 +3,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import VehicleLayer from "./vehicle-layer";
-import { checkRefreshInteval } from "./vehicle-utils";
+import VehicleLayer from "./VehicleLayer";
+import { checkRefreshInteval } from "./utils";
 
 function getVehicles(setVehicleData, setTrackedVehicle, trackId, url) {
   const d = Date.now();
@@ -41,7 +41,6 @@ function getVehicles(setVehicleData, setTrackedVehicle, trackId, url) {
             }
             return false
           });
-
           // step 3: add updated tracked vehicle to state (triggers pattern line redraw)
           if (tracked) {
             setTrackedVehicle(tracked);

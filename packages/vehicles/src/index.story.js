@@ -6,7 +6,7 @@ import { storiesOf } from "@storybook/react";
 
 import BaseMap from "@opentripplanner/base-map";
 
-import VehicleLayer from "./vehicle-layer";
+import VehicleLayer from "./VehicleLayer";
 import VehicleAction from "./vehicle-action";
 
 import "@opentripplanner/base-map/assets/map.css";
