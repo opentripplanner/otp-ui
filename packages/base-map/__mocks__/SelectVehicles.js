@@ -1,6 +1,8 @@
 import React from "react";
 import { FeatureGroup, MapLayer, withLeaflet } from "react-leaflet";
 
+import callIfValid from "../src/funcs";
+
 import VehicleMarker from "./VehicleMarker";
 
 const vehicleData = require("./vehicle-data/select-vehicles.json");
@@ -27,7 +29,24 @@ class SelectVehicles extends MapLayer {
 
   farZoom = 10;
 
-  componentDidMount() {}
+  onOverlayAdded() {
+    console.log("SelectVehicles => onOverlayAdded");
+  }
+
+  onOverlayRemoved() {
+    console.log("SelectVehicles => onOverlayRemoved");
+  }
+
+  onViewportChanged(viewport) {
+    console.log("SelectVehicles => onViewportChanged");
+    console.log(viewport);
+  }
+
+  componentDidMount() {
+    console.log("SelectVehicles Mounted");
+    const { registerOverlay } = this.props;
+    callIfValid(registerOverlay)(this);
+  }
 
   componentWillUnmount() {}
 
@@ -77,7 +96,6 @@ class SelectVehicles extends MapLayer {
 
   render() {
     const { vehicles } = this.state;
-
     return (
       <FeatureGroup id="vehicles fg">
         {vehicles &&
