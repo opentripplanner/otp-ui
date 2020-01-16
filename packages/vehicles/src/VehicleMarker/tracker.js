@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { vehicleType } from "./types";
+import { vehicleType } from "../types";
 
 function makeButtonText(tracked) {
   return tracked ? "Stop Tracking" : "Track Vehicle";
 }
 
-function VehicleTracker(props) {
+function Tracker(props) {
   const { vehicle } = props;
   const { tracked } = props;
   const { setTracked } = props;
@@ -27,15 +27,15 @@ function VehicleTracker(props) {
   );
 }
 
-VehicleTracker.propTypes = {
+Tracker.propTypes = {
   vehicle: vehicleType,
   tracked: PropTypes.bool,
   setTracked: PropTypes.func.isRequired
 };
 
-VehicleTracker.defaultProps = {
+Tracker.defaultProps = {
   vehicle: null,
   tracked: false
 };
 
-export default VehicleTracker;
+export default Tracker;
