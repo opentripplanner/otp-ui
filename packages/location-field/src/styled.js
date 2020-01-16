@@ -13,6 +13,10 @@ export const Button = styled(BaseButton)`
   padding: 2px 5px;
 `;
 
+export const ClearBoth = styled.div`
+  clear: both;
+`;
+
 export const Dropdown = ({ children, open, onToggle, title }) => {
   return (
     <DropdownContainer>
@@ -170,6 +174,17 @@ export const OptionContainer = styled.div`
   padding-bottom: 3px;
 `;
 
+export const OptionContent = styled.div`
+  margin-left: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
+
+export const OptionIconContainer = styled.div`
+  float: left;
+`;
+
 export const RouteName = styled.span`
   background-color: gray;
   color: white;
@@ -186,4 +201,23 @@ export const StaticMenuItemList = styled(MenuItemList)`
   li:hover {
     background-color: transparent;
   }
+`;
+
+export const StopContentContainer = styled.div`
+  margin-left: 30px;
+`;
+
+export const StopDistance = styled.div`
+  font-size: 8px;
+`;
+
+export const StopIconAndDistanceContainer = styled.div`
+  float: left;
+  padding-top: 3px;
+`;
+
+export const StopName = styled.div``;
+
+export const StopRoutes = styled.div`
+  font-size: 9px;
 `;

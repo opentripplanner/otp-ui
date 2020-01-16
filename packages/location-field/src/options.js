@@ -19,17 +19,8 @@ export function Option({ disabled, icon, isActive, onClick, title }) {
         title
       ) : (
         <Styled.OptionContainer>
-          <div style={{ float: "left" }}>{icon}</div>
-          <div
-            style={{
-              marginLeft: "30px",
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-              whiteSpace: "nowrap"
-            }}
-          >
-            {title}
-          </div>
+          <Styled.OptionIconContainer>{icon}</Styled.OptionIconContainer>
+          <Styled.OptionContent>{title}</Styled.OptionContent>
         </Styled.OptionContainer>
       )}
     </Styled.MenuItem>
@@ -54,30 +45,26 @@ Option.defaultProps = {
 export function TransitStopOption({ stop, onClick, isActive }) {
   return (
     <Styled.MenuItem onClick={onClick} active={isActive}>
-      <div>
-        <div style={{ float: "left", paddingTop: "3px" }}>
-          <Bus size={13} />
-          <div style={{ fontSize: "8px" }}>
-            {humanizeDistanceStringImperial(stop.dist, true)}
-          </div>
-        </div>
-        <div style={{ marginLeft: "30px" }}>
-          <div>
-            {stop.name} ({stop.code})
-          </div>
-          <div style={{ fontSize: "9px" }}>
-            {(stop.routes || []).map(route => {
-              const name = route.shortName || route.longName;
-              return (
-                <Styled.RouteName key={`route-${name}`}>
-                  {name}
-                </Styled.RouteName>
-              );
-            })}
-          </div>
-        </div>
-        <div style={{ clear: "both" }} />
-      </div>
+      <Styled.StopIconAndDistanceContainer>
+        <Bus size={13} />
+        <Styled.StopDistance>
+          {humanizeDistanceStringImperial(stop.dist, true)}
+        </Styled.StopDistance>
+      </Styled.StopIconAndDistanceContainer>
+      <Styled.StopContentContainer>
+        <Styled.StopName>
+          {stop.name} ({stop.code})
+        </Styled.StopName>
+        <Styled.StopRoutes>
+          {(stop.routes || []).map(route => {
+            const name = route.shortName || route.longName;
+            return (
+              <Styled.RouteName key={`route-${name}`}>{name}</Styled.RouteName>
+            );
+          })}
+        </Styled.StopRoutes>
+      </Styled.StopContentContainer>
+      <Styled.ClearBoth />
     </Styled.MenuItem>
   );
 }
