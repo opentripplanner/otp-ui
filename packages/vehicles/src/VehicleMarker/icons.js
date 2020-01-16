@@ -44,7 +44,7 @@ export default function makeVehicleIcon(cls, mode, defStr) {
     });
   else
     retVal = L.divIcon({
-      html: `<span>${defStr || "fxp"}</span>`
+      html: `<span>${defStr || "-->"}</span>`
     });
 
   return retVal;

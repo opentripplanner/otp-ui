@@ -39,7 +39,7 @@ function getVehicles(setVehicleData, setTrackedVehicle, trackId, url) {
               tracked = v;
               return true;
             }
-            return false
+            return false;
           });
           // step 3: add updated tracked vehicle to state (triggers pattern line redraw)
           if (tracked) {

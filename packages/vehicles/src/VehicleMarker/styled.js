@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* stylelint-disable property-no-vendor-prefix */
+
 import styled from "styled-components";
 
 const VehicleCircle = styled.div`
@@ -13,9 +16,9 @@ const VehicleCircleSelected = styled(VehicleCircle)`
 `;
 
 const VehicleIcon = styled.div`
-  border-radius: 15px!important;
-  background-color: #FFF;
-  border: 1px solid #FFF;
+  border-radius: 15px !important;
+  background-color: #fff;
+  border: 1px solid #fff;
 `;
 
 const VehicleIconSelected = styled(VehicleIcon)`
@@ -28,9 +31,26 @@ const VehicleIconHover = styled(VehicleIconSelected)`
   border: 1px solid #ccee77;
 `;
 
+/*
+
+// https://styled-icons.js.org/
+// https://fontawesome.com/cheatsheet/pro
+// https://styled-icons.js.org/?s=MapMarkerAlt
+export const StationMarker = styled(MapMarkerAlt)`
+  color: ${props => props.color};
+`;
 
 
-/**
+// https://github.com/jacobwgillespie/styled-icons#styled-components
+import styled from 'styled-components'
+import {Lock} from 'styled-icons/material'
+
+export const RedLock = styled(Lock)`
+  color: red;
+  font-weight: ${props => (props.important ? 'bold' : 'normal')};
+`
+
+
 const getStationMarkerByColor = memoize(color =>
   divIcon({
     className: "",
@@ -58,5 +78,28 @@ export const floatingBikeIcon = divIcon({
   html: ReactDOMServer.renderToStaticMarkup(<Styled.OutOfHubBikeIcon />),
   className: ""
 });
+
+
+
+// BIKETOWN HUB ICONS
+
+const BaseBikeRentalIcon = styled.div`
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: auto;
+  width: 24px;
+  height: 24px;
+`;
+
+export const hubIcons = [
+  // 0% full
+  styled(BaseBikeRentalIcon)`
+    background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0id2hp....blah
+  `,
+  // 10% full
+  styled(BaseBikeRentalIcon)`
+    background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0id2hp
+  `,
 
  */

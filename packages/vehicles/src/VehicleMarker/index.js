@@ -11,7 +11,6 @@ import { vehicleType } from "../types";
 import { formatTime } from "../utils";
 import "./vehicles.css";
 
-
 /**
  * This component demonstrates a custom marker used in the SelectVehicles overlay provided as
  * an example. It is modeled after the component available in this file:
