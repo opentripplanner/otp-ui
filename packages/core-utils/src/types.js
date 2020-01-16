@@ -338,3 +338,38 @@ export const configuredCompanyType = PropTypes.shape({
   label: PropTypes.string.isRequired,
   modes: PropTypes.string.isRequired
 });
+
+/**
+ * Depending on the geocoder that is used, more properties than just the `label`
+ * property might be provided by the geocoder. For example, with the Pelias
+ * geocoder, properties such as `id`, `layer`, `source` are also included.
+ */
+export const geocodedFeatureType = PropTypes.shape({
+  geometry: PropTypes.shape({
+    coordinates: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired,
+    type: PropTypes.string.isRequired
+  }).isRequired,
+  properties: PropTypes.shape({
+    label: PropTypes.string.isRequired
+  }).isRequired
+});
+
+export const userLocationType = PropTypes.shape({
+  id: PropTypes.string,
+  /**
+   * Can be either 'home', 'work', or null
+   */
+  icon: PropTypes.string,
+  lat: PropTypes.number.isRequired,
+  lon: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  /**
+   * This represents the last time that this location was selected in a
+   * search
+   */
+  timestamp: PropTypes.number,
+  /**
+   * One of: 'home', 'work', 'stop' or 'recent'
+   */
+  type: PropTypes.string.isRequired
+});
