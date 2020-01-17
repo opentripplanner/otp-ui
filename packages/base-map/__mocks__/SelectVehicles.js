@@ -1,5 +1,6 @@
 import React from "react";
 import { FeatureGroup, MapLayer, withLeaflet } from "react-leaflet";
+import { action } from "@storybook/addon-actions";
 
 import callIfValid from "../src/funcs";
 
@@ -29,21 +30,20 @@ class SelectVehicles extends MapLayer {
 
   farZoom = 10;
 
-  onOverlayAdded() {
-    console.log("SelectVehicles => onOverlayAdded");
+  onOverlayAdded(e) {
+    action("SelectVehicles::onOverlayAdded")(e);
   }
 
-  onOverlayRemoved() {
-    console.log("SelectVehicles => onOverlayRemoved");
+  onOverlayRemoved(e) {
+    action("SelectVehicles::onOverlayRemoved")(e);
   }
 
   onViewportChanged(viewport) {
-    console.log("SelectVehicles => onViewportChanged");
-    console.log(viewport);
+    action("SelectVehicles::onViewportChanged")(viewport);
   }
 
   componentDidMount() {
-    console.log("SelectVehicles Mounted");
+    action("SelectVehicles::componentDidMount")();
     const { registerOverlay } = this.props;
     callIfValid(registerOverlay)(this);
   }
