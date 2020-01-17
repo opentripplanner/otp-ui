@@ -257,6 +257,81 @@ export const transitIndexStopWithRoutes = PropTypes.shape({
   )
 });
 
+const transitivePlaceType = PropTypes.shape({
+  place_id: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired
+});
+
+export const transitiveDataType = PropTypes.shape({
+  journeys: PropTypes.arrayOf(
+    PropTypes.shape({
+      journey_id: PropTypes.string.isRequired,
+      journey_name: PropTypes.string.isRequired,
+      segments: PropTypes.arrayOf(
+        PropTypes.shape({
+          arc: PropTypes.bool,
+          from: transitivePlaceType,
+          patterns: PropTypes.arrayOf(
+            PropTypes.shape({
+              pattern_id: PropTypes.string.isRequired,
+              from_stop_index: PropTypes.number.isRequired,
+              to_stop_index: PropTypes.number.isRequired
+            })
+          ),
+          streetEdges: PropTypes.arrayOf(PropTypes.number),
+          to: transitivePlaceType,
+          type: PropTypes.string.isRequired
+        })
+      ).isRequired
+    })
+  ).isRequired,
+  patterns: PropTypes.arrayOf(
+    PropTypes.shape({
+      pattern_id: PropTypes.string.isRequired,
+      pattern_name: PropTypes.string.isRequired,
+      route_id: PropTypes.string.isRequired,
+      stops: PropTypes.arrayOf(
+        PropTypes.shape({
+          geometry: PropTypes.string,
+          stop_id: PropTypes.string.isRequired
+        })
+      ).isRequired
+    })
+  ).isRequired,
+  places: PropTypes.arrayOf(
+    PropTypes.shape({
+      place_id: PropTypes.string.isRequired,
+      place_lat: PropTypes.number.isRequired,
+      place_lon: PropTypes.number.isRequired,
+      place_name: PropTypes.string
+    })
+  ).isRequired,
+  routes: PropTypes.arrayOf(
+    PropTypes.shape({
+      agency_id: PropTypes.string.isRequired,
+      route_id: PropTypes.string.isRequired,
+      route_short_name: PropTypes.string.isRequired,
+      route_long_name: PropTypes.string.isRequired,
+      route_type: PropTypes.number.isRequired,
+      route_color: PropTypes.string
+    })
+  ).isRequired,
+  stops: PropTypes.arrayOf(
+    PropTypes.shape({
+      stop_id: PropTypes.string.isRequired,
+      stop_name: PropTypes.string.isRequired,
+      stop_lat: PropTypes.number.isRequired,
+      stop_lon: PropTypes.number.isRequired
+    })
+  ).isRequired,
+  streetEdges: PropTypes.arrayOf(
+    PropTypes.shape({
+      edge_id: PropTypes.number.isRequired,
+      geometry: encodedPolylineType
+    })
+  ).isRequired
+});
+
 /**
  * Utility function to help create chained validators
  * per https://www.ian-thomas.net/custom-proptype-validation-with-react/
