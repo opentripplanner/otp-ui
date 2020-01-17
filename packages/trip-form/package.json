@@ -1,21 +1,16 @@
 {
-  "name": "@opentripplanner/base-map",
-  "version": "0.0.10",
-  "description": "Base Map Component",
+  "name": "@opentripplanner/trip-form",
+  "version": "0.0.2",
+  "description": "Trip Settings Form and Related Components",
   "author": "@binh-dam-ibigroup",
   "homepage": "https://github.com/opentripplanner/otp-ui/#readme",
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "index.js",
+  "module": "src/index.js",
   "private": false,
   "dependencies": {
     "@opentripplanner/core-utils": "^0.0.10",
-    "leaflet": "^1.6.0",
-    "prop-types": "^15.7.2",
-    "react-leaflet": "^2.6.1"
-  },
-  "peerDependencies": {
-    "react": "^16.8.6",
-    "styled-components": "^4.3.1"
+    "@opentripplanner/icons": "^0.0.10"
   },
   "repository": {
     "type": "git",
