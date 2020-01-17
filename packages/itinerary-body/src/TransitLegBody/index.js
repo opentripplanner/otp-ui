@@ -18,6 +18,27 @@ function pluralize(str, list) {
   return `${str}${list.length > 1 ? "s" : ""}`;
 }
 
+function DefaultTransitLegSummary({ leg, stopsExpanded }) {
+  return (
+    <>
+      {leg.duration && <span>Ride {formatDuration(leg.duration)}</span>}
+      {leg.intermediateStops && (
+        <span>
+          {" / "}
+          {leg.intermediateStops.length + 1}
+          {" stops "}
+          <Styled.CaretToggle expanded={stopsExpanded} />
+        </span>
+      )}
+    </>
+  );
+}
+
+DefaultTransitLegSummary.propTypes = {
+  leg: legType.isRequired,
+  stopsExpanded: PropTypes.bool.isRequired
+};
+
 class TransitLegBody extends Component {
   constructor(props) {
     super(props);
@@ -49,6 +70,7 @@ class TransitLegBody extends Component {
       setViewedTrip,
       showAgencyInfo,
       timeFormat,
+      TransitLegSummary,
       transitOperator
     } = this.props;
     const {
@@ -137,19 +159,10 @@ class TransitLegBody extends Component {
         </VelocityTransitionGroup>
         {/* The "Ride X Min / X Stops" Row, including IntermediateStops body */}
         {leg.intermediateStops && leg.intermediateStops.length > 0 && (
-          <div className="transit-leg-details">
+          <Styled.TransitLegDetails>
             {/* The header summary row, clickable to expand intermediate stops */}
-            {/* eslint-disable-next-line */}
-            <div onClick={this.onToggleStopsClick} className="header">
-              {leg.duration && <span>Ride {formatDuration(leg.duration)}</span>}
-              {leg.intermediateStops && (
-                <span>
-                  {" / "}
-                  {leg.intermediateStops.length + 1}
-                  {" stops "}
-                  <Styled.CaretToggle expanded={stopsExpanded} />
-                </span>
-              )}
+            <Styled.TransitLegDetailsHeader onClick={this.onToggleStopsClick}>
+              <TransitLegSummary leg={leg} stopsExpanded={stopsExpanded} />
 
               {/* The ViewTripButton. TODO: make configurable */}
               <ViewTripButton
@@ -158,7 +171,7 @@ class TransitLegBody extends Component {
                 setViewedTrip={setViewedTrip}
                 toIndex={leg.to.stopIndex}
               />
-            </div>
+            </Styled.TransitLegDetailsHeader>
             {/* IntermediateStops expanded body */}
             <VelocityTransitionGroup
               enter={{ animation: "slideDown" }}
@@ -173,7 +186,7 @@ class TransitLegBody extends Component {
             {leg.averageWait && (
               <span>Typical Wait: {formatDuration(leg.averageWait)}</span>
             )}
-          </div>
+          </Styled.TransitLegDetails>
         )}
       </Styled.LegBody>
     );
@@ -188,10 +201,12 @@ TransitLegBody.propTypes = {
   setViewedTrip: PropTypes.func.isRequired,
   showAgencyInfo: PropTypes.bool.isRequired,
   timeFormat: PropTypes.string.isRequired,
+  TransitLegSummary: PropTypes.elementType,
   transitOperator: transitOperatorType
 };
 
 TransitLegBody.defaultProps = {
+  TransitLegSummary: DefaultTransitLegSummary,
   transitOperator: null
 };
 

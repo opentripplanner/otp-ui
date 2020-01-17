@@ -10,6 +10,28 @@ import { toModeBorder, toModeColor, toSafeRouteColor } from "./util";
 // ///////////// Generic components ///////////////
 // ////////////////////////////////////////////////
 
+export const ClearButton = styled.button`
+  background: transparent;
+  color: inherit;
+  border: 0;
+  text-align: inherit;
+  text-decoration: none;
+
+  &:focus {
+    /* What's our hover color for the     se? */
+    background-color: ${props => props.theme.tertiaryColor};
+    outline: 0;
+  }
+
+  &:hover {
+    background-color: ${props => props.theme.hoverColor};
+  }
+
+  &:active {
+    background-color: ${props => props.theme.activeColor};
+  }
+`;
+
 /*
   This is needed to give the offset border look to stacked place rows
   Since the value we have access to is "interlineWithPreviousLeg" then we
@@ -140,28 +162,6 @@ export const CaretToggle = ({ expanded }) =>
 CaretToggle.propTypes = {
   expanded: PropTypes.bool.isRequired
 };
-
-export const ClearButton = styled.button`
-  background: transparent;
-  color: inherit;
-  border: 0;
-  text-align: inherit;
-  text-decoration: none;
-
-  &:focus {
-    /* What's our hover color for the     se? */
-    background-color: ${props => props.theme.tertiaryColor};
-    outline: 0;
-  }
-
-  &:hover {
-    background-color: ${props => props.theme.hoverColor};
-  }
-
-  &:active {
-    background-color: ${props => props.theme.activeColor};
-  }
-`;
 
 export const Destination = styled.div`
   text-align: center;
@@ -477,12 +477,27 @@ export const TransitAlertToggle = styled(TransparentButton)`
   cursor: pointer;
 `;
 
+export const TransitLegDetails = styled.div`
+  margin-top: 5px;
+`;
+
+export const TransitLegDetailsHeader = styled.div`
+  color: #999999;
+  cursor: pointer;
+  font-size: 13px;
+`;
+
 export const ViewTripButton = styled(TransparentButton)`
+  border-left: 1px solid #000;
   color: #008;
-  outline: none;
+  cursor: pointer;
   height: 14px;
-  padding-top: 0;
   line-height: 1;
   margin-left: 5px;
-  border-left: 1px solid #000;
+  outline: none;
+  padding-top: 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;

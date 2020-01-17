@@ -24,7 +24,8 @@ const ItineraryBody = ({
   showAgencyInfo,
   showElevationProfile,
   timeOptions,
-  toRouteAbbreviation
+  toRouteAbbreviation,
+  TransitLegSummary
 }) => {
   /*
     TODO: replace component should update logic? companies is simply used to
@@ -56,6 +57,7 @@ const ItineraryBody = ({
         time={leg.startTime}
         timeOptions={timeOptions}
         toRouteAbbreviation={toRouteAbbreviation}
+        TransitLegSummary={TransitLegSummary}
       />
     );
     // TODO: reconcile special props for lastrow
@@ -79,18 +81,14 @@ const ItineraryBody = ({
           time={leg.endTime}
           timeOptions={timeOptions}
           toRouteAbbreviation={toRouteAbbreviation}
+          TransitLegSummary={TransitLegSummary}
         />
       );
     }
     if (leg.transitLeg) followsTransit = true;
   });
   return (
-    <Styled.ItineraryBody className={className}>
-      {rows}
-      {/* TODO: Reincorporate these components as required by TORA project */}
-      {/* showTripDetails && <TripDetails itinerary={itinerary} /> */}
-      {/* showTripTools && <TripTools itinerary={itinerary} /> */}
-    </Styled.ItineraryBody>
+    <Styled.ItineraryBody className={className}>{rows}</Styled.ItineraryBody>
   );
 };
 
@@ -130,9 +128,14 @@ ItineraryBody.propTypes = {
   /** Contains the preferred format string for time display and a timezone offset */
   timeOptions: timeOptionsType,
   /** Converts a route's ID to its accepted badge abbreviation */
-  toRouteAbbreviation: PropTypes.func.isRequired // ,
-  // showTripDetails: PropTypes.bool,
-  // showTripTools: PropTypes.bool
+  toRouteAbbreviation: PropTypes.func.isRequired,
+  /**
+   * An optional custom component for rendering the summary of a transit leg.
+   * The component is sent 2 props:
+   * - leg: the transit leg
+   * - stopsExpanded: whether the intermediate stop display is currently expanded
+   */
+  TransitLegSummary: PropTypes.elementType
 };
 
 ItineraryBody.defaultProps = {
@@ -141,9 +144,8 @@ ItineraryBody.defaultProps = {
   routingType: "ITINERARY",
   showAgencyInfo: false,
   showElevationProfile: false,
-  // showTripDetails: true,
-  // showTripTools: true,
-  timeOptions: null
+  timeOptions: null,
+  TransitLegSummary: undefined
 };
 
 export default ItineraryBody;

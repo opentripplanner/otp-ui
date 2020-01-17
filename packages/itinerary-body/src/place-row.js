@@ -113,7 +113,8 @@ const PlaceRow = ({
   showElevationProfile,
   time,
   timeOptions,
-  toRouteAbbreviation
+  toRouteAbbreviation,
+  TransitLegSummary
 }) => {
   // NOTE: Previously there was a check for itineraries that changed vehicles
   // at a single stop, which would render the stop place the same as the
@@ -213,6 +214,7 @@ const PlaceRow = ({
                 setViewedTrip={setViewedTrip}
                 showAgencyInfo={showAgencyInfo}
                 timeFormat={timeFormat}
+                TransitLegSummary={TransitLegSummary}
                 transitOperator={
                   leg.agencyId &&
                   getTransitOperatorFromConfig(leg.agencyId, config)
@@ -288,7 +290,14 @@ PlaceRow.propTypes = {
   /** Contains the preferred format string for time display and a timezone offset */
   timeOptions: timeOptionsType,
   /** Converts a route's ID to its accepted badge abbreviation */
-  toRouteAbbreviation: PropTypes.func.isRequired
+  toRouteAbbreviation: PropTypes.func.isRequired,
+  /**
+   * An optional custom component for rendering the summary of a transit leg.
+   * The component is sent 2 props:
+   * - leg: the transit leg
+   * - stopsExpanded: whether the intermediate stop display is currently expanded
+   */
+  TransitLegSummary: PropTypes.elementType
 };
 
 PlaceRow.defaultProps = {
@@ -300,7 +309,8 @@ PlaceRow.defaultProps = {
   legIndex: null,
   showAgencyInfo: false,
   showElevationProfile: false,
-  timeOptions: null
+  timeOptions: null,
+  TransitLegSummary: undefined
 };
 
 export default PlaceRow;

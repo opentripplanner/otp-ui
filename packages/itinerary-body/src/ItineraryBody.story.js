@@ -1,4 +1,4 @@
-import { itineraryType } from "@opentripplanner/core-utils/lib/types";
+import { itineraryType, legType } from "@opentripplanner/core-utils/lib/types";
 import TriMetLegIcon from "@opentripplanner/icons/lib/trimet-leg-icon";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
@@ -44,7 +44,12 @@ class ItineraryBodyDefaultsWrapper extends Component {
   };
 
   render() {
-    const { itinerary, showAgencyInfo, useStyled } = this.props;
+    const {
+      itinerary,
+      showAgencyInfo,
+      TransitLegSummary,
+      useStyled
+    } = this.props;
     const { diagramVisible } = this.state;
     return useStyled ? (
       <StyledItineraryBody
@@ -60,6 +65,7 @@ class ItineraryBodyDefaultsWrapper extends Component {
         showAgencyInfo={showAgencyInfo}
         showElevationProfile
         toRouteAbbreviation={r => r.toString().substr(0, 2)}
+        TransitLegSummary={TransitLegSummary}
       />
     ) : (
       <ItineraryBody
@@ -75,6 +81,7 @@ class ItineraryBodyDefaultsWrapper extends Component {
         showAgencyInfo={showAgencyInfo}
         showElevationProfile
         toRouteAbbreviation={r => r.toString().substr(0, 2)}
+        TransitLegSummary={TransitLegSummary}
       />
     );
   }
@@ -83,12 +90,24 @@ class ItineraryBodyDefaultsWrapper extends Component {
 ItineraryBodyDefaultsWrapper.propTypes = {
   itinerary: itineraryType.isRequired,
   showAgencyInfo: PropTypes.bool,
+  TransitLegSummary: PropTypes.elementType,
   useStyled: PropTypes.bool
 };
 
 ItineraryBodyDefaultsWrapper.defaultProps = {
   showAgencyInfo: false,
+  TransitLegSummary: undefined,
   useStyled: false
+};
+
+function CustomTransitLegSummary({ leg }) {
+  if (leg.duration) {
+    return `It'll probably take around ${leg.duration} seconds.`;
+  }
+}
+
+CustomTransitLegSummary.propTypes = {
+  leg: legType.isRequired
 };
 
 storiesOf("ItineraryBody", module)
@@ -115,6 +134,15 @@ storiesOf("ItineraryBody", module)
       <ItineraryBodyDefaultsWrapper
         itinerary={walkTransitWalkItinerary}
         showAgencyInfo
+      />
+    )
+  )
+  .add(
+    "ItineraryBody with walk-transit-walk itinerary with custom transit leg summary",
+    () => (
+      <ItineraryBodyDefaultsWrapper
+        itinerary={walkTransitWalkItinerary}
+        TransitLegSummary={CustomTransitLegSummary}
       />
     )
   )
