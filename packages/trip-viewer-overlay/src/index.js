@@ -30,20 +30,15 @@ class TripViewerOverlay extends MapLayer {
   updateLeafletElement() {}
 
   render() {
-    const { path, tripData } = this.props;
-    const { color, opacity, weight } = path;
+    const { leafletPath, tripData } = this.props;
 
     if (!tripData || !tripData.geometry) return <FeatureGroup />;
 
     const pts = polyline.decode(tripData.geometry.points);
     return (
       <FeatureGroup>
-        <Polyline
-          color={color}
-          opacity={opacity}
-          positions={pts}
-          weight={weight}
-        />
+        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+        <Polyline {...leafletPath} positions={pts} />
       </FeatureGroup>
     );
   }
@@ -51,12 +46,12 @@ class TripViewerOverlay extends MapLayer {
 
 TripViewerOverlay.propTypes = {
   /**
-   * Leaflet path properties to use to style each polyline that represents the
-   * trip. Only a few of the path items are actually used.
+   * Leaflet path properties to use to style the polyline that represents the
+   * trip.
    *
    * See https://leafletjs.com/reference-1.6.0.html#path
    */
-  path: leafletPathType,
+  leafletPath: leafletPathType,
   /**
    * This represents data about a trip as obtained from a transit index.
    * Typically a trip has more data than these items, so this is only a list of
@@ -68,7 +63,7 @@ TripViewerOverlay.propTypes = {
 };
 
 TripViewerOverlay.defaultProps = {
-  path: {
+  leafletPath: {
     color: "#00bfff",
     opacity: 0.6,
     weight: 8

@@ -37,19 +37,16 @@ export default class StopMarker extends Component {
   }
 
   render() {
-    const { languageConfig, path, radius, stop } = this.props;
-    const { color, fillColor, fillOpacity, weight } = path;
+    const { languageConfig, leafletPath, radius, stop } = this.props;
     const { id, name, lat, lon } = stop;
     const idArr = id.split(":");
 
     return (
       <CircleMarker
+        /* eslint-disable-next-line react/jsx-props-no-spreading */
+        {...leafletPath}
         center={[lat, lon]}
-        color={color}
-        fillColor={fillColor}
-        fillOpacity={fillOpacity}
         radius={radius}
-        weight={weight}
       >
         <Popup>
           <Styled.MapOverlayPopup>
@@ -82,7 +79,7 @@ export default class StopMarker extends Component {
 
 StopMarker.propTypes = {
   languageConfig: languageConfigType.isRequired,
-  path: leafletPathType,
+  leafletPath: leafletPathType,
   radius: PropTypes.number,
   setLocation: PropTypes.func.isRequired,
   setViewedStop: PropTypes.func.isRequired,
@@ -90,7 +87,7 @@ StopMarker.propTypes = {
 };
 
 StopMarker.defaultProps = {
-  path: {
+  leafletPath: {
     color: "#000",
     fillColor: "#FFF",
     fillOpacity: 1,

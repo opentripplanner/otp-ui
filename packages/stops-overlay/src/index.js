@@ -82,7 +82,7 @@ class StopsOverlay extends MapLayer {
       <StopMarker
         key={stop.id}
         languageConfig={languageConfig}
-        path={stopMarkerPath}
+        leafletPath={stopMarkerPath}
         radius={stopMarkerRadius}
         setLocation={setLocation}
         setMainPanelContent={setMainPanelContent}
@@ -147,7 +147,7 @@ StopsOverlay.propTypes = {
   setViewedStop: PropTypes.func.isRequired,
   /**
    * Leaflet path properties to use to style each stop marker that represents a
-   * stop. Only a few of the path items are actually used.
+   * stop.
    *
    * See https://leafletjs.com/reference-1.6.0.html#path
    */

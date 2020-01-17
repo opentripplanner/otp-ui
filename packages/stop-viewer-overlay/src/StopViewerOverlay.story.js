@@ -18,8 +18,9 @@ const stopData = {
   name: "Fake Stop"
 };
 
-const path = {
+const leafletPath = {
   color: "purple",
+  dasharray: "4 1 2",
   fillColor: "#00ff11",
   fillOpacity: 1,
   weight: 5
@@ -35,6 +36,11 @@ storiesOf("StopViewerOverlay", module)
   ))
   .add("StopViewerOverlay with custom marker styling", () => (
     <BaseMap center={center} zoom={zoom}>
-      <StopViewerOverlay path={path} radius={12} stopData={stopData} visible />
+      <StopViewerOverlay
+        leafletPath={leafletPath}
+        radius={12}
+        stopData={stopData}
+        visible
+      />
     </BaseMap>
   ));

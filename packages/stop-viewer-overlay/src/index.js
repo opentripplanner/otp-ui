@@ -33,21 +33,18 @@ class StopViewerOverlay extends MapLayer {
   updateLeafletElement() {}
 
   render() {
-    const { path, radius, stopData } = this.props;
-    const { color, fillColor, fillOpacity, weight } = path;
+    const { leafletPath, radius, stopData } = this.props;
 
     if (!stopData) return <FeatureGroup />;
 
     return (
       <FeatureGroup>
         <CircleMarker
+          /* eslint-disable-next-line react/jsx-props-no-spreading */
+          {...leafletPath}
           center={[stopData.lat, stopData.lon]}
-          color={color}
-          fillColor={fillColor}
-          fillOpacity={fillOpacity}
           key={stopData.id}
           radius={radius}
-          weight={weight}
         >
           <Popup>
             <div>{stopData.name}</div>
@@ -61,11 +58,11 @@ class StopViewerOverlay extends MapLayer {
 StopViewerOverlay.props = {
   /**
    * Leaflet path properties to use to style the marker that represents the
-   * stop. Only a few of the path items are actually used.
+   * stop.
    *
    * See https://leafletjs.com/reference-1.6.0.html#path
    */
-  path: leafletPathType,
+  leafletPath: leafletPathType,
   /**
    * The radius in pixels for the stop marker
    */
@@ -82,7 +79,7 @@ StopViewerOverlay.props = {
 };
 
 StopViewerOverlay.defaultProps = {
-  path: {
+  leafletPath: {
     color: "#000",
     fillColor: "cyan",
     fillOpacity: 1,
