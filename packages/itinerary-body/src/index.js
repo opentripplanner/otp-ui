@@ -17,6 +17,7 @@ const ItineraryBody = ({
   diagramVisible,
   frameLeg,
   itinerary,
+  PlaceName,
   routingType,
   setActiveLeg,
   setLegDiagram,
@@ -48,6 +49,7 @@ const ItineraryBody = ({
         LegIcon={LegIcon}
         legIndex={i}
         place={leg.from}
+        PlaceName={PlaceName}
         routingType={routingType}
         setActiveLeg={setActiveLeg}
         setLegDiagram={setLegDiagram}
@@ -72,6 +74,7 @@ const ItineraryBody = ({
           frameLeg={frameLeg}
           LegIcon={LegIcon}
           place={leg.to}
+          PlaceName={PlaceName}
           routingType={routingType}
           setActiveLeg={setActiveLeg}
           setLegDiagram={setLegDiagram}
@@ -110,6 +113,17 @@ ItineraryBody.propTypes = {
   itinerary: itineraryType.isRequired,
   /** A component class that is used to render icons for legs of an itinerary */
   LegIcon: PropTypes.elementType.isRequired,
+  /**
+   * An optional custom component for rendering the place name of legs.
+   * The component is sent 3 props:
+   * - config: the application config
+   * - interline: whether this place is an interlined stop (a stop where a
+   *   transit vehicle changes routes, but a rider can continue riding without
+   *   deboarding)
+   * - place: the particular place. Typically this is the from place, but it
+   *   could also be the to place if it is the destination of the itinerary.
+   */
+  PlaceName: PropTypes.elementType,
   /** TODO: Routing Type is usually 'ITINERARY' but we should get more details on what this does */
   routingType: PropTypes.string,
   /**
@@ -141,6 +155,7 @@ ItineraryBody.propTypes = {
 ItineraryBody.defaultProps = {
   className: null,
   diagramVisible: null,
+  PlaceName: undefined,
   routingType: "ITINERARY",
   showAgencyInfo: false,
   showElevationProfile: false,

@@ -46,6 +46,7 @@ class ItineraryBodyDefaultsWrapper extends Component {
   render() {
     const {
       itinerary,
+      PlaceName,
       showAgencyInfo,
       TransitLegSummary,
       useStyled
@@ -58,6 +59,7 @@ class ItineraryBodyDefaultsWrapper extends Component {
         frameLeg={action("frameLeg")}
         itinerary={itinerary}
         LegIcon={TriMetLegIcon}
+        PlaceName={PlaceName}
         routingType="ITINERARY"
         setActiveLeg={action("setActiveLeg")}
         setLegDiagram={this.setLegDiagram}
@@ -74,6 +76,7 @@ class ItineraryBodyDefaultsWrapper extends Component {
         frameLeg={action("frameLeg")}
         itinerary={itinerary}
         LegIcon={TriMetLegIcon}
+        PlaceName={PlaceName}
         routingType="ITINERARY"
         setActiveLeg={action("setActiveLeg")}
         setLegDiagram={this.setLegDiagram}
@@ -89,6 +92,7 @@ class ItineraryBodyDefaultsWrapper extends Component {
 
 ItineraryBodyDefaultsWrapper.propTypes = {
   itinerary: itineraryType.isRequired,
+  PlaceName: PropTypes.elementType,
   showAgencyInfo: PropTypes.bool,
   TransitLegSummary: PropTypes.elementType,
   useStyled: PropTypes.bool
@@ -96,9 +100,14 @@ ItineraryBodyDefaultsWrapper.propTypes = {
 
 ItineraryBodyDefaultsWrapper.defaultProps = {
   showAgencyInfo: false,
+  PlaceName: undefined,
   TransitLegSummary: undefined,
   useStyled: false
 };
+
+function CustomPlaceName({ place }) {
+  return `🎉✨🎊 ${place.name} 🎉✨🎊`;
+}
 
 function CustomTransitLegSummary({ leg }) {
   if (leg.duration) {
@@ -138,11 +147,20 @@ storiesOf("ItineraryBody", module)
     )
   )
   .add(
-    "ItineraryBody with walk-transit-walk itinerary with custom transit leg summary",
+    "ItineraryBody with walk-transit-walk itinerary with custom transit leg summary component",
     () => (
       <ItineraryBodyDefaultsWrapper
         itinerary={walkTransitWalkItinerary}
         TransitLegSummary={CustomTransitLegSummary}
+      />
+    )
+  )
+  .add(
+    "ItineraryBody with walk-transit-walk itinerary with custom place name component",
+    () => (
+      <ItineraryBodyDefaultsWrapper
+        itinerary={walkTransitWalkItinerary}
+        PlaceName={CustomPlaceName}
       />
     )
   )

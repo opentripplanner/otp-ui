@@ -10,6 +10,7 @@ import {
 import {
   configType,
   legType,
+  placeType,
   timeOptionsType
 } from "@opentripplanner/core-utils/lib/types";
 import LocationIcon from "@opentripplanner/location-icon";
@@ -23,6 +24,38 @@ import RouteBadge from "./RouteBadge";
 const getTransitOperatorFromConfig = (id, config) =>
   config.transitOperators.find(transitOperator => transitOperator.id === id) ||
   null;
+
+function DefaultPlaceName({ config, interline, place }) {
+  return (
+    <>
+      {interline ? (
+        <>
+          Stay on Board at <b>{place.name}</b>
+        </>
+      ) : (
+        <>{getPlaceName(place, config.companies)}</>
+      )}
+      {/* TODO: take another pass on this when working the Transit Leg */}
+      {/* Place subheading: Transit stop */}
+      {place.stopId && !interline && (
+        <Styled.StopIdSpan>ID {place.stopId.split(":")[1]}</Styled.StopIdSpan>
+        /*
+        TODO: There is no explicit stop button on the mocks.
+        Have a question out to marketing as to whether the above StopID
+        is a button to navigate the user to the arrival list for the stop
+        Thats what the button below does
+      */
+        /* <ViewStopButton stopId={place.stopId} /> */
+      )}
+    </>
+  );
+}
+
+DefaultPlaceName.propTypes = {
+  config: configType.isRequired,
+  interline: PropTypes.bool.isRequired,
+  place: placeType.isRequired
+};
 
 /**
  * A component to display vehicle rental data. The word "Vehicle" has been used
@@ -105,6 +138,7 @@ const PlaceRow = ({
   LegIcon,
   legIndex,
   place,
+  PlaceName,
   routingType,
   setActiveLeg,
   setLegDiagram,
@@ -174,27 +208,7 @@ const PlaceRow = ({
             */}
             {interline && <Styled.InterlineDot>&bull;</Styled.InterlineDot>}
             <Styled.PlaceName>
-              {interline ? (
-                <>
-                  Stay on Board at <b>{place.name}</b>
-                </>
-              ) : (
-                <>{getPlaceName(place, config.companies)}</>
-              )}
-              {/* TODO: take another pass on this when working the Transit Leg */}
-              {/* Place subheading: Transit stop */}
-              {place.stopId && !interline && (
-                <Styled.StopIdSpan>
-                  ID {place.stopId.split(":")[1]}
-                </Styled.StopIdSpan>
-                /*
-                TODO: There is no explicit stop button on the mocks.
-                Have a question out to marketing as to whether the above StopID
-                is a button to navigate the user to the arrival list for the stop
-                Thats what the button below does
-              */
-                /* <ViewStopButton stopId={place.stopId} /> */
-              )}
+              <PlaceName config={config} interline={interline} place={place} />
             </Styled.PlaceName>
           </Styled.PlaceHeader>
 
@@ -270,6 +284,17 @@ PlaceRow.propTypes = {
     stopId: PropTypes.string,
     name: PropTypes.string.isRequired
   }).isRequired,
+  /**
+   * An optional custom component for rendering the place name of legs.
+   * The component is sent 3 props:
+   * - config: the application config
+   * - interline: whether this place is an interlined stop (a stop where a
+   *   transit vehicle changes routes, but a rider can continue riding without
+   *   deboarding)
+   * - place: the particular place. Typically this is the from place, but it
+   *   could also be the to place if it is the destination of the itinerary.
+   */
+  PlaceName: PropTypes.elementType,
   /** TODO: Routing Type is usually 'ITINERARY' but we should get more details on what this does */
   routingType: PropTypes.string.isRequired,
   /**
@@ -307,6 +332,7 @@ PlaceRow.defaultProps = {
   leg: null,
   // can be null if this is the destination place
   legIndex: null,
+  PlaceName: DefaultPlaceName,
   showAgencyInfo: false,
   showElevationProfile: false,
   timeOptions: null,

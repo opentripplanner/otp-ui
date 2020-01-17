@@ -85,7 +85,7 @@ export const stepsType = PropTypes.arrayOf(
   })
 );
 
-const placeType = PropTypes.shape({
+export const placeType = PropTypes.shape({
   arrival: PropTypes.number,
   departure: PropTypes.number,
   lat: PropTypes.number.isRequired,
