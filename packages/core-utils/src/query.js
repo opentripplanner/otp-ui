@@ -8,7 +8,6 @@ import {
 } from "./itinerary";
 import { coordsToString, matchLatLon, stringToCoords } from "./map";
 import queryParams from "./query-params";
-import { getActiveSearch } from "./state";
 import { getCurrentTime, getCurrentDate } from "./time";
 
 /* The list of default parameters considered in the settings panel */
@@ -77,20 +76,6 @@ export function summarizeQuery(query, locations = []) {
     findLocationType(query.to, locations) || query.to.name.split(",")[0];
   const mode = hasTransit(query.mode) ? "Transit" : toSentenceCase(query.mode);
   return `${mode} from ${from} to ${to}`;
-}
-
-/**
- * Assemble any UI-state properties to be tracked via URL into a single object
- * TODO: Expand to include additional UI properties
- */
-
-export function getUiUrlParams(otpState) {
-  const activeSearch = getActiveSearch(otpState);
-  const uiParams = {
-    ui_activeItinerary: activeSearch ? activeSearch.activeItinerary : 0,
-    ui_activeSearch: otpState.activeSearchId
-  };
-  return uiParams;
 }
 
 export function getTripOptionsFromQuery(query, keepPlace = false) {

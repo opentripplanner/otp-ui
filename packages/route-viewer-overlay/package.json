@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/route-viewer-overlay",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "A map overlay to show a transit route",
   "main": "lib/index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "dependencies": {
     "@mapbox/polyline": "^1.1.0",
-    "@opentripplanner/core-utils": "^0.0.8",
+    "@opentripplanner/core-utils": "^0.0.10",
     "prop-types": "^15.7.2",
     "react-leaflet": "^2.6.1"
   },
@@ -26,5 +26,5 @@
     "@opentripplanner/base-map": "^0.0.8",
     "react": "^16.8.6"
   },
-  "devDependencies": {}
+  "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"
 }
