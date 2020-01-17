@@ -69,12 +69,8 @@ class TransitLegBody extends Component {
         ? transitOperator.logo
         : agencyBrandingUrl;
 
-    // get the iconKey for the leg's icon
-    // let iconKey = mode;
-    // if (typeof customIcons.customIconForLeg === "function") {
-    //   const customIcon = customIcons.customIconForLeg(leg);
-    //   if (customIcon) iconKey = customIcon;
-    // }
+    const expandAlerts =
+      alertsExpanded || (leg.alerts && leg.alerts.length < 3);
 
     return (
       <Styled.LegBody>
@@ -118,7 +114,7 @@ class TransitLegBody extends Component {
         )}
 
         {/* Alerts toggle */}
-        {alerts && alerts.length > 0 && (
+        {alerts && alerts.length > 2 && (
           <Styled.TransitAlertToggle onClick={this.onToggleAlertsClick}>
             <ExclamationTriangle size={15} /> {alerts.length}{" "}
             {pluralize("alert", alerts)}{" "}
@@ -131,7 +127,7 @@ class TransitLegBody extends Component {
           enter={{ animation: "slideDown" }}
           leave={{ animation: "slideUp" }}
         >
-          {alertsExpanded && (
+          {expandAlerts && (
             <AlertsBody
               alerts={leg.alerts}
               longDateFormat={longDateFormat}
@@ -240,7 +236,7 @@ function AlertsBody({ alerts, longDateFormat, timeFormat }) {
           );
           const effectiveDateString = `Effective as of ${dateTimeString}`;
           return (
-            <Styled.TransitAlert key={i}>
+            <Styled.TransitAlert key={i} href={alert.alertUrl}>
               <Styled.TransitAlertIconContainer>
                 <ExclamationTriangle size={18} />
               </Styled.TransitAlertIconContainer>

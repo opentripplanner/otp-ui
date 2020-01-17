@@ -430,12 +430,14 @@ export const StopRow = styled.div`
   position: relative;
 `;
 
-export const TransitAlert = styled.div`
-  margin-top: 5px;
+export const TransitAlert = styled.a`
   background-color: #eee;
-  padding: 8px;
-  color: #000;
   border-radius: 4px;
+  color: #000;
+  display: block;
+  margin-top: 5px;
+  padding: 8px;
+  text-decoration: none;
 `;
 
 export const TransitAlertBody = styled.div`
