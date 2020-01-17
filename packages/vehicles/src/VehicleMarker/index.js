@@ -12,7 +12,7 @@ import { formatTime } from "../utils";
 import "./vehicles.css";
 
 /**
- * This component demonstrates a custom marker used in the SelectVehicles overlay provided as
+ * This component demonstrates a custom marker used in the Vehicles overlay provided as
  * an example. It is modeled after the component available in this file:
  * https://github.com/OpenTransitTools/transit-components/blob/master/lib/vehicles/VehicleMarker.js
  */
