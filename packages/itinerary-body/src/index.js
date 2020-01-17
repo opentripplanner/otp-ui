@@ -4,16 +4,15 @@ import {
   legType,
   timeOptionsType
 } from "@opentripplanner/core-utils/lib/types";
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 
 import PlaceRow from "./place-row";
-// import TripDetails from "./TripDetails";
-// import TripTools from "./TripTools";
 import * as Styled from "./styled";
 
 const ItineraryBody = ({
   config,
+  className,
   diagramVisible,
   itinerary,
   LegIcon,
@@ -85,7 +84,7 @@ const ItineraryBody = ({
     if (leg.transitLeg) followsTransit = true;
   });
   return (
-    <Styled.ItineraryBody>
+    <Styled.ItineraryBody className={className}>
       {rows}
       {/* TODO: Reincorporate these components as required by TORA project */}
       {/* showTripDetails && <TripDetails itinerary={itinerary} /> */}
@@ -95,6 +94,10 @@ const ItineraryBody = ({
 };
 
 ItineraryBody.propTypes = {
+  /**
+   * Used for additional styling with styled components for example.
+   */
+  className: PropTypes.string,
   /** Contains OTP configuration details. */
   config: configType.isRequired,
   /**
@@ -130,6 +133,7 @@ ItineraryBody.propTypes = {
 };
 
 ItineraryBody.defaultProps = {
+  className: null,
   diagramVisible: null,
   routingType: "ITINERARY",
   showElevationProfile: false,
