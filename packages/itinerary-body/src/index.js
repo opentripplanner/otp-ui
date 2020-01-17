@@ -11,21 +11,20 @@ import PlaceRow from "./place-row";
 import * as Styled from "./styled";
 
 const ItineraryBody = ({
-  config,
-  className,
-  diagramVisible,
-  itinerary,
   LegIcon,
+  className,
+  config,
+  diagramVisible,
+  frameLeg,
+  itinerary,
+  routingType,
   setActiveLeg,
   setLegDiagram,
   setViewedTrip,
+  showAgencyInfo,
   showElevationProfile,
   timeOptions,
-  routingType,
-  frameLeg,
-  toRouteAbbreviation // ,
-  // showTripDetails,
-  // showTripTools
+  toRouteAbbreviation
 }) => {
   /*
     TODO: replace component should update logic? companies is simply used to
@@ -52,6 +51,7 @@ const ItineraryBody = ({
         setActiveLeg={setActiveLeg}
         setLegDiagram={setLegDiagram}
         setViewedTrip={setViewedTrip}
+        showAgencyInfo={showAgencyInfo}
         showElevationProfile={showElevationProfile}
         time={leg.startTime}
         timeOptions={timeOptions}
@@ -74,6 +74,7 @@ const ItineraryBody = ({
           setActiveLeg={setActiveLeg}
           setLegDiagram={setLegDiagram}
           setViewedTrip={setViewedTrip}
+          showAgencyInfo={showAgencyInfo}
           showElevationProfile={showElevationProfile}
           time={leg.endTime}
           timeOptions={timeOptions}
@@ -122,6 +123,8 @@ ItineraryBody.propTypes = {
   setLegDiagram: PropTypes.func.isRequired,
   /** Fired when a user clicks on a view trip button of a transit leg */
   setViewedTrip: PropTypes.func.isRequired,
+  /** If true, will show agency information in transit legs */
+  showAgencyInfo: PropTypes.bool,
   /** If true, will show the elevation profile for walk/bike legs */
   showElevationProfile: PropTypes.bool,
   /** Contains the preferred format string for time display and a timezone offset */
@@ -136,6 +139,7 @@ ItineraryBody.defaultProps = {
   className: null,
   diagramVisible: null,
   routingType: "ITINERARY",
+  showAgencyInfo: false,
   showElevationProfile: false,
   // showTripDetails: true,
   // showTripTools: true,

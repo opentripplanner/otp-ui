@@ -109,6 +109,7 @@ const PlaceRow = ({
   setActiveLeg,
   setLegDiagram,
   setViewedTrip,
+  showAgencyInfo,
   showElevationProfile,
   time,
   timeOptions,
@@ -210,6 +211,7 @@ const PlaceRow = ({
                 setActiveLeg={setActiveLeg}
                 longDateFormat={longDateFormat}
                 setViewedTrip={setViewedTrip}
+                showAgencyInfo={showAgencyInfo}
                 timeFormat={timeFormat}
                 transitOperator={
                   leg.agencyId &&
@@ -275,6 +277,8 @@ PlaceRow.propTypes = {
   setActiveLeg: PropTypes.func.isRequired,
   /** Fired when a user clicks on a view trip button of a transit leg */
   setViewedTrip: PropTypes.func.isRequired,
+  /** If true, will show agency information in transit legs */
+  showAgencyInfo: PropTypes.bool,
   /** If true, will show the elevation profile for walk/bike legs */
   showElevationProfile: PropTypes.bool,
   /** Handler for when a leg diagram is selected. */
@@ -294,6 +298,7 @@ PlaceRow.defaultProps = {
   leg: null,
   // can be null if this is the destination place
   legIndex: null,
+  showAgencyInfo: false,
   showElevationProfile: false,
   timeOptions: null
 };

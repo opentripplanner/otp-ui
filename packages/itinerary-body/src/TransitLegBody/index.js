@@ -47,6 +47,7 @@ class TransitLegBody extends Component {
       leg,
       longDateFormat,
       setViewedTrip,
+      showAgencyInfo,
       timeFormat,
       transitOperator
     } = this.props;
@@ -99,7 +100,7 @@ class TransitLegBody extends Component {
         </Styled.LegClickable>
 
         {/* Agency information */}
-        {
+        {showAgencyInfo && (
           <Styled.AgencyInfo>
             Service operated by{" "}
             <a href={agencyUrl} rel="noopener noreferrer" target="_blank">
@@ -114,7 +115,7 @@ class TransitLegBody extends Component {
               )}
             </a>
           </Styled.AgencyInfo>
-        }
+        )}
 
         {/* Alerts toggle */}
         {alerts && alerts.length > 0 && (
@@ -189,6 +190,7 @@ TransitLegBody.propTypes = {
   longDateFormat: PropTypes.string.isRequired,
   setActiveLeg: PropTypes.func.isRequired,
   setViewedTrip: PropTypes.func.isRequired,
+  showAgencyInfo: PropTypes.bool.isRequired,
   timeFormat: PropTypes.string.isRequired,
   transitOperator: transitOperatorType
 };

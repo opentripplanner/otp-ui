@@ -44,7 +44,7 @@ class ItineraryBodyDefaultsWrapper extends Component {
   };
 
   render() {
-    const { itinerary, useStyled } = this.props;
+    const { itinerary, showAgencyInfo, useStyled } = this.props;
     const { diagramVisible } = this.state;
     return useStyled ? (
       <StyledItineraryBody
@@ -57,6 +57,7 @@ class ItineraryBodyDefaultsWrapper extends Component {
         setActiveLeg={action("setActiveLeg")}
         setLegDiagram={this.setLegDiagram}
         setViewedTrip={action("setViewedTrip")}
+        showAgencyInfo={showAgencyInfo}
         showElevationProfile
         toRouteAbbreviation={r => r.toString().substr(0, 2)}
       />
@@ -71,6 +72,7 @@ class ItineraryBodyDefaultsWrapper extends Component {
         setActiveLeg={action("setActiveLeg")}
         setLegDiagram={this.setLegDiagram}
         setViewedTrip={action("setViewedTrip")}
+        showAgencyInfo={showAgencyInfo}
         showElevationProfile
         toRouteAbbreviation={r => r.toString().substr(0, 2)}
       />
@@ -80,10 +82,12 @@ class ItineraryBodyDefaultsWrapper extends Component {
 
 ItineraryBodyDefaultsWrapper.propTypes = {
   itinerary: itineraryType.isRequired,
+  showAgencyInfo: PropTypes.bool,
   useStyled: PropTypes.bool
 };
 
 ItineraryBodyDefaultsWrapper.defaultProps = {
+  showAgencyInfo: false,
   useStyled: false
 };
 
@@ -105,6 +109,15 @@ storiesOf("ItineraryBody", module)
       useStyled
     />
   ))
+  .add(
+    "ItineraryBody with walk-transit-walk itinerary with agency information",
+    () => (
+      <ItineraryBodyDefaultsWrapper
+        itinerary={walkTransitWalkItinerary}
+        showAgencyInfo
+      />
+    )
+  )
   .add("ItineraryBody with bike-transit-bike itinerary", () => (
     <ItineraryBodyDefaultsWrapper itinerary={bikeTransitBikeItinerary} />
   ))
