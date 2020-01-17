@@ -17,12 +17,12 @@
   },
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "dependencies": {
-    "@opentripplanner/core-utils": "^0.0.8",
+    "@opentripplanner/core-utils": "^0.0.10",
     "prop-types": "^15.7.2",
     "react-leaflet": "^2.6.1"
   },
   "peerDependencies": {
-    "@opentripplanner/base-map": "^0.0.8",
+    "@opentripplanner/base-map": "^0.0.10",
     "react": "^16.8.6"
   }
 }

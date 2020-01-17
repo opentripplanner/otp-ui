@@ -1,4 +1,6 @@
 import BaseMap from "@opentripplanner/base-map";
+import { leafletPathType } from "@opentripplanner/core-utils/lib/types";
+import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { action } from "@storybook/addon-actions";
 import { withA11y } from "@storybook/addon-a11y";
@@ -50,6 +52,7 @@ class Example extends Component {
   };
 
   render() {
+    const { stopMarkerPath, stopMarkerRadius } = this.props;
     const { stops } = this.state;
     return (
       <BaseMap center={center}>
@@ -59,6 +62,8 @@ class Example extends Component {
           refreshStops={this.refreshStops}
           setLocation={action("setLocation")}
           setViewedStop={action("setViewedStop")}
+          stopMarkerPath={stopMarkerPath}
+          stopMarkerRadius={stopMarkerRadius}
           stops={stops}
           visible
         />
@@ -67,7 +72,27 @@ class Example extends Component {
   }
 }
 
+Example.propTypes = {
+  stopMarkerPath: leafletPathType,
+  stopMarkerRadius: PropTypes.number
+};
+
+Example.defaultProps = {
+  stopMarkerPath: undefined,
+  stopMarkerRadius: undefined
+};
+
+const stopMarkerPath = {
+  color: "purple",
+  fillColor: "#00ff11",
+  fillOpacity: 1,
+  weight: 3
+};
+
 storiesOf("StopsOverlay", module)
   .addDecorator(withA11y)
   .addDecorator(withInfo)
-  .add("StopsOverlay", () => <Example />);
+  .add("StopsOverlay", () => <Example />)
+  .add("StopsOverlay with custom marker styling", () => (
+    <Example stopMarkerPath={stopMarkerPath} stopMarkerRadius={10} />
+  ));

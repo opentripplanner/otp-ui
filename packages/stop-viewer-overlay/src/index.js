@@ -1,3 +1,4 @@
+import { leafletPathType } from "@opentripplanner/core-utils/lib/types";
 import PropTypes from "prop-types";
 import React from "react";
 import {
@@ -32,20 +33,21 @@ class StopViewerOverlay extends MapLayer {
   updateLeafletElement() {}
 
   render() {
-    const { stopData } = this.props;
+    const { path, radius, stopData } = this.props;
+    const { color, fillColor, fillOpacity, weight } = path;
 
     if (!stopData) return <FeatureGroup />;
 
     return (
       <FeatureGroup>
         <CircleMarker
-          key={stopData.id}
           center={[stopData.lat, stopData.lon]}
-          radius={9}
-          fillOpacity={1}
-          fillColor="cyan"
-          color="#000"
-          weight={3}
+          color={color}
+          fillColor={fillColor}
+          fillOpacity={fillOpacity}
+          key={stopData.id}
+          radius={radius}
+          weight={weight}
         >
           <Popup>
             <div>{stopData.name}</div>
@@ -58,6 +60,17 @@ class StopViewerOverlay extends MapLayer {
 
 StopViewerOverlay.props = {
   /**
+   * Leaflet path properties to use to style the marker that represents the
+   * stop. Only a few of the path items are actually used.
+   *
+   * See https://leafletjs.com/reference-1.6.0.html#path
+   */
+  path: leafletPathType,
+  /**
+   * The radius in pixels for the stop marker
+   */
+  radius: PropTypes.number,
+  /**
    * An object representing a transit stop
    */
   stopData: PropTypes.shape({
@@ -66,6 +79,16 @@ StopViewerOverlay.props = {
     lon: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired
   })
+};
+
+StopViewerOverlay.defaultProps = {
+  path: {
+    color: "#000",
+    fillColor: "cyan",
+    fillOpacity: 1,
+    weight: 3
+  },
+  radius: 9
 };
 
 export default withLeaflet(StopViewerOverlay);

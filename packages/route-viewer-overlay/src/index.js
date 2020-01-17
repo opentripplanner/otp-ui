@@ -1,4 +1,7 @@
-import { encodedPolylineType } from "@opentripplanner/core-utils/lib/types";
+import {
+  encodedPolylineType,
+  leafletPathType
+} from "@opentripplanner/core-utils/lib/types";
 import PropTypes from "prop-types";
 import React from "react";
 import { FeatureGroup, MapLayer, Polyline, withLeaflet } from "react-leaflet";
@@ -80,16 +83,11 @@ class RouteViewerOverlay extends MapLayer {
 RouteViewerOverlay.propTypes = {
   /**
    * Leaflet path properties to use to style each polyline that represents a
-   * pattern of the route. This is a non-exclusive list of items that can be
-   * used to style a polyline.
+   * pattern of the route. Only a few of the items are actually used.
    *
    * See https://leafletjs.com/reference-1.6.0.html#path
    */
-  path: PropTypes.shape({
-    color: PropTypes.string,
-    opacity: PropTypes.number,
-    weight: PropTypes.number
-  }),
+  path: leafletPathType,
   /**
    * This represents data about a route as obtained from a transit index.
    * Typically a route has more data than these items, so this is only a list of

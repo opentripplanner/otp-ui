@@ -18,11 +18,23 @@ const stopData = {
   name: "Fake Stop"
 };
 
+const path = {
+  color: "purple",
+  fillColor: "#00ff11",
+  fillOpacity: 1,
+  weight: 5
+};
+
 storiesOf("StopViewerOverlay", module)
   .addDecorator(withA11y)
   .addDecorator(withInfo)
   .add("StopViewerOverlay", () => (
     <BaseMap center={center} zoom={zoom}>
       <StopViewerOverlay stopData={stopData} visible />
+    </BaseMap>
+  ))
+  .add("StopViewerOverlay with custom marker styling", () => (
+    <BaseMap center={center} zoom={zoom}>
+      <StopViewerOverlay path={path} radius={12} stopData={stopData} visible />
     </BaseMap>
   ));

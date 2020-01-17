@@ -21,7 +21,7 @@
     "@opentripplanner/from-to-location-picker": "^0.0.8"
   },
   "peerDependencies": {
-    "@opentripplanner/base-map": "^0.0.1",
+    "@opentripplanner/base-map": "^0.0.10",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-leaflet": "^2.6.1",

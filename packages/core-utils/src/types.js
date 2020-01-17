@@ -3,6 +3,21 @@ import { ReactPropTypeLocationNames } from "react";
 import { isValidLatLng } from "./map";
 
 /**
+ * Leaflet path properties to use to style each polyline that represents the
+ * trip. This is a non-exclusive list of items that can be used to style a
+ * polyline.
+ *
+ * See https://leafletjs.com/reference-1.6.0.html#path
+ */
+export const leafletPathType = PropTypes.shape({
+  color: PropTypes.string,
+  fillColor: PropTypes.string,
+  fillOpacity: PropTypes.number,
+  opacity: PropTypes.number,
+  weight: PropTypes.number
+});
+
+/**
  * Describes some options to help display data about a transit agency that is
  * configured in an opentripplanner instance.
  */
