@@ -49,23 +49,24 @@ class RouteViewerOverlay extends MapLayer {
   updateLeafletElement() {}
 
   render() {
-    const { path, routeData } = this.props;
-    const { color, opacity, weight } = path;
+    const { leafletPath, routeData } = this.props;
 
     if (!routeData || !routeData.patterns) return <FeatureGroup />;
 
-    const routeColor = routeData.color ? `#${routeData.color}` : color;
+    const routeColor = routeData.color
+      ? `#${routeData.color}`
+      : leafletPath.color;
     const segments = [];
     Object.values(routeData.patterns).forEach(pattern => {
       if (!pattern.geometry) return;
       const pts = polyline.decode(pattern.geometry.points);
       segments.push(
         <Polyline
+          /* eslint-disable-next-line react/jsx-props-no-spreading */
+          {...leafletPath}
           color={routeColor}
           key={pattern.id}
-          opacity={opacity}
           positions={pts}
-          weight={weight}
         />
       );
     });
