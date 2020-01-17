@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "dependencies": {
-    "@opentripplanner/core-utils": "^0.0.8",
+    "@opentripplanner/core-utils": "^0.0.10",
     "@opentripplanner/location-icon": "^0.0.7",
     "prop-types": "^15.7.2",
     "react-leaflet": "^2.6.1",

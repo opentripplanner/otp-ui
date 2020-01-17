@@ -17,9 +17,9 @@
   },
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "dependencies": {
-    "@opentripplanner/core-utils": "^0.0.8",
+    "@opentripplanner/core-utils": "^0.0.10",
+    "@opentripplanner/icons": "^0.0.10",
     "lodash.isequal": "^4.5.0",
-    "prop-types": "^15.7.2",
     "react-leaflet": "^2.6.1",
     "transitive-js": "^0.13.0"
   },
@@ -29,6 +29,6 @@
   },
   "devDependencies": {
     "@opentripplanner/endpoints-overlay": "^0.0.1",
-    "@opentripplanner/itinerary-body": "^0.0.8"
+    "@opentripplanner/itinerary-body": "^0.0.10"
   }
 }

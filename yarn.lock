@@ -2836,42 +2836,6 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@opentripplanner/core-utils@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-0.0.8.tgz#7b8ff5924382ecded2b09b72cd8cb9666d11727c"
-  integrity sha512-yuGhg8VG31meysAH8iz2Opt+yCxAP/rvUzdG/axN2X84JZmu1+dbNO17IaR5cw1Zz5mUzW5tI+FOjGXQpcTLGA==
-  dependencies:
-    "@mapbox/polyline" "^1.1.0"
-    "@turf/along" "^6.0.1"
-    bowser "^2.7.0"
-    moment "^2.24.0"
-    moment-timezone "^0.5.27"
-    prop-types "^15.7.2"
-    qs "^6.9.1"
-
-"@opentripplanner/icons@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/icons/-/icons-0.0.8.tgz#291a23fd01703c254420a3cc1f3471843c5fe295"
-  integrity sha512-wHnSFNix+CulZ9UCWKX1ARF06f8TaBjE23mSkrpyUEh1pFK1FCn3vn+rlhd6QlQb+gWoNsJMQkr6UVoUty/cdQ==
-  dependencies:
-    "@opentripplanner/core-utils" "^0.0.8"
-    prop-types "^15.7.2"
-
-"@opentripplanner/itinerary-body@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/itinerary-body/-/itinerary-body-0.0.8.tgz#a91e4f023a872329bef37fef33ecbd5de924a865"
-  integrity sha512-JJqWGOM+B/TIN40c85YvomVsTcMDuWHNz/Ke2iY1sey1g7CG/Ay2Qk5Y4Wz++6DZ1BoS7VIuXlIYVwAPTiBj3A==
-  dependencies:
-    "@opentripplanner/core-utils" "^0.0.8"
-    "@opentripplanner/humanize-distance" "^0.0.8"
-    "@opentripplanner/icons" "^0.0.8"
-    "@opentripplanner/location-icon" "^0.0.7"
-    currency-formatter "^1.5.5"
-    moment "^2.24.0"
-    prop-types "^15.7.2"
-    react-resize-detector "^4.2.1"
-    velocity-react "^1.4.3"
-
 "@reach/router@^1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@reach/router/-/router-1.2.1.tgz#34ae3541a5ac44fa7796e5506a5d7274a162be4e"
