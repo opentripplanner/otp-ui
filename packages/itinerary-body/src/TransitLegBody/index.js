@@ -10,8 +10,7 @@ import { VelocityTransitionGroup } from "velocity-react";
 
 import { formatDuration } from "@opentripplanner/core-utils/lib/time";
 
-import * as Styled from "./styled";
-import * as StyledLegs from "../styled-legs";
+import * as Styled from "../styled";
 import ViewTripButton from "./view-trip-button";
 
 // TODO use pluralize that for internationalization (and complex plurals, i.e., not just adding 's')
@@ -77,10 +76,10 @@ class TransitLegBody extends Component {
     // }
 
     return (
-      <StyledLegs.LegBody>
+      <Styled.LegBody>
         {/* The Route Icon/Name Bar; clickable to set as active leg */}
         {/* eslint-disable-next-line */}
-        <StyledLegs.LegClickable onClick={this.onSummaryClick}>
+        <Styled.LegClickable onClick={this.onSummaryClick}>
           <div className="route-name leg-description">
             {routeShortName && (
               <div>
@@ -97,7 +96,7 @@ class TransitLegBody extends Component {
               )}
             </div>
           </div>
-        </StyledLegs.LegClickable>
+        </Styled.LegClickable>
 
         {/* Agency information */}
         {
@@ -122,7 +121,7 @@ class TransitLegBody extends Component {
           <Styled.TransitAlertToggle onClick={this.onToggleAlertsClick}>
             <ExclamationTriangle size={15} /> {alerts.length}{" "}
             {pluralize("alert", alerts)}{" "}
-            <StyledLegs.CaretToggle expanded={alertsExpanded} />
+            <Styled.CaretToggle expanded={alertsExpanded} />
           </Styled.TransitAlertToggle>
         )}
 
@@ -151,7 +150,7 @@ class TransitLegBody extends Component {
                   {" / "}
                   {leg.intermediateStops.length + 1}
                   {" stops "}
-                  <StyledLegs.CaretToggle expanded={stopsExpanded} />
+                  <Styled.CaretToggle expanded={stopsExpanded} />
                 </span>
               )}
 
@@ -179,7 +178,7 @@ class TransitLegBody extends Component {
             )}
           </div>
         )}
-      </StyledLegs.LegBody>
+      </Styled.LegBody>
     );
   }
 }

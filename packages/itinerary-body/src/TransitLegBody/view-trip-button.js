@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import * as Styled from "./styled";
+import * as Styled from "../styled";
 
 class ViewTripButton extends Component {
   onClick = () => {

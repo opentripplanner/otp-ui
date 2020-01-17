@@ -15,7 +15,6 @@ import {
 import LocationIcon from "@opentripplanner/location-icon";
 
 import * as Styled from "./styled";
-import * as StyledLegs from "./styled-legs";
 import AccessLegBody from "./AccessLegBody";
 import TransitLegBody from "./TransitLegBody";
 import RouteBadge from "./RouteBadge";
@@ -39,9 +38,9 @@ function RentedVehicleLeg({ config, leg }) {
   // ways that forbid the main mode of travel.
   if (leg.mode === "WALK") {
     return (
-      <StyledLegs.PlaceSubheader>
+      <Styled.PlaceSubheader>
         Walk vehicle along {leg.from.name}
-      </StyledLegs.PlaceSubheader>
+      </Styled.PlaceSubheader>
     );
   }
 
@@ -85,9 +84,7 @@ function RentedVehicleLeg({ config, leg }) {
   // e.g., Pick up REACHNOW rented car XYZNDB OR
   //       Pick up SPIN E-scooter
   //       Pick up shared bike
-  return (
-    <StyledLegs.PlaceSubheader>{rentalDescription}</StyledLegs.PlaceSubheader>
-  );
+  return <Styled.PlaceSubheader>{rentalDescription}</Styled.PlaceSubheader>;
 }
 
 RentedVehicleLeg.propTypes = {
