@@ -1,12 +1,15 @@
 import { itineraryType } from "@opentripplanner/core-utils/lib/types";
 import TriMetLegIcon from "@opentripplanner/icons/lib/trimet-leg-icon";
+import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { storiesOf } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
 import { withInfo } from "@storybook/addon-info";
 import { action } from "@storybook/addon-actions";
+import styled from "styled-components";
 
 import ItineraryBody from ".";
+import * as ItineraryBodyClasses from "./styled";
 
 const config = require("./__mocks__/config.json");
 
@@ -24,6 +27,12 @@ const walkOnlyItinerary = require("./__mocks__/itineraries/walk-only.json");
 const walkTransitWalkItinerary = require("./__mocks__/itineraries/walk-transit-walk.json");
 const walkTransitWalkTransitWalkItinerary = require("./__mocks__/itineraries/walk-transit-walk-transit-walk.json");
 
+const StyledItineraryBody = styled(ItineraryBody)`
+  ${ItineraryBodyClasses.LegBody} {
+    background-color: pink;
+  }
+`;
+
 class ItineraryBodyDefaultsWrapper extends Component {
   constructor() {
     super();
@@ -35,9 +44,23 @@ class ItineraryBodyDefaultsWrapper extends Component {
   };
 
   render() {
-    const { itinerary } = this.props;
+    const { itinerary, useStyled } = this.props;
     const { diagramVisible } = this.state;
-    return (
+    return useStyled ? (
+      <StyledItineraryBody
+        config={config}
+        diagramVisible={diagramVisible}
+        frameLeg={action("frameLeg")}
+        itinerary={itinerary}
+        LegIcon={TriMetLegIcon}
+        routingType="ITINERARY"
+        setActiveLeg={action("setActiveLeg")}
+        setLegDiagram={this.setLegDiagram}
+        setViewedTrip={action("setViewedTrip")}
+        showElevationProfile
+        toRouteAbbreviation={r => r.toString().substr(0, 2)}
+      />
+    ) : (
       <ItineraryBody
         config={config}
         diagramVisible={diagramVisible}
@@ -56,7 +79,12 @@ class ItineraryBodyDefaultsWrapper extends Component {
 }
 
 ItineraryBodyDefaultsWrapper.propTypes = {
-  itinerary: itineraryType.isRequired
+  itinerary: itineraryType.isRequired,
+  useStyled: PropTypes.bool
+};
+
+ItineraryBodyDefaultsWrapper.defaultProps = {
+  useStyled: false
 };
 
 storiesOf("ItineraryBody", module)
@@ -70,6 +98,12 @@ storiesOf("ItineraryBody", module)
   ))
   .add("ItineraryBody with walk-transit-walk itinerary", () => (
     <ItineraryBodyDefaultsWrapper itinerary={walkTransitWalkItinerary} />
+  ))
+  .add("Styled ItineraryBody with walk-transit-walk itinerary", () => (
+    <ItineraryBodyDefaultsWrapper
+      itinerary={walkTransitWalkItinerary}
+      useStyled
+    />
   ))
   .add("ItineraryBody with bike-transit-bike itinerary", () => (
     <ItineraryBodyDefaultsWrapper itinerary={bikeTransitBikeItinerary} />
