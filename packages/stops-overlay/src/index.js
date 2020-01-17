@@ -8,6 +8,9 @@ import { FeatureGroup, MapLayer, withLeaflet } from "react-leaflet";
 
 import StopMarker, { stopLayerStopType } from "./stop-marker";
 
+/**
+ * An overlay to view a collection of stops.
+ */
 class StopsOverlay extends MapLayer {
   componentDidMount() {
     // set up pan/zoom listener

@@ -9,6 +9,10 @@ import {
   withLeaflet
 } from "react-leaflet";
 
+/**
+ * This overlay is intended to highlight a specific stop on a map typically in
+ * conjunction with some kind of stop viewer.
+ */
 class StopViewerOverlay extends MapLayer {
   componentDidMount() {}
 
