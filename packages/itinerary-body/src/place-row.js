@@ -53,8 +53,12 @@ function DefaultPlaceName({ config, interline, place }) {
 
 DefaultPlaceName.propTypes = {
   config: configType.isRequired,
-  interline: PropTypes.bool.isRequired,
+  interline: PropTypes.bool,
   place: placeType.isRequired
+};
+
+DefaultPlaceName.defaultProps = {
+  interline: false
 };
 
 /**
