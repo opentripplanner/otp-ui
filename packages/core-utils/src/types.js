@@ -27,7 +27,7 @@ export const languageConfigType = PropTypes.shape({
   stopViewer: PropTypes.string
 });
 
-export const mapSymbolsType = PropTypes.arrayOf(
+export const vehicleRentalMapOverlaySymbolsType = PropTypes.arrayOf(
   PropTypes.shape({
     dockStrokeColor: PropTypes.string,
     fillColor: PropTypes.string,
@@ -64,7 +64,7 @@ export const configType = PropTypes.shape({
          * The applicable map symbols. Only applicable in vehicle rental
          * overlays.
          */
-        mapSymbols: mapSymbolsType,
+        mapSymbols: vehicleRentalMapOverlaySymbolsType,
         /**
          * Only used during park and ride queries. This will filter out P&Rs
          * that are futher than the specified number of meters from a transit
