@@ -23,10 +23,11 @@ storiesOf("TripViewerOverlay", module)
   .add("TripViewerOverlay with path styling", () => (
     <BaseMap center={center} zoom={zoom}>
       <TripViewerOverlay
-        path={{
+        leafletPath={{
           color: "#000",
+          dashArray: "2 3 5 7 11",
           opacity: 0.2,
-          weight: 20
+          weight: 5
         }}
         tripData={tripData}
         visible

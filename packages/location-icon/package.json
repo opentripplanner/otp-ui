@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "styled-icons": "^9.0.1"
+    "styled-icons": "^9.1.0"
   },
   "peerDependencies": {
     "react": "^16.8.6",

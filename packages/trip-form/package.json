@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/trip-form",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Trip Settings Form and Related Components",
   "author": "@binh-dam-ibigroup",
   "homepage": "https://github.com/opentripplanner/otp-ui/#readme",
@@ -9,11 +9,9 @@
   "module": "src/index.js",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^0.0.9",
-    "@opentripplanner/icons": "^0.0.9"
-  },
-  "publishConfig": {
-    "registry": "https://registry.yarnpkg.com"
+    "moment": "^2.17.1",
+    "@opentripplanner/core-utils": "^0.0.10",
+    "@opentripplanner/icons": "^0.0.10"
   },
   "repository": {
     "type": "git",
@@ -24,5 +22,6 @@
   },
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"
-  }
+  },
+  "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"
 }
