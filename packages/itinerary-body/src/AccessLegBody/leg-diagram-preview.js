@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import React, { Component } from "react";
 import ReactResizeDetector from "react-resize-detector";
 
-import * as Styled from "./styled";
+import * as Styled from "../styled";
 
 const METERS_TO_FEET = 3.28084;
 

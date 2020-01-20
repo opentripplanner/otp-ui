@@ -23,8 +23,7 @@ import PropTypes from "prop-types";
 import { VelocityTransitionGroup } from "velocity-react";
 
 import LegDiagramPreview from "./leg-diagram-preview";
-import * as Styled from "./styled";
-import * as StyledLegs from "../styled-legs";
+import * as Styled from "../styled";
 
 /**
  * Component for access (e.g. walk/bike/etc.) leg in narrative itinerary. This
@@ -75,7 +74,7 @@ export default class AccessLegBody extends Component {
     }
 
     return (
-      <StyledLegs.LegBody>
+      <Styled.LegBody>
         <AccessLegSummary
           config={config}
           leg={leg}
@@ -87,7 +86,7 @@ export default class AccessLegBody extends Component {
           {leg.steps && (
             <span>
               {" "}
-              <StyledLegs.CaretToggle expanded />
+              <Styled.CaretToggle expanded />
             </span>
           )}
         </Styled.StepsHeader>
@@ -106,7 +105,7 @@ export default class AccessLegBody extends Component {
         >
           {expanded && <AccessLegSteps steps={leg.steps} />}
         </VelocityTransitionGroup>
-      </StyledLegs.LegBody>
+      </Styled.LegBody>
     );
   }
 }
@@ -163,15 +162,15 @@ function TNCLeg({
   if (!tncData || !tncData.estimatedArrival) return null;
   return (
     <div>
-      <StyledLegs.PlaceSubheader>
+      <Styled.PlaceSubheader>
         Wait{" "}
         {!followsTransit && (
           <span>{Math.round(tncData.estimatedArrival / 60)} minutes </span>
         )}
         for {tncData.displayName} pickup
-      </StyledLegs.PlaceSubheader>
+      </Styled.PlaceSubheader>
 
-      <StyledLegs.LegBody>
+      <Styled.LegBody>
         {/* The icon/summary row */}
         <AccessLegSummary
           config={config}
@@ -222,7 +221,7 @@ function TNCLeg({
             })}`}
           </p>
         )}
-      </StyledLegs.LegBody>
+      </Styled.LegBody>
     </div>
   );
 }
@@ -246,7 +245,7 @@ TNCLeg.defaultProps = {
 
 function AccessLegSummary({ config, leg, /* LegIcon, */ onSummaryClick }) {
   return (
-    <StyledLegs.LegClickable onClick={onSummaryClick}>
+    <Styled.LegClickable onClick={onSummaryClick}>
       {/* Mode-specific icon
       <div>
         <Styled.LegIconContainer>
@@ -262,7 +261,7 @@ function AccessLegSummary({ config, leg, /* LegIcon, */ onSummaryClick }) {
         )}
         {` to ${getPlaceName(leg.to, config.companies)}`}
       </div>
-    </StyledLegs.LegClickable>
+    </Styled.LegClickable>
   );
 }
 

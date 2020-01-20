@@ -13,6 +13,7 @@
     "@babel/preset-react": "^7.0.0",
     "@storybook/addon-a11y": "^5.2.8",
     "@storybook/addon-actions": "^5.2.8",
+    "@storybook/addon-knobs": "^5.2.8",
     "@storybook/addon-info": "^5.2.8",
     "@storybook/addon-storysource": "^5.1.9",
     "@storybook/addon-viewport": "^5.2.8",
@@ -23,6 +24,7 @@
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.0",
+    "core-js": "2",
     "eslint": "6.1.0",
     "eslint-config-airbnb": "18.0.1",
     "eslint-config-prettier": "^4.3.0",
@@ -96,6 +98,14 @@
           ]
         }
       ],
+      "react/prop-types": [
+        2,
+        {
+          "ignore": [
+            "style"
+          ]
+        }
+      ],
       "node/no-extraneous-import": "off",
       "import/no-extraneous-dependencies": "off",
       "import/no-unresolved": "off"
@@ -113,7 +123,10 @@
       "stylelint-config-recommended",
       "stylelint-config-styled-components",
       "stylelint-prettier/recommended"
-    ]
+    ],
+    "rules": {
+      "property-no-vendor-prefix": null
+    }
   },
   "husky": {
     "hooks": {

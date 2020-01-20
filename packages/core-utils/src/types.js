@@ -3,6 +3,29 @@ import { ReactPropTypeLocationNames } from "react";
 import { isValidLatLng } from "./map";
 
 /**
+ * Leaflet path properties to use to style a CircleMarker, Marker or Polyline.
+ *
+ * See https://leafletjs.com/reference-1.6.0.html#path
+ */
+export const leafletPathType = PropTypes.shape({
+  bubblingMouseEvents: PropTypes.bool,
+  color: PropTypes.string,
+  className: PropTypes.string,
+  dashArray: PropTypes.string,
+  dashOffset: PropTypes.string,
+  fill: PropTypes.bool,
+  fillColor: PropTypes.string,
+  fillOpacity: PropTypes.number,
+  fillRule: PropTypes.string,
+  lineCap: PropTypes.string,
+  lineJoin: PropTypes.string,
+  opacity: PropTypes.number,
+  renderer: PropTypes.func,
+  stroke: PropTypes.bool,
+  weight: PropTypes.number
+});
+
+/**
  * Describes some options to help display data about a transit agency that is
  * configured in an opentripplanner instance.
  */
@@ -45,7 +68,7 @@ const feedScopedIdType = PropTypes.shape({
   id: PropTypes.string
 });
 
-const encodedPolylineType = PropTypes.shape({
+export const encodedPolylineType = PropTypes.shape({
   length: PropTypes.number.isRequired,
   points: PropTypes.string.isRequired
 });
@@ -85,7 +108,7 @@ export const stepsType = PropTypes.arrayOf(
   })
 );
 
-const placeType = PropTypes.shape({
+export const placeType = PropTypes.shape({
   arrival: PropTypes.number,
   departure: PropTypes.number,
   lat: PropTypes.number.isRequired,
@@ -205,6 +228,20 @@ export const itineraryType = PropTypes.shape({
 });
 
 /**
+ * Used to model a location that is used in planning a trip.
+ */
+export const locationType = PropTypes.shape({
+  lat: PropTypes.number.isRequired,
+  lon: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  /**
+   * This is only used location that a user has saved. Can be either:
+   * "home" or "work"
+   */
+  type: PropTypes.string
+});
+
+/**
  * Used to help display the time of day within the context of a particular itinerary.
  */
 export const timeOptionsType = PropTypes.shape({
@@ -243,6 +280,81 @@ export const transitIndexStopWithRoutes = PropTypes.shape({
   )
 });
 
+const transitivePlaceType = PropTypes.shape({
+  place_id: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired
+});
+
+export const transitiveDataType = PropTypes.shape({
+  journeys: PropTypes.arrayOf(
+    PropTypes.shape({
+      journey_id: PropTypes.string.isRequired,
+      journey_name: PropTypes.string.isRequired,
+      segments: PropTypes.arrayOf(
+        PropTypes.shape({
+          arc: PropTypes.bool,
+          from: transitivePlaceType,
+          patterns: PropTypes.arrayOf(
+            PropTypes.shape({
+              pattern_id: PropTypes.string.isRequired,
+              from_stop_index: PropTypes.number.isRequired,
+              to_stop_index: PropTypes.number.isRequired
+            })
+          ),
+          streetEdges: PropTypes.arrayOf(PropTypes.number),
+          to: transitivePlaceType,
+          type: PropTypes.string.isRequired
+        })
+      ).isRequired
+    })
+  ).isRequired,
+  patterns: PropTypes.arrayOf(
+    PropTypes.shape({
+      pattern_id: PropTypes.string.isRequired,
+      pattern_name: PropTypes.string.isRequired,
+      route_id: PropTypes.string.isRequired,
+      stops: PropTypes.arrayOf(
+        PropTypes.shape({
+          geometry: PropTypes.string,
+          stop_id: PropTypes.string.isRequired
+        })
+      ).isRequired
+    })
+  ).isRequired,
+  places: PropTypes.arrayOf(
+    PropTypes.shape({
+      place_id: PropTypes.string.isRequired,
+      place_lat: PropTypes.number.isRequired,
+      place_lon: PropTypes.number.isRequired,
+      place_name: PropTypes.string
+    })
+  ).isRequired,
+  routes: PropTypes.arrayOf(
+    PropTypes.shape({
+      agency_id: PropTypes.string.isRequired,
+      route_id: PropTypes.string.isRequired,
+      route_short_name: PropTypes.string.isRequired,
+      route_long_name: PropTypes.string.isRequired,
+      route_type: PropTypes.number.isRequired,
+      route_color: PropTypes.string
+    })
+  ).isRequired,
+  stops: PropTypes.arrayOf(
+    PropTypes.shape({
+      stop_id: PropTypes.string.isRequired,
+      stop_name: PropTypes.string.isRequired,
+      stop_lat: PropTypes.number.isRequired,
+      stop_lon: PropTypes.number.isRequired
+    })
+  ).isRequired,
+  streetEdges: PropTypes.arrayOf(
+    PropTypes.shape({
+      edge_id: PropTypes.number.isRequired,
+      geometry: encodedPolylineType
+    })
+  ).isRequired
+});
+
 /**
  * Utility function to help create chained validators
  * per https://www.ian-thomas.net/custom-proptype-validation-with-react/
@@ -275,4 +387,101 @@ export const latlngType = createChainableTypeChecker((props, propName) => {
     return new Error(`${propName} needs to be a [lat, lng] array`);
   }
   return null;
+});
+
+export const modeOptionType = PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  selected: PropTypes.bool,
+  showTitle: PropTypes.bool,
+  text: PropTypes.node.isRequired,
+  title: PropTypes.string
+});
+
+export const modeSelectorOptionsType = PropTypes.shape({
+  primary: modeOptionType,
+  secondary: PropTypes.arrayOf(modeOptionType),
+  tertiary: PropTypes.arrayOf(modeOptionType)
+});
+
+export const queryType = PropTypes.shape({
+  from: PropTypes.string,
+  to: PropTypes.string,
+  date: PropTypes.string,
+  time: PropTypes.string,
+  departArrive: PropTypes.string,
+  startTime: PropTypes.string,
+  endTime: PropTypes.string,
+  mode: PropTypes.string,
+  showIntermediateStops: PropTypes.bool,
+  maxWalkDistance: PropTypes.number,
+  maxBikeDistance: PropTypes.number,
+  optimize: PropTypes.string,
+  optimizeBike: PropTypes.string,
+  maxWalkTime: PropTypes.number,
+  walkSpeed: PropTypes.number,
+  maxBikeTime: PropTypes.number,
+  bikeSpeed: PropTypes.number,
+  maxEScooterDistance: PropTypes.number,
+  watts: PropTypes.number,
+  ignoreRealtimeUpdates: PropTypes.bool,
+  companies: PropTypes.string,
+  wheelchair: PropTypes.bool
+});
+
+export const configuredModeType = PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.shape({
+    mode: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    company: PropTypes.string
+  })
+]);
+
+export const configuredModesType = PropTypes.shape({
+  transitModes: PropTypes.arrayOf(configuredModeType),
+  accessModes: PropTypes.arrayOf(configuredModeType),
+  exclusiveModes: PropTypes.arrayOf(configuredModeType),
+  bicycleModes: PropTypes.arrayOf(configuredModeType),
+  micromobilityModes: PropTypes.arrayOf(configuredModeType)
+});
+
+export const configuredCompanyType = PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  modes: PropTypes.string.isRequired
+});
+
+/**
+ * Depending on the geocoder that is used, more properties than just the `label`
+ * property might be provided by the geocoder. For example, with the Pelias
+ * geocoder, properties such as `id`, `layer`, `source` are also included.
+ */
+export const geocodedFeatureType = PropTypes.shape({
+  geometry: PropTypes.shape({
+    coordinates: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired,
+    type: PropTypes.string.isRequired
+  }).isRequired,
+  properties: PropTypes.shape({
+    label: PropTypes.string.isRequired
+  }).isRequired
+});
+
+export const userLocationType = PropTypes.shape({
+  id: PropTypes.string,
+  /**
+   * Can be either 'home', 'work', or null
+   */
+  icon: PropTypes.string,
+  lat: PropTypes.number.isRequired,
+  lon: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  /**
+   * This represents the last time that this location was selected in a
+   * search
+   */
+  timestamp: PropTypes.number,
+  /**
+   * One of: 'home', 'work', 'stop' or 'recent'
+   */
+  type: PropTypes.string.isRequired
 });

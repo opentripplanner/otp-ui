@@ -10,14 +10,34 @@ import { VelocityTransitionGroup } from "velocity-react";
 
 import { formatDuration } from "@opentripplanner/core-utils/lib/time";
 
-import * as Styled from "./styled";
-import * as StyledLegs from "../styled-legs";
+import * as Styled from "../styled";
 import ViewTripButton from "./view-trip-button";
 
 // TODO use pluralize that for internationalization (and complex plurals, i.e., not just adding 's')
 function pluralize(str, list) {
   return `${str}${list.length > 1 ? "s" : ""}`;
 }
+
+function DefaultTransitLegSummary({ leg, stopsExpanded }) {
+  return (
+    <>
+      {leg.duration && <span>Ride {formatDuration(leg.duration)}</span>}
+      {leg.intermediateStops && (
+        <span>
+          {" / "}
+          {leg.intermediateStops.length + 1}
+          {" stops "}
+          <Styled.CaretToggle expanded={stopsExpanded} />
+        </span>
+      )}
+    </>
+  );
+}
+
+DefaultTransitLegSummary.propTypes = {
+  leg: legType.isRequired,
+  stopsExpanded: PropTypes.bool.isRequired
+};
 
 class TransitLegBody extends Component {
   constructor(props) {
@@ -48,7 +68,9 @@ class TransitLegBody extends Component {
       leg,
       longDateFormat,
       setViewedTrip,
+      showAgencyInfo,
       timeFormat,
+      TransitLegSummary,
       transitOperator
     } = this.props;
     const {
@@ -69,18 +91,14 @@ class TransitLegBody extends Component {
         ? transitOperator.logo
         : agencyBrandingUrl;
 
-    // get the iconKey for the leg's icon
-    // let iconKey = mode;
-    // if (typeof customIcons.customIconForLeg === "function") {
-    //   const customIcon = customIcons.customIconForLeg(leg);
-    //   if (customIcon) iconKey = customIcon;
-    // }
+    const expandAlerts =
+      alertsExpanded || (leg.alerts && leg.alerts.length < 3);
 
     return (
-      <StyledLegs.LegBody>
+      <Styled.LegBody>
         {/* The Route Icon/Name Bar; clickable to set as active leg */}
         {/* eslint-disable-next-line */}
-        <StyledLegs.LegClickable onClick={this.onSummaryClick}>
+        <Styled.LegClickable onClick={this.onSummaryClick}>
           <div className="route-name leg-description">
             {routeShortName && (
               <div>
@@ -97,10 +115,10 @@ class TransitLegBody extends Component {
               )}
             </div>
           </div>
-        </StyledLegs.LegClickable>
+        </Styled.LegClickable>
 
         {/* Agency information */}
-        {
+        {showAgencyInfo && (
           <Styled.AgencyInfo>
             Service operated by{" "}
             <a href={agencyUrl} rel="noopener noreferrer" target="_blank">
@@ -115,14 +133,14 @@ class TransitLegBody extends Component {
               )}
             </a>
           </Styled.AgencyInfo>
-        }
+        )}
 
         {/* Alerts toggle */}
-        {alerts && alerts.length > 0 && (
+        {alerts && alerts.length > 2 && (
           <Styled.TransitAlertToggle onClick={this.onToggleAlertsClick}>
             <ExclamationTriangle size={15} /> {alerts.length}{" "}
             {pluralize("alert", alerts)}{" "}
-            <StyledLegs.CaretToggle expanded={alertsExpanded} />
+            <Styled.CaretToggle expanded={alertsExpanded} />
           </Styled.TransitAlertToggle>
         )}
 
@@ -131,7 +149,7 @@ class TransitLegBody extends Component {
           enter={{ animation: "slideDown" }}
           leave={{ animation: "slideUp" }}
         >
-          {alertsExpanded && (
+          {expandAlerts && (
             <AlertsBody
               alerts={leg.alerts}
               longDateFormat={longDateFormat}
@@ -141,19 +159,10 @@ class TransitLegBody extends Component {
         </VelocityTransitionGroup>
         {/* The "Ride X Min / X Stops" Row, including IntermediateStops body */}
         {leg.intermediateStops && leg.intermediateStops.length > 0 && (
-          <div className="transit-leg-details">
+          <Styled.TransitLegDetails>
             {/* The header summary row, clickable to expand intermediate stops */}
-            {/* eslint-disable-next-line */}
-            <div onClick={this.onToggleStopsClick} className="header">
-              {leg.duration && <span>Ride {formatDuration(leg.duration)}</span>}
-              {leg.intermediateStops && (
-                <span>
-                  {" / "}
-                  {leg.intermediateStops.length + 1}
-                  {" stops "}
-                  <StyledLegs.CaretToggle expanded={stopsExpanded} />
-                </span>
-              )}
+            <Styled.TransitLegDetailsHeader onClick={this.onToggleStopsClick}>
+              <TransitLegSummary leg={leg} stopsExpanded={stopsExpanded} />
 
               {/* The ViewTripButton. TODO: make configurable */}
               <ViewTripButton
@@ -162,7 +171,7 @@ class TransitLegBody extends Component {
                 setViewedTrip={setViewedTrip}
                 toIndex={leg.to.stopIndex}
               />
-            </div>
+            </Styled.TransitLegDetailsHeader>
             {/* IntermediateStops expanded body */}
             <VelocityTransitionGroup
               enter={{ animation: "slideDown" }}
@@ -177,9 +186,9 @@ class TransitLegBody extends Component {
             {leg.averageWait && (
               <span>Typical Wait: {formatDuration(leg.averageWait)}</span>
             )}
-          </div>
+          </Styled.TransitLegDetails>
         )}
-      </StyledLegs.LegBody>
+      </Styled.LegBody>
     );
   }
 }
@@ -190,11 +199,14 @@ TransitLegBody.propTypes = {
   longDateFormat: PropTypes.string.isRequired,
   setActiveLeg: PropTypes.func.isRequired,
   setViewedTrip: PropTypes.func.isRequired,
+  showAgencyInfo: PropTypes.bool.isRequired,
   timeFormat: PropTypes.string.isRequired,
+  TransitLegSummary: PropTypes.elementType,
   transitOperator: transitOperatorType
 };
 
 TransitLegBody.defaultProps = {
+  TransitLegSummary: DefaultTransitLegSummary,
   transitOperator: null
 };
 
@@ -239,7 +251,7 @@ function AlertsBody({ alerts, longDateFormat, timeFormat }) {
           );
           const effectiveDateString = `Effective as of ${dateTimeString}`;
           return (
-            <Styled.TransitAlert key={i}>
+            <Styled.TransitAlert key={i} href={alert.alertUrl}>
               <Styled.TransitAlertIconContainer>
                 <ExclamationTriangle size={18} />
               </Styled.TransitAlertIconContainer>

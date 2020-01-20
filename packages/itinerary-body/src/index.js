@@ -4,29 +4,29 @@ import {
   legType,
   timeOptionsType
 } from "@opentripplanner/core-utils/lib/types";
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 
 import PlaceRow from "./place-row";
-// import TripDetails from "./TripDetails";
-// import TripTools from "./TripTools";
 import * as Styled from "./styled";
 
 const ItineraryBody = ({
+  LegIcon,
+  className,
   config,
   diagramVisible,
+  frameLeg,
   itinerary,
-  LegIcon,
+  PlaceName,
+  routingType,
   setActiveLeg,
   setLegDiagram,
   setViewedTrip,
+  showAgencyInfo,
   showElevationProfile,
   timeOptions,
-  routingType,
-  frameLeg,
-  toRouteAbbreviation // ,
-  // showTripDetails,
-  // showTripTools
+  toRouteAbbreviation,
+  TransitLegSummary
 }) => {
   /*
     TODO: replace component should update logic? companies is simply used to
@@ -49,14 +49,17 @@ const ItineraryBody = ({
         LegIcon={LegIcon}
         legIndex={i}
         place={leg.from}
+        PlaceName={PlaceName}
         routingType={routingType}
         setActiveLeg={setActiveLeg}
         setLegDiagram={setLegDiagram}
         setViewedTrip={setViewedTrip}
+        showAgencyInfo={showAgencyInfo}
         showElevationProfile={showElevationProfile}
         time={leg.startTime}
         timeOptions={timeOptions}
         toRouteAbbreviation={toRouteAbbreviation}
+        TransitLegSummary={TransitLegSummary}
       />
     );
     // TODO: reconcile special props for lastrow
@@ -71,30 +74,32 @@ const ItineraryBody = ({
           frameLeg={frameLeg}
           LegIcon={LegIcon}
           place={leg.to}
+          PlaceName={PlaceName}
           routingType={routingType}
           setActiveLeg={setActiveLeg}
           setLegDiagram={setLegDiagram}
           setViewedTrip={setViewedTrip}
+          showAgencyInfo={showAgencyInfo}
           showElevationProfile={showElevationProfile}
           time={leg.endTime}
           timeOptions={timeOptions}
           toRouteAbbreviation={toRouteAbbreviation}
+          TransitLegSummary={TransitLegSummary}
         />
       );
     }
     if (leg.transitLeg) followsTransit = true;
   });
   return (
-    <Styled.ItineraryBody>
-      {rows}
-      {/* TODO: Reincorporate these components as required by TORA project */}
-      {/* showTripDetails && <TripDetails itinerary={itinerary} /> */}
-      {/* showTripTools && <TripTools itinerary={itinerary} /> */}
-    </Styled.ItineraryBody>
+    <Styled.ItineraryBody className={className}>{rows}</Styled.ItineraryBody>
   );
 };
 
 ItineraryBody.propTypes = {
+  /**
+   * Used for additional styling with styled components for example.
+   */
+  className: PropTypes.string,
   /** Contains OTP configuration details. */
   config: configType.isRequired,
   /**
@@ -108,6 +113,17 @@ ItineraryBody.propTypes = {
   itinerary: itineraryType.isRequired,
   /** A component class that is used to render icons for legs of an itinerary */
   LegIcon: PropTypes.elementType.isRequired,
+  /**
+   * An optional custom component for rendering the place name of legs.
+   * The component is sent 3 props:
+   * - config: the application config
+   * - interline: whether this place is an interlined stop (a stop where a
+   *   transit vehicle changes routes, but a rider can continue riding without
+   *   deboarding)
+   * - place: the particular place. Typically this is the from place, but it
+   *   could also be the to place if it is the destination of the itinerary.
+   */
+  PlaceName: PropTypes.elementType,
   /** TODO: Routing Type is usually 'ITINERARY' but we should get more details on what this does */
   routingType: PropTypes.string,
   /**
@@ -119,23 +135,32 @@ ItineraryBody.propTypes = {
   setLegDiagram: PropTypes.func.isRequired,
   /** Fired when a user clicks on a view trip button of a transit leg */
   setViewedTrip: PropTypes.func.isRequired,
+  /** If true, will show agency information in transit legs */
+  showAgencyInfo: PropTypes.bool,
   /** If true, will show the elevation profile for walk/bike legs */
   showElevationProfile: PropTypes.bool,
   /** Contains the preferred format string for time display and a timezone offset */
   timeOptions: timeOptionsType,
   /** Converts a route's ID to its accepted badge abbreviation */
-  toRouteAbbreviation: PropTypes.func.isRequired // ,
-  // showTripDetails: PropTypes.bool,
-  // showTripTools: PropTypes.bool
+  toRouteAbbreviation: PropTypes.func.isRequired,
+  /**
+   * An optional custom component for rendering the summary of a transit leg.
+   * The component is sent 2 props:
+   * - leg: the transit leg
+   * - stopsExpanded: whether the intermediate stop display is currently expanded
+   */
+  TransitLegSummary: PropTypes.elementType
 };
 
 ItineraryBody.defaultProps = {
+  className: null,
   diagramVisible: null,
+  PlaceName: undefined,
   routingType: "ITINERARY",
+  showAgencyInfo: false,
   showElevationProfile: false,
-  // showTripDetails: true,
-  // showTripTools: true,
-  timeOptions: null
+  timeOptions: null,
+  TransitLegSummary: undefined
 };
 
 export default ItineraryBody;

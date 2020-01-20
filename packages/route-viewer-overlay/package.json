@@ -1,0 +1,30 @@
+{
+  "name": "@opentripplanner/route-viewer-overlay",
+  "version": "0.0.3",
+  "description": "A map overlay to show a transit route",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opentripplanner/otp-ui.git"
+  },
+  "author": "Evan Siroky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/opentripplanner/otp-ui/issues"
+  },
+  "homepage": "https://github.com/opentripplanner/otp-ui#readme",
+  "dependencies": {
+    "@mapbox/polyline": "^1.1.0",
+    "@opentripplanner/core-utils": "^0.0.10",
+    "prop-types": "^15.7.2",
+    "react-leaflet": "^2.6.1"
+  },
+  "peerDependencies": {
+    "@opentripplanner/base-map": "^0.0.8",
+    "react": "^16.8.6"
+  },
+  "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"
+}
