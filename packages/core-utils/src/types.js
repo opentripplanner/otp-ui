@@ -3,6 +3,29 @@ import { ReactPropTypeLocationNames } from "react";
 import { isValidLatLng } from "./map";
 
 /**
+ * Leaflet path properties to use to style a CircleMarker, Marker or Polyline.
+ *
+ * See https://leafletjs.com/reference-1.6.0.html#path
+ */
+export const leafletPathType = PropTypes.shape({
+  bubblingMouseEvents: PropTypes.bool,
+  color: PropTypes.string,
+  className: PropTypes.string,
+  dashArray: PropTypes.string,
+  dashOffset: PropTypes.string,
+  fill: PropTypes.bool,
+  fillColor: PropTypes.string,
+  fillOpacity: PropTypes.number,
+  fillRule: PropTypes.string,
+  lineCap: PropTypes.string,
+  lineJoin: PropTypes.string,
+  opacity: PropTypes.number,
+  renderer: PropTypes.func,
+  stroke: PropTypes.bool,
+  weight: PropTypes.number
+});
+
+/**
  * Describes some options to help display data about a transit agency that is
  * configured in an opentripplanner instance.
  */
@@ -205,6 +228,20 @@ export const itineraryType = PropTypes.shape({
 });
 
 /**
+ * Used to model a location that is used in planning a trip.
+ */
+export const locationType = PropTypes.shape({
+  lat: PropTypes.number.isRequired,
+  lon: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  /**
+   * This is only used location that a user has saved. Can be either:
+   * "home" or "work"
+   */
+  type: PropTypes.string
+});
+
+/**
  * Used to help display the time of day within the context of a particular itinerary.
  */
 export const timeOptionsType = PropTypes.shape({
@@ -241,6 +278,81 @@ export const transitIndexStopWithRoutes = PropTypes.shape({
       shortName: PropTypes.string
     })
   )
+});
+
+const transitivePlaceType = PropTypes.shape({
+  place_id: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired
+});
+
+export const transitiveDataType = PropTypes.shape({
+  journeys: PropTypes.arrayOf(
+    PropTypes.shape({
+      journey_id: PropTypes.string.isRequired,
+      journey_name: PropTypes.string.isRequired,
+      segments: PropTypes.arrayOf(
+        PropTypes.shape({
+          arc: PropTypes.bool,
+          from: transitivePlaceType,
+          patterns: PropTypes.arrayOf(
+            PropTypes.shape({
+              pattern_id: PropTypes.string.isRequired,
+              from_stop_index: PropTypes.number.isRequired,
+              to_stop_index: PropTypes.number.isRequired
+            })
+          ),
+          streetEdges: PropTypes.arrayOf(PropTypes.number),
+          to: transitivePlaceType,
+          type: PropTypes.string.isRequired
+        })
+      ).isRequired
+    })
+  ).isRequired,
+  patterns: PropTypes.arrayOf(
+    PropTypes.shape({
+      pattern_id: PropTypes.string.isRequired,
+      pattern_name: PropTypes.string.isRequired,
+      route_id: PropTypes.string.isRequired,
+      stops: PropTypes.arrayOf(
+        PropTypes.shape({
+          geometry: PropTypes.string,
+          stop_id: PropTypes.string.isRequired
+        })
+      ).isRequired
+    })
+  ).isRequired,
+  places: PropTypes.arrayOf(
+    PropTypes.shape({
+      place_id: PropTypes.string.isRequired,
+      place_lat: PropTypes.number.isRequired,
+      place_lon: PropTypes.number.isRequired,
+      place_name: PropTypes.string
+    })
+  ).isRequired,
+  routes: PropTypes.arrayOf(
+    PropTypes.shape({
+      agency_id: PropTypes.string.isRequired,
+      route_id: PropTypes.string.isRequired,
+      route_short_name: PropTypes.string.isRequired,
+      route_long_name: PropTypes.string.isRequired,
+      route_type: PropTypes.number.isRequired,
+      route_color: PropTypes.string
+    })
+  ).isRequired,
+  stops: PropTypes.arrayOf(
+    PropTypes.shape({
+      stop_id: PropTypes.string.isRequired,
+      stop_name: PropTypes.string.isRequired,
+      stop_lat: PropTypes.number.isRequired,
+      stop_lon: PropTypes.number.isRequired
+    })
+  ).isRequired,
+  streetEdges: PropTypes.arrayOf(
+    PropTypes.shape({
+      edge_id: PropTypes.number.isRequired,
+      geometry: encodedPolylineType
+    })
+  ).isRequired
 });
 
 /**
