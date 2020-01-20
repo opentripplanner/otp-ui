@@ -3,20 +3,31 @@ import PropTypes from "prop-types";
 
 import * as Styled from "./styled";
 
-const LocationIcon = ({ size = 10, title, type }) => {
+const LocationIcon = ({ className, size = 10, title, type }) => {
   switch (type) {
     case "from":
       return (
-        <Styled.FromIcon size={size} title={title || "From Location Icon"} />
+        <Styled.FromIcon
+          className={className}
+          size={size}
+          title={title || "From Location Icon"}
+        />
       );
     case "to":
-      return <Styled.ToIcon size={size} title={title || "To Location Icon"} />;
+      return (
+        <Styled.ToIcon
+          className={className}
+          size={size}
+          title={title || "To Location Icon"}
+        />
+      );
     default:
       throw new Error("invalid type");
   }
 };
 
 LocationIcon.propTypes = {
+  className: PropTypes.string,
   /**
    * Can be either a number or a string.
    * See https://github.com/jacobwgillespie/styled-icons#props
