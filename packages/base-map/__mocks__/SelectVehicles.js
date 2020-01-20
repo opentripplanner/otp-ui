@@ -1,12 +1,12 @@
 import React from "react";
 import { FeatureGroup, MapLayer, withLeaflet } from "react-leaflet";
-import { action } from "@storybook/addon-actions";
 
 import callIfValid from "../src/funcs";
 
 import VehicleMarker from "./VehicleMarker";
 
-const vehicleData = require("./vehicle-data/select-vehicles.json");
+// const vehicleData = require("./vehicle-data/select-vehicles.json");
+const vehicleData = require("./vehicle-data/all-trimet.json"); // https://maps.trimet.org/gtfs/rt/vehicles/routes/all
 
 /**
  * This component demonstrates an example map overlay that shows real-time transit vehicle locations on a leaflet map.
@@ -23,6 +23,14 @@ class SelectVehicles extends MapLayer {
     vehicles: vehicleData
   };
 
+  constructor(props) {
+    super(props);
+
+    this.onOverlayAdded = this.onOverlayAdded.bind(this);
+    this.onOverlayRemoved = this.onOverlayRemoved.bind(this);
+    this.onViewportChanged = this.onViewportChanged.bind(this);
+  }
+
   // these zoom layers control which markers are shown (e.g. closeZoom is where icons are turned on)
   closeZoom = 15;
 
@@ -31,19 +39,20 @@ class SelectVehicles extends MapLayer {
   farZoom = 10;
 
   onOverlayAdded(e) {
-    action("SelectVehicles::onOverlayAdded")(e);
+    callIfValid(this.props.onOverlayAdded)(e);
   }
 
   onOverlayRemoved(e) {
-    action("SelectVehicles::onOverlayRemoved")(e);
+    callIfValid(this.props.onOverlayRemoved)(e);
   }
 
   onViewportChanged(viewport) {
-    action("SelectVehicles::onViewportChanged")(viewport);
+    callIfValid(this.props.onOverlayRemoved)(viewport);
   }
 
   componentDidMount() {
-    action("SelectVehicles::componentDidMount")();
+    console.log("SelectedVehicles::componentDidMount");
+    // action("SelectVehicles::componentDidMount")();
     const { registerOverlay } = this.props;
     callIfValid(registerOverlay)(this);
   }
@@ -95,7 +104,9 @@ class SelectVehicles extends MapLayer {
   updateLeafletElement(/* props */) {}
 
   render() {
-    const { vehicles } = this.state;
+    const { limit = 5 } = this.props;
+    let { vehicles } = this.state;
+    vehicles = vehicles.slice(0, Math.min(limit, vehicles.length) - 1);
     return (
       <FeatureGroup id="vehicles fg">
         {vehicles &&

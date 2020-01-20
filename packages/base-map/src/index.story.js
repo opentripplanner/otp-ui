@@ -47,6 +47,7 @@ const twoBaseLayers = [
 ];
 
 const center = [33.758189, -84.38361];
+const portlandCenter = [45.526862, -122.668837];
 
 const sampleMarkers = (
   <CircleMarker center={center} radius={100} interactive={false}>
@@ -68,6 +69,10 @@ const onPopupClosed = action("onPopupClosed");
 const onOverlayAdded = action("onOverlayAdded");
 const onOverlayRemoved = action("onOverlayRemoved");
 const onViewportChanged = action("onViewportChanged");
+
+const layerOnOverlayAdded = action("Layer::onOverlayAdded");
+const layerOnOverlayRemoved = action("Layer::onOverlayRemoved");
+const layerOnViewportChanged = action("Layer::onViewportChanged");
 
 export const clickAndViewportchangedEvents = () => (
   <BaseMap
@@ -96,12 +101,29 @@ export const withTwoOverlaysFromTrimetTransitComponents = () => (
       tooltips and popups. Check actions log for overlay events.
     </div>
     <BaseMap
-      center={center}
+      center={portlandCenter}
       onOverlayAdded={onOverlayAdded}
       onOverlayRemoved={onOverlayRemoved}
+      onViewportChanged={onViewportChanged}
     >
       <AllVehiclesOverlay name="Simple vehicle layer" />
-      <SelectVehicles name="Fancier vehicle layer" visible />
+      <SelectVehicles
+        name="Fancier vehicle layer"
+        onOverlayAdded={layerOnOverlayAdded}
+        onOverlayRemoved={layerOnOverlayRemoved}
+        onViewportChanged={layerOnViewportChanged}
+        visible
+      />
+    </BaseMap>
+  </div>
+);
+
+export const overlayWithLargeDataSet = () => (
+  <div>
+    <div>Do not add Storybook overhead on layers with large dataset...</div>
+    <BaseMap center={portlandCenter}>
+      <AllVehiclesOverlay name="Simple vehicle layer" />
+      <SelectVehicles name="Fancier vehicle layer" limit={500} visible />
     </BaseMap>
   </div>
 );
