@@ -1,10 +1,16 @@
-import { languageConfigType } from "@opentripplanner/core-utils/lib/types";
+import {
+  languageConfigType,
+  leafletPathType
+} from "@opentripplanner/core-utils/lib/types";
 import PropTypes from "prop-types";
 import React from "react";
 import { FeatureGroup, MapLayer, withLeaflet } from "react-leaflet";
 
 import StopMarker, { stopLayerStopType } from "./stop-marker";
 
+/**
+ * An overlay to view a collection of stops.
+ */
 class StopsOverlay extends MapLayer {
   componentDidMount() {
     // set up pan/zoom listener
@@ -52,13 +58,15 @@ class StopsOverlay extends MapLayer {
 
   render() {
     const {
+      languageConfig,
       leaflet,
       minZoom,
       setLocation,
-      setViewedStop,
       setMainPanelContent,
-      stops,
-      languageConfig
+      setViewedStop,
+      stopMarkerPath,
+      stopMarkerRadius,
+      stops
     } = this.props;
 
     // Don't render if below zoom threshold or no stops visible
@@ -76,12 +84,13 @@ class StopsOverlay extends MapLayer {
     const createStopMarker = stop => (
       <StopMarker
         key={stop.id}
-        stop={stop}
-        leaflet={leaflet}
-        setLocation={setLocation}
-        setViewedStop={setViewedStop}
-        setMainPanelContent={setMainPanelContent}
         languageConfig={languageConfig}
+        leafletPath={stopMarkerPath}
+        radius={stopMarkerRadius}
+        setLocation={setLocation}
+        setMainPanelContent={setMainPanelContent}
+        setViewedStop={setViewedStop}
+        stop={stop}
       />
     );
 
@@ -99,18 +108,67 @@ class StopsOverlay extends MapLayer {
 
 StopsOverlay.propTypes = {
   languageConfig: languageConfigType.isRequired,
+  /** the leaflet reference as obtained from the withLeaflet wrapper */
   /* eslint-disable-next-line react/forbid-prop-types */
   leaflet: PropTypes.object.isRequired,
+  /**
+   * The zoom number at which this overlay will begin to show stop markers.
+   */
   minZoom: PropTypes.number,
-  queryMode: PropTypes.string,
+  /**
+   * A callback for refreshing the stops in the event of a map bounds or zoom
+   * change event.
+   */
   refreshStops: PropTypes.func.isRequired,
+  /**
+   * A callback for when a user clicks on setting this stop as either the from
+   * or to location of a new search.
+   *
+   * This will be dispatched with the following argument:
+   *
+   * ```js
+   *  {
+   *    location: {
+   *      lat: number,
+   *      lon: number,
+   *      name: string
+   *    },
+   *    locationType: "from" or "to"
+   *  }
+   * ```
+   */
   setLocation: PropTypes.func.isRequired,
+  /**
+   * A callback for when a user wants to open the stop viewer for this stop.
+   *
+   * This will be dispatched with the following argument:
+   *
+   * ```js
+   * { stopId: string }
+   * ```
+   */
   setViewedStop: PropTypes.func.isRequired,
+  /**
+   * Leaflet path properties to use to style each stop marker that represents a
+   * stop.
+   *
+   * See https://leafletjs.com/reference-1.6.0.html#path
+   */
+  stopMarkerPath: leafletPathType,
+  /**
+   * The radius in pixels to draw each stop marker.
+   */
+  stopMarkerRadius: PropTypes.number,
+  /**
+   * The list of stops to create stop markers for.
+   */
   stops: PropTypes.arrayOf(stopLayerStopType).isRequired
 };
 
 StopsOverlay.defaultProps = {
-  minZoom: 15
+  minZoom: 15,
+  stopMarkerPath: undefined,
+  stopMarkerRadius: undefined
 };
 
 export default withLeaflet(StopsOverlay);

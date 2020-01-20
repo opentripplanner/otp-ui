@@ -1,4 +1,7 @@
-import { languageConfigType } from "@opentripplanner/core-utils/lib/types";
+import {
+  languageConfigType,
+  leafletPathType
+} from "@opentripplanner/core-utils/lib/types";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
@@ -34,18 +37,16 @@ export default class StopMarker extends Component {
   }
 
   render() {
-    const { stop, languageConfig } = this.props;
+    const { languageConfig, leafletPath, radius, stop } = this.props;
     const { id, name, lat, lon } = stop;
     const idArr = id.split(":");
 
     return (
       <CircleMarker
+        /* eslint-disable-next-line react/jsx-props-no-spreading */
+        {...leafletPath}
         center={[lat, lon]}
-        color="#000"
-        fillColor="#FFF"
-        fillOpacity={1}
-        radius={5}
-        weight={1}
+        radius={radius}
       >
         <Popup>
           <Styled.MapOverlayPopup>
@@ -78,7 +79,19 @@ export default class StopMarker extends Component {
 
 StopMarker.propTypes = {
   languageConfig: languageConfigType.isRequired,
+  leafletPath: leafletPathType,
+  radius: PropTypes.number,
   setLocation: PropTypes.func.isRequired,
   setViewedStop: PropTypes.func.isRequired,
   stop: stopLayerStopType.isRequired
+};
+
+StopMarker.defaultProps = {
+  leafletPath: {
+    color: "#000",
+    fillColor: "#FFF",
+    fillOpacity: 1,
+    weight: 1
+  },
+  radius: 5
 };

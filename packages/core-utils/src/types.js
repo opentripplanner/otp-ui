@@ -3,6 +3,29 @@ import { ReactPropTypeLocationNames } from "react";
 import { isValidLatLng } from "./map";
 
 /**
+ * Leaflet path properties to use to style a CircleMarker, Marker or Polyline.
+ *
+ * See https://leafletjs.com/reference-1.6.0.html#path
+ */
+export const leafletPathType = PropTypes.shape({
+  bubblingMouseEvents: PropTypes.bool,
+  color: PropTypes.string,
+  className: PropTypes.string,
+  dashArray: PropTypes.string,
+  dashOffset: PropTypes.string,
+  fill: PropTypes.bool,
+  fillColor: PropTypes.string,
+  fillOpacity: PropTypes.number,
+  fillRule: PropTypes.string,
+  lineCap: PropTypes.string,
+  lineJoin: PropTypes.string,
+  opacity: PropTypes.number,
+  renderer: PropTypes.func,
+  stroke: PropTypes.bool,
+  weight: PropTypes.number
+});
+
+/**
  * Describes some options to help display data about a transit agency that is
  * configured in an opentripplanner instance.
  */
