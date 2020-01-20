@@ -10,7 +10,13 @@ import {
 import ModeButton from "../ModeButton";
 import { DepartureRow, DateTimeRow } from "./styled";
 
-function checkInput(type) {
+/**
+ * Determines whether the browser supports a particular <input type=<type> /> control,
+ * so we can take advantage of native controls
+ * (especially date/time selection) on modern (mobile) browsers.
+ * @param {*} type One of the HTML5 input types.
+ */
+function isInputTypeSupported(type) {
   const input = document.createElement("input");
   input.setAttribute("type", type);
   return input.type === type;
@@ -21,7 +27,8 @@ function checkInput(type) {
  * (The departure can be right now.)
  */
 class DateTimeSelector extends Component {
-  supportsDateTimeInputs = checkInput("date") && checkInput("time");
+  supportsDateTimeInputs =
+    isInputTypeSupported("date") && isInputTypeSupported("time");
 
   constructor(props) {
     super(props);
