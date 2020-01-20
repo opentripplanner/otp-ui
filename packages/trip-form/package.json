@@ -10,8 +10,8 @@
   "private": false,
   "dependencies": {
     "moment": "^2.17.1",
-    "@opentripplanner/core-utils": "^0.0.9",
-    "@opentripplanner/icons": "^0.0.9"
+    "@opentripplanner/core-utils": "^0.0.10",
+    "@opentripplanner/icons": "^0.0.10"
   },
   "publishConfig": {
     "registry": "https://registry.yarnpkg.com"
