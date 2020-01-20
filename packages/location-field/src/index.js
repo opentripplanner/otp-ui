@@ -1,31 +1,37 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import PropTypes from "prop-types";
-import {
-  Ban,
-  Briefcase,
-  Home,
-  LocationArrow,
-  MapMarker,
-  MapPin,
-  Search,
-  Times
-} from "styled-icons/fa-solid";
-import { throttle } from "throttle-debounce";
-
 import {
   currentPositionToLocation,
   formatStoredPlaceName
 } from "@opentripplanner/core-utils/lib/map";
-import { transitIndexStopWithRoutes } from "@opentripplanner/core-utils/lib/types";
+import {
+  transitIndexStopWithRoutes,
+  userLocationType
+} from "@opentripplanner/core-utils/lib/types";
 import getGeocoder from "@opentripplanner/geocoder";
 import LocationIcon from "@opentripplanner/location-icon";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import { Ban, Bus, LocationArrow, Search, Times } from "styled-icons/fa-solid";
+import { throttle } from "throttle-debounce";
 
-import { Option, TransitStopOption } from "./options";
+import {
+  GeocodedOptionIcon,
+  Option,
+  TransitStopOption,
+  UserLocationIcon
+} from "./options";
 import * as Styled from "./styled";
 
 // FIXME have a better key generator for options
 let optionKey = 0;
+
+function DefaultLocationIcon({ locationType }) {
+  return <LocationIcon size={13} type={locationType} />;
+}
+
+DefaultLocationIcon.propTypes = {
+  locationType: PropTypes.string.isRequired
+};
 
 class LocationField extends Component {
   geocodeAutocomplete = throttle(1000, text => {
@@ -76,9 +82,9 @@ class LocationField extends Component {
     return `${locationType}-form-control`;
   }
 
-  setLocation(location) {
+  setLocation(location, resultType) {
     const { onLocationSelected, locationType } = this.props;
-    onLocationSelected({ locationType, location });
+    onLocationSelected({ locationType, location, resultType });
     this.setState({ menuVisible: false });
   }
 
@@ -93,7 +99,11 @@ class LocationField extends Component {
     if (location) {
       // If geolocation is successful (i.e., user has granted app geolocation
       // permission and coords exist), set location.
-      onLocationSelected({ locationType, location });
+      onLocationSelected({
+        locationType,
+        location,
+        resultType: "CURRENT_LOCATION"
+      });
     } else {
       // Call geolocation.getCurrentPosition and set as from/to locationType
       getCurrentPosition(locationType);
@@ -269,17 +279,25 @@ class LocationField extends Component {
   render() {
     const {
       addLocationSearch,
+      className,
       currentPosition,
+      currentPositionIcon,
+      currentPositionUnavailableIcon,
+      GeocodedOptionIconComponent,
       geocoderConfig,
       inputPlaceholder,
       location,
+      LocationIconComponent,
       locationType,
+      sessionOptionIcon,
       showClearButton,
       showUserSettings,
       static: isStatic,
+      stopOptionIcon,
       stopsIndex,
       suppressNearby,
       userLocationsAndRecentPlaces,
+      UserLocationIconComponent,
       nearbyStops
     } = this.props;
     const { menuVisible, value } = this.state;
@@ -314,8 +332,9 @@ class LocationField extends Component {
               .getLocationFromGeocodedFeature(feature)
               .then(geocodedLocation => {
                 // Set the current location
-                this.setLocation(geocodedLocation);
-                // Add to the location search history
+                this.setLocation(geocodedLocation, "GEOCODE");
+                // Add to the location search history. This is intended to
+                // populate the sessionSearches array.
                 addLocationSearch({ location: geocodedLocation });
               });
           };
@@ -326,7 +345,7 @@ class LocationField extends Component {
           // Create and return the option menu item
           const option = (
             <Option
-              icon={<MapPin size={13} />}
+              icon={<GeocodedOptionIconComponent feature={feature} />}
               key={optionKey++}
               title={feature.properties.label}
               onClick={locationSelected}
@@ -354,14 +373,15 @@ class LocationField extends Component {
           // Constuct the location
           const stop = stopsIndex[stopId];
           const stopLocation = {
-            name: stop.name,
+            id: stopId,
             lat: stop.lat,
-            lon: stop.lon
+            lon: stop.lon,
+            name: stop.name
           };
 
           // Create the location selected handler
           const locationSelected = () => {
-            this.setLocation(stopLocation);
+            this.setLocation(stopLocation, "STOP");
           };
 
           // Add to the selection handler lookup (for use in onKeyDown)
@@ -374,6 +394,7 @@ class LocationField extends Component {
               key={optionKey++}
               onClick={locationSelected}
               stop={stop}
+              stopOptionIcon={stopOptionIcon}
             />
           );
           itemIndex++;
@@ -396,7 +417,7 @@ class LocationField extends Component {
         sessionSearches.map(sessionLocation => {
           // Create the location-selected handler
           const locationSelected = () => {
-            this.setLocation(sessionLocation);
+            this.setLocation(sessionLocation, "SESSION");
           };
 
           // Add to the selection handler lookup (for use in onKeyDown)
@@ -405,7 +426,7 @@ class LocationField extends Component {
           // Create and return the option menu item
           const option = (
             <Option
-              icon={<Search size={13} />}
+              icon={sessionOptionIcon}
               key={optionKey++}
               title={sessionLocation.name}
               onClick={locationSelected}
@@ -432,20 +453,16 @@ class LocationField extends Component {
         userLocationsAndRecentPlaces.map(userLocation => {
           // Create the location-selected handler
           const locationSelected = () => {
-            this.setLocation(userLocation);
+            this.setLocation(userLocation, "SAVED");
           };
 
           // Add to the selection handler lookup (for use in onKeyDown)
           this.locationSelectedLookup[itemIndex] = locationSelected;
 
-          let icon = <MapMarker size={13} />;
-          if (userLocation.icon === "work") icon = <Briefcase size={13} />;
-          else if (userLocation.icon === "home") icon = <Home size={13} />;
-
           // Create and return the option menu item
           const option = (
             <Option
-              icon={icon}
+              icon={<UserLocationIconComponent userLocation={userLocation} />}
               key={optionKey++}
               title={formatStoredPlaceName(userLocation)}
               onClick={locationSelected}
@@ -467,13 +484,13 @@ class LocationField extends Component {
     if (currentPosition && !currentPosition.error) {
       // current position detected successfully
       locationSelected = this.useCurrentLocation;
-      optionIcon = <LocationArrow size={13} />;
+      optionIcon = currentPositionIcon;
       optionTitle = "Use Current Location";
       positionUnavailable = false;
     } else {
       // error detecting current position
       locationSelected = this.geolocationAlert;
-      optionIcon = <Ban size={13} />;
+      optionIcon = currentPositionUnavailableIcon;
       optionTitle = "Current location not available";
       positionUnavailable = true;
     }
@@ -532,11 +549,11 @@ class LocationField extends Component {
     if (isStatic) {
       // 'static' mode (menu is displayed alongside input, e.g., for mobile view)
       return (
-        <div>
+        <div className={className}>
           <Styled.FormGroup>
             <Styled.InputGroup>
               <Styled.InputGroupAddon>
-                <LocationIcon size={13} type={locationType} />
+                <LocationIconComponent locationType={locationType} />
               </Styled.InputGroupAddon>
               {textControl}
               {clearButton}
@@ -557,16 +574,13 @@ class LocationField extends Component {
 
     // default display mode with dropdown menu
     return (
-      <Styled.FormGroup
-        onBlur={this.onBlurFormGroup}
-        className="location-field"
-      >
+      <Styled.FormGroup onBlur={this.onBlurFormGroup} className={className}>
         <Styled.InputGroup>
           {/* location field icon -- also serves as dropdown anchor */}
           <Styled.Dropdown
             open={menuVisible}
             onToggle={this.onDropdownToggle}
-            title={<LocationIcon size={13} type={locationType} />}
+            title={<LocationIconComponent locationType={locationType} />}
           >
             {menuItems}
           </Styled.Dropdown>
@@ -589,6 +603,10 @@ LocationField.propTypes = {
    */
   addLocationSearch: PropTypes.func,
   /**
+   * Used for additional styling with styled components for example.
+   */
+  className: PropTypes.string,
+  /**
    * Dispatched whenever the clear location button is clicked.
    * Provides an argument in the format:
    *
@@ -609,6 +627,14 @@ LocationField.propTypes = {
     fetching: PropTypes.bool
   }),
   /**
+   * A slot for the icon to display for the current position
+   */
+  currentPositionIcon: PropTypes.node,
+  /**
+   * A slot for the icon to display for when the current position is unavailable
+   */
+  currentPositionUnavailableIcon: PropTypes.node,
+  /**
    * Invoked whenever the currentPosition is set, but the nearbyStops are not.
    * Sends the following argument:
    *
@@ -621,6 +647,12 @@ LocationField.propTypes = {
    * ```
    */
   findNearbyStops: PropTypes.func,
+  /**
+   * A slot for a compnent that can be used to display a custom icon for a
+   * geocoded option. This component is passed a single property called
+   * `feature` which will be in the geocodedFeatureType shape.
+   */
+  GeocodedOptionIconComponent: PropTypes.elementType,
   /**
    * A configuration object describing what geocoder should be used.
    */
@@ -665,6 +697,11 @@ LocationField.propTypes = {
     name: PropTypes.string
   }),
   /**
+   * A custom component for rendering the icon displayed to the left of the text
+   * input. This component is passed a single prop of `locationType`.
+   */
+  LocationIconComponent: PropTypes.elementType,
+  /**
    * Either `from` or `to`
    */
   locationType: PropTypes.string.isRequired,
@@ -685,19 +722,47 @@ LocationField.propTypes = {
    * ```js
    * {
    *  locationType: string,
-   *  location: object
+   *  location: object,
+   *  resultType: string
    * }
    * '''
+   *
+   * The locationType string will be either "from" or "to" as was set by the
+   * locationType prop for the instance of this component.
+   *
+   * The location object will be an object in the form below:
+   * ```js
+   * {
+   *  id: string, // only populated for stops and user-saved locations
+   *  lat: number,
+   *  lon: number,
+   *  name: string
+   * }
+   *
+   * The resultType string indicates the type of location that was selected.
+   * It can be one of the following:
+   *
+   * "CURRENT_LOCATION": The user's current location.
+   * "GEOCODE": A location that was found via a geocode search result
+   * "SAVED": A location that was saved by the user.
+   * "SESSION": A geocoded search result that was recently selected by the user.
+   * "STOP": A transit stop
    */
   onLocationSelected: PropTypes.func.isRequired,
   /**
-   * A list of recent searches to show to the user
+   * A slot for the icon to display for an option that was used during the
+   * current session.
+   */
+  sessionOptionIcon: PropTypes.node,
+  /**
+   * A list of recent searches to show to the user. These are typically only
+   * geocode results that a user has previously selected.
    */
   sessionSearches: PropTypes.arrayOf(
     PropTypes.shape({
-      lat: PropTypes.number,
-      lon: PropTypes.number,
-      name: PropTypes.string
+      lat: PropTypes.number.isRequired,
+      lon: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired
     })
   ),
   /**
@@ -717,52 +782,50 @@ LocationField.propTypes = {
    */
   stopsIndex: PropTypes.objectOf(transitIndexStopWithRoutes),
   /**
+   * A slot for the icon to display for a stop option
+   */
+  stopOptionIcon: PropTypes.node,
+  /**
    * If true, do not show nearbyStops or current location as options
    */
   suppressNearby: PropTypes.bool,
   /**
    * An array of recent locations and places a user has searched for.
    */
-  userLocationsAndRecentPlaces: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      /**
-       * Can be either 'home', 'work', or null
-       */
-      icon: PropTypes.string,
-      lat: PropTypes.number.isRequired,
-      lon: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
-      /**
-       * This represents the last time that this location was selected in a
-       * search
-       */
-      timestamp: PropTypes.number,
-      /**
-       * One of: 'home', 'work', 'stop' or 'recent'
-       */
-      type: PropTypes.string.isRequired
-    })
-  )
+  userLocationsAndRecentPlaces: PropTypes.arrayOf(userLocationType),
+  /**
+   * A custom component for rendering the icon for options that are either saved
+   * user locations or recent places. The component will be sent a single prop
+   * of `userLocation` which is a userLocationType.
+   */
+  UserLocationIconComponent: PropTypes.elementType
 };
 
 LocationField.defaultProps = {
   addLocationSearch: () => {},
+  className: null,
   clearLocation: () => {},
   currentPosition: null,
+  currentPositionIcon: <LocationArrow size={13} />,
+  currentPositionUnavailableIcon: <Ban size={13} />,
   findNearbyStops: () => {},
+  GeocodedOptionIconComponent: GeocodedOptionIcon,
   hideExistingValue: false,
   inputPlaceholder: null,
   location: null,
+  LocationIconComponent: DefaultLocationIcon,
   nearbyStops: [],
   onTextInputClick: null,
+  sessionOptionIcon: <Search size={13} />,
   sessionSearches: [],
   showClearButton: true,
   showUserSettings: false,
   static: false,
+  stopOptionIcon: <Bus size={13} />,
   stopsIndex: null,
   suppressNearby: false,
-  userLocationsAndRecentPlaces: []
+  userLocationsAndRecentPlaces: [],
+  UserLocationIconComponent: UserLocationIcon
 };
 
 export default LocationField;
