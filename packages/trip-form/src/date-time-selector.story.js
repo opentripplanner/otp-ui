@@ -1,12 +1,7 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
-import { withKnobs, boolean, date, select } from "@storybook/addon-knobs";
-import moment from "moment";
-import {
-  OTP_API_DATE_FORMAT,
-  OTP_API_TIME_FORMAT
-} from "@opentripplanner/core-utils/lib/time";
+import { withKnobs, boolean, text } from "@storybook/addon-knobs";
 
 import DateTimeSelector from "./DateTimeSelector";
 
@@ -34,23 +29,15 @@ export default {
   decorators: [background, withInfo, withKnobs]
 };
 
-const options = {
-  NOW: "NOW",
-  DEPART: "DEPART",
-  ARRIVE: "ARRIVE"
-};
-
 export const dateTimeSelector = () => {
-  const dateTime = new Date(date("Date & Time", new Date("2020-02-15")));
-  const dateOnly = moment(dateTime).format(OTP_API_DATE_FORMAT);
-  const time = moment(dateTime).format(OTP_API_TIME_FORMAT);
-
   return (
     <DateTimeSelector
-      departArrive={select("departArrive", options, "NOW")}
-      date={dateOnly}
+      departArrive="NOW"
+      date="2020-02-15"
+      dateFormatLegacy={text("dateFormatLegacy", "YY-M-d")}
       forceLegacy={boolean("forceLegacy", false)}
-      time={time}
+      time="14:17"
+      timeFormatLegacy={text("timeFormatLegacy", "HH:mm")}
       onQueryParamChange={onQueryParamChange}
     />
   );

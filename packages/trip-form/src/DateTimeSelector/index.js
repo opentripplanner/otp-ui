@@ -16,8 +16,24 @@ function checkInput(type) {
   return input.type === type;
 }
 
+/**
+ * The DateTimeSelector component lets the OTP user chose a departure or arrival date/time.
+ * (The departure can be right now.)
+ */
 class DateTimeSelector extends Component {
   supportsDateTimeInputs = checkInput("date") && checkInput("time");
+
+  constructor(props) {
+    super(props);
+
+    const { date, time, departArrive } = props;
+
+    this.state = {
+      date,
+      time,
+      departArrive
+    };
+  }
 
   handleDateChange = evt => {
     this.handleQueryParamChange({ date: evt.target.value });
@@ -68,6 +84,7 @@ class DateTimeSelector extends Component {
 
   handleQueryParamChange = queryParam => {
     this.raiseOnQueryParamChange(queryParam);
+    this.setState({ ...queryParam });
   };
 
   render() {
@@ -75,14 +92,12 @@ class DateTimeSelector extends Component {
 
     const {
       className,
-      departArrive,
-      date,
       dateFormatLegacy = OTP_API_DATE_FORMAT,
       forceLegacy,
-      time,
       timeFormatLegacy = OTP_API_TIME_FORMAT,
       style
     } = this.props;
+    const { departArrive, date, time } = this.state;
 
     const departureOptions = [
       {
@@ -176,7 +191,7 @@ DateTimeSelector.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * A date string that an HTML <input type="date"> control can render.
+   * The initial departure/arrival date string, in a format that an HTML <input type="date"> control can render.
    */
   date: PropTypes.string,
   /**
@@ -184,7 +199,7 @@ DateTimeSelector.propTypes = {
    */
   dateFormatLegacy: PropTypes.string,
   /**
-   * Determines whether a trip should start or end at a given time.
+   * The initial setting determining whether a trip should start or end at a given time.
    */
   departArrive: PropTypes.oneOf(["NOW", "DEPART", "ARRIVE"]),
   /**
@@ -192,7 +207,7 @@ DateTimeSelector.propTypes = {
    */
   forceLegacy: PropTypes.bool,
   /**
-   * A date string that an HTML <input type="time"> control can render.
+   * The initial departure/arrival time string, in a format that an HTML <input type="time"> control can render.
    */
   time: PropTypes.string,
   /**
@@ -201,7 +216,7 @@ DateTimeSelector.propTypes = {
   timeFormatLegacy: PropTypes.string,
   /**
    * Triggered when a query parameter is changed.
-   * @param params An object that contains the new values for the parameter(s) that has (have) changed.
+   * @param params A { param1: value1, param2, value2, ... } object that contains the new values for the parameter(s) that has (have) changed.
    */
   onQueryParamChange: PropTypes.func
 };
