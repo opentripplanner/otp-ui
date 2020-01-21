@@ -1,7 +1,14 @@
 import BaseMapIcon from "@opentripplanner/icons/lib/trimet/Map";
+import PropTypes from "prop-types";
+import React from "react";
 import styled from "styled-components";
+import { CaretDown, CaretUp } from "styled-icons/fa-solid";
 
-import { toModeBorder, toModeColor } from "./util";
+import { toModeBorder, toModeColor, toSafeRouteColor } from "./util";
+
+// ////////////////////////////////////////////////
+// ///////////// Generic components ///////////////
+// ////////////////////////////////////////////////
 
 export const ClearButton = styled.button`
   background: transparent;
@@ -25,30 +32,6 @@ export const ClearButton = styled.button`
   }
 `;
 
-export const TestDiv = styled.div`
-  height: 300px;
-`;
-
-export const PlaceRowWrapper = styled.div`
-  /* needs to be a flexbox row */
-  max-width: 500px;
-  display: flex;
-  flex-flow: row;
-`;
-
-export const TimeColumn = styled.div`
-  /* flexbox column */
-  flex: 0 0 60px;
-  padding-right: 5px;
-  font-size: 0.9em;
-`;
-
-export const LineColumn = styled.div`
-  /* flexbox column */
-  flex: 0 0 50px;
-  padding-right: 5px;
-`;
-
 /*
   This is needed to give the offset border look to stacked place rows
   Since the value we have access to is "interlineWithPreviousLeg" then we
@@ -64,42 +47,16 @@ export const LightBorderDiv = styled.div`
     props.hideBorder === "true" ? "" : "translateY(-12px)"};
 `;
 
-export const DetailsColumn = styled(LightBorderDiv)`
-  /* flexbox column -- remaining space */
-  flex: 2 2 auto;
-  /* overflow: hidden; this is commented out in order to show Intermediate Stop Markers */
+export const TransparentButton = styled.button`
+  background: transparent;
+  color: inherit;
+  border: 0;
+  text-decoration: none;
 `;
 
-export const MapButtonColumn = styled(LightBorderDiv)`
-  flex: 0 0 25px;
-`;
-
-export const LegLine = styled.div`
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 100%;
-`;
-
-export const InnerLine = styled.div`
-  /* the actual line element */
-  border-left: ${props => toModeBorder(props.mode, props.routeColor)};
-  height: 100%;
-  width: 0;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-`;
-
-export const LineBadgeContainer = styled.div`
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translate(-51%, -10%);
-`;
+// ////////////////////////////////////////////////
+// /////////////// App components /////////////////
+// ////////////////////////////////////////////////
 
 // TODO: Can we turn this into a more abstract element to inherit from for other badges?
 export const AccessBadge = styled.div.attrs(props => ({
@@ -120,9 +77,225 @@ export const AccessBadge = styled.div.attrs(props => ({
   /* Add in border for dark mode */
 `;
 
+export const AgencyInfo = styled.div`
+  margin-top: 5px;
+
+  a {
+    color: #337ab7;
+    text-decoration: none;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+`;
+
+export const BookLaterContainer = styled.div`
+  bottom: 0;
+  left: 110px;
+  position: absolute;
+  right: 0;
+  top: 0;
+`;
+
+export const BookLaterInnerContainer = styled.div`
+  background-color: #fcf9d3;
+  display: table;
+  height: 100%;
+  width: 100%;
+`;
+
+export const BookLaterPointer = styled.div`
+  border-bottom: 16px solid transparent;
+  border-right: 16px solid #fcf9d3;
+  border-top: 16px solid transparent;
+  height: 0;
+  left: 94px;
+  position: absolute;
+  top: 0;
+  width: 0;
+`;
+
+export const BookLaterText = styled.div`
+  color: #444;
+  display: table-cell;
+  font-style: italic;
+  line-height: 0.95;
+  padding: 0px 2px;
+  vertical-align: middle;
+`;
+
+export const BookTNCRideButton = styled.a`
+  background-color: #fff;
+  background-image: none;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  left: 0;
+  line-height: 1.42857143;
+  margin-bottom: 0;
+  padding: 4px 6px;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  top: 0;
+  touch-action: manipulation;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+`;
+
+export const BookTNCRideButtonContainer = styled.div`
+  height: 32px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  position: relative;
+`;
+
+export const CaretToggle = ({ expanded }) =>
+  expanded ? <CaretUp size={15} /> : <CaretDown size={15} />;
+
+CaretToggle.propTypes = {
+  expanded: PropTypes.bool.isRequired
+};
+
 export const Destination = styled.div`
   text-align: center;
 `;
+
+export const DetailsColumn = styled(LightBorderDiv)`
+  /* flexbox column -- remaining space */
+  flex: 2 2 auto;
+  /* overflow: hidden; this is commented out in order to show Intermediate Stop Markers */
+`;
+
+export const InnerLine = styled.div`
+  /* the actual line element */
+  border-left: ${props => toModeBorder(props.mode, props.routeColor)};
+  height: 100%;
+  width: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+`;
+
+export const InterlineDot = styled.div`
+  color: #fff;
+  flex: 0 0 15px;
+  margin-left: -33px;
+  margin-right: 18px;
+  position: relative;
+  z-index: 30;
+`;
+
+export const InterlineName = styled.div`
+  /* special messaging, not sure yet */
+`;
+
+export const IntermediateStops = styled.div`
+  display: block;
+`;
+
+export const ItineraryBody = styled.div``;
+
+export const LegBody = styled.div`
+  color: #999;
+  font-size: 13px;
+  padding: 12px 0 18px 4px;
+`;
+
+export const LegClickable = styled(TransparentButton)`
+  cursor: pointer;
+  display: table;
+`;
+
+export const LegIconContainer = styled.div`
+  height: 24px;
+  width: 24px;
+  float: left;
+  margin-right: 6px;
+`;
+
+export const LegLine = styled.div`
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+`;
+
+export const LineBadgeContainer = styled.div`
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-51%, -10%);
+`;
+
+export const LineColumn = styled.div`
+  /* flexbox column */
+  flex: 0 0 50px;
+  padding-right: 5px;
+`;
+
+export const PlaceRowWrapper = styled.div`
+  /* needs to be a flexbox row */
+  max-width: 500px;
+  display: flex;
+  flex-flow: row;
+`;
+
+export const PreviewContainer = styled.div`
+  background-color: ${props => props.active && "#eee"};
+  border-color: ${props => (props.active ? "#d1d5da" : "#fff")};
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  display: inline-block;
+  font-style: normal;
+  margin: 0 4px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  width: 75%;
+
+  &:hover {
+    border-color: #d1d5da;
+    background-color: #f6f8fa;
+  }
+`;
+
+export const TimeColumn = styled.div`
+  /* flexbox column */
+  flex: 0 0 60px;
+  padding-right: 5px;
+  font-size: 0.9em;
+`;
+
+export const MapButton = styled(ClearButton)`
+  padding: 3px 10px 3px 10px;
+  border: 0;
+  margin-top: -15px;
+  width: 35px;
+  height: 35px;
+`;
+
+export const MapButtonColumn = styled(LightBorderDiv)`
+  flex: 0 0 25px;
+`;
+
+export const MapIcon = styled(BaseMapIcon).attrs(props => ({
+  fill: props.theme.secondaryColor,
+  width: 15,
+  height: 15,
+  role: "img",
+  title: "Frame this Itinerary Leg"
+}))``;
 
 // export const ModeIcon = styled(BaseModeIcon).attrs(props => ({
 //   width: 18,
@@ -142,15 +315,6 @@ export const PlaceHeader = styled.div`
   font-size: 1.2em;
 `;
 
-export const InterlineDot = styled.div`
-  color: #fff;
-  flex: 0 0 15px;
-  margin-left: -33px;
-  margin-right: 18px;
-  position: relative;
-  z-index: 30;
-`;
-
 export const PlaceName = styled.div`
   /* text styling */
   font-weight: bold;
@@ -161,8 +325,86 @@ export const PlaceName = styled.div`
   flex: 1 1 auto;
 `;
 
-export const InterlineName = styled.div`
-  /* special messaging, not sure yet */
+export const PlaceSubheader = styled.div`
+  color: grey;
+  font-size: 12px;
+  font-weight: 300;
+  padding-left: 4px;
+  padding-top: 1px;
+`;
+
+export const PreviewDiagram = styled(TransparentButton)`
+  padding: 2px;
+  width: 100%;
+`;
+
+export const RouteBadge = styled.div`
+  text-align: center;
+  min-width: 30px;
+  min-height: 30px;
+  font-size: 1.2em;
+  background-color: ${props =>
+    toSafeRouteColor(props.routeColor) || props.theme.mainColor};
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1px;
+  /* Add in border for dark mode */
+  border: 1px solid ${props => props.theme.badgeBorderColor};
+  user-select: none;
+  cursor: default;
+`;
+
+export const SROnly = styled.span`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+`;
+
+export const SRHidden = styled.span.attrs({ "aria-hidden": true })``;
+
+export const Steps = styled.div`
+  display: block;
+`;
+
+export const StepDescriptionContainer = styled.div`
+  margin-left: 24px;
+  line-height: 1.25em;
+  padding-top: 1px;
+`;
+
+export const StepsHeader = styled(TransparentButton)`
+  color: #999;
+  display: inline-block;
+  font-size: 13px;
+  font-style: normal;
+  margin-top: 10px;
+  vertical-align: bottom;
+`;
+
+export const StepIconContainer = styled.div`
+  fill: #999999;
+  float: left;
+  height: 16px;
+  width: 16px;
+`;
+
+export const StepRow = styled.div`
+  font-size: 13px;
+  margin-top: 8px;
+  color: #999;
+  font-style: normal;
+`;
+
+export const StepStreetName = styled.span`
+  font-weight: 500;
 `;
 
 export const StopIdSpan = styled.span`
@@ -171,20 +413,91 @@ export const StopIdSpan = styled.span`
   margin-left: 10px;
 `;
 
-export const MapButton = styled(ClearButton)`
-  padding: 3px 10px 3px 10px;
-  border: 0;
-  margin-top: -15px;
-  width: 35px;
-  height: 35px;
+export const StopMarker = styled.div`
+  float: left;
+  margin-left: -36px;
+  color: #fff;
 `;
 
-export const MapIcon = styled(BaseMapIcon).attrs(props => ({
-  fill: props.theme.secondaryColor,
-  width: 15,
-  height: 15,
-  role: "img",
-  title: "Frame this Itinerary Leg"
-}))``;
+export const StopName = styled.div`
+  color: #999;
+  font-size: 14px;
+  margin-top: 3px;
+`;
 
-export const ItineraryBody = styled.div``;
+export const StopRow = styled.div`
+  z-index: 30;
+  position: relative;
+`;
+
+export const TransitAlert = styled.a`
+  background-color: #eee;
+  border-radius: 4px;
+  color: #000;
+  display: block;
+  margin-top: 5px;
+  padding: 8px;
+  text-decoration: none;
+`;
+
+export const TransitAlertBody = styled.div`
+  font-size: 12px;
+  margin-left: 30px;
+  white-space: pre-wrap;
+`;
+
+export const TransitAlertEffectiveDate = styled.div`
+  margin-top: 5px;
+  margin-left: 30px;
+  font-size: 12px;
+  font-style: italic;
+`;
+
+export const TransitAlertHeader = styled.div`
+  font-size: 14px;
+  margin-left: 30px;
+  font-weight: 600;
+`;
+
+export const TransitAlertIconContainer = styled.div`
+  float: left;
+  font-size: 18px;
+`;
+
+export const TransitAlerts = styled.div`
+  display: block;
+  margin-top: 3px;
+`;
+
+export const TransitAlertToggle = styled(TransparentButton)`
+  display: inline-block;
+  margin-top: 8px;
+  color: #d14727;
+  font-weight: 400;
+  cursor: pointer;
+`;
+
+export const TransitLegDetails = styled.div`
+  margin-top: 5px;
+`;
+
+export const TransitLegDetailsHeader = styled.div`
+  color: #999999;
+  cursor: pointer;
+  font-size: 13px;
+`;
+
+export const ViewTripButton = styled(TransparentButton)`
+  border-left: 1px solid #000;
+  color: #008;
+  cursor: pointer;
+  height: 14px;
+  line-height: 1;
+  margin-left: 5px;
+  outline: none;
+  padding-top: 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;

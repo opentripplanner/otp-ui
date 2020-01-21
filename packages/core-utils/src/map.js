@@ -1,6 +1,6 @@
 import moment from "moment";
 
-import { isTransit, toSentenceCase } from "./itinerary";
+import { getPlaceName, isTransit, toSentenceCase } from "./itinerary";
 
 export function latlngToString(latlng) {
   return (
@@ -70,8 +70,7 @@ export function matchLatLon(location1, location2) {
   return location1.lat === location2.lat && location1.lon === location2.lon;
 }
 
-export function itineraryToTransitive(itin) {
-  // console.log('itineraryToTransitive', itin);
+export function itineraryToTransitive(itin, companies) {
   const tdata = {
     journeys: [],
     streetEdges: [],
@@ -110,12 +109,23 @@ export function itineraryToTransitive(itin) {
       leg.mode === "CAR" ||
       leg.mode === "MICROMOBILITY"
     ) {
-      const fromPlaceId = leg.from.bikeShareId
-        ? `bicycle_rent_station_${leg.from.bikeShareId}`
-        : `itin_street_${streetEdgeId}_from`;
-      const toPlaceId = leg.to.bikeShareId
-        ? `bicycle_rent_station_${leg.to.bikeShareId}`
-        : `itin_street_${streetEdgeId}_to`;
+      let fromPlaceId;
+      if (leg.from.bikeShareId) {
+        fromPlaceId = `bicycle_rent_station_${leg.from.bikeShareId}`;
+      } else if (leg.from.vertexType === "VEHICLERENTAL") {
+        fromPlaceId = `escooter_rent_station_${leg.from.name}`;
+      } else {
+        fromPlaceId = `itin_street_${streetEdgeId}_from`;
+      }
+
+      let toPlaceId;
+      if (leg.to.bikeShareId) {
+        toPlaceId = `bicycle_rent_station_${leg.to.bikeShareId}`;
+      } else if (leg.to.vertexType === "VEHICLERENTAL") {
+        toPlaceId = `escooter_rent_station_${leg.to.name}`;
+      } else {
+        toPlaceId = `itin_street_${streetEdgeId}_to`;
+      }
 
       const segment = {
         type: leg.mode,
@@ -143,7 +153,7 @@ export function itineraryToTransitive(itin) {
       });
       tdata.places.push({
         place_id: toPlaceId,
-        place_name: leg.to.name,
+        place_name: getPlaceName(leg.to, companies),
         place_lat: leg.to.lat,
         place_lon: leg.to.lon
       });
@@ -231,8 +241,8 @@ export function itineraryToTransitive(itin) {
   });
 
   // add the routes and stops to the tdata arrays
-  tdata.routes.push(...routes);
-  tdata.stops.push(...stops);
+  tdata.routes.push(...Object.values(routes));
+  tdata.stops.push(...Object.values(stops));
 
   // add the journey to the tdata journeys array
   tdata.journeys.push(journey);
@@ -243,6 +253,10 @@ export function itineraryToTransitive(itin) {
 
 export function isBikeshareStation(place) {
   return place.place_id.lastIndexOf("bicycle_rent_station") !== -1;
+}
+
+export function isEScooterStation(place) {
+  return place.place_id.lastIndexOf("escooter_rent_station") !== -1;
 }
 
 export function isValidLat(lat) {

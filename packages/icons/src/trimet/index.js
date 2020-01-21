@@ -36,6 +36,7 @@ import Streetcar from "./Streetcar";
 import StreetcarCircle from "./StreetcarCircle";
 import Transittracker from "./Transittracker";
 import TransittrackerSolid from "./TransittrackerSolid";
+import TriMet from "./TriMet";
 import TripPlanner from "./TripPlanner";
 import TripPlannerSolid from "./TripPlannerSolid";
 import Walk from "./Walk";
@@ -83,6 +84,7 @@ export {
   StreetcarCircle,
   Transittracker,
   TransittrackerSolid,
+  TriMet,
   TripPlanner,
   TripPlannerSolid,
   Walk,

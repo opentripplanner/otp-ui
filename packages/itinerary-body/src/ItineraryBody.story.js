@@ -1,12 +1,15 @@
-import { itineraryType } from "@opentripplanner/core-utils/lib/types";
+import { itineraryType, legType } from "@opentripplanner/core-utils/lib/types";
 import TriMetLegIcon from "@opentripplanner/icons/lib/trimet-leg-icon";
+import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { storiesOf } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
 import { withInfo } from "@storybook/addon-info";
 import { action } from "@storybook/addon-actions";
+import styled from "styled-components";
 
 import ItineraryBody from ".";
+import * as ItineraryBodyClasses from "./styled";
 
 const config = require("./__mocks__/config.json");
 
@@ -24,6 +27,12 @@ const walkOnlyItinerary = require("./__mocks__/itineraries/walk-only.json");
 const walkTransitWalkItinerary = require("./__mocks__/itineraries/walk-transit-walk.json");
 const walkTransitWalkTransitWalkItinerary = require("./__mocks__/itineraries/walk-transit-walk-transit-walk.json");
 
+const StyledItineraryBody = styled(ItineraryBody)`
+  ${ItineraryBodyClasses.LegBody} {
+    background-color: pink;
+  }
+`;
+
 class ItineraryBodyDefaultsWrapper extends Component {
   constructor() {
     super();
@@ -35,28 +44,79 @@ class ItineraryBodyDefaultsWrapper extends Component {
   };
 
   render() {
-    const { itinerary } = this.props;
+    const {
+      itinerary,
+      PlaceName,
+      showAgencyInfo,
+      TransitLegSummary,
+      useStyled
+    } = this.props;
     const { diagramVisible } = this.state;
-    return (
+    return useStyled ? (
+      <StyledItineraryBody
+        config={config}
+        diagramVisible={diagramVisible}
+        frameLeg={action("frameLeg")}
+        itinerary={itinerary}
+        LegIcon={TriMetLegIcon}
+        PlaceName={PlaceName}
+        routingType="ITINERARY"
+        setActiveLeg={action("setActiveLeg")}
+        setLegDiagram={this.setLegDiagram}
+        setViewedTrip={action("setViewedTrip")}
+        showAgencyInfo={showAgencyInfo}
+        showElevationProfile
+        toRouteAbbreviation={r => r.toString().substr(0, 2)}
+        TransitLegSummary={TransitLegSummary}
+      />
+    ) : (
       <ItineraryBody
         config={config}
         diagramVisible={diagramVisible}
         frameLeg={action("frameLeg")}
         itinerary={itinerary}
         LegIcon={TriMetLegIcon}
+        PlaceName={PlaceName}
         routingType="ITINERARY"
         setActiveLeg={action("setActiveLeg")}
         setLegDiagram={this.setLegDiagram}
         setViewedTrip={action("setViewedTrip")}
+        showAgencyInfo={showAgencyInfo}
         showElevationProfile
         toRouteAbbreviation={r => r.toString().substr(0, 2)}
+        TransitLegSummary={TransitLegSummary}
       />
     );
   }
 }
 
 ItineraryBodyDefaultsWrapper.propTypes = {
-  itinerary: itineraryType.isRequired
+  itinerary: itineraryType.isRequired,
+  PlaceName: PropTypes.elementType,
+  showAgencyInfo: PropTypes.bool,
+  TransitLegSummary: PropTypes.elementType,
+  useStyled: PropTypes.bool
+};
+
+ItineraryBodyDefaultsWrapper.defaultProps = {
+  showAgencyInfo: false,
+  PlaceName: undefined,
+  TransitLegSummary: undefined,
+  useStyled: false
+};
+
+function CustomPlaceName({ place }) {
+  return `🎉✨🎊 ${place.name} 🎉✨🎊`;
+}
+
+function CustomTransitLegSummary({ leg }) {
+  if (leg.duration) {
+    return `It'll probably take around ${leg.duration} seconds.`;
+  }
+}
+
+CustomTransitLegSummary.propTypes = {
+  leg: legType.isRequired
 };
 
 storiesOf("ItineraryBody", module)
@@ -71,6 +131,39 @@ storiesOf("ItineraryBody", module)
   .add("ItineraryBody with walk-transit-walk itinerary", () => (
     <ItineraryBodyDefaultsWrapper itinerary={walkTransitWalkItinerary} />
   ))
+  .add("Styled ItineraryBody with walk-transit-walk itinerary", () => (
+    <ItineraryBodyDefaultsWrapper
+      itinerary={walkTransitWalkItinerary}
+      useStyled
+    />
+  ))
+  .add(
+    "ItineraryBody with walk-transit-walk itinerary with agency information",
+    () => (
+      <ItineraryBodyDefaultsWrapper
+        itinerary={walkTransitWalkItinerary}
+        showAgencyInfo
+      />
+    )
+  )
+  .add(
+    "ItineraryBody with walk-transit-walk itinerary with custom transit leg summary component",
+    () => (
+      <ItineraryBodyDefaultsWrapper
+        itinerary={walkTransitWalkItinerary}
+        TransitLegSummary={CustomTransitLegSummary}
+      />
+    )
+  )
+  .add(
+    "ItineraryBody with walk-transit-walk itinerary with custom place name component",
+    () => (
+      <ItineraryBodyDefaultsWrapper
+        itinerary={walkTransitWalkItinerary}
+        PlaceName={CustomPlaceName}
+      />
+    )
+  )
   .add("ItineraryBody with bike-transit-bike itinerary", () => (
     <ItineraryBodyDefaultsWrapper itinerary={bikeTransitBikeItinerary} />
   ))
