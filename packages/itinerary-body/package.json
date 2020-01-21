@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/itinerary-body",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A component for displaying an itinerary body of a trip planning result",
   "main": "lib/index.js",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
@@ -9,10 +9,10 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^0.0.10",
-    "@opentripplanner/humanize-distance": "^0.0.8",
-    "@opentripplanner/icons": "^0.0.10",
-    "@opentripplanner/location-icon": "^0.0.7",
+    "@opentripplanner/core-utils": "^0.0.11",
+    "@opentripplanner/humanize-distance": "^0.0.11",
+    "@opentripplanner/icons": "^0.0.11",
+    "@opentripplanner/location-icon": "^0.0.11",
     "currency-formatter": "^1.5.5",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
