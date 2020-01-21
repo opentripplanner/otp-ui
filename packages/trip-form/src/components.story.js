@@ -17,6 +17,10 @@ import ModeIconWrap from "./__mocks__/mode-icon-wrap";
 import modeOptions from "./__mocks__/mode-options";
 import commonModes from "./__mocks__/modes";
 import submodeOptions from "./__mocks__/submode-options";
+import * as TriMetStyled from "./__mocks__/trimet.styled";
+
+// eslint-disable-next-line react/destructuring-assignment, react/prop-types
+const Wrapper = props => <div>{props.children}</div>;
 
 const background = story => (
   <div
@@ -86,24 +90,24 @@ export const modeIcon = () => (
   </ModeIconWrap>
 );
 
-export const modeButton = () => (
-  <div>
+const modeButtonStory = (WrapperType, ButtonType) => (
+  <WrapperType>
     <div>
-      <ModeButton onClick={onClick} title="Normal">
+      <ButtonType onClick={onClick} title="Normal">
         <Icons.Max />
         +
         <Icons.Bike />
         Go by train or bike
-      </ModeButton>
+      </ButtonType>
     </div>
     <div>
-      <ModeButton selected onClick={onClick} title="Active">
+      <ButtonType selected onClick={onClick} title="Active">
         <Icons.Max />
         Train
-      </ModeButton>
+      </ButtonType>
     </div>
     <div>
-      <ModeButton
+      <ButtonType
         enabled={false}
         label="Can't Select!"
         onClick={onClick}
@@ -112,15 +116,21 @@ export const modeButton = () => (
         <Icons.AlertSolid />
         Can&apos;t select!
         <Icons.Alert />
-      </ModeButton>
+      </ButtonType>
     </div>
     <div>
-      <ModeButton onClick={onClick} showTitle={false} title="Walk Only">
+      <ButtonType onClick={onClick} showTitle={false} title="Walk Only">
         <Icons.Max />
         Walk Only
-      </ModeButton>
+      </ButtonType>
     </div>
-  </div>
+  </WrapperType>
+);
+
+export const modeButtonPlain = modeButtonStory(Wrapper, ModeButton);
+export const modeButtonTrimet = modeButtonStory(
+  TriMetStyled.Ambient,
+  TriMetStyled.ModeButtonControl
 );
 
 export const modeSelector = () => (

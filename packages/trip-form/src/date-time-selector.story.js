@@ -4,6 +4,7 @@ import { withInfo } from "@storybook/addon-info";
 import { withKnobs, boolean, text } from "@storybook/addon-knobs";
 
 import DateTimeSelector from "./DateTimeSelector";
+import * as TriMetStyled from "./__mocks__/trimet.styled";
 
 import "./__mocks__/trimet-mock.css";
 
@@ -29,9 +30,9 @@ export default {
   decorators: [background, withInfo, withKnobs]
 };
 
-export const dateTimeSelector = () => {
+const dateTimeSelectorStory = SelectorType => {
   return (
-    <DateTimeSelector
+    <SelectorType
       departArrive="NOW"
       date="2020-02-15"
       dateFormatLegacy={text("dateFormatLegacy", "YY-M-d")}
@@ -42,3 +43,8 @@ export const dateTimeSelector = () => {
     />
   );
 };
+
+export const dateTimeSelector = dateTimeSelectorStory(DateTimeSelector);
+export const dateTimeSelectorStyled = dateTimeSelectorStory(
+  TriMetStyled.DateTimeSelectorControl
+);

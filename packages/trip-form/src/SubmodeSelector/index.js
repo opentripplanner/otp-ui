@@ -16,7 +16,7 @@ const SubmodeSelector = props => {
 
   return (
     <Styled.SettingsSection className={className} style={style}>
-      {label && <LabelType>{label}</LabelType>}s
+      {label && <LabelType>{label}</LabelType>}
       <RowType>
         {modes &&
           modes.map(option => (

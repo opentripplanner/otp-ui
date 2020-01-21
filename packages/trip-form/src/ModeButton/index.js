@@ -25,16 +25,16 @@ const ModeButton = props => {
 
   return (
     <Styled.ModeButtonContainer className={className}>
-      <Styled.ModeButtonBtn
+      <Styled.ModeButtonButton
         className={`${activeClassName} ${disabledClassName}`}
         onClick={onClick}
         title={title}
         disabled={!enabled}
       >
         {children}
-      </Styled.ModeButtonBtn>
+      </Styled.ModeButtonButton>
 
-      {showTitle && (
+      {title && showTitle && (
         <Styled.ModeButtonTitle className={disabledClassName} title={title}>
           {title}
         </Styled.ModeButtonTitle>

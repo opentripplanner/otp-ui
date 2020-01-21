@@ -38,7 +38,6 @@ export const DepartureRow = styled.div`
 
 export const DateTimeRow = styled.div`
   box-sizing: border-box;
-  margin: 15px 0px;
   > * {
     box-sizing: border-box;
     width: 50%;
@@ -47,14 +46,7 @@ export const DateTimeRow = styled.div`
   }
   input {
     box-sizing: border-box;
-    padding: 6px 12px;
     width: 100%;
-    text-align: center;
-    font-size: inherit;
-    font-family: inherit;
-    font-weight: inherit;
-    border: 0;
-    border-bottom: 1px solid #000;
   }
 `;
 
@@ -131,34 +123,18 @@ export const ModeButtonContainer = styled.div`
 `;
 
 export const ModeButtonTitle = styled.div`
-  font-size: 10px;
-  line-height: 12px;
-  padding: 4px 0px 0px;
+  font-size: 65%;
 
   &.disabled {
     color: #ccc;
   }
 `;
 
-export const ModeButtonBtn = styled.button`
-  border: 1px solid rgb(187, 187, 187);
-  padding: 3px;
-  border-radius: 3px;
+export const ModeButtonButton = styled.button`
+  cursor: pointer;
   width: 100%;
   height: 100%;
-  font-size: inherit;
-  font-family: inherit;
-  font-weight: inherit;
-  background: none;
-  outline: none;
-  cursor: pointer;
 
-  &.active {
-    border: 2px solid rgb(0, 0, 0);
-    background-color: rgb(173, 216, 230);
-    font-weight: 600;
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  }
   svg,
   img {
     vertical-align: middle;
