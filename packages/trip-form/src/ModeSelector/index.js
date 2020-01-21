@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { modeSelectorOptionsType } from "@opentripplanner/core-utils/lib/types";
 
-import { MainModeRow, SecondaryModeRow, TertiaryModeRow } from "./styled";
+import * as Styled from "../styled";
 import ModeButton from "../ModeButton";
 
 /**
@@ -37,13 +37,19 @@ const ModeSelector = props => {
 
   return (
     <div className={className} style={style}>
-      {primary && <MainModeRow>{makeButton(primary)}</MainModeRow>}
+      {primary && (
+        <Styled.MainModeRow>{makeButton(primary)}</Styled.MainModeRow>
+      )}
 
       {secondary && (
-        <SecondaryModeRow>{secondary.map(makeButton)}</SecondaryModeRow>
+        <Styled.SecondaryModeRow>
+          {secondary.map(makeButton)}
+        </Styled.SecondaryModeRow>
       )}
       {tertiary && (
-        <TertiaryModeRow>{tertiary.map(makeButton)}</TertiaryModeRow>
+        <Styled.TertiaryModeRow>
+          {tertiary.map(makeButton)}
+        </Styled.TertiaryModeRow>
       )}
     </div>
   );

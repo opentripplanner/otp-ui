@@ -8,7 +8,7 @@ import {
 } from "@opentripplanner/core-utils/lib/time";
 
 import ModeButton from "../ModeButton";
-import { DepartureRow, DateTimeRow } from "./styled";
+import * as Styled from "../styled";
 
 /**
  * Determines whether the browser supports a particular <input type=<type> /> control,
@@ -129,7 +129,7 @@ class DateTimeSelector extends Component {
 
     return (
       <div className={className} style={style}>
-        <DepartureRow>
+        <Styled.DepartureRow>
           {departureOptions.map(opt => (
             <ModeButton
               key={opt.type}
@@ -139,10 +139,10 @@ class DateTimeSelector extends Component {
               {opt.text}
             </ModeButton>
           ))}
-        </DepartureRow>
+        </Styled.DepartureRow>
 
         {departArrive !== "NOW" && !isLegacy && (
-          <DateTimeRow>
+          <Styled.DateTimeRow>
             <div>
               <input
                 type="time"
@@ -159,12 +159,12 @@ class DateTimeSelector extends Component {
                 onChange={this.handleDateChange}
               />
             </div>
-          </DateTimeRow>
+          </Styled.DateTimeRow>
         )}
 
         {/* Backup controls (for older browsers) */}
         {departArrive !== "NOW" && isLegacy && (
-          <DateTimeRow>
+          <Styled.DateTimeRow>
             <div>
               <input
                 type="text"
@@ -185,7 +185,7 @@ class DateTimeSelector extends Component {
                 onChange={this.handleDateChangeLegacy}
               />
             </div>
-          </DateTimeRow>
+          </Styled.DateTimeRow>
         )}
       </div>
     );

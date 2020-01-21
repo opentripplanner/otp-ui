@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Global from "core-js";
 
-import { SelectCtrl, DropdownSelectorWrap } from "./styled";
-import { SettingLabel } from "../SettingsComponents";
+import * as Styled from "../styled";
 
 /**
  * A wrapper that includes a <select> dropdown control and a <label> for the dropdown control.
@@ -25,22 +24,22 @@ class DropdownSelector extends Component {
     const id = `id-query-param-${name}`;
 
     return (
-      <DropdownSelectorWrap className={className} style={style}>
+      <Styled.DropdownSelectorWrap className={className} style={style}>
         <div>
-          <SettingLabel htmlFor={id}>{label}</SettingLabel>
+          <Styled.SettingLabel htmlFor={id}>{label}</Styled.SettingLabel>
         </div>
 
         <div>
-          <SelectCtrl id={id} value={value} onChange={this.handleChange}>
+          <Styled.SelectCtrl id={id} value={value} onChange={this.handleChange}>
             {options &&
               options.map((o, i) => (
                 <option key={i} value={o.value}>
                   {o.text}
                 </option>
               ))}
-          </SelectCtrl>
+          </Styled.SelectCtrl>
         </div>
-      </DropdownSelectorWrap>
+      </Styled.DropdownSelectorWrap>
     );
   }
 }

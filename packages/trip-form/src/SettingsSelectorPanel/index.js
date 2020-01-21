@@ -13,7 +13,7 @@ import {
 import ModeSelector from "../ModeSelector";
 import SubmodeSelector from "../SubmodeSelector";
 import GeneralSettingsPanel from "../GeneralSettingsPanel";
-import { SettingsHeader } from "../SettingsComponents";
+import * as Styled from "../styled";
 import {
   getModeOptions,
   getTransitSubmodeOptions,
@@ -192,7 +192,7 @@ export default class SettingsSelectorPanel extends Component {
           style={{ margin: "0px -5px", paddingBottom: "8px" }}
         />
 
-        <SettingsHeader>Travel Preferences</SettingsHeader>
+        <Styled.SettingsHeader>Travel Preferences</Styled.SettingsHeader>
 
         {selectedModes.some(isTransit) && transitModes.length >= 2 && (
           <SubmodeSelector

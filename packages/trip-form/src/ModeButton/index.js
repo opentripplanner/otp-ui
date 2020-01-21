@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { ModeButtonContainer, ModeButtonBtn, ModeButtonTitle } from "./styled";
+import * as Styled from "../styled";
 
 /**
  * ModeButton lets the user pick a travel mode.
@@ -24,22 +24,22 @@ const ModeButton = props => {
   const disabledClassName = enabled ? "" : "disabled";
 
   return (
-    <ModeButtonContainer className={className}>
-      <ModeButtonBtn
+    <Styled.ModeButtonContainer className={className}>
+      <Styled.ModeButtonBtn
         className={`${activeClassName} ${disabledClassName}`}
         onClick={onClick}
         title={title}
         disabled={!enabled}
       >
         {children}
-      </ModeButtonBtn>
+      </Styled.ModeButtonBtn>
 
       {showTitle && (
-        <ModeButtonTitle className={disabledClassName} title={title}>
+        <Styled.ModeButtonTitle className={disabledClassName} title={title}>
           {title}
-        </ModeButtonTitle>
+        </Styled.ModeButtonTitle>
       )}
-    </ModeButtonContainer>
+    </Styled.ModeButtonContainer>
   );
 };
 
