@@ -46,8 +46,7 @@ const twoBaseLayers = [
   }
 ];
 
-const center = [33.758189, -84.38361];
-const portlandCenter = [45.526862, -122.668837];
+const center = [45.522862, -122.667837];
 
 const sampleMarkers = (
   <CircleMarker center={center} radius={100} interactive={false}>
@@ -101,7 +100,7 @@ export const withTwoOverlaysFromTrimetTransitComponents = () => (
       tooltips and popups. Check actions log for overlay events.
     </div>
     <BaseMap
-      center={portlandCenter}
+      center={center}
       onOverlayAdded={onOverlayAdded}
       onOverlayRemoved={onOverlayRemoved}
       onViewportChanged={onViewportChanged}
@@ -121,7 +120,7 @@ export const withTwoOverlaysFromTrimetTransitComponents = () => (
 export const overlayWithLargeDataSet = () => (
   <div>
     <div>Do not add Storybook overhead on layers with large dataset...</div>
-    <BaseMap center={portlandCenter}>
+    <BaseMap center={center}>
       <AllVehiclesOverlay name="Simple vehicle layer" />
       <SelectVehicles name="Fancier vehicle layer" limit={500} visible />
     </BaseMap>

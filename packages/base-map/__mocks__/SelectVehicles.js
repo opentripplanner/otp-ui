@@ -1,11 +1,10 @@
 import React from "react";
 import { FeatureGroup, MapLayer, withLeaflet } from "react-leaflet";
 
-import callIfValid from "../src/funcs";
+import callIfValid from "../src/util";
 
 import VehicleMarker from "./VehicleMarker";
 
-// const vehicleData = require("./vehicle-data/select-vehicles.json");
 const vehicleData = require("./vehicle-data/all-trimet.json"); // https://maps.trimet.org/gtfs/rt/vehicles/routes/all
 
 /**
