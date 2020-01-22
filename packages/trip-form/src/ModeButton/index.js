@@ -12,32 +12,33 @@ import * as Styled from "../styled";
 const ModeButton = props => {
   const {
     className,
-    selected,
     children,
     enabled,
+    onClick,
+    selected,
     showTitle,
     title,
-    onClick
+    style
   } = props;
 
   const activeClassName = selected ? "active" : "";
   const disabledClassName = enabled ? "" : "disabled";
 
   return (
-    <Styled.ModeButton className={className}>
-      <Styled.ModeButtonButton
+    <Styled.ModeButton className={className} style={style}>
+      <Styled.ModeButton.Button
         className={`${activeClassName} ${disabledClassName}`}
         onClick={onClick}
         title={title}
         disabled={!enabled}
       >
         {children}
-      </Styled.ModeButtonButton>
+      </Styled.ModeButton.Button>
 
       {title && showTitle && (
-        <Styled.ModeButtonTitle className={disabledClassName} title={title}>
+        <Styled.ModeButton.Title className={disabledClassName} title={title}>
           {title}
-        </Styled.ModeButtonTitle>
+        </Styled.ModeButton.Title>
       )}
     </Styled.ModeButton>
   );

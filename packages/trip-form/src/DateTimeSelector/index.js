@@ -128,8 +128,8 @@ class DateTimeSelector extends Component {
     const isLegacy = forceLegacy || !this.supportsDateTimeInputs;
 
     return (
-      <div className={className} style={style}>
-        <Styled.DepartureRow>
+      <Styled.DateTimeSelector className={className} style={style}>
+        <Styled.DateTimeSelector.DepartureRow>
           {departureOptions.map(opt => (
             <ModeButton
               key={opt.type}
@@ -139,10 +139,10 @@ class DateTimeSelector extends Component {
               {opt.text}
             </ModeButton>
           ))}
-        </Styled.DepartureRow>
+        </Styled.DateTimeSelector.DepartureRow>
 
         {departArrive !== "NOW" && !isLegacy && (
-          <Styled.DateTimeRow>
+          <Styled.DateTimeSelector.DateTimeRow>
             <div>
               <input
                 type="time"
@@ -159,12 +159,12 @@ class DateTimeSelector extends Component {
                 onChange={this.handleDateChange}
               />
             </div>
-          </Styled.DateTimeRow>
+          </Styled.DateTimeSelector.DateTimeRow>
         )}
 
         {/* Backup controls (for older browsers) */}
         {departArrive !== "NOW" && isLegacy && (
-          <Styled.DateTimeRow>
+          <Styled.DateTimeSelector.DateTimeRow>
             <div>
               <input
                 type="text"
@@ -185,9 +185,9 @@ class DateTimeSelector extends Component {
                 onChange={this.handleDateChangeLegacy}
               />
             </div>
-          </Styled.DateTimeRow>
+          </Styled.DateTimeSelector.DateTimeRow>
         )}
-      </div>
+      </Styled.DateTimeSelector>
     );
   }
 }

@@ -14,7 +14,9 @@ export const FloatingSettingLabel = styled(SettingLabel)`
   float: left;
 `;
 
-export const DepartureRow = styled.div`
+export const DateTimeSelector = styled.div``;
+
+DateTimeSelector.DepartureRow = styled.div`
   box-sizing: border-box;
   > * {
     box-sizing: border-box;
@@ -23,7 +25,7 @@ export const DepartureRow = styled.div`
   }
 `;
 
-export const DateTimeRow = styled.div`
+DateTimeSelector.DateTimeRow = styled.div`
   box-sizing: border-box;
   > * {
     box-sizing: border-box;
@@ -37,14 +39,9 @@ export const DateTimeRow = styled.div`
   }
 `;
 
-export const ModeRow = styled.div`
-  > * {
-    width: 33.333333%;
-    padding: 0px 5px;
-  }
-`;
+export const ModeSelector = styled.div``;
 
-export const MainModeRow = styled.div`
+ModeSelector.MainRow = styled.div`
   padding: 0px 5px;
   box-sizing: border-box;
   > * {
@@ -52,13 +49,25 @@ export const MainModeRow = styled.div`
   }
 `;
 
-export const SecondaryModeRow = styled(ModeRow)``;
+ModeSelector.SecondaryRow = styled.div`
+  > * {
+    width: 33.333333%;
+    padding: 0px 5px;
+  }
+`;
 
-export const TertiaryModeRow = styled(ModeRow)``;
+ModeSelector.TertiaryRow = styled.div`
+  > * {
+    width: 33.333333%;
+    padding: 0px 5px;
+  }
+`;
 
-export const SubmodeRow = styled.div``;
+export const SubmodeSelector = styled(SettingsSection)``;
 
-export const InlineSubmodeRow = styled(SubmodeRow)`
+SubmodeSelector.Row = styled.div``;
+
+SubmodeSelector.InlineRow = styled(SubmodeSelector.Row)`
   text-align: right;
 `;
 
@@ -77,15 +86,14 @@ export const ModeButton = styled.div`
   }
 `;
 
-export const ModeButtonTitle = styled.div`
-  font-size: 65%;
-
+ModeButton.Title = styled.div`
+  font-size: 70%;
   &.disabled {
     color: #ccc;
   }
 `;
 
-export const ModeButtonButton = styled.button`
+ModeButton.Button = styled.button`
   cursor: pointer;
   width: 100%;
   height: 100%;
@@ -96,6 +104,10 @@ export const ModeButtonButton = styled.button`
     max-width: 1.25em;
     margin: 0 0.25em;
     height: 1.25em;
+  }
+  &.active {
+    font-weight: 600;
+    box-shadow: 0 0 2px 2px rgba(0, 64, 255, 0.5);
   }
   &.disabled {
     cursor: default;
@@ -117,3 +129,7 @@ export const DropdownSelector = styled.div`
     box-sizing: border-box;
   }
 `;
+
+export const GeneralSettingsPanel = styled.div``;
+
+export const SettingsSelectorPanel = styled.div``;

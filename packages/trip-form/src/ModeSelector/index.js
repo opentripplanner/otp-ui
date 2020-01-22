@@ -36,22 +36,24 @@ const ModeSelector = props => {
   );
 
   return (
-    <div className={className} style={style}>
+    <Styled.ModeSelector className={className} style={style}>
       {primary && (
-        <Styled.MainModeRow>{makeButton(primary)}</Styled.MainModeRow>
+        <Styled.ModeSelector.MainRow>
+          {makeButton(primary)}
+        </Styled.ModeSelector.MainRow>
       )}
 
       {secondary && (
-        <Styled.SecondaryModeRow>
+        <Styled.ModeSelector.SecondaryRow>
           {secondary.map(makeButton)}
-        </Styled.SecondaryModeRow>
+        </Styled.ModeSelector.SecondaryRow>
       )}
       {tertiary && (
-        <Styled.TertiaryModeRow>
+        <Styled.ModeSelector.TertiaryRow>
           {tertiary.map(makeButton)}
-        </Styled.TertiaryModeRow>
+        </Styled.ModeSelector.TertiaryRow>
       )}
-    </div>
+    </Styled.ModeSelector>
   );
 };
 

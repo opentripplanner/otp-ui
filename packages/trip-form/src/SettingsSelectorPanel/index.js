@@ -185,7 +185,7 @@ export default class SettingsSelectorPanel extends Component {
     );
 
     return (
-      <div className={className} style={style}>
+      <Styled.SettingsSelectorPanel className={className} style={style}>
         <ModeSelector
           modes={modeOptions}
           onChange={this.handleMainModeChange}
@@ -239,7 +239,7 @@ export default class SettingsSelectorPanel extends Component {
           supportedModes={supportedModes}
           onQueryParamChange={this.handleQueryParamChange}
         />
-      </div>
+      </Styled.SettingsSelectorPanel>
     );
   }
 }

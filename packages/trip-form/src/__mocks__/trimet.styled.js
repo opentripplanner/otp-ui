@@ -29,7 +29,7 @@ const TriMetStyled = styled.div`
     text-transform: uppercase;
     letter-spacing: 1px;
   }
-  ${TripFormClasses.ModeButtonButton} {
+  ${TripFormClasses.ModeButton.Button} {
     border: 1px solid rgb(187, 187, 187);
     padding: 3px;
     border-radius: 3px;
@@ -46,12 +46,12 @@ const TriMetStyled = styled.div`
       box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     }
   }
-  ${TripFormClasses.ModeButtonTitle} {
+  ${TripFormClasses.ModeButton.Title} {
     padding: 4px 0px 0px;
     font-size: 10px;
     line-height: 12px;
   }
-  ${TripFormClasses.DateTimeRow} {
+  ${TripFormClasses.DateTimeSelector.DateTimeRow} {
     margin: 15px 0px;
     input {
       padding: 6px 12px;
@@ -91,7 +91,7 @@ const TriMetStyled = styled.div`
       box-sizing: border-box;
     }
   }
-  ${TripFormClasses.SubmodeRow} {
+  ${TripFormClasses.SubmodeSelector.Row} {
     font-size: 85%;
     > * {
       padding: 3px 5px 3px 0px;
@@ -107,10 +107,10 @@ const TriMetStyled = styled.div`
       margin-left: 0px;
     }
   }
-  ${TripFormClasses.InlineSubmodeRow} {
+  ${TripFormClasses.SubmodeSelector.InlineRow} {
     margin: -3px 0px;
   }
-  ${TripFormClasses.MainModeRow} {
+  ${TripFormClasses.ModeSelector.MainRow} {
     padding: 0px 5px;
     font-size: 200%;
     margin-bottom: 18px;
@@ -120,21 +120,20 @@ const TriMetStyled = styled.div`
       height: 55px;
     }
   }
-  ${TripFormClasses.SecondaryModeRow} {
+  ${TripFormClasses.ModeSelector.SecondaryRow} {
+    margin-bottom: 10px;
     > * {
       font-size: 150%;
       height: 46px;
     }
   }
-  ${TripFormClasses.TertiaryModeRow} {
+  ${TripFormClasses.ModeSelector.TertiaryRow} {
     font-size: 90%;
+    margin-bottom: 10px;
     text-align: center;
     > * {
       height: 36px;
     }
-  }
-  ${TripFormClasses.ModeRow} {
-    margin-bottom: 10px;
   }
 `;
 

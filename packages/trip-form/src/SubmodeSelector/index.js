@@ -12,10 +12,12 @@ import * as Styled from "../styled";
 const SubmodeSelector = props => {
   const { className, inline, label, modes, onChange, style } = props;
   const LabelType = inline ? Styled.FloatingSettingLabel : Styled.SettingLabel;
-  const RowType = inline ? Styled.InlineSubmodeRow : Styled.SubmodeRow;
+  const RowType = inline
+    ? Styled.SubmodeSelector.InlineRow
+    : Styled.SubmodeSelector.Row;
 
   return (
-    <Styled.SettingsSection className={className} style={style}>
+    <Styled.SubmodeSelector className={className} style={style}>
       {label && <LabelType>{label}</LabelType>}
       <RowType>
         {modes &&
@@ -31,7 +33,7 @@ const SubmodeSelector = props => {
             </ModeButton>
           ))}
       </RowType>
-    </Styled.SettingsSection>
+    </Styled.SubmodeSelector>
   );
 };
 
