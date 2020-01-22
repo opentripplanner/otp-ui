@@ -24,7 +24,7 @@ const ModeButton = props => {
   const disabledClassName = enabled ? "" : "disabled";
 
   return (
-    <Styled.ModeButtonContainer className={className}>
+    <Styled.ModeButton className={className}>
       <Styled.ModeButtonButton
         className={`${activeClassName} ${disabledClassName}`}
         onClick={onClick}
@@ -39,7 +39,7 @@ const ModeButton = props => {
           {title}
         </Styled.ModeButtonTitle>
       )}
-    </Styled.ModeButtonContainer>
+    </Styled.ModeButton>
   );
 };
 

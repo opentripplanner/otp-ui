@@ -3,36 +3,19 @@ import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
 import { withKnobs, boolean, text } from "@storybook/addon-knobs";
 
-import * as Core from ".";
-import * as TriMet from "./__mocks__/trimet.styled";
-
-import "./__mocks__/trimet-mock.css";
-
-const background = story => (
-  <div
-    style={{
-      backgroundColor: "#F0F0F0",
-      height: "500px",
-      padding: "15px",
-      fontFamily: "Hind, sans-serif",
-      fontSize: "14px",
-      fontWeight: "300"
-    }}
-  >
-    {story()}
-  </div>
-);
+import DateTimeSelector from "./DateTimeSelector";
+import trimet from "./__mocks__/trimet.styled";
 
 const onQueryParamChange = action("onQueryParamChange");
 
 export default {
   title: "DateTimeSelector",
-  decorators: [background, withInfo, withKnobs]
+  decorators: [withInfo, withKnobs]
 };
 
-const dateTimeSelectorStory = SelectorType => {
+export const dateTimeSelector = () => {
   return (
-    <SelectorType
+    <DateTimeSelector
       departArrive="NOW"
       date="2020-02-15"
       dateFormatLegacy={text("dateFormatLegacy", "YY-M-d")}
@@ -43,8 +26,4 @@ const dateTimeSelectorStory = SelectorType => {
     />
   );
 };
-
-export const dateTimeSelector = dateTimeSelectorStory(Core.DateTimeSelector);
-export const dateTimeSelectorStyled = dateTimeSelectorStory(
-  TriMet.DateTimeSelector
-);
+export const dateTimeSelectorStyled = () => trimet(dateTimeSelector());

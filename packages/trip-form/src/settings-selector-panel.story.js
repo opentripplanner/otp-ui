@@ -5,23 +5,7 @@ import { withInfo } from "@storybook/addon-info";
 import SettingsSelectorPanel from "./SettingsSelectorPanel";
 import commonModes from "./__mocks__/modes";
 import commonCompanies from "./__mocks__/companies";
-
-import "./__mocks__/trimet-mock.css";
-
-const background = story => (
-  <div
-    style={{
-      backgroundColor: "#F0F0F0",
-      height: "500px",
-      padding: "15px",
-      fontFamily: "Hind, sans-serif",
-      fontSize: "14px",
-      fontWeight: "300"
-    }}
-  >
-    {story()}
-  </div>
-);
+import trimet from "./__mocks__/trimet.styled";
 
 const onQueryParamChange = action("onQueryParamChange");
 
@@ -32,7 +16,7 @@ const queryParams = {
 
 export default {
   title: "SettingsSelectorPanel",
-  decorators: [background, withInfo]
+  decorators: [withInfo]
 };
 
 export const settingsSelectorPanel = () => (
@@ -43,3 +27,5 @@ export const settingsSelectorPanel = () => (
     onQueryParamChange={onQueryParamChange}
   />
 );
+export const settingsSelectorPanelStyled = () =>
+  trimet(settingsSelectorPanel());

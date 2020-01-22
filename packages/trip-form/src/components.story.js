@@ -1,8 +1,9 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
-import { withKnobs, object } from "@storybook/addon-knobs";
+import { withKnobs, object, boolean } from "@storybook/addon-knobs";
 import * as Icons from "@opentripplanner/icons";
+
 import * as Core from ".";
 import ModeIcon from "./ModeIcon";
 
@@ -10,26 +11,11 @@ import ModeIconWrap from "./__mocks__/mode-icon-wrap";
 import modeOptions from "./__mocks__/mode-options";
 import commonModes from "./__mocks__/modes";
 import submodeOptions from "./__mocks__/submode-options";
-import * as TriMet from "./__mocks__/trimet.styled";
-
-// eslint-disable-next-line react/destructuring-assignment, react/prop-types
-const Wrapper = props => <div>{props.children}</div>;
-
-const background = story => (
-  <div
-    style={{
-      backgroundColor: "#F0F0F0",
-      height: "200px",
-      padding: "15px"
-    }}
-  >
-    {story()}
-  </div>
-);
+import trimet from "./__mocks__/trimet.styled";
 
 export default {
   title: "Trip Form Components",
-  decorators: [withInfo, withKnobs, background]
+  decorators: [withInfo, withKnobs]
 };
 
 // Events
@@ -45,9 +31,10 @@ export const checkboxSelector = () => (
     onChange={onChange}
   />
 );
+export const checkBoxSelectorStyled = () => trimet(checkboxSelector());
 
-const dropdownStory = ControlType => (
-  <ControlType
+export const dropdownSelector = () => (
+  <Core.DropdownSelector
     name="MyParam"
     style={{ display: "inline-block", width: "250px" }}
     label="Pick an option:"
@@ -65,12 +52,10 @@ const dropdownStory = ControlType => (
     value="Value2"
   />
 );
+export const dropdownSelectorStyled = () => trimet(dropdownSelector());
 
-export const dropdownSelector = dropdownStory(Core.DropdownSelector);
-export const dropdownSelectorStyled = dropdownStory(TriMet.DropdownSelector);
-
-const settingsStory = ControlType => (
-  <ControlType
+export const generalSettingsPanel = () => (
+  <Core.GeneralSettingsPanel
     query={{
       mode: object("mode", "WALK,BUS,TRAM,SUBWAY"),
       routingType: "ITINERARY"
@@ -79,11 +64,7 @@ const settingsStory = ControlType => (
     supportedModes={commonModes}
   />
 );
-
-export const generalSettingsPanel = settingsStory(Core.GeneralSettingsPanel);
-export const generalSettingsPanelStyled = settingsStory(
-  TriMet.GeneralSettingsPanel
-);
+export const generalSettingsPanelStyled = () => trimet(generalSettingsPanel());
 
 export const modeIcon = () => (
   <ModeIconWrap>
@@ -91,24 +72,25 @@ export const modeIcon = () => (
   </ModeIconWrap>
 );
 
-const modeButtonStory = (WrapperType, ButtonType) => (
-  <WrapperType>
+export const modeButton = () => (
+  <div>
     <div>
-      <ButtonType onClick={onClick} title="Normal">
+      <Core.ModeButton onClick={onClick} title="Normal">
         <Icons.Max />
         +
         <Icons.Bike />
-        Go by train or bike
-      </ButtonType>
+        Go by train
+        <span style={{ fontSize: "150%", color: "red" }}> or </span> bike
+      </Core.ModeButton>
     </div>
     <div>
-      <ButtonType selected onClick={onClick} title="Active">
+      <Core.ModeButton selected onClick={onClick} title="Active">
         <Icons.Max />
         Train
-      </ButtonType>
+      </Core.ModeButton>
     </div>
     <div>
-      <ButtonType
+      <Core.ModeButton
         enabled={false}
         label="Can't Select!"
         onClick={onClick}
@@ -117,31 +99,29 @@ const modeButtonStory = (WrapperType, ButtonType) => (
         <Icons.AlertSolid />
         Can&apos;t select!
         <Icons.Alert />
-      </ButtonType>
+      </Core.ModeButton>
     </div>
     <div>
-      <ButtonType onClick={onClick} showTitle={false} title="Walk Only">
+      <Core.ModeButton onClick={onClick} showTitle={false} title="Walk Only">
         <Icons.Max />
         Walk Only
-      </ButtonType>
+      </Core.ModeButton>
     </div>
-  </WrapperType>
+  </div>
 );
-
-export const modeButtonPlain = modeButtonStory(Wrapper, Core.ModeButton);
-export const modeButtonTrimet = modeButtonStory(
-  TriMet.Ambient,
-  TriMet.ModeButton
-);
+export const modeButtonStyled = () => trimet(modeButton());
 
 export const modeSelector = () => (
   <Core.ModeSelector modes={modeOptions} onChange={onChange} />
 );
+export const modeSelectorStyled = () => trimet(modeSelector());
 
 export const submodeSelector = () => (
   <Core.SubmodeSelector
+    inline={boolean("inline", false)}
     label="Submodes:"
     modes={submodeOptions}
     onChange={onChange}
   />
 );
+export const submodeSelectorStyled = () => trimet(submodeSelector());

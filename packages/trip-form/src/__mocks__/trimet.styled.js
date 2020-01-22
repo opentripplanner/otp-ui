@@ -1,46 +1,34 @@
-import styled, { css } from "styled-components";
-import * as Core from "..";
+import React from "react";
+import styled from "styled-components";
 import * as TripFormClasses from "../styled";
 
-import "./trimet-mock.css"; // For the font.
+/**
+ * This file is provided as an illustrative example for custom styling.
+ */
 
-export const Ambient = styled.div`
+import "./trimet-mock.css"; // Downloads the font.
+
+const TriMetStyled = styled.div`
   font-family: Hind, sans-serif;
   font-size: 14px;
-`;
+  background-color: #f0f0f0;
+  padding: 15px;
 
-export const SettingsHeader = styled.div`
-  color: #333333;
-  font-size: 18px;
-  margin: 16px 0px;
-`;
-
-export const SettingsSection = styled.div`
-  margin-bottom: 16px;
-`;
-
-const settingLabelCss = css`
-  label {
+  ${TripFormClasses.SettingsHeader} {
+    color: #333333;
+    font-size: 18px;
+    margin: 16px 0px;
+  }
+  ${TripFormClasses.SettingsSection} {
+    margin-bottom: 16px;
+  }
+  ${TripFormClasses.SettingLabel} {
     padding-top: 8px;
     color: #808080;
     font-weight: 100;
     text-transform: uppercase;
     letter-spacing: 1px;
   }
-`;
-
-/*
-export const SettingLabel = styled.label`
-  ${settingLabelCss}
-`;
-
-export const FloatingSettingLabel = styled(SettingLabel)`
-  float: left;
-  padding-top: 9px;
-`;
-*/
-
-const modeButtonCss = css`
   ${TripFormClasses.ModeButtonButton} {
     border: 1px solid rgb(187, 187, 187);
     padding: 3px;
@@ -63,14 +51,6 @@ const modeButtonCss = css`
     font-size: 10px;
     line-height: 12px;
   }
-`;
-
-export const ModeButton = styled(Core.ModeButton)`
-  ${modeButtonCss}
-`;
-
-export const DateTimeSelector = styled(Core.DateTimeSelector)`
-  ${modeButtonCss}
   ${TripFormClasses.DateTimeRow} {
     margin: 15px 0px;
     input {
@@ -83,11 +63,24 @@ export const DateTimeSelector = styled(Core.DateTimeSelector)`
       border-bottom: 1px solid #000;
     }
   }
-`;
-
-export const DropdownSelector = styled(Core.DropdownSelector)`
-  > div {
-    :last-child::after {
+  ${TripFormClasses.DropdownSelector} {
+    select {
+      -webkit-appearance: none;
+      font-size: inherit;
+      font-family: inherit;
+      font-weight: inherit;
+      margin-bottom: 15px;
+      background: none;
+      border-radius: 3px;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      height: 34px;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      line-height: 1.42857;
+      color: #555;
+    }
+    > div:last-child::after {
       content: "▼";
       font-size: 75%;
       color: #000;
@@ -98,25 +91,53 @@ export const DropdownSelector = styled(Core.DropdownSelector)`
       box-sizing: border-box;
     }
   }
-  ${settingLabelCss}
-  select {
-    -webkit-appearance: none;
-    font-size: inherit;
-    font-family: inherit;
-    font-weight: inherit;
-    margin-bottom: 15px;
-    background: none;
-    border-radius: 3px;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    height: 34px;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    line-height: 1.42857;
-    color: #555;
+  ${TripFormClasses.SubmodeRow} {
+    font-size: 85%;
+    > * {
+      padding: 3px 5px 3px 0px;
+    }
+    > :last-child {
+      padding-right: 0px;
+    }
+    button {
+      padding: 6px 12px;
+    }
+    svg,
+    img {
+      margin-left: 0px;
+    }
+  }
+  ${TripFormClasses.InlineSubmodeRow} {
+    margin: -3px 0px;
+  }
+  ${TripFormClasses.MainModeRow} {
+    padding: 0px 5px;
+    font-size: 200%;
+    margin-bottom: 18px;
+    box-sizing: border-box;
+    > * {
+      width: 100%;
+      height: 55px;
+    }
+  }
+  ${TripFormClasses.SecondaryModeRow} {
+    > * {
+      font-size: 150%;
+      height: 46px;
+    }
+  }
+  ${TripFormClasses.TertiaryModeRow} {
+    font-size: 90%;
+    text-align: center;
+    > * {
+      height: 36px;
+    }
+  }
+  ${TripFormClasses.ModeRow} {
+    margin-bottom: 10px;
   }
 `;
 
-export const GeneralSettingsPanel = styled(Core.GeneralSettingsPanel)`
-  ${settingLabelCss}
-`;
+const trimet = contents => <TriMetStyled>{contents}</TriMetStyled>;
+
+export default trimet;

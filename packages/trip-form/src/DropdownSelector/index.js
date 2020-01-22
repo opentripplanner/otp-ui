@@ -24,9 +24,9 @@ class DropdownSelector extends Component {
     const id = `id-query-param-${name}`;
 
     return (
-      <Styled.DropdownSelectorWrap className={className} style={style}>
+      <Styled.DropdownSelector className={className} style={style}>
         <div>
-          <label htmlFor={id}>{label}</label>
+          <Styled.SettingLabel htmlFor={id}>{label}</Styled.SettingLabel>
         </div>
 
         <div>
@@ -39,7 +39,7 @@ class DropdownSelector extends Component {
               ))}
           </select>
         </div>
-      </Styled.DropdownSelectorWrap>
+      </Styled.DropdownSelector>
     );
   }
 }
