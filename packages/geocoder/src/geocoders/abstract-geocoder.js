@@ -34,6 +34,7 @@ export default class Geocoder {
   getLocationFromGeocodedFeature(feature) {
     const location = lonlat.fromCoordinates(feature.geometry.coordinates);
     location.name = feature.properties.label;
+    location.rawGeocodedFeature = feature;
     return Promise.resolve(location);
   }
 

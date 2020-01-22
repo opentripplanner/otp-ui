@@ -67,10 +67,12 @@ export default class PeliasGeocoder extends Geocoder {
       "point.lat": lat,
       "point.lon": lon
     } = response.isomorphicMapzenSearchQuery;
+    const firstFeature = response[0];
     return {
       lat,
       lon,
-      name: response[0].address
+      name: firstFeature.address,
+      rawGeocodedFeature: firstFeature
     };
   }
 }
