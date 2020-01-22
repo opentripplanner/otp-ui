@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React, { Component } from "react";
 import styled from "styled-components";
 
-const BaseButton = styled.button`
+export const BaseButton = styled.button`
   border: none;
   background: none;
 `;
@@ -11,6 +11,10 @@ export const Button = styled(BaseButton)`
   color: #888;
   margin: 0;
   padding: 2px 5px;
+`;
+
+export const ClearBoth = styled.div`
+  clear: both;
 `;
 
 export const Dropdown = ({ children, open, onToggle, title }) => {
@@ -33,11 +37,11 @@ Dropdown.defaultProps = {
   onToggle: () => {}
 };
 
-const DropdownButton = styled(BaseButton)`
+export const DropdownButton = styled(BaseButton)`
   width: 30px;
 `;
 
-const DropdownContainer = styled.span`
+export const DropdownContainer = styled.span`
   position: relative;
 `;
 
@@ -117,7 +121,7 @@ MenuItem.defaultProps = {
   onClick: null
 };
 
-const MenuItemA = styled.a`
+export const MenuItemA = styled.a`
   background-color: ${props => (props.active ? "#337ab7" : "transparent")};
   clear: both;
   color: ${props => (props.active ? "#fff" : "#333")};
@@ -129,7 +133,7 @@ const MenuItemA = styled.a`
   white-space: nowrap;
 `;
 
-const MenuItemHeader = styled.li`
+export const MenuItemHeader = styled.li`
   color: navy;
   display: block;
   font-size: 14px;
@@ -140,7 +144,7 @@ const MenuItemHeader = styled.li`
   white-space: nowrap;
 `;
 
-const MenuItemLi = styled.li`
+export const MenuItemLi = styled.li`
   &:hover {
     background-color: ${props => !props.disabled && "#f5f5f5"};
   }
@@ -170,6 +174,17 @@ export const OptionContainer = styled.div`
   padding-bottom: 3px;
 `;
 
+export const OptionContent = styled.div`
+  margin-left: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
+
+export const OptionIconContainer = styled.div`
+  float: left;
+`;
+
 export const RouteName = styled.span`
   background-color: gray;
   color: white;
@@ -186,4 +201,23 @@ export const StaticMenuItemList = styled(MenuItemList)`
   li:hover {
     background-color: transparent;
   }
+`;
+
+export const StopContentContainer = styled.div`
+  margin-left: 30px;
+`;
+
+export const StopDistance = styled.div`
+  font-size: 8px;
+`;
+
+export const StopIconAndDistanceContainer = styled.div`
+  float: left;
+  padding-top: 3px;
+`;
+
+export const StopName = styled.div``;
+
+export const StopRoutes = styled.div`
+  font-size: 9px;
 `;

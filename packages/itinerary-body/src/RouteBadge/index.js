@@ -1,15 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import StyledRouteBadge from "./styled";
-import * as Accessibility from "./styled-accessibility";
+import * as Styled from "../styled";
 
 const RouteBadge = ({ color, abbreviation, name }) => {
   return (
-    <StyledRouteBadge routeColor={color}>
-      <Accessibility.SRHidden>{abbreviation}</Accessibility.SRHidden>
-      <Accessibility.SROnly>{name}</Accessibility.SROnly>
-    </StyledRouteBadge>
+    <Styled.RouteBadge routeColor={color}>
+      <Styled.SRHidden>{abbreviation}</Styled.SRHidden>
+      <Styled.SROnly>{name}</Styled.SROnly>
+    </Styled.RouteBadge>
   );
 };
 
