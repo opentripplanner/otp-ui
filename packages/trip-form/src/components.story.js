@@ -3,21 +3,14 @@ import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
 import { withKnobs, object } from "@storybook/addon-knobs";
 import * as Icons from "@opentripplanner/icons";
-
-import CheckboxSelector from "./CheckboxSelector";
-import DropdownSelector from "./DropdownSelector";
-import GeneralSettingsPanel from "./GeneralSettingsPanel";
-
-import ModeButton from "./ModeButton";
+import * as Core from ".";
 import ModeIcon from "./ModeIcon";
-import ModeSelector from "./ModeSelector";
-import SubmodeSelector from "./SubmodeSelector";
 
 import ModeIconWrap from "./__mocks__/mode-icon-wrap";
 import modeOptions from "./__mocks__/mode-options";
 import commonModes from "./__mocks__/modes";
 import submodeOptions from "./__mocks__/submode-options";
-import * as TriMetStyled from "./__mocks__/trimet.styled";
+import * as TriMet from "./__mocks__/trimet.styled";
 
 // eslint-disable-next-line react/destructuring-assignment, react/prop-types
 const Wrapper = props => <div>{props.children}</div>;
@@ -45,7 +38,7 @@ const onClick = action("onClick");
 const onQueryParamChange = action("onQueryParamChange");
 
 export const checkboxSelector = () => (
-  <CheckboxSelector
+  <Core.CheckboxSelector
     name="MyParam"
     style={{ display: "inline-block", width: "250px" }}
     label="Check me."
@@ -53,8 +46,8 @@ export const checkboxSelector = () => (
   />
 );
 
-export const dropdownSelector = () => (
-  <DropdownSelector
+const dropdownStory = ControlType => (
+  <ControlType
     name="MyParam"
     style={{ display: "inline-block", width: "250px" }}
     label="Pick an option:"
@@ -73,8 +66,11 @@ export const dropdownSelector = () => (
   />
 );
 
-export const generalSettingsPanel = () => (
-  <GeneralSettingsPanel
+export const dropdownSelector = dropdownStory(Core.DropdownSelector);
+export const dropdownSelectorStyled = dropdownStory(TriMet.DropdownSelector);
+
+const settingsStory = ControlType => (
+  <ControlType
     query={{
       mode: object("mode", "WALK,BUS,TRAM,SUBWAY"),
       routingType: "ITINERARY"
@@ -82,6 +78,11 @@ export const generalSettingsPanel = () => (
     onQueryParamChange={onQueryParamChange}
     supportedModes={commonModes}
   />
+);
+
+export const generalSettingsPanel = settingsStory(Core.GeneralSettingsPanel);
+export const generalSettingsPanelStyled = settingsStory(
+  TriMet.GeneralSettingsPanel
 );
 
 export const modeIcon = () => (
@@ -127,18 +128,18 @@ const modeButtonStory = (WrapperType, ButtonType) => (
   </WrapperType>
 );
 
-export const modeButtonPlain = modeButtonStory(Wrapper, ModeButton);
+export const modeButtonPlain = modeButtonStory(Wrapper, Core.ModeButton);
 export const modeButtonTrimet = modeButtonStory(
-  TriMetStyled.Ambient,
-  TriMetStyled.ModeButtonControl
+  TriMet.Ambient,
+  TriMet.ModeButton
 );
 
 export const modeSelector = () => (
-  <ModeSelector modes={modeOptions} onChange={onChange} />
+  <Core.ModeSelector modes={modeOptions} onChange={onChange} />
 );
 
 export const submodeSelector = () => (
-  <SubmodeSelector
+  <Core.SubmodeSelector
     label="Submodes:"
     modes={submodeOptions}
     onChange={onChange}

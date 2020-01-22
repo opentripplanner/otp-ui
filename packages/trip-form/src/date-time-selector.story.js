@@ -3,8 +3,8 @@ import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
 import { withKnobs, boolean, text } from "@storybook/addon-knobs";
 
-import DateTimeSelector from "./DateTimeSelector";
-import * as TriMetStyled from "./__mocks__/trimet.styled";
+import * as Core from ".";
+import * as TriMet from "./__mocks__/trimet.styled";
 
 import "./__mocks__/trimet-mock.css";
 
@@ -44,7 +44,7 @@ const dateTimeSelectorStory = SelectorType => {
   );
 };
 
-export const dateTimeSelector = dateTimeSelectorStory(DateTimeSelector);
+export const dateTimeSelector = dateTimeSelectorStory(Core.DateTimeSelector);
 export const dateTimeSelectorStyled = dateTimeSelectorStory(
-  TriMetStyled.DateTimeSelectorControl
+  TriMet.DateTimeSelector
 );

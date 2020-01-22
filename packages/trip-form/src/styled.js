@@ -4,27 +4,14 @@ import styled from "styled-components";
 // /////////////// App components /////////////////
 // ////////////////////////////////////////////////
 
-export const SettingsHeader = styled.div`
-  color: #333333;
-  font-size: 18px;
-  margin: 16px 0px;
-`;
+export const SettingsHeader = styled.div``;
 
-export const SettingsSection = styled.div`
-  margin-bottom: 16px;
-`;
+export const SettingsSection = styled.div``;
 
-export const SettingLabel = styled.label`
-  padding-top: 8px;
-  color: #808080;
-  font-weight: 100;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-`;
+export const SettingLabel = styled.label``;
 
 export const FloatingSettingLabel = styled(SettingLabel)`
   float: left;
-  padding-top: 9px;
 `;
 
 export const DepartureRow = styled.div`
@@ -156,37 +143,9 @@ export const DropdownSelectorWrap = styled.div`
     display: inline-block;
     box-sizing: border-box;
     position: relative;
-
-    :last-child::after {
-      content: "▼";
-      font-size: 75%;
-      color: #000;
-      right: 8px;
-      top: 10px;
-      position: absolute;
-      pointer-events: none;
-      box-sizing: border-box;
-    }
   }
   select {
     width: 100%;
     box-sizing: border-box;
-    font-size: inherit;
-    font-family: inherit;
-    font-weight: inherit;
-    margin-bottom: 15px;
   }
-`;
-
-export const SelectCtrl = styled.select`
-  -webkit-appearance: none;
-  background: none;
-  border-radius: 3px;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  height: 34px;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  line-height: 1.42857;
-  color: #555;
 `;

@@ -26,18 +26,18 @@ class DropdownSelector extends Component {
     return (
       <Styled.DropdownSelectorWrap className={className} style={style}>
         <div>
-          <Styled.SettingLabel htmlFor={id}>{label}</Styled.SettingLabel>
+          <label htmlFor={id}>{label}</label>
         </div>
 
         <div>
-          <Styled.SelectCtrl id={id} value={value} onChange={this.handleChange}>
+          <select id={id} value={value} onChange={this.handleChange}>
             {options &&
               options.map((o, i) => (
                 <option key={i} value={o.value}>
                   {o.text}
                 </option>
               ))}
-          </Styled.SelectCtrl>
+          </select>
         </div>
       </Styled.DropdownSelectorWrap>
     );
