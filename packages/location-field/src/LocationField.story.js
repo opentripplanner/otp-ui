@@ -218,7 +218,7 @@ storiesOf("LocationField", module)
       userLocationsAndRecentPlaces={userLocationsAndRecentPlaces}
     />
   ))
-  .add("LocationField with in mobile context with custom icons", () => (
+  .add("LocationField in mobile context with custom icons", () => (
     <LocationField
       currentPosition={currentPosition}
       currentPositionIcon={<Crosshairs size={13} />}
