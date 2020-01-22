@@ -34,12 +34,12 @@ export default function makeVehicleIcon(cls, mode, defStr) {
   }
 
   let retVal = null;
-  if (mode != null)
+  if (icon != null)
     retVal = L.divIcon({
       html: ReactDOMServer.renderToString(icon),
       className: cls,
-      popupAnchor: [0, -11],
-      tooltipAnchor: [0, -11],
+      popupAnchor: [0, -12],
+      tooltipAnchor: [11, 0],
       iconSize: [22, 22]
     });
   else

@@ -1,13 +1,3 @@
-.vehicle-circle {
-  background: #000000; /* color of the circle */
-  border-radius: 50%; /* make the div a circular shape */
-  box-shadow: 4px 4px 3px grey; /* see http://www.w3schools.com/css/css3_shadows.asp */
-  -moz-box-shadow: 4px 4px 3px grey;
-  -webkit-box-shadow: 4px 4px 3px grey;
-}
-.vehicle-circle-selected {
-  background-color: #00bfff;
-}
 
 .vehicle-icon {
   border-radius: 15px!important;
@@ -19,7 +9,7 @@
   border: 1px solid #00bfff;
 }
 
-.vehicle-icon:hover, .vehicle-icon-selected:hover, .vehicle-circle:hover {
+.vehicle-icon:hover, .vehicle-icon-selected:hover {
   background-color: #00bfff;
   border: 1px solid #ccee77;
 }

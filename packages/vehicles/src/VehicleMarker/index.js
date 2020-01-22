@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOMServer from "react-dom/server";
 import PropTypes from "prop-types";
 
 import L, { divIcon } from "leaflet";
@@ -10,6 +11,8 @@ import makeVehicleIcon from "./icons";
 import { vehicleType } from "../types";
 import { formatTime } from "../utils";
 import "./vehicles.css";
+
+import * as Styled from "./styled";
 
 /**
  * This component demonstrates a custom marker used in the Vehicles overlay provided as
@@ -111,18 +114,17 @@ class VehicleMarker extends React.Component {
     const { hasPopup } = this.props;
 
     const position = [vehicle.lat, vehicle.lon];
-    let zPos = 0;
+    const zPos = tracked ? 1000 : 0;
 
-    let classnames = "vehicle-marker vehicle-circle";
-    if (tracked) {
-      classnames += " vehicle-circle-selected";
-      zPos = 1000;
-    }
+    const iconHtml = ReactDOMServer.renderToStaticMarkup(
+      tracked ? (
+        <Styled.TrackedVehicleCircle size={size} />
+      ) : (
+        <Styled.VehicleCircle size={size} />
+      )
+    );
+    const icon = divIcon({ html: iconHtml, className: "" });
 
-    const icon = divIcon({
-      className: classnames,
-      iconSize: [size, size]
-    });
     return (
       <Marker icon={icon} position={position} zIndexOffset={zPos}>
         {hasPopup && this.makePopup()}
@@ -176,8 +178,8 @@ class VehicleMarker extends React.Component {
     const zoom = this.getZoom();
     if (zoom >= closeZoom) return this.makeRotatedMarker();
     if (zoom >= midZoom) return this.makeCircleMarker(13.0);
-    if (zoom >= farZoom) return this.makeCircleMarker(9.0);
-    return this.makeCircleMarker(5.0);
+    if (zoom >= farZoom) return this.makeCircleMarker(7.0);
+    return this.makeCircleMarker(4.0);
   }
 
   render() {
