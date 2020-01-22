@@ -2527,7 +2527,7 @@
 "@styled-icons/fa-brands@^9.2.0":
   version "9.2.0"
   resolved "https://registry.yarnpkg.com/@styled-icons/fa-brands/-/fa-brands-9.2.0.tgz#4ccdc0c7e29780ec09dbcc1c9dd4f1a2d50b82a4"
-  integrity sha512-dYp3ay0R4dQFqhVGetWno89LNJvOgPNdxo4eHb69H7sEwK9xaRWocB9CfQwsgsTSV8jw5aSLTsD0jQL+m4XI4Q==
+  integrity sha512-dYp3ay0R4dQFqhVGetWno89LNJvOgPNdxo4eHb69H7sEwK9xaRWocB9CfQwsgsTSV8jw5aSLTsD0jQL+m4XI4Q==>>>>>>> master
   dependencies:
     "@styled-icons/styled-icon" "^9.2.0"
     tslib "^1.9.3"
