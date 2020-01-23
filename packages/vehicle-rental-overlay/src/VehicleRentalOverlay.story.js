@@ -1,7 +1,7 @@
 import BaseMap from "@opentripplanner/base-map";
 import {
   vehicleRentalMapOverlaySymbolsType,
-  stationsType
+  stationType
 } from "@opentripplanner/core-utils/lib/types";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
@@ -161,7 +161,7 @@ ZoomControlledMapWithVehicleRentalOverlay.propTypes = {
   getStationName: PropTypes.func,
   mapSymbols: vehicleRentalMapOverlaySymbolsType.isRequired,
   refreshVehicles: PropTypes.func.isRequired,
-  stations: stationsType.isRequired
+  stations: PropTypes.arrayOf(stationType.isRequired).isRequired
 };
 
 ZoomControlledMapWithVehicleRentalOverlay.defaultProps = {

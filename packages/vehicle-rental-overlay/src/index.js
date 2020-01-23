@@ -5,7 +5,7 @@ import { getCompaniesLabelFromNetworks } from "@opentripplanner/core-utils/lib/i
 import {
   companyType,
   vehicleRentalMapOverlaySymbolsType,
-  stationsType
+  stationType
 } from "@opentripplanner/core-utils/lib/types";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 import PropTypes from "prop-types";
@@ -264,7 +264,7 @@ VehicleRentalOverlay.props = {
   /**
    * A list of the vehicle rental stations specific to this overlay instance.
    */
-  stations: stationsType,
+  stations: PropTypes.arrayOf(stationType),
   /**
    * Whether the overlay is currently visible.
    */
