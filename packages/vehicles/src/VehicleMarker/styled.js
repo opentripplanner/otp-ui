@@ -35,6 +35,9 @@ export const TrackedVehicleCircle = styled(VehicleCircle)`
   background-color: ${props => props.colorSelected || colorSelected};
 `;
 
+// idea: create a generic marker type with defaults (and default images, etc...)
+//       then use this type to pass styles from Vehicles -> VehicleLayer -> VehicleGeometry
+
 const Marker = {};
 
 Marker.propTypes = {

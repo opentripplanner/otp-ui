@@ -1,4 +1,77 @@
 /**
+ * query real-time vehicles, and return the results in the set* parameter callbacks
+ *
+ * @param setVehicleData - callback where vehicles array will be passed
+ * @param setTrackedVehicle - callback where a tracked vehicle will be captured
+ * @param trackId - trip or vehicle id of target vehicle to track
+ * @param url - url of the vehicle service
+ *
+ * TODO: add geometry crap to this util
+ */
+export function fetchVehicles(setVehicleData, setTrackedVehicle, trackId, url) {
+  const d = Date.now();
+  url = url || "https://maps.trimet.org/gtfs/rt/vehicles/routes/all";
+  url = url.indexOf("?") ? `${url}?` : `${url}&`;
+  url = `${url}__time__=${d}`;
+
+  fetch(url)
+    .then(res => {
+      if (!res.ok) {
+        console.log(res.statusText);
+        throw Error(res.statusText);
+      }
+      return res;
+    })
+    .then(res => {
+      const retVal = res.json();
+      return retVal;
+    })
+    .then(vehicleList => {
+      if (vehicleList && vehicleList.length > 0) {
+        // step 1: set the vehicle list (triggers vehicle points redraw)
+        console.log(`updating state with ${vehicleList.length} vehicles`);
+        setVehicleData(vehicleList);
+
+        if (trackId) {
+          let tracked = null;
+
+          // step 2: find vehicle record via either tripId or vehicleId
+          vehicleList.some(v => {
+            if (trackId === v.vehicleId || trackId === v.tripId) {
+              tracked = v;
+              return true;
+            }
+            return false;
+          });
+          // step 3: add updated tracked vehicle to state (triggers pattern line redraw)
+          if (tracked) {
+            setTrackedVehicle(tracked);
+          } else {
+            console.log(`WARN: can't find tripId or vehicleId ${trackId}`);
+          }
+        }
+      } else {
+        console.log("get vehicle data is suspect");
+      }
+    })
+    .catch(error => {
+      console.log(`VEH fetch() error: ${error}`);
+    });
+}
+
+/**
+ * query real-time vehicles, and return the results in the set* parameter callbacks
+ *
+ * @param setVehicleData - callback where vehicles array will be passed
+ * @param setTrackedVehicle - callback where a tracked vehicle will be captured
+ * @param trackId - trip or vehicle id of target vehicle to track
+ * @param url - url of the vehicle service
+ *
+ * TODO: add geometry crap to this util
+ */
+// export function getVehicleGeometry(setVehicleData, setTrackedVehicle, trackId, url) {}
+
+/**
  * get refresh values (default 10 seconds), and convert from secs to millisecs
  */
 export function checkRefreshInteval(inverval, defInterval = 10000) {
