@@ -6,21 +6,38 @@ import { storiesOf } from "@storybook/react";
 
 import BaseMap from "@opentripplanner/base-map";
 
+import Vehicles from ".";
 import VehicleLayer from "./VehicleLayer";
-import VehicleAction from ".";
+import VehicleGeometry from "./VehicleGeometry/geo";
+import * as utils from "./utils";
 
-import "@opentripplanner/base-map/assets/map.css";
-
-const line = require("../__mocks__/line100.json");
-const all = require("../__mocks__/all.json");
-
+// mock data
+const geojson = require("../__mocks__/lineGeom100.json");
 const v1 = require("../__mocks__/all1.json");
 const v2 = require("../__mocks__/all2.json");
 const v3 = require("../__mocks__/all3.json");
+const line = require("../__mocks__/line100.json");
+const all = require("../__mocks__/all.json");
 
 const v = [v1, v2, v3];
 
 const portland = [45.523, -122.671];
+
+function geoExample() {
+  const tv = {
+    patternId: "1",
+    lon: -122.634,
+    lat: 45.532
+  };
+  const pat = utils.reverseGeojsonPointsInGeom(geojson);
+
+  const retVal = (
+    <BaseMap center={portland}>
+      <VehicleGeometry trackedVehicle={tv} pattern={pat} visible />
+    </BaseMap>
+  );
+  return retVal;
+}
 
 function allExample() {
   const retVal = (
@@ -87,7 +104,7 @@ function animatedExample() {
 function rtExample() {
   const retVal = (
     <BaseMap center={portland}>
-      <VehicleAction name="Real-Time Buses and Trains" visible />
+      <Vehicles name="Real-Time Buses and Trains" visible />
     </BaseMap>
   );
   return retVal;
@@ -96,7 +113,8 @@ function rtExample() {
 storiesOf("Realtime VehicleLayer", module)
   .addDecorator(withA11y)
   .addDecorator(withInfo)
+  .add("line geom", geoExample)
   .add("by Route", routeExample)
   .add("all Routes", allExample)
   .add("animated VehicleLayer", animatedExample)
-  .add("real-time VehicleAction layer", rtExample);
+  .add("real-time Vehicles layer", rtExample);

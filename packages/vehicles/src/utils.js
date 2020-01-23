@@ -1,3 +1,34 @@
+/* eslint-disable no-unused-vars */
+
+import polyline from "@mapbox/polyline";
+
+/**
+ * geojson uses [lon,lat] (e.g., [X, Y]) in representing coordinates
+ * this utility function reverses the point order to be [lat, lon] (or [Y, X])
+ *
+ * @return array of reversed points in the line geom
+ */
+export function reverseGeojsonPointsInGeom(geom) {
+  const revPoints = [];
+  for (let i = 0; i < geom.coordinates.length; i++) {
+    const c = geom.coordinates[i].reverse();
+    revPoints.push(c);
+  }
+  return revPoints;
+}
+
+/**
+ * OTP encodes polylines ... this mentod will decode that
+ * @param geom
+ */
+export function decodePolyline(geom) {
+  let retVal = geom;
+  if (geom && geom.points) {
+    retVal = polyline.decode(geom.points);
+  }
+  return retVal;
+}
+
 /**
  * query real-time vehicles, and return the results in the set* parameter callbacks
  *
@@ -60,15 +91,73 @@ export function fetchVehicles(setVehicleData, setTrackedVehicle, trackId, url) {
 }
 
 /**
- * query real-time vehicles, and return the results in the set* parameter callbacks
  *
- * @param setVehicleData - callback where vehicles array will be passed
- * @param setTrackedVehicle - callback where a tracked vehicle will be captured
- * @param trackId - trip or vehicle id of target vehicle to track
- * @param url - url of the vehicle service
- *
- * TODO: add geometry crap to this util
+ * @param url
+ * @param agencyId
+ * @param patternId
+ * @returns {*}
  */
+function fetchVehiclePattern(url, agencyId, patternId, cache) {
+  if (!agencyId) agencyId = "TRIMET";
+  if (!patternId) patternId = "433758";
+
+  /**
+   * https://newplanner.trimet.org/ws/ti/v0/index/patterns/TRIMET:433758/geometry/geojson
+   * https://newplanner.trimet.org/ws/ti/v0/index/patterns/{agency}:{pattern}/geometry/geojson
+   */
+  function makePatternUrl() {
+    url = "https://newplanner.trimet.org/ws/ti/v0/index/patterns";
+    return `${url}/${agencyId}:${patternId}/geometry/geojson`;
+  }
+
+  function cachePatternEncoded(pat, key) {
+    const geom = pat.points;
+    const pts = polyline.decode(geom);
+    this.patterns[key] = pts;
+  }
+
+  /**
+   * will cache the [[lat,lon], [lat,lon], etc...] coords
+   * note: geojson uses [lon,lat] (e.g., [X, Y], so must reverse that to match encoded coords
+   */
+  function cachePatternGeojson(pat, key) {
+    const revPoints = reverseGeojsonPointsInGeom(pat);
+    // patterns[key] = revPoints;
+    return revPoints;
+  }
+
+  /*
+  function xcachePatternGeojson(pat, cache) {
+    const revCoords = [];
+    for (let i = 0; i < pat.coordinates.length; i++) {
+      const c = pat.coordinates[i].reverse();
+      revCoords.push(c);
+    }
+    const key = `${agencyId}:${patternId}`;
+    cache[key] = revCoords;
+  }
+
+  let retVal = null;
+
+  const geomWsUrl = makePatternUrl(vehicle, ap);
+
+  console.log(`Calling GEO URL: ${geomWsUrl}`);
+  fetch(geomWsUrl)
+    .then(res => {
+      retVal = res.json();
+      return retVal;
+    })
+    .then(json => {
+
+    })
+    .catch(error => {
+      console.log(`VEH GEOMETRY fetch() error: ${error}`);
+    });
+
+  return retVal;
+*/
+}
+
 // export function getVehicleGeometry(setVehicleData, setTrackedVehicle, trackId, url) {}
 
 /**
