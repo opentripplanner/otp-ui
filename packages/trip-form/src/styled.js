@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-// ////////////////////////////////////////////////
-// /////////////// App components /////////////////
-// ////////////////////////////////////////////////
-
 export const SettingsHeader = styled.div``;
 
 export const SettingsSection = styled.div``;
@@ -70,10 +66,6 @@ SubmodeSelector.Row = styled.div``;
 SubmodeSelector.InlineRow = styled(SubmodeSelector.Row)`
   text-align: right;
 `;
-
-// ////////////////////////////////////////////////
-// ///////////// Generic components ///////////////
-// ////////////////////////////////////////////////
 
 export const ModeButton = styled.div`
   display: inline-block;
