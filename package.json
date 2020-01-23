@@ -67,6 +67,7 @@
     "lint:styles": "stylelint \"packages/**/*.js{,x}\"",
     "lint": "yarn lint:js && yarn lint:styles",
     "prettier": "prettier --write \"**/*.{json,md,yml}\"",
+    "test": "yarn lint:js && yarn lint:styles && yarn unit",
     "unit": "jest"
   },
   "eslintConfig": {

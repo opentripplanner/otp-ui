@@ -23,6 +23,7 @@ export default class ArcGISGeocoder extends Geocoder {
           firstFeature.geometry.coordinates
         );
         location.name = firstFeature.properties.label;
+        location.rawGeocodedFeature = firstFeature;
         return location;
       });
   }
@@ -54,10 +55,12 @@ export default class ArcGISGeocoder extends Geocoder {
   rewriteReverseResponse(response) {
     const { features, query } = response;
     const { lat, lon } = query;
+    const firstFeature = features[0];
     return {
       lat,
       lon,
-      name: features[0].properties.label
+      name: firstFeature.properties.label,
+      rawGeocodedFeature: firstFeature
     };
   }
 }
