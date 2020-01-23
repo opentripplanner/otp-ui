@@ -38,7 +38,7 @@ const modeOptions = {
     {
       id: "OTHER",
       title: "Other Mode",
-      text: <span>Other Mode</span>
+      text: <span>Tertiary Mode</span>
     }
   ]
 };
