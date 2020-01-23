@@ -5,6 +5,28 @@ Object {
   "lat": 51.973520000000065,
   "lon": 0.1296100000000706,
   "name": "Mill End, Clavering, Saffron Walden, Essex, England, GBR",
+  "rawGeocodedFeature": Object {
+    "geometry": Object {
+      "coordinates": Array [
+        0.1296100000000706,
+        51.973520000000065,
+      ],
+      "type": "point",
+    },
+    "properties": Object {
+      "confidence": 0.875,
+      "country": "GBR",
+      "country_a": "GBR",
+      "county": "Essex",
+      "label": "Mill End, Clavering, Saffron Walden, Essex, England, GBR",
+      "locality": "Saffron Walden",
+      "name": "Mill End",
+      "neighbourhood": "Mill End",
+      "region": "England",
+      "resultId": undefined,
+    },
+    "type": "feature",
+  },
 }
 `;
 
@@ -36,6 +58,25 @@ Object {
   "lat": 45.516198,
   "lon": -122.67324,
   "name": "SW Naito Pkwy, Portland, OR, 97204, USA",
+  "rawGeocodedFeature": Object {
+    "geometry": Object {
+      "coordinates": Array [
+        -122.67320084756255,
+        45.516175523600715,
+      ],
+      "type": "point",
+    },
+    "properties": Object {
+      "country_a": "USA",
+      "county": "Multnomah County",
+      "label": "SW Naito Pkwy, Portland, OR, 97204, USA",
+      "locality": undefined,
+      "name": "SW Naito Pkwy",
+      "neighbourhood": "Downtown",
+      "region": "Oregon",
+    },
+    "type": "feature",
+  },
 }
 `;
 
@@ -98,6 +139,18 @@ Object {
   "lat": 45.516198,
   "lon": -122.67324,
   "name": "45.516198, -122.673240",
+  "rawGeocodedFeature": Object {
+    "geometry": Object {
+      "coordinates": Array [
+        -122.67324,
+        45.516198,
+      ],
+      "type": "Point",
+    },
+    "properties": Object {
+      "label": "45.516198, -122.673240",
+    },
+  },
 }
 `;
 
@@ -112,6 +165,11 @@ Object {
   "lat": 45.5162,
   "lon": -122.67324,
   "name": "45.5162, -122.67324",
+  "rawGeocodedFeature": Object {
+    "lat": 45.5162,
+    "lon": -122.67324,
+    "name": "45.5162, -122.67324",
+  },
 }
 `;
 
@@ -126,6 +184,18 @@ Object {
   "lat": 45.516198,
   "lon": -122.67324,
   "name": "Mill Ends Park, Portland, OR, USA",
+  "rawGeocodedFeature": Object {
+    "geometry": Object {
+      "coordinates": Array [
+        -122.67324,
+        45.516198,
+      ],
+      "type": "Point",
+    },
+    "properties": Object {
+      "label": "Mill Ends Park, Portland, OR, USA",
+    },
+  },
 }
 `;
 
@@ -220,6 +290,38 @@ Object {
   "lat": 45.516198,
   "lon": -122.67324,
   "name": "Mill Ends Park, Portland, OR, USA",
+  "rawGeocodedFeature": Object {
+    "accuracy": "point",
+    "address": "Mill Ends Park, Portland, OR, USA",
+    "confidence": 0.9,
+    "continent": "North America",
+    "continent_gid": "whosonfirst:continent:102191575",
+    "country": "United States",
+    "country_a": "USA",
+    "country_gid": "whosonfirst:country:85633793",
+    "county": "Multnomah County",
+    "county_a": "MU",
+    "county_gid": "whosonfirst:county:102081631",
+    "distance": 0.001,
+    "gid": "openstreetmap:venue:way/156366633",
+    "id": "way/156366633",
+    "label": "Mill Ends Park, Portland, OR, USA",
+    "latlng": Object {
+      "lat": 45.516201,
+      "lon": -122.673245,
+    },
+    "layer": "venue",
+    "locality": "Portland",
+    "locality_gid": "whosonfirst:locality:101715829",
+    "name": "Mill Ends Park",
+    "neighbourhood": "Downtown",
+    "neighbourhood_gid": "whosonfirst:neighbourhood:85867131",
+    "region": "Oregon",
+    "region_a": "OR",
+    "region_gid": "whosonfirst:region:85688513",
+    "source": "openstreetmap",
+    "source_id": "way/156366633",
+  },
 }
 `;
 

@@ -23,7 +23,11 @@ export default class NoApiGeocoder extends Geocoder {
     let { lat, lon } = query.point;
     lat = this.roundGPSDecimal(lat);
     lon = this.roundGPSDecimal(lon);
-    return Promise.resolve({ lat, lon, name: `${lat}, ${lon}` });
+    const feature = { lat, lon, name: `${lat}, ${lon}` };
+    return Promise.resolve({
+      ...feature,
+      rawGeocodedFeature: feature
+    });
   }
 
   /**

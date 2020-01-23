@@ -1,0 +1,27 @@
+{
+  "name": "@opentripplanner/trip-form",
+  "version": "0.0.11",
+  "description": "Trip Settings Form and Related Components",
+  "author": "@binh-dam-ibigroup",
+  "homepage": "https://github.com/opentripplanner/otp-ui/#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "module": "src/index.js",
+  "private": false,
+  "dependencies": {
+    "@opentripplanner/core-utils": "^0.0.11",
+    "@opentripplanner/icons": "^0.0.11",
+    "moment": "^2.17.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opentripplanner/otp-ui.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/opentripplanner/otp-ui/issues"
+  },
+  "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"
+}
