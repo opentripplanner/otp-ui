@@ -1,5 +1,3 @@
-/* xxeslint-disable no-restricted-syntax */
-/* lint rule ignored b/c it's stupid ... for in loop below is best */
 import React from "react";
 import PropTypes from "prop-types";
 
