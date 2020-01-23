@@ -30,19 +30,31 @@ class SelectVehicles extends MapLayer {
   farZoom = 10;
 
   /**
-   * The preferred way to write the `onOverlay...` events is shown below.
-   * If you wish to write `onOverlayAdded(e) {...}` instead,
-   * then you must bind that function in the `constructor` using:
-   *     this.onOverlayAdded = this.onOverlayAdded.bind(this);
+   * Implement method onOverlayAdded to get notified whenever this layer
+   * gets added to BaseMap (e.g. when user clicks the map's layer control).
+   * This method is optional.
+   * @param e The event data. See https://leafletjs.com/reference-1.6.0.html#map-overlayadd for details.
    */
   onOverlayAdded = e => {
     callIfValid(this.props.onOverlayAdded)(e);
   };
 
+  /**
+   * Implement method onOverlayRemoved to get notified whenever this layer
+   * gets removed from BaseMap (e.g. when user clicks the map's layer control).
+   * This method is optional.
+   * @param e The event data. See https://leafletjs.com/reference-1.6.0.html#map-overlayremove for details.
+   */
   onOverlayRemoved = e => {
     callIfValid(this.props.onOverlayRemoved)(e);
   };
 
+  /**
+   * Implement method onViewportChanged to get notified whenever the BaseMap's center
+   * or zoom level change (e.g. as the result of the user panning or zooming the map).
+   * This method is optional.
+   * @param viewport The viewport data. See https://github.com/PaulLeCam/react-leaflet/blob/master/example/components/viewport.js for details.
+   */
   onViewportChanged = viewport => {
     this.setState({ mapZoom: viewport.zoom });
     callIfValid(this.props.onViewportChanged)(viewport);
