@@ -22,14 +22,6 @@ class SelectVehicles extends MapLayer {
     vehicles: vehicleData
   };
 
-  constructor(props) {
-    super(props);
-
-    this.onOverlayAdded = this.onOverlayAdded.bind(this);
-    this.onOverlayRemoved = this.onOverlayRemoved.bind(this);
-    this.onViewportChanged = this.onViewportChanged.bind(this);
-  }
-
   // these zoom layers control which markers are shown (e.g. closeZoom is where icons are turned on)
   closeZoom = 15;
 
@@ -37,29 +29,39 @@ class SelectVehicles extends MapLayer {
 
   farZoom = 10;
 
-  onOverlayAdded(e) {
+  /**
+   * The preferred way to write the `onOverlay...` events is shown below.
+   * If you wish to write `onOverlayAdded(e) {...}` instead,
+   * then you must bind that function in the `constructor` using:
+   *     this.onOverlayAdded = this.onOverlayAdded.bind(this);
+   */
+  onOverlayAdded = e => {
     callIfValid(this.props.onOverlayAdded)(e);
-  }
+  };
 
-  onOverlayRemoved(e) {
+  onOverlayRemoved = e => {
     callIfValid(this.props.onOverlayRemoved)(e);
-  }
+  };
 
-  onViewportChanged(viewport) {
-    callIfValid(this.props.onOverlayRemoved)(viewport);
-  }
+  onViewportChanged = viewport => {
+    this.setState({ mapZoom: viewport.zoom });
+    callIfValid(this.props.onViewportChanged)(viewport);
+  };
 
   componentDidMount() {
     console.log("SelectedVehicles::componentDidMount");
-    // action("SelectVehicles::componentDidMount")();
     const { registerOverlay } = this.props;
     callIfValid(registerOverlay)(this);
+
+    // Initialize zoom state here? (may trigger render again.)
+    const zoom = this.getLeafletContext().map.getZoom();
+    this.setState({ mapZoom: zoom });
   }
 
   componentWillUnmount() {}
 
   componentDidUpdate() {
-    this.trackVehicle();
+    // this.trackVehicle();
   }
 
   componentWillReceiveProps(/* nextProps */) {}
@@ -82,7 +84,7 @@ class SelectVehicles extends MapLayer {
       if (v != null) {
         const ll = [v.lat, v.lon];
         this.getLeafletContext().map.setView(ll);
-        this.state.trackedVehicle = v; // update the state with newest vehicle
+        this.setState({ trackedVehicle: v }); // update the state with newest vehicle
       }
     }
   }
@@ -104,11 +106,14 @@ class SelectVehicles extends MapLayer {
 
   render() {
     const { limit = 5 } = this.props;
+    const { mapZoom } = this.state;
     let { vehicles } = this.state;
     vehicles = vehicles.slice(0, Math.min(limit, vehicles.length) - 1);
     return (
       <FeatureGroup id="vehicles fg">
-        {vehicles &&
+        {mapZoom <= this.closeZoom &&
+          mapZoom >= this.farZoom &&
+          vehicles &&
           vehicles.map(v => (
             <VehicleMarker
               key={v.id}

@@ -51,13 +51,6 @@ L.Evented.include({
 class BaseMap extends Component {
   overlays = [];
 
-  constructor() {
-    super();
-    this.handleOverlayAdded = this.handleOverlayAdded.bind(this);
-    this.handleOverlayRemoved = this.handleOverlayRemoved.bind(this);
-    this.handleViewportChanged = this.handleViewportChanged.bind(this);
-  }
-
   componentDidMount() {
     const lmap = this.refs.map.leafletElement;
     lmap.options.singleClickTimeout = 250;
@@ -82,20 +75,22 @@ class BaseMap extends Component {
   };
 
   forwardOne = (eventName, e) => {
+    // Call the event handler, if implemented, on the layer for which this event applies.
     const layer = this.overlays.find(child => child.props.name === e.name);
     if (layer) callIfValid(layer[eventName])(e);
 
-    // Raise onOverlayAdded for this control.
+    // Call the event handler on this control's parent element.
     // eslint-disable-next-line react/destructuring-assignment
     callIfValid(this.props[eventName])(e);
   };
 
   forwardAll = (eventName, e) => {
+    // Call the event handler, if implemented, on each registered overlay.
     this.overlays.forEach(layer => {
       callIfValid(layer[eventName])(e);
     });
 
-    // Raise onOverlayAdded for this control.
+    // Call the event handler on this control's parent element.
     // eslint-disable-next-line react/destructuring-assignment
     callIfValid(this.props[eventName])(e);
   };
@@ -153,7 +148,7 @@ class BaseMap extends Component {
         // Note: Map-click is handled via single-click plugin, set up in componentDidMount()
         onOverlayAdd={this.handleOverlayAdded}
         onOverlayRemove={this.handleOverlayRemoved}
-        onViewportChanged={this.handleViewportChanged} // {onViewportChanged}
+        onViewportChanged={this.handleViewportChanged}
       >
         {/* Create the layers control, including base map layers and any
          * user-controlled overlays. */}
