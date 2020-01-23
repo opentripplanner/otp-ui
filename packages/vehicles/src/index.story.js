@@ -49,9 +49,18 @@ function allExample() {
 }
 
 function routeExample() {
+  const pattern = utils.reverseGeojsonPointsInGeom(geojson);
+  const tracked = utils.findVehicle(line, "9563137");
+
   const retVal = (
     <BaseMap center={portland}>
-      <VehicleLayer name="Real-Time Buses and Trains" vehicles={line} visible />
+      <VehicleLayer
+        name="Real-Time Buses and Trains"
+        trackedVehicle={tracked}
+        vehicles={line}
+        visible
+      />
+      <VehicleGeometry trackedVehicle={tracked} pattern={pattern} visible />
     </BaseMap>
   );
   return retVal;

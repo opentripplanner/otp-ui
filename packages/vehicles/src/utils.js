@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-
 import polyline from "@mapbox/polyline";
 
 /**
@@ -18,13 +17,37 @@ export function reverseGeojsonPointsInGeom(geom) {
 }
 
 /**
- * OTP encodes polylines ... this mentod will decode that
+ * OTP encodes polylines - this method will decode such geometries
  * @param geom
+ * @return decoded polyline
  */
 export function decodePolyline(geom) {
   let retVal = geom;
   if (geom && geom.points) {
     retVal = polyline.decode(geom.points);
+  }
+  return retVal;
+}
+
+/**
+ * find a vehicle within a list of vehicles
+ * @param vehicleList - list of vehciles to be searched
+ * @param queryId - either trip or vehcile id (string) to search list
+ * @param defVal - return value when not found or errors happen
+ */
+export function findVehicle(vehicleList, queryId, defVal = null) {
+  let retVal = defVal;
+
+  try {
+    vehicleList.some(v => {
+      if (queryId === v.vehicleId || queryId === v.tripId) {
+        retVal = v;
+        return true;
+      }
+      return false;
+    });
+  } catch (e) {
+    console.log(e);
   }
   return retVal;
 }
@@ -64,16 +87,9 @@ export function fetchVehicles(setVehicleData, setTrackedVehicle, trackId, url) {
         setVehicleData(vehicleList);
 
         if (trackId) {
-          let tracked = null;
-
           // step 2: find vehicle record via either tripId or vehicleId
-          vehicleList.some(v => {
-            if (trackId === v.vehicleId || trackId === v.tripId) {
-              tracked = v;
-              return true;
-            }
-            return false;
-          });
+          const tracked = findVehicle(vehicleList, trackId);
+
           // step 3: add updated tracked vehicle to state (triggers pattern line redraw)
           if (tracked) {
             setTrackedVehicle(tracked);
