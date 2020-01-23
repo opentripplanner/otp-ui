@@ -3,10 +3,6 @@ import PropTypes from "prop-types";
 
 import { vehicleType } from "../types";
 
-function makeButtonText(tracked) {
-  return tracked ? "Stop Tracking" : "Track Vehicle";
-}
-
 function Tracker(props) {
   const { vehicle } = props;
   const { tracked } = props;
@@ -18,6 +14,10 @@ function Tracker(props) {
     } else {
       setTracked(vehicle);
     }
+  }
+
+  function makeButtonText(isTracked) {
+    return isTracked ? "Stop Tracking" : "Track Vehicle";
   }
 
   return (
