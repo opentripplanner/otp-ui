@@ -3,6 +3,12 @@
   "version": "0.0.11",
   "description": "A map overlay to show an itinerary",
   "main": "lib/index.js",
+  "author": "Evan Siroky",
+  "license": "MIT",
+  "homepage": "https://github.com/opentripplanner/otp-ui#readme",
+  "bugs": {
+    "url": "https://github.com/opentripplanner/otp-ui/issues"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,16 +16,12 @@
     "type": "git",
     "url": "git+https://github.com/opentripplanner/otp-ui.git"
   },
-  "author": "Evan Siroky",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/opentripplanner/otp-ui/issues"
-  },
-  "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "dependencies": {
     "@opentripplanner/base-map": "^0.0.11",
     "@opentripplanner/core-utils": "^0.0.11",
+    "@opentripplanner/endpoints-overlay": "^0.0.11",
     "@opentripplanner/icons": "^0.0.11",
+    "@opentripplanner/itinerary-body": "^0.0.11",
     "lodash.isequal": "^4.5.0",
     "react-leaflet": "^2.6.1",
     "transitive-js": "^0.13.0"
@@ -28,8 +30,6 @@
     "react": "^16.8.6"
   },
   "devDependencies": {
-    "@opentripplanner/endpoints-overlay": "^0.0.11",
-    "@opentripplanner/itinerary-body": "^0.0.11",
     "lodash.clonedeep": "^4.5.0"
   }
 }

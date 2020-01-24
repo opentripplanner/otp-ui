@@ -3,6 +3,12 @@
   "version": "0.0.1",
   "description": "A map overlay to show vehicle rentals from a specific company",
   "main": "lib/index.js",
+  "author": "Evan Siroky",
+  "license": "MIT",
+  "homepage": "https://github.com/opentripplanner/otp-ui#readme",
+  "bugs": {
+    "url": "https://github.com/opentripplanner/otp-ui/issues"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,22 +16,16 @@
     "type": "git",
     "url": "git+https://github.com/opentripplanner/otp-ui.git"
   },
-  "author": "Evan Siroky",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/opentripplanner/otp-ui/issues"
-  },
-  "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "dependencies": {
     "@opentripplanner/core-utils": "^0.0.11",
     "@opentripplanner/from-to-location-picker": "^0.0.11",
+    "@opentripplanner/base-map": "^0.0.11",
     "lodash.memoize": "^4.1.2",
     "prop-types": "^15.7.2",
     "react-leaflet": "^2.6.1",
     "styled-icons": "^9.1.0"
   },
   "peerDependencies": {
-    "@opentripplanner/base-map": "^0.0.11",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "styled-components": "^4.3.1"
