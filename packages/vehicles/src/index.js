@@ -2,42 +2,68 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import VehicleLayer from "./VehicleLayer";
-import { checkRefreshInteval, fetchVehicles } from "./utils";
+// import { checkRefreshInteval, fetchVehicles } from "./utils";
+import * as utils from "./utils";
 
 /**
  * TODO: describe
  * TODO: talk about gtfsdb and opensource
  */
 function Vehicles(props) {
-  const refreshDelay = checkRefreshInteval(props.refreshDelay);
+  const refreshDelay = utils.checkRefreshInteval(props.refreshDelay);
 
   const [vehicleData, setVehicleData] = React.useState(null);
-  const [trackedVehicle, setTrackedVehicle] = React.useState(null);
 
-  // allows us to get a current handle on the trackedVehicle state
+  const [trackedVehicle, setTrackedVehicle] = React.useState(null);
   const trackedVehicleRef = React.useRef(trackedVehicle);
   React.useEffect(() => {
     trackedVehicleRef.current = trackedVehicle;
-  }, [trackedVehicle]);
+  }, [trackedVehicle]); // allows us to get a current handle on the trackedVehicle state
 
-  /** callback function where the setTrackedVehicle is stored */
-  function setTrackedData(vehicle) {
-    // todo check/grab geometry ... maybe delay setTrackedVehicle until we have said geom
-    /*
-    // step 1: vehicle geometry
-    if(vehicle && vehicle.patternId) {
-      // setVehicleGeometry(vehicle);
-      const [trackedVehicleGeometry, setTrackedVehicleGeometry] = React.useState(null);
-      if(cache[patternId] === null) {
-          getVehicleGeometry(setTrackedVehicleGeometry, patternId);
-      } else {
-          setTrackedVehicleGeometry(cache[patternId]);
+  const [trackedGeometry, setTrackedGeometry] = React.useState(null);
+  const trackedGeometryRef = React.useRef(trackedGeometry);
+  React.useEffect(() => {
+    trackedGeometryRef.current = trackedGeometry;
+  }, [trackedGeometry]);
+
+  /** callback function where the tracked geometry stored */
+  function setTrackedGeomData(patternId, data) {
+    setTrackedGeometry({ id: patternId, data });
+  }
+
+  function isPatternCached(patternId) {
+    let retVal = false;
+    if (trackedGeometryRef && trackedGeometryRef.current) {
+      if (patternId === trackedGeometryRef.current.id) retVal = true;
+    }
+    return retVal;
+  }
+
+  /** callback function where the setVehicleData & setTrackedVehicle is stored */
+  function setData(vehicleList, trackedId) {
+    // step 1: set vehicle data
+    setVehicleData(vehicleList);
+
+    // step 2: tracked vehicle
+    const vehicle = utils.findVehicle(vehicleList, trackedId);
+    if (vehicle) {
+      setTrackedVehicle(vehicle);
+
+      // step 3: tracked vehicle geometry
+      if (vehicle.shapeId) {
+        try {
+          const patternId = `${vehicle.agencyId}:${vehicle.shapeId}`;
+          if (!isPatternCached(patternId)) {
+            console.log(">>>>>>>>>>>>>>>>>>");
+            console.log(patternId);
+            utils.fetchVehiclePattern(setTrackedGeomData, patternId);
+            console.log(trackedGeometryRef);
+          }
+        } catch (e) {
+          console.log(e);
+        }
       }
-    */
-    // TODO: should setTrackedVehicle be both a vehicle and the route geometry?
-    // setTrackedData({v: vehicle, g: geometry})?  ... thus only one state / one useEffect/Ref
-    // step 2: set tracked vehicle
-    setTrackedVehicle(vehicle);
+    }
   }
 
   function getTrackedVehicle() {
@@ -62,9 +88,9 @@ function Vehicles(props) {
     //       if we don't have the gate of vehicleData == null, then we'll get multiple setInterval calls
     let interval = null;
     if (vehicleData == null) {
-      fetchVehicles(setVehicleData, setTrackedVehicle, props.tracked);
+      utils.fetchVehicles(setData, props.tracked);
       interval = setInterval(() => {
-        fetchVehicles(setVehicleData, setTrackedData, getTrackedVehicleId());
+        utils.fetchVehicles(setData, getTrackedVehicleId());
       }, refreshDelay);
     }
 

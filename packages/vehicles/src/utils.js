@@ -55,14 +55,10 @@ export function findVehicle(vehicleList, queryId, defVal = null) {
 /**
  * query real-time vehicles, and return the results in the set* parameter callbacks
  *
- * @param setVehicleData - callback where vehicles array will be passed
- * @param setTrackedVehicle - callback where a tracked vehicle will be captured
- * @param trackId - trip or vehicle id of target vehicle to track
+ * @param setData - callback where vehicles array will be passed
  * @param url - url of the vehicle service
- *
- * TODO: add geometry crap to this util
  */
-export function fetchVehicles(setVehicleData, setTrackedVehicle, trackId, url) {
+export function fetchVehicles(setData, trackedId, url) {
   const d = Date.now();
   url = url || "https://maps.trimet.org/gtfs/rt/vehicles/routes/all";
   url = url.indexOf("?") ? `${url}?` : `${url}&`;
@@ -84,19 +80,7 @@ export function fetchVehicles(setVehicleData, setTrackedVehicle, trackId, url) {
       if (vehicleList && vehicleList.length > 0) {
         // step 1: set the vehicle list (triggers vehicle points redraw)
         console.log(`updating state with ${vehicleList.length} vehicles`);
-        setVehicleData(vehicleList);
-
-        if (trackId) {
-          // step 2: find vehicle record via either tripId or vehicleId
-          const tracked = findVehicle(vehicleList, trackId);
-
-          // step 3: add updated tracked vehicle to state (triggers pattern line redraw)
-          if (tracked) {
-            setTrackedVehicle(tracked);
-          } else {
-            console.log(`WARN: can't find tripId or vehicleId ${trackId}`);
-          }
-        }
+        setData(vehicleList, trackedId);
       } else {
         console.log("get vehicle data is suspect");
       }
@@ -107,74 +91,43 @@ export function fetchVehicles(setVehicleData, setTrackedVehicle, trackId, url) {
 }
 
 /**
+ * fetch line geometry for a given pattern
  *
- * @param url
- * @param agencyId
+ * https://newplanner.trimet.org/ws/ti/v0/index/patterns/TRIMET:433758/geometry/geojson
+ * https://newplanner.trimet.org/ws/ti/v0/index/patterns/{agency}:{pattern}/geometry/geojson
+ *
+ * @param setPatternData
  * @param patternId
- * @returns {*}
+ * @param tiUrl
+ * @param geojson
  */
-function fetchVehiclePattern(url, agencyId, patternId, cache) {
-  if (!agencyId) agencyId = "TRIMET";
-  if (!patternId) patternId = "433758";
+export function fetchVehiclePattern(
+  setPatternData,
+  patternId,
+  tiUrl,
+  geojson = "/geojson"
+) {
+  if (!tiUrl) tiUrl = "https://newplanner.trimet.org/ws/ti/v0/index";
+  const url = `${tiUrl}/patterns/${patternId}/geometry${geojson}`;
 
-  /**
-   * https://newplanner.trimet.org/ws/ti/v0/index/patterns/TRIMET:433758/geometry/geojson
-   * https://newplanner.trimet.org/ws/ti/v0/index/patterns/{agency}:{pattern}/geometry/geojson
-   */
-  function makePatternUrl() {
-    url = "https://newplanner.trimet.org/ws/ti/v0/index/patterns";
-    return `${url}/${agencyId}:${patternId}/geometry/geojson`;
-  }
-
-  function cachePatternEncoded(pat, key) {
-    const geom = pat.points;
-    const pts = polyline.decode(geom);
-    this.patterns[key] = pts;
-  }
-
-  /**
-   * will cache the [[lat,lon], [lat,lon], etc...] coords
-   * note: geojson uses [lon,lat] (e.g., [X, Y], so must reverse that to match encoded coords
-   */
-  function cachePatternGeojson(pat, key) {
-    const revPoints = reverseGeojsonPointsInGeom(pat);
-    // patterns[key] = revPoints;
-    return revPoints;
-  }
-
-  /*
-  function xcachePatternGeojson(pat, cache) {
-    const revCoords = [];
-    for (let i = 0; i < pat.coordinates.length; i++) {
-      const c = pat.coordinates[i].reverse();
-      revCoords.push(c);
-    }
-    const key = `${agencyId}:${patternId}`;
-    cache[key] = revCoords;
-  }
-
-  let retVal = null;
-
-  const geomWsUrl = makePatternUrl(vehicle, ap);
-
-  console.log(`Calling GEO URL: ${geomWsUrl}`);
-  fetch(geomWsUrl)
+  console.log(`Calling GEO URL: ${url}`);
+  fetch(url)
     .then(res => {
-      retVal = res.json();
+      const retVal = res.json();
       return retVal;
     })
     .then(json => {
-
+      if (geojson.indexOf("geojson") >= 0) {
+        json = reverseGeojsonPointsInGeom(json);
+      } else {
+        json = decodePolyline(json);
+      }
+      setPatternData(patternId, json);
     })
     .catch(error => {
       console.log(`VEH GEOMETRY fetch() error: ${error}`);
     });
-
-  return retVal;
-*/
 }
-
-// export function getVehicleGeometry(setVehicleData, setTrackedVehicle, trackId, url) {}
 
 /**
  * get refresh values (default 10 seconds), and convert from secs to millisecs
