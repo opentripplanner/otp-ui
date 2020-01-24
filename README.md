@@ -50,6 +50,7 @@ Some commands you might need to execute for lerna to publish to npm:
  npm login
  npm config set access public
  npx lerna changed
- npx lerna publish
+ npx lerna publish  # option 1: default publish
+ npx lerna publish 0.0.x --force-publish=*  # option 2: publish all components to version X
  yarn deploy-storybook
 ```
