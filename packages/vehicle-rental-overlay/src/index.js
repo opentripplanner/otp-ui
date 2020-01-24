@@ -4,8 +4,8 @@ import * as BaseMapStyled from "@opentripplanner/base-map/lib/styled";
 import { getCompaniesLabelFromNetworks } from "@opentripplanner/core-utils/lib/itinerary";
 import {
   companyType,
-  mapSymbolsType,
-  stationsType
+  vehicleRentalMapOverlaySymbolsType,
+  stationType
 } from "@opentripplanner/core-utils/lib/types";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 import PropTypes from "prop-types";
@@ -34,13 +34,18 @@ const getStationMarkerByColor = memoize(color =>
   })
 );
 
+/**
+ * This vehicle rental overlay can be used to render vehicle rentals of various
+ * types. This layer can be configured to show different styles of markers at
+ * different zoom levels.
+ */
 class VehicleRentalOverlay extends MapLayer {
   createLeafletElement() {}
 
   updateLeafletElement() {}
 
   startRefreshing() {
-    // ititial station retrieval
+    // initial station retrieval
     this.props.refreshVehicles();
 
     // set up timer to refresh stations periodically
@@ -78,22 +83,8 @@ class VehicleRentalOverlay extends MapLayer {
    * applicable to other regions.
    */
   renderPopupForStation = (station, stationIsHub = false) => {
-    const { configCompanies, setLocation } = this.props;
-    const stationNetworks = getCompaniesLabelFromNetworks(
-      station.networks,
-      configCompanies
-    );
-    let stationName = station.name || station.id;
-    if (station.isFloatingBike) {
-      stationName = `Free-floating bike: ${stationName}`;
-    } else if (station.isFloatingCar) {
-      stationName = `${stationNetworks} ${stationName}`;
-    } else if (station.isFloatingVehicle) {
-      // assumes that all floating vehicles are E-scooters
-      stationName = `${stationNetworks} E-scooter`;
-    } else {
-      stationIsHub = true;
-    }
+    const { configCompanies, getStationName, setLocation } = this.props;
+    const stationName = getStationName(configCompanies, station);
     const location = {
       lat: station.y,
       lon: station.x,
@@ -216,8 +207,9 @@ class VehicleRentalOverlay extends MapLayer {
       );
     }
 
-    if (!filteredStations || filteredStations.length === 0)
+    if (!filteredStations || filteredStations.length === 0) {
       return <FeatureGroup />;
+    }
 
     return (
       <FeatureGroup>{filteredStations.map(this.renderStation)}</FeatureGroup>
@@ -235,15 +227,72 @@ VehicleRentalOverlay.props = {
    * overlay.
    */
   companies: PropTypes.arrayOf(PropTypes.string.isRequired),
-  mapSymbols: mapSymbolsType,
+  /**
+   * An optional custom function to create a string name of a particular vehicle
+   * rental station. This function takes two arguments of the configCompanies
+   * prop and a vehicle rental station. The function must return a string.
+   */
+  getStationName: PropTypes.func,
+  /**
+   * A configuration of what map markers or symbols to show at various zoom
+   * levels.
+   */
+  mapSymbols: vehicleRentalMapOverlaySymbolsType,
+  /**
+   * A function that will be triggered every 30 seconds whenever this layer is
+   * visible.
+   */
   refreshVehicles: PropTypes.func.isRequired,
+  /**
+   * A callback for when a user clicks on setting this stop as either the from
+   * or to location of a new search.
+   *
+   * This will be dispatched with the following argument:
+   *
+   * ```js
+   *  {
+   *    location: {
+   *      lat: number,
+   *      lon: number,
+   *      name: string
+   *    },
+   *    locationType: "from" or "to"
+   *  }
+   * ```
+   */
   setLocation: PropTypes.func.isRequired,
-  stations: stationsType,
+  /**
+   * A list of the vehicle rental stations specific to this overlay instance.
+   */
+  stations: PropTypes.arrayOf(stationType),
+  /**
+   * Whether the overlay is currently visible.
+   */
   visible: PropTypes.bool,
+  /**
+   * The current map zoom level.
+   */
   zoom: PropTypes.number.isRequired
 };
 
 VehicleRentalOverlay.defaultProps = {
+  getStationName: (configCompanies, station) => {
+    const stationNetworks = getCompaniesLabelFromNetworks(
+      station.networks,
+      configCompanies
+    );
+    let stationName = station.name || station.id;
+    if (station.isFloatingBike) {
+      stationName = `Free-floating bike: ${stationName}`;
+    } else if (station.isFloatingCar) {
+      stationName = `${stationNetworks} ${stationName}`;
+    } else if (station.isFloatingVehicle) {
+      // assumes that all floating vehicles are E-scooters
+      stationName = `${stationNetworks} E-scooter`;
+    }
+    return stationName;
+  },
+  mapSymbols: null,
   stations: [],
   visible: false
 };

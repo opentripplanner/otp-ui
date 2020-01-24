@@ -1,7 +1,7 @@
 import BaseMap from "@opentripplanner/base-map";
 import {
-  mapSymbolsType,
-  stationsType
+  vehicleRentalMapOverlaySymbolsType,
+  stationType
 } from "@opentripplanner/core-utils/lib/types";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
@@ -11,74 +11,13 @@ import { withInfo } from "@storybook/addon-info";
 import { storiesOf } from "@storybook/react";
 
 import VehicleRentalOverlay from ".";
+import bikeRentalStations from "../__mocks__/bike-rental-stations.json";
+import carRentalStations from "../__mocks__/car-rental-stations.json";
+import eScooterStations from "../__mocks__/e-scooter-rental-stations.json";
 
 import "@opentripplanner/base-map/assets/map.css";
 
 const center = [45.518092, -122.671202];
-
-function randomInt(maxVal) {
-  return parseInt(Math.random() * maxVal, 10);
-}
-
-function randomRange(min, max) {
-  return Math.random() * (max - min) + min;
-}
-
-function makeBaseRandomRentalStation({ id, networks }) {
-  return {
-    id,
-    name: id,
-    networks,
-    x: randomRange(-122.6, -122.75),
-    y: randomRange(45.507, 45.531)
-  };
-}
-
-function makeRandomBikeRentalStation(mapVal, idx) {
-  const networks = ["BIKETOWN"];
-  if (Math.random() > 0.5) {
-    // make a docking station style bike rental station
-    const id = `Station ${idx}`;
-    return {
-      ...makeBaseRandomRentalStation({ id, networks }),
-      bikesAvailable: randomInt(20),
-      spacesAvailable: randomInt(20)
-    };
-  }
-
-  // make a free-floating style bike rental station
-  const id = `Bike ${idx}`;
-  return {
-    ...makeBaseRandomRentalStation({ id, networks }),
-    bikesAvailable: 1,
-    isFloatingBike: true,
-    spacesAvailable: 0
-  };
-}
-
-function makeRandomCarRentalStation(mapVal, idx) {
-  // make a free-floating style car rental station
-  const id = `Bike ${idx}`;
-  const networks = ["CAR2GO"];
-  return {
-    ...makeBaseRandomRentalStation({ id, networks }),
-    carsAvailable: 1,
-    isFloatingCar: true,
-    spacesAvailable: 0
-  };
-}
-
-function makeRandomEScooterRentalStation(mapVal, idx) {
-  // make a free-floating style car rental station
-  const id = `E-scooter ${idx}`;
-  const networks = ["SHARED"];
-  return {
-    ...makeBaseRandomRentalStation({ id, networks }),
-    isFloatingVehicle: true,
-    spacesAvailable: 0,
-    vehiclesAvailable: 1
-  };
-}
 
 const bikeMapSymbols = [
   {
@@ -171,15 +110,6 @@ const EScooterMapSymbols = [
     type: "marker"
   }
 ];
-const randomBikeRentalStations = Array(20)
-  .fill(null)
-  .map(makeRandomBikeRentalStation);
-const randomCarRentalStations = Array(20)
-  .fill(null)
-  .map(makeRandomCarRentalStation);
-const randomEScooterStations = Array(20)
-  .fill(null)
-  .map(makeRandomEScooterRentalStation);
 const setLocation = action("setLocation");
 
 class ZoomControlledMapWithVehicleRentalOverlay extends Component {
@@ -196,7 +126,13 @@ class ZoomControlledMapWithVehicleRentalOverlay extends Component {
   };
 
   render() {
-    const { companies, mapSymbols, refreshVehicles, stations } = this.props;
+    const {
+      companies,
+      getStationName,
+      mapSymbols,
+      refreshVehicles,
+      stations
+    } = this.props;
     const { zoom } = this.state;
     return (
       <BaseMap
@@ -207,6 +143,7 @@ class ZoomControlledMapWithVehicleRentalOverlay extends Component {
         <VehicleRentalOverlay
           configCompanies={configCompanies}
           companies={companies}
+          getStationName={getStationName}
           setLocation={setLocation}
           mapSymbols={mapSymbols}
           refreshVehicles={refreshVehicles}
@@ -221,14 +158,20 @@ class ZoomControlledMapWithVehicleRentalOverlay extends Component {
 
 ZoomControlledMapWithVehicleRentalOverlay.propTypes = {
   companies: PropTypes.arrayOf(PropTypes.string.isRequired),
-  mapSymbols: mapSymbolsType.isRequired,
+  getStationName: PropTypes.func,
+  mapSymbols: vehicleRentalMapOverlaySymbolsType.isRequired,
   refreshVehicles: PropTypes.func.isRequired,
-  stations: stationsType.isRequired
+  stations: PropTypes.arrayOf(stationType.isRequired).isRequired
 };
 
 ZoomControlledMapWithVehicleRentalOverlay.defaultProps = {
-  companies: null
+  companies: null,
+  getStationName: undefined
 };
+
+function customStationName(_, station) {
+  return `🛴 (ID: ${station.id})`;
+}
 
 storiesOf("VehicleRentalOverlay", module)
   .addDecorator(withA11y)
@@ -238,7 +181,7 @@ storiesOf("VehicleRentalOverlay", module)
       companies={["BIKETOWN"]}
       mapSymbols={bikeMapSymbols}
       refreshVehicles={action("refresh bicycles")}
-      stations={randomBikeRentalStations}
+      stations={bikeRentalStations}
     />
   ))
   .add("VehicleRentalOverlay with rental cars", () => (
@@ -246,7 +189,7 @@ storiesOf("VehicleRentalOverlay", module)
       companies={["CAR2GO"]}
       mapSymbols={carMapSymbols}
       refreshVehicles={action("refresh cars")}
-      stations={randomCarRentalStations}
+      stations={carRentalStations}
     />
   ))
   .add("VehicleRentalOverlay with rental E-scooters", () => (
@@ -254,6 +197,15 @@ storiesOf("VehicleRentalOverlay", module)
       companies={["SHARED"]}
       mapSymbols={EScooterMapSymbols}
       refreshVehicles={action("refresh E-scooters")}
-      stations={randomEScooterStations}
+      stations={eScooterStations}
+    />
+  ))
+  .add("VehicleRentalOverlay with rental E-scooters with custom naming", () => (
+    <ZoomControlledMapWithVehicleRentalOverlay
+      companies={["SHARED"]}
+      getStationName={customStationName}
+      mapSymbols={EScooterMapSymbols}
+      refreshVehicles={action("refresh E-scooters")}
+      stations={eScooterStations}
     />
   ));

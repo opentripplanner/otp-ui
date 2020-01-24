@@ -50,7 +50,7 @@ export const languageConfigType = PropTypes.shape({
   stopViewer: PropTypes.string
 });
 
-export const mapSymbolsType = PropTypes.arrayOf(
+export const vehicleRentalMapOverlaySymbolsType = PropTypes.arrayOf(
   PropTypes.shape({
     dockStrokeColor: PropTypes.string,
     fillColor: PropTypes.string,
@@ -87,7 +87,7 @@ export const configType = PropTypes.shape({
          * The applicable map symbols. Only applicable in vehicle rental
          * overlays.
          */
-        mapSymbols: mapSymbolsType,
+        mapSymbols: vehicleRentalMapOverlaySymbolsType,
         /**
          * Only used during park and ride queries. This will filter out P&Rs
          * that are futher than the specified number of meters from a transit
@@ -405,23 +405,21 @@ export const transitiveDataType = PropTypes.shape({
 });
 
 /**
- * This models data about vehicle rental stations as obtained from various
+ * This models data about a vehicle rental station as obtained from various
  * vehicle rental API endpoints from OTP.
  */
-export const stationsType = PropTypes.arrayOf(
-  PropTypes.shape({
-    bikesAvailable: PropTypes.number,
-    id: PropTypes.string.isRequired,
-    isFloatingBike: PropTypes.bool,
-    isFloatingCar: PropTypes.bool,
-    isFloatingVehicle: PropTypes.bool,
-    name: PropTypes.string,
-    networks: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-    spacesAvailable: PropTypes.number,
-    x: PropTypes.number.isRequired,
-    y: PropTypes.number.isRequired
-  }).isRequired
-);
+export const stationType = PropTypes.shape({
+  bikesAvailable: PropTypes.number,
+  id: PropTypes.string.isRequired,
+  isFloatingBike: PropTypes.bool,
+  isFloatingCar: PropTypes.bool,
+  isFloatingVehicle: PropTypes.bool,
+  name: PropTypes.string,
+  networks: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  spacesAvailable: PropTypes.number,
+  x: PropTypes.number.isRequired,
+  y: PropTypes.number.isRequired
+});
 
 /**
  * Utility function to help create chained validators
