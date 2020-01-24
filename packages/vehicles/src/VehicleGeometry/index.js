@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { FeatureGroup } from "react-leaflet";
+import { leafletPathType } from "@opentripplanner/core-utils/lib/types";
 import { vehicleType } from "../types";
 import * as utils from "./utils";
 
@@ -15,19 +16,13 @@ import * as utils from "./utils";
 function VehicleGeometry(props) {
   const { trackedVehicle } = props;
   const { pattern } = props;
-  const { highlight, lowlight, opacity, weight } = props;
+  const { highlight, lowlight } = props;
 
   let retVal = <FeatureGroup />;
   if (trackedVehicle && pattern && pattern.data) {
     const pt = utils.findPointOnLine(trackedVehicle, pattern.data);
     const geom = utils.splitGeometry(pattern.data, pt, pattern.id);
-    const segments = utils.makeSplitLine(
-      geom,
-      highlight,
-      lowlight,
-      weight,
-      opacity
-    );
+    const segments = utils.makeSplitLine(geom, highlight, lowlight);
     if (segments && segments.length === 2)
       retVal = (
         <FeatureGroup>
@@ -41,19 +36,24 @@ function VehicleGeometry(props) {
 VehicleGeometry.defaultProps = {
   trackedVehicle: null,
   pattern: null,
-  highlight: "#00bfff",
-  lowlight: "#555555",
-  weight: 4.0,
-  opacity: 0.85
+  highlight: {
+    color: "#00bfff",
+    weight: 5.0,
+    opacity: 0.85
+  },
+  lowlight: {
+    color: "#999",
+    weight: 5.0,
+    opacity: 0.7,
+    dashArray: "1, 10, 1, 10"
+  }
 };
 
 VehicleGeometry.propTypes = {
   trackedVehicle: vehicleType,
   pattern: PropTypes.shape({}),
-  highlight: PropTypes.string,
-  lowlight: PropTypes.string,
-  weight: PropTypes.number,
-  opacity: PropTypes.number
+  highlight: leafletPathType,
+  lowlight: leafletPathType
 };
 
 export default VehicleGeometry;

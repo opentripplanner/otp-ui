@@ -24,9 +24,21 @@ const v = [v1, v2, v3];
 const portland = [45.523, -122.671];
 
 function allExample() {
+  const data = utils.reverseGeojsonPointsInGeom(geojson);
+  const tracked = utils.findVehicle(line, "9563137");
+  const pattern = {
+    id: "1",
+    data
+  };
   const retVal = (
     <BaseMap center={portland}>
-      <VehicleLayer name="Real-Time Buses and Trains" vehicles={all} visible />
+      <VehicleLayer
+        name="Real-Time Buses and Trains"
+        vehicles={all}
+        trackedVehicle={tracked}
+        visible
+      />
+      <VehicleGeometry trackedVehicle={tracked} pattern={pattern} visible />
     </BaseMap>
   );
   return retVal;
@@ -40,6 +52,12 @@ function routeExample() {
     data
   };
 
+  const geomStyle = utils.setColor(
+    "#3e5a77",
+    VehicleGeometry.defaultProps.highlight
+  );
+  // const markerStyle = utils.setColor("#3e5a77", VehicleMarker.defaultProps.markerStyle);
+
   const retVal = (
     <BaseMap center={portland}>
       <VehicleLayer
@@ -48,7 +66,12 @@ function routeExample() {
         vehicles={line}
         visible
       />
-      <VehicleGeometry trackedVehicle={tracked} pattern={pattern} visible />
+      <VehicleGeometry
+        trackedVehicle={tracked}
+        pattern={pattern}
+        highlight={geomStyle}
+        visible
+      />
     </BaseMap>
   );
   return retVal;

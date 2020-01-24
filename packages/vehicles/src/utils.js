@@ -1,6 +1,24 @@
 /* eslint-disable no-unused-vars */
 import polyline from "@mapbox/polyline";
 
+/** deep copy */
+export function deep(obj) {
+  return JSON.parse(JSON.stringify(obj));
+}
+
+/**
+ * will take an input object (e.g., probably a defaultProp representing a leaflet style),
+ * deep copy that object, and return back a new obj with the .color set
+ *
+ * @param color
+ * @return deep copied object with color set
+ */
+export function setColor(color, obj) {
+  const retVal = deep(obj);
+  retVal.color = color;
+  return retVal;
+}
+
 /**
  * geojson uses [lon,lat] (e.g., [X, Y]) in representing coordinates
  * this utility function reverses the point order to be [lat, lon] (or [Y, X])

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import { Polyline } from "react-leaflet";
 
@@ -60,29 +61,23 @@ export function splitGeometry(geom, splitPt, key) {
  * @param splitGeom
  * @param highlight
  * @param lowlight
- * @param weight
- * @param opacity
  * @returns {Array}
  */
-export function makeSplitLine(splitGeom, highlight, lowlight, weight, opacity) {
+export function makeSplitLine(splitGeom, highlight, lowlight) {
   const segments = [];
   if (splitGeom && splitGeom.length === 2) {
     segments.push(
       <Polyline
         key={splitGeom[0].key}
         positions={splitGeom[0].geometry}
-        color={lowlight}
-        weight={weight}
-        opacity={opacity}
+        {...lowlight}
       />
     );
     segments.push(
       <Polyline
         key={splitGeom[1].key}
         positions={splitGeom[1].geometry}
-        color={highlight}
-        weight={weight}
-        opacity={opacity}
+        {...highlight}
       />
     );
   }
