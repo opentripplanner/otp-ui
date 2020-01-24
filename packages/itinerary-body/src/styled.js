@@ -86,6 +86,7 @@ export const AgencyInfo = styled.div`
   }
 
   img {
+    margin-left: 5px;
     vertical-align: middle;
   }
 `;
@@ -213,6 +214,37 @@ export const LegClickable = styled(TransparentButton)`
   display: table;
 `;
 
+export const LegDescription = styled.div`
+  display: table;
+
+  > div {
+    display: table-cell;
+    vertical-align: middle;
+  }
+`;
+
+export const LegDescriptionHeadsignPrefix = styled.span`
+  font-weight: 200;
+`;
+
+export const LegDescriptionRouteLongName = styled.div`
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+`;
+
+export const LegDescriptionRouteShortName = styled.div`
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 16px;
+  margin-right: 6px;
+`;
+
+export const LegDescriptionForTransit = styled(LegDescription)`
+  color: rgb(153, 153, 153);
+  margin-top: 5px;
+`;
+
 export const LegIconContainer = styled.div`
   height: 24px;
   width: 24px;
@@ -336,6 +368,26 @@ export const PlaceSubheader = styled.div`
 export const PreviewDiagram = styled(TransparentButton)`
   padding: 2px;
   width: 100%;
+`;
+
+export const PreviewDiagramElevationChange = styled.span`
+  font-size: xx-small;
+`;
+
+export const PreviewDiagramElevationGain = styled(
+  PreviewDiagramElevationChange
+)`
+  color: red;
+`;
+
+export const PreviewDiagramElevationLoss = styled(
+  PreviewDiagramElevationChange
+)`
+  color: green;
+`;
+
+export const PreviewDiagramTitle = styled.div`
+  font-size: small;
 `;
 
 export const RouteBadge = styled.div`

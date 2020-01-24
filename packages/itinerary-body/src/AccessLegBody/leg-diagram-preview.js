@@ -81,16 +81,16 @@ class LegDiagramPreview extends Component {
           role="button"
           onClick={this.onExpandClick}
         >
-          <div className="diagram-title text-center">
+          <Styled.PreviewDiagramTitle>
             Elevation chart{" "}
-            <span style={{ fontSize: "xx-small", color: "red" }}>
+            <Styled.PreviewDiagramElevationGain>
               ↑{this.formatElevation(profile.gain * METERS_TO_FEET)}
               {"  "}
-            </span>
-            <span style={{ fontSize: "xx-small", color: "green" }}>
+            </Styled.PreviewDiagramElevationGain>
+            <Styled.PreviewDiagramElevationLoss>
               ↓{this.formatElevation(-profile.loss * METERS_TO_FEET)}
-            </span>
-          </div>
+            </Styled.PreviewDiagramElevationLoss>
+          </Styled.PreviewDiagramTitle>
           {profile.points.length > 0
             ? generateSvg(profile, width)
             : "No elevation data available."}

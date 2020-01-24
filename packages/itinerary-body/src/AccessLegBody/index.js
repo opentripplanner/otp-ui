@@ -254,13 +254,13 @@ function AccessLegSummary({ config, leg, /* LegIcon, */ onSummaryClick }) {
       </div> */}
 
       {/* Leg description, e.g. "Walk 0.5 mi to..." */}
-      <div>
+      <Styled.LegDescription>
         {getLegModeLabel(leg)}{" "}
         {leg.distance > 0 && (
           <span> {humanizeDistanceString(leg.distance)}</span>
         )}
         {` to ${getPlaceName(leg.to, config.companies)}`}
-      </div>
+      </Styled.LegDescription>
     </Styled.LegClickable>
   );
 }
