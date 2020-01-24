@@ -9,6 +9,7 @@ function EndpointsOverlay({
   forgetPlace,
   fromLocation,
   locations,
+  MapMarkerIcon,
   rememberPlace,
   setLocation,
   showUserSettings,
@@ -21,6 +22,7 @@ function EndpointsOverlay({
         forgetPlace={forgetPlace}
         location={fromLocation}
         locations={locations}
+        MapMarkerIcon={MapMarkerIcon}
         rememberPlace={rememberPlace}
         setLocation={setLocation}
         showUserSettings={showUserSettings}
@@ -31,6 +33,7 @@ function EndpointsOverlay({
         forgetPlace={forgetPlace}
         location={toLocation}
         locations={locations}
+        MapMarkerIcon={MapMarkerIcon}
         rememberPlace={rememberPlace}
         setLocation={setLocation}
         showUserSettings={showUserSettings}
@@ -65,6 +68,18 @@ EndpointsOverlay.propTypes = {
    */
   locations: PropTypes.arrayOf(locationType),
   /**
+   * An optional custom component that can be used to create custom html that
+   * is used in a leaflet divIcon to render the map marker icon for each
+   * endpoint.
+   *
+   * See https://leafletjs.com/reference-1.6.0.html#divicon
+   *
+   * This component is passed 2 props:
+   * - location: either the from or to location depending on the endpoint
+   * - type: either "from" or "to"
+   */
+  MapMarkerIcon: PropTypes.elementType,
+  /**
    * Dispatched when a user clicks on the remember place button in the user
    * settings. Not needed unless user settings is activated. Dispatched with an
    * argument in the form of:
@@ -96,6 +111,7 @@ EndpointsOverlay.defaultProps = {
   forgetPlace: noop,
   rememberPlace: noop,
   locations: [],
+  MapMarkerIcon: undefined,
   showUserSettings: false
 };
 
