@@ -161,8 +161,10 @@ export function itineraryToTransitive(itin, companies) {
     }
     if (isTransit(leg.mode)) {
       // determine if we have valid inter-stop geometry
-      const hasInterStopGeometry =
-        leg.interStopGeometry &&
+      const hasInterStopGeometry = !!leg.interStopGeometry;
+      const hasIntermediateStopGeomerty =
+        hasInterStopGeometry &&
+        leg.intermediateStops &&
         leg.interStopGeometry.length === leg.intermediateStops.length + 1;
 
       // create leg-specific pattern
@@ -184,18 +186,21 @@ export function itineraryToTransitive(itin, companies) {
       pattern.stops.push({ stop_id: leg.from.stopId });
 
       // add intermediate stops to stops dictionary and pattern object
-      leg.intermediateStops.forEach((stop, i) => {
-        stops[stop.stopId] = {
-          stop_id: stop.stopId,
-          stop_name: stop.name,
-          stop_lat: stop.lat,
-          stop_lon: stop.lon
-        };
-        pattern.stops.push({
-          stop_id: stop.stopId,
-          geometry: hasInterStopGeometry && leg.interStopGeometry[i].points
+      if (leg.intermediateStops) {
+        leg.intermediateStops.forEach((stop, i) => {
+          stops[stop.stopId] = {
+            stop_id: stop.stopId,
+            stop_name: stop.name,
+            stop_lat: stop.lat,
+            stop_lon: stop.lon
+          };
+          pattern.stops.push({
+            stop_id: stop.stopId,
+            geometry:
+              hasIntermediateStopGeomerty && leg.interStopGeometry[i].points
+          });
         });
-      });
+      }
 
       // add 'to' stop to stops dictionary and pattern object
       stops[leg.to.stopId] = {
@@ -231,7 +236,9 @@ export function itineraryToTransitive(itin, companies) {
           {
             pattern_id: ptnId,
             from_stop_index: 0,
-            to_stop_index: leg.intermediateStops.length + 2 - 1
+            to_stop_index: leg.intermediateStops
+              ? leg.intermediateStops.length + 2 - 1
+              : 1
           }
         ]
       });
