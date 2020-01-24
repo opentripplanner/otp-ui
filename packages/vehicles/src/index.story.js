@@ -8,7 +8,7 @@ import BaseMap from "@opentripplanner/base-map";
 
 import Vehicles from ".";
 import VehicleLayer from "./VehicleLayer";
-import VehicleGeometry from "./VehicleGeometry/geo";
+import VehicleGeometry from "./VehicleGeometry";
 import * as utils from "./utils";
 
 // mock data
@@ -23,22 +23,6 @@ const v = [v1, v2, v3];
 
 const portland = [45.523, -122.671];
 
-function geoExample() {
-  const tv = {
-    patternId: "1",
-    lon: -122.634,
-    lat: 45.532
-  };
-  const pat = utils.reverseGeojsonPointsInGeom(geojson);
-
-  const retVal = (
-    <BaseMap center={portland}>
-      <VehicleGeometry trackedVehicle={tv} pattern={pat} visible />
-    </BaseMap>
-  );
-  return retVal;
-}
-
 function allExample() {
   const retVal = (
     <BaseMap center={portland}>
@@ -49,8 +33,12 @@ function allExample() {
 }
 
 function routeExample() {
-  const pattern = utils.reverseGeojsonPointsInGeom(geojson);
+  const data = utils.reverseGeojsonPointsInGeom(geojson);
   const tracked = utils.findVehicle(line, "9563137");
+  const pattern = {
+    id: "1",
+    data
+  };
 
   const retVal = (
     <BaseMap center={portland}>
@@ -122,7 +110,6 @@ function rtExample() {
 storiesOf("Realtime VehicleLayer", module)
   .addDecorator(withA11y)
   .addDecorator(withInfo)
-  .add("line geom", geoExample)
   .add("by Route", routeExample)
   .add("all Routes", allExample)
   .add("animated VehicleLayer", animatedExample)

@@ -10,9 +10,9 @@ function Tracker(props) {
 
   function handleClick() {
     if (tracked) {
-      setTracked(null);
+      setTracked(null, null);
     } else {
-      setTracked(vehicle);
+      setTracked(vehicle, null);
     }
   }
 

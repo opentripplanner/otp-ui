@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { FeatureGroup } from "react-leaflet";
 
 import VehicleLayer from "./VehicleLayer";
-// import { checkRefreshInteval, fetchVehicles } from "./utils";
+import VehicleGeometry from "./VehicleGeometry";
 import * as utils from "./utils";
 
 /**
@@ -66,6 +67,13 @@ function Vehicles(props) {
     }
   }
 
+  function setTracked(vehId, geomData) {
+    setTrackedVehicle(vehId);
+    // TODO: add cache scheme and then do a shortcut for setting geom data
+    // if (vehId && geomData === null) geomData = geomCache.find(vehId);
+    setTrackedGeometry(geomData);
+  }
+
   function getTrackedVehicle() {
     let retVal = null;
     if (trackedVehicleRef && trackedVehicleRef.current)
@@ -87,7 +95,7 @@ function Vehicles(props) {
     // NOTE: because we're setting state below, this function is going to get called multiple times by react
     //       if we don't have the gate of vehicleData == null, then we'll get multiple setInterval calls
     let interval = null;
-    if (vehicleData == null) {
+    if (vehicleData === null) {
       utils.fetchVehicles(setData, props.tracked);
       interval = setInterval(() => {
         utils.fetchVehicles(setData, getTrackedVehicleId());
@@ -98,18 +106,24 @@ function Vehicles(props) {
       // before vehicle view component un-mounts, clear the interval...
       if (interval) {
         clearInterval(interval);
-        setTrackedVehicle(null);
+        setTracked(null, null);
         interval = null;
       }
     };
   }, []);
 
   const retVal = (
-    <VehicleLayer
-      vehicles={vehicleData}
-      trackedVehicle={trackedVehicle}
-      setTracked={setTrackedVehicle}
-    />
+    <FeatureGroup>
+      <VehicleLayer
+        vehicles={vehicleData}
+        trackedVehicle={trackedVehicle}
+        setTracked={setTracked} // TODO: probably need to do setTracked(veh, geom) so we can set to null geom
+      />
+      <VehicleGeometry
+        trackedVehicle={trackedVehicle}
+        pattern={trackedGeometry}
+      />
+    </FeatureGroup>
   );
   return retVal;
 }

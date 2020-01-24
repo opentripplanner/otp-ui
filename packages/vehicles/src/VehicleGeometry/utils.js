@@ -1,11 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { FeatureGroup, Polyline } from "react-leaflet";
+import { Polyline } from "react-leaflet";
 
 import * as turf from "@turf/helpers";
 import nearestPointOnLine from "@turf/nearest-point-on-line";
-
-import { vehicleType } from "../types";
 
 turf.nearestPointOnLine = nearestPointOnLine;
 
@@ -16,7 +13,7 @@ turf.nearestPointOnLine = nearestPointOnLine;
  * @param geom
  * @returns {number}
  */
-function findPointOnLine(vehicle, geom) {
+export function findPointOnLine(vehicle, geom) {
   let retVal = 0;
   if (vehicle && geom && geom.length > 1) {
     const pt = turf.point([vehicle.lat, vehicle.lon]);
@@ -40,7 +37,7 @@ function findPointOnLine(vehicle, geom) {
  * @param key
  * @returns {*}
  */
-function splitGeometry(geom, splitPt, key) {
+export function splitGeometry(geom, splitPt, key) {
   let retVal = null;
   if (geom) {
     const geomPast = [];
@@ -67,7 +64,7 @@ function splitGeometry(geom, splitPt, key) {
  * @param opacity
  * @returns {Array}
  */
-function makeSplitLine(splitGeom, highlight, lowlight, weight, opacity) {
+export function makeSplitLine(splitGeom, highlight, lowlight, weight, opacity) {
   const segments = [];
   if (splitGeom && splitGeom.length === 2) {
     segments.push(
@@ -91,51 +88,3 @@ function makeSplitLine(splitGeom, highlight, lowlight, weight, opacity) {
   }
   return segments;
 }
-
-/**
- * vehicle geometry component that creates a map overlay for the line geometry showing
- * the travel pattern of a vehicle
- *
- * @param props
- * @returns {*}
- * @constructor
- */
-function VehicleGeometry(props) {
-  const { trackedVehicle } = props;
-  const { pattern } = props;
-  const { highlight, lowlight, opacity, weight } = props;
-
-  let retVal = <FeatureGroup />;
-  if (trackedVehicle && pattern) {
-    const pt = findPointOnLine(trackedVehicle, pattern);
-    const geom = splitGeometry(pattern, pt, trackedVehicle.patternId);
-    const segments = makeSplitLine(geom, highlight, lowlight, weight, opacity);
-    if (segments && segments.length === 2)
-      retVal = (
-        <FeatureGroup>
-          <div>{segments}</div>
-        </FeatureGroup>
-      );
-  }
-  return retVal;
-}
-
-VehicleGeometry.defaultProps = {
-  trackedVehicle: null,
-  pattern: null,
-  highlight: "#00bfff",
-  lowlight: "#555555",
-  weight: 4.0,
-  opacity: 0.85
-};
-
-VehicleGeometry.propTypes = {
-  trackedVehicle: vehicleType,
-  pattern: PropTypes.shape({}),
-  highlight: PropTypes.string,
-  lowlight: PropTypes.string,
-  weight: PropTypes.number,
-  opacity: PropTypes.number
-};
-
-export default VehicleGeometry;
