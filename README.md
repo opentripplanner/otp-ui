@@ -46,6 +46,7 @@ See:
 Some commands you might need to execute for lerna to publish to npm:
 
 ```bash
+ npm whoami
  npm login
  npm config set access public
  npx lerna changed
