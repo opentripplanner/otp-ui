@@ -30,7 +30,7 @@ const commonModes = {
     },
     {
       mode: "MICROMOBILITY_RENT",
-      label: "Transit + E-Scooter"
+      label: "Transit + E-scooter"
     },
     {
       mode: "CAR_PARK",
@@ -59,11 +59,11 @@ const commonModes = {
   micromobilityModes: [
     {
       mode: "MICROMOBILITY",
-      label: "Own E-Scooter"
+      label: "Own E-scooter"
     },
     {
       mode: "MICROMOBILITY_RENT",
-      label: "Razor"
+      label: "Rental E-scooter"
     }
   ]
 };

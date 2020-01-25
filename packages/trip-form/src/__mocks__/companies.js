@@ -1,42 +1,31 @@
 const commonCompanies = [
-  // The first two should not be displayed (no rent or hail).
   {
-    id: "MyBike1",
-    label: "MyBike1",
-    modes: "BICYCLE"
-  },
-  {
-    id: "MyBike2",
-    label: "MyBike2",
-    modes: "BICYCLE"
-  },
-  {
-    id: "Biketown",
+    id: "BIKETOWN",
     label: "Biketown",
     modes: "BICYCLE_RENT"
   },
   {
-    id: "Lime",
+    id: "LIME",
     label: "Lime",
     modes: "MICROMOBILITY_RENT"
   },
   {
-    id: "Bolt",
+    id: "BOLT",
     label: "Bolt",
     modes: "MICROMOBILITY_RENT"
   },
   {
-    id: "Razor",
+    id: "RAZOR",
     label: "Razor",
     modes: "MICROMOBILITY_RENT"
   },
   {
-    id: "Uber",
+    id: "UBER",
     label: "Uber",
     modes: "CAR_HAIL"
   },
   {
-    id: "Lyft",
+    id: "LYFT",
     label: "Lyft",
     modes: "CAR_HAIL"
   }
