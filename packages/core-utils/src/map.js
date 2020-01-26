@@ -213,7 +213,9 @@ export function itineraryToTransitive(itin, companies) {
         stop_id: leg.to.stopId,
         geometry:
           hasInterStopGeometry &&
-          leg.interStopGeometry[leg.interStopGeometry.length - 1].points
+          (hasIntermediateStopGeomerty
+            ? leg.interStopGeometry[leg.interStopGeometry.length - 1].points
+            : leg.legGeometry.points)
       });
 
       // add route to the route dictionary
