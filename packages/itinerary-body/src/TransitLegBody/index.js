@@ -54,10 +54,9 @@ function DefaultRouteDescription({ leg }) {
         {routeLongName}
         {headsign && (
           <span>
-            {" "}
             <Styled.LegDescriptionHeadsignPrefix>
-              to
-            </Styled.LegDescriptionHeadsignPrefix>{" "}
+              {" to "}
+            </Styled.LegDescriptionHeadsignPrefix>
             {headsign}
           </span>
         )}
