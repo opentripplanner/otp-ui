@@ -9,8 +9,8 @@
   "private": false,
   "dependencies": {
     "@mapbox/polyline": "^1.1.0",
-    "@opentripplanner/base-map": "^0.0.11",
-    "@opentripplanner/core-utils": "^0.0.11",
+    "@opentripplanner/base-map": "^0.0.12",
+    "@opentripplanner/core-utils": "^0.0.12",
     "@turf/nearest-point-on-line": "^6.0.1",
     "leaflet-rotatedmarker": "^0.2.0"
   },
