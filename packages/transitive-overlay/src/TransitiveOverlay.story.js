@@ -1,4 +1,3 @@
-import clone from "lodash.clonedeep";
 import BaseMap from "@opentripplanner/base-map";
 import { itineraryToTransitive } from "@opentripplanner/core-utils/lib/map";
 import EndpointsOverlay from "@opentripplanner/endpoints-overlay";
@@ -24,13 +23,8 @@ const tncTransitTncItinerary = require("@opentripplanner/itinerary-body/src/__mo
 const walkInterlinedTransitItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-interlined-transit-walk.json");
 const walkOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-only.json");
 const walkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json");
+const walkTransitWalkItineraryNoIntermediateStops = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-no-intermediate-stops.json");
 const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json");
-
-const walkInterlinedTransitItineraryNoIntermediateStops = clone(
-  walkInterlinedTransitItinerary
-);
-delete walkInterlinedTransitItineraryNoIntermediateStops.legs[1]
-  .intermediateStops;
 
 const companies = [
   {
@@ -103,6 +97,30 @@ storiesOf("TransitiveOverlay", module)
       />
     </BaseMap>
   ))
+  .add(
+    "TransitiveOverlay with walk-transit-walk itinerary with no intermediate stops",
+    () => (
+      <BaseMap center={[45.525841, -122.649302]} zoom={13}>
+        <EndpointsOverlay
+          fromLocation={getFromLocation(
+            walkTransitWalkItineraryNoIntermediateStops
+          )}
+          setLocation={setLocation}
+          toLocation={getToLocation(
+            walkTransitWalkItineraryNoIntermediateStops
+          )}
+          visible
+        />
+        <TransitiveOverlay
+          transitiveData={itineraryToTransitive(
+            walkTransitWalkItineraryNoIntermediateStops,
+            companies
+          )}
+          visible
+        />
+      </BaseMap>
+    )
+  )
   .add("TransitiveOverlay with bike-transit-bike itinerary", () => (
     <BaseMap center={[45.520441, -122.68302]} zoom={16}>
       <EndpointsOverlay
@@ -137,30 +155,6 @@ storiesOf("TransitiveOverlay", module)
       />
     </BaseMap>
   ))
-  .add(
-    "TransitiveOverlay with walk-interlined-transit itinerary with no intermediate stops",
-    () => (
-      <BaseMap center={[45.511841, -122.679302]} zoom={14}>
-        <EndpointsOverlay
-          fromLocation={getFromLocation(
-            walkInterlinedTransitItineraryNoIntermediateStops
-          )}
-          setLocation={setLocation}
-          toLocation={getToLocation(
-            walkInterlinedTransitItineraryNoIntermediateStops
-          )}
-          visible
-        />
-        <TransitiveOverlay
-          transitiveData={itineraryToTransitive(
-            walkInterlinedTransitItineraryNoIntermediateStops,
-            companies
-          )}
-          visible
-        />
-      </BaseMap>
-    )
-  )
   .add("TransitiveOverlay with walk-transit-transfer itinerary", () => (
     <BaseMap center={[45.505841, -122.631302]} zoom={14}>
       <EndpointsOverlay

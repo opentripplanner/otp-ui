@@ -28,8 +28,5 @@
   },
   "peerDependencies": {
     "react": "^16.8.6"
-  },
-  "devDependencies": {
-    "lodash.clonedeep": "^4.5.0"
   }
 }
