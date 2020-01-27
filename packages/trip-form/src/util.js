@@ -8,7 +8,7 @@ import {
   isTransit,
   isWalk
 } from "@opentripplanner/core-utils/lib/itinerary";
-import * as Icons from "@opentripplanner/icons";
+import { getCompanyIcon } from "@opentripplanner/icons/lib/companies";
 
 import ModeIcon from "./ModeIcon";
 
@@ -29,7 +29,7 @@ const supportedExclusiveModes = [
   },
   {
     mode: "MICROMOBILITY",
-    label: "E-Scooter Only",
+    label: "E-scooter Only",
     isActive: isMicromobility
   }
 ];
@@ -145,14 +145,14 @@ export function getCompanies(companies, modes) {
 
 export function getCompaniesOptions(companies, modes, selectedCompanies) {
   return getCompanies(companies, modes).map(comp => {
-    const IconTag = Icons[comp.id];
+    const CompanyIcon = getCompanyIcon(comp.id);
 
     return {
       id: comp.id,
       selected: selectedCompanies.includes(comp.id),
       text: (
         <span>
-          <IconTag /> {comp.label}
+          <CompanyIcon /> {comp.label}
         </span>
       ),
       title: comp.label
