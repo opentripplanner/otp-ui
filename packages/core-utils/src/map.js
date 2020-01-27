@@ -162,7 +162,7 @@ export function itineraryToTransitive(itin, companies) {
     if (isTransit(leg.mode)) {
       // determine if we have valid inter-stop geometry
       const hasInterStopGeometry = !!leg.interStopGeometry;
-      const hasIntermediateStopGeomerty =
+      const hasIntermediateStopGeometry =
         hasInterStopGeometry &&
         leg.intermediateStops &&
         leg.interStopGeometry.length === leg.intermediateStops.length + 1;
@@ -197,7 +197,7 @@ export function itineraryToTransitive(itin, companies) {
           pattern.stops.push({
             stop_id: stop.stopId,
             geometry:
-              hasIntermediateStopGeomerty && leg.interStopGeometry[i].points
+              hasIntermediateStopGeometry && leg.interStopGeometry[i].points
           });
         });
       }
@@ -213,7 +213,7 @@ export function itineraryToTransitive(itin, companies) {
         stop_id: leg.to.stopId,
         geometry:
           hasInterStopGeometry &&
-          (hasIntermediateStopGeomerty
+          (hasIntermediateStopGeometry
             ? leg.interStopGeometry[leg.interStopGeometry.length - 1].points
             : leg.legGeometry.points)
       });
