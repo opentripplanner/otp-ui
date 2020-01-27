@@ -46,7 +46,7 @@ function Vehicles(props) {
     setVehicleData(vehicleList);
 
     // step 2: tracked vehicle
-    const vehicle = utils.findVehicle(vehicleList, trackedId);
+    const vehicle = utils.findVehicleById(vehicleList, trackedId);
     if (vehicle) {
       setTrackedVehicle(vehicle);
 
@@ -129,7 +129,8 @@ function Vehicles(props) {
 }
 
 Vehicles.defaultProps = {
-  refreshDelay: 3000,
+
+  refreshDelay: 5000,
   tracked: "9605379"
 };
 

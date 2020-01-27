@@ -25,7 +25,7 @@ const portland = [45.523, -122.671];
 
 function allExample() {
   const data = utils.reverseGeojsonPointsInGeom(geojson);
-  const tracked = utils.findVehicle(line, "9563137");
+  const tracked = utils.findVehicleById(line, "9563137");
   const pattern = {
     id: "1",
     data
@@ -46,7 +46,7 @@ function allExample() {
 
 function routeExample() {
   const data = utils.reverseGeojsonPointsInGeom(geojson);
-  const tracked = utils.findVehicle(line, "9563137");
+  const tracked = utils.findVehicleById(line, "9563137");
   const pattern = {
     id: "1",
     data

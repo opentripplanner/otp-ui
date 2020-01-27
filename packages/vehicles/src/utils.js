@@ -48,12 +48,12 @@ export function decodePolyline(geom) {
 }
 
 /**
- * find a vehicle within a list of vehicles
+ * find a vehicle based on an id (either vehicle or trip id) within a list of vehicles
  * @param vehicleList - list of vehciles to be searched
  * @param queryId - either trip or vehcile id (string) to search list
  * @param defVal - return value when not found or errors happen
  */
-export function findVehicle(vehicleList, queryId, defVal = null) {
+export function findVehicleById(vehicleList, queryId, defVal = null) {
   let retVal = defVal;
 
   try {
@@ -64,6 +64,25 @@ export function findVehicle(vehicleList, queryId, defVal = null) {
       }
       return false;
     });
+  } catch (e) {
+    console.log(e);
+  }
+  return retVal;
+}
+
+/**
+ * do 2 vehicle have the same tracking ids
+ * @param vehicleA
+ * @param vehicleB
+ * @returns boolean
+ */
+export function isTracked(vehicleA, vehicleB) {
+  let retVal = false;
+
+  try {
+    if (vehicleA.vehicleId === vehicleB.vehicleId || vehicleA.tripId === vehicleB.tripId) {
+      retVal = true;
+    }
   } catch (e) {
     console.log(e);
   }
