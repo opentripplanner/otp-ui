@@ -1,38 +1,21 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
-import { withKnobs, object } from "@storybook/addon-knobs";
+import { withKnobs, object, boolean } from "@storybook/addon-knobs";
 import * as Icons from "@opentripplanner/icons";
 
-import CheckboxSelector from "./CheckboxSelector";
-import DropdownSelector from "./DropdownSelector";
-import GeneralSettingsPanel from "./GeneralSettingsPanel";
-
-import ModeButton from "./ModeButton";
+import * as Core from ".";
 import ModeIcon from "./ModeIcon";
-import ModeSelector from "./ModeSelector";
-import SubmodeSelector from "./SubmodeSelector";
 
 import ModeIconWrap from "./__mocks__/mode-icon-wrap";
 import modeOptions from "./__mocks__/mode-options";
 import commonModes from "./__mocks__/modes";
 import submodeOptions from "./__mocks__/submode-options";
-
-const background = story => (
-  <div
-    style={{
-      backgroundColor: "#F0F0F0",
-      height: "200px",
-      padding: "15px"
-    }}
-  >
-    {story()}
-  </div>
-);
+import trimet from "./__mocks__/trimet.styled";
 
 export default {
   title: "Trip Form Components",
-  decorators: [withInfo, withKnobs, background]
+  decorators: [withInfo, withKnobs]
 };
 
 // Events
@@ -41,16 +24,17 @@ const onClick = action("onClick");
 const onQueryParamChange = action("onQueryParamChange");
 
 export const checkboxSelector = () => (
-  <CheckboxSelector
+  <Core.CheckboxSelector
     name="MyParam"
     style={{ display: "inline-block", width: "250px" }}
     label="Check me."
     onChange={onChange}
   />
 );
+export const checkBoxSelectorStyled = () => trimet(checkboxSelector());
 
 export const dropdownSelector = () => (
-  <DropdownSelector
+  <Core.DropdownSelector
     name="MyParam"
     style={{ display: "inline-block", width: "250px" }}
     label="Pick an option:"
@@ -68,9 +52,10 @@ export const dropdownSelector = () => (
     value="Value2"
   />
 );
+export const dropdownSelectorStyled = () => trimet(dropdownSelector());
 
 export const generalSettingsPanel = () => (
-  <GeneralSettingsPanel
+  <Core.GeneralSettingsPanel
     query={{
       mode: object("mode", "WALK,BUS,TRAM,SUBWAY"),
       routingType: "ITINERARY"
@@ -79,6 +64,7 @@ export const generalSettingsPanel = () => (
     supportedModes={commonModes}
   />
 );
+export const generalSettingsPanelStyled = () => trimet(generalSettingsPanel());
 
 export const modeIcon = () => (
   <ModeIconWrap>
@@ -89,21 +75,22 @@ export const modeIcon = () => (
 export const modeButton = () => (
   <div>
     <div>
-      <ModeButton onClick={onClick} title="Normal">
+      <Core.ModeButton onClick={onClick} title="Normal">
         <Icons.Max />
         +
         <Icons.Bike />
-        Go by train or bike
-      </ModeButton>
+        Go by train
+        <span style={{ fontSize: "150%", color: "red" }}> or </span> bike
+      </Core.ModeButton>
     </div>
     <div>
-      <ModeButton selected onClick={onClick} title="Active">
+      <Core.ModeButton selected onClick={onClick} title="Active">
         <Icons.Max />
         Train
-      </ModeButton>
+      </Core.ModeButton>
     </div>
     <div>
-      <ModeButton
+      <Core.ModeButton
         enabled={false}
         label="Can't Select!"
         onClick={onClick}
@@ -112,25 +99,29 @@ export const modeButton = () => (
         <Icons.AlertSolid />
         Can&apos;t select!
         <Icons.Alert />
-      </ModeButton>
+      </Core.ModeButton>
     </div>
     <div>
-      <ModeButton onClick={onClick} showTitle={false} title="Walk Only">
+      <Core.ModeButton onClick={onClick} showTitle={false} title="Walk Only">
         <Icons.Max />
         Walk Only
-      </ModeButton>
+      </Core.ModeButton>
     </div>
   </div>
 );
+export const modeButtonStyled = () => trimet(modeButton());
 
 export const modeSelector = () => (
-  <ModeSelector modes={modeOptions} onChange={onChange} />
+  <Core.ModeSelector modes={modeOptions} onChange={onChange} />
 );
+export const modeSelectorStyled = () => trimet(modeSelector());
 
 export const submodeSelector = () => (
-  <SubmodeSelector
+  <Core.SubmodeSelector
+    inline={boolean("inline", false)}
     label="Submodes:"
     modes={submodeOptions}
     onChange={onChange}
   />
 );
+export const submodeSelectorStyled = () => trimet(submodeSelector());

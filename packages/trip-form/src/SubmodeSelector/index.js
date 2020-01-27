@@ -2,13 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { modeOptionType } from "@opentripplanner/core-utils/lib/types";
 
-import { SubmodeRow, InlineSubmodeRow } from "./styled";
 import ModeButton from "../ModeButton";
-import {
-  FloatingSettingLabel,
-  SettingLabel,
-  SettingsSection
-} from "../SettingsComponents";
+import * as Styled from "../styled";
 
 /**
  * SubmodeSelector is the control container where the OTP user selects
@@ -16,11 +11,13 @@ import {
  */
 const SubmodeSelector = props => {
   const { className, inline, label, modes, onChange, style } = props;
-  const LabelType = inline ? FloatingSettingLabel : SettingLabel;
-  const RowType = inline ? InlineSubmodeRow : SubmodeRow;
+  const LabelType = inline ? Styled.FloatingSettingLabel : Styled.SettingLabel;
+  const RowType = inline
+    ? Styled.SubmodeSelector.InlineRow
+    : Styled.SubmodeSelector.Row;
 
   return (
-    <SettingsSection className={className} style={style}>
+    <Styled.SubmodeSelector className={className} style={style}>
       {label && <LabelType>{label}</LabelType>}
       <RowType>
         {modes &&
@@ -36,7 +33,7 @@ const SubmodeSelector = props => {
             </ModeButton>
           ))}
       </RowType>
-    </SettingsSection>
+    </Styled.SubmodeSelector>
   );
 };
 

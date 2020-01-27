@@ -4,29 +4,13 @@ import { withInfo } from "@storybook/addon-info";
 import { withKnobs, boolean, text } from "@storybook/addon-knobs";
 
 import DateTimeSelector from "./DateTimeSelector";
-
-import "./__mocks__/trimet-mock.css";
-
-const background = story => (
-  <div
-    style={{
-      backgroundColor: "#F0F0F0",
-      height: "500px",
-      padding: "15px",
-      fontFamily: "Hind, sans-serif",
-      fontSize: "14px",
-      fontWeight: "300"
-    }}
-  >
-    {story()}
-  </div>
-);
+import trimet from "./__mocks__/trimet.styled";
 
 const onQueryParamChange = action("onQueryParamChange");
 
 export default {
   title: "DateTimeSelector",
-  decorators: [background, withInfo, withKnobs]
+  decorators: [withInfo, withKnobs]
 };
 
 export const dateTimeSelector = () => {
@@ -42,3 +26,4 @@ export const dateTimeSelector = () => {
     />
   );
 };
+export const dateTimeSelectorStyled = () => trimet(dateTimeSelector());

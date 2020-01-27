@@ -12,6 +12,7 @@ import {
 
 import CheckboxSelector from "../CheckboxSelector";
 import DropdownSelector from "../DropdownSelector";
+import * as Styled from "../styled";
 
 /**
  * The general settings panel for setting speed and routing optimization controls.
@@ -30,7 +31,7 @@ class GeneralSettingsPanel extends Component {
     const configWrapper = { modes: supportedModes };
 
     return (
-      <div className={className} style={style}>
+      <Styled.GeneralSettingsPanel className={className} style={style}>
         {paramNames.map(param => {
           const paramInfo = queryParams.find(qp => qp.name === param);
           // Check that the parameter applies to the specified routingType
@@ -71,7 +72,7 @@ class GeneralSettingsPanel extends Component {
               return null;
           }
         })}
-      </div>
+      </Styled.GeneralSettingsPanel>
     );
   }
 }

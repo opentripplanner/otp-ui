@@ -4,6 +4,8 @@ import { LayersControl, Map, Popup, TileLayer } from "react-leaflet";
 import { latlngType } from "@opentripplanner/core-utils/lib/types";
 import L from "leaflet";
 
+import callIfValid from "./util";
+
 // eslint-disable-next-line func-names
 L.Evented.addInitHook(function() {
   if (this) this.singleClickTimeout = null;
@@ -47,6 +49,8 @@ L.Evented.include({
  * The base OpenTripPlanner map on which everything else is rendered.
  */
 class BaseMap extends Component {
+  overlays = [];
+
   componentDidMount() {
     const lmap = this.refs.map.leafletElement;
     lmap.options.singleClickTimeout = 250;
@@ -67,7 +71,44 @@ class BaseMap extends Component {
 
   onLeftClick = e => {
     const { onClick } = this.props;
-    if (typeof onClick === "function") onClick(e);
+    callIfValid(onClick)(e);
+  };
+
+  forwardOne = (eventName, e) => {
+    // Call the event handler, if implemented, on the layer for which this event applies.
+    const layer = this.overlays.find(child => child.props.name === e.name);
+    if (layer) callIfValid(layer[eventName])(e);
+
+    // Call the event handler on this control's parent element.
+    // eslint-disable-next-line react/destructuring-assignment
+    callIfValid(this.props[eventName])(e);
+  };
+
+  forwardAll = (eventName, e) => {
+    // Call the event handler, if implemented, on each registered overlay.
+    this.overlays.forEach(layer => {
+      callIfValid(layer[eventName])(e);
+    });
+
+    // Call the event handler on this control's parent element.
+    // eslint-disable-next-line react/destructuring-assignment
+    callIfValid(this.props[eventName])(e);
+  };
+
+  handleOverlayAdded = e => {
+    this.forwardOne("onOverlayAdded", e);
+  };
+
+  handleOverlayRemoved = e => {
+    this.forwardOne("onOverlayRemoved", e);
+  };
+
+  handleViewportChanged = e => {
+    this.forwardAll("onViewportChanged", e);
+  };
+
+  registerOverlay = overlay => {
+    this.overlays.push(overlay);
   };
 
   render() {
@@ -78,9 +119,6 @@ class BaseMap extends Component {
       maxZoom,
       popup,
       onPopupClosed,
-      onOverlayAdded,
-      onOverlayRemoved,
-      onViewportChanged,
       zoom
     } = this.props;
 
@@ -90,8 +128,13 @@ class BaseMap extends Component {
     const userControlledOverlays = [];
     const fixedOverlays = [];
     React.Children.toArray(children).forEach(child => {
-      if (child.props.name) userControlledOverlays.push(child);
-      else fixedOverlays.push(child);
+      if (child.props.name) {
+        const newChild = React.cloneElement(child, {
+          // Inject registerOverlay prop to each custom overlay.
+          registerOverlay: this.registerOverlay
+        });
+        userControlledOverlays.push(newChild);
+      } else fixedOverlays.push(child);
     });
 
     return (
@@ -103,9 +146,9 @@ class BaseMap extends Component {
         maxZoom={maxZoom}
         // onClick={this.onLeftClick}
         // Note: Map-click is handled via single-click plugin, set up in componentDidMount()
-        onOverlayAdd={onOverlayAdded}
-        onOverlayRemove={onOverlayRemoved}
-        onViewportChanged={onViewportChanged}
+        onOverlayAdd={this.handleOverlayAdded}
+        onOverlayRemove={this.handleOverlayRemoved}
+        onViewportChanged={this.handleViewportChanged}
       >
         {/* Create the layers control, including base map layers and any
          * user-controlled overlays. */}
@@ -214,11 +257,13 @@ BaseMap.propTypes = {
    * Triggered when the user makes an overlay visible using the map's layers control.
    * See https://leafletjs.com/reference-1.6.0.html#map-overlayadd for details.
    */
+  // eslint-disable-next-line react/no-unused-prop-types
   onOverlayAdded: PropTypes.func,
   /**
    * Triggered when the user hides an overlay using the map's layers control.
    * See https://leafletjs.com/reference-1.6.0.html#map-overlayremove for details.
    */
+  // eslint-disable-next-line react/no-unused-prop-types
   onOverlayRemoved: PropTypes.func,
   /**
    * Triggered when the user closes the popup (if `popupLocation` and `popupContent` have been set).
@@ -228,6 +273,7 @@ BaseMap.propTypes = {
    * Triggered when the user pans the map or changes zoom level.
    * See https://github.com/PaulLeCam/react-leaflet/blob/master/example/components/viewport.js for more details.
    */
+  // eslint-disable-next-line react/no-unused-prop-types
   onViewportChanged: PropTypes.func,
   /**
    * The contents and location (in [lat, lng] format) of the popup to display, or null if no popup is displayed.

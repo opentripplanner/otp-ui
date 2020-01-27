@@ -3,6 +3,19 @@
 - [Components via Storybook](http://www.opentripplanner.org/otp-ui/?path=/story/locationicon--to-locationicon)
 - [npm packages](https://www.npmjs.com/org/opentripplanner)
 
+## [0.0.12] - 2020-01-24
+
+### Added Components
+
+- [park-and-ride-overlay](http://www.opentripplanner.org/otp-ui/?path=/story/parkandrideoverlay--parkandrideoverlay): adds Park & Rides as a layer
+- [vehicle-rental-overlay](http://www.opentripplanner.org/otp-ui/?path=/story/vehiclerentaloverlay--vehiclerentaloverlay-with-rental-bicycles): adds e-scooters and BIKETOWN bikes
+
+### Changes
+
+- transitive-overlay: [fixes issue #36 ](https://github.com/opentripplanner/otp-ui/issues/36) error when no intermediate stops are in the itinerary.
+- location-field: expose raw geocoder data https://github.com/opentripplanner/otp-ui/issues/33
+- trip-form: switch to Styled Components
+
 ## [0.0.11] - 2020-01-20
 
 ### Added Components

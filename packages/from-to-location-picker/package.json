@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/from-to-location-picker",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Location Picker Component",
   "author": "@binh-dam-ibigroup",
   "homepage": "https://github.com/opentripplanner/otp-ui/#readme",
@@ -9,7 +9,8 @@
   "module": "src/index.js",
   "private": false,
   "dependencies": {
-    "@opentripplanner/location-icon": "^0.0.11",
+    "@opentripplanner/core-utils": "^0.0.12",
+    "@opentripplanner/location-icon": "^0.0.12",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {

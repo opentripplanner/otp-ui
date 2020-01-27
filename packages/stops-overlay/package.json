@@ -1,8 +1,11 @@
 {
   "name": "@opentripplanner/stops-overlay",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "A map overlay to show transit stops",
   "main": "lib/index.js",
+  "author": "Evan Siroky",
+  "license": "MIT",
+  "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,18 +13,15 @@
     "type": "git",
     "url": "git+https://github.com/opentripplanner/otp-ui.git"
   },
-  "author": "Evan Siroky",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
-  "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "dependencies": {
-    "@opentripplanner/core-utils": "^0.0.11",
-    "@opentripplanner/from-to-location-picker": "^0.0.11"
+    "@opentripplanner/base-map": "^0.0.12",
+    "@opentripplanner/core-utils": "^0.0.12",
+    "@opentripplanner/from-to-location-picker": "^0.0.12"
   },
   "peerDependencies": {
-    "@opentripplanner/base-map": "^0.0.10",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-leaflet": "^2.6.1",
