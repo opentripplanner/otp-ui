@@ -10,7 +10,7 @@ import { AerialTram, Bus, Streetcar, Max, Wes } from "@opentripplanner/icons";
  * TODO: both icon names and these modes need to align better to standards
  * TODO: icons using trimet stuff needs to get away from MAX / WES / AERIALTRAM names, etc...
  */
-export default function makeVehicleIcon(cls, mode, defStr) {
+export default function makeVehicleIcon(mode) {
   let icon = null;
   switch (mode) {
     case "BUS":
@@ -37,14 +37,14 @@ export default function makeVehicleIcon(cls, mode, defStr) {
   if (icon != null)
     retVal = L.divIcon({
       html: ReactDOMServer.renderToString(icon),
-      className: cls,
+      className: "",
       popupAnchor: [0, -12],
       tooltipAnchor: [11, 0],
       iconSize: [22, 22]
     });
   else
     retVal = L.divIcon({
-      html: `<span>${defStr || "-->"}</span>`
+      html: "<span>--></span>"
     });
 
   return retVal;

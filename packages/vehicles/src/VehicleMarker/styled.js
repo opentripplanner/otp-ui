@@ -1,11 +1,14 @@
 /* eslint-disable no-unused-vars */
 /* stylelint-disable property-no-vendor-prefix */
 /* stylelint-disable CssSyntaxError */
-
+import React from "react";
+import ReactDOMServer from "react-dom/server";
 import PropTypes from "prop-types";
+import L from "leaflet";
 
 import styled, { css } from "styled-components";
 import { Circle } from "styled-icons/fa-solid";
+import { AerialTram, Bus, Streetcar, Max, Wes } from "@opentripplanner/icons";
 
 // note: want to make these props of styled, so props.colorSelected
 // BTW, 'props.color' works, since that's an established prop of styled
@@ -13,6 +16,51 @@ import { Circle } from "styled-icons/fa-solid";
 const color = "#000";
 const colorSelected = "#00bfff";
 const colorHighlight = "#ccee77";
+
+/**
+ * find icons based on gtfsdb mode types
+ * TODO: both icon names and these modes need to align better to standards
+ * TODO: icons using trimet stuff needs to get away from MAX / WES / AERIALTRAM names, etc...
+ */
+export function VehicleIcon(zoom, mode) {
+  let icon = null;
+  switch (mode) {
+    case "TRAM":
+      icon = <Max />;
+      break;
+    case "SC":
+      icon = <Streetcar />;
+      break;
+    case "GONDOLA":
+      icon = <AerialTram />;
+      break;
+    case "RAIL":
+      icon = <Wes />;
+      break;
+    case "BUS":
+      icon = <Bus />;
+      break;
+    default:
+      icon = <Bus />;
+      break;
+  }
+
+  let retVal = null;
+  if (icon !== null)
+    retVal = L.divIcon({
+      html: ReactDOMServer.renderToString(icon),
+      className: "",
+      popupAnchor: [0, -12],
+      tooltipAnchor: [11, 0],
+      iconSize: [22, 22]
+    });
+  else
+    retVal = L.divIcon({
+      html: "<span>--></span>"
+    });
+
+  return retVal;
+}
 
 export const VehicleCircle = styled(Circle)`
   color: ${props => props.color || color};
@@ -23,11 +71,7 @@ export const VehicleCircle = styled(Circle)`
     background-color: ${props => props.colorSelected || colorSelected};
     border: 1px solid ${props => props.colorHighlight || colorHighlight};
   }
-  vertical-align: top;
   border-radius: 50%;
-  box-shadow: 4px 4px 3px grey;
-  -moz-box-shadow: 4px 4px 3px grey;
-  -webkit-box-shadow: 4px 4px 3px grey;
 `;
 
 export const TrackedVehicleCircle = styled(VehicleCircle)`
@@ -37,8 +81,8 @@ export const TrackedVehicleCircle = styled(VehicleCircle)`
 
 // popup button
 export const Button = styled.button`
-  border: none;
   color: navy;
+  border: none;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
@@ -50,6 +94,35 @@ export const Button = styled.button`
   }
 `;
 
+/*
+
+
+function Icon( props ) {
+  const { type } = props;
+  switch (type) {
+    case "briefcase":
+      return <Briefcase size={12} />;
+    case "home":
+      return <Home size={12} />;
+    case "map-marker":
+      return <MapMarkerAlt size={12} />;
+    case "refresh":
+      return <Sync size={12} />;
+    case "times":
+      return <Times size={12} />;
+    default:
+      return null;
+  }
+}
+
+Icon.propTypes = {
+  type: PropTypes.string.isRequired
+};
+
+
+ */
+
+/*
 // idea: create a generic marker type with defaults (and default images, etc...)
 //       then use this type to pass styles from Vehicles -> VehicleLayer -> VehicleGeometry
 
@@ -72,30 +145,6 @@ Marker.defaultProps = {
 VehicleCircle.propTypes = Marker.propTypes;
 VehicleCircle.defultProps = Marker.defaultProps;
 
-/*
-function Icon({ type }) {
-  switch (type) {
-    case "briefcase":
-      return <Briefcase size={12} />;
-    case "home":
-      return <Home size={12} />;
-    case "map-marker":
-      return <MapMarkerAlt size={12} />;
-    case "refresh":
-      return <Sync size={12} />;
-    case "times":
-      return <Times size={12} />;
-    default:
-      return null;
-  }
-}
-
-Icon.propTypes = {
-  type: PropTypes.string.isRequired
-};
- */
-
-/*
 .vehicle-circle {
 }
 
