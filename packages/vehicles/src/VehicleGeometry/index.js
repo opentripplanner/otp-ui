@@ -4,6 +4,7 @@ import { FeatureGroup } from "react-leaflet";
 import { leafletPathType } from "@opentripplanner/core-utils/lib/types";
 import { vehicleType } from "../types";
 import * as utils from "./utils";
+import { setColor } from "../utils";
 
 /**
  * vehicle geometry component that creates a map overlay for the line geometry showing
@@ -16,7 +17,11 @@ import * as utils from "./utils";
 function VehicleGeometry(props) {
   const { trackedVehicle } = props;
   const { pattern } = props;
-  const { highlight, lowlight } = props;
+  const { lowlight, color } = props;
+  let { highlight } = props;
+  if (color) {
+    highlight = setColor(color, highlight);
+  }
 
   let retVal = <FeatureGroup />;
   if (trackedVehicle && pattern && pattern.data) {

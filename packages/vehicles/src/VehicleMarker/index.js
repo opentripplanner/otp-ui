@@ -3,16 +3,15 @@ import ReactDOMServer from "react-dom/server";
 import PropTypes from "prop-types";
 
 import L, { divIcon } from "leaflet";
-import { Marker, Popup, Tooltip, withLeaflet } from "react-leaflet";
-import RotatedMarker from "./RotatedMarker"; // TODO: maybe move to either base-map and/or utils and/or own npm & repo
+import { Marker, withLeaflet } from "react-leaflet";
+import RotatedMarker from "./RotatedMarker";
 
-import VehicleTracker from "./tracker";
+import VehiclePopup from "./popup";
+import VehicleToolTip from "./tooltip";
 import makeVehicleIcon from "./icons";
 import { vehicleType } from "../types";
-import { formatTime } from "../utils";
-import "./vehicles.css";
-
 import * as Styled from "./styled";
+import "./vehicles.css";
 
 /**
  * This component demonstrates a custom marker used in the Vehicles overlay provided as
@@ -31,87 +30,12 @@ class VehicleMarker extends React.Component {
     return retVal;
   }
 
-  makeToolTip() {
-    const { vehicle } = this.props;
-
-    let rsn = vehicle.routeShortName;
-    if (rsn != null && rsn.length <= 3) {
-      rsn = `Line ${rsn}`;
-    }
-
-    return (
-      <Tooltip>
-        <span>
-          <b>{rsn}</b>: {formatTime(vehicle.seconds)}
-        </span>
-      </Tooltip>
-    );
-  }
-
-  makePopup() {
-    const { vehicle } = this.props;
-    const { tracked } = this.props;
-    const { setTracked } = this.props;
-
-    let status = "unknown";
-    if (vehicle.status === "IN_TRANSIT_TO") {
-      status = "en-route to stop ";
-    } else if (vehicle.status === "STOPPED_AT") {
-      if (vehicle.stopSequence === 1) {
-        status = "beginning route from stop ";
-      } else {
-        status = "stopped at ";
-      }
-    }
-
-    let vid = "";
-    if (vehicle.vehicleId.indexOf("+") > 0) {
-      vid = `Vehicles: ${vehicle.vehicleId.replace(/\+/g, ", ")}`;
-    } else {
-      vid = `Vehicle: ${vehicle.vehicleId}`;
-    }
-
-    const stopLink = `https://trimet.org/ride/stop.html?stop_id=${vehicle.stopId}`;
-
-    return (
-      <Popup>
-        <div>
-          <span>
-            <b>{vehicle.routeLongName}</b>
-          </span>
-          <br />
-          <span>Last reported: {formatTime(vehicle.seconds)}</span>
-          <br />
-          <span>Report date: {vehicle.reportDate}</span>
-          <br />
-          <span>
-            Status: {status}{" "}
-            <a target="#" href={stopLink}>
-              {vehicle.stopId}
-            </a>
-          </span>
-          <br />
-          <span>
-            Trip: {vehicle.tripId}, Block: {vehicle.blockId}
-          </span>
-          <br />
-          <span>{vid}</span> <br />
-          <VehicleTracker
-            vehicle={vehicle}
-            tracked={tracked}
-            setTracked={setTracked}
-          />
-          <br />
-        </div>
-      </Popup>
-    );
-  }
-
   makeCircleMarker(size) {
     const { vehicle } = this.props;
-    const { tracked } = this.props;
     const { hasTooltip } = this.props;
     const { hasPopup } = this.props;
+    const { tracked } = this.props;
+    const { setTracked } = this.props;
 
     const position = [vehicle.lat, vehicle.lon];
     const zPos = tracked ? 1000 : 0;
@@ -127,17 +51,26 @@ class VehicleMarker extends React.Component {
 
     return (
       <Marker icon={icon} position={position} zIndexOffset={zPos}>
-        {hasPopup && this.makePopup()}
-        {hasTooltip && L.Browser.mobile !== true && this.makeToolTip()}
+        {hasPopup && (
+          <VehiclePopup
+            vehicle={vehicle}
+            tracked={tracked}
+            setTracked={setTracked}
+          />
+        )}
+        {hasTooltip && L.Browser.mobile !== true && (
+          <VehicleToolTip vehicle={vehicle} />
+        )}
       </Marker>
     );
   }
 
   makeRotatedMarker() {
     const { vehicle } = this.props;
-    const { tracked } = this.props;
     const { hasTooltip } = this.props;
     const { hasPopup } = this.props;
+    const { tracked } = this.props;
+    const { setTracked } = this.props;
 
     const position = [vehicle.lat, vehicle.lon];
     let zPos = 0;
@@ -167,8 +100,16 @@ class VehicleMarker extends React.Component {
         position={position}
         zIndexOffset={zPos}
       >
-        {hasPopup && this.makePopup()}
-        {hasTooltip && L.Browser.mobile !== true && this.makeToolTip()}
+        {hasPopup && (
+          <VehiclePopup
+            vehicle={vehicle}
+            tracked={tracked}
+            setTracked={setTracked}
+          />
+        )}
+        {hasTooltip && L.Browser.mobile !== true && (
+          <VehicleToolTip vehicle={vehicle} />
+        )}
       </RotatedMarker>
     );
   }

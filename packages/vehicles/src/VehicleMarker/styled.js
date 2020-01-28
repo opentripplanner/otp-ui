@@ -35,7 +35,6 @@ export const TrackedVehicleCircle = styled(VehicleCircle)`
   background-color: ${props => props.colorSelected || colorSelected};
 `;
 
-
 // popup button
 export const Button = styled.button`
   border: none;
@@ -50,7 +49,6 @@ export const Button = styled.button`
     cursor: pointer;
   }
 `;
-
 
 // idea: create a generic marker type with defaults (and default images, etc...)
 //       then use this type to pass styles from Vehicles -> VehicleLayer -> VehicleGeometry
@@ -73,7 +71,6 @@ Marker.defaultProps = {
 
 VehicleCircle.propTypes = Marker.propTypes;
 VehicleCircle.defultProps = Marker.defaultProps;
-
 
 /*
 function Icon({ type }) {

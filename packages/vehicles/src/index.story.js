@@ -52,24 +52,20 @@ function routeExample() {
     data
   };
 
-  const geomStyle = utils.setColor(
-    "#3e5a77",
-    VehicleGeometry.defaultProps.highlight
-  );
-  // const markerStyle = utils.setColor("#3e5a77", VehicleMarker.defaultProps.markerStyle);
-
+  const color = "#3e5a77";
   const retVal = (
     <BaseMap center={portland}>
       <VehicleLayer
         name="Real-Time Buses and Trains"
         trackedVehicle={tracked}
         vehicles={line}
+        color={color}
         visible
       />
       <VehicleGeometry
         trackedVehicle={tracked}
         pattern={pattern}
-        highlight={geomStyle}
+        color={color}
         visible
       />
     </BaseMap>
@@ -124,7 +120,7 @@ function animatedExample() {
 function rtExample() {
   const retVal = (
     <BaseMap center={portland}>
-      <Vehicles name="Real-Time Buses and Trains" visible />
+      <Vehicles name="Real-Time Buses and Trains" color="#3e5a77" visible />
     </BaseMap>
   );
   return retVal;

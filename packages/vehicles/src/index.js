@@ -127,10 +127,12 @@ function Vehicles(props) {
         vehicles={vehicleData}
         trackedVehicle={trackedVehicle}
         setTracked={setTracked}
+        color={props.color}
       />
       <VehicleGeometry
         trackedVehicle={trackedVehicle}
         pattern={trackedGeometry}
+        color={props.color}
         highlight={props.highlight}
         lowlight={props.lowlight}
       />
@@ -142,6 +144,7 @@ function Vehicles(props) {
 Vehicles.defaultProps = {
   highlight: VehicleGeometry.defaultProps.highlight,
   lowlight: VehicleGeometry.defaultProps.lowlight,
+  color: null,
 
   geometryUrl: "https://newplanner.trimet.org/ws/ti/v0/index",
   vehicleUrl: "https://maps.trimet.org/gtfs/rt/vehicles/routes/all",
@@ -154,6 +157,7 @@ Vehicles.defaultProps = {
 Vehicles.propTypes = {
   highlight: leafletPathType,
   lowlight: leafletPathType,
+  color: PropTypes.string,
   geometryUrl: PropTypes.string,
   vehicleUrl: PropTypes.string,
   vehicleRoutes: PropTypes.string,

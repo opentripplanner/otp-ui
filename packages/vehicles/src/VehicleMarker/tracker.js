@@ -7,7 +7,7 @@ import { Button } from "./styled";
 /**
  * view component for tracking button on marker popup
  */
-function Tracker(props) {
+function VehicleTracker(props) {
   const { vehicle } = props;
   const { tracked } = props;
   const { setTracked } = props;
@@ -24,20 +24,18 @@ function Tracker(props) {
     return isTracked ? "Stop Tracking" : "Track Vehicle";
   }
 
-  return (
-    <Button onClick={handleClick}>{makeButtonText(tracked)}</Button>
-  );
+  return <Button onClick={handleClick}>{makeButtonText(tracked)}</Button>;
 }
 
-Tracker.propTypes = {
+VehicleTracker.defaultProps = {
+  vehicle: null,
+  tracked: false
+};
+
+VehicleTracker.propTypes = {
   vehicle: vehicleType,
   tracked: PropTypes.bool,
   setTracked: PropTypes.func.isRequired
 };
 
-Tracker.defaultProps = {
-  vehicle: null,
-  tracked: false
-};
-
-export default Tracker;
+export default VehicleTracker;
