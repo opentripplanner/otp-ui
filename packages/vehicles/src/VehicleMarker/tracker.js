@@ -2,7 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { vehicleType } from "../types";
+import { Button } from "./styled";
 
+/**
+ * view component for tracking button on marker popup
+ */
 function Tracker(props) {
   const { vehicle } = props;
   const { tracked } = props;
@@ -21,9 +25,7 @@ function Tracker(props) {
   }
 
   return (
-    <button type="button" onClick={e => handleClick(e)}>
-      {makeButtonText(tracked)}
-    </button>
+    <Button onClick={handleClick}>{makeButtonText(tracked)}</Button>
   );
 }
 
