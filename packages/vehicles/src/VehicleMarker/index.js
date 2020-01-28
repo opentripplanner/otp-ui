@@ -3,7 +3,7 @@ import ReactDOMServer from "react-dom/server";
 import PropTypes from "prop-types";
 
 import L, { divIcon } from "leaflet";
-import { Marker, withLeaflet } from "react-leaflet";
+import { withLeaflet } from "react-leaflet";
 import RotatedMarker from "./RotatedMarker";
 
 import VehiclePopup from "./popup";
@@ -18,10 +18,16 @@ import * as Styled from "./styled";
  * https://github.com/OpenTransitTools/transit-components/blob/master/lib/vehicles/VehicleMarker.js
  */
 function VehicleMarker(props) {
+  const { vehicle } = props;
+  const { hasTooltip } = props;
+  const { hasPopup } = props;
+  const { tracked } = props;
+  const { setTracked } = props;
+  const { leaflet } = props;
+
   function getZoom() {
     let retVal = 15;
     try {
-      const { leaflet } = props;
       retVal = leaflet.map.getZoom();
     } catch (e) {
       console.log(e);
@@ -37,12 +43,6 @@ function VehicleMarker(props) {
   }
 
   function makeCircleMarker(size) {
-    const { vehicle } = props;
-    const { hasTooltip } = props;
-    const { hasPopup } = props;
-    const { tracked } = props;
-    const { setTracked } = props;
-
     const position = [vehicle.lat, vehicle.lon];
     const zPos = tracked ? 1000 : 0;
     const heading = checkHeading(vehicle.heading);
@@ -79,17 +79,10 @@ function VehicleMarker(props) {
   }
 
   function makeRotatedMarker() {
-    const { vehicle } = props;
-    const { hasTooltip } = props;
-    const { hasPopup } = props;
-    const { tracked } = props;
-    const { setTracked } = props;
-
     const position = [vehicle.lat, vehicle.lon];
     const zPos = tracked ? 1000 : 0;
     const heading = checkHeading(vehicle.heading);
-
-    const icon = makeVehicleIcon("", vehicle.routeType, vehicle.routeShortName);
+    const icon = makeVehicleIcon(vehicle.routeType);
 
     return (
       <RotatedMarker
