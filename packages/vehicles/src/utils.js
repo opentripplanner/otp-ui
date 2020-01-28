@@ -80,7 +80,10 @@ export function isTracked(vehicleA, vehicleB) {
   let retVal = false;
 
   try {
-    if (vehicleA.vehicleId === vehicleB.vehicleId || vehicleA.tripId === vehicleB.tripId) {
+    if (
+      vehicleA.vehicleId === vehicleB.vehicleId ||
+      vehicleA.tripId === vehicleB.tripId
+    ) {
       retVal = true;
     }
   } catch (e) {

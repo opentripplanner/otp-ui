@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FeatureGroup } from "react-leaflet";
 
+import { leafletPathType } from "@opentripplanner/core-utils/lib/types";
+
 import VehicleLayer from "./VehicleLayer";
 import VehicleGeometry from "./VehicleGeometry";
 import * as utils from "./utils";
@@ -11,6 +13,9 @@ import * as utils from "./utils";
  * TODO: talk about gtfsdb and opensource
  */
 function Vehicles(props) {
+  const { vehicleUrl } = props;
+  const { geometryUrl } = props;
+
   const refreshDelay = utils.checkRefreshInteval(props.refreshDelay);
 
   const [vehicleData, setVehicleData] = React.useState(null);
@@ -57,7 +62,11 @@ function Vehicles(props) {
           if (!isPatternCached(patternId)) {
             console.log(">>>>>>>>>>>>>>>>>>");
             console.log(patternId);
-            utils.fetchVehiclePattern(setTrackedGeomData, patternId);
+            utils.fetchVehiclePattern(
+              setTrackedGeomData,
+              patternId,
+              geometryUrl
+            );
             console.log(trackedGeometryRef);
           }
         } catch (e) {
@@ -96,9 +105,9 @@ function Vehicles(props) {
     //       if we don't have the gate of vehicleData == null, then we'll get multiple setInterval calls
     let interval = null;
     if (vehicleData === null) {
-      utils.fetchVehicles(setData, props.tracked);
+      utils.fetchVehicles(setData, props.tracked, vehicleUrl);
       interval = setInterval(() => {
-        utils.fetchVehicles(setData, getTrackedVehicleId());
+        utils.fetchVehicles(setData, getTrackedVehicleId(), vehicleUrl);
       }, refreshDelay);
     }
 
@@ -117,11 +126,13 @@ function Vehicles(props) {
       <VehicleLayer
         vehicles={vehicleData}
         trackedVehicle={trackedVehicle}
-        setTracked={setTracked} // TODO: probably need to do setTracked(veh, geom) so we can set to null geom
+        setTracked={setTracked}
       />
       <VehicleGeometry
         trackedVehicle={trackedVehicle}
         pattern={trackedGeometry}
+        highlight={props.highlight}
+        lowlight={props.lowlight}
       />
     </FeatureGroup>
   );
@@ -129,14 +140,26 @@ function Vehicles(props) {
 }
 
 Vehicles.defaultProps = {
+  highlight: VehicleGeometry.defaultProps.highlight,
+  lowlight: VehicleGeometry.defaultProps.lowlight,
 
+  geometryUrl: "https://newplanner.trimet.org/ws/ti/v0/index",
+  vehicleUrl: "https://maps.trimet.org/gtfs/rt/vehicles/routes/all",
+  vehicleRoutes: "all",
   refreshDelay: 5000,
-  tracked: "9605379"
+  tracked: "9605379",
+  recenterMap: false
 };
 
 Vehicles.propTypes = {
+  highlight: leafletPathType,
+  lowlight: leafletPathType,
+  geometryUrl: PropTypes.string,
+  vehicleUrl: PropTypes.string,
+  vehicleRoutes: PropTypes.string,
   refreshDelay: PropTypes.number,
-  tracked: PropTypes.string
+  tracked: PropTypes.string,
+  recenterMap: PropTypes.bool
 };
 
 export default Vehicles;

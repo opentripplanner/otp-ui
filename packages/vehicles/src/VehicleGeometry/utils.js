@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import { Polyline } from "react-leaflet";
 
@@ -63,6 +62,7 @@ export function splitGeometry(geom, splitPt, key) {
  * @param lowlight
  * @returns {Array}
  */
+/* eslint-disable react/jsx-props-no-spreading */
 export function makeSplitLine(splitGeom, highlight, lowlight) {
   const segments = [];
   if (splitGeom && splitGeom.length === 2) {
