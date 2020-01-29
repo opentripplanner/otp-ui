@@ -39,7 +39,12 @@ class Vehicles extends MapLayer {
     this._stopRefreshing();
   }
 
-  componentDidUpdate() {}
+  componentDidUpdate(prevProps) {
+    if (prevProps.tracked !== this.props.tracked) {
+      // set tracked vehicle via a prop change
+      this.setTrackedVehicle2(this.state.vehicleData, this.props.tracked);
+    }
+  }
 
   // onOverlayAdded will notifiy this layer whenever this layer gets added to BaseMap
   onOverlayAdded = e => {
@@ -96,27 +101,30 @@ class Vehicles extends MapLayer {
     return retVal;
   }
 
+  setVehicleData = (vehicleList, trackedId) => {
+    // step 1: set vehicle data
+    this.setState({ vehicleData: vehicleList });
+    this.setTrackedVehicle2(this.state.vehicleData, trackedId);
+  };
+
   setTrackedVehicle = (vehicle, geomData) => {
     this.setState({ trackedVehicle: vehicle });
     // todo: add geom cache here
     this.setState({ trackedGeometry: geomData });
   };
 
-  setVehicleData = (vehicleList, trackedId) => {
-    // step 1: set vehicle data
-    this.setState({ vehicleData: vehicleList });
-
-    // step 2: tracked vehicle
+  setTrackedVehicle2 = (vehicleList, trackedId) => {
+    // step 1: tracked vehicle
     const vehicle = utils.findVehicleById(vehicleList, trackedId);
     if (vehicle) {
 
-      // step 3: set tracked vehicle state
+      // step 2: set tracked vehicle state
       this.setState({ trackedVehicle: vehicle });
 
-      // step 4: recenter map
-      this.recenterMap()
+      // step 3: recenter map
+      this.recenterMap();
 
-      // step 5: cache tracked vehicle geometry
+      // step 4: cache tracked vehicle geometry
       if (vehicle.shapeId) {
         try {
           const patternId = `${vehicle.agencyId}:${vehicle.shapeId}`;
