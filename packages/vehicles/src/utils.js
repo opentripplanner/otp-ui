@@ -19,6 +19,25 @@ export function setColor(color, obj) {
   return retVal;
 }
 
+/** return map zoom value from leaflet */
+export function getZoom(leaflet, defZoom = 15) {
+  let retVal = defZoom;
+  try {
+    retVal = leaflet.map.getZoom();
+  } catch (e) {
+    console.log(e);
+  }
+  return retVal;
+}
+
+/** check 360 heading for a valid number */
+export function checkHeading(heading) {
+  if (heading === null || heading < 0 || heading >= 360) {
+    heading = 0;
+  }
+  return heading;
+}
+
 /**
  * geojson uses [lon,lat] (e.g., [X, Y]) in representing coordinates
  * this utility function reverses the point order to be [lat, lon] (or [Y, X])

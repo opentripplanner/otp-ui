@@ -8,8 +8,9 @@ import RotatedMarker from "./RotatedMarker";
 
 import VehiclePopup from "./popup";
 import VehicleToolTip from "./tooltip";
-import makeVehicleIcon from "./icons";
 import { vehicleType } from "../types";
+import makeVehicleIcon from "./icons";
+import * as utils from "../utils";
 import * as Styled from "./styled";
 
 /**
@@ -25,93 +26,55 @@ function VehicleMarker(props) {
   const { setTracked } = props;
   const { leaflet } = props;
 
-  function getZoom() {
-    let retVal = 15;
-    try {
-      retVal = leaflet.map.getZoom();
-    } catch (e) {
-      console.log(e);
+  const { closeZoom, midZoom, farZoom } = props; // eslint-disable-line no-unused-vars
+  const { closeSize, midSize, farSize } = props; // eslint-disable-line no-unused-vars
+
+  const position = [vehicle.lat, vehicle.lon];
+  const zPos = tracked ? 1000 : 0;
+  const heading = utils.checkHeading(vehicle.heading);
+
+  function makeIcon() {
+    const zoom = utils.getZoom(leaflet);
+
+    let icon = null;
+    if (zoom >= closeZoom) {
+      icon = makeVehicleIcon(vehicle.routeType);
+    } else {
+      const size = zoom >= midZoom ? midSize : farSize;
+      const iconHtml = ReactDOMServer.renderToStaticMarkup(
+        tracked ? (
+          <Styled.TrackedVehicleCircle size={size} />
+        ) : (
+          <Styled.VehicleCircle size={size} />
+        )
+      );
+      icon = divIcon({ className: "", html: iconHtml });
     }
-    return retVal;
+
+    return icon;
   }
 
-  function checkHeading(heading) {
-    if (heading === null || heading < 0 || heading >= 360) {
-      heading = 0;
-    }
-    return heading;
-  }
-
-  function makeCircleMarker(size) {
-    const position = [vehicle.lat, vehicle.lon];
-    const zPos = tracked ? 1000 : 0;
-    const heading = checkHeading(vehicle.heading);
-
-    const iconHtml = ReactDOMServer.renderToStaticMarkup(
-      tracked ? (
-        <Styled.TrackedVehicleCircle size={size} />
-      ) : (
-        <Styled.VehicleCircle size={size} />
-      )
-    );
-    const icon = divIcon({ html: iconHtml, className: "" });
-
-    return (
-      <RotatedMarker
-        rotationAngle={heading}
-        rotationOrigin="center center"
-        icon={icon}
-        position={position}
-        zIndexOffset={zPos}
-      >
-        {hasPopup && (
-          <VehiclePopup
-            vehicle={vehicle}
-            tracked={tracked}
-            setTracked={setTracked}
-          />
-        )}
-        {hasTooltip && L.Browser.mobile !== true && (
-          <VehicleToolTip vehicle={vehicle} />
-        )}
-      </RotatedMarker>
-    );
-  }
-
-  function makeRotatedMarker() {
-    const position = [vehicle.lat, vehicle.lon];
-    const zPos = tracked ? 1000 : 0;
-    const heading = checkHeading(vehicle.heading);
-    const icon = makeVehicleIcon(vehicle.routeType);
-
-    return (
-      <RotatedMarker
-        rotationAngle={heading}
-        rotationOrigin="center center"
-        icon={icon}
-        position={position}
-        zIndexOffset={zPos}
-      >
-        {hasPopup && (
-          <VehiclePopup
-            vehicle={vehicle}
-            tracked={tracked}
-            setTracked={setTracked}
-          />
-        )}
-        {hasTooltip && L.Browser.mobile !== true && (
-          <VehicleToolTip vehicle={vehicle} />
-        )}
-      </RotatedMarker>
-    );
-  }
-
-  const { closeZoom, midZoom, farZoom } = props;
-  const zoom = getZoom();
-  if (zoom >= closeZoom) return makeRotatedMarker();
-  if (zoom >= midZoom) return makeCircleMarker(13.0);
-  if (zoom >= farZoom) return makeCircleMarker(7.0);
-  return makeCircleMarker(4.0);
+  const icon = makeIcon();
+  return (
+    <RotatedMarker
+      rotationAngle={heading}
+      rotationOrigin="center center"
+      icon={icon}
+      position={position}
+      zIndexOffset={zPos}
+    >
+      {hasPopup && (
+        <VehiclePopup
+          vehicle={vehicle}
+          tracked={tracked}
+          setTracked={setTracked}
+        />
+      )}
+      {hasTooltip && L.Browser.mobile !== true && (
+        <VehicleToolTip vehicle={vehicle} />
+      )}
+    </RotatedMarker>
+  );
 }
 
 VehicleMarker.propTypes = {
@@ -130,7 +93,11 @@ VehicleMarker.propTypes = {
 
   closeZoom: PropTypes.number,
   midZoom: PropTypes.number,
-  farZoom: PropTypes.number
+  farZoom: PropTypes.number,
+
+  closeSize: PropTypes.number,
+  midSize: PropTypes.number,
+  farSize: PropTypes.number
 };
 
 VehicleMarker.defaultProps = {
@@ -139,9 +106,14 @@ VehicleMarker.defaultProps = {
   leaflet: null,
   hasTooltip: true,
   hasPopup: true,
+
   closeZoom: 14,
   midZoom: 12,
-  farZoom: 9
+  farZoom: 9,
+
+  closeSize: 16.0,
+  midSize: 13.0,
+  farSize: 7.0
 };
 
 export default withLeaflet(VehicleMarker);

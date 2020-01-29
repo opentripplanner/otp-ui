@@ -17,11 +17,46 @@ const color = "#000";
 const colorSelected = "#00bfff";
 const colorHighlight = "#ccee77";
 
+export const VehicleCircle = styled(Circle)`
+  color: ${props => props.color || color};
+  background-color: ${props => props.color || color};
+  border: 1px solid ${props => props.color || color};
+  :hover {
+    color: ${props => props.colorSelected || colorSelected};
+    background-color: ${props => props.colorSelected || colorSelected};
+    border: 1px solid ${props => props.colorHighlight || colorHighlight};
+  }
+  border-radius: 50%;
+`;
+
+export const TrackedVehicleCircle = styled(VehicleCircle)`
+  color: ${props => props.colorSelected || colorSelected};
+  background-color: ${props => props.colorSelected || colorSelected};
+`;
+
+// popup button
+export const Button = styled.button`
+  color: navy;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  padding-left: 0.2em;
+
+  :hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+`;
+
+
+
 /**
  * find icons based on gtfsdb mode types
  * TODO: both icon names and these modes need to align better to standards
  * TODO: icons using trimet stuff needs to get away from MAX / WES / AERIALTRAM names, etc...
  */
+/*
 export function VehicleIcon(zoom, mode) {
   let icon = null;
   switch (mode) {
@@ -61,41 +96,6 @@ export function VehicleIcon(zoom, mode) {
 
   return retVal;
 }
-
-export const VehicleCircle = styled(Circle)`
-  color: ${props => props.color || color};
-  background-color: ${props => props.color || color};
-  border: 1px solid ${props => props.color || color};
-  :hover {
-    color: ${props => props.colorSelected || colorSelected};
-    background-color: ${props => props.colorSelected || colorSelected};
-    border: 1px solid ${props => props.colorHighlight || colorHighlight};
-  }
-  border-radius: 50%;
-`;
-
-export const TrackedVehicleCircle = styled(VehicleCircle)`
-  color: ${props => props.colorSelected || colorSelected};
-  background-color: ${props => props.colorSelected || colorSelected};
-`;
-
-// popup button
-export const Button = styled.button`
-  color: navy;
-  border: none;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  padding-left: 0.2em;
-
-  :hover {
-    text-decoration: underline;
-    cursor: pointer;
-  }
-`;
-
-/*
-
 
 function Icon( props ) {
   const { type } = props;
@@ -194,7 +194,6 @@ VehicleCircle.defultProps = Marker.defaultProps;
                 <Styled.Button onClick={this.clearLocation}>
                   <Icon type="times" /> Remove as {type} location
                 </Styled.Button>
-
 
 
   path: {
@@ -316,7 +315,6 @@ export const RedLock = styled(Lock)`
   font-weight: ${props => (props.important ? 'bold' : 'normal')};
 `
 
-
 const getStationMarkerByColor = memoize(color =>
   divIcon({
     className: "",
@@ -344,7 +342,6 @@ export const floatingBikeIcon = divIcon({
   html: ReactDOMServer.renderToStaticMarkup(<Styled.OutOfHubBikeIcon />),
   className: ""
 });
-
 
 
 // BIKETOWN HUB ICONS

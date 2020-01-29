@@ -62,7 +62,6 @@ export function splitGeometry(geom, splitPt, key) {
  * @param lowlight
  * @returns {Array}
  */
-/* eslint-disable react/jsx-props-no-spreading */
 export function makeSplitLine(splitGeom, highlight, lowlight) {
   const segments = [];
   if (splitGeom && splitGeom.length === 2) {
@@ -70,14 +69,14 @@ export function makeSplitLine(splitGeom, highlight, lowlight) {
       <Polyline
         key={splitGeom[0].key}
         positions={splitGeom[0].geometry}
-        {...lowlight}
+        {...lowlight} // eslint-disable-line react/jsx-props-no-spreading
       />
     );
     segments.push(
       <Polyline
         key={splitGeom[1].key}
         positions={splitGeom[1].geometry}
-        {...highlight}
+        {...highlight} // eslint-disable-line react/jsx-props-no-spreading
       />
     );
   }
