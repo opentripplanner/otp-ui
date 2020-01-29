@@ -145,9 +145,9 @@ function rtExample() {
     <BaseMap center={portland}>
       <Vehicles
         name="Real-Time Buses and Trains"
-        tracked={text('vehicle id:', '2927')}
-        color={color('tracked color:', "#3e5a77")}
-        follow={boolean('follow vehicle:', false)}
+        tracked={text('vehicle id:', '(vehicle or trip id here)')}
+        color={color('tracked color:', '#00bfff')}
+        recenterMap={boolean('follow vehicle:', true)}
         visible
       />
     </BaseMap>

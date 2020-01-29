@@ -65,6 +65,14 @@ class Vehicles extends MapLayer {
     this.setState({ mapZoom: zoom });
   });
 
+  recenterMap = () => {
+    if (this.props.recenterMap && this.state.trackedVehicle) {
+      const v = this.state.trackedVehicle;
+      const ll = [v.lat, v.lon];
+      this.getLeafletContext().map.panTo(ll);
+    }
+  };
+
   getLeafletContext = () => { return this.props.leaflet; };
 
   getTrackedVehicleId = () => {
@@ -101,9 +109,14 @@ class Vehicles extends MapLayer {
     // step 2: tracked vehicle
     const vehicle = utils.findVehicleById(vehicleList, trackedId);
     if (vehicle) {
+
+      // step 3: set tracked vehicle state
       this.setState({ trackedVehicle: vehicle });
 
-      // step 3: cache tracked vehicle geometry
+      // step 4: recenter map
+      this.recenterMap()
+
+      // step 5: cache tracked vehicle geometry
       if (vehicle.shapeId) {
         try {
           const patternId = `${vehicle.agencyId}:${vehicle.shapeId}`;
