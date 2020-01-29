@@ -84,7 +84,7 @@ VehicleMarker.propTypes = {
 
   leaflet: PropTypes.shape({
     map: PropTypes.shape({
-      getZoom: PropTypes.shape({})
+      getZoom: PropTypes.func
     })
   }),
 

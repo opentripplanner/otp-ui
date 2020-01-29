@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { FeatureGroup } from "react-leaflet";
+import { MapLayer, FeatureGroup, withLeaflet } from "react-leaflet";
 
 import { leafletPathType } from "@opentripplanner/core-utils/lib/types";
+import { throttle } from 'throttle-debounce';
 
 import VehicleLayer from "./VehicleLayer";
 import VehicleGeometry from "./VehicleGeometry";
@@ -12,7 +13,149 @@ import * as utils from "./utils";
  * TODO: describe
  * TODO: talk about gtfsdb and opensource
  */
-function Vehicles(props) {
+class Vehicles extends MapLayer {
+  state = {
+    mapZoom: 0,
+    vehicleData: null,
+    trackedVehicle: null,
+    trackedGeometry: null
+  };
+
+  componentDidMount() {
+    // register this layer with base-map, so it will call the onOverlayX and onViewportZ methods
+    const { registerOverlay } = this.props;
+    utils.callIfValid(registerOverlay)(this);
+
+    if (this.props.visible) {
+      this._startRefreshing();
+    }
+
+    // initialize zoom state here? (may trigger render again.)
+    const zoom = this.getLeafletContext().map.getZoom();
+    this.setMapZoom(zoom);
+  }
+
+  componentWillUnmount() {
+    this._stopRefreshing();
+  }
+
+  componentDidUpdate() {
+    //this.trackVehicle();
+  }
+
+  // limit the number of times we'll call this method
+  setMapZoom = throttle(500, (zoom) => {
+    console.log("HI");
+    this.setState({ mapZoom: zoom });
+  });
+
+  _refreshTimer = null;
+
+  _startRefreshing() {
+    if (this._refreshTimer === null) {
+      utils.fetchVehicles(this.setVehicleData, this.getTrackedVehicleId(), this.props.vehicleUrl);
+      this._refreshTimer = setInterval(() => {
+        utils.fetchVehicles(this.setVehicleData, this.getTrackedVehicleId(), this.props.vehicleUrl);
+      }, this.props.refreshDelay);
+    }
+  };
+
+  _stopRefreshing() {
+    if(this._refreshTimer) {
+      clearInterval(this._refreshTimer);
+      this._refreshTimer = null;
+    }
+    if(this.state.trackedVehicle !== null) {
+      this.state.trackedVehicle = null;
+    }
+  }
+
+  // onOverlayAdded will notifiy this layer whenever this layer gets added to BaseMap
+  onOverlayAdded = e => {
+    this._startRefreshing();
+  };
+
+  // onOverlayRemoved will notify this layer when removed to BaseMap
+  onOverlayRemoved = e => {
+    this._stopRefreshing();
+  };
+
+  // onViewportChanged notified whenever the BaseMap's center or zoom changes
+  onViewportChanged = viewport => {
+    this.setMapZoom(viewport.zoom);
+  };
+
+  getLeafletContext() {return this.props.leaflet;}
+
+  setTracked = (t) => { };
+
+  getTrackedVehicleId = () => {
+    //this.props.tracked
+    return null;
+  };
+
+  setVehicleData = (d) => {
+    this.setState({ vehicleData: d });
+  };
+
+
+  // need to implement create interface (and update interface for older React-Leaflet versions)
+  createLeafletElement(/* props */) {}
+
+  updateLeafletElement(/* props */) {}
+
+  render() {
+    return (
+      <FeatureGroup>
+        <VehicleLayer
+          vehicles={this.state.vehicleData}
+          trackedVehicle={this.state.trackedVehicle}
+          setTracked={this.setTracked}
+          color={this.props.color}
+        />
+        <VehicleGeometry
+          trackedVehicle={this.state.trackedVehicle}
+          pattern={this.state.trackedGeometry}
+          color={this.props.color}
+          highlight={this.props.highlight}
+          lowlight={this.props.lowlight}
+        />
+      </FeatureGroup>
+    );
+  }
+}
+
+
+Vehicles.defaultProps = {
+  highlight: VehicleGeometry.defaultProps.highlight,
+  lowlight: VehicleGeometry.defaultProps.lowlight,
+  color: null,
+
+  geometryUrl: "https://newplanner.trimet.org/ws/ti/v0/index",
+  vehicleUrl: "https://maps.trimet.org/gtfs/rt/vehicles/routes/all",
+  vehicleRoutes: "all",
+  refreshDelay: 5000,
+  tracked: null,
+  recenterMap: false
+};
+
+Vehicles.propTypes = {
+  highlight: leafletPathType,
+  lowlight: leafletPathType,
+  color: PropTypes.string,
+  geometryUrl: PropTypes.string,
+  vehicleUrl: PropTypes.string,
+  vehicleRoutes: PropTypes.string,
+  refreshDelay: PropTypes.number,
+  tracked: PropTypes.string,
+  recenterMap: PropTypes.bool
+};
+
+export default withLeaflet(Vehicles);
+
+
+
+function xVehicles(props) {
   const { vehicleUrl } = props;
   const { geometryUrl } = props;
 
@@ -141,29 +284,5 @@ function Vehicles(props) {
   return retVal;
 }
 
-Vehicles.defaultProps = {
-  highlight: VehicleGeometry.defaultProps.highlight,
-  lowlight: VehicleGeometry.defaultProps.lowlight,
-  color: null,
 
-  geometryUrl: "https://newplanner.trimet.org/ws/ti/v0/index",
-  vehicleUrl: "https://maps.trimet.org/gtfs/rt/vehicles/routes/all",
-  vehicleRoutes: "all",
-  refreshDelay: 5000,
-  tracked: "9605379",
-  recenterMap: false
-};
-
-Vehicles.propTypes = {
-  highlight: leafletPathType,
-  lowlight: leafletPathType,
-  color: PropTypes.string,
-  geometryUrl: PropTypes.string,
-  vehicleUrl: PropTypes.string,
-  vehicleRoutes: PropTypes.string,
-  refreshDelay: PropTypes.number,
-  tracked: PropTypes.string,
-  recenterMap: PropTypes.bool
-};
-
-export default Vehicles;
+//export default Vehicles;

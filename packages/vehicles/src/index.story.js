@@ -1,6 +1,7 @@
 import React from "react";
 
 import { withA11y } from "@storybook/addon-a11y";
+import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
 import { storiesOf } from "@storybook/react";
 
@@ -22,6 +23,7 @@ const all = require("../__mocks__/all.json");
 const v = [v1, v2, v3];
 
 const portland = [45.523, -122.671];
+const setTracked = action("setTracked");
 
 function allExample() {
   const data = utils.reverseGeojsonPointsInGeom(geojson);
@@ -35,6 +37,7 @@ function allExample() {
       <VehicleLayer
         name="Real-Time Buses and Trains"
         vehicles={all}
+        setTracked={setTracked}
         trackedVehicle={tracked}
         visible
       />
@@ -57,6 +60,7 @@ function routeExample() {
     <BaseMap center={portland}>
       <VehicleLayer
         name="Real-Time Buses and Trains"
+        setTracked={setTracked}
         trackedVehicle={tracked}
         vehicles={line}
         color={color}
@@ -110,6 +114,7 @@ function animatedExample() {
       <VehicleLayer
         name="Real-Time Buses and Trains"
         vehicles={vehicleData}
+        setTracked={setTracked}
         visible
       />
     </BaseMap>
