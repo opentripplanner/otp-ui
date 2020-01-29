@@ -4,6 +4,7 @@ import { withA11y } from "@storybook/addon-a11y";
 import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
 import { storiesOf } from "@storybook/react";
+import { withKnobs, text, color, boolean, select } from "@storybook/addon-knobs";
 
 import BaseMap from "@opentripplanner/base-map";
 
@@ -25,13 +26,24 @@ const v = [v1, v2, v3];
 const portland = [45.523, -122.671];
 const setTracked = action("setTracked");
 
+const trips = {
+  9563136: '9563136',
+  9563137: '9563137',
+  9563138: '9563138',
+  9562510: '9562510',
+  9562512: '9562512',
+  9562514: '9562514',
+};
+
+
 function allExample() {
   const data = utils.reverseGeojsonPointsInGeom(geojson);
-  const tracked = utils.findVehicleById(line, "9563137");
   const pattern = {
     id: "1",
     data
   };
+  const tracked = utils.findVehicleById(line, select('Tracked Vehicle', trips, '9562512'));
+
   const retVal = (
     <BaseMap center={portland}>
       <VehicleLayer
@@ -39,9 +51,14 @@ function allExample() {
         vehicles={all}
         setTracked={setTracked}
         trackedVehicle={tracked}
+        color={color('tracked color:', "#d54a40")}
         visible
       />
-      <VehicleGeometry trackedVehicle={tracked} pattern={pattern} visible />
+      <VehicleGeometry
+        trackedVehicle={tracked}
+        pattern={pattern}
+        color={color('tracked color:', "#d54a40")}
+        visible />
     </BaseMap>
   );
   return retVal;
@@ -49,13 +66,12 @@ function allExample() {
 
 function routeExample() {
   const data = utils.reverseGeojsonPointsInGeom(geojson);
-  const tracked = utils.findVehicleById(line, "9563137");
   const pattern = {
     id: "1",
     data
   };
+  const tracked = utils.findVehicleById(line, select('Tracked Vehicle', trips, '9562512'));
 
-  const color = "#3e5a77";
   const retVal = (
     <BaseMap center={portland}>
       <VehicleLayer
@@ -63,13 +79,13 @@ function routeExample() {
         setTracked={setTracked}
         trackedVehicle={tracked}
         vehicles={line}
-        color={color}
+        color={color('tracked color:', "#3e5a77")}
         visible
       />
       <VehicleGeometry
         trackedVehicle={tracked}
         pattern={pattern}
-        color={color}
+        color={color('tracked color:', "#3e5a77")}
         visible
       />
     </BaseMap>
@@ -109,12 +125,14 @@ function animatedExample() {
     };
   }, []);
 
+  const tracked = utils.findVehicleById(line, select('Tracked Vehicle', trips, '9562512'));
   const retVal = (
     <BaseMap center={portland}>
       <VehicleLayer
         name="Real-Time Buses and Trains"
         vehicles={vehicleData}
         setTracked={setTracked}
+        trackedVehicle={tracked}
         visible
       />
     </BaseMap>
@@ -125,7 +143,13 @@ function animatedExample() {
 function rtExample() {
   const retVal = (
     <BaseMap center={portland}>
-      <Vehicles name="Real-Time Buses and Trains" color="#3e5a77" visible />
+      <Vehicles
+        name="Real-Time Buses and Trains"
+        tracked={text('vehicle id:', '2927')}
+        color={color('tracked color:', "#3e5a77")}
+        follow={boolean('follow vehicle:', false)}
+        visible
+      />
     </BaseMap>
   );
   return retVal;
@@ -134,6 +158,7 @@ function rtExample() {
 storiesOf("Realtime VehicleLayer", module)
   .addDecorator(withA11y)
   .addDecorator(withInfo)
+  .addDecorator(withKnobs)
   .add("by Route", routeExample)
   .add("all Routes", allExample)
   .add("animated VehicleLayer", animatedExample)

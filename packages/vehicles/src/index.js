@@ -127,7 +127,7 @@ class Vehicles extends MapLayer {
 
   _startRefreshing() {
     if (this._refreshTimer === null) {
-      utils.fetchVehicles(this.setVehicleData, this.getTrackedVehicleId(), this.props.vehicleUrl);
+      utils.fetchVehicles(this.setVehicleData, this.props.tracked, this.props.vehicleUrl);
 
       // set up a timer to refresh vehicle data on an interval
       const refreshDelay = utils.checkRefreshInteval(this.props.refreshDelay);
