@@ -148,13 +148,13 @@ class Vehicles extends MapLayer {
 
   _startRefreshing() {
     if (this._refreshTimer === null) {
-      utils.fetchVehicles(this.setVehicleData, this.props.tracked, this.props.vehicleUrl);
+      utils.fetchVehicles(this.setVehicleData, this.props.tracked, this.props.vehicleUrl, this.props.vehicleQuery);
 
       // set up a timer to refresh vehicle data on an interval
       const refreshDelay = utils.checkRefreshInteval(this.props.refreshDelay);
 
       this._refreshTimer = setInterval(() => {
-        utils.fetchVehicles(this.setVehicleData, this.getTrackedVehicleId(), this.props.vehicleUrl);
+        utils.fetchVehicles(this.setVehicleData, this.getTrackedVehicleId(), this.props.vehicleUrl, this.props.vehicleQuery);
       }, refreshDelay);
     }
   };
@@ -196,9 +196,10 @@ Vehicles.defaultProps = {
   color: null,
 
   geometryUrl: "https://newplanner.trimet.org/ws/ti/v0/index",
-  vehicleUrl: "https://maps.trimet.org/gtfs/rt/vehicles/routes/all",
-  vehicleRoutes: "all",
+  vehicleUrl: "https://maps.trimet.org/gtfs/rt/vehicles/",
+  vehicleQuery: "routes/all",
   refreshDelay: 5000,
+
   tracked: null,
   recenterMap: false
 };
@@ -209,7 +210,7 @@ Vehicles.propTypes = {
   color: PropTypes.string,
   geometryUrl: PropTypes.string,
   vehicleUrl: PropTypes.string,
-  vehicleRoutes: PropTypes.string,
+  vehicleQuery: PropTypes.string,
   refreshDelay: PropTypes.number,
   tracked: PropTypes.string,
   recenterMap: PropTypes.bool

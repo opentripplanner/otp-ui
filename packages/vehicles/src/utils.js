@@ -124,15 +124,31 @@ export function isTracked(vehicleA, vehicleB) {
   return retVal;
 }
 
+/** build a url from sub parts */
+export function buildUrl(base, query) {
+  let retVal = base;
+  try {
+    retVal = `${base}/${query}`.replace(/\/\/+/g, '/');
+  } catch (e) {
+    retVal = `${base}/${query}`;
+  }
+  return retVal;
+}
+
 /**
  * query real-time vehicles, and return the results in the set* parameter callbacks
  *
  * @param setData - callback where vehicles array will be passed
  * @param url - url of the vehicle service
  */
-export function fetchVehicles(setData, trackedId, url) {
+export function fetchVehicles(setData, trackedId, baseUrl, query) {
+  // build url
+  baseUrl = baseUrl || "https://maps.trimet.org/gtfs/rt/vehicles/";
+  query = query || "routes/all";
+  let url = buildUrl(baseUrl, query);
+
+  // append date to end of url (caching, etc...)
   const d = Date.now();
-  url = url || "https://maps.trimet.org/gtfs/rt/vehicles/routes/all";
   url = url.indexOf("?") ? `${url}?` : `${url}&`;
   url = `${url}__time__=${d}`;
 
@@ -158,7 +174,7 @@ export function fetchVehicles(setData, trackedId, url) {
       }
     })
     .catch(error => {
-      console.log(`VEH fetch() error: ${error}`);
+      console.log(`VEH fetch() error: ${error} for ${url}`);
     });
 }
 

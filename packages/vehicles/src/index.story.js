@@ -6,6 +6,7 @@ import { withInfo } from "@storybook/addon-info";
 import { storiesOf } from "@storybook/react";
 import { withKnobs, text, color, boolean, select } from "@storybook/addon-knobs";
 
+import "../__mocks__/map.css";
 import BaseMap from "@opentripplanner/base-map";
 
 import Vehicles from ".";
@@ -35,7 +36,6 @@ const trips = {
   9562514: '9562514',
 };
 
-
 function allExample() {
   const data = utils.reverseGeojsonPointsInGeom(geojson);
   const pattern = {
@@ -45,7 +45,7 @@ function allExample() {
   const tracked = utils.findVehicleById(line, select('Tracked Vehicle', trips, '9562512'));
 
   const retVal = (
-    <BaseMap center={portland}>
+    <BaseMap center={portland} >
       <VehicleLayer
         name="Real-Time Buses and Trains"
         vehicles={all}
@@ -146,6 +146,7 @@ function rtExample() {
       <Vehicles
         name="Real-Time Buses and Trains"
         tracked={text('vehicle id:', '(vehicle or trip id here)')}
+        vehicleQuery={text('route numbers or all:', 'routes/all?could_be=routes/90,100,190,200,290')}
         color={color('tracked color:', '#00bfff')}
         recenterMap={boolean('follow vehicle:', true)}
         visible
