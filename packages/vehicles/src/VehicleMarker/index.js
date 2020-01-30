@@ -39,7 +39,7 @@ function VehicleMarker(props) {
 
     let icon = null;
     if (zoom >= closeZoom) {
-      icon = Styled.makeVehicleIcon(vehicle.routeType, tracked, color);
+      icon = Styled.makeVehicleIcon(vehicle.routeType, color, tracked);
     } else {
       const size = zoom >= midZoom ? midSize : farSize;
       const iconHtml = ReactDOMServer.renderToStaticMarkup(
@@ -78,7 +78,25 @@ function VehicleMarker(props) {
   );
 }
 
+VehicleMarker.defaultProps = {
+  color: "#00bfff",
+  tracked: false,
+  vehicle: null,
+  leaflet: null,
+  hasTooltip: true,
+  hasPopup: true,
+
+  closeZoom: 14,
+  midZoom: 12,
+  farZoom: 9,
+
+  closeSize: 16.0,
+  midSize: 13.0,
+  farSize: 7.0
+};
+
 VehicleMarker.propTypes = {
+  color: PropTypes.string,
   tracked: PropTypes.bool,
   setTracked: PropTypes.func.isRequired,
   vehicle: vehicleType,
@@ -99,22 +117,6 @@ VehicleMarker.propTypes = {
   closeSize: PropTypes.number,
   midSize: PropTypes.number,
   farSize: PropTypes.number
-};
-
-VehicleMarker.defaultProps = {
-  tracked: false,
-  vehicle: null,
-  leaflet: null,
-  hasTooltip: true,
-  hasPopup: true,
-
-  closeZoom: 14,
-  midZoom: 12,
-  farZoom: 9,
-
-  closeSize: 16.0,
-  midSize: 13.0,
-  farSize: 7.0
 };
 
 export default withLeaflet(VehicleMarker);

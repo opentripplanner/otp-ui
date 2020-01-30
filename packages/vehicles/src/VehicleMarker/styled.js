@@ -17,9 +17,9 @@ const color = "#000";
 const colorSelected = "#00bfff";
 const colorHighlight = "#ccee77";
 
-export const VehicleCircle = styled(Circle)`
+const normal = css`
   color: ${props => props.color || color};
-  background-color: ${props => props.color || color};
+  background-color: #fff;
   border: 1px solid ${props => props.color || color};
   :hover {
     color: ${props => props.colorSelected || colorSelected};
@@ -29,37 +29,109 @@ export const VehicleCircle = styled(Circle)`
   border-radius: 50%;
 `;
 
-export const TrackedVehicleCircle = styled(VehicleCircle)`
+const tracked = css`
   color: ${props => props.colorSelected || colorSelected};
   background-color: ${props => props.colorSelected || colorSelected};
 `;
 
+export const VehicleCircle = styled(Circle)`
+  ${normal}
+  background-color: #000;
+`;
+
+export const TrackedVehicleCircle = styled(VehicleCircle)`
+  ${tracked}
+`;
+
+export const NormBus = styled(Bus)`
+  ${normal}
+`;
+
+export const TrackedBus = styled(NormBus)`
+  ${tracked}
+`;
+
+export const NormTram = styled(Max)`
+  ${normal}
+`;
+
+export const TrackedTram = styled(NormTram)`
+  ${tracked}
+`;
+
+export const NormSC = styled(Streetcar)`
+  ${normal}
+`;
+
+export const TrackedSC = styled(NormSC)`
+  ${tracked}
+`;
+
+export const NormGond = styled(AerialTram)`
+  ${normal}
+`;
+
+export const TrackedGond = styled(NormGond)`
+  ${tracked}
+`;
+
+export const NormRail = styled(Wes)`
+  ${normal}
+`;
+
+export const TrackedRail = styled(NormRail)`
+  ${tracked}
+`;
 
 /**
  * find icons based on gtfsdb mode types
  * TODO: both icon names and these modes need to align better to standards
  * TODO: icons using trimet stuff needs to get away from MAX / WES / AERIALTRAM names, etc...
  */
-export function makeVehicleIcon(mode) {
+export function makeVehicleIcon(mode, selectColor, isTracked) {
   let icon = null;
   switch (mode) {
-    case "BUS":
-      icon = <Bus />;
-      break;
     case "TRAM":
-      icon = <Max />;
+      icon = isTracked ? (
+        <TrackedTram colorSelected={selectColor} />
+      ) : (
+        <NormTram colorSelected={selectColor} />
+      );
       break;
     case "SC":
-      icon = <Streetcar />;
+      icon = isTracked ? (
+        <TrackedSC colorSelected={selectColor} />
+      ) : (
+        <NormSC colorSelected={selectColor} />
+      );
       break;
     case "GONDOLA":
-      icon = <AerialTram />;
+      icon = isTracked ? (
+        <TrackedGond colorSelected={selectColor} />
+      ) : (
+        <NormGond colorSelected={selectColor} />
+      );
       break;
     case "RAIL":
-      icon = <Wes />;
+      icon = isTracked ? (
+        <TrackedRail colorSelected={selectColor} />
+      ) : (
+        <NormRail colorSelected={selectColor} />
+      );
+      break;
+    case "BUS":
+      icon = isTracked ? (
+        <TrackedBus colorSelected={selectColor} />
+      ) : (
+        <NormBus colorSelected={selectColor} />
+      );
       break;
     default:
-      icon = <Bus />;
+      icon = isTracked ? (
+        <TrackedBus colorSelected={selectColor} />
+      ) : (
+        <NormBus colorSelected={selectColor} />
+      );
       break;
   }
 
@@ -80,7 +152,6 @@ export function makeVehicleIcon(mode) {
   return retVal;
 }
 
-
 // popup button
 export const Button = styled.button`
   color: navy;
@@ -95,12 +166,3 @@ export const Button = styled.button`
     cursor: pointer;
   }
 `;
-
-
-
-/*
- TODO: expand information in popopu -- see trip itinerary
- below is from itinerary-body / styled
- export const TransparentButton = styled.button`
- export const ViewButton = styled(TransparentButton)`
-*/
