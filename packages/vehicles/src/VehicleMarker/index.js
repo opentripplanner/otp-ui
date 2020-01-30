@@ -9,7 +9,6 @@ import RotatedMarker from "./RotatedMarker";
 import VehiclePopup from "./popup";
 import VehicleToolTip from "./tooltip";
 import { vehicleType } from "../types";
-import makeVehicleIcon from "./icons";
 import * as utils from "../utils";
 import * as Styled from "./styled";
 
@@ -24,6 +23,8 @@ function VehicleMarker(props) {
   const { hasPopup } = props;
   const { tracked } = props;
   const { setTracked } = props;
+  const { color } = props;
+
   const { leaflet } = props;
 
   const { closeZoom, midZoom, farZoom } = props; // eslint-disable-line no-unused-vars
@@ -38,14 +39,14 @@ function VehicleMarker(props) {
 
     let icon = null;
     if (zoom >= closeZoom) {
-      icon = makeVehicleIcon(vehicle.routeType);
+      icon = Styled.makeVehicleIcon(vehicle.routeType, tracked, color);
     } else {
       const size = zoom >= midZoom ? midSize : farSize;
       const iconHtml = ReactDOMServer.renderToStaticMarkup(
         tracked ? (
-          <Styled.TrackedVehicleCircle size={size} />
+          <Styled.TrackedVehicleCircle size={size} colorSelected={color} />
         ) : (
-          <Styled.VehicleCircle size={size} />
+          <Styled.VehicleCircle size={size} colorSelected={color} />
         )
       );
       icon = divIcon({ className: "", html: iconHtml });

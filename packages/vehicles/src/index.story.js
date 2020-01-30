@@ -166,7 +166,7 @@ function rtExample() {
           "route numbers or all:",
           "routes/all?could_be=routes/90,100,190,200,290"
         )}
-        color={color("tracked color:", "#00bfff")}
+        color={color("tracked color:", "#81EC0B")}
         recenterMap={boolean("follow vehicle:", true)}
         hasPopup={boolean(
           "use marker popups -- note: edit story to 'false' and refresh:",
