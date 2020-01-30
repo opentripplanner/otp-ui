@@ -7,12 +7,8 @@ import * as utils from "./utils";
 import { setColor } from "../utils";
 
 /**
- * vehicle geometry component that creates a map overlay for the line geometry showing
- * the travel pattern of a vehicle
- *
- * @param props
- * @returns {*}
- * @constructor
+ * vehicle geometry presentational component that creates a map overlay for the line
+ * geometry showing the travel pattern of a vehicle
  */
 function VehicleGeometry(props) {
   const { trackedVehicle } = props;

@@ -7,8 +7,8 @@ import { vehicleType } from "../types";
 import * as utils from "../utils";
 
 /**
- * functional react component used to draw the marker layer atop a leaflet map
- * expect an array of vehicles (fetched from the service)
+ * presentational component used to draw the marker layer atop a leaflet map
+ * expects an array of vehicles (fetched from the service)
  * optionally can include a vehicle record for a vehicle in the list we'd like to track
  * note: (vehicle) markers are created here
  */

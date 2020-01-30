@@ -5,7 +5,7 @@ import { formatTime } from "../utils";
 import { vehicleType } from "../types";
 
 /**
- * view component for vehicle marker tooltip
+ * presentational component for vehicle marker tooltip
  */
 function VehicleToolTip(props) {
   const { vehicle } = props;

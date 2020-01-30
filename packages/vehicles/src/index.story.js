@@ -168,7 +168,10 @@ function rtExample() {
         )}
         color={color("tracked color:", "#00bfff")}
         recenterMap={boolean("follow vehicle:", true)}
-        hasPopup={boolean("use marker popups -- note: edit story to 'false' and refresh:", true)}
+        hasPopup={boolean(
+          "use marker popups -- note: edit story to 'false' and refresh:",
+          true
+        )}
         hasTooltip={boolean("use marker tooltips (desktop only):", true)}
         visible
       />
