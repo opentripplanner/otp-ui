@@ -129,7 +129,7 @@ export function isTracked(vehicleA, vehicleB) {
 export function buildUrl(base, query) {
   let retVal = base;
   try {
-    retVal = `${base}/${query}`.replace(/\/\/+/g, "/");
+    retVal = `${base}/${query}`.replace(/([^:]\/)\/+/g, "$1");
   } catch (e) {
     retVal = `${base}/${query}`;
   }
