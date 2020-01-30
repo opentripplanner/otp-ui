@@ -33,6 +33,27 @@ const StyledItineraryBody = styled(ItineraryBody)`
   }
 `;
 
+const OtpRRStyledItineraryBody = styled(ItineraryBody)`
+  ${ItineraryBodyClasses.LegDescriptionRouteShortName} {
+    background-color: rgb(15, 106, 172);
+    border-color: white;
+    border-image: initial;
+    border-radius: 12px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0.25em;
+    color: white;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    height: 21px;
+    margin-right: 8px;
+    padding-top: 2px;
+    text-align: center;
+    width: 24px;
+  }
+`;
+
 class ItineraryBodyDefaultsWrapper extends Component {
   constructor() {
     super();
@@ -47,36 +68,32 @@ class ItineraryBodyDefaultsWrapper extends Component {
     const {
       itinerary,
       PlaceName,
+      RouteDescription,
       showAgencyInfo,
       TransitLegSummary,
-      useStyled
+      styledItinerary
     } = this.props;
     const { diagramVisible } = this.state;
-    return useStyled ? (
-      <StyledItineraryBody
+    let ItineraryBodyComponent;
+    switch (styledItinerary) {
+      case "pink-legs":
+        ItineraryBodyComponent = StyledItineraryBody;
+        break;
+      case "otp-rr":
+        ItineraryBodyComponent = OtpRRStyledItineraryBody;
+        break;
+      default:
+        ItineraryBodyComponent = ItineraryBody;
+    }
+    return (
+      <ItineraryBodyComponent
         config={config}
         diagramVisible={diagramVisible}
         frameLeg={action("frameLeg")}
         itinerary={itinerary}
         LegIcon={TriMetLegIcon}
         PlaceName={PlaceName}
-        routingType="ITINERARY"
-        setActiveLeg={action("setActiveLeg")}
-        setLegDiagram={this.setLegDiagram}
-        setViewedTrip={action("setViewedTrip")}
-        showAgencyInfo={showAgencyInfo}
-        showElevationProfile
-        toRouteAbbreviation={r => r.toString().substr(0, 2)}
-        TransitLegSummary={TransitLegSummary}
-      />
-    ) : (
-      <ItineraryBody
-        config={config}
-        diagramVisible={diagramVisible}
-        frameLeg={action("frameLeg")}
-        itinerary={itinerary}
-        LegIcon={TriMetLegIcon}
-        PlaceName={PlaceName}
+        RouteDescription={RouteDescription}
         routingType="ITINERARY"
         setActiveLeg={action("setActiveLeg")}
         setLegDiagram={this.setLegDiagram}
@@ -93,16 +110,18 @@ class ItineraryBodyDefaultsWrapper extends Component {
 ItineraryBodyDefaultsWrapper.propTypes = {
   itinerary: itineraryType.isRequired,
   PlaceName: PropTypes.elementType,
+  RouteDescription: PropTypes.elementType,
   showAgencyInfo: PropTypes.bool,
   TransitLegSummary: PropTypes.elementType,
-  useStyled: PropTypes.bool
+  styledItinerary: PropTypes.string
 };
 
 ItineraryBodyDefaultsWrapper.defaultProps = {
   showAgencyInfo: false,
   PlaceName: undefined,
+  RouteDescription: undefined,
   TransitLegSummary: undefined,
-  useStyled: false
+  styledItinerary: null
 };
 
 function CustomPlaceName({ place }) {
@@ -116,6 +135,47 @@ function CustomTransitLegSummary({ leg }) {
 }
 
 CustomTransitLegSummary.propTypes = {
+  leg: legType.isRequired
+};
+
+const TriMetLegIconContainer = styled.div`
+  float: left;
+  height: 24px;
+  margin-right: 6px;
+  width: 24px;
+`;
+
+function OtpRRRouteDescription({ leg }) {
+  const { headsign, routeLongName, routeShortName } = leg;
+  return (
+    <ItineraryBodyClasses.LegDescriptionForTransit>
+      <TriMetLegIconContainer>
+        <TriMetLegIcon leg={leg} />
+      </TriMetLegIconContainer>
+      {routeShortName && (
+        <div>
+          <ItineraryBodyClasses.LegDescriptionRouteShortName>
+            {routeShortName}
+          </ItineraryBodyClasses.LegDescriptionRouteShortName>
+        </div>
+      )}
+      <ItineraryBodyClasses.LegDescriptionRouteLongName>
+        {routeLongName}
+        {headsign && (
+          <span>
+            {" "}
+            <ItineraryBodyClasses.LegDescriptionHeadsignPrefix>
+              to
+            </ItineraryBodyClasses.LegDescriptionHeadsignPrefix>{" "}
+            {headsign}
+          </span>
+        )}
+      </ItineraryBodyClasses.LegDescriptionRouteLongName>
+    </ItineraryBodyClasses.LegDescriptionForTransit>
+  );
+}
+
+OtpRRRouteDescription.propTypes = {
   leg: legType.isRequired
 };
 
@@ -134,7 +194,7 @@ storiesOf("ItineraryBody", module)
   .add("Styled ItineraryBody with walk-transit-walk itinerary", () => (
     <ItineraryBodyDefaultsWrapper
       itinerary={walkTransitWalkItinerary}
-      useStyled
+      styledItinerary="pink-legs"
     />
   ))
   .add(
@@ -194,6 +254,16 @@ storiesOf("ItineraryBody", module)
       itinerary={eScooterRentalTransiteScooterRentalItinerary}
     />
   ))
+  .add(
+    "ItineraryBody with E-scooter rental + transit itinerary with OTP-RR styling and customizations",
+    () => (
+      <ItineraryBodyDefaultsWrapper
+        itinerary={eScooterRentalTransiteScooterRentalItinerary}
+        RouteDescription={OtpRRRouteDescription}
+        styledItinerary="otp-rr"
+      />
+    )
+  )
   .add("ItineraryBody with TNC + transit itinerary", () => (
     <ItineraryBodyDefaultsWrapper itinerary={tncTransitTncItinerary} />
   ));

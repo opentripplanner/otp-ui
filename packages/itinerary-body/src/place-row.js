@@ -143,6 +143,7 @@ const PlaceRow = ({
   legIndex,
   place,
   PlaceName,
+  RouteDescription,
   routingType,
   setActiveLeg,
   setLegDiagram,
@@ -229,6 +230,7 @@ const PlaceRow = ({
                 legIndex={legIndex}
                 setActiveLeg={setActiveLeg}
                 longDateFormat={longDateFormat}
+                RouteDescription={RouteDescription}
                 setViewedTrip={setViewedTrip}
                 showAgencyInfo={showAgencyInfo}
                 timeFormat={timeFormat}
@@ -299,6 +301,14 @@ PlaceRow.propTypes = {
    *   could also be the to place if it is the destination of the itinerary.
    */
   PlaceName: PropTypes.elementType,
+  /**
+   * An optional component to render the name of a route.
+   *
+   * The component is sent 2 props:
+   * - leg: the itinerary leg with the transit information
+   * - transitOperator: the transit operator associated with the route if available
+   */
+  RouteDescription: PropTypes.elementType,
   /** TODO: Routing Type is usually 'ITINERARY' but we should get more details on what this does */
   routingType: PropTypes.string.isRequired,
   /**
@@ -337,6 +347,7 @@ PlaceRow.defaultProps = {
   // can be null if this is the destination place
   legIndex: null,
   PlaceName: DefaultPlaceName,
+  RouteDescription: undefined,
   showAgencyInfo: false,
   showElevationProfile: false,
   timeOptions: null,

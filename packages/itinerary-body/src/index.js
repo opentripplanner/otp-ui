@@ -18,6 +18,7 @@ const ItineraryBody = ({
   frameLeg,
   itinerary,
   PlaceName,
+  RouteDescription,
   routingType,
   setActiveLeg,
   setLegDiagram,
@@ -50,6 +51,7 @@ const ItineraryBody = ({
         legIndex={i}
         place={leg.from}
         PlaceName={PlaceName}
+        RouteDescription={RouteDescription}
         routingType={routingType}
         setActiveLeg={setActiveLeg}
         setLegDiagram={setLegDiagram}
@@ -75,6 +77,7 @@ const ItineraryBody = ({
           LegIcon={LegIcon}
           place={leg.to}
           PlaceName={PlaceName}
+          RouteDescription={RouteDescription}
           routingType={routingType}
           setActiveLeg={setActiveLeg}
           setLegDiagram={setLegDiagram}
@@ -124,6 +127,14 @@ ItineraryBody.propTypes = {
    *   could also be the to place if it is the destination of the itinerary.
    */
   PlaceName: PropTypes.elementType,
+  /**
+   * An optional component to render the name of a route.
+   *
+   * The component is sent 2 props:
+   * - leg: the itinerary leg with the transit information
+   * - transitOperator: the transit operator associated with the route if available
+   */
+  RouteDescription: PropTypes.elementType,
   /** TODO: Routing Type is usually 'ITINERARY' but we should get more details on what this does */
   routingType: PropTypes.string,
   /**
@@ -156,6 +167,7 @@ ItineraryBody.defaultProps = {
   className: null,
   diagramVisible: null,
   PlaceName: undefined,
+  RouteDescription: undefined,
   routingType: "ITINERARY",
   showAgencyInfo: false,
   showElevationProfile: false,

@@ -39,6 +39,36 @@ DefaultTransitLegSummary.propTypes = {
   stopsExpanded: PropTypes.bool.isRequired
 };
 
+function DefaultRouteDescription({ leg }) {
+  const { headsign, routeLongName, routeShortName } = leg;
+  return (
+    <Styled.LegDescriptionForTransit>
+      {routeShortName && (
+        <div>
+          <Styled.LegDescriptionRouteShortName>
+            {routeShortName}
+          </Styled.LegDescriptionRouteShortName>
+        </div>
+      )}
+      <Styled.LegDescriptionRouteLongName>
+        {routeLongName}
+        {headsign && (
+          <span>
+            <Styled.LegDescriptionHeadsignPrefix>
+              {" to "}
+            </Styled.LegDescriptionHeadsignPrefix>
+            {headsign}
+          </span>
+        )}
+      </Styled.LegDescriptionRouteLongName>
+    </Styled.LegDescriptionForTransit>
+  );
+}
+
+DefaultRouteDescription.propTypes = {
+  leg: legType.isRequired
+};
+
 class TransitLegBody extends Component {
   constructor(props) {
     super(props);
@@ -67,21 +97,14 @@ class TransitLegBody extends Component {
     const {
       leg,
       longDateFormat,
+      RouteDescription,
       setViewedTrip,
       showAgencyInfo,
       timeFormat,
       TransitLegSummary,
       transitOperator
     } = this.props;
-    const {
-      agencyBrandingUrl,
-      agencyName,
-      agencyUrl,
-      alerts,
-      routeShortName,
-      routeLongName,
-      headsign
-    } = leg;
+    const { agencyBrandingUrl, agencyName, agencyUrl, alerts } = leg;
     const { alertsExpanded, stopsExpanded } = this.state;
 
     // If the config contains an operator with a logo URL, prefer that over the
@@ -97,24 +120,8 @@ class TransitLegBody extends Component {
     return (
       <Styled.LegBody>
         {/* The Route Icon/Name Bar; clickable to set as active leg */}
-        {/* eslint-disable-next-line */}
         <Styled.LegClickable onClick={this.onSummaryClick}>
-          <div className="route-name leg-description">
-            {routeShortName && (
-              <div>
-                <span className="route-short-name">{routeShortName}</span>
-              </div>
-            )}
-            <div className="route-long-name">
-              {routeLongName}
-              {headsign && (
-                <span>
-                  {" "}
-                  <span style={{ fontWeight: "200" }}>to</span> {headsign}
-                </span>
-              )}
-            </div>
-          </div>
+          <RouteDescription leg={leg} transitOperator={transitOperator} />
         </Styled.LegClickable>
 
         {/* Agency information */}
@@ -124,12 +131,7 @@ class TransitLegBody extends Component {
             <a href={agencyUrl} rel="noopener noreferrer" target="_blank">
               {agencyName}
               {logoUrl && (
-                <img
-                  alt={`${agencyName} logo`}
-                  src={logoUrl}
-                  height={25}
-                  style={{ marginLeft: "5px" }}
-                />
+                <img alt={`${agencyName} logo`} src={logoUrl} height={25} />
               )}
             </a>
           </Styled.AgencyInfo>
@@ -197,6 +199,7 @@ TransitLegBody.propTypes = {
   leg: legType.isRequired,
   legIndex: PropTypes.number.isRequired,
   longDateFormat: PropTypes.string.isRequired,
+  RouteDescription: PropTypes.elementType,
   setActiveLeg: PropTypes.func.isRequired,
   setViewedTrip: PropTypes.func.isRequired,
   showAgencyInfo: PropTypes.bool.isRequired,
@@ -206,6 +209,7 @@ TransitLegBody.propTypes = {
 };
 
 TransitLegBody.defaultProps = {
+  RouteDescription: DefaultRouteDescription,
   TransitLegSummary: DefaultTransitLegSummary,
   transitOperator: null
 };
