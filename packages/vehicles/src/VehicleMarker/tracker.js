@@ -14,9 +14,9 @@ function VehicleTracker(props) {
 
   function handleClick() {
     if (tracked) {
-      setTracked(null, null);
+      setTracked(null, true);
     } else {
-      setTracked(vehicle, null);
+      setTracked(vehicle.vehicleId || vehicle.tripId);
     }
   }
 

@@ -85,15 +85,16 @@ export function decodePolyline(geom) {
  */
 export function findVehicleById(vehicleList, queryId, defVal = null) {
   let retVal = defVal;
-
   try {
-    vehicleList.some(v => {
-      if (queryId === v.vehicleId || queryId === v.tripId) {
-        retVal = v;
-        return true;
-      }
-      return false;
-    });
+    if (vehicleList && queryId) {
+      vehicleList.some(v => {
+        if (queryId === v.vehicleId || queryId === v.tripId) {
+          retVal = v;
+          return true;
+        }
+        return false;
+      });
+    }
   } catch (e) {
     console.log(e);
   }
@@ -110,7 +111,7 @@ export function isTracked(vehicleA, vehicleB) {
   let retVal = false;
 
   try {
-    if ( vehicleA && vehicleB ) {
+    if (vehicleA && vehicleB) {
       if (
         vehicleA.vehicleId === vehicleB.vehicleId ||
         vehicleA.tripId === vehicleB.tripId
@@ -128,7 +129,7 @@ export function isTracked(vehicleA, vehicleB) {
 export function buildUrl(base, query) {
   let retVal = base;
   try {
-    retVal = `${base}/${query}`.replace(/\/\/+/g, '/');
+    retVal = `${base}/${query}`.replace(/\/\/+/g, "/");
   } catch (e) {
     retVal = `${base}/${query}`;
   }

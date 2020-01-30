@@ -49,8 +49,6 @@ export const Button = styled.button`
   }
 `;
 
-
-
 /**
  * find icons based on gtfsdb mode types
  * TODO: both icon names and these modes need to align better to standards

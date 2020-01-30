@@ -3,15 +3,20 @@ import PropTypes from "prop-types";
 import { MapLayer, FeatureGroup, withLeaflet } from "react-leaflet";
 
 import { leafletPathType } from "@opentripplanner/core-utils/lib/types";
-import { throttle } from 'throttle-debounce';
+import { throttle } from "throttle-debounce";
 
 import VehicleLayer from "./VehicleLayer";
 import VehicleGeometry from "./VehicleGeometry";
 import * as utils from "./utils";
 
 /**
- * TODO: describe
- * TODO: talk about gtfsdb and opensource
+ * Vehicles is the main component to fetch and display realtime transit vehicles on a map.  It is this
+ * component that makes all the calls to various data services, and the sends that data as props to be
+ * rendered by the sub-components of the vehicles package.
+ *
+ * NOTE: The backend calls for the vehicle and pattern geometries is based on GTFS and GTFS-RT data,
+ * via the use of http://gtfsdb.com and associated services (e.g., implementations are not limited to
+ * just TriMet / proprietary services)
  */
 class Vehicles extends MapLayer {
   state = {
@@ -27,7 +32,7 @@ class Vehicles extends MapLayer {
     utils.callIfValid(registerOverlay)(this);
 
     if (this.props.visible) {
-      this._startRefreshing();
+      this.startFetchingVehicles();
     }
 
     // initialize zoom state here? (may trigger render again.)
@@ -36,40 +41,46 @@ class Vehicles extends MapLayer {
   }
 
   componentWillUnmount() {
-    this._stopRefreshing();
+    this.stopFetchingVehicles();
   }
 
   componentDidUpdate(prevProps) {
+    // set tracked vehicle via a prop change
     if (prevProps.tracked !== this.props.tracked) {
-      // set tracked vehicle via a prop change
-      this.setTrackedVehicle2(this.state.vehicleData, this.props.tracked);
+      this.setTrackedVehicle(this.props.tracked);
     }
   }
 
-  // onOverlayAdded will notifiy this layer whenever this layer gets added to BaseMap
-  onOverlayAdded = e => {
-    this._startRefreshing();
+  /** BaseMap: onOverlayAdded will notify this layer whenever this layer gets added to BaseMap */
+  onOverlayAdded = () => {
+    this.startFetchingVehicles();
   };
 
-  // onOverlayRemoved will notify this layer when removed to BaseMap
-  onOverlayRemoved = e => {
-    this._stopRefreshing();
+  /** BaseMap: onOverlayRemoved will notify this layer when removed to BaseMap */
+  onOverlayRemoved = () => {
+    this.stopFetchingVehicles();
   };
 
-  // onViewportChanged notified whenever the BaseMap's center or zoom changes
+  /** BaseMap: onViewportChanged notified whenever the BaseMap's center or zoom changes */
   onViewportChanged = viewport => {
     this.setMapZoom(viewport.zoom);
   };
 
+  /** needed: extending ReactLeaflet's MapLayer */
   createLeafletElement() {}
 
+  /** needed: extending MapLayer */
   updateLeafletElement() {}
 
-  // limit the number of times we'll call this method so we don't overwhelm React with a ton of state updates
-  setMapZoom = throttle(500, (zoom) => {
+  /**
+   * set zoom, used for changing icons ..
+   * note: limit (throttle) so we don't overwhelm React with tons of state changes zoomming in
+   */
+  setMapZoom = throttle(500, zoom => {
     this.setState({ mapZoom: zoom });
   });
 
+  /** pan the map to the tracked vehicle's coordinates */
   recenterMap = () => {
     if (this.props.recenterMap && this.state.trackedVehicle) {
       const v = this.state.trackedVehicle;
@@ -78,8 +89,12 @@ class Vehicles extends MapLayer {
     }
   };
 
-  getLeafletContext = () => { return this.props.leaflet; };
+  /** return leaflet handle, ala so we can make calls to Leaflet, ala map.panTo(), etc... */
+  getLeafletContext = () => {
+    return this.props.leaflet;
+  };
 
+  /** return the vehicle id of the vehicle being tracked */
   getTrackedVehicleId = () => {
     let retVal = null;
     const t = this.state.trackedVehicle;
@@ -87,48 +102,31 @@ class Vehicles extends MapLayer {
     return retVal;
   };
 
-  /** callback function where the tracked geometry stored */
-  setTrackedGeomData = (patternId, data) => {
-    console.log(patternId);
-    this.setState({ trackedGeometry: { id: patternId, data: data } });
-  };
-
-  isPatternCached = (patternId) => {
-    let retVal = false;
-    if (this.state.trackedGeometry && patternId)
-      if (patternId === this.state.trackedGeometry.id)
-        retVal = true;
-    return retVal;
-  }
-
+  /** callback for the vehicle fetch utility to send the list of vehicles to */
   setVehicleData = (vehicleList, trackedId) => {
-    // step 1: set vehicle data
     this.setState({ vehicleData: vehicleList });
-    this.setTrackedVehicle2(this.state.vehicleData, trackedId);
+    this.setTrackedVehicle(trackedId, true);
   };
 
-  setTrackedVehicle = (vehicle, geomData) => {
-    this.setState({ trackedVehicle: vehicle });
-    // todo: add geom cache here
-    this.setState({ trackedGeometry: geomData });
-  };
+  setTrackedVehicle = (trackedId, clearFirst) => {
+    // step 0: clear out the old tracked vehicle
+    if (clearFirst) this.setState({ trackedVehicle: null });
 
-  setTrackedVehicle2 = (vehicleList, trackedId) => {
-    // step 1: tracked vehicle
-    const vehicle = utils.findVehicleById(vehicleList, trackedId);
+    // step 1: find the tracked vehicle record via an id (trip or vehicle id)
+    const vehicle = utils.findVehicleById(this.state.vehicleData, trackedId);
     if (vehicle) {
-
       // step 2: set tracked vehicle state
       this.setState({ trackedVehicle: vehicle });
 
       // step 3: recenter map
       this.recenterMap();
 
-      // step 4: cache tracked vehicle geometry
+      // step 4: find the line geometry for the tracked vehicle
       if (vehicle.shapeId) {
         try {
           const patternId = `${vehicle.agencyId}:${vehicle.shapeId}`;
           if (!this.isPatternCached(patternId)) {
+            // step 5: need to fetch the line (route pattern / shape) geometry
             console.log(">>>>>>>>>>>>>>>>>>");
             console.log(patternId);
             utils.fetchVehiclePattern(
@@ -144,29 +142,57 @@ class Vehicles extends MapLayer {
     }
   };
 
-  _refreshTimer = null;
+  /** callback function where the tracked geometry stored */
+  setTrackedGeomData = (patternId, data) => {
+    // note to self: 'data' looks strange below ... it's the linter / object short hand
+    this.setState({ trackedGeometry: { id: patternId, data } });
+  };
 
-  _startRefreshing() {
-    if (this._refreshTimer === null) {
-      utils.fetchVehicles(this.setVehicleData, this.props.tracked, this.props.vehicleUrl, this.props.vehicleQuery);
+  /**
+   * if the needed geometry is available from a previous fetch, use that
+   * TODO: add a caching mechanism ... current cache
+   */
+  isPatternCached = patternId => {
+    let retVal = false;
+    if (this.state.trackedGeometry && patternId)
+      if (patternId === this.state.trackedGeometry.id) retVal = true;
+    return retVal;
+  };
+
+  fetchVehicleInterval = null;
+
+  /** create an interval that will periodically query vehicle position data */
+  startFetchingVehicles() {
+    if (this.fetchVehicleInterval === null) {
+      utils.fetchVehicles(
+        this.setVehicleData,
+        this.props.tracked,
+        this.props.vehicleUrl,
+        this.props.vehicleQuery
+      );
 
       // set up a timer to refresh vehicle data on an interval
       const refreshDelay = utils.checkRefreshInteval(this.props.refreshDelay);
 
-      this._refreshTimer = setInterval(() => {
-        utils.fetchVehicles(this.setVehicleData, this.getTrackedVehicleId(), this.props.vehicleUrl, this.props.vehicleQuery);
+      this.fetchVehicleInterval = setInterval(() => {
+        utils.fetchVehicles(
+          this.setVehicleData,
+          this.getTrackedVehicleId(),
+          this.props.vehicleUrl,
+          this.props.vehicleQuery
+        );
       }, refreshDelay);
     }
-  };
+  }
 
-  _stopRefreshing() {
-    if(this._refreshTimer) {
-      clearInterval(this._refreshTimer);
-      this._refreshTimer = null;
+  /** stop / clear the interval created above, and clear other state elements related to the vehicles */
+  stopFetchingVehicles() {
+    if (this.fetchVehicleInterval) {
+      clearInterval(this.fetchVehicleInterval);
+      this.fetchVehicleInterval = null;
     }
-    if(this.state.trackedVehicle !== null) {
-      this.setTrackedVehicle(null, null);
-    }
+
+    this.setTrackedVehicle(null, true);
   }
 
   render() {
