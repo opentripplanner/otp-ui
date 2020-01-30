@@ -25,6 +25,8 @@ function VehicleLayer(props) {
             vehicle={v}
             tracked={utils.isTracked(v, trackedVehicle)}
             setTracked={props.setTracked}
+            hasTooltip={props.hasTooltip}
+            hasPopup={props.hasPopup}
           />
         ))}
     </FeatureGroup>
@@ -33,13 +35,17 @@ function VehicleLayer(props) {
 
 VehicleLayer.defaultProps = {
   vehicles: [],
-  trackedVehicle: null
+  trackedVehicle: null,
+  hasTooltip: true,
+  hasPopup: true
 };
 
 VehicleLayer.propTypes = {
   vehicles: PropTypes.arrayOf(vehicleType),
   trackedVehicle: vehicleType,
-  setTracked: PropTypes.func.isRequired
+  setTracked: PropTypes.func.isRequired,
+  hasTooltip: PropTypes.bool,
+  hasPopup: PropTypes.bool
 };
 
 export default VehicleLayer;

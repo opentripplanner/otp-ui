@@ -202,6 +202,8 @@ class Vehicles extends MapLayer {
           vehicles={this.state.vehicleData}
           trackedVehicle={this.state.trackedVehicle}
           setTracked={this.setTrackedVehicle}
+          hasTooltip={this.props.hasTooltip}
+          hasPopup={this.props.hasPopup}
           color={this.props.color}
         />
         <VehicleGeometry
@@ -227,7 +229,9 @@ Vehicles.defaultProps = {
   refreshDelay: 5000,
 
   tracked: null,
-  recenterMap: false
+  recenterMap: false,
+  hasTooltip: true,
+  hasPopup: true
 };
 
 Vehicles.propTypes = {
@@ -239,7 +243,9 @@ Vehicles.propTypes = {
   vehicleQuery: PropTypes.string,
   refreshDelay: PropTypes.number,
   tracked: PropTypes.string,
-  recenterMap: PropTypes.bool
+  recenterMap: PropTypes.bool,
+  hasTooltip: PropTypes.bool,
+  hasPopup: PropTypes.bool
 };
 
 export default withLeaflet(Vehicles);
