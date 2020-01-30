@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import polyline from "@mapbox/polyline";
 
 /** deep copy */

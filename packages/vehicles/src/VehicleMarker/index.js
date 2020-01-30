@@ -27,8 +27,8 @@ function VehicleMarker(props) {
 
   const { leaflet } = props;
 
-  const { closeZoom, midZoom, farZoom } = props; // eslint-disable-line no-unused-vars
-  const { closeSize, midSize, farSize } = props; // eslint-disable-line no-unused-vars
+  const { closeZoom, midZoom } = props;
+  const { midSize, farSize } = props;
 
   const position = [vehicle.lat, vehicle.lon];
   const zPos = tracked ? 1000 : 0;
@@ -88,9 +88,7 @@ VehicleMarker.defaultProps = {
 
   closeZoom: 14,
   midZoom: 12,
-  farZoom: 9,
 
-  closeSize: 16.0,
   midSize: 13.0,
   farSize: 7.0
 };
@@ -112,9 +110,7 @@ VehicleMarker.propTypes = {
 
   closeZoom: PropTypes.number,
   midZoom: PropTypes.number,
-  farZoom: PropTypes.number,
 
-  closeSize: PropTypes.number,
   midSize: PropTypes.number,
   farSize: PropTypes.number
 };

@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* stylelint-disable property-no-vendor-prefix */
-/* stylelint-disable CssSyntaxError */
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 import L from "leaflet";
