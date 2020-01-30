@@ -5,7 +5,7 @@ import { vehicleType } from "../types";
 import { Button } from "./styled";
 
 /**
- * view component for tracking button on marker popup
+ * presentational component for tracking button on marker popup
  */
 function VehicleTracker(props) {
   const { vehicle } = props;

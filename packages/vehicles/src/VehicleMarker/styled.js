@@ -2,9 +2,6 @@
 /* stylelint-disable property-no-vendor-prefix */
 /* stylelint-disable CssSyntaxError */
 import React from "react";
-import ReactDOMServer from "react-dom/server";
-import PropTypes from "prop-types";
-import L from "leaflet";
 
 import styled, { css } from "styled-components";
 import { Circle } from "styled-icons/fa-solid";

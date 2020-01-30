@@ -26,6 +26,11 @@ class Vehicles extends MapLayer {
     trackedGeometry: null
   };
 
+  // class variables
+  fetchVehicleInterval = null;
+
+  isTrackerUpdated = false;
+
   componentDidMount() {
     // register this layer with base-map, so it will call the onOverlayX and onViewportZ methods
     const { registerOverlay } = this.props;
@@ -47,7 +52,8 @@ class Vehicles extends MapLayer {
   componentDidUpdate(prevProps) {
     // set tracked vehicle via a prop change
     if (prevProps.tracked !== this.props.tracked) {
-      this.setTrackedVehicle(this.props.tracked);
+      this.isTrackerUpdated = true;
+      this.setTrackedVehicle(this.props.tracked, true);
     }
   }
 
@@ -105,7 +111,13 @@ class Vehicles extends MapLayer {
   /** callback for the vehicle fetch utility to send the list of vehicles to */
   setVehicleData = (vehicleList, trackedId) => {
     this.setState({ vehicleData: vehicleList });
-    this.setTrackedVehicle(trackedId, true);
+
+    // handle a mid-vehicle data update, where the tracker is also updated
+    if (this.isTrackerUpdated) {
+      this.isTrackerUpdated = false;
+    } else {
+      this.setTrackedVehicle(trackedId, true);
+    }
   };
 
   setTrackedVehicle = (trackedId, clearFirst) => {
@@ -158,8 +170,6 @@ class Vehicles extends MapLayer {
       if (patternId === this.state.trackedGeometry.id) retVal = true;
     return retVal;
   };
-
-  fetchVehicleInterval = null;
 
   /** create an interval that will periodically query vehicle position data */
   startFetchingVehicles() {
