@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Global from "core-js";
 
 import * as Styled from "../styled";
 
@@ -13,8 +12,9 @@ class DropdownSelector extends Component {
     const { name, onChange } = this.props;
 
     if (typeof onChange === "function") {
+      const floatVal = parseFloat(val);
       onChange({
-        [name]: Global.isNaN(val) ? val : parseFloat(val)
+        [name]: Number.isNaN(floatVal) ? val : floatVal
       });
     }
   };

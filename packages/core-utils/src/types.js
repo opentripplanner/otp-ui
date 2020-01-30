@@ -512,8 +512,18 @@ export const configuredModesType = PropTypes.shape({
 });
 
 export const configuredCompanyType = PropTypes.shape({
+  /**
+   * The id of the company. This is typically in all-caps.
+   */
   id: PropTypes.string.isRequired,
+  /**
+   * A human readable text value that can be displayed to users.
+   */
   label: PropTypes.string.isRequired,
+  /**
+   * A comma-separated list of applicable modes of travel that the company
+   * offers.
+   */
   modes: PropTypes.string.isRequired
 });
 
