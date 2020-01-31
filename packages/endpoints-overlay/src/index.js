@@ -3,6 +3,31 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import Endpoint from "./endpoint";
+import * as Styled from "./styled";
+
+function DefaultMapMarkerIcon({ location, type }) {
+  return (
+    <Styled.StackedIconContainer title={location.name}>
+      {type === "from" ? (
+        // From icon should have white circle background
+        <>
+          <Styled.StackedCircle size={24} />
+          <Styled.StackedLocationIcon size={24} type={type} />
+        </>
+      ) : (
+        <>
+          <Styled.StackedToIcon size={24} type="to" />
+          <Styled.ToIcon size={20} type={type} />
+        </>
+      )}
+    </Styled.StackedIconContainer>
+  );
+}
+
+DefaultMapMarkerIcon.propTypes = {
+  location: locationType.isRequired,
+  type: PropTypes.string.isRequired
+};
 
 function EndpointsOverlay({
   clearLocation,
@@ -111,7 +136,7 @@ EndpointsOverlay.defaultProps = {
   forgetPlace: noop,
   rememberPlace: noop,
   locations: [],
-  MapMarkerIcon: undefined,
+  MapMarkerIcon: DefaultMapMarkerIcon,
   showUserSettings: false
 };
 

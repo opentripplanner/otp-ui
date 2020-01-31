@@ -18,30 +18,10 @@ import {
 
 import * as Styled from "./styled";
 
-function DefaultMapMarkerIcon({ location, type }) {
-  return (
-    <Styled.StackedIconContainer title={location.name}>
-      {type === "from" ? (
-        // From icon should have white circle background
-        <>
-          <Styled.StackedCircle size={24} />
-          <Styled.StackedLocationIcon size={24} type={type} />
-        </>
-      ) : (
-        <>
-          <Styled.StackedToIcon size={24} type="to" />
-          <Styled.ToIcon size={20} type={type} />
-        </>
-      )}
-    </Styled.StackedIconContainer>
-  );
-}
-
-DefaultMapMarkerIcon.propTypes = {
-  location: locationType.isRequired,
-  type: PropTypes.string.isRequired
-};
-
+/**
+ * These icons are used to render common icons for user locations. These will
+ * only show up in applications that allow saving user locations.
+ */
 function UserLocationIcon({ type }) {
   switch (type) {
     case "briefcase":
@@ -201,13 +181,9 @@ Endpoint.propTypes = {
   forgetPlace: PropTypes.func.isRequired,
   location: locationType.isRequired,
   locations: PropTypes.arrayOf(locationType).isRequired,
-  MapMarkerIcon: PropTypes.elementType,
+  MapMarkerIcon: PropTypes.elementType.isRequired,
   rememberPlace: PropTypes.func.isRequired,
   setLocation: PropTypes.func.isRequired,
   showUserSettings: PropTypes.bool.isRequired,
   type: PropTypes.string.isRequired
-};
-
-Endpoint.defaultProps = {
-  MapMarkerIcon: DefaultMapMarkerIcon
 };
