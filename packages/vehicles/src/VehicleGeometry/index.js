@@ -52,7 +52,10 @@ VehicleGeometry.defaultProps = {
 
 VehicleGeometry.propTypes = {
   trackedVehicle: vehicleType,
-  pattern: PropTypes.shape({}),
+  pattern: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    data: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired
+  }),
   highlight: leafletPathType,
   lowlight: leafletPathType
 };

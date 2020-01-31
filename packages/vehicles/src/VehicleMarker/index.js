@@ -44,9 +44,9 @@ function VehicleMarker(props) {
       const size = zoom >= midZoom ? midSize : farSize;
       const iconHtml = ReactDOMServer.renderToStaticMarkup(
         tracked ? (
-          <Styled.TrackedVehicleCircle size={size} colorSelected={color} />
+          <Styled.TrackedVehicleCircle size={size} colorselected={color} />
         ) : (
-          <Styled.VehicleCircle size={size} colorSelected={color} />
+          <Styled.VehicleCircle size={size} colorselected={color} />
         )
       );
       icon = divIcon({ className: "", html: iconHtml });

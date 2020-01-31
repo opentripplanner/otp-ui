@@ -7,11 +7,11 @@ import { Circle } from "styled-icons/fa-solid";
 
 import { AerialTram, Bus, Streetcar, Max, Wes } from "@opentripplanner/icons";
 
-// note: want to make these props of styled, so props.colorSelected
+// note: want to make these props of styled, so props.colorselected
 // BTW, 'props.color' works, since that's an established prop of styled
 // https://stackoverflow.com/questions/52321539/react-passing-props-with-styled-components
 const color = "#000";
-const colorSelected = "#00bfff";
+const colorselected = "#00bfff";
 const colorHighlight = "#ccee77";
 
 const normal = css`
@@ -19,16 +19,16 @@ const normal = css`
   background-color: #fff;
   border: 1px solid ${props => props.color || color};
   :hover {
-    color: ${props => props.colorSelected || colorSelected};
-    background-color: ${props => props.colorSelected || colorSelected};
+    color: ${props => props.colorselected || colorselected};
+    background-color: ${props => props.colorselected || colorselected};
     border: 1px solid ${props => props.colorHighlight || colorHighlight};
   }
   border-radius: 50%;
 `;
 
 const tracked = css`
-  color: ${props => props.colorSelected || colorSelected};
-  background-color: ${props => props.colorSelected || colorSelected};
+  color: ${props => props.colorselected || colorselected};
+  background-color: ${props => props.colorselected || colorselected};
 `;
 
 export const VehicleCircle = styled(Circle)`
@@ -90,44 +90,44 @@ export function makeVehicleIcon(mode, selectColor, isTracked) {
   switch (mode) {
     case "TRAM":
       icon = isTracked ? (
-        <TrackedTram colorSelected={selectColor} />
+        <TrackedTram colorselected={selectColor} />
       ) : (
-        <NormTram colorSelected={selectColor} />
+        <NormTram colorselected={selectColor} />
       );
       break;
     case "SC":
       icon = isTracked ? (
-        <TrackedSC colorSelected={selectColor} />
+        <TrackedSC colorselected={selectColor} />
       ) : (
-        <NormSC colorSelected={selectColor} />
+        <NormSC colorselected={selectColor} />
       );
       break;
     case "GONDOLA":
       icon = isTracked ? (
-        <TrackedGond colorSelected={selectColor} />
+        <TrackedGond colorselected={selectColor} />
       ) : (
-        <NormGond colorSelected={selectColor} />
+        <NormGond colorselected={selectColor} />
       );
       break;
     case "RAIL":
       icon = isTracked ? (
-        <TrackedRail colorSelected={selectColor} />
+        <TrackedRail colorselected={selectColor} />
       ) : (
-        <NormRail colorSelected={selectColor} />
+        <NormRail colorselected={selectColor} />
       );
       break;
     case "BUS":
       icon = isTracked ? (
-        <TrackedBus colorSelected={selectColor} />
+        <TrackedBus colorselected={selectColor} />
       ) : (
-        <NormBus colorSelected={selectColor} />
+        <NormBus colorselected={selectColor} />
       );
       break;
     default:
       icon = isTracked ? (
-        <TrackedBus colorSelected={selectColor} />
+        <TrackedBus colorselected={selectColor} />
       ) : (
-        <NormBus colorSelected={selectColor} />
+        <NormBus colorselected={selectColor} />
       );
       break;
   }
