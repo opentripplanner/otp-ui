@@ -1,9 +1,9 @@
 {
-  "name": "@opentripplanner/vehicles",
+  "name": "@opentripplanner/transit-vehicle-overlay",
   "version": "0.0.1",
   "description": "Realtime Transit Vehicles Component",
   "author": "Frank Purcell",
-  "homepage": "https://github.com/opentripplanner/otp-ui/packages/vehicles/#readme",
+  "homepage": "https://github.com/opentripplanner/otp-ui/packages/transit-vehicle-overlay/#readme",
   "license": "MIT",
   "main": "lib/index.js",
   "private": false,

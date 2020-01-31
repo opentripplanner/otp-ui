@@ -53,7 +53,7 @@ function allExample() {
     select("Tracked Vehicle", trips, "9562512")
   );
 
-  const retVal = (
+  return (
     <BaseMap center={portland}>
       <VehicleLayer
         name="Real-Time Buses and Trains"
@@ -71,7 +71,6 @@ function allExample() {
       />
     </BaseMap>
   );
-  return retVal;
 }
 
 function routeExample() {
@@ -85,7 +84,7 @@ function routeExample() {
     select("Tracked Vehicle", trips, "9562512")
   );
 
-  const retVal = (
+  return (
     <BaseMap center={portland}>
       <VehicleLayer
         name="Real-Time Buses and Trains"
@@ -103,7 +102,6 @@ function routeExample() {
       />
     </BaseMap>
   );
-  return retVal;
 }
 
 function animatedExample() {
@@ -142,7 +140,8 @@ function animatedExample() {
     line,
     select("Tracked Vehicle", trips, "9562512")
   );
-  const retVal = (
+
+  return (
     <BaseMap center={portland}>
       <VehicleLayer
         name="Real-Time Buses and Trains"
@@ -153,11 +152,10 @@ function animatedExample() {
       />
     </BaseMap>
   );
-  return retVal;
 }
 
 function rtExample() {
-  const retVal = (
+  return (
     <BaseMap center={portland}>
       <Vehicles
         name="Real-Time Buses and Trains"
@@ -177,7 +175,6 @@ function rtExample() {
       />
     </BaseMap>
   );
-  return retVal;
 }
 
 storiesOf("Realtime VehicleLayer", module)

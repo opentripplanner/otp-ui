@@ -10,13 +10,13 @@ import VehicleGeometry from "./VehicleGeometry";
 import * as utils from "./utils";
 
 /**
- * Vehicles is the main component to fetch and display realtime transit vehicles on a map.  It is this
- * component that makes all the calls to various data services, and the sends that data as props to be
- * rendered by the sub-components of the vehicles package.
+ * Vehicles is the main component to fetch and display realtime transit vehicles on a map.  It is
+ * this component that makes all the calls to various data services, and the sends that data as
+ * props to be rendered by the sub-components of the vehicles package.
  *
- * NOTE: The backend calls for the vehicle and pattern geometries is based on GTFS and GTFS-RT data,
- * via the use of http://gtfsdb.com and associated services (e.g., implementations are not limited to
- * just TriMet / proprietary services)
+ * NOTE: The backend calls for the vehicle and pattern geometries are based on GTFS and GTFS-RT
+ * data, via the use of the OSS http://gtfsdb.com and associated services (e.g., implementations
+ * are not limited to any proprietary service)
  */
 class Vehicles extends MapLayer {
   state = {
