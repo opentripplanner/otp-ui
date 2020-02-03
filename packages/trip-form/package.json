@@ -5,8 +5,7 @@
   "author": "@binh-dam-ibigroup",
   "homepage": "https://github.com/opentripplanner/otp-ui/#readme",
   "license": "MIT",
-  "main": "index.js",
-  "module": "src/index.js",
+  "main": "lib/index.js",
   "private": false,
   "dependencies": {
     "@opentripplanner/core-utils": "^0.0.12",
