@@ -18,7 +18,11 @@ import {
 
 import * as Styled from "./styled";
 
-function Icon({ type }) {
+/**
+ * These icons are used to render common icons for user locations. These will
+ * only show up in applications that allow saving user locations.
+ */
+function UserLocationIcon({ type }) {
   switch (type) {
     case "briefcase":
       return <Briefcase size={12} />;
@@ -35,7 +39,7 @@ function Icon({ type }) {
   }
 }
 
-Icon.propTypes = {
+UserLocationIcon.propTypes = {
   type: PropTypes.string.isRequired
 };
 
@@ -87,7 +91,13 @@ export default class Endpoint extends Component {
   };
 
   render() {
-    const { location, locations, showUserSettings, type } = this.props;
+    const {
+      location,
+      locations,
+      MapMarkerIcon,
+      showUserSettings,
+      type
+    } = this.props;
     const position =
       location && location.lat && location.lon
         ? [location.lat, location.lon]
@@ -97,20 +107,7 @@ export default class Endpoint extends Component {
     const isWork = match && match.type === "work";
     const isHome = match && match.type === "home";
     const iconHtml = ReactDOMServer.renderToStaticMarkup(
-      <Styled.StackedIconContainer title={location.name}>
-        {type === "from" ? (
-          // From icon should have white circle background
-          <>
-            <Styled.StackedCircle size={24} />
-            <Styled.StackedLocationIcon size={24} type={type} />
-          </>
-        ) : (
-          <>
-            <Styled.StackedToIcon size={24} type="to" />
-            <Styled.ToIcon size={20} type={type} />
-          </>
-        )}
-      </Styled.StackedIconContainer>
+      <MapMarkerIcon location={location} type={type} />
     );
     const otherType = type === "from" ? "to" : "from";
     const icon = isWork ? "briefcase" : isHome ? "home" : "map-marker";
@@ -125,7 +122,7 @@ export default class Endpoint extends Component {
           <Popup>
             <div>
               <strong>
-                <Icon type={icon} /> {location.name}
+                <UserLocationIcon type={icon} /> {location.name}
               </strong>
               <div>
                 <Styled.Button
@@ -134,11 +131,11 @@ export default class Endpoint extends Component {
                 >
                   {isHome ? (
                     <span>
-                      <Icon type="times" /> Forget home
+                      <UserLocationIcon type="times" /> Forget home
                     </span>
                   ) : (
                     <span>
-                      <Icon type="home" /> Save as home
+                      <UserLocationIcon type="home" /> Save as home
                     </span>
                   )}
                 </Styled.Button>
@@ -150,23 +147,24 @@ export default class Endpoint extends Component {
                 >
                   {isWork ? (
                     <span>
-                      <Icon type="times" /> Forget work
+                      <UserLocationIcon type="times" /> Forget work
                     </span>
                   ) : (
                     <span>
-                      <Icon type="briefcase" /> Save as work
+                      <UserLocationIcon type="briefcase" /> Save as work
                     </span>
                   )}
                 </Styled.Button>
               </div>
               <div>
                 <Styled.Button onClick={this.clearLocation}>
-                  <Icon type="times" /> Remove as {type} location
+                  <UserLocationIcon type="times" /> Remove as {type} location
                 </Styled.Button>
               </div>
               <div>
                 <Styled.Button onClick={this.swapLocation}>
-                  <Icon type="refresh" /> Change to {otherType} location
+                  <UserLocationIcon type="refresh" /> Change to {otherType}{" "}
+                  location
                 </Styled.Button>
               </div>
             </div>
@@ -183,6 +181,7 @@ Endpoint.propTypes = {
   forgetPlace: PropTypes.func.isRequired,
   location: locationType.isRequired,
   locations: PropTypes.arrayOf(locationType).isRequired,
+  MapMarkerIcon: PropTypes.elementType.isRequired,
   rememberPlace: PropTypes.func.isRequired,
   setLocation: PropTypes.func.isRequired,
   showUserSettings: PropTypes.bool.isRequired,

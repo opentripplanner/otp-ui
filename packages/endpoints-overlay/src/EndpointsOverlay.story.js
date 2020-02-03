@@ -1,9 +1,11 @@
 import BaseMap from "@opentripplanner/base-map";
+import PropTypes from "prop-types";
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { withA11y } from "@storybook/addon-a11y";
 import { withInfo } from "@storybook/addon-info";
 import { storiesOf } from "@storybook/react";
+import { Cat, Dog } from "styled-icons/fa-solid";
 
 import EndpointsOverlay from ".";
 
@@ -32,6 +34,14 @@ const toLocation = {
 };
 const locations = [fromLocation, toLocation];
 
+function MapMarkerIcon({ type }) {
+  return type === "from" ? <Cat size={40} /> : <Dog size={40} />;
+}
+
+MapMarkerIcon.propTypes = {
+  type: PropTypes.string.isRequired
+};
+
 storiesOf("EndpointsOverlay", module)
   .addDecorator(withA11y)
   .addDecorator(withInfo)
@@ -55,6 +65,17 @@ storiesOf("EndpointsOverlay", module)
         rememberPlace={rememberPlace}
         setLocation={setLocation}
         showUserSettings
+        toLocation={toLocation}
+        visible
+      />
+    </BaseMap>
+  ))
+  .add("EndpointsOverlay with custom map markers", () => (
+    <BaseMap center={center} zoom={zoom}>
+      <EndpointsOverlay
+        fromLocation={fromLocation}
+        MapMarkerIcon={MapMarkerIcon}
+        setLocation={setLocation}
         toLocation={toLocation}
         visible
       />
