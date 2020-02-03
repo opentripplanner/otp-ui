@@ -15,7 +15,7 @@
 - trip-form: [fixes issue #46 ](https://github.com/opentripplanner/otp-ui/issues/46) no longer throwing exception on bike optimize drop-down
 - endpoints-overlay: [fixes issue #37](https://github.com/opentripplanner/otp-ui/issues/37) allow custom icons from/to on map
 - itinerary-body: [fixes issue #18 ](https://github.com/opentripplanner/otp-ui/issues/18) allows custom naming of route and other aspects of the itinerary
-- base-map: [fixes issue #8](https://github.com/opentripplanner/otp-ui/issues/8) map callbacks that tell a layer if it is displayed or not -- used to only fetching new data if a layer is 'on' the map
+- base-map: [fixes issue #16](https://github.com/opentripplanner/otp-ui/issues/16) map callbacks that tell a layer if it is displayed or not -- used to only fetching new data if a layer is 'on' the map
 - misc other fixes and tweaks...
 
 ## [0.0.12] - 2020-01-24
