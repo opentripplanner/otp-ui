@@ -3,6 +3,21 @@
 - [Components via Storybook](http://www.opentripplanner.org/otp-ui/?path=/story/locationicon--to-locationicon)
 - [npm packages](https://www.npmjs.com/org/opentripplanner)
 
+## [0.0.13] - 2020-02-03
+
+### Added Components
+
+- [transit-vehicle-overlay](http://www.opentripplanner.org/otp-ui/?path=/story/realtime-vehiclelayer--real-time-vehicles-layer): add Real-time Transit Vehicle overlay
+
+### Changes
+
+- from-to-location-picker: [fixes issue #54 ](https://github.com/opentripplanner/otp-ui/issues/54) get rid of 'module' enteries in package.json
+- trip-form: [fixes issue #46 ](https://github.com/opentripplanner/otp-ui/issues/46) no longer throwing exception on bike optimize drop-down
+- endpoints-overlay: [fixes issue #37](https://github.com/opentripplanner/otp-ui/issues/37) allow custom icons from/to on map
+- itinerary-body: [fixes issue #18 ](https://github.com/opentripplanner/otp-ui/issues/18) allows custom naming of route and other aspects of the itinerary
+- base-map: [fixes issue #8](https://github.com/opentripplanner/otp-ui/issues/8) map callbacks that tell a layer if it is displayed or not -- used to only fetching new data if a layer is 'on' the map
+- misc other fixes and tweaks...
+
 ## [0.0.12] - 2020-01-24
 
 ### Added Components
