@@ -209,9 +209,11 @@ export function planParamsToQuery(params, config) {
       case "time":
         query.time = params.time || getCurrentTime(config);
         break;
-      default:
-        if (!Number.isNaN(params[key])) query[key] = parseFloat(params[key]);
-        else query[key] = params[key];
+      default: {
+        const maybeNumber = parseFloat(params[key]);
+        query[key] = Number.isNaN(maybeNumber) ? params[key] : maybeNumber;
+        break;
+      }
     }
   });
   return query;
