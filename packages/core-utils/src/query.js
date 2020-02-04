@@ -209,9 +209,17 @@ export function planParamsToQuery(params, config) {
       case "time":
         query.time = params.time || getCurrentTime(config);
         break;
-      default:
-        if (!Number.isNaN(params[key])) query[key] = parseFloat(params[key]);
-        else query[key] = params[key];
+      default: {
+        const maybeNumber = Number(params[key]);
+        // If the param value is an empty string literal and is not a number,
+        // use string value. Else, use parsed number value.
+        // See https://github.com/opentripplanner/otp-ui/issues/50
+        query[key] =
+          params[key] === "" || Number.isNaN(maybeNumber)
+            ? params[key]
+            : maybeNumber;
+        break;
+      }
     }
   });
   return query;
