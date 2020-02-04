@@ -2,6 +2,7 @@
 
 exports[`query planParamsToQuery should parse a depart at query 1`] = `
 Object {
+  "bannedRoutes": "897ABC",
   "companies": "",
   "date": "2019-10-31",
   "departArrive": "DEPART",
