@@ -3,6 +3,12 @@
 - [Components via Storybook](http://www.opentripplanner.org/otp-ui/?path=/story/locationicon--to-locationicon)
 - [npm packages](https://www.npmjs.com/org/opentripplanner)
 
+## [0.0.14] - 2020-02-04
+
+### Changes
+
+- core-utils: [fixes issue #50 ](https://github.com/opentripplanner/otp-ui/issues/50) fix nan bug on url params
+
 ## [0.0.13] - 2020-02-03
 
 ### Added Components
