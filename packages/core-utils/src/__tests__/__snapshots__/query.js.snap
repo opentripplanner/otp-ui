@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`query planParamsToQuery should parse a depart at query 1`] = `
+Object {
+  "companies": "",
+  "date": "2019-10-31",
+  "departArrive": "DEPART",
+  "from": Object {
+    "lat": 45.517373,
+    "lon": -122.675601,
+    "name": "Guide Dogs for the Blind, Portland, OR, USA",
+  },
+  "ignoreRealtimeUpdates": "true",
+  "maxWalkDistance": 1207,
+  "mode": "BUS,TRAM,RAIL,GONDOLA,WALK",
+  "optimize": "QUICK",
+  "showIntermediateStops": "true",
+  "time": "17:45",
+  "to": Object {
+    "lat": 45.519015,
+    "lon": -122.679321,
+    "name": "Weather Machine, Portland, OR, USA",
+  },
+  "ui_activeItinerary": 0,
+  "ui_activeSearch": "irc7h4rb8",
+  "walkSpeed": 1.34,
+}
+`;
