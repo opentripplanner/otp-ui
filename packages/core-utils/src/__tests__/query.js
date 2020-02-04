@@ -6,6 +6,7 @@ describe("query", () => {
       expect(
         planParamsToQuery({
           arriveBy: "false",
+          bannedRoutes: "897ABC",
           companies: "",
           date: "2019-10-31",
           fromPlace:
