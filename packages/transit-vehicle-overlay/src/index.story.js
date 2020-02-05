@@ -163,7 +163,6 @@ function rtExample() {
         vehicleQuery={text("route numbers / all:", "routes/all?or=routes/90,100,190,200,290")}
         panOffsetX={text("panOffsetX:", "shift center point left or right X pixels")}
         panOffsetY={text("panOffsetY:", "shift center point up or down Y pixels")}
-        refreshDelay={text("refreshDelay:", "number of seconds between fetches")}
         color={color("tracked color:", "#ece90d")}
         recenterMap={boolean("follow vehicle:", true)}
         hasPopup={boolean(
