@@ -160,11 +160,11 @@ function rtExample() {
       <Vehicles
         name="Real-Time Buses and Trains"
         tracked={text("vehicle id:", "vehicle or trip id here, ala 3912")}
-        vehicleQuery={text(
-          "route numbers or all:",
-          "routes/all?could_be=routes/90,100,190,200,290"
-        )}
-        color={color("tracked color:", "#81EC0B")}
+        vehicleQuery={text("route numbers / all:", "routes/all?or=routes/90,100,190,200,290")}
+        panOffsetX={text("panOffsetX:", "shift center point left or right X pixels")}
+        panOffsetY={text("panOffsetY:", "shift center point up or down Y pixels")}
+        refreshDelay={text("refreshDelay:", "number of seconds between fetches")}
+        color={color("tracked color:", "#ece90d")}
         recenterMap={boolean("follow vehicle:", true)}
         hasPopup={boolean(
           "use marker popups -- note: edit story to 'false' and refresh:",

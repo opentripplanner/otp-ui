@@ -91,7 +91,8 @@ class Vehicles extends MapLayer {
     if (this.props.recenterMap && this.state.trackedVehicle) {
       const v = this.state.trackedVehicle;
       const ll = [v.lat, v.lon];
-      this.getLeafletContext().map.panTo(ll);
+      const map = this.getLeafletContext().map;
+      map.panToOffset(ll, this.props.panOffsetX, this.props.panOffsetY);
     }
   };
 
@@ -240,6 +241,9 @@ Vehicles.defaultProps = {
 
   tracked: null,
   recenterMap: false,
+  panOffsetX: 0,
+  panOffsetY: 0,
+
   hasTooltip: true,
   hasPopup: true
 };
@@ -254,6 +258,8 @@ Vehicles.propTypes = {
   refreshDelay: PropTypes.number,
   tracked: PropTypes.string,
   recenterMap: PropTypes.bool,
+  panOffsetX: PropTypes.number,
+  panOffsetY: PropTypes.number,
   hasTooltip: PropTypes.bool,
   hasPopup: PropTypes.bool
 };
