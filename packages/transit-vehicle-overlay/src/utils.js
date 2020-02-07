@@ -1,7 +1,6 @@
 import polyline from "@mapbox/polyline";
 import L from "leaflet";
 
-
 /**
  * panToOffset will allow you to pan the map and adjust for something like a floating
  * left nav bar, or a page header with an offset center
@@ -15,10 +14,13 @@ import L from "leaflet";
  * @param options: pan options https://leafletjs.com/reference.html#pan-options
  * @return return value from a call to https://leafletjs.com/reference.html#map-panto
  */
-L.Map.prototype.panToOffset = function (latlng, offsetX, offsetY, options) {
-  const x = this.latLngToContainerPoint(latlng).x - (parseInt(offsetX) || 0);
-  const y = this.latLngToContainerPoint(latlng).y - (parseInt(offsetY) || 0);
+L.Map.prototype.panToOffset = function(latlng, offsetX, offsetY, options) {
+  const x =
+    this.latLngToContainerPoint(latlng).x - (parseInt(offsetX, 10) || 0);
+  const y =
+    this.latLngToContainerPoint(latlng).y - (parseInt(offsetY, 10) || 0);
   const point = this.containerPointToLatLng([x, y]);
+  /* eslint-disable-next-line no-underscore-dangle */
   return this.setView(point, this._zoom, { pan: options });
 };
 
@@ -46,7 +48,7 @@ export function getZoom(leaflet, defZoom = 15) {
   try {
     retVal = leaflet.map.getZoom();
   } catch (e) {
-    console.log(e);
+    console.error(e);
   }
   return retVal;
 }
@@ -117,7 +119,7 @@ export function findVehicleById(vehicleList, queryId, defVal = null) {
       });
     }
   } catch (e) {
-    console.log(e);
+    console.error(e);
   }
   return retVal;
 }
@@ -129,21 +131,12 @@ export function findVehicleById(vehicleList, queryId, defVal = null) {
  * @returns boolean
  */
 export function isTracked(vehicleA, vehicleB) {
-  let retVal = false;
-
-  try {
-    if (vehicleA && vehicleB) {
-      if (
-        vehicleA.vehicleId === vehicleB.vehicleId ||
-        vehicleA.tripId === vehicleB.tripId
-      ) {
-        retVal = true;
-      }
-    }
-  } catch (e) {
-    console.log(e);
-  }
-  return retVal;
+  return (
+    vehicleA &&
+    vehicleB &&
+    (vehicleA.vehicleId === vehicleB.vehicleId ||
+      vehicleA.tripId === vehicleB.tripId)
+  );
 }
 
 /** build a url from sub parts */
@@ -177,26 +170,23 @@ export function fetchVehicles(setData, trackedId, baseUrl, query) {
   fetch(url)
     .then(res => {
       if (!res.ok) {
-        console.log(res.statusText);
+        console.error(res.statusText);
         throw Error(res.statusText);
       }
       return res;
     })
-    .then(res => {
-      const retVal = res.json();
-      return retVal;
-    })
+    .then(res => res.json())
     .then(vehicleList => {
       if (vehicleList && vehicleList.length > 0) {
         // step 1: set the vehicle list (triggers vehicle points redraw)
-        console.log(`updating state with ${vehicleList.length} vehicles`);
+        // console.log(`updating state with ${vehicleList.length} vehicles`);
         setData(vehicleList, trackedId);
       } else {
-        console.log("get vehicle data is suspect");
+        console.error("get vehicle data is suspect");
       }
     })
     .catch(error => {
-      console.log(`VEH fetch() error: ${error} for ${url}`);
+      console.error(`VEH fetch() error: ${error} for ${url}`);
     });
 }
 
@@ -220,22 +210,15 @@ export function fetchVehiclePattern(
   if (!tiUrl) tiUrl = "https://newplanner.trimet.org/ws/ti/v0/index";
   const url = `${tiUrl}/patterns/${patternId}/geometry${geojson}`;
 
-  console.log(`Calling GEO URL: ${url}`);
+  // console.log(`Calling GEO URL: ${url}`);
   fetch(url)
-    .then(res => {
-      const retVal = res.json();
-      return retVal;
-    })
+    .then(res => res.json())
     .then(json => {
-      if (geojson.indexOf("geojson") >= 0) {
-        json = reverseGeojsonPointsInGeom(json);
-      } else {
-        json = decodePolyline(json);
-      }
-      setPatternData(patternId, json);
+      const points = reverseGeojsonPointsInGeom(json);
+      setPatternData(patternId, points);
     })
     .catch(error => {
-      console.log(`VEH GEOMETRY fetch() error: ${error}`);
+      console.error(`VEH GEOMETRY fetch() error: ${error}`);
     });
 }
 

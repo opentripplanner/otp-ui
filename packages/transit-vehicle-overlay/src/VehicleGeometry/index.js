@@ -1,8 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { FeatureGroup } from "react-leaflet";
-import { leafletPathType } from "@opentripplanner/core-utils/lib/types";
-import { vehicleType } from "../types";
+import {
+  leafletPathType,
+  transitVehicleType
+} from "@opentripplanner/core-utils/lib/types";
+
 import * as utils from "./utils";
 import { setColor } from "../utils";
 
@@ -11,9 +14,7 @@ import { setColor } from "../utils";
  * geometry showing the travel pattern of a vehicle
  */
 function VehicleGeometry(props) {
-  const { trackedVehicle } = props;
-  const { pattern } = props;
-  const { lowlight, color } = props;
+  const { trackedVehicle, pattern, lowlight, color } = props;
   let { highlight } = props;
   if (color) {
     highlight = setColor(color, highlight);
@@ -51,7 +52,7 @@ VehicleGeometry.defaultProps = {
 };
 
 VehicleGeometry.propTypes = {
-  trackedVehicle: vehicleType,
+  trackedVehicle: transitVehicleType,
   pattern: PropTypes.shape({
     id: PropTypes.string.isRequired,
     data: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired

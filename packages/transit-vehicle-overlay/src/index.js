@@ -140,8 +140,7 @@ class Vehicles extends MapLayer {
           const patternId = `${vehicle.agencyId}:${vehicle.shapeId}`;
           if (!this.isPatternCached(patternId)) {
             // step 5: need to fetch the line (route pattern / shape) geometry
-            console.log(">>>>>>>>>>>>>>>>>>");
-            console.log(patternId);
+            // console.log(">>>>>>>>>>>>>>>>>>" + patternId);
             utils.fetchVehiclePattern(
               this.setTrackedGeomData,
               patternId,
@@ -149,7 +148,7 @@ class Vehicles extends MapLayer {
             );
           }
         } catch (e) {
-          console.log(e);
+          console.error(e);
         }
       }
     }

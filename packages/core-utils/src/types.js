@@ -50,6 +50,27 @@ export const languageConfigType = PropTypes.shape({
   stopViewer: PropTypes.string
 });
 
+/** describes the objects from the real-time vehicle service */
+export const transitVehicleType = PropTypes.shape({
+  routeShortName: PropTypes.string,
+  routeLongName: PropTypes.string,
+  routeType: PropTypes.string,
+
+  status: PropTypes.string,
+  reportDate: PropTypes.string,
+  seconds: PropTypes.number,
+
+  stopSequence: PropTypes.number,
+  stopId: PropTypes.string,
+  vehicleId: PropTypes.string,
+  tripId: PropTypes.string,
+  blockId: PropTypes.string,
+
+  lat: PropTypes.number,
+  lon: PropTypes.number,
+  heading: PropTypes.number
+});
+
 export const vehicleRentalMapOverlaySymbolsType = PropTypes.arrayOf(
   PropTypes.shape({
     dockStrokeColor: PropTypes.string,

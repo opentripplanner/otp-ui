@@ -1,18 +1,16 @@
 import React from "react";
 import { Popup } from "react-leaflet";
 import PropTypes from "prop-types";
+import { transitVehicleType } from "@opentripplanner/core-utils/lib/types";
 
 import VehicleTracker from "./tracker";
-import { vehicleType } from "../types";
 import { formatTime } from "../utils";
 
 /**
  * view component for vehicle marker popup
  */
 function VehiclePopup(props) {
-  const { vehicle } = props;
-  const { tracked } = props;
-  const { setTracked } = props;
+  const { vehicle, tracked, setTracked } = props;
 
   let status = "unknown";
   if (vehicle.status === "IN_TRANSIT_TO") {
@@ -74,7 +72,7 @@ VehiclePopup.defaultProps = {
 };
 
 VehiclePopup.propTypes = {
-  vehicle: vehicleType,
+  vehicle: transitVehicleType,
   tracked: PropTypes.bool,
   setTracked: PropTypes.func.isRequired
 };
