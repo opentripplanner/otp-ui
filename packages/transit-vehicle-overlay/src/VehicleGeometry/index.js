@@ -16,12 +16,12 @@ import { setColor } from "../utils";
 function VehicleGeometry(props) {
   const { trackedVehicle, pattern, lowlight, color } = props;
   let { highlight } = props;
-  if (color) {
-    highlight = setColor(color, highlight);
-  }
 
   let retVal = <FeatureGroup />;
   if (trackedVehicle && pattern && pattern.data) {
+    if (color) {
+      highlight = setColor(color, highlight);
+    }
     const pt = utils.findPointOnLine(trackedVehicle, pattern.data);
     const geom = utils.splitGeometry(pattern.data, pt, pattern.id);
     const segments = utils.makeSplitLine(geom, highlight, lowlight);

@@ -159,7 +159,7 @@ function rtExample() {
     <BaseMap center={portland}>
       <Vehicles
         name="Real-Time Buses and Trains"
-        tracked={text("vehicle id:", "vehicle or trip id here, ala 3912")}
+        tracked={text("block -or- trip id:", "block or trip id here to track a vehicle, ala 2002")}
         vehicleQuery={text(
           "route numbers / all:",
           "routes/all?or=routes/90,100,190,200,290"

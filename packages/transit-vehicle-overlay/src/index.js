@@ -105,7 +105,11 @@ class Vehicles extends MapLayer {
   getTrackedVehicleId = () => {
     let retVal = null;
     const t = this.state.trackedVehicle;
-    if (t && t.vehicleId) retVal = t.vehicleId;
+    if (t) {
+      if (t.blockId) retVal = t.blockId;
+      else if (t.tripId) retVal = t.tripId;
+      else retVal = t.vehicleId;
+    }
     return retVal;
   };
 

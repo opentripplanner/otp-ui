@@ -111,7 +111,7 @@ export function findVehicleById(vehicleList, queryId, defVal = null) {
   try {
     if (vehicleList && queryId) {
       vehicleList.some(v => {
-        if (queryId === v.vehicleId || queryId === v.tripId) {
+        if (queryId === v.blockId || queryId === v.tripId) {
           retVal = v;
           return true;
         }
@@ -134,7 +134,7 @@ export function isTracked(vehicleA, vehicleB) {
   return (
     vehicleA &&
     vehicleB &&
-    (vehicleA.vehicleId === vehicleB.vehicleId ||
+    (vehicleA.blockId === vehicleB.blockId ||
       vehicleA.tripId === vehicleB.tripId)
   );
 }

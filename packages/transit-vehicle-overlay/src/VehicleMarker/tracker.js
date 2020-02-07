@@ -13,7 +13,7 @@ function VehicleTracker(props) {
     if (tracked) {
       setTracked(null, true);
     } else {
-      setTracked(vehicle.vehicleId || vehicle.tripId);
+      setTracked(vehicle.blockId || vehicle.tripId);
     }
   }
 
