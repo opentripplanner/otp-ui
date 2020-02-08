@@ -1,33 +1,5 @@
-import polyline from "@mapbox/polyline";
-import L from "leaflet";
-
-/**
- * panToOffset will allow you to pan the map and adjust for something like a floating
- * left nav bar, or a page header with an offset center
- *
- * @note adapted from Peter's code: https://gist.github.com/missinglink/7620340
- *
- * @param latlng
- * @param offsetX & offsetY: defaults to [0, 0] ([X, Y] pixel offsets center) a positive x
- * offset to shift the center to the right, and a positive y offset to shift the center to the
- * bottom. Negatives will move to the center point left and top.
- * @param options: pan options https://leafletjs.com/reference.html#pan-options
- * @return return value from a call to https://leafletjs.com/reference.html#map-panto
- */
-L.Map.prototype.panToOffset = function(latlng, offsetX, offsetY, options) {
-  const x =
-    this.latLngToContainerPoint(latlng).x - (parseInt(offsetX, 10) || 0);
-  const y =
-    this.latLngToContainerPoint(latlng).y - (parseInt(offsetY, 10) || 0);
-  const point = this.containerPointToLatLng([x, y]);
-  /* eslint-disable-next-line no-underscore-dangle */
-  return this.setView(point, this._zoom, { pan: options });
-};
-
-/** deep copy */
-export function deep(obj) {
-  return JSON.parse(JSON.stringify(obj));
-}
+import cloneDeep from "lodash.clonedeep";
+if (typeof (fetch) === 'undefined') require('isomorphic-fetch');
 
 /**
  * will take an input object (e.g., probably a defaultProp representing a leaflet style),
@@ -37,7 +9,7 @@ export function deep(obj) {
  * @return deep copied object with color set
  */
 export function setColor(color, obj) {
-  const retVal = deep(obj);
+  const retVal = cloneDeep(obj);
   retVal.color = color;
   return retVal;
 }
@@ -62,17 +34,6 @@ export function checkHeading(heading) {
 }
 
 /**
- * Checks if a parameter is actually a function.
- * @param {*} fn The function to call.
- * @returns fn if fn is a function, or a dummy function.
- * TODO: copied from map ... should be in core-utils?
- */
-export function callIfValid(fn) {
-  if (typeof fn === "function") return fn;
-  return () => {};
-}
-
-/**
  * geojson uses [lon,lat] (e.g., [X, Y]) in representing coordinates
  * this utility function reverses the point order to be [lat, lon] (or [Y, X])
  *
@@ -85,19 +46,6 @@ export function reverseGeojsonPointsInGeom(geom) {
     revPoints.push(c);
   }
   return revPoints;
-}
-
-/**
- * OTP encodes polylines - this method will decode such geometries
- * @param geom
- * @return decoded polyline
- */
-export function decodePolyline(geom) {
-  let retVal = geom;
-  if (geom && geom.points) {
-    retVal = polyline.decode(geom.points);
-  }
-  return retVal;
 }
 
 /**

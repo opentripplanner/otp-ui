@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { MapLayer, FeatureGroup, withLeaflet } from "react-leaflet";
 
 import { leafletPathType } from "@opentripplanner/core-utils/lib/types";
+import callIfValid from "@opentripplanner/base-map/lib/util";
 import { throttle } from "throttle-debounce";
 
 import VehicleLayer from "./VehicleLayer";
@@ -34,7 +35,7 @@ class Vehicles extends MapLayer {
   componentDidMount() {
     // register this layer with base-map, so it will call the onOverlayX and onViewportZ methods
     const { registerOverlay } = this.props;
-    utils.callIfValid(registerOverlay)(this);
+    callIfValid(registerOverlay)(this);
 
     if (this.props.visible) {
       this.startFetchingVehicles();

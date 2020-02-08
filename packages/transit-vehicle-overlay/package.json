@@ -8,10 +8,11 @@
   "main": "lib/index.js",
   "private": false,
   "dependencies": {
-    "@mapbox/polyline": "^1.1.0",
     "@opentripplanner/base-map": "^0.0.14",
     "@opentripplanner/core-utils": "^0.0.14",
     "@turf/nearest-point-on-line": "^6.0.1",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash.clonedeep": "^4.5.0",
     "leaflet-rotatedmarker": "^0.2.0",
     "throttle-debounce": "^2.1.0"
   },
