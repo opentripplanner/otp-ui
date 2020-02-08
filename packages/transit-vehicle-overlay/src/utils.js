@@ -1,5 +1,6 @@
 import cloneDeep from "lodash.clonedeep";
-if (typeof (fetch) === 'undefined') require('isomorphic-fetch');
+
+if (typeof fetch === "undefined") require("isomorphic-fetch"); // eslint-disable-line
 
 /**
  * will take an input object (e.g., probably a defaultProp representing a leaflet style),

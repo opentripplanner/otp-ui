@@ -68,8 +68,6 @@ L.Evented.include({
   }
 });
 
-
-
 /**
  * The base OpenTripPlanner map on which everything else is rendered.
  */
