@@ -107,7 +107,6 @@ export function buildUrl(base, query) {
  */
 export function fetchVehicles(setData, trackedId, baseUrl, query) {
   // build url
-  baseUrl = baseUrl || "https://maps.trimet.org/gtfs/rt/vehicles/";
   query = query || "routes/all";
   let url = buildUrl(baseUrl, query);
 
@@ -142,22 +141,12 @@ export function fetchVehicles(setData, trackedId, baseUrl, query) {
 /**
  * fetch line geometry for a given pattern
  *
- * https://newplanner.trimet.org/ws/ti/v0/index/patterns/TRIMET:433758/geometry/geojson
- * https://newplanner.trimet.org/ws/ti/v0/index/patterns/{agency}:{pattern}/geometry/geojson
- *
  * @param setPatternData
  * @param patternId
  * @param tiUrl
- * @param geojson
  */
-export function fetchVehiclePattern(
-  setPatternData,
-  patternId,
-  tiUrl,
-  geojson = "/geojson"
-) {
-  if (!tiUrl) tiUrl = "https://newplanner.trimet.org/ws/ti/v0/index";
-  const url = `${tiUrl}/patterns/${patternId}/geometry${geojson}`;
+export function fetchVehiclePattern(setPatternData, patternId, tiUrl) {
+  const url = `${tiUrl}/patterns/${patternId}/geometry/geojson`;
 
   // console.log(`Calling GEO URL: ${url}`);
   fetch(url)
@@ -188,7 +177,7 @@ export function checkRefreshInteval(inverval, defInterval = 10000) {
 /**
  * will build up a gtfsdb url for rt vehicles
  * certain rules exist around the various filters
- * url:
+ * example url to vehicle service:
  *   https://maps.trimet.org/gtfs/rt/vehicles/routes/all
  */
 export function makeWsUrl(

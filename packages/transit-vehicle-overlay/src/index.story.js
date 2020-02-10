@@ -33,6 +33,9 @@ const v = [v1, v2, v3];
 const portland = [45.523, -122.671];
 const setTracked = action("setTracked");
 
+const geometryUrl = "https://newplanner.trimet.org/ws/ti/v0/index";
+const vehicleUrl = "https://maps.trimet.org/gtfs/rt/vehicles/";
+
 const trips = {
   9563136: "9563136",
   9563137: "9563137",
@@ -159,6 +162,8 @@ function rtExample() {
     <BaseMap center={portland}>
       <Vehicles
         name="Real-Time Buses and Trains"
+        geometryUrl={geometryUrl}
+        vehicleUrl={vehicleUrl}
         tracked={text(
           "block -or- trip id:",
           "block or trip id here to track a vehicle, ala 2002"

@@ -14,12 +14,12 @@ function VehiclePopup(props) {
 
   let status = "unknown";
   if (vehicle.status === "IN_TRANSIT_TO") {
-    status = "en-route to stop ";
+    status = `en-route to stop #${vehicle.stopId}`;
   } else if (vehicle.status === "STOPPED_AT") {
     if (vehicle.stopSequence === 1) {
-      status = "beginning route from stop ";
+      status = `beginning route from stop #${vehicle.stopId}`;
     } else {
-      status = "stopped at ";
+      status = `at stop #${vehicle.stopId}`;
     }
   }
 
@@ -29,8 +29,6 @@ function VehiclePopup(props) {
   } else {
     vid = `Vehicle: ${vehicle.vehicleId}`;
   }
-
-  const stopLink = `https://trimet.org/ride/stop.html?stop_id=${vehicle.stopId}`;
 
   return (
     <Popup>
@@ -43,12 +41,7 @@ function VehiclePopup(props) {
         <br />
         <span>Report date: {vehicle.reportDate}</span>
         <br />
-        <span>
-          Status: {status}{" "}
-          <a target="#" href={stopLink}>
-            {vehicle.stopId}
-          </a>
-        </span>
+        <span>Status: {status} </span>
         <br />
         <span>
           Trip: {vehicle.tripId}, Block: {vehicle.blockId}

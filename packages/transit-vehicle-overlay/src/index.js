@@ -238,8 +238,6 @@ Vehicles.defaultProps = {
   lowlight: VehicleGeometry.defaultProps.lowlight,
   color: null,
 
-  geometryUrl: "https://newplanner.trimet.org/ws/ti/v0/index",
-  vehicleUrl: "https://maps.trimet.org/gtfs/rt/vehicles/",
   vehicleQuery: "routes/all",
   refreshDelay: 5000,
 
@@ -256,8 +254,8 @@ Vehicles.propTypes = {
   highlight: leafletPathType,
   lowlight: leafletPathType,
   color: PropTypes.string,
-  geometryUrl: PropTypes.string,
-  vehicleUrl: PropTypes.string,
+  geometryUrl: PropTypes.string.isRequired,
+  vehicleUrl: PropTypes.string.isRequired,
   vehicleQuery: PropTypes.string,
   refreshDelay: PropTypes.number,
   tracked: PropTypes.string,
