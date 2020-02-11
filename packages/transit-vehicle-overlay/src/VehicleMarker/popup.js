@@ -2,9 +2,10 @@ import React from "react";
 import { Popup } from "react-leaflet";
 import PropTypes from "prop-types";
 import { transitVehicleType } from "@opentripplanner/core-utils/lib/types";
+import { formatDurationWithSeconds } from "@opentripplanner/core-utils/lib/time";
 
+import { PopupStyle } from "./styled";
 import VehicleTracker from "./tracker";
-import { formatTime } from "../utils";
 
 /**
  * view component for vehicle marker popup
@@ -17,7 +18,7 @@ function VehiclePopup(props) {
     status = `en-route to stop #${vehicle.stopId}`;
   } else if (vehicle.status === "STOPPED_AT") {
     if (vehicle.stopSequence === 1) {
-      status = `beginning route from stop #${vehicle.stopId}`;
+      status = `start route at stop #${vehicle.stopId}`;
     } else {
       status = `at stop #${vehicle.stopId}`;
     }
@@ -32,29 +33,23 @@ function VehiclePopup(props) {
 
   return (
     <Popup>
-      <div>
-        <span>
-          <b>{vehicle.routeLongName}</b>
-        </span>
-        <br />
-        <span>Last reported: {formatTime(vehicle.seconds)}</span>
-        <br />
-        <span>Report date: {vehicle.reportDate}</span>
-        <br />
-        <span>Status: {status} </span>
-        <br />
-        <span>
+      <PopupStyle>
+        <PopupStyle.Title>{vehicle.routeLongName}</PopupStyle.Title>
+        <PopupStyle.Span>
+          Last seen: {formatDurationWithSeconds(vehicle.seconds)} ago
+        </PopupStyle.Span>
+        <PopupStyle.Span>Date: {vehicle.reportDate}</PopupStyle.Span>
+        <PopupStyle.Span>Status: {status} </PopupStyle.Span>
+        <PopupStyle.Span>
           Trip: {vehicle.tripId}, Block: {vehicle.blockId}
-        </span>
-        <br />
-        <span>{vid}</span> <br />
+        </PopupStyle.Span>
+        <PopupStyle.Span>{vid}</PopupStyle.Span>
         <VehicleTracker
           vehicle={vehicle}
           tracked={tracked}
           setTracked={setTracked}
         />
-        <br />
-      </div>
+      </PopupStyle>
     </Popup>
   );
 }

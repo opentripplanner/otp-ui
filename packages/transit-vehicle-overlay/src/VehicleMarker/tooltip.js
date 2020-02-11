@@ -1,7 +1,8 @@
 import React from "react";
 import { Tooltip } from "react-leaflet";
 import { transitVehicleType } from "@opentripplanner/core-utils/lib/types";
-import { formatTime } from "../utils";
+import { formatDurationWithSeconds } from "@opentripplanner/core-utils/lib/time";
+import { TooltipStyle } from "./styled";
 
 /**
  * presentational component for vehicle marker tooltip
@@ -16,9 +17,10 @@ function VehicleToolTip(props) {
 
   return (
     <Tooltip>
-      <span>
-        <b>{rsn}</b> {formatTime(vehicle.seconds)}
-      </span>
+      <TooltipStyle>
+        <TooltipStyle.Title>{rsn} </TooltipStyle.Title>
+        {formatDurationWithSeconds(vehicle.seconds)} ago
+      </TooltipStyle>
     </Tooltip>
   );
 }

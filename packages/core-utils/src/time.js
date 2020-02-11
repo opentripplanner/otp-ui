@@ -43,6 +43,21 @@ export function formatDuration(seconds) {
 }
 
 /**
+ * Formats an elapsed time in seconds, minutes, hours duration for display in narrative
+ * TODO: internationalization
+ * @param {number} seconds duration in seconds
+ * @returns {string} formatted text representation
+ */
+export function formatDurationWithSeconds(seconds) {
+  const dur = moment.duration(seconds, "seconds");
+  let text = "";
+  if (dur.hours() > 0) text += `${dur.hours()} hr, `;
+  if (dur.minutes() > 0) text += `${dur.minutes()} min, `;
+  text += `${dur.seconds()} sec`;
+  return text;
+}
+
+/**
  * Formats a time value for display in narrative
  * TODO: internationalization/timezone
  * @param {number} ms epoch time value in milliseconds

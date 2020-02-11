@@ -30,7 +30,7 @@ class Vehicles extends MapLayer {
   // class variables
   fetchVehicleInterval = null;
 
-  isTrackerUpdated = false;
+  isTrackerBeingUpdated = false;
 
   componentDidMount() {
     // register this layer with base-map, so it will call the onOverlayX and onViewportZ methods
@@ -53,7 +53,6 @@ class Vehicles extends MapLayer {
   componentDidUpdate(prevProps) {
     // set tracked vehicle via a prop change
     if (prevProps.tracked !== this.props.tracked) {
-      this.isTrackerUpdated = true;
       this.setTrackedVehicle(this.props.tracked, true);
     }
   }
@@ -94,6 +93,7 @@ class Vehicles extends MapLayer {
       const ll = [v.lat, v.lon];
       const map = this.getLeafletContext().map;
       map.panToOffset(ll, this.props.panOffsetX, this.props.panOffsetY);
+      map.panToOffset(ll, this.props.panOffsetX, this.props.panOffsetY);
     }
   };
 
@@ -115,31 +115,29 @@ class Vehicles extends MapLayer {
   };
 
   /** callback for the vehicle fetch utility to send the list of vehicles to */
-  setVehicleData = (vehicleList, trackedId) => {
+  setVehicleData = vehicleList => {
     this.setState({ vehicleData: vehicleList });
-
-    // handle a mid-vehicle data update, where the tracker is also updated
-    if (this.isTrackerUpdated) {
-      this.isTrackerUpdated = false;
-    } else {
-      this.setTrackedVehicle(trackedId, true);
-    }
+    if (!this.isTrackerBeingUpdated)
+      this.setTrackedVehicle(this.getTrackedVehicleId(), true);
   };
 
   setTrackedVehicle = (trackedId, clearFirst) => {
-    // step 0: clear out the old tracked vehicle
+    // step 0: method semaphore prevents the setInterval / data-fetch stomping on existing process
+    this.isTrackerBeingUpdated = true;
+
+    // step 1: optionally clear the tracker state
     if (clearFirst) this.setState({ trackedVehicle: null });
 
-    // step 1: find the tracked vehicle record via an id (trip or vehicle id)
+    // step 2: find the tracked vehicle record via an id (trip or vehicle id)
     const vehicle = utils.findVehicleById(this.state.vehicleData, trackedId);
     if (vehicle) {
-      // step 2: set tracked vehicle state
+      // step 3: set tracked vehicle state
       this.setState({ trackedVehicle: vehicle });
 
-      // step 3: recenter map
+      // step 4: recenter map
       this.recenterMap();
 
-      // step 4: find the line geometry for the tracked vehicle
+      // step 5: find the line geometry for the tracked vehicle
       if (vehicle.shapeId) {
         try {
           const patternId = `${vehicle.agencyId}:${vehicle.shapeId}`;
@@ -157,6 +155,9 @@ class Vehicles extends MapLayer {
         }
       }
     }
+
+    // step 6: clear the method semaphore
+    this.isTrackerBeingUpdated = false;
   };
 
   /** callback function where the tracked geometry stored */
@@ -181,7 +182,6 @@ class Vehicles extends MapLayer {
     if (this.fetchVehicleInterval === null) {
       utils.fetchVehicles(
         this.setVehicleData,
-        this.props.tracked,
         this.props.vehicleUrl,
         this.props.vehicleQuery
       );
@@ -192,7 +192,6 @@ class Vehicles extends MapLayer {
       this.fetchVehicleInterval = setInterval(() => {
         utils.fetchVehicles(
           this.setVehicleData,
-          this.getTrackedVehicleId(),
           this.props.vehicleUrl,
           this.props.vehicleQuery
         );
@@ -251,11 +250,12 @@ Vehicles.defaultProps = {
 };
 
 Vehicles.propTypes = {
+  geometryUrl: PropTypes.string.isRequired,
+  vehicleUrl: PropTypes.string.isRequired,
+
   highlight: leafletPathType,
   lowlight: leafletPathType,
   color: PropTypes.string,
-  geometryUrl: PropTypes.string.isRequired,
-  vehicleUrl: PropTypes.string.isRequired,
   vehicleQuery: PropTypes.string,
   refreshDelay: PropTypes.number,
   tracked: PropTypes.string,

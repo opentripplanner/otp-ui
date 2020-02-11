@@ -1,5 +1,5 @@
 {
-  "name": "@ott_test/transit-vehicle-overlay",
+  "name": "@opentripplanner/transit-vehicle-overlay",
   "version": "0.0.14",
   "description": "Realtime Transit Vehicles Component",
   "author": "Frank Purcell",

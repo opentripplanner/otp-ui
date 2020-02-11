@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { transitVehicleType } from "@opentripplanner/core-utils/lib/types";
-import { Button } from "./styled";
+import { PopupStyle } from "./styled";
 
 /**
  * presentational component for tracking button on marker popup
@@ -17,11 +17,11 @@ function VehicleTracker(props) {
     }
   }
 
-  function makeButtonText(isTracked) {
-    return isTracked ? "Stop Tracking" : "Track Vehicle";
-  }
-
-  return <Button onClick={handleClick}>{makeButtonText(tracked)}</Button>;
+  return (
+    <PopupStyle.Button onClick={handleClick}>
+      {tracked ? "Stop Tracking" : "Track Vehicle"}
+    </PopupStyle.Button>
+  );
 }
 
 VehicleTracker.defaultProps = {
