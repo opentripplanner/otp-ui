@@ -11,7 +11,7 @@ function VehicleToolTip(props) {
   const { vehicle } = props;
 
   let rsn = vehicle.routeShortName;
-  if (rsn !== null && rsn.length <= 3) {
+  if (rsn !== null && rsn.length <= 5) {
     rsn = `Line ${rsn}:`;
   }
 

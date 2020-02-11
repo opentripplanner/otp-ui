@@ -92,8 +92,8 @@ class Vehicles extends MapLayer {
       const v = this.state.trackedVehicle;
       const ll = [v.lat, v.lon];
       const map = this.getLeafletContext().map;
-      map.panToOffset(ll, this.props.panOffsetX, this.props.panOffsetY);
-      map.panToOffset(ll, this.props.panOffsetX, this.props.panOffsetY);
+      const { panOffsetX, panOffsetY } = this.props;
+      map.panToOffset(ll, panOffsetX, panOffsetY);
     }
   };
 
@@ -116,11 +116,21 @@ class Vehicles extends MapLayer {
 
   /** callback for the vehicle fetch utility to send the list of vehicles to */
   setVehicleData = vehicleList => {
+    // step 1: set/update the vehicle list state
     this.setState({ vehicleData: vehicleList });
+
+    // step 2: share the vehicle list with a registered callback
+    const { onVehicleListUpdate } = this.props;
+    if (onVehicleListUpdate && typeof onVehicleListUpdate === "function") {
+      onVehicleListUpdate(vehicleList);
+    }
+
+    // step 3: update the tracked vehicle
     if (!this.isTrackerBeingUpdated)
       this.setTrackedVehicle(this.getTrackedVehicleId(), true);
   };
 
+  /** callback for tracking a vehicle */
   setTrackedVehicle = (trackedId, clearFirst) => {
     // step 0: method semaphore prevents the setInterval / data-fetch stomping on existing process
     this.isTrackerBeingUpdated = true;
@@ -134,15 +144,24 @@ class Vehicles extends MapLayer {
       // step 3: set tracked vehicle state
       this.setState({ trackedVehicle: vehicle });
 
-      // step 4: recenter map
+      // step 4: share tracked vehicle record with a registered callback
+      const { onTrackedVehicleUpdate } = this.props;
+      if (
+        onTrackedVehicleUpdate &&
+        typeof onTrackedVehicleUpdate === "function"
+      ) {
+        onTrackedVehicleUpdate(vehicle);
+      }
+
+      // step 5: recenter map
       this.recenterMap();
 
-      // step 5: find the line geometry for the tracked vehicle
+      // step 6: find the line geometry for the tracked vehicle
       if (vehicle.shapeId) {
         try {
           const patternId = `${vehicle.agencyId}:${vehicle.shapeId}`;
           if (!this.isPatternCached(patternId)) {
-            // step 5: need to fetch the line (route pattern / shape) geometry
+            // step 7: need to fetch the line (route pattern / shape) geometry
             // console.log(">>>>>>>>>>>>>>>>>>" + patternId);
             utils.fetchVehiclePattern(
               this.setTrackedGeomData,
@@ -156,7 +175,7 @@ class Vehicles extends MapLayer {
       }
     }
 
-    // step 6: clear the method semaphore
+    // step 8: clear the method semaphore
     this.isTrackerBeingUpdated = false;
   };
 
@@ -233,6 +252,9 @@ class Vehicles extends MapLayer {
 }
 
 Vehicles.defaultProps = {
+  onTrackedVehicleUpdate: null,
+  onVehicleListUpdate: null,
+
   highlight: VehicleGeometry.defaultProps.highlight,
   lowlight: VehicleGeometry.defaultProps.lowlight,
   color: null,
@@ -252,6 +274,9 @@ Vehicles.defaultProps = {
 Vehicles.propTypes = {
   geometryUrl: PropTypes.string.isRequired,
   vehicleUrl: PropTypes.string.isRequired,
+
+  onTrackedVehicleUpdate: PropTypes.func,
+  onVehicleListUpdate: PropTypes.func,
 
   highlight: leafletPathType,
   lowlight: leafletPathType,
