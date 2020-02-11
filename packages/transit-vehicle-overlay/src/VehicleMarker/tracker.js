@@ -17,9 +17,11 @@ function VehicleTracker(props) {
     }
   }
 
+  const text = tracked ? "Stop Tracking" : "Track Vehicle";
+  const cls = tracked ? "active" : "";
   return (
-    <PopupStyle.Button onClick={handleClick}>
-      {tracked ? "Stop Tracking" : "Track Vehicle"}
+    <PopupStyle.Button onClick={handleClick} className={cls}>
+      {text}
     </PopupStyle.Button>
   );
 }
