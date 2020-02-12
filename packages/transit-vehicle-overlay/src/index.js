@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { MapLayer, FeatureGroup, withLeaflet } from "react-leaflet";
 
-import { leafletPathType } from "@opentripplanner/core-utils/lib/types";
-import callIfValid from "@opentripplanner/base-map/lib/util";
+import { leafletPathType } from "@opentripplanner/core-utils/src/types";
+import callIfValid from "@opentripplanner/base-map/src/util";
 import { throttle } from "throttle-debounce";
 
 import VehicleLayer from "./VehicleLayer";

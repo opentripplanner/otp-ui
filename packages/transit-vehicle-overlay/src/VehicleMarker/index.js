@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 import PropTypes from "prop-types";
-import { transitVehicleType } from "@opentripplanner/core-utils/lib/types";
+import { transitVehicleType } from "@opentripplanner/core-utils/src/types";
 
 import L, { divIcon } from "leaflet";
 import { withLeaflet } from "react-leaflet";
@@ -14,8 +14,7 @@ import * as Styled from "./styled";
 
 /**
  * This component demonstrates a custom marker used in the Vehicles overlay provided as
- * an example. It is modeled after the component available in this file:
- * https://github.com/OpenTransitTools/transit-components/blob/master/lib/vehicles/VehicleMarker.js
+ * an example.
  */
 function VehicleMarker(props) {
   const {

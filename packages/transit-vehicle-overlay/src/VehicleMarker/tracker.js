@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { transitVehicleType } from "@opentripplanner/core-utils/lib/types";
+import { transitVehicleType } from "@opentripplanner/core-utils/src/types";
 import { PopupStyle } from "./styled";
 
 /**

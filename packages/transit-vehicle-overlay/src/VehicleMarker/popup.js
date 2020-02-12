@@ -1,8 +1,8 @@
 import React from "react";
 import { Popup } from "react-leaflet";
 import PropTypes from "prop-types";
-import { transitVehicleType } from "@opentripplanner/core-utils/lib/types";
-import { formatDurationWithSeconds } from "@opentripplanner/core-utils/lib/time";
+import { transitVehicleType } from "@opentripplanner/core-utils/src/types";
+import { formatDurationWithSeconds } from "@opentripplanner/core-utils/src/time";
 
 import { PopupStyle } from "./styled";
 import VehicleTracker from "./tracker";

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { FeatureGroup } from "react-leaflet";
-import { transitVehicleType } from "@opentripplanner/core-utils/lib/types";
+import { transitVehicleType } from "@opentripplanner/core-utils/src/types";
 import VehicleMarker from "../VehicleMarker";
 import * as utils from "../utils";
 

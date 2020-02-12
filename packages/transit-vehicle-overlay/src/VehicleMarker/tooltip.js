@@ -1,7 +1,7 @@
 import React from "react";
 import { Tooltip } from "react-leaflet";
-import { transitVehicleType } from "@opentripplanner/core-utils/lib/types";
-import { formatDurationWithSeconds } from "@opentripplanner/core-utils/lib/time";
+import { transitVehicleType } from "@opentripplanner/core-utils/src/types";
+import { formatDurationWithSeconds } from "@opentripplanner/core-utils/src/time";
 import { TooltipStyle } from "./styled";
 
 /**
