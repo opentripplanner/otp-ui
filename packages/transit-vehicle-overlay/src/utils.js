@@ -105,7 +105,7 @@ export function buildUrl(base, query) {
  * @param setData - callback where vehicles array will be passed
  * @param url - url of the vehicle service
  */
-export function fetchVehicles(setData, baseUrl, query) {
+export function fetchVehicles(setData, trackedId, baseUrl, query) {
   // build url
   query = query || "routes/all";
   let url = buildUrl(baseUrl, query);
@@ -128,7 +128,7 @@ export function fetchVehicles(setData, baseUrl, query) {
       if (vehicleList && vehicleList.length > 0) {
         // set the vehicle list (triggers vehicle points redraw)
         // console.log(`updating state with ${vehicleList.length} vehicles`);
-        setData(vehicleList);
+        setData(vehicleList, trackedId);
       } else {
         console.error("get vehicle data is suspect");
       }

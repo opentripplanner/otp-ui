@@ -30,8 +30,6 @@ class Vehicles extends MapLayer {
   // class variables
   fetchVehicleInterval = null;
 
-  isTrackerBeingUpdated = false;
-
   componentDidMount() {
     // register this layer with base-map, so it will call the onOverlayX and onViewportZ methods
     const { registerOverlay } = this.props;
@@ -51,7 +49,21 @@ class Vehicles extends MapLayer {
   }
 
   componentDidUpdate(prevProps) {
-    // set tracked vehicle via a prop change
+    // get new vehicles if the query param is updated
+    if (prevProps.vehicleQuery !== this.props.vehicleQuery) {
+      // also make sure to check / change the tracker
+      let tracked = this.getTrackedVehicleId();
+      if (prevProps.tracked !== this.props.tracked)
+        tracked = this.props.tracked;
+      utils.fetchVehicles(
+        this.setVehicleData,
+        tracked,
+        this.props.vehicleUrl,
+        this.props.vehicleQuery
+      );
+    }
+
+    // update the tracked vehicle when the tracker is changed
     if (prevProps.tracked !== this.props.tracked) {
       this.setTrackedVehicle(this.props.tracked, true);
     }
@@ -115,7 +127,7 @@ class Vehicles extends MapLayer {
   };
 
   /** callback for the vehicle fetch utility to send the list of vehicles to */
-  setVehicleData = vehicleList => {
+  setVehicleData = (vehicleList, trackedId) => {
     // step 1: set/update the vehicle list state
     this.setState({ vehicleData: vehicleList });
 
@@ -126,15 +138,11 @@ class Vehicles extends MapLayer {
     }
 
     // step 3: update the tracked vehicle
-    if (!this.isTrackerBeingUpdated)
-      this.setTrackedVehicle(this.getTrackedVehicleId(), true);
+    this.setTrackedVehicle(trackedId, true);
   };
 
   /** callback for tracking a vehicle */
   setTrackedVehicle = (trackedId, clearFirst) => {
-    // step 0: method semaphore prevents the setInterval / data-fetch stomping on existing process
-    this.isTrackerBeingUpdated = true;
-
     // step 1: optionally clear the tracker state
     if (clearFirst) this.setState({ trackedVehicle: null });
 
@@ -174,9 +182,6 @@ class Vehicles extends MapLayer {
         }
       }
     }
-
-    // step 8: clear the method semaphore
-    this.isTrackerBeingUpdated = false;
   };
 
   /** callback function where the tracked geometry stored */
@@ -201,6 +206,7 @@ class Vehicles extends MapLayer {
     if (this.fetchVehicleInterval === null) {
       utils.fetchVehicles(
         this.setVehicleData,
+        this.props.tracked,
         this.props.vehicleUrl,
         this.props.vehicleQuery
       );
@@ -211,6 +217,7 @@ class Vehicles extends MapLayer {
       this.fetchVehicleInterval = setInterval(() => {
         utils.fetchVehicles(
           this.setVehicleData,
+          this.getTrackedVehicleId(),
           this.props.vehicleUrl,
           this.props.vehicleQuery
         );
