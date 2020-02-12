@@ -14,7 +14,8 @@
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "@opentripplanner/icons": "^0.0.14"
+    "@opentripplanner/icons": "^0.0.14",
+    "@opentripplanner/itineray-body": "^0.0.14"
   },
   "peerDependencies": {
     "react": "^16.8.6",

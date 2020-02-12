@@ -6,7 +6,7 @@ import { withInfo } from "@storybook/addon-info";
 import styled from "styled-components";
 
 import PrintableItinerary from ".";
-import * as ItineraryBodyClasses from "./styled";
+import * as PrintableItineraryClasses from "./styled";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json");
@@ -24,7 +24,7 @@ const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-
 const config = require("@opentripplanner/itinerary-body/src/__mocks__/config.json");
 
 const StyledPrintableItinerary = styled(PrintableItinerary)`
-  ${ItineraryBodyClasses.LegBody} {
+  ${PrintableItineraryClasses.LegBody} {
     background-color: pink;
   }
 `;
