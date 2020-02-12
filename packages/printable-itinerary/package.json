@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@opentripplanner/icons": "^0.0.14",
-    "@opentripplanner/itineray-body": "^0.0.14"
+    "@opentripplanner/itinerary-body": "^0.0.14"
   },
   "peerDependencies": {
     "react": "^16.8.6",
