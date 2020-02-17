@@ -1,6 +1,9 @@
 import cloneDeep from "lodash.clonedeep";
 
-if (typeof fetch === "undefined") require("isomorphic-fetch"); // eslint-disable-line
+if (typeof fetch === "undefined") {
+  require("es6-promise").polyfill();  // eslint-disable-line
+  require("isomorphic-fetch");  // eslint-disable-line
+}
 
 /**
  * will take an input object (e.g., probably a defaultProp representing a leaflet style),
