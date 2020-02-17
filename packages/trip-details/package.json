@@ -1,0 +1,31 @@
+{
+  "name": "@opentripplanner/trip-details",
+  "version": "0.0.1",
+  "description": "A component for displaying details about a trip planning itinerary",
+  "main": "lib/index.js",
+  "repository": "https://github.com/opentripplanner/otp-ui.git",
+  "homepage": "https://github.com/opentripplanner/otp-ui#readme",
+  "author": "Evan Siroky",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@opentripplanner/core-utils": "^0.0.14",
+    "@opentripplanner/humanize-distance": "^0.0.13",
+    "moment": "^2.24.0",
+    "prop-types": "^15.7.2",
+    "styled-icons": "^9.1.0",
+    "velocity-react": "^1.4.3"
+  },
+  "devDependencies": {
+    "@opentripplanner/icons": "^0.0.14",
+    "@opentripplanner/itinerary-body": "^0.0.14"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "styled-components": "^4.3.1"
+  },
+  "bugs": {
+    "url": "https://github.com/opentripplanner/otp-ui/issues"
+  },
+  "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"
+}
