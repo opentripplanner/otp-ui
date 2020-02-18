@@ -161,21 +161,26 @@ function animatedExample() {
   );
 }
 
-function rtExample() {
+function rtExample(name, visible) {
   return (
     <BaseMap center={portland}>
       <Vehicles
-        name="Real-Time Buses and Trains"
+        name={name}
+        visible={boolean("show vehicles:", visible)}
         geometryUrl={geometryUrl}
         vehicleUrl={vehicleUrl}
-        tracked={text(
-          "block -or- trip id:",
-          "block or trip id here to track a vehicle, ala 2002"
-        )}
         vehicleQuery={text(
           "route numbers / all:",
           "routes/all?or=routes/90,100,190,200,290"
         )}
+        tracked={text(
+          "block -or- trip id:",
+          "block or trip id here to track a vehicle, ala 2002"
+        )}
+        color={color("color:", "#777")}
+        highlightColor={color("tracked color:", "#ece90d")}
+        lowlightColor={color("trailing color:", "#AAA")}
+        recenterMap={boolean("follow vehicle:", true)}
         panOffsetX={text(
           "panOffsetX:",
           "shift center point left or right X pixels"
@@ -184,20 +189,22 @@ function rtExample() {
           "panOffsetY:",
           "shift center point up or down Y pixels"
         )}
-        color={color("color:", "#777")}
-        highlightColor={color("tracked color:", "#ece90d")}
-        lowlightColor={color("trailing color:", "#AAA")}
-        recenterMap={boolean("follow vehicle:", true)}
         hasPopup={boolean(
           "use marker popups -- note: edit story to 'false' and refresh:",
           true
         )}
         hasTooltip={boolean("use marker tooltips (desktop only):", true)}
         onTrackedVehicleUpdate={console.log}
-        visible
       />
     </BaseMap>
   );
+}
+
+function rtExampleLayerSwitcher() {
+  return rtExample("Real-Time Buses and Trains", true);
+}
+function rtExampleProgrammatic() {
+  return rtExample(null, false);
 }
 
 storiesOf("Realtime VehicleLayer", module)
@@ -207,4 +214,5 @@ storiesOf("Realtime VehicleLayer", module)
   .add("by Route", routeExample)
   .add("all Routes", allExample)
   .add("animated VehicleLayer", animatedExample)
-  .add("real-time Vehicles layer", rtExample);
+  .add("real-time vehicles in layer switcher", rtExampleLayerSwitcher)
+  .add("real-time vehicles programmatic control", rtExampleProgrammatic);

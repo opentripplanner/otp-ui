@@ -49,6 +49,16 @@ class Vehicles extends MapLayer {
   }
 
   componentDidUpdate(prevProps) {
+    // control the visibility of the vehicles via the 'visible' prop
+    if (prevProps.visible !== this.props.visible) {
+      this.stopFetchingVehicles();
+      if (this.props.visible) {
+        this.startFetchingVehicles();
+      } else {
+        this.clearLayerState();
+      }
+    }
+
     // get new vehicles if the query param is updated
     if (prevProps.vehicleQuery !== this.props.vehicleQuery) {
       // also make sure to check / change the tracker
@@ -200,6 +210,13 @@ class Vehicles extends MapLayer {
       if (patternId === this.state.trackedGeometry.id) retVal = true;
     return retVal;
   };
+
+  /** clears the layer data */
+  clearLayerState() {
+    this.setState({ vehicleData: null });
+    this.setTrackedGeomData("-111", []);
+    this.setState({ trackedVehicle: null });
+  }
 
   /** create an interval that will periodically query vehicle position data */
   startFetchingVehicles() {

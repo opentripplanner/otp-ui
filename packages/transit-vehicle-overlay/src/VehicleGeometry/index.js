@@ -18,7 +18,7 @@ function VehicleGeometry(props) {
   let { highlight, lowlight } = props;
 
   let retVal = <FeatureGroup />;
-  if (trackedVehicle && pattern && pattern.data) {
+  if (trackedVehicle && pattern && pattern.data && pattern.data.length > 1) {
     if (highlightColor) highlight = setColor(highlightColor, highlight);
     if (lowlightColor) lowlight = setColor(lowlightColor, lowlight);
 
