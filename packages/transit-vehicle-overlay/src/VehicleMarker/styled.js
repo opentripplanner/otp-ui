@@ -10,30 +10,35 @@ import { AerialTram, Bus, Streetcar, Max, Wes } from "@opentripplanner/icons";
 // note: want to make these props of styled, so props.colorselected
 // BTW, 'props.color' works, since that's an established prop of styled
 // https://stackoverflow.com/questions/52321539/react-passing-props-with-styled-components
-const color = "#000";
-const colorselected = "#00bfff";
-const colorHighlight = "#ccee77";
+const white = "#fff";
+const black = "#000";
+const defColor = black;
+const defSelected = "#00bfff";
 
 const normal = css`
-  color: ${props => props.color || color};
-  background-color: #fff;
-  border: 1px solid ${props => props.color || color};
+  color: ${props => props.color || defColor};
+  fill: ${props => props.color || defColor};
+  border: 1px solid ${props => props.color || defColor};
+  background-color: ${white};
   :hover {
-    color: ${props => props.colorselected || colorselected};
-    background-color: ${props => props.colorselected || colorselected};
-    border: 1px solid ${props => props.colorHighlight || colorHighlight};
+    fill: ${black} !important;
+    color: ${props => props.colorselected || defSelected};
+    background-color: ${props => props.colorselected || defSelected};
+    border: 1px solid ${black};
   }
   border-radius: 50%;
 `;
 
 const tracked = css`
-  color: ${props => props.colorselected || colorselected};
-  background-color: ${props => props.colorselected || colorselected};
+  fill: ${black} !important;
+  color: ${props => props.colorselected || defSelected};
+  border: 1px solid ${black};
+  background-color: ${props => props.colorselected || defSelected};
 `;
 
 export const VehicleCircle = styled(Circle)`
   ${normal}
-  background-color: #000;
+  background-color: ${props => props.color || defColor};
 `;
 
 export const TrackedVehicleCircle = styled(VehicleCircle)`
@@ -85,49 +90,49 @@ export const TrackedRail = styled(NormRail)`
  * TODO: both icon names and these modes need to align better to standards
  * TODO: icons using trimet stuff needs to get away from MAX / WES / AERIALTRAM names, etc...
  */
-export function makeVehicleIcon(mode, selectColor, isTracked) {
+export function makeVehicleIcon(mode, color, highlightColor, isTracked) {
   let icon = null;
   switch (mode) {
     case "TRAM":
       icon = isTracked ? (
-        <TrackedTram colorselected={selectColor} />
+        <TrackedTram color={color} colorselected={highlightColor} />
       ) : (
-        <NormTram colorselected={selectColor} />
+        <NormTram color={color} colorselected={highlightColor} />
       );
       break;
     case "SC":
       icon = isTracked ? (
-        <TrackedSC colorselected={selectColor} />
+        <TrackedSC color={color} colorselected={highlightColor} />
       ) : (
-        <NormSC colorselected={selectColor} />
+        <NormSC color={color} colorselected={highlightColor} />
       );
       break;
     case "GONDOLA":
       icon = isTracked ? (
-        <TrackedGond colorselected={selectColor} />
+        <TrackedGond color={color} colorselected={highlightColor} />
       ) : (
-        <NormGond colorselected={selectColor} />
+        <NormGond color={color} colorselected={highlightColor} />
       );
       break;
     case "RAIL":
       icon = isTracked ? (
-        <TrackedRail colorselected={selectColor} />
+        <TrackedRail color={color} colorselected={highlightColor} />
       ) : (
-        <NormRail colorselected={selectColor} />
+        <NormRail color={color} colorselected={highlightColor} />
       );
       break;
     case "BUS":
       icon = isTracked ? (
-        <TrackedBus colorselected={selectColor} />
+        <TrackedBus color={color} colorselected={highlightColor} />
       ) : (
-        <NormBus colorselected={selectColor} />
+        <NormBus color={color} colorselected={highlightColor} />
       );
       break;
     default:
       icon = isTracked ? (
-        <TrackedBus colorselected={selectColor} />
+        <TrackedBus color={color} colorselected={highlightColor} />
       ) : (
-        <NormBus colorselected={selectColor} />
+        <NormBus color={color} colorselected={highlightColor} />
       );
       break;
   }

@@ -14,14 +14,14 @@ import { setColor } from "../utils";
  * geometry showing the travel pattern of a vehicle
  */
 function VehicleGeometry(props) {
-  const { trackedVehicle, pattern, lowlight, color } = props;
-  let { highlight } = props;
+  const { trackedVehicle, pattern, highlightColor, lowlightColor } = props;
+  let { highlight, lowlight } = props;
 
   let retVal = <FeatureGroup />;
   if (trackedVehicle && pattern && pattern.data) {
-    if (color) {
-      highlight = setColor(color, highlight);
-    }
+    if (highlightColor) highlight = setColor(highlightColor, highlight);
+    if (lowlightColor) lowlight = setColor(lowlightColor, lowlight);
+
     const pt = utils.findPointOnLine(trackedVehicle, pattern.data);
     const geom = utils.splitGeometry(pattern.data, pt, pattern.id);
     const segments = utils.makeSplitLine(geom, highlight, lowlight);
@@ -38,6 +38,9 @@ function VehicleGeometry(props) {
 VehicleGeometry.defaultProps = {
   trackedVehicle: null,
   pattern: null,
+
+  highlightColor: null,
+  lowlightColor: null,
   highlight: {
     color: "#00bfff",
     weight: 5.0,
@@ -57,6 +60,8 @@ VehicleGeometry.propTypes = {
     id: PropTypes.string.isRequired,
     data: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired
   }),
+  highlightColor: PropTypes.string,
+  lowlightColor: PropTypes.string,
   highlight: leafletPathType,
   lowlight: leafletPathType
 };

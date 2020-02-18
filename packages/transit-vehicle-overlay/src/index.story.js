@@ -63,13 +63,15 @@ function allExample() {
         vehicles={all}
         setTracked={setTracked}
         trackedVehicle={tracked}
-        color={color("tracked color:", "#d54a40")}
+        color={color("color:", "#333")}
+        highlightColor={color("tracked color:", "#d54a40")}
         visible
       />
       <VehicleGeometry
         trackedVehicle={tracked}
         pattern={pattern}
-        color={color("tracked color:", "#d54a40")}
+        highlightColor={color("tracked color:", "#d54a40")}
+        lowlightColor={color("trailing color:", "#AAA")}
         visible
       />
     </BaseMap>
@@ -94,13 +96,15 @@ function routeExample() {
         setTracked={setTracked}
         trackedVehicle={tracked}
         vehicles={line}
-        color={color("tracked color:", "#3e5a77")}
+        color={color("color:", "#222")}
+        highlightColor={color("tracked color:", "#3e5a77")}
         visible
       />
       <VehicleGeometry
         trackedVehicle={tracked}
         pattern={pattern}
-        color={color("tracked color:", "#3e5a77")}
+        highlightColor={color("tracked color:", "#3e5a77")}
+        lowlightColor={color("trailing color:", "#AAA")}
         visible
       />
     </BaseMap>
@@ -180,7 +184,9 @@ function rtExample() {
           "panOffsetY:",
           "shift center point up or down Y pixels"
         )}
-        color={color("tracked color:", "#ece90d")}
+        color={color("color:", "#777")}
+        highlightColor={color("tracked color:", "#ece90d")}
+        lowlightColor={color("trailing color:", "#AAA")}
         recenterMap={boolean("follow vehicle:", true)}
         hasPopup={boolean(
           "use marker popups -- note: edit story to 'false' and refresh:",

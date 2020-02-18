@@ -26,6 +26,7 @@ function VehicleLayer(props) {
             hasTooltip={props.hasTooltip}
             hasPopup={props.hasPopup}
             color={props.color}
+            highlightColor={props.highlightColor}
           />
         ))}
     </FeatureGroup>
@@ -37,7 +38,8 @@ VehicleLayer.defaultProps = {
   trackedVehicle: null,
   hasTooltip: true,
   hasPopup: true,
-  color: null
+  color: null,
+  highlightColor: null
 };
 
 VehicleLayer.propTypes = {
@@ -46,7 +48,8 @@ VehicleLayer.propTypes = {
   setTracked: PropTypes.func.isRequired,
   hasTooltip: PropTypes.bool,
   hasPopup: PropTypes.bool,
-  color: PropTypes.string
+  color: PropTypes.string,
+  highlightColor: PropTypes.string
 };
 
 export default VehicleLayer;

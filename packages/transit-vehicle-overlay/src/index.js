@@ -245,11 +245,13 @@ class Vehicles extends MapLayer {
           hasTooltip={this.props.hasTooltip}
           hasPopup={this.props.hasPopup}
           color={this.props.color}
+          highlightColor={this.props.highlightColor}
         />
         <VehicleGeometry
           trackedVehicle={this.state.trackedVehicle}
           pattern={this.state.trackedGeometry}
-          color={this.props.color}
+          highlightColor={this.props.highlightColor}
+          lowlightColor={this.props.lowlightColor}
           highlight={this.props.highlight}
           lowlight={this.props.lowlight}
         />
@@ -264,7 +266,10 @@ Vehicles.defaultProps = {
 
   highlight: VehicleGeometry.defaultProps.highlight,
   lowlight: VehicleGeometry.defaultProps.lowlight,
+
   color: null,
+  highlightColor: null,
+  lowlightColor: null,
 
   vehicleQuery: "routes/all",
   refreshDelay: 5000,
@@ -288,6 +293,7 @@ Vehicles.propTypes = {
   highlight: leafletPathType,
   lowlight: leafletPathType,
   color: PropTypes.string,
+  highlightColor: PropTypes.string,
   vehicleQuery: PropTypes.string,
   refreshDelay: PropTypes.number,
   tracked: PropTypes.string,

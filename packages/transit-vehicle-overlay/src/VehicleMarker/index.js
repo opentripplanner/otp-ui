@@ -24,6 +24,7 @@ function VehicleMarker(props) {
     tracked,
     setTracked,
     color,
+    highlightColor,
     leaflet,
     closeZoom,
     midZoom,
@@ -39,14 +40,27 @@ function VehicleMarker(props) {
 
     let icon = null;
     if (zoom >= closeZoom) {
-      icon = Styled.makeVehicleIcon(vehicle.routeType, color, tracked);
+      icon = Styled.makeVehicleIcon(
+        vehicle.routeType,
+        color,
+        highlightColor,
+        tracked
+      );
     } else {
       const size = zoom >= midZoom ? midSize : farSize;
       const iconHtml = ReactDOMServer.renderToStaticMarkup(
         tracked ? (
-          <Styled.TrackedVehicleCircle size={size} colorselected={color} />
+          <Styled.TrackedVehicleCircle
+            size={size}
+            color={color}
+            colorselected={highlightColor}
+          />
         ) : (
-          <Styled.VehicleCircle size={size} colorselected={color} />
+          <Styled.VehicleCircle
+            size={size}
+            color={color}
+            colorselected={highlightColor}
+          />
         )
       );
       icon = divIcon({ className: "", html: iconHtml });
@@ -79,7 +93,8 @@ function VehicleMarker(props) {
 }
 
 VehicleMarker.defaultProps = {
-  color: "#00bfff",
+  color: "#000",
+  highlightColor: "#00bfff",
   tracked: false,
   vehicle: null,
   leaflet: null,
@@ -95,6 +110,7 @@ VehicleMarker.defaultProps = {
 
 VehicleMarker.propTypes = {
   color: PropTypes.string,
+  highlightColor: PropTypes.string,
   tracked: PropTypes.bool,
   setTracked: PropTypes.func.isRequired,
   vehicle: transitVehicleType,
