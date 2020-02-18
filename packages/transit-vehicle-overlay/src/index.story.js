@@ -193,6 +193,7 @@ function rtExample() {
           true
         )}
         hasTooltip={boolean("use marker tooltips (desktop only):", true)}
+        onTrackedVehicleUpdate={console.log}
         visible
       />
     </BaseMap>
