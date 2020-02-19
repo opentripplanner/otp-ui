@@ -42,7 +42,12 @@ export default function PrintableItinerary({
             timeOptions={timeOptions}
           />
         ) : leg.hailedCar ? (
-          <TNCLeg leg={leg} LegIcon={LegIcon} timeOptions={timeOptions} />
+          <TNCLeg
+            leg={leg}
+            LegIcon={LegIcon}
+            key={k}
+            timeOptions={timeOptions}
+          />
         ) : (
           <AccessLeg
             config={config}

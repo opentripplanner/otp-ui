@@ -35,5 +35,5 @@ export default function TNCLeg({ leg, LegIcon }) {
 
 TNCLeg.propTypes = {
   leg: legType.isRequired,
-  LegIcon: PropTypes.element.isRequired
+  LegIcon: PropTypes.elementType.isRequired
 };

@@ -45,5 +45,5 @@ export default function AccessLeg({ config, leg, LegIcon }) {
 AccessLeg.propTypes = {
   config: configType.isRequired,
   leg: legType.isRequired,
-  LegIcon: PropTypes.element.isRequired
+  LegIcon: PropTypes.elementType.isRequired
 };
