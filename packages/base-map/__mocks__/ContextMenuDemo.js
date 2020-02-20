@@ -1,27 +1,30 @@
-/* eslint-disable react/prop-types */
 import React, { Component } from "react";
 import BaseMap from "..";
+
+const center = [45.522862, -122.667837];
 
 export default class ContextMenuDemo extends Component {
   constructor() {
     super();
 
-    this.state = { location: null };
+    this.state = { location: center, contents: "" };
   }
 
   handleContextMenu = e => {
-    this.setState({ location: [e.latlng.lat, e.latlng.lng] });
+    this.setState({
+      location: [e.latlng.lat, e.latlng.lng],
+      contents: <h1>Context Popup</h1>
+    });
   };
 
   render() {
-    const { location } = this.state;
-    const center = [45.522862, -122.667837];
+    const { location, contents } = this.state;
 
     return (
       <div>
         <BaseMap
           center={center}
-          popup={{ location, contents: <h1>Context Menu</h1> }}
+          popup={{ location, contents }}
           onContextMenu={this.handleContextMenu}
         />
       </div>
