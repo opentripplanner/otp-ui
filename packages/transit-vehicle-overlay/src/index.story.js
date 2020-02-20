@@ -7,6 +7,7 @@ import { storiesOf } from "@storybook/react";
 import {
   withKnobs,
   text,
+  number,
   color,
   boolean,
   select
@@ -33,44 +34,41 @@ const v = [v1, v2, v3];
 const portland = [45.523, -122.671];
 const setTracked = action("setTracked");
 
-const geometryUrl = "https://newplanner.trimet.org/ws/ti/v0/index";
-const vehicleUrl = "https://maps.trimet.org/gtfs/rt/vehicles/";
-
-const trips = {
-  9563136: "9563136",
-  9563137: "9563137",
-  9563138: "9563138",
-  9562510: "9562510",
-  9562512: "9562512",
-  9562514: "9562514"
-};
-
-function allExample() {
+function justPresentationComponents(vehicleData, highlight = "#d54a40") {
   const data = utils.reverseGeojsonPointsInGeom(geojson);
   const pattern = {
     id: "1",
     data
   };
+
+  const trips = {
+    9563136: "9563136",
+    9563137: "9563137",
+    9563138: "9563138",
+    9562510: "9562510",
+    9562512: "9562512",
+    9562514: "9562514"
+  };
   const tracked = utils.findVehicleById(
     line,
-    select("Tracked Vehicle", trips, "9562512")
+    select("Tracked Vehicle", trips, "9563137")
   );
 
   return (
     <BaseMap center={portland}>
       <VehicleLayer
         name="Real-Time Buses and Trains"
-        vehicles={all}
+        vehicles={vehicleData}
         setTracked={setTracked}
         trackedVehicle={tracked}
-        color={color("color:", "#333")}
-        highlightColor={color("tracked color:", "#d54a40")}
+        color={color("color:", "#555")}
+        highlightColor={color("tracked color:", highlight)}
         visible
       />
       <VehicleGeometry
         trackedVehicle={tracked}
         pattern={pattern}
-        highlightColor={color("tracked color:", "#d54a40")}
+        highlightColor={color("tracked color:", highlight)}
         lowlightColor={color("trailing color:", "#AAA")}
         visible
       />
@@ -78,37 +76,12 @@ function allExample() {
   );
 }
 
-function routeExample() {
-  const data = utils.reverseGeojsonPointsInGeom(geojson);
-  const pattern = {
-    id: "1",
-    data
-  };
-  const tracked = utils.findVehicleById(
-    line,
-    select("Tracked Vehicle", trips, "9562512")
-  );
+function allExample() {
+  return justPresentationComponents(all);
+}
 
-  return (
-    <BaseMap center={portland}>
-      <VehicleLayer
-        name="Real-Time Buses and Trains"
-        setTracked={setTracked}
-        trackedVehicle={tracked}
-        vehicles={line}
-        color={color("color:", "#222")}
-        highlightColor={color("tracked color:", "#3e5a77")}
-        visible
-      />
-      <VehicleGeometry
-        trackedVehicle={tracked}
-        pattern={pattern}
-        highlightColor={color("tracked color:", "#3e5a77")}
-        lowlightColor={color("trailing color:", "#AAA")}
-        visible
-      />
-    </BaseMap>
-  );
+function routeExample() {
+  return justPresentationComponents(line, "#3e5a77");
 }
 
 function animatedExample() {
@@ -143,25 +116,13 @@ function animatedExample() {
     };
   }, []);
 
-  const tracked = utils.findVehicleById(
-    line,
-    select("Tracked Vehicle", trips, "9562512")
-  );
-
-  return (
-    <BaseMap center={portland}>
-      <VehicleLayer
-        name="Real-Time Buses and Trains"
-        vehicles={vehicleData}
-        setTracked={setTracked}
-        trackedVehicle={tracked}
-        visible
-      />
-    </BaseMap>
-  );
+  return justPresentationComponents(vehicleData, "#6013FE");
 }
 
 function rtExample(name, visible) {
+  const geometryUrl = "https://newplanner.trimet.org/ws/ti/v0/index";
+  const vehicleUrl = "https://maps.trimet.org/gtfs/rt/vehicles/";
+
   return (
     <BaseMap center={portland}>
       <Vehicles
@@ -177,18 +138,13 @@ function rtExample(name, visible) {
           "block -or- trip id:",
           "block or trip id here to track a vehicle, ala 2002"
         )}
+        refreshDelay={number("refresh interval:", 5000)}
         color={color("color:", "#777")}
         highlightColor={color("tracked color:", "#ece90d")}
         lowlightColor={color("trailing color:", "#AAA")}
         recenterMap={boolean("follow vehicle:", true)}
-        panOffsetX={text(
-          "panOffsetX:",
-          "shift center point left or right X pixels"
-        )}
-        panOffsetY={text(
-          "panOffsetY:",
-          "shift center point up or down Y pixels"
-        )}
+        panOffsetX={number("panOffsetX:", 0)}
+        panOffsetY={number("panOffsetY:", 0)}
         hasPopup={boolean(
           "use marker popups -- note: edit story to 'false' and refresh:",
           true

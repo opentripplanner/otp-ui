@@ -19,8 +19,8 @@ export function setColor(color, obj) {
 }
 
 /** return map zoom value from leaflet */
-export function getZoom(leaflet, defZoom = 15) {
-  let retVal = defZoom;
+export function getZoom(leaflet, defZoom) {
+  let retVal = defZoom || 15;
   try {
     retVal = leaflet.map.getZoom();
   } catch (e) {
@@ -170,8 +170,9 @@ export function checkRefreshInteval(inverval, defInterval = 10000) {
   let retVal = defInterval;
   if (inverval) {
     let r = inverval;
+    if (typeof r === "string") r = parseInt(r, 10);
     if (r > 0 && r <= 100) r *= 1000;
-    if (r >= 1000 && r < 100000) retVal = r;
+    if (r >= 1000 && r <= 100000) retVal = r;
     else retVal = defInterval;
   }
   return retVal;
