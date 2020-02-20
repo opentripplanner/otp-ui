@@ -6,6 +6,7 @@ import { withInfo } from "@storybook/addon-info";
 import BaseMap from ".";
 import SelectVehicles from "../__mocks__/SelectVehicles";
 import AllVehiclesOverlay from "../__mocks__/AllVehicles";
+import ContextMenuDemo from "../__mocks__/ContextMenuDemo";
 
 import "../assets/map.css";
 
@@ -64,6 +65,7 @@ const samplePopup = (
 );
 
 const onClick = action("onClick");
+const onContextMenu = action("onContextMenu");
 const onPopupClosed = action("onPopupClosed");
 const onOverlayAdded = action("onOverlayAdded");
 const onOverlayRemoved = action("onOverlayRemoved");
@@ -77,6 +79,7 @@ export const clickAndViewportchangedEvents = () => (
   <BaseMap
     center={center}
     onClick={onClick}
+    onContextMenu={onContextMenu}
     onViewportChanged={onViewportChanged}
   ></BaseMap>
 );
@@ -152,3 +155,5 @@ export const customLocationPopupContent = () => (
     onPopupClosed={onPopupClosed}
   />
 );
+
+export const onContextMenuPopup = () => <ContextMenuDemo />;
