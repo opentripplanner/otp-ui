@@ -207,7 +207,7 @@ function rtExampleProgrammatic() {
   return rtExample(null, false);
 }
 
-storiesOf("Realtime VehicleLayer", module)
+storiesOf("TransitVehicleOverlay", module)
   .addDecorator(withA11y)
   .addDecorator(withInfo)
   .addDecorator(withKnobs)

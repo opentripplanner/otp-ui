@@ -1,7 +1,3 @@
-import React from "react";
-import ReactDOMServer from "react-dom/server";
-import L from "leaflet";
-
 import styled, { css } from "styled-components";
 import { Circle } from "styled-icons/fa-solid";
 
@@ -15,7 +11,7 @@ const black = "#000";
 const defColor = black;
 const defSelected = "#00bfff";
 
-const normal = css`
+export const normal = css`
   color: ${props => props.color || defColor};
   fill: ${props => props.color || defColor};
   border: 1px solid ${props => props.color || defColor};
@@ -29,7 +25,7 @@ const normal = css`
   border-radius: 50%;
 `;
 
-const tracked = css`
+export const tracked = css`
   fill: ${black} !important;
   color: ${props => props.colorselected || defSelected};
   border: 1px solid ${black};
@@ -84,75 +80,6 @@ export const NormRail = styled(Wes)`
 export const TrackedRail = styled(NormRail)`
   ${tracked}
 `;
-
-/**
- * find icons based on gtfsdb mode types
- * TODO: both icon names and these modes need to align better to standards
- * TODO: icons using trimet stuff needs to get away from MAX / WES / AERIALTRAM names, etc...
- */
-export function makeVehicleIcon(mode, color, highlightColor, isTracked) {
-  let icon = null;
-  switch (mode) {
-    case "TRAM":
-      icon = isTracked ? (
-        <TrackedTram color={color} colorselected={highlightColor} />
-      ) : (
-        <NormTram color={color} colorselected={highlightColor} />
-      );
-      break;
-    case "SC":
-      icon = isTracked ? (
-        <TrackedSC color={color} colorselected={highlightColor} />
-      ) : (
-        <NormSC color={color} colorselected={highlightColor} />
-      );
-      break;
-    case "GONDOLA":
-      icon = isTracked ? (
-        <TrackedGond color={color} colorselected={highlightColor} />
-      ) : (
-        <NormGond color={color} colorselected={highlightColor} />
-      );
-      break;
-    case "RAIL":
-      icon = isTracked ? (
-        <TrackedRail color={color} colorselected={highlightColor} />
-      ) : (
-        <NormRail color={color} colorselected={highlightColor} />
-      );
-      break;
-    case "BUS":
-      icon = isTracked ? (
-        <TrackedBus color={color} colorselected={highlightColor} />
-      ) : (
-        <NormBus color={color} colorselected={highlightColor} />
-      );
-      break;
-    default:
-      icon = isTracked ? (
-        <TrackedBus color={color} colorselected={highlightColor} />
-      ) : (
-        <NormBus color={color} colorselected={highlightColor} />
-      );
-      break;
-  }
-
-  let retVal = null;
-  if (icon != null)
-    retVal = L.divIcon({
-      html: ReactDOMServer.renderToString(icon),
-      className: "",
-      popupAnchor: [0, -12],
-      tooltipAnchor: [11, 0],
-      iconSize: [22, 22]
-    });
-  else
-    retVal = L.divIcon({
-      html: "<span>--></span>"
-    });
-
-  return retVal;
-}
 
 export const TooltipStyle = styled.span``;
 

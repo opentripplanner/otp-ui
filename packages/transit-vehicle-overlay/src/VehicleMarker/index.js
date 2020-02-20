@@ -10,7 +10,8 @@ import RotatedMarker from "./RotatedMarker";
 import VehiclePopup from "./popup";
 import VehicleToolTip from "./tooltip";
 import * as utils from "../utils";
-import * as Styled from "./styled";
+import makeVehicleIcon from "./utils";
+import { VehicleCircle, TrackedVehicleCircle } from "./styled";
 
 /**
  * This component demonstrates a custom marker used in the Vehicles overlay provided as
@@ -40,23 +41,18 @@ function VehicleMarker(props) {
 
     let icon = null;
     if (zoom >= closeZoom) {
-      icon = Styled.makeVehicleIcon(
-        vehicle.routeType,
-        color,
-        highlightColor,
-        tracked
-      );
+      icon = makeVehicleIcon(vehicle.routeType, color, highlightColor, tracked);
     } else {
       const size = zoom >= midZoom ? midSize : farSize;
       const iconHtml = ReactDOMServer.renderToStaticMarkup(
         tracked ? (
-          <Styled.TrackedVehicleCircle
+          <TrackedVehicleCircle
             size={size}
             color={color}
             colorselected={highlightColor}
           />
         ) : (
-          <Styled.VehicleCircle
+          <VehicleCircle
             size={size}
             color={color}
             colorselected={highlightColor}
