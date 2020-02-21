@@ -1,6 +1,6 @@
 # Changelog
 
-- [Components via Storybook](http://www.opentripplanner.org/otp-ui/?path=/story/locationicon--to-locationicon)
+- [Components via Storybook](http://www.opentripplanner.org/otp-ui)
 - [npm packages](https://www.npmjs.com/org/opentripplanner)
 
 ## [0.0.15] - 2020-02-20
