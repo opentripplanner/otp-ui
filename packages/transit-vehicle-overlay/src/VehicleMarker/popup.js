@@ -1,27 +1,26 @@
 import React from "react";
 import { Popup } from "react-leaflet";
 import PropTypes from "prop-types";
+import { transitVehicleType } from "@opentripplanner/core-utils/src/types";
+import { formatDurationWithSeconds } from "@opentripplanner/core-utils/src/time";
 
+import { PopupStyle } from "./styled";
 import VehicleTracker from "./tracker";
-import { vehicleType } from "../types";
-import { formatTime } from "../utils";
 
 /**
  * view component for vehicle marker popup
  */
 function VehiclePopup(props) {
-  const { vehicle } = props;
-  const { tracked } = props;
-  const { setTracked } = props;
+  const { vehicle, tracked, setTracked } = props;
 
   let status = "unknown";
   if (vehicle.status === "IN_TRANSIT_TO") {
-    status = "en-route to stop ";
+    status = `en-route to stop #${vehicle.stopId}`;
   } else if (vehicle.status === "STOPPED_AT") {
     if (vehicle.stopSequence === 1) {
-      status = "beginning route from stop ";
+      status = `start route at stop #${vehicle.stopId}`;
     } else {
-      status = "stopped at ";
+      status = `at stop #${vehicle.stopId}`;
     }
   }
 
@@ -32,38 +31,25 @@ function VehiclePopup(props) {
     vid = `Vehicle: ${vehicle.vehicleId}`;
   }
 
-  const stopLink = `https://trimet.org/ride/stop.html?stop_id=${vehicle.stopId}`;
-
   return (
     <Popup>
-      <div>
-        <span>
-          <b>{vehicle.routeLongName}</b>
-        </span>
-        <br />
-        <span>Last reported: {formatTime(vehicle.seconds)}</span>
-        <br />
-        <span>Report date: {vehicle.reportDate}</span>
-        <br />
-        <span>
-          Status: {status}{" "}
-          <a target="#" href={stopLink}>
-            {vehicle.stopId}
-          </a>
-        </span>
-        <br />
-        <span>
+      <PopupStyle>
+        <PopupStyle.Title>{vehicle.routeLongName}</PopupStyle.Title>
+        <PopupStyle.Span>
+          Last seen: {formatDurationWithSeconds(vehicle.seconds)} ago
+        </PopupStyle.Span>
+        <PopupStyle.Span>Date: {vehicle.reportDate}</PopupStyle.Span>
+        <PopupStyle.Span>Status: {status} </PopupStyle.Span>
+        <PopupStyle.Span>
           Trip: {vehicle.tripId}, Block: {vehicle.blockId}
-        </span>
-        <br />
-        <span>{vid}</span> <br />
+        </PopupStyle.Span>
+        <PopupStyle.Span>{vid}</PopupStyle.Span>
         <VehicleTracker
           vehicle={vehicle}
           tracked={tracked}
           setTracked={setTracked}
         />
-        <br />
-      </div>
+      </PopupStyle>
     </Popup>
   );
 }
@@ -74,7 +60,7 @@ VehiclePopup.defaultProps = {
 };
 
 VehiclePopup.propTypes = {
-  vehicle: vehicleType,
+  vehicle: transitVehicleType,
   tracked: PropTypes.bool,
   setTracked: PropTypes.func.isRequired
 };

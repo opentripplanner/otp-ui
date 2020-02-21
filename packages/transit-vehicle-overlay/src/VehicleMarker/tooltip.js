@@ -1,8 +1,8 @@
 import React from "react";
 import { Tooltip } from "react-leaflet";
-
-import { formatTime } from "../utils";
-import { vehicleType } from "../types";
+import { transitVehicleType } from "@opentripplanner/core-utils/src/types";
+import { formatDurationWithSeconds } from "@opentripplanner/core-utils/src/time";
+import { TooltipStyle } from "./styled";
 
 /**
  * presentational component for vehicle marker tooltip
@@ -11,21 +11,22 @@ function VehicleToolTip(props) {
   const { vehicle } = props;
 
   let rsn = vehicle.routeShortName;
-  if (rsn !== null && rsn.length <= 3) {
-    rsn = `Line ${rsn}`;
+  if (rsn !== null && rsn.length <= 5) {
+    rsn = `Line ${rsn}:`;
   }
 
   return (
     <Tooltip>
-      <span>
-        <b>{rsn}</b>: {formatTime(vehicle.seconds)}
-      </span>
+      <TooltipStyle>
+        <TooltipStyle.Title>{rsn} </TooltipStyle.Title>
+        {formatDurationWithSeconds(vehicle.seconds)} ago
+      </TooltipStyle>
     </Tooltip>
   );
 }
 
 VehicleToolTip.propTypes = {
-  vehicle: vehicleType
+  vehicle: transitVehicleType
 };
 
 VehicleToolTip.defaultProps = {

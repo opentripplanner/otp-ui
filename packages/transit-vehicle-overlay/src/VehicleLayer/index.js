@@ -1,9 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { FeatureGroup } from "react-leaflet";
-
+import { transitVehicleType } from "@opentripplanner/core-utils/src/types";
 import VehicleMarker from "../VehicleMarker";
-import { vehicleType } from "../types";
 import * as utils from "../utils";
 
 /**
@@ -13,8 +12,7 @@ import * as utils from "../utils";
  * note: (vehicle) markers are created here
  */
 function VehicleLayer(props) {
-  const { vehicles } = props;
-  const { trackedVehicle } = props;
+  const { trackedVehicle, vehicles } = props;
 
   return (
     <FeatureGroup>
@@ -28,6 +26,7 @@ function VehicleLayer(props) {
             hasTooltip={props.hasTooltip}
             hasPopup={props.hasPopup}
             color={props.color}
+            highlightColor={props.highlightColor}
           />
         ))}
     </FeatureGroup>
@@ -39,16 +38,18 @@ VehicleLayer.defaultProps = {
   trackedVehicle: null,
   hasTooltip: true,
   hasPopup: true,
-  color: null
+  color: null,
+  highlightColor: null
 };
 
 VehicleLayer.propTypes = {
-  vehicles: PropTypes.arrayOf(vehicleType),
-  trackedVehicle: vehicleType,
+  vehicles: PropTypes.arrayOf(transitVehicleType),
+  trackedVehicle: transitVehicleType,
   setTracked: PropTypes.func.isRequired,
   hasTooltip: PropTypes.bool,
   hasPopup: PropTypes.bool,
-  color: PropTypes.string
+  color: PropTypes.string,
+  highlightColor: PropTypes.string
 };
 
 export default VehicleLayer;

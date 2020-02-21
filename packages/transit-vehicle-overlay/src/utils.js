@@ -1,8 +1,8 @@
-import polyline from "@mapbox/polyline";
+import cloneDeep from "lodash.clonedeep";
 
-/** deep copy */
-export function deep(obj) {
-  return JSON.parse(JSON.stringify(obj));
+if (typeof fetch === "undefined") {
+  require("es6-promise").polyfill();  // eslint-disable-line
+  require("isomorphic-fetch");  // eslint-disable-line
 }
 
 /**
@@ -13,18 +13,18 @@ export function deep(obj) {
  * @return deep copied object with color set
  */
 export function setColor(color, obj) {
-  const retVal = deep(obj);
+  const retVal = cloneDeep(obj);
   retVal.color = color;
   return retVal;
 }
 
 /** return map zoom value from leaflet */
-export function getZoom(leaflet, defZoom = 15) {
-  let retVal = defZoom;
+export function getZoom(leaflet, defZoom) {
+  let retVal = defZoom || 15;
   try {
     retVal = leaflet.map.getZoom();
   } catch (e) {
-    console.log(e);
+    console.error(e);
   }
   return retVal;
 }
@@ -35,17 +35,6 @@ export function checkHeading(heading) {
     heading = 0;
   }
   return heading;
-}
-
-/**
- * Checks if a parameter is actually a function.
- * @param {*} fn The function to call.
- * @returns fn if fn is a function, or a dummy function.
- * TODO: copied from map ... should be in core-utils?
- */
-export function callIfValid(fn) {
-  if (typeof fn === "function") return fn;
-  return () => {};
 }
 
 /**
@@ -64,19 +53,6 @@ export function reverseGeojsonPointsInGeom(geom) {
 }
 
 /**
- * OTP encodes polylines - this method will decode such geometries
- * @param geom
- * @return decoded polyline
- */
-export function decodePolyline(geom) {
-  let retVal = geom;
-  if (geom && geom.points) {
-    retVal = polyline.decode(geom.points);
-  }
-  return retVal;
-}
-
-/**
  * find a vehicle based on an id (either vehicle or trip id) within a list of vehicles
  * @param vehicleList - list of vehciles to be searched
  * @param queryId - either trip or vehcile id (string) to search list
@@ -87,7 +63,7 @@ export function findVehicleById(vehicleList, queryId, defVal = null) {
   try {
     if (vehicleList && queryId) {
       vehicleList.some(v => {
-        if (queryId === v.vehicleId || queryId === v.tripId) {
+        if (queryId === v.blockId || queryId === v.tripId) {
           retVal = v;
           return true;
         }
@@ -95,7 +71,7 @@ export function findVehicleById(vehicleList, queryId, defVal = null) {
       });
     }
   } catch (e) {
-    console.log(e);
+    console.error(e);
   }
   return retVal;
 }
@@ -107,21 +83,12 @@ export function findVehicleById(vehicleList, queryId, defVal = null) {
  * @returns boolean
  */
 export function isTracked(vehicleA, vehicleB) {
-  let retVal = false;
-
-  try {
-    if (vehicleA && vehicleB) {
-      if (
-        vehicleA.vehicleId === vehicleB.vehicleId ||
-        vehicleA.tripId === vehicleB.tripId
-      ) {
-        retVal = true;
-      }
-    }
-  } catch (e) {
-    console.log(e);
-  }
-  return retVal;
+  return (
+    vehicleA &&
+    vehicleB &&
+    (vehicleA.blockId === vehicleB.blockId ||
+      vehicleA.tripId === vehicleB.tripId)
+  );
 }
 
 /** build a url from sub parts */
@@ -143,7 +110,6 @@ export function buildUrl(base, query) {
  */
 export function fetchVehicles(setData, trackedId, baseUrl, query) {
   // build url
-  baseUrl = baseUrl || "https://maps.trimet.org/gtfs/rt/vehicles/";
   query = query || "routes/all";
   let url = buildUrl(baseUrl, query);
 
@@ -155,65 +121,45 @@ export function fetchVehicles(setData, trackedId, baseUrl, query) {
   fetch(url)
     .then(res => {
       if (!res.ok) {
-        console.log(res.statusText);
+        console.error(res.statusText);
         throw Error(res.statusText);
       }
       return res;
     })
-    .then(res => {
-      const retVal = res.json();
-      return retVal;
-    })
+    .then(res => res.json())
     .then(vehicleList => {
       if (vehicleList && vehicleList.length > 0) {
-        // step 1: set the vehicle list (triggers vehicle points redraw)
-        console.log(`updating state with ${vehicleList.length} vehicles`);
+        // set the vehicle list (triggers vehicle points redraw)
+        // console.log(`updating state with ${vehicleList.length} vehicles`);
         setData(vehicleList, trackedId);
       } else {
-        console.log("get vehicle data is suspect");
+        console.error("get vehicle data is suspect");
       }
     })
     .catch(error => {
-      console.log(`VEH fetch() error: ${error} for ${url}`);
+      console.error(`VEH fetch() error: ${error} for ${url}`);
     });
 }
 
 /**
  * fetch line geometry for a given pattern
  *
- * https://newplanner.trimet.org/ws/ti/v0/index/patterns/TRIMET:433758/geometry/geojson
- * https://newplanner.trimet.org/ws/ti/v0/index/patterns/{agency}:{pattern}/geometry/geojson
- *
  * @param setPatternData
  * @param patternId
  * @param tiUrl
- * @param geojson
  */
-export function fetchVehiclePattern(
-  setPatternData,
-  patternId,
-  tiUrl,
-  geojson = "/geojson"
-) {
-  if (!tiUrl) tiUrl = "https://newplanner.trimet.org/ws/ti/v0/index";
-  const url = `${tiUrl}/patterns/${patternId}/geometry${geojson}`;
+export function fetchVehiclePattern(setPatternData, patternId, tiUrl) {
+  const url = `${tiUrl}/patterns/${patternId}/geometry/geojson`;
 
-  console.log(`Calling GEO URL: ${url}`);
+  // console.log(`Calling GEO URL: ${url}`);
   fetch(url)
-    .then(res => {
-      const retVal = res.json();
-      return retVal;
-    })
+    .then(res => res.json())
     .then(json => {
-      if (geojson.indexOf("geojson") >= 0) {
-        json = reverseGeojsonPointsInGeom(json);
-      } else {
-        json = decodePolyline(json);
-      }
-      setPatternData(patternId, json);
+      const points = reverseGeojsonPointsInGeom(json);
+      setPatternData(patternId, points);
     })
     .catch(error => {
-      console.log(`VEH GEOMETRY fetch() error: ${error}`);
+      console.error(`VEH GEOMETRY fetch() error: ${error}`);
     });
 }
 
@@ -224,75 +170,10 @@ export function checkRefreshInteval(inverval, defInterval = 10000) {
   let retVal = defInterval;
   if (inverval) {
     let r = inverval;
+    if (typeof r === "string") r = parseInt(r, 10);
     if (r > 0 && r <= 100) r *= 1000;
-    if (r >= 1000 && r < 100000) retVal = r;
+    if (r >= 1000 && r <= 100000) retVal = r;
     else retVal = defInterval;
   }
-  return retVal;
-}
-
-/**
- * will build up a gtfsdb url for rt vehicles
- * certain rules exist around the various filters
- * url:
- *   https://maps.trimet.org/gtfs/rt/vehicles/routes/all
- */
-export function makeWsUrl(
-  url,
-  routes = null,
-  blocks = null,
-  trips = null,
-  stops = null
-) {
-  let filter = "";
-  if (routes) filter = `/routes/${routes}`;
-  else filter = "/routes/all";
-  if (blocks) filter = `/blocks/${blocks}`;
-  if (trips) filter = `/trips/${trips}`;
-  if (stops) filter = `/stops/${stops}`;
-
-  const retVal = url + filter;
-  return retVal;
-}
-
-export function formatTime(seconds) {
-  let retVal = "";
-  if (seconds >= 60) {
-    const min = Math.floor(seconds / 60);
-    const sec = seconds - min * 60;
-    const minStr = min === 1 ? "minute" : "minutes";
-
-    if (sec > 0) retVal = `${min} ${minStr} & ${sec} seconds ago`;
-    else retVal = `${min} ${minStr} ago`;
-  } else {
-    retVal = `${seconds} seconds ago`;
-  }
-  return retVal;
-}
-
-export function directions(dir) {
-  function isNorthbound(heading) {
-    return heading <= 45.0 || heading >= 315.0;
-  }
-
-  function isSouthbound(heading) {
-    return heading >= 135.0 && heading <= 225.0;
-  }
-
-  function isEastbound(heading) {
-    return heading > 45.0 && heading < 135.0;
-  }
-
-  function isWestbound(heading) {
-    return heading > 225.0 && heading < 315.0;
-  }
-
-  let retVal = "";
-  if (isNorthbound(dir)) retVal = "Northbound";
-  else if (isSouthbound(dir)) retVal = "Southbound";
-  else if (isEastbound(dir)) retVal = "Eastbound";
-  else if (isWestbound(dir)) retVal = "Northbound";
-  else retVal = "Roundbound";
-
   return retVal;
 }

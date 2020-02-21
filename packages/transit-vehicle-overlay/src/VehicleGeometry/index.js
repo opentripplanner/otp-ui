@@ -1,8 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { FeatureGroup } from "react-leaflet";
-import { leafletPathType } from "@opentripplanner/core-utils/lib/types";
-import { vehicleType } from "../types";
+import {
+  leafletPathType,
+  transitVehicleType
+} from "@opentripplanner/core-utils/src/types";
+
 import * as utils from "./utils";
 import { setColor } from "../utils";
 
@@ -11,16 +14,14 @@ import { setColor } from "../utils";
  * geometry showing the travel pattern of a vehicle
  */
 function VehicleGeometry(props) {
-  const { trackedVehicle } = props;
-  const { pattern } = props;
-  const { lowlight, color } = props;
-  let { highlight } = props;
-  if (color) {
-    highlight = setColor(color, highlight);
-  }
+  const { trackedVehicle, pattern, highlightColor, lowlightColor } = props;
+  let { highlight, lowlight } = props;
 
   let retVal = <FeatureGroup />;
-  if (trackedVehicle && pattern && pattern.data) {
+  if (trackedVehicle && pattern && pattern.data && pattern.data.length > 1) {
+    if (highlightColor) highlight = setColor(highlightColor, highlight);
+    if (lowlightColor) lowlight = setColor(lowlightColor, lowlight);
+
     const pt = utils.findPointOnLine(trackedVehicle, pattern.data);
     const geom = utils.splitGeometry(pattern.data, pt, pattern.id);
     const segments = utils.makeSplitLine(geom, highlight, lowlight);
@@ -37,6 +38,9 @@ function VehicleGeometry(props) {
 VehicleGeometry.defaultProps = {
   trackedVehicle: null,
   pattern: null,
+
+  highlightColor: null,
+  lowlightColor: null,
   highlight: {
     color: "#00bfff",
     weight: 5.0,
@@ -51,11 +55,13 @@ VehicleGeometry.defaultProps = {
 };
 
 VehicleGeometry.propTypes = {
-  trackedVehicle: vehicleType,
+  trackedVehicle: transitVehicleType,
   pattern: PropTypes.shape({
     id: PropTypes.string.isRequired,
     data: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired
   }),
+  highlightColor: PropTypes.string,
+  lowlightColor: PropTypes.string,
   highlight: leafletPathType,
   lowlight: leafletPathType
 };

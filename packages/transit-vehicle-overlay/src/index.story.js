@@ -7,6 +7,7 @@ import { storiesOf } from "@storybook/react";
 import {
   withKnobs,
   text,
+  number,
   color,
   boolean,
   select
@@ -33,75 +34,54 @@ const v = [v1, v2, v3];
 const portland = [45.523, -122.671];
 const setTracked = action("setTracked");
 
-const trips = {
-  9563136: "9563136",
-  9563137: "9563137",
-  9563138: "9563138",
-  9562510: "9562510",
-  9562512: "9562512",
-  9562514: "9562514"
-};
-
-function allExample() {
+function justPresentationComponents(vehicleData, highlight = "#d54a40") {
   const data = utils.reverseGeojsonPointsInGeom(geojson);
   const pattern = {
     id: "1",
     data
   };
+
+  const trips = {
+    9563136: "9563136",
+    9563137: "9563137",
+    9563138: "9563138",
+    9562510: "9562510",
+    9562512: "9562512",
+    9562514: "9562514"
+  };
   const tracked = utils.findVehicleById(
     line,
-    select("Tracked Vehicle", trips, "9562512")
+    select("Tracked Vehicle", trips, "9563137")
   );
 
   return (
     <BaseMap center={portland}>
       <VehicleLayer
         name="Real-Time Buses and Trains"
-        vehicles={all}
+        vehicles={vehicleData}
         setTracked={setTracked}
         trackedVehicle={tracked}
-        color={color("tracked color:", "#d54a40")}
+        color={color("color:", "#555")}
+        highlightColor={color("tracked color:", highlight)}
         visible
       />
       <VehicleGeometry
         trackedVehicle={tracked}
         pattern={pattern}
-        color={color("tracked color:", "#d54a40")}
+        highlightColor={color("tracked color:", highlight)}
+        lowlightColor={color("trailing color:", "#AAA")}
         visible
       />
     </BaseMap>
   );
 }
 
-function routeExample() {
-  const data = utils.reverseGeojsonPointsInGeom(geojson);
-  const pattern = {
-    id: "1",
-    data
-  };
-  const tracked = utils.findVehicleById(
-    line,
-    select("Tracked Vehicle", trips, "9562512")
-  );
+function allExample() {
+  return justPresentationComponents(all);
+}
 
-  return (
-    <BaseMap center={portland}>
-      <VehicleLayer
-        name="Real-Time Buses and Trains"
-        setTracked={setTracked}
-        trackedVehicle={tracked}
-        vehicles={line}
-        color={color("tracked color:", "#3e5a77")}
-        visible
-      />
-      <VehicleGeometry
-        trackedVehicle={tracked}
-        pattern={pattern}
-        color={color("tracked color:", "#3e5a77")}
-        visible
-      />
-    </BaseMap>
-  );
+function routeExample() {
+  return justPresentationComponents(line, "#3e5a77");
 }
 
 function animatedExample() {
@@ -136,52 +116,56 @@ function animatedExample() {
     };
   }, []);
 
-  const tracked = utils.findVehicleById(
-    line,
-    select("Tracked Vehicle", trips, "9562512")
-  );
-
-  return (
-    <BaseMap center={portland}>
-      <VehicleLayer
-        name="Real-Time Buses and Trains"
-        vehicles={vehicleData}
-        setTracked={setTracked}
-        trackedVehicle={tracked}
-        visible
-      />
-    </BaseMap>
-  );
+  return justPresentationComponents(vehicleData, "#6013FE");
 }
 
-function rtExample() {
+function rtExample(name, visible) {
+  const geometryUrl = "https://newplanner.trimet.org/ws/ti/v0/index";
+  const vehicleUrl = "https://maps.trimet.org/gtfs/rt/vehicles/";
+
   return (
     <BaseMap center={portland}>
       <Vehicles
-        name="Real-Time Buses and Trains"
-        tracked={text("vehicle id:", "vehicle or trip id here, ala 3912")}
+        name={name}
+        visible={boolean("show vehicles:", visible)}
+        geometryUrl={geometryUrl}
+        vehicleUrl={vehicleUrl}
         vehicleQuery={text(
-          "route numbers or all:",
-          "routes/all?could_be=routes/90,100,190,200,290"
+          "route numbers / all:",
+          "routes/all?or=routes/90,100,190,200,290"
         )}
-        color={color("tracked color:", "#81EC0B")}
+        tracked={text("block -or- trip id:", "track block: 9047")}
+        refreshDelay={number("refresh interval:", 5000)}
+        color={color("color:", "#777")}
+        highlightColor={color("tracked color:", "#ece90d")}
+        lowlightColor={color("trailing color:", "#AAA")}
         recenterMap={boolean("follow vehicle:", true)}
+        panOffsetX={number("panOffsetX:", 0)}
+        panOffsetY={number("panOffsetY:", 0)}
         hasPopup={boolean(
           "use marker popups -- note: edit story to 'false' and refresh:",
           true
         )}
         hasTooltip={boolean("use marker tooltips (desktop only):", true)}
-        visible
+        onTrackedVehicleUpdate={console.log}
       />
     </BaseMap>
   );
 }
 
-storiesOf("Realtime VehicleLayer", module)
+function rtExampleLayerSwitcher() {
+  return rtExample("Real-Time Buses and Trains", true);
+}
+function rtExampleProgrammatic() {
+  return rtExample(null, false);
+}
+
+storiesOf("TransitVehicleOverlay", module)
   .addDecorator(withA11y)
   .addDecorator(withInfo)
   .addDecorator(withKnobs)
   .add("by Route", routeExample)
   .add("all Routes", allExample)
   .add("animated VehicleLayer", animatedExample)
-  .add("real-time Vehicles layer", rtExample);
+  .add("real-time vehicles in layer switcher", rtExampleLayerSwitcher)
+  .add("real-time vehicles programmatic control", rtExampleProgrammatic);

@@ -1,7 +1,3 @@
-import React from "react";
-import ReactDOMServer from "react-dom/server";
-import L from "leaflet";
-
 import styled, { css } from "styled-components";
 import { Circle } from "styled-icons/fa-solid";
 
@@ -10,30 +6,35 @@ import { AerialTram, Bus, Streetcar, Max, Wes } from "@opentripplanner/icons";
 // note: want to make these props of styled, so props.colorselected
 // BTW, 'props.color' works, since that's an established prop of styled
 // https://stackoverflow.com/questions/52321539/react-passing-props-with-styled-components
-const color = "#000";
-const colorselected = "#00bfff";
-const colorHighlight = "#ccee77";
+const white = "#fff";
+const black = "#000";
+const defColor = black;
+const defSelected = "#00bfff";
 
-const normal = css`
-  color: ${props => props.color || color};
-  background-color: #fff;
-  border: 1px solid ${props => props.color || color};
+export const normal = css`
+  color: ${props => props.color || defColor};
+  fill: ${props => props.color || defColor};
+  border: 1px solid ${props => props.color || defColor};
+  background-color: ${white};
   :hover {
-    color: ${props => props.colorselected || colorselected};
-    background-color: ${props => props.colorselected || colorselected};
-    border: 1px solid ${props => props.colorHighlight || colorHighlight};
+    fill: ${black} !important;
+    color: ${props => props.colorselected || defSelected};
+    background-color: ${props => props.colorselected || defSelected};
+    border: 1px solid ${black};
   }
   border-radius: 50%;
 `;
 
-const tracked = css`
-  color: ${props => props.colorselected || colorselected};
-  background-color: ${props => props.colorselected || colorselected};
+export const tracked = css`
+  fill: ${black} !important;
+  color: ${props => props.colorselected || defSelected};
+  border: 1px solid ${black};
+  background-color: ${props => props.colorselected || defSelected};
 `;
 
 export const VehicleCircle = styled(Circle)`
   ${normal}
-  background-color: #000;
+  background-color: ${props => props.color || defColor};
 `;
 
 export const TrackedVehicleCircle = styled(VehicleCircle)`
@@ -80,86 +81,54 @@ export const TrackedRail = styled(NormRail)`
   ${tracked}
 `;
 
-/**
- * find icons based on gtfsdb mode types
- * TODO: both icon names and these modes need to align better to standards
- * TODO: icons using trimet stuff needs to get away from MAX / WES / AERIALTRAM names, etc...
- */
-export function makeVehicleIcon(mode, selectColor, isTracked) {
-  let icon = null;
-  switch (mode) {
-    case "TRAM":
-      icon = isTracked ? (
-        <TrackedTram colorselected={selectColor} />
-      ) : (
-        <NormTram colorselected={selectColor} />
-      );
-      break;
-    case "SC":
-      icon = isTracked ? (
-        <TrackedSC colorselected={selectColor} />
-      ) : (
-        <NormSC colorselected={selectColor} />
-      );
-      break;
-    case "GONDOLA":
-      icon = isTracked ? (
-        <TrackedGond colorselected={selectColor} />
-      ) : (
-        <NormGond colorselected={selectColor} />
-      );
-      break;
-    case "RAIL":
-      icon = isTracked ? (
-        <TrackedRail colorselected={selectColor} />
-      ) : (
-        <NormRail colorselected={selectColor} />
-      );
-      break;
-    case "BUS":
-      icon = isTracked ? (
-        <TrackedBus colorselected={selectColor} />
-      ) : (
-        <NormBus colorselected={selectColor} />
-      );
-      break;
-    default:
-      icon = isTracked ? (
-        <TrackedBus colorselected={selectColor} />
-      ) : (
-        <NormBus colorselected={selectColor} />
-      );
-      break;
+export const TooltipStyle = styled.span``;
+
+TooltipStyle.Title = styled.span`
+  font-size: 110%;
+  font-weight: bold;
+`;
+
+export const PopupStyle = styled.div`
+  display: inline-block;
+  box-sizing: border-box;
+  > * {
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
   }
+`;
 
-  let retVal = null;
-  if (icon != null)
-    retVal = L.divIcon({
-      html: ReactDOMServer.renderToString(icon),
-      className: "",
-      popupAnchor: [0, -12],
-      tooltipAnchor: [11, 0],
-      iconSize: [22, 22]
-    });
-  else
-    retVal = L.divIcon({
-      html: "<span>--></span>"
-    });
+PopupStyle.Title = styled.div`
+  font-size: 110%;
+  font-weight: bold;
+  text-align: center;
+`;
 
-  return retVal;
-}
+PopupStyle.Span = styled.span`
+  font-size: 90%;
+  display: block;
+`;
 
-// popup button
-export const Button = styled.button`
-  color: navy;
-  border: none;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  padding-left: 0.2em;
+PopupStyle.Button = styled.button`
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
 
-  :hover {
-    text-decoration: underline;
-    cursor: pointer;
+  svg,
+  img {
+    vertical-align: middle;
+    max-width: 1.25em;
+    margin: 0 0.25em;
+    height: 1.25em;
+  }
+  &.active {
+    font-weight: 600;
+    box-shadow: 0 0 2px 2px rgba(0, 64, 255, 0.5);
+  }
+  &.disabled {
+    cursor: default;
+  }
+  &.disabled svg {
+    fill: #ccc;
   }
 `;

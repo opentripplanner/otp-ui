@@ -1,30 +1,29 @@
 import React from "react";
 import PropTypes from "prop-types";
-
-import { vehicleType } from "../types";
-import { Button } from "./styled";
+import { transitVehicleType } from "@opentripplanner/core-utils/src/types";
+import { PopupStyle } from "./styled";
 
 /**
  * presentational component for tracking button on marker popup
  */
 function VehicleTracker(props) {
-  const { vehicle } = props;
-  const { tracked } = props;
-  const { setTracked } = props;
+  const { vehicle, tracked, setTracked } = props;
 
   function handleClick() {
     if (tracked) {
       setTracked(null, true);
     } else {
-      setTracked(vehicle.vehicleId || vehicle.tripId);
+      setTracked(vehicle.blockId || vehicle.tripId);
     }
   }
 
-  function makeButtonText(isTracked) {
-    return isTracked ? "Stop Tracking" : "Track Vehicle";
-  }
-
-  return <Button onClick={handleClick}>{makeButtonText(tracked)}</Button>;
+  const text = tracked ? "Stop Tracking" : "Track Vehicle";
+  const cls = tracked ? "active" : "";
+  return (
+    <PopupStyle.Button onClick={handleClick} className={cls}>
+      {text}
+    </PopupStyle.Button>
+  );
 }
 
 VehicleTracker.defaultProps = {
@@ -33,7 +32,7 @@ VehicleTracker.defaultProps = {
 };
 
 VehicleTracker.propTypes = {
-  vehicle: vehicleType,
+  vehicle: transitVehicleType,
   tracked: PropTypes.bool,
   setTracked: PropTypes.func.isRequired
 };

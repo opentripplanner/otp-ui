@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 import PropTypes from "prop-types";
+import { transitVehicleType } from "@opentripplanner/core-utils/src/types";
 
 import L, { divIcon } from "leaflet";
 import { withLeaflet } from "react-leaflet";
@@ -8,28 +9,29 @@ import RotatedMarker from "./RotatedMarker";
 
 import VehiclePopup from "./popup";
 import VehicleToolTip from "./tooltip";
-import { vehicleType } from "../types";
 import * as utils from "../utils";
-import * as Styled from "./styled";
+import makeVehicleIcon from "./utils";
+import { VehicleCircle, TrackedVehicleCircle } from "./styled";
 
 /**
  * This component demonstrates a custom marker used in the Vehicles overlay provided as
- * an example. It is modeled after the component available in this file:
- * https://github.com/OpenTransitTools/transit-components/blob/master/lib/vehicles/VehicleMarker.js
+ * an example.
  */
 function VehicleMarker(props) {
-  const { vehicle } = props;
-  const { hasTooltip } = props;
-  const { hasPopup } = props;
-  const { tracked } = props;
-  const { setTracked } = props;
-  const { color } = props;
-
-  const { leaflet } = props;
-
-  const { closeZoom, midZoom } = props;
-  const { midSize, farSize } = props;
-
+  const {
+    vehicle,
+    hasPopup,
+    hasTooltip,
+    tracked,
+    setTracked,
+    color,
+    highlightColor,
+    leaflet,
+    closeZoom,
+    midZoom,
+    midSize,
+    farSize
+  } = props;
   const position = [vehicle.lat, vehicle.lon];
   const zPos = tracked ? 1000 : 0;
   const heading = utils.checkHeading(vehicle.heading);
@@ -39,14 +41,22 @@ function VehicleMarker(props) {
 
     let icon = null;
     if (zoom >= closeZoom) {
-      icon = Styled.makeVehicleIcon(vehicle.routeType, color, tracked);
+      icon = makeVehicleIcon(vehicle.routeType, color, highlightColor, tracked);
     } else {
       const size = zoom >= midZoom ? midSize : farSize;
       const iconHtml = ReactDOMServer.renderToStaticMarkup(
         tracked ? (
-          <Styled.TrackedVehicleCircle size={size} colorselected={color} />
+          <TrackedVehicleCircle
+            size={size}
+            color={color}
+            colorselected={highlightColor}
+          />
         ) : (
-          <Styled.VehicleCircle size={size} colorselected={color} />
+          <VehicleCircle
+            size={size}
+            color={color}
+            colorselected={highlightColor}
+          />
         )
       );
       icon = divIcon({ className: "", html: iconHtml });
@@ -79,7 +89,8 @@ function VehicleMarker(props) {
 }
 
 VehicleMarker.defaultProps = {
-  color: "#00bfff",
+  color: "#000",
+  highlightColor: "#00bfff",
   tracked: false,
   vehicle: null,
   leaflet: null,
@@ -95,9 +106,10 @@ VehicleMarker.defaultProps = {
 
 VehicleMarker.propTypes = {
   color: PropTypes.string,
+  highlightColor: PropTypes.string,
   tracked: PropTypes.bool,
   setTracked: PropTypes.func.isRequired,
-  vehicle: vehicleType,
+  vehicle: transitVehicleType,
 
   leaflet: PropTypes.shape({
     map: PropTypes.shape({

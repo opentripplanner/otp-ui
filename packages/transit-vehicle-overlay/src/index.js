@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { MapLayer, FeatureGroup, withLeaflet } from "react-leaflet";
 
-import { leafletPathType } from "@opentripplanner/core-utils/lib/types";
+import { leafletPathType } from "@opentripplanner/core-utils/src/types";
+import callIfValid from "@opentripplanner/base-map/src/util";
 import { throttle } from "throttle-debounce";
 
 import VehicleLayer from "./VehicleLayer";
@@ -29,20 +30,21 @@ class Vehicles extends MapLayer {
   // class variables
   fetchVehicleInterval = null;
 
-  isTrackerUpdated = false;
-
   componentDidMount() {
     // register this layer with base-map, so it will call the onOverlayX and onViewportZ methods
     const { registerOverlay } = this.props;
-    utils.callIfValid(registerOverlay)(this);
+    callIfValid(registerOverlay)(this);
 
     if (this.props.visible) {
       this.startFetchingVehicles();
     }
 
     // initialize zoom state here? (may trigger render again.)
-    const zoom = this.getLeafletContext().map.getZoom();
-    this.setMapZoom(zoom);
+    const map = this.getLeafletContext().map;
+    this.setMapZoom(map.getZoom());
+    map.on("viewreset", () => this.setMapZoom(map.getZoom()));
+    map.on("zoom", () => this.setMapZoom(map.getZoom()));
+    map.on("zoomlevelschange", () => this.setMapZoom(map.getZoom()));
   }
 
   componentWillUnmount() {
@@ -50,10 +52,35 @@ class Vehicles extends MapLayer {
   }
 
   componentDidUpdate(prevProps) {
-    // set tracked vehicle via a prop change
+    // control the visibility of the vehicles via the 'visible' prop
+    if (prevProps.visible !== this.props.visible) {
+      this.stopFetchingVehicles();
+      if (this.props.visible) {
+        this.startFetchingVehicles();
+      } else {
+        this.clearLayerState();
+      }
+    }
+
+    // get new vehicles if the query param is updated
+    if (prevProps.vehicleQuery !== this.props.vehicleQuery) {
+      // also make sure to check / change the tracker
+      let tracked = this.getTrackedVehicleId();
+      if (prevProps.tracked !== this.props.tracked) {
+        tracked = this.props.tracked;
+      }
+      utils.fetchVehicles(
+        this.setVehicleData,
+        tracked,
+        this.props.vehicleUrl,
+        this.props.vehicleQuery
+      );
+    }
+
+    // update the tracked vehicle when the tracker is changed
     if (prevProps.tracked !== this.props.tracked) {
-      this.isTrackerUpdated = true;
       this.setTrackedVehicle(this.props.tracked, true);
+      this.recenterMap();
     }
   }
 
@@ -67,11 +94,6 @@ class Vehicles extends MapLayer {
     this.stopFetchingVehicles();
   };
 
-  /** BaseMap: onViewportChanged notified whenever the BaseMap's center or zoom changes */
-  onViewportChanged = viewport => {
-    this.setMapZoom(viewport.zoom);
-  };
-
   /** needed: extending ReactLeaflet's MapLayer */
   createLeafletElement() {}
 
@@ -80,10 +102,11 @@ class Vehicles extends MapLayer {
 
   /**
    * set zoom, used for changing icons ..
-   * note: limit (throttle) so we don't overwhelm React with tons of state changes zoomming in
+   * note: limit (throttle) so we don't overwhelm React with tons of state changes zooming in
    */
   setMapZoom = throttle(500, zoom => {
     this.setState({ mapZoom: zoom });
+    this.recenterMap();
   });
 
   /** pan the map to the tracked vehicle's coordinates */
@@ -91,7 +114,9 @@ class Vehicles extends MapLayer {
     if (this.props.recenterMap && this.state.trackedVehicle) {
       const v = this.state.trackedVehicle;
       const ll = [v.lat, v.lon];
-      this.getLeafletContext().map.panTo(ll);
+      const map = this.getLeafletContext().map;
+      const { panOffsetX, panOffsetY } = this.props;
+      map.panToOffset(ll, panOffsetX, panOffsetY);
     }
   };
 
@@ -104,43 +129,59 @@ class Vehicles extends MapLayer {
   getTrackedVehicleId = () => {
     let retVal = null;
     const t = this.state.trackedVehicle;
-    if (t && t.vehicleId) retVal = t.vehicleId;
+    if (t) {
+      if (t.blockId) retVal = t.blockId;
+      else if (t.tripId) retVal = t.tripId;
+      else retVal = t.vehicleId;
+    }
     return retVal;
   };
 
   /** callback for the vehicle fetch utility to send the list of vehicles to */
   setVehicleData = (vehicleList, trackedId) => {
+    // step 1: set/update the vehicle list state
     this.setState({ vehicleData: vehicleList });
 
-    // handle a mid-vehicle data update, where the tracker is also updated
-    if (this.isTrackerUpdated) {
-      this.isTrackerUpdated = false;
-    } else {
-      this.setTrackedVehicle(trackedId, true);
+    // step 2: share the vehicle list with a registered callback
+    const { onVehicleListUpdate } = this.props;
+    if (onVehicleListUpdate && typeof onVehicleListUpdate === "function") {
+      onVehicleListUpdate(vehicleList);
     }
+
+    // step 3: update the tracked vehicle
+    this.setTrackedVehicle(trackedId, true);
   };
 
+  /** callback for tracking a vehicle */
   setTrackedVehicle = (trackedId, clearFirst) => {
-    // step 0: clear out the old tracked vehicle
+    // step 1: optionally clear the tracker state
     if (clearFirst) this.setState({ trackedVehicle: null });
 
-    // step 1: find the tracked vehicle record via an id (trip or vehicle id)
+    // step 2: find the tracked vehicle record via an id (trip or vehicle id)
     const vehicle = utils.findVehicleById(this.state.vehicleData, trackedId);
     if (vehicle) {
-      // step 2: set tracked vehicle state
+      // step 3: set tracked vehicle state
       this.setState({ trackedVehicle: vehicle });
 
-      // step 3: recenter map
+      // step 4: share tracked vehicle record with a registered callback
+      const { onTrackedVehicleUpdate } = this.props;
+      if (
+        onTrackedVehicleUpdate &&
+        typeof onTrackedVehicleUpdate === "function"
+      ) {
+        onTrackedVehicleUpdate(vehicle);
+      }
+
+      // step 5: recenter map
       this.recenterMap();
 
-      // step 4: find the line geometry for the tracked vehicle
+      // step 6: find the line geometry for the tracked vehicle
       if (vehicle.shapeId) {
         try {
           const patternId = `${vehicle.agencyId}:${vehicle.shapeId}`;
           if (!this.isPatternCached(patternId)) {
-            // step 5: need to fetch the line (route pattern / shape) geometry
-            console.log(">>>>>>>>>>>>>>>>>>");
-            console.log(patternId);
+            // step 7: need to fetch the line (route pattern / shape) geometry
+            // console.log(">>>>>>>>>>>>>>>>>>" + patternId);
             utils.fetchVehiclePattern(
               this.setTrackedGeomData,
               patternId,
@@ -148,7 +189,7 @@ class Vehicles extends MapLayer {
             );
           }
         } catch (e) {
-          console.log(e);
+          console.error(e);
         }
       }
     }
@@ -170,6 +211,13 @@ class Vehicles extends MapLayer {
       if (patternId === this.state.trackedGeometry.id) retVal = true;
     return retVal;
   };
+
+  /** clears the layer data */
+  clearLayerState() {
+    this.setState({ vehicleData: null });
+    this.setTrackedGeomData("-111", []);
+    this.setState({ trackedVehicle: null });
+  }
 
   /** create an interval that will periodically query vehicle position data */
   startFetchingVehicles() {
@@ -215,11 +263,13 @@ class Vehicles extends MapLayer {
           hasTooltip={this.props.hasTooltip}
           hasPopup={this.props.hasPopup}
           color={this.props.color}
+          highlightColor={this.props.highlightColor}
         />
         <VehicleGeometry
           trackedVehicle={this.state.trackedVehicle}
           pattern={this.state.trackedGeometry}
-          color={this.props.color}
+          highlightColor={this.props.highlightColor}
+          lowlightColor={this.props.lowlightColor}
           highlight={this.props.highlight}
           lowlight={this.props.lowlight}
         />
@@ -229,31 +279,45 @@ class Vehicles extends MapLayer {
 }
 
 Vehicles.defaultProps = {
+  onTrackedVehicleUpdate: null,
+  onVehicleListUpdate: null,
+
   highlight: VehicleGeometry.defaultProps.highlight,
   lowlight: VehicleGeometry.defaultProps.lowlight,
-  color: null,
 
-  geometryUrl: "https://newplanner.trimet.org/ws/ti/v0/index",
-  vehicleUrl: "https://maps.trimet.org/gtfs/rt/vehicles/",
+  color: null,
+  highlightColor: null,
+  lowlightColor: null,
+
   vehicleQuery: "routes/all",
   refreshDelay: 5000,
 
   tracked: null,
   recenterMap: false,
+  panOffsetX: 0,
+  panOffsetY: 0,
+
   hasTooltip: true,
   hasPopup: true
 };
 
 Vehicles.propTypes = {
+  geometryUrl: PropTypes.string.isRequired,
+  vehicleUrl: PropTypes.string.isRequired,
+
+  onTrackedVehicleUpdate: PropTypes.func,
+  onVehicleListUpdate: PropTypes.func,
+
   highlight: leafletPathType,
   lowlight: leafletPathType,
   color: PropTypes.string,
-  geometryUrl: PropTypes.string,
-  vehicleUrl: PropTypes.string,
+  highlightColor: PropTypes.string,
   vehicleQuery: PropTypes.string,
   refreshDelay: PropTypes.number,
   tracked: PropTypes.string,
   recenterMap: PropTypes.bool,
+  panOffsetX: PropTypes.number,
+  panOffsetY: PropTypes.number,
   hasTooltip: PropTypes.bool,
   hasPopup: PropTypes.bool
 };
