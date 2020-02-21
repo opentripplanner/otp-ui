@@ -1,13 +1,7 @@
-import { leafletPathType } from "@opentripplanner/core-utils/lib/types";
+import { stopLayerStopType } from "@opentripplanner/core-utils/lib/types";
 import PropTypes from "prop-types";
 import React from "react";
-import {
-  FeatureGroup,
-  MapLayer,
-  Popup,
-  CircleMarker,
-  withLeaflet
-} from "react-leaflet";
+import { FeatureGroup, MapLayer, withLeaflet } from "react-leaflet";
 
 /**
  * This overlay is intended to highlight a specific stop on a map typically in
@@ -37,23 +31,13 @@ class StopViewerOverlay extends MapLayer {
   updateLeafletElement() {}
 
   render() {
-    const { leafletPath, radius, stopData } = this.props;
+    const { stopData, StopMarker } = this.props;
 
     if (!stopData) return <FeatureGroup />;
 
     return (
       <FeatureGroup>
-        <CircleMarker
-          /* eslint-disable-next-line react/jsx-props-no-spreading */
-          {...leafletPath}
-          center={[stopData.lat, stopData.lon]}
-          key={stopData.id}
-          radius={radius}
-        >
-          <Popup>
-            <div>{stopData.name}</div>
-          </Popup>
-        </CircleMarker>
+        <StopMarker stopData={stopData} />
       </FeatureGroup>
     );
   }
@@ -61,35 +45,14 @@ class StopViewerOverlay extends MapLayer {
 
 StopViewerOverlay.props = {
   /**
-   * Leaflet path properties to use to style the marker that represents the
-   * stop.
-   *
-   * See https://leafletjs.com/reference-1.6.0.html#path
-   */
-  leafletPath: leafletPathType,
-  /**
-   * The radius in pixels for the stop marker
-   */
-  radius: PropTypes.number,
-  /**
    * An object representing a transit stop
    */
-  stopData: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    lat: PropTypes.number.isRequired,
-    lon: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired
-  })
+  stopData: stopLayerStopType,
+  StopMarker: PropTypes.elementType.isRequired
 };
 
 StopViewerOverlay.defaultProps = {
-  leafletPath: {
-    color: "#000",
-    fillColor: "cyan",
-    fillOpacity: 1,
-    weight: 3
-  },
-  radius: 9
+  stopData: null
 };
 
 export default withLeaflet(StopViewerOverlay);
