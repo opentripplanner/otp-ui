@@ -1,12 +1,8 @@
-import {
-  languageConfigType,
-  leafletPathType
-} from "@opentripplanner/core-utils/lib/types";
 import PropTypes from "prop-types";
 import React from "react";
 import { FeatureGroup, MapLayer, withLeaflet } from "react-leaflet";
 
-import StopMarker, { stopLayerStopType } from "./stop-marker";
+import { stopLayerStopType } from "./stop-marker";
 
 /**
  * An overlay to view a collection of stops.
@@ -57,17 +53,7 @@ class StopsOverlay extends MapLayer {
   updateLeafletElement() {}
 
   render() {
-    const {
-      languageConfig,
-      leaflet,
-      minZoom,
-      setLocation,
-      setMainPanelContent,
-      setViewedStop,
-      stopMarkerPath,
-      stopMarkerRadius,
-      stops
-    } = this.props;
+    const { leaflet, minZoom, StopMarker, stops } = this.props;
 
     // Don't render if below zoom threshold or no stops visible
     if (
@@ -81,18 +67,7 @@ class StopsOverlay extends MapLayer {
     }
 
     // Helper to create StopMarker from stop
-    const createStopMarker = stop => (
-      <StopMarker
-        key={stop.id}
-        languageConfig={languageConfig}
-        leafletPath={stopMarkerPath}
-        radius={stopMarkerRadius}
-        setLocation={setLocation}
-        setMainPanelContent={setMainPanelContent}
-        setViewedStop={setViewedStop}
-        stop={stop}
-      />
-    );
+    const createStopMarker = stop => <StopMarker key={stop.id} stop={stop} />;
 
     // Singleton case; return FeatureGroup with single StopMarker
     if (stops.length === 1) {
@@ -107,7 +82,6 @@ class StopsOverlay extends MapLayer {
 }
 
 StopsOverlay.propTypes = {
-  languageConfig: languageConfigType.isRequired,
   /** the leaflet reference as obtained from the withLeaflet wrapper */
   /* eslint-disable-next-line react/forbid-prop-types */
   leaflet: PropTypes.object.isRequired,
@@ -121,44 +95,10 @@ StopsOverlay.propTypes = {
    */
   refreshStops: PropTypes.func.isRequired,
   /**
-   * A callback for when a user clicks on setting this stop as either the from
-   * or to location of a new search.
-   *
-   * This will be dispatched with the following argument:
-   *
-   * ```js
-   *  {
-   *    location: {
-   *      lat: number,
-   *      lon: number,
-   *      name: string
-   *    },
-   *    locationType: "from" or "to"
-   *  }
-   * ```
+   * A react component that can be used to render a stop marker. The component
+   * will be sent a single prop of stop which will be a stopLayerStopType.
    */
-  setLocation: PropTypes.func.isRequired,
-  /**
-   * A callback for when a user wants to open the stop viewer for this stop.
-   *
-   * This will be dispatched with the following argument:
-   *
-   * ```js
-   * { stopId: string }
-   * ```
-   */
-  setViewedStop: PropTypes.func.isRequired,
-  /**
-   * Leaflet path properties to use to style each stop marker that represents a
-   * stop.
-   *
-   * See https://leafletjs.com/reference-1.6.0.html#path
-   */
-  stopMarkerPath: leafletPathType,
-  /**
-   * The radius in pixels to draw each stop marker.
-   */
-  stopMarkerRadius: PropTypes.number,
+  StopMarker: PropTypes.elementType.isRequired,
   /**
    * The list of stops to create stop markers for.
    */

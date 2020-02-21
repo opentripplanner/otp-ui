@@ -21,6 +21,9 @@
     "@opentripplanner/core-utils": "^0.0.15",
     "@opentripplanner/from-to-location-picker": "^0.0.15"
   },
+  "devDependencies": {
+    "styled-icons": "^9.1.0"
+  },
   "peerDependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
