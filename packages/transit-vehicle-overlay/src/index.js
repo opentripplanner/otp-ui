@@ -40,8 +40,11 @@ class Vehicles extends MapLayer {
     }
 
     // initialize zoom state here? (may trigger render again.)
-    const zoom = this.getLeafletContext().map.getZoom();
-    this.setMapZoom(zoom);
+    const map = this.getLeafletContext().map;
+    this.setMapZoom(map.getZoom());
+    map.on("viewreset", () => this.setMapZoom(map.getZoom()));
+    map.on("zoom", () => this.setMapZoom(map.getZoom()));
+    map.on("zoomlevelschange", () => this.setMapZoom(map.getZoom()));
   }
 
   componentWillUnmount() {
@@ -63,8 +66,9 @@ class Vehicles extends MapLayer {
     if (prevProps.vehicleQuery !== this.props.vehicleQuery) {
       // also make sure to check / change the tracker
       let tracked = this.getTrackedVehicleId();
-      if (prevProps.tracked !== this.props.tracked)
+      if (prevProps.tracked !== this.props.tracked) {
         tracked = this.props.tracked;
+      }
       utils.fetchVehicles(
         this.setVehicleData,
         tracked,
@@ -76,6 +80,7 @@ class Vehicles extends MapLayer {
     // update the tracked vehicle when the tracker is changed
     if (prevProps.tracked !== this.props.tracked) {
       this.setTrackedVehicle(this.props.tracked, true);
+      this.recenterMap();
     }
   }
 
@@ -89,11 +94,6 @@ class Vehicles extends MapLayer {
     this.stopFetchingVehicles();
   };
 
-  /** BaseMap: onViewportChanged notified whenever the BaseMap's center or zoom changes */
-  onViewportChanged = viewport => {
-    this.setMapZoom(viewport.zoom);
-  };
-
   /** needed: extending ReactLeaflet's MapLayer */
   createLeafletElement() {}
 
@@ -102,10 +102,11 @@ class Vehicles extends MapLayer {
 
   /**
    * set zoom, used for changing icons ..
-   * note: limit (throttle) so we don't overwhelm React with tons of state changes zoomming in
+   * note: limit (throttle) so we don't overwhelm React with tons of state changes zooming in
    */
   setMapZoom = throttle(500, zoom => {
     this.setState({ mapZoom: zoom });
+    this.recenterMap();
   });
 
   /** pan the map to the tracked vehicle's coordinates */

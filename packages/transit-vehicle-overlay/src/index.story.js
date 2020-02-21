@@ -134,10 +134,7 @@ function rtExample(name, visible) {
           "route numbers / all:",
           "routes/all?or=routes/90,100,190,200,290"
         )}
-        tracked={text(
-          "block -or- trip id:",
-          "block or trip id here to track a vehicle, ala 2002"
-        )}
+        tracked={text("block -or- trip id:", "track block: 9047")}
         refreshDelay={number("refresh interval:", 5000)}
         color={color("color:", "#777")}
         highlightColor={color("tracked color:", "#ece90d")}
