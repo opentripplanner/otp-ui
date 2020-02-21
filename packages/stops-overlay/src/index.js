@@ -1,8 +1,7 @@
+import { stopLayerStopType } from "@opentripplanner/core-utils/src/types";
 import PropTypes from "prop-types";
 import React from "react";
 import { FeatureGroup, MapLayer, withLeaflet } from "react-leaflet";
-
-import { stopLayerStopType } from "./stop-marker";
 
 /**
  * An overlay to view a collection of stops.

@@ -1,5 +1,6 @@
 import { divIcon } from "leaflet";
 import BaseMap from "@opentripplanner/base-map";
+import { stopLayerStopType } from "@opentripplanner/core-utils/src/types";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import ReactDOMServer from "react-dom/server";
@@ -12,7 +13,7 @@ import { Bus, Subway } from "styled-icons/fa-solid";
 
 import StopsOverlay from ".";
 import mockStops from "../__mocks__/stops.json";
-import DefaultStopMarker, { stopLayerStopType } from "./stop-marker";
+import DefaultStopMarker from "./stop-marker";
 
 import "@opentripplanner/base-map/assets/map.css";
 
