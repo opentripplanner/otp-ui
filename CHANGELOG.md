@@ -3,6 +3,20 @@
 - [Components via Storybook](http://www.opentripplanner.org/otp-ui/?path=/story/locationicon--to-locationicon)
 - [npm packages](https://www.npmjs.com/org/opentripplanner)
 
+## [0.0.15] - 2020-02-20
+
+### Added Components
+
+- [printable-itinerary](http://www.opentripplanner.org/otp-ui/?path=/story/printableitinerary--itinerarybody-with-walk-only-itinerary) adds a component for rendering an OTP itinerary formatted for printing on 8.5x11 paper. Resolves issue [#38](https://github.com/opentripplanner/otp-ui/issues/38)
+
+- [trip-details](http://www.opentripplanner.org/otp-ui/?path=/story/tripdetails--tripdetails-with-tnc-transit-itinerary) adds a component to render cost, date/time and calories based on an OTP itinerary.
+
+### Changes
+
+- [transit-vehicle-overlay](http://www.opentripplanner.org/otp-ui/?path=/story/transitvehicleoverlay--real-time-vehicles-in-layer-switcher): fixes tracking and panning issue; adds panTo offsets, data callbacks and color styling improvements to the Real-time Transit Vehicle overlay. Resolves issue: [#58](https://github.com/opentripplanner/otp-ui/issues/58)
+
+---
+
 ## [0.0.14] - 2020-02-04
 
 ### Changes
