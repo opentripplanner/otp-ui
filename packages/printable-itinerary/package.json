@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/printable-itinerary",
-  "version": "0.0.1",
+  "version": "0.0.15",
   "description": "A component for displaying a printable itinerary body of a trip planning result",
   "main": "lib/index.js",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
@@ -9,13 +9,13 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^0.0.14",
-    "@opentripplanner/humanize-distance": "^0.0.13",
+    "@opentripplanner/core-utils": "^0.0.15",
+    "@opentripplanner/humanize-distance": "^0.0.15",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "@opentripplanner/icons": "^0.0.14",
-    "@opentripplanner/itinerary-body": "^0.0.14"
+    "@opentripplanner/icons": "^0.0.15",
+    "@opentripplanner/itinerary-body": "^0.0.15"
   },
   "peerDependencies": {
     "react": "^16.8.6",
