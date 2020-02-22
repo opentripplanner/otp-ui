@@ -1,7 +1,8 @@
 import * as BaseMapStyled from "@opentripplanner/base-map/lib/styled";
 import {
   languageConfigType,
-  leafletPathType
+  leafletPathType,
+  stopLayerStopType
 } from "@opentripplanner/core-utils/lib/types";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 import PropTypes from "prop-types";
@@ -9,13 +10,6 @@ import React, { Component } from "react";
 import { CircleMarker, Popup } from "react-leaflet";
 
 import * as Styled from "./styled";
-
-export const stopLayerStopType = PropTypes.shape({
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  lat: PropTypes.number.isRequired,
-  lon: PropTypes.number.isRequired
-});
 
 export default class StopMarker extends Component {
   onClickView = () => {

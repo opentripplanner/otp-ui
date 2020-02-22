@@ -1,19 +1,39 @@
+import { divIcon } from "leaflet";
 import BaseMap from "@opentripplanner/base-map";
-import { leafletPathType } from "@opentripplanner/core-utils/lib/types";
+import { stopLayerStopType } from "@opentripplanner/core-utils/src/types";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
+import ReactDOMServer from "react-dom/server";
+import { Marker } from "react-leaflet";
 import { action } from "@storybook/addon-actions";
 import { withA11y } from "@storybook/addon-a11y";
 import { withInfo } from "@storybook/addon-info";
 import { storiesOf } from "@storybook/react";
+import { Bus, Subway } from "styled-icons/fa-solid";
 
 import StopsOverlay from ".";
 import mockStops from "../__mocks__/stops.json";
+import DefaultStopMarker from "./stop-marker";
 
 import "@opentripplanner/base-map/assets/map.css";
 
 const center = [45.523092, -122.671202];
 const languageConfig = { stopViewer: "View Stop" };
+
+function ExampleMarker({ stop }) {
+  return (
+    <DefaultStopMarker
+      languageConfig={languageConfig}
+      setLocation={action("setLocation")}
+      setViewedStop={action("setViewedStop")}
+      stop={stop}
+    />
+  );
+}
+
+ExampleMarker.propTypes = {
+  stop: stopLayerStopType.isRequired
+};
 
 class Example extends Component {
   constructor() {
@@ -35,18 +55,14 @@ class Example extends Component {
   };
 
   render() {
-    const { stopMarkerPath, stopMarkerRadius } = this.props;
+    const { StopMarker } = this.props;
     const { stops } = this.state;
     return (
       <BaseMap center={center}>
         <StopsOverlay
-          languageConfig={languageConfig}
           name="Transit Stops"
           refreshStops={this.refreshStops}
-          setLocation={action("setLocation")}
-          setViewedStop={action("setViewedStop")}
-          stopMarkerPath={stopMarkerPath}
-          stopMarkerRadius={stopMarkerRadius}
+          StopMarker={StopMarker}
           stops={stops}
           visible
         />
@@ -56,26 +72,33 @@ class Example extends Component {
 }
 
 Example.propTypes = {
-  stopMarkerPath: leafletPathType,
-  stopMarkerRadius: PropTypes.number
+  StopMarker: PropTypes.elementType
 };
 
 Example.defaultProps = {
-  stopMarkerPath: undefined,
-  stopMarkerRadius: undefined
+  StopMarker: ExampleMarker
 };
 
-const stopMarkerPath = {
-  color: "purple",
-  fillColor: "#00ff11",
-  fillOpacity: 1,
-  weight: 3
+function CustomMarker({ stop }) {
+  const iconHtml = ReactDOMServer.renderToStaticMarkup(
+    stop.name.indexOf("MAX") > -1 ? <Subway /> : <Bus color="grey" />
+  );
+  return (
+    <Marker
+      icon={divIcon({ html: iconHtml, className: "" })}
+      position={[stop.lat, stop.lon]}
+    />
+  );
+}
+
+CustomMarker.propTypes = {
+  stop: stopLayerStopType.isRequired
 };
 
 storiesOf("StopsOverlay", module)
   .addDecorator(withA11y)
   .addDecorator(withInfo)
-  .add("StopsOverlay", () => <Example />)
-  .add("StopsOverlay with custom marker styling", () => (
-    <Example stopMarkerPath={stopMarkerPath} stopMarkerRadius={10} />
+  .add("StopsOverlay with default marker", () => <Example />)
+  .add("StopsOverlay with custom marker", () => (
+    <Example StopMarker={CustomMarker} />
   ));
