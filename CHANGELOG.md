@@ -3,6 +3,16 @@
 - [Components via Storybook](http://www.opentripplanner.org/otp-ui)
 - [npm packages](https://www.npmjs.com/org/opentripplanner)
 
+## [0.0.16] - 2020-02-21
+
+### Changes
+
+- [base-map](http://www.opentripplanner.org/otp-ui/?path=/story/basemap--click-and-viewportchanged-events) Desktop right-click / mobile long press. Resolves issue [#64](https://github.com/opentripplanner/otp-ui/issues/64)
+- [stop-viewer-overlay](http://www.opentripplanner.org/otp-ui/?path=/story/basemap--click-and-viewportchanged-events) Slot for custom icon. Resolves issue [#62](https://github.com/opentripplanner/otp-ui/issues/62)
+- [stops-overlay](http://www.opentripplanner.org/otp-ui/?path=/story/basemap--click-and-viewportchanged-events) Slot for custom icons (different stop icons (bus, MAX, SC, WES, TRAM) could be based on a 'mode' attribute if available in a stops service). Resolves issue [#59](https://github.com/opentripplanner/otp-ui/issues/59)
+
+---
+
 ## [0.0.15] - 2020-02-20
 
 ### Added Components
@@ -14,8 +24,6 @@
 ### Changes
 
 - [transit-vehicle-overlay](http://www.opentripplanner.org/otp-ui/?path=/story/transitvehicleoverlay--real-time-vehicles-in-layer-switcher): fixes tracking and panning issue; adds panTo offsets, data callbacks and color styling improvements to the Real-time Transit Vehicle overlay. Resolves issue: [#58](https://github.com/opentripplanner/otp-ui/issues/58)
-
----
 
 ## [0.0.14] - 2020-02-04
 
