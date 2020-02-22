@@ -7,9 +7,9 @@
 
 ### Changes
 
-- [base-map](http://www.opentripplanner.org/otp-ui/?path=/story/basemap--click-and-viewportchanged-events) Desktop right-click / mobile long press. Resolves issue [#64](https://github.com/opentripplanner/otp-ui/issues/64)
-- [stop-viewer-overlay](http://www.opentripplanner.org/otp-ui/?path=/story/basemap--click-and-viewportchanged-events) Slot for custom icon. Resolves issue [#62](https://github.com/opentripplanner/otp-ui/issues/62)
-- [stops-overlay](http://www.opentripplanner.org/otp-ui/?path=/story/basemap--click-and-viewportchanged-events) Slot for custom icons (different stop icons (bus, MAX, SC, WES, TRAM) could be based on a 'mode' attribute if available in a stops service). Resolves issue [#59](https://github.com/opentripplanner/otp-ui/issues/59)
+- [base-map](http://www.opentripplanner.org/otp-ui/?path=/story/basemap--on-context-menu-popup) Callbacks for Desktop right-click / Mobile long press. Resolves issue [#64](https://github.com/opentripplanner/otp-ui/issues/64)
+- [stop-viewer-overlay](http://www.opentripplanner.org/otp-ui/?path=/story/stopvieweroverlay--stopvieweroverlay-with-custom-marker) Slot for custom icon. Resolves issue [#62](https://github.com/opentripplanner/otp-ui/issues/62)
+- [stops-overlay](http://www.opentripplanner.org/otp-ui/?path=/story/stopsoverlay--stopsoverlay-with-custom-marker) Slot for custom icons (different stop icons (bus, MAX, SC, WES, TRAM) could be based on a 'mode' attribute if available in a stops service). Resolves issue [#59](https://github.com/opentripplanner/otp-ui/issues/59)
 
 ---
 
