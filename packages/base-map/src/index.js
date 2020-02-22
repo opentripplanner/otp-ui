@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { LayersControl, Map, Popup, TileLayer } from "react-leaflet";
-import { latlngType } from "@opentripplanner/core-utils/lib/types";
+import { latlngType } from "@opentripplanner/core-utils/src/types";
 import L from "leaflet";
 
 import callIfValid from "./util";
@@ -141,6 +141,7 @@ class BaseMap extends Component {
       children,
       maxZoom,
       popup,
+      onContextMenu,
       onPopupClosed,
       zoom
     } = this.props;
@@ -169,6 +170,7 @@ class BaseMap extends Component {
         maxZoom={maxZoom}
         // onClick={this.onLeftClick}
         // Note: Map-click is handled via single-click plugin, set up in componentDidMount()
+        onContextMenu={onContextMenu}
         onOverlayAdd={this.handleOverlayAdded}
         onOverlayRemove={this.handleOverlayRemoved}
         onViewportChanged={this.handleViewportChanged}
@@ -277,6 +279,11 @@ BaseMap.propTypes = {
    */
   onClick: PropTypes.func,
   /**
+   * Triggered when the user right-clicks on the map or, on a mobile device, presses the map for a second ("long-press").
+   * See https://leafletjs.com/reference-1.6.0.html#map-contextmenu for details.
+   */
+  onContextMenu: PropTypes.func,
+  /**
    * Triggered when the user makes an overlay visible using the map's layers control.
    * See https://leafletjs.com/reference-1.6.0.html#map-overlayadd for details.
    */
@@ -326,6 +333,7 @@ BaseMap.defaultProps = {
   ],
   maxZoom: 20,
   onClick: null,
+  onContextMenu: null,
   onOverlayAdded: null,
   onOverlayRemoved: null,
   onPopupClosed: null,
