@@ -102,7 +102,7 @@ export function itineraryToTransitive(itin, companies) {
     place_lon: itin.legs[itin.legs.length - 1].to.lon
   });
 
-  itin.legs.forEach(leg => {
+  itin.legs.forEach((leg, idx) => {
     if (
       leg.mode === "WALK" ||
       leg.mode === "BICYCLE" ||
@@ -114,6 +114,13 @@ export function itineraryToTransitive(itin, companies) {
         fromPlaceId = `bicycle_rent_station_${leg.from.bikeShareId}`;
       } else if (leg.from.vertexType === "VEHICLERENTAL") {
         fromPlaceId = `escooter_rent_station_${leg.from.name}`;
+      } else if (
+        leg.mode === "CAR" &&
+        idx > 0 &&
+        itin.legs[idx - 1].mode === "WALK"
+      ) {
+        // create a special place ID for car legs preceeded by walking legs
+        fromPlaceId = `itin_car_${streetEdgeId}_from`;
       } else {
         fromPlaceId = `itin_street_${streetEdgeId}_from`;
       }
@@ -123,6 +130,13 @@ export function itineraryToTransitive(itin, companies) {
         toPlaceId = `bicycle_rent_station_${leg.to.bikeShareId}`;
       } else if (leg.to.vertexType === "VEHICLERENTAL") {
         toPlaceId = `escooter_rent_station_${leg.to.name}`;
+      } else if (
+        leg.mode === "CAR" &&
+        idx < itin.legs.length - 1 &&
+        itin.legs[idx + 1].mode === "WALK"
+      ) {
+        // create a special place ID for car legs followed by walking legs
+        toPlaceId = `itin_car_${streetEdgeId}_to`;
       } else {
         toPlaceId = `itin_street_${streetEdgeId}_to`;
       }
@@ -266,6 +280,10 @@ export function isBikeshareStation(place) {
 
 export function isEScooterStation(place) {
   return place.place_id.lastIndexOf("escooter_rent_station") !== -1;
+}
+
+export function isCarWalkTransition(place) {
+  return place.place_id.lastIndexOf("itin_car_") !== -1;
 }
 
 export function isValidLat(lat) {
