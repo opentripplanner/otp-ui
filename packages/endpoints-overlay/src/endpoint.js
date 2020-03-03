@@ -179,11 +179,15 @@ export default class Endpoint extends Component {
 Endpoint.propTypes = {
   clearLocation: PropTypes.func.isRequired,
   forgetPlace: PropTypes.func.isRequired,
-  location: locationType.isRequired,
+  location: locationType,
   locations: PropTypes.arrayOf(locationType).isRequired,
   MapMarkerIcon: PropTypes.elementType.isRequired,
   rememberPlace: PropTypes.func.isRequired,
   setLocation: PropTypes.func.isRequired,
   showUserSettings: PropTypes.bool.isRequired,
   type: PropTypes.string.isRequired
+};
+
+Endpoint.defaultProps = {
+  location: undefined
 };
