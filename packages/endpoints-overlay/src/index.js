@@ -86,7 +86,7 @@ EndpointsOverlay.propTypes = {
   /**
    * The from location.
    */
-  fromLocation: locationType.isRequired,
+  fromLocation: locationType,
   /**
    * An array of location that the user has saved. Not needed unless user
    * settings is activated.
@@ -126,7 +126,7 @@ EndpointsOverlay.propTypes = {
   /**
    * To to location
    */
-  toLocation: locationType.isRequired
+  toLocation: locationType
 };
 
 const noop = () => {};
@@ -134,10 +134,12 @@ const noop = () => {};
 EndpointsOverlay.defaultProps = {
   clearLocation: noop,
   forgetPlace: noop,
+  fromLocation: undefined,
   rememberPlace: noop,
   locations: [],
   MapMarkerIcon: DefaultMapMarkerIcon,
-  showUserSettings: false
+  showUserSettings: false,
+  toLocation: undefined
 };
 
 export default EndpointsOverlay;
