@@ -9,12 +9,12 @@
   "private": false,
   "dependencies": {
     "@opentripplanner/core-utils": "^0.0.16",
-    "leaflet": "^1.6.0",
-    "prop-types": "^15.7.2",
-    "react-leaflet": "^2.6.1"
+    "prop-types": "^15.7.2"
   },
   "peerDependencies": {
+    "leaflet": "^1.6.0",
     "react": "^16.8.6",
+    "react-leaflet": "^2.6.1",
     "styled-components": "^4.3.1"
   },
   "repository": {

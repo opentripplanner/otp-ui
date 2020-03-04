@@ -18,13 +18,13 @@
   },
   "dependencies": {
     "@mapbox/polyline": "^1.1.0",
-    "@opentripplanner/base-map": "^0.0.16",
     "@opentripplanner/core-utils": "^0.0.16",
-    "prop-types": "^15.7.2",
-    "react-leaflet": "^2.6.1"
+    "prop-types": "^15.7.2"
   },
   "peerDependencies": {
-    "react": "^16.8.6"
+    "@opentripplanner/base-map": "^0.0.16",
+    "react": "^16.8.6",
+    "react-leaflet": "^2.6.1"
   },
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"
 }

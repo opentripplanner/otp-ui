@@ -8,7 +8,6 @@
   "main": "lib/index.js",
   "private": false,
   "dependencies": {
-    "@opentripplanner/base-map": "^0.0.16",
     "@opentripplanner/core-utils": "^0.0.16",
     "@opentripplanner/icons": "^0.0.16",
     "@turf/nearest-point-on-line": "^6.0.1",
@@ -21,6 +20,7 @@
   },
   "peerDependencies": {
     "leaflet": "^1.6.0",
+    "@opentripplanner/base-map": "^0.0.16",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-leaflet": "^2.6.1",

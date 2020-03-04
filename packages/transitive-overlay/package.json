@@ -17,10 +17,8 @@
     "url": "git+https://github.com/opentripplanner/otp-ui.git"
   },
   "dependencies": {
-    "@opentripplanner/base-map": "^0.0.16",
     "@opentripplanner/core-utils": "^0.0.16",
     "lodash.isequal": "^4.5.0",
-    "react-leaflet": "^2.6.1",
     "transitive-js": "^0.13.0"
   },
   "devDependencies": {
@@ -28,6 +26,8 @@
     "@opentripplanner/itinerary-body": "^0.0.16"
   },
   "peerDependencies": {
-    "react": "^16.8.6"
+    "@opentripplanner/base-map": "^0.0.16",
+    "react": "^16.8.6",
+    "react-leaflet": "^2.6.1"
   }
 }
