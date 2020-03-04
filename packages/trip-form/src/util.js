@@ -88,26 +88,29 @@ function getTransitCombinedModeOptions(modes, selectedModes) {
   const { accessModes } = modes;
   const modesHaveTransit = selectedModes.some(isTransit);
 
-  return accessModes.map(modeObj => {
-    const modeStr = getModeString(modeObj);
-    return {
-      id: `TRANSIT+${modeStr}${modeObj.company ? `+${modeObj.company}` : ""}`,
-      selected: modesHaveTransit && selectedModes.includes(modeStr),
-      text: (
-        <span>
-          <ModeIcon mode="transit" />+<ModeIcon mode={modeStr} />
-        </span>
-      ),
-      title: modeObj.label
-    };
-  });
+  return (
+    accessModes &&
+    accessModes.map(modeObj => {
+      const modeStr = getModeString(modeObj);
+      return {
+        id: `TRANSIT+${modeStr}${modeObj.company ? `+${modeObj.company}` : ""}`,
+        selected: modesHaveTransit && selectedModes.includes(modeStr),
+        text: (
+          <span>
+            <ModeIcon mode="transit" />+<ModeIcon mode={modeStr} />
+          </span>
+        ),
+        title: modeObj.label
+      };
+    })
+  );
 }
 
 function getExclusiveModeOptions(modes, selectedModes) {
   const { exclusiveModes } = modes;
 
   return supportedExclusiveModes
-    .filter(mode => exclusiveModes.includes(mode.mode))
+    .filter(mode => exclusiveModes && exclusiveModes.includes(mode.mode))
     .map(modeObj => ({
       id: modeObj.mode,
       selected:
@@ -135,42 +138,71 @@ export function getModeOptions(modes, selectedModes) {
   };
 }
 
+/**
+ * Of the specified companies, returns those that operate the specified modes.
+ * @param {*} companies The supported companies per OTP configuration.
+ * @param {*} modes The desired modes for which to get the operating companies.
+ * @returns An array of companies that operate the specified modes, or undefined if companies is undefined.
+ */
 export function getCompanies(companies, modes) {
-  return companies
-    .filter(
-      comp => comp.modes.split(",").filter(m => modes.includes(m)).length > 0
-    )
-    .filter(comp => hasRental(comp.modes) || hasHail(comp.modes));
+  return (
+    companies &&
+    companies
+      .filter(
+        comp => comp.modes.split(",").filter(m => modes.includes(m)).length > 0
+      )
+      .filter(comp => hasRental(comp.modes) || hasHail(comp.modes))
+  );
 }
 
+/**
+ * Returns the UI options for the specified companies, modes, and selection.
+ * @param {*} companies The supported companies per OTP configuration.
+ * @param {*} modes The desired modes for which to get the operating companies.
+ * @param {*} selectedCompanies The companies to render selected from the UI.
+ * @returns An array of UI options, or undefined if companies is undefined.
+ */
 export function getCompaniesOptions(companies, modes, selectedCompanies) {
-  return getCompanies(companies, modes).map(comp => {
-    const CompanyIcon = getCompanyIcon(comp.id);
+  const comps = getCompanies(companies, modes);
+  return (
+    comps &&
+    comps.map(comp => {
+      const CompanyIcon = getCompanyIcon(comp.id);
 
-    return {
-      id: comp.id,
-      selected: selectedCompanies.includes(comp.id),
-      text: (
-        <span>
-          <CompanyIcon /> {comp.label}
-        </span>
-      ),
-      title: comp.label
-    };
-  });
+      return {
+        id: comp.id,
+        selected: selectedCompanies.includes(comp.id),
+        text: (
+          <span>
+            <CompanyIcon /> {comp.label}
+          </span>
+        ),
+        title: comp.label
+      };
+    })
+  );
 }
 
+/**
+ * Returns the UI options for the specified bike/micromobility modes and selection.
+ * @param {*} modes The supported bike or micromobility modes.
+ * @param {*} selectedModes The modes to render selected from the UI.
+ * @returns An array of UI options, or undefined if modes is undefined.
+ */
 export function getBicycleOrMicromobilityModeOptions(modes, selectedModes) {
-  return modes.map(mode => {
-    return {
-      id: mode.mode,
-      selected: selectedModes.includes(mode.mode),
-      text: (
-        <span>
-          <ModeIcon mode={mode.mode} /> {mode.label}
-        </span>
-      ),
-      title: mode.label
-    };
-  });
+  return (
+    modes &&
+    modes.map(mode => {
+      return {
+        id: mode.mode,
+        selected: selectedModes.includes(mode.mode),
+        text: (
+          <span>
+            <ModeIcon mode={mode.mode} /> {mode.label}
+          </span>
+        ),
+        title: mode.label
+      };
+    })
+  );
 }

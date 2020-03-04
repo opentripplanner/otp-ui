@@ -93,9 +93,13 @@ export default class SettingsSelectorPanel extends Component {
       // If there are multiple (scooter | bikeshare) providers,
       // then if one is specified by the mode button, select it,
       // othewise select all providers.
+      // selectedCompanies is at least an empty array.
       const selectedCompanies =
         defaultCompany ||
-        getCompanies(supportedCompanies, nonTransitModes).map(comp => comp.id);
+        getCompanies(supportedCompanies, nonTransitModes).map(
+          comp => comp.id
+        ) ||
+        [];
 
       this.handleQueryParamChange({
         mode: finalModes.join(","),
@@ -169,9 +173,10 @@ export default class SettingsSelectorPanel extends Component {
     );
     const nonTransitModes = selectedModes.filter(m => !isTransit(m));
     const companies = getCompaniesOptions(
-      supportedCompanies.filter(comp =>
-        defaultCompany ? comp.id === defaultCompany : true
-      ),
+      supportedCompanies &&
+        supportedCompanies.filter(comp =>
+          defaultCompany ? comp.id === defaultCompany : true
+        ),
       nonTransitModes,
       this.getSelectedCompanies()
     );
@@ -226,7 +231,7 @@ export default class SettingsSelectorPanel extends Component {
           )}
 
         {/* This order is probably better. */}
-        {companies.length >= 2 && (
+        {companies && companies.length >= 2 && (
           <SubmodeSelector
             label="Use companies"
             modes={companies}
