@@ -22,7 +22,7 @@ const walkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__
 const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json");
 
 const StyledTripDetails = styled(TripDetails)`
-  ${TripDetailsClasses.LegBody} {
+  ${TripDetailsClasses.TripDetailsHeader} {
     background-color: pink;
   }
 `;
