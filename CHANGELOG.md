@@ -3,6 +3,18 @@
 - [Components via Storybook](http://www.opentripplanner.org/otp-ui)
 - [npm packages](https://www.npmjs.com/org/opentripplanner)
 
+## [0.0.17] - 2020-03-03
+
+### Changes
+
+Handful of cleanup PRs:
+
+- [#74](https://github.com/opentripplanner/otp-ui/issues/74)
+- [#75](https://github.com/opentripplanner/otp-ui/issues/75)
+- [#76](https://github.com/opentripplanner/otp-ui/issues/76)
+
+---
+
 ## [0.0.16] - 2020-02-21
 
 ### Changes
@@ -10,8 +22,6 @@
 - [base-map](http://www.opentripplanner.org/otp-ui/?path=/story/basemap--on-context-menu-popup) Callbacks for Desktop right-click / Mobile long press. Resolves issue [#64](https://github.com/opentripplanner/otp-ui/issues/64)
 - [stop-viewer-overlay](http://www.opentripplanner.org/otp-ui/?path=/story/stopvieweroverlay--stopvieweroverlay-with-custom-marker) Slot for custom icon. Resolves issue [#62](https://github.com/opentripplanner/otp-ui/issues/62)
 - [stops-overlay](http://www.opentripplanner.org/otp-ui/?path=/story/stopsoverlay--stopsoverlay-with-custom-marker) Slot for custom icons (different stop icons (bus, MAX, SC, WES, TRAM) could be based on a 'mode' attribute if available in a stops service). Resolves issue [#59](https://github.com/opentripplanner/otp-ui/issues/59)
-
----
 
 ## [0.0.15] - 2020-02-20
 
