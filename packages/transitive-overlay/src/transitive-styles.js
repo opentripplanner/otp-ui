@@ -1,5 +1,6 @@
 import {
   isBikeshareStation,
+  isCarWalkTransition,
   isEScooterStation
 } from "@opentripplanner/core-utils/lib/map";
 
@@ -17,10 +18,17 @@ const STYLES = {};
  */
 STYLES.places = {
   display: (display, place) =>
-    isBikeshareStation(place) || isEScooterStation(place) ? true : "none",
+    isBikeshareStation(place) ||
+    isEScooterStation(place) ||
+    isCarWalkTransition(place)
+      ? true
+      : "none",
   fill: (display, place) => {
     if (isBikeshareStation(place)) {
       return "#f00";
+    }
+    if (isCarWalkTransition(place)) {
+      return "#888";
     }
     if (isEScooterStation(place)) {
       return "#f5a729";
