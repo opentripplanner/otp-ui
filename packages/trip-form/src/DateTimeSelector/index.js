@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
 
+import { callIfValid } from "@opentripplanner/core-utils/lib/functions";
 import {
   OTP_API_DATE_FORMAT,
   OTP_API_TIME_FORMAT
@@ -83,10 +84,7 @@ class DateTimeSelector extends Component {
 
   raiseOnQueryParamChange = queryParam => {
     const { onQueryParamChange } = this.props;
-
-    if (typeof onQueryParamChange === "function") {
-      onQueryParamChange(queryParam);
-    }
+    callIfValid(onQueryParamChange)(queryParam);
   };
 
   handleQueryParamChange = queryParam => {

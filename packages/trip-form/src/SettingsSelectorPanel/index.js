@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { callIfValid } from "@opentripplanner/core-utils/lib/functions";
 import {
   isMicromobility,
   isTransit
@@ -56,9 +57,7 @@ export default class SettingsSelectorPanel extends Component {
 
   raiseOnQueryParamChange = queryParam => {
     const { onQueryParamChange } = this.props;
-    if (typeof onQueryParamChange === "function") {
-      onQueryParamChange(queryParam);
-    }
+    callIfValid(onQueryParamChange)(queryParam);
   };
 
   handleMainModeChange = id => {

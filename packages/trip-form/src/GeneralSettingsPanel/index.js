@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { callIfValid } from "@opentripplanner/core-utils/lib/functions";
 import queryParams from "@opentripplanner/core-utils/lib/query-params";
 import {
   defaultParams,
@@ -20,10 +21,7 @@ import * as Styled from "../styled";
 class GeneralSettingsPanel extends Component {
   handleChange = queryParam => {
     const { onQueryParamChange } = this.props;
-
-    if (typeof onQueryParamChange === "function") {
-      onQueryParamChange(queryParam);
-    }
+    callIfValid(onQueryParamChange)(queryParam);
   };
 
   render() {

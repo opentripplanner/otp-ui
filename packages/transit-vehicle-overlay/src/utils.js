@@ -38,17 +38,6 @@ export function checkHeading(heading) {
 }
 
 /**
- * Checks if a parameter is actually a function.
- * @param {*} fn The function to call.
- * @returns fn if fn is a function, or a dummy function.
- * TODO: copied from map ... should be in core-utils?
- */
-export function callIfValid(fn) {
-  if (typeof fn === "function") return fn;
-  return () => {};
-}
-
-/**
  * geojson uses [lon,lat] (e.g., [X, Y]) in representing coordinates
  * this utility function reverses the point order to be [lat, lon] (or [Y, X])
  *

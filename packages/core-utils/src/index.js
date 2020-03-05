@@ -1,3 +1,4 @@
+import * as functions from "./functions";
 import * as itinerary from "./itinerary";
 import * as map from "./map";
 import * as profile from "./profile";
@@ -7,6 +8,7 @@ import * as time from "./time";
 import * as ui from "./ui";
 
 const core = {
+  functions,
   itinerary,
   map,
   profile,

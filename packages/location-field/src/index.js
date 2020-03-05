@@ -1,3 +1,4 @@
+import { callIfValid } from "@opentripplanner/core-utils/lib/functions";
 import {
   currentPositionToLocation,
   formatStoredPlaceName
@@ -170,7 +171,7 @@ class LocationField extends Component {
       nearbyStops,
       onTextInputClick
     } = this.props;
-    if (typeof onTextInputClick === "function") onTextInputClick();
+    callIfValid(onTextInputClick)();
     this.setState({ menuVisible: true });
     if (nearbyStops.length === 0 && currentPosition && currentPosition.coords) {
       findNearbyStops({

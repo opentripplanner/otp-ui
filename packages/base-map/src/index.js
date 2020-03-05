@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { LayersControl, Map, Popup, TileLayer } from "react-leaflet";
 import { latlngType } from "@opentripplanner/core-utils/lib/types";
+import { callIfValid } from "@opentripplanner/core-utils/lib/functions";
 import L from "leaflet";
-
-import callIfValid from "./util";
 
 // eslint-disable-next-line func-names
 L.Evented.addInitHook(function() {

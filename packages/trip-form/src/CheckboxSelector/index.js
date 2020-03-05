@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { callIfValid } from "@opentripplanner/core-utils/lib/functions";
 
 import * as Styled from "../styled";
 
@@ -9,12 +10,9 @@ import * as Styled from "../styled";
 class CheckboxSelector extends Component {
   handleChange = evt => {
     const { name, onChange } = this.props;
-
-    if (typeof onChange === "function") {
-      onChange({
-        [name]: evt.target.checked
-      });
-    }
+    callIfValid(onChange)({
+      [name]: evt.target.checked
+    });
   };
 
   render() {

@@ -1,7 +1,7 @@
 import React from "react";
 import { FeatureGroup, MapLayer, withLeaflet } from "react-leaflet";
 
-import callIfValid from "../src/util";
+import { callIfValid } from "@opentripplanner/core-utils/lib/functions";
 
 import VehicleMarker from "./VehicleMarker";
 
