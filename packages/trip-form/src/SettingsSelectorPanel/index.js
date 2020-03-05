@@ -34,7 +34,7 @@ export default class SettingsSelectorPanel extends Component {
     const { queryParams } = props;
 
     this.state = {
-      defaultCompany: null,
+      defaultAccessModeCompany: null,
       lastTransitModes: [],
       queryParams
     };
@@ -82,7 +82,8 @@ export default class SettingsSelectorPanel extends Component {
       }
 
       const nonTransitModes = newModes.length > 1 ? [newModes[1]] : ["WALK"]; // TODO: also accommodate WALK+DRIVE, WALK+e-scooter?? They already seem to work without WALK right now.
-      const defaultCompany = newModes.length > 2 ? [newModes[2]] : null; // To accommodate companies defined under accessModes.
+      const defaultAccessModeCompany =
+        newModes.length > 2 ? [newModes[2]] : null; // To accommodate companies defined under accessModes.
 
       // Add previously selected transit modes only if none were active.
       const finalModes = (activeTransitModes.length > 0
@@ -95,7 +96,7 @@ export default class SettingsSelectorPanel extends Component {
       // othewise select all providers.
       // selectedCompanies is at least an empty array.
       const selectedCompanies =
-        defaultCompany ||
+        defaultAccessModeCompany ||
         getCompanies(supportedCompanies, nonTransitModes).map(comp => comp.id);
 
       this.handleQueryParamChange({
@@ -104,7 +105,8 @@ export default class SettingsSelectorPanel extends Component {
       });
 
       this.setState({
-        defaultCompany: defaultCompany && defaultCompany[0]
+        defaultAccessModeCompany:
+          defaultAccessModeCompany && defaultAccessModeCompany[0]
       });
     } else {
       this.handleQueryParamChange({
@@ -160,7 +162,7 @@ export default class SettingsSelectorPanel extends Component {
 
   render() {
     const { className, supportedModes, supportedCompanies, style } = this.props;
-    const { defaultCompany, queryParams } = this.state;
+    const { defaultAccessModeCompany, queryParams } = this.state;
     const selectedModes = this.getSelectedModes();
 
     const modeOptions = getModeOptions(supportedModes, selectedModes);
@@ -172,7 +174,7 @@ export default class SettingsSelectorPanel extends Component {
     const companies = getCompaniesOptions(
       supportedCompanies &&
         supportedCompanies.filter(comp =>
-          defaultCompany ? comp.id === defaultCompany : true
+          defaultAccessModeCompany ? comp.id === defaultAccessModeCompany : true
         ),
       nonTransitModes,
       this.getSelectedCompanies()
