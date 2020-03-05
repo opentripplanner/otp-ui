@@ -49,7 +49,7 @@ CheckboxSelector.propTypes = {
   /**
    * The initial value for the contained <input> control.
    */
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   /**
    * The contents of the contained <label> control.
    */
