@@ -28,32 +28,29 @@ import {
  * such as modes, providers, and speed preferences.
  */
 export default class SettingsSelectorPanel extends Component {
-  constructor(props) {
-    super(props);
-
-    const { queryParams } = props;
+  constructor() {
+    super();
 
     this.state = {
-      defaultCompany: null,
-      lastTransitModes: [],
-      queryParams
+      defaultAccessModeCompany: null,
+      lastTransitModes: []
     };
   }
 
   getSelectedCompanies() {
-    const { queryParams } = this.state;
+    const { queryParams } = this.props;
     const { companies } = queryParams;
     return companies ? companies.split(",") : [];
   }
 
   getSelectedModes() {
-    const { queryParams } = this.state;
+    const { queryParams } = this.props;
     const { mode } = queryParams;
     return mode ? mode.split(",") : [];
   }
 
   makeNewQueryParams = queryParam => {
-    const { queryParams } = this.state;
+    const { queryParams } = this.props;
     return { ...queryParams, ...queryParam };
   };
 
@@ -82,7 +79,8 @@ export default class SettingsSelectorPanel extends Component {
       }
 
       const nonTransitModes = newModes.length > 1 ? [newModes[1]] : ["WALK"]; // TODO: also accommodate WALK+DRIVE, WALK+e-scooter?? They already seem to work without WALK right now.
-      const defaultCompany = newModes.length > 2 ? [newModes[2]] : null; // To accommodate companies defined under accessModes.
+      const defaultAccessModeCompany =
+        newModes.length > 2 ? [newModes[2]] : null; // To accommodate companies defined under accessModes.
 
       // Add previously selected transit modes only if none were active.
       const finalModes = (activeTransitModes.length > 0
@@ -95,10 +93,8 @@ export default class SettingsSelectorPanel extends Component {
       // othewise select all providers.
       // selectedCompanies is at least an empty array.
       const selectedCompanies =
-        defaultCompany ||
-        (getCompanies(supportedCompanies, nonTransitModes) || []).map(
-          comp => comp.id
-        );
+        defaultAccessModeCompany ||
+        getCompanies(supportedCompanies, nonTransitModes).map(comp => comp.id);
 
       this.handleQueryParamChange({
         mode: finalModes.join(","),
@@ -106,7 +102,8 @@ export default class SettingsSelectorPanel extends Component {
       });
 
       this.setState({
-        defaultCompany: defaultCompany && defaultCompany[0]
+        defaultAccessModeCompany:
+          defaultAccessModeCompany && defaultAccessModeCompany[0]
       });
     } else {
       this.handleQueryParamChange({
@@ -132,9 +129,6 @@ export default class SettingsSelectorPanel extends Component {
 
   handleQueryParamChange = queryParam => {
     this.raiseOnQueryParamChange(queryParam);
-    this.setState({
-      queryParams: this.makeNewQueryParams(queryParam)
-    });
   };
 
   toggleSubmode = (name, id, submodes, filter = o => o, after) => {
@@ -161,8 +155,14 @@ export default class SettingsSelectorPanel extends Component {
   };
 
   render() {
-    const { className, supportedModes, supportedCompanies, style } = this.props;
-    const { defaultCompany, queryParams } = this.state;
+    const {
+      className,
+      queryParams,
+      supportedModes,
+      supportedCompanies,
+      style
+    } = this.props;
+    const { defaultAccessModeCompany } = this.state;
     const selectedModes = this.getSelectedModes();
 
     const modeOptions = getModeOptions(supportedModes, selectedModes);
@@ -174,7 +174,7 @@ export default class SettingsSelectorPanel extends Component {
     const companies = getCompaniesOptions(
       supportedCompanies &&
         supportedCompanies.filter(comp =>
-          defaultCompany ? comp.id === defaultCompany : true
+          defaultAccessModeCompany ? comp.id === defaultAccessModeCompany : true
         ),
       nonTransitModes,
       this.getSelectedCompanies()
@@ -278,5 +278,5 @@ SettingsSelectorPanel.defaultProps = {
   className: null,
   onQueryParamChange: null,
   queryParams: null,
-  supportedCompanies: null
+  supportedCompanies: []
 };
