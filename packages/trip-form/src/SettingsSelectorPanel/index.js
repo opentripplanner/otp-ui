@@ -96,10 +96,9 @@ export default class SettingsSelectorPanel extends Component {
       // selectedCompanies is at least an empty array.
       const selectedCompanies =
         defaultCompany ||
-        getCompanies(supportedCompanies, nonTransitModes).map(
+        (getCompanies(supportedCompanies, nonTransitModes) || []).map(
           comp => comp.id
-        ) ||
-        [];
+        );
 
       this.handleQueryParamChange({
         mode: finalModes.join(","),
