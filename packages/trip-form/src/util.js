@@ -142,17 +142,14 @@ export function getModeOptions(modes, selectedModes) {
  * Of the specified companies, returns those that operate the specified modes.
  * @param {*} companies The supported companies per OTP configuration.
  * @param {*} modes The desired modes for which to get the operating companies.
- * @returns An array of companies that operate the specified modes, or undefined if companies is undefined.
+ * @returns An array of companies that operate the specified modes (should not be undefined as companies is an array).
  */
 export function getCompanies(companies, modes) {
-  return (
-    companies &&
-    companies
-      .filter(
-        comp => comp.modes.split(",").filter(m => modes.includes(m)).length > 0
-      )
-      .filter(comp => hasRental(comp.modes) || hasHail(comp.modes))
-  );
+  return companies
+    .filter(
+      comp => comp.modes.split(",").filter(m => modes.includes(m)).length > 0
+    )
+    .filter(comp => hasRental(comp.modes) || hasHail(comp.modes));
 }
 
 /**
@@ -160,27 +157,23 @@ export function getCompanies(companies, modes) {
  * @param {*} companies The supported companies per OTP configuration.
  * @param {*} modes The desired modes for which to get the operating companies.
  * @param {*} selectedCompanies The companies to render selected from the UI.
- * @returns An array of UI options, or undefined if companies is undefined.
+ * @returns An array of UI options (should not be undefined as companies is an array).
  */
 export function getCompaniesOptions(companies, modes, selectedCompanies) {
-  const comps = getCompanies(companies, modes);
-  return (
-    comps &&
-    comps.map(comp => {
-      const CompanyIcon = getCompanyIcon(comp.id);
+  return getCompanies(companies, modes).map(comp => {
+    const CompanyIcon = getCompanyIcon(comp.id);
 
-      return {
-        id: comp.id,
-        selected: selectedCompanies.includes(comp.id),
-        text: (
-          <span>
-            <CompanyIcon /> {comp.label}
-          </span>
-        ),
-        title: comp.label
-      };
-    })
-  );
+    return {
+      id: comp.id,
+      selected: selectedCompanies.includes(comp.id),
+      text: (
+        <span>
+          <CompanyIcon /> {comp.label}
+        </span>
+      ),
+      title: comp.label
+    };
+  });
 }
 
 /**
