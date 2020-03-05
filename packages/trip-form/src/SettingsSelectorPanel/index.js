@@ -172,10 +172,9 @@ export default class SettingsSelectorPanel extends Component {
     );
     const nonTransitModes = selectedModes.filter(m => !isTransit(m));
     const companies = getCompaniesOptions(
-      supportedCompanies &&
-        supportedCompanies.filter(comp =>
-          defaultAccessModeCompany ? comp.id === defaultAccessModeCompany : true
-        ),
+      supportedCompanies.filter(comp =>
+        defaultAccessModeCompany ? comp.id === defaultAccessModeCompany : true
+      ),
       nonTransitModes,
       this.getSelectedCompanies()
     );
@@ -230,7 +229,7 @@ export default class SettingsSelectorPanel extends Component {
           )}
 
         {/* This order is probably better. */}
-        {companies && companies.length >= 2 && (
+        {companies.length >= 2 && (
           <SubmodeSelector
             label="Use companies"
             modes={companies}
