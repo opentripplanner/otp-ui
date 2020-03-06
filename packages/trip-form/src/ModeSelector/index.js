@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { callIfValid } from "@opentripplanner/core-utils/lib/functions";
 import { modeSelectorOptionsType } from "@opentripplanner/core-utils/lib/types";
 
 import * as Styled from "../styled";
@@ -18,8 +19,8 @@ const ModeSelector = props => {
   };
 
   const handleClick = option => {
-    if (!option.selected && typeof onChange === "function") {
-      onChange(option.id);
+    if (!option.selected) {
+      callIfValid(onChange)(option.id);
     }
   };
 

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { callIfValid } from "@opentripplanner/core-utils/lib/functions";
 
 import * as Styled from "../styled";
 
@@ -10,13 +11,10 @@ class DropdownSelector extends Component {
   handleChange = evt => {
     const val = evt.target.value;
     const { name, onChange } = this.props;
-
-    if (typeof onChange === "function") {
-      const floatVal = parseFloat(val);
-      onChange({
-        [name]: Number.isNaN(floatVal) ? val : floatVal
-      });
-    }
+    const floatVal = parseFloat(val);
+    callIfValid(onChange)({
+      [name]: Number.isNaN(floatVal) ? val : floatVal
+    });
   };
 
   render() {

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { MapLayer, FeatureGroup, withLeaflet } from "react-leaflet";
 
 import { leafletPathType } from "@opentripplanner/core-utils/src/types";
-import callIfValid from "@opentripplanner/base-map/src/util";
+import { callIfValid } from "@opentripplanner/core-utils/src/functions";
 import { throttle } from "throttle-debounce";
 
 import VehicleLayer from "./VehicleLayer";
@@ -144,9 +144,7 @@ class Vehicles extends MapLayer {
 
     // step 2: share the vehicle list with a registered callback
     const { onVehicleListUpdate } = this.props;
-    if (onVehicleListUpdate && typeof onVehicleListUpdate === "function") {
-      onVehicleListUpdate(vehicleList);
-    }
+    callIfValid(onVehicleListUpdate)(vehicleList);
 
     // step 3: update the tracked vehicle
     this.setTrackedVehicle(trackedId, true);
@@ -165,12 +163,7 @@ class Vehicles extends MapLayer {
 
       // step 4: share tracked vehicle record with a registered callback
       const { onTrackedVehicleUpdate } = this.props;
-      if (
-        onTrackedVehicleUpdate &&
-        typeof onTrackedVehicleUpdate === "function"
-      ) {
-        onTrackedVehicleUpdate(vehicle);
-      }
+      callIfValid(onTrackedVehicleUpdate)(vehicle);
 
       // step 5: recenter map
       this.recenterMap();
