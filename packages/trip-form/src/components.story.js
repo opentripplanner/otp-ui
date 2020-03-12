@@ -10,6 +10,7 @@ import ModeIcon from "./ModeIcon";
 import ModeIconWrap from "./__mocks__/mode-icon-wrap";
 import modeOptions from "./__mocks__/mode-options";
 import commonModes from "./__mocks__/modes";
+import customIcons from "./__mocks__/custom-icons";
 import submodeOptions from "./__mocks__/submode-options";
 import trimet from "./__mocks__/trimet.styled";
 
@@ -69,6 +70,12 @@ export const generalSettingsPanelStyled = () => trimet(generalSettingsPanel());
 export const modeIcon = () => (
   <ModeIconWrap>
     <ModeIcon mode={object("mode", "BICYCLE")} />
+  </ModeIconWrap>
+);
+
+export const modeIconWithCustomIcons = () => (
+  <ModeIconWrap>
+    <ModeIcon icons={customIcons} mode={object("mode", "TRANSIT")} />
   </ModeIconWrap>
 );
 
