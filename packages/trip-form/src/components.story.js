@@ -1,7 +1,7 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
-import { withKnobs, object, boolean } from "@storybook/addon-knobs";
+import { withKnobs, boolean, text } from "@storybook/addon-knobs";
 import * as Icons from "@opentripplanner/icons";
 
 import * as Core from ".";
@@ -58,7 +58,7 @@ export const dropdownSelectorStyled = () => trimet(dropdownSelector());
 export const generalSettingsPanel = () => (
   <Core.GeneralSettingsPanel
     query={{
-      mode: object("mode", "WALK,BUS,TRAM,SUBWAY"),
+      mode: text("mode", "WALK,BUS,TRAM,SUBWAY"),
       routingType: "ITINERARY"
     }}
     onQueryParamChange={onQueryParamChange}
@@ -69,13 +69,13 @@ export const generalSettingsPanelStyled = () => trimet(generalSettingsPanel());
 
 export const modeIcon = () => (
   <ModeIconWrap>
-    <ModeIcon mode={object("mode", "BICYCLE")} />
+    <ModeIcon mode={text("mode", "BICYCLE")} />
   </ModeIconWrap>
 );
 
 export const modeIconWithCustomIcons = () => (
   <ModeIconWrap>
-    <ModeIcon icons={customIcons} mode={object("mode", "TRANSIT")} />
+    <ModeIcon icons={customIcons} mode={text("mode", "TRANSIT")} />
   </ModeIconWrap>
 );
 
