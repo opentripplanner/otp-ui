@@ -28,32 +28,29 @@ import {
  * such as modes, providers, and speed preferences.
  */
 export default class SettingsSelectorPanel extends Component {
-  constructor(props) {
-    super(props);
-
-    const { queryParams } = props;
+  constructor() {
+    super();
 
     this.state = {
       defaultAccessModeCompany: null,
-      lastTransitModes: [],
-      queryParams
+      lastTransitModes: []
     };
   }
 
   getSelectedCompanies() {
-    const { queryParams } = this.state;
+    const { queryParams } = this.props;
     const { companies } = queryParams;
     return companies ? companies.split(",") : [];
   }
 
   getSelectedModes() {
-    const { queryParams } = this.state;
+    const { queryParams } = this.props;
     const { mode } = queryParams;
     return mode ? mode.split(",") : [];
   }
 
   makeNewQueryParams = queryParam => {
-    const { queryParams } = this.state;
+    const { queryParams } = this.props;
     return { ...queryParams, ...queryParam };
   };
 
@@ -132,9 +129,6 @@ export default class SettingsSelectorPanel extends Component {
 
   handleQueryParamChange = queryParam => {
     this.raiseOnQueryParamChange(queryParam);
-    this.setState({
-      queryParams: this.makeNewQueryParams(queryParam)
-    });
   };
 
   toggleSubmode = (name, id, submodes, filter = o => o, after) => {
@@ -161,8 +155,14 @@ export default class SettingsSelectorPanel extends Component {
   };
 
   render() {
-    const { className, supportedModes, supportedCompanies, style } = this.props;
-    const { defaultAccessModeCompany, queryParams } = this.state;
+    const {
+      className,
+      queryParams,
+      supportedModes,
+      supportedCompanies,
+      style
+    } = this.props;
+    const { defaultAccessModeCompany } = this.state;
     const selectedModes = this.getSelectedModes();
 
     const modeOptions = getModeOptions(supportedModes, selectedModes);
