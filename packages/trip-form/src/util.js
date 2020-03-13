@@ -49,7 +49,7 @@ export function getModeString(modeObj) {
   return modeObj.mode || modeObj;
 }
 
-export function getTransitSubmodeOptions(modes, selectedModes) {
+export function getTransitSubmodeOptions(icons, modes, selectedModes) {
   const { transitModes } = modes;
 
   // FIXME: If only one transit mode is available, select it.
@@ -60,7 +60,7 @@ export function getTransitSubmodeOptions(modes, selectedModes) {
       selected: selectedModes.includes(modeStr),
       text: (
         <span>
-          <ModeIcon mode={modeStr} />
+          <ModeIcon icons={icons} mode={modeStr} />
           {modeObj.label}
         </span>
       ),
@@ -98,7 +98,7 @@ function getTransitCombinedModeOptions(icons, modes, selectedModes) {
         text: (
           <span>
             <ModeIcon icons={icons} mode="TRANSIT" />+
-            <ModeIcon mode={modeStr} />
+            <ModeIcon icons={icons} mode={modeStr} />
           </span>
         ),
         title: modeObj.label
@@ -183,7 +183,11 @@ export function getCompaniesOptions(companies, modes, selectedCompanies) {
  * @param {*} selectedModes The modes to render selected from the UI.
  * @returns An array of UI options, or undefined if modes is undefined.
  */
-export function getBicycleOrMicromobilityModeOptions(modes, selectedModes) {
+export function getBicycleOrMicromobilityModeOptions(
+  icons,
+  modes,
+  selectedModes
+) {
   return (
     modes &&
     modes.map(mode => {
@@ -192,7 +196,7 @@ export function getBicycleOrMicromobilityModeOptions(modes, selectedModes) {
         selected: selectedModes.includes(mode.mode),
         text: (
           <span>
-            <ModeIcon mode={mode.mode} /> {mode.label}
+            <ModeIcon icons={icons} mode={mode.mode} /> {mode.label}
           </span>
         ),
         title: mode.label

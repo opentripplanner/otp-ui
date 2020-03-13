@@ -6,23 +6,21 @@ import * as Icons from "@opentripplanner/icons";
  * A generic icon component that displays an icon for the specified transportation mode.
  * If `icons` are defined, then
  * the icon will be attempted to be used from that lookup of icons. Otherwise,
- * an icon from the OTP-UI icons package will be returned.
+ * an icon from the OTP-UI icons package will be returned if available.
  */
 const ModeIcon = ({ icons, mode }) => {
   if (!mode) return null;
 
-  // Check if there is a custom icon
+  // Check if there is a custom icon (exact match required).
   if (icons && mode in icons) {
     return icons[mode];
   }
 
-  // From OTP-RR:lib/util/itinerary.js:
-  // Custom icon not available for the given iconId. Use the ModeIcon component
-  // to show the icon based on the iconId, but always use the default car icon
-  // for any car-based modes that didn't have custom icon.
-  const finalMode = mode && mode.startsWith("CAR") ? "CAR" : mode;
+  // If the custom icon is not available for the given mode,
+  // then use the OTP-UI icons package.
+  const modeLowerCase = mode.toLowerCase();
 
-  switch (finalMode.toLowerCase()) {
+  switch (modeLowerCase) {
     case "bus":
       return <Icons.Bus />;
     case "tram":
@@ -41,6 +39,7 @@ const ModeIcon = ({ icons, mode }) => {
       return <Icons.Ferry />;
     case "gondola":
       return <Icons.AerialTram />;
+    case "car":
     case "car_park":
       return <Icons.Car />;
     case "car_hail":
@@ -51,6 +50,11 @@ const ModeIcon = ({ icons, mode }) => {
     case "transit":
       return <Icons.TriMet />;
     default:
+      // From https://github.com/opentripplanner/otp-react-redux/blob/dev/lib/util/itinerary.js#L216:
+      // "Always use the default car icon
+      // for any car-based modes that didn't have custom icon"
+      // (and that are not listed above).
+      if (modeLowerCase.startsWith("car")) return <Icons.Car />;
       return null;
   }
 };

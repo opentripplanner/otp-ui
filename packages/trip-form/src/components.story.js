@@ -7,10 +7,10 @@ import * as Icons from "@opentripplanner/icons";
 import * as Core from ".";
 import ModeIcon from "./ModeIcon";
 
-import ModeIconWrap from "./__mocks__/mode-icon-wrap";
-import modeOptions from "./__mocks__/mode-options";
 import commonModes from "./__mocks__/modes";
 import customIcons from "./__mocks__/custom-icons";
+import modeOptions from "./__mocks__/mode-options";
+import ModeIconWrap from "./__mocks__/mode-icon-wrap";
 import submodeOptions from "./__mocks__/submode-options";
 import trimet from "./__mocks__/trimet.styled";
 

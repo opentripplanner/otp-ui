@@ -173,6 +173,7 @@ export default class SettingsSelectorPanel extends Component {
 
     const modeOptions = getModeOptions(icons, supportedModes, selectedModes);
     const transitModes = getTransitSubmodeOptions(
+      icons,
       supportedModes,
       selectedModes
     );
@@ -185,10 +186,12 @@ export default class SettingsSelectorPanel extends Component {
       this.getSelectedCompanies()
     );
     const bikeModes = getBicycleOrMicromobilityModeOptions(
+      icons,
       supportedModes.bicycleModes,
       selectedModes
     );
     const scooterModes = getBicycleOrMicromobilityModeOptions(
+      icons,
       supportedModes.micromobilityModes,
       selectedModes
     );
