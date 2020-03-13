@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
 
@@ -12,10 +12,38 @@ import trimet from "./__mocks__/trimet.styled";
 
 const onQueryParamChange = action("onQueryParamChange");
 
-const queryParams = {
+const storyQueryParams = {
   mode: "WALK",
   routingType: "ITINERARY"
 };
+
+class PanelWrapper extends Component {
+  constructor() {
+    super();
+    this.state = { queryParams: storyQueryParams };
+  }
+
+  handleOnQueryParamChange = queryParam => {
+    const { queryParams } = this.state;
+    const newParams = { ...queryParams, ...queryParam };
+
+    onQueryParamChange(queryParam);
+
+    this.setState({
+      queryParams: newParams
+    });
+  };
+
+  render() {
+    // eslint-disable-next-line react/prop-types
+    const { children } = this.props;
+    const { queryParams } = this.state;
+    return React.cloneElement(children, {
+      onQueryParamChange: this.handleOnQueryParamChange,
+      queryParams
+    });
+  }
+}
 
 export default {
   title: "SettingsSelectorPanel",
@@ -23,31 +51,31 @@ export default {
 };
 
 export const settingsSelectorPanel = () => (
-  <SettingsSelectorPanel
-    queryParams={queryParams}
-    supportedModes={commonModes}
-    supportedCompanies={commonCompanies}
-    onQueryParamChange={onQueryParamChange}
-  />
+  <PanelWrapper>
+    <SettingsSelectorPanel
+      supportedModes={commonModes}
+      supportedCompanies={commonCompanies}
+    />
+  </PanelWrapper>
 );
 export const settingsSelectorPanelStyled = () =>
   trimet(settingsSelectorPanel());
 
 export const settingsSelectorPanelWithCustomIcons = () => (
-  <SettingsSelectorPanel
-    icons={customIcons}
-    queryParams={queryParams}
-    supportedModes={commonModes}
-    supportedCompanies={commonCompanies}
-    onQueryParamChange={onQueryParamChange}
-  />
+  <PanelWrapper>
+    <SettingsSelectorPanel
+      icons={customIcons}
+      supportedModes={commonModes}
+      supportedCompanies={commonCompanies}
+    />
+  </PanelWrapper>
 );
 
 export const settingsSelectorPanelUndefinedParams = () => (
-  <SettingsSelectorPanel
-    queryParams={queryParams}
-    supportedModes={commonModesEmpty}
-    supportedCompanies={undefined}
-    onQueryParamChange={onQueryParamChange}
-  />
+  <PanelWrapper>
+    <SettingsSelectorPanel
+      supportedModes={commonModesEmpty}
+      supportedCompanies={undefined}
+    />
+  </PanelWrapper>
 );
