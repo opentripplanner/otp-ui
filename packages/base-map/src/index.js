@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { LayersControl, Map, Popup, TileLayer } from "react-leaflet";
-import { latlngType } from "@opentripplanner/core-utils/src/types";
+import utils from "@opentripplanner/core-utils";
 import L from "leaflet";
 
 import callIfValid from "./util";
@@ -268,7 +268,7 @@ BaseMap.propTypes = {
   /**
    * The center of the map, as a [lat, lng] array.
    */
-  center: latlngType.isRequired,
+  center: utils.types.latlngType.isRequired,
   /**
    * The maximum zoom level allowed on the map.
    */
@@ -310,7 +310,7 @@ BaseMap.propTypes = {
    */
   popup: PropTypes.shape({
     contents: PropTypes.node.isRequired,
-    location: latlngType.isRequired
+    location: utils.types.latlngType.isRequired
   }),
   /**
    * The zoom level of the map.
