@@ -38,7 +38,7 @@ const onChange = action("onChange");
 const onClick = action("onClick");
 const onQueryParamChange = action("onQueryParamChange");
 
-export const checkBoxSelector = () => (
+export const checkboxSelector = () => (
   <Core.CheckboxSelector
     name="MyParam"
     style={{ display: "inline-block", width: "250px" }}
