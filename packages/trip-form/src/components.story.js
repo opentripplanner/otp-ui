@@ -1,15 +1,16 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
-import { withKnobs, object, boolean } from "@storybook/addon-knobs";
+import { withKnobs, boolean, text } from "@storybook/addon-knobs";
 import * as Icons from "@opentripplanner/icons";
 
 import * as Core from ".";
 import ModeIcon from "./ModeIcon";
 
-import ModeIconWrap from "./__mocks__/mode-icon-wrap";
-import modeOptions from "./__mocks__/mode-options";
 import commonModes from "./__mocks__/modes";
+import customIcons from "./__mocks__/custom-icons";
+import modeOptions from "./__mocks__/mode-options";
+import ModeIconWrap from "./__mocks__/mode-icon-wrap";
 import submodeOptions from "./__mocks__/submode-options";
 import trimet from "./__mocks__/trimet.styled";
 
@@ -57,7 +58,7 @@ export const dropdownSelectorStyled = () => trimet(dropdownSelector());
 export const generalSettingsPanel = () => (
   <Core.GeneralSettingsPanel
     query={{
-      mode: object("mode", "WALK,BUS,TRAM,SUBWAY"),
+      mode: text("mode", "WALK,BUS,TRAM,SUBWAY"),
       routingType: "ITINERARY"
     }}
     onQueryParamChange={onQueryParamChange}
@@ -68,7 +69,13 @@ export const generalSettingsPanelStyled = () => trimet(generalSettingsPanel());
 
 export const modeIcon = () => (
   <ModeIconWrap>
-    <ModeIcon mode={object("mode", "BICYCLE")} />
+    <ModeIcon mode={text("mode", "BICYCLE")} />
+  </ModeIconWrap>
+);
+
+export const modeIconWithCustomIcons = () => (
+  <ModeIconWrap>
+    <ModeIcon icons={customIcons} mode={text("mode", "TRANSIT")} />
   </ModeIconWrap>
 );
 
