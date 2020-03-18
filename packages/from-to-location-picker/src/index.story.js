@@ -19,7 +19,7 @@ export const fromTo = () => (
 );
 
 export const smallTextSansSerif = () => (
-  <span style={{ "font-size": "75%", "font-family": "sans-serif" }}>
+  <span style={{ fontSize: "75%", fontFamily: "sans-serif" }}>
     Plan a trip:
     <FromToLocationPicker onFromClick={onFromClick} onToClick={onToClick} />
   </span>

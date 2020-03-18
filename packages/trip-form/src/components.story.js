@@ -1,7 +1,7 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
-import { withKnobs, object, boolean } from "@storybook/addon-knobs";
+import { boolean, text, withKnobs } from "@storybook/addon-knobs";
 import * as Icons from "@opentripplanner/icons";
 
 import * as Core from ".";
@@ -13,9 +13,24 @@ import commonModes from "./__mocks__/modes";
 import submodeOptions from "./__mocks__/submode-options";
 import trimet from "./__mocks__/trimet.styled";
 
+const headingStyle = {
+  fontFamily: "sans-serif",
+  fontSize: "16px"
+};
+
+const decorator = story => (
+  <div>
+    <p style={headingStyle}>Plain</p>
+    <div>{story()}</div>
+
+    <p style={headingStyle}>Styled</p>
+    <div>{trimet(story())}</div>
+  </div>
+);
+
 export default {
   title: "Trip Form Components",
-  decorators: [withInfo, withKnobs]
+  decorators: [decorator, withInfo, withKnobs]
 };
 
 // Events
@@ -23,7 +38,7 @@ const onChange = action("onChange");
 const onClick = action("onClick");
 const onQueryParamChange = action("onQueryParamChange");
 
-export const checkboxSelector = () => (
+export const checkBoxSelector = () => (
   <Core.CheckboxSelector
     name="MyParam"
     style={{ display: "inline-block", width: "250px" }}
@@ -31,7 +46,18 @@ export const checkboxSelector = () => (
     onChange={onChange}
   />
 );
-export const checkBoxSelectorStyled = () => trimet(checkboxSelector());
+
+export const dateTimeSelector = () => (
+  <Core.DateTimeSelector
+    departArrive="NOW"
+    date="2020-02-15"
+    dateFormatLegacy={text("dateFormatLegacy", "YY-M-d")}
+    forceLegacy={boolean("forceLegacy", false)}
+    time="14:17"
+    timeFormatLegacy={text("timeFormatLegacy", "HH:mm")}
+    onQueryParamChange={onQueryParamChange}
+  />
+);
 
 export const dropdownSelector = () => (
   <Core.DropdownSelector
@@ -52,27 +78,34 @@ export const dropdownSelector = () => (
     value="Value2"
   />
 );
-export const dropdownSelectorStyled = () => trimet(dropdownSelector());
 
 export const generalSettingsPanel = () => (
   <Core.GeneralSettingsPanel
     query={{
-      mode: object("mode", "WALK,BUS,TRAM,SUBWAY"),
+      mode: text("mode", "WALK,BUS,TRAM,SUBWAY"),
       routingType: "ITINERARY"
     }}
     onQueryParamChange={onQueryParamChange}
     supportedModes={commonModes}
   />
 );
-export const generalSettingsPanelStyled = () => trimet(generalSettingsPanel());
 
 export const modeIcon = () => (
   <ModeIconWrap>
-    <ModeIcon mode={object("mode", "BICYCLE")} />
+    <ModeIcon mode={text("mode", "BICYCLE")} />
   </ModeIconWrap>
 );
 
-export const modeButton = () => (
+const Space = () => (
+  <span
+    style={{
+      display: "inline-block",
+      width: "1em"
+    }}
+  />
+);
+
+export const modeButtons = () => (
   <div>
     <div>
       <Core.ModeButton onClick={onClick} title="Normal">
@@ -82,14 +115,12 @@ export const modeButton = () => (
         Go by train
         <span style={{ fontSize: "150%", color: "red" }}> or </span> bike
       </Core.ModeButton>
-    </div>
-    <div>
+      <Space />
       <Core.ModeButton selected onClick={onClick} title="Active">
         <Icons.Max />
         Train
       </Core.ModeButton>
-    </div>
-    <div>
+      <Space />
       <Core.ModeButton
         enabled={false}
         label="Can't Select!"
@@ -109,12 +140,10 @@ export const modeButton = () => (
     </div>
   </div>
 );
-export const modeButtonStyled = () => trimet(modeButton());
 
 export const modeSelector = () => (
   <Core.ModeSelector modes={modeOptions} onChange={onChange} />
 );
-export const modeSelectorStyled = () => trimet(modeSelector());
 
 export const submodeSelector = () => (
   <Core.SubmodeSelector
@@ -124,4 +153,3 @@ export const submodeSelector = () => (
     onChange={onChange}
   />
 );
-export const submodeSelectorStyled = () => trimet(submodeSelector());
