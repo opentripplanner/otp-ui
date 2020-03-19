@@ -87,7 +87,7 @@ export default class Endpoint extends Component {
   onDragEnd = e => {
     const { setLocation, type } = this.props;
     const location = constructLocation(e.target.getLatLng());
-    setLocation({ type, location, reverseGeocode: true });
+    setLocation({ locationType: type, location, reverseGeocode: true });
   };
 
   render() {

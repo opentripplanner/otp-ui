@@ -1,4 +1,4 @@
-import { stopLayerStopType } from "@opentripplanner/core-utils/src/types";
+import utils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 import { FeatureGroup, MapLayer, withLeaflet } from "react-leaflet";
@@ -101,7 +101,7 @@ StopsOverlay.propTypes = {
   /**
    * The list of stops to create stop markers for.
    */
-  stops: PropTypes.arrayOf(stopLayerStopType).isRequired
+  stops: PropTypes.arrayOf(utils.types.stopLayerStopType).isRequired
 };
 
 StopsOverlay.defaultProps = {
