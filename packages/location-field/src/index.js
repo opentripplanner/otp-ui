@@ -53,8 +53,7 @@ class LocationField extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value:
-        props.location && !props.hideExistingValue ? props.location.name : "",
+      value: this.getValueFromLocation(),
       menuVisible: false,
       geocodedFeatures: [],
       activeIndex: null
@@ -81,6 +80,14 @@ class LocationField extends Component {
     const { locationType } = this.props;
     return `${locationType}-form-control`;
   }
+
+  /**
+   * Gets the initial value to place in the input field.
+   */
+  getValueFromLocation = () => {
+    const { hideExistingValue, location } = this.props;
+    return location && !hideExistingValue ? location.name : "";
+  };
 
   setLocation(location, resultType) {
     const { onLocationSelected, locationType } = this.props;
@@ -147,13 +154,16 @@ class LocationField extends Component {
    * user having made a selection.
    */
   onBlurFormGroup = e => {
-    const { location } = this.props;
     // IE does not use relatedTarget, so this check handles cross-browser support.
     // see https://stackoverflow.com/a/49325196/915811
     const target =
       e.relatedTarget !== null ? e.relatedTarget : document.activeElement;
-    if (!location && (!target || target.getAttribute("role") !== "menuitem")) {
-      this.setState({ menuVisible: false, value: "", geocodedFeatures: [] });
+    if (!target || target.getAttribute("role") !== "menuitem") {
+      this.setState({
+        geocodedFeatures: [],
+        menuVisible: false,
+        value: this.getValueFromLocation()
+      });
     }
   };
 
@@ -240,6 +250,7 @@ class LocationField extends Component {
         evt.preventDefault();
         break;
       case "Escape":
+      case "Tab":
         // Clear selection & hide the menu
         this.setState({
           menuVisible: false,
