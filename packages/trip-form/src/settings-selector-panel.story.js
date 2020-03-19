@@ -10,6 +10,11 @@ import commonModesEmpty from "./__mocks__/modes-empty";
 import customIcons from "./__mocks__/custom-icons";
 import trimet from "./__mocks__/trimet.styled";
 
+const headingStyle = {
+  fontFamily: "sans-serif",
+  fontSize: "16px"
+};
+
 const onQueryParamChange = action("onQueryParamChange");
 
 const storyQueryParams = {
@@ -45,9 +50,19 @@ class PanelWrapper extends Component {
   }
 }
 
+const decorator = story => (
+  <div>
+    <p style={headingStyle}>Plain</p>
+    <div>{story()}</div>
+
+    <p style={headingStyle}>Styled</p>
+    <div>{trimet(story())}</div>
+  </div>
+);
+
 export default {
   title: "SettingsSelectorPanel",
-  decorators: [withInfo]
+  decorators: [decorator, withInfo]
 };
 
 export const settingsSelectorPanel = () => (
@@ -58,8 +73,6 @@ export const settingsSelectorPanel = () => (
     />
   </PanelWrapper>
 );
-export const settingsSelectorPanelStyled = () =>
-  trimet(settingsSelectorPanel());
 
 export const settingsSelectorPanelWithCustomIcons = () => (
   <PanelWrapper>
