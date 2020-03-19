@@ -157,6 +157,7 @@ export default class SettingsSelectorPanel extends Component {
   render() {
     const {
       className,
+      icons,
       queryParams,
       supportedModes,
       supportedCompanies,
@@ -165,8 +166,9 @@ export default class SettingsSelectorPanel extends Component {
     const { defaultAccessModeCompany } = this.state;
     const selectedModes = this.getSelectedModes();
 
-    const modeOptions = getModeOptions(supportedModes, selectedModes);
+    const modeOptions = getModeOptions(icons, supportedModes, selectedModes);
     const transitModes = getTransitSubmodeOptions(
+      icons,
       supportedModes,
       selectedModes
     );
@@ -179,10 +181,12 @@ export default class SettingsSelectorPanel extends Component {
       this.getSelectedCompanies()
     );
     const bikeModes = getBicycleOrMicromobilityModeOptions(
+      icons,
       supportedModes.bicycleModes,
       selectedModes
     );
     const scooterModes = getBicycleOrMicromobilityModeOptions(
+      icons,
       supportedModes.micromobilityModes,
       selectedModes
     );
@@ -253,6 +257,13 @@ SettingsSelectorPanel.propTypes = {
    */
   className: PropTypes.string,
   /**
+   * A customized lookup of icons.
+   * These are defined as part of the implementing webapp.
+   * If this lookup is not defined, then a lookup using the OPT-UI icons package will be used instead.
+   */
+  // eslint-disable-next-line react/forbid-prop-types
+  icons: PropTypes.object,
+  /**
    * Triggered when a query parameter is changed.
    * @param params An object that contains the new values for the parameter(s) that has (have) changed.
    */
@@ -275,6 +286,7 @@ SettingsSelectorPanel.propTypes = {
 
 SettingsSelectorPanel.defaultProps = {
   className: null,
+  icons: null,
   onQueryParamChange: null,
   queryParams: null,
   supportedCompanies: []

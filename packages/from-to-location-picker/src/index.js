@@ -15,8 +15,8 @@ class FromToLocationPicker extends Component {
       return;
     }
     setLocation({
-      type: "from",
       location,
+      locationType: "from",
       reverseGeocode: false
     });
   };
@@ -28,8 +28,8 @@ class FromToLocationPicker extends Component {
       return;
     }
     setLocation({
-      type: "to",
       location,
+      locationType: "to",
       reverseGeocode: false
     });
   };
@@ -78,7 +78,7 @@ FromToLocationPicker.propTypes = {
    * are no from/to specific handler functions defined as props.
    *
    * Passes an argument as follows:
-   * { type: "from/to", location, reverseGeocode: false }
+   * { locationType: "from/to", location, reverseGeocode: false }
    */
   setLocation: PropTypes.func,
   /**

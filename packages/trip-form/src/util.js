@@ -49,7 +49,7 @@ export function getModeString(modeObj) {
   return modeObj.mode || modeObj;
 }
 
-export function getTransitSubmodeOptions(modes, selectedModes) {
+export function getTransitSubmodeOptions(icons, modes, selectedModes) {
   const { transitModes } = modes;
 
   // FIXME: If only one transit mode is available, select it.
@@ -60,7 +60,7 @@ export function getTransitSubmodeOptions(modes, selectedModes) {
       selected: selectedModes.includes(modeStr),
       text: (
         <span>
-          <ModeIcon mode={modeStr} />
+          <ModeIcon icons={icons} mode={modeStr} />
           {modeObj.label}
         </span>
       ),
@@ -69,14 +69,14 @@ export function getTransitSubmodeOptions(modes, selectedModes) {
   });
 }
 
-function getPrimaryModeOption(selectedModes) {
+function getPrimaryModeOption(icons, selectedModes) {
   return {
     id: "TRANSIT",
     selected: selectedModes.some(isTransit) && selectedModes.includes("WALK"),
     showTitle: false,
     text: (
       <span>
-        <ModeIcon mode="transit" />
+        <ModeIcon icons={icons} mode="TRANSIT" />
         Take Transit
       </span>
     ),
@@ -84,7 +84,7 @@ function getPrimaryModeOption(selectedModes) {
   };
 }
 
-function getTransitCombinedModeOptions(modes, selectedModes) {
+function getTransitCombinedModeOptions(icons, modes, selectedModes) {
   const { accessModes } = modes;
   const modesHaveTransit = selectedModes.some(isTransit);
 
@@ -97,7 +97,8 @@ function getTransitCombinedModeOptions(modes, selectedModes) {
         selected: modesHaveTransit && selectedModes.includes(modeStr),
         text: (
           <span>
-            <ModeIcon mode="transit" />+<ModeIcon mode={modeStr} />
+            <ModeIcon icons={icons} mode="TRANSIT" />+
+            <ModeIcon icons={icons} mode={modeStr} />
           </span>
         ),
         title: modeObj.label
@@ -106,7 +107,7 @@ function getTransitCombinedModeOptions(modes, selectedModes) {
   );
 }
 
-function getExclusiveModeOptions(modes, selectedModes) {
+function getExclusiveModeOptions(icons, modes, selectedModes) {
   const { exclusiveModes } = modes;
 
   return supportedExclusiveModes
@@ -118,7 +119,7 @@ function getExclusiveModeOptions(modes, selectedModes) {
       showTitle: false,
       text: (
         <span>
-          <ModeIcon mode={modeObj.mode} /> {modeObj.label}
+          <ModeIcon icons={icons} mode={modeObj.mode} /> {modeObj.label}
         </span>
       ),
       title: modeObj.label
@@ -130,11 +131,11 @@ function getExclusiveModeOptions(modes, selectedModes) {
  * @param {*} modes The modes defined in config.yaml.
  * @param {*} selectedModes An array of string that lists the modes selected for a trip query.
  */
-export function getModeOptions(modes, selectedModes) {
+export function getModeOptions(icons, modes, selectedModes) {
   return {
-    primary: getPrimaryModeOption(selectedModes),
-    secondary: getTransitCombinedModeOptions(modes, selectedModes),
-    tertiary: getExclusiveModeOptions(modes, selectedModes)
+    primary: getPrimaryModeOption(icons, selectedModes),
+    secondary: getTransitCombinedModeOptions(icons, modes, selectedModes),
+    tertiary: getExclusiveModeOptions(icons, modes, selectedModes)
   };
 }
 
@@ -182,7 +183,11 @@ export function getCompaniesOptions(companies, modes, selectedCompanies) {
  * @param {*} selectedModes The modes to render selected from the UI.
  * @returns An array of UI options, or undefined if modes is undefined.
  */
-export function getBicycleOrMicromobilityModeOptions(modes, selectedModes) {
+export function getBicycleOrMicromobilityModeOptions(
+  icons,
+  modes,
+  selectedModes
+) {
   return (
     modes &&
     modes.map(mode => {
@@ -191,7 +196,7 @@ export function getBicycleOrMicromobilityModeOptions(modes, selectedModes) {
         selected: selectedModes.includes(mode.mode),
         text: (
           <span>
-            <ModeIcon mode={mode.mode} /> {mode.label}
+            <ModeIcon icons={icons} mode={mode.mode} /> {mode.label}
           </span>
         ),
         title: mode.label
