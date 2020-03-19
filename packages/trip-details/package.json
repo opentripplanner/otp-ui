@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/trip-details",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "A component for displaying details about a trip planning itinerary",
   "main": "lib/index.js",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
@@ -9,16 +9,16 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^0.0.17",
-    "@opentripplanner/humanize-distance": "^0.0.17",
+    "@opentripplanner/core-utils": "^0.0.18",
+    "@opentripplanner/humanize-distance": "^0.0.18",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "styled-icons": "^9.1.0",
     "velocity-react": "^1.4.3"
   },
   "devDependencies": {
-    "@opentripplanner/icons": "^0.0.17",
-    "@opentripplanner/itinerary-body": "^0.0.17"
+    "@opentripplanner/icons": "^0.0.18",
+    "@opentripplanner/itinerary-body": "^0.0.18"
   },
   "peerDependencies": {
     "react": "^16.8.6",
