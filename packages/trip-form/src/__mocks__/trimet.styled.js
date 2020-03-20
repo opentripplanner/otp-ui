@@ -50,6 +50,10 @@ const TriMetStyled = styled.div`
     padding: 4px 0px 0px;
     font-size: 10px;
     line-height: 12px;
+
+    &.active {
+      text-decoration: underline;
+    }
   }
   ${TripFormClasses.DateTimeSelector.DateTimeRow} {
     margin: 15px 0px;

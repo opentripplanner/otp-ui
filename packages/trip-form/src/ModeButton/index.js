@@ -36,7 +36,10 @@ const ModeButton = props => {
       </Styled.ModeButton.Button>
 
       {title && showTitle && (
-        <Styled.ModeButton.Title className={disabledClassName} title={title}>
+        <Styled.ModeButton.Title
+          className={`${activeClassName} ${disabledClassName}`}
+          title={title}
+        >
           {title}
         </Styled.ModeButton.Title>
       )}
