@@ -3,6 +3,21 @@
 - [Components via Storybook](http://www.opentripplanner.org/otp-ui)
 - [npm packages](https://www.npmjs.com/org/opentripplanner)
 
+## [0.0.18] - 2020-03-19
+
+### Changes
+
+Handful of cleanup PRs:
+
+- [#90](https://github.com/opentripplanner/otp-ui/issues/90)
+- [#89](https://github.com/opentripplanner/otp-ui/issues/89)
+- [#88](https://github.com/opentripplanner/otp-ui/issues/88)
+- [#81](https://github.com/opentripplanner/otp-ui/issues/81)
+- [#78](https://github.com/opentripplanner/otp-ui/issues/78)
+- [#77](https://github.com/opentripplanner/otp-ui/issues/77)
+
+---
+
 ## [0.0.17] - 2020-03-03
 
 ### Changes
@@ -12,8 +27,6 @@ Handful of cleanup PRs:
 - [#74](https://github.com/opentripplanner/otp-ui/issues/74)
 - [#75](https://github.com/opentripplanner/otp-ui/issues/75)
 - [#76](https://github.com/opentripplanner/otp-ui/issues/76)
-
----
 
 ## [0.0.16] - 2020-02-21
 
