@@ -17,6 +17,7 @@ const ItineraryBody = ({
   diagramVisible,
   frameLeg,
   itinerary,
+  LineColumnContent,
   PlaceName,
   RouteDescription,
   routingType,
@@ -25,6 +26,7 @@ const ItineraryBody = ({
   setViewedTrip,
   showAgencyInfo,
   showElevationProfile,
+  showMapButtonColumn,
   timeOptions,
   toRouteAbbreviation,
   TransitLegSummary
@@ -36,46 +38,24 @@ const ItineraryBody = ({
   */
   const rows = [];
   let followsTransit = false;
+  let lastLeg;
   itinerary.legs.forEach((leg, i) => {
-    // Create a row containing this leg's start place and leg traversal details
-    rows.push(
-      <PlaceRow
-        // eslint-disable-next-line react/no-array-index-key
-        key={i}
-        config={config}
-        diagramVisible={diagramVisible}
-        followsTransit={followsTransit}
-        frameLeg={frameLeg}
-        leg={leg}
-        LegIcon={LegIcon}
-        legIndex={i}
-        place={leg.from}
-        PlaceName={PlaceName}
-        RouteDescription={RouteDescription}
-        routingType={routingType}
-        setActiveLeg={setActiveLeg}
-        setLegDiagram={setLegDiagram}
-        setViewedTrip={setViewedTrip}
-        showAgencyInfo={showAgencyInfo}
-        showElevationProfile={showElevationProfile}
-        time={leg.startTime}
-        timeOptions={timeOptions}
-        toRouteAbbreviation={toRouteAbbreviation}
-        TransitLegSummary={TransitLegSummary}
-      />
-    );
-    // TODO: reconcile special props for lastrow
-    // If this is the last leg, create a special PlaceRow for the destination only
-    if (i === itinerary.legs.length - 1) {
+    function createPlaceRow(isDestination) {
+      // Create a row containing this leg's start place and leg traversal details
       rows.push(
         <PlaceRow
           // eslint-disable-next-line react/no-array-index-key
-          key={i + 1}
+          key={i + (isDestination ? 1 : 0)}
           config={config}
           diagramVisible={diagramVisible}
+          followsTransit={isDestination && followsTransit}
           frameLeg={frameLeg}
+          lastLeg={lastLeg}
+          leg={isDestination ? undefined : leg}
           LegIcon={LegIcon}
-          place={leg.to}
+          legIndex={isDestination ? undefined : i}
+          LineColumnContent={LineColumnContent}
+          place={isDestination ? leg.to : leg.from}
           PlaceName={PlaceName}
           RouteDescription={RouteDescription}
           routingType={routingType}
@@ -84,14 +64,23 @@ const ItineraryBody = ({
           setViewedTrip={setViewedTrip}
           showAgencyInfo={showAgencyInfo}
           showElevationProfile={showElevationProfile}
-          time={leg.endTime}
+          showMapButtonColumn={showMapButtonColumn}
+          time={isDestination ? leg.endTime : leg.startTime}
           timeOptions={timeOptions}
           toRouteAbbreviation={toRouteAbbreviation}
           TransitLegSummary={TransitLegSummary}
         />
       );
     }
+
+    createPlaceRow();
+    // If this is the last leg, create a special PlaceRow for the destination
+    // only
+    if (i === itinerary.legs.length - 1) {
+      createPlaceRow(true);
+    }
     if (leg.transitLeg) followsTransit = true;
+    lastLeg = leg;
   });
   return (
     <Styled.ItineraryBody className={className}>{rows}</Styled.ItineraryBody>
@@ -111,11 +100,13 @@ ItineraryBody.propTypes = {
    */
   diagramVisible: legType,
   /** Called upon clicking the map icon. Called with an argument of the click event. */
-  frameLeg: PropTypes.func.isRequired,
+  frameLeg: PropTypes.func,
   /** Itinerary that the user has selected to view, contains multiple legs */
   itinerary: itineraryType.isRequired,
   /** A component class that is used to render icons for legs of an itinerary */
   LegIcon: PropTypes.elementType.isRequired,
+  /** A slot for a component that can render the content in the line column */
+  LineColumnContent: PropTypes.elementType,
   /**
    * An optional custom component for rendering the place name of legs.
    * The component is sent 3 props:
@@ -150,6 +141,8 @@ ItineraryBody.propTypes = {
   showAgencyInfo: PropTypes.bool,
   /** If true, will show the elevation profile for walk/bike legs */
   showElevationProfile: PropTypes.bool,
+  /** If true, will show the right column with the map button */
+  showMapButtonColumn: PropTypes.bool,
   /** Contains the preferred format string for time display and a timezone offset */
   timeOptions: timeOptionsType,
   /** Converts a route's ID to its accepted badge abbreviation */
@@ -163,14 +156,19 @@ ItineraryBody.propTypes = {
   TransitLegSummary: PropTypes.elementType
 };
 
+const noop = () => {};
+
 ItineraryBody.defaultProps = {
   className: null,
   diagramVisible: null,
+  frameLeg: noop,
+  LineColumnContent: undefined,
   PlaceName: undefined,
   RouteDescription: undefined,
   routingType: "ITINERARY",
   showAgencyInfo: false,
   showElevationProfile: false,
+  showMapButtonColumn: true,
   timeOptions: null,
   TransitLegSummary: undefined
 };

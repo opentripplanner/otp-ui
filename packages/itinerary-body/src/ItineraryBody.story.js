@@ -9,6 +9,9 @@ import { action } from "@storybook/addon-actions";
 import styled from "styled-components";
 
 import ItineraryBody from ".";
+import OtpRRRouteDescription from "./otp-react-redux/route-description";
+import OtpRRStyledItineraryBody from "./otp-react-redux/itinerary-body";
+import OtpRRLineColumnContent from "./otp-react-redux/line-column-content";
 import * as ItineraryBodyClasses from "./styled";
 
 const config = require("./__mocks__/config.json");
@@ -33,27 +36,6 @@ const StyledItineraryBody = styled(ItineraryBody)`
   }
 `;
 
-const OtpRRStyledItineraryBody = styled(ItineraryBody)`
-  ${ItineraryBodyClasses.LegDescriptionRouteShortName} {
-    background-color: rgb(15, 106, 172);
-    border-color: white;
-    border-image: initial;
-    border-radius: 12px;
-    border-style: solid;
-    border-width: 1px;
-    box-shadow: rgb(0, 0, 0) 0px 0px 0.25em;
-    color: white;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 500;
-    height: 21px;
-    margin-right: 8px;
-    padding-top: 2px;
-    text-align: center;
-    width: 24px;
-  }
-`;
-
 class ItineraryBodyDefaultsWrapper extends Component {
   constructor() {
     super();
@@ -67,11 +49,13 @@ class ItineraryBodyDefaultsWrapper extends Component {
   render() {
     const {
       itinerary,
+      LineColumnContent,
       PlaceName,
       RouteDescription,
       showAgencyInfo,
-      TransitLegSummary,
-      styledItinerary
+      showMapButtonColumn,
+      styledItinerary,
+      TransitLegSummary
     } = this.props;
     const { diagramVisible } = this.state;
     let ItineraryBodyComponent;
@@ -92,6 +76,7 @@ class ItineraryBodyDefaultsWrapper extends Component {
         frameLeg={action("frameLeg")}
         itinerary={itinerary}
         LegIcon={TriMetLegIcon}
+        LineColumnContent={LineColumnContent}
         PlaceName={PlaceName}
         RouteDescription={RouteDescription}
         routingType="ITINERARY"
@@ -100,6 +85,7 @@ class ItineraryBodyDefaultsWrapper extends Component {
         setViewedTrip={action("setViewedTrip")}
         showAgencyInfo={showAgencyInfo}
         showElevationProfile
+        showMapButtonColumn={showMapButtonColumn}
         toRouteAbbreviation={r => r.toString().substr(0, 2)}
         TransitLegSummary={TransitLegSummary}
       />
@@ -109,18 +95,22 @@ class ItineraryBodyDefaultsWrapper extends Component {
 
 ItineraryBodyDefaultsWrapper.propTypes = {
   itinerary: itineraryType.isRequired,
+  LineColumnContent: PropTypes.elementType,
   PlaceName: PropTypes.elementType,
   RouteDescription: PropTypes.elementType,
   showAgencyInfo: PropTypes.bool,
-  TransitLegSummary: PropTypes.elementType,
-  styledItinerary: PropTypes.string
+  showMapButtonColumn: PropTypes.bool,
+  styledItinerary: PropTypes.string,
+  TransitLegSummary: PropTypes.elementType
 };
 
 ItineraryBodyDefaultsWrapper.defaultProps = {
-  showAgencyInfo: false,
+  LineColumnContent: undefined,
   PlaceName: undefined,
   RouteDescription: undefined,
   TransitLegSummary: undefined,
+  showAgencyInfo: false,
+  showMapButtonColumn: true,
   styledItinerary: null
 };
 
@@ -135,47 +125,6 @@ function CustomTransitLegSummary({ leg }) {
 }
 
 CustomTransitLegSummary.propTypes = {
-  leg: legType.isRequired
-};
-
-const TriMetLegIconContainer = styled.div`
-  float: left;
-  height: 24px;
-  margin-right: 6px;
-  width: 24px;
-`;
-
-function OtpRRRouteDescription({ leg }) {
-  const { headsign, routeLongName, routeShortName } = leg;
-  return (
-    <ItineraryBodyClasses.LegDescriptionForTransit>
-      <TriMetLegIconContainer>
-        <TriMetLegIcon leg={leg} />
-      </TriMetLegIconContainer>
-      {routeShortName && (
-        <div>
-          <ItineraryBodyClasses.LegDescriptionRouteShortName>
-            {routeShortName}
-          </ItineraryBodyClasses.LegDescriptionRouteShortName>
-        </div>
-      )}
-      <ItineraryBodyClasses.LegDescriptionRouteLongName>
-        {routeLongName}
-        {headsign && (
-          <span>
-            {" "}
-            <ItineraryBodyClasses.LegDescriptionHeadsignPrefix>
-              to
-            </ItineraryBodyClasses.LegDescriptionHeadsignPrefix>{" "}
-            {headsign}
-          </span>
-        )}
-      </ItineraryBodyClasses.LegDescriptionRouteLongName>
-    </ItineraryBodyClasses.LegDescriptionForTransit>
-  );
-}
-
-OtpRRRouteDescription.propTypes = {
   leg: legType.isRequired
 };
 
@@ -259,7 +208,10 @@ storiesOf("ItineraryBody", module)
     () => (
       <ItineraryBodyDefaultsWrapper
         itinerary={eScooterRentalTransiteScooterRentalItinerary}
+        LineColumnContent={OtpRRLineColumnContent}
         RouteDescription={OtpRRRouteDescription}
+        showAgencyInfo
+        showMapButtonColumn={false}
         styledItinerary="otp-rr"
       />
     )
