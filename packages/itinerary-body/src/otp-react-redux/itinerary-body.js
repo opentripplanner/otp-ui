@@ -15,7 +15,9 @@ const StyledItineraryBody = styled(ItineraryBody)`
     border: 0;
     display: table-cell;
     font-size: 13px;
-    padding-top: 1px;
+    padding-bottom: 0;
+    padding-top: 4px;
+    transform: inherit;
   }
 
   ${ItineraryBodyClasses.LegDescriptionRouteShortName} {
