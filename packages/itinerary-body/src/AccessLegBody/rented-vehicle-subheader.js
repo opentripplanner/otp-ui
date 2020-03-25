@@ -27,12 +27,13 @@ export default function RentedVehicleSubheader({ config, leg }) {
     );
   }
 
-  let rentalDescription = "Pick up";
+  let rentalDescription;
   if (leg.rentedBike) {
     // TODO: Special case for TriMet may need to be refactored.
-    rentalDescription += ` shared bike`;
+    rentalDescription = "Pick up shared bike";
   } else {
     // Add company and vehicle labels.
+    let companyName = "";
     let vehicleName = "";
     // TODO allow more flexibility in customizing these mode strings
     let modeString = leg.rentedVehicle
@@ -47,22 +48,20 @@ export default function RentedVehicleSubheader({ config, leg }) {
     // resumes there won't be any network info. In that case we simply return
     // that the rental is continuing.
     if (leg.from.networks) {
-      const companiesLabel = getCompaniesLabelFromNetworks(
+      companyName = getCompaniesLabelFromNetworks(
         leg.from.networks,
         configCompanies
       );
-      rentalDescription += ` ${companiesLabel}`;
       // Only show vehicle name for car rentals. For bikes and E-scooters, these
       // IDs/names tend to be less relevant (or entirely useless) in this context.
       if (leg.rentedCar && leg.from.name) {
         vehicleName = leg.from.name;
       }
       modeString = getModeForPlace(leg.from);
+      rentalDescription = `Pick up ${companyName} ${modeString} ${vehicleName}`;
     } else {
       rentalDescription = "Continue using rental";
     }
-
-    rentalDescription += ` ${modeString} ${vehicleName}`;
   }
   // e.g., Pick up REACHNOW rented car XYZNDB OR
   //       Pick up SPIN E-scooter

@@ -45,9 +45,9 @@ export default function LineColumnContent({
 }
 
 LineColumnContent.propTypes = {
-  /** whether this leg is an interlined-transit leg */
+  /** Whether this leg is an interlined-transit leg */
   interline: PropTypes.bool.isRequired,
-  /** whether this place row represents the destination */
+  /** Whether this place row represents the destination */
   isDestination: PropTypes.bool.isRequired,
   /** Contains details about leg object that is being displayed */
   leg: coreUtils.types.legType,
