@@ -103,7 +103,10 @@ ItineraryBody.propTypes = {
    * has been selected and is active.
    */
   diagramVisible: legType,
-  /** Called upon clicking the map icon. Called with an argument of the click event. */
+  /**
+   * Called upon clicking the map icon. This function is sent a single argument
+   * of an object with the keys of `leg` and `legIndex`.
+   */
   frameLeg: PropTypes.func,
   /** Itinerary that the user has selected to view, contains multiple legs */
   itinerary: itineraryType.isRequired,

@@ -126,7 +126,7 @@ const PlaceRow = ({
       </Styled.DetailsColumn>
       {showMapButtonColumn && (
         <Styled.MapButtonColumn hideBorder={hideBorder.toString()}>
-          <Styled.MapButton onClick={frameLeg}>
+          <Styled.MapButton onClick={() => frameLeg({ leg, legIndex })}>
             <Styled.MapIcon />
           </Styled.MapButton>
         </Styled.MapButtonColumn>
@@ -145,7 +145,10 @@ PlaceRow.propTypes = {
   diagramVisible: legType,
   /** Indicates whether this leg directly follows a transit leg */
   followsTransit: PropTypes.bool,
-  /** Called upon clicking the map icon. Called with an argument of the click event. */
+  /**
+   * Called upon clicking the map icon. This function is sent a single argument
+   * of an object with the keys of `leg` and `legIndex`.
+   */
   frameLeg: PropTypes.func.isRequired,
   /** Contains details about the leg object prior to the current one */
   lastLeg: legType,
