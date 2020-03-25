@@ -43,7 +43,6 @@ export default class AccessLegBody extends Component {
       followsTransit,
       leg,
       LegIcon,
-      routingType,
       setLegDiagram,
       showElevationProfile,
       showLegIcon,
@@ -90,14 +89,12 @@ export default class AccessLegBody extends Component {
             )}
           </Styled.StepsHeader>
 
-          {routingType === "ITINERARY" && (
-            <LegDiagramPreview
-              diagramVisible={diagramVisible}
-              leg={leg}
-              setLegDiagram={setLegDiagram}
-              showElevationProfile={showElevationProfile}
-            />
-          )}
+          <LegDiagramPreview
+            diagramVisible={diagramVisible}
+            leg={leg}
+            setLegDiagram={setLegDiagram}
+            showElevationProfile={showElevationProfile}
+          />
           <VelocityTransitionGroup
             enter={{ animation: "slideDown" }}
             leave={{ animation: "slideUp" }}
@@ -121,7 +118,6 @@ AccessLegBody.propTypes = {
   leg: legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired,
   legIndex: PropTypes.number.isRequired,
-  routingType: PropTypes.string.isRequired,
   setActiveLeg: PropTypes.func.isRequired,
   setLegDiagram: PropTypes.func.isRequired,
   showElevationProfile: PropTypes.bool.isRequired,

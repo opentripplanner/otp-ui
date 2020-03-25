@@ -115,28 +115,29 @@ const StyledLocationIcon = styled(LocationIcon)`
 
 export default function LineColumnContent({
   interline,
+  isDestination,
   lastLeg,
   leg,
   legIndex
 }) {
   let legBadge;
   if (interline) {
-    // Interlined. Do nothing as a stop marker should be inserted from the place
-    // name
+    // Interlined. Don't create a leg badge as a stop marker should be inserted
+    // from the place name
+  } else if (isDestination) {
+    // Desitination
+    legBadge = (
+      <>
+        <StackedCircleInner size={14} color="white" />
+        <StyledLocationIcon size={20} type="to" />
+      </>
+    );
   } else if (legIndex === 0) {
     // Origin
     legBadge = (
       <>
         <StackedCircleInner size={14} color="white" />
         <StyledLocationIcon size={20} type="from" />
-      </>
-    );
-  } else if (!leg) {
-    // Desitination
-    legBadge = (
-      <>
-        <StackedCircleInner size={14} color="white" />
-        <StyledLocationIcon size={20} type="to" />
       </>
     );
   } else if (
@@ -171,7 +172,9 @@ export default function LineColumnContent({
 
   return (
     <>
-      {leg && <LegLine mode={leg.mode} routeColor={leg.routeColor} />}
+      {!isDestination && (
+        <LegLine mode={leg.mode} routeColor={leg.routeColor} />
+      )}
       <IconStacker>{legBadge}</IconStacker>
     </>
   );
@@ -180,19 +183,17 @@ export default function LineColumnContent({
 LineColumnContent.propTypes = {
   /** whether this leg is an interlined-transit leg */
   interline: PropTypes.bool.isRequired,
+  /** whether this place row represents the destination */
+  isDestination: PropTypes.bool.isRequired,
   /** Contains details about leg object that is being displayed */
   lastLeg: coreUtils.types.legType,
   /** Contains details about leg object that is being displayed */
-  leg: coreUtils.types.legType,
+  leg: coreUtils.types.legType.isRequired,
   /** the index of the leg in the itinerary leg list */
-  legIndex: PropTypes.number
+  legIndex: PropTypes.number.isRequired
 };
 
 LineColumnContent.defaultProps = {
-  // can be null if it's the first leg
-  lastLeg: null,
-  // can be null if this is the destination place
-  leg: null,
-  // can be null if this is the destination place
-  legIndex: null
+  /** can be null if it's the first leg */
+  lastLeg: null
 };

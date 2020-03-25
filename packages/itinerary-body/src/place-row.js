@@ -25,15 +25,14 @@ const PlaceRow = ({
   diagramVisible,
   followsTransit,
   frameLeg,
+  isDestination,
   lastLeg,
   leg,
   LegIcon,
   legIndex,
   LineColumnContent,
-  place,
   PlaceName,
   RouteDescription,
-  routingType,
   setActiveLeg,
   setLegDiagram,
   setViewedTrip,
@@ -41,7 +40,6 @@ const PlaceRow = ({
   showElevationProfile,
   showLegIcon,
   showMapButtonColumn,
-  time,
   timeOptions,
   toRouteAbbreviation,
   TransitLegSubheader,
@@ -52,8 +50,11 @@ const PlaceRow = ({
   // interline stop. However, this prevents the user from being able to click
   // on the stop viewer in this case, which they may want to do in order to
   // check the real-time arrival information for the next leg of their journey.
-  const interline = !!(leg && leg.interlineWithPreviousLeg);
+  const interline = !!(!isDestination && leg.interlineWithPreviousLeg);
   const hideBorder = interline || !legIndex;
+  const place = isDestination ? leg.to : leg.from;
+  const time = isDestination ? leg.endTime : leg.startTime;
+
   const { longDateFormat, timeFormat } = config.dateTime;
   return (
     <Styled.PlaceRowWrapper key={legIndex || "destination-place"}>
@@ -63,6 +64,7 @@ const PlaceRow = ({
       <Styled.LineColumn>
         <LineColumnContent
           interline={interline}
+          isDestination={isDestination}
           lastLeg={lastLeg}
           leg={leg}
           LegIcon={LegIcon}
@@ -84,8 +86,8 @@ const PlaceRow = ({
             </Styled.PlaceName>
           </Styled.PlaceHeader>
 
-          {/* Show the leg, if present */}
-          {leg &&
+          {/* Show the leg, if not rendering the destination */}
+          {!isDestination &&
             (leg.transitLeg ? (
               /* This is a transit leg */
               <TransitLegBody
@@ -114,7 +116,6 @@ const PlaceRow = ({
                 leg={leg}
                 LegIcon={LegIcon}
                 legIndex={legIndex}
-                routingType={routingType}
                 setActiveLeg={setActiveLeg}
                 setLegDiagram={setLegDiagram}
                 showElevationProfile={showElevationProfile}
@@ -126,7 +127,9 @@ const PlaceRow = ({
       </Styled.DetailsColumn>
       {showMapButtonColumn && (
         <Styled.MapButtonColumn hideBorder={hideBorder.toString()}>
-          <Styled.MapButton onClick={() => frameLeg({ leg, legIndex })}>
+          <Styled.MapButton
+            onClick={() => frameLeg({ isDestination, leg, legIndex, place })}
+          >
             <Styled.MapIcon />
           </Styled.MapButton>
         </Styled.MapButtonColumn>
@@ -135,93 +138,36 @@ const PlaceRow = ({
   );
 };
 
+// A lot of these props are passed through from the ItineraryBody. See the
+// documentation in that component for more information.
 PlaceRow.propTypes = {
-  /** Contains OTP configuration details. */
   config: configType.isRequired,
-  /**
-   * Should be either null or a legType. Indicates that a particular leg diagram
-   * has been selected and is active.
-   */
   diagramVisible: legType,
   /** Indicates whether this leg directly follows a transit leg */
   followsTransit: PropTypes.bool,
-  /**
-   * Called upon clicking the map icon. This function is sent a single argument
-   * of an object with the keys of `leg` and `legIndex`.
-   */
   frameLeg: PropTypes.func.isRequired,
+  /** whether this place row represents the destination */
+  isDestination: PropTypes.bool.isRequired,
   /** Contains details about the leg object prior to the current one */
   lastLeg: legType,
   /** Contains details about leg object that is being displayed */
-  leg: legType,
-  /** A component class used to render the icon for a leg */
+  leg: legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired,
   /** The index value of this specific leg within the itinerary */
-  legIndex: PropTypes.number,
-  /** A slot for a component that can render the content in the line column */
+  legIndex: PropTypes.number.isRequired,
   LineColumnContent: PropTypes.elementType.isRequired,
-  /** Contains details about the place being featured in this block */
-  place: PropTypes.shape({
-    stopId: PropTypes.string,
-    name: PropTypes.string.isRequired
-  }).isRequired,
-  /**
-   * A custom component for rendering the place name of legs.
-   * The component is sent 3 props:
-   * - config: the application config
-   * - interline: whether this place is an interlined stop (a stop where a
-   *   transit vehicle changes routes, but a rider can continue riding without
-   *   deboarding)
-   * - place: the particular place. Typically this is the from place, but it
-   *   could also be the to place if it is the destination of the itinerary.
-   */
   PlaceName: PropTypes.elementType.isRequired,
-  /**
-   * A component to render the name of a route.
-   *
-   * The component is sent 2 props:
-   * - leg: the itinerary leg with the transit information
-   * - transitOperator: the transit operator associated with the route if available
-   */
   RouteDescription: PropTypes.elementType.isRequired,
-  /** TODO: Routing Type is usually 'ITINERARY' but we should get more details on what this does */
-  routingType: PropTypes.string.isRequired,
-  /**
-   * Sets the active leg and legIndex.
-   * Called with 2 arguments: (legIndex, leg)
-   */
   setActiveLeg: PropTypes.func.isRequired,
-  /** Fired when a user clicks on a view trip button of a transit leg */
   setViewedTrip: PropTypes.func.isRequired,
-  /** If true, will show agency information in transit legs */
   showAgencyInfo: PropTypes.bool.isRequired,
-  /** If true, will show the elevation profile for walk/bike legs */
   showElevationProfile: PropTypes.bool.isRequired,
-  /** If true will show the leg icon in the leg body */
   showLegIcon: PropTypes.bool.isRequired,
-  /** If true, will show the right column with the map button */
   showMapButtonColumn: PropTypes.bool.isRequired,
-  /** Handler for when a leg diagram is selected. */
   setLegDiagram: PropTypes.func.isRequired,
-  /** A unit timestamp of the time being featured in this block */
-  time: PropTypes.number.isRequired,
-  /** Contains an optional preferred format string for time display and a
-  timezone offset */
   timeOptions: timeOptionsType,
-  /** Converts a route's ID to its accepted badge abbreviation */
   toRouteAbbreviation: PropTypes.func.isRequired,
-  /**
-   * An optional custom component for rendering a subheader on transit legs.
-   * * The component is sent 1 prop:
-   * - leg: the transit leg
-   */
   TransitLegSubheader: PropTypes.elementType,
-  /**
-   * A custom component for rendering the summary of a transit leg.
-   * The component is sent 2 props:
-   * - leg: the transit leg
-   * - stopsExpanded: whether the intermediate stop display is currently expanded
-   */
   TransitLegSummary: PropTypes.elementType.isRequired
 };
 
@@ -230,10 +176,6 @@ PlaceRow.defaultProps = {
   followsTransit: false,
   // can be null if this is the origin place
   lastLeg: null,
-  // can be null if this is the destination place
-  leg: null,
-  // can be null if this is the destination place
-  legIndex: null,
   timeOptions: null,
   TransitLegSubheader: undefined
 };

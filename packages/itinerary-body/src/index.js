@@ -50,14 +50,14 @@ const ItineraryBody = ({
           key={i + (isDestination ? 1 : 0)}
           config={config}
           diagramVisible={diagramVisible}
-          followsTransit={isDestination && followsTransit}
+          followsTransit={followsTransit}
           frameLeg={frameLeg}
+          isDestination={isDestination}
           lastLeg={lastLeg}
-          leg={isDestination ? undefined : leg}
+          leg={leg}
           LegIcon={LegIcon}
-          legIndex={isDestination ? undefined : i}
+          legIndex={i}
           LineColumnContent={LineColumnContent}
-          place={isDestination ? leg.to : leg.from}
           PlaceName={PlaceName}
           RouteDescription={RouteDescription}
           routingType={routingType}
@@ -68,7 +68,6 @@ const ItineraryBody = ({
           showElevationProfile={showElevationProfile}
           showLegIcon={showLegIcon}
           showMapButtonColumn={showMapButtonColumn}
-          time={isDestination ? leg.endTime : leg.startTime}
           timeOptions={timeOptions}
           toRouteAbbreviation={toRouteAbbreviation}
           TransitLegSubheader={TransitLegSubheader}
@@ -77,7 +76,7 @@ const ItineraryBody = ({
       );
     }
 
-    createPlaceRow();
+    createPlaceRow(false);
     // If this is the last leg, create a special PlaceRow for the destination
     // only
     if (i === itinerary.legs.length - 1) {
@@ -104,15 +103,30 @@ ItineraryBody.propTypes = {
    */
   diagramVisible: legType,
   /**
-   * Called upon clicking the map icon. This function is sent a single argument
-   * of an object with the keys of `leg` and `legIndex`.
+   * Called upon clicking the map icon on place headers. This function is sent a
+   * single argument of an object with the keys as follow:
+   * - `leg`: the leg clicked (can be null if the destination is clicked)
+   * - `legIndex`: the index of the leg clicked (can be null if the destination
+   *    is clicked)
+   * - `isDestination`: if the place header that is clicked is the destination
+   * - `place`: The place associated with the click event
    */
   frameLeg: PropTypes.func,
   /** Itinerary that the user has selected to view, contains multiple legs */
   itinerary: itineraryType.isRequired,
   /** A component class that is used to render icons for legs of an itinerary */
   LegIcon: PropTypes.elementType.isRequired,
-  /** A slot for a component that can render the content in the line column */
+  /**
+   * A slot for a component that can render the content in the line column.
+   * This component is sent the following props:
+   * - interline - whether this place is an interlined stop
+   * - isDestination - whether this place is the destination
+   * - lastLeg - the leg prior to the current leg
+   * - leg - the current leg
+   * - LegIcon - the LegIcon class used to render leg icons.
+   * - legIndex - the current leg index
+   * - toRouteAbbreviation - a function to help abbreviate route names
+   */
   LineColumnContent: PropTypes.elementType.isRequired,
   /**
    * A custom component for rendering the place name of legs.

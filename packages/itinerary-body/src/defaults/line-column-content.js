@@ -8,16 +8,19 @@ import RouteBadge from "../RouteBadge";
 
 export default function LineColumnContent({
   interline,
+  isDestination,
   leg,
   LegIcon,
   toRouteAbbreviation
 }) {
   return (
     <Styled.LegLine>
-      {leg && <Styled.InnerLine mode={leg.mode} routeColor={leg.routeColor} />}
+      {!isDestination && (
+        <Styled.InnerLine mode={leg.mode} routeColor={leg.routeColor} />
+      )}
       <Styled.LineBadgeContainer>
         {/* TODO: This is a placeholder for a routebadge when we create the transit leg */}
-        {!interline && leg && leg.transitLeg && (
+        {!interline && !isDestination && leg.transitLeg && (
           <RouteBadge
             color={leg.routeColor}
             abbreviation={toRouteAbbreviation(
@@ -26,12 +29,12 @@ export default function LineColumnContent({
             name={leg.routeLongName || ""}
           />
         )}
-        {!interline && leg && !leg.transitLeg && (
+        {!interline && !isDestination && !leg.transitLeg && (
           <Styled.AccessBadge mode={leg.mode} routeColor={leg.routeColor}>
             {<LegIcon leg={leg} title={`Travel by ${leg.mode}`} width="66%" />}
           </Styled.AccessBadge>
         )}
-        {!leg && (
+        {isDestination && (
           <Styled.Destination>
             <LocationIcon size={25} type="to" />
           </Styled.Destination>
@@ -44,6 +47,8 @@ export default function LineColumnContent({
 LineColumnContent.propTypes = {
   /** whether this leg is an interlined-transit leg */
   interline: PropTypes.bool.isRequired,
+  /** whether this place row represents the destination */
+  isDestination: PropTypes.bool.isRequired,
   /** Contains details about leg object that is being displayed */
   leg: coreUtils.types.legType,
   /** A component class used to render the icon for a leg */
