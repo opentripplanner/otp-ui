@@ -3,7 +3,6 @@ import {
   getCompaniesLabelFromNetworks,
   getModeForPlace
 } from "@opentripplanner/core-utils/lib/itinerary";
-import PropTypes from "prop-types";
 import React from "react";
 
 import * as Styled from "../styled";
@@ -15,12 +14,7 @@ import * as Styled from "../styled";
  * assuming that the leg.rentedCar and leg.rentedBike response elements from OTP
  * will eventually be merged into the leg.rentedVehicle element.
  */
-export default function RentedVehicleSubheader({
-  config,
-  leg,
-  LegIcon,
-  showLegIcon
-}) {
+export default function RentedVehicleSubheader({ config, leg }) {
   const configCompanies = config.companies || [];
 
   // Sometimes rented vehicles can be walked over things like stairs or other
@@ -28,7 +22,6 @@ export default function RentedVehicleSubheader({
   if (leg.mode === "WALK") {
     return (
       <Styled.PlaceSubheader>
-        {showLegIcon && <LegIcon leg={leg} />}
         <span>Walk vehicle along {leg.from.name}</span>
       </Styled.PlaceSubheader>
     );
@@ -74,19 +67,10 @@ export default function RentedVehicleSubheader({
   // e.g., Pick up REACHNOW rented car XYZNDB OR
   //       Pick up SPIN E-scooter
   //       Pick up shared bike
-  return (
-    <Styled.PlaceSubheader>
-      {showLegIcon && <LegIcon leg={leg} />}
-      <span>{rentalDescription}</span>
-    </Styled.PlaceSubheader>
-  );
+  return <Styled.PlaceSubheader>{rentalDescription}</Styled.PlaceSubheader>;
 }
 
 RentedVehicleSubheader.propTypes = {
   config: configType.isRequired,
-  leg: legType.isRequired,
-  /** A component class used to render the icon for a leg */
-  LegIcon: PropTypes.elementType.isRequired,
-  /** Whether or not to show the leg icon next to the */
-  showLegIcon: PropTypes.bool.isRequired
+  leg: legType.isRequired
 };

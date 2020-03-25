@@ -70,12 +70,7 @@ export default class AccessLegBody extends Component {
         {/* Place subheading: rented vehicle (e.g., scooter, bike, car)
           pickup */}
         {leg && (leg.rentedVehicle || leg.rentedBike || leg.rentedCar) && (
-          <RentedVehicleSubheader
-            config={config}
-            leg={leg}
-            LegIcon={LegIcon}
-            showLegIcon={showLegIcon}
-          />
+          <RentedVehicleSubheader config={config} leg={leg} />
         )}
         <Styled.LegBody>
           <AccessLegSummary
@@ -129,7 +124,7 @@ AccessLegBody.propTypes = {
   routingType: PropTypes.string.isRequired,
   setActiveLeg: PropTypes.func.isRequired,
   setLegDiagram: PropTypes.func.isRequired,
-  showElevationProfile: PropTypes.bool,
+  showElevationProfile: PropTypes.bool.isRequired,
   showLegIcon: PropTypes.bool.isRequired,
   timeOptions: timeOptionsType
 };
@@ -137,6 +132,5 @@ AccessLegBody.propTypes = {
 AccessLegBody.defaultProps = {
   diagramVisible: null,
   followsTransit: false,
-  showElevationProfile: false,
   timeOptions: null
 };

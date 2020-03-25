@@ -58,6 +58,7 @@ class ItineraryBodyDefaultsWrapper extends Component {
       PlaceName,
       RouteDescription,
       showAgencyInfo,
+      showLegIcon,
       showMapButtonColumn,
       styledItinerary,
       TransitLegSummary
@@ -90,6 +91,7 @@ class ItineraryBodyDefaultsWrapper extends Component {
         setViewedTrip={action("setViewedTrip")}
         showAgencyInfo={showAgencyInfo}
         showElevationProfile
+        showLegIcon={showLegIcon}
         showMapButtonColumn={showMapButtonColumn}
         toRouteAbbreviation={r => r.toString().substr(0, 2)}
         TransitLegSummary={TransitLegSummary || DefaultTransitLegSummary}
@@ -104,6 +106,7 @@ ItineraryBodyDefaultsWrapper.propTypes = {
   PlaceName: PropTypes.elementType,
   RouteDescription: PropTypes.elementType,
   showAgencyInfo: PropTypes.bool,
+  showLegIcon: PropTypes.bool,
   showMapButtonColumn: PropTypes.bool,
   styledItinerary: PropTypes.string,
   TransitLegSummary: PropTypes.elementType
@@ -115,6 +118,7 @@ ItineraryBodyDefaultsWrapper.defaultProps = {
   RouteDescription: undefined,
   TransitLegSummary: undefined,
   showAgencyInfo: false,
+  showLegIcon: false,
   showMapButtonColumn: true,
   styledItinerary: null
 };
