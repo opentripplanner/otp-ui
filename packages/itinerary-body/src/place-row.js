@@ -44,6 +44,7 @@ const PlaceRow = ({
   time,
   timeOptions,
   toRouteAbbreviation,
+  TransitLegSubheader,
   TransitLegSummary
 }) => {
   // NOTE: Previously there was a check for itineraries that changed vehicles
@@ -88,6 +89,7 @@ const PlaceRow = ({
             (leg.transitLeg ? (
               /* This is a transit leg */
               <TransitLegBody
+                config={config}
                 leg={leg}
                 legIndex={legIndex}
                 setActiveLeg={setActiveLeg}
@@ -96,6 +98,7 @@ const PlaceRow = ({
                 setViewedTrip={setViewedTrip}
                 showAgencyInfo={showAgencyInfo}
                 timeFormat={timeFormat}
+                TransitLegSubheader={TransitLegSubheader}
                 TransitLegSummary={TransitLegSummary}
                 transitOperator={
                   leg.agencyId &&
@@ -205,6 +208,12 @@ PlaceRow.propTypes = {
   /** Converts a route's ID to its accepted badge abbreviation */
   toRouteAbbreviation: PropTypes.func.isRequired,
   /**
+   * An optional custom component for rendering a subheader on transit legs.
+   * * The component is sent 1 prop:
+   * - leg: the transit leg
+   */
+  TransitLegSubheader: PropTypes.elementType,
+  /**
    * A custom component for rendering the summary of a transit leg.
    * The component is sent 2 props:
    * - leg: the transit leg
@@ -222,7 +231,8 @@ PlaceRow.defaultProps = {
   leg: null,
   // can be null if this is the destination place
   legIndex: null,
-  timeOptions: null
+  timeOptions: null,
+  TransitLegSubheader: undefined
 };
 
 export default PlaceRow;

@@ -1,4 +1,8 @@
-import { itineraryType, legType } from "@opentripplanner/core-utils/lib/types";
+import {
+  itineraryType,
+  languageConfigType,
+  legType
+} from "@opentripplanner/core-utils/lib/types";
 import TriMetLegIcon from "@opentripplanner/icons/lib/trimet-leg-icon";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
@@ -17,6 +21,7 @@ import OtpRRStyledItineraryBody from "./otp-react-redux/itinerary-body";
 import OtpRRLineColumnContent from "./otp-react-redux/line-column-content";
 import OtpRRPlaceName from "./otp-react-redux/place-name";
 import OtpRRRouteDescription from "./otp-react-redux/route-description";
+import OtpRRTransitLegSubheader from "./otp-react-redux/transit-leg-subheader";
 import * as ItineraryBodyClasses from "./styled";
 
 const config = require("./__mocks__/config.json");
@@ -61,6 +66,7 @@ class ItineraryBodyDefaultsWrapper extends Component {
       showLegIcon,
       showMapButtonColumn,
       styledItinerary,
+      TransitLegSubheader,
       TransitLegSummary
     } = this.props;
     const { diagramVisible } = this.state;
@@ -94,6 +100,7 @@ class ItineraryBodyDefaultsWrapper extends Component {
         showLegIcon={showLegIcon}
         showMapButtonColumn={showMapButtonColumn}
         toRouteAbbreviation={r => r.toString().substr(0, 2)}
+        TransitLegSubheader={TransitLegSubheader}
         TransitLegSummary={TransitLegSummary || DefaultTransitLegSummary}
       />
     );
@@ -109,6 +116,7 @@ ItineraryBodyDefaultsWrapper.propTypes = {
   showLegIcon: PropTypes.bool,
   showMapButtonColumn: PropTypes.bool,
   styledItinerary: PropTypes.string,
+  TransitLegSubheader: PropTypes.elementType,
   TransitLegSummary: PropTypes.elementType
 };
 
@@ -116,11 +124,27 @@ ItineraryBodyDefaultsWrapper.defaultProps = {
   LineColumnContent: undefined,
   PlaceName: undefined,
   RouteDescription: undefined,
-  TransitLegSummary: undefined,
   showAgencyInfo: false,
   showLegIcon: false,
   showMapButtonColumn: true,
-  styledItinerary: null
+  styledItinerary: null,
+  TransitLegSubheader: undefined,
+  TransitLegSummary: undefined
+};
+
+function WrappedOtpRRTransitLegSubheader({ languageConfig, leg }) {
+  return (
+    <OtpRRTransitLegSubheader
+      languageConfig={languageConfig}
+      leg={leg}
+      onStopClick={action("Transit Stop Click")}
+    />
+  );
+}
+
+WrappedOtpRRTransitLegSubheader.propTypes = {
+  languageConfig: languageConfigType.isRequired,
+  leg: legType.isRequired
 };
 
 function OtpRRItineraryBodyWrapper({ itinerary }) {
@@ -134,6 +158,7 @@ function OtpRRItineraryBodyWrapper({ itinerary }) {
       showLegIcon
       showMapButtonColumn={false}
       styledItinerary="otp-rr"
+      TransitLegSubheader={WrappedOtpRRTransitLegSubheader}
     />
   );
 }

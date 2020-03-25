@@ -30,6 +30,7 @@ const ItineraryBody = ({
   showMapButtonColumn,
   timeOptions,
   toRouteAbbreviation,
+  TransitLegSubheader,
   TransitLegSummary
 }) => {
   /*
@@ -70,6 +71,7 @@ const ItineraryBody = ({
           time={isDestination ? leg.endTime : leg.startTime}
           timeOptions={timeOptions}
           toRouteAbbreviation={toRouteAbbreviation}
+          TransitLegSubheader={TransitLegSubheader}
           TransitLegSummary={TransitLegSummary}
         />
       );
@@ -152,6 +154,13 @@ ItineraryBody.propTypes = {
   /** Converts a route's ID to its accepted badge abbreviation */
   toRouteAbbreviation: PropTypes.func.isRequired,
   /**
+   * An optional custom component for rendering a subheader on transit legs.
+   * * The component is sent 4 props:
+   * - languageConfig: The language values
+   * - leg: the transit leg
+   */
+  TransitLegSubheader: PropTypes.elementType,
+  /**
    * A custom component for rendering the summary of a transit leg.
    * The component is sent 2 props:
    * - leg: the transit leg
@@ -171,7 +180,8 @@ ItineraryBody.defaultProps = {
   showElevationProfile: false,
   showLegIcon: false,
   showMapButtonColumn: true,
-  timeOptions: null
+  timeOptions: null,
+  TransitLegSubheader: undefined
 };
 
 export default ItineraryBody;

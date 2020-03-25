@@ -1,5 +1,6 @@
 import { formatDuration } from "@opentripplanner/core-utils/lib/time";
 import {
+  configType,
   legType,
   transitOperatorType
 } from "@opentripplanner/core-utils/lib/types";
@@ -44,15 +45,18 @@ export default class TransitLegBody extends Component {
 
   render() {
     const {
+      config,
       leg,
       longDateFormat,
       RouteDescription,
       setViewedTrip,
       showAgencyInfo,
       timeFormat,
+      TransitLegSubheader,
       TransitLegSummary,
       transitOperator
     } = this.props;
+    const { language: languageConfig } = config;
     const { agencyBrandingUrl, agencyName, agencyUrl, alerts } = leg;
     const { alertsExpanded, stopsExpanded } = this.state;
 
@@ -67,84 +71,90 @@ export default class TransitLegBody extends Component {
       alertsExpanded || (leg.alerts && leg.alerts.length < 3);
 
     return (
-      <Styled.LegBody>
-        {/* The Route Icon/Name Bar; clickable to set as active leg */}
-        <Styled.LegClickable onClick={this.onSummaryClick}>
-          <RouteDescription leg={leg} transitOperator={transitOperator} />
-        </Styled.LegClickable>
-
-        {/* Agency information */}
-        {showAgencyInfo && (
-          <Styled.AgencyInfo>
-            Service operated by{" "}
-            <a href={agencyUrl} rel="noopener noreferrer" target="_blank">
-              {agencyName}
-              {logoUrl && (
-                <img alt={`${agencyName} logo`} src={logoUrl} height={25} />
-              )}
-            </a>
-          </Styled.AgencyInfo>
+      <>
+        {TransitLegSubheader && (
+          <TransitLegSubheader languageConfig={languageConfig} leg={leg} />
         )}
+        <Styled.LegBody>
+          {/* The Route Icon/Name Bar; clickable to set as active leg */}
+          <Styled.LegClickable onClick={this.onSummaryClick}>
+            <RouteDescription leg={leg} transitOperator={transitOperator} />
+          </Styled.LegClickable>
 
-        {/* Alerts toggle */}
-        {alerts && alerts.length > 2 && (
-          <Styled.TransitAlertToggle onClick={this.onToggleAlertsClick}>
-            <ExclamationTriangle size={15} /> {alerts.length}{" "}
-            {pluralize("alert", alerts)}{" "}
-            <Styled.CaretToggle expanded={alertsExpanded} />
-          </Styled.TransitAlertToggle>
-        )}
-
-        {/* The Alerts body, if visible */}
-        <VelocityTransitionGroup
-          enter={{ animation: "slideDown" }}
-          leave={{ animation: "slideUp" }}
-        >
-          {expandAlerts && (
-            <AlertsBody
-              alerts={leg.alerts}
-              longDateFormat={longDateFormat}
-              timeFormat={timeFormat}
-            />
+          {/* Agency information */}
+          {showAgencyInfo && (
+            <Styled.AgencyInfo>
+              Service operated by{" "}
+              <a href={agencyUrl} rel="noopener noreferrer" target="_blank">
+                {agencyName}
+                {logoUrl && (
+                  <img alt={`${agencyName} logo`} src={logoUrl} height={25} />
+                )}
+              </a>
+            </Styled.AgencyInfo>
           )}
-        </VelocityTransitionGroup>
-        {/* The "Ride X Min / X Stops" Row, including IntermediateStops body */}
-        {leg.intermediateStops && leg.intermediateStops.length > 0 && (
-          <Styled.TransitLegDetails>
-            {/* The header summary row, clickable to expand intermediate stops */}
-            <Styled.TransitLegDetailsHeader onClick={this.onToggleStopsClick}>
-              <TransitLegSummary leg={leg} stopsExpanded={stopsExpanded} />
 
-              {/* The ViewTripButton. TODO: make configurable */}
-              <ViewTripButton
-                tripId={leg.tripId}
-                fromIndex={leg.from.stopIndex}
-                setViewedTrip={setViewedTrip}
-                toIndex={leg.to.stopIndex}
+          {/* Alerts toggle */}
+          {alerts && alerts.length > 2 && (
+            <Styled.TransitAlertToggle onClick={this.onToggleAlertsClick}>
+              <ExclamationTriangle size={15} /> {alerts.length}{" "}
+              {pluralize("alert", alerts)}{" "}
+              <Styled.CaretToggle expanded={alertsExpanded} />
+            </Styled.TransitAlertToggle>
+          )}
+
+          {/* The Alerts body, if visible */}
+          <VelocityTransitionGroup
+            enter={{ animation: "slideDown" }}
+            leave={{ animation: "slideUp" }}
+          >
+            {expandAlerts && (
+              <AlertsBody
+                alerts={leg.alerts}
+                longDateFormat={longDateFormat}
+                timeFormat={timeFormat}
               />
-            </Styled.TransitLegDetailsHeader>
-            {/* IntermediateStops expanded body */}
-            <VelocityTransitionGroup
-              enter={{ animation: "slideDown" }}
-              leave={{ animation: "slideUp" }}
-            >
-              {stopsExpanded ? (
-                <IntermediateStops stops={leg.intermediateStops} />
-              ) : null}
-            </VelocityTransitionGroup>
-
-            {/* Average wait details, if present */}
-            {leg.averageWait && (
-              <span>Typical Wait: {formatDuration(leg.averageWait)}</span>
             )}
-          </Styled.TransitLegDetails>
-        )}
-      </Styled.LegBody>
+          </VelocityTransitionGroup>
+          {/* The "Ride X Min / X Stops" Row, including IntermediateStops body */}
+          {leg.intermediateStops && leg.intermediateStops.length > 0 && (
+            <Styled.TransitLegDetails>
+              {/* The header summary row, clickable to expand intermediate stops */}
+              <Styled.TransitLegDetailsHeader onClick={this.onToggleStopsClick}>
+                <TransitLegSummary leg={leg} stopsExpanded={stopsExpanded} />
+
+                {/* The ViewTripButton. TODO: make configurable */}
+                <ViewTripButton
+                  tripId={leg.tripId}
+                  fromIndex={leg.from.stopIndex}
+                  setViewedTrip={setViewedTrip}
+                  toIndex={leg.to.stopIndex}
+                />
+              </Styled.TransitLegDetailsHeader>
+              {/* IntermediateStops expanded body */}
+              <VelocityTransitionGroup
+                enter={{ animation: "slideDown" }}
+                leave={{ animation: "slideUp" }}
+              >
+                {stopsExpanded ? (
+                  <IntermediateStops stops={leg.intermediateStops} />
+                ) : null}
+              </VelocityTransitionGroup>
+
+              {/* Average wait details, if present */}
+              {leg.averageWait && (
+                <span>Typical Wait: {formatDuration(leg.averageWait)}</span>
+              )}
+            </Styled.TransitLegDetails>
+          )}
+        </Styled.LegBody>
+      </>
     );
   }
 }
 
 TransitLegBody.propTypes = {
+  config: configType.isRequired,
   leg: legType.isRequired,
   legIndex: PropTypes.number.isRequired,
   longDateFormat: PropTypes.string.isRequired,
@@ -153,10 +163,12 @@ TransitLegBody.propTypes = {
   setViewedTrip: PropTypes.func.isRequired,
   showAgencyInfo: PropTypes.bool.isRequired,
   timeFormat: PropTypes.string.isRequired,
+  TransitLegSubheader: PropTypes.elementType,
   TransitLegSummary: PropTypes.elementType.isRequired,
   transitOperator: transitOperatorType
 };
 
 TransitLegBody.defaultProps = {
+  TransitLegSubheader: undefined,
   transitOperator: null
 };
