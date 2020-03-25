@@ -3,9 +3,9 @@ import { getPlaceName } from "@opentripplanner/core-utils/lib/itinerary";
 import PropTypes from "prop-types";
 import React from "react";
 
-import * as Styled from "./styled";
+import * as Styled from "../styled";
 
-export default function DefaultPlaceName({ config, interline, place }) {
+export default function PlaceName({ config, interline, place }) {
   return (
     <>
       {interline ? (
@@ -31,12 +31,12 @@ export default function DefaultPlaceName({ config, interline, place }) {
   );
 }
 
-DefaultPlaceName.propTypes = {
+PlaceName.propTypes = {
   config: configType.isRequired,
   interline: PropTypes.bool,
   place: placeType.isRequired
 };
 
-DefaultPlaceName.defaultProps = {
+PlaceName.defaultProps = {
   interline: false
 };

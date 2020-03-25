@@ -20,6 +20,11 @@ const StyledItineraryBody = styled(ItineraryBody)`
     transform: inherit;
   }
 
+  ${ItineraryBodyClasses.InterlineDot} {
+    margin-left: -18px;
+    margin-right: 3px;
+  }
+
   ${ItineraryBodyClasses.LegDescriptionRouteShortName} {
     background-color: rgb(15, 106, 172);
     border-color: white;
@@ -55,9 +60,18 @@ const StyledItineraryBody = styled(ItineraryBody)`
     padding-left: 4px;
   }
 
+  ${ItineraryBodyClasses.PlaceName} {
+    height: inherit;
+    white-space: normal;
+  }
+
   ${ItineraryBodyClasses.PlaceRowWrapper} {
     display: table;
     width: 100%;
+  }
+
+  ${ItineraryBodyClasses.StopMarker} {
+    margin-left: -17px;
   }
 
   ${ItineraryBodyClasses.TimeColumn} {

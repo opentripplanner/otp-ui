@@ -1,4 +1,4 @@
-import moment from "moment";
+import { formatDuration } from "@opentripplanner/core-utils/lib/time";
 import {
   legType,
   transitOperatorType
@@ -8,8 +8,8 @@ import React, { Component } from "react";
 import { ExclamationTriangle } from "styled-icons/fa-solid";
 import { VelocityTransitionGroup } from "velocity-react";
 
-import { formatDuration } from "@opentripplanner/core-utils/lib/time";
-
+import AlertsBody from "./alerts-body";
+import IntermediateStops from "./intermediate-stops";
 import * as Styled from "../styled";
 import ViewTripButton from "./view-trip-button";
 
@@ -18,58 +18,7 @@ function pluralize(str, list) {
   return `${str}${list.length > 1 ? "s" : ""}`;
 }
 
-function DefaultTransitLegSummary({ leg, stopsExpanded }) {
-  return (
-    <>
-      {leg.duration && <span>Ride {formatDuration(leg.duration)}</span>}
-      {leg.intermediateStops && (
-        <span>
-          {" / "}
-          {leg.intermediateStops.length + 1}
-          {" stops "}
-          <Styled.CaretToggle expanded={stopsExpanded} />
-        </span>
-      )}
-    </>
-  );
-}
-
-DefaultTransitLegSummary.propTypes = {
-  leg: legType.isRequired,
-  stopsExpanded: PropTypes.bool.isRequired
-};
-
-function DefaultRouteDescription({ leg }) {
-  const { headsign, routeLongName, routeShortName } = leg;
-  return (
-    <Styled.LegDescriptionForTransit>
-      {routeShortName && (
-        <div>
-          <Styled.LegDescriptionRouteShortName>
-            {routeShortName}
-          </Styled.LegDescriptionRouteShortName>
-        </div>
-      )}
-      <Styled.LegDescriptionRouteLongName>
-        {routeLongName}
-        {headsign && (
-          <span>
-            <Styled.LegDescriptionHeadsignPrefix>
-              {" to "}
-            </Styled.LegDescriptionHeadsignPrefix>
-            {headsign}
-          </span>
-        )}
-      </Styled.LegDescriptionRouteLongName>
-    </Styled.LegDescriptionForTransit>
-  );
-}
-
-DefaultRouteDescription.propTypes = {
-  leg: legType.isRequired
-};
-
-class TransitLegBody extends Component {
+export default class TransitLegBody extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -199,86 +148,15 @@ TransitLegBody.propTypes = {
   leg: legType.isRequired,
   legIndex: PropTypes.number.isRequired,
   longDateFormat: PropTypes.string.isRequired,
-  RouteDescription: PropTypes.elementType,
+  RouteDescription: PropTypes.elementType.isRequired,
   setActiveLeg: PropTypes.func.isRequired,
   setViewedTrip: PropTypes.func.isRequired,
   showAgencyInfo: PropTypes.bool.isRequired,
   timeFormat: PropTypes.string.isRequired,
-  TransitLegSummary: PropTypes.elementType,
+  TransitLegSummary: PropTypes.elementType.isRequired,
   transitOperator: transitOperatorType
 };
 
 TransitLegBody.defaultProps = {
-  RouteDescription: DefaultRouteDescription,
-  TransitLegSummary: DefaultTransitLegSummary,
   transitOperator: null
-};
-
-export default TransitLegBody;
-
-function IntermediateStops({ stops }) {
-  return (
-    <Styled.IntermediateStops>
-      {stops.map((stop, k) => {
-        return (
-          <Styled.StopRow key={k}>
-            <Styled.StopMarker>&bull;</Styled.StopMarker>
-            <Styled.StopName>{stop.name}</Styled.StopName>
-          </Styled.StopRow>
-        );
-      })}
-    </Styled.IntermediateStops>
-  );
-}
-
-IntermediateStops.propTypes = {
-  stops: PropTypes.arrayOf(PropTypes.shape({})).isRequired
-};
-
-function AlertsBody({ alerts, longDateFormat, timeFormat }) {
-  return (
-    <Styled.TransitAlerts>
-      {alerts
-        .sort((a, b) => b.effectiveStartDate - a.effectiveStartDate)
-        .map((alert, i) => {
-          // If alert is effective as of +/- one day, use today, tomorrow, or
-          // yesterday with time. Otherwise, use long date format.
-          const dateTimeString = moment(alert.effectiveStartDate).calendar(
-            null,
-            {
-              sameDay: `${timeFormat}, [Today]`,
-              nextDay: `${timeFormat}, [Tomorrow]`,
-              lastDay: `${timeFormat}, [Yesterday]`,
-              lastWeek: `${longDateFormat}`,
-              sameElse: `${longDateFormat}`
-            }
-          );
-          const effectiveDateString = `Effective as of ${dateTimeString}`;
-          return (
-            <Styled.TransitAlert key={i} href={alert.alertUrl}>
-              <Styled.TransitAlertIconContainer>
-                <ExclamationTriangle size={18} />
-              </Styled.TransitAlertIconContainer>
-              {alert.alertHeaderText ? (
-                <Styled.TransitAlertHeader>
-                  {alert.alertHeaderText}
-                </Styled.TransitAlertHeader>
-              ) : null}
-              <Styled.TransitAlertBody>
-                {alert.alertDescriptionText}
-              </Styled.TransitAlertBody>
-              <Styled.TransitAlertEffectiveDate>
-                {effectiveDateString}
-              </Styled.TransitAlertEffectiveDate>
-            </Styled.TransitAlert>
-          );
-        })}
-    </Styled.TransitAlerts>
-  );
-}
-
-AlertsBody.propTypes = {
-  alerts: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-  longDateFormat: PropTypes.string.isRequired,
-  timeFormat: PropTypes.string.isRequired
 };

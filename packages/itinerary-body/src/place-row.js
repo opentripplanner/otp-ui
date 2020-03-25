@@ -8,9 +8,6 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import AccessLegBody from "./AccessLegBody";
-import DefaultLineColumnContent from "./default-line-column-content";
-import DefaultPlaceName from "./default-place-name";
-import RentedVehicleLeg from "./rented-vehicle-leg";
 import * as Styled from "./styled";
 import TransitLegBody from "./TransitLegBody";
 
@@ -42,6 +39,7 @@ const PlaceRow = ({
   setViewedTrip,
   showAgencyInfo,
   showElevationProfile,
+  showLegIcon,
   showMapButtonColumn,
   time,
   timeOptions,
@@ -85,10 +83,6 @@ const PlaceRow = ({
             </Styled.PlaceName>
           </Styled.PlaceHeader>
 
-          {/* Place subheading: rented vehicle (e.g., scooter, bike, car) pickup */}
-          {leg && (leg.rentedVehicle || leg.rentedBike || leg.rentedCar) && (
-            <RentedVehicleLeg config={config} leg={leg} />
-          )}
           {/* Show the leg, if present */}
           {leg &&
             (leg.transitLeg ? (
@@ -121,6 +115,7 @@ const PlaceRow = ({
                 setActiveLeg={setActiveLeg}
                 setLegDiagram={setLegDiagram}
                 showElevationProfile={showElevationProfile}
+                showLegIcon={showLegIcon}
                 timeOptions={timeOptions}
               />
             ))}
@@ -158,14 +153,14 @@ PlaceRow.propTypes = {
   /** The index value of this specific leg within the itinerary */
   legIndex: PropTypes.number,
   /** A slot for a component that can render the content in the line column */
-  LineColumnContent: PropTypes.elementType,
+  LineColumnContent: PropTypes.elementType.isRequired,
   /** Contains details about the place being featured in this block */
   place: PropTypes.shape({
     stopId: PropTypes.string,
     name: PropTypes.string.isRequired
   }).isRequired,
   /**
-   * An optional custom component for rendering the place name of legs.
+   * A custom component for rendering the place name of legs.
    * The component is sent 3 props:
    * - config: the application config
    * - interline: whether this place is an interlined stop (a stop where a
@@ -174,15 +169,15 @@ PlaceRow.propTypes = {
    * - place: the particular place. Typically this is the from place, but it
    *   could also be the to place if it is the destination of the itinerary.
    */
-  PlaceName: PropTypes.elementType,
+  PlaceName: PropTypes.elementType.isRequired,
   /**
-   * An optional component to render the name of a route.
+   * A component to render the name of a route.
    *
    * The component is sent 2 props:
    * - leg: the itinerary leg with the transit information
    * - transitOperator: the transit operator associated with the route if available
    */
-  RouteDescription: PropTypes.elementType,
+  RouteDescription: PropTypes.elementType.isRequired,
   /** TODO: Routing Type is usually 'ITINERARY' but we should get more details on what this does */
   routingType: PropTypes.string.isRequired,
   /**
@@ -193,26 +188,29 @@ PlaceRow.propTypes = {
   /** Fired when a user clicks on a view trip button of a transit leg */
   setViewedTrip: PropTypes.func.isRequired,
   /** If true, will show agency information in transit legs */
-  showAgencyInfo: PropTypes.bool,
+  showAgencyInfo: PropTypes.bool.isRequired,
   /** If true, will show the elevation profile for walk/bike legs */
-  showElevationProfile: PropTypes.bool,
+  showElevationProfile: PropTypes.bool.isRequired,
+  /** If true will show the leg icon in the leg body */
+  showLegIcon: PropTypes.bool.isRequired,
   /** If true, will show the right column with the map button */
-  showMapButtonColumn: PropTypes.bool,
+  showMapButtonColumn: PropTypes.bool.isRequired,
   /** Handler for when a leg diagram is selected. */
   setLegDiagram: PropTypes.func.isRequired,
   /** A unit timestamp of the time being featured in this block */
   time: PropTypes.number.isRequired,
-  /** Contains the preferred format string for time display and a timezone offset */
+  /** Contains an optional preferred format string for time display and a
+  timezone offset */
   timeOptions: timeOptionsType,
   /** Converts a route's ID to its accepted badge abbreviation */
   toRouteAbbreviation: PropTypes.func.isRequired,
   /**
-   * An optional custom component for rendering the summary of a transit leg.
+   * A custom component for rendering the summary of a transit leg.
    * The component is sent 2 props:
    * - leg: the transit leg
    * - stopsExpanded: whether the intermediate stop display is currently expanded
    */
-  TransitLegSummary: PropTypes.elementType
+  TransitLegSummary: PropTypes.elementType.isRequired
 };
 
 PlaceRow.defaultProps = {
@@ -224,14 +222,7 @@ PlaceRow.defaultProps = {
   leg: null,
   // can be null if this is the destination place
   legIndex: null,
-  LineColumnContent: DefaultLineColumnContent,
-  PlaceName: DefaultPlaceName,
-  RouteDescription: undefined,
-  showAgencyInfo: false,
-  showElevationProfile: false,
-  showMapButtonColumn: true,
-  timeOptions: null,
-  TransitLegSummary: undefined
+  timeOptions: null
 };
 
 export default PlaceRow;

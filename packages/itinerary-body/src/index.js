@@ -26,6 +26,7 @@ const ItineraryBody = ({
   setViewedTrip,
   showAgencyInfo,
   showElevationProfile,
+  showLegIcon,
   showMapButtonColumn,
   timeOptions,
   toRouteAbbreviation,
@@ -64,6 +65,7 @@ const ItineraryBody = ({
           setViewedTrip={setViewedTrip}
           showAgencyInfo={showAgencyInfo}
           showElevationProfile={showElevationProfile}
+          showLegIcon={showLegIcon}
           showMapButtonColumn={showMapButtonColumn}
           time={isDestination ? leg.endTime : leg.startTime}
           timeOptions={timeOptions}
@@ -106,9 +108,9 @@ ItineraryBody.propTypes = {
   /** A component class that is used to render icons for legs of an itinerary */
   LegIcon: PropTypes.elementType.isRequired,
   /** A slot for a component that can render the content in the line column */
-  LineColumnContent: PropTypes.elementType,
+  LineColumnContent: PropTypes.elementType.isRequired,
   /**
-   * An optional custom component for rendering the place name of legs.
+   * A custom component for rendering the place name of legs.
    * The component is sent 3 props:
    * - config: the application config
    * - interline: whether this place is an interlined stop (a stop where a
@@ -117,15 +119,15 @@ ItineraryBody.propTypes = {
    * - place: the particular place. Typically this is the from place, but it
    *   could also be the to place if it is the destination of the itinerary.
    */
-  PlaceName: PropTypes.elementType,
+  PlaceName: PropTypes.elementType.isRequired,
   /**
-   * An optional component to render the name of a route.
+   * A component to render the name of a route.
    *
    * The component is sent 2 props:
    * - leg: the itinerary leg with the transit information
    * - transitOperator: the transit operator associated with the route if available
    */
-  RouteDescription: PropTypes.elementType,
+  RouteDescription: PropTypes.elementType.isRequired,
   /** TODO: Routing Type is usually 'ITINERARY' but we should get more details on what this does */
   routingType: PropTypes.string,
   /**
@@ -141,6 +143,8 @@ ItineraryBody.propTypes = {
   showAgencyInfo: PropTypes.bool,
   /** If true, will show the elevation profile for walk/bike legs */
   showElevationProfile: PropTypes.bool,
+  /** If true will show the leg icon in the leg body */
+  showLegIcon: PropTypes.bool,
   /** If true, will show the right column with the map button */
   showMapButtonColumn: PropTypes.bool,
   /** Contains the preferred format string for time display and a timezone offset */
@@ -148,12 +152,12 @@ ItineraryBody.propTypes = {
   /** Converts a route's ID to its accepted badge abbreviation */
   toRouteAbbreviation: PropTypes.func.isRequired,
   /**
-   * An optional custom component for rendering the summary of a transit leg.
+   * A custom component for rendering the summary of a transit leg.
    * The component is sent 2 props:
    * - leg: the transit leg
    * - stopsExpanded: whether the intermediate stop display is currently expanded
    */
-  TransitLegSummary: PropTypes.elementType
+  TransitLegSummary: PropTypes.elementType.isRequired
 };
 
 const noop = () => {};
@@ -162,15 +166,12 @@ ItineraryBody.defaultProps = {
   className: null,
   diagramVisible: null,
   frameLeg: noop,
-  LineColumnContent: undefined,
-  PlaceName: undefined,
-  RouteDescription: undefined,
   routingType: "ITINERARY",
   showAgencyInfo: false,
   showElevationProfile: false,
+  showLegIcon: false,
   showMapButtonColumn: true,
-  timeOptions: null,
-  TransitLegSummary: undefined
+  timeOptions: null
 };
 
 export default ItineraryBody;

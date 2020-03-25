@@ -3,10 +3,10 @@ import LocationIcon from "@opentripplanner/location-icon";
 import PropTypes from "prop-types";
 import React from "react";
 
-import * as Styled from "./styled";
-import RouteBadge from "./RouteBadge";
+import * as Styled from "../styled";
+import RouteBadge from "../RouteBadge";
 
-export default function DefaultLineColumnContent({
+export default function LineColumnContent({
   interline,
   leg,
   LegIcon,
@@ -41,7 +41,7 @@ export default function DefaultLineColumnContent({
   );
 }
 
-DefaultLineColumnContent.propTypes = {
+LineColumnContent.propTypes = {
   /** whether this leg is an interlined-transit leg */
   interline: PropTypes.bool.isRequired,
   /** Contains details about leg object that is being displayed */
@@ -52,7 +52,7 @@ DefaultLineColumnContent.propTypes = {
   toRouteAbbreviation: PropTypes.func.isRequired
 };
 
-DefaultLineColumnContent.defaultProps = {
+LineColumnContent.defaultProps = {
   // can be null if this is the destination place
   leg: null
 };
