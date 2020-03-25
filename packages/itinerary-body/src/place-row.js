@@ -40,6 +40,7 @@ const PlaceRow = ({
   showElevationProfile,
   showLegIcon,
   showMapButtonColumn,
+  showViewTripButton,
   timeOptions,
   toRouteAbbreviation,
   TransitLegSubheader,
@@ -99,6 +100,7 @@ const PlaceRow = ({
                 RouteDescription={RouteDescription}
                 setViewedTrip={setViewedTrip}
                 showAgencyInfo={showAgencyInfo}
+                showViewTripButton={showViewTripButton}
                 timeFormat={timeFormat}
                 TransitLegSubheader={TransitLegSubheader}
                 TransitLegSummary={TransitLegSummary}
@@ -159,12 +161,13 @@ PlaceRow.propTypes = {
   PlaceName: PropTypes.elementType.isRequired,
   RouteDescription: PropTypes.elementType.isRequired,
   setActiveLeg: PropTypes.func.isRequired,
+  setLegDiagram: PropTypes.func.isRequired,
   setViewedTrip: PropTypes.func.isRequired,
   showAgencyInfo: PropTypes.bool.isRequired,
   showElevationProfile: PropTypes.bool.isRequired,
   showLegIcon: PropTypes.bool.isRequired,
   showMapButtonColumn: PropTypes.bool.isRequired,
-  setLegDiagram: PropTypes.func.isRequired,
+  showViewTripButton: PropTypes.bool.isRequired,
   timeOptions: timeOptionsType,
   toRouteAbbreviation: PropTypes.func.isRequired,
   TransitLegSubheader: PropTypes.elementType,

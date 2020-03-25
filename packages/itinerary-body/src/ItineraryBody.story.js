@@ -1,8 +1,4 @@
-import {
-  itineraryType,
-  languageConfigType,
-  legType
-} from "@opentripplanner/core-utils/lib/types";
+import { itineraryType } from "@opentripplanner/core-utils/lib/types";
 import TriMetLegIcon from "@opentripplanner/icons/lib/trimet-leg-icon";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
@@ -10,19 +6,23 @@ import { storiesOf } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
 import { withInfo } from "@storybook/addon-info";
 import { action } from "@storybook/addon-actions";
-import styled from "styled-components";
 
 import ItineraryBody from ".";
 import DefaultLineColumnContent from "./defaults/line-column-content";
 import DefaultPlaceName from "./defaults/place-name";
 import DefaultRouteDescription from "./defaults/route-description";
 import DefaultTransitLegSummary from "./defaults/transit-leg-summary";
+import {
+  CustomPlaceName,
+  customToRouteAbbreviation,
+  CustomTransitLegSummary,
+  StyledItineraryBody,
+  WrappedOtpRRTransitLegSubheader
+} from "./demos";
 import OtpRRStyledItineraryBody from "./otp-react-redux/itinerary-body";
 import OtpRRLineColumnContent from "./otp-react-redux/line-column-content";
 import OtpRRPlaceName from "./otp-react-redux/place-name";
 import OtpRRRouteDescription from "./otp-react-redux/route-description";
-import OtpRRTransitLegSubheader from "./otp-react-redux/transit-leg-subheader";
-import * as ItineraryBodyClasses from "./styled";
 
 const config = require("./__mocks__/config.json");
 
@@ -39,12 +39,6 @@ const walkInterlinedTransitItinerary = require("./__mocks__/itineraries/walk-int
 const walkOnlyItinerary = require("./__mocks__/itineraries/walk-only.json");
 const walkTransitWalkItinerary = require("./__mocks__/itineraries/walk-transit-walk.json");
 const walkTransitWalkTransitWalkItinerary = require("./__mocks__/itineraries/walk-transit-walk-transit-walk.json");
-
-const StyledItineraryBody = styled(ItineraryBody)`
-  ${ItineraryBodyClasses.LegBody} {
-    background-color: pink;
-  }
-`;
 
 class ItineraryBodyDefaultsWrapper extends Component {
   constructor() {
@@ -65,7 +59,9 @@ class ItineraryBodyDefaultsWrapper extends Component {
       showAgencyInfo,
       showLegIcon,
       showMapButtonColumn,
+      showViewTripButton,
       styledItinerary,
+      toRouteAbbreviation,
       TransitLegSubheader,
       TransitLegSummary
     } = this.props;
@@ -99,7 +95,8 @@ class ItineraryBodyDefaultsWrapper extends Component {
         showElevationProfile
         showLegIcon={showLegIcon}
         showMapButtonColumn={showMapButtonColumn}
-        toRouteAbbreviation={r => r.toString().substr(0, 2)}
+        showViewTripButton={showViewTripButton}
+        toRouteAbbreviation={toRouteAbbreviation}
         TransitLegSubheader={TransitLegSubheader}
         TransitLegSummary={TransitLegSummary || DefaultTransitLegSummary}
       />
@@ -115,7 +112,9 @@ ItineraryBodyDefaultsWrapper.propTypes = {
   showAgencyInfo: PropTypes.bool,
   showLegIcon: PropTypes.bool,
   showMapButtonColumn: PropTypes.bool,
+  showViewTripButton: PropTypes.bool,
   styledItinerary: PropTypes.string,
+  toRouteAbbreviation: PropTypes.func,
   TransitLegSubheader: PropTypes.elementType,
   TransitLegSummary: PropTypes.elementType
 };
@@ -127,24 +126,11 @@ ItineraryBodyDefaultsWrapper.defaultProps = {
   showAgencyInfo: false,
   showLegIcon: false,
   showMapButtonColumn: true,
+  showViewTripButton: false,
   styledItinerary: null,
+  toRouteAbbreviation: r => r.toString().substr(0, 2),
   TransitLegSubheader: undefined,
   TransitLegSummary: undefined
-};
-
-function WrappedOtpRRTransitLegSubheader({ languageConfig, leg }) {
-  return (
-    <OtpRRTransitLegSubheader
-      languageConfig={languageConfig}
-      leg={leg}
-      onStopClick={action("Transit Stop Click")}
-    />
-  );
-}
-
-WrappedOtpRRTransitLegSubheader.propTypes = {
-  languageConfig: languageConfigType.isRequired,
-  leg: legType.isRequired
 };
 
 function OtpRRItineraryBodyWrapper({ itinerary }) {
@@ -157,6 +143,7 @@ function OtpRRItineraryBodyWrapper({ itinerary }) {
       showAgencyInfo
       showLegIcon
       showMapButtonColumn={false}
+      showViewTripButton
       styledItinerary="otp-rr"
       TransitLegSubheader={WrappedOtpRRTransitLegSubheader}
     />
@@ -165,20 +152,6 @@ function OtpRRItineraryBodyWrapper({ itinerary }) {
 
 OtpRRItineraryBodyWrapper.propTypes = {
   itinerary: itineraryType.isRequired
-};
-
-function CustomPlaceName({ place }) {
-  return `🎉✨🎊 ${place.name} 🎉✨🎊`;
-}
-
-function CustomTransitLegSummary({ leg }) {
-  if (leg.duration) {
-    return `It'll probably take around ${leg.duration} seconds.`;
-  }
-}
-
-CustomTransitLegSummary.propTypes = {
-  leg: legType.isRequired
 };
 
 storiesOf("ItineraryBody", module)
@@ -223,6 +196,16 @@ storiesOf("ItineraryBody", module)
       <ItineraryBodyDefaultsWrapper
         itinerary={walkTransitWalkItinerary}
         PlaceName={CustomPlaceName}
+      />
+    )
+  )
+  .add(
+    "ItineraryBody with walk-transit-walk itinerary with custom view trip button activated and custom route abbreviation",
+    () => (
+      <ItineraryBodyDefaultsWrapper
+        itinerary={walkTransitWalkItinerary}
+        showViewTripButton
+        toRouteAbbreviation={customToRouteAbbreviation}
       />
     )
   )

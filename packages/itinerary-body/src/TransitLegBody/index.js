@@ -51,6 +51,7 @@ export default class TransitLegBody extends Component {
       RouteDescription,
       setViewedTrip,
       showAgencyInfo,
+      showViewTripButton,
       timeFormat,
       TransitLegSubheader,
       TransitLegSummary,
@@ -123,13 +124,14 @@ export default class TransitLegBody extends Component {
               <Styled.TransitLegDetailsHeader onClick={this.onToggleStopsClick}>
                 <TransitLegSummary leg={leg} stopsExpanded={stopsExpanded} />
 
-                {/* The ViewTripButton. TODO: make configurable */}
-                <ViewTripButton
-                  tripId={leg.tripId}
-                  fromIndex={leg.from.stopIndex}
-                  setViewedTrip={setViewedTrip}
-                  toIndex={leg.to.stopIndex}
-                />
+                {showViewTripButton && (
+                  <ViewTripButton
+                    tripId={leg.tripId}
+                    fromIndex={leg.from.stopIndex}
+                    setViewedTrip={setViewedTrip}
+                    toIndex={leg.to.stopIndex}
+                  />
+                )}
               </Styled.TransitLegDetailsHeader>
               {/* IntermediateStops expanded body */}
               <VelocityTransitionGroup
@@ -162,6 +164,7 @@ TransitLegBody.propTypes = {
   setActiveLeg: PropTypes.func.isRequired,
   setViewedTrip: PropTypes.func.isRequired,
   showAgencyInfo: PropTypes.bool.isRequired,
+  showViewTripButton: PropTypes.bool.isRequired,
   timeFormat: PropTypes.string.isRequired,
   TransitLegSubheader: PropTypes.elementType,
   TransitLegSummary: PropTypes.elementType.isRequired,

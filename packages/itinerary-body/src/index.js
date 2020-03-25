@@ -28,6 +28,7 @@ const ItineraryBody = ({
   showElevationProfile,
   showLegIcon,
   showMapButtonColumn,
+  showViewTripButton,
   timeOptions,
   toRouteAbbreviation,
   TransitLegSubheader,
@@ -68,6 +69,7 @@ const ItineraryBody = ({
           showElevationProfile={showElevationProfile}
           showLegIcon={showLegIcon}
           showMapButtonColumn={showMapButtonColumn}
+          showViewTripButton={showViewTripButton}
           timeOptions={timeOptions}
           toRouteAbbreviation={toRouteAbbreviation}
           TransitLegSubheader={TransitLegSubheader}
@@ -166,6 +168,8 @@ ItineraryBody.propTypes = {
   showLegIcon: PropTypes.bool,
   /** If true, will show the right column with the map button */
   showMapButtonColumn: PropTypes.bool,
+  /** If true, shows the view trip button in transit leg bodies */
+  showViewTripButton: PropTypes.bool,
   /** Contains the preferred format string for time display and a timezone offset */
   timeOptions: timeOptionsType,
   /** Converts a route's ID to its accepted badge abbreviation */
@@ -197,6 +201,7 @@ ItineraryBody.defaultProps = {
   showElevationProfile: false,
   showLegIcon: false,
   showMapButtonColumn: true,
+  showViewTripButton: false,
   timeOptions: null,
   TransitLegSubheader: undefined
 };
