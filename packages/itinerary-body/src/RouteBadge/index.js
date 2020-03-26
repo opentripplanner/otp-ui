@@ -14,11 +14,12 @@ const RouteBadge = ({ color, abbreviation, name }) => {
 
 RouteBadge.propTypes = {
   color: PropTypes.string,
-  abbreviation: PropTypes.string.isRequired,
+  abbreviation: PropTypes.string,
   name: PropTypes.string.isRequired
 };
 
 RouteBadge.defaultProps = {
+  abbreviation: undefined,
   color: "#084c8d"
 };
 
