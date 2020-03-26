@@ -19,8 +19,8 @@ class StopViewerOverlay extends MapLayer {
    * in the viewer.
    */
   componentDidUpdate(prevProps) {
-    const nextStop = this.props.stopData;
-    const oldStopId = prevProps.stopData && prevProps.stopData.id;
+    const nextStop = this.props.stop;
+    const oldStopId = prevProps.stop && prevProps.stop.id;
     const hasNewStopId = nextStop && nextStop.id !== oldStopId;
     if (hasNewStopId)
       this.props.leaflet.map.setView([nextStop.lat, nextStop.lon]);
@@ -31,13 +31,13 @@ class StopViewerOverlay extends MapLayer {
   updateLeafletElement() {}
 
   render() {
-    const { stopData, StopMarker } = this.props;
+    const { stop, StopMarker } = this.props;
 
-    if (!stopData) return <FeatureGroup />;
+    if (!stop) return <FeatureGroup />;
 
     return (
       <FeatureGroup>
-        <StopMarker stopData={stopData} />
+        <StopMarker stop={stop} />
       </FeatureGroup>
     );
   }
@@ -47,12 +47,12 @@ StopViewerOverlay.props = {
   /**
    * An object representing a transit stop
    */
-  stopData: stopLayerStopType,
+  stop: stopLayerStopType,
   StopMarker: PropTypes.elementType.isRequired
 };
 
 StopViewerOverlay.defaultProps = {
-  stopData: null
+  stop: null
 };
 
 export default withLeaflet(StopViewerOverlay);
