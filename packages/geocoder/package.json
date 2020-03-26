@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/geocoder",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Geocoding tools for multiple geocoding providers",
   "main": "lib/index.js",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
