@@ -3,6 +3,17 @@
 - [Components via Storybook](http://www.opentripplanner.org/otp-ui)
 - [npm packages](https://www.npmjs.com/org/opentripplanner)
 
+## [0.0.19] - 2020-03-26
+
+### Changes
+
+Itinerary and Mode Button improvements PRs (trimet.org project):
+
+- [#97](https://github.com/opentripplanner/otp-ui/issues/97)
+- [#92](https://github.com/opentripplanner/otp-ui/issues/92)
+
+---
+
 ## [0.0.18] - 2020-03-19
 
 ### Changes
@@ -15,8 +26,6 @@ Handful of cleanup PRs:
 - [#81](https://github.com/opentripplanner/otp-ui/issues/81)
 - [#78](https://github.com/opentripplanner/otp-ui/issues/78)
 - [#77](https://github.com/opentripplanner/otp-ui/issues/77)
-
----
 
 ## [0.0.17] - 2020-03-03
 
