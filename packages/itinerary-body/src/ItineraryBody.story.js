@@ -1,4 +1,4 @@
-import { itineraryType, legType } from "@opentripplanner/core-utils/lib/types";
+import { itineraryType } from "@opentripplanner/core-utils/lib/types";
 import TriMetLegIcon from "@opentripplanner/icons/lib/trimet-leg-icon";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
@@ -6,10 +6,23 @@ import { storiesOf } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
 import { withInfo } from "@storybook/addon-info";
 import { action } from "@storybook/addon-actions";
-import styled from "styled-components";
 
 import ItineraryBody from ".";
-import * as ItineraryBodyClasses from "./styled";
+import DefaultLineColumnContent from "./defaults/line-column-content";
+import DefaultPlaceName from "./defaults/place-name";
+import DefaultRouteDescription from "./defaults/route-description";
+import DefaultTransitLegSummary from "./defaults/transit-leg-summary";
+import {
+  CustomPlaceName,
+  customToRouteAbbreviation,
+  CustomTransitLegSummary,
+  StyledItineraryBody,
+  WrappedOtpRRTransitLegSubheader
+} from "./demos";
+import OtpRRStyledItineraryBody from "./otp-react-redux/itinerary-body";
+import OtpRRLineColumnContent from "./otp-react-redux/line-column-content";
+import OtpRRPlaceName from "./otp-react-redux/place-name";
+import OtpRRRouteDescription from "./otp-react-redux/route-description";
 
 const config = require("./__mocks__/config.json");
 
@@ -27,33 +40,6 @@ const walkOnlyItinerary = require("./__mocks__/itineraries/walk-only.json");
 const walkTransitWalkItinerary = require("./__mocks__/itineraries/walk-transit-walk.json");
 const walkTransitWalkTransitWalkItinerary = require("./__mocks__/itineraries/walk-transit-walk-transit-walk.json");
 
-const StyledItineraryBody = styled(ItineraryBody)`
-  ${ItineraryBodyClasses.LegBody} {
-    background-color: pink;
-  }
-`;
-
-const OtpRRStyledItineraryBody = styled(ItineraryBody)`
-  ${ItineraryBodyClasses.LegDescriptionRouteShortName} {
-    background-color: rgb(15, 106, 172);
-    border-color: white;
-    border-image: initial;
-    border-radius: 12px;
-    border-style: solid;
-    border-width: 1px;
-    box-shadow: rgb(0, 0, 0) 0px 0px 0.25em;
-    color: white;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 500;
-    height: 21px;
-    margin-right: 8px;
-    padding-top: 2px;
-    text-align: center;
-    width: 24px;
-  }
-`;
-
 class ItineraryBodyDefaultsWrapper extends Component {
   constructor() {
     super();
@@ -67,11 +53,17 @@ class ItineraryBodyDefaultsWrapper extends Component {
   render() {
     const {
       itinerary,
+      LineColumnContent,
       PlaceName,
       RouteDescription,
       showAgencyInfo,
-      TransitLegSummary,
-      styledItinerary
+      showLegIcon,
+      showMapButtonColumn,
+      showViewTripButton,
+      styledItinerary,
+      toRouteAbbreviation,
+      TransitLegSubheader,
+      TransitLegSummary
     } = this.props;
     const { diagramVisible } = this.state;
     let ItineraryBodyComponent;
@@ -92,16 +84,21 @@ class ItineraryBodyDefaultsWrapper extends Component {
         frameLeg={action("frameLeg")}
         itinerary={itinerary}
         LegIcon={TriMetLegIcon}
-        PlaceName={PlaceName}
-        RouteDescription={RouteDescription}
+        LineColumnContent={LineColumnContent || DefaultLineColumnContent}
+        PlaceName={PlaceName || DefaultPlaceName}
+        RouteDescription={RouteDescription || DefaultRouteDescription}
         routingType="ITINERARY"
         setActiveLeg={action("setActiveLeg")}
         setLegDiagram={this.setLegDiagram}
         setViewedTrip={action("setViewedTrip")}
         showAgencyInfo={showAgencyInfo}
         showElevationProfile
-        toRouteAbbreviation={r => r.toString().substr(0, 2)}
-        TransitLegSummary={TransitLegSummary}
+        showLegIcon={showLegIcon}
+        showMapButtonColumn={showMapButtonColumn}
+        showViewTripButton={showViewTripButton}
+        toRouteAbbreviation={toRouteAbbreviation}
+        TransitLegSubheader={TransitLegSubheader}
+        TransitLegSummary={TransitLegSummary || DefaultTransitLegSummary}
       />
     );
   }
@@ -109,74 +106,52 @@ class ItineraryBodyDefaultsWrapper extends Component {
 
 ItineraryBodyDefaultsWrapper.propTypes = {
   itinerary: itineraryType.isRequired,
+  LineColumnContent: PropTypes.elementType,
   PlaceName: PropTypes.elementType,
   RouteDescription: PropTypes.elementType,
   showAgencyInfo: PropTypes.bool,
-  TransitLegSummary: PropTypes.elementType,
-  styledItinerary: PropTypes.string
+  showLegIcon: PropTypes.bool,
+  showMapButtonColumn: PropTypes.bool,
+  showViewTripButton: PropTypes.bool,
+  styledItinerary: PropTypes.string,
+  toRouteAbbreviation: PropTypes.func,
+  TransitLegSubheader: PropTypes.elementType,
+  TransitLegSummary: PropTypes.elementType
 };
 
 ItineraryBodyDefaultsWrapper.defaultProps = {
-  showAgencyInfo: false,
+  LineColumnContent: undefined,
   PlaceName: undefined,
   RouteDescription: undefined,
-  TransitLegSummary: undefined,
-  styledItinerary: null
+  showAgencyInfo: false,
+  showLegIcon: false,
+  showMapButtonColumn: true,
+  showViewTripButton: false,
+  styledItinerary: null,
+  toRouteAbbreviation: r => r.toString().substr(0, 2),
+  TransitLegSubheader: undefined,
+  TransitLegSummary: undefined
 };
 
-function CustomPlaceName({ place }) {
-  return `🎉✨🎊 ${place.name} 🎉✨🎊`;
-}
-
-function CustomTransitLegSummary({ leg }) {
-  if (leg.duration) {
-    return `It'll probably take around ${leg.duration} seconds.`;
-  }
-}
-
-CustomTransitLegSummary.propTypes = {
-  leg: legType.isRequired
-};
-
-const TriMetLegIconContainer = styled.div`
-  float: left;
-  height: 24px;
-  margin-right: 6px;
-  width: 24px;
-`;
-
-function OtpRRRouteDescription({ leg }) {
-  const { headsign, routeLongName, routeShortName } = leg;
+function OtpRRItineraryBodyWrapper({ itinerary }) {
   return (
-    <ItineraryBodyClasses.LegDescriptionForTransit>
-      <TriMetLegIconContainer>
-        <TriMetLegIcon leg={leg} />
-      </TriMetLegIconContainer>
-      {routeShortName && (
-        <div>
-          <ItineraryBodyClasses.LegDescriptionRouteShortName>
-            {routeShortName}
-          </ItineraryBodyClasses.LegDescriptionRouteShortName>
-        </div>
-      )}
-      <ItineraryBodyClasses.LegDescriptionRouteLongName>
-        {routeLongName}
-        {headsign && (
-          <span>
-            {" "}
-            <ItineraryBodyClasses.LegDescriptionHeadsignPrefix>
-              to
-            </ItineraryBodyClasses.LegDescriptionHeadsignPrefix>{" "}
-            {headsign}
-          </span>
-        )}
-      </ItineraryBodyClasses.LegDescriptionRouteLongName>
-    </ItineraryBodyClasses.LegDescriptionForTransit>
+    <ItineraryBodyDefaultsWrapper
+      itinerary={itinerary}
+      LineColumnContent={OtpRRLineColumnContent}
+      PlaceName={OtpRRPlaceName}
+      RouteDescription={OtpRRRouteDescription}
+      showAgencyInfo
+      showLegIcon
+      showMapButtonColumn={false}
+      showViewTripButton
+      styledItinerary="otp-rr"
+      TransitLegSubheader={WrappedOtpRRTransitLegSubheader}
+    />
   );
 }
 
-OtpRRRouteDescription.propTypes = {
-  leg: legType.isRequired
+OtpRRItineraryBodyWrapper.propTypes = {
+  itinerary: itineraryType.isRequired
 };
 
 storiesOf("ItineraryBody", module)
@@ -224,6 +199,16 @@ storiesOf("ItineraryBody", module)
       />
     )
   )
+  .add(
+    "ItineraryBody with walk-transit-walk itinerary with custom view trip button activated and custom route abbreviation",
+    () => (
+      <ItineraryBodyDefaultsWrapper
+        itinerary={walkTransitWalkItinerary}
+        showViewTripButton
+        toRouteAbbreviation={customToRouteAbbreviation}
+      />
+    )
+  )
   .add("ItineraryBody with bike-transit-bike itinerary", () => (
     <ItineraryBodyDefaultsWrapper itinerary={bikeTransitBikeItinerary} />
   ))
@@ -254,16 +239,68 @@ storiesOf("ItineraryBody", module)
       itinerary={eScooterRentalTransiteScooterRentalItinerary}
     />
   ))
+  .add("ItineraryBody with TNC + transit itinerary", () => (
+    <ItineraryBodyDefaultsWrapper itinerary={tncTransitTncItinerary} />
+  ))
   .add(
-    "ItineraryBody with E-scooter rental + transit itinerary with OTP-RR styling and customizations",
+    "ItineraryBody with walk-only itinerary  with OTP-RR styling and customizations",
+    () => <OtpRRItineraryBodyWrapper itinerary={walkOnlyItinerary} />
+  )
+  .add(
+    "ItineraryBody with bike-only itinerary  with OTP-RR styling and customizations",
+    () => <OtpRRItineraryBodyWrapper itinerary={bikeOnlyItinerary} />
+  )
+  .add(
+    "ItineraryBody with walk-transit-walk itinerary  with OTP-RR styling and customizations",
+    () => <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkItinerary} />
+  )
+  .add(
+    "ItineraryBody with bike-transit-bike itinerary  with OTP-RR styling and customizations",
+    () => <OtpRRItineraryBodyWrapper itinerary={bikeTransitBikeItinerary} />
+  )
+  .add(
+    "ItineraryBody with walk-interlined-transit itinerary  with OTP-RR styling and customizations",
     () => (
-      <ItineraryBodyDefaultsWrapper
-        itinerary={eScooterRentalTransiteScooterRentalItinerary}
-        RouteDescription={OtpRRRouteDescription}
-        styledItinerary="otp-rr"
+      <OtpRRItineraryBodyWrapper itinerary={walkInterlinedTransitItinerary} />
+    )
+  )
+  .add(
+    "ItineraryBody with walk-transit-transfer itinerary  with OTP-RR styling and customizations",
+    () => (
+      <OtpRRItineraryBodyWrapper
+        itinerary={walkTransitWalkTransitWalkItinerary}
       />
     )
   )
-  .add("ItineraryBody with TNC + transit itinerary", () => (
-    <ItineraryBodyDefaultsWrapper itinerary={tncTransitTncItinerary} />
-  ));
+  .add(
+    "ItineraryBody with bike-rental itinerary with OTP-RR styling and customizations",
+    () => <OtpRRItineraryBodyWrapper itinerary={bikeRentalItinerary} />
+  )
+  .add(
+    "ItineraryBody with E-scooter-rental itinerary with OTP-RR styling and customizations",
+    () => <OtpRRItineraryBodyWrapper itinerary={eScooterRentalItinerary} />
+  )
+  .add(
+    "ItineraryBody with park and ride itinerary with OTP-RR styling and customizations",
+    () => <OtpRRItineraryBodyWrapper itinerary={parkAndRideItinerary} />
+  )
+  .add(
+    "ItineraryBody with bike rental + transit itinerary with OTP-RR styling and customizations",
+    () => (
+      <OtpRRItineraryBodyWrapper
+        itinerary={bikeRentalTransitBikeRentalItinerary}
+      />
+    )
+  )
+  .add(
+    "ItineraryBody with E-scooter rental + transit itinerary with OTP-RR styling and customizations",
+    () => (
+      <OtpRRItineraryBodyWrapper
+        itinerary={eScooterRentalTransiteScooterRentalItinerary}
+      />
+    )
+  )
+  .add(
+    "ItineraryBody with TNC + transit itinerary with OTP-RR styling and customizations",
+    () => <OtpRRItineraryBodyWrapper itinerary={tncTransitTncItinerary} />
+  );

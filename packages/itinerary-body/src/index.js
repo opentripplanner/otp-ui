@@ -17,6 +17,7 @@ const ItineraryBody = ({
   diagramVisible,
   frameLeg,
   itinerary,
+  LineColumnContent,
   PlaceName,
   RouteDescription,
   routingType,
@@ -25,8 +26,12 @@ const ItineraryBody = ({
   setViewedTrip,
   showAgencyInfo,
   showElevationProfile,
+  showLegIcon,
+  showMapButtonColumn,
+  showViewTripButton,
   timeOptions,
   toRouteAbbreviation,
+  TransitLegSubheader,
   TransitLegSummary
 }) => {
   /*
@@ -36,46 +41,24 @@ const ItineraryBody = ({
   */
   const rows = [];
   let followsTransit = false;
+  let lastLeg;
   itinerary.legs.forEach((leg, i) => {
-    // Create a row containing this leg's start place and leg traversal details
-    rows.push(
-      <PlaceRow
-        // eslint-disable-next-line react/no-array-index-key
-        key={i}
-        config={config}
-        diagramVisible={diagramVisible}
-        followsTransit={followsTransit}
-        frameLeg={frameLeg}
-        leg={leg}
-        LegIcon={LegIcon}
-        legIndex={i}
-        place={leg.from}
-        PlaceName={PlaceName}
-        RouteDescription={RouteDescription}
-        routingType={routingType}
-        setActiveLeg={setActiveLeg}
-        setLegDiagram={setLegDiagram}
-        setViewedTrip={setViewedTrip}
-        showAgencyInfo={showAgencyInfo}
-        showElevationProfile={showElevationProfile}
-        time={leg.startTime}
-        timeOptions={timeOptions}
-        toRouteAbbreviation={toRouteAbbreviation}
-        TransitLegSummary={TransitLegSummary}
-      />
-    );
-    // TODO: reconcile special props for lastrow
-    // If this is the last leg, create a special PlaceRow for the destination only
-    if (i === itinerary.legs.length - 1) {
+    function createPlaceRow(isDestination) {
+      // Create a row containing this leg's start place and leg traversal details
       rows.push(
         <PlaceRow
           // eslint-disable-next-line react/no-array-index-key
-          key={i + 1}
+          key={i + (isDestination ? 1 : 0)}
           config={config}
           diagramVisible={diagramVisible}
+          followsTransit={followsTransit}
           frameLeg={frameLeg}
+          isDestination={isDestination}
+          lastLeg={lastLeg}
+          leg={leg}
           LegIcon={LegIcon}
-          place={leg.to}
+          legIndex={i}
+          LineColumnContent={LineColumnContent}
           PlaceName={PlaceName}
           RouteDescription={RouteDescription}
           routingType={routingType}
@@ -84,14 +67,25 @@ const ItineraryBody = ({
           setViewedTrip={setViewedTrip}
           showAgencyInfo={showAgencyInfo}
           showElevationProfile={showElevationProfile}
-          time={leg.endTime}
+          showLegIcon={showLegIcon}
+          showMapButtonColumn={showMapButtonColumn}
+          showViewTripButton={showViewTripButton}
           timeOptions={timeOptions}
           toRouteAbbreviation={toRouteAbbreviation}
+          TransitLegSubheader={TransitLegSubheader}
           TransitLegSummary={TransitLegSummary}
         />
       );
     }
+
+    createPlaceRow(false);
+    // If this is the last leg, create a special PlaceRow for the destination
+    // only
+    if (i === itinerary.legs.length - 1) {
+      createPlaceRow(true);
+    }
     if (leg.transitLeg) followsTransit = true;
+    lastLeg = leg;
   });
   return (
     <Styled.ItineraryBody className={className}>{rows}</Styled.ItineraryBody>
@@ -110,14 +104,34 @@ ItineraryBody.propTypes = {
    * has been selected and is active.
    */
   diagramVisible: legType,
-  /** Called upon clicking the map icon. Called with an argument of the click event. */
-  frameLeg: PropTypes.func.isRequired,
+  /**
+   * Called upon clicking the map icon on place headers. This function is sent a
+   * single argument of an object with the keys as follow:
+   * - `leg`: the leg clicked (can be null if the destination is clicked)
+   * - `legIndex`: the index of the leg clicked (can be null if the destination
+   *    is clicked)
+   * - `isDestination`: if the place header that is clicked is the destination
+   * - `place`: The place associated with the click event
+   */
+  frameLeg: PropTypes.func,
   /** Itinerary that the user has selected to view, contains multiple legs */
   itinerary: itineraryType.isRequired,
   /** A component class that is used to render icons for legs of an itinerary */
   LegIcon: PropTypes.elementType.isRequired,
   /**
-   * An optional custom component for rendering the place name of legs.
+   * A slot for a component that can render the content in the line column.
+   * This component is sent the following props:
+   * - interline - whether this place is an interlined stop
+   * - isDestination - whether this place is the destination
+   * - lastLeg - the leg prior to the current leg
+   * - leg - the current leg
+   * - LegIcon - the LegIcon class used to render leg icons.
+   * - legIndex - the current leg index
+   * - toRouteAbbreviation - a function to help abbreviate route names
+   */
+  LineColumnContent: PropTypes.elementType.isRequired,
+  /**
+   * A custom component for rendering the place name of legs.
    * The component is sent 3 props:
    * - config: the application config
    * - interline: whether this place is an interlined stop (a stop where a
@@ -126,15 +140,15 @@ ItineraryBody.propTypes = {
    * - place: the particular place. Typically this is the from place, but it
    *   could also be the to place if it is the destination of the itinerary.
    */
-  PlaceName: PropTypes.elementType,
+  PlaceName: PropTypes.elementType.isRequired,
   /**
-   * An optional component to render the name of a route.
+   * A component to render the name of a route.
    *
    * The component is sent 2 props:
    * - leg: the itinerary leg with the transit information
    * - transitOperator: the transit operator associated with the route if available
    */
-  RouteDescription: PropTypes.elementType,
+  RouteDescription: PropTypes.elementType.isRequired,
   /** TODO: Routing Type is usually 'ITINERARY' but we should get more details on what this does */
   routingType: PropTypes.string,
   /**
@@ -150,29 +164,46 @@ ItineraryBody.propTypes = {
   showAgencyInfo: PropTypes.bool,
   /** If true, will show the elevation profile for walk/bike legs */
   showElevationProfile: PropTypes.bool,
+  /** If true will show the leg icon in the leg body */
+  showLegIcon: PropTypes.bool,
+  /** If true, will show the right column with the map button */
+  showMapButtonColumn: PropTypes.bool,
+  /** If true, shows the view trip button in transit leg bodies */
+  showViewTripButton: PropTypes.bool,
   /** Contains the preferred format string for time display and a timezone offset */
   timeOptions: timeOptionsType,
   /** Converts a route's ID to its accepted badge abbreviation */
   toRouteAbbreviation: PropTypes.func.isRequired,
   /**
-   * An optional custom component for rendering the summary of a transit leg.
+   * An optional custom component for rendering a subheader on transit legs.
+   * * The component is sent 4 props:
+   * - languageConfig: The language values
+   * - leg: the transit leg
+   */
+  TransitLegSubheader: PropTypes.elementType,
+  /**
+   * A custom component for rendering the summary of a transit leg.
    * The component is sent 2 props:
    * - leg: the transit leg
    * - stopsExpanded: whether the intermediate stop display is currently expanded
    */
-  TransitLegSummary: PropTypes.elementType
+  TransitLegSummary: PropTypes.elementType.isRequired
 };
+
+const noop = () => {};
 
 ItineraryBody.defaultProps = {
   className: null,
   diagramVisible: null,
-  PlaceName: undefined,
-  RouteDescription: undefined,
+  frameLeg: noop,
   routingType: "ITINERARY",
   showAgencyInfo: false,
   showElevationProfile: false,
+  showLegIcon: false,
+  showMapButtonColumn: true,
+  showViewTripButton: false,
   timeOptions: null,
-  TransitLegSummary: undefined
+  TransitLegSubheader: undefined
 };
 
 export default ItineraryBody;
