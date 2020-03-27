@@ -23,8 +23,24 @@ function isInputTypeSupported(type) {
 }
 
 /**
- * The DateTimeSelector component lets the OTP user chose a departure or arrival date/time.
+ * The `DateTimeSelector` component lets the OTP user chose a departure or arrival date/time.
  * (The departure can be right now.)
+ *
+ * There are two rendering modes, a "normal" mode and a "legacy" mode.
+ * - "Normal" mode: We try to use `<input type="time|date">` for date and time input.
+ *   On current HTML5 browsers (desktop or mobile), these controls
+ *   render the date/time according to OS settings and natively offer a user interface
+ *   for choosing the date/time.
+ *   Thus, when `<input type="time|date">` is supported, there is no need to specify a date/time format.
+ *   If not, we fall back to "legacy" mode.
+ * - "Legacy" mode: On Safari for MacOS, and on legacy browsers that don't support `<input type="time|date">`,
+ *   `<input type="time|date">` renders as the default `<input type="text">`, and in these conditions,
+ *   we have to fall back to formatting the date/time ourselves, using `dateFormatLegacy` and `timeFormatLegacy` props.
+ * - Implementers don't know in advance whether the browser supports `<input type="time|date">`.
+ *   That determination is performed by method `isInputTypeSupported(type)` above when the constructor is executed.
+ *   Therefore, they should provide `dateFormatLegacy` and `timeFormatLegacy` props as a backup.
+ *   If these props are not provided, the OTP API date format is used.
+ * - For testing purposes, implementers can "force" the "legacy" mode by setting the `forceLegacy` prop to true.
  */
 class DateTimeSelector extends Component {
   supportsDateTimeInputs =
@@ -202,7 +218,7 @@ DateTimeSelector.propTypes = {
    */
   date: PropTypes.string,
   /**
-   * The date format string for legacy mode.
+   * The date format string for legacy mode (on legacy browsers, or if `forceLegacy` is true).
    */
   dateFormatLegacy: PropTypes.string,
   /**
@@ -210,7 +226,8 @@ DateTimeSelector.propTypes = {
    */
   departArrive: PropTypes.oneOf(["NOW", "DEPART", "ARRIVE"]),
   /**
-   * If true, forces legacy mode and skips native date/time pickers on modern browsers.
+   * If true, forces legacy mode and uses `<input type="text">`
+   * instead of the native date/time pickers found on modern browsers.
    */
   forceLegacy: PropTypes.bool,
   /**
@@ -218,7 +235,7 @@ DateTimeSelector.propTypes = {
    */
   time: PropTypes.string,
   /**
-   * The time format string for legacy mode.
+   * The time format string for legacy mode (on legacy browsers, or if `forceLegacy` is true).
    */
   timeFormatLegacy: PropTypes.string,
   /**
