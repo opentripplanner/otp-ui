@@ -6,17 +6,17 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Popup, CircleMarker } from "react-leaflet";
 
-export default function DefaultStopMarker({ leafletPath, radius, stopData }) {
+export default function DefaultStopMarker({ leafletPath, radius, stop }) {
   return (
     <CircleMarker
       /* eslint-disable-next-line react/jsx-props-no-spreading */
       {...leafletPath}
-      center={[stopData.lat, stopData.lon]}
-      key={stopData.id}
+      center={[stop.lat, stop.lon]}
+      key={stop.id}
       radius={radius}
     >
       <Popup>
-        <div>{stopData.name}</div>
+        <div>{stop.name}</div>
       </Popup>
     </CircleMarker>
   );
@@ -25,7 +25,7 @@ export default function DefaultStopMarker({ leafletPath, radius, stopData }) {
 DefaultStopMarker.propTypes = {
   leafletPath: leafletPathType,
   radius: PropTypes.number,
-  stopData: stopLayerStopType.isRequired
+  stop: stopLayerStopType.isRequired
 };
 
 DefaultStopMarker.defaultProps = {

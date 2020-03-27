@@ -21,14 +21,12 @@ const fakeStop = {
   name: "Fake Stop"
 };
 
-function CustomMarker({ stopData }) {
-  return (
-    <CircleMarker center={[stopData.lat, stopData.lon]} key={stopData.id} />
-  );
+function CustomMarker({ stop }) {
+  return <CircleMarker center={[stop.lat, stop.lon]} key={stop.id} />;
 }
 
 CustomMarker.propTypes = {
-  stopData: stopLayerStopType.isRequired
+  stop: stopLayerStopType.isRequired
 };
 
 storiesOf("StopViewerOverlay", module)
@@ -37,7 +35,7 @@ storiesOf("StopViewerOverlay", module)
   .add("StopViewerOverlay", () => (
     <BaseMap center={center} zoom={zoom}>
       <StopViewerOverlay
-        stopData={fakeStop}
+        stop={fakeStop}
         StopMarker={DefaultStopMarker}
         visible
       />
@@ -45,10 +43,6 @@ storiesOf("StopViewerOverlay", module)
   ))
   .add("StopViewerOverlay with custom marker", () => (
     <BaseMap center={center} zoom={zoom}>
-      <StopViewerOverlay
-        stopData={fakeStop}
-        StopMarker={CustomMarker}
-        visible
-      />
+      <StopViewerOverlay stop={fakeStop} StopMarker={CustomMarker} visible />
     </BaseMap>
   ));
