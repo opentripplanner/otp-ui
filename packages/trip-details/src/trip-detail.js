@@ -37,7 +37,7 @@ export default class TripDetail extends Component {
           {summary}
           {description && (
             <Styled.ExpandButton onClick={this.toggle}>
-              <QuestionCircle size={17} />
+              <QuestionCircle size="0.92em" />
             </Styled.ExpandButton>
           )}
           <VelocityTransitionGroup
@@ -47,7 +47,7 @@ export default class TripDetail extends Component {
             {expanded && (
               <Styled.TripDetailDescription>
                 <Styled.HideButton onClick={this.onHideClick}>
-                  <TimesCircle size={17} />
+                  <TimesCircle size="0.92em" />
                 </Styled.HideButton>
                 {description}
               </Styled.TripDetailDescription>
