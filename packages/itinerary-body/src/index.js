@@ -173,7 +173,7 @@ ItineraryBody.propTypes = {
   /** Contains the preferred format string for time display and a timezone offset */
   timeOptions: timeOptionsType,
   /** Converts a route's ID to its accepted badge abbreviation */
-  toRouteAbbreviation: PropTypes.func.isRequired,
+  toRouteAbbreviation: PropTypes.func,
   /**
    * An optional custom component for rendering a subheader on transit legs.
    * * The component is sent 4 props:
@@ -203,6 +203,7 @@ ItineraryBody.defaultProps = {
   showMapButtonColumn: true,
   showViewTripButton: false,
   timeOptions: null,
+  toRouteAbbreviation: noop,
   TransitLegSubheader: undefined
 };
 
