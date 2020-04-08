@@ -190,7 +190,7 @@ ItineraryBody.propTypes = {
   TransitLegSummary: PropTypes.elementType.isRequired
 };
 
-const noop = () => {};
+function noop() {}
 
 ItineraryBody.defaultProps = {
   className: null,
