@@ -631,6 +631,7 @@ function alphabeticShortNameComparator(a, b) {
  * @param  {function} [objGetterFn] An optional function to obtain the
  *  comparison value from the comparator function arguments
  */
+// FIXME Number.isNaN is weird.
 function makeNumericValueComparator(objGetterFn) {
   return (a, b) => {
     const { aVal, bVal } = getSortValues(objGetterFn, a, b);
