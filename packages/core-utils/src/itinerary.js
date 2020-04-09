@@ -631,16 +631,17 @@ function alphabeticShortNameComparator(a, b) {
  * @param  {function} [objGetterFn] An optional function to obtain the
  *  comparison value from the comparator function arguments
  */
-// FIXME Number.isNaN is weird.
 function makeNumericValueComparator(objGetterFn) {
+  /* Note: Using the global version of isNaN (the Number version behaves differently. */
+  /* eslint-disable no-restricted-globals */
   return (a, b) => {
     const { aVal, bVal } = getSortValues(objGetterFn, a, b);
     // if both values aren't valid numbers, use the next sort criteria
-    if (Number.isNaN(aVal) && Number.isNaN(bVal)) return 0;
+    if (isNaN(aVal) && isNaN(bVal)) return 0;
     // b is a valid number, b gets priority
-    if (Number.isNaN(aVal)) return 1;
+    if (isNaN(aVal)) return 1;
     // a is a valid number, a gets priority
-    if (Number.isNaN(bVal)) return -1;
+    if (isNaN(bVal)) return -1;
     // a and b are valid numbers, return the sort value
     return aVal - bVal;
   };
