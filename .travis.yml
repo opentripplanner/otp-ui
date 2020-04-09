@@ -1,0 +1,8 @@
+language: node_js
+cache:
+  yarn: true
+node_js:
+  - "12"
+script:
+  - yarn test
+# TODO: add deploy stage that updates storybook (for each branch?)
