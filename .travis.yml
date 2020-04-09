@@ -5,3 +5,4 @@ node_js:
   - "12"
 script:
   - yarn test
+# TODO: add deploy stage that updates storybook (for each branch?)
