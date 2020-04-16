@@ -1,5 +1,5 @@
-import { zoomState, trackedVehicleState } from "./state";
-import { convertAltData, findVehicleById } from "./data";
+import { zoomState, trackedVehicleState, getVehicleList } from "./state";
+import { convertAltData, getVehicleId, findVehicleById } from "./data";
 import { setColor, renderAsImage } from "./graphics";
 import {
   findPointOnLine,
@@ -17,7 +17,7 @@ import {
 } from "./fetch";
 
 import { getVehicleCoordinates, compareCoords } from "./coordinates";
-import { recenterFlyTo, recenterPanTo } from "./recenter";
+import { recenterFlyTo, recenterPanTo, recenterPanToOffset } from "./recenter";
 
 /** this function is used to have props that are not used w/out lint errors */
 function linterIgnoreTheseProps() {}
@@ -25,9 +25,11 @@ function linterIgnoreTheseProps() {}
 export {
   zoomState,
   trackedVehicleState,
+  getVehicleList,
   renderAsImage,
   setColor,
   convertAltData,
+  getVehicleId,
   findVehicleById,
   getVehicleCoordinates,
   compareCoords,
@@ -43,5 +45,6 @@ export {
   checkRefreshInteval,
   recenterFlyTo,
   recenterPanTo,
+  recenterPanToOffset,
   linterIgnoreTheseProps
 };

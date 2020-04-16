@@ -1,4 +1,6 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useEffect } from "react";
+import { throttle } from 'throttle-debounce';
+
 import { withA11y } from "@storybook/addon-a11y";
 import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
@@ -21,8 +23,8 @@ import CustomTooltip from "./components/popups/CustomTooltip";
 import VehicleTooltip from "./components/popups/VehicleTooltip";
 import VehiclePopup from "./components/popups/VehiclePopup";
 
-import { makeRandomDate } from "../__mocks__/junk";
 import * as utils from "./utils";
+import * as junk from "../__mocks__/junk";
 
 const geom = require("../__mocks__/lineGeom100.json");
 const line = require("../__mocks__/line100.json");
@@ -42,8 +44,11 @@ function simpleExample(vehicleData, patternGeometry, selectVehicleId) {
   const clickVehicle = vehicle => {
     setClicked(vehicle);
   };
-  const fetchPattern = () => {
-    return patternGeometry;
+
+  // callback for tracking vehicle
+  const fetchPattern = (vehicle, setPattern) => {
+    utils.linterIgnoreTheseProps(vehicle);
+    setPattern(patternGeometry);
   };
 
   // state setup for zoom (refreshes layer) and selected vehicles
@@ -91,10 +96,13 @@ function rectangles(popup=true) {
   const recenter = utils.recenterFlyTo(null);
   const initVehicle = utils.findVehicleById(vehicleData, "9562512");
 
-  // state setup for zoom (refreshes layer) and selected vehicles
-  const fetchPattern = () => {
-    return patternGeometry;
+  // callback for tracking vehicle
+  const fetchPattern = (vehicle, setPattern) => {
+    utils.linterIgnoreTheseProps(vehicle);
+    setPattern(patternGeometry);
   };
+
+  // state setup for zoom (refreshes layer) and selected vehicles
   const [zoom, onViewportChanged] = utils.zoomState(INITIAL_ZOOM_LEVEL);
   const [
     trackedVehicle,
@@ -123,7 +131,7 @@ function rectangles(popup=true) {
   // tooltip content callback function
   CustomTooltip.defaultProps.getContent = (vehicle, isTracked) => {
     utils.linterIgnoreTheseProps(isTracked);
-    const prettyDate = makeRandomDate();
+    const prettyDate = junk.makeRandomDate();
     let retVal;
     if (vehicle && vehicle.routeShortName) {
       retVal = `${vehicle.routeShortName} is arriving in ${prettyDate}`;
@@ -159,26 +167,40 @@ function rectangles(popup=true) {
   );
 }
 
+function simple() {
+  // convert geojson data into expected pattern format
+  const pattern = utils.makePattern(geom, "111");
+  return simpleExample(all, pattern, "9050");
+}
+
+function alternate() {
+  const altVehicles = utils.convertAltData(altLine);
+  const altPattern = utils.makePattern(altGeom, "222");
+  return simpleExample(altVehicles, altPattern, "9088");
+}
+
+function simpleRectangles() { return rectangles(false); }
+
+
 /** with static data, show a simple version of the real-time transit vehicles layer */
-function realtimeExample(vehicleData, patternGeometry, selectVehicleId) {
+function realtimeExample(fetchVehicles, fetchPattern) {
   // initial setup
-  const recenter = utils.recenterPanTo();
-  const initVehicle = utils.findVehicleById(vehicleData, selectVehicleId);
+  const recenter = utils.recenterFlyTo();
   const clickVehicle = vehicle => {
     setClicked(vehicle);
-  };
-  const fetchPattern = () => {
-    return patternGeometry;
   };
 
   // state setup for zoom (refreshes layer) and selected vehicles
   const [zoom, onViewportChanged] = utils.zoomState(INITIAL_ZOOM_LEVEL);
   const [
-    trackedVehicle,
+    getTrackedVehicle,
     routePattern,
     trackVehicleCallback
-  ] = utils.trackedVehicleState(fetchPattern, initVehicle, patternGeometry);
+  ] = utils.trackedVehicleState(fetchPattern);
   VehiclePopup.defaultProps.setTracked = trackVehicleCallback;
+
+  const trackedVehicle = getTrackedVehicle();
+  const vehicleList = fetchVehicles(trackedVehicle, trackVehicleCallback);
 
   return (
     <BaseMap
@@ -188,7 +210,7 @@ function realtimeExample(vehicleData, patternGeometry, selectVehicleId) {
     >
       <TransitVehicleOverlay
         zoom={zoom}
-        vehicleList={vehicleData}
+        vehicleList={vehicleList}
         onVehicleClicked={clickVehicle}
         selectedVehicle={trackedVehicle}
         pattern={routePattern}
@@ -200,26 +222,46 @@ function realtimeExample(vehicleData, patternGeometry, selectVehicleId) {
   );
 }
 
-function simple() {
-  // convert geojson data into expected pattern format
-  const pattern = utils.makePattern(geom, "1");
-  return simpleExample(all, pattern, "9050");
-}
+const refreshInterval = 5000;
+function fetchVehicles(tracked, trackVehicleCallback) {
+  const [vehicleList, setVehicleList] = useState([]);
 
-function alternate() {
-  const altVehicles = utils.convertAltData(altLine);
-  const altPattern = utils.makePattern(altGeom, "2");
-  return simpleExample(altVehicles, altPattern, "9088");
-}
+  const fetchData = useCallback(async () => {
+    const vehicles = await junk.fetchVehicles();
+    if(vehicles){
+      // todo maybe DQ vehicles data here before updating our vehicles list
+      setVehicleList(vehicles);
 
-function simpleRectangles() { return rectangles(false); }
+      // update the tracked vehicle with latest position
+      const queryId = utils.getVehicleId(tracked);
+      console.log(tracked);
+      console.log(queryId);
+      if(queryId && trackVehicleCallback) {
+        debugger;
+        const t = utils.findVehicleById(vehicles, queryId);
+        if (t) trackVehicleCallback(t, true);
+      }
+    }
+  }, [fetchVehicles]);
+
+  useEffect(() => {
+    const onInterval = async () => {
+      const newVehicle = await fetchData();
+    };
+    onInterval();
+    const intervalId = setInterval(onInterval, refreshInterval);
+    return () => clearInterval(intervalId);
+  }, [fetchData, refreshInterval]);
+
+  return vehicleList;
+}
 
 function rtCircles() {
-  return realtimeExample(ModeCircles, VehiclePopup, VehicleTooltip);
+  return realtimeExample(fetchVehicles, junk.fetchPattern, ModeCircles);
 }
 
 function rtRectangles() {
-  return realtimeExample(ModeRectangles);
+  return realtimeExample(junk.fetchVehiclesDeveloper, junk.fetchPattern, ModeRectangles);
 }
 
 storiesOf("TransitVehicleOverlay", module)
@@ -229,6 +271,6 @@ storiesOf("TransitVehicleOverlay", module)
   .add("simple overlay", simple)
   .add("simple overlay (alternate vehicles service)", alternate)
   .add("simple rectangles (click to select)", simpleRectangles)
-  .add("static rectafngles (popups)", rectangles)
+  .add("static rectangles (popups)", rectangles)
   .add("real-time circles", rtCircles)
   .add("real-time rectangles", rtRectangles);

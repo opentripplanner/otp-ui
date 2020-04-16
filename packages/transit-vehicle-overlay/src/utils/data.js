@@ -9,6 +9,20 @@ function str(val) {
   return retVal;
 }
 
+/** gets best appropriate vehicle tracker id from input parameter based on type and data */
+export function getVehicleId(tracked) {
+  let queryId = null;
+  if(tracked) {
+    if (typeof tracked === 'string' || tracked instanceof String)
+      queryId = tracked;
+    else if (tracked.blockId)
+      queryId = tracked.blockId;
+    else if (tracked.tripId)
+      queryId = tracked.tripId;
+  }
+  return queryId;
+}
+
 /** find a vehicle by block or trip id from a list of vehicles */
 export function findVehicleById(vehicleList, queryId, defVal = null) {
   let retVal = defVal;
@@ -101,11 +115,13 @@ export function convertTriMetRecord(rec, qt) {
   return retVal;
 }
 
-/** convert list of developer.trimet.org vehicle objects to format used in this component */
+/**
+ * convert list of developer.trimet.org vehicle objects to format used in this component
+ * curl "https://developer.trimet.org/ws/v2/vehicles/appid/B393B2CE96A258A72BAB481CA"
+ */
 export function convertAltData(feed) {
   let retVal = [];
   if (feed && feed.resultSet && feed.resultSet.vehicle) {
-    // debugger;
     const qt = feed.resultSet.queryTime;
     retVal = feed.resultSet.vehicle.map(rec => convertTriMetRecord(rec, qt));
   }
