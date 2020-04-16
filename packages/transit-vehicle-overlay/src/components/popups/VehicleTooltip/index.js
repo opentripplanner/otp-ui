@@ -20,7 +20,7 @@ export default function VehicleTooltip(props) {
   return (
     <Tooltip permanent={permanent} direction={direction} offset={offset}>
       <TooltipStyle>
-        <TooltipStyle.Title>{rsn}</TooltipStyle.Title>
+        <TooltipStyle.Title>{rsn}&nbsp;</TooltipStyle.Title>
         {formatDurationWithSeconds(vehicle.seconds)} ago
       </TooltipStyle>
     </Tooltip>
