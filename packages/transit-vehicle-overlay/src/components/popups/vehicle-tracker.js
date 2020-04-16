@@ -6,19 +6,15 @@ import { PopupStyle } from "./styled";
 /**
  * presentational component for tracking button on marker popup
  */
-function VehicleTracker(props) {
-  const { vehicle, tracked, setTracked } = props;
+export default function VehicleTracker(props) {
+  const { vehicle, isTracked, setTracked } = props;
+  const text = isTracked ? "Stop Tracking" : "Track Vehicle";
+  const cls = isTracked ? "active" : "";
 
-  function handleClick() {
-    if (tracked) {
-      setTracked(null, true);
-    } else {
-      setTracked(vehicle.blockId || vehicle.tripId);
-    }
-  }
+  const handleClick = () => {
+    setTracked(vehicle, isTracked);
+  };
 
-  const text = tracked ? "Stop Tracking" : "Track Vehicle";
-  const cls = tracked ? "active" : "";
   return (
     <PopupStyle.Button onClick={handleClick} className={cls}>
       {text}
@@ -26,15 +22,13 @@ function VehicleTracker(props) {
   );
 }
 
-VehicleTracker.defaultProps = {
-  vehicle: null,
-  tracked: false
-};
-
 VehicleTracker.propTypes = {
   vehicle: transitVehicleType,
-  tracked: PropTypes.bool,
+  isTracked: PropTypes.bool,
   setTracked: PropTypes.func.isRequired
 };
 
-export default VehicleTracker;
+VehicleTracker.defaultProps = {
+  vehicle: null,
+  isTracked: false
+};
