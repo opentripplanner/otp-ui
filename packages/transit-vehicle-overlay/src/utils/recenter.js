@@ -21,7 +21,7 @@ export function recenterFlyTo(boundOptions, viewRadius = VIEW_RADIUS) {
 }
 
 /** callback used to move the map to coordinates -- offsets of UI panes can be specified */
-export function recenterPanToOffset(panOffsetX=0, panOffsetY=0) {
+export function recenterPanToOffset(panOffsetX = 0, panOffsetY = 0) {
   const [coord, setCoord] = useState([0, 0]);
 
   // function that is being returned and able to be used to zoom to points

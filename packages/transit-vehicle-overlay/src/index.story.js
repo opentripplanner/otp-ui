@@ -1,5 +1,4 @@
-import React, { useCallback, useState, useEffect } from "react";
-import { throttle } from 'throttle-debounce';
+import React from "react";
 
 import { withA11y } from "@storybook/addon-a11y";
 import { action } from "@storybook/addon-actions";
@@ -58,6 +57,7 @@ function simpleExample(vehicleData, patternGeometry, selectVehicleId) {
   ] = utils.trackedVehicleState(fetchPattern, initVehicle, patternGeometry);
 
   const [trackedVehicle, trackedRef] = getTrackedVehicle();
+  utils.linterIgnoreTheseProps(trackedRef);
   VehiclePopup.defaultProps.setTracked = updateTrackedVehicle;
 
   // storybook knobs to show off color & highlighting options
@@ -89,7 +89,7 @@ function simpleExample(vehicleData, patternGeometry, selectVehicleId) {
 }
 
 /** with static data, demo rectangular markers, flyTo map re-centering and custom tooltips */
-function rectangles(popup=true) {
+function rectangles(popup = true) {
   // initial setup
   const vehicleData = line;
   const patternGeometry = utils.makePattern(geom, "111");
@@ -110,22 +110,22 @@ function rectangles(popup=true) {
     updateTrackedVehicle
   ] = utils.trackedVehicleState(fetchPattern, initVehicle, patternGeometry);
   const [trackedVehicle, trackedRef] = getTrackedVehicle();
+  utils.linterIgnoreTheseProps(trackedRef);
 
   // give action to the popup vehicle tracking button
   VehiclePopup.defaultProps.setTracked = (vehicle, isTracked) => {
     updateTrackedVehicle(vehicle, isTracked);
-    if(!isTracked)
-      recenter(null, 0, 0); // clear out cached coords ... recenter on recently untracked vehicle
+    if (!isTracked) recenter(null, 0, 0); // clear out cached coords ... recenter on recently untracked vehicle
   };
 
   // record marker clicks (and more if no popup used)
   const clickVehicle = (vehicle, isTracked) => {
     setClicked(vehicle, isTracked);
     // if no popup (e.g., popup has a tracking button), then track on marker click instead
-    if(!popup) {
+    if (!popup) {
       updateTrackedVehicle(vehicle, isTracked);
-      if(!isTracked)
-         // clear recenter coords, so map recenters on repeated clicks of same marker
+      if (!isTracked)
+        // clear recenter coords, so map recenters on repeated clicks of same marker
         recenter(null, 0, 0);
     }
   };
@@ -143,10 +143,8 @@ function rectangles(popup=true) {
     return retVal;
   };
   // if there's a popup, put perm tooltip on bottom of marker (since popup opens on top)
-  if(popup)
-    CustomTooltip.defaultProps.direction = "bottom";
-  else
-    CustomTooltip.defaultProps.direction = "top";
+  if (popup) CustomTooltip.defaultProps.direction = "bottom";
+  else CustomTooltip.defaultProps.direction = "top";
 
   return (
     <BaseMap
@@ -169,21 +167,6 @@ function rectangles(popup=true) {
   );
 }
 
-function simple() {
-  // convert geojson data into expected pattern format
-  const pattern = utils.makePattern(geom, "111");
-  return simpleExample(all, pattern, "9050");
-}
-
-function alternate() {
-  const altVehicles = utils.convertAltData(altLine);
-  const altPattern = utils.makePattern(altGeom, "222");
-  return simpleExample(altVehicles, altPattern, "9088");
-}
-
-function simpleRectangles() { return rectangles(false); }
-
-
 /** with static data, show a simple version of the real-time transit vehicles layer */
 function realtimeExample(fetchVehicles, fetchPattern) {
   // initial setup
@@ -203,12 +186,16 @@ function realtimeExample(fetchVehicles, fetchPattern) {
   // give action to the popup vehicle tracking button
   VehiclePopup.defaultProps.setTracked = (vehicle, isTracked) => {
     updateTrackedVehicle(vehicle, isTracked);
-    if(!isTracked)
-      recenter(null, 0, 0); // clear out cached coords ... recenter on recently untracked vehicle
+    if (!isTracked) recenter(null, 0, 0); // clear out cached coords ... recenter on recently untracked vehicle
   };
 
   const [trackedVehicle, trackedRef] = getTrackedVehicle();
-  const vehicleList = fetchVehicles(getTrackedVehicle, updateTrackedVehicle);
+  utils.linterIgnoreTheseProps(trackedRef);
+  const vehicleList = utils.vehicleListUpdater(
+    fetchVehicles,
+    getTrackedVehicle,
+    updateTrackedVehicle
+  );
 
   return (
     <BaseMap
@@ -230,45 +217,32 @@ function realtimeExample(fetchVehicles, fetchPattern) {
   );
 }
 
-const refreshInterval = 5000;
-function fetchVehicles(getTrackedVehicle, updateTrackedVehicle) {
-  const [vehicleList, setVehicleList] = useState([]);
+function simple() {
+  // convert geojson data into expected pattern format
+  const pattern = utils.makePattern(geom, "111");
+  return simpleExample(all, pattern, "9050");
+}
 
-  const fetchData = useCallback(async () => {
-    const vehicles = await junk.fetchVehicles();
-    if(vehicles){
-      // todo maybe DQ vehicles data here before updating our vehicles list
-      setVehicleList(vehicles);
-      const [trackedVehicle, trackedRef] = getTrackedVehicle();
-      const tracked = trackedRef;
+function alternate() {
+  const altVehicles = utils.convertAltData(altLine);
+  const altPattern = utils.makePattern(altGeom, "222");
+  return simpleExample(altVehicles, altPattern, "9088");
+}
 
-      // update the tracked vehicle with latest position
-      const queryId = utils.getVehicleId(tracked);
-      if(queryId && updateTrackedVehicle) {
-        const t = utils.findVehicleById(vehicles, queryId);
-        if (t) updateTrackedVehicle(t, false, true);
-      }
-    }
-  }, [fetchVehicles]);
-
-  useEffect(() => {
-    const onInterval = async () => {
-      const newVehicle = await fetchData();
-    };
-    onInterval();
-    const intervalId = setInterval(onInterval, refreshInterval);
-    return () => clearInterval(intervalId);
-  }, [fetchData, refreshInterval]);
-
-  return vehicleList;
+function simpleRectangles() {
+  return rectangles(false);
 }
 
 function rtCircles() {
-  return realtimeExample(fetchVehicles, junk.fetchPattern, ModeCircles);
+  return realtimeExample(junk.fetchVehicles, junk.fetchPattern, ModeCircles);
 }
 
 function rtRectangles() {
-  return realtimeExample(junk.fetchVehiclesDeveloper, junk.fetchPattern, ModeRectangles);
+  return realtimeExample(
+    junk.fetchVehiclesDeveloper,
+    junk.fetchPattern,
+    ModeRectangles
+  );
 }
 
 storiesOf("TransitVehicleOverlay", module)

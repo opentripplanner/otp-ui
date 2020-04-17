@@ -5,7 +5,6 @@ import { FeatureGroup } from "react-leaflet";
 import { transitVehicleType } from "@opentripplanner/core-utils/lib/types";
 import VehicleGeometry from "./components/VehicleGeometry";
 import RouteGeometry from "./components/RouteGeometry";
-import * as utils from "./utils";
 
 export default function TransitVehicleOverlay(props) {
   const {

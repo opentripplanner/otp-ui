@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import { formatDurationWithSeconds } from "@opentripplanner/core-utils/lib/time";
 import * as utils from "../src/utils";
 
@@ -27,7 +26,7 @@ const GEOM_TRIP_API_CONFIG = {
   suffix: "/geometry/geojson"
 };
 
-export async function fetchVehicles(routes="100, 90, 20, 57") {
+export async function fetchVehicles(routes = "100, 90, 20, 57") {
   let retVal = [];
   try {
     const routeList = routes.split(",");
@@ -42,21 +41,27 @@ export async function fetchVehicles(routes="100, 90, 20, 57") {
   return retVal;
 }
 
-export async function fetchVehiclesDeveloper(routes="100, 90, 20, 57") {
+export async function fetchVehiclesDeveloper(routes = "100, 90, 20, 57") {
   // TODO
   return fetchVehicles(routes);
 }
 
 export async function fetchPattern(vehicle, setter) {
-    try {
-      let geojson;
-      if(vehicle.shapeId && vehicle.shapeId.length > 0)
-        geojson = (await utils.fetchRouteGeometry(GEOM_SHAPE_API_CONFIG, vehicle.shapeId));
-      else
-        geojson = (await utils.fetchRouteGeometry(GEOM_TRIP_API_CONFIG, vehicle.tripId));
-      const pattern = utils.makePattern(geojson, vehicle.tripId);
-      if(setter) setter(pattern);
-    } catch (e) {
-      console.error(e);
-    }
+  try {
+    let geojson;
+    if (vehicle.shapeId && vehicle.shapeId.length > 0)
+      geojson = await utils.fetchRouteGeometry(
+        GEOM_SHAPE_API_CONFIG,
+        vehicle.shapeId
+      );
+    else
+      geojson = await utils.fetchRouteGeometry(
+        GEOM_TRIP_API_CONFIG,
+        vehicle.tripId
+      );
+    const pattern = utils.makePattern(geojson, vehicle.tripId);
+    if (setter) setter(pattern);
+  } catch (e) {
+    console.error(e);
+  }
 }
