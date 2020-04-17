@@ -1,6 +1,13 @@
-import { zoomState, trackedVehicleState, getVehicleList } from "./state";
-import { convertAltData, getVehicleId, findVehicleById } from "./data";
 import { setColor, renderAsImage } from "./graphics";
+import { getVehicleCoordinates, compareCoords } from "./coordinates";
+import { recenterFlyTo, recenterPanTo, recenterPanToOffset } from "./recenter";
+import { zoomState, trackedVehicleState, vehicleListUpdater } from "./state";
+import {
+  convertAltData,
+  getVehicleId,
+  findVehicleById,
+  linterIgnoreTheseProps
+} from "./data";
 import {
   findPointOnLine,
   splitLineGeometry,
@@ -16,16 +23,10 @@ import {
   handleHttpResponse
 } from "./fetch";
 
-import { getVehicleCoordinates, compareCoords } from "./coordinates";
-import { recenterFlyTo, recenterPanTo, recenterPanToOffset } from "./recenter";
-
-/** this function is used to have props that are not used w/out lint errors */
-function linterIgnoreTheseProps() {}
-
 export {
   zoomState,
   trackedVehicleState,
-  getVehicleList,
+  vehicleListUpdater,
   renderAsImage,
   setColor,
   convertAltData,

@@ -1,4 +1,6 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
+import { checkRefreshInteval } from "./fetch";
+import * as data from "./data";
 
 /**
  * use this hook when you want your layer to update after otp-ui' base-map zoom events fire
@@ -41,7 +43,6 @@ export function trackedVehicleState(
     trackedVehicleRef.current = trackedVehicle;
   }, [trackedVehicle]);
 
-
   /**
    * accept a vehicle record and two booleans to control how state is updated
    *
@@ -49,7 +50,11 @@ export function trackedVehicleState(
    * @param stopTracking boolean (e.g., 'stop tracking' - if this vehicle is tracking, then stop)
    * @param updatePattern boolean (default true)
    */
-  const updateTrackedVehicle = (vehicle, stopTracking, updatePattern=true) => {
+  const updateTrackedVehicle = (
+    vehicle,
+    stopTracking,
+    updatePattern = true
+  ) => {
     if (stopTracking) {
       setTrackedVehicle(null);
       setRoutePattern(null);
@@ -68,8 +73,56 @@ export function trackedVehicleState(
    * by routines outside of the react tree (don't ask me ... it's strange, hacky stuff).
    */
   const getTrackedVehicle = () => {
-    return  [trackedVehicle, trackedVehicleRef.current];
+    return [trackedVehicle, trackedVehicleRef.current];
   };
 
   return [routePattern, getTrackedVehicle, updateTrackedVehicle];
+}
+
+/**
+ *
+ * @param fetchVehiclesCallback
+ * @param getTrackedVehicle
+ * @param updateTrackedVehicle
+ * @param refreshDelay
+ * @return vehicleList[] state variable
+ */
+export function vehicleListUpdater(
+  fetchVehiclesCallback,
+  getTrackedVehicle,
+  updateTrackedVehicle,
+  refreshDelay
+) {
+  const [vehicleList, setVehicleList] = useState([]);
+  refreshDelay = checkRefreshInteval(refreshDelay);
+
+  const fetchData = useCallback(async () => {
+    const vehicles = await fetchVehiclesCallback();
+    if (vehicles) {
+      // todo: could maybe DQ vehicles data here before updating our vehicles list
+      setVehicleList(vehicles);
+      const [trackedVehicle, trackedRef] = getTrackedVehicle();
+      data.linterIgnoreTheseProps(trackedVehicle);
+
+      // update the tracked vehicle with latest position
+      const queryId = data.getVehicleId(trackedRef);
+      if (queryId && updateTrackedVehicle) {
+        const t = data.findVehicleById(vehicles, queryId);
+        if (t) updateTrackedVehicle(t, false, true);
+      }
+    }
+  }, [fetchVehiclesCallback]);
+
+  useEffect(() => {
+    const onInterval = async () => {
+      // todo: why assignment to newVehicles -- not used?
+      const newVehicles = await fetchData();
+      data.linterIgnoreTheseProps(newVehicles);
+    };
+    onInterval();
+    const intervalId = setInterval(onInterval, refreshDelay);
+    return () => clearInterval(intervalId);
+  }, [fetchData, refreshDelay]);
+
+  return vehicleList;
 }

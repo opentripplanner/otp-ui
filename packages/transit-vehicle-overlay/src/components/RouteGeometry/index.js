@@ -2,7 +2,10 @@ import React from "react";
 import PropTypes, { arrayOf } from "prop-types";
 import { FeatureGroup } from "react-leaflet";
 
-import { leafletPathType, transitVehicleType } from "@opentripplanner/core-utils/src/types";
+import {
+  leafletPathType,
+  transitVehicleType
+} from "@opentripplanner/core-utils/src/types";
 import * as utils from "../../utils";
 
 /**
@@ -19,7 +22,8 @@ export default function RouteGeometry(props) {
   if (highlightColor) highlight = utils.setColor(highlightColor, highlight);
   if (lowlightColor) lowlight = utils.setColor(lowlightColor, lowlight);
 
-  const splitCoord = selectedVehicle && utils.getVehicleCoordinates(selectedVehicle);
+  const splitCoord =
+    selectedVehicle && utils.getVehicleCoordinates(selectedVehicle);
   const pt = utils.findPointOnLine(splitCoord, pattern.data);
   const geom = utils.splitLineGeometry(pattern.data, pt, pattern.id);
   const segments = utils.makeSplitLine(geom, highlight, lowlight);

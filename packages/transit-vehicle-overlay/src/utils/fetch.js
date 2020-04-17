@@ -1,9 +1,10 @@
-const DEFAULT_REFRESH_TIME = 10000;
+const DEFAULT_REFRESH_TIME = 7000;
 
-/**
- * get refresh values (default 10 seconds), and convert from secs to millisecs
- */
-export function checkRefreshInteval(inverval, defInterval=DEFAULT_REFRESH_TIME) {
+/** get refresh values (default 7 second abs), and convert from secs to millisecs */
+export function checkRefreshInteval(
+  inverval,
+  defInterval = DEFAULT_REFRESH_TIME
+) {
   let retVal = defInterval;
   if (inverval) {
     let r = inverval;
@@ -43,9 +44,7 @@ export const handleGlobalError = error => {
  * https://newplanner.trimet.org/ws/ti/v0/index/patterns/trip/TRIMET:440496/geometry/geojson
  */
 export const fetchRouteGeometry = async (config, id) =>
-  fetch(
-    `${config.host}${config.path}/${config.agency}:${id}${config.suffix}`
-  )
+  fetch(`${config.host}${config.path}/${config.agency}:${id}${config.suffix}`)
     .then(handleHttpResponse)
     .catch(handleGlobalError);
 
