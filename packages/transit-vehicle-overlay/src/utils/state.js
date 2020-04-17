@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 /**
  * use this hook when you want your layer to update after otp-ui' base-map zoom events fire
@@ -17,8 +17,15 @@ export function zoomState(initialZoom = 13) {
 }
 
 /**
- * use this hook when you want your layer to ...
- * :return:
+ * trackedVehicleState
+ *
+ * use this hook when you want your layer to track a vehicle
+ * (and potentially show the route geometry of this vehicle)
+ *
+ * @param fetchPatternCallback() that I'll used to fetch a vehicles' pattern geom
+ * @param initial vehicle record
+ * @param initial route pattern
+ * @return [pattern, getTrackedVehicle(), updateTrackedVehicle()]
  */
 export function trackedVehicleState(
   fetchPatternCallback = null,
@@ -27,21 +34,42 @@ export function trackedVehicleState(
 ) {
   const [trackedVehicle, setTrackedVehicle] = useState(initVehicle);
   const [routePattern, setRoutePattern] = useState(initPattern);
+  const trackedVehicleRef = useRef(trackedVehicle);
 
-  const trackVehicleCallback = (vehicle, isTracking) => {
-    if (isTracking) {
+  // a ref + useEffect give a handle on the current trackedVehicle state in util functions, etc...
+  useEffect(() => {
+    trackedVehicleRef.current = trackedVehicle;
+  }, [trackedVehicle]);
+
+
+  /**
+   * accept a vehicle record and two booleans to control how state is updated
+   *
+   * @param vehicle record
+   * @param stopTracking boolean (e.g., 'stop tracking' - if this vehicle is tracking, then stop)
+   * @param updatePattern boolean (default true)
+   */
+  const updateTrackedVehicle = (vehicle, stopTracking, updatePattern=true) => {
+    if (stopTracking) {
       setTrackedVehicle(null);
       setRoutePattern(null);
     } else if (vehicle) {
       setTrackedVehicle(vehicle);
-      if (fetchPatternCallback) {
-        const pattern = fetchPatternCallback(vehicle);
-        if (pattern) {
-          setRoutePattern(pattern);
-        }
+      if (updatePattern && fetchPatternCallback) {
+        fetchPatternCallback(vehicle, setRoutePattern);
       }
     }
   };
 
-  return [trackedVehicle, routePattern, trackVehicleCallback];
+  /**
+   * return both the tracked vehicle state variable (using will cause a redraw)
+   * and the ref to that vehcicle.
+   * Note: the ref is a handle to the most recent state of the tracked vehicle, which can be used
+   * by routines outside of the react tree (don't ask me ... it's strange, hacky stuff).
+   */
+  const getTrackedVehicle = () => {
+    return  [trackedVehicle, trackedVehicleRef.current];
+  };
+
+  return [routePattern, getTrackedVehicle, updateTrackedVehicle];
 }

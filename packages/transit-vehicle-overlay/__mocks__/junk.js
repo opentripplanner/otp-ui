@@ -55,7 +55,7 @@ export async function fetchPattern(vehicle, setter) {
       else
         geojson = (await utils.fetchRouteGeometry(GEOM_TRIP_API_CONFIG, vehicle.tripId));
       const pattern = utils.makePattern(geojson, vehicle.tripId);
-      setter(pattern);
+      if(setter) setter(pattern);
     } catch (e) {
       console.error(e);
     }

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes, { arrayOf } from "prop-types";
 import { FeatureGroup } from "react-leaflet";
 
-import { leafletPathType } from "@opentripplanner/core-utils/src/types";
+import { leafletPathType, transitVehicleType } from "@opentripplanner/core-utils/src/types";
 import * as utils from "../../utils";
 
 /**
@@ -10,7 +10,7 @@ import * as utils from "../../utils";
  * geometry showing the travel pattern of a vehicle
  */
 export default function RouteGeometry(props) {
-  const { pattern, splitCoord, zoom } = props;
+  const { pattern, zoom, selectedVehicle } = props;
   const { highlightColor, lowlightColor } = props;
   let { highlight, lowlight } = props;
 
@@ -19,6 +19,7 @@ export default function RouteGeometry(props) {
   if (highlightColor) highlight = utils.setColor(highlightColor, highlight);
   if (lowlightColor) lowlight = utils.setColor(lowlightColor, lowlight);
 
+  const splitCoord = selectedVehicle && utils.getVehicleCoordinates(selectedVehicle);
   const pt = utils.findPointOnLine(splitCoord, pattern.data);
   const geom = utils.splitLineGeometry(pattern.data, pt, pattern.id);
   const segments = utils.makeSplitLine(geom, highlight, lowlight);
@@ -32,6 +33,7 @@ export default function RouteGeometry(props) {
 
 RouteGeometry.propTypes = {
   zoom: PropTypes.number,
+  selectedVehicle: transitVehicleType,
   pattern: PropTypes.shape({
     id: PropTypes.string.isRequired,
     data: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired
@@ -45,6 +47,7 @@ RouteGeometry.propTypes = {
 
 RouteGeometry.defaultProps = {
   zoom: 13,
+  selectedVehicle: null,
   splitCoord: null,
   highlightColor: null,
   lowlightColor: null,
