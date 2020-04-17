@@ -44,21 +44,21 @@ function simpleExample(vehicleData, patternGeometry, selectVehicleId) {
   const clickVehicle = vehicle => {
     setClicked(vehicle);
   };
-
-  // callback for tracking vehicle
-  const fetchPattern = (vehicle, setPattern) => {
+  const fetchPattern = (vehicle, setter) => {
     utils.linterIgnoreTheseProps(vehicle);
-    setPattern(patternGeometry);
+    setter(patternGeometry);
   };
 
   // state setup for zoom (refreshes layer) and selected vehicles
   const [zoom, onViewportChanged] = utils.zoomState(INITIAL_ZOOM_LEVEL);
   const [
-    trackedVehicle,
     routePattern,
-    trackVehicleCallback
+    getTrackedVehicle,
+    updateTrackedVehicle
   ] = utils.trackedVehicleState(fetchPattern, initVehicle, patternGeometry);
-  VehiclePopup.defaultProps.setTracked = trackVehicleCallback;
+
+  const [trackedVehicle, trackedRef] = getTrackedVehicle();
+  VehiclePopup.defaultProps.setTracked = updateTrackedVehicle;
 
   // storybook knobs to show off color & highlighting options
   const clr = color("color:", "#AAA");
@@ -97,22 +97,23 @@ function rectangles(popup=true) {
   const initVehicle = utils.findVehicleById(vehicleData, "9562512");
 
   // callback for tracking vehicle
-  const fetchPattern = (vehicle, setPattern) => {
+  const fetchPattern = (vehicle, setter) => {
     utils.linterIgnoreTheseProps(vehicle);
-    setPattern(patternGeometry);
+    setter(patternGeometry);
   };
 
   // state setup for zoom (refreshes layer) and selected vehicles
   const [zoom, onViewportChanged] = utils.zoomState(INITIAL_ZOOM_LEVEL);
   const [
-    trackedVehicle,
     routePattern,
-    trackVehicleCallback
+    getTrackedVehicle,
+    updateTrackedVehicle
   ] = utils.trackedVehicleState(fetchPattern, initVehicle, patternGeometry);
+  const [trackedVehicle, trackedRef] = getTrackedVehicle();
 
   // give action to the popup vehicle tracking button
   VehiclePopup.defaultProps.setTracked = (vehicle, isTracked) => {
-    trackVehicleCallback(vehicle, isTracked);
+    updateTrackedVehicle(vehicle, isTracked);
     if(!isTracked)
       recenter(null, 0, 0); // clear out cached coords ... recenter on recently untracked vehicle
   };
@@ -120,11 +121,12 @@ function rectangles(popup=true) {
   // record marker clicks (and more if no popup used)
   const clickVehicle = (vehicle, isTracked) => {
     setClicked(vehicle, isTracked);
-    // if no popup (e.g., tracking button), then track on marker click instead
+    // if no popup (e.g., popup has a tracking button), then track on marker click instead
     if(!popup) {
-      trackVehicleCallback(vehicle, isTracked);
+      updateTrackedVehicle(vehicle, isTracked);
       if(!isTracked)
-        recenter(null, 0, 0); // clear out cached coords ... recenter on recently untracked vehicle
+         // clear recenter coords, so map recenters on repeated clicks of same marker
+        recenter(null, 0, 0);
     }
   };
 
@@ -193,14 +195,20 @@ function realtimeExample(fetchVehicles, fetchPattern) {
   // state setup for zoom (refreshes layer) and selected vehicles
   const [zoom, onViewportChanged] = utils.zoomState(INITIAL_ZOOM_LEVEL);
   const [
-    getTrackedVehicle,
     routePattern,
-    trackVehicleCallback
+    getTrackedVehicle,
+    updateTrackedVehicle
   ] = utils.trackedVehicleState(fetchPattern);
-  VehiclePopup.defaultProps.setTracked = trackVehicleCallback;
 
-  const trackedVehicle = getTrackedVehicle();
-  const vehicleList = fetchVehicles(trackedVehicle, trackVehicleCallback);
+  // give action to the popup vehicle tracking button
+  VehiclePopup.defaultProps.setTracked = (vehicle, isTracked) => {
+    updateTrackedVehicle(vehicle, isTracked);
+    if(!isTracked)
+      recenter(null, 0, 0); // clear out cached coords ... recenter on recently untracked vehicle
+  };
+
+  const [trackedVehicle, trackedRef] = getTrackedVehicle();
+  const vehicleList = fetchVehicles(getTrackedVehicle, updateTrackedVehicle);
 
   return (
     <BaseMap
@@ -223,7 +231,7 @@ function realtimeExample(fetchVehicles, fetchPattern) {
 }
 
 const refreshInterval = 5000;
-function fetchVehicles(tracked, trackVehicleCallback) {
+function fetchVehicles(getTrackedVehicle, updateTrackedVehicle) {
   const [vehicleList, setVehicleList] = useState([]);
 
   const fetchData = useCallback(async () => {
@@ -231,15 +239,14 @@ function fetchVehicles(tracked, trackVehicleCallback) {
     if(vehicles){
       // todo maybe DQ vehicles data here before updating our vehicles list
       setVehicleList(vehicles);
+      const [trackedVehicle, trackedRef] = getTrackedVehicle();
+      const tracked = trackedRef;
 
       // update the tracked vehicle with latest position
       const queryId = utils.getVehicleId(tracked);
-      console.log(tracked);
-      console.log(queryId);
-      if(queryId && trackVehicleCallback) {
-        debugger;
+      if(queryId && updateTrackedVehicle) {
         const t = utils.findVehicleById(vehicles, queryId);
-        if (t) trackVehicleCallback(t, true);
+        if (t) updateTrackedVehicle(t, false, true);
       }
     }
   }, [fetchVehicles]);

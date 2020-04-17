@@ -50,10 +50,8 @@ export default function TransitVehicleOverlay(props) {
       {pattern && (
         <RouteGeometry
           zoom={zoom}
+          selectedVehicle={selectedVehicle}
           pattern={pattern}
-          splitCoord={
-            selectedVehicle && utils.getVehicleCoordinates(selectedVehicle)
-          }
           highlightColor={highlightColor}
           lowlightColor={lowlightColor}
           highlight={highlight}
