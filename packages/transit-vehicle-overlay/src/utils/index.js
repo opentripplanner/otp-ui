@@ -1,4 +1,9 @@
-import { setColor, renderAsImage } from "./graphics";
+import {
+  setColor,
+  renderAsImage,
+  makeVehicleIcon,
+  makeModeStyles
+} from "./graphics";
 import { getVehicleCoordinates, compareCoords } from "./coordinates";
 import { recenterFlyTo, recenterPanTo, recenterPanToOffset } from "./recenter";
 import { zoomState, trackedVehicleState, vehicleListUpdater } from "./state";
@@ -29,6 +34,8 @@ export {
   vehicleListUpdater,
   renderAsImage,
   setColor,
+  makeVehicleIcon,
+  makeModeStyles,
   convertAltData,
   getVehicleId,
   findVehicleById,

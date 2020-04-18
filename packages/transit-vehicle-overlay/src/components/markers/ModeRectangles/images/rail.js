@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 
 export default function Rail(props) {
   return (
@@ -126,5 +126,5 @@ export default function Rail(props) {
         </g>
       </g>
     </svg>
-  )
+  );
 }

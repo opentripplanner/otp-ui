@@ -1,4 +1,6 @@
+import React from "react";
 import ReactDOMServer from "react-dom/server";
+import styled from "styled-components";
 import L from "leaflet";
 import cloneDeep from "lodash.clonedeep";
 
@@ -41,4 +43,130 @@ export function setColor(color, obj) {
   const retVal = cloneDeep(obj);
   retVal.color = color;
   return retVal;
+}
+
+/**
+ * makes a circular marker icon with a vehicle image based on mode
+ */
+export function makeVehicleIcon(
+  Styled,
+  mode,
+  color,
+  highlightColor,
+  isTracked
+) {
+  let icon;
+  switch (mode) {
+    case "TRAM":
+      icon = isTracked ? (
+        <Styled.TrackedTram color={color} colorselected={highlightColor} />
+      ) : (
+        <Styled.NormTram color={color} colorselected={highlightColor} />
+      );
+      break;
+    case "SC":
+      icon = isTracked ? (
+        <Styled.TrackedSC color={color} colorselected={highlightColor} />
+      ) : (
+        <Styled.NormSC color={color} colorselected={highlightColor} />
+      );
+      break;
+    case "GONDOLA":
+      icon = isTracked ? (
+        <Styled.TrackedGond color={color} colorselected={highlightColor} />
+      ) : (
+        <Styled.NormGond color={color} colorselected={highlightColor} />
+      );
+      break;
+    case "RAIL":
+      icon = isTracked ? (
+        <Styled.TrackedRail color={color} colorselected={highlightColor} />
+      ) : (
+        <Styled.NormRail color={color} colorselected={highlightColor} />
+      );
+      break;
+    case "BUS":
+      icon = isTracked ? (
+        <Styled.TrackedBus color={color} colorselected={highlightColor} />
+      ) : (
+        <Styled.NormBus color={color} colorselected={highlightColor} />
+      );
+      break;
+    default:
+      icon = isTracked ? (
+        <Styled.TrackedShape color={color} colorselected={highlightColor} />
+      ) : (
+        <Styled.Shape color={color} colorselected={highlightColor} />
+      );
+      break;
+  }
+  return icon;
+}
+
+export function makeModeStyles(
+  normal,
+  tracked,
+  busIcon,
+  railIcon,
+  tramIcon,
+  streetcarIcon,
+  gondolaIcon
+) {
+  if (!railIcon) railIcon = busIcon;
+  if (!tramIcon) tramIcon = railIcon;
+  if (!streetcarIcon) streetcarIcon = railIcon;
+  if (!gondolaIcon) gondolaIcon = busIcon;
+
+  const NormBus = styled(busIcon)`
+    ${normal}
+  `;
+
+  const TrackedBus = styled(NormBus)`
+    ${tracked}
+  `;
+
+  const NormRail = styled(railIcon)`
+    ${normal}
+  `;
+
+  const TrackedRail = styled(NormRail)`
+    ${tracked}
+  `;
+
+  const NormTram = styled(tramIcon)`
+    ${normal}
+  `;
+
+  const TrackedTram = styled(NormTram)`
+    ${tracked}
+  `;
+
+  const NormSC = styled(streetcarIcon)`
+    ${normal}
+  `;
+
+  const TrackedSC = styled(NormSC)`
+    ${tracked}
+  `;
+
+  const NormGond = styled(gondolaIcon)`
+    ${normal}
+  `;
+
+  const TrackedGond = styled(NormGond)`
+    ${tracked}
+  `;
+
+  return [
+    NormBus,
+    TrackedBus,
+    NormRail,
+    TrackedRail,
+    NormTram,
+    TrackedTram,
+    NormSC,
+    TrackedSC,
+    NormGond,
+    TrackedGond
+  ];
 }
