@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 
 export default function Bus(props) {
   return (
@@ -53,8 +53,20 @@ export default function Bus(props) {
           d="M315.4 22.6l-2.9-18.8c-.6-3.7-1-7-1.3-10.5h-.2c-.6 3.3-1.4 6.8-2.6 10.7l-5.6 18.6h-10l-5.5-17a84.6 84.6 0 01-3-12.3L283 4.8l-2.3 17.8H270l7.3-45.5h12l6.4 20c1 3 1.7 6.3 2.4 9.8h.1c.7-3.6 1.5-6.5 2.6-10l6.5-19.8h11.8l7.3 45.5h-11z"
           className="bus_svg_style7"
         />
-        <ellipse cx={58.5} cy={193.8} className="bus_svg_style8" rx={3} ry={1.8} />
-        <ellipse cx={109} cy={194.2} className="bus_svg_style8" rx={3} ry={1.8} />
+        <ellipse
+          cx={58.5}
+          cy={193.8}
+          className="bus_svg_style8"
+          rx={3}
+          ry={1.8}
+        />
+        <ellipse
+          cx={109}
+          cy={194.2}
+          className="bus_svg_style8"
+          rx={3}
+          ry={1.8}
+        />
       </g>
       <g id="prefix__Layer_1_copy" className="bus_svg_style0">
         <g className="bus_svg_style1">
@@ -255,9 +267,15 @@ export default function Bus(props) {
           className="bus_svg_style7"
         />
         <g className="bus_svg_style1">
-          <path d="M55.3 50.5l2.3-2.6V159l-2.3 2.8z" className="bus_svg_style20" />
+          <path
+            d="M55.3 50.5l2.3-2.6V159l-2.3 2.8z"
+            className="bus_svg_style20"
+          />
         </g>
-        <path d="M55.3 175.4l3.5-6.9v5.8l-3.5 13.4z" className="bus_svg_style21" />
+        <path
+          d="M55.3 175.4l3.5-6.9v5.8l-3.5 13.4z"
+          className="bus_svg_style21"
+        />
         <g className="bus_svg_style1">
           <path
             d="M112.8 175.4l-3.5-6.9v5.8l3.5 15.3z"
@@ -385,7 +403,10 @@ export default function Bus(props) {
           <path d="M84 175.1v17.2" className="bus_svg_style5" />
         </g>
         <g className="bus_svg_style1">
-          <path d="M76.3 171.8c8.5.2 16.9 0 25.3-.6" className="bus_svg_style4" />
+          <path
+            d="M76.3 171.8c8.5.2 16.9 0 25.3-.6"
+            className="bus_svg_style4"
+          />
           <path
             d="M102 171.9c-8.6.6-17.2.9-25.7.6V171c8.4.3 16.9 0 25.3-.6 0 .5.2 1 .4 1.5z"
             className="bus_svg_style24"
@@ -542,5 +563,5 @@ export default function Bus(props) {
         <path d="M83 78.3V47.8" className="bus_svg_style5" />
       </g>
     </svg>
-  )
+  );
 }

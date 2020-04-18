@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { transitVehicleType } from "@opentripplanner/core-utils/lib/types";
 import RotatedMarker from "../RotatedMarker";
-import makeIcons from './make-icons';
+import makeIcons from "./make-icons";
 
 // import * as Styled from "./styled";
 import * as utils from "../../../utils";

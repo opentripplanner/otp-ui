@@ -239,7 +239,11 @@ function rtCircles() {
 }
 
 function rtRectangles() {
-  return realtimeExample(junk.fetchAltVehicles, junk.fetchPattern, ModeRectangles);
+  return realtimeExample(
+    junk.fetchAltVehicles,
+    junk.fetchPattern,
+    ModeRectangles
+  );
 }
 
 storiesOf("TransitVehicleOverlay", module)

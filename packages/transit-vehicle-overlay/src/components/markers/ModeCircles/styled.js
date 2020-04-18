@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { Circle } from "styled-icons/fa-solid";
-
 import { AerialTram, Bus, Streetcar, Max, Wes } from "@opentripplanner/icons";
+import * as utils from "../../../utils";
 
 // note: want to make these props of styled, so props.colorselected
 // BTW, 'props.color' works, since that's an established prop of styled
@@ -35,51 +35,24 @@ export const tracked = css`
   background-color: ${props => props.colorselected || defSelected};
 `;
 
-export const VehicleCircle = styled(Circle)`
+export const Shape = styled(Circle)`
   ${normal}
   background-color: ${props => props.color || defColor};
 `;
 
-export const TrackedVehicleCircle = styled(VehicleCircle)`
+export const TrackedShape = styled(Shape)`
   ${tracked}
 `;
 
-export const NormBus = styled(Bus)`
-  ${normal}
-`;
-
-export const TrackedBus = styled(NormBus)`
-  ${tracked}
-`;
-
-export const NormTram = styled(Max)`
-  ${normal}
-`;
-
-export const TrackedTram = styled(NormTram)`
-  ${tracked}
-`;
-
-export const NormSC = styled(Streetcar)`
-  ${normal}
-`;
-
-export const TrackedSC = styled(NormSC)`
-  ${tracked}
-`;
-
-export const NormGond = styled(AerialTram)`
-  ${normal}
-`;
-
-export const TrackedGond = styled(NormGond)`
-  ${tracked}
-`;
-
-export const NormRail = styled(Wes)`
-  ${normal}
-`;
-
-export const TrackedRail = styled(NormRail)`
-  ${tracked}
-`;
+export const [
+  NormBus,
+  TrackedBus,
+  NormRail,
+  TrackedRail,
+  NormTram,
+  TrackedTram,
+  NormSC,
+  TrackedSC,
+  NormGond,
+  TrackedGond
+] = utils.makeModeStyles(normal, tracked, Bus, Wes, Max, Streetcar, AerialTram);
