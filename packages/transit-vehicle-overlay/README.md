@@ -20,6 +20,7 @@ shows converting another service response format (https://developer.trimet.org/w
 to work with this layer. 
 
 ## NOTES:
+ - https://jakearchibald.github.io/svgomg -- .svg optimizer
  - https://react-svgr.com/playground -- good .svg => .npx converter
  - The use of hooks was a good thing, but there's a bit of resulting redirection (HL functions, etc...)
   in the compoent lib (and interface) which obfuscates things a bit ... appologies in advnace.  
