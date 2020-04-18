@@ -41,7 +41,7 @@ RouteGeometry.propTypes = {
   pattern: PropTypes.shape({
     id: PropTypes.string.isRequired,
     data: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired
-  }).isRequired,
+  }),
   splitCoord: arrayOf(PropTypes.number),
   highlightColor: PropTypes.string,
   lowlightColor: PropTypes.string,
@@ -51,6 +51,7 @@ RouteGeometry.propTypes = {
 
 RouteGeometry.defaultProps = {
   zoom: 13,
+  pattern: null,
   selectedVehicle: null,
   splitCoord: null,
   highlightColor: null,

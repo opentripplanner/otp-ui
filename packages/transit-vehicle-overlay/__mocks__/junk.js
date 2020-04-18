@@ -41,7 +41,7 @@ export async function fetchVehicles(routes = "100, 90, 20, 57") {
   return retVal;
 }
 
-export async function fetchVehiclesDeveloper(routes = "100, 90, 20, 57") {
+export async function fetchAltVehicles(routes = "100, 90, 20, 57") {
   // TODO
   return fetchVehicles(routes);
 }

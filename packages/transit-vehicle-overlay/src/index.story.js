@@ -168,7 +168,7 @@ function rectangles(popup = true) {
 }
 
 /** with static data, show a simple version of the real-time transit vehicles layer */
-function realtimeExample(fetchVehicles, fetchPattern) {
+function realtimeExample(fetchVehicles, fetchPattern, markers) {
   // initial setup
   const recenter = utils.recenterFlyTo();
   const clickVehicle = vehicle => {
@@ -210,6 +210,7 @@ function realtimeExample(fetchVehicles, fetchPattern) {
         selectedVehicle={trackedVehicle}
         pattern={routePattern}
         onRecenterMap={recenter}
+        MarkerSlot={markers}
         TooltipSlot={VehicleTooltip}
         PopupSlot={VehiclePopup}
       />
@@ -238,11 +239,7 @@ function rtCircles() {
 }
 
 function rtRectangles() {
-  return realtimeExample(
-    junk.fetchVehiclesDeveloper,
-    junk.fetchPattern,
-    ModeRectangles
-  );
+  return realtimeExample(junk.fetchAltVehicles, junk.fetchPattern, ModeRectangles);
 }
 
 storiesOf("TransitVehicleOverlay", module)
