@@ -3,7 +3,7 @@ import * as Styled from "./styled";
 import * as utils from "../../../utils";
 
 /** makes a circular marker icon with a vehicle image based on mode */
-export function makeVehicleIcon(mode, color, highlightColor, isTracked) {
+export function makeVehicleIcon(zoom, mode, color, highlightColor, isTracked) {
   let icon;
   switch (mode) {
     case "TRAM":
@@ -74,7 +74,7 @@ export default function makeIcons(
 
   let icon;
   if (zoom >= closeZoom) {
-    icon = makeVehicleIcon(mode, color, highlightColor, isTracked);
+    icon = makeVehicleIcon(zoom, mode, color, highlightColor, isTracked);
   } else {
     const size = zoom >= midZoom ? midSize : farSize;
     icon = isTracked ? (

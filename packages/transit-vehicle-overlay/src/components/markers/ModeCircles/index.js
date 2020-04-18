@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { transitVehicleType } from "@opentripplanner/core-utils/lib/types";
 import RotatedMarker from "../RotatedMarker";
 import makeIcons from "./make-icons";
-import { linterIgnoreTheseProps } from "../../../utils";
+import * as utils from "../../../utils";
 
 export default function ModeCircles(props) {
   const { zoom, vehicle, children, color, highlightColor, isTracked } = props;
@@ -50,7 +50,7 @@ ModeCircles.defaultProps = {
   color: "",
   highlightColor: "",
   onVehicleClicked: (vehicle, isTracked) => {
-    linterIgnoreTheseProps(vehicle, isTracked);
+    utils.linterIgnoreTheseProps(vehicle, isTracked);
   },
   children: null
 };

@@ -321,7 +321,7 @@ const queryParams = [
     routingTypes: ["PROFILE"],
     default: 15,
     selector: "DROPDOWN",
-    label: "Max Walk Time",
+    label: "Rail Walk Time",
     applicable: query =>
       query.mode && hasTransit(query.mode) && query.mode.indexOf("WALK") !== -1,
     options: [
@@ -386,7 +386,7 @@ const queryParams = [
     routingTypes: ["PROFILE"],
     default: 20,
     selector: "DROPDOWN",
-    label: "Max Bike Time",
+    label: "Rail Bike Time",
     applicable: query =>
       query.mode &&
       hasTransit(query.mode) &&

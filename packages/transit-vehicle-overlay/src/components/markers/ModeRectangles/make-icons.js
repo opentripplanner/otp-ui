@@ -2,53 +2,36 @@ import React from "react";
 import * as Styled from "./styled";
 import * as utils from "../../../utils";
 
+import Bus from "./images/bus";
+import Rail from "./images/rail";
+import Rect from "./images/rect";
+
 /** makes a circular marker icon with a vehicle image based on mode */
-export function makeVehicleIcon(mode, color, highlightColor, isTracked) {
+export function makeVehicleIcon(zoom, mode, color, highlightColor, isTracked) {
   let icon;
   switch (mode) {
+    case "SC":
+    case "RAIL":
+    case "GONDOLA":
     case "TRAM":
       icon = isTracked ? (
-        <Styled.TrackedTram color={color} colorselected={highlightColor} />
+        <Rail xcolor={color} colorselected={highlightColor} />
       ) : (
-        <Styled.NormTram color={color} colorselected={highlightColor} />
-      );
-      break;
-    case "SC":
-      icon = isTracked ? (
-        <Styled.TrackedSC color={color} colorselected={highlightColor} />
-      ) : (
-        <Styled.NormSC color={color} colorselected={highlightColor} />
-      );
-      break;
-    case "GONDOLA":
-      icon = isTracked ? (
-        <Styled.TrackedGond color={color} colorselected={highlightColor} />
-      ) : (
-        <Styled.NormGond color={color} colorselected={highlightColor} />
-      );
-      break;
-    case "RAIL":
-      icon = isTracked ? (
-        <Styled.TrackedRail color={color} colorselected={highlightColor} />
-      ) : (
-        <Styled.NormRail color={color} colorselected={highlightColor} />
+        <Rail xcolor={color} colorselected={highlightColor} />
       );
       break;
     case "BUS":
       icon = isTracked ? (
-        <Styled.TrackedBus color={color} colorselected={highlightColor} />
+        <Bus color={color} colorselected={highlightColor} />
       ) : (
-        <Styled.NormBus color={color} colorselected={highlightColor} />
+        <Bus color={color} colorselected={highlightColor} />
       );
       break;
     default:
       icon = isTracked ? (
-        <Styled.TrackedVehicleCircle
-          color={color}
-          colorselected={highlightColor}
-        />
+        <Rect color={color} colorselected={highlightColor} />
       ) : (
-        <Styled.VehicleCircle color={color} colorselected={highlightColor} />
+        <Rect color={color} colorselected={highlightColor} />
       );
       break;
   }
@@ -74,17 +57,17 @@ export default function makeIcons(
 
   let icon;
   if (zoom >= closeZoom) {
-    icon = makeVehicleIcon(mode, color, highlightColor, isTracked);
+    icon = makeVehicleIcon(zoom, mode, color, highlightColor, isTracked);
   } else {
     const size = zoom >= midZoom ? midSize : farSize;
     icon = isTracked ? (
-      <Styled.TrackedVehicleCircle
+      <Rect
         size={size}
         color={color}
         colorselected={highlightColor}
       />
     ) : (
-      <Styled.VehicleCircle
+      <Rect
         size={size}
         color={color}
         colorselected={highlightColor}

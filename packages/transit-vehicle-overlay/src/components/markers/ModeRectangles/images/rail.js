@@ -1,6 +1,6 @@
 import * as React from "react"
 
-export default function Max(props) {
+export default function Rail(props) {
   return (
     <svg
       id="prefix__Layer_1"
