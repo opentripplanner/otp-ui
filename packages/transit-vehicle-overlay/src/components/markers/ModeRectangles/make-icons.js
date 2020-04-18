@@ -15,9 +15,9 @@ export function makeVehicleIcon(zoom, mode, color, highlightColor, isTracked) {
     case "GONDOLA":
     case "TRAM":
       icon = isTracked ? (
-        <Rail xcolor={color} colorselected={highlightColor} />
+        <Rail  />
       ) : (
-        <Rail xcolor={color} colorselected={highlightColor} />
+        <Rail  />
       );
       break;
     case "BUS":
