@@ -50,13 +50,15 @@ export const fetchRouteGeometry = async (config, id) =>
 
 /**
  * get vehicle positions -- example
- * https://maps.trimet.org/gtfs/rt/vehicles/routes/15?__time__=1585453880389
+ * https://maps.trimet.org/gtfs/rt/vehicles/routes/100
+ * or
+ * https://developer.trimet.org/ws/v2/vehicles/appid/12A1B6835DC871375825C3AD1/routes/100
  */
 export const fetchVehicles = async (config, query) =>
   fetch(
-    `${config.host}${config.path}/${query.type}${
+    `${config.host}${config.path}/${query.type}/${
       /* eslint-disable prefer-template */
-      query.ids.length ? "/" + query.ids.join() : "/all"
+      query.ids.length ? query.ids.join() : query.defRoutes
     }`
   )
     .then(handleHttpResponse)

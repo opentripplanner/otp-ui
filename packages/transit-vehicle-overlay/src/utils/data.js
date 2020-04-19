@@ -98,7 +98,7 @@ export function convertTriMetRecord(rec, qt) {
     vehicleId: str(rec.vehicleID),
     routeId: str(rec.routeNumber),
     blockId: str(rec.blockID),
-    shapeId: str(rec.tripID),
+    shapeId: null,
     tripId: str(rec.tripID),
     directionId: str(rec.direction),
     stopId: str(rec.nextLocID),

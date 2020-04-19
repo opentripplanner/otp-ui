@@ -37,11 +37,18 @@ export function trackedVehicleState(
   const [trackedVehicle, setTrackedVehicle] = useState(initVehicle);
   const [routePattern, setRoutePattern] = useState(initPattern);
   const trackedVehicleRef = useRef(trackedVehicle);
+  const routePatternRef = useRef(routePattern);
 
   // a ref + useEffect give a handle on the current trackedVehicle state in util functions, etc...
   useEffect(() => {
     trackedVehicleRef.current = trackedVehicle;
   }, [trackedVehicle]);
+
+  useEffect(() => {
+    routePatternRef.current = routePattern;
+  }, [routePattern]);
+
+  const getRoutePattern = () => routePatternRef.current;
 
   /**
    * accept a vehicle record and two booleans to control how state is updated
@@ -53,7 +60,7 @@ export function trackedVehicleState(
   const updateTrackedVehicle = (
     vehicle,
     stopTracking,
-    updatePattern = true
+    updatePattern = false
   ) => {
     if (stopTracking) {
       setTrackedVehicle(null);
@@ -61,7 +68,9 @@ export function trackedVehicleState(
     } else if (vehicle) {
       setTrackedVehicle(vehicle);
       if (updatePattern && fetchPatternCallback) {
-        fetchPatternCallback(vehicle, setRoutePattern);
+        const alreadyCached = (getRoutePattern() && vehicle.tripId === getRoutePattern().id);
+        if(!alreadyCached)
+          fetchPatternCallback(vehicle, setRoutePattern);
       }
     }
   };
