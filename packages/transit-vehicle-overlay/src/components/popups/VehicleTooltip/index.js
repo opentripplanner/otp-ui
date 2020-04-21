@@ -32,7 +32,7 @@ VehicleTooltip.propTypes = {
   isTracked: PropTypes.bool,
   permanent: PropTypes.bool,
   direction: PropTypes.string,
-  offset: PropTypes.object
+  offset: PropTypes.object // eslint-disable-line react/forbid-prop-types
 };
 
 VehicleTooltip.defaultProps = {

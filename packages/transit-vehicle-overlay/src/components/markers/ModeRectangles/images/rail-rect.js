@@ -1,11 +1,9 @@
 import * as React from "react";
 
-function Rect(props) {
+export default function RailRect(props) {
   return (
-    <svg viewBox="0 0 167 237" {...props}>
-      <path fill="#084c8d" d="M49 36h69v169H49z" />
+    <svg viewBox="0 0 200 300" {...props}>
+      <path fill="#28639c" d="M67.5 25h65v250h-65z" />
     </svg>
   );
 }
-
-export default Rect;
