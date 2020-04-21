@@ -8,26 +8,32 @@ import * as utils from "../../../utils";
  * TODO: icons using trimet stuff needs to get away from MAX / WES / AERIALTRAM names, etc...
  */
 export default function makeIcons(zoom, mode, color, highlight, isTracked) {
+  const veryCloseZoom = 19;
   const closeZoom = 14;
-  const midZoom = 12;
-  const midSize = 13.0;
-  const farSize = 7.0;
+  const farZoom = 10;
 
   let icon;
   if (zoom >= closeZoom) {
     icon = utils.makeVehicleIcon(Styled, mode, color, highlight, isTracked);
-  } else {
-    const size = zoom >= midZoom ? midSize : farSize;
+  } else if (mode === "BUS") {
     icon = isTracked ? (
-      <Styled.TrackedShape
-        size={size}
-        color={color}
-        colorselected={highlight}
-      />
+      <Styled.TrackedShape color={color} colorselected={highlight} />
     ) : (
-      <Styled.Shape size={size} color={color} colorselected={highlight} />
+      <Styled.Shape color={color} colorselected={highlight} />
+    );
+  } else {
+    icon = isTracked ? (
+      <Styled.LgTrackedShape color={color} colorselected={highlight} />
+    ) : (
+      <Styled.LgShape color={color} colorselected={highlight} />
     );
   }
 
-  return utils.renderAsImage(icon);
+  // determine
+  let size = zoom;
+  if (zoom >= veryCloseZoom) size = zoom * 3;
+  else if (zoom >= closeZoom) size = zoom * 2 + 3;
+  else if (zoom > farZoom) size = zoom + 6;
+
+  return utils.renderAsImage(icon, [size, size]);
 }
