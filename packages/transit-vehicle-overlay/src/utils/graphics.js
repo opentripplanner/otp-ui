@@ -7,17 +7,24 @@ import cloneDeep from "lodash.clonedeep";
 export function renderAsImage(
   icon,
   size = [22, 22],
+  anchor = null,
   pop = null,
   tt = null,
   cls = ""
 ) {
+  const x = size[0];
+  const y = size[1];
+
+  // debugger;
   if (!pop) pop = [0, 0];
   if (!tt) tt = [0, 0];
+  if (!anchor) anchor = [Math.round(x / 2), Math.round(y / 2)];
 
   const retVal = L.divIcon({
     html: ReactDOMServer.renderToString(icon),
     className: cls,
     iconSize: size,
+    iconAnchor: anchor,
     popupAnchor: pop,
     tooltipAnchor: tt
   });

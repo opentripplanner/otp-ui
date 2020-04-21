@@ -68,9 +68,9 @@ export function trackedVehicleState(
     } else if (vehicle) {
       setTrackedVehicle(vehicle);
       if (updatePattern && fetchPatternCallback) {
-        const alreadyCached =
+        const cached =
           getRoutePattern() && vehicle.tripId === getRoutePattern().id;
-        if (!alreadyCached) fetchPatternCallback(vehicle, setRoutePattern);
+        if (!cached) fetchPatternCallback(vehicle, setRoutePattern);
       }
     }
   };

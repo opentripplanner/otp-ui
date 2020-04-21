@@ -197,6 +197,9 @@ function realtimeExample(fetchVehicles, fetchPattern, markers) {
     updateTrackedVehicle
   );
 
+  const clr = color("color:", "#28639c");
+  const highlightColor = color("isTracked color:", "#D1472D");
+
   return (
     <BaseMap
       center={PORTLAND}
@@ -210,6 +213,8 @@ function realtimeExample(fetchVehicles, fetchPattern, markers) {
         selectedVehicle={trackedVehicle}
         pattern={routePattern}
         onRecenterMap={recenter}
+        color={clr}
+        highlightColor={highlightColor}
         MarkerSlot={markers}
         TooltipSlot={VehicleTooltip}
         PopupSlot={VehiclePopup}
