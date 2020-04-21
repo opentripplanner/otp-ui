@@ -39,7 +39,7 @@ CustomTooltip.propTypes = {
   getContent: PropTypes.func,
   permanent: PropTypes.bool,
   direction: PropTypes.string,
-  offset: PropTypes.object
+  offset: PropTypes.object // eslint-disable-line react/forbid-prop-types
 };
 
 CustomTooltip.defaultProps = {

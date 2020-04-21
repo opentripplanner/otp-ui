@@ -25,11 +25,7 @@ export default function makeIcons(zoom, mode, color, highlight, isTracked) {
         colorselected={highlight}
       />
     ) : (
-      <Styled.Shape
-        size={size}
-        color={color}
-        colorselected={highlight}
-      />
+      <Styled.Shape size={size} color={color} colorselected={highlight} />
     );
   }
 

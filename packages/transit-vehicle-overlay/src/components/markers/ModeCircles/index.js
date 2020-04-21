@@ -41,7 +41,7 @@ ModeCircles.propTypes = {
   onVehicleClicked: PropTypes.func,
 
   /** React children */
-  children: PropTypes.array
+  children: PropTypes.arrayOf(PropTypes.element)
 };
 
 ModeCircles.defaultProps = {

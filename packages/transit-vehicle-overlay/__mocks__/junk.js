@@ -10,13 +10,13 @@ export function makeRandomDate() {
 const VEHICLE_API_CONFIG = {
   host: "https://maps.trimet.org",
   path: "/gtfs/rt/vehicles",
-  defRoutes:  "all"
+  defRoutes: "all"
 };
 
 const ALT_VEHICLE_API_CONFIG = {
   host: "https://developer.trimet.org",
-  path: "/ws/v2/vehicles/appid/12A1B6835DC871375825C3AD1",  // please use own appid
-  defRoutes:  ""
+  path: "/ws/v2/vehicles/appid/12A1B6835DC871375825C3AD1", // please use own appid
+  defRoutes: ""
 };
 
 const GEOM_SHAPE_API_CONFIG = {
@@ -36,7 +36,7 @@ const GEOM_TRIP_API_CONFIG = {
 export async function fetchVehicles(routes = "100,90,190,200,290,20,57") {
   let retVal = [];
   try {
-    const routeList = routes.replace(/\s+/g, '').split(",");
+    const routeList = routes.replace(/\s+/g, "").split(",");
     const f = await utils.fetchVehicles(VEHICLE_API_CONFIG, {
       type: "routes",
       ids: routeList
@@ -51,7 +51,7 @@ export async function fetchVehicles(routes = "100,90,190,200,290,20,57") {
 export async function fetchAltVehicles(routes = "100,90,190,200,290,20,57") {
   let retVal = [];
   try {
-    const routeList = routes.replace(/\s+/g, '').split(",");
+    const routeList = routes.replace(/\s+/g, "").split(",");
     const f = await utils.fetchVehicles(ALT_VEHICLE_API_CONFIG, {
       type: "routes",
       ids: routeList

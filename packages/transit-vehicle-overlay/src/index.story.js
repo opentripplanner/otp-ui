@@ -170,7 +170,7 @@ function rectangles(popup = true) {
 /** with static data, show a simple version of the real-time transit vehicles layer */
 function realtimeExample(fetchVehicles, fetchPattern, markers) {
   // initial setup
-  const recenter = utils.recenterFlyTo();
+  const recenter = utils.recenterPanTo();
   const clickVehicle = vehicle => {
     setClicked(vehicle);
   };

@@ -60,7 +60,7 @@ export function trackedVehicleState(
   const updateTrackedVehicle = (
     vehicle,
     stopTracking,
-    updatePattern = false
+    updatePattern = true
   ) => {
     if (stopTracking) {
       setTrackedVehicle(null);
@@ -68,9 +68,9 @@ export function trackedVehicleState(
     } else if (vehicle) {
       setTrackedVehicle(vehicle);
       if (updatePattern && fetchPatternCallback) {
-        const alreadyCached = (getRoutePattern() && vehicle.tripId === getRoutePattern().id);
-        if(!alreadyCached)
-          fetchPatternCallback(vehicle, setRoutePattern);
+        const alreadyCached =
+          getRoutePattern() && vehicle.tripId === getRoutePattern().id;
+        if (!alreadyCached) fetchPatternCallback(vehicle, setRoutePattern);
       }
     }
   };

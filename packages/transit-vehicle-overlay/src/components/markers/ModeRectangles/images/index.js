@@ -1,5 +1,6 @@
 import Bus from "./bus";
 import Rail from "./rail";
-import Rect from "./rect";
+import RailRect from "./rail-rect";
+import BusRect from "./bus-rect";
 
-export { Bus, Rail, Rect };
+export { Bus, Rail, BusRect, RailRect };
