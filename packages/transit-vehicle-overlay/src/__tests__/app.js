@@ -1,7 +1,8 @@
 import React from "react";
-import {create, act} from 'react-test-renderer';
+import { create, act } from "react-test-renderer";
 
 import * as utils from "../utils";
+
 const line = require("../../__mocks__/line100.json");
 
 /*
@@ -61,5 +62,3 @@ describe("util > vehicles and patterns", () => {
     expect(initVehicle).toMatchSnapshot();
   });
 });
-
-

@@ -9,6 +9,7 @@
   "private": false,
   "dependencies": {
     "@opentripplanner/core-utils": "^0.0.19",
+    "@opentripplanner/base-map": "^0.0.19",
     "@opentripplanner/icons": "^0.0.19",
     "@turf/nearest-point-on-line": "^6.0.1",
     "es6-promise": "^4.2.8",
@@ -19,7 +20,6 @@
     "throttle-debounce": "^2.1.0"
   },
   "peerDependencies": {
-    "@opentripplanner/base-map": "^0.0.16",
     "leaflet": "^1.6.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
