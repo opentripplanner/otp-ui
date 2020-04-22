@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`util > vehicles and patterns find vehciles 1`] = `
+Object {
+  "agencyId": "TRIMET",
+  "blockId": "9070",
+  "directionId": "0",
+  "heading": 272,
+  "id": "241+327",
+  "lat": 45.530115,
+  "lon": -122.652887,
+  "reportDate": "12/27/19 10:16 PM",
+  "routeColor": null,
+  "routeId": "100",
+  "routeLongName": "Blue to E 197th",
+  "routeShortName": "MAX Blue",
+  "routeTextColor": null,
+  "routeType": "TRAM",
+  "seconds": 25,
+  "serviceId": "A.559",
+  "shapeId": "434227",
+  "status": "IN_TRANSIT_TO",
+  "stopId": "8344",
+  "stopSequence": 6,
+  "tripId": "9562512",
+  "vehicleId": "241+327",
+}
+`;
