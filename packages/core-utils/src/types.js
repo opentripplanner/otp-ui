@@ -498,8 +498,8 @@ export const modeSelectorOptionsType = PropTypes.shape({
 });
 
 export const queryType = PropTypes.shape({
-  from: PropTypes.string,
-  to: PropTypes.string,
+  from: locationType,
+  to: locationType,
   date: PropTypes.string,
   time: PropTypes.string,
   departArrive: PropTypes.string,
