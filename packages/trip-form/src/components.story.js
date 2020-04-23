@@ -83,6 +83,8 @@ export const dropdownSelector = () => (
 export const generalSettingsPanel = () => (
   <Core.GeneralSettingsPanel
     query={{
+      // The from and to params below are for testing queryType,
+      // they are not actually used by the component.
       from: {
         lat: 33.9,
         lon: -84.63,
