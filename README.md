@@ -30,7 +30,7 @@ Some packages in otp-ui depend on sibling packages (e.g., `@opentripplanner/core
     
     > "@opentripplanner/package-to-test": **"file:../package-to-test"**
 
-2. Find and replace:
+2. In your source files, find and replace:
 
     > opentripplanner/package-to-test/**lib**/types
 
