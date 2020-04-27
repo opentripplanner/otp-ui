@@ -22,7 +22,23 @@
         "cents": 250
       }
     },
-    "details": {}
+    "details": {
+      "regular": [
+        {
+          "fareId": "1:238",
+          "price": {
+            "currency": {
+              "symbol": "$",
+              "currency": "USD",
+              "defaultFractionDigits": 2,
+              "currencyCode": "USD"
+            },
+            "cents": 250
+          },
+          "routes": ["1:1"]
+        }
+      ]
+    }
   },
   "legs": [
     {

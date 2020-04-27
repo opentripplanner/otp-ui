@@ -266,11 +266,16 @@ const moneyType = PropTypes.shape({
  */
 export const fareType = PropTypes.shape({
   details: PropTypes.objectOf(
-    PropTypes.shape({
-      fareId: feedScopedIdType.isRequired,
-      price: moneyType.isRequired,
-      routes: PropTypes.arrayOf(feedScopedIdType).isRequired
-    }).isRequired
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        fareId: PropTypes.oneOfType([PropTypes.string, feedScopedIdType])
+          .isRequired,
+        price: moneyType.isRequired,
+        routes: PropTypes.arrayOf(
+          PropTypes.oneOfType([PropTypes.string, feedScopedIdType])
+        ).isRequired
+      })
+    ).isRequired
   ),
   fare: PropTypes.objectOf(moneyType)
 });
@@ -498,8 +503,8 @@ export const modeSelectorOptionsType = PropTypes.shape({
 });
 
 export const queryType = PropTypes.shape({
-  from: PropTypes.string,
-  to: PropTypes.string,
+  from: locationType,
+  to: locationType,
   date: PropTypes.string,
   time: PropTypes.string,
   departArrive: PropTypes.string,
