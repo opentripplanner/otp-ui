@@ -22,13 +22,13 @@ See:
 
 Some packages in otp-ui depend on sibling packages (e.g., `@opentripplanner/core-utils` is used by many of its siblings). In order to test a package with local changes you have made to its sibling, you can run the following find/replace operations to make sure you're depending on your latest work (and not the released version):
 
-1. Find and replace (package-to-test being the package with local changes -- make sure these are committed to first to avoid the find/replace operations below polluting your work):
+1. In the `package.json` files for packages in which you want to test the sibling, find and replace (package-to-test being the package with local changes -- make sure these are committed to first to avoid the find/replace operations below polluting your work):
 
     > "@opentripplanner/package-to-test": **"current-version"**
     
     with
     
-    > "@opentripplanner/core-utils": **"file:../package-to-test"**
+    > "@opentripplanner/package-to-test": **"file:../package-to-test"**
 
 2. Find and replace:
 
