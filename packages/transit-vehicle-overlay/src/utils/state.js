@@ -48,12 +48,11 @@ export function trackedVehicleState(
     routePatternRef.current = routePattern;
   }, [routePattern]);
 
-  const getRoutePattern = (vehicle) => {
+  const getRoutePattern = vehicle => {
     if (fetchPatternCallback && vehicle) {
       const pid = routePatternRef.current ? routePatternRef.current.id : null;
       const cached = vehicle.tripId === pid;
-      if (!cached)
-        fetchPatternCallback(vehicle, setRoutePattern);
+      if (!cached) fetchPatternCallback(vehicle, setRoutePattern);
     }
 
     return routePatternRef.current;
@@ -76,8 +75,7 @@ export function trackedVehicleState(
       setRoutePattern(null);
     } else if (vehicle) {
       setTrackedVehicle(vehicle);
-      if (updatePattern)
-        getRoutePattern(vehicle);
+      if (updatePattern) getRoutePattern(vehicle);
     }
   };
 
@@ -106,8 +104,8 @@ export function vehicleListUpdater(
   fetchVehiclesCallback,
   getTrackedVehicle,
   updateTrackedVehicle,
-  trackedVehicleId=null,
-  refreshDelay=null
+  trackedVehicleId = null,
+  refreshDelay = null
 ) {
   const [vehicleList, setVehicleList] = useState([]);
   refreshDelay = checkRefreshInteval(refreshDelay);

@@ -33,7 +33,15 @@ const GEOM_TRIP_API_CONFIG = {
   suffix: "/geometry/geojson"
 };
 
-export async function fetchVehicles(routes = "100,90,190,200,290,20,57") {
+let DEF_ROUTES = "100,90,190,200,290,20,57";
+
+export function setDefRoutes(dr) {
+  if (dr && dr.length > 0) DEF_ROUTES = dr;
+}
+
+export async function fetchVehicles(routes) {
+  if (!routes) routes = DEF_ROUTES;
+
   let retVal = [];
   try {
     const routeList = routes.replace(/\s+/g, "").split(",");
@@ -48,7 +56,8 @@ export async function fetchVehicles(routes = "100,90,190,200,290,20,57") {
   return retVal;
 }
 
-export async function fetchAltVehicles(routes = "100,90,190,200,290,20,57") {
+export async function fetchAltVehicles(routes) {
+  if (!routes) routes = DEF_ROUTES;
   let retVal = [];
   try {
     const routeList = routes.replace(/\s+/g, "").split(",");
