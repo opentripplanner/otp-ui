@@ -1,9 +1,22 @@
+import * as classicModes from "./classic-modes";
 import * as companies from "./companies";
 import * as directions from "./directions";
 import * as generic from "./generic";
+import * as modModes from "./mod";
 import * as trimet from "./trimet";
 import TriMetLegIcon from "./trimet-leg-icon";
 import TriMetModeIcon from "./trimet-mode-icon";
+
+const {
+  ClassicBike,
+  ClassicBus,
+  ClassicCar,
+  ClassicFerry,
+  ClassicGondola,
+  ClassicMicromobility,
+  ClassicTram,
+  ClassicWalk
+} = classicModes;
 
 const {
   Biketown,
@@ -21,6 +34,7 @@ const {
   Spin,
   Uber
 } = companies;
+
 const {
   CircleClockwise,
   CircleCounterclockwise,
@@ -35,7 +49,20 @@ const {
   UTurnLeft,
   UTurnRight
 } = directions;
+
 const { ArrowDown, ArrowLeft, Refresh, Star } = generic;
+
+const {
+  ModBike,
+  ModBus,
+  ModGondola,
+  ModRail,
+  ModStreetcar,
+  ModTram,
+  ModTransit,
+  ModWalk
+} = modModes;
+
 const {
   Accessible,
   AerialTram,
@@ -110,6 +137,14 @@ export {
   Circle,
   CircleClockwise,
   CircleCounterclockwise,
+  ClassicBike,
+  ClassicBus,
+  ClassicCar,
+  ClassicFerry,
+  ClassicGondola,
+  ClassicMicromobility,
+  ClassicTram,
+  ClassicWalk,
   Elevator,
   Email,
   Feedback,
@@ -130,6 +165,14 @@ export {
   Max,
   MaxCircle,
   Micromobility,
+  ModBike,
+  ModBus,
+  ModGondola,
+  ModRail,
+  ModStreetcar,
+  ModTram,
+  ModTransit,
+  ModWalk,
   Parking,
   Phone,
   Plane,
