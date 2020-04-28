@@ -18,6 +18,29 @@ See:
  yarn dev # (opens storybook to running component library on localhost:5555)
 ```
 
+## Development
+
+Some packages in otp-ui depend on sibling packages (e.g., `@opentripplanner/core-utils` is used by many of its siblings). In order to test a package with local changes you have made to its sibling, you can run the following find/replace operations to make sure you're depending on your latest work (and not the released version):
+
+1. In the `package.json` files for packages in which you want to test the sibling, find and replace (package-to-test being the package with local changes -- make sure these are committed to first to avoid the find/replace operations below polluting your work):
+
+    > "@opentripplanner/package-to-test": **"current-version"**
+    
+    with
+    
+    > "@opentripplanner/package-to-test": **"file:../package-to-test"**
+
+2. In your source files, find and replace:
+
+    > opentripplanner/package-to-test/**lib**/types
+
+    with
+
+    > opentripplanner/package-to-test/**src**/types
+
+3. Run:
+`yarn && yarn dev`
+
 ## Stack
 
 > A Monorepo with multiple packages and a shared build, test, and release process.
