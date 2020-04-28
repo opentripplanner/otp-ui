@@ -48,7 +48,16 @@ export function trackedVehicleState(
     routePatternRef.current = routePattern;
   }, [routePattern]);
 
-  const getRoutePattern = () => routePatternRef.current;
+  const getRoutePattern = (vehicle) => {
+    if (fetchPatternCallback && vehicle) {
+      const pid = routePatternRef.current ? routePatternRef.current.id : null;
+      const cached = vehicle.tripId === pid;
+      if (!cached)
+        fetchPatternCallback(vehicle, setRoutePattern);
+    }
+
+    return routePatternRef.current;
+  };
 
   /**
    * accept a vehicle record and two booleans to control how state is updated
@@ -67,11 +76,8 @@ export function trackedVehicleState(
       setRoutePattern(null);
     } else if (vehicle) {
       setTrackedVehicle(vehicle);
-      if (updatePattern && fetchPatternCallback) {
-        const cached =
-          getRoutePattern() && vehicle.tripId === getRoutePattern().id;
-        if (!cached) fetchPatternCallback(vehicle, setRoutePattern);
-      }
+      if (updatePattern)
+        getRoutePattern(vehicle);
     }
   };
 
@@ -85,7 +91,7 @@ export function trackedVehicleState(
     return [trackedVehicle, trackedVehicleRef.current];
   };
 
-  return [routePattern, getTrackedVehicle, updateTrackedVehicle];
+  return [getRoutePattern, getTrackedVehicle, updateTrackedVehicle];
 }
 
 /**
@@ -100,7 +106,8 @@ export function vehicleListUpdater(
   fetchVehiclesCallback,
   getTrackedVehicle,
   updateTrackedVehicle,
-  refreshDelay
+  trackedVehicleId=null,
+  refreshDelay=null
 ) {
   const [vehicleList, setVehicleList] = useState([]);
   refreshDelay = checkRefreshInteval(refreshDelay);
@@ -114,7 +121,7 @@ export function vehicleListUpdater(
       data.linterIgnoreTheseProps(trackedVehicle);
 
       // update the tracked vehicle with latest position
-      const queryId = data.getVehicleId(trackedRef);
+      const queryId = data.getVehicleId(trackedRef) || trackedVehicleId;
       if (queryId && updateTrackedVehicle) {
         const t = data.findVehicleById(vehicles, queryId);
         if (t) updateTrackedVehicle(t, false, true);

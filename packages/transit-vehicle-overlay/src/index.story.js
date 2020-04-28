@@ -51,7 +51,7 @@ function simpleExample(vehicleData, patternGeometry, selectVehicleId) {
   // state setup for zoom (refreshes layer) and selected vehicles
   const [zoom, onViewportChanged] = utils.zoomState(INITIAL_ZOOM_LEVEL);
   const [
-    routePattern,
+    getRoutePattern,
     getTrackedVehicle,
     updateTrackedVehicle
   ] = utils.trackedVehicleState(fetchPattern, initVehicle, patternGeometry);
@@ -76,7 +76,7 @@ function simpleExample(vehicleData, patternGeometry, selectVehicleId) {
         vehicleList={vehicleData}
         onVehicleClicked={clickVehicle}
         selectedVehicle={trackedVehicle}
-        pattern={routePattern}
+        pattern={getRoutePattern()}
         onRecenterMap={recenter}
         TooltipSlot={VehicleTooltip}
         PopupSlot={VehiclePopup}
@@ -105,7 +105,7 @@ function rectangles(popup = true) {
   // state setup for zoom (refreshes layer) and selected vehicles
   const [zoom, onViewportChanged] = utils.zoomState(INITIAL_ZOOM_LEVEL);
   const [
-    routePattern,
+    getRoutePattern,
     getTrackedVehicle,
     updateTrackedVehicle
   ] = utils.trackedVehicleState(fetchPattern, initVehicle, patternGeometry);
@@ -157,7 +157,7 @@ function rectangles(popup = true) {
         vehicleList={vehicleData}
         onVehicleClicked={clickVehicle}
         selectedVehicle={trackedVehicle}
-        pattern={routePattern}
+        pattern={getRoutePattern()}
         onRecenterMap={recenter}
         MarkerSlot={ModeRectangles}
         TooltipSlot={CustomTooltip}
@@ -178,7 +178,7 @@ function realtimeExample(fetchVehicles, fetchPattern, markers) {
   // state setup for zoom (refreshes layer) and selected vehicles
   const [zoom, onViewportChanged] = utils.zoomState(INITIAL_ZOOM_LEVEL);
   const [
-    routePattern,
+    getRoutePattern,
     getTrackedVehicle,
     updateTrackedVehicle
   ] = utils.trackedVehicleState(fetchPattern);
@@ -211,7 +211,7 @@ function realtimeExample(fetchVehicles, fetchPattern, markers) {
         vehicleList={vehicleList}
         onVehicleClicked={clickVehicle}
         selectedVehicle={trackedVehicle}
-        pattern={routePattern}
+        pattern={getRoutePattern(trackedVehicle)}
         onRecenterMap={recenter}
         color={clr}
         highlightColor={highlightColor}
