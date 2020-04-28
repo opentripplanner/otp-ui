@@ -4,12 +4,7 @@ import { withA11y } from "@storybook/addon-a11y";
 import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
 import { storiesOf } from "@storybook/react";
-import {
-  //  text,
-  //  number,
-  color,
-  withKnobs
-} from "@storybook/addon-knobs";
+import { text, boolean, color, withKnobs } from "@storybook/addon-knobs";
 
 import "../__mocks__/map.css";
 import BaseMap from "@opentripplanner/base-map";
@@ -169,8 +164,17 @@ function rectangles(popup = true) {
 
 /** with static data, show a simple version of the real-time transit vehicles layer */
 function realtimeExample(fetchVehicles, fetchPattern, markers) {
-  // initial setup
-  const recenter = utils.recenterPanTo();
+  // knobs setup
+  const routes = text("list of routes to query vehicles", junk.DEF_ROUTES);
+  const trackedId = text("tripId or blockId of tracked vehicle", "");
+
+  const isFlyTo = boolean("FlyTo Recenter (PanTo default)", false);
+  const showOnlyTracked = boolean("hide other vehicles when tracking", false);
+  const clr = color("color:", "#28639c");
+  const highlightColor = color("isTracked color:", "#D1472D");
+
+  // recenter the map via either FlyTo or PanTo
+  const recenter = isFlyTo ? utils.recenterFlyTo() : utils.recenterPanTo();
   const clickVehicle = vehicle => {
     setClicked(vehicle);
   };
@@ -197,8 +201,14 @@ function realtimeExample(fetchVehicles, fetchPattern, markers) {
     updateTrackedVehicle
   );
 
-  const clr = color("color:", "#28639c");
-  const highlightColor = color("isTracked color:", "#D1472D");
+  // knobs override defaults for route list and select vehicle (popup button) methods
+  // note: this knob override of vehicle selection would need to be handled better in real life
+  junk.setDefRoutes(routes);
+  let tv = trackedVehicle;
+  if (trackedId) {
+    const t = utils.findVehicleById(vehicleList, trackedId);
+    if (t) tv = t;
+  }
 
   return (
     <BaseMap
@@ -210,8 +220,9 @@ function realtimeExample(fetchVehicles, fetchPattern, markers) {
         zoom={zoom}
         vehicleList={vehicleList}
         onVehicleClicked={clickVehicle}
-        selectedVehicle={trackedVehicle}
-        pattern={getRoutePattern(trackedVehicle)}
+        selectedVehicle={tv}
+        showOnlyTracked={showOnlyTracked}
+        pattern={getRoutePattern(tv)}
         onRecenterMap={recenter}
         color={clr}
         highlightColor={highlightColor}

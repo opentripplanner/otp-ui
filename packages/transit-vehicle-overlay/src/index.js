@@ -5,12 +5,14 @@ import { FeatureGroup } from "react-leaflet";
 import { transitVehicleType } from "@opentripplanner/core-utils/lib/types";
 import VehicleGeometry from "./components/VehicleGeometry";
 import RouteGeometry from "./components/RouteGeometry";
+import * as utils from "./utils";
 
 export default function TransitVehicleOverlay(props) {
   const {
     zoom,
     vehicleList,
     selectedVehicle,
+    showOnlyTracked,
 
     // VehicleGeometry
     color,
@@ -28,15 +30,26 @@ export default function TransitVehicleOverlay(props) {
     lowlight
   } = props;
 
+  // when a vehicle is selected, pre-determine whether to show pattern and what vehicles
+  let vl = vehicleList;
+  let showPattern = false;
+  if (
+    selectedVehicle &&
+    utils.findVehicleById(vehicleList, selectedVehicle.tripId)
+  ) {
+    if (showOnlyTracked) vl = [selectedVehicle];
+    if (pattern) showPattern = true;
+  }
+
   return (
     <FeatureGroup>
-      {vehicleList &&
-        vehicleList.map(v => (
+      {vl &&
+        vl.map(v => (
           <VehicleGeometry
             zoom={zoom}
             key={v.id}
             vehicle={v}
-            isTracked={selectedVehicle && selectedVehicle.id === v.id}
+            isTracked={selectedVehicle && selectedVehicle.tripId === v.tripId}
             onVehicleClicked={onVehicleClicked}
             onRecenterMap={onRecenterMap}
             MarkerSlot={MarkerSlot}
@@ -46,7 +59,7 @@ export default function TransitVehicleOverlay(props) {
             highlightColor={highlightColor}
           />
         ))}
-      {pattern && selectedVehicle && (
+      {showPattern && (
         <RouteGeometry
           zoom={zoom}
           selectedVehicle={selectedVehicle}
@@ -65,6 +78,7 @@ TransitVehicleOverlay.propTypes = {
   zoom: PropTypes.number,
   vehicleList: PropTypes.arrayOf(transitVehicleType),
   selectedVehicle: transitVehicleType,
+  showOnlyTracked: PropTypes.bool,
 
   // VehicleGeometry types
   color: VehicleGeometry.propTypes.color,
@@ -87,6 +101,7 @@ TransitVehicleOverlay.defaultProps = {
   zoom: 14,
   vehicleList: null,
   selectedVehicle: null,
+  showOnlyTracked: false,
 
   // VehicleGeometry defaults
   color: VehicleGeometry.defaultProps.color,
