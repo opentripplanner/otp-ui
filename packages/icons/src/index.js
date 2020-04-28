@@ -4,8 +4,12 @@ import * as directions from "./directions";
 import * as generic from "./generic";
 import * as mod from "./mod";
 import * as trimet from "./trimet";
+import ClassicLegIcon from "./classic-leg-icon";
+import ClassicModeIcon from "./classic-mode-icon";
 import TriMetLegIcon from "./trimet-leg-icon";
 import TriMetModeIcon from "./trimet-mode-icon";
+import TriMetModLegIcon from "./trimet-mod-leg-icon";
+import TriMetModModeIcon from "./trimet-mod-mode-icon";
 
 const {
   ClassicBike,
@@ -142,7 +146,9 @@ export {
   ClassicCar,
   ClassicFerry,
   ClassicGondola,
+  ClassicLegIcon,
   ClassicMicromobility,
+  ClassicModeIcon,
   ClassicTram,
   ClassicWalk,
   Elevator,
@@ -197,6 +203,8 @@ export {
   TriMet,
   TriMetLegIcon,
   TriMetModeIcon,
+  TriMetModLegIcon,
+  TriMetModModeIcon,
   TripPlanner,
   TripPlannerSolid,
   UTurnLeft,

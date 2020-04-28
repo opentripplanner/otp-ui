@@ -1,4 +1,5 @@
 import { itineraryType } from "@opentripplanner/core-utils/lib/types";
+import ClassicLegIcon from "@opentripplanner/icons/lib/classic-leg-icon";
 import TriMetLegIcon from "@opentripplanner/icons/lib/trimet-leg-icon";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
@@ -53,6 +54,7 @@ class ItineraryBodyDefaultsWrapper extends Component {
   render() {
     const {
       itinerary,
+      LegIcon,
       LineColumnContent,
       PlaceName,
       RouteDescription,
@@ -83,7 +85,7 @@ class ItineraryBodyDefaultsWrapper extends Component {
         diagramVisible={diagramVisible}
         frameLeg={action("frameLeg")}
         itinerary={itinerary}
-        LegIcon={TriMetLegIcon}
+        LegIcon={LegIcon}
         LineColumnContent={LineColumnContent || DefaultLineColumnContent}
         PlaceName={PlaceName || DefaultPlaceName}
         RouteDescription={RouteDescription || DefaultRouteDescription}
@@ -106,6 +108,7 @@ class ItineraryBodyDefaultsWrapper extends Component {
 
 ItineraryBodyDefaultsWrapper.propTypes = {
   itinerary: itineraryType.isRequired,
+  LegIcon: PropTypes.elementType,
   LineColumnContent: PropTypes.elementType,
   PlaceName: PropTypes.elementType,
   RouteDescription: PropTypes.elementType,
@@ -120,6 +123,7 @@ ItineraryBodyDefaultsWrapper.propTypes = {
 };
 
 ItineraryBodyDefaultsWrapper.defaultProps = {
+  LegIcon: TriMetLegIcon,
   LineColumnContent: undefined,
   PlaceName: undefined,
   RouteDescription: undefined,
@@ -137,6 +141,7 @@ function OtpRRItineraryBodyWrapper({ itinerary }) {
   return (
     <ItineraryBodyDefaultsWrapper
       itinerary={itinerary}
+      LegIcon={ClassicLegIcon}
       LineColumnContent={OtpRRLineColumnContent}
       PlaceName={OtpRRPlaceName}
       RouteDescription={OtpRRRouteDescription}

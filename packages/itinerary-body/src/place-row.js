@@ -94,6 +94,7 @@ const PlaceRow = ({
               <TransitLegBody
                 config={config}
                 leg={leg}
+                LegIcon={LegIcon}
                 legIndex={legIndex}
                 setActiveLeg={setActiveLeg}
                 longDateFormat={longDateFormat}

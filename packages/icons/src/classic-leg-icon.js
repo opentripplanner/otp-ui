@@ -1,10 +1,10 @@
 import React from "react";
 
-import LegIcon from "./leg-icon";
+import LegIconCore from "./leg-icon-core";
 import ClassicModeIcon from "./classic-mode-icon";
 
-const ClassicLegIcon = props => {
-  return <LegIcon ModeIcon={ClassicModeIcon} {...props} />;
-};
+const ClassicLegIcon = props => (
+  <LegIconCore ModeIcon={ClassicModeIcon} {...props} />
+);
 
 export default ClassicLegIcon;
