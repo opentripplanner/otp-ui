@@ -1,8 +1,8 @@
-import * as classicModes from "./classic-modes";
+import * as classic from "./classic";
 import * as companies from "./companies";
 import * as directions from "./directions";
 import * as generic from "./generic";
-import * as modModes from "./mod";
+import * as mod from "./mod";
 import * as trimet from "./trimet";
 import TriMetLegIcon from "./trimet-leg-icon";
 import TriMetModeIcon from "./trimet-mode-icon";
@@ -16,7 +16,7 @@ const {
   ClassicMicromobility,
   ClassicTram,
   ClassicWalk
-} = classicModes;
+} = classic;
 
 const {
   Biketown,
@@ -61,7 +61,7 @@ const {
   ModTram,
   ModTransit,
   ModWalk
-} = modModes;
+} = mod;
 
 const {
   Accessible,
