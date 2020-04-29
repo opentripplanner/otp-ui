@@ -8,6 +8,7 @@ import { text, boolean, color, withKnobs } from "@storybook/addon-knobs";
 
 import "../__mocks__/map.css";
 import BaseMap from "@opentripplanner/base-map";
+import { formatDurationWithSeconds } from "@opentripplanner/core-utils/src/time";
 import TransitVehicleOverlay from "./index";
 
 // marker / popup / tooltip slots
@@ -18,7 +19,7 @@ import VehicleTooltip from "./components/popups/VehicleTooltip";
 import VehiclePopup from "./components/popups/VehiclePopup";
 
 import * as utils from "./utils";
-import * as junk from "../__mocks__/junk";
+import * as proprietary from "../__mocks__/proprietaryFetchUtils";
 
 const geom = require("../__mocks__/lineGeom100.json");
 const line = require("../__mocks__/line100.json");
@@ -125,10 +126,17 @@ function rectangles(popup = true) {
     }
   };
 
+  // silly function used to change the arrival time in this example
+  function makeRandomDate() {
+    const secs = Date.now() % 379;
+    const prettyDate = formatDurationWithSeconds(secs);
+    return prettyDate;
+  }
+
   // tooltip content callback function
   CustomTooltip.defaultProps.getContent = (vehicle, isTracked) => {
     utils.linterIgnoreTheseProps(isTracked);
-    const prettyDate = junk.makeRandomDate();
+    const prettyDate = makeRandomDate();
     let retVal;
     if (vehicle && vehicle.routeShortName) {
       retVal = `${vehicle.routeShortName} is arriving in ${prettyDate}`;
@@ -165,7 +173,7 @@ function rectangles(popup = true) {
 /** with static data, show a simple version of the real-time transit vehicles layer */
 function realtimeExample(fetchVehicles, fetchPattern, markers) {
   // knobs setup
-  const routes = text("list of routes to query vehicles", junk.DEF_ROUTES);
+  const routes = text("list of routes to query vehicles", "");
   const trackedId = text("tripId or blockId of tracked vehicle", "");
 
   const isFlyTo = boolean("FlyTo Recenter (PanTo default)", false);
@@ -203,7 +211,7 @@ function realtimeExample(fetchVehicles, fetchPattern, markers) {
 
   // knobs override defaults for route list and select vehicle (popup button) methods
   // note: this knob override of vehicle selection would need to be handled better in real life
-  junk.setDefRoutes(routes);
+  proprietary.setDefRoutes(routes);
   let tv = trackedVehicle;
   if (trackedId) {
     const t = utils.findVehicleById(vehicleList, trackedId);
@@ -251,13 +259,17 @@ function simpleRectangles() {
 }
 
 function rtCircles() {
-  return realtimeExample(junk.fetchVehicles, junk.fetchPattern, ModeCircles);
+  return realtimeExample(
+    proprietary.fetchVehicles,
+    proprietary.fetchPatternDebounced,
+    ModeCircles
+  );
 }
 
 function rtRectangles() {
   return realtimeExample(
-    junk.fetchAltVehicles,
-    junk.fetchPattern,
+    proprietary.fetchAltVehicles,
+    proprietary.fetchPatternDebounced,
     ModeRectangles
   );
 }

@@ -1,10 +1,10 @@
-import { formatDurationWithSeconds } from "@opentripplanner/core-utils/lib/time";
+import { debounce } from "throttle-debounce";
 import * as utils from "../src/utils";
 
-export function makeRandomDate() {
-  const secs = Date.now() % 379;
-  const prettyDate = formatDurationWithSeconds(secs);
-  return prettyDate;
+let DEF_ROUTES = "100,90,190,200,290,20,57";
+
+export function setDefRoutes(dr) {
+  if (dr && dr.length > 0) DEF_ROUTES = dr;
 }
 
 const VEHICLE_API_CONFIG = {
@@ -32,12 +32,6 @@ const GEOM_TRIP_API_CONFIG = {
   agency: "TRIMET",
   suffix: "/geometry/geojson"
 };
-
-let DEF_ROUTES = "100,90,190,200,290,20,57";
-
-export function setDefRoutes(dr) {
-  if (dr && dr.length > 0) DEF_ROUTES = dr;
-}
 
 export async function fetchVehicles(routes) {
   if (!routes) routes = DEF_ROUTES;
@@ -92,3 +86,12 @@ export async function fetchPattern(vehicle, setter) {
     console.error(e);
   }
 }
+
+/**
+ * the way the story is written (an maybe the way others will use the component), there aref
+ * multiple redraws of a selected vehicle happening, thus pulling on the pattern service multiple
+ * (race condition) times. debouncing helps a bit...
+ */
+export const fetchPatternDebounced = debounce(180, true, (vehicle, setter) => {
+  fetchPattern(vehicle, setter);
+});
