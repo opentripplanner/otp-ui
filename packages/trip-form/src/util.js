@@ -47,6 +47,49 @@ export function getModeString(modeObj) {
   return modeObj.mode || modeObj;
 }
 
+/**
+ * Of the specified companies, returns those that operate the specified modes.
+ * @param {*} companies The supported companies per OTP configuration.
+ * @param {*} modes The desired modes for which to get the operating companies.
+ * @returns An array of companies that operate the specified modes (should not be undefined as companies is an array).
+ */
+function getCompanies(companies, modes) {
+  return companies
+    .filter(
+      comp => comp.modes.split(",").filter(m => modes.includes(m)).length > 0
+    )
+    .filter(comp => hasRental(comp.modes) || hasHail(comp.modes));
+}
+
+/**
+ * Returns an array containing the company ids, in upper case for MOD UI URLs, for the specified mode id.
+ * The mode id scheme is set and used by function getTransitCombinedModeOptions().
+ * @param {*} id The mode id to process.
+ * @param {*} supportedCompanies The list of supported companies (see structure in __mocks__/companies.js).
+ */
+export function getCompaniesForModeId(id, supportedCompanies) {
+  const newModes = id.split("+"); // Duplicate logic.
+  const nonTransitModes = newModes.length > 1 ? [newModes[1]] : ["WALK"]; // Duplicate logic.
+
+  // Accommodate companies defined under accessModes.
+  // Convert company ID to upper case for passing to MOD UI URL.
+  const defaultAccessModeCompany =
+    newModes.length > 2 ? [newModes[2].toUpperCase()] : null;
+
+  // If there are multiple (scooter | bikeshare | etc.) providers,
+  // then if one is specified by the mode button, select it,
+  // othewise select all providers.
+  // Convert company IDs to upper case for passing to MOD UI URL.
+  // selectedCompanies is at least an empty array.
+  const companies =
+    defaultAccessModeCompany ||
+    getCompanies(supportedCompanies, nonTransitModes).map(comp =>
+      comp.id.toUpperCase()
+    );
+
+  return { defaultAccessModeCompany, companies };
+}
+
 export function getTransitSubmodeOptions(icons, modes, selectedModes) {
   const { transitModes } = modes;
 
@@ -67,6 +110,11 @@ export function getTransitSubmodeOptions(icons, modes, selectedModes) {
   });
 }
 
+/**
+ * Returns big primary "Take Transit" choice.
+ * @param {*} icons The icons for rendering.
+ * @param {*} selectedModes An array of string that lists the modes selected for a trip query.
+ */
 function getPrimaryModeOption(icons, selectedModes) {
   return {
     id: "TRANSIT",
@@ -82,7 +130,21 @@ function getPrimaryModeOption(icons, selectedModes) {
   };
 }
 
-function getTransitCombinedModeOptions(icons, modes, selectedModes) {
+/**
+ * Returns the transit + access mode combinations.
+ * @param {*} icons The icon set to use.
+ * @param {*} modes The available modes to choose from.
+ * @param {*} selectedModes An array of string that lists the modes selected for a trip query.
+ * @param {*} selectedCompanies The companies to show as selected.
+ * @param {*} supportedCompanies The supported companies for certain modes.
+ */
+function getTransitCombinedModeOptions(
+  icons,
+  modes,
+  selectedModes,
+  selectedCompanies,
+  supportedCompanies
+) {
   const { accessModes } = modes;
   const modesHaveTransit = selectedModes.some(isTransit);
 
@@ -90,12 +152,38 @@ function getTransitCombinedModeOptions(icons, modes, selectedModes) {
     accessModes &&
     accessModes.map(modeObj => {
       const modeStr = getModeString(modeObj);
+      const modeCompany = modeObj.company
+        ? modeObj.company.toUpperCase()
+        : null;
+
+      const id = `TRANSIT+${modeStr}${
+        modeObj.company ? `+${modeObj.company}` : ""
+      }`;
+
+      const { companies } = getCompaniesForModeId(id, supportedCompanies);
+      const modeMonopoly = companies[0];
+      const CompanyIcon = getCompanyIcon(modeCompany || modeMonopoly || "");
+
       return {
-        id: `TRANSIT+${modeStr}${modeObj.company ? `+${modeObj.company}` : ""}`,
-        selected: modesHaveTransit && selectedModes.includes(modeStr),
+        id,
+        selected:
+          modesHaveTransit &&
+          selectedModes.includes(modeStr) &&
+          (!selectedCompanies.length ||
+            !modeCompany ||
+            selectedCompanies.includes(modeCompany)),
         text: (
           <span>
-            {icons.TRANSIT}+{icons[modeStr]}
+            {icons.TRANSIT}+
+            {icons[modeStr] || icons[`${modeStr}_${modeCompany}`] || (
+              <CompanyIcon />
+            )}
+            {/* Access mode icons are processed in the order above, so that:
+             * - Any generic mode (e.g. BICYCLE_RENT) can be directly customized using `icons`,
+             * - Implementers can set icons for companies not in OTP-UI or override OTP-UI icons using `icons`,
+             *   using the scheme <OTP_MODE>_<COMPANY> (e.g. 'CAR_HAIL_UBER').
+             * - Icons for common companies (defined in the icons package) don't need to be specified in `icons`.
+             */}
           </span>
         ),
         title: modeObj.label
@@ -104,6 +192,12 @@ function getTransitCombinedModeOptions(icons, modes, selectedModes) {
   );
 }
 
+/**
+ * Returns the exclusive mode options.
+ * @param {*} icons The icon set to use.
+ * @param {*} modes The available modes to choose from.
+ * @param {*} selectedModes An array of string that lists the modes selected for a trip query.
+ */
 function getExclusiveModeOptions(icons, modes, selectedModes) {
   const { exclusiveModes } = modes;
 
@@ -127,28 +221,30 @@ function getExclusiveModeOptions(icons, modes, selectedModes) {
 /**
  * Generates the options (primary, secondary, tertiary) for the mode selector based on the modes read from config.yaml.
  * @param {*} modes The modes defined in config.yaml.
+ * @param {*} icons The icon set to use.
+ * @param {*} modes The available modes to choose from.
  * @param {*} selectedModes An array of string that lists the modes selected for a trip query.
+ * @param {*} selectedCompanies The companies to show as selected.
+ * @param {*} supportedCompanies The supported companies for certain modes.
  */
-export function getModeOptions(icons, modes, selectedModes) {
+export function getModeOptions(
+  icons,
+  modes,
+  selectedModes,
+  selectedCompanies,
+  supportedCompanies
+) {
   return {
     primary: getPrimaryModeOption(icons, selectedModes),
-    secondary: getTransitCombinedModeOptions(icons, modes, selectedModes),
+    secondary: getTransitCombinedModeOptions(
+      icons,
+      modes,
+      selectedModes,
+      selectedCompanies,
+      supportedCompanies
+    ),
     tertiary: getExclusiveModeOptions(icons, modes, selectedModes)
   };
-}
-
-/**
- * Of the specified companies, returns those that operate the specified modes.
- * @param {*} companies The supported companies per OTP configuration.
- * @param {*} modes The desired modes for which to get the operating companies.
- * @returns An array of companies that operate the specified modes (should not be undefined as companies is an array).
- */
-export function getCompanies(companies, modes) {
-  return companies
-    .filter(
-      comp => comp.modes.split(",").filter(m => modes.includes(m)).length > 0
-    )
-    .filter(comp => hasRental(comp.modes) || hasHail(comp.modes));
 }
 
 /**

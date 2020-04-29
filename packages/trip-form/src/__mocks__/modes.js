@@ -41,6 +41,16 @@ const commonModes = {
       label: "Transit + Uber",
       company: "Uber" // Optional.
       // If not set and the user selects this, "companies" should default to Uber.
+    },
+    {
+      mode: "CAR_RENT",
+      label: "Transit + ReachNow",
+      company: "ReachNow"
+    },
+    {
+      mode: "CAR_RENT",
+      label: "Transit + Car2Go",
+      company: "Car2Go"
     }
   ],
   exclusiveModes: ["WALK", "BICYCLE", "MICROMOBILITY"],

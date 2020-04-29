@@ -17,7 +17,7 @@ import * as Styled from "../styled";
 import {
   getModeOptions,
   getTransitSubmodeOptions,
-  getCompanies,
+  getCompaniesForModeId,
   getCompaniesOptions,
   getBicycleOrMicromobilityModeOptions,
   isBike
@@ -78,9 +78,13 @@ export default class SettingsSelectorPanel extends Component {
         lastTransitModes = lastTransitModes.concat(allTransitModes);
       }
 
-      const nonTransitModes = newModes.length > 1 ? [newModes[1]] : ["WALK"]; // TODO: also accommodate WALK+DRIVE, WALK+e-scooter?? They already seem to work without WALK right now.
-      const defaultAccessModeCompany =
-        newModes.length > 2 ? [newModes[2]] : null; // To accommodate companies defined under accessModes.
+      const nonTransitModes = newModes.length > 1 ? [newModes[1]] : ["WALK"];
+      // TODO: also accommodate WALK+DRIVE, WALK+e-scooter?? They already seem to work without WALK right now.
+
+      const { defaultAccessModeCompany, companies } = getCompaniesForModeId(
+        id,
+        supportedCompanies
+      );
 
       // Add previously selected transit modes only if none were active.
       const finalModes = (activeTransitModes.length > 0
@@ -88,17 +92,9 @@ export default class SettingsSelectorPanel extends Component {
         : lastTransitModes
       ).concat(nonTransitModes);
 
-      // If there are multiple (scooter | bikeshare) providers,
-      // then if one is specified by the mode button, select it,
-      // othewise select all providers.
-      // selectedCompanies is at least an empty array.
-      const selectedCompanies =
-        defaultAccessModeCompany ||
-        getCompanies(supportedCompanies, nonTransitModes).map(comp => comp.id);
-
       this.handleQueryParamChange({
         mode: finalModes.join(","),
-        companies: selectedCompanies.join(",")
+        companies: companies.join(",")
       });
 
       this.setState({
@@ -165,8 +161,15 @@ export default class SettingsSelectorPanel extends Component {
     } = this.props;
     const { defaultAccessModeCompany } = this.state;
     const selectedModes = this.getSelectedModes();
+    const selectedCompanies = this.getSelectedCompanies();
 
-    const modeOptions = getModeOptions(icons, supportedModes, selectedModes);
+    const modeOptions = getModeOptions(
+      icons,
+      supportedModes,
+      selectedModes,
+      selectedCompanies,
+      supportedCompanies
+    );
     const transitModes = getTransitSubmodeOptions(
       icons,
       supportedModes,
@@ -178,7 +181,7 @@ export default class SettingsSelectorPanel extends Component {
         defaultAccessModeCompany ? comp.id === defaultAccessModeCompany : true
       ),
       nonTransitModes,
-      this.getSelectedCompanies()
+      selectedCompanies
     );
     const bikeModes = getBicycleOrMicromobilityModeOptions(
       icons,
