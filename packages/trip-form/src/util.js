@@ -175,9 +175,9 @@ function getTransitCombinedModeOptions(
         text: (
           <span>
             {icons.TRANSIT}+
-            {icons[modeStr] || icons[`${modeStr}_${modeCompany}`] || (
-              <CompanyIcon />
-            )}
+            {icons[modeStr] ||
+              icons[`${modeStr}_${modeCompany}`] ||
+              (CompanyIcon && <CompanyIcon />)}
             {/* Access mode icons are processed in the order above, so that:
              * - Any generic mode (e.g. BICYCLE_RENT) can be directly customized using `icons`,
              * - Implementers can set icons for companies not in OTP-UI or override OTP-UI icons using `icons`,

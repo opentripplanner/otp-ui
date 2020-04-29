@@ -1,4 +1,3 @@
-import trimetModeIcons from "@opentripplanner/icons/lib/trimet-mode-icons"; // "../../icons/src/trimet-mode-icons";
 import React, { Component } from "react";
 import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
@@ -69,7 +68,6 @@ export default {
 export const settingsSelectorPanel = () => (
   <PanelWrapper>
     <SettingsSelectorPanel
-      icons={trimetModeIcons}
       supportedModes={commonModes}
       supportedCompanies={commonCompanies}
     />
@@ -80,7 +78,7 @@ export const settingsSelectorPanelWithCustomIcons = () => (
   <PanelWrapper>
     <SettingsSelectorPanel
       icons={customIcons}
-      supportedModes={commonModes}
+      supportedModes={commonModesEmpty}
       supportedCompanies={commonCompanies}
     />
   </PanelWrapper>
@@ -89,7 +87,6 @@ export const settingsSelectorPanelWithCustomIcons = () => (
 export const settingsSelectorPanelUndefinedParams = () => (
   <PanelWrapper>
     <SettingsSelectorPanel
-      icons={trimetModeIcons}
       supportedModes={commonModesEmpty}
       supportedCompanies={undefined}
     />

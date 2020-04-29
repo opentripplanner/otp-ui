@@ -1,3 +1,4 @@
+import trimetModeIcons from "@opentripplanner/icons/lib/trimet-mode-icons"; // "../../icons/src/trimet-mode-icons";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import {
@@ -289,7 +290,7 @@ SettingsSelectorPanel.propTypes = {
 
 SettingsSelectorPanel.defaultProps = {
   className: null,
-  icons: null,
+  icons: trimetModeIcons,
   onQueryParamChange: null,
   queryParams: null,
   supportedCompanies: []
