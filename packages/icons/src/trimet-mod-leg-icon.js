@@ -1,10 +1,10 @@
 import React from "react";
 
-import LegIconCore from "./leg-icon-core";
+import LegIcon from "./leg-icon";
 import TriMetModModeIcon from "./trimet-mod-mode-icon";
 
 const TriMetModLegIcon = props => (
-  <LegIconCore ModeIcon={TriMetModModeIcon} {...props} />
+  <LegIcon ModeIcon={TriMetModModeIcon} {...props} />
 );
 
 export default TriMetModLegIcon;
