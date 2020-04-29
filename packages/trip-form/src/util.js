@@ -10,8 +10,6 @@ import {
 } from "@opentripplanner/core-utils/lib/itinerary";
 import { getCompanyIcon } from "@opentripplanner/icons/lib/companies";
 
-import ModeIcon from "./ModeIcon";
-
 export function isBike(mode) {
   return isBicycle(mode) || isBicycleRent(mode);
 }
@@ -60,7 +58,7 @@ export function getTransitSubmodeOptions(icons, modes, selectedModes) {
       selected: selectedModes.includes(modeStr),
       text: (
         <span>
-          <ModeIcon icons={icons} mode={modeStr} />
+          {icons[modeStr]}
           {modeObj.label}
         </span>
       ),
@@ -76,7 +74,7 @@ function getPrimaryModeOption(icons, selectedModes) {
     showTitle: false,
     text: (
       <span>
-        <ModeIcon icons={icons} mode="TRANSIT" />
+        {icons.TRANSIT}
         Take Transit
       </span>
     ),
@@ -97,8 +95,7 @@ function getTransitCombinedModeOptions(icons, modes, selectedModes) {
         selected: modesHaveTransit && selectedModes.includes(modeStr),
         text: (
           <span>
-            <ModeIcon icons={icons} mode="TRANSIT" />+
-            <ModeIcon icons={icons} mode={modeStr} />
+            {icons.TRANSIT}+{icons[modeStr]}
           </span>
         ),
         title: modeObj.label
@@ -119,7 +116,8 @@ function getExclusiveModeOptions(icons, modes, selectedModes) {
       showTitle: false,
       text: (
         <span>
-          <ModeIcon icons={icons} mode={modeObj.mode} /> {modeObj.label}
+          {icons[modeObj.mode]}
+          {modeObj.label}
         </span>
       ),
       title: modeObj.label
@@ -196,7 +194,8 @@ export function getBicycleOrMicromobilityModeOptions(
         selected: selectedModes.includes(mode.mode),
         text: (
           <span>
-            <ModeIcon icons={icons} mode={mode.mode} /> {mode.label}
+            {icons[mode.mode]}
+            {mode.label}
           </span>
         ),
         title: mode.label
