@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import * as ItineraryBodyClasses from "../styled";
 
-const TriMetLegIconContainer = styled.div`
+const LegIconContainer = styled.div`
   float: left;
   height: 24px;
   margin-right: 6px;
@@ -16,9 +16,9 @@ export default function RouteDescription({ leg, LegIcon }) {
   const { headsign, routeLongName, routeShortName } = leg;
   return (
     <ItineraryBodyClasses.LegDescriptionForTransit>
-      <TriMetLegIconContainer>
+      <LegIconContainer>
         <LegIcon leg={leg} />
-      </TriMetLegIconContainer>
+      </LegIconContainer>
       {routeShortName && (
         <div>
           <ItineraryBodyClasses.LegDescriptionRouteShortName>
