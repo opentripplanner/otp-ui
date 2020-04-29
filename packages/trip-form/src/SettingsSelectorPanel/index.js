@@ -1,4 +1,4 @@
-import trimetModeIcons from "@opentripplanner/icons/lib/trimet-mode-icons"; // "../../icons/src/trimet-mode-icons";
+import { TriMetModeIcon } from "@opentripplanner/icons";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import {
@@ -154,7 +154,7 @@ export default class SettingsSelectorPanel extends Component {
   render() {
     const {
       className,
-      icons,
+      ModeIcon,
       queryParams,
       supportedModes,
       supportedCompanies,
@@ -165,14 +165,14 @@ export default class SettingsSelectorPanel extends Component {
     const selectedCompanies = this.getSelectedCompanies();
 
     const modeOptions = getModeOptions(
-      icons,
+      ModeIcon,
       supportedModes,
       selectedModes,
       selectedCompanies,
       supportedCompanies
     );
     const transitModes = getTransitSubmodeOptions(
-      icons,
+      ModeIcon,
       supportedModes,
       selectedModes
     );
@@ -185,12 +185,12 @@ export default class SettingsSelectorPanel extends Component {
       selectedCompanies
     );
     const bikeModes = getBicycleOrMicromobilityModeOptions(
-      icons,
+      ModeIcon,
       supportedModes.bicycleModes,
       selectedModes
     );
     const scooterModes = getBicycleOrMicromobilityModeOptions(
-      icons,
+      ModeIcon,
       supportedModes.micromobilityModes,
       selectedModes
     );
@@ -261,12 +261,9 @@ SettingsSelectorPanel.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * A customized lookup of icons.
-   * These are defined as part of the implementing webapp.
-   * If this lookup is not defined, then a lookup using the OPT-UI icons package will be used instead.
+   * The icon component for rendering mode icons. Defaults to the OPT-UI TriMetModeIcon component.
    */
-  // eslint-disable-next-line react/forbid-prop-types
-  icons: PropTypes.object,
+  ModeIcon: PropTypes.elementType,
   /**
    * Triggered when a query parameter is changed.
    * @param params An object that contains the new values for the parameter(s) that has (have) changed.
@@ -290,7 +287,7 @@ SettingsSelectorPanel.propTypes = {
 
 SettingsSelectorPanel.defaultProps = {
   className: null,
-  icons: trimetModeIcons,
+  ModeIcon: TriMetModeIcon,
   onQueryParamChange: null,
   queryParams: null,
   supportedCompanies: []

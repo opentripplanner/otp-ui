@@ -90,7 +90,13 @@ export function getCompaniesForModeId(id, supportedCompanies) {
   return { defaultAccessModeCompany, companies };
 }
 
-export function getTransitSubmodeOptions(icons, modes, selectedModes) {
+/**
+ * Returns the available transit modes (rail, bus, etc.).
+ * @param {*} ModeIcon The icon component for rendering.
+ * @param {*} modes The available modes to choose from.
+ * @param {*} selectedModes The modes that should appear selected.
+ */
+export function getTransitSubmodeOptions(ModeIcon, modes, selectedModes) {
   const { transitModes } = modes;
 
   // FIXME: If only one transit mode is available, select it.
@@ -101,7 +107,7 @@ export function getTransitSubmodeOptions(icons, modes, selectedModes) {
       selected: selectedModes.includes(modeStr),
       text: (
         <span>
-          {icons[modeStr]}
+          <ModeIcon mode={modeStr} />
           {modeObj.label}
         </span>
       ),
@@ -112,17 +118,17 @@ export function getTransitSubmodeOptions(icons, modes, selectedModes) {
 
 /**
  * Returns big primary "Take Transit" choice.
- * @param {*} icons The icons for rendering.
+ * @param {*} ModeIcon The icon component for rendering.
  * @param {*} selectedModes An array of string that lists the modes selected for a trip query.
  */
-function getPrimaryModeOption(icons, selectedModes) {
+function getPrimaryModeOption(ModeIcon, selectedModes) {
   return {
     id: "TRANSIT",
     selected: selectedModes.some(isTransit) && selectedModes.includes("WALK"),
     showTitle: false,
     text: (
       <span>
-        {icons.TRANSIT}
+        <ModeIcon mode="TRANSIT" />
         Take Transit
       </span>
     ),
@@ -139,7 +145,7 @@ function getPrimaryModeOption(icons, selectedModes) {
  * @param {*} supportedCompanies The supported companies for certain modes.
  */
 function getTransitCombinedModeOptions(
-  icons,
+  ModeIcon,
   modes,
   selectedModes,
   selectedCompanies,
@@ -164,6 +170,23 @@ function getTransitCombinedModeOptions(
       const modeMonopoly = companies[0];
       const CompanyIcon = getCompanyIcon(modeCompany || modeMonopoly || "");
 
+      /**
+       * We don't know in advance if a particular icon is supported by the ModeIcon component.
+       * Therefore, for rendering, we need to know whether one of the following
+       * did render something, so we know whether to fall back on the next icon.
+       * Hence the regular function call syntax rather than <Tags />.
+       *
+       * Access mode icons are processed in the order below, so that:
+       * - Any generic mode (e.g. BICYCLE_RENT) can be directly customized using `icons`,
+       * - Implementers can set icons for companies not in OTP-UI or override OTP-UI icons using `icons`,
+       *   using the scheme <OTP_MODE>_<COMPANY> (e.g. 'CAR_HAIL_UBER').
+       * - Icons for common companies (defined in the icons package) don't need to be specified in `icons`.
+       */
+      const FinalIcon =
+        ModeIcon({ mode: modeStr }) ||
+        ModeIcon({ mode: `${modeStr}_${modeCompany}` }) ||
+        (CompanyIcon && <CompanyIcon />);
+
       return {
         id,
         selected:
@@ -174,16 +197,7 @@ function getTransitCombinedModeOptions(
             selectedCompanies.includes(modeCompany)),
         text: (
           <span>
-            {icons.TRANSIT}+
-            {icons[modeStr] ||
-              icons[`${modeStr}_${modeCompany}`] ||
-              (CompanyIcon && <CompanyIcon />)}
-            {/* Access mode icons are processed in the order above, so that:
-             * - Any generic mode (e.g. BICYCLE_RENT) can be directly customized using `icons`,
-             * - Implementers can set icons for companies not in OTP-UI or override OTP-UI icons using `icons`,
-             *   using the scheme <OTP_MODE>_<COMPANY> (e.g. 'CAR_HAIL_UBER').
-             * - Icons for common companies (defined in the icons package) don't need to be specified in `icons`.
-             */}
+            <ModeIcon mode="TRANSIT" />+{FinalIcon}
           </span>
         ),
         title: modeObj.label
@@ -194,27 +208,26 @@ function getTransitCombinedModeOptions(
 
 /**
  * Returns the exclusive mode options.
- * @param {*} icons The icon set to use.
+ * @param {*} ModeIcon The icon component for rendering.
  * @param {*} modes The available modes to choose from.
  * @param {*} selectedModes An array of string that lists the modes selected for a trip query.
  */
-function getExclusiveModeOptions(icons, modes, selectedModes) {
+function getExclusiveModeOptions(ModeIcon, modes, selectedModes) {
   const { exclusiveModes } = modes;
 
   return supportedExclusiveModes
-    .filter(mode => exclusiveModes && exclusiveModes.includes(mode.mode))
-    .map(modeObj => ({
-      id: modeObj.mode,
-      selected:
-        !selectedModes.some(isTransit) && selectedModes.some(modeObj.isActive),
+    .filter(({ mode }) => exclusiveModes && exclusiveModes.includes(mode))
+    .map(({ isActive, label, mode }) => ({
+      id: mode,
+      selected: !selectedModes.some(isTransit) && selectedModes.some(isActive),
       showTitle: false,
       text: (
         <span>
-          {icons[modeObj.mode]}
-          {modeObj.label}
+          <ModeIcon mode={mode} />
+          {label}
         </span>
       ),
-      title: modeObj.label
+      title: label
     }));
 }
 
@@ -228,22 +241,22 @@ function getExclusiveModeOptions(icons, modes, selectedModes) {
  * @param {*} supportedCompanies The supported companies for certain modes.
  */
 export function getModeOptions(
-  icons,
+  ModeIcon,
   modes,
   selectedModes,
   selectedCompanies,
   supportedCompanies
 ) {
   return {
-    primary: getPrimaryModeOption(icons, selectedModes),
+    primary: getPrimaryModeOption(ModeIcon, selectedModes),
     secondary: getTransitCombinedModeOptions(
-      icons,
+      ModeIcon,
       modes,
       selectedModes,
       selectedCompanies,
       supportedCompanies
     ),
-    tertiary: getExclusiveModeOptions(icons, modes, selectedModes)
+    tertiary: getExclusiveModeOptions(ModeIcon, modes, selectedModes)
   };
 }
 
@@ -273,29 +286,28 @@ export function getCompaniesOptions(companies, modes, selectedCompanies) {
 
 /**
  * Returns the UI options for the specified bike/micromobility modes and selection.
+ * @param {*} ModeIcon The component for rendering icons.
  * @param {*} modes The supported bike or micromobility modes.
  * @param {*} selectedModes The modes to render selected from the UI.
  * @returns An array of UI options, or undefined if modes is undefined.
  */
 export function getBicycleOrMicromobilityModeOptions(
-  icons,
+  ModeIcon,
   modes,
   selectedModes
 ) {
   return (
     modes &&
-    modes.map(mode => {
-      return {
-        id: mode.mode,
-        selected: selectedModes.includes(mode.mode),
-        text: (
-          <span>
-            {icons[mode.mode]}
-            {mode.label}
-          </span>
-        ),
-        title: mode.label
-      };
-    })
+    modes.map(({ label, mode }) => ({
+      id: mode,
+      selected: selectedModes.includes(mode),
+      text: (
+        <span>
+          <ModeIcon mode={mode} />
+          {label}
+        </span>
+      ),
+      title: label
+    }))
   );
 }

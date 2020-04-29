@@ -11,29 +11,38 @@ import {
   ClassicWalk
 } from "./classic";
 
-function ClassicModeIcon({ label, ...props }) {
-  if (!label) return null;
-  switch (label.toLowerCase()) {
-    case "bus":
-      return <ClassicBus {...props} />;
-    case "tram":
-    case "rail":
-    case "subway":
-      return <ClassicTram {...props} />;
-    case "walk":
-      return <ClassicWalk {...props} />;
+/**
+ * Icons for all classic OTP-react-redux modes.
+ * Any hail and rental modes managed by one or multiple companies
+ * are optional but can be overriden here using the
+ * pattern <otp_mode>_<company_id> (e.g. 'car_hail_uber').
+ */
+function ClassicModeIcon({ mode, ...props }) {
+  if (!mode) return null;
+  switch (mode.toLowerCase()) {
     case "bicycle":
     case "bicycle_rent":
       return <ClassicBike {...props} />;
+    case "bus":
+      return <ClassicBus {...props} />;
+    case "car":
+    case "car_park":
+      return <ClassicCar {...props} />;
     case "ferry":
       return <ClassicFerry {...props} />;
     case "gondola":
       return <ClassicGondola {...props} />;
-    case "car":
-      return <ClassicCar {...props} />;
     case "micromobility":
     case "micromobility_rent":
       return <ClassicMicromobility {...props} />;
+    case "rail":
+    case "subway":
+    case "tram":
+      return <ClassicTram {...props} />;
+    case "transit":
+      return <ClassicBus {...props} />;
+    case "walk":
+      return <ClassicWalk {...props} />;
     default:
       return null;
   }
