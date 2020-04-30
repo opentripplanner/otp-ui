@@ -49,8 +49,8 @@ export function getModeString(modeObj) {
 
 /**
  * Of the specified companies, returns those that operate the specified modes.
- * @param {*} companies The supported companies per OTP configuration.
- * @param {*} modes The desired modes for which to get the operating companies.
+ * @param companies The supported companies per OTP configuration.
+ * @param modes The desired modes for which to get the operating companies.
  * @returns An array of companies that operate the specified modes (should not be undefined as companies is an array).
  */
 function getCompanies(companies, modes) {
@@ -64,8 +64,8 @@ function getCompanies(companies, modes) {
 /**
  * Returns an array containing the company ids, in upper case for MOD UI URLs, for the specified mode id.
  * The mode id scheme is set and used by function getTransitCombinedModeOptions().
- * @param {*} id The mode id to process.
- * @param {*} supportedCompanies The list of supported companies (see structure in __mocks__/companies.js).
+ * @param id The mode id to process.
+ * @param supportedCompanies The list of supported companies (see structure in __mocks__/companies.js).
  */
 export function getCompaniesForModeId(id, supportedCompanies) {
   const newModes = id.split("+");
@@ -94,9 +94,9 @@ export function getCompaniesForModeId(id, supportedCompanies) {
 
 /**
  * Returns the available transit modes (rail, bus, etc.).
- * @param {*} ModeIcon The icon component for rendering.
- * @param {*} modes The available modes to choose from.
- * @param {*} selectedModes The modes that should appear selected.
+ * @param ModeIcon The icon component for rendering.
+ * @param modes The available modes to choose from.
+ * @param selectedModes The modes that should appear selected.
  */
 export function getTransitSubmodeOptions(ModeIcon, modes, selectedModes) {
   const { transitModes } = modes;
@@ -120,8 +120,8 @@ export function getTransitSubmodeOptions(ModeIcon, modes, selectedModes) {
 
 /**
  * Returns big primary "Take Transit" choice.
- * @param {*} ModeIcon The icon component for rendering.
- * @param {*} selectedModes An array of string that lists the modes selected for a trip query.
+ * @param ModeIcon The icon component for rendering.
+ * @param selectedModes An array of string that lists the modes selected for a trip query.
  */
 function getPrimaryModeOption(ModeIcon, selectedModes) {
   return {
@@ -140,11 +140,11 @@ function getPrimaryModeOption(ModeIcon, selectedModes) {
 
 /**
  * Returns the transit + access mode combinations.
- * @param {*} icons The icon set to use.
- * @param {*} modes The available modes to choose from.
- * @param {*} selectedModes An array of string that lists the modes selected for a trip query.
- * @param {*} selectedCompanies The companies to show as selected.
- * @param {*} supportedCompanies The supported companies for certain modes.
+ * @param icons The icon set to use.
+ * @param modes The available modes to choose from.
+ * @param selectedModes An array of string that lists the modes selected for a trip query.
+ * @param selectedCompanies The companies to show as selected.
+ * @param supportedCompanies The supported companies for certain modes.
  */
 function getTransitCombinedModeOptions(
   ModeIcon,
@@ -209,9 +209,9 @@ function getTransitCombinedModeOptions(
 
 /**
  * Returns the exclusive mode options.
- * @param {*} ModeIcon The icon component for rendering.
- * @param {*} modes The available modes to choose from.
- * @param {*} selectedModes An array of string that lists the modes selected for a trip query.
+ * @param ModeIcon The icon component for rendering.
+ * @param modes The available modes to choose from.
+ * @param selectedModes An array of string that lists the modes selected for a trip query.
  */
 function getExclusiveModeOptions(ModeIcon, modes, selectedModes) {
   const { exclusiveModes } = modes;
@@ -233,12 +233,12 @@ function getExclusiveModeOptions(ModeIcon, modes, selectedModes) {
 
 /**
  * Generates the options (primary, secondary, tertiary) for the mode selector based on the modes read from config.yaml.
- * @param {*} modes The modes defined in config.yaml.
- * @param {*} icons The icon set to use.
- * @param {*} modes The available modes to choose from.
- * @param {*} selectedModes An array of string that lists the modes selected for a trip query.
- * @param {*} selectedCompanies The companies to show as selected (when the user selects an exclusive mode operated by multiple companies).
- * @param {*} supportedCompanies The supported companies for certain access modes.
+ * @param modes The modes defined in config.yaml.
+ * @param icons The icon set to use.
+ * @param modes The available modes to choose from.
+ * @param selectedModes An array of string that lists the modes selected for a trip query.
+ * @param selectedCompanies The companies to show as selected (when the user selects an exclusive mode operated by multiple companies).
+ * @param supportedCompanies The supported companies for certain access modes.
  */
 export function getModeOptions(
   ModeIcon,
@@ -262,9 +262,9 @@ export function getModeOptions(
 
 /**
  * Returns the UI options for the specified companies, modes, and selection.
- * @param {*} companies The supported companies per OTP configuration.
- * @param {*} modes The desired modes for which to get the operating companies.
- * @param {*} selectedCompanies The companies to render selected from the UI.
+ * @param companies The supported companies per OTP configuration.
+ * @param modes The desired modes for which to get the operating companies.
+ * @param selectedCompanies The companies to render selected from the UI.
  * @returns An array of UI options (should not be undefined as companies is an array).
  */
 export function getCompaniesOptions(companies, modes, selectedCompanies) {
@@ -286,9 +286,9 @@ export function getCompaniesOptions(companies, modes, selectedCompanies) {
 
 /**
  * Returns the UI options for the specified bike/micromobility modes and selection.
- * @param {*} ModeIcon The component for rendering icons.
- * @param {*} modes The supported bike or micromobility modes.
- * @param {*} selectedModes The modes to render selected from the UI.
+ * @param ModeIcon The component for rendering icons.
+ * @param modes The supported bike or micromobility modes.
+ * @param selectedModes The modes to render selected from the UI.
  * @returns An array of UI options, or undefined if modes is undefined.
  */
 export function getBicycleOrMicromobilityModeOptions(
