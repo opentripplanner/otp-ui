@@ -4,7 +4,6 @@ import StandardGondola from "./standard-gondola";
 import StandardRail from "./standard-rail";
 import StandardStreetcar from "./standard-streetcar";
 import StandardTram from "./standard-tram";
-import StandardTransit from "./standard-transit";
 import StandardWalk from "./standard-walk";
 
 export {
@@ -14,6 +13,5 @@ export {
   StandardRail,
   StandardStreetcar,
   StandardTram,
-  StandardTransit,
   StandardWalk
 };

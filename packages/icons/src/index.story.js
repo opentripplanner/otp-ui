@@ -12,10 +12,10 @@ const allStories = storiesOf("Icons", module);
 const noStoryComponents = [
   "ClassicLegIcon",
   "ClassicModeIcon",
+  "StandardLegIcon",
+  "StandardModeIcon",
   "TriMetLegIcon",
-  "TriMetModeIcon",
-  "TriMetModLegIcon",
-  "TriMetModModeIcon"
+  "TriMetModeIcon"
 ];
 
 Object.keys(Icons).forEach(iconKey => {

@@ -6,10 +6,10 @@ import * as standard from "./standard";
 import * as trimet from "./trimet";
 import ClassicLegIcon from "./classic-leg-icon";
 import ClassicModeIcon from "./classic-mode-icon";
+import StandardLegIcon from "./standard-leg-icon";
+import StandardModeIcon from "./standard-mode-icon";
 import TriMetLegIcon from "./trimet-leg-icon";
 import TriMetModeIcon from "./trimet-mode-icon";
-import TriMetModLegIcon from "./trimet-mod-leg-icon";
-import TriMetModModeIcon from "./trimet-mod-mode-icon";
 
 const {
   ClassicBike,
@@ -63,7 +63,6 @@ const {
   StandardRail,
   StandardStreetcar,
   StandardTram,
-  StandardTransit,
   StandardWalk
 } = standard;
 
@@ -187,10 +186,11 @@ export {
   StandardBike,
   StandardBus,
   StandardGondola,
+  StandardLegIcon,
+  StandardModeIcon,
   StandardRail,
   StandardStreetcar,
   StandardTram,
-  StandardTransit,
   StandardWalk,
   Star,
   StopStation,
@@ -203,8 +203,6 @@ export {
   TriMet,
   TriMetLegIcon,
   TriMetModeIcon,
-  TriMetModLegIcon,
-  TriMetModModeIcon,
   TripPlanner,
   TripPlannerSolid,
   UTurnLeft,
