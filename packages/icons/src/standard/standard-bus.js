@@ -1,6 +1,6 @@
 import React from "react";
 
-const ModBus = ({ title, ...props }) => (
+const StandardBus = ({ title, ...props }) => (
   <svg version="1.1" viewBox="0 0 32 32" height="100%" width="100%" {...props}>
     <g>
       <g>
@@ -17,4 +17,4 @@ const ModBus = ({ title, ...props }) => (
   </svg>
 );
 
-export default ModBus;
+export default StandardBus;

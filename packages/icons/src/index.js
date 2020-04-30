@@ -2,7 +2,7 @@ import * as classic from "./classic";
 import * as companies from "./companies";
 import * as directions from "./directions";
 import * as generic from "./generic";
-import * as mod from "./mod";
+import * as standard from "./standard";
 import * as trimet from "./trimet";
 import ClassicLegIcon from "./classic-leg-icon";
 import ClassicModeIcon from "./classic-mode-icon";
@@ -57,15 +57,15 @@ const {
 const { ArrowDown, ArrowLeft, Refresh, Star } = generic;
 
 const {
-  ModBike,
-  ModBus,
-  ModGondola,
-  ModRail,
-  ModStreetcar,
-  ModTram,
-  ModTransit,
-  ModWalk
-} = mod;
+  StandardBike,
+  StandardBus,
+  StandardGondola,
+  StandardRail,
+  StandardStreetcar,
+  StandardTram,
+  StandardTransit,
+  StandardWalk
+} = standard;
 
 const {
   Accessible,
@@ -171,14 +171,6 @@ export {
   Max,
   MaxCircle,
   Micromobility,
-  ModBike,
-  ModBus,
-  ModGondola,
-  ModRail,
-  ModStreetcar,
-  ModTram,
-  ModTransit,
-  ModWalk,
   Parking,
   Phone,
   Plane,
@@ -192,6 +184,14 @@ export {
   SlightRight,
   Snow,
   Spin,
+  StandardBike,
+  StandardBus,
+  StandardGondola,
+  StandardRail,
+  StandardStreetcar,
+  StandardTram,
+  StandardTransit,
+  StandardWalk,
   Star,
   StopStation,
   StopStationSolid,

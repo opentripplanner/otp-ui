@@ -5,7 +5,7 @@ import TriMetModeIcon from "./trimet-mode-icon";
 import BiketownIcon from "./companies/biketown-icon";
 
 const TriMetLegIcon = ({ leg, ModeIcon, ...props }) => {
-  // Custom TriMet icons.
+  // Custom TriMet icon logic.
   if (leg.routeLongName && leg.routeLongName.startsWith("Portland Streetcar")) {
     return <TriMetModeIcon mode="STREETCAR" {...props} />;
   }

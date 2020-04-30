@@ -1,6 +1,6 @@
 import React from "react";
 
-const ModBike = ({ title, ...props }) => (
+const StandardBike = ({ title, ...props }) => (
   <svg version="1.1" viewBox="0 0 32 32" height="100%" width="100%" {...props}>
     <g>
       <path d="M6.9,15.4c-3.8,0-6.9,3.1-6.9,6.9c0,3.8,3.1,6.9,6.9,7c3.8,0,6.9-3.1,6.9-7C13.9,18.6,10.8,15.5,6.9,15.4z M10.7,26.1 c-0.9,1-2.3,1.6-3.7,1.6c-1.4,0-2.8-0.6-3.7-1.6c-0.9-0.9-1.5-2.3-1.5-3.7c0-1.4,0.6-2.8,1.5-3.7c1-1,2.3-1.5,3.7-1.5 c1.4,0,2.8,0.6,3.7,1.5c1,0.9,1.5,2.3,1.5,3.7C12.2,23.8,11.6,25.2,10.7,26.1z" />
@@ -13,4 +13,4 @@ const ModBike = ({ title, ...props }) => (
   </svg>
 );
 
-export default ModBike;
+export default StandardBike;
