@@ -79,13 +79,11 @@ export default class SettingsSelectorPanel extends Component {
         lastTransitModes = lastTransitModes.concat(allTransitModes);
       }
 
-      const nonTransitModes = newModes.length > 1 ? [newModes[1]] : ["WALK"];
-      // TODO: also accommodate WALK+DRIVE, WALK+e-scooter?? They already seem to work without WALK right now.
-
-      const { defaultAccessModeCompany, companies } = getCompaniesForModeId(
-        id,
-        supportedCompanies
-      );
+      const {
+        defaultAccessModeCompany,
+        companies,
+        nonTransitModes
+      } = getCompaniesForModeId(id, supportedCompanies);
 
       // Add previously selected transit modes only if none were active.
       const finalModes = (activeTransitModes.length > 0

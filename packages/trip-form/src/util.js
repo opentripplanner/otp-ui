@@ -68,17 +68,19 @@ function getCompanies(companies, modes) {
  * @param {*} supportedCompanies The list of supported companies (see structure in __mocks__/companies.js).
  */
 export function getCompaniesForModeId(id, supportedCompanies) {
-  const newModes = id.split("+"); // Duplicate logic.
-  const nonTransitModes = newModes.length > 1 ? [newModes[1]] : ["WALK"]; // Duplicate logic.
+  const newModes = id.split("+");
+  const nonTransitModes = newModes.length > 1 ? [newModes[1]] : ["WALK"];
+  // TODO: for non-transit modes, shoudl we also accommodate WALK+DRIVE, WALK+e-scooter??
+  // They already seem to work without WALK right now.
 
   // Accommodate companies defined under accessModes.
   // Convert company ID to upper case for passing to MOD UI URL.
   const defaultAccessModeCompany =
     newModes.length > 2 ? [newModes[2].toUpperCase()] : null;
 
-  // If there are multiple (scooter | bikeshare | etc.) providers,
-  // then if one is specified by the mode button, select it,
-  // othewise select all providers.
+  // If there are multiple (scooter | bikeshare | etc.) companies,
+  // then if one is specified in the configured modes, then use that company.
+  // Othewise, if this is for an exclusive mode (bike, scooter), then use all companies.
   // Convert company IDs to upper case for passing to MOD UI URL.
   // selectedCompanies is at least an empty array.
   const companies =
@@ -87,7 +89,7 @@ export function getCompaniesForModeId(id, supportedCompanies) {
       comp.id.toUpperCase()
     );
 
-  return { defaultAccessModeCompany, companies };
+  return { defaultAccessModeCompany, companies, nonTransitModes };
 }
 
 /**
@@ -162,9 +164,8 @@ function getTransitCombinedModeOptions(
         ? modeObj.company.toUpperCase()
         : null;
 
-      const id = `TRANSIT+${modeStr}${
-        modeObj.company ? `+${modeObj.company}` : ""
-      }`;
+      const company = modeObj.company ? `+${modeObj.company}` : "";
+      const id = `TRANSIT+${modeStr}${company}`;
 
       const { companies } = getCompaniesForModeId(id, supportedCompanies);
       const modeMonopoly = companies[0];
@@ -223,8 +224,7 @@ function getExclusiveModeOptions(ModeIcon, modes, selectedModes) {
       showTitle: false,
       text: (
         <span>
-          <ModeIcon mode={mode} />
-          {label}
+          <ModeIcon mode={mode} /> {label}
         </span>
       ),
       title: label
@@ -237,8 +237,8 @@ function getExclusiveModeOptions(ModeIcon, modes, selectedModes) {
  * @param {*} icons The icon set to use.
  * @param {*} modes The available modes to choose from.
  * @param {*} selectedModes An array of string that lists the modes selected for a trip query.
- * @param {*} selectedCompanies The companies to show as selected.
- * @param {*} supportedCompanies The supported companies for certain modes.
+ * @param {*} selectedCompanies The companies to show as selected (when the user selects an exclusive mode operated by multiple companies).
+ * @param {*} supportedCompanies The supported companies for certain access modes.
  */
 export function getModeOptions(
   ModeIcon,
