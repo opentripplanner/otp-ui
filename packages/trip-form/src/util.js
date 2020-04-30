@@ -233,8 +233,7 @@ function getExclusiveModeOptions(ModeIcon, modes, selectedModes) {
 
 /**
  * Generates the options (primary, secondary, tertiary) for the mode selector based on the modes read from config.yaml.
- * @param modes The modes defined in config.yaml.
- * @param icons The icon set to use.
+ * @param ModeIcon The icon component for rendering.
  * @param modes The available modes to choose from.
  * @param selectedModes An array of string that lists the modes selected for a trip query.
  * @param selectedCompanies The companies to show as selected (when the user selects an exclusive mode operated by multiple companies).
