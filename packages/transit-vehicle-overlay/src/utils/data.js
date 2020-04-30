@@ -1,3 +1,5 @@
+/** utility functions for converting and manipulating vehicle data */
+
 /** this function is used to have props that are not used w/out lint errors */
 export function linterIgnoreTheseProps() {}
 

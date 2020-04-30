@@ -28,10 +28,19 @@ export default function VehicleTooltip(props) {
 }
 
 VehicleTooltip.propTypes = {
+  /** vehicle record - @see: core-utils/types/transitVehicleType */
   vehicle: transitVehicleType,
+
+  /** indicate if this vehicle is being tracked, */
   isTracked: PropTypes.bool,
+
+  /** is the tip always shown, or just shown on mouse hover */
   permanent: PropTypes.bool,
+
+  /** tip placement (side(s), top, bottom) */
   direction: PropTypes.string,
+
+  /** center of the marker, or some X,Y position in relation to the marker's center */
   offset: PropTypes.object // eslint-disable-line react/forbid-prop-types
 };
 

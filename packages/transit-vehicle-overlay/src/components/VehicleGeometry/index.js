@@ -22,6 +22,7 @@ export default function VehicleGeometry(props) {
 
   // recenter the map to focus on selected vehicle
   if (isTracked && onRecenterMap) {
+    // TODO: very leaflet specific - e.g., mb geo
     const { map } = useLeaflet();
     onRecenterMap(map, vehicle.lat, vehicle.lon);
   }
@@ -42,8 +43,12 @@ export default function VehicleGeometry(props) {
 }
 
 VehicleGeometry.propTypes = {
+  /** map zoom: is part of the props due to redrawing this layer on map zoom */
   zoom: PropTypes.number.isRequired,
+
+  /** required vehicle record for the vehicle */
   vehicle: transitVehicleType.isRequired,
+
   isTracked: PropTypes.bool,
 
   /** Callback fired when the vehicle is clicked (vehicle: object) => {} */
@@ -58,11 +63,16 @@ VehicleGeometry.propTypes = {
    */
   MarkerSlot: PropTypes.func,
 
-  /** popup and tooltip slot */
+  /** optional / customizable popup slot */
   PopupSlot: PropTypes.func,
+
+  /** optional / customizable tooltip slot */
   TooltipSlot: PropTypes.func,
 
+  /** fill color of a vehicle */
   color: PropTypes.string,
+
+  /** fill color of a tracked vehicle (see isTracked above) */
   highlightColor: PropTypes.string
 };
 

@@ -23,8 +23,13 @@ export default function VehicleTracker(props) {
 }
 
 VehicleTracker.propTypes = {
+  /** vehicle record - @see: core-utils/types/transitVehicleType */
   vehicle: transitVehicleType,
+
+  /** tracking state for this vehicle (marker) .. determines button content */
   isTracked: PropTypes.bool,
+
+  /** callback for when the button is triggered ... cb(vehicle, isTracked); */
   setTracked: PropTypes.func.isRequired
 };
 

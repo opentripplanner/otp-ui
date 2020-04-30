@@ -1,3 +1,5 @@
+/** various different strategies for moving the map when a tracked vehicle is moved */
+
 import { useState } from "react";
 import L from "leaflet";
 import { compareCoords } from "./coordinates";

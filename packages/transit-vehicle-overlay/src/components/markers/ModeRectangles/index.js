@@ -31,12 +31,16 @@ ModeRectangles.propTypes = {
   /** map zoom: is part of the props due to redrawing this layer on map zoom */
   zoom: PropTypes.number,
 
-  /** vehicle record */
+  /** vehicle record  - @see: core-utils/types/transitVehicleType */
   vehicle: transitVehicleType.isRequired,
 
   /** tracking boolean + colors all work to color the marker */
   isTracked: PropTypes.bool,
+
+  /** fill color (#AABBCC format) for all (non-tracked) map vehicle markers */
   color: PropTypes.string,
+
+  /** fill color of tracked vehicle */
   highlightColor: PropTypes.string,
 
   /** Callback fired when the vehicle is clicked (vehicle: object) => {} */

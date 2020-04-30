@@ -15,13 +15,13 @@ export default function TransitVehicleOverlay(props) {
     showOnlyTracked,
 
     // VehicleGeometry
-    color,
-    highlightColor,
     onVehicleClicked,
     onRecenterMap,
     MarkerSlot,
     PopupSlot,
     TooltipSlot,
+    color,
+    highlightColor,
 
     // RouteGeometry
     pattern,
@@ -30,7 +30,7 @@ export default function TransitVehicleOverlay(props) {
     lowlight
   } = props;
 
-  // when a vehicle is selected, pre-determine whether to show pattern and what vehicles
+  // when a vehicle is selected, pre-determine whether to show pattern and which vehicles
   let vl = vehicleList;
   let showPattern = false;
   if (
@@ -75,25 +75,53 @@ export default function TransitVehicleOverlay(props) {
 }
 
 TransitVehicleOverlay.propTypes = {
+  /** map zoom: used both to trigger re-renders and to style markers that rely on zoom */
   zoom: PropTypes.number,
+
+  /** array of vehicle records - @see: core-utils/types/transitVehicleType */
   vehicleList: PropTypes.arrayOf(transitVehicleType),
+
+  /** optional vehicle record for the tracked vehicle (same rec must be in vehicleList) */
   selectedVehicle: transitVehicleType,
+
+  /** showOnlyTracked will hide all other vehicles, except the tracked vehicle */
   showOnlyTracked: PropTypes.bool,
 
-  // VehicleGeometry types
-  color: VehicleGeometry.propTypes.color,
-  highlightColor: VehicleGeometry.propTypes.highlightColor,
+  // ////// VehicleGeometry types ////////
+
+  /** callback to return vehicle record when a marker is clicked */
   onVehicleClicked: VehicleGeometry.propTypes.onVehicleClicked,
+
+  /** map recenter option (e.g., panTo() or flyTo(), etc...) when tracked vehicle moves */
   onRecenterMap: VehicleGeometry.propTypes.onRecenterMap,
+
+  /** customizable markers used to represent the vehicles (see src/components/markers) */
   MarkerSlot: VehicleGeometry.propTypes.MarkerSlot,
+
+  /** customizable marker popup (see src/components/popups) */
   PopupSlot: VehicleGeometry.propTypes.PopupSlot,
+
+  /** customizable marker tooltips (see src/components/popups) */
   TooltipSlot: VehicleGeometry.propTypes.TooltipSlot,
 
-  // RouteGeometry types
+  /** fill color (#AABBCC format) for all (non-tracked) map vehicle markers */
+  color: VehicleGeometry.propTypes.color,
+
+  /** fill color of tracked vehicle; *to be travelled* portion of tracked route geom */
+  highlightColor: VehicleGeometry.propTypes.highlightColor,
+
+  // ////// RouteGeometry types ////////
+
+  /** line geometry, ala { id: <tripId>, data: [[lat, lon], [45.50,-122.41], etc..] } */
   pattern: RouteGeometry.propTypes.pattern,
-  // highlightColor - VehicleGeometry see above
+
+  /** color of the *already travelled* tracked vehicle route (see highlightColor) */
   lowlightColor: RouteGeometry.propTypes.lowlightColor,
+
+  /** line styling options for the to be traveled part of the line geom */
   highlight: RouteGeometry.propTypes.highlight,
+
+  /** line styling options for the already traveled portion of the line geom */
   lowlight: RouteGeometry.propTypes.lowlight
 };
 

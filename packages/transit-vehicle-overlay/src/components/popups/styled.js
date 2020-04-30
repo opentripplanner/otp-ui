@@ -1,3 +1,4 @@
+/** some shared styles used in the popups and tooltips */
 import styled from "styled-components";
 
 export const TooltipStyle = styled.span``;

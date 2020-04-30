@@ -1,3 +1,7 @@
+/**
+ * utilities to manipulate (line) geometries, ala splitting the pattern geometry into 2
+ * sections, of has already travelled, and to be travelled, etc...
+ */
 import React from "react";
 import { Polyline } from "react-leaflet";
 import * as turf from "@turf/helpers";

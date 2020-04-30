@@ -33,12 +33,25 @@ export default function CustomTooltip(props) {
 }
 
 CustomTooltip.propTypes = {
+  /** vehicle record - @see: core-utils/types/transitVehicleType */
   vehicle: transitVehicleType,
-  isTracked: PropTypes.bool,
-  allMarkers: PropTypes.bool,
+
+  /** callback used to supply content of the tip (e.g, "arrives in 5 minutes") */
   getContent: PropTypes.func,
+
+  /** indicate if this vehicle is being tracked, */
+  isTracked: PropTypes.bool,
+
+  /** control whether the tip goes on all markers or just the tracked marker */
+  allMarkers: PropTypes.bool,
+
+  /** is the tip always shown, or just shown on mouse hover */
   permanent: PropTypes.bool,
+
+  /** tip placement (side(s), top, bottom) */
   direction: PropTypes.string,
+
+  /** center of the marker, or some X,Y position in relation to the marker's center */
   offset: PropTypes.object // eslint-disable-line react/forbid-prop-types
 };
 

@@ -56,8 +56,13 @@ export default function VehiclePopup(props) {
 }
 
 VehiclePopup.propTypes = {
+  /** vehicle record - @see: core-utils/types/transitVehicleType */
   vehicle: transitVehicleType,
+
+  /** indicate if this vehicle is being tracked, */
   isTracked: PropTypes.bool,
+
+  /** callback which forwards the vehicle and tracking status from track button */
   setTracked: PropTypes.func
 };
 

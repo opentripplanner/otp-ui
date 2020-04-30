@@ -4,6 +4,7 @@ import styled from "styled-components";
 import L from "leaflet";
 import cloneDeep from "lodash.clonedeep";
 
+/** helper to render a React .svg structure, ala icons/Bus.js as a leaflet marker */
 export function renderAsImage(
   icon,
   size = [22, 22],
@@ -102,6 +103,19 @@ export function makeVehicleIcon(
   return icon;
 }
 
+/**
+ * different icons per mode is repeated in multiple places. This helper function is reused
+ * in multiple places to apply a normal and tracked style, based on various transit modes
+ *
+ * @param normal
+ * @param tracked
+ * @param busIcon
+ * @param railIcon
+ * @param tramIcon
+ * @param streetcarIcon
+ * @param gondolaIcon
+ * @return {*[]}
+ */
 export function makeModeStyles(
   normal,
   tracked,

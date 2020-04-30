@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes, { arrayOf } from "prop-types";
+import PropTypes from "prop-types";
 import { FeatureGroup } from "react-leaflet";
 
 import {
@@ -36,16 +36,28 @@ export default function RouteGeometry(props) {
 }
 
 RouteGeometry.propTypes = {
+  /** map zoom: is part of the props due to redrawing this layer on map zoom */
   zoom: PropTypes.number,
+
+  /** optional vehicle record for the (tracked) vehicle */
   selectedVehicle: transitVehicleType,
+
+  /** line geometry, ala { id: <tripId>, data: [[lat, lon], [45.50,-122.41], etc..] } */
   pattern: PropTypes.shape({
     id: PropTypes.string.isRequired,
     data: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired
   }),
-  splitCoord: arrayOf(PropTypes.number),
+
+  /** color of the *to be travelled* portion of tracked route geom */
   highlightColor: PropTypes.string,
+
+  /** color of the *already travelled* tracked vehicle route (see highlightColor) */
   lowlightColor: PropTypes.string,
+
+  /** line styling options for the to be traveled part of the line geom */
   highlight: leafletPathType,
+
+  /** line styling options for the already traveled portion of the line geom */
   lowlight: leafletPathType
 };
 
@@ -53,7 +65,6 @@ RouteGeometry.defaultProps = {
   zoom: 13,
   pattern: null,
   selectedVehicle: null,
-  splitCoord: null,
   highlightColor: null,
   lowlightColor: null,
   highlight: {

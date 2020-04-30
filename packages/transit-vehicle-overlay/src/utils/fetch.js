@@ -1,3 +1,4 @@
+/** utility helper functions used alongside proprietary web service calls / data fetch routines */
 const DEFAULT_REFRESH_TIME = 7000;
 
 /** get refresh values (default 7 second abs), and convert from secs to millisecs */
@@ -22,7 +23,7 @@ export const handleHttpResponse = response => {
     throw new Error(`Error fetching data. Status code: ${response.status}`);
   }
   /*
-    TODO: Trimet bubbles up their own error messages from time to time
+    TODO: TriMet services bubble up their own error messages from time to time
     and we'll want to grab those inside the `errorMessage` property
   */
   return response.json();
