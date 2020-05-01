@@ -187,8 +187,8 @@ function realtimeExample(fetchVehicles, fetchPattern, markers) {
     setClicked(vehicle);
   };
 
-  // state setup for zoom (refreshes layer) and selected vehicles
-  const [zoom, onViewportChanged] = utils.zoomState(INITIAL_ZOOM_LEVEL);
+  // state setup for zoom and center (changes redraws layer) and selected vehicles
+  const [zoom, center, onViewportChanged] = utils.viewState();
   const [
     getRoutePattern,
     getTrackedVehicle,
@@ -226,6 +226,7 @@ function realtimeExample(fetchVehicles, fetchPattern, markers) {
     >
       <TransitVehicleOverlay
         zoom={zoom}
+        center={center}
         vehicleList={vehicleList}
         onVehicleClicked={clickVehicle}
         selectedVehicle={tv}
@@ -261,7 +262,7 @@ function simpleRectangles() {
 function rtCircles() {
   return realtimeExample(
     proprietary.fetchVehicles,
-    proprietary.fetchPatternDebounced,
+    proprietary.fetchPatternThrottled,
     ModeCircles
   );
 }
@@ -269,7 +270,7 @@ function rtCircles() {
 function rtRectangles() {
   return realtimeExample(
     proprietary.fetchAltVehicles,
-    proprietary.fetchPatternDebounced,
+    proprietary.fetchPatternThrottled,
     ModeRectangles
   );
 }

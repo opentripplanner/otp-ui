@@ -10,6 +10,7 @@ import * as utils from "./utils";
 export default function TransitVehicleOverlay(props) {
   const {
     zoom,
+    center,
     vehicleList,
     selectedVehicle,
     showOnlyTracked,
@@ -29,6 +30,7 @@ export default function TransitVehicleOverlay(props) {
     highlight,
     lowlight
   } = props;
+  utils.linterIgnoreTheseProps(center);
 
   // when a vehicle is selected, pre-determine whether to show pattern and which vehicles
   let vl = vehicleList;
@@ -78,6 +80,9 @@ TransitVehicleOverlay.propTypes = {
   /** map zoom: used both to trigger re-renders and to style markers that rely on zoom */
   zoom: PropTypes.number,
 
+  /** map center: used both to trigger re-renders */
+  center: PropTypes.arrayOf(PropTypes.number),
+
   /** array of vehicle records - @see: core-utils/types/transitVehicleType */
   vehicleList: PropTypes.arrayOf(transitVehicleType),
 
@@ -126,7 +131,8 @@ TransitVehicleOverlay.propTypes = {
 };
 
 TransitVehicleOverlay.defaultProps = {
-  zoom: 14,
+  zoom: 13,
+  center: null,
   vehicleList: null,
   selectedVehicle: null,
   showOnlyTracked: false,

@@ -1,4 +1,4 @@
-import { debounce } from "throttle-debounce";
+import { debounce, throttle } from "throttle-debounce";
 import * as utils from "../src/utils";
 
 let DEF_ROUTES = "100,90,190,200,290,20,57";
@@ -88,10 +88,18 @@ export async function fetchPattern(vehicle, setter) {
 }
 
 /**
- * the way the story is written (an maybe the way others will use the component), there aref
+ * the way the story is written (an maybe the way others will use the component), there are
  * multiple redraws of a selected vehicle happening, thus pulling on the pattern service multiple
- * (race condition) times. debouncing helps a bit...
+ * (race condition) times. throttling and debouncing helps.
+ *
+ * And from my experience, throttled is both safest with acceptable performance (e.g., it will
+ * never pull more than every 2 seconds with the following throttle engaged)
  */
+export const fetchPatternThrottled = throttle(2500, true, (vehicle, setter) => {
+  fetchPattern(vehicle, setter);
+});
+
+/** debounce option ... but still allows multiple calls */
 export const fetchPatternDebounced = debounce(180, true, (vehicle, setter) => {
   fetchPattern(vehicle, setter);
 });

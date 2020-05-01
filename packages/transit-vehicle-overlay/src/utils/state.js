@@ -3,11 +3,11 @@ import { checkRefreshInteval } from "./fetch";
 import * as data from "./data";
 
 /**
- * use this hook when you want your layer to update after otp-ui' base-map zoom events fire
- * this component will capture and save zoom events from otp-ui's base-map component to state
+ * use this hook when you want your layer to re-paint after otp-ui map zoom events fire
+ * this component will capture and save zoom state from otp-ui's base-map component to state
  * :return: zoom level (number from leaflet) and the callback for base-map's onViewportChanged
  */
-export function zoomState(initialZoom = 13) {
+export function zoomState(initialZoom = 14) {
   const [mapZoom, setMapZoom] = useState(initialZoom);
 
   const onViewportChanged = ({ zoom }) => {
@@ -16,6 +16,24 @@ export function zoomState(initialZoom = 13) {
   };
 
   return [mapZoom, onViewportChanged];
+}
+
+/**
+ * use this hook when you want your layer to re-paint after otp-ui map zoom & recenter events fire
+ * this component will capture and save zoom and center from otp-ui's base-map viewport changes
+ * :return: zoom level, center [x,y] and the callback for base-map's onViewportChanged
+ */
+export function viewState(initialZoom = 14) {
+  const [mapZoom, setMapZoom] = useState(initialZoom);
+  const [mapCenter, setMapCenter] = useState([0.0, 0.0]);
+
+  const onViewportChanged = ({ zoom, center }) => {
+    // console.info(`zoom level ${zoom}`);
+    setMapZoom(zoom);
+    setMapCenter(center);
+  };
+
+  return [mapZoom, mapCenter, onViewportChanged];
 }
 
 /**

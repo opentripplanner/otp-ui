@@ -6,7 +6,12 @@ import {
 } from "./graphics";
 import { getVehicleCoordinates, compareCoords } from "./coordinates";
 import { recenterFlyTo, recenterPanTo, recenterPanToOffset } from "./recenter";
-import { zoomState, trackedVehicleState, vehicleListUpdater } from "./state";
+import {
+  zoomState,
+  viewState,
+  trackedVehicleState,
+  vehicleListUpdater
+} from "./state";
 import {
   convertAltData,
   getVehicleId,
@@ -30,6 +35,7 @@ import {
 
 export {
   zoomState,
+  viewState,
   trackedVehicleState,
   vehicleListUpdater,
   renderAsImage,
