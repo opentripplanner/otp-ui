@@ -22,10 +22,18 @@ export default function CustomTooltip(props) {
   let tooltipContent = null;
   if (isTracked || allMarkers) tooltipContent = getContent(vehicle, isTracked);
 
+  // the custom "rotation" tooltip orientation is either top or bottom
+  let dir = direction;
+  if (direction === "rotation") {
+    dir = "top";
+    if (vehicle && (vehicle.heading < 80 || vehicle.heading > 280))
+      dir = "bottom";
+  }
+
   return (
     tooltipContent &&
     (isTracked || allMarkers) && (
-      <Tooltip permanent={permanent} direction={direction} offset={offset}>
+      <Tooltip permanent={permanent} direction={dir} offset={offset}>
         <TooltipStyle>{tooltipContent}</TooltipStyle>
       </Tooltip>
     )
@@ -48,7 +56,7 @@ CustomTooltip.propTypes = {
   /** is the tip always shown, or just shown on mouse hover */
   permanent: PropTypes.bool,
 
-  /** tip placement (side(s), top, bottom) */
+  /** placement: rotation (top/bot based on marker orientation), auto, left, right, top, bottom */
   direction: PropTypes.string,
 
   /** center of the marker, or some X,Y position in relation to the marker's center */
@@ -64,6 +72,6 @@ CustomTooltip.defaultProps = {
     return null;
   },
   permanent: true,
-  direction: "auto",
+  direction: "rotation",
   offset: new L.Point(0, 0)
 };

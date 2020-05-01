@@ -145,9 +145,9 @@ function rectangles(popup = true) {
     }
     return retVal;
   };
+
   // if there's a popup, put perm tooltip on bottom of marker (since popup opens on top)
   if (popup) CustomTooltip.defaultProps.direction = "bottom";
-  else CustomTooltip.defaultProps.direction = "top";
 
   return (
     <BaseMap
