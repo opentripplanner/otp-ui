@@ -1,12 +1,12 @@
-/**
- * @see https://github.com/verdie-g/react-leaflet-rotatedmarker/issues/1
- * TODO: maybe move to either base-map and/or utils and/or own npm & repo
- */
 import React from "react";
 import { Marker as LeafletMarker } from "leaflet";
 import { LeafletProvider, MapLayer, withLeaflet } from "react-leaflet";
 import "leaflet-rotatedmarker";
 
+/**
+ * @see https://github.com/verdie-g/react-leaflet-rotatedmarker/issues/1
+ * TODO: maybe move to either base-map and/or utils and/or own npm & repo
+ */
 class RotatedMarker extends MapLayer {
   createLeafletElement(props) {
     const el = new LeafletMarker(props.position, this.getOptions(props));

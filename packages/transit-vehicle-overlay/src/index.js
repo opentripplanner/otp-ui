@@ -7,6 +7,11 @@ import VehicleGeometry from "./components/VehicleGeometry";
 import RouteGeometry from "./components/RouteGeometry";
 import * as utils from "./utils";
 
+/**
+ * presentational component for rendering transit vehicle positions atop a map
+ * will show both point positions for a collection of vehicles, as well as being
+ * able to render a 'selected' vehicle (and it's route pattern trace)
+ */
 export default function TransitVehicleOverlay(props) {
   const {
     zoom,

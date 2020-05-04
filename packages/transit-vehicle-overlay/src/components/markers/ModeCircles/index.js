@@ -6,6 +6,10 @@ import RotatedMarker from "../RotatedMarker";
 import makeIcons from "./make-icons";
 import * as utils from "../../../utils";
 
+/**
+ * renders circular leaflet markers for the vehicles
+ * at higher zoom levels, the icon used in the marker is based on the vehicles mode information
+ */
 export default function ModeCircles(props) {
   const { zoom, vehicle, children, color, highlightColor, isTracked } = props;
   const { lat, lon, heading, routeType } = vehicle;

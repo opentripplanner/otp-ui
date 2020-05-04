@@ -8,6 +8,7 @@ import { formatDurationWithSeconds } from "@opentripplanner/core-utils/src/time"
 import { TooltipStyle } from "../styled";
 import { linterIgnoreTheseProps } from "../../../utils";
 
+/** will show a (leaflet) map tooltip on a vehicle, showing route and update recency */
 export default function VehicleTooltip(props) {
   const { vehicle, isTracked, direction, permanent, offset } = props;
   linterIgnoreTheseProps(isTracked);

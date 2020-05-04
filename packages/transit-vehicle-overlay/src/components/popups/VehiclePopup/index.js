@@ -10,6 +10,7 @@ import { linterIgnoreTheseProps } from "../../../utils";
 
 /**
  * view component for vehicle marker popup
+ * content is derived from the vehicle record
  */
 export default function VehiclePopup(props) {
   const { vehicle, isTracked, setTracked } = props;

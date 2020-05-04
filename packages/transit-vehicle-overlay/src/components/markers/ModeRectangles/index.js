@@ -4,10 +4,12 @@ import PropTypes from "prop-types";
 import { transitVehicleType } from "@opentripplanner/core-utils/lib/types";
 import RotatedMarker from "../RotatedMarker";
 import makeIcons from "./make-icons";
-
-// import * as Styled from "./styled";
 import * as utils from "../../../utils";
 
+/**
+ * renders rectangular leaflet markers for the vehicles
+ * at higher zoom levels, the icon used for the marker is based on the vehicles mode information
+ */
 export default function ModeRectangles(props) {
   const { zoom, vehicle, children, color, highlightColor, isTracked } = props;
   const { lat, lon, heading, routeType } = vehicle;

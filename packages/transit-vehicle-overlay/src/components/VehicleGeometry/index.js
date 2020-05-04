@@ -6,6 +6,11 @@ import { transitVehicleType } from "@opentripplanner/core-utils/lib/types";
 import ModeCircles from "../markers/ModeCircles";
 import { linterIgnoreTheseProps } from "../../utils";
 
+/**
+ * presentational component for rendering transit vehicle positions atop a map
+ * will show both point positions for a collection of vehicles, as well as being
+ * able to render a 'selected' vehicle
+ */
 export default function VehicleGeometry(props) {
   const {
     zoom,

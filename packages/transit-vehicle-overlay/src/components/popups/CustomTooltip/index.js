@@ -7,6 +7,7 @@ import { transitVehicleType } from "@opentripplanner/core-utils/src/types";
 import { TooltipStyle } from "../styled";
 import { linterIgnoreTheseProps } from "../../../utils";
 
+/** will show a (leaflet) map tooltip on a vehicle, with custom information (e.g. arrival data) */
 export default function CustomTooltip(props) {
   const {
     vehicle,

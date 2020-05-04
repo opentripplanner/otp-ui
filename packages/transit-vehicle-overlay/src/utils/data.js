@@ -3,7 +3,7 @@
 /** this function is used to have props that are not used w/out lint errors */
 export function linterIgnoreTheseProps() {}
 
-/** simple (python-esque) converstion of an int to a string */
+/** simple (python-esque) conversion of an int to a string */
 export function str(val) {
   let retVal = "";
   try {
@@ -15,13 +15,18 @@ export function str(val) {
 }
 
 /** gets best appropriate vehicle tracker id from input parameter based on type and data */
-export function getVehicleId(tracked) {
+export function getVehicleId(vehicleObjectOrString) {
   let queryId = null;
-  if (tracked) {
-    if (typeof tracked === "string" || tracked instanceof String)
-      queryId = tracked;
-    else if (tracked.blockId) queryId = tracked.blockId;
-    else if (tracked.tripId) queryId = tracked.tripId;
+  if (vehicleObjectOrString) {
+    if (
+      typeof vehicleObjectOrString === "string" ||
+      vehicleObjectOrString instanceof String
+    )
+      queryId = vehicleObjectOrString;
+    else if (vehicleObjectOrString.blockId)
+      queryId = vehicleObjectOrString.blockId;
+    else if (vehicleObjectOrString.tripId)
+      queryId = vehicleObjectOrString.tripId;
   }
   return queryId;
 }
