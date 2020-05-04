@@ -12,6 +12,7 @@ const allStories = storiesOf("Icons", module);
 const noStoryComponents = [
   "ClassicLegIcon",
   "ClassicModeIcon",
+  "LegIcon",
   "StandardLegIcon",
   "StandardModeIcon",
   "TriMetLegIcon",
