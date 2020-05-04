@@ -4,7 +4,7 @@ import LegIcon from "./leg-icon";
 import TriMetModeIcon from "./trimet-mode-icon";
 import BiketownIcon from "./companies/biketown-icon";
 
-const TriMetLegIcon = ({ leg, ModeIcon, ...props }) => {
+const TriMetLegIcon = ({ leg, ...props }) => {
   // Custom TriMet icon logic.
   if (leg.routeLongName && leg.routeLongName.startsWith("Portland Streetcar")) {
     return <TriMetModeIcon mode="STREETCAR" {...props} />;
@@ -16,7 +16,7 @@ const TriMetLegIcon = ({ leg, ModeIcon, ...props }) => {
     return <TriMetModeIcon mode="BICYCLE" {...props} />;
   }
 
-  return <LegIcon ModeIcon={TriMetModeIcon} {...props} />;
+  return <LegIcon leg={leg} ModeIcon={TriMetModeIcon} {...props} />;
 };
 
 export default TriMetLegIcon;
