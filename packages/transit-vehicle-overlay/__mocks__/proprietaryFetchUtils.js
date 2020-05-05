@@ -88,7 +88,7 @@ export async function fetchPattern(vehicle, setter) {
 }
 
 /**
- * the way the story is written (an maybe the way others will use the component), there are
+ * the way the story is written (and maybe the way others will use the component), there are
  * multiple redraws of a selected vehicle happening, thus pulling on the pattern service multiple
  * (race condition) times. throttling and debouncing helps.
  *

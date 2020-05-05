@@ -22,8 +22,8 @@ to work with this layer.
 ## NOTES:
 
 - The use of hooks was a good thing, but there's a bit of resulting redirection (HL functions, etc...)
-  in the compoent lib (and interface) which obfuscates things a bit ... appologies in advnace.
-- below are 2 utils I use in conjuction for converting .svg to React svg .js files
+  in the component lib (and interface) which obfuscates things a bit ... apologies in advance.
+- 2 very useful utilities for converting .svg to React svg .js files:
   - https://jakearchibald.github.io/svgomg -- .svg optimizer
   - https://react-svgr.com/playground -- good .svg => .npx converter
 

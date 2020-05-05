@@ -14,6 +14,8 @@ import * as utils from "./utils";
  */
 export default function TransitVehicleOverlay(props) {
   const {
+    name,
+    visible,
     zoom,
     center,
     vehicleList,
@@ -35,7 +37,7 @@ export default function TransitVehicleOverlay(props) {
     highlight,
     lowlight
   } = props;
-  utils.linterIgnoreTheseProps(center);
+  utils.linterIgnoreTheseProps(name, visible, center);
 
   // when a vehicle is selected, pre-determine whether to show pattern and which vehicles
   let vl = vehicleList;
@@ -82,6 +84,12 @@ export default function TransitVehicleOverlay(props) {
 }
 
 TransitVehicleOverlay.propTypes = {
+  /** providing a name will allow this layer to be registered in the base-map layer switcher */
+  name: PropTypes.string,
+
+  /** initial visibility value to determine if the layer is 'on' or off in layer switcher */
+  visible: PropTypes.bool,
+
   /** map zoom: used both to trigger re-renders and to style markers that rely on zoom */
   zoom: PropTypes.number,
 
@@ -136,6 +144,8 @@ TransitVehicleOverlay.propTypes = {
 };
 
 TransitVehicleOverlay.defaultProps = {
+  name: "Real-time Buses and Trains",
+  visible: true,
   zoom: 13,
   center: null,
   vehicleList: null,

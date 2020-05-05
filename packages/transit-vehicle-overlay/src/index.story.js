@@ -156,6 +156,7 @@ function rectangles(popup = true) {
       onViewportChanged={onViewportChanged}
     >
       <TransitVehicleOverlay
+        name={null} // don't list this in the layer switcher
         zoom={zoom}
         vehicleList={vehicleData}
         onVehicleClicked={clickVehicle}
@@ -189,6 +190,8 @@ function realtimeExample(fetchVehicles, fetchPattern, markers) {
 
   // state setup for zoom and center (changes redraws layer) and selected vehicles
   const [zoom, center, onViewportChanged] = utils.viewState();
+
+  // state setup tracking vehicle (and drawing it's route geom)
   const [
     getRoutePattern,
     getTrackedVehicle,
