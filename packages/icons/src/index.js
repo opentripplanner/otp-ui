@@ -1,9 +1,27 @@
+import * as classic from "./classic";
 import * as companies from "./companies";
 import * as directions from "./directions";
 import * as generic from "./generic";
+import * as standard from "./standard";
 import * as trimet from "./trimet";
+import ClassicLegIcon from "./classic-leg-icon";
+import ClassicModeIcon from "./classic-mode-icon";
+import LegIcon from "./leg-icon";
+import StandardLegIcon from "./standard-leg-icon";
+import StandardModeIcon from "./standard-mode-icon";
 import TriMetLegIcon from "./trimet-leg-icon";
 import TriMetModeIcon from "./trimet-mode-icon";
+
+const {
+  ClassicBike,
+  ClassicBus,
+  ClassicCar,
+  ClassicFerry,
+  ClassicGondola,
+  ClassicMicromobility,
+  ClassicTram,
+  ClassicWalk
+} = classic;
 
 const {
   Biketown,
@@ -21,6 +39,7 @@ const {
   Spin,
   Uber
 } = companies;
+
 const {
   CircleClockwise,
   CircleCounterclockwise,
@@ -35,7 +54,19 @@ const {
   UTurnLeft,
   UTurnRight
 } = directions;
+
 const { ArrowDown, ArrowLeft, Refresh, Star } = generic;
+
+const {
+  StandardBike,
+  StandardBus,
+  StandardGondola,
+  StandardRail,
+  StandardStreetcar,
+  StandardTram,
+  StandardWalk
+} = standard;
+
 const {
   Accessible,
   AerialTram,
@@ -110,6 +141,16 @@ export {
   Circle,
   CircleClockwise,
   CircleCounterclockwise,
+  ClassicBike,
+  ClassicBus,
+  ClassicCar,
+  ClassicFerry,
+  ClassicGondola,
+  ClassicLegIcon,
+  ClassicMicromobility,
+  ClassicModeIcon,
+  ClassicTram,
+  ClassicWalk,
   Elevator,
   Email,
   Feedback,
@@ -122,6 +163,7 @@ export {
   Hopr,
   Info,
   Left,
+  LegIcon,
   Lime,
   Lyft,
   Map,
@@ -143,6 +185,15 @@ export {
   SlightRight,
   Snow,
   Spin,
+  StandardBike,
+  StandardBus,
+  StandardGondola,
+  StandardLegIcon,
+  StandardModeIcon,
+  StandardRail,
+  StandardStreetcar,
+  StandardTram,
+  StandardWalk,
   Star,
   StopStation,
   StopStationSolid,

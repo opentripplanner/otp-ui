@@ -47,6 +47,7 @@ export default class TransitLegBody extends Component {
     const {
       config,
       leg,
+      LegIcon,
       longDateFormat,
       RouteDescription,
       setViewedTrip,
@@ -79,7 +80,11 @@ export default class TransitLegBody extends Component {
         <Styled.LegBody>
           {/* The Route Icon/Name Bar; clickable to set as active leg */}
           <Styled.LegClickable onClick={this.onSummaryClick}>
-            <RouteDescription leg={leg} transitOperator={transitOperator} />
+            <RouteDescription
+              leg={leg}
+              LegIcon={LegIcon}
+              transitOperator={transitOperator}
+            />
           </Styled.LegClickable>
 
           {/* Agency information */}
@@ -158,6 +163,7 @@ export default class TransitLegBody extends Component {
 TransitLegBody.propTypes = {
   config: configType.isRequired,
   leg: legType.isRequired,
+  LegIcon: PropTypes.elementType.isRequired,
   legIndex: PropTypes.number.isRequired,
   longDateFormat: PropTypes.string.isRequired,
   RouteDescription: PropTypes.elementType.isRequired,

@@ -1,24 +1,24 @@
 import { legType } from "@opentripplanner/core-utils/lib/types";
-import TriMetLegIcon from "@opentripplanner/icons/lib/trimet-leg-icon";
+import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
 
 import * as ItineraryBodyClasses from "../styled";
 
-const TriMetLegIconContainer = styled.div`
+const LegIconContainer = styled.div`
   float: left;
   height: 24px;
   margin-right: 6px;
   width: 24px;
 `;
 
-export default function RouteDescription({ leg }) {
+export default function RouteDescription({ leg, LegIcon }) {
   const { headsign, routeLongName, routeShortName } = leg;
   return (
     <ItineraryBodyClasses.LegDescriptionForTransit>
-      <TriMetLegIconContainer>
-        <TriMetLegIcon leg={leg} />
-      </TriMetLegIconContainer>
+      <LegIconContainer>
+        <LegIcon leg={leg} />
+      </LegIconContainer>
       {routeShortName && (
         <div>
           <ItineraryBodyClasses.LegDescriptionRouteShortName>
@@ -43,5 +43,6 @@ export default function RouteDescription({ leg }) {
 }
 
 RouteDescription.propTypes = {
-  leg: legType.isRequired
+  leg: legType.isRequired,
+  LegIcon: PropTypes.elementType.isRequired
 };

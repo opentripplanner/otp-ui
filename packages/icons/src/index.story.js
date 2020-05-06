@@ -9,7 +9,15 @@ function Container({ children }) {
 
 const allStories = storiesOf("Icons", module);
 
-const noStoryComponents = ["TriMetLegIcon", "TriMetModeIcon"];
+const noStoryComponents = [
+  "ClassicLegIcon",
+  "ClassicModeIcon",
+  "LegIcon",
+  "StandardLegIcon",
+  "StandardModeIcon",
+  "TriMetLegIcon",
+  "TriMetModeIcon"
+];
 
 Object.keys(Icons).forEach(iconKey => {
   if (noStoryComponents.indexOf(iconKey) > -1) return;

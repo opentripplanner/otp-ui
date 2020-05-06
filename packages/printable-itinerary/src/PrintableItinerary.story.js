@@ -1,3 +1,4 @@
+import ClassicLegIcon from "@opentripplanner/icons/lib/classic-leg-icon";
 import TriMetLegIcon from "@opentripplanner/icons/lib/trimet-leg-icon";
 import React from "react";
 import { storiesOf } from "@storybook/react";
@@ -121,5 +122,12 @@ storiesOf("PrintableItinerary", module)
       config={config}
       itinerary={tncTransitTncItinerary}
       LegIcon={TriMetLegIcon}
+    />
+  ))
+  .add("ItineraryBody with classic icons and park and ride itinerary", () => (
+    <PrintableItinerary
+      config={config}
+      itinerary={parkAndRideItinerary}
+      LegIcon={ClassicLegIcon}
     />
   ));

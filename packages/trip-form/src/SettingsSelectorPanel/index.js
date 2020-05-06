@@ -1,3 +1,4 @@
+import { TriMetModeIcon } from "@opentripplanner/icons";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import {
@@ -17,7 +18,7 @@ import * as Styled from "../styled";
 import {
   getModeOptions,
   getTransitSubmodeOptions,
-  getCompanies,
+  getCompaniesForModeId,
   getCompaniesOptions,
   getBicycleOrMicromobilityModeOptions,
   isBike
@@ -78,9 +79,11 @@ export default class SettingsSelectorPanel extends Component {
         lastTransitModes = lastTransitModes.concat(allTransitModes);
       }
 
-      const nonTransitModes = newModes.length > 1 ? [newModes[1]] : ["WALK"]; // TODO: also accommodate WALK+DRIVE, WALK+e-scooter?? They already seem to work without WALK right now.
-      const defaultAccessModeCompany =
-        newModes.length > 2 ? [newModes[2]] : null; // To accommodate companies defined under accessModes.
+      const {
+        defaultAccessModeCompany,
+        companies,
+        nonTransitModes
+      } = getCompaniesForModeId(id, supportedCompanies);
 
       // Add previously selected transit modes only if none were active.
       const finalModes = (activeTransitModes.length > 0
@@ -88,17 +91,9 @@ export default class SettingsSelectorPanel extends Component {
         : lastTransitModes
       ).concat(nonTransitModes);
 
-      // If there are multiple (scooter | bikeshare) providers,
-      // then if one is specified by the mode button, select it,
-      // othewise select all providers.
-      // selectedCompanies is at least an empty array.
-      const selectedCompanies =
-        defaultAccessModeCompany ||
-        getCompanies(supportedCompanies, nonTransitModes).map(comp => comp.id);
-
       this.handleQueryParamChange({
         mode: finalModes.join(","),
-        companies: selectedCompanies.join(",")
+        companies: companies.join(",")
       });
 
       this.setState({
@@ -157,7 +152,7 @@ export default class SettingsSelectorPanel extends Component {
   render() {
     const {
       className,
-      icons,
+      ModeIcon,
       queryParams,
       supportedModes,
       supportedCompanies,
@@ -165,10 +160,17 @@ export default class SettingsSelectorPanel extends Component {
     } = this.props;
     const { defaultAccessModeCompany } = this.state;
     const selectedModes = this.getSelectedModes();
+    const selectedCompanies = this.getSelectedCompanies();
 
-    const modeOptions = getModeOptions(icons, supportedModes, selectedModes);
+    const modeOptions = getModeOptions(
+      ModeIcon,
+      supportedModes,
+      selectedModes,
+      selectedCompanies,
+      supportedCompanies
+    );
     const transitModes = getTransitSubmodeOptions(
-      icons,
+      ModeIcon,
       supportedModes,
       selectedModes
     );
@@ -178,15 +180,15 @@ export default class SettingsSelectorPanel extends Component {
         defaultAccessModeCompany ? comp.id === defaultAccessModeCompany : true
       ),
       nonTransitModes,
-      this.getSelectedCompanies()
+      selectedCompanies
     );
     const bikeModes = getBicycleOrMicromobilityModeOptions(
-      icons,
+      ModeIcon,
       supportedModes.bicycleModes,
       selectedModes
     );
     const scooterModes = getBicycleOrMicromobilityModeOptions(
-      icons,
+      ModeIcon,
       supportedModes.micromobilityModes,
       selectedModes
     );
@@ -257,12 +259,9 @@ SettingsSelectorPanel.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * A customized lookup of icons.
-   * These are defined as part of the implementing webapp.
-   * If this lookup is not defined, then a lookup using the OPT-UI icons package will be used instead.
+   * The icon component for rendering mode icons. Defaults to the OPT-UI TriMetModeIcon component.
    */
-  // eslint-disable-next-line react/forbid-prop-types
-  icons: PropTypes.object,
+  ModeIcon: PropTypes.elementType,
   /**
    * Triggered when a query parameter is changed.
    * @param params An object that contains the new values for the parameter(s) that has (have) changed.
@@ -286,7 +285,7 @@ SettingsSelectorPanel.propTypes = {
 
 SettingsSelectorPanel.defaultProps = {
   className: null,
-  icons: null,
+  ModeIcon: TriMetModeIcon,
   onQueryParamChange: null,
   queryParams: null,
   supportedCompanies: []

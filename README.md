@@ -24,22 +24,22 @@ Some packages in otp-ui depend on sibling packages (e.g., `@opentripplanner/core
 
 1. In the `package.json` files for packages in which you want to test the sibling, find and replace (package-to-test being the package with local changes -- make sure these are committed to first to avoid the find/replace operations below polluting your work):
 
-    > "@opentripplanner/package-to-test": **"current-version"**
-    
-    with
-    
-    > "@opentripplanner/package-to-test": **"file:../package-to-test"**
+   > "@opentripplanner/package-to-test": **"current-version"**
+
+   with
+
+   > "@opentripplanner/package-to-test": **"file:../package-to-test"**
 
 2. In your source files, find and replace:
 
-    > opentripplanner/package-to-test/**lib**/types
+   > opentripplanner/package-to-test/**lib**/types
 
-    with
+   with
 
-    > opentripplanner/package-to-test/**src**/types
+   > opentripplanner/package-to-test/**src**/types
 
 3. Run:
-`yarn && yarn dev`
+   `yarn && yarn dev`
 
 ## Stack
 

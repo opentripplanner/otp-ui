@@ -1,3 +1,5 @@
+import { ClassicModeIcon } from "@opentripplanner/icons";
+
 import React, { Component } from "react";
 import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
@@ -7,7 +9,6 @@ import SettingsSelectorPanel from "./SettingsSelectorPanel";
 import commonCompanies from "./__mocks__/companies";
 import commonModes from "./__mocks__/modes";
 import commonModesEmpty from "./__mocks__/modes-empty";
-import customIcons from "./__mocks__/custom-icons";
 import trimet from "./__mocks__/trimet.styled";
 
 const headingStyle = {
@@ -77,7 +78,7 @@ export const settingsSelectorPanel = () => (
 export const settingsSelectorPanelWithCustomIcons = () => (
   <PanelWrapper>
     <SettingsSelectorPanel
-      icons={customIcons}
+      ModeIcon={ClassicModeIcon}
       supportedModes={commonModes}
       supportedCompanies={commonCompanies}
     />
