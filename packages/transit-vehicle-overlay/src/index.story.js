@@ -31,7 +31,7 @@ const PORTLAND = [45.523, -122.671];
 const INITIAL_ZOOM_LEVEL = 14;
 const setClicked = action("setClicked");
 
-/** with static data, show a simple version of the real-time transit vehicles layer */
+/** using static vehicle and geom data, simple demo of transit vehicle component */
 function simpleExample(vehicleData, patternGeometry, selectVehicleId) {
   // initial setup
   const recenter = utils.recenterPanTo();
@@ -45,12 +45,12 @@ function simpleExample(vehicleData, patternGeometry, selectVehicleId) {
   };
 
   // state setup for zoom (refreshes layer) and selected vehicles
-  const [zoom, onViewportChanged] = utils.zoomState(INITIAL_ZOOM_LEVEL);
+  const [zoom, onViewportChanged] = utils.useZoomState(INITIAL_ZOOM_LEVEL);
   const [
     getRoutePattern,
     getTrackedVehicle,
     updateTrackedVehicle
-  ] = utils.trackedVehicleState(fetchPattern, initVehicle, patternGeometry);
+  ] = utils.useTrackedVehicleState(fetchPattern, initVehicle, patternGeometry);
 
   const [trackedVehicle, trackedRef] = getTrackedVehicle();
   utils.linterIgnoreTheseProps(trackedRef);
@@ -84,7 +84,11 @@ function simpleExample(vehicleData, patternGeometry, selectVehicleId) {
   );
 }
 
-/** with static data, demo rectangular markers, flyTo map re-centering and custom tooltips */
+/**
+ * a bit more complex demo of the vehicle component from the simple demo above
+ * still using static vehicle and geometry data,
+ * but now use rectangular marker slots and various knob controls for centering etc..
+ */
 function rectangles(popup = true) {
   // initial setup
   const vehicleData = line;
@@ -99,12 +103,12 @@ function rectangles(popup = true) {
   };
 
   // state setup for zoom (refreshes layer) and selected vehicles
-  const [zoom, onViewportChanged] = utils.zoomState(INITIAL_ZOOM_LEVEL);
+  const [zoom, onViewportChanged] = utils.useZoomState(INITIAL_ZOOM_LEVEL);
   const [
     getRoutePattern,
     getTrackedVehicle,
     updateTrackedVehicle
-  ] = utils.trackedVehicleState(fetchPattern, initVehicle, patternGeometry);
+  ] = utils.useTrackedVehicleState(fetchPattern, initVehicle, patternGeometry);
   const [trackedVehicle, trackedRef] = getTrackedVehicle();
   utils.linterIgnoreTheseProps(trackedRef);
 
@@ -171,7 +175,9 @@ function rectangles(popup = true) {
   );
 }
 
-/** with static data, show a simple version of the real-time transit vehicles layer */
+/**
+ * use a live real-time service to fully demonstrate the transit vehicles component
+ */
 function realtimeExample(fetchVehicles, fetchPattern, markers) {
   // knobs setup
   const routes = text("list of routes to query vehicles", "");
@@ -189,14 +195,14 @@ function realtimeExample(fetchVehicles, fetchPattern, markers) {
   };
 
   // state setup for zoom and center (changes redraws layer) and selected vehicles
-  const [zoom, center, onViewportChanged] = utils.viewState();
+  const [zoom, center, onViewportChanged] = utils.useViewState();
 
   // state setup tracking vehicle (and drawing it's route geom)
   const [
     getRoutePattern,
     getTrackedVehicle,
     updateTrackedVehicle
-  ] = utils.trackedVehicleState(fetchPattern);
+  ] = utils.useTrackedVehicleState(fetchPattern);
 
   // give action to the popup vehicle tracking button
   VehiclePopup.defaultProps.setTracked = (vehicle, isTracked) => {
@@ -206,7 +212,7 @@ function realtimeExample(fetchVehicles, fetchPattern, markers) {
 
   const [trackedVehicle, trackedRef] = getTrackedVehicle();
   utils.linterIgnoreTheseProps(trackedRef);
-  const vehicleList = utils.vehicleListUpdater(
+  const vehicleList = utils.useVehicleListUpdater(
     fetchVehicles,
     getTrackedVehicle,
     updateTrackedVehicle

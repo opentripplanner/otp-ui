@@ -3,11 +3,15 @@ import { checkRefreshInteval } from "./fetch";
 import * as data from "./data";
 
 /**
- * use this hook when you want your layer to re-paint after otp-ui map zoom events fire
- * this component will capture and save zoom state from otp-ui's base-map component to state
- * :return: zoom level (number from leaflet) and the callback for base-map's onViewportChanged
+ * Use the state variable returned by this hook when you want the vehicle component to
+ * re-paint after otp-ui map zoom events.
+ *
+ * e.g., send the mapZoom down to the vehicles component as a prop, and the component will
+ * then redraw every time the map's zoom level changes.
+ *
+ * @return zoom level (state variable) and the onViewportChanged cb for base-map
  */
-export function zoomState(initialZoom = 14) {
+export function useZoomState(initialZoom = 14) {
   const [mapZoom, setMapZoom] = useState(initialZoom);
 
   const onViewportChanged = ({ zoom }) => {
@@ -19,11 +23,15 @@ export function zoomState(initialZoom = 14) {
 }
 
 /**
- * use this hook when you want your layer to re-paint after otp-ui map zoom & recenter events fire
- * this component will capture and save zoom and center from otp-ui's base-map viewport changes
- * :return: zoom level, center [x,y] and the callback for base-map's onViewportChanged
+ * Use the state variables returned by this hook when you want the vehicle component to
+ * re-paint after otp-ui map and pan zoom events.
+ *
+ * e.g., you can send mapZoom and mapCenter down to the vehicles component as props, which
+ * will then make React redraw the vehicles component
+ *
+ * @return zoom level, center [x,y] (state variables) and the onViewportChanged cb for base-map
  */
-export function viewState(initialZoom = 14) {
+export function useViewState(initialZoom = 14) {
   const [mapZoom, setMapZoom] = useState(initialZoom);
   const [mapCenter, setMapCenter] = useState([0.0, 0.0]);
 
@@ -37,17 +45,20 @@ export function viewState(initialZoom = 14) {
 }
 
 /**
- * trackedVehicleState
+ * useTrackedVehicleState
  *
  * use this hook when you want your layer to track a vehicle
  * (and potentially show the route geometry of this vehicle)
  *
- * @param fetchPatternCallback() that I'll used to fetch a vehicles' pattern geom
- * @param initial vehicle record
- * @param initial route pattern
- * @return [pattern, getTrackedVehicle(), updateTrackedVehicle()]
+ * NOTE: about the useState, useRef, useEffect, etc... mumbo jumbo
+ * https://overreacted.io/making-setinterval-declarative-with-react-hooks/#refs-to-the-rescue
+ *
+ * @param fetchPatternCallback -  used to fetch a vehicles' pattern geom
+ * @param initVehicle
+ * @param initPattern
+ * @return [getRoutePattern(), getTrackedVehicle(), updateTrackedVehicle()]
  */
-export function trackedVehicleState(
+export function useTrackedVehicleState(
   fetchPatternCallback = null,
   initVehicle = null,
   initPattern = null
@@ -68,8 +79,10 @@ export function trackedVehicleState(
 
   const getRoutePattern = vehicle => {
     if (fetchPatternCallback && vehicle) {
-      const pid = routePatternRef.current ? routePatternRef.current.id : null;
-      const cached = vehicle.tripId === pid;
+      const patternId = routePatternRef.current
+        ? routePatternRef.current.id
+        : null;
+      const cached = vehicle.tripId === patternId;
       if (!cached) fetchPatternCallback(vehicle, setRoutePattern);
     }
 
@@ -79,9 +92,9 @@ export function trackedVehicleState(
   /**
    * accept a vehicle record and two booleans to control how state is updated
    *
-   * @param vehicle record
-   * @param stopTracking boolean (e.g., 'stop tracking' - if this vehicle is tracking, then stop)
-   * @param updatePattern boolean (default true)
+   * @param vehicle - tracked vehicle record
+   * @param stopTracking - boolean (e.g., 'stop tracking' - if this vehicle is tracking, then stop)
+   * @param updatePattern - boolean (default true)
    */
   const updateTrackedVehicle = (
     vehicle,
@@ -99,7 +112,8 @@ export function trackedVehicleState(
 
   /**
    * return both the tracked vehicle state variable (using will cause a redraw)
-   * and the ref to that vehcicle.
+   * and the ref to that vehicle.
+   *
    * Note: the ref is a handle to the most recent state of the tracked vehicle, which can be used
    * by routines outside of the react tree (don't ask me ... it's strange, hacky stuff).
    */
@@ -111,18 +125,18 @@ export function trackedVehicleState(
 }
 
 /**
+ * useVehicleListUpdater - get vehicles from a service based on a refresh interval
  *
  * @param fetchVehiclesCallback
  * @param getTrackedVehicle
  * @param updateTrackedVehicle
  * @param refreshDelay
- * @return vehicleList[] state variable
+ * @return vehicleList[] (state variable)
  */
-export function vehicleListUpdater(
+export function useVehicleListUpdater(
   fetchVehiclesCallback,
   getTrackedVehicle,
   updateTrackedVehicle,
-  trackedVehicleId = null,
   refreshDelay = null
 ) {
   const [vehicleList, setVehicleList] = useState([]);
@@ -137,7 +151,7 @@ export function vehicleListUpdater(
       data.linterIgnoreTheseProps(trackedVehicle);
 
       // update the tracked vehicle with latest position
-      const queryId = data.getVehicleId(trackedRef) || trackedVehicleId;
+      const queryId = data.getVehicleId(trackedRef);
       if (queryId && updateTrackedVehicle) {
         const t = data.findVehicleById(vehicles, queryId);
         if (t) updateTrackedVehicle(t, false, true);

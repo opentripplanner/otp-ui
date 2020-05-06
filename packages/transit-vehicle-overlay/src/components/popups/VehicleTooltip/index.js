@@ -13,15 +13,16 @@ export default function VehicleTooltip(props) {
   const { vehicle, isTracked, direction, permanent, offset } = props;
   linterIgnoreTheseProps(isTracked);
 
-  let rsn = vehicle.routeShortName;
-  if (rsn !== null && rsn.length <= 5) {
-    rsn = `Line ${rsn}:`;
+  let name = vehicle.routeShortName;
+  if (name !== null && name.length <= 5) {
+    const mode = vehicle.routeType ? vehicle.routeType : "Line";
+    name = `${mode} ${name}`;
   }
 
   return (
     <Tooltip permanent={permanent} direction={direction} offset={offset}>
       <TooltipStyle>
-        <TooltipStyle.Title>{rsn}&nbsp;</TooltipStyle.Title>
+        <TooltipStyle.Title>{name}: </TooltipStyle.Title>
         {formatDurationWithSeconds(vehicle.seconds)} ago
       </TooltipStyle>
     </Tooltip>

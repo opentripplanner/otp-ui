@@ -7,10 +7,10 @@ import {
 import { getVehicleCoordinates, compareCoords } from "./coordinates";
 import { recenterFlyTo, recenterPanTo, recenterPanToOffset } from "./recenter";
 import {
-  zoomState,
-  viewState,
-  trackedVehicleState,
-  vehicleListUpdater
+  useZoomState,
+  useViewState,
+  useTrackedVehicleState,
+  useVehicleListUpdater
 } from "./state";
 import {
   convertAltData,
@@ -34,10 +34,10 @@ import {
 } from "./fetch";
 
 export {
-  zoomState,
-  viewState,
-  trackedVehicleState,
-  vehicleListUpdater,
+  useZoomState,
+  useViewState,
+  useTrackedVehicleState,
+  useVehicleListUpdater,
   renderAsImage,
   setColor,
   makeVehicleIcon,

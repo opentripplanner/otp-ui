@@ -4,7 +4,16 @@ import styled from "styled-components";
 import L from "leaflet";
 import cloneDeep from "lodash.clonedeep";
 
-/** helper to render a React .svg structure, ala icons/Bus.js as a leaflet marker */
+/**
+ * helper to render a React .svg structure, ala icons/Bus.js as a leaflet marker
+ *
+ * @param icon
+ * @param size
+ * @param anchor
+ * @param pop
+ * @param tt
+ * @param cls
+ */
 export function renderAsImage(
   icon,
   size = [22, 22],
@@ -37,6 +46,7 @@ export function renderAsImage(
  * deep copy that object, and return back a new obj with the .color set
  *
  * @param color
+ * @param obj
  * @return deep copied object with color set
  */
 export function setColor(color, obj) {
@@ -47,6 +57,13 @@ export function setColor(color, obj) {
 
 /**
  * makes a circular marker icon with a vehicle image based on mode
+ *
+ * @param Styled
+ * @param mode
+ * @param color
+ * @param highlightColor
+ * @param isTracked
+ * @return marker object
  */
 export function makeVehicleIcon(
   Styled,
@@ -114,7 +131,7 @@ export function makeVehicleIcon(
  * @param tramIcon
  * @param streetcarIcon
  * @param gondolaIcon
- * @return {*[]}
+ * @return {array} - styled icon objects (two for each mode, ala tracked and normal styles)
  */
 export function makeModeStyles(
   normal,
