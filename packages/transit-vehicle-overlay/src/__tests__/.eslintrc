@@ -1,0 +1,8 @@
+{
+    "rules": {
+        "react/prop-types": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react/no-unused-vars": "off",
+        "no-unused-vars": "off"
+    }
+}

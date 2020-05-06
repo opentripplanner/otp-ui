@@ -1,17 +1,19 @@
 import React from "react";
-import { Popup } from "react-leaflet";
 import PropTypes from "prop-types";
+import { Popup } from "react-leaflet";
+
 import { transitVehicleType } from "@opentripplanner/core-utils/src/types";
 import { formatDurationWithSeconds } from "@opentripplanner/core-utils/src/time";
-
-import { PopupStyle } from "./styled";
-import VehicleTracker from "./tracker";
+import { PopupStyle } from "../styled";
+import VehicleTracker from "../vehicle-tracker";
+import { linterIgnoreTheseProps } from "../../../utils";
 
 /**
  * view component for vehicle marker popup
+ * content is derived from the vehicle record
  */
-function VehiclePopup(props) {
-  const { vehicle, tracked, setTracked } = props;
+export default function VehiclePopup(props) {
+  const { vehicle, isTracked, setTracked } = props;
 
   let status = "unknown";
   if (vehicle.status === "IN_TRANSIT_TO") {
@@ -46,7 +48,7 @@ function VehiclePopup(props) {
         <PopupStyle.Span>{vid}</PopupStyle.Span>
         <VehicleTracker
           vehicle={vehicle}
-          tracked={tracked}
+          isTracked={isTracked}
           setTracked={setTracked}
         />
       </PopupStyle>
@@ -54,15 +56,21 @@ function VehiclePopup(props) {
   );
 }
 
+VehiclePopup.propTypes = {
+  /** vehicle record - @see: core-utils/types/transitVehicleType */
+  vehicle: transitVehicleType,
+
+  /** indicate if this vehicle is being tracked, */
+  isTracked: PropTypes.bool,
+
+  /** callback which forwards the vehicle and tracking status from track button */
+  setTracked: PropTypes.func
+};
+
 VehiclePopup.defaultProps = {
   vehicle: null,
-  tracked: null
+  isTracked: false,
+  setTracked: (vehicle, isTracked) => {
+    linterIgnoreTheseProps(vehicle, isTracked);
+  }
 };
-
-VehiclePopup.propTypes = {
-  vehicle: transitVehicleType,
-  tracked: PropTypes.bool,
-  setTracked: PropTypes.func.isRequired
-};
-
-export default VehiclePopup;
