@@ -31,32 +31,15 @@ const PORTLAND = [45.523, -122.671];
 const INITIAL_ZOOM_LEVEL = 14;
 const setClicked = action("setClicked");
 
-/** using static vehicle and geom data, simple demo of transit vehicle component */
+/** using static vehicle and geom data, show a simple demo of transit vehicle component */
 function simpleExample(vehicleData, patternGeometry, selectVehicleId) {
-  // initial setup
-  const recenter = utils.recenterPanTo();
-  const initVehicle = utils.findVehicleById(vehicleData, selectVehicleId);
-  const clickVehicle = vehicle => {
-    setClicked(vehicle);
-  };
-  const fetchPattern = (vehicle, setter) => {
-    utils.linterIgnoreTheseProps(vehicle);
-    setter(patternGeometry);
-  };
+  // find our tracked vehicle from the vehicle list
+  const trackedVehicle = utils.findVehicleById(vehicleData, selectVehicleId);
 
-  // state setup for zoom (refreshes layer) and selected vehicles
-  const [zoom, onViewportChanged] = utils.useZoomState(INITIAL_ZOOM_LEVEL);
-  const [
-    getRoutePattern,
-    getTrackedVehicle,
-    updateTrackedVehicle
-  ] = utils.useTrackedVehicleState(fetchPattern, initVehicle, patternGeometry);
+  // tracking zoom state is used to change the vehicle markers from blank circles to mode images
+  const [zoom, onViewportChanged] = utils.useZoomState();
 
-  const [trackedVehicle, trackedRef] = getTrackedVehicle();
-  utils.linterIgnoreTheseProps(trackedRef);
-  VehiclePopup.defaultProps.setTracked = updateTrackedVehicle;
-
-  // storybook knobs to show off color & highlighting options
+  // storybook knobs further show off color & highlighting options
   const clr = color("color:", "#AAA");
   const highlightColor = color("isTracked color:", "#ece90d");
   const lowlightColor = color("trailing color:", "#AAA");
@@ -70,12 +53,10 @@ function simpleExample(vehicleData, patternGeometry, selectVehicleId) {
       <TransitVehicleOverlay
         zoom={zoom}
         vehicleList={vehicleData}
-        onVehicleClicked={clickVehicle}
         selectedVehicle={trackedVehicle}
-        pattern={getRoutePattern()}
-        onRecenterMap={recenter}
+        pattern={patternGeometry}
+        onRecenterMap={utils.recenterPanTo()}
         TooltipSlot={VehicleTooltip}
-        PopupSlot={VehiclePopup}
         color={clr}
         highlightColor={highlightColor}
         lowlightColor={lowlightColor}
@@ -85,9 +66,10 @@ function simpleExample(vehicleData, patternGeometry, selectVehicleId) {
 }
 
 /**
- * a bit more complex demo of the vehicle component from the simple demo above
- * still using static vehicle and geometry data,
- * but now use rectangular marker slots and various knob controls for centering etc..
+ * A more complex demo of the vehicle component from the simple demo above.
+ * Will still be using static vehicle and geometry data here, but now will
+ * use rectangular markers, various popup and tooltip slots and the flyTo centering,
+ * and callbacks to manage vehicle tracking and route geom split points, etc...
  */
 function rectangles(popup = true) {
   // initial setup
@@ -95,6 +77,11 @@ function rectangles(popup = true) {
   const patternGeometry = utils.makePattern(geom, "111");
   const recenter = utils.recenterFlyTo(null);
   const initVehicle = utils.findVehicleById(vehicleData, "9562512");
+
+  // storybook knobs to show off color & highlighting options
+  const clr = color("color:", "#728896");
+  const highlightColor = color("isTracked color:", "#63BBDD");
+  const lowlightColor = color("trailing color:", "#728896");
 
   // callback for tracking vehicle
   const fetchPattern = (vehicle, setter) => {
@@ -115,7 +102,7 @@ function rectangles(popup = true) {
   // give action to the popup vehicle tracking button
   VehiclePopup.defaultProps.setTracked = (vehicle, isTracked) => {
     updateTrackedVehicle(vehicle, isTracked);
-    if (!isTracked) recenter(null, 0, 0); // clear out cached coords ... recenter on recently untracked vehicle
+    if (!isTracked) recenter(null, 0, 0); // no longer tracking so clear out cached coords
   };
 
   // record marker clicks (and more if no popup used)
@@ -130,7 +117,7 @@ function rectangles(popup = true) {
     }
   };
 
-  // silly function used to change the arrival time in this example
+  // silly function used to change the arrival time (tooltip) in this example
   function makeRandomDate() {
     const secs = Date.now() % 379;
     const prettyDate = formatDurationWithSeconds(secs);
@@ -150,8 +137,8 @@ function rectangles(popup = true) {
     return retVal;
   };
 
-  // if there's a popup, put perm tooltip on bottom of marker (since popup opens on top)
-  if (popup) CustomTooltip.defaultProps.direction = "bottom";
+  // if there's a popup, place the tooltip on bottom of marker (since popup opens on top)
+  CustomTooltip.defaultProps.direction = popup ? "bottom" : "rotation";
 
   return (
     <BaseMap
@@ -160,7 +147,7 @@ function rectangles(popup = true) {
       onViewportChanged={onViewportChanged}
     >
       <TransitVehicleOverlay
-        name={null} // don't list this in the layer switcher
+        name={null} // turn off component from being controlled in the layer switcher
         zoom={zoom}
         vehicleList={vehicleData}
         onVehicleClicked={clickVehicle}
@@ -170,6 +157,9 @@ function rectangles(popup = true) {
         MarkerSlot={ModeRectangles}
         TooltipSlot={CustomTooltip}
         PopupSlot={popup ? VehiclePopup : null}
+        color={clr}
+        highlightColor={highlightColor}
+        lowlightColor={lowlightColor}
       />
     </BaseMap>
   );
@@ -177,12 +167,13 @@ function rectangles(popup = true) {
 
 /**
  * use a live real-time service to fully demonstrate the transit vehicles component
+ * continuing on from the 'rectangles' demo above, add live data, callbacks, etc...
+ * also provide knobs to control which routes to display and programmatically select vehicles
  */
 function realtimeExample(fetchVehicles, fetchPattern, markers) {
   // knobs setup
   const routes = text("list of routes to query vehicles", "");
   const trackedId = text("tripId or blockId of tracked vehicle", "");
-
   const isFlyTo = boolean("FlyTo Recenter (PanTo default)", false);
   const showOnlyTracked = boolean("hide other vehicles when tracking", false);
   const clr = color("color:", "#28639c");
@@ -259,16 +250,18 @@ function simple() {
 }
 
 function alternate() {
+  // demonstrate converting an alternate vehicle ws format for the component
   const altVehicles = utils.convertAltData(altLine);
   const altPattern = utils.makePattern(altGeom, "222");
   return simpleExample(altVehicles, altPattern, "9088");
 }
 
-function simpleRectangles() {
+function clickRectangles() {
   return rectangles(false);
 }
 
 function rtCircles() {
+  // use the live vehicle ws that was built in conjunction with this component
   return realtimeExample(
     proprietary.fetchVehicles,
     proprietary.fetchPatternThrottled,
@@ -277,6 +270,7 @@ function rtCircles() {
 }
 
 function rtRectangles() {
+  // use the live alternate vehicle ws format for the component
   return realtimeExample(
     proprietary.fetchAltVehicles,
     proprietary.fetchPatternThrottled,
@@ -289,8 +283,8 @@ storiesOf("TransitVehicleOverlay", module)
   .addDecorator(withInfo)
   .addDecorator(withKnobs)
   .add("simple overlay", simple)
-  .add("simple overlay (alternate vehicles service)", alternate)
-  .add("simple rectangles (click to select)", simpleRectangles)
-  .add("static rectangles (popups)", rectangles)
+  .add("simple overlay (alternative ws data)", alternate)
+  .add("simple rectangles (click to select)", clickRectangles)
+  .add("static rectangles (marker popups)", rectangles)
   .add("real-time circles", rtCircles)
   .add("real-time rectangles", rtRectangles);
