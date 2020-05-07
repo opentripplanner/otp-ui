@@ -6,7 +6,7 @@ React component library, which can be used to build trip planner webapps.
 
 See:
 
-- [Examples and docs (via Storybook)](https://opentripplanner.github.io/otp-ui/?path=/story/locationicon--to-locationicon)
+- [Examples and docs (via Storybook)](http://www.opentripplanner.org/otp-ui/?path=/story/itinerarybody--itinerarybody-with-walk-transit-walk-itinerary-with-custom-view-trip-button-activated-and-custom-route-abbreviation)
 - [Current npm releases](https://www.npmjs.com/org/opentripplanner)
 - [A reference implementation of otp-ui](https://github.com/opentripplanner/otp-react-redux) -- IMPORTANT NOTE: otp-ui use in otp-rr is a WIP / TBD
 
@@ -70,10 +70,9 @@ Some commands you might need to execute for lerna to publish to npm:
 
 ```bash
  npm whoami
- npm login
- npm config set access public
+ (if whomai comes back null, then: npm login; npm config set access public)
  npx lerna changed
  npx lerna publish  # option 1: default publish
- npx lerna publish 0.0.x --force-publish=*  # option 2: publish all components to version X
+ npx lerna publish 0.0.21 --force-publish=*  # option 2: publish all components to version X
  yarn deploy-storybook
 ```
