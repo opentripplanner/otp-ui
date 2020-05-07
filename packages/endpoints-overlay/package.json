@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/endpoints-overlay",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "A map overlay to show the from and to locations of an itinerary",
   "main": "lib/index.js",
   "author": "Evan Siroky",
@@ -17,8 +17,8 @@
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
   "dependencies": {
-    "@opentripplanner/core-utils": "^0.0.20",
-    "@opentripplanner/location-icon": "^0.0.20",
+    "@opentripplanner/core-utils": "^0.0.21",
+    "@opentripplanner/location-icon": "^0.0.21",
     "prop-types": "^15.7.2",
     "styled-icons": "^9.1.0"
   },
