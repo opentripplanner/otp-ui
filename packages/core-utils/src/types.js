@@ -511,7 +511,10 @@ export const queryType = PropTypes.shape({
   startTime: PropTypes.string,
   endTime: PropTypes.string,
   mode: PropTypes.string,
-  showIntermediateStops: PropTypes.bool,
+  showIntermediateStops: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.string
+  ]),
   maxWalkDistance: PropTypes.number,
   maxBikeDistance: PropTypes.number,
   optimize: PropTypes.string,
@@ -522,9 +525,12 @@ export const queryType = PropTypes.shape({
   bikeSpeed: PropTypes.number,
   maxEScooterDistance: PropTypes.number,
   watts: PropTypes.number,
-  ignoreRealtimeUpdates: PropTypes.bool,
+  ignoreRealtimeUpdates: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.string
+  ]),
   companies: PropTypes.string,
-  wheelchair: PropTypes.bool
+  wheelchair: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 });
 
 export const configuredModeType = PropTypes.oneOfType([

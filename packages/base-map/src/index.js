@@ -249,8 +249,8 @@ BaseMap.propTypes = {
     // Ideally, the types below should be MapLayer,
     // however, during type validation in the browser,
     // MapLayer components all seem to resolve to Object.
-    PropTypes.object,
-    PropTypes.arrayOf(PropTypes.object)
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node)
   ]),
   /**
    * The base (background) layers for the map.
