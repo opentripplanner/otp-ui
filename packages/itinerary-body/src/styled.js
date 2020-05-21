@@ -212,6 +212,7 @@ export const LegBody = styled.div`
 export const LegClickable = styled(TransparentButton)`
   cursor: pointer;
   display: table;
+  padding: 0;
 `;
 
 export const LegDescription = styled.div`
@@ -522,11 +523,12 @@ export const TransitAlerts = styled.div`
 `;
 
 export const TransitAlertToggle = styled(TransparentButton)`
-  display: inline-block;
-  margin-top: 8px;
   color: #d14727;
-  font-weight: 400;
   cursor: pointer;
+  display: inline-block;
+  font-weight: 400;
+  margin-top: 8px;
+  padding: 0;
 `;
 
 export const TransitLegDetails = styled.div`
