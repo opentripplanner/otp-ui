@@ -49,13 +49,11 @@ class RouteViewerOverlay extends MapLayer {
   updateLeafletElement() {}
 
   render() {
-    const { leafletPath, routeData } = this.props;
+    const { routeData, path } = this.props;
 
     if (!routeData || !routeData.patterns) return <FeatureGroup />;
 
-    const routeColor = routeData.color
-      ? `#${routeData.color}`
-      : leafletPath.color;
+    const routeColor = routeData.color ? `#${routeData.color}` : path.color;
     const segments = [];
     Object.values(routeData.patterns).forEach(pattern => {
       if (!pattern.geometry) return;
@@ -63,7 +61,7 @@ class RouteViewerOverlay extends MapLayer {
       segments.push(
         <Polyline
           /* eslint-disable-next-line react/jsx-props-no-spreading */
-          {...leafletPath}
+          {...path}
           color={routeColor}
           key={pattern.id}
           positions={pts}

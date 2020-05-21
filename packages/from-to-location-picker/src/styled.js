@@ -14,6 +14,7 @@ export const FromToPickerSpan = styled.span`
 `;
 
 export const Button = styled.button`
+  background: none;
   border: none;
   color: navy;
   font-family: inherit;

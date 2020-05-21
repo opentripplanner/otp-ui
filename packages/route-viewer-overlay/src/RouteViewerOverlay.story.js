@@ -23,7 +23,7 @@ storiesOf("RouteViewerOverlay", module)
   .add("RouteViewerOverlay with path styling", () => (
     <BaseMap center={center} zoom={zoom}>
       <RouteViewerOverlay
-        leafletPath={{
+        path={{
           opacity: 0.5,
           weight: 10
         }}
