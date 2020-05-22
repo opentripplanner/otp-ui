@@ -17,12 +17,14 @@ export default class PeliasGeocoder extends Geocoder {
       baseUrl,
       boundary,
       focusPoint,
+      options,
       sources
     } = this.geocoderConfig;
     return {
       apiKey,
       boundary,
       focusPoint,
+      options,
       // explicitly send over null for sources if provided sources is not truthy
       // in order to avoid default isomorphic-mapzen-search sources form being
       // applied
@@ -42,12 +44,14 @@ export default class PeliasGeocoder extends Geocoder {
       baseUrl,
       boundary,
       focusPoint,
+      options,
       sources
     } = this.geocoderConfig;
     return {
       apiKey,
       boundary,
       focusPoint,
+      options,
       // explicitly send over null for sources if provided sources is not truthy
       // in order to avoid default isomorphic-mapzen-search sources form being
       // applied

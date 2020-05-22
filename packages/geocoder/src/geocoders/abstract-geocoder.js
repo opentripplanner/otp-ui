@@ -63,11 +63,18 @@ export default class Geocoder {
    * Default autocomplete query generator
    */
   getAutocompleteQuery(query) {
-    const { apiKey, baseUrl, boundary, focusPoint } = this.geocoderConfig;
+    const {
+      apiKey,
+      baseUrl,
+      boundary,
+      focusPoint,
+      options
+    } = this.geocoderConfig;
     return {
       apiKey,
       boundary,
       focusPoint,
+      options,
       url: baseUrl ? `${baseUrl}/autocomplete` : undefined,
       ...query
     };
@@ -77,10 +84,11 @@ export default class Geocoder {
    * Default reverse query generator
    */
   getReverseQuery(query) {
-    const { apiKey, baseUrl } = this.geocoderConfig;
+    const { apiKey, baseUrl, options } = this.geocoderConfig;
     return {
       apiKey,
       format: true,
+      options,
       url: baseUrl ? `${baseUrl}/reverse` : undefined,
       ...query
     };
@@ -90,11 +98,18 @@ export default class Geocoder {
    * Default search query generator.
    */
   getSearchQuery(query) {
-    const { apiKey, baseUrl, boundary, focusPoint } = this.geocoderConfig;
+    const {
+      apiKey,
+      baseUrl,
+      boundary,
+      focusPoint,
+      options
+    } = this.geocoderConfig;
     return {
       apiKey,
       boundary,
       focusPoint,
+      options,
       url: baseUrl ? `${baseUrl}/search` : undefined,
       format: false, // keep as returned GeoJSON,
       ...query
