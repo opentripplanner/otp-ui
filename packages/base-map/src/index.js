@@ -193,14 +193,14 @@ class BaseMap extends Component {
                     // outcomes to avoid error 'attempted to load an infinite number of tiles'
                     // if the tiles cannot be loaded for any reason.
                   }
-                  {L.Browser.retina && layer.hasRetinaSupport ? (
+                  {layer.retina ? (
                     <TileLayer
                       url={layer.url}
                       attribution={layer.attribution}
+                      retina={layer.retina}
                       maxZoom={layer.maxZoom}
                       tileSize={512}
                       zoomOffset={-1}
-                      detectRetina
                     />
                   ) : (
                     <TileLayer
@@ -324,11 +324,11 @@ BaseMap.defaultProps = {
     {
       name: "Streets",
       url:
-        "//cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}@2x.png",
+        "//cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{retina}.png",
       attribution:
         'Map tiles: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>',
       maxZoom: 20,
-      hasRetinaSupport: true
+      retina: "@2x"
     }
   ],
   maxZoom: 20,
