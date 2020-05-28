@@ -9,7 +9,7 @@ import { Cat, Dog } from "styled-icons/fa-solid";
 
 import EndpointsOverlay from ".";
 
-import "@opentripplanner/base-map/assets/map.css";
+import "../../../node_modules/leaflet/dist/leaflet.css";
 
 // BaseMap props
 const center = [45.5215, -122.686202];

@@ -15,7 +15,7 @@ import StopsOverlay from ".";
 import mockStops from "../__mocks__/stops.json";
 import DefaultStopMarker from "./stop-marker";
 
-import "@opentripplanner/base-map/assets/map.css";
+import "../../../node_modules/leaflet/dist/leaflet.css";
 
 const center = [45.523092, -122.671202];
 const languageConfig = { stopViewer: "View Stop" };

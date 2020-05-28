@@ -7,7 +7,7 @@ import { storiesOf } from "@storybook/react";
 import routeData from "../__mocks__/mock-route.json";
 import RouteViewerOverlay from ".";
 
-import "@opentripplanner/base-map/assets/map.css";
+import "../../../node_modules/leaflet/dist/leaflet.css";
 
 const center = [45.543092, -122.671202];
 const zoom = 11;

@@ -201,13 +201,14 @@ class BaseMap extends Component {
                       maxZoom={layer.maxZoom}
                       tileSize={512}
                       zoomOffset={-1}
+                      detectRetina={layer.detectRetina}
                     />
                   ) : (
                     <TileLayer
                       url={layer.url}
                       attribution={layer.attribution}
                       maxZoom={layer.maxZoom}
-                      detectRetina
+                      detectRetina={layer.detectRetina}
                     />
                   )}
                 </LayersControl.BaseLayer>
@@ -328,7 +329,8 @@ BaseMap.defaultProps = {
       attribution:
         'Map tiles: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>',
       maxZoom: 20,
-      retina: "@2x"
+      retina: "@2x",
+      detectRetina: true
     }
   ],
   maxZoom: 20,
