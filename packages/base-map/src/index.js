@@ -325,12 +325,10 @@ BaseMap.defaultProps = {
     {
       name: "Streets",
       url:
-        "//cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{retina}.png",
+        "//cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}@2x.png",
       attribution:
         'Map tiles: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>',
-      maxZoom: 20,
-      retina: "@2x",
-      detectRetina: true
+      maxZoom: 20
     }
   ],
   maxZoom: 20,
