@@ -329,6 +329,14 @@ BaseMap.defaultProps = {
       attribution:
         'Map tiles: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>',
       maxZoom: 20
+
+      // FIXME?? CartoDB displays characters proportionally too large
+      // on regular monitors (1080p or lower) when using the "retina" parameters below.
+      // (That does not happen on "retina" displays such as Macbook or mobile phones.)
+      // url:
+      //  "//cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{retina}.png",
+      // retina: "@2x",
+      // detectRetina: true
     }
   ],
   maxZoom: 20,
