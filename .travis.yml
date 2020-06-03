@@ -4,5 +4,8 @@ cache:
 node_js:
   - "12"
 script:
+  # Ensure that tests pass.
   - yarn test
+  # Ensure that transpiling succeeds.
+  - yarn prepublish
 # TODO: add deploy stage that updates storybook (for each branch?)
