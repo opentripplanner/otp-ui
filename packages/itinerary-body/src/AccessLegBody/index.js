@@ -84,7 +84,7 @@ export default class AccessLegBody extends Component {
             {leg.steps && (
               <span>
                 {" "}
-                <Styled.CaretToggle expanded={expanded} />
+                <Styled.CaretToggle expanded />
               </span>
             )}
           </Styled.StepsHeader>
