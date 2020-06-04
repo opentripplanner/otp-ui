@@ -9,7 +9,7 @@ import { storiesOf } from "@storybook/react";
 
 import TransitiveOverlay from ".";
 
-import "@opentripplanner/base-map/assets/map.css";
+import "../../../node_modules/leaflet/dist/leaflet.css";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json");

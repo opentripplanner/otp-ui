@@ -8,7 +8,7 @@ import { storiesOf } from "@storybook/react";
 import ParkAndRideOverlay from ".";
 import parkAndRideLocations from "../__mocks__/park-and-rides.json";
 
-import "@opentripplanner/base-map/assets/map.css";
+import "../../../node_modules/leaflet/dist/leaflet.css";
 
 const center = [45.518092, -122.671202];
 const zoom = 13;
