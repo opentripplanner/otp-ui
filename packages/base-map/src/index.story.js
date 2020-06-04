@@ -76,12 +76,18 @@ export const withExampleBaseLayers = () => {
     {
       name: "Streets",
       url:
-        "//cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{retina}.png",
+        "//cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}@2x.png",
       attribution:
         'Map tiles: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>',
-      maxZoom: 20,
-      retina: "@2x",
-      detectRetina: true
+      maxZoom: 20
+
+      // FIXME?? CartoDB displays characters proportionally too large
+      // on regular monitors (1080p or lower) when using the "retina" parameters below.
+      // (That does not happen on "retina" displays such as Macbook or mobile phones.)
+      // url:
+      //  "//cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{retina}.png",
+      // retina: "@2x",
+      // detectRetina: true
     },
     {
       name: "TriMet",
@@ -103,11 +109,16 @@ export const withExampleBaseLayers = () => {
     },
     {
       name: "Stamen Toner Lite",
-      url: "http://tile.stamen.com/toner-lite/{z}/{x}/{y}{retina}.png",
-      retina: "@2x",
-      detectRetina: true,
+      url: "http://tile.stamen.com/toner-lite/{z}/{x}/{y}.png",
       attribution:
         'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
+
+      // FIXME?? Stamen displays characters proportionally too large
+      // on regular monitors (1080p or lower) when using the "retina" parameters below.
+      // (That does not happen on "retina" displays such as Macbook or mobile phones.)
+      // url: "http://tile.stamen.com/toner-lite/{z}/{x}/{y}{retina}.png",
+      // retina: "@2x",
+      // detectRetina: true
     }
   ];
 

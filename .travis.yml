@@ -4,5 +4,7 @@ cache:
 node_js:
   - "12"
 script:
+  # Ensure that tests pass. Note: "lerna exec"/prepublish script runs on yarn,
+  # so there is no need to re-run that here.
   - yarn test
 # TODO: add deploy stage that updates storybook (for each branch?)
