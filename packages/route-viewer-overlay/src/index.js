@@ -49,7 +49,7 @@ class RouteViewerOverlay extends MapLayer {
   updateLeafletElement() {}
 
   render() {
-    const { routeData, path } = this.props;
+    const { path, routeData } = this.props;
 
     if (!routeData || !routeData.patterns) return <FeatureGroup />;
 
