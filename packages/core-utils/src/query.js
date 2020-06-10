@@ -234,7 +234,7 @@ export function planParamsToQuery(params, config) {
  * @param  {Object} config  The OTP application config. See types#configType
  * @param  {Object} currentQuery  The current query parameters as saved in the
  *   application state. This method does some extra logic on top of this data
- *   in order to create a request suitable for OTP. See types#queryType
+ *   in order to create a request suitable for OTP. See __tests__/query.js#L14 for more.
  * @param  {boolean} ignoreRealtimeUpdates  If true, will create a request that
  *   does not use realtime data.
  */

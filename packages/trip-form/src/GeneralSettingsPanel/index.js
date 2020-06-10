@@ -5,10 +5,7 @@ import {
   defaultParams,
   getQueryParamProperty
 } from "@opentripplanner/core-utils/lib/query";
-import {
-  configuredModesType,
-  queryType
-} from "@opentripplanner/core-utils/lib/types";
+import { configuredModesType } from "@opentripplanner/core-utils/lib/types";
 
 import CheckboxSelector from "../CheckboxSelector";
 import DropdownSelector from "../DropdownSelector";
@@ -85,9 +82,12 @@ GeneralSettingsPanel.propTypes = {
   /**
    * An object {parameterName: value, ...} whose attributes correspond to query parameters.
    * For query parameter names and value formats,
-   * see https://github.com/opentripplanner/otp-ui/blob/master/packages/core-utils/src/query-params.js#L65
+   * see https://github.com/opentripplanner/otp-ui/blob/master/packages/core-utils/src/__tests__/query.js#L14
    */
-  query: queryType,
+  // Disable type check because the only use of queryParams is to be passed to
+  // method getQueryParamProperty from "@opentripplanner/core-utils/lib/query".
+  // eslint-disable-next-line react/forbid-prop-types
+  query: PropTypes.any,
   /**
    * An array of parameter names to support in the settings panel.
    * See the `query` parameter for more on query parameter names.

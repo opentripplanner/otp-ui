@@ -80,18 +80,6 @@ export const dropdownSelector = () => (
 export const generalSettingsPanel = () => (
   <Core.GeneralSettingsPanel
     query={{
-      // The from and to params below are for testing queryType,
-      // they are not actually used by the component.
-      from: {
-        lat: 33.9,
-        lon: -84.63,
-        name: "Place 1"
-      },
-      to: {
-        lat: 33.8,
-        lon: -84.62,
-        name: "Place 2"
-      },
       mode: text("mode", "WALK,BUS,TRAM,SUBWAY"),
       routingType: "ITINERARY"
     }}

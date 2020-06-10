@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { DotCircle, MapMarkerAlt } from "styled-icons/fa-solid";
+import { DotCircle } from "styled-icons/fa-regular";
+import { MapMarkerAlt } from "styled-icons/fa-solid";
 
 const FromIcon = styled(DotCircle)`
   color: #333;

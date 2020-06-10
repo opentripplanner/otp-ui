@@ -138,7 +138,7 @@
       "distance": 1181.7957543835096,
       "pathway": false,
       "mode": "BUS",
-      "route": "75",
+      "route": "755X",
       "agencyName": "TriMet",
       "agencyUrl": "http://trimet.org/",
       "agencyTimeZoneOffset": -28800000,
@@ -202,7 +202,7 @@
           "length": 7
         }
       ],
-      "routeShortName": "75",
+      "routeShortName": "755X",
       "routeLongName": "Cesar Chavez/Lombard",
       "rentedBike": false,
       "rentedCar": false,
@@ -421,7 +421,7 @@
       "distance": 1152.1496223157228,
       "pathway": false,
       "mode": "BUS",
-      "route": "14",
+      "route": "1",
       "agencyName": "TriMet",
       "agencyUrl": "http://trimet.org/",
       "agencyTimeZoneOffset": -28800000,
@@ -485,7 +485,7 @@
           "length": 9
         }
       ],
-      "routeShortName": "14",
+      "routeShortName": "1",
       "routeLongName": "Hawthorne",
       "rentedBike": false,
       "rentedCar": false,

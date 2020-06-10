@@ -502,31 +502,6 @@ export const modeSelectorOptionsType = PropTypes.shape({
   tertiary: PropTypes.arrayOf(modeOptionType)
 });
 
-export const queryType = PropTypes.shape({
-  from: locationType,
-  to: locationType,
-  date: PropTypes.string,
-  time: PropTypes.string,
-  departArrive: PropTypes.string,
-  startTime: PropTypes.string,
-  endTime: PropTypes.string,
-  mode: PropTypes.string,
-  showIntermediateStops: PropTypes.bool,
-  maxWalkDistance: PropTypes.number,
-  maxBikeDistance: PropTypes.number,
-  optimize: PropTypes.string,
-  optimizeBike: PropTypes.string,
-  maxWalkTime: PropTypes.number,
-  walkSpeed: PropTypes.number,
-  maxBikeTime: PropTypes.number,
-  bikeSpeed: PropTypes.number,
-  maxEScooterDistance: PropTypes.number,
-  watts: PropTypes.number,
-  ignoreRealtimeUpdates: PropTypes.bool,
-  companies: PropTypes.string,
-  wheelchair: PropTypes.bool
-});
-
 export const configuredModeType = PropTypes.oneOfType([
   PropTypes.string,
   PropTypes.shape({

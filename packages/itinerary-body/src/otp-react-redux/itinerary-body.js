@@ -37,11 +37,11 @@ const StyledItineraryBody = styled(ItineraryBody)`
     display: inline-block;
     font-size: 14px;
     font-weight: 500;
-    height: 21px;
+    height: 24px;
     margin-right: 8px;
-    padding-top: 2px;
+    min-width: 24px;
+    padding: 2px;
     text-align: center;
-    width: 24px;
   }
 
   ${ItineraryBodyClasses.LineColumn} {

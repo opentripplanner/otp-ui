@@ -7,8 +7,7 @@ import {
 } from "@opentripplanner/core-utils/lib/itinerary";
 import {
   configuredCompanyType,
-  configuredModesType,
-  queryType
+  configuredModesType
 } from "@opentripplanner/core-utils/lib/types";
 
 import ModeSelector from "../ModeSelector";
@@ -270,9 +269,12 @@ SettingsSelectorPanel.propTypes = {
   /**
    * An object {parameterName: value, ...} whose attributes correspond to query parameters.
    * For query parameter names and value formats,
-   * see https://github.com/opentripplanner/otp-ui/blob/master/packages/core-utils/src/query-params.js#L65
+   * see https://github.com/opentripplanner/otp-ui/blob/master/packages/core-utils/src/__tests__/query.js#L14
    */
-  queryParams: queryType,
+  // Disable type check because the only use of queryParams is to be passed to
+  // method getQueryParamProperty from "@opentripplanner/core-utils/lib/query".
+  // eslint-disable-next-line react/forbid-prop-types
+  queryParams: PropTypes.any,
   /**
    * An array of supported companies that will be displayed as options where applicable.
    */
