@@ -3,6 +3,36 @@
 - [Components via Storybook](http://www.opentripplanner.org/otp-ui)
 - [npm packages](https://www.npmjs.com/org/opentripplanner)
 
+## [0.0.22] - 2020-06-11
+
+### Changes
+
+Lots of map and props cleanup, etc...
+
+- [#141](https://github.com/opentripplanner/otp-ui/issues/141)
+- [#139](https://github.com/opentripplanner/otp-ui/issues/139)
+- [#138](https://github.com/opentripplanner/otp-ui/issues/138)
+- [#137](https://github.com/opentripplanner/otp-ui/issues/137)
+- [#136](https://github.com/opentripplanner/otp-ui/issues/136)
+- [#135](https://github.com/opentripplanner/otp-ui/issues/135)
+- [#134](https://github.com/opentripplanner/otp-ui/issues/134)
+- [#130](https://github.com/opentripplanner/otp-ui/issues/130)
+- [#129](https://github.com/opentripplanner/otp-ui/issues/129)
+
+---
+
+## [0.0.21] - 2020-05-06
+
+### Changes
+
+major vehicle overlay refactor
+
+## [0.0.20] - 2020-04-27
+
+### Changes
+
+minor changes / fixes
+
 ## [0.0.19] - 2020-03-26
 
 ### Changes
@@ -11,8 +41,6 @@ Itinerary and Mode Button improvements PRs (trimet.org project):
 
 - [#97](https://github.com/opentripplanner/otp-ui/issues/97)
 - [#92](https://github.com/opentripplanner/otp-ui/issues/92)
-
----
 
 ## [0.0.18] - 2020-03-19
 
