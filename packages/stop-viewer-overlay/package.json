@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/stop-viewer-overlay",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "A map overlay to show a stop",
   "main": "lib/index.js",
   "author": "Evan Siroky",
@@ -17,7 +17,7 @@
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
   "dependencies": {
-    "@opentripplanner/core-utils": "^0.0.21",
+    "@opentripplanner/core-utils": "^0.0.22",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {
