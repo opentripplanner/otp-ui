@@ -9,13 +9,13 @@ import { FeatureGroup, MapLayer, withLeaflet } from "react-leaflet";
 class StopsOverlay extends MapLayer {
   componentDidMount() {
     // set up pan/zoom listener
-    this.props.leaflet.map.on("moveend", this.handleMapMoveEnd);
+    this.props.leaflet.map.on("moveend", this.refreshStops);
   }
 
   // TODO: determine why the default MapLayer componentWillUnmount() method throws an error
   componentWillUnmount() {
     // Remove the pan/zoom listener set up above only.
-    this.props.leaflet.map.off("moveend", this.handleMapMoveEnd);
+    this.props.leaflet.map.off("moveend", this.refreshStops);
   }
 
   /**
@@ -27,9 +27,7 @@ class StopsOverlay extends MapLayer {
     return this.props.leaflet;
   }
 
-  handleMapMoveEnd = () => this.refreshStops();
-
-  refreshStops() {
+  refreshStops = () => {
     const { leaflet, minZoom, refreshStops } = this.props;
     if (leaflet.map.getZoom() < minZoom) {
       this.forceUpdate();
@@ -48,7 +46,7 @@ class StopsOverlay extends MapLayer {
         this.lastBounds = bounds;
       }, 300);
     }
-  }
+  };
 
   createLeafletElement() {}
 
