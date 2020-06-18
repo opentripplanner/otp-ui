@@ -45,13 +45,16 @@ class VehicleRentalOverlay extends MapLayer {
   updateLeafletElement() {}
 
   startRefreshing() {
-    // initial station retrieval
-    this.props.refreshVehicles();
+    const { refreshVehicles } = this.props;
+    if (typeof refreshVehicles === "function") {
+      // initial station retrieval
+      refreshVehicles();
 
-    // set up timer to refresh stations periodically
-    this.refreshTimer = setInterval(() => {
-      this.props.refreshVehicles();
-    }, 30000); // defaults to every 30 sec. TODO: make this configurable?*/
+      // set up timer to refresh stations periodically
+      this.refreshTimer = setInterval(() => {
+        refreshVehicles();
+      }, 30000); // defaults to every 30 sec. TODO: make this configurable?
+    }
   }
 
   stopRefreshing() {
@@ -239,10 +242,10 @@ VehicleRentalOverlay.props = {
    */
   mapSymbols: vehicleRentalMapOverlaySymbolsType,
   /**
-   * A function that will be triggered every 30 seconds whenever this layer is
+   * If specified, a function that will be triggered every 30 seconds whenever this layer is
    * visible.
    */
-  refreshVehicles: PropTypes.func.isRequired,
+  refreshVehicles: PropTypes.func,
   /**
    * A callback for when a user clicks on setting this stop as either the from
    * or to location of a new search.
@@ -293,6 +296,7 @@ VehicleRentalOverlay.defaultProps = {
     return stationName;
   },
   mapSymbols: null,
+  refreshVehicles: null,
   stations: [],
   visible: false
 };
