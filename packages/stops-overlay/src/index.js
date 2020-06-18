@@ -14,7 +14,7 @@ class StopsOverlay extends MapLayer {
 
   // TODO: determine why the default MapLayer componentWillUnmount() method throws an error
   componentWillUnmount() {
-    // Remove the pan/zoom listener set up above only.
+    // Remove the pan/zoom listener set up above.
     this.props.leaflet.map.off("moveend", this.refreshStops);
   }
 
