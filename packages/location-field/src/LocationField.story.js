@@ -239,4 +239,33 @@ storiesOf("LocationField", module)
       userLocationsAndRecentPlaces={userLocationsAndRecentPlaces}
       UserLocationIconComponent={UserLocationIconComponent}
     />
+  ))
+  .add("LocationField no auto-focus with multiple controls", () => (
+    <div>
+      <input id="example" value="Enter text" />
+      <button type="button">Click me!</button>
+      <LocationField
+        currentPosition={currentPosition}
+        geocoderConfig={geocoderConfig}
+        getCurrentPosition={getCurrentPosition}
+        inputPlaceholder="Select from location"
+        locationType="from"
+        onLocationSelected={onLocationSelected}
+      />
+    </div>
+  ))
+  .add("LocationField auto-focus with multiple controls", () => (
+    <div>
+      <input id="example" value="Enter text" />
+      <button type="button">Click me!</button>
+      <LocationField
+        autoFocus
+        currentPosition={currentPosition}
+        geocoderConfig={geocoderConfig}
+        getCurrentPosition={getCurrentPosition}
+        inputPlaceholder="Select from location"
+        locationType="from"
+        onLocationSelected={onLocationSelected}
+      />
+    </div>
   ));
