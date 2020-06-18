@@ -46,6 +46,8 @@ class VehicleRentalOverlay extends MapLayer {
 
   startRefreshing() {
     const { refreshVehicles } = this.props;
+
+    // Create the timer only if refreshVehicles is a valid function.
     if (typeof refreshVehicles === "function") {
       // initial station retrieval
       refreshVehicles();
