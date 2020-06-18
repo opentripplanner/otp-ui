@@ -9,13 +9,14 @@ import { FeatureGroup, MapLayer, withLeaflet } from "react-leaflet";
 class StopsOverlay extends MapLayer {
   componentDidMount() {
     // set up pan/zoom listener
-    this.props.leaflet.map.on("moveend", () => {
-      this.refreshStops();
-    });
+    this.props.leaflet.map.on("moveend", this.handleMapMoveEnd);
   }
 
   // TODO: determine why the default MapLayer componentWillUnmount() method throws an error
-  componentWillUnmount() {}
+  componentWillUnmount() {
+    // Remove the previously set up pan/zoom listener.
+    this.props.leaflet.map.off("moveend", this.handleMapMoveEnd);
+  }
 
   /**
    * this method is used for backporting to React 15
@@ -25,6 +26,8 @@ class StopsOverlay extends MapLayer {
   getLeafletContext() {
     return this.props.leaflet;
   }
+
+  handleMapMoveEnd = () => this.refreshStops();
 
   refreshStops() {
     const { leaflet, minZoom, refreshStops } = this.props;
