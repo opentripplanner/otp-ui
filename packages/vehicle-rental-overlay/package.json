@@ -19,6 +19,7 @@
   "dependencies": {
     "@opentripplanner/core-utils": "^0.0.22",
     "@opentripplanner/from-to-location-picker": "^0.0.22",
+    "@opentripplanner/zoom-based-markers": "^0.0.22",
     "lodash.memoize": "^4.1.2",
     "prop-types": "^15.7.2",
     "styled-icons": "^9.1.0"
