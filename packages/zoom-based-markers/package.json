@@ -1,7 +1,7 @@
 {
-  "name": "@opentripplanner/zoom-based-marker",
+  "name": "@opentripplanner/zoom-based-markers",
   "version": "0.0.22",
-  "description": "A component that renders different components based on zoom level.",
+  "description": "A component that renders objects differently based on a zoom level.",
   "main": "lib/index.js",
   "author": "Binh Dam",
   "license": "MIT",

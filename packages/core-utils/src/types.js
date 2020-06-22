@@ -570,15 +570,16 @@ export const userLocationType = PropTypes.shape({
   type: PropTypes.string.isRequired
 });
 
-export const zoomBasedMarkerType = PropTypes.shape({
-  /**
-   * The component to draw. It will receive the props
-   * passed to ZoomBasedMarker (except for markers and zoom).
-   */
-  marker: PropTypes.elementType.isRequired,
+export const zoomBasedSymbolType = PropTypes.shape({
   /**
    * The zoom level beginning at which the marker is drawn,
    * unless another marker with a higher minZoom is met.
    */
-  minZoom: PropTypes.number.isRequired
+  minZoom: PropTypes.number.isRequired,
+  /**
+   * The symbol-representing component to draw, with the signature
+   * ({ entity: object }) => Element
+   * where entity should contain coordinates information for placement on the map.
+   */
+  symbol: PropTypes.elementType.isRequired
 });
