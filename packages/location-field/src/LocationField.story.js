@@ -242,7 +242,7 @@ storiesOf("LocationField", module)
   ))
   .add("LocationField no auto-focus with multiple controls", () => (
     <div>
-      <input id="example" value="Enter text" />
+      <input id="example" defaultValue="Enter text" />
       <button type="button">Click me!</button>
       <LocationField
         currentPosition={currentPosition}
@@ -256,7 +256,7 @@ storiesOf("LocationField", module)
   ))
   .add("LocationField auto-focus with multiple controls", () => (
     <div>
-      <input id="example" value="Enter text" />
+      <input id="example" defaultValue="Enter text" />
       <button type="button">Click me!</button>
       <LocationField
         autoFocus
