@@ -290,6 +290,7 @@ class LocationField extends Component {
   render() {
     const {
       addLocationSearch,
+      autoFocus,
       className,
       currentPosition,
       currentPositionIcon,
@@ -538,6 +539,7 @@ class LocationField extends Component {
         ref={ref => {
           this.inputRef = ref;
         }}
+        autoFocus={autoFocus}
         className={this.getFormControlClassname()}
         value={value}
         placeholder={placeholder}
@@ -613,6 +615,10 @@ LocationField.propTypes = {
    * ```
    */
   addLocationSearch: PropTypes.func,
+  /**
+   * Determines whether the input field of this component should auto-focus on first display.
+   */
+  autoFocus: PropTypes.bool,
   /**
    * Used for additional styling with styled components for example.
    */
@@ -813,6 +819,7 @@ LocationField.propTypes = {
 };
 
 LocationField.defaultProps = {
+  autoFocus: false,
   addLocationSearch: () => {},
   className: null,
   clearLocation: () => {},
