@@ -44,6 +44,7 @@ class ParkAndRideOverlay extends MapLayer {
 
                   {/* Set as from/to toolbar */}
                   <BaseMapStyled.PopupRow>
+                    <b>Plan a trip:</b>
                     <FromToLocationPicker
                       location={{
                         lat: location.y,
