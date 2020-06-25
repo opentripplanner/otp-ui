@@ -75,7 +75,7 @@ export default class PeliasGeocoder extends Geocoder {
     return {
       lat,
       lon,
-      name: firstFeature.address,
+      name: firstFeature.label,
       rawGeocodedFeature: firstFeature
     };
   }
