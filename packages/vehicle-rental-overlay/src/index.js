@@ -117,7 +117,7 @@ class VehicleRentalOverlay extends MapLayer {
     );
   };
 
-  renderStationAsCircle = (station, symbolDef) => {
+  renderStationAsCircle = symbolDef => ({ entity: station }) => {
     let strokeColor = symbolDef.strokeColor || symbolDef.fillColor;
     if (!station.isFloatingBike) {
       strokeColor = symbolDef.dockStrokeColor || strokeColor;
@@ -137,7 +137,7 @@ class VehicleRentalOverlay extends MapLayer {
     );
   };
 
-  renderStationAsHubAndFloatingBike = station => {
+  StationAsHubAndFloatingBike = ({ entity: station }) => {
     let icon;
     if (station.isFloatingBike) {
       icon = floatingBikeIcon;
@@ -155,7 +155,7 @@ class VehicleRentalOverlay extends MapLayer {
     );
   };
 
-  renderStationAsMarker = (station, symbolDef) => {
+  renderStationAsMarker = symbolDef => ({ entity: station }) => {
     const color =
       symbolDef && symbolDef.fillColor ? symbolDef.fillColor : "gray";
     const markerIcon = getStationMarkerByColor(color);
@@ -171,14 +171,14 @@ class VehicleRentalOverlay extends MapLayer {
     );
   };
 
-  renderStation = symbolDef => ({ entity: station }) => {
+  renderStation = symbolDef => {
     switch (symbolDef.type) {
       case "circle":
-        return this.renderStationAsCircle(station, symbolDef);
+        return this.renderStationAsCircle(symbolDef);
       case "hubAndFloatingBike":
-        return this.renderStationAsHubAndFloatingBike(station);
+        return this.StationAsHubAndFloatingBike;
       default:
-        return this.renderStationAsMarker(station, symbolDef);
+        return this.renderStationAsMarker(symbolDef);
     }
   };
 
