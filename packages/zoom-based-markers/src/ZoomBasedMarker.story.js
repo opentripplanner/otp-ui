@@ -32,12 +32,13 @@ const mockStops = [
 
 const mapCenter = [45.420217, -122.67307];
 
-const Circle1 = ({ entity }) => (
-  <CircleMarker center={[entity.lat, entity.lon]} radius={10} />
+const Circle1 = ({ entity, zoom }) => (
+  <CircleMarker center={[entity.lat, entity.lon]} radius={zoom < 7 ? 10 : 20} />
 );
 
 Circle1.propTypes = {
-  entity: stopLayerStopType.isRequired
+  entity: stopLayerStopType.isRequired,
+  zoom: PropTypes.number.isRequired
 };
 
 const Circle2 = ({ entity }) => (
@@ -49,6 +50,18 @@ const Circle2 = ({ entity }) => (
 );
 
 Circle2.propTypes = {
+  entity: stopLayerStopType.isRequired
+};
+
+const Circle3 = ({ entity }) => (
+  <CircleMarker
+    center={[entity.lat, entity.lon]}
+    fillColor="#FF0000"
+    radius={30}
+  />
+);
+
+Circle3.propTypes = {
   entity: stopLayerStopType.isRequired
 };
 
@@ -76,6 +89,14 @@ const mySymbols = [
   {
     minZoom: 12,
     symbol: Circle2
+  },
+  {
+    getMode: entity => (entity.id === "3" ? "special" : "normal"),
+    minZoom: 14,
+    symbol: Circle2,
+    symbolByMode: {
+      special: Circle3
+    }
   },
   {
     minZoom: 16,

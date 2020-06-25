@@ -570,7 +570,17 @@ export const userLocationType = PropTypes.shape({
   type: PropTypes.string.isRequired
 });
 
+/**
+ * Defines which symbol to render based on a zoom level, and optionally by mode.
+ * (Only one symbol is rendered fo any zoom level.)
+ */
 export const zoomBasedSymbolType = PropTypes.shape({
+  /**
+   * A function with the signature (entity: object) => string
+   * that extracts a mode from an entity.
+   * symbolByMode and getMode must be either be both specified or both ommited.
+   */
+  getMode: PropTypes.func,
   /**
    * The zoom level beginning at which the marker is drawn,
    * unless another marker with a higher minZoom is met.
@@ -578,8 +588,15 @@ export const zoomBasedSymbolType = PropTypes.shape({
   minZoom: PropTypes.number.isRequired,
   /**
    * The symbol-representing component to draw, with the signature
-   * ({ entity: object }) => Element
+   * ({ entity: object, zoom: number }) => Element
    * where entity should contain coordinates information for placement on the map.
    */
-  symbol: PropTypes.elementType.isRequired
+  symbol: PropTypes.elementType.isRequired,
+  /**
+   * The symbol-representing component to draw for each mode,
+   * with the same signature as symbol. If a mode returned by getMode() is not listed,
+   * then symbol will be rendered by default.
+   * symbolByMode and getMode must be either be both specified or both ommited.
+   */
+  symbolByMode: PropTypes.objectOf(PropTypes.elementType)
 });
