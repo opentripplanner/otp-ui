@@ -1,3 +1,10 @@
 {
-  "ci": false
+  "branches": [
+    "alpha",
+    {
+      "name": "semantic-release-monorepo",
+      "prerelease": true
+    }
+  ],
+  "repositoryUrl": "https://github.com/ibi-group/otp-ui.git"
 }

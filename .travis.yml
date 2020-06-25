@@ -7,4 +7,6 @@ script:
   # Ensure that tests pass. Note: "lerna exec"/prepublish script runs on yarn,
   # so there is no need to re-run that here.
   - yarn test
+  # Perform the monorepo semantic release after tests have succeeded.
+  - lerna exec --concurrency 1 -- npx semantic-release -e semantic-release-monorepo
 # TODO: add deploy stage that updates storybook (for each branch?)
