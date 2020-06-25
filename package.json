@@ -119,12 +119,6 @@
       "jest": true
     }
   },
-  "release": {
-    "branches": [
-      "master",
-      "semantic-release-monorepo"
-    ]
-  },
   "stylelint": {
     "processors": [
       "stylelint-processor-styled-components"
