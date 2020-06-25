@@ -63,11 +63,11 @@ describe("geocoder", () => {
       200,
       mockResponsePath("pelias", "autocomplete-response.json")
     )
-    // reverse
+    // search
     .get(`${basePeliasPath}search`)
     .query(true)
     .replyWithFile(200, mockResponsePath("pelias", "search-response.json"))
-    // search
+    // reverse, includes not using zip/country in returned location.name.
     .get(`${basePeliasPath}reverse`)
     .query(true)
     .replyWithFile(200, mockResponsePath("pelias", "reverse-response.json"));
