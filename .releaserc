@@ -1,6 +1,6 @@
 {
   "branches": [
-    "master",
+    "alpha",
     {
       "name": "semantic-release-monorepo",
       "prerelease": true
