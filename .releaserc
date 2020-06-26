@@ -6,5 +6,8 @@
       "prerelease": true
     }
   ],
-  "repositoryUrl": "https://github.com/ibi-group/otp-ui.git"
+  "repositoryUrl": "https://github.com/opentripplanner/otp-ui.git",
+  
+  "fail": [],
+  "success": []
 }
