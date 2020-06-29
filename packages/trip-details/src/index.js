@@ -44,7 +44,7 @@ export default function TripDetails({
       <Styled.Fare>
         {transitFare && (
           <Styled.TransitFare>
-            Transit $Fare: <b>{centsToString(transitFare)}</b>
+            Transit Fare: <b>{centsToString(transitFare)}</b>
           </Styled.TransitFare>
         )}
         {minTNCFare !== 0 && (
