@@ -1,11 +1,4 @@
 {
-  "branches": [
-    "alpha",
-    {
-      "name": "semantic-release-monorepo",
-      "prerelease": true
-    }
-  ],
   "repositoryUrl": "https://github.com/opentripplanner/otp-ui.git",
 
   "fail": [],
