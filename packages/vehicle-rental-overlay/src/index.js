@@ -110,6 +110,7 @@ class VehicleRentalOverlay extends MapLayer {
 
           {/* Set as from/to toolbar */}
           <BaseMapStyled.PopupRow>
+            <b>Plan a trip:</b>
             <FromToLocationPicker
               location={location}
               setLocation={setLocation}
