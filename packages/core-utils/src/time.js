@@ -104,8 +104,8 @@ export function getCurrentTime(timezone = getUserTimezone()) {
  * Formats current date for use in OTP query
  * The conversion to the user's timezone is needed for testing purposes.
  */
-export function getCurrentDate() {
+export function getCurrentDate(timezone = getUserTimezone()) {
   return moment()
-    .tz(getUserTimezone())
+    .tz(timezone)
     .format(OTP_API_DATE_FORMAT);
 }
