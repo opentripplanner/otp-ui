@@ -183,9 +183,8 @@ function parseLocationString(value) {
  *
  * @param  {Object} params An object representing the parsed querystring of url
  *    params.
- * @param config the config in the otp-rr store.
  */
-export function planParamsToQuery(params, config) {
+export function planParamsToQuery(params) {
   const query = {};
   Object.keys(params).forEach(key => {
     switch (key) {
@@ -204,10 +203,10 @@ export function planParamsToQuery(params, config) {
             : "NOW";
         break;
       case "date":
-        query.date = params.date || getCurrentDate(config);
+        query.date = params.date || getCurrentDate();
         break;
       case "time":
-        query.time = params.time || getCurrentTime(config);
+        query.time = params.time || getCurrentTime();
         break;
       default: {
         const maybeNumber = Number(params[key]);
