@@ -88,7 +88,17 @@ export function formatSecondsAfterMidnight(seconds, timeFormat) {
  * test environment.
  */
 export function getUserTimezone() {
-  return process.env.NODE_ENV === "test" ? process.env.TZ : moment.tz.guess();
+  if (process.env.NODE_ENV === "test") return process.env.TZ;
+  // FIXME There is an issue with tz.guess being undefined that has not yet been
+  // resolved. https://github.com/opentripplanner/otp-ui/issues/152
+  if (!moment.tz || typeof moment.tz.guess !== "function") {
+    // eslint-disable-next-line no-console
+    console.warn(
+      "Error guessing user's timezone (moment.tz or moment.tz.guess not defined). Defaulting to America/New_York."
+    );
+    return "America/New_York";
+  }
+  return moment.tz.guess();
 }
 
 /**
