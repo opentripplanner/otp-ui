@@ -1,5 +1,4 @@
-import moment from "moment";
-import "moment-timezone";
+import moment from "moment-timezone";
 
 // special constants for making sure the following date format is always sent to
 // OTP regardless of whatever the user has configured as the display format
@@ -105,9 +104,9 @@ export function getUserTimezone() {
  * Formats current time for use in OTP query
  * The conversion to the user's timezone is needed for testing purposes.
  */
-export function getCurrentTime() {
+export function getCurrentTime(timezone = getUserTimezone()) {
   return moment()
-    .tz(getUserTimezone())
+    .tz(timezone)
     .format(OTP_API_TIME_FORMAT);
 }
 
@@ -115,8 +114,8 @@ export function getCurrentTime() {
  * Formats current date for use in OTP query
  * The conversion to the user's timezone is needed for testing purposes.
  */
-export function getCurrentDate() {
+export function getCurrentDate(timezone = getUserTimezone()) {
   return moment()
-    .tz(getUserTimezone())
+    .tz(timezone)
     .format(OTP_API_DATE_FORMAT);
 }

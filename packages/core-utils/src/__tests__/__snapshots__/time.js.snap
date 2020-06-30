@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`time getCurrentTime should return time at specified timezone 1`] = `"22:34"`;
