@@ -1,6 +1,13 @@
+import {
+  restoreDateNowBehavior,
+  setDefaultTestTime
+} from "../../../../test-utils/time";
+
 import { getDefaultQuery, planParamsToQuery } from "../query";
 
 describe("query", () => {
+  afterEach(restoreDateNowBehavior);
+
   describe("planParamsToQuery", () => {
     it("should parse a depart at query", () => {
       expect(
@@ -25,8 +32,10 @@ describe("query", () => {
       ).toMatchSnapshot();
     });
   });
+
   describe("getDefaultQuery", () => {
     it("should return default query", () => {
+      setDefaultTestTime();
       expect(getDefaultQuery()).toMatchSnapshot();
     });
   });

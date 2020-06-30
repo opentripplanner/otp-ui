@@ -11,5 +11,6 @@ module.exports = {
       statements: 100
     }
   },
+  globalSetup: "<rootDir>/test-utils/global-setup.js",
   testPathIgnorePatterns: ["<rootDir>/packages/(?:.+?)/lib/"]
 };
