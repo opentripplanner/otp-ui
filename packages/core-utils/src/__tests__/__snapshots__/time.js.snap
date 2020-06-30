@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`time getCurrentDate should return current date at specified timezone 1`] = `"2019-08-04"`;
+
 exports[`time getCurrentTime should return time at specified timezone 1`] = `"22:34"`;

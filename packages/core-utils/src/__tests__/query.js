@@ -1,4 +1,4 @@
-import { planParamsToQuery } from "../query";
+import { getDefaultQuery, planParamsToQuery } from "../query";
 
 describe("query", () => {
   describe("planParamsToQuery", () => {
@@ -23,6 +23,11 @@ describe("query", () => {
           walkSpeed: "1.34"
         })
       ).toMatchSnapshot();
+    });
+  });
+  describe("getDefaultQuery", () => {
+    it("should return default query", () => {
+      expect(getDefaultQuery()).toMatchSnapshot();
     });
   });
 });

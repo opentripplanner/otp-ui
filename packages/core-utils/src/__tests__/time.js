@@ -1,4 +1,4 @@
-import { getCurrentTime } from "../time";
+import { getCurrentDate, getCurrentTime } from "../time";
 
 // Sun Aug 04 2019 19:34:56 GMT-0700
 const DEFAULT_TEST_TIME = Date.UTC(2019, 7, 5, 2, 34, 56, 78);
@@ -41,6 +41,14 @@ function restoreDateNowBehavior() {
 
 describe("time", () => {
   afterEach(restoreDateNowBehavior);
+
+  describe("getCurrentDate", () => {
+    it("should return current date at specified timezone", () => {
+      setDefaultTestTime();
+      expect(getCurrentDate("America/New_York")).toMatchSnapshot();
+    });
+  });
+
   describe("getCurrentTime", () => {
     it("should return time at specified timezone", () => {
       setDefaultTestTime();

@@ -19,11 +19,7 @@ import { getCurrentDate, getCurrentTime } from "./time";
  *   (Applicability is assumed if this function is not provided.)
  *
  * default: the default value for this parameter. The default can be also be a
- *  function that gets executed when accessing the default value. When the value
- *  is a funciton, it will take an argument of the current config of the otp-rr
- *  store. This is needed when a brand new time-dependent value is desired to be
- *  calculated. It's also helpful for producing tests that have consistent data
- *  output.
+ *  function that gets executed when accessing the default value.
  *
  * itineraryRewrite: an optional function for translating the key and/or value
  *   for ITINERARY mode only (e.g. 'to' is rewritten as 'toPlace'). Accepts the
