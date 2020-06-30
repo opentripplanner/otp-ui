@@ -183,7 +183,6 @@ function parseLocationString(value) {
  *
  * @param  {Object} params An object representing the parsed querystring of url
  *    params.
- * @param config the config in the otp-rr store.
  */
 export function planParamsToQuery(params) {
   const query = {};
