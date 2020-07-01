@@ -99,13 +99,11 @@ export function getTripOptionsFromQuery(query, keepPlace = false) {
 }
 
 /**
- * Gets the default query param by executing the default value function with the
- * provided otp config if the default value is a function.
+ * Gets the query param's default value that is either a constant or by
+ * executing the default value function.
  */
-function getDefaultQueryParamValue(param, config) {
-  return typeof param.default === "function"
-    ? param.default(config)
-    : param.default;
+function getDefaultQueryParamValue(param) {
+  return typeof param.default === "function" ? param.default() : param.default;
 }
 
 /**
@@ -136,7 +134,7 @@ export function isNotDefaultQuery(query, config) {
         !paramInfo.applicable(query, config)
       )
         return;
-      if (query[param] !== getDefaultQueryParamValue(paramInfo, config)) {
+      if (query[param] !== getDefaultQueryParamValue(paramInfo)) {
         queryIsDifferent = true;
       }
     });
@@ -146,15 +144,13 @@ export function isNotDefaultQuery(query, config) {
 
 /**
  * Get the default query to OTP based on the given config.
- *
- * @param config the config in the otp-rr store.
  */
-export function getDefaultQuery(config) {
+export function getDefaultQuery() {
   const defaultQuery = { routingType: "ITINERARY" };
   queryParams
     .filter(qp => "default" in qp)
     .forEach(qp => {
-      defaultQuery[qp.name] = getDefaultQueryParamValue(qp, config);
+      defaultQuery[qp.name] = getDefaultQueryParamValue(qp);
     });
   return defaultQuery;
 }

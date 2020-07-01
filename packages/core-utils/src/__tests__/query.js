@@ -1,6 +1,13 @@
-import { planParamsToQuery } from "../query";
+import {
+  restoreDateNowBehavior,
+  setDefaultTestTime
+} from "../../../../test-utils/time";
+
+import { getDefaultQuery, planParamsToQuery } from "../query";
 
 describe("query", () => {
+  afterEach(restoreDateNowBehavior);
+
   describe("planParamsToQuery", () => {
     it("should parse a depart at query", () => {
       expect(
@@ -23,6 +30,13 @@ describe("query", () => {
           walkSpeed: "1.34"
         })
       ).toMatchSnapshot();
+    });
+  });
+
+  describe("getDefaultQuery", () => {
+    it("should return default query", () => {
+      setDefaultTestTime();
+      expect(getDefaultQuery()).toMatchSnapshot();
     });
   });
 });
