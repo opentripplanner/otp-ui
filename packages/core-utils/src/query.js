@@ -1,5 +1,5 @@
 import moment from "moment";
-import getGeocoder from "@opentripplanner/geocoder";
+import getGeocoder from "@opentripplanner/geocoder/lib";
 import qs from "qs";
 
 import {
@@ -214,9 +214,9 @@ function parseLocationString(value) {
  * Convert a string query param for a from or to place into a location. If
  * coordinates not provided and geocoder config is present, use the first
  * geocoded result.
- * @param  {string} value                 [description]
- * @param  {Object} [geocoderConfig=null] [description]
- * @return {Location}                       [description]
+ * @param  {string} value
+ * @param  {Object} [geocoderConfig=null]
+ * @return {Location}
  */
 async function queryParamToLocation(value, geocoderConfig = null) {
   let location = parseLocationString(value);
