@@ -19,7 +19,7 @@
   "dependencies": {
     "@opentripplanner/core-utils": "^0.0.22",
     "lodash.isequal": "^4.5.0",
-    "transitive-js": "^0.13.2"
+    "transitive-js": "^0.13.3"
   },
   "devDependencies": {
     "@opentripplanner/endpoints-overlay": "^0.0.22",
