@@ -237,7 +237,12 @@ async function queryParamToLocation(value, geocoderConfig = null) {
  */
 export async function planParamsToQuery(params, config) {
   const query = {};
-  Object.keys(params).forEach(async key => {
+  // FIXME? Must use for to execute the awaits statements one after the other
+  // and obtain a populated query object.
+  /* eslint-disable no-await-in-loop */
+  /* eslint-disable no-restricted-syntax */
+  /* eslint-disable guard-for-in */
+  for (const key in params) {
     switch (key) {
       case "fromPlace":
         query.from = await queryParamToLocation(
@@ -279,7 +284,7 @@ export async function planParamsToQuery(params, config) {
         break;
       }
     }
-  });
+  }
   return query;
 }
 
