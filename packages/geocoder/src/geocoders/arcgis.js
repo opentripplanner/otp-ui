@@ -15,6 +15,13 @@ export default class ArcGISGeocoder extends Geocoder {
    * format.
    */
   getLocationFromGeocodedFeature(feature) {
+    // If feature was returned from 'search' query, it will already be
+    // structured properly.
+    if (feature.geometry) {
+      return Geocoder.prototype.getLocationFromGeocodedFeature(feature);
+    }
+    // If feature returned from autocomplete, we need to use the magicKey to get
+    // the location's coordinates.
     return this.api
       .search({ magicKey: feature.magicKey, text: feature.text })
       .then(response => {
