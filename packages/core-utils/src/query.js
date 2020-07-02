@@ -1,4 +1,5 @@
 import moment from "moment";
+import getGeocoder from "@opentripplanner/geocoder";
 import qs from "qs";
 
 import {
@@ -31,6 +32,22 @@ export const defaultParams = [
   "optimizeBike",
   "maxEScooterDistance",
   "watts"
+];
+
+/**
+ * List of time formats to parse when reading query params.
+ */
+const TIME_FORMATS = [
+  "HH:mm:ss",
+  "h:mm:ss a",
+  "h:mm:ssa",
+  "h:mm a",
+  "h:mma",
+  "h:mm",
+  "HHmm",
+  "hmm",
+  "ha",
+  OTP_API_TIME_FORMAT // 'HH:mm'
 ];
 
 /* A function to retrieve a property value from an entry in the query-params
@@ -156,6 +173,25 @@ export function getDefaultQuery() {
 }
 
 /**
+ * Geocode utility for returning the first result for the provided place name text.
+ * @param  {string} text - text to search
+ * @param  {Object} geocoderConfig
+ * @return {Location}
+ */
+async function getFirstGeocodeResult(text, geocoderConfig) {
+  const geocoder = getGeocoder(geocoderConfig);
+  // Attempt to geocode search text and return first result if found.
+  // TODO: Import geocoder from @opentripplanner
+  return geocoder.search({ text }).then(result => {
+    const firstResult = result.features && result.features[0];
+    if (firstResult) {
+      return geocoder.getLocationFromGeocodedFeature(firstResult);
+    }
+    return null;
+  });
+}
+
+/**
  * OTP allows passing a location in the form '123 Main St::lat,lon', so we check
  * for the double colon and parse the coordinates accordingly.
  */
@@ -175,20 +211,42 @@ function parseLocationString(value) {
 }
 
 /**
+ * Convert a string query param for a from or to place into a location. If
+ * coordinates not provided and geocoder config is present, use the first
+ * geocoded result.
+ * @param  {string} value                 [description]
+ * @param  {Object} [geocoderConfig=null] [description]
+ * @return {Location}                       [description]
+ */
+async function queryParamToLocation(value, geocoderConfig = null) {
+  let location = parseLocationString(value);
+  if (!location && value && geocoderConfig) {
+    // If a valid location was not found, but the place name text exists,
+    // attempt to geocode the name.
+    location = await getFirstGeocodeResult(value, geocoderConfig);
+  }
+  return location;
+}
+
+/**
  * Create a otp query based on a the url params.
  *
  * @param  {Object} params An object representing the parsed querystring of url
  *    params.
+ * @param config the config in the otp-rr store.
  */
-export function planParamsToQuery(params) {
+export async function planParamsToQuery(params, config) {
   const query = {};
-  Object.keys(params).forEach(key => {
+  Object.keys(params).forEach(async key => {
     switch (key) {
       case "fromPlace":
-        query.from = parseLocationString(params.fromPlace);
+        query.from = await queryParamToLocation(
+          params.fromPlace,
+          config.geocoder
+        );
         break;
       case "toPlace":
-        query.to = parseLocationString(params.toPlace);
+        query.to = await queryParamToLocation(params.toPlace, config.geocoder);
         break;
       case "arriveBy":
         query.departArrive =
@@ -202,7 +260,12 @@ export function planParamsToQuery(params) {
         query.date = params.date || getCurrentDate();
         break;
       case "time":
-        query.time = params.time || getCurrentTime();
+        {
+          const parsedTime = moment(params.time, TIME_FORMATS);
+          query.time = parsedTime.isValid()
+            ? parsedTime.format(OTP_API_TIME_FORMAT)
+            : getCurrentTime();
+        }
         break;
       default: {
         const maybeNumber = Number(params[key]);
