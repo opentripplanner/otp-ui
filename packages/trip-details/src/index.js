@@ -2,6 +2,7 @@ import {
   calculateFares,
   calculatePhysicalActivity
 } from "@opentripplanner/core-utils/lib/itinerary";
+import { mergeMessages } from "@opentripplanner/core-utils/lib/messages";
 import { formatTime } from "@opentripplanner/core-utils/lib/time";
 import {
   itineraryType,
@@ -19,10 +20,12 @@ export default function TripDetails({
   className,
   itinerary,
   longDateFormat,
+  messages,
   routingType,
   timeOptions
 }) {
   const date = moment(itinerary.startTime);
+  messages = mergeMessages(TripDetails.defaultProps.messages, messages);
 
   // process the transit fare
   const {
@@ -44,7 +47,7 @@ export default function TripDetails({
       <Styled.Fare>
         {transitFare && (
           <Styled.TransitFare>
-            Transit Fare: <b>{centsToString(transitFare)}</b>
+            {messages.transitFare}: <b>{centsToString(transitFare)}</b>
           </Styled.TransitFare>
         )}
         {minTNCFare !== 0 && (
@@ -53,7 +56,7 @@ export default function TripDetails({
             <Styled.TNCFareCompanies>
               {companies.toLowerCase()}
             </Styled.TNCFareCompanies>{" "}
-            Fare:{" "}
+            {messages.fare}:{" "}
             <b>
               {dollarsToString(minTNCFare)} - {dollarsToString(maxTNCFare)}
             </b>
@@ -72,33 +75,39 @@ export default function TripDetails({
 
   return (
     <Styled.TripDetails className={className}>
-      <Styled.TripDetailsHeader>Trip Details</Styled.TripDetailsHeader>
+      <Styled.TripDetailsHeader>{messages.title}</Styled.TripDetailsHeader>
       <Styled.TripDetailsBody>
         <TripDetail
+          description={messages.departDescription}
           icon={<CalendarAlt size={17} />}
           summary={
             <Styled.Timing>
               <span>
-                Depart <b>{date.format(longDateFormat)}</b>
+                {messages.depart} <b>{date.format(longDateFormat)}</b>
               </span>
               {routingType === "ITINERARY" && (
                 <span>
                   {" "}
-                  at <b>{formatTime(itinerary.startTime, timeOptions)}</b>
+                  {messages.at}{" "}
+                  <b>{formatTime(itinerary.startTime, timeOptions)}</b>
                 </span>
               )}
             </Styled.Timing>
           }
         />
         {fare && (
-          <TripDetail icon={<MoneyBillAlt size={17} />} summary={fare} />
+          <TripDetail
+            description={messages.transitFareDescription}
+            icon={<MoneyBillAlt size={17} />}
+            summary={fare}
+          />
         )}
         {caloriesBurned > 0 && (
           <TripDetail
             icon={<Heartbeat size={17} />}
             summary={
               <Styled.CaloriesSummary>
-                Calories Burned: <b>{Math.round(caloriesBurned)}</b>
+                {messages.caloriesBurned}: <b>{Math.round(caloriesBurned)}</b>
               </Styled.CaloriesSummary>
             }
             description={
@@ -131,6 +140,25 @@ TripDetails.propTypes = {
   itinerary: itineraryType.isRequired,
   /** the desired format to use for a long date */
   longDateFormat: PropTypes.string,
+  /**
+   * messages to use for l10n/i8n
+   *
+   * Note: messages with default null values included here for visibility.
+   * Overriding with a truthy string value will cause the expandable help
+   * message to appear in trip details.
+   */
+  messages: PropTypes.shape({
+    at: PropTypes.string,
+    caloriesBurned: PropTypes.string,
+    // FIXME: Add templated string description.
+    caloriesBurnedDescription: PropTypes.string,
+    depart: PropTypes.string,
+    departDescription: PropTypes.string,
+    title: PropTypes.string,
+    fare: PropTypes.string,
+    transitFare: PropTypes.string,
+    transitFareDescription: PropTypes.string
+  }),
   /** whether the routing type is an itinerary or a profile result */
   routingType: PropTypes.string,
   /** Contains the preferred format string for time display and a timezone offset */
@@ -140,6 +168,18 @@ TripDetails.propTypes = {
 TripDetails.defaultProps = {
   className: null,
   longDateFormat: null,
+  messages: {
+    at: "at",
+    caloriesBurned: "Calories Burned",
+    // FIXME: Add templated string description.
+    caloriesBurnedDescription: null,
+    depart: "Depart",
+    departDescription: null,
+    title: "Trip Details",
+    fare: "Fare",
+    transitFare: "Transit Fare",
+    transitFareDescription: null
+  },
   routingType: "ITINERARY",
   timeOptions: null
 };
