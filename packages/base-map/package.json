@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/base-map",
-  "version": "0.0.22",
+  "version": "1.0.0",
   "description": "Base Map Component",
   "author": "@binh-dam-ibigroup",
   "homepage": "https://github.com/opentripplanner/otp-ui/#readme",
