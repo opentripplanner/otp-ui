@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/trip-details",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A component for displaying details about a trip planning itinerary",
   "main": "lib/index.js",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
