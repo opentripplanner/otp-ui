@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/printable-itinerary",
-  "version": "0.0.22",
+  "version": "1.0.0",
   "description": "A component for displaying a printable itinerary body of a trip planning result",
   "main": "lib/index.js",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
