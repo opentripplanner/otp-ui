@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/vehicle-rental-overlay",
-  "version": "0.0.22",
+  "version": "1.0.0",
   "description": "A map overlay to show vehicle rentals from a specific company",
   "main": "lib/index.js",
   "author": "Evan Siroky",
@@ -17,14 +17,14 @@
     "url": "git+https://github.com/opentripplanner/otp-ui.git"
   },
   "dependencies": {
-    "@opentripplanner/core-utils": "^0.0.22",
-    "@opentripplanner/from-to-location-picker": "^0.0.22",
+    "@opentripplanner/core-utils": "^1.2.0",
+    "@opentripplanner/from-to-location-picker": "^1.0.0",
     "lodash.memoize": "^4.1.2",
     "prop-types": "^15.7.2",
     "styled-icons": "^9.1.0"
   },
   "peerDependencies": {
-    "@opentripplanner/base-map": "^0.0.16",
+    "@opentripplanner/base-map": "^1.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-leaflet": "^2.6.1",

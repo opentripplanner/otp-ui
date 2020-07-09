@@ -1,5 +1,4 @@
-import moment from "moment";
-import "moment-timezone";
+import moment from "moment-timezone";
 
 // special constants for making sure the following date format is always sent to
 // OTP regardless of whatever the user has configured as the display format
@@ -88,16 +87,26 @@ export function formatSecondsAfterMidnight(seconds, timeFormat) {
  * test environment.
  */
 export function getUserTimezone() {
-  return process.env.NODE_ENV === "test" ? process.env.TZ : moment.tz.guess();
+  if (process.env.NODE_ENV === "test") return process.env.TZ;
+  // FIXME There is an issue with tz.guess being undefined that has not yet been
+  // resolved. https://github.com/opentripplanner/otp-ui/issues/152
+  if (!moment.tz || typeof moment.tz.guess !== "function") {
+    // eslint-disable-next-line no-console
+    console.warn(
+      "Error guessing user's timezone (moment.tz or moment.tz.guess not defined). Defaulting to America/New_York."
+    );
+    return "America/New_York";
+  }
+  return moment.tz.guess();
 }
 
 /**
  * Formats current time for use in OTP query
  * The conversion to the user's timezone is needed for testing purposes.
  */
-export function getCurrentTime() {
+export function getCurrentTime(timezone = getUserTimezone()) {
   return moment()
-    .tz(getUserTimezone())
+    .tz(timezone)
     .format(OTP_API_TIME_FORMAT);
 }
 
@@ -105,8 +114,8 @@ export function getCurrentTime() {
  * Formats current date for use in OTP query
  * The conversion to the user's timezone is needed for testing purposes.
  */
-export function getCurrentDate() {
+export function getCurrentDate(timezone = getUserTimezone()) {
   return moment()
-    .tz(getUserTimezone())
+    .tz(timezone)
     .format(OTP_API_DATE_FORMAT);
 }
