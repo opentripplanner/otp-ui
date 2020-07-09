@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/icons",
-  "version": "1.0.0",
+  "version": "1.0.1-alpha.1",
   "description": "Icons for otp-ui",
   "main": "lib/index.js",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
