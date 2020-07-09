@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/transitive-overlay",
-  "version": "1.0.1",
+  "version": "1.0.2-alpha.1",
   "description": "A map overlay to show an itinerary",
   "main": "lib/index.js",
   "author": "Evan Siroky",
