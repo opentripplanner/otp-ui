@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/stops-overlay",
-  "version": "1.0.0",
+  "version": "1.0.1-alpha.1",
   "description": "A map overlay to show transit stops",
   "main": "lib/index.js",
   "author": "Evan Siroky",
