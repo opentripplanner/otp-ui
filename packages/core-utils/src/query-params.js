@@ -47,13 +47,15 @@ import { getCurrentDate, getCurrentTime } from "./time";
 //     : {lat: null, lon: null}
 // }
 
-const formatPlace = (location, alternateName) => {
+/**
+ * Format location object as string for use in fromPlace or toPlace query param.
+ */
+export function formatPlace(location, alternateName = "Place") {
   if (!location) return null;
   const name =
-    location.name ||
-    `${alternateName || "Place"} (${location.lat},${location.lon})`;
+    location.name || `${alternateName} (${location.lat},${location.lon})`;
   return `${name}::${location.lat},${location.lon}`;
-};
+}
 
 // Load stored default query settings from local storage
 const storedSettings = getItem("defaultQuery", {});
@@ -618,6 +620,40 @@ const queryParams = [
         return true;
       });
     }
+  },
+
+  {
+    name: "bannedRoutes",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "numItineraries",
+    routingTypes: ["ITINERARY"],
+    default: 3
+  },
+  {
+    name: "intermediatePlaces",
+    default: [],
+    routingTypes: ["ITINERARY"],
+    itineraryRewrite: places =>
+      Array.isArray(places) && places.length > 0
+        ? {
+            intermediatePlaces: places
+              .map(place => formatPlace(place))
+              .join(",")
+          }
+        : undefined
+  },
+  {
+    name: "otherThanPreferredRoutesPenalty",
+    default: 2147483647,
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "preferredRoutes",
+    routingTypes: ["ITINERARY"],
+    default: ""
   }
 ];
 // Iterate over stored settings and update query param defaults.

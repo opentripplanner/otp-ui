@@ -195,7 +195,7 @@ async function getFirstGeocodeResult(text, geocoderConfig) {
  * OTP allows passing a location in the form '123 Main St::lat,lon', so we check
  * for the double colon and parse the coordinates accordingly.
  */
-function parseLocationString(value) {
+export function parseLocationString(value) {
   const parts = value.split("::");
   const coordinates = parts[1]
     ? stringToCoords(parts[1])
@@ -271,6 +271,13 @@ export async function planParamsToQuery(params, config) {
             ? parsedTime.format(OTP_API_TIME_FORMAT)
             : getCurrentTime();
         }
+        break;
+      case "intermediatePlaces":
+        // If query has intermediate places, ensure that they are parsed
+        // as locations.
+        query.intermediatePlaces = params.intermediatePlaces
+          ? params.intermediatePlaces.split(",").map(parseLocationString)
+          : [];
         break;
       default: {
         const maybeNumber = Number(params[key]);
