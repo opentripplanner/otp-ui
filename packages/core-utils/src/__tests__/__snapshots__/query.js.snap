@@ -2,6 +2,7 @@
 
 exports[`query getDefaultQuery should return default query 1`] = `
 Object {
+  "bannedRoutes": "",
   "bikeSpeed": 3.58,
   "companies": null,
   "date": "2019-08-04",
@@ -9,14 +10,18 @@ Object {
   "endTime": "09:00",
   "from": null,
   "ignoreRealtimeUpdates": false,
+  "intermediatePlaces": Array [],
   "maxBikeDistance": 4828,
   "maxBikeTime": 20,
   "maxEScooterDistance": 4828,
   "maxWalkDistance": 1207,
   "maxWalkTime": 15,
   "mode": "WALK,TRANSIT",
+  "numItineraries": 3,
   "optimize": "QUICK",
   "optimizeBike": "SAFE",
+  "otherThanPreferredRoutesPenalty": 2147483647,
+  "preferredRoutes": "",
   "routingType": "ITINERARY",
   "showIntermediateStops": true,
   "startTime": "07:00",

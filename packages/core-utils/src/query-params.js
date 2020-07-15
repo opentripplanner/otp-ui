@@ -646,8 +646,11 @@ const queryParams = [
         : undefined
   },
   {
+    // Time penalty in seconds the requester is willing to accept in order to
+    // complete journey on preferred route. I.e., number of seconds that we are
+    // willing to wait for the preferred route.
     name: "otherThanPreferredRoutesPenalty",
-    default: 2147483647,
+    default: 15 * 60, // 15 minutes
     routingTypes: ["ITINERARY"]
   },
   {
