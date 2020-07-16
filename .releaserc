@@ -1,0 +1,12 @@
+{
+  "fail": [],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/github",
+    "@semantic-release/npm",
+    "@semantic-release/git",
+    "@semantic-release/release-notes-generator"
+  ],
+  "repositoryUrl": "https://github.com/opentripplanner/otp-ui.git",
+  "success": []
+}

@@ -40,7 +40,7 @@ const StyledItineraryBody = styled(ItineraryBody)`
     height: 24px;
     margin-right: 8px;
     min-width: 24px;
-    padding: 2px;
+    padding: 2px 3px;
     text-align: center;
   }
 

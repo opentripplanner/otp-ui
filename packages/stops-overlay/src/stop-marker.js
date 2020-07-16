@@ -60,6 +60,7 @@ export default class StopMarker extends Component {
 
             {/* The "Set as [from/to]" ButtonGroup */}
             <BaseMapStyled.PopupRow>
+              <b>Plan a trip:</b>
               <FromToLocationPicker
                 onFromClick={this.onFromClick}
                 onToClick={this.onToClick}

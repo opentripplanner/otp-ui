@@ -27,6 +27,12 @@ const StyledTripDetails = styled(TripDetails)`
   }
 `;
 
+const customMessages = {
+  title: "Details about this Trip",
+  transitFare: "Transit Fare",
+  transitFareDescription:
+    "Note: actual fare may be lower if you have a transit pass or something like that."
+};
 const longDateFormat = "MMMM D, YYYY";
 
 storiesOf("TripDetails", module)
@@ -50,6 +56,16 @@ storiesOf("TripDetails", module)
       longDateFormat={longDateFormat}
     />
   ))
+  .add(
+    "TripDetails with walk-transit-walk itinerary and custom messages",
+    () => (
+      <TripDetails
+        itinerary={walkTransitWalkItinerary}
+        longDateFormat={longDateFormat}
+        messages={customMessages}
+      />
+    )
+  )
   .add("Styled TripDetails with walk-transit-walk itinerary", () => (
     <StyledTripDetails
       itinerary={walkTransitWalkItinerary}

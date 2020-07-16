@@ -1,4 +1,5 @@
 import moment from "moment";
+import getGeocoder from "@opentripplanner/geocoder/lib";
 import qs from "qs";
 
 import {
@@ -31,6 +32,22 @@ export const defaultParams = [
   "optimizeBike",
   "maxEScooterDistance",
   "watts"
+];
+
+/**
+ * List of time formats to parse when reading query params.
+ */
+const TIME_FORMATS = [
+  "HH:mm:ss",
+  "h:mm:ss a",
+  "h:mm:ssa",
+  "h:mm a",
+  "h:mma",
+  "h:mm",
+  "HHmm",
+  "hmm",
+  "ha",
+  OTP_API_TIME_FORMAT // 'HH:mm'
 ];
 
 /* A function to retrieve a property value from an entry in the query-params
@@ -99,13 +116,11 @@ export function getTripOptionsFromQuery(query, keepPlace = false) {
 }
 
 /**
- * Gets the default query param by executing the default value function with the
- * provided otp config if the default value is a function.
+ * Gets the query param's default value that is either a constant or by
+ * executing the default value function.
  */
-function getDefaultQueryParamValue(param, config) {
-  return typeof param.default === "function"
-    ? param.default(config)
-    : param.default;
+function getDefaultQueryParamValue(param) {
+  return typeof param.default === "function" ? param.default() : param.default;
 }
 
 /**
@@ -136,7 +151,7 @@ export function isNotDefaultQuery(query, config) {
         !paramInfo.applicable(query, config)
       )
         return;
-      if (query[param] !== getDefaultQueryParamValue(paramInfo, config)) {
+      if (query[param] !== getDefaultQueryParamValue(paramInfo)) {
         queryIsDifferent = true;
       }
     });
@@ -146,24 +161,41 @@ export function isNotDefaultQuery(query, config) {
 
 /**
  * Get the default query to OTP based on the given config.
- *
- * @param config the config in the otp-rr store.
  */
-export function getDefaultQuery(config) {
+export function getDefaultQuery() {
   const defaultQuery = { routingType: "ITINERARY" };
   queryParams
     .filter(qp => "default" in qp)
     .forEach(qp => {
-      defaultQuery[qp.name] = getDefaultQueryParamValue(qp, config);
+      defaultQuery[qp.name] = getDefaultQueryParamValue(qp);
     });
   return defaultQuery;
+}
+
+/**
+ * Geocode utility for returning the first result for the provided place name text.
+ * @param  {string} text - text to search
+ * @param  {Object} geocoderConfig
+ * @return {Location}
+ */
+async function getFirstGeocodeResult(text, geocoderConfig) {
+  const geocoder = getGeocoder(geocoderConfig);
+  // Attempt to geocode search text and return first result if found.
+  // TODO: Import geocoder from @opentripplanner
+  return geocoder.search({ text }).then(result => {
+    const firstResult = result.features && result.features[0];
+    if (firstResult) {
+      return geocoder.getLocationFromGeocodedFeature(firstResult);
+    }
+    return null;
+  });
 }
 
 /**
  * OTP allows passing a location in the form '123 Main St::lat,lon', so we check
  * for the double colon and parse the coordinates accordingly.
  */
-function parseLocationString(value) {
+export function parseLocationString(value) {
   const parts = value.split("::");
   const coordinates = parts[1]
     ? stringToCoords(parts[1])
@@ -179,13 +211,30 @@ function parseLocationString(value) {
 }
 
 /**
+ * Convert a string query param for a from or to place into a location. If
+ * coordinates not provided and geocoder config is present, use the first
+ * geocoded result.
+ * @param  {string} value
+ * @param  {Object} [geocoderConfig=null]
+ * @return {Location}
+ */
+async function queryParamToLocation(value, geocoderConfig) {
+  let location = parseLocationString(value);
+  if (!location && value && geocoderConfig) {
+    // If a valid location was not found, but the place name text exists,
+    // attempt to geocode the name.
+    location = await getFirstGeocodeResult(value, geocoderConfig);
+  }
+  return location;
+}
+
+/**
  * Create a otp query based on a the url params.
  *
  * @param  {Object} params An object representing the parsed querystring of url
  *    params.
- * @param config the config in the otp-rr store.
  */
-export function planParamsToQuery(params, config) {
+export function planParamsToQuery(params) {
   const query = {};
   Object.keys(params).forEach(key => {
     switch (key) {
@@ -204,10 +253,22 @@ export function planParamsToQuery(params, config) {
             : "NOW";
         break;
       case "date":
-        query.date = params.date || getCurrentDate(config);
+        query.date = params.date || getCurrentDate();
         break;
       case "time":
-        query.time = params.time || getCurrentTime(config);
+        {
+          const parsedTime = moment(params.time, TIME_FORMATS);
+          query.time = parsedTime.isValid()
+            ? parsedTime.format(OTP_API_TIME_FORMAT)
+            : getCurrentTime();
+        }
+        break;
+      case "intermediatePlaces":
+        // If query has intermediate places, ensure that they are parsed
+        // as locations.
+        query.intermediatePlaces = params.intermediatePlaces
+          ? params.intermediatePlaces.split(",").map(parseLocationString)
+          : [];
         break;
       default: {
         const maybeNumber = Number(params[key]);
@@ -222,6 +283,29 @@ export function planParamsToQuery(params, config) {
       }
     }
   });
+  return query;
+}
+
+/**
+ * Async method to create a otp query based on a the url params. This provides
+ * the same functionality as planParamsToQuery, except that it will also attempt
+ * to geocode the input from and to strings if no lat/lng values were provided.
+ *
+ * @param  {Object} params An object representing the parsed querystring of url
+ *    params.
+ * @param config the config in the otp-rr store.
+ */
+export async function planParamsToQueryAsync(params, config = {}) {
+  // Construct query from plan params.
+  const query = planParamsToQuery(params);
+  // Attempt to geocode from and to params if the string parsing does not return
+  // valid locations.
+  if (!query.from) {
+    query.from = await queryParamToLocation(params.fromPlace, config.geocoder);
+  }
+  if (!query.to) {
+    query.to = await queryParamToLocation(params.toPlace, config.geocoder);
+  }
   return query;
 }
 

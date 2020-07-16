@@ -45,13 +45,18 @@ class VehicleRentalOverlay extends MapLayer {
   updateLeafletElement() {}
 
   startRefreshing() {
-    // initial station retrieval
-    this.props.refreshVehicles();
+    const { refreshVehicles } = this.props;
 
-    // set up timer to refresh stations periodically
-    this.refreshTimer = setInterval(() => {
-      this.props.refreshVehicles();
-    }, 30000); // defaults to every 30 sec. TODO: make this configurable?*/
+    // Create the timer only if refreshVehicles is a valid function.
+    if (typeof refreshVehicles === "function") {
+      // initial station retrieval
+      refreshVehicles();
+
+      // set up timer to refresh stations periodically
+      this.refreshTimer = setInterval(() => {
+        refreshVehicles();
+      }, 30000); // defaults to every 30 sec. TODO: make this configurable?
+    }
   }
 
   stopRefreshing() {
@@ -105,6 +110,7 @@ class VehicleRentalOverlay extends MapLayer {
 
           {/* Set as from/to toolbar */}
           <BaseMapStyled.PopupRow>
+            <b>Plan a trip:</b>
             <FromToLocationPicker
               location={location}
               setLocation={setLocation}
@@ -239,10 +245,10 @@ VehicleRentalOverlay.props = {
    */
   mapSymbols: vehicleRentalMapOverlaySymbolsType,
   /**
-   * A function that will be triggered every 30 seconds whenever this layer is
+   * If specified, a function that will be triggered every 30 seconds whenever this layer is
    * visible.
    */
-  refreshVehicles: PropTypes.func.isRequired,
+  refreshVehicles: PropTypes.func,
   /**
    * A callback for when a user clicks on setting this stop as either the from
    * or to location of a new search.
@@ -293,6 +299,7 @@ VehicleRentalOverlay.defaultProps = {
     return stationName;
   },
   mapSymbols: null,
+  refreshVehicles: null,
   stations: [],
   visible: false
 };

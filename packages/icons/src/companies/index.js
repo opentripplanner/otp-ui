@@ -31,7 +31,11 @@ const companyLookup = {
 };
 
 function getCompanyIcon(name) {
-  return companyLookup[name.toLowerCase()];
+  const icon = companyLookup[name.toLowerCase()];
+  if (!icon) {
+    console.warn(`No Company Icon found for: '${name}'!`);
+  }
+  return icon;
 }
 
 export {

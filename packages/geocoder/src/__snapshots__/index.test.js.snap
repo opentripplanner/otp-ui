@@ -289,10 +289,10 @@ exports[`geocoder PELIAS should make reverse query 1`] = `
 Object {
   "lat": 45.516198,
   "lon": -122.67324,
-  "name": "Mill Ends Park, Portland, OR, USA",
+  "name": "Mill Ends Park, 56 SW Taylor St, Portland",
   "rawGeocodedFeature": Object {
     "accuracy": "point",
-    "address": "Mill Ends Park, Portland, OR, USA",
+    "address": "Mill Ends Park, 56 SW Taylor St, Portland 97204",
     "confidence": 0.9,
     "continent": "North America",
     "continent_gid": "whosonfirst:continent:102191575",
@@ -304,8 +304,9 @@ Object {
     "county_gid": "whosonfirst:county:102081631",
     "distance": 0.001,
     "gid": "openstreetmap:venue:way/156366633",
+    "housenumber": "56",
     "id": "way/156366633",
-    "label": "Mill Ends Park, Portland, OR, USA",
+    "label": "Mill Ends Park, 56 SW Taylor St, Portland",
     "latlng": Object {
       "lat": 45.516201,
       "lon": -122.673245,
@@ -316,11 +317,13 @@ Object {
     "name": "Mill Ends Park",
     "neighbourhood": "Downtown",
     "neighbourhood_gid": "whosonfirst:neighbourhood:85867131",
+    "postalcode": "97204",
     "region": "Oregon",
     "region_a": "OR",
     "region_gid": "whosonfirst:region:85688513",
     "source": "openstreetmap",
     "source_id": "way/156366633",
+    "street": "SW Taylor St",
   },
 }
 `;

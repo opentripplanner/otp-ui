@@ -40,6 +40,9 @@
         "source": "openstreetmap",
         "source_id": "way/156366633",
         "name": "Mill Ends Park",
+        "housenumber": "56",
+        "street": "SW Taylor St",
+        "postalcode": "97204",
         "confidence": 0.9,
         "distance": 0.001,
         "accuracy": "point",
@@ -58,7 +61,7 @@
         "neighbourhood_gid": "whosonfirst:neighbourhood:85867131",
         "continent": "North America",
         "continent_gid": "whosonfirst:continent:102191575",
-        "label": "Mill Ends Park, Portland, OR, USA"
+        "label": "Mill Ends Park, 56 SW Taylor St, Portland"
       },
       "bbox": [-122.6732557, 45.5161964, -122.673234, 45.5162067]
     },

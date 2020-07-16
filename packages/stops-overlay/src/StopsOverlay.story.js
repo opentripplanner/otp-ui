@@ -19,6 +19,7 @@ import "../../../node_modules/leaflet/dist/leaflet.css";
 
 const center = [45.523092, -122.671202];
 const languageConfig = { stopViewer: "View Stop" };
+const refreshStopsAction = action("refreshStops");
 
 function ExampleMarker({ stop }) {
   return (
@@ -52,6 +53,7 @@ class Example extends Component {
         stop.lon > bounds.minLon
     );
     this.setState({ stops });
+    refreshStopsAction();
   };
 
   render() {
