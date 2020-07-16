@@ -22,6 +22,8 @@ import {
 
 import { floatingBikeIcon, hubIcons } from "./bike-icons";
 import * as Styled from "./styled";
+// FIXME: Change to the correct @opentripplanner import.
+import ZoomBasedMarkers from "../../zoom-based-markers/lib";
 
 const getStationMarkerByColor = memoize(color =>
   divIcon({
@@ -121,7 +123,7 @@ class VehicleRentalOverlay extends MapLayer {
     );
   };
 
-  renderStationAsCircle = (station, symbolDef) => {
+  renderStationAsCircle = symbolDef => ({ entity: station }) => {
     let strokeColor = symbolDef.strokeColor || symbolDef.fillColor;
     if (!station.isFloatingBike) {
       strokeColor = symbolDef.dockStrokeColor || strokeColor;
@@ -141,7 +143,7 @@ class VehicleRentalOverlay extends MapLayer {
     );
   };
 
-  renderStationAsHubAndFloatingBike = station => {
+  StationAsHubAndFloatingBike = ({ entity: station }) => {
     let icon;
     if (station.isFloatingBike) {
       icon = floatingBikeIcon;
@@ -159,7 +161,7 @@ class VehicleRentalOverlay extends MapLayer {
     );
   };
 
-  renderStationAsMarker = (station, symbolDef) => {
+  renderStationAsMarker = symbolDef => ({ entity: station }) => {
     const color =
       symbolDef && symbolDef.fillColor ? symbolDef.fillColor : "gray";
     const markerIcon = getStationMarkerByColor(color);
@@ -175,36 +177,19 @@ class VehicleRentalOverlay extends MapLayer {
     );
   };
 
-  renderStation = station => {
-    // render the station according to any map symbol configuration
-    const { mapSymbols } = this.props;
-
-    // no config set, just render a default marker
-    if (!mapSymbols) return this.renderStationAsMarker(station);
-
-    // get zoom to check which symbol to render
-    const zoom = this.props.leaflet.map.getZoom();
-
-    for (let i = 0; i < mapSymbols.length; i++) {
-      const symbolDef = mapSymbols[i];
-      if (symbolDef.minZoom <= zoom && symbolDef.maxZoom >= zoom) {
-        switch (symbolDef.type) {
-          case "circle":
-            return this.renderStationAsCircle(station, symbolDef);
-          case "hubAndFloatingBike":
-            return this.renderStationAsHubAndFloatingBike(station);
-          default:
-            return this.renderStationAsMarker(station, symbolDef);
-        }
-      }
+  renderStation = symbolDef => {
+    switch (symbolDef.type) {
+      case "circle":
+        return this.renderStationAsCircle(symbolDef);
+      case "hubAndFloatingBike":
+        return this.StationAsHubAndFloatingBike;
+      default:
+        return this.renderStationAsMarker(symbolDef);
     }
-
-    // no matching symbol definition, render default marker
-    return this.renderStationAsMarker(station);
   };
 
   render() {
-    const { stations, companies } = this.props;
+    const { mapSymbols, stations, companies } = this.props;
     let filteredStations = stations;
     if (companies) {
       filteredStations = stations.filter(
@@ -217,8 +202,32 @@ class VehicleRentalOverlay extends MapLayer {
       return <FeatureGroup />;
     }
 
+    // get zoom to check which symbol to render
+    const zoom = this.props.leaflet.map.getZoom();
+
+    if (mapSymbols) {
+      // Convert map symbols for this overlay to zoomBasedSymbolType.
+      const symbols = mapSymbols.map(mapSymbol => ({
+        minZoom: mapSymbol.minZoom,
+        symbol: this.renderStation(mapSymbol)
+      }));
+
+      return (
+        <FeatureGroup>
+          <ZoomBasedMarkers
+            entities={filteredStations}
+            symbols={symbols}
+            zoom={zoom}
+          />
+        </FeatureGroup>
+      );
+    }
+
+    // no config set, just render a default marker
     return (
-      <FeatureGroup>{filteredStations.map(this.renderStation)}</FeatureGroup>
+      <FeatureGroup>
+        {filteredStations.map(this.renderStationAsMarker)}
+      </FeatureGroup>
     );
   }
 }
@@ -274,11 +283,7 @@ VehicleRentalOverlay.props = {
   /**
    * Whether the overlay is currently visible.
    */
-  visible: PropTypes.bool,
-  /**
-   * The current map zoom level.
-   */
-  zoom: PropTypes.number.isRequired
+  visible: PropTypes.bool
 };
 
 VehicleRentalOverlay.defaultProps = {
