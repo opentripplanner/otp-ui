@@ -20,7 +20,7 @@ Object {
   "numItineraries": 3,
   "optimize": "QUICK",
   "optimizeBike": "SAFE",
-  "otherThanPreferredRoutesPenalty": 2147483647,
+  "otherThanPreferredRoutesPenalty": 900,
   "preferredRoutes": "",
   "routingType": "ITINERARY",
   "showIntermediateStops": true,
