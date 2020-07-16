@@ -13,7 +13,7 @@ import { withA11y } from "@storybook/addon-a11y";
 import { action } from "@storybook/addon-actions";
 import { withInfo } from "@storybook/addon-info";
 import { storiesOf } from "@storybook/react";
-import { Subway } from "styled-icons/fa-solid";
+import { Bus, Streetcar } from "@opentripplanner/icons";
 
 import ZoomBasedMarkers from ".";
 
@@ -22,12 +22,12 @@ import "../../../node_modules/leaflet/dist/leaflet.css";
 const mockStops = [
   {
     id: "3",
-    name: "A Ave & Second St",
+    name: "A Ave & Second St Streetcar",
     lat: 45.419388,
     lon: -122.665197
   },
-  { id: "6", name: "A Ave & 8th St", lat: 45.420217, lon: -122.67307 },
-  { id: "7", name: "A Ave & 8th St", lat: 45.420411, lon: -122.67268 }
+  { id: "6", name: "A Ave & 8th St Bus", lat: 45.420217, lon: -122.67307 },
+  { id: "7", name: "A Ave & 8th St Bus", lat: 45.420411, lon: -122.67268 }
 ];
 
 const mapCenter = [45.420217, -122.67307];
@@ -65,8 +65,8 @@ Circle3.propTypes = {
   entity: stopLayerStopType.isRequired
 };
 
-const CustomMarker = ({ entity }) => {
-  const iconHtml = ReactDOMServer.renderToStaticMarkup(<Subway />);
+const BusMarker = ({ entity }) => {
+  const iconHtml = ReactDOMServer.renderToStaticMarkup(<Bus />);
   return (
     <Marker
       icon={divIcon({ html: iconHtml, className: "" })}
@@ -75,7 +75,21 @@ const CustomMarker = ({ entity }) => {
   );
 };
 
-CustomMarker.propTypes = {
+BusMarker.propTypes = {
+  entity: stopLayerStopType.isRequired
+};
+
+const StreetcarMarker = ({ entity }) => {
+  const iconHtml = ReactDOMServer.renderToStaticMarkup(<Streetcar />);
+  return (
+    <Marker
+      icon={divIcon({ html: iconHtml, className: "" })}
+      position={[entity.lat, entity.lon]}
+    />
+  );
+};
+
+StreetcarMarker.propTypes = {
   entity: stopLayerStopType.isRequired
 };
 
@@ -91,16 +105,20 @@ const mySymbols = [
     symbol: Circle2
   },
   {
-    getMode: entity => (entity.id === "3" ? "special" : "normal"),
+    getMode: entity => (entity.id === "3" ? "streetcar" : "bus"),
     minZoom: 14,
     symbol: Circle2,
     symbolByMode: {
-      special: Circle3
+      streetcar: Circle3
     }
   },
   {
+    getMode: entity => (entity.id === "3" ? "streetcar" : "bus"),
     minZoom: 16,
-    symbol: CustomMarker
+    symbol: BusMarker,
+    symbolByMode: {
+      streetcar: StreetcarMarker
+    }
   }
 ];
 
@@ -111,7 +129,7 @@ const mySymbolsWithGap = [
   },
   {
     minZoom: 16,
-    symbol: CustomMarker
+    symbol: StreetcarMarker
   }
 ];
 
