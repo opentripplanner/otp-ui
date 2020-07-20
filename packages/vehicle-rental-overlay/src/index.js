@@ -8,6 +8,7 @@ import {
   stationType
 } from "@opentripplanner/core-utils/lib/types";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
+import ZoomBasedMarkers from "@opentripplanner/zoom-based-markers";
 import PropTypes from "prop-types";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
@@ -22,8 +23,6 @@ import {
 
 import { floatingBikeIcon, hubIcons } from "./bike-icons";
 import * as Styled from "./styled";
-// FIXME: Change to the correct @opentripplanner import.
-import ZoomBasedMarkers from "../../zoom-based-markers/lib";
 
 const getStationMarkerByColor = memoize(color =>
   divIcon({
