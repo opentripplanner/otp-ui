@@ -128,8 +128,12 @@ const mySymbolsWithGap = [
     symbol: Circle2
   },
   {
-    minZoom: 16,
-    symbol: StreetcarMarker
+    getMode: entity => (entity.id === "3" ? "streetcar" : "bus"),
+    minZoom: 14,
+    symbol: BusMarker,
+    symbolByMode: {
+      streetcar: StreetcarMarker
+    }
   }
 ];
 
