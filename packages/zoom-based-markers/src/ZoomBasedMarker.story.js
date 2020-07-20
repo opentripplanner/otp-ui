@@ -123,6 +123,8 @@ const mySymbols = [
 ];
 
 const mySymbolsWithGap = [
+  // In this example, we omit the zoom levels 0-11,
+  // so no symbol will be drawn for these zoom levels.
   {
     minZoom: 12,
     symbol: Circle2
