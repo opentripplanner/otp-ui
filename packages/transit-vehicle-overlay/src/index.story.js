@@ -14,6 +14,7 @@ import TransitVehicleOverlay from "./index";
 // marker / popup / tooltip slots
 import ModeCircles from "./components/markers/ModeCircles";
 import ModeRectangles from "./components/markers/ModeRectangles";
+import VehicleCircles from "./components/markers/VehicleCircles";
 import CustomTooltip from "./components/popups/CustomTooltip";
 import VehicleTooltip from "./components/popups/VehicleTooltip";
 import VehiclePopup from "./components/popups/VehiclePopup";
@@ -44,6 +45,17 @@ function simpleExample(vehicleData, patternGeometry, selectVehicleId) {
   const highlightColor = color("isTracked color:", "#ece90d");
   const lowlightColor = color("trailing color:", "#AAA");
 
+  const symbols = [
+    {
+      minZoom: 0,
+      symbol: VehicleCircles.Dot
+    },
+    {
+      minZoom: 14,
+      symbol: VehicleCircles.CircledVehicle
+    }
+  ];
+
   return (
     <BaseMap
       center={PORTLAND}
@@ -52,6 +64,7 @@ function simpleExample(vehicleData, patternGeometry, selectVehicleId) {
     >
       <TransitVehicleOverlay
         zoom={zoom}
+        symbols={symbols}
         vehicleList={vehicleData}
         selectedVehicle={trackedVehicle}
         pattern={patternGeometry}

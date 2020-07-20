@@ -2,7 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FeatureGroup } from "react-leaflet";
 
-import { transitVehicleType } from "@opentripplanner/core-utils/lib/types";
+import {
+  transitVehicleType,
+  zoomBasedSymbolType
+} from "@opentripplanner/core-utils/lib/types";
+
+import ZoomBasedMarkers from "@opentripplanner/zoom-based-markers";
 import VehicleGeometry from "./components/VehicleGeometry";
 import RouteGeometry from "./components/RouteGeometry";
 import * as utils from "./utils";
@@ -21,11 +26,12 @@ export default function TransitVehicleOverlay(props) {
     vehicleList,
     selectedVehicle,
     showOnlyTracked,
+    symbols,
 
     // VehicleGeometry
     onVehicleClicked,
     onRecenterMap,
-    MarkerSlot,
+    MarkerSlot: slot, // will be eventually replaced with symbols.
     PopupSlot,
     TooltipSlot,
     color,
@@ -50,24 +56,53 @@ export default function TransitVehicleOverlay(props) {
     if (pattern) showPattern = true;
   }
 
+  // Needed to wrap leaflet plumbing around each component.
+  const makeVehicleGeometryWrapper = MarkerSlot => {
+    const VehicleGeometryWrapper = ({ entity: v, zoom: z }) => (
+      <VehicleGeometry
+        zoom={z}
+        vehicle={v}
+        isTracked={selectedVehicle && selectedVehicle.tripId === v.tripId}
+        onVehicleClicked={onVehicleClicked}
+        onRecenterMap={onRecenterMap}
+        MarkerSlot={MarkerSlot}
+        PopupSlot={PopupSlot}
+        TooltipSlot={TooltipSlot}
+        color={color}
+        highlightColor={highlightColor}
+      />
+    );
+    VehicleGeometryWrapper.propTypes = {
+      entity: transitVehicleType.isRequired,
+      zoom: PropTypes.number.isRequired
+    };
+
+    return VehicleGeometryWrapper;
+  };
+
+  // Insert VehicleGeometryWrapper around each raw symbol defined in symbols.
+  // TODO: extract function.
+
+  const effectiveSymbols = symbols || [
+    {
+      minZoom: 0,
+      symbol: slot
+    }
+  ];
+  const newSymbols = effectiveSymbols.map(s => {
+    return {
+      minZoom: s.minZoom,
+      symbol: makeVehicleGeometryWrapper(s.symbol)
+      // TODO: symbolByMode:
+    };
+  });
+
   return (
     <FeatureGroup>
-      {vl &&
-        vl.map(v => (
-          <VehicleGeometry
-            zoom={zoom}
-            key={v.id}
-            vehicle={v}
-            isTracked={selectedVehicle && selectedVehicle.tripId === v.tripId}
-            onVehicleClicked={onVehicleClicked}
-            onRecenterMap={onRecenterMap}
-            MarkerSlot={MarkerSlot}
-            PopupSlot={PopupSlot}
-            TooltipSlot={TooltipSlot}
-            color={color}
-            highlightColor={highlightColor}
-          />
-        ))}
+      {vl && newSymbols && (
+        <ZoomBasedMarkers entities={vl} symbols={newSymbols} zoom={zoom} />
+      )}
+
       {showPattern && (
         <RouteGeometry
           zoom={zoom}
@@ -104,6 +139,9 @@ TransitVehicleOverlay.propTypes = {
 
   /** showOnlyTracked will hide all other vehicles, except the tracked vehicle */
   showOnlyTracked: PropTypes.bool,
+
+  /** A list of symbol definitions for the vehicles to be rendered. */
+  symbols: PropTypes.arrayOf(zoomBasedSymbolType),
 
   // ////// VehicleGeometry types ////////
 
@@ -151,6 +189,7 @@ TransitVehicleOverlay.defaultProps = {
   vehicleList: null,
   selectedVehicle: null,
   showOnlyTracked: false,
+  symbols: null,
 
   // VehicleGeometry defaults
   color: VehicleGeometry.defaultProps.color,
