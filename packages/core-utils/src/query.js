@@ -195,7 +195,7 @@ async function getFirstGeocodeResult(text, geocoderConfig) {
  * OTP allows passing a location in the form '123 Main St::lat,lon', so we check
  * for the double colon and parse the coordinates accordingly.
  */
-function parseLocationString(value) {
+export function parseLocationString(value) {
   const parts = value.split("::");
   const coordinates = parts[1]
     ? stringToCoords(parts[1])
@@ -218,7 +218,7 @@ function parseLocationString(value) {
  * @param  {Object} [geocoderConfig=null]
  * @return {Location}
  */
-async function queryParamToLocation(value, geocoderConfig = null) {
+async function queryParamToLocation(value, geocoderConfig) {
   let location = parseLocationString(value);
   if (!location && value && geocoderConfig) {
     // If a valid location was not found, but the place name text exists,
@@ -233,25 +233,16 @@ async function queryParamToLocation(value, geocoderConfig = null) {
  *
  * @param  {Object} params An object representing the parsed querystring of url
  *    params.
- * @param config the config in the otp-rr store.
  */
-export async function planParamsToQuery(params, config) {
+export function planParamsToQuery(params) {
   const query = {};
-  // FIXME? Must use for to execute the awaits statements one after the other
-  // and obtain a populated query object.
-  /* eslint-disable no-await-in-loop */
-  /* eslint-disable no-restricted-syntax */
-  /* eslint-disable guard-for-in */
-  for (const key in params) {
+  Object.keys(params).forEach(key => {
     switch (key) {
       case "fromPlace":
-        query.from = await queryParamToLocation(
-          params.fromPlace,
-          config.geocoder
-        );
+        query.from = parseLocationString(params.fromPlace);
         break;
       case "toPlace":
-        query.to = await queryParamToLocation(params.toPlace, config.geocoder);
+        query.to = parseLocationString(params.toPlace);
         break;
       case "arriveBy":
         query.departArrive =
@@ -272,6 +263,13 @@ export async function planParamsToQuery(params, config) {
             : getCurrentTime();
         }
         break;
+      case "intermediatePlaces":
+        // If query has intermediate places, ensure that they are parsed
+        // as locations.
+        query.intermediatePlaces = params.intermediatePlaces
+          ? params.intermediatePlaces.split(",").map(parseLocationString)
+          : [];
+        break;
       default: {
         const maybeNumber = Number(params[key]);
         // If the param value is an empty string literal and is not a number,
@@ -284,6 +282,29 @@ export async function planParamsToQuery(params, config) {
         break;
       }
     }
+  });
+  return query;
+}
+
+/**
+ * Async method to create a otp query based on a the url params. This provides
+ * the same functionality as planParamsToQuery, except that it will also attempt
+ * to geocode the input from and to strings if no lat/lng values were provided.
+ *
+ * @param  {Object} params An object representing the parsed querystring of url
+ *    params.
+ * @param config the config in the otp-rr store.
+ */
+export async function planParamsToQueryAsync(params, config = {}) {
+  // Construct query from plan params.
+  const query = planParamsToQuery(params);
+  // Attempt to geocode from and to params if the string parsing does not return
+  // valid locations.
+  if (!query.from) {
+    query.from = await queryParamToLocation(params.fromPlace, config.geocoder);
+  }
+  if (!query.to) {
+    query.to = await queryParamToLocation(params.toPlace, config.geocoder);
   }
   return query;
 }
