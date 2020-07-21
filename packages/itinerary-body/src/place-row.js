@@ -7,14 +7,11 @@ import {
 import PropTypes from "prop-types";
 import React from "react";
 
+import coreUtils from "@opentripplanner/core-utils";
+
 import AccessLegBody from "./AccessLegBody";
 import * as Styled from "./styled";
 import TransitLegBody from "./TransitLegBody";
-
-/** Looks up an operator from the provided configuration */
-const getTransitOperatorFromConfig = (id, config) =>
-  config.transitOperators.find(transitOperator => transitOperator.id === id) ||
-  null;
 
 /*
   TODO: Wondering if it's possible for us to destructure the time
@@ -107,7 +104,10 @@ const PlaceRow = ({
                 TransitLegSummary={TransitLegSummary}
                 transitOperator={
                   leg.agencyId &&
-                  getTransitOperatorFromConfig(leg.agencyId, config)
+                  coreUtils.route.getTransitOperatorFromId(
+                    leg.agencyId,
+                    config.transitOperators
+                  )
                 }
               />
             ) : (
