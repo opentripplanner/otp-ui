@@ -1,4 +1,8 @@
-import { getTransitOperatorFromId, routeComparator } from "../route";
+import {
+  getTransitOperatorFromId,
+  getTransitOperatorFromOtpRoute,
+  routeComparator
+} from "../route";
 
 const {
   route1,
@@ -30,6 +34,27 @@ describe("util > itinerary", () => {
       expect(
         getTransitOperatorFromId("1", [{ id: "2" }, expectedTransitOperator])
       ).toBe(expectedTransitOperator);
+    });
+
+    it("should return null if transit operator is not found", () => {
+      expect(getTransitOperatorFromId("abc", [])).toBeNull();
+    });
+  });
+
+  describe("getTransitOperatorFromOtpRoute", () => {
+    const otpRoute = { id: "1:abc" };
+    it("should get a transit operator", () => {
+      const expectedTransitOperator = { id: "1" };
+      expect(
+        getTransitOperatorFromOtpRoute(otpRoute, [
+          { id: "2" },
+          expectedTransitOperator
+        ])
+      ).toBe(expectedTransitOperator);
+    });
+
+    it("should return null if transit operator is not found", () => {
+      expect(getTransitOperatorFromOtpRoute(otpRoute, [])).toBeNull();
     });
   });
 

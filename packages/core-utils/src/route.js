@@ -5,6 +5,13 @@ export function getTransitOperatorFromId(id, transitOperators) {
   );
 }
 
+/** Looks up an operator from the provided configuration */
+export function getTransitOperatorFromOtpRoute(route, transitOperators) {
+  if (!route.id) return null;
+  const operatorId = route.id.split(":")[0].toLowerCase();
+  return getTransitOperatorFromId(operatorId, transitOperators);
+}
+
 /**
  * The functions below are for enhanced route sorting functions for
  * the route viewer on OTP-react-redux.
