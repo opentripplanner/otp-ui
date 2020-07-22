@@ -25,18 +25,14 @@ class ZoomBasedMarkers extends Component {
     if (symbolEntry) {
       const { getMode, symbol: Symbol, symbolByMode } = symbolEntry;
 
-      if (symbolByMode && getMode) {
-        return entities.map((entity, index) => {
-          const EntitySymbol = symbolByMode[getMode(entity)] || Symbol;
-          return (
-            EntitySymbol && (
-              <EntitySymbol entity={entity} key={index} zoom={zoom} />
-            )
-          );
-        });
-      }
-
       if (Symbol) {
+        if (symbolByMode && getMode) {
+          return entities.map((entity, index) => {
+            const EntitySymbol = symbolByMode[getMode(entity)] || Symbol;
+            return <EntitySymbol entity={entity} key={index} zoom={zoom} />;
+          });
+        }
+
         return entities.map((entity, index) => (
           <Symbol entity={entity} key={index} zoom={zoom} />
         ));

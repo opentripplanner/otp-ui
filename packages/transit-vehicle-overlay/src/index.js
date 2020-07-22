@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { FeatureGroup } from "react-leaflet";
 
@@ -17,118 +17,172 @@ import * as utils from "./utils";
  * will show both point positions for a collection of vehicles, as well as being
  * able to render a 'selected' vehicle (and it's route pattern trace)
  */
-export default function TransitVehicleOverlay(props) {
-  const {
-    name,
-    visible,
-    zoom,
-    center,
-    vehicleList,
-    selectedVehicle,
-    showOnlyTracked,
-    symbols,
-
-    // VehicleGeometry
-    onVehicleClicked,
-    onRecenterMap,
-    MarkerSlot: slot, // will be eventually replaced with symbols.
-    PopupSlot,
-    TooltipSlot,
-    color,
-    highlightColor,
-
-    // RouteGeometry
-    pattern,
-    lowlightColor, // note: highlightColor above
-    highlight,
-    lowlight
-  } = props;
-  utils.linterIgnoreTheseProps(name, visible, center);
-
-  // when a vehicle is selected, pre-determine whether to show pattern and which vehicles
-  let vl = vehicleList;
-  let showPattern = false;
-  if (
-    selectedVehicle &&
-    utils.findVehicleById(vehicleList, selectedVehicle.tripId)
-  ) {
-    if (showOnlyTracked) vl = [selectedVehicle];
-    if (pattern) showPattern = true;
+export default class TransitVehicleOverlay extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { symbols: this.wrapSymbols(props) };
   }
 
-  // Needed to wrap leaflet plumbing around each component.
-  const makeVehicleGeometryWrapper = MarkerSlot => {
-    const VehicleGeometryWrapper = ({ entity: v, zoom: z }) => (
-      <VehicleGeometry
-        zoom={z}
-        vehicle={v}
-        isTracked={selectedVehicle && selectedVehicle.tripId === v.tripId}
-        onVehicleClicked={onVehicleClicked}
-        onRecenterMap={onRecenterMap}
-        MarkerSlot={MarkerSlot}
-        PopupSlot={PopupSlot}
-        TooltipSlot={TooltipSlot}
-        color={color}
-        highlightColor={highlightColor}
-      />
-    );
-    VehicleGeometryWrapper.propTypes = {
-      entity: transitVehicleType.isRequired,
-      zoom: PropTypes.number.isRequired
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props) {
+      this.updateSymbols(this.wrapSymbols(this.props));
+    }
+  }
+
+  /**
+   * This helper method wraps symbols originally defined in the symbols prop
+   * with a VehicleGeometryWrapper component that handles the leaflet plumbing,
+   * and stores the result in this component's state.
+   */
+  wrapSymbols = props => {
+    const {
+      selectedVehicle,
+      symbols,
+
+      // VehicleGeometry
+      onVehicleClicked,
+      onRecenterMap,
+      MarkerSlot: slot, // will be eventually replaced with symbols.
+      PopupSlot,
+      TooltipSlot,
+      color,
+      highlightColor
+    } = props;
+
+    /*
+     * Function to wrap leaflet plumbing around the provided MarkerSlot.
+     */
+    const makeVehicleGeometryWrapper = MarkerSlot => {
+      /**
+       * This component is a wrapper around VehicleGeometry
+       * to provide leaflet plumbing to components defined in the symbols prop.
+       * It passes props from TransitVehicleOverlay VehicleGeometry and
+       * has the signature required by ZoomBasedMarker.
+       */
+      const VehicleGeometryWrapper = ({ entity: v, zoom: z }) => (
+        <VehicleGeometry
+          zoom={z}
+          vehicle={v}
+          isTracked={selectedVehicle && selectedVehicle.tripId === v.tripId}
+          onVehicleClicked={onVehicleClicked}
+          onRecenterMap={onRecenterMap}
+          MarkerSlot={MarkerSlot}
+          PopupSlot={PopupSlot}
+          TooltipSlot={TooltipSlot}
+          color={color}
+          highlightColor={highlightColor}
+        />
+      );
+
+      VehicleGeometryWrapper.propTypes = {
+        entity: transitVehicleType.isRequired,
+        zoom: PropTypes.number.isRequired
+      };
+
+      return VehicleGeometryWrapper;
     };
 
-    return VehicleGeometryWrapper;
+    // Insert VehicleGeometryWrapper around each raw symbol defined in symbols.
+    // If no symbols are defined, use the slot for compatibility.
+    // TODO: remove compatibility.
+
+    const effectiveSymbols = symbols || [
+      {
+        minZoom: 0,
+        symbol: slot
+      }
+    ];
+    const newSymbols = effectiveSymbols.map(s => {
+      // Make a new version of symbolByMode that has the original symbols
+      // from s.symbolsByMode wrapper in a VehicleGeometryWrapper.
+      let symbolByMode;
+      if (s.symbolByMode) {
+        Object.keys(s.symbolByMode).forEach(key => {
+          const originalSymbol = s.symbolByMode[key];
+          if (originalSymbol) {
+            if (!symbolByMode) {
+              symbolByMode = {};
+            }
+            symbolByMode[key] = makeVehicleGeometryWrapper(originalSymbol);
+          }
+        });
+      }
+
+      return {
+        getMode: s.getMode,
+        minZoom: s.minZoom,
+        symbol: makeVehicleGeometryWrapper(s.symbol),
+        symbolByMode
+      };
+    });
+
+    return newSymbols;
   };
 
-  // Insert VehicleGeometryWrapper around each raw symbol defined in symbols.
-  // If no symbols are defined, use the slot for compatibility.
-  // TODO: remove compatibility.
+  updateSymbols = symbols => {
+    this.setState({ symbols });
+  };
 
-  const effectiveSymbols = symbols || [
-    {
-      minZoom: 0,
-      symbol: slot
+  render() {
+    const {
+      name,
+      visible,
+      zoom,
+      center,
+      vehicleList,
+      selectedVehicle,
+      showOnlyTracked,
+
+      // VehicleGeometry
+      highlightColor,
+
+      // RouteGeometry
+      pattern,
+      lowlightColor, // note: highlightColor above
+      highlight,
+      lowlight
+    } = this.props;
+    const { symbols } = this.state;
+
+    utils.linterIgnoreTheseProps(name, visible, center);
+
+    // when a vehicle is selected, pre-determine whether to show pattern and which vehicles
+    let vl = vehicleList;
+    let showPattern = false;
+    if (
+      selectedVehicle &&
+      utils.findVehicleById(vehicleList, selectedVehicle.tripId)
+    ) {
+      if (showOnlyTracked) vl = [selectedVehicle];
+      if (pattern) showPattern = true;
     }
-  ];
-  const newSymbols = effectiveSymbols.map(s => {
-    // Add VehicleGeometryWrapper to the defined symbols.
 
-    // Add VehicleGeometryWrapper to the defined symbols by mode.
-    const symbolByMode = s.symbolByMode;
-    if (symbolByMode) {
-      Object.keys(symbolByMode).forEach(key => {
-        symbolByMode[key] = makeVehicleGeometryWrapper(symbolByMode[key]);
-      });
-    }
+    return (
+      <FeatureGroup>
+        {vl && symbols && (
+          <ZoomBasedMarkers entities={vl} symbols={symbols} zoom={zoom} />
+        )}
 
-    return {
-      getMode: s.getMNode,
-      minZoom: s.minZoom,
-      symbol: makeVehicleGeometryWrapper(s.symbol),
-      symbolByMode
-    };
-  });
-
-  return (
-    <FeatureGroup>
-      {vl && newSymbols && (
-        <ZoomBasedMarkers entities={vl} symbols={newSymbols} zoom={zoom} />
-      )}
-
-      {showPattern && (
-        <RouteGeometry
-          zoom={zoom}
-          selectedVehicle={selectedVehicle}
-          pattern={pattern}
-          highlightColor={highlightColor}
-          lowlightColor={lowlightColor}
-          highlight={highlight}
-          lowlight={lowlight}
-        />
-      )}
-    </FeatureGroup>
-  );
+        {showPattern && (
+          <RouteGeometry
+            zoom={zoom}
+            selectedVehicle={selectedVehicle}
+            pattern={pattern}
+            highlightColor={highlightColor}
+            lowlightColor={lowlightColor}
+            highlight={highlight}
+            lowlight={lowlight}
+          />
+        )}
+      </FeatureGroup>
+    );
+  }
 }
+
+// The wrapSymbols(props) function defined in the component above
+// extracts some of the the props below from its argument,
+// so if you remove the eslint waiver below, you will see those props flagged while used.
+/* eslint-disable react/no-unused-prop-types */
 
 TransitVehicleOverlay.propTypes = {
   /** providing a name will allow this layer to be registered in the base-map layer switcher */

@@ -119,6 +119,9 @@ const makeRotatedMarker = (Icon, getSize) => {
     vehicle,
     zoom
   }) => {
+    if (!vehicle) {
+      return null;
+    }
     const { lat, lon, heading } = vehicle;
     const icon = (
       <Icon
