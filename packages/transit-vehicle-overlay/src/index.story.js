@@ -12,8 +12,6 @@ import { formatDurationWithSeconds } from "@opentripplanner/core-utils/src/time"
 import TransitVehicleOverlay from "./index";
 
 // marker / popup / tooltip slots
-import ModeCircles from "./components/markers/ModeCircles";
-import ModeRectangles from "./components/markers/ModeRectangles";
 import VehicleMarkers from "./components/markers/VehicleMarkers";
 import CustomTooltip from "./components/popups/CustomTooltip";
 import VehicleTooltip from "./components/popups/VehicleTooltip";
@@ -32,6 +30,32 @@ const PORTLAND = [45.523, -122.671];
 const INITIAL_ZOOM_LEVEL = 14;
 const setClicked = action("setClicked");
 
+const circleSymbols = [
+  {
+    minZoom: 0,
+    symbol: VehicleMarkers.Dot
+  },
+  {
+    minZoom: 14,
+    symbol: VehicleMarkers.CircledVehicle
+  }
+];
+
+const rectangleSymbols = [
+  {
+    getMode: vehicle => vehicle.routeType,
+    minZoom: 0,
+    symbol: VehicleMarkers.LightRailVehicleRectangle,
+    symbolByMode: {
+      BUS: VehicleMarkers.BusRectangle
+    }
+  },
+  {
+    minZoom: 14,
+    symbol: VehicleMarkers.DetailedRectangle
+  }
+];
+
 /** using static vehicle and geom data, show a simple demo of transit vehicle component */
 function simpleExample(vehicleData, patternGeometry, selectVehicleId) {
   // find our tracked vehicle from the vehicle list
@@ -45,17 +69,6 @@ function simpleExample(vehicleData, patternGeometry, selectVehicleId) {
   const highlightColor = color("isTracked color:", "#ece90d");
   const lowlightColor = color("trailing color:", "#AAA");
 
-  const symbols = [
-    {
-      minZoom: 0,
-      symbol: VehicleMarkers.Dot
-    },
-    {
-      minZoom: 14,
-      symbol: VehicleMarkers.CircledVehicle
-    }
-  ];
-
   return (
     <BaseMap
       center={PORTLAND}
@@ -64,7 +77,7 @@ function simpleExample(vehicleData, patternGeometry, selectVehicleId) {
     >
       <TransitVehicleOverlay
         zoom={zoom}
-        symbols={symbols}
+        symbols={circleSymbols}
         vehicleList={vehicleData}
         selectedVehicle={trackedVehicle}
         pattern={patternGeometry}
@@ -153,21 +166,6 @@ function rectangles(popup = true) {
   // if there's a popup, place the tooltip on bottom of marker (since popup opens on top)
   CustomTooltip.defaultProps.direction = popup ? "bottom" : "rotation";
 
-  const symbols = [
-    {
-      getMode: vehicle => vehicle.routeType,
-      minZoom: 0,
-      symbol: VehicleMarkers.LightRailVehicleRectangle,
-      symbolByMode: {
-        BUS: VehicleMarkers.BusRectangle
-      }
-    },
-    {
-      minZoom: 14,
-      symbol: VehicleMarkers.DetailedRectangle
-    }
-  ];
-
   return (
     <BaseMap
       center={PORTLAND}
@@ -182,8 +180,7 @@ function rectangles(popup = true) {
         selectedVehicle={trackedVehicle}
         pattern={getRoutePattern()}
         onRecenterMap={recenter}
-        // MarkerSlot={ModeRectangles}
-        symbols={symbols}
+        symbols={rectangleSymbols}
         TooltipSlot={CustomTooltip}
         PopupSlot={popup ? VehiclePopup : null}
         color={clr}
@@ -264,7 +261,7 @@ function realtimeExample(fetchVehicles, fetchPattern, markers) {
         onRecenterMap={recenter}
         color={clr}
         highlightColor={highlightColor}
-        MarkerSlot={markers}
+        symbols={markers}
         TooltipSlot={VehicleTooltip}
         PopupSlot={VehiclePopup}
       />
@@ -294,7 +291,7 @@ function rtCircles() {
   return realtimeExample(
     proprietary.fetchVehicles,
     proprietary.fetchPatternThrottled,
-    ModeCircles
+    circleSymbols
   );
 }
 
@@ -303,7 +300,7 @@ function rtRectangles() {
   return realtimeExample(
     proprietary.fetchAltVehicles,
     proprietary.fetchPatternThrottled,
-    ModeRectangles
+    rectangleSymbols
   );
 }
 
