@@ -81,7 +81,8 @@ export default function TransitVehicleOverlay(props) {
   };
 
   // Insert VehicleGeometryWrapper around each raw symbol defined in symbols.
-  // TODO: extract function.
+  // If no symbols are defined, use the slot for compatibility.
+  // TODO: remove compatibility.
 
   const effectiveSymbols = symbols || [
     {
@@ -90,10 +91,21 @@ export default function TransitVehicleOverlay(props) {
     }
   ];
   const newSymbols = effectiveSymbols.map(s => {
+    // Add VehicleGeometryWrapper to the defined symbols.
+
+    // Add VehicleGeometryWrapper to the defined symbols by mode.
+    const symbolByMode = s.symbolByMode;
+    if (symbolByMode) {
+      Object.keys(symbolByMode).forEach(key => {
+        symbolByMode[key] = makeVehicleGeometryWrapper(symbolByMode[key]);
+      });
+    }
+
     return {
+      getMode: s.getMNode,
       minZoom: s.minZoom,
-      symbol: makeVehicleGeometryWrapper(s.symbol)
-      // TODO: symbolByMode:
+      symbol: makeVehicleGeometryWrapper(s.symbol),
+      symbolByMode
     };
   });
 

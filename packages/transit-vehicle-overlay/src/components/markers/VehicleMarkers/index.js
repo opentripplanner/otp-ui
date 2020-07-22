@@ -58,7 +58,7 @@ const Dot = makeBasicVehicleShape(
   }
 );
 
-const TramRectangle = makeBasicVehicleShape(
+const LightRailVehicleRectangle = makeBasicVehicleShape(
   StyledRectangle.LgShape,
   StyledRectangle.LgTrackedShape
 );
@@ -68,10 +68,10 @@ const BusRectangle = makeBasicVehicleShape(
   StyledRectangle.TrackedShape
 );
 
-const DetailedRectangle = ({ color, highlightColor, isTracked, vehicle }) => {
+const DetailedRectangle = ({ color, highlightColor, isTracked, routeType }) => {
   return utils.makeVehicleIcon(
     StyledRectangle,
-    vehicle.routeType,
+    routeType,
     color,
     highlightColor,
     isTracked
@@ -186,5 +186,8 @@ export default {
   CircledVehicle: makeRotatedMarker(CircledVehicle),
   DetailedRectangle: makeRotatedMarker(DetailedRectangle, getRectangleSize),
   Dot: makeRotatedMarker(Dot),
-  TramRectangle: makeRotatedMarker(TramRectangle, getRectangleSize)
+  LightRailVehicleRectangle: makeRotatedMarker(
+    LightRailVehicleRectangle,
+    getRectangleSize
+  )
 };

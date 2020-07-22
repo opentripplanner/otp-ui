@@ -153,6 +153,21 @@ function rectangles(popup = true) {
   // if there's a popup, place the tooltip on bottom of marker (since popup opens on top)
   CustomTooltip.defaultProps.direction = popup ? "bottom" : "rotation";
 
+  const symbols = [
+    {
+      getMode: vehicle => vehicle.routeType,
+      minZoom: 0,
+      symbol: VehicleMarkers.LightRailVehicleRectangle,
+      symbolByMode: {
+        BUS: VehicleMarkers.BusRectangle
+      }
+    },
+    {
+      minZoom: 14,
+      symbol: VehicleMarkers.DetailedRectangle
+    }
+  ];
+
   return (
     <BaseMap
       center={PORTLAND}
@@ -167,7 +182,8 @@ function rectangles(popup = true) {
         selectedVehicle={trackedVehicle}
         pattern={getRoutePattern()}
         onRecenterMap={recenter}
-        MarkerSlot={ModeRectangles}
+        // MarkerSlot={ModeRectangles}
+        symbols={symbols}
         TooltipSlot={CustomTooltip}
         PopupSlot={popup ? VehiclePopup : null}
         color={clr}
