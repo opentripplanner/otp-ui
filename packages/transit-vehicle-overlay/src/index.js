@@ -1,15 +1,15 @@
-import React, { Component } from "react";
 import PropTypes from "prop-types";
+import React, { Component } from "react";
 import { FeatureGroup } from "react-leaflet";
 
 import {
   transitVehicleType,
   zoomBasedSymbolType
 } from "@opentripplanner/core-utils/lib/types";
-
 import ZoomBasedMarkers from "@opentripplanner/zoom-based-markers";
-import VehicleGeometry from "./components/VehicleGeometry";
+
 import RouteGeometry from "./components/RouteGeometry";
+import VehicleGeometry from "./components/VehicleGeometry";
 import * as utils from "./utils";
 
 /**
@@ -40,13 +40,13 @@ export default class TransitVehicleOverlay extends Component {
       symbols,
 
       // VehicleGeometry
-      onVehicleClicked,
-      onRecenterMap,
-      MarkerSlot: slot, // will be eventually replaced with symbols.
-      PopupSlot,
-      TooltipSlot,
       color,
-      highlightColor
+      highlightColor,
+      MarkerSlot: slot, // will be eventually replaced with symbols.
+      onRecenterMap,
+      onVehicleClicked,
+      PopupSlot,
+      TooltipSlot
     } = props;
 
     /*
@@ -59,18 +59,20 @@ export default class TransitVehicleOverlay extends Component {
        * It passes props from TransitVehicleOverlay VehicleGeometry and
        * has the signature required by ZoomBasedMarker.
        */
-      const VehicleGeometryWrapper = ({ entity: v, zoom: z }) => (
+      const VehicleGeometryWrapper = ({ entity: vehicle, zoom }) => (
         <VehicleGeometry
-          zoom={z}
-          vehicle={v}
-          isTracked={selectedVehicle && selectedVehicle.tripId === v.tripId}
-          onVehicleClicked={onVehicleClicked}
-          onRecenterMap={onRecenterMap}
-          MarkerSlot={MarkerSlot}
-          PopupSlot={PopupSlot}
-          TooltipSlot={TooltipSlot}
           color={color}
           highlightColor={highlightColor}
+          isTracked={
+            selectedVehicle && selectedVehicle.tripId === vehicle.tripId
+          }
+          MarkerSlot={MarkerSlot}
+          onRecenterMap={onRecenterMap}
+          onVehicleClicked={onVehicleClicked}
+          PopupSlot={PopupSlot}
+          TooltipSlot={TooltipSlot}
+          vehicle={vehicle}
+          zoom={zoom}
         />
       );
 
@@ -96,9 +98,10 @@ export default class TransitVehicleOverlay extends Component {
       // Make a new version of symbolByMode that has the original symbols
       // from s.symbolsByMode wrapper in a VehicleGeometryWrapper.
       let symbolByMode;
-      if (s.symbolByMode) {
-        Object.keys(s.symbolByMode).forEach(key => {
-          const originalSymbol = s.symbolByMode[key];
+      const originalSymbolsByMode = s.symbolsByMode;
+      if (originalSymbolsByMode) {
+        Object.keys(originalSymbolsByMode).forEach(key => {
+          const originalSymbol = originalSymbolsByMode[key];
           if (originalSymbol) {
             if (!symbolByMode) {
               symbolByMode = {};
@@ -125,22 +128,22 @@ export default class TransitVehicleOverlay extends Component {
 
   render() {
     const {
-      name,
-      visible,
-      zoom,
       center,
-      vehicleList,
+      name,
       selectedVehicle,
       showOnlyTracked,
+      vehicleList,
+      visible,
+      zoom,
 
       // VehicleGeometry
       highlightColor,
 
       // RouteGeometry
-      pattern,
-      lowlightColor, // note: highlightColor above
       highlight,
-      lowlight
+      lowlight,
+      lowlightColor, // note: highlightColor above
+      pattern
     } = this.props;
     const { symbols } = this.state;
 
@@ -165,13 +168,13 @@ export default class TransitVehicleOverlay extends Component {
 
         {showPattern && (
           <RouteGeometry
-            zoom={zoom}
-            selectedVehicle={selectedVehicle}
-            pattern={pattern}
-            highlightColor={highlightColor}
-            lowlightColor={lowlightColor}
             highlight={highlight}
+            highlightColor={highlightColor}
             lowlight={lowlight}
+            lowlightColor={lowlightColor}
+            pattern={pattern}
+            selectedVehicle={selectedVehicle}
+            zoom={zoom}
           />
         )}
       </FeatureGroup>
