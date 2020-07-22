@@ -106,13 +106,11 @@ function getRectangleSize(zoom) {
 }
 
 /**
- * Constructs a rotated component (for rendering vehicle with headings)
- * using the provided Icon component,
- * and make the component render the icon with the size returned
- * by the optional getSize function argument.
+ * Renders the provided Icon with a RotatedMarker component (for rendering rotated vehicle symbols)
+ * and make the component render the icon with the size returned by the optional getSize function argument.
  */
-const makeRotatedShape = (Icon, getSize) => {
-  const VehicleShape = ({
+const makeRotatedMarker = (Icon, getSize) => {
+  const VehicleMarker = ({
     children,
     color,
     highlightColor,
@@ -146,7 +144,7 @@ const makeRotatedShape = (Icon, getSize) => {
     );
   };
 
-  VehicleShape.propTypes = {
+  VehicleMarker.propTypes = {
     /** React children */
     children: PropTypes.arrayOf(PropTypes.element),
 
@@ -169,7 +167,7 @@ const makeRotatedShape = (Icon, getSize) => {
     zoom: PropTypes.number
   };
 
-  VehicleShape.defaultProps = {
+  VehicleMarker.defaultProps = {
     children: null,
     color: "",
     highlightColor: "",
@@ -180,13 +178,13 @@ const makeRotatedShape = (Icon, getSize) => {
     zoom: null
   };
 
-  return VehicleShape;
+  return VehicleMarker;
 };
 
 export default {
-  BusRectangle: makeRotatedShape(BusRectangle, getRectangleSize),
-  CircledVehicle: makeRotatedShape(CircledVehicle),
-  DetailedRectangle: makeRotatedShape(DetailedRectangle, getRectangleSize),
-  Dot: makeRotatedShape(Dot),
-  TramRectangle: makeRotatedShape(TramRectangle, getRectangleSize)
+  BusRectangle: makeRotatedMarker(BusRectangle, getRectangleSize),
+  CircledVehicle: makeRotatedMarker(CircledVehicle),
+  DetailedRectangle: makeRotatedMarker(DetailedRectangle, getRectangleSize),
+  Dot: makeRotatedMarker(Dot),
+  TramRectangle: makeRotatedMarker(TramRectangle, getRectangleSize)
 };
