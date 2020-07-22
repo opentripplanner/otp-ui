@@ -14,7 +14,7 @@ import TransitVehicleOverlay from "./index";
 // marker / popup / tooltip slots
 import ModeCircles from "./components/markers/ModeCircles";
 import ModeRectangles from "./components/markers/ModeRectangles";
-import VehicleCircles from "./components/markers/VehicleCircles";
+import VehicleMarkers from "./components/markers/VehicleMarkers";
 import CustomTooltip from "./components/popups/CustomTooltip";
 import VehicleTooltip from "./components/popups/VehicleTooltip";
 import VehiclePopup from "./components/popups/VehiclePopup";
@@ -48,11 +48,11 @@ function simpleExample(vehicleData, patternGeometry, selectVehicleId) {
   const symbols = [
     {
       minZoom: 0,
-      symbol: VehicleCircles.Dot
+      symbol: VehicleMarkers.Dot
     },
     {
       minZoom: 14,
-      symbol: VehicleCircles.CircledVehicle
+      symbol: VehicleMarkers.CircledVehicle
     }
   ];
 
