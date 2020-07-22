@@ -96,12 +96,12 @@ export default class TransitVehicleOverlay extends Component {
     ];
     const newSymbols = effectiveSymbols.map(s => {
       // Make a new version of symbolByMode that has the original symbols
-      // from s.symbolsByMode wrapper in a VehicleGeometryWrapper.
+      // from s.symbolByMode wrapper in a VehicleGeometryWrapper.
       let symbolByMode;
-      const originalSymbolsByMode = s.symbolsByMode;
-      if (originalSymbolsByMode) {
-        Object.keys(originalSymbolsByMode).forEach(key => {
-          const originalSymbol = originalSymbolsByMode[key];
+      const originalSymbolByMode = s.symbolByMode;
+      if (originalSymbolByMode) {
+        Object.keys(originalSymbolByMode).forEach(key => {
+          const originalSymbol = originalSymbolByMode[key];
           if (originalSymbol) {
             if (!symbolByMode) {
               symbolByMode = {};
