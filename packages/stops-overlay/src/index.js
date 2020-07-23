@@ -31,17 +31,16 @@ class StopsOverlay extends MapLayer {
   }
 
   refreshStops = () => {
-    const { leaflet, minZoom, refreshStops, symbols } = this.props;
+    const { leaflet, refreshStops, symbols } = this.props;
 
-    let minZoomForUpdate = minZoom;
-    if (minZoomForUpdate === null) {
-      minZoomForUpdate = symbols.reduce((lowestZoom, level) => {
-        if (level.minZoom < lowestZoom) {
-          return level;
-        }
-        return lowestZoom;
-      }, Number.MAX_VALUE);
-    }
+    const minZoomForUpdate = symbols
+      ? symbols.reduce((lowestZoom, level) => {
+          if (level.minZoom < lowestZoom) {
+            return level;
+          }
+          return lowestZoom;
+        }, Number.MAX_VALUE)
+      : Number.MAX_VALUE;
 
     if (leaflet.map.getZoom() < minZoomForUpdate) {
       this.forceUpdate();
@@ -67,29 +66,18 @@ class StopsOverlay extends MapLayer {
   updateLeafletElement() {}
 
   render() {
-    const { leaflet, minZoom, StopMarker, stops, symbols } = this.props;
+    const { leaflet, stops, symbols } = this.props;
 
-    // Don't render if below zoom threshold or no stops visible
-    if (
-      !leaflet ||
-      !leaflet.map ||
-      leaflet.map.getZoom() < minZoom ||
-      !stops ||
-      stops.length === 0
-    ) {
+    // Don't render if no stops visible.
+    // (ZoomBasedMarkers will also not render below the minimum zoom threshold defined in the symbols prop.)
+    if (!leaflet || !leaflet.map || !stops || stops.length === 0) {
       return <FeatureGroup />;
     }
     const zoom = leaflet.map.getZoom();
 
-    // Helper to create StopMarker from stop
-    const createStopMarker =
-      StopMarker && (stop => <StopMarker key={stop.id} stop={stop} />);
-
     return (
       <FeatureGroup>
-        {stops && StopMarker && stops.map(stop => createStopMarker(stop))}
-
-        {stops && symbols && (
+        {symbols && (
           <ZoomBasedMarkers entities={stops} symbols={symbols} zoom={zoom} />
         )}
       </FeatureGroup>
@@ -102,19 +90,10 @@ StopsOverlay.propTypes = {
   /* eslint-disable-next-line react/forbid-prop-types */
   leaflet: PropTypes.object.isRequired,
   /**
-   * The zoom number at which this overlay will begin to show stop markers.
-   */
-  minZoom: PropTypes.number,
-  /**
    * A callback for refreshing the stops in the event of a map bounds or zoom
    * change event.
    */
   refreshStops: PropTypes.func.isRequired,
-  /**
-   * A react component that can be used to render a stop marker. The component
-   * will be sent a single prop of stop which will be a stopLayerStopType.
-   */
-  StopMarker: PropTypes.elementType,
   /**
    * The list of stops to create stop markers for.
    */
@@ -126,10 +105,6 @@ StopsOverlay.propTypes = {
 };
 
 StopsOverlay.defaultProps = {
-  minZoom: 15,
-  stopMarker: null,
-  stopMarkerPath: undefined,
-  stopMarkerRadius: undefined,
   symbols: null
 };
 
