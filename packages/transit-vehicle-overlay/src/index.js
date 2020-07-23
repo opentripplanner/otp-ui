@@ -8,9 +8,9 @@ import {
 } from "@opentripplanner/core-utils/lib/types";
 import ZoomBasedMarkers from "@opentripplanner/zoom-based-markers";
 
+import VehicleMarkers from "./components/markers/VehicleMarkers";
 import RouteGeometry from "./components/RouteGeometry";
 import VehicleGeometry from "./components/VehicleGeometry";
-import VehicleMarkers from "./components/markers/VehicleMarkers";
 import * as utils from "./utils";
 
 const defaultSymbols = [
