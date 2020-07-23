@@ -66,9 +66,9 @@ class VehicleRentalOverlay extends MapLayer {
   }
 
   componentDidMount() {
-    const { companies, mapSymbols, name, visible } = this.props;
+    const { companies, mapSymbols, name, symbols, visible } = this.props;
     if (visible) this.startRefreshing();
-    if (!mapSymbols)
+    if (!mapSymbols && !symbols)
       console.warn(`No map symbols provided for layer ${name}`, companies);
   }
 

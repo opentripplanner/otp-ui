@@ -45,33 +45,26 @@ const bikeMapSymbols = [
   }
 ];
 
-const makeBikeStationCircle = size => {
-  const StationCircle = ({ entity }) => (
-    <Markers.Circle
-      dockStrokeColor="#000000"
-      entity={entity}
-      fillColor="#FF2E28"
-      pixels={size}
-    />
-  );
-  StationCircle.propTypes = {
-    entity: stationType.isRequired
-  };
-
-  return StationCircle;
-};
 const bikeSymbols = [
   {
+    getMode: station => (station.isFloatingBike ? "floatingBike" : "dock"),
     minZoom: 0,
-    symbol: makeBikeStationCircle(4)
+    symbol: Markers.Circle.template(3, "#FF2E28"),
+    symbolByMode: {
+      dock: Markers.Circle.template(4, "#FF2E28", "#000000")
+    }
   },
   {
+    getMode: station => (station.isFloatingBike ? "floatingBike" : "dock"),
     minZoom: 14,
-    symbol: makeBikeStationCircle(6)
+    symbol: Markers.Circle.template(5, "#FF2E28"),
+    symbolByMode: {
+      dock: Markers.Circle.template(6, "#FF2E28", "#000000")
+    }
   },
   {
     minZoom: 18,
-    symbol: makeBikeStationCircle(8)
+    symbol: Markers.HubAndFloatingBike
   }
 ];
 
@@ -95,6 +88,21 @@ const carMapSymbols = [
     maxZoom: 999,
     minZoom: 18,
     type: "marker"
+  }
+];
+
+const carSymbols = [
+  {
+    minZoom: 0,
+    symbol: Markers.Circle.template(4, "#009cde")
+  },
+  {
+    minZoom: 14,
+    symbol: Markers.Circle.template(6, "#009cde")
+  },
+  {
+    minZoom: 18,
+    symbol: Markers.Marker.template("#009cde")
   }
 ];
 const configCompanies = [
@@ -141,6 +149,21 @@ const EScooterMapSymbols = [
     maxZoom: 999,
     minZoom: 18,
     type: "marker"
+  }
+];
+
+const EScooterSymbols = [
+  {
+    minZoom: 0,
+    symbol: Markers.Circle.template(4, "#F80600", "#CCCCCC")
+  },
+  {
+    minZoom: 14,
+    symbol: Markers.Circle.template(6, "#F80600", "#CCCCCC")
+  },
+  {
+    minZoom: 18,
+    symbol: Markers.Marker.template("#F80600")
   }
 ];
 const setLocation = action("setLocation");
@@ -253,33 +276,33 @@ storiesOf("VehicleRentalOverlay", module)
   .add("VehicleRentalOverlay with rental bicycles", () => (
     <ZoomControlledMapWithVehicleRentalOverlay
       companies={["BIKETOWN"]}
-      symbols={bikeSymbols}
       refreshVehicles={action("refresh bicycles")}
       stations={bikeRentalStations}
+      symbols={bikeSymbols}
     />
   ))
   .add("VehicleRentalOverlay with rental cars", () => (
     <ZoomControlledMapWithVehicleRentalOverlay
       companies={["CAR2GO"]}
-      mapSymbols={carMapSymbols}
       refreshVehicles={action("refresh cars")}
       stations={carRentalStations}
+      symbols={carSymbols}
     />
   ))
   .add("VehicleRentalOverlay with rental E-scooters", () => (
     <ZoomControlledMapWithVehicleRentalOverlay
       companies={["SHARED"]}
-      mapSymbols={EScooterMapSymbols}
       refreshVehicles={action("refresh E-scooters")}
       stations={eScooterStations}
+      symbols={EScooterSymbols}
     />
   ))
   .add("VehicleRentalOverlay with rental E-scooters with custom naming", () => (
     <ZoomControlledMapWithVehicleRentalOverlay
       companies={["SHARED"]}
       getStationName={customStationName}
-      mapSymbols={EScooterMapSymbols}
       refreshVehicles={action("refresh E-scooters")}
       stations={eScooterStations}
+      symbols={EScooterSymbols}
     />
   ));
