@@ -37,7 +37,9 @@ const mapCenter = [45.420217, -122.67307];
 // which is not required, unless you plan to inject children.
 
 const propTypes = {
+  /** The children of the component. */
   children: PropTypes.node,
+  /** The stop to render. */
   entity: stopLayerStopType.isRequired
 };
 const defaultProps = {
@@ -177,7 +179,9 @@ const exampleTransform = Symbol => {
     </Symbol>
   );
   InnerSymbol.propTypes = {
-    entity: PropTypes.shape().isRequired,
+    /** The stop to render. */
+    entity: stopLayerStopType.isRequired,
+    /** The zoom level being rendered. */
     zoom: PropTypes.number
   };
   InnerSymbol.defaultProps = {

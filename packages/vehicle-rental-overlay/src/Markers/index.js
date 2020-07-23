@@ -1,5 +1,6 @@
 import { divIcon } from "leaflet";
 import memoize from "lodash.memoize";
+import { stationType } from "@opentripplanner/core-utils/lib/types";
 import PropTypes from "prop-types";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
@@ -9,10 +10,11 @@ import { floatingBikeIcon, hubIcons } from "../bike-icons";
 import * as Styled from "../styled";
 
 // Prop types reused across components.
-const entityPropType = PropTypes.shape();
 const templatePropTypes = {
+  /** The children of the component. */
   children: PropTypes.node,
-  entity: entityPropType.isRequired
+  /** The rental vehicle or station to render. */
+  entity: stationType.isRequired
 };
 const templateDefaultProps = {
   children: null
@@ -45,10 +47,15 @@ const Circle = ({
   );
 };
 Circle.propTypes = {
+  /** The children of the component. */
   children: PropTypes.node,
-  entity: entityPropType.isRequired,
+  /** The rental vehicle or station to render. */
+  entity: stationType.isRequired,
+  /** The fill color of the circle. */
   fillColor: PropTypes.string,
+  /** The radius of the circle. */
   radius: PropTypes.number.isRequired,
+  /** Thre stroke (border) color of the circle. */
   strokeColor: PropTypes.string
 };
 Circle.defaultProps = {
@@ -127,8 +134,11 @@ const GenericMarker = ({ children, entity: station, fillColor }) => {
   );
 };
 GenericMarker.propTypes = {
+  /** The children of the component. */
   children: PropTypes.node,
-  entity: entityPropType.isRequired,
+  /** The rental vehicle or station to render. */
+  entity: stationType.isRequired,
+  /** The fill color of the circle. */
   fillColor: PropTypes.string
 };
 GenericMarker.defaultProps = {
