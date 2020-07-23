@@ -4,8 +4,9 @@ import * as BaseMapStyled from "@opentripplanner/base-map/lib/styled";
 import { getCompaniesLabelFromNetworks } from "@opentripplanner/core-utils/lib/itinerary";
 import {
   companyType,
+  stationType,
   vehicleRentalMapOverlaySymbolsType,
-  stationType
+  zoomBasedSymbolType
 } from "@opentripplanner/core-utils/lib/types";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 import ZoomBasedMarkers from "@opentripplanner/zoom-based-markers";
@@ -188,7 +189,7 @@ class VehicleRentalOverlay extends MapLayer {
   };
 
   render() {
-    const { mapSymbols, stations, companies } = this.props;
+    const { companies, mapSymbols, stations, symbols } = this.props;
     let filteredStations = stations;
     if (companies) {
       filteredStations = stations.filter(
@@ -204,9 +205,21 @@ class VehicleRentalOverlay extends MapLayer {
     // get zoom to check which symbol to render
     const zoom = this.props.leaflet.map.getZoom();
 
+    if (symbols) {
+      return (
+        <FeatureGroup>
+          <ZoomBasedMarkers
+            entities={filteredStations}
+            symbols={symbols}
+            zoom={zoom}
+          />
+        </FeatureGroup>
+      );
+    }
+
     if (mapSymbols) {
       // Convert map symbols for this overlay to zoomBasedSymbolType.
-      const symbols = mapSymbols.map(mapSymbol => ({
+      const newSymbols = mapSymbols.map(mapSymbol => ({
         minZoom: mapSymbol.minZoom,
         symbol: this.renderStation(mapSymbol)
       }));
@@ -215,7 +228,7 @@ class VehicleRentalOverlay extends MapLayer {
         <FeatureGroup>
           <ZoomBasedMarkers
             entities={filteredStations}
-            symbols={symbols}
+            symbols={newSymbols}
             zoom={zoom}
           />
         </FeatureGroup>
@@ -280,6 +293,10 @@ VehicleRentalOverlay.props = {
    */
   stations: PropTypes.arrayOf(stationType),
   /**
+   * A list of symbol definitions for the vehicles to be rendered.
+   */
+  symbols: PropTypes.arrayOf(zoomBasedSymbolType),
+  /**
    * Whether the overlay is currently visible.
    */
   visible: PropTypes.bool
@@ -305,6 +322,7 @@ VehicleRentalOverlay.defaultProps = {
   mapSymbols: null,
   refreshVehicles: null,
   stations: [],
+  symbols: null,
   visible: false
 };
 
