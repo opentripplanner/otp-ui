@@ -24,6 +24,7 @@ import {
 
 import { floatingBikeIcon, hubIcons } from "./bike-icons";
 import * as Styled from "./styled";
+import Markers from "./Markers";
 
 const getStationMarkerByColor = memoize(color =>
   divIcon({
@@ -42,66 +43,25 @@ const getStationMarkerByColor = memoize(color =>
  * different zoom levels.
  */
 class VehicleRentalOverlay extends MapLayer {
-  constructor(props) {
-    super(props);
-    this.state = { symbols: this.wrapSymbols(props) };
-  }
-
   /**
-   * This helper method inserts the popup to the symbols originally defined in the symbols prop
-   * and stores the result in this component's state.
+   * This helper method will be passed to the ZoomBasedMarkers symbolTranform prop.
+   * It creates a component that inserts a popup
+   * as a child of the specified symbol from the symbols prop.
    */
-  wrapSymbols = props => {
-    const { symbols } = props;
-
-    /*
-     * Function to insert a popup as a child of a symbol from the symbols prop.
-     */
-    const insertPopup = Symbol => {
-      const SymbolWrapper = ({ entity: station, zoom }) => (
-        <Symbol entity={station} zoom={zoom}>
-          {this.renderPopupForStation(station)}
-        </Symbol>
-      );
-      SymbolWrapper.propTypes = {
-        entity: stationType.isRequired
-      };
-
-      return SymbolWrapper;
+  insertPopup = Symbol => {
+    const SymbolWrapper = ({ entity: station, zoom }) => (
+      <Symbol entity={station} zoom={zoom}>
+        {this.renderPopupForStation(
+          station,
+          Symbol === Markers.HubAndFloatingBike && !station.isFloatingBike
+        )}
+      </Symbol>
+    );
+    SymbolWrapper.propTypes = {
+      entity: stationType.isRequired
     };
 
-    const newSymbols =
-      symbols &&
-      symbols.map(s => {
-        // Make a new version of symbolByMode that has the original symbols
-        // from s.symbolByMode wrapper with the popup inserted.
-        let symbolByMode;
-        const originalSymbolByMode = s.symbolByMode;
-        if (originalSymbolByMode) {
-          Object.keys(originalSymbolByMode).forEach(key => {
-            const originalSymbol = originalSymbolByMode[key];
-            if (originalSymbol) {
-              if (!symbolByMode) {
-                symbolByMode = {};
-              }
-              symbolByMode[key] = insertPopup(originalSymbol);
-            }
-          });
-        }
-
-        return {
-          getMode: s.getMode,
-          minZoom: s.minZoom,
-          symbol: insertPopup(s.symbol),
-          symbolByMode
-        };
-      });
-
-    return newSymbols;
-  };
-
-  updateSymbols = symbols => {
-    this.setState({ symbols });
+    return SymbolWrapper;
   };
 
   createLeafletElement() {}
@@ -143,11 +103,6 @@ class VehicleRentalOverlay extends MapLayer {
       this.startRefreshing();
     } else if (prevProps.visible && !this.props.visible) {
       this.stopRefreshing();
-    }
-
-    // For updating symbols with popup if new ones are provided.
-    if (prevProps.symbols !== this.props.symbols) {
-      this.updateSymbols(this.wrapSymbols(this.props));
     }
   }
 
@@ -256,8 +211,7 @@ class VehicleRentalOverlay extends MapLayer {
   };
 
   render() {
-    const { companies, mapSymbols, stations } = this.props;
-    const { symbols } = this.state;
+    const { companies, mapSymbols, stations, symbols } = this.props;
     let filteredStations = stations;
     if (companies) {
       filteredStations = stations.filter(
@@ -279,6 +233,7 @@ class VehicleRentalOverlay extends MapLayer {
           <ZoomBasedMarkers
             entities={filteredStations}
             symbols={symbols}
+            symbolTransform={this.insertPopup}
             zoom={zoom}
           />
         </FeatureGroup>

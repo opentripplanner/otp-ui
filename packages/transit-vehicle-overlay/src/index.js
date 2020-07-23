@@ -18,56 +18,34 @@ import * as utils from "./utils";
  * able to render a 'selected' vehicle (and it's route pattern trace)
  */
 export default class TransitVehicleOverlay extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { symbols: this.wrapSymbols(props) };
-  }
-
-  componentDidUpdate(prevProps) {
-    // For wrapping symbols with VehicleGeometry if new ones are provided.
-    if (prevProps !== this.props) {
-      this.updateSymbols(this.wrapSymbols(this.props));
-    }
-  }
-
   /**
-   * This helper method wraps symbols originally defined in the symbols prop
-   * with a VehicleGeometryWrapper component that handles the leaflet plumbing,
-   * and stores the result in this component's state.
+   * This helper method will be passed to the ZoomBasedMarkers symbolTranform prop.
+   * It wraps symbols originally defined in the symbols prop
+   * with the VehicleGeometry component that handles the leaflet plumbing,
+   * and forwards to VehicleGeometry the relevant props from this component.
    */
-  wrapSymbols = props => {
-    const {
-      selectedVehicle,
-      symbols,
+  makeVehicleGeometryWrapper = Symbol => {
+    const VehicleGeometryWrapper = ({ entity: vehicle, zoom }) => {
+      const {
+        selectedVehicle,
 
-      // VehicleGeometry
-      color,
-      highlightColor,
-      MarkerSlot: slot, // will be eventually replaced with symbols.
-      onRecenterMap,
-      onVehicleClicked,
-      PopupSlot,
-      TooltipSlot
-    } = props;
+        // VehicleGeometry
+        color,
+        highlightColor,
+        onRecenterMap,
+        onVehicleClicked,
+        PopupSlot,
+        TooltipSlot
+      } = this.props;
 
-    /*
-     * Function to wrap leaflet plumbing around the provided MarkerSlot.
-     */
-    const makeVehicleGeometryWrapper = MarkerSlot => {
-      /**
-       * This component is a wrapper around VehicleGeometry
-       * to provide leaflet plumbing to components defined in the symbols prop.
-       * It passes props from TransitVehicleOverlay VehicleGeometry and
-       * has the signature required by ZoomBasedMarker.
-       */
-      const VehicleGeometryWrapper = ({ entity: vehicle, zoom }) => (
+      return (
         <VehicleGeometry
           color={color}
           highlightColor={highlightColor}
           isTracked={
             selectedVehicle && selectedVehicle.tripId === vehicle.tripId
           }
-          MarkerSlot={MarkerSlot}
+          MarkerSlot={Symbol}
           onRecenterMap={onRecenterMap}
           onVehicleClicked={onVehicleClicked}
           PopupSlot={PopupSlot}
@@ -76,55 +54,14 @@ export default class TransitVehicleOverlay extends Component {
           zoom={zoom}
         />
       );
-
-      VehicleGeometryWrapper.propTypes = {
-        entity: transitVehicleType.isRequired,
-        zoom: PropTypes.number.isRequired
-      };
-
-      return VehicleGeometryWrapper;
     };
 
-    // Insert VehicleGeometryWrapper around each raw symbol defined in symbols.
-    // If no symbols are defined, use the slot for compatibility.
-    // TODO: remove compatibility.
+    VehicleGeometryWrapper.propTypes = {
+      entity: transitVehicleType.isRequired,
+      zoom: PropTypes.number.isRequired
+    };
 
-    const effectiveSymbols = symbols || [
-      {
-        minZoom: 0,
-        symbol: slot
-      }
-    ];
-    const newSymbols = effectiveSymbols.map(s => {
-      // Make a new version of symbolByMode that has the original symbols
-      // from s.symbolByMode wrapper in a VehicleGeometryWrapper.
-      let symbolByMode;
-      const originalSymbolByMode = s.symbolByMode;
-      if (originalSymbolByMode) {
-        Object.keys(originalSymbolByMode).forEach(key => {
-          const originalSymbol = originalSymbolByMode[key];
-          if (originalSymbol) {
-            if (!symbolByMode) {
-              symbolByMode = {};
-            }
-            symbolByMode[key] = makeVehicleGeometryWrapper(originalSymbol);
-          }
-        });
-      }
-
-      return {
-        getMode: s.getMode,
-        minZoom: s.minZoom,
-        symbol: makeVehicleGeometryWrapper(s.symbol),
-        symbolByMode
-      };
-    });
-
-    return newSymbols;
-  };
-
-  updateSymbols = symbols => {
-    this.setState({ symbols });
+    return VehicleGeometryWrapper;
   };
 
   render() {
@@ -135,6 +72,8 @@ export default class TransitVehicleOverlay extends Component {
       showOnlyTracked,
       vehicleList,
       visible,
+      MarkerSlot,
+      symbols,
       zoom,
 
       // VehicleGeometry
@@ -146,7 +85,6 @@ export default class TransitVehicleOverlay extends Component {
       lowlightColor, // note: highlightColor above
       pattern
     } = this.props;
-    const { symbols } = this.state;
 
     utils.linterIgnoreTheseProps(name, visible, center);
 
@@ -161,10 +99,22 @@ export default class TransitVehicleOverlay extends Component {
       if (pattern) showPattern = true;
     }
 
+    const effectiveSymbols = symbols || [
+      {
+        minZoom: 0,
+        symbol: MarkerSlot
+      }
+    ];
+
     return (
       <FeatureGroup>
         {vl && symbols && (
-          <ZoomBasedMarkers entities={vl} symbols={symbols} zoom={zoom} />
+          <ZoomBasedMarkers
+            entities={vl}
+            symbols={effectiveSymbols}
+            symbolTransform={this.makeVehicleGeometryWrapper}
+            zoom={zoom}
+          />
         )}
 
         {showPattern && (
@@ -182,11 +132,6 @@ export default class TransitVehicleOverlay extends Component {
     );
   }
 }
-
-// The wrapSymbols(props) function defined in the component above
-// extracts some of the the props below from its argument,
-// so if you remove the eslint waiver below, you will see those props flagged while used.
-/* eslint-disable react/no-unused-prop-types */
 
 TransitVehicleOverlay.propTypes = {
   /** providing a name will allow this layer to be registered in the base-map layer switcher */
