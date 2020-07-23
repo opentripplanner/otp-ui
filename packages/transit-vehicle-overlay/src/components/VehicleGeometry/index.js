@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { useLeaflet } from "react-leaflet";
 
 import { transitVehicleType } from "@opentripplanner/core-utils/lib/types";
-import ModeCircles from "../markers/ModeCircles";
 import { linterIgnoreTheseProps } from "../../utils";
 
 /**
@@ -66,7 +65,7 @@ VehicleGeometry.propTypes = {
    * A custom leaflet marker component with the signature
    * ({vehicle: object, onVehicleClicked: (vehicle) => {}, children: Element}) => Element
    */
-  MarkerSlot: PropTypes.func,
+  MarkerSlot: PropTypes.func.isRequired,
 
   /** optional / customizable popup slot */
   PopupSlot: PropTypes.func,
@@ -87,7 +86,6 @@ VehicleGeometry.defaultProps = {
     linterIgnoreTheseProps(vehicle, isTracked);
   },
   onRecenterMap: null,
-  MarkerSlot: ModeCircles,
   PopupSlot: null,
   TooltipSlot: null,
   color: "",

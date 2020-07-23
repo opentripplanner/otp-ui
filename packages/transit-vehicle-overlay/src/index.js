@@ -10,7 +10,19 @@ import ZoomBasedMarkers from "@opentripplanner/zoom-based-markers";
 
 import RouteGeometry from "./components/RouteGeometry";
 import VehicleGeometry from "./components/VehicleGeometry";
+import VehicleMarkers from "./components/markers/VehicleMarkers";
 import * as utils from "./utils";
+
+const defaultSymbols = [
+  {
+    minZoom: 0,
+    symbol: VehicleMarkers.Dot
+  },
+  {
+    minZoom: 14,
+    symbol: VehicleMarkers.CircledVehicle
+  }
+];
 
 /**
  * presentational component for rendering transit vehicle positions atop a map
@@ -72,7 +84,6 @@ export default class TransitVehicleOverlay extends Component {
       showOnlyTracked,
       vehicleList,
       visible,
-      MarkerSlot,
       symbols,
       zoom,
 
@@ -99,12 +110,7 @@ export default class TransitVehicleOverlay extends Component {
       if (pattern) showPattern = true;
     }
 
-    const effectiveSymbols = symbols || [
-      {
-        minZoom: 0,
-        symbol: MarkerSlot
-      }
-    ];
+    const effectiveSymbols = symbols || defaultSymbols;
 
     return (
       <FeatureGroup>
@@ -166,9 +172,6 @@ TransitVehicleOverlay.propTypes = {
   /** map recenter option (e.g., panTo() or flyTo(), etc...) when tracked vehicle moves */
   onRecenterMap: VehicleGeometry.propTypes.onRecenterMap,
 
-  /** customizable markers used to represent the vehicles (see src/components/markers) */
-  MarkerSlot: VehicleGeometry.propTypes.MarkerSlot,
-
   /** customizable marker popup (see src/components/popups) */
   PopupSlot: VehicleGeometry.propTypes.PopupSlot,
 
@@ -211,7 +214,6 @@ TransitVehicleOverlay.defaultProps = {
   highlightColor: VehicleGeometry.defaultProps.highlightColor,
   onVehicleClicked: VehicleGeometry.defaultProps.onVehicleClicked,
   onRecenterMap: VehicleGeometry.defaultProps.onRecenterMap,
-  MarkerSlot: VehicleGeometry.defaultProps.MarkerSlot,
   PopupSlot: VehicleGeometry.defaultProps.PopupSlot,
   TooltipSlot: VehicleGeometry.defaultProps.TooltipSlot,
 
