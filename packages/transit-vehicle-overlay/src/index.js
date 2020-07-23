@@ -24,6 +24,7 @@ export default class TransitVehicleOverlay extends Component {
   }
 
   componentDidUpdate(prevProps) {
+    // For wrapping symbols with VehicleGeometry if new ones are provided.
     if (prevProps !== this.props) {
       this.updateSymbols(this.wrapSymbols(this.props));
     }

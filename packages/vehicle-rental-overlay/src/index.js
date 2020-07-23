@@ -42,6 +42,68 @@ const getStationMarkerByColor = memoize(color =>
  * different zoom levels.
  */
 class VehicleRentalOverlay extends MapLayer {
+  constructor(props) {
+    super(props);
+    this.state = { symbols: this.wrapSymbols(props) };
+  }
+
+  /**
+   * This helper method inserts the popup to the symbols originally defined in the symbols prop
+   * and stores the result in this component's state.
+   */
+  wrapSymbols = props => {
+    const { symbols } = props;
+
+    /*
+     * Function to insert a popup as a child of a symbol from the symbols prop.
+     */
+    const insertPopup = Symbol => {
+      const SymbolWrapper = ({ entity: station, zoom }) => (
+        <Symbol entity={station} zoom={zoom}>
+          {this.renderPopupForStation(station)}
+        </Symbol>
+      );
+      SymbolWrapper.propTypes = {
+        entity: stationType.isRequired
+      };
+
+      return SymbolWrapper;
+    };
+
+    const newSymbols =
+      symbols &&
+      symbols.map(s => {
+        // Make a new version of symbolByMode that has the original symbols
+        // from s.symbolByMode wrapper with the popup inserted.
+        let symbolByMode;
+        const originalSymbolByMode = s.symbolByMode;
+        if (originalSymbolByMode) {
+          Object.keys(originalSymbolByMode).forEach(key => {
+            const originalSymbol = originalSymbolByMode[key];
+            if (originalSymbol) {
+              if (!symbolByMode) {
+                symbolByMode = {};
+              }
+              symbolByMode[key] = insertPopup(originalSymbol);
+            }
+          });
+        }
+
+        return {
+          getMode: s.getMode,
+          minZoom: s.minZoom,
+          symbol: insertPopup(s.symbol),
+          symbolByMode
+        };
+      });
+
+    return newSymbols;
+  };
+
+  updateSymbols = symbols => {
+    this.setState({ symbols });
+  };
+
   createLeafletElement() {}
 
   updateLeafletElement() {}
@@ -81,6 +143,11 @@ class VehicleRentalOverlay extends MapLayer {
       this.startRefreshing();
     } else if (prevProps.visible && !this.props.visible) {
       this.stopRefreshing();
+    }
+
+    // For updating symbols with popup if new ones are provided.
+    if (prevProps.symbols !== this.props.symbols) {
+      this.updateSymbols(this.wrapSymbols(this.props));
     }
   }
 
@@ -189,7 +256,8 @@ class VehicleRentalOverlay extends MapLayer {
   };
 
   render() {
-    const { companies, mapSymbols, stations, symbols } = this.props;
+    const { companies, mapSymbols, stations } = this.props;
+    const { symbols } = this.state;
     let filteredStations = stations;
     if (companies) {
       filteredStations = stations.filter(

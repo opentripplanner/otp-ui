@@ -11,14 +11,22 @@ import * as Styled from "../styled";
 // Prop types reused across components.
 const entityPropType = PropTypes.shape();
 const templatePropTypes = {
+  children: PropTypes.node,
   entity: entityPropType.isRequired
 };
+const templateDefaultProps = {
+  children: null
+};
 
+/**
+ * A basic circle marker that takes size and color props,
+ * in addition to a entity source and a PopupSlot.
+ */
 const Circle = ({
+  children,
   entity: station,
   fillColor,
   radius,
-  PopupSlot,
   strokeColor
 }) => {
   const newStrokeColor = strokeColor || fillColor;
@@ -32,36 +40,46 @@ const Circle = ({
       radius={radius}
       weight={1}
     >
-      {PopupSlot && <PopupSlot />}
+      {children}
     </CircleMarker>
   );
 };
 Circle.propTypes = {
+  children: PropTypes.node,
   entity: entityPropType.isRequired,
   fillColor: PropTypes.string,
   radius: PropTypes.number.isRequired,
-  PopupSlot: PropTypes.elementType,
   strokeColor: PropTypes.string
 };
 Circle.defaultProps = {
+  children: null,
   fillColor: "gray",
-  PopupSlot: null,
   strokeColor: null
 };
+/**
+ * Helper function to create a Circle component template with fixed size and color props.
+ */
 Circle.template = (size, fillColor, strokeColor) => {
-  const CircleInner = ({ entity }) => (
+  const Template = ({ children, entity }) => (
     <Circle
       entity={entity}
       fillColor={fillColor}
       radius={size}
       strokeColor={strokeColor}
-    />
+    >
+      {children}
+    </Circle>
   );
-  CircleInner.propTypes = templatePropTypes;
-  return CircleInner;
+  Template.propTypes = templatePropTypes;
+  Template.defaultProps = templateDefaultProps;
+  return Template;
 };
 
-const HubAndFloatingBike = ({ entity: station, PopupSlot }) => {
+/**
+ * A component that renders rental bike entities
+ * either as a bike or a bike dock (or hub, showing spaces available).
+ */
+const HubAndFloatingBike = ({ children, entity: station }) => {
   let icon;
   if (station.isFloatingBike) {
     icon = floatingBikeIcon;
@@ -74,18 +92,16 @@ const HubAndFloatingBike = ({ entity: station, PopupSlot }) => {
   }
   return (
     <Marker icon={icon} position={[station.y, station.x]}>
-      {PopupSlot && <PopupSlot />}
+      {children}
     </Marker>
   );
 };
-HubAndFloatingBike.propTypes = {
-  entity: entityPropType.isRequired,
-  PopupSlot: PropTypes.elementType
-};
-HubAndFloatingBike.defaultProps = {
-  PopupSlot: null
-};
+HubAndFloatingBike.propTypes = templatePropTypes;
+HubAndFloatingBike.defaultProps = templateDefaultProps;
 
+/**
+ * Creates and caches a leaflet element icon based on color.
+ */
 const getStationMarkerByColor = memoize(color =>
   divIcon({
     className: "",
@@ -97,30 +113,40 @@ const getStationMarkerByColor = memoize(color =>
   })
 );
 
-const GenericMarker = ({ entity: station, fillColor, PopupSlot }) => {
+/**
+ * A basic leaflet marker that takes a color props,
+ * in addition to a entity source and a PopupSlot.
+ */
+const GenericMarker = ({ children, entity: station, fillColor }) => {
   const markerIcon = getStationMarkerByColor(fillColor);
 
   return (
     <Marker icon={markerIcon} position={[station.y, station.x]}>
-      {PopupSlot && <PopupSlot />}
+      {children}
     </Marker>
   );
 };
 GenericMarker.propTypes = {
+  children: PropTypes.node,
   entity: entityPropType.isRequired,
-  fillColor: PropTypes.string,
-  PopupSlot: PropTypes.elementType
+  fillColor: PropTypes.string
 };
 GenericMarker.defaultProps = {
-  fillColor: "gray",
-  PopupSlot: null
+  children: null,
+  fillColor: "gray"
 };
+/**
+ * Helper function to create a GenericMarker component template with fixed size and color props.
+ */
 GenericMarker.template = fillColor => {
-  const MarkerInner = ({ entity }) => (
-    <GenericMarker entity={entity} fillColor={fillColor} />
+  const Template = ({ children, entity }) => (
+    <GenericMarker entity={entity} fillColor={fillColor}>
+      {children}
+    </GenericMarker>
   );
-  MarkerInner.propTypes = templatePropTypes;
-  return MarkerInner;
+  Template.propTypes = templatePropTypes;
+  Template.defaultProps = templateDefaultProps;
+  return Template;
 };
 
 export default {
