@@ -1,6 +1,5 @@
 import BaseMap from "@opentripplanner/base-map";
 import {
-  vehicleRentalMapOverlaySymbolsType,
   stationType,
   zoomBasedSymbolType
 } from "@opentripplanner/core-utils/lib/types";
@@ -20,30 +19,6 @@ import Markers from "./Markers";
 import "../../../node_modules/leaflet/dist/leaflet.css";
 
 const center = [45.518092, -122.671202];
-
-const bikeMapSymbols = [
-  {
-    dockStrokeColor: "#000000",
-    fillColor: "#FF2E28",
-    maxZoom: 13,
-    minZoom: 0,
-    pixels: 4,
-    type: "circle"
-  },
-  {
-    dockStrokeColor: "#000000",
-    fillColor: "#FF2E28",
-    maxZoom: 17,
-    minZoom: 14,
-    pixels: 6,
-    type: "circle"
-  },
-  {
-    maxZoom: 999,
-    minZoom: 18,
-    type: "hubAndFloatingBike"
-  }
-];
 
 const bikeSymbols = [
   {
@@ -67,30 +42,6 @@ const bikeSymbols = [
     symbol: Markers.HubAndFloatingBike
   }
 ];
-
-const carMapSymbols = [
-  {
-    fillColor: "#009cde",
-    maxZoom: 13,
-    minZoom: 0,
-    pixels: 4,
-    type: "circle"
-  },
-  {
-    fillColor: "#009cde",
-    maxZoom: 17,
-    minZoom: 14,
-    pixels: 6,
-    type: "circle"
-  },
-  {
-    fillColor: "#009cde",
-    maxZoom: 999,
-    minZoom: 18,
-    type: "marker"
-  }
-];
-
 const carSymbols = [
   {
     minZoom: 0,
@@ -127,31 +78,6 @@ const configCompanies = [
     modes: "MICROMOBILITY_RENT"
   }
 ];
-const EScooterMapSymbols = [
-  {
-    fillColor: "#F80600",
-    maxZoom: 13,
-    minZoom: 0,
-    pixels: 4,
-    strokeColor: "#CCCCCC",
-    type: "circle"
-  },
-  {
-    fillColor: "#F80600",
-    maxZoom: 17,
-    minZoom: 14,
-    pixels: 6,
-    strokeColor: "#CCCCCC",
-    type: "circle"
-  },
-  {
-    fillColor: "#F80600",
-    maxZoom: 999,
-    minZoom: 18,
-    type: "marker"
-  }
-];
-
 const EScooterSymbols = [
   {
     minZoom: 0,
@@ -185,7 +111,6 @@ class ZoomControlledMapWithVehicleRentalOverlay extends Component {
     const {
       companies,
       getStationName,
-      mapSymbols,
       refreshVehicles,
       stations,
       symbols
@@ -202,7 +127,6 @@ class ZoomControlledMapWithVehicleRentalOverlay extends Component {
           companies={companies}
           getStationName={getStationName}
           setLocation={setLocation}
-          mapSymbols={mapSymbols}
           refreshVehicles={refreshVehicles}
           stations={stations}
           visible
@@ -217,7 +141,6 @@ class ZoomControlledMapWithVehicleRentalOverlay extends Component {
 ZoomControlledMapWithVehicleRentalOverlay.propTypes = {
   companies: PropTypes.arrayOf(PropTypes.string.isRequired),
   getStationName: PropTypes.func,
-  mapSymbols: vehicleRentalMapOverlaySymbolsType,
   refreshVehicles: PropTypes.func.isRequired,
   stations: PropTypes.arrayOf(stationType.isRequired).isRequired,
   symbols: PropTypes.arrayOf(zoomBasedSymbolType)
@@ -226,7 +149,6 @@ ZoomControlledMapWithVehicleRentalOverlay.propTypes = {
 ZoomControlledMapWithVehicleRentalOverlay.defaultProps = {
   companies: null,
   getStationName: undefined,
-  mapSymbols: null,
   symbols: null
 };
 
@@ -237,42 +159,6 @@ function customStationName(_, station) {
 storiesOf("VehicleRentalOverlay", module)
   .addDecorator(withA11y)
   .addDecorator(withInfo)
-  .add("Existing VehicleRentalOverlay with rental bicycles", () => (
-    <ZoomControlledMapWithVehicleRentalOverlay
-      companies={["BIKETOWN"]}
-      mapSymbols={bikeMapSymbols}
-      refreshVehicles={action("refresh bicycles")}
-      stations={bikeRentalStations}
-    />
-  ))
-  .add("Existing VehicleRentalOverlay with rental cars", () => (
-    <ZoomControlledMapWithVehicleRentalOverlay
-      companies={["CAR2GO"]}
-      mapSymbols={carMapSymbols}
-      refreshVehicles={action("refresh cars")}
-      stations={carRentalStations}
-    />
-  ))
-  .add("Existing VehicleRentalOverlay with rental E-scooters", () => (
-    <ZoomControlledMapWithVehicleRentalOverlay
-      companies={["SHARED"]}
-      mapSymbols={EScooterMapSymbols}
-      refreshVehicles={action("refresh E-scooters")}
-      stations={eScooterStations}
-    />
-  ))
-  .add(
-    "Existing VehicleRentalOverlay with rental E-scooters with custom naming",
-    () => (
-      <ZoomControlledMapWithVehicleRentalOverlay
-        companies={["SHARED"]}
-        getStationName={customStationName}
-        mapSymbols={EScooterMapSymbols}
-        refreshVehicles={action("refresh E-scooters")}
-        stations={eScooterStations}
-      />
-    )
-  )
   .add("VehicleRentalOverlay with rental bicycles", () => (
     <ZoomControlledMapWithVehicleRentalOverlay
       companies={["BIKETOWN"]}

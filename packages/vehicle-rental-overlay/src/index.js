@@ -1,41 +1,17 @@
-import { divIcon } from "leaflet";
-import memoize from "lodash.memoize";
 import * as BaseMapStyled from "@opentripplanner/base-map/lib/styled";
 import { getCompaniesLabelFromNetworks } from "@opentripplanner/core-utils/lib/itinerary";
 import {
   companyType,
   stationType,
-  vehicleRentalMapOverlaySymbolsType,
   zoomBasedSymbolType
 } from "@opentripplanner/core-utils/lib/types";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 import ZoomBasedMarkers from "@opentripplanner/zoom-based-markers";
 import PropTypes from "prop-types";
 import React from "react";
-import ReactDOMServer from "react-dom/server";
-import {
-  CircleMarker,
-  FeatureGroup,
-  Marker,
-  MapLayer,
-  Popup,
-  withLeaflet
-} from "react-leaflet";
+import { FeatureGroup, MapLayer, Popup, withLeaflet } from "react-leaflet";
 
-import { floatingBikeIcon, hubIcons } from "./bike-icons";
-import * as Styled from "./styled";
 import Markers from "./Markers";
-
-const getStationMarkerByColor = memoize(color =>
-  divIcon({
-    className: "",
-    iconSize: [11, 16],
-    popupAnchor: [0, -6],
-    html: ReactDOMServer.renderToStaticMarkup(
-      <Styled.StationMarker color={color} />
-    )
-  })
-);
 
 /**
  * This vehicle rental overlay can be used to render vehicle rentals of various
@@ -88,9 +64,9 @@ class VehicleRentalOverlay extends MapLayer {
   }
 
   componentDidMount() {
-    const { companies, mapSymbols, name, symbols, visible } = this.props;
+    const { companies, name, symbols, visible } = this.props;
     if (visible) this.startRefreshing();
-    if (!mapSymbols && !symbols)
+    if (!symbols)
       console.warn(`No map symbols provided for layer ${name}`, companies);
   }
 
@@ -145,73 +121,8 @@ class VehicleRentalOverlay extends MapLayer {
     );
   };
 
-  renderStationAsCircle = symbolDef => ({ entity: station }) => {
-    let strokeColor = symbolDef.strokeColor || symbolDef.fillColor;
-    if (!station.isFloatingBike) {
-      strokeColor = symbolDef.dockStrokeColor || strokeColor;
-    }
-    return (
-      <CircleMarker
-        key={station.id}
-        center={[station.y, station.x]}
-        color={strokeColor}
-        fillColor={symbolDef.fillColor}
-        fillOpacity={1}
-        radius={symbolDef.pixels - (station.isFloatingBike ? 1 : 0)}
-        weight={1}
-      >
-        {this.renderPopupForStation(station)}
-      </CircleMarker>
-    );
-  };
-
-  StationAsHubAndFloatingBike = ({ entity: station }) => {
-    let icon;
-    if (station.isFloatingBike) {
-      icon = floatingBikeIcon;
-    } else {
-      const pctFull =
-        station.bikesAvailable /
-        (station.bikesAvailable + station.spacesAvailable);
-      const i = Math.round(pctFull * 9);
-      icon = hubIcons[i];
-    }
-    return (
-      <Marker icon={icon} key={station.id} position={[station.y, station.x]}>
-        {this.renderPopupForStation(station, !station.isFloatingBike)}
-      </Marker>
-    );
-  };
-
-  renderStationAsMarker = symbolDef => ({ entity: station }) => {
-    const color =
-      symbolDef && symbolDef.fillColor ? symbolDef.fillColor : "gray";
-    const markerIcon = getStationMarkerByColor(color);
-
-    return (
-      <Marker
-        icon={markerIcon}
-        key={station.id}
-        position={[station.y, station.x]}
-      >
-        {this.renderPopupForStation(station)}
-      </Marker>
-    );
-  };
-
-  renderStation = symbolDef => {
-    switch (symbolDef.type) {
-      case "circle":
-        return this.renderStationAsCircle(symbolDef);
-      case "hubAndFloatingBike":
-        return this.StationAsHubAndFloatingBike;
-      default:
-        return this.renderStationAsMarker(symbolDef);
-    }
-  };
-
   render() {
-    const { companies, mapSymbols, stations, symbols } = this.props;
+    const { companies, stations, symbols } = this.props;
     let filteredStations = stations;
     if (companies) {
       filteredStations = stations.filter(
@@ -227,41 +138,22 @@ class VehicleRentalOverlay extends MapLayer {
     // get zoom to check which symbol to render
     const zoom = this.props.leaflet.map.getZoom();
 
-    if (symbols) {
-      return (
-        <FeatureGroup>
-          <ZoomBasedMarkers
-            entities={filteredStations}
-            symbols={symbols}
-            symbolTransform={this.insertPopup}
-            zoom={zoom}
-          />
-        </FeatureGroup>
-      );
-    }
+    // If no config set, just render a default marker
+    const effectiveSymbols = symbols || [
+      {
+        zoom: 0,
+        symbol: Markers.Marker
+      }
+    ];
 
-    if (mapSymbols) {
-      // Convert map symbols for this overlay to zoomBasedSymbolType.
-      const newSymbols = mapSymbols.map(mapSymbol => ({
-        minZoom: mapSymbol.minZoom,
-        symbol: this.renderStation(mapSymbol)
-      }));
-
-      return (
-        <FeatureGroup>
-          <ZoomBasedMarkers
-            entities={filteredStations}
-            symbols={newSymbols}
-            zoom={zoom}
-          />
-        </FeatureGroup>
-      );
-    }
-
-    // no config set, just render a default marker
     return (
       <FeatureGroup>
-        {filteredStations.map(this.renderStationAsMarker)}
+        <ZoomBasedMarkers
+          entities={filteredStations}
+          symbols={effectiveSymbols}
+          symbolTransform={this.insertPopup}
+          zoom={zoom}
+        />
       </FeatureGroup>
     );
   }
@@ -283,11 +175,6 @@ VehicleRentalOverlay.props = {
    * prop and a vehicle rental station. The function must return a string.
    */
   getStationName: PropTypes.func,
-  /**
-   * A configuration of what map markers or symbols to show at various zoom
-   * levels.
-   */
-  mapSymbols: vehicleRentalMapOverlaySymbolsType,
   /**
    * If specified, a function that will be triggered every 30 seconds whenever this layer is
    * visible.
@@ -342,7 +229,6 @@ VehicleRentalOverlay.defaultProps = {
     }
     return stationName;
   },
-  mapSymbols: null,
   refreshVehicles: null,
   stations: [],
   symbols: null,
