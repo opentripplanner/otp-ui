@@ -1,8 +1,13 @@
+import PropTypes from "prop-types";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 import styled from "styled-components";
 import L from "leaflet";
 import cloneDeep from "lodash.clonedeep";
+
+import { transitVehicleType } from "@opentripplanner/core-utils/lib/types";
+import RotatedMarker from "../components/markers/RotatedMarker";
+import { linterIgnoreTheseProps } from "./data";
 
 /**
  * helper to render a React .svg structure, ala icons/Bus.js as a leaflet marker
@@ -54,6 +59,44 @@ export function setColor(color, obj) {
   retVal.color = color;
   return retVal;
 }
+
+/**
+ * Associates two shapes, one for rendering tracked vehicles, and one for untracked vehicles,
+ * and optionally renders a size (number) prop determined by the optional getSize function argument.
+ */
+export const makeBasicVehicleShape = (NormalShape, TrackedShape, getSize) => {
+  const Shape = ({ color, highlightColor, isTracked, zoom }) => {
+    const size = getSize && getSize(zoom);
+    return isTracked ? (
+      <TrackedShape color={color} colorselected={highlightColor} size={size} />
+    ) : (
+      <NormalShape color={color} colorselected={highlightColor} size={size} />
+    );
+  };
+
+  Shape.propTypes = {
+    /** fill color (#AABBCC format) for all (non-tracked) map vehicle markers */
+    color: PropTypes.string,
+
+    /** fill color of tracked vehicle */
+    highlightColor: PropTypes.string,
+
+    /** tracking boolean + colors all work to color the marker */
+    isTracked: PropTypes.bool,
+
+    /** map zoom: is part of the props due to redrawing this layer on map zoom */
+    zoom: PropTypes.number
+  };
+
+  Shape.defaultProps = {
+    color: "",
+    highlightColor: "",
+    isTracked: false,
+    zoom: null
+  };
+
+  return Shape;
+};
 
 /**
  * makes a circular marker icon with a vehicle image based on mode
@@ -200,3 +243,82 @@ export function makeModeStyles(
     TrackedGond
   ];
 }
+
+/**
+ * Renders the provided Icon with a RotatedMarker component (for rendering rotated vehicle symbols)
+ * and make the component render the icon with the size returned by the optional getSize function argument.
+ */
+export const makeRotatedMarker = (Icon, getSize) => {
+  const VehicleMarker = ({
+    children,
+    color,
+    highlightColor,
+    isTracked,
+    onVehicleClicked,
+    vehicle,
+    zoom
+  }) => {
+    if (!vehicle) {
+      return null;
+    }
+    const { lat, lon, heading } = vehicle;
+    const icon = (
+      <Icon
+        color={color}
+        highlightColor={highlightColor}
+        isTracked={isTracked}
+        routeType={vehicle.routeType}
+        zoom={zoom}
+      />
+    );
+
+    return (
+      <RotatedMarker
+        icon={renderAsImage(icon, getSize && getSize(zoom))}
+        position={[lat, lon]}
+        rotationAngle={heading}
+        rotationOrigin="center center"
+        onClick={() => onVehicleClicked(vehicle, isTracked)}
+        zIndexOffset={isTracked ? 1000 : 0}
+      >
+        {children}
+      </RotatedMarker>
+    );
+  };
+
+  VehicleMarker.propTypes = {
+    /** React children */
+    children: PropTypes.arrayOf(PropTypes.element),
+
+    /** fill color (#AABBCC format) for all (non-tracked) map vehicle markers */
+    color: PropTypes.string,
+
+    /** fill color of tracked vehicle */
+    highlightColor: PropTypes.string,
+
+    /** tracking boolean + colors all work to color the marker */
+    isTracked: PropTypes.bool,
+
+    /** Callback fired when the vehicle marker is clicked (vehicle: object) => {} */
+    onVehicleClicked: PropTypes.func,
+
+    /** vehicle record  - @see: core-utils/types/transitVehicleType */
+    vehicle: transitVehicleType.isRequired,
+
+    /** map zoom: is part of the props due to redrawing this layer on map zoom */
+    zoom: PropTypes.number
+  };
+
+  VehicleMarker.defaultProps = {
+    children: null,
+    color: "",
+    highlightColor: "",
+    isTracked: false,
+    onVehicleClicked: (vehicle, isTracked) => {
+      linterIgnoreTheseProps(vehicle, isTracked);
+    },
+    zoom: null
+  };
+
+  return VehicleMarker;
+};

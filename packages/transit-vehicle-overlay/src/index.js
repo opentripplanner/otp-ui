@@ -8,21 +8,10 @@ import {
 } from "@opentripplanner/core-utils/lib/types";
 import ZoomBasedMarkers from "@opentripplanner/zoom-based-markers";
 
-import VehicleMarkers from "./components/markers/VehicleMarkers";
+import ModeCircles from "./components/markers/ModeCircles";
 import RouteGeometry from "./components/RouteGeometry";
 import VehicleGeometry from "./components/VehicleGeometry";
 import * as utils from "./utils";
-
-const defaultSymbols = [
-  {
-    minZoom: 0,
-    symbol: VehicleMarkers.Dot
-  },
-  {
-    minZoom: 14,
-    symbol: VehicleMarkers.CircledVehicle
-  }
-];
 
 /**
  * presentational component for rendering transit vehicle positions atop a map
@@ -110,14 +99,12 @@ export default class TransitVehicleOverlay extends Component {
       if (pattern) showPattern = true;
     }
 
-    const effectiveSymbols = symbols || defaultSymbols;
-
     return (
       <FeatureGroup>
         {vl && symbols && (
           <ZoomBasedMarkers
             entities={vl}
-            symbols={effectiveSymbols}
+            symbols={symbols}
             symbolTransform={this.makeVehicleGeometryWrapper}
             zoom={zoom}
           />
@@ -207,7 +194,16 @@ TransitVehicleOverlay.defaultProps = {
   vehicleList: null,
   selectedVehicle: null,
   showOnlyTracked: false,
-  symbols: null,
+  symbols: [
+    {
+      minZoom: 0,
+      symbol: ModeCircles.Dot
+    },
+    {
+      minZoom: 14,
+      symbol: ModeCircles.CircledVehicle
+    }
+  ],
 
   // VehicleGeometry defaults
   color: VehicleGeometry.defaultProps.color,

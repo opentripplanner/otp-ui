@@ -1,6 +1,8 @@
 import {
   setColor,
   renderAsImage,
+  makeBasicVehicleShape,
+  makeRotatedMarker,
   makeVehicleIcon,
   makeModeStyles
 } from "./graphics";
@@ -40,6 +42,8 @@ export {
   useVehicleListUpdater,
   renderAsImage,
   setColor,
+  makeBasicVehicleShape,
+  makeRotatedMarker,
   makeVehicleIcon,
   makeModeStyles,
   convertAltData,
