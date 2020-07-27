@@ -79,9 +79,9 @@ export const zoomBasedSymbolType = PropTypes.shape({
   /**
    * A function with the signature (entity: object) => string
    * that extracts a mode from an entity.
-   * symbolByMode and getMode must be either be both specified or both ommited.
+   * symbolByType and getType must be either be both specified or both ommited.
    */
-  getMode: PropTypes.func,
+  getType: PropTypes.func,
   /**
    * The zoom level beginning at which the marker is drawn,
    * unless another marker with a higher minZoom is met.
@@ -95,11 +95,12 @@ export const zoomBasedSymbolType = PropTypes.shape({
   symbol: PropTypes.elementType.isRequired,
   /**
    * The symbol-representing component to draw for each mode,
-   * with the same signature as symbol. If a mode returned by getMode() is not listed,
+   * with the same signature as symbol.
+   * If a type returned by getType() is not listed,
    * then symbol will be rendered by default.
-   * symbolByMode and getMode must be either be both specified or both ommited.
+   * symbolByType and getType must be either be both specified or both ommited.
    */
-  symbolByMode: PropTypes.objectOf(PropTypes.elementType)
+  symbolByType: PropTypes.objectOf(PropTypes.elementType)
 });
 
 /**

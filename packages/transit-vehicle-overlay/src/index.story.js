@@ -44,10 +44,10 @@ const circleSymbols = [
 
 const rectangleSymbols = [
   {
-    getMode: vehicle => vehicle.routeType,
+    getType: vehicle => vehicle.routeType,
     minZoom: 0,
     symbol: ModeRectangles.LightRailVehicleRectangle,
-    symbolByMode: {
+    symbolByType: {
       BUS: ModeRectangles.BusRectangle
     }
   },

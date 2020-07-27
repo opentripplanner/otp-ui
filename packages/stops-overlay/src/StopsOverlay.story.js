@@ -109,10 +109,10 @@ function makeCustomMarker(Icon) {
 
 const customSymbols = [
   {
-    getMode: stop => (stop.name.indexOf("MAX") > -1 ? "MAX" : "BUS"),
+    getType: stop => (stop.name.indexOf("MAX") > -1 ? "MAX" : "BUS"),
     minZoom: 14,
     symbol: makeCustomMarker(() => <Bus color="gray" />),
-    symbolByMode: {
+    symbolByType: {
       MAX: makeCustomMarker(Subway)
     }
   }

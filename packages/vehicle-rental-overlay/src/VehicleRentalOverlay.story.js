@@ -22,18 +22,18 @@ const center = [45.518092, -122.671202];
 
 const bikeSymbols = [
   {
-    getMode: station => (station.isFloatingBike ? "floatingBike" : "dock"),
+    getType: station => (station.isFloatingBike ? "floatingBike" : "dock"),
     minZoom: 0,
     symbol: Markers.Circle.template(3, "#FF2E28"),
-    symbolByMode: {
+    symbolByType: {
       dock: Markers.Circle.template(4, "#FF2E28", "#000000")
     }
   },
   {
-    getMode: station => (station.isFloatingBike ? "floatingBike" : "dock"),
+    getType: station => (station.isFloatingBike ? "floatingBike" : "dock"),
     minZoom: 14,
     symbol: Markers.Circle.template(5, "#FF2E28"),
-    symbolByMode: {
+    symbolByType: {
       dock: Markers.Circle.template(6, "#FF2E28", "#000000")
     }
   },

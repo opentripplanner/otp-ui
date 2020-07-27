@@ -125,23 +125,23 @@ const mySymbols = [
     symbol: Circle2
   },
   {
-    getMode: entity => (entity.id === "3" ? "streetcar" : "bus"),
+    getType: entity => (entity.id === "3" ? "streetcar" : "bus"),
     minZoom: 14,
     symbol: Circle2,
-    symbolByMode: {
+    symbolByType: {
       streetcar: Circle3
     }
   },
   {
-    getMode: entity => (entity.id === "3" ? "streetcar" : "bus"),
+    getType: entity => (entity.id === "3" ? "streetcar" : "bus"),
     minZoom: 16,
     symbol: BusMarker,
-    // Use symbolByMode to define symbols shown for some modes returned by the getMode function.
-    // If a value returned from getMode is not listed here,
+    // Use symbolByType to define symbols shown for some modes returned by the getType function.
+    // If a value returned from getType is not listed here,
     // then the component defined in 'symbol' will be rendered by default.
     // In this example, the entity with id 'streetcar' is rendered using StreetcarMarker,
     // and the other ones are rendered using BusMarker.
-    symbolByMode: {
+    symbolByType: {
       streetcar: StreetcarMarker
     }
   }
@@ -155,10 +155,10 @@ const mySymbolsWithGap = [
     symbol: Circle2
   },
   {
-    getMode: entity => (entity.id === "3" ? "streetcar" : "bus"),
+    getType: entity => (entity.id === "3" ? "streetcar" : "bus"),
     minZoom: 14,
     symbol: BusMarker,
-    symbolByMode: {
+    symbolByType: {
       streetcar: StreetcarMarker
     }
   }

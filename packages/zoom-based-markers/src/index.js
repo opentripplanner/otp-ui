@@ -30,30 +30,30 @@ class ZoomBasedMarkers extends Component {
     if (typeof symbolTransform === "function") {
       return (
         symbols &&
-        symbols.map(({ getMode, minZoom, symbol, symbolByMode }) => {
-          // Make a new version of symbolByMode with the tranformed symbols
+        symbols.map(({ getType, minZoom, symbol, symbolByType }) => {
+          // Make a new version of symbolByType with the tranformed symbols
           // using symbolTransform.
-          let newSymbolByMode;
-          const originalSymbolByMode = symbolByMode;
+          let newsymbolByType;
+          const originalsymbolByType = symbolByType;
 
-          if (originalSymbolByMode) {
-            Object.keys(originalSymbolByMode).forEach(key => {
-              const originalSymbol = originalSymbolByMode[key];
+          if (originalsymbolByType) {
+            Object.keys(originalsymbolByType).forEach(key => {
+              const originalSymbol = originalsymbolByType[key];
               if (originalSymbol) {
-                if (!newSymbolByMode) {
+                if (!newsymbolByType) {
                   // Initialize on first need.
-                  newSymbolByMode = {};
+                  newsymbolByType = {};
                 }
-                newSymbolByMode[key] = symbolTransform(originalSymbol);
+                newsymbolByType[key] = symbolTransform(originalSymbol);
               }
             });
           }
 
           return {
-            getMode,
+            getType,
             minZoom,
             symbol: symbolTransform(symbol),
-            symbolByMode: newSymbolByMode
+            symbolByType: newsymbolByType
           };
         })
       );
@@ -87,18 +87,22 @@ class ZoomBasedMarkers extends Component {
 
     // And use that symbol, if found, to render the entities.
     if (symbolEntry) {
-      const { getMode, symbol: Symbol, symbolByMode } = symbolEntry;
+      const { getType, symbol: DefaultSymbol, symbolByType } = symbolEntry;
 
-      if (Symbol) {
-        if (symbolByMode && getMode) {
-          return entities.map((entity, index) => {
-            const EntitySymbol = symbolByMode[getMode(entity)] || Symbol;
-            return <EntitySymbol entity={entity} key={index} zoom={zoom} />;
-          });
-        }
+      if (symbolByType && getType) {
+        return entities.map((entity, index) => {
+          const EntitySymbol = symbolByType[getType(entity)] || DefaultSymbol;
+          return (
+            EntitySymbol && (
+              <EntitySymbol entity={entity} key={index} zoom={zoom} />
+            )
+          );
+        });
+      }
 
+      if (DefaultSymbol) {
         return entities.map((entity, index) => (
-          <Symbol entity={entity} key={index} zoom={zoom} />
+          <DefaultSymbol entity={entity} key={index} zoom={zoom} />
         ));
       }
     }
