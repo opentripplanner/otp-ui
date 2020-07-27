@@ -1,6 +1,4 @@
 import utils from "@opentripplanner/core-utils";
-// TODO: Fix this import.
-import { zoomBasedSymbolType } from "@opentripplanner/core-utils/lib/types";
 import ZoomBasedMarkers from "@opentripplanner/zoom-based-markers";
 import PropTypes from "prop-types";
 import React from "react";
@@ -33,6 +31,8 @@ class StopsOverlay extends MapLayer {
   refreshStops = () => {
     const { leaflet, refreshStops, symbols } = this.props;
 
+    // Force the map to render no symbols if the map zoom level
+    // is less than the farthest zoom level at which symbols are defined.
     const minZoomForUpdate = symbols
       ? symbols.reduce((lowestZoom, level) => {
           if (level.minZoom < lowestZoom) {
@@ -68,7 +68,7 @@ class StopsOverlay extends MapLayer {
   render() {
     const { leaflet, stops, symbols } = this.props;
 
-    // Don't render if no stops visible.
+    // Don't render if no map or no stops are defined.
     // (ZoomBasedMarkers will also not render below the minimum zoom threshold defined in the symbols prop.)
     if (!leaflet || !leaflet.map || !stops || stops.length === 0) {
       return <FeatureGroup />;
@@ -77,9 +77,7 @@ class StopsOverlay extends MapLayer {
 
     return (
       <FeatureGroup>
-        {symbols && (
-          <ZoomBasedMarkers entities={stops} symbols={symbols} zoom={zoom} />
-        )}
+        <ZoomBasedMarkers entities={stops} symbols={symbols} zoom={zoom} />
       </FeatureGroup>
     );
   }
@@ -101,11 +99,7 @@ StopsOverlay.propTypes = {
   /**
    * A list of symbol definitions for the stops to be rendered at which zoom.
    */
-  symbols: PropTypes.arrayOf(zoomBasedSymbolType)
-};
-
-StopsOverlay.defaultProps = {
-  symbols: null
+  symbols: PropTypes.arrayOf(utils.types.zoomBasedSymbolType).isRequired
 };
 
 export default withLeaflet(StopsOverlay);
