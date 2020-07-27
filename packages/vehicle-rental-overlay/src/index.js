@@ -11,7 +11,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { FeatureGroup, MapLayer, Popup, withLeaflet } from "react-leaflet";
 
-import Markers from "./Markers";
+import { GenericMarker } from "./DefaultMarkers";
 
 /**
  * This vehicle rental overlay can be used to render vehicle rentals of various
@@ -20,7 +20,7 @@ import Markers from "./Markers";
  */
 class VehicleRentalOverlay extends MapLayer {
   /**
-   * This helper method will be passed to the ZoomBasedMarkers symbolTranform prop.
+   * This helper method will be passed to the ZoomBasedMarkers symbolTransform prop.
    * It creates a component that inserts a popup
    * as a child of the specified symbol from the symbols prop.
    */
@@ -29,7 +29,7 @@ class VehicleRentalOverlay extends MapLayer {
       <Symbol entity={station} zoom={zoom}>
         {this.renderPopupForStation(
           station,
-          Symbol === Markers.HubAndFloatingBike && !station.isFloatingBike
+          station.bikesAvailable !== null && !station.isFloatingBike
         )}
       </Symbol>
     );
@@ -64,11 +64,8 @@ class VehicleRentalOverlay extends MapLayer {
   }
 
   componentDidMount() {
-    const { companies, name, symbols, visible } = this.props;
+    const { visible } = this.props;
     if (visible) this.startRefreshing();
-    if (!symbols) {
-      console.warn(`No map symbols provided for layer ${name}`, companies);
-    }
   }
 
   componentWillUnmount() {
@@ -139,19 +136,11 @@ class VehicleRentalOverlay extends MapLayer {
     // get zoom to check which symbol to render
     const zoom = this.props.leaflet.map.getZoom();
 
-    // If no config set, just render a default marker
-    const effectiveSymbols = symbols || [
-      {
-        zoom: 0,
-        symbol: Markers.Marker
-      }
-    ];
-
     return (
       <FeatureGroup>
         <ZoomBasedMarkers
           entities={filteredStations}
-          symbols={effectiveSymbols}
+          symbols={symbols}
           symbolTransform={this.insertPopup}
           zoom={zoom}
         />
@@ -232,7 +221,12 @@ VehicleRentalOverlay.defaultProps = {
   },
   refreshVehicles: null,
   stations: [],
-  symbols: null,
+  symbols: [
+    {
+      zoom: 0,
+      symbol: GenericMarker
+    }
+  ],
   visible: false
 };
 

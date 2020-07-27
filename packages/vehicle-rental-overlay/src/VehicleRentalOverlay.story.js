@@ -14,7 +14,7 @@ import VehicleRentalOverlay from ".";
 import bikeRentalStations from "../__mocks__/bike-rental-stations.json";
 import carRentalStations from "../__mocks__/car-rental-stations.json";
 import eScooterStations from "../__mocks__/e-scooter-rental-stations.json";
-import Markers from "./Markers";
+import { Circle, GenericMarker, HubAndFloatingBike } from "./DefaultMarkers";
 
 import "../../../node_modules/leaflet/dist/leaflet.css";
 
@@ -24,36 +24,44 @@ const bikeSymbols = [
   {
     getType: station => (station.isFloatingBike ? "floatingBike" : "dock"),
     minZoom: 0,
-    symbol: Markers.Circle.template(3, "#FF2E28"),
+    symbol: Circle({ fillColor: "#FF2E28", size: 3 }),
     symbolByType: {
-      dock: Markers.Circle.template(4, "#FF2E28", "#000000")
+      dock: Circle({
+        fillColor: "#FF2E28",
+        size: 4,
+        strokeColor: "#000000"
+      })
     }
   },
   {
     getType: station => (station.isFloatingBike ? "floatingBike" : "dock"),
     minZoom: 14,
-    symbol: Markers.Circle.template(5, "#FF2E28"),
+    symbol: Circle({ fillColor: "#FF2E28", size: 5 }),
     symbolByType: {
-      dock: Markers.Circle.template(6, "#FF2E28", "#000000")
+      dock: Circle({
+        fillColor: "#FF2E28",
+        size: 6,
+        strokeColor: "#000000"
+      })
     }
   },
   {
     minZoom: 18,
-    symbol: Markers.HubAndFloatingBike
+    symbol: HubAndFloatingBike
   }
 ];
 const carSymbols = [
   {
     minZoom: 0,
-    symbol: Markers.Circle.template(4, "#009cde")
+    symbol: Circle({ fillColor: "#009cde", size: 4 })
   },
   {
     minZoom: 14,
-    symbol: Markers.Circle.template(6, "#009cde")
+    symbol: Circle({ fillColor: "#009cde", size: 6 })
   },
   {
     minZoom: 18,
-    symbol: Markers.Marker.template("#009cde")
+    symbol: GenericMarker({ fillColor: "#009cde" })
   }
 ];
 const configCompanies = [
@@ -81,15 +89,23 @@ const configCompanies = [
 const EScooterSymbols = [
   {
     minZoom: 0,
-    symbol: Markers.Circle.template(4, "#F80600", "#CCCCCC")
+    symbol: Circle({
+      fillColor: "#F80600",
+      size: 4,
+      strokeColor: "#CCCCCC"
+    })
   },
   {
     minZoom: 14,
-    symbol: Markers.Circle.template(6, "#F80600", "#CCCCCC")
+    symbol: Circle({
+      fillColor: "#F80600",
+      size: 6,
+      strokeColor: "#CCCCCC"
+    })
   },
   {
     minZoom: 18,
-    symbol: Markers.Marker.template("#F80600")
+    symbol: GenericMarker({ fillColor: "#F80600" })
   }
 ];
 const setLocation = action("setLocation");
