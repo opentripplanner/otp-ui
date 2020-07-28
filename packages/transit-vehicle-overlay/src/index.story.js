@@ -34,7 +34,7 @@ const setClicked = action("setClicked");
 const circleSymbols = [
   {
     minZoom: 0,
-    symbol: ModeCircles.Dot
+    symbol: ModeCircles.Circle
   },
   {
     minZoom: 14,
