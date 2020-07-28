@@ -71,37 +71,16 @@ export const transitVehicleType = PropTypes.shape({
   heading: PropTypes.number
 });
 
-/**
- * Defines which symbol to render based on a zoom level, and optionally by mode.
- * (Only one symbol is rendered fo any zoom level.)
- */
-export const zoomBasedSymbolType = PropTypes.shape({
-  /**
-   * A function with the signature (entity: object) => string
-   * that extracts a mode from an entity.
-   * symbolByType and getType must be either be both specified or both ommited.
-   */
-  getType: PropTypes.func,
-  /**
-   * The zoom level beginning at which the marker is drawn,
-   * unless another marker with a higher minZoom is met.
-   */
-  minZoom: PropTypes.number.isRequired,
-  /**
-   * The symbol-representing component to draw, with the signature
-   * ({ entity: object, zoom: number }) => Element
-   * where entity should contain coordinates information for placement on the map.
-   */
-  symbol: PropTypes.elementType.isRequired,
-  /**
-   * The symbol-representing component to draw for each mode,
-   * with the same signature as symbol.
-   * If a type returned by getType() is not listed,
-   * then symbol will be rendered by default.
-   * symbolByType and getType must be either be both specified or both ommited.
-   */
-  symbolByType: PropTypes.objectOf(PropTypes.elementType)
-});
+export const vehicleRentalMapOverlaySymbolsType = PropTypes.arrayOf(
+  PropTypes.shape({
+    dockStrokeColor: PropTypes.string,
+    fillColor: PropTypes.string,
+    maxZoom: PropTypes.number.isRequired,
+    minZoom: PropTypes.number.isRequired,
+    pixels: PropTypes.number,
+    type: PropTypes.string.isRequired
+  }).isRequired
+);
 
 /**
  * Represents the expected configuration of the webapp.
@@ -126,6 +105,11 @@ export const configType = PropTypes.shape({
         companies: PropTypes.arrayOf(PropTypes.string.isRequired),
         name: PropTypes.string.isRequired,
         /**
+         * The applicable map symbols. Only applicable in vehicle rental
+         * overlays.
+         */
+        mapSymbols: vehicleRentalMapOverlaySymbolsType,
+        /**
          * Only used during park and ride queries. This will filter out P&Rs
          * that are futher than the specified number of meters from a transit
          * stop.
@@ -136,11 +120,6 @@ export const configType = PropTypes.shape({
          * vehicle rental overlays.
          */
         modes: PropTypes.arrayOf(PropTypes.string.isRequired),
-        /**
-         * The applicable map symbols. Only applicable in vehicle rental
-         * overlays.
-         */
-        symbols: zoomBasedSymbolType,
         /**
          * The type of overlay. Currently valid values include:
          *
@@ -589,4 +568,35 @@ export const userLocationType = PropTypes.shape({
    * One of: 'home', 'work', 'stop' or 'recent'
    */
   type: PropTypes.string.isRequired
+});
+
+/**
+ * Defines which symbol to render based on a zoom level, and optionally by mode.
+ * (Only one symbol is rendered fo any zoom level.)
+ */
+export const zoomBasedSymbolType = PropTypes.shape({
+  /**
+   * A function with the signature (entity: object) => string
+   * that extracts a mode from an entity.
+   * symbolByMode and getMode must be either be both specified or both ommited.
+   */
+  getMode: PropTypes.func,
+  /**
+   * The zoom level beginning at which the marker is drawn,
+   * unless another marker with a higher minZoom is met.
+   */
+  minZoom: PropTypes.number.isRequired,
+  /**
+   * The symbol-representing component to draw, with the signature
+   * ({ entity: object, zoom: number }) => Element
+   * where entity should contain coordinates information for placement on the map.
+   */
+  symbol: PropTypes.elementType.isRequired,
+  /**
+   * The symbol-representing component to draw for each mode,
+   * with the same signature as symbol. If a mode returned by getMode() is not listed,
+   * then symbol will be rendered by default.
+   * symbolByMode and getMode must be either be both specified or both ommited.
+   */
+  symbolByMode: PropTypes.objectOf(PropTypes.elementType)
 });
