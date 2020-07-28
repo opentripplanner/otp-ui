@@ -1,115 +1,85 @@
+import cloneDeep from "lodash.clonedeep";
 import PropTypes from "prop-types";
-import React, { Component } from "react";
+import React from "react";
 
 import { zoomBasedSymbolType } from "@opentripplanner/core-utils/lib/types";
 
 /**
+ * Transforms the symbol and symbols by type from the specified symbolEntry
+ * using the specified symbolTransform.
+ * TODO: Should this be memoized?
+ */
+const getTransformedSymbol = (symbolEntry, symbolTransform) => {
+  // If no transform function provided, just return symbolEntry.
+  if (typeof symbolTransform !== "function") {
+    return symbolEntry;
+  }
+
+  const { symbolByType } = symbolEntry;
+  const newEntry = cloneDeep(symbolEntry);
+
+  if (symbolByType) {
+    Object.entries(symbolByType).forEach(([key, originalSymbol]) => {
+      newEntry.symbolByType[key] = symbolTransform(originalSymbol);
+    });
+  }
+
+  newEntry.symbol = symbolTransform(symbolEntry.symbol);
+  return newEntry;
+};
+
+/**
+ * Finds the deepest symbol (the symbol associated with the highest minZoom)
+ * for the specified symbols and zoom level.
+ */
+const getSymbolEntry = (symbols, zoom) =>
+  symbols.reduce((bestMarker, marker) => {
+    if (zoom >= marker.minZoom) {
+      if (!bestMarker || marker.minZoom > bestMarker.minZoom) {
+        return marker;
+      }
+    }
+    return bestMarker;
+  }, null);
+
+/**
  * A component that renders different components based on zoom level.
  */
-class ZoomBasedMarkers extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { symbols: this.getTransformedSymbols(props) };
-  }
+const ZoomBasedMarkers = ({ entities, symbols, symbolTransform, zoom }) => {
+  if (!entities || !entities.length) return null;
 
-  componentDidUpdate(prevProps) {
-    // Remap symbol transform if new symbols are provided.
-    const { symbols, symbolTransform } = this.props;
+  // Find the deepest symbol for the current zoom level.
+  const symbolEntry = getSymbolEntry(symbols, zoom);
 
-    if (symbolTransform && prevProps.symbols !== symbols) {
-      this.updateSymbols(this.getTransformedSymbols(this.props));
+  // With that symbol entry, transform its symbols (if a symbolTransform prop is provided),
+  // and use the transformed symbols to render the entities.
+  if (symbolEntry) {
+    const transformedEntry = getTransformedSymbol(symbolEntry, symbolTransform);
+
+    const { getType, symbol: DefaultSymbol, symbolByType } = transformedEntry;
+    // Note that the result of the transformed symbols can be null (even for DefaultSymbol),
+    // hence the null checks before the return statements below.
+
+    if (symbolByType && getType) {
+      return entities.map((entity, index) => {
+        const EntitySymbol = symbolByType[getType(entity)] || DefaultSymbol;
+        return (
+          EntitySymbol && (
+            <EntitySymbol entity={entity} key={index} zoom={zoom} />
+          )
+        );
+      });
+    }
+
+    if (DefaultSymbol) {
+      return entities.map((entity, index) => (
+        <DefaultSymbol entity={entity} key={index} zoom={zoom} />
+      ));
     }
   }
 
-  /**
-   * This helper method maps the symbolTransform (if provided)
-   * to the symbols originally defined in the symbols prop.
-   * The result of this function call is stored in this component's state.
-   */
-  getTransformedSymbols = ({ symbols, symbolTransform }) => {
-    if (typeof symbolTransform === "function") {
-      return (
-        symbols &&
-        symbols.map(({ getType, minZoom, symbol, symbolByType }) => {
-          // Make a new version of symbolByType with the tranformed symbols
-          // using symbolTransform.
-          let newsymbolByType;
-          const originalsymbolByType = symbolByType;
-
-          if (originalsymbolByType) {
-            Object.keys(originalsymbolByType).forEach(key => {
-              const originalSymbol = originalsymbolByType[key];
-              if (originalSymbol) {
-                if (!newsymbolByType) {
-                  // Initialize on first need.
-                  newsymbolByType = {};
-                }
-                newsymbolByType[key] = symbolTransform(originalSymbol);
-              }
-            });
-          }
-
-          return {
-            getType,
-            minZoom,
-            symbol: symbolTransform(symbol),
-            symbolByType: newsymbolByType
-          };
-        })
-      );
-    }
-
-    return symbols;
-  };
-
-  /**
-   * Updates the state outside of componentDidUpdate.
-   */
-  updateSymbols = symbols => {
-    this.setState({ symbols });
-  };
-
-  render() {
-    const { entities, zoom } = this.props;
-    if (!entities) return null;
-
-    const { symbols } = this.state;
-
-    // Find the deepest symbol for the current zoom level (minZoom <= zoom).
-    const symbolEntry = symbols.reduce((bestMarker, marker) => {
-      if (zoom >= marker.minZoom) {
-        if (!bestMarker || marker.minZoom > bestMarker.minZoom) {
-          return marker;
-        }
-      }
-      return bestMarker;
-    }, null);
-
-    // And use that symbol, if found, to render the entities.
-    if (symbolEntry) {
-      const { getType, symbol: DefaultSymbol, symbolByType } = symbolEntry;
-
-      if (symbolByType && getType) {
-        return entities.map((entity, index) => {
-          const EntitySymbol = symbolByType[getType(entity)] || DefaultSymbol;
-          return (
-            EntitySymbol && (
-              <EntitySymbol entity={entity} key={index} zoom={zoom} />
-            )
-          );
-        });
-      }
-
-      if (DefaultSymbol) {
-        return entities.map((entity, index) => (
-          <DefaultSymbol entity={entity} key={index} zoom={zoom} />
-        ));
-      }
-    }
-
-    return null;
-  }
-}
+  return null;
+};
 
 ZoomBasedMarkers.propTypes = {
   /**
