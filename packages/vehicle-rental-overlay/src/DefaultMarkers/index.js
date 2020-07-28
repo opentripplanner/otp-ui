@@ -31,9 +31,9 @@ const templateDefaultProps = {
 /**
  * Helper function to create a Circle component to render entities
  * using a fixed size, fill color, and stroke color.
- * Usage: Circle({ fillColor: "#FF56BB", size: 4, strokeColor: "#000000" })
+ * Usage: Circle({ fillColor: "#FF56BB", pixels: 4, strokeColor: "#000000" })
  */
-export const Circle = ({ fillColor = "gray", size, strokeColor }) => {
+export const Circle = ({ fillColor = "gray", pixels, strokeColor }) => {
   const newStrokeColor = strokeColor || fillColor;
 
   const GeneratedMarker = ({ children, entity: station }) => (
@@ -42,12 +42,47 @@ export const Circle = ({ fillColor = "gray", size, strokeColor }) => {
       color={newStrokeColor}
       fillColor={fillColor}
       fillOpacity={1}
-      radius={size}
+      radius={pixels}
       weight={1}
     >
       {children}
     </CircleMarker>
   );
+
+  GeneratedMarker.propTypes = templatePropTypes;
+  GeneratedMarker.defaultProps = templateDefaultProps;
+  return GeneratedMarker;
+};
+
+/**
+ * Renders a shared bike or shared bike dock as a circle.
+ */
+export const SharedBikeCircle = ({
+  dockStrokeColor,
+  fillColor = "gray",
+  pixels,
+  strokeColor
+}) => {
+  const GeneratedMarker = ({ children, entity: station }) => {
+    let newStrokeColor = strokeColor || fillColor;
+
+    if (!station.isFloatingBike) {
+      newStrokeColor = dockStrokeColor || strokeColor;
+    }
+
+    return (
+      <CircleMarker
+        center={[station.y, station.x]}
+        color={newStrokeColor}
+        fillColor={fillColor}
+        fillOpacity={1}
+        radius={pixels - (station.isFloatingBike ? 1 : 0)}
+        weight={1}
+      >
+        {children}
+      </CircleMarker>
+    );
+  };
 
   GeneratedMarker.propTypes = templatePropTypes;
   GeneratedMarker.defaultProps = templateDefaultProps;

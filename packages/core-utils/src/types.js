@@ -50,6 +50,37 @@ export const languageConfigType = PropTypes.shape({
   stopViewer: PropTypes.string
 });
 
+/**
+ * Defines which symbol to render based on a zoom level, and optionally by mode.
+ * (Only one symbol is rendered fo any zoom level.)
+ */
+export const zoomBasedSymbolType = PropTypes.shape({
+  /**
+   * A function with the signature (entity: object) => string
+   * that extracts a mode from an entity.
+   * symbolByMode and getMode must be either be both specified or both ommited.
+   */
+  getMode: PropTypes.func,
+  /**
+   * The zoom level beginning at which the marker is drawn,
+   * unless another marker with a higher minZoom is met.
+   */
+  minZoom: PropTypes.number.isRequired,
+  /**
+   * The symbol-representing component to draw, with the signature
+   * ({ entity: object, zoom: number }) => Element
+   * where entity should contain coordinates information for placement on the map.
+   */
+  symbol: PropTypes.elementType.isRequired,
+  /**
+   * The symbol-representing component to draw for each mode,
+   * with the same signature as symbol. If a mode returned by getMode() is not listed,
+   * then symbol will be rendered by default.
+   * symbolByMode and getMode must be either be both specified or both ommited.
+   */
+  symbolByMode: PropTypes.objectOf(PropTypes.elementType)
+});
+
 /** describes the objects from the real-time vehicle service */
 export const transitVehicleType = PropTypes.shape({
   routeShortName: PropTypes.string,
@@ -72,14 +103,17 @@ export const transitVehicleType = PropTypes.shape({
 });
 
 export const vehicleRentalMapOverlaySymbolsType = PropTypes.arrayOf(
-  PropTypes.shape({
-    dockStrokeColor: PropTypes.string,
-    fillColor: PropTypes.string,
-    maxZoom: PropTypes.number.isRequired,
-    minZoom: PropTypes.number.isRequired,
-    pixels: PropTypes.number,
-    type: PropTypes.string.isRequired
-  }).isRequired
+  PropTypes.oneOfType([
+    PropTypes.shape({
+      dockStrokeColor: PropTypes.string,
+      fillColor: PropTypes.string,
+      minZoom: PropTypes.number.isRequired,
+      pixels: PropTypes.number,
+      type: PropTypes.oneOfType([PropTypes.string, PropTypes.elementType])
+        .isRequired
+    }),
+    zoomBasedSymbolType
+  ]).isRequired
 );
 
 /**
@@ -568,35 +602,4 @@ export const userLocationType = PropTypes.shape({
    * One of: 'home', 'work', 'stop' or 'recent'
    */
   type: PropTypes.string.isRequired
-});
-
-/**
- * Defines which symbol to render based on a zoom level, and optionally by mode.
- * (Only one symbol is rendered fo any zoom level.)
- */
-export const zoomBasedSymbolType = PropTypes.shape({
-  /**
-   * A function with the signature (entity: object) => string
-   * that extracts a mode from an entity.
-   * symbolByMode and getMode must be either be both specified or both ommited.
-   */
-  getMode: PropTypes.func,
-  /**
-   * The zoom level beginning at which the marker is drawn,
-   * unless another marker with a higher minZoom is met.
-   */
-  minZoom: PropTypes.number.isRequired,
-  /**
-   * The symbol-representing component to draw, with the signature
-   * ({ entity: object, zoom: number }) => Element
-   * where entity should contain coordinates information for placement on the map.
-   */
-  symbol: PropTypes.elementType.isRequired,
-  /**
-   * The symbol-representing component to draw for each mode,
-   * with the same signature as symbol. If a mode returned by getMode() is not listed,
-   * then symbol will be rendered by default.
-   * symbolByMode and getMode must be either be both specified or both ommited.
-   */
-  symbolByMode: PropTypes.objectOf(PropTypes.elementType)
 });

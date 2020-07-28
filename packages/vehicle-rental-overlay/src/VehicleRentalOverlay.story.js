@@ -1,8 +1,7 @@
 import BaseMap from "@opentripplanner/base-map";
 import {
-  vehicleRentalMapOverlaySymbolsType,
   stationType,
-  zoomBasedSymbolType
+  vehicleRentalMapOverlaySymbolsType
 } from "@opentripplanner/core-utils/lib/types";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
@@ -15,7 +14,7 @@ import VehicleRentalOverlay from ".";
 import bikeRentalStations from "../__mocks__/bike-rental-stations.json";
 import carRentalStations from "../__mocks__/car-rental-stations.json";
 import eScooterStations from "../__mocks__/e-scooter-rental-stations.json";
-import { Circle, GenericMarker, HubAndFloatingBike } from "./DefaultMarkers";
+import { Circle, HubAndFloatingBike } from "./DefaultMarkers";
 
 import "../../../node_modules/leaflet/dist/leaflet.css";
 
@@ -25,7 +24,6 @@ const bikeMapSymbols = [
   {
     dockStrokeColor: "#000000",
     fillColor: "#FF2E28",
-    maxZoom: 13,
     minZoom: 0,
     pixels: 4,
     type: "circle"
@@ -33,27 +31,25 @@ const bikeMapSymbols = [
   {
     dockStrokeColor: "#000000",
     fillColor: "#FF2E28",
-    maxZoom: 17,
     minZoom: 14,
     pixels: 6,
     type: "circle"
   },
   {
-    maxZoom: 999,
     minZoom: 18,
     type: "hubAndFloatingBike"
   }
 ];
-
+// Bike symbols using new symbols prop.
 const bikeSymbols = [
   {
     getType: station => (station.isFloatingBike ? "floatingBike" : "dock"),
     minZoom: 0,
-    symbol: Circle({ fillColor: "#FF2E28", size: 3 }),
+    symbol: Circle({ fillColor: "#FF2E28", pixels: 3 }),
     symbolByType: {
       dock: Circle({
         fillColor: "#FF2E28",
-        size: 4,
+        pixels: 4,
         strokeColor: "#000000"
       })
     }
@@ -61,11 +57,11 @@ const bikeSymbols = [
   {
     getType: station => (station.isFloatingBike ? "floatingBike" : "dock"),
     minZoom: 14,
-    symbol: Circle({ fillColor: "#FF2E28", size: 5 }),
+    symbol: Circle({ fillColor: "#FF2E28", pixels: 5 }),
     symbolByType: {
       dock: Circle({
         fillColor: "#FF2E28",
-        size: 6,
+        pixels: 6,
         strokeColor: "#000000"
       })
     }
@@ -75,42 +71,23 @@ const bikeSymbols = [
     symbol: HubAndFloatingBike
   }
 ];
-
 const carMapSymbols = [
   {
     fillColor: "#009cde",
-    maxZoom: 13,
     minZoom: 0,
     pixels: 4,
     type: "circle"
   },
   {
     fillColor: "#009cde",
-    maxZoom: 17,
     minZoom: 14,
     pixels: 6,
     type: "circle"
   },
   {
     fillColor: "#009cde",
-    maxZoom: 999,
     minZoom: 18,
     type: "marker"
-  }
-];
-
-const carSymbols = [
-  {
-    minZoom: 0,
-    symbol: Circle({ fillColor: "#009cde", size: 4 })
-  },
-  {
-    minZoom: 14,
-    symbol: Circle({ fillColor: "#009cde", size: 6 })
-  },
-  {
-    minZoom: 18,
-    symbol: GenericMarker({ fillColor: "#009cde" })
   }
 ];
 const configCompanies = [
@@ -138,48 +115,22 @@ const configCompanies = [
 const EScooterMapSymbols = [
   {
     fillColor: "#F80600",
-    maxZoom: 13,
     minZoom: 0,
     pixels: 4,
     strokeColor: "#CCCCCC",
     type: "circle"
   },
+  // You can combine predefined symbols (type = "<type>")
+  // and external symbols (symbol = Component<({ entity, zoom })>.
+  // (the color and pixel properties are ignored if you do so.).
   {
-    fillColor: "#F80600",
-    maxZoom: 17,
     minZoom: 14,
-    pixels: 6,
-    strokeColor: "#CCCCCC",
-    type: "circle"
+    symbol: Circle({ fillColor: "#F80600", pixels: 6, strokeColor: "#CCCCCC" })
   },
   {
     fillColor: "#F80600",
-    maxZoom: 999,
     minZoom: 18,
     type: "marker"
-  }
-];
-
-const EScooterSymbols = [
-  {
-    minZoom: 0,
-    symbol: Circle({
-      fillColor: "#F80600",
-      size: 4,
-      strokeColor: "#CCCCCC"
-    })
-  },
-  {
-    minZoom: 14,
-    symbol: Circle({
-      fillColor: "#F80600",
-      size: 6,
-      strokeColor: "#CCCCCC"
-    })
-  },
-  {
-    minZoom: 18,
-    symbol: GenericMarker({ fillColor: "#F80600" })
   }
 ];
 const setLocation = action("setLocation");
@@ -203,8 +154,7 @@ class ZoomControlledMapWithVehicleRentalOverlay extends Component {
       getStationName,
       mapSymbols,
       refreshVehicles,
-      stations,
-      symbols
+      stations
     } = this.props;
     const { zoom } = this.state;
     return (
@@ -222,7 +172,6 @@ class ZoomControlledMapWithVehicleRentalOverlay extends Component {
           refreshVehicles={refreshVehicles}
           stations={stations}
           visible
-          symbols={symbols}
           zoom={zoom}
         />
       </BaseMap>
@@ -235,15 +184,13 @@ ZoomControlledMapWithVehicleRentalOverlay.propTypes = {
   getStationName: PropTypes.func,
   mapSymbols: vehicleRentalMapOverlaySymbolsType,
   refreshVehicles: PropTypes.func.isRequired,
-  stations: PropTypes.arrayOf(stationType.isRequired).isRequired,
-  symbols: PropTypes.arrayOf(zoomBasedSymbolType)
+  stations: PropTypes.arrayOf(stationType.isRequired).isRequired
 };
 
 ZoomControlledMapWithVehicleRentalOverlay.defaultProps = {
   companies: null,
   getStationName: undefined,
-  mapSymbols: null,
-  symbols: null
+  mapSymbols: null
 };
 
 function customStationName(_, station) {
@@ -253,7 +200,7 @@ function customStationName(_, station) {
 storiesOf("VehicleRentalOverlay", module)
   .addDecorator(withA11y)
   .addDecorator(withInfo)
-  .add("Existing VehicleRentalOverlay with rental bicycles", () => (
+  .add("VehicleRentalOverlay with rental bicycles", () => (
     <ZoomControlledMapWithVehicleRentalOverlay
       companies={["BIKETOWN"]}
       mapSymbols={bikeMapSymbols}
@@ -261,7 +208,18 @@ storiesOf("VehicleRentalOverlay", module)
       stations={bikeRentalStations}
     />
   ))
-  .add("Existing VehicleRentalOverlay with rental cars", () => (
+  .add(
+    "VehicleRentalOverlay with rental bicycles using new symbols prop",
+    () => (
+      <ZoomControlledMapWithVehicleRentalOverlay
+        companies={["BIKETOWN"]}
+        refreshVehicles={action("refresh bicycles")}
+        mapSymbols={bikeSymbols}
+        stations={bikeRentalStations}
+      />
+    )
+  )
+  .add("VehicleRentalOverlay with rental cars", () => (
     <ZoomControlledMapWithVehicleRentalOverlay
       companies={["CAR2GO"]}
       mapSymbols={carMapSymbols}
@@ -269,7 +227,7 @@ storiesOf("VehicleRentalOverlay", module)
       stations={carRentalStations}
     />
   ))
-  .add("Existing VehicleRentalOverlay with rental E-scooters", () => (
+  .add("VehicleRentalOverlay with rental E-scooters", () => (
     <ZoomControlledMapWithVehicleRentalOverlay
       companies={["SHARED"]}
       mapSymbols={EScooterMapSymbols}
@@ -277,48 +235,12 @@ storiesOf("VehicleRentalOverlay", module)
       stations={eScooterStations}
     />
   ))
-  .add(
-    "Existing VehicleRentalOverlay with rental E-scooters with custom naming",
-    () => (
-      <ZoomControlledMapWithVehicleRentalOverlay
-        companies={["SHARED"]}
-        getStationName={customStationName}
-        mapSymbols={EScooterMapSymbols}
-        refreshVehicles={action("refresh E-scooters")}
-        stations={eScooterStations}
-      />
-    )
-  )
-  .add("VehicleRentalOverlay with rental bicycles", () => (
-    <ZoomControlledMapWithVehicleRentalOverlay
-      companies={["BIKETOWN"]}
-      refreshVehicles={action("refresh bicycles")}
-      stations={bikeRentalStations}
-      symbols={bikeSymbols}
-    />
-  ))
-  .add("VehicleRentalOverlay with rental cars", () => (
-    <ZoomControlledMapWithVehicleRentalOverlay
-      companies={["CAR2GO"]}
-      refreshVehicles={action("refresh cars")}
-      stations={carRentalStations}
-      symbols={carSymbols}
-    />
-  ))
-  .add("VehicleRentalOverlay with rental E-scooters", () => (
-    <ZoomControlledMapWithVehicleRentalOverlay
-      companies={["SHARED"]}
-      refreshVehicles={action("refresh E-scooters")}
-      stations={eScooterStations}
-      symbols={EScooterSymbols}
-    />
-  ))
   .add("VehicleRentalOverlay with rental E-scooters with custom naming", () => (
     <ZoomControlledMapWithVehicleRentalOverlay
       companies={["SHARED"]}
       getStationName={customStationName}
+      mapSymbols={EScooterMapSymbols}
       refreshVehicles={action("refresh E-scooters")}
       stations={eScooterStations}
-      symbols={EScooterSymbols}
     />
   ));
