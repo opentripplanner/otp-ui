@@ -138,7 +138,11 @@ TransitVehicleOverlay.propTypes = {
   /** showOnlyTracked will hide all other vehicles, except the tracked vehicle */
   showOnlyTracked: PropTypes.bool,
 
-  /** A list of symbol definitions for the vehicles to be rendered. */
+  /**
+   * A list of symbol definitions for the vehicles to be rendered,
+   * where symbols are custom leaflet marker components with the signature
+   * ({vehicle: object, onVehicleClicked: (vehicle) => {}, children: Element}) => Element.
+   */
   symbols: PropTypes.arrayOf(zoomBasedSymbolType),
 
   // ////// VehicleGeometry types ////////
