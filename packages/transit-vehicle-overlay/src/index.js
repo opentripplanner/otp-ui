@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React, { Component } from "react";
+import React from "react";
 import { FeatureGroup } from "react-leaflet";
 
 import {
@@ -18,27 +18,41 @@ import * as utils from "./utils";
  * will show both point positions for a collection of vehicles, as well as being
  * able to render a 'selected' vehicle (and it's route pattern trace)
  */
-export default class TransitVehicleOverlay extends Component {
+export default function TransitVehicleOverlay(props) {
+  const {
+    center,
+    name,
+    selectedVehicle,
+    showOnlyTracked,
+    symbols,
+    vehicleList,
+    visible,
+    zoom,
+
+    // VehicleGeometry
+    color,
+    highlightColor,
+    onRecenterMap,
+    onVehicleClicked,
+    PopupSlot,
+    TooltipSlot,
+
+    // RouteGeometry
+    highlight,
+    lowlight,
+    lowlightColor, // note: highlightColor above
+    pattern
+  } = props;
+  utils.linterIgnoreTheseProps(name, visible, center);
+
   /**
    * This helper method will be passed to the ZoomBasedMarkers symbolTranform prop.
    * It wraps symbols originally defined in the symbols prop
    * with the VehicleGeometry component that handles the leaflet plumbing,
-   * and forwards to VehicleGeometry the relevant props from this component.
+   * and forwards to VehicleGeometry the relevant props from TransitVehicleOverlay.
    */
-  makeVehicleGeometryWrapper = Symbol => {
-    const VehicleGeometryWrapper = ({ entity: vehicle, zoom }) => {
-      const {
-        selectedVehicle,
-
-        // VehicleGeometry
-        color,
-        highlightColor,
-        onRecenterMap,
-        onVehicleClicked,
-        PopupSlot,
-        TooltipSlot
-      } = this.props;
-
+  const makeVehicleGeometryWrapper = Symbol => {
+    const VehicleGeometryWrapper = ({ entity: vehicle, zoom: renderZoom }) => {
       return (
         <VehicleGeometry
           color={color}
@@ -52,7 +66,7 @@ export default class TransitVehicleOverlay extends Component {
           PopupSlot={PopupSlot}
           TooltipSlot={TooltipSlot}
           vehicle={vehicle}
-          zoom={zoom}
+          zoom={renderZoom}
         />
       );
     };
@@ -65,65 +79,41 @@ export default class TransitVehicleOverlay extends Component {
     return VehicleGeometryWrapper;
   };
 
-  render() {
-    const {
-      center,
-      name,
-      selectedVehicle,
-      showOnlyTracked,
-      vehicleList,
-      visible,
-      symbols,
-      zoom,
-
-      // VehicleGeometry
-      highlightColor,
-
-      // RouteGeometry
-      highlight,
-      lowlight,
-      lowlightColor, // note: highlightColor above
-      pattern
-    } = this.props;
-
-    utils.linterIgnoreTheseProps(name, visible, center);
-
-    // when a vehicle is selected, pre-determine whether to show pattern and which vehicles
-    let vl = vehicleList;
-    let showPattern = false;
-    if (
-      selectedVehicle &&
-      utils.findVehicleById(vehicleList, selectedVehicle.tripId)
-    ) {
-      if (showOnlyTracked) vl = [selectedVehicle];
-      if (pattern) showPattern = true;
-    }
-
-    return (
-      <FeatureGroup>
-        {vl && symbols && (
-          <ZoomBasedMarkers
-            entities={vl}
-            symbols={symbols}
-            symbolTransform={this.makeVehicleGeometryWrapper}
-            zoom={zoom}
-          />
-        )}
-
-        {showPattern && (
-          <RouteGeometry
-            highlight={highlight}
-            highlightColor={highlightColor}
-            lowlight={lowlight}
-            lowlightColor={lowlightColor}
-            pattern={pattern}
-            selectedVehicle={selectedVehicle}
-            zoom={zoom}
-          />
-        )}
-      </FeatureGroup>
-    );
+  // when a vehicle is selected, pre-determine whether to show pattern and which vehicles
+  let vl = vehicleList;
+  let showPattern = false;
+  if (
+    selectedVehicle &&
+    utils.findVehicleById(vehicleList, selectedVehicle.tripId)
+  ) {
+    if (showOnlyTracked) vl = [selectedVehicle];
+    if (pattern) showPattern = true;
   }
+
+  return (
+    <FeatureGroup>
+      {vl && symbols && (
+        <ZoomBasedMarkers
+          entities={vl}
+          symbols={symbols}
+          symbolTransform={makeVehicleGeometryWrapper}
+          zoom={zoom}
+        />
+      )}
+
+      {showPattern && (
+        <RouteGeometry
+          highlight={highlight}
+          highlightColor={highlightColor}
+          lowlight={lowlight}
+          lowlightColor={lowlightColor}
+          pattern={pattern}
+          selectedVehicle={selectedVehicle}
+          zoom={zoom}
+        />
+      )}
+    </FeatureGroup>
+  );
 }
 
 TransitVehicleOverlay.propTypes = {
@@ -197,7 +187,7 @@ TransitVehicleOverlay.defaultProps = {
   symbols: [
     {
       minZoom: 0,
-      symbol: ModeCircles.Dot
+      symbol: ModeCircles.Circle
     },
     {
       minZoom: 14,
