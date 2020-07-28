@@ -31,11 +31,11 @@ const mockStops = [
 ];
 
 const mapCenter = [45.420217, -122.67307];
+const onViewportChanged = action("onViewportChanged");
 
 // Common prop types for the components used to render examples.
 // Some of the example components below have a children prop,
 // which is not required, unless you plan to inject children.
-
 const propTypes = {
   /** The children of the component. */
   children: PropTypes.node,
@@ -46,15 +46,7 @@ const defaultProps = {
   children: null
 };
 
-const Circle1 = ({ entity, zoom }) => (
-  <CircleMarker center={[entity.lat, entity.lon]} radius={zoom < 7 ? 10 : 20} />
-);
-Circle1.propTypes = {
-  entity: stopLayerStopType.isRequired,
-  zoom: PropTypes.number.isRequired
-};
-
-const Circle2 = ({ children, entity }) => (
+const Circle = ({ children, entity }) => (
   <CircleMarker
     center={[entity.lat, entity.lon]}
     fillColor="#00FF00"
@@ -63,103 +55,50 @@ const Circle2 = ({ children, entity }) => (
     {children}
   </CircleMarker>
 );
-Circle2.propTypes = propTypes;
-Circle2.defaultProps = defaultProps;
+Circle.propTypes = propTypes;
+Circle.defaultProps = defaultProps;
 
-const Circle3 = ({ children, entity }) => (
-  <CircleMarker
-    center={[entity.lat, entity.lon]}
-    fillColor="#FF0000"
-    radius={30}
-  >
-    {children}
-  </CircleMarker>
-);
-Circle3.propTypes = propTypes;
-Circle3.defaultProps = defaultProps;
+// Generates markers from icons.
+const IconMarker = Icon => {
+  const GeneratedMarker = ({ children, entity }) => {
+    const iconHtml = ReactDOMServer.renderToStaticMarkup(<Icon />);
+    return (
+      <Marker
+        icon={divIcon({ html: iconHtml, className: "" })}
+        position={[entity.lat, entity.lon]}
+      >
+        {children}
+      </Marker>
+    );
+  };
+  GeneratedMarker.propTypes = propTypes;
+  GeneratedMarker.defaultProps = defaultProps;
 
-const BusMarker = ({ children, entity }) => {
-  const iconHtml = ReactDOMServer.renderToStaticMarkup(<Bus />);
-  return (
-    <Marker
-      icon={divIcon({ html: iconHtml, className: "" })}
-      position={[entity.lat, entity.lon]}
-    >
-      {children}
-    </Marker>
-  );
+  return GeneratedMarker;
 };
-BusMarker.propTypes = propTypes;
-BusMarker.defaultProps = defaultProps;
 
-const StreetcarMarker = ({ children, entity }) => {
-  const iconHtml = ReactDOMServer.renderToStaticMarkup(<Streetcar />);
-  return (
-    <Marker
-      icon={divIcon({ html: iconHtml, className: "" })}
-      position={[entity.lat, entity.lon]}
-    >
-      {children}
-    </Marker>
-  );
-};
-StreetcarMarker.propTypes = propTypes;
-StreetcarMarker.defaultProps = defaultProps;
-
-const onViewportChanged = action("onViewportChanged");
-
-// Below are symbol definitions passed to the ZoomBasedMarkers component.
-
+// Symbol definition passed to the ZoomBasedMarkers component.
 const mySymbols = [
-  {
-    // minZoom is necessary to define the zoom level from which.
-    // the stated symbol will be displayed. The symbol is displayed
-    // until a symbol with a higher minZoom is found.
-    // Circle1 will be displayed from zoom levels 0 to 11,
-    // because there is an entry that sets the symbol for zoom 12, 13.
-    minZoom: 0,
-    symbol: Circle1
-  },
-  {
-    minZoom: 12,
-    symbol: Circle2
-  },
-  {
-    getType: entity => (entity.id === "3" ? "streetcar" : "bus"),
-    minZoom: 14,
-    symbol: Circle2,
-    symbolByType: {
-      streetcar: Circle3
-    }
-  },
-  {
-    getType: entity => (entity.id === "3" ? "streetcar" : "bus"),
-    minZoom: 16,
-    symbol: BusMarker,
-    // Use symbolByType to define symbols shown for some modes returned by the getType function.
-    // If a value returned from getType is not listed here,
-    // then the component defined in 'symbol' will be rendered by default.
-    // In this example, the entity with id 'streetcar' is rendered using StreetcarMarker,
-    // and the other ones are rendered using BusMarker.
-    symbolByType: {
-      streetcar: StreetcarMarker
-    }
-  }
-];
-
-const mySymbolsWithGap = [
-  // In this example, we omit the zoom levels 0-11,
+  // Omit the zoom levels 0-9,
   // so no symbol will be drawn for these zoom levels.
   {
-    minZoom: 12,
-    symbol: Circle2
+    // Most basic example:
+    // This renders all entities with the same symbol for zooms 10-13.
+    minZoom: 10,
+    symbol: Circle
   },
   {
+    // Example with symbols for some entity types:
+    // The entity with id 'streetcar' is rendered using a Streetcar marker,
+    // and the other ones are rendered using a Bus Marker.
+    // Use symbolByType to define symbols shown for some entity types returned by the getType function.
+    // If a value returned from getType is not listed here,
+    // then the component defined in 'symbol' will be rendered by default.
     getType: entity => (entity.id === "3" ? "streetcar" : "bus"),
     minZoom: 14,
-    symbol: BusMarker,
+    symbol: IconMarker(Bus),
     symbolByType: {
-      streetcar: StreetcarMarker
+      streetcar: IconMarker(Streetcar)
     }
   }
 ];
@@ -179,18 +118,14 @@ const exampleTransform = Symbol => {
     </Symbol>
   );
   InnerSymbol.propTypes = {
-    /** The stop to render. */
     entity: stopLayerStopType.isRequired,
-    /** The zoom level being rendered. */
-    zoom: PropTypes.number
-  };
-  InnerSymbol.defaultProps = {
-    zoom: null
+    zoom: PropTypes.number.isRequired
   };
 
   return InnerSymbol;
 };
 
+// Example container with a ZoomBasedMarkers component inside a BaseMap.
 class Example extends Component {
   constructor() {
     super();
@@ -238,9 +173,6 @@ storiesOf("ZoomBasedMarkers", module)
   .addDecorator(withInfo)
   .add("ZoomBasedMarkers with symbols for different zoom levels", () => (
     <Example symbols={mySymbols} />
-  ))
-  .add("ZoomBasedMarkers with no symbols for zooms 0-12", () => (
-    <Example symbols={mySymbolsWithGap} />
   ))
   .add("ZoomBasedMarkers with transformed symbols", () => (
     <Example symbols={mySymbols} symbolTransform={exampleTransform} />

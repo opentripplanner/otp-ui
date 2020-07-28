@@ -34,7 +34,8 @@ class VehicleRentalOverlay extends MapLayer {
       </Symbol>
     );
     SymbolWrapper.propTypes = {
-      entity: stationType.isRequired
+      entity: stationType.isRequired,
+      zoom: PropTypes.number.isRequired
     };
 
     return SymbolWrapper;

@@ -88,14 +88,16 @@ ZoomBasedMarkers.propTypes = {
    */
   entities: PropTypes.arrayOf(PropTypes.shape()),
   /**
-   * A list of symbols that represent the entities, and the associated zoom level.
+   * A list of symbols that represent the entities at the associated zoom level.
+   * The symbols must be able to obtain the position of the specified entities.
    * (The list does not need to be sorted.)
    */
   symbols: PropTypes.arrayOf(zoomBasedSymbolType).isRequired,
   /**
-   * An optional function(Component) to transforms components defined in the symbols props prior to rendering,
+   * An optional function(Component) to transforms components defined in the symbols prop prior to rendering,
    * in cases you need to wrap symbols or inject children.
-   * The function must return a component that accepts these props: ({ entity, key, zoom }).
+   * The function must return a component that accepts these props: ({ entity, zoom }).
+   * In addition, to inject children, the returned component must explicitly render any applicable children passed to it.
    */
   symbolTransform: PropTypes.func,
   /**
