@@ -34,12 +34,10 @@ class StopsOverlay extends MapLayer {
     // Force the map to render no symbols if the map zoom level
     // is less than the farthest zoom level at which symbols are defined.
     const minZoomForUpdate = symbols
-      ? symbols.reduce((lowestZoom, level) => {
-          if (level.minZoom < lowestZoom) {
-            return level;
-          }
-          return lowestZoom;
-        }, Number.MAX_VALUE)
+      ? symbols.reduce(
+          (lowestZoom, level) => Math.min(level.minZoom, lowestZoom),
+          Number.MAX_VALUE
+        )
       : Number.MAX_VALUE;
 
     if (leaflet.map.getZoom() < minZoomForUpdate) {
