@@ -33,7 +33,7 @@ class VehicleRentalOverlay extends MapLayer {
       <Symbol entity={station} zoom={zoom}>
         {this.renderPopupForStation(
           station,
-          station.bikesAvailable !== null && !station.isFloatingBike
+          station.bikesAvailable !== undefined && !station.isFloatingBike
         )}
       </Symbol>
     );
