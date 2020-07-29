@@ -1,7 +1,14 @@
-/** Looks up an operator from the provided configuration */
-export function getTransitOperatorFromId(id, transitOperators) {
+/**
+ * Looks up an operator from the provided configuration.
+ * @param  {string} feedId - the feed ID, which can be obtained by splitting the
+ *                            OTP route or stop ID by `:`
+ * @param  {object} transitOperators - transitOperators from config.
+ * @return {object} the operator for the specified feedId
+ */
+export function getTransitOperatorFromId(feedId, transitOperators) {
   return (
-    transitOperators.find(transitOperator => transitOperator.id === id) || null
+    transitOperators.find(transitOperator => transitOperator.id === feedId) ||
+    null
   );
 }
 

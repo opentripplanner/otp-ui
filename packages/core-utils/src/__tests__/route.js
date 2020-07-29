@@ -27,7 +27,7 @@ function sortRoutes(...routes) {
   return routes;
 }
 
-describe("util > itinerary", () => {
+describe("util > route", () => {
   describe("getTransitOperatorFromId", () => {
     it("should get a transit operator", () => {
       const expectedTransitOperator = { id: "1" };
