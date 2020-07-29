@@ -12,8 +12,12 @@ import { formatDurationWithSeconds } from "@opentripplanner/core-utils/src/time"
 import TransitVehicleOverlay from "./index";
 
 // marker / popup / tooltip slots
-import ModeCircles from "./components/markers/ModeCircles";
-import ModeRectangles from "./components/markers/ModeRectangles";
+import { Circle, CircledVehicle } from "./components/markers/ModeCircles";
+import {
+  BusRectangle,
+  DetailedRectangle,
+  LightRailVehicleRectangle
+} from "./components/markers/ModeRectangles";
 import CustomTooltip from "./components/popups/CustomTooltip";
 import VehicleTooltip from "./components/popups/VehicleTooltip";
 import VehiclePopup from "./components/popups/VehiclePopup";
@@ -34,11 +38,11 @@ const setClicked = action("setClicked");
 const circleSymbols = [
   {
     minZoom: 0,
-    symbol: ModeCircles.Circle
+    symbol: Circle
   },
   {
     minZoom: 14,
-    symbol: ModeCircles.CircledVehicle
+    symbol: CircledVehicle
   }
 ];
 
@@ -46,14 +50,14 @@ const rectangleSymbols = [
   {
     getType: vehicle => vehicle.routeType,
     minZoom: 0,
-    symbol: ModeRectangles.LightRailVehicleRectangle,
+    symbol: LightRailVehicleRectangle,
     symbolByType: {
-      BUS: ModeRectangles.BusRectangle
+      BUS: BusRectangle
     }
   },
   {
     minZoom: 14,
-    symbol: ModeRectangles.DetailedRectangle
+    symbol: DetailedRectangle
   }
 ];
 

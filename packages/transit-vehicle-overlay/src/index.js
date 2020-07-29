@@ -8,7 +8,7 @@ import {
 } from "@opentripplanner/core-utils/lib/types";
 import ZoomBasedMarkers from "@opentripplanner/zoom-based-markers";
 
-import ModeCircles from "./components/markers/ModeCircles";
+import { Circle, CircledVehicle } from "./components/markers/ModeCircles";
 import RouteGeometry from "./components/RouteGeometry";
 import VehicleGeometry from "./components/VehicleGeometry";
 import * as utils from "./utils";
@@ -191,11 +191,11 @@ TransitVehicleOverlay.defaultProps = {
   symbols: [
     {
       minZoom: 0,
-      symbol: ModeCircles.Circle
+      symbol: Circle
     },
     {
       minZoom: 14,
-      symbol: ModeCircles.CircledVehicle
+      symbol: CircledVehicle
     }
   ],
 

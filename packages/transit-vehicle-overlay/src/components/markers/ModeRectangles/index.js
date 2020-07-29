@@ -1,26 +1,6 @@
 import * as StyledRectangle from "./styled";
 import * as utils from "../../../utils";
 
-const LightRailVehicleRectangle = utils.makeBasicVehicleShape(
-  StyledRectangle.LgShape,
-  StyledRectangle.LgTrackedShape
-);
-
-const BusRectangle = utils.makeBasicVehicleShape(
-  StyledRectangle.Shape,
-  StyledRectangle.TrackedShape
-);
-
-const DetailedRectangle = ({ color, highlightColor, isTracked, routeType }) => {
-  return utils.makeVehicleIcon(
-    StyledRectangle,
-    routeType,
-    color,
-    highlightColor,
-    isTracked
-  );
-};
-
 /**
  * Gets a marker size ([width, height]) for a given zoom level.
  * Used with rectangular vehicle shapes.
@@ -38,14 +18,31 @@ function getRectangleSize(zoom) {
   return [size, size];
 }
 
-export default {
-  BusRectangle: utils.makeRotatedMarker(BusRectangle, getRectangleSize),
-  DetailedRectangle: utils.makeRotatedMarker(
-    DetailedRectangle,
-    getRectangleSize
+export const LightRailVehicleRectangle = utils.makeRotatedMarker(
+  utils.makeBasicVehicleShape(
+    StyledRectangle.LgShape,
+    StyledRectangle.LgTrackedShape
   ),
-  LightRailVehicleRectangle: utils.makeRotatedMarker(
-    LightRailVehicleRectangle,
-    getRectangleSize
-  )
-};
+  getRectangleSize
+);
+
+export const BusRectangle = utils.makeRotatedMarker(
+  utils.makeBasicVehicleShape(
+    StyledRectangle.Shape,
+    StyledRectangle.TrackedShape
+  ),
+  getRectangleSize
+);
+
+export const DetailedRectangle = utils.makeRotatedMarker(
+  ({ color, highlightColor, isTracked, routeType }) => {
+    return utils.makeVehicleIcon(
+      StyledRectangle,
+      routeType,
+      color,
+      highlightColor,
+      isTracked
+    );
+  },
+  getRectangleSize
+);
