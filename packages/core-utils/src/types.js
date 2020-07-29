@@ -109,8 +109,7 @@ export const vehicleRentalMapOverlaySymbolsType = PropTypes.arrayOf(
       fillColor: PropTypes.string,
       minZoom: PropTypes.number.isRequired,
       pixels: PropTypes.number,
-      type: PropTypes.oneOfType([PropTypes.string, PropTypes.elementType])
-        .isRequired
+      type: PropTypes.string.isRequired
     }),
     zoomBasedSymbolType
   ]).isRequired
