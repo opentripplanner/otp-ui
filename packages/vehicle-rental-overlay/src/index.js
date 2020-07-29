@@ -28,7 +28,7 @@ class VehicleRentalOverlay extends MapLayer {
    * It creates a component that inserts a popup
    * as a child of the specified symbol from the mapSymbols prop.
    */
-  insertPopup = Symbol => {
+  renderSymbolWithPopup = Symbol => {
     const SymbolWrapper = ({ entity: station, zoom }) => (
       <Symbol entity={station} zoom={zoom}>
         {this.renderPopupForStation(
@@ -46,23 +46,6 @@ class VehicleRentalOverlay extends MapLayer {
   };
 
   /**
-   * Builds a component to render rental vehicles
-   * based on the symbol definition.
-   * If the symbol type is a string, use the existing symbol map.
-   * If the symbol type is a component, use that instead.
-   */
-  getSymbol = mapSymbol => {
-    switch (mapSymbol.type) {
-      case "circle":
-        return SharedBikeCircle(mapSymbol);
-      case "hubAndFloatingBike":
-        return HubAndFloatingBike;
-      default:
-        return GenericMarker(mapSymbol);
-    }
-  };
-
-  /**
    * Convert map symbols to zoomBasedSymbolType.
    */
   convertToZoomMarkerSymbols = mapSymbols =>
@@ -73,9 +56,21 @@ class VehicleRentalOverlay extends MapLayer {
       }
 
       // Otherwise, convert into zoomBasedType (no support for symbols by type).
+      let symbol;
+      switch (mapSymbol.type) {
+        case "circle":
+          symbol = SharedBikeCircle(mapSymbol);
+          break;
+        case "hubAndFloatingBike":
+          symbol = HubAndFloatingBike;
+          break;
+        default:
+          symbol = GenericMarker(mapSymbol);
+      }
+
       return {
         minZoom: mapSymbol.minZoom,
-        symbol: this.getSymbol(mapSymbol)
+        symbol
       };
     });
 
@@ -183,7 +178,7 @@ class VehicleRentalOverlay extends MapLayer {
         <ZoomBasedMarkers
           entities={filteredStations}
           symbols={symbols}
-          symbolTransform={this.insertPopup}
+          symbolTransform={this.renderSymbolWithPopup}
           zoom={zoom}
         />
       </FeatureGroup>

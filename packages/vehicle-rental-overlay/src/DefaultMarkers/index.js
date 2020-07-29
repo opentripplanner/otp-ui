@@ -12,7 +12,7 @@ import * as Styled from "../styled";
 /**
  * This file contains default marker types for rental vehicles,
  * that can be used when defining the VehicleRentalOverlay's symbol prop:
- * - Circle
+ * - SharedBikeCircle
  * - GenericMarker
  * - HubAndFloatingBike
  */
@@ -29,33 +29,8 @@ const templateDefaultProps = {
 };
 
 /**
- * Helper function to create a Circle component to render entities
- * using a fixed size, fill color, and stroke color.
- * Usage: Circle({ fillColor: "#FF56BB", pixels: 4, strokeColor: "#000000" })
- */
-export const Circle = ({ fillColor = "gray", pixels, strokeColor }) => {
-  const newStrokeColor = strokeColor || fillColor;
-
-  const GeneratedMarker = ({ children, entity: station }) => (
-    <CircleMarker
-      center={[station.y, station.x]}
-      color={newStrokeColor}
-      fillColor={fillColor}
-      fillOpacity={1}
-      radius={pixels}
-      weight={1}
-    >
-      {children}
-    </CircleMarker>
-  );
-
-  GeneratedMarker.propTypes = templatePropTypes;
-  GeneratedMarker.defaultProps = templateDefaultProps;
-  return GeneratedMarker;
-};
-
-/**
- * Renders a shared bike or shared bike dock as a circle.
+ * Renders a shared bike or shared bike dock as a circle
+ * with predefined colors and size.
  */
 export const SharedBikeCircle = ({
   dockStrokeColor,

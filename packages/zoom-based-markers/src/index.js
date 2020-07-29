@@ -19,11 +19,13 @@ const getTransformedSymbol = (symbolEntry, symbolTransform) => {
   const newEntry = cloneDeep(symbolEntry);
 
   if (symbolByType) {
+    // Transform entries in symbolByType.
     Object.entries(symbolByType).forEach(([key, originalSymbol]) => {
       newEntry.symbolByType[key] = symbolTransform(originalSymbol);
     });
   }
 
+  // Transform the main (default) symbol.
   newEntry.symbol = symbolTransform(symbolEntry.symbol);
   return newEntry;
 };

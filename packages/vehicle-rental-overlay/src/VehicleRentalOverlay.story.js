@@ -5,6 +5,7 @@ import {
 } from "@opentripplanner/core-utils/lib/types";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
+import { CircleMarker } from "react-leaflet";
 import { action } from "@storybook/addon-actions";
 import { withA11y } from "@storybook/addon-a11y";
 import { withInfo } from "@storybook/addon-info";
@@ -14,11 +15,40 @@ import VehicleRentalOverlay from ".";
 import bikeRentalStations from "../__mocks__/bike-rental-stations.json";
 import carRentalStations from "../__mocks__/car-rental-stations.json";
 import eScooterStations from "../__mocks__/e-scooter-rental-stations.json";
-import { Circle, HubAndFloatingBike } from "./DefaultMarkers";
+import { HubAndFloatingBike } from "./DefaultMarkers";
 
 import "../../../node_modules/leaflet/dist/leaflet.css";
 
 const center = [45.518092, -122.671202];
+
+/**
+ * Creates an example Circle component to render entities
+ * using a fixed size, fill color, and stroke color.
+ */
+const MyCircle = ({ fillColor = "gray", pixels, strokeColor }) => {
+  const newStrokeColor = strokeColor || fillColor;
+
+  const GeneratedCircle = ({ children, entity: station }) => (
+    <CircleMarker
+      center={[station.y, station.x]}
+      color={newStrokeColor}
+      fillColor={fillColor}
+      fillOpacity={1}
+      radius={pixels}
+      weight={1}
+    >
+      {children}
+    </CircleMarker>
+  );
+  GeneratedCircle.propTypes = {
+    children: PropTypes.node,
+    entity: stationType.isRequired
+  };
+  GeneratedCircle.defaultProps = {
+    children: null
+  };
+  return GeneratedCircle;
+};
 
 const bikeMapSymbols = [
   {
@@ -45,9 +75,9 @@ const bikeSymbols = [
   {
     getType: station => (station.isFloatingBike ? "floatingBike" : "dock"),
     minZoom: 0,
-    symbol: Circle({ fillColor: "#FF2E28", pixels: 3 }),
+    symbol: MyCircle({ fillColor: "#FF2E28", pixels: 3 }),
     symbolByType: {
-      dock: Circle({
+      dock: MyCircle({
         fillColor: "#FF2E28",
         pixels: 4,
         strokeColor: "#000000"
@@ -57,9 +87,9 @@ const bikeSymbols = [
   {
     getType: station => (station.isFloatingBike ? "floatingBike" : "dock"),
     minZoom: 14,
-    symbol: Circle({ fillColor: "#FF2E28", pixels: 5 }),
+    symbol: MyCircle({ fillColor: "#FF2E28", pixels: 5 }),
     symbolByType: {
-      dock: Circle({
+      dock: MyCircle({
         fillColor: "#FF2E28",
         pixels: 6,
         strokeColor: "#000000"
@@ -122,10 +152,14 @@ const EScooterMapSymbols = [
   },
   // You can combine predefined symbols (type = "<type>")
   // and external symbols (symbol = Component<({ entity, zoom })>.
-  // (the color and pixel properties are ignored if you do so.).
+  // (the color and pixel properties are ignored if you use the symbol syntax.).
   {
     minZoom: 14,
-    symbol: Circle({ fillColor: "#F80600", pixels: 6, strokeColor: "#CCCCCC" })
+    symbol: MyCircle({
+      fillColor: "#F80600",
+      pixels: 6,
+      strokeColor: "#CCCCCC"
+    })
   },
   {
     fillColor: "#F80600",
