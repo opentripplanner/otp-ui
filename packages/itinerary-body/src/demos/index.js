@@ -21,6 +21,10 @@ export function CustomPlaceName({ place }) {
   return `🎉✨🎊 ${place.name} 🎉✨🎊`;
 }
 
+/**
+ * Custom example component for displaying the time and other info
+ * of the given leg in the time column of the ItineraryBody -> PlaceRow component.
+ */
 export function CustomTimeColumnContent({ isDestination, leg, timeOptions }) {
   const time = isDestination ? leg.endTime : leg.startTime;
 

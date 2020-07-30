@@ -60,6 +60,7 @@ const PlaceRow = ({
   return (
     <Styled.PlaceRowWrapper key={legIndex || "destination-place"}>
       <Styled.TimeColumn>
+        {/* Custom rendering of the departure/arrival time of the specified leg. */}
         <TimeColumnContent
           isDestination={isDestination}
           leg={leg}
