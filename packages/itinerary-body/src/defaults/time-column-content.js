@@ -4,13 +4,11 @@ import {
   timeOptionsType
 } from "@opentripplanner/core-utils/lib/types";
 import PropTypes from "prop-types";
-import React from "react";
 
-const TimeColumnContent = ({ isDestination, leg, timeOptions }) => {
+export default function TimeColumnContent({ isDestination, leg, timeOptions }) {
   const time = isDestination ? leg.endTime : leg.startTime;
-
-  return <>{time && formatTime(time, timeOptions)}</>;
-};
+  return time && formatTime(time, timeOptions);
+}
 
 TimeColumnContent.propTypes = {
   /** Whether this place row represents the destination */
@@ -24,5 +22,3 @@ TimeColumnContent.propTypes = {
 TimeColumnContent.defaultProps = {
   timeOptions: null
 };
-
-export default TimeColumnContent;

@@ -1,8 +1,13 @@
-import { formatDuration } from "@opentripplanner/core-utils/lib/time";
+import {
+  formatDuration,
+  formatTime
+} from "@opentripplanner/core-utils/lib/time";
 import {
   languageConfigType,
-  legType
+  legType,
+  timeOptionsType
 } from "@opentripplanner/core-utils/lib/types";
+import { Transittracker } from "@opentripplanner/icons";
 import PropTypes from "prop-types";
 import React from "react";
 import { action } from "@storybook/addon-actions";
@@ -15,6 +20,34 @@ import * as ItineraryBodyClasses from "../styled";
 export function CustomPlaceName({ place }) {
   return `🎉✨🎊 ${place.name} 🎉✨🎊`;
 }
+
+export function CustomTimeColumnContent({ isDestination, leg, timeOptions }) {
+  const time = isDestination ? leg.endTime : leg.startTime;
+
+  return (
+    <>
+      <div>
+        <Transittracker style={{ height: "1em" }} />
+        <span style={{ color: "red" }}>
+          {time && formatTime(time, timeOptions)}
+        </span>
+      </div>
+      <div style={{ fontSize: "80%" }}>
+        Delayed {leg.departureDelay}&nbsp;min.
+      </div>
+    </>
+  );
+}
+
+CustomTimeColumnContent.propTypes = {
+  isDestination: PropTypes.bool.isRequired,
+  leg: legType.isRequired,
+  timeOptions: timeOptionsType
+};
+
+CustomTimeColumnContent.defaultProps = {
+  timeOptions: null
+};
 
 export function customToRouteAbbreviation(route) {
   if (route.toString().length < 3) {

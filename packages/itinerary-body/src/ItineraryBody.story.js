@@ -16,6 +16,7 @@ import DefaultTransitLegSummary from "./defaults/transit-leg-summary";
 import {
   CustomPlaceName,
   customToRouteAbbreviation,
+  CustomTimeColumnContent,
   CustomTransitLegSummary,
   StyledItineraryBody,
   WrappedOtpRRTransitLegSubheader
@@ -63,6 +64,7 @@ class ItineraryBodyDefaultsWrapper extends Component {
       showMapButtonColumn,
       showViewTripButton,
       styledItinerary,
+      TimeColumnContent,
       toRouteAbbreviation,
       TransitLegSubheader,
       TransitLegSummary
@@ -98,6 +100,7 @@ class ItineraryBodyDefaultsWrapper extends Component {
         showLegIcon={showLegIcon}
         showMapButtonColumn={showMapButtonColumn}
         showViewTripButton={showViewTripButton}
+        TimeColumnContent={TimeColumnContent}
         toRouteAbbreviation={toRouteAbbreviation}
         TransitLegSubheader={TransitLegSubheader}
         TransitLegSummary={TransitLegSummary || DefaultTransitLegSummary}
@@ -117,6 +120,7 @@ ItineraryBodyDefaultsWrapper.propTypes = {
   showMapButtonColumn: PropTypes.bool,
   showViewTripButton: PropTypes.bool,
   styledItinerary: PropTypes.string,
+  TimeColumnContent: PropTypes.elementType,
   toRouteAbbreviation: PropTypes.func,
   TransitLegSubheader: PropTypes.elementType,
   TransitLegSummary: PropTypes.elementType
@@ -132,12 +136,13 @@ ItineraryBodyDefaultsWrapper.defaultProps = {
   showMapButtonColumn: true,
   showViewTripButton: false,
   styledItinerary: null,
+  TimeColumnContent: undefined,
   toRouteAbbreviation: r => r.toString().substr(0, 2),
   TransitLegSubheader: undefined,
   TransitLegSummary: undefined
 };
 
-function OtpRRItineraryBodyWrapper({ itinerary }) {
+function OtpRRItineraryBodyWrapper({ itinerary, TimeColumnContent }) {
   return (
     <ItineraryBodyDefaultsWrapper
       itinerary={itinerary}
@@ -150,13 +155,18 @@ function OtpRRItineraryBodyWrapper({ itinerary }) {
       showMapButtonColumn={false}
       showViewTripButton
       styledItinerary="otp-rr"
+      TimeColumnContent={TimeColumnContent}
       TransitLegSubheader={WrappedOtpRRTransitLegSubheader}
     />
   );
 }
 
 OtpRRItineraryBodyWrapper.propTypes = {
-  itinerary: itineraryType.isRequired
+  itinerary: itineraryType.isRequired,
+  TimeColumnContent: PropTypes.elementType
+};
+OtpRRItineraryBodyWrapper.defaultProps = {
+  TimeColumnContent: undefined
 };
 
 storiesOf("ItineraryBody", module)
@@ -308,4 +318,10 @@ storiesOf("ItineraryBody", module)
   .add(
     "ItineraryBody with TNC + transit itinerary with OTP-RR styling and customizations",
     () => <OtpRRItineraryBodyWrapper itinerary={tncTransitTncItinerary} />
-  );
+  )
+  .add("ItineraryBody with OTP-RR styling and custom TimeColumnContent", () => (
+    <OtpRRItineraryBodyWrapper
+      itinerary={tncTransitTncItinerary}
+      TimeColumnContent={CustomTimeColumnContent}
+    />
+  ));
