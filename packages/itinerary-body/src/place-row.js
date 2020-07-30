@@ -1,4 +1,3 @@
-import { formatTime } from "@opentripplanner/core-utils/lib/time";
 import {
   configType,
   legType,
@@ -7,6 +6,7 @@ import {
 import PropTypes from "prop-types";
 import React from "react";
 
+import DefaultTimeColumnContent from "./defaults/time-column-content";
 import AccessLegBody from "./AccessLegBody";
 import * as Styled from "./styled";
 import TransitLegBody from "./TransitLegBody";
@@ -41,6 +41,7 @@ const PlaceRow = ({
   showLegIcon,
   showMapButtonColumn,
   showViewTripButton,
+  TimeColumnContent,
   timeOptions,
   toRouteAbbreviation,
   TransitLegSubheader,
@@ -54,13 +55,16 @@ const PlaceRow = ({
   const interline = !!(!isDestination && leg.interlineWithPreviousLeg);
   const hideBorder = interline || !legIndex;
   const place = isDestination ? leg.to : leg.from;
-  const time = isDestination ? leg.endTime : leg.startTime;
 
   const { longDateFormat, timeFormat } = config.dateTime;
   return (
     <Styled.PlaceRowWrapper key={legIndex || "destination-place"}>
       <Styled.TimeColumn>
-        {time && formatTime(time, timeOptions)}
+        <TimeColumnContent
+          isDestination={isDestination}
+          leg={leg}
+          timeOptions={timeOptions}
+        />
       </Styled.TimeColumn>
       <Styled.LineColumn>
         <LineColumnContent
@@ -169,6 +173,7 @@ PlaceRow.propTypes = {
   showLegIcon: PropTypes.bool.isRequired,
   showMapButtonColumn: PropTypes.bool.isRequired,
   showViewTripButton: PropTypes.bool.isRequired,
+  TimeColumnContent: PropTypes.elementType,
   timeOptions: timeOptionsType,
   toRouteAbbreviation: PropTypes.func.isRequired,
   TransitLegSubheader: PropTypes.elementType,
@@ -180,6 +185,7 @@ PlaceRow.defaultProps = {
   followsTransit: false,
   // can be null if this is the origin place
   lastLeg: null,
+  TimeColumnContent: DefaultTimeColumnContent,
   timeOptions: null,
   TransitLegSubheader: undefined
 };

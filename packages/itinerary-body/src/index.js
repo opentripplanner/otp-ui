@@ -29,6 +29,7 @@ const ItineraryBody = ({
   showLegIcon,
   showMapButtonColumn,
   showViewTripButton,
+  TimeColumnContent,
   timeOptions,
   toRouteAbbreviation,
   TransitLegSubheader,
@@ -70,6 +71,7 @@ const ItineraryBody = ({
           showLegIcon={showLegIcon}
           showMapButtonColumn={showMapButtonColumn}
           showViewTripButton={showViewTripButton}
+          TimeColumnContent={TimeColumnContent}
           timeOptions={timeOptions}
           toRouteAbbreviation={toRouteAbbreviation}
           TransitLegSubheader={TransitLegSubheader}
@@ -170,6 +172,14 @@ ItineraryBody.propTypes = {
   showMapButtonColumn: PropTypes.bool,
   /** If true, shows the view trip button in transit leg bodies */
   showViewTripButton: PropTypes.bool,
+  /**
+   * A slot for a component that can render the content in the time column.
+   * This component is sent the following props:
+   * - isDestination - whether this place is the destination
+   * - leg - the current leg
+   * - timeOptions - options for formatting time.
+   */
+  TimeColumnContent: PropTypes.elementType,
   /** Contains the preferred format string for time display and a timezone offset */
   timeOptions: timeOptionsType,
   /** Converts a route's ID to its accepted badge abbreviation */
@@ -202,6 +212,7 @@ ItineraryBody.defaultProps = {
   showLegIcon: false,
   showMapButtonColumn: true,
   showViewTripButton: false,
+  TimeColumnContent: PlaceRow.defaultProps.TimeColumnContent,
   timeOptions: null,
   toRouteAbbreviation: noop,
   TransitLegSubheader: undefined
