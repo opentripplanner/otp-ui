@@ -196,6 +196,7 @@ async function getFirstGeocodeResult(text, geocoderConfig) {
  * for the double colon and parse the coordinates accordingly.
  */
 export function parseLocationString(value) {
+  if (!value) return null;
   const parts = value.split("::");
   const coordinates = parts[1]
     ? stringToCoords(parts[1])
