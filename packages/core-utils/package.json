@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/core-utils",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Core functionality that is shared among numerous UI components",
   "main": "lib/index.js",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
