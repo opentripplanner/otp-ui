@@ -17,8 +17,11 @@ storiesOf("LocationIcon", module)
       text: "A simple component used to show the from or to location icon"
     }
   })
-  .add("From LocationIcon", () => <LocationIcon type="from" size={25} />)
-  .add("To LocationIcon", () => <LocationIcon type="to" size={25} />)
-  .add("To LocationIcon test", () => (
+  .add("'From' LocationIcon", () => <LocationIcon type="from" size={25} />)
+  .add("'To' LocationIcon", () => <LocationIcon type="to" size={25} />)
+  .add("Generic Place LocationIcon", () => (
+    <LocationIcon type="intermediate-place-1" size={25} />
+  ))
+  .add("Custom style for 'To' LocationIcon", () => (
     <StyledLocationIcon type="to" size={25} />
   ));
