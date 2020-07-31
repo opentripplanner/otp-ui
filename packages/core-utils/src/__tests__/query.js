@@ -3,7 +3,11 @@ import {
   setDefaultTestTime
 } from "../../../../test-utils/time";
 
-import { getDefaultQuery, planParamsToQuery } from "../query";
+import {
+  getDefaultQuery,
+  parseLocationString,
+  planParamsToQuery
+} from "../query";
 
 describe("query", () => {
   afterEach(restoreDateNowBehavior);
@@ -37,6 +41,24 @@ describe("query", () => {
     it("should return default query", () => {
       setDefaultTestTime();
       expect(getDefaultQuery()).toMatchSnapshot();
+    });
+  });
+
+  describe("parseLocationString", () => {
+    it("should return null for null input", () => {
+      expect(parseLocationString(null)).toMatchSnapshot();
+    });
+
+    it("should return location for valid input", () => {
+      expect(
+        parseLocationString("123 Main St::33.983929829,-87.3892387982")
+      ).toMatchSnapshot();
+    });
+
+    it("should return location with coordinates as name for coordinates-only input", () => {
+      expect(
+        parseLocationString("33.983929829,-87.3892387982")
+      ).toMatchSnapshot();
     });
   });
 });

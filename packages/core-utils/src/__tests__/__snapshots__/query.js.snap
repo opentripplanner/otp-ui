@@ -33,6 +33,24 @@ Object {
 }
 `;
 
+exports[`query parseLocationString should return location for valid input 1`] = `
+Object {
+  "lat": 33.983929829,
+  "lon": -87.3892387982,
+  "name": "123 Main St",
+}
+`;
+
+exports[`query parseLocationString should return location with coordinates as name for coordinates-only input 1`] = `
+Object {
+  "lat": 33.983929829,
+  "lon": -87.3892387982,
+  "name": "33.98393, -87.38924",
+}
+`;
+
+exports[`query parseLocationString should return null for null input 1`] = `null`;
+
 exports[`query planParamsToQuery should parse a depart at query 1`] = `
 Object {
   "bannedRoutes": "897ABC",
