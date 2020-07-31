@@ -5,10 +5,6 @@ import { withInfo } from "@storybook/addon-info";
 import styled from "styled-components";
 import LocationIcon from ".";
 
-const StyledLocationIcon = styled(LocationIcon)`
-  color: blue;
-`;
-
 storiesOf("LocationIcon", module)
   .addDecorator(withA11y)
   .addDecorator(withInfo)
@@ -22,6 +18,9 @@ storiesOf("LocationIcon", module)
   .add("Generic Place LocationIcon", () => (
     <LocationIcon type="intermediate-place-1" size={25} />
   ))
-  .add("Custom style for 'To' LocationIcon", () => (
-    <StyledLocationIcon type="to" size={25} />
-  ));
+  .add("Custom style for 'To' LocationIcon", () => {
+    const StyledLocationIcon = styled(LocationIcon)`
+      color: blue;
+    `;
+    return <StyledLocationIcon type="to" size={25} />;
+  });
