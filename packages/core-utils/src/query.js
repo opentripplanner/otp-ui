@@ -194,8 +194,12 @@ async function getFirstGeocodeResult(text, geocoderConfig) {
 /**
  * OTP allows passing a location in the form '123 Main St::lat,lon', so we check
  * for the double colon and parse the coordinates accordingly.
+ * @param  {string} value - query param for place described above
+ * @return {Location} - location or null if the value is falsey or the parsed
+ *                      coordinates do not result in both a lat and lon
  */
 export function parseLocationString(value) {
+  if (!value) return null;
   const parts = value.split("::");
   const coordinates = parts[1]
     ? stringToCoords(parts[1])
