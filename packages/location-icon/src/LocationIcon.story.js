@@ -5,10 +5,6 @@ import { withInfo } from "@storybook/addon-info";
 import styled from "styled-components";
 import LocationIcon from ".";
 
-const StyledLocationIcon = styled(LocationIcon)`
-  color: blue;
-`;
-
 storiesOf("LocationIcon", module)
   .addDecorator(withA11y)
   .addDecorator(withInfo)
@@ -17,8 +13,14 @@ storiesOf("LocationIcon", module)
       text: "A simple component used to show the from or to location icon"
     }
   })
-  .add("From LocationIcon", () => <LocationIcon type="from" size={25} />)
-  .add("To LocationIcon", () => <LocationIcon type="to" size={25} />)
-  .add("To LocationIcon test", () => (
-    <StyledLocationIcon type="to" size={25} />
-  ));
+  .add("'From' LocationIcon", () => <LocationIcon type="from" size={25} />)
+  .add("'To' LocationIcon", () => <LocationIcon type="to" size={25} />)
+  .add("Generic Place LocationIcon", () => (
+    <LocationIcon type="intermediate-place-1" size={25} />
+  ))
+  .add("Custom style for 'To' LocationIcon", () => {
+    const StyledLocationIcon = styled(LocationIcon)`
+      color: blue;
+    `;
+    return <StyledLocationIcon type="to" size={25} />;
+  });
