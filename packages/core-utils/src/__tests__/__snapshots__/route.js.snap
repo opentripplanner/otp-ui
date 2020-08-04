@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`util > itinerary routeComparator should prioritize routes with integer shortNames over alphabetic shortNames 1`] = `
+exports[`util > route routeComparator should prioritize routes with integer shortNames over alphabetic shortNames 1`] = `
 Array [
   Object {
     "longName": "A-line",
@@ -17,7 +17,7 @@ Array [
 ]
 `;
 
-exports[`util > itinerary routeComparator should prioritize routes with shortNames over those with just longNames 1`] = `
+exports[`util > route routeComparator should prioritize routes with shortNames over those with just longNames 1`] = `
 Array [
   Object {
     "longName": "B-line",
@@ -33,7 +33,7 @@ Array [
 ]
 `;
 
-exports[`util > itinerary routeComparator should prioritize routes with valid sortOrder 1`] = `
+exports[`util > route routeComparator should prioritize routes with valid sortOrder 1`] = `
 Array [
   Object {
     "longName": "Around town",
@@ -50,7 +50,7 @@ Array [
 ]
 `;
 
-exports[`util > itinerary routeComparator should sort based off of route type 1`] = `
+exports[`util > route routeComparator should sort based off of route type 1`] = `
 Array [
   Object {
     "longName": "Yellow line Subway",
@@ -67,7 +67,7 @@ Array [
 ]
 `;
 
-exports[`util > itinerary routeComparator should sort routes based off of integer shortName 1`] = `
+exports[`util > route routeComparator should sort routes based off of integer shortName 1`] = `
 Array [
   Object {
     "longName": "Loop route",
@@ -84,7 +84,7 @@ Array [
 ]
 `;
 
-exports[`util > itinerary routeComparator should sort routes based off of longNames 1`] = `
+exports[`util > route routeComparator should sort routes based off of longNames 1`] = `
 Array [
   Object {
     "longName": "Express route",
@@ -101,7 +101,7 @@ Array [
 ]
 `;
 
-exports[`util > itinerary routeComparator should sort routes based off of shortNames 1`] = `
+exports[`util > route routeComparator should sort routes based off of shortNames 1`] = `
 Array [
   Object {
     "longName": "A-line",
@@ -118,7 +118,7 @@ Array [
 ]
 `;
 
-exports[`util > itinerary routeComparator should sort routes based off of sortOrder 1`] = `
+exports[`util > route routeComparator should sort routes based off of sortOrder 1`] = `
 Array [
   Object {
     "longName": "Around town",
@@ -135,7 +135,7 @@ Array [
 ]
 `;
 
-exports[`util > itinerary routeComparator should sort routes on all of the criteria at once 1`] = `
+exports[`util > route routeComparator should sort routes on all of the criteria at once 1`] = `
 Array [
   Object {
     "longName": "Yellow line Subway",
@@ -229,7 +229,7 @@ Array [
 ]
 `;
 
-exports[`util > itinerary routeComparator should sort routes with alphanumeric shortNames 1`] = `
+exports[`util > route routeComparator should sort routes with alphanumeric shortNames 1`] = `
 Array [
   Object {
     "longName": "Xpress route C",
