@@ -28,6 +28,13 @@ const commonCompanies = [
     id: "LYFT",
     label: "Lyft",
     modes: "CAR_HAIL"
+  },
+  // The company below does not have an icon in @opentripplanner/icons
+  // but that should not cause a UI crash or prevent anything else from rendering.
+  {
+    id: "UNKNOWN_BIKESHARE",
+    label: "Unknown Bikeshare",
+    modes: "BICYCLE_RENT"
   }
 ];
 
