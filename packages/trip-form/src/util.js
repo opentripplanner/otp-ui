@@ -275,7 +275,7 @@ export function getCompaniesOptions(companies, modes, selectedCompanies) {
       selected: selectedCompanies.includes(comp.id),
       text: (
         <span>
-          <CompanyIcon /> {comp.label}
+          {CompanyIcon && <CompanyIcon />} {comp.label}
         </span>
       ),
       title: comp.label
