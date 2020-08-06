@@ -69,7 +69,7 @@ export const zoomBasedSymbolType = PropTypes.shape({
   /**
    * The symbol-representing component to draw, with the signature
    * ({ entity: object, zoom: number }) => Element
-   * where entity should contain coordinates information for placement on the map.
+   * where entity must have an id attribute and contain coordinates information for placement on the map.
    */
   symbol: PropTypes.elementType.isRequired,
   /**

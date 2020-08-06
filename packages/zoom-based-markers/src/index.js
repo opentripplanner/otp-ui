@@ -63,19 +63,19 @@ const ZoomBasedMarkers = ({ entities, symbols, symbolTransform, zoom }) => {
     // hence the null checks before the return statements below.
 
     if (symbolByType && getType) {
-      return entities.map((entity, index) => {
+      return entities.map(entity => {
         const EntitySymbol = symbolByType[getType(entity)] || DefaultSymbol;
         return (
           EntitySymbol && (
-            <EntitySymbol entity={entity} key={index} zoom={zoom} />
+            <EntitySymbol entity={entity} key={entity.id} zoom={zoom} />
           )
         );
       });
     }
 
     if (DefaultSymbol) {
-      return entities.map((entity, index) => (
-        <DefaultSymbol entity={entity} key={index} zoom={zoom} />
+      return entities.map(entity => (
+        <DefaultSymbol entity={entity} key={entity.id} zoom={zoom} />
       ));
     }
   }
@@ -86,9 +86,13 @@ const ZoomBasedMarkers = ({ entities, symbols, symbolTransform, zoom }) => {
 ZoomBasedMarkers.propTypes = {
   /**
    * A list of objects (entities) to be rendered on the map.
-   * Entities should contain coordinates information for correct placement.
+   * Entities must have an id attribute and contain coordinates information for correct placement.
    */
-  entities: PropTypes.arrayOf(PropTypes.shape()),
+  entities: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired
+    })
+  ),
   /**
    * A list of symbols that represent the entities at the associated zoom level.
    * The symbols must be able to obtain the position of the specified entities.
