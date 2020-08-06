@@ -51,16 +51,16 @@ export const languageConfigType = PropTypes.shape({
 });
 
 /**
- * Defines which symbol to render based on a zoom level, and optionally by mode.
+ * Defines which symbol to render based on a zoom level, and optionally by entity type.
  * (Only one symbol is rendered fo any zoom level.)
  */
 export const zoomBasedSymbolType = PropTypes.shape({
   /**
    * A function with the signature (entity: object) => string
-   * that extracts a mode from an entity.
-   * symbolByMode and getMode must be either be both specified or both ommited.
+   * that determines the type of an entity.
+   * symbolByType and getType must be either be both specified or both ommited.
    */
-  getMode: PropTypes.func,
+  getType: PropTypes.func,
   /**
    * The zoom level beginning at which the marker is drawn,
    * unless another marker with a higher minZoom is met.
@@ -73,12 +73,12 @@ export const zoomBasedSymbolType = PropTypes.shape({
    */
   symbol: PropTypes.elementType.isRequired,
   /**
-   * The symbol-representing component to draw for each mode,
-   * with the same signature as symbol. If a mode returned by getMode() is not listed,
-   * then symbol will be rendered by default.
-   * symbolByMode and getMode must be either be both specified or both ommited.
+   * The symbol-representing component to draw for each entity type,
+   * with the same signature as symbol. If a type returned by getType() is not listed,
+   * then the component defined in the 'symbol' attribute will be rendered by default.
+   * symbolByType and getType must be either be both specified or both ommited.
    */
-  symbolByMode: PropTypes.objectOf(PropTypes.elementType)
+  symbolByType: PropTypes.objectOf(PropTypes.elementType)
 });
 
 /** describes the objects from the real-time vehicle service */
