@@ -17,11 +17,6 @@ if (filteredPackages.length === 0) {
   console.log("Updating all internal @opentripplanner dependencies!");
 }
 
-function shouldUpdatePackage(pkg) {
-  if (filteredPackages.length === 0) return true;
-  return filteredPackages.indexOf(pkg) > -1;
-}
-
 /**
  * Updates all internal @opentripplanner/* dependencies in each package's
  * package.json to the latest version.
@@ -29,14 +24,16 @@ function shouldUpdatePackage(pkg) {
 async function main() {
   // iterate through all packages to build up dependency tree
   const packages = await fs.readdir("./packages");
+  // create a lookup of parsed package.json files organized by package name
   const pkgLookup = {};
   await Promise.all(
     packages.map(async pkg => {
       // skip paths that aren't directories
-      if (!(await fs.stat(`./packages/${pkg}`)).isDirectory()) return;
-      pkgLookup[pkg] = JSON.parse(
-        await fs.readFile(`./packages/${pkg}/package.json`)
-      );
+      if ((await fs.stat(`./packages/${pkg}`)).isDirectory()) {
+        pkgLookup[pkg] = JSON.parse(
+          await fs.readFile(`./packages/${pkg}/package.json`)
+        );
+      }
     })
   );
   // iterate again and replace all internal package dependencies that have a
@@ -46,19 +43,30 @@ async function main() {
       // iterate through lines of package.json and update dependencies as needed
       const newPackageJsonLines = [];
       const pkgPackageJsonFile = `./packages/${pkg}/package.json`;
+
+      // read package's package.json file line-by-line
       const pkgContents = await fs.readFile(pkgPackageJsonFile, "UTF-8");
       pkgContents.split("\n").forEach(line => {
+        // try to find a match of an internal dependency
         const match = line.match(
           /\s*"@opentripplanner\/([\w-]*)": "\^?([\d.]*)"/
         );
         if (match) {
+          // match found, check if the internal dependency has a more recent
+          // version
           const internalPackage = match[1];
           const internalDependencyPackageVersion = match[2];
           const latestPackageVersion = pkgLookup[internalPackage].version;
           if (
-            shouldUpdatePackage(internalPackage) &&
+            // check if there are any filtered packages. If not, then update all
+            // applicable dependencies, otherwise, only update those listed in
+            // the cli args
+            (filteredPackages.length === 0 ||
+              filteredPackages.indexOf(pkg) > -1) &&
             semver.lt(internalDependencyPackageVersion, latestPackageVersion)
           ) {
+            // a more recent version exists, update line in the package.json
+            // file
             line = line.replace(
               internalDependencyPackageVersion,
               latestPackageVersion
@@ -67,6 +75,8 @@ async function main() {
         }
         newPackageJsonLines.push(line);
       });
+
+      // write updated file contents
       await fs.writeFile(pkgPackageJsonFile, newPackageJsonLines.join("\n"));
     })
   );
