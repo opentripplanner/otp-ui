@@ -1,15 +1,18 @@
 import * as BaseMapStyled from "@opentripplanner/base-map/lib/styled";
-import {
-  languageConfigType,
-  leafletPathType,
-  stopLayerStopType
-} from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { CircleMarker, Popup } from "react-leaflet";
 
 import * as Styled from "./styled";
+
+const {
+  languageConfigType,
+  leafletPathType,
+  stopLayerStopType,
+  transitOperatorType
+} = coreUtils.types;
 
 export default class StopMarker extends Component {
   onClickView = () => {
@@ -32,9 +35,20 @@ export default class StopMarker extends Component {
   }
 
   render() {
-    const { languageConfig, leafletPath, radius, stop } = this.props;
+    const {
+      languageConfig,
+      leafletPath,
+      radius,
+      stop,
+      transitOperators
+    } = this.props;
     const { id, name, lat, lon } = stop;
     const idArr = id.split(":");
+    const transitOperator = coreUtils.route.getTransitOperatorFromId(
+      idArr[0],
+      transitOperators
+    );
+    const agencyName = transitOperator ? transitOperator.name : "?";
 
     return (
       <CircleMarker
@@ -47,7 +61,7 @@ export default class StopMarker extends Component {
           <BaseMapStyled.MapOverlayPopup>
             <BaseMapStyled.PopupTitle>{name}</BaseMapStyled.PopupTitle>
             <BaseMapStyled.PopupRow>
-              <b>Agency:</b> {idArr[0]}
+              <b>Agency:</b> {agencyName}
             </BaseMapStyled.PopupRow>
             <BaseMapStyled.PopupRow>
               <span>
@@ -79,7 +93,8 @@ StopMarker.propTypes = {
   radius: PropTypes.number,
   setLocation: PropTypes.func.isRequired,
   setViewedStop: PropTypes.func.isRequired,
-  stop: stopLayerStopType.isRequired
+  stop: stopLayerStopType.isRequired,
+  transitOperators: PropTypes.arrayOf(transitOperatorType).isRequired
 };
 
 StopMarker.defaultProps = {
