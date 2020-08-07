@@ -7,11 +7,11 @@ import {
   legType,
   timeOptionsType
 } from "@opentripplanner/core-utils/lib/types";
-import { Transittracker } from "@opentripplanner/icons";
 import PropTypes from "prop-types";
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import styled from "styled-components";
+import { ExclamationTriangle } from "styled-icons/fa-solid";
 
 import ItineraryBody from "..";
 import OtpRRTransitLegSubheader from "../otp-react-redux/transit-leg-subheader";
@@ -22,7 +22,7 @@ export function CustomPlaceName({ place }) {
 }
 
 /**
- * Custom example component for displaying the time and other info
+ * Custom component, for illustration purposes only, for displaying the time and other info
  * of the given leg in the time column of the ItineraryBody -> PlaceRow component.
  */
 export function CustomTimeColumnContent({ isDestination, leg, timeOptions }) {
@@ -31,13 +31,12 @@ export function CustomTimeColumnContent({ isDestination, leg, timeOptions }) {
   return (
     <>
       <div>
-        <Transittracker style={{ height: "1em", marginRight: "6px" }} />
         <span style={{ color: "red" }}>
           {time && formatTime(time, timeOptions)}
         </span>
       </div>
-      <div style={{ fontSize: "80%" }}>
-        Delayed {leg.departureDelay}&nbsp;min.
+      <div style={{ fontSize: "80%", lineHeight: "1em" }}>
+        <ExclamationTriangle style={{ height: "1em" }} /> Delayed xx&nbsp;min.
       </div>
     </>
   );
