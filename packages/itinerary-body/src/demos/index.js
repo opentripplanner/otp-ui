@@ -31,7 +31,7 @@ export function CustomTimeColumnContent({ isDestination, leg, timeOptions }) {
   return (
     <>
       <div>
-        <Transittracker style={{ height: "1em" }} />
+        <Transittracker style={{ height: "1em", marginRight: "6px" }} />
         <span style={{ color: "red" }}>
           {time && formatTime(time, timeOptions)}
         </span>
