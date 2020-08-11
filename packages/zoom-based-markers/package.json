@@ -1,9 +1,9 @@
 {
-  "name": "@opentripplanner/stops-overlay",
-  "version": "1.0.1",
-  "description": "A map overlay to show transit stops",
+  "name": "@opentripplanner/zoom-based-markers",
+  "version": "1.0.0",
+  "description": "A component that renders objects differently based on a zoom level.",
   "main": "lib/index.js",
-  "author": "Evan Siroky",
+  "author": "Binh Dam",
   "license": "MIT",
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "scripts": {
@@ -16,16 +16,8 @@
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
-  "dependencies": {
-    "@opentripplanner/core-utils": "^1.2.0",
-    "@opentripplanner/from-to-location-picker": "^1.0.0",
-    "@opentripplanner/zoom-based-markers": "^1.0.0"
-  },
-  "devDependencies": {
-    "styled-icons": "^9.1.0"
-  },
   "peerDependencies": {
-    "@opentripplanner/base-map": "^1.0.0",
+    "@opentripplanner/base-map": "^1.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-leaflet": "^2.6.1",

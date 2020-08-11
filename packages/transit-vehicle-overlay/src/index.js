@@ -1,10 +1,16 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import { FeatureGroup } from "react-leaflet";
 
-import { transitVehicleType } from "@opentripplanner/core-utils/lib/types";
-import VehicleGeometry from "./components/VehicleGeometry";
+import {
+  transitVehicleType,
+  zoomBasedSymbolType
+} from "@opentripplanner/core-utils/lib/types";
+import ZoomBasedMarkers from "@opentripplanner/zoom-based-markers";
+
+import { Circle, CircledVehicle } from "./components/markers/ModeCircles";
 import RouteGeometry from "./components/RouteGeometry";
+import VehicleGeometry from "./components/VehicleGeometry";
 import * as utils from "./utils";
 
 /**
@@ -14,30 +20,64 @@ import * as utils from "./utils";
  */
 export default function TransitVehicleOverlay(props) {
   const {
-    name,
-    visible,
-    zoom,
     center,
-    vehicleList,
+    name,
     selectedVehicle,
     showOnlyTracked,
+    symbols,
+    vehicleList,
+    visible,
+    zoom,
 
     // VehicleGeometry
-    onVehicleClicked,
-    onRecenterMap,
-    MarkerSlot,
-    PopupSlot,
-    TooltipSlot,
     color,
     highlightColor,
+    onRecenterMap,
+    onVehicleClicked,
+    PopupSlot,
+    TooltipSlot,
 
     // RouteGeometry
-    pattern,
-    lowlightColor, // note: highlightColor above
     highlight,
-    lowlight
+    lowlight,
+    lowlightColor, // note: highlightColor above
+    pattern
   } = props;
   utils.linterIgnoreTheseProps(name, visible, center);
+
+  /**
+   * This helper method will be passed to the ZoomBasedMarkers symbolTranform prop.
+   * It wraps symbols originally defined in the symbols prop
+   * with the VehicleGeometry component that handles the leaflet plumbing,
+   * and forwards to VehicleGeometry the relevant props from TransitVehicleOverlay.
+   */
+  const makeVehicleGeometryWrapper = Symbol => {
+    const VehicleGeometryWrapper = ({ entity: vehicle, zoom: renderZoom }) => {
+      return (
+        <VehicleGeometry
+          color={color}
+          highlightColor={highlightColor}
+          isTracked={
+            selectedVehicle && selectedVehicle.tripId === vehicle.tripId
+          }
+          MarkerSlot={Symbol}
+          onRecenterMap={onRecenterMap}
+          onVehicleClicked={onVehicleClicked}
+          PopupSlot={PopupSlot}
+          TooltipSlot={TooltipSlot}
+          vehicle={vehicle}
+          zoom={renderZoom}
+        />
+      );
+    };
+
+    VehicleGeometryWrapper.propTypes = {
+      entity: transitVehicleType.isRequired,
+      zoom: PropTypes.number.isRequired
+    };
+
+    return VehicleGeometryWrapper;
+  };
 
   // when a vehicle is selected, pre-determine whether to show pattern and which vehicles
   let vl = vehicleList;
@@ -52,31 +92,24 @@ export default function TransitVehicleOverlay(props) {
 
   return (
     <FeatureGroup>
-      {vl &&
-        vl.map(v => (
-          <VehicleGeometry
-            zoom={zoom}
-            key={v.id}
-            vehicle={v}
-            isTracked={selectedVehicle && selectedVehicle.tripId === v.tripId}
-            onVehicleClicked={onVehicleClicked}
-            onRecenterMap={onRecenterMap}
-            MarkerSlot={MarkerSlot}
-            PopupSlot={PopupSlot}
-            TooltipSlot={TooltipSlot}
-            color={color}
-            highlightColor={highlightColor}
-          />
-        ))}
+      {vl && symbols && (
+        <ZoomBasedMarkers
+          entities={vl}
+          symbols={symbols}
+          symbolTransform={makeVehicleGeometryWrapper}
+          zoom={zoom}
+        />
+      )}
+
       {showPattern && (
         <RouteGeometry
-          zoom={zoom}
-          selectedVehicle={selectedVehicle}
-          pattern={pattern}
-          highlightColor={highlightColor}
-          lowlightColor={lowlightColor}
           highlight={highlight}
+          highlightColor={highlightColor}
           lowlight={lowlight}
+          lowlightColor={lowlightColor}
+          pattern={pattern}
+          selectedVehicle={selectedVehicle}
+          zoom={zoom}
         />
       )}
     </FeatureGroup>
@@ -105,6 +138,13 @@ TransitVehicleOverlay.propTypes = {
   /** showOnlyTracked will hide all other vehicles, except the tracked vehicle */
   showOnlyTracked: PropTypes.bool,
 
+  /**
+   * A list of symbol definitions for the vehicles to be rendered,
+   * where symbols are custom leaflet marker components with the signature
+   * ({vehicle: object, onVehicleClicked: (vehicle) => {}, children: Element}) => Element.
+   */
+  symbols: PropTypes.arrayOf(zoomBasedSymbolType),
+
   // ////// VehicleGeometry types ////////
 
   /** callback to return vehicle record when a marker is clicked */
@@ -112,9 +152,6 @@ TransitVehicleOverlay.propTypes = {
 
   /** map recenter option (e.g., panTo() or flyTo(), etc...) when tracked vehicle moves */
   onRecenterMap: VehicleGeometry.propTypes.onRecenterMap,
-
-  /** customizable markers used to represent the vehicles (see src/components/markers) */
-  MarkerSlot: VehicleGeometry.propTypes.MarkerSlot,
 
   /** customizable marker popup (see src/components/popups) */
   PopupSlot: VehicleGeometry.propTypes.PopupSlot,
@@ -151,13 +188,22 @@ TransitVehicleOverlay.defaultProps = {
   vehicleList: null,
   selectedVehicle: null,
   showOnlyTracked: false,
+  symbols: [
+    {
+      minZoom: 0,
+      symbol: Circle
+    },
+    {
+      minZoom: 14,
+      symbol: CircledVehicle
+    }
+  ],
 
   // VehicleGeometry defaults
   color: VehicleGeometry.defaultProps.color,
   highlightColor: VehicleGeometry.defaultProps.highlightColor,
   onVehicleClicked: VehicleGeometry.defaultProps.onVehicleClicked,
   onRecenterMap: VehicleGeometry.defaultProps.onRecenterMap,
-  MarkerSlot: VehicleGeometry.defaultProps.MarkerSlot,
   PopupSlot: VehicleGeometry.defaultProps.PopupSlot,
   TooltipSlot: VehicleGeometry.defaultProps.TooltipSlot,
 

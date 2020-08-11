@@ -50,6 +50,37 @@ export const languageConfigType = PropTypes.shape({
   stopViewer: PropTypes.string
 });
 
+/**
+ * Defines which symbol to render based on a zoom level, and optionally by entity type.
+ * (Only one symbol is rendered fo any zoom level.)
+ */
+export const zoomBasedSymbolType = PropTypes.shape({
+  /**
+   * A function with the signature (entity: object) => string
+   * that determines the type of an entity.
+   * symbolByType and getType must be either be both specified or both ommited.
+   */
+  getType: PropTypes.func,
+  /**
+   * The zoom level beginning at which the marker is drawn,
+   * unless another marker with a higher minZoom is met.
+   */
+  minZoom: PropTypes.number.isRequired,
+  /**
+   * The symbol-representing component to draw, with the signature
+   * ({ entity: object, zoom: number }) => Element
+   * where entity must have an id attribute and contain coordinates information for placement on the map.
+   */
+  symbol: PropTypes.elementType.isRequired,
+  /**
+   * The symbol-representing component to draw for each entity type,
+   * with the same signature as symbol. If a type returned by getType() is not listed,
+   * then the component defined in the 'symbol' attribute will be rendered by default.
+   * symbolByType and getType must be either be both specified or both ommited.
+   */
+  symbolByType: PropTypes.objectOf(PropTypes.elementType)
+});
+
 /** describes the objects from the real-time vehicle service */
 export const transitVehicleType = PropTypes.shape({
   routeShortName: PropTypes.string,
@@ -72,14 +103,16 @@ export const transitVehicleType = PropTypes.shape({
 });
 
 export const vehicleRentalMapOverlaySymbolsType = PropTypes.arrayOf(
-  PropTypes.shape({
-    dockStrokeColor: PropTypes.string,
-    fillColor: PropTypes.string,
-    maxZoom: PropTypes.number.isRequired,
-    minZoom: PropTypes.number.isRequired,
-    pixels: PropTypes.number,
-    type: PropTypes.string.isRequired
-  }).isRequired
+  PropTypes.oneOfType([
+    PropTypes.shape({
+      dockStrokeColor: PropTypes.string,
+      fillColor: PropTypes.string,
+      minZoom: PropTypes.number.isRequired,
+      pixels: PropTypes.number,
+      type: PropTypes.string.isRequired
+    }),
+    zoomBasedSymbolType
+  ]).isRequired
 );
 
 /**

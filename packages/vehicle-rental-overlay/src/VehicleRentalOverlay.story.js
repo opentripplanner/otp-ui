@@ -1,10 +1,11 @@
 import BaseMap from "@opentripplanner/base-map";
 import {
-  vehicleRentalMapOverlaySymbolsType,
-  stationType
+  stationType,
+  vehicleRentalMapOverlaySymbolsType
 } from "@opentripplanner/core-utils/lib/types";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
+import { CircleMarker } from "react-leaflet";
 import { action } from "@storybook/addon-actions";
 import { withA11y } from "@storybook/addon-a11y";
 import { withInfo } from "@storybook/addon-info";
@@ -14,16 +15,45 @@ import VehicleRentalOverlay from ".";
 import bikeRentalStations from "../__mocks__/bike-rental-stations.json";
 import carRentalStations from "../__mocks__/car-rental-stations.json";
 import eScooterStations from "../__mocks__/e-scooter-rental-stations.json";
+import { HubAndFloatingBike } from "./DefaultMarkers";
 
 import "../../../node_modules/leaflet/dist/leaflet.css";
 
 const center = [45.518092, -122.671202];
 
+/**
+ * Creates an example Circle component to render entities
+ * using a fixed size, fill color, and stroke color.
+ */
+const MyCircle = ({ fillColor = "gray", pixels, strokeColor }) => {
+  const newStrokeColor = strokeColor || fillColor;
+
+  const GeneratedCircle = ({ children, entity: station }) => (
+    <CircleMarker
+      center={[station.y, station.x]}
+      color={newStrokeColor}
+      fillColor={fillColor}
+      fillOpacity={1}
+      radius={pixels}
+      weight={1}
+    >
+      {children}
+    </CircleMarker>
+  );
+  GeneratedCircle.propTypes = {
+    children: PropTypes.node,
+    entity: stationType.isRequired
+  };
+  GeneratedCircle.defaultProps = {
+    children: null
+  };
+  return GeneratedCircle;
+};
+
 const bikeMapSymbols = [
   {
     dockStrokeColor: "#000000",
     fillColor: "#FF2E28",
-    maxZoom: 13,
     minZoom: 0,
     pixels: 4,
     type: "circle"
@@ -31,35 +61,61 @@ const bikeMapSymbols = [
   {
     dockStrokeColor: "#000000",
     fillColor: "#FF2E28",
-    maxZoom: 17,
     minZoom: 14,
     pixels: 6,
     type: "circle"
   },
   {
-    maxZoom: 999,
     minZoom: 18,
     type: "hubAndFloatingBike"
+  }
+];
+// Bike symbols using new symbols prop.
+const bikeSymbols = [
+  {
+    getType: station => (station.isFloatingBike ? "floatingBike" : "dock"),
+    minZoom: 0,
+    symbol: MyCircle({ fillColor: "#FF2E28", pixels: 3 }),
+    symbolByType: {
+      dock: MyCircle({
+        fillColor: "#FF2E28",
+        pixels: 4,
+        strokeColor: "#000000"
+      })
+    }
+  },
+  {
+    getType: station => (station.isFloatingBike ? "floatingBike" : "dock"),
+    minZoom: 14,
+    symbol: MyCircle({ fillColor: "#FF2E28", pixels: 5 }),
+    symbolByType: {
+      dock: MyCircle({
+        fillColor: "#FF2E28",
+        pixels: 6,
+        strokeColor: "#000000"
+      })
+    }
+  },
+  {
+    minZoom: 18,
+    symbol: HubAndFloatingBike
   }
 ];
 const carMapSymbols = [
   {
     fillColor: "#009cde",
-    maxZoom: 13,
     minZoom: 0,
     pixels: 4,
     type: "circle"
   },
   {
     fillColor: "#009cde",
-    maxZoom: 17,
     minZoom: 14,
     pixels: 6,
     type: "circle"
   },
   {
     fillColor: "#009cde",
-    maxZoom: 999,
     minZoom: 18,
     type: "marker"
   }
@@ -89,23 +145,24 @@ const configCompanies = [
 const EScooterMapSymbols = [
   {
     fillColor: "#F80600",
-    maxZoom: 13,
     minZoom: 0,
     pixels: 4,
     strokeColor: "#CCCCCC",
     type: "circle"
   },
+  // You can combine predefined symbols (type = "<type>")
+  // and external symbols (symbol = Component<({ entity, zoom })>.
+  // (the color and pixel properties are ignored if you use the symbol syntax.).
   {
-    fillColor: "#F80600",
-    maxZoom: 17,
     minZoom: 14,
-    pixels: 6,
-    strokeColor: "#CCCCCC",
-    type: "circle"
+    symbol: MyCircle({
+      fillColor: "#F80600",
+      pixels: 6,
+      strokeColor: "#CCCCCC"
+    })
   },
   {
     fillColor: "#F80600",
-    maxZoom: 999,
     minZoom: 18,
     type: "marker"
   }
@@ -159,14 +216,15 @@ class ZoomControlledMapWithVehicleRentalOverlay extends Component {
 ZoomControlledMapWithVehicleRentalOverlay.propTypes = {
   companies: PropTypes.arrayOf(PropTypes.string.isRequired),
   getStationName: PropTypes.func,
-  mapSymbols: vehicleRentalMapOverlaySymbolsType.isRequired,
+  mapSymbols: vehicleRentalMapOverlaySymbolsType,
   refreshVehicles: PropTypes.func.isRequired,
   stations: PropTypes.arrayOf(stationType.isRequired).isRequired
 };
 
 ZoomControlledMapWithVehicleRentalOverlay.defaultProps = {
   companies: null,
-  getStationName: undefined
+  getStationName: undefined,
+  mapSymbols: null
 };
 
 function customStationName(_, station) {
@@ -184,6 +242,17 @@ storiesOf("VehicleRentalOverlay", module)
       stations={bikeRentalStations}
     />
   ))
+  .add(
+    "VehicleRentalOverlay with rental bicycles using new symbols prop",
+    () => (
+      <ZoomControlledMapWithVehicleRentalOverlay
+        companies={["BIKETOWN"]}
+        refreshVehicles={action("refresh bicycles")}
+        mapSymbols={bikeSymbols}
+        stations={bikeRentalStations}
+      />
+    )
+  )
   .add("VehicleRentalOverlay with rental cars", () => (
     <ZoomControlledMapWithVehicleRentalOverlay
       companies={["CAR2GO"]}
