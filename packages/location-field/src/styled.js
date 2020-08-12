@@ -17,10 +17,13 @@ export const ClearBoth = styled.div`
   clear: both;
 `;
 
-export const Dropdown = ({ children, open, onToggle, title }) => {
+export const Dropdown = ({ children, locationType, open, onToggle, title }) => {
+  const dropdownButtonAriaLabel = `List the suggested ${locationType} locations as you type`;
   return (
     <DropdownContainer>
-      <DropdownButton onClick={onToggle}>{title}</DropdownButton>
+      <DropdownButton aria-label={dropdownButtonAriaLabel} onClick={onToggle}>
+        {title}
+      </DropdownButton>
       {open && <MenuItemList>{children}</MenuItemList>}
     </DropdownContainer>
   );
@@ -28,6 +31,7 @@ export const Dropdown = ({ children, open, onToggle, title }) => {
 
 Dropdown.propTypes = {
   children: PropTypes.node.isRequired,
+  locationType: PropTypes.string.isRequired,
   open: PropTypes.bool.isRequired,
   onToggle: PropTypes.func,
   title: PropTypes.node.isRequired
