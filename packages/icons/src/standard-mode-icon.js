@@ -5,6 +5,7 @@ import {
   StandardBike,
   StandardBus,
   StandardGondola,
+  StandardRail,
   StandardTram,
   StandardWalk
 } from "./standard";
@@ -39,6 +40,7 @@ function StandardModeIcon({ mode, ...props }) {
     case "micromobility_rent":
       return <ClassicMicromobility {...props} />;
     case "rail":
+      return <StandardRail {...props} />;
     case "subway":
     case "tram":
       return <StandardTram {...props} />;
