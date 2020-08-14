@@ -530,15 +530,17 @@ class LocationField extends Component {
     this.menuItemCount = itemIndex;
 
     /** the text input element * */
+    const defaultPlaceholder = inputPlaceholder || locationType;
     const placeholder =
       currentPosition && currentPosition.fetching
         ? "Fetching location..."
-        : inputPlaceholder || locationType;
+        : defaultPlaceholder;
     const textControl = (
       <Styled.Input
         ref={ref => {
           this.inputRef = ref;
         }}
+        aria-label={defaultPlaceholder}
         autoFocus={autoFocus}
         className={this.getFormControlClassname()}
         value={value}
@@ -554,7 +556,10 @@ class LocationField extends Component {
     const clearButton =
       showClearButton && location ? (
         <Styled.InputGroupAddon>
-          <Styled.Button onClick={this.onClearButtonClick}>
+          <Styled.Button
+            aria-label="Clear location"
+            onClick={this.onClearButtonClick}
+          >
             <Times size={13} />
           </Styled.Button>
         </Styled.InputGroupAddon>
@@ -591,6 +596,7 @@ class LocationField extends Component {
         <Styled.InputGroup>
           {/* location field icon -- also serves as dropdown anchor */}
           <Styled.Dropdown
+            locationType={locationType}
             open={menuVisible}
             onToggle={this.onDropdownToggle}
             title={<LocationIconComponent locationType={locationType} />}
