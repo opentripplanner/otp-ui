@@ -173,7 +173,7 @@ ItineraryBody.propTypes = {
   /** If true, shows the view trip button in transit leg bodies */
   showViewTripButton: PropTypes.bool,
   /**
-   * A slot for a component that can render the content in the time column.
+   * A slot for a component that can render the content in the time column portion of ItineraryBody.
    * This component is sent the following props:
    * - isDestination - whether this place is the destination
    * - leg - the current leg
