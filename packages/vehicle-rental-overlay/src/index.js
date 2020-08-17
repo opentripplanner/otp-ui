@@ -203,8 +203,8 @@ VehicleRentalOverlay.props = {
    */
   getStationName: PropTypes.func,
   /**
-   * A configuration of what map markers or symbols to show at various zoom
-   * levels.
+   * A configuration of what map markers or symbols to show at various
+   * zoom levels.
    */
   mapSymbols: vehicleRentalMapOverlaySymbolsType,
   /**
