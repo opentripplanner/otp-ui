@@ -95,7 +95,7 @@ StopsOverlay.propTypes = {
    */
   stops: PropTypes.arrayOf(utils.types.stopLayerStopType).isRequired,
   /**
-   * A list of symbol definitions for the stops to be rendered at which zoom.
+   * A list of symbol definitions for the stops to be rendered at specific zoom levels.
    */
   symbols: PropTypes.arrayOf(utils.types.zoomBasedSymbolType).isRequired
 };

@@ -530,6 +530,7 @@ class LocationField extends Component {
     this.menuItemCount = itemIndex;
 
     /** the text input element * */
+    // Use this text for aria-label below.
     const defaultPlaceholder = inputPlaceholder || locationType;
     const placeholder =
       currentPosition && currentPosition.fetching
