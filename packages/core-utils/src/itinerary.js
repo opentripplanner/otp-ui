@@ -436,22 +436,46 @@ export function calculatePhysicalActivity(itinerary) {
   };
 }
 
-export function calculateFares(itinerary) {
+/**
+ * For a given fare component (either total fare or component parts), returns
+ * an object with string formatters and the fare value (in cents).
+ */
+export function getTransitFare(fareComponent) {
+  // Default values (if fare component is not valid).
+  let digits = 2;
   let transitFare = 0;
-  let symbol = "$"; // default to USD
-  let dollarsToString = dollars => `${symbol}${dollars.toFixed(2)}`;
-  let centsToString = cents => `${symbol}${(cents / 100).toFixed(2)}`;
-  if (itinerary.fare && itinerary.fare.fare && itinerary.fare.fare.regular) {
-    const reg = itinerary.fare.fare.regular;
-    symbol = reg.currency.symbol;
-    transitFare = reg.cents;
-    centsToString = cents =>
-      `${symbol}${(cents / 10 ** reg.currency.defaultFractionDigits).toFixed(
-        reg.currency.defaultFractionDigits
-      )}`;
-    dollarsToString = dollars => `${symbol}${dollars.toFixed(2)}`;
+  let symbol = "$";
+  if (fareComponent) {
+    digits = fareComponent.currency.defaultFractionDigits;
+    transitFare = fareComponent.cents;
+    symbol = fareComponent.currency.symbol;
   }
+  // For cents to string conversion, use digits from fare component.
+  const centsToString = cents => {
+    const dollars = (cents / 10 ** digits).toFixed(digits);
+    return `${symbol}${dollars}`;
+  };
+  // For dollars to string conversion, assume we're rounding to two digits.
+  const dollarsToString = dollars => `${symbol}${dollars.toFixed(2)}`;
+  return {
+    centsToString,
+    dollarsToString,
+    transitFare
+  };
+}
 
+/**
+ * For an itinerary, calculates the transit/TNC fares and returns an object with
+ * these values as well as string formatters.
+ */
+export function calculateFares(itinerary) {
+  // Extract fare total from itinerary fares.
+  const fareComponent =
+    itinerary.fare && itinerary.fare.fare && itinerary.fare.fare.regular;
+  // Get string formatters and itinerary fare.
+  const { centsToString, dollarsToString, transitFare } = getTransitFare(
+    fareComponent
+  );
   // Process any TNC fares
   let minTNCFare = 0;
   let maxTNCFare = 0;
