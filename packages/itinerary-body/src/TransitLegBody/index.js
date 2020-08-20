@@ -1,6 +1,7 @@
 import { formatDuration } from "@opentripplanner/core-utils/lib/time";
 import {
   configType,
+  fareType,
   legType,
   transitOperatorType
 } from "@opentripplanner/core-utils/lib/types";
@@ -19,6 +20,31 @@ function pluralize(str, list) {
   return `${str}${list.length > 1 ? "s" : ""}`;
 }
 
+// FIXME: remove in favor of new core-utils release.
+function getTransitFare(fareComponent) {
+  // Default values (if fare component is not valid).
+  let digits = 2;
+  let transitFare = 0;
+  let symbol = "$";
+  if (fareComponent) {
+    digits = fareComponent.currency.defaultFractionDigits;
+    transitFare = fareComponent.cents;
+    symbol = fareComponent.currency.symbol;
+  }
+  // For cents to string conversion, use digits from fare component.
+  const centsToString = cents => {
+    const dollars = (cents / 10 ** digits).toFixed(digits);
+    return `${symbol}${dollars}`;
+  };
+  // For dollars to string conversion, assume we're rounding to two digits.
+  const dollarsToString = dollars => `${symbol}${dollars.toFixed(2)}`;
+  return {
+    centsToString,
+    dollarsToString,
+    transitFare
+  };
+}
+
 export default class TransitLegBody extends Component {
   constructor(props) {
     super(props);
@@ -27,6 +53,18 @@ export default class TransitLegBody extends Component {
       stopsExpanded: false
     };
   }
+
+  getFareForLeg = (leg, fare) => {
+    let fareForLeg;
+    if (fare && fare.details && fare.details.regular) {
+      fare.details.regular.forEach(fareComponent => {
+        if (fareComponent.routes.includes(leg.routeId)) {
+          fareForLeg = getTransitFare(fareComponent.price);
+        }
+      });
+    }
+    return fareForLeg;
+  };
 
   onToggleStopsClick = () => {
     const { stopsExpanded } = this.state;
@@ -46,6 +84,7 @@ export default class TransitLegBody extends Component {
   render() {
     const {
       config,
+      fare,
       leg,
       LegIcon,
       longDateFormat,
@@ -71,7 +110,7 @@ export default class TransitLegBody extends Component {
 
     const expandAlerts =
       alertsExpanded || (leg.alerts && leg.alerts.length < 3);
-
+    const fareForLeg = this.getFareForLeg(leg, fare);
     return (
       <>
         {TransitLegSubheader && (
@@ -144,7 +183,14 @@ export default class TransitLegBody extends Component {
                 leave={{ animation: "slideUp" }}
               >
                 {stopsExpanded ? (
-                  <IntermediateStops stops={leg.intermediateStops} />
+                  <>
+                    <IntermediateStops stops={leg.intermediateStops} />
+                    {fareForLeg && (
+                      <Styled.TransitLegFare>
+                        Fare: {fareForLeg.centsToString(fareForLeg.transitFare)}
+                      </Styled.TransitLegFare>
+                    )}
+                  </>
                 ) : null}
               </VelocityTransitionGroup>
 
@@ -162,6 +208,7 @@ export default class TransitLegBody extends Component {
 
 TransitLegBody.propTypes = {
   config: configType.isRequired,
+  fare: fareType,
   leg: legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired,
   legIndex: PropTypes.number.isRequired,
@@ -178,6 +225,7 @@ TransitLegBody.propTypes = {
 };
 
 TransitLegBody.defaultProps = {
+  fare: null,
   TransitLegSubheader: undefined,
   transitOperator: null
 };

@@ -43,6 +43,7 @@ const ItineraryBody = ({
   const rows = [];
   let followsTransit = false;
   let lastLeg;
+  const { fare } = itinerary;
   itinerary.legs.forEach((leg, i) => {
     function createPlaceRow(isDestination) {
       // Create a row containing this leg's start place and leg traversal details
@@ -52,6 +53,7 @@ const ItineraryBody = ({
           key={i + (isDestination ? 1 : 0)}
           config={config}
           diagramVisible={diagramVisible}
+          fare={fare}
           followsTransit={followsTransit}
           frameLeg={frameLeg}
           isDestination={isDestination}

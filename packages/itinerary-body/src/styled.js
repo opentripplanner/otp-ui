@@ -541,6 +541,11 @@ export const TransitLegDetailsHeader = styled.div`
   font-size: 13px;
 `;
 
+export const TransitLegFare = styled.div`
+  font-size: 15px;
+  font-weight: 600;
+`;
+
 export const ViewTripButton = styled(TransparentButton)`
   border-left: 1px solid #000;
   color: #008;

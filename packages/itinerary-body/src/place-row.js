@@ -1,5 +1,6 @@
 import {
   configType,
+  fareType,
   legType,
   timeOptionsType
 } from "@opentripplanner/core-utils/lib/types";
@@ -23,6 +24,7 @@ const getTransitOperatorFromConfig = (id, config) =>
 const PlaceRow = ({
   config,
   diagramVisible,
+  fare,
   followsTransit,
   frameLeg,
   isDestination,
@@ -98,6 +100,7 @@ const PlaceRow = ({
               /* This is a transit leg */
               <TransitLegBody
                 config={config}
+                fare={fare}
                 leg={leg}
                 LegIcon={LegIcon}
                 legIndex={legIndex}
@@ -151,6 +154,7 @@ const PlaceRow = ({
 PlaceRow.propTypes = {
   config: configType.isRequired,
   diagramVisible: legType,
+  fare: fareType,
   /** Indicates whether this leg directly follows a transit leg */
   followsTransit: PropTypes.bool,
   frameLeg: PropTypes.func.isRequired,
@@ -183,6 +187,7 @@ PlaceRow.propTypes = {
 
 PlaceRow.defaultProps = {
   diagramVisible: null,
+  fare: null,
   followsTransit: false,
   // can be null if this is the origin place
   lastLeg: null,

@@ -35,6 +35,7 @@ const bikeRentalTransitBikeRentalItinerary = require("./__mocks__/itineraries/bi
 const bikeTransitBikeItinerary = require("./__mocks__/itineraries/bike-transit-bike.json");
 const eScooterRentalItinerary = require("./__mocks__/itineraries/e-scooter-rental.json");
 const eScooterRentalTransiteScooterRentalItinerary = require("./__mocks__/itineraries/e-scooter-transit-e-scooter.json");
+const fareComponentsItinerary = require("./__mocks__/itineraries/fare-components.json");
 const parkAndRideItinerary = require("./__mocks__/itineraries/park-and-ride.json");
 const tncTransitTncItinerary = require("./__mocks__/itineraries/tnc-transit-tnc.json");
 const walkInterlinedTransitItinerary = require("./__mocks__/itineraries/walk-interlined-transit-walk.json");
@@ -319,6 +320,9 @@ storiesOf("ItineraryBody", module)
     "ItineraryBody with TNC + transit itinerary with OTP-RR styling and customizations",
     () => <OtpRRItineraryBodyWrapper itinerary={tncTransitTncItinerary} />
   )
+  .add("ItineraryBody with Individual Leg Fare Components", () => (
+    <OtpRRItineraryBodyWrapper itinerary={fareComponentsItinerary} />
+  ))
   .add("ItineraryBody with OTP-RR styling and custom TimeColumnContent", () => (
     <OtpRRItineraryBodyWrapper
       itinerary={tncTransitTncItinerary}
