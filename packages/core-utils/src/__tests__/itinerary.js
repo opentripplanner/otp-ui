@@ -13,7 +13,9 @@ describe("util > itinerary", () => {
     expect(dollarsToString(1)).toEqual(centsToString(100));
     // Snapshot tests
     expect(centsToString(100)).toMatchSnapshot();
+    expect(centsToString(transitFare)).toMatchSnapshot();
     expect(dollarsToString(1)).toMatchSnapshot();
+    // transit fare value should be zero
     expect(transitFare).toMatchSnapshot();
   });
 
@@ -36,7 +38,6 @@ describe("util > itinerary", () => {
     );
     // Snapshot tests
     expect(centsToString(transitFare)).toMatchSnapshot();
-    expect(dollarsToString(1)).toMatchSnapshot();
     expect(transitFare).toMatchSnapshot();
   });
 });
