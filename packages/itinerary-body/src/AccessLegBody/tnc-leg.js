@@ -87,21 +87,21 @@ export default function TNCLeg({
         </Styled.BookTNCRideButtonContainer>
 
         {/* The estimated travel time */}
-        <Styled.StepsHeader>
+        <Styled.TNCTravelTime>
           Estimated travel time: {formatDuration(leg.duration)} (does not
           account for traffic)
-        </Styled.StepsHeader>
+        </Styled.TNCTravelTime>
 
         {/* The estimated travel cost */}
         {tncData.minCost && (
-          <p>
+          <Styled.TNCCost>
             Estimated cost:{" "}
             {`${currencyFormatter.format(tncData.minCost, {
               code: tncData.currency
             })} - ${currencyFormatter.format(tncData.maxCost, {
               code: tncData.currency
             })}`}
-          </p>
+          </Styled.TNCCost>
         )}
       </Styled.LegBody>
     </div>

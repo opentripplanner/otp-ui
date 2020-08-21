@@ -1,3 +1,4 @@
+import { getTransitFare } from "@opentripplanner/core-utils/lib/itinerary";
 import { formatDuration } from "@opentripplanner/core-utils/lib/time";
 import {
   configType,
@@ -18,31 +19,6 @@ import ViewTripButton from "./view-trip-button";
 // TODO use pluralize that for internationalization (and complex plurals, i.e., not just adding 's')
 function pluralize(str, list) {
   return `${str}${list.length > 1 ? "s" : ""}`;
-}
-
-// FIXME: remove in favor of new core-utils release.
-function getTransitFare(fareComponent) {
-  // Default values (if fare component is not valid).
-  let digits = 2;
-  let transitFare = 0;
-  let symbol = "$";
-  if (fareComponent) {
-    digits = fareComponent.currency.defaultFractionDigits;
-    transitFare = fareComponent.cents;
-    symbol = fareComponent.currency.symbol;
-  }
-  // For cents to string conversion, use digits from fare component.
-  const centsToString = cents => {
-    const dollars = (cents / 10 ** digits).toFixed(digits);
-    return `${symbol}${dollars}`;
-  };
-  // For dollars to string conversion, assume we're rounding to two digits.
-  const dollarsToString = dollars => `${symbol}${dollars.toFixed(2)}`;
-  return {
-    centsToString,
-    dollarsToString,
-    transitFare
-  };
 }
 
 export default class TransitLegBody extends Component {
@@ -165,8 +141,12 @@ export default class TransitLegBody extends Component {
           {leg.intermediateStops && leg.intermediateStops.length > 0 && (
             <Styled.TransitLegDetails>
               {/* The header summary row, clickable to expand intermediate stops */}
-              <Styled.TransitLegDetailsHeader onClick={this.onToggleStopsClick}>
-                <TransitLegSummary leg={leg} stopsExpanded={stopsExpanded} />
+              <Styled.TransitLegDetailsHeader>
+                <TransitLegSummary
+                  leg={leg}
+                  onClick={this.onToggleStopsClick}
+                  stopsExpanded={stopsExpanded}
+                />
 
                 {showViewTripButton && (
                   <ViewTripButton
@@ -183,14 +163,14 @@ export default class TransitLegBody extends Component {
                 leave={{ animation: "slideUp" }}
               >
                 {stopsExpanded ? (
-                  <>
+                  <Styled.TransitLegExpandedBody>
                     <IntermediateStops stops={leg.intermediateStops} />
                     {fareForLeg && (
                       <Styled.TransitLegFare>
                         Fare: {fareForLeg.centsToString(fareForLeg.transitFare)}
                       </Styled.TransitLegFare>
                     )}
-                  </>
+                  </Styled.TransitLegExpandedBody>
                 ) : null}
               </VelocityTransitionGroup>
 

@@ -49,9 +49,82 @@ export const LightBorderDiv = styled.div`
 
 export const TransparentButton = styled.button`
   background: transparent;
-  color: inherit;
   border: 0;
+  color: inherit;
+  cursor: pointer;
+  font-size: inherit;
   text-decoration: none;
+  &:focus {
+    /*
+      TODO: Add outline for keyboard tabbing only:
+      https://stackoverflow.com/a/45191208/915811
+    */
+  }
+`;
+
+export const AnchorButton = styled.a`
+  background-color: #fff;
+  background-image: none;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 4px 6px;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  user-select: none;
+  white-space: nowrap;
+
+  &:hover {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+  }
+
+  &:active {
+    color: #333;
+    background-color: #e6e6e6;
+    background-image: none;
+    border-color: #adadad;
+    outline: 0;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  }
+
+  &:focus {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #8c8c8c;
+  }
+
+  &:active:hover {
+    color: #333;
+    background-color: #d4d4d4;
+    border-color: #8c8c8c;
+  }
+`;
+
+export const LinkButton = styled(TransparentButton)`
+  color: #008;
+  cursor: pointer;
+  margin-left: 5px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+export const ViewerButton = styled(LinkButton)`
+  padding-left: 0px;
+
+  &:before {
+    content: "|";
+    color: black;
+    margin-right: 5px;
+  }
 `;
 
 // ////////////////////////////////////////////////
@@ -85,9 +158,12 @@ export const AgencyInfo = styled.div`
     text-decoration: none;
   }
 
+  a:hover {
+    text-decoration: underline;
+  }
+
   img {
     margin-left: 5px;
-    vertical-align: middle;
   }
 `;
 
@@ -126,35 +202,21 @@ export const BookLaterText = styled.div`
   vertical-align: middle;
 `;
 
-export const BookTNCRideButton = styled.a`
-  background-color: #fff;
-  background-image: none;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  color: #333;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 400;
-  left: 0;
-  line-height: 1.42857143;
-  margin-bottom: 0;
-  padding: 4px 6px;
-  position: absolute;
-  text-align: center;
-  text-decoration: none;
-  top: 0;
-  touch-action: manipulation;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-`;
+export const BookTNCRideButton = styled(AnchorButton)``;
 
 export const BookTNCRideButtonContainer = styled.div`
   height: 32px;
   margin-bottom: 10px;
   margin-top: 10px;
   position: relative;
+`;
+
+export const TNCTravelTime = styled.div`
+  /* no styling */
+`;
+
+export const TNCCost = styled.div`
+  /* no styling */
 `;
 
 export const CaretToggle = ({ expanded }) =>
@@ -199,6 +261,7 @@ export const InterlineName = styled.div`
 
 export const IntermediateStops = styled.div`
   display: block;
+  font-size: 13px;
 `;
 
 export const ItineraryBody = styled.div``;
@@ -213,6 +276,9 @@ export const LegClickable = styled(TransparentButton)`
   cursor: pointer;
   display: table;
   padding: 0;
+  text-align: center;
+  line-height: 31px;
+  /* line-height: 18px; */
 `;
 
 export const LegDescription = styled.div`
@@ -220,7 +286,6 @@ export const LegDescription = styled.div`
 
   > div {
     display: table-cell;
-    vertical-align: middle;
   }
 `;
 
@@ -235,9 +300,7 @@ export const LegDescriptionRouteLongName = styled.div`
 `;
 
 export const LegDescriptionRouteShortName = styled.div`
-  font-size: 14px;
   font-weight: 800;
-  line-height: 16px;
   margin-right: 6px;
 `;
 
@@ -310,7 +373,7 @@ export const TimeColumn = styled.div`
   font-size: 0.9em;
 `;
 
-export const MapButton = styled(ClearButton)`
+export const MapButton = styled(LinkButton)`
   padding: 3px 10px 3px 10px;
   border: 0;
   margin-top: -15px;
@@ -360,7 +423,6 @@ export const PlaceName = styled.div`
 
 export const PlaceSubheader = styled.div`
   color: grey;
-  font-size: 12px;
   font-weight: 300;
   padding-left: 4px;
   padding-top: 1px;
@@ -474,7 +536,6 @@ export const StopMarker = styled.div`
 
 export const StopName = styled.div`
   color: #999;
-  font-size: 14px;
   margin-top: 3px;
 `;
 
@@ -537,26 +598,16 @@ export const TransitLegDetails = styled.div`
 
 export const TransitLegDetailsHeader = styled.div`
   color: #999999;
-  cursor: pointer;
-  font-size: 13px;
+`;
+
+export const TransitLegExpandedBody = styled.div`
+  font-size: 14px;
 `;
 
 export const TransitLegFare = styled.div`
-  font-size: 15px;
-  font-weight: 600;
+  /* no styling */
 `;
 
-export const ViewTripButton = styled(TransparentButton)`
-  border-left: 1px solid #000;
-  color: #008;
-  cursor: pointer;
-  height: 14px;
-  line-height: 1;
-  margin-left: 5px;
-  outline: none;
-  padding-top: 0;
-
-  &:hover {
-    text-decoration: underline;
-  }
+export const TransitLegSummary = styled(TransparentButton)`
+  padding: 0;
 `;

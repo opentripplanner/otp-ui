@@ -2746,6 +2746,20 @@
   dependencies:
     "@types/node" ">= 8"
 
+"@opentripplanner/core-utils@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-2.1.1.tgz#4ed039593fb54c0de1c1370a2c85c88de3e5d3c5"
+  integrity sha512-IHxY+QjXdWgWNUPUxI00P01MJ1DRHov8vO597qNEw5ZYzOZHFyYJTU7MiywDMSsY/0Jtty5yG+fKxTSrfc4zJA==
+  dependencies:
+    "@mapbox/polyline" "^1.1.0"
+    "@turf/along" "^6.0.1"
+    bowser "^2.7.0"
+    lodash.isequal "^4.5.0"
+    moment "^2.24.0"
+    moment-timezone "^0.5.27"
+    prop-types "^15.7.2"
+    qs "^6.9.1"
+
 "@reach/router@^1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@reach/router/-/router-1.2.1.tgz#34ae3541a5ac44fa7796e5506a5d7274a162be4e"

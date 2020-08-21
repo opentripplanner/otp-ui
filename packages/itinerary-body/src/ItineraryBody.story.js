@@ -258,72 +258,52 @@ storiesOf("ItineraryBody", module)
   .add("ItineraryBody with TNC + transit itinerary", () => (
     <ItineraryBodyDefaultsWrapper itinerary={tncTransitTncItinerary} />
   ))
-  .add(
-    "ItineraryBody with walk-only itinerary  with OTP-RR styling and customizations",
-    () => <OtpRRItineraryBodyWrapper itinerary={walkOnlyItinerary} />
-  )
-  .add(
-    "ItineraryBody with bike-only itinerary  with OTP-RR styling and customizations",
-    () => <OtpRRItineraryBodyWrapper itinerary={bikeOnlyItinerary} />
-  )
-  .add(
-    "ItineraryBody with walk-transit-walk itinerary  with OTP-RR styling and customizations",
-    () => <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkItinerary} />
-  )
-  .add(
-    "ItineraryBody with bike-transit-bike itinerary  with OTP-RR styling and customizations",
-    () => <OtpRRItineraryBodyWrapper itinerary={bikeTransitBikeItinerary} />
-  )
-  .add(
-    "ItineraryBody with walk-interlined-transit itinerary  with OTP-RR styling and customizations",
-    () => (
-      <OtpRRItineraryBodyWrapper itinerary={walkInterlinedTransitItinerary} />
-    )
-  )
-  .add(
-    "ItineraryBody with walk-transit-transfer itinerary  with OTP-RR styling and customizations",
-    () => (
-      <OtpRRItineraryBodyWrapper
-        itinerary={walkTransitWalkTransitWalkItinerary}
-      />
-    )
-  )
-  .add(
-    "ItineraryBody with bike-rental itinerary with OTP-RR styling and customizations",
-    () => <OtpRRItineraryBodyWrapper itinerary={bikeRentalItinerary} />
-  )
-  .add(
-    "ItineraryBody with E-scooter-rental itinerary with OTP-RR styling and customizations",
-    () => <OtpRRItineraryBodyWrapper itinerary={eScooterRentalItinerary} />
-  )
-  .add(
-    "ItineraryBody with park and ride itinerary with OTP-RR styling and customizations",
-    () => <OtpRRItineraryBodyWrapper itinerary={parkAndRideItinerary} />
-  )
-  .add(
-    "ItineraryBody with bike rental + transit itinerary with OTP-RR styling and customizations",
-    () => (
-      <OtpRRItineraryBodyWrapper
-        itinerary={bikeRentalTransitBikeRentalItinerary}
-      />
-    )
-  )
-  .add(
-    "ItineraryBody with E-scooter rental + transit itinerary with OTP-RR styling and customizations",
-    () => (
-      <OtpRRItineraryBodyWrapper
-        itinerary={eScooterRentalTransiteScooterRentalItinerary}
-      />
-    )
-  )
-  .add(
-    "ItineraryBody with TNC + transit itinerary with OTP-RR styling and customizations",
-    () => <OtpRRItineraryBodyWrapper itinerary={tncTransitTncItinerary} />
-  )
-  .add("ItineraryBody with Individual Leg Fare Components", () => (
+  .add("otp-rr ItineraryBody with walk-only itinerary", () => (
+    <OtpRRItineraryBodyWrapper itinerary={walkOnlyItinerary} />
+  ))
+  .add("otp-rr ItineraryBody with bike-only itinerary", () => (
+    <OtpRRItineraryBodyWrapper itinerary={bikeOnlyItinerary} />
+  ))
+  .add("otp-rr ItineraryBody with walk-transit-walk itinerary", () => (
+    <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkItinerary} />
+  ))
+  .add("otp-rr ItineraryBody with bike-transit-bike itinerary", () => (
+    <OtpRRItineraryBodyWrapper itinerary={bikeTransitBikeItinerary} />
+  ))
+  .add("otp-rr ItineraryBody with walk-interlined-transit itinerary", () => (
+    <OtpRRItineraryBodyWrapper itinerary={walkInterlinedTransitItinerary} />
+  ))
+  .add("otp-rr ItineraryBody with walk-transit-transfer itinerary", () => (
+    <OtpRRItineraryBodyWrapper
+      itinerary={walkTransitWalkTransitWalkItinerary}
+    />
+  ))
+  .add("otp-rr ItineraryBody with bike-rental itinerary", () => (
+    <OtpRRItineraryBodyWrapper itinerary={bikeRentalItinerary} />
+  ))
+  .add("otp-rr ItineraryBody with E-scooter-rental itinerary", () => (
+    <OtpRRItineraryBodyWrapper itinerary={eScooterRentalItinerary} />
+  ))
+  .add("otp-rr ItineraryBody with park and ride itinerary", () => (
+    <OtpRRItineraryBodyWrapper itinerary={parkAndRideItinerary} />
+  ))
+  .add("otp-rr ItineraryBody with bike rental + transit itinerary", () => (
+    <OtpRRItineraryBodyWrapper
+      itinerary={bikeRentalTransitBikeRentalItinerary}
+    />
+  ))
+  .add("otp-rr ItineraryBody with E-scooter rental + transit itinerary", () => (
+    <OtpRRItineraryBodyWrapper
+      itinerary={eScooterRentalTransiteScooterRentalItinerary}
+    />
+  ))
+  .add("otp-rr ItineraryBody with TNC + transit itinerary", () => (
+    <OtpRRItineraryBodyWrapper itinerary={tncTransitTncItinerary} />
+  ))
+  .add("otp-rr ItineraryBody with Individual Leg Fare Components", () => (
     <OtpRRItineraryBodyWrapper itinerary={fareComponentsItinerary} />
   ))
-  .add("ItineraryBody with OTP-RR styling and custom TimeColumnContent", () => (
+  .add("otp-rr ItineraryBody and custom TimeColumnContent", () => (
     <OtpRRItineraryBodyWrapper
       itinerary={tncTransitTncItinerary}
       TimeColumnContent={CustomTimeColumnContent}

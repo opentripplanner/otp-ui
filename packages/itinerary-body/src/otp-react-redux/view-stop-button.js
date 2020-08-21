@@ -1,23 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
 
-import { TransparentButton } from "../styled";
-
-const Button = styled(TransparentButton)`
-  border-left: 1px solid #000;
-  color: #008;
-  cursor: pointer;
-  height: 14px;
-  line-height: 1;
-  margin-left: 5px;
-  outline: none;
-  padding-top: 0;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`;
+import * as Styled from "../styled";
 
 export default class ViewStopButton extends Component {
   onClick = () => {
@@ -27,7 +11,9 @@ export default class ViewStopButton extends Component {
 
   render() {
     const { text } = this.props;
-    return <Button onClick={this.onClick}>{text}</Button>;
+    return (
+      <Styled.ViewerButton onClick={this.onClick}>{text}</Styled.ViewerButton>
+    );
   }
 }
 
