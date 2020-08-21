@@ -28,6 +28,7 @@ const ItineraryBody = ({
   showElevationProfile,
   showLegIcon,
   showMapButtonColumn,
+  showRouteFares,
   showViewTripButton,
   TimeColumnContent,
   timeOptions,
@@ -53,7 +54,10 @@ const ItineraryBody = ({
           key={i + (isDestination ? 1 : 0)}
           config={config}
           diagramVisible={diagramVisible}
-          fare={fare}
+          // Itinerary fare is only passed as prop if showRouteFares is enabled.
+          // The fare details will be processed in the TransitLeg component and
+          // shown for all legs.
+          fare={showRouteFares ? fare : null}
           followsTransit={followsTransit}
           frameLeg={frameLeg}
           isDestination={isDestination}
@@ -172,6 +176,8 @@ ItineraryBody.propTypes = {
   showLegIcon: PropTypes.bool,
   /** If true, will show the right column with the map button */
   showMapButtonColumn: PropTypes.bool,
+  /** If true, will show fare information in transit leg bodies */
+  showRouteFares: PropTypes.bool,
   /** If true, shows the view trip button in transit leg bodies */
   showViewTripButton: PropTypes.bool,
   /**
@@ -213,6 +219,7 @@ ItineraryBody.defaultProps = {
   showElevationProfile: false,
   showLegIcon: false,
   showMapButtonColumn: true,
+  showRouteFares: false,
   showViewTripButton: false,
   TimeColumnContent: PlaceRow.defaultProps.TimeColumnContent,
   timeOptions: null,

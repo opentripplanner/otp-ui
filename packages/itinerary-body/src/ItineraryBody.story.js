@@ -63,6 +63,7 @@ class ItineraryBodyDefaultsWrapper extends Component {
       showAgencyInfo,
       showLegIcon,
       showMapButtonColumn,
+      showRouteFares,
       showViewTripButton,
       styledItinerary,
       TimeColumnContent,
@@ -100,6 +101,7 @@ class ItineraryBodyDefaultsWrapper extends Component {
         showElevationProfile
         showLegIcon={showLegIcon}
         showMapButtonColumn={showMapButtonColumn}
+        showRouteFares={showRouteFares}
         showViewTripButton={showViewTripButton}
         TimeColumnContent={TimeColumnContent}
         toRouteAbbreviation={toRouteAbbreviation}
@@ -119,6 +121,7 @@ ItineraryBodyDefaultsWrapper.propTypes = {
   showAgencyInfo: PropTypes.bool,
   showLegIcon: PropTypes.bool,
   showMapButtonColumn: PropTypes.bool,
+  showRouteFares: PropTypes.bool,
   showViewTripButton: PropTypes.bool,
   styledItinerary: PropTypes.string,
   TimeColumnContent: PropTypes.elementType,
@@ -135,6 +138,7 @@ ItineraryBodyDefaultsWrapper.defaultProps = {
   showAgencyInfo: false,
   showLegIcon: false,
   showMapButtonColumn: true,
+  showRouteFares: false,
   showViewTripButton: false,
   styledItinerary: null,
   TimeColumnContent: undefined,
@@ -143,7 +147,11 @@ ItineraryBodyDefaultsWrapper.defaultProps = {
   TransitLegSummary: undefined
 };
 
-function OtpRRItineraryBodyWrapper({ itinerary, TimeColumnContent }) {
+function OtpRRItineraryBodyWrapper({
+  itinerary,
+  showRouteFares,
+  TimeColumnContent
+}) {
   return (
     <ItineraryBodyDefaultsWrapper
       itinerary={itinerary}
@@ -154,6 +162,7 @@ function OtpRRItineraryBodyWrapper({ itinerary, TimeColumnContent }) {
       showAgencyInfo
       showLegIcon
       showMapButtonColumn={false}
+      showRouteFares={showRouteFares}
       showViewTripButton
       styledItinerary="otp-rr"
       TimeColumnContent={TimeColumnContent}
@@ -164,9 +173,11 @@ function OtpRRItineraryBodyWrapper({ itinerary, TimeColumnContent }) {
 
 OtpRRItineraryBodyWrapper.propTypes = {
   itinerary: itineraryType.isRequired,
+  showRouteFares: PropTypes.bool,
   TimeColumnContent: PropTypes.elementType
 };
 OtpRRItineraryBodyWrapper.defaultProps = {
+  showRouteFares: undefined,
   TimeColumnContent: undefined
 };
 
@@ -301,7 +312,10 @@ storiesOf("ItineraryBody", module)
     <OtpRRItineraryBodyWrapper itinerary={tncTransitTncItinerary} />
   ))
   .add("otp-rr ItineraryBody with Individual Leg Fare Components", () => (
-    <OtpRRItineraryBodyWrapper itinerary={fareComponentsItinerary} />
+    <OtpRRItineraryBodyWrapper
+      itinerary={fareComponentsItinerary}
+      showRouteFares
+    />
   ))
   .add("otp-rr ItineraryBody and custom TimeColumnContent", () => (
     <OtpRRItineraryBodyWrapper
