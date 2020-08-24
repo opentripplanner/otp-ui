@@ -1,6 +1,8 @@
+import { getTransitFare } from "@opentripplanner/core-utils/lib/itinerary";
 import { formatDuration } from "@opentripplanner/core-utils/lib/time";
 import {
   configType,
+  fareType,
   legType,
   transitOperatorType
 } from "@opentripplanner/core-utils/lib/types";
@@ -28,6 +30,18 @@ export default class TransitLegBody extends Component {
     };
   }
 
+  getFareForLeg = (leg, fare) => {
+    let fareForLeg;
+    if (fare && fare.details && fare.details.regular) {
+      fare.details.regular.forEach(fareComponent => {
+        if (fareComponent.routes.includes(leg.routeId)) {
+          fareForLeg = getTransitFare(fareComponent.price);
+        }
+      });
+    }
+    return fareForLeg;
+  };
+
   onToggleStopsClick = () => {
     const { stopsExpanded } = this.state;
     this.setState({ stopsExpanded: !stopsExpanded });
@@ -46,6 +60,7 @@ export default class TransitLegBody extends Component {
   render() {
     const {
       config,
+      fare,
       leg,
       LegIcon,
       longDateFormat,
@@ -71,7 +86,7 @@ export default class TransitLegBody extends Component {
 
     const expandAlerts =
       alertsExpanded || (leg.alerts && leg.alerts.length < 3);
-
+    const fareForLeg = this.getFareForLeg(leg, fare);
     return (
       <>
         {TransitLegSubheader && (
@@ -126,8 +141,12 @@ export default class TransitLegBody extends Component {
           {leg.intermediateStops && leg.intermediateStops.length > 0 && (
             <Styled.TransitLegDetails>
               {/* The header summary row, clickable to expand intermediate stops */}
-              <Styled.TransitLegDetailsHeader onClick={this.onToggleStopsClick}>
-                <TransitLegSummary leg={leg} stopsExpanded={stopsExpanded} />
+              <Styled.TransitLegDetailsHeader>
+                <TransitLegSummary
+                  leg={leg}
+                  onClick={this.onToggleStopsClick}
+                  stopsExpanded={stopsExpanded}
+                />
 
                 {showViewTripButton && (
                   <ViewTripButton
@@ -144,7 +163,14 @@ export default class TransitLegBody extends Component {
                 leave={{ animation: "slideUp" }}
               >
                 {stopsExpanded ? (
-                  <IntermediateStops stops={leg.intermediateStops} />
+                  <Styled.TransitLegExpandedBody>
+                    <IntermediateStops stops={leg.intermediateStops} />
+                    {fareForLeg && (
+                      <Styled.TransitLegFare>
+                        Fare: {fareForLeg.centsToString(fareForLeg.transitFare)}
+                      </Styled.TransitLegFare>
+                    )}
+                  </Styled.TransitLegExpandedBody>
                 ) : null}
               </VelocityTransitionGroup>
 
@@ -162,6 +188,7 @@ export default class TransitLegBody extends Component {
 
 TransitLegBody.propTypes = {
   config: configType.isRequired,
+  fare: fareType,
   leg: legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired,
   legIndex: PropTypes.number.isRequired,
@@ -178,6 +205,7 @@ TransitLegBody.propTypes = {
 };
 
 TransitLegBody.defaultProps = {
+  fare: null,
   TransitLegSubheader: undefined,
   transitOperator: null
 };

@@ -11,9 +11,9 @@ class ViewTripButton extends Component {
 
   render() {
     return (
-      <Styled.ViewTripButton onClick={this.onClick} type="button">
+      <Styled.ViewerButton onClick={this.onClick} type="button">
         Trip Viewer
-      </Styled.ViewTripButton>
+      </Styled.ViewerButton>
     );
   }
 }

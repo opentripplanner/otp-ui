@@ -1,44 +1,34 @@
 import { legType } from "@opentripplanner/core-utils/lib/types";
 import PropTypes from "prop-types";
 import React from "react";
-import styled from "styled-components";
 
-import * as ItineraryBodyClasses from "../styled";
-
-const LegIconContainer = styled.div`
-  float: left;
-  height: 24px;
-  margin-right: 6px;
-  width: 24px;
-`;
+import * as Styled from "../styled";
 
 export default function RouteDescription({ leg, LegIcon }) {
   const { headsign, routeLongName, routeShortName } = leg;
   return (
-    <ItineraryBodyClasses.LegDescriptionForTransit>
-      <LegIconContainer>
+    <Styled.LegDescriptionForTransit>
+      <Styled.LegIconContainer>
         <LegIcon leg={leg} />
-      </LegIconContainer>
+      </Styled.LegIconContainer>
       {routeShortName && (
-        <div>
-          <ItineraryBodyClasses.LegDescriptionRouteShortName>
-            {routeShortName}
-          </ItineraryBodyClasses.LegDescriptionRouteShortName>
-        </div>
+        <Styled.LegDescriptionRouteShortName>
+          {routeShortName}
+        </Styled.LegDescriptionRouteShortName>
       )}
-      <ItineraryBodyClasses.LegDescriptionRouteLongName>
+      <Styled.LegDescriptionRouteLongName>
         {routeLongName}
         {headsign && (
           <span>
             {" "}
-            <ItineraryBodyClasses.LegDescriptionHeadsignPrefix>
+            <Styled.LegDescriptionHeadsignPrefix>
               to
-            </ItineraryBodyClasses.LegDescriptionHeadsignPrefix>{" "}
+            </Styled.LegDescriptionHeadsignPrefix>{" "}
             {headsign}
           </span>
         )}
-      </ItineraryBodyClasses.LegDescriptionRouteLongName>
-    </ItineraryBodyClasses.LegDescriptionForTransit>
+      </Styled.LegDescriptionRouteLongName>
+    </Styled.LegDescriptionForTransit>
   );
 }
 

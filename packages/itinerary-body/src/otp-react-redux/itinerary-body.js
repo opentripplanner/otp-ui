@@ -4,11 +4,12 @@ import ItineraryBody from "..";
 import * as ItineraryBodyClasses from "../styled";
 
 const StyledItineraryBody = styled(ItineraryBody)`
-  font-family: Hind, sans-serif;
   font-size: 16px;
 
   * {
     box-sizing: border-box;
+    font-family: Hind, sans-serif;
+    vertical-align: middle;
   }
 
   ${ItineraryBodyClasses.DetailsColumn} {
@@ -38,6 +39,7 @@ const StyledItineraryBody = styled(ItineraryBody)`
     font-size: 14px;
     font-weight: 500;
     height: 24px;
+    line-height: 1.5;
     margin-right: 8px;
     min-width: 24px;
     padding: 2px 3px;
