@@ -271,7 +271,7 @@ export function planParamsToQuery(params) {
         // If query has intermediate places, ensure that they are parsed
         // as locations.
         query.intermediatePlaces = params.intermediatePlaces
-          ? params.intermediatePlaces.split(",").map(parseLocationString)
+          ? params.intermediatePlaces.map(parseLocationString)
           : [];
         break;
       default: {

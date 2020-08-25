@@ -639,9 +639,7 @@ const queryParams = [
     itineraryRewrite: places =>
       Array.isArray(places) && places.length > 0
         ? {
-            intermediatePlaces: places
-              .map(place => formatPlace(place))
-              .join(",")
+            intermediatePlaces: places.map(place => formatPlace(place))
           }
         : undefined
   },
