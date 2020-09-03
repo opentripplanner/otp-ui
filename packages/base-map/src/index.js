@@ -74,10 +74,25 @@ L.Evented.include({
 class BaseMap extends Component {
   overlays = [];
 
+  constructor(props) {
+    super(props);
+    const { baseLayers } = props;
+    if (baseLayers && baseLayers.length > 0) {
+      this.state = this.getMapboxWordmarkUpdate(baseLayers[0].url);
+    }
+  }
+
   componentDidMount() {
+    // register single click event
     const lmap = this.refs.map.leafletElement;
     lmap.options.singleClickTimeout = 250;
     lmap.on("singleclick", this.onLeftClick);
+
+    // add mapbox wordmark to state if needed when leaflet's base layer changes
+    lmap.on("baselayerchange", e => {
+      /* eslint-disable no-underscore-dangle */
+      this.setState(this.getMapboxWordmarkUpdate(e.layer._url));
+    });
   }
 
   componentDidUpdate() {}
@@ -91,6 +106,16 @@ class BaseMap extends Component {
       lmap.removeLayer(layer);
     });
   }
+
+  /**
+   * Returns a state update object (doesn't update state) about whether to show
+   * the Mapbox wordmark if the current layer's URL is a Mapbox url.
+   */
+  getMapboxWordmarkUpdate = layerUrl => {
+    return {
+      showMapboxWordmark: layerUrl.startsWith("//api.mapbox.com")
+    };
+  };
 
   onLeftClick = e => {
     const { onClick } = this.props;
@@ -145,6 +170,7 @@ class BaseMap extends Component {
       onPopupClosed,
       zoom
     } = this.props;
+    const { showMapboxWordmark } = this.state;
 
     // Separate overlay layers into user-controlled (those with a checkbox in
     // the layer control) and those that are needed by the app (e.g., stop viewer
@@ -175,6 +201,20 @@ class BaseMap extends Component {
         onOverlayRemove={this.handleOverlayRemoved}
         onViewportChanged={this.handleViewportChanged}
       >
+        {/* Add the mapbox wordmark if the current base layer's URL appears to
+          be a Mapbox URL. The implementing application must include CSS that
+          properly displays the wordmark. See Mapbox website for example CSS:
+          https://docs.mapbox.com/help/how-mapbox-works/attribution/#other-mapping-frameworks */}
+        {showMapboxWordmark && (
+          <a
+            href="http://mapbox.com/about/maps"
+            className="mapbox-wordmark"
+            target="_blank noopener noreferrer"
+          >
+            Mapbox
+          </a>
+        )}
+
         {/* Create the layers control, including base map layers and any
          * user-controlled overlays. */}
         <LayersControl position="topright">
