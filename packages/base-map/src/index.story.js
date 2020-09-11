@@ -123,7 +123,15 @@ export const withExampleBaseLayers = () => {
     }
   ];
 
-  return <BaseMap baseLayers={exampleBaseLayers} center={center} />;
+  const onBaseLayerChange = action("onBaseLayerChange");
+
+  return (
+    <BaseMap
+      onBaseLayerChange={onBaseLayerChange}
+      baseLayers={exampleBaseLayers}
+      center={center}
+    />
+  );
 };
 
 export const withSampleMarkers = () => (
