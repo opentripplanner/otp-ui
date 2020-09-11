@@ -28,6 +28,21 @@ import * as LocationFieldClasses from "./styled";
 const currentPosition = {
   coords: { latitude: 45.508246, longitude: -122.711574 }
 };
+const invalidKeyGeocoderConfig = {
+  apiKey: "ge-invalid-key",
+  baseUrl: "https://api.geocode.earth/v1", // TriMet-specific default
+  boundary: {
+    // TriMet-specific default
+    rect: {
+      minLon: -123.2034,
+      maxLon: -122.135,
+      minLat: 45.273,
+      maxLat: 45.7445
+    }
+  },
+  maxNearbyStops: 4,
+  type: "PELIAS"
+};
 const geocoderConfig = {
   baseUrl: "https://ws-st.trimet.org/pelias/v1", // TriMet-specific default
   boundary: {
@@ -268,4 +283,14 @@ storiesOf("LocationField", module)
         onLocationSelected={onLocationSelected}
       />
     </div>
+  ))
+  .add("LocationField with bad API key handles bad autocomplete", () => (
+    <LocationField
+      currentPosition={currentPosition}
+      geocoderConfig={invalidKeyGeocoderConfig}
+      getCurrentPosition={getCurrentPosition}
+      inputPlaceholder="Select from location"
+      locationType="from"
+      onLocationSelected={onLocationSelected}
+    />
   ));

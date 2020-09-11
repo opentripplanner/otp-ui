@@ -11,7 +11,14 @@ import LocationIcon from "@opentripplanner/location-icon";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import { Ban, Bus, LocationArrow, Search, Times } from "styled-icons/fa-solid";
+import {
+  Ban,
+  Bus,
+  ExclamationCircle,
+  LocationArrow,
+  Search,
+  Times
+} from "styled-icons/fa-solid";
 import { throttle } from "throttle-debounce";
 
 import {
@@ -43,7 +50,25 @@ class LocationField extends Component {
     getGeocoder(geocoderConfig)
       .autocomplete({ text })
       .then(result => {
-        this.setState({ geocodedFeatures: result.features });
+        let message;
+        // If no features found in response, default to empty array.
+        let geocodedFeatures = result && result.features;
+        if (!geocodedFeatures) {
+          // Get the Pelias error message if exists.
+          // TODO: determine how other geocoders return error messages.
+          const errorMessage =
+            result &&
+            result.results &&
+            result.results.error &&
+            result.results.error.message;
+          // If the result did not contain a list of features, add special note.
+          message = "Could not reach geocoder";
+          if (errorMessage) message += ` (${errorMessage})`;
+          geocodedFeatures = [];
+        } else if (geocodedFeatures.length === 0) {
+          message = `No results found for '${text}'`;
+        }
+        this.setState({ geocodedFeatures, message });
       })
       .catch(err => {
         console.error(err);
@@ -55,6 +80,7 @@ class LocationField extends Component {
     this.state = {
       value: this.getValueFromLocation(),
       menuVisible: false,
+      message: null,
       geocodedFeatures: [],
       activeIndex: null
     };
@@ -162,14 +188,16 @@ class LocationField extends Component {
       this.setState({
         geocodedFeatures: [],
         menuVisible: false,
+        message: null,
         value: this.getValueFromLocation()
       });
     }
   };
 
   onTextInputChange = evt => {
-    this.setState({ value: evt.target.value, menuVisible: true });
-    this.geocodeAutocomplete(evt.target.value);
+    const { value } = evt.target;
+    this.setState({ value, menuVisible: true });
+    this.geocodeAutocomplete(value);
   };
 
   onTextInputClick = () => {
@@ -275,7 +303,7 @@ class LocationField extends Component {
       .then(result => {
         if (result.features && result.features.length > 0) {
           // Only replace geocode items if results were found
-          this.setState({ geocodedFeatures: result.features });
+          this.setState({ geocodedFeatures: result.features, message: null });
         } else {
           console.warn(
             "No results found for geocode search. Not replacing results."
@@ -313,7 +341,7 @@ class LocationField extends Component {
       nearbyStops
     } = this.props;
     const { menuVisible, value } = this.state;
-    const { activeIndex } = this.state;
+    const { activeIndex, message } = this.state;
     let { geocodedFeatures } = this.state;
     if (geocodedFeatures.length > 5)
       geocodedFeatures = geocodedFeatures.slice(0, 5);
@@ -524,6 +552,17 @@ class LocationField extends Component {
       );
       menuItems.push(currentLocationOption);
       itemIndex++;
+    }
+    if (message) {
+      const messageItem = (
+        <Option
+          icon={<ExclamationCircle size={20} />}
+          key={optionKey++}
+          title={message}
+          disabled
+        />
+      );
+      menuItems.unshift(messageItem);
     }
 
     // Store the number of location-associated items for reference in the onKeyDown method
