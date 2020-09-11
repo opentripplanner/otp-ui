@@ -74,7 +74,17 @@ L.Evented.include({
 class BaseMap extends Component {
   overlays = [];
 
+  constructor(props) {
+    super(props);
+    // Default active base layer index to zero (first layer).
+    // TODO: derive layerIndex from props?
+    this.state = {
+      layerIndex: 0
+    };
+  }
+
   componentDidMount() {
+    // register single click event
     const lmap = this.refs.map.leafletElement;
     lmap.options.singleClickTimeout = 250;
     lmap.on("singleclick", this.onLeftClick);
@@ -91,6 +101,18 @@ class BaseMap extends Component {
       lmap.removeLayer(layer);
     });
   }
+
+  /**
+   * Returns whether to show the Mapbox wordmark (if the current layer's URL is
+   * a Mapbox url).
+   */
+  showMapboxWordmark = () => {
+    const { baseLayers } = this.props;
+    const { layerIndex } = this.state;
+    // Get current layer and check its URL.
+    const activeLayer = baseLayers[layerIndex];
+    return activeLayer && activeLayer.url.startsWith("//api.mapbox.com");
+  };
 
   onLeftClick = e => {
     const { onClick } = this.props;
@@ -116,6 +138,19 @@ class BaseMap extends Component {
     // Call the event handler on this control's parent element.
     // eslint-disable-next-line react/destructuring-assignment
     callIfValid(this.props[eventName])(e);
+  };
+
+  handleBaseLayerChange = e => {
+    const { baseLayers, onBaseLayerChange } = this.props;
+    // Find layer index
+    const index = baseLayers.findIndex(l => l.name === e.name);
+    const layer = baseLayers[index];
+    // Call prop if exists.
+    if (typeof onBaseLayerChange === "function") {
+      onBaseLayerChange({ index, layer });
+    }
+    // Update active index in state.
+    this.setState({ layerIndex: index });
   };
 
   handleOverlayAdded = e => {
@@ -145,6 +180,7 @@ class BaseMap extends Component {
       onPopupClosed,
       zoom
     } = this.props;
+    const { layerIndex } = this.state;
 
     // Separate overlay layers into user-controlled (those with a checkbox in
     // the layer control) and those that are needed by the app (e.g., stop viewer
@@ -172,9 +208,24 @@ class BaseMap extends Component {
         // Note: Map-click is handled via single-click plugin, set up in componentDidMount()
         onContextMenu={onContextMenu}
         onOverlayAdd={this.handleOverlayAdded}
+        onBaseLayerChange={this.handleBaseLayerChange}
         onOverlayRemove={this.handleOverlayRemoved}
         onViewportChanged={this.handleViewportChanged}
       >
+        {/* Add the mapbox wordmark if the current base layer's URL appears to
+          be a Mapbox URL. The implementing application must include CSS that
+          properly displays the wordmark. See Mapbox website for example CSS:
+          https://docs.mapbox.com/help/how-mapbox-works/attribution/#other-mapping-frameworks */}
+        {this.showMapboxWordmark() && (
+          <a
+            href="http://mapbox.com/about/maps"
+            className="mapbox-wordmark"
+            target="_blank noopener noreferrer"
+          >
+            Mapbox
+          </a>
+        )}
+
         {/* Create the layers control, including base map layers and any
          * user-controlled overlays. */}
         <LayersControl position="topright">
@@ -184,7 +235,7 @@ class BaseMap extends Component {
               return (
                 <LayersControl.BaseLayer
                   name={layer.name}
-                  checked={i === 0}
+                  checked={i === layerIndex}
                   key={i}
                 >
                   {
@@ -275,6 +326,11 @@ BaseMap.propTypes = {
    */
   maxZoom: PropTypes.number,
   /**
+   * Triggered when the user changes the active base layer.
+   * See https://leafletjs.com/reference-1.7.1.html#map-baselayerchange
+   */
+  onBaseLayerChange: PropTypes.func,
+  /**
    * Triggered when the user clicks on the map.
    * See https://leafletjs.com/reference-1.6.0.html#map-click for details.
    */
@@ -340,6 +396,7 @@ BaseMap.defaultProps = {
     }
   ],
   maxZoom: 20,
+  onBaseLayerChange: null,
   onClick: null,
   onContextMenu: null,
   onOverlayAdded: null,
