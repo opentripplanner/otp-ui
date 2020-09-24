@@ -15,9 +15,6 @@ import { storiesOf } from "@storybook/react";
 import { Bus, Subway } from "styled-icons/fa-solid";
 
 import StopsOverlay from ".";
-// NOTE: these mock stops assume the list of stops have an feed-scoped ID
-// that OTP returns from the OTP transit index. This may not be the case if
-// using an alternative transit index.
 import mockStops from "../__mocks__/stops.json";
 import DefaultStopMarker from "./default-stop-marker";
 
@@ -26,14 +23,6 @@ import "../../../node_modules/leaflet/dist/leaflet.css";
 const center = [45.523092, -122.671202];
 const languageConfig = { stopViewer: "View Stop" };
 const refreshStopsAction = action("refreshStops");
-const transitOperators = [
-  {
-    id: "TRIMET",
-    name: "TriMet",
-    logo:
-      "http://news.trimet.org/wordpress/wp-content/uploads/2019/04/TriMet-logo-300x300.png"
-  }
-];
 
 function ExampleMarker({ entity: stop }) {
   return (
@@ -42,7 +31,6 @@ function ExampleMarker({ entity: stop }) {
       setLocation={action("setLocation")}
       setViewedStop={action("setViewedStop")}
       stop={stop}
-      transitOperators={transitOperators}
     />
   );
 }

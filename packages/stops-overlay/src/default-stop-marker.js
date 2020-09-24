@@ -10,8 +10,7 @@ import * as Styled from "./styled";
 const {
   languageConfigType,
   leafletPathType,
-  stopLayerStopType,
-  transitOperatorType
+  stopLayerStopType
 } = coreUtils.types;
 
 export default class StopMarker extends Component {
@@ -35,20 +34,9 @@ export default class StopMarker extends Component {
   }
 
   render() {
-    const {
-      languageConfig,
-      leafletPath,
-      radius,
-      stop,
-      transitOperators
-    } = this.props;
+    const { languageConfig, leafletPath, radius, stop } = this.props;
     const { id, name, lat, lon } = stop;
     const idArr = id.split(":");
-    const transitOperator = coreUtils.route.getTransitOperatorFromId(
-      idArr[0],
-      transitOperators
-    );
-    const agencyName = transitOperator ? transitOperator.name : "?";
 
     return (
       <CircleMarker
@@ -60,9 +48,6 @@ export default class StopMarker extends Component {
         <Popup>
           <BaseMapStyled.MapOverlayPopup>
             <BaseMapStyled.PopupTitle>{name}</BaseMapStyled.PopupTitle>
-            <BaseMapStyled.PopupRow>
-              <b>Agency:</b> {agencyName}
-            </BaseMapStyled.PopupRow>
             <BaseMapStyled.PopupRow>
               <span>
                 <b>Stop ID:</b> {idArr[1]}
@@ -93,8 +78,7 @@ StopMarker.propTypes = {
   radius: PropTypes.number,
   setLocation: PropTypes.func.isRequired,
   setViewedStop: PropTypes.func.isRequired,
-  stop: stopLayerStopType.isRequired,
-  transitOperators: PropTypes.arrayOf(transitOperatorType).isRequired
+  stop: stopLayerStopType.isRequired
 };
 
 StopMarker.defaultProps = {

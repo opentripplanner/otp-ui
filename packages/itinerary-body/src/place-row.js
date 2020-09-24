@@ -103,13 +103,10 @@ const PlaceRow = ({
                 timeFormat={timeFormat}
                 TransitLegSubheader={TransitLegSubheader}
                 TransitLegSummary={TransitLegSummary}
-                transitOperator={
-                  leg.agencyId &&
-                  coreUtils.route.getTransitOperatorFromId(
-                    leg.agencyId,
-                    config.transitOperators
-                  )
-                }
+                transitOperator={coreUtils.route.getTransitOperatorFromLeg(
+                  leg,
+                  config.transitOperators
+                )}
               />
             ) : (
               /* This is an access (e.g. walk/bike/etc.) leg */
