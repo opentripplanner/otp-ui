@@ -1,14 +1,8 @@
-import { formatTime } from "@opentripplanner/core-utils/lib/time";
-import {
-  configType,
-  legType,
-  timeOptionsType
-} from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 
-import coreUtils from "@opentripplanner/core-utils";
-
+import DefaultTimeColumnContent from "./defaults/time-column-content";
 import AccessLegBody from "./AccessLegBody";
 import * as Styled from "./styled";
 import TransitLegBody from "./TransitLegBody";
@@ -20,6 +14,7 @@ import TransitLegBody from "./TransitLegBody";
 const PlaceRow = ({
   config,
   diagramVisible,
+  fare,
   followsTransit,
   frameLeg,
   isDestination,
@@ -38,6 +33,7 @@ const PlaceRow = ({
   showLegIcon,
   showMapButtonColumn,
   showViewTripButton,
+  TimeColumnContent,
   timeOptions,
   toRouteAbbreviation,
   TransitLegSubheader,
@@ -51,13 +47,17 @@ const PlaceRow = ({
   const interline = !!(!isDestination && leg.interlineWithPreviousLeg);
   const hideBorder = interline || !legIndex;
   const place = isDestination ? leg.to : leg.from;
-  const time = isDestination ? leg.endTime : leg.startTime;
 
   const { longDateFormat, timeFormat } = config.dateTime;
   return (
     <Styled.PlaceRowWrapper key={legIndex || "destination-place"}>
       <Styled.TimeColumn>
-        {time && formatTime(time, timeOptions)}
+        {/* Custom rendering of the departure/arrival time of the specified leg. */}
+        <TimeColumnContent
+          isDestination={isDestination}
+          leg={leg}
+          timeOptions={timeOptions}
+        />
       </Styled.TimeColumn>
       <Styled.LineColumn>
         <LineColumnContent
@@ -90,6 +90,7 @@ const PlaceRow = ({
               /* This is a transit leg */
               <TransitLegBody
                 config={config}
+                fare={fare}
                 leg={leg}
                 LegIcon={LegIcon}
                 legIndex={legIndex}
@@ -144,17 +145,18 @@ const PlaceRow = ({
 // A lot of these props are passed through from the ItineraryBody. See the
 // documentation in that component for more information.
 PlaceRow.propTypes = {
-  config: configType.isRequired,
-  diagramVisible: legType,
+  config: coreUtils.types.configType.isRequired,
+  diagramVisible: coreUtils.types.legType,
+  fare: coreUtils.types.fareType,
   /** Indicates whether this leg directly follows a transit leg */
   followsTransit: PropTypes.bool,
   frameLeg: PropTypes.func.isRequired,
   /** whether this place row represents the destination */
   isDestination: PropTypes.bool.isRequired,
   /** Contains details about the leg object prior to the current one */
-  lastLeg: legType,
+  lastLeg: coreUtils.types.legType,
   /** Contains details about leg object that is being displayed */
-  leg: legType.isRequired,
+  leg: coreUtils.types.legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired,
   /** The index value of this specific leg within the itinerary */
   legIndex: PropTypes.number.isRequired,
@@ -169,7 +171,8 @@ PlaceRow.propTypes = {
   showLegIcon: PropTypes.bool.isRequired,
   showMapButtonColumn: PropTypes.bool.isRequired,
   showViewTripButton: PropTypes.bool.isRequired,
-  timeOptions: timeOptionsType,
+  TimeColumnContent: PropTypes.elementType,
+  timeOptions: coreUtils.types.timeOptionsType,
   toRouteAbbreviation: PropTypes.func.isRequired,
   TransitLegSubheader: PropTypes.elementType,
   TransitLegSummary: PropTypes.elementType.isRequired
@@ -177,9 +180,11 @@ PlaceRow.propTypes = {
 
 PlaceRow.defaultProps = {
   diagramVisible: null,
+  fare: null,
   followsTransit: false,
   // can be null if this is the origin place
   lastLeg: null,
+  TimeColumnContent: DefaultTimeColumnContent,
   timeOptions: null,
   TransitLegSubheader: undefined
 };

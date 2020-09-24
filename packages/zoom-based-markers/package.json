@@ -1,11 +1,11 @@
 {
-  "name": "@opentripplanner/park-and-ride-overlay",
-  "version": "1.0.1",
-  "description": "A map overlay to show park and rides",
+  "name": "@opentripplanner/zoom-based-markers",
+  "version": "1.0.0",
+  "description": "A component that renders objects differently based on a zoom level.",
   "main": "lib/index.js",
-  "homepage": "https://github.com/opentripplanner/otp-ui#readme",
-  "author": "Evan Siroky",
+  "author": "Binh Dam",
   "license": "MIT",
+  "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,15 +17,14 @@
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
   "dependencies": {
-    "@opentripplanner/core-utils": "^2.1.0",
-    "@opentripplanner/from-to-location-picker": "^1.0.0",
-    "prop-types": "^15.7.2"
+    "@opentripplanner/core-utils": "^2.1.0"
   },
   "peerDependencies": {
-    "@opentripplanner/base-map": "^1.0.0",
+    "@opentripplanner/base-map": "^1.0.1",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6",
     "react-leaflet": "^2.6.1",
     "styled-components": "^4.3.1"
-  }
+  },
+  "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"
 }

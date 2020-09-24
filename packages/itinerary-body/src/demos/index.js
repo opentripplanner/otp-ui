@@ -1,12 +1,17 @@
-import { formatDuration } from "@opentripplanner/core-utils/lib/time";
+import {
+  formatDuration,
+  formatTime
+} from "@opentripplanner/core-utils/lib/time";
 import {
   languageConfigType,
-  legType
+  legType,
+  timeOptionsType
 } from "@opentripplanner/core-utils/lib/types";
 import PropTypes from "prop-types";
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import styled from "styled-components";
+import { ExclamationTriangle } from "styled-icons/fa-solid";
 
 import ItineraryBody from "..";
 import OtpRRTransitLegSubheader from "../otp-react-redux/transit-leg-subheader";
@@ -15,6 +20,37 @@ import * as ItineraryBodyClasses from "../styled";
 export function CustomPlaceName({ place }) {
   return `🎉✨🎊 ${place.name} 🎉✨🎊`;
 }
+
+/**
+ * Custom component, for illustration purposes only, for displaying the time and other info
+ * of the given leg in the time column of the ItineraryBody -> PlaceRow component.
+ */
+export function CustomTimeColumnContent({ isDestination, leg, timeOptions }) {
+  const time = isDestination ? leg.endTime : leg.startTime;
+
+  return (
+    <>
+      <div>
+        <span style={{ color: "red" }}>
+          {time && formatTime(time, timeOptions)}
+        </span>
+      </div>
+      <div style={{ fontSize: "80%", lineHeight: "1em" }}>
+        <ExclamationTriangle style={{ height: "1em" }} /> Delayed xx&nbsp;min.
+      </div>
+    </>
+  );
+}
+
+CustomTimeColumnContent.propTypes = {
+  isDestination: PropTypes.bool.isRequired,
+  leg: legType.isRequired,
+  timeOptions: timeOptionsType
+};
+
+CustomTimeColumnContent.defaultProps = {
+  timeOptions: null
+};
 
 export function customToRouteAbbreviation(route) {
   if (route.toString().length < 3) {

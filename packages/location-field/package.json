@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/location-field",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A component for display and finding a location",
   "main": "lib/index.js",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^2.0.0",
+    "@opentripplanner/core-utils": "^2.1.0",
     "@opentripplanner/geocoder": "^1.0.2",
     "@opentripplanner/humanize-distance": "^0.0.22",
     "@opentripplanner/location-icon": "^1.0.0",

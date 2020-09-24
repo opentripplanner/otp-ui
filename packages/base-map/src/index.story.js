@@ -10,6 +10,7 @@ import AllVehiclesOverlay from "../__mocks__/AllVehicles";
 import ContextMenuDemo from "../__mocks__/ContextMenuDemo";
 
 import "../../../node_modules/leaflet/dist/leaflet.css";
+import "../__mocks__/mapbox-wordmark.css";
 
 export default {
   title: "BaseMap",
@@ -103,7 +104,7 @@ export const withExampleBaseLayers = () => {
       name: "Mapbox (Bring your own token)",
       url: `//api.mapbox.com/styles/v1/mapbox/light-v10/tiles/{z}/{x}/{y}{retina}?access_token=${mapboxToken}`,
       attribution:
-        'Map tiles: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
       maxZoom: 20,
       retina: "@2x"
     },
@@ -122,7 +123,15 @@ export const withExampleBaseLayers = () => {
     }
   ];
 
-  return <BaseMap baseLayers={exampleBaseLayers} center={center} />;
+  const onBaseLayerChange = action("onBaseLayerChange");
+
+  return (
+    <BaseMap
+      onBaseLayerChange={onBaseLayerChange}
+      baseLayers={exampleBaseLayers}
+      center={center}
+    />
+  );
 };
 
 export const withSampleMarkers = () => (

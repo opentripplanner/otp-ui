@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`util > itinerary getTransitFare should return defaults with missing fare 1`] = `"$1.00"`;
+
+exports[`util > itinerary getTransitFare should return defaults with missing fare 2`] = `"$0.00"`;
+
+exports[`util > itinerary getTransitFare should return defaults with missing fare 3`] = `"$1.00"`;
+
+exports[`util > itinerary getTransitFare should return defaults with missing fare 4`] = `0`;
+
+exports[`util > itinerary getTransitFare should work with valid fare component 1`] = `"$5.75"`;
+
+exports[`util > itinerary getTransitFare should work with valid fare component 2`] = `575`;

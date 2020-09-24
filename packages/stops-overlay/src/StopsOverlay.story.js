@@ -1,6 +1,9 @@
 import { divIcon } from "leaflet";
 import BaseMap from "@opentripplanner/base-map";
-import { stopLayerStopType } from "@opentripplanner/core-utils/src/types";
+import {
+  stopLayerStopType,
+  zoomBasedSymbolType
+} from "@opentripplanner/core-utils/src/types";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import ReactDOMServer from "react-dom/server";
@@ -32,7 +35,7 @@ const transitOperators = [
   }
 ];
 
-function ExampleMarker({ stop }) {
+function ExampleMarker({ entity: stop }) {
   return (
     <DefaultStopMarker
       languageConfig={languageConfig}
@@ -45,7 +48,7 @@ function ExampleMarker({ stop }) {
 }
 
 ExampleMarker.propTypes = {
-  stop: stopLayerStopType.isRequired
+  entity: stopLayerStopType.isRequired
 };
 
 class Example extends Component {
@@ -69,15 +72,15 @@ class Example extends Component {
   };
 
   render() {
-    const { StopMarker } = this.props;
+    const { symbols } = this.props;
     const { stops } = this.state;
     return (
       <BaseMap center={center}>
         <StopsOverlay
           name="Transit Stops"
           refreshStops={this.refreshStops}
-          StopMarker={StopMarker}
           stops={stops}
+          symbols={symbols}
           visible
         />
       </BaseMap>
@@ -86,33 +89,51 @@ class Example extends Component {
 }
 
 Example.propTypes = {
-  StopMarker: PropTypes.elementType
+  symbols: PropTypes.arrayOf(zoomBasedSymbolType)
 };
 
 Example.defaultProps = {
-  StopMarker: ExampleMarker
+  symbols: [
+    {
+      minZoom: 15,
+      symbol: ExampleMarker
+    }
+  ]
 };
 
-function CustomMarker({ stop }) {
-  const iconHtml = ReactDOMServer.renderToStaticMarkup(
-    stop.name.indexOf("MAX") > -1 ? <Subway /> : <Bus color="grey" />
-  );
-  return (
-    <Marker
-      icon={divIcon({ html: iconHtml, className: "" })}
-      position={[stop.lat, stop.lon]}
-    />
-  );
+function makeCustomMarker(Icon) {
+  const CustomMarker = ({ entity: stop }) => {
+    const iconHtml = ReactDOMServer.renderToStaticMarkup(<Icon />);
+    return (
+      <Marker
+        icon={divIcon({ html: iconHtml, className: "" })}
+        position={[stop.lat, stop.lon]}
+      />
+    );
+  };
+
+  CustomMarker.propTypes = {
+    entity: stopLayerStopType.isRequired
+  };
+
+  return CustomMarker;
 }
 
-CustomMarker.propTypes = {
-  stop: stopLayerStopType.isRequired
-};
+const customSymbols = [
+  {
+    getType: stop => (stop.name.indexOf("MAX") > -1 ? "MAX" : "BUS"),
+    minZoom: 14,
+    symbol: makeCustomMarker(() => <Bus color="gray" />),
+    symbolByType: {
+      MAX: makeCustomMarker(Subway)
+    }
+  }
+];
 
 storiesOf("StopsOverlay", module)
   .addDecorator(withA11y)
   .addDecorator(withInfo)
   .add("StopsOverlay with default marker", () => <Example />)
   .add("StopsOverlay with custom marker", () => (
-    <Example StopMarker={CustomMarker} />
+    <Example symbols={customSymbols} />
   ));

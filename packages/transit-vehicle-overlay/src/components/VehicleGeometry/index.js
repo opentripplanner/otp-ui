@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useLeaflet } from "react-leaflet";
 
 import { transitVehicleType } from "@opentripplanner/core-utils/lib/types";
-import ModeCircles from "../markers/ModeCircles";
+import { CircledVehicle } from "../markers/ModeCircles";
 import { linterIgnoreTheseProps } from "../../utils";
 
 /**
@@ -87,7 +87,7 @@ VehicleGeometry.defaultProps = {
     linterIgnoreTheseProps(vehicle, isTracked);
   },
   onRecenterMap: null,
-  MarkerSlot: ModeCircles,
+  MarkerSlot: CircledVehicle,
   PopupSlot: null,
   TooltipSlot: null,
   color: "",
