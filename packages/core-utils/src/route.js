@@ -1,31 +1,151 @@
 /**
- * Looks up an operator from the provided configuration.
- * @param  {string} feedId - the feed ID, which can be obtained by splitting the
- *                            OTP route or stop ID by `:`
- * @param  {object} transitOperators - transitOperators from config.
- * @return {object} the operator for the specified feedId
+ * Returns the transit operator (if an exact match is found) from the transit
+ * operators config value. It is critical to use both the feedId and agencyId in
+ * this method because it is possible in OTP for there to be a duplicate
+ * agencyId in separate feeds.
+ *
+ * @param  {string} feedId The feedId that this transit agency belongs to
+ * @param  {string} agencyId The agencyId of the transit agency
+ * @param  {array} transitOperators The transitOperators list from the config
+ * @return {object} The transitOperator if a match was found or null if no match
+ *    was found
  */
-export function getTransitOperatorFromId(feedId, transitOperators) {
+export function getTransitOperatorFromFeedIdAndAgencyId(
+  feedId,
+  agencyId,
+  transitOperators
+) {
   return (
-    transitOperators.find(transitOperator => transitOperator.id === feedId) ||
-    null
+    transitOperators.find(
+      transitOperator =>
+        transitOperator.feedId === feedId &&
+        transitOperator.agencyId === agencyId
+    ) || null
   );
 }
 
-/** Looks up an operator from the provided configuration */
-export function getTransitOperatorFromOtpRoute(route, transitOperators) {
-  if (!route.id) return null;
-  const operatorId = route.id.split(":")[0].toLowerCase();
-  return getTransitOperatorFromId(operatorId, transitOperators);
+/**
+ * Looks up an operator from the provided leg.
+ *
+ * @param  {object} leg The Itinerary Leg from which to find the transit
+ *    operator
+ * @param  {object} transitOperators transitOperators from config.
+ * @return {object} the operator if one was found or null if no match was found
+ */
+export function getTransitOperatorFromLeg(leg, transitOperators) {
+  if (!leg.routeId || !leg.agencyId) return null;
+  const feedId = leg.routeId.split(":")[0];
+  return getTransitOperatorFromFeedIdAndAgencyId(
+    feedId,
+    leg.agencyId,
+    transitOperators
+  );
 }
 
 /**
- * The functions below are for enhanced route sorting functions for
- * the route viewer on OTP-react-redux.
- * They address route ordering issues discussed in
- * https://github.com/opentripplanner/otp-react-redux/pull/123 and
- * https://github.com/opentripplanner/otp-react-redux/pull/124.
+ * Looks up an operator from the provided configuration given an OTP route.
+ * NOTE: this assumes the use of the OTP Route model or a modified OTP
+ * RouteShort model (such as the one found in the IBI fork of OTP) that also
+ * returns the agencyId.
+ *
+ * @param  {object} route Either an OTP Route or RouteShort model
+ * @param  {array} transitOperators transitOperators from config
+ * @return {object} the operator if one was found or null if no match was found
  */
+export function getTransitOperatorFromOtpRoute(route, transitOperators) {
+  if (!route.id) return null;
+  const feedId = route.id.split(":")[0];
+  let agencyId;
+  if (route.agency) {
+    // This is returned in the OTP Route model
+    agencyId = route.agency.id;
+  } else if (route.agencyId) {
+    // This is returned in the OTP RouteShort model (such as in the IBI fork)
+    agencyId = route.agencyId;
+  } else {
+    return null;
+  }
+  return getTransitOperatorFromFeedIdAndAgencyId(
+    feedId,
+    agencyId,
+    transitOperators
+  );
+}
+
+// The functions below are for enhanced route sorting functions for the route
+// viewer on OTP-react-redux.
+// They address route ordering issues discussed in
+// https://github.com/opentripplanner/otp-react-redux/pull/123 and
+// https://github.com/opentripplanner/otp-react-redux/pull/124.
+
+/**
+ * A large comparator value that can safely be used in mathematical sort
+ * comparisons to place things at the ned of lists
+ */
+const END_OF_LIST_COMPARATOR_VALUE = 999999999999;
+
+/**
+ * Returns a transit operator comparator value given a route and an optional
+ * transitOperators config value. This function will do its best to handle all
+ * kinds of input data as certain deployments of an implementing webapp may have
+ * incomplete data and certain versions of OTP might not have a modified
+ * implementation of the RouteShort model.
+ *
+ * @param  {object} route Either an OTP Route or RouteShort model
+ * @param  {array} transitOperators transitOperators from config
+ * @return {mixed} this could return a string value (the route's agency name) if
+ *   the transitOperators value is not defined. Otherwise an integer will be
+ *   returned.
+ */
+function getTransitOperatorComparatorValue(route, transitOperators) {
+  // if the transitOperators is undefined, use the route's agency name as the
+  // comparator value
+  if (!transitOperators) {
+    // OTP Route
+    if (route.agency) return route.agency.name;
+    // OTP RouteShort (base OTP repo or IBI fork)
+    if (route.agencyName) return route.agencyName;
+    // shouldn't happen as agency names will be defined
+    return "zzz";
+  }
+
+  // find operator associated with route
+  const transitOperator = getTransitOperatorFromOtpRoute(
+    route,
+    transitOperators
+  );
+
+  // if transit operator not found, return infinity
+  if (!transitOperator) return END_OF_LIST_COMPARATOR_VALUE;
+
+  // return the transit operator's sort value or END_OF_LIST_COMPARATOR_VALUE if
+  // the sort value is not defined
+  return typeof transitOperator.order !== "undefined"
+    ? transitOperator.order
+    : END_OF_LIST_COMPARATOR_VALUE;
+}
+
+/**
+ * Calculates the sort comparator value given two routes based off of the
+ * route's agency and provided transitOperators config data.
+ */
+function makeTransitOperatorComparator(transitOperators) {
+  return (a, b) => {
+    const aVal = getTransitOperatorComparatorValue(a, transitOperators);
+    const bVal = getTransitOperatorComparatorValue(b, transitOperators);
+    if (typeof aVal === "string") {
+      // happens when transitOperators is undefined. Both aVal are gauranteed to
+      // be strings. Make a string comparison.
+      if (aVal < bVal) return -1;
+      if (aVal > bVal) return 1;
+      return 0;
+    }
+
+    // transitOperators are defined and therefore a numeric value is gauranteed
+    // to be returned
+    return aVal - bVal;
+  };
+}
 
 /**
  * Gets the desired sort values according to an optional getter function. If the
@@ -93,7 +213,7 @@ function getRouteTypeComparatorValue(route) {
   // Default the comparator value to a large number (placing the route at the
   // end of the list).
   console.warn("no mode/route type found for route", route);
-  return 9999;
+  return END_OF_LIST_COMPARATOR_VALUE;
 }
 
 /**
@@ -261,11 +381,14 @@ function makeMultiCriteriaSort(...criteria) {
  *    those with shortNames.
  *  6. longName as string.
  */
-export const routeComparator = makeMultiCriteriaSort(
-  makeNumericValueComparator(obj => getRouteSortOrderValue(obj.sortOrder)),
-  routeTypeComparator,
-  alphabeticShortNameComparator,
-  makeNumericValueComparator(obj => parseInt(obj.shortName, 10)),
-  makeStringValueComparator(obj => obj.shortName),
-  makeStringValueComparator(obj => obj.longName)
-);
+export function makeRouteComparator(transitOperators) {
+  return makeMultiCriteriaSort(
+    makeTransitOperatorComparator(transitOperators),
+    makeNumericValueComparator(obj => getRouteSortOrderValue(obj.sortOrder)),
+    routeTypeComparator,
+    alphabeticShortNameComparator,
+    makeNumericValueComparator(obj => parseInt(obj.shortName, 10)),
+    makeStringValueComparator(obj => obj.shortName),
+    makeStringValueComparator(obj => obj.longName)
+  );
+}
