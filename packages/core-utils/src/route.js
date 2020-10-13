@@ -80,7 +80,7 @@ export function getTransitOperatorFromOtpRoute(route, transitOperators) {
 
 /**
  * A large comparator value that can safely be used in mathematical sort
- * comparisons to place things at the ned of lists
+ * comparisons to place things at the end of lists
  */
 const END_OF_LIST_COMPARATOR_VALUE = 999999999999;
 
@@ -119,8 +119,8 @@ function getTransitOperatorComparatorValue(route, transitOperators) {
   if (!transitOperator) return END_OF_LIST_COMPARATOR_VALUE;
 
   // return the transit operator's sort value or END_OF_LIST_COMPARATOR_VALUE if
-  // the sort value is not defined
-  return typeof transitOperator.order !== "undefined"
+  // the sort value is not a number
+  return typeof transitOperator.order === "number"
     ? transitOperator.order
     : END_OF_LIST_COMPARATOR_VALUE;
 }
@@ -360,26 +360,35 @@ function makeMultiCriteriaSort(...criteria) {
 }
 
 /**
- * Compares routes for the purposes of sorting and displaying in a user
- * interface. Due to GTFS feeds having varying levels of data quality, a multi-
+ * Creates a sort comparator function to compares routes for the purposes of
+ * sorting and displaying in a user interface. This takes in a single optional
+ * argument which should be a list of transitOperators as defined in the config
+ * file. Due to GTFS feeds having varying levels of data quality, a multi-
  * criteria sort is needed to account for various differences. The criteria
  * included here are each applied to the routes in the order listed. If a given
  * sort criterion yields equivalence (e.g., two routes have the short name
  * "20"), the comparator falls back onto the next sort criterion (e.g., long
- * name). If desired, the criteria of sorting based off of integer shortName can
- * be disabled. The sort operates on the following values (in order):
+ * name). The sort operates on the following values (in order):
  *
- *  1. sortOrder. Routes that do not have a valid sortOrder will be placed
+ *  1. Transit Operator. The transit operator will be attempted to be obtained
+ *    for each route. If no argument is provided when creating this comparator
+ *    function, then routes will be sorted by their agency's name. If an
+ *    argument is provided and a match is found based off of the route's feed_id
+ *    and agency_id and a transitOperator's feed_id and agency_id, then the
+ *    field transitOperator.order will be used as the comparator value as long
+ *    as it is numeric. If it is not numeric, a value is returned indicating
+ *    that this transit operator should be placed at the end of the list.
+ *  2. sortOrder. Routes that do not have a valid sortOrder will be placed
  *    beneath those that do.
- *  2. route type (OTP mode). See routeTypeComparator code for prioritization of
+ *  3. route type (OTP mode). See routeTypeComparator code for prioritization of
  *    route types.
- *  3. shortNames that begin with alphabetic characters. shortNames that do not
+ *  4. shortNames that begin with alphabetic characters. shortNames that do not
  *    start with alphabetic characters will be place beneath those that do.
- *  4. shortName as integer. shortNames that cannot be parsed as integers will
+ *  5. shortName as integer. shortNames that cannot be parsed as integers will
  *    be placed beneath those that are valid.
- *  5. shortName as string. Routes without shortNames will be placed beneath
+ *  6. shortName as string. Routes without shortNames will be placed beneath
  *    those with shortNames.
- *  6. longName as string.
+ *  7. longName as string.
  */
 export function makeRouteComparator(transitOperators) {
   return makeMultiCriteriaSort(

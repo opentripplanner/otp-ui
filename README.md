@@ -64,15 +64,8 @@ Some packages in otp-ui depend on sibling packages (e.g., `@opentripplanner/core
 - `npx lerna diff` - Show specifically what files have cause the packages to change.
 - `npx lerna create <packageName>` - Creates new package and walks through setting up package.json
 
-## Lerna Publish to NPM
+## Releasing
 
-Some commands you might need to execute for lerna to publish to npm:
+This project uses semantic-release to create releases to NPM. It is expect that contributers create [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/) messages. These are then parsed by semantic-release which will automatically create an appropriate release for each package whenever a branch is merged to master.
 
-```bash
- npm whoami
- (if whomai comes back null, then: npm login; npm config set access public)
- npx lerna changed
- npx lerna publish  # option 1: default publish
- npx lerna publish 0.0.21 --force-publish=*  # option 2: publish all components to version X
- yarn deploy-storybook
-```
+Sometimes when creating new releases, it will be necessary to update numerous packages within this repo at once to a newer internal package version. For this purpose there is the `update-internal-dependencies` script. This should be ran manually as needed. By default, `yarn update-internal-dependencies` will update all dependencies with the `@opentripplanner` scope in all packages within this project. To only update specific dependencies, it is possible to run something like `yarn update-internal-dependencies core-utils base-map`. This would update all dependencies on either the `@opentripplanner/base-map` or the `@opentripplanner/core-utils` in all packages in this project.

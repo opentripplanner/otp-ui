@@ -14,7 +14,7 @@ const semver = require("semver");
 //      @opentripplanner/base-map
 const filteredPackages = process.argv.slice(2);
 if (filteredPackages.length === 0) {
-  console.log("Updating all internal @opentripplanner dependencies!");
+  console.log("Updating all internal @opentripplanner dependencies");
 }
 
 /**
