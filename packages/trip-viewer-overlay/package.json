@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/trip-viewer-overlay",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A map overlay to show a trip of a route",
   "main": "lib/index.js",
   "author": "Evan Siroky",
