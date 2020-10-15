@@ -1,9 +1,4 @@
-import {
-  configType,
-  fareType,
-  legType,
-  timeOptionsType
-} from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -11,11 +6,6 @@ import DefaultTimeColumnContent from "./defaults/time-column-content";
 import AccessLegBody from "./AccessLegBody";
 import * as Styled from "./styled";
 import TransitLegBody from "./TransitLegBody";
-
-/** Looks up an operator from the provided configuration */
-const getTransitOperatorFromConfig = (id, config) =>
-  config.transitOperators.find(transitOperator => transitOperator.id === id) ||
-  null;
 
 /*
   TODO: Wondering if it's possible for us to destructure the time
@@ -113,10 +103,10 @@ const PlaceRow = ({
                 timeFormat={timeFormat}
                 TransitLegSubheader={TransitLegSubheader}
                 TransitLegSummary={TransitLegSummary}
-                transitOperator={
-                  leg.agencyId &&
-                  getTransitOperatorFromConfig(leg.agencyId, config)
-                }
+                transitOperator={coreUtils.route.getTransitOperatorFromLeg(
+                  leg,
+                  config.transitOperators
+                )}
               />
             ) : (
               /* This is an access (e.g. walk/bike/etc.) leg */
@@ -152,18 +142,18 @@ const PlaceRow = ({
 // A lot of these props are passed through from the ItineraryBody. See the
 // documentation in that component for more information.
 PlaceRow.propTypes = {
-  config: configType.isRequired,
-  diagramVisible: legType,
-  fare: fareType,
+  config: coreUtils.types.configType.isRequired,
+  diagramVisible: coreUtils.types.legType,
+  fare: coreUtils.types.fareType,
   /** Indicates whether this leg directly follows a transit leg */
   followsTransit: PropTypes.bool,
   frameLeg: PropTypes.func.isRequired,
   /** whether this place row represents the destination */
   isDestination: PropTypes.bool.isRequired,
   /** Contains details about the leg object prior to the current one */
-  lastLeg: legType,
+  lastLeg: coreUtils.types.legType,
   /** Contains details about leg object that is being displayed */
-  leg: legType.isRequired,
+  leg: coreUtils.types.legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired,
   /** The index value of this specific leg within the itinerary */
   legIndex: PropTypes.number.isRequired,
@@ -179,7 +169,7 @@ PlaceRow.propTypes = {
   showMapButtonColumn: PropTypes.bool.isRequired,
   showViewTripButton: PropTypes.bool.isRequired,
   TimeColumnContent: PropTypes.elementType,
-  timeOptions: timeOptionsType,
+  timeOptions: coreUtils.types.timeOptionsType,
   toRouteAbbreviation: PropTypes.func.isRequired,
   TransitLegSubheader: PropTypes.elementType,
   TransitLegSummary: PropTypes.elementType.isRequired

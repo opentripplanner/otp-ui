@@ -37,10 +37,11 @@ export const leafletPathType = PropTypes.shape({
  * configured in an opentripplanner instance.
  */
 export const transitOperatorType = PropTypes.shape({
+  agencyId: PropTypes.string.isRequired,
   defaultRouteColor: PropTypes.string,
   defaultRouteTextColor: PropTypes.string,
-  id: PropTypes.string.isRequired,
-  logo: PropTypes.string.isRequired,
+  feedId: PropTypes.string.isRequired,
+  logo: PropTypes.string,
   longNameSplitter: PropTypes.string,
   name: PropTypes.string,
   order: PropTypes.number

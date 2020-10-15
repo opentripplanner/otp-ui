@@ -67,6 +67,27 @@ Array [
 ]
 `;
 
+exports[`util > route routeComparator should sort routes based off of agencyName 1`] = `
+Array [
+  Object {
+    "agencyId": "abc",
+    "agencyName": "Acclaimed agency 1",
+    "longName": "Express route X",
+    "mode": "BUS",
+    "routeId": "2:erx",
+    "shortName": "30X",
+  },
+  Object {
+    "agencyId": "abc",
+    "agencyName": "Agency 1",
+    "longName": "Intercity Train 2",
+    "mode": "RAIL",
+    "routeId": "1:it2",
+    "shortName": "IC",
+  },
+]
+`;
+
 exports[`util > route routeComparator should sort routes based off of integer shortName 1`] = `
 Array [
   Object {
@@ -131,6 +152,27 @@ Array [
     "mode": "BUS",
     "shortName": "10",
     "sortOrder": 10,
+  },
+]
+`;
+
+exports[`util > route routeComparator should sort routes based off of transitOperators sort value when a match is found 1`] = `
+Array [
+  Object {
+    "agencyId": "abc",
+    "agencyName": "Agency 1",
+    "longName": "Intercity Train 2",
+    "mode": "RAIL",
+    "routeId": "1:it2",
+    "shortName": "IC",
+  },
+  Object {
+    "agencyId": "abc",
+    "agencyName": "Acclaimed agency 1",
+    "longName": "Express route X",
+    "mode": "BUS",
+    "routeId": "2:erx",
+    "shortName": "30X",
   },
 ]
 `;

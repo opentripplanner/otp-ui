@@ -16,7 +16,7 @@ import { Bus, Subway } from "styled-icons/fa-solid";
 
 import StopsOverlay from ".";
 import mockStops from "../__mocks__/stops.json";
-import DefaultStopMarker from "./stop-marker";
+import DefaultStopMarker from "./default-stop-marker";
 
 import "../../../node_modules/leaflet/dist/leaflet.css";
 

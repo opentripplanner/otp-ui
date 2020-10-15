@@ -1,7 +1,7 @@
 import {
-  getTransitOperatorFromId,
+  getTransitOperatorFromLeg,
   getTransitOperatorFromOtpRoute,
-  routeComparator
+  makeRouteComparator
 } from "../route";
 
 const {
@@ -19,35 +19,40 @@ const {
   route12,
   route13,
   route14,
-  route15
+  route15,
+  route16,
+  route17
 } = require("./__mocks__/itinerary.json");
 
 function sortRoutes(...routes) {
-  routes.sort(routeComparator);
+  routes.sort(makeRouteComparator());
   return routes;
 }
 
 describe("util > route", () => {
-  describe("getTransitOperatorFromId", () => {
+  describe("getTransitOperatorFromLeg", () => {
     it("should get a transit operator", () => {
-      const expectedTransitOperator = { id: "1" };
+      const expectedTransitOperator = { agencyId: "abc", feedId: "1" };
       expect(
-        getTransitOperatorFromId("1", [{ id: "2" }, expectedTransitOperator])
+        getTransitOperatorFromLeg({ agencyId: "abc", routeId: "1:rr" }, [
+          { agencyId: "abc", feedId: "2" },
+          expectedTransitOperator
+        ])
       ).toBe(expectedTransitOperator);
     });
 
     it("should return null if transit operator is not found", () => {
-      expect(getTransitOperatorFromId("abc", [])).toBeNull();
+      expect(getTransitOperatorFromLeg("abc", [])).toBeNull();
     });
   });
 
   describe("getTransitOperatorFromOtpRoute", () => {
-    const otpRoute = { id: "1:abc" };
+    const otpRoute = { agencyId: "abc", id: "1:abc" };
     it("should get a transit operator", () => {
-      const expectedTransitOperator = { id: "1" };
+      const expectedTransitOperator = { agencyId: "abc", feedId: "1" };
       expect(
         getTransitOperatorFromOtpRoute(otpRoute, [
-          { id: "2" },
+          { agencyId: "abc", feedId: "2" },
           expectedTransitOperator
         ])
       ).toBe(expectedTransitOperator);
@@ -59,6 +64,19 @@ describe("util > route", () => {
   });
 
   describe("routeComparator", () => {
+    it("should sort routes based off of agencyName", () => {
+      expect(sortRoutes(route16, route17)).toMatchSnapshot();
+    });
+
+    it("should sort routes based off of transitOperators sort value when a match is found", () => {
+      const comparatorWithTransitOperators = makeRouteComparator([
+        { agencyId: "abc", feedId: "1", order: 2 },
+        { agencyId: "abc", feedId: "2", order: 1 }
+      ]);
+      const routes = [route16, route17];
+      expect(routes.sort(comparatorWithTransitOperators)).toMatchSnapshot();
+    });
+
     it("should sort routes based off of sortOrder", () => {
       expect(sortRoutes(route1, route2)).toMatchSnapshot();
     });

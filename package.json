@@ -2,6 +2,9 @@
   "name": "@opentripplanner/otp-ui",
   "version": "0.0.1",
   "private": true,
+  "engines": {
+    "node": ">=12"
+  },
   "workspaces": [
     "packages/*"
   ],
@@ -50,6 +53,7 @@
     "react-test-renderer": "^16.8.6",
     "semantic-release": "^17.1.1",
     "semantic-release-monorepo": "^7.0.2",
+    "semver": "^7.3.2",
     "styled-components": "^4.3.1",
     "stylelint": "^10.1.0",
     "stylelint-config-prettier": "^5.2.0",
@@ -72,7 +76,8 @@
     "lint": "yarn lint:js && yarn lint:styles",
     "prettier": "prettier --write \"**/*.{json,md,yml}\"",
     "test": "yarn lint:js && yarn lint:styles && yarn unit",
-    "unit": "jest"
+    "unit": "jest",
+    "update-internal-dependencies": "node scripts/update-internal-dependencies.js"
   },
   "eslintConfig": {
     "extends": [

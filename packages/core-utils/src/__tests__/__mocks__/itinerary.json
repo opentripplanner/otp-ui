@@ -87,5 +87,21 @@
     "mode": "BUS",
     "shortName": "30X",
     "sortOrder": 2
+  },
+  "route16": {
+    "agencyId": "abc",
+    "agencyName": "Agency 1",
+    "longName": "Intercity Train 2",
+    "mode": "RAIL",
+    "routeId": "1:it2",
+    "shortName": "IC"
+  },
+  "route17": {
+    "agencyId": "abc",
+    "agencyName": "Acclaimed agency 1",
+    "longName": "Express route X",
+    "mode": "BUS",
+    "routeId": "2:erx",
+    "shortName": "30X"
   }
 }
