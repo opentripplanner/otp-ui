@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/park-and-ride-overlay",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A map overlay to show park and rides",
   "main": "lib/index.js",
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
