@@ -21,8 +21,7 @@
   },
   "transitOperators": [
     {
-      "agencyId": "TRIMET",
-      "feedId": "TriMet",
+      "id": "TRIMET",
       "name": "TriMet",
       "logo": "http://news.trimet.org/wordpress/wp-content/uploads/2019/04/TriMet-logo-300x300.png"
     }
