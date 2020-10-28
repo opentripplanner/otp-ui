@@ -2746,7 +2746,7 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@opentripplanner/core-utils@^2.1.1":
+"@opentripplanner/core-utils@^2.1.0", "@opentripplanner/core-utils@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-2.1.1.tgz#4ed039593fb54c0de1c1370a2c85c88de3e5d3c5"
   integrity sha512-IHxY+QjXdWgWNUPUxI00P01MJ1DRHov8vO597qNEw5ZYzOZHFyYJTU7MiywDMSsY/0Jtty5yG+fKxTSrfc4zJA==
