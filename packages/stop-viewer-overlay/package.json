@@ -17,11 +17,11 @@
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
   "dependencies": {
-    "@opentripplanner/core-utils": "^2.1.0",
+    "@opentripplanner/core-utils": "^3.0.0",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {
-    "@opentripplanner/base-map": "^1.0.0",
+    "@opentripplanner/base-map": "^1.0.4",
     "react": "^16.8.6",
     "react-leaflet": "^2.6.1"
   }
