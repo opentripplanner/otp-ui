@@ -9,7 +9,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^2.1.0",
+    "@opentripplanner/core-utils": "^3.0.0",
     "@opentripplanner/humanize-distance": "^0.0.22",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
@@ -17,8 +17,8 @@
     "velocity-react": "^1.4.3"
   },
   "devDependencies": {
-    "@opentripplanner/icons": "^1.0.0",
-    "@opentripplanner/itinerary-body": "^1.0.1"
+    "@opentripplanner/icons": "^1.0.4",
+    "@opentripplanner/itinerary-body": "^2.0.0"
   },
   "peerDependencies": {
     "react": "^16.8.6",

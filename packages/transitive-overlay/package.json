@@ -17,16 +17,16 @@
     "url": "git+https://github.com/opentripplanner/otp-ui.git"
   },
   "dependencies": {
-    "@opentripplanner/core-utils": "^2.1.0",
+    "@opentripplanner/core-utils": "^3.0.0",
     "lodash.isequal": "^4.5.0",
     "transitive-js": "^0.13.3"
   },
   "devDependencies": {
-    "@opentripplanner/endpoints-overlay": "^1.0.0",
-    "@opentripplanner/itinerary-body": "^1.0.1"
+    "@opentripplanner/endpoints-overlay": "^1.0.4",
+    "@opentripplanner/itinerary-body": "^2.0.0"
   },
   "peerDependencies": {
-    "@opentripplanner/base-map": "^1.0.0",
+    "@opentripplanner/base-map": "^1.0.4",
     "react": "^16.8.6",
     "react-leaflet": "^2.6.1"
   }
