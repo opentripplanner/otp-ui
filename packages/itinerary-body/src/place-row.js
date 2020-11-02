@@ -7,11 +7,6 @@ import AccessLegBody from "./AccessLegBody";
 import * as Styled from "./styled";
 import TransitLegBody from "./TransitLegBody";
 
-/** Looks up an operator from the provided configuration */
-const getTransitOperatorFromConfig = (id, config) =>
-  config.transitOperators.find(transitOperator => transitOperator.id === id) ||
-  null;
-
 /*
   TODO: Wondering if it's possible for us to destructure the time
   preferences from the config object and avoid making the props list so long
@@ -108,10 +103,10 @@ const PlaceRow = ({
                 timeFormat={timeFormat}
                 TransitLegSubheader={TransitLegSubheader}
                 TransitLegSummary={TransitLegSummary}
-                transitOperator={
-                  leg.agencyId &&
-                  getTransitOperatorFromConfig(leg.agencyId, config)
-                }
+                transitOperator={coreUtils.route.getTransitOperatorFromLeg(
+                  leg,
+                  config.transitOperators
+                )}
               />
             ) : (
               /* This is an access (e.g. walk/bike/etc.) leg */

@@ -9,10 +9,10 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^2.1.1",
+    "@opentripplanner/core-utils": "^3.0.0",
     "@opentripplanner/humanize-distance": "^0.0.22",
-    "@opentripplanner/icons": "^1.0.0",
-    "@opentripplanner/location-icon": "^1.0.0",
+    "@opentripplanner/icons": "^1.0.4",
+    "@opentripplanner/location-icon": "^1.0.1",
     "currency-formatter": "^1.5.5",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
