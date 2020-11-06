@@ -98,9 +98,9 @@ const END_OF_LIST_COMPARATOR_VALUE = 999999999999;
  *   returned.
  */
 function getTransitOperatorComparatorValue(route, transitOperators) {
-  // if the transitOperators is undefined, use the route's agency name as the
-  // comparator value
-  if (!transitOperators) {
+  // if the transitOperators is undefined or has zero length, use the route's
+  // agency name as the comparator value
+  if (!transitOperators || transitOperators.length === 0) {
     // OTP Route
     if (route.agency) return route.agency.name;
     // OTP RouteShort (base OTP repo or IBI fork)
