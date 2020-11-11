@@ -341,7 +341,6 @@ export const LineColumn = styled.div`
 
 export const PlaceRowWrapper = styled.div`
   /* needs to be a flexbox row */
-  max-width: 500px;
   display: flex;
   flex-flow: row;
 `;
