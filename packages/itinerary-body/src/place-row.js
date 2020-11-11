@@ -82,6 +82,18 @@ const PlaceRow = ({
             <Styled.PlaceName>
               <PlaceName config={config} interline={interline} place={place} />
             </Styled.PlaceName>
+
+            {showMapButtonColumn && (
+              <Styled.MapButtonColumn hideBorder={hideBorder.toString()}>
+                <Styled.MapButton
+                  onClick={() =>
+                    // eslint-disable-next-line prettier/prettier
+                    frameLeg({ isDestination, leg, legIndex, place })}
+                >
+                  <Styled.MapIcon />
+                </Styled.MapButton>
+              </Styled.MapButtonColumn>
+            )}
           </Styled.PlaceHeader>
 
           {/* Show the leg, if not rendering the destination */}
@@ -126,15 +138,6 @@ const PlaceRow = ({
             ))}
         </Styled.PlaceDetails>
       </Styled.DetailsColumn>
-      {showMapButtonColumn && (
-        <Styled.MapButtonColumn hideBorder={hideBorder.toString()}>
-          <Styled.MapButton
-            onClick={() => frameLeg({ isDestination, leg, legIndex, place })}
-          >
-            <Styled.MapIcon />
-          </Styled.MapButton>
-        </Styled.MapButtonColumn>
-      )}
     </Styled.PlaceRowWrapper>
   );
 };
