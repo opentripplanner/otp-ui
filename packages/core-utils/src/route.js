@@ -284,7 +284,7 @@ function alphabeticShortNameComparator(a, b) {
  * @param  {function} [objGetterFn] An optional function to obtain the
  *  comparison value from the comparator function arguments
  */
-function makeNumericValueComparator(objGetterFn) {
+export function makeNumericValueComparator(objGetterFn) {
   /* Note: Using the global version of isNaN (the Number version behaves differently. */
   /* eslint-disable no-restricted-globals */
   return (a, b) => {
@@ -310,7 +310,7 @@ function makeNumericValueComparator(objGetterFn) {
  * @param  {function} [objGetterFn] An optional function to obtain the
  *  comparison value from the comparator function arguments
  */
-function makeStringValueComparator(objGetterFn) {
+export function makeStringValueComparator(objGetterFn) {
   return (a, b) => {
     const { aVal, bVal } = getSortValues(objGetterFn, a, b);
     // both a and b are uncomparable strings, return equivalent value
