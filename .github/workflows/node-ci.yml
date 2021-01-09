@@ -1,0 +1,35 @@
+name: Node.js CI
+
+on:
+  push:
+    branches:
+      - master
+      - alpha
+      - beta
+  pull_request:
+
+jobs:
+  test-build-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install npm packages using cache
+        uses: bahmutov/npm-install@v1
+      - name: Lint code
+        run: yarn lint:js
+      - name: Lint styles
+        run: yarn lint:styles
+      - name: Run tests
+        run: yarn unit
+
+      # at this point, the build is successful
+      - name: Semantic Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo
