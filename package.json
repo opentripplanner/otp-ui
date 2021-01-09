@@ -75,6 +75,7 @@
     "lint:styles": "stylelint \"packages/**/*.js{,x}\"",
     "lint": "yarn lint:js && yarn lint:styles",
     "prettier": "prettier --write \"**/*.{json,md,yml}\"",
+    "semantic-release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo",
     "test": "yarn lint:js && yarn lint:styles && yarn unit",
     "unit": "jest",
     "update-internal-dependencies": "node scripts/update-internal-dependencies.js"
