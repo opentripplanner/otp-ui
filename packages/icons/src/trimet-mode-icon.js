@@ -18,11 +18,11 @@ import {
  * Icons for all TriMet modes.
  * Any hail and rental modes managed by one or multiple companies
  * are optional (by default, the company logo will be displayed)
- * but can be overriden here using the pattern
+ * but can be overridden here using the pattern
  * <otp_mode>_<company_id> (e.g. 'car_hail_uber').
  * Furthermore, any hail or rental modes managed by a single company
  * are optional (by default, the company logo will be displayed)
- * but can be overriden here using the pattern
+ * but can be overridden here using the pattern
  * <otp_mode> (e.g. 'bicycle_rent').
  */
 function TriMetModeIcon({ mode, ...props }) {

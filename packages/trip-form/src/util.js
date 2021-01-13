@@ -70,7 +70,7 @@ function getCompanies(companies, modes) {
 export function getCompaniesForModeId(id, supportedCompanies) {
   const newModes = id.split("+");
   const nonTransitModes = newModes.length > 1 ? [newModes[1]] : ["WALK"];
-  // TODO: for non-transit modes, shoudl we also accommodate WALK+DRIVE, WALK+e-scooter??
+  // TODO: for non-transit modes, should we also accommodate WALK+DRIVE, WALK+e-scooter??
   // They already seem to work without WALK right now.
 
   // Accommodate companies defined under accessModes.
@@ -80,7 +80,7 @@ export function getCompaniesForModeId(id, supportedCompanies) {
 
   // If there are multiple (scooter | bikeshare | etc.) companies,
   // then if one is specified in the configured modes, then use that company.
-  // Othewise, if this is for an exclusive mode (bike, scooter), then use all companies.
+  // Otherwise, if this is for an exclusive mode (bike, scooter), then use all companies.
   // Convert company IDs to upper case for passing to MOD UI URL.
   // selectedCompanies is at least an empty array.
   const companies =
