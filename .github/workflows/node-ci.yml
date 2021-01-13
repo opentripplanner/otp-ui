@@ -6,6 +6,15 @@ on:
       - master
       - alpha
       - beta
+      - next
+      - next-major
+      # This is an attempt to match semantic-release's branch pattern using
+      # GitHub Actions' regex-like matching
+      # See https://semantic-release.gitbook.io/semantic-release/v/beta/usage/configuration#branches
+      # See https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
+      - "[0-9]+.[0-9]+.x"
+      - "[0-9]+.x.x"
+      - "[0-9]+.x"
   pull_request:
 
 jobs:
