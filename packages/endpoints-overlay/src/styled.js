@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import { Circle } from "styled-icons/fa-solid";
 
 export const Button = styled.button`
+  background: none;
   border: none;
   color: navy;
   font-family: inherit;

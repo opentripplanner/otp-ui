@@ -74,14 +74,14 @@ export default class Endpoint extends Component {
 
   clearLocation = () => {
     const { clearLocation, type } = this.props;
-    clearLocation({ type });
+    clearLocation({ locationType: type });
   };
 
   swapLocation = () => {
     const { location, setLocation, type } = this.props;
     this.clearLocation();
     const otherType = type === "from" ? "to" : "from";
-    setLocation({ type: otherType, location });
+    setLocation({ locationType: otherType, location });
   };
 
   onDragEnd = e => {
