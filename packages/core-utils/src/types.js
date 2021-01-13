@@ -145,7 +145,7 @@ export const configType = PropTypes.shape({
         mapSymbols: vehicleRentalMapOverlaySymbolsType,
         /**
          * Only used during park and ride queries. This will filter out P&Rs
-         * that are futher than the specified number of meters from a transit
+         * that are further than the specified number of meters from a transit
          * stop.
          */
         maxTransitDistance: PropTypes.number,

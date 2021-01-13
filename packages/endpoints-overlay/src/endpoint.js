@@ -175,7 +175,7 @@ export default class Endpoint extends Component {
   }
 }
 
-// See documenation in main index file for documenation on these props.
+// See documentation in main index file for documentation on these props.
 Endpoint.propTypes = {
   clearLocation: PropTypes.func.isRequired,
   forgetPlace: PropTypes.func.isRequired,
