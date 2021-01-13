@@ -2,7 +2,7 @@ const fs = require("fs").promises;
 
 const semver = require("semver");
 
-// get cli arguments. Any cli argument is assumbed to be the name of a package
+// get cli arguments. Any cli argument is assumed to be the name of a package
 // dependency to update in other packages. If no extra cli arguments are
 // provided, then all packages will be updated.
 //

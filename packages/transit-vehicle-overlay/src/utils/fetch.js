@@ -3,12 +3,12 @@ const DEFAULT_REFRESH_TIME = 7000;
 
 /** get refresh values (default 7 second abs), and convert from secs to millisecs */
 export function checkRefreshInteval(
-  inverval,
+  interval,
   defInterval = DEFAULT_REFRESH_TIME
 ) {
   let retVal = defInterval;
-  if (inverval) {
-    let r = inverval;
+  if (interval) {
+    let r = interval;
     if (typeof r === "string") r = parseInt(r, 10);
     if (r > 0 && r <= 100) r *= 1000;
     if (r >= 1000 && r <= 100000) retVal = r;

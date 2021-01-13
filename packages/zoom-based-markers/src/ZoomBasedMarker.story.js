@@ -106,7 +106,7 @@ const mySymbols = [
 // Pass a function to ZoomBasedMarkers symbolTransform prop
 // to inject child components or wrap Symbol within other components.
 // Here, we inject a sample popup to the components defined in the symbols props.
-// Note: to inject children to a symbol, the symbol must explicity render any applicable children.
+// Note: to inject children to a symbol, the symbol must explicitly render any applicable children.
 const exampleTransform = Symbol => {
   const InnerSymbol = ({ entity, zoom }) => (
     <Symbol entity={entity} zoom={zoom}>

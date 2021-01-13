@@ -23,7 +23,7 @@ export default function PlaceName({ config, interline, place }) {
         TODO: There is no explicit stop button on the mocks.
         Have a question out to marketing as to whether the above StopID
         is a button to navigate the user to the arrival list for the stop
-        Thats what the button below does
+        that's what the button below does
       */
         /* <ViewStopButton stopId={place.stopId} /> */
       )}

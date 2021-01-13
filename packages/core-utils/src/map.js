@@ -119,7 +119,7 @@ export function itineraryToTransitive(itin, companies) {
         idx > 0 &&
         itin.legs[idx - 1].mode === "WALK"
       ) {
-        // create a special place ID for car legs preceeded by walking legs
+        // create a special place ID for car legs preceded by walking legs
         fromPlaceId = `itin_car_${streetEdgeId}_from`;
       } else {
         fromPlaceId = `itin_street_${streetEdgeId}_from`;
@@ -245,7 +245,7 @@ export function itineraryToTransitive(itin, companies) {
       // add the pattern to the tdata patterns array
       tdata.patterns.push(pattern);
 
-      // add the pattern refrerence to the journey object
+      // add the pattern reference to the journey object
       journey.segments.push({
         type: "TRANSIT",
         patterns: [

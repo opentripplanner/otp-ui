@@ -125,7 +125,7 @@ export default function LineColumnContent({
     // Interlined. Don't create a leg badge as a stop marker should be inserted
     // from the place name
   } else if (isDestination) {
-    // Desitination
+    // Destination
     legBadge = (
       <>
         <StackedCircleInner size={14} color="white" />

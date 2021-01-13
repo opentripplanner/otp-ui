@@ -410,7 +410,7 @@ class LocationField extends Component {
       // Iterate through the found nearby stops
       menuItems = menuItems.concat(
         nearbyStops.map(stopId => {
-          // Constuct the location
+          // Construct the location
           const stop = stopsIndex[stopId];
           const stopLocation = {
             id: stopId,
@@ -711,7 +711,7 @@ LocationField.propTypes = {
    */
   findNearbyStops: PropTypes.func,
   /**
-   * A slot for a compnent that can be used to display a custom icon for a
+   * A slot for a component that can be used to display a custom icon for a
    * geocoded option. This component is passed a single property called
    * `feature` which will be in the geocodedFeatureType shape.
    */
