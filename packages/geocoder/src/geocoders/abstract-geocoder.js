@@ -40,7 +40,7 @@ export default class Geocoder {
 
   /**
    * Do a reverse-geocode. ie get address information and attributes given a
-   * GPS coordiante.
+   * GPS coordinate.
    */
   reverse(query) {
     return this.api

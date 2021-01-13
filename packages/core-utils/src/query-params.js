@@ -23,7 +23,7 @@ import { getCurrentDate, getCurrentTime } from "./time";
  *
  * itineraryRewrite: an optional function for translating the key and/or value
  *   for ITINERARY mode only (e.g. 'to' is rewritten as 'toPlace'). Accepts the
- *   intial internal value as a function parameter.
+ *   initial internal value as a function parameter.
  *
  * profileRewrite: an optional function for translating the value for PROFILE mode
  *

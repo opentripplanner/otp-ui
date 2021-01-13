@@ -134,14 +134,14 @@ function makeTransitOperatorComparator(transitOperators) {
     const aVal = getTransitOperatorComparatorValue(a, transitOperators);
     const bVal = getTransitOperatorComparatorValue(b, transitOperators);
     if (typeof aVal === "string") {
-      // happens when transitOperators is undefined. Both aVal are gauranteed to
+      // happens when transitOperators is undefined. Both aVal are guaranteed to
       // be strings. Make a string comparison.
       if (aVal < bVal) return -1;
       if (aVal > bVal) return 1;
       return 0;
     }
 
-    // transitOperators are defined and therefore a numeric value is gauranteed
+    // transitOperators are defined and therefore a numeric value is guaranteed
     // to be returned
     return aVal - bVal;
   };
@@ -342,7 +342,7 @@ function getRouteSortOrderValue(val) {
  * Create a multi-criteria sort comparator function composed of other sort
  * comparator functions. Each comparator function will be ran in the order given
  * until a non-zero comparison value is obtained which is then immediately
- * returned. If all comparison functions return equivalance, then the values
+ * returned. If all comparison functions return equivalence, then the values
  * are assumed to be equivalent.
  */
 function makeMultiCriteriaSort(...criteria) {

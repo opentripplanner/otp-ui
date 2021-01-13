@@ -53,13 +53,13 @@ export const languageConfigType = PropTypes.shape({
 
 /**
  * Defines which symbol to render based on a zoom level, and optionally by entity type.
- * (Only one symbol is rendered fo any zoom level.)
+ * (Only one symbol is rendered for any zoom level.)
  */
 export const zoomBasedSymbolType = PropTypes.shape({
   /**
    * A function with the signature (entity: object) => string
    * that determines the type of an entity.
-   * symbolByType and getType must be either be both specified or both ommited.
+   * symbolByType and getType must be either be both specified or both omitted.
    */
   getType: PropTypes.func,
   /**
@@ -77,7 +77,7 @@ export const zoomBasedSymbolType = PropTypes.shape({
    * The symbol-representing component to draw for each entity type,
    * with the same signature as symbol. If a type returned by getType() is not listed,
    * then the component defined in the 'symbol' attribute will be rendered by default.
-   * symbolByType and getType must be either be both specified or both ommited.
+   * symbolByType and getType must be either be both specified or both omitted.
    */
   symbolByType: PropTypes.objectOf(PropTypes.elementType)
 });
