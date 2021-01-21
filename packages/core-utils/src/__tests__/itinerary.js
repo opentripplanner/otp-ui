@@ -10,13 +10,11 @@ describe("util > itinerary", () => {
 
   it("getCompanyFromLeg should return company for bike rental leg", () => {
     const company = getCompanyFromLeg(bikeRentalItinerary.legs[1]);
-    // Make sure company is GBFS
     expect(company).toEqual("GBFS");
   });
 
   it("getCompanyFromLeg should return company for TNC leg", () => {
     const company = getCompanyFromLeg(tncItinerary.legs[0]);
-    // Make sure company is GBFS
     expect(company).toEqual("UBER");
   });
 
