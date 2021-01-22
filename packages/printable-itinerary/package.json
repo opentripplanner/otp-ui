@@ -9,7 +9,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^3.0.0",
+    "@opentripplanner/core-utils": "^3.0.4",
     "@opentripplanner/humanize-distance": "^0.0.22",
     "prop-types": "^15.7.2"
   },

@@ -8,7 +8,7 @@
   "main": "lib/index.js",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^3.0.0",
+    "@opentripplanner/core-utils": "^3.0.4",
     "@opentripplanner/location-icon": "^1.0.1",
     "prop-types": "^15.7.2"
   },
