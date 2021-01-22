@@ -1,31 +1,18 @@
 import { legType } from "@opentripplanner/core-utils/lib/types";
+import { getCompanyFromLeg } from "@opentripplanner/core-utils/lib/itinerary";
 import PropTypes from "prop-types";
 import React from "react";
 
 import { getCompanyIcon as defaultGetCompanyIcon } from "./companies";
 
 const LegIcon = ({ getCompanyIcon, leg, ModeIcon, ...props }) => {
-  let iconStr = leg.mode;
-  if (iconStr === "CAR" && leg.rentedCar) {
-    iconStr = leg.from.networks[0];
-  } else if (iconStr === "CAR" && leg.tncData) {
-    iconStr = leg.tncData.company;
-  } else if (iconStr === "BICYCLE" && leg.rentedBike && leg.from.networks) {
-    iconStr = leg.from.networks[0];
-  } else if (
-    iconStr === "MICROMOBILITY" &&
-    leg.rentedVehicle &&
-    leg.from.networks
-  ) {
-    iconStr = leg.from.networks[0];
-  }
-
+  const company = getCompanyFromLeg(leg);
   // Check if the iconStr has a matching company icon. If so, return that.
-  if (typeof getCompanyIcon === "function") {
-    const CompanyIcon = getCompanyIcon(iconStr);
+  if (company && typeof getCompanyIcon === "function") {
+    const CompanyIcon = getCompanyIcon(company);
     if (CompanyIcon) return <CompanyIcon {...props} />;
   }
-
+  let iconStr = leg.mode;
   // Do this for P&R, K&R and TNC trips without company icon
   if (iconStr && iconStr.startsWith("CAR")) iconStr = "CAR";
 
