@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/route-viewer-overlay",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A map overlay to show a transit route",
   "main": "lib/index.js",
   "author": "Evan Siroky",
