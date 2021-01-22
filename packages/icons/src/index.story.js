@@ -9,16 +9,15 @@ function Container({ children }) {
 
 const allStories = storiesOf("Icons", module);
 
-Object.keys(Icons).forEach(key => {
+Object.keys(Icons)
   // Skip leg and mode icons.
-  const isLegIcon = key.indexOf("LegIcon") !== -1;
-  const isModeIcon = key.indexOf("ModeIcon") !== -1;
-  if (isLegIcon || isModeIcon) return;
-  const IconComponent = Icons[key];
-  const story = () => (
-    <Container>
-      <IconComponent />
-    </Container>
-  );
-  allStories.add(key, story);
-});
+  .filter(key => key.indexOf("LegIcon") > -1 && key.indexOf("ModeIcon") > -1)
+  .forEach(key => {
+    const IconComponent = Icons[key];
+    const story = () => (
+      <Container>
+        <IconComponent />
+      </Container>
+    );
+    allStories.add(key, story);
+  });
