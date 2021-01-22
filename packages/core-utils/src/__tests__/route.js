@@ -22,7 +22,7 @@ const {
   route15,
   route16,
   route17
-} = require("./__mocks__/itinerary.json");
+} = require("./__mocks__/routes.json");
 
 function sortRoutes(...routes) {
   routes.sort(makeRouteComparator());
