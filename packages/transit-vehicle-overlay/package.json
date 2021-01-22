@@ -9,7 +9,7 @@
   "private": false,
   "dependencies": {
     "@opentripplanner/base-map": "^1.0.4",
-    "@opentripplanner/core-utils": "^3.0.0",
+    "@opentripplanner/core-utils": "^3.0.4",
     "@opentripplanner/icons": "^1.0.4",
     "@opentripplanner/zoom-based-markers": "^1.0.1",
     "@turf/nearest-point-on-line": "^6.0.1",

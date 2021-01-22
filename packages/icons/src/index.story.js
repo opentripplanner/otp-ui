@@ -9,22 +9,17 @@ function Container({ children }) {
 
 const allStories = storiesOf("Icons", module);
 
-const noStoryComponents = [
-  "ClassicLegIcon",
-  "ClassicModeIcon",
-  "LegIcon",
-  "StandardLegIcon",
-  "StandardModeIcon",
-  "TriMetLegIcon",
-  "TriMetModeIcon"
-];
-
-Object.keys(Icons).forEach(iconKey => {
-  if (noStoryComponents.indexOf(iconKey) > -1) return;
-  const Component = Icons[iconKey];
-  allStories.add(iconKey, () => (
-    <Container>
-      <Component />
-    </Container>
-  ));
-});
+Object.keys(Icons)
+  // Skip leg and mode icons.
+  .filter(
+    key => key.indexOf("LegIcon") === -1 && key.indexOf("ModeIcon") === -1
+  )
+  .forEach(key => {
+    const IconComponent = Icons[key];
+    const story = () => (
+      <Container>
+        <IconComponent />
+      </Container>
+    );
+    allStories.add(key, story);
+  });
