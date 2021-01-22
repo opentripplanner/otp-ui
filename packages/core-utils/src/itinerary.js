@@ -197,7 +197,7 @@ export function getCompanyFromLeg(leg) {
     return from.networks[0];
   }
   if (mode === "MICROMOBILITY" && rentedVehicle && from.networks) {
-    return leg.from.networks[0];
+    return from.networks[0];
   }
   return null;
 }
