@@ -16,7 +16,7 @@ const defaultValue = "TRANSIT";
 
 Object.keys(Icons).forEach(key => {
   // Skip if not a mode icon.
-  if (!key.indexOf("ModeIcon") === -1) return;
+  if (key.indexOf("ModeIcon") === -1) return;
   const IconComponent = Icons[key];
   const story = () => (
     <Container>
