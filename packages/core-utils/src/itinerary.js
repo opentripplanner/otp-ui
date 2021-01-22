@@ -181,6 +181,27 @@ export function toSentenceCase(str) {
   return str.charAt(0).toUpperCase() + str.substr(1).toLowerCase();
 }
 
+/**
+ * Derive the company string based on mode and network associated with leg.
+ */
+export function getCompanyFromLeg(leg) {
+  if (!leg) return null;
+  const { from, mode, rentedBike, rentedCar, rentedVehicle, tncData } = leg;
+  if (mode === "CAR" && rentedCar) {
+    return from.networks[0];
+  }
+  if (mode === "CAR" && tncData) {
+    return tncData.company;
+  }
+  if (mode === "BICYCLE" && rentedBike && from.networks) {
+    return from.networks[0];
+  }
+  if (mode === "MICROMOBILITY" && rentedVehicle && from.networks) {
+    return from.networks[0];
+  }
+  return null;
+}
+
 export function getLegModeLabel(leg) {
   switch (leg.mode) {
     case "BICYCLE_RENT":

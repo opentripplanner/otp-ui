@@ -1,8 +1,21 @@
-import { getTransitFare, isTransit } from "../itinerary";
+import { getCompanyFromLeg, getTransitFare, isTransit } from "../itinerary";
+
+const bikeRentalItinerary = require("./__mocks__/bike-rental-itinerary.json");
+const tncItinerary = require("./__mocks__/tnc-itinerary.json");
 
 describe("util > itinerary", () => {
   it("isTransit should work", () => {
     expect(isTransit("CAR")).toBeFalsy();
+  });
+
+  it("getCompanyFromLeg should return company for bike rental leg", () => {
+    const company = getCompanyFromLeg(bikeRentalItinerary.legs[1]);
+    expect(company).toEqual("GBFS");
+  });
+
+  it("getCompanyFromLeg should return company for TNC leg", () => {
+    const company = getCompanyFromLeg(tncItinerary.legs[0]);
+    expect(company).toEqual("UBER");
   });
 
   it("getTransitFare should return defaults with missing fare", () => {
