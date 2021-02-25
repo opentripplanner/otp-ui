@@ -392,16 +392,8 @@ export const MapIcon = styled(BaseMapIcon).attrs(props => ({
   fill: props.theme.secondaryColor,
   width: 15,
   height: 15,
-  role: "img",
-  title: "View on map"
+  role: "img"
 }))``;
-
-// export const ModeIcon = styled(BaseModeIcon).attrs(props => ({
-//   width: 18,
-//   height: 18,
-//   title: props.title || "",
-//   fill: "black"
-// }))``;
 
 export const PlaceDetails = styled.div`
   /* container for Leg details */
