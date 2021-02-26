@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/itinerary-body",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A component for displaying an itinerary body of a trip planning result",
   "main": "lib/index.js",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
