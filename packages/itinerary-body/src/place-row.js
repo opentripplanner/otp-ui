@@ -23,6 +23,7 @@ const PlaceRow = ({
   LegIcon,
   legIndex,
   LineColumnContent,
+  messages,
   PlaceName,
   RouteDescription,
   setActiveLeg,
@@ -130,6 +131,7 @@ const PlaceRow = ({
         <Styled.MapButtonColumn hideBorder={hideBorder.toString()}>
           <Styled.MapButton
             onClick={() => frameLeg({ isDestination, leg, legIndex, place })}
+            title={messages.mapIconTitle}
           >
             <Styled.MapIcon />
           </Styled.MapButton>
@@ -138,6 +140,10 @@ const PlaceRow = ({
     </Styled.PlaceRowWrapper>
   );
 };
+
+const messagesType = PropTypes.shape({
+  mapIconTitle: PropTypes.string.isRequired
+});
 
 // A lot of these props are passed through from the ItineraryBody. See the
 // documentation in that component for more information.
@@ -158,6 +164,7 @@ PlaceRow.propTypes = {
   /** The index value of this specific leg within the itinerary */
   legIndex: PropTypes.number.isRequired,
   LineColumnContent: PropTypes.elementType.isRequired,
+  messages: messagesType,
   PlaceName: PropTypes.elementType.isRequired,
   RouteDescription: PropTypes.elementType.isRequired,
   setActiveLeg: PropTypes.func.isRequired,
@@ -181,6 +188,9 @@ PlaceRow.defaultProps = {
   followsTransit: false,
   // can be null if this is the origin place
   lastLeg: null,
+  messages: {
+    mapIconTitle: "View on map"
+  },
   TimeColumnContent: DefaultTimeColumnContent,
   timeOptions: null,
   TransitLegSubheader: undefined

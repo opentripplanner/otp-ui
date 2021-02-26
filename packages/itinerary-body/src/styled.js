@@ -379,6 +379,9 @@ export const MapButton = styled(LinkButton)`
   margin-top: -15px;
   width: 35px;
   height: 35px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const MapButtonColumn = styled(LightBorderDiv)`
@@ -389,16 +392,8 @@ export const MapIcon = styled(BaseMapIcon).attrs(props => ({
   fill: props.theme.secondaryColor,
   width: 15,
   height: 15,
-  role: "img",
-  title: "Frame this Itinerary Leg"
+  role: "img"
 }))``;
-
-// export const ModeIcon = styled(BaseModeIcon).attrs(props => ({
-//   width: 18,
-//   height: 18,
-//   title: props.title || "",
-//   fill: "black"
-// }))``;
 
 export const PlaceDetails = styled.div`
   /* container for Leg details */
