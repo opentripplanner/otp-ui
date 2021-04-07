@@ -1,0 +1,55 @@
+{
+  "homeTimezone": "America/New_York",
+  "routingTypes": [
+    {
+      "key": "ITINERARY",
+      "text": "Exact Time"
+    }
+  ],
+  "modes": {
+    "transitModes": [
+      {
+        "mode": "BUS",
+        "label": "Bus"
+      },
+      {
+        "mode": "RAIL",
+        "label": "Rail"
+      },
+      {
+        "mode": "SUBWAY",
+        "label": "Subway"
+      },
+      {
+        "mode": "TRAM",
+        "label": "Trolleys"
+      }
+    ],
+    "accessModes": [
+      {
+        "mode": "BICYCLE",
+        "label": "Transit + Personal bike"
+      },
+      {
+        "mode": "BICYCLE_RENT",
+        "label": "Transit + Bikeshare"
+      }
+    ],
+    "exclusiveModes": ["WALK", "BICYCLE"],
+    "bicycleModes": [
+      {
+        "mode": "BICYCLE",
+        "label": "Own Bike"
+      },
+      {
+        "mode": "BICYCLE_RENT",
+        "label": "Bikeshare"
+      }
+    ]
+  },
+  "dateTime": {
+    "timeFormat": "h:mm a",
+    "dateFormat": "MM/DD/YYYY",
+    "longDateFormat": "MMMM D, YYYY"
+  }
+}

@@ -124,52 +124,76 @@ function getDefaultQueryParamValue(param) {
 }
 
 /**
- * Determines whether the specified query differs from the default query, i.e.,
- * whether the user has modified any trip options (including mode) from their
- * default values.
- */
-export function isNotDefaultQuery(query, config) {
-  const activeModes = query.mode.split(",");
-  const defaultModes = getTransitModes(config).concat(["WALK"]);
-  let queryIsDifferent = false;
-  const modesEqual =
-    activeModes.length === defaultModes.length &&
-    activeModes.sort().every((value, index) => {
-      return value === defaultModes.sort()[index];
-    });
-
-  if (!modesEqual) {
-    queryIsDifferent = true;
-  } else {
-    defaultParams.forEach(param => {
-      const paramInfo = queryParams.find(qp => qp.name === param);
-      // Check that the parameter applies to the specified routingType
-      if (!paramInfo.routingTypes.includes(query.routingType)) return;
-      // Check that the applicability test (if provided) is satisfied
-      if (
-        typeof paramInfo.applicable === "function" &&
-        !paramInfo.applicable(query, config)
-      )
-        return;
-      if (query[param] !== getDefaultQueryParamValue(paramInfo)) {
-        queryIsDifferent = true;
-      }
-    });
-  }
-  return queryIsDifferent;
-}
-
-/**
  * Get the default query to OTP based on the given config.
  */
-export function getDefaultQuery() {
+export function getDefaultQuery(config = null) {
   const defaultQuery = { routingType: "ITINERARY" };
   queryParams
     .filter(qp => "default" in qp)
     .forEach(qp => {
       defaultQuery[qp.name] = getDefaultQueryParamValue(qp);
     });
+  if (config) {
+    if (config.routingTypes && config.routingTypes.length > 0) {
+      defaultQuery.routingType = config.routingTypes[0].key;
+    }
+    if (config.defaultQueryParams) {
+      Object.keys(config.defaultQueryParams).forEach(key => {
+        defaultQuery[key] = config.defaultQueryParams[key];
+      });
+    }
+  }
   return defaultQuery;
+}
+
+/**
+ * Determines whether the specified query differs from the default query, i.e.,
+ * whether the user has modified any trip options (including mode) from their
+ * default values.
+ */
+export function isNotDefaultQuery(query, config) {
+  const activeModes = query.mode.split(",").sort();
+  if (
+    activeModes.length !== 2 ||
+    activeModes[0] !== "TRANSIT" ||
+    activeModes[1] !== "WALK"
+  ) {
+    // Default mode is TRANSIT,WALK. If general TRANSIT is not used, check
+    // against available transit modes in config.
+    const defaultModes = getTransitModes(config)
+      .concat(["WALK"])
+      .sort();
+    const modesEqual =
+      activeModes.length === defaultModes.length &&
+      activeModes.every((value, index) => {
+        return value === defaultModes[index];
+      });
+    if (!modesEqual) return true;
+  }
+  // If modes are equal, check the remaining params.
+  let queryIsDifferent = false;
+  defaultParams.forEach(param => {
+    const paramInfo = queryParams.find(qp => qp.name === param);
+    const { applicable, routingTypes } = paramInfo;
+    // Check that the parameter applies to the specified routingType
+    if (!routingTypes.includes(query.routingType)) return;
+    // Check that the applicability test (if provided) is satisfied
+    if (typeof applicable === "function" && !applicable(query, config)) {
+      return;
+    }
+    // Set default value based on query-params.js.
+    let defaultValue = getDefaultQueryParamValue(paramInfo);
+    // Apply config query param overrides if it exists.
+    if (config && config.defaultQueryParams) {
+      if (param in config.defaultQueryParams) {
+        defaultValue = config.defaultQueryParams[param];
+      }
+    }
+    if (query[param] !== defaultValue) {
+      queryIsDifferent = true;
+    }
+  });
+  return queryIsDifferent;
 }
 
 /**
