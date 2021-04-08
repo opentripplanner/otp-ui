@@ -171,29 +171,23 @@ export function isNotDefaultQuery(query, config) {
     if (!modesEqual) return true;
   }
   // If modes are equal, check the remaining params.
-  let queryIsDifferent = false;
-  defaultParams.forEach(param => {
-    const paramInfo = queryParams.find(qp => qp.name === param);
-    const { applicable, routingTypes } = paramInfo;
-    // Check that the parameter applies to the specified routingType
-    if (!routingTypes.includes(query.routingType)) return;
-    // Check that the applicability test (if provided) is satisfied
-    if (typeof applicable === "function" && !applicable(query, config)) {
-      return;
-    }
-    // Set default value based on query-params.js.
-    let defaultValue = getDefaultQueryParamValue(paramInfo);
-    // Apply config query param overrides if it exists.
-    if (config && config.defaultQueryParams) {
-      if (param in config.defaultQueryParams) {
-        defaultValue = config.defaultQueryParams[param];
+  const defaultQuery = getDefaultQuery(config);
+  for (let i = 0; i < defaultParams.length; i++) {
+    const param = defaultParams[i];
+    const { applicable, routingTypes } = queryParams.find(
+      qp => qp.name === param
+    );
+    // Check that the parameter applies to the specified routingType and that
+    // the applicability test (if not missing) is satisfied.
+    const appliesToQuery =
+      typeof applicable !== "function" || applicable(query, config);
+    if (appliesToQuery && routingTypes.includes(query.routingType)) {
+      if (query[param] !== defaultQuery[param]) {
+        return true;
       }
     }
-    if (query[param] !== defaultValue) {
-      queryIsDifferent = true;
-    }
-  });
-  return queryIsDifferent;
+  }
+  return false;
 }
 
 /**

@@ -132,6 +132,14 @@ describe("query", () => {
       query.maxWalkDistance *= 2;
       expect(isNotDefaultQuery(query, config)).toBe(true);
     });
+
+    it("should return true for query with non-default mode", () => {
+      setDefaultTestTime();
+      const query = getDefaultQuery(config);
+      // Set the mode to walk
+      query.mode = "WALK";
+      expect(isNotDefaultQuery(query, config)).toBe(true);
+    });
   });
 
   describe("parseLocationString", () => {
