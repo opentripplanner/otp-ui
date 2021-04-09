@@ -147,6 +147,23 @@ export function getDefaultQuery(config = null) {
 }
 
 /**
+ * Determine if the specified query param applies to the given query (based on
+ * routing type and the param's own applicable function).
+ * @param  paramInfo an entry from query-params.js
+ * @param  query     the query against which to check if the param applies
+ * @param  config    OTP config
+ * @return {Boolean}
+ */
+function isParamApplicable(paramInfo, query, config) {
+  const { applicable, routingTypes } = paramInfo;
+  if (!routingTypes.includes(query.routingType)) return false;
+  if (typeof applicable === "function" && !applicable(query, config)) {
+    return false;
+  }
+  return true;
+}
+
+/**
  * Determines whether the specified query differs from the default query, i.e.,
  * whether the user has modified any trip options (including mode) from their
  * default values.
@@ -174,17 +191,14 @@ export function isNotDefaultQuery(query, config) {
   const defaultQuery = getDefaultQuery(config);
   for (let i = 0; i < defaultParams.length; i++) {
     const param = defaultParams[i];
-    const { applicable, routingTypes } = queryParams.find(
-      qp => qp.name === param
-    );
-    // Check that the parameter applies to the specified routingType and that
-    // the applicability test (if not missing) is satisfied.
-    const appliesToQuery =
-      typeof applicable !== "function" || applicable(query, config);
-    if (appliesToQuery && routingTypes.includes(query.routingType)) {
-      if (query[param] !== defaultQuery[param]) {
-        return true;
-      }
+    const paramInfo = queryParams.find(qp => qp.name === param);
+    // If the parameter applies to the query and does not match the default
+    // value, the query is not default.
+    if (
+      isParamApplicable(paramInfo, query, config) &&
+      query[param] !== defaultQuery[param]
+    ) {
+      return true;
     }
   }
   return false;
