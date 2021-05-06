@@ -1,8 +1,10 @@
 import L from "leaflet";
 import isEqual from "lodash.isequal";
 import { transitiveDataType } from "@opentripplanner/core-utils/lib/types";
+import PropTypes from "prop-types";
 import { MapLayer, withLeaflet } from "react-leaflet";
 import Transitive from "transitive-js";
+import { otpModeToGtfsType } from "transitive-js/lib/util";
 
 import transitiveStyles from "./transitive-styles";
 
@@ -33,6 +35,8 @@ const zoomFactors = [
     useGeographicRendering: true
   }
 ];
+
+const defaultLabeledModes = ["BUS"];
 
 class TransitiveCanvasOverlay extends MapLayer {
   // React Lifecycle Methods
@@ -84,8 +88,16 @@ class TransitiveCanvasOverlay extends MapLayer {
   // Internal Methods
 
   initTransitive(canvas) {
-    const { leaflet, transitiveData } = this.props;
+    const {
+      labeledModes = defaultLabeledModes,
+      leaflet,
+      styles,
+      transitiveData
+    } = this.props;
     const { map } = leaflet;
+
+    // Convert OTP modes to GTFS mode numbers.
+    const gtfsLabeledModes = labeledModes.map(otpModeToGtfsType);
 
     // set up the transitive instance
     const mapBounds = map.getBounds();
@@ -97,7 +109,11 @@ class TransitiveCanvasOverlay extends MapLayer {
       ],
       zoomEnabled: false,
       autoResize: false,
-      styles: transitiveStyles,
+      labeledModes: gtfsLabeledModes,
+      styles: {
+        ...transitiveStyles,
+        ...styles
+      },
       zoomFactors,
       display: "canvas",
       canvas
@@ -154,6 +170,20 @@ class TransitiveCanvasOverlay extends MapLayer {
 }
 
 TransitiveCanvasOverlay.propTypes = {
+  /**
+   * Optional array of OTP modes whose lines should be rendered with a label.
+   * Defaults to ['BUS'] if none sepcified.
+   */
+  labeledModes: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * Optional styles to customize the basic defaults for place labels and route segment labels.
+   * For examples of applicable style attributes, see
+   * https://github.com/conveyal/transitive.js/blob/master/stories/Transitive.stories.js#L47.
+   */
+  styles: PropTypes.shape({
+    labels: PropTypes.shape({}),
+    segmentLabels: PropTypes.shape({})
+  }),
   /**
    * The transitiveData object is assumed to be the result of converting an
    * OpenTripPlanner itinerary result into a transitive-readable format. This is

@@ -11,6 +11,11 @@ import TransitiveOverlay from ".";
 
 import "../../../node_modules/leaflet/dist/leaflet.css";
 
+// Use the font-family defined by storybook <body> element,
+// so we don't need to install/import extra fonts.
+const storybookFonts =
+  '"Nunito Sans", -apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif';
+
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json");
 const bikeRentalItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-rental.json");
@@ -25,6 +30,11 @@ const walkOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__
 const walkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json");
 const walkTransitWalkItineraryNoIntermediateStops = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-no-intermediate-stops.json");
 const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json");
+
+// Add routeShortName to walk-transit-walk itineary here
+// to illustrate labeledModes in the transitive overlay
+// (and to not interfere with other stories that use that itinerary).
+walkTransitWalkItinerary.legs[1].routeShortName = "Blue";
 
 const companies = [
   {
@@ -269,4 +279,39 @@ storiesOf("TransitiveOverlay", module)
         visible
       />
     </BaseMap>
-  ));
+  ))
+  .add(
+    "TransitiveOverlay with walk-transit-walk itinerary and custom label styles",
+    () => (
+      <BaseMap center={[45.520441, -122.68302]} zoom={16}>
+        <EndpointsOverlay
+          fromLocation={getFromLocation(walkTransitWalkItinerary)}
+          setLocation={setLocation}
+          toLocation={getToLocation(walkTransitWalkItinerary)}
+          visible
+        />
+        <TransitiveOverlay
+          labeledModes={["TRAM"]}
+          styles={{
+            labels: {
+              "font-size": "14px",
+              "font-family": storybookFonts
+            },
+            segment_labels: {
+              "border-color": "#FFFFFF",
+              "border-radius": 6,
+              "border-width": 2,
+              color: "#FFE0D0",
+              "font-family": storybookFonts,
+              "font-size": "18px"
+            }
+          }}
+          transitiveData={itineraryToTransitive(
+            walkTransitWalkItinerary,
+            companies
+          )}
+          visible
+        />
+      </BaseMap>
+    )
+  );
