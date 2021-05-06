@@ -4,7 +4,6 @@ import { transitiveDataType } from "@opentripplanner/core-utils/lib/types";
 import PropTypes from "prop-types";
 import { MapLayer, withLeaflet } from "react-leaflet";
 import Transitive from "transitive-js";
-import { otpModeToGtfsType } from "transitive-js/lib/util";
 
 import transitiveStyles from "./transitive-styles";
 
@@ -22,6 +21,33 @@ function checkHiPPI(canvas) {
 
     const context = canvas.getContext("2d");
     context.scale(PIXEL_RATIO, PIXEL_RATIO);
+  }
+}
+
+/**
+ * Converts OTP mode string to GTFS mode number (copied from transitive-js).
+ * TODO: Move to util?
+ */
+function otpModeToGtfsType(otpMode) {
+  switch (otpMode) {
+    case "TRAM":
+      return 0;
+    case "SUBWAY":
+      return 1;
+    case "RAIL":
+      return 2;
+    case "BUS":
+      return 3;
+    case "FERRY":
+      return 4;
+    case "CABLE_CAR":
+      return 5;
+    case "GONDOLA":
+      return 6;
+    case "FUNICULAR":
+      return 7;
+    default:
+      return -1;
   }
 }
 
