@@ -172,7 +172,7 @@ class TransitiveCanvasOverlay extends MapLayer {
 TransitiveCanvasOverlay.propTypes = {
   /**
    * Optional array of OTP modes whose lines should be rendered with a label.
-   * Defaults to ['BUS'] if none sepcified.
+   * Defaults to ['BUS'] if none specified.
    */
   labeledModes: PropTypes.arrayOf(PropTypes.string),
   /**
