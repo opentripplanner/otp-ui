@@ -31,11 +31,6 @@ const walkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__
 const walkTransitWalkItineraryNoIntermediateStops = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-no-intermediate-stops.json");
 const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json");
 
-// Add routeShortName to walk-transit-walk itineary here
-// to illustrate labeledModes in the transitive overlay
-// (and to not interfere with other stories that use that itinerary).
-walkTransitWalkItinerary.legs[1].routeShortName = "Blue";
-
 const companies = [
   {
     id: "RAZOR",
@@ -57,6 +52,18 @@ function getFromLocation(itinerary) {
 
 function getToLocation(itinerary) {
   return itinerary.legs[itinerary.legs.length - 1].to;
+}
+
+/**
+ * Example of a custom route label provider to pass to @opentripplanner/core-utils/map#itineraryToTransitive.
+ * @param {*} itineraryLeg The OTP itinerary leg for which to obtain a custom route label.
+ * @returns A string with the custom label to display for the given leg.
+ */
+function getCustomRouteLabel(itineraryLeg) {
+  if (itineraryLeg.mode === "TRAM") return "MAX";
+  if (itineraryLeg.mode === "RAIL") return "WES";
+  if (itineraryLeg.mode === "BUS") return itineraryLeg.routeShortName;
+  return null; // null or undefined or empty string will tell transitive-js not to render a route label
 }
 
 storiesOf("TransitiveOverlay", module)
@@ -308,7 +315,8 @@ storiesOf("TransitiveOverlay", module)
           }}
           transitiveData={itineraryToTransitive(
             walkTransitWalkItinerary,
-            companies
+            companies,
+            getCustomRouteLabel
           )}
           visible
         />
