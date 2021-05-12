@@ -70,7 +70,15 @@ export function matchLatLon(location1, location2) {
   return location1.lat === location2.lat && location1.lon === location2.lon;
 }
 
-export function itineraryToTransitive(itin, companies) {
+/**
+ * Converts an OTP itinerary object to a transtive.js itinerary object.
+ * @param {*} itin Required OTP itinerary (see @opentripplanner/core-utils/types#itineraryType) to convert.
+ * @param {*} companies Optional list of companies, used for labeling vehicle rental locations.
+ * @param {*} getRouteLabel Optional function that takes an itinerary leg (see @opentripplanner/core-utils/types#legType)
+ *                          and returns a string representing the route label to display for that leg.
+ * @returns An itinerary in the transitive.js format.
+ */
+export function itineraryToTransitive(itin, companies, getRouteLabel) {
   const tdata = {
     journeys: [],
     streetEdges: [],
@@ -233,10 +241,15 @@ export function itineraryToTransitive(itin, companies) {
       });
 
       // add route to the route dictionary
+      // with a custom route label if specified.
+      const routeLabel =
+        typeof getRouteLabel === "function"
+          ? getRouteLabel(leg)
+          : leg.routeShortName;
       routes[leg.routeId] = {
         agency_id: leg.agencyId,
         route_id: leg.routeId,
-        route_short_name: leg.routeShortName || "",
+        route_short_name: routeLabel || "",
         route_long_name: leg.routeLongName || "",
         route_type: leg.routeType,
         route_color: leg.routeColor
