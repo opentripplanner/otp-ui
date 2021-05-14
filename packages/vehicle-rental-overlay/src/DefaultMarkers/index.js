@@ -73,9 +73,9 @@ export const HubAndFloatingBike = ({ children, entity: station }) => {
   if (station.isFloatingBike) {
     icon = floatingBikeIcon;
   } else {
-    const pctFull =
-      station.bikesAvailable /
-      (station.bikesAvailable + station.spacesAvailable);
+    const capacity = station.bikesAvailable + station.spacesAvailable;
+    if (capacity === 0) return null;
+    const pctFull = station.bikesAvailable / capacity;
     const i = Math.round(pctFull * 9);
     icon = hubIcons[i];
   }
