@@ -3,9 +3,13 @@
   "version": "0.0.22",
   "description": "Pretty print a string for a certain distance",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
   "author": "Evan  Siroky",
   "license": "MIT",
   "private": false,
-  "gitHead": "644c72e0d08f8daf93b44eaf0deec88a1e16f414"
+  "gitHead": "644c72e0d08f8daf93b44eaf0deec88a1e16f414",
+  "scripts": {
+    "tsc": "tsc"
+  }
 }
