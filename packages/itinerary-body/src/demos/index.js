@@ -59,9 +59,10 @@ export function customToRouteAbbreviation(route) {
   return undefined;
 }
 
-export function CustomTransitLegSummary({ leg, stopsExpanded }) {
+export function CustomTransitLegSummary({ leg, onClick, stopsExpanded }) {
   return (
-    <>
+    /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
+    <div onClick={onClick}>
       {leg.duration && <span>Ride {formatDuration(leg.duration)}</span>}
       {leg.intermediateStops && (
         <span>
@@ -69,12 +70,13 @@ export function CustomTransitLegSummary({ leg, stopsExpanded }) {
           <ItineraryBodyClasses.CaretToggle expanded={stopsExpanded} />
         </span>
       )}
-    </>
+    </div>
   );
 }
 
 CustomTransitLegSummary.propTypes = {
   leg: legType.isRequired,
+  onClick: PropTypes.func.isRequired,
   stopsExpanded: PropTypes.bool.isRequired
 };
 
