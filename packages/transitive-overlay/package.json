@@ -1,7 +1,7 @@
 {
   "name": "@opentripplanner/transitive-overlay",
-  "version": "1.0.5",
-  "description": "A map overlay to show an itinerary",
+  "version": "1.0.7",
+  "description": "A map overlay to show an itinerary based on transitive.js",
   "main": "lib/index.js",
   "author": "Evan Siroky",
   "license": "MIT",
@@ -17,9 +17,9 @@
     "url": "git+https://github.com/opentripplanner/otp-ui.git"
   },
   "dependencies": {
-    "@opentripplanner/core-utils": "^3.0.4",
+    "@opentripplanner/core-utils": "^3.1.1",
     "lodash.isequal": "^4.5.0",
-    "transitive-js": "^0.13.3"
+    "transitive-js": "^0.13.7"
   },
   "devDependencies": {
     "@opentripplanner/endpoints-overlay": "^1.0.5",
