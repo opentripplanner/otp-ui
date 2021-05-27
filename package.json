@@ -115,6 +115,7 @@
       "no-plusplus": 0,
       "no-use-before-define": "off",
       "@typescript-eslint/comma-dangle": "off",
+      "@typescript-eslint/func-call-spacing": "off",
       "@typescript-eslint/indent": "off",
       "@typescript-eslint/no-empty-function": 0,
       "@typescript-eslint/no-unused-expressions": [
@@ -135,6 +136,7 @@
           "allowTemplateLiterals": true
         }
       ],
+      "@typescript-eslint/semi": "off",
       "@typescript-eslint/space-before-function-paren": "off",
       "prefer-destructuring": 0,
       "prettier/prettier": [
