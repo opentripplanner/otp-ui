@@ -15,6 +15,8 @@ import VehicleRentalOverlay from ".";
 import bikeRentalStations from "../__mocks__/bike-rental-stations.json";
 import carRentalStations from "../__mocks__/car-rental-stations.json";
 import eScooterStations from "../__mocks__/e-scooter-rental-stations.json";
+import allScooters from "../__mocks__/e-scooters-all.json";
+
 import { HubAndFloatingBike } from "./DefaultMarkers";
 
 import "../../../node_modules/leaflet/dist/leaflet.css";
@@ -276,5 +278,12 @@ storiesOf("VehicleRentalOverlay", module)
       mapSymbols={EScooterMapSymbols}
       refreshVehicles={action("refresh E-scooters")}
       stations={eScooterStations}
+    />
+  ))
+  .add("VehicleRentalOverlay with *ALL* rental e-scooters", () => (
+    <ZoomControlledMapWithVehicleRentalOverlay
+      mapSymbols={EScooterMapSymbols}
+      refreshVehicles={action("refresh E-scooters")}
+      stations={allScooters}
     />
   ));

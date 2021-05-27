@@ -8,6 +8,7 @@ import { text, boolean, color, withKnobs } from "@storybook/addon-knobs";
 
 import "../__mocks__/map.css";
 import BaseMap from "@opentripplanner/base-map";
+import VehicleRentalOverlay from "@opentripplanner/vehicle-rental-overlay";
 import { formatDurationWithSeconds } from "@opentripplanner/core-utils/src/time";
 import TransitVehicleOverlay from "./index";
 
@@ -25,11 +26,34 @@ import VehiclePopup from "./components/popups/VehiclePopup";
 import * as utils from "./utils";
 import * as proprietary from "../__mocks__/proprietaryFetchUtils";
 
+// scooter symbols
+const EScooterMapSymbols = [
+  {
+    fillColor: "#F80600",
+    minZoom: 0,
+    pixels: 4,
+    type: "circle"
+  },
+  {
+    fillColor: "#880600",
+    minZoom: 14,
+    pixels: 6,
+    type: "circle"
+  },
+  {
+    fillColor: "#480600",
+    minZoom: 18,
+    pixels: 20,
+    type: "circle"
+  }
+];
+
 const geom = require("../__mocks__/lineGeom100.json");
 const line = require("../__mocks__/line100.json");
 const all = require("../__mocks__/all.json");
 const altLine = require("../__mocks__/tm_all.json");
 const altGeom = require("../__mocks__/tm_geojson.json");
+const scooters = require("../__mocks__/scooters.json");
 
 const PORTLAND = [45.523, -122.671];
 const INITIAL_ZOOM_LEVEL = 14;
@@ -201,9 +225,15 @@ function rectangles(popup = true) {
  * continuing on from the 'rectangles' demo above, add live data, callbacks, etc...
  * also provide knobs to control which routes to display and programmatically select vehicles
  */
-function realtimeExample(fetchVehicles, fetchPattern, markers) {
+function realtimeExample(
+  fetchVehicles,
+  fetchPattern,
+  markers,
+  rteKnob = "",
+  renderScooters = false
+) {
   // knobs setup
-  const routes = text("list of routes to query vehicles", "");
+  const routes = text("list of routes to query vehicles", rteKnob);
   const trackedId = text("tripId or blockId of tracked vehicle", "");
   const isFlyTo = boolean("FlyTo Recenter (PanTo default)", false);
   const showOnlyTracked = boolean("hide other vehicles when tracking", false);
@@ -270,6 +300,16 @@ function realtimeExample(fetchVehicles, fetchPattern, markers) {
         TooltipSlot={VehicleTooltip}
         PopupSlot={VehiclePopup}
       />
+
+      {renderScooters && (
+        <VehicleRentalOverlay
+          stations={scooters}
+          mapSymbols={EScooterMapSymbols}
+          refreshVehicles={action("refresh scooters")}
+          visible
+          zoom={zoom}
+        />
+      )}
     </BaseMap>
   );
 }
@@ -296,16 +336,19 @@ function rtCircles() {
   return realtimeExample(
     proprietary.fetchVehicles,
     proprietary.fetchPatternThrottled,
-    circleSymbols
+    circleSymbols,
+    "2, 20, 100, 200, 190"
   );
 }
 
-function rtRectangles() {
+function rtRectangles(renderScooters = false) {
   // use the live alternate vehicle ws format for the component
   return realtimeExample(
     proprietary.fetchAltVehicles,
     proprietary.fetchPatternThrottled,
-    rectangleSymbols
+    rectangleSymbols,
+    "",
+    renderScooters
   );
 }
 
@@ -318,4 +361,5 @@ storiesOf("TransitVehicleOverlay", module)
   .add("simple rectangles (click to select)", clickRectangles)
   .add("static rectangles (marker popups)", rectangles)
   .add("real-time circles", rtCircles)
-  .add("real-time rectangles", rtRectangles);
+  .add("real-time rectangles", rtRectangles)
+  .add("rt rectangles + scooters", rtRectangles);

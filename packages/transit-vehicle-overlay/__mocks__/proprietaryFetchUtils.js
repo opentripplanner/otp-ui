@@ -1,16 +1,16 @@
 import { debounce, throttle } from "throttle-debounce";
 import * as utils from "../src/utils";
 
-let DEF_ROUTES = "100,90,190,200,290,20,57";
+let DEF_ROUTES = "";
 
 export function setDefRoutes(dr) {
-  if (dr && dr.length > 0) DEF_ROUTES = dr;
+  if (dr && dr.length >= 0) DEF_ROUTES = dr;
 }
 
 const VEHICLE_API_CONFIG = {
   host: "https://maps.trimet.org",
   path: "/gtfs/rt/vehicles",
-  defRoutes: "all"
+  defRoutes: ""
 };
 
 const ALT_VEHICLE_API_CONFIG = {
