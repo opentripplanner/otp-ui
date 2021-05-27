@@ -1,9 +1,6 @@
 import React from "react";
 
-import { withA11y } from "@storybook/addon-a11y";
 import { action } from "@storybook/addon-actions";
-import { withInfo } from "@storybook/addon-info";
-import { storiesOf } from "@storybook/react";
 import { text, boolean, color, withKnobs } from "@storybook/addon-knobs";
 
 import "../__mocks__/map.css";
@@ -309,13 +306,44 @@ function rtRectangles() {
   );
 }
 
-storiesOf("TransitVehicleOverlay", module)
-  .addDecorator(withA11y)
-  .addDecorator(withInfo)
-  .addDecorator(withKnobs)
-  .add("simple overlay", simple)
-  .add("simple overlay (alternative ws data)", alternate)
-  .add("simple rectangles (click to select)", clickRectangles)
-  .add("static rectangles (marker popups)", rectangles)
-  .add("real-time circles", rtCircles)
-  .add("real-time rectangles", rtRectangles);
+export default {
+  title: "TransitVehicleOverlay",
+  component: TransitVehicleOverlay,
+  decorators: [withKnobs]
+};
+
+export const SimpleOverlay = simple;
+
+SimpleOverlay.story = {
+  name: "Simple overlay"
+};
+
+export const SimpleOverlayAlternativeWsData = alternate;
+
+SimpleOverlayAlternativeWsData.story = {
+  name: "Simple overlay (alternative ws data)"
+};
+
+export const SimpleRectanglesClickToSelect = clickRectangles;
+
+SimpleRectanglesClickToSelect.story = {
+  name: "Simple rectangles (click to select)"
+};
+
+export const StaticRectanglesMarkerPopups = rectangles;
+
+StaticRectanglesMarkerPopups.story = {
+  name: "Static rectangles (marker popups)"
+};
+
+export const RealTimeCircles = rtCircles;
+
+RealTimeCircles.story = {
+  name: "Rreal-time circles"
+};
+
+export const RealTimeRectangles = rtRectangles;
+
+RealTimeRectangles.story = {
+  name: "Real-time rectangles"
+};

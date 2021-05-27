@@ -2,9 +2,6 @@ import BaseMap from "@opentripplanner/base-map";
 import PropTypes from "prop-types";
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { withA11y } from "@storybook/addon-a11y";
-import { withInfo } from "@storybook/addon-info";
-import { storiesOf } from "@storybook/react";
 import { Cat, Dog } from "styled-icons/fa-solid";
 
 import EndpointsOverlay from ".";
@@ -42,60 +39,65 @@ CatDogIcon.propTypes = {
   type: PropTypes.string.isRequired
 };
 
-storiesOf("EndpointsOverlay", module)
-  .addDecorator(withA11y)
-  .addDecorator(withInfo)
-  .add("EndpointsOverlay", () => (
-    <BaseMap center={center} zoom={zoom}>
-      <EndpointsOverlay
-        fromLocation={fromLocation}
-        setLocation={setLocation}
-        toLocation={toLocation}
-        visible
-      />
-    </BaseMap>
-  ))
-  .add("EndpointsOverlay with user settings", () => (
-    <BaseMap center={center} zoom={zoom}>
-      <EndpointsOverlay
-        clearLocation={clearLocation}
-        forgetPlace={forgetPlace}
-        fromLocation={fromLocation}
-        locations={locations}
-        rememberPlace={rememberPlace}
-        setLocation={setLocation}
-        showUserSettings
-        toLocation={toLocation}
-        visible
-      />
-    </BaseMap>
-  ))
-  .add("EndpointsOverlay with custom map markers", () => (
-    <BaseMap center={center} zoom={zoom}>
-      <EndpointsOverlay
-        fromLocation={fromLocation}
-        MapMarkerIcon={CatDogIcon}
-        setLocation={setLocation}
-        toLocation={toLocation}
-        visible
-      />
-    </BaseMap>
-  ))
-  .add("EndpointsOverlay with intermediate place", () => (
-    <BaseMap center={center} zoom={zoom}>
-      <EndpointsOverlay
-        fromLocation={fromLocation}
-        intermediatePlaces={[
-          {
-            lat: 45.523193,
-            lon: -122.681538,
-            name: "Powell's City of Books",
-            type: "intermediate-place-1"
-          }
-        ]}
-        setLocation={setLocation}
-        toLocation={toLocation}
-        visible
-      />
-    </BaseMap>
-  ));
+export default {
+  title: "EndpointsOverlay",
+  component: EndpointsOverlay
+};
+
+export const EndpointsOverlayWithoutUserSettings = () => (
+  <BaseMap center={center} zoom={zoom}>
+    <EndpointsOverlay
+      fromLocation={fromLocation}
+      setLocation={setLocation}
+      toLocation={toLocation}
+      visible
+    />
+  </BaseMap>
+);
+
+export const EndpointsOverlayWithUserSettings = () => (
+  <BaseMap center={center} zoom={zoom}>
+    <EndpointsOverlay
+      clearLocation={clearLocation}
+      forgetPlace={forgetPlace}
+      fromLocation={fromLocation}
+      locations={locations}
+      rememberPlace={rememberPlace}
+      setLocation={setLocation}
+      showUserSettings
+      toLocation={toLocation}
+      visible
+    />
+  </BaseMap>
+);
+
+export const EndpointsOverlayWithCustomMapMarkers = () => (
+  <BaseMap center={center} zoom={zoom}>
+    <EndpointsOverlay
+      fromLocation={fromLocation}
+      MapMarkerIcon={CatDogIcon}
+      setLocation={setLocation}
+      toLocation={toLocation}
+      visible
+    />
+  </BaseMap>
+);
+
+export const EndpointsOverlayWithIntermediatePlace = () => (
+  <BaseMap center={center} zoom={zoom}>
+    <EndpointsOverlay
+      fromLocation={fromLocation}
+      intermediatePlaces={[
+        {
+          lat: 45.523193,
+          lon: -122.681538,
+          name: "Powell's City of Books",
+          type: "intermediate-place-1"
+        }
+      ]}
+      setLocation={setLocation}
+      toLocation={toLocation}
+      visible
+    />
+  </BaseMap>
+);

@@ -1,26 +1,22 @@
-import * as React from "react";
-import { storiesOf } from "@storybook/react";
-import { withA11y } from "@storybook/addon-a11y";
-import { withInfo } from "@storybook/addon-info";
+import React from "react";
 import styled from "styled-components";
+// The below eslint-disable is due to https://github.com/storybookjs/storybook/issues/13408
+// eslint-disable-next-line import/no-named-as-default
 import LocationIcon from ".";
 
-storiesOf("LocationIcon", module)
-  .addDecorator(withA11y)
-  .addDecorator(withInfo)
-  .addParameters({
-    info: {
-      text: "A simple component used to show the from or to location icon"
-    }
-  })
-  .add("'From' LocationIcon", () => <LocationIcon type="from" size={25} />)
-  .add("'To' LocationIcon", () => <LocationIcon type="to" size={25} />)
-  .add("Generic Place LocationIcon", () => (
-    <LocationIcon type="intermediate-place-1" size={25} />
-  ))
-  .add("Custom style for 'To' LocationIcon", () => {
-    const StyledLocationIcon = styled(LocationIcon)`
-      color: blue;
-    `;
-    return <StyledLocationIcon type="to" size={25} />;
-  });
+export default {
+  title: "LocationIcon",
+  component: LocationIcon
+};
+
+export const From = () => <LocationIcon type="from" size={25} />;
+export const To = () => <LocationIcon type="to" size={25} />;
+export const GenericPlace = () => (
+  <LocationIcon type="intermediate-place-1" size="25" />
+);
+export const CustomStyleForTo = () => {
+  const StyledLocationIcon = styled(LocationIcon)`
+    color: blue;
+  `;
+  return <StyledLocationIcon type="to" size={25} />;
+};

@@ -2,7 +2,6 @@ import { ClassicModeIcon } from "@opentripplanner/icons";
 
 import React, { Component } from "react";
 import { action } from "@storybook/addon-actions";
-import { withInfo } from "@storybook/addon-info";
 
 import SettingsSelectorPanel from "./SettingsSelectorPanel";
 
@@ -63,7 +62,8 @@ const decorator = story => (
 
 export default {
   title: "SettingsSelectorPanel",
-  decorators: [decorator, withInfo]
+  component: SettingsSelectorPanel,
+  decorators: [decorator]
 };
 
 export const settingsSelectorPanel = () => (

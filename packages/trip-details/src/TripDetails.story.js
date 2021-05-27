@@ -1,7 +1,4 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
-import { withA11y } from "@storybook/addon-a11y";
-import { withInfo } from "@storybook/addon-info";
 import styled from "styled-components";
 
 import TripDetails from ".";
@@ -35,94 +32,100 @@ const customMessages = {
 };
 const longDateFormat = "MMMM D, YYYY";
 
-storiesOf("TripDetails", module)
-  .addDecorator(withA11y)
-  .addDecorator(withInfo)
-  .add("TripDetails with walk-only itinerary", () => (
-    <TripDetails
-      itinerary={walkOnlyItinerary}
-      longDateFormat={longDateFormat}
-    />
-  ))
-  .add("TripDetails with bike-only itinerary", () => (
-    <TripDetails
-      itinerary={bikeOnlyItinerary}
-      longDateFormat={longDateFormat}
-    />
-  ))
-  .add("TripDetails with walk-transit-walk itinerary", () => (
-    <TripDetails
-      itinerary={walkTransitWalkItinerary}
-      longDateFormat={longDateFormat}
-    />
-  ))
-  .add(
-    "TripDetails with walk-transit-walk itinerary and custom messages",
-    () => (
-      <TripDetails
-        itinerary={walkTransitWalkItinerary}
-        longDateFormat={longDateFormat}
-        messages={customMessages}
-      />
-    )
-  )
-  .add("Styled TripDetails with walk-transit-walk itinerary", () => (
-    <StyledTripDetails
-      itinerary={walkTransitWalkItinerary}
-      longDateFormat={longDateFormat}
-    />
-  ))
-  .add("TripDetails with bike-transit-bike itinerary", () => (
-    <TripDetails
-      itinerary={bikeTransitBikeItinerary}
-      longDateFormat={longDateFormat}
-    />
-  ))
-  .add("TripDetails with walk-interlined-transit itinerary", () => (
-    <TripDetails
-      itinerary={walkInterlinedTransitItinerary}
-      longDateFormat={longDateFormat}
-    />
-  ))
-  .add("TripDetails with walk-transit-transfer itinerary", () => (
-    <TripDetails
-      itinerary={walkTransitWalkTransitWalkItinerary}
-      longDateFormat={longDateFormat}
-    />
-  ))
-  .add("TripDetails with bike-rental itinerary", () => (
-    <TripDetails
-      itinerary={bikeRentalItinerary}
-      longDateFormat={longDateFormat}
-    />
-  ))
-  .add("TripDetails with E-scooter-rental itinerary", () => (
-    <TripDetails
-      itinerary={eScooterRentalItinerary}
-      longDateFormat={longDateFormat}
-    />
-  ))
-  .add("TripDetails with park and ride itinerary", () => (
-    <TripDetails
-      itinerary={parkAndRideItinerary}
-      longDateFormat={longDateFormat}
-    />
-  ))
-  .add("TripDetails with bike rental + transit itinerary", () => (
-    <TripDetails
-      itinerary={bikeRentalTransitBikeRentalItinerary}
-      longDateFormat={longDateFormat}
-    />
-  ))
-  .add("TripDetails with E-scooter rental + transit itinerary", () => (
-    <TripDetails
-      itinerary={eScooterRentalTransiteScooterRentalItinerary}
-      longDateFormat={longDateFormat}
-    />
-  ))
-  .add("TripDetails with TNC + transit itinerary", () => (
-    <TripDetails
-      itinerary={tncTransitTncItinerary}
-      longDateFormat={longDateFormat}
-    />
-  ));
+export default {
+  title: "TripDetails",
+  components: TripDetails
+};
+
+export const WalkOnlyItinerary = () => (
+  <TripDetails itinerary={walkOnlyItinerary} longDateFormat={longDateFormat} />
+);
+
+export const BikeOnlyItinerary = () => (
+  <TripDetails itinerary={bikeOnlyItinerary} longDateFormat={longDateFormat} />
+);
+
+export const WalkTransitWalkItinerary = () => (
+  <TripDetails
+    itinerary={walkTransitWalkItinerary}
+    longDateFormat={longDateFormat}
+  />
+);
+
+export const WalkTransitWalkItineraryAndCustomMessages = () => (
+  <TripDetails
+    itinerary={walkTransitWalkItinerary}
+    longDateFormat={longDateFormat}
+    messages={customMessages}
+  />
+);
+
+export const StyledWalkTransitWalkItinerary = () => (
+  <StyledTripDetails
+    itinerary={walkTransitWalkItinerary}
+    longDateFormat={longDateFormat}
+  />
+);
+
+export const BikeTransitBikeItinerary = () => (
+  <TripDetails
+    itinerary={bikeTransitBikeItinerary}
+    longDateFormat={longDateFormat}
+  />
+);
+
+export const WalkInterlinedTransitItinerary = () => (
+  <TripDetails
+    itinerary={walkInterlinedTransitItinerary}
+    longDateFormat={longDateFormat}
+  />
+);
+
+export const WalkTransitTransferItinerary = () => (
+  <TripDetails
+    itinerary={walkTransitWalkTransitWalkItinerary}
+    longDateFormat={longDateFormat}
+  />
+);
+
+export const BikeRentalItinerary = () => (
+  <TripDetails
+    itinerary={bikeRentalItinerary}
+    longDateFormat={longDateFormat}
+  />
+);
+
+export const EScooterRentalItinerary = () => (
+  <TripDetails
+    itinerary={eScooterRentalItinerary}
+    longDateFormat={longDateFormat}
+  />
+);
+
+export const ParkAndRideItinerary = () => (
+  <TripDetails
+    itinerary={parkAndRideItinerary}
+    longDateFormat={longDateFormat}
+  />
+);
+
+export const BikeRentalTransitItinerary = () => (
+  <TripDetails
+    itinerary={bikeRentalTransitBikeRentalItinerary}
+    longDateFormat={longDateFormat}
+  />
+);
+
+export const EScooterRentalTransitItinerary = () => (
+  <TripDetails
+    itinerary={eScooterRentalTransiteScooterRentalItinerary}
+    longDateFormat={longDateFormat}
+  />
+);
+
+export const TncTransitItinerary = () => (
+  <TripDetails
+    itinerary={tncTransitTncItinerary}
+    longDateFormat={longDateFormat}
+  />
+);

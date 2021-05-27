@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { ReactElement } from "react";
 
 import * as Styled from "./styled";
 
@@ -25,12 +25,12 @@ type Props = {
  * LocationIcon provides a consistent icon for rendering from, to, or generic
  * place icons in form components like LocationField and in map overlays/popups.
  */
-export const LocationIcon = ({
+export function LocationIcon({
   className = "",
   size = 10,
   title = "",
   type = ""
-}: Props): React.ReactElement => {
+}: Props): ReactElement {
   switch (type) {
     case "from":
       return (
@@ -57,6 +57,6 @@ export const LocationIcon = ({
         />
       );
   }
-};
+}
 
 export default LocationIcon;

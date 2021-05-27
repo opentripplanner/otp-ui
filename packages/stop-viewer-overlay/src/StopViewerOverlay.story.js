@@ -2,9 +2,6 @@ import BaseMap from "@opentripplanner/base-map";
 import { stopLayerStopType } from "@opentripplanner/core-utils/lib/types";
 import React from "react";
 import { CircleMarker } from "react-leaflet";
-import { withA11y } from "@storybook/addon-a11y";
-import { withInfo } from "@storybook/addon-info";
-import { storiesOf } from "@storybook/react";
 
 import DefaultStopMarker from "./default-stop-marker";
 import StopViewerOverlay from ".";
@@ -29,20 +26,19 @@ CustomMarker.propTypes = {
   stop: stopLayerStopType.isRequired
 };
 
-storiesOf("StopViewerOverlay", module)
-  .addDecorator(withA11y)
-  .addDecorator(withInfo)
-  .add("StopViewerOverlay", () => (
-    <BaseMap center={center} zoom={zoom}>
-      <StopViewerOverlay
-        stop={fakeStop}
-        StopMarker={DefaultStopMarker}
-        visible
-      />
-    </BaseMap>
-  ))
-  .add("StopViewerOverlay with custom marker", () => (
-    <BaseMap center={center} zoom={zoom}>
-      <StopViewerOverlay stop={fakeStop} StopMarker={CustomMarker} visible />
-    </BaseMap>
-  ));
+export default {
+  title: "StopViewerOverlay",
+  component: StopViewerOverlay
+};
+
+export const Default = () => (
+  <BaseMap center={center} zoom={zoom}>
+    <StopViewerOverlay stop={fakeStop} StopMarker={DefaultStopMarker} visible />
+  </BaseMap>
+);
+
+export const WithCustomMarker = () => (
+  <BaseMap center={center} zoom={zoom}>
+    <StopViewerOverlay stop={fakeStop} StopMarker={CustomMarker} visible />
+  </BaseMap>
+);

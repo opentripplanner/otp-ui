@@ -1,6 +1,5 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { withInfo } from "@storybook/addon-info";
 import { boolean, text, withKnobs } from "@storybook/addon-knobs";
 import * as Icons from "@opentripplanner/icons";
 
@@ -28,7 +27,16 @@ const decorator = story => (
 
 export default {
   title: "Trip Form Components",
-  decorators: [decorator, withInfo, withKnobs]
+  decorators: [decorator, withKnobs],
+  subcomponents: {
+    CheckboxSelector: Core.CheckboxSelector,
+    DateTimeSelector: Core.DateTimeSelector,
+    DropdownSelector: Core.DropdownSelector,
+    GeneralSettingsPanel: Core.GeneralSettingsPanel,
+    ModeButton: Core.ModeButton,
+    ModeSelector: Core.ModeSelector,
+    SubmodeSelector: Core.SubmodeSelector
+  }
 };
 
 // Events

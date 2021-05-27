@@ -41,6 +41,7 @@ L.Evented.include({
     // This timeout is key to workaround an issue where double-click events
     // are fired in this order on some touch browsers: ['click', 'dblclick', 'click']
     // instead of ['click', 'click', 'dblclick']
+    // eslint-disable-next-line @typescript-eslint/no-implied-eval
     setTimeout(this.clearSingleClickTimeout.bind(this), 0);
   },
 
@@ -48,6 +49,7 @@ L.Evented.include({
     this.clearSingleClickTimeout();
 
     this.singleClickTimeout = setTimeout(
+      // eslint-disable-next-line @typescript-eslint/no-implied-eval
       this.fireSingleClick.bind(this, e),
       this.options.singleClickTimeout || 500
     );
@@ -69,7 +71,16 @@ L.Evented.include({
 });
 
 /**
- * The base OpenTripPlanner map on which everything else is rendered.
+ * The BaseMap component renders a Leaflet map with overlays and other ad-hoc
+ * markers that are declared as child elements of the BaseMap element.
+ *
+ * Overlays are groups of similar React-Leaflet markers, e.g. vehicle location
+ * markers, bus stop markers, etc.
+ * Overlays are automatically added to the overlay control displayed by the
+ * BaseMap. The user uses that control to turn overlays on or off.
+ * See the
+ * [Two Overlays From TriMet Transit Components](./?path=/story/basemap--with-two-overlays-from-trimet-transit-components)
+ * example for more information on overlays.
  */
 class BaseMap extends Component {
   overlays = [];

@@ -1,6 +1,5 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { withInfo } from "@storybook/addon-info";
 
 import FromToLocationPicker from ".";
 
@@ -8,7 +7,7 @@ import "../__mocks__/trimet-mock.css";
 
 export default {
   title: "From-To-Picker",
-  decorators: [withInfo]
+  component: FromToLocationPicker
 };
 
 const onFromClick = action("onFromClick");

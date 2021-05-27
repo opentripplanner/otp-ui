@@ -12,21 +12,23 @@
     "@babel/cli": "^7.10",
     "@babel/core": "^7.10",
     "@babel/plugin-proposal-class-properties": "^7.10",
+    "@babel/plugin-proposal-private-property-in-object": "^7.14.0",
     "@babel/preset-env": "^7.10",
     "@babel/preset-react": "^7.10",
     "@babel/preset-typescript": "^7.13.0",
     "@semantic-release/git": "^9.0.0",
-    "@storybook/addon-a11y": "^5.2.8",
-    "@storybook/addon-actions": "^5.2.8",
-    "@storybook/addon-info": "^5.2.8",
-    "@storybook/addon-knobs": "^5.2.8",
-    "@storybook/addon-storysource": "^5.1.9",
-    "@storybook/addon-viewport": "^5.2.8",
-    "@storybook/react": "^5.1.3",
-    "@storybook/storybook-deployer": "^2.8.1",
+    "@storybook/addon-a11y": "^6.2.9",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-docs": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-knobs": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/addon-storysource": "^6.2.9",
+    "@storybook/addon-viewport": "^6.2.9",
+    "@storybook/react": "^6.2.9",
+    "@storybook/storybook-deployer": "^2.8.8",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.0.0",
-    "@types/storybook__addon-info": "^5.2.3",
     "@types/styled-components": "^5.1.9",
     "@types/vfile-message": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
@@ -37,10 +39,10 @@
     "babel-plugin-styled-components": "^1.10.0",
     "core-js": "2",
     "eslint": "6.1.0",
-    "eslint-config-airbnb": "18.0.1",
+    "eslint-config-airbnb-typescript": "^12.3.1",
     "eslint-config-prettier": "^4.3.0",
     "eslint-import-resolver-webpack": "^0.11.1",
-    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-import": "2.23.3",
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "7.14.3",
@@ -92,13 +94,16 @@
   },
   "eslintConfig": {
     "extends": [
-      "airbnb",
+      "airbnb-typescript",
       "plugin:@typescript-eslint/recommended",
       "plugin:react/recommended",
       "plugin:prettier/recommended",
       "prettier/react"
     ],
     "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.eslint.json"
+    },
     "plugins": [
       "@typescript-eslint"
     ],
@@ -109,9 +114,28 @@
       "no-param-reassign": 0,
       "no-plusplus": 0,
       "no-use-before-define": "off",
+      "@typescript-eslint/comma-dangle": "off",
+      "@typescript-eslint/indent": "off",
       "@typescript-eslint/no-empty-function": 0,
+      "@typescript-eslint/no-unused-expressions": [
+        "error",
+        {
+          "allowShortCircuit": true,
+          "allowTernary": true
+        }
+      ],
+      "@typescript-eslint/no-unused-vars": "error",
       "@typescript-eslint/no-use-before-define": "error",
       "@typescript-eslint/no-var-requires": 0,
+      "@typescript-eslint/quotes": [
+        "error",
+        "double",
+        {
+          "avoidEscape": true,
+          "allowTemplateLiterals": true
+        }
+      ],
+      "@typescript-eslint/space-before-function-paren": "off",
       "prefer-destructuring": 0,
       "prettier/prettier": [
         "error"

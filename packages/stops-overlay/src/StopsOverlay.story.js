@@ -9,9 +9,6 @@ import React, { Component } from "react";
 import ReactDOMServer from "react-dom/server";
 import { Marker } from "react-leaflet";
 import { action } from "@storybook/addon-actions";
-import { withA11y } from "@storybook/addon-a11y";
-import { withInfo } from "@storybook/addon-info";
-import { storiesOf } from "@storybook/react";
 import { Bus, Subway } from "styled-icons/fa-solid";
 
 import StopsOverlay from ".";
@@ -118,10 +115,11 @@ const customSymbols = [
   }
 ];
 
-storiesOf("StopsOverlay", module)
-  .addDecorator(withA11y)
-  .addDecorator(withInfo)
-  .add("StopsOverlay with default marker", () => <Example />)
-  .add("StopsOverlay with custom marker", () => (
-    <Example symbols={customSymbols} />
-  ));
+export default {
+  title: "StopsOverlay",
+  component: StopsOverlay
+};
+
+export const Default = () => <Example />;
+
+export const WithCustomMarkers = () => <Example symbols={customSymbols} />;
