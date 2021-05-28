@@ -26,28 +26,6 @@ import VehiclePopup from "./components/popups/VehiclePopup";
 import * as utils from "./utils";
 import * as proprietary from "../__mocks__/proprietaryFetchUtils";
 
-// scooter symbols
-const EScooterMapSymbols = [
-  {
-    fillColor: "#F80600",
-    minZoom: 0,
-    pixels: 4,
-    type: "circle"
-  },
-  {
-    fillColor: "#880600",
-    minZoom: 14,
-    pixels: 6,
-    type: "circle"
-  },
-  {
-    fillColor: "#480600",
-    minZoom: 18,
-    pixels: 20,
-    type: "circle"
-  }
-];
-
 const geom = require("../__mocks__/lineGeom100.json");
 const line = require("../__mocks__/line100.json");
 const all = require("../__mocks__/all.json");
@@ -82,6 +60,28 @@ const rectangleSymbols = [
   {
     minZoom: 14,
     symbol: DetailedRectangle
+  }
+];
+
+// scooter symbols
+const EScooterMapSymbols = [
+  {
+    fillColor: "#F80600",
+    minZoom: 0,
+    pixels: 4,
+    type: "circle"
+  },
+  {
+    fillColor: "#880600",
+    minZoom: 14,
+    pixels: 6,
+    type: "circle"
+  },
+  {
+    fillColor: "#480600",
+    minZoom: 18,
+    pixels: 20,
+    type: "circle"
   }
 ];
 
@@ -230,7 +230,8 @@ function realtimeExample(
   fetchPattern,
   markers,
   rteKnob = "",
-  renderScooters = false
+  renderScooters = false,
+  tracking = true
 ) {
   // knobs setup
   const routes = text("list of routes to query vehicles", rteKnob);
@@ -241,7 +242,9 @@ function realtimeExample(
   const highlightColor = color("isTracked color:", "#D1472D");
 
   // recenter the map via either FlyTo or PanTo
-  const recenter = isFlyTo ? utils.recenterFlyTo() : utils.recenterPanTo();
+  let recenter = isFlyTo ? utils.recenterFlyTo() : utils.recenterPanTo();
+  if (!tracking) recenter = null;
+
   const clickVehicle = vehicle => {
     setClicked(vehicle);
   };
@@ -341,15 +344,26 @@ function rtCircles() {
   );
 }
 
-function rtRectangles(renderScooters = false) {
+function realtimeRectangles(doScooters = false, doTracking = true) {
   // use the live alternate vehicle ws format for the component
   return realtimeExample(
     proprietary.fetchAltVehicles,
     proprietary.fetchPatternThrottled,
     rectangleSymbols,
     "",
-    renderScooters
+    doScooters,
+    doTracking
   );
+}
+
+function rtRectangles() {
+  return realtimeRectangles(false);
+}
+function rtRectanglesNoTracking() {
+  return realtimeRectangles(false, false);
+}
+function rtRectanglesWithScooters() {
+  return realtimeRectangles(true);
 }
 
 storiesOf("TransitVehicleOverlay", module)
@@ -362,4 +376,11 @@ storiesOf("TransitVehicleOverlay", module)
   .add("static rectangles (marker popups)", rectangles)
   .add("real-time circles", rtCircles)
   .add("real-time rectangles", rtRectangles)
-  .add("rt rectangles + scooters", rtRectangles);
+  .add(
+    "real-time rectangles + no tracking on selected vehicle",
+    rtRectanglesNoTracking
+  )
+  .add(
+    "real-time rectangles + scooters (stress test)",
+    rtRectanglesWithScooters
+  );
