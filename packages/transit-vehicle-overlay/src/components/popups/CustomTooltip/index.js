@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Tooltip } from "react-leaflet";
 import L from "leaflet";
 
-import { transitVehicleType } from "@opentripplanner/core-utils/src/types";
+import { transitVehicleType } from "@opentripplanner/core-utils/lib/types";
 import { TooltipStyle } from "../styled";
 import { linterIgnoreTheseProps } from "../../../utils";
 

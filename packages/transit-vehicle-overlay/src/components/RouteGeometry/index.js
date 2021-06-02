@@ -5,7 +5,7 @@ import { FeatureGroup } from "react-leaflet";
 import {
   leafletPathType,
   transitVehicleType
-} from "@opentripplanner/core-utils/src/types";
+} from "@opentripplanner/core-utils/lib/types";
 import * as utils from "../../utils";
 
 /**
