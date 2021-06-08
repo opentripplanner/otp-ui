@@ -106,7 +106,9 @@ function rectangles(popup = true) {
   // initial setup
   const vehicleData = line;
   const patternGeometry = utils.makePattern(geom, "111");
-  const recenter = utils.recenterFlyTo(null);
+
+  const doTracking = boolean("Recenter map on tracked vehcile", true);
+  const recenter = utils.recenterFlyTo(null, 0, doTracking);
   const initVehicle = utils.findVehicleById(vehicleData, "9562512");
 
   // storybook knobs to show off color & highlighting options
@@ -133,7 +135,7 @@ function rectangles(popup = true) {
   // give action to the popup vehicle tracking button
   VehiclePopup.defaultProps.setTracked = (vehicle, isTracked) => {
     updateTrackedVehicle(vehicle, isTracked);
-    if (!isTracked) recenter(null, 0, 0); // no longer tracking so clear out cached coords
+    if (!isTracked) recenter(null, 0, doTracking, 0); // no longer tracking so clear out cached coords
   };
 
   // record marker clicks (and more if no popup used)
@@ -144,7 +146,7 @@ function rectangles(popup = true) {
       updateTrackedVehicle(vehicle, isTracked);
       if (!isTracked)
         // clear recenter coords, so map recenters on repeated clicks of same marker
-        recenter(null, 0, 0);
+        recenter(null, 0, true, 0);
     }
   };
 
@@ -229,7 +231,7 @@ function realtimeExample(fetchVehicles, fetchPattern, markers) {
   // give action to the popup vehicle tracking button
   VehiclePopup.defaultProps.setTracked = (vehicle, isTracked) => {
     updateTrackedVehicle(vehicle, isTracked);
-    if (!isTracked) recenter(null, 0, 0); // clear out cached coords ... recenter on recently untracked vehicle
+    if (!isTracked) recenter(null, 0, true, 0); // clear out cached coords ... recenter on recently untracked vehicle
   };
 
   const [trackedVehicle, trackedRef] = getTrackedVehicle();

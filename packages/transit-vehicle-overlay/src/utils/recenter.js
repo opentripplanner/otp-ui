@@ -10,6 +10,7 @@ const VIEW_RADIUS = 1000;
 export function recenterFlyTo(
   boundOptions,
   viewRadius = VIEW_RADIUS,
+  doRecenter = true,
   pause = 700
 ) {
   const [coord, setCoord] = useState([0, 0]);
@@ -17,7 +18,7 @@ export function recenterFlyTo(
   // function that is being returned and able to be used to zoom to points
   const onRecenterMap = (map, lat, lon) => {
     const newCoord = [lat, lon];
-    if (!compareCoords(coord, newCoord)) {
+    if (doRecenter && !compareCoords(coord, newCoord)) {
       setCoord(newCoord);
       const newBounds = L.latLng(lat, lon).toBounds(viewRadius);
       // note: there is a slight pause, so that other fetch then re-paint work can happen
@@ -33,6 +34,7 @@ export function recenterFlyTo(
 export function recenterPanToOffset(
   panOffsetX = 0,
   panOffsetY = 0,
+  doRecenter = true,
   pause = 700
 ) {
   const [coord, setCoord] = useState([0, 0]);
@@ -40,7 +42,7 @@ export function recenterPanToOffset(
   // function that is being returned and able to be used to zoom to points
   const onRecenterMap = (map, lat, lon) => {
     const newCoord = [lat, lon];
-    if (!compareCoords(coord, newCoord)) {
+    if (doRecenter && !compareCoords(coord, newCoord)) {
       setCoord(newCoord);
       // note: there is a slight pause, so that other fetch then re-paint work can happen
       setTimeout(() => {
