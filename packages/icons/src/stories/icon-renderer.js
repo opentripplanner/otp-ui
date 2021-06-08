@@ -32,10 +32,12 @@ export default function IconRenderer({
 }) {
   return (
     <StyledTable>
-      <tr>
-        <th>{typeTitle}</th>
-        <th>Result</th>
-      </tr>
+      <thead>
+        <tr>
+          <th>{typeTitle}</th>
+          <th>Result</th>
+        </tr>
+      </thead>
       <tbody>
         {examples.map((example, idx) => (
           <tr key={idx}>
