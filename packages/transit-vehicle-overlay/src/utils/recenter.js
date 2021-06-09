@@ -1,5 +1,19 @@
-/** various different strategies for moving the map when a tracked vehicle is moved */
-
+/**
+ * various different strategies for moving the map when a tracked vehicle is moved
+ * note, the 'offset' routine is for when you have something like a left nav hovering over your map,
+ * and so the center of the map you like to use is offset from said left nav (e.g., true center
+ * of the would be look skewed to the floating nav)
+ *
+ * About the 'doRecenter' parameter.  This boolean, when false, will not execute the map.panTo of
+ * the tracked vehicle's coordinates.  Tracking a vehicle involves highlighting the vehicle on the
+ * map, showing the pattern geometry of the vehicle and current progress along that pattern , and
+ * optionally pan/zooms the map to that tracked vehicle.
+ *
+ * The 'doRecenter' param can be used to switch control the map.panTo on/off.  Once the
+ * TransitVehicleOverlay component is mounted, the onRecenterMap (PropType.func) needs to be locked
+ * in place, else Leaflet (or ReactLeaflet) throws a bunch of errors. So the doRecenter param to
+ * this onRecenterMap function will control whether to map.panTo() or not call map.panTo().
+ */
 import { useState } from "react";
 import L from "leaflet";
 import { compareCoords } from "./coordinates";
