@@ -68,13 +68,13 @@ export function recenterPanToOffset(
 }
 
 /** callback used to move the map to some coordinates (e.g., selected vehicle) */
-export function recenterPanTo(pause = 700) {
+export function recenterPanTo(doRecenter = true, pause = 700) {
   const [coord, setCoord] = useState([0, 0]);
 
   // function that is being returned and able to be used to zoom to points
   const onRecenterMap = (map, lat, lon) => {
     const newCoord = [lat, lon];
-    if (!compareCoords(coord, newCoord)) {
+    if (doRecenter && !compareCoords(coord, newCoord)) {
       setCoord(newCoord);
       // note: there is a slight pause, so that other fetch then re-paint work can happen
       setTimeout(() => {

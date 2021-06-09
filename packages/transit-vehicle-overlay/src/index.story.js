@@ -138,7 +138,7 @@ function rectangles(popup = true) {
   // give action to the popup vehicle tracking button
   VehiclePopup.defaultProps.setTracked = (vehicle, isTracked) => {
     updateTrackedVehicle(vehicle, isTracked);
-    if (!isTracked) recenter(null, 0); // no longer tracking so clear out cached coords
+    if (!isTracked) recenter(null, 0, 0); // no longer tracking so clear out cached coords
   };
 
   // record marker clicks (and more if no popup used)
@@ -149,7 +149,7 @@ function rectangles(popup = true) {
       updateTrackedVehicle(vehicle, isTracked);
       if (!isTracked)
         // clear recenter coords, so map recenters on repeated clicks of same marker
-        recenter(null, 0);
+        recenter(null, 0, 0);
     }
   };
 
@@ -234,7 +234,7 @@ function realtimeExample(fetchVehicles, fetchPattern, markers) {
   // give action to the popup vehicle tracking button
   VehiclePopup.defaultProps.setTracked = (vehicle, isTracked) => {
     updateTrackedVehicle(vehicle, isTracked);
-    if (!isTracked) recenter(null, 0); // clear out cached coords ... recenter on recently untracked vehicle
+    if (!isTracked) recenter(null, 0, 0); // clear out cached coords ... recenter on recently untracked vehicle
   };
 
   const [trackedVehicle, trackedRef] = getTrackedVehicle();
