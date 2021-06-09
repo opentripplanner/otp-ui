@@ -38,6 +38,7 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.0",
     "core-js": "2",
+    "cross-env": "^7.0.3",
     "eslint": "6.1.0",
     "eslint-config-airbnb-typescript": "^12.3.1",
     "eslint-config-prettier": "^4.3.0",
@@ -77,7 +78,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap --use-workspaces",
     "build:cjs": "lerna exec --parallel -- babel --extensions '.js,.ts,.tsx' --ignore **/*.story.js,**/*.spec.js,**/*.test.js,**/__tests__/** --root-mode upward --source-maps true src -d lib",
-    "build:esm": "lerna exec --parallel -- BABEL_ENV=esm babel --extensions '.js,.ts,.tsx' --ignore **/*.story.js,**/*.spec.js,**/*.test.js,**/__tests__/** --root-mode upward --source-maps true src -d esm",
+    "build:esm": "lerna exec --parallel -- cross-env BABEL_ENV=esm babel --extensions '.js,.ts,.tsx' --ignore **/*.story.js,**/*.spec.js,**/*.test.js,**/__tests__/** --root-mode upward --source-maps true src -d esm",
     "prepublish": "yarn typescript && yarn build:cjs && yarn build:esm",
     "check-eslint-config": "eslint --print-config jestconfig.js | eslint-config-prettier-check",
     "coverage": "jest --coverage",
