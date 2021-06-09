@@ -107,7 +107,7 @@ function rectangles(popup = true) {
   const vehicleData = line;
   const patternGeometry = utils.makePattern(geom, "111");
 
-  const doTracking = boolean("Recenter map on tracked vehcile", true);
+  const doTracking = boolean("Recenter map when tracking a different vehicle", true);
   const recenter = utils.recenterFlyTo(null, 0, doTracking);
   const initVehicle = utils.findVehicleById(vehicleData, "9562512");
 
