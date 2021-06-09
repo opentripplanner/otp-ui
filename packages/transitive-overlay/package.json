@@ -3,6 +3,7 @@
   "version": "1.0.7",
   "description": "A map overlay to show an itinerary based on transitive.js",
   "main": "lib/index.js",
+  "module": "esm/index.js",
   "author": "Evan Siroky",
   "license": "MIT",
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",

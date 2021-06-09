@@ -1,5 +1,5 @@
-import { itineraryType } from "@opentripplanner/core-utils/lib/types";
-import ClassicLegIcon from "@opentripplanner/icons/lib/classic-leg-icon";
+import coreUtils from "@opentripplanner/core-utils";
+import { ClassicLegIcon } from "@opentripplanner/icons";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -53,7 +53,7 @@ function OtpRRItineraryBodyWrapper({
 }
 
 OtpRRItineraryBodyWrapper.propTypes = {
-  itinerary: itineraryType.isRequired,
+  itinerary: coreUtils.types.itineraryType.isRequired,
   showRouteFares: PropTypes.bool,
   TimeColumnContent: PropTypes.elementType
 };

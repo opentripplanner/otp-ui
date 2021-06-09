@@ -1,5 +1,5 @@
 import BaseMap from "@opentripplanner/base-map";
-import { itineraryToTransitive } from "@opentripplanner/core-utils/lib/map";
+import coreUtils from "@opentripplanner/core-utils";
 import EndpointsOverlay from "@opentripplanner/endpoints-overlay";
 import React from "react";
 import { action } from "@storybook/addon-actions";
@@ -28,6 +28,7 @@ const walkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__
 const walkTransitWalkItineraryNoIntermediateStops = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-no-intermediate-stops.json");
 const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json");
 
+const { itineraryToTransitive } = coreUtils.map;
 const companies = [
   {
     id: "RAZOR",

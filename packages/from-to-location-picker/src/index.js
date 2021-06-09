@@ -1,4 +1,4 @@
-import { locationType } from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import LocationIcon from "@opentripplanner/location-icon";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
@@ -60,7 +60,7 @@ FromToLocationPicker.propTypes = {
    * A specific location to associate with this. This is only used when combined
    * with the setLocation prop.
    */
-  location: locationType,
+  location: coreUtils.types.locationType,
   /**
    * Triggered when the user clicks on the "from" button.
    */

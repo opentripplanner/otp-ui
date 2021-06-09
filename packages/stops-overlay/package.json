@@ -3,6 +3,7 @@
   "version": "3.0.2",
   "description": "A map overlay to show transit stops",
   "main": "lib/index.js",
+  "module": "esm/index.js",
   "author": "Evan Siroky",
   "license": "MIT",
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",

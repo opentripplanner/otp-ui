@@ -1,8 +1,8 @@
+import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 import PropTypes from "prop-types";
 import { useLeaflet } from "react-leaflet";
 
-import { transitVehicleType } from "@opentripplanner/core-utils/lib/types";
 import { CircledVehicle } from "../markers/ModeCircles";
 import { linterIgnoreTheseProps } from "../../utils";
 
@@ -52,7 +52,7 @@ VehicleGeometry.propTypes = {
   zoom: PropTypes.number.isRequired,
 
   /** required vehicle record for the vehicle */
-  vehicle: transitVehicleType.isRequired,
+  vehicle: coreUtils.types.transitVehicleType.isRequired,
 
   isTracked: PropTypes.bool,
 

@@ -1,9 +1,4 @@
-import {
-  configType,
-  itineraryType,
-  legType,
-  timeOptionsType
-} from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -106,12 +101,12 @@ ItineraryBody.propTypes = {
    */
   className: PropTypes.string,
   /** Contains OTP configuration details. */
-  config: configType.isRequired,
+  config: coreUtils.types.configType.isRequired,
   /**
    * Should be either null or a legType. Indicates that a particular leg diagram
    * has been selected and is active.
    */
-  diagramVisible: legType,
+  diagramVisible: coreUtils.types.legType,
   /**
    * Called upon clicking the map icon on place headers. This function is sent a
    * single argument of an object with the keys as follow:
@@ -123,7 +118,7 @@ ItineraryBody.propTypes = {
    */
   frameLeg: PropTypes.func,
   /** Itinerary that the user has selected to view, contains multiple legs */
-  itinerary: itineraryType.isRequired,
+  itinerary: coreUtils.types.itineraryType.isRequired,
   /** A component class that is used to render icons for legs of an itinerary */
   LegIcon: PropTypes.elementType.isRequired,
   /**
@@ -189,7 +184,7 @@ ItineraryBody.propTypes = {
    */
   TimeColumnContent: PropTypes.elementType,
   /** Contains the preferred format string for time display and a timezone offset */
-  timeOptions: timeOptionsType,
+  timeOptions: coreUtils.types.timeOptionsType,
   /** Converts a route's ID to its accepted badge abbreviation */
   toRouteAbbreviation: PropTypes.func,
   /**

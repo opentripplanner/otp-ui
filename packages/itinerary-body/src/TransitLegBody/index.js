@@ -1,11 +1,4 @@
-import { getTransitFare } from "@opentripplanner/core-utils/lib/itinerary";
-import { formatDuration } from "@opentripplanner/core-utils/lib/time";
-import {
-  configType,
-  fareType,
-  legType,
-  transitOperatorType
-} from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { ExclamationTriangle } from "styled-icons/fa-solid";
@@ -35,7 +28,7 @@ export default class TransitLegBody extends Component {
     if (fare && fare.details && fare.details.regular) {
       fare.details.regular.forEach(fareComponent => {
         if (fareComponent.routes.includes(leg.routeId)) {
-          fareForLeg = getTransitFare(fareComponent.price);
+          fareForLeg = coreUtils.itinerary.getTransitFare(fareComponent.price);
         }
       });
     }
@@ -176,7 +169,9 @@ export default class TransitLegBody extends Component {
 
               {/* Average wait details, if present */}
               {leg.averageWait && (
-                <span>Typical Wait: {formatDuration(leg.averageWait)}</span>
+                <span>
+                  Typical Wait: {coreUtils.time.formatDuration(leg.averageWait)}
+                </span>
               )}
             </Styled.TransitLegDetails>
           )}
@@ -187,9 +182,9 @@ export default class TransitLegBody extends Component {
 }
 
 TransitLegBody.propTypes = {
-  config: configType.isRequired,
-  fare: fareType,
-  leg: legType.isRequired,
+  config: coreUtils.types.configType.isRequired,
+  fare: coreUtils.types.fareType,
+  leg: coreUtils.types.legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired,
   legIndex: PropTypes.number.isRequired,
   longDateFormat: PropTypes.string.isRequired,
@@ -201,7 +196,7 @@ TransitLegBody.propTypes = {
   timeFormat: PropTypes.string.isRequired,
   TransitLegSubheader: PropTypes.elementType,
   TransitLegSummary: PropTypes.elementType.isRequired,
-  transitOperator: transitOperatorType
+  transitOperator: coreUtils.types.transitOperatorType
 };
 
 TransitLegBody.defaultProps = {

@@ -1,13 +1,4 @@
-import {
-  calculateFares,
-  calculatePhysicalActivity
-} from "@opentripplanner/core-utils/lib/itinerary";
-import { mergeMessages } from "@opentripplanner/core-utils/lib/messages";
-import { formatTime } from "@opentripplanner/core-utils/lib/time";
-import {
-  itineraryType,
-  timeOptionsType
-} from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import moment from "moment";
 import PropTypes from "prop-types";
 import React from "react";
@@ -25,7 +16,10 @@ export default function TripDetails({
   timeOptions
 }) {
   const date = moment(itinerary.startTime);
-  messages = mergeMessages(TripDetails.defaultProps.messages, messages);
+  messages = coreUtils.messages.mergeMessages(
+    TripDetails.defaultProps.messages,
+    messages
+  );
 
   // process the transit fare
   const {
@@ -34,7 +28,7 @@ export default function TripDetails({
     maxTNCFare,
     minTNCFare,
     transitFare
-  } = calculateFares(itinerary);
+  } = coreUtils.itinerary.calculateFares(itinerary);
   let companies;
   itinerary.legs.forEach(leg => {
     if (leg.tncData) {
@@ -71,7 +65,7 @@ export default function TripDetails({
     bikeDuration,
     caloriesBurned,
     walkDuration
-  } = calculatePhysicalActivity(itinerary);
+  } = coreUtils.itinerary.calculatePhysicalActivity(itinerary);
 
   return (
     <Styled.TripDetails className={className}>
@@ -89,7 +83,12 @@ export default function TripDetails({
                 <span>
                   {" "}
                   {messages.at}{" "}
-                  <b>{formatTime(itinerary.startTime, timeOptions)}</b>
+                  <b>
+                    {coreUtils.time.formatTime(
+                      itinerary.startTime,
+                      timeOptions
+                    )}
+                  </b>
                 </span>
               )}
             </Styled.Timing>
@@ -137,7 +136,7 @@ TripDetails.propTypes = {
   /** Used for additional styling with styled components for example. */
   className: PropTypes.string,
   /** Itinerary that the user has selected to view, contains multiple legs */
-  itinerary: itineraryType.isRequired,
+  itinerary: coreUtils.types.itineraryType.isRequired,
   /** the desired format to use for a long date */
   longDateFormat: PropTypes.string,
   /**
@@ -162,7 +161,7 @@ TripDetails.propTypes = {
   /** whether the routing type is an itinerary or a profile result */
   routingType: PropTypes.string,
   /** Contains the preferred format string for time display and a timezone offset */
-  timeOptions: timeOptionsType
+  timeOptions: coreUtils.types.timeOptionsType
 };
 
 TripDetails.defaultProps = {

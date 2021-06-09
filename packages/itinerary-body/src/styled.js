@@ -1,4 +1,4 @@
-import BaseMapIcon from "@opentripplanner/icons/lib/trimet/Map";
+import { Map } from "@opentripplanner/icons";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -388,7 +388,7 @@ export const MapButtonColumn = styled(LightBorderDiv)`
   flex: 0 0 25px;
 `;
 
-export const MapIcon = styled(BaseMapIcon).attrs(props => ({
+export const MapIcon = styled(Map).attrs(props => ({
   fill: props.theme.secondaryColor,
   width: 15,
   height: 15,

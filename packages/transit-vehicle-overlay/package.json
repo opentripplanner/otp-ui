@@ -6,6 +6,7 @@
   "homepage": "https://github.com/opentripplanner/otp-ui/tree/master/packages/transit-vehicle-overlay/#readme",
   "license": "MIT",
   "main": "lib/index.js",
+  "module": "esm/index.js",
   "private": false,
   "dependencies": {
     "@opentripplanner/base-map": "^1.0.4",

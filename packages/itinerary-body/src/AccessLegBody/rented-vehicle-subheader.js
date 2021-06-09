@@ -1,8 +1,4 @@
-import { configType, legType } from "@opentripplanner/core-utils/lib/types";
-import {
-  getCompaniesLabelFromNetworks,
-  getModeForPlace
-} from "@opentripplanner/core-utils/lib/itinerary";
+import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 
 import * as Styled from "../styled";
@@ -48,7 +44,7 @@ export default function RentedVehicleSubheader({ config, leg }) {
     // resumes there won't be any network info. In that case we simply return
     // that the rental is continuing.
     if (leg.from.networks) {
-      companyName = getCompaniesLabelFromNetworks(
+      companyName = coreUtils.itinerary.getCompaniesLabelFromNetworks(
         leg.from.networks,
         configCompanies
       );
@@ -57,7 +53,7 @@ export default function RentedVehicleSubheader({ config, leg }) {
       if (leg.rentedCar && leg.from.name) {
         vehicleName = leg.from.name;
       }
-      modeString = getModeForPlace(leg.from);
+      modeString = coreUtils.itinerary.getModeForPlace(leg.from);
       rentalDescription = `Pick up ${companyName} ${modeString} ${vehicleName}`;
     } else {
       rentalDescription = "Continue using rental";
@@ -70,6 +66,6 @@ export default function RentedVehicleSubheader({ config, leg }) {
 }
 
 RentedVehicleSubheader.propTypes = {
-  config: configType.isRequired,
-  leg: legType.isRequired
+  config: coreUtils.types.configType.isRequired,
+  leg: coreUtils.types.legType.isRequired
 };

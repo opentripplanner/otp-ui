@@ -1,4 +1,4 @@
-import * as BaseMapStyled from "@opentripplanner/base-map/lib/styled";
+import { styled as BaseMapStyled } from "@opentripplanner/base-map";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 import PropTypes from "prop-types";
 import React from "react";

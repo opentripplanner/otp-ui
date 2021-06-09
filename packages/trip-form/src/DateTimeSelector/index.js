@@ -1,14 +1,12 @@
+import coreUtils from "@opentripplanner/core-utils";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
 
-import {
-  OTP_API_DATE_FORMAT,
-  OTP_API_TIME_FORMAT
-} from "@opentripplanner/core-utils/lib/time";
-
 import ModeButton from "../ModeButton";
 import * as Styled from "../styled";
+
+const { OTP_API_DATE_FORMAT, OTP_API_TIME_FORMAT } = coreUtils.time;
 
 /**
  * Determines whether the browser supports a particular <input type=<type> /> control,

@@ -1,3 +1,4 @@
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
@@ -5,7 +6,6 @@ import styled from "styled-components";
 import L from "leaflet";
 import cloneDeep from "lodash.clonedeep";
 
-import { transitVehicleType } from "@opentripplanner/core-utils/lib/types";
 import RotatedMarker from "../components/markers/RotatedMarker";
 import { linterIgnoreTheseProps } from "./data";
 
@@ -303,7 +303,7 @@ export const makeRotatedMarker = (Icon, getSize) => {
     onVehicleClicked: PropTypes.func,
 
     /** vehicle record  - @see: core-utils/types/transitVehicleType */
-    vehicle: transitVehicleType.isRequired,
+    vehicle: coreUtils.types.transitVehicleType.isRequired,
 
     /** map zoom: is part of the props due to redrawing this layer on map zoom */
     zoom: PropTypes.number

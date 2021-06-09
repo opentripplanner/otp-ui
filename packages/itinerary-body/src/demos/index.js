@@ -1,12 +1,4 @@
-import {
-  formatDuration,
-  formatTime
-} from "@opentripplanner/core-utils/lib/time";
-import {
-  languageConfigType,
-  legType,
-  timeOptionsType
-} from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 import { action } from "@storybook/addon-actions";
@@ -32,7 +24,7 @@ export function CustomTimeColumnContent({ isDestination, leg, timeOptions }) {
     <>
       <div>
         <span style={{ color: "red" }}>
-          {time && formatTime(time, timeOptions)}
+          {time && coreUtils.time.formatTime(time, timeOptions)}
         </span>
       </div>
       <div style={{ fontSize: "80%", lineHeight: "1em" }}>
@@ -44,8 +36,8 @@ export function CustomTimeColumnContent({ isDestination, leg, timeOptions }) {
 
 CustomTimeColumnContent.propTypes = {
   isDestination: PropTypes.bool.isRequired,
-  leg: legType.isRequired,
-  timeOptions: timeOptionsType
+  leg: coreUtils.types.legType.isRequired,
+  timeOptions: coreUtils.types.timeOptionsType
 };
 
 CustomTimeColumnContent.defaultProps = {
@@ -63,7 +55,9 @@ export function CustomTransitLegSummary({ leg, onClick, stopsExpanded }) {
   return (
     /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
     <div onClick={onClick}>
-      {leg.duration && <span>Ride {formatDuration(leg.duration)}</span>}
+      {leg.duration && (
+        <span>Ride {coreUtils.time.formatDuration(leg.duration)}</span>
+      )}
       {leg.intermediateStops && (
         <span>
           {` (${leg.intermediateStops.length + 1} stops)`}
@@ -75,7 +69,7 @@ export function CustomTransitLegSummary({ leg, onClick, stopsExpanded }) {
 }
 
 CustomTransitLegSummary.propTypes = {
-  leg: legType.isRequired,
+  leg: coreUtils.types.legType.isRequired,
   onClick: PropTypes.func.isRequired,
   stopsExpanded: PropTypes.bool.isRequired
 };
@@ -107,6 +101,6 @@ export function WrappedOtpRRTransitLegSubheader({ languageConfig, leg }) {
 }
 
 WrappedOtpRRTransitLegSubheader.propTypes = {
-  languageConfig: languageConfigType.isRequired,
-  leg: legType.isRequired
+  languageConfig: coreUtils.types.languageConfigType.isRequired,
+  leg: coreUtils.types.legType.isRequired
 };

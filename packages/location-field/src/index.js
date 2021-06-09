@@ -1,11 +1,4 @@
-import {
-  currentPositionToLocation,
-  formatStoredPlaceName
-} from "@opentripplanner/core-utils/lib/map";
-import {
-  transitIndexStopWithRoutes,
-  userLocationType
-} from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import getGeocoder from "@opentripplanner/geocoder";
 import LocationIcon from "@opentripplanner/location-icon";
 import PropTypes from "prop-types";
@@ -128,7 +121,7 @@ class LocationField extends Component {
       onLocationSelected,
       locationType
     } = this.props;
-    const location = currentPositionToLocation(currentPosition);
+    const location = coreUtils.map.currentPositionToLocation(currentPosition);
     if (location) {
       // If geolocation is successful (i.e., user has granted app geolocation
       // permission and coords exist), set location.
@@ -504,7 +497,7 @@ class LocationField extends Component {
             <Option
               icon={<UserLocationIconComponent userLocation={userLocation} />}
               key={optionKey++}
-              title={formatStoredPlaceName(userLocation)}
+              title={coreUtils.map.formatStoredPlaceName(userLocation)}
               onClick={locationSelected}
               isActive={itemIndex === activeIndex}
             />
@@ -843,7 +836,7 @@ LocationField.propTypes = {
   /**
    * An index of stops by StopId
    */
-  stopsIndex: PropTypes.objectOf(transitIndexStopWithRoutes),
+  stopsIndex: PropTypes.objectOf(coreUtils.types.transitIndexStopWithRoutes),
   /**
    * A slot for the icon to display for a stop option
    */
@@ -855,7 +848,9 @@ LocationField.propTypes = {
   /**
    * An array of recent locations and places a user has searched for.
    */
-  userLocationsAndRecentPlaces: PropTypes.arrayOf(userLocationType),
+  userLocationsAndRecentPlaces: PropTypes.arrayOf(
+    coreUtils.types.userLocationType
+  ),
   /**
    * A custom component for rendering the icon for options that are either saved
    * user locations or recent places. The component will be sent a single prop

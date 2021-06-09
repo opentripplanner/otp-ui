@@ -1,5 +1,4 @@
-import { getElevationProfile } from "@opentripplanner/core-utils/lib/itinerary";
-import { legType } from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import ReactResizeDetector from "react-resize-detector";
@@ -67,7 +66,7 @@ class LegDiagramPreview extends Component {
     const { leg, showElevationProfile } = this.props;
     const { width } = this.state;
     if (!showElevationProfile) return null;
-    const profile = getElevationProfile(leg.steps);
+    const profile = coreUtils.itinerary.getElevationProfile(leg.steps);
     // Don't show for very short legs
     if (leg.distance < 500 || leg.mode === "CAR") return null;
 
@@ -102,8 +101,8 @@ class LegDiagramPreview extends Component {
 }
 
 LegDiagramPreview.propTypes = {
-  diagramVisible: legType,
-  leg: legType.isRequired,
+  diagramVisible: coreUtils.types.legType,
+  leg: coreUtils.types.legType.isRequired,
   setLegDiagram: PropTypes.func.isRequired,
   showElevationProfile: PropTypes.bool.isRequired
 };

@@ -1,8 +1,6 @@
-import { legType } from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
-
-import { formatDuration } from "@opentripplanner/core-utils/lib/time";
 
 import * as Styled from "../styled";
 
@@ -13,7 +11,9 @@ import * as Styled from "../styled";
 export default function TransitLegSummary({ leg, onClick, stopsExpanded }) {
   return (
     <Styled.TransitLegSummary onClick={onClick}>
-      {leg.duration && <span>Ride {formatDuration(leg.duration)}</span>}
+      {leg.duration && (
+        <span>Ride {coreUtils.time.formatDuration(leg.duration)}</span>
+      )}
       {leg.intermediateStops && (
         <span>
           {" / "}
@@ -27,7 +27,7 @@ export default function TransitLegSummary({ leg, onClick, stopsExpanded }) {
 }
 
 TransitLegSummary.propTypes = {
-  leg: legType.isRequired,
+  leg: coreUtils.types.legType.isRequired,
   onClick: PropTypes.func.isRequired,
   stopsExpanded: PropTypes.bool.isRequired
 };

@@ -93,7 +93,7 @@ export function triMetRouteToShortName(route) {
 
 /**
  * convert a developer.trimet.org vehicle object to the
- * @opentripplanner/core-utils/lib/types/transitVehicleType object format
+ * @opentripplanner/core-utils/types/transitVehicleType object format
  */
 export function convertTriMetRecord(rec, qt) {
   const secs = Math.round((qt - rec.time) / 1000);

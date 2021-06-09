@@ -1,5 +1,5 @@
 import BaseMap from "@opentripplanner/base-map";
-import { stopLayerStopType } from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 import { CircleMarker } from "react-leaflet";
 
@@ -23,7 +23,7 @@ function CustomMarker({ stop }) {
 }
 
 CustomMarker.propTypes = {
-  stop: stopLayerStopType.isRequired
+  stop: coreUtils.types.stopLayerStopType.isRequired
 };
 
 export default {

@@ -1,8 +1,4 @@
-import {
-  configType,
-  itineraryType,
-  timeOptionsType
-} from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -66,13 +62,13 @@ PrintableItinerary.propTypes = {
   /** Used for additional styling with styled components for example. */
   className: PropTypes.string,
   /** Contains OTP configuration details. */
-  config: configType.isRequired,
+  config: coreUtils.types.configType.isRequired,
   /** Itinerary that the user has selected to view, contains multiple legs */
-  itinerary: itineraryType.isRequired,
+  itinerary: coreUtils.types.itineraryType.isRequired,
   /** A component class that is used to render icons for legs of an itinerary */
   LegIcon: PropTypes.elementType.isRequired,
   /** Contains the preferred format string for time display and a timezone offset */
-  timeOptions: timeOptionsType
+  timeOptions: coreUtils.types.timeOptionsType
 };
 
 PrintableItinerary.defaultProps = {

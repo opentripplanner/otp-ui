@@ -1,6 +1,6 @@
+import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 import PropTypes from "prop-types";
-import { modeSelectorOptionsType } from "@opentripplanner/core-utils/lib/types";
 
 import * as Styled from "../styled";
 import ModeButton from "../ModeButton";
@@ -65,7 +65,7 @@ ModeSelector.propTypes = {
   /**
    * An object that defines the primary mode, and secondary and tertiary modes for the trip query.
    */
-  modes: modeSelectorOptionsType,
+  modes: coreUtils.types.modeSelectorOptionsType,
   /**
    * Triggered when the user selects a different mode.
    * @param id The id of the new option clicked.

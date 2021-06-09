@@ -3,6 +3,7 @@
   "version": "1.0.4",
   "description": "A map overlay to show park and rides",
   "main": "lib/index.js",
+  "module": "esm/index.js",
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "author": "Evan Siroky",
   "license": "MIT",

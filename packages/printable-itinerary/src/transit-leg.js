@@ -1,8 +1,4 @@
-import { formatTime } from "@opentripplanner/core-utils/lib/time";
-import {
-  legType,
-  timeOptionsType
-} from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -29,7 +25,7 @@ export default function TransitLeg({
           <Styled.LegDetails>
             <Styled.LegDetail>
               Get off at <b>{leg.to.name}</b> at{" "}
-              {formatTime(leg.endTime, timeOptions)}
+              {coreUtils.time.formatTime(leg.endTime, timeOptions)}
             </Styled.LegDetail>
           </Styled.LegDetails>
         </Styled.LegBody>
@@ -52,7 +48,7 @@ export default function TransitLeg({
         <Styled.LegDetails>
           <Styled.LegDetail>
             Board at <b>{leg.from.name}</b> at{" "}
-            {formatTime(leg.startTime, timeOptions)}
+            {coreUtils.time.formatTime(leg.startTime, timeOptions)}
           </Styled.LegDetail>
           <Styled.LegDetail>
             {interlineFollows ? (
@@ -62,7 +58,7 @@ export default function TransitLeg({
             ) : (
               <span>
                 Get off at <b>{leg.to.name}</b> at{" "}
-                {formatTime(leg.endTime, timeOptions)}
+                {coreUtils.time.formatTime(leg.endTime, timeOptions)}
               </span>
             )}
           </Styled.LegDetail>
@@ -74,9 +70,9 @@ export default function TransitLeg({
 
 TransitLeg.propTypes = {
   interlineFollows: PropTypes.bool,
-  leg: legType.isRequired,
+  leg: coreUtils.types.legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired,
-  timeOptions: timeOptionsType
+  timeOptions: coreUtils.types.timeOptionsType
 };
 
 TransitLeg.defaultProps = {

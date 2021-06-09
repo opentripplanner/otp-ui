@@ -1,5 +1,4 @@
-import ClassicLegIcon from "@opentripplanner/icons/lib/classic-leg-icon";
-import TriMetLegIcon from "@opentripplanner/icons/lib/trimet-leg-icon";
+import { ClassicLegIcon, TriMetLegIcon } from "@opentripplanner/icons";
 import React from "react";
 import styled from "styled-components";
 

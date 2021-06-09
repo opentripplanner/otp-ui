@@ -1,9 +1,4 @@
-import { formatDuration } from "@opentripplanner/core-utils/lib/time";
-import {
-  configType,
-  legType,
-  timeOptionsType
-} from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { VelocityTransitionGroup } from "velocity-react";
@@ -80,7 +75,7 @@ export default class AccessLegBody extends Component {
             showLegIcon={showLegIcon}
           />
           <Styled.StepsHeader onClick={this.onStepsHeaderClick}>
-            {formatDuration(leg.duration)}
+            {coreUtils.time.formatDuration(leg.duration)}
             {leg.steps && (
               <span>
                 {" "}
@@ -108,21 +103,21 @@ export default class AccessLegBody extends Component {
 }
 
 AccessLegBody.propTypes = {
-  config: configType.isRequired,
+  config: coreUtils.types.configType.isRequired,
   /**
    * Should be either null or a legType. Indicates that a particular leg diagram
    * has been selected and is active.
    */
-  diagramVisible: legType,
+  diagramVisible: coreUtils.types.legType,
   followsTransit: PropTypes.bool,
-  leg: legType.isRequired,
+  leg: coreUtils.types.legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired,
   legIndex: PropTypes.number.isRequired,
   setActiveLeg: PropTypes.func.isRequired,
   setLegDiagram: PropTypes.func.isRequired,
   showElevationProfile: PropTypes.bool.isRequired,
   showLegIcon: PropTypes.bool.isRequired,
-  timeOptions: timeOptionsType
+  timeOptions: coreUtils.types.timeOptionsType
 };
 
 AccessLegBody.defaultProps = {

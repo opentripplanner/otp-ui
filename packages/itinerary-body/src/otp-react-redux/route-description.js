@@ -1,4 +1,4 @@
-import { legType } from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -33,6 +33,6 @@ export default function RouteDescription({ leg, LegIcon }) {
 }
 
 RouteDescription.propTypes = {
-  leg: legType.isRequired,
+  leg: coreUtils.types.legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired
 };

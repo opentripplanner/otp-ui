@@ -1,8 +1,5 @@
 import BaseMap from "@opentripplanner/base-map";
-import {
-  stationType,
-  vehicleRentalMapOverlaySymbolsType
-} from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { CircleMarker } from "react-leaflet";
@@ -37,9 +34,9 @@ const MyCircle = ({ fillColor = "gray", pixels, strokeColor }) => {
       {children}
     </CircleMarker>
   );
-  GeneratedCircle.propTypes = {
+  GeneratedCircle.coreUtils.types.propTypes = {
     children: PropTypes.node,
-    entity: stationType.isRequired
+    entity: coreUtils.types.stationType.isRequired
   };
   GeneratedCircle.defaultProps = {
     children: null
@@ -213,9 +210,9 @@ class ZoomControlledMapWithVehicleRentalOverlay extends Component {
 ZoomControlledMapWithVehicleRentalOverlay.propTypes = {
   companies: PropTypes.arrayOf(PropTypes.string.isRequired),
   getStationName: PropTypes.func,
-  mapSymbols: vehicleRentalMapOverlaySymbolsType,
+  mapSymbols: coreUtils.types.vehicleRentalMapOverlaySymbolsType,
   refreshVehicles: PropTypes.func.isRequired,
-  stations: PropTypes.arrayOf(stationType.isRequired).isRequired
+  stations: PropTypes.arrayOf(coreUtils.types.stationType.isRequired).isRequired
 };
 
 ZoomControlledMapWithVehicleRentalOverlay.defaultProps = {

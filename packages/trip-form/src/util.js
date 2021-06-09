@@ -1,24 +1,19 @@
+import coreUtils from "@opentripplanner/core-utils";
+import { getCompanyIcon } from "@opentripplanner/icons";
 import React from "react";
-import {
-  hasRental,
-  hasHail,
-  isBicycle,
-  isBicycleRent,
-  isMicromobility,
-  isTransit,
-  isWalk
-} from "@opentripplanner/core-utils/lib/itinerary";
-import { getCompanyIcon } from "@opentripplanner/icons/lib/companies";
 
 export function isBike(mode) {
-  return isBicycle(mode) || isBicycleRent(mode);
+  return (
+    coreUtils.itinerary.isBicycle(mode) ||
+    coreUtils.itinerary.isBicycleRent(mode)
+  );
 }
 
 const supportedExclusiveModes = [
   {
     mode: "WALK",
     label: "Walk Only",
-    isActive: isWalk
+    isActive: coreUtils.itinerary.isWalk
   },
   {
     mode: "BICYCLE",
@@ -28,7 +23,7 @@ const supportedExclusiveModes = [
   {
     mode: "MICROMOBILITY",
     label: "E-scooter Only",
-    isActive: isMicromobility
+    isActive: coreUtils.itinerary.isMicromobility
   }
 ];
 
@@ -58,7 +53,11 @@ function getCompanies(companies, modes) {
     .filter(
       comp => comp.modes.split(",").filter(m => modes.includes(m)).length > 0
     )
-    .filter(comp => hasRental(comp.modes) || hasHail(comp.modes));
+    .filter(
+      comp =>
+        coreUtils.itinerary.hasRental(comp.modes) ||
+        coreUtils.itinerary.hasHail(comp.modes)
+    );
 }
 
 /**
@@ -126,7 +125,9 @@ export function getTransitSubmodeOptions(ModeIcon, modes, selectedModes) {
 function getPrimaryModeOption(ModeIcon, selectedModes) {
   return {
     id: "TRANSIT",
-    selected: selectedModes.some(isTransit) && selectedModes.includes("WALK"),
+    selected:
+      selectedModes.some(coreUtils.itinerary.isTransit) &&
+      selectedModes.includes("WALK"),
     showTitle: false,
     text: (
       <span>
@@ -154,7 +155,7 @@ function getTransitCombinedModeOptions(
   supportedCompanies
 ) {
   const { accessModes } = modes;
-  const modesHaveTransit = selectedModes.some(isTransit);
+  const modesHaveTransit = selectedModes.some(coreUtils.itinerary.isTransit);
 
   return (
     accessModes &&
@@ -220,7 +221,9 @@ function getExclusiveModeOptions(ModeIcon, modes, selectedModes) {
     .filter(({ mode }) => exclusiveModes && exclusiveModes.includes(mode))
     .map(({ isActive, label, mode }) => ({
       id: mode,
-      selected: !selectedModes.some(isTransit) && selectedModes.some(isActive),
+      selected:
+        !selectedModes.some(coreUtils.itinerary.isTransit) &&
+        selectedModes.some(isActive),
       showTitle: false,
       text: (
         <span>

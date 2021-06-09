@@ -1,4 +1,4 @@
-import { stopLayerStopType } from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 import { FeatureGroup, MapLayer, withLeaflet } from "react-leaflet";
@@ -47,7 +47,7 @@ StopViewerOverlay.props = {
   /**
    * An object representing a transit stop
    */
-  stop: stopLayerStopType,
+  stop: coreUtils.types.stopLayerStopType,
   StopMarker: PropTypes.elementType.isRequired
 };
 

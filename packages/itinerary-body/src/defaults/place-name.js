@@ -1,5 +1,4 @@
-import { configType, placeType } from "@opentripplanner/core-utils/lib/types";
-import { getPlaceName } from "@opentripplanner/core-utils/lib/itinerary";
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -13,7 +12,7 @@ export default function PlaceName({ config, interline, place }) {
           Stay on Board at <b>{place.name}</b>
         </>
       ) : (
-        <>{getPlaceName(place, config.companies)}</>
+        <>{coreUtils.itinerary.getPlaceName(place, config.companies)}</>
       )}
       {/* TODO: take another pass on this when working the Transit Leg */}
       {/* Place subheading: Transit stop */}
@@ -32,9 +31,9 @@ export default function PlaceName({ config, interline, place }) {
 }
 
 PlaceName.propTypes = {
-  config: configType.isRequired,
+  config: coreUtils.types.configType.isRequired,
   interline: PropTypes.bool,
-  place: placeType.isRequired
+  place: coreUtils.types.placeType.isRequired
 };
 
 PlaceName.defaultProps = {

@@ -1,9 +1,5 @@
-import {
-  getStepDirection,
-  getStepStreetName
-} from "@opentripplanner/core-utils/lib/itinerary";
-import { stepsType } from "@opentripplanner/core-utils/lib/types";
-import { DirectionIcon } from "@opentripplanner/icons/lib/directions";
+import coreUtils from "@opentripplanner/core-utils";
+import { DirectionIcon } from "@opentripplanner/icons";
 import React from "react";
 
 import * as Styled from "../styled";
@@ -19,12 +15,12 @@ export default function AccessLegSteps({ steps }) {
             </Styled.StepIconContainer>
 
             <Styled.StepDescriptionContainer>
-              {getStepDirection(step)}
+              {coreUtils.itinerary.getStepDirection(step)}
               <span>
                 {step.relativeDirection === "ELEVATOR" ? " to " : " on "}
               </span>
               <Styled.StepStreetName>
-                {getStepStreetName(step)}
+                {coreUtils.itinerary.getStepStreetName(step)}
               </Styled.StepStreetName>
             </Styled.StepDescriptionContainer>
           </Styled.StepRow>
@@ -35,5 +31,5 @@ export default function AccessLegSteps({ steps }) {
 }
 
 AccessLegSteps.propTypes = {
-  steps: stepsType.isRequired
+  steps: coreUtils.types.stepsType.isRequired
 };

@@ -1,8 +1,4 @@
-import {
-  isBikeshareStation,
-  isCarWalkTransition,
-  isEScooterStation
-} from "@opentripplanner/core-utils/lib/map";
+import coreUtils from "@opentripplanner/core-utils";
 
 const STYLES = {};
 
@@ -18,19 +14,19 @@ const STYLES = {};
  */
 STYLES.places = {
   display: (display, place) =>
-    isBikeshareStation(place) ||
-    isEScooterStation(place) ||
-    isCarWalkTransition(place)
+    coreUtils.map.isBikeshareStation(place) ||
+    coreUtils.map.isEScooterStation(place) ||
+    coreUtils.map.isCarWalkTransition(place)
       ? true
       : "none",
   fill: (display, place) => {
-    if (isBikeshareStation(place)) {
+    if (coreUtils.map.isBikeshareStation(place)) {
       return "#f00";
     }
-    if (isCarWalkTransition(place)) {
+    if (coreUtils.map.isCarWalkTransition(place)) {
       return "#888";
     }
-    if (isEScooterStation(place)) {
+    if (coreUtils.map.isEScooterStation(place)) {
       return "#f5a729";
     }
     return null;

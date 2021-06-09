@@ -1,5 +1,4 @@
-import { legType } from "@opentripplanner/core-utils/lib/types";
-import { formatDuration } from "@opentripplanner/core-utils/lib/time";
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -21,11 +20,12 @@ export default function TNCLeg({ leg, LegIcon }) {
         <Styled.LegDetails>
           <Styled.LegDetail>
             Estimated wait time for pickup:{" "}
-            <b>{formatDuration(tncData.estimatedArrival)}</b>
+            <b>{coreUtils.time.formatDuration(tncData.estimatedArrival)}</b>
           </Styled.LegDetail>
           <Styled.LegDetail>
-            Estimated travel time: <b>{formatDuration(leg.duration)}</b> (does
-            not account for traffic)
+            Estimated travel time:{" "}
+            <b>{coreUtils.time.formatDuration(leg.duration)}</b> (does not
+            account for traffic)
           </Styled.LegDetail>
         </Styled.LegDetails>
       </Styled.LegBody>
@@ -34,6 +34,6 @@ export default function TNCLeg({ leg, LegIcon }) {
 }
 
 TNCLeg.propTypes = {
-  leg: legType.isRequired,
+  leg: coreUtils.types.legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired
 };
