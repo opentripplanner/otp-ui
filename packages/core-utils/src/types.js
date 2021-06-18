@@ -198,7 +198,7 @@ const alertType = PropTypes.shape({
  */
 export const stepsType = PropTypes.arrayOf(
   PropTypes.shape({
-    absoluteDirection: PropTypes.string.isRequired,
+    absoluteDirection: PropTypes.string,
     alerts: PropTypes.arrayOf(alertType),
     area: PropTypes.bool.isRequired,
     bogusName: PropTypes.bool.isRequired,

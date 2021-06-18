@@ -103,7 +103,12 @@ function rectangles(popup = true) {
   // initial setup
   const vehicleData = line;
   const patternGeometry = utils.makePattern(geom, "111");
-  const recenter = utils.recenterFlyTo(null);
+
+  const doMapPan = boolean(
+    "Recenter map when tracking a different vehicle",
+    true
+  );
+  const recenter = utils.recenterFlyTo(null, 0, doMapPan);
   const initVehicle = utils.findVehicleById(vehicleData, "9562512");
 
   // storybook knobs to show off color & highlighting options
