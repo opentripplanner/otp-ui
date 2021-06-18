@@ -33,6 +33,8 @@ jobs:
         run: yarn lint:js
       - name: Lint styles
         run: yarn lint:styles
+      - name: Type check
+        run: yarn typescript
       - name: Run tests
         run: yarn unit
 

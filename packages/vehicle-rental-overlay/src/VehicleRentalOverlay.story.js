@@ -7,9 +7,6 @@ import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { CircleMarker } from "react-leaflet";
 import { action } from "@storybook/addon-actions";
-import { withA11y } from "@storybook/addon-a11y";
-import { withInfo } from "@storybook/addon-info";
-import { storiesOf } from "@storybook/react";
 
 import VehicleRentalOverlay from ".";
 import bikeRentalStations from "../__mocks__/bike-rental-stations.json";
@@ -231,50 +228,53 @@ function customStationName(_, station) {
   return `🛴 (ID: ${station.id})`;
 }
 
-storiesOf("VehicleRentalOverlay", module)
-  .addDecorator(withA11y)
-  .addDecorator(withInfo)
-  .add("VehicleRentalOverlay with rental bicycles", () => (
-    <ZoomControlledMapWithVehicleRentalOverlay
-      companies={["BIKETOWN"]}
-      mapSymbols={bikeMapSymbols}
-      refreshVehicles={action("refresh bicycles")}
-      stations={bikeRentalStations}
-    />
-  ))
-  .add(
-    "VehicleRentalOverlay with rental bicycles using new symbols prop",
-    () => (
-      <ZoomControlledMapWithVehicleRentalOverlay
-        companies={["BIKETOWN"]}
-        refreshVehicles={action("refresh bicycles")}
-        mapSymbols={bikeSymbols}
-        stations={bikeRentalStations}
-      />
-    )
-  )
-  .add("VehicleRentalOverlay with rental cars", () => (
-    <ZoomControlledMapWithVehicleRentalOverlay
-      companies={["CAR2GO"]}
-      mapSymbols={carMapSymbols}
-      refreshVehicles={action("refresh cars")}
-      stations={carRentalStations}
-    />
-  ))
-  .add("VehicleRentalOverlay with rental E-scooters", () => (
-    <ZoomControlledMapWithVehicleRentalOverlay
-      companies={["SHARED"]}
-      mapSymbols={EScooterMapSymbols}
-      refreshVehicles={action("refresh E-scooters")}
-      stations={eScooterStations}
-    />
-  ))
-  .add("VehicleRentalOverlay with rental E-scooters with custom naming", () => (
-    <ZoomControlledMapWithVehicleRentalOverlay
-      companies={["SHARED"]}
-      getStationName={customStationName}
-      mapSymbols={EScooterMapSymbols}
-      refreshVehicles={action("refresh E-scooters")}
-      stations={eScooterStations}
-    />
-  ));
+export default {
+  title: "VehicleRentalOverlay",
+  component: VehicleRentalOverlay
+};
+
+export const RentalBicycles = () => (
+  <ZoomControlledMapWithVehicleRentalOverlay
+    companies={["BIKETOWN"]}
+    mapSymbols={bikeMapSymbols}
+    refreshVehicles={action("refresh bicycles")}
+    stations={bikeRentalStations}
+  />
+);
+
+export const RentalBicyclesUsingNewSymbolsProp = () => (
+  <ZoomControlledMapWithVehicleRentalOverlay
+    companies={["BIKETOWN"]}
+    refreshVehicles={action("refresh bicycles")}
+    mapSymbols={bikeSymbols}
+    stations={bikeRentalStations}
+  />
+);
+
+export const RentalCars = () => (
+  <ZoomControlledMapWithVehicleRentalOverlay
+    companies={["CAR2GO"]}
+    mapSymbols={carMapSymbols}
+    refreshVehicles={action("refresh cars")}
+    stations={carRentalStations}
+  />
+);
+
+export const RentalEScooters = () => (
+  <ZoomControlledMapWithVehicleRentalOverlay
+    companies={["SHARED"]}
+    mapSymbols={EScooterMapSymbols}
+    refreshVehicles={action("refresh E-scooters")}
+    stations={eScooterStations}
+  />
+);
+
+export const RentalEScootersWithCustomNaming = () => (
+  <ZoomControlledMapWithVehicleRentalOverlay
+    companies={["SHARED"]}
+    getStationName={customStationName}
+    mapSymbols={EScooterMapSymbols}
+    refreshVehicles={action("refresh E-scooters")}
+    stations={eScooterStations}
+  />
+);

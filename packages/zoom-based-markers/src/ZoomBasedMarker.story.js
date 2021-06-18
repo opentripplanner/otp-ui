@@ -9,10 +9,7 @@ import PropTypes from "prop-types";
 import React, { Component } from "react";
 import ReactDOMServer from "react-dom/server";
 import { CircleMarker, Marker, Popup } from "react-leaflet";
-import { withA11y } from "@storybook/addon-a11y";
 import { action } from "@storybook/addon-actions";
-import { withInfo } from "@storybook/addon-info";
-import { storiesOf } from "@storybook/react";
 import { Bus, Streetcar } from "@opentripplanner/icons";
 
 import ZoomBasedMarkers from ".";
@@ -168,12 +165,15 @@ Example.defaultProps = {
   symbolTransform: null
 };
 
-storiesOf("ZoomBasedMarkers", module)
-  .addDecorator(withA11y)
-  .addDecorator(withInfo)
-  .add("ZoomBasedMarkers with symbols for different zoom levels", () => (
-    <Example symbols={mySymbols} />
-  ))
-  .add("ZoomBasedMarkers with transformed symbols", () => (
-    <Example symbols={mySymbols} symbolTransform={exampleTransform} />
-  ));
+export default {
+  title: "ZoomBasedMarkers",
+  component: ZoomBasedMarkers
+};
+
+export const SymbolsForDifferentZoomLevels = () => (
+  <Example symbols={mySymbols} />
+);
+
+export const TransformedSymbols = () => (
+  <Example symbols={mySymbols} symbolTransform={exampleTransform} />
+);

@@ -1,9 +1,6 @@
 import ClassicLegIcon from "@opentripplanner/icons/lib/classic-leg-icon";
 import TriMetLegIcon from "@opentripplanner/icons/lib/trimet-leg-icon";
 import React from "react";
-import { storiesOf } from "@storybook/react";
-import { withA11y } from "@storybook/addon-a11y";
-import { withInfo } from "@storybook/addon-info";
 import styled from "styled-components";
 
 import PrintableItinerary from ".";
@@ -30,104 +27,119 @@ const StyledPrintableItinerary = styled(PrintableItinerary)`
   }
 `;
 
-storiesOf("PrintableItinerary", module)
-  .addDecorator(withA11y)
-  .addDecorator(withInfo)
-  .add("ItineraryBody with walk-only itinerary", () => (
-    <PrintableItinerary
-      config={config}
-      itinerary={walkOnlyItinerary}
-      LegIcon={TriMetLegIcon}
-    />
-  ))
-  .add("ItineraryBody with bike-only itinerary", () => (
-    <PrintableItinerary
-      config={config}
-      itinerary={bikeOnlyItinerary}
-      LegIcon={TriMetLegIcon}
-    />
-  ))
-  .add("ItineraryBody with walk-transit-walk itinerary", () => (
-    <PrintableItinerary
-      config={config}
-      itinerary={walkTransitWalkItinerary}
-      LegIcon={TriMetLegIcon}
-    />
-  ))
-  .add("Styled ItineraryBody with walk-transit-walk itinerary", () => (
-    <StyledPrintableItinerary
-      config={config}
-      itinerary={walkTransitWalkItinerary}
-      LegIcon={TriMetLegIcon}
-    />
-  ))
-  .add("ItineraryBody with bike-transit-bike itinerary", () => (
-    <PrintableItinerary
-      config={config}
-      itinerary={bikeTransitBikeItinerary}
-      LegIcon={TriMetLegIcon}
-    />
-  ))
-  .add("ItineraryBody with walk-interlined-transit itinerary", () => (
-    <PrintableItinerary
-      config={config}
-      itinerary={walkInterlinedTransitItinerary}
-      LegIcon={TriMetLegIcon}
-    />
-  ))
-  .add("ItineraryBody with walk-transit-transfer itinerary", () => (
-    <PrintableItinerary
-      config={config}
-      itinerary={walkTransitWalkTransitWalkItinerary}
-      LegIcon={TriMetLegIcon}
-    />
-  ))
-  .add("ItineraryBody with bike-rental itinerary", () => (
-    <PrintableItinerary
-      config={config}
-      itinerary={bikeRentalItinerary}
-      LegIcon={TriMetLegIcon}
-    />
-  ))
-  .add("ItineraryBody with E-scooter-rental itinerary", () => (
-    <PrintableItinerary
-      config={config}
-      itinerary={eScooterRentalItinerary}
-      LegIcon={TriMetLegIcon}
-    />
-  ))
-  .add("ItineraryBody with park and ride itinerary", () => (
-    <PrintableItinerary
-      config={config}
-      itinerary={parkAndRideItinerary}
-      LegIcon={TriMetLegIcon}
-    />
-  ))
-  .add("ItineraryBody with bike rental + transit itinerary", () => (
-    <PrintableItinerary
-      config={config}
-      itinerary={bikeRentalTransitBikeRentalItinerary}
-      LegIcon={TriMetLegIcon}
-    />
-  ))
-  .add("ItineraryBody with E-scooter rental + transit itinerary", () => (
-    <PrintableItinerary
-      config={config}
-      itinerary={eScooterRentalTransiteScooterRentalItinerary}
-      LegIcon={TriMetLegIcon}
-    />
-  ))
-  .add("ItineraryBody with TNC + transit itinerary", () => (
-    <PrintableItinerary
-      config={config}
-      itinerary={tncTransitTncItinerary}
-      LegIcon={TriMetLegIcon}
-    />
-  ))
-  .add("ItineraryBody with classic icons and park and ride itinerary", () => (
-    <PrintableItinerary
-      config={config}
-      itinerary={parkAndRideItinerary}
-      LegIcon={ClassicLegIcon}
-    />
-  ));
+export default {
+  title: "PrintableItinerary",
+  component: PrintableItinerary
+};
+
+export const WalkOnlyItinerary = () => (
+  <PrintableItinerary
+    config={config}
+    itinerary={walkOnlyItinerary}
+    LegIcon={TriMetLegIcon}
+  />
+);
+
+export const BikeOnlyItinerary = () => (
+  <PrintableItinerary
+    config={config}
+    itinerary={bikeOnlyItinerary}
+    LegIcon={TriMetLegIcon}
+  />
+);
+
+export const WalkTransitWalkItinerary = () => (
+  <PrintableItinerary
+    config={config}
+    itinerary={walkTransitWalkItinerary}
+    LegIcon={TriMetLegIcon}
+  />
+);
+
+export const StyledWalkTransitWalkItinerary = () => (
+  <StyledPrintableItinerary
+    config={config}
+    itinerary={walkTransitWalkItinerary}
+    LegIcon={TriMetLegIcon}
+  />
+);
+
+export const BikeTransitBikeItinerary = () => (
+  <PrintableItinerary
+    config={config}
+    itinerary={bikeTransitBikeItinerary}
+    LegIcon={TriMetLegIcon}
+  />
+);
+
+export const WalkInterlinedTransitItinerary = () => (
+  <PrintableItinerary
+    config={config}
+    itinerary={walkInterlinedTransitItinerary}
+    LegIcon={TriMetLegIcon}
+  />
+);
+
+export const WalkTransitTransferItinerary = () => (
+  <PrintableItinerary
+    config={config}
+    itinerary={walkTransitWalkTransitWalkItinerary}
+    LegIcon={TriMetLegIcon}
+  />
+);
+
+export const BikeRentalItinerary = () => (
+  <PrintableItinerary
+    config={config}
+    itinerary={bikeRentalItinerary}
+    LegIcon={TriMetLegIcon}
+  />
+);
+
+export const EScooterRentalItinerary = () => (
+  <PrintableItinerary
+    config={config}
+    itinerary={eScooterRentalItinerary}
+    LegIcon={TriMetLegIcon}
+  />
+);
+
+export const ParkAndRideItinerary = () => (
+  <PrintableItinerary
+    config={config}
+    itinerary={parkAndRideItinerary}
+    LegIcon={TriMetLegIcon}
+  />
+);
+
+export const BikeRentalTransitItinerary = () => (
+  <PrintableItinerary
+    config={config}
+    itinerary={bikeRentalTransitBikeRentalItinerary}
+    LegIcon={TriMetLegIcon}
+  />
+);
+
+export const EScooterRentalTransitItinerary = () => (
+  <PrintableItinerary
+    config={config}
+    itinerary={eScooterRentalTransiteScooterRentalItinerary}
+    LegIcon={TriMetLegIcon}
+  />
+);
+
+export const TncTransitItinerary = () => (
+  <PrintableItinerary
+    config={config}
+    itinerary={tncTransitTncItinerary}
+    LegIcon={TriMetLegIcon}
+  />
+);
+
+export const ClassicIconsAndParkAndRideItinerary = () => (
+  <PrintableItinerary
+    config={config}
+    itinerary={parkAndRideItinerary}
+    LegIcon={ClassicLegIcon}
+  />
+);
