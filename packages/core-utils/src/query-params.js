@@ -886,6 +886,7 @@ const queryParams = [
   },
   {
     name: "minimumMicromobilitySpeed",
+    routingTypes: ["ITINERARY"],
     default: ""
   }
 ];
