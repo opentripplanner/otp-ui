@@ -651,9 +651,241 @@ const queryParams = [
     default: 15 * 60, // 15 minutes
     routingTypes: ["ITINERARY"]
   },
+  // Below are less commonly used query params included so that in case they are
+  // passed in a query parameter they do not get filtered out from the ultimate
+  // API request.
   {
     name: "preferredRoutes",
     routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "maxPreTransitTime",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "walkReluctance",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "waitReluctance",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "driveDistanceReluctance",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "driveTimeReluctance",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "waitAtBeginningFactor",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "bikeSwitchTime",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "bikeSwitchCost",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "minTransferTime",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "preferredAgencies",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "unpreferredRoutes",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "unpreferredAgencies",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "walkBoardCost",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "bikeBoardCost",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "whiteListedRoutes",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "bannedAgencies",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "whiteListedAgencies",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "bannedTrips",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "bannedStops",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "bannedStopsHard",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "transferPenalty",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "nonpreferredTransferPenalty",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "maxTransfers",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "batch",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "startTransitStopId",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "startTransitTripId",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "clampInitialWait",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "reverseOptimizeOnTheFly",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "boardSlack",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "alightSlack",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "locale",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "disableRemainingWeightHeuristic",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "flexFlagStopBufferSize",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "flexUseReservationServices",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "flexUseEligibilityServices",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "flexIgnoreDrtAdvanceBookMin",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "maxHours",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "useRequestedDateTimeInMaxHours",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "disableAlertFiltering",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "geoidElevation",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "invalidDateStrategy",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "minTransitDistance",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "searchTimeout",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "pathComparator",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "onlyTransitTrips",
+    routingTypes: ["ITINERARY"],
+    default: ""
+  },
+  {
+    name: "minimumMicromobilitySpeed",
     default: ""
   }
 ];
