@@ -1,9 +1,5 @@
 import { divIcon } from "leaflet";
-import {
-  constructLocation,
-  matchLatLon
-} from "@opentripplanner/core-utils/lib/map";
-import { locationType } from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { Marker, Popup } from "react-leaflet";
@@ -86,7 +82,7 @@ export default class Endpoint extends Component {
 
   onDragEnd = e => {
     const { setLocation, type } = this.props;
-    const location = constructLocation(e.target.getLatLng());
+    const location = coreUtils.map.constructLocation(e.target.getLatLng());
     setLocation({ locationType: type, location, reverseGeocode: true });
   };
 
@@ -103,7 +99,7 @@ export default class Endpoint extends Component {
         ? [location.lat, location.lon]
         : null;
     if (!position) return null;
-    const match = locations.find(l => matchLatLon(l, location));
+    const match = locations.find(l => coreUtils.map.matchLatLon(l, location));
     const isWork = match && match.type === "work";
     const isHome = match && match.type === "home";
     const iconHtml = ReactDOMServer.renderToStaticMarkup(
@@ -179,8 +175,8 @@ export default class Endpoint extends Component {
 Endpoint.propTypes = {
   clearLocation: PropTypes.func.isRequired,
   forgetPlace: PropTypes.func.isRequired,
-  location: locationType,
-  locations: PropTypes.arrayOf(locationType).isRequired,
+  location: coreUtils.types.locationType,
+  locations: PropTypes.arrayOf(coreUtils.types.locationType).isRequired,
   MapMarkerIcon: PropTypes.elementType.isRequired,
   rememberPlace: PropTypes.func.isRequired,
   setLocation: PropTypes.func.isRequired,

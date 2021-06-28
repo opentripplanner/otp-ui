@@ -1,8 +1,4 @@
-import {
-  getLegModeLabel,
-  getPlaceName
-} from "@opentripplanner/core-utils/lib/itinerary";
-import { configType, legType } from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
 import React from "react";
 import PropTypes from "prop-types";
@@ -26,19 +22,19 @@ export default function AccessLegSummary({
 
       {/* Leg description, e.g. "Walk 0.5 mi to..." */}
       <Styled.LegDescription>
-        {getLegModeLabel(leg)}{" "}
+        {coreUtils.itinerary.getLegModeLabel(leg)}{" "}
         {leg.distance > 0 && (
           <span> {humanizeDistanceString(leg.distance)}</span>
         )}
-        {` to ${getPlaceName(leg.to, config.companies)}`}
+        {` to ${coreUtils.itinerary.getPlaceName(leg.to, config.companies)}`}
       </Styled.LegDescription>
     </Styled.LegClickable>
   );
 }
 
 AccessLegSummary.propTypes = {
-  config: configType.isRequired,
-  leg: legType.isRequired,
+  config: coreUtils.types.configType.isRequired,
+  leg: coreUtils.types.legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired,
   onSummaryClick: PropTypes.func.isRequired,
   showLegIcon: PropTypes.bool.isRequired

@@ -1,5 +1,5 @@
-import { itineraryType } from "@opentripplanner/core-utils/lib/types";
-import TriMetLegIcon from "@opentripplanner/icons/lib/trimet-leg-icon";
+import coreUtils from "@opentripplanner/core-utils";
+import { TriMetLegIcon } from "@opentripplanner/icons";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { action } from "@storybook/addon-actions";
@@ -84,7 +84,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component {
 }
 
 ItineraryBodyDefaultsWrapper.propTypes = {
-  itinerary: itineraryType.isRequired,
+  itinerary: coreUtils.types.itineraryType.isRequired,
   LegIcon: PropTypes.elementType,
   LineColumnContent: PropTypes.elementType,
   PlaceName: PropTypes.elementType,

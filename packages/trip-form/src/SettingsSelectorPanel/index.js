@@ -1,14 +1,7 @@
+import coreUtils from "@opentripplanner/core-utils";
 import { TriMetModeIcon } from "@opentripplanner/icons";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import {
-  isMicromobility,
-  isTransit
-} from "@opentripplanner/core-utils/lib/itinerary";
-import {
-  configuredCompanyType,
-  configuredModesType
-} from "@opentripplanner/core-utils/lib/types";
 
 import ModeSelector from "../ModeSelector";
 import SubmodeSelector from "../SubmodeSelector";
@@ -67,7 +60,9 @@ export default class SettingsSelectorPanel extends Component {
 
     if (newModes[0] === "TRANSIT") {
       const selectedModes = this.getSelectedModes();
-      const activeTransitModes = selectedModes.filter(isTransit);
+      const activeTransitModes = selectedModes.filter(
+        coreUtils.itinerary.isTransit
+      );
 
       let { lastTransitModes } = this.state;
       if (lastTransitModes.length === 0) {
@@ -109,11 +104,17 @@ export default class SettingsSelectorPanel extends Component {
 
   handleTransitModeChange = id => {
     const selectedModes = this.getSelectedModes();
-    this.toggleSubmode("mode", id, selectedModes, isTransit, newModes => {
-      this.setState({
-        lastTransitModes: newModes.filter(isTransit)
-      });
-    });
+    this.toggleSubmode(
+      "mode",
+      id,
+      selectedModes,
+      coreUtils.itinerary.isTransit,
+      newModes => {
+        this.setState({
+          lastTransitModes: newModes.filter(coreUtils.itinerary.isTransit)
+        });
+      }
+    );
   };
 
   handleCompanyChange = id => {
@@ -173,7 +174,9 @@ export default class SettingsSelectorPanel extends Component {
       supportedModes,
       selectedModes
     );
-    const nonTransitModes = selectedModes.filter(m => !isTransit(m));
+    const nonTransitModes = selectedModes.filter(
+      m => !coreUtils.itinerary.isTransit(m)
+    );
     const companies = getCompaniesOptions(
       supportedCompanies.filter(comp =>
         defaultAccessModeCompany ? comp.id === defaultAccessModeCompany : true
@@ -202,29 +205,31 @@ export default class SettingsSelectorPanel extends Component {
 
         <Styled.SettingsHeader>Travel Preferences</Styled.SettingsHeader>
 
-        {selectedModes.some(isTransit) && transitModes.length >= 2 && (
-          <SubmodeSelector
-            label="Use"
-            modes={transitModes}
-            onChange={this.handleTransitModeChange}
-          />
-        )}
+        {selectedModes.some(coreUtils.itinerary.isTransit) &&
+          transitModes.length >= 2 && (
+            <SubmodeSelector
+              label="Use"
+              modes={transitModes}
+              onChange={this.handleTransitModeChange}
+            />
+          )}
 
         {/* The bike trip type selector */}
         {/* TODO: Handle different bikeshare networks */}
-        {selectedModes.some(isBike) && !selectedModes.some(isTransit) && (
-          <SubmodeSelector
-            label="Use"
-            inline
-            modes={bikeModes}
-            onChange={this.handleMainModeChange}
-          />
-        )}
+        {selectedModes.some(isBike) &&
+          !selectedModes.some(coreUtils.itinerary.isTransit) && (
+            <SubmodeSelector
+              label="Use"
+              inline
+              modes={bikeModes}
+              onChange={this.handleMainModeChange}
+            />
+          )}
 
         {/* The micromobility trip type selector */}
         {/* TODO: Handle different micromobility networks */}
-        {selectedModes.some(isMicromobility) &&
-          !selectedModes.some(isTransit) && (
+        {selectedModes.some(coreUtils.itinerary.isMicromobility) &&
+          !selectedModes.some(coreUtils.itinerary.isTransit) && (
             <SubmodeSelector
               label="Use"
               inline
@@ -272,17 +277,17 @@ SettingsSelectorPanel.propTypes = {
    * see https://github.com/opentripplanner/otp-ui/blob/master/packages/core-utils/src/__tests__/query.js#L14
    */
   // Disable type check because the only use of queryParams is to be passed to
-  // method getQueryParamProperty from "@opentripplanner/core-utils/lib/query".
+  // method getQueryParamProperty from "@opentripplanner/core-utils/query".
   // eslint-disable-next-line react/forbid-prop-types
   queryParams: PropTypes.any,
   /**
    * An array of supported companies that will be displayed as options where applicable.
    */
-  supportedCompanies: PropTypes.arrayOf(configuredCompanyType),
+  supportedCompanies: PropTypes.arrayOf(coreUtils.types.configuredCompanyType),
   /**
    * An array of supported modes that will be displayed as options.
    */
-  supportedModes: configuredModesType.isRequired
+  supportedModes: coreUtils.types.configuredModesType.isRequired
 };
 
 SettingsSelectorPanel.defaultProps = {

@@ -1,8 +1,4 @@
-import {
-  transitIndexStopWithRoutes,
-  userLocationType
-} from "@opentripplanner/core-utils/lib/types";
-import { isIE } from "@opentripplanner/core-utils/lib/ui";
+import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceStringImperial } from "@opentripplanner/humanize-distance";
 import PropTypes from "prop-types";
 import React from "react";
@@ -17,7 +13,7 @@ export function GeocodedOptionIcon() {
 export function Option({ disabled, icon, isActive, onClick, title }) {
   return (
     <Styled.MenuItem onClick={onClick} active={isActive} disabled={disabled}>
-      {isIE() ? (
+      {coreUtils.ui.isIE() ? (
         // In internet explorer 11, some really weird stuff is happening where it
         // is not possible to click the text of the title, but if you click just
         // above it, then it works. So, if using IE 11, just return the title text
@@ -79,7 +75,7 @@ export function TransitStopOption({ isActive, onClick, stop, stopOptionIcon }) {
 TransitStopOption.propTypes = {
   isActive: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
-  stop: transitIndexStopWithRoutes.isRequired,
+  stop: coreUtils.types.transitIndexStopWithRoutes.isRequired,
   stopOptionIcon: PropTypes.node.isRequired
 };
 
@@ -94,5 +90,5 @@ export function UserLocationIcon({ userLocation }) {
 }
 
 UserLocationIcon.propTypes = {
-  userLocation: userLocationType.isRequired
+  userLocation: coreUtils.types.userLocationType.isRequired
 };

@@ -1,4 +1,4 @@
-import { locationType } from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -38,7 +38,7 @@ function DefaultMapMarkerIcon({ location, type }) {
 }
 
 DefaultMapMarkerIcon.propTypes = {
-  location: locationType.isRequired,
+  location: coreUtils.types.locationType.isRequired,
   type: PropTypes.string.isRequired
 };
 
@@ -116,16 +116,16 @@ EndpointsOverlay.propTypes = {
   /**
    * The from location.
    */
-  fromLocation: locationType,
+  fromLocation: coreUtils.types.locationType,
   /**
    * Intermediate places along a journey.
    */
-  intermediatePlaces: PropTypes.arrayOf(locationType),
+  intermediatePlaces: PropTypes.arrayOf(coreUtils.types.locationType),
   /**
    * An array of location that the user has saved. Not needed unless user
    * settings is activated.
    */
-  locations: PropTypes.arrayOf(locationType),
+  locations: PropTypes.arrayOf(coreUtils.types.locationType),
   /**
    * An optional custom component that can be used to create custom html that
    * is used in a leaflet divIcon to render the map marker icon for each
@@ -160,7 +160,7 @@ EndpointsOverlay.propTypes = {
   /**
    * To to location
    */
-  toLocation: locationType
+  toLocation: coreUtils.types.locationType
 };
 
 const noop = () => {};

@@ -1,7 +1,4 @@
-import {
-  leafletPathType,
-  stopLayerStopType
-} from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 import { Popup, CircleMarker } from "react-leaflet";
@@ -23,9 +20,9 @@ export default function DefaultStopMarker({ leafletPath, radius, stop }) {
 }
 
 DefaultStopMarker.propTypes = {
-  leafletPath: leafletPathType,
+  leafletPath: coreUtils.types.leafletPathType,
   radius: PropTypes.number,
-  stop: stopLayerStopType.isRequired
+  stop: coreUtils.types.stopLayerStopType.isRequired
 };
 
 DefaultStopMarker.defaultProps = {

@@ -1,7 +1,4 @@
-import {
-  geocodedFeatureType,
-  userLocationType
-} from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -84,7 +81,7 @@ function GeocodedOptionIconComponent({ feature }) {
 }
 
 GeocodedOptionIconComponent.propTypes = {
-  feature: geocodedFeatureType.isRequired
+  feature: coreUtils.types.geocodedFeatureType.isRequired
 };
 
 function LocationIconComponent({ locationType }) {
@@ -102,7 +99,7 @@ function UserLocationIconComponent({ userLocation }) {
 }
 
 UserLocationIconComponent.propTypes = {
-  userLocation: userLocationType.isRequired
+  userLocation: coreUtils.types.userLocationType.isRequired
 };
 
 const StyledLocationField = styled(LocationField)`

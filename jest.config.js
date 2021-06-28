@@ -12,5 +12,5 @@ module.exports = {
     }
   },
   globalSetup: "<rootDir>/test-utils/global-setup.js",
-  testPathIgnorePatterns: ["<rootDir>/packages/(?:.+?)/lib/"]
+  testPathIgnorePatterns: ["<rootDir>/packages/(?:.+?)/(esm|lib)/"]
 };

@@ -1,6 +1,6 @@
 import { divIcon } from "leaflet";
 import memoize from "lodash.memoize";
-import { stationType } from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
@@ -22,7 +22,7 @@ const templatePropTypes = {
   /** The children of the component. */
   children: PropTypes.node,
   /** The rental vehicle or station to render. */
-  entity: stationType.isRequired
+  entity: coreUtils.types.stationType.isRequired
 };
 const templateDefaultProps = {
   children: null

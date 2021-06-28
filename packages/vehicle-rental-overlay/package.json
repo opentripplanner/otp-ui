@@ -3,6 +3,7 @@
   "version": "1.0.7",
   "description": "A map overlay to show vehicle rentals from a specific company",
   "main": "lib/index.js",
+  "module": "esm/index.js",
   "author": "Evan Siroky",
   "license": "MIT",
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",

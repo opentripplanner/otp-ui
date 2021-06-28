@@ -1,14 +1,5 @@
 import currencyFormatter from "currency-formatter";
-import {
-  formatDuration,
-  formatTime
-} from "@opentripplanner/core-utils/lib/time";
-import {
-  configType,
-  legType,
-  timeOptionsType
-} from "@opentripplanner/core-utils/lib/types";
-import { isMobile } from "@opentripplanner/core-utils/lib/ui";
+import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -28,7 +19,7 @@ export default function TNCLeg({
 }) {
   const universalLinks = {
     UBER: `https://m.uber.com/${
-      isMobile() ? "ul/" : ""
+      coreUtils.ui.isMobile() ? "ul/" : ""
     }?client_id=${UBER_CLIENT_ID}&action=setPickup&pickup[latitude]=${
       leg.from.lat
     }&pickup[longitude]=${leg.from.lon}&pickup[formatted_address]=${encodeURI(
@@ -65,7 +56,7 @@ export default function TNCLeg({
         <Styled.BookTNCRideButtonContainer>
           <Styled.BookTNCRideButton
             href={universalLinks[tncData.company]}
-            target={isMobile() ? "_self" : "_blank"}
+            target={coreUtils.ui.isMobile() ? "_self" : "_blank"}
           >
             Book Ride
           </Styled.BookTNCRideButton>
@@ -75,7 +66,7 @@ export default function TNCLeg({
               <Styled.BookLaterInnerContainer>
                 <Styled.BookLaterText>
                   Wait until{" "}
-                  {formatTime(
+                  {coreUtils.time.formatTime(
                     leg.startTime - tncData.estimatedArrival * 1000,
                     timeOptions
                   )}{" "}
@@ -88,8 +79,8 @@ export default function TNCLeg({
 
         {/* The estimated travel time */}
         <Styled.TNCTravelTime>
-          Estimated travel time: {formatDuration(leg.duration)} (does not
-          account for traffic)
+          Estimated travel time: {coreUtils.time.formatDuration(leg.duration)}{" "}
+          (does not account for traffic)
         </Styled.TNCTravelTime>
 
         {/* The estimated travel cost */}
@@ -109,15 +100,15 @@ export default function TNCLeg({
 }
 
 TNCLeg.propTypes = {
-  config: configType.isRequired,
+  config: coreUtils.types.configType.isRequired,
   LYFT_CLIENT_ID: PropTypes.string,
   UBER_CLIENT_ID: PropTypes.string,
   followsTransit: PropTypes.bool.isRequired,
-  leg: legType.isRequired,
+  leg: coreUtils.types.legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired,
   onSummaryClick: PropTypes.func.isRequired,
   showLegIcon: PropTypes.bool.isRequired,
-  timeOptions: timeOptionsType
+  timeOptions: coreUtils.types.timeOptionsType
 };
 
 TNCLeg.defaultProps = {

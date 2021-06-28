@@ -1,11 +1,6 @@
+import coreUtils from "@opentripplanner/core-utils";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import queryParams from "@opentripplanner/core-utils/lib/query-params";
-import {
-  defaultParams,
-  getQueryParamProperty
-} from "@opentripplanner/core-utils/lib/query";
-import { configuredModesType } from "@opentripplanner/core-utils/lib/types";
 
 import CheckboxSelector from "../CheckboxSelector";
 import DropdownSelector from "../DropdownSelector";
@@ -30,7 +25,9 @@ class GeneralSettingsPanel extends Component {
     return (
       <Styled.GeneralSettingsPanel className={className} style={style}>
         {paramNames.map(param => {
-          const paramInfo = queryParams.find(qp => qp.name === param);
+          const paramInfo = coreUtils.queryParams.default.find(
+            qp => qp.name === param
+          );
           // Check that the parameter applies to the specified routingType
           if (!paramInfo.routingTypes.includes(query.routingType)) return null;
 
@@ -50,8 +47,16 @@ class GeneralSettingsPanel extends Component {
                   key={paramInfo.name}
                   name={paramInfo.name}
                   value={query[paramInfo.name] || paramInfo.default}
-                  label={getQueryParamProperty(paramInfo, "label", query)}
-                  options={getQueryParamProperty(paramInfo, "options", query)}
+                  label={coreUtils.query.getQueryParamProperty(
+                    paramInfo,
+                    "label",
+                    query
+                  )}
+                  options={coreUtils.query.getQueryParamProperty(
+                    paramInfo,
+                    "options",
+                    query
+                  )}
                   onChange={this.handleChange}
                 />
               );
@@ -61,7 +66,11 @@ class GeneralSettingsPanel extends Component {
                   key={paramInfo.label}
                   name={paramInfo.name}
                   value={query[paramInfo.name]}
-                  label={getQueryParamProperty(paramInfo, "label", query)}
+                  label={coreUtils.query.getQueryParamProperty(
+                    paramInfo,
+                    "label",
+                    query
+                  )}
                   onChange={this.handleChange}
                 />
               );
@@ -85,7 +94,7 @@ GeneralSettingsPanel.propTypes = {
    * see https://github.com/opentripplanner/otp-ui/blob/master/packages/core-utils/src/__tests__/query.js#L14
    */
   // Disable type check because the only use of queryParams is to be passed to
-  // method getQueryParamProperty from "@opentripplanner/core-utils/lib/query".
+  // method getQueryParamProperty from "@opentripplanner/core-utils/query".
   // eslint-disable-next-line react/forbid-prop-types
   query: PropTypes.any,
   /**
@@ -101,13 +110,13 @@ GeneralSettingsPanel.propTypes = {
   /**
    * An array of supported modes that will be displayed as options.
    */
-  supportedModes: configuredModesType.isRequired
+  supportedModes: coreUtils.types.configuredModesType.isRequired
 };
 
 GeneralSettingsPanel.defaultProps = {
   className: null,
   query: null,
-  paramNames: defaultParams,
+  paramNames: coreUtils.query.defaultParams,
   onQueryParamChange: null
 };
 

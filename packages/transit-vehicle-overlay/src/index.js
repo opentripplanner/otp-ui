@@ -1,12 +1,8 @@
+import coreUtils from "@opentripplanner/core-utils";
+import ZoomBasedMarkers from "@opentripplanner/zoom-based-markers";
 import PropTypes from "prop-types";
 import React from "react";
 import { FeatureGroup } from "react-leaflet";
-
-import {
-  transitVehicleType,
-  zoomBasedSymbolType
-} from "@opentripplanner/core-utils/lib/types";
-import ZoomBasedMarkers from "@opentripplanner/zoom-based-markers";
 
 import { Circle, CircledVehicle } from "./components/markers/ModeCircles";
 import RouteGeometry from "./components/RouteGeometry";
@@ -72,7 +68,7 @@ export default function TransitVehicleOverlay(props) {
     };
 
     VehicleGeometryWrapper.propTypes = {
-      entity: transitVehicleType.isRequired,
+      entity: coreUtils.types.transitVehicleType.isRequired,
       zoom: PropTypes.number.isRequired
     };
 
@@ -129,11 +125,11 @@ TransitVehicleOverlay.propTypes = {
   /** map center: used both to trigger re-renders */
   center: PropTypes.arrayOf(PropTypes.number),
 
-  /** array of vehicle records - @see: core-utils/types/transitVehicleType */
-  vehicleList: PropTypes.arrayOf(transitVehicleType),
+  /** array of vehicle records - @see: core-utils/types/coreUtils.types.transitVehicleType */
+  vehicleList: PropTypes.arrayOf(coreUtils.types.transitVehicleType),
 
   /** optional vehicle record for the tracked vehicle (same rec must be in vehicleList) */
-  selectedVehicle: transitVehicleType,
+  selectedVehicle: coreUtils.types.transitVehicleType,
 
   /** showOnlyTracked will hide all other vehicles, except the tracked vehicle */
   showOnlyTracked: PropTypes.bool,
@@ -143,7 +139,7 @@ TransitVehicleOverlay.propTypes = {
    * where symbols are custom leaflet marker components with the signature
    * ({vehicle: object, onVehicleClicked: vehicle => {}, children: Element}) => Element.
    */
-  symbols: PropTypes.arrayOf(zoomBasedSymbolType),
+  symbols: PropTypes.arrayOf(coreUtils.types.zoomBasedSymbolType),
 
   // ////// VehicleGeometry types ////////
 

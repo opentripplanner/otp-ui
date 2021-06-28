@@ -1,8 +1,7 @@
 import cloneDeep from "lodash.clonedeep";
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
-
-import { zoomBasedSymbolType } from "@opentripplanner/core-utils/lib/types";
 
 /**
  * Transforms the symbol and symbols by type from the specified symbolEntry
@@ -98,7 +97,7 @@ ZoomBasedMarkers.propTypes = {
    * The symbols must be able to obtain the position of the specified entities.
    * (The list does not need to be sorted.)
    */
-  symbols: PropTypes.arrayOf(zoomBasedSymbolType).isRequired,
+  symbols: PropTypes.arrayOf(coreUtils.types.zoomBasedSymbolType).isRequired,
   /**
    * An optional function(Component) to transforms components defined in the symbols prop prior to rendering,
    * in cases you need to wrap symbols or inject children.

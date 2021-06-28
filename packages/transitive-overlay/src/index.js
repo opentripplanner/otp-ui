@@ -1,6 +1,6 @@
 import L from "leaflet";
 import isEqual from "lodash.isequal";
-import { transitiveDataType } from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import { MapLayer, withLeaflet } from "react-leaflet";
 import Transitive from "transitive-js";
@@ -216,7 +216,7 @@ TransitiveCanvasOverlay.propTypes = {
    * typically done using the @opentripplanner/core-utils/map#itineraryToTransitive
    * function.
    */
-  transitiveData: transitiveDataType
+  transitiveData: coreUtils.types.transitiveDataType
 };
 
 export default withLeaflet(TransitiveCanvasOverlay);

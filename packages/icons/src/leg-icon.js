@@ -1,12 +1,11 @@
-import { legType } from "@opentripplanner/core-utils/lib/types";
-import { getCompanyFromLeg } from "@opentripplanner/core-utils/lib/itinerary";
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 
 import { getCompanyIcon as defaultGetCompanyIcon } from "./companies";
 
 const LegIcon = ({ getCompanyIcon, leg, ModeIcon, ...props }) => {
-  const company = getCompanyFromLeg(leg);
+  const company = coreUtils.itinerary.getCompanyFromLeg(leg);
   // Check if the iconStr has a matching company icon. If so, return that.
   if (company && typeof getCompanyIcon === "function") {
     const CompanyIcon = getCompanyIcon(company);
@@ -22,7 +21,7 @@ const LegIcon = ({ getCompanyIcon, leg, ModeIcon, ...props }) => {
 LegIcon.propTypes = {
   // Optional override function for deriving the company icon for a given leg.
   getCompanyIcon: PropTypes.func,
-  leg: legType.isRequired,
+  leg: coreUtils.types.legType.isRequired,
   ModeIcon: PropTypes.elementType.isRequired
 };
 

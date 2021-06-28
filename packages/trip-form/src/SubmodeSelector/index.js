@@ -1,6 +1,6 @@
+import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 import PropTypes from "prop-types";
-import { modeOptionType } from "@opentripplanner/core-utils/lib/types";
 
 import ModeButton from "../ModeButton";
 import * as Styled from "../styled";
@@ -53,7 +53,7 @@ SubmodeSelector.propTypes = {
   /**
    * An array of submodes for the trip query, i.e. transit modes, TNC, or rental companies.
    */
-  modes: PropTypes.arrayOf(modeOptionType),
+  modes: PropTypes.arrayOf(coreUtils.types.modeOptionType),
   /**
    * Triggered when the user toggles a submode.
    * @param id The id of the option clicked.

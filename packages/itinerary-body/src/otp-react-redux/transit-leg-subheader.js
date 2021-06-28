@@ -1,7 +1,4 @@
-import {
-  languageConfigType,
-  legType
-} from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -28,7 +25,7 @@ export default function TransitLegSubheader({
 }
 
 TransitLegSubheader.propTypes = {
-  languageConfig: languageConfigType.isRequired,
-  leg: legType.isRequired,
+  languageConfig: coreUtils.types.languageConfigType.isRequired,
+  leg: coreUtils.types.legType.isRequired,
   onStopClick: PropTypes.func.isRequired
 };

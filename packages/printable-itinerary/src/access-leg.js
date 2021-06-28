@@ -1,10 +1,4 @@
-import {
-  getLegModeLabel,
-  getPlaceName,
-  getStepDirection,
-  getStepStreetName
-} from "@opentripplanner/core-utils/lib/itinerary";
-import { configType, legType } from "@opentripplanner/core-utils/lib/types";
+import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
 import PropTypes from "prop-types";
 import React from "react";
@@ -19,19 +13,20 @@ export default function AccessLeg({ config, leg, LegIcon }) {
       </Styled.ModeIcon>
       <Styled.LegBody>
         <Styled.LegHeader>
-          <b>{getLegModeLabel(leg)}</b>{" "}
+          <b>{coreUtils.itinerary.getLegModeLabel(leg)}</b>{" "}
           {leg.distance > 0 && (
             <span> {humanizeDistanceString(leg.distance)}</span>
           )}
           {" to "}
-          <b>{getPlaceName(leg.to, config.companies)}</b>
+          <b>{coreUtils.itinerary.getPlaceName(leg.to, config.companies)}</b>
         </Styled.LegHeader>
         {!leg.hailedCar && (
           <Styled.LegDetails>
             {leg.steps.map((step, k) => {
               return (
                 <Styled.LegDetail key={k}>
-                  {getStepDirection(step)} on <b>{getStepStreetName(step)}</b>
+                  {coreUtils.itinerary.getStepDirection(step)} on{" "}
+                  <b>{coreUtils.itinerary.getStepStreetName(step)}</b>
                 </Styled.LegDetail>
               );
             })}
@@ -43,7 +38,7 @@ export default function AccessLeg({ config, leg, LegIcon }) {
 }
 
 AccessLeg.propTypes = {
-  config: configType.isRequired,
-  leg: legType.isRequired,
+  config: coreUtils.types.configType.isRequired,
+  leg: coreUtils.types.legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired
 };

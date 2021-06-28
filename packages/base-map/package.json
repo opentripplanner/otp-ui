@@ -6,6 +6,7 @@
   "homepage": "https://github.com/opentripplanner/otp-ui/#readme",
   "license": "MIT",
   "main": "lib/index.js",
+  "module": "esm/index.js",
   "private": false,
   "dependencies": {
     "@opentripplanner/core-utils": "^3.0.4",
