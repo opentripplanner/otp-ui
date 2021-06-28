@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/from-to-location-picker",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Location Picker Component",
   "author": "@binh-dam-ibigroup",
   "homepage": "https://github.com/opentripplanner/otp-ui/#readme",
