@@ -1,12 +1,13 @@
+import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 import PropTypes from "prop-types";
 import { Tooltip } from "react-leaflet";
 import L from "leaflet";
 
-import { transitVehicleType } from "@opentripplanner/core-utils/src/types";
-import { formatDurationWithSeconds } from "@opentripplanner/core-utils/src/time";
 import { TooltipStyle } from "../styled";
 import { linterIgnoreTheseProps } from "../../../utils";
+
+const { formatDurationWithSeconds } = coreUtils.time;
 
 /** will show a (leaflet) map tooltip on a vehicle, showing route and update recency */
 export default function VehicleTooltip(props) {
@@ -31,7 +32,7 @@ export default function VehicleTooltip(props) {
 
 VehicleTooltip.propTypes = {
   /** vehicle record - @see: core-utils/types/transitVehicleType */
-  vehicle: transitVehicleType,
+  vehicle: coreUtils.types.transitVehicleType,
 
   /** indicate if this vehicle is being tracked, */
   isTracked: PropTypes.bool,

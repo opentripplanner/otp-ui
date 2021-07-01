@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { transitVehicleType } from "@opentripplanner/core-utils/src/types";
+import coreUtils from "@opentripplanner/core-utils";
 import { PopupStyle } from "./styled";
 
 /**
@@ -24,7 +24,7 @@ export default function VehicleTracker(props) {
 
 VehicleTracker.propTypes = {
   /** vehicle record - @see: core-utils/types/transitVehicleType */
-  vehicle: transitVehicleType,
+  vehicle: coreUtils.types.transitVehicleType,
 
   /** tracking state for this vehicle (marker) .. determines button content */
   isTracked: PropTypes.bool,

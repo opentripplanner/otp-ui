@@ -1,11 +1,12 @@
+import BaseMap from "@opentripplanner/base-map";
+import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 
 import { action } from "@storybook/addon-actions";
 import { text, boolean, color, withKnobs } from "@storybook/addon-knobs";
 
 import "../__mocks__/map.css";
-import BaseMap from "@opentripplanner/base-map";
-import { formatDurationWithSeconds } from "@opentripplanner/core-utils/src/time";
+
 import TransitVehicleOverlay from "./index";
 
 // marker / popup / tooltip slots
@@ -153,7 +154,7 @@ function rectangles(popup = true) {
   // silly function used to change the arrival time (tooltip) in this example
   function makeRandomDate() {
     const secs = Date.now() % 379;
-    const prettyDate = formatDurationWithSeconds(secs);
+    const prettyDate = coreUtils.time.formatDurationWithSeconds(secs);
     return prettyDate;
   }
 
@@ -344,7 +345,7 @@ StaticRectanglesMarkerPopups.story = {
 export const RealTimeCircles = rtCircles;
 
 RealTimeCircles.story = {
-  name: "Rreal-time circles"
+  name: "Real-time circles"
 };
 
 export const RealTimeRectangles = rtRectangles;

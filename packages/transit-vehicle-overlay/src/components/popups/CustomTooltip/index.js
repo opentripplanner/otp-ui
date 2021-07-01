@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Tooltip } from "react-leaflet";
 import L from "leaflet";
 
-import { transitVehicleType } from "@opentripplanner/core-utils/src/types";
+import coreUtils from "@opentripplanner/core-utils";
 import { TooltipStyle } from "../styled";
 import { linterIgnoreTheseProps } from "../../../utils";
 
@@ -43,7 +43,7 @@ export default function CustomTooltip(props) {
 
 CustomTooltip.propTypes = {
   /** vehicle record - @see: core-utils/types/transitVehicleType */
-  vehicle: transitVehicleType,
+  vehicle: coreUtils.types.transitVehicleType,
 
   /** callback used to supply content of the tip (e.g, "arrives in 5 minutes") */
   getContent: PropTypes.func,

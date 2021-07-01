@@ -1,12 +1,11 @@
+import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 import PropTypes from "prop-types";
 import { FeatureGroup } from "react-leaflet";
 
-import {
-  leafletPathType,
-  transitVehicleType
-} from "@opentripplanner/core-utils/src/types";
 import * as utils from "../../utils";
+
+const { leafletPathType, transitVehicleType } = coreUtils.types;
 
 /**
  * vehicle geometry presentational component that creates a map overlay for the line
