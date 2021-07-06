@@ -1,6 +1,7 @@
+import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 import PropTypes from "prop-types";
-import coreUtils from "@opentripplanner/core-utils";
+
 import { PopupStyle } from "./styled";
 
 /**

@@ -1,9 +1,9 @@
+import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 import PropTypes from "prop-types";
 import { Tooltip } from "react-leaflet";
 import L from "leaflet";
 
-import coreUtils from "@opentripplanner/core-utils";
 import { TooltipStyle } from "../styled";
 import { linterIgnoreTheseProps } from "../../../utils";
 

@@ -1,7 +1,7 @@
+import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 import PropTypes from "prop-types";
 import { Popup } from "react-leaflet";
-import coreUtils from "@opentripplanner/core-utils";
 
 import { PopupStyle } from "../styled";
 import VehicleTracker from "../vehicle-tracker";
