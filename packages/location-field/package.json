@@ -11,7 +11,7 @@
   "dependencies": {
     "@opentripplanner/core-utils": "^3.0.4",
     "@opentripplanner/geocoder": "^1.0.2",
-    "@opentripplanner/humanize-distance": "^0.0.22",
+    "@opentripplanner/humanize-distance": "^1.1.0",
     "@opentripplanner/location-icon": "^1.0.1",
     "prop-types": "^15.7.2",
     "styled-icons": "^9.1.0",
