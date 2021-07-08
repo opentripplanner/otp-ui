@@ -11,7 +11,7 @@
   "private": false,
   "dependencies": {
     "@opentripplanner/core-utils": "^3.0.4",
-    "@opentripplanner/humanize-distance": "^0.0.22",
+    "@opentripplanner/humanize-distance": "^1.1.0",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
