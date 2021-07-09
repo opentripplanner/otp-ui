@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { LayersControl, Map, Popup, TileLayer } from "react-leaflet";
+import { LayersControl, Map, Popup, TileLayer, ZoomControl } from "react-leaflet";
 import utils from "@opentripplanner/core-utils";
 import L from "leaflet";
 
@@ -190,7 +190,9 @@ class BaseMap extends Component {
       popup,
       onContextMenu,
       onPopupClosed,
-      zoom
+      zoom,
+      zoomPosition,
+      layersPosition
     } = this.props;
     const { layerIndex } = this.state;
 
@@ -223,6 +225,7 @@ class BaseMap extends Component {
         onBaseLayerChange={this.handleBaseLayerChange}
         onOverlayRemove={this.handleOverlayRemoved}
         onViewportChanged={this.handleViewportChanged}
+        zoomControl={false}
       >
         {/* Add the mapbox wordmark if the current base layer's URL appears to
           be a Mapbox URL. The implementing application must include CSS that
@@ -240,7 +243,7 @@ class BaseMap extends Component {
 
         {/* Create the layers control, including base map layers and any
          * user-controlled overlays. */}
-        <LayersControl position="topright">
+        <LayersControl position={layersPosition || "topright"}>
           {/* base layers */}
           {baseLayers &&
             baseLayers.map((layer, i) => {
@@ -289,7 +292,8 @@ class BaseMap extends Component {
             </LayersControl.Overlay>
           ))}
         </LayersControl>
-
+        
+        <ZoomControl position={zoomPosition || "topleft"} />
         {/* Add the fixed, i.e. non-user-controllable, overlays (e.g., itinerary overlay) */}
         {fixedOverlays}
 
