@@ -29,7 +29,9 @@ const ItineraryBody = ({
   timeOptions,
   toRouteAbbreviation,
   TransitLegSubheader,
-  TransitLegSummary
+  TransitLegSummary,
+  AlertToggleIcon,
+  AlertBodyIcon
 }) => {
   /*
     TODO: replace component should update logic? companies is simply used to
@@ -77,6 +79,8 @@ const ItineraryBody = ({
           toRouteAbbreviation={toRouteAbbreviation}
           TransitLegSubheader={TransitLegSubheader}
           TransitLegSummary={TransitLegSummary}
+          AlertToggleIcon={AlertToggleIcon}
+          AlertBodyIcon={AlertBodyIcon}
         />
       );
     }
@@ -200,7 +204,17 @@ ItineraryBody.propTypes = {
    * - leg: the transit leg
    * - stopsExpanded: whether the intermediate stop display is currently expanded
    */
-  TransitLegSummary: PropTypes.elementType.isRequired
+  TransitLegSummary: PropTypes.elementType.isRequired,
+  /**
+   * A custom icon component inserted into the transit alert toggle button
+   * within a transit leg, if this prop is not supplied a default icon is used
+   */
+  AlertToggleIcon: PropTypes.elementType,
+  /**
+   * A custom icon component inserted into the transit alert body component
+   * within a transit leg, if this prop is not supplied a default icon is used
+   */
+  AlertBodyIcon: PropTypes.elementType
 };
 
 function noop() {}
@@ -219,7 +233,9 @@ ItineraryBody.defaultProps = {
   TimeColumnContent: PlaceRow.defaultProps.TimeColumnContent,
   timeOptions: null,
   toRouteAbbreviation: noop,
-  TransitLegSubheader: undefined
+  TransitLegSubheader: undefined,
+  AlertToggleIcon: undefined,
+  AlertBodyIcon: undefined
 };
 
 export default ItineraryBody;
