@@ -149,7 +149,7 @@ class VehicleRentalOverlay extends MapLayer {
   };
 
   render() {
-    const { companies, mapSymbols, stations } = this.props;
+    const { companies, mapSymbols, stations, visible } = this.props;
     let filteredStations = stations;
     if (companies) {
       filteredStations = stations.filter(
@@ -158,7 +158,7 @@ class VehicleRentalOverlay extends MapLayer {
       );
     }
 
-    if (!filteredStations || filteredStations.length === 0) {
+    if (!visible || !filteredStations || filteredStations.length === 0) {
       return <FeatureGroup />;
     }
 
