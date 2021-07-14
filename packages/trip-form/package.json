@@ -11,7 +11,8 @@
   "dependencies": {
     "@opentripplanner/core-utils": "^3.0.4",
     "@opentripplanner/icons": "^1.0.4",
-    "moment": "^2.17.1"
+    "moment": "^2.17.1",
+    "react-indiana-drag-scroll": "^2.0.1"
   },
   "repository": {
     "type": "git",

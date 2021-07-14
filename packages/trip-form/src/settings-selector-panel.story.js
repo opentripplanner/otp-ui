@@ -1,9 +1,11 @@
 import { ClassicModeIcon } from "@opentripplanner/icons";
 
-import React, { Component } from "react";
 import { action } from "@storybook/addon-actions";
+import React, { Component } from "react";
+import styled from "styled-components";
 
 import SettingsSelectorPanel from "./SettingsSelectorPanel";
+import TripOptions from "./TripOptions";
 
 import commonCompanies from "./__mocks__/companies";
 import commonModes from "./__mocks__/modes";
@@ -90,6 +92,40 @@ export const settingsSelectorPanelUndefinedParams = () => (
     <SettingsSelectorPanel
       supportedModes={commonModesEmpty}
       supportedCompanies={undefined}
+    />
+  </PanelWrapper>
+);
+
+const Button = styled.button`
+  display: block;
+  margin-bottom: 10px;
+`;
+
+const FooterContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0px;
+  > button {
+    width: 66%;
+  }
+  > .line-break {
+    width: 100%;
+  }
+`;
+
+export const tripOptions = () => (
+  <PanelWrapper>
+    <TripOptions
+      footer={
+        <FooterContainer>
+          <Button type="button">Plan trip</Button>
+          <div className="line-break" />
+          <Button type="button">Save Options</Button>
+        </FooterContainer>
+      }
+      supportedModes={commonModes}
+      supportedCompanies={commonCompanies}
     />
   </PanelWrapper>
 );
