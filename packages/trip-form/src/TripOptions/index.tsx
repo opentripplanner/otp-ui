@@ -6,8 +6,13 @@ import FeaturedOption from "./FeaturedOption";
 import FeaturedOptionOverlay from "./FeaturedOptionOverlay";
 import ModeRow from "./ModeRow";
 import TransitOptions from "./TransitOptions";
-import { ComponentProps, QueryProps } from "./types";
+import { Company, QueryProps } from "./types";
 import * as S from "./styled";
+
+interface ComponentProps {
+  footer?: ReactElement;
+  supportedCompanies: Company[];
+}
 
 type Props = ComponentProps & QueryProps;
 

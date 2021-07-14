@@ -36,8 +36,3 @@ export interface QueryProps {
   queryParams: QueryParams;
   supportedModes: Modes;
 }
-
-export interface ComponentProps {
-  footer?: ReactElement;
-  supportedCompanies: Company[];
-}
