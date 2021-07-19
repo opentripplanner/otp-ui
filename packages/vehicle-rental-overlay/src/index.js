@@ -149,7 +149,10 @@ class VehicleRentalOverlay extends MapLayer {
   };
 
   render() {
-    const { companies, mapSymbols, stations } = this.props;
+    const { companies, mapSymbols, stations, visible } = this.props;
+    // Don't render anything if we're not visible
+    if (!visible) return null;
+
     let filteredStations = stations;
     if (companies) {
       filteredStations = stations.filter(
