@@ -10,6 +10,7 @@ import bikeRentalStations from "../__mocks__/bike-rental-stations.json";
 import carRentalStations from "../__mocks__/car-rental-stations.json";
 import eScooterStations from "../__mocks__/e-scooter-rental-stations.json";
 import { HubAndFloatingBike } from "./DefaultMarkers";
+import LeafletLayerControlInterface from "./leaflet-layer-control-interface";
 
 import "../../../node_modules/leaflet/dist/leaflet.css";
 
@@ -34,7 +35,7 @@ const MyCircle = ({ fillColor = "gray", pixels, strokeColor }) => {
       {children}
     </CircleMarker>
   );
-  GeneratedCircle.coreUtils.types.propTypes = {
+  GeneratedCircle.propTypes = {
     children: PropTypes.node,
     entity: coreUtils.types.stationType.isRequired
   };
@@ -182,7 +183,8 @@ class ZoomControlledMapWithVehicleRentalOverlay extends Component {
       getStationName,
       mapSymbols,
       refreshVehicles,
-      stations
+      stations,
+      visible
     } = this.props;
     const { zoom } = this.state;
     return (
@@ -191,15 +193,16 @@ class ZoomControlledMapWithVehicleRentalOverlay extends Component {
         onViewportChanged={this.onViewportChanged}
         zoom={zoom}
       >
-        <VehicleRentalOverlay
+        <LeafletLayerControlInterface
           configCompanies={configCompanies}
           companies={companies}
           getStationName={getStationName}
           setLocation={setLocation}
           mapSymbols={mapSymbols}
+          name="Rentals"
           refreshVehicles={refreshVehicles}
           stations={stations}
-          visible
+          visible={visible}
           zoom={zoom}
         />
       </BaseMap>
@@ -212,13 +215,16 @@ ZoomControlledMapWithVehicleRentalOverlay.propTypes = {
   getStationName: PropTypes.func,
   mapSymbols: coreUtils.types.vehicleRentalMapOverlaySymbolsType,
   refreshVehicles: PropTypes.func.isRequired,
-  stations: PropTypes.arrayOf(coreUtils.types.stationType.isRequired).isRequired
+  stations: PropTypes.arrayOf(coreUtils.types.stationType.isRequired)
+    .isRequired,
+  visible: PropTypes.bool
 };
 
 ZoomControlledMapWithVehicleRentalOverlay.defaultProps = {
   companies: null,
   getStationName: undefined,
-  mapSymbols: null
+  mapSymbols: null,
+  visible: undefined
 };
 
 function customStationName(_, station) {
@@ -236,6 +242,16 @@ export const RentalBicycles = () => (
     mapSymbols={bikeMapSymbols}
     refreshVehicles={action("refresh bicycles")}
     stations={bikeRentalStations}
+  />
+);
+
+export const RentalBicyclesVisibleOnMount = () => (
+  <ZoomControlledMapWithVehicleRentalOverlay
+    companies={["BIKETOWN"]}
+    mapSymbols={bikeMapSymbols}
+    refreshVehicles={action("refresh bicycles")}
+    stations={bikeRentalStations}
+    visible
   />
 );
 
