@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { CircleMarker } from "react-leaflet";
 import { action } from "@storybook/addon-actions";
+import { boolean } from "@storybook/addon-knobs";
 
 import VehicleRentalOverlay from ".";
 import bikeRentalStations from "../__mocks__/bike-rental-stations.json";
@@ -245,15 +246,21 @@ export const RentalBicycles = () => (
   />
 );
 
-export const RentalBicyclesVisibleOnMount = () => (
-  <ZoomControlledMapWithVehicleRentalOverlay
-    companies={["BIKETOWN"]}
-    mapSymbols={bikeMapSymbols}
-    refreshVehicles={action("refresh bicycles")}
-    stations={bikeRentalStations}
-    visible
-  />
-);
+export const RentalBicyclesVisibilityControlledByKnob = () => {
+  const isOverlayVisible = boolean(
+    "Toggle visibility of vehicle rental overlay",
+    true
+  );
+  return (
+    <ZoomControlledMapWithVehicleRentalOverlay
+      companies={["BIKETOWN"]}
+      mapSymbols={bikeMapSymbols}
+      refreshVehicles={action("refresh bicycles")}
+      stations={bikeRentalStations}
+      visible={isOverlayVisible}
+    />
+  );
+};
 
 export const RentalBicyclesUsingNewSymbolsProp = () => (
   <ZoomControlledMapWithVehicleRentalOverlay
