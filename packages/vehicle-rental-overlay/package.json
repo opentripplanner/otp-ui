@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/vehicle-rental-overlay",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A map overlay to show vehicle rentals from a specific company",
   "main": "lib/index.js",
   "module": "esm/index.js",
