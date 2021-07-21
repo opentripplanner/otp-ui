@@ -150,8 +150,13 @@ class VehicleRentalOverlay extends MapLayer {
 
   render() {
     const { companies, mapSymbols, stations, visible } = this.props;
-    // Don't render anything if we're not visible
-    if (!visible) return null;
+    // Render an empty FeatureGroup if the rental vehicles should not be visible
+    // on the map. Otherwise previous stations may still be shown due to some
+    // react-leaflet internals, maybe? Also, do not return null because that will
+    // prevent the overlay from appearing in the layer controls.
+    if (!visible) {
+      return <FeatureGroup />;
+    }
 
     let filteredStations = stations;
     if (companies) {
