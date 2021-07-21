@@ -27,9 +27,15 @@ type State = {
 };
 
 /**
- * This class is a necessary intermediary to handle events from the Leaflet map
- * existing in the parent element. See more notes on the other properties and
- * methods for how everything interacts.
+ * This class is a necessary intermediary to handle events proxied from the
+ * parent @opentripplanner/base-map component handlers to this component.
+ * Without this interface, there would be no way to detect when a user would
+ * hide this layer from view on the Leaflet map. The visible property influences
+ * and sets the Leaflet Layer Control which then is handled by the
+ * @opentripplanner/base-map component and then delivered to the
+ * `onOverlayAdded` and `onOverlayRemoved` handlers which then finally set this
+ * component's state which is then finally used by the vehicle rental overlay
+ * to properly manage the requesting of vehicle rentals.
  */
 export default class LeafletLayerControlInterface extends Component<
   Props,

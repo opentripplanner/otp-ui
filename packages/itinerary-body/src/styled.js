@@ -2,7 +2,7 @@ import { Map } from "@opentripplanner/icons";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
-import { CaretDown, CaretUp } from "styled-icons/fa-solid";
+import { CaretDown, CaretUp, ExclamationTriangle } from "styled-icons/fa-solid";
 
 import { toModeBorder, toModeColor, toSafeRouteColor } from "./util";
 
@@ -606,3 +606,11 @@ export const TransitLegFare = styled.div`
 export const TransitLegSummary = styled(TransparentButton)`
   padding: 0;
 `;
+
+export const DefaultAlertToggleIcon = styled(ExclamationTriangle).attrs({
+  size: 15
+})``;
+
+export const DefaultAlertBodyIcon = styled(ExclamationTriangle).attrs({
+  size: 18
+})``;

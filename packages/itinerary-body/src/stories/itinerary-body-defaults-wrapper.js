@@ -40,7 +40,9 @@ export default class ItineraryBodyDefaultsWrapper extends Component {
       TimeColumnContent,
       toRouteAbbreviation,
       TransitLegSubheader,
-      TransitLegSummary
+      TransitLegSummary,
+      AlertToggleIcon,
+      AlertBodyIcon
     } = this.props;
     const { diagramVisible } = this.state;
     let ItineraryBodyComponent;
@@ -78,6 +80,8 @@ export default class ItineraryBodyDefaultsWrapper extends Component {
         toRouteAbbreviation={toRouteAbbreviation}
         TransitLegSubheader={TransitLegSubheader}
         TransitLegSummary={TransitLegSummary || DefaultTransitLegSummary}
+        AlertToggleIcon={AlertToggleIcon}
+        AlertBodyIcon={AlertBodyIcon}
       />
     );
   }
@@ -98,7 +102,9 @@ ItineraryBodyDefaultsWrapper.propTypes = {
   TimeColumnContent: PropTypes.elementType,
   toRouteAbbreviation: PropTypes.func,
   TransitLegSubheader: PropTypes.elementType,
-  TransitLegSummary: PropTypes.elementType
+  TransitLegSummary: PropTypes.elementType,
+  AlertToggleIcon: PropTypes.elementType,
+  AlertBodyIcon: PropTypes.elementType
 };
 
 ItineraryBodyDefaultsWrapper.defaultProps = {
@@ -115,5 +121,7 @@ ItineraryBodyDefaultsWrapper.defaultProps = {
   TimeColumnContent: undefined,
   toRouteAbbreviation: r => r.toString().substr(0, 2),
   TransitLegSubheader: undefined,
-  TransitLegSummary: undefined
+  TransitLegSummary: undefined,
+  AlertToggleIcon: undefined,
+  AlertBodyIcon: undefined
 };

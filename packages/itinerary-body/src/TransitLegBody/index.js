@@ -1,7 +1,6 @@
 import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
-import { ExclamationTriangle } from "styled-icons/fa-solid";
 import { VelocityTransitionGroup } from "velocity-react";
 
 import AlertsBody from "./alerts-body";
@@ -64,7 +63,9 @@ export default class TransitLegBody extends Component {
       timeFormat,
       TransitLegSubheader,
       TransitLegSummary,
-      transitOperator
+      transitOperator,
+      AlertToggleIcon,
+      AlertBodyIcon
     } = this.props;
     const { language: languageConfig } = config;
     const { agencyBrandingUrl, agencyName, agencyUrl, alerts } = leg;
@@ -111,8 +112,7 @@ export default class TransitLegBody extends Component {
           {/* Alerts toggle */}
           {alerts && alerts.length > 2 && (
             <Styled.TransitAlertToggle onClick={this.onToggleAlertsClick}>
-              <ExclamationTriangle size={15} /> {alerts.length}{" "}
-              {pluralize("alert", alerts)}{" "}
+              <AlertToggleIcon /> {alerts.length} {pluralize("alert", alerts)}{" "}
               <Styled.CaretToggle expanded={alertsExpanded} />
             </Styled.TransitAlertToggle>
           )}
@@ -127,6 +127,7 @@ export default class TransitLegBody extends Component {
                 alerts={leg.alerts}
                 longDateFormat={longDateFormat}
                 timeFormat={timeFormat}
+                AlertIcon={AlertBodyIcon}
               />
             )}
           </VelocityTransitionGroup>
@@ -196,11 +197,15 @@ TransitLegBody.propTypes = {
   timeFormat: PropTypes.string.isRequired,
   TransitLegSubheader: PropTypes.elementType,
   TransitLegSummary: PropTypes.elementType.isRequired,
-  transitOperator: coreUtils.types.transitOperatorType
+  transitOperator: coreUtils.types.transitOperatorType,
+  AlertToggleIcon: PropTypes.elementType,
+  AlertBodyIcon: PropTypes.elementType
 };
 
 TransitLegBody.defaultProps = {
   fare: null,
   TransitLegSubheader: undefined,
-  transitOperator: null
+  transitOperator: null,
+  AlertToggleIcon: Styled.DefaultAlertToggleIcon,
+  AlertBodyIcon: undefined
 };
