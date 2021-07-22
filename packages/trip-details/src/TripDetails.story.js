@@ -36,8 +36,22 @@ function getCustomMessages(itinerary) {
   const companies = itinerary.legs
     .filter(leg => leg.tncData)
     .map(leg => leg.tncData.company);
+  const {
+    bikeDuration,
+    caloriesBurned,
+    walkDuration
+  } = coreUtils.itinerary.calculatePhysicalActivity(itinerary);
 
   return {
+    caloriesBurned: <>{caloriesBurned} Calories burned</>,
+    caloriesBurnedDescription: (
+      <>
+        The calories description can be constructed using any markup and
+        itinerary params like {walkDuration} min walk and {bikeDuration} min
+        bike, and including formatting markup from a string localization
+        library.
+      </>
+    ),
     depart: (
       <>
         <b>You depart at</b> <u>{itinDate.toLocaleTimeString()}</u>

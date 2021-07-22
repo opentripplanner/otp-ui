@@ -9,7 +9,7 @@ import TripDetail from "./trip-detail";
 
 /**
  * Default rendering for the departure date/time line
- * if no corresponding message is provided.
+ * if no other corresponding message is provided.
  */
 function renderDefaultDepart(itinerary, longDateFormat, timeOptions) {
   const date = moment(itinerary.startTime);
@@ -24,7 +24,7 @@ function renderDefaultDepart(itinerary, longDateFormat, timeOptions) {
 
 /**
  * Default rendering for the transit fare line
- * if no corresponding message is provided.
+ * if no other corresponding message is provided.
  */
 function renderDefaultTransitFare(fareResult) {
   const { centsToString, transitFare } = fareResult;
@@ -37,7 +37,7 @@ function renderDefaultTransitFare(fareResult) {
 
 /**
  * Default rendering for the TNC fare line
- * if no corresponding message is provided.
+ * if no other corresponding message is provided.
  */
 function renderDefaultTNCFare(itinerary, fareResult) {
   const { dollarsToString, maxTNCFare, minTNCFare } = fareResult;
@@ -56,6 +56,41 @@ function renderDefaultTNCFare(itinerary, fareResult) {
       <b>
         {dollarsToString(minTNCFare)} - {dollarsToString(maxTNCFare)}
       </b>
+    </>
+  );
+}
+
+/**
+ * Default rendering for the calories burned line
+ * if no other corresponding message is provided.
+ */
+function renderDefaultCaloriesBurned(caloriesBurned) {
+  return (
+    <>
+      Calories Burned: <b>{Math.round(caloriesBurned)}</b>
+    </>
+  );
+}
+
+/**
+ * Default rendering for the calories description
+ * if no other corresponding message is provided.
+ */
+function renderDefaultCaloriesBurnedDescription(walkDuration, bikeDuration) {
+  return (
+    <>
+      Calories burned is based on{" "}
+      <b>{Math.round(walkDuration / 60)} minute(s)</b> spent walking and{" "}
+      <b>{Math.round(bikeDuration / 60)} minute(s)</b> spent biking during this
+      trip. Adapted from{" "}
+      <a
+        href="https://health.gov/dietaryguidelines/dga2005/document/html/chapter3.htm#table4"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Dietary Guidelines for Americans 2005, page 16, Table 4
+      </a>
+      .
     </>
   );
 }
@@ -127,23 +162,17 @@ export default function TripDetails({
             icon={<Heartbeat size={17} />}
             summary={
               <Styled.CaloriesSummary>
-                {messages.caloriesBurned}: <b>{Math.round(caloriesBurned)}</b>
+                {messages.caloriesBurned ||
+                  renderDefaultCaloriesBurned(caloriesBurned)}
               </Styled.CaloriesSummary>
             }
             description={
               <Styled.CaloriesDescription>
-                Calories burned is based on{" "}
-                <b>{Math.round(walkDuration / 60)} minute(s)</b> spent walking
-                and <b>{Math.round(bikeDuration / 60)} minute(s)</b> spent
-                biking during this trip. Adapted from{" "}
-                <a
-                  href="https://health.gov/dietaryguidelines/dga2005/document/html/chapter3.htm#table4"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  Dietary Guidelines for Americans 2005, page 16, Table 4
-                </a>
-                .
+                {messages.caloriesBurnedDescription ||
+                  renderDefaultCaloriesBurnedDescription(
+                    walkDuration,
+                    bikeDuration
+                  )}
               </Styled.CaloriesDescription>
             }
           />
