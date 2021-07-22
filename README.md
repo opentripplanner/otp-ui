@@ -30,16 +30,12 @@ Some packages in otp-ui depend on sibling packages (e.g., `@opentripplanner/core
 
    > "@opentripplanner/package-to-test": **"file:../package-to-test"**
 
-2. In your source files, find and replace:
-
-   > opentripplanner/package-to-test/**lib**/types
-
-   with
-
-   > opentripplanner/package-to-test/**src**/types
-
-3. Run:
+2. Run:
    `yarn && yarn dev`
+
+### Storyshot testing
+
+This repo utilizes the [Storyshot](https://storybook.js.org/docs/react/workflows/snapshot-testing) Storybook addon to perform snapshot tests of every story in this monorepo. Whenever the script `yarn unit` is ran, the Storyshot addon will be included along with all the other tests. It will compare the output of every story to the saved snapshot of that story. This provides a quick way to make sure nothing drastic has changed and that every single story is able to render without an error. However, often times these snapshots will need to be updated and that can be accomplished by running `yarn unit -u`.
 
 ## Stack
 
