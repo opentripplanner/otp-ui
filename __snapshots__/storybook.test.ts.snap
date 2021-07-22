@@ -4570,7 +4570,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Rental Transit Itinerary 
                 >
                   <svg
                     aria-hidden="true"
-                    className="c9"
+                    className="c9 styled__DefaultAlertBodyIcon-sc-6hmr57-75"
                     fill="currentColor"
                     focusable="false"
                     height={18}
@@ -4604,7 +4604,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Rental Transit Itinerary 
                 >
                   <svg
                     aria-hidden="true"
-                    className="c9"
+                    className="c9 styled__DefaultAlertBodyIcon-sc-6hmr57-75"
                     fill="currentColor"
                     focusable="false"
                     height={18}
@@ -6089,7 +6089,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Transit Bike Itinerary 1`
                 >
                   <svg
                     aria-hidden="true"
-                    className="c9"
+                    className="c9 styled__DefaultAlertBodyIcon-sc-6hmr57-75"
                     fill="currentColor"
                     focusable="false"
                     height={18}
@@ -6123,7 +6123,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Transit Bike Itinerary 1`
                 >
                   <svg
                     aria-hidden="true"
-                    className="c9"
+                    className="c9 styled__DefaultAlertBodyIcon-sc-6hmr57-75"
                     fill="currentColor"
                     focusable="false"
                     height={18}
@@ -12475,7 +12475,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Park And Ride Itinerary 1`] = 
                 >
                   <svg
                     aria-hidden="true"
-                    className="c9"
+                    className="c9 styled__DefaultAlertBodyIcon-sc-6hmr57-75"
                     fill="currentColor"
                     focusable="false"
                     height={18}
@@ -12509,7 +12509,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Park And Ride Itinerary 1`] = 
                 >
                   <svg
                     aria-hidden="true"
-                    className="c9"
+                    className="c9 styled__DefaultAlertBodyIcon-sc-6hmr57-75"
                     fill="currentColor"
                     focusable="false"
                     height={18}
@@ -17102,7 +17102,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Walk Transit Walk Itinerary 1`
           >
             <svg
               aria-hidden="true"
-              className="c9"
+              className="c9 styled__DefaultAlertToggleIcon-sc-6hmr57-74"
               fill="currentColor"
               focusable="false"
               height={15}
@@ -19699,7 +19699,7 @@ exports[`Storyshots ItineraryBody/otp-ui Bike Rental Transit Itinerary 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    className="c16"
+                    className="c16 styled__DefaultAlertBodyIcon-sc-6hmr57-75"
                     fill="currentColor"
                     focusable="false"
                     height={18}
@@ -19733,7 +19733,7 @@ exports[`Storyshots ItineraryBody/otp-ui Bike Rental Transit Itinerary 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    className="c16"
+                    className="c16 styled__DefaultAlertBodyIcon-sc-6hmr57-75"
                     fill="currentColor"
                     focusable="false"
                     height={18}
@@ -21208,7 +21208,7 @@ exports[`Storyshots ItineraryBody/otp-ui Bike Transit Bike Itinerary 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    className="c16"
+                    className="c16 styled__DefaultAlertBodyIcon-sc-6hmr57-75"
                     fill="currentColor"
                     focusable="false"
                     height={18}
@@ -21242,7 +21242,7 @@ exports[`Storyshots ItineraryBody/otp-ui Bike Transit Bike Itinerary 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    className="c16"
+                    className="c16 styled__DefaultAlertBodyIcon-sc-6hmr57-75"
                     fill="currentColor"
                     focusable="false"
                     height={18}
@@ -21652,6 +21652,841 @@ exports[`Storyshots ItineraryBody/otp-ui Bike Transit Bike Itinerary 1`] = `
     </div>
     <div
       className="c22 c17"
+    >
+      <button
+        className="c12 c18 c19"
+        onClick={[Function]}
+        title="View on map"
+      >
+        <svg
+          className="styled__MapIcon-sc-6hmr57-39"
+          height={15}
+          role="img"
+          viewBox="0 0 390 390"
+          width={15}
+        >
+          <path
+            d="M260.4 54.2L129.6 0 6.6 50.9v335.8l123-50.9L260.4 390l123-50.9V3.3l-123 50.9zM139.2 25l111.5 46.2v294L139.2 319V25zM25.9 63.9l94.1-39v294l-94.1 39v-294zm338.2 262.2l-94.1 39V71.2l94.1-39v293.9z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ItineraryBody/otp-ui Custom Alert Icons Itinerary 1`] = `
+.c16 {
+  display: inline-block;
+  vertical-align: -.125em;
+  overflow: hidden;
+}
+
+.c33 {
+  color: #f44256;
+}
+
+.c7 {
+  border-top-style: solid;
+  border-top-width: 0;
+  padding-top: 0;
+  padding-bottom: 10px;
+}
+
+.c23 {
+  border-top-style: solid;
+  border-top-width: 2px;
+  padding-top: 10px;
+  padding-bottom: 0;
+  -webkit-transform: translateY(-12px);
+  -ms-transform: translateY(-12px);
+  transform: translateY(-12px);
+}
+
+.c12 {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font-size: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c18 {
+  color: #008;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.c18:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c6 {
+  color: black;
+  background-color: #e9e9e9;
+  border: 2px solid #bbb;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  font-size: 1.2em;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 1px;
+}
+
+.c32 {
+  text-align: center;
+}
+
+.c8 {
+  -webkit-flex: 2 2 auto;
+  -ms-flex: 2 2 auto;
+  flex: 2 2 auto;
+}
+
+.c4 {
+  border-left: dotted 4px #484848;
+  height: 100%;
+  width: 0;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.c20 {
+  border-left: solid 8px #084C8D;
+  height: 100%;
+  width: 0;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.c11 {
+  color: #999;
+  font-size: 13px;
+  padding: 12px 0 18px 4px;
+}
+
+.c13 {
+  cursor: pointer;
+  display: table;
+  padding: 0;
+  text-align: center;
+  line-height: 31px;
+}
+
+.c14 {
+  display: table;
+}
+
+.c14 > div {
+  display: table-cell;
+}
+
+.c27 {
+  font-weight: 200;
+}
+
+.c26 {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.c25 {
+  color: rgb(153,153,153);
+  margin-top: 5px;
+}
+
+.c3 {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  height: 100%;
+}
+
+.c5 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  -webkit-transform: translate(-51%,-10%);
+  -ms-transform: translate(-51%,-10%);
+  transform: translate(-51%,-10%);
+}
+
+.c2 {
+  -webkit-flex: 0 0 50px;
+  -ms-flex: 0 0 50px;
+  flex: 0 0 50px;
+  padding-right: 5px;
+}
+
+.c0 {
+  max-width: 500px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row;
+  -ms-flex-flow: row;
+  flex-flow: row;
+}
+
+.c1 {
+  -webkit-flex: 0 0 60px;
+  -ms-flex: 0 0 60px;
+  flex: 0 0 60px;
+  padding-right: 5px;
+  font-size: 0.9em;
+}
+
+.c19 {
+  padding: 3px 10px 3px 10px;
+  border: 0;
+  margin-top: -15px;
+  width: 35px;
+  height: 35px;
+}
+
+.c19:hover {
+  cursor: pointer;
+}
+
+.c17 {
+  -webkit-flex: 0 0 25px;
+  -ms-flex: 0 0 25px;
+  flex: 0 0 25px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.2em;
+}
+
+.c10 {
+  font-weight: bold;
+  height: 1.2em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.c21 {
+  text-align: center;
+  min-width: 30px;
+  min-height: 30px;
+  font-size: 1.2em;
+  background-color: #084C8D;
+  color: white;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 1px;
+  border: 1px solid;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+.c22 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  -webkit-clip: rect(0,0,0,0);
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.c15 {
+  color: #999;
+  display: inline-block;
+  font-size: 13px;
+  font-style: normal;
+  margin-top: 10px;
+  vertical-align: bottom;
+}
+
+.c24 {
+  font-weight: 200;
+  font-size: 0.9em;
+  margin-left: 10px;
+}
+
+.c28 {
+  color: #d14727;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 400;
+  margin-top: 8px;
+  padding: 0;
+}
+
+.c29 {
+  margin-top: 5px;
+}
+
+.c30 {
+  color: #999999;
+}
+
+.c31 {
+  padding: 0;
+}
+
+<div
+  className="styled__ItineraryBody-sc-6hmr57-22"
+>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      15:44
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+          mode="WALK"
+        />
+        <div
+          className="c5"
+        >
+          <div
+            aria-label="Travel by WALK"
+            className="c6"
+            mode="WALK"
+          >
+            <svg
+              viewBox="0 0 390 390"
+              width="66%"
+            >
+              <title>
+                Travel by WALK
+              </title>
+              <path
+                d="m 207.60225,19.503527 c 16.02,0 29.07,13.05 29.07,29.07 0,16.020001 -13.05,29.07 -29.07,29.07 -16.02,0 -29.07,-13.049999 -29.07,-29.07 0,-16.02 13.05,-29.07 29.07,-29.07 z m 88.65,181.620003 c -4.05,5.94 -12.15,7.47 -18.09,3.42 0,0 -40.23,-27.45 -43.11,-29.43 -2.88,-1.98 -4.59,-6.12 -5.85,-8.82 -0.9,-1.8 -5.4,-10.62 -8.37,-16.47 l -3.6,15.3 -9.36,42.39 c 0,0 50.13,59.04 51.12,60.21 1.44,1.62 2.25,4.95 2.88,7.47 0.63,2.43 13.41,71.91 13.41,71.91 1.98,10.71 -5.13,21.06 -15.84,23.13 -10.71,1.98001 -21.06,-5.13 -23.13,-15.84 l -12.78,-68.67 -41.67,-45.54 c 0,0 -9.27,43.29 -9.45,44.19 -0.18,0.9 -0.63,2.25 -1.17,3.51 -0.54,1.17 -42.84,72.99 -42.84,72.99 -5.58,9.36 -17.73,12.51 -27.18,6.93 -9.359998,-5.58 -12.509998,-17.73 -6.929998,-27.18 l 37.619998,-63.27 30.24,-136.89 -20.34,16.2 -11.25,49.59 c 0,7.02 -7.92,11.61 -14.94,10.08 -7.02,-1.53 -11.16,-4.41 -9.54,-15.39 h 0.18 c 0,0 11.7,-55.08 12.6,-57.51 0.81,-2.43 2.07,-5.13 3.33,-6.12 8.46,-6.84 41.22,-33.66 50.85,-41.400003 11.07,-9.000001 15.93,-12.329999 25.38,-12.329999 7.11,0 14.85,2.159999 23.04,10.62 3.6,3.690001 6.21,9.720002 8.01,13.500002 1.8,3.69 24.39,48.33 24.39,48.33 l 38.97,27 c 5.94,4.05 7.47,12.15 3.42,18.09 z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c7 c8"
+    >
+      <div
+        className="styled__PlaceDetails-sc-6hmr57-40"
+      >
+        <div
+          className="c9"
+        >
+          <div
+            className="c10"
+          >
+            KGW Studio on the Sq, Portland, OR, USA
+          </div>
+        </div>
+        <div
+          className="c11"
+        >
+          <button
+            className="c12 c13"
+            onClick={[Function]}
+          >
+            <div
+              className="c14"
+            >
+              Walk
+               
+              <span>
+                 
+                269 feet
+              </span>
+               to Pioneer Square North MAX Station
+            </div>
+          </button>
+          <button
+            className="c12 c15"
+            onClick={[Function]}
+          >
+            1 min
+            <span>
+               
+              <svg
+                aria-hidden="true"
+                className="c16"
+                fill="currentColor"
+                focusable="false"
+                height={15}
+                viewBox="0 0 320 512"
+                width={15}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </button>
+          <div />
+        </div>
+      </div>
+    </div>
+    <div
+      className="c7 c17"
+    >
+      <button
+        className="c12 c18 c19"
+        onClick={[Function]}
+        title="View on map"
+      >
+        <svg
+          className="styled__MapIcon-sc-6hmr57-39"
+          height={15}
+          role="img"
+          viewBox="0 0 390 390"
+          width={15}
+        >
+          <path
+            d="M260.4 54.2L129.6 0 6.6 50.9v335.8l123-50.9L260.4 390l123-50.9V3.3l-123 50.9zM139.2 25l111.5 46.2v294L139.2 319V25zM25.9 63.9l94.1-39v294l-94.1 39v-294zm338.2 262.2l-94.1 39V71.2l94.1-39v293.9z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      15:46
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c20"
+          mode="TRAM"
+        />
+        <div
+          className="c5"
+        >
+          <div
+            className="c21"
+          >
+            <span
+              aria-hidden={true}
+              className="styled__SRHidden-sc-6hmr57-51"
+            >
+              MA
+            </span>
+            <span
+              className="c22"
+            >
+              MAX Blue Line
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c23 c8"
+    >
+      <div
+        className="styled__PlaceDetails-sc-6hmr57-40"
+      >
+        <div
+          className="c9"
+        >
+          <div
+            className="c10"
+          >
+            Pioneer Square North MAX Station
+            <span
+              className="c24"
+            >
+              ID 
+              8383
+            </span>
+          </div>
+        </div>
+        <div
+          className="c11"
+        >
+          <button
+            className="c12 c13"
+            onClick={[Function]}
+          >
+            <div
+              className="c14 c25"
+            >
+              <div
+                className="c26"
+              >
+                MAX Blue Line
+                <span>
+                  <span
+                    className="c27"
+                  >
+                     to 
+                  </span>
+                  Hillsboro
+                </span>
+              </div>
+            </div>
+          </button>
+          <button
+            className="c12 c28"
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden="true"
+              className="c16 OtpUiItineraryBodystory__CustomAlertIconsItinerary-t2x6mr-0"
+              fill="currentColor"
+              focusable="false"
+              height={15}
+              viewBox="0 0 320 512"
+              width={15}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M296 160H180.6l42.6-129.8C227.2 15 215.7 0 200 0H56C44 0 33.8 8.9 32.2 20.8l-32 240C-1.7 275.2 9.5 288 24 288h118.7L96.6 482.5c-3.6 15.2 8 29.5 23.3 29.5 8.4 0 16.4-4.4 20.8-12l176-304c9.3-15.9-2.2-36-20.7-36z"
+                fill="currentColor"
+              />
+            </svg>
+             
+            3
+             
+            alerts
+             
+            <svg
+              aria-hidden="true"
+              className="c16"
+              fill="currentColor"
+              focusable="false"
+              height={15}
+              viewBox="0 0 320 512"
+              width={15}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+          <div />
+          <div
+            className="c29"
+          >
+            <div
+              className="c30"
+            >
+              <button
+                className="c12 c31"
+                onClick={[Function]}
+              >
+                <span>
+                  Ride 
+                  3 min
+                </span>
+                <span>
+                   / 
+                  2
+                   stops 
+                  <svg
+                    aria-hidden="true"
+                    className="c16"
+                    fill="currentColor"
+                    focusable="false"
+                    height={15}
+                    viewBox="0 0 320 512"
+                    width={15}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
+            <div />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c23 c17"
+    >
+      <button
+        className="c12 c18 c19"
+        onClick={[Function]}
+        title="View on map"
+      >
+        <svg
+          className="styled__MapIcon-sc-6hmr57-39"
+          height={15}
+          role="img"
+          viewBox="0 0 390 390"
+          width={15}
+        >
+          <path
+            d="M260.4 54.2L129.6 0 6.6 50.9v335.8l123-50.9L260.4 390l123-50.9V3.3l-123 50.9zM139.2 25l111.5 46.2v294L139.2 319V25zM25.9 63.9l94.1-39v294l-94.1 39v-294zm338.2 262.2l-94.1 39V71.2l94.1-39v293.9z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      15:49
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+          mode="WALK"
+        />
+        <div
+          className="c5"
+        >
+          <div
+            aria-label="Travel by WALK"
+            className="c6"
+            mode="WALK"
+          >
+            <svg
+              viewBox="0 0 390 390"
+              width="66%"
+            >
+              <title>
+                Travel by WALK
+              </title>
+              <path
+                d="m 207.60225,19.503527 c 16.02,0 29.07,13.05 29.07,29.07 0,16.020001 -13.05,29.07 -29.07,29.07 -16.02,0 -29.07,-13.049999 -29.07,-29.07 0,-16.02 13.05,-29.07 29.07,-29.07 z m 88.65,181.620003 c -4.05,5.94 -12.15,7.47 -18.09,3.42 0,0 -40.23,-27.45 -43.11,-29.43 -2.88,-1.98 -4.59,-6.12 -5.85,-8.82 -0.9,-1.8 -5.4,-10.62 -8.37,-16.47 l -3.6,15.3 -9.36,42.39 c 0,0 50.13,59.04 51.12,60.21 1.44,1.62 2.25,4.95 2.88,7.47 0.63,2.43 13.41,71.91 13.41,71.91 1.98,10.71 -5.13,21.06 -15.84,23.13 -10.71,1.98001 -21.06,-5.13 -23.13,-15.84 l -12.78,-68.67 -41.67,-45.54 c 0,0 -9.27,43.29 -9.45,44.19 -0.18,0.9 -0.63,2.25 -1.17,3.51 -0.54,1.17 -42.84,72.99 -42.84,72.99 -5.58,9.36 -17.73,12.51 -27.18,6.93 -9.359998,-5.58 -12.509998,-17.73 -6.929998,-27.18 l 37.619998,-63.27 30.24,-136.89 -20.34,16.2 -11.25,49.59 c 0,7.02 -7.92,11.61 -14.94,10.08 -7.02,-1.53 -11.16,-4.41 -9.54,-15.39 h 0.18 c 0,0 11.7,-55.08 12.6,-57.51 0.81,-2.43 2.07,-5.13 3.33,-6.12 8.46,-6.84 41.22,-33.66 50.85,-41.400003 11.07,-9.000001 15.93,-12.329999 25.38,-12.329999 7.11,0 14.85,2.159999 23.04,10.62 3.6,3.690001 6.21,9.720002 8.01,13.500002 1.8,3.69 24.39,48.33 24.39,48.33 l 38.97,27 c 5.94,4.05 7.47,12.15 3.42,18.09 z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c23 c8"
+    >
+      <div
+        className="styled__PlaceDetails-sc-6hmr57-40"
+      >
+        <div
+          className="c9"
+        >
+          <div
+            className="c10"
+          >
+            Providence Park MAX Station
+            <span
+              className="c24"
+            >
+              ID 
+              9757
+            </span>
+          </div>
+        </div>
+        <div
+          className="c11"
+        >
+          <button
+            className="c12 c13"
+            onClick={[Function]}
+          >
+            <div
+              className="c14"
+            >
+              Walk
+               
+              <span>
+                 
+                249 feet
+              </span>
+               to 1737 SW Morrison St, Portland, OR, USA 97205
+            </div>
+          </button>
+          <button
+            className="c12 c15"
+            onClick={[Function]}
+          >
+            1 min
+            <span>
+               
+              <svg
+                aria-hidden="true"
+                className="c16"
+                fill="currentColor"
+                focusable="false"
+                height={15}
+                viewBox="0 0 320 512"
+                width={15}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </button>
+          <div />
+        </div>
+      </div>
+    </div>
+    <div
+      className="c23 c17"
+    >
+      <button
+        className="c12 c18 c19"
+        onClick={[Function]}
+        title="View on map"
+      >
+        <svg
+          className="styled__MapIcon-sc-6hmr57-39"
+          height={15}
+          role="img"
+          viewBox="0 0 390 390"
+          width={15}
+        >
+          <path
+            d="M260.4 54.2L129.6 0 6.6 50.9v335.8l123-50.9L260.4 390l123-50.9V3.3l-123 50.9zM139.2 25l111.5 46.2v294L139.2 319V25zM25.9 63.9l94.1-39v294l-94.1 39v-294zm338.2 262.2l-94.1 39V71.2l94.1-39v293.9z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      15:50
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c5"
+        >
+          <div
+            className="c32"
+          >
+            <svg
+              className="c16 c33"
+              fill="currentColor"
+              focusable="false"
+              height={25}
+              role="img"
+              viewBox="0 0 384 512"
+              width={25}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>
+                To Location Icon
+              </title>
+              <path
+                d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c23 c8"
+    >
+      <div
+        className="styled__PlaceDetails-sc-6hmr57-40"
+      >
+        <div
+          className="c9"
+        >
+          <div
+            className="c10"
+          >
+            1737 SW Morrison St, Portland, OR, USA 97205
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c23 c17"
     >
       <button
         className="c12 c18 c19"
@@ -24487,7 +25322,7 @@ exports[`Storyshots ItineraryBody/otp-ui Park And Ride Itinerary 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    className="c16"
+                    className="c16 styled__DefaultAlertBodyIcon-sc-6hmr57-75"
                     fill="currentColor"
                     focusable="false"
                     height={18}
@@ -24521,7 +25356,7 @@ exports[`Storyshots ItineraryBody/otp-ui Park And Ride Itinerary 1`] = `
                 >
                   <svg
                     aria-hidden="true"
-                    className="c16"
+                    className="c16 styled__DefaultAlertBodyIcon-sc-6hmr57-75"
                     fill="currentColor"
                     focusable="false"
                     height={18}
@@ -25362,7 +26197,7 @@ exports[`Storyshots ItineraryBody/otp-ui Styled Walk Transit Walk Itinerary 1`] 
           >
             <svg
               aria-hidden="true"
-              className="c19"
+              className="c19 styled__DefaultAlertToggleIcon-sc-6hmr57-74"
               fill="currentColor"
               focusable="false"
               height={15}
@@ -29555,7 +30390,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary 1`] = `
           >
             <svg
               aria-hidden="true"
-              className="c16"
+              className="c16 styled__DefaultAlertToggleIcon-sc-6hmr57-74"
               fill="currentColor"
               focusable="false"
               height={15}
@@ -30427,7 +31262,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary With Agency
           >
             <svg
               aria-hidden="true"
-              className="c16"
+              className="c16 styled__DefaultAlertToggleIcon-sc-6hmr57-74"
               fill="currentColor"
               focusable="false"
               height={15}
@@ -31250,7 +32085,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary With Custom
           >
             <svg
               aria-hidden="true"
-              className="c16"
+              className="c16 styled__DefaultAlertToggleIcon-sc-6hmr57-74"
               fill="currentColor"
               focusable="false"
               height={15}
@@ -32075,7 +32910,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary With Custom
           >
             <svg
               aria-hidden="true"
-              className="c16"
+              className="c16 styled__DefaultAlertToggleIcon-sc-6hmr57-74"
               fill="currentColor"
               focusable="false"
               height={15}
@@ -32915,7 +33750,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary With Custom
           >
             <svg
               aria-hidden="true"
-              className="c16"
+              className="c16 styled__DefaultAlertToggleIcon-sc-6hmr57-74"
               fill="currentColor"
               focusable="false"
               height={15}
@@ -50482,7 +51317,7 @@ exports[`Storyshots VehicleRentalOverlay Rental Bicycles Using New Symbols Prop 
 />
 `;
 
-exports[`Storyshots VehicleRentalOverlay Rental Bicycles Visible On Mount 1`] = `
+exports[`Storyshots VehicleRentalOverlay Rental Bicycles Visibility Controlled By Knob 1`] = `
 <div
   className="map"
 />
