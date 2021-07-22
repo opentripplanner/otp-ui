@@ -7,15 +7,27 @@ import { CalendarAlt, Heartbeat, MoneyBillAlt } from "styled-icons/fa-solid";
 import * as Styled from "./styled";
 import TripDetail from "./trip-detail";
 
+/**
+ * Default rendering for the departure date/time.
+ */
+function renderDefaultDepart(itinerary, longDateFormat, timeOptions) {
+  const date = moment(itinerary.startTime);
+  return (
+    <>
+      Depart <b>{date.format(longDateFormat)}</b>
+      <> at </>
+      <b>{coreUtils.time.formatTime(itinerary.startTime, timeOptions)}</b>
+    </>
+  );
+}
+
 export default function TripDetails({
   className,
   itinerary,
   longDateFormat,
   messages,
-  routingType,
   timeOptions
 }) {
-  const date = moment(itinerary.startTime);
   messages = coreUtils.messages.mergeMessages(
     TripDetails.defaultProps.messages,
     messages
@@ -76,21 +88,8 @@ export default function TripDetails({
           icon={<CalendarAlt size={17} />}
           summary={
             <Styled.Timing>
-              <span>
-                {messages.depart} <b>{date.format(longDateFormat)}</b>
-              </span>
-              {routingType === "ITINERARY" && (
-                <span>
-                  {" "}
-                  {messages.at}{" "}
-                  <b>
-                    {coreUtils.time.formatTime(
-                      itinerary.startTime,
-                      timeOptions
-                    )}
-                  </b>
-                </span>
-              )}
+              {messages.depart ||
+                renderDefaultDepart(itinerary, longDateFormat, timeOptions)}
             </Styled.Timing>
           }
         />
@@ -143,23 +142,19 @@ TripDetails.propTypes = {
    * messages to use for l10n/i8n
    *
    * Note: messages with default null values included here for visibility.
-   * Overriding with a truthy string value will cause the expandable help
+   * Overriding with truthy content will cause the expandable help
    * message to appear in trip details.
    */
   messages: PropTypes.shape({
-    at: PropTypes.string,
     caloriesBurned: PropTypes.string,
-    // FIXME: Add templated string description.
-    caloriesBurnedDescription: PropTypes.string,
-    depart: PropTypes.string,
-    departDescription: PropTypes.string,
+    caloriesBurnedDescription: PropTypes.element,
+    depart: PropTypes.element,
+    departDescription: PropTypes.element,
     title: PropTypes.string,
     fare: PropTypes.string,
     transitFare: PropTypes.string,
-    transitFareDescription: PropTypes.string
+    transitFareDescription: PropTypes.element
   }),
-  /** whether the routing type is an itinerary or a profile result */
-  routingType: PropTypes.string,
   /** Contains the preferred format string for time display and a timezone offset */
   timeOptions: coreUtils.types.timeOptionsType
 };
@@ -168,17 +163,15 @@ TripDetails.defaultProps = {
   className: null,
   longDateFormat: null,
   messages: {
-    at: "at",
     caloriesBurned: "Calories Burned",
     // FIXME: Add templated string description.
     caloriesBurnedDescription: null,
-    depart: "Depart",
+    depart: null,
     departDescription: null,
     title: "Trip Details",
     fare: "Fare",
     transitFare: "Transit Fare",
     transitFareDescription: null
   },
-  routingType: "ITINERARY",
   timeOptions: null
 };

@@ -26,15 +26,15 @@ const StyledTripDetails = styled(TripDetails)`
 
 const customMessages = {
   title: "Details about this Trip",
-  transitFare: "Transit Fare",
+  transitFare: "You will pay for transit",
   transitFareDescription:
     "Note: actual fare may be lower if you have a transit pass or something like that."
 };
 const longDateFormat = "MMMM D, YYYY";
 
 export default {
-  title: "TripDetails",
-  components: TripDetails
+  components: TripDetails,
+  title: "TripDetails"
 };
 
 export const WalkOnlyItinerary = () => (
@@ -52,13 +52,29 @@ export const WalkTransitWalkItinerary = () => (
   />
 );
 
-export const WalkTransitWalkItineraryAndCustomMessages = () => (
-  <TripDetails
-    itinerary={walkTransitWalkItinerary}
-    longDateFormat={longDateFormat}
-    messages={customMessages}
-  />
-);
+export const WalkTransitWalkItineraryAndCustomMessages = () => {
+  const itinDate = new Date(walkTransitWalkItinerary.startTime);
+  return (
+    <TripDetails
+      itinerary={walkTransitWalkItinerary}
+      longDateFormat={longDateFormat}
+      messages={{
+        ...customMessages,
+        // The depart message can be constructed dynamically using any markup,
+        // including formatting markup using a string localization library.
+        depart: (
+          <>
+            Trip <b>departs</b>
+            <> at </>
+            <u>{itinDate.toLocaleTimeString()}</u>
+            <> on </>
+            {itinDate.toISOString()}
+          </>
+        )
+      }}
+    />
+  );
+};
 
 export const StyledWalkTransitWalkItinerary = () => (
   <StyledTripDetails
@@ -127,5 +143,6 @@ export const TncTransitItinerary = () => (
   <TripDetails
     itinerary={tncTransitTncItinerary}
     longDateFormat={longDateFormat}
+    messages={customMessages}
   />
 );
