@@ -1,3 +1,4 @@
+import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 import styled from "styled-components";
 
@@ -24,12 +25,56 @@ const StyledTripDetails = styled(TripDetails)`
   }
 `;
 
-const customMessages = {
-  title: "Details about this Trip",
-  transitFare: "You will pay for transit",
-  transitFareDescription:
-    "Note: actual fare may be lower if you have a transit pass or something like that."
-};
+function getCustomMessages(itinerary) {
+  const itinDate = new Date(itinerary.startTime);
+  const {
+    centsToString,
+    maxTNCFare,
+    minTNCFare,
+    transitFare
+  } = coreUtils.itinerary.calculateFares(itinerary);
+  const companies = itinerary.legs
+    .filter(leg => leg.tncData)
+    .map(leg => leg.tncData.company);
+
+  return {
+    depart: (
+      <>
+        <b>You depart at</b> <u>{itinDate.toLocaleTimeString()}</u>
+        {" on "}
+        {itinDate.toISOString()}
+      </>
+    ),
+    departDescription: (
+      <>
+        The depart message can be constructed dynamically using any markup,
+        including formatting markup from a string localization library.
+      </>
+    ),
+    title: "Details about this Trip",
+    tncFare: (
+      <>
+        <u>
+          ${minTNCFare}-${maxTNCFare}
+        </u>{" "}
+        for {companies[0]}
+      </>
+    ),
+    transitFare: (
+      <>
+        <u>{centsToString(transitFare)}</u> transit ticket
+      </>
+    ),
+    transitFareDescription: (
+      <>
+        The transit and/or TNC fare message can be constructed dynamically using
+        any markup, including formatting markup from a string localization
+        library.
+      </>
+    )
+  };
+}
+
 const longDateFormat = "MMMM D, YYYY";
 
 export default {
@@ -53,25 +98,11 @@ export const WalkTransitWalkItinerary = () => (
 );
 
 export const WalkTransitWalkItineraryAndCustomMessages = () => {
-  const itinDate = new Date(walkTransitWalkItinerary.startTime);
   return (
     <TripDetails
       itinerary={walkTransitWalkItinerary}
       longDateFormat={longDateFormat}
-      messages={{
-        ...customMessages,
-        // The depart message can be constructed dynamically using any markup,
-        // including formatting markup using a string localization library.
-        depart: (
-          <>
-            Trip <b>departs</b>
-            <> at </>
-            <u>{itinDate.toLocaleTimeString()}</u>
-            <> on </>
-            {itinDate.toISOString()}
-          </>
-        )
-      }}
+      messages={getCustomMessages(walkTransitWalkItinerary)}
     />
   );
 };
@@ -143,6 +174,13 @@ export const TncTransitItinerary = () => (
   <TripDetails
     itinerary={tncTransitTncItinerary}
     longDateFormat={longDateFormat}
-    messages={customMessages}
+  />
+);
+
+export const TncTransitItineraryWithCustomMessages = () => (
+  <TripDetails
+    itinerary={tncTransitTncItinerary}
+    longDateFormat={longDateFormat}
+    messages={getCustomMessages(tncTransitTncItinerary)}
   />
 );

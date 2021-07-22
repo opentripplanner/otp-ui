@@ -8,7 +8,8 @@ import * as Styled from "./styled";
 import TripDetail from "./trip-detail";
 
 /**
- * Default rendering for the departure date/time.
+ * Default rendering for the departure date/time line
+ * if no corresponding message is provided.
  */
 function renderDefaultDepart(itinerary, longDateFormat, timeOptions) {
   const date = moment(itinerary.startTime);
@@ -17,6 +18,44 @@ function renderDefaultDepart(itinerary, longDateFormat, timeOptions) {
       Depart <b>{date.format(longDateFormat)}</b>
       <> at </>
       <b>{coreUtils.time.formatTime(itinerary.startTime, timeOptions)}</b>
+    </>
+  );
+}
+
+/**
+ * Default rendering for the transit fare line
+ * if no corresponding message is provided.
+ */
+function renderDefaultTransitFare(fareResult) {
+  const { centsToString, transitFare } = fareResult;
+  return (
+    <>
+      Transit Fare: <b>{centsToString(transitFare)}</b>
+    </>
+  );
+}
+
+/**
+ * Default rendering for the TNC fare line
+ * if no corresponding message is provided.
+ */
+function renderDefaultTNCFare(itinerary, fareResult) {
+  const { dollarsToString, maxTNCFare, minTNCFare } = fareResult;
+  let companies;
+  itinerary.legs.forEach(leg => {
+    if (leg.tncData) {
+      companies = leg.tncData.company;
+    }
+  });
+  return (
+    <>
+      <Styled.TNCFareCompanies>
+        {companies.toLowerCase()}
+      </Styled.TNCFareCompanies>
+      {" fare: "}
+      <b>
+        {dollarsToString(minTNCFare)} - {dollarsToString(maxTNCFare)}
+      </b>
     </>
   );
 }
@@ -34,38 +73,21 @@ export default function TripDetails({
   );
 
   // process the transit fare
-  const {
-    centsToString,
-    dollarsToString,
-    maxTNCFare,
-    minTNCFare,
-    transitFare
-  } = coreUtils.itinerary.calculateFares(itinerary);
-  let companies;
-  itinerary.legs.forEach(leg => {
-    if (leg.tncData) {
-      companies = leg.tncData.company;
-    }
-  });
+  const fareResult = coreUtils.itinerary.calculateFares(itinerary);
+  const { minTNCFare, transitFare } = fareResult;
   let fare;
   if (transitFare || minTNCFare) {
     fare = (
       <Styled.Fare>
         {transitFare && (
           <Styled.TransitFare>
-            {messages.transitFare}: <b>{centsToString(transitFare)}</b>
+            {messages.transitFare || renderDefaultTransitFare(fareResult)}
           </Styled.TransitFare>
         )}
         {minTNCFare !== 0 && (
           <Styled.TNCFare>
             <br />
-            <Styled.TNCFareCompanies>
-              {companies.toLowerCase()}
-            </Styled.TNCFareCompanies>{" "}
-            {messages.fare}:{" "}
-            <b>
-              {dollarsToString(minTNCFare)} - {dollarsToString(maxTNCFare)}
-            </b>
+            {messages.tncFare || renderDefaultTNCFare(itinerary, fareResult)}
           </Styled.TNCFare>
         )}
       </Styled.Fare>
@@ -151,8 +173,8 @@ TripDetails.propTypes = {
     depart: PropTypes.element,
     departDescription: PropTypes.element,
     title: PropTypes.string,
-    fare: PropTypes.string,
-    transitFare: PropTypes.string,
+    tncFare: PropTypes.element,
+    transitFare: PropTypes.element,
     transitFareDescription: PropTypes.element
   }),
   /** Contains the preferred format string for time display and a timezone offset */
@@ -169,8 +191,8 @@ TripDetails.defaultProps = {
     depart: null,
     departDescription: null,
     title: "Trip Details",
-    fare: "Fare",
-    transitFare: "Transit Fare",
+    tncFare: null,
+    transitFare: null,
     transitFareDescription: null
   },
   timeOptions: null
