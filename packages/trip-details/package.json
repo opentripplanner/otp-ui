@@ -14,7 +14,6 @@
     "@opentripplanner/humanize-distance": "^1.1.0",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
-    "react-intl": "^5.20.4",
     "styled-icons": "^9.1.0",
     "velocity-react": "^1.4.3"
   },

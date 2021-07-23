@@ -1,6 +1,5 @@
 import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
-import { IntlProvider } from "react-intl";
 import styled from "styled-components";
 
 import TripDetails from ".";
@@ -90,34 +89,6 @@ function getCustomMessages(itinerary) {
   };
 }
 
-const localizedMessages = {
-  caloriesBurnedId: "<b>{caloriesBurned, number, ::.} Calories</b> burned",
-  caloriesBurnedDescriptionId:
-    "Walking <b>{walkDuration}</b> minute(s) and biking <b>{bikeDuration}</b> minute(s) will consume {caloriesBurned} Calories.",
-  departId:
-    "<b>Leave</b> at <b>{departDate, time, ::hh:mm}</b> on <b>{departDate, date, ::yyyyMMMMdd}</b>",
-  departDescriptionId:
-    "The depart message can be rendered using the <b>departDate</b> param using a react-intl message id.",
-  titleId: "Localized Trip Details",
-  tncFareId:
-    "Pay <b>{minTNCFare, number, ::.00 currency/EUR}-{maxTNCFare, number, ::.00 currency/EUR}</b> to {companies}",
-  transitFareId:
-    "<b>{transitFare, number, ::.00 currency/EUR}</b> transit ticket",
-  transitFareDescriptionId:
-    "The transit and/or TNC fare message can be rendered using a react-intl message id (no params accepted)."
-};
-
-const localizedMessageIds = {
-  caloriesBurned: "caloriesBurnedId",
-  caloriesBurnedDescription: "caloriesBurnedDescriptionId",
-  depart: "departId",
-  departDescription: "departDescriptionId",
-  title: "titleId",
-  tncFare: "tncFareId",
-  transitFare: "transitFareId",
-  transitFareDescription: "transitFareDescriptionId"
-};
-
 const longDateFormat = "MMMM D, YYYY";
 
 export default {
@@ -147,18 +118,6 @@ export const WalkTransitWalkItineraryAndCustomMessages = () => {
       longDateFormat={longDateFormat}
       messages={getCustomMessages(walkTransitWalkItinerary)}
     />
-  );
-};
-
-export const WalkTransitWalkItineraryLocalizedAndCustomMessages = () => {
-  return (
-    <IntlProvider messages={localizedMessages}>
-      <TripDetails
-        itinerary={walkTransitWalkItinerary}
-        localized
-        messages={localizedMessageIds}
-      />
-    </IntlProvider>
   );
 };
 
@@ -238,14 +197,4 @@ export const TncTransitItineraryWithCustomMessages = () => (
     longDateFormat={longDateFormat}
     messages={getCustomMessages(tncTransitTncItinerary)}
   />
-);
-
-export const TncTransitItineraryLocalizedWithCustomMessages = () => (
-  <IntlProvider messages={localizedMessages}>
-    <TripDetails
-      itinerary={tncTransitTncItinerary}
-      localized
-      messages={localizedMessageIds}
-    />
-  </IntlProvider>
 );
