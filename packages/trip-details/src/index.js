@@ -2,6 +2,7 @@ import coreUtils from "@opentripplanner/core-utils";
 import moment from "moment";
 import PropTypes from "prop-types";
 import React from "react";
+import { FormattedMessage } from "react-intl";
 import { CalendarAlt, Heartbeat, MoneyBillAlt } from "styled-icons/fa-solid";
 
 import * as Styled from "./styled";
@@ -95,9 +96,46 @@ function renderDefaultCaloriesBurnedDescription(walkDuration, bikeDuration) {
   );
 }
 
+/**
+ * Format text bold (used with FormattedMessage).
+ */
+// TODO: Find a better place for this component.
+function BoldText(chunks) {
+  return <b>{chunks}</b>;
+}
+
+/**
+ * Renders a message depending on parameters.
+ */
+// TODO: Find a better place for this component.
+function Message({ defaultContent, localized, messageId, values }) {
+  return (
+    (localized && (
+      <FormattedMessage id={messageId} values={{ b: BoldText, ...values }} />
+    )) ||
+    messageId ||
+    defaultContent
+  );
+}
+
+Message.propTypes = {
+  defaultContent: PropTypes.elementType,
+  localized: PropTypes.bool,
+  messageId: PropTypes.string,
+  values: PropTypes.shape({})
+};
+
+Message.defaultProps = {
+  defaultContent: null,
+  localized: false,
+  messageId: null,
+  values: null
+};
+
 export default function TripDetails({
   className,
   itinerary,
+  localized,
   longDateFormat,
   messages,
   timeOptions
@@ -107,22 +145,40 @@ export default function TripDetails({
     messages
   );
 
+  // TODO: refactor
+  let companies;
+  itinerary.legs.forEach(leg => {
+    if (leg.tncData) {
+      companies = leg.tncData.company;
+    }
+  });
+
   // process the transit fare
   const fareResult = coreUtils.itinerary.calculateFares(itinerary);
-  const { minTNCFare, transitFare } = fareResult;
+  const { maxTNCFare, minTNCFare, transitFare } = fareResult;
   let fare;
   if (transitFare || minTNCFare) {
     fare = (
       <Styled.Fare>
         {transitFare && (
           <Styled.TransitFare>
-            {messages.transitFare || renderDefaultTransitFare(fareResult)}
+            <Message
+              defaultContent={renderDefaultTransitFare(fareResult)}
+              localized={localized}
+              messageId={messages.transitFare}
+              values={{ transitFare }}
+            />
           </Styled.TransitFare>
         )}
         {minTNCFare !== 0 && (
           <Styled.TNCFare>
             <br />
-            {messages.tncFare || renderDefaultTNCFare(itinerary, fareResult)}
+            <Message
+              defaultContent={renderDefaultTNCFare(itinerary, fareResult)}
+              localized={localized}
+              messageId={messages.tncFare}
+              values={{ companies, maxTNCFare, minTNCFare }}
+            />
           </Styled.TNCFare>
         )}
       </Styled.Fare>
@@ -138,21 +194,45 @@ export default function TripDetails({
 
   return (
     <Styled.TripDetails className={className}>
-      <Styled.TripDetailsHeader>{messages.title}</Styled.TripDetailsHeader>
+      <Styled.TripDetailsHeader>
+        <Message localized={localized} messageId={messages.title} />
+      </Styled.TripDetailsHeader>
       <Styled.TripDetailsBody>
         <TripDetail
-          description={messages.departDescription}
+          description={
+            messages.departDescription && (
+              <Message
+                localized={localized}
+                messageId={messages.departDescription}
+              />
+            )
+          }
           icon={<CalendarAlt size={17} />}
           summary={
             <Styled.Timing>
-              {messages.depart ||
-                renderDefaultDepart(itinerary, longDateFormat, timeOptions)}
+              <Message
+                defaultContent={renderDefaultDepart(
+                  itinerary,
+                  longDateFormat,
+                  timeOptions
+                )}
+                localized={localized}
+                messageId={messages.depart}
+                values={{ departDate: moment(itinerary.startTime) }}
+              />
             </Styled.Timing>
           }
         />
         {fare && (
           <TripDetail
-            description={messages.transitFareDescription}
+            description={
+              messages.transitFareDescription && (
+                <Message
+                  localized={localized}
+                  messageId={messages.transitFareDescription}
+                />
+              )
+            }
             icon={<MoneyBillAlt size={17} />}
             summary={fare}
           />
@@ -162,18 +242,28 @@ export default function TripDetails({
             icon={<Heartbeat size={17} />}
             summary={
               <Styled.CaloriesSummary>
-                {messages.caloriesBurned ||
-                  renderDefaultCaloriesBurned(caloriesBurned)}
+                <Message
+                  defaultContent={renderDefaultCaloriesBurned(caloriesBurned)}
+                  localized={localized}
+                  messageId={messages.caloriesBurned}
+                  values={{ caloriesBurned }}
+                />
               </Styled.CaloriesSummary>
             }
             description={
-              <Styled.CaloriesDescription>
-                {messages.caloriesBurnedDescription ||
-                  renderDefaultCaloriesBurnedDescription(
-                    walkDuration,
-                    bikeDuration
-                  )}
-              </Styled.CaloriesDescription>
+              messages.caloriesBurnedDescription && (
+                <Styled.CaloriesDescription>
+                  <Message
+                    defaultContent={renderDefaultCaloriesBurnedDescription(
+                      walkDuration,
+                      bikeDuration
+                    )}
+                    localized={localized}
+                    messageId={messages.caloriesBurnedDescription}
+                    values={{ bikeDuration, caloriesBurned, walkDuration }}
+                  />
+                </Styled.CaloriesDescription>
+              )
             }
           />
         )}
@@ -185,9 +275,11 @@ export default function TripDetails({
 TripDetails.propTypes = {
   /** Used for additional styling with styled components for example. */
   className: PropTypes.string,
-  /** Itinerary that the user has selected to view, contains multiple legs */
+  /** Itinerary that the user has selected to view, contains multiple legs. */
   itinerary: coreUtils.types.itineraryType.isRequired,
-  /** the desired format to use for a long date */
+  /** Determines whether messages are localized message ids or React content. */
+  localized: PropTypes.bool,
+  /** the desired format to use for a long date. */
   longDateFormat: PropTypes.string,
   /**
    * messages to use for l10n/i8n
@@ -197,7 +289,7 @@ TripDetails.propTypes = {
    * message to appear in trip details.
    */
   messages: PropTypes.shape({
-    caloriesBurned: PropTypes.string,
+    caloriesBurned: PropTypes.element,
     caloriesBurnedDescription: PropTypes.element,
     depart: PropTypes.element,
     departDescription: PropTypes.element,
@@ -206,16 +298,21 @@ TripDetails.propTypes = {
     transitFare: PropTypes.element,
     transitFareDescription: PropTypes.element
   }),
-  /** Contains the preferred format string for time display and a timezone offset */
+  /** Contains the preferred format string for time display and a timezone offset. */
   timeOptions: coreUtils.types.timeOptionsType
 };
 
 TripDetails.defaultProps = {
   className: null,
+  localized: false,
   longDateFormat: null,
+  /**
+   * If localized is set to true, messages are message ids
+   * from an <IntlProvider> component provided by the containing application,
+   * otherwise messages are React elements.
+   */
   messages: {
-    caloriesBurned: "Calories Burned",
-    // FIXME: Add templated string description.
+    caloriesBurned: null,
     caloriesBurnedDescription: null,
     depart: null,
     departDescription: null,
