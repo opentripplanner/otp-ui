@@ -1,99 +1,17 @@
 import coreUtils from "@opentripplanner/core-utils";
-import moment from "moment";
 import PropTypes from "prop-types";
 import React from "react";
 import { CalendarAlt, Heartbeat, MoneyBillAlt } from "styled-icons/fa-solid";
 
+import {
+  DefaultDepart,
+  DefaultTransitFare,
+  DefaultTNCFare,
+  DefaultCaloriesBurned,
+  DefaultCaloriesBurnedDescription
+} from "./defaults";
 import * as Styled from "./styled";
 import TripDetail from "./trip-detail";
-
-/**
- * Default rendering for the departure date/time line
- * if no other corresponding message is provided.
- */
-function renderDefaultDepart(itinerary, longDateFormat, timeOptions) {
-  const date = moment(itinerary.startTime);
-  return (
-    <>
-      Depart <b>{date.format(longDateFormat)}</b>
-      <> at </>
-      <b>{coreUtils.time.formatTime(itinerary.startTime, timeOptions)}</b>
-    </>
-  );
-}
-
-/**
- * Default rendering for the transit fare line
- * if no other corresponding message is provided.
- */
-function renderDefaultTransitFare(fareResult) {
-  const { centsToString, transitFare } = fareResult;
-  return (
-    <>
-      Transit Fare: <b>{centsToString(transitFare)}</b>
-    </>
-  );
-}
-
-/**
- * Default rendering for the TNC fare line
- * if no other corresponding message is provided.
- */
-function renderDefaultTNCFare(itinerary, fareResult) {
-  const { dollarsToString, maxTNCFare, minTNCFare } = fareResult;
-  let companies;
-  itinerary.legs.forEach(leg => {
-    if (leg.tncData) {
-      companies = leg.tncData.company;
-    }
-  });
-  return (
-    <>
-      <Styled.TNCFareCompanies>
-        {companies.toLowerCase()}
-      </Styled.TNCFareCompanies>
-      {" fare: "}
-      <b>
-        {dollarsToString(minTNCFare)} - {dollarsToString(maxTNCFare)}
-      </b>
-    </>
-  );
-}
-
-/**
- * Default rendering for the calories burned line
- * if no other corresponding message is provided.
- */
-function renderDefaultCaloriesBurned(caloriesBurned) {
-  return (
-    <>
-      Calories Burned: <b>{Math.round(caloriesBurned)}</b>
-    </>
-  );
-}
-
-/**
- * Default rendering for the calories description
- * if no other corresponding message is provided.
- */
-function renderDefaultCaloriesBurnedDescription(walkDuration, bikeDuration) {
-  return (
-    <>
-      Calories burned is based on{" "}
-      <b>{Math.round(walkDuration / 60)} minute(s)</b> spent walking and{" "}
-      <b>{Math.round(bikeDuration / 60)} minute(s)</b> spent biking during this
-      trip. Adapted from{" "}
-      <a
-        href="https://health.gov/dietaryguidelines/dga2005/document/html/chapter3.htm#table4"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        Dietary Guidelines for Americans 2005, page 16, Table 4
-      </a>
-      .
-    </>
-  );
-}
 
 export default function TripDetails({
   className,
@@ -116,13 +34,17 @@ export default function TripDetails({
       <Styled.Fare>
         {transitFare && (
           <Styled.TransitFare>
-            {messages.transitFare || renderDefaultTransitFare(fareResult)}
+            {messages.transitFare || (
+              <DefaultTransitFare fareResult={fareResult} />
+            )}
           </Styled.TransitFare>
         )}
         {minTNCFare !== 0 && (
           <Styled.TNCFare>
             <br />
-            {messages.tncFare || renderDefaultTNCFare(itinerary, fareResult)}
+            {messages.tncFare || (
+              <DefaultTNCFare fareResult={fareResult} itinerary={itinerary} />
+            )}
           </Styled.TNCFare>
         )}
       </Styled.Fare>
@@ -145,8 +67,13 @@ export default function TripDetails({
           icon={<CalendarAlt size={17} />}
           summary={
             <Styled.Timing>
-              {messages.depart ||
-                renderDefaultDepart(itinerary, longDateFormat, timeOptions)}
+              {messages.depart || (
+                <DefaultDepart
+                  itinerary={itinerary}
+                  longDateFormat={longDateFormat}
+                  timeOptions={timeOptions}
+                />
+              )}
             </Styled.Timing>
           }
         />
@@ -162,17 +89,19 @@ export default function TripDetails({
             icon={<Heartbeat size={17} />}
             summary={
               <Styled.CaloriesSummary>
-                {messages.caloriesBurned ||
-                  renderDefaultCaloriesBurned(caloriesBurned)}
+                {messages.caloriesBurned || (
+                  <DefaultCaloriesBurned caloriesBurned={caloriesBurned} />
+                )}
               </Styled.CaloriesSummary>
             }
             description={
               <Styled.CaloriesDescription>
-                {messages.caloriesBurnedDescription ||
-                  renderDefaultCaloriesBurnedDescription(
-                    walkDuration,
-                    bikeDuration
-                  )}
+                {messages.caloriesBurnedDescription || (
+                  <DefaultCaloriesBurnedDescription
+                    bikeDuration={bikeDuration}
+                    walkDuration={walkDuration}
+                  />
+                )}
               </Styled.CaloriesDescription>
             }
           />
