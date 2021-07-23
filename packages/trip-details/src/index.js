@@ -2,135 +2,18 @@ import coreUtils from "@opentripplanner/core-utils";
 import moment from "moment";
 import PropTypes from "prop-types";
 import React from "react";
-import { FormattedMessage } from "react-intl";
 import { CalendarAlt, Heartbeat, MoneyBillAlt } from "styled-icons/fa-solid";
 
+import {
+  DefaultDepart,
+  DefaultTransitFare,
+  DefaultTNCFare,
+  DefaultCaloriesBurned,
+  DefaultCaloriesBurnedDescription
+} from "./defaults";
+import Message from "./message";
 import * as Styled from "./styled";
 import TripDetail from "./trip-detail";
-
-/**
- * Default rendering for the departure date/time line
- * if no other corresponding message is provided.
- */
-function renderDefaultDepart(itinerary, longDateFormat, timeOptions) {
-  const date = moment(itinerary.startTime);
-  return (
-    <>
-      Depart <b>{date.format(longDateFormat)}</b>
-      <> at </>
-      <b>{coreUtils.time.formatTime(itinerary.startTime, timeOptions)}</b>
-    </>
-  );
-}
-
-/**
- * Default rendering for the transit fare line
- * if no other corresponding message is provided.
- */
-function renderDefaultTransitFare(fareResult) {
-  const { centsToString, transitFare } = fareResult;
-  return (
-    <>
-      Transit Fare: <b>{centsToString(transitFare)}</b>
-    </>
-  );
-}
-
-/**
- * Default rendering for the TNC fare line
- * if no other corresponding message is provided.
- */
-function renderDefaultTNCFare(itinerary, fareResult) {
-  const { dollarsToString, maxTNCFare, minTNCFare } = fareResult;
-  let companies;
-  itinerary.legs.forEach(leg => {
-    if (leg.tncData) {
-      companies = leg.tncData.company;
-    }
-  });
-  return (
-    <>
-      <Styled.TNCFareCompanies>
-        {companies.toLowerCase()}
-      </Styled.TNCFareCompanies>
-      {" fare: "}
-      <b>
-        {dollarsToString(minTNCFare)} - {dollarsToString(maxTNCFare)}
-      </b>
-    </>
-  );
-}
-
-/**
- * Default rendering for the calories burned line
- * if no other corresponding message is provided.
- */
-function renderDefaultCaloriesBurned(caloriesBurned) {
-  return (
-    <>
-      Calories Burned: <b>{Math.round(caloriesBurned)}</b>
-    </>
-  );
-}
-
-/**
- * Default rendering for the calories description
- * if no other corresponding message is provided.
- */
-function renderDefaultCaloriesBurnedDescription(walkDuration, bikeDuration) {
-  return (
-    <>
-      Calories burned is based on{" "}
-      <b>{Math.round(walkDuration / 60)} minute(s)</b> spent walking and{" "}
-      <b>{Math.round(bikeDuration / 60)} minute(s)</b> spent biking during this
-      trip. Adapted from{" "}
-      <a
-        href="https://health.gov/dietaryguidelines/dga2005/document/html/chapter3.htm#table4"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        Dietary Guidelines for Americans 2005, page 16, Table 4
-      </a>
-      .
-    </>
-  );
-}
-
-/**
- * Format text bold (used with FormattedMessage).
- */
-// TODO: Find a better place for this component.
-function BoldText(chunks) {
-  return <b>{chunks}</b>;
-}
-
-/**
- * Renders a message depending on parameters.
- */
-// TODO: Find a better place for this component.
-function Message({ defaultContent, localized, messageId, values }) {
-  return (
-    (localized && (
-      <FormattedMessage id={messageId} values={{ b: BoldText, ...values }} />
-    )) ||
-    messageId ||
-    defaultContent
-  );
-}
-
-Message.propTypes = {
-  defaultContent: PropTypes.elementType,
-  localized: PropTypes.bool,
-  messageId: PropTypes.string,
-  values: PropTypes.shape({})
-};
-
-Message.defaultProps = {
-  defaultContent: null,
-  localized: false,
-  messageId: null,
-  values: null
-};
 
 export default function TripDetails({
   className,
@@ -163,7 +46,7 @@ export default function TripDetails({
         {transitFare && (
           <Styled.TransitFare>
             <Message
-              defaultContent={renderDefaultTransitFare(fareResult)}
+              defaultContent={<DefaultTransitFare fareResult={fareResult} />}
               localized={localized}
               messageId={messages.transitFare}
               values={{ transitFare }}
@@ -174,7 +57,9 @@ export default function TripDetails({
           <Styled.TNCFare>
             <br />
             <Message
-              defaultContent={renderDefaultTNCFare(itinerary, fareResult)}
+              defaultContent={
+                <DefaultTNCFare fareResult={fareResult} itinerary={itinerary} />
+              }
               localized={localized}
               messageId={messages.tncFare}
               values={{ companies, maxTNCFare, minTNCFare }}
@@ -211,11 +96,13 @@ export default function TripDetails({
           summary={
             <Styled.Timing>
               <Message
-                defaultContent={renderDefaultDepart(
-                  itinerary,
-                  longDateFormat,
-                  timeOptions
-                )}
+                defaultContent={
+                  <DefaultDepart
+                    itinerary={itinerary}
+                    longDateFormat={longDateFormat}
+                    timeOptions={timeOptions}
+                  />
+                }
                 localized={localized}
                 messageId={messages.depart}
                 values={{ departDate: moment(itinerary.startTime) }}
@@ -243,7 +130,9 @@ export default function TripDetails({
             summary={
               <Styled.CaloriesSummary>
                 <Message
-                  defaultContent={renderDefaultCaloriesBurned(caloriesBurned)}
+                  defaultContent={
+                    <DefaultCaloriesBurned caloriesBurned={caloriesBurned} />
+                  }
                   localized={localized}
                   messageId={messages.caloriesBurned}
                   values={{ caloriesBurned }}
@@ -254,10 +143,12 @@ export default function TripDetails({
               messages.caloriesBurnedDescription && (
                 <Styled.CaloriesDescription>
                   <Message
-                    defaultContent={renderDefaultCaloriesBurnedDescription(
-                      walkDuration,
-                      bikeDuration
-                    )}
+                    defaultContent={
+                      <DefaultCaloriesBurnedDescription
+                        bikeDuration={bikeDuration}
+                        walkDuration={walkDuration}
+                      />
+                    }
                     localized={localized}
                     messageId={messages.caloriesBurnedDescription}
                     values={{ bikeDuration, caloriesBurned, walkDuration }}
