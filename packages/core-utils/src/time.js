@@ -1,8 +1,9 @@
-import moment from "moment-timezone";
+import { formatDistance, startOfDay, getSeconds, format } from "date-fns";
+import { utcToZonedTime } from "date-fns-tz";
 
 // special constants for making sure the following date format is always sent to
 // OTP regardless of whatever the user has configured as the display format
-export const OTP_API_DATE_FORMAT = "YYYY-MM-DD";
+export const OTP_API_DATE_FORMAT = "yyyy-MM-dd";
 export const OTP_API_TIME_FORMAT = "HH:mm";
 
 /**
@@ -34,11 +35,9 @@ export function getLongDateFormat(config) {
  * @returns {string} formatted text representation
  */
 export function formatDuration(seconds) {
-  const dur = moment.duration(seconds, "seconds");
-  let text = "";
-  if (dur.hours() > 0) text += `${dur.hours()} hr, `;
-  text += `${dur.minutes()} min`;
-  return text;
+  return formatDistance(0, 1000 * seconds, {
+    includeSeconds: false
+  });
 }
 
 /**
@@ -48,12 +47,9 @@ export function formatDuration(seconds) {
  * @returns {string} formatted text representation
  */
 export function formatDurationWithSeconds(seconds) {
-  const dur = moment.duration(seconds, "seconds");
-  let text = "";
-  if (dur.hours() > 0) text += `${dur.hours()} hr, `;
-  if (dur.minutes() > 0) text += `${dur.minutes()} min, `;
-  text += `${dur.seconds()} sec`;
-  return text;
+  return formatDistance(0, 1000 * seconds, {
+    includeSeconds: true
+  });
 }
 
 /**
@@ -63,7 +59,8 @@ export function formatDurationWithSeconds(seconds) {
  * @returns {string} formatted text representation
  */
 export function formatTime(ms, options) {
-  return moment(ms + (options && options.offset ? options.offset : 0)).format(
+  return format(
+    ms + (options && options.offset ? options.offset : 0),
     options && options.format ? options.format : OTP_API_TIME_FORMAT
   );
 }
@@ -75,10 +72,7 @@ export function formatTime(ms, options) {
  * @return {string}                   formatted text representation
  */
 export function formatSecondsAfterMidnight(seconds, timeFormat) {
-  return moment()
-    .startOf("day")
-    .seconds(seconds)
-    .format(timeFormat);
+  return format(getSeconds(startOfDay(seconds)), timeFormat);
 }
 
 /**
@@ -90,14 +84,7 @@ export function getUserTimezone() {
   if (process.env.NODE_ENV === "test") return process.env.TZ;
   // FIXME There is an issue with tz.guess being undefined that has not yet been
   // resolved. https://github.com/opentripplanner/otp-ui/issues/152
-  if (!moment.tz || typeof moment.tz.guess !== "function") {
-    // eslint-disable-next-line no-console
-    console.warn(
-      "Error guessing user's timezone (moment.tz or moment.tz.guess not defined). Defaulting to America/New_York."
-    );
-    return "America/New_York";
-  }
-  return moment.tz.guess();
+  return Intl.DateTimeFormat().resolvedOptions().timeZone;
 }
 
 /**
@@ -105,9 +92,10 @@ export function getUserTimezone() {
  * The conversion to the user's timezone is needed for testing purposes.
  */
 export function getCurrentTime(timezone = getUserTimezone()) {
-  return moment()
-    .tz(timezone)
-    .format(OTP_API_TIME_FORMAT);
+  return format(
+    utcToZonedTime(new Date(Date.now()), timezone),
+    OTP_API_TIME_FORMAT
+  );
 }
 
 /**
@@ -115,7 +103,8 @@ export function getCurrentTime(timezone = getUserTimezone()) {
  * The conversion to the user's timezone is needed for testing purposes.
  */
 export function getCurrentDate(timezone = getUserTimezone()) {
-  return moment()
-    .tz(timezone)
-    .format(OTP_API_DATE_FORMAT);
+  return format(
+    utcToZonedTime(new Date(Date.now()), timezone),
+    OTP_API_DATE_FORMAT
+  );
 }
