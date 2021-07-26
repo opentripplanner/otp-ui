@@ -82,8 +82,6 @@ export function formatSecondsAfterMidnight(seconds, timeFormat) {
  */
 export function getUserTimezone() {
   if (process.env.NODE_ENV === "test") return process.env.TZ;
-  // FIXME There is an issue with tz.guess being undefined that has not yet been
-  // resolved. https://github.com/opentripplanner/otp-ui/issues/152
   return Intl.DateTimeFormat().resolvedOptions().timeZone;
 }
 
