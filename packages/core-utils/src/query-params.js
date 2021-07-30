@@ -1,3 +1,5 @@
+import cloneDeep from "lodash.clonedeep";
+
 import {
   isTransit,
   isAccessMode,
@@ -851,3 +853,33 @@ queryParams.forEach(param => {
 });
 
 export default queryParams;
+
+/**
+ * You can customize the queryParams labels and options, and labels and values for each option.
+ * @param customizations The optional customizations to apply: an object with:
+ *                       - fields as field/value map for query params to customize,
+ *                       - options named as '<field>.options', containing an array of { option label/absolute value }.
+ * @returns A copy of the default queryParams that has the customizations applied.
+ *          If no customizations parameter is provided, returns the queryParams object itself.
+ */
+export function getCustomQueryParams(customizations) {
+  if (!customizations) return queryParams;
+
+  const clonedParams = cloneDeep(queryParams);
+  Object.keys(customizations).forEach(k => {
+    // Split any ".options" suffix to get the param name.
+    const nameParts = k.split(".options");
+    const paramName = nameParts[0];
+    const hasOptionsSuffix = nameParts.length === 2;
+    const clonedParam = clonedParams.find(param => param.name === paramName);
+    const newValue = customizations[k];
+    if (clonedParam && newValue) {
+      if (hasOptionsSuffix) {
+        clonedParam.options = newValue;
+      } else {
+        clonedParam.label = newValue;
+      }
+    }
+  });
+  return clonedParams;
+}
