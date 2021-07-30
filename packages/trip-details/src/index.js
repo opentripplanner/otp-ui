@@ -1,9 +1,15 @@
 import coreUtils from "@opentripplanner/core-utils";
-import moment from "moment";
 import PropTypes from "prop-types";
 import React from "react";
 import { CalendarAlt, Heartbeat, MoneyBillAlt } from "styled-icons/fa-solid";
 
+import {
+  DefaultDepart,
+  DefaultTransitFare,
+  DefaultTNCFare,
+  DefaultCaloriesBurned,
+  DefaultCaloriesBurnedDescription
+} from "./defaults";
 import * as Styled from "./styled";
 import TripDetail from "./trip-detail";
 
@@ -12,48 +18,33 @@ export default function TripDetails({
   itinerary,
   longDateFormat,
   messages,
-  routingType,
   timeOptions
 }) {
-  const date = moment(itinerary.startTime);
   messages = coreUtils.messages.mergeMessages(
     TripDetails.defaultProps.messages,
     messages
   );
 
   // process the transit fare
-  const {
-    centsToString,
-    dollarsToString,
-    maxTNCFare,
-    minTNCFare,
-    transitFare
-  } = coreUtils.itinerary.calculateFares(itinerary);
-  let companies;
-  itinerary.legs.forEach(leg => {
-    if (leg.tncData) {
-      companies = leg.tncData.company;
-    }
-  });
+  const fareResult = coreUtils.itinerary.calculateFares(itinerary);
+  const { minTNCFare, transitFare } = fareResult;
   let fare;
   if (transitFare || minTNCFare) {
     fare = (
       <Styled.Fare>
         {transitFare && (
           <Styled.TransitFare>
-            {messages.transitFare}: <b>{centsToString(transitFare)}</b>
+            {messages.transitFare || (
+              <DefaultTransitFare fareResult={fareResult} />
+            )}
           </Styled.TransitFare>
         )}
         {minTNCFare !== 0 && (
           <Styled.TNCFare>
             <br />
-            <Styled.TNCFareCompanies>
-              {companies.toLowerCase()}
-            </Styled.TNCFareCompanies>{" "}
-            {messages.fare}:{" "}
-            <b>
-              {dollarsToString(minTNCFare)} - {dollarsToString(maxTNCFare)}
-            </b>
+            {messages.tncFare || (
+              <DefaultTNCFare fareResult={fareResult} itinerary={itinerary} />
+            )}
           </Styled.TNCFare>
         )}
       </Styled.Fare>
@@ -76,20 +67,12 @@ export default function TripDetails({
           icon={<CalendarAlt size={17} />}
           summary={
             <Styled.Timing>
-              <span>
-                {messages.depart} <b>{date.format(longDateFormat)}</b>
-              </span>
-              {routingType === "ITINERARY" && (
-                <span>
-                  {" "}
-                  {messages.at}{" "}
-                  <b>
-                    {coreUtils.time.formatTime(
-                      itinerary.startTime,
-                      timeOptions
-                    )}
-                  </b>
-                </span>
+              {messages.depart || (
+                <DefaultDepart
+                  itinerary={itinerary}
+                  longDateFormat={longDateFormat}
+                  timeOptions={timeOptions}
+                />
               )}
             </Styled.Timing>
           }
@@ -106,23 +89,19 @@ export default function TripDetails({
             icon={<Heartbeat size={17} />}
             summary={
               <Styled.CaloriesSummary>
-                {messages.caloriesBurned}: <b>{Math.round(caloriesBurned)}</b>
+                {messages.caloriesBurned || (
+                  <DefaultCaloriesBurned caloriesBurned={caloriesBurned} />
+                )}
               </Styled.CaloriesSummary>
             }
             description={
               <Styled.CaloriesDescription>
-                Calories burned is based on{" "}
-                <b>{Math.round(walkDuration / 60)} minute(s)</b> spent walking
-                and <b>{Math.round(bikeDuration / 60)} minute(s)</b> spent
-                biking during this trip. Adapted from{" "}
-                <a
-                  href="https://health.gov/dietaryguidelines/dga2005/document/html/chapter3.htm#table4"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  Dietary Guidelines for Americans 2005, page 16, Table 4
-                </a>
-                .
+                {messages.caloriesBurnedDescription || (
+                  <DefaultCaloriesBurnedDescription
+                    bikeDuration={bikeDuration}
+                    walkDuration={walkDuration}
+                  />
+                )}
               </Styled.CaloriesDescription>
             }
           />
@@ -143,23 +122,19 @@ TripDetails.propTypes = {
    * messages to use for l10n/i8n
    *
    * Note: messages with default null values included here for visibility.
-   * Overriding with a truthy string value will cause the expandable help
+   * Overriding with truthy content will cause the expandable help
    * message to appear in trip details.
    */
   messages: PropTypes.shape({
-    at: PropTypes.string,
     caloriesBurned: PropTypes.string,
-    // FIXME: Add templated string description.
-    caloriesBurnedDescription: PropTypes.string,
-    depart: PropTypes.string,
-    departDescription: PropTypes.string,
+    caloriesBurnedDescription: PropTypes.element,
+    depart: PropTypes.element,
+    departDescription: PropTypes.element,
     title: PropTypes.string,
-    fare: PropTypes.string,
-    transitFare: PropTypes.string,
-    transitFareDescription: PropTypes.string
+    tncFare: PropTypes.element,
+    transitFare: PropTypes.element,
+    transitFareDescription: PropTypes.element
   }),
-  /** whether the routing type is an itinerary or a profile result */
-  routingType: PropTypes.string,
   /** Contains the preferred format string for time display and a timezone offset */
   timeOptions: coreUtils.types.timeOptionsType
 };
@@ -168,17 +143,15 @@ TripDetails.defaultProps = {
   className: null,
   longDateFormat: null,
   messages: {
-    at: "at",
     caloriesBurned: "Calories Burned",
     // FIXME: Add templated string description.
     caloriesBurnedDescription: null,
-    depart: "Depart",
+    depart: null,
     departDescription: null,
     title: "Trip Details",
-    fare: "Fare",
-    transitFare: "Transit Fare",
+    tncFare: null,
+    transitFare: null,
     transitFareDescription: null
   },
-  routingType: "ITINERARY",
   timeOptions: null
 };
