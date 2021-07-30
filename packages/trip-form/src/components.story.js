@@ -44,6 +44,41 @@ const onChange = action("onChange");
 const onClick = action("onClick");
 const onQueryParamChange = action("onQueryParamChange");
 
+// Custom general settings messages
+const queryParamMessages = {
+  maxWalkDistance: "Max Walk Distance In Meters",
+  "maxWalkDistance.options": [
+    {
+      text: "200 m",
+      value: 100
+    },
+    {
+      text: "500 m",
+      value: 500
+    }
+  ],
+  maxWalkTime: "Max Time On Foot",
+  walkSpeed: "Your Speed",
+  bikeSpeed: "Your Bike Speed",
+  // text for distance options (rounded!)
+  // (combine walk and bike)
+  // text for time options
+  // (combine walk and bike)
+  maxBikeDistance: "Max Dist On Bike",
+  optimize: "Walk settings",
+  optimizeBike: "Bike settings",
+  "optimize.options": [
+    {
+      text: "Quickest trip",
+      value: "QUICK"
+    },
+    {
+      text: "Prefer fewer transfers",
+      value: "TRANSFERS"
+    }
+  ]
+};
+
 export const checkboxSelector = () => (
   <Core.CheckboxSelector
     name="MyParam"
@@ -92,6 +127,18 @@ export const generalSettingsPanel = () => (
       routingType: "ITINERARY"
     }}
     onQueryParamChange={onQueryParamChange}
+    supportedModes={commonModes}
+  />
+);
+
+export const generalSettingsPanelWithCustomMessages = () => (
+  <Core.GeneralSettingsPanel
+    onQueryParamChange={onQueryParamChange}
+    query={{
+      mode: text("mode", "WALK,BUS,TRAM,SUBWAY"),
+      routingType: "ITINERARY"
+    }}
+    queryParamMessages={queryParamMessages}
     supportedModes={commonModes}
   />
 );
