@@ -6,6 +6,8 @@ import CheckboxSelector from "../CheckboxSelector";
 import DropdownSelector from "../DropdownSelector";
 import * as Styled from "../styled";
 
+const { queryParamOptionsType } = coreUtils.types;
+
 /**
  * The general settings panel for setting speed and routing optimization controls.
  */
@@ -19,15 +21,22 @@ class GeneralSettingsPanel extends Component {
   };
 
   render() {
-    const { className, paramNames, query, style, supportedModes } = this.props;
+    const {
+      className,
+      paramNames,
+      query,
+      queryParamMessages,
+      style,
+      supportedModes
+    } = this.props;
     const configWrapper = { modes: supportedModes };
 
     return (
       <Styled.GeneralSettingsPanel className={className} style={style}>
         {paramNames.map(param => {
-          const paramInfo = coreUtils.queryParams.default.find(
-            qp => qp.name === param
-          );
+          const paramInfo = coreUtils.queryParams
+            .getCustomQueryParams(queryParamMessages)
+            .find(qp => qp.name === param);
           // Check that the parameter applies to the specified routingType
           if (!paramInfo.routingTypes.includes(query.routingType)) return null;
 
@@ -98,6 +107,38 @@ GeneralSettingsPanel.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   query: PropTypes.any,
   /**
+   * An object {parameterName: text, "parameterName.options": [array]}
+   * whose attributes correspond to query parameters. This allows to customize the
+   * labels and options (both text and values).
+   * For query parameter names and value formats,
+   * see https://github.com/opentripplanner/otp-ui/blob/master/packages/core-utils/src/__tests__/query.js#L14
+   */
+  queryParamMessages: PropTypes.shape({
+    from: PropTypes.string,
+    to: PropTypes.string,
+    maxWalkDistance: PropTypes.string,
+    "maxWalkDistance.options": queryParamOptionsType,
+    maxBikeDistance: PropTypes.string,
+    "maxBikeDistance.options": queryParamOptionsType,
+    optimize: PropTypes.string,
+    "optimize.options": queryParamOptionsType,
+    optimizeBike: PropTypes.string,
+    "optimizeBike.options": queryParamOptionsType,
+    maxWalkTime: PropTypes.string,
+    "maxWalkTime.options": queryParamOptionsType,
+    walkSpeed: PropTypes.string,
+    "walkSpeed.options": queryParamOptionsType,
+    maxBikeTime: PropTypes.string,
+    "maxBikeTime.options": queryParamOptionsType,
+    bikeSpeed: PropTypes.string,
+    "bikeSpeed.options": queryParamOptionsType,
+    maxEScooterDistance: PropTypes.string,
+    "maxEScooterDistance.options": queryParamOptionsType,
+    watts: PropTypes.string,
+    "watts.options": queryParamOptionsType,
+    wheelchair: PropTypes.string
+  }),
+  /**
    * An array of parameter names to support in the settings panel.
    * See the `query` parameter for more on query parameter names.
    */
@@ -115,9 +156,10 @@ GeneralSettingsPanel.propTypes = {
 
 GeneralSettingsPanel.defaultProps = {
   className: null,
-  query: null,
+  onQueryParamChange: null,
   paramNames: coreUtils.query.defaultParams,
-  onQueryParamChange: null
+  query: null,
+  queryParamMessages: null
 };
 
 export default GeneralSettingsPanel;
