@@ -1,9 +1,12 @@
-import { formatDistance, startOfDay, getSeconds, format } from "date-fns";
+import { formatDistanceStrict, startOfDay, add, format } from "date-fns";
 import { utcToZonedTime } from "date-fns-tz";
 
 // special constants for making sure the following date format is always sent to
 // OTP regardless of whatever the user has configured as the display format
-export const OTP_API_DATE_FORMAT = "yyyy-MM-dd";
+export const OTP_API_DATE_FORMAT = "YYYY-MM-DD";
+// Date-Fns uses a different string format that moment.js
+// see https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md
+export const OTP_API_DATE_FORMAT_DATE_FNS = "yyyy-MM-dd";
 export const OTP_API_TIME_FORMAT = "HH:mm";
 
 /**
@@ -35,7 +38,7 @@ export function getLongDateFormat(config) {
  * @returns {string} formatted text representation
  */
 export function formatDuration(seconds) {
-  return formatDistance(0, 1000 * seconds, {
+  return formatDistanceStrict(0, 1000 * seconds, {
     includeSeconds: false
   });
 }
@@ -47,7 +50,7 @@ export function formatDuration(seconds) {
  * @returns {string} formatted text representation
  */
 export function formatDurationWithSeconds(seconds) {
-  return formatDistance(0, 1000 * seconds, {
+  return formatDistanceStrict(0, 1000 * seconds, {
     includeSeconds: true
   });
 }
@@ -61,7 +64,7 @@ export function formatDurationWithSeconds(seconds) {
 export function formatTime(ms, options) {
   return format(
     ms + (options && options.offset ? options.offset : 0),
-    options && options.format ? options.format : OTP_API_TIME_FORMAT
+    options && options.format ? options.format : OTP_API_DATE_FORMAT_DATE_FNS
   );
 }
 
@@ -72,7 +75,7 @@ export function formatTime(ms, options) {
  * @return {string}                   formatted text representation
  */
 export function formatSecondsAfterMidnight(seconds, timeFormat) {
-  return format(getSeconds(startOfDay(seconds)), timeFormat);
+  return format(add(startOfDay(new Date()), { seconds }), timeFormat);
 }
 
 /**
@@ -90,10 +93,7 @@ export function getUserTimezone() {
  * The conversion to the user's timezone is needed for testing purposes.
  */
 export function getCurrentTime(timezone = getUserTimezone()) {
-  return format(
-    utcToZonedTime(new Date(Date.now()), timezone),
-    OTP_API_TIME_FORMAT
-  );
+  return format(utcToZonedTime(Date.now(), timezone), OTP_API_TIME_FORMAT);
 }
 
 /**
@@ -102,7 +102,7 @@ export function getCurrentTime(timezone = getUserTimezone()) {
  */
 export function getCurrentDate(timezone = getUserTimezone()) {
   return format(
-    utcToZonedTime(new Date(Date.now()), timezone),
-    OTP_API_DATE_FORMAT
+    utcToZonedTime(Date.now(), timezone),
+    OTP_API_DATE_FORMAT_DATE_FNS
   );
 }
