@@ -106,7 +106,7 @@ export function formatDurationWithSeconds(seconds) {
 export function formatTime(ms, options) {
   return format(
     ms + (options && options.offset ? options.offset : 0),
-    options && options.format ? options.format : OTP_API_DATE_FORMAT_DATE_FNS
+    options && options.format ? options.format : OTP_API_TIME_FORMAT
   );
 }
 
