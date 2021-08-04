@@ -856,10 +856,23 @@ export default queryParams;
 
 /**
  * You can customize the queryParams labels and options, and labels and values for each option.
- * @param customizations The optional customizations to apply: an object with:
- *                       - fields as field/value map for query params to customize,
- *                       - options named as '<field>.options', containing an array of { option label/absolute value }.
- * @returns A copy of the default queryParams that has the customizations applied.
+ * @param customizations The optional customizations to apply: an object whose fields
+ *                       correspond to the items in queryParams with the corresponding name,
+ *                       the value for those fields being an object which fields (label, options...)
+ *                       will override the originals.
+ *                       Example:
+ *                         {
+ *                           // Matches the name param
+ *                           maxWalkDistance: {
+ *                             // Any fields that should be overridden go here
+ *                             options: [
+ *                               // ...new options
+ *                             ],
+ *                             default: 500,
+ *                             label: "max walk dist"
+ *                           }
+ *                         }
+ * @returns A copy of the default queryParams that has the given customizations applied.
  *          If no customizations parameter is provided, returns the queryParams object itself.
  */
 export function getCustomQueryParams(customizations) {
@@ -867,19 +880,12 @@ export function getCustomQueryParams(customizations) {
 
   const clonedParams = cloneDeep(queryParams);
   Object.keys(customizations).forEach(k => {
-    // Split any ".options" suffix to get the param name.
-    const nameParts = k.split(".options");
-    const paramName = nameParts[0];
-    const hasOptionsSuffix = nameParts.length === 2;
-    const clonedParam = clonedParams.find(param => param.name === paramName);
-    const newValue = customizations[k];
-    if (clonedParam && newValue) {
-      if (hasOptionsSuffix) {
-        clonedParam.options = newValue;
-      } else {
-        clonedParam.label = newValue;
-      }
-    }
+    // Merge fields into the cloned object
+    const paramIndex = clonedParams.findIndex(param => param.name === k);
+    clonedParams[paramIndex] = {
+      ...clonedParams[paramIndex],
+      ...customizations[k]
+    };
   });
   return clonedParams;
 }

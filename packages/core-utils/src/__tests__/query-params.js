@@ -8,17 +8,19 @@ describe("query-params", () => {
 
     it("should return queryParams with customizations", () => {
       const customizations = {
-        maxWalkDistance: "Max Walk Distance In Meters",
-        "maxWalkDistance.options": [
-          {
-            text: "200 m",
-            value: 100
-          },
-          {
-            text: "500 m",
-            value: 500
-          }
-        ]
+        maxWalkDistance: {
+          label: "Max Walk Distance In Meters",
+          options: [
+            {
+              text: "200 m",
+              value: 100
+            },
+            {
+              text: "500 m",
+              value: 500
+            }
+          ]
+        }
       };
       const customizedQueryParams = getCustomQueryParams(customizations);
       expect(customizedQueryParams).toMatchSnapshot();
