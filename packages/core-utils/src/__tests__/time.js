@@ -3,7 +3,12 @@ import {
   setDefaultTestTime
 } from "../../../../test-utils/time";
 
-import { getCurrentDate, getCurrentTime } from "../time";
+import {
+  formatDuration,
+  formatDurationWithSeconds,
+  getCurrentDate,
+  getCurrentTime
+} from "../time";
 
 describe("time", () => {
   afterEach(restoreDateNowBehavior);
@@ -20,5 +25,14 @@ describe("time", () => {
       setDefaultTestTime();
       expect(getCurrentTime("America/New_York")).toMatchSnapshot();
     });
+  });
+
+  describe("getFormattedTime", () => {
+    const withoutSeconds = formatDuration(9401);
+    const withSeconds = formatDurationWithSeconds(9401);
+
+    expect(withSeconds).not.toEqual(withoutSeconds);
+    expect(withSeconds).toMatchSnapshot();
+    expect(withoutSeconds).toMatchSnapshot();
   });
 });

@@ -1,4 +1,9 @@
-import { formatDistanceStrict, startOfDay, add, format } from "date-fns";
+import {
+  startOfDay,
+  add,
+  format,
+  formatDuration as dateFnsFormatDuration
+} from "date-fns";
 import { utcToZonedTime } from "date-fns-tz";
 
 // special constants for making sure the following date format is always sent to
@@ -9,6 +14,47 @@ export const OTP_API_DATE_FORMAT = "YYYY-MM-DD";
 export const OTP_API_DATE_FORMAT_DATE_FNS = "yyyy-MM-dd";
 export const OTP_API_TIME_FORMAT = "HH:mm";
 
+/**
+ * To ease the transition away from moment.js, this method uses date-fns to format durations
+ * the way moment.js did.
+ * @param {number}  seconds     The number of seconds to format
+ * @param {boolean} showSeconds Whether to render seconds or not
+ * @param {boolean} localize    If true, will create output like moment.js using date-fns locale.
+ * Otherwise, uses date-fns default
+ * @returns                   Formatted duration
+ */
+function formatDurationLikeMoment(seconds, showSeconds, localize = true) {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds - hours * 3600) / 60);
+  const secondsLeftOver = showSeconds
+    ? seconds - hours * 3600 - minutes * 60
+    : 0;
+  const specLookup = {
+    xHours: "hr",
+    xMinutes: "min",
+    xSeconds: "sec"
+  };
+  const locale = localize
+    ? {
+        code: "en-US",
+        formatDistance: (spec, val) => {
+          return `${val} ${specLookup[spec]}`;
+        }
+      }
+    : undefined;
+
+  return dateFnsFormatDuration(
+    {
+      hours,
+      minutes,
+      seconds: secondsLeftOver
+    },
+    {
+      format: ["hours", "minutes", "seconds"],
+      locale
+    }
+  );
+}
 /**
  * @param  {[type]} config the OTP config object found in store
  * @return {string}        the config-defined time formatter or HH:mm (24-hr time)
@@ -38,9 +84,7 @@ export function getLongDateFormat(config) {
  * @returns {string} formatted text representation
  */
 export function formatDuration(seconds) {
-  return formatDistanceStrict(0, 1000 * seconds, {
-    includeSeconds: false
-  });
+  return formatDurationLikeMoment(seconds, false);
 }
 
 /**
@@ -50,9 +94,7 @@ export function formatDuration(seconds) {
  * @returns {string} formatted text representation
  */
 export function formatDurationWithSeconds(seconds) {
-  return formatDistanceStrict(0, 1000 * seconds, {
-    includeSeconds: true
-  });
+  return formatDurationLikeMoment(seconds, true);
 }
 
 /**
