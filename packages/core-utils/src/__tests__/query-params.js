@@ -2,7 +2,7 @@ import queryParams, { getCustomQueryParams } from "../query-params";
 
 describe("query-params", () => {
   describe("getCustomQueryParams", () => {
-    it("should return queryParams itself if no customizations", () => {
+    it("should return the original unmodified queryParams if no customizations", () => {
       expect(getCustomQueryParams()).toEqual(queryParams);
     });
 
