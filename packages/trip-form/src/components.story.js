@@ -46,37 +46,47 @@ const onQueryParamChange = action("onQueryParamChange");
 
 // Custom general settings messages
 const queryParamMessages = {
-  maxWalkDistance: "Max Walk Distance In Meters",
-  "maxWalkDistance.options": [
-    {
-      text: "200 m",
-      value: 100
-    },
-    {
-      text: "500 m",
-      value: 500
-    }
-  ],
-  maxWalkTime: "Max Time On Foot",
-  walkSpeed: "Your Speed",
-  bikeSpeed: "Your Bike Speed",
-  // text for distance options (rounded!)
-  // (combine walk and bike)
-  // text for time options
-  // (combine walk and bike)
-  maxBikeDistance: "Max Dist On Bike",
-  optimize: "Walk settings",
-  optimizeBike: "Bike settings",
-  "optimize.options": [
-    {
-      text: "Quickest trip",
-      value: "QUICK"
-    },
-    {
-      text: "Prefer fewer transfers",
-      value: "TRANSFERS"
-    }
-  ]
+  bikeSpeed: {
+    label: "Your Bike Speed"
+  },
+  maxBikeDistance: {
+    label: "Max Dist On Bike"
+  },
+  maxWalkDistance: {
+    label: "Max Walk Distance In Meters",
+    options: [
+      {
+        text: "200 m",
+        value: 100
+      },
+      {
+        text: "500 m",
+        value: 500
+      }
+    ]
+  },
+  maxWalkTime: {
+    label: "Max Time On Foot"
+  },
+  optimize: {
+    label: "Walk settings",
+    options: [
+      {
+        text: "Quickest trip",
+        value: "QUICK"
+      },
+      {
+        text: "Prefer fewer transfers",
+        value: "TRANSFERS"
+      }
+    ]
+  },
+  optimizeBike: {
+    label: "Bike settings"
+  },
+  walkSpeed: {
+    label: "Your Speed"
+  }
 };
 
 export const checkboxSelector = () => (
