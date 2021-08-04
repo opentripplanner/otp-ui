@@ -603,20 +603,3 @@ export const userLocationType = PropTypes.shape({
    */
   type: PropTypes.string.isRequired
 });
-
-/**
- * The type for each option in the queryParams object.
- */
-export const queryParamOptionType = PropTypes.shape({
-  text: PropTypes.string.isRequired,
-  value: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.string,
-    PropTypes.bool
-  ]).isRequired
-});
-
-/**
- * Array type to hold the above.
- */
-export const queryParamOptionsType = PropTypes.arrayOf(queryParamOptionType);
