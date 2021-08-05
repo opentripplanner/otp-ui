@@ -2312,7 +2312,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Only Itinerary 1`] = `
 }
 
 .c21 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -2415,7 +2415,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Only Itinerary 1`] = `
 }
 
 .c31 {
-  color: red;
+  color: #e60000;
 }
 
 .c32 {
@@ -2427,7 +2427,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Only Itinerary 1`] = `
 }
 
 .c26 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -2483,7 +2483,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Only Itinerary 1`] = `
 }
 
 .c0 .c3 {
-  color: #999;
+  color: #676767;
   display: table-cell;
   font-size: 14px;
   padding-right: 4px;
@@ -2827,7 +2827,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Rental Itinerary 1`] = `
 }
 
 .c21 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -2921,7 +2921,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Rental Itinerary 1`] = `
 }
 
 .c29 {
-  color: grey;
+  color: #807373;
   font-weight: 300;
   padding-left: 4px;
   padding-top: 1px;
@@ -2937,7 +2937,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Rental Itinerary 1`] = `
 }
 
 .c34 {
-  color: red;
+  color: #e60000;
 }
 
 .c35 {
@@ -2949,7 +2949,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Rental Itinerary 1`] = `
 }
 
 .c26 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -3005,7 +3005,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Rental Itinerary 1`] = `
 }
 
 .c0 .c3 {
-  color: #999;
+  color: #676767;
   display: table-cell;
   font-size: 14px;
   padding-right: 4px;
@@ -3645,7 +3645,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Rental Transit Itinerary 
 }
 
 .c21 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -3682,7 +3682,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Rental Transit Itinerary 
 }
 
 .c39 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -3759,7 +3759,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Rental Transit Itinerary 
 }
 
 .c29 {
-  color: grey;
+  color: #807373;
   font-weight: 300;
   padding-left: 4px;
   padding-top: 1px;
@@ -3775,7 +3775,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Rental Transit Itinerary 
 }
 
 .c34 {
-  color: red;
+  color: #e60000;
 }
 
 .c35 {
@@ -3787,7 +3787,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Rental Transit Itinerary 
 }
 
 .c26 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -3834,7 +3834,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Rental Transit Itinerary 
 }
 
 .c51 {
-  color: #999999;
+  color: #676767;
 }
 
 .c52 {
@@ -3909,7 +3909,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Rental Transit Itinerary 
 }
 
 .c0 .c3 {
-  color: #999;
+  color: #676767;
   display: table-cell;
   font-size: 14px;
   padding-right: 4px;
@@ -5256,7 +5256,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Transit Bike Itinerary 1`
 }
 
 .c21 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -5288,7 +5288,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Transit Bike Itinerary 1`
 }
 
 .c33 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -5345,14 +5345,14 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Transit Bike Itinerary 1`
 }
 
 .c30 {
-  color: grey;
+  color: #807373;
   font-weight: 300;
   padding-left: 4px;
   padding-top: 1px;
 }
 
 .c26 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -5399,7 +5399,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Transit Bike Itinerary 1`
 }
 
 .c43 {
-  color: #999999;
+  color: #676767;
 }
 
 .c44 {
@@ -5454,7 +5454,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Bike Transit Bike Itinerary 1`
 }
 
 .c0 .c3 {
-  color: #999;
+  color: #676767;
   display: table-cell;
   font-size: 14px;
   padding-right: 4px;
@@ -6715,7 +6715,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Custom Time Column 1`] = `
 }
 
 .c22 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -6752,7 +6752,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Custom Time Column 1`] = `
 }
 
 .c33 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -6809,7 +6809,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Custom Time Column 1`] = `
 }
 
 .c21 {
-  color: grey;
+  color: #807373;
   font-weight: 300;
   padding-left: 4px;
   padding-top: 1px;
@@ -6820,7 +6820,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Custom Time Column 1`] = `
 }
 
 .c40 {
-  color: #999999;
+  color: #676767;
 }
 
 .c41 {
@@ -6895,7 +6895,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Custom Time Column 1`] = `
 }
 
 .c0 .c3 {
-  color: #999;
+  color: #676767;
   display: table-cell;
   font-size: 14px;
   padding-right: 4px;
@@ -6965,7 +6965,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Custom Time Column 1`] = `
         <span
           style={
             Object {
-              "color": "red",
+              "color": "#E60000",
             }
           }
         >
@@ -7159,7 +7159,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Custom Time Column 1`] = `
         <span
           style={
             Object {
-              "color": "red",
+              "color": "#E60000",
             }
           }
         >
@@ -7404,7 +7404,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Custom Time Column 1`] = `
         <span
           style={
             Object {
-              "color": "red",
+              "color": "#E60000",
             }
           }
         >
@@ -7612,7 +7612,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Custom Time Column 1`] = `
         <span
           style={
             Object {
-              "color": "red",
+              "color": "#E60000",
             }
           }
         >
@@ -7760,7 +7760,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux E Scooter Rental Itinerary 1`]
 }
 
 .c21 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -7834,14 +7834,14 @@ exports[`Storyshots ItineraryBody/otp-react-redux E Scooter Rental Itinerary 1`]
 }
 
 .c29 {
-  color: grey;
+  color: #807373;
   font-weight: 300;
   padding-left: 4px;
   padding-top: 1px;
 }
 
 .c26 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -7897,7 +7897,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux E Scooter Rental Itinerary 1`]
 }
 
 .c0 .c3 {
-  color: #999;
+  color: #676767;
   display: table-cell;
   font-size: 14px;
   padding-right: 4px;
@@ -8391,7 +8391,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux E Scooter Rental Transit Itine
 }
 
 .c21 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -8428,7 +8428,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux E Scooter Rental Transit Itine
 }
 
 .c39 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -8505,7 +8505,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux E Scooter Rental Transit Itine
 }
 
 .c35 {
-  color: grey;
+  color: #807373;
   font-weight: 300;
   padding-left: 4px;
   padding-top: 1px;
@@ -8521,7 +8521,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux E Scooter Rental Transit Itine
 }
 
 .c31 {
-  color: red;
+  color: #e60000;
 }
 
 .c32 {
@@ -8533,7 +8533,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux E Scooter Rental Transit Itine
 }
 
 .c26 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -8546,7 +8546,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux E Scooter Rental Transit Itine
 }
 
 .c46 {
-  color: #999999;
+  color: #676767;
 }
 
 .c47 {
@@ -8621,7 +8621,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux E Scooter Rental Transit Itine
 }
 
 .c0 .c3 {
-  color: #999;
+  color: #676767;
   display: table-cell;
   font-size: 14px;
   padding-right: 4px;
@@ -9896,7 +9896,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Individual Leg Fare Components
 }
 
 .c21 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -9933,7 +9933,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Individual Leg Fare Components
 }
 
 .c38 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -10010,7 +10010,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Individual Leg Fare Components
 }
 
 .c35 {
-  color: grey;
+  color: #807373;
   font-weight: 300;
   padding-left: 4px;
   padding-top: 1px;
@@ -10026,7 +10026,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Individual Leg Fare Components
 }
 
 .c31 {
-  color: red;
+  color: #e60000;
 }
 
 .c32 {
@@ -10038,7 +10038,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Individual Leg Fare Components
 }
 
 .c26 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -10051,7 +10051,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Individual Leg Fare Components
 }
 
 .c45 {
-  color: #999999;
+  color: #676767;
 }
 
 .c46 {
@@ -10126,7 +10126,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Individual Leg Fare Components
 }
 
 .c0 .c3 {
-  color: #999;
+  color: #676767;
   display: table-cell;
   font-size: 14px;
   padding-right: 4px;
@@ -11794,7 +11794,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Park And Ride Itinerary 1`] = 
 }
 
 .c21 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -11826,7 +11826,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Park And Ride Itinerary 1`] = 
 }
 
 .c33 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -11883,14 +11883,14 @@ exports[`Storyshots ItineraryBody/otp-react-redux Park And Ride Itinerary 1`] = 
 }
 
 .c30 {
-  color: grey;
+  color: #807373;
   font-weight: 300;
   padding-left: 4px;
   padding-top: 1px;
 }
 
 .c26 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -11937,7 +11937,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Park And Ride Itinerary 1`] = 
 }
 
 .c43 {
-  color: #999999;
+  color: #676767;
 }
 
 .c44 {
@@ -11992,7 +11992,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Park And Ride Itinerary 1`] = 
 }
 
 .c0 .c3 {
-  color: #999;
+  color: #676767;
   display: table-cell;
   font-size: 14px;
   padding-right: 4px;
@@ -12971,7 +12971,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Tnc Transit Itinerary 1`] = `
 }
 
 .c22 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -13008,7 +13008,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Tnc Transit Itinerary 1`] = `
 }
 
 .c33 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -13065,7 +13065,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Tnc Transit Itinerary 1`] = `
 }
 
 .c21 {
-  color: grey;
+  color: #807373;
   font-weight: 300;
   padding-left: 4px;
   padding-top: 1px;
@@ -13076,7 +13076,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Tnc Transit Itinerary 1`] = `
 }
 
 .c40 {
-  color: #999999;
+  color: #676767;
 }
 
 .c41 {
@@ -13151,7 +13151,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Tnc Transit Itinerary 1`] = `
 }
 
 .c0 .c3 {
-  color: #999;
+  color: #676767;
   display: table-cell;
   font-size: 14px;
   padding-right: 4px;
@@ -13915,7 +13915,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Walk Interlined Transit Itiner
 }
 
 .c21 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -13947,7 +13947,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Walk Interlined Transit Itiner
 }
 
 .c32 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -14004,14 +14004,14 @@ exports[`Storyshots ItineraryBody/otp-react-redux Walk Interlined Transit Itiner
 }
 
 .c29 {
-  color: grey;
+  color: #807373;
   font-weight: 300;
   padding-left: 4px;
   padding-top: 1px;
 }
 
 .c26 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -14024,7 +14024,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Walk Interlined Transit Itiner
 }
 
 .c40 {
-  color: #999999;
+  color: #676767;
 }
 
 .c41 {
@@ -14084,7 +14084,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Walk Interlined Transit Itiner
 }
 
 .c0 .c3 {
-  color: #999;
+  color: #676767;
   display: table-cell;
   font-size: 14px;
   padding-right: 4px;
@@ -14864,7 +14864,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Walk Only Itinerary 1`] = `
 }
 
 .c21 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -14938,7 +14938,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Walk Only Itinerary 1`] = `
 }
 
 .c26 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -14994,7 +14994,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Walk Only Itinerary 1`] = `
 }
 
 .c0 .c3 {
-  color: #999;
+  color: #676767;
   display: table-cell;
   font-size: 14px;
   padding-right: 4px;
@@ -15343,7 +15343,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Walk Transit Transfer Itinerar
 }
 
 .c21 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -15380,7 +15380,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Walk Transit Transfer Itinerar
 }
 
 .c32 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -15437,14 +15437,14 @@ exports[`Storyshots ItineraryBody/otp-react-redux Walk Transit Transfer Itinerar
 }
 
 .c29 {
-  color: grey;
+  color: #807373;
   font-weight: 300;
   padding-left: 4px;
   padding-top: 1px;
 }
 
 .c26 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -15457,7 +15457,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Walk Transit Transfer Itinerar
 }
 
 .c39 {
-  color: #999999;
+  color: #676767;
 }
 
 .c40 {
@@ -15532,7 +15532,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Walk Transit Transfer Itinerar
 }
 
 .c0 .c3 {
-  color: #999;
+  color: #676767;
   display: table-cell;
   font-size: 14px;
   padding-right: 4px;
@@ -16576,7 +16576,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Walk Transit Walk Itinerary 1`
 }
 
 .c21 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -16608,7 +16608,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Walk Transit Walk Itinerary 1`
 }
 
 .c32 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -16665,14 +16665,14 @@ exports[`Storyshots ItineraryBody/otp-react-redux Walk Transit Walk Itinerary 1`
 }
 
 .c29 {
-  color: grey;
+  color: #807373;
   font-weight: 300;
   padding-left: 4px;
   padding-top: 1px;
 }
 
 .c26 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -16694,7 +16694,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Walk Transit Walk Itinerary 1`
 }
 
 .c38 {
-  color: #999999;
+  color: #676767;
 }
 
 .c39 {
@@ -16749,7 +16749,7 @@ exports[`Storyshots ItineraryBody/otp-react-redux Walk Transit Walk Itinerary 1`
 }
 
 .c0 .c3 {
-  color: #999;
+  color: #676767;
   display: table-cell;
   font-size: 14px;
   padding-right: 4px;
@@ -17477,7 +17477,7 @@ exports[`Storyshots ItineraryBody/otp-ui Bike Only Itinerary 1`] = `
 }
 
 .c11 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -17612,7 +17612,7 @@ exports[`Storyshots ItineraryBody/otp-ui Bike Only Itinerary 1`] = `
 }
 
 .c21 {
-  color: red;
+  color: #e60000;
 }
 
 .c22 {
@@ -17624,7 +17624,7 @@ exports[`Storyshots ItineraryBody/otp-ui Bike Only Itinerary 1`] = `
 }
 
 .c15 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -18020,7 +18020,7 @@ exports[`Storyshots ItineraryBody/otp-ui Bike Rental Itinerary 1`] = `
 }
 
 .c11 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -18146,7 +18146,7 @@ exports[`Storyshots ItineraryBody/otp-ui Bike Rental Itinerary 1`] = `
 }
 
 .c23 {
-  color: grey;
+  color: #807373;
   font-weight: 300;
   padding-left: 4px;
   padding-top: 1px;
@@ -18162,7 +18162,7 @@ exports[`Storyshots ItineraryBody/otp-ui Bike Rental Itinerary 1`] = `
 }
 
 .c28 {
-  color: red;
+  color: #e60000;
 }
 
 .c29 {
@@ -18174,7 +18174,7 @@ exports[`Storyshots ItineraryBody/otp-ui Bike Rental Itinerary 1`] = `
 }
 
 .c15 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -18863,7 +18863,7 @@ exports[`Storyshots ItineraryBody/otp-ui Bike Rental Transit Itinerary 1`] = `
 }
 
 .c11 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -18900,7 +18900,7 @@ exports[`Storyshots ItineraryBody/otp-ui Bike Rental Transit Itinerary 1`] = `
 }
 
 .c34 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -19009,7 +19009,7 @@ exports[`Storyshots ItineraryBody/otp-ui Bike Rental Transit Itinerary 1`] = `
 }
 
 .c23 {
-  color: grey;
+  color: #807373;
   font-weight: 300;
   padding-left: 4px;
   padding-top: 1px;
@@ -19025,7 +19025,7 @@ exports[`Storyshots ItineraryBody/otp-ui Bike Rental Transit Itinerary 1`] = `
 }
 
 .c28 {
-  color: red;
+  color: #e60000;
 }
 
 .c29 {
@@ -19078,7 +19078,7 @@ exports[`Storyshots ItineraryBody/otp-ui Bike Rental Transit Itinerary 1`] = `
 }
 
 .c15 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -19131,7 +19131,7 @@ exports[`Storyshots ItineraryBody/otp-ui Bike Rental Transit Itinerary 1`] = `
 }
 
 .c44 {
-  color: #999999;
+  color: #676767;
 }
 
 .c45 {
@@ -20507,7 +20507,7 @@ exports[`Storyshots ItineraryBody/otp-ui Bike Transit Bike Itinerary 1`] = `
 }
 
 .c11 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -20539,7 +20539,7 @@ exports[`Storyshots ItineraryBody/otp-ui Bike Transit Bike Itinerary 1`] = `
 }
 
 .c27 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -20669,7 +20669,7 @@ exports[`Storyshots ItineraryBody/otp-ui Bike Transit Bike Itinerary 1`] = `
 }
 
 .c15 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -20722,7 +20722,7 @@ exports[`Storyshots ItineraryBody/otp-ui Bike Transit Bike Itinerary 1`] = `
 }
 
 .c36 {
-  color: #999999;
+  color: #676767;
 }
 
 .c37 {
@@ -21781,7 +21781,7 @@ exports[`Storyshots ItineraryBody/otp-ui Custom Alert Icons Itinerary 1`] = `
 }
 
 .c11 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -21813,7 +21813,7 @@ exports[`Storyshots ItineraryBody/otp-ui Custom Alert Icons Itinerary 1`] = `
 }
 
 .c25 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -21943,7 +21943,7 @@ exports[`Storyshots ItineraryBody/otp-ui Custom Alert Icons Itinerary 1`] = `
 }
 
 .c15 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -21971,7 +21971,7 @@ exports[`Storyshots ItineraryBody/otp-ui Custom Alert Icons Itinerary 1`] = `
 }
 
 .c30 {
-  color: #999999;
+  color: #676767;
 }
 
 .c31 {
@@ -22640,7 +22640,7 @@ exports[`Storyshots ItineraryBody/otp-ui E Scooter Rental Itinerary 1`] = `
 }
 
 .c11 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -22746,14 +22746,14 @@ exports[`Storyshots ItineraryBody/otp-ui E Scooter Rental Itinerary 1`] = `
 }
 
 .c23 {
-  color: grey;
+  color: #807373;
   font-weight: 300;
   padding-left: 4px;
   padding-top: 1px;
 }
 
 .c15 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -23264,7 +23264,7 @@ exports[`Storyshots ItineraryBody/otp-ui E Scooter Rental Transit Itinerary 1`] 
 }
 
 .c11 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -23301,7 +23301,7 @@ exports[`Storyshots ItineraryBody/otp-ui E Scooter Rental Transit Itinerary 1`] 
 }
 
 .c34 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -23410,7 +23410,7 @@ exports[`Storyshots ItineraryBody/otp-ui E Scooter Rental Transit Itinerary 1`] 
 }
 
 .c29 {
-  color: grey;
+  color: #807373;
   font-weight: 300;
   padding-left: 4px;
   padding-top: 1px;
@@ -23426,7 +23426,7 @@ exports[`Storyshots ItineraryBody/otp-ui E Scooter Rental Transit Itinerary 1`] 
 }
 
 .c21 {
-  color: red;
+  color: #e60000;
 }
 
 .c22 {
@@ -23479,7 +23479,7 @@ exports[`Storyshots ItineraryBody/otp-ui E Scooter Rental Transit Itinerary 1`] 
 }
 
 .c15 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -23498,7 +23498,7 @@ exports[`Storyshots ItineraryBody/otp-ui E Scooter Rental Transit Itinerary 1`] 
 }
 
 .c39 {
-  color: #999999;
+  color: #676767;
 }
 
 .c40 {
@@ -24744,7 +24744,7 @@ exports[`Storyshots ItineraryBody/otp-ui Park And Ride Itinerary 1`] = `
 }
 
 .c11 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -24776,7 +24776,7 @@ exports[`Storyshots ItineraryBody/otp-ui Park And Ride Itinerary 1`] = `
 }
 
 .c27 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -24906,7 +24906,7 @@ exports[`Storyshots ItineraryBody/otp-ui Park And Ride Itinerary 1`] = `
 }
 
 .c15 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -24959,7 +24959,7 @@ exports[`Storyshots ItineraryBody/otp-ui Park And Ride Itinerary 1`] = `
 }
 
 .c36 {
-  color: #999999;
+  color: #676767;
 }
 
 .c37 {
@@ -25767,7 +25767,7 @@ exports[`Storyshots ItineraryBody/otp-ui Styled Walk Transit Walk Itinerary 1`] 
 }
 
 .c14 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -25799,7 +25799,7 @@ exports[`Storyshots ItineraryBody/otp-ui Styled Walk Transit Walk Itinerary 1`] 
 }
 
 .c28 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -25929,7 +25929,7 @@ exports[`Storyshots ItineraryBody/otp-ui Styled Walk Transit Walk Itinerary 1`] 
 }
 
 .c18 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -25957,7 +25957,7 @@ exports[`Storyshots ItineraryBody/otp-ui Styled Walk Transit Walk Itinerary 1`] 
 }
 
 .c33 {
-  color: #999999;
+  color: #676767;
 }
 
 .c34 {
@@ -25969,7 +25969,7 @@ exports[`Storyshots ItineraryBody/otp-ui Styled Walk Transit Walk Itinerary 1`] 
 }
 
 .c0 .c2 {
-  color: #999;
+  color: #676767;
   font-size: 14px;
   padding-right: 4px;
   padding-top: 1px;
@@ -26707,7 +26707,7 @@ exports[`Storyshots ItineraryBody/otp-ui Tnc Transit Itinerary 1`] = `
 }
 
 .c12 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -26744,7 +26744,7 @@ exports[`Storyshots ItineraryBody/otp-ui Tnc Transit Itinerary 1`] = `
 }
 
 .c26 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -26833,7 +26833,7 @@ exports[`Storyshots ItineraryBody/otp-ui Tnc Transit Itinerary 1`] = `
 }
 
 .c11 {
-  color: grey;
+  color: #807373;
   font-weight: 300;
   padding-left: 4px;
   padding-top: 1px;
@@ -26891,7 +26891,7 @@ exports[`Storyshots ItineraryBody/otp-ui Tnc Transit Itinerary 1`] = `
 }
 
 .c31 {
-  color: #999999;
+  color: #676767;
 }
 
 .c32 {
@@ -27595,7 +27595,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Interlined Transit Itinerary 1`] =
 }
 
 .c11 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -27627,7 +27627,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Interlined Transit Itinerary 1`] =
 }
 
 .c25 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -27757,7 +27757,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Interlined Transit Itinerary 1`] =
 }
 
 .c15 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -27776,7 +27776,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Interlined Transit Itinerary 1`] =
 }
 
 .c31 {
-  color: #999999;
+  color: #676767;
 }
 
 .c32 {
@@ -28457,7 +28457,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Only Itinerary 1`] = `
 }
 
 .c11 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -28563,7 +28563,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Only Itinerary 1`] = `
 }
 
 .c15 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -28889,7 +28889,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Transfer Itinerary 1`] = `
 }
 
 .c11 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -28926,7 +28926,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Transfer Itinerary 1`] = `
 }
 
 .c25 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -29056,7 +29056,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Transfer Itinerary 1`] = `
 }
 
 .c15 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -29075,7 +29075,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Transfer Itinerary 1`] = `
 }
 
 .c30 {
-  color: #999999;
+  color: #676767;
 }
 
 .c31 {
@@ -29974,7 +29974,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary 1`] = `
 }
 
 .c11 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -30006,7 +30006,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary 1`] = `
 }
 
 .c25 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -30136,7 +30136,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary 1`] = `
 }
 
 .c15 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -30164,7 +30164,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary 1`] = `
 }
 
 .c30 {
-  color: #999999;
+  color: #676767;
 }
 
 .c31 {
@@ -30828,7 +30828,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary With Agency
 }
 
 .c11 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -30860,7 +30860,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary With Agency
 }
 
 .c25 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -30990,7 +30990,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary With Agency
 }
 
 .c15 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -31018,7 +31018,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary With Agency
 }
 
 .c31 {
-  color: #999999;
+  color: #676767;
 }
 
 .c32 {
@@ -31681,7 +31681,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary With Custom
 }
 
 .c11 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -31713,7 +31713,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary With Custom
 }
 
 .c24 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -31843,7 +31843,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary With Custom
 }
 
 .c15 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -31865,7 +31865,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary With Custom
 }
 
 .c29 {
-  color: #999999;
+  color: #676767;
 }
 
 .c30 {
@@ -32498,7 +32498,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary With Custom
 }
 
 .c11 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -32530,7 +32530,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary With Custom
 }
 
 .c25 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -32660,7 +32660,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary With Custom
 }
 
 .c15 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -32688,7 +32688,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary With Custom
 }
 
 .c30 {
-  color: #999999;
+  color: #676767;
 }
 
 <div
@@ -33336,7 +33336,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary With Custom
 }
 
 .c11 {
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 }
@@ -33368,7 +33368,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary With Custom
 }
 
 .c25 {
-  color: rgb(153,153,153);
+  color: #807373;
   margin-top: 5px;
 }
 
@@ -33498,7 +33498,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary With Custom
 }
 
 .c15 {
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -33526,7 +33526,7 @@ exports[`Storyshots ItineraryBody/otp-ui Walk Transit Walk Itinerary With Custom
 }
 
 .c30 {
-  color: #999999;
+  color: #676767;
 }
 
 .c31 {
@@ -41650,7 +41650,7 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel 1`] = `
 }
 
 .c8.disabled {
-  color: #ccc;
+  color: #686868;
 }
 
 .c4 {
@@ -41711,7 +41711,7 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel 1`] = `
 
 .c13 .styled__SettingLabel-pm9v2a-2 {
   padding-top: 8px;
-  color: #808080;
+  color: #676767;
   font-weight: 100;
   text-transform: uppercase;
   -webkit-letter-spacing: 1px;
@@ -43597,7 +43597,7 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel Undefined Para
 
 .c9 .styled__SettingLabel-pm9v2a-2 {
   padding-top: 8px;
-  color: #808080;
+  color: #676767;
   font-weight: 100;
   text-transform: uppercase;
   -webkit-letter-spacing: 1px;
@@ -44057,7 +44057,7 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel With Custom Ic
 }
 
 .c8.disabled {
-  color: #ccc;
+  color: #686868;
 }
 
 .c4 {
@@ -44118,7 +44118,7 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel With Custom Ic
 
 .c13 .styled__SettingLabel-pm9v2a-2 {
   padding-top: 8px;
-  color: #808080;
+  color: #676767;
   font-weight: 100;
   text-transform: uppercase;
   -webkit-letter-spacing: 1px;
@@ -45671,7 +45671,7 @@ exports[`Storyshots Trip Form Components Checkbox Selector 1`] = `
 
 .c0 .styled__SettingLabel-pm9v2a-2 {
   padding-top: 8px;
-  color: #808080;
+  color: #676767;
   font-weight: 100;
   text-transform: uppercase;
   -webkit-letter-spacing: 1px;
@@ -45953,7 +45953,7 @@ exports[`Storyshots Trip Form Components Date Time Selector 1`] = `
 
 .c4 .styled__SettingLabel-pm9v2a-2 {
   padding-top: 8px;
-  color: #808080;
+  color: #676767;
   font-weight: 100;
   text-transform: uppercase;
   -webkit-letter-spacing: 1px;
@@ -46242,7 +46242,7 @@ exports[`Storyshots Trip Form Components Dropdown Selector 1`] = `
 
 .c2 .styled__SettingLabel-pm9v2a-2 {
   padding-top: 8px;
-  color: #808080;
+  color: #676767;
   font-weight: 100;
   text-transform: uppercase;
   -webkit-letter-spacing: 1px;
@@ -46515,7 +46515,7 @@ exports[`Storyshots Trip Form Components General Settings Panel 1`] = `
 
 .c2 .styled__SettingLabel-pm9v2a-2 {
   padding-top: 8px;
-  color: #808080;
+  color: #676767;
   font-weight: 100;
   text-transform: uppercase;
   -webkit-letter-spacing: 1px;
@@ -46950,7 +46950,7 @@ exports[`Storyshots Trip Form Components Mode Buttons 1`] = `
 }
 
 .c4.disabled {
-  color: #ccc;
+  color: #686868;
 }
 
 .c2 {
@@ -46999,7 +46999,7 @@ exports[`Storyshots Trip Form Components Mode Buttons 1`] = `
 
 .c5 .styled__SettingLabel-pm9v2a-2 {
   padding-top: 8px;
-  color: #808080;
+  color: #676767;
   font-weight: 100;
   text-transform: uppercase;
   -webkit-letter-spacing: 1px;
@@ -47184,7 +47184,7 @@ exports[`Storyshots Trip Form Components Mode Buttons 1`] = `
             <span
               style={
                 Object {
-                  "color": "red",
+                  "color": "#CD0000",
                   "fontSize": "150%",
                 }
               }
@@ -47355,7 +47355,7 @@ exports[`Storyshots Trip Form Components Mode Buttons 1`] = `
               <span
                 style={
                   Object {
-                    "color": "red",
+                    "color": "#CD0000",
                     "fontSize": "150%",
                   }
                 }
@@ -47517,7 +47517,7 @@ exports[`Storyshots Trip Form Components Mode Selector 1`] = `
 }
 
 .c6.disabled {
-  color: #ccc;
+  color: #686868;
 }
 
 .c4 {
@@ -47566,7 +47566,7 @@ exports[`Storyshots Trip Form Components Mode Selector 1`] = `
 
 .c11 .styled__SettingLabel-pm9v2a-2 {
   padding-top: 8px;
-  color: #808080;
+  color: #676767;
   font-weight: 100;
   text-transform: uppercase;
   -webkit-letter-spacing: 1px;
@@ -48042,7 +48042,7 @@ exports[`Storyshots Trip Form Components Submode Selector 1`] = `
 
 .c3 .styled__SettingLabel-pm9v2a-2 {
   padding-top: 8px;
-  color: #808080;
+  color: #676767;
   font-weight: 100;
   text-transform: uppercase;
   -webkit-letter-spacing: 1px;
@@ -48546,15 +48546,18 @@ exports[`Storyshots TripDetails Bike Only Itinerary 1`] = `
           onClick={[Function]}
         >
           <svg
-            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
+            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
+            <title>
+              What does this mean?
+            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -48727,15 +48730,18 @@ exports[`Storyshots TripDetails Bike Rental Itinerary 1`] = `
           onClick={[Function]}
         >
           <svg
-            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
+            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
+            <title>
+              What does this mean?
+            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -48949,15 +48955,18 @@ exports[`Storyshots TripDetails Bike Rental Transit Itinerary 1`] = `
           onClick={[Function]}
         >
           <svg
-            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
+            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
+            <title>
+              What does this mean?
+            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -49171,15 +49180,18 @@ exports[`Storyshots TripDetails Bike Transit Bike Itinerary 1`] = `
           onClick={[Function]}
         >
           <svg
-            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
+            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
+            <title>
+              What does this mean?
+            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -49352,15 +49364,18 @@ exports[`Storyshots TripDetails E Scooter Rental Itinerary 1`] = `
           onClick={[Function]}
         >
           <svg
-            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
+            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
+            <title>
+              What does this mean?
+            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -49574,15 +49589,18 @@ exports[`Storyshots TripDetails E Scooter Rental Transit Itinerary 1`] = `
           onClick={[Function]}
         >
           <svg
-            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
+            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
+            <title>
+              What does this mean?
+            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -49796,15 +49814,18 @@ exports[`Storyshots TripDetails Park And Ride Itinerary 1`] = `
           onClick={[Function]}
         >
           <svg
-            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
+            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
+            <title>
+              What does this mean?
+            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -50022,15 +50043,18 @@ exports[`Storyshots TripDetails Styled Walk Transit Walk Itinerary 1`] = `
           onClick={[Function]}
         >
           <svg
-            aria-hidden="true"
             className="c6"
             fill="currentColor"
             focusable="false"
             height="0.92em"
+            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
+            <title>
+              What does this mean?
+            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -50404,15 +50428,18 @@ exports[`Storyshots TripDetails Walk Interlined Transit Itinerary 1`] = `
           onClick={[Function]}
         >
           <svg
-            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
+            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
+            <title>
+              What does this mean?
+            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -50585,15 +50612,18 @@ exports[`Storyshots TripDetails Walk Only Itinerary 1`] = `
           onClick={[Function]}
         >
           <svg
-            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
+            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
+            <title>
+              What does this mean?
+            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -50807,15 +50837,18 @@ exports[`Storyshots TripDetails Walk Transit Transfer Itinerary 1`] = `
           onClick={[Function]}
         >
           <svg
-            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
+            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
+            <title>
+              What does this mean?
+            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -51029,15 +51062,18 @@ exports[`Storyshots TripDetails Walk Transit Walk Itinerary 1`] = `
           onClick={[Function]}
         >
           <svg
-            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
+            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
+            <title>
+              What does this mean?
+            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -51214,15 +51250,18 @@ exports[`Storyshots TripDetails Walk Transit Walk Itinerary And Custom Messages 
           onClick={[Function]}
         >
           <svg
-            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
+            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
+            <title>
+              What does this mean?
+            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -51271,15 +51310,18 @@ exports[`Storyshots TripDetails Walk Transit Walk Itinerary And Custom Messages 
           onClick={[Function]}
         >
           <svg
-            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
+            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
+            <title>
+              What does this mean?
+            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
