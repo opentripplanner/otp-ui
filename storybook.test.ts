@@ -9,4 +9,5 @@ initStoryshots({
     storybookUrl: `file://${path.resolve(__dirname, "./storybook-static")}`
   })
 });
+
 initStoryshots();

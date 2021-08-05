@@ -5,10 +5,10 @@ import * as Icons from "@opentripplanner/icons";
 
 import * as Core from ".";
 
-import commonModes from "./__mocks__/modes";
-import modeOptions from "./__mocks__/mode-options";
-import submodeOptions from "./__mocks__/submode-options";
-import trimet from "./__mocks__/trimet.styled";
+import commonModes from "./test-utils/modes";
+import modeOptions from "./test-utils/mode-options";
+import submodeOptions from "./test-utils/submode-options";
+import trimet from "./test-utils/trimet-styled";
 
 const headingStyle = {
   fontFamily: "sans-serif",
