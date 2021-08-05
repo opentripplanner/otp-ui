@@ -88,6 +88,10 @@ export const StyledWalkTransitWalkItinerary = () => (
     styledItinerary="pink-legs"
   />
 );
+// Custom styling for this story only, not in production
+StyledWalkTransitWalkItinerary.parameters = {
+  a11y: { config: { rules: [{ id: "color-contrast", reviewOnFail: true }] } }
+};
 
 export const WalkTransitWalkItineraryWithAgencyInformation = () => (
   <ItineraryBodyDefaultsWrapper
@@ -125,6 +129,10 @@ export const BikeTransitBikeItinerary = () => (
 export const WalkInterlinedTransitItinerary = () => (
   <ItineraryBodyDefaultsWrapper itinerary={walkInterlinedTransitItinerary} />
 );
+WalkInterlinedTransitItinerary.parameters = {
+  // Custom styling for this story only, not in production
+  a11y: { config: { rules: [{ id: "color-contrast", reviewOnFail: true }] } }
+};
 
 export const WalkTransitTransferItinerary = () => (
   <ItineraryBodyDefaultsWrapper

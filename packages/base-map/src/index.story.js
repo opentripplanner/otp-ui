@@ -183,5 +183,9 @@ export const customLocationPopupContent = () => (
     onPopupClosed={onPopupClosed}
   />
 );
+// Custom styling for this story only, not in production
+customLocationPopupContent.parameters = {
+  a11y: { config: { rules: [{ id: "color-contrast", reviewOnFail: true }] } }
+};
 
 export const onContextMenuPopup = () => <ContextMenuDemo />;
