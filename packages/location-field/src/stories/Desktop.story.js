@@ -25,6 +25,15 @@ const invalidKeyGeocoderConfig = {
   type: "PELIAS"
 };
 
+const a11yOverrideParameters = {
+  a11y: {
+    config: {
+      // This is a story issue, not a production issue
+      rules: [{ id: "label", enabled: false }]
+    }
+  }
+};
+
 export default {
   title: "LocationField/Desktop Context",
   component: LocationField
@@ -66,14 +75,7 @@ export const NoAutoFocusWithMultipleControls = () => (
     />
   </div>
 );
-NoAutoFocusWithMultipleControls.parameters = {
-  a11y: {
-    config: {
-      // This is a story issue, not a production issue
-      rules: [{ id: "label", enabled: false }]
-    }
-  }
-};
+NoAutoFocusWithMultipleControls.parameters = a11yOverrideParameters;
 
 export const AutoFocusWithMultipleControls = () => (
   <div>
@@ -90,14 +92,7 @@ export const AutoFocusWithMultipleControls = () => (
     />
   </div>
 );
-AutoFocusWithMultipleControls.parameters = {
-  a11y: {
-    config: {
-      // This is a story issue, not a production issue
-      rules: [{ id: "label", enabled: false }]
-    }
-  }
-};
+AutoFocusWithMultipleControls.parameters = a11yOverrideParameters;
 
 export const WithBadApiKeyHandlesBadAutocomplete = () => (
   <LocationField
