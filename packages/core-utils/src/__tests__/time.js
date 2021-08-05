@@ -28,11 +28,12 @@ describe("time", () => {
   });
 
   describe("getFormattedTime", () => {
-    const withoutSeconds = formatDuration(9401);
-    const withSeconds = formatDurationWithSeconds(9401);
-
-    expect(withSeconds).not.toEqual(withoutSeconds);
-    expect(withSeconds).toMatchSnapshot();
-    expect(withoutSeconds).toMatchSnapshot();
+    const durationInSeconds = 9401;
+    it(`should correctly format ${durationInSeconds} seconds as a duration with seconds`, () => {
+      expect(formatDurationWithSeconds(durationInSeconds)).toMatchSnapshot();
+    });
+    it(`should correctly format ${durationInSeconds} seconds as a duration without seconds`, () => {
+      expect(formatDuration(durationInSeconds)).toMatchSnapshot();
+    });
   });
 });

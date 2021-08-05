@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` 1`] = `"2 hr 36 min 41 sec"`;
-
-exports[` 2`] = `"2 hr 36 min"`;
-
 exports[`time getCurrentDate should return current date at specified timezone 1`] = `"2019-08-04"`;
 
 exports[`time getCurrentTime should return time at specified timezone 1`] = `"22:34"`;
+
+exports[`time getFormattedTime should correctly format 9401 seconds as a duration with seconds 1`] = `"2 hr 36 min 41 sec"`;
+
+exports[`time getFormattedTime should correctly format 9401 seconds as a duration without seconds 1`] = `"2 hr 36 min"`;
