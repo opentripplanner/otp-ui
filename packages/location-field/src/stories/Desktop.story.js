@@ -66,6 +66,14 @@ export const NoAutoFocusWithMultipleControls = () => (
     />
   </div>
 );
+NoAutoFocusWithMultipleControls.parameters = {
+  a11y: {
+    config: {
+      // This is a story issue, not a production issue
+      rules: [{ id: "label", enabled: false }]
+    }
+  }
+};
 
 export const AutoFocusWithMultipleControls = () => (
   <div>
@@ -82,6 +90,14 @@ export const AutoFocusWithMultipleControls = () => (
     />
   </div>
 );
+AutoFocusWithMultipleControls.parameters = {
+  a11y: {
+    config: {
+      // This is a story issue, not a production issue
+      rules: [{ id: "label", enabled: false }]
+    }
+  }
+};
 
 export const WithBadApiKeyHandlesBadAutocomplete = () => (
   <LocationField
