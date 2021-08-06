@@ -4,27 +4,29 @@ import React from "react";
 import { CalendarAlt, Heartbeat, MoneyBillAlt } from "styled-icons/fa-solid";
 
 import {
-  DefaultDepart,
+  DefaultDeparture,
   DefaultTransitFare,
   DefaultTNCFare,
-  DefaultCaloriesBurned,
-  DefaultCaloriesBurnedDescription
+  DefaultCalories,
+  DefaultCaloriesDetails
 } from "./defaults";
 import * as Styled from "./styled";
 import TripDetail from "./trip-detail";
 
 export default function TripDetails({
+  Calories,
+  CaloriesDetails,
   className,
+  Departure,
+  DepartureDetails,
+  FareDetails,
   itinerary,
   longDateFormat,
-  messages,
-  timeOptions
+  timeOptions,
+  title,
+  TransitFare,
+  TNCFare
 }) {
-  messages = coreUtils.messages.mergeMessages(
-    TripDetails.defaultProps.messages,
-    messages
-  );
-
   // process the transit fare
   const fareResult = coreUtils.itinerary.calculateFares(itinerary);
   const { minTNCFare, transitFare } = fareResult;
@@ -34,17 +36,13 @@ export default function TripDetails({
       <Styled.Fare>
         {transitFare && (
           <Styled.TransitFare>
-            {messages.transitFare || (
-              <DefaultTransitFare fareResult={fareResult} />
-            )}
+            <TransitFare fareData={fareResult} />
           </Styled.TransitFare>
         )}
         {minTNCFare !== 0 && (
           <Styled.TNCFare>
             <br />
-            {messages.tncFare || (
-              <DefaultTNCFare fareResult={fareResult} itinerary={itinerary} />
-            )}
+            <TNCFare fareData={fareResult} itinerary={itinerary} />
           </Styled.TNCFare>
         )}
       </Styled.Fare>
@@ -60,26 +58,28 @@ export default function TripDetails({
 
   return (
     <Styled.TripDetails className={className}>
-      <Styled.TripDetailsHeader>{messages.title}</Styled.TripDetailsHeader>
+      <Styled.TripDetailsHeader>{title}</Styled.TripDetailsHeader>
       <Styled.TripDetailsBody>
         <TripDetail
-          description={messages.departDescription}
+          description={
+            DepartureDetails && (
+              <DepartureDetails startTime={itinerary.startTime} />
+            )
+          }
           icon={<CalendarAlt size={17} />}
           summary={
             <Styled.Timing>
-              {messages.depart || (
-                <DefaultDepart
-                  itinerary={itinerary}
-                  longDateFormat={longDateFormat}
-                  timeOptions={timeOptions}
-                />
-              )}
+              <Departure
+                longDateFormat={longDateFormat}
+                startTime={itinerary.startTime}
+                timeOptions={timeOptions}
+              />
             </Styled.Timing>
           }
         />
         {fare && (
           <TripDetail
-            description={messages.transitFareDescription}
+            description={FareDetails && <FareDetails fareData={fareResult} />}
             icon={<MoneyBillAlt size={17} />}
             summary={fare}
           />
@@ -89,20 +89,19 @@ export default function TripDetails({
             icon={<Heartbeat size={17} />}
             summary={
               <Styled.CaloriesSummary>
-                {messages.caloriesBurned || (
-                  <DefaultCaloriesBurned caloriesBurned={caloriesBurned} />
-                )}
+                <Calories calories={caloriesBurned} />
               </Styled.CaloriesSummary>
             }
             description={
-              <Styled.CaloriesDescription>
-                {messages.caloriesBurnedDescription || (
-                  <DefaultCaloriesBurnedDescription
+              CaloriesDetails && (
+                <Styled.CaloriesDescription>
+                  <CaloriesDetails
                     bikeDuration={bikeDuration}
+                    calories={caloriesBurned}
                     walkDuration={walkDuration}
                   />
-                )}
-              </Styled.CaloriesDescription>
+                </Styled.CaloriesDescription>
+              )
             }
           />
         )}
@@ -112,46 +111,34 @@ export default function TripDetails({
 }
 
 TripDetails.propTypes = {
+  Calories: PropTypes.elementType,
+  CaloriesDetails: PropTypes.elementType,
   /** Used for additional styling with styled components for example. */
   className: PropTypes.string,
+  Departure: PropTypes.elementType,
+  DepartureDetails: PropTypes.elementType,
+  FareDetails: PropTypes.elementType,
   /** Itinerary that the user has selected to view, contains multiple legs */
   itinerary: coreUtils.types.itineraryType.isRequired,
   /** the desired format to use for a long date */
   longDateFormat: PropTypes.string,
-  /**
-   * messages to use for l10n/i8n
-   *
-   * Note: messages with default null values included here for visibility.
-   * Overriding with truthy content will cause the expandable help
-   * message to appear in trip details.
-   */
-  messages: PropTypes.shape({
-    caloriesBurned: PropTypes.string,
-    caloriesBurnedDescription: PropTypes.element,
-    depart: PropTypes.element,
-    departDescription: PropTypes.element,
-    title: PropTypes.string,
-    tncFare: PropTypes.element,
-    transitFare: PropTypes.element,
-    transitFareDescription: PropTypes.element
-  }),
+  title: PropTypes.string,
   /** Contains the preferred format string for time display and a timezone offset */
-  timeOptions: coreUtils.types.timeOptionsType
+  timeOptions: coreUtils.types.timeOptionsType,
+  TransitFare: PropTypes.elementType,
+  TNCFare: PropTypes.elementType
 };
 
 TripDetails.defaultProps = {
+  Calories: DefaultCalories,
+  CaloriesDetails: DefaultCaloriesDetails,
   className: null,
+  Departure: DefaultDeparture,
+  DepartureDetails: null,
+  FareDetails: null,
   longDateFormat: null,
-  messages: {
-    caloriesBurned: "Calories Burned",
-    // FIXME: Add templated string description.
-    caloriesBurnedDescription: null,
-    depart: null,
-    departDescription: null,
-    title: "Trip Details",
-    tncFare: null,
-    transitFare: null,
-    transitFareDescription: null
-  },
-  timeOptions: null
+  title: "Trip Details",
+  timeOptions: null,
+  TransitFare: DefaultTransitFare,
+  TNCFare: DefaultTNCFare
 };

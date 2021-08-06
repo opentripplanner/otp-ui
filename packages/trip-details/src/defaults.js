@@ -9,20 +9,20 @@ import * as Styled from "./styled";
  * Default rendering for the departure date/time line
  * if no other corresponding message is provided.
  */
-export function DefaultDepart({ itinerary, longDateFormat, timeOptions }) {
-  const date = moment(itinerary.startTime);
+export function DefaultDeparture({ longDateFormat, startTime, timeOptions }) {
+  const date = moment(startTime);
   return (
     <>
       Depart <b>{date.format(longDateFormat)}</b>
       {" at "}
-      <b>{coreUtils.time.formatTime(itinerary.startTime, timeOptions)}</b>
+      <b>{coreUtils.time.formatTime(startTime, timeOptions)}</b>
     </>
   );
 }
 
-DefaultDepart.propTypes = {
-  itinerary: coreUtils.types.itineraryType.isRequired,
+DefaultDeparture.propTypes = {
   longDateFormat: PropTypes.string.isRequired,
+  startTime: PropTypes.number.isRequired,
   timeOptions: coreUtils.types.timeOptionsType.isRequired
 };
 
@@ -30,8 +30,8 @@ DefaultDepart.propTypes = {
  * Default rendering for the transit fare line
  * if no other corresponding message is provided.
  */
-export function DefaultTransitFare({ fareResult }) {
-  const { centsToString, transitFare } = fareResult;
+export function DefaultTransitFare({ fareData }) {
+  const { centsToString, transitFare } = fareData;
   return (
     <>
       Transit Fare: <b>{centsToString(transitFare)}</b>
@@ -40,7 +40,7 @@ export function DefaultTransitFare({ fareResult }) {
 }
 
 DefaultTransitFare.propTypes = {
-  fareResult: PropTypes.shape({
+  fareData: PropTypes.shape({
     centsToString: PropTypes.func,
     transitFare: PropTypes.number
   }).isRequired
@@ -50,8 +50,8 @@ DefaultTransitFare.propTypes = {
  * Default rendering for the TNC fare line
  * if no other corresponding message is provided.
  */
-export function DefaultTNCFare({ fareResult, itinerary }) {
-  const { dollarsToString, maxTNCFare, minTNCFare } = fareResult;
+export function DefaultTNCFare({ fareData, itinerary }) {
+  const { dollarsToString, maxTNCFare, minTNCFare } = fareData;
   let companies;
   itinerary.legs.forEach(leg => {
     if (leg.tncData) {
@@ -72,7 +72,7 @@ export function DefaultTNCFare({ fareResult, itinerary }) {
 }
 
 DefaultTNCFare.propTypes = {
-  fareResult: PropTypes.shape({
+  fareData: PropTypes.shape({
     dollarsToString: PropTypes.func,
     maxTNCFare: PropTypes.number,
     minTNCFare: PropTypes.number
@@ -84,26 +84,23 @@ DefaultTNCFare.propTypes = {
  * Default rendering for the calories burned line
  * if no other corresponding message is provided.
  */
-export function DefaultCaloriesBurned({ caloriesBurned }) {
+export function DefaultCalories({ calories }) {
   return (
     <>
-      Calories Burned: <b>{Math.round(caloriesBurned)}</b>
+      Calories Burned: <b>{Math.round(calories)}</b>
     </>
   );
 }
 
-DefaultCaloriesBurned.propTypes = {
-  caloriesBurned: PropTypes.number.isRequired
+DefaultCalories.propTypes = {
+  calories: PropTypes.number.isRequired
 };
 
 /**
  * Default rendering for the calories description
  * if no other corresponding message is provided.
  */
-export function DefaultCaloriesBurnedDescription({
-  bikeDuration,
-  walkDuration
-}) {
+export function DefaultCaloriesDetails({ bikeDuration, walkDuration }) {
   return (
     <>
       Calories burned is based on{" "}
@@ -122,7 +119,7 @@ export function DefaultCaloriesBurnedDescription({
   );
 }
 
-DefaultCaloriesBurnedDescription.propTypes = {
+DefaultCaloriesDetails.propTypes = {
   bikeDuration: PropTypes.number.isRequired,
   walkDuration: PropTypes.number.isRequired
 };
