@@ -1,4 +1,6 @@
 import React from "react";
+import { IntlProvider } from "react-intl";
+import { boolean, withKnobs } from "@storybook/addon-knobs";
 import styled from "styled-components";
 
 import TripDetails from ".";
@@ -25,16 +27,37 @@ const StyledTripDetails = styled(TripDetails)`
 `;
 
 const customMessages = {
-  title: "Details about this Trip",
-  transitFare: "Transit Fare",
-  transitFareDescription:
-    "Note: actual fare may be lower if you have a transit pass or something like that."
+  "otpUi.TripDetails.calories":
+    "<b>{calories, number, ::.} Calories</b> burned",
+  "otpUi.TripDetails.caloriesDescription":
+    "Walking <b>{walkMinutes}</b> minute(s) and biking <b>{bikeMinutes}</b> minute(s) will consume {calories} Calories.",
+  "otpUi.TripDetails.depart":
+    "<b>Leave</b> at <b>{departureDate, time, ::hh:mm}</b> on <b>{departureDate, date, ::yyyyMMMMdd}</b>",
+  "otpUi.TripDetails.title": "Localized Trip Details",
+  "otpUi.TripDetails.tncFare":
+    "Pay <b>{minTNCFare, number, ::.00 currency/EUR}-{maxTNCFare, number, ::.00 currency/EUR}</b> to {companies}",
+  "otpUi.TripDetails.transitFare":
+    "<b>{transitFare, number, ::.00 currency/EUR}</b> transit ticket"
 };
+
 const longDateFormat = "MMMM D, YYYY";
 
+const intlDecorator = story => {
+  const useCustomMessages = boolean("Use custom messages", false);
+  return (
+    <IntlProvider
+      locale="en-US"
+      messages={useCustomMessages ? customMessages : null}
+    >
+      {story()}
+    </IntlProvider>
+  );
+};
+
 export default {
-  title: "TripDetails",
-  components: TripDetails
+  components: TripDetails,
+  decorators: [intlDecorator, withKnobs],
+  title: "TripDetails"
 };
 
 export const WalkOnlyItinerary = () => (
@@ -49,14 +72,6 @@ export const WalkTransitWalkItinerary = () => (
   <TripDetails
     itinerary={walkTransitWalkItinerary}
     longDateFormat={longDateFormat}
-  />
-);
-
-export const WalkTransitWalkItineraryAndCustomMessages = () => (
-  <TripDetails
-    itinerary={walkTransitWalkItinerary}
-    longDateFormat={longDateFormat}
-    messages={customMessages}
   />
 );
 
