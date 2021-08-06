@@ -3,7 +3,7 @@ import LocationIcon from "@opentripplanner/location-icon";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 
-import { LocationPickerSpan, Button, FromToPickerSpan } from "./styled";
+import * as S from "./styled";
 
 const iconSize = "0.9em";
 
@@ -37,16 +37,16 @@ class FromToLocationPicker extends Component {
   render() {
     const { fromText, showIcons, toText } = this.props;
     return (
-      <FromToPickerSpan>
-        <LocationPickerSpan>
+      <S.FromToPickerSpan>
+        <S.LocationPickerSpan>
           {showIcons && <LocationIcon type="from" size={iconSize} />}
-          <Button onClick={this.onFromClick}>{fromText}</Button>
-        </LocationPickerSpan>
-        <LocationPickerSpan>
+          <S.Button onClick={this.onFromClick}>{fromText}</S.Button>
+        </S.LocationPickerSpan>
+        <S.LocationPickerSpan>
           {showIcons && <LocationIcon type="to" size={iconSize} />}
-          <Button onClick={this.onToClick}>{toText}</Button>
-        </LocationPickerSpan>
-      </FromToPickerSpan>
+          <S.Button onClick={this.onToClick}>{toText}</S.Button>
+        </S.LocationPickerSpan>
+      </S.FromToPickerSpan>
     );
   }
 }
@@ -98,3 +98,7 @@ FromToLocationPicker.defaultProps = {
 };
 
 export default FromToLocationPicker;
+
+// Rename styled components for export
+const Styled = S;
+export { Styled };

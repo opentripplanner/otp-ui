@@ -2,17 +2,17 @@ import { divIcon } from "leaflet";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 
-import * as Styled from "./styled";
+import * as S from "./styled";
 
 export const floatingBikeIcon = divIcon({
   iconSize: [24, 24],
   iconAnchor: [12, 24],
   popupAnchor: [0, -12],
-  html: ReactDOMServer.renderToStaticMarkup(<Styled.OutOfHubBikeIcon />),
+  html: ReactDOMServer.renderToStaticMarkup(<S.OutOfHubBikeIcon />),
   className: ""
 });
 
-export const hubIcons = Styled.hubIcons.map(StyledIcon =>
+export const hubIcons = S.hubIcons.map(StyledIcon =>
   divIcon({
     iconSize: [24, 24],
     iconAnchor: [12, 24],

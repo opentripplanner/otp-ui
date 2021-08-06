@@ -3,13 +3,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import Endpoint from "./endpoint";
-import {
-  StackedCircle,
-  StackedIconContainer,
-  StackedLocationIcon,
-  StackedToIcon,
-  ToIcon
-} from "./styled";
+import * as S from "./styled";
 
 function DefaultMapMarkerIcon({ location, type }) {
   let inner;
@@ -17,8 +11,8 @@ function DefaultMapMarkerIcon({ location, type }) {
     case "to":
       inner = (
         <>
-          <StackedToIcon size={24} type={type} />
-          <ToIcon size={20} type={type} />
+          <S.StackedToIcon size={24} type={type} />
+          <S.ToIcon size={20} type={type} />
         </>
       );
       break;
@@ -26,14 +20,16 @@ function DefaultMapMarkerIcon({ location, type }) {
       // Default to the location icon on top of a white background.
       inner = (
         <>
-          <StackedCircle size={24} />
-          <StackedLocationIcon size={24} type={type} />
+          <S.StackedCircle size={24} />
+          <S.StackedLocationIcon size={24} type={type} />
         </>
       );
       break;
   }
   return (
-    <StackedIconContainer title={location.name}>{inner}</StackedIconContainer>
+    <S.StackedIconContainer title={location.name}>
+      {inner}
+    </S.StackedIconContainer>
   );
 }
 
@@ -178,3 +174,7 @@ EndpointsOverlay.defaultProps = {
 };
 
 export default EndpointsOverlay;
+
+// Rename styled components for export
+const Styled = S;
+export { Styled };

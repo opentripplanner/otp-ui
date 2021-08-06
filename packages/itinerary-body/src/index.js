@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import PlaceRow from "./place-row";
-import * as Styled from "./styled";
+import * as S from "./styled";
 
 const ItineraryBody = ({
   LegIcon,
@@ -94,9 +94,7 @@ const ItineraryBody = ({
     if (leg.transitLeg) followsTransit = true;
     lastLeg = leg;
   });
-  return (
-    <Styled.ItineraryBody className={className}>{rows}</Styled.ItineraryBody>
-  );
+  return <S.ItineraryBody className={className}>{rows}</S.ItineraryBody>;
 };
 
 ItineraryBody.propTypes = {
@@ -239,3 +237,7 @@ ItineraryBody.defaultProps = {
 };
 
 export default ItineraryBody;
+
+// Rename styled components for export
+const Styled = S;
+export { Styled };

@@ -46,3 +46,7 @@ export const DetailedRectangle = utils.makeRotatedMarker(
   },
   getRectangleSize
 );
+
+// Rename styled components for export
+const Styled = StyledRectangle;
+export { Styled };
