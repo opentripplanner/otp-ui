@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import AccessLeg from "./access-leg";
-import * as Styled from "./styled";
+import * as S from "./styled";
 import TNCLeg from "./tnc-leg";
 import TransitLeg from "./transit-leg";
 
-export default function PrintableItinerary({
+function PrintableItinerary({
   className,
   config,
   itinerary,
@@ -15,15 +15,15 @@ export default function PrintableItinerary({
   timeOptions
 }) {
   return (
-    <Styled.PrintableItinerary className={className}>
+    <S.PrintableItinerary className={className}>
       {itinerary.legs.length > 0 && (
-        <Styled.CollapsedTop>
-          <Styled.LegBody>
-            <Styled.LegHeader>
+        <S.CollapsedTop>
+          <S.LegBody>
+            <S.LegHeader>
               <b>Depart</b> from <b>{itinerary.legs[0].from.name}</b>
-            </Styled.LegHeader>
-          </Styled.LegBody>
-        </Styled.CollapsedTop>
+            </S.LegHeader>
+          </S.LegBody>
+        </S.CollapsedTop>
       )}
       {itinerary.legs.map((leg, k) =>
         leg.transitLeg ? (
@@ -54,7 +54,7 @@ export default function PrintableItinerary({
           />
         )
       )}
-    </Styled.PrintableItinerary>
+    </S.PrintableItinerary>
   );
 }
 
@@ -75,3 +75,9 @@ PrintableItinerary.defaultProps = {
   className: null,
   timeOptions: null
 };
+
+export default PrintableItinerary;
+
+// Rename styled components for export
+const Styled = S;
+export { Styled };

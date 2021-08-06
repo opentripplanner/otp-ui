@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 import React from "react";
 import { CalendarAlt, Heartbeat, MoneyBillAlt } from "styled-icons/fa-solid";
 
-import * as Styled from "./styled";
+import * as S from "./styled";
 import TripDetail from "./trip-detail";
 
-export default function TripDetails({
+function TripDetails({
   className,
   itinerary,
   longDateFormat,
@@ -38,25 +38,25 @@ export default function TripDetails({
   let fare;
   if (transitFare || minTNCFare) {
     fare = (
-      <Styled.Fare>
+      <S.Fare>
         {transitFare && (
-          <Styled.TransitFare>
+          <S.TransitFare>
             {messages.transitFare}: <b>{centsToString(transitFare)}</b>
-          </Styled.TransitFare>
+          </S.TransitFare>
         )}
         {minTNCFare !== 0 && (
-          <Styled.TNCFare>
+          <S.TNCFare>
             <br />
-            <Styled.TNCFareCompanies>
+            <S.TNCFareCompanies>
               {companies.toLowerCase()}
-            </Styled.TNCFareCompanies>{" "}
+            </S.TNCFareCompanies>{" "}
             {messages.fare}:{" "}
             <b>
               {dollarsToString(minTNCFare)} - {dollarsToString(maxTNCFare)}
             </b>
-          </Styled.TNCFare>
+          </S.TNCFare>
         )}
-      </Styled.Fare>
+      </S.Fare>
     );
   }
 
@@ -68,14 +68,14 @@ export default function TripDetails({
   } = coreUtils.itinerary.calculatePhysicalActivity(itinerary);
 
   return (
-    <Styled.TripDetails className={className}>
-      <Styled.TripDetailsHeader>{messages.title}</Styled.TripDetailsHeader>
-      <Styled.TripDetailsBody>
+    <S.TripDetails className={className}>
+      <S.TripDetailsHeader>{messages.title}</S.TripDetailsHeader>
+      <S.TripDetailsBody>
         <TripDetail
           description={messages.departDescription}
           icon={<CalendarAlt size={17} />}
           summary={
-            <Styled.Timing>
+            <S.Timing>
               <span>
                 {messages.depart} <b>{date.format(longDateFormat)}</b>
               </span>
@@ -91,7 +91,7 @@ export default function TripDetails({
                   </b>
                 </span>
               )}
-            </Styled.Timing>
+            </S.Timing>
           }
         />
         {fare && (
@@ -105,12 +105,12 @@ export default function TripDetails({
           <TripDetail
             icon={<Heartbeat size={17} />}
             summary={
-              <Styled.CaloriesSummary>
+              <S.CaloriesSummary>
                 {messages.caloriesBurned}: <b>{Math.round(caloriesBurned)}</b>
-              </Styled.CaloriesSummary>
+              </S.CaloriesSummary>
             }
             description={
-              <Styled.CaloriesDescription>
+              <S.CaloriesDescription>
                 Calories burned is based on{" "}
                 <b>{Math.round(walkDuration / 60)} minute(s)</b> spent walking
                 and <b>{Math.round(bikeDuration / 60)} minute(s)</b> spent
@@ -123,12 +123,12 @@ export default function TripDetails({
                   Dietary Guidelines for Americans 2005, page 16, Table 4
                 </a>
                 .
-              </Styled.CaloriesDescription>
+              </S.CaloriesDescription>
             }
           />
         )}
-      </Styled.TripDetailsBody>
-    </Styled.TripDetails>
+      </S.TripDetailsBody>
+    </S.TripDetails>
   );
 }
 
@@ -182,3 +182,9 @@ TripDetails.defaultProps = {
   routingType: "ITINERARY",
   timeOptions: null
 };
+
+export default TripDetails;
+
+// Rename styled components for export
+const Styled = S;
+export { Styled };
