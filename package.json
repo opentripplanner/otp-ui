@@ -87,6 +87,7 @@
     "coverage": "jest --coverage",
     "deploy-storybook": "storybook-to-ghpages",
     "dev": "start-storybook -p 5555",
+    "predev": "yarn",
     "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-pattern esm --ignore-pattern lib --ignore-pattern node_modules --quiet",
     "lint:fixjs": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-pattern esm --ignore-pattern lib --ignore-pattern node_modules --fix",
     "lint:styles": "stylelint \"packages/**/!(*.d).{j,t}s{,x}\"",
