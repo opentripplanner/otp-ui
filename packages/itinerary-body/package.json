@@ -21,7 +21,7 @@
     "velocity-react": "^1.4.3"
   },
   "peerDependencies": {
-    "react": "^16.8.6",
+    "react": "^16.14.0",
     "styled-components": "^5.3.0"
   },
   "bugs": {
