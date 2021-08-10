@@ -9,6 +9,19 @@ import { CalendarAlt, Heartbeat, MoneyBillAlt } from "styled-icons/fa-solid";
 import * as Styled from "./styled";
 import TripDetail from "./trip-detail";
 
+// Load the default messages.
+import defaultMessages from "../i18n/en-US.yml";
+
+const MESSAGE_ID_PREFIX = "otpUi.TripDetails.";
+const messageIds = {
+  calories: `${MESSAGE_ID_PREFIX}calories`,
+  caloriesDescription: `${MESSAGE_ID_PREFIX}caloriesDescription`,
+  departure: `${MESSAGE_ID_PREFIX}departure`,
+  title: `${MESSAGE_ID_PREFIX}title`,
+  tncFare: `${MESSAGE_ID_PREFIX}tncFare`,
+  transitFare: `${MESSAGE_ID_PREFIX}transitFare`
+};
+
 // TODOS:
 // - diet url
 // - currency
@@ -22,13 +35,6 @@ function BoldText(contents) {
   return <b>{contents}</b>;
 }
 
-const minutePlural = "plural, one {minute} other {minutes}";
-
-const defaultCaloriesDescription = `Calories burned is based on
-  <b>{walkMinutes} {walkMinutes, ${minutePlural}}</b> spent walking and
-  <b>{bikeMinutes} {bikeMinutes, ${minutePlural}}</b> spent biking during this trip.
-  Adapted from <a>Dietary Guidelines for Americans 2005, page 16, Table 4</a>.`;
-
 /**
  * Default rendering if no component is provided for CaloriesDescription
  * in the TripDetails component.
@@ -36,8 +42,8 @@ const defaultCaloriesDescription = `Calories burned is based on
 function DefaultCaloriesDescription({ bikeSeconds, calories, walkSeconds }) {
   return (
     <FormattedMessage
-      defaultMessage={defaultCaloriesDescription}
-      id="otpUi.TripDetails.caloriesDescription"
+      defaultMessage={defaultMessages[messageIds.caloriesDescription]}
+      id={messageIds.caloriesDescription}
       values={{
         // eslint-disable-next-line react/display-name
         a: contents => (
@@ -86,8 +92,8 @@ export default function TripDetails({
         {transitFare && (
           <Styled.TransitFare>
             <FormattedMessage
-              defaultMessage="Transit Fare: <b>{transitFare, number, ::.00 currency/USD}</b>"
-              id="otpUi.TripDetails.transitFare"
+              defaultMessage={defaultMessages[messageIds.transitFare]}
+              id={messageIds.transitFare}
               values={{
                 b: BoldText,
                 transitFare: transitFare / 100
@@ -99,8 +105,8 @@ export default function TripDetails({
           <Styled.TNCFare>
             <br />
             <FormattedMessage
-              defaultMessage="{companies} Fare: <b>{minTNCFare, number, ::.00 currency/USD} - {maxTNCFare, number, ::.00 currency/USD}</b>"
-              id="otpUi.TripDetails.tncFare"
+              defaultMessage={defaultMessages[messageIds.tncFare]}
+              id={messageIds.tncFare}
               values={{
                 b: BoldText,
                 companies: (
@@ -131,8 +137,8 @@ export default function TripDetails({
     <Styled.TripDetails className={className}>
       <Styled.TripDetailsHeader>
         <FormattedMessage
-          defaultMessage="Trip Details"
-          id="otpUi.TripDetails.title"
+          defaultMessage={defaultMessages[messageIds.title]}
+          id={messageIds.title}
         />
       </Styled.TripDetailsHeader>
       <Styled.TripDetailsBody>
@@ -147,8 +153,8 @@ export default function TripDetails({
           summary={
             <Styled.Timing>
               <FormattedMessage
-                defaultMessage="Depart <b>{departureDate, date, ::yyyyMMMMdd}</b> at <b>{departureDate, time, ::h:mm}</b>"
-                id="otpUi.TripDetails.depart"
+                defaultMessage={defaultMessages[messageIds.departure]}
+                id={messageIds.departure}
                 values={{
                   b: BoldText,
                   departureDate
@@ -179,8 +185,8 @@ export default function TripDetails({
             summary={
               <Styled.CaloriesSummary>
                 <FormattedMessage
-                  defaultMessage="Calories Burned: <b>{calories, number, ::.}</b>"
-                  id="otpUi.TripDetails.calories"
+                  defaultMessage={defaultMessages[messageIds.calories]}
+                  id={messageIds.calories}
                   values={{
                     b: BoldText,
                     calories: caloriesBurned

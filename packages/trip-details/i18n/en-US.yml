@@ -1,0 +1,12 @@
+# Default messages for the TripDetails component.
+# To use from a react-intl application, import the content of this file into the messages object
+# that has your other localized strings, and that you pass to the IntlProvider component.
+otpUi.TripDetails.calories: "Calories Burned: <b>{calories, number, ::.}</b>"
+otpUi.TripDetails.caloriesDescription: "Calories burned is based on
+  <b>{walkMinutes} {walkMinutes, plural, one {minute} other {minutes}}</b> spent walking and
+  <b>{bikeMinutes} {bikeMinutes, plural, one {minute} other {minutes}}</b> spent biking during this trip.
+  Adapted from <a>Dietary Guidelines for Americans 2005, page 16, Table 4</a>."
+otpUi.TripDetails.departure: "Depart <b>{departureDate, date, ::yyyyMMMMdd}</b> at <b>{departureDate, time, ::h:mm}</b>"
+otpUi.TripDetails.title: "Trip Details"
+otpUi.TripDetails.tncFare: "{companies} Fare: <b>{minTNCFare, number, ::.00 currency/USD} - {maxTNCFare, number, ::.00 currency/USD}</b>"
+otpUi.TripDetails.transitFare: "Transit Fare: <b>{transitFare, number, ::.00 currency/USD}</b>"

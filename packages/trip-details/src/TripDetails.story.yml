@@ -1,0 +1,5 @@
+# Example used to overwrite a subset of the messages from /i18n/en-US.yml.
+otpUi.TripDetails.caloriesDescription: "Walking <b>{walkMinutes}</b> minute(s) and biking <b>{bikeMinutes}</b> minute(s) will consume {calories} Calories."
+otpUi.TripDetails.departure: "<b>Leave</b> at <b>{departureDate, time, ::hh:mm}</b> on <b>{departureDate, date, ::yyyyMMMMdd}</b>"
+otpUi.TripDetails.title: "Localized Trip Details"
+otpUi.TripDetails.tncFare: "Pay <b>{minTNCFare, number, ::.00 currency/EUR}-{maxTNCFare, number, ::.00 currency/EUR}</b> to {companies}"

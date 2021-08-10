@@ -1,10 +1,14 @@
 import React from "react";
 import { IntlProvider } from "react-intl";
-import { boolean, withKnobs } from "@storybook/addon-knobs";
+import { boolean, select, withKnobs } from "@storybook/addon-knobs";
 import styled from "styled-components";
 
 import TripDetails from ".";
 import * as TripDetailsClasses from "./styled";
+
+import defaultEnglishMessages from "../i18n/en-US.yml";
+import defaultFrenchMessages from "../i18n/fr.yml";
+import customMessages from "./TripDetails.story.yml";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json");
@@ -26,28 +30,29 @@ const StyledTripDetails = styled(TripDetails)`
   }
 `;
 
-const customMessages = {
-  "otpUi.TripDetails.calories":
-    "<b>{calories, number, ::.} Calories</b> burned",
-  "otpUi.TripDetails.caloriesDescription":
-    "Walking <b>{walkMinutes}</b> minute(s) and biking <b>{bikeMinutes}</b> minute(s) will consume {calories} Calories.",
-  "otpUi.TripDetails.depart":
-    "<b>Leave</b> at <b>{departureDate, time, ::hh:mm}</b> on <b>{departureDate, date, ::yyyyMMMMdd}</b>",
-  "otpUi.TripDetails.title": "Localized Trip Details",
-  "otpUi.TripDetails.tncFare":
-    "Pay <b>{minTNCFare, number, ::.00 currency/EUR}-{maxTNCFare, number, ::.00 currency/EUR}</b> to {companies}",
-  "otpUi.TripDetails.transitFare":
-    "<b>{transitFare, number, ::.00 currency/EUR}</b> transit ticket"
-};
-
+// FIXME: deprecate
 const longDateFormat = "MMMM D, YYYY";
 
 const intlDecorator = story => {
-  const useCustomMessages = boolean("Use custom messages", false);
+  const useMessages = boolean("Provide a messages prop", false);
+  const locale = select("Locale", ["en-US", "fr"], "en-US");
+  const overrideDefaultMessages = boolean("Override default messages", false);
+  const messages =
+    locale === "en-US" ? defaultEnglishMessages : defaultFrenchMessages;
+
+  // Construct a messages object that customizes a subset
+  // of the default messages of the desired locale.
+  const mergedMessages = overrideDefaultMessages
+    ? {
+        ...messages,
+        ...customMessages
+      }
+    : messages;
+
   return (
     <IntlProvider
-      locale="en-US"
-      messages={useCustomMessages ? customMessages : null}
+      locale={locale}
+      messages={useMessages ? mergedMessages : null}
     >
       {story()}
     </IntlProvider>

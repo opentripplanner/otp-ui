@@ -9,6 +9,9 @@
   "author": "Evan Siroky",
   "license": "MIT",
   "private": false,
+  "files": [
+    "i18n"
+  ],
   "dependencies": {
     "@opentripplanner/core-utils": "^3.0.4",
     "@opentripplanner/humanize-distance": "^1.1.0",
