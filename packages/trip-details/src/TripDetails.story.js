@@ -30,9 +30,6 @@ const StyledTripDetails = styled(TripDetails)`
   }
 `;
 
-// FIXME: deprecate
-const longDateFormat = "MMMM D, YYYY";
-
 const intlDecorator = story => {
   const useMessages = boolean("Provide a messages prop", false);
   const locale = select("Locale", ["en-US", "fr"], "en-US");
@@ -66,86 +63,57 @@ export default {
 };
 
 export const WalkOnlyItinerary = () => (
-  <TripDetails itinerary={walkOnlyItinerary} longDateFormat={longDateFormat} />
+  <TripDetails itinerary={walkOnlyItinerary} />
 );
 
 export const BikeOnlyItinerary = () => (
-  <TripDetails itinerary={bikeOnlyItinerary} longDateFormat={longDateFormat} />
+  <TripDetails itinerary={bikeOnlyItinerary} />
 );
 
 export const WalkTransitWalkItinerary = () => (
-  <TripDetails
-    itinerary={walkTransitWalkItinerary}
-    longDateFormat={longDateFormat}
-  />
+  <TripDetails itinerary={walkTransitWalkItinerary} />
 );
 
 export const StyledWalkTransitWalkItinerary = () => (
-  <StyledTripDetails
-    itinerary={walkTransitWalkItinerary}
-    longDateFormat={longDateFormat}
-  />
+  <StyledTripDetails itinerary={walkTransitWalkItinerary} />
+);
+
+export const WalkTransitWalkItinerarywithCustomDetails = () => (
+  <StyledTripDetails itinerary={walkTransitWalkItinerary} />
 );
 
 export const BikeTransitBikeItinerary = () => (
-  <TripDetails
-    itinerary={bikeTransitBikeItinerary}
-    longDateFormat={longDateFormat}
-  />
+  <TripDetails itinerary={bikeTransitBikeItinerary} />
 );
 
 export const WalkInterlinedTransitItinerary = () => (
-  <TripDetails
-    itinerary={walkInterlinedTransitItinerary}
-    longDateFormat={longDateFormat}
-  />
+  <TripDetails itinerary={walkInterlinedTransitItinerary} />
 );
 
 export const WalkTransitTransferItinerary = () => (
-  <TripDetails
-    itinerary={walkTransitWalkTransitWalkItinerary}
-    longDateFormat={longDateFormat}
-  />
+  <TripDetails itinerary={walkTransitWalkTransitWalkItinerary} />
 );
 
 export const BikeRentalItinerary = () => (
-  <TripDetails
-    itinerary={bikeRentalItinerary}
-    longDateFormat={longDateFormat}
-  />
+  <TripDetails itinerary={bikeRentalItinerary} />
 );
 
 export const EScooterRentalItinerary = () => (
-  <TripDetails
-    itinerary={eScooterRentalItinerary}
-    longDateFormat={longDateFormat}
-  />
+  <TripDetails itinerary={eScooterRentalItinerary} />
 );
 
 export const ParkAndRideItinerary = () => (
-  <TripDetails
-    itinerary={parkAndRideItinerary}
-    longDateFormat={longDateFormat}
-  />
+  <TripDetails itinerary={parkAndRideItinerary} />
 );
 
 export const BikeRentalTransitItinerary = () => (
-  <TripDetails
-    itinerary={bikeRentalTransitBikeRentalItinerary}
-    longDateFormat={longDateFormat}
-  />
+  <TripDetails itinerary={bikeRentalTransitBikeRentalItinerary} />
 );
 
 export const EScooterRentalTransitItinerary = () => (
-  <TripDetails
-    itinerary={eScooterRentalTransiteScooterRentalItinerary}
-    longDateFormat={longDateFormat}
-  />
+  <TripDetails itinerary={eScooterRentalTransiteScooterRentalItinerary} />
 );
 
 export const TncTransitItinerary = () => (
-  <TripDetails
-    itinerary={tncTransitTncItinerary}
-    longDateFormat={longDateFormat}
-  />
+  <TripDetails itinerary={tncTransitTncItinerary} />
 );
