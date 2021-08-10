@@ -154,7 +154,12 @@ class DateTimeSelector extends Component {
             </ModeButton>
           ))}
         </Styled.DateTimeSelector.DepartureRow>
-
+        {departArrive === "NOW" && (
+          <Styled.DateTimeSelector.LeaveNowRow>
+            {moment(time, OTP_API_TIME_FORMAT).format("h:mma")}{" "}
+            {moment(date, OTP_API_DATE_FORMAT).format("MMMM Do, YYYY")}
+          </Styled.DateTimeSelector.LeaveNowRow>
+        )}
         {departArrive !== "NOW" && !isLegacy && (
           <Styled.DateTimeSelector.DateTimeRow>
             <div>
