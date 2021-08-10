@@ -21,11 +21,6 @@ DateTimeSelector.DepartureRow = styled.div`
   }
 `;
 
-DateTimeSelector.LeaveNowRow = styled.div`
-  box-sizing: border-box;
-  text-align: center;
-`;
-
 DateTimeSelector.DateTimeRow = styled.div`
   box-sizing: border-box;
   > * {
