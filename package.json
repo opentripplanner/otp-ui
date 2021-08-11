@@ -81,6 +81,7 @@
     "webpack": "^4.33.0"
   },
   "scripts": {
+    "a11y-test": "yarn build-storybook && jest --testPathIgnorePatterns packages",
     "bootstrap": "lerna bootstrap --use-workspaces",
     "build:cjs": "lerna exec --parallel -- babel --extensions '.js,.ts,.tsx' --ignore **/*.story.js,**/*.story.ts,**/*.spec.js,**/*.spec.ts,**/*.test.js,**/*.test.ts,**/__tests__/**,storybook-static/**/* --root-mode upward --source-maps true src -d lib",
     "build:esm": "lerna exec --parallel -- cross-env BABEL_ENV=esm babel --extensions '.js,.ts,.tsx' --ignore **/*.story.js,**/*.story.ts,**/*.spec.js,**/*.spec.ts,**/*.test.js,**/*.test.ts,**/__tests__/**,storybook-static/**/* --root-mode upward --source-maps true src -d esm",
@@ -98,7 +99,7 @@
     "semantic-release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo",
     "test": "yarn lint:js && yarn lint:styles && yarn typescript && yarn unit",
     "typescript": "lerna run --parallel tsc",
-    "unit": "yarn build-storybook && jest",
+    "unit": "jest --testPathIgnorePatterns storybook",
     "update-internal-dependencies": "node scripts/update-internal-dependencies.js"
   },
   "eslintConfig": {
