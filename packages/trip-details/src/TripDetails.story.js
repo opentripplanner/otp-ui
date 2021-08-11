@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import { IntlProvider } from "react-intl";
 import { boolean, select, withKnobs } from "@storybook/addon-knobs";
@@ -29,6 +30,33 @@ const StyledTripDetails = styled(TripDetails)`
     background-color: pink;
   }
 `;
+
+const longDateFormat = "MMMM D, YYYY";
+
+// Custom slots for expandable detail sections.
+const CustomDepartureDetails = ({ departureDate }) => (
+  <>
+    Custom messages about {departureDate.format(longDateFormat)} can be
+    constructed dynamically using any markup, including formatting markup from a
+    string localization library.
+  </>
+);
+
+const CustomFareDetails = ({ maxTNCFare, minTNCFare, transitFare }) => (
+  <>
+    Custom details about fares (transitFare: {transitFare} (cents), minTNCFare:{" "}
+    {minTNCFare} and maxTNCFare: {maxTNCFare} can be constructed dynamically
+    using any markup, including formatting markup from a string localization
+    library.
+  </>
+);
+
+const CustomCaloriesDetails = ({ bikeSeconds, calories, walkSeconds }) => (
+  <>
+    Custom message about {calories} calories burned,
+    {walkSeconds} seconds and {bikeSeconds} seconds.
+  </>
+);
 
 const intlDecorator = story => {
   const useMessages = boolean("Provide a messages prop", false);
@@ -78,8 +106,13 @@ export const StyledWalkTransitWalkItinerary = () => (
   <StyledTripDetails itinerary={walkTransitWalkItinerary} />
 );
 
-export const WalkTransitWalkItinerarywithCustomDetails = () => (
-  <StyledTripDetails itinerary={walkTransitWalkItinerary} />
+export const WalkTransitWalkItineraryWithCustomDetails = () => (
+  <StyledTripDetails
+    CaloriesDetails={CustomCaloriesDetails}
+    DepartureDetails={CustomDepartureDetails}
+    FareDetails={CustomFareDetails}
+    itinerary={walkTransitWalkItinerary}
+  />
 );
 
 export const BikeTransitBikeItinerary = () => (

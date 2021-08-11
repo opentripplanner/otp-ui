@@ -39,7 +39,7 @@ function BoldText(contents) {
  * Default rendering if no component is provided for CaloriesDescription
  * in the TripDetails component.
  */
-function DefaultCaloriesDescription({ bikeSeconds, calories, walkSeconds }) {
+function DefaultCaloriesDetails({ bikeSeconds, calories, walkSeconds }) {
   return (
     <FormattedMessage
       defaultMessage={defaultMessages[messageIds.caloriesDescription]}
@@ -68,10 +68,10 @@ function DefaultCaloriesDescription({ bikeSeconds, calories, walkSeconds }) {
  * Renders trip details such as departure instructions, fare amount, and calories spent.
  */
 export default function TripDetails({
-  CaloriesDescription = DefaultCaloriesDescription,
+  CaloriesDetails = DefaultCaloriesDetails,
   className,
-  DepartDescription,
-  FareDescription,
+  DepartureDetails,
+  FareDetails,
   itinerary
 }) {
   // TODO: refactor
@@ -145,8 +145,8 @@ export default function TripDetails({
         <TripDetail
           // Any custom description for the Departure message needs to be handled by the slot.
           description={
-            DepartDescription && (
-              <DepartDescription departureDate={departureDate} />
+            DepartureDetails && (
+              <DepartureDetails departureDate={departureDate} />
             )
           }
           icon={<CalendarAlt size={17} />}
@@ -167,8 +167,8 @@ export default function TripDetails({
           <TripDetail
             // Any custom description for the transit fare needs to be handled by the slot.
             description={
-              FareDescription && (
-                <FareDescription
+              FareDetails && (
+                <FareDetails
                   maxTNCFare={maxTNCFare}
                   minTNCFare={minTNCFare}
                   transitFare={transitFare}
@@ -195,8 +195,8 @@ export default function TripDetails({
               </Styled.CaloriesSummary>
             }
             description={
-              CaloriesDescription && (
-                <CaloriesDescription
+              CaloriesDetails && (
+                <CaloriesDetails
                   bikeSeconds={bikeDuration}
                   calories={caloriesBurned}
                   walkSeconds={walkDuration}
