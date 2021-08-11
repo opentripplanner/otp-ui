@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
+/* eslint-disable react/style-prop-object */
 import coreUtils from "@opentripplanner/core-utils";
 import moment from "moment";
 import PropTypes from "prop-types";
 import React from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, FormattedNumber } from "react-intl";
 import { CalendarAlt, Heartbeat, MoneyBillAlt } from "styled-icons/fa-solid";
 
 import * as Styled from "./styled";
@@ -22,22 +23,17 @@ const messageIds = {
   transitFare: `${MESSAGE_ID_PREFIX}transitFare`
 };
 
-// TODOS:
-// - diet url
-// - currency
-// - date/time format
-
 /**
  * Format text bold (used with FormattedMessage).
  */
-// TODO: Find a better place for this component.
+// TODO: Find a better place for this utility.
 function BoldText(contents) {
   return <b>{contents}</b>;
 }
 
 /**
- * Default rendering if no component is provided for CaloriesDescription
- * in the TripDetails component.
+ * Default rendering if no component is provided for the CaloriesDetails
+ * slot in the TripDetails component.
  */
 function DefaultCaloriesDetails({ bikeSeconds, calories, walkSeconds }) {
   return (
@@ -70,11 +66,12 @@ function DefaultCaloriesDetails({ bikeSeconds, calories, walkSeconds }) {
 export default function TripDetails({
   CaloriesDetails = DefaultCaloriesDetails,
   className,
+  currency,
   DepartureDetails,
   FareDetails,
-  itinerary
+  itinerary,
+  timeOptions
 }) {
-  // TODO: refactor
   let companies;
   itinerary.legs.forEach(leg => {
     if (leg.tncData) {
@@ -96,7 +93,13 @@ export default function TripDetails({
               id={messageIds.transitFare}
               values={{
                 b: BoldText,
-                transitFare: transitFare / 100
+                transitFare: (
+                  <FormattedNumber
+                    currency={currency}
+                    value={transitFare / 100}
+                    style="currency"
+                  />
+                )
               }}
             />
           </Styled.TransitFare>
@@ -114,8 +117,20 @@ export default function TripDetails({
                     {companies.toLowerCase()}
                   </Styled.TNCFareCompanies>
                 ),
-                maxTNCFare,
-                minTNCFare
+                maxTNCFare: (
+                  <FormattedNumber
+                    currency={currency}
+                    value={maxTNCFare}
+                    style="currency"
+                  />
+                ),
+                minTNCFare: (
+                  <FormattedNumber
+                    currency={currency}
+                    value={minTNCFare}
+                    style="currency"
+                  />
+                )
               }}
             />
           </Styled.TNCFare>
@@ -157,7 +172,11 @@ export default function TripDetails({
                 id={messageIds.departure}
                 values={{
                   b: BoldText,
-                  departureDate
+                  departureDate,
+                  departureTime: coreUtils.time.formatTime(
+                    itinerary.startTime,
+                    timeOptions
+                  )
                 }}
               />
             </Styled.Timing>
@@ -213,10 +232,16 @@ export default function TripDetails({
 TripDetails.propTypes = {
   /** Used for additional styling with styled components for example. */
   className: PropTypes.string,
+  /** Three-letter currency code. */
+  currency: PropTypes.string,
   /** Itinerary that the user has selected to view, contains multiple legs. */
-  itinerary: coreUtils.types.itineraryType.isRequired
+  itinerary: coreUtils.types.itineraryType.isRequired,
+  /** Contains the preferred format string for time display and a timezone offset */
+  timeOptions: coreUtils.types.timeOptionsType
 };
 
 TripDetails.defaultProps = {
-  className: null
+  className: null,
+  currency: "USD",
+  timeOptions: null
 };

@@ -37,8 +37,7 @@ const longDateFormat = "MMMM D, YYYY";
 const CustomDepartureDetails = ({ departureDate }) => (
   <>
     Custom messages about {departureDate.format(longDateFormat)} can be
-    constructed dynamically using any markup, including formatting markup from a
-    string localization library.
+    constructed dynamically using any markup.
   </>
 );
 
@@ -46,8 +45,7 @@ const CustomFareDetails = ({ maxTNCFare, minTNCFare, transitFare }) => (
   <>
     Custom details about fares (transitFare: {transitFare} (cents), minTNCFare:{" "}
     {minTNCFare} and maxTNCFare: {maxTNCFare} can be constructed dynamically
-    using any markup, including formatting markup from a string localization
-    library.
+    using any markup.
   </>
 );
 
@@ -59,7 +57,7 @@ const CustomCaloriesDetails = ({ bikeSeconds, calories, walkSeconds }) => (
 );
 
 const intlDecorator = story => {
-  const useMessages = boolean("Provide a messages prop", false);
+  const useMessages = boolean("Use localized messages", false);
   const locale = select("Locale", ["en-US", "fr"], "en-US");
   const overrideDefaultMessages = boolean("Override default messages", false);
   const messages =
@@ -106,15 +104,6 @@ export const StyledWalkTransitWalkItinerary = () => (
   <StyledTripDetails itinerary={walkTransitWalkItinerary} />
 );
 
-export const WalkTransitWalkItineraryWithCustomDetails = () => (
-  <StyledTripDetails
-    CaloriesDetails={CustomCaloriesDetails}
-    DepartureDetails={CustomDepartureDetails}
-    FareDetails={CustomFareDetails}
-    itinerary={walkTransitWalkItinerary}
-  />
-);
-
 export const BikeTransitBikeItinerary = () => (
   <TripDetails itinerary={bikeTransitBikeItinerary} />
 );
@@ -149,4 +138,19 @@ export const EScooterRentalTransitItinerary = () => (
 
 export const TncTransitItinerary = () => (
   <TripDetails itinerary={tncTransitTncItinerary} />
+);
+
+export const TncTransitItineraryWithCustomizations = () => (
+  <StyledTripDetails
+    CaloriesDetails={CustomCaloriesDetails}
+    currency={select("Currency", ["USD", "EUR"], "USD")}
+    DepartureDetails={CustomDepartureDetails}
+    FareDetails={CustomFareDetails}
+    itinerary={tncTransitTncItinerary}
+    timeOptions={
+      select("Time format", ["12-hour", "24-hour"], "12-hour") === "12-hour"
+        ? { format: "h:mm a" }
+        : { format: "HH:mm" }
+    }
+  />
 );
