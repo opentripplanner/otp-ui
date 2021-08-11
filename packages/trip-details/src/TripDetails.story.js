@@ -69,9 +69,6 @@ const TripDetailsWrapper = ({
     DepartureDetails={DepartureDetails}
     FareDetails={FareDetails}
     itinerary={itinerary}
-    timeOptions={{
-      format: select("Time format", ["h:mm a", "HH:mm"], "h:mm a")
-    }}
   />
 );
 

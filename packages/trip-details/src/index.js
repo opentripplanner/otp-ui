@@ -69,8 +69,7 @@ export default function TripDetails({
   currency,
   DepartureDetails,
   FareDetails,
-  itinerary,
-  timeOptions
+  itinerary
 }) {
   let companies;
   itinerary.legs.forEach(leg => {
@@ -172,11 +171,7 @@ export default function TripDetails({
                 id={messageIds.departure}
                 values={{
                   b: BoldText,
-                  departureDate,
-                  departureTime: coreUtils.time.formatTime(
-                    itinerary.startTime,
-                    timeOptions
-                  )
+                  departureDate
                 }}
               />
             </Styled.Timing>
@@ -235,13 +230,10 @@ TripDetails.propTypes = {
   /** Three-letter currency code. */
   currency: PropTypes.string,
   /** Itinerary that the user has selected to view, contains multiple legs. */
-  itinerary: coreUtils.types.itineraryType.isRequired,
-  /** Contains the preferred format string for time display and a timezone offset */
-  timeOptions: coreUtils.types.timeOptionsType
+  itinerary: coreUtils.types.itineraryType.isRequired
 };
 
 TripDetails.defaultProps = {
   className: null,
-  currency: "USD",
-  timeOptions: null
+  currency: "USD"
 };

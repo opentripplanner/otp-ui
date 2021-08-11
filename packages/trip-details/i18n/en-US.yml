@@ -3,10 +3,10 @@
 # that has your other localized strings, and that you pass to the IntlProvider component.
 otpUi.TripDetails.calories: "Calories Burned: <b>{calories, number, ::.}</b>"
 otpUi.TripDetails.caloriesDescription: "Calories burned is based on
-  <b>{walkMinutes} {walkMinutes, plural, one {minute} other {minutes}}</b> spent walking and
-  <b>{bikeMinutes} {bikeMinutes, plural, one {minute} other {minutes}}</b> spent biking during this trip.
+  <b>{walkMinutes, plural, one {# minute} other {# minutes}}</b> spent walking and
+  <b>{bikeMinutes, plural, one {# minute} other {# minutes}}</b> spent biking during this trip.
   Adapted from <a>Dietary Guidelines for Americans 2005, page 16, Table 4</a>."
-otpUi.TripDetails.departure: "Depart <b>{departureDate, date, ::yyyyMMMMdd}</b> at <b>{departureTime}</b>"
+otpUi.TripDetails.departure: "Depart <b>{departureDate, date, long}</b> at <b>{departureDate, time, short}</b>"
 otpUi.TripDetails.title: "Trip Details"
 otpUi.TripDetails.tncFare: "{companies} Fare: <b>{minTNCFare} - {maxTNCFare}</b>"
 otpUi.TripDetails.transitFare: "Transit Fare: <b>{transitFare}</b>"
