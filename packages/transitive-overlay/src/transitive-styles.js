@@ -21,7 +21,7 @@ STYLES.places = {
       : "none",
   fill: (display, place) => {
     if (coreUtils.map.isBikeshareStation(place)) {
-      return "#E60000"; /* from #f00 to meet WCAG */
+      return "#E60000";
     }
     if (coreUtils.map.isCarWalkTransition(place)) {
       return "#888";

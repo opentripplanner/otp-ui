@@ -81,7 +81,7 @@ export const ModeButton = styled.div`
 ModeButton.Title = styled.div`
   font-size: 70%;
   &.disabled {
-    color: #686868; /* from #ccc to meet WCAG */
+    color: #686868;
   }
 `;
 

@@ -118,7 +118,7 @@ export function getMapColor(mode) {
   mode = mode || this.get("mode");
   if (mode === "WALK") return "#444";
   if (mode === "BICYCLE") return "#0073e5";
-  if (mode === "SUBWAY") return "#e60000"; /* from #f00 to comply with WCAG */
+  if (mode === "SUBWAY") return "#e60000";
   if (mode === "RAIL") return "#b00";
   if (mode === "BUS") return "#080";
   if (mode === "TRAM") return "#800";
