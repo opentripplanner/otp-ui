@@ -56,13 +56,31 @@ const CustomCaloriesDetails = ({ bikeSeconds, calories, walkSeconds }) => (
   </>
 );
 
+const TripDetailsWrapper = ({
+  CaloriesDetails,
+  Component = TripDetails,
+  DepartureDetails,
+  FareDetails,
+  itinerary
+}) => (
+  <Component
+    CaloriesDetails={CaloriesDetails}
+    currency={select("Currency", ["USD", "EUR"], "USD")}
+    DepartureDetails={DepartureDetails}
+    FareDetails={FareDetails}
+    itinerary={itinerary}
+    timeOptions={{
+      format: select("Time format", ["h:mm a", "HH:mm"], "h:mm a")
+    }}
+  />
+);
+
 const intlDecorator = story => {
-  const useMessages = boolean("Use localized messages", false);
+  const useMessages = boolean("Use localized messages", true);
   const locale = select("Locale", ["en-US", "fr"], "en-US");
   const overrideDefaultMessages = boolean("Override default messages", false);
   const messages =
     locale === "en-US" ? defaultEnglishMessages : defaultFrenchMessages;
-
   // Construct a messages object that customizes a subset
   // of the default messages of the desired locale.
   const mergedMessages = overrideDefaultMessages
@@ -89,68 +107,68 @@ export default {
 };
 
 export const WalkOnlyItinerary = () => (
-  <TripDetails itinerary={walkOnlyItinerary} />
+  <TripDetailsWrapper itinerary={walkOnlyItinerary} />
 );
 
 export const BikeOnlyItinerary = () => (
-  <TripDetails itinerary={bikeOnlyItinerary} />
+  <TripDetailsWrapper itinerary={bikeOnlyItinerary} />
 );
 
 export const WalkTransitWalkItinerary = () => (
-  <TripDetails itinerary={walkTransitWalkItinerary} />
+  <TripDetailsWrapper itinerary={walkTransitWalkItinerary} />
 );
 
 export const StyledWalkTransitWalkItinerary = () => (
-  <StyledTripDetails itinerary={walkTransitWalkItinerary} />
+  <TripDetailsWrapper
+    Component={StyledTripDetails}
+    itinerary={walkTransitWalkItinerary}
+  />
 );
 
 export const BikeTransitBikeItinerary = () => (
-  <TripDetails itinerary={bikeTransitBikeItinerary} />
+  <TripDetailsWrapper itinerary={bikeTransitBikeItinerary} />
 );
 
 export const WalkInterlinedTransitItinerary = () => (
-  <TripDetails itinerary={walkInterlinedTransitItinerary} />
+  <TripDetailsWrapper itinerary={walkInterlinedTransitItinerary} />
 );
 
 export const WalkTransitTransferItinerary = () => (
-  <TripDetails itinerary={walkTransitWalkTransitWalkItinerary} />
+  <TripDetailsWrapper itinerary={walkTransitWalkTransitWalkItinerary} />
 );
 
 export const BikeRentalItinerary = () => (
-  <TripDetails itinerary={bikeRentalItinerary} />
+  <TripDetailsWrapper itinerary={bikeRentalItinerary} />
 );
 
 export const EScooterRentalItinerary = () => (
-  <TripDetails itinerary={eScooterRentalItinerary} />
+  <TripDetailsWrapper itinerary={eScooterRentalItinerary} />
 );
 
 export const ParkAndRideItinerary = () => (
-  <TripDetails itinerary={parkAndRideItinerary} />
+  <TripDetailsWrapper itinerary={parkAndRideItinerary} />
 );
 
 export const BikeRentalTransitItinerary = () => (
-  <TripDetails itinerary={bikeRentalTransitBikeRentalItinerary} />
+  <TripDetailsWrapper itinerary={bikeRentalTransitBikeRentalItinerary} />
 );
 
 export const EScooterRentalTransitItinerary = () => (
-  <TripDetails itinerary={eScooterRentalTransiteScooterRentalItinerary} />
+  <TripDetailsWrapper
+    itinerary={eScooterRentalTransiteScooterRentalItinerary}
+  />
 );
 
 export const TncTransitItinerary = () => (
-  <TripDetails itinerary={tncTransitTncItinerary} />
+  <TripDetailsWrapper itinerary={tncTransitTncItinerary} />
 );
 
-export const TncTransitItineraryWithCustomizations = () => (
-  <StyledTripDetails
+export const TncTransitItineraryWithCustomDetails = () => (
+  <TripDetailsWrapper
     CaloriesDetails={CustomCaloriesDetails}
-    currency={select("Currency", ["USD", "EUR"], "USD")}
+    Component={StyledTripDetails}
     DepartureDetails={CustomDepartureDetails}
     FareDetails={CustomFareDetails}
     itinerary={tncTransitTncItinerary}
-    timeOptions={
-      select("Time format", ["12-hour", "24-hour"], "12-hour") === "12-hour"
-        ? { format: "h:mm a" }
-        : { format: "HH:mm" }
-    }
   />
 );
