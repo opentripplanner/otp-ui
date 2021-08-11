@@ -19,7 +19,7 @@
     "@opentripplanner/itinerary-body": "^2.0.0"
   },
   "peerDependencies": {
-    "react": "^16.8.6",
+    "react": "^16.14.0",
     "styled-components": "^5.3.0"
   },
   "bugs": {
