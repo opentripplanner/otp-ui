@@ -21,23 +21,23 @@ export type TripDetailsProps = {
   /**
    * Slot for a custom component to render the expandable section for calories.
    */
-  CaloriesDetails: React.ElementType<CaloriesDetailsProps>;
+  CaloriesDetails?: React.ElementType<CaloriesDetailsProps>;
   /**
    * Used for additional styling with styled components for example.
    */
   className?: string;
   /**
-   * Three-letter currency code.
+   * Three-letter currency code. See <a href="https://www.iban.com/currency-codes">here for instance</a>.
    */
   currency?: string;
   /**
    * Slot for a custom component to render the expandable section for departure.
    */
-  DepartureDetails: React.ElementType<DepartureDetailsProps>;
+  DepartureDetails?: React.ElementType<DepartureDetailsProps>;
   /**
    * Slot for a custom component to render the expandable section for fares.
    */
-  FareDetails: React.ElementType<FareDetailsProps>;
+  FareDetails?: React.ElementType<FareDetailsProps>;
   /**
    * Itinerary that the user has selected to view, contains multiple legs.
    */

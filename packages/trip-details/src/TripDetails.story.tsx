@@ -2,7 +2,8 @@ import React from "react";
 import { IntlProvider } from "react-intl";
 import { boolean, select, withKnobs } from "@storybook/addon-knobs";
 import styled from "styled-components";
-
+// The below eslint-disable is due to https://github.com/storybookjs/storybook/issues/13408
+// eslint-disable-next-line import/no-named-as-default
 import TripDetails from ".";
 import * as TripDetailsClasses from "./styled";
 import {
@@ -114,7 +115,7 @@ const intlDecorator = story => {
 };
 
 export default {
-  components: TripDetails,
+  component: TripDetails,
   decorators: [intlDecorator, withKnobs],
   title: "TripDetails"
 };

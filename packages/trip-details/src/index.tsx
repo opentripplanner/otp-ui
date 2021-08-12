@@ -1,6 +1,6 @@
 import coreUtils from "@opentripplanner/core-utils";
 import moment from "moment";
-import React from "react";
+import React, { ReactElement } from "react";
 import { FormattedMessage, FormattedNumber } from "react-intl";
 import { CalendarAlt, Heartbeat, MoneyBillAlt } from "styled-icons/fa-solid";
 
@@ -65,14 +65,14 @@ function DefaultCaloriesDetails({
 /**
  * Renders trip details such as departure instructions, fare amount, and calories spent.
  */
-export default function TripDetails({
+export function TripDetails({
   CaloriesDetails = DefaultCaloriesDetails,
-  className,
+  className = "",
   currency = "USD",
-  DepartureDetails,
-  FareDetails,
+  DepartureDetails = null,
+  FareDetails = null,
   itinerary
-}: TripDetailsProps): React.Element {
+}: TripDetailsProps): ReactElement {
   let companies;
   itinerary.legs.forEach(leg => {
     if (leg.tncData) {
@@ -228,3 +228,5 @@ export default function TripDetails({
     </Styled.TripDetails>
   );
 }
+
+export default TripDetails;
