@@ -1,11 +1,20 @@
-import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { QuestionCircle, TimesCircle } from "styled-icons/fa-solid";
 import { VelocityTransitionGroup } from "velocity-react";
 
 import * as Styled from "./styled";
 
-export default class TripDetail extends Component {
+type Props = {
+  description?: React.Element;
+  icon: React.Element;
+  summary: React.Element;
+};
+
+type State = {
+  expanded: boolean;
+};
+
+export default class TripDetail extends Component<Props, State> {
   constructor(props) {
     super(props);
     this.state = {
@@ -58,13 +67,3 @@ export default class TripDetail extends Component {
     );
   }
 }
-
-TripDetail.propTypes = {
-  icon: PropTypes.node.isRequired,
-  summary: PropTypes.node.isRequired,
-  description: PropTypes.node
-};
-
-TripDetail.defaultProps = {
-  description: undefined
-};

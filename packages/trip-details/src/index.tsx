@@ -1,14 +1,12 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/style-prop-object */
 import coreUtils from "@opentripplanner/core-utils";
 import moment from "moment";
-import PropTypes from "prop-types";
 import React from "react";
 import { FormattedMessage, FormattedNumber } from "react-intl";
 import { CalendarAlt, Heartbeat, MoneyBillAlt } from "styled-icons/fa-solid";
 
 import * as Styled from "./styled";
 import TripDetail from "./trip-detail";
+import { CaloriesDetailsProps, TripDetailsProps } from "./types";
 
 // Load the default messages.
 import defaultMessages from "../i18n/en-US.yml";
@@ -35,7 +33,11 @@ function BoldText(contents) {
  * Default rendering if no component is provided for the CaloriesDetails
  * slot in the TripDetails component.
  */
-function DefaultCaloriesDetails({ bikeSeconds, calories, walkSeconds }) {
+function DefaultCaloriesDetails({
+  bikeSeconds,
+  calories,
+  walkSeconds
+}: CaloriesDetailsProps): React.Element {
   return (
     <FormattedMessage
       defaultMessage={defaultMessages[messageIds.caloriesDescription]}
@@ -66,11 +68,11 @@ function DefaultCaloriesDetails({ bikeSeconds, calories, walkSeconds }) {
 export default function TripDetails({
   CaloriesDetails = DefaultCaloriesDetails,
   className,
-  currency,
+  currency = "USD",
   DepartureDetails,
   FareDetails,
   itinerary
-}) {
+}: TripDetailsProps): React.Element {
   let companies;
   itinerary.legs.forEach(leg => {
     if (leg.tncData) {
@@ -96,6 +98,7 @@ export default function TripDetails({
                   <FormattedNumber
                     currency={currency}
                     value={transitFare / 100}
+                    // eslint-disable-next-line react/style-prop-object
                     style="currency"
                   />
                 )
@@ -120,6 +123,7 @@ export default function TripDetails({
                   <FormattedNumber
                     currency={currency}
                     value={maxTNCFare}
+                    // eslint-disable-next-line react/style-prop-object
                     style="currency"
                   />
                 ),
@@ -127,6 +131,7 @@ export default function TripDetails({
                   <FormattedNumber
                     currency={currency}
                     value={minTNCFare}
+                    // eslint-disable-next-line react/style-prop-object
                     style="currency"
                   />
                 )
@@ -223,17 +228,3 @@ export default function TripDetails({
     </Styled.TripDetails>
   );
 }
-
-TripDetails.propTypes = {
-  /** Used for additional styling with styled components for example. */
-  className: PropTypes.string,
-  /** Three-letter currency code. */
-  currency: PropTypes.string,
-  /** Itinerary that the user has selected to view, contains multiple legs. */
-  itinerary: coreUtils.types.itineraryType.isRequired
-};
-
-TripDetails.defaultProps = {
-  className: null,
-  currency: "USD"
-};

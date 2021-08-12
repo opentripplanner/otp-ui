@@ -7,5 +7,5 @@ otpUi.TripDetails.caloriesDescription:
   (d'après <a>Dietary Guidelines for Americans 2005, page 16, Table 4</a>)"
 otpUi.TripDetails.departure: "Départ le <b>{departureDate, date, long}</b> à <b>{departureDate, time, short}</b>"
 otpUi.TripDetails.title: "Détails du trajet"
-otpUi.TripDetails.tncFare: "Tarif en {companies} : <b>{minTNCFare} - {maxTNCFare}</b>"
+otpUi.TripDetails.tncFare: "Tarif {companies} : <b>{minTNCFare} - {maxTNCFare}</b>"
 otpUi.TripDetails.transitFare: "Tarif en transports : <b>{transitFare}</b>"

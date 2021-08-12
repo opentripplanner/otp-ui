@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import { IntlProvider } from "react-intl";
 import { boolean, select, withKnobs } from "@storybook/addon-knobs";
@@ -6,10 +5,16 @@ import styled from "styled-components";
 
 import TripDetails from ".";
 import * as TripDetailsClasses from "./styled";
+import {
+  CaloriesDetailsProps,
+  DepartureDetailsProps,
+  FareDetailsProps,
+  TripDetailsProps
+} from "./types";
 
 import defaultEnglishMessages from "../i18n/en-US.yml";
 import defaultFrenchMessages from "../i18n/fr.yml";
-import customMessages from "./TripDetails.story.yml";
+import customMessages from "../__mocks__/custom-messages.yml";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json");
@@ -34,14 +39,20 @@ const StyledTripDetails = styled(TripDetails)`
 const longDateFormat = "MMMM D, YYYY";
 
 // Custom slots for expandable detail sections.
-const CustomDepartureDetails = ({ departureDate }) => (
+const CustomDepartureDetails = ({
+  departureDate
+}: DepartureDetailsProps): React.Element => (
   <>
     Custom messages about {departureDate.format(longDateFormat)} can be
     constructed dynamically using any markup.
   </>
 );
 
-const CustomFareDetails = ({ maxTNCFare, minTNCFare, transitFare }) => (
+const CustomFareDetails = ({
+  maxTNCFare,
+  minTNCFare,
+  transitFare
+}: FareDetailsProps): React.Element => (
   <>
     Custom details about fares (transitFare: {transitFare} (cents), minTNCFare:{" "}
     {minTNCFare} and maxTNCFare: {maxTNCFare} can be constructed dynamically
@@ -49,20 +60,25 @@ const CustomFareDetails = ({ maxTNCFare, minTNCFare, transitFare }) => (
   </>
 );
 
-const CustomCaloriesDetails = ({ bikeSeconds, calories, walkSeconds }) => (
+const CustomCaloriesDetails = ({
+  bikeSeconds,
+  calories,
+  walkSeconds
+}: CaloriesDetailsProps): React.Element => (
   <>
     Custom message about {calories} calories burned,
     {walkSeconds} seconds and {bikeSeconds} seconds.
   </>
 );
 
+// Wrapper component for TripDetails.
 const TripDetailsWrapper = ({
   CaloriesDetails,
   Component = TripDetails,
   DepartureDetails,
   FareDetails,
   itinerary
-}) => (
+}: TripDetailsProps): React.Element => (
   <Component
     CaloriesDetails={CaloriesDetails}
     currency={select("Currency", ["USD", "EUR"], "USD")}

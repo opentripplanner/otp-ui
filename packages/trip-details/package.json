@@ -14,15 +14,12 @@
   ],
   "dependencies": {
     "@opentripplanner/core-utils": "^3.0.4",
-    "@opentripplanner/humanize-distance": "^1.1.0",
     "moment": "^2.24.0",
-    "prop-types": "^15.7.2",
     "styled-icons": "^9.1.0",
     "velocity-react": "^1.4.3"
   },
   "devDependencies": {
-    "@opentripplanner/icons": "^1.0.4",
-    "@opentripplanner/itinerary-body": "^2.0.0"
+    "@opentripplanner/types": "^1.0.0"
   },
   "peerDependencies": {
     "react": "^16.8.6",
