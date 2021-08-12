@@ -127,6 +127,7 @@ export const tripOptions = () => (
       }
       supportedModes={commonModes}
       supportedCompanies={commonCompanies}
+      modeIcons={{}}
     />
   </PanelWrapper>
 );

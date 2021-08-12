@@ -16,18 +16,6 @@ export const TripOptionsContainer = styled.div`
   }
 `;
 
-export const ScrollableRow = styled(ScrollContainer)`
-  background-color: #0a4c8d;
-  display: flex;
-  overflow-x: scroll;
-  padding: 0 12px;
-  > button {
-    margin-right: 12px;
-    min-width: 100px;
-    min-width: 75px;
-  }
-`;
-
 export const TransitOptionsContainer = styled.div`
   display: flex;
   > button {
@@ -59,7 +47,7 @@ export const GreenCheck = styled(CheckCircle)`
   background-color: white;
   border-radius: 50%;
   clip-path: circle(40% at 50% 50%); /* Hides white stroke */
-  color: green;
+  color: rgb(84, 174, 88);
 `;
 
 export const UncheckedIcon = styled(PlusCircle)`
@@ -120,7 +108,8 @@ export const Checkbox = styled.button`
 
     ${UncheckedIcon} {
       background: #0d5eac;
-      clip-path: circle(40% at 50% 50%);
+      clip-path: circle(40% at 50% 50%); /* hide outer border */
+      border-radius: 50%; /* fallback for when clip-path is unsupported */
     }
     svg {
       position: absolute;
@@ -133,5 +122,40 @@ export const FeaturedOptionContainer = styled.div`
   display: flex;
   > div {
     flex: 1;
+  }
+`;
+
+export const ScrollableRow = styled(ScrollContainer)`
+  background-color: #0a4c8d;
+  display: flex;
+  overflow-x: scroll;
+  padding: 0 12px;
+
+  /* Individual item in the row*/
+  > button {
+    margin-right: 12px;
+    min-width: 100px;
+    min-width: 75px;
+
+    /* Custom icon for the item, should it be present */
+    > .custom svg {
+      position: relative;
+      height: 3em;
+      width: 3em;
+      fill: white;
+    }
+    /* Adjust the checkmark/plus if it is next to a custom icon */
+    /* strange comments are needed for stylelint to work with styled-components */
+    > .custom
+      ~ ${/* sc-selector */ GreenCheck},
+      .custom
+      ~ ${/* sc-selector */ UncheckedIcon} {
+      position: relative;
+      right: -30px;
+      height: 1.5em;
+      width: 1.5em;
+      top: -50px;
+      margin-bottom: -1em;
+    }
   }
 `;

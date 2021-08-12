@@ -12,6 +12,7 @@ import * as S from "./styled";
 interface ComponentProps {
   footer?: ReactElement;
   supportedCompanies: Company[];
+  modeIcons: Record<string, string>;
 }
 
 type Props = ComponentProps & QueryProps;
@@ -23,7 +24,8 @@ export default function TripOptions(props: Props): ReactElement {
     onQueryParamChange,
     queryParams,
     supportedCompanies,
-    supportedModes
+    supportedModes,
+    modeIcons
   } = props;
   if (featuredOption) {
     return (
@@ -43,6 +45,7 @@ export default function TripOptions(props: Props): ReactElement {
         onQueryParamChange={onQueryParamChange}
         queryParams={queryParams}
         supportedModes={supportedModes}
+        modeIcons={modeIcons}
       />
       <div className="optionsContainer">
         <FeaturedOption

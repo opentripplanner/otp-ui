@@ -12,11 +12,13 @@ import {
 const ModeRow = ({
   onQueryParamChange,
   queryParams,
-  supportedModes
+  supportedModes,
+  modeIcons = {}
 }: {
   onQueryParamChange(paramsToUpdate: QueryParams): void;
   queryParams: QueryParams;
   supportedModes: Modes;
+  modeIcons: Record<string, string>;
 }) => {
   const { categories } = supportedModes;
   const selectedModes = getSelectedModes(queryParams);
@@ -57,6 +59,11 @@ const ModeRow = ({
             onClick={onChangeMode}
             selected={isChecked}
           >
+            {/* Must use label, as it is the only field garunteed across all modes */}
+            {modeIcons[category.label] !== undefined && (
+              <span className="custom">{modeIcons[category.label]}</span>
+            )}
+
             {isChecked ? <S.GreenCheck /> : <S.UncheckedIcon />}
             {category.label}
           </S.Checkbox>
