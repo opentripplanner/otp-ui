@@ -6,9 +6,9 @@ import styled, { css } from "styled-components";
 export const TripOptionsContainer = styled.div`
   background-color: #0d5eac;
   color: white;
+  max-width: 992px; /* Maximum mobile width */
   min-height: 400px;
   overflow-y: scroll;
-  max-width: 992px; /* Maximum mobile width */
 
   div.optionsContainer {
     max-width: 700px;
@@ -17,14 +17,14 @@ export const TripOptionsContainer = styled.div`
 `;
 
 export const ScrollableRow = styled(ScrollContainer)`
+  background-color: #0a4c8d;
   display: flex;
   overflow-x: scroll;
   padding: 0 12px;
-  background-color: #0a4c8d;
   > button {
-    min-width: 75px;
-    min-width: 100px;
     margin-right: 12px;
+    min-width: 100px;
+    min-width: 75px;
   }
 `;
 
@@ -50,16 +50,16 @@ export const MaxHeightImage = styled(Image)`
 
 export const buttonIconCss = css`
   height: 3em;
-  width: 3em;
   margin-bottom: 10px;
+  width: 3em;
 `;
 
 export const GreenCheck = styled(CheckCircle)`
   ${buttonIconCss}
   background-color: white;
   border-radius: 50%;
-  color: green;
   clip-path: circle(40% at 50% 50%); /* Hides white stroke */
+  color: green;
 `;
 
 export const UncheckedIcon = styled(PlusCircle)`
@@ -69,17 +69,17 @@ export const UncheckedIcon = styled(PlusCircle)`
 export const OptionButton = styled.button`
   align-items: center;
   background-color: rgba(0, 0, 0, 0);
-  color: ${(props: ButtonProps) => (props.selected ? "white" : "lightgrey")};
-  border: solid 1px;
   border-color: ${(props: ButtonProps) =>
     props.selected ? "white" : "lightgrey"};
   border-radius: 7px;
+  border: solid 1px;
+  color: ${(props: ButtonProps) => (props.selected ? "white" : "lightgrey")};
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   margin-top: 5px;
   min-width: 100%;
   padding: 5px;
-  cursor: pointer;
 `;
 
 export const OptionLabel = styled.div``;
@@ -91,10 +91,10 @@ export const OptionIcon = styled.div`
 `;
 
 export const QuestionButton = styled.button`
-  cursor: pointer;
   background-color: rgba(0, 0, 0, 0);
   border: none;
   color: white;
+  cursor: pointer;
   float: right;
   > svg {
     height: 1em;
@@ -103,20 +103,20 @@ export const QuestionButton = styled.button`
 `;
 
 export const Checkbox = styled.button`
+  align-items: center;
   background-color: rgba(0, 0, 0, 0);
   border: none;
   color: ${(props: ButtonProps) => (props.selected ? "white" : "lightgrey")};
-  opacity: ${(props: ButtonProps) => (props.selected ? "1" : "0.5")};
+  cursor: pointer;
   display: flex;
   flex-direction: column;
+  opacity: ${(props: ButtonProps) => (props.selected ? "1" : "0.5")};
   padding: 20px 0px;
-  align-items: center;
   white-space: pre-wrap;
-  cursor: pointer;
 
   &.insetCheckmark {
-    position: relative;
     margin: 20px 0;
+    position: relative;
 
     ${UncheckedIcon} {
       background: #0d5eac;
