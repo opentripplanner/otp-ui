@@ -341,6 +341,7 @@ class LocationField extends Component {
       classNames.push(`operator-${featureIdComponents[1]}`);
 
     classNames.push(`source-${feature.properties.source}`);
+    classNames.push(`layer-${feature.properties.layer}`);
 
     // Create and return the option menu item
     return (

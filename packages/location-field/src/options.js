@@ -2,13 +2,25 @@ import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceStringImperial } from "@opentripplanner/humanize-distance";
 import PropTypes from "prop-types";
 import React from "react";
-import { Briefcase, Home, MapMarker, MapPin } from "styled-icons/fa-solid";
+import { Bus, Briefcase, Home, MapMarker, MapPin } from "styled-icons/fa-solid";
 
 import * as Styled from "./styled";
 
-export function GeocodedOptionIcon() {
+export function GeocodedOptionIcon(props) {
+  const { feature } = props;
+  if (feature && feature.properties && feature.properties.source) {
+    if (feature.properties.source === "transit") {
+      return <Bus size={13} />;
+    }
+  }
   return <MapPin size={13} />;
 }
+GeocodedOptionIcon.propTypes = {
+  feature: { properties: { source: PropTypes.string } }
+};
+GeocodedOptionIcon.defaultProps = {
+  feature: {}
+};
 
 export function Option({ disabled, icon, isActive, onClick, title, classes }) {
   return (
