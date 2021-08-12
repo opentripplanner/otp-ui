@@ -6,6 +6,7 @@ import ModeButton from "./ModeButton";
 import ModeSelector from "./ModeSelector";
 import SettingsSelectorPanel from "./SettingsSelectorPanel";
 import SubmodeSelector from "./SubmodeSelector";
+import TripOptions from "./TripOptions";
 
 export {
   CheckboxSelector,
@@ -15,5 +16,6 @@ export {
   ModeButton,
   ModeSelector,
   SettingsSelectorPanel,
-  SubmodeSelector
+  SubmodeSelector,
+  TripOptions
 };
