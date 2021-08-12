@@ -8,14 +8,23 @@ export const TripOptionsContainer = styled.div`
   color: white;
   min-height: 400px;
   overflow-y: scroll;
+  max-width: 992px; /* Maximum mobile width */
+
+  div.optionsContainer {
+    max-width: 700px;
+    padding: 12px;
+  }
 `;
 
 export const ScrollableRow = styled(ScrollContainer)`
   display: flex;
   overflow-x: scroll;
+  padding: 0 12px;
   background-color: #0a4c8d;
   > button {
+    min-width: 75px;
     min-width: 100px;
+    margin-right: 12px;
   }
 `;
 
@@ -39,19 +48,9 @@ export const MaxHeightImage = styled(Image)`
   max-height: 200px;
 `;
 
-export const Checkbox = styled.button`
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-  color: ${(props: ButtonProps) => (props.selected ? "white" : "lightgrey")};
-  display: flex;
-  flex-direction: column;
-  padding: 20px 0px;
-  align-items: center;
-`;
-
 export const buttonIconCss = css`
-  height: 2em;
-  width: 2em;
+  height: 3em;
+  width: 3em;
   margin-bottom: 10px;
 `;
 
@@ -60,6 +59,7 @@ export const GreenCheck = styled(CheckCircle)`
   background-color: white;
   border-radius: 50%;
   color: green;
+  clip-path: circle(40% at 50% 50%); /* Hides white stroke */
 `;
 
 export const UncheckedIcon = styled(PlusCircle)`
@@ -79,6 +79,7 @@ export const OptionButton = styled.button`
   margin-top: 5px;
   min-width: 100%;
   padding: 5px;
+  cursor: pointer;
 `;
 
 export const OptionLabel = styled.div``;
@@ -90,6 +91,7 @@ export const OptionIcon = styled.div`
 `;
 
 export const QuestionButton = styled.button`
+  cursor: pointer;
   background-color: rgba(0, 0, 0, 0);
   border: none;
   color: white;
@@ -97,6 +99,33 @@ export const QuestionButton = styled.button`
   > svg {
     height: 1em;
     width: 1em;
+  }
+`;
+
+export const Checkbox = styled.button`
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: ${(props: ButtonProps) => (props.selected ? "white" : "lightgrey")};
+  opacity: ${(props: ButtonProps) => (props.selected ? "1" : "0.5")};
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0px;
+  align-items: center;
+  white-space: pre-wrap;
+  cursor: pointer;
+
+  &.insetCheckmark {
+    position: relative;
+    margin: 20px 0;
+
+    ${UncheckedIcon} {
+      background: #0d5eac;
+      clip-path: circle(40% at 50% 50%);
+    }
+    svg {
+      position: absolute;
+      right: 24px;
+    }
   }
 `;
 

@@ -108,6 +108,7 @@ const FooterContainer = styled.div`
   margin: 20px 0px;
   > button {
     width: 66%;
+    cursor: pointer;
   }
   > .line-break {
     width: 100%;

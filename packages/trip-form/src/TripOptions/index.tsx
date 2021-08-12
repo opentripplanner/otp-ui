@@ -44,23 +44,25 @@ export default function TripOptions(props: Props): ReactElement {
         queryParams={queryParams}
         supportedModes={supportedModes}
       />
-      <FeaturedOption
-        onQueryParamChange={onQueryParamChange}
-        queryParams={queryParams}
-        setFeaturedOption={setFeaturedOption}
-        supportedModes={supportedModes}
-      />
-      <GeneralSettingsPanel
-        query={queryParams}
-        supportedModes={supportedModes}
-        onQueryParamChange={onQueryParamChange}
-      />
-      <TransitOptions
-        onQueryParamChange={onQueryParamChange}
-        queryParams={queryParams}
-        supportedModes={supportedModes}
-      />
-      {footer}
+      <div className="optionsContainer">
+        <FeaturedOption
+          onQueryParamChange={onQueryParamChange}
+          queryParams={queryParams}
+          setFeaturedOption={setFeaturedOption}
+          supportedModes={supportedModes}
+        />
+        <GeneralSettingsPanel
+          query={queryParams}
+          supportedModes={supportedModes}
+          onQueryParamChange={onQueryParamChange}
+        />
+        <TransitOptions
+          onQueryParamChange={onQueryParamChange}
+          queryParams={queryParams}
+          supportedModes={supportedModes}
+        />
+        {footer}
+      </div>
     </S.TripOptionsContainer>
   );
 }

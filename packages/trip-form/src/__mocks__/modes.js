@@ -28,7 +28,7 @@ const commonModes = {
       id: "BICYCLE",
       image:
         "https://cdn.shopify.com/s/files/1/0514/3160/4395/files/ronin-titanium-natural-sram-red-axs_1024x.png?v=1617366397",
-      label: "+ Bike or Bike Rental",
+      label: `+ Bike or Bike${"\u00A0"}Rental`,
       type: "access",
       options: [
         {
@@ -46,7 +46,7 @@ const commonModes = {
         "E-scooters are battery-powered devices that you can rent on-the-spot using an app on your phone. You can quickly and easily connect to and from your transit stop, using one of several scooter brands operating in the Portland area.",
       image:
         "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FUSION_2020.png",
-      label: "+ Ridehail or Park & Ride",
+      label: `+ Ridehail or Park${"\u00A0"}${"\u0026"}${"\u00A0"}Ride`,
       type: "access",
       options: [
         {

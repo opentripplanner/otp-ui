@@ -31,6 +31,7 @@ const TransitOptions = ({
         return (
           <S.Checkbox
             key={transitMode.mode}
+            className="insetCheckmark"
             onClick={() => {
               let mode = selectedModes;
               // Remove mode from list if all transit is selected.
