@@ -466,10 +466,14 @@ export function getTransitFare(fareComponent) {
   let digits = 2;
   let transitFare = 0;
   let symbol = "$";
+  let currencyCode = "USD";
   if (fareComponent) {
-    digits = fareComponent.currency.defaultFractionDigits;
+    ({
+      currencyCode,
+      defaultFractionDigits: digits,
+      symbol
+    } = fareComponent.currency);
     transitFare = fareComponent.cents;
-    symbol = fareComponent.currency.symbol;
   }
   // For cents to string conversion, use digits from fare component.
   const centsToString = cents => {
@@ -480,6 +484,7 @@ export function getTransitFare(fareComponent) {
   const dollarsToString = dollars => `${symbol}${dollars.toFixed(2)}`;
   return {
     centsToString,
+    currencyCode,
     dollarsToString,
     transitFare
   };
@@ -487,29 +492,37 @@ export function getTransitFare(fareComponent) {
 
 /**
  * For an itinerary, calculates the transit/TNC fares and returns an object with
- * these values as well as string formatters.
+ * these values, currency info, as well as string formatters.
  */
 export function calculateFares(itinerary) {
   // Extract fare total from itinerary fares.
   const fareComponent =
     itinerary.fare && itinerary.fare.fare && itinerary.fare.fare.regular;
   // Get string formatters and itinerary fare.
-  const { centsToString, dollarsToString, transitFare } = getTransitFare(
-    fareComponent
-  );
+  const {
+    centsToString,
+    currencyCode: transitCurrencyCode,
+    dollarsToString,
+    transitFare
+  } = getTransitFare(fareComponent);
   // Process any TNC fares
   let minTNCFare = 0;
   let maxTNCFare = 0;
+  let tncCurrencyCode;
   itinerary.legs.forEach(leg => {
     if (leg.mode === "CAR" && leg.hailedCar && leg.tncData) {
-      const { maxCost, minCost } = leg.tncData;
+      const { currency, maxCost, minCost } = leg.tncData;
       // TODO: Support non-USD
       minTNCFare += minCost;
       maxTNCFare += maxCost;
+      tncCurrencyCode = currency;
     }
   });
+
   return {
     centsToString,
+    // Hopefully, the currency code is consistent throughout.
+    currencyCode: transitCurrencyCode || tncCurrencyCode,
     dollarsToString,
     maxTNCFare,
     minTNCFare,
