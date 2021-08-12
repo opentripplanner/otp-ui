@@ -308,16 +308,60 @@ class LocationField extends Component {
       });
   }
 
+  renderFeature = (itemIndex, feature) => {
+    const {
+      geocoderConfig,
+      addLocationSearch,
+      GeocodedOptionIconComponent
+    } = this.props;
+    const { activeIndex } = this.state;
+    // Create the selection handler
+    const locationSelected = () => {
+      getGeocoder(geocoderConfig)
+        .getLocationFromGeocodedFeature(feature)
+        .then(geocodedLocation => {
+          // Set the current location
+          this.setLocation(geocodedLocation, "GEOCODE");
+          // Add to the location search history. This is intended to
+          // populate the sessionSearches array.
+          addLocationSearch({ location: geocodedLocation });
+        });
+    };
+
+    // Add to the selection handler lookup (for use in onKeyDown)
+    this.locationSelectedLookup[itemIndex] = locationSelected;
+
+    // Extract GTFS/POI info and assign to class
+    const classNames = [];
+    // Operator only exists on transit features
+    const featureIdComponents =
+      feature.properties.source === "transit" &&
+      feature.properties.id.split("::");
+    if (featureIdComponents.length > 0)
+      classNames.push(`operator-${featureIdComponents[1]}`);
+
+    classNames.push(`source-${feature.properties.source}`);
+
+    // Create and return the option menu item
+    return (
+      <Option
+        icon={<GeocodedOptionIconComponent feature={feature} />}
+        key={optionKey++}
+        title={feature.properties.label}
+        onClick={locationSelected}
+        isActive={itemIndex === activeIndex}
+        classes={classNames.join(" ")}
+      />
+    );
+  };
+
   render() {
     const {
-      addLocationSearch,
       autoFocus,
       className,
       currentPosition,
       currentPositionIcon,
       currentPositionUnavailableIcon,
-      GeocodedOptionIconComponent,
-      geocoderConfig,
       inputPlaceholder,
       location,
       LocationIconComponent,
@@ -335,9 +379,7 @@ class LocationField extends Component {
     } = this.props;
     const { menuVisible, value } = this.state;
     const { activeIndex, message } = this.state;
-    let { geocodedFeatures } = this.state;
-    if (geocodedFeatures.length > 5)
-      geocodedFeatures = geocodedFeatures.slice(0, 5);
+    const { geocodedFeatures } = this.state;
 
     let { sessionSearches } = this.props;
     if (sessionSearches.length > 5)
@@ -356,38 +398,26 @@ class LocationField extends Component {
       // Add the menu sub-heading (not a selectable item)
       // menuItems.push(<MenuItem header key='sr-header'>Search Results</MenuItem>)
 
+      // Split out transit results
+      const transitFeatures = geocodedFeatures
+        .filter(feature => feature.properties.source === "transit")
+        .slice(0, 3);
+      const otherFeatures = geocodedFeatures
+        .filter(feature => feature.properties.source !== "transit")
+        .slice(0, 3);
+
       // Iterate through the geocoder results
       menuItems = menuItems.concat(
-        geocodedFeatures.map(feature => {
-          // Create the selection handler
-          const locationSelected = () => {
-            getGeocoder(geocoderConfig)
-              .getLocationFromGeocodedFeature(feature)
-              .then(geocodedLocation => {
-                // Set the current location
-                this.setLocation(geocodedLocation, "GEOCODE");
-                // Add to the location search history. This is intended to
-                // populate the sessionSearches array.
-                addLocationSearch({ location: geocodedLocation });
-              });
-          };
-
-          // Add to the selection handler lookup (for use in onKeyDown)
-          this.locationSelectedLookup[itemIndex] = locationSelected;
-
-          // Create and return the option menu item
-          const option = (
-            <Option
-              icon={<GeocodedOptionIconComponent feature={feature} />}
-              key={optionKey++}
-              title={feature.properties.label}
-              onClick={locationSelected}
-              isActive={itemIndex === activeIndex}
-            />
-          );
-          itemIndex++;
-          return option;
-        })
+        transitFeatures.length > 0 && (
+          <header key="gtfs-header">GTFS results</header>
+        ),
+        transitFeatures.map(feature =>
+          this.renderFeature(itemIndex++, feature)
+        ),
+        otherFeatures.length > 0 && (
+          <header key="other-header">Other results</header>
+        ),
+        otherFeatures.map(feature => this.renderFeature(itemIndex++, feature))
       );
     }
 
@@ -648,7 +678,6 @@ LocationField.propTypes = {
   /**
    * Dispatched upon selecting a geocoded result
    * Provides an argument in the format:
-   *
    * ```js
    * { location: geocodedLocation }
    * ```

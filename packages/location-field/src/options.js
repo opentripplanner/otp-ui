@@ -10,7 +10,7 @@ export function GeocodedOptionIcon() {
   return <MapPin size={13} />;
 }
 
-export function Option({ disabled, icon, isActive, onClick, title }) {
+export function Option({ disabled, icon, isActive, onClick, title, classes }) {
   return (
     <Styled.MenuItem onClick={onClick} active={isActive} disabled={disabled}>
       {coreUtils.ui.isIE() ? (
@@ -21,7 +21,7 @@ export function Option({ disabled, icon, isActive, onClick, title }) {
         // See https://github.com/ibi-group/trimet-mod-otp/issues/237
         title
       ) : (
-        <Styled.OptionContainer>
+        <Styled.OptionContainer className={classes}>
           <Styled.OptionIconContainer>{icon}</Styled.OptionIconContainer>
           <Styled.OptionContent>{title}</Styled.OptionContent>
         </Styled.OptionContainer>
@@ -31,6 +31,7 @@ export function Option({ disabled, icon, isActive, onClick, title }) {
 }
 
 Option.propTypes = {
+  classes: PropTypes.string,
   disabled: PropTypes.bool,
   icon: PropTypes.node,
   isActive: PropTypes.bool,
@@ -39,6 +40,7 @@ Option.propTypes = {
 };
 
 Option.defaultProps = {
+  classes: "",
   disabled: false,
   icon: null,
   isActive: false,
