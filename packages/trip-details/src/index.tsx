@@ -35,7 +35,10 @@ function getMessageIds<T>(sourceObject: T, idPrefix: string): T {
   return ids;
 }
 
-const messageIds = getMessageIds<TripDetailsMessages>(defaultMessages);
+const messageIds = getMessageIds<TripDetailsMessages>(
+  defaultMessages,
+  "otpUi.TripDetails"
+);
 
 /**
  * Format text bold (used with FormattedMessage).
