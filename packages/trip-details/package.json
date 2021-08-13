@@ -16,7 +16,8 @@
     "velocity-react": "^1.4.3"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^1.0.0"
+    "@opentripplanner/types": "^1.0.0",
+    "flat": "^5.0.2"
   },
   "peerDependencies": {
     "react": "^16.8.6",

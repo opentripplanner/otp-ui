@@ -1,12 +1,19 @@
 # Default messages for the TripDetails component.
-# To use from a react-intl application, merge the content of this file into the messages object
-# that has your other localized strings, and that you pass to the IntlProvider component.
-otpUi.TripDetails.calories: "Calories Burned: <b>{calories, number, ::.}</b>"
-otpUi.TripDetails.caloriesDescription: "Calories burned is based on
-  <b>{walkMinutes, plural, one {# minute} other {# minutes}}</b> spent walking and
-  <b>{bikeMinutes, plural, one {# minute} other {# minutes}}</b> spent biking during this trip.
-  Adapted from <a>Dietary Guidelines for Americans 2005, page 16, Table 4</a>."
-otpUi.TripDetails.departure: "Depart <b>{departureDate, date, long}</b> at <b>{departureDate, time, short}</b>"
-otpUi.TripDetails.title: "Trip Details"
-otpUi.TripDetails.tncFare: "{companies} Fare: <b>{minTNCFare} - {maxTNCFare}</b>"
-otpUi.TripDetails.transitFare: "Transit Fare: <b>{transitFare}</b>"
+# To use from a react-intl application:
+# - merge the content of this file into the messages object
+#   that has your other localized strings,
+# - flatten the ids, i.e. convert a structure such as
+#      otpUi > TripDetails > calories
+#   into "otpUi.TripDetails.calories" (see TripDetail story for an example),
+# - pass the resulting object to the messages prop of IntlProvider.
+otpUi:
+  TripDetails:
+    calories: "Calories Burned: <b>{calories, number, ::.}</b>"
+    caloriesDescription: "Calories burned is based on
+      <b>{walkMinutes, plural, one {# minute} other {# minutes}}</b> spent walking and
+      <b>{bikeMinutes, plural, one {# minute} other {# minutes}}</b> spent biking during this trip.
+      Adapted from <a>Dietary Guidelines for Americans 2005, page 16, Table 4</a>."
+    departure: "Depart <b>{departureDate, date, long}</b> at <b>{departureDate, time, short}</b>"
+    title: "Trip Details"
+    tncFare: "{companies} Fare: <b>{minTNCFare} - {maxTNCFare}</b>"
+    transitFare: "Transit Fare: <b>{transitFare}</b>"

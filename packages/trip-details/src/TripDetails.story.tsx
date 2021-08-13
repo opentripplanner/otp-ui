@@ -1,3 +1,4 @@
+import flatten from "flat";
 import React, { ElementType, ReactElement } from "react";
 import { IntlProvider } from "react-intl";
 import { Story as StoryType } from "@storybook/react";
@@ -101,14 +102,17 @@ const intlDecorator = (
 ): ReactElement => {
   const { args } = context;
   const { locale, useCustomMessages, useLocalizedMessages } = args;
-  const messages =
-    locale === "en-US" ? defaultEnglishMessages : defaultFrenchMessages;
+  const messages = flatten(
+    locale === "en-US" ? defaultEnglishMessages : defaultFrenchMessages
+  );
   // Construct a messages object that customizes a subset
   // of the default messages of the desired locale.
+  // The structure of the message objects is
+  // flattened before it is passed to IntlProvider.
   const mergedMessages = useCustomMessages
     ? {
         ...messages,
-        ...customMessages
+        ...flatten(customMessages)
       }
     : messages;
 

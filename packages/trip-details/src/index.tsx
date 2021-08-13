@@ -9,17 +9,33 @@ import TripDetail from "./trip-detail";
 import { CaloriesDetailsProps, TripDetailsProps } from "./types";
 
 // Load the default messages.
-import defaultMessages from "../i18n/en-US.yml";
+import defaultEnglishMessages from "../i18n/en-US.yml";
 
-const MESSAGE_ID_PREFIX = "otpUi.TripDetails.";
-const messageIds = {
-  calories: `${MESSAGE_ID_PREFIX}calories`,
-  caloriesDescription: `${MESSAGE_ID_PREFIX}caloriesDescription`,
-  departure: `${MESSAGE_ID_PREFIX}departure`,
-  title: `${MESSAGE_ID_PREFIX}title`,
-  tncFare: `${MESSAGE_ID_PREFIX}tncFare`,
-  transitFare: `${MESSAGE_ID_PREFIX}transitFare`
-};
+interface TripDetailsMessages {
+  calories: string;
+  caloriesDescription: string;
+  departure: string;
+  title: string;
+  tncFare: string;
+  transitFare: string;
+}
+
+// Extract the TripDetails portion of the default message structure.
+const defaultMessages = defaultEnglishMessages.otpUi.TripDetails;
+
+/**
+ * Construct a map to get message ids (use keys from defaultMessages).
+ */
+// TODO: Find a better place for this utility.
+function getMessageIds<T>(sourceObject: T, idPrefix: string): T {
+  const ids = {};
+  Object.keys(sourceObject).forEach((k: string) => {
+    ids[k] = `${idPrefix}.${k}`;
+  });
+  return ids;
+}
+
+const messageIds = getMessageIds<TripDetailsMessages>(defaultMessages);
 
 /**
  * Format text bold (used with FormattedMessage).
@@ -40,7 +56,7 @@ function DefaultCaloriesDetails({
 }: CaloriesDetailsProps): React.Element {
   return (
     <FormattedMessage
-      defaultMessage={defaultMessages[messageIds.caloriesDescription]}
+      defaultMessage={defaultMessages.caloriesDescription}
       id={messageIds.caloriesDescription}
       values={{
         // eslint-disable-next-line react/display-name
@@ -90,7 +106,7 @@ export function TripDetails({
         {transitFare && (
           <Styled.TransitFare>
             <FormattedMessage
-              defaultMessage={defaultMessages[messageIds.transitFare]}
+              defaultMessage={defaultMessages.transitFare}
               id={messageIds.transitFare}
               values={{
                 b: BoldText,
@@ -110,7 +126,7 @@ export function TripDetails({
           <Styled.TNCFare>
             <br />
             <FormattedMessage
-              defaultMessage={defaultMessages[messageIds.tncFare]}
+              defaultMessage={defaultMessages.tncFare}
               id={messageIds.tncFare}
               values={{
                 b: BoldText,
@@ -156,7 +172,7 @@ export function TripDetails({
     <Styled.TripDetails className={className}>
       <Styled.TripDetailsHeader>
         <FormattedMessage
-          defaultMessage={defaultMessages[messageIds.title]}
+          defaultMessage={defaultMessages.title}
           id={messageIds.title}
         />
       </Styled.TripDetailsHeader>
@@ -172,7 +188,7 @@ export function TripDetails({
           summary={
             <Styled.Timing>
               <FormattedMessage
-                defaultMessage={defaultMessages[messageIds.departure]}
+                defaultMessage={defaultMessages.departure}
                 id={messageIds.departure}
                 values={{
                   b: BoldText,
@@ -204,7 +220,7 @@ export function TripDetails({
             summary={
               <Styled.CaloriesSummary>
                 <FormattedMessage
-                  defaultMessage={defaultMessages[messageIds.calories]}
+                  defaultMessage={defaultMessages.calories}
                   id={messageIds.calories}
                   values={{
                     b: BoldText,

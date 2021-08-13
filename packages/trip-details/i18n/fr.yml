@@ -1,11 +1,12 @@
 # Example translations for the TripDetails component into French.
-otpUi.TripDetails.calories: "Calories dépensées : <b>{calories, number, ::.}</b>"
-otpUi.TripDetails.caloriesDescription:
-  "La dépense calorique est calculée sur la base de
-  {walkMinutes, plural, one {<b># minute</b> effectuée} other {<b># minutes</b> effectuées}} à pied et
-  {bikeMinutes, plural, one {<b># minute</b> effectuée} other {<b># minutes</b> effectuées}} en vélo sur ce trajet.
-  (d'après <a>Dietary Guidelines for Americans 2005, page 16, Table 4</a>)"
-otpUi.TripDetails.departure: "Départ le <b>{departureDate, date, long}</b> à <b>{departureDate, time, short}</b>"
-otpUi.TripDetails.title: "Détails du trajet"
-otpUi.TripDetails.tncFare: "Tarif {companies} : <b>{minTNCFare} - {maxTNCFare}</b>"
-otpUi.TripDetails.transitFare: "Tarif en transports : <b>{transitFare}</b>"
+otpUi:
+  TripDetails:
+    calories: "Calories dépensées : <b>{calories, number, ::.}</b>"
+    caloriesDescription: "La dépense calorique est calculée sur la base de
+      {walkMinutes, plural, one {<b># minute</b> effectuée} other {<b># minutes</b> effectuées}} à pied et
+      {bikeMinutes, plural, one {<b># minute</b> effectuée} other {<b># minutes</b> effectuées}} en vélo sur ce trajet.
+      (d'après <a>Dietary Guidelines for Americans 2005, page 16, Table 4</a>)"
+    departure: "Départ le <b>{departureDate, date, long}</b> à <b>{departureDate, time, short}</b>"
+    title: "Détails du trajet"
+    tncFare: "Tarif {companies} : <b>{minTNCFare} - {maxTNCFare}</b>"
+    transitFare: "Tarif en transports : <b>{transitFare}</b>"
