@@ -16,7 +16,9 @@ export function GeocodedOptionIcon(props) {
   return <MapPin size={13} />;
 }
 GeocodedOptionIcon.propTypes = {
-  feature: { properties: { source: PropTypes.string } }
+  feature: PropTypes.shape({
+    properties: PropTypes.shape({ source: PropTypes.string })
+  })
 };
 GeocodedOptionIcon.defaultProps = {
   feature: {}

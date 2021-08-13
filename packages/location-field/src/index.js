@@ -400,8 +400,11 @@ class LocationField extends Component {
       // menuItems.push(<MenuItem header key='sr-header'>Search Results</MenuItem>)
 
       // Split out transit results
-      const transitFeatures = geocodedFeatures
-        .filter(feature => feature.properties.source === "transit")
+      const stopFeatures = geocodedFeatures
+        .filter(feature => feature.properties.layer === "stops")
+        .slice(0, 3);
+      const stationFeatures = geocodedFeatures
+        .filter(feature => feature.properties.layer === "stations")
         .slice(0, 3);
       const otherFeatures = geocodedFeatures
         .filter(feature => feature.properties.source !== "transit")
@@ -409,12 +412,18 @@ class LocationField extends Component {
 
       // Iterate through the geocoder results
       menuItems = menuItems.concat(
-        transitFeatures.length > 0 && (
-          <header key="gtfs-header">GTFS results</header>
+        stationFeatures.length > 0 && (
+          <header key="gtfs-stations-header">Station results</header>
         ),
-        transitFeatures.map(feature =>
+        stationFeatures.map(feature =>
           this.renderFeature(itemIndex++, feature)
         ),
+
+        stopFeatures.length > 0 && (
+          <header key="gtfs-stops-header">Stop results</header>
+        ),
+        stopFeatures.map(feature => this.renderFeature(itemIndex++, feature)),
+
         otherFeatures.length > 0 && (
           <header key="other-header">Other results</header>
         ),
