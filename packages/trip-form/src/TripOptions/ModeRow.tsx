@@ -53,15 +53,15 @@ const ModeRow = ({
           }
           onQueryParamChange({ company, mode });
         };
+        const mode = category.mode || category.options[0].mode;
         return (
           <S.Checkbox
             key={`access-${category.label}`}
             onClick={onChangeMode}
             selected={isChecked}
           >
-            {/* Must use label, as it is the only field garunteed across all modes */}
-            {modeIcons[category.label] !== undefined && (
-              <span className="custom">{modeIcons[category.label]}</span>
+            {modeIcons[mode] !== undefined && (
+              <span className="custom">{modeIcons[mode]}</span>
             )}
 
             {isChecked ? <S.GreenCheck /> : <S.UncheckedIcon />}
