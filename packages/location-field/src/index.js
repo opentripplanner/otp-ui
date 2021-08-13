@@ -310,9 +310,11 @@ class LocationField extends Component {
 
   renderFeature = (itemIndex, feature) => {
     const {
+      layerColorMap,
       geocoderConfig,
       addLocationSearch,
-      GeocodedOptionIconComponent
+      GeocodedOptionIconComponent,
+      operatorIconMap
     } = this.props;
     const { activeIndex } = this.state;
     // Create the selection handler
@@ -332,26 +334,32 @@ class LocationField extends Component {
     this.locationSelectedLookup[itemIndex] = locationSelected;
 
     // Extract GTFS/POI info and assign to class
+    const { layer, source, id } = feature.properties;
     const classNames = [];
+    let operatorIcon;
     // Operator only exists on transit features
-    const featureIdComponents =
-      feature.properties.source === "transit" &&
-      feature.properties.id.split("::");
-    if (featureIdComponents.length > 0)
-      classNames.push(`operator-${featureIdComponents[1]}`);
+    const featureIdComponents = source === "transit" && id.split("::");
+    if (featureIdComponents.length > 0) {
+      const operatorName = featureIdComponents[1]
+        .replaceAll(" ", "-")
+        .toLowerCase();
+      classNames.push(`operator-${operatorName}`);
+      operatorIcon = operatorIconMap[operatorName];
+    }
 
-    classNames.push(`source-${feature.properties.source}`);
-    classNames.push(`layer-${feature.properties.layer}`);
+    classNames.push(`source-${source}`);
+    classNames.push(`layer-${layer}`);
 
     // Create and return the option menu item
     return (
       <Option
-        icon={<GeocodedOptionIconComponent feature={feature} />}
+        icon={operatorIcon || <GeocodedOptionIconComponent feature={feature} />}
         key={optionKey++}
         title={feature.properties.label}
         onClick={locationSelected}
         isActive={itemIndex === activeIndex}
         classes={classNames.join(" ")}
+        color={layerColorMap[layer]}
       />
     );
   };
@@ -784,6 +792,11 @@ LocationField.propTypes = {
    */
   inputPlaceholder: PropTypes.string,
   /**
+   * Mapping from Pelias layer to color. Allows results from different
+   * Pelias sources to be shown in a different color.
+   */
+  layerColorMap: PropTypes.shape({ [PropTypes.string]: PropTypes.string }),
+  /**
    * The location that this component is currently set with.
    */
   location: PropTypes.shape({
@@ -844,6 +857,11 @@ LocationField.propTypes = {
    * "STOP": A transit stop
    */
   onLocationSelected: PropTypes.func.isRequired,
+  /**
+   * Mapping from Pelias *operator* to icon (represented as jsx). Allows results from different Pelias
+   * operators to be given a unique Icon.
+   */
+  operatorIconMap: PropTypes.shape({ [PropTypes.string]: PropTypes.node }),
   /**
    * A slot for the icon to display for an option that was used during the
    * current session.
@@ -910,10 +928,12 @@ LocationField.defaultProps = {
   GeocodedOptionIconComponent: GeocodedOptionIcon,
   hideExistingValue: false,
   inputPlaceholder: null,
+  layerColorMap: {},
   location: null,
   LocationIconComponent: DefaultLocationIcon,
   nearbyStops: [],
   onTextInputClick: null,
+  operatorIconMap: {},
   sessionOptionIcon: <Search size={13} />,
   sessionSearches: [],
   showClearButton: true,

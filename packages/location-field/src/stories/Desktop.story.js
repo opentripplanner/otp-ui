@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Ship } from "styled-icons/fa-solid";
 import LocationField from "..";
 import {
   currentPosition,
@@ -91,5 +92,18 @@ export const WithBadApiKeyHandlesBadAutocomplete = () => (
     inputPlaceholder="Select from location"
     locationType="from"
     onLocationSelected={onLocationSelected}
+  />
+);
+
+export const WithCustomResultColorsAndIcons = () => (
+  <LocationField
+    currentPosition={currentPosition}
+    geocoderConfig={geocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    inputPlaceholder="Select from location"
+    locationType="from"
+    onLocationSelected={onLocationSelected}
+    layerColorMap={{ stops: "green", stations: "orange" }}
+    operatorIconMap={{ "wa-state-ferry": <Ship size={13} /> }}
   />
 );

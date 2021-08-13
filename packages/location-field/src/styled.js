@@ -126,7 +126,9 @@ export const MenuItemHeader = styled.li`
 `;
 
 export const MenuItemLi = styled.li`
+  background-color: ${props => props.color};
   &:hover {
+    /* TODO: adjust highlight color based on props.color? */
     background-color: ${props => !props.disabled && "#f5f5f5"};
   }
 `;
@@ -138,11 +140,18 @@ export class MenuItem extends Component {
   };
 
   render() {
-    const { active, centeredText, children, disabled, header } = this.props;
+    const {
+      active,
+      centeredText,
+      children,
+      color,
+      disabled,
+      header
+    } = this.props;
     return header ? (
       <MenuItemHeader centeredText={centeredText}>{children}</MenuItemHeader>
     ) : (
-      <MenuItemLi disabled={disabled} role="presentation">
+      <MenuItemLi color={color} disabled={disabled} role="presentation">
         <MenuItemA
           active={active}
           onClick={this.onClick}
@@ -160,6 +169,7 @@ MenuItem.propTypes = {
   active: PropTypes.bool,
   centeredText: PropTypes.bool,
   children: PropTypes.node.isRequired,
+  color: PropTypes.string,
   disabled: PropTypes.bool,
   header: PropTypes.bool,
   onClick: PropTypes.func
@@ -168,6 +178,7 @@ MenuItem.propTypes = {
 MenuItem.defaultProps = {
   active: false,
   centeredText: false,
+  color: "#ffffff",
   disabled: false,
   header: false,
   onClick: null

@@ -8,8 +8,10 @@ import * as Styled from "./styled";
 
 export function GeocodedOptionIcon(props) {
   const { feature } = props;
-  if (feature && feature.properties && feature.properties.source) {
-    if (feature.properties.source === "transit") {
+  const { properties } = feature;
+  if (feature && properties) {
+    const { source } = properties;
+    if (source === "transit") {
       return <Bus size={13} />;
     }
   }
@@ -24,9 +26,22 @@ GeocodedOptionIcon.defaultProps = {
   feature: {}
 };
 
-export function Option({ disabled, icon, isActive, onClick, title, classes }) {
+export function Option({
+  color,
+  disabled,
+  icon,
+  isActive,
+  onClick,
+  title,
+  classes
+}) {
   return (
-    <Styled.MenuItem onClick={onClick} active={isActive} disabled={disabled}>
+    <Styled.MenuItem
+      onClick={onClick}
+      active={isActive}
+      disabled={disabled}
+      color={color}
+    >
       {coreUtils.ui.isIE() ? (
         // In internet explorer 11, some really weird stuff is happening where it
         // is not possible to click the text of the title, but if you click just
@@ -46,6 +61,7 @@ export function Option({ disabled, icon, isActive, onClick, title, classes }) {
 
 Option.propTypes = {
   classes: PropTypes.string,
+  color: PropTypes.string,
   disabled: PropTypes.bool,
   icon: PropTypes.node,
   isActive: PropTypes.bool,
@@ -55,6 +71,7 @@ Option.propTypes = {
 
 Option.defaultProps = {
   classes: "",
+  color: undefined,
   disabled: false,
   icon: null,
   isActive: false,
