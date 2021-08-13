@@ -12,7 +12,7 @@ otpUi:
     caloriesDescription: "Calories burned is based on
       <b>{walkMinutes, plural, one {# minute} other {# minutes}}</b> spent walking and
       <b>{bikeMinutes, plural, one {# minute} other {# minutes}}</b> spent biking during this trip.
-      Adapted from <a>Dietary Guidelines for Americans 2005, page 16, Table 4</a>."
+      Adapted from <dietaryLink>Dietary Guidelines for Americans 2005, page 16, Table 4</dietaryLink>."
     departure: "Depart <b>{departureDate, date, long}</b> at <b>{departureDate, time, short}</b>"
     title: "Trip Details"
     tncFare: "{companies} Fare: <b>{minTNCFare} - {maxTNCFare}</b>"

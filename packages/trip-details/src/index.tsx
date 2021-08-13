@@ -44,8 +44,23 @@ const messageIds = getMessageIds<TripDetailsMessages>(
  * Format text bold (used with FormattedMessage).
  */
 // TODO: Find a better place for this utility.
-function BoldText(contents) {
+function BoldText(contents: ReactElement): ReactElement {
   return <b>{contents}</b>;
+}
+
+/**
+ * Helper function to specify the link to dietary table.
+ */
+function dietaryLink(contents: ReactElement): ReactElement {
+  return (
+    <a
+      href="https://health.gov/dietaryguidelines/dga2005/document/html/chapter3.htm#table4"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      {contents}
+    </a>
+  );
 }
 
 /**
@@ -62,19 +77,10 @@ function DefaultCaloriesDetails({
       defaultMessage={defaultMessages.caloriesDescription}
       id={messageIds.caloriesDescription}
       values={{
-        // eslint-disable-next-line react/display-name
-        a: contents => (
-          <a
-            href="https://health.gov/dietaryguidelines/dga2005/document/html/chapter3.htm#table4"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            {contents}
-          </a>
-        ),
         b: BoldText,
         bikeMinutes: Math.round(bikeSeconds / 60),
         calories: Math.round(calories),
+        dietaryLink,
         walkMinutes: Math.round(walkSeconds / 60)
       }}
     />
