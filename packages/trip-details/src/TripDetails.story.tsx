@@ -1,6 +1,6 @@
-import React from "react";
+import React, { ElementType, ReactElement } from "react";
 import { IntlProvider } from "react-intl";
-import { boolean, select, withKnobs } from "@storybook/addon-knobs";
+import { Story as StoryType } from "@storybook/react";
 import styled from "styled-components";
 // The below eslint-disable is due to https://github.com/storybookjs/storybook/issues/13408
 // eslint-disable-next-line import/no-named-as-default
@@ -72,32 +72,40 @@ const CustomCaloriesDetails = ({
   </>
 );
 
-// Wrapper component for TripDetails.
-const TripDetailsWrapper = ({
+// Template component for each TripDetails story.
+const TripDetailsTemplate = ({
   CaloriesDetails,
   Component = TripDetails,
+  currency,
   DepartureDetails,
   FareDetails,
   itinerary
 }: TripDetailsProps): React.Element => (
   <Component
     CaloriesDetails={CaloriesDetails}
-    currency={select("Currency", ["USD", "EUR"], "USD")}
+    currency={currency}
     DepartureDetails={DepartureDetails}
     FareDetails={FareDetails}
     itinerary={itinerary}
   />
 );
 
-const intlDecorator = story => {
-  const useMessages = boolean("Use localized messages", true);
-  const locale = select("Locale", ["en-US", "fr"], "en-US");
-  const overrideDefaultMessages = boolean("Override default messages", false);
+const intlDecorator = (
+  Story: StoryType,
+  context: {
+    Component?: ElementType;
+    locale?: string;
+    useCustomMessages?: boolean;
+    useLocalizedMessages?: boolean;
+  }
+): ReactElement => {
+  const { args } = context;
+  const { locale, useCustomMessages, useLocalizedMessages } = args;
   const messages =
     locale === "en-US" ? defaultEnglishMessages : defaultFrenchMessages;
   // Construct a messages object that customizes a subset
   // of the default messages of the desired locale.
-  const mergedMessages = overrideDefaultMessages
+  const mergedMessages = useCustomMessages
     ? {
         ...messages,
         ...customMessages
@@ -107,82 +115,125 @@ const intlDecorator = story => {
   return (
     <IntlProvider
       locale={locale}
-      messages={useMessages ? mergedMessages : null}
+      messages={useLocalizedMessages ? mergedMessages : null}
     >
-      {story()}
+      <Story />
     </IntlProvider>
   );
 };
 
+/**
+ * Helper to simplify story declaration.
+ */
+function makeStory(args) {
+  const BoundTripDetails = TripDetailsTemplate.bind({});
+  BoundTripDetails.args = args;
+  return BoundTripDetails;
+}
+
+const intlProviderProp = "(This prop is used by the decorator.)";
+// Hide story controls for some props.
+const noControl = {
+  control: { type: null }
+};
+
 export default {
+  argTypes: {
+    CaloriesDetails: noControl,
+    className: noControl,
+    Component: {
+      table: { disable: true }
+    },
+    currency: {
+      control: "radio",
+      options: ["USD", "EUR"]
+    },
+    DepartureDetails: noControl,
+    FareDetails: noControl,
+    itinerary: noControl,
+    locale: {
+      control: "radio",
+      description: intlProviderProp,
+      options: ["en-US", "fr"]
+    },
+    useCustomMessages: {
+      control: "boolean",
+      description: intlProviderProp
+    },
+    useLocalizedMessages: {
+      control: "boolean",
+      description: intlProviderProp
+    }
+  },
+  args: {
+    currency: "USD",
+    locale: "en-US",
+    useCustomMessages: false,
+    useLocalizedMessages: true
+  },
   component: TripDetails,
-  decorators: [intlDecorator, withKnobs],
+  decorators: [intlDecorator],
+  parameters: { controls: { sort: "alpha" } },
   title: "TripDetails"
 };
 
-export const WalkOnlyItinerary = () => (
-  <TripDetailsWrapper itinerary={walkOnlyItinerary} />
-);
+export const WalkOnlyItinerary = makeStory({
+  itinerary: walkOnlyItinerary
+});
 
-export const BikeOnlyItinerary = () => (
-  <TripDetailsWrapper itinerary={bikeOnlyItinerary} />
-);
+export const BikeOnlyItinerary = makeStory({
+  itinerary: bikeOnlyItinerary
+});
 
-export const WalkTransitWalkItinerary = () => (
-  <TripDetailsWrapper itinerary={walkTransitWalkItinerary} />
-);
+export const WalkTransitWalkItinerary = makeStory({
+  itinerary: walkTransitWalkItinerary
+});
 
-export const StyledWalkTransitWalkItinerary = () => (
-  <TripDetailsWrapper
-    Component={StyledTripDetails}
-    itinerary={walkTransitWalkItinerary}
-  />
-);
+export const StyledWalkTransitWalkItinerary = makeStory({
+  Component: StyledTripDetails,
+  itinerary: walkTransitWalkItinerary
+});
 
-export const BikeTransitBikeItinerary = () => (
-  <TripDetailsWrapper itinerary={bikeTransitBikeItinerary} />
-);
+export const BikeTransitBikeItinerary = makeStory({
+  itinerary: bikeTransitBikeItinerary
+});
 
-export const WalkInterlinedTransitItinerary = () => (
-  <TripDetailsWrapper itinerary={walkInterlinedTransitItinerary} />
-);
+export const WalkInterlinedTransitItinerary = makeStory({
+  itinerary: walkInterlinedTransitItinerary
+});
 
-export const WalkTransitTransferItinerary = () => (
-  <TripDetailsWrapper itinerary={walkTransitWalkTransitWalkItinerary} />
-);
+export const WalkTransitTransferItinerary = makeStory({
+  itinerary: walkTransitWalkTransitWalkItinerary
+});
 
-export const BikeRentalItinerary = () => (
-  <TripDetailsWrapper itinerary={bikeRentalItinerary} />
-);
+export const BikeRentalItinerary = makeStory({
+  itinerary: bikeRentalItinerary
+});
 
-export const EScooterRentalItinerary = () => (
-  <TripDetailsWrapper itinerary={eScooterRentalItinerary} />
-);
+export const EScooterRentalItinerary = makeStory({
+  itinerary: eScooterRentalItinerary
+});
 
-export const ParkAndRideItinerary = () => (
-  <TripDetailsWrapper itinerary={parkAndRideItinerary} />
-);
+export const ParkAndRideItinerary = makeStory({
+  itinerary: parkAndRideItinerary
+});
 
-export const BikeRentalTransitItinerary = () => (
-  <TripDetailsWrapper itinerary={bikeRentalTransitBikeRentalItinerary} />
-);
+export const BikeRentalTransitItinerary = makeStory({
+  itinerary: bikeRentalTransitBikeRentalItinerary
+});
 
-export const EScooterRentalTransitItinerary = () => (
-  <TripDetailsWrapper
-    itinerary={eScooterRentalTransiteScooterRentalItinerary}
-  />
-);
+export const EScooterRentalTransitItinerary = makeStory({
+  itinerary: eScooterRentalTransiteScooterRentalItinerary
+});
 
-export const TncTransitItinerary = () => (
-  <TripDetailsWrapper itinerary={tncTransitTncItinerary} />
-);
+export const TncTransitItinerary = makeStory({
+  itinerary: tncTransitTncItinerary
+});
 
-export const TncTransitItineraryWithCustomDetails = () => (
-  <TripDetailsWrapper
-    CaloriesDetails={CustomCaloriesDetails}
-    Component={StyledTripDetails}
-    DepartureDetails={CustomDepartureDetails}
-    FareDetails={CustomFareDetails}
-    itinerary={tncTransitTncItinerary}
-  />
-);
+export const TncTransitItineraryWithCustomDetails = makeStory({
+  CaloriesDetails: CustomCaloriesDetails,
+  Component: StyledTripDetails,
+  DepartureDetails: CustomDepartureDetails,
+  FareDetails: CustomFareDetails,
+  itinerary: tncTransitTncItinerary
+});
