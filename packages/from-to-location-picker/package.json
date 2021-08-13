@@ -14,8 +14,8 @@
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {
-    "react": "^16.8.6",
-    "styled-components": "^4.3.1"
+    "react": "^16.14.0",
+    "styled-components": "^5.3.0"
   },
   "repository": {
     "type": "git",

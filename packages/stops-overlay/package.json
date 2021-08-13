@@ -28,9 +28,9 @@
   "peerDependencies": {
     "@opentripplanner/base-map": "^1.0.4",
     "prop-types": "^15.7.2",
-    "react": "^16.8.6",
+    "react": "^16.14.0",
     "react-leaflet": "^2.6.1",
-    "styled-components": "^4.3.1"
+    "styled-components": "^5.3.0"
   },
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"
 }

@@ -12,5 +12,8 @@ module.exports = {
     }
   },
   globalSetup: "<rootDir>/test-utils/global-setup.js",
+  moduleNameMapper: {
+    "\\.(s?css|less)$": "identity-obj-proxy"
+  },
   testPathIgnorePatterns: ["<rootDir>/packages/(?:.+?)/(esm|lib)/"]
 };
