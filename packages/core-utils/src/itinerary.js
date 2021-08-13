@@ -493,6 +493,7 @@ export function getTransitFare(fareComponent) {
 /**
  * For an itinerary, calculates the transit/TNC fares and returns an object with
  * these values, currency info, as well as string formatters.
+ * It is assumed that the same currency is used for transit and TNC legs.
  */
 export function calculateFares(itinerary) {
   // Extract fare total from itinerary fares.
@@ -521,7 +522,6 @@ export function calculateFares(itinerary) {
 
   return {
     centsToString,
-    // Hopefully, the currency code is consistent throughout.
     currencyCode: transitCurrencyCode || tncCurrencyCode,
     dollarsToString,
     maxTNCFare,
