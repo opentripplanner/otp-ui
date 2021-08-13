@@ -71,7 +71,7 @@ Option.propTypes = {
 
 Option.defaultProps = {
   classes: "",
-  color: undefined,
+  color: null,
   disabled: false,
   icon: null,
   isActive: false,

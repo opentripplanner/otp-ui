@@ -372,6 +372,7 @@ class LocationField extends Component {
       currentPositionIcon,
       currentPositionUnavailableIcon,
       inputPlaceholder,
+      layerColorMap,
       location,
       LocationIconComponent,
       locationType,
@@ -421,14 +422,32 @@ class LocationField extends Component {
       // Iterate through the geocoder results
       menuItems = menuItems.concat(
         stationFeatures.length > 0 && (
-          <header key="gtfs-stations-header">Station results</header>
+          <header
+            style={
+              "stations" in layerColorMap && {
+                backgroundColor: layerColorMap.stations
+              }
+            }
+            key="gtfs-stations-header"
+          >
+            Station results
+          </header>
         ),
         stationFeatures.map(feature =>
           this.renderFeature(itemIndex++, feature)
         ),
 
         stopFeatures.length > 0 && (
-          <header key="gtfs-stops-header">Stop results</header>
+          <header
+            style={
+              "stops" in layerColorMap && {
+                backgroundColor: layerColorMap.stops
+              }
+            }
+            key="gtfs-stops-header"
+          >
+            Stop results
+          </header>
         ),
         stopFeatures.map(feature => this.renderFeature(itemIndex++, feature)),
 
@@ -795,7 +814,12 @@ LocationField.propTypes = {
    * Mapping from Pelias layer to color. Allows results from different
    * Pelias sources to be shown in a different color.
    */
-  layerColorMap: PropTypes.shape({ [PropTypes.string]: PropTypes.string }),
+  layerColorMap: PropTypes.shape({
+    [PropTypes.string]: PropTypes.string,
+    // Explicitly include those used as headers
+    stops: PropTypes.string,
+    stations: PropTypes.string
+  }),
   /**
    * The location that this component is currently set with.
    */
