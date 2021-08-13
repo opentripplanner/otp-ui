@@ -131,7 +131,7 @@ function makeStory(args) {
   return BoundTripDetails;
 }
 
-const intlProviderProp = "(This prop is used by the decorator.)";
+const decoratorPropDescription = "(This prop is used by the decorator.)";
 // Hide story controls for some props.
 const noControl = {
   control: { type: null }
@@ -141,6 +141,7 @@ export default {
   argTypes: {
     CaloriesDetails: noControl,
     className: noControl,
+    // Hide the template's Component prop completely.
     Component: {
       table: { disable: true }
     },
@@ -153,16 +154,14 @@ export default {
     itinerary: noControl,
     locale: {
       control: "radio",
-      description: intlProviderProp,
+      description: decoratorPropDescription,
       options: ["en-US", "fr"]
     },
     useCustomMessages: {
-      control: "boolean",
-      description: intlProviderProp
+      description: decoratorPropDescription
     },
     useLocalizedMessages: {
-      control: "boolean",
-      description: intlProviderProp
+      description: decoratorPropDescription
     }
   },
   args: {
