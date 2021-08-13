@@ -80,8 +80,8 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap --use-workspaces",
-    "build:cjs": "lerna exec --parallel -- babel --extensions '.js,.ts,.tsx' --ignore **/*.story.js,**/*.story.ts,**/*.spec.js,**/*.spec.ts,**/*.test.js,**/*.test.ts,**/__tests__/** --root-mode upward --source-maps true src -d lib",
-    "build:esm": "lerna exec --parallel -- cross-env BABEL_ENV=esm babel --extensions '.js,.ts,.tsx' --ignore **/*.story.js,**/*.story.ts,**/*.spec.js,**/*.spec.ts,**/*.test.js,**/*.test.ts,**/__tests__/** --root-mode upward --source-maps true src -d esm",
+    "build:cjs": "lerna exec --parallel -- babel --extensions '.js,.ts,.tsx' --ignore **/*.story.js,**/*.story.ts,**/*.story.tsx,**/*.spec.js,**/*.spec.ts,**/*.test.js,**/*.test.ts,**/__tests__/** --root-mode upward --source-maps true src -d lib",
+    "build:esm": "lerna exec --parallel -- cross-env BABEL_ENV=esm babel --extensions '.js,.ts,.tsx' --ignore **/*.story.js,**/*.story.ts,**/*.story.tsx,**/*.spec.js,**/*.spec.ts,**/*.test.js,**/*.test.ts,**/__tests__/** --root-mode upward --source-maps true src -d esm",
     "prepublish": "yarn typescript && yarn build:cjs && yarn build:esm",
     "check-eslint-config": "eslint --print-config jestconfig.js | eslint-config-prettier-check",
     "coverage": "jest --coverage",
