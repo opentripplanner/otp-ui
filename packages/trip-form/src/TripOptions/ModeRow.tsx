@@ -53,7 +53,9 @@ const ModeRow = ({
           }
           onQueryParamChange({ company, mode });
         };
-        const mode = category.mode || category.options[0].mode;
+        // All Tri-Met categories either have a mode or the first option does
+        const mode =
+          category.mode || (category.options && category.options[0].mode);
         return (
           <S.Checkbox
             key={`access-${category.label}`}

@@ -145,7 +145,7 @@ export const ScrollableRow = styled(ScrollContainer)`
       fill: white;
     }
     /* Adjust the checkmark/plus if it is next to a custom icon */
-    /* strange comments are needed for stylelint to work with styled-components */
+    /* Strange comments are needed for stylelint to work with styled-components */
     > .custom
       ~ ${/* sc-selector */ GreenCheck},
       .custom
