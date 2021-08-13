@@ -1,5 +1,5 @@
 # Default messages for the TripDetails component.
-# To use from a react-intl application, import the content of this file into the messages object
+# To use from a react-intl application, merge the content of this file into the messages object
 # that has your other localized strings, and that you pass to the IntlProvider component.
 otpUi.TripDetails.calories: "Calories Burned: <b>{calories, number, ::.}</b>"
 otpUi.TripDetails.caloriesDescription: "Calories burned is based on
