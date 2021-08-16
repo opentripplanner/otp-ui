@@ -1,5 +1,5 @@
 import flatten from "flat";
-import React, { ElementType, ReactElement } from "react";
+import React, { ReactElement } from "react";
 import { IntlProvider } from "react-intl";
 import { Story as StoryType } from "@storybook/react";
 import styled from "styled-components";
@@ -10,8 +10,7 @@ import * as TripDetailsClasses from "./styled";
 import {
   CaloriesDetailsProps,
   DepartureDetailsProps,
-  FareDetailsProps,
-  TripDetailsProps
+  FareDetailsProps
 } from "./types";
 
 import defaultEnglishMessages from "../i18n/en-US.yml";
@@ -43,7 +42,7 @@ const longDateFormat = "MMMM D, YYYY";
 // Custom slots for expandable detail sections.
 const CustomDepartureDetails = ({
   departureDate
-}: DepartureDetailsProps): React.Element => (
+}: DepartureDetailsProps): ReactElement => (
   <>
     Custom messages about {departureDate.format(longDateFormat)} can be
     constructed dynamically using any markup.
@@ -54,7 +53,7 @@ const CustomFareDetails = ({
   maxTNCFare,
   minTNCFare,
   transitFare
-}: FareDetailsProps): React.Element => (
+}: FareDetailsProps): ReactElement => (
   <>
     Custom details about fares (transitFare: {transitFare} (cents), minTNCFare:{" "}
     {minTNCFare} and maxTNCFare: {maxTNCFare} can be constructed dynamically
@@ -66,35 +65,41 @@ const CustomCaloriesDetails = ({
   bikeSeconds,
   calories,
   walkSeconds
-}: CaloriesDetailsProps): React.Element => (
+}: CaloriesDetailsProps): ReactElement => (
   <>
     Custom message about {calories} calories burned,
     {walkSeconds} seconds and {bikeSeconds} seconds.
   </>
 );
 
-// Template component for each TripDetails story.
-const TripDetailsTemplate = ({
-  CaloriesDetails,
-  Component = TripDetails,
-  currency,
-  DepartureDetails,
-  FareDetails,
-  itinerary
-}: TripDetailsProps): React.Element => (
-  <Component
-    CaloriesDetails={CaloriesDetails}
-    currency={currency}
-    DepartureDetails={DepartureDetails}
-    FareDetails={FareDetails}
-    itinerary={itinerary}
-  />
-);
+/**
+ * Create a template component for each TripDetails story.
+ * A Component argument is passed. Once bound,
+ * the Component to render should not change.
+ * @param Component The component to render.
+ */
+function createTripDetailsTemplate(Component = TripDetails) {
+  const TripDetailsTemplate = ({
+    CaloriesDetails,
+    currency,
+    DepartureDetails,
+    FareDetails,
+    itinerary
+  }: TripDetailsProps): React.Element => (
+    <Component
+      CaloriesDetails={CaloriesDetails}
+      currency={currency}
+      DepartureDetails={DepartureDetails}
+      FareDetails={FareDetails}
+      itinerary={itinerary}
+    />
+  );
+  return TripDetailsTemplate;
+}
 
 const intlDecorator = (
   Story: StoryType,
   context: {
-    Component?: ElementType;
     locale?: string;
     useCustomMessages?: boolean;
     useLocalizedMessages?: boolean;
@@ -129,8 +134,8 @@ const intlDecorator = (
 /**
  * Helper to simplify story declaration.
  */
-function makeStory(args) {
-  const BoundTripDetails = TripDetailsTemplate.bind({});
+function makeStory(args, Component) {
+  const BoundTripDetails = createTripDetailsTemplate(Component).bind({});
   BoundTripDetails.args = args;
   return BoundTripDetails;
 }
@@ -192,10 +197,12 @@ export const WalkTransitWalkItinerary = makeStory({
   itinerary: walkTransitWalkItinerary
 });
 
-export const StyledWalkTransitWalkItinerary = makeStory({
-  Component: StyledTripDetails,
-  itinerary: walkTransitWalkItinerary
-});
+export const StyledWalkTransitWalkItinerary = makeStory(
+  {
+    itinerary: walkTransitWalkItinerary
+  },
+  StyledTripDetails
+);
 
 export const BikeTransitBikeItinerary = makeStory({
   itinerary: bikeTransitBikeItinerary
@@ -233,10 +240,12 @@ export const TncTransitItinerary = makeStory({
   itinerary: tncTransitTncItinerary
 });
 
-export const TncTransitItineraryWithCustomDetails = makeStory({
-  CaloriesDetails: CustomCaloriesDetails,
-  Component: StyledTripDetails,
-  DepartureDetails: CustomDepartureDetails,
-  FareDetails: CustomFareDetails,
-  itinerary: tncTransitTncItinerary
-});
+export const TncTransitItineraryWithCustomDetails = makeStory(
+  {
+    CaloriesDetails: CustomCaloriesDetails,
+    DepartureDetails: CustomDepartureDetails,
+    FareDetails: CustomFareDetails,
+    itinerary: tncTransitTncItinerary
+  },
+  StyledTripDetails
+);
