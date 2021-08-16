@@ -34606,6 +34606,100 @@ exports[`Storyshots LocationField/Desktop Context With Bad Api Key Handles Bad A
 </div>
 `;
 
+exports[`Storyshots LocationField/Desktop Context With Custom Result Colors And Icons 1`] = `
+.c5 {
+  display: inline-block;
+  vertical-align: -.125em;
+  overflow: hidden;
+}
+
+.c6 {
+  color: #333;
+}
+
+.c3 {
+  border: none;
+  background: none;
+}
+
+.c4 {
+  width: 30px;
+}
+
+.c2 {
+  position: relative;
+}
+
+.c0 {
+  border-collapse: separate;
+  display: table;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.c7 {
+  border: none;
+  box-shadow: none;
+  font-size: 17px;
+  outline: none;
+}
+
+.c1 {
+  border-bottom: 1px solid #000;
+  border-collapse: separate;
+  display: table;
+  position: relative;
+}
+
+<div
+  className="c0"
+  onBlur={[Function]}
+>
+  <span
+    className="c1"
+  >
+    <span
+      className="c2"
+    >
+      <button
+        aria-label="List the suggested from locations as you type"
+        className="c3 c4"
+        onClick={[Function]}
+      >
+        <svg
+          className="c5 c6"
+          fill="currentColor"
+          focusable="false"
+          height={13}
+          role="img"
+          viewBox="0 0 512 512"
+          width={13}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <title>
+            From Location Icon
+          </title>
+          <path
+            d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
+            fill="currentColor"
+          />
+        </svg>
+      </button>
+    </span>
+    <input
+      aria-label="Select from location"
+      autoFocus={false}
+      className="c7 from-form-control"
+      onChange={[Function]}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Select from location"
+      value=""
+    />
+  </span>
+</div>
+`;
+
 exports[`Storyshots LocationField/Mobile Context Blank 1`] = `
 .c3 {
   display: inline-block;
@@ -34762,6 +34856,7 @@ exports[`Storyshots LocationField/Mobile Context Blank 1`] = `
   >
     <li
       className="c8"
+      color={null}
       disabled={false}
       role="presentation"
     >
@@ -34997,6 +35092,7 @@ exports[`Storyshots LocationField/Mobile Context Selected Location 1`] = `
   >
     <li
       className="c10"
+      color={null}
       disabled={false}
       role="presentation"
     >
@@ -35201,6 +35297,7 @@ exports[`Storyshots LocationField/Mobile Context Styled 1`] = `
   >
     <li
       className="c9"
+      color={null}
       disabled={false}
       role="presentation"
     >
@@ -35332,23 +35429,31 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
   white-space: nowrap;
 }
 
+.c8 {
+  background-color: #ffffff;
+}
+
 .c8:hover {
   background-color: #f5f5f5;
 }
 
-.c16 {
+.c16:hover {
+  background-color: #f5f5f5;
+}
+
+.c17 {
   padding-top: 5px;
   padding-bottom: 3px;
 }
 
-.c18 {
+.c19 {
   margin-left: 30px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.c17 {
+.c18 {
   float: left;
 }
 
@@ -35437,6 +35542,7 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
     </li>
     <li
       className="c8"
+      color="#ffffff"
       disabled={false}
       role="presentation"
     >
@@ -35474,7 +35580,7 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
           className="c12"
         >
           <div
-            className="styled__StopName-ixb7j8-21"
+            className="styled__StopName-sc-ixb7j8-21"
           >
             1st & Main
              (
@@ -35498,6 +35604,7 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
     </li>
     <li
       className="c8"
+      color="#ffffff"
       disabled={false}
       role="presentation"
     >
@@ -35535,7 +35642,7 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
           className="c12"
         >
           <div
-            className="styled__StopName-ixb7j8-21"
+            className="styled__StopName-sc-ixb7j8-21"
           >
             Main & 2nd
              (
@@ -35563,7 +35670,8 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
       Recently Searched
     </li>
     <li
-      className="c8"
+      className="c16"
+      color={null}
       disabled={false}
       role="presentation"
     >
@@ -35574,10 +35682,10 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
         tabIndex={-1}
       >
         <div
-          className="c16"
+          className="c17"
         >
           <div
-            className="c17"
+            className="c18"
           >
             <svg
               aria-hidden="true"
@@ -35596,7 +35704,7 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
             </svg>
           </div>
           <div
-            className="c18"
+            className="c19"
           >
             123 Main St
           </div>
@@ -35609,7 +35717,8 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
       My Places
     </li>
     <li
-      className="c8"
+      className="c16"
+      color={null}
       disabled={false}
       role="presentation"
     >
@@ -35620,10 +35729,10 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
         tabIndex={-1}
       >
         <div
-          className="c16"
+          className="c17"
         >
           <div
-            className="c17"
+            className="c18"
           >
             <svg
               aria-hidden="true"
@@ -35642,7 +35751,7 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
             </svg>
           </div>
           <div
-            className="c18"
+            className="c19"
           >
             Home (456 Suburb St)
           </div>
@@ -35650,7 +35759,8 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
       </a>
     </li>
     <li
-      className="c8"
+      className="c16"
+      color={null}
       disabled={false}
       role="presentation"
     >
@@ -35661,10 +35771,10 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
         tabIndex={-1}
       >
         <div
-          className="c16"
+          className="c17"
         >
           <div
-            className="c17"
+            className="c18"
           >
             <svg
               aria-hidden="true"
@@ -35683,7 +35793,7 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
             </svg>
           </div>
           <div
-            className="c18"
+            className="c19"
           >
             Work (789 Busy St)
           </div>
@@ -35691,7 +35801,8 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
       </a>
     </li>
     <li
-      className="c8"
+      className="c16"
+      color={null}
       disabled={false}
       role="presentation"
     >
@@ -35702,10 +35813,10 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
         tabIndex={-1}
       >
         <div
-          className="c16"
+          className="c17"
         >
           <div
-            className="c17"
+            className="c18"
           >
             <svg
               aria-hidden="true"
@@ -35724,7 +35835,7 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
             </svg>
           </div>
           <div
-            className="c18"
+            className="c19"
           >
             123 Main St
           </div>
@@ -35732,7 +35843,8 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
       </a>
     </li>
     <li
-      className="c8"
+      className="c16"
+      color={null}
       disabled={false}
       role="presentation"
     >
@@ -35743,10 +35855,10 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
         tabIndex={-1}
       >
         <div
-          className="c16"
+          className="c17"
         >
           <div
-            className="c17"
+            className="c18"
           >
             <svg
               aria-hidden="true"
@@ -35765,7 +35877,7 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
             </svg>
           </div>
           <div
-            className="c18"
+            className="c19"
           >
             Use Current Location
           </div>
@@ -35868,23 +35980,31 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 1`] = `
   white-space: nowrap;
 }
 
+.c9 {
+  background-color: #ffffff;
+}
+
 .c9:hover {
   background-color: #f5f5f5;
 }
 
-.c17 {
+.c17:hover {
+  background-color: #f5f5f5;
+}
+
+.c18 {
   padding-top: 5px;
   padding-bottom: 3px;
 }
 
-.c19 {
+.c20 {
   margin-left: 30px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.c18 {
+.c19 {
   float: left;
 }
 
@@ -35976,6 +36096,7 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 1`] = `
     </li>
     <li
       className="c9"
+      color="#ffffff"
       disabled={false}
       role="presentation"
     >
@@ -36013,7 +36134,7 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 1`] = `
           className="c13"
         >
           <div
-            className="styled__StopName-ixb7j8-21"
+            className="styled__StopName-sc-ixb7j8-21"
           >
             1st & Main
              (
@@ -36037,6 +36158,7 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 1`] = `
     </li>
     <li
       className="c9"
+      color="#ffffff"
       disabled={false}
       role="presentation"
     >
@@ -36074,7 +36196,7 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 1`] = `
           className="c13"
         >
           <div
-            className="styled__StopName-ixb7j8-21"
+            className="styled__StopName-sc-ixb7j8-21"
           >
             Main & 2nd
              (
@@ -36097,7 +36219,8 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 1`] = `
       </a>
     </li>
     <li
-      className="c9"
+      className="c17"
+      color={null}
       disabled={false}
       role="presentation"
     >
@@ -36108,10 +36231,10 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 1`] = `
         tabIndex={-1}
       >
         <div
-          className="c17"
+          className="c18"
         >
           <div
-            className="c18"
+            className="c19"
           >
             <svg
               aria-hidden="true"
@@ -36130,7 +36253,7 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 1`] = `
             </svg>
           </div>
           <div
-            className="c19"
+            className="c20"
           >
             Use Current Location
           </div>
@@ -36313,6 +36436,7 @@ exports[`Storyshots LocationField/Mobile Context With Session Searches 1`] = `
     </li>
     <li
       className="c9"
+      color={null}
       disabled={false}
       role="presentation"
     >
@@ -36354,6 +36478,7 @@ exports[`Storyshots LocationField/Mobile Context With Session Searches 1`] = `
     </li>
     <li
       className="c9"
+      color={null}
       disabled={false}
       role="presentation"
     >
@@ -36569,6 +36694,7 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 1`] = `
     </li>
     <li
       className="c9"
+      color={null}
       disabled={false}
       role="presentation"
     >
@@ -36610,6 +36736,7 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 1`] = `
     </li>
     <li
       className="c9"
+      color={null}
       disabled={false}
       role="presentation"
     >
@@ -36651,6 +36778,7 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 1`] = `
     </li>
     <li
       className="c9"
+      color={null}
       disabled={false}
       role="presentation"
     >
@@ -36692,6 +36820,7 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 1`] = `
     </li>
     <li
       className="c9"
+      color={null}
       disabled={false}
       role="presentation"
     >
