@@ -2,10 +2,10 @@ import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 
-import DefaultTimeColumnContent from "./defaults/time-column-content";
-import AccessLegBody from "./AccessLegBody";
-import * as S from "./styled";
-import TransitLegBody from "./TransitLegBody";
+import DefaultTimeColumnContent from "../defaults/time-column-content";
+import AccessLegBody from "../AccessLegBody";
+import * as S from "../styled";
+import TransitLegBody from "../TransitLegBody";
 
 /*
   TODO: Wondering if it's possible for us to destructure the time

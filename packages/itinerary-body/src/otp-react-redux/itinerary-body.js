@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import ItineraryBody from "..";
+import ItineraryBody from "../ItineraryBody";
 import * as ItineraryBodyClasses from "../styled";
 
 const StyledItineraryBody = styled(ItineraryBody)`
