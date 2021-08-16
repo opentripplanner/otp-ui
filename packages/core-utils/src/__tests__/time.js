@@ -49,6 +49,22 @@ describe("time", () => {
         formatSecondsAfterMidnight(durationInSeconds, getTimeFormat())
       ).toMatchSnapshot();
     });
+
+    // test 0
+    it(`should correctly format 0 seconds as a duration with seconds`, () => {
+      expect(formatDurationWithSeconds(0)).toMatchSnapshot();
+    });
+    it(`should correctly format 0 seconds as a duration without seconds`, () => {
+      expect(formatDuration(0)).toMatchSnapshot();
+    });
+
+    // test 35
+    it(`should correctly format 35 seconds as a duration with seconds`, () => {
+      expect(formatDurationWithSeconds(35)).toMatchSnapshot();
+    });
+    it(`should correctly format 35 seconds as a duration without seconds`, () => {
+      expect(formatDuration(35)).toMatchSnapshot();
+    });
   });
 
   describe("getUserTimezone", () => {

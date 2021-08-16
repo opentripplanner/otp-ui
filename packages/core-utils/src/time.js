@@ -24,6 +24,11 @@ export const OTP_API_TIME_FORMAT = "HH:mm";
  * @returns                   Formatted duration
  */
 function formatDurationLikeMoment(seconds, showSeconds, localize = true) {
+  // date-fns doesn't do this automatically
+  if ((!showSeconds && seconds < 60) || seconds === 0) {
+    return "0 min";
+  }
+
   const hours = Math.floor(seconds / 3600);
   const minutes = Math.floor((seconds - hours * 3600) / 60);
   const secondsLeftOver = showSeconds
@@ -72,7 +77,7 @@ export function getLongDateFormat(config) {
 }
 
 /**
- * Formats an elapsed time duration for display in narrative
+ * Formats an elapsed time duration for display in narrative.
  * TODO: internationalization
  * @param {number} seconds duration in seconds
  * @returns {string} formatted text representation
@@ -90,7 +95,6 @@ export function formatDuration(seconds) {
 export function formatDurationWithSeconds(seconds) {
   return formatDurationLikeMoment(seconds, true);
 }
-
 /**
  * Formats a time value for display in narrative
  * TODO: internationalization/timezone
