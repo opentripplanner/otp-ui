@@ -80,10 +80,12 @@ class LocationField extends Component {
   }
 
   componentDidMount() {
-    const { initialSearchQuery } = this.props;
-    if (initialSearchQuery) {
-      this.geocodeAutocomplete(initialSearchQuery);
-      this.setState({ menuVisible: true });
+    const { initialSearchResults } = this.props;
+    if (initialSearchResults) {
+      this.setState({
+        geocodedFeatures: initialSearchResults,
+        menuVisible: true
+      });
     }
   }
 
@@ -769,10 +771,18 @@ LocationField.propTypes = {
    */
   currentPositionUnavailableIcon: PropTypes.node,
   /**
-   * Allows the component to be rendered with a pre-filled search (including results)
-   * without the user having to type anything
+   * Allows the component to be rendered with pre-filled results
    */
-  initialSearchQuery: PropTypes.string,
+  initialSearchResults: PropTypes.arrayOf(
+    PropTypes.shape({
+      type: PropTypes.string,
+      geometry: PropTypes.shape({
+        type: PropTypes.string,
+        coordinates: PropTypes.array
+      }),
+      properties: PropTypes.shape({ id: PropTypes.string })
+    })
+  ),
   /**
    * Invoked whenever the currentPosition is set, but the nearbyStops are not.
    * Sends the following argument:
@@ -965,7 +975,7 @@ LocationField.defaultProps = {
   currentPosition: null,
   currentPositionIcon: <LocationArrow size={13} />,
   currentPositionUnavailableIcon: <Ban size={13} />,
-  initialSearchQuery: null,
+  initialSearchResults: null,
   findNearbyStops: () => {},
   GeocodedOptionIconComponent: GeocodedOptionIcon,
   hideExistingValue: false,

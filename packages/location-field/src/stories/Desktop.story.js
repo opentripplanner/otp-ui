@@ -10,6 +10,8 @@ import {
   selectedLocation
 } from "./common";
 
+import mockedGeocoderResponse from "../mocks/autocomplete.json";
+
 const invalidKeyGeocoderConfig = {
   apiKey: "ge-invalid-key",
   baseUrl: "https://api.geocode.earth/v1", // TriMet-specific default
@@ -110,7 +112,7 @@ export const WithCustomResultColorsAndIcons = () => (
 
 export const WithPrefilledSearch = () => (
   <LocationField
-    initialSearchQuery="roosevelt"
+    initialSearchResults={mockedGeocoderResponse.features}
     layerColorMap={{ stops: "pink", stations: "cyan", locality: "orange" }}
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
