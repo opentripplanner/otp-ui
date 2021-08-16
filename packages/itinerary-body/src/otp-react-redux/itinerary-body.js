@@ -77,7 +77,7 @@ const StyledItineraryBody = styled(ItineraryBody)`
   }
 
   ${ItineraryBodyClasses.TimeColumn} {
-    color: #999;
+    color: #676767;
     display: table-cell;
     font-size: 14px;
     padding-right: 4px;
