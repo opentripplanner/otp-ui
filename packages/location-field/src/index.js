@@ -79,6 +79,14 @@ class LocationField extends Component {
     };
   }
 
+  componentDidMount() {
+    const { initialSearchQuery } = this.props;
+    if (initialSearchQuery) {
+      this.geocodeAutocomplete(initialSearchQuery);
+      this.setState({ menuVisible: true });
+    }
+  }
+
   componentDidUpdate(prevProps) {
     // If location is updated externally, replace value and geocoded features
     // in internal state.
@@ -424,9 +432,11 @@ class LocationField extends Component {
         stationFeatures.length > 0 && (
           <header
             style={
-              "stations" in layerColorMap && {
-                backgroundColor: layerColorMap.stations
-              }
+              "stations" in layerColorMap
+                ? {
+                    backgroundColor: layerColorMap.stations
+                  }
+                : {}
             }
             key="gtfs-stations-header"
           >
@@ -440,9 +450,11 @@ class LocationField extends Component {
         stopFeatures.length > 0 && (
           <header
             style={
-              "stops" in layerColorMap && {
-                backgroundColor: layerColorMap.stops
-              }
+              "stops" in layerColorMap
+                ? {
+                    backgroundColor: layerColorMap.stops
+                  }
+                : {}
             }
             key="gtfs-stops-header"
           >
@@ -757,6 +769,11 @@ LocationField.propTypes = {
    */
   currentPositionUnavailableIcon: PropTypes.node,
   /**
+   * Allows the component to be rendered with a pre-filled search (including results)
+   * without the user having to type anything
+   */
+  initialSearchQuery: PropTypes.string,
+  /**
    * Invoked whenever the currentPosition is set, but the nearbyStops are not.
    * Sends the following argument:
    *
@@ -948,6 +965,7 @@ LocationField.defaultProps = {
   currentPosition: null,
   currentPositionIcon: <LocationArrow size={13} />,
   currentPositionUnavailableIcon: <Ban size={13} />,
+  initialSearchQuery: null,
   findNearbyStops: () => {},
   GeocodedOptionIconComponent: GeocodedOptionIcon,
   hideExistingValue: false,

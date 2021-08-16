@@ -5,7 +5,7 @@ import handlers from "../packages/location-field/src/mocks/handlers";
 // Only install worker when running in browser
 if (typeof global.process === 'undefined') {
   const worker = setupWorker(...handlers);
-  worker.start()
+  worker.start({onUnhandledRequest: "bypass"})
 }
 
 

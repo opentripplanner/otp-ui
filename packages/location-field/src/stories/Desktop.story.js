@@ -107,3 +107,16 @@ export const WithCustomResultColorsAndIcons = () => (
     operatorIconMap={{ "wa-state-ferry": <Ship size={13} /> }}
   />
 );
+
+export const WithPrefilledSearch = () => (
+  <LocationField
+    initialSearchQuery="roosevelt"
+    layerColorMap={{ stops: "pink", stations: "cyan", locality: "orange" }}
+    currentPosition={currentPosition}
+    geocoderConfig={geocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    inputPlaceholder="Select from location"
+    locationType="from"
+    onLocationSelected={onLocationSelected}
+  />
+);
