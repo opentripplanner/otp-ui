@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/transit-vehicle-overlay",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Realtime Transit Vehicles Component",
   "author": "Frank Purcell",
   "homepage": "https://github.com/opentripplanner/otp-ui/tree/master/packages/transit-vehicle-overlay/#readme",
@@ -21,9 +21,9 @@
   "peerDependencies": {
     "leaflet": "^1.6.0",
     "prop-types": "^15.7.2",
-    "react": "^16.8.6",
+    "react": "^16.14.0",
     "react-leaflet": "^2.6.1",
-    "styled-components": "^4.3.1"
+    "styled-components": "^5.3.0"
   },
   "repository": {
     "type": "git",
