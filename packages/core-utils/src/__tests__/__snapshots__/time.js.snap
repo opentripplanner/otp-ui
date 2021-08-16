@@ -2,8 +2,18 @@
 
 exports[`time getCurrentDate should return current date at specified timezone 1`] = `"2019-08-04"`;
 
+exports[`time getCurrentDate should return current date at specified timezone 2`] = `"2019-08-04"`;
+
 exports[`time getCurrentTime should return time at specified timezone 1`] = `"22:34"`;
 
-exports[`time getFormattedTime should correctly format 9401 seconds as a duration with seconds 1`] = `"2 hr 36 min 41 sec"`;
+exports[`time getCurrentTime should return time at specified timezone 2`] = `"19:34"`;
 
-exports[`time getFormattedTime should correctly format 9401 seconds as a duration without seconds 1`] = `"2 hr 36 min"`;
+exports[`time getUserTimezone should get the correct timezone from the testing environment 1`] = `"America/Los_Angeles"`;
+
+exports[`time time format functions should correctly format 9401 seconds as a duration since midnight 1`] = `"02:36"`;
+
+exports[`time time format functions should correctly format 9401 seconds as a duration with seconds 1`] = `"2 hr 36 min 41 sec"`;
+
+exports[`time time format functions should correctly format 9401 seconds as a duration without seconds 1`] = `"2 hr 36 min"`;
+
+exports[`time time format functions should correctly format 9401 seconds as a narrative 1`] = `"16:00"`;

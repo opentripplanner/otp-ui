@@ -6,8 +6,12 @@ import {
 import {
   formatDuration,
   formatDurationWithSeconds,
+  formatSecondsAfterMidnight,
+  formatTime,
   getCurrentDate,
-  getCurrentTime
+  getCurrentTime,
+  getTimeFormat,
+  getUserTimezone
 } from "../time";
 
 describe("time", () => {
@@ -17,6 +21,7 @@ describe("time", () => {
     it("should return current date at specified timezone", () => {
       setDefaultTestTime();
       expect(getCurrentDate("America/New_York")).toMatchSnapshot();
+      expect(getCurrentDate()).toMatchSnapshot();
     });
   });
 
@@ -24,16 +29,31 @@ describe("time", () => {
     it("should return time at specified timezone", () => {
       setDefaultTestTime();
       expect(getCurrentTime("America/New_York")).toMatchSnapshot();
+      expect(getCurrentTime()).toMatchSnapshot();
     });
   });
 
-  describe("getFormattedTime", () => {
+  describe("time format functions", () => {
     const durationInSeconds = 9401;
     it(`should correctly format ${durationInSeconds} seconds as a duration with seconds`, () => {
       expect(formatDurationWithSeconds(durationInSeconds)).toMatchSnapshot();
     });
     it(`should correctly format ${durationInSeconds} seconds as a duration without seconds`, () => {
       expect(formatDuration(durationInSeconds)).toMatchSnapshot();
+    });
+    it(`should correctly format ${durationInSeconds} seconds as a narrative`, () => {
+      expect(formatTime(durationInSeconds)).toMatchSnapshot();
+    });
+    it(`should correctly format ${durationInSeconds} seconds as a duration since midnight`, () => {
+      expect(
+        formatSecondsAfterMidnight(durationInSeconds, getTimeFormat())
+      ).toMatchSnapshot();
+    });
+  });
+
+  describe("getUserTimezone", () => {
+    it("should get the correct timezone from the testing environment", () => {
+      expect(getUserTimezone()).toMatchSnapshot();
     });
   });
 });

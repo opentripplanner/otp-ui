@@ -9,7 +9,7 @@ import { utcToZonedTime } from "date-fns-tz";
 // special constants for making sure the following date format is always sent to
 // OTP regardless of whatever the user has configured as the display format
 export const OTP_API_DATE_FORMAT = "YYYY-MM-DD";
-// Date-Fns uses a different string format that moment.js
+// Date-Fns uses a different string format than moment.js
 // see https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md
 export const OTP_API_DATE_FORMAT_DATE_FNS = "yyyy-MM-dd";
 export const OTP_API_TIME_FORMAT = "HH:mm";
@@ -60,21 +60,15 @@ function formatDurationLikeMoment(seconds, showSeconds, localize = true) {
  * @return {string}        the config-defined time formatter or HH:mm (24-hr time)
  */
 export function getTimeFormat(config) {
-  return config.dateTime && config.dateTime.timeFormat
-    ? config.dateTime.timeFormat
-    : OTP_API_TIME_FORMAT;
+  return config?.dateTime?.timeFormat || OTP_API_TIME_FORMAT;
 }
 
 export function getDateFormat(config) {
-  return config.dateTime && config.dateTime.dateFormat
-    ? config.dateTime.dateFormat
-    : OTP_API_DATE_FORMAT;
+  return config?.dateTime?.dateFormat || OTP_API_DATE_FORMAT;
 }
 
 export function getLongDateFormat(config) {
-  return config.dateTime && config.dateTime.longDateFormat
-    ? config.dateTime.longDateFormat
-    : "D MMMM YYYY";
+  return config?.dateTime?.longDateFormat || "D MMMM YYYY";
 }
 
 /**
@@ -105,29 +99,30 @@ export function formatDurationWithSeconds(seconds) {
  */
 export function formatTime(ms, options) {
   return format(
-    ms + (options && options.offset ? options.offset : 0),
-    options && options.format ? options.format : OTP_API_TIME_FORMAT
+    ms + (options?.offset || 0),
+    options?.format || OTP_API_TIME_FORMAT
   );
 }
 
 /**
  * Formats a seconds after midnight value for display in narrative
  * @param  {number} seconds  time since midnight in seconds
- * @param  {string} timeFormat  A valid moment.js time format
+ * @param  {string} timeFormat  A valid date-fns time format
  * @return {string}                   formatted text representation
  */
 export function formatSecondsAfterMidnight(seconds, timeFormat) {
-  return format(add(startOfDay(new Date()), { seconds }), timeFormat);
+  const time = add(startOfDay(new Date()), { seconds });
+  return format(time, timeFormat);
 }
 
 /**
- * Get the timezone name that is set for the user that is currently looking at
- * this website. Use a bit of hackery to force a specific timezone if in a
- * test environment.
+ * Uses Intl.DateTimeFormat() api to get the user's time zone. In a test
+ * environment, pulls timezone information from an env variable. Default to
+ * GMT+0 if the Intl API is unavailable.
  */
 export function getUserTimezone() {
   if (process.env.NODE_ENV === "test") return process.env.TZ;
-  return Intl.DateTimeFormat().resolvedOptions().timeZone;
+  return Intl?.DateTimeFormat().resolvedOptions().timeZone || "Etc/Greenwich";
 }
 
 /**
