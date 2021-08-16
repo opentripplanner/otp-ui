@@ -28,7 +28,7 @@
   },
   "peerDependencies": {
     "@opentripplanner/base-map": "^1.0.4",
-    "react": "^16.8.6",
+    "react": "^16.14.0",
     "react-leaflet": "^2.6.1"
   }
 }
