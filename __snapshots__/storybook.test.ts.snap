@@ -48785,22 +48785,20 @@ exports[`Storyshots TripDetails Bike Only Itinerary 1`] = `
           </b>
         </span>
         <button
+          aria-label="What does this mean?"
           className="c6 c7"
           onClick={[Function]}
         >
           <svg
+            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
-            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <title>
-              What does this mean?
-            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -48969,22 +48967,20 @@ exports[`Storyshots TripDetails Bike Rental Itinerary 1`] = `
           </b>
         </span>
         <button
+          aria-label="What does this mean?"
           className="c6 c7"
           onClick={[Function]}
         >
           <svg
+            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
-            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <title>
-              What does this mean?
-            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -49194,22 +49190,20 @@ exports[`Storyshots TripDetails Bike Rental Transit Itinerary 1`] = `
           </b>
         </span>
         <button
+          aria-label="What does this mean?"
           className="c6 c7"
           onClick={[Function]}
         >
           <svg
+            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
-            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <title>
-              What does this mean?
-            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -49419,22 +49413,20 @@ exports[`Storyshots TripDetails Bike Transit Bike Itinerary 1`] = `
           </b>
         </span>
         <button
+          aria-label="What does this mean?"
           className="c6 c7"
           onClick={[Function]}
         >
           <svg
+            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
-            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <title>
-              What does this mean?
-            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -49603,22 +49595,20 @@ exports[`Storyshots TripDetails E Scooter Rental Itinerary 1`] = `
           </b>
         </span>
         <button
+          aria-label="What does this mean?"
           className="c6 c7"
           onClick={[Function]}
         >
           <svg
+            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
-            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <title>
-              What does this mean?
-            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -49828,22 +49818,20 @@ exports[`Storyshots TripDetails E Scooter Rental Transit Itinerary 1`] = `
           </b>
         </span>
         <button
+          aria-label="What does this mean?"
           className="c6 c7"
           onClick={[Function]}
         >
           <svg
+            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
-            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <title>
-              What does this mean?
-            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -50053,22 +50041,20 @@ exports[`Storyshots TripDetails Park And Ride Itinerary 1`] = `
           </b>
         </span>
         <button
+          aria-label="What does this mean?"
           className="c6 c7"
           onClick={[Function]}
         >
           <svg
+            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
-            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <title>
-              What does this mean?
-            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -50282,22 +50268,20 @@ exports[`Storyshots TripDetails Styled Walk Transit Walk Itinerary 1`] = `
           </b>
         </span>
         <button
+          aria-label="What does this mean?"
           className="c8 c9"
           onClick={[Function]}
         >
           <svg
+            aria-hidden="true"
             className="c6"
             fill="currentColor"
             focusable="false"
             height="0.92em"
-            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <title>
-              What does this mean?
-            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -50667,22 +50651,20 @@ exports[`Storyshots TripDetails Walk Interlined Transit Itinerary 1`] = `
           </b>
         </span>
         <button
+          aria-label="What does this mean?"
           className="c6 c7"
           onClick={[Function]}
         >
           <svg
+            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
-            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <title>
-              What does this mean?
-            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -50851,22 +50833,20 @@ exports[`Storyshots TripDetails Walk Only Itinerary 1`] = `
           </b>
         </span>
         <button
+          aria-label="What does this mean?"
           className="c6 c7"
           onClick={[Function]}
         >
           <svg
+            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
-            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <title>
-              What does this mean?
-            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -51076,22 +51056,20 @@ exports[`Storyshots TripDetails Walk Transit Transfer Itinerary 1`] = `
           </b>
         </span>
         <button
+          aria-label="What does this mean?"
           className="c6 c7"
           onClick={[Function]}
         >
           <svg
+            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
-            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <title>
-              What does this mean?
-            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -51301,22 +51279,20 @@ exports[`Storyshots TripDetails Walk Transit Walk Itinerary 1`] = `
           </b>
         </span>
         <button
+          aria-label="What does this mean?"
           className="c6 c7"
           onClick={[Function]}
         >
           <svg
+            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
-            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <title>
-              What does this mean?
-            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -51489,22 +51465,20 @@ exports[`Storyshots TripDetails Walk Transit Walk Itinerary And Custom Messages 
           </span>
         </span>
         <button
+          aria-label="What does this mean?"
           className="c6 c7"
           onClick={[Function]}
         >
           <svg
+            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
-            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <title>
-              What does this mean?
-            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
@@ -51549,22 +51523,20 @@ exports[`Storyshots TripDetails Walk Transit Walk Itinerary And Custom Messages 
           </b>
         </span>
         <button
+          aria-label="What does this mean?"
           className="c6 c7"
           onClick={[Function]}
         >
           <svg
+            aria-hidden="true"
             className="c4"
             fill="currentColor"
             focusable="false"
             height="0.92em"
-            role="img"
             viewBox="0 0 512 512"
             width="0.92em"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <title>
-              What does this mean?
-            </title>
             <path
               d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
               fill="currentColor"
