@@ -13,8 +13,8 @@ import {
   FareDetailsProps
 } from "./types";
 
-import defaultEnglishMessages from "../i18n/en-US.yml";
-import defaultFrenchMessages from "../i18n/fr.yml";
+import englishMessages from "../i18n/en-US.yml";
+import frenchMessages from "../i18n/fr.yml";
 import customMessages from "../__mocks__/custom-messages.yml";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
