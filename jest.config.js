@@ -12,8 +12,22 @@ module.exports = {
     }
   },
   globalSetup: "<rootDir>/test-utils/global-setup.js",
+  moduleFileExtensions: [
+    "js",
+    "jsx",
+    "ts",
+    "tsx",
+    "json",
+    "node",
+    "yml",
+    "yaml"
+  ],
   moduleNameMapper: {
     "\\.(s?css|less)$": "identity-obj-proxy"
   },
-  testPathIgnorePatterns: ["<rootDir>/packages/(?:.+?)/(esm|lib)/"]
+  testPathIgnorePatterns: ["<rootDir>/packages/(?:.+?)/(esm|lib)/"],
+  transform: {
+    "\\.[jt]sx?$": "babel-jest",
+    "\\.ya?ml$": "jest-yaml-transform"
+  }
 };
