@@ -1,5 +1,6 @@
 import moment from "moment";
-import { Itinerary } from "@opentripplanner/types";
+// Probably ok to import the file using a relative path as it is used during dev only.
+import { Itinerary } from "../../types/lib";
 
 export type CaloriesDetailsProps = {
   bikeSeconds: number;
