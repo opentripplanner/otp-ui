@@ -21,7 +21,7 @@ STYLES.places = {
       : "none",
   fill: (display, place) => {
     if (coreUtils.map.isBikeshareStation(place)) {
-      return "#f00";
+      return "#E60000";
     }
     if (coreUtils.map.isCarWalkTransition(place)) {
       return "#888";

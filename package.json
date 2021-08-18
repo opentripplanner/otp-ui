@@ -25,6 +25,7 @@
     "@storybook/addon-knobs": "^6.3.0",
     "@storybook/addon-links": "^6.3.4",
     "@storybook/addon-storyshots": "^6.3.4",
+    "@storybook/addon-storyshots-puppeteer": "^6.3.6",
     "@storybook/addon-storysource": "^6.3.4",
     "@storybook/addon-viewport": "^6.3.4",
     "@storybook/react": "^6.3.4",
@@ -62,6 +63,7 @@
     "lint-staged": "^8.2.0",
     "nock": "^11.7.0",
     "prettier": "^1.19.1",
+    "puppeteer": "^10.2.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-intl": "^5.20.4",
@@ -82,6 +84,7 @@
     "yaml-loader": "^0.6.0"
   },
   "scripts": {
+    "a11y-test": "yarn build-storybook && jest --testPathIgnorePatterns packages storybook",
     "bootstrap": "lerna bootstrap --use-workspaces",
     "build:cjs": "lerna exec --parallel -- babel --extensions '.js,.ts,.tsx' --ignore **/*.story.js,**/*.story.ts,**/*.story.tsx,**/*.spec.js,**/*.spec.ts,**/*.test.js,**/*.test.ts,**/__tests__/** --root-mode upward --source-maps true src -d lib",
     "build:esm": "lerna exec --parallel -- cross-env BABEL_ENV=esm babel --extensions '.js,.ts,.tsx' --ignore **/*.story.js,**/*.story.ts,**/*.story.tsx,**/*.spec.js,**/*.spec.ts,**/*.test.js,**/*.test.ts,**/__tests__/** --root-mode upward --source-maps true src -d esm",
@@ -91,15 +94,15 @@
     "deploy-storybook": "storybook-to-ghpages",
     "dev": "start-storybook -p 5555",
     "predev": "yarn",
-    "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-pattern esm --ignore-pattern lib --ignore-pattern node_modules --quiet",
-    "lint:fixjs": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-pattern esm --ignore-pattern lib --ignore-pattern node_modules --fix",
+    "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-pattern esm --ignore-pattern lib --ignore-pattern node_modules --ignore-pattern storybook-static --quiet",
+    "lint:fixjs": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-pattern esm --ignore-pattern lib --ignore-pattern node_modules --ignore-pattern storybook-static --fix",
     "lint:styles": "stylelint \"packages/**/!(*.d).{j,t}s{,x}\"",
     "lint": "yarn lint:js && yarn lint:styles",
     "prettier": "prettier --write \"**/*.{json,md,yml}\"",
     "semantic-release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo",
-    "test": "yarn lint:js && yarn lint:styles && yarn typescript && yarn unit",
+    "test": "yarn lint:js && yarn lint:styles && yarn typescript && yarn unit && yarn a11y-test",
     "typescript": "lerna run --parallel tsc",
-    "unit": "jest",
+    "unit": "jest --testPathIgnorePatterns a11y",
     "update-internal-dependencies": "node scripts/update-internal-dependencies.js"
   },
   "eslintConfig": {

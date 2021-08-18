@@ -113,7 +113,7 @@ export const modeButtons = () => (
         +
         <Icons.Bike />
         Go by train
-        <span style={{ fontSize: "150%", color: "red" }}> or </span> bike
+        <span style={{ fontSize: "150%", color: "#CD0000" }}> or </span> bike
       </Core.ModeButton>
       <Space />
       <Core.ModeButton selected onClick={onClick} title="Active">
