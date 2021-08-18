@@ -11,13 +11,13 @@
   "private": false,
   "dependencies": {
     "@opentripplanner/core-utils": "^3.0.4",
+    "flat": "^5.0.2",
     "moment": "^2.24.0",
     "styled-icons": "^9.1.0",
     "velocity-react": "^1.4.3"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^1.0.0",
-    "flat": "^5.0.2"
+    "@opentripplanner/types": "^1.0.0"
   },
   "peerDependencies": {
     "react": "^16.14.0",

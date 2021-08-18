@@ -48458,7 +48458,7 @@ exports[`Storyshots TripDetails Bike Only Itinerary 1`] = `
     Trip Details
   </div>
   <div
-    className="styled__TripDetailsBody-sr23bt-14"
+    className="styled__TripDetailsBody-sc-6q2ok2-14"
   >
     <div
       className="c2"
@@ -48486,23 +48486,16 @@ exports[`Storyshots TripDetails Bike Only Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__Timing-sr23bt-8"
+          className="styled__Timing-sc-6q2ok2-8"
         >
-          <span>
-            Depart
-             
-            <b>
-              November 13, 2019
-            </b>
-          </span>
-          <span>
-             
-            at
-             
-            <b>
-              15:42
-            </b>
-          </span>
+          Depart 
+          <b>
+            November 13, 2019
+          </b>
+           at 
+          <b>
+            3:42 PM
+          </b>
         </span>
         <div />
       </div>
@@ -48533,10 +48526,9 @@ exports[`Storyshots TripDetails Bike Only Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__CaloriesSummary-sr23bt-2"
+          className="styled__CaloriesSummary-sc-6q2ok2-2"
         >
-          Calories Burned
-          : 
+          Calories Burned: 
           <b>
             36
           </b>
@@ -48639,7 +48631,7 @@ exports[`Storyshots TripDetails Bike Rental Itinerary 1`] = `
     Trip Details
   </div>
   <div
-    className="styled__TripDetailsBody-sr23bt-14"
+    className="styled__TripDetailsBody-sc-6q2ok2-14"
   >
     <div
       className="c2"
@@ -48667,23 +48659,16 @@ exports[`Storyshots TripDetails Bike Rental Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__Timing-sr23bt-8"
+          className="styled__Timing-sc-6q2ok2-8"
         >
-          <span>
-            Depart
-             
-            <b>
-              November 13, 2019
-            </b>
-          </span>
-          <span>
-             
-            at
-             
-            <b>
-              15:45
-            </b>
-          </span>
+          Depart 
+          <b>
+            November 13, 2019
+          </b>
+           at 
+          <b>
+            3:45 PM
+          </b>
         </span>
         <div />
       </div>
@@ -48714,10 +48699,9 @@ exports[`Storyshots TripDetails Bike Rental Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__CaloriesSummary-sr23bt-2"
+          className="styled__CaloriesSummary-sc-6q2ok2-2"
         >
-          Calories Burned
-          : 
+          Calories Burned: 
           <b>
             63
           </b>
@@ -48820,7 +48804,7 @@ exports[`Storyshots TripDetails Bike Rental Transit Itinerary 1`] = `
     Trip Details
   </div>
   <div
-    className="styled__TripDetailsBody-sr23bt-14"
+    className="styled__TripDetailsBody-sc-6q2ok2-14"
   >
     <div
       className="c2"
@@ -48848,23 +48832,16 @@ exports[`Storyshots TripDetails Bike Rental Transit Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__Timing-sr23bt-8"
+          className="styled__Timing-sc-6q2ok2-8"
         >
-          <span>
-            Depart
-             
-            <b>
-              November 13, 2019
-            </b>
-          </span>
-          <span>
-             
-            at
-             
-            <b>
-              15:50
-            </b>
-          </span>
+          Depart 
+          <b>
+            November 13, 2019
+          </b>
+           at 
+          <b>
+            3:50 PM
+          </b>
         </span>
         <div />
       </div>
@@ -48895,13 +48872,12 @@ exports[`Storyshots TripDetails Bike Rental Transit Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__Fare-sr23bt-4"
+          className="styled__Fare-sc-6q2ok2-4"
         >
           <span
-            className="styled__TransitFare-sr23bt-9"
+            className="styled__TransitFare-sc-6q2ok2-9"
           >
-            Transit Fare
-            : 
+            Transit Fare: 
             <b>
               $2.50
             </b>
@@ -48936,10 +48912,9 @@ exports[`Storyshots TripDetails Bike Rental Transit Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__CaloriesSummary-sr23bt-2"
+          className="styled__CaloriesSummary-sc-6q2ok2-2"
         >
-          Calories Burned
-          : 
+          Calories Burned: 
           <b>
             113
           </b>
@@ -49042,7 +49017,7 @@ exports[`Storyshots TripDetails Bike Transit Bike Itinerary 1`] = `
     Trip Details
   </div>
   <div
-    className="styled__TripDetailsBody-sr23bt-14"
+    className="styled__TripDetailsBody-sc-6q2ok2-14"
   >
     <div
       className="c2"
@@ -49070,23 +49045,16 @@ exports[`Storyshots TripDetails Bike Transit Bike Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__Timing-sr23bt-8"
+          className="styled__Timing-sc-6q2ok2-8"
         >
-          <span>
-            Depart
-             
-            <b>
-              November 13, 2019
-            </b>
-          </span>
-          <span>
-             
-            at
-             
-            <b>
-              15:44
-            </b>
-          </span>
+          Depart 
+          <b>
+            November 13, 2019
+          </b>
+           at 
+          <b>
+            3:44 PM
+          </b>
         </span>
         <div />
       </div>
@@ -49117,13 +49085,12 @@ exports[`Storyshots TripDetails Bike Transit Bike Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__Fare-sr23bt-4"
+          className="styled__Fare-sc-6q2ok2-4"
         >
           <span
-            className="styled__TransitFare-sr23bt-9"
+            className="styled__TransitFare-sc-6q2ok2-9"
           >
-            Transit Fare
-            : 
+            Transit Fare: 
             <b>
               $2.50
             </b>
@@ -49158,10 +49125,9 @@ exports[`Storyshots TripDetails Bike Transit Bike Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__CaloriesSummary-sr23bt-2"
+          className="styled__CaloriesSummary-sc-6q2ok2-2"
         >
-          Calories Burned
-          : 
+          Calories Burned: 
           <b>
             11
           </b>
@@ -49264,7 +49230,7 @@ exports[`Storyshots TripDetails E Scooter Rental Itinerary 1`] = `
     Trip Details
   </div>
   <div
-    className="styled__TripDetailsBody-sr23bt-14"
+    className="styled__TripDetailsBody-sc-6q2ok2-14"
   >
     <div
       className="c2"
@@ -49292,23 +49258,16 @@ exports[`Storyshots TripDetails E Scooter Rental Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__Timing-sr23bt-8"
+          className="styled__Timing-sc-6q2ok2-8"
         >
-          <span>
-            Depart
-             
-            <b>
-              November 13, 2019
-            </b>
-          </span>
-          <span>
-             
-            at
-             
-            <b>
-              15:45
-            </b>
-          </span>
+          Depart 
+          <b>
+            November 13, 2019
+          </b>
+           at 
+          <b>
+            3:45 PM
+          </b>
         </span>
         <div />
       </div>
@@ -49339,10 +49298,9 @@ exports[`Storyshots TripDetails E Scooter Rental Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__CaloriesSummary-sr23bt-2"
+          className="styled__CaloriesSummary-sc-6q2ok2-2"
         >
-          Calories Burned
-          : 
+          Calories Burned: 
           <b>
             9
           </b>
@@ -49445,7 +49403,7 @@ exports[`Storyshots TripDetails E Scooter Rental Transit Itinerary 1`] = `
     Trip Details
   </div>
   <div
-    className="styled__TripDetailsBody-sr23bt-14"
+    className="styled__TripDetailsBody-sc-6q2ok2-14"
   >
     <div
       className="c2"
@@ -49473,23 +49431,16 @@ exports[`Storyshots TripDetails E Scooter Rental Transit Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__Timing-sr23bt-8"
+          className="styled__Timing-sc-6q2ok2-8"
         >
-          <span>
-            Depart
-             
-            <b>
-              November 13, 2019
-            </b>
-          </span>
-          <span>
-             
-            at
-             
-            <b>
-              15:45
-            </b>
-          </span>
+          Depart 
+          <b>
+            November 13, 2019
+          </b>
+           at 
+          <b>
+            3:45 PM
+          </b>
         </span>
         <div />
       </div>
@@ -49520,13 +49471,12 @@ exports[`Storyshots TripDetails E Scooter Rental Transit Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__Fare-sr23bt-4"
+          className="styled__Fare-sc-6q2ok2-4"
         >
           <span
-            className="styled__TransitFare-sr23bt-9"
+            className="styled__TransitFare-sc-6q2ok2-9"
           >
-            Transit Fare
-            : 
+            Transit Fare: 
             <b>
               $2.50
             </b>
@@ -49561,10 +49511,9 @@ exports[`Storyshots TripDetails E Scooter Rental Transit Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__CaloriesSummary-sr23bt-2"
+          className="styled__CaloriesSummary-sc-6q2ok2-2"
         >
-          Calories Burned
-          : 
+          Calories Burned: 
           <b>
             87
           </b>
@@ -49667,7 +49616,7 @@ exports[`Storyshots TripDetails Park And Ride Itinerary 1`] = `
     Trip Details
   </div>
   <div
-    className="styled__TripDetailsBody-sr23bt-14"
+    className="styled__TripDetailsBody-sc-6q2ok2-14"
   >
     <div
       className="c2"
@@ -49695,23 +49644,16 @@ exports[`Storyshots TripDetails Park And Ride Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__Timing-sr23bt-8"
+          className="styled__Timing-sc-6q2ok2-8"
         >
-          <span>
-            Depart
-             
-            <b>
-              November 13, 2019
-            </b>
-          </span>
-          <span>
-             
-            at
-             
-            <b>
-              15:50
-            </b>
-          </span>
+          Depart 
+          <b>
+            November 13, 2019
+          </b>
+           at 
+          <b>
+            3:50 PM
+          </b>
         </span>
         <div />
       </div>
@@ -49742,13 +49684,12 @@ exports[`Storyshots TripDetails Park And Ride Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__Fare-sr23bt-4"
+          className="styled__Fare-sc-6q2ok2-4"
         >
           <span
-            className="styled__TransitFare-sr23bt-9"
+            className="styled__TransitFare-sc-6q2ok2-9"
           >
-            Transit Fare
-            : 
+            Transit Fare: 
             <b>
               $2.50
             </b>
@@ -49783,10 +49724,9 @@ exports[`Storyshots TripDetails Park And Ride Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__CaloriesSummary-sr23bt-2"
+          className="styled__CaloriesSummary-sc-6q2ok2-2"
         >
-          Calories Burned
-          : 
+          Calories Burned: 
           <b>
             30
           </b>
@@ -49893,7 +49833,7 @@ exports[`Storyshots TripDetails Styled Walk Transit Walk Itinerary 1`] = `
     Trip Details
   </div>
   <div
-    className="styled__TripDetailsBody-sr23bt-14"
+    className="styled__TripDetailsBody-sc-6q2ok2-14"
   >
     <div
       className="c4"
@@ -49921,23 +49861,16 @@ exports[`Storyshots TripDetails Styled Walk Transit Walk Itinerary 1`] = `
         className="c7"
       >
         <span
-          className="styled__Timing-sr23bt-8"
+          className="styled__Timing-sc-6q2ok2-8"
         >
-          <span>
-            Depart
-             
-            <b>
-              November 13, 2019
-            </b>
-          </span>
-          <span>
-             
-            at
-             
-            <b>
-              15:44
-            </b>
-          </span>
+          Depart 
+          <b>
+            November 13, 2019
+          </b>
+           at 
+          <b>
+            3:44 PM
+          </b>
         </span>
         <div />
       </div>
@@ -49968,13 +49901,12 @@ exports[`Storyshots TripDetails Styled Walk Transit Walk Itinerary 1`] = `
         className="c7"
       >
         <span
-          className="styled__Fare-sr23bt-4"
+          className="styled__Fare-sc-6q2ok2-4"
         >
           <span
-            className="styled__TransitFare-sr23bt-9"
+            className="styled__TransitFare-sc-6q2ok2-9"
           >
-            Transit Fare
-            : 
+            Transit Fare: 
             <b>
               $2.50
             </b>
@@ -50009,10 +49941,9 @@ exports[`Storyshots TripDetails Styled Walk Transit Walk Itinerary 1`] = `
         className="c7"
       >
         <span
-          className="styled__CaloriesSummary-sr23bt-2"
+          className="styled__CaloriesSummary-sc-6q2ok2-2"
         >
-          Calories Burned
-          : 
+          Calories Burned: 
           <b>
             11
           </b>
@@ -50091,7 +50022,7 @@ exports[`Storyshots TripDetails Tnc Transit Itinerary 1`] = `
     Trip Details
   </div>
   <div
-    className="styled__TripDetailsBody-sr23bt-14"
+    className="styled__TripDetailsBody-sc-6q2ok2-14"
   >
     <div
       className="c2"
@@ -50119,23 +50050,16 @@ exports[`Storyshots TripDetails Tnc Transit Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__Timing-sr23bt-8"
+          className="styled__Timing-sc-6q2ok2-8"
         >
-          <span>
-            Depart
-             
-            <b>
-              November 13, 2019
-            </b>
-          </span>
-          <span>
-             
-            at
-             
-            <b>
-              15:45
-            </b>
-          </span>
+          Depart 
+          <b>
+            November 13, 2019
+          </b>
+           at 
+          <b>
+            3:45 PM
+          </b>
         </span>
         <div />
       </div>
@@ -50166,19 +50090,18 @@ exports[`Storyshots TripDetails Tnc Transit Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__Fare-sr23bt-4"
+          className="styled__Fare-sc-6q2ok2-4"
         >
           <span
-            className="styled__TransitFare-sr23bt-9"
+            className="styled__TransitFare-sc-6q2ok2-9"
           >
-            Transit Fare
-            : 
+            Transit Fare: 
             <b>
               $2.50
             </b>
           </span>
           <span
-            className="styled__TNCFare-sr23bt-6"
+            className="styled__TNCFare-sc-6q2ok2-6"
           >
             <br />
             <span
@@ -50186,10 +50109,7 @@ exports[`Storyshots TripDetails Tnc Transit Itinerary 1`] = `
             >
               uber
             </span>
-             
-            Fare
-            :
-             
+             Fare: 
             <b>
               $17.00
                - 
@@ -50197,6 +50117,227 @@ exports[`Storyshots TripDetails Tnc Transit Itinerary 1`] = `
             </b>
           </span>
         </span>
+        <div />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots TripDetails Tnc Transit Itinerary With Custom Details 1`] = `
+.c6 {
+  display: inline-block;
+  vertical-align: -.125em;
+  overflow: hidden;
+}
+
+.c8 {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  margin: 0;
+  padding: 0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.c9 {
+  color: #00f;
+  font-size: 16px;
+  margin-left: 6px;
+  margin-top: -2px;
+}
+
+.c10 {
+  text-transform: capitalize;
+}
+
+.c4 {
+  margin-top: 6px;
+}
+
+.c5 {
+  float: left;
+  font-size: 17px;
+}
+
+.c0 {
+  background-color: #eee;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  margin-top: 16px;
+  padding: 10px 16px;
+}
+
+.c3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.c7 {
+  margin-left: 28px;
+  padding-top: 2px;
+}
+
+.c1 .c2 {
+  background-color: pink;
+}
+
+<div
+  className="c0 c1"
+>
+  <div
+    className="c2 c3"
+  >
+    Trip Details
+  </div>
+  <div
+    className="styled__TripDetailsBody-sc-6q2ok2-14"
+  >
+    <div
+      className="c4"
+    >
+      <div
+        className="c5"
+      >
+        <svg
+          aria-hidden="true"
+          className="c6"
+          fill="currentColor"
+          focusable="false"
+          height={17}
+          viewBox="0 0 448 512"
+          width={17}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+      <div
+        className="c7"
+      >
+        <span
+          className="styled__Timing-sc-6q2ok2-8"
+        >
+          Depart 
+          <b>
+            November 13, 2019
+          </b>
+           at 
+          <b>
+            3:45 PM
+          </b>
+        </span>
+        <button
+          className="c8 c9"
+          onClick={[Function]}
+        >
+          <svg
+            aria-hidden="true"
+            className="c6"
+            fill="currentColor"
+            focusable="false"
+            height="0.92em"
+            viewBox="0 0 512 512"
+            width="0.92em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+        <div />
+      </div>
+    </div>
+    <div
+      className="c4"
+    >
+      <div
+        className="c5"
+      >
+        <svg
+          aria-hidden="true"
+          className="c6"
+          fill="currentColor"
+          focusable="false"
+          height={17}
+          viewBox="0 0 640 512"
+          width={17}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M352 288h-16v-88c0-4.42-3.58-8-8-8h-13.58c-4.74 0-9.37 1.4-13.31 4.03l-15.33 10.22a7.994 7.994 0 00-2.22 11.09l8.88 13.31a7.994 7.994 0 0011.09 2.22l.47-.31V288h-16c-4.42 0-8 3.58-8 8v16c0 4.42 3.58 8 8 8h64c4.42 0 8-3.58 8-8v-16c0-4.42-3.58-8-8-8zM608 64H32C14.33 64 0 78.33 0 96v320c0 17.67 14.33 32 32 32h576c17.67 0 32-14.33 32-32V96c0-17.67-14.33-32-32-32zM48 400v-64c35.35 0 64 28.65 64 64H48zm0-224v-64h64c0 35.35-28.65 64-64 64zm272 192c-53.02 0-96-50.15-96-112 0-61.86 42.98-112 96-112s96 50.14 96 112c0 61.87-43 112-96 112zm272 32h-64c0-35.35 28.65-64 64-64v64zm0-224c-35.35 0-64-28.65-64-64h64v64z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+      <div
+        className="c7"
+      >
+        <span
+          className="styled__Fare-sc-6q2ok2-4"
+        >
+          <span
+            className="styled__TransitFare-sc-6q2ok2-9"
+          >
+            Transit Fare: 
+            <b>
+              $2.50
+            </b>
+          </span>
+          <span
+            className="styled__TNCFare-sc-6q2ok2-6"
+          >
+            <br />
+            <span
+              className="c10"
+            >
+              uber
+            </span>
+             Fare: 
+            <b>
+              $17.00
+               - 
+              $19.00
+            </b>
+          </span>
+        </span>
+        <button
+          className="c8 c9"
+          onClick={[Function]}
+        >
+          <svg
+            aria-hidden="true"
+            className="c6"
+            fill="currentColor"
+            focusable="false"
+            height="0.92em"
+            viewBox="0 0 512 512"
+            width="0.92em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
         <div />
       </div>
     </div>
@@ -50275,7 +50416,7 @@ exports[`Storyshots TripDetails Walk Interlined Transit Itinerary 1`] = `
     Trip Details
   </div>
   <div
-    className="styled__TripDetailsBody-sr23bt-14"
+    className="styled__TripDetailsBody-sc-6q2ok2-14"
   >
     <div
       className="c2"
@@ -50303,23 +50444,16 @@ exports[`Storyshots TripDetails Walk Interlined Transit Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__Timing-sr23bt-8"
+          className="styled__Timing-sc-6q2ok2-8"
         >
-          <span>
-            Depart
-             
-            <b>
-              November 13, 2019
-            </b>
-          </span>
-          <span>
-             
-            at
-             
-            <b>
-              15:47
-            </b>
-          </span>
+          Depart 
+          <b>
+            November 13, 2019
+          </b>
+           at 
+          <b>
+            3:47 PM
+          </b>
         </span>
         <div />
       </div>
@@ -50350,13 +50484,12 @@ exports[`Storyshots TripDetails Walk Interlined Transit Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__Fare-sr23bt-4"
+          className="styled__Fare-sc-6q2ok2-4"
         >
           <span
-            className="styled__TransitFare-sr23bt-9"
+            className="styled__TransitFare-sc-6q2ok2-9"
           >
-            Transit Fare
-            : 
+            Transit Fare: 
             <b>
               $2.50
             </b>
@@ -50391,10 +50524,9 @@ exports[`Storyshots TripDetails Walk Interlined Transit Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__CaloriesSummary-sr23bt-2"
+          className="styled__CaloriesSummary-sc-6q2ok2-2"
         >
-          Calories Burned
-          : 
+          Calories Burned: 
           <b>
             30
           </b>
@@ -50497,7 +50629,7 @@ exports[`Storyshots TripDetails Walk Only Itinerary 1`] = `
     Trip Details
   </div>
   <div
-    className="styled__TripDetailsBody-sr23bt-14"
+    className="styled__TripDetailsBody-sc-6q2ok2-14"
   >
     <div
       className="c2"
@@ -50525,23 +50657,16 @@ exports[`Storyshots TripDetails Walk Only Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__Timing-sr23bt-8"
+          className="styled__Timing-sc-6q2ok2-8"
         >
-          <span>
-            Depart
-             
-            <b>
-              December 13, 2019
-            </b>
-          </span>
-          <span>
-             
-            at
-             
-            <b>
-              11:29
-            </b>
-          </span>
+          Depart 
+          <b>
+            December 13, 2019
+          </b>
+           at 
+          <b>
+            11:29 AM
+          </b>
         </span>
         <div />
       </div>
@@ -50572,10 +50697,9 @@ exports[`Storyshots TripDetails Walk Only Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__CaloriesSummary-sr23bt-2"
+          className="styled__CaloriesSummary-sc-6q2ok2-2"
         >
-          Calories Burned
-          : 
+          Calories Burned: 
           <b>
             5
           </b>
@@ -50678,7 +50802,7 @@ exports[`Storyshots TripDetails Walk Transit Transfer Itinerary 1`] = `
     Trip Details
   </div>
   <div
-    className="styled__TripDetailsBody-sr23bt-14"
+    className="styled__TripDetailsBody-sc-6q2ok2-14"
   >
     <div
       className="c2"
@@ -50706,23 +50830,16 @@ exports[`Storyshots TripDetails Walk Transit Transfer Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__Timing-sr23bt-8"
+          className="styled__Timing-sc-6q2ok2-8"
         >
-          <span>
-            Depart
-             
-            <b>
-              November 13, 2019
-            </b>
-          </span>
-          <span>
-             
-            at
-             
-            <b>
-              15:46
-            </b>
-          </span>
+          Depart 
+          <b>
+            November 13, 2019
+          </b>
+           at 
+          <b>
+            3:46 PM
+          </b>
         </span>
         <div />
       </div>
@@ -50753,13 +50870,12 @@ exports[`Storyshots TripDetails Walk Transit Transfer Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__Fare-sr23bt-4"
+          className="styled__Fare-sc-6q2ok2-4"
         >
           <span
-            className="styled__TransitFare-sr23bt-9"
+            className="styled__TransitFare-sc-6q2ok2-9"
           >
-            Transit Fare
-            : 
+            Transit Fare: 
             <b>
               $2.50
             </b>
@@ -50794,10 +50910,9 @@ exports[`Storyshots TripDetails Walk Transit Transfer Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__CaloriesSummary-sr23bt-2"
+          className="styled__CaloriesSummary-sc-6q2ok2-2"
         >
-          Calories Burned
-          : 
+          Calories Burned: 
           <b>
             24
           </b>
@@ -50900,7 +51015,7 @@ exports[`Storyshots TripDetails Walk Transit Walk Itinerary 1`] = `
     Trip Details
   </div>
   <div
-    className="styled__TripDetailsBody-sr23bt-14"
+    className="styled__TripDetailsBody-sc-6q2ok2-14"
   >
     <div
       className="c2"
@@ -50928,246 +51043,17 @@ exports[`Storyshots TripDetails Walk Transit Walk Itinerary 1`] = `
         className="c5"
       >
         <span
-          className="styled__Timing-sr23bt-8"
+          className="styled__Timing-sc-6q2ok2-8"
         >
-          <span>
-            Depart
-             
-            <b>
-              November 13, 2019
-            </b>
-          </span>
-          <span>
-             
-            at
-             
-            <b>
-              15:44
-            </b>
-          </span>
-        </span>
-        <div />
-      </div>
-    </div>
-    <div
-      className="c2"
-    >
-      <div
-        className="c3"
-      >
-        <svg
-          aria-hidden="true"
-          className="c4"
-          fill="currentColor"
-          focusable="false"
-          height={17}
-          viewBox="0 0 640 512"
-          width={17}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M352 288h-16v-88c0-4.42-3.58-8-8-8h-13.58c-4.74 0-9.37 1.4-13.31 4.03l-15.33 10.22a7.994 7.994 0 00-2.22 11.09l8.88 13.31a7.994 7.994 0 0011.09 2.22l.47-.31V288h-16c-4.42 0-8 3.58-8 8v16c0 4.42 3.58 8 8 8h64c4.42 0 8-3.58 8-8v-16c0-4.42-3.58-8-8-8zM608 64H32C14.33 64 0 78.33 0 96v320c0 17.67 14.33 32 32 32h576c17.67 0 32-14.33 32-32V96c0-17.67-14.33-32-32-32zM48 400v-64c35.35 0 64 28.65 64 64H48zm0-224v-64h64c0 35.35-28.65 64-64 64zm272 192c-53.02 0-96-50.15-96-112 0-61.86 42.98-112 96-112s96 50.14 96 112c0 61.87-43 112-96 112zm272 32h-64c0-35.35 28.65-64 64-64v64zm0-224c-35.35 0-64-28.65-64-64h64v64z"
-            fill="currentColor"
-          />
-        </svg>
-      </div>
-      <div
-        className="c5"
-      >
-        <span
-          className="styled__Fare-sr23bt-4"
-        >
-          <span
-            className="styled__TransitFare-sr23bt-9"
-          >
-            Transit Fare
-            : 
-            <b>
-              $2.50
-            </b>
-          </span>
-        </span>
-        <div />
-      </div>
-    </div>
-    <div
-      className="c2"
-    >
-      <div
-        className="c3"
-      >
-        <svg
-          aria-hidden="true"
-          className="c4"
-          fill="currentColor"
-          focusable="false"
-          height={17}
-          viewBox="0 0 512 512"
-          width={17}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M320.2 243.8l-49.7 99.4c-6 12.1-23.4 11.7-28.9-.6l-56.9-126.3-30 71.7H60.6l182.5 186.5c7.1 7.3 18.6 7.3 25.7 0L451.4 288H342.3l-22.1-44.2zM473.7 73.9l-2.4-2.5c-51.5-52.6-135.8-52.6-187.4 0L256 100l-27.9-28.5c-51.5-52.7-135.9-52.7-187.4 0l-2.4 2.4C-10.4 123.7-12.5 203 31 256h102.4l35.9-86.2c5.4-12.9 23.6-13.2 29.4-.4l58.2 129.3 49-97.9c5.9-11.8 22.7-11.8 28.6 0l27.6 55.2H481c43.5-53 41.4-132.3-7.3-182.1z"
-            fill="currentColor"
-          />
-        </svg>
-      </div>
-      <div
-        className="c5"
-      >
-        <span
-          className="styled__CaloriesSummary-sr23bt-2"
-        >
-          Calories Burned
-          : 
+          Depart 
           <b>
-            11
+            November 13, 2019
+          </b>
+           at 
+          <b>
+            3:44 PM
           </b>
         </span>
-        <button
-          className="c6 c7"
-          onClick={[Function]}
-        >
-          <svg
-            aria-hidden="true"
-            className="c4"
-            fill="currentColor"
-            focusable="false"
-            height="0.92em"
-            viewBox="0 0 512 512"
-            width="0.92em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
-              fill="currentColor"
-            />
-          </svg>
-        </button>
-        <div />
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots TripDetails Walk Transit Walk Itinerary And Custom Messages 1`] = `
-.c4 {
-  display: inline-block;
-  vertical-align: -.125em;
-  overflow: hidden;
-}
-
-.c6 {
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
-  margin: 0;
-  padding: 0;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  touch-action: manipulation;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-}
-
-.c7 {
-  color: #00f;
-  font-size: 16px;
-  margin-left: 6px;
-  margin-top: -2px;
-}
-
-.c2 {
-  margin-top: 6px;
-}
-
-.c3 {
-  float: left;
-  font-size: 17px;
-}
-
-.c0 {
-  background-color: #eee;
-  border-radius: 6px;
-  margin-bottom: 15px;
-  margin-top: 16px;
-  padding: 10px 16px;
-}
-
-.c1 {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.c5 {
-  margin-left: 28px;
-  padding-top: 2px;
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    Details about this Trip
-  </div>
-  <div
-    className="styled__TripDetailsBody-sr23bt-14"
-  >
-    <div
-      className="c2"
-    >
-      <div
-        className="c3"
-      >
-        <svg
-          aria-hidden="true"
-          className="c4"
-          fill="currentColor"
-          focusable="false"
-          height={17}
-          viewBox="0 0 448 512"
-          width={17}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
-            fill="currentColor"
-          />
-        </svg>
-      </div>
-      <div
-        className="c5"
-      >
-        <span
-          className="styled__Timing-sr23bt-8"
-        >
-          <span>
-            Depart
-             
-            <b>
-              November 13, 2019
-            </b>
-          </span>
-          <span>
-             
-            at
-             
-            <b>
-              15:44
-            </b>
-          </span>
-        </span>
         <div />
       </div>
     </div>
@@ -51197,38 +51083,17 @@ exports[`Storyshots TripDetails Walk Transit Walk Itinerary And Custom Messages 
         className="c5"
       >
         <span
-          className="styled__Fare-sr23bt-4"
+          className="styled__Fare-sc-6q2ok2-4"
         >
           <span
-            className="styled__TransitFare-sr23bt-9"
+            className="styled__TransitFare-sc-6q2ok2-9"
           >
-            Transit Fare
-            : 
+            Transit Fare: 
             <b>
               $2.50
             </b>
           </span>
         </span>
-        <button
-          className="c6 c7"
-          onClick={[Function]}
-        >
-          <svg
-            aria-hidden="true"
-            className="c4"
-            fill="currentColor"
-            focusable="false"
-            height="0.92em"
-            viewBox="0 0 512 512"
-            width="0.92em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
-              fill="currentColor"
-            />
-          </svg>
-        </button>
         <div />
       </div>
     </div>
@@ -51258,10 +51123,9 @@ exports[`Storyshots TripDetails Walk Transit Walk Itinerary And Custom Messages 
         className="c5"
       >
         <span
-          className="styled__CaloriesSummary-sr23bt-2"
+          className="styled__CaloriesSummary-sc-6q2ok2-2"
         >
-          Calories Burned
-          : 
+          Calories Burned: 
           <b>
             11
           </b>

@@ -108,7 +108,7 @@ const intlDecorator = (
   const { args } = context;
   const { locale, useCustomMessages, useLocalizedMessages } = args;
   const messages = flatten(
-    locale === "en-US" ? defaultEnglishMessages : defaultFrenchMessages
+    locale === "en-US" ? englishMessages : frenchMessages
   );
   // Construct a messages object that customizes a subset
   // of the default messages of the desired locale.
