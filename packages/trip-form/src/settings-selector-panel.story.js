@@ -12,9 +12,6 @@ import commonModes from "./__mocks__/modes";
 import commonModesEmpty from "./__mocks__/modes-empty";
 import trimet from "./__mocks__/trimet.styled";
 
-// SVG icons
-import { walkIcon, bikeIcon, carIcon, scooterIcon } from "./__mocks__/icons";
-
 const headingStyle = {
   fontFamily: "sans-serif",
   fontSize: "16px"
@@ -130,14 +127,6 @@ export const tripOptions = () => (
       }
       supportedModes={commonModes}
       supportedCompanies={commonCompanies}
-      modeIcons={{
-        WALK: walkIcon,
-        BICYCLE_RENT: bikeIcon,
-        BICYCLE: bikeIcon,
-        CAR_HAIL: carIcon,
-        CAR_PARK: carIcon,
-        MICROMOBILITY_RENT: scooterIcon
-      }}
     />
   </PanelWrapper>
 );

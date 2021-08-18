@@ -9,16 +9,16 @@ import {
   getSelectedModes
 } from "./util";
 
+import trimetModeIcon from "../../../icons/src/trimet-mode-icon-2021";
+
 const ModeRow = ({
   onQueryParamChange,
   queryParams,
-  supportedModes,
-  modeIcons = {}
+  supportedModes
 }: {
   onQueryParamChange(paramsToUpdate: QueryParams): void;
   queryParams: QueryParams;
   supportedModes: Modes;
-  modeIcons: Record<string, string>;
 }) => {
   const { categories } = supportedModes;
   const selectedModes = getSelectedModes(queryParams);
@@ -62,9 +62,7 @@ const ModeRow = ({
             onClick={onChangeMode}
             selected={isChecked}
           >
-            {modeIcons[mode] !== undefined && (
-              <span className="custom">{modeIcons[mode]}</span>
-            )}
+            <span className="custom">{trimetModeIcon({ mode })}</span>
 
             {isChecked ? <S.GreenCheck /> : <S.UncheckedIcon />}
             {category.label}
