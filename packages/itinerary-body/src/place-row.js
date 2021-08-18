@@ -38,7 +38,9 @@ const PlaceRow = ({
   timeOptions,
   toRouteAbbreviation,
   TransitLegSubheader,
-  TransitLegSummary
+  TransitLegSummary,
+  AlertToggleIcon,
+  AlertBodyIcon
 }) => {
   // NOTE: Previously there was a check for itineraries that changed vehicles
   // at a single stop, which would render the stop place the same as the
@@ -108,6 +110,8 @@ const PlaceRow = ({
                   leg,
                   config.transitOperators
                 )}
+                AlertToggleIcon={AlertToggleIcon}
+                AlertBodyIcon={AlertBodyIcon}
               />
             ) : (
               /* This is an access (e.g. walk/bike/etc.) leg */
@@ -133,7 +137,7 @@ const PlaceRow = ({
             onClick={() => frameLeg({ isDestination, leg, legIndex, place })}
             title={messages.mapIconTitle}
           >
-            <Styled.MapIcon />
+            <Styled.MapIcon title="Show on map" />
           </Styled.MapButton>
         </Styled.MapButtonColumn>
       )}
@@ -179,7 +183,9 @@ PlaceRow.propTypes = {
   timeOptions: coreUtils.types.timeOptionsType,
   toRouteAbbreviation: PropTypes.func.isRequired,
   TransitLegSubheader: PropTypes.elementType,
-  TransitLegSummary: PropTypes.elementType.isRequired
+  TransitLegSummary: PropTypes.elementType.isRequired,
+  AlertToggleIcon: PropTypes.elementType,
+  AlertBodyIcon: PropTypes.elementType
 };
 
 PlaceRow.defaultProps = {
@@ -193,7 +199,9 @@ PlaceRow.defaultProps = {
   },
   TimeColumnContent: DefaultTimeColumnContent,
   timeOptions: null,
-  TransitLegSubheader: undefined
+  TransitLegSubheader: undefined,
+  AlertToggleIcon: undefined,
+  AlertBodyIcon: undefined
 };
 
 export default PlaceRow;

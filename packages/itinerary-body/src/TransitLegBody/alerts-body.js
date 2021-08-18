@@ -1,11 +1,15 @@
 import moment from "moment";
 import PropTypes from "prop-types";
 import React from "react";
-import { ExclamationTriangle } from "styled-icons/fa-solid";
 
 import * as Styled from "../styled";
 
-export default function AlertsBody({ alerts, longDateFormat, timeFormat }) {
+export default function AlertsBody({
+  alerts,
+  longDateFormat,
+  timeFormat,
+  AlertIcon
+}) {
   return (
     <Styled.TransitAlerts>
       {alerts
@@ -27,7 +31,7 @@ export default function AlertsBody({ alerts, longDateFormat, timeFormat }) {
           return (
             <Styled.TransitAlert key={i} href={alert.alertUrl}>
               <Styled.TransitAlertIconContainer>
-                <ExclamationTriangle size={18} />
+                <AlertIcon />
               </Styled.TransitAlertIconContainer>
               {alert.alertHeaderText ? (
                 <Styled.TransitAlertHeader>
@@ -50,5 +54,10 @@ export default function AlertsBody({ alerts, longDateFormat, timeFormat }) {
 AlertsBody.propTypes = {
   alerts: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   longDateFormat: PropTypes.string.isRequired,
-  timeFormat: PropTypes.string.isRequired
+  timeFormat: PropTypes.string.isRequired,
+  AlertIcon: PropTypes.elementType
+};
+
+AlertsBody.defaultProps = {
+  AlertIcon: Styled.DefaultAlertBodyIcon
 };

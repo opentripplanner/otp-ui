@@ -7,10 +7,10 @@ import styled from "styled-components";
 import SettingsSelectorPanel from "./SettingsSelectorPanel";
 import TripOptions from "./TripOptions";
 
-import commonCompanies from "./__mocks__/companies";
-import commonModes from "./__mocks__/modes";
-import commonModesEmpty from "./__mocks__/modes-empty";
-import trimet from "./__mocks__/trimet.styled";
+import commonCompanies from "./test-utils/companies";
+import commonModes from "./test-utils/modes";
+import commonModesEmpty from "./test-utils/modes-empty";
+import trimet from "./test-utils/trimet-styled";
 
 const headingStyle = {
   fontFamily: "sans-serif",

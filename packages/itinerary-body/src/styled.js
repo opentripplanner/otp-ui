@@ -2,7 +2,7 @@ import { Map } from "@opentripplanner/icons";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
-import { CaretDown, CaretUp } from "styled-icons/fa-solid";
+import { CaretDown, CaretUp, ExclamationTriangle } from "styled-icons/fa-solid";
 
 import { toModeBorder, toModeColor, toSafeRouteColor } from "./util";
 
@@ -267,7 +267,7 @@ export const IntermediateStops = styled.div`
 export const ItineraryBody = styled.div``;
 
 export const LegBody = styled.div`
-  color: #999;
+  color: #676767;
   font-size: 13px;
   padding: 12px 0 18px 4px;
 `;
@@ -305,7 +305,7 @@ export const LegDescriptionRouteShortName = styled.div`
 `;
 
 export const LegDescriptionForTransit = styled(LegDescription)`
-  color: rgb(153, 153, 153);
+  color: #807373;
   margin-top: 5px;
 `;
 
@@ -417,7 +417,7 @@ export const PlaceName = styled.div`
 `;
 
 export const PlaceSubheader = styled.div`
-  color: grey;
+  color: #807373;
   font-weight: 300;
   padding-left: 4px;
   padding-top: 1px;
@@ -435,7 +435,7 @@ export const PreviewDiagramElevationChange = styled.span`
 export const PreviewDiagramElevationGain = styled(
   PreviewDiagramElevationChange
 )`
-  color: red;
+  color: #e60000;
 `;
 
 export const PreviewDiagramElevationLoss = styled(
@@ -491,7 +491,7 @@ export const StepDescriptionContainer = styled.div`
 `;
 
 export const StepsHeader = styled(TransparentButton)`
-  color: #999;
+  color: #676767;
   display: inline-block;
   font-size: 13px;
   font-style: normal;
@@ -500,7 +500,7 @@ export const StepsHeader = styled(TransparentButton)`
 `;
 
 export const StepIconContainer = styled.div`
-  fill: #999999;
+  fill: #676767;
   float: left;
   height: 16px;
   width: 16px;
@@ -509,7 +509,7 @@ export const StepIconContainer = styled.div`
 export const StepRow = styled.div`
   font-size: 13px;
   margin-top: 8px;
-  color: #999;
+  color: #676767;
   font-style: normal;
 `;
 
@@ -530,7 +530,7 @@ export const StopMarker = styled.div`
 `;
 
 export const StopName = styled.div`
-  color: #999;
+  color: #676767;
   margin-top: 3px;
 `;
 
@@ -592,7 +592,7 @@ export const TransitLegDetails = styled.div`
 `;
 
 export const TransitLegDetailsHeader = styled.div`
-  color: #999999;
+  color: #676767;
 `;
 
 export const TransitLegExpandedBody = styled.div`
@@ -606,3 +606,11 @@ export const TransitLegFare = styled.div`
 export const TransitLegSummary = styled(TransparentButton)`
   padding: 0;
 `;
+
+export const DefaultAlertToggleIcon = styled(ExclamationTriangle).attrs({
+  size: 15
+})``;
+
+export const DefaultAlertBodyIcon = styled(ExclamationTriangle).attrs({
+  size: 18
+})``;

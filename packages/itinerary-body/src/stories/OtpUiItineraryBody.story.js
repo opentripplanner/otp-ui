@@ -2,6 +2,8 @@ import coreUtils from "@opentripplanner/core-utils";
 import { ClassicLegIcon } from "@opentripplanner/icons";
 import PropTypes from "prop-types";
 import React from "react";
+import { Bomb, Bolt } from "styled-icons/fa-solid";
+import styled from "styled-components";
 
 import ItineraryBody from "..";
 import {
@@ -15,7 +17,7 @@ import OtpRRLineColumnContent from "../otp-react-redux/line-column-content";
 import OtpRRPlaceName from "../otp-react-redux/place-name";
 import OtpRRRouteDescription from "../otp-react-redux/route-description";
 
-// import mock itinaries. These are all trip plan outputs from OTP.
+// import mock itineraries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("../__mocks__/itineraries/bike-only.json");
 const bikeRentalItinerary = require("../__mocks__/itineraries/bike-rental.json");
 const bikeRentalTransitBikeRentalItinerary = require("../__mocks__/itineraries/bike-rental-transit-bike-rental.json");
@@ -53,6 +55,10 @@ function OtpRRItineraryBodyWrapper({
   );
 }
 
+const a11yOverrideParameters = {
+  a11y: { config: { rules: [{ id: "color-contrast", reviewOnFail: true }] } }
+};
+
 OtpRRItineraryBodyWrapper.propTypes = {
   itinerary: coreUtils.types.itineraryType.isRequired,
   showRouteFares: PropTypes.bool,
@@ -86,6 +92,8 @@ export const StyledWalkTransitWalkItinerary = () => (
     styledItinerary="pink-legs"
   />
 );
+// Custom styling for this story only, not in production
+StyledWalkTransitWalkItinerary.parameters = a11yOverrideParameters;
 
 export const WalkTransitWalkItineraryWithAgencyInformation = () => (
   <ItineraryBodyDefaultsWrapper
@@ -123,6 +131,8 @@ export const BikeTransitBikeItinerary = () => (
 export const WalkInterlinedTransitItinerary = () => (
   <ItineraryBodyDefaultsWrapper itinerary={walkInterlinedTransitItinerary} />
 );
+// Custom styling for this story only, not in production
+WalkInterlinedTransitItinerary.parameters = a11yOverrideParameters;
 
 export const WalkTransitTransferItinerary = () => (
   <ItineraryBodyDefaultsWrapper
@@ -156,4 +166,12 @@ export const EScooterRentalTransitItinerary = () => (
 
 export const TncTransitItinerary = () => (
   <ItineraryBodyDefaultsWrapper itinerary={tncTransitTncItinerary} />
+);
+
+export const CustomAlertIconsItinerary = () => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkItinerary}
+    AlertToggleIcon={styled(Bolt).attrs({ size: 15 })``}
+    AlertBodyIcon={styled(Bomb).attrs({ size: 18 })``}
+  />
 );
