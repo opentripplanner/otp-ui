@@ -4,6 +4,7 @@
   "description": "A component for displaying details about a trip planning itinerary",
   "main": "lib/index.js",
   "module": "esm/index.js",
+  "types": "lib/index.d.js",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "author": "Evan Siroky",
@@ -17,7 +18,8 @@
     "velocity-react": "^1.4.3"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^1.0.0"
+    "@opentripplanner/types": "^1.0.0",
+    "@types/flat": "^5.0.2"
   },
   "peerDependencies": {
     "react": "^16.14.0",
@@ -27,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
-  "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"
+  "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d",
+  "scripts": {
+    "tsc": "tsc"
+  }
 }

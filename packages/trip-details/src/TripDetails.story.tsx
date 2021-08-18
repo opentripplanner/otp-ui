@@ -1,7 +1,7 @@
 import flatten from "flat";
 import React, { ReactElement } from "react";
 import { IntlProvider } from "react-intl";
-import { Story as StoryType } from "@storybook/react";
+import { Meta, Story as StoryType } from "@storybook/react";
 import styled from "styled-components";
 // The below eslint-disable is due to https://github.com/storybookjs/storybook/issues/13408
 // eslint-disable-next-line import/no-named-as-default
@@ -10,12 +10,22 @@ import * as TripDetailsClasses from "./styled";
 import {
   CaloriesDetailsProps,
   DepartureDetailsProps,
-  FareDetailsProps
+  FareDetailsProps,
+  TripDetailsProps
 } from "./types";
 
 import englishMessages from "../i18n/en-US.yml";
 import frenchMessages from "../i18n/fr.yml";
 import customMessages from "../__mocks__/custom-messages.yml";
+
+/**
+ * Describes args passed to stories.
+ */
+interface StoryArgs {
+  locale?: string;
+  useCustomMessages?: boolean;
+  useLocalizedMessages?: boolean;
+}
 
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json");
@@ -78,14 +88,16 @@ const CustomCaloriesDetails = ({
  * the Component to render should not change.
  * @param Component The component to render.
  */
-function createTripDetailsTemplate(Component = TripDetails) {
+function createTripDetailsTemplate(
+  Component: React.ElementType<TripDetailsProps> = TripDetails
+) {
   const TripDetailsTemplate = ({
     CaloriesDetails,
     currency,
     DepartureDetails,
     FareDetails,
     itinerary
-  }: TripDetailsProps): React.Element => (
+  }: TripDetailsProps): ReactElement => (
     <Component
       CaloriesDetails={CaloriesDetails}
       currency={currency}
@@ -100,27 +112,24 @@ function createTripDetailsTemplate(Component = TripDetails) {
 const intlDecorator = (
   Story: StoryType,
   context: {
-    locale?: string;
-    useCustomMessages?: boolean;
-    useLocalizedMessages?: boolean;
+    args: StoryArgs;
   }
 ): ReactElement => {
   const { args } = context;
   const { locale, useCustomMessages, useLocalizedMessages } = args;
-  const messages = flatten(
-    locale === "en-US" ? englishMessages : frenchMessages
-  );
+  const messages = locale === "en-US" ? englishMessages : frenchMessages;
+
   // Construct a messages object that customizes a subset
   // of the default messages of the desired locale.
   // The structure of the message objects is
   // flattened before it is passed to IntlProvider.
-  const mergedMessages = useCustomMessages
-    ? {
-        ...messages,
-        ...flatten(customMessages)
-      }
-    : messages;
-
+  // Note: the spread operator (...) is rejected if used with flatten,
+  // so we use Object.assign instead
+  // (see e.g. https://github.com/Microsoft/TypeScript/issues/10727#issuecomment-423712256).
+  let mergedMessages: Record<string, string> = flatten(messages);
+  if (useCustomMessages) {
+    mergedMessages = Object.assign(mergedMessages, flatten(customMessages));
+  }
   return (
     <IntlProvider
       locale={locale}
@@ -134,7 +143,10 @@ const intlDecorator = (
 /**
  * Helper to simplify story declaration.
  */
-function makeStory(args, Component) {
+function makeStory(
+  args: StoryArgs | TripDetailsProps,
+  Component?: React.ElementType<TripDetailsProps>
+) {
   const BoundTripDetails = createTripDetailsTemplate(Component).bind({});
   BoundTripDetails.args = args;
   return BoundTripDetails;
@@ -143,7 +155,7 @@ function makeStory(args, Component) {
 const decoratorPropDescription = "(This prop is used by the decorator.)";
 // Hide story controls for some props.
 const noControl = {
-  control: { type: null }
+  control: { type: false }
 };
 
 export default {
@@ -183,7 +195,7 @@ export default {
   decorators: [intlDecorator],
   parameters: { controls: { sort: "alpha" } },
   title: "TripDetails"
-};
+} as Meta;
 
 export const WalkOnlyItinerary = makeStory({
   itinerary: walkOnlyItinerary

@@ -1,13 +1,13 @@
-import React, { Component } from "react";
+import React, { Component, ReactElement } from "react";
 import { QuestionCircle, TimesCircle } from "styled-icons/fa-solid";
 import { VelocityTransitionGroup } from "velocity-react";
 
 import * as Styled from "./styled";
 
 type Props = {
-  description?: React.Element;
-  icon: React.Element;
-  summary: React.Element;
+  description?: ReactElement;
+  icon: ReactElement;
+  summary: ReactElement;
 };
 
 type State = {
@@ -15,28 +15,28 @@ type State = {
 };
 
 export default class TripDetail extends Component<Props, State> {
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
     this.state = {
       expanded: false
     };
   }
 
-  toggle = () => {
+  toggle = (): void => {
     const { expanded } = this.state;
     if (expanded) this.onHideClick();
     else this.onExpandClick();
   };
 
-  onExpandClick = () => {
+  onExpandClick = (): void => {
     this.setState({ expanded: true });
   };
 
-  onHideClick = () => {
+  onHideClick = (): void => {
     this.setState({ expanded: false });
   };
 
-  render() {
+  render(): ReactElement {
     const { icon, summary, description } = this.props;
     const { expanded } = this.state;
     return (

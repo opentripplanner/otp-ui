@@ -3,5 +3,5 @@ otpUi:
   TripDetails:
     caloriesDescription: "Walking <b>{walkMinutes}</b> minute(s) and biking <b>{bikeMinutes}</b> minute(s) will consume {calories} Calories."
     departure: "<b>Leave</b> at <b>{departureDate, time, short}</b> on <b>{departureDate, date, long}</b>"
-    title: "Localized Trip Details"
+    title: "Custom Trip Details Title"
     tncFare: "Pay <b>{minTNCFare}-{maxTNCFare}</b> to {companies}"

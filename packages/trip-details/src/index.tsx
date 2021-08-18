@@ -1,4 +1,6 @@
 import flatten from "flat";
+import { MessageDescriptor } from "@formatjs/intl";
+// @ts-expect-error FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
 import moment from "moment";
 import React, { ReactElement } from "react";
@@ -16,7 +18,7 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 // the YAML loaders behave differently between webpack and our version of jest:
 // - the yaml loader for webpack returns a nested object,
 // - the yaml loader for jest returns messages with flattened ids.
-const defaultMessages = flatten(defaultEnglishMessages);
+const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
 /**
  * Construct full formatjs message definitions and pass them to defineMessages.
@@ -26,7 +28,7 @@ function expandAndDefineMessages(
   prefix: string,
   entries: Record<string, string>
 ): Record<string, MessageDescriptor> {
-  const messages = {};
+  const messages: Record<string, MessageDescriptor> = {};
   Object.keys(entries).forEach((key: string) => {
     const id = `${prefix}.${key}`;
     messages[key] = {
@@ -84,7 +86,7 @@ function DefaultCaloriesDetails({
   bikeSeconds,
   calories,
   walkSeconds
-}: CaloriesDetailsProps): React.Element {
+}: CaloriesDetailsProps): ReactElement {
   return (
     <FormattedMessage
       defaultMessage={messages.caloriesDescription.defaultMessage}
@@ -111,7 +113,7 @@ export function TripDetails({
   FareDetails = null,
   itinerary
 }: TripDetailsProps): ReactElement {
-  let companies;
+  let companies = "";
   itinerary.legs.forEach(leg => {
     if (leg.tncData) {
       companies = leg.tncData.company;
