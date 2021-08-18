@@ -25,7 +25,7 @@ const ModeRow = ({
   const selectedTransit = selectedModes.filter(coreUtils.itinerary.isTransit);
   const hasTransit = selectedTransit.length > 0;
   return (
-    // errors appear on the next line becuase in a testing environment,
+    // errors appear on the next line because in a testing environment,
     // this component is converted to a div which does not support
     // the hideScrollbars prop
     <S.ScrollableRow hideScrollbars={false}>
