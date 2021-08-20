@@ -45810,7 +45810,7 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
 
 .c2.insetCheckmark svg {
   position: absolute;
-  right: 24px;
+  right: 7.5%;
 }
 
 .c6 {
@@ -45848,7 +45848,7 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
 
 .c6.insetCheckmark svg {
   position: absolute;
-  right: 24px;
+  right: 7.5%;
 }
 
 .c1 {
@@ -46067,6 +46067,20 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
 
 .c11 > .line-break {
   width: 100%;
+}
+
+@media (max-width:768px) {
+  .c2.insetCheckmark svg {
+    max-width: 20px;
+    max-height: 20px;
+  }
+}
+
+@media (max-width:768px) {
+  .c6.insetCheckmark svg {
+    max-width: 20px;
+    max-height: 20px;
+  }
 }
 
 <div>
