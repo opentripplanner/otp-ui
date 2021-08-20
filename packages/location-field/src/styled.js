@@ -151,11 +151,11 @@ export class MenuItem extends Component {
     return header ? (
       <MenuItemHeader centeredText={centeredText}>{children}</MenuItemHeader>
     ) : (
-      <MenuItemLi color={color} disabled={disabled} role="presentation">
+      <MenuItemLi color={color} disabled={disabled} role="listitem">
         <MenuItemA
           active={active}
           onClick={this.onClick}
-          role="menuitem"
+          role="listitem"
           tabIndex={-1}
         >
           {children}

@@ -24,7 +24,7 @@ const TriMetStyled = styled.div`
   }
   ${TripFormClasses.SettingLabel} {
     padding-top: 8px;
-    color: #808080;
+    color: #676767;
     font-weight: 100;
     text-transform: uppercase;
     letter-spacing: 1px;

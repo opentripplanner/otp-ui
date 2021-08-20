@@ -55,6 +55,10 @@ function OtpRRItineraryBodyWrapper({
   );
 }
 
+const a11yOverrideParameters = {
+  a11y: { config: { rules: [{ id: "color-contrast", reviewOnFail: true }] } }
+};
+
 OtpRRItineraryBodyWrapper.propTypes = {
   itinerary: coreUtils.types.itineraryType.isRequired,
   showRouteFares: PropTypes.bool,
@@ -88,6 +92,8 @@ export const StyledWalkTransitWalkItinerary = () => (
     styledItinerary="pink-legs"
   />
 );
+// Custom styling for this story only, not in production
+StyledWalkTransitWalkItinerary.parameters = a11yOverrideParameters;
 
 export const WalkTransitWalkItineraryWithAgencyInformation = () => (
   <ItineraryBodyDefaultsWrapper
@@ -125,6 +131,8 @@ export const BikeTransitBikeItinerary = () => (
 export const WalkInterlinedTransitItinerary = () => (
   <ItineraryBodyDefaultsWrapper itinerary={walkInterlinedTransitItinerary} />
 );
+// Custom styling for this story only, not in production
+WalkInterlinedTransitItinerary.parameters = a11yOverrideParameters;
 
 export const WalkTransitTransferItinerary = () => (
   <ItineraryBodyDefaultsWrapper

@@ -44,6 +44,10 @@ const layerOnOverlayAdded = action("Layer::onOverlayAdded");
 const layerOnOverlayRemoved = action("Layer::onOverlayRemoved");
 const layerOnViewportChanged = action("Layer::onViewportChanged");
 
+const a11yOverrideParameters = {
+  a11y: { config: { rules: [{ id: "color-contrast", reviewOnFail: true }] } }
+};
+
 export const clickAndViewportchangedEvents = () => (
   <BaseMap
     center={center}
@@ -183,5 +187,7 @@ export const customLocationPopupContent = () => (
     onPopupClosed={onPopupClosed}
   />
 );
+// Custom styling for this story only, not in production
+customLocationPopupContent.parameters = a11yOverrideParameters;
 
 export const onContextMenuPopup = () => <ContextMenuDemo />;
