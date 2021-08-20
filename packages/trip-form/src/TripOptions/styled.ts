@@ -113,7 +113,11 @@ export const Checkbox = styled.button`
     }
     svg {
       position: absolute;
-      right: 24px;
+      right: 7.5%;
+      @media (max-width: 768px) {
+        max-width: 20px;
+        max-height: 20px;
+      }
     }
   }
 `;
