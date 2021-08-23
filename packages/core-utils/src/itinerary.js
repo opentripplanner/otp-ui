@@ -468,6 +468,7 @@ export function getTransitFare(fareComponent) {
   let symbol = "$";
   let currencyCode = "USD";
   if (fareComponent) {
+    // Assign values without declaration. See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#assignment_without_declaration
     ({
       currencyCode,
       defaultFractionDigits: digits,
