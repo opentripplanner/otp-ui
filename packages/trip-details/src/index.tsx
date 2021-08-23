@@ -1,10 +1,9 @@
 import flatten from "flat";
-import { MessageDescriptor } from "@formatjs/intl";
 // @ts-expect-error FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
 import moment from "moment";
 import React, { ReactElement } from "react";
-import { defineMessages, FormattedMessage, FormattedNumber } from "react-intl";
+import { FormattedMessage, FormattedNumber } from "react-intl";
 import { CalendarAlt, Heartbeat, MoneyBillAlt } from "styled-icons/fa-solid";
 
 import * as Styled from "./styled";
@@ -19,41 +18,6 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 // - the yaml loader for webpack returns a nested object,
 // - the yaml loader for jest returns messages with flattened ids.
 const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
-
-/**
- * Construct full formatjs message definitions and pass them to defineMessages.
- */
-// TODO: Find a better place for this utility.
-function expandAndDefineMessages(
-  prefix: string,
-  entries: Record<string, string>
-): Record<string, MessageDescriptor> {
-  const messages: Record<string, MessageDescriptor> = {};
-  Object.keys(entries).forEach((key: string) => {
-    const id = `${prefix}.${key}`;
-    messages[key] = {
-      defaultMessage: defaultMessages[id],
-      description: entries[key],
-      id
-    };
-  });
-  return defineMessages(messages);
-}
-
-// Internationalization messages definition. This is used for tooling purposes.
-// Message descriptions and default messages are included so they can be captured
-// with react-intl CLI and documentation.
-// See https://formatjs.io/docs/react-intl/api#definemessagesdefinemessage
-const messages = expandAndDefineMessages("otpUi.TripDetails", {
-  calories:
-    "Text showing the number of calories for the walking and biking legs of a trip.",
-  caloriesDescription:
-    "Text describing how the calories relate to the walking and biking duration of a trip.",
-  departure: "Text showing the departure date/time for a trip.",
-  title: "Title (heading) text of the component.",
-  tncFare: "Text showing the price paid to transportation network companies.",
-  transitFare: "Text showing the price paid for public transit tickets."
-});
 
 /**
  * Format text bold (used with FormattedMessage).
@@ -89,8 +53,9 @@ function DefaultCaloriesDetails({
 }: CaloriesDetailsProps): ReactElement {
   return (
     <FormattedMessage
-      defaultMessage={messages.caloriesDescription.defaultMessage}
-      id={messages.caloriesDescription.id}
+      defaultMessage={defaultMessages["otpUi.TripDetails.caloriesDescription"]}
+      description="Text describing how the calories relate to the walking and biking duration of a trip."
+      id="otpUi.TripDetails.caloriesDescription"
       values={{
         b: BoldText,
         bikeMinutes: Math.round(bikeSeconds / 60),
@@ -130,8 +95,9 @@ export function TripDetails({
         {transitFare && (
           <Styled.TransitFare>
             <FormattedMessage
-              defaultMessage={messages.transitFare.defaultMessage}
-              id={messages.transitFare.id}
+              defaultMessage={defaultMessages["otpUi.TripDetails.transitFare"]}
+              description="Text showing the price of tickets on public transportation."
+              id="otpUi.TripDetails.transitFare"
               values={{
                 b: BoldText,
                 transitFare: (
@@ -150,8 +116,9 @@ export function TripDetails({
           <Styled.TNCFare>
             <br />
             <FormattedMessage
-              defaultMessage={messages.tncFare.defaultMessage}
-              id={messages.tncFare.id}
+              defaultMessage={defaultMessages["otpUi.TripDetails.tncFare"]}
+              description="Text showing the price paid to transportation network companies."
+              id="otpUi.TripDetails.tncFare"
               values={{
                 b: BoldText,
                 companies: (
@@ -196,8 +163,9 @@ export function TripDetails({
     <Styled.TripDetails className={className}>
       <Styled.TripDetailsHeader>
         <FormattedMessage
-          defaultMessage={messages.title.defaultMessage}
-          id={messages.title.id}
+          defaultMessage={defaultMessages["otpUi.TripDetails.title"]}
+          description="Title (heading) text of the component."
+          id="otpUi.TripDetails.title"
         />
       </Styled.TripDetailsHeader>
       <Styled.TripDetailsBody>
@@ -212,8 +180,9 @@ export function TripDetails({
           summary={
             <Styled.Timing>
               <FormattedMessage
-                defaultMessage={messages.departure.defaultMessage}
-                id={messages.departure.id}
+                defaultMessage={defaultMessages["otpUi.TripDetails.departure"]}
+                description="Text showing the departure date/time for a trip."
+                id="otpUi.TripDetails.departure"
                 values={{
                   b: BoldText,
                   departureDate
@@ -244,8 +213,9 @@ export function TripDetails({
             summary={
               <Styled.CaloriesSummary>
                 <FormattedMessage
-                  defaultMessage={messages.calories.defaultMessage}
-                  id={messages.calories.id}
+                  defaultMessage={defaultMessages["otpUi.TripDetails.calories"]}
+                  description="Text showing the number of calories for the walking and biking legs of a trip."
+                  id="otpUi.TripDetails.calories"
                   values={{
                     b: BoldText,
                     calories: caloriesBurned
