@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/core-utils",
-  "version": "3.2.3",
+  "version": "3.2.4",
   "description": "Core functionality that is shared among numerous UI components",
   "main": "lib/index.js",
   "module": "esm/index.js",
