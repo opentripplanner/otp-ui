@@ -30,10 +30,6 @@ export type TripDetailsProps = {
    */
   className?: string;
   /**
-   * Three-letter currency code. See <a href="https://www.iban.com/currency-codes">here for instance</a>.
-   */
-  currency?: string;
-  /**
    * Slot for a custom component to render the expandable section for departure.
    */
   DepartureDetails?: React.ElementType<DepartureDetailsProps>;

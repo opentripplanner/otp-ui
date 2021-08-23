@@ -2784,6 +2784,21 @@
   dependencies:
     "@octokit/openapi-types" "^7.2.0"
 
+"@opentripplanner/core-utils@^3.2.4":
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-3.2.4.tgz#68366f1527fe5a4593a0efe59207c45c0f54c2d2"
+  integrity sha512-3MYdErBl1mpMNj8qkuvyA77OokTRqwzAqcJt5AgIz6aEgPqXfx3znLtoUr/oBw3/OSjMDJB2cCzXEC/iFmGmnQ==
+  dependencies:
+    "@mapbox/polyline" "^1.1.0"
+    "@opentripplanner/geocoder" "^1.0.2"
+    "@turf/along" "^6.0.1"
+    bowser "^2.7.0"
+    lodash.isequal "^4.5.0"
+    moment "^2.24.0"
+    moment-timezone "^0.5.27"
+    prop-types "^15.7.2"
+    qs "^6.9.1"
+
 "@pmmmwh/react-refresh-webpack-plugin@^0.4.3":
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.4.3.tgz#1eec460596d200c0236bf195b078a5d1df89b766"

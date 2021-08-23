@@ -41,6 +41,12 @@ const walkOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__
 const walkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json");
 const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json");
 
+// Change currency code on one of the itineraries for illustration.
+// (other currency fields in the itinerary object are not used for display).
+const itinCurrency =
+  walkTransitWalkTransitWalkItinerary.fare.fare.regular.currency;
+itinCurrency.currencyCode = "EUR";
+
 const StyledTripDetails = styled(TripDetails)`
   ${TripDetailsClasses.TripDetailsHeader} {
     background-color: pink;
@@ -93,14 +99,12 @@ function createTripDetailsTemplate(
 ) {
   const TripDetailsTemplate = ({
     CaloriesDetails,
-    currency,
     DepartureDetails,
     FareDetails,
     itinerary
   }: TripDetailsProps): ReactElement => (
     <Component
       CaloriesDetails={CaloriesDetails}
-      currency={currency}
       DepartureDetails={DepartureDetails}
       FareDetails={FareDetails}
       itinerary={itinerary}
@@ -166,10 +170,6 @@ export default {
     Component: {
       table: { disable: true }
     },
-    currency: {
-      control: "radio",
-      options: ["USD", "EUR"]
-    },
     DepartureDetails: noControl,
     FareDetails: noControl,
     itinerary: noControl,
@@ -186,7 +186,6 @@ export default {
     }
   },
   args: {
-    currency: "USD",
     locale: "en-US",
     useCustomMessages: false,
     useLocalizedMessages: true

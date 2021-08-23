@@ -73,7 +73,6 @@ function DefaultCaloriesDetails({
 export function TripDetails({
   CaloriesDetails = DefaultCaloriesDetails,
   className = "",
-  currency = "USD",
   DepartureDetails = null,
   FareDetails = null,
   itinerary
@@ -87,7 +86,7 @@ export function TripDetails({
 
   // process the transit fare
   const fareResult = coreUtils.itinerary.calculateFares(itinerary);
-  const { maxTNCFare, minTNCFare, transitFare } = fareResult;
+  const { currencyCode, maxTNCFare, minTNCFare, transitFare } = fareResult;
   let fare;
   if (transitFare || minTNCFare) {
     fare = (
@@ -102,7 +101,11 @@ export function TripDetails({
                 b: BoldText,
                 transitFare: (
                   <FormattedNumber
-                    currency={currency}
+                    currency={currencyCode}
+                    // For dollars in locales such as 'fr',
+                    // this will limit the display to just the dollar sign
+                    // (otherwise it will render e.g. '2,50 $US' instead of '2,50 $').
+                    currencyDisplay="narrowSymbol"
                     value={transitFare / 100}
                     // eslint-disable-next-line react/style-prop-object
                     style="currency"
@@ -128,7 +131,8 @@ export function TripDetails({
                 ),
                 maxTNCFare: (
                   <FormattedNumber
-                    currency={currency}
+                    currency={currencyCode}
+                    currencyDisplay="narrowSymbol"
                     value={maxTNCFare}
                     // eslint-disable-next-line react/style-prop-object
                     style="currency"
@@ -136,7 +140,8 @@ export function TripDetails({
                 ),
                 minTNCFare: (
                   <FormattedNumber
-                    currency={currency}
+                    currency={currencyCode}
+                    currencyDisplay="narrowSymbol"
                     value={minTNCFare}
                     // eslint-disable-next-line react/style-prop-object
                     style="currency"
