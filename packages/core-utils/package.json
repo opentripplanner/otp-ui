@@ -2,6 +2,9 @@
   "name": "@opentripplanner/core-utils",
   "version": "3.2.4",
   "description": "Core functionality that is shared among numerous UI components",
+  "engines": {
+    "node": ">=13"
+  },
   "main": "lib/index.js",
   "module": "esm/index.js",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
@@ -13,11 +16,13 @@
     "@opentripplanner/geocoder": "^1.0.2",
     "@turf/along": "^6.0.1",
     "bowser": "^2.7.0",
+    "date-fns": "^2.23.0",
+    "date-fns-tz": "^1.1.4",
     "lodash.isequal": "^4.5.0",
     "moment": "^2.24.0",
-    "moment-timezone": "^0.5.27",
     "prop-types": "^15.7.2",
     "qs": "^6.9.1"
   },
-  "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"
+  "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d",
+  "devDependencies": {}
 }
