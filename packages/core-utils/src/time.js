@@ -124,9 +124,9 @@ export function formatSecondsAfterMidnight(seconds, timeFormat) {
  * environment, pulls timezone information from an env variable. Default to
  * GMT+0 if the Intl API is unavailable.
  */
-export function getUserTimezone() {
+export function getUserTimezone(fallbackTimezone = "Etc/Greenwich") {
   if (process.env.NODE_ENV === "test") return process.env.TZ;
-  return Intl?.DateTimeFormat().resolvedOptions().timeZone || "Etc/Greenwich";
+  return Intl?.DateTimeFormat().resolvedOptions().timeZone || fallbackTimezone;
 }
 
 /**
