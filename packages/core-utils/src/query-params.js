@@ -882,10 +882,12 @@ export function getCustomQueryParams(customizations) {
   Object.keys(customizations).forEach(k => {
     // Merge fields into the cloned object
     const paramIndex = clonedParams.findIndex(param => param.name === k);
-    clonedParams[paramIndex] = {
-      ...clonedParams[paramIndex],
-      ...customizations[k]
-    };
+    if (paramIndex !== -1) {
+      clonedParams[paramIndex] = {
+        ...clonedParams[paramIndex],
+        ...customizations[k]
+      };
+    }
   });
   return clonedParams;
 }

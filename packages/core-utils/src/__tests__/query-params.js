@@ -22,8 +22,26 @@ describe("query-params", () => {
           ]
         }
       };
-      const customizedQueryParams = getCustomQueryParams(customizations);
-      expect(customizedQueryParams).toMatchSnapshot();
+      expect(getCustomQueryParams(customizations)).toMatchSnapshot();
+    });
+
+    it("should ignore unknown query params", () => {
+      const customizations = {
+        unknownQueryParameter: {
+          label: "Unknown query parameter",
+          options: [
+            {
+              text: "200 m",
+              value: 100
+            },
+            {
+              text: "500 m",
+              value: 500
+            }
+          ]
+        }
+      };
+      expect(getCustomQueryParams(customizations)).toEqual(queryParams);
     });
   });
 });
