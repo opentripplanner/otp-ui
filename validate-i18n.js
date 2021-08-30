@@ -6,7 +6,8 @@
 // Example usage for one package:
 //    node ./validate-i18n.js packages/trip-details/src/{,**/}*.{j,t}s{,x} packages/trip-details/i18n/*.yml
 
-const fs = require("fs-extra");
+const fs = require("fs").promises;
+const path = require("path");
 const { load } = require("js-yaml");
 const { extract } = require("@formatjs/cli");
 const flatten = require("flat");
@@ -25,59 +26,59 @@ async function checkI18n({ sourceFiles, ymlFilesByLocale }) {
   // Filter out glob patterns and private (/__) folders.
   sourceFiles = sourceFiles.filter(f => !f.includes("*") && !f.includes("/__"));
 
-  try {
-    // Gather message ids from code.
-    const messagesFromCode = JSON.parse(await extract(sourceFiles, {}));
-    const messageIdsFromCode = Object.keys(messagesFromCode);
-    let errorCount = 0;
+  // Gather message ids from code.
+  const messagesFromCode = JSON.parse(await extract(sourceFiles, {}));
+  const messageIdsFromCode = Object.keys(messagesFromCode);
+  let errorCount = 0;
 
-    // For each locale, check that all ids in messages are in the yml files.
-    // Accessorily, log message ids from yml files that are not used in the code.
-    Object.keys(ymlFilesByLocale).forEach(async locale => {
-      const idsChecked = [];
-      const idsNotInCode = [];
+  // For each locale, check that all ids in messages are in the yml files.
+  // Accessorily, log message ids from yml files that are not used in the code.
+  Object.keys(ymlFilesByLocale).forEach(async locale => {
+    const idsChecked = [];
+    const idsNotInCode = [];
 
-      const allI18nPromises = ymlFilesByLocale[locale].map(loadYamlFile);
-      const allI18nMessages = await Promise.all(allI18nPromises);
+    const allI18nPromises = ymlFilesByLocale[locale].map(loadYamlFile);
+    const allI18nMessages = await Promise.all(allI18nPromises);
 
-      allI18nMessages.forEach(i18nMessages => {
-        const flattenedMessages = flatten(i18nMessages);
+    allI18nMessages.forEach(i18nMessages => {
+      const flattenedMessages = flatten(i18nMessages);
 
-        // Message ids from code must be present in yml.
-        messageIdsFromCode.forEach(id => {
-          if (flattenedMessages[id]) {
-            idsChecked.push(id);
-          }
-        });
-
-        // Message ids from yml must be present in code.
-        Object.keys(flattenedMessages).forEach(id => {
-          if (!messageIdsFromCode.includes(id)) {
-            idsNotInCode.push(id);
-          }
-        });
+      // Message ids from code must be present in yml.
+      messageIdsFromCode.forEach(id => {
+        if (flattenedMessages[id]) {
+          idsChecked.push(id);
+        }
       });
 
-      // Collect ids in code not found in yml.
-      const missingIdsForLocale = messageIdsFromCode.filter(
-        id => !idsChecked.includes(id)
-      );
-
-      // Print errors.
-      missingIdsForLocale.forEach(id => {
-        console.error(`Message '${id}' is missing from locale ${locale}.`);
+      // Message ids from yml must be present in code.
+      Object.keys(flattenedMessages).forEach(id => {
+        if (!messageIdsFromCode.includes(id)) {
+          idsNotInCode.push(id);
+        }
       });
-      idsNotInCode.forEach(id => {
-        console.error(
-          `Message '${id}' from locale ${locale} is not used in code.`
-        );
-      });
-      errorCount += missingIdsForLocale.length + idsNotInCode.length;
     });
 
-    console.log(`There were ${errorCount} error(s).`);
-  } catch (err) {
-    console.error(err);
+    // Collect ids in code not found in yml.
+    const missingIdsForLocale = messageIdsFromCode.filter(
+      id => !idsChecked.includes(id)
+    );
+
+    // Print errors.
+    missingIdsForLocale.forEach(id => {
+      console.error(`Message '${id}' is missing from locale ${locale}.`);
+    });
+    idsNotInCode.forEach(id => {
+      console.error(
+        `Message '${id}' from locale ${locale} is not used in code.`
+      );
+    });
+    errorCount += missingIdsForLocale.length + idsNotInCode.length;
+  });
+
+  console.log(`There were ${errorCount} error(s).`);
+
+  if (errorCount > 0) {
+    process.exit(1);
   }
 }
 
@@ -91,9 +92,9 @@ function sortSourceAndYmlFiles() {
 
   for (let i = 2; i < process.argv.length; i++) {
     const arg = process.argv[i];
-    if (arg.endsWith(".yml")) {
-      const pathParts = arg.split(".yml")[0].split(/[\\|/]/);
-      const locale = pathParts[pathParts.length - 1];
+    const parsedArg = path.parse(arg);
+    if (parsedArg.ext === ".yml") {
+      const locale = parsedArg.name;
       if (!ymlFilesByLocale[locale]) {
         ymlFilesByLocale[locale] = [];
       }
