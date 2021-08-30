@@ -21,7 +21,9 @@ export const CaloriesDescription = styled.span``;
 
 export const CaloriesSummary = styled.span``;
 
-export const ExpandButton = styled(BaseButton)`
+export const ExpandButton = styled(BaseButton).attrs({
+  "aria-label": "What does this mean?"
+})`
   color: #00f;
   font-size: 16px;
   margin-left: 6px;

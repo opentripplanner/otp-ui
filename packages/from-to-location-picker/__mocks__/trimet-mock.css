@@ -1,22 +1,22 @@
 .trimet-ambient {
-    background-color: rgb(35, 64, 117);
-    font-family: sans-serif;
-    padding: 6px;
+  background-color: rgb(35, 64, 117);
+  font-family: sans-serif;
+  padding: 6px;
 }
 
 .trimet-ambient span {
-    border: none;
+  border: none;
 }
 
 .trimet-ambient button {
-    background-color: rgb(88, 109, 165);
-    border-radius: 2px;
-    padding: 4px;
-    color: #DDDDDD;    
+  background-color: rgb(88, 109, 165);
+  border-radius: 2px;
+  padding: 4px;
+  color: #ffffec;
 }
 
 .trimet-ambient button:hover {
-    text-decoration: none;
-    cursor: pointer;
-    background-color: rgb(110, 145, 241);
+  text-decoration: none;
+  cursor: pointer;
+  background-color: rgb(110, 145, 241);
 }

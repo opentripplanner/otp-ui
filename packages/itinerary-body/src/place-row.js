@@ -137,7 +137,7 @@ const PlaceRow = ({
             onClick={() => frameLeg({ isDestination, leg, legIndex, place })}
             title={messages.mapIconTitle}
           >
-            <Styled.MapIcon />
+            <Styled.MapIcon title="Show on map" />
           </Styled.MapButton>
         </Styled.MapButtonColumn>
       )}
