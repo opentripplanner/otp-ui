@@ -26,11 +26,13 @@ export interface Company {
   modes: string;
 }
 
+// FIXME: Move this to @opentripplanner/types added in https://github.com/opentripplanner/otp-ui/pull/281
 export interface QueryParams {
   mode?: string;
   company?: string;
 }
 
+// FIXME: Move this to @opentripplanner/types added in https://github.com/opentripplanner/otp-ui/pull/281
 export interface QueryProps {
   onQueryParamChange(paramsToUpdate: QueryParams): void;
   queryParams: QueryParams;

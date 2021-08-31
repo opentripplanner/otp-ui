@@ -3,9 +3,9 @@ import React from "react";
 import { Bicycle, Car, Micromobility, Walk } from "./trimet-2021";
 
 /**
- * Icons for 2021 TriMet mode selector.
+ * These icons are not an entire set and are only used in the 2021
+ * custom TriMet mode selector component
  */
-
 function TriMetModeIcon({ mode, ...props }) {
   if (!mode) return null;
   switch (mode.toLowerCase()) {

@@ -2,6 +2,7 @@ import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 
 import * as S from "./styled";
+import Checkbox from "./Checkbox";
 import { QueryProps } from "./types";
 import { getSelectedModes } from "./util";
 
@@ -29,9 +30,10 @@ const TransitOptions = ({
         const isChecked =
           allTransitEnabled || selectedModes.some(m => m === transitMode.mode);
         return (
-          <S.Checkbox
+          <Checkbox
+            checked={isChecked}
             key={transitMode.mode}
-            className="insetCheckmark"
+            inset
             onClick={() => {
               let mode = selectedModes;
               // Remove mode from list if all transit is selected.
@@ -58,10 +60,9 @@ const TransitOptions = ({
             }}
             selected={isChecked}
           >
-            {isChecked ? <S.GreenCheck /> : <S.UncheckedIcon />}
             {transitMode.image && <S.Image src={transitMode.image} />}
             {transitMode.label}
-          </S.Checkbox>
+          </Checkbox>
         );
       })}
     </S.TransitOptionsContainer>

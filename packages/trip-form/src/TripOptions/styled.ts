@@ -2,6 +2,8 @@ import { CheckCircle } from "@styled-icons/boxicons-solid/CheckCircle";
 import { PlusCircle } from "@styled-icons/boxicons-regular/PlusCircle";
 import ScrollContainer from "react-indiana-drag-scroll";
 import styled, { css } from "styled-components";
+// eslint-disable-next-line prettier/prettier
+import type { ButtonProps } from "./checkbox"
 
 export const TripOptionsContainer = styled.div`
   background-color: #0d5eac;
@@ -9,11 +11,10 @@ export const TripOptionsContainer = styled.div`
   max-width: 992px; /* Maximum mobile width */
   min-height: 400px;
   overflow-y: scroll;
-
-  div.optionsContainer {
-    max-width: 700px;
-    padding: 12px;
-  }
+`;
+export const TripOptionsSubContainer = styled.div`
+  max-width: 700px;
+  padding: 12px;
 `;
 
 export const TransitOptionsContainer = styled.div`
@@ -22,11 +23,6 @@ export const TransitOptionsContainer = styled.div`
     flex: 1;
   }
 `;
-
-interface ButtonProps {
-  onClick(): void;
-  selected: boolean;
-}
 
 export const Image = styled.img`
   max-width: 100%;
@@ -102,7 +98,7 @@ export const Checkbox = styled.button`
   padding: 20px 0px;
   white-space: pre-wrap;
 
-  &.insetCheckmark {
+  &.inset {
     margin: 20px 0;
     position: relative;
 
@@ -144,7 +140,7 @@ export const ScrollableRow = styled(isTestEnv ? "div" : ScrollContainer)`
     min-width: 75px;
 
     /* Custom icon for the item, should it be present */
-    > .custom svg {
+    > .customIcon svg {
       position: relative;
       height: 3em;
       width: 3em;
@@ -152,9 +148,9 @@ export const ScrollableRow = styled(isTestEnv ? "div" : ScrollContainer)`
     }
     /* Adjust the checkmark/plus if it is next to a custom icon */
     /* Strange comments are needed for stylelint to work with styled-components */
-    > .custom
+    > .customIcon
       ~ ${/* sc-selector */ GreenCheck},
-      .custom
+      .customIcon
       ~ ${/* sc-selector */ UncheckedIcon} {
       position: relative;
       right: -30px;

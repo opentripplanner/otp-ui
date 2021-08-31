@@ -44,7 +44,7 @@ export default function TripOptions(props: Props): ReactElement {
         queryParams={queryParams}
         supportedModes={supportedModes}
       />
-      <div className="optionsContainer">
+      <S.TripOptionsSubContainer>
         <FeaturedOption
           onQueryParamChange={onQueryParamChange}
           queryParams={queryParams}
@@ -62,7 +62,7 @@ export default function TripOptions(props: Props): ReactElement {
           supportedModes={supportedModes}
         />
         {footer}
-      </div>
+      </S.TripOptionsSubContainer>
     </S.TripOptionsContainer>
   );
 }

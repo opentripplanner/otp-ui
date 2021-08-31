@@ -2273,6 +2273,324 @@ exports[`Storyshots Icons/TrimetModeIcon Trimet Mode Icon Examples 1`] = `
 </table>
 `;
 
+exports[`Storyshots Icons/TrimetModeIcon2021 Trimet Mode Icon Examples 1`] = `
+.c0 {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: system-ui;
+  vertical-align: middle;
+}
+
+.c0 div {
+  width: 50px;
+}
+
+.c0 td,
+.c0 th {
+  padding: 10px;
+}
+
+.c0 tr {
+  border: 1px solid gray;
+}
+
+.c0 tbody tr:nth-child(even) {
+  background-color: #eaeaea;
+}
+
+<table
+  className="c0"
+>
+  <thead>
+    <tr>
+      <th>
+        Mode Type
+      </th>
+      <th>
+        Result
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        BICYCLE
+      </td>
+      <td>
+        <div>
+          <svg
+            id="Layer_2_1_"
+            version="1.1"
+            viewBox="0 0 390 390"
+            x="0px"
+            xmlSpace="preserve"
+            y="0px"
+          >
+            <g>
+              <path
+                d="M84.7,188.3C38,188.5,0,226.3,0,273s37.9,84.5,84.7,84.7c46.6-0.2,84.5-38.1,84.5-84.7S131.1,188.5,84.7,188.3z M129.7,318.1c-11.5,11.7-27.4,19-45.1,19s-33.6-7.3-45.3-19c-11.5-11.5-18.8-27.4-18.8-45.1c0-17.6,7.3-33.6,18.8-45.1 c11.7-11.7,27.7-18.8,45.3-18.8s33.6,7,45.1,18.8c11.7,11.5,18.8,27.4,18.8,45.1C148.6,290.7,141.5,306.6,129.7,318.1z"
+              />
+              <path
+                d="M234.3,94.1c17,0,31-14,31-31s-14-30.8-31-30.8c-16.9,0-30.8,13.8-30.8,30.8C203.5,80.3,217.4,94.1,234.3,94.1z"
+              />
+              <path
+                d="M291.5,168.9c18.5,0,18.5-24.4-0.8-24.4h-49.3l-33.5-55.6c-7.3-10-28.2-11.2-36.7-1.1l-59.8,59.6 c-13.4,14.5-5.4,36,9.9,40.9l55.4,34.6v56.1c0,12.6,9.5,19.1,18.2,19.1c8.6,0,18.3-6.4,18.3-19.6v-71.7c0-6.5-0.9-14.1-6.4-16.3 l-36.4-23l30.3-32l18.2,24.3c3.1,7.8,11.4,9.2,18,9.2L291.5,168.9L291.5,168.9z"
+              />
+              <g>
+                <path
+                  d="M305.4,187c-46.7,0-84.7,37.9-84.7,84.6c0.2,46.7,37.9,84.7,84.7,84.7c46.6,0,84.6-38,84.6-84.7S352,187,305.4,187z M350.6,316.8c-11.5,11.6-27.4,18.8-45.1,18.8s-33.6-7.2-45.3-18.8c-11.5-11.6-18.8-27.7-18.8-45.2c0-17.7,7.3-33.6,18.8-45.1 c11.7-11.7,27.7-18.8,45.3-18.8c17.7,0,33.6,7,45.1,18.8c11.7,11.7,18.8,27.4,18.8,45.1C369.4,289.1,362.3,305.1,350.6,316.8z"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        BICYCLE_RENT
+      </td>
+      <td>
+        <div>
+          <svg
+            id="Layer_2_1_"
+            version="1.1"
+            viewBox="0 0 390 390"
+            x="0px"
+            xmlSpace="preserve"
+            y="0px"
+          >
+            <g>
+              <path
+                d="M84.7,188.3C38,188.5,0,226.3,0,273s37.9,84.5,84.7,84.7c46.6-0.2,84.5-38.1,84.5-84.7S131.1,188.5,84.7,188.3z M129.7,318.1c-11.5,11.7-27.4,19-45.1,19s-33.6-7.3-45.3-19c-11.5-11.5-18.8-27.4-18.8-45.1c0-17.6,7.3-33.6,18.8-45.1 c11.7-11.7,27.7-18.8,45.3-18.8s33.6,7,45.1,18.8c11.7,11.5,18.8,27.4,18.8,45.1C148.6,290.7,141.5,306.6,129.7,318.1z"
+              />
+              <path
+                d="M234.3,94.1c17,0,31-14,31-31s-14-30.8-31-30.8c-16.9,0-30.8,13.8-30.8,30.8C203.5,80.3,217.4,94.1,234.3,94.1z"
+              />
+              <path
+                d="M291.5,168.9c18.5,0,18.5-24.4-0.8-24.4h-49.3l-33.5-55.6c-7.3-10-28.2-11.2-36.7-1.1l-59.8,59.6 c-13.4,14.5-5.4,36,9.9,40.9l55.4,34.6v56.1c0,12.6,9.5,19.1,18.2,19.1c8.6,0,18.3-6.4,18.3-19.6v-71.7c0-6.5-0.9-14.1-6.4-16.3 l-36.4-23l30.3-32l18.2,24.3c3.1,7.8,11.4,9.2,18,9.2L291.5,168.9L291.5,168.9z"
+              />
+              <g>
+                <path
+                  d="M305.4,187c-46.7,0-84.7,37.9-84.7,84.6c0.2,46.7,37.9,84.7,84.7,84.7c46.6,0,84.6-38,84.6-84.7S352,187,305.4,187z M350.6,316.8c-11.5,11.6-27.4,18.8-45.1,18.8s-33.6-7.2-45.3-18.8c-11.5-11.6-18.8-27.7-18.8-45.2c0-17.7,7.3-33.6,18.8-45.1 c11.7-11.7,27.7-18.8,45.3-18.8c17.7,0,33.6,7,45.1,18.8c11.7,11.7,18.8,27.4,18.8,45.1C369.4,289.1,362.3,305.1,350.6,316.8z"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        BUS
+      </td>
+      <td>
+        <div />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        CAR
+      </td>
+      <td>
+        <div>
+          <svg
+            id="Layer_3"
+            version="1.1"
+            viewBox="0 0 390 390"
+            x="0px"
+            xmlSpace="preserve"
+            y="0px"
+          >
+            <g>
+              <path
+                d="M371.2,175.3l-3.7-12.1l-29.8-95.7c-5.8-18.6-22.9-31.2-42.4-31.2H94.7c-19.5,0-36.5,12.6-42.4,31.2l-29.8,95.7l-3.7,12.1 C7.6,181.4,0,193.1,0,206.5v76.2c0,7.8,6.4,14.2,14.2,14.2h12.4v35.5c0,11.7,9.6,21.3,21.3,21.3H62c11.7,0,21.3-9.6,21.3-21.3 v-35.5h223.4v35.5c0,11.7,9.6,21.3,21.3,21.3h14.2c11.7,0,21.3-9.6,21.3-21.3v-35.5h12.4c7.8,0,14.2-6.4,14.2-14.2v-76.2 C390,193.2,382.4,181.4,371.2,175.3z M55,252.8c-14.7,0-26.6-11.9-26.6-26.6s11.9-26.6,26.6-26.6s26.6,11.9,26.6,26.6 S69.7,252.8,55,252.8z M295.7,171.2c-9-14.9-25.4-24.8-44-24.8s-34.9,9.9-44,24.8H47.9l29.8-95.6c2.3-7.4,9.2-12.4,16.8-12.4h200.9 c7.8,0,14.5,5,16.8,12.4l29.8,95.7L295.7,171.2z M335,252.8c-14.7,0-26.6-11.9-26.6-26.6s11.9-26.6,26.6-26.6 c14.7,0,26.6,11.9,26.6,26.6S349.8,252.8,335,252.8z"
+              />
+              <circle
+                cx="251.7"
+                cy="107.4"
+                r="33.7"
+              />
+            </g>
+          </svg>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        CAR_PARK
+      </td>
+      <td>
+        <div>
+          <svg
+            id="Layer_3"
+            version="1.1"
+            viewBox="0 0 390 390"
+            x="0px"
+            xmlSpace="preserve"
+            y="0px"
+          >
+            <g>
+              <path
+                d="M371.2,175.3l-3.7-12.1l-29.8-95.7c-5.8-18.6-22.9-31.2-42.4-31.2H94.7c-19.5,0-36.5,12.6-42.4,31.2l-29.8,95.7l-3.7,12.1 C7.6,181.4,0,193.1,0,206.5v76.2c0,7.8,6.4,14.2,14.2,14.2h12.4v35.5c0,11.7,9.6,21.3,21.3,21.3H62c11.7,0,21.3-9.6,21.3-21.3 v-35.5h223.4v35.5c0,11.7,9.6,21.3,21.3,21.3h14.2c11.7,0,21.3-9.6,21.3-21.3v-35.5h12.4c7.8,0,14.2-6.4,14.2-14.2v-76.2 C390,193.2,382.4,181.4,371.2,175.3z M55,252.8c-14.7,0-26.6-11.9-26.6-26.6s11.9-26.6,26.6-26.6s26.6,11.9,26.6,26.6 S69.7,252.8,55,252.8z M295.7,171.2c-9-14.9-25.4-24.8-44-24.8s-34.9,9.9-44,24.8H47.9l29.8-95.6c2.3-7.4,9.2-12.4,16.8-12.4h200.9 c7.8,0,14.5,5,16.8,12.4l29.8,95.7L295.7,171.2z M335,252.8c-14.7,0-26.6-11.9-26.6-26.6s11.9-26.6,26.6-26.6 c14.7,0,26.6,11.9,26.6,26.6S349.8,252.8,335,252.8z"
+              />
+              <circle
+                cx="251.7"
+                cy="107.4"
+                r="33.7"
+              />
+            </g>
+          </svg>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        FERRY
+      </td>
+      <td>
+        <div />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        GONDOLA
+      </td>
+      <td>
+        <div />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        MICROMOBILITY
+      </td>
+      <td>
+        <div>
+          <svg
+            id="wes"
+            version="1.1"
+            viewBox="0 0 390 390"
+            x="0px"
+            xmlSpace="preserve"
+            y="0px"
+          >
+            <g>
+              <path
+                className="st0"
+                d="M334.7,277.7c-24.9,0-46,16.5-52.9,39.2H133.7l-57-115.2l36-178.8H72.4c-5,0-9.1,4.1-9.1,9.1s4.1,9.1,9.1,9.1 h18.1L40,292c-22.1,0.5-40,18.7-40,41c0,22.6,18.4,41,41,41s41-18.4,41-41c0-16.6-10-31-24.2-37.4l10.8-53.6l37.2,75.2 c-7.5,1.3-13.3,7.9-13.3,15.8c0,8.9,7.2,16,16,16H297c6.3,14.7,20.8,24.9,37.7,24.9c22.6,0,41-18.4,41-41c0-22.6-18.4-41-41-41 c-16.9,0-31.5,10.3-37.7,24.9h-5.6c6.5-17.6,23.5-30.1,43.3-30.1c25.5,0,46.2,20.7,46.2,46.2c0,2.5,2,4.5,4.5,4.5s4.5-2,4.5-4.5 C390,302.5,365.2,277.7,334.7,277.7z M63.8,332.9c0,12.6-10.3,22.9-22.9,22.9s-22.9-10.3-22.9-22.9c0-11,7.8-20.2,18.1-22.4 l-4.1,20.6c-1,4.9,2.2,9.7,7.1,10.7c0.6,0.1,1.2,0.2,1.8,0.2c4.2,0,8-3,8.9-7.3l4.1-20.6C59.9,318.3,63.8,325.2,63.8,332.9z M334.7,310.1c12.6,0,22.9,10.3,22.9,22.9c0,12.6-10.3,22.9-22.9,22.9c-6.4,0-12.1-2.6-16.3-6.8h16.3c8.9,0,16-7.2,16-16 s-7.2-16-16-16h-16.3C322.6,312.7,328.4,310.1,334.7,310.1z"
+              />
+              <polygon
+                className="st0"
+                points="280.5,194.3 247.1,194.3 280.8,146.6 233.3,146.6 194.8,223.6 223.3,223.6 190.7,301 	"
+              />
+            </g>
+          </svg>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        MICROMOBILITY_RENT
+      </td>
+      <td>
+        <div>
+          <svg
+            id="wes"
+            version="1.1"
+            viewBox="0 0 390 390"
+            x="0px"
+            xmlSpace="preserve"
+            y="0px"
+          >
+            <g>
+              <path
+                className="st0"
+                d="M334.7,277.7c-24.9,0-46,16.5-52.9,39.2H133.7l-57-115.2l36-178.8H72.4c-5,0-9.1,4.1-9.1,9.1s4.1,9.1,9.1,9.1 h18.1L40,292c-22.1,0.5-40,18.7-40,41c0,22.6,18.4,41,41,41s41-18.4,41-41c0-16.6-10-31-24.2-37.4l10.8-53.6l37.2,75.2 c-7.5,1.3-13.3,7.9-13.3,15.8c0,8.9,7.2,16,16,16H297c6.3,14.7,20.8,24.9,37.7,24.9c22.6,0,41-18.4,41-41c0-22.6-18.4-41-41-41 c-16.9,0-31.5,10.3-37.7,24.9h-5.6c6.5-17.6,23.5-30.1,43.3-30.1c25.5,0,46.2,20.7,46.2,46.2c0,2.5,2,4.5,4.5,4.5s4.5-2,4.5-4.5 C390,302.5,365.2,277.7,334.7,277.7z M63.8,332.9c0,12.6-10.3,22.9-22.9,22.9s-22.9-10.3-22.9-22.9c0-11,7.8-20.2,18.1-22.4 l-4.1,20.6c-1,4.9,2.2,9.7,7.1,10.7c0.6,0.1,1.2,0.2,1.8,0.2c4.2,0,8-3,8.9-7.3l4.1-20.6C59.9,318.3,63.8,325.2,63.8,332.9z M334.7,310.1c12.6,0,22.9,10.3,22.9,22.9c0,12.6-10.3,22.9-22.9,22.9c-6.4,0-12.1-2.6-16.3-6.8h16.3c8.9,0,16-7.2,16-16 s-7.2-16-16-16h-16.3C322.6,312.7,328.4,310.1,334.7,310.1z"
+              />
+              <polygon
+                className="st0"
+                points="280.5,194.3 247.1,194.3 280.8,146.6 233.3,146.6 194.8,223.6 223.3,223.6 190.7,301 	"
+              />
+            </g>
+          </svg>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        RAIL
+      </td>
+      <td>
+        <div />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        STREETCAR
+      </td>
+      <td>
+        <div />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        SUBWAY
+      </td>
+      <td>
+        <div />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        TRAM
+      </td>
+      <td>
+        <div />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        TRANSIT
+      </td>
+      <td>
+        <div />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        WALK
+      </td>
+      <td>
+        <div>
+          <svg
+            id="bus_circle"
+            version="1.1"
+            viewBox="0 0 390 390"
+            x="0px"
+            xmlSpace="preserve"
+            y="0px"
+          >
+            <g>
+              <path
+                d="M209,0c17.8,0,32.3,14.5,32.3,32.3S226.8,64.6,209,64.6s-32.3-14.5-32.3-32.3S191.2,0,209,0z M307.5,201.8 c-4.5,6.6-13.5,8.3-20.1,3.8l0,0c0,0-44.7-30.5-47.9-32.7c-3.2-2.2-5.1-6.8-6.5-9.8c-1-2-6-11.8-9.3-18.3l-4,17l-10.4,47.1 c0,0,55.7,65.6,56.8,66.9c1.6,1.8,2.5,5.5,3.2,8.3c0.7,2.7,14.9,79.9,14.9,79.9c2.2,11.9-5.7,23.4-17.6,25.7 c-11.9,2.2-23.4-5.7-25.7-17.6l-14.2-76.3l-46.3-50.6c0,0-10.3,48.1-10.5,49.1s-0.7,2.5-1.3,3.9c-0.6,1.3-47.6,81.1-47.6,81.1 c-6.2,10.4-19.7,13.9-30.2,7.7c-10.4-6.2-13.9-19.7-7.7-30.2l41.8-70.3l33.6-152.1l-22.6,18l-12.5,55.1l0,0 c0,7.8-8.8,12.9-16.6,11.2c-7.8-1.7-12.4-4.9-10.6-17.1h0.2c0,0,13-61.2,14-63.9c0.9-2.7,2.3-5.7,3.7-6.8 c9.4-7.6,45.8-37.4,56.5-46c12.3-10,17.7-13.7,28.2-13.7c7.9,0,16.5,2.4,25.6,11.8c4,4.1,6.9,10.8,8.9,15 c2,4.1,27.1,53.7,27.1,53.7l43.3,30l0,0C310.3,186.2,312,195.2,307.5,201.8z"
+              />
+            </g>
+          </svg>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        NONE_OF_THE_ABOVE
+      </td>
+      <td>
+        <div />
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
 exports[`Storyshots ItineraryBody/otp-react-redux Bike Only Itinerary 1`] = `
 .c9 {
   display: inline-block;
@@ -45732,14 +46050,14 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
   overflow: hidden;
 }
 
-.c10 > div {
+.c11 > div {
   width: 50%;
   display: inline-block;
   box-sizing: border-box;
   position: relative;
 }
 
-.c10 select {
+.c11 select {
   width: 100%;
   box-sizing: border-box;
   cursor: pointer;
@@ -45753,7 +46071,7 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
   overflow-y: scroll;
 }
 
-.c0 div.optionsContainer {
+.c9 {
   max-width: 700px;
   padding: 12px;
 }
@@ -45796,19 +46114,19 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
   white-space: pre-wrap;
 }
 
-.c2.insetCheckmark {
+.c2.inset {
   margin: 20px 0;
   position: relative;
 }
 
-.c2.insetCheckmark .c4 {
+.c2.inset .c4 {
   background: #0d5eac;
   -webkit-clip-path: circle(40% at 50% 50%);
   clip-path: circle(40% at 50% 50%);
   border-radius: 50%;
 }
 
-.c2.insetCheckmark svg {
+.c2.inset svg {
   position: absolute;
   right: 7.5%;
 }
@@ -45834,19 +46152,19 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
   white-space: pre-wrap;
 }
 
-.c6.insetCheckmark {
+.c6.inset {
   margin: 20px 0;
   position: relative;
 }
 
-.c6.insetCheckmark .c4 {
+.c6.inset .c4 {
   background: #0d5eac;
   -webkit-clip-path: circle(40% at 50% 50%);
   clip-path: circle(40% at 50% 50%);
   border-radius: 50%;
 }
 
-.c6.insetCheckmark svg {
+.c6.inset svg {
   position: absolute;
   right: 7.5%;
 }
@@ -45867,15 +46185,15 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
   min-width: 75px;
 }
 
-.c1 > button > .custom svg {
+.c1 > button > .customIcon svg {
   position: relative;
   height: 3em;
   width: 3em;
   fill: white;
 }
 
-.c1 > button > .custom ~ .c7,
-.c1 > button .custom ~ .c4 {
+.c1 > button > .customIcon ~ .c7,
+.c1 > button .customIcon ~ .c4 {
   position: relative;
   right: -30px;
   height: 1.5em;
@@ -45884,24 +46202,24 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
   margin-bottom: -1em;
 }
 
-.c13 {
+.c14 {
   font-family: Hind,sans-serif;
   font-size: 14px;
   background-color: #f0f0f0;
   padding: 15px;
 }
 
-.c13 .styled__SettingsHeader-pm9v2a-0 {
+.c14 .styled__SettingsHeader-pm9v2a-0 {
   color: #333333;
   font-size: 18px;
   margin: 16px 0px;
 }
 
-.c13 .styled__SettingsSection-pm9v2a-1 {
+.c14 .styled__SettingsSection-pm9v2a-1 {
   margin-bottom: 16px;
 }
 
-.c13 .styled__SettingLabel-pm9v2a-2 {
+.c14 .styled__SettingLabel-pm9v2a-2 {
   padding-top: 8px;
   color: #676767;
   font-weight: 100;
@@ -45912,7 +46230,7 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
   letter-spacing: 1px;
 }
 
-.c13 .styled__Button-pm9v2a-16 {
+.c14 .styled__Button-pm9v2a-16 {
   border: 1px solid rgb(187,187,187);
   padding: 3px;
   border-radius: 3px;
@@ -45923,29 +46241,29 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
   outline: none;
 }
 
-.c13 .styled__Button-pm9v2a-16.active {
+.c14 .styled__Button-pm9v2a-16.active {
   border: 2px solid rgb(0,0,0);
   background-color: rgb(173,216,230);
   font-weight: 600;
   box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
 }
 
-.c13 .styled__Title-pm9v2a-15 {
+.c14 .styled__Title-pm9v2a-15 {
   padding: 4px 0px 0px;
   font-size: 10px;
   line-height: 12px;
 }
 
-.c13 .styled__Title-pm9v2a-15.active {
+.c14 .styled__Title-pm9v2a-15.active {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c13 .styled__DateTimeRow-pm9v2a-6 {
+.c14 .styled__DateTimeRow-pm9v2a-6 {
   margin: 15px 0px;
 }
 
-.c13 .styled__DateTimeRow-pm9v2a-6 input {
+.c14 .styled__DateTimeRow-pm9v2a-6 input {
   padding: 6px 12px;
   text-align: center;
   font-size: inherit;
@@ -45955,7 +46273,7 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
   border-bottom: 1px solid #000;
 }
 
-.c13 .c9 select {
+.c14 .c10 select {
   -webkit-appearance: none;
   font-size: inherit;
   font-family: inherit;
@@ -45973,7 +46291,7 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
   color: #555;
 }
 
-.c13 .c9 > div:last-child::after {
+.c14 .c10 > div:last-child::after {
   content: "▼";
   font-size: 75%;
   color: #000;
@@ -45984,68 +46302,68 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
   box-sizing: border-box;
 }
 
-.c13 .styled__Row-pm9v2a-12 {
+.c14 .styled__Row-pm9v2a-12 {
   font-size: 85%;
 }
 
-.c13 .styled__Row-pm9v2a-12 > * {
+.c14 .styled__Row-pm9v2a-12 > * {
   padding: 3px 5px 3px 0px;
 }
 
-.c13 .styled__Row-pm9v2a-12 >:last-child {
+.c14 .styled__Row-pm9v2a-12 >:last-child {
   padding-right: 0px;
 }
 
-.c13 .styled__Row-pm9v2a-12 button {
+.c14 .styled__Row-pm9v2a-12 button {
   padding: 6px 12px;
 }
 
-.c13 .styled__Row-pm9v2a-12 svg,
-.c13 .styled__Row-pm9v2a-12 img {
+.c14 .styled__Row-pm9v2a-12 svg,
+.c14 .styled__Row-pm9v2a-12 img {
   margin-left: 0px;
 }
 
-.c13 .styled__InlineRow-pm9v2a-13 {
+.c14 .styled__InlineRow-pm9v2a-13 {
   margin: -3px 0px;
 }
 
-.c13 .styled__MainRow-pm9v2a-8 {
+.c14 .styled__MainRow-pm9v2a-8 {
   padding: 0px 5px;
   font-size: 200%;
   margin-bottom: 18px;
   box-sizing: border-box;
 }
 
-.c13 .styled__MainRow-pm9v2a-8 > * {
+.c14 .styled__MainRow-pm9v2a-8 > * {
   width: 100%;
   height: 55px;
 }
 
-.c13 .styled__SecondaryRow-pm9v2a-9 {
+.c14 .styled__SecondaryRow-pm9v2a-9 {
   margin-bottom: 10px;
 }
 
-.c13 .styled__SecondaryRow-pm9v2a-9 > * {
+.c14 .styled__SecondaryRow-pm9v2a-9 > * {
   font-size: 150%;
   height: 46px;
 }
 
-.c13 .styled__TertiaryRow-pm9v2a-10 {
+.c14 .styled__TertiaryRow-pm9v2a-10 {
   font-size: 90%;
   margin-bottom: 10px;
   text-align: center;
 }
 
-.c13 .styled__TertiaryRow-pm9v2a-10 > * {
+.c14 .styled__TertiaryRow-pm9v2a-10 > * {
   height: 36px;
 }
 
-.c12 {
+.c13 {
   display: block;
   margin-bottom: 10px;
 }
 
-.c11 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -46060,24 +46378,24 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
   margin: 20px 0px;
 }
 
-.c11 > button {
+.c12 > button {
   width: 66%;
   cursor: pointer;
 }
 
-.c11 > .line-break {
+.c12 > .line-break {
   width: 100%;
 }
 
 @media (max-width:768px) {
-  .c2.insetCheckmark svg {
+  .c2.inset svg {
     max-width: 20px;
     max-height: 20px;
   }
 }
 
 @media (max-width:768px) {
-  .c6.insetCheckmark svg {
+  .c6.inset svg {
     max-width: 20px;
     max-height: 20px;
   }
@@ -46102,7 +46420,7 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
         className="c1"
       >
         <button
-          className="c2"
+          className="c2  "
           onClick={[Function]}
           selected={false}
         >
@@ -46124,12 +46442,12 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
           Go by Transit
         </button>
         <button
-          className="c2"
+          className="c2  "
           onClick={[Function]}
           selected={false}
         >
           <span
-            className="custom"
+            className="customIcon"
           >
             <svg
               id="Layer_2_1_"
@@ -46175,12 +46493,12 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
           + Bike or Bike Rental
         </button>
         <button
-          className="c2"
+          className="c2  "
           onClick={[Function]}
           selected={false}
         >
           <span
-            className="custom"
+            className="customIcon"
           >
             <svg
               id="Layer_3"
@@ -46220,12 +46538,12 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
           + Ridehail or Park & Ride
         </button>
         <button
-          className="c2"
+          className="c2  "
           onClick={[Function]}
           selected={false}
         >
           <span
-            className="custom"
+            className="customIcon"
           >
             <svg
               id="wes"
@@ -46265,12 +46583,12 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
           + E-Scooter Rental
         </button>
         <button
-          className="c6"
+          className="c6  "
           onClick={[Function]}
           selected={true}
         >
           <span
-            className="custom"
+            className="customIcon"
           >
             <svg
               id="bus_circle"
@@ -46302,12 +46620,12 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
           Walk only
         </button>
         <button
-          className="c2"
+          className="c2  "
           onClick={[Function]}
           selected={false}
         >
           <span
-            className="custom"
+            className="customIcon"
           >
             <svg
               id="Layer_2_1_"
@@ -46354,13 +46672,13 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
         </button>
       </div>
       <div
-        className="optionsContainer"
+        className="c9"
       >
         <div
           className="styled__GeneralSettingsPanel-pm9v2a-18"
         >
           <div
-            className="c9 c10"
+            className="c10 c11"
           >
             <div>
               <label
@@ -46396,10 +46714,10 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
           </div>
         </div>
         <div
-          className="c11"
+          className="c12"
         >
           <button
-            className="c12"
+            className="c13"
             type="button"
           >
             Plan trip
@@ -46408,7 +46726,7 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
             className="line-break"
           />
           <button
-            className="c12"
+            className="c13"
             type="button"
           >
             Save Options
@@ -46429,7 +46747,7 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
   </p>
   <div>
     <div
-      className="c13"
+      className="c14"
     >
       <div
         className="c0"
@@ -46438,7 +46756,7 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
           className="c1"
         >
           <button
-            className="c2"
+            className="c2  "
             onClick={[Function]}
             selected={false}
           >
@@ -46460,12 +46778,12 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
             Go by Transit
           </button>
           <button
-            className="c2"
+            className="c2  "
             onClick={[Function]}
             selected={false}
           >
             <span
-              className="custom"
+              className="customIcon"
             >
               <svg
                 id="Layer_2_1_"
@@ -46511,12 +46829,12 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
             + Bike or Bike Rental
           </button>
           <button
-            className="c2"
+            className="c2  "
             onClick={[Function]}
             selected={false}
           >
             <span
-              className="custom"
+              className="customIcon"
             >
               <svg
                 id="Layer_3"
@@ -46556,12 +46874,12 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
             + Ridehail or Park & Ride
           </button>
           <button
-            className="c2"
+            className="c2  "
             onClick={[Function]}
             selected={false}
           >
             <span
-              className="custom"
+              className="customIcon"
             >
               <svg
                 id="wes"
@@ -46601,12 +46919,12 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
             + E-Scooter Rental
           </button>
           <button
-            className="c6"
+            className="c6  "
             onClick={[Function]}
             selected={true}
           >
             <span
-              className="custom"
+              className="customIcon"
             >
               <svg
                 id="bus_circle"
@@ -46638,12 +46956,12 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
             Walk only
           </button>
           <button
-            className="c2"
+            className="c2  "
             onClick={[Function]}
             selected={false}
           >
             <span
-              className="custom"
+              className="customIcon"
             >
               <svg
                 id="Layer_2_1_"
@@ -46690,13 +47008,13 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
           </button>
         </div>
         <div
-          className="optionsContainer"
+          className="c9"
         >
           <div
             className="styled__GeneralSettingsPanel-pm9v2a-18"
           >
             <div
-              className="c9 c10"
+              className="c10 c11"
             >
               <div>
                 <label
@@ -46732,10 +47050,10 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
             </div>
           </div>
           <div
-            className="c11"
+            className="c12"
           >
             <button
-              className="c12"
+              className="c13"
               type="button"
             >
               Plan trip
@@ -46744,7 +47062,7 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
               className="line-break"
             />
             <button
-              className="c12"
+              className="c13"
               type="button"
             >
               Save Options

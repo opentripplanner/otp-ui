@@ -3,6 +3,7 @@ import { QuestionCircle } from "@styled-icons/fa-regular/QuestionCircle";
 import React from "react";
 
 import { QueryProps } from "./types";
+import OptionButton from "./OptionButton";
 import {
   accessModeIsWalkOnly,
   getCategoryModes,
@@ -68,16 +69,13 @@ const FeaturedOption = ({
             });
           };
           return (
-            <S.OptionButton
+            <OptionButton
               key={index}
+              checked={isChecked}
               onClick={selectOption}
               selected={isChecked}
-            >
-              <S.OptionLabel>{o.label}</S.OptionLabel>
-              <S.OptionIcon>
-                {isChecked ? <S.GreenCheck /> : <S.UncheckedIcon />}
-              </S.OptionIcon>
-            </S.OptionButton>
+              label={o.label}
+            ></OptionButton>
           );
         })}
       </div>
