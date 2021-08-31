@@ -35025,6 +35025,7 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 1`] = `
   background-color: navy;
   display: block;
   font-size: 12px;
+  line-height: 1.42857143;
   padding: 0px 10px;
   text-align: center;
   white-space: nowrap;
@@ -35035,6 +35036,7 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 1`] = `
   background-color: purple;
   display: block;
   font-size: 12px;
+  line-height: 1.42857143;
   padding: 0px 10px;
   text-align: center;
   white-space: nowrap;
@@ -35045,6 +35047,7 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 1`] = `
   background-color: #333;
   display: block;
   font-size: 12px;
+  line-height: 1.42857143;
   padding: 0px 10px;
   text-align: center;
   white-space: nowrap;
@@ -36245,6 +36248,7 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
   background-color: #333;
   display: block;
   font-size: 12px;
+  line-height: 1.42857143;
   padding: 0px 10px;
   text-align: left;
   white-space: nowrap;
@@ -36806,6 +36810,7 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 1`] = `
   background-color: #333;
   display: block;
   font-size: 12px;
+  line-height: 1.42857143;
   padding: 0px 10px;
   text-align: left;
   white-space: nowrap;
@@ -37172,6 +37177,7 @@ exports[`Storyshots LocationField/Mobile Context With Session Searches 1`] = `
   background-color: #333;
   display: block;
   font-size: 12px;
+  line-height: 1.42857143;
   padding: 0px 10px;
   text-align: left;
   white-space: nowrap;
@@ -37438,6 +37444,7 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 1`] = `
   background-color: #333;
   display: block;
   font-size: 12px;
+  line-height: 1.42857143;
   padding: 0px 10px;
   text-align: left;
   white-space: nowrap;
