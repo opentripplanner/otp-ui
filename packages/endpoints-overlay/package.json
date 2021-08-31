@@ -18,8 +18,8 @@
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
   "dependencies": {
-    "@opentripplanner/core-utils": "^3.0.4",
     "@opentripplanner/location-icon": "^1.0.1",
+    "@opentripplanner/core-utils": "^4.0.0",
     "prop-types": "^15.7.2",
     "styled-icons": "^9.1.0"
   },

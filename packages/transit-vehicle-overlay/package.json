@@ -9,9 +9,9 @@
   "module": "esm/index.js",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^3.2.1",
     "@opentripplanner/icons": "^1.0.4",
     "@opentripplanner/zoom-based-markers": "^1.0.1",
+    "@opentripplanner/core-utils": "^4.0.0",
     "@turf/nearest-point-on-line": "^6.0.1",
     "leaflet-rotatedmarker": "^0.2.0",
     "lodash.clonedeep": "^4.5.0",
