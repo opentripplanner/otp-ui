@@ -98,7 +98,7 @@ export const Checkbox = styled.button`
   padding: 20px 0px;
   white-space: pre-wrap;
 
-  &.inset {
+  ${(props: ButtonProps) => (props.inset ? `
     margin: 20px 0;
     position: relative;
 
@@ -115,13 +115,34 @@ export const Checkbox = styled.button`
         max-height: 20px;
       }
     }
-  }
+  ` : "")}
 `;
 
 export const FeaturedOptionContainer = styled.div`
   display: flex;
   > div {
     flex: 1;
+  }
+`;
+
+export const ModeIconWrapper = styled.span`
+/* Adjust the checkmark/plus if it is next to a custom icon */
+  ~ ${/* sc-selector */ GreenCheck},
+  ~ ${/* sc-selector */ UncheckedIcon} {
+    position: relative;
+    right: -30px;
+    height: 1.5em;
+    width: 1.5em;
+    top: -50px;
+    margin-bottom: -1em;
+  }
+
+  /* Custom icon for the item, should it be present */
+  & svg {
+    position: relative;
+    height: 3em;
+    width: 3em;
+    fill: white;
   }
 `;
 
@@ -138,26 +159,5 @@ export const ScrollableRow = styled(isTestEnv ? "div" : ScrollContainer)`
     margin-right: 12px;
     min-width: 100px;
     min-width: 75px;
-
-    /* Custom icon for the item, should it be present */
-    > .customIcon svg {
-      position: relative;
-      height: 3em;
-      width: 3em;
-      fill: white;
-    }
-    /* Adjust the checkmark/plus if it is next to a custom icon */
-    /* Strange comments are needed for stylelint to work with styled-components */
-    > .customIcon
-      ~ ${/* sc-selector */ GreenCheck},
-      .customIcon
-      ~ ${/* sc-selector */ UncheckedIcon} {
-      position: relative;
-      right: -30px;
-      height: 1.5em;
-      width: 1.5em;
-      top: -50px;
-      margin-bottom: -1em;
-    }
   }
 `;

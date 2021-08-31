@@ -6,6 +6,7 @@ import TrimetModeIcon from "../../../icons/lib/trimet-mode-icon-2021";
 export interface ButtonProps {
   onClick(): void;
   selected: boolean;
+  inset?: boolean;
 }
 
 export default function Checkbox(
@@ -13,7 +14,6 @@ export default function Checkbox(
     checked: boolean;
     children: React.ReactNode | string;
     className?: string;
-    inset?: boolean;
     mode?: string;
   } & ButtonProps
 ): React.ReactElement {
@@ -26,16 +26,18 @@ export default function Checkbox(
     onClick,
     selected
   } = props;
+
   return (
     <S.Checkbox
-      className={`${className || ""} ${inset ? "inset" : ""}`}
+      className={className}
+      inset={inset}
       onClick={onClick}
       selected={selected}
     >
       {mode && (
-        <span className="customIcon">
+        <S.ModeIconWrapper>
           <TrimetModeIcon mode={mode} />
-        </span>
+        </S.ModeIconWrapper>
       )}
       {checked ? <S.GreenCheck /> : <S.UncheckedIcon />}
       {children}
