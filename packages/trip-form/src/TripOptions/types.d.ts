@@ -29,15 +29,17 @@ export interface Company {
 // FIXME: Move this to @opentripplanner/types added in https://github.com/opentripplanner/otp-ui/pull/281
 export interface QueryParams {
   /**
-   * A mode string to be shown as checked
-   * TODO: Docs
+   * The mode string query param (e.g., TRANSIT,WALK).
    */
   mode?: string;
   /**
-   * A company string to be shown as checked
-   * TODO: docs
+   * The company query param used to specify service providers for a rental or
+   * hail mode type (e.g., UBER or HOPR).
    */
   company?: string;
+  /**
+   * FIXME: other query params exist but are not populated here.
+   */
 }
 
 // FIXME: Move this to @opentripplanner/types added in https://github.com/opentripplanner/otp-ui/pull/281
@@ -47,11 +49,11 @@ export interface QueryProps {
    */
   onQueryParamChange(paramsToUpdate: QueryParams): void;
   /**
-   * TODO: Docs
+   * Query params currently set for the active trip plan query.
    */
   queryParams: QueryParams;
   /**
-   * TODO: Docs
+   * The available modes configured for the user to select.
    */
   supportedModes: Modes;
 }
