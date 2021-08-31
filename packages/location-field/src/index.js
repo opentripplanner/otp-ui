@@ -432,40 +432,36 @@ class LocationField extends Component {
       // Iterate through the geocoder results
       menuItems = menuItems.concat(
         stationFeatures.length > 0 && (
-          <li
-            style={
-              "stations" in layerColorMap
-                ? {
-                    backgroundColor: layerColorMap.stations
-                  }
-                : {}
-            }
+          <Styled.MenuItem
+            color={layerColorMap.stations}
+            centeredText
+            header
             key="gtfs-stations-header"
           >
-            Station results
-          </li>
+            Stations
+          </Styled.MenuItem>
         ),
         stationFeatures.map(feature =>
           this.renderFeature(itemIndex++, feature)
         ),
 
         stopFeatures.length > 0 && (
-          <li
-            style={
-              "stops" in layerColorMap
-                ? {
-                    backgroundColor: layerColorMap.stops
-                  }
-                : {}
-            }
+          <Styled.MenuItem
+            color={layerColorMap.stops}
+            centeredText
+            header
             key="gtfs-stops-header"
           >
-            Stop results
-          </li>
+            Stops
+          </Styled.MenuItem>
         ),
         stopFeatures.map(feature => this.renderFeature(itemIndex++, feature)),
 
-        otherFeatures.length > 0 && <li key="other-header">Other results</li>,
+        otherFeatures.length > 0 && (
+          <Styled.MenuItem color="#333" header centeredText key="other-header">
+            Other
+          </Styled.MenuItem>
+        ),
         otherFeatures.map(feature => this.renderFeature(itemIndex++, feature))
       );
     }

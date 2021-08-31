@@ -35007,7 +35007,7 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 1`] = `
   position: relative;
 }
 
-.c9 {
+.c10 {
   background-color: transparent;
   clear: both;
   color: #333;
@@ -35021,46 +35021,53 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 1`] = `
 }
 
 .c8 {
-  background-color: cyan;
-}
-
-.c8:hover {
-  background-color: #f5f5f5;
-}
-
-.c13 {
-  background-color: pink;
-}
-
-.c13:hover {
-  background-color: #f5f5f5;
+  color: #eee;
+  background-color: navy;
+  display: block;
+  font-size: 12px;
+  padding: 0px 10px;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .c14 {
-  background-color: orange;
+  color: #eee;
+  background-color: purple;
+  display: block;
+  font-size: 12px;
+  padding: 0px 10px;
+  text-align: center;
+  white-space: nowrap;
 }
 
-.c14:hover {
+.c15 {
+  color: #eee;
+  background-color: #333;
+  display: block;
+  font-size: 12px;
+  padding: 0px 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.c9:hover {
+  cursor: pointer;
   background-color: #f5f5f5;
 }
 
-.c15:hover {
-  background-color: #f5f5f5;
-}
-
-.c10 {
+.c11 {
   padding-top: 5px;
   padding-bottom: 3px;
 }
 
-.c12 {
+.c13 {
   margin-left: 30px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.c11 {
+.c12 {
   float: left;
 }
 
@@ -35102,31 +35109,31 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 1`] = `
         className="c7"
       >
         <li
-          style={
-            Object {
-              "backgroundColor": "cyan",
-            }
-          }
+          className="c8 header"
         >
-          Station results
+          Stations
         </li>
         <li
-          className="c8"
-          color="cyan"
+          className="c9"
           disabled={false}
           role="listitem"
         >
           <a
-            className="c9"
+            className="c10"
             onClick={[Function]}
             role="listitem"
             tabIndex={-1}
           >
             <div
-              className="c10 operator-sound-transit source-transit layer-stations"
+              className="c11 operator-sound-transit source-transit layer-stations"
             >
               <div
-                className="c11"
+                className="c12"
+                style={
+                  Object {
+                    "color": "navy",
+                  }
+                }
               >
                 <svg
                   aria-hidden="true"
@@ -35145,7 +35152,7 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 1`] = `
                 </svg>
               </div>
               <div
-                className="c12"
+                className="c13"
               >
                 Union Station (Sound Transit Stop)
               </div>
@@ -35153,31 +35160,31 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 1`] = `
           </a>
         </li>
         <li
-          style={
-            Object {
-              "backgroundColor": "pink",
-            }
-          }
+          className="c14 header"
         >
-          Stop results
+          Stops
         </li>
         <li
-          className="c13"
-          color="pink"
+          className="c9"
           disabled={false}
           role="listitem"
         >
           <a
-            className="c9"
+            className="c10"
             onClick={[Function]}
             role="listitem"
             tabIndex={-1}
           >
             <div
-              className="c10 operator-wa-state-ferry source-transit layer-stops"
+              className="c11 operator-wa-state-ferry source-transit layer-stops"
             >
               <div
-                className="c11"
+                className="c12"
+                style={
+                  Object {
+                    "color": "purple",
+                  }
+                }
               >
                 <svg
                   aria-hidden="true"
@@ -35196,7 +35203,7 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 1`] = `
                 </svg>
               </div>
               <div
-                className="c12"
+                className="c13"
               >
                 Clinton (WA State Ferry Stop)
               </div>
@@ -35204,22 +35211,26 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 1`] = `
           </a>
         </li>
         <li
-          className="c13"
-          color="pink"
+          className="c9"
           disabled={false}
           role="listitem"
         >
           <a
-            className="c9"
+            className="c10"
             onClick={[Function]}
             role="listitem"
             tabIndex={-1}
           >
             <div
-              className="c10 operator-community-transit source-transit layer-stops"
+              className="c11 operator-community-transit source-transit layer-stops"
             >
               <div
-                className="c11"
+                className="c12"
+                style={
+                  Object {
+                    "color": "purple",
+                  }
+                }
               >
                 <svg
                   aria-hidden="true"
@@ -35238,7 +35249,7 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 1`] = `
                 </svg>
               </div>
               <div
-                className="c12"
+                className="c13"
               >
                 Marine Dr NE & 27th Ave NE (Community Transit Stop ID 1)
               </div>
@@ -35246,22 +35257,26 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 1`] = `
           </a>
         </li>
         <li
-          className="c13"
-          color="pink"
+          className="c9"
           disabled={false}
           role="listitem"
         >
           <a
-            className="c9"
+            className="c10"
             onClick={[Function]}
             role="listitem"
             tabIndex={-1}
           >
             <div
-              className="c10 operator-community-transit source-transit layer-stops"
+              className="c11 operator-community-transit source-transit layer-stops"
             >
               <div
-                className="c11"
+                className="c12"
+                style={
+                  Object {
+                    "color": "purple",
+                  }
+                }
               >
                 <svg
                   aria-hidden="true"
@@ -35280,33 +35295,39 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 1`] = `
                 </svg>
               </div>
               <div
-                className="c12"
+                className="c13"
               >
                 Marine Dr NE & 23rd Ave NE (Community Transit Stop ID 7)
               </div>
             </div>
           </a>
         </li>
-        <li>
-          Other results
+        <li
+          className="c15 header"
+        >
+          Other
         </li>
         <li
-          className="c14"
-          color="orange"
+          className="c9"
           disabled={false}
           role="listitem"
         >
           <a
-            className="c9"
+            className="c10"
             onClick={[Function]}
             role="listitem"
             tabIndex={-1}
           >
             <div
-              className="c10 source-whosonfirst layer-locality"
+              className="c11 source-whosonfirst layer-locality"
             >
               <div
-                className="c11"
+                className="c12"
+                style={
+                  Object {
+                    "color": "orange",
+                  }
+                }
               >
                 <svg
                   aria-hidden="true"
@@ -35325,7 +35346,7 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 1`] = `
                 </svg>
               </div>
               <div
-                className="c12"
+                className="c13"
               >
                 Charter Township of Clinton, MI, USA
               </div>
@@ -35333,22 +35354,26 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 1`] = `
           </a>
         </li>
         <li
-          className="c14"
-          color="orange"
+          className="c9"
           disabled={false}
           role="listitem"
         >
           <a
-            className="c9"
+            className="c10"
             onClick={[Function]}
             role="listitem"
             tabIndex={-1}
           >
             <div
-              className="c10 source-geonames layer-locality"
+              className="c11 source-geonames layer-locality"
             >
               <div
-                className="c11"
+                className="c12"
+                style={
+                  Object {
+                    "color": "orange",
+                  }
+                }
               >
                 <svg
                   aria-hidden="true"
@@ -35367,7 +35392,7 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 1`] = `
                 </svg>
               </div>
               <div
-                className="c12"
+                className="c13"
               >
                 Clinton Township, MI, USA
               </div>
@@ -35375,22 +35400,26 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 1`] = `
           </a>
         </li>
         <li
-          className="c15"
-          color={null}
+          className="c9"
           disabled={false}
           role="listitem"
         >
           <a
-            className="c9"
+            className="c10"
             onClick={[Function]}
             role="listitem"
             tabIndex={-1}
           >
             <div
-              className="c10 source-whosonfirst layer-county"
+              className="c11 source-whosonfirst layer-county"
             >
               <div
-                className="c11"
+                className="c12"
+                style={
+                  Object {
+                    "color": null,
+                  }
+                }
               >
                 <svg
                   aria-hidden="true"
@@ -35409,7 +35438,7 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 1`] = `
                 </svg>
               </div>
               <div
-                className="c12"
+                className="c13"
               >
                 Clinton County, NY, USA
               </div>
@@ -35417,22 +35446,26 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 1`] = `
           </a>
         </li>
         <li
-          className="c15"
-          color={null}
+          className="c9"
           disabled={false}
           role="listitem"
         >
           <a
-            className="c9"
+            className="c10"
             onClick={[Function]}
             role="listitem"
             tabIndex={-1}
           >
             <div
-              className="c10"
+              className="c11"
             >
               <div
-                className="c11"
+                className="c12"
+                style={
+                  Object {
+                    "color": null,
+                  }
+                }
               >
                 <svg
                   aria-hidden="true"
@@ -35451,7 +35484,7 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 1`] = `
                 </svg>
               </div>
               <div
-                className="c12"
+                className="c13"
               >
                 Use Current Location
               </div>
@@ -35552,6 +35585,7 @@ exports[`Storyshots LocationField/Mobile Context Blank 1`] = `
 }
 
 .c8:hover {
+  cursor: pointer;
   background-color: #f5f5f5;
 }
 
@@ -35578,7 +35612,7 @@ exports[`Storyshots LocationField/Mobile Context Blank 1`] = `
   position: static;
 }
 
-.c7 li:hover {
+.c7 li:not(.header):hover {
   background-color: transparent;
 }
 
@@ -35630,7 +35664,6 @@ exports[`Storyshots LocationField/Mobile Context Blank 1`] = `
   >
     <li
       className="c8"
-      color={null}
       disabled={false}
       role="listitem"
     >
@@ -35645,6 +35678,11 @@ exports[`Storyshots LocationField/Mobile Context Blank 1`] = `
         >
           <div
             className="c11"
+            style={
+              Object {
+                "color": null,
+              }
+            }
           >
             <svg
               aria-hidden="true"
@@ -35763,6 +35801,7 @@ exports[`Storyshots LocationField/Mobile Context Selected Location 1`] = `
 }
 
 .c10:hover {
+  cursor: pointer;
   background-color: #f5f5f5;
 }
 
@@ -35789,7 +35828,7 @@ exports[`Storyshots LocationField/Mobile Context Selected Location 1`] = `
   position: static;
 }
 
-.c9 li:hover {
+.c9 li:not(.header):hover {
   background-color: transparent;
 }
 
@@ -35866,7 +35905,6 @@ exports[`Storyshots LocationField/Mobile Context Selected Location 1`] = `
   >
     <li
       className="c10"
-      color={null}
       disabled={false}
       role="listitem"
     >
@@ -35881,6 +35919,11 @@ exports[`Storyshots LocationField/Mobile Context Selected Location 1`] = `
         >
           <div
             className="c13"
+            style={
+              Object {
+                "color": null,
+              }
+            }
           >
             <svg
               aria-hidden="true"
@@ -35988,6 +36031,7 @@ exports[`Storyshots LocationField/Mobile Context Styled 1`] = `
 }
 
 .c9:hover {
+  cursor: pointer;
   background-color: #f5f5f5;
 }
 
@@ -36014,7 +36058,7 @@ exports[`Storyshots LocationField/Mobile Context Styled 1`] = `
   position: static;
 }
 
-.c8 li:hover {
+.c8 li:not(.header):hover {
   background-color: transparent;
 }
 
@@ -36071,7 +36115,6 @@ exports[`Storyshots LocationField/Mobile Context Styled 1`] = `
   >
     <li
       className="c9"
-      color={null}
       disabled={false}
       role="listitem"
     >
@@ -36086,6 +36129,11 @@ exports[`Storyshots LocationField/Mobile Context Styled 1`] = `
         >
           <div
             className="c13"
+            style={
+              Object {
+                "color": null,
+              }
+            }
           >
             <svg
               aria-hidden="true"
@@ -36193,41 +36241,33 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
 }
 
 .c7 {
-  color: navy;
+  color: #eee;
+  background-color: #333;
   display: block;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.42857143;
-  padding: 3px 20px;
+  font-size: 12px;
+  padding: 0px 10px;
   text-align: left;
   white-space: nowrap;
 }
 
-.c8 {
-  background-color: #ffffff;
-}
-
 .c8:hover {
+  cursor: pointer;
   background-color: #f5f5f5;
 }
 
-.c16:hover {
-  background-color: #f5f5f5;
-}
-
-.c17 {
+.c16 {
   padding-top: 5px;
   padding-bottom: 3px;
 }
 
-.c19 {
+.c18 {
   margin-left: 30px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.c18 {
+.c17 {
   float: left;
 }
 
@@ -36245,7 +36285,7 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
   position: static;
 }
 
-.c6 li:hover {
+.c6 li:not(.header):hover {
   background-color: transparent;
 }
 
@@ -36310,13 +36350,12 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
     className="c5 c6"
   >
     <li
-      className="c7"
+      className="c7 header"
     >
       Nearby Stops
     </li>
     <li
       className="c8"
-      color="#ffffff"
       disabled={false}
       role="listitem"
     >
@@ -36378,7 +36417,6 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
     </li>
     <li
       className="c8"
-      color="#ffffff"
       disabled={false}
       role="listitem"
     >
@@ -36439,13 +36477,12 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
       </a>
     </li>
     <li
-      className="c7"
+      className="c7 header"
     >
       Recently Searched
     </li>
     <li
-      className="c16"
-      color={null}
+      className="c8"
       disabled={false}
       role="listitem"
     >
@@ -36456,10 +36493,15 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
         tabIndex={-1}
       >
         <div
-          className="c17"
+          className="c16"
         >
           <div
-            className="c18"
+            className="c17"
+            style={
+              Object {
+                "color": null,
+              }
+            }
           >
             <svg
               aria-hidden="true"
@@ -36478,7 +36520,7 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
             </svg>
           </div>
           <div
-            className="c19"
+            className="c18"
           >
             123 Main St
           </div>
@@ -36486,13 +36528,12 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
       </a>
     </li>
     <li
-      className="c7"
+      className="c7 header"
     >
       My Places
     </li>
     <li
-      className="c16"
-      color={null}
+      className="c8"
       disabled={false}
       role="listitem"
     >
@@ -36503,10 +36544,15 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
         tabIndex={-1}
       >
         <div
-          className="c17"
+          className="c16"
         >
           <div
-            className="c18"
+            className="c17"
+            style={
+              Object {
+                "color": null,
+              }
+            }
           >
             <svg
               aria-hidden="true"
@@ -36525,7 +36571,7 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
             </svg>
           </div>
           <div
-            className="c19"
+            className="c18"
           >
             Home (456 Suburb St)
           </div>
@@ -36533,8 +36579,7 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
       </a>
     </li>
     <li
-      className="c16"
-      color={null}
+      className="c8"
       disabled={false}
       role="listitem"
     >
@@ -36545,10 +36590,15 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
         tabIndex={-1}
       >
         <div
-          className="c17"
+          className="c16"
         >
           <div
-            className="c18"
+            className="c17"
+            style={
+              Object {
+                "color": null,
+              }
+            }
           >
             <svg
               aria-hidden="true"
@@ -36567,7 +36617,7 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
             </svg>
           </div>
           <div
-            className="c19"
+            className="c18"
           >
             Work (789 Busy St)
           </div>
@@ -36575,8 +36625,7 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
       </a>
     </li>
     <li
-      className="c16"
-      color={null}
+      className="c8"
       disabled={false}
       role="listitem"
     >
@@ -36587,10 +36636,15 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
         tabIndex={-1}
       >
         <div
-          className="c17"
+          className="c16"
         >
           <div
-            className="c18"
+            className="c17"
+            style={
+              Object {
+                "color": null,
+              }
+            }
           >
             <svg
               aria-hidden="true"
@@ -36609,7 +36663,7 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
             </svg>
           </div>
           <div
-            className="c19"
+            className="c18"
           >
             123 Main St
           </div>
@@ -36617,8 +36671,7 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
       </a>
     </li>
     <li
-      className="c16"
-      color={null}
+      className="c8"
       disabled={false}
       role="listitem"
     >
@@ -36629,10 +36682,15 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
         tabIndex={-1}
       >
         <div
-          className="c17"
+          className="c16"
         >
           <div
-            className="c18"
+            className="c17"
+            style={
+              Object {
+                "color": null,
+              }
+            }
           >
             <svg
               aria-hidden="true"
@@ -36651,7 +36709,7 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
             </svg>
           </div>
           <div
-            className="c19"
+            className="c18"
           >
             Use Current Location
           </div>
@@ -36744,41 +36802,33 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 1`] = `
 }
 
 .c8 {
-  color: navy;
+  color: #eee;
+  background-color: #333;
   display: block;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.42857143;
-  padding: 3px 20px;
+  font-size: 12px;
+  padding: 0px 10px;
   text-align: left;
   white-space: nowrap;
 }
 
-.c9 {
-  background-color: #ffffff;
-}
-
 .c9:hover {
+  cursor: pointer;
   background-color: #f5f5f5;
 }
 
-.c17:hover {
-  background-color: #f5f5f5;
-}
-
-.c18 {
+.c17 {
   padding-top: 5px;
   padding-bottom: 3px;
 }
 
-.c20 {
+.c19 {
   margin-left: 30px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.c19 {
+.c18 {
   float: left;
 }
 
@@ -36796,7 +36846,7 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 1`] = `
   position: static;
 }
 
-.c7 li:hover {
+.c7 li:not(.header):hover {
   background-color: transparent;
 }
 
@@ -36864,13 +36914,12 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 1`] = `
     className="c6 c7"
   >
     <li
-      className="c8"
+      className="c8 header"
     >
       Nearby Stops
     </li>
     <li
       className="c9"
-      color="#ffffff"
       disabled={false}
       role="listitem"
     >
@@ -36932,7 +36981,6 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 1`] = `
     </li>
     <li
       className="c9"
-      color="#ffffff"
       disabled={false}
       role="listitem"
     >
@@ -36993,8 +37041,7 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 1`] = `
       </a>
     </li>
     <li
-      className="c17"
-      color={null}
+      className="c9"
       disabled={false}
       role="listitem"
     >
@@ -37005,10 +37052,15 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 1`] = `
         tabIndex={-1}
       >
         <div
-          className="c18"
+          className="c17"
         >
           <div
-            className="c19"
+            className="c18"
+            style={
+              Object {
+                "color": null,
+              }
+            }
           >
             <svg
               aria-hidden="true"
@@ -37027,7 +37079,7 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 1`] = `
             </svg>
           </div>
           <div
-            className="c20"
+            className="c19"
           >
             Use Current Location
           </div>
@@ -37116,17 +37168,17 @@ exports[`Storyshots LocationField/Mobile Context With Session Searches 1`] = `
 }
 
 .c8 {
-  color: navy;
+  color: #eee;
+  background-color: #333;
   display: block;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.42857143;
-  padding: 3px 20px;
+  font-size: 12px;
+  padding: 0px 10px;
   text-align: left;
   white-space: nowrap;
 }
 
 .c9:hover {
+  cursor: pointer;
   background-color: #f5f5f5;
 }
 
@@ -37153,7 +37205,7 @@ exports[`Storyshots LocationField/Mobile Context With Session Searches 1`] = `
   position: static;
 }
 
-.c7 li:hover {
+.c7 li:not(.header):hover {
   background-color: transparent;
 }
 
@@ -37204,13 +37256,12 @@ exports[`Storyshots LocationField/Mobile Context With Session Searches 1`] = `
     className="c6 c7"
   >
     <li
-      className="c8"
+      className="c8 header"
     >
       Recently Searched
     </li>
     <li
       className="c9"
-      color={null}
       disabled={false}
       role="listitem"
     >
@@ -37225,6 +37276,11 @@ exports[`Storyshots LocationField/Mobile Context With Session Searches 1`] = `
         >
           <div
             className="c12"
+            style={
+              Object {
+                "color": null,
+              }
+            }
           >
             <svg
               aria-hidden="true"
@@ -37252,7 +37308,6 @@ exports[`Storyshots LocationField/Mobile Context With Session Searches 1`] = `
     </li>
     <li
       className="c9"
-      color={null}
       disabled={false}
       role="listitem"
     >
@@ -37267,6 +37322,11 @@ exports[`Storyshots LocationField/Mobile Context With Session Searches 1`] = `
         >
           <div
             className="c12"
+            style={
+              Object {
+                "color": null,
+              }
+            }
           >
             <svg
               aria-hidden="true"
@@ -37374,17 +37434,17 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 1`] = `
 }
 
 .c8 {
-  color: navy;
+  color: #eee;
+  background-color: #333;
   display: block;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.42857143;
-  padding: 3px 20px;
+  font-size: 12px;
+  padding: 0px 10px;
   text-align: left;
   white-space: nowrap;
 }
 
 .c9:hover {
+  cursor: pointer;
   background-color: #f5f5f5;
 }
 
@@ -37411,7 +37471,7 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 1`] = `
   position: static;
 }
 
-.c7 li:hover {
+.c7 li:not(.header):hover {
   background-color: transparent;
 }
 
@@ -37462,13 +37522,12 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 1`] = `
     className="c6 c7"
   >
     <li
-      className="c8"
+      className="c8 header"
     >
       My Places
     </li>
     <li
       className="c9"
-      color={null}
       disabled={false}
       role="listitem"
     >
@@ -37483,6 +37542,11 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 1`] = `
         >
           <div
             className="c12"
+            style={
+              Object {
+                "color": null,
+              }
+            }
           >
             <svg
               aria-hidden="true"
@@ -37510,7 +37574,6 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 1`] = `
     </li>
     <li
       className="c9"
-      color={null}
       disabled={false}
       role="listitem"
     >
@@ -37525,6 +37588,11 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 1`] = `
         >
           <div
             className="c12"
+            style={
+              Object {
+                "color": null,
+              }
+            }
           >
             <svg
               aria-hidden="true"
@@ -37552,7 +37620,6 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 1`] = `
     </li>
     <li
       className="c9"
-      color={null}
       disabled={false}
       role="listitem"
     >
@@ -37567,6 +37634,11 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 1`] = `
         >
           <div
             className="c12"
+            style={
+              Object {
+                "color": null,
+              }
+            }
           >
             <svg
               aria-hidden="true"
@@ -37594,7 +37666,6 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 1`] = `
     </li>
     <li
       className="c9"
-      color={null}
       disabled={false}
       role="listitem"
     >
@@ -37609,6 +37680,11 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 1`] = `
         >
           <div
             className="c12"
+            style={
+              Object {
+                "color": null,
+              }
+            }
           >
             <svg
               aria-hidden="true"

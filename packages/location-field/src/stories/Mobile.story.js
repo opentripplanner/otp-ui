@@ -20,6 +20,7 @@ import {
   currentPosition,
   geocoderConfig,
   getCurrentPosition,
+  layerColorMap,
   onLocationSelected,
   selectedLocation
 } from "./common";
@@ -129,6 +130,7 @@ export const Styled = () => (
   <StyledLocationField
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
+    layerColorMap={layerColorMap}
     getCurrentPosition={getCurrentPosition}
     locationType="from"
     onLocationSelected={onLocationSelected}
@@ -141,6 +143,7 @@ export const SelectedLocation = () => (
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
     getCurrentPosition={getCurrentPosition}
+    layerColorMap={layerColorMap}
     location={selectedLocation}
     locationType="to"
     onLocationSelected={onLocationSelected}
@@ -153,6 +156,7 @@ export const WithNearbyStops = () => (
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
     getCurrentPosition={getCurrentPosition}
+    layerColorMap={layerColorMap}
     locationType="to"
     nearbyStops={nearbyStops}
     onLocationSelected={onLocationSelected}
@@ -166,6 +170,7 @@ export const WithSessionSearches = () => (
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
     getCurrentPosition={getCurrentPosition}
+    layerColorMap={layerColorMap}
     locationType="to"
     onLocationSelected={onLocationSelected}
     sessionSearches={sessionSearches}
@@ -178,6 +183,7 @@ export const WithUserSettings = () => (
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
     getCurrentPosition={getCurrentPosition}
+    layerColorMap={layerColorMap}
     locationType="to"
     onLocationSelected={onLocationSelected}
     showUserSettings
@@ -194,6 +200,7 @@ export const WithCustomIcons = () => (
     GeocodedOptionIconComponent={GeocodedOptionIconComponent}
     geocoderConfig={geocoderConfig}
     getCurrentPosition={getCurrentPosition}
+    layerColorMap={layerColorMap}
     LocationIconComponent={LocationIconComponent}
     locationType="to"
     nearbyStops={nearbyStops}

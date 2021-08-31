@@ -115,19 +115,18 @@ export const MenuItemA = styled.a`
 `;
 
 export const MenuItemHeader = styled.li`
-  color: navy;
+  color: #eee;
+  background-color: ${props => props.bgColor || "#333"};
   display: block;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 12px;
   line-height: 1.42857143;
-  padding: 3px 20px;
+  padding: 0px 10px;
   text-align: ${props => (props.centeredText ? "center" : "left")};
   white-space: nowrap;
 `;
-
 export const MenuItemLi = styled.li`
-  background-color: ${props => props.color};
   &:hover {
+    cursor: pointer;
     /* TODO: adjust highlight color based on props.color? */
     background-color: ${props => !props.disabled && "#f5f5f5"};
   }
@@ -149,9 +148,15 @@ export class MenuItem extends Component {
       header
     } = this.props;
     return header ? (
-      <MenuItemHeader centeredText={centeredText}>{children}</MenuItemHeader>
+      <MenuItemHeader
+        className="header"
+        bgColor={color}
+        centeredText={centeredText}
+      >
+        {children}
+      </MenuItemHeader>
     ) : (
-      <MenuItemLi color={color} disabled={disabled} role="listitem">
+      <MenuItemLi disabled={disabled} role="listitem">
         <MenuItemA
           active={active}
           onClick={this.onClick}
@@ -178,7 +183,7 @@ MenuItem.propTypes = {
 MenuItem.defaultProps = {
   active: false,
   centeredText: false,
-  color: "#ffffff",
+  color: null,
   disabled: false,
   header: false,
   onClick: null
@@ -213,7 +218,7 @@ export const StaticMenuItemList = styled(MenuItemList)`
   display: block;
   position: static;
 
-  li:hover {
+  li:not(.header):hover {
     background-color: transparent;
   }
 `;

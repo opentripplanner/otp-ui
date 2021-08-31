@@ -36,12 +36,7 @@ export function Option({
   classes
 }) {
   return (
-    <Styled.MenuItem
-      onClick={onClick}
-      active={isActive}
-      disabled={disabled}
-      color={color}
-    >
+    <Styled.MenuItem onClick={onClick} active={isActive} disabled={disabled}>
       {coreUtils.ui.isIE() ? (
         // In internet explorer 11, some really weird stuff is happening where it
         // is not possible to click the text of the title, but if you click just
@@ -51,7 +46,9 @@ export function Option({
         title
       ) : (
         <Styled.OptionContainer className={classes}>
-          <Styled.OptionIconContainer>{icon}</Styled.OptionIconContainer>
+          <Styled.OptionIconContainer style={{ color }}>
+            {icon}
+          </Styled.OptionIconContainer>
           <Styled.OptionContent>{title}</Styled.OptionContent>
         </Styled.OptionContainer>
       )}

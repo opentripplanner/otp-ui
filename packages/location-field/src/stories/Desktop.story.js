@@ -7,7 +7,8 @@ import {
   geocoderConfig,
   getCurrentPosition,
   onLocationSelected,
-  selectedLocation
+  selectedLocation,
+  layerColorMap
 } from "./common";
 
 import mockedGeocoderResponse from "../mocks/autocomplete.json";
@@ -124,12 +125,13 @@ export const WithCustomResultColorsAndIcons = () => (
 export const WithPrefilledSearch = () => (
   <LocationField
     initialSearchResults={mockedGeocoderResponse.features}
-    layerColorMap={{ stops: "pink", stations: "cyan", locality: "orange" }}
+    layerColorMap={layerColorMap}
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
     getCurrentPosition={getCurrentPosition}
     inputPlaceholder="Select from location"
     locationType="from"
     onLocationSelected={onLocationSelected}
+    style={{ fontFamily: "sans-serif" }}
   />
 );
