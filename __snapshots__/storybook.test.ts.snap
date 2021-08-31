@@ -45734,18 +45734,6 @@ exports[`Storyshots StopViewerOverlay With Custom Marker 1`] = `
 />
 `;
 
-exports[`Storyshots StopsOverlay Default 1`] = `
-<div
-  className="map"
-/>
-`;
-
-exports[`Storyshots StopsOverlay With Custom Markers 1`] = `
-<div
-  className="map"
-/>
-`;
-
 exports[`Storyshots TransitVehicleOverlay Real-time circles 1`] = `
 <div
   className="map"
