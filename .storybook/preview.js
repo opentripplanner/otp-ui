@@ -1,10 +1,3 @@
-import { addDecorator } from '@storybook/react';
-import {createElement} from 'react';
-
-// Stories that use hooks need to be wrapped in a function to be able
-// to be rendered within Storyshot
-addDecorator(createElement);
-
 export const parameters = {
   a11y: {
     config: {
