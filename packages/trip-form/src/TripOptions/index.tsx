@@ -10,12 +10,24 @@ import { Company, QueryProps } from "./types";
 import * as S from "./styled";
 
 interface ComponentProps {
+  /**
+   * React element to be rendered below
+   * the rest of the element
+   */
   footer?: ReactElement;
+
+  /**
+   * List of company objects to include in the
+   * featured options
+   */
   supportedCompanies: Company[];
 }
 
 type Props = ComponentProps & QueryProps;
 
+/**
+ * This component renders the custom TriMet Mode Selector
+ */
 export default function TripOptions(props: Props): ReactElement {
   const [featuredOption, setFeaturedOption] = useState(null);
   const {

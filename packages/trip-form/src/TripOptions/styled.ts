@@ -3,7 +3,7 @@ import { PlusCircle } from "@styled-icons/boxicons-regular/PlusCircle";
 import ScrollContainer from "react-indiana-drag-scroll";
 import styled, { css } from "styled-components";
 // eslint-disable-next-line prettier/prettier
-import type { ButtonProps } from "./checkbox"
+import type { ButtonProps } from "./Checkbox"
 
 export const TripOptionsContainer = styled.div`
   background-color: #0d5eac;

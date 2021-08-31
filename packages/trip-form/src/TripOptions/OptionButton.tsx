@@ -1,7 +1,7 @@
 import React from "react";
 import * as S from "./styled";
 // eslint-disable-next-line prettier/prettier
-import type { ButtonProps } from "./checkbox"
+import type { ButtonProps } from "./Checkbox"
 
 export default function OptionButton(props: {
   checked: boolean;
