@@ -29,6 +29,8 @@ const ModeRow = ({
     // the hideScrollbars prop
     <S.ScrollableRow hideScrollbars={false}>
       <Checkbox
+        aria-checked={hasTransit}
+        ariaLabel="Go by Transit"
         checked={hasTransit}
         onClick={() => onQueryParamChange({ mode: "TRANSIT" })}
         selected={hasTransit}
@@ -60,6 +62,8 @@ const ModeRow = ({
           category.mode || (category.options && category.options[0].mode);
         return (
           <Checkbox
+            aria-checked={hasTransit}
+            ariaLabel={category.label}
             key={`access-${category.label}`}
             onClick={onChangeMode}
             selected={isChecked}

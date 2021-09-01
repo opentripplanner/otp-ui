@@ -15,9 +15,11 @@ export default function Checkbox(
     children: React.ReactNode | string;
     className?: string;
     mode?: string;
+    ariaLabel?: string;
   } & ButtonProps
 ): React.ReactElement {
   const {
+    ariaLabel,
     checked,
     children,
     className,
@@ -29,6 +31,7 @@ export default function Checkbox(
 
   return (
     <S.Checkbox
+      aria-label={ariaLabel}
       className={className}
       inset={inset}
       onClick={onClick}

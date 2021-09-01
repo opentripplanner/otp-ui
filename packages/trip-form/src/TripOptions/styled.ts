@@ -86,7 +86,10 @@ export const QuestionButton = styled.button`
   }
 `;
 
-export const Checkbox = styled.button`
+export const Checkbox = styled.button.attrs({
+  role: "checkbox",
+  tabIndex: 0,
+})`
   align-items: center;
   background-color: rgba(0, 0, 0, 0);
   border: none;
