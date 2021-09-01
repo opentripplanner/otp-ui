@@ -1,3 +1,5 @@
+import cloneDeep from "lodash.clonedeep";
+
 import {
   isTransit,
   isAccessMode,
@@ -851,3 +853,41 @@ queryParams.forEach(param => {
 });
 
 export default queryParams;
+
+/**
+ * You can customize the queryParams labels and options, and labels and values for each option.
+ * @param customizations The optional customizations to apply: an object whose fields
+ *                       correspond to the items in queryParams with the corresponding name,
+ *                       the value for those fields being an object which fields (label, options...)
+ *                       will override the originals.
+ *                       Example:
+ *                         {
+ *                           // Matches the name param
+ *                           maxWalkDistance: {
+ *                             // Any fields that should be overridden go here
+ *                             options: [
+ *                               // ...new options
+ *                             ],
+ *                             default: 500,
+ *                             label: "max walk dist"
+ *                           }
+ *                         }
+ * @returns A copy of the default queryParams that has the given customizations applied.
+ *          If no customizations parameter is provided, returns the queryParams object itself.
+ */
+export function getCustomQueryParams(customizations) {
+  if (!customizations) return queryParams;
+
+  const clonedParams = cloneDeep(queryParams);
+  Object.keys(customizations).forEach(k => {
+    // Merge fields into the cloned object
+    const paramIndex = clonedParams.findIndex(param => param.name === k);
+    if (paramIndex !== -1) {
+      clonedParams[paramIndex] = {
+        ...clonedParams[paramIndex],
+        ...customizations[k]
+      };
+    }
+  });
+  return clonedParams;
+}
