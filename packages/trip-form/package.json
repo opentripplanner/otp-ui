@@ -19,7 +19,8 @@
     "url": "git+https://github.com/opentripplanner/otp-ui.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "tsc": "echo FIXME: enable tsc in trip-form once core-utils is typed!"
   },
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"
