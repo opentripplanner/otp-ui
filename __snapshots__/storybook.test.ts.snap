@@ -53820,6 +53820,36 @@ exports[`Storyshots StopViewerOverlay With Custom Marker 1`] = `
 </BaseMap>
 `;
 
+exports[`Storyshots StopsOverlay Default 1`] = `
+<Example
+  symbols={
+    Array [
+      Object {
+        "minZoom": 15,
+        "symbol": [Function],
+      },
+    ]
+  }
+/>
+`;
+
+exports[`Storyshots StopsOverlay With Custom Markers 1`] = `
+<Example
+  symbols={
+    Array [
+      Object {
+        "getType": [Function],
+        "minZoom": 14,
+        "symbol": [Function],
+        "symbolByType": Object {
+          "MAX": [Function],
+        },
+      },
+    ]
+  }
+/>
+`;
+
 exports[`Storyshots TransitiveOverlay Bike Only Itinerary 1`] = `
 <BaseMap
   baseLayers={
