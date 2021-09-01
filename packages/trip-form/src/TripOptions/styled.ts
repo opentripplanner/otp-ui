@@ -159,6 +159,9 @@ export const ScrollableRow = styled(isTestEnv ? "div" : ScrollContainer)`
 
   /* Individual item in the row*/
   > button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin-right: 12px;
     min-width: 100px;
     min-width: 75px;
