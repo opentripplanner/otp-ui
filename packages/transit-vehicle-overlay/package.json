@@ -11,7 +11,7 @@
   "dependencies": {
     "@opentripplanner/icons": "^1.0.4",
     "@opentripplanner/zoom-based-markers": "^1.0.1",
-    "@opentripplanner/core-utils": "^4.0.0",
+    "@opentripplanner/core-utils": "^4.1.0",
     "@turf/nearest-point-on-line": "^6.0.1",
     "leaflet-rotatedmarker": "^0.2.0",
     "lodash.clonedeep": "^4.5.0",

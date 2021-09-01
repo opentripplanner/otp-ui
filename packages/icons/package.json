@@ -10,7 +10,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^4.0.0",
+    "@opentripplanner/core-utils": "^4.1.0",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {
