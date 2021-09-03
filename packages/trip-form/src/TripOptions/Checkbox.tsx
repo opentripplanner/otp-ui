@@ -4,9 +4,10 @@ import TrimetModeIcon from "../../../icons/lib/trimet-mode-icon-2021";
 
 // FIXME: Move this to @opentripplanner/types added in https://github.com/opentripplanner/otp-ui/pull/281
 export interface ButtonProps {
+  inset?: boolean;
+  mode?: string;
   onClick(): void;
   selected: boolean;
-  inset?: boolean;
 }
 
 export default function Checkbox(
@@ -14,7 +15,6 @@ export default function Checkbox(
     checked: boolean;
     children: React.ReactNode | string;
     className?: string;
-    mode?: string;
     ariaLabel?: string;
   } & ButtonProps
 ): React.ReactElement {
@@ -34,6 +34,7 @@ export default function Checkbox(
       aria-label={ariaLabel}
       className={className}
       inset={inset}
+      mode={mode}
       onClick={onClick}
       selected={selected}
     >

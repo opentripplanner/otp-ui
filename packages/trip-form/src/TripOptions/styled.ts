@@ -8,6 +8,7 @@ import type { ButtonProps } from "./Checkbox"
 export const TripOptionsContainer = styled.div`
   background-color: #0d5eac;
   color: white;
+  font-weight: 40;
   max-width: 992px; /* Maximum mobile width */
   min-height: 400px;
   overflow-y: scroll;
@@ -57,13 +58,20 @@ export const OptionButton = styled.button`
     props.selected ? "white" : "lightgrey"};
   border-radius: 7px;
   border: solid 1px;
-  color: ${(props: ButtonProps) => (props.selected ? "white" : "lightgrey")};
+  color: white;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
-  margin-top: 5px;
+  margin-top: 7px;
   min-width: 100%;
-  padding: 5px;
+  opacity: ${(props: ButtonProps) => (props.selected ? "1" : "0.5")};
+  padding: 7px 5px;
+  svg {
+    @media (max-width: 768px) {
+      max-width: 20px;
+      max-height: 20px;
+    }
+  }
 `;
 
 export const OptionLabel = styled.div``;
@@ -80,9 +88,13 @@ export const QuestionButton = styled.button`
   color: white;
   cursor: pointer;
   float: right;
+  opacity: 0.5;
   > svg {
     height: 1em;
     width: 1em;
+  }
+  :hover {
+    opacity: 1;
   }
 `;
 
@@ -93,10 +105,15 @@ export const Checkbox = styled.button.attrs({
   align-items: center;
   background-color: rgba(0, 0, 0, 0);
   border: none;
-  color: ${(props: ButtonProps) => (props.selected ? "white" : "lightgrey")};
+  color: white;
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  min-width: ${(props: ButtonProps) => (
+    props.mode === "WALK" || props.mode === "BICYCLE"
+      ? "50px"
+      : "77px"
+  )};
   opacity: ${(props: ButtonProps) => (props.selected ? "1" : "0.5")};
   padding: 20px 0px;
   white-space: pre-wrap;
@@ -127,6 +144,39 @@ export const FeaturedOptionContainer = styled.div`
     flex: 1;
   }
 `;
+
+export const OverlayContainer = styled.div`
+  padding: 15px;
+`
+
+export const OverlayHeader = styled.h3`
+  text-align: center;
+`
+
+export const OverlayOptions = styled.ul`
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  li > a {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 7px;
+    color: #000;
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    img {
+      height: 40px;
+    }
+    .open-link {
+      color: #777;
+    }
+  }
+`
 
 export const ModeIconWrapper = styled.span`
 /* Adjust the checkmark/plus if it is next to a custom icon */
@@ -163,7 +213,5 @@ export const ScrollableRow = styled(isTestEnv ? "div" : ScrollContainer)`
     flex-direction: column;
     justify-content: space-between;
     margin-right: 12px;
-    min-width: 100px;
-    min-width: 75px;
   }
 `;

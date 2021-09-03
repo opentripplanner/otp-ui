@@ -4,6 +4,7 @@ export interface ModeOption {
   hidden?: boolean;
   label: string;
   mode: string;
+  url?: string;
 }
 
 export interface Category {

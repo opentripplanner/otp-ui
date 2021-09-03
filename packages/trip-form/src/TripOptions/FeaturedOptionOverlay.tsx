@@ -19,27 +19,33 @@ const FeaturedOptionOverlay = ({
     c => featuredOption === getCategoryPrimaryMode(c)
   );
   return (
-    <div>
+    <S.OverlayContainer>
       <button onClick={() => setFeaturedOption(null)} type="button">
         Back
       </button>
       <S.MaxHeightImage src={category.image} />
-      <h3>{category.label}</h3>
+      <S.OverlayHeader>{category.label}</S.OverlayHeader>
       <p>{category.description}</p>
-      <ul>
+      <S.OverlayOptions>
         {category.options.map(o => {
+          // Don't show non-company options (e.g., park and ride)
+          if (!o.company) return null;
           return (
             <li key={o.label}>
-              {o.label}{" "}
-              <a href="https://example.com">
-                Open app{" "}
-                <ExternalLinkAlt style={{ height: "1em", width: "1em" }} />
+              <a href={o.url}>
+                <span className="label">
+                  {o.image ? <img src={o.image} alt={o.label} /> : o.label}
+                </span>
+                <span className="open-link">
+                  Open app{" "}
+                  <ExternalLinkAlt style={{ height: "1em", width: "1em" }} />
+                </span>
               </a>
             </li>
           );
         })}
-      </ul>
-    </div>
+      </S.OverlayOptions>
+    </S.OverlayContainer>
   );
 };
 

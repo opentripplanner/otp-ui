@@ -10,7 +10,6 @@ import "./trimet-mock.css"; // Downloads the font.
 
 const TriMetStyled = styled.div`
   font-family: Hind, sans-serif;
-  font-size: 14px;
   background-color: #f0f0f0;
   padding: 15px;
 
@@ -24,10 +23,8 @@ const TriMetStyled = styled.div`
   }
   ${TripFormClasses.SettingLabel} {
     padding-top: 8px;
-    color: #676767;
+    color: #fff;
     font-weight: 100;
-    text-transform: uppercase;
-    letter-spacing: 1px;
   }
   ${TripFormClasses.ModeButton.Button} {
     border: 1px solid rgb(187, 187, 187);
@@ -75,19 +72,18 @@ const TriMetStyled = styled.div`
       font-weight: inherit;
       margin-bottom: 15px;
       background: none;
-      border-radius: 3px;
       padding: 6px 12px;
-      border: 1px solid #ccc;
+      border: none;
+      border-bottom: 1px solid #fff;
       height: 34px;
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      box-shadow: none;
       line-height: 1.42857;
-      color: #555;
+      color: #fff;
     }
     > div:last-child::after {
       content: "▼";
       font-size: 75%;
-      color: #000;
+      color: #fff;
       right: 8px;
       top: 10px;
       position: absolute;

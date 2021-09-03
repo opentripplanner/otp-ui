@@ -2,7 +2,6 @@ import { ClassicModeIcon } from "@opentripplanner/icons";
 
 import { action } from "@storybook/addon-actions";
 import React, { Component } from "react";
-import styled from "styled-components";
 
 import SettingsSelectorPanel from "./SettingsSelectorPanel";
 import TripOptions from "./TripOptions";
@@ -96,35 +95,9 @@ export const settingsSelectorPanelUndefinedParams = () => (
   </PanelWrapper>
 );
 
-const Button = styled.button`
-  display: block;
-  margin-bottom: 10px;
-`;
-
-const FooterContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 20px 0px;
-  > button {
-    width: 66%;
-    cursor: pointer;
-  }
-  > .line-break {
-    width: 100%;
-  }
-`;
-
 export const tripOptions = () => (
   <PanelWrapper>
     <TripOptions
-      footer={
-        <FooterContainer>
-          <Button type="button">Plan trip</Button>
-          <div className="line-break" />
-          <Button type="button">Save Options</Button>
-        </FooterContainer>
-      }
       supportedModes={commonModes}
       supportedCompanies={commonCompanies}
     />
