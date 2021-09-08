@@ -8,6 +8,7 @@ import { CalendarAlt, Heartbeat, MoneyBillAlt } from "styled-icons/fa-solid";
 
 import * as Styled from "./styled";
 import TripDetail from "./trip-detail";
+
 import { CaloriesDetailsProps, TripDetailsProps } from "./types";
 
 // Load the default messages.
@@ -23,8 +24,29 @@ const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
  * Format text bold (used with FormattedMessage).
  */
 // TODO: Find a better place for this utility.
-function BoldText(contents: ReactElement): ReactElement {
-  return <b>{contents}</b>;
+function boldText(contents: ReactElement): ReactElement {
+  return <strong>{contents}</strong>;
+}
+
+/**
+ * Render formatted fare.
+ * @param currencyCode The ISO currency code to use (USD, GBP, EUR).
+ * @param fare The fare value, in currency units, to be shown.
+ * @returns The formatted fare value according to the selected locale.
+ */
+function renderFare(currencyCode: string, fare: number): ReactElement {
+  return (
+    <FormattedNumber
+      currency={currencyCode}
+      // For dollars in locales such as 'fr',
+      // this will limit the display to just the dollar sign
+      // (otherwise it will render e.g. '2,50 $US' instead of '2,50 $').
+      currencyDisplay="narrowSymbol"
+      value={fare}
+      // eslint-disable-next-line react/style-prop-object
+      style="currency"
+    />
+  );
 }
 
 /**
@@ -57,7 +79,7 @@ function DefaultCaloriesDetails({
       description="Text describing how the calories relate to the walking and biking duration of a trip."
       id="otpUi.TripDetails.caloriesDescription"
       values={{
-        b: BoldText,
+        b: boldText,
         bikeMinutes: Math.round(bikeSeconds / 60),
         calories: Math.round(calories),
         dietaryLink,
@@ -77,12 +99,8 @@ export function TripDetails({
   FareDetails = null,
   itinerary
 }: TripDetailsProps): ReactElement {
-  let companies = "";
-  itinerary.legs.forEach(leg => {
-    if (leg.tncData) {
-      companies = leg.tncData.company;
-    }
-  });
+  const firstTncLeg = itinerary.legs.find(leg => leg.tncData);
+  const tncCompany = firstTncLeg ? firstTncLeg.tncData.company : "";
 
   // process the transit fare
   const fareResult = coreUtils.itinerary.calculateFares(itinerary);
@@ -98,19 +116,8 @@ export function TripDetails({
               description="Text showing the price of tickets on public transportation."
               id="otpUi.TripDetails.transitFare"
               values={{
-                b: BoldText,
-                transitFare: (
-                  <FormattedNumber
-                    currency={currencyCode}
-                    // For dollars in locales such as 'fr',
-                    // this will limit the display to just the dollar sign
-                    // (otherwise it will render e.g. '2,50 $US' instead of '2,50 $').
-                    currencyDisplay="narrowSymbol"
-                    value={transitFare / 100}
-                    // eslint-disable-next-line react/style-prop-object
-                    style="currency"
-                  />
-                )
+                b: boldText,
+                transitFare: renderFare(currencyCode, transitFare / 100)
               }}
             />
           </Styled.TransitFare>
@@ -123,30 +130,16 @@ export function TripDetails({
               description="Text showing the price paid to transportation network companies."
               id="otpUi.TripDetails.tncFare"
               values={{
-                b: BoldText,
+                b: boldText,
                 companies: (
+                  // Styled.TNCFareCompanies capitalizes the TNC company ID (e.g. "COMPANY")
+                  // after it is converted to lowercase, so it renders as "Company".
                   <Styled.TNCFareCompanies>
-                    {companies.toLowerCase()}
+                    {tncCompany.toLowerCase()}
                   </Styled.TNCFareCompanies>
                 ),
-                maxTNCFare: (
-                  <FormattedNumber
-                    currency={currencyCode}
-                    currencyDisplay="narrowSymbol"
-                    value={maxTNCFare}
-                    // eslint-disable-next-line react/style-prop-object
-                    style="currency"
-                  />
-                ),
-                minTNCFare: (
-                  <FormattedNumber
-                    currency={currencyCode}
-                    currencyDisplay="narrowSymbol"
-                    value={minTNCFare}
-                    // eslint-disable-next-line react/style-prop-object
-                    style="currency"
-                  />
-                )
+                maxTNCFare: renderFare(currencyCode, maxTNCFare),
+                minTNCFare: renderFare(currencyCode, minTNCFare)
               }}
             />
           </Styled.TNCFare>
@@ -189,7 +182,7 @@ export function TripDetails({
                 description="Text showing the departure date/time for a trip."
                 id="otpUi.TripDetails.departure"
                 values={{
-                  b: BoldText,
+                  b: boldText,
                   departureDate
                 }}
               />
@@ -222,7 +215,7 @@ export function TripDetails({
                   description="Text showing the number of calories for the walking and biking legs of a trip."
                   id="otpUi.TripDetails.calories"
                   values={{
-                    b: BoldText,
+                    b: boldText,
                     calories: caloriesBurned
                   }}
                 />
