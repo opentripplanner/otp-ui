@@ -52383,7 +52383,7 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel 1`] = `
             ],
             "categories": Array [
               Object {
-                "description": "E-scooters are battery-powered devices that you can rent on-the-spot using an app on your phone. You can quickly and easily connect to and from your transit stop, using one of several scooter brands operating in the Portland area.",
+                "description": "A bicycle, also called a bike or cycle, is a human-powered or motor-powered, pedal-driven, single-track vehicle, having two wheels attached to a frame, one behind the other. A bicycle rider is called a cyclist, or bicyclist.",
                 "id": "BICYCLE",
                 "image": "https://cdn.shopify.com/s/files/1/0514/3160/4395/files/ronin-titanium-natural-sram-red-axs_1024x.png?v=1617366397",
                 "label": "+ Bike or Bike Rental",
@@ -52400,7 +52400,7 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel 1`] = `
                 "type": "access",
               },
               Object {
-                "description": "E-scooters are battery-powered devices that you can rent on-the-spot using an app on your phone. You can quickly and easily connect to and from your transit stop, using one of several scooter brands operating in the Portland area.",
+                "description": "A ridesharing company (also known as a transportation network company, ride-hailing service; the vehicles are called app-taxis or e-taxis) is a company that, via websites and mobile apps, matches passengers with drivers of vehicles for hire that, unlike taxicabs, cannot legally be hailed from the street.",
                 "image": "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FUSION_2020.png",
                 "label": "+ Ridehail or Park & Ride",
                 "options": Array [
@@ -52410,8 +52410,10 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel 1`] = `
                   },
                   Object {
                     "company": "Uber",
+                    "image": "https://trimet-web.s3.amazonaws.com/uber.svg",
                     "label": "Transit + Uber",
                     "mode": "CAR_HAIL",
+                    "url": "https://uber.com",
                   },
                 ],
                 "type": "access",
@@ -52424,19 +52426,25 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel 1`] = `
                 "options": Array [
                   Object {
                     "company": "Bolt",
+                    "image": "https://trimet-web.s3.amazonaws.com/bolt.svg",
                     "label": "Bolt",
+                    "url": "https://example.com",
                   },
                   Object {
                     "company": "Bird",
                     "label": "Bird",
+                    "url": "https://example.com",
                   },
                   Object {
                     "company": "Lime",
                     "label": "Lime",
+                    "url": "https://example.com",
                   },
                   Object {
                     "company": "Spin",
+                    "image": "https://trimet-web.s3.amazonaws.com/spin.svg",
                     "label": "Spin",
+                    "url": "https://example.com",
                   },
                 ],
                 "type": "access",
@@ -52607,7 +52615,7 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel 1`] = `
               ],
               "categories": Array [
                 Object {
-                  "description": "E-scooters are battery-powered devices that you can rent on-the-spot using an app on your phone. You can quickly and easily connect to and from your transit stop, using one of several scooter brands operating in the Portland area.",
+                  "description": "A bicycle, also called a bike or cycle, is a human-powered or motor-powered, pedal-driven, single-track vehicle, having two wheels attached to a frame, one behind the other. A bicycle rider is called a cyclist, or bicyclist.",
                   "id": "BICYCLE",
                   "image": "https://cdn.shopify.com/s/files/1/0514/3160/4395/files/ronin-titanium-natural-sram-red-axs_1024x.png?v=1617366397",
                   "label": "+ Bike or Bike Rental",
@@ -52624,7 +52632,7 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel 1`] = `
                   "type": "access",
                 },
                 Object {
-                  "description": "E-scooters are battery-powered devices that you can rent on-the-spot using an app on your phone. You can quickly and easily connect to and from your transit stop, using one of several scooter brands operating in the Portland area.",
+                  "description": "A ridesharing company (also known as a transportation network company, ride-hailing service; the vehicles are called app-taxis or e-taxis) is a company that, via websites and mobile apps, matches passengers with drivers of vehicles for hire that, unlike taxicabs, cannot legally be hailed from the street.",
                   "image": "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FUSION_2020.png",
                   "label": "+ Ridehail or Park & Ride",
                   "options": Array [
@@ -52634,8 +52642,10 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel 1`] = `
                     },
                     Object {
                       "company": "Uber",
+                      "image": "https://trimet-web.s3.amazonaws.com/uber.svg",
                       "label": "Transit + Uber",
                       "mode": "CAR_HAIL",
+                      "url": "https://uber.com",
                     },
                   ],
                   "type": "access",
@@ -52648,19 +52658,25 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel 1`] = `
                   "options": Array [
                     Object {
                       "company": "Bolt",
+                      "image": "https://trimet-web.s3.amazonaws.com/bolt.svg",
                       "label": "Bolt",
+                      "url": "https://example.com",
                     },
                     Object {
                       "company": "Bird",
                       "label": "Bird",
+                      "url": "https://example.com",
                     },
                     Object {
                       "company": "Lime",
                       "label": "Lime",
+                      "url": "https://example.com",
                     },
                     Object {
                       "company": "Spin",
+                      "image": "https://trimet-web.s3.amazonaws.com/spin.svg",
                       "label": "Spin",
+                      "url": "https://example.com",
                     },
                   ],
                   "type": "access",
@@ -52905,7 +52921,7 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel With Custom Ic
             ],
             "categories": Array [
               Object {
-                "description": "E-scooters are battery-powered devices that you can rent on-the-spot using an app on your phone. You can quickly and easily connect to and from your transit stop, using one of several scooter brands operating in the Portland area.",
+                "description": "A bicycle, also called a bike or cycle, is a human-powered or motor-powered, pedal-driven, single-track vehicle, having two wheels attached to a frame, one behind the other. A bicycle rider is called a cyclist, or bicyclist.",
                 "id": "BICYCLE",
                 "image": "https://cdn.shopify.com/s/files/1/0514/3160/4395/files/ronin-titanium-natural-sram-red-axs_1024x.png?v=1617366397",
                 "label": "+ Bike or Bike Rental",
@@ -52922,7 +52938,7 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel With Custom Ic
                 "type": "access",
               },
               Object {
-                "description": "E-scooters are battery-powered devices that you can rent on-the-spot using an app on your phone. You can quickly and easily connect to and from your transit stop, using one of several scooter brands operating in the Portland area.",
+                "description": "A ridesharing company (also known as a transportation network company, ride-hailing service; the vehicles are called app-taxis or e-taxis) is a company that, via websites and mobile apps, matches passengers with drivers of vehicles for hire that, unlike taxicabs, cannot legally be hailed from the street.",
                 "image": "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FUSION_2020.png",
                 "label": "+ Ridehail or Park & Ride",
                 "options": Array [
@@ -52932,8 +52948,10 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel With Custom Ic
                   },
                   Object {
                     "company": "Uber",
+                    "image": "https://trimet-web.s3.amazonaws.com/uber.svg",
                     "label": "Transit + Uber",
                     "mode": "CAR_HAIL",
+                    "url": "https://uber.com",
                   },
                 ],
                 "type": "access",
@@ -52946,19 +52964,25 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel With Custom Ic
                 "options": Array [
                   Object {
                     "company": "Bolt",
+                    "image": "https://trimet-web.s3.amazonaws.com/bolt.svg",
                     "label": "Bolt",
+                    "url": "https://example.com",
                   },
                   Object {
                     "company": "Bird",
                     "label": "Bird",
+                    "url": "https://example.com",
                   },
                   Object {
                     "company": "Lime",
                     "label": "Lime",
+                    "url": "https://example.com",
                   },
                   Object {
                     "company": "Spin",
+                    "image": "https://trimet-web.s3.amazonaws.com/spin.svg",
                     "label": "Spin",
+                    "url": "https://example.com",
                   },
                 ],
                 "type": "access",
@@ -53129,7 +53153,7 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel With Custom Ic
               ],
               "categories": Array [
                 Object {
-                  "description": "E-scooters are battery-powered devices that you can rent on-the-spot using an app on your phone. You can quickly and easily connect to and from your transit stop, using one of several scooter brands operating in the Portland area.",
+                  "description": "A bicycle, also called a bike or cycle, is a human-powered or motor-powered, pedal-driven, single-track vehicle, having two wheels attached to a frame, one behind the other. A bicycle rider is called a cyclist, or bicyclist.",
                   "id": "BICYCLE",
                   "image": "https://cdn.shopify.com/s/files/1/0514/3160/4395/files/ronin-titanium-natural-sram-red-axs_1024x.png?v=1617366397",
                   "label": "+ Bike or Bike Rental",
@@ -53146,7 +53170,7 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel With Custom Ic
                   "type": "access",
                 },
                 Object {
-                  "description": "E-scooters are battery-powered devices that you can rent on-the-spot using an app on your phone. You can quickly and easily connect to and from your transit stop, using one of several scooter brands operating in the Portland area.",
+                  "description": "A ridesharing company (also known as a transportation network company, ride-hailing service; the vehicles are called app-taxis or e-taxis) is a company that, via websites and mobile apps, matches passengers with drivers of vehicles for hire that, unlike taxicabs, cannot legally be hailed from the street.",
                   "image": "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FUSION_2020.png",
                   "label": "+ Ridehail or Park & Ride",
                   "options": Array [
@@ -53156,8 +53180,10 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel With Custom Ic
                     },
                     Object {
                       "company": "Uber",
+                      "image": "https://trimet-web.s3.amazonaws.com/uber.svg",
                       "label": "Transit + Uber",
                       "mode": "CAR_HAIL",
+                      "url": "https://uber.com",
                     },
                   ],
                   "type": "access",
@@ -53170,19 +53196,25 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel With Custom Ic
                   "options": Array [
                     Object {
                       "company": "Bolt",
+                      "image": "https://trimet-web.s3.amazonaws.com/bolt.svg",
                       "label": "Bolt",
+                      "url": "https://example.com",
                     },
                     Object {
                       "company": "Bird",
                       "label": "Bird",
+                      "url": "https://example.com",
                     },
                     Object {
                       "company": "Lime",
                       "label": "Lime",
+                      "url": "https://example.com",
                     },
                     Object {
                       "company": "Spin",
+                      "image": "https://trimet-web.s3.amazonaws.com/spin.svg",
                       "label": "Spin",
+                      "url": "https://example.com",
                     },
                   ],
                   "type": "access",
@@ -53268,23 +53300,6 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
   <div>
     <PanelWrapper>
       <TripOptions
-        footer={
-          <ForwardRef(settings-selector-panelstory__FooterContainer)>
-            <ForwardRef(settings-selector-panelstory__Button)
-              type="button"
-            >
-              Plan trip
-            </ForwardRef(settings-selector-panelstory__Button)>
-            <div
-              className="line-break"
-            />
-            <ForwardRef(settings-selector-panelstory__Button)
-              type="button"
-            >
-              Save Options
-            </ForwardRef(settings-selector-panelstory__Button)>
-          </ForwardRef(settings-selector-panelstory__FooterContainer)>
-        }
         supportedCompanies={
           Array [
             Object {
@@ -53371,7 +53386,7 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
             ],
             "categories": Array [
               Object {
-                "description": "E-scooters are battery-powered devices that you can rent on-the-spot using an app on your phone. You can quickly and easily connect to and from your transit stop, using one of several scooter brands operating in the Portland area.",
+                "description": "A bicycle, also called a bike or cycle, is a human-powered or motor-powered, pedal-driven, single-track vehicle, having two wheels attached to a frame, one behind the other. A bicycle rider is called a cyclist, or bicyclist.",
                 "id": "BICYCLE",
                 "image": "https://cdn.shopify.com/s/files/1/0514/3160/4395/files/ronin-titanium-natural-sram-red-axs_1024x.png?v=1617366397",
                 "label": "+ Bike or Bike Rental",
@@ -53388,7 +53403,7 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
                 "type": "access",
               },
               Object {
-                "description": "E-scooters are battery-powered devices that you can rent on-the-spot using an app on your phone. You can quickly and easily connect to and from your transit stop, using one of several scooter brands operating in the Portland area.",
+                "description": "A ridesharing company (also known as a transportation network company, ride-hailing service; the vehicles are called app-taxis or e-taxis) is a company that, via websites and mobile apps, matches passengers with drivers of vehicles for hire that, unlike taxicabs, cannot legally be hailed from the street.",
                 "image": "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FUSION_2020.png",
                 "label": "+ Ridehail or Park & Ride",
                 "options": Array [
@@ -53398,8 +53413,10 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
                   },
                   Object {
                     "company": "Uber",
+                    "image": "https://trimet-web.s3.amazonaws.com/uber.svg",
                     "label": "Transit + Uber",
                     "mode": "CAR_HAIL",
+                    "url": "https://uber.com",
                   },
                 ],
                 "type": "access",
@@ -53412,19 +53429,25 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
                 "options": Array [
                   Object {
                     "company": "Bolt",
+                    "image": "https://trimet-web.s3.amazonaws.com/bolt.svg",
                     "label": "Bolt",
+                    "url": "https://example.com",
                   },
                   Object {
                     "company": "Bird",
                     "label": "Bird",
+                    "url": "https://example.com",
                   },
                   Object {
                     "company": "Lime",
                     "label": "Lime",
+                    "url": "https://example.com",
                   },
                   Object {
                     "company": "Spin",
+                    "image": "https://trimet-web.s3.amazonaws.com/spin.svg",
                     "label": "Spin",
+                    "url": "https://example.com",
                   },
                 ],
                 "type": "access",
@@ -53505,23 +53528,6 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
     <ForwardRef(trimet-styled__TriMetStyled)>
       <PanelWrapper>
         <TripOptions
-          footer={
-            <ForwardRef(settings-selector-panelstory__FooterContainer)>
-              <ForwardRef(settings-selector-panelstory__Button)
-                type="button"
-              >
-                Plan trip
-              </ForwardRef(settings-selector-panelstory__Button)>
-              <div
-                className="line-break"
-              />
-              <ForwardRef(settings-selector-panelstory__Button)
-                type="button"
-              >
-                Save Options
-              </ForwardRef(settings-selector-panelstory__Button)>
-            </ForwardRef(settings-selector-panelstory__FooterContainer)>
-          }
           supportedCompanies={
             Array [
               Object {
@@ -53608,7 +53614,7 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
               ],
               "categories": Array [
                 Object {
-                  "description": "E-scooters are battery-powered devices that you can rent on-the-spot using an app on your phone. You can quickly and easily connect to and from your transit stop, using one of several scooter brands operating in the Portland area.",
+                  "description": "A bicycle, also called a bike or cycle, is a human-powered or motor-powered, pedal-driven, single-track vehicle, having two wheels attached to a frame, one behind the other. A bicycle rider is called a cyclist, or bicyclist.",
                   "id": "BICYCLE",
                   "image": "https://cdn.shopify.com/s/files/1/0514/3160/4395/files/ronin-titanium-natural-sram-red-axs_1024x.png?v=1617366397",
                   "label": "+ Bike or Bike Rental",
@@ -53625,7 +53631,7 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
                   "type": "access",
                 },
                 Object {
-                  "description": "E-scooters are battery-powered devices that you can rent on-the-spot using an app on your phone. You can quickly and easily connect to and from your transit stop, using one of several scooter brands operating in the Portland area.",
+                  "description": "A ridesharing company (also known as a transportation network company, ride-hailing service; the vehicles are called app-taxis or e-taxis) is a company that, via websites and mobile apps, matches passengers with drivers of vehicles for hire that, unlike taxicabs, cannot legally be hailed from the street.",
                   "image": "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FUSION_2020.png",
                   "label": "+ Ridehail or Park & Ride",
                   "options": Array [
@@ -53635,8 +53641,10 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
                     },
                     Object {
                       "company": "Uber",
+                      "image": "https://trimet-web.s3.amazonaws.com/uber.svg",
                       "label": "Transit + Uber",
                       "mode": "CAR_HAIL",
+                      "url": "https://uber.com",
                     },
                   ],
                   "type": "access",
@@ -53649,19 +53657,25 @@ exports[`Storyshots SettingsSelectorPanel Trip Options 1`] = `
                   "options": Array [
                     Object {
                       "company": "Bolt",
+                      "image": "https://trimet-web.s3.amazonaws.com/bolt.svg",
                       "label": "Bolt",
+                      "url": "https://example.com",
                     },
                     Object {
                       "company": "Bird",
                       "label": "Bird",
+                      "url": "https://example.com",
                     },
                     Object {
                       "company": "Lime",
                       "label": "Lime",
+                      "url": "https://example.com",
                     },
                     Object {
                       "company": "Spin",
+                      "image": "https://trimet-web.s3.amazonaws.com/spin.svg",
                       "label": "Spin",
+                      "url": "https://example.com",
                     },
                   ],
                   "type": "access",
@@ -57896,7 +57910,7 @@ exports[`Storyshots Trip Form Components General Settings Panel 1`] = `
           ],
           "categories": Array [
             Object {
-              "description": "E-scooters are battery-powered devices that you can rent on-the-spot using an app on your phone. You can quickly and easily connect to and from your transit stop, using one of several scooter brands operating in the Portland area.",
+              "description": "A bicycle, also called a bike or cycle, is a human-powered or motor-powered, pedal-driven, single-track vehicle, having two wheels attached to a frame, one behind the other. A bicycle rider is called a cyclist, or bicyclist.",
               "id": "BICYCLE",
               "image": "https://cdn.shopify.com/s/files/1/0514/3160/4395/files/ronin-titanium-natural-sram-red-axs_1024x.png?v=1617366397",
               "label": "+ Bike or Bike Rental",
@@ -57913,7 +57927,7 @@ exports[`Storyshots Trip Form Components General Settings Panel 1`] = `
               "type": "access",
             },
             Object {
-              "description": "E-scooters are battery-powered devices that you can rent on-the-spot using an app on your phone. You can quickly and easily connect to and from your transit stop, using one of several scooter brands operating in the Portland area.",
+              "description": "A ridesharing company (also known as a transportation network company, ride-hailing service; the vehicles are called app-taxis or e-taxis) is a company that, via websites and mobile apps, matches passengers with drivers of vehicles for hire that, unlike taxicabs, cannot legally be hailed from the street.",
               "image": "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FUSION_2020.png",
               "label": "+ Ridehail or Park & Ride",
               "options": Array [
@@ -57923,8 +57937,10 @@ exports[`Storyshots Trip Form Components General Settings Panel 1`] = `
                 },
                 Object {
                   "company": "Uber",
+                  "image": "https://trimet-web.s3.amazonaws.com/uber.svg",
                   "label": "Transit + Uber",
                   "mode": "CAR_HAIL",
+                  "url": "https://uber.com",
                 },
               ],
               "type": "access",
@@ -57937,19 +57953,25 @@ exports[`Storyshots Trip Form Components General Settings Panel 1`] = `
               "options": Array [
                 Object {
                   "company": "Bolt",
+                  "image": "https://trimet-web.s3.amazonaws.com/bolt.svg",
                   "label": "Bolt",
+                  "url": "https://example.com",
                 },
                 Object {
                   "company": "Bird",
                   "label": "Bird",
+                  "url": "https://example.com",
                 },
                 Object {
                   "company": "Lime",
                   "label": "Lime",
+                  "url": "https://example.com",
                 },
                 Object {
                   "company": "Spin",
+                  "image": "https://trimet-web.s3.amazonaws.com/spin.svg",
                   "label": "Spin",
+                  "url": "https://example.com",
                 },
               ],
               "type": "access",
@@ -58098,7 +58120,7 @@ exports[`Storyshots Trip Form Components General Settings Panel 1`] = `
             ],
             "categories": Array [
               Object {
-                "description": "E-scooters are battery-powered devices that you can rent on-the-spot using an app on your phone. You can quickly and easily connect to and from your transit stop, using one of several scooter brands operating in the Portland area.",
+                "description": "A bicycle, also called a bike or cycle, is a human-powered or motor-powered, pedal-driven, single-track vehicle, having two wheels attached to a frame, one behind the other. A bicycle rider is called a cyclist, or bicyclist.",
                 "id": "BICYCLE",
                 "image": "https://cdn.shopify.com/s/files/1/0514/3160/4395/files/ronin-titanium-natural-sram-red-axs_1024x.png?v=1617366397",
                 "label": "+ Bike or Bike Rental",
@@ -58115,7 +58137,7 @@ exports[`Storyshots Trip Form Components General Settings Panel 1`] = `
                 "type": "access",
               },
               Object {
-                "description": "E-scooters are battery-powered devices that you can rent on-the-spot using an app on your phone. You can quickly and easily connect to and from your transit stop, using one of several scooter brands operating in the Portland area.",
+                "description": "A ridesharing company (also known as a transportation network company, ride-hailing service; the vehicles are called app-taxis or e-taxis) is a company that, via websites and mobile apps, matches passengers with drivers of vehicles for hire that, unlike taxicabs, cannot legally be hailed from the street.",
                 "image": "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FUSION_2020.png",
                 "label": "+ Ridehail or Park & Ride",
                 "options": Array [
@@ -58125,8 +58147,10 @@ exports[`Storyshots Trip Form Components General Settings Panel 1`] = `
                   },
                   Object {
                     "company": "Uber",
+                    "image": "https://trimet-web.s3.amazonaws.com/uber.svg",
                     "label": "Transit + Uber",
                     "mode": "CAR_HAIL",
+                    "url": "https://uber.com",
                   },
                 ],
                 "type": "access",
@@ -58139,19 +58163,25 @@ exports[`Storyshots Trip Form Components General Settings Panel 1`] = `
                 "options": Array [
                   Object {
                     "company": "Bolt",
+                    "image": "https://trimet-web.s3.amazonaws.com/bolt.svg",
                     "label": "Bolt",
+                    "url": "https://example.com",
                   },
                   Object {
                     "company": "Bird",
                     "label": "Bird",
+                    "url": "https://example.com",
                   },
                   Object {
                     "company": "Lime",
                     "label": "Lime",
+                    "url": "https://example.com",
                   },
                   Object {
                     "company": "Spin",
+                    "image": "https://trimet-web.s3.amazonaws.com/spin.svg",
                     "label": "Spin",
+                    "url": "https://example.com",
                   },
                 ],
                 "type": "access",
