@@ -79,10 +79,10 @@ function DefaultCaloriesDetails({
       description="Text describing how the calories relate to the walking and biking duration of a trip."
       id="otpUi.TripDetails.caloriesDescription"
       values={{
-        b: boldText,
         bikeMinutes: Math.round(bikeSeconds / 60),
         calories: Math.round(calories),
         dietaryLink,
+        strong: boldText,
         walkMinutes: Math.round(walkSeconds / 60)
       }}
     />
@@ -116,7 +116,7 @@ export function TripDetails({
               description="Text showing the price of tickets on public transportation."
               id="otpUi.TripDetails.transitFare"
               values={{
-                b: boldText,
+                strong: boldText,
                 transitFare: renderFare(currencyCode, transitFare / 100)
               }}
             />
@@ -130,7 +130,6 @@ export function TripDetails({
               description="Text showing the price paid to transportation network companies."
               id="otpUi.TripDetails.tncFare"
               values={{
-                b: boldText,
                 companies: (
                   // Styled.TNCFareCompanies capitalizes the TNC company ID (e.g. "COMPANY")
                   // after it is converted to lowercase, so it renders as "Company".
@@ -139,7 +138,8 @@ export function TripDetails({
                   </Styled.TNCFareCompanies>
                 ),
                 maxTNCFare: renderFare(currencyCode, maxTNCFare),
-                minTNCFare: renderFare(currencyCode, minTNCFare)
+                minTNCFare: renderFare(currencyCode, minTNCFare),
+                strong: boldText
               }}
             />
           </Styled.TNCFare>
@@ -182,8 +182,8 @@ export function TripDetails({
                 description="Text showing the departure date/time for a trip."
                 id="otpUi.TripDetails.departure"
                 values={{
-                  b: boldText,
-                  departureDate
+                  departureDate,
+                  strong: boldText
                 }}
               />
             </Styled.Timing>
@@ -215,8 +215,8 @@ export function TripDetails({
                   description="Text showing the number of calories for the walking and biking legs of a trip."
                   id="otpUi.TripDetails.calories"
                   values={{
-                    b: boldText,
-                    calories: caloriesBurned
+                    calories: caloriesBurned,
+                    strong: boldText
                   }}
                 />
               </Styled.CaloriesSummary>

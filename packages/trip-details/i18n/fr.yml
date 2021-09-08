@@ -1,12 +1,12 @@
 # Example translations for the TripDetails component into French.
 otpUi:
   TripDetails:
-    calories: "Calories dépensées : <b>{calories, number, ::.}</b>"
+    calories: "Calories dépensées : <strong>{calories, number, ::.}</strong>"
     caloriesDescription: "La dépense calorique est calculée sur la base de
-      {walkMinutes, plural, one {<b># minute</b> effectuée} other {<b># minutes</b> effectuées}} à pied et
-      {bikeMinutes, plural, one {<b># minute</b> effectuée} other {<b># minutes</b> effectuées}} en vélo sur ce trajet.
+      {walkMinutes, plural, one {<strong># minute</strong> effectuée} other {<strong># minutes</strong> effectuées}} à pied et
+      {bikeMinutes, plural, one {<strong># minute</strong> effectuée} other {<strong># minutes</strong> effectuées}} en vélo sur ce trajet.
       (d'après <dietaryLink>Dietary Guidelines for Americans 2005, page 16, Table 4</dietaryLink>)"
-    departure: "Départ le <b>{departureDate, date, long}</b> à <b>{departureDate, time, short}</b>"
+    departure: "Départ le <strong>{departureDate, date, long}</strong> à <strong>{departureDate, time, short}</strong>"
     title: "Détails du trajet"
-    tncFare: "Tarif {companies} : <b>{minTNCFare} - {maxTNCFare}</b>"
-    transitFare: "Tarif en transports : <b>{transitFare}</b>"
+    tncFare: "Tarif {companies} : <strong>{minTNCFare} - {maxTNCFare}</strong>"
+    transitFare: "Tarif en transports : <strong>{transitFare}</strong>"
