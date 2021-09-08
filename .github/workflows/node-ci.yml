@@ -23,10 +23,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js 12.x
+      - name: Use Node.js 13.x
         uses: actions/setup-node@v1
         with:
-          node-version: 12.x
+          node-version: 13.x
       - name: Install npm packages using cache
         uses: bahmutov/npm-install@v1
       - name: Lint code
@@ -37,6 +37,8 @@ jobs:
         run: yarn typescript
       - name: Run tests
         run: yarn unit
+      - name: Run a11y tests
+        run: yarn a11y-test
 
       # at this point, the build is successful
       - name: Semantic Release

@@ -23,7 +23,7 @@ export function CustomTimeColumnContent({ isDestination, leg, timeOptions }) {
   return (
     <>
       <div>
-        <span style={{ color: "red" }}>
+        <span style={{ color: "#E60000" }}>
           {time && coreUtils.time.formatTime(time, timeOptions)}
         </span>
       </div>
@@ -80,7 +80,7 @@ export const StyledItineraryBody = styled(ItineraryBody)`
   }
 
   ${ItineraryBodyClasses.TimeColumn} {
-    color: #999;
+    color: #676767;
     font-size: 14px;
     padding-right: 4px;
     padding-top: 1px;

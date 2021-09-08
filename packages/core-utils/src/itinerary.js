@@ -118,7 +118,7 @@ export function getMapColor(mode) {
   mode = mode || this.get("mode");
   if (mode === "WALK") return "#444";
   if (mode === "BICYCLE") return "#0073e5";
-  if (mode === "SUBWAY") return "#f00";
+  if (mode === "SUBWAY") return "#e60000";
   if (mode === "RAIL") return "#b00";
   if (mode === "BUS") return "#080";
   if (mode === "TRAM") return "#800";
@@ -466,10 +466,15 @@ export function getTransitFare(fareComponent) {
   let digits = 2;
   let transitFare = 0;
   let symbol = "$";
+  let currencyCode = "USD";
   if (fareComponent) {
-    digits = fareComponent.currency.defaultFractionDigits;
+    // Assign values without declaration. See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#assignment_without_declaration
+    ({
+      currencyCode,
+      defaultFractionDigits: digits,
+      symbol
+    } = fareComponent.currency);
     transitFare = fareComponent.cents;
-    symbol = fareComponent.currency.symbol;
   }
   // For cents to string conversion, use digits from fare component.
   const centsToString = cents => {
@@ -480,6 +485,7 @@ export function getTransitFare(fareComponent) {
   const dollarsToString = dollars => `${symbol}${dollars.toFixed(2)}`;
   return {
     centsToString,
+    currencyCode,
     dollarsToString,
     transitFare
   };
@@ -487,29 +493,37 @@ export function getTransitFare(fareComponent) {
 
 /**
  * For an itinerary, calculates the transit/TNC fares and returns an object with
- * these values as well as string formatters.
+ * these values, currency info, as well as string formatters.
+ * It is assumed that the same currency is used for transit and TNC legs.
  */
 export function calculateFares(itinerary) {
   // Extract fare total from itinerary fares.
   const fareComponent =
     itinerary.fare && itinerary.fare.fare && itinerary.fare.fare.regular;
   // Get string formatters and itinerary fare.
-  const { centsToString, dollarsToString, transitFare } = getTransitFare(
-    fareComponent
-  );
+  const {
+    centsToString,
+    currencyCode: transitCurrencyCode,
+    dollarsToString,
+    transitFare
+  } = getTransitFare(fareComponent);
   // Process any TNC fares
   let minTNCFare = 0;
   let maxTNCFare = 0;
+  let tncCurrencyCode;
   itinerary.legs.forEach(leg => {
     if (leg.mode === "CAR" && leg.hailedCar && leg.tncData) {
-      const { maxCost, minCost } = leg.tncData;
+      const { currency, maxCost, minCost } = leg.tncData;
       // TODO: Support non-USD
       minTNCFare += minCost;
       maxTNCFare += maxCost;
+      tncCurrencyCode = currency;
     }
   });
+
   return {
     centsToString,
+    currencyCode: transitCurrencyCode || tncCurrencyCode,
     dollarsToString,
     maxTNCFare,
     minTNCFare,

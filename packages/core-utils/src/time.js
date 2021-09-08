@@ -1,44 +1,89 @@
-import moment from "moment-timezone";
+import {
+  startOfDay,
+  add,
+  format,
+  formatDuration as dateFnsFormatDuration
+} from "date-fns";
+import { utcToZonedTime } from "date-fns-tz";
 
 // special constants for making sure the following date format is always sent to
 // OTP regardless of whatever the user has configured as the display format
 export const OTP_API_DATE_FORMAT = "YYYY-MM-DD";
+// Date-Fns uses a different string format than moment.js
+// see https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md
+export const OTP_API_DATE_FORMAT_DATE_FNS = "yyyy-MM-dd";
 export const OTP_API_TIME_FORMAT = "HH:mm";
 
+/**
+ * To ease the transition away from moment.js, this method uses date-fns to format durations
+ * the way moment.js did.
+ * @param {number}  seconds     The number of seconds to format
+ * @param {boolean} showSeconds Whether to render seconds or not
+ * @param {boolean} localize    If true, will create output like moment.js using date-fns locale.
+ * Otherwise, uses date-fns default
+ * @returns                   Formatted duration
+ */
+function formatDurationLikeMoment(seconds, showSeconds, localize = true) {
+  // date-fns doesn't do this automatically
+  if ((!showSeconds && seconds < 60) || seconds === 0) {
+    return "0 min";
+  }
+
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds - hours * 3600) / 60);
+  const secondsLeftOver = showSeconds
+    ? seconds - hours * 3600 - minutes * 60
+    : 0;
+  const specLookup = {
+    xHours: "hr",
+    xMinutes: "min",
+    xSeconds: "sec"
+  };
+  const locale = localize
+    ? {
+        code: "en-US",
+        formatDistance: (spec, val) => {
+          return `${val} ${specLookup[spec]}`;
+        }
+      }
+    : undefined;
+
+  return dateFnsFormatDuration(
+    {
+      hours,
+      minutes,
+      seconds: secondsLeftOver
+    },
+    {
+      format: ["hours", "minutes", "seconds"],
+      locale
+    }
+  );
+}
 /**
  * @param  {[type]} config the OTP config object found in store
  * @return {string}        the config-defined time formatter or HH:mm (24-hr time)
  */
 export function getTimeFormat(config) {
-  return config.dateTime && config.dateTime.timeFormat
-    ? config.dateTime.timeFormat
-    : OTP_API_TIME_FORMAT;
+  return config?.dateTime?.timeFormat || OTP_API_TIME_FORMAT;
 }
 
 export function getDateFormat(config) {
-  return config.dateTime && config.dateTime.dateFormat
-    ? config.dateTime.dateFormat
-    : OTP_API_DATE_FORMAT;
+  return config?.dateTime?.dateFormat || OTP_API_DATE_FORMAT;
 }
 
 export function getLongDateFormat(config) {
-  return config.dateTime && config.dateTime.longDateFormat
-    ? config.dateTime.longDateFormat
-    : "D MMMM YYYY";
+  return config?.dateTime?.longDateFormat || "D MMMM YYYY";
 }
 
 /**
- * Formats an elapsed time duration for display in narrative
+ * Formats an elapsed time duration for display in narrative.
  * TODO: internationalization
  * @param {number} seconds duration in seconds
  * @returns {string} formatted text representation
  */
 export function formatDuration(seconds) {
-  const dur = moment.duration(seconds, "seconds");
-  let text = "";
-  if (dur.hours() > 0) text += `${dur.hours()} hr, `;
-  text += `${dur.minutes()} min`;
-  return text;
+  return formatDurationLikeMoment(seconds, false);
 }
 
 /**
@@ -48,14 +93,8 @@ export function formatDuration(seconds) {
  * @returns {string} formatted text representation
  */
 export function formatDurationWithSeconds(seconds) {
-  const dur = moment.duration(seconds, "seconds");
-  let text = "";
-  if (dur.hours() > 0) text += `${dur.hours()} hr, `;
-  if (dur.minutes() > 0) text += `${dur.minutes()} min, `;
-  text += `${dur.seconds()} sec`;
-  return text;
+  return formatDurationLikeMoment(seconds, true);
 }
-
 /**
  * Formats a time value for display in narrative
  * TODO: internationalization/timezone
@@ -63,41 +102,31 @@ export function formatDurationWithSeconds(seconds) {
  * @returns {string} formatted text representation
  */
 export function formatTime(ms, options) {
-  return moment(ms + (options && options.offset ? options.offset : 0)).format(
-    options && options.format ? options.format : OTP_API_TIME_FORMAT
+  return format(
+    ms + (options?.offset || 0),
+    options?.format || OTP_API_TIME_FORMAT
   );
 }
 
 /**
  * Formats a seconds after midnight value for display in narrative
  * @param  {number} seconds  time since midnight in seconds
- * @param  {string} timeFormat  A valid moment.js time format
+ * @param  {string} timeFormat  A valid date-fns time format
  * @return {string}                   formatted text representation
  */
 export function formatSecondsAfterMidnight(seconds, timeFormat) {
-  return moment()
-    .startOf("day")
-    .seconds(seconds)
-    .format(timeFormat);
+  const time = add(startOfDay(new Date()), { seconds });
+  return format(time, timeFormat);
 }
 
 /**
- * Get the timezone name that is set for the user that is currently looking at
- * this website. Use a bit of hackery to force a specific timezone if in a
- * test environment.
+ * Uses Intl.DateTimeFormat() api to get the user's time zone. In a test
+ * environment, pulls timezone information from an env variable. Default to
+ * GMT+0 if the Intl API is unavailable.
  */
-export function getUserTimezone() {
+export function getUserTimezone(fallbackTimezone = "Etc/Greenwich") {
   if (process.env.NODE_ENV === "test") return process.env.TZ;
-  // FIXME There is an issue with tz.guess being undefined that has not yet been
-  // resolved. https://github.com/opentripplanner/otp-ui/issues/152
-  if (!moment.tz || typeof moment.tz.guess !== "function") {
-    // eslint-disable-next-line no-console
-    console.warn(
-      "Error guessing user's timezone (moment.tz or moment.tz.guess not defined). Defaulting to America/New_York."
-    );
-    return "America/New_York";
-  }
-  return moment.tz.guess();
+  return Intl?.DateTimeFormat().resolvedOptions().timeZone || fallbackTimezone;
 }
 
 /**
@@ -105,9 +134,7 @@ export function getUserTimezone() {
  * The conversion to the user's timezone is needed for testing purposes.
  */
 export function getCurrentTime(timezone = getUserTimezone()) {
-  return moment()
-    .tz(timezone)
-    .format(OTP_API_TIME_FORMAT);
+  return format(utcToZonedTime(Date.now(), timezone), OTP_API_TIME_FORMAT);
 }
 
 /**
@@ -115,7 +142,8 @@ export function getCurrentTime(timezone = getUserTimezone()) {
  * The conversion to the user's timezone is needed for testing purposes.
  */
 export function getCurrentDate(timezone = getUserTimezone()) {
-  return moment()
-    .tz(timezone)
-    .format(OTP_API_DATE_FORMAT);
+  return format(
+    utcToZonedTime(Date.now(), timezone),
+    OTP_API_DATE_FORMAT_DATE_FNS
+  );
 }
