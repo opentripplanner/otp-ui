@@ -14,7 +14,7 @@ module.exports = {
   globalSetup: "<rootDir>/test-utils/global-setup.js",
   moduleNameMapper: {
     "\\.(s?css|less)$": "identity-obj-proxy",
-    "\\.(svg|woff2)$": "<rootDir>/__mocks__/file-mock.js"
+    "\\.(svg)$": "<rootDir>/__mocks__/file-mock.js"
   },
   testPathIgnorePatterns: ["<rootDir>/packages/(?:.+?)/(esm|lib)/"]
 };
