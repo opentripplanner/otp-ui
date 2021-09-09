@@ -7,8 +7,6 @@ import { Polyline } from "react-leaflet";
 import * as turf from "@turf/helpers";
 import nearestPointOnLine from "@turf/nearest-point-on-line";
 
-turf.nearestPointOnLine = nearestPointOnLine;
-
 /**
  * creates the line segments array for the overlay
  *
@@ -50,7 +48,7 @@ export function findPointOnLine(splitPoint, geom) {
   if (splitPoint && geom && geom.length > 1) {
     const pt = turf.point(splitPoint);
     const line = turf.lineString(geom);
-    const snapped = turf.nearestPointOnLine(line, pt, { units: "miles" });
+    const snapped = nearestPointOnLine(line, pt, { units: "miles" });
     if (
       snapped &&
       snapped.properties.index &&
