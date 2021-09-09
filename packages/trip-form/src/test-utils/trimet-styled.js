@@ -10,11 +10,14 @@ import "./trimet-mock.css"; // Downloads the font.
 
 const TriMetStyled = styled.div`
   font-family: Hind, sans-serif;
-  background-color: #f0f0f0;
+  background-color: #333;
   padding: 15px;
 
+  ${TripFormClasses.ModeSelector} {
+    background: #eee;
+  }
   ${TripFormClasses.SettingsHeader} {
-    color: #333333;
+    color: #eee;
     font-size: 18px;
     margin: 16px 0px;
   }
@@ -25,6 +28,9 @@ const TriMetStyled = styled.div`
     padding-top: 8px;
     color: #fff;
     font-weight: 100;
+  }
+  ${TripFormClasses.ModeButton} {
+    background: #eee;
   }
   ${TripFormClasses.ModeButton.Button} {
     border: 1px solid rgb(187, 187, 187);
@@ -109,6 +115,16 @@ const TriMetStyled = styled.div`
   }
   ${TripFormClasses.SubmodeSelector.InlineRow} {
     margin: -3px 0px;
+  }
+  ${TripFormClasses.DateTimeSelector} {
+    div {
+      button {
+        color: #eee;
+      }
+      button.active {
+        background-color: navy;
+      }
+    }
   }
   ${TripFormClasses.ModeSelector.MainRow} {
     padding: 0px 5px;
