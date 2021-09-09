@@ -20,6 +20,7 @@ export const TripOptionsSubContainer = styled.div`
 
 export const TransitOptionsContainer = styled.div`
   display: flex;
+  gap: 20px;
   > button {
     flex: 1;
   }
@@ -28,6 +29,18 @@ export const TransitOptionsContainer = styled.div`
 export const Image = styled.img`
   max-width: 100%;
 `;
+
+export const FeaturedOptionImageWrapper = styled.div`
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ${Image} {
+    max-height: 200px;
+  }
+`;
+
 
 export const MaxHeightImage = styled(Image)`
   max-height: 200px;
@@ -212,6 +225,6 @@ export const ScrollableRow = styled(isTestEnv ? "div" : ScrollContainer)`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-right: 12px;
+    margin-right: 24px;
   }
 `;
