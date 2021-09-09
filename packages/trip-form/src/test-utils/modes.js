@@ -1,3 +1,7 @@
+import bikeImage from "./static/bike.svg";
+import carImage from "./static/car.svg";
+import scooterImage from "./static/scooter.svg";
+
 const commonModes = {
   transitModes: [
     {
@@ -26,8 +30,7 @@ const commonModes = {
       description:
         "A bicycle, also called a bike or cycle, is a human-powered or motor-powered, pedal-driven, single-track vehicle, having two wheels attached to a frame, one behind the other. A bicycle rider is called a cyclist, or bicyclist.",
       id: "BICYCLE",
-      image:
-        "https://cdn.shopify.com/s/files/1/0514/3160/4395/files/ronin-titanium-natural-sram-red-axs_1024x.png?v=1617366397",
+      image: bikeImage,
       // 00A0 is non-breakable space used to prevent awkward breaking of "Bike Rental"
       label: `+ Bike or Bike${"\u00A0"}Rental`,
       type: "access",
@@ -45,8 +48,7 @@ const commonModes = {
     {
       description:
         "A ridesharing company (also known as a transportation network company, ride-hailing service; the vehicles are called app-taxis or e-taxis) is a company that, via websites and mobile apps, matches passengers with drivers of vehicles for hire that, unlike taxicabs, cannot legally be hailed from the street.",
-      image:
-        "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FUSION_2020.png",
+      image: carImage,
       // 00A0 is non-breakable space used to prevent awkward breaking of "Park & Ride"
       label: `+ Ridehail or Park${"\u00A0"}&${"\u00A0"}Ride`,
       type: "access",
@@ -67,8 +69,7 @@ const commonModes = {
     {
       description:
         "E-scooters are battery-powered devices that you can rent on-the-spot using an app on your phone. You can quickly and easily connect to and from your transit stop, using one of several scooter brands operating in the Portland area.",
-      image:
-        "https://help.bird.co/hc/article_attachments/360040546211/b1_image.png",
+      image: scooterImage,
       label: "+ E-Scooter Rental",
       type: "access",
       mode: "MICROMOBILITY_RENT",

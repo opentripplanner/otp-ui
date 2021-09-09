@@ -23,7 +23,9 @@ const FeaturedOptionOverlay = ({
       <button onClick={() => setFeaturedOption(null)} type="button">
         Back
       </button>
-      <S.MaxHeightImage src={category.image} />
+      <S.FeaturedOptionImageWrapper>
+        <S.MaxHeightImage src={category.image} />
+      </S.FeaturedOptionImageWrapper>
       <S.OverlayHeader>{category.label}</S.OverlayHeader>
       <p>{category.description}</p>
       <S.OverlayOptions>

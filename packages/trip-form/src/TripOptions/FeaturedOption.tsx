@@ -83,7 +83,9 @@ const FeaturedOption = ({
         <S.QuestionButton onClick={() => setFeaturedOption(option)}>
           <QuestionCircle />
         </S.QuestionButton>
-        <S.Image src={category.image} />
+        <S.FeaturedOptionImageWrapper>
+          <S.Image src={category.image} />
+        </S.FeaturedOptionImageWrapper>
       </div>
     </S.FeaturedOptionContainer>
   );

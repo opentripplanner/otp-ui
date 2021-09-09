@@ -4,6 +4,7 @@ import TrimetModeIcon from "../../../icons/lib/trimet-mode-icon-2021";
 
 // FIXME: Move this to @opentripplanner/types added in https://github.com/opentripplanner/otp-ui/pull/281
 export interface ButtonProps {
+  icon?: React.ReactElement;
   inset?: boolean;
   mode?: string;
   onClick(): void;
@@ -23,11 +24,14 @@ export default function Checkbox(
     checked,
     children,
     className,
+    icon,
     inset,
     mode,
     onClick,
     selected
   } = props;
+
+  const modeIcon = icon || <TrimetModeIcon mode={mode} />;
 
   return (
     <S.Checkbox
@@ -38,11 +42,7 @@ export default function Checkbox(
       onClick={onClick}
       selected={selected}
     >
-      {mode && (
-        <S.ModeIconWrapper>
-          <TrimetModeIcon mode={mode} />
-        </S.ModeIconWrapper>
-      )}
+      {mode && <S.ModeIconWrapper>{modeIcon}</S.ModeIconWrapper>}
       {checked ? <S.GreenCheck /> : <S.UncheckedIcon />}
       {children}
     </S.Checkbox>
