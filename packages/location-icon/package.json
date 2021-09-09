@@ -10,7 +10,8 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "styled-icons": "^9.1.0"
+    "@styled-icons/fa-regular": "^9.1.0",
+    "@styled-icons/fa-solid": "^9.1.0"
   },
   "peerDependencies": {
     "react": "^16.14.0",

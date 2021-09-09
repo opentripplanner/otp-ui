@@ -2,7 +2,9 @@ import coreUtils from "@opentripplanner/core-utils";
 import moment from "moment";
 import PropTypes from "prop-types";
 import React from "react";
-import { CalendarAlt, Heartbeat, MoneyBillAlt } from "styled-icons/fa-solid";
+import { CalendarAlt } from "@styled-icons/fa-solid/CalendarAlt";
+import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
+import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
 
 import * as S from "./styled";
 import TripDetail from "./trip-detail";

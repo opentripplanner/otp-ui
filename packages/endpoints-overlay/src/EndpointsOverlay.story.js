@@ -2,7 +2,8 @@ import BaseMap from "@opentripplanner/base-map";
 import PropTypes from "prop-types";
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { Cat, Dog } from "styled-icons/fa-solid";
+import { Cat } from "@styled-icons/fa-solid/Cat";
+import { Dog } from "@styled-icons/fa-solid/Dog";
 
 import EndpointsOverlay from ".";
 

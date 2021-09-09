@@ -4,14 +4,12 @@ import LocationIcon from "@opentripplanner/location-icon";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import {
-  Ban,
-  Bus,
-  ExclamationCircle,
-  LocationArrow,
-  Search,
-  Times
-} from "styled-icons/fa-solid";
+import { Ban } from "@styled-icons/fa-solid/Ban";
+import { Bus } from "@styled-icons/fa-solid/Bus";
+import { ExclamationCircle } from "@styled-icons/fa-solid/ExclamationCircle";
+import { LocationArrow } from "@styled-icons/fa-solid/LocationArrow";
+import { Search } from "@styled-icons/fa-solid/Search";
+import { Times } from "@styled-icons/fa-solid/Times";
 import { throttle } from "throttle-debounce";
 
 import {

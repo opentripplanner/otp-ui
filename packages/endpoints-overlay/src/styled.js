@@ -1,6 +1,6 @@
 import LocationIcon from "@opentripplanner/location-icon";
 import styled, { css } from "styled-components";
-import { Circle } from "styled-icons/fa-solid";
+import { Circle } from "@styled-icons/fa-solid/Circle";
 
 export const Button = styled.button`
   background: none;

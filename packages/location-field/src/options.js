@@ -2,7 +2,10 @@ import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceStringImperial } from "@opentripplanner/humanize-distance";
 import PropTypes from "prop-types";
 import React from "react";
-import { Briefcase, Home, MapMarker, MapPin } from "styled-icons/fa-solid";
+import { Briefcase } from "@styled-icons/fa-solid/Briefcase";
+import { Home } from "@styled-icons/fa-solid/Home";
+import { MapMarker } from "@styled-icons/fa-solid/MapMarker";
+import { MapPin } from "@styled-icons/fa-solid/MapPin";
 
 import * as S from "./styled";
 

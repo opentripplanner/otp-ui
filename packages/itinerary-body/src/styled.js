@@ -2,7 +2,9 @@ import { Map } from "@opentripplanner/icons";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
-import { CaretDown, CaretUp, ExclamationTriangle } from "styled-icons/fa-solid";
+import { CaretDown } from "@styled-icons/fa-solid/CaretDown";
+import { CaretUp } from "@styled-icons/fa-solid/CaretUp";
+import { ExclamationTriangle } from "@styled-icons/fa-solid/ExclamationTriangle";
 
 import { toModeBorder, toModeColor, toSafeRouteColor } from "./util";
 
