@@ -57674,7 +57674,13 @@ exports[`Storyshots Trip Form Components Checkbox Selector 1`] = `
   >
     Styled
   </p>
-  <div>
+  <div
+    style={
+      Object {
+        "color": "#333",
+      }
+    }
+  >
     <ForwardRef(trimet-styled__TriMetStyled)>
       <CheckboxSelector
         className={null}
@@ -57728,7 +57734,13 @@ exports[`Storyshots Trip Form Components Date Time Selector 1`] = `
   >
     Styled
   </p>
-  <div>
+  <div
+    style={
+      Object {
+        "color": "#333",
+      }
+    }
+  >
     <ForwardRef(trimet-styled__TriMetStyled)>
       <DateTimeSelector
         className={null}
@@ -57794,7 +57806,13 @@ exports[`Storyshots Trip Form Components Dropdown Selector 1`] = `
   >
     Styled
   </p>
-  <div>
+  <div
+    style={
+      Object {
+        "color": "#333",
+      }
+    }
+  >
     <ForwardRef(trimet-styled__TriMetStyled)>
       <DropdownSelector
         className={null}
@@ -58047,7 +58065,13 @@ exports[`Storyshots Trip Form Components General Settings Panel 1`] = `
   >
     Styled
   </p>
-  <div>
+  <div
+    style={
+      Object {
+        "color": "#333",
+      }
+    }
+  >
     <ForwardRef(trimet-styled__TriMetStyled)>
       <GeneralSettingsPanel
         className={null}
@@ -58281,14 +58305,17 @@ exports[`Storyshots Trip Form Components Mode Buttons 1`] = `
           <span
             style={
               Object {
-                "color": "#CD0000",
+                "color": "rgb(255, 195, 195);",
                 "fontSize": "150%",
               }
             }
           >
-             or 
+             
+            or
+             
           </span>
-           bike
+           
+          bike
         </ModeButton>
         <Space />
         <ModeButton
@@ -58342,7 +58369,13 @@ exports[`Storyshots Trip Form Components Mode Buttons 1`] = `
   >
     Styled
   </p>
-  <div>
+  <div
+    style={
+      Object {
+        "color": "#333",
+      }
+    }
+  >
     <ForwardRef(trimet-styled__TriMetStyled)>
       <div>
         <div>
@@ -58361,14 +58394,17 @@ exports[`Storyshots Trip Form Components Mode Buttons 1`] = `
             <span
               style={
                 Object {
-                  "color": "#CD0000",
+                  "color": "rgb(255, 195, 195);",
                   "fontSize": "150%",
                 }
               }
             >
-               or 
+               
+              or
+               
             </span>
-             bike
+             
+            bike
           </ModeButton>
           <Space />
           <ModeButton
@@ -58486,7 +58522,13 @@ exports[`Storyshots Trip Form Components Mode Selector 1`] = `
   >
     Styled
   </p>
-  <div>
+  <div
+    style={
+      Object {
+        "color": "#333",
+      }
+    }
+  >
     <ForwardRef(trimet-styled__TriMetStyled)>
       <ModeSelector
         className={null}
@@ -58599,7 +58641,13 @@ exports[`Storyshots Trip Form Components Submode Selector 1`] = `
   >
     Styled
   </p>
-  <div>
+  <div
+    style={
+      Object {
+        "color": "#333",
+      }
+    }
+  >
     <ForwardRef(trimet-styled__TriMetStyled)>
       <SubmodeSelector
         className={null}
