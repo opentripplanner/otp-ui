@@ -11,7 +11,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^3.2.4",
+    "@opentripplanner/core-utils": "^4.1.0",
     "flat": "^5.0.2",
     "moment": "^2.24.0",
     "styled-icons": "^9.1.0",
