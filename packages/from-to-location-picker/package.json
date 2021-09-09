@@ -9,8 +9,8 @@
   "module": "esm/index.js",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^3.0.4",
-    "@opentripplanner/location-icon": "^1.0.1",
+    "@opentripplanner/location-icon": "^1.3.0",
+    "@opentripplanner/core-utils": "^4.1.0",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {

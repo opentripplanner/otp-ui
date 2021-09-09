@@ -1,3 +1,4 @@
+// FIXME: refactor all these stories to 1) remove knobs (deprecated) and 2) un-disable them (remove invalid useState())
 import BaseMap from "@opentripplanner/base-map";
 import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
@@ -321,35 +322,53 @@ export default {
 export const SimpleOverlay = simple;
 
 SimpleOverlay.story = {
-  name: "Simple overlay"
+  name: "Simple overlay",
+  parameters: {
+    storyshots: { disable: true }
+  }
 };
 
 export const SimpleOverlayAlternativeWsData = alternate;
 
 SimpleOverlayAlternativeWsData.story = {
-  name: "Simple overlay (alternative ws data)"
+  name: "Simple overlay (alternative ws data)",
+  parameters: {
+    storyshots: { disable: true }
+  }
 };
 
 export const SimpleRectanglesClickToSelect = clickRectangles;
 
 SimpleRectanglesClickToSelect.story = {
-  name: "Simple rectangles (click to select)"
+  name: "Simple rectangles (click to select)",
+  parameters: {
+    storyshots: { disable: true }
+  }
 };
 
 export const StaticRectanglesMarkerPopups = rectangles;
 
 StaticRectanglesMarkerPopups.story = {
-  name: "Static rectangles (marker popups)"
+  name: "Static rectangles (marker popups)",
+  parameters: {
+    storyshots: { disable: true }
+  }
 };
 
 export const RealTimeCircles = rtCircles;
 
 RealTimeCircles.story = {
-  name: "Real-time circles"
+  name: "Real-time circles",
+  parameters: {
+    storyshots: { disable: true }
+  }
 };
 
 export const RealTimeRectangles = rtRectangles;
 
 RealTimeRectangles.story = {
-  name: "Real-time rectangles"
+  name: "Real-time rectangles",
+  parameters: {
+    storyshots: { disable: true }
+  }
 };
