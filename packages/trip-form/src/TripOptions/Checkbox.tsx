@@ -1,6 +1,6 @@
 import React from "react";
+import { TrimetModeIcon2021 as TrimetModeIcon } from "@opentripplanner/icons";
 import * as S from "./styled";
-import TrimetModeIcon from "../../../icons/lib/trimet-mode-icon-2021";
 
 // FIXME: Move this to @opentripplanner/types added in https://github.com/opentripplanner/otp-ui/pull/281
 export interface ButtonProps {
