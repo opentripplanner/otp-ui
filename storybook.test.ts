@@ -9,9 +9,14 @@ initStoryshots({
     map-based components especially benefit from rendering as if they were 
     being rendered by a client. This results in more detailed and useful 
     snapshots. This method renders each story as if it were being rendered 
-    by a browser. */
+    by a browser, although with react syntax. A server-based render is done 
+    below. */
     const jsx = await story.render();
     expect(jsx).toMatchSnapshot();
     done();
   }
 });
+
+// Also test using the default render method as it catches some changes
+// the new method does not
+initStoryshots();
