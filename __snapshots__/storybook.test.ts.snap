@@ -22299,9 +22299,9 @@ exports[`Storyshots ItineraryBody/otp-ui Custom Alert Icons Itinerary 1`] = `
         },
       ],
       "componentStyle": e {
-        "baseHash": -305475607,
+        "baseHash": -1590828588,
         "baseStyle": undefined,
-        "componentId": "OtpUiItineraryBodystory__CustomAlertIconsItinerary-sc-t2x6mr-1",
+        "componentId": "OtpUiItineraryBodystory__CustomAlertIconsItinerary-t2x6mr-1",
         "isStatic": false,
         "rules": Array [
           "",
@@ -22312,7 +22312,7 @@ exports[`Storyshots ItineraryBody/otp-ui Custom Alert Icons Itinerary 1`] = `
       "foldedComponentIds": Array [],
       "render": [Function],
       "shouldForwardProp": undefined,
-      "styledComponentId": "OtpUiItineraryBodystory__CustomAlertIconsItinerary-sc-t2x6mr-1",
+      "styledComponentId": "OtpUiItineraryBodystory__CustomAlertIconsItinerary-t2x6mr-1",
       "target": Object {
         "$$typeof": Symbol(react.forward_ref),
         "displayName": "Bomb",
@@ -22332,9 +22332,9 @@ exports[`Storyshots ItineraryBody/otp-ui Custom Alert Icons Itinerary 1`] = `
         },
       ],
       "componentStyle": e {
-        "baseHash": 932129992,
+        "baseHash": 1176001621,
         "baseStyle": undefined,
-        "componentId": "OtpUiItineraryBodystory__CustomAlertIconsItinerary-sc-t2x6mr-0",
+        "componentId": "OtpUiItineraryBodystory__CustomAlertIconsItinerary-t2x6mr-0",
         "isStatic": false,
         "rules": Array [
           "",
@@ -22345,7 +22345,7 @@ exports[`Storyshots ItineraryBody/otp-ui Custom Alert Icons Itinerary 1`] = `
       "foldedComponentIds": Array [],
       "render": [Function],
       "shouldForwardProp": undefined,
-      "styledComponentId": "OtpUiItineraryBodystory__CustomAlertIconsItinerary-sc-t2x6mr-0",
+      "styledComponentId": "OtpUiItineraryBodystory__CustomAlertIconsItinerary-t2x6mr-0",
       "target": Object {
         "$$typeof": Symbol(react.forward_ref),
         "displayName": "Bolt",
