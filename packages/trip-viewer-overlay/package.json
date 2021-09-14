@@ -23,7 +23,7 @@
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {
-    "@opentripplanner/base-map": "^1.0.4",
+    "@opentripplanner/base-map": "^1.2.0",
     "react": "^16.14.0",
     "react-leaflet": "^2.6.1"
   },

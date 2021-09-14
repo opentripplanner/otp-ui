@@ -27,11 +27,12 @@ export const TransitOptionsContainer = styled.div`
 `;
 
 export const Image = styled.img`
+  cursor: pointer;
   max-width: 100%;
 `;
 
 export const FeaturedOptionImageWrapper = styled.div`
-  padding: 2em;
+  padding: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,7 +143,8 @@ export const Checkbox = styled.button.attrs({
     }
     svg {
       position: absolute;
-      right: 7.5%;
+      right: 5.5%;
+      top: 11%;
       @media (max-width: 768px) {
         max-width: 20px;
         max-height: 20px;
@@ -226,5 +228,20 @@ export const ScrollableRow = styled(isTestEnv ? "div" : ScrollContainer)`
     flex-direction: column;
     justify-content: space-between;
     margin-right: 24px;
+  }
+  
+  /* hover effects */
+  &:hover > button {
+    opacity: 0.5;
+  }
+  &:hover > button svg {
+    opacity: 0.5;
+  }
+
+  &:hover > button:hover {
+    opacity: 1;
+  }
+  &:hover > button:hover svg {
+    opacity: 1;
   }
 `;

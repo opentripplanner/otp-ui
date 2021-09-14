@@ -10,7 +10,7 @@
   "private": false,
   "dependencies": {
     "@opentripplanner/core-utils": "^4.1.0",
-    "@opentripplanner/icons": "^1.0.4",
+    "@opentripplanner/icons": "^1.1.1",
     "moment": "^2.17.1",
     "react-indiana-drag-scroll": "^2.0.1"
   },

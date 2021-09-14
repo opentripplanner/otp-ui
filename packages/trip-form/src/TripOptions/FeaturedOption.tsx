@@ -16,8 +16,12 @@ const FeaturedOption = ({
   onQueryParamChange,
   queryParams,
   setFeaturedOption,
-  supportedModes
-}: QueryProps & { setFeaturedOption(option: string): void }) => {
+  supportedModes,
+  questionIcon
+}: QueryProps & {
+  setFeaturedOption(option: string): void;
+  questionIcon?: React.ReactElement;
+}): React.ReactElement => {
   // No featured mode to show if walking to transit
   if (accessModeIsWalkOnly(queryParams?.mode)) return null;
   const nonTransitModes = getNonTransitModes(queryParams?.mode);
@@ -81,10 +85,13 @@ const FeaturedOption = ({
       </div>
       <div>
         <S.QuestionButton onClick={() => setFeaturedOption(option)}>
-          <QuestionCircle />
+          {questionIcon || <QuestionCircle />}
         </S.QuestionButton>
         <S.FeaturedOptionImageWrapper>
-          <S.Image src={category.image} />
+          <S.Image
+            src={category.image}
+            onClick={() => setFeaturedOption(option)}
+          />
         </S.FeaturedOptionImageWrapper>
       </div>
     </S.FeaturedOptionContainer>
