@@ -2751,6 +2751,59 @@
   dependencies:
     "@octokit/openapi-types" "^7.2.0"
 
+"@opentripplanner/endpoints-overlay@^1.2.0":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/endpoints-overlay/-/endpoints-overlay-1.2.1.tgz#4171b3c48277a65b35173fa3bc9c4bed5d9d2f1d"
+  integrity sha512-Pr9c/Q3h05KLDdqK8hOBcSRwPNYdp7JuF4DgZXnBIv2rQ3XECcuofe//CnD5hgFWEwV2IIvRAw/jCIZXyQxndg==
+  dependencies:
+    "@opentripplanner/core-utils" "^4.1.0"
+    "@opentripplanner/location-icon" "^1.3.0"
+    prop-types "^15.7.2"
+    styled-icons "^9.1.0"
+
+"@opentripplanner/from-to-location-picker@^1.2.1":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/from-to-location-picker/-/from-to-location-picker-1.2.2.tgz#e62c6a892ef813d5b4880c0207b7361d9fe9d053"
+  integrity sha512-0NIpng2eCQP49lB+cxassAq18gKlZYg2XBsg5GShEwXS8p8l1bJ3p5k88yUGNUu0ClCE0OxCAXB0o55v4mYf7Q==
+  dependencies:
+    "@opentripplanner/core-utils" "^4.1.0"
+    "@opentripplanner/location-icon" "^1.3.0"
+    prop-types "^15.7.2"
+
+"@opentripplanner/icons@^1.1.0":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/icons/-/icons-1.1.1.tgz#e8dd28cc4191b1eea68a993460dd34d5ae991cf3"
+  integrity sha512-0gy3TTTisW4cxGSf0J4g/S0MMLlbl06/oU7LI0VhWgaxVhYl8Itg99gB+RRI/FHVPR4P0Aw1+pNOqf4s21+f0w==
+  dependencies:
+    "@opentripplanner/core-utils" "^4.1.0"
+    prop-types "^15.7.2"
+
+"@opentripplanner/icons@ibi-group/otp-ui#new-mode-selector":
+  version "0.0.1"
+  resolved "https://codeload.github.com/ibi-group/otp-ui/tar.gz/80cb9552c7345ad709eb10a08fc78e6330303f9b"
+
+"@opentripplanner/itinerary-body@^2.3.1":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/itinerary-body/-/itinerary-body-2.3.2.tgz#2e9a0a57573c20717e037df46e320c3b9c37995d"
+  integrity sha512-63JkGWm0/1jJmklDnZnukvnorCIN/XB/OIrGHVsE4PyxsGLTv6PC92Y5p8Vn58tfs/Z2n7S9OBP8lvfd540jmg==
+  dependencies:
+    "@opentripplanner/core-utils" "^4.1.0"
+    "@opentripplanner/humanize-distance" "^1.1.0"
+    "@opentripplanner/icons" "^1.1.0"
+    "@opentripplanner/location-icon" "^1.3.0"
+    currency-formatter "^1.5.5"
+    moment "^2.24.0"
+    prop-types "^15.7.2"
+    react-resize-detector "^4.2.1"
+    velocity-react "^1.4.3"
+
+"@opentripplanner/zoom-based-markers@^1.2.0":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/zoom-based-markers/-/zoom-based-markers-1.2.1.tgz#a6ce157ed0169b1098d1ddad3691a712fb6b243b"
+  integrity sha512-2MatM0+PrymcOzRsaCwmHO1nBkJfsBraGUqVkl04oUdwXQx9qKuzba2zq5CEPLacnGOF3EViZcT0kSd/wLzUpA==
+  dependencies:
+    "@opentripplanner/core-utils" "^4.1.0"
+
 "@pmmmwh/react-refresh-webpack-plugin@^0.4.3":
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.4.3.tgz#1eec460596d200c0236bf195b078a5d1df89b766"
