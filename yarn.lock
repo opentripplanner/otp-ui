@@ -2770,6 +2770,14 @@
     "@opentripplanner/location-icon" "^1.3.0"
     prop-types "^15.7.2"
 
+"@opentripplanner/icons@1.1.2-alpha.1":
+  version "1.1.2-alpha.1"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/icons/-/icons-1.1.2-alpha.1.tgz#8c13b23a1301d42fdacb04b0a083fb5305913147"
+  integrity sha512-ci2lQ6vZZqwTFlwho8ept+ADfCa0AkRcMw7pU3eOKIB5EGH6Gy5VI3NyNwBYSv2CGYEYE2RPke4T3FBZ8+gNnA==
+  dependencies:
+    "@opentripplanner/core-utils" "^4.1.0"
+    prop-types "^15.7.2"
+
 "@opentripplanner/icons@^1.1.0":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@opentripplanner/icons/-/icons-1.1.1.tgz#e8dd28cc4191b1eea68a993460dd34d5ae991cf3"
@@ -2777,10 +2785,6 @@
   dependencies:
     "@opentripplanner/core-utils" "^4.1.0"
     prop-types "^15.7.2"
-
-"@opentripplanner/icons@ibi-group/otp-ui#new-mode-selector":
-  version "0.0.1"
-  resolved "https://codeload.github.com/ibi-group/otp-ui/tar.gz/80cb9552c7345ad709eb10a08fc78e6330303f9b"
 
 "@opentripplanner/itinerary-body@^2.3.1":
   version "2.3.2"
