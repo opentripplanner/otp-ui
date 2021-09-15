@@ -754,6 +754,12 @@ exports[`Storyshots Icons/TrimetModeIcon Trimet Mode Icon Examples 1`] = `
 />
 `;
 
+exports[`Storyshots Icons/TrimetModeIcon2021 Trimet Mode Icon Examples 1`] = `
+<ModeIconRenderer
+  component={[Function]}
+/>
+`;
+
 exports[`Storyshots ItineraryBody/otp-react-redux Bike Only Itinerary 1`] = `
 <OtpRRItineraryBodyWrapper
   itinerary={
