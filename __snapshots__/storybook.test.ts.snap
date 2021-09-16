@@ -52334,8 +52334,14 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel 1`] = `
           Object {
             "accessModes": Array [
               Object {
+                "label": "Saunter",
+                "mode": "WALK",
+                "showWheelchairSetting": true,
+              },
+              Object {
                 "label": "Transit + Personal Bike",
                 "mode": "BICYCLE",
+                "showWheelchairSetting": true,
               },
               Object {
                 "label": "Transit + Biketown",
@@ -52348,27 +52354,32 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel 1`] = `
               Object {
                 "label": "Park & Ride",
                 "mode": "CAR_PARK",
+                "showWheelchairSetting": true,
               },
               Object {
                 "company": "Uber",
                 "label": "Transit + Uber",
                 "mode": "CAR_HAIL",
+                "showWheelchairSetting": true,
               },
               Object {
                 "company": "ReachNow",
                 "label": "Transit + ReachNow",
                 "mode": "CAR_RENT",
+                "showWheelchairSetting": true,
               },
               Object {
                 "company": "Car2Go",
                 "label": "Transit + Car2Go",
                 "mode": "CAR_RENT",
+                "showWheelchairSetting": true,
               },
             ],
             "bicycleModes": Array [
               Object {
                 "label": "Own Bike",
                 "mode": "BICYCLE",
+                "showWheelchairSetting": true,
               },
               Object {
                 "label": "Biketown",
@@ -52474,8 +52485,14 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel 1`] = `
             Object {
               "accessModes": Array [
                 Object {
+                  "label": "Saunter",
+                  "mode": "WALK",
+                  "showWheelchairSetting": true,
+                },
+                Object {
                   "label": "Transit + Personal Bike",
                   "mode": "BICYCLE",
+                  "showWheelchairSetting": true,
                 },
                 Object {
                   "label": "Transit + Biketown",
@@ -52488,27 +52505,32 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel 1`] = `
                 Object {
                   "label": "Park & Ride",
                   "mode": "CAR_PARK",
+                  "showWheelchairSetting": true,
                 },
                 Object {
                   "company": "Uber",
                   "label": "Transit + Uber",
                   "mode": "CAR_HAIL",
+                  "showWheelchairSetting": true,
                 },
                 Object {
                   "company": "ReachNow",
                   "label": "Transit + ReachNow",
                   "mode": "CAR_RENT",
+                  "showWheelchairSetting": true,
                 },
                 Object {
                   "company": "Car2Go",
                   "label": "Transit + Car2Go",
                   "mode": "CAR_RENT",
+                  "showWheelchairSetting": true,
                 },
               ],
               "bicycleModes": Array [
                 Object {
                   "label": "Own Bike",
                   "mode": "BICYCLE",
+                  "showWheelchairSetting": true,
                 },
                 Object {
                   "label": "Biketown",
@@ -52688,8 +52710,14 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel With Custom Ic
           Object {
             "accessModes": Array [
               Object {
+                "label": "Saunter",
+                "mode": "WALK",
+                "showWheelchairSetting": true,
+              },
+              Object {
                 "label": "Transit + Personal Bike",
                 "mode": "BICYCLE",
+                "showWheelchairSetting": true,
               },
               Object {
                 "label": "Transit + Biketown",
@@ -52702,27 +52730,32 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel With Custom Ic
               Object {
                 "label": "Park & Ride",
                 "mode": "CAR_PARK",
+                "showWheelchairSetting": true,
               },
               Object {
                 "company": "Uber",
                 "label": "Transit + Uber",
                 "mode": "CAR_HAIL",
+                "showWheelchairSetting": true,
               },
               Object {
                 "company": "ReachNow",
                 "label": "Transit + ReachNow",
                 "mode": "CAR_RENT",
+                "showWheelchairSetting": true,
               },
               Object {
                 "company": "Car2Go",
                 "label": "Transit + Car2Go",
                 "mode": "CAR_RENT",
+                "showWheelchairSetting": true,
               },
             ],
             "bicycleModes": Array [
               Object {
                 "label": "Own Bike",
                 "mode": "BICYCLE",
+                "showWheelchairSetting": true,
               },
               Object {
                 "label": "Biketown",
@@ -52828,8 +52861,14 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel With Custom Ic
             Object {
               "accessModes": Array [
                 Object {
+                  "label": "Saunter",
+                  "mode": "WALK",
+                  "showWheelchairSetting": true,
+                },
+                Object {
                   "label": "Transit + Personal Bike",
                   "mode": "BICYCLE",
+                  "showWheelchairSetting": true,
                 },
                 Object {
                   "label": "Transit + Biketown",
@@ -52842,27 +52881,32 @@ exports[`Storyshots SettingsSelectorPanel Settings Selector Panel With Custom Ic
                 Object {
                   "label": "Park & Ride",
                   "mode": "CAR_PARK",
+                  "showWheelchairSetting": true,
                 },
                 Object {
                   "company": "Uber",
                   "label": "Transit + Uber",
                   "mode": "CAR_HAIL",
+                  "showWheelchairSetting": true,
                 },
                 Object {
                   "company": "ReachNow",
                   "label": "Transit + ReachNow",
                   "mode": "CAR_RENT",
+                  "showWheelchairSetting": true,
                 },
                 Object {
                   "company": "Car2Go",
                   "label": "Transit + Car2Go",
                   "mode": "CAR_RENT",
+                  "showWheelchairSetting": true,
                 },
               ],
               "bicycleModes": Array [
                 Object {
                   "label": "Own Bike",
                   "mode": "BICYCLE",
+                  "showWheelchairSetting": true,
                 },
                 Object {
                   "label": "Biketown",
@@ -57032,8 +57076,14 @@ exports[`Storyshots Trip Form Components General Settings Panel 1`] = `
         Object {
           "accessModes": Array [
             Object {
+              "label": "Saunter",
+              "mode": "WALK",
+              "showWheelchairSetting": true,
+            },
+            Object {
               "label": "Transit + Personal Bike",
               "mode": "BICYCLE",
+              "showWheelchairSetting": true,
             },
             Object {
               "label": "Transit + Biketown",
@@ -57046,27 +57096,32 @@ exports[`Storyshots Trip Form Components General Settings Panel 1`] = `
             Object {
               "label": "Park & Ride",
               "mode": "CAR_PARK",
+              "showWheelchairSetting": true,
             },
             Object {
               "company": "Uber",
               "label": "Transit + Uber",
               "mode": "CAR_HAIL",
+              "showWheelchairSetting": true,
             },
             Object {
               "company": "ReachNow",
               "label": "Transit + ReachNow",
               "mode": "CAR_RENT",
+              "showWheelchairSetting": true,
             },
             Object {
               "company": "Car2Go",
               "label": "Transit + Car2Go",
               "mode": "CAR_RENT",
+              "showWheelchairSetting": true,
             },
           ],
           "bicycleModes": Array [
             Object {
               "label": "Own Bike",
               "mode": "BICYCLE",
+              "showWheelchairSetting": true,
             },
             Object {
               "label": "Biketown",
@@ -57150,8 +57205,14 @@ exports[`Storyshots Trip Form Components General Settings Panel 1`] = `
           Object {
             "accessModes": Array [
               Object {
+                "label": "Saunter",
+                "mode": "WALK",
+                "showWheelchairSetting": true,
+              },
+              Object {
                 "label": "Transit + Personal Bike",
                 "mode": "BICYCLE",
+                "showWheelchairSetting": true,
               },
               Object {
                 "label": "Transit + Biketown",
@@ -57164,27 +57225,32 @@ exports[`Storyshots Trip Form Components General Settings Panel 1`] = `
               Object {
                 "label": "Park & Ride",
                 "mode": "CAR_PARK",
+                "showWheelchairSetting": true,
               },
               Object {
                 "company": "Uber",
                 "label": "Transit + Uber",
                 "mode": "CAR_HAIL",
+                "showWheelchairSetting": true,
               },
               Object {
                 "company": "ReachNow",
                 "label": "Transit + ReachNow",
                 "mode": "CAR_RENT",
+                "showWheelchairSetting": true,
               },
               Object {
                 "company": "Car2Go",
                 "label": "Transit + Car2Go",
                 "mode": "CAR_RENT",
+                "showWheelchairSetting": true,
               },
             ],
             "bicycleModes": Array [
               Object {
                 "label": "Own Bike",
                 "mode": "BICYCLE",
+                "showWheelchairSetting": true,
               },
               Object {
                 "label": "Biketown",

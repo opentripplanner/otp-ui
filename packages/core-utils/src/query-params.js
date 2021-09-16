@@ -600,10 +600,10 @@ const queryParams = [
   {
     /* wheelchair -- whether the user requires a wheelchair-accessible trip */
     name: "wheelchair",
-    routingTypes: ["ITINERARY"],
+    routingTypes: ["ITINERARY", "PROFILE"],
     default: false,
     selector: "CHECKBOX",
-    label: "Wheelchair Accessible",
+    label: "Prefer Wheelchair Accessible Routes",
     applicable: (query, config) => {
       if (!query.mode || !config.modes) return false;
       const configModes = (config.modes.accessModes || []).concat(
