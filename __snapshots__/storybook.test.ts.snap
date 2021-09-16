@@ -754,7 +754,7 @@ exports[`Storyshots Icons/TrimetModeIcon Trimet Mode Icon Examples 1`] = `
 />
 `;
 
-exports[`Storyshots Icons/TrimetModeIcon2021 Trimet Mode Icon Examples 1`] = `
+exports[`Storyshots Icons/TrimetModeIcon2021 Trimet Mode Icon 2021 Examples 1`] = `
 <ModeIconRenderer
   component={[Function]}
 />
