@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Bus } from "styled-icons/fa-solid";
 import LocationField from "..";
 import {
   currentPosition,
