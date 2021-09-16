@@ -62,5 +62,4 @@ export function LocationIcon({
 export default LocationIcon;
 
 // Rename styled components for export
-const Styled = S;
-export { Styled };
+export { S as Styled };

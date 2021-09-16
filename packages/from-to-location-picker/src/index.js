@@ -100,5 +100,4 @@ FromToLocationPicker.defaultProps = {
 export default FromToLocationPicker;
 
 // Rename styled components for export
-const Styled = S;
-export { Styled };
+export { S as Styled };

@@ -188,5 +188,4 @@ TripDetails.defaultProps = {
 export default TripDetails;
 
 // Rename styled components for export
-const Styled = S;
-export { Styled };
+export { S as Styled };
