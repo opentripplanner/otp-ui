@@ -56861,6 +56861,7 @@ exports[`Storyshots Trip Form Components Checkbox Selector 1`] = `
   <div>
     <CheckboxSelector
       className={null}
+      icon={null}
       label="Check me."
       name="MyParam"
       onChange={[Function]}
@@ -56887,6 +56888,7 @@ exports[`Storyshots Trip Form Components Checkbox Selector 1`] = `
     <ForwardRef(trimet-styled__TriMetStyled)>
       <CheckboxSelector
         className={null}
+        icon={null}
         label="Check me."
         name="MyParam"
         onChange={[Function]}

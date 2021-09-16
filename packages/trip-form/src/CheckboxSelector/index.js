@@ -18,7 +18,7 @@ class CheckboxSelector extends Component {
   };
 
   render() {
-    const { className, label, name, style } = this.props;
+    const { className, icon, label, name, style } = this.props;
     const id = `id-query-param-${name}`;
     let { value } = this.props;
     if (typeof value === "string") value = value === "true";
@@ -31,7 +31,10 @@ class CheckboxSelector extends Component {
           checked={value}
           onChange={this.handleChange}
         />
-        <Styled.SettingLabel htmlFor={id}>{label}</Styled.SettingLabel>
+        <Styled.SettingLabel htmlFor={id}>
+          {icon}
+          {label}
+        </Styled.SettingLabel>
       </div>
     );
   }
@@ -55,6 +58,10 @@ CheckboxSelector.propTypes = {
    */
   label: PropTypes.string,
   /**
+   * A react element to render to the left of the label.
+   */
+  icon: PropTypes.element,
+  /**
    * Triggered when the value of the <input> control changes.
    * @param e The data for the HTML checkbox onchange event.
    */
@@ -66,6 +73,7 @@ CheckboxSelector.defaultProps = {
   name: null,
   value: null,
   label: null,
+  icon: null,
   onChange: null
 };
 

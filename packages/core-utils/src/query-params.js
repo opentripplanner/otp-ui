@@ -1,4 +1,6 @@
 import cloneDeep from "lodash.clonedeep";
+import React from "react";
+import { Wheelchair } from "@styled-icons/foundation/Wheelchair";
 
 import {
   isTransit,
@@ -604,6 +606,7 @@ const queryParams = [
     default: false,
     selector: "CHECKBOX",
     label: "Prefer Wheelchair Accessible Routes",
+    icon: <Wheelchair />,
     applicable: (query, config) => {
       if (!query.mode || !config.modes) return false;
       const configModes = (config.modes.accessModes || []).concat(
