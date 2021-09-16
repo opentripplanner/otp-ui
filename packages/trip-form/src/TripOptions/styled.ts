@@ -215,7 +215,7 @@ export const ModeIconWrapper = styled.span`
 `;
 
 // The ScrollContainer doesn't work in the jsdom/server environment, so replace it with a div
-const isServerEnv = navigator?.userAgent?.includes("jsdom");
+const isServerEnv = typeof navigator !== "undefined" ? navigator.userAgent.includes("jsdom") : false;
 export const ScrollableRow = styled(isServerEnv ? "div" : ScrollContainer)`
   background-color: #0a4c8d;
   display: flex;
