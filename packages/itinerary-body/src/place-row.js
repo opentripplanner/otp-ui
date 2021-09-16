@@ -6,6 +6,7 @@ import DefaultTimeColumnContent from "./defaults/time-column-content";
 import AccessLegBody from "./AccessLegBody";
 import * as Styled from "./styled";
 import TransitLegBody from "./TransitLegBody";
+import AccessibilityRating from "./accessibility-rating";
 
 /*
   TODO: Wondering if it's possible for us to destructure the time
@@ -61,6 +62,9 @@ const PlaceRow = ({
           leg={leg}
           timeOptions={timeOptions}
         />
+        {!isDestination && leg.accessibilityScore && (
+          <AccessibilityRating score={leg.accessibilityScore} />
+        )}
       </Styled.TimeColumn>
       <Styled.LineColumn>
         <LineColumnContent

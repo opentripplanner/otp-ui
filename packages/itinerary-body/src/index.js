@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import PlaceRow from "./place-row";
+import AccessibilityRating from "./accessibility-rating";
 import * as Styled from "./styled";
 
 const ItineraryBody = ({
@@ -239,3 +240,5 @@ ItineraryBody.defaultProps = {
 };
 
 export default ItineraryBody;
+
+export { AccessibilityRating };
