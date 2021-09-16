@@ -318,6 +318,7 @@ class LocationField extends Component {
       geocoderConfig,
       inputPlaceholder,
       location,
+      clearButtonIcon,
       LocationIconComponent,
       locationType,
       sessionOptionIcon,
@@ -591,7 +592,7 @@ class LocationField extends Component {
             aria-label="Clear location"
             onClick={this.onClearButtonClick}
           >
-            <Times size={13} />
+            {clearButtonIcon}
           </S.Button>
         </S.InputGroupAddon>
       ) : null;
@@ -854,7 +855,11 @@ LocationField.propTypes = {
    * user locations or recent places. The component will be sent a single prop
    * of `userLocation` which is a userLocationType.
    */
-  UserLocationIconComponent: PropTypes.elementType
+  UserLocationIconComponent: PropTypes.elementType,
+  /** A slot for a component that can be used to display a custom icon for the
+   * clear location button.
+   */
+  clearButtonIcon: PropTypes.node
 };
 
 LocationField.defaultProps = {
@@ -862,6 +867,7 @@ LocationField.defaultProps = {
   addLocationSearch: () => {},
   className: null,
   clearLocation: () => {},
+  clearButtonIcon: <Times size={13} />,
   currentPosition: null,
   currentPositionIcon: <LocationArrow size={13} />,
   currentPositionUnavailableIcon: <Ban size={13} />,

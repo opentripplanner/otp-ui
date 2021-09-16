@@ -33981,6 +33981,11 @@ exports[`Storyshots LocationField/Desktop Context Auto Focus With Multiple Contr
     addLocationSearch={[Function]}
     autoFocus={true}
     className={null}
+    clearButtonIcon={
+      <ForwardRef
+        size={13}
+      />
+    }
     clearLocation={[Function]}
     currentPosition={
       Object {
@@ -34053,6 +34058,11 @@ exports[`Storyshots LocationField/Desktop Context Blank 1`] = `
   addLocationSearch={[Function]}
   autoFocus={false}
   className={null}
+  clearButtonIcon={
+    <ForwardRef
+      size={13}
+    />
+  }
   clearLocation={[Function]}
   currentPosition={
     Object {
@@ -34134,6 +34144,11 @@ exports[`Storyshots LocationField/Desktop Context No Auto Focus With Multiple Co
     addLocationSearch={[Function]}
     autoFocus={false}
     className={null}
+    clearButtonIcon={
+      <ForwardRef
+        size={13}
+      />
+    }
     clearLocation={[Function]}
     currentPosition={
       Object {
@@ -34206,6 +34221,91 @@ exports[`Storyshots LocationField/Desktop Context Selected Location 1`] = `
   addLocationSearch={[Function]}
   autoFocus={false}
   className={null}
+  clearButtonIcon={
+    <ForwardRef
+      size={13}
+    />
+  }
+  clearLocation={[Function]}
+  currentPosition={
+    Object {
+      "coords": Object {
+        "latitude": 45.508246,
+        "longitude": -122.711574,
+      },
+    }
+  }
+  currentPositionIcon={
+    <ForwardRef
+      size={13}
+    />
+  }
+  currentPositionUnavailableIcon={
+    <ForwardRef
+      size={13}
+    />
+  }
+  findNearbyStops={[Function]}
+  geocoderConfig={
+    Object {
+      "baseUrl": "https://ws-st.trimet.org/pelias/v1",
+      "boundary": Object {
+        "rect": Object {
+          "maxLat": 45.7445,
+          "maxLon": -122.135,
+          "minLat": 45.273,
+          "minLon": -123.2034,
+        },
+      },
+      "maxNearbyStops": 4,
+      "type": "PELIAS",
+    }
+  }
+  getCurrentPosition={[Function]}
+  hideExistingValue={false}
+  inputPlaceholder={null}
+  location={
+    Object {
+      "name": "123 Main St",
+    }
+  }
+  locationType="to"
+  nearbyStops={Array []}
+  onLocationSelected={[Function]}
+  onTextInputClick={null}
+  sessionOptionIcon={
+    <ForwardRef
+      size={13}
+    />
+  }
+  sessionSearches={Array []}
+  showClearButton={true}
+  showUserSettings={false}
+  static={false}
+  stopOptionIcon={
+    <ForwardRef
+      size={13}
+    />
+  }
+  stopsIndex={null}
+  suppressNearby={false}
+  userLocationsAndRecentPlaces={Array []}
+/>
+`;
+
+exports[`Storyshots LocationField/Desktop Context Selected Location Custom Clear 1`] = `
+<LocationField
+  GeocodedOptionIconComponent={[Function]}
+  LocationIconComponent={[Function]}
+  UserLocationIconComponent={[Function]}
+  addLocationSearch={[Function]}
+  autoFocus={false}
+  className={null}
+  clearButtonIcon={
+    <ForwardRef
+      size={13}
+    />
+  }
   clearLocation={[Function]}
   currentPosition={
     Object {
@@ -34281,6 +34381,11 @@ exports[`Storyshots LocationField/Desktop Context With Bad Api Key Handles Bad A
   addLocationSearch={[Function]}
   autoFocus={false}
   className={null}
+  clearButtonIcon={
+    <ForwardRef
+      size={13}
+    />
+  }
   clearLocation={[Function]}
   currentPosition={
     Object {
@@ -34353,6 +34458,11 @@ exports[`Storyshots LocationField/Mobile Context Blank 1`] = `
   addLocationSearch={[Function]}
   autoFocus={false}
   className={null}
+  clearButtonIcon={
+    <ForwardRef
+      size={13}
+    />
+  }
   clearLocation={[Function]}
   currentPosition={
     Object {
@@ -34424,6 +34534,91 @@ exports[`Storyshots LocationField/Mobile Context Selected Location 1`] = `
   addLocationSearch={[Function]}
   autoFocus={false}
   className={null}
+  clearButtonIcon={
+    <ForwardRef
+      size={13}
+    />
+  }
+  clearLocation={[Function]}
+  currentPosition={
+    Object {
+      "coords": Object {
+        "latitude": 45.508246,
+        "longitude": -122.711574,
+      },
+    }
+  }
+  currentPositionIcon={
+    <ForwardRef
+      size={13}
+    />
+  }
+  currentPositionUnavailableIcon={
+    <ForwardRef
+      size={13}
+    />
+  }
+  findNearbyStops={[Function]}
+  geocoderConfig={
+    Object {
+      "baseUrl": "https://ws-st.trimet.org/pelias/v1",
+      "boundary": Object {
+        "rect": Object {
+          "maxLat": 45.7445,
+          "maxLon": -122.135,
+          "minLat": 45.273,
+          "minLon": -123.2034,
+        },
+      },
+      "maxNearbyStops": 4,
+      "type": "PELIAS",
+    }
+  }
+  getCurrentPosition={[Function]}
+  hideExistingValue={false}
+  inputPlaceholder={null}
+  location={
+    Object {
+      "name": "123 Main St",
+    }
+  }
+  locationType="to"
+  nearbyStops={Array []}
+  onLocationSelected={[Function]}
+  onTextInputClick={null}
+  sessionOptionIcon={
+    <ForwardRef
+      size={13}
+    />
+  }
+  sessionSearches={Array []}
+  showClearButton={true}
+  showUserSettings={false}
+  static={true}
+  stopOptionIcon={
+    <ForwardRef
+      size={13}
+    />
+  }
+  stopsIndex={null}
+  suppressNearby={false}
+  userLocationsAndRecentPlaces={Array []}
+/>
+`;
+
+exports[`Storyshots LocationField/Mobile Context Selected Location Custom Clear 1`] = `
+<LocationField
+  GeocodedOptionIconComponent={[Function]}
+  LocationIconComponent={[Function]}
+  UserLocationIconComponent={[Function]}
+  addLocationSearch={[Function]}
+  autoFocus={false}
+  className={null}
+  clearButtonIcon={
+    <ForwardRef
+      size={13}
+    />
+  }
   clearLocation={[Function]}
   currentPosition={
     Object {
@@ -34531,6 +34726,11 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 1`] = `
   addLocationSearch={[Function]}
   autoFocus={false}
   className={null}
+  clearButtonIcon={
+    <ForwardRef
+      size={13}
+    />
+  }
   clearLocation={[Function]}
   currentPosition={
     Object {
@@ -34665,6 +34865,11 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 1`] = `
   addLocationSearch={[Function]}
   autoFocus={false}
   className={null}
+  clearButtonIcon={
+    <ForwardRef
+      size={13}
+    />
+  }
   clearLocation={[Function]}
   currentPosition={
     Object {
@@ -34768,6 +34973,11 @@ exports[`Storyshots LocationField/Mobile Context With Session Searches 1`] = `
   addLocationSearch={[Function]}
   autoFocus={false}
   className={null}
+  clearButtonIcon={
+    <ForwardRef
+      size={13}
+    />
+  }
   clearLocation={[Function]}
   currentPosition={
     Object {
@@ -34847,6 +35057,11 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 1`] = `
   addLocationSearch={[Function]}
   autoFocus={false}
   className={null}
+  clearButtonIcon={
+    <ForwardRef
+      size={13}
+    />
+  }
   clearLocation={[Function]}
   currentPosition={
     Object {
