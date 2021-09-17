@@ -1,56 +1,65 @@
 import React from "react";
 import styled from "styled-components";
 import { Wheelchair } from "@styled-icons/foundation/Wheelchair";
-import { ThumbsUp } from "@styled-icons/fa-regular/ThumbsUp";
-import { ThumbsDown } from "@styled-icons/fa-regular/ThumbsDown";
-import { QuestionCircle } from "@styled-icons/fa-regular/QuestionCircle";
 
-const Wrapper = styled.div`
+interface WrapperProps {
+  color: string;
+  large: boolean;
+}
+
+const Wrapper = styled.div<WrapperProps>`
   display: flex;
   align-items: center;
   background-color: ${props => props.color};
-  border-radius: 20px;
+  border-radius: ${props => (props.large ? "4px" : "20px")};
   padding: 0.25em 0.6em 0.25em 0.4em;
   margin-top: 0.25em;
+  word-wrap: anywhere; /* this can often look quite bad, but helps encourage icons */
+
+  width: ${props => (props.large ? "65px" : "50px")};
+  justify-content: space-between;
 `;
 const StatusWrapper = styled.span`
   flex: 1;
 `;
 
 const AccessibilityRating = ({
-  score,
-  gradationMap
+  gradationMap,
+  large = false,
+  score
 }: {
-  score: number;
   gradationMap?: Record<
     number,
     { color: string; icon?: JSX.Element; text?: string }
   >;
+  large: boolean;
+  score: number;
 }): JSX.Element => {
   // Provide default mapping
   const mapping = gradationMap || {
-    0.0: { color: "#ffb5b9", icon: <ThumbsDown />, text: "Not Accessible" },
+    0.0: { color: "#ffb5b9", text: "Not Accessible" },
     0.5: {
       color: "#b5d1ff",
-      icon: <QuestionCircle />,
-      text: "Partly Accessible"
+      text: "Unknown"
     },
-    0.9: { color: "#bfffb5", icon: <ThumbsUp />, text: "Accessible" }
+    0.9: { color: "#bfffb5", text: "Accessible" }
   };
 
   // Find the highest (including equality) key for our score.
   const mappedKey: number = parseFloat(
     Object.keys(mapping)
       .sort()
+      // Start at the top, so the first one that is less/equal to our score is the correct label
       .reverse()
       .find(key => parseFloat(key) <= score)
   );
 
-  const mapped = mapping[mappedKey];
+  // External configuration may report "0.0" as 0, so include fallback
+  const mapped = mapping[mappedKey] || mapping[0.0];
 
   return (
-    <Wrapper color={mapped.color} title={mapped.text}>
-      <Wheelchair style={{ flex: "2" }} />
+    <Wrapper large={large} color={mapped.color} title={mapped.text}>
+      <Wheelchair style={{ flex: "2", minWidth: "20px" }} />
       <StatusWrapper>
         {/* Show either icon or text if no icon given */}
         {mapped.icon || <h5>{mapped.text}</h5>}

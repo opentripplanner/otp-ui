@@ -13,6 +13,7 @@ import AccessibilityRating from "./accessibility-rating";
   preferences from the config object and avoid making the props list so long
 */
 const PlaceRow = ({
+  accessibilityScoreGradationMap,
   config,
   diagramVisible,
   fare,
@@ -63,7 +64,10 @@ const PlaceRow = ({
           timeOptions={timeOptions}
         />
         {!isDestination && leg.accessibilityScore && (
-          <AccessibilityRating score={leg.accessibilityScore} />
+          <AccessibilityRating
+            gradationMap={accessibilityScoreGradationMap}
+            score={leg.accessibilityScore}
+          />
         )}
       </Styled.TimeColumn>
       <Styled.LineColumn>
@@ -189,7 +193,12 @@ PlaceRow.propTypes = {
   TransitLegSubheader: PropTypes.elementType,
   TransitLegSummary: PropTypes.elementType.isRequired,
   AlertToggleIcon: PropTypes.elementType,
-  AlertBodyIcon: PropTypes.elementType
+  AlertBodyIcon: PropTypes.elementType,
+  accessibilityScoreGradationMap: PropTypes.shape({
+    color: PropTypes.string,
+    text: PropTypes.string,
+    icon: PropTypes.element
+  })
 };
 
 PlaceRow.defaultProps = {
@@ -205,7 +214,8 @@ PlaceRow.defaultProps = {
   timeOptions: null,
   TransitLegSubheader: undefined,
   AlertToggleIcon: undefined,
-  AlertBodyIcon: undefined
+  AlertBodyIcon: undefined,
+  accessibilityScoreGradationMap: undefined
 };
 
 export default PlaceRow;

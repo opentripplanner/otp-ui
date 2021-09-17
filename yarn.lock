@@ -3796,14 +3796,6 @@
     "@styled-icons/styled-icon" "^9.4.1"
     tslib "^1.9.3"
 
-"@styled-icons/fa-regular@^10.34.0":
-  version "10.34.0"
-  resolved "https://registry.yarnpkg.com/@styled-icons/fa-regular/-/fa-regular-10.34.0.tgz#b6761412c0b2985eae60d20bff77e76cecd2deb8"
-  integrity sha512-QUqljT+uIfowGurV5GzjnHA1qvq922H+6yGRzQYBxBZ5Vgaak4Q71jtCSMqZKXcOG3tngMyhrOuaNaPOw1Q1pQ==
-  dependencies:
-    "@babel/runtime" "^7.14.0"
-    "@styled-icons/styled-icon" "^10.6.3"
-
 "@styled-icons/fa-regular@^9.4.1":
   version "9.4.1"
   resolved "https://registry.yarnpkg.com/@styled-icons/fa-regular/-/fa-regular-9.4.1.tgz#556b1840e97db031b5c07a7175b57103e3fd988b"

@@ -32,7 +32,8 @@ const ItineraryBody = ({
   TransitLegSubheader,
   TransitLegSummary,
   AlertToggleIcon,
-  AlertBodyIcon
+  AlertBodyIcon,
+  accessibilityScoreGradationMap
 }) => {
   /*
     TODO: replace component should update logic? companies is simply used to
@@ -82,6 +83,7 @@ const ItineraryBody = ({
           TransitLegSummary={TransitLegSummary}
           AlertToggleIcon={AlertToggleIcon}
           AlertBodyIcon={AlertBodyIcon}
+          accessibilityScoreGradationMap={accessibilityScoreGradationMap}
         />
       );
     }
@@ -215,7 +217,16 @@ ItineraryBody.propTypes = {
    * A custom icon component inserted into the transit alert body component
    * within a transit leg, if this prop is not supplied a default icon is used
    */
-  AlertBodyIcon: PropTypes.elementType
+  AlertBodyIcon: PropTypes.elementType,
+  /**
+   * A mapping of accessibility score to color, icon, and text used
+   * to override the default one shipped in AccessibilityLabel
+   */
+  accessibilityScoreGradationMap: PropTypes.shape({
+    color: PropTypes.string,
+    text: PropTypes.string,
+    icon: PropTypes.element
+  })
 };
 
 function noop() {}
@@ -236,7 +247,8 @@ ItineraryBody.defaultProps = {
   toRouteAbbreviation: noop,
   TransitLegSubheader: undefined,
   AlertToggleIcon: undefined,
-  AlertBodyIcon: undefined
+  AlertBodyIcon: undefined,
+  accessibilityScoreGradationMap: undefined
 };
 
 export default ItineraryBody;
