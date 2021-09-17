@@ -6,7 +6,7 @@ import * as ItineraryBodyClasses from "../styled";
 const StyledItineraryBody = styled(ItineraryBody)`
   font-size: 16px;
 
-  * {
+  *:not(.fa) {
     box-sizing: border-box;
     font-family: Hind, sans-serif;
     vertical-align: middle;

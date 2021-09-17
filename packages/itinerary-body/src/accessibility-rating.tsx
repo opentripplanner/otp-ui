@@ -21,6 +21,10 @@ const Wrapper = styled.div<WrapperProps>`
 `;
 const StatusWrapper = styled.span`
   flex: 1;
+
+  span {
+    display: block;
+  }
 `;
 
 const AccessibilityRating = ({
