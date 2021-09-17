@@ -41,9 +41,9 @@ const AccessibilityRating = ({
 }): JSX.Element => {
   // Provide default mapping
   const mapping = gradationMap || {
-    0.0: { color: "#ffb5b9", text: "Not Accessible" },
+    0.0: { color: "#ffe4e5", text: "Not Accessible" },
     0.5: {
-      color: "#b5d1ff",
+      color: "#dbe9ff",
       text: "Unknown"
     },
     0.9: { color: "#bfffb5", text: "Accessible" }
