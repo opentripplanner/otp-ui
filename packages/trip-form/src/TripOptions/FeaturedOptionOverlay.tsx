@@ -18,7 +18,7 @@ const FeaturedOptionOverlay = ({
   // Find the mode that matches the selected category
   const category = supportedModes.categories.find(
     c =>
-      // Each supported mode may have "sub-modes". We need to identify the correct one to match the cateogry correctly
+      // Each supported mode may have "sub-modes". We need to identify the correct one to match the category correctly
       featuredOption ===
       getCategoryModes(c).find(mode => featuredOption === mode)
   );
