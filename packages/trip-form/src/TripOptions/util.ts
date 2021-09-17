@@ -38,10 +38,10 @@ export const categoryIsActive = (
   return false;
 };
 
-export function getCategoryModes(category: Category) {
+export function getCategoryModes(category: Category): string[] {
   return category.mode ? [category.mode] : category.options.map(o => o.mode);
 }
 
-export function getCategoryPrimaryMode(category: Category) {
+export function getCategoryPrimaryMode(category: Category): string {
   return getCategoryModes(category)[0];
 }

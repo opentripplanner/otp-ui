@@ -3,7 +3,7 @@ import React from "react";
 
 import * as S from "./styled";
 import { Company, Modes } from "./types";
-import { getCategoryPrimaryMode } from "./util";
+import { getCategoryModes } from "./util";
 
 const FeaturedOptionOverlay = ({
   featuredOption,
@@ -14,9 +14,13 @@ const FeaturedOptionOverlay = ({
   setFeaturedOption(option: string): void;
   supportedCompanies: Company[];
   supportedModes: Modes;
-}) => {
+}): JSX.Element => {
+  // Find the mode that matches the selected category
   const category = supportedModes.categories.find(
-    c => featuredOption === getCategoryPrimaryMode(c)
+    c =>
+      // Each supported mode may have "sub-modes". We need to identify the correct one to match the cateogry correctly
+      featuredOption ===
+      getCategoryModes(c).find(mode => featuredOption === mode)
   );
   return (
     <S.OverlayContainer>
