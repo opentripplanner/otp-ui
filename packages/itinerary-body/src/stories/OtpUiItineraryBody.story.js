@@ -2,7 +2,8 @@ import coreUtils from "@opentripplanner/core-utils";
 import { ClassicLegIcon } from "@opentripplanner/icons";
 import PropTypes from "prop-types";
 import React from "react";
-import { Bomb, Bolt } from "styled-icons/fa-solid";
+import { Bomb } from "@styled-icons/fa-solid/Bomb";
+import { Bolt } from "@styled-icons/fa-solid/Bolt";
 import styled from "styled-components";
 
 import ItineraryBody from "..";

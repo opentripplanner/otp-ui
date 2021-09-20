@@ -2,34 +2,34 @@ import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 
-import * as Styled from "./styled";
+import * as S from "./styled";
 
 export default function TNCLeg({ leg, LegIcon }) {
   const { tncData } = leg;
   if (!tncData) return null;
 
   return (
-    <Styled.Leg>
-      <Styled.ModeIcon>
+    <S.Leg>
+      <S.ModeIcon>
         <LegIcon leg={leg} />
-      </Styled.ModeIcon>
-      <Styled.LegBody>
-        <Styled.LegHeader>
+      </S.ModeIcon>
+      <S.LegBody>
+        <S.LegHeader>
           <b>Take {tncData.displayName}</b> to <b>{leg.to.name}</b>
-        </Styled.LegHeader>
-        <Styled.LegDetails>
-          <Styled.LegDetail>
+        </S.LegHeader>
+        <S.LegDetails>
+          <S.LegDetail>
             Estimated wait time for pickup:{" "}
             <b>{coreUtils.time.formatDuration(tncData.estimatedArrival)}</b>
-          </Styled.LegDetail>
-          <Styled.LegDetail>
+          </S.LegDetail>
+          <S.LegDetail>
             Estimated travel time:{" "}
             <b>{coreUtils.time.formatDuration(leg.duration)}</b> (does not
             account for traffic)
-          </Styled.LegDetail>
-        </Styled.LegDetails>
-      </Styled.LegBody>
-    </Styled.Leg>
+          </S.LegDetail>
+        </S.LegDetails>
+      </S.LegBody>
+    </S.Leg>
   );
 }
 

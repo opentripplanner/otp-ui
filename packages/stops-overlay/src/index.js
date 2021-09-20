@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import React from "react";
 import { FeatureGroup, MapLayer, withLeaflet } from "react-leaflet";
 
+import DefaultStopMarker from "./default-stop-marker";
+
 /**
  * An overlay to view a collection of stops.
  */
@@ -101,3 +103,5 @@ StopsOverlay.propTypes = {
 };
 
 export default withLeaflet(StopsOverlay);
+
+export { DefaultStopMarker };

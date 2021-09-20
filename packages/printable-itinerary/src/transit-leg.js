@@ -2,7 +2,7 @@ import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 
-import * as Styled from "./styled";
+import * as S from "./styled";
 
 export default function TransitLeg({
   leg,
@@ -13,44 +13,44 @@ export default function TransitLeg({
   // Handle case of transit leg interlined w/ previous
   if (leg.interlineWithPreviousLeg) {
     return (
-      <Styled.CollapsedTop>
-        <Styled.LegBody>
-          <Styled.LegHeader>
+      <S.CollapsedTop>
+        <S.LegBody>
+          <S.LegHeader>
             Continues as{" "}
             <b>
               {leg.routeShortName} {leg.routeLongName}
             </b>{" "}
             to <b>{leg.to.name}</b>
-          </Styled.LegHeader>
-          <Styled.LegDetails>
-            <Styled.LegDetail>
+          </S.LegHeader>
+          <S.LegDetails>
+            <S.LegDetail>
               Get off at <b>{leg.to.name}</b> at{" "}
               {coreUtils.time.formatTime(leg.endTime, timeOptions)}
-            </Styled.LegDetail>
-          </Styled.LegDetails>
-        </Styled.LegBody>
-      </Styled.CollapsedTop>
+            </S.LegDetail>
+          </S.LegDetails>
+        </S.LegBody>
+      </S.CollapsedTop>
     );
   }
 
   return (
-    <Styled.Leg>
-      <Styled.ModeIcon>
+    <S.Leg>
+      <S.ModeIcon>
         <LegIcon leg={leg} />
-      </Styled.ModeIcon>
-      <Styled.LegBody>
-        <Styled.LegHeader>
+      </S.ModeIcon>
+      <S.LegBody>
+        <S.LegHeader>
           <b>
             {leg.routeShortName} {leg.routeLongName}
           </b>{" "}
           to <b>{leg.to.name}</b>
-        </Styled.LegHeader>
-        <Styled.LegDetails>
-          <Styled.LegDetail>
+        </S.LegHeader>
+        <S.LegDetails>
+          <S.LegDetail>
             Board at <b>{leg.from.name}</b> at{" "}
             {coreUtils.time.formatTime(leg.startTime, timeOptions)}
-          </Styled.LegDetail>
-          <Styled.LegDetail>
+          </S.LegDetail>
+          <S.LegDetail>
             {interlineFollows ? (
               <span>
                 Stay on board at <b>{leg.to.name}</b>
@@ -61,10 +61,10 @@ export default function TransitLeg({
                 {coreUtils.time.formatTime(leg.endTime, timeOptions)}
               </span>
             )}
-          </Styled.LegDetail>
-        </Styled.LegDetails>
-      </Styled.LegBody>
-    </Styled.Leg>
+          </S.LegDetail>
+        </S.LegDetails>
+      </S.LegBody>
+    </S.Leg>
   );
 }
 

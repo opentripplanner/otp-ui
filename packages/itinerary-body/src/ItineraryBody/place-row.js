@@ -2,10 +2,10 @@ import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 
-import DefaultTimeColumnContent from "./defaults/time-column-content";
-import AccessLegBody from "./AccessLegBody";
-import * as Styled from "./styled";
-import TransitLegBody from "./TransitLegBody";
+import DefaultTimeColumnContent from "../defaults/time-column-content";
+import AccessLegBody from "../AccessLegBody";
+import * as S from "../styled";
+import TransitLegBody from "../TransitLegBody";
 
 /*
   TODO: Wondering if it's possible for us to destructure the time
@@ -53,16 +53,16 @@ const PlaceRow = ({
 
   const { longDateFormat, timeFormat } = config.dateTime;
   return (
-    <Styled.PlaceRowWrapper key={legIndex || "destination-place"}>
-      <Styled.TimeColumn>
+    <S.PlaceRowWrapper key={legIndex || "destination-place"}>
+      <S.TimeColumn>
         {/* Custom rendering of the departure/arrival time of the specified leg. */}
         <TimeColumnContent
           isDestination={isDestination}
           leg={leg}
           timeOptions={timeOptions}
         />
-      </Styled.TimeColumn>
-      <Styled.LineColumn>
+      </S.TimeColumn>
+      <S.LineColumn>
         <LineColumnContent
           interline={interline}
           isDestination={isDestination}
@@ -72,20 +72,20 @@ const PlaceRow = ({
           legIndex={legIndex}
           toRouteAbbreviation={toRouteAbbreviation}
         />
-      </Styled.LineColumn>
-      <Styled.DetailsColumn hideBorder={hideBorder.toString()}>
-        <Styled.PlaceDetails>
+      </S.LineColumn>
+      <S.DetailsColumn hideBorder={hideBorder.toString()}>
+        <S.PlaceDetails>
           {/* Dot separating interlined segments, if applicable */}
-          <Styled.PlaceHeader>
+          <S.PlaceHeader>
             {/*
               TODO: Need to rework this -- Need to display a marker
               for an interline place
             */}
-            {interline && <Styled.InterlineDot>&bull;</Styled.InterlineDot>}
-            <Styled.PlaceName>
+            {interline && <S.InterlineDot>&bull;</S.InterlineDot>}
+            <S.PlaceName>
               <PlaceName config={config} interline={interline} place={place} />
-            </Styled.PlaceName>
-          </Styled.PlaceHeader>
+            </S.PlaceName>
+          </S.PlaceHeader>
 
           {/* Show the leg, if not rendering the destination */}
           {!isDestination &&
@@ -129,19 +129,19 @@ const PlaceRow = ({
                 timeOptions={timeOptions}
               />
             ))}
-        </Styled.PlaceDetails>
-      </Styled.DetailsColumn>
+        </S.PlaceDetails>
+      </S.DetailsColumn>
       {showMapButtonColumn && (
-        <Styled.MapButtonColumn hideBorder={hideBorder.toString()}>
-          <Styled.MapButton
+        <S.MapButtonColumn hideBorder={hideBorder.toString()}>
+          <S.MapButton
             onClick={() => frameLeg({ isDestination, leg, legIndex, place })}
             title={messages.mapIconTitle}
           >
-            <Styled.MapIcon title="Show on map" />
-          </Styled.MapButton>
-        </Styled.MapButtonColumn>
+            <S.MapIcon title="Show on map" />
+          </S.MapButton>
+        </S.MapButtonColumn>
       )}
-    </Styled.PlaceRowWrapper>
+    </S.PlaceRowWrapper>
   );
 };
 
