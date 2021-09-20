@@ -64,11 +64,11 @@ const ModeRow = ({
           <Checkbox
             aria-checked={hasTransit}
             ariaLabel={category.label}
+            checked={isChecked}
             key={`access-${category.label}`}
+            mode={mode}
             onClick={onChangeMode}
             selected={isChecked}
-            checked={isChecked}
-            mode={mode}
           >
             {category.label}
           </Checkbox>

@@ -3,13 +3,12 @@ import * as S from "./styled";
 // eslint-disable-next-line prettier/prettier
 import type { ButtonProps } from "./Checkbox"
 
-export default function OptionButton(props: {
+export default function OptionButton({ onClick, label, children, className, selected, checked }: {
   checked: boolean;
   children?: React.ReactNode | string;
   className?: string;
   label: string;
 } & ButtonProps): React.ReactElement {
-  const { onClick, label, children, className, selected, checked } = props;
   return (
     <S.OptionButton className={className && className} onClick={onClick} selected={selected}>
       <S.OptionLabel>{label}</S.OptionLabel>

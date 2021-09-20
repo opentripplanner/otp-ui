@@ -98,8 +98,8 @@ export const settingsSelectorPanelUndefinedParams = () => (
 export const tripOptions = () => (
   <PanelWrapper>
     <TripOptions
-      supportedModes={commonModes}
       supportedCompanies={commonCompanies}
+      supportedModes={commonModes}
     />
   </PanelWrapper>
 );

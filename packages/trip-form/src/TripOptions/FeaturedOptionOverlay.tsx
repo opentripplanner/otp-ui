@@ -43,8 +43,10 @@ const FeaturedOptionOverlay = ({
                   {o.image ? <img src={o.image} alt={o.label} /> : o.label}
                 </span>
                 <span className="open-link">
-                  Open app{" "}
-                  <ExternalLinkAlt style={{ height: "1em", width: "1em" }} />
+                  Open app
+                  <ExternalLinkAlt
+                    style={{ height: "1em", width: "1em", marginLeft: "1ch" }}
+                  />
                 </span>
               </a>
             </li>

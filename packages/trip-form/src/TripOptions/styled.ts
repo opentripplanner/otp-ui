@@ -86,6 +86,10 @@ export const OptionButton = styled.button`
       max-height: 20px;
     }
   }
+
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 export const OptionLabel = styled.div``;

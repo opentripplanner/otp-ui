@@ -15,9 +15,9 @@ import * as S from "./styled";
 const FeaturedOption = ({
   onQueryParamChange,
   queryParams,
+  questionIcon,
   setFeaturedOption,
-  supportedModes,
-  questionIcon
+  supportedModes
 }: QueryProps & {
   setFeaturedOption(option: string): void;
   questionIcon?: React.ReactElement;
@@ -74,12 +74,12 @@ const FeaturedOption = ({
           };
           return (
             <OptionButton
-              key={index}
               checked={isChecked}
+              key={index}
+              label={o.label}
               onClick={selectOption}
               selected={isChecked}
-              label={o.label}
-            ></OptionButton>
+            />
           );
         })}
       </div>
@@ -87,11 +87,8 @@ const FeaturedOption = ({
         <S.QuestionButton onClick={() => setFeaturedOption(option)}>
           {questionIcon || <QuestionCircle />}
         </S.QuestionButton>
-        <S.FeaturedOptionImageWrapper>
-          <S.Image
-            src={category.image}
-            onClick={() => setFeaturedOption(option)}
-          />
+        <S.FeaturedOptionImageWrapper onClick={() => setFeaturedOption(option)}>
+          <S.Image src={category.image} />
         </S.FeaturedOptionImageWrapper>
       </div>
     </S.FeaturedOptionContainer>
