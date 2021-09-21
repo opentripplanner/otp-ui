@@ -9,7 +9,6 @@ import {
   Popup,
   withLeaflet
 } from "react-leaflet";
-
 import parkAndRideMarker from "./park-and-ride-marker";
 
 class ParkAndRideOverlay extends MapLayer {
