@@ -17,9 +17,9 @@ export default function VehicleTracker(props) {
   };
 
   return (
-    <S.Button onClick={handleClick} className={cls}>
+    <S.PopupStyle.Button onClick={handleClick} className={cls}>
       {text}
-    </S.Button>
+    </S.PopupStyle.Button>
   );
 }
 
