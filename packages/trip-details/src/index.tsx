@@ -4,9 +4,11 @@ import coreUtils from "@opentripplanner/core-utils";
 import moment from "moment";
 import React, { ReactElement } from "react";
 import { FormattedMessage, FormattedNumber } from "react-intl";
-import { CalendarAlt, Heartbeat, MoneyBillAlt } from "styled-icons/fa-solid";
+import { CalendarAlt } from "@styled-icons/fa-solid/CalendarAlt";
+import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
+import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
 
-import * as Styled from "./styled";
+import * as S from "./styled";
 import TripDetail from "./trip-detail";
 
 import { CaloriesDetailsProps, TripDetailsProps } from "./types";
@@ -108,9 +110,9 @@ export function TripDetails({
   let fare;
   if (transitFare || minTNCFare) {
     fare = (
-      <Styled.Fare>
+      <S.Fare>
         {transitFare && (
-          <Styled.TransitFare>
+          <S.TransitFare>
             <FormattedMessage
               defaultMessage={defaultMessages["otpUi.TripDetails.transitFare"]}
               description="Text showing the price of tickets on public transportation."
@@ -120,10 +122,10 @@ export function TripDetails({
                 transitFare: renderFare(currencyCode, transitFare / 100)
               }}
             />
-          </Styled.TransitFare>
+          </S.TransitFare>
         )}
         {minTNCFare !== 0 && (
-          <Styled.TNCFare>
+          <S.TNCFare>
             <br />
             <FormattedMessage
               defaultMessage={defaultMessages["otpUi.TripDetails.tncFare"]}
@@ -131,20 +133,20 @@ export function TripDetails({
               id="otpUi.TripDetails.tncFare"
               values={{
                 companies: (
-                  // Styled.TNCFareCompanies capitalizes the TNC company ID (e.g. "COMPANY")
+                  // S.TNCFareCompanies capitalizes the TNC company ID (e.g. "COMPANY")
                   // after it is converted to lowercase, so it renders as "Company".
-                  <Styled.TNCFareCompanies>
+                  <S.TNCFareCompanies>
                     {tncCompany.toLowerCase()}
-                  </Styled.TNCFareCompanies>
+                  </S.TNCFareCompanies>
                 ),
                 maxTNCFare: renderFare(currencyCode, maxTNCFare),
                 minTNCFare: renderFare(currencyCode, minTNCFare),
                 strong: boldText
               }}
             />
-          </Styled.TNCFare>
+          </S.TNCFare>
         )}
-      </Styled.Fare>
+      </S.Fare>
     );
   }
 
@@ -158,15 +160,15 @@ export function TripDetails({
   } = coreUtils.itinerary.calculatePhysicalActivity(itinerary);
 
   return (
-    <Styled.TripDetails className={className}>
-      <Styled.TripDetailsHeader>
+    <S.TripDetails className={className}>
+      <S.TripDetailsHeader>
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.TripDetails.title"]}
           description="Title (heading) text of the component."
           id="otpUi.TripDetails.title"
         />
-      </Styled.TripDetailsHeader>
-      <Styled.TripDetailsBody>
+      </S.TripDetailsHeader>
+      <S.TripDetailsBody>
         <TripDetail
           // Any custom description for the Departure message needs to be handled by the slot.
           description={
@@ -176,7 +178,7 @@ export function TripDetails({
           }
           icon={<CalendarAlt size={17} />}
           summary={
-            <Styled.Timing>
+            <S.Timing>
               <FormattedMessage
                 defaultMessage={defaultMessages["otpUi.TripDetails.departure"]}
                 description="Text showing the departure date/time for a trip."
@@ -186,7 +188,7 @@ export function TripDetails({
                   strong: boldText
                 }}
               />
-            </Styled.Timing>
+            </S.Timing>
           }
         />
         {fare && (
@@ -209,7 +211,7 @@ export function TripDetails({
           <TripDetail
             icon={<Heartbeat size={17} />}
             summary={
-              <Styled.CaloriesSummary>
+              <S.CaloriesSummary>
                 <FormattedMessage
                   defaultMessage={defaultMessages["otpUi.TripDetails.calories"]}
                   description="Text showing the number of calories for the walking and biking legs of a trip."
@@ -219,7 +221,7 @@ export function TripDetails({
                     strong: boldText
                   }}
                 />
-              </Styled.CaloriesSummary>
+              </S.CaloriesSummary>
             }
             description={
               CaloriesDetails && (
@@ -232,8 +234,8 @@ export function TripDetails({
             }
           />
         )}
-      </Styled.TripDetailsBody>
-    </Styled.TripDetails>
+      </S.TripDetailsBody>
+    </S.TripDetails>
   );
 }
 
