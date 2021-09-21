@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Bus } from "styled-icons/fa-solid";
 import LocationField from "..";
 import {
   currentPosition,
@@ -58,6 +58,18 @@ export const SelectedLocation = () => (
     location={selectedLocation}
     locationType="to"
     onLocationSelected={onLocationSelected}
+  />
+);
+
+export const SelectedLocationCustomClear = () => (
+  <LocationField
+    currentPosition={currentPosition}
+    geocoderConfig={geocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    location={selectedLocation}
+    locationType="to"
+    onLocationSelected={onLocationSelected}
+    clearButtonIcon={<Bus size={13} />}
   />
 );
 
