@@ -7,6 +7,7 @@ import OptionButton from "./OptionButton";
 import {
   accessModeIsWalkOnly,
   getCategoryModes,
+  getCategoryPrimaryMode,
   getNonTransitModes,
   getSelectedModes
 } from "./util";
@@ -17,7 +18,8 @@ const FeaturedOption = ({
   queryParams,
   questionIcon,
   setFeaturedOption,
-  supportedModes
+  supportedModes,
+  DetailedModeIcon
 }: QueryProps & {
   setFeaturedOption(option: string): void;
   questionIcon?: React.ReactElement;
@@ -88,7 +90,9 @@ const FeaturedOption = ({
           {questionIcon || <QuestionCircle />}
         </S.QuestionButton>
         <S.FeaturedOptionImageWrapper onClick={() => setFeaturedOption(option)}>
-          <S.Image src={category.image} />
+          {(DetailedModeIcon && (
+            <DetailedModeIcon mode={getCategoryPrimaryMode(category)} />
+          )) || <S.Image src={category.image} />}
         </S.FeaturedOptionImageWrapper>
       </div>
     </S.FeaturedOptionContainer>

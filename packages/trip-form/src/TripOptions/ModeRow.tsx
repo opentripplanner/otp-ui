@@ -13,16 +13,19 @@ import {
 const ModeRow = ({
   onQueryParamChange,
   queryParams,
-  supportedModes
+  supportedModes,
+  SimpleModeIcon
 }: {
   onQueryParamChange(paramsToUpdate: QueryParams): void;
   queryParams: QueryParams;
   supportedModes: Modes;
+  SimpleModeIcon?: React.FunctionComponent<{ mode: string }>;
 }): React.ReactElement => {
   const { categories } = supportedModes;
   const selectedModes = getSelectedModes(queryParams);
   const selectedTransit = selectedModes.filter(coreUtils.itinerary.isTransit);
   const hasTransit = selectedTransit.length > 0;
+
   return (
     // errors appear on the next line because in a testing environment,
     // this component is converted to a div which does not support
@@ -34,6 +37,7 @@ const ModeRow = ({
         checked={hasTransit}
         onClick={() => onQueryParamChange({ mode: "TRANSIT" })}
         selected={hasTransit}
+        SimpleModeIcon={SimpleModeIcon}
       >
         Go by Transit
       </Checkbox>
@@ -69,6 +73,7 @@ const ModeRow = ({
             mode={mode}
             onClick={onChangeMode}
             selected={isChecked}
+            SimpleModeIcon={SimpleModeIcon}
           >
             {category.label}
           </Checkbox>

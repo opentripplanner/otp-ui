@@ -1,5 +1,5 @@
 import { ExternalLinkAlt } from "@styled-icons/fa-solid/ExternalLinkAlt";
-import React from "react";
+import React, { FunctionComponent } from "react";
 
 import * as S from "./styled";
 import { Company, Modes } from "./types";
@@ -8,12 +8,14 @@ import { getCategoryModes } from "./util";
 const FeaturedOptionOverlay = ({
   featuredOption,
   setFeaturedOption,
-  supportedModes
+  supportedModes,
+  CompanyIcon
 }: {
   featuredOption: string;
   setFeaturedOption(option: string): void;
   supportedCompanies: Company[];
   supportedModes: Modes;
+  CompanyIcon?: FunctionComponent<{ company: string }>;
 }): JSX.Element => {
   // Find the mode that matches the selected category
   const category = supportedModes.categories.find(
@@ -22,6 +24,10 @@ const FeaturedOptionOverlay = ({
       featuredOption ===
       getCategoryModes(c).find(mode => featuredOption === mode)
   );
+
+  const defaultImageRender = o =>
+    o.image ? <img src={o.image} alt={o.label} /> : o.label;
+
   return (
     <S.OverlayContainer>
       <button onClick={() => setFeaturedOption(null)} type="button">
@@ -40,7 +46,8 @@ const FeaturedOptionOverlay = ({
             <li key={o.label}>
               <a href={o.url}>
                 <span className="label">
-                  {o.image ? <img src={o.image} alt={o.label} /> : o.label}
+                  {(CompanyIcon && <CompanyIcon company={o.company} />) ||
+                    defaultImageRender(o)}
                 </span>
                 <span className="open-link">
                   Open app

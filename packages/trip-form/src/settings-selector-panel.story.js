@@ -1,4 +1,7 @@
-import { ClassicModeIcon } from "@opentripplanner/icons";
+import {
+  ClassicModeIcon,
+  TriMetModeIcon2021 as TriMetModeIcon
+} from "@opentripplanner/icons";
 
 import { action } from "@storybook/addon-actions";
 import React, { Component } from "react";
@@ -100,12 +103,24 @@ export const tripOptions = () => (
     <TripOptions
       supportedCompanies={commonCompanies}
       supportedModes={commonModes}
+      SimpleModeIcon={TriMetModeIcon}
+    />
+  </PanelWrapper>
+);
+export const tripOptionsWithCustomIcons = () => (
+  <PanelWrapper>
+    <TripOptions
+      supportedCompanies={commonCompanies}
+      supportedModes={commonModes}
+      SimpleModeIcon={({ mode }) => <b>{mode}</b>}
+      DetailedModeIcon={({ mode }) => <h1>{mode}</h1>}
+      CompanyIcon={({ company }) => <i style={{ color: "black" }}>{company}</i>}
     />
   </PanelWrapper>
 );
 
 // TODO: resolve a11y issues
-tripOptions.parameters = {
+const disableA11yParamters = {
   a11y: {
     config: {
       rules: [
@@ -116,3 +131,6 @@ tripOptions.parameters = {
     }
   }
 };
+
+tripOptions.parameters = disableA11yParamters;
+tripOptionsWithCustomIcons.parameters = disableA11yParamters;

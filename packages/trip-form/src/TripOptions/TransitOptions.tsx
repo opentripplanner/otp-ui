@@ -9,8 +9,9 @@ import { getSelectedModes } from "./util";
 const TransitOptions = ({
   onQueryParamChange,
   queryParams,
-  supportedModes
-}: QueryProps) => {
+  supportedModes,
+  DetailedModeIcon
+}: QueryProps): JSX.Element => {
   const { transitModes } = supportedModes;
   const selectedModes = getSelectedModes(queryParams);
   const selectedTransit = selectedModes.filter(coreUtils.itinerary.isTransit);
@@ -60,7 +61,10 @@ const TransitOptions = ({
             }}
             selected={isChecked}
           >
-            {transitMode.image && <S.Image src={transitMode.image} />}
+            {(DetailedModeIcon && (
+              <DetailedModeIcon mode={transitMode.mode} />
+            )) ||
+              (transitMode.image && <S.Image src={transitMode.image} />)}
             {transitMode.label}
           </Checkbox>
         );

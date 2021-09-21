@@ -1,3 +1,5 @@
+import { FunctionComponent } from "react";
+
 export interface ModeOption {
   company?: string;
   image?: string;
@@ -57,4 +59,9 @@ export interface QueryProps {
    * The available modes configured for the user to select.
    */
   supportedModes: Modes;
+
+  /**
+   * A component which can override shipped icons
+   */
+  DetailedModeIcon?: FunctionComponent<{ mode: string }>;
 }

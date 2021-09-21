@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from "react";
+import React, { FunctionComponent, ReactElement, useState } from "react";
 
 import GeneralSettingsPanel from "../GeneralSettingsPanel";
 
@@ -26,6 +26,13 @@ interface ComponentProps {
    * Classnames to add to the container div to allow additional styling
    */
   className: string;
+
+  /**
+   * Icon props used for overwriting icons and images throughout the component
+   */
+  SimpleModeIcon?: FunctionComponent<{ mode: string }>;
+  CompanyIcon?: FunctionComponent<{ company: string }>;
+  // DetailedModeIcon is defined in QueryProps
 }
 
 type Props = ComponentProps & QueryProps;
@@ -41,7 +48,10 @@ export default function TripOptions(props: Props): ReactElement {
     onQueryParamChange,
     queryParams,
     supportedCompanies,
-    supportedModes
+    supportedModes,
+    SimpleModeIcon,
+    DetailedModeIcon,
+    CompanyIcon
   } = props;
   if (featuredOption) {
     return (
@@ -51,6 +61,7 @@ export default function TripOptions(props: Props): ReactElement {
           setFeaturedOption={setFeaturedOption}
           supportedCompanies={supportedCompanies}
           supportedModes={supportedModes}
+          CompanyIcon={CompanyIcon}
         />
       </S.TripOptionsContainer>
     );
@@ -61,6 +72,7 @@ export default function TripOptions(props: Props): ReactElement {
         onQueryParamChange={onQueryParamChange}
         queryParams={queryParams}
         supportedModes={supportedModes}
+        SimpleModeIcon={SimpleModeIcon}
       />
       <S.TripOptionsSubContainer>
         <FeaturedOption
@@ -68,6 +80,7 @@ export default function TripOptions(props: Props): ReactElement {
           queryParams={queryParams}
           setFeaturedOption={setFeaturedOption}
           supportedModes={supportedModes}
+          DetailedModeIcon={DetailedModeIcon}
         />
         <GeneralSettingsPanel
           query={queryParams}
@@ -78,6 +91,7 @@ export default function TripOptions(props: Props): ReactElement {
           onQueryParamChange={onQueryParamChange}
           queryParams={queryParams}
           supportedModes={supportedModes}
+          DetailedModeIcon={DetailedModeIcon}
         />
         {footer}
       </S.TripOptionsSubContainer>

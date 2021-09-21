@@ -1,10 +1,9 @@
-import React from "react";
+import React, { FunctionComponent, ReactElement } from "react";
 import { TriMetModeIcon2021 as TriMetModeIcon } from "@opentripplanner/icons";
 import * as S from "./styled";
 
 // FIXME: Move this to @opentripplanner/types added in https://github.com/opentripplanner/otp-ui/pull/281
 export interface ButtonProps {
-  icon?: React.ReactElement;
   inset?: boolean;
   mode?: string;
   onClick(): void;
@@ -17,21 +16,24 @@ export default function Checkbox(
     children: React.ReactNode | string;
     className?: string;
     ariaLabel?: string;
+    SimpleModeIcon?: FunctionComponent<{ mode: string }>;
   } & ButtonProps
-): React.ReactElement {
+): ReactElement {
   const {
     ariaLabel,
     checked,
     children,
     className,
-    icon,
     inset,
     mode,
     onClick,
-    selected
+    selected,
+    SimpleModeIcon
   } = props;
 
-  const modeIcon = icon || <TriMetModeIcon mode={mode} />;
+  const modeIcon = <SimpleModeIcon mode={mode} /> || (
+    <TriMetModeIcon mode={mode} />
+  );
 
   return (
     <S.Checkbox
