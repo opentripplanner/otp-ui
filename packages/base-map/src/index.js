@@ -4,7 +4,7 @@ import { LayersControl, Map, Popup, TileLayer } from "react-leaflet";
 import utils from "@opentripplanner/core-utils";
 import L from "leaflet";
 
-import * as styled from "./styled";
+import * as Styled from "./styled";
 import callIfValid from "./util";
 
 /**
@@ -421,4 +421,4 @@ BaseMap.defaultProps = {
 
 export default BaseMap;
 
-export { styled };
+export { Styled };

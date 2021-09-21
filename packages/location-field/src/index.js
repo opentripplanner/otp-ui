@@ -4,14 +4,12 @@ import LocationIcon from "@opentripplanner/location-icon";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import {
-  Ban,
-  Bus,
-  ExclamationCircle,
-  LocationArrow,
-  Search,
-  Times
-} from "styled-icons/fa-solid";
+import { Ban } from "@styled-icons/fa-solid/Ban";
+import { Bus } from "@styled-icons/fa-solid/Bus";
+import { ExclamationCircle } from "@styled-icons/fa-solid/ExclamationCircle";
+import { LocationArrow } from "@styled-icons/fa-solid/LocationArrow";
+import { Search } from "@styled-icons/fa-solid/Search";
+import { Times } from "@styled-icons/fa-solid/Times";
 import { throttle } from "throttle-debounce";
 
 import {
@@ -20,7 +18,7 @@ import {
   TransitStopOption,
   UserLocationIcon
 } from "./options";
-import * as Styled from "./styled";
+import * as S from "./styled";
 
 // FIXME have a better key generator for options
 let optionKey = 0;
@@ -320,6 +318,7 @@ class LocationField extends Component {
       geocoderConfig,
       inputPlaceholder,
       location,
+      clearButtonIcon,
       LocationIconComponent,
       locationType,
       sessionOptionIcon,
@@ -395,9 +394,9 @@ class LocationField extends Component {
     if (nearbyStops.length > 0 && !suppressNearby) {
       // Add the menu sub-heading (not a selectable item)
       menuItems.push(
-        <Styled.MenuItem header key="ns-header">
+        <S.MenuItem header key="ns-header">
           Nearby Stops
-        </Styled.MenuItem>
+        </S.MenuItem>
       );
 
       // Iterate through the found nearby stops
@@ -440,9 +439,9 @@ class LocationField extends Component {
     if (sessionSearches.length > 0) {
       // Add the menu sub-heading (not a selectable item)
       menuItems.push(
-        <Styled.MenuItem header key="ss-header">
+        <S.MenuItem header key="ss-header">
           Recently Searched
-        </Styled.MenuItem>
+        </S.MenuItem>
       );
 
       // Iterate through any saved locations
@@ -476,9 +475,9 @@ class LocationField extends Component {
     if (userLocationsAndRecentPlaces.length > 0 && showUserSettings) {
       // Add the menu sub-heading (not a selectable item)
       menuItems.push(
-        <Styled.MenuItem header key="mp-header">
+        <S.MenuItem header key="mp-header">
           My Places
-        </Styled.MenuItem>
+        </S.MenuItem>
       );
 
       // Iterate through any saved locations
@@ -569,7 +568,7 @@ class LocationField extends Component {
         ? "Fetching location..."
         : defaultPlaceholder;
     const textControl = (
-      <Styled.Input
+      <S.Input
         ref={ref => {
           this.inputRef = ref;
         }}
@@ -588,58 +587,58 @@ class LocationField extends Component {
     // or if the input field has text.
     const clearButton =
       showClearButton && location ? (
-        <Styled.InputGroupAddon>
-          <Styled.Button
+        <S.InputGroupAddon>
+          <S.Button
             aria-label="Clear location"
             onClick={this.onClearButtonClick}
           >
-            <Times size={13} />
-          </Styled.Button>
-        </Styled.InputGroupAddon>
+            {clearButtonIcon}
+          </S.Button>
+        </S.InputGroupAddon>
       ) : null;
     if (isStatic) {
       // 'static' mode (menu is displayed alongside input, e.g., for mobile view)
       return (
         <div className={className}>
-          <Styled.FormGroup>
-            <Styled.InputGroup>
-              <Styled.InputGroupAddon>
+          <S.FormGroup>
+            <S.InputGroup>
+              <S.InputGroupAddon>
                 <LocationIconComponent locationType={locationType} />
-              </Styled.InputGroupAddon>
+              </S.InputGroupAddon>
               {textControl}
               {clearButton}
-            </Styled.InputGroup>
-          </Styled.FormGroup>
-          <Styled.StaticMenuItemList>
+            </S.InputGroup>
+          </S.FormGroup>
+          <S.StaticMenuItemList>
             {menuItems.length > 0 ? ( // Show typing prompt to avoid empty screen
               menuItems
             ) : (
-              <Styled.MenuItem header centeredText>
+              <S.MenuItem header centeredText>
                 Begin typing to search for locations
-              </Styled.MenuItem>
+              </S.MenuItem>
             )}
-          </Styled.StaticMenuItemList>
+          </S.StaticMenuItemList>
         </div>
       );
     }
 
     // default display mode with dropdown menu
     return (
-      <Styled.FormGroup onBlur={this.onBlurFormGroup} className={className}>
-        <Styled.InputGroup>
+      <S.FormGroup onBlur={this.onBlurFormGroup} className={className}>
+        <S.InputGroup>
           {/* location field icon -- also serves as dropdown anchor */}
-          <Styled.Dropdown
+          <S.Dropdown
             locationType={locationType}
             open={menuVisible}
             onToggle={this.onDropdownToggle}
             title={<LocationIconComponent locationType={locationType} />}
           >
             {menuItems}
-          </Styled.Dropdown>
+          </S.Dropdown>
           {textControl}
           {clearButton}
-        </Styled.InputGroup>
-      </Styled.FormGroup>
+        </S.InputGroup>
+      </S.FormGroup>
     );
   }
 }
@@ -856,7 +855,11 @@ LocationField.propTypes = {
    * user locations or recent places. The component will be sent a single prop
    * of `userLocation` which is a userLocationType.
    */
-  UserLocationIconComponent: PropTypes.elementType
+  UserLocationIconComponent: PropTypes.elementType,
+  /** A slot for a component that can be used to display a custom icon for the
+   * clear location button.
+   */
+  clearButtonIcon: PropTypes.node
 };
 
 LocationField.defaultProps = {
@@ -864,6 +867,7 @@ LocationField.defaultProps = {
   addLocationSearch: () => {},
   className: null,
   clearLocation: () => {},
+  clearButtonIcon: <Times size={13} />,
   currentPosition: null,
   currentPositionIcon: <LocationArrow size={13} />,
   currentPositionUnavailableIcon: <Ban size={13} />,
@@ -888,3 +892,6 @@ LocationField.defaultProps = {
 };
 
 export default LocationField;
+
+// Rename styled components for export
+export { S as Styled };

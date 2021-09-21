@@ -2,6 +2,7 @@ import * as classic from "./classic";
 import * as companies from "./companies";
 import * as directions from "./directions";
 import * as generic from "./generic";
+import IconRenderer from "./icon-renderer";
 import * as standard from "./standard";
 import * as trimet from "./trimet";
 import ClassicLegIcon from "./classic-leg-icon";
@@ -166,6 +167,7 @@ export {
   Help,
   HelpSolid,
   Hopr,
+  IconRenderer,
   Info,
   Left,
   LegIcon,

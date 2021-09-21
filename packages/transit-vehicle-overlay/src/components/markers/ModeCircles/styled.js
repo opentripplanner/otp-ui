@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { Circle } from "styled-icons/fa-solid";
+import { Circle } from "@styled-icons/fa-solid/Circle";
 import { AerialTram, Bus, Streetcar, Max, Wes } from "@opentripplanner/icons";
 import * as utils from "../../../utils";
 
