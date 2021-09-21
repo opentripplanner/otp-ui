@@ -26,7 +26,6 @@ export const TransitOptionsContainer = styled.div`
 `;
 
 export const Image = styled.img`
-  cursor: pointer;
   max-width: 100%;
 `;
 
@@ -35,6 +34,7 @@ export const FeaturedOptionImageWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: ${props => props.onClick ? "pointer" : "auto"};
 
   ${Image} {
     max-height: 200px;
