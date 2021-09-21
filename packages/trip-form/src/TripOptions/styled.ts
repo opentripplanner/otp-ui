@@ -11,7 +11,6 @@ export const TripOptionsContainer = styled.div`
   font-weight: 40;
   max-width: 992px; /* Maximum mobile width */
   min-height: 400px;
-  overflow-y: scroll;
 `;
 export const TripOptionsSubContainer = styled.div`
   max-width: 700px;
