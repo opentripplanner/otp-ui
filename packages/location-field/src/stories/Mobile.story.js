@@ -12,7 +12,7 @@ import {
   PlaneDeparture,
   SkullCrossbones,
   Star,
-  Train, 
+  Train,
   Bus
 } from "styled-icons/fa-solid";
 

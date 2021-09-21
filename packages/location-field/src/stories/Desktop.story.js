@@ -8,7 +8,6 @@ import {
   onLocationSelected,
   selectedLocation
 } from "./common";
-import { Bus } from "styled-icons/fa-solid";
 
 const invalidKeyGeocoderConfig = {
   apiKey: "ge-invalid-key",
