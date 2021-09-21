@@ -21,6 +21,11 @@ interface ComponentProps {
    * featured options
    */
   supportedCompanies: Company[];
+
+  /**
+   * Classnames to add to the container div to allow additional styling
+   */
+  className: string;
 }
 
 type Props = ComponentProps & QueryProps;
@@ -31,6 +36,7 @@ type Props = ComponentProps & QueryProps;
 export default function TripOptions(props: Props): ReactElement {
   const [featuredOption, setFeaturedOption] = useState(null);
   const {
+    className,
     footer,
     onQueryParamChange,
     queryParams,
@@ -39,7 +45,7 @@ export default function TripOptions(props: Props): ReactElement {
   } = props;
   if (featuredOption) {
     return (
-      <S.TripOptionsContainer>
+      <S.TripOptionsContainer className={className}>
         <FeaturedOptionOverlay
           featuredOption={featuredOption}
           setFeaturedOption={setFeaturedOption}
