@@ -1,8 +1,7 @@
 import moment from "moment";
-// HACK: Probably ok to import the file using a relative path as it is used during dev only.
-// Also prettier does not recognize the import type syntax.
+// Prettier does not recognize the import type syntax.
 // eslint-disable-next-line prettier/prettier
-import type { Itinerary } from "../../types/src";
+import type { Itinerary } from "@opentripplanner/types";
 
 export type CaloriesDetailsProps = {
   bikeSeconds: number;
