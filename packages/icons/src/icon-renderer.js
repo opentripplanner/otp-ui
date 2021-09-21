@@ -39,8 +39,8 @@ export default function IconRenderer({
         </tr>
       </thead>
       <tbody>
-        {examples.map((example, idx) => (
-          <tr key={idx}>
+        {examples.map((example, index) => (
+          <tr key={index}>
             <td>{example.type || example}</td>
             <td>
               <div>{renderComponentFn(example)}</div>
