@@ -25,3 +25,6 @@ export const CircledVehicle = utils.makeRotatedMarker(
     );
   }
 );
+
+// Rename styled components for export
+export { StyledCircle as Styled };

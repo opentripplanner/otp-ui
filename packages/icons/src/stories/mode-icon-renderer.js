@@ -1,6 +1,6 @@
 import React from "react";
 
-import IconRenderer from "./icon-renderer";
+import IconRenderer from "../icon-renderer";
 
 const exampleModes = [
   "BICYCLE",

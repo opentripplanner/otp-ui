@@ -3,7 +3,7 @@ import LocationIcon from "@opentripplanner/location-icon";
 import PropTypes from "prop-types";
 import React from "react";
 import styled, { css } from "styled-components";
-import { Circle } from "styled-icons/fa-solid";
+import { Circle } from "@styled-icons/fa-solid/Circle";
 
 const cssWalk = css`
   background: radial-gradient(ellipse at center, #87cefa 40%, transparent 10%);
