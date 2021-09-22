@@ -433,7 +433,7 @@ class LocationField extends Component {
       menuItems = menuItems.concat(
         stationFeatures.length > 0 && (
           <Styled.MenuItem
-            color={layerColorMap.stations}
+            bgColor={layerColorMap.stations}
             centeredText
             header
             key="gtfs-stations-header"
@@ -447,7 +447,7 @@ class LocationField extends Component {
 
         stopFeatures.length > 0 && (
           <Styled.MenuItem
-            color={layerColorMap.stops}
+            bgColor={layerColorMap.stops}
             centeredText
             header
             key="gtfs-stops-header"
@@ -458,7 +458,12 @@ class LocationField extends Component {
         stopFeatures.map(feature => this.renderFeature(itemIndex++, feature)),
 
         otherFeatures.length > 0 && (
-          <Styled.MenuItem color="#333" header centeredText key="other-header">
+          <Styled.MenuItem
+            bgColor="#333"
+            header
+            centeredText
+            key="other-header"
+          >
             Other
           </Styled.MenuItem>
         ),

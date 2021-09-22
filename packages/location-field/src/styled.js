@@ -115,7 +115,7 @@ export const MenuItemA = styled.a`
 `;
 
 export const MenuItemHeader = styled.li`
-  color: #eee;
+  color: ${props => props.fgColor || "#eee"};
   background-color: ${props => props.bgColor || "#333"};
   display: block;
   font-size: 12px;
@@ -143,14 +143,18 @@ export class MenuItem extends Component {
       active,
       centeredText,
       children,
-      color,
+      // foregroundColor and backgroundColor would be prefered, but React has issues with
+      // these since they are style keywords
+      fgColor,
+      bgColor,
       disabled,
       header
     } = this.props;
     return header ? (
       <MenuItemHeader
         className="header"
-        bgColor={color}
+        fgColor={fgColor}
+        bgColor={bgColor}
         centeredText={centeredText}
       >
         {children}
@@ -174,7 +178,8 @@ MenuItem.propTypes = {
   active: PropTypes.bool,
   centeredText: PropTypes.bool,
   children: PropTypes.node.isRequired,
-  color: PropTypes.string,
+  fgColor: PropTypes.string,
+  bgColor: PropTypes.string,
   disabled: PropTypes.bool,
   header: PropTypes.bool,
   onClick: PropTypes.func
@@ -183,7 +188,8 @@ MenuItem.propTypes = {
 MenuItem.defaultProps = {
   active: false,
   centeredText: false,
-  color: null,
+  fgColor: null,
+  bgColor: null,
   disabled: false,
   header: false,
   onClick: null
