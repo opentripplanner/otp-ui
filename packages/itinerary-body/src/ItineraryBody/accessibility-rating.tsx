@@ -42,12 +42,12 @@ const AccessibilityRating = ({
 }): JSX.Element => {
   // Provide default mapping
   const mapping = gradationMap || {
-    0.0: { color: "#ffe4e5", text: "Not Accessible" },
+    0.0: { color: "#ffe4e5", text: "❌" },
     0.5: {
       color: "#dbe9ff",
-      text: "Unknown"
+      text: "？"
     },
-    0.9: { color: "#bfffb5", text: "Accessible" }
+    0.9: { color: "#bfffb5", text: "✅" }
   };
 
   // Find the highest (including equality) key for our score.
