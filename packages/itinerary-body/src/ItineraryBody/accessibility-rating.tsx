@@ -15,6 +15,7 @@ const Wrapper = styled.div<WrapperProps>`
   padding: 0.25em 0.6em 0.25em 0.4em;
   margin-top: 0.25em;
   word-wrap: anywhere; /* this can often look quite bad, but helps encourage icons */
+  max-height: 50px;
 
   width: ${props => (props.large ? "65px" : "50px")};
   justify-content: space-between;

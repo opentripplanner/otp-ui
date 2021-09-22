@@ -2,9 +2,11 @@ import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { AccessibilityRating } from "../../itinerary-body/lib/ItineraryBody";
 import * as S from "./styled";
 
 export default function TransitLeg({
+  accessibilityScoreGradationMap,
   leg,
   LegIcon,
   interlineFollows,
@@ -35,9 +37,17 @@ export default function TransitLeg({
 
   return (
     <S.Leg>
-      <S.ModeIcon>
-        <LegIcon leg={leg} />
-      </S.ModeIcon>
+      <S.LegAnnotation>
+        <S.ModeIcon>
+          <LegIcon leg={leg} />
+        </S.ModeIcon>
+        {leg.accessibilityScore && (
+          <AccessibilityRating
+            gradationMap={accessibilityScoreGradationMap}
+            score={leg.accessibilityScore}
+          />
+        )}
+      </S.LegAnnotation>
       <S.LegBody>
         <S.LegHeader>
           <b>
@@ -69,6 +79,11 @@ export default function TransitLeg({
 }
 
 TransitLeg.propTypes = {
+  accessibilityScoreGradationMap: PropTypes.shape({
+    color: PropTypes.string,
+    text: PropTypes.string,
+    icon: PropTypes.element
+  }),
   interlineFollows: PropTypes.bool,
   leg: coreUtils.types.legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired,
@@ -76,6 +91,7 @@ TransitLeg.propTypes = {
 };
 
 TransitLeg.defaultProps = {
+  accessibilityScoreGradationMap: null,
   interlineFollows: false,
   timeOptions: null
 };

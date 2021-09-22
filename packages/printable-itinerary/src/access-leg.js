@@ -2,15 +2,29 @@ import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
 import PropTypes from "prop-types";
 import React from "react";
+import { AccessibilityRating } from "../../itinerary-body/lib/ItineraryBody";
 
 import * as S from "./styled";
 
-export default function AccessLeg({ config, leg, LegIcon }) {
+export default function AccessLeg({
+  accessibilityScoreGradationMap,
+  config,
+  leg,
+  LegIcon
+}) {
   return (
     <S.Leg>
-      <S.ModeIcon>
-        <LegIcon leg={leg} />
-      </S.ModeIcon>
+      <S.LegAnnotation>
+        <S.ModeIcon>
+          <LegIcon leg={leg} />
+        </S.ModeIcon>
+        {leg.accessibilityScore && (
+          <AccessibilityRating
+            gradationMap={accessibilityScoreGradationMap}
+            score={leg.accessibilityScore}
+          />
+        )}
+      </S.LegAnnotation>
       <S.LegBody>
         <S.LegHeader>
           <b>{coreUtils.itinerary.getLegModeLabel(leg)}</b>{" "}
@@ -38,7 +52,16 @@ export default function AccessLeg({ config, leg, LegIcon }) {
 }
 
 AccessLeg.propTypes = {
+  accessibilityScoreGradationMap: PropTypes.shape({
+    color: PropTypes.string,
+    text: PropTypes.string,
+    icon: PropTypes.element
+  }),
   config: coreUtils.types.configType.isRequired,
   leg: coreUtils.types.legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired
+};
+
+AccessLeg.defaultProps = {
+  accessibilityScoreGradationMap: null
 };
