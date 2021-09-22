@@ -57,6 +57,9 @@ export function Option({
 }
 
 Option.propTypes = {
+  /**
+   * String of classes to apply to container.
+   */
   classes: PropTypes.string,
   color: PropTypes.string,
   disabled: PropTypes.bool,

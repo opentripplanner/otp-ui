@@ -320,10 +320,10 @@ class LocationField extends Component {
 
   renderFeature = (itemIndex, feature) => {
     const {
-      layerColorMap,
-      geocoderConfig,
       addLocationSearch,
       GeocodedOptionIconComponent,
+      geocoderConfig,
+      layerColorMap,
       operatorIconMap
     } = this.props;
     const { activeIndex } = this.state;
@@ -363,13 +363,13 @@ class LocationField extends Component {
     // Create and return the option menu item
     return (
       <Option
-        icon={operatorIcon || <GeocodedOptionIconComponent feature={feature} />}
-        key={optionKey++}
-        title={feature.properties.label}
-        onClick={locationSelected}
-        isActive={itemIndex === activeIndex}
         classes={classNames.join(" ")}
         color={layerColorMap[layer]}
+        icon={operatorIcon || <GeocodedOptionIconComponent feature={feature} />}
+        isActive={itemIndex === activeIndex}
+        key={optionKey++}
+        onClick={locationSelected}
+        title={feature.properties.label}
       />
     );
   };
