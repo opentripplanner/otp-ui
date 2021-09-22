@@ -143,7 +143,7 @@ export class MenuItem extends Component {
       active,
       centeredText,
       children,
-      // foregroundColor and backgroundColor would be prefered, but React has issues with
+      // foregroundColor and backgroundColor would be preferred, but React has issues with
       // these since they are style keywords
       fgColor,
       bgColor,
