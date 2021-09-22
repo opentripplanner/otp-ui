@@ -3,19 +3,21 @@ import React, { FunctionComponent } from "react";
 
 import * as S from "./styled";
 import { Company, Modes } from "./types";
-import { getCategoryModes } from "./util";
+import { getCategoryModes, getCategoryPrimaryMode } from "./util";
 
 const FeaturedOptionOverlay = ({
   featuredOption,
   setFeaturedOption,
   supportedModes,
-  CompanyIcon
+  CompanyIcon,
+  DetailedModeIcon
 }: {
   featuredOption: string;
   setFeaturedOption(option: string): void;
   supportedCompanies: Company[];
   supportedModes: Modes;
   CompanyIcon?: FunctionComponent<{ company: string }>;
+  DetailedModeIcon?: FunctionComponent<{ mode: string }>;
 }): JSX.Element => {
   // Find the mode that matches the selected category
   const category = supportedModes.categories.find(
@@ -34,7 +36,9 @@ const FeaturedOptionOverlay = ({
         Back
       </button>
       <S.FeaturedOptionImageWrapper>
-        <S.MaxHeightImage src={category.image} />
+        {(DetailedModeIcon && (
+          <DetailedModeIcon mode={getCategoryPrimaryMode(category)} />
+        )) || <S.MaxHeightImage src={category.image} />}
       </S.FeaturedOptionImageWrapper>
       <S.OverlayHeader>{category.label}</S.OverlayHeader>
       <p>{category.description}</p>

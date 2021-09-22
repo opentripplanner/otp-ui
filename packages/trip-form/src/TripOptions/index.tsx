@@ -62,6 +62,7 @@ export default function TripOptions(props: Props): ReactElement {
           supportedCompanies={supportedCompanies}
           supportedModes={supportedModes}
           CompanyIcon={CompanyIcon}
+          DetailedModeIcon={DetailedModeIcon}
         />
       </S.TripOptionsContainer>
     );
