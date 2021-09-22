@@ -1,7 +1,6 @@
 import flatten from "flat";
 // @ts-expect-error FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
-import moment from "moment";
 import React, { ReactElement } from "react";
 import { FormattedMessage, FormattedNumber } from "react-intl";
 import { CalendarAlt } from "@styled-icons/fa-solid/CalendarAlt";
@@ -150,7 +149,7 @@ export function TripDetails({
     );
   }
 
-  const departureDate = moment(itinerary.startTime);
+  const departureDate = new Date(itinerary.startTime);
 
   // Compute calories burned.
   const {

@@ -14,7 +14,6 @@
     "@opentripplanner/core-utils": "^4.1.0",
     "@styled-icons/fa-solid": "^10.34.0",
     "flat": "^5.0.2",
-    "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "velocity-react": "^1.4.3"
   },

@@ -1,4 +1,3 @@
-import moment from "moment";
 // Prettier does not recognize the import type syntax.
 // eslint-disable-next-line prettier/prettier
 import type { Itinerary } from "@opentripplanner/types";
@@ -10,7 +9,7 @@ export type CaloriesDetailsProps = {
 };
 
 export type DepartureDetailsProps = {
-  departureDate: moment.Moment;
+  departureDate: Date;
 };
 
 export type FareDetailsProps = {
