@@ -386,6 +386,7 @@ class LocationField extends Component {
       location,
       LocationIconComponent,
       locationType,
+      nearbyStops,
       sessionOptionIcon,
       showClearButton,
       showUserSettings,
@@ -393,9 +394,9 @@ class LocationField extends Component {
       stopOptionIcon,
       stopsIndex,
       suppressNearby,
-      userLocationsAndRecentPlaces,
+      transitResultCount,
       UserLocationIconComponent,
-      nearbyStops
+      userLocationsAndRecentPlaces
     } = this.props;
     const { menuVisible, value } = this.state;
     const { activeIndex, message } = this.state;
@@ -418,16 +419,17 @@ class LocationField extends Component {
       // Add the menu sub-heading (not a selectable item)
       // menuItems.push(<MenuItem header key='sr-header'>Search Results</MenuItem>)
 
-      // Split out transit results
+      // Split out different types of transit results
+      // To keep the list tidy, only include a subset of the responses for each category
       const stopFeatures = geocodedFeatures
         .filter(feature => feature.properties.layer === "stops")
-        .slice(0, 3);
+        .slice(0, transitResultCount);
       const stationFeatures = geocodedFeatures
         .filter(feature => feature.properties.layer === "stations")
-        .slice(0, 3);
+        .slice(0, transitResultCount);
       const otherFeatures = geocodedFeatures
         .filter(feature => feature.properties.source !== "transit")
-        .slice(0, 3);
+        .slice(0, transitResultCount);
 
       // Iterate through the geocoder results
       menuItems = menuItems.concat(
@@ -953,6 +955,12 @@ LocationField.propTypes = {
    */
   suppressNearby: PropTypes.bool,
   /**
+   * When showing special categories of transit response, these can be capped
+   * to prevent the list of responses from getting too long. This value declares
+   * how many responses to show in each category
+   */
+  transitResultCount: PropTypes.number,
+  /**
    * An array of recent locations and places a user has searched for.
    */
   userLocationsAndRecentPlaces: PropTypes.arrayOf(
@@ -993,6 +1001,7 @@ LocationField.defaultProps = {
   stopOptionIcon: <Bus size={13} />,
   stopsIndex: null,
   suppressNearby: false,
+  transitResultCount: 3,
   userLocationsAndRecentPlaces: [],
   UserLocationIconComponent: UserLocationIcon
 };
