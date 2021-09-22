@@ -2,7 +2,7 @@ import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 import PropTypes from "prop-types";
 
-import { PopupStyle } from "./styled";
+import * as S from "./styled";
 
 /**
  * presentational component for tracking button on marker popup
@@ -17,9 +17,9 @@ export default function VehicleTracker(props) {
   };
 
   return (
-    <PopupStyle.Button onClick={handleClick} className={cls}>
+    <S.PopupStyle.Button onClick={handleClick} className={cls}>
       {text}
-    </PopupStyle.Button>
+    </S.PopupStyle.Button>
   );
 }
 
@@ -38,3 +38,6 @@ VehicleTracker.defaultProps = {
   vehicle: null,
   isTracked: false
 };
+
+// Rename styled components for export
+export { S as Styled };

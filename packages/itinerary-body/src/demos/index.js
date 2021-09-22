@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import styled from "styled-components";
-import { ExclamationTriangle } from "styled-icons/fa-solid";
+import { ExclamationTriangle } from "@styled-icons/fa-solid/ExclamationTriangle";
 
 import ItineraryBody from "..";
 import OtpRRTransitLegSubheader from "../otp-react-redux/transit-leg-subheader";

@@ -1,6 +1,6 @@
 import React from "react";
 
-import IconRenderer from "./icon-renderer";
+import IconRenderer from "../icon-renderer";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json");

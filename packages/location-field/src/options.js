@@ -2,9 +2,13 @@ import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceStringImperial } from "@opentripplanner/humanize-distance";
 import PropTypes from "prop-types";
 import React from "react";
-import { Bus, Briefcase, Home, MapMarker, MapPin } from "styled-icons/fa-solid";
+import { Bus } from "@styled-icons/fa-solid/Bus";
+import { Briefcase } from "@styled-icons/fa-solid/Briefcase";
+import { Home } from "@styled-icons/fa-solid/Home";
+import { MapMarker } from "@styled-icons/fa-solid/MapMarker";
+import { MapPin } from "@styled-icons/fa-solid/MapPin";
 
-import * as Styled from "./styled";
+import * as S from "./styled";
 
 export function GeocodedOptionIcon(props) {
   const { feature } = props;
@@ -36,7 +40,7 @@ export function Option({
   classes
 }) {
   return (
-    <Styled.MenuItem onClick={onClick} active={isActive} disabled={disabled}>
+    <S.MenuItem onClick={onClick} active={isActive} disabled={disabled}>
       {coreUtils.ui.isIE() ? (
         // In internet explorer 11, some really weird stuff is happening where it
         // is not possible to click the text of the title, but if you click just
@@ -45,14 +49,14 @@ export function Option({
         // See https://github.com/ibi-group/trimet-mod-otp/issues/237
         title
       ) : (
-        <Styled.OptionContainer className={classes}>
-          <Styled.OptionIconContainer style={{ color }}>
+        <S.OptionContainer className={classes}>
+          <S.OptionIconContainer style={{ color }}>
             {icon}
-          </Styled.OptionIconContainer>
-          <Styled.OptionContent>{title}</Styled.OptionContent>
-        </Styled.OptionContainer>
+          </S.OptionIconContainer>
+          <S.OptionContent>{title}</S.OptionContent>
+        </S.OptionContainer>
       )}
-    </Styled.MenuItem>
+    </S.MenuItem>
   );
 }
 
@@ -80,28 +84,26 @@ Option.defaultProps = {
 
 export function TransitStopOption({ isActive, onClick, stop, stopOptionIcon }) {
   return (
-    <Styled.MenuItem onClick={onClick} active={isActive}>
-      <Styled.StopIconAndDistanceContainer>
+    <S.MenuItem onClick={onClick} active={isActive}>
+      <S.StopIconAndDistanceContainer>
         {stopOptionIcon}
-        <Styled.StopDistance>
+        <S.StopDistance>
           {humanizeDistanceStringImperial(stop.dist, true)}
-        </Styled.StopDistance>
-      </Styled.StopIconAndDistanceContainer>
-      <Styled.StopContentContainer>
-        <Styled.StopName>
+        </S.StopDistance>
+      </S.StopIconAndDistanceContainer>
+      <S.StopContentContainer>
+        <S.StopName>
           {stop.name} ({stop.code})
-        </Styled.StopName>
-        <Styled.StopRoutes>
+        </S.StopName>
+        <S.StopRoutes>
           {(stop.routes || []).map(route => {
             const name = route.shortName || route.longName;
-            return (
-              <Styled.RouteName key={`route-${name}`}>{name}</Styled.RouteName>
-            );
+            return <S.RouteName key={`route-${name}`}>{name}</S.RouteName>;
           })}
-        </Styled.StopRoutes>
-      </Styled.StopContentContainer>
-      <Styled.ClearBoth />
-    </Styled.MenuItem>
+        </S.StopRoutes>
+      </S.StopContentContainer>
+      <S.ClearBoth />
+    </S.MenuItem>
   );
 }
 

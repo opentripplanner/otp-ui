@@ -1,6 +1,7 @@
 import React from "react";
 
-import { Ship } from "styled-icons/fa-solid";
+import { Ship } from "@styled-icons/fa-solid/Ship";
+import { Bus } from "@styled-icons/fa-solid/Bus";
 import LocationField from "..";
 import {
   currentPosition,
@@ -62,6 +63,18 @@ export const SelectedLocation = () => (
     location={selectedLocation}
     locationType="to"
     onLocationSelected={onLocationSelected}
+  />
+);
+
+export const SelectedLocationCustomClear = () => (
+  <LocationField
+    currentPosition={currentPosition}
+    geocoderConfig={geocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    location={selectedLocation}
+    locationType="to"
+    onLocationSelected={onLocationSelected}
+    clearButtonIcon={<Bus size={13} />}
   />
 );
 

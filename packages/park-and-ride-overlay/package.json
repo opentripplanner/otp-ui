@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/park-and-ride-overlay",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A map overlay to show park and rides",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -18,12 +18,12 @@
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
   "dependencies": {
-    "@opentripplanner/from-to-location-picker": "^1.2.1",
     "@opentripplanner/core-utils": "^4.1.0",
+    "@opentripplanner/from-to-location-picker": "^1.2.1",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {
-    "@opentripplanner/base-map": "^1.2.0",
+    "@opentripplanner/base-map": "^2.0.0",
     "react": "^16.14.0",
     "react-dom": "^16.8.6",
     "react-leaflet": "^2.6.1",

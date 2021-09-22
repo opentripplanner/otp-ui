@@ -15,7 +15,7 @@ import TNCLeg from "./tnc-leg";
  * particular component is used in the line-itin (i.e., trimet-mod-otp) version
  * of the narrative itinerary.
  */
-export default class AccessLegBody extends Component {
+class AccessLegBody extends Component {
   constructor(props) {
     super(props);
     this.state = { expanded: false };
@@ -124,4 +124,15 @@ AccessLegBody.defaultProps = {
   diagramVisible: null,
   followsTransit: false,
   timeOptions: null
+};
+
+export default AccessLegBody;
+
+export {
+  AccessLegSteps,
+  AccessLegSummary,
+  LegDiagramPreview,
+  RentedVehicleSubheader,
+  Styled,
+  TNCLeg
 };
