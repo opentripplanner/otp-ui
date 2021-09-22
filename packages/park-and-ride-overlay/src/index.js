@@ -1,4 +1,4 @@
-import { styled as BaseMapStyled } from "@opentripplanner/base-map";
+import { Styled as BaseMapStyled } from "@opentripplanner/base-map";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 import PropTypes from "prop-types";
 import React from "react";
@@ -9,7 +9,6 @@ import {
   Popup,
   withLeaflet
 } from "react-leaflet";
-
 import parkAndRideMarker from "./park-and-ride-marker";
 
 class ParkAndRideOverlay extends MapLayer {

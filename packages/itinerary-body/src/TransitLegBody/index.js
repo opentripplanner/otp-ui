@@ -13,7 +13,7 @@ function pluralize(str, list) {
   return `${str}${list.length > 1 ? "s" : ""}`;
 }
 
-export default class TransitLegBody extends Component {
+class TransitLegBody extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -209,3 +209,7 @@ TransitLegBody.defaultProps = {
   AlertToggleIcon: Styled.DefaultAlertToggleIcon,
   AlertBodyIcon: undefined
 };
+
+export default TransitLegBody;
+
+export { AlertsBody, IntermediateStops, ViewTripButton };

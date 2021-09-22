@@ -4,7 +4,12 @@ import PropTypes from "prop-types";
 import React from "react";
 import { FeatureGroup } from "react-leaflet";
 
-import { Circle, CircledVehicle } from "./components/markers/ModeCircles";
+import * as ModeRectangles from "./components/markers/ModeRectangles";
+import * as ModeCircles from "./components/markers/ModeCircles";
+import * as RotatedMarker from "./components/markers/RotatedMarker";
+import * as CustomTooltip from "./components/popups/CustomTooltip";
+import * as VehiclePopup from "./components/popups/VehiclePopup";
+import * as VehicleTooltip from "./components/popups/VehicleTooltip";
 import RouteGeometry from "./components/RouteGeometry";
 import VehicleGeometry from "./components/VehicleGeometry";
 import * as utils from "./utils";
@@ -14,7 +19,7 @@ import * as utils from "./utils";
  * will show both point positions for a collection of vehicles, as well as being
  * able to render a 'selected' vehicle (and it's route pattern trace)
  */
-export default function TransitVehicleOverlay(props) {
+function TransitVehicleOverlay(props) {
   const {
     center,
     name,
@@ -187,11 +192,11 @@ TransitVehicleOverlay.defaultProps = {
   symbols: [
     {
       minZoom: 0,
-      symbol: Circle
+      symbol: ModeCircles.Circle
     },
     {
       minZoom: 14,
-      symbol: CircledVehicle
+      symbol: ModeCircles.CircledVehicle
     }
   ],
 
@@ -209,4 +214,18 @@ TransitVehicleOverlay.defaultProps = {
   lowlightColor: RouteGeometry.defaultProps.lowlightColor,
   highlight: RouteGeometry.defaultProps.highlight,
   lowlight: RouteGeometry.defaultProps.lowlight
+};
+
+export default TransitVehicleOverlay;
+
+export {
+  CustomTooltip,
+  ModeCircles,
+  ModeRectangles,
+  RotatedMarker,
+  RouteGeometry,
+  utils,
+  VehicleGeometry,
+  VehiclePopup,
+  VehicleTooltip
 };

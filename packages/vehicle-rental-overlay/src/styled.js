@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MapMarkerAlt } from "styled-icons/fa-solid";
+import { MapMarkerAlt } from "@styled-icons/fa-solid/MapMarkerAlt";
 
 /**
  * Bike rental icons are different from other vehicle rental types since they

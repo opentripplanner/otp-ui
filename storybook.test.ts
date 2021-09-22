@@ -15,3 +15,7 @@ initStoryshots({
     done();
   }
 });
+
+// Also test using the default render method as it catches some changes
+// the new method does not
+initStoryshots();
