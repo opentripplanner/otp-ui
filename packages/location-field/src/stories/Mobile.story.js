@@ -12,7 +12,8 @@ import {
   PlaneDeparture,
   SkullCrossbones,
   Star,
-  Train
+  Train,
+  Bus
 } from "styled-icons/fa-solid";
 
 import LocationField from "..";
@@ -144,6 +145,19 @@ export const SelectedLocation = () => (
     location={selectedLocation}
     locationType="to"
     onLocationSelected={onLocationSelected}
+    static
+  />
+);
+
+export const SelectedLocationCustomClear = () => (
+  <LocationField
+    currentPosition={currentPosition}
+    geocoderConfig={geocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    location={selectedLocation}
+    locationType="to"
+    onLocationSelected={onLocationSelected}
+    clearButtonIcon={<Bus size={13} />}
     static
   />
 );

@@ -1,11 +1,11 @@
-import { styled as BaseMapStyled } from "@opentripplanner/base-map";
+import { Styled as BaseMapStyled } from "@opentripplanner/base-map";
 import coreUtils from "@opentripplanner/core-utils";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { CircleMarker, Popup } from "react-leaflet";
 
-import * as Styled from "./styled";
+import * as S from "./styled";
 
 const {
   languageConfigType,
@@ -52,9 +52,9 @@ export default class StopMarker extends Component {
               <span>
                 <b>Stop ID:</b> {idArr[1]}
               </span>
-              <Styled.ViewStopButton onClick={this.onClickView}>
+              <S.ViewStopButton onClick={this.onClickView}>
                 {languageConfig.stopViewer || "Stop Viewer"}
-              </Styled.ViewStopButton>
+              </S.ViewStopButton>
             </BaseMapStyled.PopupRow>
 
             {/* The "Set as [from/to]" ButtonGroup */}

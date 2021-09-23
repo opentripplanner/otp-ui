@@ -4,13 +4,11 @@ import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { Marker, Popup } from "react-leaflet";
 import ReactDOMServer from "react-dom/server";
-import {
-  Briefcase,
-  Home,
-  MapMarkerAlt,
-  Sync,
-  Times
-} from "styled-icons/fa-solid";
+import { Briefcase } from "@styled-icons/fa-solid/Briefcase";
+import { Home } from "@styled-icons/fa-solid/Home";
+import { MapMarkerAlt } from "@styled-icons/fa-solid/MapMarkerAlt";
+import { Sync } from "@styled-icons/fa-solid/Sync";
+import { Times } from "@styled-icons/fa-solid/Times";
 
 import * as Styled from "./styled";
 
