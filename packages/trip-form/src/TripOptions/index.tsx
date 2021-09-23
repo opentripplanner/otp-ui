@@ -30,6 +30,7 @@ interface ComponentProps {
   /**
    * Icon props used for overwriting icons and images throughout the component
    */
+  QuestionIcon: ReactElement;
   SimpleModeIcon?: FunctionComponent<{ mode: string }>;
   CompanyIcon?: FunctionComponent<{ company: string }>;
   // DetailedModeIcon is defined in QueryProps
@@ -49,6 +50,7 @@ export default function TripOptions(props: Props): ReactElement {
     queryParams,
     supportedCompanies,
     supportedModes,
+    QuestionIcon,
     SimpleModeIcon,
     DetailedModeIcon,
     CompanyIcon
@@ -81,6 +83,7 @@ export default function TripOptions(props: Props): ReactElement {
           queryParams={queryParams}
           setFeaturedOption={setFeaturedOption}
           supportedModes={supportedModes}
+          questionIcon={QuestionIcon}
           DetailedModeIcon={DetailedModeIcon}
         />
         <GeneralSettingsPanel

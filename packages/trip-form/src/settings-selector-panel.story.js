@@ -112,6 +112,7 @@ export const tripOptionsWithCustomIcons = () => (
     <TripOptions
       supportedCompanies={commonCompanies}
       supportedModes={commonModes}
+      QuestionIcon={<span>😕</span>}
       SimpleModeIcon={({ mode }) => <b>{mode}</b>}
       DetailedModeIcon={({ mode }) => <h1>{mode}</h1>}
       CompanyIcon={({ company }) => <i style={{ color: "black" }}>{company}</i>}
