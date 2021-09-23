@@ -85,16 +85,21 @@ const FeaturedOption = ({
           );
         })}
       </div>
-      <div>
-        <S.QuestionButton onClick={() => setFeaturedOption(option)}>
+      <S.FeaturedOptionQuestionContainer
+        onClick={() => setFeaturedOption(option)}
+        onKeyPress={() => setFeaturedOption(option)}
+        role="link"
+        tabIndex={0}
+      >
+        <S.QuestionButton>
           {questionIcon || <QuestionCircle />}
         </S.QuestionButton>
-        <S.FeaturedOptionImageWrapper onClick={() => setFeaturedOption(option)}>
+        <S.FeaturedOptionImageWrapper>
           {(DetailedModeIcon && (
             <DetailedModeIcon mode={getCategoryPrimaryMode(category)} />
           )) || <S.Image src={category.image} />}
         </S.FeaturedOptionImageWrapper>
-      </div>
+      </S.FeaturedOptionQuestionContainer>
     </S.FeaturedOptionContainer>
   );
 };

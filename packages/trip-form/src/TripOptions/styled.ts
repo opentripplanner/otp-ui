@@ -25,27 +25,6 @@ export const TransitOptionsContainer = styled.div`
   }
 `;
 
-export const Image = styled.img`
-  max-width: 100%;
-`;
-
-export const FeaturedOptionImageWrapper = styled.div`
-  padding: 1em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: ${props => props.onClick ? "pointer" : "auto"};
-
-  ${Image} {
-    max-height: 200px;
-  }
-`;
-
-
-export const MaxHeightImage = styled(Image)`
-  max-height: 200px;
-`;
-
 export const buttonIconCss = css`
   height: 3em;
   margin-bottom: 10px;
@@ -63,6 +42,71 @@ export const GreenCheck = styled(CheckCircle)`
 export const UncheckedIcon = styled(PlusCircle)`
   ${buttonIconCss}
 `;
+
+export const Image = styled.img`
+  max-width: 100%;
+`;
+
+export const FeaturedOptionImageWrapper = styled.div`
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ${Image} {
+    max-height: 200px;
+  }
+`;
+
+export const ModeIconWrapper = styled.span`
+/* Adjust the checkmark/plus if it is next to a custom icon */
+  ~ ${/* sc-selector */ GreenCheck},
+  ~ ${/* sc-selector */ UncheckedIcon} {
+    position: relative;
+    right: -30px;
+    height: 1.5em;
+    width: 1.5em;
+    top: -50px;
+    margin-bottom: -1em;
+  }
+
+  /* Custom icon for the item, should it be present */
+  & svg {
+    position: relative;
+    height: 3em;
+    width: 3em;
+    fill: white;
+  }
+`;
+
+export const QuestionButton = styled.button`
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: white;
+  cursor: pointer;
+  float: right;
+  opacity: 0.5;
+  > svg {
+    height: 1em;
+    width: 1em;
+  }
+  :hover {
+    opacity: 1;
+  }
+`;
+
+export const FeaturedOptionQuestionContainer = styled.div`
+  cursor: pointer;
+
+  &:hover ${QuestionButton} {
+    opacity: 1;
+  }
+`
+
+export const MaxHeightImage = styled(Image)`
+  max-height: 200px;
+`;
+
 
 export const OptionButton = styled.button`
   align-items: center;
@@ -99,21 +143,6 @@ export const OptionIcon = styled.div`
   }
 `;
 
-export const QuestionButton = styled.button`
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-  color: white;
-  cursor: pointer;
-  float: right;
-  opacity: 0.5;
-  > svg {
-    height: 1em;
-    width: 1em;
-  }
-  :hover {
-    opacity: 1;
-  }
-`;
 
 export const Checkbox = styled.button.attrs({
   role: "checkbox",
@@ -196,26 +225,6 @@ export const OverlayOptions = styled.ul`
   }
 `
 
-export const ModeIconWrapper = styled.span`
-/* Adjust the checkmark/plus if it is next to a custom icon */
-  ~ ${/* sc-selector */ GreenCheck},
-  ~ ${/* sc-selector */ UncheckedIcon} {
-    position: relative;
-    right: -30px;
-    height: 1.5em;
-    width: 1.5em;
-    top: -50px;
-    margin-bottom: -1em;
-  }
-
-  /* Custom icon for the item, should it be present */
-  & svg {
-    position: relative;
-    height: 3em;
-    width: 3em;
-    fill: white;
-  }
-`;
 
 // The ScrollContainer doesn't work in the jsdom/server environment, so replace it with a div
 const isServerEnv = typeof navigator !== "undefined" ? navigator.userAgent.includes("jsdom") : false;
