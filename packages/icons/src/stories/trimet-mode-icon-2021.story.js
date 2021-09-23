@@ -9,6 +9,6 @@ export default {
   component: TrimetModeIcon
 };
 
-export const TrimetModeIconExamples = () => {
-  return <ModeIconRenderer component={TrimetModeIcon} />;
-};
+export const TrimetModeIcon2021Examples = () => (
+  <ModeIconRenderer component={TrimetModeIcon} />
+);

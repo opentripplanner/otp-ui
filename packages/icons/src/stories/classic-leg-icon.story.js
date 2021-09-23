@@ -9,6 +9,6 @@ export default {
   component: ClassicLegIcon
 };
 
-export const ClassicLegIconExamples = () => {
-  return <LegIconRenderer component={ClassicLegIcon} />;
-};
+export const ClassicLegIconExamples = () => (
+  <LegIconRenderer component={ClassicLegIcon} />
+);
