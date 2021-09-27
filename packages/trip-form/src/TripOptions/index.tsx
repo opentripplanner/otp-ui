@@ -28,10 +28,18 @@ interface ComponentProps {
   className: string;
 
   /**
-   * Icon props used for overwriting icons and images throughout the component
+   * Icon prop used for overwriting the question mark icon throughout the component
    */
   QuestionIcon: ReactElement;
+
+  /**
+   * Icon prop used for overwriting mode icons throughout the component
+   */
   SimpleModeIcon?: FunctionComponent<{ mode: string }>;
+
+  /**
+   * Icon prop used for overwriting company logos throughout the component
+   */
   CompanyIcon?: FunctionComponent<{ company: string }>;
   // DetailedModeIcon is defined in QueryProps
 }

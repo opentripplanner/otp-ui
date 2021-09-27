@@ -2758,14 +2758,6 @@
   dependencies:
     "@octokit/openapi-types" "^7.2.0"
 
-"@opentripplanner/icons@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/icons/-/icons-1.2.0.tgz#00751e17aad99620bd08b47af0c09c94cb99cf74"
-  integrity sha512-0wVJmBa7NLeurer8dq3BJdZhPOhrRomomSEB6gYODZsKL6ZqWm8PykXeT6ACDfz3e2nsrKBdsg+XvqYeL6eG7Q==
-  dependencies:
-    "@opentripplanner/core-utils" "^4.1.0"
-    prop-types "^15.7.2"
-
 "@pmmmwh/react-refresh-webpack-plugin@^0.4.3":
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.4.3.tgz#1eec460596d200c0236bf195b078a5d1df89b766"

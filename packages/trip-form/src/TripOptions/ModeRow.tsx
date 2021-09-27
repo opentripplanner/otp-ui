@@ -1,14 +1,15 @@
 import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 
-import { Modes, QueryParams } from "./types";
-import * as S from "./styled";
-import Checkbox from "./Checkbox";
 import {
   categoryIsActive,
   getCategoryPrimaryMode,
   getSelectedModes
 } from "./util";
+import { Modes, QueryParams } from "./types";
+import * as S from "./styled";
+
+import Checkbox from "./Checkbox";
 
 const ModeRow = ({
   onQueryParamChange,
@@ -42,11 +43,13 @@ const ModeRow = ({
         Go by Transit
       </Checkbox>
       {categories.map(category => {
+        const selectedModeAndCategoryActive = categoryIsActive(
+          category,
+          selectedModes
+        );
         const isChecked = hasTransit
-          ? category.type === "access" &&
-            categoryIsActive(category, selectedModes)
-          : category.type === "exclusive" &&
-            categoryIsActive(category, selectedModes);
+          ? category.type === "access" && selectedModeAndCategoryActive
+          : category.type === "exclusive" && selectedModeAndCategoryActive;
         const onChangeMode = () => {
           let mode = getCategoryPrimaryMode(category);
           const company =

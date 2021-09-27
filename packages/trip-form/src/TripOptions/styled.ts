@@ -1,7 +1,8 @@
-import { CheckCircle } from "@styled-icons/boxicons-solid/CheckCircle";
-import { PlusCircle } from "@styled-icons/boxicons-regular/PlusCircle";
 import ScrollContainer from "react-indiana-drag-scroll";
 import styled, { css } from "styled-components";
+import { CheckCircle } from "@styled-icons/boxicons-solid/CheckCircle";
+import { PlusCircle } from "@styled-icons/boxicons-regular/PlusCircle";
+// Prettier does not support typescript annotation
 // eslint-disable-next-line prettier/prettier
 import type { ButtonProps } from "./Checkbox"
 
@@ -48,10 +49,10 @@ export const Image = styled.img`
 `;
 
 export const FeaturedOptionImageWrapper = styled.div`
-  padding: 1em;
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
+  padding: 1em;
 
   ${Image} {
     max-height: 200px;
@@ -62,20 +63,20 @@ export const ModeIconWrapper = styled.span`
 /* Adjust the checkmark/plus if it is next to a custom icon */
   ~ ${/* sc-selector */ GreenCheck},
   ~ ${/* sc-selector */ UncheckedIcon} {
+    height: 1.5em;
+    margin-bottom: -1em;
     position: relative;
     right: -30px;
-    height: 1.5em;
-    width: 1.5em;
     top: -50px;
-    margin-bottom: -1em;
+    width: 1.5em;
   }
 
   /* Custom icon for the item, should it be present */
   & svg {
-    position: relative;
-    height: 3em;
-    width: 3em;
     fill: white;
+    height: 3em;
+    position: relative;
+    width: 3em;
   }
 `;
 
@@ -111,8 +112,7 @@ export const MaxHeightImage = styled(Image)`
 export const OptionButton = styled.button`
   align-items: center;
   background-color: rgba(0, 0, 0, 0);
-  border-color: ${(props: ButtonProps) =>
-    props.selected ? "white" : "lightgrey"};
+  border-color: ${(props: ButtonProps) => props.selected ? "white" : "lightgrey"};
   border-radius: 7px;
   border: solid 1px;
   color: white;
@@ -125,8 +125,8 @@ export const OptionButton = styled.button`
   padding: 7px 5px;
   svg {
     @media (max-width: 768px) {
-      max-width: 20px;
       max-height: 20px;
+      max-width: 20px;
     }
   }
 
@@ -170,16 +170,17 @@ export const Checkbox = styled.button.attrs({
 
     ${UncheckedIcon} {
       background: #0d5eac;
-      clip-path: circle(40% at 50% 50%); /* hide outer border */
       border-radius: 50%; /* fallback for when clip-path is unsupported */
+      clip-path: circle(40% at 50% 50%); /* hide outer border */
     }
+
     svg {
       position: absolute;
       right: 5.5%;
       top: 11%;
       @media (max-width: 768px) {
-        max-width: 20px;
         max-height: 20px;
+        max-width: 20px;
       }
     }
   ` : "")}
@@ -204,6 +205,7 @@ export const OverlayOptions = styled.ul`
   list-style: none;
   margin-left: 0;
   padding-left: 0;
+
   li > a {
     align-items: center;
     background-color: #fff;
@@ -228,7 +230,7 @@ export const OverlayOptions = styled.ul`
 
 // The ScrollContainer doesn't work in the jsdom/server environment, so replace it with a div
 const isServerEnv = typeof navigator !== "undefined" ? navigator.userAgent.includes("jsdom") : false;
-export const ScrollableRow = styled(isServerEnv ? "div" : ScrollContainer)`
+export const ScrollableRow = styled(isServerEnv ? "div" : ScrollContainer)<{ hideScrollbars: boolean }>`
   background-color: #0a4c8d;
   display: flex;
   overflow-x: scroll;

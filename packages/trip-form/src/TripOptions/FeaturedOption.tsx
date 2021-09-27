@@ -1,6 +1,6 @@
+import React from "react";
 import coreUtils from "@opentripplanner/core-utils";
 import { QuestionCircle } from "@styled-icons/fa-regular/QuestionCircle";
-import React from "react";
 
 import { QueryProps } from "./types";
 import OptionButton from "./OptionButton";
@@ -52,10 +52,12 @@ const FeaturedOption = ({
             let company = selectedCompanies;
             if (isChecked) {
               // Un-check the company box if dealing with checkboxes. Otherwise, do nothing.
-              if (optionsAreCheckboxes)
+              if (optionsAreCheckboxes) {
                 company = selectedCompanies.filter(c => c !== o.company);
-              // Do nothing if already radio button is already checked.
-              else return;
+                // Do nothing if already radio button is already checked.
+              } else {
+                return;
+              }
             } else {
               // if un checked, set/add company and set mode (FIXME: what about car/walk)
               if (o.mode) {

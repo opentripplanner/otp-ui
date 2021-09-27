@@ -61,7 +61,7 @@ export interface QueryProps {
   supportedModes: Modes;
 
   /**
-   * A component which can override shipped icons
+   * A component which can override shipped large mode images
    */
   DetailedModeIcon?: FunctionComponent<{ mode: string }>;
 }
