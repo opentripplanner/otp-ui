@@ -2,8 +2,6 @@ import React from "react";
 import coreUtils from "@opentripplanner/core-utils";
 import { QuestionCircle } from "@styled-icons/fa-regular/QuestionCircle";
 
-import { QueryProps } from "./types";
-import OptionButton from "./OptionButton";
 import {
   accessModeIsWalkOnly,
   getCategoryModes,
@@ -11,6 +9,9 @@ import {
   getNonTransitModes,
   getSelectedModes
 } from "./util";
+import { ModeOption, QueryProps } from "./types";
+import OptionButton from "./OptionButton";
+
 import * as S from "./styled";
 
 const FeaturedOption = ({
@@ -34,6 +35,37 @@ const FeaturedOption = ({
     getCategoryModes(c).some(o => o === option)
   );
   const optionsAreCheckboxes = Boolean(category.mode);
+
+  const selectOption = (isChecked: boolean, o: ModeOption) => {
+    let mode = selectedModes;
+    let company = selectedCompanies;
+    if (isChecked) {
+      // Un-check the company box if dealing with checkboxes. Otherwise, do nothing.
+      if (optionsAreCheckboxes) {
+        company = selectedCompanies.filter(c => c !== o.company);
+        // Do nothing if already radio button is already checked.
+      } else {
+        return;
+      }
+    } else {
+      // if un checked, set/add company and set mode (FIXME: what about car/walk)
+      if (o.mode) {
+        mode = selectedModes
+          .filter(coreUtils.itinerary.isTransit)
+          .concat([o.mode]);
+      }
+      if (o.company) {
+        company = optionsAreCheckboxes
+          ? selectedCompanies.concat([o.company])
+          : [o.company];
+      }
+    }
+    onQueryParamChange({
+      company: company.join(","),
+      mode: mode.join(",")
+    });
+  };
+
   return (
     <S.FeaturedOptionContainer>
       <div>
@@ -47,41 +79,13 @@ const FeaturedOption = ({
             : o.company
             ? companyIsSelected && modeIsSelected
             : modeIsSelected;
-          const selectOption = () => {
-            let mode = selectedModes;
-            let company = selectedCompanies;
-            if (isChecked) {
-              // Un-check the company box if dealing with checkboxes. Otherwise, do nothing.
-              if (optionsAreCheckboxes) {
-                company = selectedCompanies.filter(c => c !== o.company);
-                // Do nothing if already radio button is already checked.
-              } else {
-                return;
-              }
-            } else {
-              // if un checked, set/add company and set mode (FIXME: what about car/walk)
-              if (o.mode) {
-                mode = selectedModes
-                  .filter(coreUtils.itinerary.isTransit)
-                  .concat([o.mode]);
-              }
-              if (o.company) {
-                company = optionsAreCheckboxes
-                  ? selectedCompanies.concat([o.company])
-                  : [o.company];
-              }
-            }
-            onQueryParamChange({
-              company: company.join(","),
-              mode: mode.join(",")
-            });
-          };
+
           return (
             <OptionButton
               checked={isChecked}
               key={index}
               label={o.label}
-              onClick={selectOption}
+              onClick={() => selectOption(isChecked, o)}
               selected={isChecked}
             />
           );
