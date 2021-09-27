@@ -393,7 +393,7 @@ class LocationField extends Component {
       stopOptionIcon,
       stopsIndex,
       suppressNearby,
-      transitResultCount,
+      suggestionCount,
       UserLocationIconComponent,
       userLocationsAndRecentPlaces
     } = this.props;
@@ -422,13 +422,13 @@ class LocationField extends Component {
       // To keep the list tidy, only include a subset of the responses for each category
       const stopFeatures = geocodedFeatures
         .filter(feature => feature.properties.layer === "stops")
-        .slice(0, transitResultCount);
+        .slice(0, suggestionCount);
       const stationFeatures = geocodedFeatures
         .filter(feature => feature.properties.layer === "stations")
-        .slice(0, transitResultCount);
+        .slice(0, suggestionCount);
       const otherFeatures = geocodedFeatures
         .filter(feature => feature.properties.source !== "transit")
-        .slice(0, transitResultCount);
+        .slice(0, suggestionCount);
 
       // Iterate through the geocoder results
       menuItems = menuItems.concat(
@@ -953,7 +953,7 @@ LocationField.propTypes = {
    * to prevent the list of responses from getting too long. This value declares
    * how many responses to show in each category
    */
-  transitResultCount: PropTypes.number,
+  suggestionCount: PropTypes.number,
   /**
    * An array of recent locations and places a user has searched for.
    */
@@ -1000,7 +1000,7 @@ LocationField.defaultProps = {
   stopOptionIcon: <Bus size={13} />,
   stopsIndex: null,
   suppressNearby: false,
-  transitResultCount: 3,
+  suggestionCount: 3,
   userLocationsAndRecentPlaces: [],
   UserLocationIconComponent: UserLocationIcon
 };
