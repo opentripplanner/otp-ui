@@ -26,17 +26,15 @@ const ModeRow = ({
   const selectedModes = getSelectedModes(queryParams);
   const selectedTransit = selectedModes.filter(coreUtils.itinerary.isTransit);
   const hasTransit = selectedTransit.length > 0;
+  const selectedTransitString = selectedTransit.join(",") || "TRANSIT";
 
   return (
-    // errors appear on the next line because in a testing environment,
-    // this component is converted to a div which does not support
-    // the hideScrollbars prop
     <S.ScrollableRow hideScrollbars={false}>
       <Checkbox
         aria-checked={hasTransit}
         ariaLabel="Go by Transit"
         checked={hasTransit}
-        onClick={() => onQueryParamChange({ mode: "TRANSIT" })}
+        onClick={() => onQueryParamChange({ mode: selectedTransitString })}
         selected={hasTransit}
         SimpleModeIcon={SimpleModeIcon}
       >
@@ -56,7 +54,6 @@ const ModeRow = ({
             typeof category.mode === "undefined"
               ? undefined
               : category.options?.map(o => o.company).join(",");
-          const selectedTransitString = selectedTransit.join(",") || "TRANSIT";
           if (category.type === "access") {
             mode = isChecked
               ? selectedTransitString
