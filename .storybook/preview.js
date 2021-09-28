@@ -1,3 +1,13 @@
+import { setupWorker } from "msw";
+import handlers from "../packages/location-field/src/mocks/handlers";
+
+// Only install worker when running in browser
+if (typeof global.process === 'undefined') {
+  const worker = setupWorker(...handlers);
+  worker.start({onUnhandledRequest: "bypass"})
+}
+
+
 export const parameters = {
   a11y: {
     config: {

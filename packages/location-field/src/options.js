@@ -2,6 +2,7 @@ import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceStringImperial } from "@opentripplanner/humanize-distance";
 import PropTypes from "prop-types";
 import React from "react";
+import { Bus } from "@styled-icons/fa-solid/Bus";
 import { Briefcase } from "@styled-icons/fa-solid/Briefcase";
 import { Home } from "@styled-icons/fa-solid/Home";
 import { MapMarker } from "@styled-icons/fa-solid/MapMarker";
@@ -9,11 +10,35 @@ import { MapPin } from "@styled-icons/fa-solid/MapPin";
 
 import * as S from "./styled";
 
-export function GeocodedOptionIcon() {
+export function GeocodedOptionIcon(props) {
+  const { feature } = props;
+  const { properties } = feature;
+  if (feature && properties) {
+    const { source } = properties;
+    if (source === "transit") {
+      return <Bus size={13} />;
+    }
+  }
   return <MapPin size={13} />;
 }
+GeocodedOptionIcon.propTypes = {
+  feature: PropTypes.shape({
+    properties: PropTypes.shape({ source: PropTypes.string })
+  })
+};
+GeocodedOptionIcon.defaultProps = {
+  feature: {}
+};
 
-export function Option({ disabled, icon, isActive, onClick, title }) {
+export function Option({
+  color,
+  disabled,
+  icon,
+  isActive,
+  onClick,
+  title,
+  classes
+}) {
   return (
     <S.MenuItem onClick={onClick} active={isActive} disabled={disabled}>
       {coreUtils.ui.isIE() ? (
@@ -24,8 +49,10 @@ export function Option({ disabled, icon, isActive, onClick, title }) {
         // See https://github.com/ibi-group/trimet-mod-otp/issues/237
         title
       ) : (
-        <S.OptionContainer>
-          <S.OptionIconContainer>{icon}</S.OptionIconContainer>
+        <S.OptionContainer className={classes}>
+          <S.OptionIconContainer style={{ color }}>
+            {icon}
+          </S.OptionIconContainer>
           <S.OptionContent>{title}</S.OptionContent>
         </S.OptionContainer>
       )}
@@ -34,6 +61,11 @@ export function Option({ disabled, icon, isActive, onClick, title }) {
 }
 
 Option.propTypes = {
+  /**
+   * String of classes to apply to container.
+   */
+  classes: PropTypes.string,
+  color: PropTypes.string,
   disabled: PropTypes.bool,
   icon: PropTypes.node,
   isActive: PropTypes.bool,
@@ -42,6 +74,8 @@ Option.propTypes = {
 };
 
 Option.defaultProps = {
+  classes: "",
+  color: null,
   disabled: false,
   icon: null,
   isActive: false,
