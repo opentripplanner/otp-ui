@@ -1,0 +1,386 @@
+{
+  "geocoding": {
+    "version": "0.2",
+    "attribution": "https://geocode.earth/guidelines",
+    "query": {
+      "text": "clinton",
+      "parser": "pelias",
+      "parsed_text": { "subject": "clinton", "locality": "clinton" },
+      "size": 10,
+      "layers": [
+        "venue",
+        "street",
+        "locality",
+        "neighbourhood",
+        "county",
+        "localadmin",
+        "region",
+        "macrocounty",
+        "country",
+        "macroregion",
+        "borough",
+        "postalcode",
+        "macrohood",
+        "marinearea",
+        "disputed",
+        "dependency",
+        "empire",
+        "continent",
+        "ocean"
+      ],
+      "private": false,
+      "lang": {
+        "name": "English",
+        "iso6391": "en",
+        "iso6393": "eng",
+        "via": "default",
+        "defaulted": true
+      },
+      "querySize": 20
+    },
+    "warnings": ["performance optimization: excluding 'address' layer"],
+    "engine": { "name": "Pelias", "author": "Mapzen", "version": "1.0" },
+    "timestamp": 1628862085588
+  },
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.436623, 47.244865]
+      },
+      "properties": {
+        "id": "TL_US::Sound Transit::stations",
+        "gid": "transit:stations:TL_US::Sound Transit::stations",
+        "layer": "stations",
+        "source": "transit",
+        "source_id": "TL_US::Sound Transit::stations",
+        "name": "Union Station (Sound Transit Stop)",
+        "accuracy": "centroid",
+        "label": "Union Station (Sound Transit Stop)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-122.352037, 47.974564] },
+      "properties": {
+        "id": "5::WA State Ferry::stops",
+        "gid": "transit:stops:5::WA State Ferry::stops",
+        "layer": "stops",
+        "source": "transit",
+        "source_id": "5::WA State Ferry::stops",
+        "name": "Clinton (WA State Ferry Stop)",
+        "accuracy": "centroid",
+        "label": "Clinton (WA State Ferry Stop)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.195504, 48.05579]
+      },
+      "properties": {
+        "id": "1::Community Transit::stops",
+        "gid": "transit:stops:1::Community Transit::stops",
+        "layer": "stops",
+        "source": "transit",
+        "source_id": "1::Community Transit::stops",
+        "name": "Marine Dr NE & 27th Ave NE (Community Transit Stop ID 1)",
+        "accuracy": "centroid",
+        "label": "Marine Dr NE & 27th Ave NE (Community Transit Stop ID 1)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.200918, 48.054792]
+      },
+      "properties": {
+        "id": "7::Community Transit::stops",
+        "gid": "transit:stops:7::Community Transit::stops",
+        "layer": "stops",
+        "source": "transit",
+        "source_id": "7::Community Transit::stops",
+        "name": "Marine Dr NE & 23rd Ave NE (Community Transit Stop ID 7)",
+        "accuracy": "centroid",
+        "label": "Marine Dr NE & 23rd Ave NE (Community Transit Stop ID 7)"
+      }
+    },
+
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-82.91992, 42.58698] },
+      "properties": {
+        "id": "1326540929",
+        "gid": "whosonfirst:locality:1326540929",
+        "layer": "locality",
+        "source": "whosonfirst",
+        "source_id": "1326540929",
+        "name": "Charter Township of Clinton",
+        "accuracy": "centroid",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Michigan",
+        "region_gid": "whosonfirst:region:85688599",
+        "region_a": "MI",
+        "county": "Macomb County",
+        "county_gid": "whosonfirst:county:102083047",
+        "localadmin": "Clinton",
+        "localadmin_gid": "whosonfirst:localadmin:404507391",
+        "locality": "Charter Township of Clinton",
+        "locality_gid": "whosonfirst:locality:1326540929",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Charter Township of Clinton, MI, USA"
+      },
+      "bbox": [-82.93992, 42.56698, -82.89992, 42.60698]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-82.91992, 42.58698] },
+      "properties": {
+        "id": "4989133",
+        "gid": "geonames:locality:4989133",
+        "layer": "locality",
+        "source": "geonames",
+        "source_id": "4989133",
+        "name": "Clinton Township",
+        "accuracy": "centroid",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Michigan",
+        "region_gid": "whosonfirst:region:85688599",
+        "region_a": "MI",
+        "county": "Macomb County",
+        "county_gid": "whosonfirst:county:102083047",
+        "county_a": "MB",
+        "localadmin": "Clinton",
+        "localadmin_gid": "whosonfirst:localadmin:404507391",
+        "locality": "Clinton Township",
+        "locality_gid": "geonames:locality:4989133",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Clinton Township, MI, USA",
+        "addendum": { "geonames": { "feature_code": "PPL" } }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-73.684875, 44.722283] },
+      "properties": {
+        "id": "102081797",
+        "gid": "whosonfirst:county:102081797",
+        "layer": "county",
+        "source": "whosonfirst",
+        "source_id": "102081797",
+        "name": "Clinton County",
+        "accuracy": "centroid",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "New York",
+        "region_gid": "whosonfirst:region:85688543",
+        "region_a": "NY",
+        "county": "Clinton County",
+        "county_gid": "whosonfirst:county:102081797",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Clinton County, NY, USA"
+      },
+      "bbox": [-74.027389, 44.429699, -73.333152, 45.01084]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-84.601515, 42.943795] },
+      "properties": {
+        "id": "102083123",
+        "gid": "whosonfirst:county:102083123",
+        "layer": "county",
+        "source": "whosonfirst",
+        "source_id": "102083123",
+        "name": "Clinton County",
+        "accuracy": "centroid",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Michigan",
+        "region_gid": "whosonfirst:region:85688599",
+        "region_a": "MI",
+        "county": "Clinton County",
+        "county_gid": "whosonfirst:county:102083123",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Clinton County, MI, USA"
+      },
+      "bbox": [-84.837639, 42.769479, -84.363659, 43.118851]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-90.531971, 41.904246] },
+      "properties": {
+        "id": "102086301",
+        "gid": "whosonfirst:county:102086301",
+        "layer": "county",
+        "source": "whosonfirst",
+        "source_id": "102086301",
+        "name": "Clinton County",
+        "accuracy": "centroid",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Iowa",
+        "region_gid": "whosonfirst:region:85688713",
+        "region_a": "IA",
+        "county": "Clinton County",
+        "county_gid": "whosonfirst:county:102086301",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Clinton County, IA, USA"
+      },
+      "bbox": [-90.898975, 41.727691, -90.140061, 42.033596]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-83.361854, 42.697324] },
+      "properties": {
+        "id": "85811447",
+        "gid": "whosonfirst:neighbourhood:85811447",
+        "layer": "neighbourhood",
+        "source": "whosonfirst",
+        "source_id": "85811447",
+        "name": "Clintonville",
+        "accuracy": "centroid",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Michigan",
+        "region_gid": "whosonfirst:region:85688599",
+        "region_a": "MI",
+        "county": "Oakland County",
+        "county_gid": "whosonfirst:county:102083713",
+        "localadmin": "Waterford",
+        "localadmin_gid": "whosonfirst:localadmin:404508389",
+        "locality": "Waterford",
+        "locality_gid": "whosonfirst:locality:1729468837",
+        "neighbourhood": "Clintonville",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85811447",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Clintonville, Waterford, MI, USA"
+      },
+      "bbox": [-83.366854, 42.692324, -83.356854, 42.702324]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-83.808369, 39.416344] },
+      "properties": {
+        "id": "102083645",
+        "gid": "whosonfirst:county:102083645",
+        "layer": "county",
+        "source": "whosonfirst",
+        "source_id": "102083645",
+        "name": "Clinton County",
+        "accuracy": "centroid",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Ohio",
+        "region_gid": "whosonfirst:region:85688485",
+        "region_a": "OH",
+        "county": "Clinton County",
+        "county_gid": "whosonfirst:county:102083645",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Clinton County, OH, USA"
+      },
+      "bbox": [-84.006782, 39.222845, -83.576286, 39.569169]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-77.677705, 41.292637] },
+      "properties": {
+        "id": "102080917",
+        "gid": "whosonfirst:county:102080917",
+        "layer": "county",
+        "source": "whosonfirst",
+        "source_id": "102080917",
+        "name": "Clinton County",
+        "accuracy": "centroid",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Pennsylvania",
+        "region_gid": "whosonfirst:region:85688481",
+        "region_a": "PA",
+        "county": "Clinton County",
+        "county_gid": "whosonfirst:county:102080917",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Clinton County, PA, USA"
+      },
+      "bbox": [-78.093381, 40.962938, -77.143712, 41.478576]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-89.42791, 38.618942] },
+      "properties": {
+        "id": "102087571",
+        "gid": "whosonfirst:county:102087571",
+        "layer": "county",
+        "source": "whosonfirst",
+        "source_id": "102087571",
+        "name": "Clinton County",
+        "accuracy": "centroid",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Illinois",
+        "region_gid": "whosonfirst:region:85688697",
+        "region_a": "IL",
+        "county": "Clinton County",
+        "county_gid": "whosonfirst:county:102087571",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Clinton County, IL, USA"
+      },
+      "bbox": [-89.707024, 38.415667, -89.138337, 38.743236]
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-73.995016, 40.761853] },
+      "properties": {
+        "id": "85868039",
+        "gid": "whosonfirst:neighbourhood:85868039",
+        "layer": "neighbourhood",
+        "source": "whosonfirst",
+        "source_id": "85868039",
+        "name": "Hell's Kitchen",
+        "accuracy": "centroid",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "New York",
+        "region_gid": "whosonfirst:region:85688543",
+        "region_a": "NY",
+        "county": "New York County",
+        "county_gid": "whosonfirst:county:102081863",
+        "locality": "New York",
+        "locality_gid": "whosonfirst:locality:85977539",
+        "borough": "Manhattan",
+        "borough_gid": "whosonfirst:borough:421205771",
+        "neighbourhood": "Hell's Kitchen",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85868039",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Hell's Kitchen, Manhattan, New York, NY, USA"
+      },
+      "bbox": [-74.007010383, 40.7521899971, -73.9897857063, 40.7626757074]
+    }
+  ],
+  "bbox": [-90.898975, 38.415667, -73.333152, 45.01084]
+}
