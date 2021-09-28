@@ -110,3 +110,5 @@ export default function TripOptions(props: Props): ReactElement {
     </S.TripOptionsContainer>
   );
 }
+
+export { S as Styled };
