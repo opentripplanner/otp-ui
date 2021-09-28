@@ -48,9 +48,12 @@ const ModeRow = ({
         const isChecked = hasTransit
           ? category.type === "access" && selectedModeAndCategoryActive
           : category.type === "exclusive" && selectedModeAndCategoryActive;
+
+        // FIXME: this method should be replaced with react state and hooks
+        // to allow persistence when changing mode and switiching back
         const onChangeMode = () => {
           let mode = getCategoryPrimaryMode(category);
-          const company =
+          const companies =
             typeof category.mode === "undefined"
               ? undefined
               : category.options?.map(o => o.company).join(",");
@@ -59,7 +62,7 @@ const ModeRow = ({
               ? selectedTransitString
               : `${selectedTransitString},${mode}`;
           }
-          onQueryParamChange({ company, mode });
+          onQueryParamChange({ companies, mode });
         };
         // All Tri-Met categories either have a mode or the first option does
         const mode =

@@ -28,13 +28,16 @@ const FeaturedOption = ({
   // No featured mode to show if walking to transit
   if (accessModeIsWalkOnly(queryParams?.mode)) return null;
   const nonTransitModes = getNonTransitModes(queryParams?.mode);
-  const selectedCompanies = queryParams?.company?.split(",") || [];
+  const selectedCompanies = queryParams?.companies?.split(",") || [];
   const selectedModes = getSelectedModes(queryParams);
   const option = nonTransitModes[0];
   const category = supportedModes.categories.find(c =>
     getCategoryModes(c).some(o => o === option)
   );
   const optionsAreCheckboxes = Boolean(category.mode);
+
+  // FIXME: the entire selectOption method could probably be repalced
+  // with a better useEffect hook
 
   const selectOption = (isChecked: boolean, o: ModeOption) => {
     let mode = selectedModes;
@@ -61,7 +64,7 @@ const FeaturedOption = ({
       }
     }
     onQueryParamChange({
-      company: company.join(","),
+      companies: company.join(","),
       mode: mode.join(",")
     });
   };

@@ -39,7 +39,7 @@ export interface QueryParams {
    * The company query param used to specify service providers for a rental or
    * hail mode type (e.g., UBER or HOPR).
    */
-  company?: string;
+  companies?: string;
   /**
    * FIXME: other query params exist but are not populated here.
    */
