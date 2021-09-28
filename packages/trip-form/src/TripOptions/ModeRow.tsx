@@ -50,7 +50,7 @@ const ModeRow = ({
           : category.type === "exclusive" && selectedModeAndCategoryActive;
 
         // FIXME: this method should be replaced with react state and hooks
-        // to allow persistence when changing mode and switiching back
+        // to allow persistence when changing mode and switiching back.
         const onChangeMode = () => {
           let mode = getCategoryPrimaryMode(category);
           const companies =
