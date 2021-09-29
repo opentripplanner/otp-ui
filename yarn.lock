@@ -2758,14 +2758,6 @@
   dependencies:
     "@octokit/openapi-types" "^7.2.0"
 
-"@opentripplanner/icons@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/icons/-/icons-1.2.0.tgz#00751e17aad99620bd08b47af0c09c94cb99cf74"
-  integrity sha512-0wVJmBa7NLeurer8dq3BJdZhPOhrRomomSEB6gYODZsKL6ZqWm8PykXeT6ACDfz3e2nsrKBdsg+XvqYeL6eG7Q==
-  dependencies:
-    "@opentripplanner/core-utils" "^4.1.0"
-    prop-types "^15.7.2"
-
 "@pmmmwh/react-refresh-webpack-plugin@^0.4.3":
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.4.3.tgz#1eec460596d200c0236bf195b078a5d1df89b766"
@@ -3756,7 +3748,7 @@
     "@babel/runtime" "^7.15.3"
     "@styled-icons/styled-icon" "^10.6.3"
 
-"@styled-icons/boxicons-regular@10.38.0":
+"@styled-icons/boxicons-regular@10.38.0", "@styled-icons/boxicons-regular@^10.38.0":
   version "10.38.0"
   resolved "https://registry.yarnpkg.com/@styled-icons/boxicons-regular/-/boxicons-regular-10.38.0.tgz#1eb80b4f94a18a9b77b11dee5204aa23378d37ec"
   integrity sha512-xjhafoa0/EeYtQOyTw+ohuSlBx599t8l8++JH1tQlM0l73dP4icTpF4znYL+HhZeaUe3D+UhrkfWuBBua2w2Qw==
@@ -3764,7 +3756,7 @@
     "@babel/runtime" "^7.15.3"
     "@styled-icons/styled-icon" "^10.6.3"
 
-"@styled-icons/boxicons-solid@10.38.0":
+"@styled-icons/boxicons-solid@10.38.0", "@styled-icons/boxicons-solid@^10.38.0":
   version "10.38.0"
   resolved "https://registry.yarnpkg.com/@styled-icons/boxicons-solid/-/boxicons-solid-10.38.0.tgz#bb2a6e21f3412c97ae8029396e3ca9fb107c7658"
   integrity sha512-uuMtF1R61smQT5r6HIYMHvpVD0XSErXXNQYl5d6lCtMyefd0gIE5Rw+iD9i/RxHFUHNHbvL69LvitCLtNWrSqw==

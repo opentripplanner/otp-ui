@@ -1,5 +1,7 @@
 import React from "react";
 import * as S from "./styled";
+
+// Prettier does not accept typescript in this file
 // eslint-disable-next-line prettier/prettier
 import type { ButtonProps } from "./Checkbox"
 
@@ -10,7 +12,7 @@ export default function OptionButton({ onClick, label, children, className, sele
   label: string;
 } & ButtonProps): React.ReactElement {
   return (
-    <S.OptionButton className={className && className} onClick={onClick} selected={selected}>
+    <S.OptionButton className={className} onClick={onClick} selected={selected}>
       <S.OptionLabel>{label}</S.OptionLabel>
       <S.OptionIcon>
         {checked ? <S.GreenCheck /> : <S.UncheckedIcon />}

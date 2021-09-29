@@ -1,14 +1,15 @@
 import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 
-import { Modes, QueryParams } from "./types";
-import * as S from "./styled";
-import Checkbox from "./Checkbox";
 import {
   categoryIsActive,
   getCategoryPrimaryMode,
   getSelectedModes
 } from "./util";
+import { Modes, QueryParams } from "./types";
+import * as S from "./styled";
+
+import Checkbox from "./Checkbox";
 
 const ModeRow = ({
   onQueryParamChange,
@@ -25,41 +26,43 @@ const ModeRow = ({
   const selectedModes = getSelectedModes(queryParams);
   const selectedTransit = selectedModes.filter(coreUtils.itinerary.isTransit);
   const hasTransit = selectedTransit.length > 0;
+  const selectedTransitString = selectedTransit.join(",") || "TRANSIT";
 
   return (
-    // errors appear on the next line because in a testing environment,
-    // this component is converted to a div which does not support
-    // the hideScrollbars prop
     <S.ScrollableRow hideScrollbars={false}>
       <Checkbox
         aria-checked={hasTransit}
         ariaLabel="Go by Transit"
         checked={hasTransit}
-        onClick={() => onQueryParamChange({ mode: "TRANSIT" })}
+        onClick={() => onQueryParamChange({ mode: selectedTransitString })}
         selected={hasTransit}
         SimpleModeIcon={SimpleModeIcon}
       >
         Go by Transit
       </Checkbox>
       {categories.map(category => {
+        const selectedModeAndCategoryActive = categoryIsActive(
+          category,
+          selectedModes
+        );
         const isChecked = hasTransit
-          ? category.type === "access" &&
-            categoryIsActive(category, selectedModes)
-          : category.type === "exclusive" &&
-            categoryIsActive(category, selectedModes);
+          ? category.type === "access" && selectedModeAndCategoryActive
+          : category.type === "exclusive" && selectedModeAndCategoryActive;
+
+        // FIXME: this method should be replaced with react state and hooks
+        // to allow persistence when changing mode and switiching back.
         const onChangeMode = () => {
           let mode = getCategoryPrimaryMode(category);
-          const company =
+          const companies =
             typeof category.mode === "undefined"
               ? undefined
               : category.options?.map(o => o.company).join(",");
-          const selectedTransitString = selectedTransit.join(",") || "TRANSIT";
           if (category.type === "access") {
             mode = isChecked
               ? selectedTransitString
               : `${selectedTransitString},${mode}`;
           }
-          onQueryParamChange({ company, mode });
+          onQueryParamChange({ companies, mode });
         };
         // All Tri-Met categories either have a mode or the first option does
         const mode =

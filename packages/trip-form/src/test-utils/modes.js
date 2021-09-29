@@ -41,7 +41,8 @@ const commonModes = {
         },
         {
           mode: "BICYCLE_RENT",
-          label: "BIKETOWN"
+          label: "BIKETOWN",
+          company: "BIKETOWN"
         }
       ]
     },
@@ -58,7 +59,7 @@ const commonModes = {
           label: "Drive to Park & Ride"
         },
         {
-          company: "Uber", // Optional.
+          company: "UBER", // Optional.
           image: "https://trimet-web.s3.amazonaws.com/uber.svg",
           label: "Transit + Uber",
           mode: "CAR_HAIL",
@@ -75,25 +76,25 @@ const commonModes = {
       mode: "MICROMOBILITY_RENT",
       options: [
         {
-          company: "Bolt",
+          company: "BOLT",
           image: "https://trimet-web.s3.amazonaws.com/bolt.svg",
           label: "Bolt",
           url: "https://example.com"
         },
         {
-          company: "Bird",
+          company: "BIRD",
           // image: "https://trimet-web.s3.amazonaws.com/bird.svg",
           label: "Bird",
           url: "https://example.com"
         },
         {
-          company: "Lime",
+          company: "LIME",
           // image: "https://trimet-web.s3.amazonaws.com/lime.svg",
           label: "Lime",
           url: "https://example.com"
         },
         {
-          company: "Spin",
+          company: "SPIN",
           image: "https://trimet-web.s3.amazonaws.com/spin.svg",
           label: "Spin",
           url: "https://example.com"
