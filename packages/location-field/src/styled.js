@@ -22,7 +22,8 @@ export const DropdownButton = styled(BaseButton)`
 `;
 
 export const DropdownContainer = styled.span`
-  position: relative;
+  position: contents;
+  width: 100%;
 `;
 
 export const MenuItemList = styled.ul`
@@ -36,7 +37,7 @@ export const MenuItemList = styled.ul`
   left: 0;
   list-style: none;
   margin: 2px 0 0;
-  max-width: 45ch;
+  max-width: 100%;
   min-width: 160px;
   padding: 5px 0;
   position: absolute;
