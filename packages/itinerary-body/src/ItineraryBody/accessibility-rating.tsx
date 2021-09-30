@@ -38,6 +38,7 @@ const TextWrapper = styled.span`
  */
 const AccessibilityRating = ({
   gradationMap,
+  grayscale = false,
   large = false,
   score
 }: {
@@ -45,6 +46,7 @@ const AccessibilityRating = ({
     number,
     { color: string; icon?: JSX.Element; text?: string }
   >;
+  grayscale: boolean;
   large: boolean;
   score: number;
 }): JSX.Element => {
@@ -71,7 +73,11 @@ const AccessibilityRating = ({
   const mapped = mapping[mappedKey] || mapping[0.0];
 
   return (
-    <Wrapper large={large} color={mapped.color} title={mapped.text}>
+    <Wrapper
+      large={large}
+      color={grayscale ? "#eee" : mapped.color}
+      title={mapped.text}
+    >
       <Wheelchair style={{ flex: "2", minWidth: "20px" }} />
       <StatusWrapper>
         {/* Show either icon or text if no icon given */}
