@@ -185,7 +185,7 @@ class LocationField extends Component {
     // see https://stackoverflow.com/a/49325196/915811
     const target =
       e.relatedTarget !== null ? e.relatedTarget : document.activeElement;
-    if (!target || target.getAttribute("role") !== "menuitem") {
+    if (!target || target.getAttribute("role") !== "listitem") {
       this.setState({
         geocodedFeatures: [],
         menuVisible: false,
