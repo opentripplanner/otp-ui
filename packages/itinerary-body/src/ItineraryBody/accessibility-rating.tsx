@@ -8,17 +8,16 @@ interface WrapperProps {
 }
 
 const Wrapper = styled.div<WrapperProps>`
-  display: flex;
   align-items: center;
   background-color: ${props => props.color};
   border-radius: ${props => (props.large ? "4px" : "20px")};
-  padding: 0.25em 0.6em 0.25em 0.4em;
-  margin-top: 0.25em;
-  word-wrap: anywhere; /* this can often look quite bad, but helps encourage icons */
-  max-height: 50px;
-
-  width: ${props => (props.large ? "65px" : "50px")};
+  display: flex;
   justify-content: space-between;
+  margin-top: 0.25em;
+  max-height: 50px;
+  padding: 0.25em 0.6em 0.25em 0.4em;
+  width: ${props => (props.large ? "65px" : "50px")};
+  word-wrap: anywhere; /* this can often look quite bad, but helps encourage icons */
 `;
 const StatusWrapper = styled.span`
   flex: 1;
@@ -28,6 +27,15 @@ const StatusWrapper = styled.span`
   }
 `;
 
+const TextWrapper = styled.span`
+  padding-top: 3px;
+  font-weight: 600;
+`;
+
+/**
+ * Component which renders a label with a color and icon depending on
+ * a given accessibility score. The color and icon are set by a given gradation map.
+ */
 const AccessibilityRating = ({
   gradationMap,
   large = false,
@@ -67,7 +75,7 @@ const AccessibilityRating = ({
       <Wheelchair style={{ flex: "2", minWidth: "20px" }} />
       <StatusWrapper>
         {/* Show either icon or text if no icon given */}
-        {mapped.icon || <h5>{mapped.text}</h5>}
+        {mapped.icon || <TextWrapper>{mapped.text}</TextWrapper>}
       </StatusWrapper>
     </Wrapper>
   );

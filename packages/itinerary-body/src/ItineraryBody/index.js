@@ -230,6 +230,9 @@ ItineraryBody.propTypes = {
 function noop() {}
 
 ItineraryBody.defaultProps = {
+  accessibilityScoreGradationMap: undefined,
+  AlertBodyIcon: undefined,
+  AlertToggleIcon: undefined,
   className: null,
   diagramVisible: null,
   frameLeg: noop,
@@ -243,10 +246,7 @@ ItineraryBody.defaultProps = {
   TimeColumnContent: PlaceRow.defaultProps.TimeColumnContent,
   timeOptions: null,
   toRouteAbbreviation: noop,
-  TransitLegSubheader: undefined,
-  AlertToggleIcon: undefined,
-  AlertBodyIcon: undefined,
-  accessibilityScoreGradationMap: undefined
+  TransitLegSubheader: undefined
 };
 
 export default ItineraryBody;
