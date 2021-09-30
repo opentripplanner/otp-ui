@@ -430,6 +430,9 @@ class LocationField extends Component {
         .filter(feature => feature.properties.source !== "transit")
         .slice(0, suggestionCount);
 
+      const nonOtherFeaturesPresent =
+        stopFeatures.length > 0 || stationFeatures.length > 0;
+
       // Iterate through the geocoder results
       menuItems = menuItems.concat(
         stationFeatures.length > 0 && (
@@ -458,7 +461,7 @@ class LocationField extends Component {
         ),
         stopFeatures.map(feature => this.renderFeature(itemIndex++, feature)),
 
-        otherFeatures.length > 0 && (
+        nonOtherFeaturesPresent && otherFeatures.length > 0 && (
           <S.MenuItem bgColor="#333" header centeredText key="other-header">
             Other
           </S.MenuItem>
