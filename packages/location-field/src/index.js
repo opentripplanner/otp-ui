@@ -430,7 +430,9 @@ class LocationField extends Component {
         .filter(feature => feature.properties.source !== "transit")
         .slice(0, suggestionCount);
 
-      const nonOtherFeaturesPresent =
+      // If no categories of features are returned, this variable is used to
+      // avoid displaying headers
+      const nonStandardFeaturesPresent =
         stopFeatures.length > 0 || stationFeatures.length > 0;
 
       // Iterate through the geocoder results
@@ -461,7 +463,7 @@ class LocationField extends Component {
         ),
         stopFeatures.map(feature => this.renderFeature(itemIndex++, feature)),
 
-        nonOtherFeaturesPresent && otherFeatures.length > 0 && (
+        nonStandardFeaturesPresent && otherFeatures.length > 0 && (
           <S.MenuItem bgColor="#333" header centeredText key="other-header">
             Other
           </S.MenuItem>
