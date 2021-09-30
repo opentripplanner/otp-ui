@@ -471,7 +471,7 @@ class LocationField extends Component {
     if (nearbyStops.length > 0 && !suppressNearby) {
       // Add the menu sub-heading (not a selectable item)
       menuItems.push(
-        <S.MenuItem header key="ns-header">
+        <S.MenuItem header centeredText key="ns-header">
           Nearby Stops
         </S.MenuItem>
       );
@@ -516,7 +516,7 @@ class LocationField extends Component {
     if (sessionSearches.length > 0) {
       // Add the menu sub-heading (not a selectable item)
       menuItems.push(
-        <S.MenuItem header key="ss-header">
+        <S.MenuItem header centeredText key="ss-header">
           Recently Searched
         </S.MenuItem>
       );
@@ -552,7 +552,7 @@ class LocationField extends Component {
     if (userLocationsAndRecentPlaces.length > 0 && showUserSettings) {
       // Add the menu sub-heading (not a selectable item)
       menuItems.push(
-        <S.MenuItem header key="mp-header">
+        <S.MenuItem header centeredText key="mp-header">
           My Places
         </S.MenuItem>
       );
