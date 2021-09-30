@@ -36,6 +36,7 @@ export const MenuItemList = styled.ul`
   left: 0;
   list-style: none;
   margin: 2px 0 0;
+  max-width: 45ch;
   min-width: 160px;
   padding: 5px 0;
   position: absolute;
