@@ -1,7 +1,4 @@
-import {
-  ClassicModeIcon,
-  TriMetModeIcon2021 as TriMetModeIcon
-} from "@opentripplanner/icons";
+import { ClassicModeIcon } from "@opentripplanner/icons";
 
 import { action } from "@storybook/addon-actions";
 import React, { Component } from "react";
@@ -103,7 +100,6 @@ export const tripOptions = () => (
     <TripOptions
       supportedCompanies={commonCompanies}
       supportedModes={commonModes}
-      SimpleModeIcon={TriMetModeIcon}
     />
   </PanelWrapper>
 );

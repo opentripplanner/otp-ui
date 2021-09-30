@@ -28,12 +28,11 @@ export default function Checkbox(
     mode,
     onClick,
     selected,
-    SimpleModeIcon
+    // If no icon is passed, TriMetModIcon is the default
+    SimpleModeIcon = TriMetModeIcon
   } = props;
 
-  const modeIcon = <SimpleModeIcon mode={mode} /> || (
-    <TriMetModeIcon mode={mode} />
-  );
+  const modeIcon = <SimpleModeIcon mode={mode} />;
 
   return (
     <S.Checkbox
