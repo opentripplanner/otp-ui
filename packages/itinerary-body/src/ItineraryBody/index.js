@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import PlaceRow from "./place-row";
+import AccessibilityRating from "./accessibility-rating";
 import * as S from "../styled";
 
 const ItineraryBody = ({
@@ -31,7 +32,8 @@ const ItineraryBody = ({
   TransitLegSubheader,
   TransitLegSummary,
   AlertToggleIcon,
-  AlertBodyIcon
+  AlertBodyIcon,
+  accessibilityScoreGradationMap
 }) => {
   /*
     TODO: replace component should update logic? companies is simply used to
@@ -81,6 +83,7 @@ const ItineraryBody = ({
           TransitLegSummary={TransitLegSummary}
           AlertToggleIcon={AlertToggleIcon}
           AlertBodyIcon={AlertBodyIcon}
+          accessibilityScoreGradationMap={accessibilityScoreGradationMap}
         />
       );
     }
@@ -212,12 +215,24 @@ ItineraryBody.propTypes = {
    * A custom icon component inserted into the transit alert body component
    * within a transit leg, if this prop is not supplied a default icon is used
    */
-  AlertBodyIcon: PropTypes.elementType
+  AlertBodyIcon: PropTypes.elementType,
+  /**
+   * A mapping of accessibility score to color, icon, and text used
+   * to override the default one shipped in AccessibilityLabel
+   */
+  accessibilityScoreGradationMap: PropTypes.shape({
+    color: PropTypes.string,
+    text: PropTypes.string,
+    icon: PropTypes.element
+  })
 };
 
 function noop() {}
 
 ItineraryBody.defaultProps = {
+  accessibilityScoreGradationMap: undefined,
+  AlertBodyIcon: undefined,
+  AlertToggleIcon: undefined,
   className: null,
   diagramVisible: null,
   frameLeg: noop,
@@ -231,9 +246,9 @@ ItineraryBody.defaultProps = {
   TimeColumnContent: PlaceRow.defaultProps.TimeColumnContent,
   timeOptions: null,
   toRouteAbbreviation: noop,
-  TransitLegSubheader: undefined,
-  AlertToggleIcon: undefined,
-  AlertBodyIcon: undefined
+  TransitLegSubheader: undefined
 };
 
 export default ItineraryBody;
+
+export { AccessibilityRating };

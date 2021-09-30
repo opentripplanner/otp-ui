@@ -28,6 +28,14 @@ export const LegHeader = styled.div`
   font-size: 18px;
 `;
 
+export const LegAnnotation = styled.div`
+  align-items: center;
+  display: flex;
+  float: left;
+  height: 100%;
+  padding-right: 16px;
+`;
+
 export const ModeIcon = styled.div`
   float: left;
   width: 32px;

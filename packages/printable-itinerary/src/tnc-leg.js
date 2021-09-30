@@ -2,17 +2,30 @@ import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { AccessibilityRating } from "../../itinerary-body/lib/ItineraryBody";
 import * as S from "./styled";
 
-export default function TNCLeg({ leg, LegIcon }) {
+export default function TNCLeg({
+  accessibilityScoreGradationMap,
+  leg,
+  LegIcon
+}) {
   const { tncData } = leg;
   if (!tncData) return null;
 
   return (
     <S.Leg>
-      <S.ModeIcon>
-        <LegIcon leg={leg} />
-      </S.ModeIcon>
+      <S.LegAnnotation>
+        <S.ModeIcon>
+          <LegIcon leg={leg} />
+        </S.ModeIcon>
+        {leg.accessibilityScore && (
+          <AccessibilityRating
+            gradationMap={accessibilityScoreGradationMap}
+            score={leg.accessibilityScore}
+          />
+        )}
+      </S.LegAnnotation>
       <S.LegBody>
         <S.LegHeader>
           <b>Take {tncData.displayName}</b> to <b>{leg.to.name}</b>
@@ -34,6 +47,15 @@ export default function TNCLeg({ leg, LegIcon }) {
 }
 
 TNCLeg.propTypes = {
+  accessibilityScoreGradationMap: PropTypes.shape({
+    color: PropTypes.string,
+    text: PropTypes.string,
+    icon: PropTypes.element
+  }),
   leg: coreUtils.types.legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired
+};
+
+TNCLeg.defaultProps = {
+  accessibilityScoreGradationMap: null
 };
