@@ -37,13 +37,13 @@ export const MenuItemList = styled.ul`
   left: 0;
   list-style: none;
   margin: 2px 0 0;
-  max-width: 100%;
   min-width: 160px;
   padding: 5px 0;
   position: absolute;
   text-align: left;
   top: 100%;
-  z-index: 1000;
+  /* this is an annoyingly high number, but is needed to be on top of some otp-rr components */
+  z-index: 1000000;
 `;
 
 export const Dropdown = ({ children, locationType, open, onToggle, title }) => {
