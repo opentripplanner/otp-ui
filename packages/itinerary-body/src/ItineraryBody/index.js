@@ -2,17 +2,20 @@ import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 
-import PlaceRow from "./place-row";
 import AccessibilityRating from "./accessibility-rating";
+import PlaceRow from "./place-row";
 import * as S from "../styled";
 
 const ItineraryBody = ({
-  LegIcon,
+  accessibilityScoreGradationMap,
+  AlertBodyIcon,
+  AlertToggleIcon,
   className,
   config,
   diagramVisible,
   frameLeg,
   itinerary,
+  LegIcon,
   LineColumnContent,
   PlaceName,
   RouteDescription,
@@ -30,10 +33,7 @@ const ItineraryBody = ({
   timeOptions,
   toRouteAbbreviation,
   TransitLegSubheader,
-  TransitLegSummary,
-  AlertToggleIcon,
-  AlertBodyIcon,
-  accessibilityScoreGradationMap
+  TransitLegSummary
 }) => {
   /*
     TODO: replace component should update logic? companies is simply used to
@@ -222,8 +222,8 @@ ItineraryBody.propTypes = {
    */
   accessibilityScoreGradationMap: PropTypes.shape({
     color: PropTypes.string,
-    text: PropTypes.string,
-    icon: PropTypes.element
+    icon: PropTypes.element,
+    text: PropTypes.string
   })
 };
 
