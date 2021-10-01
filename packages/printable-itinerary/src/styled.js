@@ -4,6 +4,7 @@ export const Leg = styled.div`
   margin-bottom: 10px;
   border-top: 1px solid grey;
   padding-top: 18px;
+  display: flex;
 `;
 
 export const CollapsedTop = styled(Leg)`
@@ -12,7 +13,7 @@ export const CollapsedTop = styled(Leg)`
 `;
 
 export const LegBody = styled.div`
-  margin-left: 40px;
+  margin-left: 10px;
 `;
 
 export const LegDetail = styled.div`
@@ -31,9 +32,9 @@ export const LegHeader = styled.div`
 export const LegAnnotation = styled.div`
   align-items: center;
   display: flex;
-  float: left;
+  flex-direction: column;
   height: 100%;
-  padding-right: 16px;
+  min-width: 70px;
 `;
 
 export const ModeIcon = styled.div`
