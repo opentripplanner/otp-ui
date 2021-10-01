@@ -29,13 +29,14 @@ AccessibilityAnnotation.propTypes = {
     color: PropTypes.string,
     text: PropTypes.string,
     icon: PropTypes.element
-  }).isRequired,
+  }),
   grayscale: PropTypes.bool,
   leg: coreUtils.types.legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired
 };
 
 AccessibilityAnnotation.defaultProps = {
+  accessibilityScoreGradationMap: undefined,
   grayscale: false
 };
 
