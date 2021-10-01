@@ -1,13 +1,18 @@
 import React from "react";
-import { Bus } from "styled-icons/fa-solid";
+
+import { Ship } from "@styled-icons/fa-solid/Ship";
+import { Bus } from "@styled-icons/fa-solid/Bus";
 import LocationField from "..";
 import {
   currentPosition,
   geocoderConfig,
   getCurrentPosition,
+  layerColorMap,
   onLocationSelected,
   selectedLocation
 } from "./common";
+
+import mockedGeocoderResponse from "../mocks/autocomplete.json";
 
 const invalidKeyGeocoderConfig = {
   apiKey: "ge-invalid-key",
@@ -114,5 +119,32 @@ export const WithBadApiKeyHandlesBadAutocomplete = () => (
     inputPlaceholder="Select from location"
     locationType="from"
     onLocationSelected={onLocationSelected}
+  />
+);
+
+export const WithCustomResultColorsAndIcons = () => (
+  <LocationField
+    currentPosition={currentPosition}
+    geocoderConfig={geocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    inputPlaceholder="Select from location"
+    layerColorMap={{ stops: "green", stations: "orange" }}
+    locationType="from"
+    onLocationSelected={onLocationSelected}
+    operatorIconMap={{ "wa-state-ferry": <Ship size={13} /> }}
+  />
+);
+
+export const WithPrefilledSearch = () => (
+  <LocationField
+    currentPosition={currentPosition}
+    geocoderConfig={geocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    initialSearchResults={mockedGeocoderResponse.features}
+    inputPlaceholder="Select from location"
+    layerColorMap={layerColorMap}
+    locationType="from"
+    onLocationSelected={onLocationSelected}
+    style={{ fontFamily: "sans-serif" }}
   />
 );
