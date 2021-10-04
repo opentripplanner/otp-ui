@@ -60,6 +60,7 @@
     "leaflet": "^1.6.0",
     "lerna": "^3.18.4",
     "lint-staged": "^8.2.0",
+    "msw": "^0.34.0",
     "nock": "^11.7.0",
     "prettier": "^1.19.1",
     "puppeteer": "^10.2.0",
@@ -91,7 +92,7 @@
     "check-eslint-config": "eslint --print-config jestconfig.js | eslint-config-prettier-check",
     "coverage": "jest --coverage",
     "deploy-storybook": "storybook-to-ghpages",
-    "dev": "start-storybook -p 5555",
+    "dev": "start-storybook -s ./public -p 5555",
     "predev": "yarn",
     "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-pattern esm --ignore-pattern lib --ignore-pattern node_modules --ignore-pattern storybook-static --quiet",
     "lint:fixjs": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-pattern esm --ignore-pattern lib --ignore-pattern node_modules --ignore-pattern storybook-static --fix",
@@ -212,5 +213,8 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }

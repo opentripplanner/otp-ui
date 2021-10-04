@@ -20,3 +20,9 @@ export const geocoderConfig = {
 export const getCurrentPosition = action("getCurrentPosition");
 export const onLocationSelected = action("onLocationSelected");
 export const selectedLocation = { name: "123 Main St" };
+
+export const layerColorMap = {
+  stops: "purple",
+  stations: "navy",
+  locality: "orange"
+};

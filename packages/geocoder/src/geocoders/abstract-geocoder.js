@@ -1,4 +1,4 @@
-import lonlat from "@conveyal/lonlat";
+import { fromCoordinates } from "@conveyal/lonlat";
 
 /**
  * Create customized geocoder functions given a certain geocoding API, the
@@ -32,7 +32,7 @@ export default class Geocoder {
    * done to obtain that detailed data.
    */
   getLocationFromGeocodedFeature(feature) {
-    const location = lonlat.fromCoordinates(feature.geometry.coordinates);
+    const location = fromCoordinates(feature.geometry.coordinates);
     location.name = feature.properties.label;
     location.rawGeocodedFeature = feature;
     return Promise.resolve(location);

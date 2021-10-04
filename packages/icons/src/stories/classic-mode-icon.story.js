@@ -9,6 +9,6 @@ export default {
   component: ClassicModeIcon
 };
 
-export const ClassicModeIconExamples = () => {
-  return <ModeIconRenderer component={ClassicModeIcon} />;
-};
+export const ClassicModeIconExamples = () => (
+  <ModeIconRenderer component={ClassicModeIcon} />
+);

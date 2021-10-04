@@ -22,7 +22,8 @@ export const DropdownButton = styled(BaseButton)`
 `;
 
 export const DropdownContainer = styled.span`
-  position: relative;
+  position: contents;
+  width: 100%;
 `;
 
 export const MenuItemList = styled.ul`
@@ -41,7 +42,8 @@ export const MenuItemList = styled.ul`
   position: absolute;
   text-align: left;
   top: 100%;
-  z-index: 1000;
+  /* this is an annoyingly high number, but is needed to be on top of some otp-rr components */
+  z-index: 1000000;
 `;
 
 export const Dropdown = ({ children, locationType, open, onToggle, title }) => {
@@ -115,18 +117,19 @@ export const MenuItemA = styled.a`
 `;
 
 export const MenuItemHeader = styled.li`
-  color: navy;
+  color: ${props => props.fgColor || "#eee"};
+  background-color: ${props => props.bgColor || "#333"};
   display: block;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 12px;
   line-height: 1.42857143;
-  padding: 3px 20px;
+  padding: 0px 10px;
   text-align: ${props => (props.centeredText ? "center" : "left")};
   white-space: nowrap;
 `;
-
 export const MenuItemLi = styled.li`
   &:hover {
+    cursor: pointer;
+    /* TODO: adjust highlight color based on props.color? */
     background-color: ${props => !props.disabled && "#f5f5f5"};
   }
 `;
@@ -138,9 +141,26 @@ export class MenuItem extends Component {
   };
 
   render() {
-    const { active, centeredText, children, disabled, header } = this.props;
+    const {
+      active,
+      centeredText,
+      children,
+      // foregroundColor and backgroundColor would be preferred, but React has issues with
+      // these since they are style keywords
+      fgColor,
+      bgColor,
+      disabled,
+      header
+    } = this.props;
     return header ? (
-      <MenuItemHeader centeredText={centeredText}>{children}</MenuItemHeader>
+      <MenuItemHeader
+        className="header"
+        fgColor={fgColor}
+        bgColor={bgColor}
+        centeredText={centeredText}
+      >
+        {children}
+      </MenuItemHeader>
     ) : (
       <MenuItemLi disabled={disabled} role="listitem">
         <MenuItemA
@@ -160,6 +180,8 @@ MenuItem.propTypes = {
   active: PropTypes.bool,
   centeredText: PropTypes.bool,
   children: PropTypes.node.isRequired,
+  fgColor: PropTypes.string,
+  bgColor: PropTypes.string,
   disabled: PropTypes.bool,
   header: PropTypes.bool,
   onClick: PropTypes.func
@@ -168,6 +190,8 @@ MenuItem.propTypes = {
 MenuItem.defaultProps = {
   active: false,
   centeredText: false,
+  fgColor: null,
+  bgColor: null,
   disabled: false,
   header: false,
   onClick: null
@@ -202,7 +226,7 @@ export const StaticMenuItemList = styled(MenuItemList)`
   display: block;
   position: static;
 
-  li:hover {
+  li:not(.header):hover {
     background-color: transparent;
   }
 `;

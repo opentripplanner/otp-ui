@@ -1,4 +1,4 @@
-import lonlat from "@conveyal/lonlat";
+import { toCoordinates, fromLatFirstString } from "@conveyal/lonlat";
 
 import Geocoder from "./abstract-geocoder";
 
@@ -46,7 +46,7 @@ export default class NoApiGeocoder extends Geocoder {
     try {
       feature = {
         geometry: {
-          coordinates: lonlat.toCoordinates(lonlat.fromLatFirstString(string)),
+          coordinates: toCoordinates(fromLatFirstString(string)),
           type: "Point"
         },
         properties: {
