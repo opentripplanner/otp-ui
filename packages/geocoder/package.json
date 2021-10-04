@@ -10,7 +10,7 @@
   "private": false,
   "dependencies": {
     "@conveyal/geocoder-arcgis-geojson": "^0.0.2",
-    "@conveyal/lonlat": "^1.4.0",
+    "@conveyal/lonlat": "^1.4.1",
     "isomorphic-mapzen-search": "^1.5.1",
     "lodash.memoize": "^4.1.2"
   },
