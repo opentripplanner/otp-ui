@@ -73,8 +73,12 @@ class GeneralSettingsPanel extends Component {
                   key={paramInfo.label}
                   name={paramInfo.name}
                   value={query[paramInfo.name]}
-                  icon={icon}
-                  label={label}
+                  label={
+                    <>
+                      {icon}
+                      {label}
+                    </>
+                  }
                   onChange={this.handleChange}
                 />
               );

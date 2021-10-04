@@ -2,17 +2,20 @@ import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 
-import PlaceRow from "./place-row";
 import AccessibilityRating from "./accessibility-rating";
+import PlaceRow, { accessibilityScoreGradationMapShape } from "./place-row";
 import * as S from "../styled";
 
 const ItineraryBody = ({
-  LegIcon,
+  accessibilityScoreGradationMap,
+  AlertBodyIcon,
+  AlertToggleIcon,
   className,
   config,
   diagramVisible,
   frameLeg,
   itinerary,
+  LegIcon,
   LineColumnContent,
   PlaceName,
   RouteDescription,
@@ -30,10 +33,7 @@ const ItineraryBody = ({
   timeOptions,
   toRouteAbbreviation,
   TransitLegSubheader,
-  TransitLegSummary,
-  AlertToggleIcon,
-  AlertBodyIcon,
-  accessibilityScoreGradationMap
+  TransitLegSummary
 }) => {
   /*
     TODO: replace component should update logic? companies is simply used to
@@ -49,6 +49,9 @@ const ItineraryBody = ({
       // Create a row containing this leg's start place and leg traversal details
       rows.push(
         <PlaceRow
+          AlertToggleIcon={AlertToggleIcon}
+          AlertBodyIcon={AlertBodyIcon}
+          accessibilityScoreGradationMap={accessibilityScoreGradationMap}
           // eslint-disable-next-line react/no-array-index-key
           key={i + (isDestination ? 1 : 0)}
           config={config}
@@ -81,9 +84,6 @@ const ItineraryBody = ({
           toRouteAbbreviation={toRouteAbbreviation}
           TransitLegSubheader={TransitLegSubheader}
           TransitLegSummary={TransitLegSummary}
-          AlertToggleIcon={AlertToggleIcon}
-          AlertBodyIcon={AlertBodyIcon}
-          accessibilityScoreGradationMap={accessibilityScoreGradationMap}
         />
       );
     }
@@ -101,6 +101,21 @@ const ItineraryBody = ({
 };
 
 ItineraryBody.propTypes = {
+  /**
+   * A custom icon component inserted into the transit alert toggle button
+   * within a transit leg, if this prop is not supplied a default icon is used
+   */
+  AlertToggleIcon: PropTypes.elementType,
+  /**
+   * A custom icon component inserted into the transit alert body component
+   * within a transit leg, if this prop is not supplied a default icon is used
+   */
+  AlertBodyIcon: PropTypes.elementType,
+  /**
+   * A mapping of accessibility score to color, icon, and text used
+   * to override the default one shipped in AccessibilityLabel
+   */
+  accessibilityScoreGradationMap: accessibilityScoreGradationMapShape,
   /**
    * Used for additional styling with styled components for example.
    */
@@ -205,26 +220,7 @@ ItineraryBody.propTypes = {
    * - leg: the transit leg
    * - stopsExpanded: whether the intermediate stop display is currently expanded
    */
-  TransitLegSummary: PropTypes.elementType.isRequired,
-  /**
-   * A custom icon component inserted into the transit alert toggle button
-   * within a transit leg, if this prop is not supplied a default icon is used
-   */
-  AlertToggleIcon: PropTypes.elementType,
-  /**
-   * A custom icon component inserted into the transit alert body component
-   * within a transit leg, if this prop is not supplied a default icon is used
-   */
-  AlertBodyIcon: PropTypes.elementType,
-  /**
-   * A mapping of accessibility score to color, icon, and text used
-   * to override the default one shipped in AccessibilityLabel
-   */
-  accessibilityScoreGradationMap: PropTypes.shape({
-    color: PropTypes.string,
-    text: PropTypes.string,
-    icon: PropTypes.element
-  })
+  TransitLegSummary: PropTypes.elementType.isRequired
 };
 
 function noop() {}
@@ -251,4 +247,4 @@ ItineraryBody.defaultProps = {
 
 export default ItineraryBody;
 
-export { AccessibilityRating };
+export { AccessibilityRating, accessibilityScoreGradationMapShape };

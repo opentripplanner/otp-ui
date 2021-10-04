@@ -2,11 +2,12 @@ import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 
-import AccessibilityRating from "./accessibility-rating";
 import DefaultTimeColumnContent from "../defaults/time-column-content";
 import AccessLegBody from "../AccessLegBody";
 import * as S from "../styled";
 import TransitLegBody from "../TransitLegBody";
+
+import AccessibilityRating from "./accessibility-rating";
 
 /*
   TODO: Wondering if it's possible for us to destructure the time
@@ -153,6 +154,12 @@ const PlaceRow = ({
   );
 };
 
+export const accessibilityScoreGradationMapShape = PropTypes.shape({
+  color: PropTypes.string,
+  icon: PropTypes.element,
+  text: PropTypes.string
+});
+
 const messagesType = PropTypes.shape({
   mapIconTitle: PropTypes.string.isRequired
 });
@@ -160,11 +167,7 @@ const messagesType = PropTypes.shape({
 // A lot of these props are passed through from the ItineraryBody. See the
 // documentation in that component for more information.
 PlaceRow.propTypes = {
-  accessibilityScoreGradationMap: PropTypes.shape({
-    color: PropTypes.string,
-    icon: PropTypes.element,
-    text: PropTypes.string
-  }),
+  accessibilityScoreGradationMap: accessibilityScoreGradationMapShape,
   AlertToggleIcon: PropTypes.elementType,
   AlertBodyIcon: PropTypes.elementType,
   config: coreUtils.types.configType.isRequired,

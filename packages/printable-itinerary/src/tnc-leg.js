@@ -1,3 +1,4 @@
+import { accessibilityScoreGradationMapShape } from "@opentripplanner/itinerary-body";
 import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
@@ -42,11 +43,7 @@ export default function TNCLeg({
 }
 
 TNCLeg.propTypes = {
-  accessibilityScoreGradationMap: PropTypes.shape({
-    color: PropTypes.string,
-    text: PropTypes.string,
-    icon: PropTypes.element
-  }),
+  accessibilityScoreGradationMap: accessibilityScoreGradationMapShape,
   leg: coreUtils.types.legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired
 };
