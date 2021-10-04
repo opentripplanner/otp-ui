@@ -1,8 +1,5 @@
 import coreUtils from "@opentripplanner/core-utils";
-import {
-  AccessibilityRating,
-  accessibilityScoreGradationMapShape
-} from "@opentripplanner/itinerary-body";
+import { AccessibilityRating } from "@opentripplanner/itinerary-body";
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -28,7 +25,11 @@ const AccessibilityAnnotation = ({
   </S.LegAnnotation>
 );
 AccessibilityAnnotation.propTypes = {
-  accessibilityScoreGradationMap: accessibilityScoreGradationMapShape,
+  accessibilityScoreGradationMap: PropTypes.shape({
+    color: PropTypes.string,
+    icon: PropTypes.element,
+    text: PropTypes.string
+  }),
   grayscale: PropTypes.bool,
   leg: coreUtils.types.legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired

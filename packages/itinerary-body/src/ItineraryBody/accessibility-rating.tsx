@@ -23,6 +23,8 @@ const Wrapper = styled.div<WrapperProps>`
 const StatusWrapper = styled.span`
   flex: 1;
 
+  /* TODO: 0.25em negative margin to get centering correct? */
+
   span {
     display: block;
   }
