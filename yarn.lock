@@ -2783,10 +2783,10 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
-"@opentripplanner/itinerary-body@2.5.0-alpha.2":
-  version "2.5.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/itinerary-body/-/itinerary-body-2.5.0-alpha.2.tgz#f572ba9697b8413b0e0523895ea1bfcc56d6ce48"
-  integrity sha512-7oL+z9fuk2O7kXxS4ZUPkfFN5VcsOiIcIp/WE4B6zqMvCcZE24sN03cGdHSqAO9Vk9zC0S5O6FBvSkCWPZS4yA==
+"@opentripplanner/itinerary-body@2.5.0-alpha.3":
+  version "2.5.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/itinerary-body/-/itinerary-body-2.5.0-alpha.3.tgz#9815b4f7bbb042c800f3cf81d916e1a0620f2d0c"
+  integrity sha512-tT/Z7x+ToLiSyeJgPDJJC+gUIr+4OYt9Dva0pSuI/pHV6ppIcGGZHlZ9y/dBZ78Cj7NBQf5JEUJha/Qz+P9MVA==
   dependencies:
     "@opentripplanner/core-utils" "^4.1.0"
     "@opentripplanner/humanize-distance" "^1.1.0"

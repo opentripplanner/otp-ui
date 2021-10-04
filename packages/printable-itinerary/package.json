@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@opentripplanner/icons": "^1.1.0",
-    "@opentripplanner/itinerary-body": "2.5.0-alpha.2"
+    "@opentripplanner/itinerary-body": "2.5.0-alpha.3"
   },
   "peerDependencies": {
     "react": "^16.14.0",

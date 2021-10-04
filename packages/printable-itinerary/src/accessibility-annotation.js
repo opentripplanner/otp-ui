@@ -1,15 +1,15 @@
 import coreUtils from "@opentripplanner/core-utils";
+import { AccessibilityRating } from "@opentripplanner/itinerary-body";
 import React from "react";
 import PropTypes from "prop-types";
 
-import { AccessibilityRating } from "@opentripplanner/itinerary-body";
 import * as S from "./styled";
 
 const AccessibilityAnnotation = ({
   accessibilityScoreGradationMap,
   grayscale,
-  LegIcon,
-  leg
+  leg,
+  LegIcon
 }) => (
   <S.LegAnnotation>
     <S.ModeIcon>

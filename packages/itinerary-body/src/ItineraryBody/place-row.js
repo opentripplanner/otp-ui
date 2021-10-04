@@ -2,12 +2,12 @@ import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 
-import AccessibilityRating from "./accessibility-rating";
 import DefaultTimeColumnContent from "../defaults/time-column-content";
 import AccessLegBody from "../AccessLegBody";
 import * as S from "../styled";
 import TransitLegBody from "../TransitLegBody";
 
+import AccessibilityRating from "./accessibility-rating";
 /*
   TODO: Wondering if it's possible for us to destructure the time
   preferences from the config object and avoid making the props list so long

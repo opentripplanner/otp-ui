@@ -3,24 +3,27 @@ import styled from "styled-components";
 import { Wheelchair } from "@styled-icons/foundation/Wheelchair";
 
 interface WrapperProps {
+  border: boolean;
   color: string;
   large: boolean;
 }
 
 const Wrapper = styled.div<WrapperProps>`
   align-items: center;
+  border: ${props => (props.border ? "1px solid #333" : "none")};
   background-color: ${props => props.color};
   border-radius: ${props => (props.large ? "4px" : "20px")};
   display: flex;
   justify-content: space-between;
   margin-top: 0.25em;
-  max-height: 50px;
+  height: ${props => (props.large ? "40px" : "30px")};
   padding: 0.25em 0.6em 0.25em 0.4em;
-  width: ${props => (props.large ? "65px" : "50px")};
   word-wrap: anywhere; /* this can often look quite bad, but helps encourage icons */
 `;
 const StatusWrapper = styled.span`
   flex: 1;
+
+  /* TODO: 0.25em negative margin to get centering correct? */
 
   span {
     display: block;
@@ -74,11 +77,12 @@ const AccessibilityRating = ({
 
   return (
     <Wrapper
+      border={grayscale}
+      color={grayscale ? "transparent" : mapped.color}
       large={large}
-      color={grayscale ? "#eee" : mapped.color}
       title={mapped.text}
     >
-      <Wheelchair style={{ flex: "2", minWidth: "20px" }} />
+      <Wheelchair style={{ flex: "2", minWidth: "20px", height: "100%" }} />
       <StatusWrapper>
         {/* Show either icon or text if no icon given */}
         {mapped.icon || <TextWrapper>{mapped.text}</TextWrapper>}
