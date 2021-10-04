@@ -16,13 +16,13 @@ const Wrapper = styled.div<WrapperProps>`
   display: flex;
   justify-content: space-between;
   margin-top: 0.25em;
+  max-width: 75px;
   height: ${props => (props.large ? "40px" : "30px")};
   padding: 0.25em 0.6em 0.25em 0.4em;
   word-wrap: anywhere; /* this can often look quite bad, but helps encourage icons */
 `;
 const StatusWrapper = styled.span`
   flex: 1;
-
   /* TODO: 0.25em negative margin to get centering correct? */
 
   span {
