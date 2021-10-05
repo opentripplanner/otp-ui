@@ -44,7 +44,15 @@ export const TNCFareCompanies = styled.span`
 
 export const Timing = styled.span``;
 
-export const TransitFare = styled.span``;
+export const TransitFare = styled.details`
+  display: inline-block;
+
+  > span {
+    display: block;
+    padding-left: 2ch;
+  }
+`;
+export const TransitFareSingle = styled.span``;
 
 export const TripDetail = styled.div`
   margin-top: 6px;
@@ -81,4 +89,6 @@ export const TripDetailsHeader = styled.div`
 export const TripDetailSummary = styled.div`
   margin-left: 28px;
   padding-top: 2px;
+  display: flex;
+  align-items: baseline;
 `;

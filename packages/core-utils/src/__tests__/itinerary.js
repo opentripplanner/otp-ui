@@ -7,6 +7,7 @@ import {
 
 const bikeRentalItinerary = require("./__mocks__/bike-rental-itinerary.json");
 const tncItinerary = require("./__mocks__/tnc-itinerary.json");
+const multiCurrencyItinerary = require("./__mocks__/multi-currency-itinerary.json");
 
 describe("util > itinerary", () => {
   it("isTransit should work", () => {
@@ -65,6 +66,11 @@ describe("util > itinerary", () => {
 
   it("calculateFare should return the correct currency code for TNC leg", () => {
     const fareResult = calculateFares(tncItinerary);
-    expect(fareResult.currencyCode).toEqual("USD");
+    expect(fareResult.tncCurrencyCode).toEqual("USD");
+  });
+
+  it("creates transit fares object for fares with multiple currencies", () => {
+    const fareResult = calculateFares(multiCurrencyItinerary);
+    expect(fareResult).toMatchSnapshot();
   });
 });

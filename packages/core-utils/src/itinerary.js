@@ -494,19 +494,16 @@ export function getTransitFare(fareComponent) {
 /**
  * For an itinerary, calculates the transit/TNC fares and returns an object with
  * these values, currency info, as well as string formatters.
- * It is assumed that the same currency is used for transit and TNC legs.
  */
 export function calculateFares(itinerary) {
   // Extract fare total from itinerary fares.
-  const fareComponent =
-    itinerary.fare && itinerary.fare.fare && itinerary.fare.fare.regular;
-  // Get string formatters and itinerary fare.
-  const {
-    centsToString,
-    currencyCode: transitCurrencyCode,
-    dollarsToString,
-    transitFare
-  } = getTransitFare(fareComponent);
+  const transitFares = {};
+  if (itinerary && itinerary.fare && itinerary.fare.fare) {
+    Object.keys(itinerary.fare.fare).forEach(fareKey => {
+      const fareComponent = itinerary.fare.fare[fareKey];
+      transitFares[fareKey] = getTransitFare(fareComponent);
+    });
+  }
   // Process any TNC fares
   let minTNCFare = 0;
   let maxTNCFare = 0;
@@ -522,12 +519,10 @@ export function calculateFares(itinerary) {
   });
 
   return {
-    centsToString,
-    currencyCode: transitCurrencyCode || tncCurrencyCode,
-    dollarsToString,
     maxTNCFare,
     minTNCFare,
-    transitFare
+    tncCurrencyCode,
+    transitFares
   };
 }
 

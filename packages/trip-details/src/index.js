@@ -9,9 +9,36 @@ import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
 import * as S from "./styled";
 import TripDetail from "./trip-detail";
 
+const TransitFare = ({ fareKey, fareNameFallback, keyMap, transitFares }) => {
+  const currentFare = transitFares[fareKey];
+
+  return (
+    <span>
+      {keyMap[fareKey] || fareNameFallback || fareKey}:{" "}
+      <b>{currentFare.centsToString(currentFare.transitFare)}</b>
+    </span>
+  );
+};
+TransitFare.propTypes = {
+  fareKey: PropTypes.string.isRequired,
+  fareNameFallback: PropTypes.string,
+  keyMap: PropTypes.shape({
+    [PropTypes.string]: PropTypes.string
+  }).isRequired,
+  transitFares: PropTypes.shape({
+    centsToString: PropTypes.func,
+    transitFare: PropTypes.number
+  }).isRequired
+};
+TransitFare.defaultProps = {
+  fareNameFallback: undefined
+};
+
 function TripDetails({
   className,
+  defaultFare,
   itinerary,
+  keyMap,
   longDateFormat,
   messages,
   routingType,
@@ -25,11 +52,9 @@ function TripDetails({
 
   // process the transit fare
   const {
-    centsToString,
-    dollarsToString,
     maxTNCFare,
     minTNCFare,
-    transitFare
+    transitFares
   } = coreUtils.itinerary.calculateFares(itinerary);
   let companies;
   itinerary.legs.forEach(leg => {
@@ -38,14 +63,41 @@ function TripDetails({
     }
   });
   let fare;
-  if (transitFare || minTNCFare) {
+
+  const fareKeys = transitFares && Object.keys(transitFares).sort();
+
+  if (transitFares && fareKeys.length > 0) {
+    const { dollarsToString } = transitFares[defaultFare];
+    // Depending on if there are additional fares to display either render a <span> or a <details>
+    const TransitFareWrapper =
+      transitFares && fareKeys.length > 1 ? S.TransitFare : S.TransitFareSingle;
+
     fare = (
       <S.Fare>
-        {transitFare && (
-          <S.TransitFare>
-            {messages.transitFare}: <b>{centsToString(transitFare)}</b>
-          </S.TransitFare>
-        )}
+        <TransitFareWrapper>
+          <summary style={{ display: "list-item" }}>
+            <TransitFare
+              fareNameFallback={messages.transitFare}
+              fareKey={defaultFare}
+              keyMap={keyMap}
+              transitFares={transitFares}
+            />
+          </summary>
+          {fareKeys.map(fareKey => {
+            // Don't show the default fare twice!
+            if (fareKey === defaultFare) {
+              return null;
+            }
+            return (
+              <TransitFare
+                fareKey={fareKey}
+                key={fareKey}
+                keyMap={keyMap}
+                transitFares={transitFares}
+              />
+            );
+          })}
+        </TransitFareWrapper>
         {minTNCFare !== 0 && (
           <S.TNCFare>
             <br />
@@ -137,8 +189,14 @@ function TripDetails({
 TripDetails.propTypes = {
   /** Used for additional styling with styled components for example. */
   className: PropTypes.string,
+  /** Determines which transit fare should be displayed by default, should there be multiple transit fare types */
+  defaultFare: PropTypes.string,
   /** Itinerary that the user has selected to view, contains multiple legs */
   itinerary: coreUtils.types.itineraryType.isRequired,
+  /** Mapping between fare keys and human-readable names for them */
+  keyMap: PropTypes.shape({
+    [PropTypes.string]: PropTypes.string
+  }),
   /** the desired format to use for a long date */
   longDateFormat: PropTypes.string,
   /**
@@ -168,6 +226,8 @@ TripDetails.propTypes = {
 
 TripDetails.defaultProps = {
   className: null,
+  defaultFare: "regular",
+  keyMap: {},
   longDateFormat: null,
   messages: {
     at: "at",

@@ -20,6 +20,33 @@
           "currencyCode": "USD"
         },
         "cents": 250
+      },
+      "unknown_fare_key": {
+        "currency": {
+          "symbol": "$",
+          "currency": "USD",
+          "defaultFractionDigits": 2,
+          "currencyCode": "USD"
+        },
+        "cents": 890
+      },
+      "electronicRegular": {
+        "currency": {
+          "symbol": "$",
+          "currency": "USD",
+          "defaultFractionDigits": 2,
+          "currencyCode": "USD"
+        },
+        "cents": 7
+      },
+      "electronicYouth": {
+        "currency": {
+          "symbol": "$",
+          "currency": "USD",
+          "defaultFractionDigits": 2,
+          "currencyCode": "USD"
+        },
+        "cents": 0
       }
     },
     "details": {}
