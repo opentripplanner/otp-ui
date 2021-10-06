@@ -1258,18 +1258,14 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@conveyal/geocoder-arcgis-geojson@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@conveyal/geocoder-arcgis-geojson/-/geocoder-arcgis-geojson-0.0.2.tgz#19ddf10160a76aba2a669c0f13ac5c079ba48f6b"
-  integrity sha1-Gd3xAWCnaroqZpwPE6xcB5ukj2s=
+"@conveyal/geocoder-arcgis-geojson@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@conveyal/geocoder-arcgis-geojson/-/geocoder-arcgis-geojson-0.0.3.tgz#0d1381c1d4f0e18bcf0ab1958fc63d148e2d80da"
+  integrity sha512-eb6EgqzbaUloxYyB44TF6YIefz302azcwbdUgVYUBJY4CzPLqKxBk6c6V+cx7iqxgtug3DqLuABDCSp1wGWuag==
   dependencies:
-    "@conveyal/lonlat" "^1.3.0"
-    geocoder-arcgis "^2.0.4"
-
-"@conveyal/lonlat@^1.1.2", "@conveyal/lonlat@^1.3.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@conveyal/lonlat/-/lonlat-1.4.0.tgz#18a5c1349078a779e710d24af11bc02b24127ba0"
-  integrity sha512-ag1FcRuwRGAZgeZ4e3sUq+gblf1Pgma2c9SaIVXluIrgsZ9Lrq7xhCbV0ErN8chyg/OCOoG8m/l3mgzbycQCnQ==
+    "@conveyal/lonlat" "^1.4.1"
+    eslint-config-standard-jsx "^10.0.0"
+    geocoder-arcgis "^2.0.5"
 
 "@conveyal/lonlat@^1.4.1":
   version "1.4.1"
@@ -9075,6 +9071,11 @@ eslint-config-prettier@^4.3.0:
   dependencies:
     get-stdin "^6.0.0"
 
+eslint-config-standard-jsx@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-standard-jsx/-/eslint-config-standard-jsx-10.0.0.tgz#dc24992661325a2e480e2c3091d669f19034e18d"
+  integrity sha512-hLeA2f5e06W1xyr/93/QJulN/rLbUVUmqTlexv9PRKHFwEC9ffJcH2LvJhMoEqYQBEYafedgGZXH2W8NUpt5lA==
+
 eslint-import-resolver-node@^0.3.4:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.4.tgz#85ffa81942c25012d8231096ddf679c03042c717"
@@ -10170,7 +10171,7 @@ gensync@^1.0.0-beta.1, gensync@^1.0.0-beta.2:
   resolved "https://registry.yarnpkg.com/gensync/-/gensync-1.0.0-beta.2.tgz#32a6ee76c3d7f52d46b2b1ae5d93fea8580a25e0"
   integrity sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==
 
-geocoder-arcgis@^2.0.4:
+geocoder-arcgis@^2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/geocoder-arcgis/-/geocoder-arcgis-2.0.5.tgz#61cd1ff2b5b325e6d36b6e7da8138611936b2f26"
   integrity sha512-KebkgRbjJ5+682DVUswqRrNHGhcCz8CG3kqP21l6xeGWDbaoSkuFzgE+fMHrKs0Ij2NJHe2/R4Z779EaXdR/3w==
@@ -11874,21 +11875,21 @@ isobject@^4.0.0:
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-4.0.0.tgz#3f1c9155e73b192022a80819bacd0343711697b0"
   integrity sha512-S/2fF5wH8SJA/kmwr6HYhK/RI/OkhD84k8ntalo0iJjZikgq1XFvR5M8NPT1x5F7fBwCG3qHfnzeP/Vh/ZxCUA==
 
-isomorphic-fetch@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/isomorphic-fetch/-/isomorphic-fetch-2.2.1.tgz#611ae1acf14f5e81f729507472819fe9733558a9"
-  integrity sha1-YRrhrPFPXoH3KVB0coGf6XM1WKk=
+isomorphic-fetch@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/isomorphic-fetch/-/isomorphic-fetch-3.0.0.tgz#0267b005049046d2421207215d45d6a262b8b8b4"
+  integrity sha512-qvUtwJ3j6qwsF3jLxkZ72qCgjMysPzDfeV240JHiGZsANBYd+EEuu35v7dfrJ9Up0Ak07D7GGSkGhCHTqg/5wA==
   dependencies:
-    node-fetch "^1.0.1"
-    whatwg-fetch ">=0.10.0"
+    node-fetch "^2.6.1"
+    whatwg-fetch "^3.4.1"
 
-isomorphic-mapzen-search@^1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/isomorphic-mapzen-search/-/isomorphic-mapzen-search-1.5.1.tgz#5ac0214cec436fb550e8ef362cf8d11b17de8e9c"
-  integrity sha512-38GcjidOqjVQkUzDovx+ceUXHwOliIoFq+qJ/zUzaZwn2h8qEANLMTjaZkFvYN2XdSGB65zBOH5n/iP/Vs1ejA==
+isomorphic-mapzen-search@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/isomorphic-mapzen-search/-/isomorphic-mapzen-search-1.6.0.tgz#eb368756d6132016a32c76435d6f34a38da5279f"
+  integrity sha512-90Zp8jxWuMCk582S7d6b85lHO2Lj4Nybv8o6ShqQX2SRP7SFh1fzHx67eilNUGNjBeamKYQJHmijZ1/wSzFe3A==
   dependencies:
-    "@conveyal/lonlat" "^1.1.2"
-    isomorphic-fetch "^2.2.1"
+    "@conveyal/lonlat" "^1.4.1"
+    isomorphic-fetch "^3.0.0"
     qs "^6.3.0"
 
 isstream@~0.1.2:
@@ -20175,7 +20176,7 @@ whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.3:
   dependencies:
     iconv-lite "0.4.24"
 
-whatwg-fetch@>=0.10.0:
+whatwg-fetch@>=0.10.0, whatwg-fetch@^3.4.1:
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-3.6.2.tgz#dced24f37f2624ed0281725d51d0e2e3fe677f8c"
   integrity sha512-bJlen0FcuU/0EMLrdbJ7zOnW6ITZLrZMIarMUVmdKtsGvZna8vxKYaexICWPfZ8qwf9fzNq+UEIZrnSaApt6RA==
