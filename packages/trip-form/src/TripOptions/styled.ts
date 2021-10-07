@@ -121,7 +121,7 @@ export const OptionButton = styled.button`
   justify-content: space-between;
   margin-top: 7px;
   min-width: 100%;
-  opacity: ${(props: ButtonProps) => (props.selected ? "1" : "0.5")};
+  opacity: ${(props: ButtonProps) => (props.selected ? "1" : "0.65")};
   padding: 7px 5px;
   svg {
     @media (max-width: 768px) {
@@ -160,7 +160,7 @@ export const Checkbox = styled.button.attrs({
       ? "50px"
       : "77px"
   )};
-  opacity: ${(props: ButtonProps) => (props.selected ? "1" : "0.5")};
+  opacity: ${(props: ButtonProps) => (props.selected ? "1" : "0.65")};
   padding: 20px 0px;
   white-space: pre-wrap;
 
@@ -245,13 +245,6 @@ export const ScrollableRow = styled(isServerEnv ? "div" : ScrollContainer)<{ hid
   }
   
   /* hover effects */
-  &:hover > button {
-    opacity: 0.5;
-  }
-  &:hover > button svg {
-    opacity: 0.5;
-  }
-
   &:hover > button:hover {
     opacity: 1;
   }
