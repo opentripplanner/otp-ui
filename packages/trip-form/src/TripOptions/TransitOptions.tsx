@@ -65,7 +65,7 @@ const TransitOptions = ({
               <DetailedModeIcon mode={transitMode.mode} />
             )) ||
               (transitMode.image && <S.Image src={transitMode.image} />)}
-            {transitMode.label}
+            <span style={{ zIndex: 5 }}>{transitMode.label}</span>
           </Checkbox>
         );
       })}
