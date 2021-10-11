@@ -14,11 +14,13 @@ import Checkbox from "./Checkbox";
 const ModeRow = ({
   onQueryParamChange,
   queryParams,
+  queryParamOverrides,
   supportedModes,
   SimpleModeIcon
 }: {
-  onQueryParamChange(paramsToUpdate: QueryParams): void;
+  onQueryParamChange(paramsToUpdate: QueryParams, categoryLabel?: string): void;
   queryParams: QueryParams;
+  queryParamOverrides: { [key: string]: QueryParams };
   supportedModes: Modes;
   SimpleModeIcon?: React.FunctionComponent<{ mode: string }>;
 }): React.ReactElement => {
@@ -34,7 +36,9 @@ const ModeRow = ({
         aria-checked={hasTransit}
         ariaLabel="Go by Transit"
         checked={hasTransit}
-        onClick={() => onQueryParamChange({ mode: selectedTransitString })}
+        // Prettier conflicts with jsx style rules
+        // eslint-disable-next-line prettier/prettier
+        onClick={() => onQueryParamChange({ mode: `${selectedTransitString},WALK` })}
         selected={hasTransit}
         SimpleModeIcon={SimpleModeIcon}
       >
@@ -49,9 +53,16 @@ const ModeRow = ({
           ? category.type === "access" && selectedModeAndCategoryActive
           : category.type === "exclusive" && selectedModeAndCategoryActive;
 
-        // FIXME: this method should be replaced with react state and hooks
-        // to allow persistence when changing mode and switiching back.
         const onChangeMode = () => {
+          // Use override query if present
+          if (queryParamOverrides && queryParamOverrides[category.label]) {
+            onQueryParamChange(
+              queryParamOverrides[category.label],
+              category.label
+            );
+            return;
+          }
+
           let mode = getCategoryPrimaryMode(category);
           const companies =
             typeof category.mode === "undefined"
@@ -62,7 +73,7 @@ const ModeRow = ({
               ? selectedTransitString
               : `${selectedTransitString},${mode}`;
           }
-          onQueryParamChange({ companies, mode });
+          onQueryParamChange({ companies, mode }, category.label);
         };
         // All Tri-Met categories either have a mode or the first option does
         const mode =

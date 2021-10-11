@@ -50,7 +50,7 @@ export interface QueryProps {
   /**
    * Function to execute when query parameters change
    */
-  onQueryParamChange(paramsToUpdate: QueryParams): void;
+  onQueryParamChange(paramsToUpdate: QueryParams, categoryLabel?: string): void;
   /**
    * Query params currently set for the active trip plan query.
    */

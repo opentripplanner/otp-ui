@@ -63,10 +63,13 @@ const FeaturedOption = ({
           : [o.company];
       }
     }
-    onQueryParamChange({
-      companies: company.join(","),
-      mode: mode.join(",")
-    });
+    onQueryParamChange(
+      {
+        companies: company.join(","),
+        mode: mode.join(",")
+      },
+      category.label
+    );
   };
 
   return (
