@@ -38,7 +38,7 @@ const ModeRow = ({
         checked={hasTransit}
         // Prettier conflicts with jsx style rules
         // eslint-disable-next-line prettier/prettier
-        onClick={() => onQueryParamChange({ mode: `${selectedTransitString},WALK` })}
+        onClick={() => onQueryParamChange({ companies: "", mode: `${selectedTransitString},WALK` })}
         selected={hasTransit}
         SimpleModeIcon={SimpleModeIcon}
       >
@@ -66,7 +66,7 @@ const ModeRow = ({
           let mode = getCategoryPrimaryMode(category);
           const companies =
             typeof category.mode === "undefined"
-              ? undefined
+              ? ""
               : category.options?.map(o => o.company).join(",");
           if (category.type === "access") {
             mode = isChecked
