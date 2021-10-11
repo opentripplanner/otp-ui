@@ -1,4 +1,4 @@
-import lonlat from "@conveyal/lonlat";
+import { fromCoordinates } from "@conveyal/lonlat";
 
 import Geocoder from "./abstract-geocoder";
 
@@ -26,9 +26,7 @@ export default class ArcGISGeocoder extends Geocoder {
       .search({ magicKey: feature.magicKey, text: feature.text })
       .then(response => {
         const firstFeature = response.features[0];
-        const location = lonlat.fromCoordinates(
-          firstFeature.geometry.coordinates
-        );
+        const location = fromCoordinates(firstFeature.geometry.coordinates);
         location.name = firstFeature.properties.label;
         location.rawGeocodedFeature = firstFeature;
         return location;

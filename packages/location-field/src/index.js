@@ -77,6 +77,16 @@ class LocationField extends Component {
     };
   }
 
+  componentDidMount() {
+    const { initialSearchResults } = this.props;
+    if (initialSearchResults) {
+      this.setState({
+        geocodedFeatures: initialSearchResults,
+        menuVisible: true
+      });
+    }
+  }
+
   componentDidUpdate(prevProps) {
     // If location is updated externally, replace value and geocoded features
     // in internal state.
@@ -175,7 +185,7 @@ class LocationField extends Component {
     // see https://stackoverflow.com/a/49325196/915811
     const target =
       e.relatedTarget !== null ? e.relatedTarget : document.activeElement;
-    if (!target || target.getAttribute("role") !== "menuitem") {
+    if (!target || target.getAttribute("role") !== "listitem") {
       this.setState({
         geocodedFeatures: [],
         menuVisible: false,
@@ -306,21 +316,76 @@ class LocationField extends Component {
       });
   }
 
-  render() {
+  renderFeature = (itemIndex, feature) => {
     const {
       addLocationSearch,
+      GeocodedOptionIconComponent,
+      geocoderConfig,
+      layerColorMap,
+      operatorIconMap
+    } = this.props;
+    const { activeIndex } = this.state;
+    // Create the selection handler
+    const locationSelected = () => {
+      getGeocoder(geocoderConfig)
+        .getLocationFromGeocodedFeature(feature)
+        .then(geocodedLocation => {
+          // Set the current location
+          this.setLocation(geocodedLocation, "GEOCODE");
+          // Add to the location search history. This is intended to
+          // populate the sessionSearches array.
+          addLocationSearch({ location: geocodedLocation });
+        });
+    };
+
+    // Add to the selection handler lookup (for use in onKeyDown)
+    this.locationSelectedLookup[itemIndex] = locationSelected;
+
+    // Extract GTFS/POI info and assign to class
+    const { layer, source, id } = feature.properties;
+    const classNames = [];
+    let operatorIcon;
+    // Operator only exists on transit features
+    const featureIdComponents = source === "transit" && id.split("::");
+    if (featureIdComponents.length > 0) {
+      const operatorName = featureIdComponents[1]
+        .replaceAll(" ", "-")
+        .toLowerCase();
+      classNames.push(`operator-${operatorName}`);
+      operatorIcon = operatorIconMap[operatorName];
+    }
+
+    classNames.push(`source-${source}`);
+    classNames.push(`layer-${layer}`);
+
+    // Create and return the option menu item
+    return (
+      <Option
+        classes={classNames.join(" ")}
+        color={layerColorMap[layer]}
+        icon={operatorIcon || <GeocodedOptionIconComponent feature={feature} />}
+        isActive={itemIndex === activeIndex}
+        key={optionKey++}
+        onClick={locationSelected}
+        title={feature.properties.label}
+      />
+    );
+  };
+
+  render() {
+    const {
       autoFocus,
       className,
       currentPosition,
       currentPositionIcon,
       currentPositionUnavailableIcon,
-      GeocodedOptionIconComponent,
-      geocoderConfig,
       inputPlaceholder,
+      layerColorMap,
       location,
       clearButtonIcon,
       LocationIconComponent,
       locationType,
+      nearbyStops,
       sessionOptionIcon,
       showClearButton,
       showUserSettings,
@@ -328,15 +393,13 @@ class LocationField extends Component {
       stopOptionIcon,
       stopsIndex,
       suppressNearby,
-      userLocationsAndRecentPlaces,
+      suggestionCount,
       UserLocationIconComponent,
-      nearbyStops
+      userLocationsAndRecentPlaces
     } = this.props;
     const { menuVisible, value } = this.state;
     const { activeIndex, message } = this.state;
-    let { geocodedFeatures } = this.state;
-    if (geocodedFeatures.length > 5)
-      geocodedFeatures = geocodedFeatures.slice(0, 5);
+    const { geocodedFeatures } = this.state;
 
     let { sessionSearches } = this.props;
     if (sessionSearches.length > 5)
@@ -355,38 +418,57 @@ class LocationField extends Component {
       // Add the menu sub-heading (not a selectable item)
       // menuItems.push(<MenuItem header key='sr-header'>Search Results</MenuItem>)
 
+      // Split out different types of transit results
+      // To keep the list tidy, only include a subset of the responses for each category
+      const stopFeatures = geocodedFeatures
+        .filter(feature => feature.properties.layer === "stops")
+        .slice(0, suggestionCount);
+      const stationFeatures = geocodedFeatures
+        .filter(feature => feature.properties.layer === "stations")
+        .slice(0, suggestionCount);
+      const otherFeatures = geocodedFeatures
+        .filter(feature => feature.properties.source !== "transit")
+        .slice(0, suggestionCount);
+
+      // If no categories of features are returned, this variable is used to
+      // avoid displaying headers
+      const transitFeaturesPresent =
+        stopFeatures.length > 0 || stationFeatures.length > 0;
+
       // Iterate through the geocoder results
       menuItems = menuItems.concat(
-        geocodedFeatures.map(feature => {
-          // Create the selection handler
-          const locationSelected = () => {
-            getGeocoder(geocoderConfig)
-              .getLocationFromGeocodedFeature(feature)
-              .then(geocodedLocation => {
-                // Set the current location
-                this.setLocation(geocodedLocation, "GEOCODE");
-                // Add to the location search history. This is intended to
-                // populate the sessionSearches array.
-                addLocationSearch({ location: geocodedLocation });
-              });
-          };
+        stationFeatures.length > 0 && (
+          <S.MenuItem
+            bgColor={layerColorMap.stations}
+            centeredText
+            header
+            key="gtfs-stations-header"
+          >
+            Stations
+          </S.MenuItem>
+        ),
+        stationFeatures.map(feature =>
+          this.renderFeature(itemIndex++, feature)
+        ),
 
-          // Add to the selection handler lookup (for use in onKeyDown)
-          this.locationSelectedLookup[itemIndex] = locationSelected;
+        stopFeatures.length > 0 && (
+          <S.MenuItem
+            bgColor={layerColorMap.stops}
+            centeredText
+            header
+            key="gtfs-stops-header"
+          >
+            Stops
+          </S.MenuItem>
+        ),
+        stopFeatures.map(feature => this.renderFeature(itemIndex++, feature)),
 
-          // Create and return the option menu item
-          const option = (
-            <Option
-              icon={<GeocodedOptionIconComponent feature={feature} />}
-              key={optionKey++}
-              title={feature.properties.label}
-              onClick={locationSelected}
-              isActive={itemIndex === activeIndex}
-            />
-          );
-          itemIndex++;
-          return option;
-        })
+        transitFeaturesPresent && otherFeatures.length > 0 && (
+          <S.MenuItem bgColor="#333" header centeredText key="other-header">
+            Other
+          </S.MenuItem>
+        ),
+        otherFeatures.map(feature => this.renderFeature(itemIndex++, feature))
       );
     }
 
@@ -394,7 +476,7 @@ class LocationField extends Component {
     if (nearbyStops.length > 0 && !suppressNearby) {
       // Add the menu sub-heading (not a selectable item)
       menuItems.push(
-        <S.MenuItem header key="ns-header">
+        <S.MenuItem header centeredText key="ns-header">
           Nearby Stops
         </S.MenuItem>
       );
@@ -439,7 +521,7 @@ class LocationField extends Component {
     if (sessionSearches.length > 0) {
       // Add the menu sub-heading (not a selectable item)
       menuItems.push(
-        <S.MenuItem header key="ss-header">
+        <S.MenuItem header centeredText key="ss-header">
           Recently Searched
         </S.MenuItem>
       );
@@ -475,7 +557,7 @@ class LocationField extends Component {
     if (userLocationsAndRecentPlaces.length > 0 && showUserSettings) {
       // Add the menu sub-heading (not a selectable item)
       menuItems.push(
-        <S.MenuItem header key="mp-header">
+        <S.MenuItem header centeredText key="mp-header">
           My Places
         </S.MenuItem>
       );
@@ -647,7 +729,6 @@ LocationField.propTypes = {
   /**
    * Dispatched upon selecting a geocoded result
    * Provides an argument in the format:
-   *
    * ```js
    * { location: geocodedLocation }
    * ```
@@ -689,6 +770,19 @@ LocationField.propTypes = {
    * A slot for the icon to display for when the current position is unavailable
    */
   currentPositionUnavailableIcon: PropTypes.node,
+  /**
+   * Allows the component to be rendered with pre-filled results
+   */
+  initialSearchResults: PropTypes.arrayOf(
+    PropTypes.shape({
+      type: PropTypes.string,
+      geometry: PropTypes.shape({
+        type: PropTypes.string,
+        coordinates: PropTypes.array
+      }),
+      properties: PropTypes.shape({ id: PropTypes.string })
+    })
+  ),
   /**
    * Invoked whenever the currentPosition is set, but the nearbyStops are not.
    * Sends the following argument:
@@ -743,6 +837,16 @@ LocationField.propTypes = {
    * will display. If this value isn't provided, the locationType will be shown.
    */
   inputPlaceholder: PropTypes.string,
+  /**
+   * Mapping from Pelias layer to color. Allows results from different
+   * Pelias sources to be shown in a different color.
+   */
+  layerColorMap: PropTypes.shape({
+    [PropTypes.string]: PropTypes.string,
+    // Explicitly include those used as headers
+    stops: PropTypes.string,
+    stations: PropTypes.string
+  }),
   /**
    * The location that this component is currently set with.
    */
@@ -805,6 +909,11 @@ LocationField.propTypes = {
    */
   onLocationSelected: PropTypes.func.isRequired,
   /**
+   * Mapping from Pelias *operator* to icon (represented as jsx). Allows results from different Pelias
+   * operators to be given a unique Icon.
+   */
+  operatorIconMap: PropTypes.shape({ [PropTypes.string]: PropTypes.node }),
+  /**
    * A slot for the icon to display for an option that was used during the
    * current session.
    */
@@ -845,6 +954,12 @@ LocationField.propTypes = {
    */
   suppressNearby: PropTypes.bool,
   /**
+   * When showing special categories of transit response, these can be capped
+   * to prevent the list of responses from getting too long. This value declares
+   * how many responses to show in each category
+   */
+  suggestionCount: PropTypes.number,
+  /**
    * An array of recent locations and places a user has searched for.
    */
   userLocationsAndRecentPlaces: PropTypes.arrayOf(
@@ -871,14 +986,17 @@ LocationField.defaultProps = {
   currentPosition: null,
   currentPositionIcon: <LocationArrow size={13} />,
   currentPositionUnavailableIcon: <Ban size={13} />,
+  initialSearchResults: null,
   findNearbyStops: () => {},
   GeocodedOptionIconComponent: GeocodedOptionIcon,
   hideExistingValue: false,
   inputPlaceholder: null,
+  layerColorMap: {},
   location: null,
   LocationIconComponent: DefaultLocationIcon,
   nearbyStops: [],
   onTextInputClick: null,
+  operatorIconMap: {},
   sessionOptionIcon: <Search size={13} />,
   sessionSearches: [],
   showClearButton: true,
@@ -887,6 +1005,7 @@ LocationField.defaultProps = {
   stopOptionIcon: <Bus size={13} />,
   stopsIndex: null,
   suppressNearby: false,
+  suggestionCount: 3,
   userLocationsAndRecentPlaces: [],
   UserLocationIconComponent: UserLocationIcon
 };
