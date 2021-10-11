@@ -61,6 +61,8 @@ const FeaturedOption = ({
         company = optionsAreCheckboxes
           ? selectedCompanies.concat([o.company])
           : [o.company];
+      } else {
+        company = [];
       }
     }
     onQueryParamChange(
