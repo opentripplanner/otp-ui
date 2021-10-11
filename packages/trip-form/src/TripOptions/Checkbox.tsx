@@ -32,7 +32,7 @@ export default function Checkbox(
     SimpleModeIcon = TriMetModeIcon
   } = props;
 
-  const modeIcon = <SimpleModeIcon mode={mode} />;
+  const modeIcon = mode && <SimpleModeIcon mode={mode} />;
 
   return (
     <S.Checkbox

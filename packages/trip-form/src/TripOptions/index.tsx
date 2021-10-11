@@ -78,7 +78,7 @@ export default function TripOptions(props: Props): ReactElement {
     );
   }
   return (
-    <S.TripOptionsContainer>
+    <S.TripOptionsContainer className={className}>
       <ModeRow
         onQueryParamChange={onQueryParamChange}
         queryParams={queryParams}
