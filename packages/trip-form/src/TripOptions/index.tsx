@@ -1,12 +1,14 @@
+import coreUtils from "@opentripplanner/core-utils";
 import React, { FunctionComponent, ReactElement, useState } from "react";
 
 import GeneralSettingsPanel from "../GeneralSettingsPanel";
 
 import FeaturedOption from "./FeaturedOption";
 import FeaturedOptionOverlay from "./FeaturedOptionOverlay";
+import { getSelectedModes } from "./util";
 import ModeRow from "./ModeRow";
 import TransitOptions from "./TransitOptions";
-import { Company, QueryProps } from "./types";
+import { Company, QueryParams, QueryProps } from "./types";
 import * as S from "./styled";
 
 interface ComponentProps {
@@ -51,10 +53,14 @@ type Props = ComponentProps & QueryProps;
  */
 export default function TripOptions(props: Props): ReactElement {
   const [featuredOption, setFeaturedOption] = useState(null);
+  const [queryParamOverrides, setQueryParamOverrides] = useState<{
+    [key: string]: QueryParams;
+  }>({});
+
   const {
     className,
     footer,
-    onQueryParamChange,
+    onQueryParamChange: updateQueryParams,
     queryParams,
     supportedCompanies,
     supportedModes,
@@ -63,6 +69,52 @@ export default function TripOptions(props: Props): ReactElement {
     DetailedModeIcon,
     CompanyIcon
   } = props;
+
+  // FIXME: move all query param handling to hook (object with category to queryParam mapping)
+  // THis will involve refactoring all sub-components to send category along with
+  // query param update. The refactor will be complex but the end result will be
+  // cleaner and simpler
+  const onQueryParamChange = (
+    newQueryParams: QueryParams,
+    categoryLabel: string = null
+  ) => {
+    // Merge params together to persist some param changes
+    const newParams = { ...queryParams, ...newQueryParams };
+
+    // Update transit override if changes are made to transit submodes
+    const updatedSelectedModes = getSelectedModes(newParams);
+    const updatedSelectedTransit = updatedSelectedModes.filter(
+      coreUtils.itinerary.isTransit
+    );
+    if (updatedSelectedTransit.length > 0) {
+      setQueryParamOverrides({
+        ...queryParamOverrides,
+        transit: { mode: updatedSelectedTransit.join(",") }
+      });
+    }
+
+    // Update category override
+    if (categoryLabel) {
+      const { companies, mode } = newQueryParams;
+      setQueryParamOverrides({
+        ...queryParamOverrides,
+        [categoryLabel]: { companies, mode }
+      });
+    }
+
+    // Override transit if transit override is present
+    if (
+      updatedSelectedTransit[0] === "TRANSIT" &&
+      "transit" in queryParamOverrides
+    ) {
+      newParams.mode = newParams.mode.replace(
+        "TRANSIT",
+        queryParamOverrides.transit.mode
+      );
+    }
+    updateQueryParams(newParams);
+  };
+
   if (featuredOption) {
     return (
       <S.TripOptionsContainer className={className}>
@@ -78,9 +130,10 @@ export default function TripOptions(props: Props): ReactElement {
     );
   }
   return (
-    <S.TripOptionsContainer>
+    <S.TripOptionsContainer className={className}>
       <ModeRow
         onQueryParamChange={onQueryParamChange}
+        queryParamOverrides={queryParamOverrides}
         queryParams={queryParams}
         supportedModes={supportedModes}
         SimpleModeIcon={SimpleModeIcon}

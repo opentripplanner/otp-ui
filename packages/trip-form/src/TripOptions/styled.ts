@@ -30,6 +30,7 @@ export const buttonIconCss = css`
   height: 3em;
   margin-bottom: 10px;
   width: 3em;
+  z-index: 10;
 `;
 
 export const GreenCheck = styled(CheckCircle)`
@@ -54,7 +55,7 @@ export const FeaturedOptionImageWrapper = styled.div`
   justify-content: center;
   padding: 1em;
 
-  ${Image} {
+  * {
     max-height: 200px;
   }
 `;
@@ -174,7 +175,7 @@ export const Checkbox = styled.button.attrs({
       clip-path: circle(40% at 50% 50%); /* hide outer border */
     }
 
-    svg {
+    ${GreenCheck}, ${UncheckedIcon} {
       position: absolute;
       right: 5.5%;
       top: 11%;
@@ -218,7 +219,7 @@ export const OverlayOptions = styled.ul`
     padding: 10px;
     padding-bottom: 5px;
     text-decoration: none;
-    img {
+    .label, .label * {
       height: 40px;
     }
     .open-link {

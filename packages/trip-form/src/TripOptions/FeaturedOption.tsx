@@ -61,12 +61,17 @@ const FeaturedOption = ({
         company = optionsAreCheckboxes
           ? selectedCompanies.concat([o.company])
           : [o.company];
+      } else {
+        company = [];
       }
     }
-    onQueryParamChange({
-      companies: company.join(","),
-      mode: mode.join(",")
-    });
+    onQueryParamChange(
+      {
+        companies: company.join(","),
+        mode: mode.join(",")
+      },
+      category.label
+    );
   };
 
   return (
