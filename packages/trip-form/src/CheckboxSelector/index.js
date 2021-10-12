@@ -53,7 +53,7 @@ CheckboxSelector.propTypes = {
   /**
    * The contents of the contained <label> control.
    */
-  label: PropTypes.element,
+  label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   /**
    * Triggered when the value of the <input> control changes.
    * @param e The data for the HTML checkbox onchange event.
