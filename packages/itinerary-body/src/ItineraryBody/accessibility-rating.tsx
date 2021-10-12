@@ -16,13 +16,13 @@ const Wrapper = styled.div<WrapperProps>`
   display: flex;
   justify-content: space-between;
   margin-top: 0.25em;
+  max-width: 75px;
   height: ${props => (props.large ? "40px" : "30px")};
   padding: 0.25em 0.6em 0.25em 0.4em;
   word-wrap: anywhere; /* this can often look quite bad, but helps encourage icons */
 `;
 const StatusWrapper = styled.span`
   flex: 1;
-
   /* TODO: 0.25em negative margin to get centering correct? */
 
   span {
@@ -82,7 +82,7 @@ const AccessibilityRating = ({
       large={large}
       title={mapped.text}
     >
-      <Wheelchair style={{ flex: "2", minWidth: "20px", height: "100%" }} />
+      <Wheelchair style={{ flex: "2", height: "100%", minWidth: "20px" }} />
       <StatusWrapper>
         {/* Show either icon or text if no icon given */}
         {mapped.icon || <TextWrapper>{mapped.text}</TextWrapper>}
