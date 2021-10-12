@@ -73,10 +73,11 @@ export default function TripOptions(props: Props): ReactElement {
   // FIXME: move all query param handling to hook (object with category to queryParam mapping)
   // THis will involve refactoring all sub-components to send category along with
   // query param update. The refactor will be complex but the end result will be
-  // cleaner and simpler
+  // cleaner and simpler. Only this index component will handle queryParam generation,
+  // all others could work in only React space.
   const onQueryParamChange = (
     newQueryParams: QueryParams,
-    categoryLabel: string = null
+    categoryId: string = null
   ) => {
     // Merge params together to persist some param changes
     const newParams = { ...queryParams, ...newQueryParams };
@@ -94,11 +95,11 @@ export default function TripOptions(props: Props): ReactElement {
     }
 
     // Update category override
-    if (categoryLabel) {
+    if (categoryId) {
       const { companies, mode } = newQueryParams;
       setQueryParamOverrides({
         ...queryParamOverrides,
-        [categoryLabel]: { companies, mode }
+        [categoryId]: { companies, mode }
       });
     }
 

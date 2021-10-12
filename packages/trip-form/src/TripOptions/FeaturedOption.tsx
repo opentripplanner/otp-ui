@@ -70,7 +70,7 @@ const FeaturedOption = ({
         companies: company.join(","),
         mode: mode.join(",")
       },
-      category.label
+      category.id
     );
   };
 

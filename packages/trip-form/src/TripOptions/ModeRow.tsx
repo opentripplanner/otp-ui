@@ -1,5 +1,5 @@
 import coreUtils from "@opentripplanner/core-utils";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import {
   categoryIsActive,
@@ -18,7 +18,7 @@ const ModeRow = ({
   supportedModes,
   SimpleModeIcon
 }: {
-  onQueryParamChange(paramsToUpdate: QueryParams, categoryLabel?: string): void;
+  onQueryParamChange(paramsToUpdate: QueryParams, categoryId?: string): void;
   queryParams: QueryParams;
   queryParamOverrides: { [key: string]: QueryParams };
   supportedModes: Modes;
@@ -30,7 +30,22 @@ const ModeRow = ({
   const hasTransit = selectedTransit.length > 0;
   const selectedTransitString = selectedTransit.join(",") || "TRANSIT";
 
+  // Scroll to active mode on initial render
+  // This ref is attached to every active mode checkbox
+  const initialRenderRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+
+  useEffect(() => {
+    initialRenderRef?.current?.scrollIntoView({
+      behavior: "auto",
+      // Ideally there is no vertical scrolling, but if this likely non-effective
+      // scrolling is acceptable, then it is simpler
+      block: "end",
+      inline: "center"
+    });
+  }, []);
+
   return (
+    /* Not hiding the scrollbars here ensures the user can still scroll. Scrollbars are hidden using CSS. */
     <S.ScrollableRow hideScrollbars={false}>
       <Checkbox
         aria-checked={hasTransit}
@@ -55,11 +70,21 @@ const ModeRow = ({
 
         const onChangeMode = () => {
           // Use override query if present
-          if (queryParamOverrides && queryParamOverrides[category.label]) {
-            onQueryParamChange(
-              queryParamOverrides[category.label],
-              category.label
-            );
+          if (queryParamOverrides && queryParamOverrides[category.id]) {
+            const override = queryParamOverrides[category.id];
+            // Ensure exclusive modes that share IDs with non-exclusive modes don't have transit
+            if (category.type === "exclusive") {
+              override.mode = override.mode?.replace("TRANSIT,", "");
+            }
+            // Ensure access modes that share IDs with exclusive modes include transit
+            if (
+              category.type === "access" &&
+              !override.mode?.includes("TRANSIT")
+            ) {
+              override.mode = `TRANSIT,${override.mode}`;
+            }
+
+            onQueryParamChange(override, category.id);
             return;
           }
 
@@ -73,7 +98,7 @@ const ModeRow = ({
               ? selectedTransitString
               : `${selectedTransitString},${mode}`;
           }
-          onQueryParamChange({ companies, mode }, category.label);
+          onQueryParamChange({ companies, mode }, category.id);
         };
         // All Tri-Met categories either have a mode or the first option does
         const mode =
@@ -86,6 +111,7 @@ const ModeRow = ({
             key={`access-${category.label}`}
             mode={mode}
             onClick={onChangeMode}
+            innerRef={isChecked ? initialRenderRef : null}
             selected={isChecked}
             SimpleModeIcon={SimpleModeIcon}
           >

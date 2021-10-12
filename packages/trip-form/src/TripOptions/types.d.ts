@@ -11,6 +11,7 @@ export interface ModeOption {
 
 export interface Category {
   description?: string;
+  id: string;
   image?: string;
   label: string;
   mode?: string;
@@ -50,7 +51,7 @@ export interface QueryProps {
   /**
    * Function to execute when query parameters change
    */
-  onQueryParamChange(paramsToUpdate: QueryParams, categoryLabel?: string): void;
+  onQueryParamChange(paramsToUpdate: QueryParams, categoryId?: string): void;
   /**
    * Query params currently set for the active trip plan query.
    */

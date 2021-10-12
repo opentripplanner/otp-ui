@@ -1,6 +1,6 @@
 import ScrollContainer from "react-indiana-drag-scroll";
 import styled, { css } from "styled-components";
-import { CheckCircle } from "@styled-icons/boxicons-solid/CheckCircle";
+import { Check } from "@styled-icons/bootstrap/Check";
 import { PlusCircle } from "@styled-icons/boxicons-regular/PlusCircle";
 // Prettier does not support typescript annotation
 // eslint-disable-next-line prettier/prettier
@@ -27,18 +27,17 @@ export const TransitOptionsContainer = styled.div`
 `;
 
 export const buttonIconCss = css`
+  border-radius: 50%;
   height: 3em;
   margin-bottom: 10px;
   width: 3em;
   z-index: 10;
 `;
 
-export const GreenCheck = styled(CheckCircle)`
+export const GreenCheck = styled(Check)`
   ${buttonIconCss}
-  background-color: white;
-  border-radius: 50%;
-  clip-path: circle(40% at 50% 50%); /* Hides white stroke */
-  color: rgb(84, 174, 88);
+  background-color: rgb(84, 174, 88);
+  color: white;
 `;
 
 export const UncheckedIcon = styled(PlusCircle)`
@@ -153,7 +152,7 @@ export const Checkbox = styled.button.attrs({
   background-color: rgba(0, 0, 0, 0);
   border: none;
   color: white;
-  cursor: pointer;
+  cursor: ${(props:ButtonProps) => props.disabled ? "not-allowed" : "pointer"};
   display: flex;
   flex-direction: column;
   min-width: ${(props: ButtonProps) => (
@@ -171,8 +170,6 @@ export const Checkbox = styled.button.attrs({
 
     ${UncheckedIcon} {
       background: #0d5eac;
-      border-radius: 50%; /* fallback for when clip-path is unsupported */
-      clip-path: circle(40% at 50% 50%); /* hide outer border */
     }
 
     ${GreenCheck}, ${UncheckedIcon} {
@@ -251,5 +248,12 @@ export const ScrollableRow = styled(isServerEnv ? "div" : ScrollContainer)<{ hid
   }
   &:hover > button:hover svg {
     opacity: 1;
+  }
+
+  -ms-overflow-style: none;  /* Trident */
+  scrollbar-width: none;  /* Gecko */
+
+  &::-webkit-scrollbar {
+    display: none; /* Webkit */
   }
 `;
