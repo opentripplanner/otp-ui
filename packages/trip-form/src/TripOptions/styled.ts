@@ -252,4 +252,11 @@ export const ScrollableRow = styled(isServerEnv ? "div" : ScrollContainer)<{ hid
   &:hover > button:hover svg {
     opacity: 1;
   }
+
+  -ms-overflow-style: none;  /* Trident */
+  scrollbar-width: none;  /* Gecko */
+
+  &::-webkit-scrollbar {
+    display: none; /* Webkit */
+  }
 `;

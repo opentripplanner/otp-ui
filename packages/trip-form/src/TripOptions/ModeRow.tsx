@@ -31,6 +31,7 @@ const ModeRow = ({
   const selectedTransitString = selectedTransit.join(",") || "TRANSIT";
 
   return (
+    /* Not hiding the scrollbars here ensures the user can still scroll. Scrollbars are hidden using CSS. */
     <S.ScrollableRow hideScrollbars={false}>
       <Checkbox
         aria-checked={hasTransit}
