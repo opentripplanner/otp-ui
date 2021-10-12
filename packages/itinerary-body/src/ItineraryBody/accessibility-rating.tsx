@@ -82,7 +82,7 @@ const AccessibilityRating = ({
       large={large}
       title={mapped.text}
     >
-      <Wheelchair style={{ flex: "2", minWidth: "20px", height: "100%" }} />
+      <Wheelchair style={{ flex: "2", height: "100%", minWidth: "20px" }} />
       <StatusWrapper>
         {/* Show either icon or text if no icon given */}
         {mapped.icon || <TextWrapper>{mapped.text}</TextWrapper>}

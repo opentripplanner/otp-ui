@@ -49,9 +49,9 @@ const ItineraryBody = ({
       // Create a row containing this leg's start place and leg traversal details
       rows.push(
         <PlaceRow
+          accessibilityScoreGradationMap={accessibilityScoreGradationMap}
           AlertToggleIcon={AlertToggleIcon}
           AlertBodyIcon={AlertBodyIcon}
-          accessibilityScoreGradationMap={accessibilityScoreGradationMap}
           // eslint-disable-next-line react/no-array-index-key
           key={i + (isDestination ? 1 : 0)}
           config={config}
