@@ -49,6 +49,7 @@ const commonModes = {
     {
       description:
         "A ridesharing company (also known as a transportation network company, ride-hailing service; the vehicles are called app-taxis or e-taxis) is a company that, via websites and mobile apps, matches passengers with drivers of vehicles for hire that, unlike taxicabs, cannot legally be hailed from the street.",
+      id: "CAR",
       image: carImage,
       // 00A0 is non-breakable space used to prevent awkward breaking of "Park & Ride"
       label: `+ Ridehail or Park${"\u00A0"}&${"\u00A0"}Ride`,
@@ -69,7 +70,8 @@ const commonModes = {
     },
     {
       description:
-        "E-scooters are battery-powered devices that you can rent on-the-spot using an app on your phone. You can quickly and easily connect to and from your transit stop, using one of several scooter brands operating in the Portland area.",
+        "E-scooters are batBICYCLEtery-powered devices that you can rent on-the-spot using an app on your phone. You can quickly and easily connect to and from your transit stop, using one of several scooter brands operating in the Portland area.",
+      id: "SCOOTER",
       image: scooterImage,
       label: "+ E-Scooter Rental",
       type: "access",
@@ -103,11 +105,13 @@ const commonModes = {
     },
     {
       label: "Walk only",
+      id: "WALK",
       mode: "WALK",
       type: "exclusive"
     },
     {
       label: "Bike only",
+      id: "BICYCLE",
       type: "exclusive",
       options: [
         {
