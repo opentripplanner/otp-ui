@@ -17,6 +17,7 @@ export default function Checkbox(
     checked: boolean;
     children: React.ReactNode | string;
     className?: string;
+    innerRef?: React.MutableRefObject<HTMLInputElement>;
     SimpleModeIcon?: FunctionComponent<{ mode: string }>;
   } & ButtonProps
 ): ReactElement {
@@ -26,6 +27,7 @@ export default function Checkbox(
     children,
     className,
     disabled,
+    innerRef,
     inset,
     mode,
     onClick,
@@ -43,6 +45,7 @@ export default function Checkbox(
       disabled={disabled}
       inset={inset}
       mode={mode}
+      ref={innerRef}
       onClick={onClick}
       selected={selected}
     >

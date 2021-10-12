@@ -1,5 +1,5 @@
 import coreUtils from "@opentripplanner/core-utils";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import {
   categoryIsActive,
@@ -29,6 +29,20 @@ const ModeRow = ({
   const selectedTransit = selectedModes.filter(coreUtils.itinerary.isTransit);
   const hasTransit = selectedTransit.length > 0;
   const selectedTransitString = selectedTransit.join(",") || "TRANSIT";
+
+  // Scroll to active mode on initial render
+  // This ref is attached to every active mode checkbox
+  const initialRenderRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+
+  useEffect(() => {
+    initialRenderRef?.current?.scrollIntoView({
+      behavior: "auto",
+      // Ideally there is no vertical scrolling, but if this likely non-effective
+      // scrolling is acceptable, then it is simpler
+      block: "end",
+      inline: "center"
+    });
+  }, []);
 
   return (
     /* Not hiding the scrollbars here ensures the user can still scroll. Scrollbars are hidden using CSS. */
@@ -97,6 +111,7 @@ const ModeRow = ({
             key={`access-${category.label}`}
             mode={mode}
             onClick={onChangeMode}
+            innerRef={isChecked ? initialRenderRef : null}
             selected={isChecked}
             SimpleModeIcon={SimpleModeIcon}
           >
