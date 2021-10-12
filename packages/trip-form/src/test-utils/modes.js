@@ -70,7 +70,7 @@ const commonModes = {
     },
     {
       description:
-        "E-scooters are batBICYCLEtery-powered devices that you can rent on-the-spot using an app on your phone. You can quickly and easily connect to and from your transit stop, using one of several scooter brands operating in the Portland area.",
+        "E-scooters are battery-powered devices that you can rent on-the-spot using an app on your phone. You can quickly and easily connect to and from your transit stop, using one of several scooter brands operating in the Portland area.",
       id: "SCOOTER",
       image: scooterImage,
       label: "+ E-Scooter Rental",
