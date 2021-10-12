@@ -153,7 +153,7 @@ export const Checkbox = styled.button.attrs({
   background-color: rgba(0, 0, 0, 0);
   border: none;
   color: white;
-  cursor: pointer;
+  cursor: ${(props:ButtonProps) => props.disabled ? "not-allowed" : "pointer"};
   display: flex;
   flex-direction: column;
   min-width: ${(props: ButtonProps) => (

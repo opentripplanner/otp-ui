@@ -33,6 +33,9 @@ const TransitOptions = ({
         return (
           <Checkbox
             checked={isChecked}
+            /* This prevents the user from de-selecting a transit mode when it is the only one selected.
+            the selectedModes length being 3 indicates that only one mode is selected. GONDOLA, WALK, and the mode. */
+            disabled={isChecked && selectedModes.length === 3}
             key={transitMode.mode}
             inset
             onClick={() => {
