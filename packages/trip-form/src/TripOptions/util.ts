@@ -45,3 +45,8 @@ export function getCategoryModes(category: Category): string[] {
 export function getCategoryPrimaryMode(category: Category): string {
   return getCategoryModes(category)[0];
 }
+
+export const isServerEnv =
+  typeof navigator !== "undefined"
+    ? navigator.userAgent.includes("jsdom")
+    : false;

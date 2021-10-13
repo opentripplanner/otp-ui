@@ -4,7 +4,8 @@ import React, { useEffect, useRef } from "react";
 import {
   categoryIsActive,
   getCategoryPrimaryMode,
-  getSelectedModes
+  getSelectedModes,
+  isServerEnv
 } from "./util";
 import { Modes, QueryParams } from "./types";
 import * as S from "./styled";
@@ -35,13 +36,16 @@ const ModeRow = ({
   const initialRenderRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 
   useEffect(() => {
-    initialRenderRef?.current?.scrollIntoView({
-      behavior: "auto",
-      // Ideally there is no vertical scrolling, but if this likely non-effective
-      // scrolling is acceptable, then it is simpler
-      block: "end",
-      inline: "center"
-    });
+    // Non-DOM environments don't support scrollIntoView
+    if (!isServerEnv) {
+      initialRenderRef?.current?.scrollIntoView({
+        behavior: "auto",
+        // Ideally there is no vertical scrolling, but if this likely non-effective
+        // scrolling is acceptable, then it is simpler
+        block: "end",
+        inline: "center"
+      });
+    }
   }, []);
 
   return (
@@ -92,7 +96,7 @@ const ModeRow = ({
           const companies =
             typeof category.mode === "undefined"
               ? ""
-              : category.options?.map(o => o.company).join(",");
+              : category.options?.map(o => o.company).join(",") || "";
           if (category.type === "access") {
             mode = isChecked
               ? selectedTransitString

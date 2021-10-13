@@ -8,12 +8,14 @@ import { getCategoryModes, getCategoryPrimaryMode } from "./util";
 const FeaturedOptionOverlay = ({
   featuredOption,
   setFeaturedOption,
+  showBackButton,
   supportedModes,
   CompanyIcon,
   DetailedModeIcon
 }: {
   featuredOption: string;
   setFeaturedOption(option: string): void;
+  showBackButton?: boolean;
   supportedCompanies: Company[];
   supportedModes: Modes;
   CompanyIcon?: FunctionComponent<{ company: string }>;
@@ -32,9 +34,11 @@ const FeaturedOptionOverlay = ({
 
   return (
     <S.OverlayContainer>
-      <button onClick={() => setFeaturedOption(null)} type="button">
-        Back
-      </button>
+      {showBackButton && (
+        <button onClick={() => setFeaturedOption(null)} type="button">
+          Back
+        </button>
+      )}
       <S.FeaturedOptionImageWrapper>
         {(DetailedModeIcon && (
           <DetailedModeIcon mode={getCategoryPrimaryMode(category)} />

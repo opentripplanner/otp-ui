@@ -2,6 +2,7 @@ import ScrollContainer from "react-indiana-drag-scroll";
 import styled, { css } from "styled-components";
 import { Check } from "@styled-icons/bootstrap/Check";
 import { PlusCircle } from "@styled-icons/boxicons-regular/PlusCircle";
+import { isServerEnv } from "./util";
 // Prettier does not support typescript annotation
 // eslint-disable-next-line prettier/prettier
 import type { ButtonProps } from "./Checkbox"
@@ -227,7 +228,6 @@ export const OverlayOptions = styled.ul`
 
 
 // The ScrollContainer doesn't work in the jsdom/server environment, so replace it with a div
-const isServerEnv = typeof navigator !== "undefined" ? navigator.userAgent.includes("jsdom") : false;
 export const ScrollableRow = styled(isServerEnv ? "div" : ScrollContainer)<{ hideScrollbars: boolean }>`
   background-color: #0a4c8d;
   display: flex;

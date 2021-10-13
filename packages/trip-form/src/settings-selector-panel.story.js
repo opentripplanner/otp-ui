@@ -1,7 +1,7 @@
 import { ClassicModeIcon } from "@opentripplanner/icons";
 
 import { action } from "@storybook/addon-actions";
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 
 import SettingsSelectorPanel from "./SettingsSelectorPanel";
 import TripOptions from "./TripOptions";
@@ -98,23 +98,43 @@ export const settingsSelectorPanelUndefinedParams = () => (
 export const tripOptions = () => (
   <PanelWrapper>
     <TripOptions
+      featuredItemOverlayBackButton
       supportedCompanies={commonCompanies}
       supportedModes={commonModes}
     />
   </PanelWrapper>
 );
-export const tripOptionsWithCustomIcons = () => (
-  <PanelWrapper>
-    <TripOptions
-      supportedCompanies={commonCompanies}
-      supportedModes={commonModes}
-      QuestionIcon={<span>😕</span>}
-      SimpleModeIcon={({ mode }) => <b>{mode}</b>}
-      DetailedModeIcon={({ mode }) => <h1>{mode}</h1>}
-      CompanyIcon={({ company }) => <i style={{ color: "black" }}>{company}</i>}
-    />
-  </PanelWrapper>
-);
+export const tripOptionsWithCustomIconsAndCloseButton = () => {
+  const [featuredOverlayShown, setFeaturedOverlayShown] = useState(false);
+
+  return (
+    <>
+      <button
+        type="button"
+        disabled={!featuredOverlayShown}
+        onClick={() => {
+          setFeaturedOverlayShown(false);
+        }}
+      >
+        close overlay
+      </button>
+      <PanelWrapper>
+        <TripOptions
+          featuredItemOverlayShown={setFeaturedOverlayShown}
+          featuredItemOverlayEnabled={featuredOverlayShown}
+          supportedCompanies={commonCompanies}
+          supportedModes={commonModes}
+          QuestionIcon={<span>😕</span>}
+          SimpleModeIcon={({ mode }) => <b>{mode}</b>}
+          DetailedModeIcon={({ mode }) => <h1>{mode}</h1>}
+          CompanyIcon={({ company }) => (
+            <i style={{ color: "black" }}>{company}</i>
+          )}
+        />
+      </PanelWrapper>
+    </>
+  );
+};
 
 // TODO: resolve a11y issues
 const disableA11yParamters = {
@@ -130,4 +150,10 @@ const disableA11yParamters = {
 };
 
 tripOptions.parameters = disableA11yParamters;
-tripOptionsWithCustomIcons.parameters = disableA11yParamters;
+
+// Disable storyshot for this story, as it is mostly the same as TripOptions except with
+// a hook that storyshot can't handle
+tripOptionsWithCustomIconsAndCloseButton.parameters = {
+  storyshots: { disable: true },
+  ...disableA11yParamters
+};

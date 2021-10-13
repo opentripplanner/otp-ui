@@ -1,5 +1,10 @@
 import coreUtils from "@opentripplanner/core-utils";
-import React, { FunctionComponent, ReactElement, useState } from "react";
+import React, {
+  FunctionComponent,
+  ReactElement,
+  useEffect,
+  useState
+} from "react";
 
 import GeneralSettingsPanel from "../GeneralSettingsPanel";
 
@@ -30,6 +35,27 @@ interface ComponentProps {
   className: string;
 
   /**
+   * Whether to display the built-in back button in the featured mode overlay. If the button is disabled,
+   * featuredItemOverlayEnabled should be used to hide the overlay.
+   */
+  featuredItemOverlayBackButton?: boolean;
+  /**
+   * If this prop is set to false, the featured item overlay will immediately disappear.
+   * This can be used in conjunction with featuredItemOverlayBackButton to replace the back
+   * button.
+   *
+   * If passing a useState hook to this component, this prop should be the value of the useState output.
+   */
+  featuredItemOverlayEnabled?: boolean;
+  /**
+   * If this prop is passed, any updates to the featured item overlay will be
+   * reported to the function passed. This can be used to keep track of if the overlay is open.
+   *
+   * If passing a useState hook to this component, this prop should be the setter of the useState output.
+   */
+  featuredItemOverlayShown?: (overlayShown: boolean) => void;
+
+  /**
    * Icon prop used for overwriting the question mark icon throughout the component
    */
   QuestionIcon: ReactElement;
@@ -52,13 +78,11 @@ type Props = ComponentProps & QueryProps;
  * This component renders the custom TriMet Mode Selector
  */
 export default function TripOptions(props: Props): ReactElement {
-  const [featuredOption, setFeaturedOption] = useState(null);
-  const [queryParamOverrides, setQueryParamOverrides] = useState<{
-    [key: string]: QueryParams;
-  }>({});
-
   const {
     className,
+    featuredItemOverlayBackButton,
+    featuredItemOverlayEnabled,
+    featuredItemOverlayShown,
     footer,
     onQueryParamChange: updateQueryParams,
     queryParams,
@@ -69,6 +93,23 @@ export default function TripOptions(props: Props): ReactElement {
     DetailedModeIcon,
     CompanyIcon
   } = props;
+
+  const [featuredOption, setFeaturedOption] = useState(null);
+  const [queryParamOverrides, setQueryParamOverrides] = useState<{
+    [key: string]: QueryParams;
+  }>({});
+
+  // Allow external closing
+  useEffect(() => {
+    if (featuredItemOverlayEnabled === false) {
+      setFeaturedOption(null);
+    }
+  }, [featuredItemOverlayEnabled]);
+
+  // Update callback when featuredItemOverlay changes
+  useEffect(() => {
+    featuredItemOverlayShown && featuredItemOverlayShown(!!featuredOption);
+  }, [featuredOption]);
 
   // FIXME: move all query param handling to hook (object with category to queryParam mapping)
   // THis will involve refactoring all sub-components to send category along with
@@ -96,6 +137,13 @@ export default function TripOptions(props: Props): ReactElement {
 
     // Update category override
     if (categoryId) {
+      // If custom transit is set, un-set it here (it will be replaced later)
+      if ("transit" in queryParamOverrides) {
+        newQueryParams.mode = newQueryParams.mode.replace(
+          queryParamOverrides.transit.mode,
+          "TRANSIT"
+        );
+      }
       const { companies, mode } = newQueryParams;
       setQueryParamOverrides({
         ...queryParamOverrides,
@@ -122,6 +170,7 @@ export default function TripOptions(props: Props): ReactElement {
         <FeaturedOptionOverlay
           featuredOption={featuredOption}
           setFeaturedOption={setFeaturedOption}
+          showBackButton={featuredItemOverlayBackButton}
           supportedCompanies={supportedCompanies}
           supportedModes={supportedModes}
           CompanyIcon={CompanyIcon}

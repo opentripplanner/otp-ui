@@ -58,6 +58,9 @@ export interface QueryProps {
   queryParams: QueryParams;
   /**
    * The available modes configured for the user to select.
+   * Note: the ModeRow expects that each category has an ID, and that this ID is the same for
+   * between the exclusive and non-exclusive version of a mode. This is the only way to ensure
+   * setting persistence functions correctly.
    */
   supportedModes: Modes;
 
