@@ -150,4 +150,10 @@ const disableA11yParamters = {
 };
 
 tripOptions.parameters = disableA11yParamters;
-tripOptionsWithCustomIconsAndCloseButton.parameters = disableA11yParamters;
+
+// Disable storyshot for this story, as it is mostly the same as TripOptions except with
+// a hook that storyshot can't handle
+tripOptionsWithCustomIconsAndCloseButton.parameters = {
+  storyshots: { disable: true },
+  ...disableA11yParamters
+};
