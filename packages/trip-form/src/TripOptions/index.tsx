@@ -96,6 +96,13 @@ export default function TripOptions(props: Props): ReactElement {
 
     // Update category override
     if (categoryId) {
+      // If custom transit is set, un-set it here (it will be replaced later)
+      if ("transit" in queryParamOverrides) {
+        newQueryParams.mode = newQueryParams.mode.replace(
+          queryParamOverrides.transit.mode,
+          "TRANSIT"
+        );
+      }
       const { companies, mode } = newQueryParams;
       setQueryParamOverrides({
         ...queryParamOverrides,
