@@ -40,7 +40,7 @@ interface ComponentProps {
    */
   featuredItemOverlayBackButton?: boolean;
   /**
-   * If this prop is set to false, the featured item overlay will immediately dissapear.
+   * If this prop is set to false, the featured item overlay will immediately disappear.
    * This can be used in conjunction with featuredItemOverlayBackButton to replace the back
    * button.
    *
