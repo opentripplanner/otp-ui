@@ -96,7 +96,7 @@ const ModeRow = ({
           const companies =
             typeof category.mode === "undefined"
               ? ""
-              : category.options?.map(o => o.company).join(",");
+              : category.options?.map(o => o.company).join(",") || "";
           if (category.type === "access") {
             mode = isChecked
               ? selectedTransitString
