@@ -127,7 +127,12 @@ export default function TripOptions(props: Props): ReactElement {
     const updatedSelectedTransit = updatedSelectedModes.filter(
       coreUtils.itinerary.isTransit
     );
-    if (updatedSelectedTransit.length > 0) {
+    // Only update if the updated transit isn't "TRANSIT", since that would reset things
+    // when the user doesn't want them to be reset.
+    if (
+      updatedSelectedTransit.length > 0 &&
+      updatedSelectedTransit[0] !== "TRANSIT"
+    ) {
       setQueryParamOverrides({
         ...queryParamOverrides,
         transit: { mode: updatedSelectedTransit.join(",") }
