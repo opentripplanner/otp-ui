@@ -82,7 +82,7 @@ const ModeRow = ({
             }
             // Ensure access modes that share IDs with exclusive modes include transit
             if (
-              category.type === "access" &&
+              category.type !== "exclusive" &&
               !override.mode?.includes("TRANSIT")
             ) {
               override.mode = `TRANSIT,${override.mode}`;

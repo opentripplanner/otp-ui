@@ -120,15 +120,19 @@ export default function TripOptions(props: Props): ReactElement {
     newQueryParams: QueryParams,
     categoryId: string = null
   ) => {
-    // Merge params together to persist some param changes
-    const newParams = { ...queryParams, ...newQueryParams };
+    const newParams = { ...newQueryParams };
 
     // Update transit override if changes are made to transit submodes
     const updatedSelectedModes = getSelectedModes(newParams);
     const updatedSelectedTransit = updatedSelectedModes.filter(
       coreUtils.itinerary.isTransit
     );
-    if (updatedSelectedTransit.length > 0) {
+    // Only update if the updated transit isn't "TRANSIT", since that would reset things
+    // when the user doesn't want them to be reset.
+    if (
+      updatedSelectedTransit.length > 0 &&
+      updatedSelectedTransit[0] !== "TRANSIT"
+    ) {
       setQueryParamOverrides({
         ...queryParamOverrides,
         transit: { mode: updatedSelectedTransit.join(",") }
