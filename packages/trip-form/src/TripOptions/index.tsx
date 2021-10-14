@@ -120,8 +120,7 @@ export default function TripOptions(props: Props): ReactElement {
     newQueryParams: QueryParams,
     categoryId: string = null
   ) => {
-    // Merge params together to persist some param changes
-    const newParams = { ...queryParams, ...newQueryParams };
+    const newParams = { ...newQueryParams };
 
     // Update transit override if changes are made to transit submodes
     const updatedSelectedModes = getSelectedModes(newParams);
