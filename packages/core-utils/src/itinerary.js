@@ -8,7 +8,10 @@ export const transitModes = [
   "SUBWAY",
   "FERRY",
   "RAIL",
-  "GONDOLA"
+  "GONDOLA",
+  "FLEX_DIRECT",
+  "FLEX_EGRESS",
+  "FLEX_ACCESS"
 ];
 
 /**
