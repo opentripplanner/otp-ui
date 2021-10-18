@@ -28,6 +28,11 @@ export function getTransitModes(config) {
 export function isTransit(mode) {
   return transitModes.includes(mode) || mode === "TRANSIT";
 }
+export function isFlex(leg) {
+  return (
+    leg.boardRule === "mustPhone" || leg.alightRule === "coordinateWithDriver"
+  );
+}
 
 export function isWalk(mode) {
   if (!mode) return false;
