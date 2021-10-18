@@ -1,6 +1,6 @@
 import moment from "moment";
 
-import { getPlaceName, isTransit, toSentenceCase } from "./itinerary";
+import { getPlaceName, isFlex, isTransit, toSentenceCase } from "./itinerary";
 
 export function latlngToString(latlng) {
   return (
@@ -115,7 +115,8 @@ export function itineraryToTransitive(itin, companies, getRouteLabel) {
       leg.mode === "WALK" ||
       leg.mode === "BICYCLE" ||
       leg.mode === "CAR" ||
-      leg.mode === "MICROMOBILITY"
+      leg.mode === "MICROMOBILITY" ||
+      isFlex(leg)
     ) {
       let fromPlaceId;
       if (leg.from.bikeShareId) {
@@ -181,7 +182,9 @@ export function itineraryToTransitive(itin, companies, getRouteLabel) {
       });
       streetEdgeId++;
     }
-    if (isTransit(leg.mode)) {
+
+    // Flex is transit but is already rendered as street edges
+    if (isTransit(leg.mode) && !isFlex(leg)) {
       // determine if we have valid inter-stop geometry
       const hasInterStopGeometry = !!leg.interStopGeometry;
       const hasIntermediateStopGeometry =
