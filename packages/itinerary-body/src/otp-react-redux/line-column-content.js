@@ -91,6 +91,10 @@ const legLineBackgroundColor = ({ leg, routeColor }) => {
 
 const LegLine = styled.div`
   ${props => getLegCSS(props.leg.mode)}
+
+  /* Disabling CSS order rules is the only way to ensure styles override each other properly */
+  /* stylelint-disable declaration-block-no-shorthand-property-overrides */ 
+  background-color: ${props => legLineBackgroundColor(props)};
   background: ${props =>
     coreUtils.itinerary.isFlex(props.leg)
       ? `repeating-linear-gradient( 
@@ -101,7 +105,6 @@ const LegLine = styled.div`
         ${legLineBackgroundColor(props)} 10px
         );`
       : undefined};
-  background-color: ${props => legLineBackgroundColor(props)};
   bottom: -11px;
   position: absolute;
   top: 11px;
