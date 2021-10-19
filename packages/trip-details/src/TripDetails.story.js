@@ -131,7 +131,7 @@ export const TncTransitItinerary = () => (
   />
 );
 
-export const FareComponentsItinerary = () => (
+export const FlexItinerary = () => (
   <TripDetails
     itinerary={fareComponentsItinerary}
     longDateFormat={longDateFormat}
