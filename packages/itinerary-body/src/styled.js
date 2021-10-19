@@ -171,7 +171,7 @@ export const AgencyInfo = styled.div`
 
 export const CallAheadWarning = styled.div`
   margin-top: 5px;
-  color: #f34a53;
+  color: #b22727;
 `;
 
 export const BookLaterContainer = styled.div`
