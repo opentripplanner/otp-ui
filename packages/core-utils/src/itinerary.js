@@ -25,10 +25,12 @@ export function getTransitModes(config) {
 export function isTransit(mode) {
   return transitModes.includes(mode) || mode === "TRANSIT";
 }
+
+export function isOptional(leg) {
+  return leg.boardRule === "mustPhone";
+}
 export function isFlex(leg) {
-  return (
-    leg.boardRule === "mustPhone" || leg.alightRule === "coordinateWithDriver"
-  );
+  return isOptional(leg) || leg.alightRule === "coordinateWithDriver";
 }
 
 export function isWalk(mode) {

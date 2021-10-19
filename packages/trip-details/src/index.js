@@ -5,6 +5,7 @@ import React from "react";
 import { CalendarAlt } from "@styled-icons/fa-solid/CalendarAlt";
 import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
 import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
+import { PhoneVolume } from "@styled-icons/fa-solid/PhoneVolume";
 
 import * as S from "./styled";
 import TripDetail from "./trip-detail";
@@ -69,6 +70,8 @@ function TripDetails({
     walkDuration
   } = coreUtils.itinerary.calculatePhysicalActivity(itinerary);
 
+  const isFlex = itinerary.legs.some(coreUtils.itinerary.isFlex);
+
   return (
     <S.TripDetails className={className}>
       <S.TripDetailsHeader>{messages.title}</S.TripDetailsHeader>
@@ -127,6 +130,13 @@ function TripDetails({
                 .
               </S.CaloriesDescription>
             }
+          />
+        )}
+        {isFlex && (
+          <TripDetail
+            icon={<PhoneVolume size={17} />}
+            summary="This journey includes flexible routes. You may have to call ahead."
+            description="FIXME: Insert long description from GTFS"
           />
         )}
       </S.TripDetailsBody>

@@ -169,6 +169,11 @@ export const AgencyInfo = styled.div`
   }
 `;
 
+export const CallAheadWarning = styled.div`
+  margin-top: 5px;
+  color: red;
+`;
+
 export const BookLaterContainer = styled.div`
   bottom: 0;
   left: 110px;

@@ -1460,6 +1460,7 @@
       "tripShortName": "LOCAL",
       "tripBlockId": "5863957",
       "headsign": "Northgate Roosevelt",
+      "boardRule": "mustPhone",
       "agencyId": "1",
       "tripId": "kcm:44052757",
       "serviceDate": "20200820",

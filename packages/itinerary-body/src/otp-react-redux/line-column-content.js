@@ -80,14 +80,28 @@ const IconStacker = styled.span`
   z-index: 20;
 `;
 
+const legLineBackgroundColor = ({ leg, routeColor }) => {
+  const { mode } = leg;
+  return coreUtils.itinerary.isTransit(mode)
+    ? routeColor
+      ? `#${routeColor}`
+      : "#008"
+    : undefined;
+};
+
 const LegLine = styled.div`
-  ${props => getLegCSS(props.mode)}
-  background-color: ${props =>
-    coreUtils.itinerary.isTransit(props.mode)
-      ? props.routeColor
-        ? `#${props.routeColor}`
-        : "#008"
+  ${props => getLegCSS(props.leg.mode)}
+  background: ${props =>
+    coreUtils.itinerary.isFlex(props.leg)
+      ? `repeating-linear-gradient( 
+        -45deg, 
+        transparent, 
+        transparent 5px, 
+        ${legLineBackgroundColor(props)} 5px, 
+        ${legLineBackgroundColor(props)} 10px
+        );`
       : undefined};
+  background-color: ${props => legLineBackgroundColor(props)};
   bottom: -11px;
   position: absolute;
   top: 11px;
@@ -172,9 +186,7 @@ export default function LineColumnContent({
 
   return (
     <>
-      {!isDestination && (
-        <LegLine mode={leg.mode} routeColor={leg.routeColor} />
-      )}
+      {!isDestination && <LegLine leg={leg} routeColor={leg.routeColor} />}
       <IconStacker>{legBadge}</IconStacker>
     </>
   );
