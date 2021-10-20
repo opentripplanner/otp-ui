@@ -444,5 +444,13 @@ export function getRoutingParams(config, currentQuery, ignoreRealtimeUpdates) {
     params.mode += ",WALK";
   }
 
+  // Replace FLEX placeholder with OTP flex modes
+  if (params.mode) {
+    params.mode = params.mode.replace(
+      "FLEX",
+      "FLEX_EGRESS,FLEX_ACCESS,FLEX_DIRECT"
+    );
+  }
+
   return params;
 }
