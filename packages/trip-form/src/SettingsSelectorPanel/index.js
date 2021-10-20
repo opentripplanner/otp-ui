@@ -39,7 +39,10 @@ export default class SettingsSelectorPanel extends Component {
   getSelectedModes() {
     const { queryParams } = this.props;
     const { mode } = queryParams;
-    return mode ? mode.split(",") : [];
+    const modes = mode ? mode.split(",") : [];
+
+    // Map OTP Flex modes to custom flex mode
+    return coreUtils.query.reduceOtpFlexModes(modes);
   }
 
   makeNewQueryParams = queryParam => {
@@ -160,19 +163,7 @@ export default class SettingsSelectorPanel extends Component {
     } = this.props;
     const { defaultAccessModeCompany } = this.state;
 
-    // Map OTP Flex modes to custom flex mode
-    const selectedModes = this.getSelectedModes().reduce((prev, cur) => {
-      const newModes = prev;
-      // Add the current mode if it is not a flex mode
-      if (!cur.includes("FLEX")) {
-        newModes.push(cur);
-        // If it is a flex mode, do not add it but rather add the custom flex mode
-        // if not already present
-      } else if (!newModes.includes("FLEX")) {
-        newModes.push("FLEX");
-      }
-      return newModes;
-    }, []);
+    const selectedModes = this.getSelectedModes();
 
     const selectedCompanies = this.getSelectedCompanies();
 
