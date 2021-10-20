@@ -85,9 +85,21 @@ const legLineBackgroundColor = ({ leg, routeColor }) => {
   return coreUtils.itinerary.isTransit(mode)
     ? routeColor
       ? `#${routeColor}`
-      : "#008"
+      : "#000088"
     : undefined;
 };
+
+/**
+ * Generates background-image CSS for "barber pole" effect
+ * @param routeColor  the background color. Assumed to be hex.
+ */
+export const barberPole = (routeColor, gap = 5) => `repeating-linear-gradient( 
+  -45deg, 
+  ${routeColor}30, 
+  ${routeColor}30 ${gap}px, 
+  ${routeColor} ${gap}px, 
+  ${routeColor} ${gap * 2}px
+  );`;
 
 const LegLine = styled.div`
   ${props => getLegCSS(props.leg.mode)}
@@ -97,13 +109,7 @@ const LegLine = styled.div`
   background-color: ${props => legLineBackgroundColor(props)};
   background: ${props =>
     coreUtils.itinerary.isFlex(props.leg)
-      ? `repeating-linear-gradient( 
-        -45deg, 
-        transparent, 
-        transparent 5px, 
-        ${legLineBackgroundColor(props)} 5px, 
-        ${legLineBackgroundColor(props)} 10px
-        );`
+      ? barberPole(legLineBackgroundColor(props))
       : undefined};
   bottom: -11px;
   position: absolute;

@@ -29,8 +29,11 @@ export function isTransit(mode) {
 export function isOptional(leg) {
   return leg.boardRule === "mustPhone";
 }
+export function isContinuousDropoff(leg) {
+  return leg.alightRule === "coordinateWithDriver";
+}
 export function isFlex(leg) {
-  return isOptional(leg) || leg.alightRule === "coordinateWithDriver";
+  return isOptional(leg) || isContinuousDropoff(leg);
 }
 
 export function isWalk(mode) {

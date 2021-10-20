@@ -31,6 +31,7 @@ const walkInterlinedTransitItinerary = require("../__mocks__/itineraries/walk-in
 const walkOnlyItinerary = require("../__mocks__/itineraries/walk-only.json");
 const walkTransitWalkItinerary = require("../__mocks__/itineraries/walk-transit-walk.json");
 const walkTransitWalkTransitWalkItinerary = require("../__mocks__/itineraries/walk-transit-walk-transit-walk.json");
+const fareComponentsItinerary = require("../__mocks__/itineraries/fare-components.json");
 
 function OtpRRItineraryBodyWrapper({
   itinerary,
@@ -167,6 +168,12 @@ export const EScooterRentalTransitItinerary = () => (
 
 export const TncTransitItinerary = () => (
   <ItineraryBodyDefaultsWrapper itinerary={tncTransitTncItinerary} />
+);
+export const IndividualLegFareComponents = () => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={fareComponentsItinerary}
+    showRouteFares
+  />
 );
 
 export const CustomAlertIconsItinerary = () => (
