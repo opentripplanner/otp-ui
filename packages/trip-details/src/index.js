@@ -55,7 +55,7 @@ function TripDetails({
     maxTNCFare,
     minTNCFare,
     transitFares
-  } = coreUtils.itinerary.calculateFares(itinerary);
+  } = coreUtils.itinerary.calculateFares(itinerary, true);
   let companies;
   itinerary.legs.forEach(leg => {
     if (leg.tncData) {

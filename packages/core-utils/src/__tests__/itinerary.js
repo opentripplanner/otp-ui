@@ -65,12 +65,12 @@ describe("util > itinerary", () => {
   });
 
   it("calculateFare should return the correct currency code for TNC leg", () => {
-    const fareResult = calculateFares(tncItinerary);
+    const fareResult = calculateFares(tncItinerary, true);
     expect(fareResult.tncCurrencyCode).toEqual("USD");
   });
 
   it("creates transit fares object for fares with multiple currencies", () => {
-    const fareResult = calculateFares(multiCurrencyItinerary);
+    const fareResult = calculateFares(multiCurrencyItinerary, true);
     expect(fareResult).toMatchSnapshot();
   });
 });
