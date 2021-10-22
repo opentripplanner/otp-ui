@@ -498,9 +498,9 @@ export function getTransitFare(fareComponent) {
  *
  * multiple being set to true will change the output behavior:
  * - dollarsToString and centsToString will be returned as part of each fare
- * - currencyCode will be returned seperately for each fare
- * - tnc currency code will be returned seperately
- * - each fare type will be returned seperately within a new transitFares property
+ * - currencyCode will be returned separately for each fare
+ * - tnc currency code will be returned separately
+ * - each fare type will be returned separately within a new transitFares property
  */
 export function calculateFares(itinerary, multiple = false) {
   // Process any TNC fares
