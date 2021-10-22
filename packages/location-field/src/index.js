@@ -185,7 +185,7 @@ class LocationField extends Component {
     // see https://stackoverflow.com/a/49325196/915811
     const target =
       e.relatedTarget !== null ? e.relatedTarget : document.activeElement;
-    if (!target || target.getAttribute("role") !== "menuitem") {
+    if (!target || target.getAttribute("role") !== "listitem") {
       this.setState({
         geocodedFeatures: [],
         menuVisible: false,
@@ -430,6 +430,11 @@ class LocationField extends Component {
         .filter(feature => feature.properties.source !== "transit")
         .slice(0, suggestionCount);
 
+      // If no categories of features are returned, this variable is used to
+      // avoid displaying headers
+      const transitFeaturesPresent =
+        stopFeatures.length > 0 || stationFeatures.length > 0;
+
       // Iterate through the geocoder results
       menuItems = menuItems.concat(
         stationFeatures.length > 0 && (
@@ -458,7 +463,7 @@ class LocationField extends Component {
         ),
         stopFeatures.map(feature => this.renderFeature(itemIndex++, feature)),
 
-        otherFeatures.length > 0 && (
+        transitFeaturesPresent && otherFeatures.length > 0 && (
           <S.MenuItem bgColor="#333" header centeredText key="other-header">
             Other
           </S.MenuItem>
@@ -471,7 +476,7 @@ class LocationField extends Component {
     if (nearbyStops.length > 0 && !suppressNearby) {
       // Add the menu sub-heading (not a selectable item)
       menuItems.push(
-        <S.MenuItem header key="ns-header">
+        <S.MenuItem header centeredText key="ns-header">
           Nearby Stops
         </S.MenuItem>
       );
@@ -516,7 +521,7 @@ class LocationField extends Component {
     if (sessionSearches.length > 0) {
       // Add the menu sub-heading (not a selectable item)
       menuItems.push(
-        <S.MenuItem header key="ss-header">
+        <S.MenuItem header centeredText key="ss-header">
           Recently Searched
         </S.MenuItem>
       );
@@ -552,7 +557,7 @@ class LocationField extends Component {
     if (userLocationsAndRecentPlaces.length > 0 && showUserSettings) {
       // Add the menu sub-heading (not a selectable item)
       menuItems.push(
-        <S.MenuItem header key="mp-header">
+        <S.MenuItem header centeredText key="mp-header">
           My Places
         </S.MenuItem>
       );

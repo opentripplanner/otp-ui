@@ -125,6 +125,7 @@ export const DropdownSelector = styled.div`
   select {
     width: 100%;
     box-sizing: border-box;
+    cursor: pointer;
   }
 `;
 
