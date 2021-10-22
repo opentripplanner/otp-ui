@@ -1,4 +1,4 @@
-import { fromCoordinates } from "@conveyal/lonlat";
+import { fromCoordinates, normalize } from "@conveyal/lonlat";
 
 import Geocoder from "./abstract-geocoder";
 
@@ -59,7 +59,7 @@ export default class ArcGISGeocoder extends Geocoder {
    */
   rewriteReverseResponse(response) {
     const { features, query } = response;
-    const { lat, lon } = query;
+    const { lat, lon } = normalize(query);
     const firstFeature = features[0];
     return {
       lat,
