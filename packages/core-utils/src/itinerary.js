@@ -495,18 +495,14 @@ export function getTransitFare(fareComponent) {
  * For an itinerary, calculates the transit/TNC fares and returns an object with
  * these values, currency info, as well as string formatters.
  * It is assumed that the same currency is used for transit and TNC legs.
+ *
+ * multiple being set to true will change the output behavior:
+ * - dollarsToString and centsToString will be returned as part of each fare
+ * - currencyCode will be returned separately for each fare
+ * - tnc currency code will be returned separately
+ * - each fare type will be returned separately within a new transitFares property
  */
-export function calculateFares(itinerary) {
-  // Extract fare total from itinerary fares.
-  const fareComponent =
-    itinerary.fare && itinerary.fare.fare && itinerary.fare.fare.regular;
-  // Get string formatters and itinerary fare.
-  const {
-    centsToString,
-    currencyCode: transitCurrencyCode,
-    dollarsToString,
-    transitFare
-  } = getTransitFare(fareComponent);
+export function calculateFares(itinerary, multiple = false) {
   // Process any TNC fares
   let minTNCFare = 0;
   let maxTNCFare = 0;
@@ -520,6 +516,35 @@ export function calculateFares(itinerary) {
       tncCurrencyCode = currency;
     }
   });
+
+  if (multiple) {
+    // Return object of fares
+    const transitFares = {};
+    if (itinerary && itinerary.fare && itinerary.fare.fare) {
+      Object.keys(itinerary.fare.fare).forEach(fareKey => {
+        const fareComponent = itinerary.fare.fare[fareKey];
+        transitFares[fareKey] = getTransitFare(fareComponent);
+      });
+    }
+
+    return {
+      maxTNCFare,
+      minTNCFare,
+      tncCurrencyCode,
+      transitFares
+    };
+  }
+
+  // Extract fare total from itinerary fares.
+  const fareComponent =
+    itinerary.fare && itinerary.fare.fare && itinerary.fare.fare.regular;
+  // Get string formatters and itinerary fare.
+  const {
+    centsToString,
+    currencyCode: transitCurrencyCode,
+    dollarsToString,
+    transitFare
+  } = getTransitFare(fareComponent);
 
   return {
     centsToString,
