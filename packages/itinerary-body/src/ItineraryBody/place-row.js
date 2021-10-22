@@ -7,11 +7,13 @@ import AccessLegBody from "../AccessLegBody";
 import * as S from "../styled";
 import TransitLegBody from "../TransitLegBody";
 
+import AccessibilityRating from "./accessibility-rating";
 /*
   TODO: Wondering if it's possible for us to destructure the time
   preferences from the config object and avoid making the props list so long
 */
 const PlaceRow = ({
+  accessibilityScoreGradationMap,
   config,
   diagramVisible,
   fare,
@@ -61,6 +63,12 @@ const PlaceRow = ({
           leg={leg}
           timeOptions={timeOptions}
         />
+        {!isDestination && leg.accessibilityScore && (
+          <AccessibilityRating
+            gradationMap={accessibilityScoreGradationMap}
+            score={leg.accessibilityScore}
+          />
+        )}
       </S.TimeColumn>
       <S.LineColumn>
         <LineColumnContent
@@ -152,6 +160,13 @@ const messagesType = PropTypes.shape({
 // A lot of these props are passed through from the ItineraryBody. See the
 // documentation in that component for more information.
 PlaceRow.propTypes = {
+  accessibilityScoreGradationMap: PropTypes.shape({
+    color: PropTypes.string,
+    icon: PropTypes.element,
+    text: PropTypes.string
+  }),
+  AlertToggleIcon: PropTypes.elementType,
+  AlertBodyIcon: PropTypes.elementType,
   config: coreUtils.types.configType.isRequired,
   diagramVisible: coreUtils.types.legType,
   fare: coreUtils.types.fareType,
@@ -183,12 +198,13 @@ PlaceRow.propTypes = {
   timeOptions: coreUtils.types.timeOptionsType,
   toRouteAbbreviation: PropTypes.func.isRequired,
   TransitLegSubheader: PropTypes.elementType,
-  TransitLegSummary: PropTypes.elementType.isRequired,
-  AlertToggleIcon: PropTypes.elementType,
-  AlertBodyIcon: PropTypes.elementType
+  TransitLegSummary: PropTypes.elementType.isRequired
 };
 
 PlaceRow.defaultProps = {
+  accessibilityScoreGradationMap: undefined,
+  AlertToggleIcon: undefined,
+  AlertBodyIcon: undefined,
   diagramVisible: null,
   fare: null,
   followsTransit: false,
@@ -199,9 +215,7 @@ PlaceRow.defaultProps = {
   },
   TimeColumnContent: DefaultTimeColumnContent,
   timeOptions: null,
-  TransitLegSubheader: undefined,
-  AlertToggleIcon: undefined,
-  AlertBodyIcon: undefined
+  TransitLegSubheader: undefined
 };
 
 export default PlaceRow;

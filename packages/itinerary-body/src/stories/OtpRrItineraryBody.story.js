@@ -27,6 +27,7 @@ const walkInterlinedTransitItinerary = require("../__mocks__/itineraries/walk-in
 const walkOnlyItinerary = require("../__mocks__/itineraries/walk-only.json");
 const walkTransitWalkItinerary = require("../__mocks__/itineraries/walk-transit-walk.json");
 const walkTransitWalkTransitWalkItinerary = require("../__mocks__/itineraries/walk-transit-walk-transit-walk.json");
+const walkTransitWalkTransitWalkA11yItinerary = require("../__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json");
 
 function OtpRRItineraryBodyWrapper({
   itinerary,
@@ -89,6 +90,12 @@ export const WalkInterlinedTransitItinerary = () => (
 
 export const WalkTransitTransferItinerary = () => (
   <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkTransitWalkItinerary} />
+);
+
+export const WalkTransitTransferWithA11yItinerary = () => (
+  <OtpRRItineraryBodyWrapper
+    itinerary={walkTransitWalkTransitWalkA11yItinerary}
+  />
 );
 
 export const BikeRentalItinerary = () => (

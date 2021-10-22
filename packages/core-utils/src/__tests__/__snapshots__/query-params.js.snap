@@ -413,10 +413,12 @@ Array [
   Object {
     "applicable": [Function],
     "default": false,
-    "label": "Wheelchair Accessible",
+    "icon": <ForwardRef />,
+    "label": "Prefer Wheelchair Accessible Routes",
     "name": "wheelchair",
     "routingTypes": Array [
       "ITINERARY",
+      "PROFILE",
     ],
     "selector": "CHECKBOX",
   },
