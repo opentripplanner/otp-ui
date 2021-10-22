@@ -127,7 +127,13 @@ const commonModes = {
   ],
   accessModes: [
     {
+      mode: "WALK",
+      showWheelchairSetting: true,
+      label: "Saunter"
+    },
+    {
       mode: "BICYCLE",
+      showWheelchairSetting: true,
       label: "Transit + Personal Bike"
     },
     {
@@ -142,21 +148,25 @@ const commonModes = {
     },
     {
       mode: "CAR_PARK",
+      showWheelchairSetting: true,
       label: "Park & Ride"
     },
     {
       mode: "CAR_HAIL",
+      showWheelchairSetting: true,
       label: "Transit + Uber",
       company: "Uber" // Optional.
       // If not set and the user selects this, "companies" should default to Uber.
     },
     {
       mode: "CAR_RENT",
+      showWheelchairSetting: true,
       label: "Transit + ReachNow",
       company: "ReachNow"
     },
     {
       mode: "CAR_RENT",
+      showWheelchairSetting: true,
       label: "Transit + Car2Go",
       company: "Car2Go"
     }
@@ -166,6 +176,7 @@ const commonModes = {
   bicycleModes: [
     {
       mode: "BICYCLE",
+      showWheelchairSetting: true,
       label: "Own Bike"
     },
     {
