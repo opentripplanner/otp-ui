@@ -136,7 +136,8 @@ function TripDetails({
           <TripDetail
             icon={<PhoneVolume size={17} />}
             summary="This journey includes flexible routes. You may have to call ahead."
-            description="FIXME: Insert long description from GTFS"
+            // FIXME: Insert long description from booking_rules info in GTFS
+            // description="FIXME: Insert long description from GTFS"
           />
         )}
       </S.TripDetailsBody>
