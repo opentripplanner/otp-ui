@@ -7,6 +7,7 @@ import ModeSelector from "./ModeSelector";
 import SettingsSelectorPanel from "./SettingsSelectorPanel";
 import * as Styled from "./styled";
 import SubmodeSelector from "./SubmodeSelector";
+import TripOptions, { Styled as TripOptionsStyled } from "./TripOptions";
 
 export {
   CheckboxSelector,
@@ -16,6 +17,8 @@ export {
   ModeButton,
   ModeSelector,
   SettingsSelectorPanel,
-  Styled,
-  SubmodeSelector
+  SubmodeSelector,
+  TripOptions,
+  TripOptionsStyled,
+  Styled
 };
