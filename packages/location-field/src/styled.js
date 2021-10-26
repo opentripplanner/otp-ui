@@ -202,6 +202,12 @@ export const OptionContainer = styled.div`
   padding-bottom: 3px;
 `;
 
+export const OptionSubTitle = styled.span`
+  color: #686868;
+  font-size: 12px;
+  margin-left: 6px;
+`;
+
 export const OptionContent = styled.div`
   margin-left: 30px;
   overflow: hidden;
