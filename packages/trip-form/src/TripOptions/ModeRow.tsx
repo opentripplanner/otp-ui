@@ -37,7 +37,9 @@ const ModeRow = ({
 
   useEffect(() => {
     // Non-DOM environments don't support scrollIntoView
-    if (!isServerEnv) {
+    // Also disable for modes that have transit to prevent confusing
+    // and unnecessary scrolling
+    if (!isServerEnv && !hasTransit) {
       initialRenderRef?.current?.scrollIntoView({
         behavior: "auto",
         // Ideally there is no vertical scrolling, but if this likely non-effective
