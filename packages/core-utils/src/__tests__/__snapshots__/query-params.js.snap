@@ -151,15 +151,15 @@ Array [
   Object {
     "applicable": [Function],
     "default": "QUICK",
-    "label": "Optimize for",
+    "label": "I prefer",
     "name": "optimize",
     "options": Array [
       Object {
-        "text": "Speed",
+        "text": "The quickest trip",
         "value": "QUICK",
       },
       Object {
-        "text": "Fewest Transfers",
+        "text": "The fewest transfers",
         "value": "TRANSFERS",
       },
     ],
@@ -172,7 +172,7 @@ Array [
     "applicable": [Function],
     "default": "SAFE",
     "itineraryRewrite": [Function],
-    "label": "Optimize for",
+    "label": "I prefer",
     "name": "optimizeBike",
     "options": [Function],
     "routingTypes": Array [
@@ -223,7 +223,7 @@ Array [
   Object {
     "applicable": [Function],
     "default": 1.34,
-    "label": "Walk Speed",
+    "label": "Walking Speed",
     "name": "walkSpeed",
     "options": Array [
       Object {
@@ -288,7 +288,7 @@ Array [
   Object {
     "applicable": [Function],
     "default": 3.58,
-    "label": "Bicycle Speed",
+    "label": "Biking Speed",
     "name": "bikeSpeed",
     "options": Array [
       Object {
@@ -318,7 +318,7 @@ Array [
     "applicable": [Function],
     "default": 4828,
     "itineraryRewrite": [Function],
-    "label": "Maximum E-scooter Distance",
+    "label": "Maximum scoot",
     "name": "maxEScooterDistance",
     "options": Array [
       Object {

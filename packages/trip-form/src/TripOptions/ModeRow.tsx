@@ -30,6 +30,11 @@ const ModeRow = ({
   const selectedTransit = selectedModes.filter(coreUtils.itinerary.isTransit);
   const hasTransit = selectedTransit.length > 0;
   const selectedTransitString = selectedTransit.join(",") || "TRANSIT";
+  const setModeToTransit = () =>
+    onQueryParamChange({
+      companies: "",
+      mode: `${selectedTransitString},WALK`
+    });
 
   // Scroll to active mode on initial render
   // This ref is attached to every active mode checkbox
@@ -37,7 +42,9 @@ const ModeRow = ({
 
   useEffect(() => {
     // Non-DOM environments don't support scrollIntoView
-    if (!isServerEnv) {
+    // Also disable for modes that have transit to prevent confusing
+    // and unnecessary scrolling
+    if (!isServerEnv && !hasTransit) {
       initialRenderRef?.current?.scrollIntoView({
         behavior: "auto",
         // Ideally there is no vertical scrolling, but if this likely non-effective
@@ -57,7 +64,7 @@ const ModeRow = ({
         checked={hasTransit}
         // Prettier conflicts with jsx style rules
         // eslint-disable-next-line prettier/prettier
-        onClick={() => onQueryParamChange({ companies: "", mode: `${selectedTransitString},WALK` })}
+        onClick={setModeToTransit}
         selected={hasTransit}
         SimpleModeIcon={SimpleModeIcon}
       >
@@ -73,6 +80,12 @@ const ModeRow = ({
           : category.type === "exclusive" && selectedModeAndCategoryActive;
 
         const onChangeMode = () => {
+          // If clicking on a mode that's active, reset to transit only
+          if (isChecked) {
+            setModeToTransit();
+            return;
+          }
+
           // Use override query if present
           if (queryParamOverrides && queryParamOverrides[category.id]) {
             const override = queryParamOverrides[category.id];
