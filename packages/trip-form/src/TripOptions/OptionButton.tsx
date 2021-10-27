@@ -5,14 +5,15 @@ import * as S from "./styled";
 // eslint-disable-next-line prettier/prettier
 import type { ButtonProps } from "./Checkbox"
 
-export default function OptionButton({ onClick, label, children, className, selected, checked }: {
+export default function OptionButton({ onClick, label, children, className, selected, checked, disabled }: {
   checked: boolean;
   children?: React.ReactNode | string;
   className?: string;
+  disabled?: boolean;
   label: string;
 } & ButtonProps): React.ReactElement {
   return (
-    <S.OptionButton className={className} onClick={onClick} selected={selected}>
+    <S.OptionButton className={className} disabled={disabled} onClick={onClick} selected={selected}>
       <S.OptionLabel>{label}</S.OptionLabel>
       <S.OptionIcon>
         {checked ? <S.GreenCheck /> : <S.UncheckedIcon />}

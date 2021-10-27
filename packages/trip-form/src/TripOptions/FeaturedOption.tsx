@@ -91,6 +91,7 @@ const FeaturedOption = ({
           return (
             <OptionButton
               checked={isChecked}
+              disabled={isChecked && selectedCompanies.length === 1}
               key={index}
               label={o.label}
               onClick={() => selectOption(isChecked, o)}

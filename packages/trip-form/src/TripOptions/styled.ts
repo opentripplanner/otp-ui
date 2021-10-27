@@ -117,7 +117,7 @@ export const OptionButton = styled.button`
   border-radius: 7px;
   border: solid 1px;
   color: white;
-  cursor: pointer;
+  cursor: ${(props: ButtonProps) => props.disabled ? "not-allowed" : "pointer"};
   display: flex;
   justify-content: space-between;
   margin-top: 7px;
