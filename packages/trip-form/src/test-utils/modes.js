@@ -57,12 +57,12 @@ const commonModes = {
       options: [
         {
           mode: "CAR_PARK",
-          label: "Drive to Park & Ride"
+          label: "Park & Ride"
         },
         {
           company: "UBER", // Optional.
           image: "https://trimet-web.s3.amazonaws.com/uber.svg",
-          label: "Transit + Uber",
+          label: "Uber",
           mode: "CAR_HAIL",
           url: "https://uber.com"
         }
@@ -104,13 +104,13 @@ const commonModes = {
       ]
     },
     {
-      label: "Walk only",
+      label: "Walk Only",
       id: "WALK",
       mode: "WALK",
       type: "exclusive"
     },
     {
-      label: "Bike only",
+      label: "Bike Only",
       id: "BICYCLE",
       type: "exclusive",
       options: [
