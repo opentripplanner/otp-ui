@@ -184,7 +184,7 @@ export function itineraryToTransitive(itin, companies, getRouteLabel) {
 
     if (isTransit(leg.mode)) {
       // Flex routes sometimes have the same from and to IDs, but
-      // these stops still need to be rendered seperately!
+      // these stops still need to be rendered separately!
       if (leg.from.stopId === leg.to.stopId) {
         leg.to.stopId = `${leg.to.stopId}_flexed_to`;
       }
