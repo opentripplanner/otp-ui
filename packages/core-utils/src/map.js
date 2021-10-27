@@ -1,6 +1,6 @@
 import moment from "moment";
 
-import { getPlaceName, isTransit, toSentenceCase } from "./itinerary";
+import { getPlaceName, isFlex, isTransit, toSentenceCase } from "./itinerary";
 
 export function latlngToString(latlng) {
   return (
@@ -181,7 +181,13 @@ export function itineraryToTransitive(itin, companies, getRouteLabel) {
       });
       streetEdgeId++;
     }
+
     if (isTransit(leg.mode)) {
+      // Flex routes sometimes have the same from and to IDs, but
+      // these stops still need to be rendered seperately!
+      if (leg.from.stopId === leg.to.stopId) {
+        leg.to.stopId = `${leg.to.stopId}_flexed_to`;
+      }
       // determine if we have valid inter-stop geometry
       const hasInterStopGeometry = !!leg.interStopGeometry;
       const hasIntermediateStopGeometry =
@@ -234,7 +240,8 @@ export function itineraryToTransitive(itin, companies, getRouteLabel) {
       pattern.stops.push({
         stop_id: leg.to.stopId,
         geometry:
-          hasInterStopGeometry &&
+          // Flex legs have valid legGeometry
+          (hasInterStopGeometry || isFlex(leg)) &&
           (hasIntermediateStopGeometry
             ? leg.interStopGeometry[leg.interStopGeometry.length - 1].points
             : leg.legGeometry.points)

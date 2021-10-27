@@ -26,6 +26,16 @@ export function isTransit(mode) {
   return transitModes.includes(mode) || mode === "TRANSIT";
 }
 
+export function isOptional(leg) {
+  return leg.boardRule === "mustPhone";
+}
+export function isContinuousDropoff(leg) {
+  return leg.alightRule === "coordinateWithDriver";
+}
+export function isFlex(leg) {
+  return isOptional(leg) || isContinuousDropoff(leg);
+}
+
 export function isWalk(mode) {
   if (!mode) return false;
 
