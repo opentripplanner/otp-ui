@@ -10,19 +10,26 @@ const zipOrNeighborhood = ({ neighbourhood, postalcode }) =>
 // more layer types.
 const layerDisplayMap = {
   address: properties => {
-    const { locality, name, postalcode } = properties;
+    const { locality, name, postalcode, region_a: state } = properties;
     return {
       main: name,
-      secondary: [locality, postalcode].filter(item => !!item).join(", ")
+      secondary: [locality, postalcode, state].filter(item => !!item).join(", ")
     };
   },
   venue: properties => {
-    const { name, street } = properties;
+    const { name, street, locality, region_a: state } = properties;
     return {
       main: name,
-      secondary: [street, zipOrNeighborhood(properties)]
+      secondary: [street, zipOrNeighborhood(properties), locality, state]
         .filter(item => !!item)
         .join(", ")
+    };
+  },
+  neighbourhood: properties => {
+    const { name, county, locality, region_a: state } = properties;
+    return {
+      main: name,
+      secondary: [county, locality, state].filter(item => !!item).join(", ")
     };
   }
 };
