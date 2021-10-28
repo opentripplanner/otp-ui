@@ -1,13 +1,16 @@
 /**
  * Helper function to return either zip code or neighborhood, depending on
  * what is present.
+ *
+ * Neighborhood is spelled British and zip code is spelled postal code as
+ * Pelias seems to adopt British address standards.
  */
 const zipOrNeighborhood = ({ neighbourhood, postalcode }) =>
   neighbourhood || postalcode || "";
 
 // A mapping of Pelias layers to display modes. The label generator will run the generator
 // based on the layer of the feature. Adding a new method to this mapping will support
-// more layer types.
+// more layer types with custom rendering.
 const layerDisplayMap = {
   address: properties => {
     const { locality, name, postalcode, region_a: state } = properties;
