@@ -67,10 +67,8 @@ export default class PeliasGeocoder extends Geocoder {
    * first feature returned from the geocoder.
    */
   rewriteReverseResponse(response) {
-    const {
-      "point.lat": lat,
-      "point.lon": lon
-    } = response.isomorphicMapzenSearchQuery;
+    const { lat, lon } = response.isomorphicMapzenSearchQuery.point;
+
     const firstFeature = response[0];
     return {
       lat,

@@ -11,7 +11,7 @@ Object {
         0.1296100000000706,
         51.973520000000065,
       ],
-      "type": "point",
+      "type": "Point",
     },
     "properties": Object {
       "confidence": 0.875,
@@ -25,7 +25,7 @@ Object {
       "region": "England",
       "resultId": undefined,
     },
-    "type": "feature",
+    "type": "Feature",
   },
 }
 `;
@@ -64,7 +64,7 @@ Object {
         -122.67320084756255,
         45.516175523600715,
       ],
-      "type": "point",
+      "type": "Point",
     },
     "properties": Object {
       "country_a": "USA",
@@ -75,7 +75,7 @@ Object {
       "neighbourhood": "Downtown",
       "region": "Oregon",
     },
-    "type": "feature",
+    "type": "Feature",
   },
 }
 `;
@@ -89,7 +89,7 @@ Object {
           0.1296100000000706,
           51.973520000000065,
         ],
-        "type": "point",
+        "type": "Point",
       },
       "properties": Object {
         "confidence": 0.875,
@@ -103,7 +103,7 @@ Object {
         "region": "England",
         "resultId": undefined,
       },
-      "type": "feature",
+      "type": "Feature",
     },
     Object {
       "geometry": Object {
@@ -111,7 +111,7 @@ Object {
           -0.8668999999999301,
           51.558340000000044,
         ],
-        "type": "point",
+        "type": "Point",
       },
       "properties": Object {
         "confidence": 0.875,
@@ -125,7 +125,7 @@ Object {
         "region": "England",
         "resultId": undefined,
       },
-      "type": "feature",
+      "type": "Feature",
     },
   ],
   "query": Object {

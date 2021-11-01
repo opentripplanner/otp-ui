@@ -9,13 +9,16 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/geocoder": "^1.1.1",
+    "@conveyal/geocoder-arcgis-geojson": "^0.0.3",
     "@opentripplanner/core-utils": "^4.2.0",
+    "@opentripplanner/geocoder": "^1.1.1",
     "@opentripplanner/humanize-distance": "^1.1.0",
-    "@opentripplanner/location-icon": "^1.3.0",
-    "prop-types": "^15.7.2",
+    "@opentripplanner/location-icon": "^1.4.0",
     "@styled-icons/fa-solid": "^10.34.0",
     "throttle-debounce": "^2.1.0"
+  },
+  "devDependencies": {
+    "prop-types": "^15.7.2"
   },
   "peerDependencies": {
     "react": "^16.14.0",
