@@ -6,6 +6,7 @@ import { CalendarAlt } from "@styled-icons/fa-solid/CalendarAlt";
 import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
 import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
 import { PhoneVolume } from "@styled-icons/fa-solid/PhoneVolume";
+import { HandPaper } from "@styled-icons/fa-solid/HandPaper";
 
 import * as S from "./styled";
 import TripDetail from "./trip-detail";
@@ -70,7 +71,12 @@ function TripDetails({
     walkDuration
   } = coreUtils.itinerary.calculatePhysicalActivity(itinerary);
 
-  const isFlex = itinerary.legs.some(coreUtils.itinerary.isFlex);
+  const pickupBookingInfo = itinerary.legs
+    .map(leg => leg.pickupBookingInfo)
+    .filter(info => !!info);
+  const dropOffBookingInfo = itinerary.legs
+    .map(leg => leg.dropOffBookingInfo)
+    .filter(info => !!info);
 
   return (
     <S.TripDetails className={className}>
@@ -132,14 +138,28 @@ function TripDetails({
             }
           />
         )}
-        {isFlex && (
-          <TripDetail
-            icon={<PhoneVolume size={17} />}
-            summary="This journey includes flexible routes. You may have to call ahead."
-            // FIXME: Insert long description from booking_rules info in GTFS
-            // description="FIXME: Insert long description from GTFS"
-          />
-        )}
+        {pickupBookingInfo &&
+          pickupBookingInfo.map(info => (
+            <TripDetail
+              key={info.pickupMessage}
+              icon={<PhoneVolume size={17} />}
+              // FIXME: internationalize with correct pluralization.
+              // FIXME: Generate string separately and more resiliently
+              summary={`This journey includes flexible routes. You must call ${info.contactInfo?.phoneNumber} at least ${info.latestBookingTime?.daysPrior} day(s) in advance.`}
+              description={info.pickupMessage}
+            />
+          ))}
+        {dropOffBookingInfo &&
+          dropOffBookingInfo.map(info => (
+            <TripDetail
+              key={info.dropOffMessage}
+              icon={<HandPaper size={17} />}
+              // FIXME: internationalize with correct pluralization.
+              // FIXME: Generate string separately and more resiliently
+              summary="This journey includes flexible routes. You must tell the bus driver where you want to get off."
+              description={info.dropOffMessage}
+            />
+          ))}
       </S.TripDetailsBody>
     </S.TripDetails>
   );
