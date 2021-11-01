@@ -1542,6 +1542,7 @@
     "@formatjs/intl-listformat" "6.3.1"
     intl-messageformat "9.8.2"
     tslib "^2.1.0"
+
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.5.0.tgz#1407967d4c6eecd7388f83acf1eaf4d0c6e58ef9"
@@ -2856,23 +2857,6 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
-"@opentripplanner/core-utils@^4.2.0":
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-4.2.0.tgz#c6b1097221f7372798bf53db969e47cf86e9bb66"
-  integrity sha512-FdwLQJxrS9oxbITctFBar4v0UcJng5F2OaApQN8tGWqQhnIrxb+odtgvFMxR4ExKBGkS8TKfv4DSSmZXUC24Mg==
-  dependencies:
-    "@mapbox/polyline" "^1.1.0"
-    "@opentripplanner/geocoder" "^1.1.0"
-    "@styled-icons/foundation" "^10.34.0"
-    "@turf/along" "^6.0.1"
-    bowser "^2.7.0"
-    date-fns "^2.23.0"
-    date-fns-tz "^1.1.4"
-    lodash.clonedeep "^4.5.0"
-    lodash.isequal "^4.5.0"
-    moment "^2.24.0"
-    prop-types "^15.7.2"
-    qs "^6.9.1"
 "@opentripplanner/itinerary-body@2.5.0-alpha.4":
   version "2.5.0-alpha.4"
   resolved "https://registry.yarnpkg.com/@opentripplanner/itinerary-body/-/itinerary-body-2.5.0-alpha.4.tgz#1b8a3d7118750152a8b1f8d8013baef18c81d699"
@@ -7290,9 +7274,9 @@ caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
   integrity sha512-xEwjPGIiUynB3jdYknZdPZNDsHVtuQ7W2vx2JOOou7QUNpN2rIk+T56tSb4rGtXIDM7HG5v0Z1OZ6MdyE51LBg==
 
 caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001125, caniuse-lite@^1.0.30001219:
-  version "1.0.30001230"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001230.tgz#8135c57459854b2240b57a4a6786044bdc5a9f71"
-  integrity sha512-5yBd5nWCBS+jWKTcHOzXwo5xzcj4ePE/yjtkZyUV1BTUmrBaA9MRGC+e7mxnqXSA90CmCA8L3eKLaSUkt099IQ==
+  version "1.0.30001274"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001274.tgz"
+  integrity sha512-+Nkvv0fHyhISkiMIjnyjmf5YJcQ1IQHZN6U9TLUMroWR38FNwpsC51Gb68yueafX1V6ifOisInSgP9WJFS13ew==
 
 capture-exit@^2.0.0:
   version "2.0.0"
