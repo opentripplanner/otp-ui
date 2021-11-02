@@ -331,8 +331,17 @@ class LocationField extends Component {
       getGeocoder(geocoderConfig)
         .getLocationFromGeocodedFeature(feature)
         .then(geocodedLocation => {
+          // Create an improved label for the location
+          // Same label as displayed in the search results list
+          const { main, secondary } = generateLabel(
+            geocodedLocation.rawGeocodedFeature.properties
+          );
+          const geocodedLocationImprovedLabel = {
+            ...geocodedLocation,
+            name: `${main}, ${secondary}`
+          };
           // Set the current location
-          this.setLocation(geocodedLocation, "GEOCODE");
+          this.setLocation(geocodedLocationImprovedLabel, "GEOCODE");
           // Add to the location search history. This is intended to
           // populate the sessionSearches array.
           addLocationSearch({ location: geocodedLocation });
