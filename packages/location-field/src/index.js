@@ -110,7 +110,7 @@ class LocationField extends Component {
   }
 
   /**
-   * Generates a combined label from main and seconday for display in the main input field
+   * Generates a combined label from main and secondary for display in the main input field
    */
   getCombinedLabel = () => {
     const { location } = this.props;
