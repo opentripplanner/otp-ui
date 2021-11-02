@@ -10,12 +10,12 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^4.1.0",
+    "@opentripplanner/core-utils": "^4.2.0",
     "@opentripplanner/humanize-distance": "^1.1.0",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "@opentripplanner/icons": "^1.1.0",
+    "@opentripplanner/icons": "^1.2.1",
     "@opentripplanner/itinerary-body": "2.5.0-alpha.4"
   },
   "peerDependencies": {
