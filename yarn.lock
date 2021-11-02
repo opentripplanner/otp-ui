@@ -2870,6 +2870,11 @@
     react-resize-detector "^4.2.1"
     velocity-react "^1.4.3"
 
+"@opentripplanner/types@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-1.0.1.tgz#b67f04372f4f2db64d6e2321933d35cb4d9549ec"
+  integrity sha512-cu8y9sgZLTSwmLIGjCLYSWQdFQZWr84z8PxUej4grFMWmi4Ur/W6LV6CGenRWXt1VWJisR8S+zRW4xK+e2XgPg==
+
 "@pmmmwh/react-refresh-webpack-plugin@^0.4.3":
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.4.3.tgz#1eec460596d200c0236bf195b078a5d1df89b766"
