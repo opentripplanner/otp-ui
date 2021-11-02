@@ -36,6 +36,13 @@ export function isFlex(leg) {
   return isOptional(leg) || isContinuousDropoff(leg);
 }
 
+export function bookingInfoDropofHasBookingTime(info) {
+  return info?.latestBookingTime?.daysPrior > 0;
+}
+export function legDropoffHasBookingTime(leg) {
+  return bookingInfoDropofHasBookingTime(leg.dropOffBookingInfo);
+}
+
 export function isWalk(mode) {
   if (!mode) return false;
 
