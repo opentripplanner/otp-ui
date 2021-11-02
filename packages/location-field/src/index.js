@@ -98,7 +98,7 @@ class LocationField extends Component {
       /* FIXME only disabled this because it'd take longer to refactor */
       /* eslint-disable-next-line */
       this.setState({
-        value: location !== null ? location.name : "",
+        value: this.getCombinedLabel(),
         geocodedFeatures: []
       });
     }
@@ -110,11 +110,26 @@ class LocationField extends Component {
   }
 
   /**
+   * Generates a combined label from main and seconday for display in the main input field
+   */
+  getCombinedLabel = () => {
+    const { location } = this.props;
+    if (location?.main && location?.secondary) {
+      return `${location.main}, ${location.secondary}`;
+    }
+    if (location?.name) {
+      return location.name;
+    }
+    return "";
+  };
+
+  /**
    * Gets the initial value to place in the input field.
    */
   getValueFromLocation = () => {
     const { hideExistingValue, location } = this.props;
-    return location && !hideExistingValue ? location.name : "";
+    const label = this.getCombinedLabel();
+    return location && !hideExistingValue ? label : "";
   };
 
   setLocation(location, resultType) {
@@ -326,22 +341,21 @@ class LocationField extends Component {
       operatorIconMap
     } = this.props;
     const { activeIndex } = this.state;
+
+    // generate the friendly labels for this feature
+    const { main, secondary } = generateLabel(feature.properties);
+
     // Create the selection handler
     const locationSelected = () => {
       getGeocoder(geocoderConfig)
         .getLocationFromGeocodedFeature(feature)
         .then(geocodedLocation => {
-          // Create an improved label for the location
-          // Same label as displayed in the search results list
-          const { main, secondary } = generateLabel(
-            geocodedLocation.rawGeocodedFeature.properties
-          );
-          const geocodedLocationImprovedLabel = {
-            ...geocodedLocation,
-            name: `${main}, ${secondary}`
-          };
+          // add the friendly location labels
+          // FIXME: should this be a copy of the object so it's not mutated?
+          geocodedLocation.main = main;
+          geocodedLocation.secondary = secondary;
           // Set the current location
-          this.setLocation(geocodedLocationImprovedLabel, "GEOCODE");
+          this.setLocation(geocodedLocation, "GEOCODE");
           // Add to the location search history. This is intended to
           // populate the sessionSearches array.
           addLocationSearch({ location: geocodedLocation });
@@ -369,7 +383,6 @@ class LocationField extends Component {
     classNames.push(`layer-${layer}`);
 
     // Create and return the option menu item
-    const { main, secondary } = generateLabel(feature.properties);
     return (
       <Option
         classes={classNames.join(" ")}
@@ -548,13 +561,13 @@ class LocationField extends Component {
 
           // Add to the selection handler lookup (for use in onKeyDown)
           this.locationSelectedLookup[itemIndex] = locationSelected;
-
           // Create and return the option menu item
           const option = (
             <Option
               icon={sessionOptionIcon}
               key={optionKey++}
-              title={sessionLocation.name}
+              title={sessionLocation.main || sessionLocation.name}
+              subTitle={sessionLocation.secondary || ""}
               onClick={locationSelected}
               isActive={itemIndex === activeIndex}
             />
@@ -865,7 +878,9 @@ LocationField.propTypes = {
   location: PropTypes.shape({
     lat: PropTypes.number,
     lon: PropTypes.number,
-    name: PropTypes.string
+    name: PropTypes.string,
+    main: PropTypes.string,
+    secondary: PropTypes.string
   }),
   /**
    * A custom component for rendering the icon displayed to the left of the text
