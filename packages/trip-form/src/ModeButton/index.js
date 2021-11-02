@@ -31,6 +31,7 @@ const ModeButton = props => {
         onClick={onClick}
         title={title}
         disabled={!enabled}
+        aria-pressed={selected}
       >
         {children}
       </Styled.ModeButton.Button>
