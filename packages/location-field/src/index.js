@@ -552,6 +552,7 @@ class LocationField extends Component {
             <Option
               icon={sessionOptionIcon}
               key={optionKey++}
+              // just use the name if there is no main/secondary field
               title={sessionLocation.main || sessionLocation.name}
               subTitle={sessionLocation.secondary || ""}
               onClick={locationSelected}
