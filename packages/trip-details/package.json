@@ -17,10 +17,10 @@
     "velocity-react": "^1.4.3"
   },
   "devDependencies": {
+    "@opentripplanner/types": "^1.0.2-alpha",
     "@types/flat": "^5.0.2"
   },
   "peerDependencies": {
-    "@opentripplanner/types": "^1.0.1",
     "react": "^16.14.0",
     "react-intl": "^5.20.4",
     "styled-components": "^5.3.0"
