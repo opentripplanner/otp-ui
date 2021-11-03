@@ -2784,6 +2784,24 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
+"@opentripplanner/core-utils@^4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-4.3.0.tgz#ff696bc77e01b889a10724518e1f64bf2873b81f"
+  integrity sha512-F72wH67Uo4FcvnT5gRNkqFOVhcr9okEQzpW0YjDHbjH2Rat1DE8EnkdNrIE6enSGiEL1O6eH74pTsHfuGGNTiA==
+  dependencies:
+    "@mapbox/polyline" "^1.1.0"
+    "@opentripplanner/geocoder" "^1.1.1"
+    "@styled-icons/foundation" "^10.34.0"
+    "@turf/along" "^6.0.1"
+    bowser "^2.7.0"
+    date-fns "^2.23.0"
+    date-fns-tz "^1.1.4"
+    lodash.clonedeep "^4.5.0"
+    lodash.isequal "^4.5.0"
+    moment "^2.24.0"
+    prop-types "^15.7.2"
+    qs "^6.9.1"
+
 "@opentripplanner/itinerary-body@2.5.0-alpha.4":
   version "2.5.0-alpha.4"
   resolved "https://registry.yarnpkg.com/@opentripplanner/itinerary-body/-/itinerary-body-2.5.0-alpha.4.tgz#1b8a3d7118750152a8b1f8d8013baef18c81d699"

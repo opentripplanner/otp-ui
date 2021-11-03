@@ -32,6 +32,19 @@ const customMessages = {
 };
 const longDateFormat = "MMMM D, YYYY";
 
+const customKeyMap = {
+  regular: "Transit Fare",
+  student: "Student Fare",
+  senior: "Senior Fare",
+  tram: "Tram Fare",
+  special: "Special Fare",
+  youth: "Youth Fare",
+  electronicRegular: "Orca Fare",
+  electronicYouth: "Orca Youth Fare",
+  electronicSpecial: "Orca Special Fare",
+  electronicSenior: "Orca Senior Fare"
+};
+
 export default {
   title: "TripDetails",
   components: TripDetails
@@ -78,6 +91,8 @@ export const WalkInterlinedTransitItinerary = () => (
   <TripDetails
     itinerary={walkInterlinedTransitItinerary}
     longDateFormat={longDateFormat}
+    defaultFare="electronicRegular"
+    fareKeyNameMap={customKeyMap}
   />
 );
 
@@ -127,5 +142,6 @@ export const TncTransitItinerary = () => (
   <TripDetails
     itinerary={tncTransitTncItinerary}
     longDateFormat={longDateFormat}
+    fareKeyNameMap={customKeyMap}
   />
 );
