@@ -501,6 +501,22 @@ export function getTransitFare(fareComponent) {
  * - currencyCode will be returned separately for each fare
  * - tnc currency code will be returned separately
  * - each fare type will be returned separately within a new transitFares property
+ *
+ * FIXME: a new approach to fare calculation must be found:
+ * the current approach is not sustainable, as centsToString and DollarsToString
+ * must be replaced by i18n anyway.
+ *
+ * However, the current behavior should ideally be kept to avoid a breaking change.
+ * The "multiple" mode is helpful, but only prevents tnc fare calculation from being duplicated.
+ * This method could be split out into a new one, along with tnc fare calculation.
+ * If this is done, the individual fare calculation should also be modified to support
+ * a default fare not being called "regular". However, this again would be a breaking change.
+ * This breaking change is avoided by adding the "multiple" parameter.
+ *
+ * When centsToString and dollarsToString are removed, this method should be split into
+ * individual fare calculation on a variable fare key, fare calculation of an entire leg,
+ * which will get fares for every fare key in the leg, and a method to calculate the fare of
+ * a tnc ride within the leg. This will make typescripting easier, as the types will be cleaner.
  */
 export function calculateFares(itinerary, multiple = false) {
   // Process any TNC fares
