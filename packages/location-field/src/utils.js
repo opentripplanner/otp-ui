@@ -50,3 +50,14 @@ export const generateLabel = properties => {
 
   return labelGenerator(properties);
 };
+
+/**
+ * Generates a combined label from main and secondary for display in the main input field
+ */
+export const getCombinedLabel = properties => {
+  const { main, secondary } = generateLabel(properties);
+  if (main && secondary) {
+    return `${main}, ${secondary}`;
+  }
+  return properties.label || "";
+};

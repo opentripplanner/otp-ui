@@ -19,7 +19,7 @@ import {
   UserLocationIcon
 } from "./options";
 import * as S from "./styled";
-import { generateLabel } from "./utils";
+import { generateLabel, getCombinedLabel } from "./utils";
 
 // FIXME have a better key generator for options
 let optionKey = 0;
@@ -98,7 +98,7 @@ class LocationField extends Component {
       /* FIXME only disabled this because it'd take longer to refactor */
       /* eslint-disable-next-line */
       this.setState({
-        value: this.getCombinedLabel(),
+        value: location.name,
         geocodedFeatures: []
       });
     }
@@ -110,25 +110,11 @@ class LocationField extends Component {
   }
 
   /**
-   * Generates a combined label from main and secondary for display in the main input field
-   */
-  getCombinedLabel = () => {
-    const { location } = this.props;
-    if (location?.main && location?.secondary) {
-      return `${location.main}, ${location.secondary}`;
-    }
-    if (location?.name) {
-      return location.name;
-    }
-    return "";
-  };
-
-  /**
    * Gets the initial value to place in the input field.
    */
   getValueFromLocation = () => {
     const { hideExistingValue, location } = this.props;
-    const label = this.getCombinedLabel();
+    const label = location?.name || "";
     return location && !hideExistingValue ? label : "";
   };
 
@@ -350,10 +336,10 @@ class LocationField extends Component {
       getGeocoder(geocoderConfig)
         .getLocationFromGeocodedFeature(feature)
         .then(geocodedLocation => {
-          // add the friendly location labels
-          // FIXME: should this be a copy of the object so it's not mutated?
+          // add the friendly location labels for use later on
           geocodedLocation.main = main;
           geocodedLocation.secondary = secondary;
+          geocodedLocation.name = getCombinedLabel(feature.properties);
           // Set the current location
           this.setLocation(geocodedLocation, "GEOCODE");
           // Add to the location search history. This is intended to
