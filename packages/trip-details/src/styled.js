@@ -49,7 +49,9 @@ export const TransitFare = styled.details`
 
   > span {
     display: block;
-    padding-left: 2ch;
+    /* This may seem wrong, but this value gives the most aligned results */
+    /* see: https://github.com/opentripplanner/otp-ui/pull/294#discussion_r742045851 */
+    padding-left: 1.75ch;
   }
 `;
 export const TransitFareSingle = styled.span``;

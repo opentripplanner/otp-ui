@@ -9,12 +9,17 @@ import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
 import * as S from "./styled";
 import TripDetail from "./trip-detail";
 
-const TransitFare = ({ fareKey, fareNameFallback, keyMap, transitFares }) => {
+const TransitFare = ({
+  fareKey,
+  fareNameFallback,
+  fareKeyNameMap,
+  transitFares
+}) => {
   const currentFare = transitFares[fareKey];
 
   return (
     <span>
-      {keyMap[fareKey] || fareNameFallback || fareKey}:{" "}
+      {fareKeyNameMap[fareKey] || fareNameFallback || fareKey}:{" "}
       <b>{currentFare.centsToString(currentFare.transitFare)}</b>
     </span>
   );
@@ -22,7 +27,7 @@ const TransitFare = ({ fareKey, fareNameFallback, keyMap, transitFares }) => {
 TransitFare.propTypes = {
   fareKey: PropTypes.string.isRequired,
   fareNameFallback: PropTypes.string,
-  keyMap: PropTypes.shape({
+  fareKeyNameMap: PropTypes.shape({
     [PropTypes.string]: PropTypes.string
   }).isRequired,
   transitFares: PropTypes.shape({
@@ -36,9 +41,9 @@ TransitFare.defaultProps = {
 
 function TripDetails({
   className,
-  configDefaultFare,
+  defaultFareKey,
   itinerary,
-  keyMap,
+  fareKeyNameMap,
   longDateFormat,
   messages,
   routingType,
@@ -57,8 +62,8 @@ function TripDetails({
     transitFares
   } = coreUtils.itinerary.calculateFares(itinerary, true);
 
-  let defaultFare = configDefaultFare;
-  if (!transitFares[configDefaultFare]) {
+  let defaultFare = defaultFareKey;
+  if (!transitFares[defaultFareKey]) {
     defaultFare = "regular";
   }
 
@@ -85,7 +90,7 @@ function TripDetails({
             <TransitFare
               fareNameFallback={messages.transitFare}
               fareKey={defaultFare}
-              keyMap={keyMap}
+              fareKeyNameMap={fareKeyNameMap}
               transitFares={transitFares}
             />
           </summary>
@@ -98,7 +103,7 @@ function TripDetails({
               <TransitFare
                 fareKey={fareKey}
                 key={fareKey}
-                keyMap={keyMap}
+                fareKeyNameMap={fareKeyNameMap}
                 transitFares={transitFares}
               />
             );
@@ -196,11 +201,11 @@ TripDetails.propTypes = {
   /** Used for additional styling with styled components for example. */
   className: PropTypes.string,
   /** Determines which transit fare should be displayed by default, should there be multiple transit fare types */
-  configDefaultFare: PropTypes.string,
+  defaultFareKey: PropTypes.string,
   /** Itinerary that the user has selected to view, contains multiple legs */
   itinerary: coreUtils.types.itineraryType.isRequired,
   /** Mapping between fare keys and human-readable names for them */
-  keyMap: PropTypes.shape({
+  fareKeyNameMap: PropTypes.shape({
     [PropTypes.string]: PropTypes.string
   }),
   /** the desired format to use for a long date */
@@ -232,8 +237,8 @@ TripDetails.propTypes = {
 
 TripDetails.defaultProps = {
   className: null,
-  configDefaultFare: "regular",
-  keyMap: {},
+  defaultFareKey: "regular",
+  fareKeyNameMap: {},
   longDateFormat: null,
   messages: {
     at: "at",

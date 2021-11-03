@@ -92,7 +92,7 @@ export const WalkInterlinedTransitItinerary = () => (
     itinerary={walkInterlinedTransitItinerary}
     longDateFormat={longDateFormat}
     defaultFare="electronicRegular"
-    keyMap={customKeyMap}
+    fareKeyNameMap={customKeyMap}
   />
 );
 
@@ -142,6 +142,6 @@ export const TncTransitItinerary = () => (
   <TripDetails
     itinerary={tncTransitTncItinerary}
     longDateFormat={longDateFormat}
-    keyMap={customKeyMap}
+    fareKeyNameMap={customKeyMap}
   />
 );
