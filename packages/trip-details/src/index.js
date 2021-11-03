@@ -36,7 +36,7 @@ TransitFare.defaultProps = {
 
 function TripDetails({
   className,
-  defaultFare,
+  configDefaultFare,
   itinerary,
   keyMap,
   longDateFormat,
@@ -56,6 +56,12 @@ function TripDetails({
     minTNCFare,
     transitFares
   } = coreUtils.itinerary.calculateFares(itinerary, true);
+
+  let defaultFare = configDefaultFare;
+  if (!transitFares[configDefaultFare]) {
+    defaultFare = "regular";
+  }
+
   let companies;
   itinerary.legs.forEach(leg => {
     if (leg.tncData) {
@@ -75,7 +81,7 @@ function TripDetails({
     fare = (
       <S.Fare>
         <TransitFareWrapper>
-          <summary style={{ display: "list-item" }}>
+          <summary style={{ display: fareKeys.length > 1 ? "list-item" : "" }}>
             <TransitFare
               fareNameFallback={messages.transitFare}
               fareKey={defaultFare}
@@ -190,7 +196,7 @@ TripDetails.propTypes = {
   /** Used for additional styling with styled components for example. */
   className: PropTypes.string,
   /** Determines which transit fare should be displayed by default, should there be multiple transit fare types */
-  defaultFare: PropTypes.string,
+  configDefaultFare: PropTypes.string,
   /** Itinerary that the user has selected to view, contains multiple legs */
   itinerary: coreUtils.types.itineraryType.isRequired,
   /** Mapping between fare keys and human-readable names for them */
@@ -226,7 +232,7 @@ TripDetails.propTypes = {
 
 TripDetails.defaultProps = {
   className: null,
-  defaultFare: "regular",
+  configDefaultFare: "regular",
   keyMap: {},
   longDateFormat: null,
   messages: {
