@@ -37,6 +37,7 @@ export function Option({
   isActive,
   onClick,
   title,
+  subTitle,
   classes
 }) {
   return (
@@ -53,7 +54,10 @@ export function Option({
           <S.OptionIconContainer style={{ color }}>
             {icon}
           </S.OptionIconContainer>
-          <S.OptionContent>{title}</S.OptionContent>
+          <S.OptionContent>
+            {title}
+            <S.OptionSubTitle>{subTitle}</S.OptionSubTitle>
+          </S.OptionContent>
         </S.OptionContainer>
       )}
     </S.MenuItem>
@@ -70,7 +74,8 @@ Option.propTypes = {
   icon: PropTypes.node,
   isActive: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
-  title: PropTypes.node
+  title: PropTypes.node,
+  subTitle: PropTypes.node
 };
 
 Option.defaultProps = {
@@ -79,7 +84,8 @@ Option.defaultProps = {
   disabled: false,
   icon: null,
   isActive: false,
-  title: null
+  title: null,
+  subTitle: null
 };
 
 export function TransitStopOption({ isActive, onClick, stop, stopOptionIcon }) {

@@ -1,6 +1,6 @@
 import AccessLegBody from "./AccessLegBody";
 import * as Defaults from "./defaults";
-import ItineraryBody from "./ItineraryBody";
+import ItineraryBody, { AccessibilityRating } from "./ItineraryBody";
 import * as OtpReactRedux from "./otp-react-redux";
 import PlaceRow from "./ItineraryBody/place-row";
 import RouteBadge from "./RouteBadge";
@@ -10,6 +10,7 @@ import * as Styled from "./styled";
 export default ItineraryBody;
 
 export {
+  AccessibilityRating,
   AccessLegBody,
   Defaults,
   OtpReactRedux,

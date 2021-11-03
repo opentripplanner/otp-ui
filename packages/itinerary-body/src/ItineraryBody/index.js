@@ -2,16 +2,20 @@ import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 
+import AccessibilityRating from "./accessibility-rating";
 import PlaceRow from "./place-row";
 import * as S from "../styled";
 
 const ItineraryBody = ({
-  LegIcon,
+  accessibilityScoreGradationMap,
+  AlertBodyIcon,
+  AlertToggleIcon,
   className,
   config,
   diagramVisible,
   frameLeg,
   itinerary,
+  LegIcon,
   LineColumnContent,
   PlaceName,
   RouteDescription,
@@ -29,9 +33,7 @@ const ItineraryBody = ({
   timeOptions,
   toRouteAbbreviation,
   TransitLegSubheader,
-  TransitLegSummary,
-  AlertToggleIcon,
-  AlertBodyIcon
+  TransitLegSummary
 }) => {
   /*
     TODO: replace component should update logic? companies is simply used to
@@ -47,6 +49,9 @@ const ItineraryBody = ({
       // Create a row containing this leg's start place and leg traversal details
       rows.push(
         <PlaceRow
+          accessibilityScoreGradationMap={accessibilityScoreGradationMap}
+          AlertToggleIcon={AlertToggleIcon}
+          AlertBodyIcon={AlertBodyIcon}
           // eslint-disable-next-line react/no-array-index-key
           key={i + (isDestination ? 1 : 0)}
           config={config}
@@ -79,8 +84,6 @@ const ItineraryBody = ({
           toRouteAbbreviation={toRouteAbbreviation}
           TransitLegSubheader={TransitLegSubheader}
           TransitLegSummary={TransitLegSummary}
-          AlertToggleIcon={AlertToggleIcon}
-          AlertBodyIcon={AlertBodyIcon}
         />
       );
     }
@@ -212,12 +215,24 @@ ItineraryBody.propTypes = {
    * A custom icon component inserted into the transit alert body component
    * within a transit leg, if this prop is not supplied a default icon is used
    */
-  AlertBodyIcon: PropTypes.elementType
+  AlertBodyIcon: PropTypes.elementType,
+  /**
+   * A mapping of accessibility score to color, icon, and text used
+   * to override the default one shipped in AccessibilityLabel
+   */
+  accessibilityScoreGradationMap: PropTypes.shape({
+    color: PropTypes.string,
+    icon: PropTypes.element,
+    text: PropTypes.string
+  })
 };
 
 function noop() {}
 
 ItineraryBody.defaultProps = {
+  accessibilityScoreGradationMap: undefined,
+  AlertBodyIcon: undefined,
+  AlertToggleIcon: undefined,
   className: null,
   diagramVisible: null,
   frameLeg: noop,
@@ -231,9 +246,9 @@ ItineraryBody.defaultProps = {
   TimeColumnContent: PlaceRow.defaultProps.TimeColumnContent,
   timeOptions: null,
   toRouteAbbreviation: noop,
-  TransitLegSubheader: undefined,
-  AlertToggleIcon: undefined,
-  AlertBodyIcon: undefined
+  TransitLegSubheader: undefined
 };
 
 export default ItineraryBody;
+
+export { AccessibilityRating };

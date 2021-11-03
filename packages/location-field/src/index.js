@@ -19,6 +19,7 @@ import {
   UserLocationIcon
 } from "./options";
 import * as S from "./styled";
+import { generateLabel } from "./utils";
 
 // FIXME have a better key generator for options
 let optionKey = 0;
@@ -359,6 +360,7 @@ class LocationField extends Component {
     classNames.push(`layer-${layer}`);
 
     // Create and return the option menu item
+    const { main, secondary } = generateLabel(feature.properties);
     return (
       <Option
         classes={classNames.join(" ")}
@@ -367,7 +369,8 @@ class LocationField extends Component {
         isActive={itemIndex === activeIndex}
         key={optionKey++}
         onClick={locationSelected}
-        title={feature.properties.label}
+        title={main}
+        subTitle={secondary}
       />
     );
   };

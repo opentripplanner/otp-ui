@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/geocoder",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Geocoding tools for multiple geocoding providers",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -9,9 +9,9 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@conveyal/geocoder-arcgis-geojson": "^0.0.2",
+    "@conveyal/geocoder-arcgis-geojson": "^0.0.3",
     "@conveyal/lonlat": "^1.4.1",
-    "isomorphic-mapzen-search": "^1.5.1",
+    "isomorphic-mapzen-search": "^1.6.0",
     "lodash.memoize": "^4.1.2"
   },
   "gitHead": "644c72e0d08f8daf93b44eaf0deec88a1e16f414"

@@ -1,4 +1,6 @@
 import cloneDeep from "lodash.clonedeep";
+import React from "react";
+import { Wheelchair } from "@styled-icons/foundation/Wheelchair";
 
 import {
   isTransit,
@@ -600,10 +602,11 @@ const queryParams = [
   {
     /* wheelchair -- whether the user requires a wheelchair-accessible trip */
     name: "wheelchair",
-    routingTypes: ["ITINERARY"],
+    routingTypes: ["ITINERARY", "PROFILE"],
     default: false,
     selector: "CHECKBOX",
-    label: "Wheelchair Accessible",
+    label: "Prefer Wheelchair Accessible Routes",
+    icon: <Wheelchair />,
     applicable: (query, config) => {
       if (!query.mode || !config.modes) return false;
       const configModes = (config.modes.accessModes || []).concat(

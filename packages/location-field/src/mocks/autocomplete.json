@@ -109,277 +109,417 @@
         "label": "Marine Dr NE & 23rd Ave NE (Community Transit Stop ID 7)"
       }
     },
-
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [-82.91992, 42.58698] },
-      "properties": {
-        "id": "1326540929",
-        "gid": "whosonfirst:locality:1326540929",
-        "layer": "locality",
-        "source": "whosonfirst",
-        "source_id": "1326540929",
-        "name": "Charter Township of Clinton",
-        "accuracy": "centroid",
-        "country": "United States",
-        "country_gid": "whosonfirst:country:85633793",
-        "country_a": "USA",
-        "region": "Michigan",
-        "region_gid": "whosonfirst:region:85688599",
-        "region_a": "MI",
-        "county": "Macomb County",
-        "county_gid": "whosonfirst:county:102083047",
-        "localadmin": "Clinton",
-        "localadmin_gid": "whosonfirst:localadmin:404507391",
-        "locality": "Charter Township of Clinton",
-        "locality_gid": "whosonfirst:locality:1326540929",
-        "continent": "North America",
-        "continent_gid": "whosonfirst:continent:102191575",
-        "label": "Charter Township of Clinton, MI, USA"
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.321062, 47.611343]
       },
-      "bbox": [-82.93992, 42.56698, -82.89992, 42.60698]
-    },
-    {
-      "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [-82.91992, 42.58698] },
       "properties": {
-        "id": "4989133",
-        "gid": "geonames:locality:4989133",
-        "layer": "locality",
-        "source": "geonames",
-        "source_id": "4989133",
-        "name": "Clinton Township",
-        "accuracy": "centroid",
+        "id": "node/5662026889",
+        "gid": "openstreetmap:venue:node/5662026889",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node/5662026889",
+        "country_code": "US",
+        "name": "Whole Foods Market",
+        "housenumber": "1001",
+        "street": "Broadway",
+        "postalcode": "98122",
+        "accuracy": "point",
         "country": "United States",
         "country_gid": "whosonfirst:country:85633793",
         "country_a": "USA",
-        "region": "Michigan",
-        "region_gid": "whosonfirst:region:85688599",
-        "region_a": "MI",
-        "county": "Macomb County",
-        "county_gid": "whosonfirst:county:102083047",
-        "county_a": "MB",
-        "localadmin": "Clinton",
-        "localadmin_gid": "whosonfirst:localadmin:404507391",
-        "locality": "Clinton Township",
-        "locality_gid": "geonames:locality:4989133",
+        "region": "Washington",
+        "region_gid": "whosonfirst:region:85688623",
+        "region_a": "WA",
+        "county": "King County",
+        "county_gid": "whosonfirst:county:102086191",
+        "county_a": "KN",
+        "locality": "Seattle",
+        "locality_gid": "whosonfirst:locality:101730401",
+        "neighbourhood": "First Hill",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85867279",
         "continent": "North America",
         "continent_gid": "whosonfirst:continent:102191575",
-        "label": "Clinton Township, MI, USA",
-        "addendum": { "geonames": { "feature_code": "PPL" } }
+        "label": "Whole Foods Market, Seattle, WA, USA",
+        "addendum": {
+          "osm": {
+            "wheelchair": "yes",
+            "brand": "Whole Foods Market",
+            "website": "https://www.wholefoodsmarket.com/stores/madisonbroadway",
+            "phone": "+1 206-802-3720",
+            "opening_hours": "07:00-22:00"
+          }
+        }
       }
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [-73.684875, 44.722283] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.338176, 47.618316]
+      },
       "properties": {
-        "id": "102081797",
-        "gid": "whosonfirst:county:102081797",
-        "layer": "county",
-        "source": "whosonfirst",
-        "source_id": "102081797",
-        "name": "Clinton County",
-        "accuracy": "centroid",
+        "id": "node/1934511929",
+        "gid": "openstreetmap:venue:node/1934511929",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node/1934511929",
+        "country_code": "US",
+        "name": "Whole Foods Market",
+        "housenumber": "2200",
+        "street": "Westlake Avenue",
+        "accuracy": "point",
         "country": "United States",
         "country_gid": "whosonfirst:country:85633793",
         "country_a": "USA",
-        "region": "New York",
-        "region_gid": "whosonfirst:region:85688543",
-        "region_a": "NY",
-        "county": "Clinton County",
-        "county_gid": "whosonfirst:county:102081797",
+        "region": "Washington",
+        "region_gid": "whosonfirst:region:85688623",
+        "region_a": "WA",
+        "county_gid": "whosonfirst:county:102086191",
+        "postalcode": "10001",
+        "county_a": "KN",
+        "locality_gid": "whosonfirst:locality:101730401",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85805569",
         "continent": "North America",
         "continent_gid": "whosonfirst:continent:102191575",
-        "label": "Clinton County, NY, USA"
-      },
-      "bbox": [-74.027389, 44.429699, -73.333152, 45.01084]
+        "label": "Whole Foods Market, Seattle, WA, USA",
+        "addendum": {
+          "osm": {
+            "brand": "Whole Foods Market",
+            "website": "https://m.wholefoodsmarket.com/mobile/stores/westlake",
+            "phone": "+1 206 6219700",
+            "opening_hours": "Mo-Su 07:00-22:00"
+          }
+        }
+      }
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [-84.601515, 42.943795] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.316204, 47.675128]
+      },
       "properties": {
-        "id": "102083123",
-        "gid": "whosonfirst:county:102083123",
-        "layer": "county",
-        "source": "whosonfirst",
-        "source_id": "102083123",
-        "name": "Clinton County",
-        "accuracy": "centroid",
+        "id": "node/477829394",
+        "gid": "openstreetmap:venue:node/477829394",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node/477829394",
+        "country_code": "US",
+        "name": "Whole Foods Market",
+        "housenumber": "1026",
+        "street": "NE 64th Street",
+        "postalcode": "98115",
+        "accuracy": "point",
         "country": "United States",
         "country_gid": "whosonfirst:country:85633793",
         "country_a": "USA",
-        "region": "Michigan",
-        "region_gid": "whosonfirst:region:85688599",
-        "region_a": "MI",
-        "county": "Clinton County",
-        "county_gid": "whosonfirst:county:102083123",
+        "region": "Washington",
+        "region_gid": "whosonfirst:region:85688623",
+        "region_a": "WA",
+        "county": "King County",
+        "county_gid": "whosonfirst:county:102086191",
+        "county_a": "KN",
+        "locality": "Seattle",
+        "locality_gid": "whosonfirst:locality:101730401",
+        "neighbourhood": "Roosevelt",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85869631",
         "continent": "North America",
         "continent_gid": "whosonfirst:continent:102191575",
-        "label": "Clinton County, MI, USA"
-      },
-      "bbox": [-84.837639, 42.769479, -84.363659, 43.118851]
+        "label": "Whole Foods Market, Seattle, WA, USA",
+        "addendum": {
+          "osm": {
+            "wheelchair": "yes",
+            "brand": "Whole Foods Market",
+            "website": "https://www.wholefoodsmarket.com/stores/rooseveltsquare",
+            "phone": "+1 206-985-1500",
+            "opening_hours": "07:00-22:00"
+          }
+        }
+      }
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [-90.531971, 41.904246] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.376908, 47.63698]
+      },
       "properties": {
-        "id": "102086301",
-        "gid": "whosonfirst:county:102086301",
-        "layer": "county",
-        "source": "whosonfirst",
-        "source_id": "102086301",
-        "name": "Clinton County",
-        "accuracy": "centroid",
+        "id": "node/2081763609",
+        "gid": "openstreetmap:venue:node/2081763609",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node/2081763609",
+        "country_code": "US",
+        "name": "Whole Foods Market",
+        "housenumber": "2001",
+        "street": "15th Avenue West",
+        "postalcode": "98119",
+        "accuracy": "point",
         "country": "United States",
         "country_gid": "whosonfirst:country:85633793",
         "country_a": "USA",
-        "region": "Iowa",
-        "region_gid": "whosonfirst:region:85688713",
-        "region_a": "IA",
-        "county": "Clinton County",
-        "county_gid": "whosonfirst:county:102086301",
+        "region": "Washington",
+        "region_gid": "whosonfirst:region:85688623",
+        "region_a": "WA",
+        "county": "King County",
+        "county_gid": "whosonfirst:county:102086191",
+        "county_a": "KN",
+        "locality": "Seattle",
+        "locality_gid": "whosonfirst:locality:101730401",
+        "neighbourhood": "Interbay",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85826973",
         "continent": "North America",
         "continent_gid": "whosonfirst:continent:102191575",
-        "label": "Clinton County, IA, USA"
-      },
-      "bbox": [-90.898975, 41.727691, -90.140061, 42.033596]
+        "label": "Whole Foods Market, Seattle, WA, USA",
+        "addendum": {
+          "osm": {
+            "brand": "Whole Foods Market",
+            "website": "https://wholefoodsmarket.com/",
+            "phone": "+1 206 3525440",
+            "opening_hours": "Mo-Su 07:00-22:00"
+          }
+        }
+      }
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [-83.361854, 42.697324] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.1014, 47.666145]
+      },
       "properties": {
-        "id": "85811447",
-        "gid": "whosonfirst:neighbourhood:85811447",
-        "layer": "neighbourhood",
-        "source": "whosonfirst",
-        "source_id": "85811447",
-        "name": "Clintonville",
-        "accuracy": "centroid",
+        "id": "way/316907627",
+        "gid": "openstreetmap:venue:way/316907627",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "way/316907627",
+        "country_code": "US",
+        "name": "Whole Foods Market",
+        "housenumber": "17991",
+        "street": "Redmond Way NE",
+        "postalcode": "98052",
+        "accuracy": "point",
         "country": "United States",
         "country_gid": "whosonfirst:country:85633793",
         "country_a": "USA",
-        "region": "Michigan",
-        "region_gid": "whosonfirst:region:85688599",
-        "region_a": "MI",
-        "county": "Oakland County",
-        "county_gid": "whosonfirst:county:102083713",
-        "localadmin": "Waterford",
-        "localadmin_gid": "whosonfirst:localadmin:404508389",
-        "locality": "Waterford",
-        "locality_gid": "whosonfirst:locality:1729468837",
-        "neighbourhood": "Clintonville",
-        "neighbourhood_gid": "whosonfirst:neighbourhood:85811447",
+        "region": "Washington",
+        "region_gid": "whosonfirst:region:85688623",
+        "region_a": "WA",
+        "county": "King County",
+        "county_gid": "whosonfirst:county:102086191",
+        "county_a": "KN",
+        "locality": "Redmond",
+        "locality_gid": "whosonfirst:locality:101730409",
         "continent": "North America",
         "continent_gid": "whosonfirst:continent:102191575",
-        "label": "Clintonville, Waterford, MI, USA"
+        "label": "Whole Foods Market, Redmond, WA, USA",
+        "addendum": {
+          "osm": {
+            "brand": "Whole Foods Market",
+            "website": "https://www.wholefoodsmarket.com/stores/redmond",
+            "phone": "+1-425-8812600"
+          }
+        }
       },
-      "bbox": [-83.366854, 42.692324, -83.356854, 42.702324]
+      "bbox": [-122.1020694, 47.6656979, -122.1005992, 47.6665656]
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [-83.808369, 39.416344] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.184843, 47.617886]
+      },
       "properties": {
-        "id": "102083645",
-        "gid": "whosonfirst:county:102083645",
-        "layer": "county",
-        "source": "whosonfirst",
-        "source_id": "102083645",
-        "name": "Clinton County",
-        "accuracy": "centroid",
+        "id": "way/38224227",
+        "gid": "openstreetmap:venue:way/38224227",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "way/38224227",
+        "country_code": "US",
+        "name": "Whole Foods Market",
+        "housenumber": "888",
+        "street": "116th Avenue NE",
+        "postalcode": "98005",
+        "accuracy": "point",
         "country": "United States",
         "country_gid": "whosonfirst:country:85633793",
         "country_a": "USA",
-        "region": "Ohio",
-        "region_gid": "whosonfirst:region:85688485",
-        "region_a": "OH",
-        "county": "Clinton County",
-        "county_gid": "whosonfirst:county:102083645",
+        "region": "Washington",
+        "region_gid": "whosonfirst:region:85688623",
+        "region_a": "WA",
+        "county": "King County",
+        "county_gid": "whosonfirst:county:102086191",
+        "county_a": "KN",
+        "locality": "Bellevue",
+        "locality_gid": "whosonfirst:locality:101730457",
         "continent": "North America",
         "continent_gid": "whosonfirst:continent:102191575",
-        "label": "Clinton County, OH, USA"
+        "label": "Whole Foods Market, Bellevue, WA, USA",
+        "addendum": {
+          "osm": {
+            "brand": "Whole Foods Market",
+            "phone": "+1-425-4621400"
+          }
+        }
       },
-      "bbox": [-84.006782, 39.222845, -83.576286, 39.569169]
+      "bbox": [-122.1849628, 47.617805, -122.1841119, 47.618645]
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [-77.677705, 41.292637] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.180073, 47.711584]
+      },
       "properties": {
-        "id": "102080917",
-        "gid": "whosonfirst:county:102080917",
-        "layer": "county",
-        "source": "whosonfirst",
-        "source_id": "102080917",
-        "name": "Clinton County",
-        "accuracy": "centroid",
+        "id": "node/5836842692",
+        "gid": "openstreetmap:venue:node/5836842692",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node/5836842692",
+        "country_code": "US",
+        "name": "Whole Foods Market",
+        "housenumber": "12501",
+        "street": "120th Avenue NE",
+        "postalcode": "98034",
+        "accuracy": "point",
         "country": "United States",
         "country_gid": "whosonfirst:country:85633793",
         "country_a": "USA",
-        "region": "Pennsylvania",
-        "region_gid": "whosonfirst:region:85688481",
-        "region_a": "PA",
-        "county": "Clinton County",
-        "county_gid": "whosonfirst:county:102080917",
+        "region": "Washington",
+        "region_gid": "whosonfirst:region:85688623",
+        "region_a": "WA",
+        "county": "King County",
+        "county_gid": "whosonfirst:county:102086191",
+        "county_a": "KN",
+        "locality": "Kirkland",
+        "locality_gid": "whosonfirst:locality:101730427",
         "continent": "North America",
         "continent_gid": "whosonfirst:continent:102191575",
-        "label": "Clinton County, PA, USA"
-      },
-      "bbox": [-78.093381, 40.962938, -77.143712, 41.478576]
+        "label": "Whole Foods Market, Kirkland, WA, USA",
+        "addendum": {
+          "osm": {
+            "brand": "Whole Foods Market",
+            "phone": "+1-425-979-3301"
+          }
+        }
+      }
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [-89.42791, 38.618942] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.271838, 47.820172]
+      },
       "properties": {
-        "id": "102087571",
-        "gid": "whosonfirst:county:102087571",
-        "layer": "county",
-        "source": "whosonfirst",
-        "source_id": "102087571",
-        "name": "Clinton County",
-        "accuracy": "centroid",
+        "id": "way/311857316",
+        "gid": "openstreetmap:venue:way/311857316",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "way/311857316",
+        "country_code": "US",
+        "name": "Whole Foods Market",
+        "housenumber": "2800",
+        "street": "196th Street SW",
+        "accuracy": "point",
         "country": "United States",
         "country_gid": "whosonfirst:country:85633793",
         "country_a": "USA",
-        "region": "Illinois",
-        "region_gid": "whosonfirst:region:85688697",
-        "region_a": "IL",
-        "county": "Clinton County",
-        "county_gid": "whosonfirst:county:102087571",
+        "region": "Washington",
+        "region_gid": "whosonfirst:region:85688623",
+        "region_a": "WA",
+        "county": "Snohomish County",
+        "county_gid": "whosonfirst:county:102087537",
+        "county_a": "SN",
+        "locality": "Lynnwood",
+        "locality_gid": "whosonfirst:locality:101729895",
         "continent": "North America",
         "continent_gid": "whosonfirst:continent:102191575",
-        "label": "Clinton County, IL, USA"
+        "label": "Whole Foods Market, Lynnwood, WA, USA",
+        "addendum": {
+          "osm": {
+            "brand": "Whole Foods Market"
+          }
+        }
       },
-      "bbox": [-89.707024, 38.415667, -89.138337, 38.743236]
+      "bbox": [-122.272843, 47.8195744, -122.271739, 47.8202859]
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [-73.995016, 40.761853] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.53601, 47.227373]
+      },
       "properties": {
-        "id": "85868039",
-        "gid": "whosonfirst:neighbourhood:85868039",
-        "layer": "neighbourhood",
-        "source": "whosonfirst",
-        "source_id": "85868039",
-        "name": "Hell's Kitchen",
-        "accuracy": "centroid",
+        "id": "way/555892536",
+        "gid": "openstreetmap:venue:way/555892536",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "way/555892536",
+        "country_code": "US",
+        "name": "Whole Foods Market",
+        "accuracy": "point",
         "country": "United States",
         "country_gid": "whosonfirst:country:85633793",
         "country_a": "USA",
-        "region": "New York",
-        "region_gid": "whosonfirst:region:85688543",
-        "region_a": "NY",
-        "county": "New York County",
-        "county_gid": "whosonfirst:county:102081863",
-        "locality": "New York",
-        "locality_gid": "whosonfirst:locality:85977539",
-        "borough": "Manhattan",
-        "borough_gid": "whosonfirst:borough:421205771",
-        "neighbourhood": "Hell's Kitchen",
-        "neighbourhood_gid": "whosonfirst:neighbourhood:85868039",
+        "region": "Washington",
+        "region_gid": "whosonfirst:region:85688623",
+        "region_a": "WA",
+        "county": "Pierce County",
+        "county_gid": "whosonfirst:county:102087547",
+        "county_a": "PI",
+        "locality": "University Place",
+        "locality_gid": "whosonfirst:locality:101730265",
         "continent": "North America",
         "continent_gid": "whosonfirst:continent:102191575",
-        "label": "Hell's Kitchen, Manhattan, New York, NY, USA"
+        "label": "Whole Foods Market, University Place, WA, USA",
+        "addendum": {
+          "osm": {
+            "brand": "Whole Foods Market"
+          }
+        }
       },
-      "bbox": [-74.007010383, 40.7521899971, -73.9897857063, 40.7626757074]
+      "bbox": [-122.5363312, 47.2268889, -122.5356427, 47.2275789]
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.381946, 47.560895]
+      },
+      "properties": {
+        "id": "node/6975089659",
+        "gid": "openstreetmap:venue:node/6975089659",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node/6975089659",
+        "country_code": "US",
+        "name": "Whole Foods Market",
+        "accuracy": "point",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Washington",
+        "region_gid": "whosonfirst:region:85688623",
+        "region_a": "WA",
+        "county": "King County",
+        "county_gid": "whosonfirst:county:102086191",
+        "county_a": "KN",
+        "locality": "Seattle",
+        "locality_gid": "whosonfirst:locality:101730401",
+        "neighbourhood": "Genesee",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85869275",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Whole Foods Market, Seattle, WA, USA",
+        "addendum": {
+          "osm": {
+            "brand": "Whole Foods Market"
+          }
+        }
+      }
     }
   ],
   "bbox": [-90.898975, 38.415667, -73.333152, 45.01084]

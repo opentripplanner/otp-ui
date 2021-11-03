@@ -39,6 +39,17 @@ class GeneralSettingsPanel extends Component {
             return null;
           }
 
+          const label = coreUtils.query.getQueryParamProperty(
+            paramInfo,
+            "label",
+            query
+          );
+          const icon = coreUtils.query.getQueryParamProperty(
+            paramInfo,
+            "icon",
+            query
+          );
+
           // Create the UI component based on the selector type
           switch (paramInfo.selector) {
             case "DROPDOWN":
@@ -47,11 +58,7 @@ class GeneralSettingsPanel extends Component {
                   key={paramInfo.name}
                   name={paramInfo.name}
                   value={query[paramInfo.name] || paramInfo.default}
-                  label={coreUtils.query.getQueryParamProperty(
-                    paramInfo,
-                    "label",
-                    query
-                  )}
+                  label={label}
                   options={coreUtils.query.getQueryParamProperty(
                     paramInfo,
                     "options",
@@ -66,11 +73,12 @@ class GeneralSettingsPanel extends Component {
                   key={paramInfo.label}
                   name={paramInfo.name}
                   value={query[paramInfo.name]}
-                  label={coreUtils.query.getQueryParamProperty(
-                    paramInfo,
-                    "label",
-                    query
-                  )}
+                  label={
+                    <>
+                      {icon}
+                      {label}
+                    </>
+                  }
                   onChange={this.handleChange}
                 />
               );
