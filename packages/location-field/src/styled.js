@@ -26,7 +26,10 @@ export const DropdownContainer = styled.span`
   width: 100%;
 `;
 
-export const MenuItemList = styled.ul`
+export const MenuItemList = styled.ul.attrs({
+  role: "listbox",
+  "aria-label": "Search Results"
+})`
   background-clip: padding-box;
   background-color: #fff;
   border-radius: 4px;
@@ -162,11 +165,11 @@ export class MenuItem extends Component {
         {children}
       </MenuItemHeader>
     ) : (
-      <MenuItemLi disabled={disabled} role="listitem">
+      <MenuItemLi disabled={disabled} role="none">
         <MenuItemA
           active={active}
           onClick={this.onClick}
-          role="listitem"
+          role="option"
           tabIndex={-1}
         >
           {children}

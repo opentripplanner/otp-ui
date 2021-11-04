@@ -673,7 +673,11 @@ class LocationField extends Component {
         ref={ref => {
           this.inputRef = ref;
         }}
+        role="combobox"
         aria-label={defaultPlaceholder}
+        aria-autocomplete="list"
+        aria-expanded={menuVisible}
+        aria-haspopup="listbox"
         autoFocus={autoFocus}
         className={this.getFormControlClassname()}
         value={value}
