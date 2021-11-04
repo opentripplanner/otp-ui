@@ -59,5 +59,5 @@ export const getCombinedLabel = properties => {
   if (main && secondary) {
     return `${main}, ${secondary}`;
   }
-  return properties.label || "";
+  return properties?.label || "";
 };

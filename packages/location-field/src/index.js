@@ -98,7 +98,8 @@ class LocationField extends Component {
       /* FIXME only disabled this because it'd take longer to refactor */
       /* eslint-disable-next-line */
       this.setState({
-        value: location.name,
+        //  location could be null if none is set
+        value: location?.name || "",
         geocodedFeatures: []
       });
     }
