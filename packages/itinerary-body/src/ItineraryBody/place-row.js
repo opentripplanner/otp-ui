@@ -144,8 +144,9 @@ const PlaceRow = ({
           <S.MapButton
             onClick={() => frameLeg({ isDestination, leg, legIndex, place })}
             title={messages.mapIconTitle}
+            aria-label={messages.mapIconTitle}
           >
-            <S.MapIcon title="Show on map" />
+            <S.MapIcon title={messages.mapIconTitle} />
           </S.MapButton>
         </S.MapButtonColumn>
       )}
