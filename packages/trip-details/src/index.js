@@ -87,7 +87,7 @@ function TripDetails({
   // FIXME: support hours
   // TODO: make use of url?
   const advanceString = info =>
-    coreUtils.itinerary.bookingInfoDropofHasBookingTime(info)
+    coreUtils.itinerary.isAdvanceBookingRequired(info)
       ? `at least ${info.latestBookingTime.daysPrior} day(s) in advance`
       : "";
 
@@ -173,14 +173,14 @@ function TripDetails({
             <TripDetail
               key={info.dropOffMessage}
               icon={
-                coreUtils.itinerary.bookingInfoDropofHasBookingTime(info) ? (
+                coreUtils.itinerary.isAdvanceBookingRequired(info) ? (
                   <PhoneVolume size={17} />
                 ) : (
                   <HandPaper size={17} />
                 )
               }
               summary={
-                coreUtils.itinerary.bookingInfoDropofHasBookingTime(info)
+                coreUtils.itinerary.isAdvanceBookingRequired(info)
                   ? `To get off at your destination, ${callString(
                       info
                     )} ${advanceString(info)}.`
