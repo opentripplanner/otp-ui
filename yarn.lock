@@ -1265,14 +1265,6 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@conveyal/geocoder-arcgis-geojson@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@conveyal/geocoder-arcgis-geojson/-/geocoder-arcgis-geojson-0.0.2.tgz#19ddf10160a76aba2a669c0f13ac5c079ba48f6b"
-  integrity sha1-Gd3xAWCnaroqZpwPE6xcB5ukj2s=
-  dependencies:
-    "@conveyal/lonlat" "^1.3.0"
-    geocoder-arcgis "^2.0.4"
-
 "@conveyal/geocoder-arcgis-geojson@^0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@conveyal/geocoder-arcgis-geojson/-/geocoder-arcgis-geojson-0.0.3.tgz#0d1381c1d4f0e18bcf0ab1958fc63d148e2d80da"
@@ -1282,7 +1274,7 @@
     eslint-config-standard-jsx "^10.0.0"
     geocoder-arcgis "^2.0.5"
 
-"@conveyal/lonlat@^1.3.0", "@conveyal/lonlat@^1.4.1":
+"@conveyal/lonlat@^1.4.1":
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/@conveyal/lonlat/-/lonlat-1.4.1.tgz#9970f33a2dc810ac08e89c844901405f18da478b"
   integrity sha512-Z4W1NmvDsnkylhPMDWCk7kLaAjRtA9BVixASFxDPVkQwAiceOxaLEo4UVbZys4jNFzdtbcZ1UVPr6SQHBmEsrA==
@@ -2809,16 +2801,6 @@
     moment "^2.24.0"
     prop-types "^15.7.2"
     qs "^6.9.1"
-
-"@opentripplanner/geocoder@^1.1.0", "@opentripplanner/geocoder@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/geocoder/-/geocoder-1.1.1.tgz#a449ad868a01d9e35291e52f68946929469c065a"
-  integrity sha512-XejHs5KvYcZOnv/oh8QrF4JU43Fne803HjWx0o0a7OfxqvWj9Xh7ioKktKz7HMXmtI9nSMWWXpeqLW6tTp9K9w==
-  dependencies:
-    "@conveyal/geocoder-arcgis-geojson" "^0.0.2"
-    "@conveyal/lonlat" "^1.4.1"
-    isomorphic-mapzen-search "^1.5.1"
-    lodash.memoize "^4.1.2"
 
 "@opentripplanner/icons@^1.1.0", "@opentripplanner/icons@^1.2.1":
   version "1.2.1"
@@ -10385,7 +10367,7 @@ gensync@^1.0.0-beta.1, gensync@^1.0.0-beta.2:
   resolved "https://registry.yarnpkg.com/gensync/-/gensync-1.0.0-beta.2.tgz#32a6ee76c3d7f52d46b2b1ae5d93fea8580a25e0"
   integrity sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==
 
-geocoder-arcgis@^2.0.4, geocoder-arcgis@^2.0.5:
+geocoder-arcgis@^2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/geocoder-arcgis/-/geocoder-arcgis-2.0.5.tgz#61cd1ff2b5b325e6d36b6e7da8138611936b2f26"
   integrity sha512-KebkgRbjJ5+682DVUswqRrNHGhcCz8CG3kqP21l6xeGWDbaoSkuFzgE+fMHrKs0Ij2NJHe2/R4Z779EaXdR/3w==
@@ -12104,7 +12086,7 @@ isomorphic-fetch@^3.0.0:
     node-fetch "^2.6.1"
     whatwg-fetch "^3.4.1"
 
-isomorphic-mapzen-search@^1.5.1, isomorphic-mapzen-search@^1.6.0:
+isomorphic-mapzen-search@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/isomorphic-mapzen-search/-/isomorphic-mapzen-search-1.6.0.tgz#eb368756d6132016a32c76435d6f34a38da5279f"
   integrity sha512-90Zp8jxWuMCk582S7d6b85lHO2Lj4Nybv8o6ShqQX2SRP7SFh1fzHx67eilNUGNjBeamKYQJHmijZ1/wSzFe3A==

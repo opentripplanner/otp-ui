@@ -145,10 +145,12 @@ export const OptionIcon = styled.div`
 `;
 
 
-export const Checkbox = styled.button.attrs({
+export const Checkbox = styled.button.attrs(( props: ButtonProps ) => ( {
+  "aria-checked": props.ariaChecked || props.selected,
+  "aria-label": props.ariaLabel,
   role: "checkbox",
   tabIndex: 0,
-})`
+} ))`
   align-items: center;
   background-color: rgba(0, 0, 0, 0);
   border: none;

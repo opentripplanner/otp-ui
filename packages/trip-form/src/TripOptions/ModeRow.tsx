@@ -59,7 +59,6 @@ const ModeRow = ({
     /* Not hiding the scrollbars here ensures the user can still scroll. Scrollbars are hidden using CSS. */
     <S.ScrollableRow hideScrollbars={false}>
       <Checkbox
-        aria-checked={hasTransit}
         ariaLabel="Go by Transit"
         checked={hasTransit}
         // Prettier conflicts with jsx style rules
@@ -122,7 +121,6 @@ const ModeRow = ({
           category.mode || (category.options && category.options[0].mode);
         return (
           <Checkbox
-            aria-checked={hasTransit}
             ariaLabel={category.label}
             checked={isChecked}
             key={`access-${category.label}`}

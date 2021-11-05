@@ -4,6 +4,8 @@ import * as S from "./styled";
 
 // FIXME: Move this to @opentripplanner/types added in https://github.com/opentripplanner/otp-ui/pull/281
 export interface ButtonProps {
+  ariaChecked?: boolean;
+  ariaLabel?: string;
   disabled?: boolean;
   inset?: boolean;
   mode?: string;
@@ -13,7 +15,6 @@ export interface ButtonProps {
 
 export default function Checkbox(
   props: {
-    ariaLabel?: string;
     checked: boolean;
     children: React.ReactNode | string;
     className?: string;
@@ -22,6 +23,7 @@ export default function Checkbox(
   } & ButtonProps
 ): ReactElement {
   const {
+    ariaChecked,
     ariaLabel,
     checked,
     children,
@@ -40,7 +42,8 @@ export default function Checkbox(
 
   return (
     <S.Checkbox
-      aria-label={ariaLabel}
+      ariaChecked={ariaChecked}
+      ariaLabel={ariaLabel}
       className={className}
       disabled={disabled}
       inset={inset}
