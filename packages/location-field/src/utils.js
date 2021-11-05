@@ -42,11 +42,20 @@ const layerDisplayMap = {
  * to generate an appropriate title subtitle pair, or return the label if the layer is
  * unknown.
  */
-// TODO: Remove this exception once more utils are added
-// eslint-disable-next-line import/prefer-default-export
 export const generateLabel = properties => {
   const labelGenerator = layerDisplayMap[properties.layer];
   if (!labelGenerator) return { main: properties.label };
 
   return labelGenerator(properties);
+};
+
+/**
+ * Generates a combined label from main and secondary for display in the main input field
+ */
+export const getCombinedLabel = properties => {
+  const { main, secondary } = generateLabel(properties);
+  if (main && secondary) {
+    return `${main}, ${secondary}`;
+  }
+  return properties?.label || "";
 };
