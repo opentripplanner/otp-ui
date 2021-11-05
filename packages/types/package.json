@@ -3,7 +3,6 @@
   "version": "1.0.1",
   "description": "TypeScript types used across multiple OTP-UI packages",
   "main": "lib/index.js",
-  "module": "esm/index.js",
   "types": "lib/index.d.ts",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
   "author": "Binh Dam",
