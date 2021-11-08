@@ -163,7 +163,7 @@ const queryParams = [
       query.mode && hasTransit(query.mode) && query.mode.indexOf("WALK") !== -1,
     default: 1207, // 3/4 mi.
     selector: "DROPDOWN",
-    label: "Maximum walk",
+    label: "Maximum Walk",
     options: [
       {
         text: "1/10 mile",
@@ -267,14 +267,14 @@ const queryParams = [
     routingTypes: ["ITINERARY"],
     default: "QUICK",
     selector: "DROPDOWN",
-    label: "I prefer",
+    label: "Optimize for",
     options: [
       {
-        text: "The quickest trip",
+        text: "Speed",
         value: "QUICK"
       },
       {
-        text: "The fewest transfers",
+        text: "Fewest Transfers",
         value: "TRANSFERS"
       }
     ]
@@ -287,19 +287,19 @@ const queryParams = [
     routingTypes: ["ITINERARY"],
     default: "SAFE",
     selector: "DROPDOWN",
-    label: "I prefer",
+    label: "Optimize for",
     options: query => {
       const opts = [
         {
-          text: "The quickest trip",
+          text: "Speed",
           value: "QUICK"
         },
         {
-          text: "The bike-friendliest trip",
+          text: "Bike-Friendly Trip",
           value: "SAFE"
         },
         {
-          text: "The flattest trip",
+          text: "Flat Trip",
           value: "FLAT"
         }
       ];
@@ -307,7 +307,7 @@ const queryParams = [
       // Include transit-specific option, if applicable
       if (hasTransit(query.mode)) {
         opts.splice(1, 0, {
-          text: "The fewest transfers",
+          text: "Fewest Transfers",
           value: "TRANSFERS"
         });
       }
@@ -364,7 +364,7 @@ const queryParams = [
     routingTypes: ["ITINERARY", "PROFILE"],
     default: 1.34,
     selector: "DROPDOWN",
-    label: "Walking Speed",
+    label: "Walk Speed",
     applicable: query => query.mode && query.mode.indexOf("WALK") !== -1,
     options: [
       {
@@ -431,7 +431,7 @@ const queryParams = [
     routingTypes: ["ITINERARY", "PROFILE"],
     default: 3.58,
     selector: "DROPDOWN",
-    label: "Biking Speed",
+    label: "Bicycle Speed",
     applicable: query => query.mode && query.mode.indexOf("BICYCLE") !== -1,
     options: [
       {
@@ -466,7 +466,7 @@ const queryParams = [
       query.mode && hasTransit(query.mode) && hasMicromobility(query.mode),
     default: 4828, // 3 mi.
     selector: "DROPDOWN",
-    label: "Maximum scoot",
+    label: "Maximum E-scooter Distance",
     options: [
       {
         text: "1/4 mile",
