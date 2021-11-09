@@ -19,7 +19,7 @@ import {
   UserLocationIcon
 } from "./options";
 import * as S from "./styled";
-import { generateLabel } from "./utils";
+import { generateLabel, getCombinedLabel } from "./utils";
 
 // FIXME have a better key generator for options
 let optionKey = 0;
@@ -98,7 +98,8 @@ class LocationField extends Component {
       /* FIXME only disabled this because it'd take longer to refactor */
       /* eslint-disable-next-line */
       this.setState({
-        value: location !== null ? location.name : "",
+        //  location could be null if none is set
+        value: location?.name || "",
         geocodedFeatures: []
       });
     }
@@ -114,7 +115,8 @@ class LocationField extends Component {
    */
   getValueFromLocation = () => {
     const { hideExistingValue, location } = this.props;
-    return location && !hideExistingValue ? location.name : "";
+    const label = location?.name || "";
+    return location && !hideExistingValue ? label : "";
   };
 
   setLocation(location, resultType) {
@@ -326,11 +328,19 @@ class LocationField extends Component {
       operatorIconMap
     } = this.props;
     const { activeIndex } = this.state;
+
+    // generate the friendly labels for this feature
+    const { main, secondary } = generateLabel(feature.properties);
+
     // Create the selection handler
     const locationSelected = () => {
       getGeocoder(geocoderConfig)
         .getLocationFromGeocodedFeature(feature)
         .then(geocodedLocation => {
+          // add the friendly location labels for use later on
+          geocodedLocation.main = main;
+          geocodedLocation.secondary = secondary;
+          geocodedLocation.name = getCombinedLabel(feature.properties);
           // Set the current location
           this.setLocation(geocodedLocation, "GEOCODE");
           // Add to the location search history. This is intended to
@@ -360,7 +370,6 @@ class LocationField extends Component {
     classNames.push(`layer-${layer}`);
 
     // Create and return the option menu item
-    const { main, secondary } = generateLabel(feature.properties);
     return (
       <Option
         classes={classNames.join(" ")}
@@ -539,13 +548,14 @@ class LocationField extends Component {
 
           // Add to the selection handler lookup (for use in onKeyDown)
           this.locationSelectedLookup[itemIndex] = locationSelected;
-
           // Create and return the option menu item
           const option = (
             <Option
               icon={sessionOptionIcon}
               key={optionKey++}
-              title={sessionLocation.name}
+              // just use the name if there is no main/secondary field
+              title={sessionLocation.main || sessionLocation.name}
+              subTitle={sessionLocation.secondary || ""}
               onClick={locationSelected}
               isActive={itemIndex === activeIndex}
             />
@@ -856,7 +866,9 @@ LocationField.propTypes = {
   location: PropTypes.shape({
     lat: PropTypes.number,
     lon: PropTypes.number,
-    name: PropTypes.string
+    name: PropTypes.string,
+    main: PropTypes.string,
+    secondary: PropTypes.string
   }),
   /**
    * A custom component for rendering the icon displayed to the left of the text
