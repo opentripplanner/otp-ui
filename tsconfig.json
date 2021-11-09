@@ -11,5 +11,8 @@
     "target": "es5",
     "jsx": "react"
   },
-  "exclude": ["**/*.test.ts", "**/*.story.tsx", "node_modules", "dist"]
+  "exclude": ["**/*.test.ts", "**/*.story.tsx", "node_modules", "dist"],
+  "paths": {
+    "@opentripplanner/types": ["./packages/types/lib"]
+  }
 }
