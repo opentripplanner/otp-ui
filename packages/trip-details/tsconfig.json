@@ -4,8 +4,5 @@
     "outDir": "./lib",
     "skipLibCheck": true
   },
-  "include": ["src/**/*"],
-  "paths": {
-    "@opentripplanner/types": ["../types/src/index.ts"]
-  }
+  "include": ["src/**/*"]
 }
