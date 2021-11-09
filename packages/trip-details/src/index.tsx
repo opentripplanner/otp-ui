@@ -10,7 +10,11 @@ import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
 import * as S from "./styled";
 import TripDetail from "./trip-detail";
 
-import { CaloriesDetailsProps, TripDetailsProps } from "./types";
+import {
+  CaloriesDetailsProps,
+  TransitFareProps,
+  TripDetailsProps
+} from "./types";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
@@ -91,38 +95,105 @@ function DefaultCaloriesDetails({
 }
 
 /**
+ * Helper component that renders a transit fare entry.
+ */
+const TransitFare = ({
+  fareKey,
+  fareNameFallback,
+  fareKeyNameMap,
+  transitFares
+}: TransitFareProps): ReactElement => {
+  const currentFare = transitFares[fareKey];
+
+  return (
+    <span>
+      <FormattedMessage
+        defaultMessage={defaultMessages["otpUi.TripDetails.transitFareEntry"]}
+        description="Text showing the price of tickets on public transportation."
+        id="otpUi.TripDetails.transitFareEntry"
+        values={{
+          name: fareKeyNameMap[fareKey] || fareNameFallback || fareKey,
+          strong: boldText,
+          value: renderFare(
+            currentFare.currencyCode,
+            currentFare.transitFare / 100
+          )
+        }}
+      />
+    </span>
+  );
+};
+
+/**
  * Renders trip details such as departure instructions, fare amount, and calories spent.
  */
 export function TripDetails({
   CaloriesDetails = DefaultCaloriesDetails,
   className = "",
   DepartureDetails = null,
+  defaultFareKey = "regular",
   FareDetails = null,
+  fareKeyNameMap = {},
   itinerary
 }: TripDetailsProps): ReactElement {
-  const firstTncLeg = itinerary.legs.find(leg => leg.tncData);
-  const tncCompany = firstTncLeg ? firstTncLeg.tncData.company : "";
-
   // process the transit fare
-  const fareResult = coreUtils.itinerary.calculateFares(itinerary);
-  const { currencyCode, maxTNCFare, minTNCFare, transitFare } = fareResult;
+  const fareResult = coreUtils.itinerary.calculateFares(itinerary, true);
+  const { maxTNCFare, minTNCFare, tncCurrencyCode, transitFares } = fareResult;
+
+  let defaultFare = defaultFareKey;
+  if (!transitFares[defaultFareKey]) {
+    defaultFare = "regular";
+  }
+
+  let companies = "";
+  itinerary.legs.forEach(leg => {
+    if (leg.tncData) {
+      companies = leg.tncData.company;
+    }
+  });
   let fare;
-  if (transitFare || minTNCFare) {
+
+  const fareKeys = transitFares && Object.keys(transitFares).sort();
+
+  if (transitFares && fareKeys.length > 0) {
+    // Depending on if there are additional fares to display either render a <span> or a <details>
+    const TransitFareWrapper =
+      transitFares && fareKeys.length > 1 ? S.TransitFare : S.TransitFareSingle;
+
     fare = (
       <S.Fare>
-        {transitFare && (
-          <S.TransitFare>
-            <FormattedMessage
-              defaultMessage={defaultMessages["otpUi.TripDetails.transitFare"]}
-              description="Text showing the price of tickets on public transportation."
-              id="otpUi.TripDetails.transitFare"
-              values={{
-                strong: boldText,
-                transitFare: renderFare(currencyCode, transitFare / 100)
-              }}
+        <TransitFareWrapper>
+          <summary style={{ display: fareKeys.length > 1 ? "list-item" : "" }}>
+            <TransitFare
+              fareNameFallback={
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages["otpUi.TripDetails.transitFare"]
+                  }
+                  description="Text showing the price of tickets on public transportation."
+                  id="otpUi.TripDetails.transitFare"
+                />
+              }
+              fareKey={defaultFare}
+              fareKeyNameMap={fareKeyNameMap}
+              transitFares={transitFares}
             />
-          </S.TransitFare>
-        )}
+          </summary>
+          {fareKeys.map(fareKey => {
+            // Don't show the default fare twice!
+            if (fareKey === defaultFare) {
+              return null;
+            }
+            return (
+              <TransitFare
+                fareKey={fareKey}
+                key={fareKey}
+                fareKeyNameMap={fareKeyNameMap}
+                transitFares={transitFares}
+              />
+            );
+          })}
+        </TransitFareWrapper>
         {minTNCFare !== 0 && (
           <S.TNCFare>
             <br />
@@ -135,11 +206,11 @@ export function TripDetails({
                   // S.TNCFareCompanies capitalizes the TNC company ID (e.g. "COMPANY")
                   // after it is converted to lowercase, so it renders as "Company".
                   <S.TNCFareCompanies>
-                    {tncCompany.toLowerCase()}
+                    {companies.toLowerCase()}
                   </S.TNCFareCompanies>
                 ),
-                maxTNCFare: renderFare(currencyCode, maxTNCFare),
-                minTNCFare: renderFare(currencyCode, minTNCFare),
+                maxTNCFare: renderFare(tncCurrencyCode, maxTNCFare),
+                minTNCFare: renderFare(tncCurrencyCode, minTNCFare),
                 strong: boldText
               }}
             />
@@ -198,7 +269,7 @@ export function TripDetails({
                 <FareDetails
                   maxTNCFare={maxTNCFare}
                   minTNCFare={minTNCFare}
-                  transitFare={transitFare}
+                  transitFares={transitFares}
                 />
               )
             }
@@ -239,3 +310,6 @@ export function TripDetails({
 }
 
 export default TripDetails;
+
+// Rename styled components for export
+export { S as Styled };

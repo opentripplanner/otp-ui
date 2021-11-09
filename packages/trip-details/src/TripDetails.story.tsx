@@ -55,6 +55,19 @@ const StyledTripDetails = styled(TripDetails)`
 
 const longDateFormat = "MMMM D, YYYY";
 
+const customKeyMap = {
+  regular: "Transit Fare",
+  student: "Student Fare",
+  senior: "Senior Fare",
+  tram: "Tram Fare",
+  special: "Special Fare",
+  youth: "Youth Fare",
+  electronicRegular: "Orca Fare",
+  electronicYouth: "Orca Youth Fare",
+  electronicSpecial: "Orca Special Fare",
+  electronicSenior: "Orca Senior Fare"
+};
+
 // Custom slots for expandable detail sections.
 const CustomDepartureDetails = ({
   departureDate
@@ -68,12 +81,12 @@ const CustomDepartureDetails = ({
 const CustomFareDetails = ({
   maxTNCFare,
   minTNCFare,
-  transitFare
+  transitFares
 }: FareDetailsProps): ReactElement => (
   <>
-    Custom details about fares (transitFare: {transitFare} (cents), minTNCFare:{" "}
-    {minTNCFare} and maxTNCFare: {maxTNCFare} can be constructed dynamically
-    using any markup.
+    Custom details about fares (transitFares: {JSON.stringify(transitFares)}{" "}
+    (cents), minTNCFare: {minTNCFare} and maxTNCFare: {maxTNCFare} can be
+    constructed dynamically using any markup.
   </>
 );
 
@@ -220,6 +233,8 @@ export const BikeTransitBikeItinerary = makeStory({
 });
 
 export const WalkInterlinedTransitItinerary = makeStory({
+  defaultFare: "electronicRegular",
+  fareKeyNameMap: customKeyMap,
   itinerary: walkInterlinedTransitItinerary
 });
 
@@ -248,6 +263,7 @@ export const EScooterRentalTransitItinerary = makeStory({
 });
 
 export const TncTransitItinerary = makeStory({
+  fareKeyNameMap: customKeyMap,
   itinerary: tncTransitTncItinerary
 });
 
@@ -256,6 +272,7 @@ export const TncTransitItineraryWithCustomDetails = makeStory(
     CaloriesDetails: CustomCaloriesDetails,
     DepartureDetails: CustomDepartureDetails,
     FareDetails: CustomFareDetails,
+    fareKeyNameMap: customKeyMap,
     itinerary: tncTransitTncItinerary
   },
   StyledTripDetails

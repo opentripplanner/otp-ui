@@ -50,20 +50,20 @@ export default class TripDetail extends Component<Props, State> {
               <QuestionCircle size="0.92em" />
             </S.ExpandButton>
           )}
-          <VelocityTransitionGroup
-            enter={{ animation: "slideDown" }}
-            leave={{ animation: "slideUp" }}
-          >
-            {expanded && (
-              <S.TripDetailDescription>
-                <S.HideButton onClick={this.onHideClick}>
-                  <TimesCircle size="0.92em" />
-                </S.HideButton>
-                {description}
-              </S.TripDetailDescription>
-            )}
-          </VelocityTransitionGroup>
         </S.TripDetailSummary>
+        <VelocityTransitionGroup
+          enter={{ animation: "slideDown" }}
+          leave={{ animation: "slideUp" }}
+        >
+          {expanded && (
+            <S.TripDetailDescription>
+              <S.HideButton onClick={this.onHideClick}>
+                <TimesCircle size="0.92em" />
+              </S.HideButton>
+              {description}
+            </S.TripDetailDescription>
+          )}
+        </VelocityTransitionGroup>
       </S.TripDetail>
     );
   }

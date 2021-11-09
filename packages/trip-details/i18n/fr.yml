@@ -9,4 +9,5 @@ otpUi:
     departure: "Départ le <strong>{departureDate, date, long}</strong> à <strong>{departureDate, time, short}</strong>"
     title: "Détails du trajet"
     tncFare: "Tarif {companies} : <strong>{minTNCFare} - {maxTNCFare}</strong>"
-    transitFare: "Tarif en transports : <strong>{transitFare}</strong>"
+    transitFare: "Tarif en transports"
+    transitFareEntry: "{name} : <strong>{value}</strong>"

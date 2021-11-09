@@ -1,24 +1,41 @@
 // Prettier does not recognize the import type syntax.
 // eslint-disable-next-line prettier/prettier
 import type { Itinerary } from "@opentripplanner/types";
+import type { ReactElement } from "react";
 
-export type CaloriesDetailsProps = {
+export interface CaloriesDetailsProps {
   bikeSeconds: number;
   calories: number;
   walkSeconds: number;
-};
+}
 
-export type DepartureDetailsProps = {
+export interface DepartureDetailsProps {
   departureDate: Date;
-};
+}
 
-export type FareDetailsProps = {
+export interface TransitFareData {
+  [key: string]: {
+    currencyCode: string;
+    transitFare: number;
+  }
+}
+
+export interface FareDetailsProps {
   maxTNCFare: number;
   minTNCFare: number;
-  transitFare: number;
-};
+  transitFares: TransitFareData;
+}
 
-export type TripDetailsProps = {
+export interface TransitFareProps {
+  fareKey: string;
+  fareNameFallback?: ReactElement;
+  fareKeyNameMap: {
+    [key: string]: string;
+  };
+  transitFares: TransitFareData;
+}
+
+export interface TripDetailsProps {
   /**
    * Slot for a custom component to render the expandable section for calories.
    */
@@ -28,6 +45,10 @@ export type TripDetailsProps = {
    */
   className?: string;
   /**
+   * Determines which transit fare should be displayed by default, should there be multiple transit fare types.
+   */
+  defaultFareKey?: string;
+  /**
    * Slot for a custom component to render the expandable section for departure.
    */
   DepartureDetails?: React.ElementType<DepartureDetailsProps>;
@@ -36,7 +57,13 @@ export type TripDetailsProps = {
    */
   FareDetails?: React.ElementType<FareDetailsProps>;
   /**
+   * Mapping between fare keys and human-readable names for them.
+   */
+  fareKeyNameMap?: {
+    [name: string]: string;
+  };
+  /**
    * Itinerary that the user has selected to view, contains multiple legs.
    */
   itinerary: Itinerary;
-};
+}
