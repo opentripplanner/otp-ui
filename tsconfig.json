@@ -13,6 +13,6 @@
   },
   "exclude": ["**/*.test.ts", "**/*.story.tsx", "node_modules", "dist"],
   "paths": {
-    "@opentripplanner/types": ["./packages/types/lib"]
+    "@opentripplanner/types": ["./packages/types/src"]
   }
 }
