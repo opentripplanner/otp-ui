@@ -55,7 +55,7 @@ const StyledTripDetails = styled(TripDetails)`
 
 const longDateFormat = "MMMM D, YYYY";
 
-const customKeyMap = {
+const englishFareKeyMap = {
   regular: "Transit Fare",
   student: "Student Fare",
   senior: "Senior Fare",
@@ -66,6 +66,19 @@ const customKeyMap = {
   electronicYouth: "Orca Youth Fare",
   electronicSpecial: "Orca Special Fare",
   electronicSenior: "Orca Senior Fare"
+};
+
+const frenchFareKeyMap = {
+  regular: "Tarif en transports",
+  student: "Tarif étudiants",
+  senior: "Tarif séniors",
+  tram: "Tarif tram",
+  special: "Tarif spécial",
+  youth: "Tarif jeunes",
+  electronicRegular: "Tarif Orca",
+  electronicYouth: "Tarif Orca jeunes",
+  electronicSpecial: "Tarif Orca spécial",
+  electronicSenior: "Tarif Orca séniors"
 };
 
 // Custom slots for expandable detail sections.
@@ -112,17 +125,29 @@ function createTripDetailsTemplate(
 ) {
   const TripDetailsTemplate = ({
     CaloriesDetails,
+    defaultFare,
     DepartureDetails,
     FareDetails,
-    itinerary
-  }: TripDetailsProps): ReactElement => (
-    <Component
-      CaloriesDetails={CaloriesDetails}
-      DepartureDetails={DepartureDetails}
-      FareDetails={FareDetails}
-      itinerary={itinerary}
-    />
-  );
+    itinerary,
+    locale,
+    useCustomFareKeyMap
+  }: TripDetailsProps): ReactElement => {
+    const fareKeyNameMap = useCustomFareKeyMap
+      ? locale === "en-US"
+        ? englishFareKeyMap
+        : frenchFareKeyMap
+      : {};
+    return (
+      <Component
+        CaloriesDetails={CaloriesDetails}
+        defaultFare={defaultFare}
+        DepartureDetails={DepartureDetails}
+        FareDetails={FareDetails}
+        fareKeyNameMap={fareKeyNameMap}
+        itinerary={itinerary}
+      />
+    );
+  };
   return TripDetailsTemplate;
 }
 
@@ -174,23 +199,27 @@ const decoratorPropDescription = "(This prop is used by the decorator.)";
 const noControl = {
   control: { type: false }
 };
+// Hide some story args completely.
+const hiddenProp = {
+  table: { disable: true }
+};
 
 export default {
   argTypes: {
     CaloriesDetails: noControl,
     className: noControl,
-    // Hide the template's Component prop completely.
-    Component: {
-      table: { disable: true }
-    },
+    Component: hiddenProp,
+    defaultFareKey: noControl,
     DepartureDetails: noControl,
     FareDetails: noControl,
+    fareKeyNameMap: noControl,
     itinerary: noControl,
     locale: {
       control: "radio",
       description: decoratorPropDescription,
       options: ["en-US", "fr"]
     },
+    useCustomFareKeyMap: hiddenProp,
     useCustomMessages: {
       description: decoratorPropDescription
     },
@@ -199,6 +228,7 @@ export default {
     }
   },
   args: {
+    defaultFareKey: "regular",
     locale: "en-US",
     useCustomMessages: false,
     useLocalizedMessages: true
@@ -233,9 +263,9 @@ export const BikeTransitBikeItinerary = makeStory({
 });
 
 export const WalkInterlinedTransitItinerary = makeStory({
-  defaultFare: "electronicRegular",
-  fareKeyNameMap: customKeyMap,
-  itinerary: walkInterlinedTransitItinerary
+  defaultFareKey: "electronicRegular",
+  itinerary: walkInterlinedTransitItinerary,
+  useCustomFareKeyMap: true
 });
 
 export const WalkTransitTransferItinerary = makeStory({
@@ -263,17 +293,18 @@ export const EScooterRentalTransitItinerary = makeStory({
 });
 
 export const TncTransitItinerary = makeStory({
-  fareKeyNameMap: customKeyMap,
-  itinerary: tncTransitTncItinerary
+  itinerary: tncTransitTncItinerary,
+  useCustomFareKeyMap: true
 });
 
 export const TncTransitItineraryWithCustomDetails = makeStory(
   {
     CaloriesDetails: CustomCaloriesDetails,
+    defaultFareKey: "electronicRegular",
     DepartureDetails: CustomDepartureDetails,
     FareDetails: CustomFareDetails,
-    fareKeyNameMap: customKeyMap,
-    itinerary: tncTransitTncItinerary
+    itinerary: tncTransitTncItinerary,
+    useCustomFareKeyMap: true
   },
   StyledTripDetails
 );
