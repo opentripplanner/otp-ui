@@ -99,6 +99,22 @@ export default function TripOptions(props: Props): ReactElement {
     [key: string]: QueryParams;
   }>({});
 
+  // Populate the transit query param override if initial query params
+  // include transit modes
+  useEffect(() => {
+    const initialTransitModes = getSelectedModes(queryParams).filter(
+      coreUtils.itinerary.isTransit
+    );
+
+    if (initialTransitModes.length > 0) {
+      setQueryParamOverrides({
+        transit: {
+          mode: initialTransitModes.join(",")
+        }
+      });
+    }
+  }, []);
+
   // Allow external closing
   useEffect(() => {
     if (featuredItemOverlayEnabled === false) {
