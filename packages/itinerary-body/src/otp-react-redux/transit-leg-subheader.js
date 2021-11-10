@@ -11,15 +11,18 @@ export default function TransitLegSubheader({
   onStopClick
 }) {
   const { from } = leg;
+  const isFlex = coreUtils.itinerary.isFlex(leg);
   const buttonText = languageConfig.stopViewer || "Stop Viewer";
   return (
     <Styled.PlaceSubheader>
       <span>Stop ID {from.stopId.split(":")[1]}</span>
-      <ViewStopButton
-        onStopClick={onStopClick}
-        stopId={from.stopId}
-        text={buttonText}
-      />
+      {!isFlex && (
+        <ViewStopButton
+          onStopClick={onStopClick}
+          stopId={from.stopId}
+          text={buttonText}
+        />
+      )}
     </Styled.PlaceSubheader>
   );
 }
