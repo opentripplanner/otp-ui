@@ -101,7 +101,7 @@
     "prettier": "prettier --write \"**/*.{json,md,yml}\"",
     "semantic-release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo",
     "test": "yarn lint:js && yarn lint:styles && yarn typescript && yarn unit && yarn a11y-test",
-    "typescript": "lerna run --parallel tsc",
+    "typescript": "lerna run tsc",
     "unit": "jest --testPathIgnorePatterns a11y",
     "update-internal-dependencies": "node scripts/update-internal-dependencies.js"
   },
