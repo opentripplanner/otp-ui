@@ -117,7 +117,7 @@ export const OptionButton = styled.button`
   border-radius: 7px;
   border: solid 1px;
   color: white;
-  cursor: pointer;
+  cursor: ${(props: ButtonProps) => props.disabled ? "not-allowed" : "pointer"};
   display: flex;
   justify-content: space-between;
   margin-top: 7px;
@@ -145,10 +145,12 @@ export const OptionIcon = styled.div`
 `;
 
 
-export const Checkbox = styled.button.attrs({
+export const Checkbox = styled.button.attrs(( props: ButtonProps ) => ( {
+  "aria-checked": props.ariaChecked || props.selected,
+  "aria-label": props.ariaLabel,
   role: "checkbox",
   tabIndex: 0,
-})`
+} ))`
   align-items: center;
   background-color: rgba(0, 0, 0, 0);
   border: none;
