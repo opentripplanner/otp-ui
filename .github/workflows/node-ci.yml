@@ -27,8 +27,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
-      - name: Install npm packages
-        run: yarn install
+      - name: Install npm packages using cache
+        uses: bahmutov/npm-install@v1
       - name: Lint code
         run: yarn lint:js
       - name: Lint styles
