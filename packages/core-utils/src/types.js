@@ -246,7 +246,7 @@ export const legType = PropTypes.shape({
   duration: PropTypes.number.isRequired,
   endTime: PropTypes.number.isRequired,
   from: placeType.isRequired,
-  hailedCar: PropTypes.bool.isRequired,
+  hailedCar: PropTypes.bool,
   headsign: PropTypes.string,
   interlineWithPreviousLeg: PropTypes.bool.isRequired,
   intermediateStops: PropTypes.arrayOf(placeType).isRequired,

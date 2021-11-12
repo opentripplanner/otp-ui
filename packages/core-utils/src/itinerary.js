@@ -26,6 +26,37 @@ export function isTransit(mode) {
   return transitModes.includes(mode) || mode === "TRANSIT";
 }
 
+/**
+ * Returns true if the leg pickup rules enabled which require
+ * calling ahead for the service to run. "mustPhone" is the only
+ * property of boardRule which encodes this info.
+ */
+export function isReservationRequired(leg) {
+  return leg.boardRule === "mustPhone";
+}
+/**
+ * Returns true if the leg has continuous dropoff enabled which requires
+ * asking the driver to let the user off. "coordinateWithDriver" is the only
+ * property of alightRule which encodes this info.
+ */
+export function isContinuousDropoff(leg) {
+  return leg.alightRule === "coordinateWithDriver";
+}
+/**
+ * The two rules checked by the above two functions are the only values
+ * returned by OTP when a leg is a flex leg.
+ */
+export function isFlex(leg) {
+  return isReservationRequired(leg) || isContinuousDropoff(leg);
+}
+
+export function isAdvanceBookingRequired(info) {
+  return info?.latestBookingTime?.daysPrior > 0;
+}
+export function legDropoffRequiresAdvanceBooking(leg) {
+  return isAdvanceBookingRequired(leg.dropOffBookingInfo);
+}
+
 export function isWalk(mode) {
   if (!mode) return false;
 

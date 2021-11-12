@@ -164,12 +164,31 @@ function isParamApplicable(paramInfo, query, config) {
 }
 
 /**
+ * Helper method which replaces OTP flex modes with single FLEX mode that's
+ * more useful and easier to work with.
+ */
+export function reduceOtpFlexModes(modes) {
+  return modes.reduce((prev, cur) => {
+    const newModes = prev;
+    // Add the current mode if it is not a flex mode
+    if (!cur.includes("FLEX")) {
+      newModes.push(cur);
+      // If it is a flex mode, do not add it but rather add the custom flex mode
+      // if not already present
+    } else if (!newModes.includes("FLEX")) {
+      newModes.push("FLEX");
+    }
+    return newModes;
+  }, []);
+}
+
+/**
  * Determines whether the specified query differs from the default query, i.e.,
  * whether the user has modified any trip options (including mode) from their
  * default values.
  */
 export function isNotDefaultQuery(query, config) {
-  const activeModes = query.mode.split(",").sort();
+  const activeModes = reduceOtpFlexModes(query.mode.split(",").sort());
   if (
     activeModes.length !== 2 ||
     activeModes[0] !== "TRANSIT" ||
@@ -442,6 +461,13 @@ export function getRoutingParams(config, currentQuery, ignoreRealtimeUpdates) {
   // hack to add walking to driving/TNC trips
   if (hasCar(params.mode)) {
     params.mode += ",WALK";
+  }
+
+  // Replace FLEX placeholder with OTP flex modes
+  if (params.mode) {
+    // Ensure query is in reduced format to avoid replacing twice
+    const mode = reduceOtpFlexModes(params.mode.split(",")).join(",");
+    params.mode = mode.replace("FLEX", "FLEX_EGRESS,FLEX_ACCESS,FLEX_DIRECT");
   }
 
   return params;
