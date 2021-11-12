@@ -21,7 +21,7 @@ class ParkAndRideOverlay extends MapLayer {
   updateLeafletElement() {}
 
   render() {
-    const { parkAndRideLocations, setLocation } = this.props;
+    const { parkAndRideLocations, setLocation, keyboard } = this.props;
     if (!parkAndRideLocations || parkAndRideLocations.length === 0)
       return <FeatureGroup />;
 
@@ -36,6 +36,7 @@ class ParkAndRideOverlay extends MapLayer {
               icon={parkAndRideMarker}
               key={k}
               position={[location.y, location.x]}
+              keyboard={keyboard}
             >
               <Popup>
                 <BaseMapStyled.MapOverlayPopup>
@@ -71,7 +72,12 @@ ParkAndRideOverlay.propTypes = {
       y: PropTypes.number.isRequired
     }).isRequired
   ),
-  setLocation: PropTypes.func.isRequired
+  setLocation: PropTypes.func.isRequired,
+  keyboard: PropTypes.bool
+};
+
+ParkAndRideOverlay.defaultProps = {
+  keyboard: false
 };
 
 export default withLeaflet(ParkAndRideOverlay);
