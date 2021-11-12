@@ -10,7 +10,11 @@ import "leaflet-rotatedmarker";
 class RotatedMarker extends MapLayer {
   createLeafletElement(props) {
     const el = new LeafletMarker(props.position, this.getOptions(props));
-    this.contextValue = { ...props.leaflet, popupContainer: el, keyboard: props.keyboard };
+    this.contextValue = {
+      ...props.leaflet,
+      popupContainer: el,
+      keyboard: props.keyboard
+    };
     return el;
   }
 
