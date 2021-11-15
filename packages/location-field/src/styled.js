@@ -26,10 +26,11 @@ export const DropdownContainer = styled.span`
   width: 100%;
 `;
 
-export const MenuItemList = styled.ul.attrs({
+export const MenuItemList = styled.ul.attrs(props => ({
   role: "listbox",
+  id: props.uniqueId,
   "aria-label": "Search Results"
-})`
+}))`
   background-clip: padding-box;
   background-color: #fff;
   border-radius: 4px;
@@ -49,14 +50,23 @@ export const MenuItemList = styled.ul.attrs({
   z-index: 1000000;
 `;
 
-export const Dropdown = ({ children, locationType, open, onToggle, title }) => {
+export const Dropdown = ({
+  children,
+  locationType,
+  listBoxIdentifier,
+  open,
+  onToggle,
+  title
+}) => {
   const dropdownButtonAriaLabel = `List the suggested ${locationType} locations as you type`;
   return (
     <DropdownContainer>
       <DropdownButton aria-label={dropdownButtonAriaLabel} onClick={onToggle}>
         {title}
       </DropdownButton>
-      {open && <MenuItemList>{children}</MenuItemList>}
+      {open && (
+        <MenuItemList uniqueId={listBoxIdentifier}>{children}</MenuItemList>
+      )}
     </DropdownContainer>
   );
 };
@@ -64,6 +74,7 @@ export const Dropdown = ({ children, locationType, open, onToggle, title }) => {
 Dropdown.propTypes = {
   children: PropTypes.node.isRequired,
   locationType: PropTypes.string.isRequired,
+  listBoxIdentifier: PropTypes.string.isRequired,
   open: PropTypes.bool.isRequired,
   onToggle: PropTypes.func,
   title: PropTypes.node.isRequired
@@ -161,6 +172,7 @@ export class MenuItem extends Component {
         fgColor={fgColor}
         bgColor={bgColor}
         centeredText={centeredText}
+        role="none"
       >
         {children}
       </MenuItemHeader>

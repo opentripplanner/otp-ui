@@ -11,6 +11,7 @@ import { LocationArrow } from "@styled-icons/fa-solid/LocationArrow";
 import { Search } from "@styled-icons/fa-solid/Search";
 import { Times } from "@styled-icons/fa-solid/Times";
 import { throttle } from "throttle-debounce";
+import uniqueId from "lodash/uniqueId";
 
 import {
   GeocodedOptionIcon,
@@ -74,7 +75,8 @@ class LocationField extends Component {
       menuVisible: false,
       message: null,
       geocodedFeatures: [],
-      activeIndex: null
+      activeIndex: null,
+      listBoxId: `listbox-${uniqueId()}`
     };
   }
 
@@ -412,6 +414,7 @@ class LocationField extends Component {
     const { menuVisible, value } = this.state;
     const { activeIndex, message } = this.state;
     let { geocodedFeatures } = this.state;
+    const { listBoxId } = this.state;
 
     let { sessionSearches } = this.props;
     if (sessionSearches.length > 5)
@@ -678,6 +681,7 @@ class LocationField extends Component {
         aria-autocomplete="list"
         aria-expanded={menuVisible}
         aria-haspopup="listbox"
+        aria-controls={listBoxId}
         autoFocus={autoFocus}
         className={this.getFormControlClassname()}
         value={value}
@@ -714,7 +718,7 @@ class LocationField extends Component {
               {clearButton}
             </S.InputGroup>
           </S.FormGroup>
-          <S.StaticMenuItemList>
+          <S.StaticMenuItemList uniqueId={listBoxId}>
             {menuItems.length > 0 ? ( // Show typing prompt to avoid empty screen
               menuItems
             ) : (
@@ -737,6 +741,7 @@ class LocationField extends Component {
             open={menuVisible}
             onToggle={this.onDropdownToggle}
             title={<LocationIconComponent locationType={locationType} />}
+            listBoxIdentifier={listBoxId}
           >
             {menuItems}
           </S.Dropdown>
