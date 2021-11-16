@@ -25,11 +25,6 @@ export function getTransitModes(config) {
 export function isTransit(mode) {
   return transitModes.includes(mode) || mode === "TRANSIT";
 }
-export function isFlex(leg) {
-  return (
-    leg.boardRule === "mustPhone" || leg.alightRule === "coordinateWithDriver"
-  );
-}
 
 /**
  * Returns true if the leg pickup rules enabled which require
