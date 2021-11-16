@@ -183,10 +183,15 @@ export function itineraryToTransitive(itin, companies, getRouteLabel) {
       streetEdgeId++;
     }
 
-    // Flex is transit but is already rendered as street edges
-    if (isTransit(leg.mode) && !isFlex(leg)) {
+    if (isTransit(leg.mode)) {
+      // Flex routes sometimes have the same from and to IDs, but
+      // these stops still need to be rendered separately!
+      if (leg.from.stopId === leg.to.stopId) {
+        leg.to.stopId = `${leg.to.stopId}_flexed_to`;
+      }
       // determine if we have valid inter-stop geometry
       const hasInterStopGeometry = !!leg.interStopGeometry;
+      const hasLegGeometry = !!leg.legGeometry?.points;
       const hasIntermediateStopGeometry =
         hasInterStopGeometry &&
         leg.intermediateStops &&
@@ -211,7 +216,13 @@ export function itineraryToTransitive(itin, companies, getRouteLabel) {
       pattern.stops.push({ stop_id: leg.from.stopId });
 
       // add intermediate stops to stops dictionary and pattern object
-      if (leg.intermediateStops) {
+      // If there is no intermediateStopGeometry, do not add the intermediate stops
+      // as it will be straight lines instead of the nice legGeometry (but only if
+      // the legGeometry exists).
+      if (
+        leg.intermediateStops &&
+        (hasIntermediateStopGeometry || !hasLegGeometry)
+      ) {
         leg.intermediateStops.forEach((stop, i) => {
           stops[stop.stopId] = {
             stop_id: stop.stopId,
@@ -237,7 +248,8 @@ export function itineraryToTransitive(itin, companies, getRouteLabel) {
       pattern.stops.push({
         stop_id: leg.to.stopId,
         geometry:
-          hasInterStopGeometry &&
+          // Some legs don't have intermediateStopGeometry, but do have valid legGeometry
+          (hasInterStopGeometry || hasLegGeometry) &&
           (hasIntermediateStopGeometry
             ? leg.interStopGeometry[leg.interStopGeometry.length - 1].points
             : leg.legGeometry.points)
@@ -268,7 +280,7 @@ export function itineraryToTransitive(itin, companies, getRouteLabel) {
           {
             pattern_id: ptnId,
             from_stop_index: 0,
-            to_stop_index: leg.intermediateStops
+            to_stop_index: hasIntermediateStopGeometry
               ? leg.intermediateStops.length + 2 - 1
               : 1
           }

@@ -1,5 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`util > itinerary creates transit fares object for fares with multiple currencies 1`] = `
+Object {
+  "maxTNCFare": 19,
+  "minTNCFare": 17,
+  "tncCurrencyCode": "USD",
+  "transitFares": Object {
+    "electronicYouth": Object {
+      "centsToString": [Function],
+      "currencyCode": "USD",
+      "dollarsToString": [Function],
+      "transitFare": 175,
+    },
+    "regular": Object {
+      "centsToString": [Function],
+      "currencyCode": "USD",
+      "dollarsToString": [Function],
+      "transitFare": 575,
+    },
+    "senior": Object {
+      "centsToString": [Function],
+      "currencyCode": "GBP",
+      "dollarsToString": [Function],
+      "transitFare": 200,
+    },
+  },
+}
+`;
+
 exports[`util > itinerary getTransitFare should return defaults with missing fare 1`] = `"$1.00"`;
 
 exports[`util > itinerary getTransitFare should return defaults with missing fare 2`] = `"$0.00"`;

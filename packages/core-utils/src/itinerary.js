@@ -31,6 +31,37 @@ export function isFlex(leg) {
   );
 }
 
+/**
+ * Returns true if the leg pickup rules enabled which require
+ * calling ahead for the service to run. "mustPhone" is the only
+ * property of boardRule which encodes this info.
+ */
+export function isReservationRequired(leg) {
+  return leg.boardRule === "mustPhone";
+}
+/**
+ * Returns true if the leg has continuous dropoff enabled which requires
+ * asking the driver to let the user off. "coordinateWithDriver" is the only
+ * property of alightRule which encodes this info.
+ */
+export function isContinuousDropoff(leg) {
+  return leg.alightRule === "coordinateWithDriver";
+}
+/**
+ * The two rules checked by the above two functions are the only values
+ * returned by OTP when a leg is a flex leg.
+ */
+export function isFlex(leg) {
+  return isReservationRequired(leg) || isContinuousDropoff(leg);
+}
+
+export function isAdvanceBookingRequired(info) {
+  return info?.latestBookingTime?.daysPrior > 0;
+}
+export function legDropoffRequiresAdvanceBooking(leg) {
+  return isAdvanceBookingRequired(leg.dropOffBookingInfo);
+}
+
 export function isWalk(mode) {
   if (!mode) return false;
 
@@ -500,18 +531,30 @@ export function getTransitFare(fareComponent) {
  * For an itinerary, calculates the transit/TNC fares and returns an object with
  * these values, currency info, as well as string formatters.
  * It is assumed that the same currency is used for transit and TNC legs.
+ *
+ * multiple being set to true will change the output behavior:
+ * - dollarsToString and centsToString will be returned as part of each fare
+ * - currencyCode will be returned separately for each fare
+ * - tnc currency code will be returned separately
+ * - each fare type will be returned separately within a new transitFares property
+ *
+ * FIXME: a new approach to fare calculation must be found:
+ * the current approach is not sustainable, as centsToString and DollarsToString
+ * must be replaced by i18n anyway.
+ *
+ * However, the current behavior should ideally be kept to avoid a breaking change.
+ * The "multiple" mode is helpful, but only prevents tnc fare calculation from being duplicated.
+ * This method could be split out into a new one, along with tnc fare calculation.
+ * If this is done, the individual fare calculation should also be modified to support
+ * a default fare not being called "regular". However, this again would be a breaking change.
+ * This breaking change is avoided by adding the "multiple" parameter.
+ *
+ * When centsToString and dollarsToString are removed, this method should be split into
+ * individual fare calculation on a variable fare key, fare calculation of an entire leg,
+ * which will get fares for every fare key in the leg, and a method to calculate the fare of
+ * a tnc ride within the leg. This will make typescripting easier, as the types will be cleaner.
  */
-export function calculateFares(itinerary) {
-  // Extract fare total from itinerary fares.
-  const fareComponent =
-    itinerary.fare && itinerary.fare.fare && itinerary.fare.fare.regular;
-  // Get string formatters and itinerary fare.
-  const {
-    centsToString,
-    currencyCode: transitCurrencyCode,
-    dollarsToString,
-    transitFare
-  } = getTransitFare(fareComponent);
+export function calculateFares(itinerary, multiple = false) {
   // Process any TNC fares
   let minTNCFare = 0;
   let maxTNCFare = 0;
@@ -525,6 +568,35 @@ export function calculateFares(itinerary) {
       tncCurrencyCode = currency;
     }
   });
+
+  if (multiple) {
+    // Return object of fares
+    const transitFares = {};
+    if (itinerary && itinerary.fare && itinerary.fare.fare) {
+      Object.keys(itinerary.fare.fare).forEach(fareKey => {
+        const fareComponent = itinerary.fare.fare[fareKey];
+        transitFares[fareKey] = getTransitFare(fareComponent);
+      });
+    }
+
+    return {
+      maxTNCFare,
+      minTNCFare,
+      tncCurrencyCode,
+      transitFares
+    };
+  }
+
+  // Extract fare total from itinerary fares.
+  const fareComponent =
+    itinerary.fare && itinerary.fare.fare && itinerary.fare.fare.regular;
+  // Get string formatters and itinerary fare.
+  const {
+    centsToString,
+    currencyCode: transitCurrencyCode,
+    dollarsToString,
+    transitFare
+  } = getTransitFare(fareComponent);
 
   return {
     centsToString,

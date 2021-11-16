@@ -136,12 +136,19 @@ export const OptionButton = styled.button`
   }
 `;
 
-export const OptionLabel = styled.div``;
+export const OptionLabel = styled.div`
+  flex: 2;
+`;
 
 export const OptionIcon = styled.div`
   > svg {
     margin-bottom: 0px;
   }
+`;
+
+export const OptionImage = styled.img`
+  max-height: 20px;
+  width: 50px;
 `;
 
 

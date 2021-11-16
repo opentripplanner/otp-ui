@@ -14,21 +14,30 @@
     "fare": {
       "regular": {
         "currency": {
-          "symbol": "$",
           "currency": "USD",
           "defaultFractionDigits": 2,
-          "currencyCode": "USD"
+          "currencyCode": "USD",
+          "symbol": "$"
         },
-        "cents": 250
+        "cents": 575
       },
-      "electronicRegular": {
+      "senior": {
         "currency": {
-          "symbol": "$",
+          "currency": "Pounds",
+          "defaultFractionDigits": 2,
+          "currencyCode": "GBP",
+          "symbol": "£"
+        },
+        "cents": 200
+      },
+      "electronicYouth": {
+        "currency": {
           "currency": "USD",
           "defaultFractionDigits": 2,
-          "currencyCode": "USD"
+          "currencyCode": "USD",
+          "symbol": "$"
         },
-        "cents": 150
+        "cents": 175
       }
     },
     "details": {}
