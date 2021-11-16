@@ -93,6 +93,7 @@ const FeaturedOption = ({
               checked={isChecked}
               disabled={isChecked && selectedCompanies.length === 1}
               key={index}
+              image={o.image}
               label={o.label}
               onClick={() => selectOption(isChecked, o)}
               selected={isChecked}
