@@ -1,6 +1,6 @@
 import moment from "moment";
 
-import { getPlaceName, isFlex, isTransit, toSentenceCase } from "./itinerary";
+import { getPlaceName, isTransit, toSentenceCase } from "./itinerary";
 
 export function latlngToString(latlng) {
   return (
