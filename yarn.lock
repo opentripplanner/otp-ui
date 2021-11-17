@@ -2784,6 +2784,24 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
+"@opentripplanner/core-utils@^4.1.0", "@opentripplanner/core-utils@^4.2.0", "@opentripplanner/core-utils@^4.3.0":
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-4.4.1.tgz#43dfaa2684de6534ffe37d93361a2e0ba1466377"
+  integrity sha512-LIvSU1Sfl7NuqQ1RQWAMOreflmLEuy45AbjFNkJEMTYVPrfeRiUKBjtmePP+AcA/D33mTrVL/Ro9px7likIOrQ==
+  dependencies:
+    "@mapbox/polyline" "^1.1.0"
+    "@opentripplanner/geocoder" "^1.1.1"
+    "@styled-icons/foundation" "^10.34.0"
+    "@turf/along" "^6.0.1"
+    bowser "^2.7.0"
+    date-fns "^2.23.0"
+    date-fns-tz "^1.1.4"
+    lodash.clonedeep "^4.5.0"
+    lodash.isequal "^4.5.0"
+    moment "^2.24.0"
+    prop-types "^15.7.2"
+    qs "^6.9.1"
+
 "@opentripplanner/icons@^1.1.0", "@opentripplanner/icons@^1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@opentripplanner/icons/-/icons-1.2.1.tgz#aaaf4c7ac5c11a64cc3387be031fb1a71acb3806"
@@ -2801,6 +2819,23 @@
     "@opentripplanner/humanize-distance" "^1.1.0"
     "@opentripplanner/icons" "^1.1.0"
     "@opentripplanner/location-icon" "^1.3.0"
+    "@styled-icons/fa-solid" "^10.34.0"
+    "@styled-icons/foundation" "^10.34.0"
+    currency-formatter "^1.5.5"
+    moment "^2.24.0"
+    prop-types "^15.7.2"
+    react-resize-detector "^4.2.1"
+    velocity-react "^1.4.3"
+
+"@opentripplanner/itinerary-body@^2.5.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/itinerary-body/-/itinerary-body-2.6.0.tgz#b350f90a665bf0bc0d9535e3a141284af4c90058"
+  integrity sha512-p5d6l/7IgXH758TWTDP6IWWV4qHC2gv3/b2TeK/b/q1FzUAbjtxdnVKu6qYczktNMN7KJa2pWHrIjtgejP1jaw==
+  dependencies:
+    "@opentripplanner/core-utils" "^4.2.0"
+    "@opentripplanner/humanize-distance" "^1.1.0"
+    "@opentripplanner/icons" "^1.2.1"
+    "@opentripplanner/location-icon" "^1.4.0"
     "@styled-icons/fa-solid" "^10.34.0"
     "@styled-icons/foundation" "^10.34.0"
     currency-formatter "^1.5.5"
