@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/core-utils",
-  "version": "4.4.1",
+  "version": "4.5.0",
   "description": "Core functionality that is shared among numerous UI components",
   "engines": {
     "node": ">=13"
@@ -13,7 +13,7 @@
   "private": false,
   "dependencies": {
     "@mapbox/polyline": "^1.1.0",
-    "@opentripplanner/geocoder": "^1.1.1",
+    "@opentripplanner/geocoder": "^1.1.2",
     "@styled-icons/foundation": "^10.34.0",
     "@turf/along": "^6.0.1",
     "bowser": "^2.7.0",
