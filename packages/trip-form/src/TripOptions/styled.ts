@@ -57,6 +57,7 @@ export const FeaturedOptionImageWrapper = styled.div`
 
   * {
     max-height: 200px;
+    width: 100%; /* safari requires explict width to render svg */
   }
 `;
 
