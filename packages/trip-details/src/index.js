@@ -1,13 +1,13 @@
 import coreUtils from "@opentripplanner/core-utils";
-import moment from "moment";
-import PropTypes from "prop-types";
-import React from "react";
 import { CalendarAlt } from "@styled-icons/fa-solid/CalendarAlt";
+import { HandPaper } from "@styled-icons/fa-solid/HandPaper";
 import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
 import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
 import { PhoneVolume } from "@styled-icons/fa-solid/PhoneVolume";
-import { HandPaper } from "@styled-icons/fa-solid/HandPaper";
 import { Route } from "@styled-icons/fa-solid/Route";
+import moment from "moment";
+import PropTypes from "prop-types";
+import React from "react";
 
 import * as S from "./styled";
 import TripDetail from "./trip-detail";
@@ -216,8 +216,8 @@ function TripDetails({
         )}
         {containsFlex && (
           <TripDetail
-            icon={<Route size={17} />}
             summary="This trip includes flexible routes."
+            icon={<Route size={17} />}
           />
         )}
         {pickupBookingInfo &&
@@ -234,7 +234,7 @@ function TripDetails({
         {dropOffBookingInfo &&
           dropOffBookingInfo.map(info => (
             <TripDetail
-              key={info.dropOffMessage}
+              description={info.dropOffMessage}
               icon={
                 coreUtils.itinerary.isAdvanceBookingRequired(info) ? (
                   <PhoneVolume size={17} />
@@ -242,6 +242,7 @@ function TripDetails({
                   <HandPaper size={17} />
                 )
               }
+              key={info.dropOffMessage}
               summary={
                 coreUtils.itinerary.isAdvanceBookingRequired(info)
                   ? `To get off at your destination, ${callString(
@@ -251,7 +252,6 @@ function TripDetails({
                       info
                     )}.`
               }
-              description={info.dropOffMessage}
             />
           ))}
       </S.TripDetailsBody>
