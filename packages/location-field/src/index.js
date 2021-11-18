@@ -411,7 +411,7 @@ class LocationField extends Component {
     } = this.props;
     const { menuVisible, value } = this.state;
     const { activeIndex, message } = this.state;
-    const { geocodedFeatures } = this.state;
+    let { geocodedFeatures } = this.state;
 
     let { sessionSearches } = this.props;
     if (sessionSearches.length > 5)
@@ -427,6 +427,12 @@ class LocationField extends Component {
 
     /* 1) Process geocode search result option(s) */
     if (geocodedFeatures.length > 0) {
+      geocodedFeatures = geocodedFeatures.sort(
+        (a, b) =>
+          (a.properties.distance || Infinity) -
+          (b.properties.distance || Infinity)
+      );
+
       // Add the menu sub-heading (not a selectable item)
       // menuItems.push(<MenuItem header key='sr-header'>Search Results</MenuItem>)
 

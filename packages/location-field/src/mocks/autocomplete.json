@@ -87,6 +87,7 @@
         "layer": "stops",
         "source": "transit",
         "source_id": "1::Community Transit::stops",
+        "distance": 4,
         "name": "Marine Dr NE & 27th Ave NE (Community Transit Stop ID 1)",
         "accuracy": "centroid",
         "label": "Marine Dr NE & 27th Ave NE (Community Transit Stop ID 1)"
@@ -105,6 +106,7 @@
         "source": "transit",
         "source_id": "7::Community Transit::stops",
         "name": "Marine Dr NE & 23rd Ave NE (Community Transit Stop ID 7)",
+        "distance": 2,
         "accuracy": "centroid",
         "label": "Marine Dr NE & 23rd Ave NE (Community Transit Stop ID 7)"
       }
