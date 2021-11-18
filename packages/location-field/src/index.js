@@ -429,8 +429,8 @@ class LocationField extends Component {
     if (geocodedFeatures.length > 0) {
       geocodedFeatures = geocodedFeatures.sort(
         (a, b) =>
-          (a.properties.distance || Infinity) -
-          (b.properties.distance || Infinity)
+          (a.properties?.distance || Infinity) -
+          (b.properties?.distance || Infinity)
       );
 
       // Add the menu sub-heading (not a selectable item)
