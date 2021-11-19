@@ -1,10 +1,13 @@
 import coreUtils from "@opentripplanner/core-utils";
+import { CalendarAlt } from "@styled-icons/fa-solid/CalendarAlt";
+import { HandPaper } from "@styled-icons/fa-solid/HandPaper";
+import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
+import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
+import { PhoneVolume } from "@styled-icons/fa-solid/PhoneVolume";
+import { Route } from "@styled-icons/fa-solid/Route";
 import moment from "moment";
 import PropTypes from "prop-types";
 import React from "react";
-import { CalendarAlt } from "@styled-icons/fa-solid/CalendarAlt";
-import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
-import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
 
 import * as S from "./styled";
 import TripDetail from "./trip-detail";
@@ -132,6 +135,25 @@ function TripDetails({
     walkDuration
   } = coreUtils.itinerary.calculatePhysicalActivity(itinerary);
 
+  // Parse flex info and generate appropriate strings
+  const containsFlex = itinerary.legs.some(coreUtils.itinerary.isFlex);
+  const pickupBookingInfo = itinerary.legs
+    .map(leg => leg.pickupBookingInfo)
+    .filter(info => !!info);
+  const dropOffBookingInfo = itinerary.legs
+    .map(leg => leg.dropOffBookingInfo)
+    .filter(info => !!info);
+
+  const callString = info =>
+    `you must call ${info?.contactInfo?.phoneNumber || "ahead"}`;
+  // FIXME: internationalize with correct plurals
+  // FIXME: support hours
+  // TODO: make use of url?
+  const advanceString = info =>
+    coreUtils.itinerary.isAdvanceBookingRequired(info)
+      ? `at least ${info.latestBookingTime.daysPrior} day(s) in advance`
+      : "";
+
   return (
     <S.TripDetails className={className}>
       <S.TripDetailsHeader>{messages.title}</S.TripDetailsHeader>
@@ -192,6 +214,46 @@ function TripDetails({
             }
           />
         )}
+        {containsFlex && (
+          <TripDetail
+            summary="This trip includes flexible routes."
+            icon={<Route size={17} />}
+          />
+        )}
+        {pickupBookingInfo &&
+          pickupBookingInfo.map(info => (
+            <TripDetail
+              key={info.pickupMessage}
+              icon={<PhoneVolume size={17} />}
+              summary={`To take this route, ${callString(info)} ${advanceString(
+                info
+              )}.`}
+              description={info.pickupMessage}
+            />
+          ))}
+        {dropOffBookingInfo &&
+          dropOffBookingInfo.map(info => (
+            <TripDetail
+              description={info.dropOffMessage}
+              icon={
+                coreUtils.itinerary.isAdvanceBookingRequired(info) ? (
+                  <PhoneVolume size={17} />
+                ) : (
+                  <HandPaper size={17} />
+                )
+              }
+              key={info.dropOffMessage}
+              summary={
+                coreUtils.itinerary.isAdvanceBookingRequired(info)
+                  ? `To get off at your destination, ${callString(
+                      info
+                    )} ${advanceString(info)}.`
+                  : `You must tell the operator where you want to get off ${advanceString(
+                      info
+                    )}.`
+              }
+            />
+          ))}
       </S.TripDetailsBody>
     </S.TripDetails>
   );

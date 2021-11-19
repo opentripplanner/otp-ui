@@ -10,7 +10,7 @@
   "private": false,
   "dependencies": {
     "@opentripplanner/location-icon": "^1.4.0",
-    "@opentripplanner/core-utils": "^4.2.0",
+    "@opentripplanner/core-utils": "^4.5.0",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {

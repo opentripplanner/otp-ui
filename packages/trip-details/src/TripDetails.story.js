@@ -17,6 +17,7 @@ const walkInterlinedTransitItinerary = require("@opentripplanner/itinerary-body/
 const walkOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-only.json");
 const walkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json");
 const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json");
+const fareComponentsItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/fare-components.json");
 
 const StyledTripDetails = styled(TripDetails)`
   ${TripDetailsClasses.TripDetailsHeader} {
@@ -143,5 +144,12 @@ export const TncTransitItinerary = () => (
     itinerary={tncTransitTncItinerary}
     longDateFormat={longDateFormat}
     fareKeyNameMap={customKeyMap}
+  />
+);
+
+export const FlexItinerary = () => (
+  <TripDetails
+    itinerary={fareComponentsItinerary}
+    longDateFormat={longDateFormat}
   />
 );

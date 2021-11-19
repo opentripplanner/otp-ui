@@ -80,13 +80,36 @@ const IconStacker = styled.span`
   z-index: 20;
 `;
 
+const legLineBackgroundColor = ({ leg, routeColor }) => {
+  const { mode } = leg;
+  return coreUtils.itinerary.isTransit(mode)
+    ? routeColor
+      ? `#${routeColor}`
+      : "#000088"
+    : undefined;
+};
+
+/**
+ * Generates background-image CSS for "barber pole" effect
+ * @param routeColor  the background color. Assumed to be hex.
+ */
+export const barberPole = (routeColor, gap = 5) => `repeating-linear-gradient( 
+  -45deg, 
+  ${routeColor}30, 
+  ${routeColor}30 ${gap}px, 
+  ${routeColor} ${gap}px, 
+  ${routeColor} ${gap * 2}px
+  );`;
+
 const LegLine = styled.div`
-  ${props => getLegCSS(props.mode)}
-  background-color: ${props =>
-    coreUtils.itinerary.isTransit(props.mode)
-      ? props.routeColor
-        ? `#${props.routeColor}`
-        : "#008"
+  ${props => getLegCSS(props.leg.mode)}
+
+  /* Disabling CSS order rules is the only way to ensure styles override each other properly */
+  /* stylelint-disable declaration-block-no-shorthand-property-overrides */ 
+  background-color: ${props => legLineBackgroundColor(props)};
+  background: ${props =>
+    coreUtils.itinerary.isFlex(props.leg)
+      ? barberPole(legLineBackgroundColor(props))
       : undefined};
   bottom: -11px;
   position: absolute;
@@ -172,9 +195,7 @@ export default function LineColumnContent({
 
   return (
     <>
-      {!isDestination && (
-        <LegLine mode={leg.mode} routeColor={leg.routeColor} />
-      )}
+      {!isDestination && <LegLine leg={leg} routeColor={leg.routeColor} />}
       <IconStacker>{legBadge}</IconStacker>
     </>
   );
