@@ -16,5 +16,13 @@
   "exclude": ["**/*.test.ts", "**/*.story.tsx", "node_modules", "dist"],
   "paths": {
     "@opentripplanner/types": ["./packages/types/lib"]
-  }
+  },
+  "references": [
+    {
+      "path": "./packages/types"
+    },
+    {
+      "path": "./packages/trip-details"
+    }
+  ]
 }
