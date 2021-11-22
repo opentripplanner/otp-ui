@@ -40,6 +40,7 @@ const walkInterlinedTransitItinerary = require("@opentripplanner/itinerary-body/
 const walkOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-only.json");
 const walkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json");
 const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json");
+const fareComponentsItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/fare-components.json");
 
 // Change currency code on one of the itineraries for illustration.
 // (other currency fields in the itinerary object are not used for display).
@@ -308,3 +309,7 @@ export const TncTransitItineraryWithCustomDetails = makeStory(
   },
   StyledTripDetails
 );
+
+export const FlexItinerary = makeStory({
+  itinerary: fareComponentsItinerary
+});

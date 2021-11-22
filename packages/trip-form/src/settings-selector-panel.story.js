@@ -19,7 +19,7 @@ const headingStyle = {
 const onQueryParamChange = action("onQueryParamChange");
 
 const storyQueryParams = {
-  mode: "WALK",
+  mode: "WALK,TRANSIT",
   routingType: "ITINERARY"
 };
 

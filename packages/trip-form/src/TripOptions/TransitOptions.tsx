@@ -32,6 +32,7 @@ const TransitOptions = ({
           allTransitEnabled || selectedModes.some(m => m === transitMode.mode);
         return (
           <Checkbox
+            ariaLabel={transitMode.label}
             checked={isChecked}
             /* This prevents the user from de-selecting a transit mode when it is the only one selected.
             the selectedModes length being 3 indicates that only one mode is selected. GONDOLA, WALK, and the mode. */
@@ -67,7 +68,12 @@ const TransitOptions = ({
             {(DetailedModeIcon && (
               <DetailedModeIcon mode={transitMode.mode} />
             )) ||
-              (transitMode.image && <S.Image src={transitMode.image} />)}
+              (transitMode.image && (
+                <S.Image
+                  alt={`Image for ${transitMode.label}`}
+                  src={transitMode.image}
+                />
+              ))}
             <span style={{ zIndex: 5 }}>{transitMode.label}</span>
           </Checkbox>
         );

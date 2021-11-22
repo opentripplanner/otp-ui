@@ -1460,6 +1460,39 @@
       "tripShortName": "LOCAL",
       "tripBlockId": "5863957",
       "headsign": "Northgate Roosevelt",
+      "boardRule": "mustPhone",
+      "pickupBookingInfo": {
+        "contactInfo": {
+          "phoneNumber": "877-680-1287",
+          "infoUrl": "https://www.ridebat.com/routes/route-rf/"
+        },
+        "earliestBookingTime": {
+          "time": 0,
+          "daysPrior": 0
+        },
+        "latestBookingTime": {
+          "time": 0,
+          "daysPrior": 1
+        },
+        "pickupMessage": "Brockton Area Transit's Rockland Flex route allows deviations up to 3/4 mile from the fixed route. To schedule a deviated pickup call 877-680-1287 at least 24 hours ahead of your trip time.",
+        "dropOffMessage": "Brockton Area Transit's Rockland Flex route allows deviations up to 3/4 mile from the fixed route. To schedule a deviated drop-off call 877-680-1287 at least 24 hours ahead of your trip time."
+      },
+      "dropOffBookingInfo": {
+        "contactInfo": {
+          "phoneNumber": "877-680-1287",
+          "infoUrl": "https://www.ridebat.com/routes/route-rf/"
+        },
+        "earliestBookingTime": {
+          "time": 0,
+          "daysPrior": 0
+        },
+        "latestBookingTime": {
+          "time": 0,
+          "daysPrior": 1
+        },
+        "pickupMessage": "Brockton Area Transit's Rockland Flex route allows deviations up to 3/4 mile from the fixed route. To schedule a deviated pickup call 877-680-1287 at least 24 hours ahead of your trip time.",
+        "dropOffMessage": "Brockton Area Transit's Rockland Flex route allows deviations up to 3/4 mile from the fixed route. To schedule a deviated drop-off call 877-680-1287 at least 24 hours ahead of your trip time."
+      },
       "agencyId": "1",
       "tripId": "kcm:44052757",
       "serviceDate": "20200820",

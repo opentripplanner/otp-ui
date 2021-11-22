@@ -18,7 +18,7 @@
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
   "dependencies": {
-    "@opentripplanner/core-utils": "^4.2.0"
+    "@opentripplanner/core-utils": "^4.5.0"
   },
   "peerDependencies": {
     "@opentripplanner/base-map": "^2.0.0",
