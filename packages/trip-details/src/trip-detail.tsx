@@ -6,9 +6,9 @@ import { VelocityTransitionGroup } from "velocity-react";
 import * as S from "./styled";
 
 type Props = {
-  description?: ReactElement;
+  description?: ReactElement | string;
   icon: ReactElement;
-  summary: ReactElement;
+  summary: ReactElement | string;
 };
 
 type State = {

@@ -225,6 +225,23 @@ export interface Place {
   zoneId?: string;
 }
 
+interface FlexBookingInfo {
+  contactInfo?: {
+    phoneNumber: string;
+  };
+  latestBookingTime?: {
+    daysPrior: number;
+  };
+}
+
+interface FlexDropOffBookingInfo extends FlexBookingInfo {
+  dropOffMessage?: string;
+}
+
+interface FlexPickupBookingInfo extends FlexBookingInfo {
+  pickupMessage?: string;
+}
+
 /**
  * Represents a leg in an itinerary of an OTP plan response. Each leg represents
  * a portion of the overall itinerary that is done until either reaching the
@@ -241,6 +258,7 @@ export interface Leg {
   arrivalDelay: number;
   departureDelay: number;
   distance: number;
+  dropOffBookingInfo: FlexDropOffBookingInfo;
   duration: number;
   endTime: number;
   from: Place;
@@ -252,6 +270,7 @@ export interface Leg {
   legGeometry: EncodedPolyline;
   mode: string;
   pathway: boolean;
+  pickupBookingInfo: FlexPickupBookingInfo;
   realTime: boolean;
   rentedBike: boolean;
   rentedCar: boolean;
