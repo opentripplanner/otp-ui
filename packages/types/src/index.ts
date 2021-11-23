@@ -230,7 +230,7 @@ export interface Place {
  * The information is optional and is for reminding the end-user
  * of any advance reservations required prior to travel.
  */
-interface FlexBookingInfo {
+export interface FlexBookingInfo {
   contactInfo?: {
     phoneNumber: string;
   };

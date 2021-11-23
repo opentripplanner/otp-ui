@@ -1,6 +1,7 @@
 import flatten from "flat";
 // @ts-expect-error FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
+import { FlexBookingInfo } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage, FormattedNumber } from "react-intl";
 import { CalendarAlt } from "@styled-icons/fa-solid/CalendarAlt";
@@ -70,6 +71,18 @@ function dietaryLink(contents: ReactElement): ReactElement {
       {contents}
     </a>
   );
+}
+
+/**
+ * Helper function that assembles values for flex pickup/dropoff messages.
+ */
+function getFlexMessageValues(info: FlexBookingInfo) {
+  return {
+    hasLeadTime: coreUtils.itinerary.isAdvanceBookingRequired(info),
+    hasPhone: !!info?.contactInfo?.phoneNumber,
+    leadDays: info.latestBookingTime.daysPrior,
+    phoneNumber: info?.contactInfo?.phoneNumber
+  };
 }
 
 /**
@@ -241,16 +254,6 @@ export function TripDetails({
     .map(leg => leg.dropOffBookingInfo)
     .filter(info => !!info);
 
-  const callString = info =>
-    `you must call ${info?.contactInfo?.phoneNumber || "ahead"}`;
-  // FIXME: internationalize with correct plurals
-  // FIXME: support hours
-  // TODO: make use of url?
-  const advanceString = info =>
-    coreUtils.itinerary.isAdvanceBookingRequired(info)
-      ? `at least ${info.latestBookingTime.daysPrior} day(s) in advance`
-      : "";
-
   return (
     <S.TripDetails className={className}>
       <S.TripDetailsHeader>
@@ -328,7 +331,17 @@ export function TripDetails({
         )}
         {containsFlex && (
           <TripDetail
-            summary="This trip includes flexible routes."
+            summary={
+              <S.FlexSummary>
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages["otpUi.TripDetails.tripIncludesFlex"]
+                  }
+                  description="Text stating that portions of the trip include a flex (on-demand) transit service."
+                  id="otpUi.TripDetails.tripIncludesFlex"
+                />
+              </S.FlexSummary>
+            }
             icon={<Route size={17} />}
           />
         )}
@@ -337,9 +350,18 @@ export function TripDetails({
             <TripDetail
               key={info.pickupMessage}
               icon={<PhoneVolume size={17} />}
-              summary={`To take this route, ${callString(info)} ${advanceString(
-                info
-              )}.`}
+              summary={
+                <S.FlexPickupSummary>
+                  <FormattedMessage
+                    defaultMessage={
+                      defaultMessages["otpUi.TripDetails.flexPickupMessage"]
+                    }
+                    description="Instructions for booking and boarding the flex (on-demand) transit service."
+                    id="otpUi.TripDetails.flexPickupMessage"
+                    values={getFlexMessageValues(info)}
+                  />
+                </S.FlexPickupSummary>
+              }
               description={info.pickupMessage}
             />
           ))}
@@ -356,13 +378,16 @@ export function TripDetails({
               }
               key={info.dropOffMessage}
               summary={
-                coreUtils.itinerary.isAdvanceBookingRequired(info)
-                  ? `To get off at your destination, ${callString(
-                      info
-                    )} ${advanceString(info)}.`
-                  : `You must tell the operator where you want to get off ${advanceString(
-                      info
-                    )}.`
+                <S.FlexDropOffSummary>
+                  <FormattedMessage
+                    defaultMessage={
+                      defaultMessages["otpUi.TripDetails.flexDropOffMessage"]
+                    }
+                    description="Instructions for getting off the flex (on-demand) transit service."
+                    id="otpUi.TripDetails.flexDropOffMessage"
+                    values={getFlexMessageValues(info)}
+                  />
+                </S.FlexDropOffSummary>
               }
             />
           ))}
