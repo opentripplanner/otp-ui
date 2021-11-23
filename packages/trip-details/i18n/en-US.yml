@@ -20,14 +20,13 @@ otpUi:
       Adapted from <dietaryLink>Dietary Guidelines for Americans 2005, page 16, Table 4</dietaryLink>."
     departure: "Depart <strong>{departureDate, date, long}</strong> at <strong>{departureDate, time, short}</strong>"
     flexDropOffMessage: >
-      To get off at your destination,
       {hasLeadTime, select,
-        true { you must call
+        true {To get off at your destination, you must call
           {hasPhone, select,
             true {{phoneNumber}}
             other {ahead}
           } at least {leadDays, plural, one {# day} other {# days}} in advance}
-        other {}
+        other {You must tell the operator where you want to get off.}
       }.
     flexPickupMessage: >
       To take this route, you must call {hasPhone, select,

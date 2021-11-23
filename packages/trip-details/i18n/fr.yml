@@ -8,14 +8,13 @@ otpUi:
       (d'après <dietaryLink>Dietary Guidelines for Americans 2005, page 16, Table 4</dietaryLink>)"
     departure: "Départ le <strong>{departureDate, date, long}</strong> à <strong>{departureDate, time, short}</strong>"
     flexDropOffMessage: >
-      Pour descendre à votre destination,
       {hasLeadTime, select,
-        true { vous devez faire une réservation préalable
+        true {Pour descendre à votre destination, vous devez faire une réservation préalable
           {hasPhone, select,
             true {au {phoneNumber}}
             other {}
-          } au moins {leadDays, plural, one {# jour} other {# jours}} à l'avance}
-        other {}
+          } au moins {leadDays, plural, one {# jour} other {# jours}} à l'avance.}
+        other {Vous devez informer le conducteur de votre destination.}
       }.
     flexPickupMessage: >
       Pour ce trajet, vous devez faire une réservation préalable {hasPhone, select,
