@@ -74,7 +74,10 @@ class AccessLegBody extends Component {
             onSummaryClick={this.onSummaryClick}
             showLegIcon={showLegIcon}
           />
-          <Styled.StepsHeader onClick={this.onStepsHeaderClick}>
+          <Styled.StepsHeader
+            aria-expanded={expanded}
+            onClick={this.onStepsHeaderClick}
+          >
             {coreUtils.time.formatDuration(leg.duration)}
             {leg.steps && (
               <span>
