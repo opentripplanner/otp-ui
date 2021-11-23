@@ -225,6 +225,9 @@ export interface Place {
   zoneId?: string;
 }
 
+/**
+ * Holds contact info and lead time for flex transit bookings.
+ */
 interface FlexBookingInfo {
   contactInfo?: {
     phoneNumber: string;
@@ -234,10 +237,12 @@ interface FlexBookingInfo {
   };
 }
 
+/** Dropoff-specific flex booking information */
 interface FlexDropOffBookingInfo extends FlexBookingInfo {
   dropOffMessage?: string;
 }
 
+/** Pickup-specific flex booking information */
 interface FlexPickupBookingInfo extends FlexBookingInfo {
   pickupMessage?: string;
 }
@@ -258,7 +263,7 @@ export interface Leg {
   arrivalDelay: number;
   departureDelay: number;
   distance: number;
-  dropOffBookingInfo: FlexDropOffBookingInfo;
+  dropOffBookingInfo?: FlexDropOffBookingInfo;
   duration: number;
   endTime: number;
   from: Place;
@@ -270,7 +275,7 @@ export interface Leg {
   legGeometry: EncodedPolyline;
   mode: string;
   pathway: boolean;
-  pickupBookingInfo: FlexPickupBookingInfo;
+  pickupBookingInfo?: FlexPickupBookingInfo;
   realTime: boolean;
   rentedBike: boolean;
   rentedCar: boolean;
