@@ -227,6 +227,8 @@ export interface Place {
 
 /**
  * Holds contact info and lead time for flex transit bookings.
+ * The information is optional and is for reminding the end-user
+ * of any advance reservations required prior to travel.
  */
 interface FlexBookingInfo {
   contactInfo?: {
