@@ -1,5 +1,4 @@
 import flatten from "flat";
-// @ts-expect-error FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
 import { FlexBookingInfo } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
