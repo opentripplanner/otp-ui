@@ -7,6 +7,9 @@ import { isServerEnv } from "./util";
 // eslint-disable-next-line prettier/prettier
 import type { ButtonProps } from "./Checkbox"
 
+// todo: move this string to localization file (and possibly add more exact info on each particular mode)
+const modeButtonAriaLabel = "Opens a dialog that describes this mode, with optional to third party services.";
+
 export const TripOptionsContainer = styled.div`
   background-color: #0d5eac;
   color: white;
@@ -81,7 +84,9 @@ export const ModeIconWrapper = styled.span`
   }
 `;
 
-export const QuestionButton = styled.button`
+export const QuestionButton = styled.button.attrs({
+  "aria-label": modeButtonAriaLabel
+})`
   background-color: rgba(0, 0, 0, 0);
   border: none;
   color: white;
@@ -97,13 +102,15 @@ export const QuestionButton = styled.button`
   }
 `;
 
-export const FeaturedOptionQuestionContainer = styled.div`
+export const FeaturedOptionQuestionContainer = styled.div.attrs({
+  "aria-label": modeButtonAriaLabel
+})`
   cursor: pointer;
 
   &:hover ${QuestionButton} {
     opacity: 1;
   }
-`
+`;
 
 export const MaxHeightImage = styled(Image)`
   max-height: 200px;
