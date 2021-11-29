@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/park-and-ride-overlay",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A map overlay to show park and rides",
   "main": "lib/index.js",
   "module": "esm/index.js",
