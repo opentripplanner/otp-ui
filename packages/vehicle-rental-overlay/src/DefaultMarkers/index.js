@@ -21,10 +21,10 @@ import * as Styled from "../styled";
 const templatePropTypes = {
   /** The children of the component. */
   children: PropTypes.node,
-  /** leaflet attribute to control tabindex value for keyboaryd-only / SR users */
-  keyboard: PropTypes.bool,
   /** The rental vehicle or station to render. */
-  entity: coreUtils.types.stationType.isRequired
+  entity: coreUtils.types.stationType.isRequired,
+  /** leaflet attribute to control tabindex value for keyboaryd-only / SR users */
+  keyboard: PropTypes.bool
 };
 const templateDefaultProps = {
   children: null,
@@ -54,9 +54,9 @@ export const SharedBikeCircle = ({
         color={newStrokeColor}
         fillColor={fillColor}
         fillOpacity={1}
+        keyboard={keyboard}
         radius={pixels - (station.isFloatingBike ? 1 : 0)}
         weight={1}
-        keyboard={keyboard}
       >
         {children}
       </CircleMarker>
@@ -84,7 +84,7 @@ export const HubAndFloatingBike = ({ children, keyboard, entity: station }) => {
     icon = hubIcons[i];
   }
   return (
-    <Marker icon={icon} position={[station.y, station.x]} keyboard={keyboard}>
+    <Marker icon={icon} keyboard={keyboard} position={[station.y, station.x]}>
       {children}
     </Marker>
   );
@@ -117,8 +117,8 @@ export const GenericMarker = ({ fillColor = "gray" }) => {
   const GeneratedMarker = ({ children, keyboard, entity: station }) => (
     <Marker
       icon={markerIcon}
-      position={[station.y, station.x]}
       keyboard={keyboard}
+      position={[station.y, station.x]}
     >
       {children}
     </Marker>
