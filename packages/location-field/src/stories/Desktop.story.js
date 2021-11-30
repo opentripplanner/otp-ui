@@ -140,6 +140,7 @@ export const WithPrefilledSearch = () => (
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
     getCurrentPosition={getCurrentPosition}
+    favoredLayers={["example_layer"]}
     initialSearchResults={mockedGeocoderResponse.features}
     inputPlaceholder="Select from location"
     layerColorMap={layerColorMap}

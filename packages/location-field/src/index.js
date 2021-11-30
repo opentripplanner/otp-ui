@@ -392,6 +392,7 @@ class LocationField extends Component {
       currentPositionIcon,
       currentPositionUnavailableIcon,
       inputPlaceholder,
+      favoredLayers,
       layerColorMap,
       location,
       clearButtonIcon,
@@ -427,11 +428,27 @@ class LocationField extends Component {
 
     /* 1) Process geocode search result option(s) */
     if (geocodedFeatures.length > 0) {
-      geocodedFeatures = geocodedFeatures.sort(
-        (a, b) =>
-          (a.properties?.distance || Infinity) -
-          (b.properties?.distance || Infinity)
+      // Split features into those we want to always show above others
+      const { special, normal } = geocodedFeatures.reduce(
+        (prev, cur) => {
+          prev[
+            favoredLayers.includes(cur?.properties?.layer)
+              ? "special"
+              : "normal"
+          ].push(cur);
+          return prev;
+        },
+        { special: [], normal: [] }
       );
+
+      geocodedFeatures = [
+        ...special,
+        ...normal.sort(
+          (a, b) =>
+            (b.properties?.distance || Infinity) -
+            (a.properties?.distance || Infinity)
+        )
+      ];
 
       // Add the menu sub-heading (not a selectable item)
       // menuItems.push(<MenuItem header key='sr-header'>Search Results</MenuItem>)
@@ -803,6 +820,11 @@ LocationField.propTypes = {
     })
   ),
   /**
+   * Results are sorted by distance, but favored layers will always appear
+   * first.
+   */
+  favoredLayers: PropTypes.arrayOf(PropTypes.string),
+  /**
    * Invoked whenever the currentPosition is set, but the nearbyStops are not.
    * Sends the following argument:
    *
@@ -1008,6 +1030,7 @@ LocationField.defaultProps = {
   currentPositionIcon: <LocationArrow size={13} />,
   currentPositionUnavailableIcon: <Ban size={13} />,
   initialSearchResults: null,
+  favoredLayers: [],
   findNearbyStops: () => {},
   GeocodedOptionIconComponent: GeocodedOptionIcon,
   hideExistingValue: false,
