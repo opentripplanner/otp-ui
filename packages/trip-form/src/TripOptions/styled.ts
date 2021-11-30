@@ -8,7 +8,7 @@ import { isServerEnv } from "./util";
 import type { ButtonProps } from "./Checkbox"
 
 // todo: move this string to localization file (and possibly add more exact info on each particular mode)
-const modeButtonAriaLabel = "Opens a dialog that describes this mode, with optional to third party services.";
+const modeButtonAriaLabel = "Opens a dialog that describes this mode, with optional links to third party services.";
 
 export const TripOptionsContainer = styled.div`
   background-color: #0d5eac;
