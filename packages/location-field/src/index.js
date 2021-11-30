@@ -11,7 +11,6 @@ import { LocationArrow } from "@styled-icons/fa-solid/LocationArrow";
 import { Search } from "@styled-icons/fa-solid/Search";
 import { Times } from "@styled-icons/fa-solid/Times";
 import { throttle } from "throttle-debounce";
-import uniqueId from "lodash/uniqueId";
 
 import {
   GeocodedOptionIcon,
@@ -76,7 +75,7 @@ class LocationField extends Component {
       message: null,
       geocodedFeatures: [],
       activeIndex: null,
-      listBoxId: `listbox-${uniqueId()}`
+      listBoxId: `listbox-${optionKey}`
     };
   }
 
