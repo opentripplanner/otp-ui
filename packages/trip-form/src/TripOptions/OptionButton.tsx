@@ -13,7 +13,7 @@ export default function OptionButton({ children, checked, className, disabled, l
   label: string;
 } & ButtonProps): React.ReactElement {
   return (
-    <S.OptionButton className={className} disabled={disabled} onClick={onClick} selected={selected}>
+    <S.OptionButton ariaLabel={label} ariaChecked={selected} className={className} disabled={disabled} onClick={onClick} selected={selected}>
       <S.OptionLabel>{label}</S.OptionLabel>
       <S.OptionIcon>
         {checked ? <S.GreenCheck /> : <S.UncheckedIcon />}
