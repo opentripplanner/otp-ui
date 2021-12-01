@@ -146,6 +146,7 @@ export const WithPrefilledSearch = () => (
     layerColorMap={layerColorMap}
     locationType="from"
     onLocationSelected={onLocationSelected}
+    sortByDistance
     style={{ fontFamily: "sans-serif" }}
   />
 );

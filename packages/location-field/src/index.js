@@ -402,6 +402,7 @@ class LocationField extends Component {
       sessionOptionIcon,
       showClearButton,
       showUserSettings,
+      sortByDistance,
       static: isStatic,
       stopOptionIcon,
       stopsIndex,
@@ -443,11 +444,13 @@ class LocationField extends Component {
 
       geocodedFeatures = [
         ...special,
-        ...normal.sort(
-          (a, b) =>
+        ...normal.sort((a, b) => {
+          if (!sortByDistance) return 0;
+          return (
             (b.properties?.distance || Infinity) -
             (a.properties?.distance || Infinity)
-        )
+          );
+        })
       ];
 
       // Add the menu sub-heading (not a selectable item)
@@ -957,6 +960,11 @@ LocationField.propTypes = {
    */
   operatorIconMap: PropTypes.shape({ [PropTypes.string]: PropTypes.node }),
   /**
+   * A boolean for whether to override the result sort order and sort by
+   * distance.
+   */
+  sortByDistance: PropTypes.bool,
+  /**
    * A slot for the icon to display for an option that was used during the
    * current session.
    */
@@ -1043,6 +1051,7 @@ LocationField.defaultProps = {
   operatorIconMap: {},
   sessionOptionIcon: <Search size={13} />,
   sessionSearches: [],
+  sortByDistance: false,
   showClearButton: true,
   showUserSettings: false,
   static: false,
