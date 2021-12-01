@@ -35,13 +35,19 @@ export default class StopMarker extends Component {
 
   render() {
     const { languageConfig, leafletPath, radius, stop } = this.props;
-    const { id, name, lat, lon } = stop;
+    const { color, id, name, lat, lon } = stop;
     const idArr = id.split(":");
 
+    const extraPathOptions = {};
+    if (color) {
+      extraPathOptions.fillColor = color;
+    }
     return (
       <CircleMarker
         /* eslint-disable-next-line react/jsx-props-no-spreading */
         {...leafletPath}
+        /* eslint-disable-next-line react/jsx-props-no-spreading */
+        {...extraPathOptions}
         center={[lat, lon]}
         radius={radius}
       >
