@@ -56,6 +56,7 @@
     "jest-haste-map": "^24.8.0",
     "jest-resolve": "^24.8.0",
     "jest-styled-components": "^7.0.5",
+    "jest-yaml-transform": "^0.2.0",
     "leaflet": "^1.6.0",
     "lerna": "^3.18.4",
     "lint-staged": "^8.2.0",
@@ -65,6 +66,7 @@
     "puppeteer": "^10.2.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
+    "react-intl": "^5.20.4",
     "react-leaflet": "^2.6.1",
     "react-test-renderer": "^16.14.0",
     "semantic-release": "^17.1.1",
@@ -78,13 +80,14 @@
     "stylelint-prettier": "^1.1.1",
     "stylelint-processor-styled-components": "^1.8.0",
     "typescript": "^4.2.4",
-    "webpack": "^4.33.0"
+    "webpack": "^4.33.0",
+    "yaml-loader": "^0.6.0"
   },
   "scripts": {
     "a11y-test": "yarn build-storybook && jest --testPathIgnorePatterns packages storybook",
     "bootstrap": "lerna bootstrap --use-workspaces",
-    "build:cjs": "lerna exec --parallel -- babel --extensions '.js,.ts,.tsx' --ignore **/*.story.js,**/*.story.ts,**/*.spec.js,**/*.spec.ts,**/*.test.js,**/*.test.ts,**/__tests__/**,storybook-static/**/* --root-mode upward --source-maps true src -d lib",
-    "build:esm": "lerna exec --parallel -- cross-env BABEL_ENV=esm babel --extensions '.js,.ts,.tsx' --ignore **/*.story.js,**/*.story.ts,**/*.spec.js,**/*.spec.ts,**/*.test.js,**/*.test.ts,**/__tests__/**,storybook-static/**/* --root-mode upward --source-maps true src -d esm",
+    "build:cjs": "lerna exec --parallel -- babel --extensions '.js,.ts,.tsx' --ignore **/*.story.js,**/*.story.ts,**/*.story.d.ts,**/*.story.tsx,**/*.spec.js,**/*.spec.ts,**/*.test.js,**/*.test.ts,**/__tests__/**,**/__unpublished__/** --root-mode upward --source-maps true src -d lib",
+    "build:esm": "lerna exec --parallel -- cross-env BABEL_ENV=esm babel --extensions '.js,.ts,.tsx' --ignore **/*.story.js,**/*.story.ts,**/*.story.d.ts,**/*.story.tsx,**/*.spec.js,**/*.spec.ts,**/*.test.js,**/*.test.ts,**/__tests__/**,**/__unpublished__/** --root-mode upward --source-maps true src -d esm",
     "prepublish": "yarn typescript && yarn build:cjs && yarn build:esm",
     "check-eslint-config": "eslint --print-config jestconfig.js | eslint-config-prettier-check",
     "coverage": "jest --coverage",
@@ -98,7 +101,7 @@
     "prettier": "prettier --write \"**/*.{json,md,yml}\"",
     "semantic-release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo",
     "test": "yarn lint:js && yarn lint:styles && yarn typescript && yarn unit && yarn a11y-test",
-    "typescript": "lerna run --parallel tsc",
+    "typescript": "lerna run tsc",
     "unit": "jest --testPathIgnorePatterns a11y",
     "update-internal-dependencies": "node scripts/update-internal-dependencies.js"
   },

@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/location-field",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "A component for display and finding a location",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -10,8 +10,8 @@
   "private": false,
   "dependencies": {
     "@conveyal/geocoder-arcgis-geojson": "^0.0.3",
-    "@opentripplanner/core-utils": "^4.2.0",
-    "@opentripplanner/geocoder": "^1.1.1",
+    "@opentripplanner/core-utils": "^4.5.0",
+    "@opentripplanner/geocoder": "^1.1.2",
     "@opentripplanner/humanize-distance": "^1.1.0",
     "@opentripplanner/location-icon": "^1.4.0",
     "@styled-icons/fa-solid": "^10.34.0",

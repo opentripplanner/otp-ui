@@ -2,7 +2,7 @@ import utils from "@opentripplanner/core-utils";
 import ZoomBasedMarkers from "@opentripplanner/zoom-based-markers";
 import PropTypes from "prop-types";
 import React from "react";
-import { FeatureGroup, MapLayer, withLeaflet } from "react-leaflet";
+import { FeatureGroup, GeoJSON, MapLayer, withLeaflet } from "react-leaflet";
 
 import DefaultStopMarker from "./default-stop-marker";
 import * as Styled from "./styled";
@@ -76,9 +76,29 @@ class StopsOverlay extends MapLayer {
     }
     const zoom = leaflet.map.getZoom();
 
+    const flexGeometries = stops
+      .map(stop => {
+        if (stop?.geometries?.geoJson) {
+          // Add first route color to GeoJSON
+          stop.geometries.geoJson.properties = { color: stop.color };
+          return stop.geometries.geoJson;
+        }
+        return null;
+      })
+      .filter(stop => !!stop);
+
     return (
       <FeatureGroup>
         <ZoomBasedMarkers entities={stops} symbols={symbols} zoom={zoom} />
+        {flexGeometries.length > 0 && (
+          <GeoJSON
+            data={flexGeometries}
+            style={feature => {
+              const { color } = feature?.geometry?.properties;
+              return { color };
+            }}
+          />
+        )}
       </FeatureGroup>
     );
   }

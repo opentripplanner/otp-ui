@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "esModuleInterop": true,
-    "outDir": "./lib/",
-    "noImplicitAny": true,
-    "moduleResolution": "node",
     "module": "commonjs",
     "target": "es5",
-    "jsx": "react"
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "noEmitOnError": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "noEmit": false
   },
-  "exclude": ["**/*.test.ts", "**/*.story.tsx", "node_modules", "dist"]
+  "exclude": ["**/*.test.ts", "**/*.story.tsx", "node_modules", "lib", "esm"]
 }

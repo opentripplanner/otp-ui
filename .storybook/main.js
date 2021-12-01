@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  "addons": [
+  addons: [
     "@storybook/addon-a11y",
     "@storybook/addon-actions",
     "@storybook/addon-docs",
@@ -22,8 +22,20 @@ module.exports = {
     },
     "@storybook/addon-viewport"
   ],
-  "stories": [
+  stories: [
     "../packages/**/*.story.mdx",
     "../packages/**/*.story.@(js|jsx|ts|tsx)"
-  ]
+  ],
+  webpackFinal: async (config, { configType }) => {
+    // This method is for altering Storybook's webpack configuration.
+
+    // Add support for importing YAML files.
+    config.module.rules.push({
+      test: /\.(yml|yaml)$/,
+      loader: ["json-loader", "yaml-loader"]
+    });
+
+    // Return the altered config
+    return config;
+  }
 }

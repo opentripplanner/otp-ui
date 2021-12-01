@@ -1,6 +1,6 @@
 import moment from "moment";
 
-import { getPlaceName, isFlex, isTransit, toSentenceCase } from "./itinerary";
+import { getPlaceName, isTransit, toSentenceCase } from "./itinerary";
 
 export function latlngToString(latlng) {
   return (
@@ -115,8 +115,7 @@ export function itineraryToTransitive(itin, companies, getRouteLabel) {
       leg.mode === "WALK" ||
       leg.mode === "BICYCLE" ||
       leg.mode === "CAR" ||
-      leg.mode === "MICROMOBILITY" ||
-      isFlex(leg)
+      leg.mode === "MICROMOBILITY"
     ) {
       let fromPlaceId;
       if (leg.from.bikeShareId) {
