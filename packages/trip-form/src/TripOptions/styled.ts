@@ -208,11 +208,11 @@ export const FeaturedOptionContainer = styled.div`
 
 export const OverlayContainer = styled.div`
   padding: 15px;
-`
+`;
 
 export const OverlayHeader = styled.h3`
   text-align: center;
-`
+`;
 
 export const OverlayOptions = styled.ul`
   list-style: none;
@@ -238,7 +238,7 @@ export const OverlayOptions = styled.ul`
       color: #777;
     }
   }
-`
+`;
 
 
 // The ScrollContainer doesn't work in the jsdom/server environment, so replace it with a div
