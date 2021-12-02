@@ -77,21 +77,21 @@ class StopsOverlay extends MapLayer {
     const zoom = leaflet.map.getZoom();
 
     const flexGeometries = stops
+      .filter(stop => stop?.geometries?.geoJson?.type === "Polygon")
       .map(stop => {
-        if (stop?.geometries?.geoJson) {
-          // Add first route color to GeoJSON
-          stop.geometries.geoJson.properties = { color: stop.color };
-          return stop.geometries.geoJson;
-        }
-        return null;
-      })
-      .filter(stop => !!stop);
+        // Add first route color to GeoJSON
+        const { color, id } = stop;
+        stop.geometries.geoJson.properties = { color, id };
+        return stop.geometries.geoJson;
+      });
 
     return (
       <FeatureGroup>
         <ZoomBasedMarkers entities={stops} symbols={symbols} zoom={zoom} />
+        {/* Updating the react key is the only way to force the GeoJSON layer to update */}
         {flexGeometries.length > 0 && (
           <GeoJSON
+            key={flexGeometries[0].properties.id}
             data={flexGeometries}
             style={feature => {
               const { color } = feature?.geometry?.properties;
