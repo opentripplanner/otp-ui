@@ -7,6 +7,9 @@ import { isServerEnv } from "./util";
 // eslint-disable-next-line prettier/prettier
 import type { ButtonProps } from "./Checkbox"
 
+// todo: move this string to localization file (and possibly add more exact info on each particular mode)
+const modeButtonAriaLabel = "Opens a dialog that describes this mode, with optional links to third party services.";
+
 export const TripOptionsContainer = styled.div`
   background-color: #0d5eac;
   color: white;
@@ -81,7 +84,9 @@ export const ModeIconWrapper = styled.span`
   }
 `;
 
-export const QuestionButton = styled.button`
+export const QuestionButton = styled.button.attrs({
+  "aria-label": modeButtonAriaLabel
+})`
   background-color: rgba(0, 0, 0, 0);
   border: none;
   color: white;
@@ -97,20 +102,27 @@ export const QuestionButton = styled.button`
   }
 `;
 
-export const FeaturedOptionQuestionContainer = styled.div`
+export const FeaturedOptionQuestionContainer = styled.div.attrs({
+  "aria-label": modeButtonAriaLabel
+})`
   cursor: pointer;
 
   &:hover ${QuestionButton} {
     opacity: 1;
   }
-`
+`;
 
 export const MaxHeightImage = styled(Image)`
   max-height: 200px;
 `;
 
 
-export const OptionButton = styled.button`
+export const OptionButton = styled.button.attrs(( props: ButtonProps ) => ( {
+  "aria-checked": props.ariaChecked || props.selected,
+  "aria-label": props.ariaLabel,
+  role: "checkbox",
+  tabIndex: 0
+} ))`
   align-items: center;
   background-color: rgba(0, 0, 0, 0);
   border-color: ${(props: ButtonProps) => props.selected ? "white" : "lightgrey"};
@@ -196,11 +208,11 @@ export const FeaturedOptionContainer = styled.div`
 
 export const OverlayContainer = styled.div`
   padding: 15px;
-`
+`;
 
 export const OverlayHeader = styled.h3`
   text-align: center;
-`
+`;
 
 export const OverlayOptions = styled.ul`
   list-style: none;
@@ -226,7 +238,7 @@ export const OverlayOptions = styled.ul`
       color: #777;
     }
   }
-`
+`;
 
 
 // The ScrollContainer doesn't work in the jsdom/server environment, so replace it with a div
