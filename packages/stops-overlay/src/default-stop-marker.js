@@ -35,12 +35,18 @@ export default class StopMarker extends Component {
 
   render() {
     const { languageConfig, leafletPath, radius, stop } = this.props;
-    const { color, id, name, lat, lon } = stop;
+    const { geometries, id, name, lat, lon } = stop;
     const idArr = id.split(":");
 
     const extraPathOptions = {};
-    if (color) {
-      extraPathOptions.fillColor = color;
+    // We pull the color from the GeoJSON properties instead of directly from
+    // the stop object because we only want the stop icon to be route-colored
+    // if it is a flex zone, and only flex zone stops have the color inserted
+    // into the GeoJSON properties.
+    //
+    // However, all stops may have a color attribute
+    if (geometries?.geoJson?.properties?.color) {
+      extraPathOptions.fillColor = geometries.geoJson.properties.color;
     }
     return (
       <CircleMarker
