@@ -71,6 +71,10 @@ class TransitLegBody extends Component {
     const { agencyBrandingUrl, agencyName, agencyUrl, alerts } = leg;
     const { alertsExpanded, stopsExpanded } = this.state;
 
+    const isReservationRequired = coreUtils.itinerary.isReservationRequired(
+      leg
+    );
+
     // If the config contains an operator with a logo URL, prefer that over the
     // one provided by OTP (which is derived from agency.txt#agency_branding_url)
     const logoUrl =
@@ -107,6 +111,11 @@ class TransitLegBody extends Component {
                 )}
               </a>
             </Styled.AgencyInfo>
+          )}
+          {isReservationRequired && (
+            <Styled.CallAheadWarning>
+              Will not run unless requested ahead of time!
+            </Styled.CallAheadWarning>
           )}
 
           {/* Alerts toggle */}

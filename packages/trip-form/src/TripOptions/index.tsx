@@ -32,7 +32,7 @@ interface ComponentProps {
   /**
    * Classnames to add to the container div to allow additional styling
    */
-  className: string;
+  className?: string;
 
   /**
    * Whether to display the built-in back button in the featured mode overlay. If the button is disabled,

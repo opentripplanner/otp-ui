@@ -22,10 +22,13 @@ const templatePropTypes = {
   /** The children of the component. */
   children: PropTypes.node,
   /** The rental vehicle or station to render. */
-  entity: coreUtils.types.stationType.isRequired
+  entity: coreUtils.types.stationType.isRequired,
+  /** leaflet attribute to control tabindex value for keyboaryd-only / SR users */
+  keyboard: PropTypes.bool
 };
 const templateDefaultProps = {
-  children: null
+  children: null,
+  keyboard: false
 };
 
 /**
@@ -38,7 +41,7 @@ export const SharedBikeCircle = ({
   pixels,
   strokeColor
 }) => {
-  const GeneratedMarker = ({ children, entity: station }) => {
+  const GeneratedMarker = ({ children, keyboard, entity: station }) => {
     let newStrokeColor = strokeColor || fillColor;
 
     if (!station.isFloatingBike) {
@@ -51,6 +54,7 @@ export const SharedBikeCircle = ({
         color={newStrokeColor}
         fillColor={fillColor}
         fillOpacity={1}
+        keyboard={keyboard}
         radius={pixels - (station.isFloatingBike ? 1 : 0)}
         weight={1}
       >
@@ -68,7 +72,7 @@ export const SharedBikeCircle = ({
  * A component that renders rental bike entities
  * either as a bike or a bike dock (or hub, showing spaces available).
  */
-export const HubAndFloatingBike = ({ children, entity: station }) => {
+export const HubAndFloatingBike = ({ children, keyboard, entity: station }) => {
   let icon;
   if (station.isFloatingBike) {
     icon = floatingBikeIcon;
@@ -80,7 +84,7 @@ export const HubAndFloatingBike = ({ children, entity: station }) => {
     icon = hubIcons[i];
   }
   return (
-    <Marker icon={icon} position={[station.y, station.x]}>
+    <Marker icon={icon} keyboard={keyboard} position={[station.y, station.x]}>
       {children}
     </Marker>
   );
@@ -110,8 +114,12 @@ const getStationMarkerByColor = memoize(color =>
 export const GenericMarker = ({ fillColor = "gray" }) => {
   const markerIcon = getStationMarkerByColor(fillColor);
 
-  const GeneratedMarker = ({ children, entity: station }) => (
-    <Marker icon={markerIcon} position={[station.y, station.x]}>
+  const GeneratedMarker = ({ children, keyboard, entity: station }) => (
+    <Marker
+      icon={markerIcon}
+      keyboard={keyboard}
+      position={[station.y, station.x]}
+    >
       {children}
     </Marker>
   );

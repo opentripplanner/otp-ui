@@ -14,6 +14,10 @@ import OptionButton from "./OptionButton";
 
 import * as S from "./styled";
 
+// todo: move this string to localization file (and possibly add more exact info on each particular mode)
+const modeButtonAriaLabel =
+  "Opens a dialog that describes this mode, with optional links to third party services.";
+
 const FeaturedOption = ({
   onQueryParamChange,
   queryParams,
@@ -102,12 +106,13 @@ const FeaturedOption = ({
         })}
       </div>
       <S.FeaturedOptionQuestionContainer
+        aria-label={modeButtonAriaLabel}
         onClick={() => setFeaturedOption(option)}
         onKeyPress={() => setFeaturedOption(option)}
         role="link"
         tabIndex={0}
       >
-        <S.QuestionButton>
+        <S.QuestionButton aria-label={modeButtonAriaLabel}>
           {questionIcon || <QuestionCircle />}
         </S.QuestionButton>
         <S.FeaturedOptionImageWrapper>

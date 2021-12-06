@@ -226,6 +226,30 @@ export interface Place {
 }
 
 /**
+ * Holds contact info and lead time for flex transit bookings.
+ * The information is optional and is for reminding the end-user
+ * of any advance reservations required prior to travel.
+ */
+export interface FlexBookingInfo {
+  contactInfo?: {
+    phoneNumber: string;
+  };
+  latestBookingTime?: {
+    daysPrior: number;
+  };
+}
+
+/** Dropoff-specific flex booking information */
+interface FlexDropOffBookingInfo extends FlexBookingInfo {
+  dropOffMessage?: string;
+}
+
+/** Pickup-specific flex booking information */
+interface FlexPickupBookingInfo extends FlexBookingInfo {
+  pickupMessage?: string;
+}
+
+/**
  * Represents a leg in an itinerary of an OTP plan response. Each leg represents
  * a portion of the overall itinerary that is done until either reaching the
  * destination or transitioning to another mode of travel. See OTP webservice
@@ -241,6 +265,7 @@ export interface Leg {
   arrivalDelay: number;
   departureDelay: number;
   distance: number;
+  dropOffBookingInfo?: FlexDropOffBookingInfo;
   duration: number;
   endTime: number;
   from: Place;
@@ -252,6 +277,7 @@ export interface Leg {
   legGeometry: EncodedPolyline;
   mode: string;
   pathway: boolean;
+  pickupBookingInfo?: FlexPickupBookingInfo;
   realTime: boolean;
   rentedBike: boolean;
   rentedCar: boolean;

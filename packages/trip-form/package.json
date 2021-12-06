@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/trip-form",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "Trip Settings Form and Related Components",
   "author": "@binh-dam-ibigroup",
   "homepage": "https://github.com/opentripplanner/otp-ui/#readme",
@@ -9,7 +9,7 @@
   "module": "esm/index.js",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^4.2.0",
+    "@opentripplanner/core-utils": "^4.5.0",
     "@opentripplanner/icons": "^1.2.1",
     "@styled-icons/bootstrap": "^10.34.0",
     "@styled-icons/boxicons-regular": "^10.38.0",
