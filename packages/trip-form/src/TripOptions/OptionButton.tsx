@@ -5,7 +5,16 @@ import * as S from "./styled";
 // eslint-disable-next-line prettier/prettier
 import type { ButtonProps } from "./Checkbox"
 
-export default function OptionButton({ children, checked, className, disabled, image, label, onClick, selected, }: {
+export default function OptionButton({
+  children,
+  checked,
+  className,
+  disabled,
+  image,
+  label,
+  onClick,
+  selected
+}: {
   checked: boolean;
   children?: React.ReactNode | string;
   className?: string;
@@ -14,7 +23,14 @@ export default function OptionButton({ children, checked, className, disabled, i
   label: string;
 } & ButtonProps): React.ReactElement {
   return (
-    <S.OptionButton className={className} disabled={disabled} onClick={onClick} selected={selected}>
+    <S.OptionButton
+      ariaLabel={label}
+      ariaChecked={selected}
+      className={className}
+      disabled={disabled}
+      onClick={onClick}
+      selected={selected}
+    >
       {/* This means the image tag is present even if there is no icon, but this 
       allows spacing to be even when there are options with and without icons */}
       <S.OptionImage alt={image && `image for ${label}`} src={image} />
