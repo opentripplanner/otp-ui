@@ -144,8 +144,8 @@ export const WithCustomMarkers = () => <Example symbols={customSymbols} />;
 export const FlexStops = () => (
   <Example
     filterStops={false}
-    stops={mockFlexStops}
     mapCenter={[33.85, -84.61]}
+    stops={mockFlexStops}
     symbols={[
       {
         minZoom: 5,
