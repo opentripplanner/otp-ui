@@ -151,6 +151,7 @@ export const OptionButton = styled.button.attrs(( props: ButtonProps ) => ( {
 
 export const OptionLabel = styled.div`
   flex: 2;
+  text-align: left;
 `;
 
 export const OptionIcon = styled.div`
