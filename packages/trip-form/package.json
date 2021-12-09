@@ -16,7 +16,8 @@
     "@styled-icons/fa-regular": "^10.34.0",
     "@styled-icons/fa-solid": "^10.34.0",
     "moment": "^2.17.1",
-    "react-indiana-drag-scroll": "^2.0.1"
+    "react-indiana-drag-scroll": "^2.0.1",
+    "react-inlinesvg": "^2.3.0"
   },
   "repository": {
     "type": "git",

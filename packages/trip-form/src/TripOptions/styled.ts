@@ -1,4 +1,5 @@
 import ScrollContainer from "react-indiana-drag-scroll";
+import SVG from "react-inlinesvg"
 import styled, { css } from "styled-components";
 import { Check } from "@styled-icons/bootstrap/Check";
 import { PlusCircle } from "@styled-icons/boxicons-regular/PlusCircle";
@@ -161,7 +162,7 @@ export const OptionIcon = styled.div`
   }
 `;
 
-export const OptionImage = styled.img`
+export const OptionImage = styled(SVG)`
   max-height: 20px;
   width: 50px;
 `;
