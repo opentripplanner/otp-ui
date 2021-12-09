@@ -10,6 +10,7 @@ export default function OptionButton({
   checked,
   className,
   disabled,
+  iconFillOverride,
   image,
   label,
   onClick,
@@ -19,6 +20,7 @@ export default function OptionButton({
   children?: React.ReactNode | string;
   className?: string;
   disabled?: boolean;
+  iconFillOverride?: string;
   image?: string;
   label: string;
 } & ButtonProps): React.ReactElement {
@@ -33,7 +35,7 @@ export default function OptionButton({
     >
       {/* This means the image tag is present even if there is no icon, but this 
       allows spacing to be even when there are options with and without icons */}
-      <S.OptionImage key={label} alt={image && `image for ${label}`} src={image} />
+      <S.OptionImage alt={image && `image for ${label}`} iconFillOverride={iconFillOverride} key={label} src={image} />
       <S.OptionLabel>{label}</S.OptionLabel>
       <S.OptionIcon>
         {checked ? <S.GreenCheck /> : <S.UncheckedIcon />}

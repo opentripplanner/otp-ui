@@ -23,10 +23,12 @@ const FeaturedOption = ({
   queryParams,
   questionIcon,
   setFeaturedOption,
+  iconFillOverride,
   supportedModes,
   DetailedModeIcon
 }: QueryProps & {
   setFeaturedOption(option: string): void;
+  iconFillOverride?: string;
   questionIcon?: React.ReactElement;
 }): React.ReactElement => {
   // No featured mode to show if walking to transit
@@ -97,6 +99,7 @@ const FeaturedOption = ({
               checked={isChecked}
               disabled={isChecked && selectedCompanies.length === 1}
               key={index}
+              iconFillOverride={iconFillOverride}
               image={o.image}
               label={o.label}
               onClick={() => selectOption(isChecked, o)}

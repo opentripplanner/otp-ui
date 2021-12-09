@@ -165,6 +165,7 @@ export const OptionIcon = styled.div`
 export const OptionImage = styled(SVG)`
   max-height: 20px;
   width: 50px;
+  ${(props: { iconFillOverride?: string }) => (props.iconFillOverride ? `fill: ${props.iconFillOverride};` : "")}
 `;
 
 
