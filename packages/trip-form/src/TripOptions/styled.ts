@@ -32,9 +32,9 @@ export const TransitOptionsContainer = styled.div`
 
 export const buttonIconCss = css`
   border-radius: 50%;
-  height: 3em;
+  height: 2.5em;
   margin-bottom: 10px;
-  width: 3em;
+  width: 2.5em;
   z-index: 10;
 `;
 
@@ -132,6 +132,7 @@ export const OptionButton = styled.button.attrs(( props: ButtonProps ) => ( {
   color: white;
   cursor: ${(props: ButtonProps) => props.disabled ? "not-allowed" : "pointer"};
   display: flex;
+  grid-gap: 10px;
   justify-content: space-between;
   margin-top: 7px;
   min-width: 100%;
@@ -210,6 +211,7 @@ export const Checkbox = styled.button.attrs(( props: ButtonProps ) => ( {
 
 export const FeaturedOptionContainer = styled.div`
   display: flex;
+  min-height: 200px; /* ensures that if the featured image is too small, there is still "padding" */
   > div {
     flex: 1;
   }
