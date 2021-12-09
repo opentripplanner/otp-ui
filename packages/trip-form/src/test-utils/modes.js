@@ -1,6 +1,7 @@
 import bikeImage from "./static/bike.svg";
 import carImage from "./static/car.svg";
 import scooterImage from "./static/scooter.svg";
+import boltImage from "./static/bolt.svg";
 
 const commonModes = {
   transitModes: [
@@ -79,7 +80,7 @@ const commonModes = {
       options: [
         {
           company: "BOLT",
-          image: "https://trimet-web.s3.amazonaws.com/bolt.svg",
+          image: boltImage,
           label: "Bolt",
           url: "https://example.com"
         },

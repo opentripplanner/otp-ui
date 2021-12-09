@@ -124,6 +124,7 @@ export const tripOptionsWithCustomIconsAndCloseButton = () => {
           featuredItemOverlayEnabled={featuredOverlayShown}
           supportedCompanies={commonCompanies}
           supportedModes={commonModes}
+          tripOptionIconFillOverride="white"
           QuestionIcon={<span>😕</span>}
           SimpleModeIcon={({ mode }) => <b>{mode}</b>}
           DetailedModeIcon={({ mode }) => <h1>{mode}</h1>}

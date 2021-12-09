@@ -56,6 +56,12 @@ interface ComponentProps {
   featuredItemOverlayShown?: (overlayShown: boolean) => void;
 
   /**
+   * An optional prop to override svg fill color of CompanyIcons
+   * Note: this will only work if the image field of the option is an svg
+   */
+  tripOptionIconFillOverride?: string;
+
+  /**
    * Icon prop used for overwriting the question mark icon throughout the component
    */
   QuestionIcon: ReactElement;
@@ -88,6 +94,7 @@ export default function TripOptions(props: Props): ReactElement {
     queryParams,
     supportedCompanies,
     supportedModes,
+    tripOptionIconFillOverride,
     QuestionIcon,
     SimpleModeIcon,
     DetailedModeIcon,
@@ -214,6 +221,7 @@ export default function TripOptions(props: Props): ReactElement {
           queryParams={queryParams}
           setFeaturedOption={setFeaturedOption}
           supportedModes={supportedModes}
+          iconFillOverride={tripOptionIconFillOverride}
           questionIcon={QuestionIcon}
           DetailedModeIcon={DetailedModeIcon}
         />
