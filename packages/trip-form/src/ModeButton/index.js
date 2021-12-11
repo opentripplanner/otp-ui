@@ -27,11 +27,11 @@ const ModeButton = props => {
   return (
     <Styled.ModeButton className={className} style={style}>
       <Styled.ModeButton.Button
+        aria-pressed={selected}
         className={`${activeClassName} ${disabledClassName}`}
+        disabled={!enabled}
         onClick={onClick}
         title={title}
-        disabled={!enabled}
-        aria-pressed={selected}
       >
         {children}
       </Styled.ModeButton.Button>
