@@ -27,9 +27,9 @@ export const DropdownContainer = styled.span`
 `;
 
 export const MenuItemList = styled.ul.attrs(props => ({
-  role: "listbox",
+  "aria-label": "Search Results",
   id: props.uniqueId,
-  "aria-label": "Search Results"
+  role: "listbox"
 }))`
   background-clip: padding-box;
   background-color: #fff;
@@ -52,10 +52,10 @@ export const MenuItemList = styled.ul.attrs(props => ({
 
 export const Dropdown = ({
   children,
-  locationType,
   listBoxIdentifier,
-  open,
+  locationType,
   onToggle,
+  open,
   title
 }) => {
   const dropdownButtonAriaLabel = `List the suggested ${locationType} locations as you type`;
@@ -73,8 +73,8 @@ export const Dropdown = ({
 
 Dropdown.propTypes = {
   children: PropTypes.node.isRequired,
-  locationType: PropTypes.string.isRequired,
   listBoxIdentifier: PropTypes.string.isRequired,
+  locationType: PropTypes.string.isRequired,
   open: PropTypes.bool.isRequired,
   onToggle: PropTypes.func,
   title: PropTypes.node.isRequired

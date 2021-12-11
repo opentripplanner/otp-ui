@@ -70,12 +70,12 @@ class LocationField extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: this.getValueFromLocation(),
+      activeIndex: null,
+      geocodedFeatures: [],
+      listBoxId: `listbox-${optionKey}`,
       menuVisible: false,
       message: null,
-      geocodedFeatures: [],
-      activeIndex: null,
-      listBoxId: `listbox-${optionKey}`
+      value: this.getValueFromLocation()
     };
   }
 
@@ -672,22 +672,22 @@ class LocationField extends Component {
         : defaultPlaceholder;
     const textControl = (
       <S.Input
+        aria-autocomplete="list"
+        aria-controls={listBoxId}
+        aria-expanded={menuVisible}
+        aria-haspopup="listbox"
+        aria-label={defaultPlaceholder}
+        autoFocus={autoFocus}
+        className={this.getFormControlClassname()}
+        onChange={this.onTextInputChange}
+        onClick={this.onTextInputClick}
+        onKeyDown={this.onKeyDown}
+        placeholder={placeholder}
         ref={ref => {
           this.inputRef = ref;
         }}
         role="combobox"
-        aria-label={defaultPlaceholder}
-        aria-autocomplete="list"
-        aria-expanded={menuVisible}
-        aria-haspopup="listbox"
-        aria-controls={listBoxId}
-        autoFocus={autoFocus}
-        className={this.getFormControlClassname()}
         value={value}
-        placeholder={placeholder}
-        onChange={this.onTextInputChange}
-        onClick={this.onTextInputClick}
-        onKeyDown={this.onKeyDown}
       />
     );
 
@@ -736,11 +736,11 @@ class LocationField extends Component {
         <S.InputGroup>
           {/* location field icon -- also serves as dropdown anchor */}
           <S.Dropdown
-            locationType={locationType}
-            open={menuVisible}
-            onToggle={this.onDropdownToggle}
-            title={<LocationIconComponent locationType={locationType} />}
             listBoxIdentifier={listBoxId}
+            locationType={locationType}
+            onToggle={this.onDropdownToggle}
+            open={menuVisible}
+            title={<LocationIconComponent locationType={locationType} />}
           >
             {menuItems}
           </S.Dropdown>
