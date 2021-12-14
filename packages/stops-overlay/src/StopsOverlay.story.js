@@ -51,7 +51,7 @@ class Example extends Component {
   };
 
   refreshStops = bounds => {
-    const { stops, filterStops } = this.props;
+    const { filterStops, stops } = this.props;
     const filteredStops = stops.filter(
       stop =>
         stop.lat < bounds.maxLat &&
