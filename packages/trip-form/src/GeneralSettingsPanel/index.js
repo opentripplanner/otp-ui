@@ -115,9 +115,12 @@ GeneralSettingsPanel.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   query: PropTypes.any,
   /**
-   * An object {parameterName: text, "parameterName.options": [array]}
-   * whose attributes correspond to query parameters. This allows to customize the
-   * labels and options (both text and values).
+   * An optional object that defines customizations for certain query parameters
+   * to change the label or list of options (both text and values) displayed for the desired parameters.
+   * Customizations can be as few or as many as needed.
+   * For a given parameter, default values from core-utils are used if no customization is provided.
+   * If custom options are provided for a parameter, only those provided will be displayed.
+   *
    * For query parameter names and value formats,
    * see https://github.com/opentripplanner/otp-ui/blob/master/packages/core-utils/src/__tests__/query.js#L14
    */

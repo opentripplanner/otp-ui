@@ -44,48 +44,35 @@ const onChange = action("onChange");
 const onClick = action("onClick");
 const onQueryParamChange = action("onQueryParamChange");
 
-// Custom general settings messages
+// Custom general settings messages.
+// You can customize as little or as much, depending on your needs
+// (Tweaking a message requires fewer entries, and providing translations requires more entries below).
 const queryParamMessages = {
-  bikeSpeed: {
-    label: "Your Bike Speed"
-  },
-  maxBikeDistance: {
-    label: "Max Dist On Bike"
-  },
   maxWalkDistance: {
-    label: "Max Walk Distance In Meters",
+    label: "Max Walk Distance In Meters (custom)",
     options: [
       {
-        text: "200 m",
+        text: "200 m (custom)",
         value: 100
       },
       {
-        text: "500 m",
+        text: "500 m (custom)",
         value: 500
       }
     ]
   },
-  maxWalkTime: {
-    label: "Max Time On Foot"
-  },
   optimize: {
-    label: "Walk settings",
+    label: "Walk settings (custom)",
     options: [
       {
-        text: "Quickest trip",
+        text: "Quickest trip (custom)",
         value: "QUICK"
       },
       {
-        text: "Prefer fewer transfers",
+        text: "Prefer fewer transfers (custom)",
         value: "TRANSFERS"
       }
     ]
-  },
-  optimizeBike: {
-    label: "Bike settings"
-  },
-  walkSpeed: {
-    label: "Your Speed"
   }
 };
 
