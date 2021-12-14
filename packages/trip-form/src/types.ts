@@ -16,21 +16,24 @@ export interface QueryParamOptions {
 /**
  * Describes a configured/supported travel mode provider.
  */
-export type ConfiguredMode =
+export type ModeOption =
   | string
   | {
-      company: string;
+      company?: string;
+      image?: string;
+      hidden?: boolean;
       label: string;
       mode: string;
+      url?: string;
     };
 
 /**
  * Describes the travel modes available for the GeneralSettings component.
  */
 export interface ConfiguredModes {
-  transitModes?: ConfiguredMode[];
-  accessModes?: ConfiguredMode[];
-  exclusiveModes?: ConfiguredMode[];
-  bicycleModes?: ConfiguredMode[];
-  micromobilityModes?: ConfiguredMode[];
+  accessModes?: ModeOption[];
+  bicycleModes?: ModeOption[];
+  exclusiveModes?: ModeOption[];
+  micromobilityModes?: ModeOption[];
+  transitModes?: ModeOption[];
 }

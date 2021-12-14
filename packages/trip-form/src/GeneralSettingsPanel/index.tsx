@@ -121,7 +121,7 @@ export default function GeneralSettingsPanel({
                   "options",
                   query
                 )}
-                onChange={this.handleChange}
+                onChange={handleChange}
               />
             );
           case "CHECKBOX":

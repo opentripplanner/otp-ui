@@ -184,6 +184,12 @@ export default function TripOptions(props: Props): ReactElement {
     updateQueryParams(newParams);
   };
 
+  // Set config object for GeneralSettingsPanel
+  // FIXME: merge types together.
+  const generalSettingsPanelModes = {
+    transitModes: supportedModes.transitModes
+  };
+
   if (featuredOption) {
     return (
       <S.TripOptionsContainer className={className}>
@@ -219,7 +225,7 @@ export default function TripOptions(props: Props): ReactElement {
         />
         <GeneralSettingsPanel
           query={queryParams}
-          supportedModes={supportedModes}
+          supportedModes={generalSettingsPanelModes} // FIXME: merge these types.
           onQueryParamChange={onQueryParamChange}
         />
         <TransitOptions
