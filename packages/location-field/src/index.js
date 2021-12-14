@@ -392,7 +392,7 @@ class LocationField extends Component {
       currentPositionIcon,
       currentPositionUnavailableIcon,
       inputPlaceholder,
-      favoredLayers,
+      preferredLayers,
       layerColorMap,
       location,
       clearButtonIcon,
@@ -433,7 +433,7 @@ class LocationField extends Component {
       const { special, normal } = geocodedFeatures.reduce(
         (prev, cur) => {
           prev[
-            favoredLayers.includes(cur?.properties?.layer)
+            preferredLayers.includes(cur?.properties?.layer)
               ? "special"
               : "normal"
           ].push(cur);
@@ -826,7 +826,7 @@ LocationField.propTypes = {
    * Results are sorted by distance, but favored layers will always appear
    * first.
    */
-  favoredLayers: PropTypes.arrayOf(PropTypes.string),
+  preferredLayers: PropTypes.arrayOf(PropTypes.string),
   /**
    * Invoked whenever the currentPosition is set, but the nearbyStops are not.
    * Sends the following argument:
@@ -1038,7 +1038,7 @@ LocationField.defaultProps = {
   currentPositionIcon: <LocationArrow size={13} />,
   currentPositionUnavailableIcon: <Ban size={13} />,
   initialSearchResults: null,
-  favoredLayers: [],
+  preferredLayers: [],
   findNearbyStops: () => {},
   GeocodedOptionIconComponent: GeocodedOptionIcon,
   hideExistingValue: false,
