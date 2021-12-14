@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { action } from "@storybook/addon-actions";
 import { boolean, text, withKnobs } from "@storybook/addon-knobs";
 import * as Icons from "@opentripplanner/icons";
@@ -85,17 +85,33 @@ export const checkboxSelector = () => (
   />
 );
 
-export const dateTimeSelector = () => (
-  <Core.DateTimeSelector
-    departArrive="NOW"
-    date="2020-02-15"
-    dateFormatLegacy={text("dateFormatLegacy", "YY-M-d")}
-    forceLegacy={boolean("forceLegacy", false)}
-    time="14:17"
-    timeFormatLegacy={text("timeFormatLegacy", "HH:mm")}
-    onQueryParamChange={onQueryParamChange}
-  />
-);
+export const dateTimeSelector = () => {
+  const [state, setState] = useState({
+    date: "2020-02-15",
+    departArrive: "NOW",
+    time: "14:17"
+  });
+
+  const dateTimeSelOnQueryParamChange = evt => {
+    setState({
+      ...state,
+      ...evt
+    });
+    onQueryParamChange(evt);
+  };
+
+  return (
+    <Core.DateTimeSelector
+      departArrive={state.departArrive}
+      date={state.date}
+      dateFormatLegacy={text("dateFormatLegacy", "YY-M-d")}
+      forceLegacy={boolean("forceLegacy", false)}
+      time={state.time}
+      timeFormatLegacy={text("timeFormatLegacy", "HH:mm")}
+      onQueryParamChange={dateTimeSelOnQueryParamChange}
+    />
+  );
+};
 
 export const dropdownSelector = () => (
   <Core.DropdownSelector
