@@ -33,14 +33,18 @@ export interface Company {
 // FIXME: Move this to @opentripplanner/types added in https://github.com/opentripplanner/otp-ui/pull/281
 export interface QueryParams {
   /**
-   * The mode string query param (e.g., TRANSIT,WALK).
-   */
-  mode?: string;
-  /**
    * The company query param used to specify service providers for a rental or
    * hail mode type (e.g., UBER or HOPR).
    */
   companies?: string;
+  /**
+   * The mode string query param (e.g., TRANSIT,WALK).
+   */
+  mode?: string;
+  /**
+   * OTP Routing type.
+   */
+  routingType?: string;
   /**
    * FIXME: other query params exist but are not populated here.
    */

@@ -8,6 +8,7 @@ import * as S from "../styled";
 
 // eslint-disable-next-line prettier/prettier
 import type { ConfiguredModes, QueryParamChangeEvent, QueryParamOptions } from "../types";
+import type { QueryParams } from "../TripOptions/types";
 
 interface GeneralSettingsPanelProps {
   /**
@@ -22,7 +23,7 @@ interface GeneralSettingsPanelProps {
   // Disable type check because the only use of queryParams is to be passed to
   // method getQueryParamProperty from "@opentripplanner/core-utils/query".
   // eslint-disable-next-line react/forbid-prop-types
-  query?: any;
+  query?: QueryParams;
   /**
    * An optional object that defines customizations for certain query parameters
    * to change the label or list of options (both text and values) displayed for the desired parameters.

@@ -16,19 +16,23 @@ export interface QueryParamOptions {
 }
 
 /**
+ * Describes full details of a configured/supported travel mode provider.
+ */
+// FIXME: merge with TripOptions ModeOption.
+export interface FullModeOption {
+  company?: string;
+  image?: string;
+  hidden?: boolean;
+  label: string;
+  mode: string;
+  url?: string;
+}
+
+/**
  * Describes a configured/supported travel mode provider.
  */
 // FIXME: merge with TripOptions ModeOption.
-export type ModeOption =
-  | string
-  | {
-      company?: string;
-      image?: string;
-      hidden?: boolean;
-      label: string;
-      mode: string;
-      url?: string;
-    };
+export type ModeOption = string | FullModeOption;
 
 /**
  * Describes the travel modes available for the GeneralSettings component.
@@ -39,6 +43,25 @@ export interface ConfiguredModes {
   exclusiveModes?: ModeOption[];
   micromobilityModes?: ModeOption[];
   transitModes?: ModeOption[];
+}
+
+/**
+ * Describes a supported transportation company.
+ */
+export interface ConfiguredCompany {
+  /**
+   * The id of the company. This is typically in all-caps.
+   */
+  id: string;
+  /**
+   * A human readable text value that can be displayed to users.
+   */
+  label: string;
+  /**
+   * A comma-separated list of applicable modes of travel that the company
+   * offers.
+   */
+  modes: string;
 }
 
 /**
