@@ -24,6 +24,8 @@ import type {
   QueryParamChangeEvent
 } from "../types";
 
+const { isMicromobility, isTransit } = coreUtils.itinerary;
+
 // FIXME: merge with the other QueryParams
 interface QueryParams {
   [key: string]: string;
@@ -103,7 +105,7 @@ export default function SettingsSelectorPanel({
   const selectedCompanies = getSelectedCompanies(queryParams);
 
   const handleQueryParamChange = useCallback(
-    queryParam => {
+    (queryParam: QueryParamChangeEvent) => {
       if (typeof onQueryParamChange === "function") {
         onQueryParamChange(queryParam);
       }
@@ -142,9 +144,7 @@ export default function SettingsSelectorPanel({
       const newModes = id.split("+");
 
       if (newModes[0] === "TRANSIT") {
-        const activeTransitModes = selectedModes.filter(
-          coreUtils.itinerary.isTransit
-        );
+        const activeTransitModes = selectedModes.filter(isTransit);
 
         const lastOrAllTransitModes = lastTransitModes.length === 0
           ? supportedModes.transitModes
@@ -181,17 +181,13 @@ export default function SettingsSelectorPanel({
   );
 
   const handleTransitModeChange = useCallback(
-    id => {
-      toggleSubmode(
-        "mode",
-        id,
-        selectedModes,
-        coreUtils.itinerary.isTransit,
-        newModes => {
-          setLastTransitModes(newModes.filter(coreUtils.itinerary.isTransit));
-        }
-      );
-    },
+    (id: string) => toggleSubmode(
+      "mode",
+      id,
+      selectedModes,
+      isTransit,
+      newModes => setLastTransitModes(newModes.filter(isTransit))
+    ),
     [onQueryParamChange, queryParams]
   );
 
@@ -212,9 +208,7 @@ export default function SettingsSelectorPanel({
     supportedModes,
     selectedModes
   );
-  const nonTransitModes = selectedModes.filter(
-    m => !coreUtils.itinerary.isTransit(m)
-  );
+  const nonTransitModes = selectedModes.filter(m => !isTransit(m));
   const companies = getCompaniesOptions(
     supportedCompanies.filter(comp =>
       defaultAccessModeCompany ? comp.id === defaultAccessModeCompany : true
@@ -243,7 +237,7 @@ export default function SettingsSelectorPanel({
 
       <S.SettingsHeader>Travel Preferences</S.SettingsHeader>
 
-      {selectedModes.some(coreUtils.itinerary.isTransit) &&
+      {selectedModes.some(isTransit) &&
         transitModes.length >= 2 && (
           <SubmodeSelector
             label="Use"
@@ -255,7 +249,7 @@ export default function SettingsSelectorPanel({
       {/* The bike trip type selector */}
       {/* TODO: Handle different bikeshare networks */}
       {selectedModes.some(isBike) &&
-        !selectedModes.some(coreUtils.itinerary.isTransit) && (
+        !selectedModes.some(isTransit) && (
           <SubmodeSelector
             label="Use"
             inline
@@ -266,8 +260,8 @@ export default function SettingsSelectorPanel({
 
       {/* The micromobility trip type selector */}
       {/* TODO: Handle different micromobility networks */}
-      {selectedModes.some(coreUtils.itinerary.isMicromobility) &&
-        !selectedModes.some(coreUtils.itinerary.isTransit) && (
+      {selectedModes.some(isMicromobility) &&
+        !selectedModes.some(isTransit) && (
           <SubmodeSelector
             label="Use"
             inline
