@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 /**
  * Describes the parameters for the onQueryParamChange event.
  */
@@ -16,6 +18,7 @@ export interface QueryParamOptions {
 /**
  * Describes a configured/supported travel mode provider.
  */
+// FIXME: merge with TripOptions ModeOption.
 export type ModeOption =
   | string
   | {
@@ -36,4 +39,16 @@ export interface ConfiguredModes {
   exclusiveModes?: ModeOption[];
   micromobilityModes?: ModeOption[];
   transitModes?: ModeOption[];
+}
+
+/**
+ * Mode/SubmodeSelector options
+ */
+// FIXME: merge with TripOptions ModeOption.
+export interface ModeSelectorOption {
+  id: string;
+  selected?: boolean;
+  showTitle?: boolean;
+  text: ReactNode;
+  title?: string;
 }
