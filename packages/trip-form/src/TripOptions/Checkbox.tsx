@@ -15,6 +15,10 @@ export interface ButtonProps {
 
 export default function Checkbox(
   props: {
+    checkboxIcons?: {
+      checked: FunctionComponent;
+      unchecked: FunctionComponent;
+    };
     checked: boolean;
     children: React.ReactNode | string;
     className?: string;
@@ -25,6 +29,7 @@ export default function Checkbox(
   const {
     ariaChecked,
     ariaLabel,
+    checkboxIcons,
     checked,
     children,
     className,
@@ -39,6 +44,8 @@ export default function Checkbox(
   } = props;
 
   const modeIcon = mode && <SimpleModeIcon mode={mode} />;
+  const GreenCheck = checkboxIcons?.checked || S.GreenCheck;
+  const PlusIcon = checkboxIcons?.unchecked || S.UncheckedIcon;
 
   return (
     <S.Checkbox
@@ -53,7 +60,7 @@ export default function Checkbox(
       selected={selected}
     >
       {mode && <S.ModeIconWrapper>{modeIcon}</S.ModeIconWrapper>}
-      {checked ? <S.GreenCheck /> : <S.UncheckedIcon />}
+      {checked ? <GreenCheck /> : <PlusIcon />}
       {children}
     </S.Checkbox>
   );

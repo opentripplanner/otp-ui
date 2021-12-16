@@ -62,9 +62,14 @@ interface ComponentProps {
   tripOptionIconFillOverride?: string;
 
   /**
-   * Icon prop used for overwriting the question mark icon throughout the component
+   * Object of icon props used to overwrite the checkmark and plus icons
    */
-  QuestionIcon: ReactElement;
+  checkboxIcons?: { checked: FunctionComponent; unchecked: FunctionComponent };
+
+  /**
+   * Icon prop used for overwriting company logos throughout the component
+   */
+  CompanyIcon?: FunctionComponent<{ company: string }>;
 
   /**
    * Icon prop used for overwriting mode icons throughout the component
@@ -72,9 +77,10 @@ interface ComponentProps {
   SimpleModeIcon?: FunctionComponent<{ mode: string }>;
 
   /**
-   * Icon prop used for overwriting company logos throughout the component
+   * Icon prop used for overwriting the question mark icon throughout the component
    */
-  CompanyIcon?: FunctionComponent<{ company: string }>;
+  QuestionIcon: ReactElement;
+
   // DetailedModeIcon is defined in QueryProps
 }
 
@@ -95,10 +101,11 @@ export default function TripOptions(props: Props): ReactElement {
     supportedCompanies,
     supportedModes,
     tripOptionIconFillOverride,
-    QuestionIcon,
-    SimpleModeIcon,
+    checkboxIcons,
+    CompanyIcon,
     DetailedModeIcon,
-    CompanyIcon
+    SimpleModeIcon,
+    QuestionIcon
   } = props;
 
   const [featuredOption, setFeaturedOption] = useState(null);
@@ -213,6 +220,7 @@ export default function TripOptions(props: Props): ReactElement {
         queryParamOverrides={queryParamOverrides}
         queryParams={queryParams}
         supportedModes={supportedModes}
+        checkboxIcons={checkboxIcons}
         SimpleModeIcon={SimpleModeIcon}
       />
       <S.TripOptionsSubContainer>
@@ -223,6 +231,7 @@ export default function TripOptions(props: Props): ReactElement {
           supportedModes={supportedModes}
           iconFillOverride={tripOptionIconFillOverride}
           questionIcon={QuestionIcon}
+          checkboxIcons={checkboxIcons}
           DetailedModeIcon={DetailedModeIcon}
         />
         <GeneralSettingsPanel
@@ -234,6 +243,7 @@ export default function TripOptions(props: Props): ReactElement {
           onQueryParamChange={onQueryParamChange}
           queryParams={queryParams}
           supportedModes={supportedModes}
+          checkboxIcons={checkboxIcons}
           DetailedModeIcon={DetailedModeIcon}
         />
         {footer}

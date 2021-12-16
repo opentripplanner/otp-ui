@@ -125,12 +125,18 @@ export const tripOptionsWithCustomIconsAndCloseButton = () => {
           supportedCompanies={commonCompanies}
           supportedModes={commonModes}
           tripOptionIconFillOverride="white"
-          QuestionIcon={<span>😕</span>}
-          SimpleModeIcon={({ mode }) => <b>{mode}</b>}
-          DetailedModeIcon={({ mode }) => <h1>{mode}</h1>}
+          checkboxIcons={{
+            // eslint-disable-next-line react/display-name
+            checked: () => <span>✅</span>,
+            // eslint-disable-next-line react/display-name
+            unchecked: () => <span>❌</span>
+          }}
           CompanyIcon={({ company }) => (
             <i style={{ color: "black" }}>{company}</i>
           )}
+          DetailedModeIcon={({ mode }) => <h1>{mode}</h1>}
+          SimpleModeIcon={({ mode }) => <b>{mode}</b>}
+          QuestionIcon={<span>😕</span>}
         />
       </PanelWrapper>
     </>
