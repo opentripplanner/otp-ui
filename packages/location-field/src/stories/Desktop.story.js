@@ -140,11 +140,13 @@ export const WithPrefilledSearch = () => (
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
     getCurrentPosition={getCurrentPosition}
+    preferredLayers={["example_layer"]}
     initialSearchResults={mockedGeocoderResponse.features}
     inputPlaceholder="Select from location"
     layerColorMap={layerColorMap}
     locationType="from"
     onLocationSelected={onLocationSelected}
+    sortByDistance
     style={{ fontFamily: "sans-serif" }}
   />
 );
