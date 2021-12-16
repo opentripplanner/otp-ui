@@ -1,5 +1,5 @@
 import coreUtils from "@opentripplanner/core-utils";
-import React from "react";
+import React, { FunctionComponent } from "react";
 
 import * as S from "./styled";
 import Checkbox from "./Checkbox";
@@ -10,8 +10,11 @@ const TransitOptions = ({
   onQueryParamChange,
   queryParams,
   supportedModes,
+  checkboxIcons,
   DetailedModeIcon
-}: QueryProps): JSX.Element => {
+}: {
+  checkboxIcons?: { checked: FunctionComponent; unchecked: FunctionComponent };
+} & QueryProps): JSX.Element => {
   const { transitModes } = supportedModes;
   const selectedModes = getSelectedModes(queryParams);
   const selectedTransit = selectedModes.filter(coreUtils.itinerary.isTransit);
@@ -33,6 +36,7 @@ const TransitOptions = ({
         return (
           <Checkbox
             ariaLabel={transitMode.label}
+            checkboxIcons={checkboxIcons}
             checked={isChecked}
             /* This prevents the user from de-selecting a transit mode when it is the only one selected.
             the selectedModes length being 3 indicates that only one mode is selected. GONDOLA, WALK, and the mode. */

@@ -1,5 +1,5 @@
 import coreUtils from "@opentripplanner/core-utils";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, FunctionComponent } from "react";
 
 import {
   categoryIsActive,
@@ -17,12 +17,14 @@ const ModeRow = ({
   queryParams,
   queryParamOverrides,
   supportedModes,
+  checkboxIcons,
   SimpleModeIcon
 }: {
   onQueryParamChange(paramsToUpdate: QueryParams, categoryId?: string): void;
   queryParams: QueryParams;
   queryParamOverrides: { [key: string]: QueryParams };
   supportedModes: Modes;
+  checkboxIcons?: { checked: FunctionComponent; unchecked: FunctionComponent };
   SimpleModeIcon?: React.FunctionComponent<{ mode: string }>;
 }): React.ReactElement => {
   const { categories } = supportedModes;
@@ -60,6 +62,7 @@ const ModeRow = ({
     <S.ScrollableRow hideScrollbars={false}>
       <Checkbox
         ariaLabel="Go by Transit"
+        checkboxIcons={checkboxIcons}
         checked={hasTransit}
         // Prettier conflicts with jsx style rules
         // eslint-disable-next-line prettier/prettier
@@ -122,6 +125,7 @@ const ModeRow = ({
         return (
           <Checkbox
             ariaLabel={category.label}
+            checkboxIcons={checkboxIcons}
             checked={isChecked}
             key={`access-${category.label}`}
             mode={mode}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import coreUtils from "@opentripplanner/core-utils";
 import { QuestionCircle } from "@styled-icons/fa-regular/QuestionCircle";
 
@@ -25,8 +25,10 @@ const FeaturedOption = ({
   setFeaturedOption,
   iconFillOverride,
   supportedModes,
+  checkboxIcons,
   DetailedModeIcon
 }: QueryProps & {
+  checkboxIcons?: { checked: FunctionComponent; unchecked: FunctionComponent };
   setFeaturedOption(option: string): void;
   iconFillOverride?: string;
   questionIcon?: React.ReactElement;
@@ -96,6 +98,7 @@ const FeaturedOption = ({
 
           return (
             <OptionButton
+              checkboxIcons={checkboxIcons}
               checked={isChecked}
               disabled={isChecked && selectedCompanies.length === 1}
               key={index}

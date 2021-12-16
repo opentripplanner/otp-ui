@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import * as S from "./styled";
 
 // Prettier does not accept typescript in this file
@@ -6,6 +6,7 @@ import * as S from "./styled";
 import type { ButtonProps } from "./Checkbox"
 
 export default function OptionButton({
+  checkboxIcons,
   children,
   checked,
   className,
@@ -16,6 +17,7 @@ export default function OptionButton({
   onClick,
   selected
 }: {
+  checkboxIcons?: { checked: FunctionComponent; unchecked: FunctionComponent };
   checked: boolean;
   children?: React.ReactNode | string;
   className?: string;
@@ -24,6 +26,9 @@ export default function OptionButton({
   image?: string;
   label: string;
 } & ButtonProps): React.ReactElement {
+  const GreenCheck = checkboxIcons?.checked || S.GreenCheck;
+  const PlusIcon = checkboxIcons?.unchecked || S.UncheckedIcon;
+
   return (
     <S.OptionButton
       ariaLabel={label}
@@ -35,10 +40,10 @@ export default function OptionButton({
     >
       {/* This means the image tag is present even if there is no icon, but this 
       allows spacing to be even when there are options with and without icons */}
-      <S.OptionImage alt={image && `image for ${label}`} iconFillOverride={iconFillOverride} key={label} src={image} />
+      <S.OptionImage title={image && `image for ${label}`} iconFillOverride={iconFillOverride} key={label} src={image} />
       <S.OptionLabel>{label}</S.OptionLabel>
       <S.OptionIcon>
-        {checked ? <S.GreenCheck /> : <S.UncheckedIcon />}
+        {checked ? <GreenCheck /> : <PlusIcon />}
       </S.OptionIcon>
       {children}
     </S.OptionButton>
