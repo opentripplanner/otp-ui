@@ -13,14 +13,13 @@ import {
   getCompaniesForModeId,
   getCompaniesOptions,
   getBicycleOrMicromobilityModeOptions,
+  getModeString,
   isBike
 } from "../util";
 // eslint-disable-next-line prettier/prettier
 import type {
   ConfiguredCompany,
   ConfiguredModes,
-  FullModeOption,
-  ModeOption,
   QueryParamChangeEvent
 } from "../types";
 
@@ -60,7 +59,7 @@ interface SettingsSelectorPanelProps {
    */
   supportedCompanies?: ConfiguredCompany[];
   /**
-   * An array of supported modes that will be displayed as options.
+   * Supported modes that will be displayed as primary, secondary, tertiary options.
    */
   supportedModes: ConfiguredModes;
 }
@@ -76,13 +75,6 @@ function getSelectedModes(queryParams: QueryParams) {
 
   // Map OTP Flex modes to custom flex mode
   return coreUtils.query.reduceOtpFlexModes(modes);
-}
-
-/**
- * Helper function so that TypeScript propagates the correct type for ModeOption.
- */
-function isFullModeOption(modeOption: ModeOption): modeOption is FullModeOption {
-  return typeof modeOption !== "string";
 }
 
 /**
@@ -148,8 +140,7 @@ export default function SettingsSelectorPanel({
 
         const lastOrAllTransitModes = lastTransitModes.length === 0
           ? supportedModes.transitModes
-            .filter(isFullModeOption)
-            .map(modeObj => modeObj.mode)
+            .map(getModeString)
           : lastTransitModes;
         
         const {

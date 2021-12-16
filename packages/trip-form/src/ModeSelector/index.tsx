@@ -1,25 +1,10 @@
 import CSS from "csstype";
-import React, { ReactElement, ReactNode, useCallback } from "react";
+import React, { ReactElement, useCallback } from "react";
 
 import * as S from "../styled";
 import ModeButton from "../ModeButton";
 
-/**
- * Describes a mode option in the mode selector.
- */
-interface ModeOption {
-  id: string;
-  selected?: boolean;
-  showTitle?: boolean;
-  text: ReactNode;
-  title?: string;
-}
-
-interface ModeSelectorOptions {
-  primary?: ModeOption;
-  secondary?: ModeOption[];
-  tertiary?: ModeOption[];
-}
+import { ModeSelectorOption, ModeSelectorOptionSet } from "../types";
 
 interface ModeSelectorProps {
   /**
@@ -29,7 +14,7 @@ interface ModeSelectorProps {
   /**
    * An object that defines the primary mode, and secondary and tertiary modes for the trip query.
    */
-  modes: ModeSelectorOptions;
+  modes: ModeSelectorOptionSet;
   /**
    * Triggered when the user selects a different mode.
    * @param id The id of the new option clicked.
@@ -65,7 +50,7 @@ export default function ModeSelector({
     [onChange]
   );
 
-  const makeButton = option => (
+  const makeButton = (option: ModeSelectorOption): ReactElement => (
     <ModeButton
       key={option.id}
       selected={option.selected}

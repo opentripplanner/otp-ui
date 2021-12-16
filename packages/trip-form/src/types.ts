@@ -75,3 +75,12 @@ export interface ModeSelectorOption {
   text: ReactNode;
   title?: string;
 }
+
+/**
+ * Describes the set of options passed to the ModeSelector component.
+ */
+export interface ModeSelectorOptionSet {
+  primary?: ModeSelectorOption;
+  secondary?: ModeSelectorOption[];
+  tertiary?: ModeSelectorOption[];
+}
