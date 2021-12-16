@@ -1,13 +1,20 @@
+import flatten from "flat";
 import CSS from "csstype";
-import coreUtils from "@opentripplanner/core-utils";
-import React, { ChangeEvent, ReactElement, useCallback } from "react";
 import moment from "moment";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore FIXME: Create TypeScript types for core-utils packages.
+import coreUtils from "@opentripplanner/core-utils";
+import React, { ChangeEvent, ReactElement, ReactNode, useCallback } from "react";
+import { FormattedMessage } from "react-intl";
 
 import ModeButton from "../ModeButton";
 import * as S from "../styled";
 
 // eslint-disable-next-line prettier/prettier
 import type { QueryParamChangeEvent } from "../types";
+
+// Load the default messages.
+import defaultEnglishMessages from "../../i18n/en-US.yml";
 
 const { OTP_API_DATE_FORMAT, OTP_API_TIME_FORMAT } = coreUtils.time;
 
@@ -56,9 +63,15 @@ interface DateTimeSelectorProps {
 
 interface DepartArriveOption {
   isSelected?: boolean;
-  text: string;
+  text: ReactNode;
   type: DepartArriveValue;
 }
+
+// HACK: We should flatten the messages loaded above because
+// the YAML loaders behave differently between webpack and our version of jest:
+// - the yaml loader for webpack returns a nested object,
+// - the yaml loader for jest returns messages with flattened ids.
+const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
 /**
  * Determines whether the browser supports a particular <input type=<type> /> control,
@@ -165,17 +178,34 @@ export default function DateTimeSelector({
   const departureOptions: DepartArriveOption[] = [
     {
       // Default option.
-      // FIXME: add intl.
       type: "NOW",
-      text: "Leave now"
+      text: (
+        <FormattedMessage
+          defaultMessage={defaultMessages["otpUi.DateTimeSelector.now"]}
+          description="Text indicating that the traveler wants to depart as soon as possible (i.e. 'now')"
+          id="otpUi.DateTimeSelector.now"
+        />
+      )
     },
     {
       type: "DEPART",
-      text: "Depart at"
+      text: (
+        <FormattedMessage
+          defaultMessage={defaultMessages["otpUi.DateTimeSelector.depart"]}
+          description="Text indicating that the traveler wants to depart at a given date/time"
+          id="otpUi.DateTimeSelector.depart"
+        />
+      )
     },
     {
       type: "ARRIVE",
-      text: "Arrive by"
+      text: (
+        <FormattedMessage
+          defaultMessage={defaultMessages["otpUi.DateTimeSelector.arrive"]}
+          description="Text indicating that the traveler wants to arrive by a certain date/time"
+          id="otpUi.DateTimeSelector.arrive"
+        />
+      )
     }
   ];
   departureOptions.forEach(opt => {

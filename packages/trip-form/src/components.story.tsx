@@ -1,7 +1,9 @@
-import React, { useState } from "react";
-import { action } from "@storybook/addon-actions";
-import { boolean, text, withKnobs } from "@storybook/addon-knobs";
 import * as Icons from "@opentripplanner/icons";
+import React, { useState } from "react";
+import { IntlProvider } from "react-intl";
+import { action } from "@storybook/addon-actions";
+// FIXME: convert knobs to story args
+import { boolean, text, withKnobs } from "@storybook/addon-knobs";
 
 import * as Core from ".";
 
@@ -10,19 +12,24 @@ import modeOptions from "./test-utils/mode-options";
 import submodeOptions from "./test-utils/submode-options";
 import trimet from "./test-utils/trimet-styled";
 
+import englishMessages from "../i18n/en-US.yml";
+// import frenchMessages from "../i18n/fr.yml";
+
 const headingStyle = {
   fontFamily: "sans-serif",
   fontSize: "16px"
 };
 
 const decorator = story => (
-  <div>
-    <p style={headingStyle}>Plain</p>
-    <div>{story()}</div>
+  <IntlProvider locale="en-US" messages={englishMessages}>
+    <div>
+      <p style={headingStyle}>Plain</p>
+      <div>{story()}</div>
 
-    <p style={headingStyle}>Styled</p>
-    <div style={{ color: "#333" }}>{trimet(story())}</div>
-  </div>
+      <p style={headingStyle}>Styled</p>
+      <div style={{ color: "#333" }}>{trimet(story())}</div>
+    </div>
+  </IntlProvider>
 );
 
 export default {

@@ -1,0 +1,17 @@
+# Default messages for components in the trip-form package.
+# To use from a react-intl application:
+# - merge the content of this file into the messages object
+#   that has your other localized strings,
+# - flatten the ids, i.e. convert a structure such as
+#      otpUi > DateTimeSelector > now
+#   into "otpUi.DateTimeSelector.now" (see the DateTimeSelector story for an example),
+# - pass the resulting object to the messages prop of your IntlProvider.
+
+otpUi:
+  DateTimeSelector:
+    arrive: Arrive by
+    depart: Depart at
+    now: Leave now
+  SubmodeSelector:
+    use: Use # as in "Use bus, train, subway".
+    useCompanies: Use companies # as in :"Use companies: Spin, Lime, Bolt"
