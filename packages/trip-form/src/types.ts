@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { StyledComponent } from "styled-components";
 
 /**
  * Describes the parameters for the onQueryParamChange event.
@@ -84,3 +85,26 @@ export interface ModeSelectorOptionSet {
   secondary?: ModeSelectorOption[];
   tertiary?: ModeSelectorOption[];
 }
+
+type SimpleStyledDiv = StyledComponent<"div", any>;
+
+export type DateTimeSelectorAndSubComponents = SimpleStyledDiv & {
+  DateTimeRow?: SimpleStyledDiv;
+  DepartureRow?: SimpleStyledDiv;
+};
+
+export type ModeSelectorAndSubComponents = SimpleStyledDiv & {
+  MainRow?: SimpleStyledDiv;
+  SecondaryRow?: SimpleStyledDiv;
+  TertiaryRow?: SimpleStyledDiv;
+};
+
+export type SubmodeSelectorAndSubComponents = SimpleStyledDiv & {
+  InlineRow?: SimpleStyledDiv;
+  Row?: SimpleStyledDiv;
+};
+
+export type ModeButtonAndSubComponents = SimpleStyledDiv & {
+  Button?: StyledComponent<"button", any>;
+  Title?: SimpleStyledDiv;
+};
