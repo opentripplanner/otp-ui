@@ -1,15 +1,25 @@
+import flatten from "flat";
 import { ClassicModeIcon } from "@opentripplanner/icons";
-
 import { action } from "@storybook/addon-actions";
-import React, { Component, useState } from "react";
+import React, { Component, ReactElement } from "react";
+import { IntlProvider } from "react-intl";
 
 import SettingsSelectorPanel from "./SettingsSelectorPanel";
-import TripOptions from "./TripOptions";
 
 import commonCompanies from "./test-utils/companies";
 import commonModes from "./test-utils/modes";
 import commonModesEmpty from "./test-utils/modes-empty";
 import trimet from "./test-utils/trimet-styled";
+
+import englishMessages from "../i18n/en-US.yml";
+import frenchMessages from "../i18n/fr.yml";
+
+/**
+ * Describes args passed to stories.
+ */
+interface StoryArgs {
+  locale?: string;
+}
 
 const headingStyle = {
   fontFamily: "sans-serif",
@@ -51,109 +61,82 @@ class PanelWrapper extends Component {
   }
 }
 
-const decorator = story => (
-  <div>
-    <p style={headingStyle}>Plain</p>
-    <div>{story()}</div>
-
-    <p style={headingStyle}>Styled</p>
-    <div>{trimet(story())}</div>
-  </div>
-);
-
-export default {
-  title: "SettingsSelectorPanel",
-  component: SettingsSelectorPanel,
-  decorators: [decorator]
+const decoratorPropDescription = "(This prop is used by the decorator.)";
+// Hide story controls for some props (but still display in the controls and the docs section).
+const noControl = {
+  control: { type: false }
 };
 
-export const settingsSelectorPanel = () => (
-  <PanelWrapper>
-    <SettingsSelectorPanel
-      supportedModes={commonModes}
-      supportedCompanies={commonCompanies}
-    />
-  </PanelWrapper>
-);
-
-export const settingsSelectorPanelWithCustomIcons = () => (
-  <PanelWrapper>
-    <SettingsSelectorPanel
-      ModeIcon={ClassicModeIcon}
-      supportedModes={commonModes}
-      supportedCompanies={commonCompanies}
-    />
-  </PanelWrapper>
-);
-
-export const settingsSelectorPanelUndefinedParams = () => (
-  <PanelWrapper>
-    <SettingsSelectorPanel
-      supportedModes={commonModesEmpty}
-      supportedCompanies={undefined}
-    />
-  </PanelWrapper>
-);
-
-export const tripOptions = () => (
-  <PanelWrapper>
-    <TripOptions
-      featuredItemOverlayBackButton
-      supportedCompanies={commonCompanies}
-      supportedModes={commonModes}
-    />
-  </PanelWrapper>
-);
-export const tripOptionsWithCustomIconsAndCloseButton = () => {
-  const [featuredOverlayShown, setFeaturedOverlayShown] = useState(false);
+const intlDecorator = (
+  Story: StoryType,
+  context: {
+    args: StoryArgs;
+  }
+): ReactElement => {
+  const { args } = context;
+  const { locale } = args;
+  const messages = locale === "en-US" ? englishMessages : frenchMessages;
 
   return (
-    <>
-      <button
-        type="button"
-        disabled={!featuredOverlayShown}
-        onClick={() => {
-          setFeaturedOverlayShown(false);
-        }}
-      >
-        close overlay
-      </button>
-      <PanelWrapper>
-        <TripOptions
-          featuredItemOverlayShown={setFeaturedOverlayShown}
-          featuredItemOverlayEnabled={featuredOverlayShown}
-          supportedCompanies={commonCompanies}
-          supportedModes={commonModes}
-          QuestionIcon={<span>😕</span>}
-          SimpleModeIcon={({ mode }) => <b>{mode}</b>}
-          DetailedModeIcon={({ mode }) => <h1>{mode}</h1>}
-          CompanyIcon={({ company }) => (
-            <i style={{ color: "black" }}>{company}</i>
-          )}
-        />
-      </PanelWrapper>
-    </>
+    <IntlProvider locale={locale} messages={flatten(messages)}>
+      <div>
+        <p style={headingStyle}>Plain</p>
+        <div>
+          <Story />
+        </div>
+
+        <p style={headingStyle}>Styled</p>
+        <div>{trimet(<Story />)}</div>
+      </div>
+    </IntlProvider>
   );
 };
 
-// TODO: resolve a11y issues
-const disableA11yParamters = {
-  a11y: {
-    config: {
-      rules: [
-        { id: "color-contrast", enabled: false },
-        { id: "duplicate-id-aria", enabled: false },
-        { id: "duplicate-id", enabled: false }
-      ]
+export default {
+  argTypes: {
+    className: noControl,
+    locale: {
+      control: "radio",
+      description: decoratorPropDescription,
+      options: ["en-US", "fr"]
     }
-  }
+  },
+  args: {
+    locale: "en-US"
+  },
+  component: SettingsSelectorPanel,
+  decorators: [intlDecorator],
+  title: "SettingsSelectorPanel"
 };
 
-tripOptions.parameters = disableA11yParamters;
+const SettingsPanelTemplate = args => (
+  <PanelWrapper>
+    {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+    <SettingsSelectorPanel {...args} />
+  </PanelWrapper>
+);
 
-// Disable storyshot for this story, as it is mostly the same as TripOptions except with
-// a hook that storyshot can't handle
-tripOptionsWithCustomIconsAndCloseButton.parameters = {
-  storyshots: { disable: true },
-  ...disableA11yParamters
-};
+/**
+ * Helper to simplify story declaration.
+ */
+function makeStory(args: StoryArgs | SettingsSelectorPanelProps) {
+  const BoundTripDetails = SettingsPanelTemplate.bind({});
+  BoundTripDetails.args = args;
+  return BoundTripDetails;
+}
+
+export const settingsSelectorPanel = makeStory({
+  supportedModes: commonModes,
+  supportedCompanies: commonCompanies
+});
+
+export const settingsSelectorPanelWithCustomIcons = makeStory({
+  ModeIcon: ClassicModeIcon,
+  supportedModes: commonModes,
+  supportedCompanies: commonCompanies
+});
+
+export const settingsSelectorPanelWithUndefinedParams = makeStory({
+  supportedModes: commonModesEmpty,
+  supportedCompanies: undefined
+});

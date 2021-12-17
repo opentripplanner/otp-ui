@@ -1,12 +1,15 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
 import { getCompanyIcon } from "@opentripplanner/icons";
-import React, { ElementType } from "react";
+import React from "react";
 
 // eslint-disable-next-line prettier/prettier
 import type {
   ConfiguredCompany,
   ConfiguredModes,
   FullModeOption,
+  ModeIconType,
   ModeOption,
   ModeSelectorOption,
   ModeSelectorOptionSet
@@ -126,7 +129,7 @@ export function getCompaniesForModeId(id: string, supportedCompanies: Configured
  * @param selectedModes The modes that should appear selected.
  */
 export function getTransitSubmodeOptions(
-  ModeIcon: ElementType,
+  ModeIcon: ModeIconType,
   modes: ConfiguredModes,
   selectedModes: string[]
 ): ModeSelectorOption[] {
@@ -158,7 +161,7 @@ export function getTransitSubmodeOptions(
  * @param ModeIcon The icon component for rendering.
  * @param selectedModes An array of string that lists the modes selected for a trip query.
  */
-function getPrimaryModeOption(ModeIcon: ElementType, selectedModes: string[]): ModeSelectorOption {
+function getPrimaryModeOption(ModeIcon: ModeIconType, selectedModes: string[]): ModeSelectorOption {
   return {
     id: "TRANSIT",
     selected:
@@ -184,7 +187,7 @@ function getPrimaryModeOption(ModeIcon: ElementType, selectedModes: string[]): M
  * @param supportedCompanies The supported companies for certain modes.
  */
 function getTransitCombinedModeOptions(
-  ModeIcon: ElementType,
+  ModeIcon: ModeIconType,
   modes: ConfiguredModes,
   selectedModes: string[],
   selectedCompanies: string[],
@@ -222,8 +225,8 @@ function getTransitCombinedModeOptions(
        * - Icons for common companies (defined in the icons package) don't need to be specified in `icons`.
        */
       const finalIcon =
-        <ModeIcon mode={modeStr} /> ||
-        <ModeIcon mode={`${modeStr}_${modeCompanyUpper}`} /> ||
+        ModeIcon({ mode: modeStr }) ||
+        ModeIcon({ mode: `${modeStr}_${modeCompanyUpper}` }) ||
         (CompanyIcon && <CompanyIcon />);
 
       return {
@@ -252,7 +255,7 @@ function getTransitCombinedModeOptions(
  * @param selectedModes An array of string that lists the modes selected for a trip query.
  */
 function getExclusiveModeOptions(
-  ModeIcon: ElementType,
+  ModeIcon: ModeIconType,
   modes: ConfiguredModes,
   selectedModes: string[]
 ): ModeSelectorOption[] {
@@ -284,7 +287,7 @@ function getExclusiveModeOptions(
  * @param supportedCompanies The supported companies for certain access modes.
  */
 export function getModeOptions(
-  ModeIcon: ElementType,
+  ModeIcon: ModeIconType,
   modes: ConfiguredModes,
   selectedModes: string[],
   selectedCompanies: string[],
@@ -339,7 +342,7 @@ export function getCompaniesOptions(
  * @returns An array of UI options, or undefined if modes is undefined.
  */
 export function getBicycleOrMicromobilityModeOptions(
-  ModeIcon: ElementType,
+  ModeIcon: ModeIconType,
   modes: ModeOption[],
   selectedModes: string[]
 ): ModeSelectorOption[] {

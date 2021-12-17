@@ -1,5 +1,5 @@
-import flatten from "flat";
 import CSS from "csstype";
+import flatten from "flat";
 import moment from "moment";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore FIXME: Create TypeScript types for core-utils packages.
@@ -15,6 +15,12 @@ import type { QueryParamChangeEvent } from "../types";
 
 // Load the default messages.
 import defaultEnglishMessages from "../../i18n/en-US.yml";
+
+// HACK: We should flatten the messages loaded above because
+// the YAML loaders behave differently between webpack and our version of jest:
+// - the yaml loader for webpack returns a nested object,
+// - the yaml loader for jest returns messages with flattened ids.
+const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
 const { OTP_API_DATE_FORMAT, OTP_API_TIME_FORMAT } = coreUtils.time;
 
@@ -66,12 +72,6 @@ interface DepartArriveOption {
   text: ReactNode;
   type: DepartArriveValue;
 }
-
-// HACK: We should flatten the messages loaded above because
-// the YAML loaders behave differently between webpack and our version of jest:
-// - the yaml loader for webpack returns a nested object,
-// - the yaml loader for jest returns messages with flattened ids.
-const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
 /**
  * Determines whether the browser supports a particular <input type=<type> /> control,

@@ -1,7 +1,11 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
 import CSS from "csstype";
+import flatten from "flat";
 import { TriMetModeIcon } from "@opentripplanner/icons";
-import React, { ElementType, ReactElement, useCallback, useState } from "react";
+import React, { ReactElement, useCallback, useState } from "react";
+import { FormattedMessage } from "react-intl";
 
 import ModeSelector from "../ModeSelector";
 import SubmodeSelector from "../SubmodeSelector";
@@ -20,8 +24,18 @@ import {
 import type {
   ConfiguredCompany,
   ConfiguredModes,
+  ModeIconType,
   QueryParamChangeEvent
 } from "../types";
+
+// Load the default messages.
+import defaultEnglishMessages from "../../i18n/en-US.yml";
+
+// HACK: We should flatten the messages loaded above because
+// the YAML loaders behave differently between webpack and our version of jest:
+// - the yaml loader for webpack returns a nested object,
+// - the yaml loader for jest returns messages with flattened ids.
+const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
 const { isMicromobility, isTransit } = coreUtils.itinerary;
 
@@ -38,7 +52,7 @@ interface SettingsSelectorPanelProps {
   /**
    * The icon component for rendering mode icons. Defaults to the OTP-UI TriMetModeIcon component.
    */
-  ModeIcon?: ElementType;
+  ModeIcon?: ModeIconType;
   /**
    * Triggered when a query parameter is changed.
    * @param params An object that contains the new values for the parameter(s) that has (have) changed.
@@ -218,6 +232,21 @@ export default function SettingsSelectorPanel({
     selectedModes
   );
 
+  const submodeLabel = (
+    <FormattedMessage
+      defaultMessage={defaultMessages["otpUi.SettingsSelectorPanel.use"]}
+      description="Text announcing a list of submodes to use."
+      id="otpUi.SettingsSelectorPanel.use"
+    />
+  );
+  const submodeCompaniesLabel = (
+    <FormattedMessage
+      defaultMessage={defaultMessages["otpUi.SettingsSelectorPanel.useCompanies"]}
+      description="Text announcing a list of rental companies to use."
+      id="otpUi.SettingsSelectorPanel.useCompanies"
+    />
+  );
+
   return (
     <S.SettingsSelectorPanel className={className} style={style}>
       <ModeSelector
@@ -231,7 +260,7 @@ export default function SettingsSelectorPanel({
       {selectedModes.some(isTransit) &&
         transitModes.length >= 2 && (
           <SubmodeSelector
-            label="Use"
+            label={submodeLabel}
             modes={transitModes}
             onChange={handleTransitModeChange}
           />
@@ -242,7 +271,7 @@ export default function SettingsSelectorPanel({
       {selectedModes.some(isBike) &&
         !selectedModes.some(isTransit) && (
           <SubmodeSelector
-            label="Use"
+            label={submodeLabel}
             inline
             modes={bikeModes}
             onChange={handleMainModeChange}
@@ -254,7 +283,7 @@ export default function SettingsSelectorPanel({
       {selectedModes.some(isMicromobility) &&
         !selectedModes.some(isTransit) && (
           <SubmodeSelector
-            label="Use"
+            label={submodeLabel}
             inline
             modes={scooterModes}
             onChange={handleMainModeChange}
@@ -264,7 +293,7 @@ export default function SettingsSelectorPanel({
       {/* This order is probably better. */}
       {companies.length >= 2 && (
         <SubmodeSelector
-          label="Use companies"
+          label={submodeCompaniesLabel}
           modes={companies}
           onChange={handleCompanyChange}
         />

@@ -12,6 +12,6 @@ otpUi:
     arrive: Arrivée
     depart: Départ
     now: Maintenant
-  SubmodeSelector:
+  SettingsSelectorPanel:
     use: Utiliser # as in "Use bus, train, subway"
     useCompanies: Prestataires # as in "Use companies: Spin, Lime, Bolt"

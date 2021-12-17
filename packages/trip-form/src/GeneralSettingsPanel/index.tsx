@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
 import CSS from "csstype";
 import React, { ReactElement, useCallback } from "react";
@@ -114,30 +116,30 @@ export default function GeneralSettingsPanel({
             return (
               <DropdownSelector
                 key={paramInfo.name}
-                name={paramInfo.name}
-                value={query[paramInfo.name] || paramInfo.default}
                 label={label}
+                name={paramInfo.name}
+                onChange={handleChange}
                 options={coreUtils.query.getQueryParamProperty(
                   paramInfo,
                   "options",
                   query
                 )}
-                onChange={handleChange}
+                value={query[paramInfo.name] || paramInfo.default}
               />
             );
           case "CHECKBOX":
             return (
               <CheckboxSelector
                 key={paramInfo.label}
-                name={paramInfo.name}
-                value={query[paramInfo.name]}
                 label={
                   <>
                     {icon}
                     {label}
                   </>
                 }
+                name={paramInfo.name}
                 onChange={handleChange}
+                value={query[paramInfo.name]}
               />
             );
           default:

@@ -1,9 +1,8 @@
+import flatten from "flat";
 import * as Icons from "@opentripplanner/icons";
-import React, { useState } from "react";
+import React from "react";
 import { IntlProvider } from "react-intl";
 import { action } from "@storybook/addon-actions";
-// FIXME: convert knobs to story args
-import { boolean, text, withKnobs } from "@storybook/addon-knobs";
 
 import * as Core from ".";
 
@@ -13,43 +12,71 @@ import submodeOptions from "./test-utils/submode-options";
 import trimet from "./test-utils/trimet-styled";
 
 import englishMessages from "../i18n/en-US.yml";
-// import frenchMessages from "../i18n/fr.yml";
+import { SettingsSelectorPanel } from "./styled";
+
+// Events
+const onChange = action("onChange");
+const onClick = action("onClick");
+const onQueryParamChange = action("onQueryParamChange");
 
 const headingStyle = {
   fontFamily: "sans-serif",
   fontSize: "16px"
 };
 
-const decorator = story => (
-  <IntlProvider locale="en-US" messages={englishMessages}>
+const intlDecorator = (Story: StoryType): ReactElement => (
+  <IntlProvider locale="en-US" messages={flatten(englishMessages)}>
     <div>
       <p style={headingStyle}>Plain</p>
-      <div>{story()}</div>
+      <div>
+        <Story />
+      </div>
 
       <p style={headingStyle}>Styled</p>
-      <div style={{ color: "#333" }}>{trimet(story())}</div>
+      <div style={{ color: "#333" }}>{trimet(<Story />)}</div>
     </div>
   </IntlProvider>
 );
 
-export default {
-  title: "Trip Form Components",
-  decorators: [decorator, withKnobs],
-  subcomponents: {
-    CheckboxSelector: Core.CheckboxSelector,
-    DateTimeSelector: Core.DateTimeSelector,
-    DropdownSelector: Core.DropdownSelector,
-    GeneralSettingsPanel: Core.GeneralSettingsPanel,
-    ModeButton: Core.ModeButton,
-    ModeSelector: Core.ModeSelector,
-    SubmodeSelector: Core.SubmodeSelector
-  }
+/**
+ * Helper to simplify story declaration.
+ */
+function makeStory(Component?: React.ElementType, args: StoryArgs) {
+  const BoundComponent = Component.bind({});
+  BoundComponent.args = args;
+  return BoundComponent;
+}
+
+const GeneralSettingsTemplate = (args: StoryArgs) => (
+  <Core.GeneralSettingsPanel
+    onQueryParamChange={onQueryParamChange}
+    query={{
+      mode: args.mode,
+      routingType: "ITINERARY"
+    }}
+    queryParamMessages={args.queryParamMessages}
+    supportedModes={commonModes}
+  />
+);
+
+// Hide story controls for some props (but still display in the controls and the docs section).
+const noControl = {
+  control: { type: false }
 };
 
-// Events
-const onChange = action("onChange");
-const onClick = action("onClick");
-const onQueryParamChange = action("onQueryParamChange");
+export default {
+  argTypes: {
+    className: noControl,
+    modes: noControl,
+    onChange: noControl,
+    onQueryParamChange: noControl,
+    style: noControl
+  },
+  component: SettingsSelectorPanel,
+  decorators: [intlDecorator],
+  parameters: { controls: { sort: "alpha" } },
+  title: "Trip Form Components"
+} as Meta;
 
 // Custom general settings messages.
 // You can customize as little or as much, depending on your needs
@@ -83,84 +110,51 @@ const queryParamMessages = {
   }
 };
 
-export const checkboxSelector = () => (
-  <Core.CheckboxSelector
-    name="MyParam"
-    style={{ display: "inline-block", width: "250px" }}
-    label="Check me."
-    onChange={onChange}
-  />
-);
+export const checkboxSelector = makeStory(Core.CheckboxSelector, {
+  label: "Check me.",
+  name: "MyParam",
+  onChange,
+  style: { display: "inline-block", width: "250px" }
+});
 
-export const dateTimeSelector = () => {
-  const [state, setState] = useState({
-    date: "2020-02-15",
-    departArrive: "NOW",
-    time: "14:17"
-  });
+export const dateTimeSelector = makeStory(Core.DateTimeSelector, {
+  date: "2020-02-15",
+  dateFormatLegacy: "YY-M-d",
+  departArrive: "NOW",
+  forceLegacy: false,
+  onQueryParamChange,
+  time: "14:17",
+  timeFormatLegacy: "HH:mm"
+});
 
-  const dateTimeSelOnQueryParamChange = evt => {
-    setState({
-      ...state,
-      ...evt
-    });
-    onQueryParamChange(evt);
-  };
+export const dropdownSelector = makeStory(Core.DropdownSelector, {
+  label: "Pick an option:",
+  name: "MyParam",
+  onChange,
+  options: [
+    {
+      text: "Option 1",
+      value: "Value1"
+    },
+    {
+      text: "Option 2",
+      value: "Value2"
+    }
+  ],
+  style: { display: "inline-block", width: "250px" },
+  value: "Value2"
+});
 
-  return (
-    <Core.DateTimeSelector
-      departArrive={state.departArrive}
-      date={state.date}
-      dateFormatLegacy={text("dateFormatLegacy", "YY-M-d")}
-      forceLegacy={boolean("forceLegacy", false)}
-      time={state.time}
-      timeFormatLegacy={text("timeFormatLegacy", "HH:mm")}
-      onQueryParamChange={dateTimeSelOnQueryParamChange}
-    />
-  );
-};
+export const generalSettingsPanel = makeStory(GeneralSettingsTemplate, {
+  mode: "WALK,BUS,TRAM,SUBWAY"
+});
 
-export const dropdownSelector = () => (
-  <Core.DropdownSelector
-    name="MyParam"
-    style={{ display: "inline-block", width: "250px" }}
-    label="Pick an option:"
-    options={[
-      {
-        text: "Option 1",
-        value: "Value1"
-      },
-      {
-        text: "Option 2",
-        value: "Value2"
-      }
-    ]}
-    onChange={onChange}
-    value="Value2"
-  />
-);
-
-export const generalSettingsPanel = () => (
-  <Core.GeneralSettingsPanel
-    query={{
-      mode: text("mode", "WALK,BUS,TRAM,SUBWAY"),
-      routingType: "ITINERARY"
-    }}
-    onQueryParamChange={onQueryParamChange}
-    supportedModes={commonModes}
-  />
-);
-
-export const generalSettingsPanelWithCustomMessages = () => (
-  <Core.GeneralSettingsPanel
-    onQueryParamChange={onQueryParamChange}
-    query={{
-      mode: text("mode", "WALK,BUS,TRAM,SUBWAY"),
-      routingType: "ITINERARY"
-    }}
-    queryParamMessages={queryParamMessages}
-    supportedModes={commonModes}
-  />
+export const generalSettingsPanelWithCustomMessages = makeStory(
+  GeneralSettingsTemplate,
+  {
+    mode: "WALK,BUS,TRAM,SUBWAY",
+    queryParamMessages
+  }
 );
 
 const Space = () => (
@@ -172,7 +166,7 @@ const Space = () => (
   />
 );
 
-export const modeButtons = () => (
+export const modeButtons = (): ReactElement => (
   <div>
     <div>
       <Core.ModeButton onClick={onClick} title="Normal">
@@ -180,7 +174,7 @@ export const modeButtons = () => (
         +
         <Icons.Bike />
         Go by train
-        <span style={{ fontSize: "150%", color: "rgb(255, 195, 195);" }}>
+        <span style={{ fontSize: "150%", color: "rgb(255, 195, 195)" }}>
           {" "}
           or{" "}
         </span>{" "}
@@ -212,15 +206,13 @@ export const modeButtons = () => (
   </div>
 );
 
-export const modeSelector = () => (
+export const modeSelector = (): ReactElement => (
   <Core.ModeSelector modes={modeOptions} onChange={onChange} />
 );
 
-export const submodeSelector = () => (
-  <Core.SubmodeSelector
-    inline={boolean("inline", false)}
-    label="Submodes:"
-    modes={submodeOptions}
-    onChange={onChange}
-  />
-);
+export const submodeSelector = makeStory(Core.SubmodeSelector, {
+  inline: false,
+  label: "Submodes:",
+  modes: submodeOptions,
+  onChange
+});

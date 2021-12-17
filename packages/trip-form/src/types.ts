@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { FunctionComponent, ReactNode } from "react";
 import { StyledComponent } from "styled-components";
 
 /**
@@ -108,3 +108,6 @@ export type ModeButtonAndSubComponents = SimpleStyledDiv & {
   Button?: StyledComponent<"button", any>;
   Title?: SimpleStyledDiv;
 };
+
+// FIXME: move to icons package when converting that to TypeScript.
+export type ModeIconType = FunctionComponent<{ mode?: string }>;

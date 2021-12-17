@@ -1,5 +1,5 @@
 import CSS from "csstype";
-import React, { ReactElement } from "react";
+import React, { ReactElement, ReactNode } from "react";
 
 import ModeButton from "../ModeButton";
 import * as S from "../styled";
@@ -19,7 +19,7 @@ interface SubmodeSelectorProps {
   /**
    * The optional text to display before the submodes.
    */
-  label?: string;
+  label?: ReactNode;
   /**
    * An array of submodes for the trip query, i.e. transit modes, TNC, or rental companies.
    */
