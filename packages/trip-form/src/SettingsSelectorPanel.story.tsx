@@ -14,17 +14,47 @@ import trimet from "./test-utils/trimet-styled";
 import englishMessages from "../i18n/en-US.yml";
 import frenchMessages from "../i18n/fr.yml";
 
+// Customize a few strings to demonstrate French locale.
+// Normally, a translator would go through the entire query-params file.
+const frenchQueryParamMessages = {
+  maxWalkDistance: {
+    label: "Distance max. à pied",
+    options: [
+      {
+        text: "200 m",
+        value: 200
+      },
+      {
+        text: "500 m",
+        value: 500
+      }
+    ]
+  },
+  optimize: {
+    label: "Privilégier les trajets",
+    options: [
+      {
+        text: "les plus rapides",
+        value: "QUICK"
+      },
+      {
+        text: "avec le moins de correspondances",
+        value: "TRANSFERS"
+      }
+    ]
+  },
+  walkSpeed: {
+    label: "Demo: not everything is translated."
+  }
+};
+
 /**
  * Describes args passed to stories.
  */
 interface StoryArgs {
   locale?: string;
+  useStyle?: boolean;
 }
-
-const headingStyle = {
-  fontFamily: "sans-serif",
-  fontSize: "16px"
-};
 
 const onQueryParamChange = action("onQueryParamChange");
 
@@ -66,6 +96,10 @@ const decoratorPropDescription = "(This prop is used by the decorator.)";
 const noControl = {
   control: { type: false }
 };
+// Hide some story args completely.
+const hiddenProp = {
+  table: { disable: true }
+};
 
 const intlDecorator = (
   Story: StoryType,
@@ -74,45 +108,52 @@ const intlDecorator = (
   }
 ): ReactElement => {
   const { args } = context;
-  const { locale } = args;
+  const { locale, useStyle } = args;
   const messages = locale === "en-US" ? englishMessages : frenchMessages;
 
   return (
     <IntlProvider locale={locale} messages={flatten(messages)}>
-      <div>
-        <p style={headingStyle}>Plain</p>
-        <div>
-          <Story />
-        </div>
-
-        <p style={headingStyle}>Styled</p>
-        <div>{trimet(<Story />)}</div>
-      </div>
+      <div>{useStyle ? trimet(<Story />) : <Story />} </div>
     </IntlProvider>
   );
 };
 
 export default {
   argTypes: {
-    className: noControl,
+    className: hiddenProp,
     locale: {
-      control: "radio",
+      control: "inline-radio",
       description: decoratorPropDescription,
       options: ["en-US", "fr"]
-    }
+    },
+    ModeIcon: noControl,
+    queryParams: noControl,
+    style: hiddenProp,
+    supportedCompanies: noControl,
+    supportedModes: noControl
   },
   args: {
-    locale: "en-US"
+    locale: "en-US",
+    useStyle: false
   },
   component: SettingsSelectorPanel,
   decorators: [intlDecorator],
-  title: "SettingsSelectorPanel"
+  // Use of 'ṯ' character instead of 't' is intended.
+  // Including the word "Setting" in the title breaks storybook's lower pane.
+  title: "SeṯtingsSelectorPanel"
 };
 
 const SettingsPanelTemplate = args => (
   <PanelWrapper>
-    {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-    <SettingsSelectorPanel {...args} />
+    <SettingsSelectorPanel
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...args}
+      queryParamMessages={
+        args.locale === "en-US"
+          ? null // use built-in text for English
+          : frenchQueryParamMessages
+      }
+    />
   </PanelWrapper>
 );
 

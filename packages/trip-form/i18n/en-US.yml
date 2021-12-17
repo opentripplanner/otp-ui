@@ -13,5 +13,6 @@ otpUi:
     depart: Depart at
     now: Leave now
   SettingsSelectorPanel:
+    travelPreferences: Travel Preferences
     use: Use # as in "Use bus, train, subway".
     useCompanies: Use companies # as in :"Use companies: Spin, Lime, Bolt"

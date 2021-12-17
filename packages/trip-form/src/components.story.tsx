@@ -19,24 +19,20 @@ const onChange = action("onChange");
 const onClick = action("onClick");
 const onQueryParamChange = action("onQueryParamChange");
 
-const headingStyle = {
-  fontFamily: "sans-serif",
-  fontSize: "16px"
+const intlDecorator = (
+  Story: StoryType,
+  context: {
+    args: StoryArgs;
+  }
+): ReactElement => {
+  const { args } = context;
+  const { useStyle } = args;
+  return (
+    <IntlProvider locale="en-US" messages={flatten(englishMessages)}>
+      <div>{useStyle ? trimet(<Story />) : <Story />} </div>
+    </IntlProvider>
+  );
 };
-
-const intlDecorator = (Story: StoryType): ReactElement => (
-  <IntlProvider locale="en-US" messages={flatten(englishMessages)}>
-    <div>
-      <p style={headingStyle}>Plain</p>
-      <div>
-        <Story />
-      </div>
-
-      <p style={headingStyle}>Styled</p>
-      <div style={{ color: "#333" }}>{trimet(<Story />)}</div>
-    </div>
-  </IntlProvider>
-);
 
 /**
  * Helper to simplify story declaration.
@@ -63,14 +59,21 @@ const GeneralSettingsTemplate = (args: StoryArgs) => (
 const noControl = {
   control: { type: false }
 };
+// Hide some story args completely.
+const hiddenProp = {
+  table: { disable: true }
+};
 
 export default {
   argTypes: {
-    className: noControl,
+    className: hiddenProp,
     modes: noControl,
     onChange: noControl,
     onQueryParamChange: noControl,
-    style: noControl
+    style: hiddenProp
+  },
+  args: {
+    useStyle: false
   },
   component: SettingsSelectorPanel,
   decorators: [intlDecorator],
@@ -87,7 +90,7 @@ const queryParamMessages = {
     options: [
       {
         text: "200 m (custom)",
-        value: 100
+        value: 200
       },
       {
         text: "500 m (custom)",

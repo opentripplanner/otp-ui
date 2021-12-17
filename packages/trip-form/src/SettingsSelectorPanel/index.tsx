@@ -65,6 +65,19 @@ interface SettingsSelectorPanelProps {
    */
   queryParams?: QueryParams;
   /**
+   * An optional object that defines customizations for certain query parameters
+   * to change the label or list of options (both text and values) displayed for the desired parameters.
+   * Customizations can be as few or as many as needed.
+   * For a given parameter, default values from core-utils are used if no customization is provided.
+   * If custom options are provided for a parameter, only those provided will be displayed.
+   *
+   * For query parameter names and value formats,
+   * see https://github.com/opentripplanner/otp-ui/blob/master/packages/core-utils/src/__tests__/query.js#L14
+   */
+  queryParamMessages?: {
+    [key: string]: string | QueryParamOptions[];
+  };
+  /**
    * Standard React inline style prop.
    */
   style?: CSS.Properties;
@@ -100,6 +113,7 @@ export default function SettingsSelectorPanel({
   ModeIcon = TriMetModeIcon,
   onQueryParamChange = null,
   queryParams = null,
+  queryParamMessages = null,
   style = null,
   supportedCompanies = [],
   supportedModes = null
@@ -255,7 +269,13 @@ export default function SettingsSelectorPanel({
         style={{ margin: "0px -5px", paddingBottom: "8px" }}
       />
 
-      <S.SettingsHeader>Travel Preferences</S.SettingsHeader>
+      <S.SettingsHeader>
+        <FormattedMessage
+          defaultMessage={defaultMessages["otpUi.SettingsSelectorPanel.travelPreferences"]}
+          description="Header text for the travel preferences."
+          id="otpUi.SettingsSelectorPanel.travelPreferences"
+        />
+      </S.SettingsHeader>
 
       {selectedModes.some(isTransit) &&
         transitModes.length >= 2 && (
@@ -301,6 +321,7 @@ export default function SettingsSelectorPanel({
 
       <GeneralSettingsPanel
         query={queryParams}
+        queryParamMessages={queryParamMessages}
         supportedModes={supportedModes}
         onQueryParamChange={handleQueryParamChange}
       />
