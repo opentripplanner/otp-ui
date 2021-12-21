@@ -47,7 +47,7 @@ class RouteViewerOverlay extends MapLayer {
   updateLeafletElement() {}
 
   render() {
-    const { path, routeData, clipToPatternStops } = this.props;
+    const { clipToPatternStops, path, routeData } = this.props;
 
     if (!routeData || !routeData.patterns) return <FeatureGroup />;
 
@@ -59,15 +59,16 @@ class RouteViewerOverlay extends MapLayer {
       let clippedPts = pts;
       if (clipToPatternStops) {
         // First, go through all stops to find flex zones
-        const bboxes = pattern?.stops
-          ?.map(stop => {
-            if (stop.geometries?.geoJson?.type !== "Polygon") {
-              return null;
-            }
-            return stop.geometries.geoJson.coordinates?.[0] || null;
-          })
-          // Remove the null entries
-          .filter(bbox => !!bbox);
+        const bboxes =
+          pattern?.stops
+            ?.map(stop => {
+              if (stop.geometries?.geoJson?.type !== "Polygon") {
+                return null;
+              }
+              return stop.geometries.geoJson.coordinates?.[0] || null;
+            })
+            // Remove the null entries
+            .filter(bbox => !!bbox) || [];
 
         // Points we keep can't be in any of the flex zones
         clippedPts = pts.filter(point => {

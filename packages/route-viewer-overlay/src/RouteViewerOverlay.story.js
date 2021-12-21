@@ -38,6 +38,6 @@ export const WithPathStyling = () => (
 
 export const FlexRoute = () => (
   <BaseMap center={POWDER_SPRINGS} zoom={zoom}>
-    <RouteViewerOverlay routeData={flexRouteData} visible clipToPatternStops />
+    <RouteViewerOverlay clipToPatternStops routeData={flexRouteData} visible />
   </BaseMap>
 );
