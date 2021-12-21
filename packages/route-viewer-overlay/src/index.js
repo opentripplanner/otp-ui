@@ -4,6 +4,7 @@ import React from "react";
 import { FeatureGroup, MapLayer, Polyline, withLeaflet } from "react-leaflet";
 
 import polyline from "@mapbox/polyline";
+import pointInPolygon from "point-in-polygon";
 
 // helper fn to check if geometry has been populated for all patterns in route
 const isGeomComplete = routeData => {
@@ -46,7 +47,7 @@ class RouteViewerOverlay extends MapLayer {
   updateLeafletElement() {}
 
   render() {
-    const { path, routeData } = this.props;
+    const { path, routeData, clipToPatternStops } = this.props;
 
     if (!routeData || !routeData.patterns) return <FeatureGroup />;
 
@@ -55,13 +56,32 @@ class RouteViewerOverlay extends MapLayer {
     Object.values(routeData.patterns).forEach(pattern => {
       if (!pattern.geometry) return;
       const pts = polyline.decode(pattern.geometry.points);
+      let clippedPts = pts;
+      if (clipToPatternStops) {
+        // First, go through all stops to find flex zones
+        const bboxes = pattern?.stops
+          ?.map(stop => {
+            if (stop.geometries?.geoJson?.type !== "Polygon") {
+              return null;
+            }
+            return stop.geometries.geoJson.coordinates?.[0] || null;
+          })
+          // Remove the null entries
+          .filter(bbox => !!bbox);
+
+        // Points we keep can't be in any of the flex zones
+        clippedPts = pts.filter(point => {
+          const [y, x] = point;
+          return bboxes.every(bbox => !pointInPolygon([x, y], bbox));
+        });
+      }
       segments.push(
         <Polyline
           /* eslint-disable-next-line react/jsx-props-no-spreading */
           {...path}
           color={routeColor}
           key={pattern.id}
-          positions={pts}
+          positions={clippedPts}
         />
       );
     });
@@ -77,6 +97,13 @@ class RouteViewerOverlay extends MapLayer {
 }
 
 RouteViewerOverlay.propTypes = {
+  /**
+   * If pattern stops contain polygons, we can request that the routes are not drawn
+   * inside of these polygons by setting this prop to true. If true, the layer will
+   * check every zone of every stop in a pattern before drawing the route for that pattern
+   * and only draw the route outside of the polygon.
+   */
+  clipToPatternStops: PropTypes.bool,
   /**
    * Leaflet path properties to use to style each polyline that represents a
    * pattern of the route. Only a few of the items are actually used.
@@ -94,7 +121,17 @@ RouteViewerOverlay.propTypes = {
     patterns: PropTypes.objectOf(
       PropTypes.shape({
         geometry: coreUtils.types.encodedPolylineType,
-        id: PropTypes.string.isRequired
+        id: PropTypes.string.isRequired,
+        stops: PropTypes.arrayOf(
+          PropTypes.shape({
+            geometries: PropTypes.objectOf({
+              geoJson: PropTypes.objectOf({
+                coordinates: PropTypes.arrayOf(PropTypes.number),
+                type: PropTypes.string
+              })
+            })
+          })
+        )
       }).isRequired
     )
   })
