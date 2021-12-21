@@ -144,7 +144,7 @@ export const tripOptionsWithCustomIconsAndCloseButton = () => {
 };
 
 // TODO: resolve a11y issues
-const disableA11yParamters = {
+const disableA11yParameters = {
   a11y: {
     config: {
       rules: [
@@ -156,11 +156,11 @@ const disableA11yParamters = {
   }
 };
 
-tripOptions.parameters = disableA11yParamters;
+tripOptions.parameters = disableA11yParameters;
 
 // Disable storyshot for this story, as it is mostly the same as TripOptions except with
 // a hook that storyshot can't handle
 tripOptionsWithCustomIconsAndCloseButton.parameters = {
   storyshots: { disable: true },
-  ...disableA11yParamters
+  ...disableA11yParameters
 };
