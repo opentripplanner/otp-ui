@@ -6,10 +6,10 @@ import { action } from "@storybook/addon-actions";
 
 import * as Core from ".";
 
-import commonModes from "./test-utils/modes";
-import modeOptions from "./test-utils/mode-options";
-import submodeOptions from "./test-utils/submode-options";
-import trimet from "./test-utils/trimet-styled";
+import commonModes from "./__mocks__/modes-en";
+import modeOptions from "./__mocks__/mode-options";
+import submodeOptions from "./__mocks__/submode-options";
+import trimet from "./__mocks__/trimet-styled";
 
 import englishMessages from "../i18n/en-US.yml";
 import { SettingsSelectorPanel } from "./styled";
@@ -19,20 +19,16 @@ const onChange = action("onChange");
 const onClick = action("onClick");
 const onQueryParamChange = action("onQueryParamChange");
 
-const intlDecorator = (
-  Story: StoryType,
-  context: {
-    args: StoryArgs;
-  }
-): ReactElement => {
-  const { args } = context;
-  const { useStyle } = args;
-  return (
-    <IntlProvider locale="en-US" messages={flatten(englishMessages)}>
-      <div>{useStyle ? trimet(<Story />) : <Story />} </div>
-    </IntlProvider>
-  );
-};
+const intlDecorator = (Story: StoryType): ReactElement => (
+  <IntlProvider locale="en-US" messages={flatten(englishMessages)}>
+    <p>Plain</p>
+    <div>
+      <Story />
+    </div>
+    <p>Styled</p>
+    <div>{trimet(<Story />)}</div>
+  </IntlProvider>
+);
 
 /**
  * Helper to simplify story declaration.
@@ -71,9 +67,6 @@ export default {
     onChange: noControl,
     onQueryParamChange: noControl,
     style: hiddenProp
-  },
-  args: {
-    useStyle: false
   },
   component: SettingsSelectorPanel,
   decorators: [intlDecorator],

@@ -13,6 +13,10 @@ otpUi:
     depart: Départ
     now: Maintenant
   SettingsSelectorPanel:
+    bikeOnly: Vélo uniquement
+    escooterOnly: Trottinette uniquement
+    takeTransit: En transports
     travelPreferences: Préférences de trajet
     use: Utiliser # as in "Use bus, train, subway"
     useCompanies: Prestataires # as in "Use companies: Spin, Lime, Bolt"
+    walkOnly: À pied uniquement

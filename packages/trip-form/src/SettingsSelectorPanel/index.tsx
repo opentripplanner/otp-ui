@@ -5,7 +5,7 @@ import CSS from "csstype";
 import flatten from "flat";
 import { TriMetModeIcon } from "@opentripplanner/icons";
 import React, { ReactElement, useCallback, useState } from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 
 import ModeSelector from "../ModeSelector";
 import SubmodeSelector from "../SubmodeSelector";
@@ -216,12 +216,16 @@ export default function SettingsSelectorPanel({
     [onQueryParamChange, queryParams]
   );
 
+  const intl = useIntl();
+
   const modeOptions = getModeOptions(
     ModeIcon,
     supportedModes,
     selectedModes,
     selectedCompanies,
-    supportedCompanies
+    supportedCompanies,
+    intl,
+    defaultMessages
   );
   const transitModes = getTransitSubmodeOptions(
     ModeIcon,

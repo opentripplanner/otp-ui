@@ -3,8 +3,8 @@ import React, { Component, ReactElement, useState } from "react";
 
 import TripOptions from "./TripOptions";
 
-import commonCompanies from "./test-utils/companies";
-import commonModes from "./test-utils/modes";
+import commonCompanies from "./__mocks__/companies";
+import commonModes from "./__mocks__/modes-en";
 
 const onQueryParamChange = action("onQueryParamChange");
 

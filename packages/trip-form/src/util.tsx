@@ -3,6 +3,7 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { getCompanyIcon } from "@opentripplanner/icons";
 import React from "react";
+import { IntlShape } from "react-intl";
 
 // eslint-disable-next-line prettier/prettier
 import type {
@@ -29,23 +30,40 @@ export function isBike(mode: string): boolean {
   return isBicycle(mode) || isBicycleRent(mode);
 }
 
-const supportedExclusiveModes = [
-  {
-    mode: "WALK",
-    label: "Walk Only",
-    isActive: isWalk
-  },
-  {
-    mode: "BICYCLE",
-    label: "Bike Only",
-    isActive: isBike
-  },
-  {
-    mode: "MICROMOBILITY",
-    label: "E-scooter Only",
-    isActive: isMicromobility
-  }
-];
+function getSupportedExclusiveModes(
+  intl: IntlShape,
+  defaultMessages: Record<string, string>
+) {
+  return [
+    {
+      isActive: isWalk,
+      label: intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.SettingsSelectorPanel.walkOnly"],
+        description: "Text for walk-only mode option.",
+        id: "otpUi.SettingsSelectorPanel.walkOnly"
+      }),
+      mode: "WALK"
+    },
+    {
+      isActive: isBike,
+      label: intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.SettingsSelectorPanel.bikeOnly"],
+        description: "Text for bike-only mode option.",
+        id: "otpUi.SettingsSelectorPanel.bikeOnly"
+      }),
+      mode: "BICYCLE"
+    },
+    {
+      isActive: isMicromobility,
+      label: intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.SettingsSelectorPanel.escooterOnly"],
+        description: "Text for e-scooter-only mode option.",
+        id: "otpUi.SettingsSelectorPanel.escooterOnly"
+      }),
+      mode: "MICROMOBILITY"
+    }
+  ];
+}
 
 /**
  * Helper function so that TypeScript propagates the correct underlying type for ModeOption.
@@ -160,8 +178,20 @@ export function getTransitSubmodeOptions(
  * Returns the big primary "Take Transit" choice.
  * @param ModeIcon The icon component for rendering.
  * @param selectedModes An array of string that lists the modes selected for a trip query.
+ * @param intl The IntlShape object from react-intl.
+ * @param defaultMessages The default messages shown if no i18n messages are provided.
  */
-function getPrimaryModeOption(ModeIcon: ModeIconType, selectedModes: string[]): ModeSelectorOption {
+function getPrimaryModeOption(
+  ModeIcon: ModeIconType,
+  selectedModes: string[],
+  intl: IntlShape,
+  defaultMessages: Record<string, string>
+): ModeSelectorOption {
+  const title = intl.formatMessage({
+    defaultMessage: defaultMessages["otpUi.SettingsSelectorPanel.takeTransit"],
+    description: "Label for taking transit as main mode option.",
+    id: "otpUi.SettingsSelectorPanel.takeTransit"
+  })
   return {
     id: "TRANSIT",
     selected:
@@ -171,10 +201,10 @@ function getPrimaryModeOption(ModeIcon: ModeIconType, selectedModes: string[]): 
     text: (
       <span>
         <ModeIcon mode="TRANSIT" />
-        Take Transit
+        {title}
       </span>
     ),
-    title: "Take Transit"
+    title
   };
 }
 
@@ -253,15 +283,19 @@ function getTransitCombinedModeOptions(
  * @param ModeIcon The icon component for rendering.
  * @param modes The available modes to choose from.
  * @param selectedModes An array of string that lists the modes selected for a trip query.
+ * @param intl The IntlShape object from react-intl.
+ * @param defaultMessages The default messages shown if no i18n messages are provided.
  */
 function getExclusiveModeOptions(
   ModeIcon: ModeIconType,
   modes: ConfiguredModes,
-  selectedModes: string[]
+  selectedModes: string[],
+  intl: IntlShape,
+  defaultMessages: Record<string, string>
 ): ModeSelectorOption[] {
   const { exclusiveModes } = modes;
 
-  return supportedExclusiveModes
+  return getSupportedExclusiveModes(intl, defaultMessages)
     .filter(({ mode }) => exclusiveModes && exclusiveModes.includes(mode))
     .map(({ isActive, label, mode }) => ({
       id: mode,
@@ -285,16 +319,20 @@ function getExclusiveModeOptions(
  * @param selectedModes An array of string that lists the modes selected for a trip query.
  * @param selectedCompanies The companies to show as selected (when the user selects an exclusive mode operated by multiple companies).
  * @param supportedCompanies The supported companies for certain access modes.
+ * @param intl The IntlShape object from react-intl.
+ * @param defaultMessages The default messages shown if no i18n messages are provided.
  */
 export function getModeOptions(
   ModeIcon: ModeIconType,
   modes: ConfiguredModes,
   selectedModes: string[],
   selectedCompanies: string[],
-  supportedCompanies: ConfiguredCompany[]
+  supportedCompanies: ConfiguredCompany[],
+  intl: IntlShape,
+  defaultMessages: Record<string, string>
 ): ModeSelectorOptionSet {
   return {
-    primary: getPrimaryModeOption(ModeIcon, selectedModes),
+    primary: getPrimaryModeOption(ModeIcon, selectedModes, intl, defaultMessages),
     secondary: getTransitCombinedModeOptions(
       ModeIcon,
       modes,
@@ -302,7 +340,7 @@ export function getModeOptions(
       selectedCompanies,
       supportedCompanies
     ),
-    tertiary: getExclusiveModeOptions(ModeIcon, modes, selectedModes)
+    tertiary: getExclusiveModeOptions(ModeIcon, modes, selectedModes, intl, defaultMessages)
   };
 }
 

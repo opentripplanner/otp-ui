@@ -3,50 +3,21 @@ import { ClassicModeIcon } from "@opentripplanner/icons";
 import { action } from "@storybook/addon-actions";
 import React, { Component, ReactElement } from "react";
 import { IntlProvider } from "react-intl";
-
 import SettingsSelectorPanel from "./SettingsSelectorPanel";
 
-import commonCompanies from "./test-utils/companies";
-import commonModes from "./test-utils/modes";
-import commonModesEmpty from "./test-utils/modes-empty";
-import trimet from "./test-utils/trimet-styled";
+import commonCompanies from "./__mocks__/companies";
+import commonModesEmpty from "./__mocks__/modes-empty";
+import trimet from "./__mocks__/trimet-styled";
 
 import englishMessages from "../i18n/en-US.yml";
 import frenchMessages from "../i18n/fr.yml";
 
-// Customize a few strings to demonstrate French locale.
+// Customize a few strings from query-params to demonstrate French locale.
 // Normally, a translator would go through the entire query-params file.
-const frenchQueryParamMessages = {
-  maxWalkDistance: {
-    label: "Distance max. à pied",
-    options: [
-      {
-        text: "200 m",
-        value: 200
-      },
-      {
-        text: "500 m",
-        value: 500
-      }
-    ]
-  },
-  optimize: {
-    label: "Privilégier les trajets",
-    options: [
-      {
-        text: "les plus rapides",
-        value: "QUICK"
-      },
-      {
-        text: "avec le moins de correspondances",
-        value: "TRANSFERS"
-      }
-    ]
-  },
-  walkSpeed: {
-    label: "Demo: not everything is translated."
-  }
-};
+import frenchQueryParamMessages from "./__mocks__/query-params-fr.json";
+
+import commonModesEnglish from "./__mocks__/modes-en";
+import commonModesFrench from "./__mocks__/modes-fr";
 
 /**
  * Describes args passed to stories.
@@ -58,15 +29,15 @@ interface StoryArgs {
 
 const onQueryParamChange = action("onQueryParamChange");
 
-const storyQueryParams = {
-  mode: "WALK,TRANSIT",
-  routingType: "ITINERARY"
-};
-
 class PanelWrapper extends Component {
   constructor() {
     super();
-    this.state = { queryParams: storyQueryParams };
+    this.state = {
+      queryParams: {
+        mode: "WALK,TRANSIT",
+        routingType: "ITINERARY"
+      }
+    };
   }
 
   handleOnQueryParamChange = queryParam => {
@@ -153,6 +124,10 @@ const SettingsPanelTemplate = args => (
           ? null // use built-in text for English
           : frenchQueryParamMessages
       }
+      supportedModes={
+        args.supportedModes ||
+        (args.locale === "en-US" ? commonModesEnglish : commonModesFrench)
+      }
     />
   </PanelWrapper>
 );
@@ -167,13 +142,11 @@ function makeStory(args: StoryArgs | SettingsSelectorPanelProps) {
 }
 
 export const settingsSelectorPanel = makeStory({
-  supportedModes: commonModes,
   supportedCompanies: commonCompanies
 });
 
 export const settingsSelectorPanelWithCustomIcons = makeStory({
   ModeIcon: ClassicModeIcon,
-  supportedModes: commonModes,
   supportedCompanies: commonCompanies
 });
 
