@@ -25,7 +25,8 @@ import type {
   ConfiguredCompany,
   ConfiguredModes,
   ModeIconType,
-  QueryParamChangeEvent
+  QueryParamChangeEvent,
+  QueryParamOptions
 } from "../types";
 
 // Load the default messages.
