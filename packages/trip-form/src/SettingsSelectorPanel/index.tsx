@@ -3,6 +3,8 @@
 import coreUtils from "@opentripplanner/core-utils";
 import CSS from "csstype";
 import flatten from "flat";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore FIXME: Create TypeScript types for the icons package.
 import { TriMetModeIcon } from "@opentripplanner/icons";
 import React, { ReactElement, useCallback, useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";

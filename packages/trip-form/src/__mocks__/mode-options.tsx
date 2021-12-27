@@ -1,4 +1,6 @@
 import React from "react";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore FIXME: Create TypeScript types for the icons package.
 import * as Icons from "@opentripplanner/icons";
 
 const modeOptions = {
