@@ -72,3 +72,8 @@ export interface QueryProps {
    */
   DetailedModeIcon?: FunctionComponent<{ mode: string }>;
 }
+
+export type CheckboxIcons = {
+  checked: FunctionComponent;
+  unchecked: FunctionComponent;
+};

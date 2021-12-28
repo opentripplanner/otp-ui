@@ -1,14 +1,15 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import * as S from "./styled";
 
 // Prettier does not accept typescript in this file
 // eslint-disable-next-line prettier/prettier
 import type { ButtonProps } from "./Checkbox"
+import { CheckboxIcons } from "./types";
 
 export default function OptionButton({
   checkboxIcons,
-  children,
   checked,
+  children,
   className,
   disabled,
   iconFillOverride,
@@ -17,7 +18,7 @@ export default function OptionButton({
   onClick,
   selected
 }: {
-  checkboxIcons?: { checked: FunctionComponent; unchecked: FunctionComponent };
+  checkboxIcons?: CheckboxIcons;
   checked: boolean;
   children?: React.ReactNode | string;
   className?: string;
@@ -31,8 +32,8 @@ export default function OptionButton({
 
   return (
     <S.OptionButton
-      ariaLabel={label}
       ariaChecked={selected}
+      ariaLabel={label}
       className={className}
       disabled={disabled}
       onClick={onClick}
