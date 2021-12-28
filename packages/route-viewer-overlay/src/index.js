@@ -17,6 +17,28 @@ const isGeomComplete = routeData => {
   );
 };
 
+// helper function that removes all points from array of points that are
+// within flex zones defined in an array of stops
+const removePointsInFlexZone = (stops, points) => {
+  // First, go through all stops to find flex zones
+  const bboxes =
+    stops
+      ?.map(stop => {
+        if (stop.geometries?.geoJson?.type !== "Polygon") {
+          return null;
+        }
+        return stop.geometries.geoJson.coordinates?.[0] || null;
+      })
+      // Remove the null entries
+      .filter(bbox => !!bbox) || [];
+
+  // Points we keep can't be in any of the flex zones
+  return points.filter(point => {
+    const [y, x] = point;
+    return bboxes.every(bbox => !pointInPolygon([x, y], bbox));
+  });
+};
+
 /**
  * An overlay that will display all polylines of the patterns of a route.
  */
@@ -56,26 +78,10 @@ class RouteViewerOverlay extends MapLayer {
     Object.values(routeData.patterns).forEach(pattern => {
       if (!pattern.geometry) return;
       const pts = polyline.decode(pattern.geometry.points);
-      let clippedPts = pts;
-      if (clipToPatternStops) {
-        // First, go through all stops to find flex zones
-        const bboxes =
-          pattern?.stops
-            ?.map(stop => {
-              if (stop.geometries?.geoJson?.type !== "Polygon") {
-                return null;
-              }
-              return stop.geometries.geoJson.coordinates?.[0] || null;
-            })
-            // Remove the null entries
-            .filter(bbox => !!bbox) || [];
+      const clippedPts = clipToPatternStops
+        ? removePointsInFlexZone(pattern?.stops, pts)
+        : pts;
 
-        // Points we keep can't be in any of the flex zones
-        clippedPts = pts.filter(point => {
-          const [y, x] = point;
-          return bboxes.every(bbox => !pointInPolygon([x, y], bbox));
-        });
-      }
       segments.push(
         <Polyline
           /* eslint-disable-next-line react/jsx-props-no-spreading */
