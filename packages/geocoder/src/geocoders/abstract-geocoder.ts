@@ -6,15 +6,15 @@ import type { LonLatInput } from "@conveyal/lonlat"
 import type { Feature, FeatureCollection } from "geojson"
 
 type Rect = {
-  maxLat: number
-  maxLon: number
-  minLat: number
-  minLon: number
+  maxLat: number | string
+  maxLon: number | string
+  minLat: number | string
+  minLon: number | string
 }
 
 type Boundary = {
-  country: string
-  rect: Rect
+  country?: string
+  rect?: Rect
 }
 
 type GeocoderAPI = {
@@ -32,17 +32,17 @@ export type GeocoderConfig = {
 }
 
 export type ReverseQuery = {
-  apiKey: string,
-  point: LonLatInput,
+  apiKey?: string,
+  point?: LonLatInput,
   options?: RequestInit,
   format?: boolean
   url?: string
 }
 
 export type AutocompleteQuery = {
-  apiKey: string,
-  options: RequestInit,
-  size?: number,
+  apiKey?: string,
+  options?: RequestInit,
+  size?: number | string,
   text?: string,
   boundary?: Boundary,
   focusPoint?: LonLatInput,
@@ -51,9 +51,9 @@ export type AutocompleteQuery = {
 }
 
 export type SearchQuery = {
-  apiKey: string,
-  options: RequestInit,
-  size?: number,
+  apiKey?: string,
+  options?: RequestInit,
+  size?: number | string,
   text?: string,
   boundary?: Boundary,
   focusPoint?: LonLatInput,

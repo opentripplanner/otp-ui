@@ -30,6 +30,90 @@ Object {
 }
 `;
 
+exports[`geocoder ARCGIS should get location from geocode feature 2`] = `
+Object {
+  "features": Array [
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          0.1296100000000706,
+          51.973520000000065,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "confidence": 0.875,
+        "country": "GBR",
+        "country_a": "GBR",
+        "county": "Essex",
+        "label": "Mill End, Clavering, Saffron Walden, Essex, England, GBR",
+        "locality": "Saffron Walden",
+        "name": "Mill End",
+        "neighbourhood": "Mill End",
+        "region": "England",
+        "resultId": undefined,
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -0.8668999999999301,
+          51.558340000000044,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "confidence": 0.875,
+        "country": "GBR",
+        "country_a": "GBR",
+        "county": "Oxfordshire",
+        "label": "Mill End, Hambleden, Henley-on-Thames, Oxfordshire, England, GBR",
+        "locality": "Henley-on-Thames",
+        "name": "Mill End",
+        "neighbourhood": "Mill End",
+        "region": "England",
+        "resultId": undefined,
+      },
+      "type": "Feature",
+    },
+  ],
+  "query": Object {
+    "text": "Mill Ends",
+  },
+}
+`;
+
+exports[`geocoder ARCGIS should get location from geocode feature 3`] = `
+Object {
+  "lat": 51.973520000000065,
+  "lon": 0.1296100000000706,
+  "name": "Mill End, Clavering, Saffron Walden, Essex, England, GBR",
+  "rawGeocodedFeature": Object {
+    "geometry": Object {
+      "coordinates": Array [
+        0.1296100000000706,
+        51.973520000000065,
+      ],
+      "type": "Point",
+    },
+    "properties": Object {
+      "confidence": 0.875,
+      "country": "GBR",
+      "country_a": "GBR",
+      "county": "Essex",
+      "label": "Mill End, Clavering, Saffron Walden, Essex, England, GBR",
+      "locality": "Saffron Walden",
+      "name": "Mill End",
+      "neighbourhood": "Mill End",
+      "region": "England",
+      "resultId": undefined,
+    },
+    "type": "Feature",
+  },
+}
+`;
+
 exports[`geocoder ARCGIS should make autocomplete query 1`] = `
 Object {
   "features": Array [
@@ -54,6 +138,33 @@ Object {
 `;
 
 exports[`geocoder ARCGIS should make reverse query 1`] = `
+Object {
+  "lat": 45.516198,
+  "lon": -122.67324,
+  "name": "SW Naito Pkwy, Portland, OR, 97204, USA",
+  "rawGeocodedFeature": Object {
+    "geometry": Object {
+      "coordinates": Array [
+        -122.67320084756255,
+        45.516175523600715,
+      ],
+      "type": "Point",
+    },
+    "properties": Object {
+      "country_a": "USA",
+      "county": "Multnomah County",
+      "label": "SW Naito Pkwy, Portland, OR, 97204, USA",
+      "locality": undefined,
+      "name": "SW Naito Pkwy",
+      "neighbourhood": "Downtown",
+      "region": "Oregon",
+    },
+    "type": "Feature",
+  },
+}
+`;
+
+exports[`geocoder ARCGIS should make reverse query 2`] = `
 Object {
   "lat": 45.516198,
   "lon": -122.67324,
@@ -131,6 +242,261 @@ Object {
   "query": Object {
     "text": "Mill Ends",
   },
+}
+`;
+
+exports[`geocoder ARCGIS should make search query 2`] = `
+Object {
+  "features": Array [
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          0.1296100000000706,
+          51.973520000000065,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "confidence": 0.875,
+        "country": "GBR",
+        "country_a": "GBR",
+        "county": "Essex",
+        "label": "Mill End, Clavering, Saffron Walden, Essex, England, GBR",
+        "locality": "Saffron Walden",
+        "name": "Mill End",
+        "neighbourhood": "Mill End",
+        "region": "England",
+        "resultId": undefined,
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -0.8668999999999301,
+          51.558340000000044,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "confidence": 0.875,
+        "country": "GBR",
+        "country_a": "GBR",
+        "county": "Oxfordshire",
+        "label": "Mill End, Hambleden, Henley-on-Thames, Oxfordshire, England, GBR",
+        "locality": "Henley-on-Thames",
+        "name": "Mill End",
+        "neighbourhood": "Mill End",
+        "region": "England",
+        "resultId": undefined,
+      },
+      "type": "Feature",
+    },
+  ],
+  "query": Object {
+    "text": "Mill Ends",
+  },
+}
+`;
+
+exports[`geocoder HERE should get location from geocode feature 1`] = `
+Object {
+  "lat": 45.516198,
+  "lon": -122.67324,
+  "name": "Mill Ends Park, Portland, OR, USA",
+  "rawGeocodedFeature": Object {
+    "geometry": Object {
+      "coordinates": Array [
+        -122.67324,
+        45.516198,
+      ],
+      "type": "Point",
+    },
+    "properties": Object {
+      "label": "Mill Ends Park, Portland, OR, USA",
+    },
+  },
+}
+`;
+
+exports[`geocoder HERE should make autocomplete query 1`] = `
+Object {
+  "features": Array [
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.31701,
+          47.68199,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "country": "United States",
+        "country_a": "USA",
+        "country_code": "USA",
+        "county": "King",
+        "housenumber": "7300",
+        "label": "Safeway, 7300 Roosevelt Way NE, Seattle, WA 98115-5658, United States",
+        "layer": "venue",
+        "locality": "Seattle",
+        "name": "Safeway",
+        "neighbourhood": "Roosevelt",
+        "postalcode": "98115-5658",
+        "region": "Washington",
+        "source": "here",
+        "street": "Roosevelt Way NE",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.31388,
+          47.66427,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "country": "United States",
+        "country_a": "USA",
+        "country_code": "USA",
+        "county": "King",
+        "housenumber": "4732",
+        "label": "Safeway, 4732 Brooklyn Ave NE, Seattle, WA 98105-4411, United States",
+        "layer": "venue",
+        "locality": "Seattle",
+        "name": "Safeway",
+        "neighbourhood": "University District",
+        "postalcode": "98105-4411",
+        "region": "Washington",
+        "source": "here",
+        "street": "Brooklyn Ave NE",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.28943,
+          47.68261,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "country": "United States",
+        "country_a": "USA",
+        "country_code": "USA",
+        "county": "King",
+        "housenumber": "7340",
+        "label": "Safeway, 7340 35th Ave NE, Seattle, WA 98115, United States",
+        "layer": "venue",
+        "locality": "Seattle",
+        "name": "Safeway",
+        "neighbourhood": "Bryant",
+        "postalcode": "98115",
+        "region": "Washington",
+        "source": "here",
+        "street": "35th Ave NE",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.35496,
+          47.69285,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "country": "United States",
+        "country_a": "USA",
+        "country_code": "USA",
+        "county": "King",
+        "housenumber": "8704",
+        "label": "Safeway, 8704 Greenwood Ave N, Seattle, WA 98103, United States",
+        "layer": "venue",
+        "locality": "Seattle",
+        "name": "Safeway",
+        "neighbourhood": "Greenwood",
+        "postalcode": "98103",
+        "region": "Washington",
+        "source": "here",
+        "street": "Greenwood Ave N",
+      },
+      "type": "Feature",
+    },
+  ],
+  "type": "FeatureCollection",
+}
+`;
+
+exports[`geocoder HERE should make reverse query 1`] = `
+Object {
+  "lat": 45.5164,
+  "lon": -122.67357,
+  "name": "833 SW Naito Pkwy, Portland, OR 97204-3309, United States",
+  "rawGeocodedFeature": Object {
+    "geometry": Object {
+      "coordinates": Array [
+        -122.67357,
+        45.5164,
+      ],
+      "type": "Point",
+    },
+    "properties": Object {
+      "country": "United States",
+      "country_a": "USA",
+      "country_code": "USA",
+      "county": "Multnomah",
+      "housenumber": "833",
+      "label": "833 SW Naito Pkwy, Portland, OR 97204-3309, United States",
+      "layer": "address",
+      "locality": "Portland",
+      "name": "833 SW Naito Pkwy, Portland, OR 97204-3309, United States",
+      "neighbourhood": "Downtown",
+      "postalcode": "97204-3309",
+      "region": "Oregon",
+      "source": "here",
+      "street": "SW Naito Pkwy",
+    },
+    "type": "Feature",
+  },
+}
+`;
+
+exports[`geocoder HERE should make search query 1`] = `
+Object {
+  "features": Array [
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.31701,
+          47.68199,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "confidence": 1,
+        "country": "United States",
+        "country_a": "USA",
+        "country_code": "USA",
+        "county": "King",
+        "housenumber": "7300",
+        "label": "Safeway, 7300 Roosevelt Way NE, Seattle, WA 98115-5658, United States",
+        "layer": "venue",
+        "locality": "Seattle",
+        "name": "Safeway",
+        "neighbourhood": "Roosevelt",
+        "postalcode": "98115-5658",
+        "region": "Washington",
+        "source": "here",
+        "street": "Roosevelt Way NE",
+      },
+      "type": "Feature",
+    },
+  ],
+  "type": "FeatureCollection",
 }
 `;
 

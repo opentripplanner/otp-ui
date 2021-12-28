@@ -17,6 +17,13 @@ export const geocoderConfig = {
   maxNearbyStops: 4,
   type: "PELIAS"
 };
+
+export const hereGeocoderConfig = {
+  type: "HERE",
+  apiKey: "fo_vzDfPGAYXJTG3HbdEZutV-4vjsP0LyekRDac_XaY",
+  focusPoint: { lat: 47.67552, lng: -122.31831 }
+};
+
 export const getCurrentPosition = action("getCurrentPosition");
 export const onLocationSelected = action("onLocationSelected");
 export const selectedLocation = { name: "123 Main St" };

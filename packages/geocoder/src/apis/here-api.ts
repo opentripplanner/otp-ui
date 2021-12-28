@@ -1,5 +1,5 @@
 import { stringify } from "querystring"
-import lonlat from "@conveyal/lonlat"
+import { normalize } from "@conveyal/lonlat"
 
 // Prettier does not support typescript annotation
 // eslint-disable-next-line prettier/prettier
@@ -25,7 +25,7 @@ export type Boundary = {
 export type HereQuery = {
   at?: string,
   in?: string,
-  limit?: number,
+  limit?: number | string,
   q?: string,
   qq?: string,
   lang?: string,
@@ -56,11 +56,6 @@ function run({
 }: HereFetchArgs): JSONArrayPromise {
   return fetch(`${url}?${stringify(query)}`, options)
     .then((res) => res.json())
-    .then((json) => {
-      const jsonResponse = json
-
-      return jsonResponse
-    })
 }
 
 /**
@@ -89,20 +84,20 @@ function autocomplete({
   const query: HereQuery = { apiKey, q: text, limit: size, show: "details" }
 
   if (focusPoint) {
-    const { lat, lon }: LonLatOutput = lonlat(focusPoint)
+    const { lat, lon }: LonLatOutput = normalize(focusPoint)
     query.at = `${lat},${lon}`
   }
 
   if (boundary) {
     if (focusPoint) throw new GeocoderException("Only one of focusPoint, boundary is allowed for Here API.")
-    if (boundary.country) query["in.countryCode"] = boundary.country
+    if (boundary.country) query.in = `countryCode:${boundary.country}`
     if (boundary.rect) {
-      query["in.bbox"] = [
+      query.in = `bbox:${[
         boundary.rect.minLon,
         boundary.rect.minLat,
         boundary.rect.maxLon,
         boundary.rect.maxLat
-      ].join(",")
+      ].join(",")}`
     }
   }
   return run({
@@ -142,7 +137,7 @@ function search({
   }
 
   if (focusPoint) {
-    const { lat, lon }: LonLatOutput = lonlat(focusPoint)
+    const { lat, lon }: LonLatOutput = normalize(focusPoint)
     query.at = `${lat},${lon}`
   }
 
@@ -170,7 +165,7 @@ function reverse({
   }
 
   if (point) {
-    const { lat, lon }: LonLatOutput = lonlat(point)
+    const { lat, lon }: LonLatOutput = normalize(point)
     query.at = `${lat},${lon}`
   } else {
     throw new GeocoderException("No point provided for reverse geocoder.")

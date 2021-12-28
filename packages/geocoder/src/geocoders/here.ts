@@ -57,12 +57,13 @@ export default class HereGeocoder extends Geocoder {
     };
   }
 
-  rewriteAutocompleteResponse({ items }: HereResponse): MultiGeocoderResponse {
+  rewriteAutocompleteResponse(response: HereResponse): MultiGeocoderResponse {
+    const { items } = response
     return {
       type: "FeatureCollection",
       features: items
         // Here can return continued query suggestions, which we do not support.
-        .filter(item => item.resultType === "place")
+        .filter(item => item.resultType !== "chainQuery")
         .map(convertHereToGeojson)
     };
   }

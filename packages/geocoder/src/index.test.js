@@ -19,6 +19,10 @@ describe("geocoder", () => {
       baseUrl: "https://ws-st.trimet.org/pelias/v1",
       type: "PELIAS"
     },
+    {
+      apiKey: "dummy-here-key",
+      type: "HERE"
+    },
     // this entry represents no geocoder configuration. In this case it is
     // expected that the NoApiGeocoder will be used.
     undefined
@@ -72,6 +76,22 @@ describe("geocoder", () => {
     .query(true)
     .replyWithFile(200, mockResponsePath("pelias", "reverse-response.json"));
 
+  // nocks for HERE
+  nock(/.*\.hereapi\.com/)
+    .persist()
+    // autocomplete
+    .get(`/v1/autosuggest`)
+    .query(true)
+    .replyWithFile(200, mockResponsePath("here", "autosuggest-response.json"))
+    // geocode
+    .get("/v1/geocode")
+    .query(true)
+    .replyWithFile(200, mockResponsePath("here", "search-response.json"))
+    // reverse
+    .get("/v1/revgeocode")
+    .query(true)
+    .replyWithFile(200, mockResponsePath("here", "reverse-response.json"));
+
   geocoders.forEach(geocoder => {
     const geocoderType = geocoder ? geocoder.type : "NoApiGeocoder";
     // the describe is in quotes to bypass a lint rule
@@ -110,6 +130,17 @@ describe("geocoder", () => {
             };
             break;
           case "PELIAS":
+            mockFeature = {
+              geometry: {
+                coordinates: [-122.67324, 45.516198],
+                type: "Point"
+              },
+              properties: {
+                label: "Mill Ends Park, Portland, OR, USA"
+              }
+            };
+            break;
+          case "HERE":
             mockFeature = {
               geometry: {
                 coordinates: [-122.67324, 45.516198],
