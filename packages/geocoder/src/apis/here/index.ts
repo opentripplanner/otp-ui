@@ -48,7 +48,7 @@ function run({
 
 /**
  * Search for an address using
- * Here's {@link https://mapzen.com/documentation/search/autocomplete/|Autocomplete}
+ * Here's {@link https://developer.here.com/documentation/geocoding-search-api/api-reference-swagger.html|Autocomplete}
  * service.
  *
  * @param {Object} $0
@@ -97,7 +97,7 @@ function autocomplete({
 
 /**
  * Search for an address using
- * HERE's {@link https://mapzen.com/documentation/search/search/|Search}
+ * HERE's {@link https://developer.here.com/documentation/geocoding-search-api/api-reference-swagger.html|Search}
  * service. NOTE: Here does not support a boundary for Search queries, unlike Pelias.
  *
  * @param {Object} $0
@@ -134,7 +134,7 @@ function search({
 
 /**
  * Search for an address using
- * HERE's {@link https://mapzen.com/documentation/search/search/|Search}
+ * HERE's {@link https://developer.here.com/documentation/geocoding-search-api/api-reference-swagger.html|Search}
  * service.
  *
  * @param {Object} $0
