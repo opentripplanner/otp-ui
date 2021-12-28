@@ -1,7 +1,7 @@
 // Prettier does not support typescript annotation
 // eslint-disable-next-line prettier/prettier
 import type { Feature } from "geojson"
-import type { HereResponse } from "../apis/here-api.types";
+import type { HereResponse, Item } from "../apis/here/types";
 import type { SingleGeocoderResponse, MultiGeocoderResponse } from "./abstract-geocoder";
 
 import Geocoder from "./abstract-geocoder";
@@ -12,7 +12,7 @@ const hereResultTypeToPeliasLayerMap = {
   houseNumber: "address"
 };
 
-const convertHereToGeojson = (hereFeature): Feature => {
+const convertHereToGeojson = (hereFeature: Item): Feature => {
   const extraFields: { confidence?: number } = {} ;
   if (hereFeature.scoring) {
     extraFields.confidence = hereFeature.scoring.queryScore;

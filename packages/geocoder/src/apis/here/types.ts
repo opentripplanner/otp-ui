@@ -2,6 +2,18 @@ export interface HereResponse {
   items: Item[];
 }
 
+export type Rect = {
+  maxLat: number;
+  maxLon: number;
+  minLat: number;
+  minLon: number;
+};
+
+export type Boundary = {
+  country: string;
+  rect: Rect;
+};
+
 export interface Item {
   title: string;
   id: string;

@@ -1,7 +1,7 @@
 import * as arcgis from "@conveyal/geocoder-arcgis-geojson";
 import * as pelias from "isomorphic-mapzen-search";
 import memoize from "lodash.memoize";
-import * as here from "./apis/here-api";
+import * as here from "./apis/here";
 
 import ArcGISGeocoder from "./geocoders/arcgis";
 import NoApiGeocoder from "./geocoders/noapi";

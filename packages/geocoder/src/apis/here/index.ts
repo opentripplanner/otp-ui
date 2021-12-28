@@ -4,25 +4,13 @@ import { normalize } from "@conveyal/lonlat"
 // Prettier does not support typescript annotation
 // eslint-disable-next-line prettier/prettier
 import type { LonLatOutput } from "@conveyal/lonlat"
-import type { AutocompleteQuery, ReverseQuery, SearchQuery } from "../geocoders/abstract-geocoder"
+import type { AutocompleteQuery, ReverseQuery, SearchQuery } from "../../geocoders/abstract-geocoder"
 
 const geocodeUrl = "https://geocode.search.hereapi.com/v1/geocode"
 const autocompleteUrl = "https://autosuggest.search.hereapi.com/v1/autosuggest"
 const reverseUrl = "https://revgeocode.search.hereapi.com/v1/revgeocode"
 
-export type Rect = {
-  maxLat: number
-  maxLon: number
-  minLat: number
-  minLon: number
-}
-
-export type Boundary = {
-  country: string
-  rect: Rect
-}
-
-export type HereQuery = {
+type HereQuery = {
   at?: string,
   in?: string,
   limit?: number | string,
