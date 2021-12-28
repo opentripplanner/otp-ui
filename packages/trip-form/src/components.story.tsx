@@ -170,11 +170,7 @@ export const modeButtons = (): ReactElement => (
         +
         <Icons.Bike />
         Go by train
-        <span style={{ fontSize: "150%", color: "rgb(255, 195, 195)" }}>
-          {" "}
-          or{" "}
-        </span>{" "}
-        bike
+        <span style={{ fontSize: "150%", color: "#b03030" }}> or </span> bike
       </Core.ModeButton>
       <Space />
       <Core.ModeButton selected onClick={onClick} title="Active">
