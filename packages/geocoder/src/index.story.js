@@ -118,7 +118,14 @@ GeocoderTester.defaultProps = {
 
 export default {
   title: "Geocoder",
-  component: <GeocoderTester />,
+  component: (
+    <GeocoderTester
+      endpoint="search"
+      hereApiKey="placeholder"
+      geocodeEarthApiKey="placeholder"
+      onResults={() => null}
+    />
+  ),
   argTypes: { onResults: { action: "result" } }
 };
 
