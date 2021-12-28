@@ -1,5 +1,6 @@
 import BaseMap from "@opentripplanner/base-map";
 import React, { useState } from "react";
+import { GeoJSON } from "react-leaflet";
 
 import routeData from "../__mocks__/mock-route.json";
 import flexRouteData from "../__mocks__/mock-flex-route.json";
@@ -51,6 +52,9 @@ const FlexRouteWithClipButton = () => {
           routeData={flexRouteData}
           visible
         />
+        {/* Since the data is fixed, we know that stops[1] will contain the relevant flex zone. 
+        Using the stopsOverlay is not possible as it is very complex to implement */}
+        <GeoJSON data={flexRouteData.stops[1].geometries.geoJson} />
       </BaseMap>
     </>
   );
