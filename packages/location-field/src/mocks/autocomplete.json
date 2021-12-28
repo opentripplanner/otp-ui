@@ -457,11 +457,12 @@
       "properties": {
         "id": "way/555892536",
         "gid": "openstreetmap:venue:way/555892536",
-        "layer": "venue",
+        "layer": "example_layer",
         "source": "openstreetmap",
         "source_id": "way/555892536",
         "country_code": "US",
-        "name": "Whole Foods Market",
+        "distance": 999999,
+        "name": "Important, far away Whole Foods Market",
         "accuracy": "point",
         "country": "United States",
         "country_gid": "whosonfirst:country:85633793",
@@ -476,7 +477,7 @@
         "locality_gid": "whosonfirst:locality:101730265",
         "continent": "North America",
         "continent_gid": "whosonfirst:continent:102191575",
-        "label": "Whole Foods Market, University Place, WA, USA",
+        "label": "Whole Foods that is far away, but prioritized",
         "addendum": {
           "osm": {
             "brand": "Whole Foods Market"

@@ -70,11 +70,12 @@ class LocationField extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: this.getValueFromLocation(),
+      activeIndex: null,
+      geocodedFeatures: [],
+      listBoxId: `listbox-${optionKey}`,
       menuVisible: false,
       message: null,
-      geocodedFeatures: [],
-      activeIndex: null
+      value: this.getValueFromLocation()
     };
   }
 
@@ -392,6 +393,7 @@ class LocationField extends Component {
       currentPositionIcon,
       currentPositionUnavailableIcon,
       inputPlaceholder,
+      preferredLayers,
       layerColorMap,
       location,
       clearButtonIcon,
@@ -401,6 +403,7 @@ class LocationField extends Component {
       sessionOptionIcon,
       showClearButton,
       showUserSettings,
+      sortByDistance,
       static: isStatic,
       stopOptionIcon,
       stopsIndex,
@@ -412,6 +415,7 @@ class LocationField extends Component {
     const { menuVisible, value } = this.state;
     const { activeIndex, message } = this.state;
     let { geocodedFeatures } = this.state;
+    const { listBoxId } = this.state;
 
     let { sessionSearches } = this.props;
     if (sessionSearches.length > 5)
@@ -427,11 +431,29 @@ class LocationField extends Component {
 
     /* 1) Process geocode search result option(s) */
     if (geocodedFeatures.length > 0) {
-      geocodedFeatures = geocodedFeatures.sort(
-        (a, b) =>
-          (a.properties?.distance || Infinity) -
-          (b.properties?.distance || Infinity)
+      // Split features into those we want to always show above others
+      const { special, normal } = geocodedFeatures.reduce(
+        (prev, cur) => {
+          prev[
+            preferredLayers.includes(cur?.properties?.layer)
+              ? "special"
+              : "normal"
+          ].push(cur);
+          return prev;
+        },
+        { special: [], normal: [] }
       );
+
+      geocodedFeatures = [
+        ...special,
+        ...normal.sort((a, b) => {
+          if (!sortByDistance) return 0;
+          return (
+            (b.properties?.distance || Infinity) -
+            (a.properties?.distance || Infinity)
+          );
+        })
+      ];
 
       // Add the menu sub-heading (not a selectable item)
       // menuItems.push(<MenuItem header key='sr-header'>Search Results</MenuItem>)
@@ -670,17 +692,22 @@ class LocationField extends Component {
         : defaultPlaceholder;
     const textControl = (
       <S.Input
-        ref={ref => {
-          this.inputRef = ref;
-        }}
+        aria-autocomplete="list"
+        aria-controls={listBoxId}
+        aria-expanded={menuVisible}
+        aria-haspopup="listbox"
         aria-label={defaultPlaceholder}
         autoFocus={autoFocus}
         className={this.getFormControlClassname()}
-        value={value}
-        placeholder={placeholder}
         onChange={this.onTextInputChange}
         onClick={this.onTextInputClick}
         onKeyDown={this.onKeyDown}
+        placeholder={placeholder}
+        ref={ref => {
+          this.inputRef = ref;
+        }}
+        role="combobox"
+        value={value}
       />
     );
 
@@ -710,7 +737,7 @@ class LocationField extends Component {
               {clearButton}
             </S.InputGroup>
           </S.FormGroup>
-          <S.StaticMenuItemList>
+          <S.StaticMenuItemList uniqueId={listBoxId}>
             {menuItems.length > 0 ? ( // Show typing prompt to avoid empty screen
               menuItems
             ) : (
@@ -729,9 +756,10 @@ class LocationField extends Component {
         <S.InputGroup>
           {/* location field icon -- also serves as dropdown anchor */}
           <S.Dropdown
+            listBoxIdentifier={listBoxId}
             locationType={locationType}
-            open={menuVisible}
             onToggle={this.onDropdownToggle}
+            open={menuVisible}
             title={<LocationIconComponent locationType={locationType} />}
           >
             {menuItems}
@@ -802,6 +830,11 @@ LocationField.propTypes = {
       properties: PropTypes.shape({ id: PropTypes.string })
     })
   ),
+  /**
+   * Results are sorted by distance, but favored layers will always appear
+   * first.
+   */
+  preferredLayers: PropTypes.arrayOf(PropTypes.string),
   /**
    * Invoked whenever the currentPosition is set, but the nearbyStops are not.
    * Sends the following argument:
@@ -935,6 +968,11 @@ LocationField.propTypes = {
    */
   operatorIconMap: PropTypes.shape({ [PropTypes.string]: PropTypes.node }),
   /**
+   * A boolean for whether to override the result sort order and sort by
+   * distance.
+   */
+  sortByDistance: PropTypes.bool,
+  /**
    * A slot for the icon to display for an option that was used during the
    * current session.
    */
@@ -1008,6 +1046,7 @@ LocationField.defaultProps = {
   currentPositionIcon: <LocationArrow size={13} />,
   currentPositionUnavailableIcon: <Ban size={13} />,
   initialSearchResults: null,
+  preferredLayers: [],
   findNearbyStops: () => {},
   GeocodedOptionIconComponent: GeocodedOptionIcon,
   hideExistingValue: false,
@@ -1020,6 +1059,7 @@ LocationField.defaultProps = {
   operatorIconMap: {},
   sessionOptionIcon: <Search size={13} />,
   sessionSearches: [],
+  sortByDistance: false,
   showClearButton: true,
   showUserSettings: false,
   static: false,

@@ -26,7 +26,11 @@ export const DropdownContainer = styled.span`
   width: 100%;
 `;
 
-export const MenuItemList = styled.ul`
+export const MenuItemList = styled.ul.attrs(props => ({
+  "aria-label": "Search Results",
+  id: props.uniqueId,
+  role: "listbox"
+}))`
   background-clip: padding-box;
   background-color: #fff;
   border-radius: 4px;
@@ -46,20 +50,30 @@ export const MenuItemList = styled.ul`
   z-index: 1000000;
 `;
 
-export const Dropdown = ({ children, locationType, open, onToggle, title }) => {
+export const Dropdown = ({
+  children,
+  listBoxIdentifier,
+  locationType,
+  onToggle,
+  open,
+  title
+}) => {
   const dropdownButtonAriaLabel = `List the suggested ${locationType} locations as you type`;
   return (
     <DropdownContainer>
       <DropdownButton aria-label={dropdownButtonAriaLabel} onClick={onToggle}>
         {title}
       </DropdownButton>
-      {open && <MenuItemList>{children}</MenuItemList>}
+      {open && (
+        <MenuItemList uniqueId={listBoxIdentifier}>{children}</MenuItemList>
+      )}
     </DropdownContainer>
   );
 };
 
 Dropdown.propTypes = {
   children: PropTypes.node.isRequired,
+  listBoxIdentifier: PropTypes.string.isRequired,
   locationType: PropTypes.string.isRequired,
   open: PropTypes.bool.isRequired,
   onToggle: PropTypes.func,
@@ -158,15 +172,16 @@ export class MenuItem extends Component {
         fgColor={fgColor}
         bgColor={bgColor}
         centeredText={centeredText}
+        role="none"
       >
         {children}
       </MenuItemHeader>
     ) : (
-      <MenuItemLi disabled={disabled} role="listitem">
+      <MenuItemLi disabled={disabled} role="none">
         <MenuItemA
           active={active}
           onClick={this.onClick}
-          role="listitem"
+          role="option"
           tabIndex={-1}
         >
           {children}
