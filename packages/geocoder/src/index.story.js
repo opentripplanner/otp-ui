@@ -52,43 +52,62 @@ const GeocoderTester = ({
   return (
     <div>
       <div>
-        lat:
-        <input
-          type="text"
-          onChange={e => setFocusPoint({ ...focusPoint, lat: e.target.value })}
-          value={focusPoint.lat}
-        />
+        <label htmlFor="lon">
+          lng: lat:
+          <input
+            type="text"
+            id="lon"
+            onChange={e => {
+              setFocusPoint({ ...focusPoint, lat: e.target.value });
+            }}
+            value={focusPoint.lat}
+          />
+        </label>
       </div>
       <div>
-        lng:
-        <input
-          type="text"
-          onChange={e => setFocusPoint({ ...focusPoint, lng: e.target.value })}
-          value={focusPoint.lng}
-        />
+        <label htmlFor="lng">
+          lng:
+          <input
+            type="text"
+            id="lng"
+            onChange={e => {
+              setFocusPoint({ ...focusPoint, lng: e.target.value });
+            }}
+            value={focusPoint.lng}
+          />
+        </label>
       </div>
       {endpoint !== "reverse" && (
         <div>
-          search:
-          <input
-            type="text"
-            onChange={e => setSearchTerm(e.target.value)}
-            value={searchTerm}
-          />
+          <label htmlFor="term">
+            search:
+            <input
+              type="text"
+              id="term"
+              onChange={e => setSearchTerm(e.target.value)}
+              value={searchTerm}
+            />
+          </label>
         </div>
       )}
-      Geocode.earth:
-      <input
-        type="checkbox"
-        checked={enableGeocodeEarth}
-        onChange={e => setEnableGeocodeEarth(e.target.checked)}
-      />
-      Here:
-      <input
-        type="checkbox"
-        checked={enableHere}
-        onChange={e => setEnableHere(e.target.checked)}
-      />
+      <label htmlFor="geocodeEarth">
+        Geocode.earth:
+        <input
+          type="checkbox"
+          id="geocodeEarth"
+          checked={enableGeocodeEarth}
+          onChange={e => setEnableGeocodeEarth(e.target.checked)}
+        />
+      </label>
+      <label htmlFor="here">
+        Here:
+        <input
+          type="checkbox"
+          id="here"
+          checked={enableHere}
+          onChange={e => setEnableHere(e.target.checked)}
+        />
+      </label>
       <div>
         <button onClick={search} type="button">
           Search
