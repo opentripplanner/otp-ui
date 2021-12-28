@@ -1,5 +1,5 @@
 import BaseMap from "@opentripplanner/base-map";
-import React from "react";
+import React, { useState } from "react";
 
 import routeData from "../__mocks__/mock-route.json";
 import flexRouteData from "../__mocks__/mock-flex-route.json";
@@ -36,8 +36,24 @@ export const WithPathStyling = () => (
   </BaseMap>
 );
 
-export const FlexRoute = () => (
-  <BaseMap center={POWDER_SPRINGS} zoom={zoom}>
-    <RouteViewerOverlay clipToPatternStops routeData={flexRouteData} visible />
-  </BaseMap>
-);
+// Storyshot can't render a story with hooks. Creating a function like this
+// is the workaround. See https://github.com/storybookjs/storybook/issues/8177#issuecomment-599866282
+const FlexRouteWithClipButton = () => {
+  const [clip, setClip] = useState(true);
+  return (
+    <>
+      <button type="button" onClick={() => setClip(!clip)}>
+        {clip ? "Unclip" : "Clip"} Route to Outside Flex Zone
+      </button>
+      <BaseMap center={POWDER_SPRINGS} zoom={zoom}>
+        <RouteViewerOverlay
+          clipToPatternStops={clip}
+          routeData={flexRouteData}
+          visible
+        />
+      </BaseMap>
+    </>
+  );
+};
+
+export const FlexRoute = () => <FlexRouteWithClipButton />;
