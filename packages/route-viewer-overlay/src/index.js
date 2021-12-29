@@ -17,8 +17,13 @@ const isGeomComplete = routeData => {
   );
 };
 
-// helper function that removes all points from array of points that are
-// within flex zones defined in an array of stops
+/**
+ * helper function that removes all points from array of points that are
+ * within flex zones defined in an array of stops
+ * @param {*} stops   OTP stops response
+ * @param {*} points  Array of coordinates to clip
+ * @returns           The array of coordinates without coordinates within the stops
+ */
 const removePointsInFlexZone = (stops, points) => {
   // First, go through all stops to find flex zones
   const bboxes =

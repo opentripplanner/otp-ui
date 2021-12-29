@@ -1,5 +1,6 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import BaseMap from "@opentripplanner/base-map";
-import React, { useState } from "react";
+import React from "react";
 import { GeoJSON } from "react-leaflet";
 
 import routeData from "../__mocks__/mock-route.json";
@@ -12,52 +13,64 @@ const PORTLAND = [45.543092, -122.671202];
 const POWDER_SPRINGS = [33.8595, -84.67483];
 const zoom = 11;
 
+// Hide some story args completely.
+const hiddenProp = {
+  table: { disable: true }
+};
+
 export default {
   title: "RouteViewerOverlay",
-  component: RouteViewerOverlay
+  component: RouteViewerOverlay,
+  argTypes: {
+    center: hiddenProp,
+    zoom: hiddenProp,
+    routeData: hiddenProp,
+    path: hiddenProp,
+    extraLayer: hiddenProp
+  }
 };
 
-export const Default = () => (
-  <BaseMap center={PORTLAND} zoom={zoom}>
-    <RouteViewerOverlay routeData={routeData} visible />
+/* Unfortunately, args within an object can't be controlled via storybook controls.
+To be able to control the ClipToPatternStops arg via a control, the prop needs to be at 
+the root of the args object. This means that all props for both the BaseMap and the
+RouteViewerOverlay must be in the same args object. Luckily, there is no prop overlap
+and this is safely possible */
+const Template = args => (
+  <BaseMap {...args}>
+    <RouteViewerOverlay {...args} />
+    {args.extraLayer}
   </BaseMap>
 );
 
-export const WithPathStyling = () => (
-  <BaseMap center={PORTLAND} zoom={zoom}>
-    <RouteViewerOverlay
-      clipToPatternStops
-      path={{
-        opacity: 0.5,
-        weight: 10
-      }}
-      routeData={routeData}
-      visible
-    />
-  </BaseMap>
-);
-
-// Storyshot can't render a story with hooks. Creating a function like this
-// is the workaround. See https://github.com/storybookjs/storybook/issues/8177#issuecomment-599866282
-const FlexRouteWithClipButton = () => {
-  const [clip, setClip] = useState(true);
-  return (
-    <>
-      <button type="button" onClick={() => setClip(!clip)}>
-        {clip ? "Unclip" : "Clip"} Route to Outside Flex Zone
-      </button>
-      <BaseMap center={POWDER_SPRINGS} zoom={zoom}>
-        <RouteViewerOverlay
-          clipToPatternStops={clip}
-          routeData={flexRouteData}
-          visible
-        />
-        {/* Since the data is fixed, we know that stops[1] will contain the relevant flex zone. 
-        Using the stopsOverlay is not possible as it is very complex to implement */}
-        <GeoJSON data={flexRouteData.stops[1].geometries.geoJson} />
-      </BaseMap>
-    </>
-  );
+export const Default = Template.bind({});
+Default.args = {
+  center: PORTLAND,
+  zoom,
+  routeData
 };
 
-export const FlexRoute = () => <FlexRouteWithClipButton />;
+export const WithPathStyling = Template.bind({});
+WithPathStyling.args = {
+  center: PORTLAND,
+  zoom,
+  path: {
+    opacity: 0.5,
+    weight: 10
+  },
+  routeData
+};
+
+export const FlexRoute = Template.bind({});
+FlexRoute.args = {
+  center: POWDER_SPRINGS,
+  zoom,
+  routeData: flexRouteData,
+  clipToPatternStops: true,
+  // Since the data is fixed, we know that stops[1] will contain the relevant flex zone.
+  // Using the stopsOverlay is not possible as it is very complex to implement */}
+  extraLayer: <GeoJSON data={flexRouteData.stops[1].geometries.geoJson} />
+};
+
+FlexRoute.argTypes = {
+  clipToPatternStops: { control: "boolean" }
+};
