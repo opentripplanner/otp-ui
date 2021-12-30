@@ -6,9 +6,9 @@ import { normalize } from "@conveyal/lonlat"
 import type { LonLatOutput } from "@conveyal/lonlat"
 import type { AutocompleteQuery, ReverseQuery, SearchQuery } from "../../geocoders/abstract-geocoder"
 
-const geocodeUrl = "https://geocode.search.hereapi.com/v1/geocode"
-const autocompleteUrl = "https://autosuggest.search.hereapi.com/v1/autosuggest"
-const reverseUrl = "https://revgeocode.search.hereapi.com/v1/revgeocode"
+const GEOCODE_URL = "https://geocode.search.hereapi.com/v1/geocode"
+const AUTOCOMPLETE_URL = "https://autosuggest.search.hereapi.com/v1/autosuggest"
+const REVERSE_URL = "https://revgeocode.search.hereapi.com/v1/revgeocode"
 
 type HereQuery = {
   at?: string,
@@ -91,7 +91,7 @@ function autocomplete({
   return run({
     options,
     query,
-    url: autocompleteUrl
+    url: AUTOCOMPLETE_URL
   })
 }
 
@@ -129,7 +129,7 @@ function search({
     query.at = `${lat},${lon}`
   }
 
-  return run({ options, query, url: geocodeUrl })
+  return run({ options, query, url: GEOCODE_URL })
 }
 
 /**
@@ -159,7 +159,7 @@ function reverse({
     throw new GeocoderException("No point provided for reverse geocoder.")
   }
 
-  return run({ options, query, url: reverseUrl })
+  return run({ options, query, url: REVERSE_URL })
 }
 
 export {

@@ -13,10 +13,16 @@ const hereResultTypeToPeliasLayerMap = {
 };
 
 const convertHereToGeojson = (hereFeature: Item): Feature => {
-  const extraFields: { confidence?: number } = {} ;
+  const extraFields: { confidence?: number, addendum?: any } = {} ;
   if (hereFeature.scoring) {
     extraFields.confidence = hereFeature.scoring.queryScore;
   }
+  if (hereFeature.categories) {
+    extraFields.addendum = {
+      categories: hereFeature.categories
+    }
+  }
+
   return {
     type: "Feature",
     geometry: {
