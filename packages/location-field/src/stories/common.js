@@ -20,7 +20,7 @@ export const geocoderConfig = {
 
 export const hereGeocoderConfig = {
   type: "HERE",
-  apiKey: "fo_vzDfPGAYXJTG3HbdEZutV-4vjsP0LyekRDac_XaY",
+  apiKey: "placeholder_here_key",
   focusPoint: { lat: 47.67552, lng: -122.31831 }
 };
 
