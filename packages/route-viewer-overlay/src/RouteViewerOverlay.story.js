@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import BaseMap from "@opentripplanner/base-map";
 import React from "react";
 import { GeoJSON } from "react-leaflet";
@@ -19,25 +18,24 @@ const hiddenProp = {
 };
 
 export default {
-  title: "RouteViewerOverlay",
-  component: RouteViewerOverlay,
   argTypes: {
     center: hiddenProp,
-    zoom: hiddenProp,
-    routeData: hiddenProp,
+    extraLayer: hiddenProp,
     path: hiddenProp,
-    extraLayer: hiddenProp
-  }
+    routeData: hiddenProp,
+    zoom: hiddenProp
+  },
+  component: RouteViewerOverlay,
+  title: "RouteViewerOverlay"
 };
 
-/* Unfortunately, args within an object can't be controlled via storybook controls.
-To be able to control the ClipToPatternStops arg via a control, the prop needs to be at 
-the root of the args object. This means that all props for both the BaseMap and the
-RouteViewerOverlay must be in the same args object. Luckily, there is no prop overlap
-and this is safely possible */
 const Template = args => (
-  <BaseMap {...args}>
-    <RouteViewerOverlay {...args} />
+  <BaseMap center={args.center} zoom={args.zoom}>
+    <RouteViewerOverlay
+      clipToPatternStops={args.clipToPatternStops}
+      path={args.path}
+      routeData={args.routeData}
+    />
     {args.extraLayer}
   </BaseMap>
 );
@@ -45,30 +43,30 @@ const Template = args => (
 export const Default = Template.bind({});
 Default.args = {
   center: PORTLAND,
-  zoom,
-  routeData
+  routeData,
+  zoom
 };
 
 export const WithPathStyling = Template.bind({});
 WithPathStyling.args = {
   center: PORTLAND,
-  zoom,
   path: {
     opacity: 0.5,
     weight: 10
   },
-  routeData
+  routeData,
+  zoom
 };
 
 export const FlexRoute = Template.bind({});
 FlexRoute.args = {
   center: POWDER_SPRINGS,
-  zoom,
-  routeData: flexRouteData,
   clipToPatternStops: true,
   // Since the data is fixed, we know that stops[1] will contain the relevant flex zone.
   // Using the stopsOverlay is not possible as it is very complex to implement */}
-  extraLayer: <GeoJSON data={flexRouteData.stops[1].geometries.geoJson} />
+  extraLayer: <GeoJSON data={flexRouteData.stops[1].geometries.geoJson} />,
+  routeData: flexRouteData,
+  zoom
 };
 
 FlexRoute.argTypes = {
