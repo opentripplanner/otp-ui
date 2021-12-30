@@ -166,6 +166,27 @@ Object {
         "type": "Point",
       },
       "properties": Object {
+        "addendum": Object {
+          "categories": Array [
+            Object {
+              "id": "600-6300-0066",
+              "name": "Grocery",
+              "primary": true,
+            },
+            Object {
+              "id": "600-6400-0000",
+              "name": "Drugstore or Pharmacy",
+            },
+            Object {
+              "id": "600-6400-0069",
+              "name": "Drugstore",
+            },
+            Object {
+              "id": "600-6400-0070",
+              "name": "Pharmacy",
+            },
+          ],
+        },
         "country": "United States",
         "country_a": "USA",
         "country_code": "USA",
@@ -192,6 +213,23 @@ Object {
         "type": "Point",
       },
       "properties": Object {
+        "addendum": Object {
+          "categories": Array [
+            Object {
+              "id": "600-6300-0066",
+              "name": "Grocery",
+              "primary": true,
+            },
+            Object {
+              "id": "600-6400-0000",
+              "name": "Drugstore or Pharmacy",
+            },
+            Object {
+              "id": "600-6400-0070",
+              "name": "Pharmacy",
+            },
+          ],
+        },
         "country": "United States",
         "country_a": "USA",
         "country_code": "USA",
@@ -218,6 +256,27 @@ Object {
         "type": "Point",
       },
       "properties": Object {
+        "addendum": Object {
+          "categories": Array [
+            Object {
+              "id": "600-6300-0066",
+              "name": "Grocery",
+              "primary": true,
+            },
+            Object {
+              "id": "600-6400-0000",
+              "name": "Drugstore or Pharmacy",
+            },
+            Object {
+              "id": "600-6400-0069",
+              "name": "Drugstore",
+            },
+            Object {
+              "id": "600-6400-0070",
+              "name": "Pharmacy",
+            },
+          ],
+        },
         "country": "United States",
         "country_a": "USA",
         "country_code": "USA",
@@ -244,6 +303,23 @@ Object {
         "type": "Point",
       },
       "properties": Object {
+        "addendum": Object {
+          "categories": Array [
+            Object {
+              "id": "600-6300-0066",
+              "name": "Grocery",
+              "primary": true,
+            },
+            Object {
+              "id": "600-6400-0000",
+              "name": "Drugstore or Pharmacy",
+            },
+            Object {
+              "id": "600-6400-0070",
+              "name": "Pharmacy",
+            },
+          ],
+        },
         "country": "United States",
         "country_a": "USA",
         "country_code": "USA",
@@ -312,6 +388,27 @@ Object {
         "type": "Point",
       },
       "properties": Object {
+        "addendum": Object {
+          "categories": Array [
+            Object {
+              "id": "600-6300-0066",
+              "name": "Grocery",
+              "primary": true,
+            },
+            Object {
+              "id": "600-6400-0000",
+              "name": "Drugstore or Pharmacy",
+            },
+            Object {
+              "id": "600-6400-0069",
+              "name": "Drugstore",
+            },
+            Object {
+              "id": "600-6400-0070",
+              "name": "Pharmacy",
+            },
+          ],
+        },
         "confidence": 1,
         "country": "United States",
         "country_a": "USA",
