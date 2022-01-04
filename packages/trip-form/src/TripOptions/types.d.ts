@@ -2,6 +2,9 @@ import { FunctionComponent } from "react";
 
 export interface ModeOption {
   company?: string;
+  /**
+   * in TripOptions, this image is expected to be an imported svg
+   */
   image?: string;
   hidden?: boolean;
   label: string;
@@ -69,3 +72,8 @@ export interface QueryProps {
    */
   DetailedModeIcon?: FunctionComponent<{ mode: string }>;
 }
+
+export type CheckboxIcons = {
+  checked: FunctionComponent;
+  unchecked: FunctionComponent;
+};
