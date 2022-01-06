@@ -13,7 +13,7 @@ export interface QueryParamChangeEvent {
  */
 export interface QueryParamOptions {
   text: string;
-  value: SVGForeignObjectElement;
+  value: string | number | boolean;
 }
 
 /**
@@ -64,6 +64,21 @@ export interface ConfiguredCompany {
    */
   modes: string;
 }
+
+/**
+ * Describes a custom query parameter message.
+ * TODO: Move to core-utils once that package supports TypeScript.
+ */
+export interface CustomQueryParameter {
+  label?: ReactNode;
+  options?: QueryParamOptions[];
+}
+
+/**
+ * Describes a set of custom query parameter messages.
+ * TODO: Move to core-utils once that package supports TypeScript.
+ */
+export type CustomQueryParameters = Record<string, CustomQueryParameter>;
 
 /**
  * Mode/SubmodeSelector options

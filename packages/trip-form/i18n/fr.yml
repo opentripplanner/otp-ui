@@ -12,6 +12,23 @@ otpUi:
     arrive: Arrivée
     depart: Départ
     now: Maintenant
+  queryParameters:
+    bikeSpeed: Vitesse à vélo
+    maxBikeDistance: Distance max. à vélo
+    maxBikeTime: Durée max. à vélo
+    maxEScooterDistance: Distance max. en trottinette
+    maxWalkDistance: Distance max. à pied
+    maxWalkTime: Durée max. à pied
+    optimizeFor: Privilégier les trajets
+    optimizeQuick: plus rapides
+    optimizeTransfers: avec moins de correspondances
+    walkSpeed: Vitesse à pied
+    watts: Puissance de la trottinette électrique
+    watts125kidsHoverboard: Hoverboard pour enfants (10 km/h)
+    watts1500powerfulEscooter: Trottinette puissante (40 km/h)
+    watts250entryLevelEscooter: Trottinette de base (18 km/h)
+    watts500robustEscooter: Trottinette robuste (30 km/h)
+    wheelchair: Privilégier les trajets accessibles en fauteuil roulant
   SettingsSelectorPanel:
     bikeOnly: Vélo uniquement
     escooterOnly: Trottinette uniquement

@@ -12,10 +12,6 @@ import trimet from "./__mocks__/trimet-styled";
 import englishMessages from "../i18n/en-US.yml";
 import frenchMessages from "../i18n/fr.yml";
 
-// Customize a few strings from query-params to demonstrate French locale.
-// Normally, a translator would go through the entire query-params file.
-import frenchQueryParamMessages from "./__mocks__/query-params-fr.json";
-
 import commonModesEnglish from "./__mocks__/modes-en";
 import commonModesFrench from "./__mocks__/modes-fr";
 
@@ -119,11 +115,6 @@ const SettingsPanelTemplate = args => (
     <SettingsSelectorPanel
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...args}
-      queryParamMessages={
-        args.locale === "en-US"
-          ? null // use built-in text for English
-          : frenchQueryParamMessages
-      }
       supportedModes={
         args.supportedModes ||
         (args.locale === "en-US" ? commonModesEnglish : commonModesFrench)

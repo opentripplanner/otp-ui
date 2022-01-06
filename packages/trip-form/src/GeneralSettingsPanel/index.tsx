@@ -9,7 +9,7 @@ import DropdownSelector from "../DropdownSelector";
 import * as S from "../styled";
 
 // eslint-disable-next-line prettier/prettier
-import type { ConfiguredModes, QueryParamChangeEvent, QueryParamOptions } from "../types";
+import type { ConfiguredModes, CustomQueryParameters, QueryParamChangeEvent } from "../types";
 import type { QueryParams } from "../TripOptions/types";
 
 interface GeneralSettingsPanelProps {
@@ -36,9 +36,7 @@ interface GeneralSettingsPanelProps {
    * For query parameter names and value formats,
    * see https://github.com/opentripplanner/otp-ui/blob/master/packages/core-utils/src/__tests__/query.js#L14
    */
-  queryParamMessages?: {
-    [key: string]: string | QueryParamOptions[];
-  };
+  queryParamMessages?: CustomQueryParameters;
   /**
    * An array of parameter names to support in the settings panel.
    * See the `query` parameter for more on query parameter names.

@@ -14,7 +14,7 @@ interface DropdownSelectorProps {
   /**
    * The contents of the contained <label> control.
    */
-  label?: string;
+  label?: ReactElement | string;
   /**
    * A unique name for the setting.
    */
