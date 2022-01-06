@@ -29,6 +29,9 @@ otpUi:
     maxEScooterDistance: Maximum E-scooter Distance
     maxWalkDistance: Maximum Walk
     maxWalkTime: Max Walk Time
+    optimizeBikeFlat: Flat Trip
+    optimizeBikeFriendly: Bike-Friendly Trip
+    optimizeBikeSpeed: Speed
     optimizeFor: Optimize for
     optimizeQuick: Speed
     optimizeTransfers: Fewest Transfers

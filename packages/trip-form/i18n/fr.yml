@@ -14,14 +14,19 @@ otpUi:
     now: Maintenant
   queryParameters:
     bikeSpeed: Vitesse à vélo
+    distanceInMiles: "{miles, number, :: unit/mile unit-width-full-name}"
     maxBikeDistance: Distance max. à vélo
     maxBikeTime: Durée max. à vélo
     maxEScooterDistance: Distance max. en trottinette
     maxWalkDistance: Distance max. à pied
     maxWalkTime: Durée max. à pied
+    optimizeBikeFlat: avec moins de reliefs
+    optimizeBikeFriendly: plus pratiques à vélo
+    optimizeBikeSpeed: plus rapides
     optimizeFor: Privilégier les trajets
     optimizeQuick: plus rapides
     optimizeTransfers: avec moins de correspondances
+    speedInMilesPerHour: "{mph} mi/h"
     walkSpeed: Vitesse à pied
     watts: Puissance de la trottinette électrique
     watts125kidsHoverboard: Hoverboard pour enfants (10 km/h)

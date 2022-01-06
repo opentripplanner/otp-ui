@@ -1,6 +1,8 @@
 import { FunctionComponent, ReactNode } from "react";
 import { StyledComponent } from "styled-components";
 
+export type QueryParams = Record<string, string>;
+
 /**
  * Describes the parameters for the onQueryParamChange event.
  */
@@ -71,7 +73,9 @@ export interface ConfiguredCompany {
  */
 export interface CustomQueryParameter {
   label?: ReactNode;
-  options?: QueryParamOptions[];
+  options?:
+    | QueryParamOptions[]
+    | ((queryParams: QueryParams) => QueryParamOptions[]);
 }
 
 /**
