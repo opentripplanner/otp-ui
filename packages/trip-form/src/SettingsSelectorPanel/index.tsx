@@ -210,8 +210,10 @@ export default function SettingsSelectorPanel({
   );
 
   const intl = useIntl();
-  const queryParamMessagesWithI18n =
-    queryParamMessages || getQueryParamMessagesWithI18n(intl);
+  const queryParamMessagesWithI18nAndCustomizations = {
+    ...getQueryParamMessagesWithI18n(intl),
+    ...queryParamMessages
+  };
 
   const modeOptions = getModeOptions(
     ModeIcon,
@@ -323,7 +325,7 @@ export default function SettingsSelectorPanel({
 
       <GeneralSettingsPanel
         query={queryParams}
-        queryParamMessages={queryParamMessagesWithI18n}
+        queryParamMessages={queryParamMessagesWithI18nAndCustomizations}
         supportedModes={supportedModes}
         onQueryParamChange={handleQueryParamChange}
       />

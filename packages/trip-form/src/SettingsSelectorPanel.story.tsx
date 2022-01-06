@@ -20,6 +20,7 @@ import commonModesFrench from "./__mocks__/modes-fr";
  */
 interface StoryArgs {
   locale?: string;
+  useCustomMessages?: boolean;
   useStyle?: boolean;
 }
 
@@ -101,6 +102,7 @@ export default {
   },
   args: {
     locale: "en-US",
+    useCustomMessages: false,
     useStyle: false
   },
   component: SettingsSelectorPanel,
@@ -115,6 +117,21 @@ const SettingsPanelTemplate = args => (
     <SettingsSelectorPanel
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...args}
+      queryParamMessages={
+        args.useCustomMessages
+          ? {
+              walkSpeed: {
+                label: "Custom walk speed label",
+                options: [
+                  {
+                    text: "3 kph custom speed value",
+                    value: 10
+                  }
+                ]
+              }
+            }
+          : null
+      }
       supportedModes={
         args.supportedModes ||
         (args.locale === "en-US" ? commonModesEnglish : commonModesFrench)
