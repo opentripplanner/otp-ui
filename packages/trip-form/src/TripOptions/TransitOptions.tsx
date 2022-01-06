@@ -5,15 +5,18 @@ import React from "react";
 
 import * as S from "./styled";
 import Checkbox from "./Checkbox";
-import { QueryProps } from "./types";
+import { CheckboxIcons, QueryProps } from "./types";
 import { getSelectedModes } from "./util";
 
 const TransitOptions = ({
+  checkboxIcons,
+  DetailedModeIcon,
   onQueryParamChange,
   queryParams,
-  supportedModes,
-  DetailedModeIcon
-}: QueryProps): JSX.Element => {
+  supportedModes
+}: {
+  checkboxIcons?: CheckboxIcons;
+} & QueryProps): JSX.Element => {
   const { transitModes } = supportedModes;
   const selectedModes = getSelectedModes(queryParams);
   const selectedTransit = selectedModes.filter(coreUtils.itinerary.isTransit);
@@ -35,6 +38,7 @@ const TransitOptions = ({
         return (
           <Checkbox
             ariaLabel={transitMode.label}
+            checkboxIcons={checkboxIcons}
             checked={isChecked}
             /* This prevents the user from de-selecting a transit mode when it is the only one selected.
             the selectedModes length being 3 indicates that only one mode is selected. GONDOLA, WALK, and the mode. */

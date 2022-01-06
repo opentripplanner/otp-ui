@@ -11,7 +11,7 @@ import {
   getNonTransitModes,
   getSelectedModes
 } from "./util";
-import { ModeOption, QueryProps } from "./types";
+import { CheckboxIcons, ModeOption, QueryProps } from "./types";
 import OptionButton from "./OptionButton";
 
 import * as S from "./styled";
@@ -21,15 +21,19 @@ const modeButtonAriaLabel =
   "Opens a dialog that describes this mode, with optional links to third party services.";
 
 const FeaturedOption = ({
+  checkboxIcons,
+  DetailedModeIcon,
+  iconFillOverride,
   onQueryParamChange,
   queryParams,
   questionIcon,
   setFeaturedOption,
-  supportedModes,
-  DetailedModeIcon
+  supportedModes
 }: QueryProps & {
-  setFeaturedOption(option: string): void;
+  checkboxIcons?: CheckboxIcons;
+  iconFillOverride?: string;
   questionIcon?: React.ReactElement;
+  setFeaturedOption(option: string): void;
 }): React.ReactElement => {
   // No featured mode to show if walking to transit
   if (accessModeIsWalkOnly(queryParams?.mode)) return null;
@@ -96,8 +100,11 @@ const FeaturedOption = ({
 
           return (
             <OptionButton
+              checkboxIcons={checkboxIcons}
               checked={isChecked}
               disabled={isChecked && selectedCompanies.length === 1}
+              iconFillOverride={iconFillOverride}
+              image={o.image}
               key={index}
               label={o.label}
               onClick={() => selectOption(isChecked, o)}

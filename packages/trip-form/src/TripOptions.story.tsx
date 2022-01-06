@@ -75,12 +75,19 @@ export const tripOptionsWithCustomIconsAndCloseButton = (): ReactElement => {
           featuredItemOverlayEnabled={featuredOverlayShown}
           supportedCompanies={commonCompanies}
           supportedModes={commonModes}
-          QuestionIcon={<span>😕</span>}
-          SimpleModeIcon={({ mode }) => <b>{mode}</b>}
-          DetailedModeIcon={({ mode }) => <h1>{mode}</h1>}
+          tripOptionIconFillOverride="white"
+          checkboxIcons={{
+            // eslint-disable-next-line react/display-name
+            checked: () => <span>✅</span>,
+            // eslint-disable-next-line react/display-name
+            unchecked: () => <span>❌</span>
+          }}
           CompanyIcon={({ company }) => (
             <i style={{ color: "black" }}>{company}</i>
           )}
+          DetailedModeIcon={({ mode }) => <h1>{mode}</h1>}
+          SimpleModeIcon={({ mode }) => <b>{mode}</b>}
+          QuestionIcon={<span>😕</span>}
         />
       </PanelWrapper>
     </>
@@ -88,7 +95,7 @@ export const tripOptionsWithCustomIconsAndCloseButton = (): ReactElement => {
 };
 
 // TODO: resolve a11y issues
-const disableA11yParamters = {
+const disableA11yParameters = {
   a11y: {
     config: {
       rules: [
@@ -100,11 +107,11 @@ const disableA11yParamters = {
   }
 };
 
-tripOptions.parameters = disableA11yParamters;
+tripOptions.parameters = disableA11yParameters;
 
 // Disable storyshot for this story, as it is mostly the same as TripOptions except with
 // a hook that storyshot can't handle
 tripOptionsWithCustomIconsAndCloseButton.parameters = {
   storyshots: { disable: true },
-  ...disableA11yParamters
+  ...disableA11yParameters
 };
