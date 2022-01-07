@@ -6,82 +6,82 @@ import type { LonLatInput } from "@conveyal/lonlat"
 import type { Feature, FeatureCollection } from "geojson"
 
 type Rect = {
-  maxLat: number | string
-  maxLon: number | string
-  minLat: number | string
-  minLon: number | string
-}
+  maxLat: number | string;
+  maxLon: number | string;
+  minLat: number | string;
+  minLon: number | string;
+};
 
 type Boundary = {
-  country?: string
-  rect?: Rect
-}
+  country?: string;
+  rect?: Rect;
+};
 
 type GeocoderAPI = {
-  search: (query: SearchQuery) => Promise<Array<JSON>>,
-  reverse: (query: ReverseQuery) => Promise<Array<JSON>>,
-  autocomplete: (query: AutocompleteQuery) => Promise<Array<JSON>>
-}
+  autocomplete: (query: AutocompleteQuery) => Promise<Array<JSON>>;
+  search: (query: SearchQuery) => Promise<Array<JSON>>;
+  reverse: (query: ReverseQuery) => Promise<Array<JSON>>;
+};
 
 export type GeocoderConfig = {
-  apiKey?: string,
-  baseUrl?: string,
-  boundary?: Boundary,
-  focusPoint?: LonLatInput,
-  options?: RequestInit
-}
+  apiKey?: string;
+  baseUrl?: string;
+  boundary?: Boundary;
+  focusPoint?: LonLatInput;
+  options?: RequestInit;
+};
 
 export type ReverseQuery = {
-  apiKey?: string,
-  point?: LonLatInput,
-  options?: RequestInit,
-  format?: boolean
-  url?: string
-}
+  apiKey?: string;
+  format?: boolean;
+  options?: RequestInit;
+  point?: LonLatInput;
+  url?: string;
+};
 
 export type AutocompleteQuery = {
-  apiKey?: string,
-  options?: RequestInit,
-  size?: number | string,
-  text?: string,
-  boundary?: Boundary,
-  focusPoint?: LonLatInput,
-  format?: boolean,
-  url?: string
-}
+  apiKey?: string;
+  boundary?: Boundary;
+  focusPoint?: LonLatInput;
+  format?: boolean;
+  options?: RequestInit;
+  size?: number | string;
+  text?: string;
+  url?: string;
+};
 
 export type SearchQuery = {
-  apiKey?: string,
-  options?: RequestInit,
-  size?: number | string,
-  text?: string,
-  boundary?: Boundary,
-  focusPoint?: LonLatInput,
-  format?: boolean
-  url?: string
-}
+  apiKey?: string;
+  boundary?: Boundary;
+  focusPoint?: LonLatInput;
+  format?: boolean;
+  options?: RequestInit;
+  size?: number | string;
+  text?: string;
+  url?: string;
+};
 
 export type MultiGeocoderResponse = FeatureCollection & {
-  ismorphicMapzenSearchQuery?: string,
-}
+  ismorphicMapzenSearchQuery?: string;
+};
 
 export type SingleGeocoderResponse = {
-  ismorphicMapzenSearchQuery?: string,
-  lat: number,
-  lon: number,
-  name: string,
-  rawGeocodedFeature: Feature
-}
+  ismorphicMapzenSearchQuery?: string;
+  lat: number;
+  lon: number;
+  name: string;
+  rawGeocodedFeature: Feature;
+};
 /**
  * Create customized geocoder functions given a certain geocoding API, the
  * config for the geocoder and response rewrite functions specific to this
- * application. Any geocoder api that is added is expected to have an API that
+ * application. Any geocoder API that is added is expected to have an API that
  * behaves very closely to https://github.com/conveyal/isomorphic-mapzen-search
  */
 export default class Geocoder {
   geocoderConfig: GeocoderConfig;
 
-  api: GeocoderAPI
+  api: GeocoderAPI;
 
   constructor(geocoderApi: GeocoderAPI, geocoderConfig: GeocoderConfig) {
     this.api = geocoderApi;
@@ -89,7 +89,7 @@ export default class Geocoder {
   }
 
   /**
-   * Perform an autocomplete query. Eg, using partial text of a possible
+   * Perform an autocomplete query, e.g. using partial text of a possible
    * address or POI, attempt to find possible matches.
    */
   autocomplete(query: AutocompleteQuery): Promise<MultiGeocoderResponse> {
@@ -107,20 +107,22 @@ export default class Geocoder {
    * data and GPS and it is expected that an extra call to the `search` API is
    * done to obtain that detailed data.
    */
-  getLocationFromGeocodedFeature(feature: Feature): Promise<SingleGeocoderResponse> {
+  getLocationFromGeocodedFeature(
+    feature: Feature
+  ): Promise<SingleGeocoderResponse> {
     if (feature.geometry.type === "Point") {
       const location: SingleGeocoderResponse = {
         ...fromCoordinates(feature.geometry.coordinates),
         name: feature.properties.label,
         rawGeocodedFeature: feature
-      } 
+      };
       return Promise.resolve(location);
     }
-    return Promise.reject(new Error("Feature is not of type Point."))
+    return Promise.reject(new Error("Feature is not of type Point."));
   }
 
   /**
-   * Do a reverse-geocode. ie get address information and attributes given a
+   * Do a reverse-geocode, i.e. get address information and attributes given a
    * GPS coordinate.
    */
   reverse(query: ReverseQuery): Promise<SingleGeocoderResponse> {
@@ -132,7 +134,7 @@ export default class Geocoder {
   /**
    * Perform a search query. A search query is different from autocomplete in
    * that it is assumed that the text provided is more or less a complete
-   * well-fromatted address.
+   * well-formatted address.
    */
   search(query: SearchQuery): Promise<MultiGeocoderResponse> {
     return this.api
@@ -156,7 +158,7 @@ export default class Geocoder {
       boundary,
       focusPoint,
       options,
-      // TODO: Hard coding something like an /autocomplete endpoint path in here is not very abstract. 
+      // TODO: Hard coding something like an /autocomplete endpoint path in here is not very abstract.
       url: baseUrl ? `${baseUrl}/autocomplete` : undefined,
       ...query
     };

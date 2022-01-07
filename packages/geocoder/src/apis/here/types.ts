@@ -15,16 +15,16 @@ export type Boundary = {
 };
 
 export interface Item {
-  title: string;
-  id: string;
-  resultType: string;
-  address: Address;
-  position: Position;
   access: Position[];
-  distance: number;
+  address: Address;
   categories: Category[];
+  distance: number;
   foodTypes: Category[];
+  id: string;
+  position: Position;
+  resultType: string;
   scoring: Scoring;
+  title: string;
 }
 
 export interface Position {
@@ -33,17 +33,17 @@ export interface Position {
 }
 
 export interface Address {
-  label: string;
+  city: string;
   countryCode: string;
   countryName: string;
-  stateCode: string;
-  state: string;
   county: string;
-  city: string;
   district: string;
-  street: string;
-  postalCode: string;
   houseNumber: string;
+  label: string;
+  postalCode: string;
+  state: string;
+  stateCode: string;
+  street: string;
 }
 
 export interface Category {
@@ -53,8 +53,8 @@ export interface Category {
 }
 
 export interface Scoring {
-  queryScore: number;
   fieldScore: FieldScore;
+  queryScore: number;
 }
 
 export interface FieldScore {

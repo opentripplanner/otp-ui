@@ -1,49 +1,45 @@
-import { stringify } from "querystring"
-import { normalize } from "@conveyal/lonlat"
+import { normalize } from "@conveyal/lonlat";
+import { stringify } from "querystring";
 
 // Prettier does not support typescript annotation
 // eslint-disable-next-line prettier/prettier
 import type { LonLatOutput } from "@conveyal/lonlat"
 import type { AutocompleteQuery, ReverseQuery, SearchQuery } from "../../geocoders/abstract-geocoder"
 
-const GEOCODE_URL = "https://geocode.search.hereapi.com/v1/geocode"
-const AUTOCOMPLETE_URL = "https://autosuggest.search.hereapi.com/v1/autosuggest"
-const REVERSE_URL = "https://revgeocode.search.hereapi.com/v1/revgeocode"
+const AUTOCOMPLETE_URL =
+  "https://autosuggest.search.hereapi.com/v1/autosuggest";
+const GEOCODE_URL = "https://geocode.search.hereapi.com/v1/geocode";
+const REVERSE_URL = "https://revgeocode.search.hereapi.com/v1/revgeocode";
 
 type HereQuery = {
-  at?: string,
-  in?: string,
-  limit?: number | string,
-  q?: string,
-  qq?: string,
-  lang?: string,
-  politicalView?: string,
-  show?: string,
-  apiKey: string
-}
+  at?: string;
+  in?: string;
+  limit?: number | string;
+  q?: string;
+  qq?: string;
+  lang?: string;
+  politicalView?: string;
+  show?: string;
+  apiKey: string;
+};
 
 // These types are standardized for the other geocoders in this library.
-// Perhaps we could extract them out somewhere and reuse them in the other libraries? 
+// Perhaps we could extract them out somewhere and reuse them in the other libraries?
 type HereFetchArgs = {
-  options: RequestInit // Built-in Typing
-  query: HereQuery
-  url: string
-}
+  options: RequestInit; // Built-in Typing
+  query: HereQuery;
+  url: string;
+};
 
-type JSONArrayPromise = Promise<Array<JSON>>
+type JSONArrayPromise = Promise<Array<JSON>>;
 
 function GeocoderException(message: string) {
   this.message = message;
-  this.name = "GeocoderException"
+  this.name = "GeocoderException";
 }
 
-function run({
-  options,
-  query,
-  url
-}: HereFetchArgs): JSONArrayPromise {
-  return fetch(`${url}?${stringify(query)}`, options)
-    .then((res) => res.json())
+function run({ options, query, url }: HereFetchArgs): JSONArrayPromise {
+  return fetch(`${url}?${stringify(query)}`, options).then(res => res.json());
 }
 
 /**
@@ -51,48 +47,52 @@ function run({
  * Here's {@link https://developer.here.com/documentation/geocoding-search-api/api-reference-swagger.html|Autocomplete}
  * service.
  *
- * @param {Object} $0
+ * @param  {Object} $0
  * @param  {string} $0.apiKey                     The Here API Key
  * @param  {Object} $0.focusPoint
  * @param  {Object} $0.boundary
- * @param {number} [$0.size=20]
+ * @param  {number} [$0.size=20]
  * @param  {Object} $0.options                    options to pass to fetch (e.g., custom headers)
  * @param  {string} $0.text                       query text
  * @return {Promise}                              A Promise that'll get resolved with the autocomplete result
  */
 function autocomplete({
   apiKey,
-  focusPoint,
   boundary,
-  size = 20,
+  focusPoint,
   options,
+  size = 20,
   text
 }: AutocompleteQuery): JSONArrayPromise {
   // build query
-  const query: HereQuery = { apiKey, q: text, limit: size, show: "details" }
+  const query: HereQuery = { apiKey, q: text, limit: size, show: "details" };
 
   if (focusPoint) {
-    const { lat, lon }: LonLatOutput = normalize(focusPoint)
-    query.at = `${lat},${lon}`
+    const { lat, lon }: LonLatOutput = normalize(focusPoint);
+    query.at = `${lat},${lon}`;
   }
 
   if (boundary) {
-    if (focusPoint) throw new GeocoderException("Only one of focusPoint, boundary is allowed for Here API.")
-    if (boundary.country) query.in = `countryCode:${boundary.country}`
-    if (boundary.rect) {
+    const { country, rect } = boundary;
+    if (focusPoint)
+      throw new GeocoderException(
+        "Only one of focusPoint, boundary is allowed for Here API."
+      );
+    if (country) query.in = `countryCode:${country}`;
+    if (rect) {
       query.in = `bbox:${[
-        boundary.rect.minLon,
-        boundary.rect.minLat,
-        boundary.rect.maxLon,
-        boundary.rect.maxLat
-      ].join(",")}`
+        rect.minLon,
+        rect.minLat,
+        rect.maxLon,
+        rect.maxLat
+      ].join(",")}`;
     }
   }
   return run({
     options,
     query,
     url: AUTOCOMPLETE_URL
-  })
+  });
 }
 
 /**
@@ -100,12 +100,12 @@ function autocomplete({
  * HERE's {@link https://developer.here.com/documentation/geocoding-search-api/api-reference-swagger.html|Search}
  * service. NOTE: Here does not support a boundary for Search queries, unlike Pelias.
  *
- * @param {Object} $0
- * @param {string} $0.apiKey                    The Here API key
- * @param {Object} $0.focusPoint
+ * @param  {Object} $0
+ * @param  {string} $0.apiKey                    The Here API key
+ * @param  {Object} $0.focusPoint
  * @param  {Object} $0.options                  options to pass to fetch (e.g., custom headers)
- * @param {number} [$0.size=10]
- * @param {string} $0.text                      The address text to query for
+ * @param  {number} [$0.size=10]
+ * @param  {string} $0.text                      The address text to query for
  * @return {Promise}                            A Promise that'll get resolved with search result
  */
 function search({
@@ -113,23 +113,22 @@ function search({
   focusPoint,
   options,
   size = 10,
-  text,
+  text
 }: SearchQuery): JSONArrayPromise {
-  
-  if (!text) return Promise.resolve([])
-  
+  if (!text) return Promise.resolve([]);
+
   const query: HereQuery = {
     apiKey,
     limit: size,
     q: text
-  }
+  };
 
   if (focusPoint) {
-    const { lat, lon }: LonLatOutput = normalize(focusPoint)
-    query.at = `${lat},${lon}`
+    const { lat, lon }: LonLatOutput = normalize(focusPoint);
+    query.at = `${lat},${lon}`;
   }
 
-  return run({ options, query, url: GEOCODE_URL })
+  return run({ options, query, url: GEOCODE_URL });
 }
 
 /**
@@ -137,33 +136,25 @@ function search({
  * HERE's {@link https://developer.here.com/documentation/geocoding-search-api/api-reference-swagger.html|Search}
  * service.
  *
- * @param {Object} $0
- * @param {string} $0.apiKey                    The Here API key
- * @param {Object} $0.point
+ * @param  {Object} $0
+ * @param  {string} $0.apiKey                   The Here API key
+ * @param  {Object} $0.point
  * @param  {Object} $0.options                  options to pass to fetch (e.g., custom headers)
  * @return {Promise}                            A Promise that'll get resolved with search result
  */
-function reverse({
-  apiKey,
-  point,
-  options,
-}: ReverseQuery): JSONArrayPromise {
+function reverse({ apiKey, options, point }: ReverseQuery): JSONArrayPromise {
   const query: HereQuery = {
-    apiKey,
-  }
+    apiKey
+  };
 
   if (point) {
-    const { lat, lon }: LonLatOutput = normalize(point)
-    query.at = `${lat},${lon}`
+    const { lat, lon }: LonLatOutput = normalize(point);
+    query.at = `${lat},${lon}`;
   } else {
-    throw new GeocoderException("No point provided for reverse geocoder.")
+    throw new GeocoderException("No point provided for reverse geocoder.");
   }
 
-  return run({ options, query, url: REVERSE_URL })
+  return run({ options, query, url: REVERSE_URL });
 }
 
-export {
-  autocomplete,
-  search,
-  reverse
-}
+export { autocomplete, reverse, search };

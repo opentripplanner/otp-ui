@@ -6,21 +6,20 @@ import type { SingleGeocoderResponse, MultiGeocoderResponse } from "./abstract-g
 
 import Geocoder from "./abstract-geocoder";
 
-
 const hereResultTypeToPeliasLayerMap = {
   place: "venue",
   houseNumber: "address"
 };
 
 const convertHereToGeojson = (hereFeature: Item): Feature => {
-  const extraFields: { confidence?: number, addendum?: any } = {} ;
+  const extraFields: { confidence?: number; addendum?: any } = {};
   if (hereFeature.scoring) {
     extraFields.confidence = hereFeature.scoring.queryScore;
   }
   if (hereFeature.categories) {
     extraFields.addendum = {
       categories: hereFeature.categories
-    }
+    };
   }
 
   return {
@@ -64,12 +63,12 @@ export default class HereGeocoder extends Geocoder {
   }
 
   rewriteAutocompleteResponse(response: HereResponse): MultiGeocoderResponse {
-    const { items } = response
+    const { items } = response;
     return {
       type: "FeatureCollection",
       features: items
         // Here can return continued query suggestions, which we do not support.
-        .filter(item => item.resultType !== "chainQuery")
+        ?.filter(item => item.resultType !== "chainQuery")
         .map(convertHereToGeojson)
     };
   }
