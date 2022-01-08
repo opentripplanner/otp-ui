@@ -2,13 +2,13 @@ import React, { ReactElement, useState } from "react";
 import getGeocoder from "./index";
 
 const GeocoderTester = ({
-  at,
+  at = { lat: 0, lng: 0 },
   endpoint,
   geocodeEarthApiKey,
   hereApiKey,
   onResults
 }: {
-  at: { lat: string; lng: string };
+  at?: { lat: number; lng: number };
   endpoint: string;
   geocodeEarthApiKey: string;
   hereApiKey: string;
@@ -62,7 +62,7 @@ const GeocoderTester = ({
           <input
             id="lon"
             onChange={e => {
-              setFocusPoint({ ...focusPoint, lat: e.target.value });
+              setFocusPoint({ ...focusPoint, lat: parseFloat(e.target.value) });
             }}
             type="text"
             value={focusPoint.lat}
@@ -75,7 +75,7 @@ const GeocoderTester = ({
           <input
             id="lng"
             onChange={e => {
-              setFocusPoint({ ...focusPoint, lng: e.target.value });
+              setFocusPoint({ ...focusPoint, lng: parseFloat(e.target.value) });
             }}
             type="text"
             value={focusPoint.lng}
@@ -120,13 +120,6 @@ const GeocoderTester = ({
       </div>
     </div>
   );
-};
-
-GeocoderTester.defaultProps = {
-  at: {
-    lat: 0,
-    lng: 0
-  }
 };
 
 export default {
