@@ -125,7 +125,7 @@ export default class Geocoder {
    * Do a reverse-geocode, i.e. get address information and attributes given a
    * GPS coordinate.
    */
-  reverse(query: ReverseQuery): Promise<SingleGeocoderResponse> {
+  reverse(query: ReverseQuery): Promise<MultiGeocoderResponse> {
     return this.api
       .reverse(this.getReverseQuery(query))
       .then(this.rewriteReverseResponse);
@@ -210,8 +210,8 @@ export default class Geocoder {
   /**
    * Default rewriter for reverse responses
    */
-  rewriteReverseResponse(response: unknown): SingleGeocoderResponse {
-    return response as SingleGeocoderResponse;
+  rewriteReverseResponse(response: unknown): MultiGeocoderResponse {
+    return response as MultiGeocoderResponse;
   }
 
   /**
