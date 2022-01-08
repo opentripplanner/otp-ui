@@ -1,31 +1,36 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
+import React, { ReactElement, useState } from "react";
 import getGeocoder from "./index";
 
 const GeocoderTester = ({
-  hereApiKey,
-  geocodeEarthApiKey,
-  onResults,
+  at,
   endpoint,
-  at
-}) => {
+  geocodeEarthApiKey,
+  hereApiKey,
+  onResults
+}: {
+  at: { lat: string; lng: string };
+  endpoint: string;
+  geocodeEarthApiKey: string;
+  hereApiKey: string;
+  onResults: (any) => void;
+}): ReactElement => {
   const [searchTerm, setSearchTerm] = useState("");
   const [focusPoint, setFocusPoint] = useState({ lat: at.lat, lng: at.lng });
   const [enableGeocodeEarth, setEnableGeocodeEarth] = useState(true);
   const [enableHere, setEnableHere] = useState(true);
 
   const geocoder = getGeocoder({
-    type: "HERE",
     apiKey: hereApiKey,
-    focusPoint
+    focusPoint,
+    type: "HERE"
   });
 
   const peliasGeocoder = getGeocoder({
-    type: "PELIAS",
     apiKey: geocodeEarthApiKey,
     baseUrl: "https://api.geocode.earth/v1",
+    focusPoint,
     size: 1,
-    focusPoint
+    type: "PELIAS"
   });
 
   const search = async () => {
@@ -55,11 +60,11 @@ const GeocoderTester = ({
         <label htmlFor="lon">
           lng: lat:
           <input
-            type="text"
             id="lon"
             onChange={e => {
               setFocusPoint({ ...focusPoint, lat: e.target.value });
             }}
+            type="text"
             value={focusPoint.lat}
           />
         </label>
@@ -68,11 +73,11 @@ const GeocoderTester = ({
         <label htmlFor="lng">
           lng:
           <input
-            type="text"
             id="lng"
             onChange={e => {
               setFocusPoint({ ...focusPoint, lng: e.target.value });
             }}
+            type="text"
             value={focusPoint.lng}
           />
         </label>
@@ -82,9 +87,9 @@ const GeocoderTester = ({
           <label htmlFor="term">
             search:
             <input
-              type="text"
               id="term"
               onChange={e => setSearchTerm(e.target.value)}
+              type="text"
               value={searchTerm}
             />
           </label>
@@ -93,19 +98,19 @@ const GeocoderTester = ({
       <label htmlFor="geocodeEarth">
         Geocode.earth:
         <input
-          type="checkbox"
           id="geocodeEarth"
-          checked={enableGeocodeEarth}
           onChange={e => setEnableGeocodeEarth(e.target.checked)}
+          type="checkbox"
+          checked={enableGeocodeEarth}
         />
       </label>
       <label htmlFor="here">
         Here:
         <input
-          type="checkbox"
           id="here"
-          checked={enableHere}
           onChange={e => setEnableHere(e.target.checked)}
+          type="checkbox"
+          checked={enableHere}
         />
       </label>
       <div>
@@ -115,17 +120,6 @@ const GeocoderTester = ({
       </div>
     </div>
   );
-};
-
-GeocoderTester.propTypes = {
-  hereApiKey: PropTypes.string.isRequired,
-  geocodeEarthApiKey: PropTypes.string.isRequired,
-  onResults: PropTypes.func.isRequired,
-  endpoint: PropTypes.string.isRequired,
-  at: PropTypes.shape({
-    lat: PropTypes.number,
-    lng: PropTypes.number
-  })
 };
 
 GeocoderTester.defaultProps = {
@@ -140,8 +134,8 @@ export default {
   component: (
     <GeocoderTester
       endpoint="search"
-      hereApiKey="placeholder"
       geocodeEarthApiKey="placeholder"
+      hereApiKey="placeholder"
       onResults={() => null}
     />
   ),

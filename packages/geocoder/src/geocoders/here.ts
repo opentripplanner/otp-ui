@@ -7,18 +7,19 @@ import type { MultiGeocoderResponse } from "./abstract-geocoder";
 import Geocoder from "./abstract-geocoder";
 
 const hereResultTypeToPeliasLayerMap = {
-  place: "venue",
-  houseNumber: "address"
+  houseNumber: "address",
+  place: "venue"
 };
 
 const convertHereToGeojson = (hereFeature: Item): Feature => {
+  const { scoring, categories, address, resultType, title, position } = hereFeature;
   const extraFields: { confidence?: number; addendum?: any } = {};
-  if (hereFeature.scoring) {
-    extraFields.confidence = hereFeature.scoring.queryScore;
+  if (scoring) {
+    extraFields.confidence = scoring.queryScore;
   }
-  if (hereFeature.categories) {
+  if (categories) {
     extraFields.addendum = {
-      categories: hereFeature.categories
+      categories
     };
   }
 
@@ -26,26 +27,26 @@ const convertHereToGeojson = (hereFeature: Item): Feature => {
     type: "Feature",
     geometry: {
       type: "Point",
-      coordinates: [hereFeature.position.lng, hereFeature.position.lat]
+      coordinates: [position.lng, position.lat]
     },
     properties: {
+      country: address.countryName,
+      country_a: address.countryCode,
+      country_code: address.countryCode,
+      county: address.county,
+      housenumber: address.houseNumber,
+      label: address.label,
+      layer: hereResultTypeToPeliasLayerMap[resultType]
+        ? hereResultTypeToPeliasLayerMap[resultType]
+        : resultType,
+      ...extraFields,
+      locality: address.city,
+      name: title,
+      neighbourhood: address.district,
+      postalcode: address.postalCode,
+      region: address.state,
       source: "here",
-      label: hereFeature.address.label,
-      country_code: hereFeature.address.countryCode,
-      name: hereFeature.title,
-      housenumber: hereFeature.address.houseNumber,
-      street: hereFeature.address.street,
-      postalcode: hereFeature.address.postalCode,
-      country: hereFeature.address.countryName,
-      region: hereFeature.address.state,
-      county: hereFeature.address.county,
-      country_a: hereFeature.address.countryCode,
-      locality: hereFeature.address.city,
-      neighbourhood: hereFeature.address.district,
-      layer: hereResultTypeToPeliasLayerMap[hereFeature.resultType]
-        ? hereResultTypeToPeliasLayerMap[hereFeature.resultType]
-        : hereFeature.resultType,
-      ...extraFields
+      street: address.street
     }
   };
 };
