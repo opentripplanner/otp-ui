@@ -344,35 +344,35 @@ Object {
 
 exports[`geocoder HERE should make reverse query 1`] = `
 Object {
-  "lat": 45.5164,
-  "lon": -122.67357,
-  "name": "833 SW Naito Pkwy, Portland, OR 97204-3309, United States",
-  "rawGeocodedFeature": Object {
-    "geometry": Object {
-      "coordinates": Array [
-        -122.67357,
-        45.5164,
-      ],
-      "type": "Point",
+  "features": Array [
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.67357,
+          45.5164,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "country": "United States",
+        "country_a": "USA",
+        "country_code": "USA",
+        "county": "Multnomah",
+        "housenumber": "833",
+        "label": "833 SW Naito Pkwy, Portland, OR 97204-3309, United States",
+        "layer": "address",
+        "locality": "Portland",
+        "name": "833 SW Naito Pkwy, Portland, OR 97204-3309, United States",
+        "neighbourhood": "Downtown",
+        "postalcode": "97204-3309",
+        "region": "Oregon",
+        "source": "here",
+        "street": "SW Naito Pkwy",
+      },
+      "type": "Feature",
     },
-    "properties": Object {
-      "country": "United States",
-      "country_a": "USA",
-      "country_code": "USA",
-      "county": "Multnomah",
-      "housenumber": "833",
-      "label": "833 SW Naito Pkwy, Portland, OR 97204-3309, United States",
-      "layer": "address",
-      "locality": "Portland",
-      "name": "833 SW Naito Pkwy, Portland, OR 97204-3309, United States",
-      "neighbourhood": "Downtown",
-      "postalcode": "97204-3309",
-      "region": "Oregon",
-      "source": "here",
-      "street": "SW Naito Pkwy",
-    },
-    "type": "Feature",
-  },
+  ],
+  "type": "FeatureCollection",
 }
 `;
 
