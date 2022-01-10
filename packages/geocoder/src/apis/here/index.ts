@@ -67,17 +67,8 @@ function autocomplete({
   // build query
   const query: HereQuery = { apiKey, q: text, limit: size, show: "details" };
 
-  if (focusPoint) {
-    const { lat, lon }: LonLatOutput = normalize(focusPoint);
-    query.at = `${lat},${lon}`;
-  }
-
   if (boundary) {
     const { country, rect } = boundary;
-    if (focusPoint)
-      throw new GeocoderException(
-        "Only one of focusPoint, boundary is allowed for Here API."
-      );
     if (country) query.in = `countryCode:${country}`;
     if (rect) {
       query.in = `bbox:${[
@@ -87,6 +78,11 @@ function autocomplete({
         rect.maxLat
       ].join(",")}`;
     }
+  } else if (focusPoint) { 
+    // Only add focusPoint if the boundary is not specified.
+    // HERE only supports one or the other, not both.
+    const { lat, lon }: LonLatOutput = normalize(focusPoint);
+    query.at = `${lat},${lon}`;
   }
   return run({
     options,
