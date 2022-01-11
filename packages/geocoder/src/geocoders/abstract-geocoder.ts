@@ -19,8 +19,8 @@ type Boundary = {
 
 type GeocoderAPI = {
   autocomplete: (query: AutocompleteQuery) => Promise<Array<JSON>>;
-  search: (query: SearchQuery) => Promise<Array<JSON>>;
   reverse: (query: ReverseQuery) => Promise<Array<JSON>>;
+  search: (query: SearchQuery) => Promise<Array<JSON>>;
 };
 
 export type GeocoderConfig = {

@@ -36,16 +36,16 @@ const GeocoderTester = ({
   const search = async () => {
     const hereRes = enableHere
       ? await geocoder[endpoint]({
-          text: searchTerm,
           focusPoint,
-          point: focusPoint
+          point: focusPoint,
+          text: searchTerm
         })
       : {};
     const peliasRes = enableGeocodeEarth
       ? await peliasGeocoder[endpoint]({
-          text: searchTerm,
           focusPoint,
-          point: focusPoint
+          point: focusPoint,
+          text: searchTerm
         })
       : {};
     onResults({
@@ -121,9 +121,8 @@ const GeocoderTester = ({
     </div>
   );
 };
-
 export default {
-  title: "Geocoder",
+  argTypes: { onResults: { action: "result" } },
   component: (
     <GeocoderTester
       endpoint="search"
@@ -132,7 +131,7 @@ export default {
       onResults={() => null}
     />
   ),
-  argTypes: { onResults: { action: "result" } }
+  title: "Geocoder"
 };
 
 // eslint-disable-next-line react/jsx-props-no-spreading
@@ -140,24 +139,24 @@ const Template = args => <GeocoderTester {...args} />;
 
 export const TestSearch = Template.bind({});
 TestSearch.args = {
+  at: { lat: 47.67552, lng: -122.31831 },
   endpoint: "search",
-  hereApiKey: "fake_api_key_here",
   geocodeEarthApiKey: "fake_api_key_geocodeearth",
-  at: { lat: 47.67552, lng: -122.31831 }
+  hereApiKey: "fake_api_key_here"
 };
 
 export const TestAutocomplete = Template.bind({});
 TestAutocomplete.args = {
+  at: { lat: 47.67552, lng: -122.31831 },
   endpoint: "autocomplete",
-  hereApiKey: "fake_api_key_here",
   geocodeEarthApiKey: "fake_api_key_geocodeearth",
-  at: { lat: 47.67552, lng: -122.31831 }
+  hereApiKey: "fake_api_key_here"
 };
 
 export const TestReverse = Template.bind({});
 TestReverse.args = {
+  at: { lat: 47.66427, lng: -122.31388 },
   endpoint: "reverse",
-  hereApiKey: "fake_api_key_here",
   geocodeEarthApiKey: "fake_api_key_geocodeearth",
-  at: { lat: 47.66427, lng: -122.31388 }
+  hereApiKey: "fake_api_key_here"
 };

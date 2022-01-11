@@ -12,15 +12,15 @@ const GEOCODE_URL = "https://geocode.search.hereapi.com/v1/geocode";
 const REVERSE_URL = "https://revgeocode.search.hereapi.com/v1/revgeocode";
 
 type HereQuery = {
+  apiKey: string;
   at?: string;
   in?: string;
+  lang?: string;
   limit?: number | string;
+  politicalView?: string;
   q?: string;
   qq?: string;
-  lang?: string;
-  politicalView?: string;
   show?: string;
-  apiKey: string;
 };
 
 // These types are standardized for the other geocoders in this library.
@@ -49,10 +49,10 @@ function run({ options, query, url }: HereFetchArgs): JSONArrayPromise {
  *
  * @param  {Object} $0
  * @param  {string} $0.apiKey                     The Here API Key
- * @param  {Object} $0.focusPoint
  * @param  {Object} $0.boundary
- * @param  {number} [$0.size=20]
+ * @param  {Object} $0.focusPoint
  * @param  {Object} $0.options                    options to pass to fetch (e.g., custom headers)
+ * @param  {number} [$0.size=20]
  * @param  {string} $0.text                       query text
  * @return {Promise}                              A Promise that'll get resolved with the autocomplete result
  */
@@ -65,7 +65,7 @@ function autocomplete({
   text
 }: AutocompleteQuery): JSONArrayPromise {
   // build query
-  const query: HereQuery = { apiKey, q: text, limit: size, show: "details" };
+  const query: HereQuery = { apiKey,  limit: size, q: text, show: "details" };
 
   if (boundary) {
     const { country, rect } = boundary;

@@ -24,7 +24,6 @@ const convertHereToGeojson = (hereFeature: Item): Feature => {
   }
 
   return {
-    type: "Feature",
     geometry: {
       type: "Point",
       coordinates: [position.lng, position.lat]
@@ -37,8 +36,8 @@ const convertHereToGeojson = (hereFeature: Item): Feature => {
       housenumber: address.houseNumber,
       label: address.label,
       layer: hereResultTypeToPeliasLayerMap[resultType]
-        ? hereResultTypeToPeliasLayerMap[resultType]
-        : resultType,
+      ? hereResultTypeToPeliasLayerMap[resultType]
+      : resultType,
       ...extraFields,
       locality: address.city,
       name: title,
@@ -47,34 +46,35 @@ const convertHereToGeojson = (hereFeature: Item): Feature => {
       region: address.state,
       source: "here",
       street: address.street
-    }
+    },
+    type: "Feature"
   };
 };
 
 export default class HereGeocoder extends Geocoder {
   rewriteReverseResponse({ items }: HereResponse): MultiGeocoderResponse {
     return {
-      type: "FeatureCollection",
       features: items
-        .map(convertHereToGeojson)
+      .map(convertHereToGeojson),
+      type: "FeatureCollection",
     }
   }
 
   rewriteAutocompleteResponse(response: HereResponse): MultiGeocoderResponse {
     const { items } = response;
     return {
-      type: "FeatureCollection",
       features: items
-        // Here can return continued query suggestions, which we do not support.
-        ?.filter(item => item.resultType !== "chainQuery")
-        .map(convertHereToGeojson)
+      // Here can return continued query suggestions, which we do not support.
+      ?.filter(item => item.resultType !== "chainQuery")
+      .map(convertHereToGeojson),
+      type: "FeatureCollection"
     };
   }
 
   rewriteSearchResponse({ items }: HereResponse): MultiGeocoderResponse {
     return {
-      type: "FeatureCollection",
-      features: items.map(convertHereToGeojson)
+      features: items.map(convertHereToGeojson),
+      type: "FeatureCollection"
     };
   }
 }
