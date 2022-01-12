@@ -1,10 +1,16 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { DirectionIcon } from "@opentripplanner/icons";
 import React from "react";
+import PropTypes from "prop-types";
 
 import * as Styled from "../styled";
+import MapillaryButton from "./mapillary-button";
 
-export default function AccessLegSteps({ steps }) {
+export default function AccessLegSteps({
+  steps,
+  mapillaryCallback,
+  mapillaryKey
+}) {
   return (
     <Styled.Steps>
       {steps.map((step, k) => {
@@ -21,7 +27,12 @@ export default function AccessLegSteps({ steps }) {
               </span>
               <Styled.StepStreetName>
                 {coreUtils.itinerary.getStepStreetName(step)}
-              </Styled.StepStreetName>
+              </Styled.StepStreetName>{" "}
+              <MapillaryButton
+                coords={[step.lat, step.lon]}
+                mapillaryCallback={mapillaryCallback}
+                mapillaryKey={mapillaryKey}
+              />
             </Styled.StepDescriptionContainer>
           </Styled.StepRow>
         );
@@ -31,5 +42,12 @@ export default function AccessLegSteps({ steps }) {
 }
 
 AccessLegSteps.propTypes = {
-  steps: coreUtils.types.stepsType.isRequired
+  steps: coreUtils.types.stepsType.isRequired,
+  mapillaryCallback: PropTypes.func,
+  mapillaryKey: PropTypes.string
+};
+
+AccessLegSteps.defaultProps = {
+  mapillaryCallback: null,
+  mapillaryKey: null
 };

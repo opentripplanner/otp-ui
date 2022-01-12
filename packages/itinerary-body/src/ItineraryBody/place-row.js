@@ -25,6 +25,8 @@ const PlaceRow = ({
   LegIcon,
   legIndex,
   LineColumnContent,
+  mapillaryCallback,
+  mapillaryKey,
   messages,
   PlaceName,
   RouteDescription,
@@ -130,6 +132,8 @@ const PlaceRow = ({
                 leg={leg}
                 LegIcon={LegIcon}
                 legIndex={legIndex}
+                mapillaryCallback={mapillaryCallback}
+                mapillaryKey={mapillaryKey}
                 setActiveLeg={setActiveLeg}
                 setLegDiagram={setLegDiagram}
                 showElevationProfile={showElevationProfile}
@@ -184,6 +188,8 @@ PlaceRow.propTypes = {
   /** The index value of this specific leg within the itinerary */
   legIndex: PropTypes.number.isRequired,
   LineColumnContent: PropTypes.elementType.isRequired,
+  mapillaryCallback: PropTypes.func,
+  mapillaryKey: PropTypes.string,
   messages: messagesType,
   PlaceName: PropTypes.elementType.isRequired,
   RouteDescription: PropTypes.elementType.isRequired,
@@ -211,6 +217,8 @@ PlaceRow.defaultProps = {
   followsTransit: false,
   // can be null if this is the origin place
   lastLeg: null,
+  mapillaryCallback: null,
+  mapillaryKey: null,
   messages: {
     mapIconTitle: "View on map"
   },
