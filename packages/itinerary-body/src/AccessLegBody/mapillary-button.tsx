@@ -51,23 +51,26 @@ const MapillaryButton = ({
   mapillaryKey,
   padTop
 }: {
-  clickCallback: (id: string) => void;
+  clickCallback?: (id: string) => void;
   coords: [number, number];
   mapillaryKey: string;
   padTop?: boolean;
 }): JSX.Element => {
   const [imageId, setImageId] = useState(null);
+
   useEffect(() => {
+    // useEffect only supports async actions as a child function
     const getMapillaryId = async () => {
       const bounds = generateBoundingBoxFromCoordinate(coords).join(",");
       const raw = await fetch(
-        `https://graph.mapillary.com/images?fields=id,geometry&limit=1&access_token=${mapillaryKey}&bbox=${bounds}`
+        `https://graph.mapillary.com/images?fields=id&limit=1&access_token=${mapillaryKey}&bbox=${bounds}`
       );
       const json = await raw.json();
       if (json.data.length > 0) {
         setImageId(json.data[0].id);
       }
     };
+
     if (!imageId && !!mapillaryKey) getMapillaryId();
   }, [coords]);
 
