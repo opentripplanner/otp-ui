@@ -29,8 +29,8 @@ export default function AccessLegSteps({
                 {coreUtils.itinerary.getStepStreetName(step)}
               </Styled.StepStreetName>
               <MapillaryButton
-                coords={[step.lat, step.lon]}
                 clickCallback={mapillaryCallback}
+                coords={[step.lat, step.lon]}
                 mapillaryKey={mapillaryKey}
                 padLeft
               />

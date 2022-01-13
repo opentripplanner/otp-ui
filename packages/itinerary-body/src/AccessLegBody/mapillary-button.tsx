@@ -33,8 +33,8 @@ const Container = styled.a<{ padLeft?: boolean; padTop?: boolean }>`
 
   &::before {
     content: "| ";
-    margin-left: ${props => (props.padLeft ? "1ch" : "0")};
     cursor: auto;
+    margin-left: ${props => (props.padLeft ? "1ch" : "0")};
   }
 `;
 
@@ -96,7 +96,12 @@ const MapillaryButton = ({
 
   if (!imageId) return null;
   return (
-    <Container onClick={handleClick} padTop={padTop} padLeft={padLeft}>
+    <Container
+      onClick={handleClick}
+      padLeft={padLeft}
+      padTop={padTop}
+      title="Show street imagery at this location"
+    >
       <Icon />
     </Container>
   );
