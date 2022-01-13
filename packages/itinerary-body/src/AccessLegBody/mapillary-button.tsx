@@ -75,7 +75,7 @@ const MapillaryButton = ({
         `https://graph.mapillary.com/images?fields=id&limit=1&access_token=${mapillaryKey}&bbox=${bounds}`
       );
       const json = await raw.json();
-      if (json.data.length > 0) {
+      if (json?.data?.length > 0) {
         setImageId(json.data[0].id);
       }
     };
