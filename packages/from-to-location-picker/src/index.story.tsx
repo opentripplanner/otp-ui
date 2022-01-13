@@ -13,18 +13,18 @@ export default {
 const onFromClick = action("onFromClick");
 const onToClick = action("onToClick");
 
-export const fromTo = () => (
+export const fromTo = (): React.ReactElement => (
   <FromToLocationPicker onFromClick={onFromClick} onToClick={onToClick} />
 );
 
-export const smallTextSansSerif = () => (
+export const smallTextSansSerif = (): React.ReactElement => (
   <span style={{ fontSize: "75%", fontFamily: "sans-serif" }}>
     Plan a trip:
     <FromToLocationPicker onFromClick={onFromClick} onToClick={onToClick} />
   </span>
 );
 
-export const otpAmbientStyle = () => (
+export const otpAmbientStyle = (): React.ReactElement => (
   <div className="trimet-ambient">
     <FromToLocationPicker
       fromText="Start here"

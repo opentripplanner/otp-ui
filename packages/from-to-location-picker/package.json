@@ -9,9 +9,7 @@
   "module": "esm/index.js",
   "private": false,
   "dependencies": {
-    "@opentripplanner/location-icon": "^1.4.0",
-    "@opentripplanner/core-utils": "^4.5.0",
-    "prop-types": "^15.7.2"
+    "@opentripplanner/location-icon": "^1.4.0"
   },
   "peerDependencies": {
     "react": "^16.14.0",
@@ -22,7 +20,7 @@
     "url": "git+https://github.com/opentripplanner/otp-ui.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "tsc": "tsc && echo Remove the @ts-expect-error exception in index.tsx once core-utils is typed!"
   },
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"
