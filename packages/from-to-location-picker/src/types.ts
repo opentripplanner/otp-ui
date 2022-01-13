@@ -11,10 +11,6 @@ export type Location = {
 
 export type FromToPickerProps = {
   /**
-   * The text to display on the "from" button for setting the origin of a trip.
-   */
-  fromText?: string;
-  /**
    * A specific location to associate with this. This is only used when combined
    * with the setLocation prop.
    */
@@ -27,10 +23,6 @@ export type FromToPickerProps = {
    * Triggered when the user clicks on the "to" button.
    */
   onToClick: () => void;
-  /**
-   * The text to display on the "to" button for setting the destination of a trip.
-   */
-  toText?: string;
   /**
    * Triggered when the user clicks either the "from" or "to" button and there
    * are no from/to specific handler functions defined as props.

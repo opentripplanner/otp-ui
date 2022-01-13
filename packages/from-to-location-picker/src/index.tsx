@@ -1,19 +1,28 @@
+import flatten from "flat";
 import LocationIcon from "@opentripplanner/location-icon";
+import { FormattedMessage } from "react-intl";
 import React from "react";
 // eslint-disable-next-line prettier/prettier
 import type { FromToPickerProps } from "./types";
 
 import * as S from "./styled";
 
+// Load the default messages.
+import defaultEnglishMessages from "../i18n/en-US.yml";
+
 const iconSize = "0.9em";
+
+// HACK: We should flatten the messages loaded above because
+// the YAML loaders behave differently between webpack and our version of jest:
+// - the yaml loader for webpack returns a nested object,
+// - the yaml loader for jest returns messages with flattened ids.
+const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
 
 const FromToLocationPicker = ({
-  fromText = "From here",
   location = null,
   onFromClick = null,
   onToClick = null,
-  toText = "To here",
   setLocation = null,
   showIcons = true
 }: FromToPickerProps): React.ReactElement => {
@@ -45,11 +54,23 @@ const FromToLocationPicker = ({
     <S.FromToPickerSpan>
       <S.LocationPickerSpan>
         {showIcons && <LocationIcon type="from" size={iconSize} />}
-        <S.Button onClick={handleFromClick}>{fromText}</S.Button>
+        <S.Button onClick={handleFromClick}>
+        <FormattedMessage
+          defaultMessage={defaultMessages["otpUi.FromToLocationPicker.from"]}
+          description='Text for the "from" button of the picker'
+          id="otpUi.FromToLocationPicker.from"
+        />
+        </S.Button>
       </S.LocationPickerSpan>
       <S.LocationPickerSpan>
         {showIcons && <LocationIcon type="to" size={iconSize} />}
-        <S.Button onClick={handleToClick}>{toText}</S.Button>
+        <S.Button onClick={handleToClick}>
+          <FormattedMessage
+            defaultMessage={defaultMessages["otpUi.FromToLocationPicker.to"]}
+            description='Text for the "to" button of the picker'
+            id="otpUi.FromToLocationPicker.to"
+          />
+    </S.Button>
       </S.LocationPickerSpan>
     </S.FromToPickerSpan>
   );
