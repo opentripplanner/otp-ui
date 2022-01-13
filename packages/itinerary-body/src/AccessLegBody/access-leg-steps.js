@@ -27,11 +27,12 @@ export default function AccessLegSteps({
               </span>
               <Styled.StepStreetName>
                 {coreUtils.itinerary.getStepStreetName(step)}
-              </Styled.StepStreetName>{" "}
+              </Styled.StepStreetName>
               <MapillaryButton
                 coords={[step.lat, step.lon]}
                 clickCallback={mapillaryCallback}
                 mapillaryKey={mapillaryKey}
+                padLeft
               />
             </Styled.StepDescriptionContainer>
           </Styled.StepRow>
