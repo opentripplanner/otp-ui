@@ -47,7 +47,7 @@ const Icon = styled(StreetView)`
  * A component which shows a "street view" button if a Mapillary image is available for a
  * passed coordinate
  *
- * @param coords        The coordinates to find imagery for
+ * @param coords        The coordinates to find imagery for in the format [lat, lon]
  * @param mapillaryKey  A Mapillary api key used to check for imagery.
  * @param padTop        Whether to add padding to the top of the container.
  * @param clickCallback A method to fire when the button is clicked, which accepts an ID.
