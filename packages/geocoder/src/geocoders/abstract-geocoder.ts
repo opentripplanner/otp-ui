@@ -6,10 +6,10 @@ import type { LonLatInput } from "@conveyal/lonlat"
 import type { Feature, FeatureCollection } from "geojson"
 
 type Rect = {
-  maxLat: number | string;
-  maxLon: number | string;
-  minLat: number | string;
-  minLon: number | string;
+  maxLat: number;
+  maxLon: number;
+  minLat: number;
+  minLon: number;
 };
 
 type Boundary = {
@@ -18,17 +18,21 @@ type Boundary = {
 };
 
 type GeocoderAPI = {
-  autocomplete: (query: AutocompleteQuery) => Promise<Array<JSON>>;
-  reverse: (query: ReverseQuery) => Promise<Array<JSON>>;
-  search: (query: SearchQuery) => Promise<Array<JSON>>;
+  autocomplete: (query: AutocompleteQuery) => Promise<unknown>;
+  reverse: (query: ReverseQuery) => Promise<unknown>;
+  search: (query: SearchQuery) => Promise<unknown>;
 };
 
+// These settings get added to the request to the geocoder
 export type GeocoderConfig = {
   apiKey?: string;
   baseUrl?: string;
   boundary?: Boundary;
   focusPoint?: LonLatInput;
   options?: RequestInit;
+  sources?: string;
+  size?: number;
+  reverseUseFeatureCollection?: boolean;
 };
 
 export type ReverseQuery = {
@@ -37,6 +41,7 @@ export type ReverseQuery = {
   options?: RequestInit;
   point?: LonLatInput;
   url?: string;
+  sources?: string;
 };
 
 export type AutocompleteQuery = {
@@ -45,9 +50,10 @@ export type AutocompleteQuery = {
   focusPoint?: LonLatInput;
   format?: boolean;
   options?: RequestInit;
-  size?: number | string;
+  size?: number;
   text?: string;
   url?: string;
+  sources?: string;
 };
 
 export type SearchQuery = {
@@ -56,17 +62,18 @@ export type SearchQuery = {
   focusPoint?: LonLatInput;
   format?: boolean;
   options?: RequestInit;
-  size?: number | string;
+  size?: number;
   text?: string;
   url?: string;
+  sources?: string;
 };
 
 export type MultiGeocoderResponse = FeatureCollection & {
-  ismorphicMapzenSearchQuery?: string;
+  isomorphicMapzenSearchQuery?: SearchQuery & AutocompleteQuery & ReverseQuery;
 };
 
 export type SingleGeocoderResponse = {
-  ismorphicMapzenSearchQuery?: string;
+  isomorphicMapzenSearchQuery?: SearchQuery & AutocompleteQuery & ReverseQuery;
   lat: number;
   lon: number;
   name: string;
@@ -83,9 +90,10 @@ export default class Geocoder {
 
   api: GeocoderAPI;
 
-  constructor(geocoderApi: GeocoderAPI, geocoderConfig: GeocoderConfig) {
+  constructor(geocoderApi?: GeocoderAPI, geocoderConfig?: GeocoderConfig) {
     this.api = geocoderApi;
     this.geocoderConfig = geocoderConfig;
+    console.log(this.geocoderConfig);
   }
 
   /**
@@ -95,7 +103,7 @@ export default class Geocoder {
   autocomplete(query: AutocompleteQuery): Promise<MultiGeocoderResponse> {
     return this.api
       .autocomplete(this.getAutocompleteQuery(query))
-      .then(this.rewriteAutocompleteResponse);
+      .then(this.rewriteAutocompleteResponse.bind(this));
   }
 
   /**
@@ -125,10 +133,10 @@ export default class Geocoder {
    * Do a reverse-geocode, i.e. get address information and attributes given a
    * GPS coordinate.
    */
-  reverse(query: ReverseQuery): Promise<MultiGeocoderResponse> {
+  reverse(query: ReverseQuery): Promise<MultiGeocoderResponse | SingleGeocoderResponse> {
     return this.api
       .reverse(this.getReverseQuery(query))
-      .then(this.rewriteReverseResponse);
+      .then(this.rewriteReverseResponse.bind(this));
   }
 
   /**
@@ -139,7 +147,7 @@ export default class Geocoder {
   search(query: SearchQuery): Promise<MultiGeocoderResponse> {
     return this.api
       .search(this.getSearchQuery(query))
-      .then(this.rewriteSearchResponse);
+      .then(this.rewriteSearchResponse.bind(this));
   }
 
   /**
@@ -171,7 +179,7 @@ export default class Geocoder {
     const { apiKey, baseUrl, options } = this.geocoderConfig;
     return {
       apiKey,
-      format: true,
+      format: !this.geocoderConfig?.reverseUseFeatureCollection, // keep result as GeoJSON if we're supposed to have a feature collection
       options,
       url: baseUrl ? `${baseUrl}/reverse` : undefined,
       ...query
@@ -210,7 +218,7 @@ export default class Geocoder {
   /**
    * Default rewriter for reverse responses
    */
-  rewriteReverseResponse(response: unknown): MultiGeocoderResponse {
+  rewriteReverseResponse(response: unknown): MultiGeocoderResponse | SingleGeocoderResponse {
     return response as MultiGeocoderResponse;
   }
 

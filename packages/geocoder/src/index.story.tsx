@@ -18,11 +18,16 @@ const GeocoderTester = ({
   const [focusPoint, setFocusPoint] = useState({ lat: at.lat, lng: at.lng });
   const [enableGeocodeEarth, setEnableGeocodeEarth] = useState(true);
   const [enableHere, setEnableHere] = useState(true);
+  const [
+    reverseUseFeatureCollection,
+    setReverseUseFeatureCollection
+  ] = useState(false);
 
   const geocoder = getGeocoder({
     apiKey: hereApiKey,
     focusPoint,
-    type: "HERE"
+    type: "HERE",
+    reverseUseFeatureCollection
   });
 
   const peliasGeocoder = getGeocoder({
@@ -30,7 +35,8 @@ const GeocoderTester = ({
     baseUrl: "https://api.geocode.earth/v1",
     focusPoint,
     size: 1,
-    type: "PELIAS"
+    type: "PELIAS",
+    reverseUseFeatureCollection
   });
 
   const search = async () => {
@@ -95,24 +101,39 @@ const GeocoderTester = ({
           </label>
         </div>
       )}
-      <label htmlFor="geocodeEarth">
-        Geocode.earth:
-        <input
-          id="geocodeEarth"
-          onChange={e => setEnableGeocodeEarth(e.target.checked)}
-          type="checkbox"
-          checked={enableGeocodeEarth}
-        />
-      </label>
-      <label htmlFor="here">
-        Here:
-        <input
-          id="here"
-          onChange={e => setEnableHere(e.target.checked)}
-          type="checkbox"
-          checked={enableHere}
-        />
-      </label>
+      <div>
+        <label htmlFor="geocodeEarth">
+          Geocode.earth:
+          <input
+            id="geocodeEarth"
+            onChange={e => setEnableGeocodeEarth(e.target.checked)}
+            type="checkbox"
+            checked={enableGeocodeEarth}
+          />
+        </label>
+        <label htmlFor="here">
+          Here:
+          <input
+            id="here"
+            onChange={e => setEnableHere(e.target.checked)}
+            type="checkbox"
+            checked={enableHere}
+          />
+        </label>
+      </div>
+      <div>
+        {endpoint === "reverse" && (
+          <label htmlFor="reverseUseFeatureCollection">
+            Return Feature Collection:
+            <input
+              id="reverseUseFeatureCollection"
+              onChange={e => setReverseUseFeatureCollection(e.target.checked)}
+              type="checkbox"
+              checked={reverseUseFeatureCollection}
+            />
+          </label>
+        )}
+      </div>
       <div>
         <button onClick={search} type="button">
           Search

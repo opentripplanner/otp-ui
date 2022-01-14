@@ -5,6 +5,7 @@ import { stringify } from "querystring";
 // eslint-disable-next-line prettier/prettier
 import type { LonLatOutput } from "@conveyal/lonlat"
 import type { AutocompleteQuery, ReverseQuery, SearchQuery } from "../../geocoders/abstract-geocoder"
+import { HereResponse } from "./types";
 
 const AUTOCOMPLETE_URL =
   "https://autosuggest.search.hereapi.com/v1/autosuggest";
@@ -31,14 +32,12 @@ type HereFetchArgs = {
   url: string;
 };
 
-type JSONArrayPromise = Promise<Array<JSON>>;
-
 function GeocoderException(message: string) {
   this.message = message;
   this.name = "GeocoderException";
 }
 
-function run({ options, query, url }: HereFetchArgs): JSONArrayPromise {
+function run({ options, query, url }: HereFetchArgs): Promise<HereResponse> {
   return fetch(`${url}?${stringify(query)}`, options).then(res => res.json());
 }
 
@@ -63,7 +62,7 @@ function autocomplete({
   options,
   size = 20,
   text
-}: AutocompleteQuery): JSONArrayPromise {
+}: AutocompleteQuery): Promise<HereResponse> {
   // build query
   const query: HereQuery = { apiKey,  limit: size, q: text, show: "details" };
 
@@ -72,10 +71,10 @@ function autocomplete({
     if (country) query.in = `countryCode:${country}`;
     if (rect) {
       query.in = `bbox:${[
-        rect.minLon,
-        rect.minLat,
+        rect.maxLat,
         rect.maxLon,
-        rect.maxLat
+        rect.minLat,
+        rect.minLon
       ].join(",")}`;
     }
   } else if (focusPoint) { 
@@ -110,8 +109,8 @@ function search({
   options,
   size = 10,
   text
-}: SearchQuery): JSONArrayPromise {
-  if (!text) return Promise.resolve([]);
+}: SearchQuery): Promise<HereResponse> {
+  if (!text) return Promise.resolve({ items: [] });
 
   const query: HereQuery = {
     apiKey,
@@ -138,7 +137,7 @@ function search({
  * @param  {Object} $0.options                  options to pass to fetch (e.g., custom headers)
  * @return {Promise}                            A Promise that'll get resolved with search result
  */
-function reverse({ apiKey, options, point }: ReverseQuery): JSONArrayPromise {
+function reverse({ apiKey, options, point }: ReverseQuery): Promise<HereResponse> {
   const query: HereQuery = {
     apiKey
   };
@@ -150,7 +149,10 @@ function reverse({ apiKey, options, point }: ReverseQuery): JSONArrayPromise {
     throw new GeocoderException("No point provided for reverse geocoder.");
   }
 
-  return run({ options, query, url: REVERSE_URL });
+  return run({ options, query, url: REVERSE_URL }).then(res => ({
+    ...res,
+    point
+  }));
 }
 
 export { autocomplete, reverse, search };

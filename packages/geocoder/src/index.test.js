@@ -37,6 +37,7 @@ describe("geocoder", () => {
     .replyWithFile(200, mockResponsePath("arcgis", "suggest-response.json"))
     // reverse
     .get(`${baseArcGisPath}reverseGeocode`)
+    .twice()
     .query(true)
     .replyWithFile(
       200,
@@ -73,6 +74,7 @@ describe("geocoder", () => {
     .replyWithFile(200, mockResponsePath("pelias", "search-response.json"))
     // reverse, includes not using zip/country in returned location.name.
     .get(`${basePeliasPath}reverse`)
+    .twice()
     .query(true)
     .replyWithFile(200, mockResponsePath("pelias", "reverse-response.json"));
 
@@ -89,6 +91,7 @@ describe("geocoder", () => {
     .replyWithFile(200, mockResponsePath("here", "search-response.json"))
     // reverse
     .get("/v1/revgeocode")
+    .twice()
     .query(true)
     .replyWithFile(200, mockResponsePath("here", "reverse-response.json"));
 
@@ -112,6 +115,16 @@ describe("geocoder", () => {
 
       it("should make reverse query", async () => {
         const result = await getGeocoder(geocoder).reverse({
+          point: { lat: 45.516198, lon: -122.67324 }
+        });
+        expect(result).toMatchSnapshot();
+      });
+
+      it("should make reverse query with featurecollection enabled", async () => {
+        const result = await getGeocoder({
+          ...geocoder,
+          reverseUseFeatureCollection: true
+        }).reverse({
           point: { lat: 45.516198, lon: -122.67324 }
         });
         expect(result).toMatchSnapshot();

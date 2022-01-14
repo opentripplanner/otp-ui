@@ -1,5 +1,10 @@
+// Prettier does not support typescript annotation
+// eslint-disable-next-line prettier/prettier
+import type { LonLatInput } from "@conveyal/lonlat"
+
 export interface HereResponse {
   items: Item[];
+  point?: LonLatInput; // used in reverse response
 }
 
 export type Rect = {

@@ -2,7 +2,7 @@
 // eslint-disable-next-line prettier/prettier
 import type { Feature } from "geojson"
 import type { HereResponse, Item } from "../apis/here/types";
-import type { MultiGeocoderResponse } from "./abstract-geocoder";
+import type { MultiGeocoderResponse, SingleGeocoderResponse } from "./abstract-geocoder";
 
 import Geocoder from "./abstract-geocoder";
 
@@ -52,12 +52,22 @@ const convertHereToGeojson = (hereFeature: Item): Feature => {
 };
 
 export default class HereGeocoder extends Geocoder {
-  rewriteReverseResponse({ items }: HereResponse): MultiGeocoderResponse {
+  rewriteReverseResponse({ items, point }: HereResponse): MultiGeocoderResponse | SingleGeocoderResponse {
+    if (this.geocoderConfig?.reverseUseFeatureCollection) {
+      return {
+        features: items
+        .map(convertHereToGeojson),
+        type: "FeatureCollection",
+      }
+    } 
+    // Render the result as a single geocoder response
+    const firstItem = items[0];
     return {
-      features: items
-      .map(convertHereToGeojson),
-      type: "FeatureCollection",
+      ...point,
+      name: firstItem.title,
+      rawGeocodedFeature: convertHereToGeojson(firstItem)
     }
+    
   }
 
   rewriteAutocompleteResponse(response: HereResponse): MultiGeocoderResponse {
