@@ -93,7 +93,6 @@ export default class Geocoder {
   constructor(geocoderApi?: GeocoderAPI, geocoderConfig?: GeocoderConfig) {
     this.api = geocoderApi;
     this.geocoderConfig = geocoderConfig;
-    console.log(this.geocoderConfig);
   }
 
   /**
@@ -210,6 +209,7 @@ export default class Geocoder {
 
   /**
    * Default rewriter for autocomplete responses
+   * Response type is unknown because it depends on the specific Geocoder implementation.
    */
   rewriteAutocompleteResponse(response: unknown): MultiGeocoderResponse {
     return response as MultiGeocoderResponse;
@@ -217,6 +217,7 @@ export default class Geocoder {
 
   /**
    * Default rewriter for reverse responses
+   * Response type is unknown because it depends on the specific Geocoder implementation.
    */
   rewriteReverseResponse(response: unknown): MultiGeocoderResponse | SingleGeocoderResponse {
     return response as MultiGeocoderResponse;
@@ -224,6 +225,7 @@ export default class Geocoder {
 
   /**
    * Default rewriter for search responses
+   * Response type is unknown because it depends on the specific Geocoder implementation.
    */
   rewriteSearchResponse(response: unknown): MultiGeocoderResponse {
     return response as MultiGeocoderResponse;

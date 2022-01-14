@@ -13,6 +13,8 @@ export default class PeliasGeocoder extends Geocoder {
   /**
    * Generate an autocomplete query specifically for the Pelias API. The
    * `sources` parameter is a Pelias-specific option.
+   * This function fills in some more fields of the query
+   * from the existing values in the GeocoderConfig. 
    */
   getAutocompleteQuery(query: AutocompleteQuery): AutocompleteQuery {
     const {
@@ -40,6 +42,8 @@ export default class PeliasGeocoder extends Geocoder {
   /**
    * Generate a search query specifically for the Pelias API. The
    * `sources` parameter is a Pelias-specific option.
+   * This function fills in some more fields of the query
+   * from the existing values in the GeocoderConfig. 
    */
   getSearchQuery(query: SearchQuery): SearchQuery {
     const {

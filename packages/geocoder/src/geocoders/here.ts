@@ -55,8 +55,7 @@ export default class HereGeocoder extends Geocoder {
   rewriteReverseResponse({ items, point }: HereResponse): MultiGeocoderResponse | SingleGeocoderResponse {
     if (this.geocoderConfig?.reverseUseFeatureCollection) {
       return {
-        features: items
-        .map(convertHereToGeojson),
+        features: items.map(convertHereToGeojson),
         type: "FeatureCollection",
       }
     } 
