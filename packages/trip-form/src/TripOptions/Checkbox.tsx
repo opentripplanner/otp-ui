@@ -1,4 +1,6 @@
 import React, { FunctionComponent, ReactElement } from "react";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore FIXME: Create TypeScript types for the icons package.
 import { TriMetModeIcon2021 as TriMetModeIcon } from "@opentripplanner/icons";
 import * as S from "./styled";
 import { CheckboxIcons } from "./types";
