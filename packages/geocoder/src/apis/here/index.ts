@@ -71,10 +71,10 @@ function autocomplete({
     if (country) query.in = `countryCode:${country}`;
     if (rect) {
       query.in = `bbox:${[
-        rect.maxLat,
-        rect.maxLon,
+        rect.minLon,
         rect.minLat,
-        rect.minLon
+        rect.maxLon,
+        rect.maxLat
       ].join(",")}`;
     }
   } else if (focusPoint) { 
