@@ -123,7 +123,7 @@ export const Blank = () => (
     getCurrentPosition={getCurrentPosition}
     locationType="from"
     onLocationSelected={onLocationSelected}
-    static
+    isStatic
   />
 );
 
@@ -135,7 +135,7 @@ export const Styled = () => (
     getCurrentPosition={getCurrentPosition}
     locationType="from"
     onLocationSelected={onLocationSelected}
-    static
+    isStatic
   />
 );
 
@@ -148,7 +148,7 @@ export const SelectedLocation = () => (
     location={selectedLocation}
     locationType="to"
     onLocationSelected={onLocationSelected}
-    static
+    isStatic
   />
 );
 
@@ -161,7 +161,7 @@ export const SelectedLocationCustomClear = () => (
     locationType="to"
     onLocationSelected={onLocationSelected}
     clearButtonIcon={<Bus size={13} />}
-    static
+    isStatic
   />
 );
 
@@ -174,7 +174,7 @@ export const WithNearbyStops = () => (
     locationType="to"
     nearbyStops={nearbyStops}
     onLocationSelected={onLocationSelected}
-    static
+    isStatic
     stopsIndex={stopsIndex}
   />
 );
@@ -188,7 +188,7 @@ export const WithSessionSearches = () => (
     locationType="to"
     onLocationSelected={onLocationSelected}
     sessionSearches={sessionSearches}
-    static
+    isStatic
   />
 );
 
@@ -201,7 +201,7 @@ export const WithUserSettings = () => (
     locationType="to"
     onLocationSelected={onLocationSelected}
     showUserSettings
-    static
+    isStatic
     userLocationsAndRecentPlaces={userLocationsAndRecentPlaces}
   />
 );
@@ -222,7 +222,7 @@ export const WithCustomIcons = () => (
     sessionOptionIcon={<Clock size={13} />}
     sessionSearches={sessionSearches}
     showUserSettings
-    static
+    isStatic
     stopsIndex={stopsIndex}
     stopOptionIcon={<MapSigns size={13} />}
     userLocationsAndRecentPlaces={userLocationsAndRecentPlaces}
