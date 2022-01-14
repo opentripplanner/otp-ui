@@ -1,5 +1,4 @@
-import PropTypes from "prop-types";
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 
 export const BaseButton = styled.button`
@@ -26,11 +25,15 @@ export const DropdownContainer = styled.span`
   width: 100%;
 `;
 
-export const MenuItemList = styled.ul.attrs(props => ({
+type MenuItemListProps = {
+  uniqueId: string;
+};
+
+export const MenuItemList = styled.ul.attrs((props: MenuItemListProps) => ({
   "aria-label": "Search Results",
   id: props.uniqueId,
   role: "listbox"
-}))`
+}))<MenuItemListProps>`
   background-clip: padding-box;
   background-color: #fff;
   border-radius: 4px;
@@ -54,10 +57,17 @@ export const Dropdown = ({
   children,
   listBoxIdentifier,
   locationType,
-  onToggle,
+  onToggle = () => {},
   open,
   title
-}) => {
+}: {
+  children: React.ReactNode;
+  listBoxIdentifier: string;
+  locationType: string;
+  open: boolean;
+  onToggle?: () => void;
+  title: React.ReactNode;
+}): React.ReactElement => {
   const dropdownButtonAriaLabel = `List the suggested ${locationType} locations as you type`;
   return (
     <DropdownContainer>
@@ -69,19 +79,6 @@ export const Dropdown = ({
       )}
     </DropdownContainer>
   );
-};
-
-Dropdown.propTypes = {
-  children: PropTypes.node.isRequired,
-  listBoxIdentifier: PropTypes.string.isRequired,
-  locationType: PropTypes.string.isRequired,
-  open: PropTypes.bool.isRequired,
-  onToggle: PropTypes.func,
-  title: PropTypes.node.isRequired
-};
-
-Dropdown.defaultProps = {
-  onToggle: () => {}
 };
 
 export const FormGroup = styled.div`
@@ -118,7 +115,7 @@ export const InputGroupAddon = styled.span`
   text-align: center;
 `;
 
-export const MenuItemA = styled.a`
+export const MenuItemA = styled.a<{ active?: boolean }>`
   background-color: ${props => (props.active ? "#337ab7" : "transparent")};
   clear: both;
   color: ${props => (props.active ? "#fff" : "#333")};
@@ -130,7 +127,11 @@ export const MenuItemA = styled.a`
   white-space: nowrap;
 `;
 
-export const MenuItemHeader = styled.li`
+export const MenuItemHeader = styled.li<{
+  fgColor?: string;
+  bgColor?: string;
+  centeredText?: boolean;
+}>`
   color: ${props => props.fgColor || "#eee"};
   background-color: ${props => props.bgColor || "#333"};
   display: block;
@@ -140,7 +141,7 @@ export const MenuItemHeader = styled.li`
   text-align: ${props => (props.centeredText ? "center" : "left")};
   white-space: nowrap;
 `;
-export const MenuItemLi = styled.li`
+export const MenuItemLi = styled.li<{ disabled?: boolean }>`
   &:hover {
     cursor: pointer;
     /* TODO: adjust highlight color based on props.color? */
@@ -148,68 +149,53 @@ export const MenuItemLi = styled.li`
   }
 `;
 
-export class MenuItem extends Component {
-  onClick = () => {
-    const { disabled, onClick } = this.props;
+export const MenuItem = ({
+  active = false,
+  centeredText = false,
+  children,
+  // foregroundColor and backgroundColor would be preferred, but React has issues with
+  // these since they are style keywords
+  fgColor = null,
+  bgColor = null,
+  disabled = false,
+  header = false,
+  onClick = null
+}: {
+  active?: boolean;
+  centeredText?: boolean;
+  children: React.ReactNode;
+  fgColor?: string;
+  bgColor?: string;
+  disabled?: boolean;
+  header?: boolean;
+  onClick?: () => void;
+}): React.ReactElement => {
+  const handleClick = () => {
     if (!disabled) onClick();
   };
 
-  render() {
-    const {
-      active,
-      centeredText,
-      children,
-      // foregroundColor and backgroundColor would be preferred, but React has issues with
-      // these since they are style keywords
-      fgColor,
-      bgColor,
-      disabled,
-      header
-    } = this.props;
-    return header ? (
-      <MenuItemHeader
-        className="header"
-        fgColor={fgColor}
-        bgColor={bgColor}
-        centeredText={centeredText}
-        role="none"
+  return header ? (
+    <MenuItemHeader
+      className="header"
+      fgColor={fgColor}
+      bgColor={bgColor}
+      centeredText={centeredText}
+      role="none"
+    >
+      {children}
+    </MenuItemHeader>
+  ) : (
+    <MenuItemLi disabled={disabled} role="none">
+      <MenuItemA
+        active={active}
+        onClick={handleClick}
+        role="option"
+        tabIndex={-1}
       >
         {children}
-      </MenuItemHeader>
-    ) : (
-      <MenuItemLi disabled={disabled} role="none">
-        <MenuItemA
-          active={active}
-          onClick={this.onClick}
-          role="option"
-          tabIndex={-1}
-        >
-          {children}
-        </MenuItemA>
-      </MenuItemLi>
-    );
-  }
-}
-
-MenuItem.propTypes = {
-  active: PropTypes.bool,
-  centeredText: PropTypes.bool,
-  children: PropTypes.node.isRequired,
-  fgColor: PropTypes.string,
-  bgColor: PropTypes.string,
-  disabled: PropTypes.bool,
-  header: PropTypes.bool,
-  onClick: PropTypes.func
-};
-
-MenuItem.defaultProps = {
-  active: false,
-  centeredText: false,
-  fgColor: null,
-  bgColor: null,
-  disabled: false,
-  header: false,
-  onClick: null
+      </MenuItemA>
+    </MenuItemLi>
+  );
 };
 
 export const OptionContainer = styled.div`

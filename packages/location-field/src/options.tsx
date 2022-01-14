@@ -1,6 +1,5 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceStringImperial } from "@opentripplanner/humanize-distance";
-import PropTypes from "prop-types";
 import React from "react";
 import { Bus } from "@styled-icons/fa-solid/Bus";
 import { Briefcase } from "@styled-icons/fa-solid/Briefcase";
@@ -9,9 +8,16 @@ import { MapMarker } from "@styled-icons/fa-solid/MapMarker";
 import { MapPin } from "@styled-icons/fa-solid/MapPin";
 
 import * as S from "./styled";
+// eslint-disable-next-line prettier/prettier
+import type { TransitIndexStopWithRoutes, UserLocation } from "./types";
 
-export function GeocodedOptionIcon(props) {
-  const { feature } = props;
+export function GeocodedOptionIcon({
+  feature = {}
+}: {
+  feature: {
+    properties?: { source: string };
+  };
+}): React.ReactElement {
   const { properties } = feature;
   if (feature && properties) {
     const { source } = properties;
@@ -21,25 +27,26 @@ export function GeocodedOptionIcon(props) {
   }
   return <MapPin size={13} />;
 }
-GeocodedOptionIcon.propTypes = {
-  feature: PropTypes.shape({
-    properties: PropTypes.shape({ source: PropTypes.string })
-  })
-};
-GeocodedOptionIcon.defaultProps = {
-  feature: {}
-};
 
 export function Option({
-  color,
-  disabled,
-  icon,
-  isActive,
+  color = null,
+  disabled = false,
+  icon = null,
+  isActive = false,
   onClick,
-  title,
-  subTitle,
-  classes
-}) {
+  title = null,
+  subTitle = null,
+  classes = ""
+}: {
+  classes?: string;
+  color?: string;
+  disabled?: boolean;
+  icon?: React.ReactNode;
+  isActive?: boolean;
+  onClick?: () => void;
+  title?: React.ReactNode;
+  subTitle?: React.ReactNode;
+}): React.ReactElement {
   return (
     <S.MenuItem onClick={onClick} active={isActive} disabled={disabled}>
       {coreUtils.ui.isIE() ? (
@@ -64,31 +71,17 @@ export function Option({
   );
 }
 
-Option.propTypes = {
-  /**
-   * String of classes to apply to container.
-   */
-  classes: PropTypes.string,
-  color: PropTypes.string,
-  disabled: PropTypes.bool,
-  icon: PropTypes.node,
-  isActive: PropTypes.bool,
-  onClick: PropTypes.func.isRequired,
-  title: PropTypes.node,
-  subTitle: PropTypes.node
-};
-
-Option.defaultProps = {
-  classes: "",
-  color: null,
-  disabled: false,
-  icon: null,
-  isActive: false,
-  title: null,
-  subTitle: null
-};
-
-export function TransitStopOption({ isActive, onClick, stop, stopOptionIcon }) {
+export function TransitStopOption({
+  isActive = false,
+  onClick,
+  stop,
+  stopOptionIcon
+}: {
+  isActive?: boolean;
+  onClick: () => void;
+  stop: TransitIndexStopWithRoutes;
+  stopOptionIcon: React.ReactNode;
+}): React.ReactElement {
   return (
     <S.MenuItem onClick={onClick} active={isActive}>
       <S.StopIconAndDistanceContainer>
@@ -113,23 +106,8 @@ export function TransitStopOption({ isActive, onClick, stop, stopOptionIcon }) {
   );
 }
 
-TransitStopOption.propTypes = {
-  isActive: PropTypes.bool,
-  onClick: PropTypes.func.isRequired,
-  stop: coreUtils.types.transitIndexStopWithRoutes.isRequired,
-  stopOptionIcon: PropTypes.node.isRequired
-};
-
-TransitStopOption.defaultProps = {
-  isActive: false
-};
-
-export function UserLocationIcon({ userLocation }) {
+export function UserLocationIcon({ userLocation }: { userLocation: UserLocation }): React.ReactElement {
   if (userLocation.icon === "work") return <Briefcase size={13} />;
   if (userLocation.icon === "home") return <Home size={13} />;
   return <MapMarker size={13} />;
 }
-
-UserLocationIcon.propTypes = {
-  userLocation: coreUtils.types.userLocationType.isRequired
-};
