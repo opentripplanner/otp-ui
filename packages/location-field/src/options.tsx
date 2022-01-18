@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-ignore Not Typescripted Yet
 import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceStringImperial } from "@opentripplanner/humanize-distance";
 import React from "react";
