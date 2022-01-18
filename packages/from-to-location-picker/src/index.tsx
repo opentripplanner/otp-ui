@@ -18,7 +18,6 @@ const iconSize = "0.9em";
 // - the yaml loader for jest returns messages with flattened ids.
 const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
-
 const FromToLocationPicker = ({
   location = null,
   onFromClick = null,
@@ -55,11 +54,11 @@ const FromToLocationPicker = ({
       <S.LocationPickerSpan>
         {showIcons && <LocationIcon type="from" size={iconSize} />}
         <S.Button onClick={handleFromClick}>
-        <FormattedMessage
-          defaultMessage={defaultMessages["otpUi.FromToLocationPicker.from"]}
-          description='Text for the "from" button of the picker'
-          id="otpUi.FromToLocationPicker.from"
-        />
+          <FormattedMessage
+            defaultMessage={defaultMessages["otpUi.FromToLocationPicker.from"]}
+            description="Text for the 'from' button of the picker"
+            id="otpUi.FromToLocationPicker.from"
+          />
         </S.Button>
       </S.LocationPickerSpan>
       <S.LocationPickerSpan>
@@ -67,10 +66,10 @@ const FromToLocationPicker = ({
         <S.Button onClick={handleToClick}>
           <FormattedMessage
             defaultMessage={defaultMessages["otpUi.FromToLocationPicker.to"]}
-            description='Text for the "to" button of the picker'
+            description="Text for the 'to' button of the picker"
             id="otpUi.FromToLocationPicker.to"
           />
-    </S.Button>
+        </S.Button>
       </S.LocationPickerSpan>
     </S.FromToPickerSpan>
   );

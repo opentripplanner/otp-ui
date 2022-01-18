@@ -3,7 +3,7 @@ export type Location = {
   lon: number;
   name: string;
   /**
-   * This is only used location that a user has saved. Can be either:
+   * This is only used for locations that a user has saved. Can be either:
    * "home" or "work"
    */
   type?: string;

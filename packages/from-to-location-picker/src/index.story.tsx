@@ -29,7 +29,7 @@ export const smallTextSansSerif = (): React.ReactElement => (
   </IntlProvider>
 );
 
-export const otpAmbientStyle = (): React.ReactElement => (
+export const customStyleAndText = (): React.ReactElement => (
   <IntlProvider
     locale="en-US"
     messages={{
