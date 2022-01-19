@@ -2,10 +2,11 @@ import flatten from "flat";
 import LocationIcon from "@opentripplanner/location-icon";
 import { FormattedMessage } from "react-intl";
 import React from "react";
-// eslint-disable-next-line prettier/prettier
-import type { FromToPickerProps } from "./types";
 
 import * as S from "./styled";
+
+// eslint-disable-next-line prettier/prettier
+import type { FromToPickerProps } from "./types";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
