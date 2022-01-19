@@ -14,6 +14,7 @@ import { LocationArrow } from "@styled-icons/fa-solid/LocationArrow";
 import { Search } from "@styled-icons/fa-solid/Search";
 import { Times } from "@styled-icons/fa-solid/Times";
 import { throttle } from "throttle-debounce";
+import { useIntl, FormattedMessage } from "react-intl";
 // eslint-disable-next-line prettier/prettier
 import type { Location, LocationFieldProps, ResultType } from "./types";
 
@@ -86,6 +87,8 @@ const LocationField = ({
 
   const listBoxId = `listbox-${optionKey}`
 
+  const intl = useIntl()
+
   const [activeIndex, setActiveIndex] = useState(null)
   const [stateGeocodedFeatures, setGeocodedFeatures] = useState([])
   const [menuVisible, setMenuVisible] = useState(false)
@@ -128,11 +131,11 @@ const LocationField = ({
             result.results.error &&
             result.results.error.message;
           // If the result did not contain a list of features, add special note.
-          message = "Could not reach geocoder";
+          message = intl.formatMessage({ id: "OtpUi.LocationField.geocoderUnreachable" });
           if (errorMessage) message += ` (${errorMessage})`;
           geocodedFeatures = [];
         } else if (geocodedFeatures.length === 0) {
-          message = `No results found for '${text}'`;
+          message = intl.formatMessage({ id: "OtpUi.LocationField.noResultsFound" }, { input: text })
         }
         setGeocodedFeatures(geocodedFeatures)
         setMessage(message)
@@ -175,12 +178,10 @@ const LocationField = ({
    * Provide alert to user with reason for geolocation error
    */
   const geolocationAlert = () => {
-    window.alert(
-      `Geolocation either has been disabled for ${
-        window.location.host
-      } or is not available in your browser.\n\nReason: ${currentPosition.error
-        .message || "Unknown reason"}`
-    );
+    window.alert(intl.formatMessage({ id:"otpUi.LocationField.GeolocationError" }, {
+      host: window.location.host,
+      reason: currentPosition.error.message
+    }))
   };
 
   const onClearButtonClick = () => {
@@ -445,7 +446,10 @@ const LocationField = ({
             header
             key="gtfs-stations-header"
           >
-            Stations
+                <FormattedMessage
+      description="Text for header above Stations"
+      id="otpUi.LocationField.stations"
+    />
           </S.MenuItem>
         ),
         stationFeatures.map(feature =>
@@ -459,14 +463,20 @@ const LocationField = ({
             header
             key="gtfs-stops-header"
           >
-            Stops
+                <FormattedMessage
+      description="Text for header above Stops"
+      id="otpUi.LocationField.stops"
+    />
           </S.MenuItem>
         ),
         stopFeatures.map(feature => renderFeature(itemIndex++, feature)),
 
         transitFeaturesPresent && otherFeatures.length > 0 && (
           <S.MenuItem bgColor="#333" header centeredText key="other-header">
-            Other
+             <FormattedMessage
+      description="Text for header above the 'other'"
+      id="otpUi.LocationField.other"
+    />
           </S.MenuItem>
         ),
         otherFeatures.map(feature => renderFeature(itemIndex++, feature))
@@ -478,7 +488,10 @@ const LocationField = ({
       // Add the menu sub-heading (not a selectable item)
       menuItems.push(
         <S.MenuItem header centeredText key="ns-header">
-          Nearby Stops
+           <FormattedMessage
+      description="Text for header above nearby stops"
+      id="otpUi.LocationField.nearby"
+    />
         </S.MenuItem>
       );
 
@@ -523,7 +536,10 @@ const LocationField = ({
       // Add the menu sub-heading (not a selectable item)
       menuItems.push(
         <S.MenuItem header centeredText key="ss-header">
-          Recently Searched
+           <FormattedMessage
+      description="Text for header above recently searched items"
+      id="otpUi.LocationField.recentlySearched"
+    />
         </S.MenuItem>
       );
 
@@ -560,7 +576,10 @@ const LocationField = ({
       // Add the menu sub-heading (not a selectable item)
       menuItems.push(
         <S.MenuItem header centeredText key="mp-header">
-          My Places
+           <FormattedMessage
+      description="Text for header above user-saved places"
+      id="otpUi.LocationField.myPlaces"
+    />
         </S.MenuItem>
       );
 
@@ -601,13 +620,13 @@ const LocationField = ({
       // current position detected successfully
       locationSelected = useCurrentLocation;
       optionIcon = currentPositionIcon;
-      optionTitle = "Use Current Location";
+      optionTitle = intl.formatMessage({ id: "otpUi.LocationField.useCurrentLocation" });
       positionUnavailable = false;
     } else {
       // error detecting current position
       locationSelected = geolocationAlert;
       optionIcon = currentPositionUnavailableIcon;
-      optionTitle = "Current location not available";
+      optionTitle = intl.formatMessage({ id: "otpUi.LocationField.currentLocationUnavailable" });
       positionUnavailable = true;
     }
 
@@ -649,7 +668,7 @@ const LocationField = ({
     const defaultPlaceholder = inputPlaceholder || locationType;
     const placeholder =
       currentPosition && currentPosition.fetching
-        ? "Fetching location..."
+        ?       intl.formatMessage({ id: "otpUi.LocationField.fetchingLocation" })
         : defaultPlaceholder;
     const textControl = (
       <S.Input
@@ -676,7 +695,7 @@ const LocationField = ({
       showClearButton && location ? (
         <S.InputGroupAddon>
           <S.Button
-            aria-label="Clear location"
+            aria-label={      intl.formatMessage({ id: "otpUi.LocationField.clearLocation" })}
             onClick={onClearButtonClick}
           >
             {clearButtonIcon}
@@ -701,7 +720,10 @@ const LocationField = ({
               menuItems
             ) : (
               <S.MenuItem header centeredText>
-                Begin typing to search for locations
+                <FormattedMessage
+      description="Text to show as initial placeholder in location search field"
+      id="otpUi.LocationField.beingTypingPrompt"
+    />
               </S.MenuItem>
             )}
           </S.StaticMenuItemList>
