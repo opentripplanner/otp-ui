@@ -135,13 +135,13 @@ const LocationField = ({
               result.results.error.message;
             // If the result did not contain a list of features, add special note.
             message = intl.formatMessage({
-              id: "OtpUi.LocationField.geocoderUnreachable"
+              id: "otpUi.LocationField.geocoderUnreachable"
             });
             if (errorMessage) message += ` (${errorMessage})`;
             geocodedFeatures = [];
           } else if (geocodedFeatures.length === 0) {
             message = intl.formatMessage(
-              { id: "OtpUi.LocationField.noResultsFound" },
+              { id: "otpUi.LocationField.noResultsFound" },
               { input: text }
             );
           }
@@ -182,20 +182,6 @@ const LocationField = ({
     setMenuVisible(false);
   };
 
-  /**
-   * Provide alert to user with reason for geolocation error
-   */
-  const geolocationAlert = () => {
-    window.alert(
-      intl.formatMessage(
-        { id: "otpUi.LocationField.GeolocationError" },
-        {
-          host: window.location.host,
-          reason: currentPosition.error.message
-        }
-      )
-    );
-  };
 
   const onClearButtonClick = () => {
     clearLocation({ locationType });
@@ -636,11 +622,10 @@ const LocationField = ({
     positionUnavailable = false;
   } else {
     // error detecting current position
-    locationSelected = geolocationAlert;
     optionIcon = currentPositionUnavailableIcon;
     optionTitle = intl.formatMessage({
       id: "otpUi.LocationField.currentLocationUnavailable"
-    });
+    }, { error: currentPosition.error.message });
     positionUnavailable = true;
   }
 

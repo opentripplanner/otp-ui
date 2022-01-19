@@ -1,4 +1,7 @@
 import { action } from "@storybook/addon-actions";
+import flatten from "flat";
+
+import englishMessages from "../../i18n/en-US.yml";
 
 export const currentPosition = {
   coords: { latitude: 45.508246, longitude: -122.711574 }
@@ -26,3 +29,5 @@ export const layerColorMap = {
   stations: "navy",
   locality: "orange"
 };
+
+export const flatMessages = flatten(englishMessages);

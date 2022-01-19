@@ -7,6 +7,7 @@ import {
   currentPosition,
   geocoderConfig,
   getCurrentPosition,
+  flatMessages,
   layerColorMap,
   onLocationSelected,
   selectedLocation
@@ -41,10 +42,22 @@ const a11yOverrideParameters = {
 
 export default {
   title: "LocationField/Desktop Context",
-  component: LocationField
+  component: LocationField,
+  parameters: {
+    reactIntl: {
+      defaultLocale: "en-US",
+      locales: ["en-US"],
+      messages: { "en-US": flatMessages },
+      formats: {}
+    },
+    locale: "en-US",
+    locales: {
+      en: "English"
+    }
+  }
 };
 
-export const Blank = () => (
+export const Blank = (): JSX.Element => (
   <LocationField
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
@@ -55,7 +68,7 @@ export const Blank = () => (
   />
 );
 
-export const SelectedLocation = () => (
+export const SelectedLocation = (): JSX.Element => (
   <LocationField
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
@@ -66,7 +79,7 @@ export const SelectedLocation = () => (
   />
 );
 
-export const SelectedLocationCustomClear = () => (
+export const SelectedLocationCustomClear = (): JSX.Element => (
   <LocationField
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
@@ -78,7 +91,7 @@ export const SelectedLocationCustomClear = () => (
   />
 );
 
-export const NoAutoFocusWithMultipleControls = () => (
+export const NoAutoFocusWithMultipleControls = (): JSX.Element => (
   <div>
     <input id="example" defaultValue="Enter text" />
     <button type="button">Click me!</button>
@@ -94,7 +107,7 @@ export const NoAutoFocusWithMultipleControls = () => (
 );
 NoAutoFocusWithMultipleControls.parameters = a11yOverrideParameters;
 
-export const AutoFocusWithMultipleControls = () => (
+export const AutoFocusWithMultipleControls = (): JSX.Element => (
   <div>
     <input id="example" defaultValue="Enter text" />
     <button type="button">Click me!</button>
@@ -111,7 +124,7 @@ export const AutoFocusWithMultipleControls = () => (
 );
 AutoFocusWithMultipleControls.parameters = a11yOverrideParameters;
 
-export const WithBadApiKeyHandlesBadAutocomplete = () => (
+export const WithBadApiKeyHandlesBadAutocomplete = (): JSX.Element => (
   <LocationField
     currentPosition={currentPosition}
     geocoderConfig={invalidKeyGeocoderConfig}
@@ -122,7 +135,7 @@ export const WithBadApiKeyHandlesBadAutocomplete = () => (
   />
 );
 
-export const WithCustomResultColorsAndIcons = () => (
+export const WithCustomResultColorsAndIcons = (): JSX.Element => (
   <LocationField
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
@@ -135,7 +148,7 @@ export const WithCustomResultColorsAndIcons = () => (
   />
 );
 
-export const WithPrefilledSearch = () => (
+export const WithPrefilledSearch = (): JSX.Element => (
   <LocationField
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}

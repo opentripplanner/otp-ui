@@ -1,5 +1,4 @@
 import coreUtils from "@opentripplanner/core-utils";
-import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
 import {
@@ -21,11 +20,15 @@ import {
   currentPosition,
   geocoderConfig,
   getCurrentPosition,
+  flatMessages,
   layerColorMap,
   onLocationSelected,
   selectedLocation
 } from "./common";
 import * as LocationFieldClasses from "../styled";
+
+// eslint-disable-next-line prettier/prettier
+import type { LocationType, TransitIndexStopWithRoutes, UserLocation } from "../types"
 
 const nearbyStops = ["1", "2"];
 const sessionSearches = [
@@ -35,7 +38,7 @@ const sessionSearches = [
     name: "123 Main St"
   }
 ];
-const stopsIndex = {
+const stopsIndex: { [key: string]: TransitIndexStopWithRoutes } = {
   1: {
     code: "1",
     dist: 123,
@@ -53,7 +56,7 @@ const stopsIndex = {
     routes: [{ shortName: "2" }]
   }
 };
-const userLocationsAndRecentPlaces = [
+const userLocationsAndRecentPlaces: UserLocation[] = [
   {
     icon: "home",
     lat: 45.89,
@@ -86,14 +89,10 @@ GeocodedOptionIconComponent.propTypes = {
   feature: coreUtils.types.geocodedFeatureType.isRequired
 };
 
-function LocationIconComponent({ locationType }) {
+function LocationIconComponent({ locationType }: { locationType: LocationType }) {
   if (locationType === "from") return <PlaneDeparture size={13} />;
   return <PlaneArrival size={13} />;
 }
-
-LocationIconComponent.propTypes = {
-  locationType: PropTypes.string.isRequired
-};
 
 function UserLocationIconComponent({ userLocation }) {
   if (userLocation.icon === "work") return <Building size={13} />;
@@ -113,10 +112,22 @@ const StyledLocationField = styled(LocationField)`
 
 export default {
   title: "LocationField/Mobile Context",
-  component: LocationField
+  component: LocationField,
+  parameters: {
+    reactIntl: {
+      defaultLocale: "en-US",
+      locales: ["en-US"],
+      messages: { "en-US": flatMessages },
+      formats: {}
+    },
+    locale: "en-US",
+    locales: {
+      en: "English"
+    }
+  }
 };
 
-export const Blank = () => (
+export const Blank = (): JSX.Element => (
   <LocationField
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
@@ -127,7 +138,7 @@ export const Blank = () => (
   />
 );
 
-export const Styled = () => (
+export const Styled = (): JSX.Element => (
   <StyledLocationField
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
@@ -139,7 +150,7 @@ export const Styled = () => (
   />
 );
 
-export const SelectedLocation = () => (
+export const SelectedLocation = (): JSX.Element => (
   <LocationField
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
@@ -152,7 +163,7 @@ export const SelectedLocation = () => (
   />
 );
 
-export const SelectedLocationCustomClear = () => (
+export const SelectedLocationCustomClear = (): JSX.Element => (
   <LocationField
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
@@ -165,7 +176,7 @@ export const SelectedLocationCustomClear = () => (
   />
 );
 
-export const WithNearbyStops = () => (
+export const WithNearbyStops = (): JSX.Element => (
   <LocationField
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
@@ -179,7 +190,7 @@ export const WithNearbyStops = () => (
   />
 );
 
-export const WithSessionSearches = () => (
+export const WithSessionSearches = (): JSX.Element => (
   <LocationField
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
@@ -192,7 +203,7 @@ export const WithSessionSearches = () => (
   />
 );
 
-export const WithUserSettings = () => (
+export const WithUserSettings = (): JSX.Element => (
   <LocationField
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
@@ -206,7 +217,7 @@ export const WithUserSettings = () => (
   />
 );
 
-export const WithCustomIcons = () => (
+export const WithCustomIcons = (): JSX.Element => (
   <LocationField
     currentPosition={currentPosition}
     currentPositionIcon={<Crosshairs size={13} />}

@@ -1,6 +1,6 @@
 import React from "react";
 
-type LocationType = "from" | "to";
+export type LocationType = "from" | "to";
 export type ResultType =
   | "CURRENT_LOCATION"
   | "GEOCODE"
@@ -9,8 +9,8 @@ export type ResultType =
   | "STOP";
 export type Location = {
   id?: string;
-  lat: number;
-  lon: number;
+  lat?: number;
+  lon?: number;
   name?: string;
   main?: string;
   secondary?: string;
@@ -64,11 +64,12 @@ export interface LocationFieldProps {
   /**
    * Allows the component to be rendered with pre-filled results
    */
-  initialSearchResults: {
+  initialSearchResults?: {
     type?: string;
     geometry?: {
       type?: string;
-      coordinates?: [number, number];
+      // coordinates?: [number, number];
+      coordinates?: number[];
     };
     properties?: { id?: string };
   }[];
@@ -131,8 +132,7 @@ export interface LocationFieldProps {
    * position is not currently available. This method sends back the
    * locationType value supplied to the component.
    */
-  // FIXME: ???
-  getCurrentPosition: (locationType: string) => string;
+  getCurrentPosition: (locationType: string) => void;
   /**
    * Whether the provided location (if one is provided) should not be shown upon
    * initial render.
@@ -250,13 +250,17 @@ export interface LocationFieldProps {
    */
   showUserSettings?: boolean;
   /**
+   * React style object
+   */
+  style?: React.CSSProperties;
+  /**
    * show autocomplete options as fixed/inline element rather than dropdown
    */
   isStatic?: boolean;
   /**
    * An index of stops by StopId
    */
-  stopsIndex?: TransitIndexStopWithRoutes;
+  stopsIndex?: { [key: string]: TransitIndexStopWithRoutes };
   /**
    * A slot for the icon to display for a stop option
    */
