@@ -9,12 +9,18 @@ import { StreetView } from "@styled-icons/fa-solid";
  * @param coord     The coordinate to convert to a bounding box
  * @returns         A bounding box 1 meter around the passed coordinate
  */
-const generateBoundingBoxFromCoordinate = (coord: [number, number]) => {
+const generateBoundingBoxFromCoordinate = ({
+  lat,
+  lon
+}: {
+  lat: number;
+  lon: number;
+}) => {
   const WINDOW = 0.000075;
-  const south = coord[0] - WINDOW;
-  const north = coord[0] + WINDOW;
-  const west = coord[1] - WINDOW;
-  const east = coord[1] + WINDOW;
+  const south = lat - WINDOW;
+  const north = lat + WINDOW;
+  const west = lon - WINDOW;
+  const east = lon + WINDOW;
   return [west, south, east, north];
 };
 
@@ -60,7 +66,7 @@ const MapillaryButton = ({
   padTop
 }: {
   clickCallback?: (id: string) => void;
-  coords: [number, number];
+  coords: { lat: number; lon: number };
   mapillaryKey: string;
   padLeft?: boolean;
   padTop?: boolean;
@@ -102,7 +108,7 @@ const MapillaryButton = ({
       padTop={padTop}
       title="Show street imagery at this location"
     >
-      <Icon />
+      <Icon style={{ paddingBottom: 1 }} />
     </Container>
   );
 };

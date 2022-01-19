@@ -30,7 +30,7 @@ export default function AccessLegSteps({
               </Styled.StepStreetName>
               <MapillaryButton
                 clickCallback={mapillaryCallback}
-                coords={[step.lat, step.lon]}
+                coords={step}
                 mapillaryKey={mapillaryKey}
                 padLeft
               />

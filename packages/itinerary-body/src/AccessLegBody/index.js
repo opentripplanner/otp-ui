@@ -90,7 +90,7 @@ class AccessLegBody extends Component {
             )}
           </Styled.StepsHeader>
           <MapillaryButton
-            coords={[leg.from.lat, leg.from.lon]}
+            coords={leg.from}
             clickCallback={mapillaryCallback}
             mapillaryKey={mapillaryKey}
             padTop
