@@ -8,7 +8,6 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-knobs",
     "@storybook/addon-links",
-    "storybook-react-intl",
     {
       name: '@storybook/addon-storysource',
       options: {
