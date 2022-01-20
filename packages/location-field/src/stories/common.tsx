@@ -1,5 +1,8 @@
 import { action } from "@storybook/addon-actions";
 import flatten from "flat";
+import { Story as StoryFunction, StoryContext } from "@storybook/react";
+import { IntlProvider } from "react-intl";
+import React from "react";
 
 import englishMessages from "../../i18n/en-US.yml";
 
@@ -30,4 +33,13 @@ export const layerColorMap = {
   locality: "orange"
 };
 
-export const flatMessages = flatten(englishMessages);
+export const intlDecorator = (
+  story: StoryFunction,
+  context: StoryContext
+): React.ReactElement => {
+  return (
+    <IntlProvider locale="en-US" messages={flatten(englishMessages)}>
+      {story({}, context)}
+    </IntlProvider>
+  );
+};

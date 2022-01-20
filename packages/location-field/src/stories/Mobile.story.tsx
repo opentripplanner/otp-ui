@@ -20,7 +20,7 @@ import {
   currentPosition,
   geocoderConfig,
   getCurrentPosition,
-  flatMessages,
+  intlDecorator,
   layerColorMap,
   onLocationSelected,
   selectedLocation
@@ -113,18 +113,7 @@ const StyledLocationField = styled(LocationField)`
 export default {
   title: "LocationField/Mobile Context",
   component: LocationField,
-  parameters: {
-    reactIntl: {
-      defaultLocale: "en-US",
-      locales: ["en-US"],
-      messages: { "en-US": flatMessages },
-      formats: {}
-    },
-    locale: "en-US",
-    locales: {
-      en: "English"
-    }
-  }
+  decorators: [intlDecorator]
 };
 
 export const Blank = (): JSX.Element => (

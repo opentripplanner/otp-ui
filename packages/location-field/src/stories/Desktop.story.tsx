@@ -7,10 +7,10 @@ import {
   currentPosition,
   geocoderConfig,
   getCurrentPosition,
-  flatMessages,
   layerColorMap,
   onLocationSelected,
-  selectedLocation
+  selectedLocation,
+  intlDecorator
 } from "./common";
 
 import mockedGeocoderResponse from "../mocks/autocomplete.json";
@@ -43,18 +43,7 @@ const a11yOverrideParameters = {
 export default {
   title: "LocationField/Desktop Context",
   component: LocationField,
-  parameters: {
-    reactIntl: {
-      defaultLocale: "en-US",
-      locales: ["en-US"],
-      messages: { "en-US": flatMessages },
-      formats: {}
-    },
-    locale: "en-US",
-    locales: {
-      en: "English"
-    }
-  }
+  decorators: [intlDecorator]
 };
 
 export const Blank = (): JSX.Element => (
