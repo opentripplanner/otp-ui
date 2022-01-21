@@ -466,8 +466,19 @@ export function getRoutingParams(config, currentQuery, ignoreRealtimeUpdates) {
   // Replace FLEX placeholder with OTP flex modes
   if (params.mode) {
     // Ensure query is in reduced format to avoid replacing twice
-    const mode = reduceOtpFlexModes(params.mode.split(",")).join(",");
-    params.mode = mode.replace("FLEX", "FLEX_EGRESS,FLEX_ACCESS,FLEX_DIRECT");
+    const mode = reduceOtpFlexModes(params.mode.split(","));
+    params.mode = mode
+      .map(m => {
+        // If both the expanded and shrunk modes are included, remove the exapnded one
+        if (m === "FLEX_EGRESS" || m === "FLEX_ACCESS" || m === "FLEX_DIRECT") {
+          if (mode.includes("FLEX")) return "";
+        }
+        if (m === "FLEX") {
+          return "FLEX_EGRESS,FLEX_ACCESS,FLEX_DIRECT";
+        }
+        return m;
+      })
+      .join(",");
   }
 
   return params;
