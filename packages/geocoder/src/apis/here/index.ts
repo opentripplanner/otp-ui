@@ -4,7 +4,7 @@ import { stringify } from "querystring";
 // Prettier does not support typescript annotation
 // eslint-disable-next-line prettier/prettier
 import type { LonLatOutput } from "@conveyal/lonlat"
-import type { AutocompleteQuery, ReverseQuery, SearchQuery } from "../../geocoders/abstract-geocoder"
+import type { AutocompleteQuery, ReverseQuery, SearchQuery } from "../../geocoders/types"
 import { HereResponse } from "./types";
 
 const AUTOCOMPLETE_URL =
