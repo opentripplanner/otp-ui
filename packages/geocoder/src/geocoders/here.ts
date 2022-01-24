@@ -2,7 +2,7 @@
 // eslint-disable-next-line prettier/prettier
 import type { Feature } from "geojson"
 import type { HereResponse, Item } from "../apis/here/types";
-import type { MultiGeocoderResponse, SingleGeocoderResponse } from "./abstract-geocoder";
+import type { MultiGeocoderResponse, SingleOrMultiGeocoderResponse } from "./types";
 
 import Geocoder from "./abstract-geocoder";
 
@@ -36,8 +36,8 @@ const convertHereToGeojson = (hereFeature: Item): Feature => {
       housenumber: address.houseNumber,
       label: address.label,
       layer: hereResultTypeToPeliasLayerMap[resultType]
-      ? hereResultTypeToPeliasLayerMap[resultType]
-      : resultType,
+        ? hereResultTypeToPeliasLayerMap[resultType]
+        : resultType,
       ...extraFields,
       locality: address.city,
       name: title,
@@ -52,7 +52,7 @@ const convertHereToGeojson = (hereFeature: Item): Feature => {
 };
 
 export default class HereGeocoder extends Geocoder {
-  rewriteReverseResponse({ items, point }: HereResponse): MultiGeocoderResponse | SingleGeocoderResponse {
+  rewriteReverseResponse({ items, point }: HereResponse): SingleOrMultiGeocoderResponse {
     if (this.geocoderConfig?.reverseUseFeatureCollection) {
       return {
         features: items.map(convertHereToGeojson),

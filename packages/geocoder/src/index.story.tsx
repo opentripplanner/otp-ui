@@ -26,8 +26,8 @@ const GeocoderTester = ({
   const geocoder = getGeocoder({
     apiKey: hereApiKey,
     focusPoint,
-    type: "HERE",
-    reverseUseFeatureCollection
+    reverseUseFeatureCollection,
+    type: "HERE"
   });
 
   const peliasGeocoder = getGeocoder({
@@ -105,19 +105,19 @@ const GeocoderTester = ({
         <label htmlFor="geocodeEarth">
           Geocode.earth:
           <input
+            checked={enableGeocodeEarth}
             id="geocodeEarth"
             onChange={e => setEnableGeocodeEarth(e.target.checked)}
             type="checkbox"
-            checked={enableGeocodeEarth}
           />
         </label>
         <label htmlFor="here">
           Here:
           <input
+            checked={enableHere}
             id="here"
             onChange={e => setEnableHere(e.target.checked)}
             type="checkbox"
-            checked={enableHere}
           />
         </label>
       </div>
@@ -126,10 +126,10 @@ const GeocoderTester = ({
           <label htmlFor="reverseUseFeatureCollection">
             Return Feature Collection:
             <input
+              checked={reverseUseFeatureCollection}
               id="reverseUseFeatureCollection"
               onChange={e => setReverseUseFeatureCollection(e.target.checked)}
               type="checkbox"
-              checked={reverseUseFeatureCollection}
             />
           </label>
         )}

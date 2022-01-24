@@ -1,7 +1,8 @@
-import Geocoder, { MultiGeocoderResponse, SingleGeocoderResponse } from "./abstract-geocoder";
+import Geocoder from "./abstract-geocoder";
 // Prettier does not support typescript annotation
 // eslint-disable-next-line prettier/prettier
 import type { AutocompleteQuery, SearchQuery } from "..";
+import type { SingleOrMultiGeocoderResponse } from "./types";
 
 /**
  * Geocoder implementation for the Pelias geocoder.
@@ -73,7 +74,7 @@ export default class PeliasGeocoder extends Geocoder {
    * Rewrite the response into an application-specific data format using the
    * first feature returned from the geocoder.
    */
-  rewriteReverseResponse(response): MultiGeocoderResponse | SingleGeocoderResponse {
+  rewriteReverseResponse(response): SingleOrMultiGeocoderResponse {
     if (this.geocoderConfig?.reverseUseFeatureCollection) return response
     const { lat, lon } = response.isomorphicMapzenSearchQuery.point;
 

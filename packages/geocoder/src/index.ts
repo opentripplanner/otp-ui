@@ -10,7 +10,7 @@ import HereGeocoder from "./geocoders/here";
 
 // Prettier does not support typescript annotation
 // eslint-disable-next-line prettier/prettier
-import type { SearchQuery, ReverseQuery, AutocompleteQuery, GeocoderConfig } from "./geocoders/abstract-geocoder"
+import type { AutocompleteQuery, GeocoderConfig, ReverseQuery, SearchQuery } from "./geocoders/abstract-geocoder"
 
 // Create a memoized getter to avoid recreating new geocoders each time.
 const getGeocoder = memoize((geocoderConfig: GeocoderConfig & { type: string }) => {

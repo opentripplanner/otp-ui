@@ -1,9 +1,13 @@
 import { toCoordinates, fromLatFirstString } from "@conveyal/lonlat";
+
 // Prettier does not support typescript annotation
 // eslint-disable-next-line prettier/prettier
 import type { Feature } from "geojson";
 import type { AutocompleteQuery, ReverseQuery, SearchQuery } from "..";
-import Geocoder, { MultiGeocoderResponse, SingleGeocoderResponse } from "./abstract-geocoder";
+import type  { MultiGeocoderResponse, SingleOrMultiGeocoderResponse } from "./types"
+
+import Geocoder from "./abstract-geocoder";
+
 
 /**
  * An implementation that doesn't use an API for geocoding. Merely allows
@@ -22,7 +26,7 @@ export default class NoApiGeocoder extends Geocoder {
   /**
    * Always return the lat/lon.
    */
-  reverse(query: ReverseQuery): Promise<MultiGeocoderResponse | SingleGeocoderResponse> {
+  reverse(query: ReverseQuery): Promise<SingleOrMultiGeocoderResponse> {
     let { lat, lon } = query.point;
     lat = this.roundGPSDecimal(lat);
     lon = this.roundGPSDecimal(lon);

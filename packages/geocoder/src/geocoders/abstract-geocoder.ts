@@ -2,83 +2,18 @@ import { fromCoordinates } from "@conveyal/lonlat";
 
 // Prettier does not support typescript annotation
 // eslint-disable-next-line prettier/prettier
-import type { LonLatInput } from "@conveyal/lonlat"
-import type { Feature, FeatureCollection } from "geojson"
+import type { Feature } from "geojson"
+import type { GeocoderConfig, ReverseQuery, AutocompleteQuery, SearchQuery, MultiGeocoderResponse, SingleGeocoderResponse, SingleOrMultiGeocoderResponse } from "./types"
 
-type Rect = {
-  maxLat: number;
-  maxLon: number;
-  minLat: number;
-  minLon: number;
-};
-
-type Boundary = {
-  country?: string;
-  rect?: Rect;
-};
-
+/**
+ * The exact format of the Geocoder response depends on the specific geocoder implementation.
+ */
 type GeocoderAPI = {
   autocomplete: (query: AutocompleteQuery) => Promise<unknown>;
   reverse: (query: ReverseQuery) => Promise<unknown>;
   search: (query: SearchQuery) => Promise<unknown>;
 };
 
-// These settings get added to the request to the geocoder
-export type GeocoderConfig = {
-  apiKey?: string;
-  baseUrl?: string;
-  boundary?: Boundary;
-  focusPoint?: LonLatInput;
-  options?: RequestInit;
-  sources?: string;
-  size?: number;
-  reverseUseFeatureCollection?: boolean;
-};
-
-export type ReverseQuery = {
-  apiKey?: string;
-  format?: boolean;
-  options?: RequestInit;
-  point?: LonLatInput;
-  url?: string;
-  sources?: string;
-};
-
-export type AutocompleteQuery = {
-  apiKey?: string;
-  boundary?: Boundary;
-  focusPoint?: LonLatInput;
-  format?: boolean;
-  options?: RequestInit;
-  size?: number;
-  text?: string;
-  url?: string;
-  sources?: string;
-};
-
-export type SearchQuery = {
-  apiKey?: string;
-  boundary?: Boundary;
-  focusPoint?: LonLatInput;
-  format?: boolean;
-  options?: RequestInit;
-  size?: number;
-  text?: string;
-  url?: string;
-  sources?: string;
-};
-
-export type MultiGeocoderResponse = FeatureCollection & {
-  isomorphicMapzenSearchQuery?: SearchQuery & AutocompleteQuery & ReverseQuery;
-};
-
-export type SingleGeocoderResponse = {
-  isomorphicMapzenSearchQuery?: SearchQuery & AutocompleteQuery & ReverseQuery;
-  lat: number;
-  lon: number;
-  name: string;
-  rawGeocodedFeature: Feature;
-};
 /**
  * Create customized geocoder functions given a certain geocoding API, the
  * config for the geocoder and response rewrite functions specific to this
@@ -218,9 +153,10 @@ export default class Geocoder {
   /**
    * Default rewriter for reverse responses
    * Response type is unknown because it depends on the specific Geocoder implementation.
+   * Reverse response can use either Single or MultiGeocoderResponse based on GeocoderConfig.reverseUseFeatureCollection
    */
-  rewriteReverseResponse(response: unknown): MultiGeocoderResponse | SingleGeocoderResponse {
-    return response as MultiGeocoderResponse;
+  rewriteReverseResponse(response: unknown): SingleOrMultiGeocoderResponse {
+    return response as SingleOrMultiGeocoderResponse;
   }
 
   /**
