@@ -183,6 +183,28 @@ export function reduceOtpFlexModes(modes) {
 }
 
 /**
+ * Helper method to process a mode string, replacing all instances of FLEX
+ * with the full set of FLEX modes used by otp-2
+ * @param {*} mode a mode String, not an array
+ * @returns a mode String, not an array (with flex modes expanded)
+ */
+export function expandOtpFlexMode(mode) {
+  const modes = reduceOtpFlexModes(mode.split(","));
+  return modes
+    .map(m => {
+      // If both the expanded and shrunk modes are included, remove the exapnded one
+      if (m === "FLEX_EGRESS" || m === "FLEX_ACCESS" || m === "FLEX_DIRECT") {
+        if (mode.includes("FLEX")) return "";
+      }
+      if (m === "FLEX") {
+        return "FLEX_EGRESS,FLEX_ACCESS,FLEX_DIRECT";
+      }
+      return m;
+    })
+    .join(",");
+}
+
+/**
  * Determines whether the specified query differs from the default query, i.e.,
  * whether the user has modified any trip options (including mode) from their
  * default values.
@@ -466,19 +488,8 @@ export function getRoutingParams(config, currentQuery, ignoreRealtimeUpdates) {
   // Replace FLEX placeholder with OTP flex modes
   if (params.mode) {
     // Ensure query is in reduced format to avoid replacing twice
-    const mode = reduceOtpFlexModes(params.mode.split(","));
-    params.mode = mode
-      .map(m => {
-        // If both the expanded and shrunk modes are included, remove the exapnded one
-        if (m === "FLEX_EGRESS" || m === "FLEX_ACCESS" || m === "FLEX_DIRECT") {
-          if (mode.includes("FLEX")) return "";
-        }
-        if (m === "FLEX") {
-          return "FLEX_EGRESS,FLEX_ACCESS,FLEX_DIRECT";
-        }
-        return m;
-      })
-      .join(",");
+    const reducedMode = reduceOtpFlexModes(params.mode.split(","));
+    params.mode = expandOtpFlexMode(reducedMode.join(","));
   }
 
   return params;

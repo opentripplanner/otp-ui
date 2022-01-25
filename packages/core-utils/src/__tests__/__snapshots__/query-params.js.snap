@@ -1,5 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`flex-reducer should modify a query that includes all flex modes 1`] = `
+Array [
+  "WALK",
+  "TRANSIT",
+  "BIKE",
+  "FLEX",
+]
+`;
+
+exports[`flex-reducer should modify a query that includes all flex modes 2`] = `
+Array [
+  "FLEX",
+  "BIKE",
+  "WALK",
+  "TRANSIT",
+]
+`;
+
+exports[`flex-reducer should modify a query that includes duplicate flex modes 1`] = `
+Array [
+  "FLEX",
+]
+`;
+
+exports[`flex-reducer should modify a query that includes only flex modes 1`] = `
+Array [
+  "FLEX",
+]
+`;
+
+exports[`flex-reducer should modify a query that includes some flex modes 1`] = `
+Array [
+  "WALK",
+  "TRANSIT",
+  "BIKE",
+  "FLEX",
+]
+`;
+
+exports[`flex-reducer should not touch a query that doesn't include flex modes 1`] = `
+Array [
+  "WALK",
+  "TRANSIT",
+  "BIKE",
+]
+`;
+
 exports[`query-params getCustomQueryParams should return queryParams with customizations 1`] = `
 Array [
   Object {
