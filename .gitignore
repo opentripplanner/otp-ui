@@ -7,3 +7,4 @@ node_modules
 .idea
 storybook-static/
 *.tsbuildinfo
+.vscode/

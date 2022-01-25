@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "title": "833 SW Naito Pkwy, Portland, OR 97204-3309, United States",
+      "id": "here:af:streetsection:DytXyj4z9BNpwFyYEWr3nB:CgcIBCDajY9PEAEaAzgzMw",
+      "resultType": "houseNumber",
+      "houseNumberType": "PA",
+      "address": {
+        "label": "833 SW Naito Pkwy, Portland, OR 97204-3309, United States",
+        "countryCode": "USA",
+        "countryName": "United States",
+        "stateCode": "OR",
+        "state": "Oregon",
+        "county": "Multnomah",
+        "city": "Portland",
+        "district": "Downtown",
+        "street": "SW Naito Pkwy",
+        "postalCode": "97204-3309",
+        "houseNumber": "833"
+      },
+      "position": {
+        "lat": 45.5164,
+        "lng": -122.67357
+      },
+      "access": [
+        {
+          "lat": 45.51631,
+          "lng": -122.67325
+        }
+      ],
+      "distance": 34,
+      "mapView": {
+        "west": -122.67482,
+        "south": 45.51331,
+        "east": -122.6714,
+        "north": 45.51948
+      }
+    }
+  ]
+}

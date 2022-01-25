@@ -58,6 +58,8 @@ export default class ArcGISGeocoder extends Geocoder {
    * first feature returned from the geocoder.
    */
   rewriteReverseResponse(response) {
+    if (this.geocoderConfig?.reverseUseFeatureCollection) return response;
+
     const { features, query } = response;
     const { lat, lon } = normalize(query);
     const firstFeature = features[0];
