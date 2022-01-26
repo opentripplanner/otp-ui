@@ -1,0 +1,59 @@
+{
+  "items": [
+    {
+      "title": "Safeway",
+      "id": "here:pds:place:840c23p2-3387cc4bcd274ea6860f17a61e787900",
+      "resultType": "place",
+      "address": {
+        "label": "Safeway, 7300 Roosevelt Way NE, Seattle, WA 98115-5658, United States",
+        "countryCode": "USA",
+        "countryName": "United States",
+        "stateCode": "WA",
+        "state": "Washington",
+        "county": "King",
+        "city": "Seattle",
+        "district": "Roosevelt",
+        "street": "Roosevelt Way NE",
+        "postalCode": "98115-5658",
+        "houseNumber": "7300"
+      },
+      "position": {
+        "lat": 47.68199,
+        "lng": -122.31701
+      },
+      "access": [
+        {
+          "lat": 47.68198,
+          "lng": -122.31751
+        }
+      ],
+      "distance": 726,
+      "categories": [
+        {
+          "id": "600-6300-0066",
+          "name": "Grocery",
+          "primary": true
+        },
+        {
+          "id": "600-6400-0000",
+          "name": "Drugstore or Pharmacy"
+        },
+        {
+          "id": "600-6400-0069",
+          "name": "Drugstore"
+        },
+        {
+          "id": "600-6400-0070",
+          "name": "Pharmacy"
+        }
+      ],
+      "scoring": {
+        "queryScore": 1.0,
+        "fieldScore": {
+          "district": 1.0,
+          "placeName": 1.0
+        }
+      }
+    }
+  ]
+}

@@ -1,9 +1,10 @@
 import { setupWorker } from "msw";
 import handlers from "../packages/location-field/src/mocks/handlers";
+import geocoderHandlers from "../packages/geocoder/src/test-fixtures/handlers";
 
 // Only install worker when running in browser
 if (typeof global.process === 'undefined') {
-  const worker = setupWorker(...handlers);
+  const worker = setupWorker(...handlers, ...geocoderHandlers);
   worker.start({onUnhandledRequest: "bypass"})
 }
 
