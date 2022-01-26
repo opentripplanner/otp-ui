@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 // @ts-ignore Not Typescripted Yet
 import coreUtils from "@opentripplanner/core-utils";
-// @ts-ignore Not Typescripted Yet
 import getGeocoder from "@opentripplanner/geocoder";
 // @ts-ignore Not Typescripted Yet
 import LocationIcon from "@opentripplanner/location-icon";
