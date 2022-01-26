@@ -5,7 +5,7 @@ import { stringify } from "querystring";
 // eslint-disable-next-line prettier/prettier
 import type { LonLatOutput } from "@conveyal/lonlat"
 import type { AutocompleteQuery, ReverseQuery, SearchQuery } from "../../geocoders/types"
-import { HereResponse } from "./types";
+import type { HereResponse } from "./types";
 
 const AUTOCOMPLETE_URL =
   "https://autosuggest.search.hereapi.com/v1/autosuggest";
