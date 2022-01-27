@@ -359,7 +359,11 @@ class LocationField extends Component {
     let operatorIcon;
     // Operator only exists on transit features
     const featureIdComponents = source === "transit" && id.split("::");
-    if (featureIdComponents.length > 0 && featureIdComponents[1]) {
+    if (
+      featureIdComponents.length > 0 &&
+      featureIdComponents[1] &&
+      featureIdComponents[1].length > 0
+    ) {
       const operatorName = featureIdComponents[1]
         .replaceAll(" ", "-")
         .toLowerCase();
@@ -467,7 +471,6 @@ class LocationField extends Component {
         .filter(feature => feature.properties.layer === "stations")
         .slice(0, suggestionCount);
       const otherFeatures = geocodedFeatures
-        // .filter(feature => feature.properties.source !== "transit")
         .filter(feature => feature.properties.layer !== "stops")
         .filter(feature => feature.properties.layer !== "stations")
         .slice(0, suggestionCount);
