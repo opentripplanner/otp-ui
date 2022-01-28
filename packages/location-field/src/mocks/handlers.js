@@ -7,6 +7,7 @@ export default [
   rest.get(
     "https://ws-st.trimet.org/pelias/v1/autocomplete",
     (req, res, ctx) => {
+      // return res; /* note: remove the // to make autocomple work in the story */
       return res(ctx.json(autocomplete));
     }
   ),
