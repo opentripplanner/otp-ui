@@ -73,8 +73,9 @@ export default class HereGeocoder extends Geocoder {
     const { items } = response;
     return {
       features: items
-      // Here can return continued query suggestions, which we do not support.
-      ?.filter(item => item.resultType !== "chainQuery")
+      // Here has various types of responses, some of which are not locations.
+      // We only want the actual places, so throw out any without a position.
+      ?.filter(item => item.position !== undefined)
       .map(convertHereToGeojson),
       type: "FeatureCollection"
     };
