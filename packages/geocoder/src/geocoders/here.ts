@@ -75,7 +75,7 @@ export default class HereGeocoder extends Geocoder {
       features: items
       // Here has various types of responses, some of which are not locations.
       // We only want the actual places, so throw out any without a position.
-      ?.filter(item => item.position !== undefined)
+      ?.filter(item => !!item.position)
       .map(convertHereToGeojson),
       type: "FeatureCollection"
     };
