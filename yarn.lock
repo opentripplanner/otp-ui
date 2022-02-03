@@ -12152,10 +12152,10 @@ isomorphic-fetch@^3.0.0:
     node-fetch "^2.6.1"
     whatwg-fetch "^3.4.1"
 
-isomorphic-mapzen-search@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/isomorphic-mapzen-search/-/isomorphic-mapzen-search-1.6.0.tgz#eb368756d6132016a32c76435d6f34a38da5279f"
-  integrity sha512-90Zp8jxWuMCk582S7d6b85lHO2Lj4Nybv8o6ShqQX2SRP7SFh1fzHx67eilNUGNjBeamKYQJHmijZ1/wSzFe3A==
+isomorphic-mapzen-search@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/isomorphic-mapzen-search/-/isomorphic-mapzen-search-1.6.1.tgz#5310e8b845ba70ae4fdd2604c3964264939abe53"
+  integrity sha512-MWVko9xX8nhJ2zWx7Zx+9pGQkWd+iy5YIRhT372Rp11/anZ8u5WmOAAxsVA2t2UFmtYEkvNImXCKoFlNg63J+w==
   dependencies:
     "@conveyal/lonlat" "^1.4.1"
     isomorphic-fetch "^3.0.0"
