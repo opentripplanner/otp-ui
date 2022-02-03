@@ -134,7 +134,7 @@ export interface LocationFieldProps {
    * position is not currently available. This method sends back the
    * locationType value supplied to the component.
    */
-  getCurrentPosition: (locationType: string) => void;
+  getCurrentPosition: (intl: IntlShape, locationType: string) => void;
   /**
    * Whether the provided location (if one is provided) should not be shown upon
    * initial render.

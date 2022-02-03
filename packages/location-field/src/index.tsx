@@ -176,7 +176,7 @@ const LocationField = ({
       });
     } else {
       // Call geolocation.getCurrentPosition and set as from/to locationType
-      getCurrentPosition(locationType);
+      getCurrentPosition(intl, locationType);
     }
     setMenuVisible(false);
   };
