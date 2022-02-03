@@ -158,7 +158,7 @@ const LocationField = ({
   };
 
   const setLocation = (newLocation: Location, resultType: ResultType) => {
-    onLocationSelected({ locationType, location: newLocation, resultType });
+    onLocationSelected(intl, { locationType, location: newLocation, resultType });
     setMenuVisible(false);
   };
 
@@ -169,7 +169,7 @@ const LocationField = ({
     if (newLocation) {
       // If geolocation is successful (i.e., user has granted app geolocation
       // permission and coords exist), set location.
-      onLocationSelected({
+      onLocationSelected(intl, {
         locationType,
         location: newLocation,
         resultType: "CURRENT_LOCATION"

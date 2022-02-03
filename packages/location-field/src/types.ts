@@ -1,4 +1,6 @@
 import React from "react";
+// eslint-disable-next-line prettier/prettier
+import type { IntlShape } from "react-intl";
 
 export type LocationType = "from" | "to";
 export type ResultType =
@@ -212,15 +214,18 @@ export interface LocationFieldProps {
    * "SESSION": A geocoded search result that was recently selected by the user.
    * "STOP": A transit stop
    */
-  onLocationSelected: ({
-    locationType,
-    location,
-    resultType
-  }: {
-    locationType: LocationType;
-    location: Location;
-    resultType: ResultType;
-  }) => void;
+  onLocationSelected: (
+    intl: IntlShape,
+    {
+      locationType,
+      location,
+      resultType
+    }: {
+      locationType: LocationType;
+      location: Location;
+      resultType: ResultType;
+    }
+  ) => void;
   /**
    * Mapping from Pelias *operator* to icon (represented as jsx). Allows results from different Pelias
    * operators to be given a unique Icon.
