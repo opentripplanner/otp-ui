@@ -12152,10 +12152,9 @@ isomorphic-fetch@^3.0.0:
     node-fetch "^2.6.1"
     whatwg-fetch "^3.4.1"
 
-isomorphic-mapzen-search@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/isomorphic-mapzen-search/-/isomorphic-mapzen-search-1.6.0.tgz#eb368756d6132016a32c76435d6f34a38da5279f"
-  integrity sha512-90Zp8jxWuMCk582S7d6b85lHO2Lj4Nybv8o6ShqQX2SRP7SFh1fzHx67eilNUGNjBeamKYQJHmijZ1/wSzFe3A==
+isomorphic-mapzen-search@miles-grant-ibigroup/isomorphic-mapzen-search#fix-reverse-search:
+  version "999.999.999"
+  resolved "https://codeload.github.com/miles-grant-ibigroup/isomorphic-mapzen-search/tar.gz/5f6243a55bb33c8f84da9d72103facdf0061a9b4"
   dependencies:
     "@conveyal/lonlat" "^1.4.1"
     isomorphic-fetch "^3.0.0"
