@@ -489,6 +489,39 @@ export function calculatePhysicalActivity(itinerary) {
 }
 
 /**
+ * @param  {carbonIntensity} carbonIntensity carbon intensity by mode in grams/meter
+ * @param  {itinerary} itinerary OTP trip itinierary
+ */
+export function calculateEmissions(carbonIntensity, units, itinerary) {
+  // Distance is in meters, totalCarbon is in grams
+  const totalCarbon = itinerary.legs.reduce((val, leg) => {
+    if (leg.mode.startsWith("WALK"))
+      return leg.distance * carbonIntensity.walk + val;
+    if (leg.mode.startsWith("BICYCLE"))
+      return leg.distance * carbonIntensity.bike + val;
+    if (leg.mode.startsWith("TRAM"))
+      return leg.distance * carbonIntensity.tram + val;
+    if (leg.mode.startsWith("CAR"))
+      return leg.distance * carbonIntensity.car + val;
+    if (leg.mode.startsWith("SUBWAY"))
+      return leg.distance * carbonIntensity.subway + val;
+    return val;
+  }, 0);
+
+  switch (units) {
+    case "ounce":
+      return totalCarbon / 28.35;
+    case "kilogram":
+      return totalCarbon / 1000;
+    case "pound":
+      return totalCarbon / 454;
+    case "gram":
+    default:
+      return totalCarbon;
+  }
+}
+
+/**
  * For a given fare component (either total fare or component parts), returns
  * an object with string formatters and the fare value (in cents).
  */
