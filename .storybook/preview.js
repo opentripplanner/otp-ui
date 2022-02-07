@@ -1,10 +1,15 @@
 import { setupWorker } from "msw";
 import locationFieldHandlers from "../packages/location-field/src/mocks/handlers";
 import itineraryBodyHandlers from '../packages/itinerary-body/src/__mocks__/handlers'
+import geocoderHandlers from "../packages/geocoder/src/test-fixtures/handlers";
 
 // Only install worker when running in browser
 if (typeof global.process === 'undefined') {
-  const worker = setupWorker(...locationFieldHandlers, ...itineraryBodyHandlers)
+  const worker = setupWorker(
+    ...locationFieldHandlers,
+    ...itineraryBodyHandlers,
+    ...geocoderHandlers
+  );
   worker.start({onUnhandledRequest: "bypass"})
 }
 
