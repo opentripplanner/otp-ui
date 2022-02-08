@@ -20,8 +20,19 @@ export const defaultMessages: Record<string, string> = flatten(
 );
 
 const { hasTransit } = coreUtils.itinerary;
-const METERS_PER_MILE = 1609;
+const METERS_PER_MILE = 1609.3;
 const SECONDS_PER_HOUR = 3600;
+
+/**
+ * Rounds a distance to the nearest integer if over 1000 meters.
+ * Leave one decimal point otherwise.
+ * (This is to be consistent with the rounding scheme in core-utils/query-params.)
+ * @param meters The distance in meters to round.
+ */
+function roundMeters(meters: number): number {
+  if (meters >= 1000) return Math.round(meters);
+  return Math.round(meters * 10) / 10;
+}
 
 /**
  * Gets a list of duration options.
@@ -65,7 +76,7 @@ function getDistanceOptionsInMiles(intl, mileOptions) {
         miles
       }
     ).trim(),
-    value: miles * METERS_PER_MILE
+    value: roundMeters(miles * METERS_PER_MILE)
   }));
 }
 
