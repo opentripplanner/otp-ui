@@ -495,17 +495,7 @@ export function calculatePhysicalActivity(itinerary) {
 export function calculateEmissions(carbonIntensity, units, itinerary) {
   // Distance is in meters, totalCarbon is in grams
   const totalCarbon = itinerary.legs.reduce((val, leg) => {
-    if (leg.mode.startsWith("WALK"))
-      return leg.distance * carbonIntensity.walk + val;
-    if (leg.mode.startsWith("BICYCLE"))
-      return leg.distance * carbonIntensity.bike + val;
-    if (leg.mode.startsWith("TRAM"))
-      return leg.distance * carbonIntensity.tram + val;
-    if (leg.mode.startsWith("CAR"))
-      return leg.distance * carbonIntensity.car + val;
-    if (leg.mode.startsWith("SUBWAY"))
-      return leg.distance * carbonIntensity.subway + val;
-    return val;
+    return leg.distance * carbonIntensity[leg.mode.toLowerCase()] || 0 + val;
   }, 0);
 
   switch (units) {
