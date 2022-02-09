@@ -490,6 +490,7 @@ export function calculatePhysicalActivity(itinerary) {
 
 /**
  * @param  {carbonIntensity} carbonIntensity carbon intensity by mode in grams/meter
+ * @param {units} units units to be used in return value
  * @param  {itinerary} itinerary OTP trip itinierary
  */
 export function calculateEmissions(carbonIntensity, units, itinerary) {
