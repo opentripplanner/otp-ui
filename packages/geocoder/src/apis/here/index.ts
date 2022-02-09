@@ -5,7 +5,7 @@ import { stringify } from "querystring";
 // eslint-disable-next-line prettier/prettier
 import type { LonLatOutput } from "@conveyal/lonlat"
 import type { AutocompleteQuery, ReverseQuery, SearchQuery } from "../../geocoders/types"
-import type { HereResponse } from "./types";
+import type { Boundary, HereResponse, Item } from "./types";
 
 const AUTOCOMPLETE_URL =
   "https://autosuggest.search.hereapi.com/v1/autosuggest";
@@ -41,6 +41,12 @@ function run({ options, query, url }: HereFetchArgs): Promise<HereResponse> {
   return fetch(`${url}?${stringify(query)}`, options).then(res => res.json());
 }
 
+const checkItemInBoundary = ({ rect }: Boundary) => ({ position }: Item) => {
+  const { maxLat, maxLon, minLat, minLon } = rect
+  const { lat, lng } = position
+  return lng <= maxLon && lng >= minLon && lat <= maxLat && lat >= minLat
+}
+
 /**
  * Search for an address using
  * Here's {@link https://developer.here.com/documentation/geocoding-search-api/api-reference-swagger.html|Autocomplete}
@@ -55,7 +61,7 @@ function run({ options, query, url }: HereFetchArgs): Promise<HereResponse> {
  * @param  {string} $0.text                       query text
  * @return {Promise}                              A Promise that'll get resolved with the autocomplete result
  */
-function autocomplete({
+async function autocomplete({
   apiKey,
   boundary,
   focusPoint,
@@ -66,6 +72,21 @@ function autocomplete({
   // build query
   const query: HereQuery = { apiKey,  limit: size, q: text, show: "details" };
 
+  if (focusPoint) {
+    const { lat, lon }: LonLatOutput = normalize(focusPoint);
+    query.at = `${lat},${lon}`;
+    const res = await run({
+      options,
+      query,
+      url: AUTOCOMPLETE_URL
+    });
+    if (boundary?.rect) {
+      // HERE does not support a boundary when you use a focus point
+      // This workaround filters the results internally to the boundary
+      res.items = res.items.filter(checkItemInBoundary(boundary))
+    }
+    return res
+  }
   if (boundary) {
     const { country, rect } = boundary;
     if (country) query.in = `countryCode:${country}`;
@@ -77,12 +98,8 @@ function autocomplete({
         rect.maxLat
       ].join(",")}`;
     }
-  } else if (focusPoint) { 
-    // Only add focusPoint if the boundary is not specified.
-    // HERE only supports one or the other, not both.
-    const { lat, lon }: LonLatOutput = normalize(focusPoint);
-    query.at = `${lat},${lon}`;
   }
+
   return run({
     options,
     query,
