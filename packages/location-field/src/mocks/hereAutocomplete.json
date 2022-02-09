@@ -1,0 +1,929 @@
+{
+  "items": [
+    {
+      "title": "Safeway",
+      "id": "here:pds:place:840c23p2-3387cc4bcd274ea6860f17a61e787900",
+      "resultType": "place",
+      "address": {
+        "label": "Safeway, 7300 Roosevelt Way NE, Seattle, WA 98115-5658, United States",
+        "countryCode": "USA",
+        "countryName": "United States",
+        "stateCode": "WA",
+        "state": "Washington",
+        "county": "King",
+        "city": "Seattle",
+        "district": "Roosevelt",
+        "street": "Roosevelt Way NE",
+        "postalCode": "98115-5658",
+        "houseNumber": "7300"
+      },
+      "position": {
+        "lat": 47.68199,
+        "lng": -122.31701
+      },
+      "access": [
+        {
+          "lat": 47.68198,
+          "lng": -122.31751
+        }
+      ],
+      "distance": 726,
+      "categories": [
+        {
+          "id": "600-6300-0066",
+          "name": "Grocery",
+          "primary": true
+        },
+        {
+          "id": "600-6400-0000",
+          "name": "Drugstore or Pharmacy"
+        },
+        {
+          "id": "600-6400-0069",
+          "name": "Drugstore"
+        },
+        {
+          "id": "600-6400-0070",
+          "name": "Pharmacy"
+        }
+      ],
+      "chains": [
+        {
+          "id": "91",
+          "name": "Safeway"
+        }
+      ],
+      "references": [
+        {
+          "supplier": {
+            "id": "core"
+          },
+          "id": "1017568729"
+        },
+        {
+          "supplier": {
+            "id": "core"
+          },
+          "id": "27237111"
+        },
+        {
+          "supplier": {
+            "id": "yelp"
+          },
+          "id": "4UmRkXqL3T0laY6GoP3Psg"
+        },
+        {
+          "supplier": {
+            "id": "yelp"
+          },
+          "id": "jGN8UzMtznBLCSRFBGNzIA"
+        },
+        {
+          "supplier": {
+            "id": "yelp"
+          },
+          "id": "paFvA_235AaGppqm91FcWg"
+        }
+      ],
+      "contacts": [
+        {
+          "phone": [
+            {
+              "value": "+12065241649",
+              "categories": [
+                {
+                  "id": "600-6400-0000"
+                },
+                {
+                  "id": "600-6400-0069"
+                },
+                {
+                  "id": "600-6400-0070"
+                }
+              ]
+            },
+            {
+              "value": "+12065256348"
+            }
+          ],
+          "fax": [
+            {
+              "value": "(206) 525-2854",
+              "categories": [
+                {
+                  "id": "600-6300-0066"
+                },
+                {
+                  "id": "600-6400-0000"
+                }
+              ]
+            },
+            {
+              "value": "+12065252854",
+              "categories": [
+                {
+                  "id": "600-6400-0070"
+                }
+              ]
+            }
+          ],
+          "www": [
+            {
+              "value": "http://www.safeway.com",
+              "categories": [
+                {
+                  "id": "600-6300-0066"
+                },
+                {
+                  "id": "600-6400-0000"
+                }
+              ]
+            },
+            {
+              "value": "https://local.pharmacy.safeway.com//safeway-pharmacy/wa/seattle/7300-roosevelt-way-ne.html",
+              "categories": [
+                {
+                  "id": "600-6400-0000"
+                }
+              ]
+            },
+            {
+              "value": "https://local.safeway.com//safeway/wa/seattle/7300-roosevelt-way-ne.html",
+              "categories": [
+                {
+                  "id": "600-6300-0066"
+                }
+              ]
+            },
+            {
+              "value": "https://local.safeway.com/safeway/wa/seattle/7300-roosevelt-way-ne/grocery-delivery-pickup.html",
+              "categories": [
+                {
+                  "id": "600-6300-0066"
+                },
+                {
+                  "id": "600-6400-0070"
+                }
+              ]
+            },
+            {
+              "value": "https://www.safeway.com",
+              "categories": [
+                {
+                  "id": "600-6300-0066"
+                },
+                {
+                  "id": "600-6400-0070"
+                }
+              ]
+            },
+            {
+              "value": "https://local.pharmacy.safeway.com/wa/seattle/7300-roosevelt-way-ne.html",
+              "categories": [
+                {
+                  "id": "600-6400-0000"
+                },
+                {
+                  "id": "600-6400-0070"
+                }
+              ]
+            },
+            {
+              "value": "https://local.safeway.com/safeway/wa/seattle/7300-roosevelt-way-ne.html",
+              "categories": [
+                {
+                  "id": "600-6300-0066"
+                }
+              ]
+            }
+          ],
+          "email": [
+            {
+              "value": "business.ethics@safeway.com",
+              "categories": [
+                {
+                  "id": "600-6300-0066"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "openingHours": [
+        {
+          "categories": [
+            {
+              "id": "600-6300-0066"
+            }
+          ],
+          "text": ["Mon-Sun: 05:00 - 01:00"],
+          "isOpen": true,
+          "structured": [
+            {
+              "start": "T050000",
+              "duration": "PT20H00M",
+              "recurrence": "FREQ:DAILY;BYDAY:MO,TU,WE,TH,FR,SA,SU"
+            }
+          ]
+        },
+        {
+          "categories": [
+            {
+              "id": "600-6400-0070"
+            }
+          ],
+          "text": ["Mon-Sun: 08:00 - 21:00"],
+          "isOpen": true,
+          "structured": [
+            {
+              "start": "T080000",
+              "duration": "PT13H00M",
+              "recurrence": "FREQ:DAILY;BYDAY:MO,TU,WE,TH,FR,SA,SU"
+            }
+          ]
+        },
+        {
+          "categories": [
+            {
+              "id": "600-6400-0000"
+            },
+            {
+              "id": "600-6400-0069"
+            }
+          ],
+          "text": ["Mon-Fri: 09:00 - 21:00", "Sat, Sun: 10:00 - 18:00"],
+          "isOpen": true,
+          "structured": [
+            {
+              "start": "T090000",
+              "duration": "PT12H00M",
+              "recurrence": "FREQ:DAILY;BYDAY:MO,TU,WE,TH,FR"
+            },
+            {
+              "start": "T100000",
+              "duration": "PT08H00M",
+              "recurrence": "FREQ:DAILY;BYDAY:SA,SU"
+            }
+          ]
+        }
+      ],
+      "highlights": {
+        "title": [
+          {
+            "start": 0,
+            "end": 4
+          }
+        ],
+        "address": {
+          "label": [
+            {
+              "start": 0,
+              "end": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Safeway",
+      "id": "here:cm:ontology:safeway",
+      "resultType": "chainQuery",
+      "href": "https://autosuggest.search.hereapi.com/v1/discover?q=Safeway&_ontology=safeway&at=47.67552%2C-122.31831",
+      "highlights": {
+        "title": [
+          {
+            "start": 0,
+            "end": 4
+          }
+        ]
+      }
+    },
+    {
+      "title": "Safeway",
+      "id": "here:pds:place:840c23p0-3514a236c217429abe2c58a3c6278ac4",
+      "resultType": "place",
+      "address": {
+        "label": "Safeway, 4732 Brooklyn Ave NE, Seattle, WA 98105-4411, United States",
+        "countryCode": "USA",
+        "countryName": "United States",
+        "stateCode": "WA",
+        "state": "Washington",
+        "county": "King",
+        "city": "Seattle",
+        "district": "University District",
+        "street": "Brooklyn Ave NE",
+        "postalCode": "98105-4411",
+        "houseNumber": "4732"
+      },
+      "position": {
+        "lat": 47.66427,
+        "lng": -122.31388
+      },
+      "access": [
+        {
+          "lat": 47.66427,
+          "lng": -122.3142
+        }
+      ],
+      "distance": 1294,
+      "categories": [
+        {
+          "id": "600-6300-0066",
+          "name": "Grocery",
+          "primary": true
+        },
+        {
+          "id": "600-6400-0000",
+          "name": "Drugstore or Pharmacy"
+        },
+        {
+          "id": "600-6400-0070",
+          "name": "Pharmacy"
+        }
+      ],
+      "chains": [
+        {
+          "id": "91",
+          "name": "Safeway"
+        }
+      ],
+      "references": [
+        {
+          "supplier": {
+            "id": "core"
+          },
+          "id": "27224611"
+        },
+        {
+          "supplier": {
+            "id": "yelp"
+          },
+          "id": "_BELNPTsqzNRi1IPY1_Cvw"
+        }
+      ],
+      "contacts": [
+        {
+          "phone": [
+            {
+              "value": "+12065224565"
+            },
+            {
+              "value": "+12066323975",
+              "categories": [
+                {
+                  "id": "600-6300-0066"
+                },
+                {
+                  "id": "600-6400-0070"
+                }
+              ]
+            }
+          ],
+          "fax": [
+            {
+              "value": "(206) 522-0767",
+              "categories": [
+                {
+                  "id": "600-6300-0066"
+                }
+              ]
+            }
+          ],
+          "www": [
+            {
+              "value": "http://www.safeway.com"
+            },
+            {
+              "value": "https://local.safeway.com//safeway/wa/seattle/4732-brooklyn-ave-ne.html",
+              "categories": [
+                {
+                  "id": "600-6300-0066"
+                }
+              ]
+            },
+            {
+              "value": "https://local.safeway.com/safeway/wa/seattle/4732-brooklyn-ave-ne.html",
+              "categories": [
+                {
+                  "id": "600-6300-0066"
+                }
+              ]
+            },
+            {
+              "value": "https://local.safeway.com/safeway/wa/seattle/4732-brooklyn-ave-ne/grocery-delivery-pickup.html",
+              "categories": [
+                {
+                  "id": "600-6300-0066"
+                },
+                {
+                  "id": "600-6400-0070"
+                }
+              ]
+            },
+            {
+              "value": "https://www.safeway.com",
+              "categories": [
+                {
+                  "id": "600-6300-0066"
+                },
+                {
+                  "id": "600-6400-0070"
+                }
+              ]
+            }
+          ],
+          "email": [
+            {
+              "value": "business.ethics@safeway.com",
+              "categories": [
+                {
+                  "id": "600-6300-0066"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "openingHours": [
+        {
+          "categories": [
+            {
+              "id": "600-6300-0066"
+            }
+          ],
+          "text": ["Mon-Sun: 06:00 - 01:00"],
+          "isOpen": true,
+          "structured": [
+            {
+              "start": "T060000",
+              "duration": "PT19H00M",
+              "recurrence": "FREQ:DAILY;BYDAY:MO,TU,WE,TH,FR,SA,SU"
+            }
+          ]
+        },
+        {
+          "categories": [
+            {
+              "id": "600-6400-0070"
+            }
+          ],
+          "text": ["Mon-Sun: 06:00 - 02:00"],
+          "isOpen": true,
+          "structured": [
+            {
+              "start": "T060000",
+              "duration": "PT20H00M",
+              "recurrence": "FREQ:DAILY;BYDAY:MO,TU,WE,TH,FR,SA,SU"
+            }
+          ]
+        }
+      ],
+      "highlights": {
+        "title": [
+          {
+            "start": 0,
+            "end": 4
+          }
+        ],
+        "address": {
+          "label": [
+            {
+              "start": 0,
+              "end": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Safeway",
+      "id": "here:pds:place:840c23p3-420f0740f25058dd33e817cde2b030b5",
+      "resultType": "place",
+      "address": {
+        "label": "Safeway, 7340 35th Ave NE, Seattle, WA 98115, United States",
+        "countryCode": "USA",
+        "countryName": "United States",
+        "stateCode": "WA",
+        "state": "Washington",
+        "county": "King",
+        "city": "Seattle",
+        "district": "Bryant",
+        "street": "35th Ave NE",
+        "postalCode": "98115",
+        "houseNumber": "7340"
+      },
+      "position": {
+        "lat": 47.68261,
+        "lng": -122.28943
+      },
+      "access": [
+        {
+          "lat": 47.68289,
+          "lng": -122.28945
+        }
+      ],
+      "distance": 2301,
+      "categories": [
+        {
+          "id": "600-6300-0066",
+          "name": "Grocery",
+          "primary": true
+        },
+        {
+          "id": "600-6400-0000",
+          "name": "Drugstore or Pharmacy"
+        },
+        {
+          "id": "600-6400-0069",
+          "name": "Drugstore"
+        },
+        {
+          "id": "600-6400-0070",
+          "name": "Pharmacy"
+        }
+      ],
+      "chains": [
+        {
+          "id": "91",
+          "name": "Safeway"
+        }
+      ],
+      "references": [
+        {
+          "supplier": {
+            "id": "core"
+          },
+          "id": "1212910823"
+        },
+        {
+          "supplier": {
+            "id": "core"
+          },
+          "id": "27233048"
+        },
+        {
+          "supplier": {
+            "id": "yelp"
+          },
+          "id": "0RXkhBSqFLHkoZNXGR_JTw"
+        },
+        {
+          "supplier": {
+            "id": "yelp"
+          },
+          "id": "VWVl8e5PCjKC0zT-4yflXQ"
+        }
+      ],
+      "contacts": [
+        {
+          "phone": [
+            {
+              "value": "+12064941255",
+              "categories": [
+                {
+                  "id": "600-6400-0000"
+                },
+                {
+                  "id": "600-6400-0069"
+                },
+                {
+                  "id": "600-6400-0070"
+                }
+              ]
+            },
+            {
+              "value": "+12065247064"
+            }
+          ],
+          "fax": [
+            {
+              "value": "(206) 729-1613",
+              "categories": [
+                {
+                  "id": "600-6300-0066"
+                }
+              ]
+            }
+          ],
+          "www": [
+            {
+              "value": "http://www.safeway.com",
+              "categories": [
+                {
+                  "id": "600-6300-0066"
+                },
+                {
+                  "id": "600-6400-0000"
+                }
+              ]
+            },
+            {
+              "value": "https://local.pharmacy.safeway.com//safeway-pharmacy/wa/seattle/7340-35th-ave-ne.html",
+              "categories": [
+                {
+                  "id": "600-6400-0000"
+                }
+              ]
+            },
+            {
+              "value": "https://local.safeway.com//safeway/wa/seattle/7340-35th-ave-ne.html",
+              "categories": [
+                {
+                  "id": "600-6300-0066"
+                }
+              ]
+            },
+            {
+              "value": "https://local.safeway.com/safeway/wa/seattle/7340-35th-ave-ne.html",
+              "categories": [
+                {
+                  "id": "600-6300-0066"
+                }
+              ]
+            },
+            {
+              "value": "https://local.safeway.com/safeway/wa/seattle/7340-35th-ave-ne/grocery-delivery-pickup.html",
+              "categories": [
+                {
+                  "id": "600-6300-0066"
+                },
+                {
+                  "id": "600-6400-0070"
+                }
+              ]
+            },
+            {
+              "value": "https://www.safeway.com",
+              "categories": [
+                {
+                  "id": "600-6300-0066"
+                },
+                {
+                  "id": "600-6400-0070"
+                }
+              ]
+            },
+            {
+              "value": "https://local.pharmacy.safeway.com/wa/seattle/7340-35th-ave-ne.html",
+              "categories": [
+                {
+                  "id": "600-6400-0070"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "openingHours": [
+        {
+          "categories": [
+            {
+              "id": "600-6400-0070"
+            }
+          ],
+          "text": ["Mon-Sun: 08:00 - 21:00"],
+          "isOpen": true,
+          "structured": [
+            {
+              "start": "T080000",
+              "duration": "PT13H00M",
+              "recurrence": "FREQ:DAILY;BYDAY:MO,TU,WE,TH,FR,SA,SU"
+            }
+          ]
+        },
+        {
+          "categories": [
+            {
+              "id": "600-6300-0066"
+            }
+          ],
+          "text": ["Mon-Sun: 00:00 - 01:00, 05:00 - 23:59"],
+          "isOpen": true,
+          "structured": [
+            {
+              "start": "T000000",
+              "duration": "PT01H00M",
+              "recurrence": "FREQ:DAILY;BYDAY:MO,TU,WE,TH,FR,SA,SU"
+            },
+            {
+              "start": "T050000",
+              "duration": "PT18H59M",
+              "recurrence": "FREQ:DAILY;BYDAY:MO,TU,WE,TH,FR,SA,SU"
+            }
+          ]
+        },
+        {
+          "categories": [
+            {
+              "id": "600-6400-0000"
+            },
+            {
+              "id": "600-6400-0069"
+            }
+          ],
+          "text": ["Mon-Fri: 09:00 - 19:00", "Sat, Sun: 10:00 - 18:00"],
+          "isOpen": true,
+          "structured": [
+            {
+              "start": "T090000",
+              "duration": "PT10H00M",
+              "recurrence": "FREQ:DAILY;BYDAY:MO,TU,WE,TH,FR"
+            },
+            {
+              "start": "T100000",
+              "duration": "PT08H00M",
+              "recurrence": "FREQ:DAILY;BYDAY:SA,SU"
+            }
+          ]
+        }
+      ],
+      "highlights": {
+        "title": [
+          {
+            "start": 0,
+            "end": 4
+          }
+        ],
+        "address": {
+          "label": [
+            {
+              "start": 0,
+              "end": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Safeway",
+      "id": "here:pds:place:840c22zr-c59b5c2840e546479658b6072bbf8600",
+      "resultType": "place",
+      "address": {
+        "label": "Safeway, 8704 Greenwood Ave N, Seattle, WA 98103, United States",
+        "countryCode": "USA",
+        "countryName": "United States",
+        "stateCode": "WA",
+        "state": "Washington",
+        "county": "King",
+        "city": "Seattle",
+        "district": "Greenwood",
+        "street": "Greenwood Ave N",
+        "postalCode": "98103",
+        "houseNumber": "8704"
+      },
+      "position": {
+        "lat": 47.69285,
+        "lng": -122.35496
+      },
+      "access": [
+        {
+          "lat": 47.69254,
+          "lng": -122.35531
+        }
+      ],
+      "distance": 3353,
+      "categories": [
+        {
+          "id": "600-6300-0066",
+          "name": "Grocery",
+          "primary": true
+        },
+        {
+          "id": "600-6400-0000",
+          "name": "Drugstore or Pharmacy"
+        },
+        {
+          "id": "600-6400-0070",
+          "name": "Pharmacy"
+        }
+      ],
+      "chains": [
+        {
+          "id": "91",
+          "name": "Safeway"
+        }
+      ],
+      "references": [
+        {
+          "supplier": {
+            "id": "core"
+          },
+          "id": "1031772542"
+        },
+        {
+          "supplier": {
+            "id": "core"
+          },
+          "id": "1215881815"
+        },
+        {
+          "supplier": {
+            "id": "core"
+          },
+          "id": "28068114"
+        },
+        {
+          "supplier": {
+            "id": "yelp"
+          },
+          "id": "UzGcsiO6f6lQJIy3Gx2hPw"
+        },
+        {
+          "supplier": {
+            "id": "yelp"
+          },
+          "id": "hLbxTorqiCAFCMu1uraTwg"
+        }
+      ],
+      "contacts": [
+        {
+          "phone": [
+            {
+              "value": "+12064940433"
+            },
+            {
+              "value": "+12064940440"
+            },
+            {
+              "value": "+12067894100",
+              "categories": [
+                {
+                  "id": "600-6400-0070"
+                }
+              ]
+            }
+          ],
+          "www": [
+            {
+              "value": "http://www.safeway.com"
+            }
+          ],
+          "email": [
+            {
+              "value": "business.ethics@safeway.com",
+              "categories": [
+                {
+                  "id": "600-6300-0066"
+                }
+              ]
+            },
+            {
+              "value": "safewayinclocations@yahoo.com",
+              "categories": [
+                {
+                  "id": "600-6300-0066"
+                },
+                {
+                  "id": "600-6400-0070"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "openingHours": [
+        {
+          "categories": [
+            {
+              "id": "600-6300-0066"
+            },
+            {
+              "id": "600-6400-0070"
+            }
+          ],
+          "text": ["Mon-Sun: 00:00 - 01:00, 05:00 - 23:59"],
+          "isOpen": true,
+          "structured": [
+            {
+              "start": "T000000",
+              "duration": "PT01H00M",
+              "recurrence": "FREQ:DAILY;BYDAY:MO,TU,WE,TH,FR,SA,SU"
+            },
+            {
+              "start": "T050000",
+              "duration": "PT18H59M",
+              "recurrence": "FREQ:DAILY;BYDAY:MO,TU,WE,TH,FR,SA,SU"
+            }
+          ]
+        }
+      ],
+      "highlights": {
+        "title": [
+          {
+            "start": 0,
+            "end": 4
+          }
+        ],
+        "address": {
+          "label": [
+            {
+              "start": 0,
+              "end": 4
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "queryTerms": []
+}

@@ -26,6 +26,8 @@ const PlaceRow = ({
   LegIcon,
   legIndex,
   LineColumnContent,
+  mapillaryCallback,
+  mapillaryKey,
   messages,
   PlaceName,
   RouteDescription,
@@ -131,6 +133,8 @@ const PlaceRow = ({
                 leg={leg}
                 LegIcon={LegIcon}
                 legIndex={legIndex}
+                mapillaryCallback={mapillaryCallback}
+                mapillaryKey={mapillaryKey}
                 setActiveLeg={setActiveLeg}
                 setLegDiagram={setLegDiagram}
                 showElevationProfile={showElevationProfile}
@@ -143,10 +147,11 @@ const PlaceRow = ({
       {showMapButtonColumn && (
         <S.MapButtonColumn hideBorder={hideBorder.toString()}>
           <S.MapButton
+            aria-label={messages.mapIconTitle}
             onClick={() => frameLeg({ isDestination, leg, legIndex, place })}
             title={messages.mapIconTitle}
           >
-            <S.MapIcon title="Show on map" />
+            <S.MapIcon title={messages.mapIconTitle} />
           </S.MapButton>
         </S.MapButtonColumn>
       )}
@@ -186,6 +191,8 @@ PlaceRow.propTypes = {
   /** The index value of this specific leg within the itinerary */
   legIndex: PropTypes.number.isRequired,
   LineColumnContent: PropTypes.elementType.isRequired,
+  mapillaryCallback: PropTypes.func,
+  mapillaryKey: PropTypes.string,
   messages: messagesType,
   PlaceName: PropTypes.elementType.isRequired,
   RouteDescription: PropTypes.elementType.isRequired,
@@ -213,6 +220,8 @@ PlaceRow.defaultProps = {
   followsTransit: false,
   // can be null if this is the origin place
   lastLeg: null,
+  mapillaryCallback: null,
+  mapillaryKey: null,
   messages: {
     mapIconTitle: "View on map"
   },

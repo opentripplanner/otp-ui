@@ -1,19 +1,21 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
-import React, { FunctionComponent } from "react";
+import React from "react";
 
 import * as S from "./styled";
 import Checkbox from "./Checkbox";
-import { QueryProps } from "./types";
+import { CheckboxIcons, QueryProps } from "./types";
 import { getSelectedModes } from "./util";
 
 const TransitOptions = ({
+  checkboxIcons,
+  DetailedModeIcon,
   onQueryParamChange,
   queryParams,
-  supportedModes,
-  checkboxIcons,
-  DetailedModeIcon
+  supportedModes
 }: {
-  checkboxIcons?: { checked: FunctionComponent; unchecked: FunctionComponent };
+  checkboxIcons?: CheckboxIcons;
 } & QueryProps): JSX.Element => {
   const { transitModes } = supportedModes;
   const selectedModes = getSelectedModes(queryParams);

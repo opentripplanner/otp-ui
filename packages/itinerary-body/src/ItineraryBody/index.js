@@ -17,6 +17,8 @@ const ItineraryBody = ({
   itinerary,
   LegIcon,
   LineColumnContent,
+  mapillaryCallback,
+  mapillaryKey,
   PlaceName,
   RouteDescription,
   routingType,
@@ -68,6 +70,8 @@ const ItineraryBody = ({
           LegIcon={LegIcon}
           legIndex={i}
           LineColumnContent={LineColumnContent}
+          mapillaryCallback={mapillaryCallback}
+          mapillaryKey={mapillaryKey}
           PlaceName={PlaceName}
           RouteDescription={RouteDescription}
           routingType={routingType}
@@ -153,6 +157,13 @@ ItineraryBody.propTypes = {
    * - toRouteAbbreviation - a function to help abbreviate route names
    */
   LineColumnContent: PropTypes.elementType.isRequired,
+  /** Handler for when a Mapillary button is clicked. */
+  mapillaryCallback: PropTypes.func,
+  /**
+   * Mapillary key used to fetch imagery if available. Key can be obtained from
+   * https://www.mapillary.com/dashboard/developers
+   */
+  mapillaryKey: PropTypes.string,
   /**
    * A custom component for rendering the place name of legs.
    * The component is sent 3 props:
@@ -232,6 +243,8 @@ ItineraryBody.defaultProps = {
   className: null,
   diagramVisible: null,
   frameLeg: noop,
+  mapillaryCallback: null,
+  mapillaryKey: null,
   routingType: "ITINERARY",
   showAgencyInfo: false,
   showElevationProfile: false,

@@ -7,6 +7,7 @@ import {
   currentPosition,
   geocoderConfig,
   getCurrentPosition,
+  hereGeocoderConfig,
   layerColorMap,
   onLocationSelected,
   selectedLocation
@@ -48,6 +49,17 @@ export const Blank = () => (
   <LocationField
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    inputPlaceholder="Select from location"
+    locationType="from"
+    onLocationSelected={onLocationSelected}
+  />
+);
+
+export const HereGeocoder = () => (
+  <LocationField
+    currentPosition={currentPosition}
+    geocoderConfig={hereGeocoderConfig}
     getCurrentPosition={getCurrentPosition}
     inputPlaceholder="Select from location"
     locationType="from"
@@ -140,11 +152,13 @@ export const WithPrefilledSearch = () => (
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
     getCurrentPosition={getCurrentPosition}
+    preferredLayers={["example_layer"]}
     initialSearchResults={mockedGeocoderResponse.features}
     inputPlaceholder="Select from location"
     layerColorMap={layerColorMap}
     locationType="from"
     onLocationSelected={onLocationSelected}
+    sortByDistance
     style={{ fontFamily: "sans-serif" }}
   />
 );

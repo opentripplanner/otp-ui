@@ -1,4 +1,8 @@
 import Geocoder from "./abstract-geocoder";
+// Prettier does not support typescript annotation
+// eslint-disable-next-line prettier/prettier
+import type { AutocompleteQuery, SearchQuery } from "..";
+import type { SingleOrMultiGeocoderResponse } from "./types";
 
 /**
  * Geocoder implementation for the Pelias geocoder.
@@ -10,8 +14,10 @@ export default class PeliasGeocoder extends Geocoder {
   /**
    * Generate an autocomplete query specifically for the Pelias API. The
    * `sources` parameter is a Pelias-specific option.
+   * This function fills in some more fields of the query
+   * from the existing values in the GeocoderConfig. 
    */
-  getAutocompleteQuery(query) {
+  getAutocompleteQuery(query: AutocompleteQuery): AutocompleteQuery {
     const {
       apiKey,
       baseUrl,
@@ -37,8 +43,10 @@ export default class PeliasGeocoder extends Geocoder {
   /**
    * Generate a search query specifically for the Pelias API. The
    * `sources` parameter is a Pelias-specific option.
+   * This function fills in some more fields of the query
+   * from the existing values in the GeocoderConfig. 
    */
-  getSearchQuery(query) {
+  getSearchQuery(query: SearchQuery): SearchQuery {
     const {
       apiKey,
       baseUrl,
@@ -66,7 +74,8 @@ export default class PeliasGeocoder extends Geocoder {
    * Rewrite the response into an application-specific data format using the
    * first feature returned from the geocoder.
    */
-  rewriteReverseResponse(response) {
+  rewriteReverseResponse(response): SingleOrMultiGeocoderResponse {
+    if (this.geocoderConfig?.reverseUseFeatureCollection) return response
     const { lat, lon } = response.isomorphicMapzenSearchQuery.point;
 
     const firstFeature = response[0];

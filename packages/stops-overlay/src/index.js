@@ -91,8 +91,8 @@ class StopsOverlay extends MapLayer {
         {/* Updating the react key is the only way to force the GeoJSON layer to update */}
         {flexGeometries.length > 0 && (
           <GeoJSON
-            key={flexGeometries[0].properties.id}
             data={flexGeometries}
+            key={flexGeometries[0].properties.id}
             style={feature => {
               const { color } = feature?.geometry?.properties;
               return { color };

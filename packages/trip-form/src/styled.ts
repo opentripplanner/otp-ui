@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+// eslint-disable-next-line prettier/prettier
+import type {
+  DateTimeSelectorAndSubComponents,
+  ModeButtonAndSubComponents,
+  ModeSelectorAndSubComponents,
+  SubmodeSelectorAndSubComponents
+} from "./types";
+
 export const SettingsHeader = styled.div``;
 
 export const SettingsSection = styled.div``;
@@ -16,7 +24,7 @@ export const FloatingSettingLabel = styled(SettingLabel)`
   float: left;
 `;
 
-export const DateTimeSelector = styled.div``;
+export const DateTimeSelector: DateTimeSelectorAndSubComponents = styled.div``;
 
 DateTimeSelector.DepartureRow = styled.div`
   box-sizing: border-box;
@@ -41,7 +49,7 @@ DateTimeSelector.DateTimeRow = styled.div`
   }
 `;
 
-export const ModeSelector = styled.div``;
+export const ModeSelector: ModeSelectorAndSubComponents = styled.div``;
 
 ModeSelector.MainRow = styled.div`
   padding: 0px 5px;
@@ -65,15 +73,16 @@ ModeSelector.TertiaryRow = styled.div`
   }
 `;
 
-export const SubmodeSelector = styled(SettingsSection)``;
+export const SubmodeSelector: SubmodeSelectorAndSubComponents = styled(SettingsSection)``;
 
-SubmodeSelector.Row = styled.div``;
+const submodeRow = styled.div``;
+SubmodeSelector.Row = submodeRow;
 
-SubmodeSelector.InlineRow = styled(SubmodeSelector.Row)`
+SubmodeSelector.InlineRow = styled(submodeRow)`
   text-align: right;
 `;
 
-export const ModeButton = styled.div`
+export const ModeButton: ModeButtonAndSubComponents = styled.div`
   display: inline-block;
   text-align: center;
   box-sizing: border-box;

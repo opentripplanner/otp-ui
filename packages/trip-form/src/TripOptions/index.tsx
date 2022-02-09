@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
 import React, {
   FunctionComponent,
@@ -13,10 +15,48 @@ import FeaturedOptionOverlay from "./FeaturedOptionOverlay";
 import { getSelectedModes } from "./util";
 import ModeRow from "./ModeRow";
 import TransitOptions from "./TransitOptions";
-import { Company, QueryParams, QueryProps } from "./types";
+import { CheckboxIcons, Company, QueryParams, QueryProps } from "./types";
 import * as S from "./styled";
 
 interface ComponentProps {
+  /**
+   * Object of icon props used to overwrite the checkmark and plus icons
+   */
+  checkboxIcons?: CheckboxIcons;
+
+  /**
+   * Classnames to add to the container div to allow additional styling
+   */
+  className?: string;
+
+  /**
+   * Icon prop used for overwriting company logos throughout the component
+   */
+  CompanyIcon?: FunctionComponent<{ company: string }>;
+
+  /**
+   * Whether to display the built-in back button in the featured mode overlay. If the button is disabled,
+   * featuredItemOverlayEnabled should be used to hide the overlay.
+   */
+  featuredItemOverlayBackButton?: boolean;
+
+  /**
+   * If this prop is set to false, the featured item overlay will immediately disappear.
+   * This can be used in conjunction with featuredItemOverlayBackButton to replace the back
+   * button.
+   *
+   * If passing a useState hook to this component, this prop should be the value of the useState output.
+   */
+  featuredItemOverlayEnabled?: boolean;
+
+  /**
+   * If this prop is passed, any updates to the featured item overlay will be
+   * reported to the function passed. This can be used to keep track of if the overlay is open.
+   *
+   * If passing a useState hook to this component, this prop should be the setter of the useState output.
+   */
+  featuredItemOverlayShown?: (overlayShown: boolean) => void;
+
   /**
    * React element to be rendered below
    * the rest of the element
@@ -30,46 +70,10 @@ interface ComponentProps {
   supportedCompanies: Company[];
 
   /**
-   * Classnames to add to the container div to allow additional styling
-   */
-  className?: string;
-
-  /**
-   * Whether to display the built-in back button in the featured mode overlay. If the button is disabled,
-   * featuredItemOverlayEnabled should be used to hide the overlay.
-   */
-  featuredItemOverlayBackButton?: boolean;
-  /**
-   * If this prop is set to false, the featured item overlay will immediately disappear.
-   * This can be used in conjunction with featuredItemOverlayBackButton to replace the back
-   * button.
-   *
-   * If passing a useState hook to this component, this prop should be the value of the useState output.
-   */
-  featuredItemOverlayEnabled?: boolean;
-  /**
-   * If this prop is passed, any updates to the featured item overlay will be
-   * reported to the function passed. This can be used to keep track of if the overlay is open.
-   *
-   * If passing a useState hook to this component, this prop should be the setter of the useState output.
-   */
-  featuredItemOverlayShown?: (overlayShown: boolean) => void;
-
-  /**
    * An optional prop to override svg fill color of CompanyIcons
    * Note: this will only work if the image field of the option is an svg
    */
   tripOptionIconFillOverride?: string;
-
-  /**
-   * Object of icon props used to overwrite the checkmark and plus icons
-   */
-  checkboxIcons?: { checked: FunctionComponent; unchecked: FunctionComponent };
-
-  /**
-   * Icon prop used for overwriting company logos throughout the component
-   */
-  CompanyIcon?: FunctionComponent<{ company: string }>;
 
   /**
    * Icon prop used for overwriting mode icons throughout the component
@@ -91,21 +95,21 @@ type Props = ComponentProps & QueryProps;
  */
 export default function TripOptions(props: Props): ReactElement {
   const {
+    checkboxIcons,
     className,
+    CompanyIcon,
+    DetailedModeIcon,
     featuredItemOverlayBackButton,
     featuredItemOverlayEnabled,
     featuredItemOverlayShown,
     footer,
     onQueryParamChange: updateQueryParams,
     queryParams,
+    QuestionIcon,
+    SimpleModeIcon,
     supportedCompanies,
     supportedModes,
-    tripOptionIconFillOverride,
-    checkboxIcons,
-    CompanyIcon,
-    DetailedModeIcon,
-    SimpleModeIcon,
-    QuestionIcon
+    tripOptionIconFillOverride
   } = props;
 
   const [featuredOption, setFeaturedOption] = useState(null);
@@ -202,13 +206,13 @@ export default function TripOptions(props: Props): ReactElement {
     return (
       <S.TripOptionsContainer className={className}>
         <FeaturedOptionOverlay
+          CompanyIcon={CompanyIcon}
+          DetailedModeIcon={DetailedModeIcon}
           featuredOption={featuredOption}
           setFeaturedOption={setFeaturedOption}
           showBackButton={featuredItemOverlayBackButton}
           supportedCompanies={supportedCompanies}
           supportedModes={supportedModes}
-          CompanyIcon={CompanyIcon}
-          DetailedModeIcon={DetailedModeIcon}
         />
       </S.TripOptionsContainer>
     );
@@ -216,35 +220,35 @@ export default function TripOptions(props: Props): ReactElement {
   return (
     <S.TripOptionsContainer className={className}>
       <ModeRow
+        checkboxIcons={checkboxIcons}
         onQueryParamChange={onQueryParamChange}
         queryParamOverrides={queryParamOverrides}
         queryParams={queryParams}
-        supportedModes={supportedModes}
-        checkboxIcons={checkboxIcons}
         SimpleModeIcon={SimpleModeIcon}
+        supportedModes={supportedModes}
       />
       <S.TripOptionsSubContainer>
         <FeaturedOption
+          checkboxIcons={checkboxIcons}
+          DetailedModeIcon={DetailedModeIcon}
+          iconFillOverride={tripOptionIconFillOverride}
           onQueryParamChange={onQueryParamChange}
           queryParams={queryParams}
+          questionIcon={QuestionIcon}
           setFeaturedOption={setFeaturedOption}
           supportedModes={supportedModes}
-          iconFillOverride={tripOptionIconFillOverride}
-          questionIcon={QuestionIcon}
-          checkboxIcons={checkboxIcons}
-          DetailedModeIcon={DetailedModeIcon}
         />
         <GeneralSettingsPanel
+          onQueryParamChange={onQueryParamChange}
           query={queryParams}
           supportedModes={supportedModes}
-          onQueryParamChange={onQueryParamChange}
         />
         <TransitOptions
+          checkboxIcons={checkboxIcons}
+          DetailedModeIcon={DetailedModeIcon}
           onQueryParamChange={onQueryParamChange}
           queryParams={queryParams}
           supportedModes={supportedModes}
-          checkboxIcons={checkboxIcons}
-          DetailedModeIcon={DetailedModeIcon}
         />
         {footer}
       </S.TripOptionsSubContainer>

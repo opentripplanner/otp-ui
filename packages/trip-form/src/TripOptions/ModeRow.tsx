@@ -1,5 +1,7 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
-import React, { useEffect, useRef, FunctionComponent } from "react";
+import React, { useRef, useEffect } from "react";
 
 import {
   categoryIsActive,
@@ -7,25 +9,25 @@ import {
   getSelectedModes,
   isServerEnv
 } from "./util";
-import { Modes, QueryParams } from "./types";
+import { CheckboxIcons, Modes, QueryParams } from "./types";
 import * as S from "./styled";
 
 import Checkbox from "./Checkbox";
 
 const ModeRow = ({
-  onQueryParamChange,
-  queryParams,
-  queryParamOverrides,
-  supportedModes,
   checkboxIcons,
-  SimpleModeIcon
+  onQueryParamChange,
+  queryParamOverrides,
+  queryParams,
+  SimpleModeIcon,
+  supportedModes
 }: {
   onQueryParamChange(paramsToUpdate: QueryParams, categoryId?: string): void;
-  queryParams: QueryParams;
+  checkboxIcons?: CheckboxIcons;
   queryParamOverrides: { [key: string]: QueryParams };
-  supportedModes: Modes;
-  checkboxIcons?: { checked: FunctionComponent; unchecked: FunctionComponent };
+  queryParams: QueryParams;
   SimpleModeIcon?: React.FunctionComponent<{ mode: string }>;
+  supportedModes: Modes;
 }): React.ReactElement => {
   const { categories } = supportedModes;
   const selectedModes = getSelectedModes(queryParams);

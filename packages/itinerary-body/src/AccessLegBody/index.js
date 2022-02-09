@@ -6,6 +6,7 @@ import { VelocityTransitionGroup } from "velocity-react";
 import AccessLegSteps from "./access-leg-steps";
 import AccessLegSummary from "./access-leg-summary";
 import LegDiagramPreview from "./leg-diagram-preview";
+import MapillaryButton from "./mapillary-button";
 import RentedVehicleSubheader from "./rented-vehicle-subheader";
 import * as Styled from "../styled";
 import TNCLeg from "./tnc-leg";
@@ -38,6 +39,8 @@ class AccessLegBody extends Component {
       followsTransit,
       leg,
       LegIcon,
+      mapillaryCallback,
+      mapillaryKey,
       setLegDiagram,
       showElevationProfile,
       showLegIcon,
@@ -74,7 +77,10 @@ class AccessLegBody extends Component {
             onSummaryClick={this.onSummaryClick}
             showLegIcon={showLegIcon}
           />
-          <Styled.StepsHeader onClick={this.onStepsHeaderClick}>
+          <Styled.StepsHeader
+            aria-expanded={expanded}
+            onClick={this.onStepsHeaderClick}
+          >
             {coreUtils.time.formatDuration(leg.duration)}
             {leg.steps && (
               <span>
@@ -83,7 +89,12 @@ class AccessLegBody extends Component {
               </span>
             )}
           </Styled.StepsHeader>
-
+          <MapillaryButton
+            coords={leg.from}
+            clickCallback={mapillaryCallback}
+            mapillaryKey={mapillaryKey}
+            padTop
+          />
           <LegDiagramPreview
             diagramVisible={diagramVisible}
             leg={leg}
@@ -94,7 +105,13 @@ class AccessLegBody extends Component {
             enter={{ animation: "slideDown" }}
             leave={{ animation: "slideUp" }}
           >
-            {expanded && <AccessLegSteps steps={leg.steps} />}
+            {expanded && (
+              <AccessLegSteps
+                steps={leg.steps}
+                mapillaryCallback={mapillaryCallback}
+                mapillaryKey={mapillaryKey}
+              />
+            )}
           </VelocityTransitionGroup>
         </Styled.LegBody>
       </>
@@ -113,6 +130,8 @@ AccessLegBody.propTypes = {
   leg: coreUtils.types.legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired,
   legIndex: PropTypes.number.isRequired,
+  mapillaryCallback: PropTypes.func,
+  mapillaryKey: PropTypes.string,
   setActiveLeg: PropTypes.func.isRequired,
   setLegDiagram: PropTypes.func.isRequired,
   showElevationProfile: PropTypes.bool.isRequired,
@@ -123,6 +142,8 @@ AccessLegBody.propTypes = {
 AccessLegBody.defaultProps = {
   diagramVisible: null,
   followsTransit: false,
+  mapillaryCallback: null,
+  mapillaryKey: null,
   timeOptions: null
 };
 

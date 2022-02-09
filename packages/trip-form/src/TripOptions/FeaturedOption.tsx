@@ -1,5 +1,7 @@
-import React, { FunctionComponent } from "react";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
+import React from "react";
 import { QuestionCircle } from "@styled-icons/fa-regular/QuestionCircle";
 
 import {
@@ -9,7 +11,7 @@ import {
   getNonTransitModes,
   getSelectedModes
 } from "./util";
-import { ModeOption, QueryProps } from "./types";
+import { CheckboxIcons, ModeOption, QueryProps } from "./types";
 import OptionButton from "./OptionButton";
 
 import * as S from "./styled";
@@ -19,19 +21,19 @@ const modeButtonAriaLabel =
   "Opens a dialog that describes this mode, with optional links to third party services.";
 
 const FeaturedOption = ({
+  checkboxIcons,
+  DetailedModeIcon,
+  iconFillOverride,
   onQueryParamChange,
   queryParams,
   questionIcon,
   setFeaturedOption,
-  iconFillOverride,
-  supportedModes,
-  checkboxIcons,
-  DetailedModeIcon
+  supportedModes
 }: QueryProps & {
-  checkboxIcons?: { checked: FunctionComponent; unchecked: FunctionComponent };
-  setFeaturedOption(option: string): void;
+  checkboxIcons?: CheckboxIcons;
   iconFillOverride?: string;
   questionIcon?: React.ReactElement;
+  setFeaturedOption(option: string): void;
 }): React.ReactElement => {
   // No featured mode to show if walking to transit
   if (accessModeIsWalkOnly(queryParams?.mode)) return null;
@@ -101,9 +103,9 @@ const FeaturedOption = ({
               checkboxIcons={checkboxIcons}
               checked={isChecked}
               disabled={isChecked && selectedCompanies.length === 1}
-              key={index}
               iconFillOverride={iconFillOverride}
               image={o.image}
+              key={index}
               label={o.label}
               onClick={() => selectOption(isChecked, o)}
               selected={isChecked}

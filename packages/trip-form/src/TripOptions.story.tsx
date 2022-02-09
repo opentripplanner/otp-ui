@@ -1,20 +1,10 @@
-import { ClassicModeIcon } from "@opentripplanner/icons";
-
 import { action } from "@storybook/addon-actions";
-import React, { Component, useState } from "react";
+import React, { Component, ReactElement, useState } from "react";
 
-import SettingsSelectorPanel from "./SettingsSelectorPanel";
 import TripOptions from "./TripOptions";
 
-import commonCompanies from "./test-utils/companies";
-import commonModes from "./test-utils/modes";
-import commonModesEmpty from "./test-utils/modes-empty";
-import trimet from "./test-utils/trimet-styled";
-
-const headingStyle = {
-  fontFamily: "sans-serif",
-  fontSize: "16px"
-};
+import commonCompanies from "./__mocks__/companies";
+import commonModes from "./__mocks__/modes-en";
 
 const onQueryParamChange = action("onQueryParamChange");
 
@@ -51,51 +41,12 @@ class PanelWrapper extends Component {
   }
 }
 
-const decorator = story => (
-  <div>
-    <p style={headingStyle}>Plain</p>
-    <div>{story()}</div>
-
-    <p style={headingStyle}>Styled</p>
-    <div>{trimet(story())}</div>
-  </div>
-);
-
 export default {
-  title: "SettingsSelectorPanel",
-  component: SettingsSelectorPanel,
-  decorators: [decorator]
+  component: TripOptions,
+  title: "TripOptions"
 };
 
-export const settingsSelectorPanel = () => (
-  <PanelWrapper>
-    <SettingsSelectorPanel
-      supportedModes={commonModes}
-      supportedCompanies={commonCompanies}
-    />
-  </PanelWrapper>
-);
-
-export const settingsSelectorPanelWithCustomIcons = () => (
-  <PanelWrapper>
-    <SettingsSelectorPanel
-      ModeIcon={ClassicModeIcon}
-      supportedModes={commonModes}
-      supportedCompanies={commonCompanies}
-    />
-  </PanelWrapper>
-);
-
-export const settingsSelectorPanelUndefinedParams = () => (
-  <PanelWrapper>
-    <SettingsSelectorPanel
-      supportedModes={commonModesEmpty}
-      supportedCompanies={undefined}
-    />
-  </PanelWrapper>
-);
-
-export const tripOptions = () => (
+export const tripOptions = (): ReactElement => (
   <PanelWrapper>
     <TripOptions
       featuredItemOverlayBackButton
@@ -104,7 +55,7 @@ export const tripOptions = () => (
     />
   </PanelWrapper>
 );
-export const tripOptionsWithCustomIconsAndCloseButton = () => {
+export const tripOptionsWithCustomIconsAndCloseButton = (): ReactElement => {
   const [featuredOverlayShown, setFeaturedOverlayShown] = useState(false);
 
   return (
@@ -144,7 +95,7 @@ export const tripOptionsWithCustomIconsAndCloseButton = () => {
 };
 
 // TODO: resolve a11y issues
-const disableA11yParamters = {
+const disableA11yParameters = {
   a11y: {
     config: {
       rules: [
@@ -156,11 +107,11 @@ const disableA11yParamters = {
   }
 };
 
-tripOptions.parameters = disableA11yParamters;
+tripOptions.parameters = disableA11yParameters;
 
 // Disable storyshot for this story, as it is mostly the same as TripOptions except with
 // a hook that storyshot can't handle
 tripOptionsWithCustomIconsAndCloseButton.parameters = {
   storyshots: { disable: true },
-  ...disableA11yParamters
+  ...disableA11yParameters
 };

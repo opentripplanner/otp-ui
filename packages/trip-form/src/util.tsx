@@ -1,31 +1,78 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore FIXME: Create TypeScript types for the icons package.
 import { getCompanyIcon } from "@opentripplanner/icons";
 import React from "react";
+import { IntlShape } from "react-intl";
 
-export function isBike(mode) {
-  return (
-    coreUtils.itinerary.isBicycle(mode) ||
-    coreUtils.itinerary.isBicycleRent(mode)
-  );
+// eslint-disable-next-line prettier/prettier
+import type {
+  ConfiguredCompany,
+  ConfiguredModes,
+  FullModeOption,
+  ModeIconType,
+  ModeOption,
+  ModeSelectorOption,
+  ModeSelectorOptionSet
+} from "./types";
+
+const {
+  hasHail,
+  hasRental,
+  isBicycle,
+  isBicycleRent,
+  isMicromobility,
+  isTransit,
+  isWalk
+} = coreUtils.itinerary;
+
+export function isBike(mode: string): boolean {
+  return isBicycle(mode) || isBicycleRent(mode);
 }
 
-const supportedExclusiveModes = [
-  {
-    mode: "WALK",
-    label: "Walk Only",
-    isActive: coreUtils.itinerary.isWalk
-  },
-  {
-    mode: "BICYCLE",
-    label: "Bike Only",
-    isActive: isBike
-  },
-  {
-    mode: "MICROMOBILITY",
-    label: "E-scooter Only",
-    isActive: coreUtils.itinerary.isMicromobility
-  }
-];
+function getSupportedExclusiveModes(
+  intl: IntlShape,
+  defaultMessages: Record<string, string>
+) {
+  return [
+    {
+      isActive: isWalk,
+      label: intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.SettingsSelectorPanel.walkOnly"],
+        description: "Text for walk-only mode option.",
+        id: "otpUi.SettingsSelectorPanel.walkOnly"
+      }),
+      mode: "WALK"
+    },
+    {
+      isActive: isBike,
+      label: intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.SettingsSelectorPanel.bikeOnly"],
+        description: "Text for bike-only mode option.",
+        id: "otpUi.SettingsSelectorPanel.bikeOnly"
+      }),
+      mode: "BICYCLE"
+    },
+    {
+      isActive: isMicromobility,
+      label: intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.SettingsSelectorPanel.escooterOnly"],
+        description: "Text for e-scooter-only mode option.",
+        id: "otpUi.SettingsSelectorPanel.escooterOnly"
+      }),
+      mode: "MICROMOBILITY"
+    }
+  ];
+}
+
+/**
+ * Helper function so that TypeScript propagates the correct underlying type for ModeOption.
+ */
+export function isFullModeOption(modeOption: ModeOption): modeOption is FullModeOption {
+  return typeof modeOption !== "string";
+}
 
 /**
  * Obtains the mode-as-a-string from a mode object found in the configuration.
@@ -38,8 +85,10 @@ const supportedExclusiveModes = [
  *
  * @param modeObj The mode object per the configuration to convert.
  */
-export function getModeString(modeObj) {
-  return modeObj.mode || modeObj;
+export function getModeString(modeObj: ModeOption): string {
+  return isFullModeOption(modeObj)
+    ? modeObj.mode
+    : modeObj;
 }
 
 /**
@@ -48,15 +97,13 @@ export function getModeString(modeObj) {
  * @param modes The desired modes for which to get the operating companies.
  * @returns An array of companies that operate the specified modes (should not be undefined as companies is an array).
  */
-function getCompanies(companies, modes) {
+function getCompanies(companies: ConfiguredCompany[], modes: string[]): ConfiguredCompany[] {
   return companies
     .filter(
       comp => comp.modes.split(",").filter(m => modes.includes(m)).length > 0
     )
     .filter(
-      comp =>
-        coreUtils.itinerary.hasRental(comp.modes) ||
-        coreUtils.itinerary.hasHail(comp.modes)
+      comp => hasRental(comp.modes) || hasHail(comp.modes)
     );
 }
 
@@ -66,7 +113,11 @@ function getCompanies(companies, modes) {
  * @param id The mode id to process.
  * @param supportedCompanies The list of supported companies (see structure in __mocks__/companies.js).
  */
-export function getCompaniesForModeId(id, supportedCompanies) {
+export function getCompaniesForModeId(id: string, supportedCompanies: ConfiguredCompany[]): {
+  defaultAccessModeCompany?: string[];
+  companies: string[];
+  nonTransitModes: string[];
+} {
   const newModes = id.split("+");
   const nonTransitModes = newModes.length > 1 ? [newModes[1]] : ["WALK"];
   // TODO: for non-transit modes, should we also accommodate WALK+DRIVE, WALK+e-scooter??
@@ -97,45 +148,65 @@ export function getCompaniesForModeId(id, supportedCompanies) {
  * @param modes The available modes to choose from.
  * @param selectedModes The modes that should appear selected.
  */
-export function getTransitSubmodeOptions(ModeIcon, modes, selectedModes) {
+export function getTransitSubmodeOptions(
+  ModeIcon: ModeIconType,
+  modes: ConfiguredModes,
+  selectedModes: string[]
+): ModeSelectorOption[] {
   const { transitModes } = modes;
 
   // FIXME: If only one transit mode is available, select it.
-  return transitModes.map(modeObj => {
+  return transitModes.map((modeObj: ModeOption) => {
     const modeStr = getModeString(modeObj);
+    const modeLabel: string = isFullModeOption(modeObj)
+      ? modeObj.label
+      : null;
+
     return {
       id: modeStr,
       selected: selectedModes.includes(modeStr),
       text: (
         <span>
           <ModeIcon mode={modeStr} />
-          {modeObj.label}
+          {modeLabel}
         </span>
       ),
-      title: modeObj.label
+      title: modeLabel
     };
   });
 }
 
 /**
- * Returns big primary "Take Transit" choice.
+ * Returns the big primary "Take Transit" choice.
  * @param ModeIcon The icon component for rendering.
  * @param selectedModes An array of string that lists the modes selected for a trip query.
+ * @param intl The IntlShape object from react-intl.
+ * @param defaultMessages The default messages shown if no i18n messages are provided.
  */
-function getPrimaryModeOption(ModeIcon, selectedModes) {
+function getPrimaryModeOption(
+  ModeIcon: ModeIconType,
+  selectedModes: string[],
+  intl: IntlShape,
+  defaultMessages: Record<string, string>
+): ModeSelectorOption {
+  const title = intl.formatMessage({
+    defaultMessage: defaultMessages["otpUi.SettingsSelectorPanel.takeTransit"],
+    description: "Label for taking transit as main mode option.",
+    id: "otpUi.SettingsSelectorPanel.takeTransit"
+  })
   return {
     id: "TRANSIT",
     selected:
-      selectedModes.some(coreUtils.itinerary.isTransit) &&
+      selectedModes.some(isTransit) &&
       selectedModes.includes("WALK"),
     showTitle: false,
     text: (
       <span>
         <ModeIcon mode="TRANSIT" />
-        Take Transit
+        {title}
       </span>
     ),
-    title: "Take Transit"
+    title
   };
 }
 
@@ -148,29 +219,30 @@ function getPrimaryModeOption(ModeIcon, selectedModes) {
  * @param supportedCompanies The supported companies for certain modes.
  */
 function getTransitCombinedModeOptions(
-  ModeIcon,
-  modes,
-  selectedModes,
-  selectedCompanies,
-  supportedCompanies
-) {
+  ModeIcon: ModeIconType,
+  modes: ConfiguredModes,
+  selectedModes: string[],
+  selectedCompanies: string[],
+  supportedCompanies: ConfiguredCompany[]
+): ModeSelectorOption[] {
   const { accessModes } = modes;
-  const modesHaveTransit = selectedModes.some(coreUtils.itinerary.isTransit);
+  const modesHaveTransit = selectedModes.some(isTransit);
 
   return (
     accessModes &&
-    accessModes.map(modeObj => {
+    accessModes.map((modeObj: ModeOption) => {
       const modeStr = getModeString(modeObj);
-      const modeCompany = modeObj.company
-        ? modeObj.company.toUpperCase()
-        : null;
+      const { company: modeCompany = null, label: modeLabel = null } = isFullModeOption(modeObj)
+        ? modeObj
+        : {};
+      const modeCompanyUpper = modeCompany?.toUpperCase();
 
-      const company = modeObj.company ? `+${modeObj.company}` : "";
+      const company = modeCompany ? `+${modeCompany}` : "";
       const id = `TRANSIT+${modeStr}${company}`;
 
       const { companies } = getCompaniesForModeId(id, supportedCompanies);
       const modeMonopoly = companies[0];
-      const CompanyIcon = getCompanyIcon(modeCompany || modeMonopoly || "");
+      const CompanyIcon = getCompanyIcon(modeCompanyUpper || modeMonopoly || "");
 
       /**
        * We don't know in advance if a particular icon is supported by the ModeIcon component.
@@ -184,9 +256,9 @@ function getTransitCombinedModeOptions(
        *   using the scheme <OTP_MODE>_<COMPANY> (e.g. 'CAR_HAIL_UBER').
        * - Icons for common companies (defined in the icons package) don't need to be specified in `icons`.
        */
-      const FinalIcon =
+      const finalIcon =
         ModeIcon({ mode: modeStr }) ||
-        ModeIcon({ mode: `${modeStr}_${modeCompany}` }) ||
+        ModeIcon({ mode: `${modeStr}_${modeCompanyUpper}` }) ||
         (CompanyIcon && <CompanyIcon />);
 
       return {
@@ -195,14 +267,14 @@ function getTransitCombinedModeOptions(
           modesHaveTransit &&
           selectedModes.includes(modeStr) &&
           (!selectedCompanies.length ||
-            !modeCompany ||
-            selectedCompanies.includes(modeCompany)),
+            !modeCompanyUpper ||
+            selectedCompanies.includes(modeCompanyUpper)),
         text: (
           <span>
-            <ModeIcon mode="TRANSIT" />+{FinalIcon}
+            <ModeIcon mode="TRANSIT" />+{finalIcon}
           </span>
         ),
-        title: modeObj.label
+        title: modeLabel
       };
     })
   );
@@ -213,16 +285,24 @@ function getTransitCombinedModeOptions(
  * @param ModeIcon The icon component for rendering.
  * @param modes The available modes to choose from.
  * @param selectedModes An array of string that lists the modes selected for a trip query.
+ * @param intl The IntlShape object from react-intl.
+ * @param defaultMessages The default messages shown if no i18n messages are provided.
  */
-function getExclusiveModeOptions(ModeIcon, modes, selectedModes) {
+function getExclusiveModeOptions(
+  ModeIcon: ModeIconType,
+  modes: ConfiguredModes,
+  selectedModes: string[],
+  intl: IntlShape,
+  defaultMessages: Record<string, string>
+): ModeSelectorOption[] {
   const { exclusiveModes } = modes;
 
-  return supportedExclusiveModes
+  return getSupportedExclusiveModes(intl, defaultMessages)
     .filter(({ mode }) => exclusiveModes && exclusiveModes.includes(mode))
     .map(({ isActive, label, mode }) => ({
       id: mode,
       selected:
-        !selectedModes.some(coreUtils.itinerary.isTransit) &&
+        !selectedModes.some(isTransit) &&
         selectedModes.some(isActive),
       showTitle: false,
       text: (
@@ -241,16 +321,20 @@ function getExclusiveModeOptions(ModeIcon, modes, selectedModes) {
  * @param selectedModes An array of string that lists the modes selected for a trip query.
  * @param selectedCompanies The companies to show as selected (when the user selects an exclusive mode operated by multiple companies).
  * @param supportedCompanies The supported companies for certain access modes.
+ * @param intl The IntlShape object from react-intl.
+ * @param defaultMessages The default messages shown if no i18n messages are provided.
  */
 export function getModeOptions(
-  ModeIcon,
-  modes,
-  selectedModes,
-  selectedCompanies,
-  supportedCompanies
-) {
+  ModeIcon: ModeIconType,
+  modes: ConfiguredModes,
+  selectedModes: string[],
+  selectedCompanies: string[],
+  supportedCompanies: ConfiguredCompany[],
+  intl: IntlShape,
+  defaultMessages: Record<string, string>
+): ModeSelectorOptionSet {
   return {
-    primary: getPrimaryModeOption(ModeIcon, selectedModes),
+    primary: getPrimaryModeOption(ModeIcon, selectedModes, intl, defaultMessages),
     secondary: getTransitCombinedModeOptions(
       ModeIcon,
       modes,
@@ -258,7 +342,7 @@ export function getModeOptions(
       selectedCompanies,
       supportedCompanies
     ),
-    tertiary: getExclusiveModeOptions(ModeIcon, modes, selectedModes)
+    tertiary: getExclusiveModeOptions(ModeIcon, modes, selectedModes, intl, defaultMessages)
   };
 }
 
@@ -269,8 +353,12 @@ export function getModeOptions(
  * @param selectedCompanies The companies to render selected from the UI.
  * @returns An array of UI options (should not be undefined as companies is an array).
  */
-export function getCompaniesOptions(companies, modes, selectedCompanies) {
-  return getCompanies(companies, modes).map(comp => {
+export function getCompaniesOptions(
+  companies: ConfiguredCompany[],
+  modes: string[],
+  selectedCompanies: string[]
+): ModeSelectorOption[] {
+  return getCompanies(companies, modes).map((comp: ConfiguredCompany) => {
     const CompanyIcon = getCompanyIcon(comp.id);
 
     return {
@@ -294,13 +382,14 @@ export function getCompaniesOptions(companies, modes, selectedCompanies) {
  * @returns An array of UI options, or undefined if modes is undefined.
  */
 export function getBicycleOrMicromobilityModeOptions(
-  ModeIcon,
-  modes,
-  selectedModes
-) {
+  ModeIcon: ModeIconType,
+  modes: ModeOption[],
+  selectedModes: string[]
+): ModeSelectorOption[] {
   return (
-    modes &&
-    modes.map(({ label, mode }) => ({
+    modes && modes
+    .filter(isFullModeOption)
+    .map(({ label, mode }) => ({
       id: mode,
       selected: selectedModes.includes(mode),
       text: (

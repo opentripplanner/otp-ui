@@ -196,7 +196,7 @@ function makeStory(
 }
 
 const decoratorPropDescription = "(This prop is used by the decorator.)";
-// Hide story controls for some props.
+// Hide story controls for some props (but still display in the controls and the docs section).
 const noControl = {
   control: { type: false }
 };
