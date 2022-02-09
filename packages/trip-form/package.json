@@ -1,12 +1,13 @@
 {
   "name": "@opentripplanner/trip-form",
-  "version": "1.8.0",
+  "version": "1.10.1",
   "description": "Trip Settings Form and Related Components",
   "author": "@binh-dam-ibigroup",
   "homepage": "https://github.com/opentripplanner/otp-ui/#readme",
   "license": "MIT",
   "main": "lib/index.js",
   "module": "esm/index.js",
+  "types": "lib/index.d.ts",
   "private": false,
   "dependencies": {
     "@opentripplanner/core-utils": "^4.5.0",
@@ -15,8 +16,18 @@
     "@styled-icons/boxicons-regular": "^10.38.0",
     "@styled-icons/fa-regular": "^10.34.0",
     "@styled-icons/fa-solid": "^10.34.0",
+    "flat": "^5.0.2",
     "moment": "^2.17.1",
-    "react-indiana-drag-scroll": "^2.0.1"
+    "react-indiana-drag-scroll": "^2.0.1",
+    "react-inlinesvg": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/flat": "^5.0.2"
+  },
+  "peerDependencies": {
+    "react": "^16.14.0",
+    "react-intl": "^5.20.4",
+    "styled-components": "^5.3.0"
   },
   "repository": {
     "type": "git",
@@ -24,7 +35,7 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "tsc": "echo FIXME: enable tsc in trip-form once core-utils is typed!"
+    "tsc": "tsc"
   },
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"

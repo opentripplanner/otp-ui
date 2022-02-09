@@ -102,6 +102,58 @@ describe("query", () => {
         })
       ).toMatchSnapshot();
     });
+
+    it("should create routing params for standard flex query", () => {
+      expect(
+        getRoutingParams(fakeConfig, {
+          ...makeBaseTestQuery(),
+          mode: "WALK,TRANSIT,FLEX"
+        })
+      ).toMatchSnapshot();
+    });
+
+    it("should create repaired routing params for broken flex query", () => {
+      expect(
+        getRoutingParams(fakeConfig, {
+          ...makeBaseTestQuery(),
+          mode: "WALK,FLEX_DIRECT,TRANSIT,FLEX"
+        })
+      ).toMatchSnapshot();
+    });
+
+    it("should create routing params for flex-only query", () => {
+      expect(
+        getRoutingParams(fakeConfig, {
+          ...makeBaseTestQuery(),
+          mode: "FLEX"
+        })
+      ).toMatchSnapshot();
+    });
+
+    it("should create routing params for standard flex query", () => {
+      expect(
+        getRoutingParams(fakeConfig, {
+          ...makeBaseTestQuery(),
+          mode: "FLEX_EGRESS,FLEX_ACCESS,FLEX_DIRECT"
+        })
+      ).toMatchSnapshot();
+    });
+
+    it("should create repaired routing params for very broken flex query", () => {
+      expect(
+        getRoutingParams(fakeConfig, {
+          ...makeBaseTestQuery(),
+          mode: "FLEX_EGRESS,FLEX_ACCESS,FLEX_DIRECT,FLEX,WALK,BIKE"
+        })
+      ).toMatchSnapshot();
+      expect(
+        getRoutingParams(fakeConfig, {
+          ...makeBaseTestQuery(),
+          mode:
+            "FLEX_EGRESS,FLEX,FLEX_EGRESS,FLEX_ACCESS,FLEX_DIRECT,FLEX,WALK,BIKE,WALK,TRANSIT,BUS"
+        })
+      ).toMatchSnapshot();
+    });
   });
 
   describe("isNotDefaultQuery", () => {

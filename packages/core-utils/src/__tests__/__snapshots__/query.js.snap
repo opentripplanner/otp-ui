@@ -60,6 +60,58 @@ Object {
 }
 `;
 
+exports[`query getRoutingParams should create repaired routing params for broken flex query 1`] = `
+Object {
+  "arriveBy": false,
+  "date": "2020-08-24",
+  "fromPlace": "Steamer Lane, Santa Cruz, CA, 95060, USA::36.95471026341096,-122.0248185852425",
+  "ignoreRealtimeUpdates": false,
+  "maxWalkDistance": 1207,
+  "mode": "WALK,FLEX_EGRESS,FLEX_ACCESS,FLEX_DIRECT,TRANSIT",
+  "numItineraries": 3,
+  "optimize": "QUICK",
+  "otherThanPreferredRoutesPenalty": 900,
+  "showIntermediateStops": true,
+  "time": "21:53",
+  "toPlace": "Municipal Wharf St, Santa Cruz, CA, 95060, USA::36.961843106786766,-122.02402657342725",
+  "walkSpeed": 1.34,
+}
+`;
+
+exports[`query getRoutingParams should create repaired routing params for very broken flex query 1`] = `
+Object {
+  "arriveBy": false,
+  "date": "2020-08-24",
+  "fromPlace": "Steamer Lane, Santa Cruz, CA, 95060, USA::36.95471026341096,-122.0248185852425",
+  "ignoreRealtimeUpdates": false,
+  "mode": "FLEX_EGRESS,FLEX_ACCESS,FLEX_DIRECT,WALK,BIKE",
+  "numItineraries": 3,
+  "otherThanPreferredRoutesPenalty": 900,
+  "showIntermediateStops": true,
+  "time": "21:53",
+  "toPlace": "Municipal Wharf St, Santa Cruz, CA, 95060, USA::36.961843106786766,-122.02402657342725",
+  "walkSpeed": 1.34,
+}
+`;
+
+exports[`query getRoutingParams should create repaired routing params for very broken flex query 2`] = `
+Object {
+  "arriveBy": false,
+  "date": "2020-08-24",
+  "fromPlace": "Steamer Lane, Santa Cruz, CA, 95060, USA::36.95471026341096,-122.0248185852425",
+  "ignoreRealtimeUpdates": false,
+  "maxWalkDistance": 1207,
+  "mode": "FLEX_EGRESS,FLEX_ACCESS,FLEX_DIRECT,WALK,BIKE,WALK,TRANSIT,BUS",
+  "numItineraries": 3,
+  "optimize": "QUICK",
+  "otherThanPreferredRoutesPenalty": 900,
+  "showIntermediateStops": true,
+  "time": "21:53",
+  "toPlace": "Municipal Wharf St, Santa Cruz, CA, 95060, USA::36.961843106786766,-122.02402657342725",
+  "walkSpeed": 1.34,
+}
+`;
+
 exports[`query getRoutingParams should create routing params for car rental query 1`] = `
 Object {
   "arriveBy": false,
@@ -74,6 +126,21 @@ Object {
   "optimize": "QUICK",
   "otherThanPreferredRoutesPenalty": 900,
   "searchTimeout": 10000,
+  "showIntermediateStops": true,
+  "time": "21:53",
+  "toPlace": "Municipal Wharf St, Santa Cruz, CA, 95060, USA::36.961843106786766,-122.02402657342725",
+}
+`;
+
+exports[`query getRoutingParams should create routing params for flex-only query 1`] = `
+Object {
+  "arriveBy": false,
+  "date": "2020-08-24",
+  "fromPlace": "Steamer Lane, Santa Cruz, CA, 95060, USA::36.95471026341096,-122.0248185852425",
+  "ignoreRealtimeUpdates": false,
+  "mode": "FLEX_EGRESS,FLEX_ACCESS,FLEX_DIRECT",
+  "numItineraries": 3,
+  "otherThanPreferredRoutesPenalty": 900,
   "showIntermediateStops": true,
   "time": "21:53",
   "toPlace": "Municipal Wharf St, Santa Cruz, CA, 95060, USA::36.961843106786766,-122.02402657342725",
@@ -121,6 +188,39 @@ Object {
   "toPlace": "Municipal Wharf St, Santa Cruz, CA, 95060, USA::36.961843106786766,-122.02402657342725",
   "watts": 250,
   "weight": 102.5,
+}
+`;
+
+exports[`query getRoutingParams should create routing params for standard flex query 1`] = `
+Object {
+  "arriveBy": false,
+  "date": "2020-08-24",
+  "fromPlace": "Steamer Lane, Santa Cruz, CA, 95060, USA::36.95471026341096,-122.0248185852425",
+  "ignoreRealtimeUpdates": false,
+  "maxWalkDistance": 1207,
+  "mode": "WALK,TRANSIT,FLEX_EGRESS,FLEX_ACCESS,FLEX_DIRECT",
+  "numItineraries": 3,
+  "optimize": "QUICK",
+  "otherThanPreferredRoutesPenalty": 900,
+  "showIntermediateStops": true,
+  "time": "21:53",
+  "toPlace": "Municipal Wharf St, Santa Cruz, CA, 95060, USA::36.961843106786766,-122.02402657342725",
+  "walkSpeed": 1.34,
+}
+`;
+
+exports[`query getRoutingParams should create routing params for standard flex query 2`] = `
+Object {
+  "arriveBy": false,
+  "date": "2020-08-24",
+  "fromPlace": "Steamer Lane, Santa Cruz, CA, 95060, USA::36.95471026341096,-122.0248185852425",
+  "ignoreRealtimeUpdates": false,
+  "mode": "FLEX_EGRESS,FLEX_ACCESS,FLEX_DIRECT",
+  "numItineraries": 3,
+  "otherThanPreferredRoutesPenalty": 900,
+  "showIntermediateStops": true,
+  "time": "21:53",
+  "toPlace": "Municipal Wharf St, Santa Cruz, CA, 95060, USA::36.961843106786766,-122.02402657342725",
 }
 `;
 
