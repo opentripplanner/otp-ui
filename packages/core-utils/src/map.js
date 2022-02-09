@@ -1,6 +1,6 @@
 import moment from "moment";
 
-import { getPlaceName, isTransit, toSentenceCase } from "./itinerary";
+import { getPlaceName, isTransit, isFlex, toSentenceCase } from "./itinerary";
 
 export function latlngToString(latlng) {
   return (
@@ -274,6 +274,7 @@ export function itineraryToTransitive(itin, companies, getRouteLabel) {
 
       // add the pattern reference to the journey object
       journey.segments.push({
+        arc: isFlex(leg),
         type: "TRANSIT",
         patterns: [
           {

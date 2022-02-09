@@ -64,6 +64,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component {
         itinerary={itinerary}
         LegIcon={LegIcon}
         LineColumnContent={LineColumnContent || DefaultLineColumnContent}
+        mapillaryKey="fake key, but ok because the api response is also fake"
         PlaceName={PlaceName || DefaultPlaceName}
         RouteDescription={RouteDescription || DefaultRouteDescription}
         routingType="ITINERARY"

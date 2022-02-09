@@ -15,8 +15,8 @@ export type Rect = {
 };
 
 export type Boundary = {
-  country: string;
-  rect: Rect;
+  country?: string;
+  rect?: Rect;
 };
 
 export interface Item {
