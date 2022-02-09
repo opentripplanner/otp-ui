@@ -1,5 +1,7 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
-import React, { useEffect, useRef } from "react";
+import React, { useRef, useEffect } from "react";
 
 import {
   categoryIsActive,
@@ -7,23 +9,25 @@ import {
   getSelectedModes,
   isServerEnv
 } from "./util";
-import { Modes, QueryParams } from "./types";
+import { CheckboxIcons, Modes, QueryParams } from "./types";
 import * as S from "./styled";
 
 import Checkbox from "./Checkbox";
 
 const ModeRow = ({
+  checkboxIcons,
   onQueryParamChange,
-  queryParams,
   queryParamOverrides,
-  supportedModes,
-  SimpleModeIcon
+  queryParams,
+  SimpleModeIcon,
+  supportedModes
 }: {
   onQueryParamChange(paramsToUpdate: QueryParams, categoryId?: string): void;
-  queryParams: QueryParams;
+  checkboxIcons?: CheckboxIcons;
   queryParamOverrides: { [key: string]: QueryParams };
-  supportedModes: Modes;
+  queryParams: QueryParams;
   SimpleModeIcon?: React.FunctionComponent<{ mode: string }>;
+  supportedModes: Modes;
 }): React.ReactElement => {
   const { categories } = supportedModes;
   const selectedModes = getSelectedModes(queryParams);
@@ -60,6 +64,7 @@ const ModeRow = ({
     <S.ScrollableRow hideScrollbars={false}>
       <Checkbox
         ariaLabel="Go by Transit"
+        checkboxIcons={checkboxIcons}
         checked={hasTransit}
         // Prettier conflicts with jsx style rules
         // eslint-disable-next-line prettier/prettier
@@ -122,6 +127,7 @@ const ModeRow = ({
         return (
           <Checkbox
             ariaLabel={category.label}
+            checkboxIcons={checkboxIcons}
             checked={isChecked}
             key={`access-${category.label}`}
             mode={mode}

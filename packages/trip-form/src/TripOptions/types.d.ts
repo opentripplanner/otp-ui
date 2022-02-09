@@ -2,6 +2,9 @@ import { FunctionComponent } from "react";
 
 export interface ModeOption {
   company?: string;
+  /**
+   * in TripOptions, this image is expected to be an imported svg
+   */
   image?: string;
   hidden?: boolean;
   label: string;
@@ -33,14 +36,18 @@ export interface Company {
 // FIXME: Move this to @opentripplanner/types added in https://github.com/opentripplanner/otp-ui/pull/281
 export interface QueryParams {
   /**
-   * The mode string query param (e.g., TRANSIT,WALK).
-   */
-  mode?: string;
-  /**
    * The company query param used to specify service providers for a rental or
    * hail mode type (e.g., UBER or HOPR).
    */
   companies?: string;
+  /**
+   * The mode string query param (e.g., TRANSIT,WALK).
+   */
+  mode?: string;
+  /**
+   * OTP Routing type.
+   */
+  routingType?: string;
   /**
    * FIXME: other query params exist but are not populated here.
    */
@@ -69,3 +76,8 @@ export interface QueryProps {
    */
   DetailedModeIcon?: FunctionComponent<{ mode: string }>;
 }
+
+export type CheckboxIcons = {
+  checked: FunctionComponent;
+  unchecked: FunctionComponent;
+};
