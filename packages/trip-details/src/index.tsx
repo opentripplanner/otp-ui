@@ -10,6 +10,7 @@ import { HandPaper } from "@styled-icons/fa-solid/HandPaper";
 import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
 import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
 import { PhoneVolume } from "@styled-icons/fa-solid/PhoneVolume";
+import { Leaf } from "@styled-icons/fa-solid/Leaf";
 import { Route } from "@styled-icons/fa-solid/Route";
 
 import * as S from "./styled";
@@ -151,7 +152,8 @@ export function TripDetails({
   defaultFareKey = "regular",
   FareDetails = null,
   fareKeyNameMap = {},
-  itinerary
+  itinerary,
+  co2Config
 }: TripDetailsProps): ReactElement {
   // process the transit fare
   const fareResult = coreUtils.itinerary.calculateFares(itinerary, true);
@@ -246,6 +248,14 @@ export function TripDetails({
     walkDuration
   } = coreUtils.itinerary.calculatePhysicalActivity(itinerary);
 
+  const co2 =
+    co2Config &&
+    coreUtils.itinerary.calculateEmissions(
+      co2Config.carbonIntensity,
+      co2Config.units,
+      itinerary
+    );
+
   // Parse flex info and generate appropriate strings
   const containsFlex = itinerary.legs.some(coreUtils.itinerary.isFlex);
   const pickupBookingInfo = itinerary.legs
@@ -327,6 +337,32 @@ export function TripDetails({
                   walkSeconds={walkDuration}
                 />
               )
+            }
+          />
+        )}
+        {co2 > 0 && (
+          <TripDetail
+            icon={<Leaf size={17} />}
+            summary={
+              <S.CO2Summary>
+                <FormattedMessage
+                  defaultMessage={defaultMessages["otpUi.TripDetails.co2"]}
+                  description="Text showing the quantity of CO2 emitted by this trip."
+                  id="otpUi.TripDetails.co2"
+                  values={{
+                    co2: (
+                      <FormattedNumber
+                        value={Math.round(co2)}
+                        // eslint-disable-next-line react/style-prop-object
+                        style="unit"
+                        unit={co2Config.units}
+                        unitDisplay="narrow"
+                      />
+                    ),
+                    strong: boldText
+                  }}
+                />
+              </S.CO2Summary>
             }
           />
         )}

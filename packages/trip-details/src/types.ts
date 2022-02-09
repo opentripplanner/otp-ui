@@ -9,6 +9,11 @@ export interface CaloriesDetailsProps {
   walkSeconds: number;
 }
 
+export interface CO2ConfigType {
+  carbonIntensity: { [index: string]: number };
+  units: string;
+}
+
 export interface DepartureDetailsProps {
   departureDate: Date;
 }
@@ -66,4 +71,8 @@ export interface TripDetailsProps {
    * Itinerary that the user has selected to view, contains multiple legs.
    */
   itinerary: Itinerary;
+  /**
+   * Object containing the CO2 config. CO2 only shown if this value is provided.
+   */
+  co2Config?: CO2ConfigType;
 }

@@ -82,6 +82,27 @@ const frenchFareKeyMap = {
   electronicSenior: "Tarif Orca séniors"
 };
 
+const defaultCo2Config = {
+  carbonIntensity: {
+    walk: 0,
+    bicycle: 0,
+    car: 0.283,
+    tram: 0.041,
+    subway: 0.041,
+    rail: 0.041,
+    bus: 0.105,
+    ferry: 0.082,
+    cable_car: 0.021,
+    gondola: 0.021,
+    funicular: 0.041,
+    transit: 0.041,
+    leg_switch: 0,
+    airplane: 0.382,
+    micromobility: 0
+  },
+  units: "gram"
+};
+
 // Custom slots for expandable detail sections.
 const CustomDepartureDetails = ({
   departureDate
@@ -146,6 +167,7 @@ function createTripDetailsTemplate(
         FareDetails={FareDetails}
         fareKeyNameMap={fareKeyNameMap}
         itinerary={itinerary}
+        co2Config={defaultCo2Config}
       />
     );
   };
