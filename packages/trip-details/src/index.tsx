@@ -251,9 +251,9 @@ export function TripDetails({
   const co2 =
     co2Config &&
     coreUtils.itinerary.calculateEmissions(
+      itinerary,
       co2Config.carbonIntensity,
-      co2Config.units,
-      itinerary
+      co2Config.units
     );
 
   // Parse flex info and generate appropriate strings
