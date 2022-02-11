@@ -488,16 +488,43 @@ export function calculatePhysicalActivity(itinerary) {
   };
 }
 
+const CARBON_INTENSITY_DEFAULTS = {
+  walk: 0.026,
+  bicycle: 0.014,
+  car: 0.283,
+  tram: 0.041,
+  subway: 0.041,
+  rail: 0.041,
+  bus: 0.105,
+  ferry: 0.082,
+  cable_car: 0.021,
+  gondola: 0.021,
+  funicular: 0.041,
+  transit: 0.041,
+  leg_switch: 0,
+  airplane: 0.382,
+  micromobility: 0.014
+};
+
 /**
+ * @param  {itinerary} itinerary OTP trip itinierary
  * @param  {carbonIntensity} carbonIntensity carbon intensity by mode in grams/meter
  * @param {units} units units to be used in return value
- * @param  {itinerary} itinerary OTP trip itinierary
  */
-export function calculateEmissions(carbonIntensity, units, itinerary) {
+export function calculateEmissions(itinerary, carbonIntensity = {}, units) {
+  // Apply defaults for any values that we don't have.
+  carbonIntensity = {
+    ...CARBON_INTENSITY_DEFAULTS,
+    ...carbonIntensity
+  };
+
   // Distance is in meters, totalCarbon is in grams
-  const totalCarbon = itinerary.legs.reduce((val, leg) => {
-    return leg.distance * carbonIntensity[leg.mode.toLowerCase()] || 0 + val;
-  }, 0);
+  const totalCarbon =
+    itinerary?.legs?.reduce((total, leg) => {
+      return (
+        (leg.distance * carbonIntensity[leg.mode.toLowerCase()] || 0) + total
+      );
+    }, 0) || 0;
 
   switch (units) {
     case "ounce":
