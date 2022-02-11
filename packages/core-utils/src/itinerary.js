@@ -519,11 +519,12 @@ export function calculateEmissions(itinerary, carbonIntensity = {}, units) {
   };
 
   // Distance is in meters, totalCarbon is in grams
-  const totalCarbon = itinerary.legs.reduce((total, leg) => {
-    return (
-      (leg.distance * carbonIntensity[leg.mode.toLowerCase()] || 0) + total
-    );
-  }, 0);
+  const totalCarbon =
+    itinerary?.legs?.reduce((total, leg) => {
+      return (
+        (leg.distance * carbonIntensity[leg.mode.toLowerCase()] || 0) + total
+      );
+    }, 0) || 0;
 
   switch (units) {
     case "ounce":
