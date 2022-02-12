@@ -365,7 +365,7 @@ class LocationField extends Component {
       featureIdComponents[1].length > 0
     ) {
       const operatorName = featureIdComponents[1]
-        .replaceAll(" ", "-")
+        .replace(/ /g, "-")
         .toLowerCase();
       classNames.push(`operator-${operatorName}`);
       operatorIcon = operatorIconMap[operatorName];
