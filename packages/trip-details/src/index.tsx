@@ -248,13 +248,11 @@ export function TripDetails({
     walkDuration
   } = coreUtils.itinerary.calculatePhysicalActivity(itinerary);
 
-  const co2 =
-    co2Config &&
-    coreUtils.itinerary.calculateEmissions(
-      itinerary,
-      co2Config.carbonIntensity,
-      co2Config.units
-    );
+  const co2 = coreUtils.itinerary.calculateEmissions(
+    itinerary,
+    co2Config?.carbonIntensity,
+    co2Config?.units
+  );
 
   // Parse flex info and generate appropriate strings
   const containsFlex = itinerary.legs.some(coreUtils.itinerary.isFlex);
@@ -355,7 +353,7 @@ export function TripDetails({
                         value={Math.round(co2)}
                         // eslint-disable-next-line react/style-prop-object
                         style="unit"
-                        unit={co2Config.units}
+                        unit={co2Config?.units || "gram"}
                         unitDisplay="narrow"
                       />
                     ),
