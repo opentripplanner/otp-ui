@@ -129,9 +129,10 @@ const LocationField = ({
             // TODO: determine how other geocoders return error messages.
             const errorMessage = result?.results?.error?.message;
             // If the result did not contain a list of features, add special note.
-            message = intl.formatMessage({
-              id: "otpUi.LocationField.geocoderUnreachable"
-            }, { error: errorMessage });
+            message = intl.formatMessage(
+              { id: "otpUi.LocationField.geocoderUnreachable" },
+              { error: errorMessage }
+            );
             geocodedFeatures = [];
           } else if (geocodedFeatures.length === 0) {
             message = intl.formatMessage(
@@ -588,10 +589,10 @@ const LocationField = ({
         const option = (
           <Option
             icon={<UserLocationIconComponent userLocation={userLocation} />}
-            key={optionKey++}
-            title={coreUtils.map.formatStoredPlaceName(userLocation)}
-            onClick={locationSelected}
             isActive={itemIndex === activeIndex}
+            key={optionKey++}
+            onClick={locationSelected}
+            title={coreUtils.map.formatStoredPlaceName(userLocation)}
           />
         );
         itemIndex++;
@@ -630,12 +631,12 @@ const LocationField = ({
     // Create and add the option item to the menu items array
     const currentLocationOption = (
       <Option
-        icon={optionIcon}
-        key={optionKey++}
-        title={optionTitle}
-        onClick={locationSelected}
-        isActive={itemIndex === activeIndex}
         disabled={positionUnavailable}
+        icon={optionIcon}
+        isActive={itemIndex === activeIndex}
+        key={optionKey++}
+        onClick={locationSelected}
+        title={optionTitle}
       />
     );
     menuItems.push(currentLocationOption);
@@ -644,10 +645,10 @@ const LocationField = ({
   if (message) {
     const messageItem = (
       <Option
+        disabled
         icon={<ExclamationCircle size={20} />}
         key={optionKey++}
         title={message}
-        disabled
       />
     );
     menuItems.unshift(messageItem);
