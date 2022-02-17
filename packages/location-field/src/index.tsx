@@ -131,8 +131,7 @@ const LocationField = ({
             // If the result did not contain a list of features, add special note.
             message = intl.formatMessage({
               id: "otpUi.LocationField.geocoderUnreachable"
-            });
-            if (errorMessage) message += ` (${errorMessage})`;
+            }, { error: errorMessage });
             geocodedFeatures = [];
           } else if (geocodedFeatures.length === 0) {
             message = intl.formatMessage(
