@@ -8,10 +8,10 @@ import {
   geocoderConfig,
   getCurrentPosition,
   hereGeocoderConfig,
+  intlDecorator,
   layerColorMap,
   onLocationSelected,
-  selectedLocation,
-  intlDecorator
+  selectedLocation
 } from "./common";
 
 import mockedGeocoderResponse from "../mocks/autocomplete.json";
