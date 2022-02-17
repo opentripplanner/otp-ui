@@ -136,6 +136,7 @@ export const WithBadApiKeyHandlesBadAutocomplete = (): JSX.Element => (
   />
 );
 
+// TODO: add custom messages once that becomes easier with the react-intl plugin
 export const WithCustomResultColorsAndIcons = (): JSX.Element => (
   <LocationField
     currentPosition={currentPosition}
