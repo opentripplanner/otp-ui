@@ -83,6 +83,7 @@ const frenchFareKeyMap = {
 };
 
 const defaultCo2Config = {
+  enabled: true,
   carbonIntensity: {
     walk: 0,
     bicycle: 0,

@@ -12,6 +12,7 @@ export interface CaloriesDetailsProps {
 export interface CO2ConfigType {
   carbonIntensity: { [index: string]: number };
   units: string;
+  enabled: boolean;
 }
 
 export interface DepartureDetailsProps {

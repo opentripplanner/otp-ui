@@ -338,7 +338,7 @@ export function TripDetails({
             }
           />
         )}
-        {co2 > 0 && (
+        {co2 > 0 && co2Config.enabled && (
           <TripDetail
             icon={<Leaf size={17} />}
             summary={
