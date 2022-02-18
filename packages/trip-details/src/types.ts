@@ -10,8 +10,8 @@ export interface CaloriesDetailsProps {
 }
 
 export interface CO2ConfigType {
-  carbonIntensity: { [index: string]: number };
-  units: string;
+  carbonIntensity?: { [index: string]: number };
+  units?: string;
   enabled: boolean;
 }
 
@@ -73,7 +73,7 @@ export interface TripDetailsProps {
    */
   itinerary: Itinerary;
   /**
-   * Object containing the CO2 config. CO2 only shown if this value is provided.
+   * Object containing the CO2 config.
    */
   co2Config?: CO2ConfigType;
 }
