@@ -362,6 +362,15 @@ export function TripDetails({
                 />
               </S.CO2Summary>
             }
+            description={
+              <FormattedMessage
+                defaultMessage={
+                  defaultMessages["otpUi.TripDetails.co2description"]
+                }
+                description="Text explaining how the CO2 emissions is calculated."
+                id="otpUi.TripDetails.co2description"
+              />
+            }
           />
         )}
         {containsFlex && (

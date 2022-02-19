@@ -20,6 +20,7 @@ otpUi:
       <strong>{bikeMinutes, plural, one {# minute} other {# minutes}}</strong> spent biking during this trip.
       Adapted from <dietaryLink>Dietary Guidelines for Americans 2005, page 16, Table 4</dietaryLink>.
     co2: "CO2 Emitted: <strong>{co2}</strong>"
+    co2description: "CO2 intensity is calculated by multiplying the distance of each leg of a trip by the CO2 intensity of each mode."
     departure: Depart <strong>{departureDate, date, long}</strong> at <strong>{departureDate, time, short}</strong>
     flexDropOffMessage: >
       {hasLeadTime, select,
