@@ -31,14 +31,14 @@ export function GeocodedOptionIcon({
 }
 
 export function Option({
+  classes = "",
   color = null,
   disabled = false,
   icon = null,
   isActive = false,
   onClick,
-  title = null,
   subTitle = null,
-  classes = ""
+  title = null,
 }: {
   classes?: string;
   color?: string;
@@ -46,8 +46,8 @@ export function Option({
   icon?: React.ReactNode;
   isActive?: boolean;
   onClick?: () => void;
-  title?: React.ReactNode;
   subTitle?: React.ReactNode;
+  title?: React.ReactNode;
 }): React.ReactElement {
   return (
     <S.MenuItem onClick={onClick} active={isActive} disabled={disabled}>

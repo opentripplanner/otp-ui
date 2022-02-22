@@ -128,9 +128,9 @@ export const MenuItemA = styled.a<{ active?: boolean }>`
 `;
 
 export const MenuItemHeader = styled.li<{
-  fgColor?: string;
   bgColor?: string;
   centeredText?: boolean;
+  fgColor?: string;
 }>`
   color: ${props => props.fgColor || "#eee"};
   background-color: ${props => props.bgColor || "#333"};
@@ -155,9 +155,9 @@ export const MenuItem = ({
   children,
   // foregroundColor and backgroundColor would be preferred, but React has issues with
   // these since they are style keywords
-  fgColor = null,
   bgColor = null,
   disabled = false,
+  fgColor = null,
   header = false,
   onClick = null
 }: {

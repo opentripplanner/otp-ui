@@ -13,8 +13,8 @@ export type Location = {
   id?: string;
   lat?: number;
   lon?: number;
-  name?: string;
   main?: string;
+  name?: string;
   secondary?: string;
 };
 
@@ -67,19 +67,15 @@ export interface LocationFieldProps {
    * Allows the component to be rendered with pre-filled results
    */
   initialSearchResults?: {
-    type?: string;
     geometry?: {
       type?: string;
       // coordinates?: [number, number];
       coordinates?: number[];
     };
     properties?: { id?: string };
+    type?: string;
   }[];
-  /**
-   * Results are sorted by distance, but favored layers will always appear
-   * first.
-   */
-  preferredLayers?: string[];
+
   /**
    * Invoked whenever the currentPosition is set, but the nearbyStops are not.
    * Sends the following argument:
@@ -280,6 +276,11 @@ export interface LocationFieldProps {
    * how many responses to show in each category
    */
   suggestionCount?: number;
+  /**
+   * Results are sorted by distance, but favored layers will always appear
+   * first.
+   */
+  preferredLayers?: string[];
   /**
    * An array of recent locations and places a user has searched for.
    */

@@ -78,7 +78,12 @@ export function matchLatLon(location1, location2) {
  *                          and returns a string representing the route label to display for that leg.
  * @returns An itinerary in the transitive.js format.
  */
-export function itineraryToTransitive(itin, companies, getRouteLabel) {
+export function itineraryToTransitive(
+  itin,
+  companies,
+  getRouteLabel,
+  disableFlexArc
+) {
   const tdata = {
     journeys: [],
     streetEdges: [],
@@ -274,7 +279,8 @@ export function itineraryToTransitive(itin, companies, getRouteLabel) {
 
       // add the pattern reference to the journey object
       journey.segments.push({
-        arc: isFlex(leg),
+        arc:
+          typeof disableFlexArc === "undefined" ? isFlex(leg) : !disableFlexArc,
         type: "TRANSIT",
         patterns: [
           {

@@ -38,42 +38,42 @@ function DefaultLocationIcon({
 }
 
 const LocationField = ({
-  autoFocus = false,
   addLocationSearch = () => {},
+  autoFocus = false,
   className = null,
-  clearLocation = () => {},
   clearButtonIcon = <Times size={13} />,
+  clearLocation = () => {},
   currentPosition = null,
   currentPositionIcon = <LocationArrow size={13} />,
   currentPositionUnavailableIcon = <Ban size={13} />,
-  initialSearchResults = null,
-  preferredLayers = [],
   findNearbyStops = () => {},
-  getCurrentPosition,
   GeocodedOptionIconComponent = GeocodedOptionIcon,
   geocoderConfig,
+  getCurrentPosition,
   hideExistingValue = false,
+  initialSearchResults = null,
   inputPlaceholder = null,
+  isStatic = false,
   layerColorMap = {},
   location = null,
-  locationType,
   LocationIconComponent = DefaultLocationIcon,
+  locationType,
   nearbyStops = [],
+  onLocationSelected,
   onTextInputClick = null,
   operatorIconMap = {},
+  preferredLayers = [],
   sessionOptionIcon = <Search size={13} />,
   sessionSearches = [],
-  sortByDistance = false,
   showClearButton = true,
-  onLocationSelected,
   showUserSettings = false,
-  isStatic = false,
+  sortByDistance = false,
   stopOptionIcon = <Bus size={13} />,
   stopsIndex = null,
-  suppressNearby = false,
   suggestionCount = 3,
+  suppressNearby = false,
+  UserLocationIconComponent = UserLocationIcon,
   userLocationsAndRecentPlaces = [],
-  UserLocationIconComponent = UserLocationIcon
 }: LocationFieldProps): React.ReactElement => {
   /**
    * Gets the initial value to place in the input field.
@@ -123,20 +123,16 @@ const LocationField = ({
         }) => {
           let message: string;
           // If no features found in response, default to empty array.
-          let geocodedFeatures = result && result.features;
+          let geocodedFeatures = result?.features;
           if (!geocodedFeatures) {
             // Get the Pelias error message if exists.
             // TODO: determine how other geocoders return error messages.
-            const errorMessage =
-              result &&
-              result.results &&
-              result.results.error &&
-              result.results.error.message;
+            const errorMessage = result?.results?.error?.message;
             // If the result did not contain a list of features, add special note.
-            message = intl.formatMessage({
-              id: "otpUi.LocationField.geocoderUnreachable"
-            });
-            if (errorMessage) message += ` (${errorMessage})`;
+            message = intl.formatMessage(
+              { id: "otpUi.LocationField.geocoderUnreachable" },
+              { error: errorMessage }
+            );
             geocodedFeatures = [];
           } else if (geocodedFeatures.length === 0) {
             message = intl.formatMessage(
@@ -158,7 +154,7 @@ const LocationField = ({
   };
 
   const setLocation = (newLocation: Location, resultType: ResultType) => {
-    onLocationSelected(intl, { locationType, location: newLocation, resultType });
+    onLocationSelected(intl, { location: newLocation, locationType, resultType });
     setMenuVisible(false);
   };
 
@@ -170,8 +166,8 @@ const LocationField = ({
       // If geolocation is successful (i.e., user has granted app geolocation
       // permission and coords exist), set location.
       onLocationSelected(intl, {
-        locationType,
         location: newLocation,
+        locationType,
         resultType: "CURRENT_LOCATION"
       });
     } else {
@@ -304,7 +300,7 @@ const LocationField = ({
     getGeocoder(geocoderConfig)
       .search({ text })
       .then(result => {
-        if (result.features && result.features.length > 0) {
+        if (result?.features?.length > 0) {
           // Only replace geocode items if results were found
           setGeocodedFeatures(result.features);
           setMessage(null);
@@ -344,7 +340,7 @@ const LocationField = ({
     locationSelectedLookup[itemIndex] = locationSelected;
 
     // Extract GTFS/POI info and assign to class
-    const { layer, source, id } = feature.properties;
+    const { id, source, layer } = feature.properties;
     const classNames = [];
     let operatorIcon;
     // Operator only exists on transit features
@@ -467,7 +463,7 @@ const LocationField = ({
       stopFeatures.map(feature => renderFeature(itemIndex++, feature)),
 
       transitFeaturesPresent && otherFeatures.length > 0 && (
-        <S.MenuItem bgColor="#333" header centeredText key="other-header">
+        <S.MenuItem bgColor="#333" centeredText header key="other-header">
           <FormattedMessage
             description="Text for header above the 'other'"
             id="otpUi.LocationField.other"
@@ -482,7 +478,7 @@ const LocationField = ({
   if (nearbyStops.length > 0 && !suppressNearby) {
     // Add the menu sub-heading (not a selectable item)
     menuItems.push(
-      <S.MenuItem header centeredText key="ns-header">
+      <S.MenuItem centeredText header key="ns-header">
         <FormattedMessage
           description="Text for header above nearby stops"
           id="otpUi.LocationField.nearby"
@@ -552,12 +548,12 @@ const LocationField = ({
         const option = (
           <Option
             icon={sessionOptionIcon}
+            isActive={itemIndex === activeIndex}
             key={optionKey++}
+            onClick={locationSelected}
+            subTitle={sessionLocation.secondary || ""}
             // just use the name if there is no main/secondary field
             title={sessionLocation.main || sessionLocation.name}
-            subTitle={sessionLocation.secondary || ""}
-            onClick={locationSelected}
-            isActive={itemIndex === activeIndex}
           />
         );
         itemIndex++;
@@ -593,10 +589,10 @@ const LocationField = ({
         const option = (
           <Option
             icon={<UserLocationIconComponent userLocation={userLocation} />}
-            key={optionKey++}
-            title={coreUtils.map.formatStoredPlaceName(userLocation)}
-            onClick={locationSelected}
             isActive={itemIndex === activeIndex}
+            key={optionKey++}
+            onClick={locationSelected}
+            title={coreUtils.map.formatStoredPlaceName(userLocation)}
           />
         );
         itemIndex++;
@@ -635,12 +631,12 @@ const LocationField = ({
     // Create and add the option item to the menu items array
     const currentLocationOption = (
       <Option
-        icon={optionIcon}
-        key={optionKey++}
-        title={optionTitle}
-        onClick={locationSelected}
-        isActive={itemIndex === activeIndex}
         disabled={positionUnavailable}
+        icon={optionIcon}
+        isActive={itemIndex === activeIndex}
+        key={optionKey++}
+        onClick={locationSelected}
+        title={optionTitle}
       />
     );
     menuItems.push(currentLocationOption);
@@ -649,10 +645,10 @@ const LocationField = ({
   if (message) {
     const messageItem = (
       <Option
+        disabled
         icon={<ExclamationCircle size={20} />}
         key={optionKey++}
         title={message}
-        disabled
       />
     );
     menuItems.unshift(messageItem);

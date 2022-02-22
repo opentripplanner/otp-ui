@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import {
   Building,
+  Bus,
   Clock,
   Crosshairs,
   MapPin,
@@ -12,7 +13,6 @@ import {
   SkullCrossbones,
   Star,
   Train,
-  Bus
 } from "styled-icons/fa-solid";
 
 import LocationField from "..";
@@ -105,15 +105,15 @@ UserLocationIconComponent.propTypes = {
 
 const StyledLocationField = styled(LocationField)`
   ${LocationFieldClasses.OptionContainer} {
-    font-size: 24px;
     background-color: pink;
+    font-size: 24px;
   }
 `;
 
 export default {
-  title: "LocationField/Mobile Context",
   component: LocationField,
-  decorators: [intlDecorator]
+  decorators: [intlDecorator],
+  title: "LocationField/Mobile Context",
 };
 
 export const Blank = (): JSX.Element => (
@@ -121,9 +121,9 @@ export const Blank = (): JSX.Element => (
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
     getCurrentPosition={getCurrentPosition}
+    isStatic
     locationType="from"
     onLocationSelected={onLocationSelected}
-    isStatic
   />
 );
 
@@ -131,11 +131,11 @@ export const Styled = (): JSX.Element => (
   <StyledLocationField
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
-    layerColorMap={layerColorMap}
     getCurrentPosition={getCurrentPosition}
+    isStatic
+    layerColorMap={layerColorMap}
     locationType="from"
     onLocationSelected={onLocationSelected}
-    isStatic
   />
 );
 
@@ -144,24 +144,24 @@ export const SelectedLocation = (): JSX.Element => (
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
     getCurrentPosition={getCurrentPosition}
+    isStatic
     layerColorMap={layerColorMap}
     location={selectedLocation}
     locationType="to"
     onLocationSelected={onLocationSelected}
-    isStatic
   />
 );
 
 export const SelectedLocationCustomClear = (): JSX.Element => (
   <LocationField
+    clearButtonIcon={<Bus size={13} />}
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
     getCurrentPosition={getCurrentPosition}
+    isStatic
     location={selectedLocation}
     locationType="to"
     onLocationSelected={onLocationSelected}
-    clearButtonIcon={<Bus size={13} />}
-    isStatic
   />
 );
 
@@ -170,11 +170,11 @@ export const WithNearbyStops = (): JSX.Element => (
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
     getCurrentPosition={getCurrentPosition}
+    isStatic
     layerColorMap={layerColorMap}
     locationType="to"
     nearbyStops={nearbyStops}
     onLocationSelected={onLocationSelected}
-    isStatic
     stopsIndex={stopsIndex}
   />
 );
@@ -184,11 +184,11 @@ export const WithSessionSearches = (): JSX.Element => (
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
     getCurrentPosition={getCurrentPosition}
+    isStatic
     layerColorMap={layerColorMap}
     locationType="to"
     onLocationSelected={onLocationSelected}
     sessionSearches={sessionSearches}
-    isStatic
   />
 );
 
@@ -197,11 +197,11 @@ export const WithUserSettings = (): JSX.Element => (
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
     getCurrentPosition={getCurrentPosition}
+    isStatic
     layerColorMap={layerColorMap}
     locationType="to"
     onLocationSelected={onLocationSelected}
     showUserSettings
-    isStatic
     userLocationsAndRecentPlaces={userLocationsAndRecentPlaces}
   />
 );
@@ -214,6 +214,7 @@ export const WithCustomIcons = (): JSX.Element => (
     GeocodedOptionIconComponent={GeocodedOptionIconComponent}
     geocoderConfig={geocoderConfig}
     getCurrentPosition={getCurrentPosition}
+    isStatic
     layerColorMap={layerColorMap}
     LocationIconComponent={LocationIconComponent}
     locationType="to"
@@ -222,10 +223,9 @@ export const WithCustomIcons = (): JSX.Element => (
     sessionOptionIcon={<Clock size={13} />}
     sessionSearches={sessionSearches}
     showUserSettings
-    isStatic
-    stopsIndex={stopsIndex}
     stopOptionIcon={<MapSigns size={13} />}
-    userLocationsAndRecentPlaces={userLocationsAndRecentPlaces}
+    stopsIndex={stopsIndex}
     UserLocationIconComponent={UserLocationIconComponent}
+    userLocationsAndRecentPlaces={userLocationsAndRecentPlaces}
   />
 );
