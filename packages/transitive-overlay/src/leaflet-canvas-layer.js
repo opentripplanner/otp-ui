@@ -119,7 +119,7 @@ L.CanvasLayer = (L.Layer ? L.Layer : L.Class).extend({
     //------------------------------------------------------------------------------
     drawLayer: function () {
         // -- todo make the viewInfo properties  flat objects.
-        if (!this._map) return
+        if (!this._map) return;
         var size   = this._map.getSize();
         var bounds = this._map.getBounds();
         var zoom   = this._map.getZoom();
