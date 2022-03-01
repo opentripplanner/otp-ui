@@ -53,12 +53,9 @@ class RouteViewerOverlay extends MapLayer {
   // TODO: determine why the default MapLayer componentWillUnmount() method throws an error
   componentWillUnmount() {}
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate() {
     // if pattern geometry just finished populating, update the map points
-    if (
-      !isGeomComplete(prevProps.routeData) &&
-      isGeomComplete(this.props.routeData)
-    ) {
+    if (isGeomComplete(this.props.routeData)) {
       const allPoints = Object.values(this.props.routeData.patterns).reduce(
         (acc, ptn) => {
           return acc.concat(polyline.decode(ptn.geometry.points));
