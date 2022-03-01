@@ -20,7 +20,6 @@ import {
   currentPosition,
   geocoderConfig,
   getCurrentPosition,
-  intlDecorator,
   layerColorMap,
   onLocationSelected,
   selectedLocation
@@ -112,7 +111,6 @@ const StyledLocationField = styled(LocationField)`
 
 export default {
   component: LocationField,
-  decorators: [intlDecorator],
   title: "LocationField/Mobile Context",
 };
 

@@ -8,7 +8,6 @@ import {
   geocoderConfig,
   getCurrentPosition,
   hereGeocoderConfig,
-  intlDecorator,
   layerColorMap,
   onLocationSelected,
   selectedLocation
@@ -42,9 +41,8 @@ const a11yOverrideParameters = {
 };
 
 export default {
-  title: "LocationField/Desktop Context",
   component: LocationField,
-  decorators: [intlDecorator]
+  title: "LocationField/Desktop Context"
 };
 
 export const Blank = (): JSX.Element => (
