@@ -1,7 +1,5 @@
-import flatten from "flat";
 import * as Icons from "@opentripplanner/icons";
 import React from "react";
-import { IntlProvider } from "react-intl";
 import { action } from "@storybook/addon-actions";
 
 import * as Core from ".";
@@ -11,7 +9,6 @@ import modeOptions from "./__mocks__/mode-options";
 import submodeOptions from "./__mocks__/submode-options";
 import trimet from "./__mocks__/trimet-styled";
 
-import englishMessages from "../i18n/en-US.yml";
 import { SettingsSelectorPanel } from "./styled";
 
 // Events
@@ -19,15 +16,15 @@ const onChange = action("onChange");
 const onClick = action("onClick");
 const onQueryParamChange = action("onQueryParamChange");
 
-const intlDecorator = (Story: StoryType): ReactElement => (
-  <IntlProvider locale="en-US" messages={flatten(englishMessages)}>
+const decorator = (Story: StoryType): ReactElement => (
+  <div>
     <p>Plain</p>
     <div>
       <Story />
     </div>
     <p>Styled</p>
     <div>{trimet(<Story />)}</div>
-  </IntlProvider>
+  </div>
 );
 
 /**
@@ -51,26 +48,17 @@ const GeneralSettingsTemplate = (args: StoryArgs) => (
   />
 );
 
-// Hide story controls for some props (but still display in the controls and the docs section).
-const noControl = {
-  control: { type: false }
-};
-// Hide some story args completely.
-const hiddenProp = {
-  table: { disable: true }
-};
-
 export default {
-  argTypes: {
-    className: hiddenProp,
-    modes: noControl,
-    onChange: noControl,
-    onQueryParamChange: noControl,
-    style: hiddenProp
-  },
   component: SettingsSelectorPanel,
-  decorators: [intlDecorator],
-  parameters: { controls: { sort: "alpha" } },
+  decorators: [decorator],
+  parameters: {
+    // Hide all controls
+    // (there are no args that the user can interactively change for this component).
+    controls: {
+      hideNoControlsWarning: true,
+      include: []
+    }
+  },
   title: "Trip Form Components"
 } as Meta;
 

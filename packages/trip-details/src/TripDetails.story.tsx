@@ -1,6 +1,11 @@
 import flatten from "flat";
 import React, { ReactElement } from "react";
-import { ComponentMeta, ComponentStory, Parameters } from "@storybook/react";
+import {
+  ComponentMeta,
+  ComponentStory,
+  Parameters,
+  StoryContext
+} from "@storybook/react";
 import styled from "styled-components";
 // The below eslint-disable is due to https://github.com/storybookjs/storybook/issues/13408
 // eslint-disable-next-line import/no-named-as-default
@@ -120,7 +125,7 @@ function createTripDetailsTemplate(
       FareDetails,
       itinerary
     }: TripDetailsProps,
-    { globals, parameters }: Parameters
+    { globals, parameters }: StoryContext
   ): ReactElement => {
     const { locale } = globals;
     const { useCustomFareKeyMap } = parameters;
