@@ -1,6 +1,6 @@
 import flatten from "flat";
 import React, { ReactElement } from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStory, Parameters } from "@storybook/react";
 import styled from "styled-components";
 // The below eslint-disable is due to https://github.com/storybookjs/storybook/issues/13408
 // eslint-disable-next-line import/no-named-as-default
@@ -120,7 +120,7 @@ function createTripDetailsTemplate(
       FareDetails,
       itinerary
     }: TripDetailsProps,
-    { globals, parameters }: any
+    { globals, parameters }: Parameters
   ): ReactElement => {
     const { locale } = globals;
     const { useCustomFareKeyMap } = parameters;
@@ -148,7 +148,7 @@ function createTripDetailsTemplate(
  */
 function makeStory(
   args: TripDetailsProps,
-  parameters: any,
+  parameters: Parameters,
   Component?: typeof TripDetails
 ): ComponentStory<typeof TripDetails> {
   const BoundTripDetails = createTripDetailsTemplate(Component).bind({});
@@ -157,32 +157,18 @@ function makeStory(
   return BoundTripDetails;
 }
 
-// Hide story controls for some props (but still display in the controls and the docs section).
-const noControl = {
-  control: { type: false }
-};
-// Hide some story args completely.
-const hiddenProp = {
-  table: { disable: true }
-};
-
 export default {
-  argTypes: {
-    CaloriesDetails: noControl,
-    className: noControl,
-    Component: hiddenProp,
-    defaultFareKey: noControl,
-    DepartureDetails: noControl,
-    FareDetails: noControl,
-    fareKeyNameMap: noControl,
-    itinerary: noControl
-  },
   args: {
     defaultFareKey: "regular"
   },
   component: TripDetails,
   parameters: {
-    controls: { sort: "alpha" }
+    // Hide all controls
+    // (there are no args that the user can interactively change for this component).
+    controls: {
+      hideNoControlsWarning: true,
+      include: []
+    }
   },
   title: "TripDetails"
 } as ComponentMeta<typeof TripDetails>;
@@ -203,7 +189,7 @@ export const StyledWalkTransitWalkItinerary = makeStory(
   {
     itinerary: walkTransitWalkItinerary
   },
-  undefined,
+  null,
   StyledTripDetails
 );
 
