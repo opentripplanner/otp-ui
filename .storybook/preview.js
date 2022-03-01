@@ -47,8 +47,9 @@ export const parameters = {
   },
   locale: reactIntl.defaultLocale,
   locales: {
-    "en-US": { title: "English", left: "🇺🇸" },
-    fr: { title: "Français", left: "🇫🇷" }
+    "en-US": { title: "English (US)", left: "🇺🇸" },
+    fr: { title: "Français", left: "🇫🇷" },
+    unknown: { title: "Unknown", left: "🚫" }
   },
   reactIntl
 };
