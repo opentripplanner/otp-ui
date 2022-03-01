@@ -10,20 +10,21 @@ const packages = [
 ];
 
 /** Messages for all packages AND locales above. */
-const messages = packages.reduce((allMessages, pkg) => ({
-  ...allMessages,
-  ...locales.reduce((packageMessages, locale) => {
+const messages = {};
+packages.forEach((pkg) => {
+  locales.forEach((locale) => {
     try {
-      return {
-        ...packageMessages,
-        [locale]: flatten(require(`../packages/${pkg}/i18n/${locale}.yml`))
+      messages[locale] = {
+        ...messages.[locale],
+        ...flatten(require(`../packages/${pkg}/i18n/${locale}.yml`))
       };
     } catch (e) {
-      if (locale !== "unknown") console.error(e)
-      return packageMessages;
-    }
-  }, {})
-}), {})
+      // There is no yml files for the "unknown" locale,
+      // so it should fail and we won't display a message for that case.
+      if (locale !== "unknown") console.error(e);
+    }    
+  });
+});
 
 // TODO place any (date, time, etc) format parameters here.
 const formats = {};
