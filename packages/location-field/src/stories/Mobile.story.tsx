@@ -1,5 +1,6 @@
 import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
+import { ComponentMeta } from "@storybook/react";
 import styled from "styled-components";
 import {
   Building,
@@ -111,8 +112,16 @@ const StyledLocationField = styled(LocationField)`
 
 export default {
   component: LocationField,
+  parameters: {
+    // Hide all controls
+    // (there are no args that the user can interactively change for this component).
+    controls: {
+      hideNoControlsWarning: true,
+      include: []
+    }
+  },
   title: "LocationField/Mobile Context",
-};
+} as ComponentMeta<typeof LocationField>;
 
 export const Blank = (): JSX.Element => (
   <LocationField
