@@ -19,7 +19,10 @@ const packages = [
 
 /** Messages for all packages AND locales above. */
 const messages = {};
+
 if (!isRunningJest()) {
+  // Populate messages if not running snapshots.
+  // (Message printouts would be unnecessary replicated in snapshots without that check.)
   packages.forEach((pkg) => {
     locales.forEach((locale) => {
       try {
@@ -29,14 +32,14 @@ if (!isRunningJest()) {
         };
       } catch (e) {
         // There is no yml files for the "unknown" locale,
-        // so it should fail and we won't display a message for that case.
+        // so it should fail, and we won't display an error message in that case.
         if (locale !== "unknown") console.error(e);
       }    
     });
   });
 }
 
-// TODO place any (date, time, etc) format parameters here.
+// TODO: place any applicable (date, time, etc) format parameters here.
 const formats = {};
 
 export const reactIntl = {
