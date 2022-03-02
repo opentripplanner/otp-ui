@@ -54,7 +54,7 @@ class RouteViewerOverlay extends MapLayer {
   componentWillUnmount() {}
 
   componentDidUpdate() {
-    // if pattern geometry just finished populating, update the map points
+    // if pattern geometry just finished populating, update the map points if the geometry is complete
     if (isGeomComplete(this.props.routeData)) {
       const allPoints = Object.values(this.props.routeData.patterns).reduce(
         (acc, ptn) => {
