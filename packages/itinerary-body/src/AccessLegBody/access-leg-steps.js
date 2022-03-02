@@ -1,10 +1,9 @@
-import coreUtils from "@opentripplanner/core-utils";
 import { DirectionIcon } from "@opentripplanner/icons";
 import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 import { Step } from "@opentripplanner/types";
 
-import * as Styled from "../styled";
+import * as S from "../styled";
 import MapillaryButton from "./mapillary-button";
 
 interface Props {
@@ -17,7 +16,7 @@ interface Props {
  * Applies the appropriate style for street names.
  */
 function renderStreetName(streetName) {
-  return <Styled.StepStreetName>{streetName}</Styled.StepStreetName>;
+  return <S.StepStreetName>{streetName}</S.StepStreetName>;
 }
 
 /**
@@ -29,36 +28,37 @@ export default function AccessLegSteps({
   mapillaryKey
 }: Props): ReactElement {
   return (
-    <Styled.Steps>
-      {steps.map((step, k) => (
-        <Styled.StepRow key={k}>
-          <Styled.StepIconContainer>
-            <DirectionIcon relativeDirection={step.relativeDirection} />
-          </Styled.StepIconContainer>
+    <S.Steps>
+      {steps.map(
+        ({ absoluteDirection, lat, lon, relativeDirection, streetName }, k) => (
+          <S.StepRow key={k}>
+            <S.StepIconContainer>
+              <DirectionIcon relativeDirection={relativeDirection} />
+            </S.StepIconContainer>
 
-          <Styled.StepDescriptionContainer>
-            <FormattedMessage
-              description="Describes a step of the directions to reach a destination."
-              id="otpUi.AccessLegBody.instruction"
-              values={{
-                // FIXME: Include absolute dirs in translations.
-                absoluteDirection: step.absoluteDirection,
-                // FIXME: Include "unnamed roads/paths" in translations.
-                destination: coreUtils.itinerary.getStepStreetName(step),
-                relativeDirection: step.relativeDirection,
-                strong: renderStreetName
-              }}
-            />
+            <S.StepDescriptionContainer>
+              <FormattedMessage
+                defaultMessage="{relativeDirection} {absoluteDirection} on <strong>{streetName}</strong>"
+                description="Describes a step of the directions to reach a destination."
+                id="otpUi.AccessLegBody.step"
+                values={{
+                  absoluteDirection,
+                  relativeDirection,
+                  streetName,
+                  strong: renderStreetName
+                }}
+              />
 
-            <MapillaryButton
-              clickCallback={mapillaryCallback}
-              coords={step}
-              mapillaryKey={mapillaryKey}
-              padLeft
-            />
-          </Styled.StepDescriptionContainer>
-        </Styled.StepRow>
-      ))}
-    </Styled.Steps>
+              <MapillaryButton
+                clickCallback={mapillaryCallback}
+                coords={{ lat, lon }}
+                mapillaryKey={mapillaryKey}
+                padLeft
+              />
+            </S.StepDescriptionContainer>
+          </S.StepRow>
+        )
+      )}
+    </S.Steps>
   );
 }

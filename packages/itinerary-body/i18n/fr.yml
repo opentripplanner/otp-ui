@@ -9,12 +9,22 @@
 
 otpUi:
   AccessLegBody:
-    # FIXME: destination (e.g. "3rd floor") may need to be localized.
-    instruction: "{relativeDirection, select,
+    # TODO: elevator destinations (e.g. "3rd floor") may need to be localized.
+    step: "{relativeDirection, select,
       CIRCLE_CLOCKWISE {Suivez le rond-point par la droite}
       CIRCLE_COUNTERCLOCKWISE {Suivez le rond-point par la gauche}
       CONTINUE {Continuez}
-      DEPART {Prenez la direction {absoluteDirection}}
+      DEPART {Prenez la direction {absoluteDirection, select,
+      EAST {est}
+      NORTH {nord}
+      NORTHEAST {nord-est}
+      NORTHWEST {nord-ouest}
+      SOUTH {sud}
+      SOUTHEAST {sud-est}
+      SOUTHWEST {sud-ouest}
+      WEST {ouest}
+      other {{absoluteDirection}}
+      }}
       ELEVATOR {Prenez l'ascenseur}
       HARD_LEFT {Virage à gauche}
       HARD_RIGHT {Virage à droite}
@@ -27,4 +37,4 @@ otpUi:
       other {{relativeDirection}}
       }
       {relativeDirection, select, ELEVATOR {jusqu'au} other {sur}}
-      <strong>{destination}</strong>"
+      <strong>{streetName, select, road {Route sans nom} path {Chemin sans nom} other {{streetName}}}</strong>"

@@ -9,11 +9,21 @@
 
 otpUi:
   AccessLegBody:
-    instruction: "{relativeDirection, select,
+    step: "{relativeDirection, select,
       CIRCLE_CLOCKWISE {Follow circle clockwise}
       CIRCLE_COUNTERCLOCKWISE {Follow circle counterclockwise}
       CONTINUE {Continue}
-      DEPART {Head {absoluteDirection}}
+      DEPART {Head {absoluteDirection, select,
+      EAST {east}
+      NORTH {north}
+      NORTHEAST {northeast}
+      NORTHWEST {northwest}
+      SOUTH {south}
+      SOUTHEAST {southeast}
+      SOUTHWEST {southwest}
+      WEST {west}
+      other {{absoluteDirection}}
+      }}
       ELEVATOR {Take elevator}
       HARD_LEFT {Hard left}
       HARD_RIGHT {Hard right}
@@ -26,4 +36,4 @@ otpUi:
       other {{relativeDirection}}
       }
       {relativeDirection, select, ELEVATOR {to} other {on}}
-      <strong>{destination}</strong>"
+      <strong>{streetName, select, road {Unnamed Road} path {Unnamed Path} other {{streetName}}}</strong>"
