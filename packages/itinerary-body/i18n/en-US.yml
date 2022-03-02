@@ -1,0 +1,29 @@
+# Default messages for the ItineraryBody component and subcomponents.
+# To use from a react-intl application:
+# - merge the content of this file into the messages object
+#   that has your other localized strings,
+# - flatten the ids, i.e. convert a structure such as
+#      otpUi > LocationField > stations
+#   into "otpUi.TripDetails.stations" (see story for an example),
+# - pass the resulting object to the messages prop of IntlProvider.
+
+otpUi:
+  AccessLegBody:
+    instruction: "{relativeDirection, select,
+      CIRCLE_CLOCKWISE {Follow circle clockwise}
+      CIRCLE_COUNTERCLOCKWISE {Follow circle counterclockwise}
+      CONTINUE {Continue}
+      DEPART {Head {absoluteDirection}}
+      ELEVATOR {Take elevator}
+      HARD_LEFT {Hard left}
+      HARD_RIGHT {Hard right}
+      LEFT {Left}
+      RIGHT {Right}
+      SLIGHTLY_LEFT {Slight left}
+      SLIGHTLY_RIGHT {Slight right}
+      UTURN_LEFT {Left U-turn}
+      UTURN_RIGHT {Right U-turn}
+      other {{relativeDirection}}
+      }
+      {relativeDirection, select, ELEVATOR {to} other {on}}
+      <strong>{destination}</strong>"
