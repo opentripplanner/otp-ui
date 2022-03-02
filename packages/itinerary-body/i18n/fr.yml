@@ -38,3 +38,12 @@ otpUi:
       }
       {relativeDirection, select, ELEVATOR {jusqu'au} other {sur}}
       <strong>{streetName, select, road {Route sans nom} path {Chemin sans nom} other {{streetName}}}</strong>"
+    # In the summary below, only includes access mode actions (ride, walk...).
+    summary: "{distance, select, 0 {} other {{distance} }}{modeId, select,
+      BICYCLE {en vélo}
+      BICYCLE_RENT {en vélo partagé}
+      CAR {{isCarHail, select, true {en course en voiture} other {en voiture}}}
+      MICROMOBILITY {en trottinette}
+      WALK {à pied}
+      other {en {modeId}}
+      }{place, select, undefined {} other { vers {place}}}"
