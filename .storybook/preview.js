@@ -1,10 +1,11 @@
 import { setupWorker } from "msw";
+import { withReactIntl } from "storybook-react-intl/dist/cjs/withReactIntl";
 
 import locationFieldHandlers from "../packages/location-field/src/mocks/handlers";
 import itineraryBodyHandlers from "../packages/itinerary-body/src/__mocks__/handlers";
 import geocoderHandlers from "../packages/geocoder/src/test-fixtures/handlers";
 
-import {reactIntl} from './react-intl.js';
+import { reactIntl } from './react-intl.js';
 
 // Only install worker when running in browser
 if (typeof global.process === "undefined") {
@@ -53,3 +54,8 @@ export const parameters = {
   },
   reactIntl
 };
+
+// Per https://www.npmjs.com/package/@storybook/addon-storyshots,
+// explicitly export the storybook-react-intl decorator
+// so it is included in jest snapshots.
+export const decorators = [withReactIntl];

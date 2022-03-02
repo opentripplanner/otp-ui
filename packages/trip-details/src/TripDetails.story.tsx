@@ -153,8 +153,8 @@ function createTripDetailsTemplate(
  */
 function makeStory(
   args: TripDetailsProps,
-  Component?: typeof TripDetails,
-  parameters: Parameters
+  parameters: Parameters,
+  Component?: typeof TripDetails
 ): ComponentStory<typeof TripDetails> {
   const BoundTripDetails = createTripDetailsTemplate(Component).bind({});
   BoundTripDetails.args = args;
