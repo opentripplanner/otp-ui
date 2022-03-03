@@ -40,7 +40,7 @@ export default function AccessLegSummary({
             // TODO: Implement metric vs imperial (up until now it's just imperial).
             distance:
               leg.distance > 0
-                ? humanizeDistanceString(leg.distance, null, intl)
+                ? humanizeDistanceString(leg.distance, false, intl)
                 : 0,
             isCarHail: leg.hailedCar,
             modeId: leg.mode,
