@@ -10,10 +10,32 @@
 otpUi:
   AccessLegBody:
     LegDiagramPreview:
-      elevationChart: Profil altimétrique
-      noElevationData: Aucune donnée d'altitude
-      toggleElevationChart: Afficher/masquer le profil altimétrique
+      elevationChart: Dénivelés
+      noElevationData: Aucune information sur les dénivelés
+      toggleElevationChart: Afficher/masquer les dénivelés
     mapillaryTooltip: Afficher la vue panoramique à cet endroit
+    RentedVehicleSubheader:
+      resumeRentalRide: Continuez avec le véhicule loué
+      ### This message includes a TriMet customization
+      ### that drops company and vehicle ids from shared bikes.
+      pickupRental: "Récupérez {modeType, select,
+        BIKESHARE {le vélo partagé}
+        other {{modeType, select,
+        CARSHARE {la voiture}
+        VEHICLERENTAL {la trottinette électrique}
+        BIKEPARK {le vélo}
+        other {le véhicule}
+        } {company} {vehicleName}}
+        }"
+      ### If bikeshare comes with company info, this message should be used instead.
+      # pickupRental: "Récupérez {modeType, select,
+      #   CARSHARE {la voiture}
+      #   VEHICLERENTAL {la trottinette électrique}
+      #   BIKESHARE {le vélo}
+      #   BIKEPARK {le vélo}
+      #   other {le véhicule}
+      #   } {company} {vehicleName}"
+      walkVehicle: Emmenez à pied le véhicule le long de {place}
     # TODO: elevator destinations (e.g. "3rd floor") may need to be localized.
     step: "{relativeDirection, select,
       CIRCLE_CLOCKWISE {Suivez le rond-point par la droite}

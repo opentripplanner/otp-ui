@@ -14,6 +14,28 @@ otpUi:
       noElevationData: No elevation data available.
       toggleElevationChart: Toggle elevation chart
     mapillaryTooltip: Show street imagery at this location
+    RentedVehicleSubheader:
+      resumeRentalRide: Continue using rental
+      ### This message includes a TriMet customization
+      ### that drops company and vehicle ids from shared bikes.
+      pickupRental: "Pick up {modeType, select,
+        BIKESHARE {shared bike}
+        other {{company} {modeType, select,
+        CARSHARE {car}
+        VEHICLERENTAL {E-scooter}
+        BIKEPARK {bike}
+        other {vehicle}
+        } {vehicleName}}
+        }"
+      ### If bikeshare comes with company info, this message should be used instead.
+      # pickupRental: "Pick up {company} {modeType, select,
+      #   CARSHARE {car}
+      #   VEHICLERENTAL {E-scooter}
+      #   BIKESHARE {bike}
+      #   BIKEPARK {bike}
+      #   other {vehicle}
+      #   } {vehicleName}"
+      walkVehicle: Walk vehicle along {place}
     step: "{relativeDirection, select,
       CIRCLE_CLOCKWISE {Follow circle clockwise}
       CIRCLE_COUNTERCLOCKWISE {Follow circle counterclockwise}
