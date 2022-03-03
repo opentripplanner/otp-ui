@@ -37,7 +37,7 @@ otpUi:
       }
       {relativeDirection, select, ELEVATOR {to} other {on}}
       <strong>{streetName, select, road {Unnamed Road} path {Unnamed Path} other {{streetName}}}</strong>"
-    # In the summary below, only includes access mode actions (ride, walk...).
+    # In the summary below, only include access mode actions (ride, walk...).
     summary: "{modeId, select,
       BICYCLE {Bicycle}
       BICYCLE_RENT {Bikeshare}

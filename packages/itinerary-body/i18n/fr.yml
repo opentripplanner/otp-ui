@@ -38,12 +38,17 @@ otpUi:
       }
       {relativeDirection, select, ELEVATOR {jusqu'au} other {sur}}
       <strong>{streetName, select, road {Route sans nom} path {Chemin sans nom} other {{streetName}}}</strong>"
-    # In the summary below, only includes access mode actions (ride, walk...).
-    summary: "{distance, select, 0 {} other {{distance} }}{modeId, select,
-      BICYCLE {en vélo}
-      BICYCLE_RENT {en vélo partagé}
-      CAR {{isCarHail, select, true {en course en voiture} other {en voiture}}}
-      MICROMOBILITY {en trottinette}
-      WALK {à pied}
-      other {en {modeId}}
-      }{place, select, undefined {} other { vers {place}}}"
+    # In the summary below, only include access mode actions (ride, walk...).
+    # Note de traduction: nous utilisons le format
+    #   "Marche/velo/etc sur 2,5 miles vers 10th Street" qui peut paraître un peu "robotique".
+    # Une formulation du type "2,5 miles à pied/en voiture/etc" est plus couramment "parlée"
+    # mais donne lieu à des expressions bizarres comme "230 pieds à pied vers 10th Street"
+    # à cause de l'utilisation d'unités impériales.
+    summary: "{modeId, select,
+      BICYCLE {Vélo}
+      BICYCLE_RENT {Vélo partagé}
+      CAR {{isCarHail, select, true {Course en voiture} other {Voiture}}}
+      MICROMOBILITY {Trottinette}
+      WALK {Marche}
+      other {{modeId}}
+      }{distance, select, 0 {} other { sur {distance}}}{place, select, undefined {} other { vers {place}}}"
