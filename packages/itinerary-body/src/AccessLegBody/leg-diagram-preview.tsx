@@ -1,4 +1,3 @@
-import flatten from "flat";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
@@ -9,14 +8,7 @@ import ReactResizeDetector from "react-resize-detector";
 
 import * as Styled from "../styled";
 
-// Load the default messages.
-import defaultEnglishMessages from "../../i18n/en-US.yml";
-
-// HACK: We should flatten the messages loaded above because
-// the YAML loaders behave differently between webpack and our version of jest:
-// - the yaml loader for webpack returns a nested object,
-// - the yaml loader for jest returns messages with flattened ids.
-const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
+import { defaultMessages } from "../util";
 
 interface Props {
   diagramVisible?: Leg;

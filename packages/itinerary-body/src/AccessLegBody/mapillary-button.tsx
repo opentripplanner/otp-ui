@@ -3,6 +3,8 @@ import { useIntl } from "react-intl";
 import styled from "styled-components";
 import { StreetView } from "@styled-icons/fa-solid";
 
+import { defaultMessages } from "../util";
+
 /**
  * Helper method to generate bounding box from a location. Adding the WINDOW to the coordinate
  * creates a bounding box of approximately 1 meter around the coordinate, which is likely to
@@ -109,7 +111,7 @@ const MapillaryButton = ({
       padLeft={padLeft}
       padTop={padTop}
       title={intl.formatMessage({
-        defaultMessage: "Show street view",
+        defaultMessage: defaultMessages["otpUi.AccessLegBody.mapillaryTooltip"],
         description: "Tooltip text describing the street view icon.",
         id: "otpUi.AccessLegBody.mapillaryTooltip"
       })}
