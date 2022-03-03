@@ -12,5 +12,8 @@
   "gitHead": "644c72e0d08f8daf93b44eaf0deec88a1e16f414",
   "scripts": {
     "tsc": "tsc"
+  },
+  "peerDependencies": {
+    "react-intl": "^5.24.6"
   }
 }
