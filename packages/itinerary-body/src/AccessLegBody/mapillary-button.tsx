@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useIntl } from "react-intl";
 import styled from "styled-components";
 import { StreetView } from "@styled-icons/fa-solid";
 
@@ -72,6 +73,7 @@ const MapillaryButton = ({
   padTop?: boolean;
 }): JSX.Element => {
   const [imageId, setImageId] = useState(null);
+  const intl = useIntl();
 
   useEffect(() => {
     // useEffect only supports async actions as a child function
@@ -106,7 +108,11 @@ const MapillaryButton = ({
       onClick={handleClick}
       padLeft={padLeft}
       padTop={padTop}
-      title="Show street imagery at this location"
+      title={intl.formatMessage({
+        defaultMessage: "Show street view",
+        description: "Tooltip text describing the street view icon.",
+        id: "otpUi.AccessLegBody.mapillaryTooltip"
+      })}
     >
       <Icon style={{ paddingBottom: 1 }} />
     </Container>

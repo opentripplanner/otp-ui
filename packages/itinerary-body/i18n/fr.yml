@@ -9,6 +9,7 @@
 
 otpUi:
   AccessLegBody:
+    mapillaryTooltip: Afficher la vue panoramique à cet endroit
     # TODO: elevator destinations (e.g. "3rd floor") may need to be localized.
     step: "{relativeDirection, select,
       CIRCLE_CLOCKWISE {Suivez le rond-point par la droite}

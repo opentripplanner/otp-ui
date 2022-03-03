@@ -9,6 +9,7 @@
 
 otpUi:
   AccessLegBody:
+    mapillaryTooltip: Show street imagery at this location
     step: "{relativeDirection, select,
       CIRCLE_CLOCKWISE {Follow circle clockwise}
       CIRCLE_COUNTERCLOCKWISE {Follow circle counterclockwise}
