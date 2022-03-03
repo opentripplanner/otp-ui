@@ -53,12 +53,9 @@ class RouteViewerOverlay extends MapLayer {
   // TODO: determine why the default MapLayer componentWillUnmount() method throws an error
   componentWillUnmount() {}
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate() {
     // if pattern geometry updated, update the map points
-    if (
-      this.props.routeData?.id !== prevProps.routeData?.id &&
-      isGeomComplete(this.props.routeData)
-    ) {
+    if (this.props.allowMapCentering && isGeomComplete(this.props.routeData)) {
       const allPoints = Object.values(this.props.routeData.patterns).reduce(
         (acc, ptn) => {
           return acc.concat(polyline.decode(ptn.geometry.points));
@@ -110,6 +107,10 @@ class RouteViewerOverlay extends MapLayer {
 
 RouteViewerOverlay.propTypes = {
   /**
+   * This boolean value allows disabling of map centering and panning.
+   */
+  allowMapCentering: PropTypes.boolean,
+  /**
    * If pattern stops contain polygons, we can request that the routes are not drawn
    * inside of these polygons by setting this prop to true. If true, the layer will
    * check every zone of every stop in a pattern before drawing the route for that pattern
@@ -150,6 +151,7 @@ RouteViewerOverlay.propTypes = {
 };
 
 RouteViewerOverlay.defaultProps = {
+  allowMapCentering: true,
   path: {
     color: "#00bfff",
     opacity: 1,
