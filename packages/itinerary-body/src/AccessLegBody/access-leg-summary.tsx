@@ -2,7 +2,7 @@ import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
 import { Config, Leg } from "@opentripplanner/types";
 import React, { FunctionComponent, ReactElement } from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 
 import * as Styled from "../styled";
 
@@ -21,6 +21,7 @@ export default function AccessLegSummary({
   onSummaryClick,
   showLegIcon
 }: Props): ReactElement {
+  const intl = useIntl();
   return (
     <Styled.LegClickable onClick={onSummaryClick}>
       {showLegIcon && (
@@ -32,13 +33,15 @@ export default function AccessLegSummary({
       {/* Leg description, e.g. "Walk 0.5 mi to..." */}
       <Styled.LegDescription>
         <FormattedMessage
-          defaultMessage="{mode} {distance} to {place}"
+          defaultMessage="{modeId} {distance} to {place}"
           description="Summarizes an access leg"
           id="otpUi.AccessLegBody.summary"
           values={{
-            // TODO: Implement metric vs imperial (right now it's just imperial).
+            // TODO: Implement metric vs imperial (up until now it's just imperial).
             distance:
-              leg.distance > 0 ? humanizeDistanceString(leg.distance) : 0,
+              leg.distance > 0
+                ? humanizeDistanceString(leg.distance, null, intl)
+                : 0,
             isCarHail: leg.hailedCar,
             modeId: leg.mode,
             // FIXME: localize rental device names.
