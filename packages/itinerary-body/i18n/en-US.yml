@@ -9,6 +9,10 @@
 
 otpUi:
   AccessLegBody:
+    LegDiagramPreview:
+      elevationChart: Elevation chart
+      noElevationData: No elevation data available.
+      toggleElevationChart: Toggle elevation chart
     mapillaryTooltip: Show street imagery at this location
     step: "{relativeDirection, select,
       CIRCLE_CLOCKWISE {Follow circle clockwise}

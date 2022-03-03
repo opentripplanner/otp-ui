@@ -9,6 +9,10 @@
 
 otpUi:
   AccessLegBody:
+    LegDiagramPreview:
+      elevationChart: Profil altimétrique
+      noElevationData: Aucune donnée d'altitude
+      toggleElevationChart: Afficher/masquer le profil altimétrique
     mapillaryTooltip: Afficher la vue panoramique à cet endroit
     # TODO: elevator destinations (e.g. "3rd floor") may need to be localized.
     step: "{relativeDirection, select,

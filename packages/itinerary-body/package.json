@@ -17,10 +17,14 @@
     "@styled-icons/foundation": "^10.34.0",
     "@styled-icons/fa-solid": "^10.34.0",
     "currency-formatter": "^1.5.5",
+    "flat": "^5.0.2",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "react-resize-detector": "^4.2.1",
     "velocity-react": "^1.4.3"
+  },
+  "devDependencies": {
+    "@types/flat": "^5.0.2"
   },
   "peerDependencies": {
     "react": "^16.14.0",
