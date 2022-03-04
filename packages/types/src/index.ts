@@ -385,3 +385,11 @@ export interface Location {
 export interface StopLayerStop extends LayerEntity {
   name: string;
 }
+
+/**
+ * Describes time options, including time format and timezone-related offset.
+ */
+export interface TimeOptions {
+  format?: string;
+  offset?: string;
+}
