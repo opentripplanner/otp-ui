@@ -74,11 +74,23 @@ otpUi:
     summary: "{modeId, select,
       BICYCLE {Vélo}
       BICYCLE_RENT {Vélo partagé}
-      CAR {{isCarHail, select, true {Course en voiture} other {Voiture}}}
+      CAR {{isCarHail, select, true {Course} other {Voiture}}}
       MICROMOBILITY {Trottinette}
       WALK {Marche}
       other {{modeId}}
       }{distance, select, 0 {} other { sur {distance}}}{place, select, undefined {} other { vers {place}}}"
+    TncLeg:
+      bookRide: Réserver
+      bookRideLater: Attendez jusqu'à {timeMillis, time, short} avant de réserver.
+      estimatedCost: "Coût estimé : {minFare} - {maxFare}"
+      estimatedTravelTime: "Temps de trajet estimé : {duration} (ne tient pas compte de la circulation)"
+      waitForPickup: "Attendez{minutes, select,
+        undefined {}
+        other { {minutes} minutes pour}
+        } votre chauffeur {company}"
+  ItineraryBody:
+    common:
+      durationShort: "{hours, plural, =0 {} other {# h }}{minutes} mn"
   TransitLegBody:
     AlertsBody:
       # En vigueur à 16:30, aujourd'hui

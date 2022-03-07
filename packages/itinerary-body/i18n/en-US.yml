@@ -73,6 +73,18 @@ otpUi:
       WALK {Walk}
       other {{modeId}}
       }{distance, select, 0 {} other { {distance}}}{place, select, undefined {} other { to {place}}}"
+    TncLeg:
+      bookRide: Book Ride
+      bookRideLater: Wait until {timeMillis, time, short} to book
+      estimatedCost: "Estimated cost: {minFare} - {maxFare}"
+      estimatedTravelTime: "Estimated travel time: {duration} (does not account for traffic)"
+      waitForPickup: "Wait{minutes, select,
+        undefined {}
+        other { {minutes} minutes}
+        } for {company} pickup"
+  ItineraryBody:
+    common:
+      durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"
   TransitLegBody:
     AlertsBody:
       effectiveDate: "Effective as of {includeTime, select,
