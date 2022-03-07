@@ -181,7 +181,7 @@ type ElevationData = {
   second: number;
 }[];
 
-interface Alert {
+export interface Alert {
   alertHeaderText?: string;
   alertDescriptionText?: string;
   alertUrl?: string;
