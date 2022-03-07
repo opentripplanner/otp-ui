@@ -62,7 +62,8 @@ class RouteViewerOverlay extends MapLayer {
         },
         []
       );
-      if (allPoints.length > 0) this.props.leaflet.map.fitBounds(allPoints);
+      if (allPoints.length > 0 && this.props.leaflet.map)
+        this.props.leaflet.map.fitBounds(allPoints);
     }
   }
 
