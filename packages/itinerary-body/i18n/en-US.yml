@@ -73,3 +73,14 @@ otpUi:
       WALK {Walk}
       other {{modeId}}
       }{distance, select, 0 {} other { {distance}}}{place, select, undefined {} other { to {place}}}"
+  TransitLegBody:
+    AlertsBody:
+      effectiveDate: "Effective as of {includeTime, select,
+        true {{dateTime, time, short}, }
+        other {}
+        }{dayDiff, plural,
+        =-1 {Yesterday}
+        =0 {Today}
+        =1 {Tomorrow}
+        other {{dateTime, date, long}}
+        }"

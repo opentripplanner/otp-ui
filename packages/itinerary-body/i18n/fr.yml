@@ -79,3 +79,16 @@ otpUi:
       WALK {Marche}
       other {{modeId}}
       }{distance, select, 0 {} other { sur {distance}}}{place, select, undefined {} other { vers {place}}}"
+  TransitLegBody:
+    AlertsBody:
+      # En vigueur à 16:30, aujourd'hui
+      # En vigueur le 3 mars 2019
+      effectiveDate: "En vigueur {includeTime, select,
+        true {à {dateTime, time, short}, }
+        other {}
+        }{dayDiff, plural,
+        =-1 {hier}
+        =0 {aujourd'hui}
+        =1 {demain}
+        other {le {dateTime, date, long}}
+        }"
