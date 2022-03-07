@@ -1,6 +1,8 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import { Config, Leg, TimeOptions } from "@opentripplanner/types";
+import React, { Component, FunctionComponent, ReactElement } from "react";
 import { VelocityTransitionGroup } from "velocity-react";
 
 import AccessLegSteps from "./access-leg-steps";
@@ -9,30 +11,55 @@ import LegDiagramPreview from "./leg-diagram-preview";
 import MapillaryButton from "./mapillary-button";
 import RentedVehicleSubheader from "./rented-vehicle-subheader";
 import * as Styled from "../styled";
+
 import TNCLeg from "./tnc-leg";
+
+interface Props {
+  config: Config;
+  /**
+   * Should be either null or a legType. Indicates that a particular leg diagram
+   * has been selected and is active.
+   */
+  diagramVisible?: Leg;
+  followsTransit?: boolean;
+  leg: Leg;
+  LegIcon: FunctionComponent<{ leg: Leg }>;
+  legIndex: number;
+  mapillaryCallback?: (id: string) => void;
+  mapillaryKey?: string;
+  setActiveLeg: (legIndex: number, leg: Leg) => void;
+  setLegDiagram: (leg: Leg) => void;
+  showElevationProfile: boolean;
+  showLegIcon: boolean;
+  timeOptions?: TimeOptions;
+}
+
+interface State {
+  expanded: boolean;
+}
 
 /**
  * Component for access (e.g. walk/bike/etc.) leg in narrative itinerary. This
  * particular component is used in the line-itin (i.e., trimet-mod-otp) version
  * of the narrative itinerary.
  */
-class AccessLegBody extends Component {
-  constructor(props) {
+class AccessLegBody extends Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = { expanded: false };
   }
 
-  onStepsHeaderClick = () => {
+  onStepsHeaderClick = (): void => {
     const { expanded } = this.state;
     this.setState({ expanded: !expanded });
   };
 
-  onSummaryClick = () => {
+  onSummaryClick = (): void => {
     const { leg, legIndex, setActiveLeg } = this.props;
     setActiveLeg(legIndex, leg);
   };
 
-  render() {
+  render(): ReactElement {
     const {
       config,
       diagramVisible,
@@ -118,34 +145,6 @@ class AccessLegBody extends Component {
     );
   }
 }
-
-AccessLegBody.propTypes = {
-  config: coreUtils.types.configType.isRequired,
-  /**
-   * Should be either null or a legType. Indicates that a particular leg diagram
-   * has been selected and is active.
-   */
-  diagramVisible: coreUtils.types.legType,
-  followsTransit: PropTypes.bool,
-  leg: coreUtils.types.legType.isRequired,
-  LegIcon: PropTypes.elementType.isRequired,
-  legIndex: PropTypes.number.isRequired,
-  mapillaryCallback: PropTypes.func,
-  mapillaryKey: PropTypes.string,
-  setActiveLeg: PropTypes.func.isRequired,
-  setLegDiagram: PropTypes.func.isRequired,
-  showElevationProfile: PropTypes.bool.isRequired,
-  showLegIcon: PropTypes.bool.isRequired,
-  timeOptions: coreUtils.types.timeOptionsType
-};
-
-AccessLegBody.defaultProps = {
-  diagramVisible: null,
-  followsTransit: false,
-  mapillaryCallback: null,
-  mapillaryKey: null,
-  timeOptions: null
-};
 
 export default AccessLegBody;
 
