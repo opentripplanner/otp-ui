@@ -4,6 +4,7 @@ import React, { FunctionComponent, ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
 import * as S from "../styled";
+import { defaultMessages } from "../util";
 
 interface Props {
   alerts: Alert[];
@@ -44,7 +45,11 @@ export default function AlertsBody({
                 <S.TransitAlertBody>{description}</S.TransitAlertBody>
                 <S.TransitAlertEffectiveDate>
                   <FormattedMessage
-                    defaultMessage={"{dateTime, date, long}"}
+                    defaultMessage={
+                      defaultMessages[
+                        "otpUi.TransitLegBody.AlertsBody.effectiveDate"
+                      ]
+                    }
                     description="Text describing when an alert takes effect"
                     id="otpUi.TransitLegBody.AlertsBody.effectiveDate"
                     values={{
