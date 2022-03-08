@@ -79,7 +79,7 @@ class RouteViewerOverlay extends MapLayer {
     const routeColor = routeData.color ? `#${routeData.color}` : path.color;
     const segments = [];
     Object.values(routeData.patterns).forEach(pattern => {
-      if (!pattern.geometry) return;
+      if (!pattern?.geometry) return;
       const pts = polyline.decode(pattern.geometry.points);
       const clippedPts = clipToPatternStops
         ? removePointsInFlexZone(pattern?.stops, pts)
