@@ -12,7 +12,7 @@ const isGeomComplete = routeData => {
     routeData &&
     routeData.patterns &&
     Object.values(routeData.patterns).every(
-      ptn => typeof ptn.geometry !== "undefined"
+      ptn => typeof ptn?.geometry !== "undefined"
     )
   );
 };
