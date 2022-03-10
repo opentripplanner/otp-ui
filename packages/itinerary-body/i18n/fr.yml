@@ -78,7 +78,7 @@ otpUi:
       MICROMOBILITY {Trottinette}
       WALK {Marche}
       other {{modeId}}
-      }{distance, select, 0 {} other { sur {distance}}}{place, select, undefined {} other { vers {place}}}"
+      }{distance, select, 0 {} other { - {distance}}}{place, select, undefined {} other { vers {place}}}"
     TncLeg:
       bookRide: Réserver
       bookRideLater: Attendez jusqu'à {timeMillis, time, short} avant de réserver.
@@ -93,15 +93,15 @@ otpUi:
       durationShort: "{hours, plural, =0 {} other {# h }}{minutes} mn"
   TransitLegBody:
     AlertsBody:
-      # En vigueur à 16:30, aujourd'hui
-      # En vigueur le 3 mars 2019
-      effectiveDate: "En vigueur {includeTime, select,
-        true {à {dateTime, time, short}, }
+      # À partir de 16:30, aujourd'hui
+      # À partir du 3 mars 2019
+      effectiveDate: "À partir {includeTime, select,
+        true {de {dateTime, time, short}, }
         other {}
         }{dayDiff, plural,
         =-1 {hier}
         =0 {aujourd'hui}
         =1 {demain}
-        other {le {dateTime, date, long}}
+        other {du {dateTime, date, long}}
         }"
     tripViewer: Info trajet
