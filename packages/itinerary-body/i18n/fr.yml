@@ -104,3 +104,4 @@ otpUi:
         =1 {demain}
         other {le {dateTime, date, long}}
         }"
+    tripViewer: Info trajet
