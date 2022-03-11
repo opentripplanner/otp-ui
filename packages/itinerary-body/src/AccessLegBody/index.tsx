@@ -3,6 +3,7 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { Config, Leg, TimeOptions } from "@opentripplanner/types";
 import React, { Component, FunctionComponent, ReactElement } from "react";
+import { FormattedMessage } from "react-intl";
 import { VelocityTransitionGroup } from "velocity-react";
 
 import AccessLegSteps from "./access-leg-steps";
@@ -10,7 +11,8 @@ import AccessLegSummary from "./access-leg-summary";
 import LegDiagramPreview from "./leg-diagram-preview";
 import MapillaryButton from "./mapillary-button";
 import RentedVehicleSubheader from "./rented-vehicle-subheader";
-import * as Styled from "../styled";
+import * as S from "../styled";
+import { defaultMessages } from "../util";
 
 import TNCLeg from "./tnc-leg";
 
@@ -96,7 +98,7 @@ class AccessLegBody extends Component<Props, State> {
         {leg && (leg.rentedVehicle || leg.rentedBike || leg.rentedCar) && (
           <RentedVehicleSubheader config={config} leg={leg} />
         )}
-        <Styled.LegBody>
+        <S.LegBody>
           <AccessLegSummary
             config={config}
             leg={leg}
@@ -104,18 +106,25 @@ class AccessLegBody extends Component<Props, State> {
             onSummaryClick={this.onSummaryClick}
             showLegIcon={showLegIcon}
           />
-          <Styled.StepsHeader
+          <S.StepsHeader
             aria-expanded={expanded}
             onClick={this.onStepsHeaderClick}
           >
-            {coreUtils.time.formatDuration(leg.duration)}
+            <FormattedMessage
+              defaultMessage={
+                defaultMessages["otpUi.ItineraryBody.common.durationShort"]
+              }
+              description="Duration in abbreviated hours (if over one hour) and minutes"
+              id="otpUi.ItineraryBody.common.durationShort"
+              values={coreUtils.time.toHoursMinutesSeconds(leg.duration)}
+            />
             {leg.steps && (
               <span>
                 {" "}
-                <Styled.CaretToggle expanded={expanded} />
+                <S.CaretToggle expanded={expanded} />
               </span>
             )}
-          </Styled.StepsHeader>
+          </S.StepsHeader>
           <MapillaryButton
             coords={leg.from}
             clickCallback={mapillaryCallback}
@@ -140,7 +149,7 @@ class AccessLegBody extends Component<Props, State> {
               />
             )}
           </VelocityTransitionGroup>
-        </Styled.LegBody>
+        </S.LegBody>
       </>
     );
   }
@@ -153,6 +162,6 @@ export {
   AccessLegSummary,
   LegDiagramPreview,
   RentedVehicleSubheader,
-  Styled,
+  S as Styled,
   TNCLeg
 };
