@@ -85,6 +85,13 @@ otpUi:
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"
+    travelBy: "Travel by {modeId, select,
+      BICYCLE {bicycle}
+      CAR {car}
+      MICROMOBILITY {e-scooter}
+      WALK {walking}
+      other {{modeId}}
+      }"
   TransitLegBody:
     agencyLogo: "{agencyName} logo"
     AlertsBody:
