@@ -86,6 +86,7 @@ otpUi:
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"
   TransitLegBody:
+    agencyLogo: "{agencyName} logo"
     AlertsBody:
       effectiveDate: "Effective as of {includeTime, select,
         true {{dateTime, time, short}, }
@@ -96,4 +97,12 @@ otpUi:
         =1 {Tomorrow}
         other {{dateTime, date, long}}
         }"
+    alertsHeader: "{alertCount, plural,
+      =1 {# alert}
+      other {# alerts}
+      }"
+    fare: "Fare: {fare}"
+    operatedBy: Service operated by {agencyLink}
+    reservationRequired: Will not run unless requested ahead of time!
     tripViewer: Trip Viewer
+    typicalWait: "Typical wait: {waitTime}"

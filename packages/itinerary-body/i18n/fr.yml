@@ -92,6 +92,7 @@ otpUi:
     common:
       durationShort: "{hours, plural, =0 {} other {# h }}{minutes} mn"
   TransitLegBody:
+    agencyLogo: "Logo de {agencyName}"
     AlertsBody:
       # À partir de 16:30, aujourd'hui
       # À partir du 3 mars 2019
@@ -104,4 +105,13 @@ otpUi:
         =1 {demain}
         other {du {dateTime, date, long}}
         }"
+    alertsHeader: "{alertCount, plural,
+      =0 {# alerte}
+      =1 {# alerte}
+      other {# alertes}
+      }"
+    fare: "Tarif : {fare}"
+    operatedBy: Exploité par {agencyLink}
+    reservationRequired: Non-assuré sans réservation préalable.
     tripViewer: Info trajet
+    typicalWait: "Attente typique : {waitTime}"

@@ -134,6 +134,7 @@
       "endTime": 1573688985000,
       "departureDelay": 0,
       "arrivalDelay": 0,
+      "averageWait": 935,
       "realTime": false,
       "distance": 855.2914091936907,
       "pathway": false,

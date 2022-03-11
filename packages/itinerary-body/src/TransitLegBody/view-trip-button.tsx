@@ -10,8 +10,10 @@ interface TripSection {
   tripId: string;
 }
 
+export type SetViewedTripFunction = (tripSection: TripSection) => void;
+
 type Props = TripSection & {
-  setViewedTrip: (tripSection: TripSection) => void;
+  setViewedTrip: SetViewedTripFunction;
 };
 
 class ViewTripButton extends Component<Props> {
