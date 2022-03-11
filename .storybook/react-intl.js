@@ -12,6 +12,7 @@ const locales = ["en-US", "fr", "unknown"];
 
 /** List of packages that will have localization support in Storybook. */ 
 const packages = [
+  "from-to-location-picker",
   "location-field",
   "trip-details",
   "trip-form"
