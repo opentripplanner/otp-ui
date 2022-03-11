@@ -263,6 +263,7 @@ export interface Leg {
   agencyUrl?: string;
   alerts?: Alert[];
   arrivalDelay: number;
+  averageWait?: number;
   departureDelay: number;
   distance: number;
   dropOffBookingInfo?: FlexDropOffBookingInfo;
