@@ -285,7 +285,9 @@ export interface Leg {
   rentedCar: boolean;
   rentedVehicle: boolean;
   route?: string;
+  routeColor?: string;
   routeId?: string;
+  routeLongName?: string;
   routeType?: number;
   serviceDate?: string;
   startTime: number;
