@@ -288,6 +288,7 @@ export interface Leg {
   routeColor?: string;
   routeId?: string;
   routeLongName?: string;
+  routeShortName?: string;
   routeType?: number;
   serviceDate?: string;
   startTime: number;
