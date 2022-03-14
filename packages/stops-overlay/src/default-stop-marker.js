@@ -36,7 +36,7 @@ export default class StopMarker extends Component {
   render() {
     const { languageConfig, leafletPath, radius, stop } = this.props;
     const { code, id, geometries, lat, lon, name } = stop;
-    const userFacingId = code || id.split(":")[1];
+    const userFacingId = code || id.split(":")[1] || id;
 
     const extraPathOptions = {};
     // We pull the color from the GeoJSON properties instead of directly from
