@@ -85,6 +85,8 @@ otpUi:
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"
+    stayOnBoard: Stay on Board at <strong>{placeName}</strong>
+    stopIdBasic: ID {id}
     travelBy: "Travel by {modeId, select,
       BICYCLE {bicycle}
       CAR {car}
@@ -111,5 +113,8 @@ otpUi:
     fare: "Fare: {fare}"
     operatedBy: Service operated by {agencyLink}
     reservationRequired: Will not run unless requested ahead of time!
+    rideDurationAndStops: "Ride {duration}{numStops, plural, =1 {} other { / # stops}}"
+    routeDescription: "{routeName}{headsign, select,
+      undefined {} other {<toPrefix> to </toPrefix>{headsign}}}"
     tripViewer: Trip Viewer
     typicalWait: "Typical wait: {waitTime}"
