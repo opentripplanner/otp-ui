@@ -38,18 +38,18 @@ otpUi:
       walkVehicle: Emmenez à pied le véhicule le long de {place}
     # TODO: elevator destinations (e.g. "3rd floor") may need to be localized.
     step: "{relativeDirection, select,
-      CIRCLE_CLOCKWISE {Suivez le rond-point par la droite}
-      CIRCLE_COUNTERCLOCKWISE {Suivez le rond-point par la gauche}
+      CIRCLE_CLOCKWISE {Prenez le rond-point par la droite}
+      CIRCLE_COUNTERCLOCKWISE {Prenez le rond-point par la gauche}
       CONTINUE {Continuez}
-      DEPART {Prenez la direction {absoluteDirection, select,
-      EAST {est}
-      NORTH {nord}
-      NORTHEAST {nord-est}
-      NORTHWEST {nord-ouest}
-      SOUTH {sud}
-      SOUTHEAST {sud-est}
-      SOUTHWEST {sud-ouest}
-      WEST {ouest}
+      DEPART {Dirigez-vous vers {absoluteDirection, select,
+      EAST {l'est}
+      NORTH {le nord}
+      NORTHEAST {le nord-est}
+      NORTHWEST {le nord-ouest}
+      SOUTH {le sud}
+      SOUTHEAST {le sud-est}
+      SOUTHWEST {le sud-ouest}
+      WEST {l'ouest}
       other {{absoluteDirection}}
       }}
       ELEVATOR {Prenez l'ascenseur}
