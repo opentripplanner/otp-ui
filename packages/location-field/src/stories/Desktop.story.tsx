@@ -1,4 +1,5 @@
 import React from "react";
+import { ComponentMeta } from "@storybook/react";
 
 import { Ship } from "@styled-icons/fa-solid/Ship";
 import { Bus } from "@styled-icons/fa-solid/Bus";
@@ -8,7 +9,6 @@ import {
   geocoderConfig,
   getCurrentPosition,
   hereGeocoderConfig,
-  intlDecorator,
   layerColorMap,
   onLocationSelected,
   selectedLocation
@@ -42,10 +42,17 @@ const a11yOverrideParameters = {
 };
 
 export default {
-  title: "LocationField/Desktop Context",
   component: LocationField,
-  decorators: [intlDecorator]
-};
+  parameters: {
+    // Hide all controls
+    // (there are no args that the user can interactively change for this component).
+    controls: {
+      hideNoControlsWarning: true,
+      include: []
+    }
+  },
+  title: "LocationField/Desktop Context"
+} as ComponentMeta<typeof LocationField>;
 
 export const Blank = (): JSX.Element => (
   <LocationField

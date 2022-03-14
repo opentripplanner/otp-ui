@@ -9,21 +9,21 @@
 
 otpUi:
   LocationField:
-    beingTypingPrompt: Begin typing to search for locations
-    clearLocation: Clear location
-    currentLocationUnavailable: Current location not available ({error})
-    fetchingLocation: Fetching location...
-    geocoderUnreachable: Could not reach geocoder{error, select, undefined {} other { ({error})}}
-    myPlaces: My Places
-    nearby: Nearby Stops
+    beingTypingPrompt: Tapez pour rechercher des lieux
+    clearLocation: Effacer le lieu
+    currentLocationUnavailable: Position actuelle non disponible ({error})
+    fetchingLocation: Chargement du lieu...
+    geocoderUnreachable: Géocodeur introuvable{error, select, undefined {} other { ({error})}}
+    myPlaces: Mes lieux
+    nearby: Arrêts à proximité
     noResultsFound: >
-      No results found for {input, select,
-        null {your query}
+      Aucun résultat trouvé pour {input, select,
+        null {votre requête}
         other {{input}}
       }
     # Note to translator: This is an implicit plural (as in "Other results").
-    other: Other
-    recentlySearched: Recently Searched
+    other: Autres
+    recentlySearched: Recherches récentes
     stations: Stations
-    stops: Stops
-    useCurrentLocation: Use Current Location
+    stops: Arrêts
+    useCurrentLocation: Utiliser ma position actuelle

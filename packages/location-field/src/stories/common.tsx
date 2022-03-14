@@ -1,10 +1,4 @@
 import { action } from "@storybook/addon-actions";
-import flatten from "flat";
-import { Story as StoryFunction, StoryContext } from "@storybook/react";
-import { IntlProvider } from "react-intl";
-import React from "react";
-
-import englishMessages from "../../i18n/en-US.yml";
 
 export const currentPosition = {
   coords: { latitude: 45.508246, longitude: -122.711574 }
@@ -38,15 +32,4 @@ export const layerColorMap = {
   stops: "purple",
   stations: "navy",
   locality: "orange"
-};
-
-export const intlDecorator = (
-  story: StoryFunction,
-  context: StoryContext
-): React.ReactElement => {
-  return (
-    <IntlProvider locale="en-US" messages={flatten(englishMessages)}>
-      {story({}, context)}
-    </IntlProvider>
-  );
 };

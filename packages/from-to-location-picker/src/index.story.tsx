@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { IntlProvider } from "react-intl";
 import { action } from "@storybook/addon-actions";
 
@@ -14,19 +14,15 @@ export default {
 const onFromClick = action("onFromClick");
 const onToClick = action("onToClick");
 
-export const fromTo = (): React.ReactElement => (
-  <IntlProvider locale="en-US">
-    <FromToLocationPicker onFromClick={onFromClick} onToClick={onToClick} />
-  </IntlProvider>
+export const fromTo = (): ReactElement => (
+  <FromToLocationPicker onFromClick={onFromClick} onToClick={onToClick} />
 );
 
-export const smallTextSansSerif = (): React.ReactElement => (
-  <IntlProvider locale="en-US">
-    <span style={{ fontSize: "75%", fontFamily: "sans-serif" }}>
-      Plan a trip:
-      <FromToLocationPicker onFromClick={onFromClick} onToClick={onToClick} />
-    </span>
-  </IntlProvider>
+export const smallTextSansSerif = (): ReactElement => (
+  <span style={{ fontSize: "75%", fontFamily: "sans-serif" }}>
+    Plan a trip:
+    <FromToLocationPicker onFromClick={onFromClick} onToClick={onToClick} />
+  </span>
 );
 
 export const customStyleAndText = (): React.ReactElement => (
