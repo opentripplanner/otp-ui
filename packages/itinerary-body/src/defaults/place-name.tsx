@@ -47,11 +47,11 @@ export default function PlaceName({
       {place.stopId && !interline && (
         <S.StopIdSpan>
           <FormattedMessage
-            defaultMessage={defaultMessages["otpUi.ItineraryBody.stopIdBasic"]}
+            defaultMessage={defaultMessages["otpUi.TransitLegBody.stopIdBasic"]}
             description="Displays a stop id"
-            id="otpUi.ItineraryBody.stopIdBasic"
+            id="otpUi.TransitLegBody.stopIdBasic"
             values={{
-              id: place.stopId.split(":")[1]
+              stopId: place.stopId.split(":")[1]
             }}
           />
         </S.StopIdSpan>

@@ -92,7 +92,6 @@ otpUi:
     common:
       durationShort: "{hours, plural, =0 {} other {# h }}{minutes} mn"
     stayOnBoard: Restez à bord à <strong>{placeName}</strong>
-    stopIdBasic: Arrêt n°{id}
     travelBy: "Effectué {modeId, select,
       BICYCLE {en vélo}
       CAR {en voiture}
@@ -125,5 +124,8 @@ otpUi:
     rideDurationAndStops: "Trajet : {duration}{numStops, plural, =1 {} other { / # arrêts}}"
     routeDescription: "{routeName}{headsign, select,
       undefined {} other {<toPrefix> vers </toPrefix>{headsign}}}"
+    stopId: Arrêt n°{stopId}
+    stopIdBasic: Arrêt n°{stopId}
+    stopViewer: Info arrêt
     tripViewer: Info trajet
     typicalWait: "Attente typique : {waitTime}"
