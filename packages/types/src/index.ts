@@ -212,6 +212,7 @@ export interface Step {
  */
 export interface Place {
   arrival?: number;
+  bikeShareId?: string;
   departure?: number;
   lat: number;
   lon: number;
