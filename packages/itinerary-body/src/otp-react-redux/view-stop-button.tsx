@@ -7,7 +7,7 @@ import { defaultMessages } from "../util";
 interface Props {
   onStopClick: ({ stopId: string }) => void;
   stopId: string;
-  text: string;
+  text?: string;
 }
 
 export default class ViewStopButton extends Component<Props> {
