@@ -35,8 +35,8 @@ export default class StopMarker extends Component {
 
   render() {
     const { languageConfig, leafletPath, radius, stop } = this.props;
-    const { geometries, id, name, lat, lon } = stop;
-    const idArr = id.split(":");
+    const { code, geometries, id, lat, lon, name } = stop;
+    const userFacingId = code || id.split(":")[1] || id;
 
     const extraPathOptions = {};
     // We pull the color from the GeoJSON properties instead of directly from
@@ -62,7 +62,7 @@ export default class StopMarker extends Component {
             <BaseMapStyled.PopupTitle>{name}</BaseMapStyled.PopupTitle>
             <BaseMapStyled.PopupRow>
               <span>
-                <b>Stop ID:</b> {idArr[1]}
+                <b>Stop ID:</b> {userFacingId}
               </span>
               <S.ViewStopButton onClick={this.onClickView}>
                 {languageConfig.stopViewer || "Stop Viewer"}

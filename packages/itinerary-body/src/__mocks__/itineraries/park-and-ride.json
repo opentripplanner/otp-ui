@@ -1991,7 +1991,7 @@
       "from": {
         "name": "Sunset TC MAX Station",
         "stopId": "TriMet:9969",
-        "stopCode": "9969",
+        "stopCode": "2600",
         "lon": -122.780757,
         "lat": 45.510098,
         "arrival": 1573689944000,
