@@ -116,7 +116,7 @@ otpUi:
     routeDescription: "{routeName}{headsign, select,
       undefined {} other {<toPrefix> to </toPrefix>{headsign}}}"
     stopId: Stop ID {stopId}
-    stopIdBasic: ID {id}
+    stopIdBasic: ID {stopId}
     stopViewer: Stop Viewer
     tripViewer: Trip Viewer
     typicalWait: "Typical wait: {waitTime}"

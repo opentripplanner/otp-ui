@@ -1,9 +1,29 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore FIXME: Create TypeScript types for the icons package.
 import coreUtils from "@opentripplanner/core-utils";
 import LocationIcon from "@opentripplanner/location-icon";
-import PropTypes from "prop-types";
-import React from "react";
+import { Leg } from "@opentripplanner/types";
+import React, { ReactElement } from "react";
 import styled, { css } from "styled-components";
 import { Circle } from "@styled-icons/fa-solid/Circle";
+
+interface Props {
+  /** whether this leg is an interlined-transit leg */
+  interline: boolean;
+  /** whether this place row represents the destination */
+  isDestination: boolean;
+  /** Contains details about leg object that is being displayed */
+  lastLeg?: Leg;
+  /** Contains details about leg object that is being displayed */
+  leg: Leg;
+  /** the index of the leg in the itinerary leg list */
+  legIndex: number;
+}
+
+interface LegLineProps {
+  leg: Leg;
+  routeColor: string;
+}
 
 const cssWalk = css`
   background: radial-gradient(ellipse at center, #87cefa 40%, transparent 10%);
@@ -80,7 +100,7 @@ const IconStacker = styled.span`
   z-index: 20;
 `;
 
-const legLineBackgroundColor = ({ leg, routeColor }) => {
+const legLineBackgroundColor = ({ leg, routeColor }: LegLineProps): string => {
   const { mode } = leg;
   return coreUtils.itinerary.isTransit(mode)
     ? routeColor
@@ -93,7 +113,10 @@ const legLineBackgroundColor = ({ leg, routeColor }) => {
  * Generates background-image CSS for "barber pole" effect
  * @param routeColor  the background color. Assumed to be hex.
  */
-export const barberPole = (routeColor, gap = 5) => `repeating-linear-gradient( 
+export const barberPole = (
+  routeColor: string,
+  gap = 5
+): string => `repeating-linear-gradient( 
   -45deg, 
   ${routeColor}30, 
   ${routeColor}30 ${gap}px, 
@@ -101,7 +124,7 @@ export const barberPole = (routeColor, gap = 5) => `repeating-linear-gradient(
   ${routeColor} ${gap * 2}px
   );`;
 
-const LegLine = styled.div`
+const LegLine = styled.div<LegLineProps>`
   ${props => getLegCSS(props.leg.mode)}
 
   /* Disabling CSS order rules is the only way to ensure styles override each other properly */
@@ -142,7 +165,7 @@ export default function LineColumnContent({
   lastLeg,
   leg,
   legIndex
-}) {
+}: Props): ReactElement {
   let legBadge;
   if (interline) {
     // Interlined. Don't create a leg badge as a stop marker should be inserted
@@ -200,21 +223,3 @@ export default function LineColumnContent({
     </>
   );
 }
-
-LineColumnContent.propTypes = {
-  /** whether this leg is an interlined-transit leg */
-  interline: PropTypes.bool.isRequired,
-  /** whether this place row represents the destination */
-  isDestination: PropTypes.bool.isRequired,
-  /** Contains details about leg object that is being displayed */
-  lastLeg: coreUtils.types.legType,
-  /** Contains details about leg object that is being displayed */
-  leg: coreUtils.types.legType.isRequired,
-  /** the index of the leg in the itinerary leg list */
-  legIndex: PropTypes.number.isRequired
-};
-
-LineColumnContent.defaultProps = {
-  /** can be null if it's the first leg */
-  lastLeg: null
-};

@@ -15,7 +15,7 @@ import {
 } from "../demos";
 import ItineraryBodyDefaultsWrapper from "./itinerary-body-defaults-wrapper";
 import OtpRRLineColumnContent from "../otp-react-redux/line-column-content";
-import OtpRRPlaceName from "../otp-react-redux/place-name";
+import { PlaceName as OtpRRPlaceName } from "../otp-react-redux";
 import OtpRRRouteDescription from "../otp-react-redux/route-description";
 
 // import mock itineraries. These are all trip plan outputs from OTP.
