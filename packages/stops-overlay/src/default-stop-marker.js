@@ -35,7 +35,7 @@ export default class StopMarker extends Component {
 
   render() {
     const { languageConfig, leafletPath, radius, stop } = this.props;
-    const { lat, lon, name, code, geometries, id } = stop;
+    const { code, geometries, id, lat, lon, name } = stop;
     const userFacingId = code || id.split(":")[1] || id;
 
     const extraPathOptions = {};
