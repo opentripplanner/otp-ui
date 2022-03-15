@@ -1,18 +1,13 @@
-import { Leg } from "@opentripplanner/types";
-import React, { FunctionComponent, ReactElement } from "react";
+import React, { ReactElement } from "react";
 
 import RouteLongName from "../defaults/route-long-name";
 import * as S from "../styled";
-
-interface Props {
-  leg: Leg;
-  LegIcon: FunctionComponent<{ leg: Leg }>;
-}
+import { RouteDescriptionProps } from "../types";
 
 export default function RouteDescription({
   leg,
   LegIcon
-}: Props): ReactElement {
+}: RouteDescriptionProps): ReactElement {
   const { routeShortName } = leg;
   return (
     <S.LegDescriptionForTransit>

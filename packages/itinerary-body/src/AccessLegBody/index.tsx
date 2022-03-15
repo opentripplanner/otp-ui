@@ -2,7 +2,7 @@
 // @ts-ignore FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
 import { Config, Leg, TimeOptions } from "@opentripplanner/types";
-import React, { Component, FunctionComponent, ReactElement } from "react";
+import React, { Component, ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 import { VelocityTransitionGroup } from "velocity-react";
 
@@ -15,6 +15,7 @@ import * as S from "../styled";
 import { defaultMessages } from "../util";
 
 import TNCLeg from "./tnc-leg";
+import { LegIconComponent } from "../types";
 
 interface Props {
   config: Config;
@@ -25,7 +26,7 @@ interface Props {
   diagramVisible?: Leg;
   followsTransit?: boolean;
   leg: Leg;
-  LegIcon: FunctionComponent<{ leg: Leg }>;
+  LegIcon: LegIconComponent;
   legIndex: number;
   mapillaryCallback?: (id: string) => void;
   mapillaryKey?: string;

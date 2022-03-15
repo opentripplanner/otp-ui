@@ -1,11 +1,12 @@
 import { Leg } from "@opentripplanner/types";
 import LocationIcon from "@opentripplanner/location-icon";
-import React, { FunctionComponent, ReactElement } from "react";
+import React, { ReactElement } from "react";
 import { useIntl } from "react-intl";
 
 import RouteBadge from "../RouteBadge";
 import * as Styled from "../styled";
 import { defaultMessages } from "../util";
+import { LegIconComponent } from "../types";
 
 interface Props {
   /** Whether this leg is an interlined-transit leg */
@@ -15,7 +16,7 @@ interface Props {
   /** Contains details about leg object that is being displayed */
   leg: Leg;
   /** A component class used to render the icon for a leg */
-  LegIcon: FunctionComponent<{ leg: Leg; title: string; width: string }>; // FIXME refactor.
+  LegIcon: LegIconComponent;
   /** Converts a route's ID to its accepted badge abbreviation */
   toRouteAbbreviation: (route: string | number) => string;
 }

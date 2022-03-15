@@ -12,6 +12,7 @@ import {
 import { VelocityTransitionGroup } from "velocity-react";
 
 import * as S from "../styled";
+import { LegIconComponent, RouteDescriptionProps } from "../types";
 import { defaultMessages } from "../util";
 
 import AlertsBody from "./alerts-body";
@@ -23,14 +24,9 @@ interface Props {
   fare?: Fare;
   intl: IntlShape;
   leg: Leg;
-  LegIcon: FunctionComponent<{ leg: Leg }>; // FIXME refactor.
+  LegIcon: LegIconComponent;
   legIndex: number;
-  RouteDescription: FunctionComponent<{
-    // FIXME Refactor
-    leg: Leg;
-    LegIcon: FunctionComponent<{ leg: Leg }>;
-    transitOperator: TransitOperator;
-  }>;
+  RouteDescription: FunctionComponent<RouteDescriptionProps>;
   setActiveLeg: (legIndex: number, leg: Leg) => void; // FIXME refactor
   setViewedTrip: SetViewedTripFunction;
   showAgencyInfo: boolean;

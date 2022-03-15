@@ -3,15 +3,16 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
 import { Config, Leg } from "@opentripplanner/types";
-import React, { FunctionComponent, ReactElement } from "react";
+import React, { ReactElement } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 
 import * as Styled from "../styled";
+import { LegIconComponent } from "../types";
 
 interface Props {
   config: Config;
   leg: Leg;
-  LegIcon: FunctionComponent<{ leg: Leg }>;
+  LegIcon: LegIconComponent;
   onSummaryClick: () => void;
   showLegIcon: boolean;
 }
