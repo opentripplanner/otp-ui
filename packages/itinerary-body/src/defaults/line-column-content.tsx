@@ -16,6 +16,17 @@ export default function LineColumnContent({
 }: LineColumnContentProps): ReactElement {
   const { mode, route, routeColor, routeLongName, transitLeg } = leg;
   const intl = useIntl();
+  const travelByMessage = intl.formatMessage(
+    {
+      defaultMessage: defaultMessages["otpUi.ItineraryBody.travelBy"],
+      description: "Instructs to travel using a mode",
+      id: "otpUi.ItineraryBody.travelBy"
+    },
+    {
+      modeId: mode
+    }
+  );
+
   return (
     <Styled.LegLine>
       {!isDestination && (
@@ -31,22 +42,12 @@ export default function LineColumnContent({
           />
         )}
         {!interline && !isDestination && !transitLeg && (
-          <Styled.AccessBadge mode={mode} routeColor={routeColor}>
-            <LegIcon
-              leg={leg}
-              title={intl.formatMessage(
-                {
-                  defaultMessage:
-                    defaultMessages["otpUi.ItineraryBody.travelBy"],
-                  description: "Instructs to travel using a mode",
-                  id: "otpUi.ItineraryBody.travelBy"
-                },
-                {
-                  modeId: mode
-                }
-              )}
-              width="66%"
-            />
+          <Styled.AccessBadge
+            aria-label={travelByMessage}
+            mode={mode}
+            routeColor={routeColor}
+          >
+            <LegIcon leg={leg} title={travelByMessage} width="66%" />
           </Styled.AccessBadge>
         )}
         {isDestination && (

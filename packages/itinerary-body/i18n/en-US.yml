@@ -93,6 +93,7 @@ otpUi:
       WALK {walking}
       other {{modeId}}
       }"
+    viewOnMap: View on map
   TransitLegBody:
     agencyLogo: "{agencyName} logo"
     AlertsBody:

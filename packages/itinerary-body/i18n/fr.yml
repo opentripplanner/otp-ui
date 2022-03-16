@@ -99,6 +99,7 @@ otpUi:
       WALK {à pied}
       other {en {modeId}}
       }"
+    viewOnMap: Afficher sur le plan
   TransitLegBody:
     agencyLogo: "Logo de {agencyName}"
     AlertsBody:

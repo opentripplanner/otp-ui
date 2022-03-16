@@ -6,7 +6,7 @@ import React, { Component, ReactElement } from "react";
 import { FormattedMessage, injectIntl, IntlShape } from "react-intl";
 import ReactResizeDetector from "react-resize-detector";
 
-import * as Styled from "../styled";
+import * as S from "../styled";
 
 import { defaultMessages } from "../util";
 
@@ -88,10 +88,12 @@ class LegDiagramPreview extends Component<Props, State> {
     if (leg.distance < 500 || leg.mode === "CAR") return null;
 
     return (
-      <Styled.PreviewContainer active={this.isActive()}>
+      <S.PreviewContainer active={this.isActive()}>
         {/* The preview elevation SVG */}
-        <Styled.PreviewDiagram
-          tabIndex="0"
+        <S.PreviewDiagram
+          onClick={this.onExpandClick}
+          role="button"
+          tabIndex={0}
           // This is shown in a tooltip, so use intl.formatMessage.
           title={intl.formatMessage({
             defaultMessage:
@@ -102,10 +104,8 @@ class LegDiagramPreview extends Component<Props, State> {
               "Tooltip text describing the toggling of the elevation chart.",
             id: "otpUi.AccessLegBody.LegDiagramPreview.toggleElevationChart"
           })}
-          role="button"
-          onClick={this.onExpandClick}
         >
-          <Styled.PreviewDiagramTitle>
+          <S.PreviewDiagramTitle>
             <FormattedMessage
               defaultMessage={
                 defaultMessages[
@@ -115,14 +115,14 @@ class LegDiagramPreview extends Component<Props, State> {
               description="Title text for elevation chart"
               id="otpUi.AccessLegBody.LegDiagramPreview.elevationChart"
             />{" "}
-            <Styled.PreviewDiagramElevationGain>
+            <S.PreviewDiagramElevationGain>
               ↑{this.formatElevation(profile.gain * METERS_TO_FEET)}
               {"  "}
-            </Styled.PreviewDiagramElevationGain>
-            <Styled.PreviewDiagramElevationLoss>
+            </S.PreviewDiagramElevationGain>
+            <S.PreviewDiagramElevationLoss>
               ↓{this.formatElevation(-profile.loss * METERS_TO_FEET)}
-            </Styled.PreviewDiagramElevationLoss>
-          </Styled.PreviewDiagramTitle>
+            </S.PreviewDiagramElevationLoss>
+          </S.PreviewDiagramTitle>
           {profile.points.length > 0 ? (
             generateSvg(profile, width)
           ) : (
@@ -137,8 +137,8 @@ class LegDiagramPreview extends Component<Props, State> {
             />
           )}
           <ReactResizeDetector handleWidth onResize={this.onResize} />
-        </Styled.PreviewDiagram>
-      </Styled.PreviewContainer>
+        </S.PreviewDiagram>
+      </S.PreviewContainer>
     );
   }
 }

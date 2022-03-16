@@ -1,6 +1,8 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore FIXME: Create TypeScript types for the icons package.
 import coreUtils from "@opentripplanner/core-utils";
-import { Config, Fare, Leg, TimeOptions } from "@opentripplanner/types";
-import React, { FunctionComponent, ReactElement } from "react";
+import React, { ReactElement } from "react";
+import { useIntl } from "react-intl";
 
 import DefaultTimeColumnContent from "../defaults/time-column-content";
 import AccessLegBody from "../AccessLegBody";
@@ -8,66 +10,8 @@ import * as S from "../styled";
 import TransitLegBody from "../TransitLegBody";
 
 import AccessibilityRating from "./accessibility-rating";
-import {
-  FrameLegFunction,
-  GradationMap,
-  LegIconComponent,
-  LineColumnContentProps,
-  PlaceNameProps,
-  RouteDescriptionProps,
-  SetActiveLegFunction,
-  SetViewedTripFunction,
-  TimeColumnContentProps,
-  ToRouteAbbreviationFunction,
-  TransitLegSubheaderProps,
-  TransitLegSummaryProps
-} from "../types";
-
-// const messagesType = PropTypes.shape({
-//   mapIconTitle: PropTypes.string.isRequired
-// });
-
-// Many of these props are passed through from the ItineraryBody. See the
-// documentation in that component for more information.
-interface Props {
-  accessibilityScoreGradationMap?: GradationMap;
-  AlertToggleIcon?: FunctionComponent;
-  AlertBodyIcon: FunctionComponent;
-  config: Config;
-  diagramVisible?: Leg;
-  fare: Fare;
-  /** Indicates whether this leg directly follows a transit leg */
-  followsTransit?: boolean;
-  frameLeg: FrameLegFunction;
-  /** whether this place row represents the destination */
-  isDestination: boolean;
-  /** Contains details about the leg object prior to the current one */
-  lastLeg?: Leg;
-  /** Contains details about leg object that is being displayed */
-  leg: Leg;
-  LegIcon: LegIconComponent;
-  /** The index value of this specific leg within the itinerary */
-  legIndex: number;
-  LineColumnContent: FunctionComponent<LineColumnContentProps>;
-  mapillaryCallback?: (id: string) => void;
-  mapillaryKey?: string;
-  messages: any; // FIXME messagesType,
-  PlaceName: FunctionComponent<PlaceNameProps>;
-  RouteDescription: FunctionComponent<RouteDescriptionProps>;
-  setActiveLeg: SetActiveLegFunction;
-  setLegDiagram: (leg: Leg) => void;
-  setViewedTrip: SetViewedTripFunction;
-  showAgencyInfo: boolean;
-  showElevationProfile: boolean;
-  showLegIcon: boolean;
-  showMapButtonColumn: boolean;
-  showViewTripButton: boolean;
-  TimeColumnContent: FunctionComponent<TimeColumnContentProps>;
-  timeOptions: TimeOptions;
-  toRouteAbbreviation: ToRouteAbbreviationFunction;
-  TransitLegSubheader: FunctionComponent<TransitLegSubheaderProps>;
-  TransitLegSummary: FunctionComponent<TransitLegSummaryProps>;
-}
+import { PlaceRowProps } from "../types";
+import { defaultMessages } from "../util";
 
 /*
   TODO: Wondering if it's possible for us to destructure the time
@@ -75,6 +19,8 @@ interface Props {
 */
 export default function PlaceRow({
   accessibilityScoreGradationMap,
+  AlertBodyIcon,
+  AlertToggleIcon,
   config,
   diagramVisible,
   fare,
@@ -88,9 +34,6 @@ export default function PlaceRow({
   LineColumnContent,
   mapillaryCallback,
   mapillaryKey,
-  messages = {
-    mapIconTitle: "View on map"
-  },
   PlaceName,
   RouteDescription,
   setActiveLeg,
@@ -105,10 +48,8 @@ export default function PlaceRow({
   timeOptions,
   toRouteAbbreviation,
   TransitLegSubheader,
-  TransitLegSummary,
-  AlertToggleIcon,
-  AlertBodyIcon
-}: Props): ReactElement {
+  TransitLegSummary
+}: PlaceRowProps): ReactElement {
   // NOTE: Previously there was a check for itineraries that changed vehicles
   // at a single stop, which would render the stop place the same as the
   // interline stop. However, this prevents the user from being able to click
@@ -119,6 +60,12 @@ export default function PlaceRow({
   const place = isDestination ? leg.to : leg.from;
 
   const { longDateFormat, timeFormat } = config.dateTime;
+  const intl = useIntl();
+  const viewOnMapMessage = intl.formatMessage({
+    defaultMessage: defaultMessages["otpUi.ItineraryBody.viewOnMap"],
+    description: "Text describing the view-on-map button",
+    id: "otpUi.ItineraryBody.viewOnMap"
+  });
   return (
     <S.PlaceRowWrapper key={legIndex || "destination-place"}>
       <S.TimeColumn>
@@ -165,6 +112,8 @@ export default function PlaceRow({
             (leg.transitLeg ? (
               /* This is a transit leg */
               <TransitLegBody
+                AlertBodyIcon={AlertBodyIcon}
+                AlertToggleIcon={AlertToggleIcon}
                 config={config}
                 fare={fare}
                 leg={leg}
@@ -183,8 +132,6 @@ export default function PlaceRow({
                   leg,
                   config.transitOperators
                 )}
-                AlertToggleIcon={AlertToggleIcon}
-                AlertBodyIcon={AlertBodyIcon}
               />
             ) : (
               /* This is an access (e.g. walk/bike/etc.) leg */
@@ -209,11 +156,11 @@ export default function PlaceRow({
       {showMapButtonColumn && (
         <S.MapButtonColumn hideBorder={hideBorder.toString()}>
           <S.MapButton
-            aria-label={messages.mapIconTitle}
+            aria-label={viewOnMapMessage}
             onClick={() => frameLeg({ isDestination, leg, legIndex, place })}
-            title={messages.mapIconTitle}
+            title={viewOnMapMessage}
           >
-            <S.MapIcon title={messages.mapIconTitle} />
+            <S.MapIcon title={viewOnMapMessage} />
           </S.MapButton>
         </S.MapButtonColumn>
       )}

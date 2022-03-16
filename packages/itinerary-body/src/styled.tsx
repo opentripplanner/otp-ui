@@ -1,6 +1,5 @@
-import { Map } from "@opentripplanner/icons";
-import PropTypes from "prop-types";
-import React from "react";
+import { Map as S } from "@opentripplanner/icons";
+import React, { ReactElement } from "react";
 import styled from "styled-components";
 import { CaretDown } from "@styled-icons/fa-solid/CaretDown";
 import { CaretUp } from "@styled-icons/fa-solid/CaretUp";
@@ -8,38 +7,19 @@ import { ExclamationTriangle } from "@styled-icons/fa-solid/ExclamationTriangle"
 
 import { toModeBorder, toModeColor, toSafeRouteColor } from "./util";
 
-// ////////////////////////////////////////////////
-// ///////////// Generic components ///////////////
-// ////////////////////////////////////////////////
+interface LightBorderDivProps {
+  hideBorder: string;
+  theme?: {
+    borderColor?: string;
+  };
+}
 
-export const ClearButton = styled.button`
-  background: transparent;
-  color: inherit;
-  border: 0;
-  text-align: inherit;
-  text-decoration: none;
-
-  &:focus {
-    /* What's our hover color for the     se? */
-    background-color: ${props => props.theme.tertiaryColor};
-    outline: 0;
-  }
-
-  &:hover {
-    background-color: ${props => props.theme.hoverColor};
-  }
-
-  &:active {
-    background-color: ${props => props.theme.activeColor};
-  }
-`;
-
-/*
-  This is needed to give the offset border look to stacked place rows
-  Since the value we have access to is "interlineWithPreviousLeg" then we
-  have to show/hide the top border of the div and apply a small offset
-*/
-export const LightBorderDiv = styled.div`
+/**
+ * This component is needed to give the offset border look to stacked place rows
+ * Since the value we have access to is "interlineWithPreviousLeg" then we
+ * have to show/hide the top border of the div and apply a small offset
+ */
+export const LightBorderDiv = styled.div<LightBorderDivProps>`
   border-top-style: solid;
   border-top-width: ${props => (props.hideBorder === "true" ? "0" : "2px")};
   border-top-color: ${props => props.theme.borderColor};
@@ -133,10 +113,13 @@ export const ViewerButton = styled(LinkButton)`
 // /////////////// App components /////////////////
 // ////////////////////////////////////////////////
 
+interface ModeRouteProps {
+  mode: string;
+  routeColor: string;
+}
+
 // TODO: Can we turn this into a more abstract element to inherit from for other badges?
-export const AccessBadge = styled.div.attrs(props => ({
-  "aria-label": `Travel by ${props.mode}`
-}))`
+export const AccessBadge = styled.div<ModeRouteProps>`
   color: black;
   background-color: ${props => toModeColor(props.mode, props.routeColor)};
   border: 2px solid #bbb;
@@ -226,12 +209,12 @@ export const TNCCost = styled.div`
   /* no styling */
 `;
 
-export const CaretToggle = ({ expanded }) =>
-  expanded ? <CaretUp size={15} /> : <CaretDown size={15} />;
+interface CaretToggleProps {
+  expanded: boolean;
+}
 
-CaretToggle.propTypes = {
-  expanded: PropTypes.bool.isRequired
-};
+export const CaretToggle = ({ expanded }: CaretToggleProps): ReactElement =>
+  expanded ? <CaretUp size={15} /> : <CaretDown size={15} />;
 
 export const Destination = styled.div`
   text-align: center;
@@ -243,7 +226,7 @@ export const DetailsColumn = styled(LightBorderDiv)`
   /* overflow: hidden; this is commented out in order to show Intermediate Stop Markers */
 `;
 
-export const InnerLine = styled.div`
+export const InnerLine = styled.div<ModeRouteProps>`
   /* the actual line element */
   border-left: ${props => toModeBorder(props.mode, props.routeColor)};
   height: 100%;
@@ -353,7 +336,11 @@ export const PlaceRowWrapper = styled.div`
   flex-flow: row;
 `;
 
-export const PreviewContainer = styled.div`
+interface PreviewContainerProps {
+  active: boolean;
+}
+
+export const PreviewContainer = styled.div<PreviewContainerProps>`
   background-color: ${props => props.active && "#eee"};
   border-color: ${props => (props.active ? "#d1d5da" : "#fff")};
   border-radius: 5px;
@@ -395,7 +382,7 @@ export const MapButtonColumn = styled(LightBorderDiv)`
   flex: 0 0 25px;
 `;
 
-export const MapIcon = styled(Map).attrs(props => ({
+export const MapIcon = styled(S).attrs(props => ({
   fill: props.theme.secondaryColor,
   width: 15,
   height: 15,
@@ -455,7 +442,15 @@ export const PreviewDiagramTitle = styled.div`
   font-size: small;
 `;
 
-export const RouteBadge = styled.div`
+interface RouteBadgeProps {
+  routeColor: string;
+  theme?: {
+    badgeBorderColor?: string;
+    mainColor?: string;
+  };
+}
+
+export const RouteBadge = styled.div<RouteBadgeProps>`
   text-align: center;
   min-width: 30px;
   min-height: 30px;
