@@ -258,6 +258,7 @@ interface FlexPickupBookingInfo extends FlexBookingInfo {
  * http://otp-docs.ibi-transit.com/api/json_Leg.html
  */
 export interface Leg {
+  accessibilityScore?: number;
   agencyBrandingUrl?: string;
   agencyId?: string;
   agencyName?: string;
