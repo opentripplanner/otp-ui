@@ -139,6 +139,7 @@ export function makeVehicleIcon(
       );
       break;
     case "RAIL":
+    case "SUBWAY":
       icon = isTracked ? (
         <Styled.TrackedRail color={color} colorselected={highlightColor} />
       ) : (
