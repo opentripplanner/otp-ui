@@ -6,16 +6,16 @@ import React, { Component, ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 import { VelocityTransitionGroup } from "velocity-react";
 
+import * as S from "../styled";
+import { LegIconComponent, SetActiveLegFunction } from "../types";
+import { defaultMessages } from "../util";
+
 import AccessLegSteps from "./access-leg-steps";
 import AccessLegSummary from "./access-leg-summary";
 import LegDiagramPreview from "./leg-diagram-preview";
 import MapillaryButton from "./mapillary-button";
 import RentedVehicleSubheader from "./rented-vehicle-subheader";
-import * as S from "../styled";
-import { defaultMessages } from "../util";
-
 import TNCLeg from "./tnc-leg";
-import { LegIconComponent } from "../types";
 
 interface Props {
   config: Config;
@@ -30,7 +30,7 @@ interface Props {
   legIndex: number;
   mapillaryCallback?: (id: string) => void;
   mapillaryKey?: string;
-  setActiveLeg: (legIndex: number, leg: Leg) => void;
+  setActiveLeg: SetActiveLegFunction;
   setLegDiagram: (leg: Leg) => void;
   showElevationProfile: boolean;
   showLegIcon: boolean;

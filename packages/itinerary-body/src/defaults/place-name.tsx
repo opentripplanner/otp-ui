@@ -2,15 +2,16 @@ import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
 import * as S from "../styled";
+import { PlaceNameProps } from "../types";
 import { defaultMessages } from "../util";
 
-import BasicPlaceName, { Props } from "./basic-place-name";
+import BasicPlaceName from "./basic-place-name";
 
 export default function PlaceName({
   config,
   interline,
   place
-}: Props): ReactElement {
+}: PlaceNameProps): ReactElement {
   return (
     <>
       <BasicPlaceName config={config} interline={interline} place={place} />

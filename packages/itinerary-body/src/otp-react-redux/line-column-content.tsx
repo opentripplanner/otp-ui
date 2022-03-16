@@ -7,18 +7,7 @@ import React, { ReactElement } from "react";
 import styled, { css } from "styled-components";
 import { Circle } from "@styled-icons/fa-solid/Circle";
 
-interface Props {
-  /** whether this leg is an interlined-transit leg */
-  interline: boolean;
-  /** whether this place row represents the destination */
-  isDestination: boolean;
-  /** Contains details about leg object that is being displayed */
-  lastLeg?: Leg;
-  /** Contains details about leg object that is being displayed */
-  leg: Leg;
-  /** the index of the leg in the itinerary leg list */
-  legIndex: number;
-}
+import { LineColumnContentProps } from "../types";
 
 interface LegLineProps {
   leg: Leg;
@@ -165,7 +154,7 @@ export default function LineColumnContent({
   lastLeg,
   leg,
   legIndex
-}: Props): ReactElement {
+}: LineColumnContentProps): ReactElement {
   let legBadge;
   if (interline) {
     // Interlined. Don't create a leg badge as a stop marker should be inserted

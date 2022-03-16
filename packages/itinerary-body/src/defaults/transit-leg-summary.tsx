@@ -1,16 +1,12 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore FIXME: Create TypeScript types for the icons package.
 import coreUtils from "@opentripplanner/core-utils";
-import { Leg } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
-import * as Styled from "../styled";
+import * as S from "../styled";
+import { TransitLegSummaryProps } from "../types";
 import { defaultMessages } from "../util";
-
-interface Props {
-  leg: Leg;
-  onClick: () => void;
-  stopsExpanded: boolean;
-}
 
 /**
  * This is a clickable component that summarizes the leg (travel time, stops
@@ -20,9 +16,9 @@ export default function TransitLegSummary({
   leg,
   onClick,
   stopsExpanded
-}: Props): ReactElement {
+}: TransitLegSummaryProps): ReactElement {
   return (
-    <Styled.TransitLegSummary onClick={onClick}>
+    <S.TransitLegSummary onClick={onClick}>
       <FormattedMessage
         defaultMessage={
           defaultMessages["otpUi.TransitLegBody.rideDurationAndStops"]
@@ -43,7 +39,12 @@ export default function TransitLegSummary({
           numStops: (leg.intermediateStops?.length || 0) + 1
         }}
       />
-      {leg.intermediateStops && <Styled.CaretToggle expanded={stopsExpanded} />}
-    </Styled.TransitLegSummary>
+      {leg.intermediateStops && (
+        <>
+          {" "}
+          <S.CaretToggle expanded={stopsExpanded} />
+        </>
+      )}
+    </S.TransitLegSummary>
   );
 }

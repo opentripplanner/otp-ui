@@ -12,12 +12,19 @@ import {
 import { VelocityTransitionGroup } from "velocity-react";
 
 import * as S from "../styled";
-import { LegIconComponent, RouteDescriptionProps } from "../types";
+import {
+  LegIconComponent,
+  RouteDescriptionProps,
+  SetActiveLegFunction,
+  SetViewedTripFunction,
+  TransitLegSubheaderProps,
+  TransitLegSummaryProps
+} from "../types";
 import { defaultMessages } from "../util";
 
 import AlertsBody from "./alerts-body";
 import IntermediateStops from "./intermediate-stops";
-import ViewTripButton, { SetViewedTripFunction } from "./view-trip-button";
+import ViewTripButton from "./view-trip-button";
 
 interface Props {
   config: Config & { language: any }; // FIXME
@@ -27,16 +34,12 @@ interface Props {
   LegIcon: LegIconComponent;
   legIndex: number;
   RouteDescription: FunctionComponent<RouteDescriptionProps>;
-  setActiveLeg: (legIndex: number, leg: Leg) => void; // FIXME refactor
+  setActiveLeg: SetActiveLegFunction;
   setViewedTrip: SetViewedTripFunction;
   showAgencyInfo: boolean;
   showViewTripButton: boolean;
-  TransitLegSubheader?: FunctionComponent<{ languageConfig: any; leg: Leg }>; // FIXME languageConfig
-  TransitLegSummary: FunctionComponent<{
-    leg: Leg;
-    onClick: (arg: any) => void;
-    stopsExpanded: boolean;
-  }>; // FIXME refactor
+  TransitLegSubheader?: FunctionComponent<TransitLegSubheaderProps>;
+  TransitLegSummary: FunctionComponent<TransitLegSummaryProps>;
   transitOperator?: TransitOperator;
   AlertToggleIcon?: FunctionComponent;
   AlertBodyIcon?: FunctionComponent;

@@ -2,15 +2,8 @@ import React, { Component, ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
 import * as S from "../styled";
+import { SetViewedTripFunction, TripSection } from "../types";
 import { defaultMessages } from "../util";
-
-interface TripSection {
-  fromIndex: number;
-  toIndex: number;
-  tripId: string;
-}
-
-export type SetViewedTripFunction = (tripSection: TripSection) => void;
 
 type Props = TripSection & {
   setViewedTrip: SetViewedTripFunction;

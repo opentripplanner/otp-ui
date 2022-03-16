@@ -1,6 +1,6 @@
 import coreUtils from "@opentripplanner/core-utils";
-import PropTypes from "prop-types";
-import React from "react";
+import { Config, Fare, Leg, TimeOptions } from "@opentripplanner/types";
+import React, { FunctionComponent, ReactElement } from "react";
 
 import DefaultTimeColumnContent from "../defaults/time-column-content";
 import AccessLegBody from "../AccessLegBody";
@@ -8,11 +8,72 @@ import * as S from "../styled";
 import TransitLegBody from "../TransitLegBody";
 
 import AccessibilityRating from "./accessibility-rating";
+import {
+  FrameLegFunction,
+  GradationMap,
+  LegIconComponent,
+  LineColumnContentProps,
+  PlaceNameProps,
+  RouteDescriptionProps,
+  SetActiveLegFunction,
+  SetViewedTripFunction,
+  TimeColumnContentProps,
+  ToRouteAbbreviationFunction,
+  TransitLegSubheaderProps,
+  TransitLegSummaryProps
+} from "../types";
+
+// const messagesType = PropTypes.shape({
+//   mapIconTitle: PropTypes.string.isRequired
+// });
+
+// Many of these props are passed through from the ItineraryBody. See the
+// documentation in that component for more information.
+interface Props {
+  accessibilityScoreGradationMap?: GradationMap;
+  AlertToggleIcon?: FunctionComponent;
+  AlertBodyIcon: FunctionComponent;
+  config: Config;
+  diagramVisible?: Leg;
+  fare: Fare;
+  /** Indicates whether this leg directly follows a transit leg */
+  followsTransit?: boolean;
+  frameLeg: FrameLegFunction;
+  /** whether this place row represents the destination */
+  isDestination: boolean;
+  /** Contains details about the leg object prior to the current one */
+  lastLeg?: Leg;
+  /** Contains details about leg object that is being displayed */
+  leg: Leg;
+  LegIcon: LegIconComponent;
+  /** The index value of this specific leg within the itinerary */
+  legIndex: number;
+  LineColumnContent: FunctionComponent<LineColumnContentProps>;
+  mapillaryCallback?: (id: string) => void;
+  mapillaryKey?: string;
+  messages: any; // FIXME messagesType,
+  PlaceName: FunctionComponent<PlaceNameProps>;
+  RouteDescription: FunctionComponent<RouteDescriptionProps>;
+  setActiveLeg: SetActiveLegFunction;
+  setLegDiagram: (leg: Leg) => void;
+  setViewedTrip: SetViewedTripFunction;
+  showAgencyInfo: boolean;
+  showElevationProfile: boolean;
+  showLegIcon: boolean;
+  showMapButtonColumn: boolean;
+  showViewTripButton: boolean;
+  TimeColumnContent: FunctionComponent<TimeColumnContentProps>;
+  timeOptions: TimeOptions;
+  toRouteAbbreviation: ToRouteAbbreviationFunction;
+  TransitLegSubheader: FunctionComponent<TransitLegSubheaderProps>;
+  TransitLegSummary: FunctionComponent<TransitLegSummaryProps>;
+}
+
 /*
   TODO: Wondering if it's possible for us to destructure the time
   preferences from the config object and avoid making the props list so long
 */
-const PlaceRow = ({
+export default function PlaceRow({
   accessibilityScoreGradationMap,
   config,
   diagramVisible,
@@ -27,7 +88,9 @@ const PlaceRow = ({
   LineColumnContent,
   mapillaryCallback,
   mapillaryKey,
-  messages,
+  messages = {
+    mapIconTitle: "View on map"
+  },
   PlaceName,
   RouteDescription,
   setActiveLeg,
@@ -38,14 +101,14 @@ const PlaceRow = ({
   showLegIcon,
   showMapButtonColumn,
   showViewTripButton,
-  TimeColumnContent,
+  TimeColumnContent = DefaultTimeColumnContent,
   timeOptions,
   toRouteAbbreviation,
   TransitLegSubheader,
   TransitLegSummary,
   AlertToggleIcon,
   AlertBodyIcon
-}) => {
+}: Props): ReactElement {
   // NOTE: Previously there was a check for itineraries that changed vehicles
   // at a single stop, which would render the stop place the same as the
   // interline stop. However, this prevents the user from being able to click
@@ -156,75 +219,4 @@ const PlaceRow = ({
       )}
     </S.PlaceRowWrapper>
   );
-};
-
-const messagesType = PropTypes.shape({
-  mapIconTitle: PropTypes.string.isRequired
-});
-
-// A lot of these props are passed through from the ItineraryBody. See the
-// documentation in that component for more information.
-PlaceRow.propTypes = {
-  accessibilityScoreGradationMap: PropTypes.shape({
-    color: PropTypes.string,
-    icon: PropTypes.element,
-    text: PropTypes.string
-  }),
-  AlertToggleIcon: PropTypes.elementType,
-  AlertBodyIcon: PropTypes.elementType,
-  config: coreUtils.types.configType.isRequired,
-  diagramVisible: coreUtils.types.legType,
-  fare: coreUtils.types.fareType,
-  /** Indicates whether this leg directly follows a transit leg */
-  followsTransit: PropTypes.bool,
-  frameLeg: PropTypes.func.isRequired,
-  /** whether this place row represents the destination */
-  isDestination: PropTypes.bool.isRequired,
-  /** Contains details about the leg object prior to the current one */
-  lastLeg: coreUtils.types.legType,
-  /** Contains details about leg object that is being displayed */
-  leg: coreUtils.types.legType.isRequired,
-  LegIcon: PropTypes.elementType.isRequired,
-  /** The index value of this specific leg within the itinerary */
-  legIndex: PropTypes.number.isRequired,
-  LineColumnContent: PropTypes.elementType.isRequired,
-  mapillaryCallback: PropTypes.func,
-  mapillaryKey: PropTypes.string,
-  messages: messagesType,
-  PlaceName: PropTypes.elementType.isRequired,
-  RouteDescription: PropTypes.elementType.isRequired,
-  setActiveLeg: PropTypes.func.isRequired,
-  setLegDiagram: PropTypes.func.isRequired,
-  setViewedTrip: PropTypes.func.isRequired,
-  showAgencyInfo: PropTypes.bool.isRequired,
-  showElevationProfile: PropTypes.bool.isRequired,
-  showLegIcon: PropTypes.bool.isRequired,
-  showMapButtonColumn: PropTypes.bool.isRequired,
-  showViewTripButton: PropTypes.bool.isRequired,
-  TimeColumnContent: PropTypes.elementType,
-  timeOptions: coreUtils.types.timeOptionsType,
-  toRouteAbbreviation: PropTypes.func.isRequired,
-  TransitLegSubheader: PropTypes.elementType,
-  TransitLegSummary: PropTypes.elementType.isRequired
-};
-
-PlaceRow.defaultProps = {
-  accessibilityScoreGradationMap: undefined,
-  AlertToggleIcon: undefined,
-  AlertBodyIcon: undefined,
-  diagramVisible: null,
-  fare: null,
-  followsTransit: false,
-  // can be null if this is the origin place
-  lastLeg: null,
-  mapillaryCallback: null,
-  mapillaryKey: null,
-  messages: {
-    mapIconTitle: "View on map"
-  },
-  TimeColumnContent: DefaultTimeColumnContent,
-  timeOptions: null,
-  TransitLegSubheader: undefined
-};
-
-export default PlaceRow;
+}

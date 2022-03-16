@@ -1,11 +1,7 @@
-import { Leg } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedTime } from "react-intl";
 
-interface Props {
-  isDestination: boolean;
-  leg: Leg;
-}
+import { TimeColumnContentProps } from "../types";
 
 /**
  * This is the default component for displaying the time with the specified format
@@ -14,7 +10,7 @@ interface Props {
 export default function TimeColumnContent({
   isDestination,
   leg
-}: Props): ReactElement {
+}: TimeColumnContentProps): ReactElement {
   const time = isDestination ? leg.endTime : leg.startTime;
   return time && <FormattedTime value={time} />;
 }
