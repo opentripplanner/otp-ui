@@ -1,4 +1,4 @@
-import { Map as S } from "@opentripplanner/icons";
+import { Map } from "@opentripplanner/icons";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 import { CaretDown } from "@styled-icons/fa-solid/CaretDown";
@@ -382,7 +382,7 @@ export const MapButtonColumn = styled(LightBorderDiv)`
   flex: 0 0 25px;
 `;
 
-export const MapIcon = styled(S).attrs(props => ({
+export const MapIcon = styled(Map).attrs(props => ({
   fill: props.theme.secondaryColor,
   width: 15,
   height: 15,
