@@ -59,7 +59,6 @@ export default function PlaceRow({
   const hideBorder = interline || !legIndex;
   const place = isDestination ? leg.to : leg.from;
 
-  const { longDateFormat, timeFormat } = config.dateTime;
   const intl = useIntl();
   const viewOnMapMessage = intl.formatMessage({
     defaultMessage: defaultMessages["otpUi.ItineraryBody.viewOnMap"],
@@ -70,11 +69,7 @@ export default function PlaceRow({
     <S.PlaceRowWrapper key={legIndex || "destination-place"}>
       <S.TimeColumn>
         {/* Custom rendering of the departure/arrival time of the specified leg. */}
-        <TimeColumnContent
-          isDestination={isDestination}
-          leg={leg}
-          timeOptions={timeOptions}
-        />
+        <TimeColumnContent isDestination={isDestination} leg={leg} />
         {!isDestination && leg.accessibilityScore && (
           <AccessibilityRating
             gradationMap={accessibilityScoreGradationMap}
@@ -118,13 +113,11 @@ export default function PlaceRow({
                 leg={leg}
                 LegIcon={LegIcon}
                 legIndex={legIndex}
-                setActiveLeg={setActiveLeg}
-                longDateFormat={longDateFormat}
                 RouteDescription={RouteDescription}
+                setActiveLeg={setActiveLeg}
                 setViewedTrip={setViewedTrip}
                 showAgencyInfo={showAgencyInfo}
                 showViewTripButton={showViewTripButton}
-                timeFormat={timeFormat}
                 TransitLegSubheader={TransitLegSubheader}
                 TransitLegSummary={TransitLegSummary}
                 transitOperator={coreUtils.route.getTransitOperatorFromLeg(

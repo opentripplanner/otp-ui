@@ -32,7 +32,6 @@ export type ToRouteAbbreviationFunction = (route: string | number) => string;
 export interface TimeColumnContentProps {
   isDestination: boolean;
   leg: Leg;
-  timeOptions: TimeOptions;
 }
 
 export interface LineColumnContentProps {

@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore FIXME: Create TypeScript types for the icons package.
 import coreUtils from "@opentripplanner/core-utils";
-import { Place } from "@opentripplanner/types";
+import { Place, TimeOptions } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { action } from "@storybook/addon-actions";
 import styled from "styled-components";
@@ -16,6 +16,10 @@ import {
   TransitLegSummaryProps
 } from "../types";
 
+type TimeColumnProps = TimeColumnContentProps & {
+  timeOptions: TimeOptions;
+};
+
 export function CustomPlaceName({ place }: { place: Place }): string {
   return `🎉✨🎊 ${place.name} 🎉✨🎊`;
 }
@@ -28,7 +32,7 @@ export function CustomTimeColumnContent({
   isDestination,
   leg,
   timeOptions
-}: TimeColumnContentProps): ReactElement {
+}: TimeColumnProps): ReactElement {
   const time = isDestination ? leg.endTime : leg.startTime;
 
   return (
