@@ -1,7 +1,4 @@
-import coreUtils from "@opentripplanner/core-utils";
-import { ClassicLegIcon } from "@opentripplanner/icons";
-import PropTypes from "prop-types";
-import React from "react";
+import React, { ReactElement } from "react";
 import { Bomb } from "@styled-icons/fa-solid/Bomb";
 import { Bolt } from "@styled-icons/fa-solid/Bolt";
 import styled from "styled-components";
@@ -10,13 +7,9 @@ import ItineraryBody from "..";
 import {
   CustomPlaceName,
   customToRouteAbbreviation,
-  CustomTransitLegSummary,
-  WrappedOtpRRTransitLegSubheader
+  CustomTransitLegSummary
 } from "../demos";
 import ItineraryBodyDefaultsWrapper from "./itinerary-body-defaults-wrapper";
-import OtpRRLineColumnContent from "../otp-react-redux/line-column-content";
-import { PlaceName as OtpRRPlaceName } from "../otp-react-redux";
-import OtpRRRouteDescription from "../otp-react-redux/route-description";
 
 // import mock itineraries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("../__mocks__/itineraries/bike-only.json");
@@ -34,42 +27,8 @@ const walkTransitWalkTransitWalkItinerary = require("../__mocks__/itineraries/wa
 const fareComponentsItinerary = require("../__mocks__/itineraries/fare-components.json");
 const walkTransitWalkTransitWalkA11yItinerary = require("../__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json");
 
-function OtpRRItineraryBodyWrapper({
-  itinerary,
-  showRouteFares,
-  TimeColumnContent
-}) {
-  return (
-    <ItineraryBodyDefaultsWrapper
-      itinerary={itinerary}
-      LegIcon={ClassicLegIcon}
-      LineColumnContent={OtpRRLineColumnContent}
-      PlaceName={OtpRRPlaceName}
-      RouteDescription={OtpRRRouteDescription}
-      showAgencyInfo
-      showLegIcon
-      showMapButtonColumn={false}
-      showRouteFares={showRouteFares}
-      showViewTripButton
-      styledItinerary="otp-rr"
-      TimeColumnContent={TimeColumnContent}
-      TransitLegSubheader={WrappedOtpRRTransitLegSubheader}
-    />
-  );
-}
-
 const a11yOverrideParameters = {
   a11y: { config: { rules: [{ id: "color-contrast", reviewOnFail: true }] } }
-};
-
-OtpRRItineraryBodyWrapper.propTypes = {
-  itinerary: coreUtils.types.itineraryType.isRequired,
-  showRouteFares: PropTypes.bool,
-  TimeColumnContent: PropTypes.elementType
-};
-OtpRRItineraryBodyWrapper.defaultProps = {
-  showRouteFares: undefined,
-  TimeColumnContent: undefined
 };
 
 export default {
@@ -77,25 +36,25 @@ export default {
   component: ItineraryBody
 };
 
-export const WalkOnlyItinerary = () => (
+export const WalkOnlyItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper itinerary={walkOnlyItinerary} />
 );
 
-export const BikeOnlyItinerary = () => (
+export const BikeOnlyItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper itinerary={bikeOnlyItinerary} />
 );
 
-export const WalkTransitWalkItinerary = () => (
+export const WalkTransitWalkItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper itinerary={walkTransitWalkItinerary} />
 );
 
-export const WalkTransitTransferWithA11yItinerary = () => (
+export const WalkTransitTransferWithA11yItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     itinerary={walkTransitWalkTransitWalkA11yItinerary}
   />
 );
 
-export const StyledWalkTransitWalkItinerary = () => (
+export const StyledWalkTransitWalkItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     itinerary={walkTransitWalkItinerary}
     styledItinerary="pink-legs"
@@ -104,28 +63,28 @@ export const StyledWalkTransitWalkItinerary = () => (
 // Custom styling for this story only, not in production
 StyledWalkTransitWalkItinerary.parameters = a11yOverrideParameters;
 
-export const WalkTransitWalkItineraryWithAgencyInformation = () => (
+export const WalkTransitWalkItineraryWithAgencyInformation = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     itinerary={walkTransitWalkItinerary}
     showAgencyInfo
   />
 );
 
-export const WalkTransitWalkItineraryWithCustomTransitLegSummaryComponent = () => (
+export const WalkTransitWalkItineraryWithCustomTransitLegSummaryComponent = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     itinerary={walkTransitWalkItinerary}
     TransitLegSummary={CustomTransitLegSummary}
   />
 );
 
-export const WalkTransitWalkItineraryWithCustomPlaceNameComponent = () => (
+export const WalkTransitWalkItineraryWithCustomPlaceNameComponent = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     itinerary={walkTransitWalkItinerary}
     PlaceName={CustomPlaceName}
   />
 );
 
-export const WalkTransitWalkItineraryWithCustomViewTripButtonActivatedAndCustomRouteAbbreviation = () => (
+export const WalkTransitWalkItineraryWithCustomViewTripButtonActivatedAndCustomRouteAbbreviation = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     itinerary={walkTransitWalkItinerary}
     showViewTripButton
@@ -133,57 +92,57 @@ export const WalkTransitWalkItineraryWithCustomViewTripButtonActivatedAndCustomR
   />
 );
 
-export const BikeTransitBikeItinerary = () => (
+export const BikeTransitBikeItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper itinerary={bikeTransitBikeItinerary} />
 );
 
-export const WalkInterlinedTransitItinerary = () => (
+export const WalkInterlinedTransitItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper itinerary={walkInterlinedTransitItinerary} />
 );
 // Custom styling for this story only, not in production
 WalkInterlinedTransitItinerary.parameters = a11yOverrideParameters;
 
-export const WalkTransitTransferItinerary = () => (
+export const WalkTransitTransferItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     itinerary={walkTransitWalkTransitWalkItinerary}
   />
 );
 
-export const BikeRentalItinerary = () => (
+export const BikeRentalItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper itinerary={bikeRentalItinerary} />
 );
 
-export const EScooterRentalItinerary = () => (
+export const EScooterRentalItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper itinerary={eScooterRentalItinerary} />
 );
 
-export const ParkAndRideItinerary = () => (
+export const ParkAndRideItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper itinerary={parkAndRideItinerary} />
 );
 
-export const BikeRentalTransitItinerary = () => (
+export const BikeRentalTransitItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     itinerary={bikeRentalTransitBikeRentalItinerary}
   />
 );
 
-export const EScooterRentalTransitItinerary = () => (
+export const EScooterRentalTransitItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     itinerary={eScooterRentalTransiteScooterRentalItinerary}
   />
 );
 
-export const TncTransitItinerary = () => (
+export const TncTransitItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper itinerary={tncTransitTncItinerary} />
 );
-export const IndividualLegFareComponents = () => (
+export const IndividualLegFareComponents = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     itinerary={fareComponentsItinerary}
     showRouteFares
   />
 );
 
-export const CustomAlertIconsItinerary = () => (
+export const CustomAlertIconsItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     itinerary={walkTransitWalkItinerary}
     AlertToggleIcon={styled(Bolt).attrs({ size: 15 })``}

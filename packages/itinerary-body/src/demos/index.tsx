@@ -1,6 +1,6 @@
 import coreUtils from "@opentripplanner/core-utils";
-import PropTypes from "prop-types";
-import React from "react";
+import { Place } from "@opentripplanner/types";
+import React, { ReactElement } from "react";
 import { action } from "@storybook/addon-actions";
 import styled from "styled-components";
 import { ExclamationTriangle } from "@styled-icons/fa-solid/ExclamationTriangle";
@@ -8,8 +8,13 @@ import { ExclamationTriangle } from "@styled-icons/fa-solid/ExclamationTriangle"
 import ItineraryBody from "..";
 import OtpRRTransitLegSubheader from "../otp-react-redux/transit-leg-subheader";
 import * as ItineraryBodyClasses from "../styled";
+import {
+  TimeColumnContentProps,
+  TransitLegSubheaderProps,
+  TransitLegSummaryProps
+} from "../types";
 
-export function CustomPlaceName({ place }) {
+export function CustomPlaceName({ place }: { place: Place }): string {
   return `🎉✨🎊 ${place.name} 🎉✨🎊`;
 }
 
@@ -17,7 +22,11 @@ export function CustomPlaceName({ place }) {
  * Custom component, for illustration purposes only, for displaying the time and other info
  * of the given leg in the time column of the ItineraryBody -> PlaceRow component.
  */
-export function CustomTimeColumnContent({ isDestination, leg, timeOptions }) {
+export function CustomTimeColumnContent({
+  isDestination,
+  leg,
+  timeOptions
+}: TimeColumnContentProps): ReactElement {
   const time = isDestination ? leg.endTime : leg.startTime;
 
   return (
@@ -34,24 +43,18 @@ export function CustomTimeColumnContent({ isDestination, leg, timeOptions }) {
   );
 }
 
-CustomTimeColumnContent.propTypes = {
-  isDestination: PropTypes.bool.isRequired,
-  leg: coreUtils.types.legType.isRequired,
-  timeOptions: coreUtils.types.timeOptionsType
-};
-
-CustomTimeColumnContent.defaultProps = {
-  timeOptions: null
-};
-
-export function customToRouteAbbreviation(route) {
+export function customToRouteAbbreviation(route: number | string): string {
   if (route.toString().length < 3) {
-    return route;
+    return route.toString();
   }
   return undefined;
 }
 
-export function CustomTransitLegSummary({ leg, onClick, stopsExpanded }) {
+export function CustomTransitLegSummary({
+  leg,
+  onClick,
+  stopsExpanded
+}: TransitLegSummaryProps): ReactElement {
   return (
     /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
     <div onClick={onClick}>
@@ -67,12 +70,6 @@ export function CustomTransitLegSummary({ leg, onClick, stopsExpanded }) {
     </div>
   );
 }
-
-CustomTransitLegSummary.propTypes = {
-  leg: coreUtils.types.legType.isRequired,
-  onClick: PropTypes.func.isRequired,
-  stopsExpanded: PropTypes.bool.isRequired
-};
 
 export const StyledItineraryBody = styled(ItineraryBody)`
   ${ItineraryBodyClasses.LegBody} {
@@ -90,7 +87,10 @@ export const StyledItineraryBody = styled(ItineraryBody)`
   }
 `;
 
-export function WrappedOtpRRTransitLegSubheader({ languageConfig, leg }) {
+export function WrappedOtpRRTransitLegSubheader({
+  languageConfig,
+  leg
+}: TransitLegSubheaderProps): ReactElement {
   return (
     <OtpRRTransitLegSubheader
       languageConfig={languageConfig}
@@ -99,8 +99,3 @@ export function WrappedOtpRRTransitLegSubheader({ languageConfig, leg }) {
     />
   );
 }
-
-WrappedOtpRRTransitLegSubheader.propTypes = {
-  languageConfig: coreUtils.types.languageConfigType.isRequired,
-  leg: coreUtils.types.legType.isRequired
-};

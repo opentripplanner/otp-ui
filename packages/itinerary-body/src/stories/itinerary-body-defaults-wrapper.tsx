@@ -1,7 +1,6 @@
-import coreUtils from "@opentripplanner/core-utils";
 import { TriMetLegIcon } from "@opentripplanner/icons";
-import PropTypes from "prop-types";
-import React, { Component } from "react";
+import { Leg } from "@opentripplanner/types";
+import React, { Component, ReactElement } from "react";
 import { action } from "@storybook/addon-actions";
 
 import ItineraryBody from "..";
@@ -11,34 +10,48 @@ import DefaultRouteDescription from "../defaults/route-description";
 import DefaultTransitLegSummary from "../defaults/transit-leg-summary";
 import { StyledItineraryBody } from "../demos";
 import OtpRRStyledItineraryBody from "../otp-react-redux/itinerary-body";
+import { ItineraryBodyProps } from "../types";
 
 const config = require("../__mocks__/config.json");
 
-export default class ItineraryBodyDefaultsWrapper extends Component {
-  constructor() {
-    super();
-    this.state = {};
+type Props = ItineraryBodyProps & {
+  styledItinerary?: string;
+};
+
+interface State {
+  diagramVisible: Leg;
+}
+
+export default class ItineraryBodyDefaultsWrapper extends Component<
+  Props,
+  State
+> {
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      diagramVisible: null
+    };
   }
 
-  setLegDiagram = leg => {
+  setLegDiagram = (leg: Leg): void => {
     this.setState({ diagramVisible: leg });
   };
 
-  render() {
+  render(): ReactElement {
     const {
       itinerary,
-      LegIcon,
+      LegIcon = TriMetLegIcon,
       LineColumnContent,
       PlaceName,
       RouteDescription,
       showAgencyInfo,
       showLegIcon,
-      showMapButtonColumn,
+      showMapButtonColumn = true,
       showRouteFares,
       showViewTripButton,
       styledItinerary,
       TimeColumnContent,
-      toRouteAbbreviation,
+      toRouteAbbreviation = r => r.toString().substr(0, 2),
       TransitLegSubheader,
       TransitLegSummary,
       AlertToggleIcon,
@@ -58,6 +71,8 @@ export default class ItineraryBodyDefaultsWrapper extends Component {
     }
     return (
       <ItineraryBodyComponent
+        AlertBodyIcon={AlertBodyIcon}
+        AlertToggleIcon={AlertToggleIcon}
         config={config}
         diagramVisible={diagramVisible}
         frameLeg={action("frameLeg")}
@@ -81,48 +96,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component {
         toRouteAbbreviation={toRouteAbbreviation}
         TransitLegSubheader={TransitLegSubheader}
         TransitLegSummary={TransitLegSummary || DefaultTransitLegSummary}
-        AlertToggleIcon={AlertToggleIcon}
-        AlertBodyIcon={AlertBodyIcon}
       />
     );
   }
 }
-
-ItineraryBodyDefaultsWrapper.propTypes = {
-  itinerary: coreUtils.types.itineraryType.isRequired,
-  LegIcon: PropTypes.elementType,
-  LineColumnContent: PropTypes.elementType,
-  PlaceName: PropTypes.elementType,
-  RouteDescription: PropTypes.elementType,
-  showAgencyInfo: PropTypes.bool,
-  showLegIcon: PropTypes.bool,
-  showMapButtonColumn: PropTypes.bool,
-  showRouteFares: PropTypes.bool,
-  showViewTripButton: PropTypes.bool,
-  styledItinerary: PropTypes.string,
-  TimeColumnContent: PropTypes.elementType,
-  toRouteAbbreviation: PropTypes.func,
-  TransitLegSubheader: PropTypes.elementType,
-  TransitLegSummary: PropTypes.elementType,
-  AlertToggleIcon: PropTypes.elementType,
-  AlertBodyIcon: PropTypes.elementType
-};
-
-ItineraryBodyDefaultsWrapper.defaultProps = {
-  LegIcon: TriMetLegIcon,
-  LineColumnContent: undefined,
-  PlaceName: undefined,
-  RouteDescription: undefined,
-  showAgencyInfo: false,
-  showLegIcon: false,
-  showMapButtonColumn: true,
-  showRouteFares: false,
-  showViewTripButton: false,
-  styledItinerary: null,
-  TimeColumnContent: undefined,
-  toRouteAbbreviation: r => r.toString().substr(0, 2),
-  TransitLegSubheader: undefined,
-  TransitLegSummary: undefined,
-  AlertToggleIcon: undefined,
-  AlertBodyIcon: undefined
-};

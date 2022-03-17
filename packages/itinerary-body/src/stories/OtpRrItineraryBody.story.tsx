@@ -1,7 +1,6 @@
-import coreUtils from "@opentripplanner/core-utils";
 import { ClassicLegIcon } from "@opentripplanner/icons";
-import PropTypes from "prop-types";
-import React from "react";
+import { Itinerary } from "@opentripplanner/types";
+import React, { ReactElement } from "react";
 
 import ItineraryBody from "..";
 import {
@@ -12,6 +11,7 @@ import ItineraryBodyDefaultsWrapper from "./itinerary-body-defaults-wrapper";
 import OtpRRLineColumnContent from "../otp-react-redux/line-column-content";
 import { PlaceName as OtpRRPlaceName } from "../otp-react-redux";
 import OtpRRRouteDescription from "../otp-react-redux/route-description";
+import { TimeColumnContentProps } from "../types";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("../__mocks__/itineraries/bike-only.json");
@@ -40,11 +40,17 @@ alerts[1].effectiveStartDate = now - 24 * 3600000; // Yesterday
 // (Adding 24 hours so that a timestamp occurs next day may not be enough).
 alerts[2].effectiveStartDate = now + 36 * 3600000; // Tomorrow
 
+interface StoryWrapperProps {
+  itinerary: Itinerary;
+  showRouteFares: boolean;
+  TimeColumnContent: FunctionComponent<TimeColumnContentProps>;
+}
+
 function OtpRRItineraryBodyWrapper({
   itinerary,
   showRouteFares,
   TimeColumnContent
-}) {
+}: StoryWrapperProps): ReactElement {
   return (
     <ItineraryBodyDefaultsWrapper
       itinerary={itinerary}
@@ -64,85 +70,75 @@ function OtpRRItineraryBodyWrapper({
   );
 }
 
-OtpRRItineraryBodyWrapper.propTypes = {
-  itinerary: coreUtils.types.itineraryType.isRequired,
-  showRouteFares: PropTypes.bool,
-  TimeColumnContent: PropTypes.elementType
-};
-OtpRRItineraryBodyWrapper.defaultProps = {
-  showRouteFares: undefined,
-  TimeColumnContent: undefined
-};
-
 export default {
   title: "ItineraryBody/otp-react-redux",
   component: ItineraryBody
 };
 
-export const WalkOnlyItinerary = () => (
+export const WalkOnlyItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkOnlyItinerary} />
 );
 
-export const BikeOnlyItinerary = () => (
+export const BikeOnlyItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={bikeOnlyItinerary} />
 );
 
-export const WalkTransitWalkItinerary = () => (
+export const WalkTransitWalkItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkItinerary} />
 );
 
-export const BikeTransitBikeItinerary = () => (
+export const BikeTransitBikeItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={bikeTransitBikeItinerary} />
 );
 
-export const WalkInterlinedTransitItinerary = () => (
+export const WalkInterlinedTransitItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkInterlinedTransitItinerary} />
 );
 
-export const WalkTransitTransferItinerary = () => (
+export const WalkTransitTransferItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkTransitWalkItinerary} />
 );
 
-export const WalkTransitTransferWithA11yItinerary = () => (
+export const WalkTransitTransferWithA11yItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
     itinerary={walkTransitWalkTransitWalkA11yItinerary}
   />
 );
 
-export const BikeRentalItinerary = () => (
+export const BikeRentalItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={bikeRentalItinerary} />
 );
 
-export const EScooterRentalItinerary = () => (
+export const EScooterRentalItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={eScooterRentalItinerary} />
 );
 
-export const ParkAndRideItinerary = () => (
+export const ParkAndRideItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={parkAndRideItinerary} />
 );
 
-export const BikeRentalTransitItinerary = () => (
+export const BikeRentalTransitItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={bikeRentalTransitBikeRentalItinerary} />
 );
 
-export const EScooterRentalTransitItinerary = () => (
+export const EScooterRentalTransitItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
     itinerary={eScooterRentalTransiteScooterRentalItinerary}
   />
 );
 
-export const TncTransitItinerary = () => (
+export const TncTransitItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={tncTransitTncItinerary} />
 );
 
-export const IndividualLegFareComponents = () => (
+export const IndividualLegFareComponents = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
     itinerary={fareComponentsItinerary}
     showRouteFares
   />
 );
 
-export const CustomTimeColumn = () => (
+export const CustomTimeColumn = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
     itinerary={tncTransitTncItinerary}
     TimeColumnContent={CustomTimeColumnContent}
