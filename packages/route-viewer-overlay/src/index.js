@@ -12,7 +12,7 @@ const isGeomComplete = routeData => {
     routeData &&
     routeData.patterns &&
     Object.values(routeData.patterns).every(
-      ptn => typeof ptn.geometry !== "undefined"
+      ptn => typeof ptn?.geometry !== "undefined"
     )
   );
 };
@@ -53,19 +53,17 @@ class RouteViewerOverlay extends MapLayer {
   // TODO: determine why the default MapLayer componentWillUnmount() method throws an error
   componentWillUnmount() {}
 
-  componentDidUpdate(prevProps) {
-    // if pattern geometry just finished populating, update the map points
-    if (
-      !isGeomComplete(prevProps.routeData) &&
-      isGeomComplete(this.props.routeData)
-    ) {
+  componentDidUpdate() {
+    // if pattern geometry updated, update the map points
+    if (this.props.allowMapCentering && isGeomComplete(this.props.routeData)) {
       const allPoints = Object.values(this.props.routeData.patterns).reduce(
         (acc, ptn) => {
           return acc.concat(polyline.decode(ptn.geometry.points));
         },
         []
       );
-      this.props.leaflet.map.fitBounds(allPoints);
+      if (allPoints.length > 0 && this.props.leaflet.map)
+        this.props.leaflet.map.fitBounds(allPoints);
     }
   }
 
@@ -81,7 +79,7 @@ class RouteViewerOverlay extends MapLayer {
     const routeColor = routeData.color ? `#${routeData.color}` : path.color;
     const segments = [];
     Object.values(routeData.patterns).forEach(pattern => {
-      if (!pattern.geometry) return;
+      if (!pattern?.geometry) return;
       const pts = polyline.decode(pattern.geometry.points);
       const clippedPts = clipToPatternStops
         ? removePointsInFlexZone(pattern?.stops, pts)
@@ -109,6 +107,10 @@ class RouteViewerOverlay extends MapLayer {
 }
 
 RouteViewerOverlay.propTypes = {
+  /**
+   * This boolean value allows disabling of map centering and panning.
+   */
+  allowMapCentering: PropTypes.bool,
   /**
    * If pattern stops contain polygons, we can request that the routes are not drawn
    * inside of these polygons by setting this prop to true. If true, the layer will
@@ -150,6 +152,7 @@ RouteViewerOverlay.propTypes = {
 };
 
 RouteViewerOverlay.defaultProps = {
+  allowMapCentering: true,
   path: {
     color: "#00bfff",
     opacity: 1,
