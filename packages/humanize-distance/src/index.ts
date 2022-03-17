@@ -11,25 +11,21 @@ export function humanizeDistanceStringImperial(
 ): string {
   const feet = meters * 3.28084;
 
-  let unit;
-  let value;
-  let unitIfNoIntl;
+  let unit = "mile";
+  let unitIfNoIntl = abbreviate ? "mi" : "miles";
+  let value = roundToOneDecimalPlace(feet / 5280);
 
   if (feet < 528) {
     unit = "foot";
     unitIfNoIntl = abbreviate ? "ft" : "feet";
     value = Math.round(feet);
-  } else {
-    unit = "mile";
-    unitIfNoIntl = abbreviate ? "mi" : "miles";
-    value = roundToOneDecimalPlace(feet / 5280);
   }
 
   return intl
     ? intl.formatNumber(value, {
+        style: "unit",
         unit,
-        unitDisplay: abbreviate ? "short" : "long",
-        style: "unit"
+        unitDisplay: abbreviate ? "short" : "long"
       })
     : `${value} ${unitIfNoIntl}`;
 }
@@ -39,26 +35,26 @@ export function humanizeDistanceStringMetric(
   intl?: IntlShape
 ): string {
   const km = meters / 1000;
-  let unit = "kilometer";
-  let shortUnit = "km";
-  let value;
-  if (km > 100) {
-    // 100 km => 999999999 km
-    value = Math.round(km);
-  } else if (km > 1) {
-    // 1.1 km => 99.9 km
-    value = roundToOneDecimalPlace(km);
-  } else {
-    unit = "meter";
-    shortUnit = "m";
-    value = Math.round(meters);
+  let unit = "meter";
+  let shortUnit = "m";
+  let value = Math.round(meters);
+
+  if (km > 1) {
+    unit = "kilometer";
+    shortUnit = "km";
+    value =
+      km > 100
+        ? // 100 km and over
+          Math.round(km)
+        : // 1.1 km => 99.9 km
+          roundToOneDecimalPlace(km);
   }
 
   return intl
     ? intl.formatNumber(value, {
+        style: "unit",
         unit,
-        unitDisplay: "short",
-        style: "unit"
+        unitDisplay: "short"
       })
     : `${value} ${shortUnit}`;
 }

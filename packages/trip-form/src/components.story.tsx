@@ -17,14 +17,14 @@ const onClick = action("onClick");
 const onQueryParamChange = action("onQueryParamChange");
 
 const decorator = (Story: StoryType): ReactElement => (
-  <div>
+  <>
     <p>Plain</p>
     <div>
       <Story />
     </div>
     <p>Styled</p>
     <div>{trimet(<Story />)}</div>
-  </div>
+  </>
 );
 
 /**

@@ -23,7 +23,7 @@ export default function TransitLegSubheader({
         description="Displays the stop ID"
         id="otpUi.TransitLegBody.stopId"
         values={{
-          stopId: from.stopId.split(":")[1]
+          stopId: from.stopCode || from.stopId.split(":")[1]
         }}
       />
       {!isFlex && (

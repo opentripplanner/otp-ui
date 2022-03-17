@@ -255,6 +255,8 @@ export const TncTransitItineraryWithCustomMessagesAndDetails = makeStory(
     itinerary: tncTransitTncItinerary
   },
   {
+    // For illustration purposes,
+    // override a subset of localized strings with custom messages.
     reactIntl: {
       messages: {
         "en-US": flattenedMessages,
