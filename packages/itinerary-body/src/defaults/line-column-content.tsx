@@ -3,7 +3,7 @@ import React, { ReactElement } from "react";
 import { useIntl } from "react-intl";
 
 import RouteBadge from "../RouteBadge";
-import * as Styled from "../styled";
+import * as S from "../styled";
 import { LineColumnContentProps } from "../types";
 import { defaultMessages } from "../util";
 
@@ -28,11 +28,9 @@ export default function LineColumnContent({
   );
 
   return (
-    <Styled.LegLine>
-      {!isDestination && (
-        <Styled.InnerLine mode={mode} routeColor={routeColor} />
-      )}
-      <Styled.LineBadgeContainer>
+    <S.LegLine>
+      {!isDestination && <S.InnerLine mode={mode} routeColor={routeColor} />}
+      <S.LineBadgeContainer>
         {/* TODO: This is a placeholder for a routebadge when we create the transit leg */}
         {!interline && !isDestination && transitLeg && (
           <RouteBadge
@@ -42,20 +40,20 @@ export default function LineColumnContent({
           />
         )}
         {!interline && !isDestination && !transitLeg && (
-          <Styled.AccessBadge
+          <S.AccessBadge
             aria-label={travelByMessage}
             mode={mode}
             routeColor={routeColor}
           >
             <LegIcon leg={leg} title={travelByMessage} width="66%" />
-          </Styled.AccessBadge>
+          </S.AccessBadge>
         )}
         {isDestination && (
-          <Styled.Destination>
+          <S.Destination>
             <LocationIcon size={25} type="to" />
-          </Styled.Destination>
+          </S.Destination>
         )}
-      </Styled.LineBadgeContainer>
-    </Styled.LegLine>
+      </S.LineBadgeContainer>
+    </S.LegLine>
   );
 }

@@ -6,7 +6,7 @@ import { Config, Leg } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 
-import * as Styled from "../styled";
+import * as S from "../styled";
 import { LegIconComponent } from "../types";
 
 interface Props {
@@ -26,15 +26,15 @@ export default function AccessLegSummary({
 }: Props): ReactElement {
   const intl = useIntl();
   return (
-    <Styled.LegClickable onClick={onSummaryClick}>
+    <S.LegClickable onClick={onSummaryClick}>
       {showLegIcon && (
-        <Styled.LegIconContainer>
+        <S.LegIconContainer>
           <LegIcon leg={leg} />
-        </Styled.LegIconContainer>
+        </S.LegIconContainer>
       )}
 
       {/* Leg description, e.g. "Walk 0.5 mi to..." */}
-      <Styled.LegDescription>
+      <S.LegDescription>
         <FormattedMessage
           defaultMessage="{modeId} {distance} to {place}"
           description="Summarizes an access leg"
@@ -51,7 +51,7 @@ export default function AccessLegSummary({
             place: coreUtils.itinerary.getPlaceName(leg.to, config.companies)
           }}
         />
-      </Styled.LegDescription>
-    </Styled.LegClickable>
+      </S.LegDescription>
+    </S.LegClickable>
   );
 }

@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 
-import * as Styled from "../styled";
+import * as S from "../styled";
 
 interface Props {
   color?: string;
@@ -14,9 +14,9 @@ export default function RouteBadge({
   name
 }: Props): ReactElement {
   return (
-    <Styled.RouteBadge routeColor={color}>
-      <Styled.SRHidden>{abbreviation}</Styled.SRHidden>
-      <Styled.SROnly>{name}</Styled.SROnly>
-    </Styled.RouteBadge>
+    <S.RouteBadge routeColor={color}>
+      <S.SRHidden>{abbreviation}</S.SRHidden>
+      <S.SROnly>{name}</S.SROnly>
+    </S.RouteBadge>
   );
 }

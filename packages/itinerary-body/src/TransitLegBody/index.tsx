@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore FIXME: Create TypeScript types for the icons package.
 import coreUtils from "@opentripplanner/core-utils";
-import { Config, Fare, Leg, TransitOperator } from "@opentripplanner/types";
+import { Fare, Leg, TransitOperator } from "@opentripplanner/types";
 import React, { Component, FunctionComponent, ReactElement } from "react";
 import {
   FormattedMessage,
@@ -27,7 +27,8 @@ import IntermediateStops from "./intermediate-stops";
 import ViewTripButton from "./view-trip-button";
 
 interface Props {
-  config: Config & { language: any }; // FIXME
+  AlertBodyIcon?: FunctionComponent;
+  AlertToggleIcon?: FunctionComponent;
   fare?: Fare;
   intl: IntlShape;
   leg: Leg;
@@ -41,8 +42,6 @@ interface Props {
   TransitLegSubheader?: FunctionComponent<TransitLegSubheaderProps>;
   TransitLegSummary: FunctionComponent<TransitLegSummaryProps>;
   transitOperator?: TransitOperator;
-  AlertToggleIcon?: FunctionComponent;
-  AlertBodyIcon?: FunctionComponent;
 }
 
 interface State {
@@ -88,7 +87,8 @@ class TransitLegBody extends Component<Props, State> {
 
   render(): ReactElement {
     const {
-      config,
+      AlertToggleIcon = S.DefaultAlertToggleIcon,
+      AlertBodyIcon,
       fare,
       intl,
       leg,
@@ -99,12 +99,8 @@ class TransitLegBody extends Component<Props, State> {
       showViewTripButton,
       TransitLegSubheader,
       TransitLegSummary,
-      transitOperator,
-      AlertToggleIcon = S.DefaultAlertToggleIcon,
-      AlertBodyIcon
+      transitOperator
     } = this.props;
-    // FIXME: Breaking change here if removed!
-    const { language: languageConfig } = config;
     const { agencyBrandingUrl, agencyName, agencyUrl, alerts } = leg;
     const { alertsExpanded, stopsExpanded } = this.state;
 
@@ -124,9 +120,7 @@ class TransitLegBody extends Component<Props, State> {
     const fareForLeg = this.getFareForLeg(leg, fare);
     return (
       <>
-        {TransitLegSubheader && (
-          <TransitLegSubheader languageConfig={languageConfig} leg={leg} />
-        )}
+        {TransitLegSubheader && <TransitLegSubheader leg={leg} />}
         <S.LegBody>
           {/* The Route Icon/Name Bar; clickable to set as active leg */}
           <S.LegClickable onClick={this.onSummaryClick}>

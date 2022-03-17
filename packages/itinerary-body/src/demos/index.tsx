@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore FIXME: Create TypeScript types for the icons package.
 import coreUtils from "@opentripplanner/core-utils";
 import { Place } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
@@ -88,12 +90,10 @@ export const StyledItineraryBody = styled(ItineraryBody)`
 `;
 
 export function WrappedOtpRRTransitLegSubheader({
-  languageConfig,
   leg
 }: TransitLegSubheaderProps): ReactElement {
   return (
     <OtpRRTransitLegSubheader
-      languageConfig={languageConfig}
       leg={leg}
       onStopClick={action("Transit Stop Click")}
     />

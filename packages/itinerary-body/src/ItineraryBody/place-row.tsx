@@ -114,7 +114,6 @@ export default function PlaceRow({
               <TransitLegBody
                 AlertBodyIcon={AlertBodyIcon}
                 AlertToggleIcon={AlertToggleIcon}
-                config={config}
                 fare={fare}
                 leg={leg}
                 LegIcon={LegIcon}

@@ -76,7 +76,6 @@ export interface TripSection {
 export type SetViewedTripFunction = (tripSection: TripSection) => void;
 
 export interface TransitLegSubheaderProps {
-  languageConfig: any; // FIXME: remove
   leg: Leg;
   onStopClick?: ({ stopId: string }) => void;
 }
@@ -231,9 +230,9 @@ export interface ItineraryBodyProps {
   toRouteAbbreviation?: ToRouteAbbreviationFunction;
   /**
    * An optional custom component for rendering a subheader on transit legs.
-   * * The component is sent 4 props:
-   * - languageConfig: The language values
+   * * The component is sent the following props:
    * - leg: the transit leg
+   * - onStopClick: triggered when the optional stop icon is clicked.
    */
   TransitLegSubheader?: FunctionComponent<TransitLegSubheaderProps>;
   /**
