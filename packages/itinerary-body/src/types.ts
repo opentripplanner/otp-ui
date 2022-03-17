@@ -10,17 +10,20 @@ import {
   TransitOperator
 } from "@opentripplanner/types";
 
-export interface RouteDescriptionProps {
-  leg: Leg;
-  LegIcon: FunctionComponent<{ leg: Leg }>;
-  transitOperator: TransitOperator;
-}
-
 export type LegIconComponent = FunctionComponent<{
   leg: Leg;
   title?: string;
   width?: string;
 }>;
+
+export interface RouteDescriptionProps {
+  /** Contains details about leg object that is being displayed */
+  leg: Leg;
+  /** A component class that is used to render icons for legs of an itinerary */
+  LegIcon: LegIconComponent;
+  /** The transit operator associated with the route if available */
+  transitOperator: TransitOperator;
+}
 
 export type GradationMap = Record<
   number,
@@ -30,23 +33,30 @@ export type GradationMap = Record<
 export type ToRouteAbbreviationFunction = (route: string | number) => string;
 
 export interface TimeColumnContentProps {
+  /** whether this place row represents the destination */
   isDestination: boolean;
+  /** Contains details about leg object that is being displayed */
   leg: Leg;
 }
 
-export interface LineColumnContentProps {
-  /** Whether this leg is an interlined-transit leg */
-  interline: boolean;
-  /** Whether this place row represents the destination */
+/**
+ * Shared props for various components that render leg data.
+ */
+export interface LegSharedProps {
+  /** whether this place row represents the destination */
   isDestination: boolean;
-  /** Contains details about leg object that is being displayed */
+  /** Contains details about the leg object prior to the current one */
   lastLeg?: Leg;
   /** Contains details about leg object that is being displayed */
   leg: Leg;
-  /** A component class used to render the icon for a leg */
-  LegIcon: LegIconComponent;
-  /** the index of the leg in the itinerary leg list */
+  /** The index value of this specific leg within the itinerary */
   legIndex: number;
+}
+
+export interface LineColumnContentProps extends LegSharedProps {
+  /** Whether this leg is an interlined-transit leg */
+  interline: boolean;
+  LegIcon: LegIconComponent;
   /** Converts a route's ID to its accepted badge abbreviation */
   toRouteAbbreviation: ToRouteAbbreviationFunction;
 }
@@ -85,50 +95,25 @@ export interface TransitLegSummaryProps {
   stopsExpanded: boolean;
 }
 
-// Many of these props are passed through from the ItineraryBody. See the
-// documentation in that component for more information.
-export interface PlaceRowProps {
-  accessibilityScoreGradationMap?: GradationMap; //
-  AlertBodyIcon: FunctionComponent; //
-  AlertToggleIcon?: FunctionComponent; //
-  className?: string; //
-  config: Config; //
-  diagramVisible?: Leg; //
-  fare: Fare;
-  /** Indicates whether this leg directly follows a transit leg */
-  followsTransit?: boolean;
-  frameLeg: FrameLegFunction; //
-  /** whether this place row represents the destination */
-  isDestination: boolean;
-  /** Contains details about the leg object prior to the current one */
-  lastLeg?: Leg;
-  /** Contains details about leg object that is being displayed */
-  leg: Leg;
-  LegIcon: LegIconComponent; //
-  /** The index value of this specific leg within the itinerary */
-  legIndex: number;
-  LineColumnContent: FunctionComponent<LineColumnContentProps>; //
-  mapillaryCallback?: (id: string) => void; //
-  mapillaryKey?: string; //
-  PlaceName: FunctionComponent<PlaceNameProps>; //
-  RouteDescription: FunctionComponent<RouteDescriptionProps>; //
-  routingType?: string; //
-  setActiveLeg: SetActiveLegFunction; //
-  setLegDiagram: (leg: Leg) => void; //
-  setViewedTrip: SetViewedTripFunction; //
-  showAgencyInfo: boolean; //
-  showElevationProfile: boolean; //
-  showLegIcon: boolean; //
-  showMapButtonColumn: boolean; //
-  showViewTripButton: boolean; //
-  TimeColumnContent: FunctionComponent<TimeColumnContentProps>; //
-  timeOptions: TimeOptions; //
-  toRouteAbbreviation: ToRouteAbbreviationFunction; //
-  TransitLegSubheader: FunctionComponent<TransitLegSubheaderProps>; //
-  TransitLegSummary: FunctionComponent<TransitLegSummaryProps>; //
-}
-
-export interface ItineraryBodyProps {
+/**
+ * Shared props for various components that render itinerary data.
+ */
+interface ItineraryBodySharedProps {
+  /**
+   * A mapping of accessibility score to color, icon, and text used
+   * to override the default one shipped in AccessibilityLabel
+   */
+  accessibilityScoreGradationMap?: GradationMap;
+  /**
+   * A custom icon component inserted into the transit alert body component
+   * within a transit leg, if this prop is not supplied a default icon is used
+   */
+  AlertBodyIcon?: FunctionComponent;
+  /**
+   * A custom icon component inserted into the transit alert toggle button
+   * within a transit leg, if this prop is not supplied a default icon is used
+   */
+  AlertToggleIcon?: FunctionComponent;
   /**
    * Used for additional styling with styled components for example.
    */
@@ -150,8 +135,6 @@ export interface ItineraryBodyProps {
    * - `place`: The place associated with the click event
    */
   frameLeg?: FrameLegFunction;
-  /** Itinerary that the user has selected to view, contains multiple legs */
-  itinerary: Itinerary;
   /** A component class that is used to render icons for legs of an itinerary */
   LegIcon: LegIconComponent;
   /**
@@ -187,8 +170,9 @@ export interface ItineraryBodyProps {
   /**
    * A component to render the name of a route.
    *
-   * The component is sent 2 props:
+   * The component is sent 3 props:
    * - leg: the itinerary leg with the transit information
+   * - LegIcon: component that renders the icon for a leg.
    * - transitOperator: the transit operator associated with the route if available
    */
   RouteDescription: FunctionComponent<RouteDescriptionProps>;
@@ -241,19 +225,18 @@ export interface ItineraryBodyProps {
    * - stopsExpanded: whether the intermediate stop display is currently expanded
    */
   TransitLegSummary: FunctionComponent<TransitLegSummaryProps>;
-  /**
-   * A custom icon component inserted into the transit alert toggle button
-   * within a transit leg, if this prop is not supplied a default icon is used
-   */
-  AlertToggleIcon?: FunctionComponent;
-  /**
-   * A custom icon component inserted into the transit alert body component
-   * within a transit leg, if this prop is not supplied a default icon is used
-   */
-  AlertBodyIcon?: FunctionComponent;
-  /**
-   * A mapping of accessibility score to color, icon, and text used
-   * to override the default one shipped in AccessibilityLabel
-   */
-  accessibilityScoreGradationMap?: GradationMap;
+}
+
+export interface PlaceRowProps
+  extends ItineraryBodySharedProps,
+    LegSharedProps {
+  /** The fare information to be displayed for the corresponding leg. */
+  fare: Fare;
+  /** Indicates whether this leg directly follows a transit leg */
+  followsTransit?: boolean;
+}
+
+export interface ItineraryBodyProps extends ItineraryBodySharedProps {
+  /** Itinerary that the user has selected to view, contains multiple legs */
+  itinerary: Itinerary;
 }
