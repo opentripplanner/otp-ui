@@ -198,7 +198,7 @@ class TransitLegBody extends Component<Props, State> {
                 values={{
                   alertCount: alerts.length
                 }}
-              />{" "}
+              />
               <S.CaretToggle expanded={alertsExpanded} />
             </S.TransitAlertToggle>
           )}

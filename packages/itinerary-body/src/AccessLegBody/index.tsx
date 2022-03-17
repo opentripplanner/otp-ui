@@ -119,12 +119,7 @@ class AccessLegBody extends Component<Props, State> {
               id="otpUi.ItineraryBody.common.durationShort"
               values={coreUtils.time.toHoursMinutesSeconds(leg.duration)}
             />
-            {leg.steps && (
-              <span>
-                {" "}
-                <S.CaretToggle expanded={expanded} />
-              </span>
-            )}
+            {leg.steps && <S.CaretToggle expanded={expanded} />}
           </S.StepsHeader>
           <MapillaryButton
             coords={leg.from}

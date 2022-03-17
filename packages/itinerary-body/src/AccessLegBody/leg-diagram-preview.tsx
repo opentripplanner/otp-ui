@@ -114,10 +114,9 @@ class LegDiagramPreview extends Component<Props, State> {
               }
               description="Title text for elevation chart"
               id="otpUi.AccessLegBody.LegDiagramPreview.elevationChart"
-            />{" "}
+            />
             <S.PreviewDiagramElevationGain>
               ↑{this.formatElevation(profile.gain * METERS_TO_FEET)}
-              {"  "}
             </S.PreviewDiagramElevationGain>
             <S.PreviewDiagramElevationLoss>
               ↓{this.formatElevation(-profile.loss * METERS_TO_FEET)}

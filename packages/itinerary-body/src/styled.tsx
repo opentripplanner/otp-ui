@@ -210,11 +210,25 @@ export const TNCCost = styled.div`
 `;
 
 interface CaretToggleProps {
+  className?: string;
   expanded: boolean;
 }
 
-export const CaretToggle = ({ expanded }: CaretToggleProps): ReactElement =>
-  expanded ? <CaretUp size={15} /> : <CaretDown size={15} />;
+export const CaretToggleBase = ({
+  className,
+  expanded
+}: CaretToggleProps): ReactElement => (
+  <span className={className}>
+    {expanded ? <CaretUp size={15} /> : <CaretDown size={15} />}
+  </span>
+);
+
+export const CaretToggle = styled(CaretToggleBase)`
+  &::before {
+    content: "";
+    margin: 0 0.125em;
+  }
+`;
 
 export const Destination = styled.div`
   text-align: center;
@@ -424,6 +438,10 @@ export const PreviewDiagram = styled(TransparentButton)`
 
 export const PreviewDiagramElevationChange = styled.span`
   font-size: xx-small;
+  &::before {
+    content: "";
+    margin: 0 0.125em;
+  }
 `;
 
 export const PreviewDiagramElevationGain = styled(

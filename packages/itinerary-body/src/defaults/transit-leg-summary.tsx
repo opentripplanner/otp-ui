@@ -39,12 +39,7 @@ export default function TransitLegSummary({
           numStops: (leg.intermediateStops?.length || 0) + 1
         }}
       />
-      {leg.intermediateStops && (
-        <>
-          {" "}
-          <S.CaretToggle expanded={stopsExpanded} />
-        </>
-      )}
+      {leg.intermediateStops && <S.CaretToggle expanded={stopsExpanded} />}
     </S.TransitLegSummary>
   );
 }
