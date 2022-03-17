@@ -110,7 +110,7 @@ RouteViewerOverlay.propTypes = {
   /**
    * This boolean value allows disabling of map centering and panning.
    */
-  allowMapCentering: PropTypes.boolean,
+  allowMapCentering: PropTypes.bool,
   /**
    * If pattern stops contain polygons, we can request that the routes are not drawn
    * inside of these polygons by setting this prop to true. If true, the layer will
