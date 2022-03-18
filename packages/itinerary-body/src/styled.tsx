@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore FIXME: Create TypeScript types for the icons package.
 import { Map } from "@opentripplanner/icons";
 import React, { ReactElement } from "react";
 import styled from "styled-components";

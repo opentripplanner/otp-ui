@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore FIXME: Create TypeScript types for the icons package.
+// @ts-ignore FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
 import { Fare, Leg, TransitOperator } from "@opentripplanner/types";
 import React, { Component, FunctionComponent, ReactElement } from "react";
