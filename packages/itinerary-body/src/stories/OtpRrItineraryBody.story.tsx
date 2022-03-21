@@ -7,11 +7,13 @@ import {
   CustomTimeColumnContent,
   WrappedOtpRRTransitLegSubheader
 } from "../demos";
-import ItineraryBodyDefaultsWrapper from "./itinerary-body-defaults-wrapper";
 import OtpRRLineColumnContent from "../otp-react-redux/line-column-content";
 import { PlaceName as OtpRRPlaceName } from "../otp-react-redux";
 import OtpRRRouteDescription from "../otp-react-redux/route-description";
+import { isRunningJest } from "../../../../.storybook/react-intl";
 import { TimeColumnContentProps } from "../types";
+
+import ItineraryBodyDefaultsWrapper from "./itinerary-body-defaults-wrapper";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("../__mocks__/itineraries/bike-only.json");
@@ -29,16 +31,19 @@ const walkTransitWalkItinerary = require("../__mocks__/itineraries/walk-transit-
 const walkTransitWalkTransitWalkItinerary = require("../__mocks__/itineraries/walk-transit-walk-transit-walk.json");
 const walkTransitWalkTransitWalkA11yItinerary = require("../__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json");
 
-// Generate same-day/next day alerts at a fixed time for the walk-transit-walk itinerary
-const alerts = walkTransitWalkItinerary.legs[1].alerts;
-const todayWithTime = new Date();
-todayWithTime.setUTCHours(14, 48, 25);
-const now = todayWithTime.valueOf();
-alerts[0].effectiveStartDate = now; // Today
-alerts[1].effectiveStartDate = now - 24 * 3600000; // Yesterday
-// FIXME: Fix the criterion that decides what constitutes "tomorrow"
-// (Adding 24 hours so that a timestamp occurs next day may not be enough).
-alerts[2].effectiveStartDate = now + 36 * 3600000; // Tomorrow
+if (!isRunningJest()) {
+  // Generate same-day/next day alerts at a fixed time for the walk-transit-walk itinerary
+  // for illustration outside of the CI environment.
+  const alerts = walkTransitWalkItinerary.legs[1].alerts;
+  const todayWithTime = new Date();
+  todayWithTime.setUTCHours(14, 48, 25);
+  const now = todayWithTime.valueOf();
+  alerts[0].effectiveStartDate = now; // Today
+  alerts[1].effectiveStartDate = now - 24 * 3600000; // Yesterday
+  // FIXME: Fix the criterion that decides what constitutes "tomorrow"
+  // (Adding 24 hours so that a timestamp occurs next day may not be enough).
+  alerts[2].effectiveStartDate = now + 36 * 3600000; // Tomorrow
+}
 
 interface StoryWrapperProps {
   itinerary: Itinerary;

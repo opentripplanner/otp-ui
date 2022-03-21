@@ -3,7 +3,7 @@ import flatten from "flat";
 /**
  * Copied from https://stackoverflow.com/questions/50940640/how-to-determine-if-jest-is-running-the-code-or-not
  */
-function isRunningJest() {
+export function isRunningJest() {
     return process.env.JEST_WORKER_ID !== undefined;
 }
 
