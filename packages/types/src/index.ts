@@ -211,6 +211,7 @@ export interface Step {
  * Describe an origin, destination, or intermediate location in an itinerary.
  */
 export interface Place {
+  address?: string;
   arrival?: number;
   bikeShareId?: string;
   departure?: number;

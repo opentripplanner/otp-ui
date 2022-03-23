@@ -77,7 +77,7 @@ export const toModeBorder = (mode: string, routeColor: string): string => {
  */
 function getCompanyForNetwork(
   networkString: string,
-  companies?: Company[] = []
+  companies: Company[] = []
 ) {
   const company = companies.find(co => co.id === networkString);
   if (!company) {
@@ -94,7 +94,7 @@ function getCompanyForNetwork(
  */
 export function getPlaceName(
   place: Place,
-  companies?: Company[],
+  companies: Company[] = [],
   intl: IntlShape
 ): string {
   // If address is provided (i.e. for carshare station, use it)
