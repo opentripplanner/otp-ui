@@ -7,7 +7,6 @@ import { defaultMessages } from "../util";
 interface Props {
   onStopClick: ({ stopId: string }) => void;
   stopId: string;
-  text?: string;
 }
 
 export default class ViewStopButton extends Component<Props> {
@@ -17,16 +16,13 @@ export default class ViewStopButton extends Component<Props> {
   };
 
   render(): ReactElement {
-    const { text } = this.props;
     return (
       <S.ViewerButton onClick={this.onClick}>
-        {text || (
-          <FormattedMessage
-            defaultMessage={defaultMessages["otpUi.TransitLegBody.stopViewer"]}
-            description="Text for link that opens the stop viewer"
-            id="otpUi.TransitLegBody.stopViewer"
-          />
-        )}
+        <FormattedMessage
+          defaultMessage={defaultMessages["otpUi.TransitLegBody.stopViewer"]}
+          description="Text for link that opens the stop viewer"
+          id="otpUi.TransitLegBody.stopViewer"
+        />
       </S.ViewerButton>
     );
   }
