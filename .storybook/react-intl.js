@@ -29,7 +29,7 @@ if (!isRunningJest()) {
     locales.forEach((locale) => {
       try {
         messages[locale] = {
-          ...messages.[locale],
+          ...messages[locale],
           ...flatten(require(`../packages/${pkg}/i18n/${locale}.yml`))
         };
       } catch (e) {
