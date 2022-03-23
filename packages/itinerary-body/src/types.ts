@@ -32,23 +32,21 @@ export type GradationMap = Record<
 
 export type ToRouteAbbreviationFunction = (route: string | number) => string;
 
-export interface TimeColumnContentProps {
+export interface LegDestination {
   /** whether this place row represents the destination */
   isDestination: boolean;
   /** Contains details about leg object that is being displayed */
   leg: Leg;
 }
 
+export type TimeColumnContentProps = LegDestination;
+
 /**
  * Shared props for various components that render leg data.
  */
-export interface LegSharedProps {
-  /** whether this place row represents the destination */
-  isDestination: boolean;
+export interface LegSharedProps extends LegDestination {
   /** Contains details about the leg object prior to the current one */
   lastLeg?: Leg;
-  /** Contains details about leg object that is being displayed */
-  leg: Leg;
   /** The index value of this specific leg within the itinerary */
   legIndex: number;
 }
@@ -69,12 +67,11 @@ export interface PlaceNameProps {
 
 export type SetActiveLegFunction = (legIndex: number, leg: Leg) => void;
 
-export type FrameLegFunction = (args: {
-  isDestination: boolean;
-  leg: Leg;
-  legIndex: number;
-  place: Place;
-}) => void;
+export type FrameLegFunction = (
+  args: LegSharedProps & {
+    place: Place;
+  }
+) => void;
 
 export interface TripSection {
   fromIndex: number;
