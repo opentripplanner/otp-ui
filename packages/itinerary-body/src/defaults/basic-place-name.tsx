@@ -1,11 +1,8 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore FIXME: Create TypeScript types for core-utils packages.
-import coreUtils from "@opentripplanner/core-utils";
 import React, { ReactElement } from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 
 import { PlaceNameProps } from "../types";
-import { defaultMessages } from "../util";
+import { defaultMessages, getPlaceName } from "../util";
 
 /**
  * Format text bold (used with FormattedMessage).
@@ -20,6 +17,7 @@ export default function BasicPlaceName({
   interline,
   place
 }: PlaceNameProps): ReactElement {
+  const intl = useIntl();
   return (
     <>
       {interline ? (
@@ -33,7 +31,7 @@ export default function BasicPlaceName({
           }}
         />
       ) : (
-        <>{coreUtils.itinerary.getPlaceName(place, config.companies)}</>
+        <>{getPlaceName(place, config.companies, intl)}</>
       )}
     </>
   );

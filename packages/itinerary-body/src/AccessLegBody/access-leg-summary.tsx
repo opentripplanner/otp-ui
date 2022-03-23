@@ -1,6 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore FIXME: Create TypeScript types for core-utils packages.
-import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
 import { Config, Leg } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
@@ -8,6 +5,7 @@ import { FormattedMessage, useIntl } from "react-intl";
 
 import * as S from "../styled";
 import { LegIconComponent } from "../types";
+import { getPlaceName } from "../util";
 
 interface Props {
   config: Config;
@@ -47,8 +45,7 @@ export default function AccessLegSummary({
                 : 0,
             isCarHail: leg.hailedCar,
             modeId: leg.mode,
-            // FIXME: localize rental device names.
-            place: coreUtils.itinerary.getPlaceName(leg.to, config.companies)
+            place: getPlaceName(leg.to, config.companies, intl)
           }}
         />
       </S.LegDescription>

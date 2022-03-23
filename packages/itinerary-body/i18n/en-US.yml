@@ -82,6 +82,13 @@ otpUi:
         undefined {}
         other { {minutes} minutes}
         } for {company} pickup"
+    vehicleTitle: "{company} {modeType, select,
+      BIKESHARE {Bike}
+      CARSHARE {Car}
+      VEHICLERENTAL {E-scooter}
+      BIKEPARK {Bike}
+      other {Vehicle}
+      }"
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"
