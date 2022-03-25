@@ -20,7 +20,8 @@ module.exports = {
         }
       }
     },
-    "@storybook/addon-viewport"
+    "@storybook/addon-viewport",
+    "storybook-react-intl"
   ],
   stories: [
     "../packages/**/*.story.mdx",

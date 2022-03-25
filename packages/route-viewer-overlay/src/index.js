@@ -12,7 +12,7 @@ const isGeomComplete = routeData => {
     routeData &&
     routeData.patterns &&
     Object.values(routeData.patterns).every(
-      ptn => typeof ptn.geometry !== "undefined"
+      ptn => typeof ptn?.geometry !== "undefined"
     )
   );
 };
@@ -62,8 +62,12 @@ class RouteViewerOverlay extends MapLayer {
         },
         []
       );
-      if (allPoints.length > 0 && this.props.leaflet.map)
+      if (allPoints.length > 0 && this.props.leaflet.map) {
         this.props.leaflet.map.fitBounds(allPoints);
+        if (this.props.mapCenterCallback) {
+          this.props.mapCenterCallback();
+        }
+      }
     }
   }
 
@@ -110,7 +114,7 @@ RouteViewerOverlay.propTypes = {
   /**
    * This boolean value allows disabling of map centering and panning.
    */
-  allowMapCentering: PropTypes.boolean,
+  allowMapCentering: PropTypes.bool,
   /**
    * If pattern stops contain polygons, we can request that the routes are not drawn
    * inside of these polygons by setting this prop to true. If true, the layer will
@@ -118,6 +122,10 @@ RouteViewerOverlay.propTypes = {
    * and only draw the route outside of the polygon.
    */
   clipToPatternStops: PropTypes.bool,
+  /**
+   * This method is called whenever the bounds are updated to fit a route
+   */
+  mapCenterCallback: PropTypes.func,
   /**
    * Leaflet path properties to use to style each polyline that represents a
    * pattern of the route. Only a few of the items are actually used.
