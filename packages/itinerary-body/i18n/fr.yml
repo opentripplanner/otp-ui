@@ -64,7 +64,12 @@ otpUi:
       other {{relativeDirection}}
       }
       {relativeDirection, select, ELEVATOR {jusqu'au} other {sur}}
-      <strong>{streetName, select, road {Route sans nom} path {Chemin sans nom} other {{streetName}}}</strong>"
+      {street}"
+    streetOrUnnamedRoad: "{streetName, select,
+      road {Route sans nom}
+      path {Chemin sans nom}
+      other {{streetName}}
+      }"
     # In the summary below, only include access mode actions (ride, walk...).
     # Note de traduction: nous utilisons le format
     #   "Marche/velo/etc - 2,5 miles vers 10th Street" qui peut paraître un peu "robotique".
