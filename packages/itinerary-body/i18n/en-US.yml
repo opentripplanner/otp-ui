@@ -64,15 +64,19 @@ otpUi:
       }
       {relativeDirection, select, ELEVATOR {to} other {on}}
       <strong>{streetName, select, road {Unnamed Road} path {Unnamed Path} other {{streetName}}}</strong>"
-    # In the summary below, only include access mode actions (ride, walk...).
-    summary: "{modeId, select,
+    summary: "{mode}{distance, select,
+      0 {}
+      other { {distance}}
+      }{place, select, undefined {} other { to {place}}}"
+    # The summary modes below only include access mode actions (ride, walk...).
+    summaryMode: "{modeId, select,
       BICYCLE {Bicycle}
       BICYCLE_RENT {Bikeshare}
       CAR {{isCarHail, select, true {Ride} other {Drive}}}
       MICROMOBILITY {Ride}
       WALK {Walk}
       other {{modeId}}
-      }{distance, select, 0 {} other { {distance}}}{place, select, undefined {} other { to {place}}}"
+      }"
     TncLeg:
       bookRide: Book Ride
       bookRideLater: Wait until {timeMillis, time, short} to book

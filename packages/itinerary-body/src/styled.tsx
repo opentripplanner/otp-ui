@@ -287,7 +287,9 @@ export const LegClickable = styled(TransparentButton)`
   /* line-height: 18px; */
 `;
 
-export const LegDescription = styled.div`
+export const LegDescriptionCore = styled.div``;
+
+export const LegDescription = styled(LegDescriptionCore)`
   display: table;
 
   > div {
@@ -298,6 +300,18 @@ export const LegDescription = styled.div`
 export const LegDescriptionHeadsignPrefix = styled.span`
   font-weight: 200;
 `;
+
+/**
+ * Lets others apply styles to the mode text in
+ * "Bicycle 0.5 miles to City Hall"
+ */
+export const LegDescriptionMode = styled.span``;
+
+/**
+ * Lets others apply styles to the place text in
+ * "Bicycle 0.5 miles to City Hall"
+ */
+export const LegDescriptionPlace = styled.span``;
 
 export const LegDescriptionRouteLongName = styled.div`
   font-size: 13px;
