@@ -63,7 +63,12 @@ otpUi:
       other {{relativeDirection}}
       }
       {relativeDirection, select, ELEVATOR {to} other {on}}
-      <strong>{streetName, select, road {Unnamed Road} path {Unnamed Path} other {{streetName}}}</strong>"
+      {street}"
+    streetOrUnnamedRoad: "{streetName, select,
+      road {Unnamed Road}
+      path {Unnamed Path}
+      other {{streetName}}
+      }"
     summary: "{mode}{distance, select,
       0 {}
       other { {distance}}

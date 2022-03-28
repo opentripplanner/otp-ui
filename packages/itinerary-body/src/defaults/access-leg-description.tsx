@@ -23,6 +23,8 @@ export default function AccessLegDescription({
 }: Props): ReactElement {
   const intl = useIntl();
   return (
+    // Return an HTML element which is passed a className (and style props)
+    // for styled-components support.
     <div className={className} style={style}>
       <FormattedMessage
         defaultMessage="{modeId} {distance} to {place}"
