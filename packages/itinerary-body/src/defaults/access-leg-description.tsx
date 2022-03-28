@@ -1,12 +1,12 @@
 import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
 import { Config, Leg } from "@opentripplanner/types";
-import React, { ReactElement } from "react";
+import React, { HTMLAttributes, ReactElement } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import * as S from "../styled";
 
 import { getPlaceName } from "../util";
 
-interface Props {
+interface Props extends HTMLAttributes<HTMLDivElement> {
   config: Config;
   leg: Leg;
 }
@@ -16,12 +16,14 @@ interface Props {
  * while letting others style the mode and place text.
  */
 export default function AccessLegDescription({
+  className,
   config,
-  leg
+  leg,
+  style
 }: Props): ReactElement {
   const intl = useIntl();
   return (
-    <S.LegDescriptionCore>
+    <div className={className} style={style}>
       <FormattedMessage
         defaultMessage="{modeId} {distance} to {place}"
         description="Summarizes an access leg"
@@ -52,6 +54,6 @@ export default function AccessLegDescription({
           )
         }}
       />
-    </S.LegDescriptionCore>
+    </div>
   );
 }

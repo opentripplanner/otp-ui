@@ -287,9 +287,7 @@ export const LegClickable = styled(TransparentButton)`
   /* line-height: 18px; */
 `;
 
-export const LegDescriptionCore = styled.div``;
-
-export const LegDescription = styled(LegDescriptionCore)`
+export const LegDescription = styled.div`
   display: table;
 
   > div {
