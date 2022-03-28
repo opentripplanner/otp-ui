@@ -1,16 +1,27 @@
-import coreUtils from "@opentripplanner/core-utils";
-import PropTypes from "prop-types";
-import React from "react";
+import {
+  Config,
+  GradationMap,
+  Leg,
+  LegIconComponent
+} from "@opentripplanner/types";
+import React, { ReactElement } from "react";
 import AccessibilityAnnotation from "./accessibility-annotation";
 
 import * as S from "./styled";
+
+interface Props {
+  accessibilityScoreGradationMap?: GradationMap;
+  config: Config;
+  leg: Leg;
+  LegIcon: LegIconComponent;
+}
 
 export default function AccessLeg({
   accessibilityScoreGradationMap,
   config,
   leg,
   LegIcon
-}) {
+}: Props): ReactElement {
   return (
     <S.Leg>
       <AccessibilityAnnotation
@@ -34,18 +45,3 @@ export default function AccessLeg({
     </S.Leg>
   );
 }
-
-AccessLeg.propTypes = {
-  accessibilityScoreGradationMap: PropTypes.shape({
-    color: PropTypes.string,
-    text: PropTypes.string,
-    icon: PropTypes.element
-  }),
-  config: coreUtils.types.configType.isRequired,
-  leg: coreUtils.types.legType.isRequired,
-  LegIcon: PropTypes.elementType.isRequired
-};
-
-AccessLeg.defaultProps = {
-  accessibilityScoreGradationMap: null
-};

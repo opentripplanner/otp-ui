@@ -1,20 +1,16 @@
-import { FunctionComponent, ReactElement } from "react";
+import { FunctionComponent } from "react";
 
 import {
   Config,
   Fare,
+  GradationMap,
   Itinerary,
   Leg,
+  LegIconComponent,
   Place,
   TimeOptions,
   TransitOperator
 } from "@opentripplanner/types";
-
-export type LegIconComponent = FunctionComponent<{
-  leg: Leg;
-  title?: string;
-  width?: string;
-}>;
 
 export interface RouteDescriptionProps {
   /** Contains details about leg object that is being displayed */
@@ -24,11 +20,6 @@ export interface RouteDescriptionProps {
   /** The transit operator associated with the route if available */
   transitOperator: TransitOperator;
 }
-
-export type GradationMap = Record<
-  number,
-  { color: string; icon?: ReactElement; text?: string }
->;
 
 export type ToRouteAbbreviationFunction = (route: string | number) => string;
 
