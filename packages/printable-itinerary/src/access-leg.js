@@ -1,5 +1,4 @@
 import coreUtils from "@opentripplanner/core-utils";
-import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
 import PropTypes from "prop-types";
 import React from "react";
 import AccessibilityAnnotation from "./accessibility-annotation";
@@ -21,14 +20,7 @@ export default function AccessLeg({
         LegIcon={LegIcon}
       />
       <S.LegBody>
-        <S.LegHeader>
-          <b>{coreUtils.itinerary.getLegModeLabel(leg)}</b>{" "}
-          {leg.distance > 0 && (
-            <span> {humanizeDistanceString(leg.distance)}</span>
-          )}
-          {" to "}
-          <b>{coreUtils.itinerary.getPlaceName(leg.to, config.companies)}</b>
-        </S.LegHeader>
+        <S.AccessLegDescription config={config} leg={leg} />
         {!leg.hailedCar && (
           <S.LegDetails>
             {leg.steps.map((step, k) => {

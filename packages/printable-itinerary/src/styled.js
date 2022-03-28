@@ -1,3 +1,7 @@
+import {
+  Defaults,
+  Styled as ItinBodyClasses
+} from "@opentripplanner/itinerary-body";
 import styled from "styled-components";
 
 export const Leg = styled.div`
@@ -25,8 +29,18 @@ export const LegDetails = styled.div`
   margin-top: 5px;
 `;
 
+// TODO Refactor
 export const LegHeader = styled.div`
   font-size: 18px;
+`;
+
+export const AccessLegDescription = styled(Defaults.AccessLegDescription)`
+  font-size: 18px;
+
+  ${ItinBodyClasses.LegDescriptionMode},
+  ${ItinBodyClasses.LegDescriptionPlace} {
+    font-weight: bold;
+  }
 `;
 
 export const LegAnnotation = styled.div`
