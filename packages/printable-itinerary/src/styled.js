@@ -51,6 +51,12 @@ export const LegAnnotation = styled.div`
   min-width: 70px;
 `;
 
+export const AccessLegStep = styled(Defaults.AccessLegStep)`
+  ${ItinBodyClasses.StepStreetName} {
+    font-weight: bold;
+  }
+`;
+
 export const ModeIcon = styled.div`
   float: left;
   width: 32px;

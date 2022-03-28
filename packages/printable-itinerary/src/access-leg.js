@@ -23,14 +23,11 @@ export default function AccessLeg({
         <S.AccessLegDescription config={config} leg={leg} />
         {!leg.hailedCar && (
           <S.LegDetails>
-            {leg.steps.map((step, k) => {
-              return (
-                <S.LegDetail key={k}>
-                  {coreUtils.itinerary.getStepDirection(step)} on{" "}
-                  <b>{coreUtils.itinerary.getStepStreetName(step)}</b>
-                </S.LegDetail>
-              );
-            })}
+            {leg.steps.map((step, k) => (
+              <S.LegDetail key={k}>
+                <S.AccessLegStep step={step} />
+              </S.LegDetail>
+            ))}
           </S.LegDetails>
         )}
       </S.LegBody>
