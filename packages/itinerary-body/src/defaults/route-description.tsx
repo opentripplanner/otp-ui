@@ -18,7 +18,9 @@ export default function RouteDescription({
           </S.LegDescriptionRouteShortName>
         </div>
       )}
-      <RouteLongName leg={leg} />
+      <S.LegDescriptionRouteLongName>
+        <RouteLongName leg={leg} />
+      </S.LegDescriptionRouteLongName>
     </S.LegDescriptionForTransit>
   );
 }

@@ -1,11 +1,11 @@
 import { Leg } from "@opentripplanner/types";
-import React, { ReactElement } from "react";
+import React, { HTMLAttributes, ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
 import * as S from "../styled";
 import { defaultMessages } from "../util";
 
-interface Props {
+interface Props extends HTMLAttributes<HTMLSpanElement> {
   leg: Leg;
 }
 
@@ -18,10 +18,14 @@ function toPrefix(contents: ReactElement): ReactElement {
   );
 }
 
-export default function RouteLongName({ leg }: Props): ReactElement {
+export default function RouteLongName({
+  className,
+  leg,
+  style
+}: Props): ReactElement {
   const { headsign, routeLongName } = leg;
   return (
-    <S.LegDescriptionRouteLongName>
+    <span className={className} style={style}>
       <FormattedMessage
         defaultMessage={
           defaultMessages["otpUi.TransitLegBody.routeDescription"]
@@ -34,6 +38,6 @@ export default function RouteLongName({ leg }: Props): ReactElement {
           toPrefix
         }}
       />
-    </S.LegDescriptionRouteLongName>
+    </span>
   );
 }
