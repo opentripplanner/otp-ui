@@ -11,9 +11,7 @@
   "private": false,
   "dependencies": {
     "@opentripplanner/core-utils": "^4.5.0",
-    "@opentripplanner/humanize-distance": "^1.2.0",
-    "@opentripplanner/itinerary-body": "^2.9.1",
-    "prop-types": "^15.7.2"
+    "@opentripplanner/itinerary-body": "^2.9.1"
   },
   "devDependencies": {
     "@opentripplanner/icons": "^1.2.1"
