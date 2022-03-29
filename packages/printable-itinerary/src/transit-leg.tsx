@@ -21,15 +21,17 @@ export default function TransitLeg({
 }: Props): ReactElement {
   const routeDescription = (
     <>
-      {leg.routeShortName} <S.RouteLongName leg={leg} />
+      <strong>{leg.routeShortName}</strong> <S.RouteLongName leg={leg} />
     </>
   );
 
   const alightMessage = (
     <FormattedMessage
-      defaultMessage={defaultMessages["otpUi.printable.TransitLeg.alight"]}
+      defaultMessage={
+        defaultMessages["otpUi.PrintableItinerary.TransitLeg.alight"]
+      }
       description="Instructs to alight/exit a transit vehicle"
-      id="otpUi.printable.TransitLeg.alight"
+      id="otpUi.PrintableItinerary.TransitLeg.alight"
       values={{
         place: leg.to.name,
         strong: strongText,
@@ -46,10 +48,12 @@ export default function TransitLeg({
           <S.LegHeader>
             <FormattedMessage
               defaultMessage={
-                defaultMessages["otpUi.printable.TransitLeg.continuesAs"]
+                defaultMessages[
+                  "otpUi.PrintableItinerary.TransitLeg.continuesAs"
+                ]
               }
               description="Informs of an interlined transit route"
-              id="otpUi.printable.TransitLeg.continuesAs"
+              id="otpUi.PrintableItinerary.TransitLeg.continuesAs"
               values={{
                 routeDescription
               }}
@@ -77,10 +81,10 @@ export default function TransitLeg({
           <S.LegDetail>
             <FormattedMessage
               defaultMessage={
-                defaultMessages["otpUi.printable.TransitLeg.board"]
+                defaultMessages["otpUi.PrintableItinerary.TransitLeg.board"]
               }
               description="Instructs to board a transit vehicle"
-              id="otpUi.printable.TransitLeg.board"
+              id="otpUi.PrintableItinerary.TransitLeg.board"
               values={{
                 place: leg.from.name,
                 strong: strongText,

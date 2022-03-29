@@ -43,18 +43,7 @@ if (!isRunningJest()) {
 }
 
 // TODO: place any applicable (date, time, etc) format parameters here.
-const formats = {
-/*
-  time: {
-    // For demo purposes, set the time format to 24hr.
-    otpUiTimeFormat: {
-                hour: 'numeric',
-                minute: 'numeric',
-      hour12: false
-    }
-  }
-  */
-};
+const formats = {};
 
 export const reactIntl = {
   defaultLocale: "en-US",

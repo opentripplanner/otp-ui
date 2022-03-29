@@ -13,7 +13,8 @@ otpUi:
     common:
       durationShort: "{hours, plural, =0 {} other {# h }}{minutes} mn"
     stayOnBoard: Restez à bord à <strong>{placeName}</strong>
-  printable:
+  PrintableItinerary:
+    depart: <strong>Partez</strong> de <strong>{place}</strong>
     TncLeg:
       estimatedTravelTime: "Temps de trajet estimé : <strong>{duration}</strong> (ne tient pas compte de la circulation)"
       estimatedWaitTime: "Temps d'attente estimé : <strong>{duration}</strong>"

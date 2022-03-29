@@ -32,12 +32,14 @@ function PrintableItinerary({
           <S.LegBody>
             <S.LegHeader>
               <FormattedMessage
-                defaultMessage={defaultMessages["otpUi.printable.depart"]}
+                defaultMessage={
+                  defaultMessages["otpUi.PrintableItinerary.depart"]
+                }
                 description="Indicates where to depart from"
-                id="otpUi.printable.depart"
+                id="otpUi.PrintableItinerary.depart"
                 values={{
                   place: itinerary.legs[0].from.name,
-                  strongText
+                  strong: strongText
                 }}
               />
             </S.LegHeader>

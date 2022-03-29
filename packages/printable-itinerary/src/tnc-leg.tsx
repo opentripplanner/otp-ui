@@ -33,9 +33,11 @@ export default function TNCLeg({
       <S.LegBody>
         <S.LegHeader>
           <FormattedMessage
-            defaultMessage={defaultMessages["otpUi.printable.TncLeg.header"]}
+            defaultMessage={
+              defaultMessages["otpUi.PrintableItinerary.TncLeg.header"]
+            }
             description="Summary text for TNC leg"
-            id="otpUi.printable.TncLeg.header"
+            id="otpUi.PrintableItinerary.TncLeg.header"
             values={{
               company: tncData.displayName,
               place: leg.to.name,
@@ -47,10 +49,12 @@ export default function TNCLeg({
           <S.LegDetail>
             <FormattedMessage
               defaultMessage={
-                defaultMessages["otpUi.printable.TncLeg.estimatedWaitTime"]
+                defaultMessages[
+                  "otpUi.PrintableItinerary.TncLeg.estimatedWaitTime"
+                ]
               }
               description="Describes the estimated TNC wait time."
-              id="otpUi.printable.TncLeg.estimatedWaitTime"
+              id="otpUi.PrintableItinerary.TncLeg.estimatedWaitTime"
               values={{
                 duration: (
                   // TODO: Refactor?
@@ -74,10 +78,12 @@ export default function TNCLeg({
           <S.LegDetail>
             <FormattedMessage
               defaultMessage={
-                defaultMessages["otpUi.printable.TncLeg.estimatedTravelTime"]
+                defaultMessages[
+                  "otpUi.PrintableItinerary.TncLeg.estimatedTravelTime"
+                ]
               }
               description="Describes the estimated TNC travel time."
-              id="otpUi.printable.TncLeg.estimatedTravelTime"
+              id="otpUi.PrintableItinerary.TncLeg.estimatedTravelTime"
               values={{
                 duration: (
                   <FormattedMessage
