@@ -1,9 +1,12 @@
 import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
+import { FormattedMessage } from "react-intl";
 
 import AccessibilityAnnotation from "./accessibility-annotation";
 import * as S from "./styled";
+
+import { defaultMessages, strongText } from "./util";
 
 export default function TNCLeg({
   accessibilityScoreGradationMap,
@@ -23,17 +26,68 @@ export default function TNCLeg({
       />
       <S.LegBody>
         <S.LegHeader>
-          <b>Take {tncData.displayName}</b> to <b>{leg.to.name}</b>
+          <FormattedMessage
+            defaultMessage={defaultMessages["otpUi.printable.TncLeg.header"]}
+            description="Summary text for TNC leg"
+            id="otpUi.printable.TncLeg.header"
+            values={{
+              company: tncData.displayName,
+              place: leg.to.name,
+              strong: strongText
+            }}
+          />
         </S.LegHeader>
         <S.LegDetails>
           <S.LegDetail>
-            Estimated wait time for pickup:{" "}
-            <b>{coreUtils.time.formatDuration(tncData.estimatedArrival)}</b>
+            <FormattedMessage
+              defaultMessage={
+                defaultMessages["otpUi.printable.TncLeg.estimatedWaitTime"]
+              }
+              description="Describes the estimated TNC wait time."
+              id="otpUi.printable.TncLeg.estimatedWaitTime"
+              values={{
+                duration: (
+                  // TODO: Refactor?
+                  <FormattedMessage
+                    defaultMessage={
+                      defaultMessages[
+                        "otpUi.ItineraryBody.common.durationShort"
+                      ]
+                    }
+                    description="Duration in abbreviated hours (if over one hour) and minutes"
+                    id="otpUi.ItineraryBody.common.durationShort"
+                    values={coreUtils.time.toHoursMinutesSeconds(
+                      tncData.estimatedArrival
+                    )}
+                  />
+                ),
+                strong: strongText
+              }}
+            />
           </S.LegDetail>
           <S.LegDetail>
-            Estimated travel time:{" "}
-            <b>{coreUtils.time.formatDuration(leg.duration)}</b> (does not
-            account for traffic)
+            <FormattedMessage
+              defaultMessage={
+                defaultMessages["otpUi.printable.TncLeg.estimatedTravelTime"]
+              }
+              description="Describes the estimated TNC travel time."
+              id="otpUi.printable.TncLeg.estimatedTravelTime"
+              values={{
+                duration: (
+                  <FormattedMessage
+                    defaultMessage={
+                      defaultMessages[
+                        "otpUi.ItineraryBody.common.durationShort"
+                      ]
+                    }
+                    description="Duration in abbreviated hours (if over one hour) and minutes"
+                    id="otpUi.ItineraryBody.common.durationShort"
+                    values={coreUtils.time.toHoursMinutesSeconds(leg.duration)}
+                  />
+                ),
+                strong: strongText
+              }}
+            />
           </S.LegDetail>
         </S.LegDetails>
       </S.LegBody>
