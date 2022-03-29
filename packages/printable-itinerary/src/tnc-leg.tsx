@@ -1,6 +1,6 @@
 import coreUtils from "@opentripplanner/core-utils";
-import PropTypes from "prop-types";
-import React from "react";
+import { GradationMap, Leg, LegIconComponent } from "@opentripplanner/types";
+import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
 import AccessibilityAnnotation from "./accessibility-annotation";
@@ -8,11 +8,17 @@ import * as S from "./styled";
 
 import { defaultMessages, strongText } from "./util";
 
+interface Props {
+  accessibilityScoreGradationMap?: GradationMap;
+  leg: Leg;
+  LegIcon: LegIconComponent;
+}
+
 export default function TNCLeg({
   accessibilityScoreGradationMap,
   leg,
   LegIcon
-}) {
+}: Props): ReactElement {
   const { tncData } = leg;
   if (!tncData) return null;
 
@@ -94,17 +100,3 @@ export default function TNCLeg({
     </S.Leg>
   );
 }
-
-TNCLeg.propTypes = {
-  accessibilityScoreGradationMap: PropTypes.shape({
-    color: PropTypes.string,
-    text: PropTypes.string,
-    icon: PropTypes.element
-  }),
-  leg: coreUtils.types.legType.isRequired,
-  LegIcon: PropTypes.elementType.isRequired
-};
-
-TNCLeg.defaultProps = {
-  accessibilityScoreGradationMap: null
-};
