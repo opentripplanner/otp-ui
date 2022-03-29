@@ -12,8 +12,13 @@ otpUi:
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"
+    stayOnBoard: Stay on Board at <strong>{placeName}</strong>
   printable:
     TncLeg:
       estimatedTravelTime: "Estimated travel time: <strong>{duration}</strong> (does not account for traffic)"
       estimatedWaitTime: "Estimated wait time for pickup: <strong>{duration}</strong>"
       header: <strong>Take {company}</strong> to <strong>{place}</strong>
+    TransitLeg:
+      alight: Get off at <strong>{place}</strong> at <strong>{time, time, short}</strong>
+      board: Board at <strong>{place}</strong> at <strong>{time, time, short}</strong>
+      continuesAs: Continues as {routeDescription}

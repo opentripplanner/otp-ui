@@ -32,6 +32,7 @@ export const LegDetails = styled.div`
 // TODO Refactor
 export const LegHeader = styled.div`
   font-size: 18px;
+  font-weight: bold;
 `;
 
 export const AccessLegDescription = styled(Defaults.AccessLegDescription)`
@@ -54,6 +55,13 @@ export const LegAnnotation = styled.div`
 export const AccessLegStep = styled(Defaults.AccessLegStep)`
   ${ItinBodyClasses.StepStreetName} {
     font-weight: bold;
+  }
+`;
+
+export const RouteLongName = styled(Defaults.RouteLongName)`
+  font-weight: bold;
+  ${ItinBodyClasses.LegDescriptionHeadsignPrefix} {
+    font-weight: normal;
   }
 `;
 
