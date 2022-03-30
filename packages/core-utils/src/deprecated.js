@@ -141,10 +141,7 @@ export function getPlaceName(place, companies) {
  * an object with string formatters and the fare value (in cents).
  */
 export function getTransitFare(fareComponent) {
-  logDeprecationWarning(
-    "getTransitFare",
-    "getFare, getAllFaresForLeg, and getTncFare"
-  );
+  logDeprecationWarning("getTransitFare", "the fare object and getTncFare");
 
   // Default values (if fare component is not valid).
   let digits = 2;
@@ -203,10 +200,7 @@ export function getTransitFare(fareComponent) {
  * a tnc ride within the leg. This will make typescripting easier, as the types will be cleaner.
  */
 export function calculateFares(itinerary, multiple = false) {
-  logDeprecationWarning(
-    "calculateFares",
-    "getFare, getAllFaresForLeg, and getTncFare"
-  );
+  logDeprecationWarning("calculateFares", "the fare object and getTncFare");
 
   // Process any TNC fares
   let minTNCFare = 0;
