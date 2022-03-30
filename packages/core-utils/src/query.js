@@ -3,7 +3,7 @@ import getGeocoder from "@opentripplanner/geocoder/lib";
 import qs from "qs";
 
 import { getTransitModes, hasCar, isAccessMode } from "./itinerary";
-import { coordsToString, stringToCoords } from "./map";
+import { stringToCoords } from "./map";
 import queryParams from "./query-params";
 import {
   getCurrentTime,
@@ -257,7 +257,7 @@ export function parseLocationString(value) {
   const coordinates = parts[1]
     ? stringToCoords(parts[1])
     : stringToCoords(parts[0]);
-  const name = parts[1] ? parts[0] : coordsToString(coordinates);
+  const name = parts[1] ? parts[0] : null;
   return coordinates.length === 2
     ? {
         name: name || null,

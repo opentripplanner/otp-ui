@@ -36,7 +36,7 @@ export function constructLocation(latlng) {
 
 export function formatStoredPlaceName(location, withDetails = true) {
   if (withDetails) {
-    logDeprecationWarning("formatStoredPlaceName withDetails parameter");
+    logDeprecationWarning("the formatStoredPlaceName withDetails parameter");
   }
 
   let displayName =
@@ -166,6 +166,7 @@ export function itineraryToTransitive(
       });
       tdata.places.push({
         place_id: toPlaceId,
+        // This string is not shown in the UI
         place_name: getPlaceName(leg.to, companies),
         place_lat: leg.to.lat,
         place_lon: leg.to.lon
