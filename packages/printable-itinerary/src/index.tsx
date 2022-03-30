@@ -13,9 +13,9 @@ interface Props {
   className?: string;
   /** Contains OTP configuration details. */
   config: Config;
-  /** Itinerary that the user has selected to view, contains multiple legs */
+  /** Itinerary that the user has selected to view, contains multiple legs. */
   itinerary: Itinerary;
-  /** A component class that is used to render icons for legs of an itinerary */
+  /** A component class that is used to render icons for legs of an itinerary. */
   LegIcon: LegIconComponent;
 }
 
