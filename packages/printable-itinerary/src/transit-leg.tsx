@@ -1,3 +1,4 @@
+import { Defaults } from "@opentripplanner/itinerary-body";
 import { GradationMap, Leg, LegIconComponent } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
@@ -94,18 +95,7 @@ export default function TransitLeg({
           </S.LegDetail>
           <S.LegDetail>
             {interlineFollows ? (
-              // TODO: Refactor
-              <FormattedMessage
-                defaultMessage={
-                  defaultMessages["otpUi.ItineraryBody.stayOnBoard"]
-                }
-                description="Instructs to stay on board a transit vehicle"
-                id="otpUi.ItineraryBody.stayOnBoard"
-                values={{
-                  placeName: leg.to.name,
-                  strong: strongText
-                }}
-              />
+              <Defaults.StayOnBoard place={leg.to} />
             ) : (
               alightMessage
             )}

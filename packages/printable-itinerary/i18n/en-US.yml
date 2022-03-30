@@ -12,7 +12,6 @@ otpUi:
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"
-    stayOnBoard: Stay on Board at <strong>{placeName}</strong>
   PrintableItinerary:
     depart: <strong>Depart</strong> from <strong>{place}</strong>
     TncLeg:
