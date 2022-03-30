@@ -12,7 +12,7 @@ import {
   OTP_API_TIME_FORMAT
 } from "./time";
 
-import { summarizeQuery } from "./deprecated";
+import { coordsToString, summarizeQuery } from "./deprecated";
 
 export { summarizeQuery };
 
@@ -257,7 +257,7 @@ export function parseLocationString(value) {
   const coordinates = parts[1]
     ? stringToCoords(parts[1])
     : stringToCoords(parts[0]);
-  const name = parts[1] ? parts[0] : null;
+  const name = parts[1] ? parts[0] : coordsToString(coordinates);
   return coordinates.length === 2
     ? {
         name: name || null,
