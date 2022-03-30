@@ -1,6 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore FIXME: Create TypeScript types for core-utils packages.
-import coreUtils from "@opentripplanner/core-utils";
 import {
   Config,
   Leg,
@@ -8,12 +5,11 @@ import {
   TimeOptions
 } from "@opentripplanner/types";
 import React, { Component, ReactElement } from "react";
-import { FormattedMessage } from "react-intl";
 import { VelocityTransitionGroup } from "velocity-react";
+import { Duration } from "../defaults";
 
 import * as S from "../styled";
 import { SetActiveLegFunction } from "../types";
-import { defaultMessages } from "../util";
 
 import AccessLegSteps from "./access-leg-steps";
 import AccessLegSummary from "./access-leg-summary";
@@ -116,14 +112,7 @@ class AccessLegBody extends Component<Props, State> {
             aria-expanded={expanded}
             onClick={this.onStepsHeaderClick}
           >
-            <FormattedMessage
-              defaultMessage={
-                defaultMessages["otpUi.ItineraryBody.common.durationShort"]
-              }
-              description="Duration in abbreviated hours (if over one hour) and minutes"
-              id="otpUi.ItineraryBody.common.durationShort"
-              values={coreUtils.time.toHoursMinutesSeconds(leg.duration)}
-            />
+            <Duration seconds={leg.duration} />
             {leg.steps && <S.CaretToggle expanded={expanded} />}
           </S.StepsHeader>
           <MapillaryButton

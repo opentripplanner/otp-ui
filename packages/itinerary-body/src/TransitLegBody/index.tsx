@@ -15,6 +15,7 @@ import {
   IntlShape
 } from "react-intl";
 import { VelocityTransitionGroup } from "velocity-react";
+import { Duration } from "../defaults";
 
 import * as S from "../styled";
 import {
@@ -281,20 +282,7 @@ class TransitLegBody extends Component<Props, State> {
                     description="Describes the typical wait for a transit leg"
                     id="otpUi.TransitLegBody.typicalWait"
                     values={{
-                      waitTime: (
-                        <FormattedMessage
-                          defaultMessage={
-                            defaultMessages[
-                              "otpUi.ItineraryBody.common.durationShort"
-                            ]
-                          }
-                          description="Duration in abbreviated hours (if over one hour) and minutes"
-                          id="otpUi.ItineraryBody.common.durationShort"
-                          values={coreUtils.time.toHoursMinutesSeconds(
-                            leg.averageWait
-                          )}
-                        />
-                      )
+                      waitTime: <Duration seconds={leg.averageWait} />
                     }}
                   />
                 </span>
