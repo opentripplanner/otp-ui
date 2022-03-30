@@ -10,7 +10,6 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^4.5.0",
     "@opentripplanner/itinerary-body": "^2.9.1"
   },
   "devDependencies": {

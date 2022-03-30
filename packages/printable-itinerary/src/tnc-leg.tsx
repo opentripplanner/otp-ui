@@ -1,4 +1,4 @@
-import coreUtils from "@opentripplanner/core-utils";
+import { Defaults } from "@opentripplanner/itinerary-body";
 import { GradationMap, Leg, LegIconComponent } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
@@ -57,19 +57,7 @@ export default function TNCLeg({
               id="otpUi.PrintableItinerary.TncLeg.estimatedWaitTime"
               values={{
                 duration: (
-                  // TODO: Refactor?
-                  <FormattedMessage
-                    defaultMessage={
-                      defaultMessages[
-                        "otpUi.ItineraryBody.common.durationShort"
-                      ]
-                    }
-                    description="Duration in abbreviated hours (if over one hour) and minutes"
-                    id="otpUi.ItineraryBody.common.durationShort"
-                    values={coreUtils.time.toHoursMinutesSeconds(
-                      tncData.estimatedArrival
-                    )}
-                  />
+                  <Defaults.Duration seconds={tncData.estimatedArrival} />
                 ),
                 strong: strongText
               }}
@@ -85,18 +73,7 @@ export default function TNCLeg({
               description="Describes the estimated TNC travel time."
               id="otpUi.PrintableItinerary.TncLeg.estimatedTravelTime"
               values={{
-                duration: (
-                  <FormattedMessage
-                    defaultMessage={
-                      defaultMessages[
-                        "otpUi.ItineraryBody.common.durationShort"
-                      ]
-                    }
-                    description="Duration in abbreviated hours (if over one hour) and minutes"
-                    id="otpUi.ItineraryBody.common.durationShort"
-                    values={coreUtils.time.toHoursMinutesSeconds(leg.duration)}
-                  />
-                ),
+                duration: <Defaults.Duration seconds={leg.duration} />,
                 strong: strongText
               }}
             />

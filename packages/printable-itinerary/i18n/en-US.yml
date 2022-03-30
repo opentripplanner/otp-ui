@@ -8,10 +8,6 @@
 # - pass the resulting object to the messages prop of IntlProvider.
 
 otpUi:
-  # TODO: Refactor
-  ItineraryBody:
-    common:
-      durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"
   PrintableItinerary:
     depart: <strong>Depart</strong> from <strong>{place}</strong>
     TncLeg:
