@@ -4,6 +4,7 @@ import coreUtils from "@opentripplanner/core-utils";
 import { Config, Leg, TimeOptions } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage, FormattedNumber } from "react-intl";
+import { Duration } from "../defaults";
 
 import * as S from "../styled";
 import { LegIconComponent } from "../types";
@@ -126,16 +127,7 @@ export default function TNCLeg({
             description="Describes the estimated travel time."
             id="otpUi.AccessLegBody.TncLeg.estimatedTravelTime"
             values={{
-              duration: (
-                <FormattedMessage
-                  defaultMessage={
-                    defaultMessages["otpUi.ItineraryBody.common.durationShort"]
-                  }
-                  description="Duration in abbreviated hours (if over one hour) and minutes"
-                  id="otpUi.ItineraryBody.common.durationShort"
-                  values={coreUtils.time.toHoursMinutesSeconds(leg.duration)}
-                />
-              )
+              duration: <Duration seconds={leg.duration} />
             }}
           />
         </S.TNCTravelTime>
