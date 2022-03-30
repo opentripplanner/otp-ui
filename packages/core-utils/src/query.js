@@ -2,14 +2,8 @@ import moment from "moment";
 import getGeocoder from "@opentripplanner/geocoder/lib";
 import qs from "qs";
 
-import {
-  getTransitModes,
-  hasCar,
-  hasTransit,
-  isAccessMode,
-  toSentenceCase
-} from "./itinerary";
-import { coordsToString, matchLatLon, stringToCoords } from "./map";
+import { getTransitModes, hasCar, isAccessMode } from "./itinerary";
+import { coordsToString, stringToCoords } from "./map";
 import queryParams from "./query-params";
 import {
   getCurrentTime,
@@ -17,6 +11,10 @@ import {
   OTP_API_DATE_FORMAT,
   OTP_API_TIME_FORMAT
 } from "./time";
+
+import { summarizeQuery } from "./deprecated";
+
+export { summarizeQuery };
 
 /* The list of default parameters considered in the settings panel */
 
@@ -82,24 +80,6 @@ export function getUrlParams() {
 
 export function getOtpUrlParams() {
   return Object.keys(getUrlParams()).filter(key => !key.startsWith("ui_"));
-}
-
-function findLocationType(
-  location,
-  locations = [],
-  types = ["home", "work", "suggested"]
-) {
-  const match = locations.find(l => matchLatLon(l, location));
-  return match && types.indexOf(match.type) !== -1 ? match.type : null;
-}
-
-export function summarizeQuery(query, locations = []) {
-  const from =
-    findLocationType(query.from, locations) || query.from.name.split(",")[0];
-  const to =
-    findLocationType(query.to, locations) || query.to.name.split(",")[0];
-  const mode = hasTransit(query.mode) ? "Transit" : toSentenceCase(query.mode);
-  return `${mode} from ${from} to ${to}`;
 }
 
 export function getTripOptionsFromQuery(query, keepPlace = false) {
