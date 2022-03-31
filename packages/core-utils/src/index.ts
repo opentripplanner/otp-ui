@@ -7,7 +7,6 @@ import * as queryParams from "./query-params";
 import * as route from "./route";
 import * as storage from "./storage";
 import * as time from "./time";
-import * as types from "./types";
 import * as ui from "./ui";
 
 const core = {
@@ -20,7 +19,6 @@ const core = {
   route,
   storage,
   time,
-  types,
   ui
 };
 
