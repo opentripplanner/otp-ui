@@ -27,7 +27,7 @@ export default function AccessLegDescription({
     // for styled-components support.
     <div className={className} style={style}>
       <FormattedMessage
-        defaultMessage="{modeId} {distance} to {place}"
+        defaultMessage="{mode} {distance} to {place}"
         description="Summarizes an access leg"
         id="otpUi.AccessLegBody.summary"
         values={{
