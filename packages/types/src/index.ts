@@ -413,8 +413,12 @@ export type Agency = {
 };
 export type Route = {
   agency: Agency;
+  agencyId?: string;
+  agencyName?: string;
   shortName: string;
   longName: string;
+  mode?: string;
+  id?: string;
   // TS TODO: route type enum
   type?: number;
   color?: string;

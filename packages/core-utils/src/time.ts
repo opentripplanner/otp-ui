@@ -1,3 +1,4 @@
+import { Config, TimeOptions } from "@opentripplanner/types";
 import {
   startOfDay,
   add,
@@ -24,10 +25,13 @@ export const OTP_API_TIME_FORMAT = "HH:mm";
  * @returns                   Formatted duration
  */
 function formatDurationLikeMoment(
-  seconds,
-  showSeconds,
-  localize = { enabled: true, code: "en-US" }
-) {
+  seconds: number,
+  showSeconds: boolean,
+  localize: { enabled: boolean; code: string } = {
+    enabled: true,
+    code: "en-US"
+  }
+): string {
   // date-fns doesn't do this automatically
   if ((!showSeconds && seconds < 60) || seconds === 0) {
     return "0 min";
@@ -69,15 +73,15 @@ function formatDurationLikeMoment(
  * @param  {[type]} config the OTP config object found in store
  * @return {string}        the config-defined time formatter or HH:mm (24-hr time)
  */
-export function getTimeFormat(config) {
+export function getTimeFormat(config: Config): string {
   return config?.dateTime?.timeFormat || OTP_API_TIME_FORMAT;
 }
 
-export function getDateFormat(config) {
+export function getDateFormat(config: Config): string {
   return config?.dateTime?.dateFormat || OTP_API_DATE_FORMAT;
 }
 
-export function getLongDateFormat(config) {
+export function getLongDateFormat(config: Config): string {
   return config?.dateTime?.longDateFormat || "D MMMM YYYY";
 }
 
@@ -87,8 +91,12 @@ export function getLongDateFormat(config) {
  * @param {number} seconds duration in seconds
  * @returns {string} formatted text representation
  */
-export function formatDuration(seconds) {
-  return formatDurationLikeMoment(seconds, false);
+// TS TODO: region as type?
+export function formatDuration(seconds: number, region: string): string {
+  return formatDurationLikeMoment(seconds, false, {
+    enabled: true,
+    code: region
+  });
 }
 
 /**
@@ -97,8 +105,15 @@ export function formatDuration(seconds) {
  * @param {number} seconds duration in seconds
  * @returns {string} formatted text representation
  */
-export function formatDurationWithSeconds(seconds, region) {
-  return formatDurationLikeMoment(seconds, { enabled: true, code: region });
+// TS TODO: region as type?
+export function formatDurationWithSeconds(
+  seconds: number,
+  region: string
+): string {
+  return formatDurationLikeMoment(seconds, true, {
+    enabled: true,
+    code: region
+  });
 }
 /**
  * Formats a time value for display in narrative
@@ -106,7 +121,7 @@ export function formatDurationWithSeconds(seconds, region) {
  * @param {number} ms epoch time value in milliseconds
  * @returns {string} formatted text representation
  */
-export function formatTime(ms, options) {
+export function formatTime(ms: number, options: TimeOptions): string {
   return format(
     ms + (options?.offset || 0),
     options?.format || OTP_API_TIME_FORMAT
@@ -119,7 +134,10 @@ export function formatTime(ms, options) {
  * @param  {string} timeFormat  A valid date-fns time format
  * @return {string}                   formatted text representation
  */
-export function formatSecondsAfterMidnight(seconds, timeFormat) {
+export function formatSecondsAfterMidnight(
+  seconds: number,
+  timeFormat: string
+): string {
   const time = add(startOfDay(new Date()), { seconds });
   return format(time, timeFormat);
 }
@@ -129,7 +147,7 @@ export function formatSecondsAfterMidnight(seconds, timeFormat) {
  * environment, pulls timezone information from an env variable. Default to
  * GMT+0 if the Intl API is unavailable.
  */
-export function getUserTimezone(fallbackTimezone = "Etc/Greenwich") {
+export function getUserTimezone(fallbackTimezone = "Etc/Greenwich"): string {
   if (process.env.NODE_ENV === "test") return process.env.TZ;
   return Intl?.DateTimeFormat().resolvedOptions().timeZone || fallbackTimezone;
 }
@@ -138,7 +156,7 @@ export function getUserTimezone(fallbackTimezone = "Etc/Greenwich") {
  * Formats current time for use in OTP query
  * The conversion to the user's timezone is needed for testing purposes.
  */
-export function getCurrentTime(timezone = getUserTimezone()) {
+export function getCurrentTime(timezone = getUserTimezone()): string {
   return format(utcToZonedTime(Date.now(), timezone), OTP_API_TIME_FORMAT);
 }
 
@@ -146,7 +164,7 @@ export function getCurrentTime(timezone = getUserTimezone()) {
  * Formats current date for use in OTP query
  * The conversion to the user's timezone is needed for testing purposes.
  */
-export function getCurrentDate(timezone = getUserTimezone()) {
+export function getCurrentDate(timezone = getUserTimezone()): string {
   return format(
     utcToZonedTime(Date.now(), timezone),
     OTP_API_DATE_FORMAT_DATE_FNS

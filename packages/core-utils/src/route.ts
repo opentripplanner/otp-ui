@@ -1,3 +1,4 @@
+import { Leg, Route, TransitOperator } from "@opentripplanner/types";
 /**
  * Returns the transit operator (if an exact match is found) from the transit
  * operators config value. It is critical to use both the feedId and agencyId in
@@ -11,10 +12,10 @@
  *    was found
  */
 export function getTransitOperatorFromFeedIdAndAgencyId(
-  feedId,
-  agencyId,
-  transitOperators
-) {
+  feedId: string,
+  agencyId: string,
+  transitOperators: TransitOperator[]
+): TransitOperator {
   return (
     transitOperators.find(
       transitOperator =>
@@ -32,7 +33,10 @@ export function getTransitOperatorFromFeedIdAndAgencyId(
  * @param  {object} transitOperators transitOperators from config.
  * @return {object} the operator if one was found or null if no match was found
  */
-export function getTransitOperatorFromLeg(leg, transitOperators) {
+export function getTransitOperatorFromLeg(
+  leg: Leg,
+  transitOperators: TransitOperator[]
+): TransitOperator {
   if (!leg.routeId || !leg.agencyId) return null;
   const feedId = leg.routeId.split(":")[0];
   return getTransitOperatorFromFeedIdAndAgencyId(
@@ -52,10 +56,13 @@ export function getTransitOperatorFromLeg(leg, transitOperators) {
  * @param  {array} transitOperators transitOperators from config
  * @return {object} the operator if one was found or null if no match was found
  */
-export function getTransitOperatorFromOtpRoute(route, transitOperators) {
+export function getTransitOperatorFromOtpRoute(
+  route: Route,
+  transitOperators: TransitOperator[]
+): TransitOperator {
   if (!route.id) return null;
   const feedId = route.id.split(":")[0];
-  let agencyId;
+  let agencyId: string;
   if (route.agency) {
     // This is returned in the OTP Route model
     agencyId = route.agency.id;
@@ -97,7 +104,10 @@ const END_OF_LIST_COMPARATOR_VALUE = 999999999999;
  *   the transitOperators value is not defined. Otherwise an integer will be
  *   returned.
  */
-function getTransitOperatorComparatorValue(route, transitOperators) {
+function getTransitOperatorComparatorValue(
+  route: Route,
+  transitOperators: TransitOperator[]
+): number | string {
   // if the transitOperators is undefined or has zero length, use the route's
   // agency name as the comparator value
   if (!transitOperators || transitOperators.length === 0) {
@@ -129,8 +139,8 @@ function getTransitOperatorComparatorValue(route, transitOperators) {
  * Calculates the sort comparator value given two routes based off of the
  * route's agency and provided transitOperators config data.
  */
-function makeTransitOperatorComparator(transitOperators) {
-  return (a, b) => {
+function makeTransitOperatorComparator(transitOperators: TransitOperator[]) {
+  return (a: Route, b: Route) => {
     const aVal = getTransitOperatorComparatorValue(a, transitOperators);
     const bVal = getTransitOperatorComparatorValue(b, transitOperators);
     if (typeof aVal === "string") {
@@ -140,8 +150,7 @@ function makeTransitOperatorComparator(transitOperators) {
       if (aVal > bVal) return 1;
       return 0;
     }
-
-    // transitOperators are defined and therefore a numeric value is guaranteed
+    // @ts-expect-error transitOperators are defined and therefore a numeric value is guaranteed
     // to be returned
     return aVal - bVal;
   };
@@ -151,9 +160,13 @@ function makeTransitOperatorComparator(transitOperators) {
  * Gets the desired sort values according to an optional getter function. If the
  * getter function is not defined, the original sort values are returned.
  */
-function getSortValues(getterFn, a, b) {
-  let aVal;
-  let bVal;
+function getSortValues(
+  getterFn: (item: unknown) => unknown,
+  a: unknown,
+  b: unknown
+) {
+  let aVal: unknown;
+  let bVal: unknown;
   if (typeof getterFn === "function") {
     aVal = getterFn(a);
     bVal = getterFn(b);
@@ -199,11 +212,11 @@ const routeTypeComparatorValue = {
 // Gets a comparator value for a given route's type (OTP mode).
 // Note: JSDoc format not used to avoid bug in documentationjs.
 // ttps://github.com/documentationjs/documentation/issues/372
-function getRouteTypeComparatorValue(route) {
+function getRouteTypeComparatorValue(route: Route): number {
   // For some strange reason, the short route response in OTP returns the
   // string-based modes, but the long route response returns the
   // integer route type. This attempts to account for both of those cases.
-  if (!route) throw new Error("Route is undefined.", route);
+  if (!route) throw new Error(`Route is undefined. ${route}`);
   if (typeof modeComparatorValue[route.mode] !== "undefined") {
     return modeComparatorValue[route.mode];
   }
@@ -212,6 +225,7 @@ function getRouteTypeComparatorValue(route) {
   }
   // Default the comparator value to a large number (placing the route at the
   // end of the list).
+  // eslint-disable-next-line no-console
   console.warn("no mode/route type found for route", route);
   return END_OF_LIST_COMPARATOR_VALUE;
 }
@@ -220,7 +234,7 @@ function getRouteTypeComparatorValue(route) {
  * Calculates the sort comparator value given two routes based off of route type
  * (OTP mode).
  */
-function routeTypeComparator(a, b) {
+function routeTypeComparator(a: Route, b: Route): number {
   return getRouteTypeComparatorValue(a) - getRouteTypeComparatorValue(b);
 }
 
@@ -228,7 +242,7 @@ function routeTypeComparator(a, b) {
  * Determines whether a value is a string that starts with an alphabetic
  * ascii character.
  */
-function startsWithAlphabeticCharacter(val) {
+function startsWithAlphabeticCharacter(val: unknown): boolean {
   if (typeof val === "string" && val.length > 0) {
     const firstCharCode = val.charCodeAt(0);
     return (
@@ -244,7 +258,7 @@ function startsWithAlphabeticCharacter(val) {
  * character. Routes with shortn that do start with an alphabetic character will
  * be prioritized over those that don't.
  */
-function alphabeticShortNameComparator(a, b) {
+function alphabeticShortNameComparator(a: Route, b: Route): number {
   const aStartsWithAlphabeticCharacter = startsWithAlphabeticCharacter(
     a.shortName
   );
@@ -284,11 +298,15 @@ function alphabeticShortNameComparator(a, b) {
  * @param  {function} [objGetterFn] An optional function to obtain the
  *  comparison value from the comparator function arguments
  */
-export function makeNumericValueComparator(objGetterFn) {
+export function makeNumericValueComparator(
+  objGetterFn?: (item: Route) => number
+) {
   /* Note: Using the global version of isNaN (the Number version behaves differently. */
   /* eslint-disable no-restricted-globals */
-  return (a, b) => {
+  return (a: number, b: number): number => {
     const { aVal, bVal } = getSortValues(objGetterFn, a, b);
+    if (typeof aVal !== "number" || typeof bVal !== "number") return 0;
+
     // if both values aren't valid numbers, use the next sort criteria
     if (isNaN(aVal) && isNaN(bVal)) return 0;
     // b is a valid number, b gets priority
@@ -310,8 +328,10 @@ export function makeNumericValueComparator(objGetterFn) {
  * @param  {function} [objGetterFn] An optional function to obtain the
  *  comparison value from the comparator function arguments
  */
-export function makeStringValueComparator(objGetterFn) {
-  return (a, b) => {
+export function makeStringValueComparator(
+  objGetterFn?: (item: Route) => string
+) {
+  return (a: string, b: string): number => {
     const { aVal, bVal } = getSortValues(objGetterFn, a, b);
     // both a and b are uncomparable strings, return equivalent value
     if (!aVal && !bVal) return 0;
@@ -334,7 +354,7 @@ export function makeStringValueComparator(objGetterFn) {
  * See https://github.com/opentripplanner/OpenTripPlanner/issues/2938
  * Also see https://github.com/opentripplanner/otp-react-redux/issues/122
  */
-function getRouteSortOrderValue(val) {
+function getRouteSortOrderValue(val: number): number {
   return val === -999 ? undefined : val;
 }
 
@@ -345,8 +365,10 @@ function getRouteSortOrderValue(val) {
  * returned. If all comparison functions return equivalence, then the values
  * are assumed to be equivalent.
  */
-function makeMultiCriteriaSort(...criteria) {
-  return (a, b) => {
+function makeMultiCriteriaSort(
+  ...criteria: ((a: unknown, b: unknown) => number)[]
+) {
+  return (a: number, b: number): number => {
     for (let i = 0; i < criteria.length; i++) {
       const curCriteriaComparatorValue = criteria[i](a, b);
       // if the comparison objects are not equivalent, return the value obtained
@@ -390,7 +412,9 @@ function makeMultiCriteriaSort(...criteria) {
  *    those with shortNames.
  *  7. longName as string.
  */
-export function makeRouteComparator(transitOperators) {
+export function makeRouteComparator(
+  transitOperators: TransitOperator[]
+): (a: unknown, b: unknown) => number {
   return makeMultiCriteriaSort(
     makeTransitOperatorComparator(transitOperators),
     makeNumericValueComparator(obj => getRouteSortOrderValue(obj.sortOrder)),

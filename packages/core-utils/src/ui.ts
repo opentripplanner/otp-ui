@@ -1,6 +1,6 @@
 import bowser from "bowser";
 
-export function isMobile() {
+export function isMobile(): boolean {
   // TODO: consider using 3rd-party library?
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
     navigator.userAgent
@@ -10,8 +10,8 @@ export function isMobile() {
 /**
  * Returns true if the user is using a [redacted] browser
  */
-export function isIE() {
-  return bowser.name === "Internet Explorer";
+export function isIE(): boolean {
+  return bowser.parse(navigator.userAgent).browser === "Internet Explorer";
 }
 
 /**
@@ -20,16 +20,16 @@ export function isIE() {
  * and intended to fix issues with iOS elastic scrolling, e.g.,
  * https://github.com/conveyal/trimet-mod-otp/issues/92.
  */
-export function enableScrollForSelector(selector) {
+export function enableScrollForSelector(selector: string): void {
   const overlay = document.querySelector(selector);
   let clientY = null; // remember Y position on touch start
 
-  function isOverlayTotallyScrolled() {
+  function isOverlayTotallyScrolled(): boolean {
     // https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight#Problems_and_solutions
     return overlay.scrollHeight - overlay.scrollTop <= overlay.clientHeight;
   }
 
-  function disableRubberBand(event) {
+  function disableRubberBand(event: TouchEvent) {
     const clientYDelta = event.targetTouches[0].clientY - clientY;
 
     if (overlay.scrollTop === 0 && clientYDelta > 0) {
@@ -45,7 +45,7 @@ export function enableScrollForSelector(selector) {
 
   overlay.addEventListener(
     "touchstart",
-    function(event) {
+    function(event: TouchEvent) {
       if (event.targetTouches.length === 1) {
         // detect single touch
         clientY = event.targetTouches[0].clientY;
@@ -56,7 +56,7 @@ export function enableScrollForSelector(selector) {
 
   overlay.addEventListener(
     "touchmove",
-    function(event) {
+    function(event: TouchEvent) {
       if (event.targetTouches.length === 1) {
         // detect single touch
         disableRubberBand(event);

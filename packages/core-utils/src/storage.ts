@@ -1,10 +1,11 @@
+/* eslint-disable no-console */
 // Prefix to use with local storage keys.
 const STORAGE_PREFIX = "otp";
 
 /**
  * Store a javascript object at the specified key.
  */
-export function storeItem(key, object) {
+export function storeItem(key: string, object: unknown): void {
   window.localStorage.setItem(
     `${STORAGE_PREFIX}.${key}`,
     JSON.stringify(object)
@@ -15,8 +16,8 @@ export function storeItem(key, object) {
  * Retrieve a javascript object at the specified key. If not found, defaults to
  * null or, the optionally provided notFoundValue.
  */
-export function getItem(key, notFoundValue = null) {
-  let itemAsString;
+export function getItem(key: string, notFoundValue: unknown = null): unknown {
+  let itemAsString: string;
   try {
     itemAsString = window.localStorage.getItem(`${STORAGE_PREFIX}.${key}`);
     const json = JSON.parse(itemAsString);
@@ -32,7 +33,7 @@ export function getItem(key, notFoundValue = null) {
 /**
  * Remove item at specified key.
  */
-export function removeItem(key) {
+export function removeItem(key: string): void {
   window.localStorage.removeItem(`${STORAGE_PREFIX}.${key}`);
 }
 
@@ -40,7 +41,7 @@ export function removeItem(key) {
  * Generate a random ID. This might not quite be a UUID, but it serves our
  * purposes for now.
  */
-export function randId() {
+export function randId(): string {
   return Math.random()
     .toString(36)
     .substr(2, 9);
