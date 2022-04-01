@@ -213,6 +213,7 @@ export type Step = {
  */
 export type Place = {
   arrival?: number;
+  bikeShareId?: string;
   departure?: number;
   lat: number;
   lon: number;
@@ -287,6 +288,9 @@ export type Leg = {
   rentedVehicle: boolean;
   route?: string;
   routeId?: string;
+  routeShortName?: string;
+  routeLongName?: string;
+  routeColor?: string;
   routeType?: number;
   serviceDate?: string;
   startTime: number;
@@ -383,12 +387,13 @@ export type ElevationProfile = {
 export type Location = {
   lat: number;
   lon: number;
-  name: string;
+  name?: string;
   /**
    * This is only used location that a user has saved. Can be either:
    * "home" or "work"
    */
   type?: string;
+  category?: string;
 };
 
 /**
@@ -613,4 +618,9 @@ export type TncFare = {
   maxTNCFare: number;
   minTNCFare: number;
   tncCurrencyCode: string;
+};
+
+export type UserPosition = {
+  error?: string;
+  coords: { latitude: number; longitude: number };
 };

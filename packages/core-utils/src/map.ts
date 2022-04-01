@@ -1,3 +1,11 @@
+import {
+  UserPosition,
+  Location,
+  Itinerary,
+  Company,
+  TransitiveData,
+  Leg
+} from "@opentripplanner/types";
 import { getPlaceName, isTransit, isFlex, toSentenceCase } from "./itinerary";
 
 import {
@@ -9,7 +17,9 @@ import {
 
 export { coordsToString, getDetailText, latlngToString };
 
-export function currentPositionToLocation(currentPosition) {
+export function currentPositionToLocation(
+  currentPosition: UserPosition
+): Location {
   if (currentPosition.error || !currentPosition.coords) {
     console.warn(
       "Cannot construct location from current position due to geolocation error or missing coordinates."
@@ -23,18 +33,24 @@ export function currentPositionToLocation(currentPosition) {
   };
 }
 
-export function stringToCoords(str) {
+export function stringToCoords(str: string): number[] {
   return (str && str.split(",").map(c => +c)) || [];
 }
 
-export function constructLocation(latlng) {
+export function constructLocation(latlng: {
+  lat: number;
+  lng: number;
+}): Location {
   return {
     lat: latlng.lat,
     lon: latlng.lng
   };
 }
 
-export function formatStoredPlaceName(location, withDetails = true) {
+export function formatStoredPlaceName(
+  location: Location,
+  withDetails = true
+): string {
   if (withDetails) {
     logDeprecationWarning("the formatStoredPlaceName withDetails parameter");
   }
@@ -50,7 +66,7 @@ export function formatStoredPlaceName(location, withDetails = true) {
   return displayName;
 }
 
-export function matchLatLon(location1, location2) {
+export function matchLatLon(location1: Location, location2: Location): boolean {
   if (!location1 || !location2) return location1 === location2;
   return location1.lat === location2.lat && location1.lon === location2.lon;
 }
@@ -64,11 +80,11 @@ export function matchLatLon(location1, location2) {
  * @returns An itinerary in the transitive.js format.
  */
 export function itineraryToTransitive(
-  itin,
-  companies,
-  getRouteLabel,
-  disableFlexArc
-) {
+  itin: Itinerary,
+  companies: Company[],
+  getRouteLabel: (leg: Leg) => string,
+  disableFlexArc: boolean
+): TransitiveData {
   const tdata = {
     journeys: [],
     streetEdges: [],
@@ -108,7 +124,7 @@ export function itineraryToTransitive(
       leg.mode === "CAR" ||
       leg.mode === "MICROMOBILITY"
     ) {
-      let fromPlaceId;
+      let fromPlaceId: string;
       if (leg.from.bikeShareId) {
         fromPlaceId = `bicycle_rent_station_${leg.from.bikeShareId}`;
       } else if (leg.from.vertexType === "VEHICLERENTAL") {
@@ -141,6 +157,7 @@ export function itineraryToTransitive(
       }
 
       const segment = {
+        arc: false,
         type: leg.mode,
         streetEdges: [streetEdgeId],
         from: { type: "PLACE", place_id: fromPlaceId },
@@ -296,27 +313,30 @@ export function itineraryToTransitive(
   return tdata;
 }
 
-export function isBikeshareStation(place) {
+type TransitivePlaceRaw = {
+  place_id: string;
+};
+export function isBikeshareStation(place: TransitivePlaceRaw): boolean {
   return place.place_id.lastIndexOf("bicycle_rent_station") !== -1;
 }
 
-export function isEScooterStation(place) {
+export function isEScooterStation(place: TransitivePlaceRaw): boolean {
   return place.place_id.lastIndexOf("escooter_rent_station") !== -1;
 }
 
-export function isCarWalkTransition(place) {
+export function isCarWalkTransition(place: TransitivePlaceRaw): boolean {
   return place.place_id.lastIndexOf("itin_car_") !== -1;
 }
 
-export function isValidLat(lat) {
+export function isValidLat(lat: number): boolean {
   return Number.isFinite(lat) && lat >= -90 && lat <= 90;
 }
 
-export function isValidLng(lng) {
+export function isValidLng(lng: number): boolean {
   return Number.isFinite(lng) && lng >= -180 && lng <= 180;
 }
 
-export function isValidLatLng(arr) {
+export function isValidLatLng(arr: [number, number]): boolean {
   return (
     Array.isArray(arr) &&
     arr.length === 2 &&
