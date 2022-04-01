@@ -1,9 +1,6 @@
 import { divIcon } from "leaflet";
 import BaseMap from "@opentripplanner/base-map";
-import {
-  stopLayerStopType,
-  zoomBasedSymbolType
-} from "@opentripplanner/core-utils/src/types";
+
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import ReactDOMServer from "react-dom/server";
@@ -34,7 +31,9 @@ function ExampleMarker({ entity: stop }) {
 }
 
 ExampleMarker.propTypes = {
-  entity: stopLayerStopType.isRequired
+  // Typescript TODO: restore correct type
+  // eslint-disable-next-line react/forbid-prop-types
+  entity: PropTypes.object.isRequired
 };
 
 class Example extends Component {
@@ -88,7 +87,9 @@ Example.propTypes = {
   filterStops: PropTypes.bool,
   mapCenter: [PropTypes.number, PropTypes.number],
   stops: PropTypes.arrayOf(PropTypes.object),
-  symbols: PropTypes.arrayOf(zoomBasedSymbolType)
+  // Typescript TODO: restore correct type
+  // eslint-disable-next-line react/forbid-prop-types
+  symbols: PropTypes.arrayOf(PropTypes.object)
 };
 
 Example.defaultProps = {
@@ -115,7 +116,9 @@ function makeCustomMarker(Icon) {
   };
 
   CustomMarker.propTypes = {
-    entity: stopLayerStopType.isRequired
+    // Typescript TODO: restore correct type
+    // eslint-disable-next-line react/forbid-prop-types
+    entity: PropTypes.object.isRequired
   };
 
   return CustomMarker;
