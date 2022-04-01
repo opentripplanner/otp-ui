@@ -1,4 +1,14 @@
 import polyline from "@mapbox/polyline";
+import {
+  Company,
+  Config,
+  ElevationProfile,
+  FlexBookingInfo,
+  Itinerary,
+  Leg,
+  Step,
+  TncFare
+} from "@opentripplanner/types";
 import turfAlong from "@turf/along";
 
 import {
@@ -38,13 +48,16 @@ export const transitModes = [
  * @return {Array}  List of all transit modes defined in config; otherwise default mode list
  */
 
-export function getTransitModes(config) {
+export function getTransitModes(config: Config): string[] {
   if (!config || !config.modes || !config.modes.transitModes)
     return transitModes;
-  return config.modes.transitModes.map(tm => tm.mode);
+
+  return config.modes.transitModes.map(tm =>
+    typeof tm !== "string" ? tm.mode : tm
+  );
 }
 
-export function isTransit(mode) {
+export function isTransit(mode: string): boolean {
   return transitModes.includes(mode) || mode === "TRANSIT";
 }
 
@@ -53,7 +66,7 @@ export function isTransit(mode) {
  * calling ahead for the service to run. "mustPhone" is the only
  * property of boardRule which encodes this info.
  */
-export function isReservationRequired(leg) {
+export function isReservationRequired(leg: Leg): boolean {
   return leg.boardRule === "mustPhone";
 }
 /**
@@ -61,53 +74,53 @@ export function isReservationRequired(leg) {
  * asking the driver to let the user off. "coordinateWithDriver" is the only
  * property of alightRule which encodes this info.
  */
-export function isContinuousDropoff(leg) {
+export function isContinuousDropoff(leg: Leg): boolean {
   return leg.alightRule === "coordinateWithDriver";
 }
 /**
  * The two rules checked by the above two functions are the only values
  * returned by OTP when a leg is a flex leg.
  */
-export function isFlex(leg) {
+export function isFlex(leg: Leg): boolean {
   return isReservationRequired(leg) || isContinuousDropoff(leg);
 }
 
-export function isAdvanceBookingRequired(info) {
+export function isAdvanceBookingRequired(info: FlexBookingInfo): boolean {
   return info?.latestBookingTime?.daysPrior > 0;
 }
-export function legDropoffRequiresAdvanceBooking(leg) {
+export function legDropoffRequiresAdvanceBooking(leg: Leg): boolean {
   return isAdvanceBookingRequired(leg.dropOffBookingInfo);
 }
 
-export function isWalk(mode) {
+export function isWalk(mode: string): boolean {
   if (!mode) return false;
 
   return mode === "WALK";
 }
 
-export function isBicycle(mode) {
+export function isBicycle(mode: string): boolean {
   if (!mode) return false;
 
   return mode === "BICYCLE";
 }
 
-export function isBicycleRent(mode) {
+export function isBicycleRent(mode: string): boolean {
   if (!mode) return false;
 
   return mode === "BICYCLE_RENT";
 }
 
-export function isCar(mode) {
+export function isCar(mode: string): boolean {
   if (!mode) return false;
   return mode.startsWith("CAR");
 }
 
-export function isMicromobility(mode) {
+export function isMicromobility(mode: string): boolean {
   if (!mode) return false;
   return mode.startsWith("MICROMOBILITY");
 }
 
-export function isAccessMode(mode) {
+export function isAccessMode(mode: string): boolean {
   return (
     isWalk(mode) ||
     isBicycle(mode) ||
@@ -121,7 +134,7 @@ export function isAccessMode(mode) {
  * @param  {string}  modesStr a comma-separated list of OTP modes
  * @return {boolean} whether any of the modes are transit modes
  */
-export function hasTransit(modesStr) {
+export function hasTransit(modesStr: string): boolean {
   return modesStr.split(",").some(mode => isTransit(mode));
 }
 
@@ -129,7 +142,7 @@ export function hasTransit(modesStr) {
  * @param  {string}  modesStr a comma-separated list of OTP modes
  * @return {boolean} whether any of the modes are car-based modes
  */
-export function hasCar(modesStr) {
+export function hasCar(modesStr: string): boolean {
   return modesStr.split(",").some(mode => isCar(mode));
 }
 
@@ -137,7 +150,7 @@ export function hasCar(modesStr) {
  * @param  {string}  modesStr a comma-separated list of OTP modes
  * @return {boolean} whether any of the modes are bicycle-based modes
  */
-export function hasBike(modesStr) {
+export function hasBike(modesStr: string): boolean {
   return modesStr
     .split(",")
     .some(mode => isBicycle(mode) || isBicycleRent(mode));
@@ -147,7 +160,7 @@ export function hasBike(modesStr) {
  * @param  {string}  modesStr a comma-separated list of OTP modes
  * @return {boolean} whether any of the modes are micromobility-based modes
  */
-export function hasMicromobility(modesStr) {
+export function hasMicromobility(modesStr: string): boolean {
   return modesStr.split(",").some(mode => isMicromobility(mode));
 }
 
@@ -155,7 +168,7 @@ export function hasMicromobility(modesStr) {
  * @param  {string}  modesStr a comma-separated list of OTP modes
  * @return {boolean} whether any of the modes is a hailing mode
  */
-export function hasHail(modesStr) {
+export function hasHail(modesStr: string): boolean {
   return modesStr.split(",").some(mode => mode.indexOf("_HAIL") > -1);
 }
 
@@ -163,11 +176,11 @@ export function hasHail(modesStr) {
  * @param  {string}  modesStr a comma-separated list of OTP modes
  * @return {boolean} whether any of the modes is a rental mode
  */
-export function hasRental(modesStr) {
+export function hasRental(modesStr: string): boolean {
   return modesStr.split(",").some(mode => mode.indexOf("_RENT") > -1);
 }
 
-export function getMapColor(mode) {
+export function getMapColor(mode: string): string {
   mode = mode || this.get("mode");
   if (mode === "WALK") return "#444";
   if (mode === "BICYCLE") return "#0073e5";
@@ -181,7 +194,7 @@ export function getMapColor(mode) {
   return "#aaa";
 }
 
-export function toSentenceCase(str) {
+export function toSentenceCase(str: string): string {
   if (str == null) {
     return "";
   }
@@ -192,7 +205,7 @@ export function toSentenceCase(str) {
 /**
  * Derive the company string based on mode and network associated with leg.
  */
-export function getCompanyFromLeg(leg) {
+export function getCompanyFromLeg(leg: Leg): string {
   if (!leg) return null;
   const { from, mode, rentedBike, rentedCar, rentedVehicle, tncData } = leg;
   if (mode === "CAR" && rentedCar) {
@@ -210,7 +223,7 @@ export function getCompanyFromLeg(leg) {
   return null;
 }
 
-export function getItineraryBounds(itinerary) {
+export function getItineraryBounds(itinerary: Itinerary): number[] {
   let coords = [];
   itinerary.legs.forEach(leg => {
     const legCoords = polyline
@@ -224,7 +237,7 @@ export function getItineraryBounds(itinerary) {
 /**
  * Return a coords object that encloses the given leg's geometry.
  */
-export function getLegBounds(leg) {
+export function getLegBounds(leg: Leg): number[] {
   const coords = polyline
     .toGeoJSON(leg.legGeometry.points)
     .coordinates.map(c => [c[1], c[0]]);
@@ -240,7 +253,7 @@ export function getLegBounds(leg) {
 
 /* Returns an interpolated lat-lon at a specified distance along a leg */
 
-export function legLocationAtDistance(leg, distance) {
+export function legLocationAtDistance(leg: Leg, distance: number): number[] {
   if (!leg.legGeometry) return null;
 
   try {
@@ -258,12 +271,16 @@ export function legLocationAtDistance(leg, distance) {
 
 /* Returns an interpolated elevation at a specified distance along a leg */
 
-export function legElevationAtDistance(points, distance) {
+export function legElevationAtDistance(
+  points: number[],
+  distance: number
+): number[] {
   // Iterate through the combined elevation profile
   let traversed = 0;
   // If first point distance is not zero, insert starting point at zero with
   // null elevation. Encountering this value should trigger the warning below.
   if (points[0][0] > 0) {
+    // @ts-expect-error TODO: how does this work??
     points.unshift([0, null]);
   }
   for (let i = 1; i < points.length; i++) {
@@ -296,7 +313,10 @@ export function legElevationAtDistance(points, distance) {
 
 // Iterate through the steps, building the array of elevation points and
 // keeping track of the minimum and maximum elevations reached
-export function getElevationProfile(steps, unitConversion = 1) {
+export function getElevationProfile(
+  steps: Step[],
+  unitConversion = 1
+): ElevationProfile {
   let minElev = 100000;
   let maxElev = -100000;
   let traversed = 0;
@@ -343,10 +363,12 @@ export function getElevationProfile(steps, unitConversion = 1) {
  *
  * @see https://stackoverflow.com/questions/118241/calculate-text-width-with-javascript/21015393#21015393
  */
-export function getTextWidth(text, font = "22px Arial") {
+export function getTextWidth(text: string, font = "22px Arial"): number {
   // re-use canvas object for better performance
   const canvas =
+    // @ts-expect-error TODO: what is this doing? How does it work?
     getTextWidth.canvas ||
+    // @ts-expect-error TODO: what is this doing? How does it work?
     (getTextWidth.canvas = document.createElement("canvas"));
   const context = canvas.getContext("2d");
   context.font = font;
@@ -358,7 +380,10 @@ export function getTextWidth(text, font = "22px Arial") {
  * Get the configured company object for the given network string if the company
  * has been defined in the provided companies array config.
  */
-export function getCompanyForNetwork(networkString, companies = []) {
+export function getCompanyForNetwork(
+  networkString: string,
+  companies: Company[] = []
+): Company {
   const company = companies.find(co => co.id === networkString);
   if (!company) {
     console.warn(
@@ -376,7 +401,10 @@ export function getCompanyForNetwork(networkString, companies = []) {
  * @param  {Array<object>}  [companies=[]] An optional list of the companies config.
  * @return {string}  A label for use in presentation on a website.
  */
-export function getCompaniesLabelFromNetworks(networks, companies = []) {
+export function getCompaniesLabelFromNetworks(
+  networks: string[],
+  companies: Company[] = []
+): string {
   return networks
     .map(network => getCompanyForNetwork(network, companies))
     .filter(co => !!co)
@@ -384,12 +412,18 @@ export function getCompaniesLabelFromNetworks(networks, companies = []) {
     .join("/");
 }
 
-export function getTNCLocation(leg, type) {
+export function getTNCLocation(leg: Leg, type: string): string {
   const location = leg[type];
   return `${location.lat.toFixed(5)},${location.lon.toFixed(5)}`;
 }
 
-export function calculatePhysicalActivity(itinerary) {
+export function calculatePhysicalActivity(
+  itinerary: Itinerary
+): {
+  bikeDuration: number;
+  caloriesBurned: number;
+  walkDuration: number;
+} {
   let walkDuration = 0;
   let bikeDuration = 0;
   itinerary.legs.forEach(leg => {
@@ -405,7 +439,7 @@ export function calculatePhysicalActivity(itinerary) {
   };
 }
 
-export function getTimeZoneOffset(itinerary) {
+export function getTimeZoneOffset(itinerary: Itinerary): number {
   if (!itinerary.legs || !itinerary.legs.length) return 0;
 
   // Determine if there is a DST offset between now and the itinerary start date
@@ -419,7 +453,7 @@ export function getTimeZoneOffset(itinerary) {
   );
 }
 
-export function calculateTncFares(itinerary) {
+export function calculateTncFares(itinerary: Itinerary): TncFare {
   // TODO: don't rely on deprecated methods!
   // At the moment this is safe as none of these exported variables contain strings
   const { maxTNCFare, minTNCFare, tncCurrencyCode } = calculateFares(

@@ -129,6 +129,7 @@ export type Config = {
     dateFormat?: string;
     longDateFormat?: string;
   };
+  modes: ConfiguredModes;
   // TODO: add full typing
   map?: {
     overlays?: {
@@ -262,6 +263,8 @@ export type Leg = {
   agencyTimeZoneOffset: number;
   agencyUrl?: string;
   alerts?: Alert[];
+  boardRule?: string;
+  alightRule?: string;
   arrivalDelay: number;
   departureDelay: number;
   distance: number;
@@ -363,6 +366,15 @@ export type Itinerary = {
   walkDistance: number;
   walkLimitExceeded: boolean;
   walkTime: number;
+};
+
+export type ElevationProfile = {
+  maxElev: number;
+  minElev: number;
+  points: number[];
+  traversed: number;
+  gain: number;
+  loss: number;
 };
 
 /**
@@ -546,7 +558,6 @@ export type ConfiguredModes = {
   micromobilityModes: ConfiguredMode[];
 };
 
-// TS TODO: CONTINUE
 export type ConfiguredCompany = {
   /**
    * The id of the company. This is typically in all-caps.
@@ -596,4 +607,10 @@ export type UserLocation = {
    * One of: 'home', 'work', 'stop' or 'recent'
    */
   type: string;
+};
+
+export type TncFare = {
+  maxTNCFare: number;
+  minTNCFare: number;
+  tncCurrencyCode: string;
 };
