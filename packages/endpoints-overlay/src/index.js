@@ -1,4 +1,3 @@
-import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -34,7 +33,10 @@ function DefaultMapMarkerIcon({ location, type }) {
 }
 
 DefaultMapMarkerIcon.propTypes = {
-  location: coreUtils.types.locationType.isRequired,
+  // Typescript TODO: restore correct type
+  // eslint-disable-next-line react/forbid-prop-types
+  location: PropTypes.object.isRequired,
+  // location: coreUtils.types.locationType.isRequired,
   type: PropTypes.string.isRequired
 };
 
@@ -112,16 +114,25 @@ EndpointsOverlay.propTypes = {
   /**
    * The from location.
    */
-  fromLocation: coreUtils.types.locationType,
+  // fromLocation: coreUtils.types.locationType,
+  // Typescript TODO: restore correct type
+  // eslint-disable-next-line react/forbid-prop-types
+  fromLocation: PropTypes.object,
   /**
    * Intermediate places along a journey.
    */
-  intermediatePlaces: PropTypes.arrayOf(coreUtils.types.locationType),
+  // intermediatePlaces: PropTypes.arrayOf(coreUtils.types.locationType),
+  // Typescript TODO: restore correct type
+  // eslint-disable-next-line react/forbid-prop-types
+  intermediatePlaces: PropTypes.arrayOf(PropTypes.object),
   /**
    * An array of location that the user has saved. Not needed unless user
    * settings is activated.
    */
-  locations: PropTypes.arrayOf(coreUtils.types.locationType),
+  // Typescript TODO: restore correct type
+  // eslint-disable-next-line react/forbid-prop-types
+  locations: PropTypes.arrayOf(PropTypes.object),
+  // locations: PropTypes.arrayOf(coreUtils.types.locationType),
   /**
    * An optional custom component that can be used to create custom html that
    * is used in a leaflet divIcon to render the map marker icon for each
@@ -156,7 +167,10 @@ EndpointsOverlay.propTypes = {
   /**
    * To to location
    */
-  toLocation: coreUtils.types.locationType
+  // Typescript TODO: restore correct type
+  // eslint-disable-next-line react/forbid-prop-types
+  toLocation: PropTypes.object
+  // toLocation: coreUtils.types.locationType
 };
 
 const noop = () => {};

@@ -173,8 +173,14 @@ export default class Endpoint extends Component {
 Endpoint.propTypes = {
   clearLocation: PropTypes.func.isRequired,
   forgetPlace: PropTypes.func.isRequired,
-  location: coreUtils.types.locationType,
-  locations: PropTypes.arrayOf(coreUtils.types.locationType).isRequired,
+  // Typescript TODO: restore correct type
+  // eslint-disable-next-line react/forbid-prop-types
+  location: PropTypes.object,
+  // location: coreUtils.types.locationType,
+  // Typescript TODO: restore correct type
+  // eslint-disable-next-line react/forbid-prop-types
+  locations: PropTypes.arrayOf(PropTypes.object).isRequired,
+  // locations: PropTypes.arrayOf(coreUtils.types.locationType).isRequired,
   MapMarkerIcon: PropTypes.elementType.isRequired,
   rememberPlace: PropTypes.func.isRequired,
   setLocation: PropTypes.func.isRequired,
