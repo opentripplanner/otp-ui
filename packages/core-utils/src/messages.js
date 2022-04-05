@@ -1,3 +1,5 @@
+// This entire file can be removed once deprecation goes forward
+import { logDeprecationWarning } from "./deprecated";
 /**
  * Takes component's default props messages and its instance props messages and
  * returns the merged messages. The returned object will ensure that the default
@@ -7,6 +9,8 @@
  */
 /* eslint-disable import/prefer-default-export */
 export function mergeMessages(defaultPropsMessages, propsMessages) {
+  logDeprecationWarning("mergeMessages");
+
   const defaultMessages = defaultPropsMessages || {};
   const instanceMessages = propsMessages || {};
   return {
