@@ -1,6 +1,8 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import styled from "styled-components";
 import { Wheelchair } from "@styled-icons/foundation/Wheelchair";
+
+import { GradationMap } from "../types";
 
 interface WrapperProps {
   border: boolean;
@@ -35,6 +37,13 @@ const TextWrapper = styled.span`
   font-weight: 600;
 `;
 
+interface Props {
+  gradationMap?: GradationMap;
+  grayscale?: boolean;
+  large?: boolean;
+  score: number;
+}
+
 /**
  * Component which renders a label with a color and icon depending on
  * a given accessibility score. The color and icon are set by a given gradation map.
@@ -44,15 +53,7 @@ const AccessibilityRating = ({
   grayscale = false,
   large = false,
   score
-}: {
-  gradationMap?: Record<
-    number,
-    { color: string; icon?: JSX.Element; text?: string }
-  >;
-  grayscale: boolean;
-  large: boolean;
-  score: number;
-}): JSX.Element => {
+}: Props): ReactElement => {
   // Provide default mapping
   const mapping = gradationMap || {
     0.0: { color: "#ffe4e5", text: "❌" },

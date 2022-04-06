@@ -181,7 +181,7 @@ type ElevationData = {
   second: number;
 }[];
 
-interface Alert {
+export interface Alert {
   alertHeaderText?: string;
   alertDescriptionText?: string;
   alertUrl?: string;
@@ -211,7 +211,9 @@ export interface Step {
  * Describe an origin, destination, or intermediate location in an itinerary.
  */
 export interface Place {
+  address?: string;
   arrival?: number;
+  bikeShareId?: string;
   departure?: number;
   lat: number;
   lon: number;
@@ -257,12 +259,15 @@ interface FlexPickupBookingInfo extends FlexBookingInfo {
  * http://otp-docs.ibi-transit.com/api/json_Leg.html
  */
 export interface Leg {
+  accessibilityScore?: number;
+  agencyBrandingUrl?: string;
   agencyId?: string;
   agencyName?: string;
   agencyTimeZoneOffset: number;
   agencyUrl?: string;
   alerts?: Alert[];
   arrivalDelay: number;
+  averageWait?: number;
   departureDelay: number;
   distance: number;
   dropOffBookingInfo?: FlexDropOffBookingInfo;
@@ -283,7 +288,10 @@ export interface Leg {
   rentedCar: boolean;
   rentedVehicle: boolean;
   route?: string;
+  routeColor?: string;
   routeId?: string;
+  routeLongName?: string;
+  routeShortName?: string;
   routeType?: number;
   serviceDate?: string;
   startTime: number;
@@ -384,4 +392,12 @@ export interface Location {
  */
 export interface StopLayerStop extends LayerEntity {
   name: string;
+}
+
+/**
+ * Describes time options, including time format and timezone-related offset.
+ */
+export interface TimeOptions {
+  format?: string;
+  offset?: string;
 }

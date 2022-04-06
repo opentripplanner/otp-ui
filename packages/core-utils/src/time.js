@@ -65,6 +65,22 @@ function formatDurationLikeMoment(
     }
   );
 }
+
+/**
+ * Breaks up a duration in seconds into hours, minutes, and seconds.
+ * @param {number} seconds The number of seconds to break up
+ * @returns an object with fields with the corresponding, hours, minutes, seconds.
+ */
+export function toHoursMinutesSeconds(seconds) {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds - hours * 3600) / 60);
+  return {
+    hours,
+    minutes,
+    seconds: seconds - hours * 3600 - minutes * 60
+  };
+}
+
 /**
  * @param  {[type]} config the OTP config object found in store
  * @return {string}        the config-defined time formatter or HH:mm (24-hr time)
@@ -100,6 +116,15 @@ export function formatDuration(seconds) {
 export function formatDurationWithSeconds(seconds, region) {
   return formatDurationLikeMoment(seconds, { enabled: true, code: region });
 }
+
+/**
+ * Offsets a time according to the provided time options
+ * and returns the result.
+ */
+export function offsetTime(ms, options) {
+  return ms + (options?.offset || 0);
+}
+
 /**
  * Formats a time value for display in narrative
  * TODO: internationalization/timezone
@@ -108,7 +133,7 @@ export function formatDurationWithSeconds(seconds, region) {
  */
 export function formatTime(ms, options) {
   return format(
-    ms + (options?.offset || 0),
+    offsetTime(ms, options),
     options?.format || OTP_API_TIME_FORMAT
   );
 }
