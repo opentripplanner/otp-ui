@@ -3,7 +3,7 @@ import flatten from "flat";
 /**
  * Copied from https://stackoverflow.com/questions/50940640/how-to-determine-if-jest-is-running-the-code-or-not
  */
-function isRunningJest() {
+export function isRunningJest() {
     return process.env.JEST_WORKER_ID !== undefined;
 }
 
@@ -13,6 +13,7 @@ const locales = ["en-US", "fr", "unknown"];
 /** List of packages that will have localization support in Storybook. */ 
 const packages = [
   "from-to-location-picker",
+  "itinerary-body",
   "location-field",
   "trip-details",
   "trip-form"
@@ -28,7 +29,7 @@ if (!isRunningJest()) {
     locales.forEach((locale) => {
       try {
         messages[locale] = {
-          ...messages.[locale],
+          ...messages[locale],
           ...flatten(require(`../packages/${pkg}/i18n/${locale}.yml`))
         };
       } catch (e) {

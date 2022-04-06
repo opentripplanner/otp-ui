@@ -1,0 +1,139 @@
+# Default messages for the ItineraryBody component and subcomponents.
+# To use from a react-intl application:
+# - merge the content of this file into the messages object
+#   that has your other localized strings,
+# - flatten the ids, i.e. convert a structure such as
+#      otpUi > LocationField > stations
+#   into "otpUi.TripDetails.stations" (see story for an example),
+# - pass the resulting object to the messages prop of IntlProvider.
+
+otpUi:
+  AccessLegBody:
+    LegDiagramPreview:
+      elevationChart: Elevation chart
+      noElevationData: No elevation data available.
+      toggleElevationChart: Toggle elevation chart
+    mapillaryTooltip: Show street imagery at this location
+    RentedVehicleSubheader:
+      resumeRentalRide: Continue using rental
+      ### This message includes a TriMet customization
+      ### that drops company and vehicle ids from shared bikes.
+      pickupRental: "Pick up {modeType, select,
+        BIKESHARE {shared bike}
+        other {{company} {modeType, select,
+        CARSHARE {car}
+        VEHICLERENTAL {E-scooter}
+        BIKEPARK {bike}
+        other {vehicle}
+        } {vehicleName}}
+        }"
+      ### If bikeshare comes with company info, this message should be used instead.
+      # pickupRental: "Pick up {company} {modeType, select,
+      #   CARSHARE {car}
+      #   VEHICLERENTAL {E-scooter}
+      #   BIKESHARE {bike}
+      #   BIKEPARK {bike}
+      #   other {vehicle}
+      #   } {vehicleName}"
+      walkVehicle: Walk vehicle along {place}
+    step: "{relativeDirection, select,
+      CIRCLE_CLOCKWISE {Follow circle clockwise}
+      CIRCLE_COUNTERCLOCKWISE {Follow circle counterclockwise}
+      CONTINUE {Continue}
+      DEPART {Head {absoluteDirection, select,
+      EAST {east}
+      NORTH {north}
+      NORTHEAST {northeast}
+      NORTHWEST {northwest}
+      SOUTH {south}
+      SOUTHEAST {southeast}
+      SOUTHWEST {southwest}
+      WEST {west}
+      other {{absoluteDirection}}
+      }}
+      ELEVATOR {Take elevator}
+      HARD_LEFT {Hard left}
+      HARD_RIGHT {Hard right}
+      LEFT {Left}
+      RIGHT {Right}
+      SLIGHTLY_LEFT {Slight left}
+      SLIGHTLY_RIGHT {Slight right}
+      UTURN_LEFT {Left U-turn}
+      UTURN_RIGHT {Right U-turn}
+      other {{relativeDirection}}
+      }
+      {relativeDirection, select, ELEVATOR {to} other {on}}
+      {street}"
+    streetOrUnnamedRoad: "{streetName, select,
+      road {Unnamed Road}
+      path {Unnamed Path}
+      other {{streetName}}
+      }"
+    summary: "{mode}{distance, select,
+      0 {}
+      other { {distance}}
+      }{place, select, undefined {} other { to {place}}}"
+    # The summary modes below only include access mode actions (ride, walk...).
+    summaryMode: "{modeId, select,
+      BICYCLE {Bicycle}
+      BICYCLE_RENT {Bikeshare}
+      CAR {{isCarHail, select, true {Ride} other {Drive}}}
+      MICROMOBILITY {Ride}
+      WALK {Walk}
+      other {{modeId}}
+      }"
+    TncLeg:
+      bookRide: Book Ride
+      bookRideLater: Wait until {timeMillis, time, short} to book
+      estimatedCost: "Estimated cost: {minFare} - {maxFare}"
+      estimatedTravelTime: "Estimated travel time: {duration} (does not account for traffic)"
+      waitForPickup: "Wait{minutes, select,
+        undefined {}
+        other { {minutes} minutes}
+        } for {company} pickup"
+    vehicleTitle: "{company} {modeType, select,
+      BIKESHARE {Bike}
+      CARSHARE {Car}
+      VEHICLERENTAL {E-scooter}
+      BIKEPARK {Bike}
+      other {Vehicle}
+      }"
+  ItineraryBody:
+    common:
+      durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"
+    stayOnBoard: Stay on Board at <strong>{placeName}</strong>
+    travelBy: "Travel by {modeId, select,
+      BICYCLE {bicycle}
+      CAR {car}
+      MICROMOBILITY {e-scooter}
+      WALK {walking}
+      other {{modeId}}
+      }"
+    viewOnMap: View on map
+  TransitLegBody:
+    agencyLogo: "{agencyName} logo"
+    AlertsBody:
+      effectiveDate: "Effective as of {includeTime, select,
+        true {{dateTime, time, short}, }
+        other {}
+        }{dayDiff, plural,
+        =-1 {Yesterday}
+        =0 {Today}
+        =1 {Tomorrow}
+        other {{dateTime, date, long}}
+        }"
+    alertsHeader: "{alertCount, plural,
+      =1 {# alert}
+      other {# alerts}
+      }"
+    fare: "Fare: {fare}"
+    operatedBy: Service operated by {agencyLink}
+    reservationRequired: Will not run unless requested ahead of time!
+    rideDurationAndStops: "Ride {duration}{numStops, plural, =1 {} other { / # stops}}"
+    routeDescription: "{routeName}{headsign, select,
+      undefined {} other {<toPrefix> to </toPrefix>{headsign}}}"
+    stopId: Stop ID {stopId}
+    stopIdBasic: ID {stopId}
+    stopViewer: Stop Viewer
+    tripViewer: Trip Viewer
+    typicalWait: "Typical wait: {waitTime}"
