@@ -1,3 +1,4 @@
+import { Location, UserPosition } from "@opentripplanner/types";
 import React from "react";
 // eslint-disable-next-line prettier/prettier
 import type { IntlShape } from "react-intl";
@@ -9,14 +10,7 @@ export type ResultType =
   | "SAVED"
   | "SESSION"
   | "STOP";
-export type Location = {
-  id?: string;
-  lat?: number;
-  lon?: number;
-  main?: string;
-  name?: string;
-  secondary?: string;
-};
+
 
 export interface LocationFieldProps {
   /**
@@ -47,14 +41,7 @@ export interface LocationFieldProps {
   /**
    * The current position of the user if it is available.
    */
-  currentPosition?: {
-    coords?: {
-      latitude: number;
-      longitude: number;
-    };
-    error?: { message: string };
-    fetching?: boolean;
-  };
+  currentPosition?: UserPosition
   /**
    * A slot for the icon to display for the current position
    */

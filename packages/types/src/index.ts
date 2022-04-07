@@ -394,6 +394,10 @@ export type Location = {
    */
   type?: string;
   category?: string;
+
+  /* Sometimes used for displaying subinfo */
+  main?: string;
+  secondary?: string;
 };
 
 /**
@@ -621,6 +625,10 @@ export type TncFare = {
 };
 
 export type UserPosition = {
-  error?: string;
-  coords: { latitude: number; longitude: number };
+  coords?: {
+    latitude: number;
+    longitude: number;
+  };
+  error?: { message: string } | string;
+  fetching?: boolean;
 };

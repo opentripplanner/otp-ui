@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-use-before-define */
-// @ts-ignore Not Typescripted Yet
 import coreUtils from "@opentripplanner/core-utils";
 import getGeocoder from "@opentripplanner/geocoder";
 // @ts-ignore Not Typescripted Yet
@@ -15,7 +14,8 @@ import { Times } from "@styled-icons/fa-solid/Times";
 import { throttle } from "throttle-debounce";
 import { useIntl, FormattedMessage } from "react-intl";
 // eslint-disable-next-line prettier/prettier
-import type { Location, LocationFieldProps, ResultType } from "./types";
+import type { Location } from "@opentripplanner/types";
+import type { LocationFieldProps, ResultType } from "./types";
 
 import {
   GeocodedOptionIcon,
@@ -118,7 +118,7 @@ const LocationField = ({
       // TODO: Better type?
       .then(
         (result: {
-          features: any;
+          features: Location[]
           results: { error: { message: string } };
         }) => {
           let message: string;
@@ -620,7 +620,7 @@ const LocationField = ({
     optionIcon = currentPositionUnavailableIcon;
     optionTitle = intl.formatMessage({
       id: "otpUi.LocationField.currentLocationUnavailable"
-    }, { error: currentPosition.error.message });
+    }, { error: typeof currentPosition.error === "string" ? currentPosition.error : currentPosition.error.message });
     positionUnavailable = true;
   }
 
