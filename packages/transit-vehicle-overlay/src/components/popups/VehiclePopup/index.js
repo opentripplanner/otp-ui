@@ -1,3 +1,5 @@
+// Removed as core-utils is typescripted. TODO: Remove when typescripting!
+/* eslint-disable react/forbid-prop-types */
 import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 import PropTypes from "prop-types";
@@ -59,7 +61,8 @@ export default function VehiclePopup(props) {
 
 VehiclePopup.propTypes = {
   /** vehicle record - @see: core-utils/types/transitVehicleType */
-  vehicle: coreUtils.types.transitVehicleType,
+  // vehicle: coreUtils.types.transitVehicleType,
+  vehicle: PropTypes.object,
 
   /** indicate if this vehicle is being tracked, */
   isTracked: PropTypes.bool,

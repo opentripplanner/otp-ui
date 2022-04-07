@@ -1,6 +1,5 @@
 import { divIcon } from "leaflet";
 import memoize from "lodash.memoize";
-import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
@@ -22,7 +21,9 @@ const templatePropTypes = {
   /** The children of the component. */
   children: PropTypes.node,
   /** The rental vehicle or station to render. */
-  entity: coreUtils.types.stationType.isRequired,
+  // entity: coreUtils.types.stationType.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  entity: PropTypes.object.isRequired,
   /** leaflet attribute to control tabindex value for keyboaryd-only / SR users */
   keyboard: PropTypes.bool
 };

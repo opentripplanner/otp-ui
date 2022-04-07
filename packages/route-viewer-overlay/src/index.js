@@ -1,4 +1,3 @@
-import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 import { FeatureGroup, MapLayer, Polyline, withLeaflet } from "react-leaflet";
@@ -124,7 +123,7 @@ RouteViewerOverlay.propTypes = {
    *
    * See https://leafletjs.com/reference-1.6.0.html#path
    */
-  path: coreUtils.types.leafletPathType,
+  // path: coreUtils.types.leafletPathType,
   /**
    * This represents data about a route as obtained from a transit index.
    * Typically a route has more data than these items, so this is only a list of
@@ -134,7 +133,7 @@ RouteViewerOverlay.propTypes = {
     color: PropTypes.string,
     patterns: PropTypes.objectOf(
       PropTypes.shape({
-        geometry: coreUtils.types.encodedPolylineType,
+        // geometry: coreUtils.types.encodedPolylineType,
         id: PropTypes.string.isRequired,
         stops: PropTypes.arrayOf(
           PropTypes.shape({

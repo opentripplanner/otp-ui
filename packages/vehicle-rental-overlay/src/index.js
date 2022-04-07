@@ -33,7 +33,7 @@ class VehicleRentalOverlay extends MapLayer {
       </Symbol>
     );
     SymbolWrapper.propTypes = {
-      entity: coreUtils.types.stationType.isRequired,
+      // entity: coreUtils.types.stationType.isRequired,
       zoom: PropTypes.number.isRequired
     };
 
@@ -193,8 +193,8 @@ VehicleRentalOverlay.props = {
   /**
    * The entire companies config array.
    */
-  configCompanies: PropTypes.arrayOf(coreUtils.types.companyType.isRequired)
-    .isRequired,
+  // configCompanies: PropTypes.arrayOf(coreUtils.types.companyType.isRequired)
+  //   .isRequired,
   /**
    * A list of companies that are applicable to just this instance of the
    * overlay.
@@ -210,7 +210,7 @@ VehicleRentalOverlay.props = {
    * A configuration of what map markers or symbols to show at various
    * zoom levels.
    */
-  mapSymbols: coreUtils.types.vehicleRentalMapOverlaySymbolsType,
+  // mapSymbols: coreUtils.types.vehicleRentalMapOverlaySymbolsType,
   /**
    * If specified, a function that will be triggered every 30 seconds whenever this layer is
    * visible.
@@ -237,7 +237,7 @@ VehicleRentalOverlay.props = {
   /**
    * A list of the vehicle rental stations specific to this overlay instance.
    */
-  stations: PropTypes.arrayOf(coreUtils.types.stationType),
+  // stations: PropTypes.arrayOf(coreUtils.types.stationType),
   /**
    * Whether the overlay is currently visible.
    */

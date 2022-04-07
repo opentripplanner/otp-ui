@@ -1,4 +1,5 @@
-import coreUtils from "@opentripplanner/core-utils";
+// Removed as core-utils is typescripted. TODO: Remove when typescripting!
+/* eslint-disable react/forbid-prop-types */
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -25,7 +26,8 @@ export default function VehicleTracker(props) {
 
 VehicleTracker.propTypes = {
   /** vehicle record - @see: core-utils/types/transitVehicleType */
-  vehicle: coreUtils.types.transitVehicleType,
+  // vehicle: coreUtils.types.transitVehicleType,
+  vehicle: PropTypes.object,
 
   /** tracking state for this vehicle (marker) .. determines button content */
   isTracked: PropTypes.bool,
