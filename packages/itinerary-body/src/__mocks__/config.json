@@ -16,9 +16,6 @@
     "dateFormat": " MM/DD/YYYY",
     "longDateFormat": "MMMM D, YYYY"
   },
-  "language": {
-    "stopViewer": "Transit Tracker"
-  },
   "transitOperators": [
     {
       "agencyId": "TRIMET",

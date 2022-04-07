@@ -177,12 +177,12 @@ export type EncodedPolyline = {
   points: string;
 };
 
-type ElevationData = {
+export type ElevationData = {
   first: number;
   second: number;
 }[];
 
-type Alert = {
+export type Alert = {
   alertHeaderText?: string;
   alertDescriptionText?: string;
   alertUrl?: string;
@@ -212,6 +212,7 @@ export type Step = {
  * Describe an origin, destination, or intermediate location in an itinerary.
  */
 export type Place = {
+  address?: string;
   arrival?: number;
   bikeShareId?: string;
   departure?: number;
@@ -259,6 +260,8 @@ type FlexPickupBookingInfo = {
  * http://otp-docs.ibi-transit.com/api/json_Leg.html
  */
 export type Leg = {
+  accessibilityScore?: number;
+  agencyBrandingUrl?: string;
   agencyId?: string;
   agencyName?: string;
   agencyTimeZoneOffset: number;
@@ -267,6 +270,7 @@ export type Leg = {
   boardRule?: string;
   alightRule?: string;
   arrivalDelay: number;
+  averageWait?: number;
   departureDelay: number;
   distance: number;
   dropOffBookingInfo?: FlexDropOffBookingInfo;
@@ -287,10 +291,10 @@ export type Leg = {
   rentedCar: boolean;
   rentedVehicle: boolean;
   route?: string;
-  routeId?: string;
-  routeShortName?: string;
-  routeLongName?: string;
   routeColor?: string;
+  routeId?: string;
+  routeLongName?: string;
+  routeShortName?: string;
   routeType?: number;
   serviceDate?: string;
   startTime: number;
@@ -453,6 +457,7 @@ export type Route = {
 
 /**
  * Used to help display the time of day within the context of a particular itinerary.
+ * Describes time options, including time format and timezone-related offset.
  */
 export type TimeOptions = {
   /**
