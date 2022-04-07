@@ -2,7 +2,6 @@ import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
 import PropTypes from "prop-types";
 import React from "react";
-import { accessibilityScoreGradationMapShape } from "../../itinerary-body/src/ItineraryBody";
 import AccessibilityAnnotation from "./accessibility-annotation";
 
 import * as S from "./styled";
@@ -48,7 +47,8 @@ export default function AccessLeg({
 }
 
 AccessLeg.propTypes = {
-  accessibilityScoreGradationMap: accessibilityScoreGradationMapShape,
+  // eslint-disable-next-line react/forbid-prop-types
+  accessibilityScoreGradationMap: PropTypes.object,
   config: coreUtils.types.configType.isRequired,
   leg: coreUtils.types.legType.isRequired,
   LegIcon: PropTypes.elementType.isRequired
