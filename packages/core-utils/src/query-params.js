@@ -1,3 +1,7 @@
+// TODO: Remove this entire file, as it is deprecated in favor of i18n-queryParams within
+// the SettingsSelector package
+
+// This is only used within stories
 import cloneDeep from "lodash.clonedeep";
 import React from "react";
 import { Wheelchair } from "@styled-icons/foundation/Wheelchair";
@@ -54,10 +58,14 @@ import { getCurrentDate, getCurrentTime } from "./time";
 /**
  * Format location object as string for use in fromPlace or toPlace query param.
  */
-export function formatPlace(location, alternateName = "Place") {
+export function formatPlace(location, alternateName) {
   if (!location) return null;
   const name =
-    location.name || `${alternateName} (${location.lat},${location.lon})`;
+    location.name ||
+    `${alternateName ? `${alternateName} ` : ""}(${location.lat},${
+      location.lon
+    })`;
+  // This string is not language-specific
   return `${name}::${location.lat},${location.lon}`;
 }
 
@@ -70,7 +78,7 @@ const queryParams = [
     name: "from",
     routingTypes: ["ITINERARY", "PROFILE"],
     default: null,
-    itineraryRewrite: value => ({ fromPlace: formatPlace(value, "Origin") }),
+    itineraryRewrite: value => ({ fromPlace: formatPlace(value) }),
     profileRewrite: value => ({ from: { lat: value.lat, lon: value.lon } })
     // FIXME: Use for parsing URL values?
     // fromURL: stringToLocation
@@ -81,7 +89,7 @@ const queryParams = [
     name: "to",
     routingTypes: ["ITINERARY", "PROFILE"],
     default: null,
-    itineraryRewrite: value => ({ toPlace: formatPlace(value, "Destination") }),
+    itineraryRewrite: value => ({ toPlace: formatPlace(value) }),
     profileRewrite: value => ({ to: { lat: value.lat, lon: value.lon } })
     // FIXME: Use for parsing URL values?
     // fromURL: stringToLocation

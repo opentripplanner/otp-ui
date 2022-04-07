@@ -23,7 +23,11 @@ export const OTP_API_TIME_FORMAT = "HH:mm";
  * Otherwise, uses date-fns default
  * @returns                   Formatted duration
  */
-function formatDurationLikeMoment(seconds, showSeconds, localize = true) {
+function formatDurationLikeMoment(
+  seconds,
+  showSeconds,
+  localize = { enabled: true, code: "en-US" }
+) {
   // date-fns doesn't do this automatically
   if ((!showSeconds && seconds < 60) || seconds === 0) {
     return "0 min";
@@ -41,7 +45,8 @@ function formatDurationLikeMoment(seconds, showSeconds, localize = true) {
   };
   const locale = localize
     ? {
-        code: "en-US",
+        // Maintain backwards compatibility when called with localize=true
+        code: localize?.code || "en-US",
         formatDistance: (spec, val) => {
           return `${val} ${specLookup[spec]}`;
         }
@@ -108,8 +113,8 @@ export function formatDuration(seconds) {
  * @param {number} seconds duration in seconds
  * @returns {string} formatted text representation
  */
-export function formatDurationWithSeconds(seconds) {
-  return formatDurationLikeMoment(seconds, true);
+export function formatDurationWithSeconds(seconds, region) {
+  return formatDurationLikeMoment(seconds, { enabled: true, code: region });
 }
 
 /**

@@ -1,17 +1,13 @@
-import moment from "moment";
-
 import { getPlaceName, isTransit, isFlex, toSentenceCase } from "./itinerary";
 
-export function latlngToString(latlng) {
-  return (
-    latlng &&
-    `${latlng.lat.toFixed(5)}, ${(latlng.lng || latlng.lon).toFixed(5)}`
-  );
-}
+import {
+  coordsToString,
+  getDetailText,
+  latlngToString,
+  logDeprecationWarning
+} from "./deprecated";
 
-export function coordsToString(coords) {
-  return coords.length && coords.map(c => (+c).toFixed(5)).join(", ");
-}
+export { coordsToString, getDetailText, latlngToString };
 
 export function currentPositionToLocation(currentPosition) {
   if (currentPosition.error || !currentPosition.coords) {
@@ -23,7 +19,6 @@ export function currentPositionToLocation(currentPosition) {
   return {
     lat: currentPosition.coords.latitude,
     lon: currentPosition.coords.longitude,
-    name: "(Current Location)",
     category: "CURRENT_LOCATION"
   };
 }
@@ -34,26 +29,16 @@ export function stringToCoords(str) {
 
 export function constructLocation(latlng) {
   return {
-    name: latlngToString(latlng),
     lat: latlng.lat,
     lon: latlng.lng
   };
 }
 
-export function getDetailText(location) {
-  let detailText;
-  if (location.type === "home" || location.type === "work") {
-    detailText = location.name;
-  }
-  if (location.type === "stop") {
-    detailText = location.id;
-  } else if (location.type === "recent" && location.timestamp) {
-    detailText = moment(location.timestamp).fromNow();
-  }
-  return detailText;
-}
-
 export function formatStoredPlaceName(location, withDetails = true) {
+  if (withDetails) {
+    logDeprecationWarning("the formatStoredPlaceName withDetails parameter");
+  }
+
   let displayName =
     location.type === "home" || location.type === "work"
       ? toSentenceCase(location.type)
@@ -99,6 +84,7 @@ export function itineraryToTransitive(
 
   const journey = {
     journey_id: "itin",
+    // This string is not shown in the UI
     journey_name: "Iterarary-derived Journey",
     segments: []
   };
@@ -180,6 +166,7 @@ export function itineraryToTransitive(
       });
       tdata.places.push({
         place_id: toPlaceId,
+        // This string is not shown in the UI
         place_name: getPlaceName(leg.to, companies),
         place_lat: leg.to.lat,
         place_lon: leg.to.lon
@@ -205,6 +192,7 @@ export function itineraryToTransitive(
       const ptnId = `ptn_${patternId}`;
       const pattern = {
         pattern_id: ptnId,
+        // This string is not shown in the UI
         pattern_name: `Pattern ${patternId}`,
         route_id: leg.routeId,
         stops: []
