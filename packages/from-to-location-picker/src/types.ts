@@ -1,13 +1,5 @@
-export type Location = {
-  lat: number;
-  lon: number;
-  name: string;
-  /**
-   * This is only used for locations that a user has saved. Can be either:
-   * "home" or "work"
-   */
-  type?: string;
-};
+// eslint-disable-next-line prettier/prettier
+import type { Location } from "@opentripplanner/types";
 
 export type FromToPickerProps = {
   /**
@@ -32,6 +24,7 @@ export type FromToPickerProps = {
    */
   setLocation?: ({
     locationType: string,
+    // eslint-disable-next-line @typescript-eslint/no-shadow
     location: Location,
     reverseGeocode: boolean
   }) => void;

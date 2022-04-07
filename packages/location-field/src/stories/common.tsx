@@ -26,7 +26,7 @@ export const hereGeocoderConfig = {
 
 export const getCurrentPosition = action("getCurrentPosition");
 export const onLocationSelected = action("onLocationSelected");
-export const selectedLocation = { name: "123 Main St" };
+export const selectedLocation = { lat: 0, lon: 0, name: "123 Main St" };
 
 export const layerColorMap = {
   stops: "purple",

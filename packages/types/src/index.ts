@@ -600,6 +600,8 @@ export type GeocodedFeature = {
   };
   properties: {
     label: string;
+    layer?: string;
+    source?: string;
   };
 };
 
@@ -620,7 +622,7 @@ export type UserLocation = {
   /**
    * One of: 'home', 'work', 'stop' or 'recent'
    */
-  type: string;
+  type: "home" | "work" | "stop" | "recent";
 };
 
 export type TncFare = {

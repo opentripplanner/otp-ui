@@ -9,9 +9,9 @@ import { Home } from "@styled-icons/fa-solid/Home";
 import { MapMarker } from "@styled-icons/fa-solid/MapMarker";
 import { MapPin } from "@styled-icons/fa-solid/MapPin";
 
+import { Stop, UserLocation } from "@opentripplanner/types";
 import * as S from "./styled";
 // eslint-disable-next-line prettier/prettier
-import type { TransitIndexStopWithRoutes, UserLocation } from "./types";
 
 export function GeocodedOptionIcon({
   feature = {}
@@ -38,7 +38,7 @@ export function Option({
   isActive = false,
   onClick,
   subTitle = null,
-  title = null,
+  title = null
 }: {
   classes?: string;
   color?: string;
@@ -81,7 +81,7 @@ export function TransitStopOption({
 }: {
   isActive?: boolean;
   onClick: () => void;
-  stop: TransitIndexStopWithRoutes;
+  stop: Stop;
   stopOptionIcon: React.ReactNode;
 }): React.ReactElement {
   return (
@@ -108,7 +108,11 @@ export function TransitStopOption({
   );
 }
 
-export function UserLocationIcon({ userLocation }: { userLocation: UserLocation }): React.ReactElement {
+export function UserLocationIcon({
+  userLocation
+}: {
+  userLocation: UserLocation;
+}): React.ReactElement {
   if (userLocation.icon === "work") return <Briefcase size={13} />;
   if (userLocation.icon === "home") return <Home size={13} />;
   return <MapMarker size={13} />;
