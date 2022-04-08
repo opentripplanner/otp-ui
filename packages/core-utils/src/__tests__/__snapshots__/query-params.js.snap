@@ -247,6 +247,19 @@ Array [
   },
   Object {
     "applicable": [Function],
+    "high": 20,
+    "label": "walk reluctance",
+    "low": 0.5,
+    "name": "walkReluctance",
+    "routingTypes": Array [
+      "ITINERARY",
+      "PROFILE",
+    ],
+    "selector": "SLIDER",
+    "step": 0.5,
+  },
+  Object {
+    "applicable": [Function],
     "default": 20,
     "label": "Max Bike Time",
     "name": "maxBikeTime",
@@ -458,12 +471,6 @@ Array [
   },
   Object {
     "name": "maxPreTransitTime",
-    "routingTypes": Array [
-      "ITINERARY",
-    ],
-  },
-  Object {
-    "name": "walkReluctance",
     "routingTypes": Array [
       "ITINERARY",
     ],
