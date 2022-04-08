@@ -11,6 +11,7 @@ import * as S from "../styled";
 // eslint-disable-next-line prettier/prettier
 import type { ConfiguredModes, CustomQueryParameters, QueryParamChangeEvent } from "../types";
 import type { QueryParams } from "../TripOptions/types";
+import SliderSelector from "../SliderSelector";
 
 interface GeneralSettingsPanelProps {
   /**
@@ -140,6 +141,19 @@ export default function GeneralSettingsPanel({
                 value={query[paramInfo.name]}
               />
             );
+          case "SLIDER":
+            return (
+              <SliderSelector
+                key={paramInfo.label}
+                label={<>{icon}{label}</>}
+                max={paramInfo.high}
+                min={paramInfo.low}
+                name={paramInfo.name}
+                onChange={handleChange}
+                step={paramInfo?.step}
+                value={query[paramInfo.name]}
+              />
+            )
           default:
             return null;
         }

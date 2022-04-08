@@ -169,6 +169,16 @@ export function getQueryParamMessagesWithI18n(
       ),
       options: getDistanceOptionsInMiles(intl, [0.1, 0.25, 0.5, 0.75, 1, 2, 5])
     },
+    walkReluctance: {
+      label: (
+        <FormattedMessage
+          defaultMessage={
+            defaultMessages["otpUi.queryParameters.walkReluctance"]
+          }
+          description="Walk reluctance label"
+          id="otpUi.queryParameters.walkReluctance"
+        />
+      ) },
     maxBikeDistance: {
       label: (
         <FormattedMessage

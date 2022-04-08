@@ -41,6 +41,7 @@ const GeneralSettingsTemplate = (args: StoryArgs) => (
     onQueryParamChange={onQueryParamChange}
     query={{
       mode: args.mode,
+      otp2: args.otp2,
       routingType: "ITINERARY"
     }}
     queryParamMessages={args.queryParamMessages}
@@ -101,6 +102,17 @@ export const checkboxSelector = makeStory(Core.CheckboxSelector, {
   style: { display: "inline-block", width: "250px" }
 });
 
+export const sliderSelector = makeStory(Core.SliderSelector, {
+  label: "Drag me.",
+  max: 20,
+  min: 0.5,
+  name: "MyParam",
+  onChange,
+  step: 0.5,
+  style: { display: "inline-block", width: "250px" },
+  value: 3
+});
+
 export const dateTimeSelector = makeStory(Core.DateTimeSelector, {
   date: "2020-02-15",
   dateFormatLegacy: "YY-M-d",
@@ -131,6 +143,11 @@ export const dropdownSelector = makeStory(Core.DropdownSelector, {
 
 export const generalSettingsPanel = makeStory(GeneralSettingsTemplate, {
   mode: "WALK,BUS,TRAM,SUBWAY"
+});
+
+export const generalSettingsPanelWithOtp2 = makeStory(GeneralSettingsTemplate, {
+  mode: "WALK,BUS,TRAM,SUBWAY",
+  otp2: true
 });
 
 export const generalSettingsPanelWithCustomMessages = makeStory(
