@@ -29,7 +29,8 @@ export const defaultParams = [
   "optimize",
   "optimizeBike",
   "maxEScooterDistance",
-  "watts"
+  "watts",
+  "walkReluctance"
 ];
 
 /**

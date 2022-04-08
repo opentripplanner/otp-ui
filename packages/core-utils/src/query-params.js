@@ -168,7 +168,10 @@ const queryParams = [
     name: "maxWalkDistance",
     routingTypes: ["ITINERARY"],
     applicable: query =>
-      query.mode && hasTransit(query.mode) && query.mode.indexOf("WALK") !== -1,
+      !query.otp2 &&
+      query.mode &&
+      hasTransit(query.mode) &&
+      query.mode.indexOf("WALK") !== -1,
     default: 1207, // 3/4 mi.
     selector: "DROPDOWN",
     label: "Maximum Walk",
@@ -390,6 +393,17 @@ const queryParams = [
     ]
   },
 
+  {
+    name: "walkReluctance",
+    routingTypes: ["ITINERARY", "PROFILE"],
+    selector: "SLIDER",
+    low: 0.5,
+    high: 20,
+    step: 0.5,
+    label: "walk reluctance",
+    applicable: query =>
+      !!query.otp2 && query.mode && query.mode.indexOf("WALK") !== -1
+  },
   {
     /* maxBikeTime -- the maximum time the user will spend biking in minutes */
     name: "maxBikeTime",
@@ -671,10 +685,6 @@ const queryParams = [
   },
   {
     name: "maxPreTransitTime",
-    routingTypes: ["ITINERARY"]
-  },
-  {
-    name: "walkReluctance",
     routingTypes: ["ITINERARY"]
   },
   {
