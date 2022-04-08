@@ -21,6 +21,7 @@ export { summarizeQuery };
 export const defaultParams = [
   "wheelchair",
   "maxWalkDistance",
+  "walkReluctance",
   "maxWalkTime",
   "walkSpeed",
   "maxBikeDistance",
@@ -29,8 +30,7 @@ export const defaultParams = [
   "optimize",
   "optimizeBike",
   "maxEScooterDistance",
-  "watts",
-  "walkReluctance"
+  "watts"
 ];
 
 /**
