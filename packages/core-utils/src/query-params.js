@@ -168,6 +168,10 @@ const queryParams = [
     name: "maxWalkDistance",
     routingTypes: ["ITINERARY"],
     applicable: query =>
+      /* Since this query variable isn't in this list, it's not included in the generated query
+       * It does however allow us to determine if we should show the OTP1 max walk distance
+       * dropdown or the OTP2 walk reluctance slider
+       */
       !query.otp2 &&
       query.mode &&
       hasTransit(query.mode) &&
@@ -402,6 +406,10 @@ const queryParams = [
     step: 0.5,
     label: "walk reluctance",
     applicable: query =>
+      /* Since this query variable isn't in this list, it's not included in the generated query
+       * It does however allow us to determine if we should show the OTP1 max walk distance
+       * dropdown or the OTP2 walk reluctance slider
+       */
       !!query.otp2 && query.mode && query.mode.indexOf("WALK") !== -1
   },
   {
