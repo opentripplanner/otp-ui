@@ -58,7 +58,9 @@ export default function ModeButton({
   const activeClassName = selected ? "active" : "";
   const disabledClassName = enabled ? "" : "disabled";
 
-  const buttonId = `${title?.replace(/ /g, "-")}-button`;
+  const buttonId = `${title?.replace(/ /g, "-")}-button-${Math.floor(
+    Math.random() * 1_000_000_000
+  )}`;
 
   return (
     <S.ModeButton className={className} style={style}>
