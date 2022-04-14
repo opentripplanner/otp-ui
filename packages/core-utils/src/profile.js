@@ -28,7 +28,7 @@ export function filterProfileOptions(response) {
 }
 
 function locationString(str) {
-  return str ? str.split(",")[0] : null;
+  return str?.split(",")[0];
 }
 
 function accessToLeg(access, origin, destination) {
