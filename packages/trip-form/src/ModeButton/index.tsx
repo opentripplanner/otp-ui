@@ -58,6 +58,8 @@ export default function ModeButton({
   const activeClassName = selected ? "active" : "";
   const disabledClassName = enabled ? "" : "disabled";
 
+  const buttonId = `${title.replace(" ", "-")}-button`;
+
   return (
     <S.ModeButton className={className} style={style}>
       <S.ModeButton.Button
@@ -67,12 +69,14 @@ export default function ModeButton({
         disabled={!enabled}
         onClick={onClick}
         title={title}
+        id={buttonId}
       >
         {children}
       </S.ModeButton.Button>
 
       {title && showTitle && (
         <S.ModeButton.Title
+          aria-labelledby={buttonId}
           className={`${activeClassName} ${disabledClassName}`}
           title={title}
         >
