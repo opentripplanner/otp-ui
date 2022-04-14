@@ -37,6 +37,10 @@ interface ModeButtonProps {
    * Standard React inline style prop.
    */
   style?: CSS.Properties;
+  /**
+   * Unique key used for generating a11y-mandated ID
+   */
+  uniqueId: string;
 }
 
 /**
@@ -53,14 +57,13 @@ export default function ModeButton({
   selected = false,
   showTitle = true,
   title = null,
-  style = null
+  style = null,
+  uniqueId
 }: ModeButtonProps): ReactElement {
   const activeClassName = selected ? "active" : "";
   const disabledClassName = enabled ? "" : "disabled";
 
-  const buttonId = `${title?.replace(/ /g, "-")}-button-${Math.floor(
-    Math.random() * 1_000_000_000
-  )}`;
+  const buttonId = `${title?.replace(/ /g, "-")}-button-${uniqueId}`;
 
   return (
     <S.ModeButton className={className} style={style}>
