@@ -62,6 +62,7 @@ export default function ModeButton({
     <S.ModeButton className={className} style={style}>
       <S.ModeButton.Button
         aria-pressed={selected}
+        aria-label={title}
         className={`${activeClassName} ${disabledClassName}`}
         disabled={!enabled}
         onClick={onClick}

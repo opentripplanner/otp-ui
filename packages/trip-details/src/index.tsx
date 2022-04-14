@@ -181,7 +181,10 @@ export function TripDetails({
     fare = (
       <S.Fare>
         <TransitFareWrapper>
-          <summary style={{ display: fareKeys.length > 1 ? "list-item" : "" }}>
+          <summary
+            aria-roledescription="dropdown"
+            style={{ display: fareKeys.length > 1 ? "list-item" : "" }}
+          >
             <TransitFare
               fareNameFallback={
                 <FormattedMessage
