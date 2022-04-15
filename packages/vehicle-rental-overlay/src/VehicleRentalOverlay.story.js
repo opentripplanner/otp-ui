@@ -1,7 +1,7 @@
 import BaseMap from "@opentripplanner/base-map";
 import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
-import React, { Component } from "react";
+import React from "react";
 import { CircleMarker } from "react-leaflet";
 import { action } from "@storybook/addon-actions";
 import { boolean } from "@storybook/addon-knobs";
@@ -11,7 +11,6 @@ import bikeRentalStations from "../__mocks__/bike-rental-stations.json";
 import carRentalStations from "../__mocks__/car-rental-stations.json";
 import eScooterStations from "../__mocks__/e-scooter-rental-stations.json";
 import { HubAndFloatingBike } from "./DefaultMarkers";
-import LeafletLayerControlInterface from "./leaflet-layer-control-interface";
 
 import "../../../node_modules/leaflet/dist/leaflet.css";
 
@@ -165,51 +164,30 @@ const EScooterMapSymbols = [
 ];
 const setLocation = action("setLocation");
 
-class ZoomControlledMapWithVehicleRentalOverlay extends Component {
-  constructor() {
-    super();
-    this.state = { zoom: 13 };
-  }
+const INITIAL_ZOOM = 13;
 
-  onViewportChanged = ({ zoom }) => {
-    const { zoom: stateZoom } = this.state;
-    if (zoom !== stateZoom) {
-      this.setState({ zoom });
-    }
-  };
-
-  render() {
-    const {
-      companies,
-      getStationName,
-      mapSymbols,
-      refreshVehicles,
-      stations,
-      visible
-    } = this.props;
-    const { zoom } = this.state;
-    return (
-      <BaseMap
-        center={center}
-        onViewportChanged={this.onViewportChanged}
-        zoom={zoom}
-      >
-        <LeafletLayerControlInterface
-          configCompanies={configCompanies}
-          companies={companies}
-          getStationName={getStationName}
-          setLocation={setLocation}
-          mapSymbols={mapSymbols}
-          name="Rentals"
-          refreshVehicles={refreshVehicles}
-          stations={stations}
-          visible={visible}
-          zoom={zoom}
-        />
-      </BaseMap>
-    );
-  }
-}
+const ZoomControlledMapWithVehicleRentalOverlay = ({
+  companies,
+  getStationName,
+  mapSymbols,
+  refreshVehicles,
+  stations,
+  visible
+}) => (
+  <BaseMap center={center} zoom={INITIAL_ZOOM}>
+    <VehicleRentalOverlay
+      configCompanies={configCompanies}
+      companies={companies}
+      getStationName={getStationName}
+      setLocation={setLocation}
+      mapSymbols={mapSymbols}
+      name="Rentals"
+      refreshVehicles={refreshVehicles}
+      stations={stations}
+      visible={visible}
+    />
+  </BaseMap>
+);
 
 ZoomControlledMapWithVehicleRentalOverlay.propTypes = {
   companies: PropTypes.arrayOf(PropTypes.string.isRequired),
@@ -225,7 +203,7 @@ ZoomControlledMapWithVehicleRentalOverlay.defaultProps = {
   companies: null,
   getStationName: undefined,
   mapSymbols: null,
-  visible: undefined
+  visible: true
 };
 
 function customStationName(_, station) {
@@ -249,7 +227,7 @@ export const RentalBicycles = () => (
 export const RentalBicyclesVisibilityControlledByKnob = () => {
   const isOverlayVisible = boolean(
     "Toggle visibility of vehicle rental overlay",
-    true
+    false
   );
   return (
     <ZoomControlledMapWithVehicleRentalOverlay
