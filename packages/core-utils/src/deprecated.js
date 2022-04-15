@@ -1,7 +1,14 @@
 import moment from "moment";
 
-// Need to avoid cyclic dependency resolution
+/**
+ * To disable cyclic dependency resolution we need to require() within methods
+ * This is a good reason to disable this eslint-rule
+ */
 /* eslint-disable global-require */
+
+/**
+ * Generates a warning to tell developer that they are using deprecated methods!
+ */
 export function logDeprecationWarning(method, alternative) {
   console.warn(
     `${method ||

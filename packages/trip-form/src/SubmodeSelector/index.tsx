@@ -57,9 +57,10 @@ export default function SubmodeSelector({
       {label && <LabelType>{label}</LabelType>}
       <RowType>
         {modes &&
-          modes.map(option => (
+          modes.map(( option, index ) => (
             <ModeButton
               key={option.id}
+              uniqueId={option.id + index}
               selected={option.selected}
               showTitle={false}
               title={option.title}
