@@ -134,7 +134,9 @@ class VehicleRentalOverlay extends MapLayer {
   componentDidMount() {
     const { registerOverlay, visible } = this.props;
     if (visible) this.startRefreshing();
-    registerOverlay(this);
+    if (typeof registerOverlay === "function") {
+      registerOverlay(this);
+    }
   }
 
   componentWillUnmount() {
