@@ -27,12 +27,17 @@ export const parameters = {
           reviewOnFail: true,
         },
         {
-          // Appears to be a story bug
+          // Appears to be a bug with our stories (they do some weird hacks that are not done in production)
           id: "duplicate-id",
           reviewOnFail: true
         },
         {
-          // Appears to be a story bug
+          // Appears to be a bug with our stories (they do some weird hacks that are not done in production)
+          id: "duplicate-id-active",
+          reviewOnFail: true
+        },
+        {
+          // Appears to be a bug with our stories (they do some weird hacks that are not done in production)
           id: "duplicate-id-aria",
           reviewOnFail: true
         }

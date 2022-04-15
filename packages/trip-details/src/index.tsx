@@ -182,7 +182,7 @@ export function TripDetails({
       <S.Fare>
         <TransitFareWrapper>
           <summary
-            aria-roledescription="dropdown"
+            role="button"
             style={{ display: fareKeys.length > 1 ? "list-item" : "" }}
           >
             <TransitFare

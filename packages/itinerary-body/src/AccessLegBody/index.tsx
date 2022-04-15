@@ -104,7 +104,7 @@ class AccessLegBody extends Component<Props, State> {
             showLegIcon={showLegIcon}
           />
           <S.StepsHeader
-            aria-roledescription="dropdown"
+            role="button"
             aria-expanded={expanded}
             onClick={this.onStepsHeaderClick}
           >
