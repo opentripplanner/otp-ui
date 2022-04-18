@@ -2878,6 +2878,23 @@
     react-resize-detector "^4.2.1"
     velocity-react "^1.4.3"
 
+"@opentripplanner/itinerary-body@^2.6.0":
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/itinerary-body/-/itinerary-body-2.9.1.tgz#b1cc2a6e9a0417b3247fecad8b4939845a716c73"
+  integrity sha512-b4oSCcgVpzNrK27NqhKZxr1YK44zq/Sfg7PiZgL0GRAifpn3E2ou3taXYVLbLkpAf0CdCeysujMC9IokhShBJw==
+  dependencies:
+    "@opentripplanner/core-utils" "^4.5.0"
+    "@opentripplanner/humanize-distance" "^1.1.0"
+    "@opentripplanner/icons" "^1.2.1"
+    "@opentripplanner/location-icon" "^1.4.0"
+    "@styled-icons/fa-solid" "^10.34.0"
+    "@styled-icons/foundation" "^10.34.0"
+    currency-formatter "^1.5.5"
+    moment "^2.24.0"
+    prop-types "^15.7.2"
+    react-resize-detector "^4.2.1"
+    velocity-react "^1.4.3"
+
 "@pmmmwh/react-refresh-webpack-plugin@^0.5.1":
   version "0.5.4"
   resolved "https://registry.yarnpkg.com/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.5.4.tgz#df0d0d855fc527db48aac93c218a0bf4ada41f99"
@@ -5708,9 +5725,9 @@ async-limiter@~1.0.0:
   integrity sha512-csOlWGAcRFJaI6m+F2WKdnMKr4HhdhFVBk0H/QbJFMCr+uO2kwohwXQPxw/9OCxp05r5ghVBFSyioixx3gfkNQ==
 
 async@^2.1.2:
-  version "2.6.3"
-  resolved "https://registry.yarnpkg.com/async/-/async-2.6.3.tgz#d72625e2344a3656e3a3ad4fa749fa83299d82ff"
-  integrity sha512-zflvls11DCy+dQWzTW2dzuilv8Z5X/pjfmZOWba6TNIVDm+2UDaJmXSOXlasHKfNBs8oo3M0aT50fDEWfKZjXg==
+  version "2.6.4"
+  resolved "https://registry.yarnpkg.com/async/-/async-2.6.4.tgz#706b7ff6084664cd7eae713f6f965433b5504221"
+  integrity sha512-mzo5dfJYwAn29PeiJ0zvwTo04zj8HDJj0Mn8TD7sno7q12prdbnasKJHhkm2c1LgrhlJ0teaea8860oxi51mGA==
   dependencies:
     lodash "^4.17.14"
 
