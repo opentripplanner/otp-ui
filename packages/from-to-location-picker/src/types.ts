@@ -1,3 +1,5 @@
+import { ReactElement } from "react";
+
 export type Location = {
   lat: number;
   lon: number;
@@ -10,6 +12,10 @@ export type Location = {
 };
 
 export type FromToPickerProps = {
+  /**
+   * Specifies the label to be rendered, or if set to true, renders the default label "Plan a trip:".
+   */
+  label?: boolean | ReactElement | string;
   /**
    * A specific location to associate with this. This is only used when combined
    * with the setLocation prop.
