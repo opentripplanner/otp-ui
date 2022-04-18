@@ -317,6 +317,7 @@ export interface Properties {
   county: string;
   distance: number;
   gid: string;
+  housenumber: string;
   id: string;
   label: string;
   layer: string;
