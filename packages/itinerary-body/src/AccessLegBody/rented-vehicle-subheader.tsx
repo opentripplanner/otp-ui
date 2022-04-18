@@ -27,12 +27,12 @@ interface Props {
  */
 export default function RentedVehicleSubheader({ config, leg }: Props) {
   const configCompanies = config.companies || [];
-  const { from, mode } = leg;
+  const { from, mode, rentedBike, walkingBike } = leg;
   const { name: legName, networks, vertexType: modeType } = from;
 
   // Sometimes rented vehicles can be walked over things like stairs or other
   // ways that forbid the main mode of travel.
-  if (mode === "WALK") {
+  if (mode === "WALK" || walkingBike === true) {
     return (
       <S.PlaceSubheader>
         <FormattedMessage
@@ -57,7 +57,7 @@ export default function RentedVehicleSubheader({ config, leg }: Props) {
   // walking that occurs in the middle of the rental, so once the main mode
   // resumes there won't be any network info. In that case we simply return
   // that the rental is continuing.
-  if (networks) {
+  if (networks || rentedBike) {
     // Add company and vehicle labels.
     const company = coreUtils.itinerary.getCompaniesLabelFromNetworks(
       networks,
