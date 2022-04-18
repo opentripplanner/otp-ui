@@ -35,6 +35,7 @@ export const toModeColor = (mode: string, routeColor: string): string => {
       return `grey`;
     case "MICROMOBILITY":
     case "MICROMOBILITY_RENT":
+    case "SCOOTER":
       return `#f5a729`;
     default:
       return toSafeRouteColor(routeColor) || "#084c8d";
@@ -52,6 +53,7 @@ export const toModeBorderColor = (mode: string, routeColor: string): string => {
       return `grey`;
     case "MICROMOBILITY":
     case "MICROMOBILITY_RENT":
+    case "SCOOTER":
       return `#f5a729`;
     default:
       return toSafeRouteColor(routeColor) || "#008ab0";
@@ -66,6 +68,7 @@ export const toModeBorder = (mode: string, routeColor: string): string => {
     case "CAR":
     case "MICROMOBILITY":
     case "MICROMOBILITY_RENT":
+    case "SCOOTER":
       return `dotted 4px ${toModeBorderColor(mode, routeColor)}`;
     default:
       return `solid 8px ${toModeBorderColor(mode, routeColor)}`;

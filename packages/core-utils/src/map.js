@@ -106,7 +106,8 @@ export function itineraryToTransitive(
       leg.mode === "WALK" ||
       leg.mode === "BICYCLE" ||
       leg.mode === "CAR" ||
-      leg.mode === "MICROMOBILITY"
+      leg.mode === "MICROMOBILITY" ||
+      leg.mode === "SCOOTER"
     ) {
       let fromPlaceId;
       if (leg.from.bikeShareId) {
