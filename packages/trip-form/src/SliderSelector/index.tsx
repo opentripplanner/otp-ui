@@ -16,6 +16,14 @@ interface SliderSelectorProps {
    */
   label?: ReactElement | string;
   /**
+   * The initial max value for the contained <input> control.
+   */
+  max: number;
+  /**
+   * The initial min value for the contained <input> control.
+   */
+  min: number;
+  /**
    * A unique name for the setting.
    */
   name?: string;
@@ -24,21 +32,13 @@ interface SliderSelectorProps {
    */
   onChange?: (evt: QueryParamChangeEvent) => void;
   /**
-   * Standard React inline style prop.
-   */
-  style?: CSS.Properties;
-  /**
-   * The initial min value for the contained <input> control.
-   */
-  min: number;
-  /**
-   * The initial max value for the contained <input> control.
-   */
-  max: number;
-  /**
    * How fine each step should be. Identical to html range step parameter.
    */
   step?: number
+  /**
+   * Standard React inline style prop.
+   */
+  style?: CSS.Properties;
   /**
    * Value to set slider to.
    */
