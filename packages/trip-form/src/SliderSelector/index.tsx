@@ -12,9 +12,18 @@ interface SliderSelectorProps {
    */
   className?: string;
   /**
-   * The contents of the contained <label> control.
+   * The contents of the contained <label> control. 
+   * Also used as the aria label when high and low labels are provided.
    */
-  label?: ReactElement | string;
+  label?: string;
+  /**
+   * The label for the right end of the slider
+   */
+  labelHigh?: ReactElement | string;
+  /**
+   * The label for the left end of the slider
+   */
+  labelLow?: ReactElement | string;
   /**
    * The initial max value for the contained <input> control.
    */
@@ -52,6 +61,8 @@ export default function SliderSelector({
   className = null,
   max = 20,
   label = null,
+  labelLow,
+  labelHigh,
   min = 0,
   name = null,
   step = 1,
@@ -75,12 +86,18 @@ export default function SliderSelector({
   return (
     <S.SliderSelector className={className} style={style}>
       {/* The <div> elements below are here for the grid layout, see S.DropdownSelector. */}
-      <div>
-        <S.SettingLabel htmlFor={id}>{label}</S.SettingLabel>
-      </div>
+      {!labelLow && !labelHigh && (
+        <div>
+          <S.SettingLabel htmlFor={id}>{label}</S.SettingLabel>
+        </div>
+      )}
 
       <div>
+        <S.SettingLabel htmlFor={id}>
+          {labelLow}
+        </S.SettingLabel>
         <input
+          aria-label={label}
           id={id}
           max={max}
           min={min}
@@ -89,6 +106,9 @@ export default function SliderSelector({
           type="range"
           value={value}
         />
+        <S.SettingLabel htmlFor={id} style={{ paddingLeft:0 }}>
+          {labelHigh}
+        </S.SettingLabel>
       </div>
     </S.SliderSelector>
   );

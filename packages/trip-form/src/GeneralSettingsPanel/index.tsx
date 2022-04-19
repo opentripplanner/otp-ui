@@ -145,7 +145,9 @@ export default function GeneralSettingsPanel({
             return (
               <SliderSelector
                 key={paramInfo.label}
-                label={<>{icon}{label}</>}
+                label={label}
+                labelHigh={paramInfo.labelHigh}
+                labelLow={paramInfo.labelLow}
                 max={paramInfo.high}
                 min={paramInfo.low}
                 name={paramInfo.name}

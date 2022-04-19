@@ -140,15 +140,22 @@ export const DropdownSelector = styled.div`
 
 export const SliderSelector = styled.div`
   > div {
-    width: 50%;
-    display: inline-block;
+    align-items: center;
     box-sizing: border-box;
+    display: inline-flex;
+    gap: 10px;
     position: relative;
+    width: 100%;
+
+    > label {
+      display: block;
+      white-space: pre;
+    }
   }
   input {
-    width: 100%;
     box-sizing: border-box;
     cursor: pointer;
+    width: 100%;
   }
 `;
 

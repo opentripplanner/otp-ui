@@ -104,6 +104,8 @@ export const checkboxSelector = makeStory(Core.CheckboxSelector, {
 
 export const sliderSelector = makeStory(Core.SliderSelector, {
   label: "Drag me.",
+  labelHigh: "high",
+  labelLow: "low",
   max: 20,
   min: 0.5,
   name: "MyParam",

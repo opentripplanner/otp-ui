@@ -178,7 +178,22 @@ export function getQueryParamMessagesWithI18n(
           description="Walk reluctance label"
           id="otpUi.queryParameters.walkReluctance"
         />
-      ) },
+      ),
+      labelLow: <FormattedMessage
+        defaultMessage={
+          defaultMessages["otpUi.queryParameters.walkReluctanceLow"]
+        }
+        description="Label displayed at left side of walk reluctance slider"
+        id="otpUi.queryParameters.walkReluctanceLow"
+      />,
+      labelHigh: <FormattedMessage
+        defaultMessage={
+          defaultMessages["otpUi.queryParameters.walkReluctanceHigh"]
+        }
+        description="Label displayed at right side of walk reluctance slider"
+        id="otpUi.queryParameters.walkReluctanceHigh"
+      />
+    },
     maxBikeDistance: {
       label: (
         <FormattedMessage
