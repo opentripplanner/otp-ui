@@ -278,7 +278,8 @@ const queryParams = [
   {
     /* optimize -- how to optimize a trip (non-bike, non-micromobility trips) */
     name: "optimize",
-    applicable: query => hasTransit(query.mode) && !hasBike(query.mode),
+    applicable: query =>
+      !query.otp2 && hasTransit(query.mode) && !hasBike(query.mode),
     routingTypes: ["ITINERARY"],
     default: "QUICK",
     selector: "DROPDOWN",
@@ -298,7 +299,7 @@ const queryParams = [
   {
     /* optimizeBike -- how to optimize an bike-based trip */
     name: "optimizeBike",
-    applicable: query => hasBike(query.mode),
+    applicable: query => !query.otp2 && hasBike(query.mode),
     routingTypes: ["ITINERARY"],
     default: "SAFE",
     selector: "DROPDOWN",
@@ -405,6 +406,8 @@ const queryParams = [
     high: 20,
     step: 0.5,
     label: "walk reluctance",
+    labelLow: "More Walking",
+    labelHigh: "More Transit",
     applicable: query =>
       /* Since this query variable isn't in this list, it's not included in the generated query
        * It does however allow us to determine if we should show the OTP1 max walk distance
