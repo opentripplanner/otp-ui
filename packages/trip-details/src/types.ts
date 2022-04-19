@@ -15,8 +15,13 @@ export interface DepartureDetailsProps {
 
 export interface TransitFareData {
   [key: string]: {
-    currencyCode: string;
-    transitFare: number;
+    currency: {
+      currencyCode: string
+      defaultFractionDigits: number
+      currency: string
+      symbol: string
+    };
+    cents: number;
   }
 }
 
