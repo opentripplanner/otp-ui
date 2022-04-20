@@ -77,7 +77,7 @@ Array [
   },
   Object {
     "applicable": [Function],
-    "default": 1207,
+    "default": 1609,
     "label": "Max Walk Distance In Meters",
     "name": "maxWalkDistance",
     "options": Array [
