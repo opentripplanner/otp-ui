@@ -24,11 +24,11 @@ export type FromToPickerProps = {
   /**
    * Triggered when the user clicks on the "from" button.
    */
-  onFromClick: () => void;
+  onFromClick?: () => void;
   /**
    * Triggered when the user clicks on the "to" button.
    */
-  onToClick: () => void;
+  onToClick?: () => void;
   /**
    * Triggered when the user clicks either the "from" or "to" button and there
    * are no from/to specific handler functions defined as props.
