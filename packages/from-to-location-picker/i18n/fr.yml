@@ -11,4 +11,5 @@
 otpUi:
   FromToLocationPicker:
     from: Départ
+    planATrip: "Plannifier un trajet :"
     to: Arrivée
