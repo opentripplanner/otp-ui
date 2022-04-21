@@ -1,8 +1,8 @@
 import flatten from "flat";
 import { divIcon } from "leaflet";
 import coreUtils from "@opentripplanner/core-utils";
-import PropTypes from "prop-types";
-import React, { Component } from "react";
+import { Location } from "@opentripplanner/types";
+import React, { Component, ComponentType, ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 import { Marker, Popup } from "react-leaflet";
 import ReactDOMServer from "react-dom/server";
@@ -13,21 +13,42 @@ import { Sync } from "@styled-icons/fa-solid/Sync";
 import { Times } from "@styled-icons/fa-solid/Times";
 
 import * as S from "./styled";
+import {
+  ClearLocationArg,
+  MapLocationActionArg,
+  UserLocationAndType
+} from "./types";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
+
+interface Props {
+  clearLocation: (arg: ClearLocationArg) => void;
+  forgetPlace: (type: string) => void;
+  location?: Location;
+  locations: Location[];
+  MapMarkerIcon: ComponentType<UserLocationAndType>;
+  rememberPlace: (arg: UserLocationAndType) => void;
+  setLocation: (arg: MapLocationActionArg) => void;
+  showUserSettings: boolean;
+  type: string;
+}
+
+interface IconProps {
+  type: string;
+}
 
 // HACK: We should flatten the messages loaded above because
 // the YAML loaders behave differently between webpack and our version of jest:
 // - the yaml loader for webpack returns a nested object,
 // - the yaml loader for jest returns messages with flattened ids.
-const defaultMessages = flatten(defaultEnglishMessages);
+const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
 /**
  * These icons are used to render common icons for user locations. These will
  * only show up in applications that allow saving user locations.
  */
-function UserLocationInnerIcon({ type }) {
+function UserLocationInnerIcon({ type }: IconProps) {
   switch (type) {
     case "briefcase":
       return <Briefcase size={12} />;
@@ -44,14 +65,10 @@ function UserLocationInnerIcon({ type }) {
   }
 }
 
-UserLocationInnerIcon.propTypes = {
-  type: PropTypes.string.isRequired
-};
-
 /**
  * Wrapper for icon that includes spacing.
  */
-function UserLocationIcon({ type }) {
+function UserLocationIcon({ type }: IconProps) {
   return (
     <S.IconWrapper>
       <UserLocationInnerIcon type={type} />
@@ -59,43 +76,45 @@ function UserLocationIcon({ type }) {
   );
 }
 
-UserLocationIcon.propTypes = UserLocationInnerIcon.propTypes;
-
-export default class Endpoint extends Component {
-  rememberAsHome = () => {
+export default class Endpoint extends Component<Props> {
+  rememberAsHome = (): void => {
     const { location: propsLocation, rememberPlace } = this.props;
-    const location = { ...propsLocation };
-    location.id = "home";
-    location.icon = "home";
-    location.type = "home";
+    const location = {
+      ...propsLocation,
+      icon: "home",
+      id: "home",
+      type: "home"
+    };
     rememberPlace({ type: "home", location });
   };
 
-  rememberAsWork = () => {
+  rememberAsWork = (): void => {
     const { location: propsLocation, rememberPlace } = this.props;
-    const location = { ...propsLocation };
-    location.id = "work";
-    location.icon = "briefcase";
-    location.type = "work";
+    const location = {
+      ...propsLocation,
+      icon: "briefcase",
+      id: "work",
+      type: "work"
+    };
     rememberPlace({ type: "work", location });
   };
 
-  forgetHome = () => {
+  forgetHome = (): void => {
     const { forgetPlace } = this.props;
     forgetPlace("home");
   };
 
-  forgetWork = () => {
+  forgetWork = (): void => {
     const { forgetPlace } = this.props;
     forgetPlace("work");
   };
 
-  clearLocation = () => {
+  clearLocation = (): void => {
     const { clearLocation, type } = this.props;
     clearLocation({ locationType: type });
   };
 
-  swapLocation = () => {
+  swapLocation = (): void => {
     const { location, setLocation, type } = this.props;
     this.clearLocation();
     const otherType = type === "from" ? "to" : "from";
@@ -109,7 +128,7 @@ export default class Endpoint extends Component {
     setLocation({ locationType: type, location, reverseGeocode: true });
   };
 
-  render() {
+  render(): ReactElement {
     const {
       location,
       locations,
@@ -237,20 +256,3 @@ export default class Endpoint extends Component {
     );
   }
 }
-
-// See documentation in main index file for documentation on these props.
-Endpoint.propTypes = {
-  clearLocation: PropTypes.func.isRequired,
-  forgetPlace: PropTypes.func.isRequired,
-  location: coreUtils.types.locationType,
-  locations: PropTypes.arrayOf(coreUtils.types.locationType).isRequired,
-  MapMarkerIcon: PropTypes.elementType.isRequired,
-  rememberPlace: PropTypes.func.isRequired,
-  setLocation: PropTypes.func.isRequired,
-  showUserSettings: PropTypes.bool.isRequired,
-  type: PropTypes.string.isRequired
-};
-
-Endpoint.defaultProps = {
-  location: undefined
-};

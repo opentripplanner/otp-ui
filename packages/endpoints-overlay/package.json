@@ -8,7 +8,8 @@
   "license": "MIT",
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc && echo Remove the @ts-expect-error exception in index.tsx once core-utils is typed!"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,9 @@
     "flat": "^5.0.2",
     "prop-types": "^15.7.2",
     "@styled-icons/fa-solid": "^10.34.0"
+  },
+  "devDependencies": {
+    "@types/flat": "^5.0.2"
   },
   "peerDependencies": {
     "@opentripplanner/base-map": "^2.0.0",
