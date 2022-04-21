@@ -1,7 +1,9 @@
+import flatten from "flat";
 import { divIcon } from "leaflet";
 import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
+import { FormattedMessage } from "react-intl";
 import { Marker, Popup } from "react-leaflet";
 import ReactDOMServer from "react-dom/server";
 import { Briefcase } from "@styled-icons/fa-solid/Briefcase";
@@ -11,6 +13,15 @@ import { Sync } from "@styled-icons/fa-solid/Sync";
 import { Times } from "@styled-icons/fa-solid/Times";
 
 import * as Styled from "./styled";
+
+// Load the default messages.
+import defaultEnglishMessages from "../i18n/en-US.yml";
+
+// HACK: We should flatten the messages loaded above because
+// the YAML loaders behave differently between webpack and our version of jest:
+// - the yaml loader for webpack returns a nested object,
+// - the yaml loader for jest returns messages with flattened ids.
+const defaultMessages = flatten(defaultEnglishMessages);
 
 /**
  * These icons are used to render common icons for user locations. These will
@@ -126,11 +137,25 @@ export default class Endpoint extends Component {
                 >
                   {isHome ? (
                     <span>
-                      <UserLocationIcon type="times" /> Forget home
+                      <UserLocationIcon type="times" />{" "}
+                      <FormattedMessage
+                        defaultMessage={
+                          defaultMessages["otpUi.EndpointsOverlay.forgetHome"]
+                        }
+                        description="Button text to forget the home location"
+                        id="otpUi.EndpointsOverlay.forgetHome"
+                      />
                     </span>
                   ) : (
                     <span>
-                      <UserLocationIcon type="home" /> Save as home
+                      <UserLocationIcon type="home" />{" "}
+                      <FormattedMessage
+                        defaultMessage={
+                          defaultMessages["otpUi.EndpointsOverlay.saveAsHome"]
+                        }
+                        description="Button text to save the location as home location"
+                        id="otpUi.EndpointsOverlay.saveAsHome"
+                      />
                     </span>
                   )}
                 </Styled.Button>
@@ -142,24 +167,53 @@ export default class Endpoint extends Component {
                 >
                   {isWork ? (
                     <span>
-                      <UserLocationIcon type="times" /> Forget work
+                      <UserLocationIcon type="times" />{" "}
+                      <FormattedMessage
+                        defaultMessage={
+                          defaultMessages["otpUi.EndpointsOverlay.forgetWork"]
+                        }
+                        description="Button text to forget the work location"
+                        id="otpUi.EndpointsOverlay.forgetWork"
+                      />
                     </span>
                   ) : (
                     <span>
-                      <UserLocationIcon type="briefcase" /> Save as work
+                      <UserLocationIcon type="briefcase" />{" "}
+                      <FormattedMessage
+                        defaultMessage={
+                          defaultMessages["otpUi.EndpointsOverlay.saveAsWork"]
+                        }
+                        description="Button text to save the location as work location"
+                        id="otpUi.EndpointsOverlay.saveAsWork"
+                      />
                     </span>
                   )}
                 </Styled.Button>
               </div>
               <div>
                 <Styled.Button onClick={this.clearLocation}>
-                  <UserLocationIcon type="times" /> Remove as {type} location
+                  <UserLocationIcon type="times" />{" "}
+                  <FormattedMessage
+                    defaultMessage={
+                      defaultMessages["otpUi.EndpointsOverlay.clearLocation"]
+                    }
+                    description="Button text to clear the from/to location"
+                    id="otpUi.EndpointsOverlay.clearLocation"
+                    values={{ locationType: type }}
+                  />
                 </Styled.Button>
               </div>
               <div>
                 <Styled.Button onClick={this.swapLocation}>
-                  <UserLocationIcon type="refresh" /> Change to {otherType}{" "}
-                  location
+                  <UserLocationIcon type="refresh" />{" "}
+                  <FormattedMessage
+                    defaultMessage={
+                      defaultMessages["otpUi.EndpointsOverlay.swapLocation"]
+                    }
+                    description="Button text to swap the from/to location"
+                    id="otpUi.EndpointsOverlay.swapLocation"
+                    values={{ locationType: otherType }}
+                  />
                 </Styled.Button>
               </div>
             </div>
