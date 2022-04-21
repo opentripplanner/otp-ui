@@ -55,3 +55,10 @@ export const ToIcon = styled(LocationIcon)`
   margin-left: 2px;
   margin-top: 2px;
 `;
+
+export const IconWrapper = styled.span`
+  &::after {
+    content: "";
+    margin: 0 0.125em;
+  }
+`;

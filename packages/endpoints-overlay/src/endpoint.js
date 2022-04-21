@@ -12,7 +12,7 @@ import { MapMarkerAlt } from "@styled-icons/fa-solid/MapMarkerAlt";
 import { Sync } from "@styled-icons/fa-solid/Sync";
 import { Times } from "@styled-icons/fa-solid/Times";
 
-import * as Styled from "./styled";
+import * as S from "./styled";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
@@ -27,7 +27,7 @@ const defaultMessages = flatten(defaultEnglishMessages);
  * These icons are used to render common icons for user locations. These will
  * only show up in applications that allow saving user locations.
  */
-function UserLocationIcon({ type }) {
+function UserLocationInnerIcon({ type }) {
   switch (type) {
     case "briefcase":
       return <Briefcase size={12} />;
@@ -44,9 +44,22 @@ function UserLocationIcon({ type }) {
   }
 }
 
-UserLocationIcon.propTypes = {
+UserLocationInnerIcon.propTypes = {
   type: PropTypes.string.isRequired
 };
+
+/**
+ * Wrapper for icon that includes spacing.
+ */
+function UserLocationIcon({ type }) {
+  return (
+    <S.IconWrapper>
+      <UserLocationInnerIcon type={type} />
+    </S.IconWrapper>
+  );
+}
+
+UserLocationIcon.propTypes = UserLocationInnerIcon.propTypes;
 
 export default class Endpoint extends Component {
   rememberAsHome = () => {
@@ -128,16 +141,17 @@ export default class Endpoint extends Component {
           <Popup>
             <div>
               <strong>
-                <UserLocationIcon type={icon} /> {location.name}
+                <UserLocationIcon type={icon} />
+                {location.name}
               </strong>
               <div>
-                <Styled.Button
+                <S.Button
                   disabled={isWork}
                   onClick={isHome ? this.forgetHome : this.rememberAsHome}
                 >
                   {isHome ? (
-                    <span>
-                      <UserLocationIcon type="times" />{" "}
+                    <>
+                      <UserLocationIcon type="times" />
                       <FormattedMessage
                         defaultMessage={
                           defaultMessages["otpUi.EndpointsOverlay.forgetHome"]
@@ -145,10 +159,10 @@ export default class Endpoint extends Component {
                         description="Button text to forget the home location"
                         id="otpUi.EndpointsOverlay.forgetHome"
                       />
-                    </span>
+                    </>
                   ) : (
-                    <span>
-                      <UserLocationIcon type="home" />{" "}
+                    <>
+                      <UserLocationIcon type="home" />
                       <FormattedMessage
                         defaultMessage={
                           defaultMessages["otpUi.EndpointsOverlay.saveAsHome"]
@@ -156,18 +170,18 @@ export default class Endpoint extends Component {
                         description="Button text to save the location as home location"
                         id="otpUi.EndpointsOverlay.saveAsHome"
                       />
-                    </span>
+                    </>
                   )}
-                </Styled.Button>
+                </S.Button>
               </div>
               <div>
-                <Styled.Button
+                <S.Button
                   disabled={isHome}
                   onClick={isWork ? this.forgetWork : this.rememberAsWork}
                 >
                   {isWork ? (
-                    <span>
-                      <UserLocationIcon type="times" />{" "}
+                    <>
+                      <UserLocationIcon type="times" />
                       <FormattedMessage
                         defaultMessage={
                           defaultMessages["otpUi.EndpointsOverlay.forgetWork"]
@@ -175,10 +189,10 @@ export default class Endpoint extends Component {
                         description="Button text to forget the work location"
                         id="otpUi.EndpointsOverlay.forgetWork"
                       />
-                    </span>
+                    </>
                   ) : (
-                    <span>
-                      <UserLocationIcon type="briefcase" />{" "}
+                    <>
+                      <UserLocationIcon type="briefcase" />
                       <FormattedMessage
                         defaultMessage={
                           defaultMessages["otpUi.EndpointsOverlay.saveAsWork"]
@@ -186,13 +200,13 @@ export default class Endpoint extends Component {
                         description="Button text to save the location as work location"
                         id="otpUi.EndpointsOverlay.saveAsWork"
                       />
-                    </span>
+                    </>
                   )}
-                </Styled.Button>
+                </S.Button>
               </div>
               <div>
-                <Styled.Button onClick={this.clearLocation}>
-                  <UserLocationIcon type="times" />{" "}
+                <S.Button onClick={this.clearLocation}>
+                  <UserLocationIcon type="times" />
                   <FormattedMessage
                     defaultMessage={
                       defaultMessages["otpUi.EndpointsOverlay.clearLocation"]
@@ -201,11 +215,11 @@ export default class Endpoint extends Component {
                     id="otpUi.EndpointsOverlay.clearLocation"
                     values={{ locationType: type }}
                   />
-                </Styled.Button>
+                </S.Button>
               </div>
               <div>
-                <Styled.Button onClick={this.swapLocation}>
-                  <UserLocationIcon type="refresh" />{" "}
+                <S.Button onClick={this.swapLocation}>
+                  <UserLocationIcon type="refresh" />
                   <FormattedMessage
                     defaultMessage={
                       defaultMessages["otpUi.EndpointsOverlay.swapLocation"]
@@ -214,7 +228,7 @@ export default class Endpoint extends Component {
                     id="otpUi.EndpointsOverlay.swapLocation"
                     values={{ locationType: otherType }}
                   />
-                </Styled.Button>
+                </S.Button>
               </div>
             </div>
           </Popup>
