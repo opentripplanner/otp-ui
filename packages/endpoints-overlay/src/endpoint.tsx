@@ -3,7 +3,13 @@ import { divIcon } from "leaflet";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
-import { Location } from "@opentripplanner/types";
+import {
+  ClearLocationArg,
+  Location,
+  MapLocationActionArg,
+  UserLocationAndType
+} from "@opentripplanner/types";
+
 import React, { Component, ComponentType, ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 import { Marker, Popup } from "react-leaflet";
@@ -15,11 +21,6 @@ import { Sync } from "@styled-icons/fa-solid/Sync";
 import { Times } from "@styled-icons/fa-solid/Times";
 
 import * as S from "./styled";
-import {
-  ClearLocationArg,
-  MapLocationActionArg,
-  UserLocationAndType
-} from "./types";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";

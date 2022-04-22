@@ -1,13 +1,13 @@
-import { Location } from "@opentripplanner/types";
+import {
+  ClearLocationArg,
+  Location,
+  MapLocationActionArg,
+  UserLocationAndType
+} from "@opentripplanner/types";
 import React, { ComponentType, ReactElement } from "react";
 
 import Endpoint from "./endpoint";
 import * as S from "./styled";
-import {
-  ClearLocationArg,
-  MapLocationActionArg,
-  UserLocationAndType
-} from "./types";
 
 interface Props {
   /**

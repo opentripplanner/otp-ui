@@ -401,3 +401,35 @@ export interface TimeOptions {
   format?: string;
   offset?: string;
 }
+
+/**
+ * Describes a user location such as "home", "work" etc.
+ */
+export interface UserLocation extends Location {
+  icon?: string;
+  id?: string;
+}
+
+/**
+ * Associates a location with a type string.
+ */
+export interface UserLocationAndType {
+  location: UserLocation;
+  type: string;
+}
+
+/**
+ * Parameters for "clear location" event handlers.
+ */
+export interface ClearLocationArg {
+  locationType: string;
+}
+
+/**
+ * Parameters for location actions/event handlers.
+ */
+export interface MapLocationActionArg {
+  location: UserLocation;
+  locationType: string;
+  reverseGeocode?: boolean;
+}
