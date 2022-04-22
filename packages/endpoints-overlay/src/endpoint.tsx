@@ -9,9 +9,8 @@ import {
   MapLocationActionArg,
   UserLocationAndType
 } from "@opentripplanner/types";
-
 import React, { Component, ComponentType, ReactElement } from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl, IntlShape } from "react-intl";
 import { Marker, Popup } from "react-leaflet";
 import ReactDOMServer from "react-dom/server";
 import { Briefcase } from "@styled-icons/fa-solid/Briefcase";
@@ -28,6 +27,7 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 interface Props {
   clearLocation: (arg: ClearLocationArg) => void;
   forgetPlace: (type: string) => void;
+  intl: IntlShape;
   location?: Location;
   locations: Location[];
   MapMarkerIcon: ComponentType<UserLocationAndType>;
@@ -39,6 +39,16 @@ interface Props {
 
 interface IconProps {
   type: string;
+}
+
+// FIXME: Use the correct [react-]leaflet type (has side effect on other packages)
+interface MarkerDragEvent {
+  target: {
+    getLatLng: () => {
+      lat: number;
+      lon: number;
+    };
+  };
 }
 
 // HACK: We should flatten the messages loaded above because
@@ -79,7 +89,25 @@ function UserLocationIcon({ type }: IconProps) {
   );
 }
 
-export default class Endpoint extends Component<Props> {
+/**
+ * Reformats a {lat, lon} object to be internationalized.
+ * TODO: Combine with the same method at
+ * https://github.com/opentripplanner/otp-react-redux/blob/6d5bc90e57843822809b0dff397bad19d66aeb43/lib/components/form/user-settings.js#L34
+ */
+function renderCoordinates(intl, place) {
+  const MAX_FRAC_DIGITS = 5;
+
+  return {
+    lat: intl.formatNumber(place.lat, {
+      maximumFractionDigits: MAX_FRAC_DIGITS
+    }),
+    lon: intl.formatNumber(place.lon, {
+      maximumFractionDigits: MAX_FRAC_DIGITS
+    })
+  };
+}
+
+class Endpoint extends Component<Props> {
   rememberAsHome = (): void => {
     const { location: propsLocation, rememberPlace } = this.props;
     const location = {
@@ -124,10 +152,25 @@ export default class Endpoint extends Component<Props> {
     setLocation({ locationType: otherType, location });
   };
 
-  onDragEnd = e => {
-    const { setLocation, type } = this.props;
+  onDragEnd = (e: MarkerDragEvent) => {
+    const { intl, setLocation, type } = this.props;
+
     // This method is depcreated. the latlng object should be fed into react intl
-    const location = coreUtils.map.constructLocation(e.target.getLatLng());
+    const rawLocation = coreUtils.map.constructLocation(e.target.getLatLng());
+    const location = {
+      lat: rawLocation.lat,
+      lon: rawLocation.lon,
+      name: intl.formatMessage(
+        {
+          defaultMessage: "{lat}, {lon}",
+          description:
+            "Formats rendering coordinates for a locale using the correct number separator",
+          // FIXME: Move this potentially shared message to an appropriate package.
+          id: "otpUi.EndpointsOverlay.coordinates"
+        },
+        renderCoordinates(intl, rawLocation)
+      )
+    };
     setLocation({ locationType: type, location, reverseGeocode: true });
   };
 
@@ -259,3 +302,5 @@ export default class Endpoint extends Component<Props> {
     );
   }
 }
+
+export default injectIntl(Endpoint);

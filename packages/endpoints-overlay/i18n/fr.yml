@@ -7,6 +7,7 @@ otpUi:
       from {le point de depart}
       to {la destination}
       other {{locationType}}}"
+    coordinates: "{lat}; {lon}"
     forgetHome: Oublier le domicile
     forgetWork: Oublier le lieu de travail
     saveAsHome: En faire le domicile

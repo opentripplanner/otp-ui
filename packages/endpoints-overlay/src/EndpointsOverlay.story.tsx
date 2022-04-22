@@ -19,17 +19,23 @@ const clearLocation = action("clearLocation");
 const forgetPlace = action("forgetPlace");
 const rememberPlace = action("rememberPlace");
 const setLocation = action("setLocation");
-const fromLocation = {
+const unnamedFromLocation = {
   lat: 45.522497,
   lon: -122.676029,
-  name: "Portland City Grill",
   type: "work"
 };
-const toLocation = {
+const fromLocation = {
+  ...unnamedFromLocation,
+  name: "Portland City Grill"
+};
+const unnamedToLocation = {
   lat: 45.521049,
   lon: -122.693724,
-  name: "Portland Towers",
   type: "home"
+};
+const toLocation = {
+  ...unnamedToLocation,
+  name: "Portland Towers"
 };
 const locations = [fromLocation, toLocation];
 
@@ -53,7 +59,7 @@ export default {
   title: "EndpointsOverlay"
 } as ComponentMeta<typeof EndpointsOverlay>;
 
-export const EndpointsOverlayWithoutUserSettings: ComponentStory<typeof Button> = () => (
+export const EndpointsOverlayWithoutUserSettings: ComponentStory<typeof EndpointsOverlay> = () => (
   <EndpointsOverlay
     fromLocation={fromLocation}
     setLocation={setLocation}
@@ -61,7 +67,7 @@ export const EndpointsOverlayWithoutUserSettings: ComponentStory<typeof Button> 
   />
 );
 
-export const EndpointsOverlayWithUserSettings: ComponentStory<typeof Button> = () => (
+export const EndpointsOverlayWithUserSettings: ComponentStory<typeof EndpointsOverlay> = () => (
   <EndpointsOverlay
     clearLocation={clearLocation}
     forgetPlace={forgetPlace}
@@ -74,7 +80,7 @@ export const EndpointsOverlayWithUserSettings: ComponentStory<typeof Button> = (
   />
 );
 
-export const EndpointsOverlayWithCustomMapMarkers: ComponentStory<typeof Button> = () => (
+export const EndpointsOverlayWithCustomMapMarkers: ComponentStory<typeof EndpointsOverlay> = () => (
   <EndpointsOverlay
     fromLocation={fromLocation}
     MapMarkerIcon={CatDogIcon}
@@ -83,7 +89,7 @@ export const EndpointsOverlayWithCustomMapMarkers: ComponentStory<typeof Button>
   />
 );
 
-export const EndpointsOverlayWithIntermediatePlace: ComponentStory<typeof Button> = () => (
+export const EndpointsOverlayWithIntermediatePlace: ComponentStory<typeof EndpointsOverlay> = () => (
   <EndpointsOverlay
     fromLocation={fromLocation}
     intermediatePlaces={[
@@ -96,5 +102,14 @@ export const EndpointsOverlayWithIntermediatePlace: ComponentStory<typeof Button
     ]}
     setLocation={setLocation}
     toLocation={toLocation}
+  />
+);
+
+export const EndpointsOverlayWithUnnamedPlace: ComponentStory<typeof EndpointsOverlay> = () => (
+  <EndpointsOverlay
+    fromLocation={unnamedFromLocation}
+    setLocation={setLocation}
+    showUserSettings
+    toLocation={unnamedToLocation}
   />
 );

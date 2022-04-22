@@ -12,6 +12,7 @@ otpUi:
     # Note to translator:
     # This should read, in English, as e.g. "Remove as 'from' location" (quotes not included).
     clearLocation: Remove as {locationType} location
+    coordinates: "{lat}, {lon}"
     forgetHome: Forget home
     forgetWork: Forget work
     saveAsHome: Save as home
