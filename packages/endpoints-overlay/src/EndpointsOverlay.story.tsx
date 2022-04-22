@@ -1,7 +1,7 @@
 import BaseMap from "@opentripplanner/base-map";
 import React, { ReactElement } from "react";
 import { action } from "@storybook/addon-actions";
-import { ComponentMeta, ComponentStoryFn } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Cat } from "@styled-icons/fa-solid/Cat";
 import { Dog } from "@styled-icons/fa-solid/Dog";
 
@@ -37,21 +37,23 @@ function CatDogIcon({ type }: UserLocationAndType) {
   return type === "from" ? <Cat size={40} color="orange" /> : <Dog size={40} />;
 }
 
-const mapDecorator = (
-  story: ComponentStoryFn<typeof EndpointsOverlay>
+const withMap = (
+  Story: ComponentStory<typeof EndpointsOverlay>
 ): ReactElement => (
   <BaseMap center={center} zoom={zoom}>
-    {story()}
+    {/* For some reason, <Story /> does not work with snapshots,
+        so use the function syntax instead. */}
+    {Story()}
   </BaseMap>
 );
 
 export default {
   component: EndpointsOverlay,
-  decorators: [mapDecorator],
+  decorators: [withMap],
   title: "EndpointsOverlay"
 } as ComponentMeta<typeof EndpointsOverlay>;
 
-export const EndpointsOverlayWithoutUserSettings = (): ReactElement => (
+export const EndpointsOverlayWithoutUserSettings: ComponentStory<typeof Button> = () => (
   <EndpointsOverlay
     fromLocation={fromLocation}
     setLocation={setLocation}
@@ -59,7 +61,7 @@ export const EndpointsOverlayWithoutUserSettings = (): ReactElement => (
   />
 );
 
-export const EndpointsOverlayWithUserSettings = (): ReactElement => (
+export const EndpointsOverlayWithUserSettings: ComponentStory<typeof Button> = () => (
   <EndpointsOverlay
     clearLocation={clearLocation}
     forgetPlace={forgetPlace}
@@ -72,7 +74,7 @@ export const EndpointsOverlayWithUserSettings = (): ReactElement => (
   />
 );
 
-export const EndpointsOverlayWithCustomMapMarkers = (): ReactElement => (
+export const EndpointsOverlayWithCustomMapMarkers: ComponentStory<typeof Button> = () => (
   <EndpointsOverlay
     fromLocation={fromLocation}
     MapMarkerIcon={CatDogIcon}
@@ -81,7 +83,7 @@ export const EndpointsOverlayWithCustomMapMarkers = (): ReactElement => (
   />
 );
 
-export const EndpointsOverlayWithIntermediatePlace = (): ReactElement => (
+export const EndpointsOverlayWithIntermediatePlace: ComponentStory<typeof Button> = () => (
   <EndpointsOverlay
     fromLocation={fromLocation}
     intermediatePlaces={[
