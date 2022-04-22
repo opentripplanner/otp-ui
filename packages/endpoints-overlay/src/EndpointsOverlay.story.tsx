@@ -1,7 +1,7 @@
 import BaseMap from "@opentripplanner/base-map";
 import React, { ReactElement } from "react";
 import { action } from "@storybook/addon-actions";
-import { ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStoryFn } from "@storybook/react";
 import { Cat } from "@styled-icons/fa-solid/Cat";
 import { Dog } from "@styled-icons/fa-solid/Dog";
 
@@ -37,61 +37,62 @@ function CatDogIcon({ type }: UserLocationAndType) {
   return type === "from" ? <Cat size={40} color="orange" /> : <Dog size={40} />;
 }
 
+const mapDecorator = (
+  story: ComponentStoryFn<typeof EndpointsOverlay>
+): ReactElement => (
+  <BaseMap center={center} zoom={zoom}>
+    {story()}
+  </BaseMap>
+);
+
 export default {
   component: EndpointsOverlay,
+  decorators: [mapDecorator],
   title: "EndpointsOverlay"
 } as ComponentMeta<typeof EndpointsOverlay>;
 
 export const EndpointsOverlayWithoutUserSettings = (): ReactElement => (
-  <BaseMap center={center} zoom={zoom}>
-    <EndpointsOverlay
-      fromLocation={fromLocation}
-      setLocation={setLocation}
-      toLocation={toLocation}
-    />
-  </BaseMap>
+  <EndpointsOverlay
+    fromLocation={fromLocation}
+    setLocation={setLocation}
+    toLocation={toLocation}
+  />
 );
 
 export const EndpointsOverlayWithUserSettings = (): ReactElement => (
-  <BaseMap center={center} zoom={zoom}>
-    <EndpointsOverlay
-      clearLocation={clearLocation}
-      forgetPlace={forgetPlace}
-      fromLocation={fromLocation}
-      locations={locations}
-      rememberPlace={rememberPlace}
-      setLocation={setLocation}
-      showUserSettings
-      toLocation={toLocation}
-    />
-  </BaseMap>
+  <EndpointsOverlay
+    clearLocation={clearLocation}
+    forgetPlace={forgetPlace}
+    fromLocation={fromLocation}
+    locations={locations}
+    rememberPlace={rememberPlace}
+    setLocation={setLocation}
+    showUserSettings
+    toLocation={toLocation}
+  />
 );
 
 export const EndpointsOverlayWithCustomMapMarkers = (): ReactElement => (
-  <BaseMap center={center} zoom={zoom}>
-    <EndpointsOverlay
-      fromLocation={fromLocation}
-      MapMarkerIcon={CatDogIcon}
-      setLocation={setLocation}
-      toLocation={toLocation}
-    />
-  </BaseMap>
+  <EndpointsOverlay
+    fromLocation={fromLocation}
+    MapMarkerIcon={CatDogIcon}
+    setLocation={setLocation}
+    toLocation={toLocation}
+  />
 );
 
 export const EndpointsOverlayWithIntermediatePlace = (): ReactElement => (
-  <BaseMap center={center} zoom={zoom}>
-    <EndpointsOverlay
-      fromLocation={fromLocation}
-      intermediatePlaces={[
-        {
-          lat: 45.523193,
-          lon: -122.681538,
-          name: "Powell's City of Books",
-          type: "intermediate-place-1"
-        }
-      ]}
-      setLocation={setLocation}
-      toLocation={toLocation}
-    />
-  </BaseMap>
+  <EndpointsOverlay
+    fromLocation={fromLocation}
+    intermediatePlaces={[
+      {
+        lat: 45.523193,
+        lon: -122.681538,
+        name: "Powell's City of Books",
+        type: "intermediate-place-1"
+      }
+    ]}
+    setLocation={setLocation}
+    toLocation={toLocation}
+  />
 );
