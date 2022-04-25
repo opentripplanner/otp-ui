@@ -80,6 +80,7 @@ export default class Endpoint extends Component {
 
   onDragEnd = e => {
     const { setLocation, type } = this.props;
+    // This method is depcreated. the latlng object should be fed into react intl
     const location = coreUtils.map.constructLocation(e.target.getLatLng());
     setLocation({ locationType: type, location, reverseGeocode: true });
   };

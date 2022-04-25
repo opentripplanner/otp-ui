@@ -168,7 +168,14 @@ const queryParams = [
     name: "maxWalkDistance",
     routingTypes: ["ITINERARY"],
     applicable: query =>
-      query.mode && hasTransit(query.mode) && query.mode.indexOf("WALK") !== -1,
+      /* Since this query variable isn't in this list, it's not included in the generated query
+       * It does however allow us to determine if we should show the OTP1 max walk distance
+       * dropdown or the OTP2 walk reluctance slider
+       */
+      !query.otp2 &&
+      query.mode &&
+      hasTransit(query.mode) &&
+      query.mode.indexOf("WALK") !== -1,
     default: 1207, // 3/4 mi.
     selector: "DROPDOWN",
     label: "Maximum Walk",
@@ -271,7 +278,8 @@ const queryParams = [
   {
     /* optimize -- how to optimize a trip (non-bike, non-micromobility trips) */
     name: "optimize",
-    applicable: query => hasTransit(query.mode) && !hasBike(query.mode),
+    applicable: query =>
+      !query.otp2 && hasTransit(query.mode) && !hasBike(query.mode),
     routingTypes: ["ITINERARY"],
     default: "QUICK",
     selector: "DROPDOWN",
@@ -291,7 +299,7 @@ const queryParams = [
   {
     /* optimizeBike -- how to optimize an bike-based trip */
     name: "optimizeBike",
-    applicable: query => hasBike(query.mode),
+    applicable: query => !query.otp2 && hasBike(query.mode),
     routingTypes: ["ITINERARY"],
     default: "SAFE",
     selector: "DROPDOWN",
@@ -390,6 +398,23 @@ const queryParams = [
     ]
   },
 
+  {
+    name: "walkReluctance",
+    routingTypes: ["ITINERARY", "PROFILE"],
+    selector: "SLIDER",
+    low: 0.5,
+    high: 20,
+    step: 0.5,
+    label: "walk reluctance",
+    labelLow: "More Walking",
+    labelHigh: "More Transit",
+    applicable: query =>
+      /* Since this query variable isn't in this list, it's not included in the generated query
+       * It does however allow us to determine if we should show the OTP1 max walk distance
+       * dropdown or the OTP2 walk reluctance slider
+       */
+      !!query.otp2 && query.mode && query.mode.indexOf("WALK") !== -1
+  },
   {
     /* maxBikeTime -- the maximum time the user will spend biking in minutes */
     name: "maxBikeTime",
@@ -671,10 +696,6 @@ const queryParams = [
   },
   {
     name: "maxPreTransitTime",
-    routingTypes: ["ITINERARY"]
-  },
-  {
-    name: "walkReluctance",
     routingTypes: ["ITINERARY"]
   },
   {
