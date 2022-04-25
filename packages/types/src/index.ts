@@ -412,7 +412,8 @@ export type LegIconComponent = FunctionComponent<{
 }>;
 
 /**
- * Supports displaying accessibility ratings.
+ * Supports displaying accessibility ratings as a set of thresholds
+ * associated with an icon or text.
  */
 export type GradationMap = Record<
   number,
