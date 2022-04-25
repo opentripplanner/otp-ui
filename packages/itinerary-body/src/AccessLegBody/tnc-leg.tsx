@@ -1,13 +1,17 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
-import { Config, Leg, TimeOptions } from "@opentripplanner/types";
+import {
+  Config,
+  Leg,
+  LegIconComponent,
+  TimeOptions
+} from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage, FormattedNumber } from "react-intl";
 import { Duration } from "../defaults";
 
 import * as S from "../styled";
-import { LegIconComponent } from "../types";
 import { defaultMessages } from "../util";
 
 import AccessLegSummary from "./access-leg-summary";
