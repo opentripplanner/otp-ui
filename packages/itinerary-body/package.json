@@ -10,9 +10,9 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^4.8.0",
+    "@opentripplanner/core-utils": "^4.11.2",
     "@opentripplanner/humanize-distance": "^1.2.0",
-    "@opentripplanner/icons": "^1.2.1",
+    "@opentripplanner/icons": "^1.2.2",
     "@opentripplanner/location-icon": "^1.4.0",
     "@styled-icons/fa-solid": "^10.34.0",
     "@styled-icons/foundation": "^10.34.0",
@@ -31,8 +31,6 @@
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
-  "scripts": {
-    "tsc": "tsc"
-  },
+  "scripts": {},
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"
 }
