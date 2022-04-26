@@ -249,6 +249,8 @@ Array [
     "applicable": [Function],
     "high": 20,
     "label": "walk reluctance",
+    "labelHigh": "More Transit",
+    "labelLow": "More Walking",
     "low": 0.5,
     "name": "walkReluctance",
     "routingTypes": Array [

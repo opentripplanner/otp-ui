@@ -1,0 +1,20 @@
+# Default messages for the PrintableItinerary component and subcomponents.
+# To use from a react-intl application:
+# - merge the content of this file into the messages object
+#   that has your other localized strings,
+# - flatten the ids, i.e. convert a structure such as
+#      otpUi > LocationField > stations
+#   into "otpUi.TripDetails.stations" (see story for an example),
+# - pass the resulting object to the messages prop of IntlProvider.
+
+otpUi:
+  PrintableItinerary:
+    depart: <strong>Depart</strong> from <strong>{place}</strong>
+    TncLeg:
+      estimatedTravelTime: "Estimated travel time: <strong>{duration}</strong> (does not account for traffic)"
+      estimatedWaitTime: "Estimated wait time for pickup: <strong>{duration}</strong>"
+      header: <strong>Take {company}</strong> to <strong>{place}</strong>
+    TransitLeg:
+      alight: Get off at <strong>{place}</strong> at <strong>{time, time, short}</strong>
+      board: Board at <strong>{place}</strong> at <strong>{time, time, short}</strong>
+      continuesAs: Continues as {routeDescription}

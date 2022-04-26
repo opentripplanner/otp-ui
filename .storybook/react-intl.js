@@ -15,6 +15,7 @@ const packages = [
   "from-to-location-picker",
   "itinerary-body",
   "location-field",
+  "printable-itinerary",
   "trip-details",
   "trip-form"
 ];
