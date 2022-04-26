@@ -18,7 +18,7 @@
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
   "dependencies": {
-    "@opentripplanner/from-to-location-picker": "^1.3.0",
+    "@opentripplanner/from-to-location-picker": "^2.1.1-alpha.1",
     "@opentripplanner/zoom-based-markers": "^1.2.1"
   },
   "devDependencies": {

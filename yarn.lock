@@ -2852,14 +2852,13 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
-"@opentripplanner/from-to-location-picker@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/from-to-location-picker/-/from-to-location-picker-1.3.0.tgz#fa24a1e0e9b8df41b997ef766dbc2f67843db9f0"
-  integrity sha512-OHvGphABYQv075CuLqiw1CdONl6TYQMVw27CR5xr24wz6KVOhLokd5BEcHvKGJvhMtKDmU5csXUx6b42y58lww==
+"@opentripplanner/from-to-location-picker@^2.1.1-alpha.1":
+  version "2.1.1-alpha.1"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/from-to-location-picker/-/from-to-location-picker-2.1.1-alpha.1.tgz#02ae2ce9c208cce3f94e42d4b2e30f1dfef191cb"
+  integrity sha512-Ft5oBqfjpb3qgMLbSzWcZtxibMOwUkGDyVezMLfSobHU01epXEXcO3oLs28DdQUf7nmNcxjvfht/J5XvU29e4g==
   dependencies:
-    "@opentripplanner/core-utils" "^4.1.0"
-    "@opentripplanner/location-icon" "^1.3.0"
-    prop-types "^15.7.2"
+    "@opentripplanner/location-icon" "^1.4.0"
+    flat "^5.0.2"
 
 "@pmmmwh/react-refresh-webpack-plugin@^0.5.1":
   version "0.5.4"
