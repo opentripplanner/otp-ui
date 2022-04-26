@@ -20,8 +20,11 @@ export const fromTo = (): ReactElement => (
 
 export const smallTextSansSerif = (): ReactElement => (
   <span style={{ fontSize: "75%", fontFamily: "sans-serif" }}>
-    Plan a trip:
-    <FromToLocationPicker onFromClick={onFromClick} onToClick={onToClick} />
+    <FromToLocationPicker
+      label
+      onFromClick={onFromClick}
+      onToClick={onToClick}
+    />
   </span>
 );
 
@@ -35,9 +38,10 @@ export const customStyleAndText = (): React.ReactElement => (
   >
     <div className="trimet-ambient">
       <FromToLocationPicker
-        showIcons={false}
+        label={<i style={{ color: "#ffff00" }}>Your trip:</i>}
         onFromClick={onFromClick}
         onToClick={onToClick}
+        showIcons={false}
       />
     </div>
   </IntlProvider>

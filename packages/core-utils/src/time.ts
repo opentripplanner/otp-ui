@@ -117,9 +117,9 @@ export function formatDuration(seconds: number, region: string): string {
 
 /**
  * Formats an elapsed time in seconds, minutes, hours duration for display in narrative
- * TODO: internationalization
  * @param {number} seconds duration in seconds
- * @returns {string} formatted text representation
+ * @param {object} region  an object that allows internationalization of the time
+ * @returns {string}       formatted text representation
  */
 // TS TODO: region as type?
 export function formatDurationWithSeconds(

@@ -1,9 +1,8 @@
-import { Config, Leg } from "@opentripplanner/types";
+import { Config, Leg, LegIconComponent } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { AccessLegDescription } from "../defaults";
 
 import * as S from "../styled";
-import { LegIconComponent } from "../types";
 
 interface Props {
   config: Config;

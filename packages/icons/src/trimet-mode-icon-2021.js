@@ -18,6 +18,7 @@ function TriMetModeIcon({ mode, ...props }) {
       return <Car {...props} />;
     case "micromobility":
     case "micromobility_rent":
+    case "scooter":
       return <Micromobility {...props} />;
     case "walk":
       return <Walk {...props} />;

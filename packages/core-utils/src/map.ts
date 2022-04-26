@@ -6,7 +6,13 @@ import {
   TransitiveData,
   Leg
 } from "@opentripplanner/types";
-import { getPlaceName, isTransit, isFlex, toSentenceCase } from "./itinerary";
+import {
+  getPlaceName,
+  isTransit,
+  isFlex,
+  toSentenceCase,
+  isAccessMode
+} from "./itinerary";
 
 import {
   coordsToString,
@@ -118,15 +124,11 @@ export function itineraryToTransitive(
   });
 
   itin.legs.forEach((leg, idx) => {
-    if (
-      leg.mode === "WALK" ||
-      leg.mode === "BICYCLE" ||
-      leg.mode === "CAR" ||
-      leg.mode === "MICROMOBILITY"
-    ) {
+    if (isAccessMode(leg.mode)) {
       let fromPlaceId: string;
       if (leg.from.bikeShareId) {
         fromPlaceId = `bicycle_rent_station_${leg.from.bikeShareId}`;
+        // TODO: does this need to change to be OTP2 compatible?
       } else if (leg.from.vertexType === "VEHICLERENTAL") {
         fromPlaceId = `escooter_rent_station_${leg.from.name}`;
       } else if (

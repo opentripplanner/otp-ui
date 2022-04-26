@@ -12,6 +12,7 @@ const exampleModes = [
   "GONDOLA",
   "MICROMOBILITY",
   "MICROMOBILITY_RENT",
+  "SCOOTER",
   "RAIL",
   "STREETCAR",
   "SUBWAY",

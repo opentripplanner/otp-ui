@@ -61,8 +61,12 @@ class RouteViewerOverlay extends MapLayer {
         },
         []
       );
-      if (allPoints.length > 0 && this.props.leaflet.map)
+      if (allPoints.length > 0 && this.props.leaflet.map) {
         this.props.leaflet.map.fitBounds(allPoints);
+        if (this.props.mapCenterCallback) {
+          this.props.mapCenterCallback();
+        }
+      }
     }
   }
 
@@ -117,6 +121,10 @@ RouteViewerOverlay.propTypes = {
    * and only draw the route outside of the polygon.
    */
   clipToPatternStops: PropTypes.bool,
+  /**
+   * This method is called whenever the bounds are updated to fit a route
+   */
+  mapCenterCallback: PropTypes.func,
   /**
    * Leaflet path properties to use to style each polyline that represents a
    * pattern of the route. Only a few of the items are actually used.
