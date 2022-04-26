@@ -310,6 +310,7 @@ export interface Leg {
   transitLeg: boolean;
   tripBlockId?: string;
   tripId?: string;
+  walkingBike?: boolean;
 }
 
 /**

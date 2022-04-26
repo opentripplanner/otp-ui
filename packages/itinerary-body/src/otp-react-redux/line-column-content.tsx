@@ -76,6 +76,7 @@ function getLegCSS(mode) {
       return cssCar;
     case "MICROMOBILITY":
     case "MICROMOBILITY_RENT":
+    case "SCOOTER":
       return cssMicromobility;
     default:
       return cssTransit;

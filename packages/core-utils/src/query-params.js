@@ -561,7 +561,8 @@ const queryParams = [
     applicable: query =>
       query.mode &&
       query.mode.indexOf("MICROMOBILITY") !== -1 &&
-      query.mode.indexOf("MICROMOBILITY_RENT") === -1,
+      query.mode.indexOf("MICROMOBILITY_RENT") === -1 &&
+      query.mode.indexOf("SCOOTER") === -1,
     options: [
       {
         text: "Kid's hoverboard (6mph)",
