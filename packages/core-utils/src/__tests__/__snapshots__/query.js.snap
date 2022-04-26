@@ -191,6 +191,25 @@ Object {
 }
 `;
 
+exports[`query getRoutingParams should create routing params for personal micromobility query 2`] = `
+Object {
+  "arriveBy": false,
+  "companies": "FAKECOMPANY",
+  "date": "2020-08-24",
+  "fromPlace": "Steamer Lane, Santa Cruz, CA, 95060, USA::36.95471026341096,-122.0248185852425",
+  "ignoreRealtimeUpdates": false,
+  "maxEScooterDistance": 4828,
+  "maxWalkDistance": 4828,
+  "mode": "SCOOTER,BUS",
+  "numItineraries": 3,
+  "optimize": "QUICK",
+  "otherThanPreferredRoutesPenalty": 900,
+  "showIntermediateStops": true,
+  "time": "21:53",
+  "toPlace": "Municipal Wharf St, Santa Cruz, CA, 95060, USA::36.961843106786766,-122.02402657342725",
+}
+`;
+
 exports[`query getRoutingParams should create routing params for standard flex query 1`] = `
 Object {
   "arriveBy": false,

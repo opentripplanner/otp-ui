@@ -1,8 +1,7 @@
+import { GradationMap } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 import { Wheelchair } from "@styled-icons/foundation/Wheelchair";
-
-import { GradationMap } from "../types";
 
 interface WrapperProps {
   border: boolean;

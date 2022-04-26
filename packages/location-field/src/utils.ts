@@ -21,7 +21,15 @@ const zipOrNeighborhood = ({
 // more layer types with custom rendering.
 const layerDisplayMap = {
   address: (properties: Properties): Label => {
-    const { housenumber, locality, name, street, postalcode, region_a: state, region } = properties;
+    const {
+      region,
+      region_a: state,
+      name,
+      postalcode,
+      housenumber,
+      locality,
+      street,
+    } = properties;
     return {
       // if the housenumber is available, combining that with the street can
       // avoid duplicates which might be present in the name

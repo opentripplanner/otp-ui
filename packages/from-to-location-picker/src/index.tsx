@@ -1,7 +1,7 @@
 import flatten from "flat";
 import LocationIcon from "@opentripplanner/location-icon";
 import { FormattedMessage } from "react-intl";
-import React from "react";
+import React, { ReactElement } from "react";
 
 import * as S from "./styled";
 
@@ -20,12 +20,13 @@ const iconSize = "0.9em";
 const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
 const FromToLocationPicker = ({
+  label = null,
   location = null,
   onFromClick = null,
   onToClick = null,
   setLocation = null,
   showIcons = true
-}: FromToPickerProps): React.ReactElement => {
+}: FromToPickerProps): ReactElement => {
   const handleFromClick = () => {
     if (onFromClick) {
       onFromClick();
@@ -50,29 +51,44 @@ const FromToLocationPicker = ({
     });
   };
 
+  const labelIfAny = label === true
+    ? (
+    <strong>
+      <FormattedMessage
+        defaultMessage={defaultMessages["otpUi.FromToLocationPicker.planATrip"]}
+        description="Label to prompt the user to plan a trip"
+        id="otpUi.FromToLocationPicker.planATrip"
+      />
+    </strong>
+    )
+    : label
+
   return (
-    <S.FromToPickerSpan>
-      <S.LocationPickerSpan>
-        {showIcons && <LocationIcon type="from" size={iconSize} />}
-        <S.Button onClick={handleFromClick}>
-          <FormattedMessage
-            defaultMessage={defaultMessages["otpUi.FromToLocationPicker.from"]}
-            description="Text for the 'from' button of the picker"
-            id="otpUi.FromToLocationPicker.from"
-          />
-        </S.Button>
-      </S.LocationPickerSpan>
-      <S.LocationPickerSpan>
-        {showIcons && <LocationIcon type="to" size={iconSize} />}
-        <S.Button onClick={handleToClick}>
-          <FormattedMessage
-            defaultMessage={defaultMessages["otpUi.FromToLocationPicker.to"]}
-            description="Text for the 'to' button of the picker"
-            id="otpUi.FromToLocationPicker.to"
-          />
-        </S.Button>
-      </S.LocationPickerSpan>
-    </S.FromToPickerSpan>
+    <>
+      {labelIfAny}
+      <S.FromToPickerSpan>
+        <S.LocationPickerSpan>
+          {showIcons && <LocationIcon type="from" size={iconSize} />}
+          <S.Button onClick={handleFromClick}>
+            <FormattedMessage
+              defaultMessage={defaultMessages["otpUi.FromToLocationPicker.from"]}
+              description="Text for the 'from' button of the picker"
+              id="otpUi.FromToLocationPicker.from"
+            />
+          </S.Button>
+        </S.LocationPickerSpan>
+        <S.LocationPickerSpan>
+          {showIcons && <LocationIcon type="to" size={iconSize} />}
+          <S.Button onClick={handleToClick}>
+            <FormattedMessage
+              defaultMessage={defaultMessages["otpUi.FromToLocationPicker.to"]}
+              description="Text for the 'to' button of the picker"
+              id="otpUi.FromToLocationPicker.to"
+            />
+          </S.Button>
+        </S.LocationPickerSpan>
+      </S.FromToPickerSpan>
+    </>
   );
 };
 
