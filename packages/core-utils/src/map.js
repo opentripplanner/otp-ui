@@ -1,4 +1,10 @@
-import { getPlaceName, isTransit, isFlex, toSentenceCase } from "./itinerary";
+import {
+  getPlaceName,
+  isTransit,
+  isFlex,
+  toSentenceCase,
+  isAccessMode
+} from "./itinerary";
 
 import {
   coordsToString,
@@ -102,13 +108,7 @@ export function itineraryToTransitive(
   });
 
   itin.legs.forEach((leg, idx) => {
-    if (
-      leg.mode === "WALK" ||
-      leg.mode === "BICYCLE" ||
-      leg.mode === "CAR" ||
-      leg.mode === "MICROMOBILITY" ||
-      leg.mode === "SCOOTER"
-    ) {
+    if (isAccessMode(leg.mode)) {
       let fromPlaceId;
       if (leg.from.bikeShareId) {
         fromPlaceId = `bicycle_rent_station_${leg.from.bikeShareId}`;

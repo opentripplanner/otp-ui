@@ -32,7 +32,7 @@ export default function RentedVehicleSubheader({ config, leg }: Props) {
 
   // Sometimes rented vehicles can be walked over things like stairs or other
   // ways that forbid the main mode of travel.
-  if (mode === "WALK" || walkingBike === true) {
+  if (mode === "WALK" || walkingBike) {
     return (
       <S.PlaceSubheader>
         <FormattedMessage
