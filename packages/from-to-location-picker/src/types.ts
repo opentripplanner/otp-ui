@@ -1,21 +1,11 @@
-import { ReactElement } from "react";
-
-export type Location = {
-  lat: number;
-  lon: number;
-  name: string;
-  /**
-   * This is only used for locations that a user has saved. Can be either:
-   * "home" or "work"
-   */
-  type?: string;
-};
+// eslint-disable-next-line prettier/prettier
+import type { Location } from "@opentripplanner/types";
 
 export type FromToPickerProps = {
   /**
    * Specifies the label to be rendered, or if set to true, renders the default label "Plan a trip:".
    */
-  label?: boolean | ReactElement | string;
+  label?: boolean | React.ReactElement | string;
   /**
    * A specific location to associate with this. This is only used when combined
    * with the setLocation prop.
@@ -38,6 +28,7 @@ export type FromToPickerProps = {
    */
   setLocation?: ({
     locationType: string,
+    // eslint-disable-next-line @typescript-eslint/no-shadow
     location: Location,
     reverseGeocode: boolean
   }) => void;
