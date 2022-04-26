@@ -319,7 +319,7 @@ export type Leg = {
 /**
  * Describes the cost of an itinerary leg.
  */
-type Money = {
+export type Money = {
   cents: number;
   currency: {
     defaultFractionDigits: number;
