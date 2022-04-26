@@ -2852,10 +2852,10 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
-"@opentripplanner/core-utils@^4.11.0":
-  version "4.11.0"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-4.11.0.tgz#40a83a21116b2887329b7d15e1f99f9f330032fe"
-  integrity sha512-uSKviQt5Q4/BEm8ZjQtqEc7wLV3JC44c6pgR4ZeCqO2TDa3F7oH0GJzPxQGIhjnODuU0IqJ0Cha4ruIqBSJzUQ==
+"@opentripplanner/core-utils@^4.11.1":
+  version "4.11.1"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-4.11.1.tgz#62f58ab0e318a4ccd27fe5171973770650725f99"
+  integrity sha512-S//G5KllmmzYUn6n9I7cL3cvacWlBfjFAU2MyzdsMKIOY1zXBSPHSbe10eQAccJXp73IUeBbGkInAepyCp7eUw==
   dependencies:
     "@mapbox/polyline" "^1.1.0"
     "@opentripplanner/geocoder" "^1.1.2"
