@@ -1,0 +1,14 @@
+# Default messages for the VehicleRentalOverlay component.
+# To use from a react-intl application:
+# - merge the content of this file into the messages object
+#   that has your other localized strings,
+# - flatten the ids, i.e. convert a structure such as
+#      otpUi > VehicleRentalOverlay > availableBikes
+#   into "otpUi.VehicleRentalOverlay.availableBikes".
+# - pass the resulting object to the messages prop of IntlProvider.
+#
+
+otpUi:
+  VehicleRentalOverlay:
+    availableBikes: "Vélos disponibles : {value}"
+    availableDocks: "Bornes disponibles : {value}"
