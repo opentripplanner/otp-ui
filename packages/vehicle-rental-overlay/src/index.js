@@ -32,7 +32,7 @@ class VehicleRentalOverlay extends MapLayer {
   constructor(props) {
     super(props);
     this.state = {
-      zoom: props.leaflet.map.getZoom()
+      zoom: null
     };
   }
 
@@ -143,7 +143,10 @@ class VehicleRentalOverlay extends MapLayer {
    * @opentripplanner/base-map package has injected to listen to zoom/position changes.
    */
   componentDidMount() {
-    const { registerOverlay, visible } = this.props;
+    const { leaflet, registerOverlay, visible } = this.props;
+    this.setState({
+      zoom: leaflet.map.getZoom()
+    });
     if (visible) this.startRefreshing();
     if (typeof registerOverlay === "function") {
       registerOverlay(this);
@@ -212,8 +215,8 @@ class VehicleRentalOverlay extends MapLayer {
   };
 
   render() {
-    const { companies, mapSymbols, stations } = this.props;
-    const { zoom } = this.state;
+    const { companies, leaflet, mapSymbols, stations } = this.props;
+    const { zoom = leaflet.map.getZoom() } = this.state;
     // Render an empty FeatureGroup if the rental vehicles should not be visible
     // on the map. Otherwise previous stations may still be shown due to some
     // react-leaflet internals, maybe? Also, do not return null because that will
