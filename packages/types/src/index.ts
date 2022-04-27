@@ -340,11 +340,12 @@ type ApplicableId = string | FeedScopedId;
  * not any bike rental or TNC rental fees.
  */
 export interface Fare {
-  details: {
+  details?: {
     [name: string]: {
-      fareId: ApplicableId;
+      fareId?: ApplicableId;
       price: Money;
-      routes: ApplicableId[];
+      legIndex?: number;
+      routes?: ApplicableId[];
     }[];
   };
   fare?: {

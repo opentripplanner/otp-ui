@@ -65,7 +65,7 @@ export function CustomTransitLegSummary({
     /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
     <div onClick={onClick}>
       {leg.duration && (
-        <span>Ride {coreUtils.time.formatDuration(leg.duration)}</span>
+        <span>Ride {coreUtils.time.formatDuration(leg.duration, "en-US")}</span>
       )}
       {leg.intermediateStops && (
         <span>

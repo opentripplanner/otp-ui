@@ -14,11 +14,11 @@ import * as TripDetailsClasses from "./styled";
 import {
   CaloriesDetailsProps,
   DepartureDetailsProps,
-  FareDetailsProps,
   TripDetailsProps
 } from "./types";
 
 import customMessages from "../__mocks__/custom-messages.yml";
+import { FareDetails } from "./fare-detail";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json");
@@ -85,18 +85,6 @@ const CustomDepartureDetails = ({
   </>
 );
 
-const CustomFareDetails = ({
-  maxTNCFare,
-  minTNCFare,
-  transitFares
-}: FareDetailsProps): ReactElement => (
-  <>
-    Custom details about fares (transitFares: {JSON.stringify(transitFares)}{" "}
-    (cents), minTNCFare: {minTNCFare} and maxTNCFare: {maxTNCFare} can be
-    constructed dynamically using any markup.
-  </>
-);
-
 const CustomCaloriesDetails = ({
   bikeSeconds,
   calories,
@@ -122,7 +110,6 @@ function createTripDetailsTemplate(
       CaloriesDetails,
       defaultFare,
       DepartureDetails,
-      FareDetails,
       itinerary
     }: TripDetailsProps,
     { globals, parameters }: StoryContext
@@ -139,7 +126,6 @@ function createTripDetailsTemplate(
         CaloriesDetails={CaloriesDetails}
         defaultFare={defaultFare}
         DepartureDetails={DepartureDetails}
-        FareDetails={FareDetails}
         fareKeyNameMap={fareKeyNameMap}
         itinerary={itinerary}
       />
@@ -246,12 +232,11 @@ export const TncTransitItinerary = makeStory(
 );
 
 const flattenedMessages = flatten(customMessages);
-export const TncTransitItineraryWithCustomMessagesAndDetails = makeStory(
+export const TncTransitItineraryWithCustomMessages = makeStory(
   {
     CaloriesDetails: CustomCaloriesDetails,
     defaultFareKey: "electronicRegular",
     DepartureDetails: CustomDepartureDetails,
-    FareDetails: CustomFareDetails,
     itinerary: tncTransitTncItinerary
   },
   {
@@ -271,3 +256,11 @@ export const TncTransitItineraryWithCustomMessagesAndDetails = makeStory(
 export const FlexItinerary = makeStory({
   itinerary: fareComponentsItinerary
 });
+
+export const FareDetailsComponent = () => (
+  <FareDetails
+    transitFares={{}}
+    legs={[]}
+    prefixes={{ electronic: "ORCA", cash: "Cash" }}
+  />
+);

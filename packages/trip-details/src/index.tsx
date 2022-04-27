@@ -23,6 +23,7 @@ import {
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
+import { FareDetails } from "./fare-detail";
 
 // HACK: We should flatten the messages loaded above because
 // the YAML loaders behave differently between webpack and our version of jest:
@@ -149,7 +150,6 @@ export function TripDetails({
   className = "",
   DepartureDetails = null,
   defaultFareKey = "regular",
-  FareDetails = null,
   fareKeyNameMap = {},
   itinerary
 }: TripDetailsProps): ReactElement {
@@ -291,12 +291,13 @@ export function TripDetails({
         {fare && (
           <TripDetail
             // Any custom description for the transit fare needs to be handled by the slot.
+            //  TODO: add leg info
             description={
-              FareDetails && (
+              Object.keys(fareKeyNameMap).length > 0 && (
                 <FareDetails
-                  maxTNCFare={maxTNCFare}
-                  minTNCFare={minTNCFare}
                   transitFares={transitFares}
+                  legs={[]}
+                  prefixes={{}}
                 />
               )
             }

@@ -11,10 +11,10 @@ export type ResultType =
   | "STOP";
 export type Location = {
   id?: string;
-  lat?: number;
-  lon?: number;
+  lat: number;
+  lon: number;
   main?: string;
-  name?: string;
+  name: string;
   secondary?: string;
 };
 

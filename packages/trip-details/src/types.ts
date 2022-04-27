@@ -1,6 +1,6 @@
 // Prettier does not recognize the import type syntax.
 // eslint-disable-next-line prettier/prettier
-import type { Itinerary } from "@opentripplanner/types";
+import type { Itinerary, Leg, Fare } from "@opentripplanner/types";
 import type { ReactElement } from "react";
 
 export interface CaloriesDetailsProps {
@@ -13,22 +13,12 @@ export interface DepartureDetailsProps {
   departureDate: Date;
 }
 
-export interface TransitFareData {
-  [key: string]: {
-    currency: {
-      currencyCode: string
-      defaultFractionDigits: number
-      currency: string
-      symbol: string
-    };
-    cents: number;
-  }
-}
 
 export interface FareDetailsProps {
-  maxTNCFare: number;
-  minTNCFare: number;
-  transitFares: TransitFareData;
+  transitFares: Fare;
+  legs: Leg[]
+  // To make this i18n friendly, set the string to be a react i18n key
+  prefixes: { [ prefix: string ]:  string }
 }
 
 export interface TransitFareProps {
@@ -37,7 +27,7 @@ export interface TransitFareProps {
   fareKeyNameMap: {
     [key: string]: string;
   };
-  transitFares: TransitFareData;
+  transitFares: Fare;
 }
 
 export interface TripDetailsProps {
@@ -57,10 +47,6 @@ export interface TripDetailsProps {
    * Slot for a custom component to render the expandable section for departure.
    */
   DepartureDetails?: React.ElementType<DepartureDetailsProps>;
-  /**
-   * Slot for a custom component to render the expandable section for fares.
-   */
-  FareDetails?: React.ElementType<FareDetailsProps>;
   /**
    * Mapping between fare keys and human-readable names for them.
    */
