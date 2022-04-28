@@ -90,6 +90,7 @@ export function getLegModeLabel(leg) {
         return "Streetcar";
       return "Light Rail";
     case "MICROMOBILITY":
+    case "SCOOTER":
       return "Ride";
     default:
       return require("./itinerary").toSentenceCase(leg.mode);

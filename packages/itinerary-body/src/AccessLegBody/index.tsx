@@ -1,10 +1,15 @@
-import { Config, Leg, TimeOptions } from "@opentripplanner/types";
+import {
+  Config,
+  Leg,
+  LegIconComponent,
+  TimeOptions
+} from "@opentripplanner/types";
 import React, { Component, ReactElement } from "react";
 import { VelocityTransitionGroup } from "velocity-react";
 import { Duration } from "../defaults";
 
 import * as S from "../styled";
-import { LegIconComponent, SetActiveLegFunction } from "../types";
+import { SetActiveLegFunction } from "../types";
 
 import AccessLegSteps from "./access-leg-steps";
 import AccessLegSummary from "./access-leg-summary";

@@ -138,6 +138,27 @@ export const DropdownSelector = styled.div`
   }
 `;
 
+export const SliderSelector = styled.div`
+  > div {
+    align-items: center;
+    box-sizing: border-box;
+    display: inline-flex;
+    gap: 10px;
+    position: relative;
+    width: 100%;
+
+    > label {
+      display: block;
+      white-space: pre;
+    }
+  }
+  input {
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 100%;
+  }
+`;
+
 export const GeneralSettingsPanel = styled.div``;
 
 export const SettingsSelectorPanel = styled.div``;

@@ -104,7 +104,7 @@ export function isCar(mode) {
 
 export function isMicromobility(mode) {
   if (!mode) return false;
-  return mode.startsWith("MICROMOBILITY");
+  return mode.startsWith("MICROMOBILITY") || mode.startsWith("SCOOTER");
 }
 
 export function isAccessMode(mode) {
@@ -177,7 +177,7 @@ export function getMapColor(mode) {
   if (mode === "TRAM") return "#800";
   if (mode === "FERRY") return "#008";
   if (mode === "CAR") return "#444";
-  if (mode === "MICROMOBILITY") return "#f5a729";
+  if (mode === "MICROMOBILITY" || mode === "SCOOTER") return "#f5a729";
   return "#aaa";
 }
 
@@ -204,7 +204,11 @@ export function getCompanyFromLeg(leg) {
   if (mode === "BICYCLE" && rentedBike && from.networks) {
     return from.networks[0];
   }
-  if (mode === "MICROMOBILITY" && rentedVehicle && from.networks) {
+  if (
+    (mode === "MICROMOBILITY" || mode === "SCOOTER") &&
+    rentedVehicle &&
+    from.networks
+  ) {
     return from.networks[0];
   }
   return null;

@@ -2852,6 +2852,24 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
+"@opentripplanner/core-utils@^4.11.1":
+  version "4.11.1"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-4.11.1.tgz#62f58ab0e318a4ccd27fe5171973770650725f99"
+  integrity sha512-S//G5KllmmzYUn6n9I7cL3cvacWlBfjFAU2MyzdsMKIOY1zXBSPHSbe10eQAccJXp73IUeBbGkInAepyCp7eUw==
+  dependencies:
+    "@mapbox/polyline" "^1.1.0"
+    "@opentripplanner/geocoder" "^1.1.2"
+    "@styled-icons/foundation" "^10.34.0"
+    "@turf/along" "^6.0.1"
+    bowser "^2.7.0"
+    date-fns "^2.23.0"
+    date-fns-tz "^1.1.4"
+    lodash.clonedeep "^4.5.0"
+    lodash.isequal "^4.5.0"
+    moment "^2.24.0"
+    prop-types "^15.7.2"
+    qs "^6.9.1"
+
 "@opentripplanner/from-to-location-picker@^1.3.0":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@opentripplanner/from-to-location-picker/-/from-to-location-picker-1.3.0.tgz#fa24a1e0e9b8df41b997ef766dbc2f67843db9f0"
@@ -2860,40 +2878,6 @@
     "@opentripplanner/core-utils" "^4.1.0"
     "@opentripplanner/location-icon" "^1.3.0"
     prop-types "^15.7.2"
-
-"@opentripplanner/itinerary-body@2.5.0-alpha.4":
-  version "2.5.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/itinerary-body/-/itinerary-body-2.5.0-alpha.4.tgz#1b8a3d7118750152a8b1f8d8013baef18c81d699"
-  integrity sha512-xbdKbN7gXtgzGIYwBbXnakOQX5q5lVyjKYtuLf8rW8KDd8+4A2xN/0ZlDqbTbov35im0xUj/9tOJ6ssvqkIR5w==
-  dependencies:
-    "@opentripplanner/core-utils" "^4.1.0"
-    "@opentripplanner/humanize-distance" "^1.1.0"
-    "@opentripplanner/icons" "^1.1.0"
-    "@opentripplanner/location-icon" "^1.3.0"
-    "@styled-icons/fa-solid" "^10.34.0"
-    "@styled-icons/foundation" "^10.34.0"
-    currency-formatter "^1.5.5"
-    moment "^2.24.0"
-    prop-types "^15.7.2"
-    react-resize-detector "^4.2.1"
-    velocity-react "^1.4.3"
-
-"@opentripplanner/itinerary-body@^2.6.0":
-  version "2.9.1"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/itinerary-body/-/itinerary-body-2.9.1.tgz#b1cc2a6e9a0417b3247fecad8b4939845a716c73"
-  integrity sha512-b4oSCcgVpzNrK27NqhKZxr1YK44zq/Sfg7PiZgL0GRAifpn3E2ou3taXYVLbLkpAf0CdCeysujMC9IokhShBJw==
-  dependencies:
-    "@opentripplanner/core-utils" "^4.5.0"
-    "@opentripplanner/humanize-distance" "^1.1.0"
-    "@opentripplanner/icons" "^1.2.1"
-    "@opentripplanner/location-icon" "^1.4.0"
-    "@styled-icons/fa-solid" "^10.34.0"
-    "@styled-icons/foundation" "^10.34.0"
-    currency-formatter "^1.5.5"
-    moment "^2.24.0"
-    prop-types "^15.7.2"
-    react-resize-detector "^4.2.1"
-    velocity-react "^1.4.3"
 
 "@pmmmwh/react-refresh-webpack-plugin@^0.5.1":
   version "0.5.4"
@@ -5151,11 +5135,6 @@ accepts@~1.3.5, accepts@~1.3.7:
   dependencies:
     mime-types "~2.1.24"
     negotiator "0.6.2"
-
-accounting@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/accounting/-/accounting-0.4.1.tgz#87dd4103eff7f4460f1e186f5c677ed6cf566883"
-  integrity sha1-h91BA+/39EYPHhhvXGd+1s9WaIM=
 
 acorn-dynamic-import@^2.0.0:
   version "2.0.2"
@@ -8521,15 +8500,6 @@ csstype@^3.0.2:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.8.tgz#d2266a792729fb227cd216fb572f43728e1ad340"
   integrity sha512-jXKhWqXPmlUeoQnF/EhTtTl4C9SnrxSH/jZUih3jmO6lBKr99rP3/+FmrMj4EFpOXzMtXHAZkd3x0E6h6Fgflw==
-
-currency-formatter@^1.5.5:
-  version "1.5.8"
-  resolved "https://registry.yarnpkg.com/currency-formatter/-/currency-formatter-1.5.8.tgz#5c2a18673d966fc355bac901f7423ccce607b983"
-  integrity sha512-/Oim4XnX82wf+JknrObifmBHpXnSQZC3FrCi+Oss4olXm3nqGWd8eY3sL2Tf0pZ/zuUqj1stU7f//5Hh27+cSQ==
-  dependencies:
-    accounting "^0.4.1"
-    locale-currency "0.0.2"
-    object-assign "^4.1.1"
 
 currently-unhandled@^0.4.1:
   version "0.4.1"
@@ -13481,11 +13451,6 @@ loader-utils@^1.0.2, loader-utils@^1.2.3, loader-utils@^1.4.0:
     emojis-list "^3.0.0"
     json5 "^1.0.1"
 
-locale-currency@0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/locale-currency/-/locale-currency-0.0.2.tgz#e2c90607563ce47a59f9559e45a70e24e4db4b6d"
-  integrity sha1-4skGB1Y85HpZ+VWeRacOJOTbS20=
-
 locate-path@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/locate-path/-/locate-path-2.0.0.tgz#2b568b265eec944c6d9c0de9c3dbbbca0354cd8e"
@@ -14319,9 +14284,9 @@ minimist-options@^3.0.1:
     is-plain-obj "^1.1.0"
 
 minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0, minimist@^1.2.5:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
-  integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
+  integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
 minipass-collect@^1.0.2:
   version "1.0.2"
@@ -14458,9 +14423,9 @@ modify-values@^1.0.0:
   integrity sha512-xV2bxeN6F7oYjZWTe/YPAy6MN2M+sL4u/Rlm2AHCIVGfo2p1yGmBHQ6vHehl4bRTZBdHu3TSkWdYgkwpYzAGSw==
 
 moment@^2.17.1, moment@^2.24.0:
-  version "2.29.1"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
-  integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
+  version "2.29.2"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.2.tgz#00910c60b20843bcba52d37d58c628b47b1f20e4"
+  integrity sha512-UgzG4rvxYpN15jgCmVJwac49h9ly9NurikMWGPdVxm8GZD6XjkKPxDTjQQ43gtGgnV3X0cAyWDdP2Wexoquifg==
 
 move-concurrently@^1.0.1:
   version "1.0.1"

@@ -3,7 +3,7 @@
  * used across more than one package in this repo.
  */
 
-import React from "react";
+import React, { FunctionComponent, ReactElement } from "react";
 
 /**
  * Shape for a transportation company.
@@ -310,6 +310,7 @@ export interface Leg {
   transitLeg: boolean;
   tripBlockId?: string;
   tripId?: string;
+  walkingBike?: boolean;
 }
 
 /**
@@ -433,3 +434,21 @@ export interface MapLocationActionArg {
   locationType: string;
   reverseGeocode?: boolean;
 }
+
+/**
+ * Supports leg icons for itinerary body and printable itinerary.
+ */
+export type LegIconComponent = FunctionComponent<{
+  leg: Leg;
+  title?: string;
+  width?: string;
+}>;
+
+/**
+ * Supports displaying accessibility ratings as a set of thresholds
+ * associated with an icon or text.
+ */
+export type GradationMap = Record<
+  number,
+  { color: string; icon?: ReactElement; text?: string }
+>;

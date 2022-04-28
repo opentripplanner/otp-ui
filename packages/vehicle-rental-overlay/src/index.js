@@ -1,9 +1,11 @@
+import flatten from "flat";
 import { Styled as BaseMapStyled } from "@opentripplanner/base-map";
 import coreUtils from "@opentripplanner/core-utils";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 import ZoomBasedMarkers from "@opentripplanner/zoom-based-markers";
 import PropTypes from "prop-types";
 import React from "react";
+import { FormattedMessage } from "react-intl";
 import { FeatureGroup, MapLayer, Popup, withLeaflet } from "react-leaflet";
 
 import {
@@ -12,12 +14,28 @@ import {
   SharedBikeCircle
 } from "./DefaultMarkers";
 
+// Load the default messages.
+import defaultEnglishMessages from "../i18n/en-US.yml";
+
+// HACK: We should flatten the messages loaded above because
+// the YAML loaders behave differently between webpack and our version of jest:
+// - the yaml loader for webpack returns a nested object,
+// - the yaml loader for jest returns messages with flattened ids.
+const defaultMessages = flatten(defaultEnglishMessages);
+
 /**
  * This vehicle rental overlay can be used to render vehicle rentals of various
  * types. This layer can be configured to show different styles of markers at
  * different zoom levels.
  */
 class VehicleRentalOverlay extends MapLayer {
+  constructor(props) {
+    super(props);
+    this.state = {
+      zoom: props.leaflet.map.getZoom()
+    };
+  }
+
   /**
    * This helper method will be passed to the ZoomBasedMarkers symbolTransform prop.
    * It creates a component that inserts a popup
@@ -92,21 +110,48 @@ class VehicleRentalOverlay extends MapLayer {
     if (this.refreshTimer) clearInterval(this.refreshTimer);
   }
 
+  /**
+   * When the layer is added (or toggled on, or its visibility becomes true),
+   * start refreshing vehicle positions.
+   */
+  onOverlayAdded = () => {
+    this.startRefreshing();
+  };
+
+  /**
+   * When the layer is removed (or toggled off, or its visibility becomes false),
+   * stop refreshing vehicle positions.
+   */
+  onOverlayRemoved = () => {
+    this.stopRefreshing();
+  };
+
+  /**
+   * Listen to changes on the BaseMap's center or zoom.
+   * @param viewport The viewport data. See https://github.com/PaulLeCam/react-leaflet/blob/master/example/components/viewport.js for details.
+   */
+  onViewportChanged = viewport => {
+    const { zoom: newZoom } = viewport;
+    if (this.state.zoom !== newZoom) {
+      this.setState({ zoom: newZoom });
+    }
+  };
+
+  /**
+   * Upon mounting, see whether the vehicles should be fetched,
+   * and also call the register overlay prop that the
+   * @opentripplanner/base-map package has injected to listen to zoom/position changes.
+   */
   componentDidMount() {
-    const { visible } = this.props;
+    const { registerOverlay, visible } = this.props;
     if (visible) this.startRefreshing();
+    if (typeof registerOverlay === "function") {
+      registerOverlay(this);
+    }
   }
 
   componentWillUnmount() {
     this.stopRefreshing();
-  }
-
-  componentDidUpdate(prevProps) {
-    if (!prevProps.visible && this.props.visible) {
-      this.startRefreshing();
-    } else if (prevProps.visible && !this.props.visible) {
-      this.stopRefreshing();
-    }
   }
 
   /**
@@ -130,15 +175,33 @@ class VehicleRentalOverlay extends MapLayer {
           {/* render dock info if it is available */}
           {stationIsHub && (
             <BaseMapStyled.PopupRow>
-              <div>Available bikes: {station.bikesAvailable}</div>
-              <div>Available docks: {station.spacesAvailable}</div>
+              <div>
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages["otpUi.VehicleRentalOverlay.availableBikes"]
+                  }
+                  description="Label text for the number of bikes available"
+                  id="otpUi.VehicleRentalOverlay.availableBikes"
+                  values={{ value: station.bikesAvailable }}
+                />
+              </div>
+              <div>
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages["otpUi.VehicleRentalOverlay.availableDocks"]
+                  }
+                  description="Label text for the number of docks available"
+                  id="otpUi.VehicleRentalOverlay.availableDocks"
+                  values={{ value: station.spacesAvailable }}
+                />
+              </div>
             </BaseMapStyled.PopupRow>
           )}
 
           {/* Set as from/to toolbar */}
           <BaseMapStyled.PopupRow>
-            <b>Plan a trip:</b>
             <FromToLocationPicker
+              label
               location={location}
               setLocation={setLocation}
             />
@@ -149,14 +212,12 @@ class VehicleRentalOverlay extends MapLayer {
   };
 
   render() {
-    const { companies, mapSymbols, stations, visible } = this.props;
+    const { companies, mapSymbols, stations } = this.props;
+    const { zoom } = this.state;
     // Render an empty FeatureGroup if the rental vehicles should not be visible
     // on the map. Otherwise previous stations may still be shown due to some
     // react-leaflet internals, maybe? Also, do not return null because that will
     // prevent the overlay from appearing in the layer controls.
-    if (!visible) {
-      return <FeatureGroup />;
-    }
 
     let filteredStations = stations;
     if (companies) {
@@ -169,9 +230,6 @@ class VehicleRentalOverlay extends MapLayer {
     if (!filteredStations || filteredStations.length === 0) {
       return <FeatureGroup />;
     }
-
-    // get zoom to check which symbol to render
-    const zoom = this.props.leaflet.map.getZoom();
 
     // Convert map symbols for this overlay to zoomBasedSymbolType.
     const symbols = this.convertToZoomMarkerSymbols(mapSymbols);
