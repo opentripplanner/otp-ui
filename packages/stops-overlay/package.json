@@ -20,7 +20,8 @@
   "dependencies": {
     "@opentripplanner/from-to-location-picker": "^2.1.0",
     "@opentripplanner/core-utils": "^4.5.0",
-    "@opentripplanner/zoom-based-markers": "^1.2.1"
+    "@opentripplanner/zoom-based-markers": "^1.2.1",
+    "flat": "^5.0.2"
   },
   "devDependencies": {
     "styled-icons": "^10.34.0"
@@ -29,6 +30,7 @@
     "@opentripplanner/base-map": "^2.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
+    "react-intl": "^5.24.6",
     "react-leaflet": "^2.6.1",
     "styled-components": "^5.3.0"
   },
