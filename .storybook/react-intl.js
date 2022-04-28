@@ -19,6 +19,7 @@ const packages = [
   "itinerary-body",
   "location-field",
   "printable-itinerary",
+  "transit-vehicle-overlay",
   "trip-details",
   "trip-form",
   "vehicle-rental-overlay"
