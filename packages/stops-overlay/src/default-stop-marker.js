@@ -89,9 +89,6 @@ export default class StopMarker extends Component {
                   }
                   description="Text for link that opens the stop viewer"
                   id="otpUi.StopsOverlay.stopViewer"
-                  values={{
-                    stopId: userFacingId
-                  }}
                 />
               </S.ViewStopButton>
             </BaseMapStyled.PopupRow>
