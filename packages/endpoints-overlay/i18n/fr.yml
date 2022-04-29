@@ -4,7 +4,7 @@ otpUi:
     # Note to translator:
     # This should read, in English, as e.g. "Remove as 'from' location" (quotes not included).
     clearLocation: "Effacer {locationType, select,
-      from {le point de depart}
+      from {le point de départ}
       to {la destination}
       other {{locationType}}}"
     coordinates: "{lat}; {lon}"
@@ -15,6 +15,6 @@ otpUi:
     # Note to translator:
     # This should read, in English, as e.g. "Change to 'from' location" (quotes not included).
     swapLocation: "En faire {locationType, select,
-      from {le point de depart}
+      from {le point de départ}
       to {la destination}
       other {{locationType}}}"
