@@ -278,8 +278,8 @@ const queryParams = [
   {
     /* optimize -- how to optimize a trip (non-bike, non-micromobility trips) */
     name: "optimize",
-    applicable: query =>
-      !query.otp2 && hasTransit(query.mode) && !hasBike(query.mode),
+    // This parameter doens't seem to do anything
+    applicable: false,
     routingTypes: ["ITINERARY"],
     default: "QUICK",
     selector: "DROPDOWN",
