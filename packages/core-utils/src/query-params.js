@@ -176,7 +176,7 @@ const queryParams = [
       query.mode &&
       hasTransit(query.mode) &&
       query.mode.indexOf("WALK") !== -1,
-    default: 1207, // 3/4 mi.
+    default: 1609, // 1 mi.
     selector: "DROPDOWN",
     label: "Maximum Walk",
     options: [
