@@ -278,7 +278,7 @@ const queryParams = [
   {
     /* optimize -- how to optimize a trip (non-bike, non-micromobility trips) */
     name: "optimize",
-    // This parameter doens't seem to do anything
+    // This parameter doesn't seem to do anything
     applicable: () => false,
     routingTypes: ["ITINERARY"],
     default: "QUICK",
