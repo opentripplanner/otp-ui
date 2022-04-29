@@ -149,7 +149,7 @@ export default function VehiclePopup({ isTracked, setTracked, vehicle }) {
             defaultMessage={
               defaultMessages["otpUi.TransitVehicleOverlay.vehicleIds"]
             }
-            description="Displays transit vehicule numbers"
+            description="Displays transit vehicle numbers"
             id="otpUi.TransitVehicleOverlay.vehicleIds"
             values={vehicleMessageValues}
           />
