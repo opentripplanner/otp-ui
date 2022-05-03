@@ -151,6 +151,7 @@ export const AgencyInfo = styled.div`
 
   img {
     margin-left: 5px;
+    vertical-align: middle;
   }
 `;
 
