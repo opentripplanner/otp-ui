@@ -11,14 +11,16 @@ export default function RouteDescription({
   const { routeShortName } = leg;
   return (
     <S.LegDescriptionForTransit>
-      <S.LegIconContainer>
-        <LegIcon leg={leg} />
-      </S.LegIconContainer>
-      {routeShortName && (
-        <S.LegDescriptionRouteShortName>
-          {routeShortName}
-        </S.LegDescriptionRouteShortName>
-      )}
+      <S.RouteIconAndShortName>
+        <S.LegIconContainer>
+          <LegIcon leg={leg} />
+        </S.LegIconContainer>
+        {routeShortName && (
+          <S.LegDescriptionRouteShortName>
+            {routeShortName}
+          </S.LegDescriptionRouteShortName>
+        )}
+      </S.RouteIconAndShortName>
       <S.LegDescriptionRouteLongName>
         <RouteLongName leg={leg} />
       </S.LegDescriptionRouteLongName>
