@@ -1,0 +1,421 @@
+{
+  "requestParameters": {
+    "date": "2022-04-27",
+    "walkSpeed": "1.34",
+    "fromPlace": "6519 42nd Ave NE, Seattle, WA 98115-7533, United States::47.67636885973022,-122.28366846537946",
+    "maxWalkDistance": "1207",
+    "batchId": "l4t0miije",
+    "otherThanPreferredRoutesPenalty": "900",
+    "numItineraries": "5",
+    "mode": "WALK,BUS,TRAM,FERRY,RAIL",
+    "arriveBy": "false",
+    "ignoreRealtimeUpdates": "false",
+    "optimize": "QUICK",
+    "showIntermediateStops": "true",
+    "toPlace": "6516 25th Ave NE, Seattle, WA 98115-7131, United States::47.67648444221321,-122.30047554607168",
+    "time": "15:36"
+  },
+  "plan": {
+    "date": 1651098960000,
+    "from": {
+      "name": "6519 42nd Ave NE, Seattle, WA 98115-7533, United States",
+      "lon": -122.28366846537946,
+      "lat": 47.67636885973022,
+      "vertexType": "NORMAL"
+    },
+    "to": {
+      "name": "6516 25th Ave NE, Seattle, WA 98115-7131, United States",
+      "lon": -122.30047554607168,
+      "lat": 47.67648444221321,
+      "vertexType": "NORMAL"
+    },
+    "itineraries": [
+      {
+        "duration": 385,
+        "startTime": 1651099835000,
+        "endTime": 1651100220000,
+        "walkTime": 167,
+        "transitTime": 218,
+        "waitingTime": 0,
+        "walkDistance": 208.233,
+        "walkLimitExceeded": false,
+        "generalizedCost": 1140,
+        "elevationLost": 0,
+        "elevationGained": 0,
+        "transfers": 0,
+        "fare": {
+          "fare": {
+            "regular": {
+              "currency": {
+                "symbol": "$",
+                "currency": "USD",
+                "defaultFractionDigits": 2,
+                "currencyCode": "USD"
+              },
+              "cents": 225
+            }
+          },
+          "details": {
+            "regular": [
+              {
+                "price": {
+                  "currency": {
+                    "symbol": "$",
+                    "currency": "USD",
+                    "defaultFractionDigits": 2,
+                    "currencyCode": "USD"
+                  },
+                  "cents": 225
+                },
+                "legIndex": 1
+              }
+            ],
+            "electronicRegular": [
+              {
+                "price": {
+                  "currency": {
+                    "symbol": "$",
+                    "currency": "USD",
+                    "defaultFractionDigits": 2,
+                    "currencyCode": "USD"
+                  },
+                  "cents": 225
+                },
+                "legIndex": 1
+              }
+            ],
+            "senior": [
+              {
+                "price": {
+                  "currency": {
+                    "symbol": "$",
+                    "currency": "USD",
+                    "defaultFractionDigits": 2,
+                    "currencyCode": "USD"
+                  },
+                  "cents": 400
+                },
+                "legIndex": 1
+              }
+            ],
+            "electronicSenior": [
+              {
+                "price": {
+                  "currency": {
+                    "symbol": "$",
+                    "currency": "USD",
+                    "defaultFractionDigits": 2,
+                    "currencyCode": "USD"
+                  },
+                  "cents": 500
+                },
+                "legIndex": 1
+              }
+            ]
+          }
+        },
+        "legs": [
+          {
+            "startTime": 1651099835000,
+            "endTime": 1651099904000,
+            "departureDelay": 0,
+            "arrivalDelay": 0,
+            "realTime": false,
+            "distance": 85.986,
+            "generalizedCost": 133,
+            "pathway": false,
+            "mode": "WALK",
+            "transitLeg": false,
+            "route": "",
+            "agencyTimeZoneOffset": -25200000,
+            "interlineWithPreviousLeg": false,
+            "from": {
+              "name": "6519 42nd Ave NE, Seattle, WA 98115-7533, United States",
+              "lon": -122.28366846537946,
+              "lat": 47.67636885973022,
+              "departure": 1651099835000,
+              "vertexType": "NORMAL"
+            },
+            "to": {
+              "name": "NE 65th St & 42nd Ave NE",
+              "stopId": "kcm:37910",
+              "stopCode": "37910",
+              "lon": -122.283852,
+              "lat": 47.6758537,
+              "arrival": 1651099904000,
+              "departure": 1651099904000,
+              "zoneId": "1",
+              "vertexType": "TRANSIT"
+            },
+            "legGeometry": {
+              "points": "ix~aHlojiVrBC?x@K?",
+              "length": 4
+            },
+            "steps": [
+              {
+                "distance": 64.203,
+                "relativeDirection": "DEPART",
+                "streetName": "42nd Avenue Northeast",
+                "absoluteDirection": "SOUTH",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -122.28358061479862,
+                "lat": 47.67637024068274,
+                "elevation": "",
+                "walkingBike": false
+              },
+              {
+                "distance": 21.783,
+                "relativeDirection": "RIGHT",
+                "streetName": "Northeast 65th Street",
+                "absoluteDirection": "WEST",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -122.2835606,
+                "lat": 47.675793000000006,
+                "elevation": "",
+                "walkingBike": false
+              }
+            ],
+            "rentedBike": false,
+            "walkingBike": false,
+            "duration": 69
+          },
+          {
+            "startTime": 1651099904000,
+            "endTime": 1651100122000,
+            "departureDelay": 0,
+            "arrivalDelay": 0,
+            "realTime": false,
+            "distance": 1302.9800587067568,
+            "generalizedCost": 818,
+            "pathway": false,
+            "mode": "BUS",
+            "transitLeg": true,
+            "agencyName": "Metro Transit",
+            "agencyUrl": "http://metro.kingcounty.gov",
+            "agencyTimeZoneOffset": -25200000,
+            "routeType": 3,
+            "routeId": "kcm:100252",
+            "interlineWithPreviousLeg": false,
+            "tripShortName": "LOCAL",
+            "tripBlockId": "6390729",
+            "agencyId": "kcm:1",
+            "tripId": "kcm:572292990",
+            "serviceDate": "2022-04-27",
+            "from": {
+              "name": "NE 65th St & 42nd Ave NE",
+              "stopId": "kcm:37910",
+              "stopCode": "37910",
+              "lon": -122.283852,
+              "lat": 47.6758537,
+              "arrival": 1651099904000,
+              "departure": 1651099904000,
+              "zoneId": "1",
+              "stopIndex": 9,
+              "stopSequence": 77,
+              "vertexType": "TRANSIT"
+            },
+            "to": {
+              "name": "NE 65th St & 24th Ave NE",
+              "stopId": "kcm:37990",
+              "stopCode": "37990",
+              "lon": -122.301254,
+              "lat": 47.6758423,
+              "arrival": 1651100122000,
+              "departure": 1651100122000,
+              "zoneId": "1",
+              "stopIndex": 16,
+              "stopSequence": 116,
+              "vertexType": "TRANSIT"
+            },
+            "intermediateStops": [
+              {
+                "name": "NE 65th St & 39th Ave NE",
+                "stopId": "kcm:37920",
+                "stopCode": "37920",
+                "lon": -122.285873,
+                "lat": 47.6758499,
+                "arrival": 1651099927000,
+                "departure": 1651099927000,
+                "zoneId": "1",
+                "stopIndex": 10,
+                "stopSequence": 80,
+                "vertexType": "TRANSIT"
+              },
+              {
+                "name": "NE 65th St & 37th Ave NE",
+                "stopId": "kcm:37930",
+                "stopCode": "37930",
+                "lon": -122.28804,
+                "lat": 47.6758499,
+                "arrival": 1651099952000,
+                "departure": 1651099952000,
+                "zoneId": "1",
+                "stopIndex": 11,
+                "stopSequence": 86,
+                "vertexType": "TRANSIT"
+              },
+              {
+                "name": "NE 65th St & 35th Ave NE",
+                "stopId": "kcm:37940",
+                "stopCode": "37940",
+                "lon": -122.290489,
+                "lat": 47.6758499,
+                "arrival": 1651099980000,
+                "departure": 1651099980000,
+                "zoneId": "1",
+                "stopIndex": 12,
+                "stopSequence": 94,
+                "vertexType": "TRANSIT"
+              },
+              {
+                "name": "NE 65th St & 32nd Ave NE",
+                "stopId": "kcm:37950",
+                "stopCode": "37950",
+                "lon": -122.293343,
+                "lat": 47.6758537,
+                "arrival": 1651100018000,
+                "departure": 1651100018000,
+                "zoneId": "1",
+                "stopIndex": 13,
+                "stopSequence": 100,
+                "vertexType": "TRANSIT"
+              },
+              {
+                "name": "NE 65th St & 28th Ave NE",
+                "stopId": "kcm:37970",
+                "stopCode": "37970",
+                "lon": -122.297668,
+                "lat": 47.6758499,
+                "arrival": 1651100075000,
+                "departure": 1651100075000,
+                "zoneId": "1",
+                "stopIndex": 14,
+                "stopSequence": 109,
+                "vertexType": "TRANSIT"
+              },
+              {
+                "name": "NE 65th St & 26th Ave NE",
+                "stopId": "kcm:37980",
+                "stopCode": "37980",
+                "lon": -122.299477,
+                "lat": 47.6758499,
+                "arrival": 1651100099000,
+                "departure": 1651100099000,
+                "zoneId": "1",
+                "stopIndex": 15,
+                "stopSequence": 112,
+                "vertexType": "TRANSIT"
+              }
+            ],
+            "legGeometry": {
+              "points": "st~aHbqjiV?rE?tD?H???P?tA?jB?T?vB?pA???j@?bA?~@?l@?lB?pB?f@???dCA~A@pB?zC?x@?L???hCAx@@vC?x@?rD@^ArD@^A`@???pC@\\?xD???V?jB?fB?vB",
+              "length": 45
+            },
+            "steps": [],
+            "routeShortName": "62",
+            "duration": 218
+          },
+          {
+            "startTime": 1651100122000,
+            "endTime": 1651100220000,
+            "departureDelay": 0,
+            "arrivalDelay": 0,
+            "realTime": false,
+            "distance": 122.247,
+            "generalizedCost": 187,
+            "pathway": false,
+            "mode": "WALK",
+            "transitLeg": false,
+            "route": "",
+            "agencyTimeZoneOffset": -25200000,
+            "interlineWithPreviousLeg": false,
+            "from": {
+              "name": "NE 65th St & 24th Ave NE",
+              "stopId": "kcm:37990",
+              "stopCode": "37990",
+              "lon": -122.301254,
+              "lat": 47.6758423,
+              "arrival": 1651100122000,
+              "departure": 1651100122000,
+              "zoneId": "1",
+              "vertexType": "TRANSIT"
+            },
+            "to": {
+              "name": "6516 25th Ave NE, Seattle, WA 98115-7131, United States",
+              "lon": -122.30047554607168,
+              "lat": 47.67648444221321,
+              "arrival": 1651100220000,
+              "vertexType": "NORMAL"
+            },
+            "legGeometry": {
+              "points": "_u~aHz}miVJ??uB[?]AK?O?A?I?E?c@?",
+              "length": 11
+            },
+            "steps": [
+              {
+                "distance": 44.177,
+                "relativeDirection": "DEPART",
+                "streetName": "Northeast 65th Street",
+                "absoluteDirection": "EAST",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -122.30125363955806,
+                "lat": 47.6757820009768,
+                "elevation": "",
+                "walkingBike": false
+              },
+              {
+                "distance": 78.07,
+                "relativeDirection": "LEFT",
+                "streetName": "25th Avenue Northeast",
+                "absoluteDirection": "NORTH",
+                "stayOn": false,
+                "area": false,
+                "bogusName": false,
+                "lon": -122.30066360000001,
+                "lat": 47.6757836,
+                "elevation": "",
+                "walkingBike": false
+              }
+            ],
+            "rentedBike": false,
+            "walkingBike": false,
+            "duration": 98
+          }
+        ],
+        "tooSloped": false,
+        "arrivedAtDestinationWithRentedBicycle": false
+      }
+    ]
+  },
+  "metadata": {
+    "searchWindowUsed": 2400,
+    "nextDateTime": 1651101360000,
+    "prevDateTime": 1651096560000
+  },
+  "previousPageCursor": "rO0ABXc1AQANUFJFVklPVVNfUEFHRQRdzOCAAAAAAAAXcAAXU1RSRUVUX0FORF9BUlJJVkFMX1RJTUU=",
+  "nextPageCursor": "rO0ABXcxAQAJTkVYVF9QQUdFBF3tsIAAAAAAABdwABdTVFJFRVRfQU5EX0FSUklWQUxfVElNRQ==",
+  "debugOutput": {
+    "precalculationTime": 9034,
+    "directStreetRouterTime": 1477387,
+    "transitRouterTime": 174725162,
+    "filteringTime": 141742,
+    "renderingTime": 142348,
+    "totalTime": 176914672,
+    "transitRouterTimes": {
+      "tripPatternFilterTime": 13007494,
+      "accessEgressTime": 43505254,
+      "raptorSearchTime": 117684175,
+      "itineraryCreationTime": 527790
+    }
+  },
+  "elevationMetadata": {
+    "ellipsoidToGeoidDifference": -19.801833620651628,
+    "geoidElevation": false
+  }
+}

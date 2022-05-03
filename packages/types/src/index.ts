@@ -345,6 +345,7 @@ export interface Fare {
       fareId?: ApplicableId;
       price: Money;
       legIndex?: number;
+      isTransfer?: boolean;
       routes?: ApplicableId[];
     }[];
   };

@@ -20,6 +20,8 @@ import {
 import customMessages from "../__mocks__/custom-messages.yml";
 import { FareDetails } from "./fare-detail";
 
+import fareByLegResponse from "./fareByLegResponse.json";
+
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json");
 const bikeRentalItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-rental.json");
@@ -257,10 +259,11 @@ export const FlexItinerary = makeStory({
   itinerary: fareComponentsItinerary
 });
 
+const exampleItinerary = fareByLegResponse.plan.itineraries[0];
 export const FareDetailsComponent = () => (
   <FareDetails
-    transitFares={{}}
-    legs={[]}
+    transitFares={exampleItinerary.fare}
+    legs={exampleItinerary.legs}
     prefixes={{ electronic: "ORCA", cash: "Cash" }}
   />
 );
