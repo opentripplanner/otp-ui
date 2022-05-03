@@ -530,6 +530,10 @@ export const StepDescriptionContainer = styled.div`
   margin-left: 24px;
   line-height: 1.25em;
   padding-top: 1px;
+
+  & > span {
+    margin-right: 1ch;
+  }
 `;
 
 export const StepsHeaderAndMap = styled.span`
