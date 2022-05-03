@@ -291,6 +291,7 @@ export const LegDescription = styled.span`
   align-items: center;
   display: flex;
   line-height: 16px;
+  min-height: 31px;
 `;
 
 export const LegDescriptionHeadsignPrefix = styled.span`
