@@ -304,7 +304,7 @@ const queryParams = [
     default: "SAFE",
     selector: "DROPDOWN",
     label: "Optimize for",
-    options: query => {
+    options: () => {
       const opts = [
         {
           text: "Speed",
@@ -319,14 +319,6 @@ const queryParams = [
           value: "FLAT"
         }
       ];
-
-      // Include transit-specific option, if applicable
-      if (hasTransit(query.mode)) {
-        opts.splice(1, 0, {
-          text: "Fewest Transfers",
-          value: "TRANSFERS"
-        });
-      }
 
       return opts;
     },
