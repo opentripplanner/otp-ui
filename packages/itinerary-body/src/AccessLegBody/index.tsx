@@ -109,7 +109,7 @@ class AccessLegBody extends Component<Props, State> {
             showLegIcon={showLegIcon}
           />
           <S.LegDetails>
-            <S.StepsHeaderAndMap>
+            <S.StepsHeaderAndMapLink>
               <S.StepsHeader
                 aria-expanded={expanded}
                 onClick={this.onStepsHeaderClick}
@@ -118,11 +118,11 @@ class AccessLegBody extends Component<Props, State> {
                 {leg.steps && <S.CaretToggle expanded={expanded} />}
               </S.StepsHeader>
               <MapillaryButton
-                coords={leg.from}
                 clickCallback={mapillaryCallback}
+                coords={leg.from}
                 mapillaryKey={mapillaryKey}
               />
-            </S.StepsHeaderAndMap>
+            </S.StepsHeaderAndMapLink>
             <LegDiagramPreview
               diagramVisible={diagramVisible}
               leg={leg}
@@ -135,9 +135,9 @@ class AccessLegBody extends Component<Props, State> {
             >
               {expanded && (
                 <AccessLegSteps
-                  steps={leg.steps}
                   mapillaryCallback={mapillaryCallback}
                   mapillaryKey={mapillaryKey}
+                  steps={leg.steps}
                 />
               )}
             </VelocityTransitionGroup>

@@ -539,7 +539,7 @@ export const StepDescriptionContainer = styled.div`
   }
 `;
 
-export const StepsHeaderAndMap = styled.span`
+export const StepsHeaderAndMapLink = styled.span`
   display: inline-block;
   margin-top: 10px;
 `;
