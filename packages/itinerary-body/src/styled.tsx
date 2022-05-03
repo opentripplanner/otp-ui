@@ -280,11 +280,9 @@ export const LegBody = styled.div`
 
 export const LegClickable = styled(TransparentButton)`
   cursor: pointer;
-  display: table;
-  padding: 0;
-  text-align: center;
+  display: block;
   line-height: 31px;
-  /* line-height: 18px; */
+  padding: 0;
 `;
 
 export const LegDescription = styled.div`
@@ -327,11 +325,12 @@ export const LegDescriptionForTransit = styled(LegDescription)`
   margin-top: 5px;
 `;
 
-export const LegIconContainer = styled.div`
+export const LegIconContainer = styled.span`
+  display: inline-block;
   height: 24px;
-  width: 24px;
-  float: left;
   margin-right: 6px;
+  vertical-align: middle;
+  width: 24px;
 `;
 
 export const LegLine = styled.div`
@@ -355,6 +354,12 @@ export const LineColumn = styled.div`
   /* flexbox column */
   flex: 0 0 50px;
   padding-right: 5px;
+`;
+
+export const LegDetails = styled.span`
+  *:not(.fa) {
+    vertical-align: middle;
+  }
 `;
 
 export const PlaceRowWrapper = styled.div`
@@ -524,13 +529,15 @@ export const StepDescriptionContainer = styled.div`
   padding-top: 1px;
 `;
 
+export const StepsHeaderAndMap = styled.span`
+  display: inline-block;
+  margin-top: 10px;
+`;
+
 export const StepsHeader = styled(TransparentButton)`
   color: #676767;
-  display: inline-block;
   font-size: 13px;
   font-style: normal;
-  margin-top: 10px;
-  vertical-align: bottom;
 `;
 
 export const StepIconContainer = styled.div`
