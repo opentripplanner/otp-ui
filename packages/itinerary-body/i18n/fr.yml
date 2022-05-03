@@ -146,4 +146,4 @@ otpUi:
     stopIdBasic: Arrêt n°{stopId}
     stopViewer: Info arrêt
     tripViewer: Info trajet
-    typicalWait: "Intervalle habituel : {waitTime}"
+    typicalWait: "Attente typique : {waitTime}"
