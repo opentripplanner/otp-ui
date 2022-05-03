@@ -151,6 +151,7 @@ export const AgencyInfo = styled.div`
 
   img {
     margin-left: 5px;
+    vertical-align: middle;
   }
 `;
 
@@ -280,19 +281,17 @@ export const LegBody = styled.div`
 
 export const LegClickable = styled(TransparentButton)`
   cursor: pointer;
-  display: table;
+  display: block;
   padding: 0;
-  text-align: center;
-  line-height: 31px;
-  /* line-height: 18px; */
+  text-align: start;
 `;
 
-export const LegDescription = styled.div`
-  display: table;
-
-  > div {
-    display: table-cell;
-  }
+// Use <span> for correct semantics as it is the contents of a button or a link.
+export const LegDescription = styled.span`
+  align-items: center;
+  display: flex;
+  line-height: 16px;
+  min-height: 31px;
 `;
 
 export const LegDescriptionHeadsignPrefix = styled.span`
@@ -311,13 +310,12 @@ export const LegDescriptionMode = styled.span``;
  */
 export const LegDescriptionPlace = styled.span``;
 
-export const LegDescriptionRouteLongName = styled.div`
+export const LegDescriptionRouteLongName = styled.span`
   font-size: 13px;
   font-weight: 500;
-  line-height: 16px;
 `;
 
-export const LegDescriptionRouteShortName = styled.div`
+export const LegDescriptionRouteShortName = styled.span`
   font-weight: 800;
   margin-right: 6px;
 `;
@@ -327,11 +325,18 @@ export const LegDescriptionForTransit = styled(LegDescription)`
   margin-top: 5px;
 `;
 
-export const LegIconContainer = styled.div`
-  height: 24px;
-  width: 24px;
-  float: left;
-  margin-right: 6px;
+export const LegIconContainer = styled.span`
+  img,
+  svg {
+    margin-right: 6px;
+    max-height: 24px;
+    width: 24px;
+    vertical-align: bottom;
+  }
+`;
+
+export const LegIconAndRouteShortName = styled.span`
+  flex-shrink: 0;
 `;
 
 export const LegLine = styled.div`
@@ -355,6 +360,12 @@ export const LineColumn = styled.div`
   /* flexbox column */
   flex: 0 0 50px;
   padding-right: 5px;
+`;
+
+export const LegDetails = styled.span`
+  *:not(.fa) {
+    vertical-align: middle;
+  }
 `;
 
 export const PlaceRowWrapper = styled.div`
@@ -522,15 +533,21 @@ export const StepDescriptionContainer = styled.div`
   margin-left: 24px;
   line-height: 1.25em;
   padding-top: 1px;
+
+  & > span {
+    margin-right: 1ch;
+  }
+`;
+
+export const StepsHeaderAndMapLink = styled.span`
+  display: inline-block;
+  margin-top: 10px;
 `;
 
 export const StepsHeader = styled(TransparentButton)`
   color: #676767;
-  display: inline-block;
   font-size: 13px;
   font-style: normal;
-  margin-top: 10px;
-  vertical-align: bottom;
 `;
 
 export const StepIconContainer = styled.div`

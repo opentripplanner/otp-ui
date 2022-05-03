@@ -27,10 +27,7 @@ const generateBoundingBoxFromCoordinate = ({
   return [west, south, east, north];
 };
 
-const Container = styled.a<{ padLeft?: boolean; padTop?: boolean }>`
-  display: inline-block;
-  margin-top: ${props => (props.padTop ? "10px" : "0")};
-
+const Container = styled.a`
   &:hover {
     cursor: pointer;
     text-decoration: none;
@@ -43,7 +40,6 @@ const Container = styled.a<{ padLeft?: boolean; padTop?: boolean }>`
   &::before {
     content: "| ";
     cursor: auto;
-    margin-left: ${props => (props.padLeft ? "1ch" : "0")};
   }
 `;
 
@@ -58,21 +54,16 @@ const Icon = styled(StreetView)`
  *
  * @param coords        The coordinates to find imagery for in the format [lat, lon]
  * @param mapillaryKey  A Mapillary api key used to check for imagery.
- * @param padTop        Whether to add padding to the top of the container.
  * @param clickCallback A method to fire when the button is clicked, which accepts an ID.
  *  If it is not passsed, a popup window will be opened. */
 const MapillaryButton = ({
   clickCallback,
   coords,
-  mapillaryKey,
-  padLeft,
-  padTop
+  mapillaryKey
 }: {
   clickCallback?: (id: string) => void;
   coords: { lat: number; lon: number };
   mapillaryKey: string;
-  padLeft?: boolean;
-  padTop?: boolean;
 }): JSX.Element => {
   const [imageId, setImageId] = useState(null);
   const intl = useIntl();
@@ -108,8 +99,6 @@ const MapillaryButton = ({
   return (
     <Container
       onClick={handleClick}
-      padLeft={padLeft}
-      padTop={padTop}
       title={intl.formatMessage({
         defaultMessage: defaultMessages["otpUi.AccessLegBody.mapillaryTooltip"],
         description: "Tooltip text describing the street view icon.",
