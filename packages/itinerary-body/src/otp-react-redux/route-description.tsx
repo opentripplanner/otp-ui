@@ -11,7 +11,7 @@ export default function RouteDescription({
   const { routeShortName } = leg;
   return (
     <S.LegDescriptionForTransit>
-      <S.RouteIconAndShortName>
+      <S.LegIconAndRouteShortName>
         <S.LegIconContainer>
           <LegIcon leg={leg} />
         </S.LegIconContainer>
@@ -20,7 +20,7 @@ export default function RouteDescription({
             {routeShortName}
           </S.LegDescriptionRouteShortName>
         )}
-      </S.RouteIconAndShortName>
+      </S.LegIconAndRouteShortName>
       <S.LegDescriptionRouteLongName>
         <RouteLongName leg={leg} />
       </S.LegDescriptionRouteLongName>

@@ -281,13 +281,16 @@ export const LegBody = styled.div`
 export const LegClickable = styled(TransparentButton)`
   cursor: pointer;
   display: block;
-  line-height: 31px;
   padding: 0;
   text-align: start;
 `;
 
 // Use <span> for correct semantics as it is the contents of a button or a link.
-export const LegDescription = styled.span``;
+export const LegDescription = styled.span`
+  align-items: center;
+  display: flex;
+  line-height: 16px;
+`;
 
 export const LegDescriptionHeadsignPrefix = styled.span`
   font-weight: 200;
@@ -308,7 +311,6 @@ export const LegDescriptionPlace = styled.span``;
 export const LegDescriptionRouteLongName = styled.span`
   font-size: 13px;
   font-weight: 500;
-  line-height: 16px;
 `;
 
 export const LegDescriptionRouteShortName = styled.span`
@@ -317,9 +319,7 @@ export const LegDescriptionRouteShortName = styled.span`
 `;
 
 export const LegDescriptionForTransit = styled(LegDescription)`
-  align-items: center;
   color: #807373;
-  display: flex;
   margin-top: 5px;
 `;
 
@@ -331,7 +331,7 @@ export const LegIconContainer = styled.span`
   width: 24px;
 `;
 
-export const RouteIconAndShortName = styled.span`
+export const LegIconAndRouteShortName = styled.span`
   flex-shrink: 0;
 `;
 
