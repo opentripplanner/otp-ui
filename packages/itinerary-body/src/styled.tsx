@@ -326,11 +326,13 @@ export const LegDescriptionForTransit = styled(LegDescription)`
 `;
 
 export const LegIconContainer = styled.span`
-  display: inline-block;
-  height: 24px;
-  margin-right: 6px;
-  vertical-align: text-bottom;
-  width: 24px;
+  img,
+  svg {
+    margin-right: 6px;
+    max-height: 24px;
+    width: 24px;
+    vertical-align: bottom;
+  }
 `;
 
 export const LegIconAndRouteShortName = styled.span`
