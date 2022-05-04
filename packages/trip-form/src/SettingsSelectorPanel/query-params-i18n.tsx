@@ -1,7 +1,4 @@
 import flatten from "flat";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore FIXME: Create TypeScript types for core-utils packages.
-import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 import { FormattedMessage, IntlShape } from "react-intl";
 
@@ -19,7 +16,6 @@ export const defaultMessages: Record<string, string> = flatten(
   defaultEnglishMessages
 );
 
-const { hasTransit } = coreUtils.itinerary;
 const METERS_PER_MILE = 1609.3;
 const SECONDS_PER_HOUR = 3600;
 
@@ -103,7 +99,7 @@ function getSpeedOptionsInMilesPerHour(intl, milesPerHourOptions) {
 /**
  * Gets the bike trip optimization options.
  */
-function getBikeTripOptions(intl, queryParams) {
+function getBikeTripOptions(intl) {
   const opts = [
     {
       text: intl.formatMessage({
@@ -133,19 +129,6 @@ function getBikeTripOptions(intl, queryParams) {
       value: "FLAT"
     }
   ];
-
-  // Include transit-specific option, if applicable
-  if (hasTransit(queryParams.mode)) {
-    opts.splice(1, 0, {
-      text: intl.formatMessage({
-        defaultMessage:
-          defaultMessages["otpUi.queryParameters.optimizeTransfers"],
-        description: "Option label for fewest transfers",
-        id: "otpUi.queryParameters.optimizeTransfers"
-      }),
-      value: "TRANSFERS"
-    });
-  }
 
   return opts;
 }
@@ -217,35 +200,6 @@ export function getQueryParamMessagesWithI18n(
         30
       ])
     },
-    optimize: {
-      label: (
-        <FormattedMessage
-          defaultMessage={defaultMessages["otpUi.queryParameters.optimizeFor"]}
-          description="Optimize selector label"
-          id="otpUi.queryParameters.optimizeFor"
-        />
-      ),
-      options: [
-        {
-          text: intl.formatMessage({
-            defaultMessage:
-              defaultMessages["otpUi.queryParameters.optimizeQuick"],
-            description: "Option label for quickest trips",
-            id: "otpUi.queryParameters.optimizeQuick"
-          }),
-          value: "QUICK"
-        },
-        {
-          text: intl.formatMessage({
-            defaultMessage:
-              defaultMessages["otpUi.queryParameters.optimizeTransfers"],
-            description: "Option label for fewest transfers",
-            id: "otpUi.queryParameters.optimizeTransfers"
-          }),
-          value: "TRANSFERS"
-        }
-      ]
-    },
     optimizeBike: {
       label: (
         <FormattedMessage
@@ -254,7 +208,7 @@ export function getQueryParamMessagesWithI18n(
           id="otpUi.queryParameters.optimizeFor"
         />
       ),
-      options: queryParams => getBikeTripOptions(intl, queryParams)
+      options: () => getBikeTripOptions(intl)
     },
     maxWalkTime: {
       label: (
