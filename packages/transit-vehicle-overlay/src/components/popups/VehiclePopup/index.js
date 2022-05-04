@@ -171,7 +171,7 @@ VehiclePopup.propTypes = {
   /** callback which forwards the vehicle and tracking status from track button */
   setTracked: PropTypes.func,
 
-  /** vehicle record - @see: core-utils/types/transitVehicleType */
+  /** vehicle record - @see: core-utils/src/types/transitVehicleType */
   vehicle: coreUtils.types.transitVehicleType
 };
 
