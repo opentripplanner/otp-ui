@@ -10,10 +10,10 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/itinerary-body": "^3.0.0"
+    "@opentripplanner/itinerary-body": "^3.0.1"
   },
   "devDependencies": {
-    "@opentripplanner/icons": "^1.2.1"
+    "@opentripplanner/icons": "^1.2.2"
   },
   "peerDependencies": {
     "react": "^16.14.0",
