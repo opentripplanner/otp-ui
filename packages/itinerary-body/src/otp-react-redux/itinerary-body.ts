@@ -9,7 +9,6 @@ const StyledItineraryBody = styled(ItineraryBody)`
   *:not(.fa) {
     box-sizing: border-box;
     font-family: Hind, sans-serif;
-    vertical-align: middle;
   }
 
   ${ItineraryBodyClasses.DetailsColumn} {

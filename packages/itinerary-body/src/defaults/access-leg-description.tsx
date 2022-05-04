@@ -6,7 +6,7 @@ import * as S from "../styled";
 
 import { getPlaceName } from "../util";
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
+interface Props extends HTMLAttributes<HTMLSpanElement> {
   config: Config;
   leg: Leg;
 }
@@ -25,7 +25,7 @@ export default function AccessLegDescription({
   return (
     // Return an HTML element which is passed a className (and style props)
     // for styled-components support.
-    <div className={className} style={style}>
+    <span className={className} style={style}>
       <FormattedMessage
         defaultMessage="{mode} {distance} to {place}"
         description="Summarizes an access leg"
@@ -56,6 +56,6 @@ export default function AccessLegDescription({
           )
         }}
       />
-    </div>
+    </span>
   );
 }
