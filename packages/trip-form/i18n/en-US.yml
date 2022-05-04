@@ -33,7 +33,6 @@ otpUi:
     optimizeBikeFriendly: Bike-Friendly Trip
     optimizeBikeSpeed: Speed
     optimizeFor: Optimize for
-    optimizeQuick: Speed
     speedInMilesPerHour: "{mph} MPH" # Original units were all caps.
     walkSpeed: Walk Speed
     walkReluctance: Walking Avoidance
