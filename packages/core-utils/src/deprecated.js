@@ -318,6 +318,8 @@ export function summarizeQuery(query, locations = []) {
 }
 
 export function getTimeZoneOffset(itinerary) {
+  logDeprecationWarning("getTimeZoneOffset");
+
   if (!itinerary.legs || !itinerary.legs.length) return 0;
 
   // Determine if there is a DST offset between now and the itinerary start date
