@@ -316,7 +316,7 @@ export interface Leg {
 /**
  * Describes the cost of an itinerary leg.
  */
-interface Money {
+export interface Money {
   cents: number;
   currency: {
     defaultFractionDigits: number;

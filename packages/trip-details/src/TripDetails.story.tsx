@@ -20,8 +20,6 @@ import {
 import customMessages from "../__mocks__/custom-messages.yml";
 import { FareDetails } from "./fare-detail";
 
-import fareByLegResponse from "./fareByLegResponse.json";
-
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json");
 const bikeRentalItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-rental.json");
@@ -48,6 +46,65 @@ const StyledTripDetails = styled(TripDetails)`
     background-color: pink;
   }
 `;
+
+const fareByLegLayout = [
+  {
+    header: "Adult",
+    cols: [
+      {
+        key: "regular",
+        header: "Cash"
+      },
+      {
+        key: "electronicRegular",
+        header: "ORCA"
+      },
+      {
+        key: "electronicSpecial",
+        header: "ORCA Lift"
+      }
+    ]
+  },
+  {
+    header: "Youth",
+    cols: [
+      {
+        key: "youth",
+        header: "Cash"
+      },
+      {
+        key: "electronicYouth",
+        header: "ORCA"
+      }
+    ]
+  },
+  {
+    header: "Senior",
+    cols: [
+      {
+        key: "senior",
+        header: "Cash"
+      },
+      {
+        key: "electronicSenior",
+        header: "ORCA"
+      }
+    ]
+  },
+  {
+    header: "Miles 🙋",
+    cols: [
+      {
+        key: "free",
+        header: "schmoney"
+      },
+      {
+        key: "electronicFree",
+        header: "ORCA"
+      }
+    ]
+  }
+];
 
 const longDateFormat = "MMMM D, YYYY";
 
@@ -110,9 +167,9 @@ function createTripDetailsTemplate(
   const TripDetailsTemplate = (
     {
       CaloriesDetails,
-      defaultFare,
       DepartureDetails,
-      itinerary
+      itinerary,
+      fareDetailsLayout
     }: TripDetailsProps,
     { globals, parameters }: StoryContext
   ): ReactElement => {
@@ -126,10 +183,10 @@ function createTripDetailsTemplate(
     return (
       <Component
         CaloriesDetails={CaloriesDetails}
-        defaultFare={defaultFare}
         DepartureDetails={DepartureDetails}
         fareKeyNameMap={fareKeyNameMap}
         itinerary={itinerary}
+        fareDetailsLayout={fareDetailsLayout}
       />
     );
   };
@@ -141,7 +198,7 @@ function createTripDetailsTemplate(
  */
 function makeStory(
   args: TripDetailsProps,
-  parameters: Parameters,
+  parameters?: Parameters,
   Component?: typeof TripDetails
 ): ComponentStory<typeof TripDetails> {
   const BoundTripDetails = createTripDetailsTemplate(Component).bind({});
@@ -193,7 +250,8 @@ export const BikeTransitBikeItinerary = makeStory({
 export const WalkInterlinedTransitItinerary = makeStory(
   {
     defaultFareKey: "electronicRegular",
-    itinerary: walkInterlinedTransitItinerary
+    itinerary: walkInterlinedTransitItinerary,
+    fareDetailsLayout: fareByLegLayout
   },
   {
     useCustomFareKeyMap: true
@@ -259,11 +317,11 @@ export const FlexItinerary = makeStory({
   itinerary: fareComponentsItinerary
 });
 
-const exampleItinerary = fareByLegResponse.plan.itineraries[0];
+const exampleItinerary = walkInterlinedTransitItinerary;
 export const FareDetailsComponent = () => (
   <FareDetails
     transitFares={exampleItinerary.fare}
     legs={exampleItinerary.legs}
-    prefixes={{ electronic: "ORCA", cash: "Cash" }}
+    layout={fareByLegLayout}
   />
 );

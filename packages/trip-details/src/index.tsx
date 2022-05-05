@@ -11,6 +11,7 @@ import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
 import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
 import { PhoneVolume } from "@styled-icons/fa-solid/PhoneVolume";
 import { Route } from "@styled-icons/fa-solid/Route";
+import { FareDetails } from "./fare-detail";
 
 import * as S from "./styled";
 import TripDetail from "./trip-detail";
@@ -23,7 +24,6 @@ import {
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
-import { FareDetails } from "./fare-detail";
 
 // HACK: We should flatten the messages loaded above because
 // the YAML loaders behave differently between webpack and our version of jest:
@@ -151,7 +151,8 @@ export function TripDetails({
   DepartureDetails = null,
   defaultFareKey = "regular",
   fareKeyNameMap = {},
-  itinerary
+  itinerary,
+  fareDetailsLayout
 }: TripDetailsProps): ReactElement {
   // process the transit fare
   const fareResult = coreUtils.itinerary.calculateTncFares(itinerary);
@@ -293,11 +294,12 @@ export function TripDetails({
             // Any custom description for the transit fare needs to be handled by the slot.
             //  TODO: add leg info
             description={
-              Object.keys(fareKeyNameMap).length > 0 && (
+              fareDetailsLayout &&
+              Object.keys(itinerary.fare.details).length > 0 && (
                 <FareDetails
-                  transitFares={transitFares}
-                  legs={[]}
-                  prefixes={{}}
+                  transitFares={itinerary.fare}
+                  legs={itinerary.legs}
+                  layout={fareDetailsLayout}
                 />
               )
             }

@@ -13,12 +13,18 @@ export interface DepartureDetailsProps {
   departureDate: Date;
 }
 
+export interface FareDetailsLayout {
+  header: string;
+  cols: {
+    key: string;
+    header: string;
+  }[];
+}
 
 export interface FareDetailsProps {
   transitFares: Fare;
-  legs: Leg[]
-  // To make this i18n friendly, set the string to be a react i18n key
-  prefixes: { [ prefix: string ]:  string }
+  legs: Leg[];
+  layout: FareDetailsLayout[];
 }
 
 export interface TransitFareProps {
@@ -53,6 +59,10 @@ export interface TripDetailsProps {
   fareKeyNameMap?: {
     [name: string]: string;
   };
+  /**
+   * Column and table configuration for fare details/fare by leg table.
+   */
+  fareDetailsLayout?: FareDetailsLayout[];
   /**
    * Itinerary that the user has selected to view, contains multiple legs.
    */
