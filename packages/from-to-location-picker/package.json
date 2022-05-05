@@ -22,7 +22,7 @@
     "url": "git+https://github.com/opentripplanner/otp-ui.git"
   },
   "scripts": {
-    "tsc": "tsc && echo Remove the @ts-expect-error exception in index.tsx once core-utils is typed!"
+    "tsc": "tsc"
   },
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"
