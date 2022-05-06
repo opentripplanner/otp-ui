@@ -11,6 +11,7 @@ import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
 import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
 import { PhoneVolume } from "@styled-icons/fa-solid/PhoneVolume";
 import { Route } from "@styled-icons/fa-solid/Route";
+import { FareDetails } from "./fare-detail";
 
 import * as S from "./styled";
 import TripDetail from "./trip-detail";
@@ -149,9 +150,9 @@ export function TripDetails({
   className = "",
   DepartureDetails = null,
   defaultFareKey = "regular",
-  FareDetails = null,
   fareKeyNameMap = {},
-  itinerary
+  itinerary,
+  fareDetailsLayout
 }: TripDetailsProps): ReactElement {
   // process the transit fare
   const fareResult = coreUtils.itinerary.calculateTncFares(itinerary);
@@ -294,12 +295,14 @@ export function TripDetails({
         {fare && (
           <TripDetail
             // Any custom description for the transit fare needs to be handled by the slot.
+            //  TODO: add leg info
             description={
-              FareDetails && (
+              fareDetailsLayout &&
+              Object.keys(itinerary.fare.details).length > 0 && (
                 <FareDetails
-                  maxTNCFare={maxTNCFare}
-                  minTNCFare={minTNCFare}
-                  transitFares={transitFares}
+                  transitFares={itinerary.fare}
+                  legs={itinerary.legs}
+                  layout={fareDetailsLayout}
                 />
               )
             }

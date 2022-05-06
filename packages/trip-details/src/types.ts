@@ -1,6 +1,6 @@
 // Prettier does not recognize the import type syntax.
 // eslint-disable-next-line prettier/prettier
-import type { Itinerary } from "@opentripplanner/types";
+import type { Itinerary, Leg, Fare } from "@opentripplanner/types";
 import type { ReactElement } from "react";
 
 export interface CaloriesDetailsProps {
@@ -13,22 +13,18 @@ export interface DepartureDetailsProps {
   departureDate: Date;
 }
 
-export interface TransitFareData {
-  [key: string]: {
-    currency: {
-      currencyCode: string
-      defaultFractionDigits: number
-      currency: string
-      symbol: string
-    };
-    cents: number;
-  }
+export interface FareDetailsLayout {
+  header: string;
+  cols: {
+    key: string;
+    header: string;
+  }[];
 }
 
 export interface FareDetailsProps {
-  maxTNCFare: number;
-  minTNCFare: number;
-  transitFares: TransitFareData;
+  transitFares: Fare;
+  legs: Leg[];
+  layout: FareDetailsLayout[];
 }
 
 export interface TransitFareProps {
@@ -37,7 +33,7 @@ export interface TransitFareProps {
   fareKeyNameMap: {
     [key: string]: string;
   };
-  transitFares: TransitFareData;
+  transitFares: Fare;
 }
 
 export interface TripDetailsProps {
@@ -58,15 +54,15 @@ export interface TripDetailsProps {
    */
   DepartureDetails?: React.ElementType<DepartureDetailsProps>;
   /**
-   * Slot for a custom component to render the expandable section for fares.
-   */
-  FareDetails?: React.ElementType<FareDetailsProps>;
-  /**
    * Mapping between fare keys and human-readable names for them.
    */
   fareKeyNameMap?: {
     [name: string]: string;
   };
+  /**
+   * Column and table configuration for fare details/fare by leg table.
+   */
+  fareDetailsLayout?: FareDetailsLayout[];
   /**
    * Itinerary that the user has selected to view, contains multiple legs.
    */

@@ -316,7 +316,7 @@ export interface Leg {
 /**
  * Describes the cost of an itinerary leg.
  */
-interface Money {
+export interface Money {
   cents: number;
   currency: {
     defaultFractionDigits: number;
@@ -340,11 +340,13 @@ type ApplicableId = string | FeedScopedId;
  * not any bike rental or TNC rental fees.
  */
 export interface Fare {
-  details: {
+  details?: {
     [name: string]: {
-      fareId: ApplicableId;
+      fareId?: ApplicableId;
       price: Money;
-      routes: ApplicableId[];
+      legIndex?: number;
+      isTransfer?: boolean;
+      routes?: ApplicableId[];
     }[];
   };
   fare?: {
