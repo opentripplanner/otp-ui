@@ -395,10 +395,16 @@ export type Location = {
   name?: string;
   /**
    * This is only used location that a user has saved. Can be either:
-   * "home" or "work"
+   * One of: 'home', 'work', 'stop' or 'recent'
    */
-  type?: string;
+  type?: "home" | "work" | "stop" | "recent" | string;
   category?: string;
+
+  /**
+   * This represents the last time that this location was selected in a
+   * search
+   */
+  timestamp?: number;
 
   /* Sometimes used for displaying subinfo */
   main?: string;
@@ -606,26 +612,6 @@ export type GeocodedFeature = {
   };
 };
 
-export type UserLocation = {
-  id?: string;
-  /**
-   * Can be either 'home', 'work', or null
-   */
-  icon?: string;
-  lat: number;
-  lon: number;
-  name: string;
-  /**
-   * This represents the last time that this location was selected in a
-   * search
-   */
-  timestamp?: number;
-  /**
-   * One of: 'home', 'work', 'stop' or 'recent'
-   */
-  type: "home" | "work" | "stop" | "recent";
-};
-
 export type TncFare = {
   maxTNCFare: number;
   minTNCFare: number;
@@ -640,6 +626,38 @@ export type UserPosition = {
   error?: { message: string } | string;
   fetching?: boolean;
 };
+
+/**
+ * Describes a user location such as "home", "work" etc.
+ */
+export interface UserLocation extends Location {
+  icon?: string;
+  id?: string;
+}
+
+/**
+ * Associates a location with a type string.
+ */
+export interface UserLocationAndType {
+  location: UserLocation;
+  type: string;
+}
+
+/**
+ * Parameters for "clear location" event handlers.
+ */
+export interface ClearLocationArg {
+  locationType: string;
+}
+
+/**
+ * Parameters for location actions/event handlers.
+ */
+export interface MapLocationActionArg {
+  location: UserLocation;
+  locationType: string;
+  reverseGeocode?: boolean;
+}
 
 /**
  * Supports leg icons for itinerary body and printable itinerary.

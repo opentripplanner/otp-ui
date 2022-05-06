@@ -1,5 +1,4 @@
 import flatten from "flat";
-import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 import { FormattedMessage, IntlShape } from "react-intl";
 
@@ -17,7 +16,6 @@ export const defaultMessages: Record<string, string> = flatten(
   defaultEnglishMessages
 );
 
-const { hasTransit } = coreUtils.itinerary;
 const METERS_PER_MILE = 1609.3;
 const SECONDS_PER_HOUR = 3600;
 
@@ -101,7 +99,7 @@ function getSpeedOptionsInMilesPerHour(intl, milesPerHourOptions) {
 /**
  * Gets the bike trip optimization options.
  */
-function getBikeTripOptions(intl, queryParams) {
+function getBikeTripOptions(intl) {
   const opts = [
     {
       text: intl.formatMessage({
@@ -132,19 +130,6 @@ function getBikeTripOptions(intl, queryParams) {
     }
   ];
 
-  // Include transit-specific option, if applicable
-  if (hasTransit(queryParams.mode)) {
-    opts.splice(1, 0, {
-      text: intl.formatMessage({
-        defaultMessage:
-          defaultMessages["otpUi.queryParameters.optimizeTransfers"],
-        description: "Option label for fewest transfers",
-        id: "otpUi.queryParameters.optimizeTransfers"
-      }),
-      value: "TRANSFERS"
-    });
-  }
-
   return opts;
 }
 
@@ -166,6 +151,31 @@ export function getQueryParamMessagesWithI18n(
         />
       ),
       options: getDistanceOptionsInMiles(intl, [0.1, 0.25, 0.5, 0.75, 1, 2, 5])
+    },
+    walkReluctance: {
+      label: (
+        <FormattedMessage
+          defaultMessage={
+            defaultMessages["otpUi.queryParameters.walkReluctance"]
+          }
+          description="Walk reluctance label"
+          id="otpUi.queryParameters.walkReluctance"
+        />
+      ),
+      labelLow: <FormattedMessage
+        defaultMessage={
+          defaultMessages["otpUi.queryParameters.walkReluctanceLow"]
+        }
+        description="Label displayed at left side of walk reluctance slider"
+        id="otpUi.queryParameters.walkReluctanceLow"
+      />,
+      labelHigh: <FormattedMessage
+        defaultMessage={
+          defaultMessages["otpUi.queryParameters.walkReluctanceHigh"]
+        }
+        description="Label displayed at right side of walk reluctance slider"
+        id="otpUi.queryParameters.walkReluctanceHigh"
+      />
     },
     maxBikeDistance: {
       label: (
@@ -190,35 +200,6 @@ export function getQueryParamMessagesWithI18n(
         30
       ])
     },
-    optimize: {
-      label: (
-        <FormattedMessage
-          defaultMessage={defaultMessages["otpUi.queryParameters.optimizeFor"]}
-          description="Optimize selector label"
-          id="otpUi.queryParameters.optimizeFor"
-        />
-      ),
-      options: [
-        {
-          text: intl.formatMessage({
-            defaultMessage:
-              defaultMessages["otpUi.queryParameters.optimizeQuick"],
-            description: "Option label for quickest trips",
-            id: "otpUi.queryParameters.optimizeQuick"
-          }),
-          value: "QUICK"
-        },
-        {
-          text: intl.formatMessage({
-            defaultMessage:
-              defaultMessages["otpUi.queryParameters.optimizeTransfers"],
-            description: "Option label for fewest transfers",
-            id: "otpUi.queryParameters.optimizeTransfers"
-          }),
-          value: "TRANSFERS"
-        }
-      ]
-    },
     optimizeBike: {
       label: (
         <FormattedMessage
@@ -227,7 +208,7 @@ export function getQueryParamMessagesWithI18n(
           id="otpUi.queryParameters.optimizeFor"
         />
       ),
-      options: queryParams => getBikeTripOptions(intl, queryParams)
+      options: () => getBikeTripOptions(intl)
     },
     maxWalkTime: {
       label: (

@@ -21,13 +21,16 @@ export default function AccessLegSummary({
 }: Props): ReactElement {
   return (
     <S.LegClickable onClick={onSummaryClick}>
-      {showLegIcon && (
-        <S.LegIconContainer>
-          <LegIcon leg={leg} />
-        </S.LegIconContainer>
-      )}
-
-      <AccessLegDescription config={config} leg={leg} />
+      <S.LegDescription>
+        <S.LegIconAndRouteShortName>
+          {showLegIcon && (
+            <S.LegIconContainer>
+              <LegIcon leg={leg} />
+            </S.LegIconContainer>
+          )}
+        </S.LegIconAndRouteShortName>
+        <AccessLegDescription config={config} leg={leg} />
+      </S.LegDescription>
     </S.LegClickable>
   );
 }

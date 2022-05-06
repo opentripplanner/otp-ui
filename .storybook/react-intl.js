@@ -10,14 +10,20 @@ export function isRunningJest() {
 /** Locales supported in the storybook "Globe" dropdown menu. */
 const locales = ["en-US", "fr", "unknown"];
 
-/** List of packages that will have localization support in Storybook. */ 
+/**
+ * List of packages that will have localization support in Storybook.
+ * FIXME: remove in favor of a loop on package names.
+ */ 
 const packages = [
+  "endpoints-overlay",
   "from-to-location-picker",
   "itinerary-body",
   "location-field",
   "printable-itinerary",
+  "stops-overlay",
   "trip-details",
-  "trip-form"
+  "trip-form",
+  "vehicle-rental-overlay"
 ];
 
 /** Messages for all packages AND locales above. */

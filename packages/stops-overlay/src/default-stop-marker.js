@@ -1,10 +1,21 @@
 import { Styled as BaseMapStyled } from "@opentripplanner/base-map";
+import flatten from "flat";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
+import { FormattedMessage } from "react-intl";
 import { CircleMarker, Popup } from "react-leaflet";
 
 import * as S from "./styled";
+
+// Load the default messages.
+import defaultEnglishMessages from "../i18n/en-US.yml";
+
+// HACK: We should flatten the messages loaded above because
+// the YAML loaders behave differently between webpack and our version of jest:
+// - the yaml loader for webpack returns a nested object,
+// - the yaml loader for jest returns messages with flattened ids.
+export const defaultMessages = flatten(defaultEnglishMessages);
 
 export default class StopMarker extends Component {
   onClickView = () => {
@@ -27,7 +38,7 @@ export default class StopMarker extends Component {
   }
 
   render() {
-    const { languageConfig, leafletPath, radius, stop } = this.props;
+    const { leafletPath, radius, stop } = this.props;
     const { code, geometries, id, lat, lon, name } = stop;
     const userFacingId = code || id.split(":")[1] || id;
 
@@ -55,17 +66,34 @@ export default class StopMarker extends Component {
             <BaseMapStyled.PopupTitle>{name}</BaseMapStyled.PopupTitle>
             <BaseMapStyled.PopupRow>
               <span>
-                <b>Stop ID:</b> {userFacingId}
+                <strong>
+                  <FormattedMessage
+                    defaultMessage={
+                      defaultMessages["otpUi.StopsOverlay.stopId"]
+                    }
+                    description="Displays the stop id"
+                    id="otpUi.StopsOverlay.stopId"
+                    values={{
+                      stopId: userFacingId
+                    }}
+                  />
+                </strong>
               </span>
               <S.ViewStopButton onClick={this.onClickView}>
-                {languageConfig.stopViewer || "Stop Viewer"}
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages["otpUi.StopsOverlay.stopViewer"]
+                  }
+                  description="Text for link that opens the stop viewer"
+                  id="otpUi.StopsOverlay.stopViewer"
+                />
               </S.ViewStopButton>
             </BaseMapStyled.PopupRow>
 
             {/* The "Set as [from/to]" ButtonGroup */}
             <BaseMapStyled.PopupRow>
-              <b>Plan a trip:</b>
               <FromToLocationPicker
+                label
                 onFromClick={this.onFromClick}
                 onToClick={this.onToClick}
               />
@@ -78,9 +106,6 @@ export default class StopMarker extends Component {
 }
 
 StopMarker.propTypes = {
-  // Typescript TODO: restore correct type
-  // eslint-disable-next-line react/forbid-prop-types
-  languageConfig: PropTypes.object.isRequired,
   // Typescript TODO: restore correct type
   // eslint-disable-next-line react/forbid-prop-types
   leafletPath: PropTypes.object,

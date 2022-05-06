@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/endpoints-overlay",
-  "version": "1.3.1",
+  "version": "1.4.1",
   "description": "A map overlay to show the from and to locations of an itinerary",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -8,7 +8,8 @@
   "license": "MIT",
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc && echo Remove the @ts-expect-error exception in index.tsx once core-utils is typed!"
   },
   "repository": {
     "type": "git",
@@ -19,14 +20,18 @@
   },
   "dependencies": {
     "@opentripplanner/location-icon": "^1.4.0",
-    "@opentripplanner/core-utils": "^4.5.0",
-    "prop-types": "^15.7.2",
+    "@opentripplanner/core-utils": "^4.11.5",
+    "flat": "^5.0.2",
     "@styled-icons/fa-solid": "^10.34.0"
+  },
+  "devDependencies": {
+    "@types/flat": "^5.0.2"
   },
   "peerDependencies": {
     "@opentripplanner/base-map": "^2.0.0",
     "react": "^16.14.0",
     "react-dom": "^16.8.6",
+    "react-intl": "^5.24.6",
     "react-leaflet": "^2.6.1",
     "styled-components": "^5.3.0"
   }
