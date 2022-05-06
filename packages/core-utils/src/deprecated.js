@@ -316,3 +316,19 @@ export function summarizeQuery(query, locations = []) {
     : require("./itinerary").toSentenceCase(query.mode);
   return `${mode} from ${from} to ${to}`;
 }
+
+export function getTimeZoneOffset(itinerary) {
+  logDeprecationWarning("getTimeZoneOffset");
+
+  if (!itinerary.legs || !itinerary.legs.length) return 0;
+
+  // Determine if there is a DST offset between now and the itinerary start date
+  const dstOffset =
+    new Date(itinerary.startTime).getTimezoneOffset() -
+    new Date().getTimezoneOffset();
+
+  return (
+    itinerary.legs[0].agencyTimeZoneOffset +
+    (new Date().getTimezoneOffset() + dstOffset) * 60000
+  );
+}
