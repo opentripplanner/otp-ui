@@ -6,13 +6,15 @@ import styled from "styled-components";
 import { FormattedNumber } from "react-intl";
 import { FareDetailsProps } from "./types";
 
+type LegWithFare = Leg & { fares: { [key: string]: { price: Money } } };
+
 interface FareTypeTableProps {
   header: string;
   cols: {
     key: string;
     header: string;
   }[];
-  legs: Leg & { fares: { [key: string]: { price: Money } } }[];
+  legs: LegWithFare[];
   fareTotals: { [fareKey: string]: Money };
 }
 
