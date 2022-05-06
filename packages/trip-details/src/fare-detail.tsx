@@ -12,7 +12,7 @@ interface FareTypeTableProps {
     key: string;
     header: string;
   }[];
-  legs: Leg & { fares: { [key: string]: { price: Money } } }[];
+  legs: (Leg & { fares: { [key: string]: { price: Money } } })[];
   fareTotals: { [fareKey: string]: Money };
 }
 
