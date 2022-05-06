@@ -28,6 +28,7 @@ class ParkAndRideOverlay extends MapLayer {
     return (
       <FeatureGroup>
         {parkAndRideLocations.map((location, k) => {
+          // TODO: extract park-and-ride names from international "Park-And-Ride" string constructs.
           const name = location.name.startsWith("P+R ")
             ? location.name.substring(4)
             : location.name;
@@ -41,11 +42,9 @@ class ParkAndRideOverlay extends MapLayer {
               <Popup>
                 <BaseMapStyled.MapOverlayPopup>
                   <BaseMapStyled.PopupTitle>{name}</BaseMapStyled.PopupTitle>
-
-                  {/* Set as from/to toolbar */}
                   <BaseMapStyled.PopupRow>
-                    <b>Plan a trip:</b>
                     <FromToLocationPicker
+                      label
                       location={{
                         lat: location.y,
                         lon: location.x,

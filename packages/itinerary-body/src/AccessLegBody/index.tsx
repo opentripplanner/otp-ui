@@ -96,7 +96,7 @@ class AccessLegBody extends Component<Props, State> {
     return (
       <>
         {/* Place subheading: rented vehicle (e.g., scooter, bike, car)
-          pickup */}
+ pickup */}
         {leg && (leg.rentedVehicle || leg.rentedBike || leg.rentedCar) && (
           <RentedVehicleSubheader config={config} leg={leg} />
         )}
@@ -108,38 +108,40 @@ class AccessLegBody extends Component<Props, State> {
             onSummaryClick={this.onSummaryClick}
             showLegIcon={showLegIcon}
           />
-          <S.StepsHeader
-            role="button"
-            aria-expanded={expanded}
-            onClick={this.onStepsHeaderClick}
-          >
-            <Duration seconds={leg.duration} />
-            {leg.steps && <S.CaretToggle expanded={expanded} />}
-          </S.StepsHeader>
-          <MapillaryButton
-            coords={leg.from}
-            clickCallback={mapillaryCallback}
-            mapillaryKey={mapillaryKey}
-            padTop
-          />
-          <LegDiagramPreview
-            diagramVisible={diagramVisible}
-            leg={leg}
-            setLegDiagram={setLegDiagram}
-            showElevationProfile={showElevationProfile}
-          />
-          <VelocityTransitionGroup
-            enter={{ animation: "slideDown" }}
-            leave={{ animation: "slideUp" }}
-          >
-            {expanded && (
-              <AccessLegSteps
-                steps={leg.steps}
-                mapillaryCallback={mapillaryCallback}
+          <S.LegDetails>
+            <S.StepsHeaderAndMapLink>
+              <S.StepsHeader
+                aria-expanded={expanded}
+                onClick={this.onStepsHeaderClick}
+              >
+                <Duration seconds={leg.duration} />
+                {leg.steps && <S.CaretToggle expanded={expanded} />}
+              </S.StepsHeader>
+              <MapillaryButton
+                clickCallback={mapillaryCallback}
+                coords={leg.from}
                 mapillaryKey={mapillaryKey}
               />
-            )}
-          </VelocityTransitionGroup>
+            </S.StepsHeaderAndMapLink>
+            <LegDiagramPreview
+              diagramVisible={diagramVisible}
+              leg={leg}
+              setLegDiagram={setLegDiagram}
+              showElevationProfile={showElevationProfile}
+            />
+            <VelocityTransitionGroup
+              enter={{ animation: "slideDown" }}
+              leave={{ animation: "slideUp" }}
+            >
+              {expanded && (
+                <AccessLegSteps
+                  mapillaryCallback={mapillaryCallback}
+                  mapillaryKey={mapillaryKey}
+                  steps={leg.steps}
+                />
+              )}
+            </VelocityTransitionGroup>
+          </S.LegDetails>
         </S.LegBody>
       </>
     );

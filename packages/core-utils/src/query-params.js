@@ -176,7 +176,7 @@ const queryParams = [
       query.mode &&
       hasTransit(query.mode) &&
       query.mode.indexOf("WALK") !== -1,
-    default: 1207, // 3/4 mi.
+    default: 1609, // 1 mi.
     selector: "DROPDOWN",
     label: "Maximum Walk",
     options: [
@@ -278,8 +278,8 @@ const queryParams = [
   {
     /* optimize -- how to optimize a trip (non-bike, non-micromobility trips) */
     name: "optimize",
-    applicable: query =>
-      !query.otp2 && hasTransit(query.mode) && !hasBike(query.mode),
+    // This parameter doesn't seem to do anything
+    applicable: () => false,
     routingTypes: ["ITINERARY"],
     default: "QUICK",
     selector: "DROPDOWN",
@@ -304,7 +304,7 @@ const queryParams = [
     default: "SAFE",
     selector: "DROPDOWN",
     label: "Optimize for",
-    options: query => {
+    options: () => {
       const opts = [
         {
           text: "Speed",
@@ -319,14 +319,6 @@ const queryParams = [
           value: "FLAT"
         }
       ];
-
-      // Include transit-specific option, if applicable
-      if (hasTransit(query.mode)) {
-        opts.splice(1, 0, {
-          text: "Fewest Transfers",
-          value: "TRANSFERS"
-        });
-      }
 
       return opts;
     },

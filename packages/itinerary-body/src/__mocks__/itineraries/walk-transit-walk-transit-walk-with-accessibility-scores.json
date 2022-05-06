@@ -47,7 +47,7 @@
         "vertexType": "NORMAL"
       },
       "to": {
-        "name": "SE Cesar Chavez Blvd & Brooklyn",
+        "name": "SE Cesar Chavez Blvd & Brooklyn (long address that spans multiple lines)",
         "stopId": "TriMet:7439",
         "stopCode": "7439",
         "lon": -122.622543,
@@ -205,7 +205,7 @@
         }
       ],
       "routeShortName": "755X",
-      "routeLongName": "Cesar Chavez/Lombard",
+      "routeLongName": "Cesar Chavez/Lombard (very long route name)",
       "rentedBike": false,
       "rentedCar": false,
       "rentedVehicle": false,
