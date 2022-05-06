@@ -1,0 +1,27 @@
+{
+  "name": "@opentripplanner/scripts",
+  "version": "1.0.0",
+  "description": "Utility scripts for the OTP-UI library",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "types": "lib/index.d.js",
+  "repository": "https://github.com/opentripplanner/otp-ui.git",
+  "homepage": "https://github.com/opentripplanner/otp-ui#readme",
+  "author": "Binh Dam",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@formatjs/cli": "^4.2.33",
+    "flat": "^5.0.2",
+    "js-yaml": "^4.1.0",
+    "yargs": "^17.1.1"
+  },
+  "scripts": {
+    "collect-i18n": "node ./collect-i18n-messages.js ../**/src/{,**/}*.{j,t}s{,x} ../**/i18n/en-US.yml > i18n.csv",
+    "validate-i18n": "node ./validate-i18n.js ../**/src/{,**/}*.{j,t}s{,x} ../**/i18n/*.yml"
+  },
+  "bugs": {
+    "url": "https://github.com/opentripplanner/otp-ui/issues"
+  },
+  "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"
+}

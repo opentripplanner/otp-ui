@@ -4,10 +4,13 @@
  * are present in the files in the i18n subfolders.
  */
 // Example usage for one package:
-//    node ./validate-i18n.js packages/trip-details/src/{,**/}*.{j,t}s{,x} packages/trip-details/i18n/*.yml
+//   node ./validate-i18n.js ../trip-details/src/{,**/}*.{j,t}s{,x} ../trip-details/i18n/*.yml
+// Example usage for all packages:
+//   node ./validate-i18n.js ../**/src/{,**/}*.{j,t}s{,x} ../**/i18n/*.yml
 
 const fs = require("fs").promises;
 const path = require("path");
+// const yargs = require("yargs/yargs");
 const { load } = require("js-yaml");
 const { extract } = require("@formatjs/cli");
 const flatten = require("flat");
@@ -23,8 +26,26 @@ async function loadYamlFile(filename) {
  * Checks message ids completeness between code and yml files for all locales in repo.
  */
 async function checkI18n({ sourceFiles, ymlFilesByLocale }) {
-  // Filter out glob patterns and private (/__) folders.
-  sourceFiles = sourceFiles.filter(f => !f.includes("*") && !f.includes("/__"));
+  // const yargsCli = yargs
+  //  .scriptName("validate-i18n")
+  // .usage(" ../trip-details/src/{,**/}*.{j,t}s{,x} ../trip-details/i18n/*.yml")
+  /*
+    .demandCommand(1, 1, 'Must provide directory of config files for OTP deployment (e.g., ./deploy.js trimet/)')
+    .option('install', {
+      default: 'true',
+      description: 'skip installation of node_modules',
+      type: 'boolean'
+    })
+    */
+  //  .help();
+  // const args = yargsCli.argv;
+  // Get config folder from single non-hyphenated arg.
+  // const configFolder = yargsCli.argv._[0];
+
+  // Filter out glob patterns, private (/__) folders, and .d.ts types-only files.
+  sourceFiles = sourceFiles.filter(
+    f => !f.includes("*") && !f.includes("/__") && !f.endsWith(".d.ts")
+  );
 
   // Gather message ids from code.
   const messagesFromCode = JSON.parse(await extract(sourceFiles, {}));
