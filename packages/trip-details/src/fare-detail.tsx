@@ -18,7 +18,6 @@ interface FareTypeTableProps {
 
 const TableHeader = styled.thead`
   th {
-    max-width: 5ch;
     min-width: 5ch;
     padding: 0.75em 1.5em;
     text-align: center;
