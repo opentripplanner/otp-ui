@@ -90,19 +90,6 @@ const fareByLegLayout = [
         header: "ORCA"
       }
     ]
-  },
-  {
-    header: "Miles 🙋",
-    cols: [
-      {
-        key: "free",
-        header: "schmoney"
-      },
-      {
-        key: "electronicFree",
-        header: "ORCA"
-      }
-    ]
   }
 ];
 
