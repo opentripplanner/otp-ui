@@ -2852,10 +2852,10 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
-"@opentripplanner/from-to-location-picker@^2.1.1-alpha.1":
-  version "2.1.1-alpha.1"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/from-to-location-picker/-/from-to-location-picker-2.1.1-alpha.1.tgz#02ae2ce9c208cce3f94e42d4b2e30f1dfef191cb"
-  integrity sha512-Ft5oBqfjpb3qgMLbSzWcZtxibMOwUkGDyVezMLfSobHU01epXEXcO3oLs28DdQUf7nmNcxjvfht/J5XvU29e4g==
+"@opentripplanner/from-to-location-picker@^2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/from-to-location-picker/-/from-to-location-picker-2.1.2.tgz#c19044311dc9f511125a4146da281f5eec5b8cf1"
+  integrity sha512-Pkc2cSbuiSdw8ZCcMdSTk5jyPSN7JzAoIqO5/ab1CPQZznjG5Ny7XVloGvdYGv0+wF7wR/KPH8/xBX7T7b2ykw==
   dependencies:
     "@opentripplanner/location-icon" "^1.4.0"
     flat "^5.0.2"
