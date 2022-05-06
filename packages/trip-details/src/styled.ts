@@ -44,7 +44,23 @@ export const TNCFareCompanies = styled.span`
 
 export const Timing = styled.span``;
 
-export const TransitFare = styled.span``;
+export const TransitFare = styled.details`
+  display: inline-block;
+
+  > span {
+    display: block;
+    /* This may seem wrong, but this value gives the most aligned results */
+    /* see: https://github.com/opentripplanner/otp-ui/pull/294#discussion_r742045851 */
+    padding-left: 1.75ch;
+  }
+`;
+export const TransitFareSingle = styled.span``;
+
+export const FlexSummary = styled.span``;
+
+export const FlexPickupSummary = styled.span``;
+
+export const FlexDropOffSummary = styled.span``;
 
 export const TripDetail = styled.div`
   margin-top: 6px;
@@ -81,4 +97,6 @@ export const TripDetailsHeader = styled.div`
 export const TripDetailSummary = styled.div`
   margin-left: 28px;
   padding-top: 2px;
+  display: flex;
+  align-items: baseline;
 `;

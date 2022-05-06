@@ -1,14 +1,25 @@
 import flatten from "flat";
-// @ts-expect-error FIXME: Create TypeScript types for core-utils packages.
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
-import moment from "moment";
+import { FlexBookingInfo } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage, FormattedNumber } from "react-intl";
-import { CalendarAlt, Heartbeat, MoneyBillAlt } from "styled-icons/fa-solid";
+import { CalendarAlt } from "@styled-icons/fa-solid/CalendarAlt";
+import { HandPaper } from "@styled-icons/fa-solid/HandPaper";
+import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
+import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
+import { PhoneVolume } from "@styled-icons/fa-solid/PhoneVolume";
+import { Route } from "@styled-icons/fa-solid/Route";
 
-import * as Styled from "./styled";
+import * as S from "./styled";
 import TripDetail from "./trip-detail";
-import { CaloriesDetailsProps, TripDetailsProps } from "./types";
+
+import {
+  CaloriesDetailsProps,
+  TransitFareProps,
+  TripDetailsProps
+} from "./types";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
@@ -23,8 +34,29 @@ const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
  * Format text bold (used with FormattedMessage).
  */
 // TODO: Find a better place for this utility.
-function BoldText(contents: ReactElement): ReactElement {
-  return <b>{contents}</b>;
+function boldText(contents: ReactElement): ReactElement {
+  return <strong>{contents}</strong>;
+}
+
+/**
+ * Render formatted fare.
+ * @param currencyCode The ISO currency code to use (USD, GBP, EUR).
+ * @param fare The fare value, in currency units, to be shown.
+ * @returns The formatted fare value according to the selected locale.
+ */
+function renderFare(currencyCode: string, fare: number): ReactElement {
+  return (
+    <FormattedNumber
+      currency={currencyCode}
+      // For dollars in locales such as 'fr',
+      // this will limit the display to just the dollar sign
+      // (otherwise it will render e.g. '2,50 $US' instead of '2,50 $').
+      currencyDisplay="narrowSymbol"
+      value={fare}
+      // eslint-disable-next-line react/style-prop-object
+      style="currency"
+    />
+  );
 }
 
 /**
@@ -43,6 +75,18 @@ function dietaryLink(contents: ReactElement): ReactElement {
 }
 
 /**
+ * Helper function that assembles values for flex pickup/dropoff messages.
+ */
+function getFlexMessageValues(info: FlexBookingInfo) {
+  return {
+    hasLeadTime: coreUtils.itinerary.isAdvanceBookingRequired(info),
+    hasPhone: !!info?.contactInfo?.phoneNumber,
+    leadDays: info.latestBookingTime.daysPrior,
+    phoneNumber: info?.contactInfo?.phoneNumber
+  };
+}
+
+/**
  * Default rendering if no component is provided for the CaloriesDetails
  * slot in the TripDetails component.
  */
@@ -57,10 +101,10 @@ function DefaultCaloriesDetails({
       description="Text describing how the calories relate to the walking and biking duration of a trip."
       id="otpUi.TripDetails.caloriesDescription"
       values={{
-        b: BoldText,
         bikeMinutes: Math.round(bikeSeconds / 60),
         calories: Math.round(calories),
         dietaryLink,
+        strong: boldText,
         walkMinutes: Math.round(walkSeconds / 60)
       }}
     />
@@ -68,89 +112,133 @@ function DefaultCaloriesDetails({
 }
 
 /**
+ * Helper component that renders a transit fare entry.
+ */
+const TransitFare = ({
+  fareKey,
+  fareNameFallback,
+  fareKeyNameMap,
+  transitFares
+}: TransitFareProps): ReactElement => {
+  const currentFare = transitFares[fareKey];
+
+  return (
+    <span>
+      <FormattedMessage
+        defaultMessage={defaultMessages["otpUi.TripDetails.transitFareEntry"]}
+        description="Text showing the price of tickets on public transportation."
+        id="otpUi.TripDetails.transitFareEntry"
+        values={{
+          name: fareKeyNameMap[fareKey] || fareNameFallback || fareKey,
+          strong: boldText,
+          value: renderFare(
+            currentFare.currency.currencyCode,
+            currentFare.cents / 100
+          )
+        }}
+      />
+    </span>
+  );
+};
+
+/**
  * Renders trip details such as departure instructions, fare amount, and calories spent.
  */
 export function TripDetails({
   CaloriesDetails = DefaultCaloriesDetails,
   className = "",
-  currency = "USD",
   DepartureDetails = null,
+  defaultFareKey = "regular",
   FareDetails = null,
+  fareKeyNameMap = {},
   itinerary
 }: TripDetailsProps): ReactElement {
+  // process the transit fare
+  const fareResult = coreUtils.itinerary.calculateTncFares(itinerary);
+  const { maxTNCFare, minTNCFare, tncCurrencyCode } = fareResult;
+  const transitFares = itinerary?.fare?.fare;
+
   let companies = "";
   itinerary.legs.forEach(leg => {
     if (leg.tncData) {
       companies = leg.tncData.company;
     }
   });
-
-  // process the transit fare
-  const fareResult = coreUtils.itinerary.calculateFares(itinerary);
-  const { maxTNCFare, minTNCFare, transitFare } = fareResult;
   let fare;
-  if (transitFare || minTNCFare) {
+
+  const fareKeys = transitFares && Object.keys(transitFares).sort();
+
+  if (transitFares && fareKeys.length > 0) {
+    let defaultFare = defaultFareKey;
+    if (!transitFares[defaultFareKey]) {
+      defaultFare = "regular";
+    }
+
+    // Depending on if there are additional fares to display either render a <span> or a <details>
+    const TransitFareWrapper =
+      transitFares && fareKeys.length > 1 ? S.TransitFare : S.TransitFareSingle;
+
     fare = (
-      <Styled.Fare>
-        {transitFare && (
-          <Styled.TransitFare>
-            <FormattedMessage
-              defaultMessage={defaultMessages["otpUi.TripDetails.transitFare"]}
-              description="Text showing the price of tickets on public transportation."
-              id="otpUi.TripDetails.transitFare"
-              values={{
-                b: BoldText,
-                transitFare: (
-                  <FormattedNumber
-                    currency={currency}
-                    value={transitFare / 100}
-                    // eslint-disable-next-line react/style-prop-object
-                    style="currency"
-                  />
-                )
-              }}
+      <S.Fare>
+        <TransitFareWrapper>
+          <summary style={{ display: fareKeys.length > 1 ? "list-item" : "" }}>
+            <TransitFare
+              fareNameFallback={
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages["otpUi.TripDetails.transitFare"]
+                  }
+                  description="Text showing the price of tickets on public transportation."
+                  id="otpUi.TripDetails.transitFare"
+                />
+              }
+              fareKey={defaultFare}
+              fareKeyNameMap={fareKeyNameMap}
+              transitFares={transitFares}
             />
-          </Styled.TransitFare>
-        )}
+          </summary>
+          {fareKeys.map(fareKey => {
+            // Don't show the default fare twice!
+            if (fareKey === defaultFare) {
+              return null;
+            }
+            return (
+              <TransitFare
+                fareKey={fareKey}
+                key={fareKey}
+                fareKeyNameMap={fareKeyNameMap}
+                transitFares={transitFares}
+              />
+            );
+          })}
+        </TransitFareWrapper>
         {minTNCFare !== 0 && (
-          <Styled.TNCFare>
+          <S.TNCFare>
             <br />
             <FormattedMessage
               defaultMessage={defaultMessages["otpUi.TripDetails.tncFare"]}
               description="Text showing the price paid to transportation network companies."
               id="otpUi.TripDetails.tncFare"
               values={{
-                b: BoldText,
                 companies: (
-                  <Styled.TNCFareCompanies>
+                  // S.TNCFareCompanies capitalizes the TNC company ID (e.g. "COMPANY")
+                  // after it is converted to lowercase, so it renders as "Company".
+                  <S.TNCFareCompanies>
                     {companies.toLowerCase()}
-                  </Styled.TNCFareCompanies>
+                  </S.TNCFareCompanies>
                 ),
-                maxTNCFare: (
-                  <FormattedNumber
-                    currency={currency}
-                    value={maxTNCFare}
-                    // eslint-disable-next-line react/style-prop-object
-                    style="currency"
-                  />
-                ),
-                minTNCFare: (
-                  <FormattedNumber
-                    currency={currency}
-                    value={minTNCFare}
-                    // eslint-disable-next-line react/style-prop-object
-                    style="currency"
-                  />
-                )
+                maxTNCFare: renderFare(tncCurrencyCode, maxTNCFare),
+                minTNCFare: renderFare(tncCurrencyCode, minTNCFare),
+                strong: boldText
               }}
             />
-          </Styled.TNCFare>
+          </S.TNCFare>
         )}
-      </Styled.Fare>
+      </S.Fare>
     );
   }
 
-  const departureDate = moment(itinerary.startTime);
+  const departureDate = new Date(itinerary.startTime);
 
   // Compute calories burned.
   const {
@@ -159,16 +247,25 @@ export function TripDetails({
     walkDuration
   } = coreUtils.itinerary.calculatePhysicalActivity(itinerary);
 
+  // Parse flex info and generate appropriate strings
+  const containsFlex = itinerary.legs.some(coreUtils.itinerary.isFlex);
+  const pickupBookingInfo = itinerary.legs
+    .map(leg => leg.pickupBookingInfo)
+    .filter(info => !!info);
+  const dropOffBookingInfo = itinerary.legs
+    .map(leg => leg.dropOffBookingInfo)
+    .filter(info => !!info);
+
   return (
-    <Styled.TripDetails className={className}>
-      <Styled.TripDetailsHeader>
+    <S.TripDetails className={className}>
+      <S.TripDetailsHeader>
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.TripDetails.title"]}
           description="Title (heading) text of the component."
           id="otpUi.TripDetails.title"
         />
-      </Styled.TripDetailsHeader>
-      <Styled.TripDetailsBody>
+      </S.TripDetailsHeader>
+      <S.TripDetailsBody>
         <TripDetail
           // Any custom description for the Departure message needs to be handled by the slot.
           description={
@@ -178,17 +275,17 @@ export function TripDetails({
           }
           icon={<CalendarAlt size={17} />}
           summary={
-            <Styled.Timing>
+            <S.Timing>
               <FormattedMessage
                 defaultMessage={defaultMessages["otpUi.TripDetails.departure"]}
                 description="Text showing the departure date/time for a trip."
                 id="otpUi.TripDetails.departure"
                 values={{
-                  b: BoldText,
-                  departureDate
+                  departureDate,
+                  strong: boldText
                 }}
               />
-            </Styled.Timing>
+            </S.Timing>
           }
         />
         {fare && (
@@ -199,7 +296,7 @@ export function TripDetails({
                 <FareDetails
                   maxTNCFare={maxTNCFare}
                   minTNCFare={minTNCFare}
-                  transitFare={transitFare}
+                  transitFares={transitFares}
                 />
               )
             }
@@ -211,17 +308,17 @@ export function TripDetails({
           <TripDetail
             icon={<Heartbeat size={17} />}
             summary={
-              <Styled.CaloriesSummary>
+              <S.CaloriesSummary>
                 <FormattedMessage
                   defaultMessage={defaultMessages["otpUi.TripDetails.calories"]}
                   description="Text showing the number of calories for the walking and biking legs of a trip."
                   id="otpUi.TripDetails.calories"
                   values={{
-                    b: BoldText,
-                    calories: caloriesBurned
+                    calories: caloriesBurned,
+                    strong: boldText
                   }}
                 />
-              </Styled.CaloriesSummary>
+              </S.CaloriesSummary>
             }
             description={
               CaloriesDetails && (
@@ -234,9 +331,74 @@ export function TripDetails({
             }
           />
         )}
-      </Styled.TripDetailsBody>
-    </Styled.TripDetails>
+        {containsFlex && (
+          <TripDetail
+            summary={
+              <S.FlexSummary>
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages["otpUi.TripDetails.tripIncludesFlex"]
+                  }
+                  description="Text stating that portions of the trip include a flex (on-demand) transit service."
+                  id="otpUi.TripDetails.tripIncludesFlex"
+                />
+              </S.FlexSummary>
+            }
+            icon={<Route size={17} />}
+          />
+        )}
+        {pickupBookingInfo &&
+          pickupBookingInfo.map(info => (
+            <TripDetail
+              key={info.pickupMessage}
+              icon={<PhoneVolume size={17} />}
+              summary={
+                <S.FlexPickupSummary>
+                  <FormattedMessage
+                    defaultMessage={
+                      defaultMessages["otpUi.TripDetails.flexPickupMessage"]
+                    }
+                    description="Instructions for booking and boarding the flex (on-demand) transit service."
+                    id="otpUi.TripDetails.flexPickupMessage"
+                    values={getFlexMessageValues(info)}
+                  />
+                </S.FlexPickupSummary>
+              }
+              description={info.pickupMessage}
+            />
+          ))}
+        {dropOffBookingInfo &&
+          dropOffBookingInfo.map(info => (
+            <TripDetail
+              description={info.dropOffMessage}
+              icon={
+                coreUtils.itinerary.isAdvanceBookingRequired(info) ? (
+                  <PhoneVolume size={17} />
+                ) : (
+                  <HandPaper size={17} />
+                )
+              }
+              key={info.dropOffMessage}
+              summary={
+                <S.FlexDropOffSummary>
+                  <FormattedMessage
+                    defaultMessage={
+                      defaultMessages["otpUi.TripDetails.flexDropOffMessage"]
+                    }
+                    description="Instructions for getting off the flex (on-demand) transit service."
+                    id="otpUi.TripDetails.flexDropOffMessage"
+                    values={getFlexMessageValues(info)}
+                  />
+                </S.FlexDropOffSummary>
+              }
+            />
+          ))}
+      </S.TripDetailsBody>
+    </S.TripDetails>
   );
 }
 
 export default TripDetails;
+
+// Rename styled components for export
+export { S as Styled };

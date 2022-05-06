@@ -1,6 +1,30 @@
 import polyline from "@mapbox/polyline";
 import turfAlong from "@turf/along";
 
+import {
+  calculateFares,
+  getLegModeLabel,
+  getModeForPlace,
+  getPlaceName,
+  getStepDirection,
+  getStepInstructions,
+  getStepStreetName,
+  getTimeZoneOffset,
+  getTransitFare
+} from "./deprecated";
+
+export {
+  calculateFares,
+  getLegModeLabel,
+  getModeForPlace,
+  getPlaceName,
+  getStepDirection,
+  getStepInstructions,
+  getStepStreetName,
+  getTimeZoneOffset,
+  getTransitFare
+};
+
 // All OTP transit modes
 export const transitModes = [
   "TRAM",
@@ -24,6 +48,37 @@ export function getTransitModes(config) {
 
 export function isTransit(mode) {
   return transitModes.includes(mode) || mode === "TRANSIT";
+}
+
+/**
+ * Returns true if the leg pickup rules enabled which require
+ * calling ahead for the service to run. "mustPhone" is the only
+ * property of boardRule which encodes this info.
+ */
+export function isReservationRequired(leg) {
+  return leg.boardRule === "mustPhone";
+}
+/**
+ * Returns true if the leg has continuous dropoff enabled which requires
+ * asking the driver to let the user off. "coordinateWithDriver" is the only
+ * property of alightRule which encodes this info.
+ */
+export function isContinuousDropoff(leg) {
+  return leg.alightRule === "coordinateWithDriver";
+}
+/**
+ * The two rules checked by the above two functions are the only values
+ * returned by OTP when a leg is a flex leg.
+ */
+export function isFlex(leg) {
+  return isReservationRequired(leg) || isContinuousDropoff(leg);
+}
+
+export function isAdvanceBookingRequired(info) {
+  return info?.latestBookingTime?.daysPrior > 0;
+}
+export function legDropoffRequiresAdvanceBooking(leg) {
+  return isAdvanceBookingRequired(leg.dropOffBookingInfo);
 }
 
 export function isWalk(mode) {
@@ -51,7 +106,7 @@ export function isCar(mode) {
 
 export function isMicromobility(mode) {
   if (!mode) return false;
-  return mode.startsWith("MICROMOBILITY");
+  return mode.startsWith("MICROMOBILITY") || mode.startsWith("SCOOTER");
 }
 
 export function isAccessMode(mode) {
@@ -124,53 +179,8 @@ export function getMapColor(mode) {
   if (mode === "TRAM") return "#800";
   if (mode === "FERRY") return "#008";
   if (mode === "CAR") return "#444";
-  if (mode === "MICROMOBILITY") return "#f5a729";
+  if (mode === "MICROMOBILITY" || mode === "SCOOTER") return "#f5a729";
   return "#aaa";
-}
-
-// TODO: temporary code; handle via migrated OTP i18n language table
-export function getStepDirection(step) {
-  switch (step.relativeDirection) {
-    case "DEPART":
-      return `Head ${step.absoluteDirection.toLowerCase()}`;
-    case "LEFT":
-      return "Left";
-    case "HARD_LEFT":
-      return "Hard left";
-    case "SLIGHTLY_LEFT":
-      return "Slight left";
-    case "CONTINUE":
-      return "Continue";
-    case "SLIGHTLY_RIGHT":
-      return "Slight right";
-    case "RIGHT":
-      return "Right";
-    case "HARD_RIGHT":
-      return "Hard right";
-    case "CIRCLE_CLOCKWISE":
-      return "Follow circle clockwise";
-    case "CIRCLE_COUNTERCLOCKWISE":
-      return "Follow circle counterclockwise";
-    case "ELEVATOR":
-      return "Take elevator";
-    case "UTURN_LEFT":
-      return "Left U-turn";
-    case "UTURN_RIGHT":
-      return "Right U-turn";
-    default:
-      return step.relativeDirection;
-  }
-}
-
-export function getStepInstructions(step) {
-  const conjunction = step.relativeDirection === "ELEVATOR" ? "to" : "on";
-  return `${getStepDirection(step)} ${conjunction} ${step.streetName}`;
-}
-
-export function getStepStreetName(step) {
-  if (step.streetName === "road") return "Unnamed Road";
-  if (step.streetName === "path") return "Unnamed Path";
-  return step.streetName;
 }
 
 export function toSentenceCase(str) {
@@ -196,29 +206,14 @@ export function getCompanyFromLeg(leg) {
   if (mode === "BICYCLE" && rentedBike && from.networks) {
     return from.networks[0];
   }
-  if (mode === "MICROMOBILITY" && rentedVehicle && from.networks) {
+  if (
+    (mode === "MICROMOBILITY" || mode === "SCOOTER") &&
+    rentedVehicle &&
+    from.networks
+  ) {
     return from.networks[0];
   }
   return null;
-}
-
-export function getLegModeLabel(leg) {
-  switch (leg.mode) {
-    case "BICYCLE_RENT":
-      return "Biketown";
-    case "CAR":
-      return leg.hailedCar ? "Ride" : "Drive";
-    case "GONDOLA":
-      return "Aerial Tram";
-    case "TRAM":
-      if (leg.routeLongName.toLowerCase().indexOf("streetcar") !== -1)
-        return "Streetcar";
-      return "Light Rail";
-    case "MICROMOBILITY":
-      return "Ride";
-    default:
-      return toSentenceCase(leg.mode);
-  }
 }
 
 export function getItineraryBounds(itinerary) {
@@ -369,7 +364,7 @@ export function getTextWidth(text, font = "22px Arial") {
  * Get the configured company object for the given network string if the company
  * has been defined in the provided companies array config.
  */
-function getCompanyForNetwork(networkString, companies = []) {
+export function getCompanyForNetwork(networkString, companies = []) {
   const company = companies.find(co => co.id === networkString);
   if (!company) {
     console.warn(
@@ -395,47 +390,6 @@ export function getCompaniesLabelFromNetworks(networks, companies = []) {
     .join("/");
 }
 
-/**
- * Returns mode name by checking the vertex type (VertexType class in OTP) for
- * the provided place. NOTE: this is currently only intended for vehicles at
- * the moment (not transit or walking).
- *
- * TODO: I18N
- * @param  {string} place place from itinerary leg
- */
-export function getModeForPlace(place) {
-  switch (place.vertexType) {
-    case "CARSHARE":
-      return "car";
-    case "VEHICLERENTAL":
-      return "E-scooter";
-    // TODO: Should the type change depending on bike vertex type?
-    case "BIKESHARE":
-    case "BIKEPARK":
-      return "bike";
-    // If company offers more than one mode, default to `vehicle` string.
-    default:
-      return "vehicle";
-  }
-}
-
-export function getPlaceName(place, companies) {
-  // If address is provided (i.e. for carshare station, use it)
-  if (place.address) return place.address.split(",")[0];
-  if (place.networks && place.vertexType === "VEHICLERENTAL") {
-    // For vehicle rental pick up, do not use the place name. Rather, use
-    // company name + vehicle type (e.g., SPIN E-scooter). Place name is often just
-    // a UUID that has no relevance to the actual vehicle. For bikeshare, however,
-    // there are often hubs or bikes that have relevant names to the user.
-    const company = getCompanyForNetwork(place.networks[0], companies);
-    if (company) {
-      return `${company.label} ${getModeForPlace(place)}`;
-    }
-  }
-  // Default to place name
-  return place.name;
-}
-
 export function getTNCLocation(leg, type) {
   const location = leg[type];
   return `${location.lat.toFixed(5)},${location.lon.toFixed(5)}`;
@@ -457,76 +411,12 @@ export function calculatePhysicalActivity(itinerary) {
   };
 }
 
-/**
- * For a given fare component (either total fare or component parts), returns
- * an object with string formatters and the fare value (in cents).
- */
-export function getTransitFare(fareComponent) {
-  // Default values (if fare component is not valid).
-  let digits = 2;
-  let transitFare = 0;
-  let symbol = "$";
-  if (fareComponent) {
-    digits = fareComponent.currency.defaultFractionDigits;
-    transitFare = fareComponent.cents;
-    symbol = fareComponent.currency.symbol;
-  }
-  // For cents to string conversion, use digits from fare component.
-  const centsToString = cents => {
-    const dollars = (cents / 10 ** digits).toFixed(digits);
-    return `${symbol}${dollars}`;
-  };
-  // For dollars to string conversion, assume we're rounding to two digits.
-  const dollarsToString = dollars => `${symbol}${dollars.toFixed(2)}`;
-  return {
-    centsToString,
-    dollarsToString,
-    transitFare
-  };
-}
-
-/**
- * For an itinerary, calculates the transit/TNC fares and returns an object with
- * these values as well as string formatters.
- */
-export function calculateFares(itinerary) {
-  // Extract fare total from itinerary fares.
-  const fareComponent =
-    itinerary.fare && itinerary.fare.fare && itinerary.fare.fare.regular;
-  // Get string formatters and itinerary fare.
-  const { centsToString, dollarsToString, transitFare } = getTransitFare(
-    fareComponent
+export function calculateTncFares(itinerary) {
+  // TODO: don't rely on deprecated methods!
+  // At the moment this is safe as none of these exported variables contain strings
+  const { maxTNCFare, minTNCFare, tncCurrencyCode } = calculateFares(
+    itinerary,
+    true
   );
-  // Process any TNC fares
-  let minTNCFare = 0;
-  let maxTNCFare = 0;
-  itinerary.legs.forEach(leg => {
-    if (leg.mode === "CAR" && leg.hailedCar && leg.tncData) {
-      const { maxCost, minCost } = leg.tncData;
-      // TODO: Support non-USD
-      minTNCFare += minCost;
-      maxTNCFare += maxCost;
-    }
-  });
-  return {
-    centsToString,
-    dollarsToString,
-    maxTNCFare,
-    minTNCFare,
-    transitFare
-  };
-}
-
-export function getTimeZoneOffset(itinerary) {
-  if (!itinerary.legs || !itinerary.legs.length) return 0;
-
-  // Determine if there is a DST offset between now and the itinerary start date
-  const dstOffset =
-    new Date(itinerary.startTime).getTimezoneOffset() -
-    new Date().getTimezoneOffset();
-
-  return (
-    itinerary.legs[0].agencyTimeZoneOffset +
-    (new Date().getTimezoneOffset() + dstOffset) * 60000
-  );
+  return { maxTNCFare, minTNCFare, tncCurrencyCode };
 }

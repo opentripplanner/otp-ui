@@ -23,7 +23,8 @@ module.exports = {
     "yaml"
   ],
   moduleNameMapper: {
-    "\\.(s?css|less)$": "identity-obj-proxy"
+    "\\.(s?css|less)$": "identity-obj-proxy",
+    "\\.(svg)$": "<rootDir>/__mocks__/file-mock.js"
   },
   testPathIgnorePatterns: ["<rootDir>/packages/(?:.+?)/(esm|lib)/"],
   transform: {

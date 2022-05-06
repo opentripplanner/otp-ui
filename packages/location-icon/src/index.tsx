@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 
-import * as Styled from "./styled";
+import * as S from "./styled";
 
 type Props = {
   className?: string;
@@ -34,7 +34,7 @@ export function LocationIcon({
   switch (type) {
     case "from":
       return (
-        <Styled.FromIcon
+        <S.FromIcon
           className={className}
           size={size}
           title={title || "From Location Icon"}
@@ -42,7 +42,7 @@ export function LocationIcon({
       );
     case "to":
       return (
-        <Styled.ToIcon
+        <S.ToIcon
           className={className}
           size={size}
           title={title || "To Location Icon"}
@@ -50,7 +50,7 @@ export function LocationIcon({
       );
     default:
       return (
-        <Styled.PlaceIcon
+        <S.PlaceIcon
           className={className}
           size={size}
           title={title || "Location Icon"}
@@ -60,3 +60,6 @@ export function LocationIcon({
 }
 
 export default LocationIcon;
+
+// Rename styled components for export
+export { S as Styled };

@@ -1,7 +1,13 @@
-import { getCompanyFromLeg, getTransitFare, isTransit } from "../itinerary";
+import {
+  calculateFares,
+  getCompanyFromLeg,
+  getTransitFare,
+  isTransit
+} from "../itinerary";
 
 const bikeRentalItinerary = require("./__mocks__/bike-rental-itinerary.json");
 const tncItinerary = require("./__mocks__/tnc-itinerary.json");
+const multiCurrencyItinerary = require("./__mocks__/multi-currency-itinerary.json");
 
 describe("util > itinerary", () => {
   it("isTransit should work", () => {
@@ -42,15 +48,29 @@ describe("util > itinerary", () => {
       },
       cents: 575
     };
-    const { centsToString, dollarsToString, transitFare } = getTransitFare(
-      fareComponent
-    );
+    const {
+      centsToString,
+      currencyCode,
+      dollarsToString,
+      transitFare
+    } = getTransitFare(fareComponent);
     // Make sure cents to string and dollars to string return same result
     expect(dollarsToString(transitFare / 100)).toEqual(
       centsToString(transitFare)
     );
+    expect(currencyCode).toEqual(fareComponent.currency.currencyCode);
     // Snapshot tests
     expect(centsToString(transitFare)).toMatchSnapshot();
     expect(transitFare).toMatchSnapshot();
+  });
+
+  it("calculateFare should return the correct currency code for TNC leg", () => {
+    const fareResult = calculateFares(tncItinerary, true);
+    expect(fareResult.tncCurrencyCode).toEqual("USD");
+  });
+
+  it("creates transit fares object for fares with multiple currencies", () => {
+    const fareResult = calculateFares(multiCurrencyItinerary, true);
+    expect(fareResult).toMatchSnapshot();
   });
 });

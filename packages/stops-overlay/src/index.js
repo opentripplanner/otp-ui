@@ -2,7 +2,10 @@ import utils from "@opentripplanner/core-utils";
 import ZoomBasedMarkers from "@opentripplanner/zoom-based-markers";
 import PropTypes from "prop-types";
 import React from "react";
-import { FeatureGroup, MapLayer, withLeaflet } from "react-leaflet";
+import { FeatureGroup, GeoJSON, MapLayer, withLeaflet } from "react-leaflet";
+
+import DefaultStopMarker from "./default-stop-marker";
+import * as Styled from "./styled";
 
 /**
  * An overlay to view a collection of stops.
@@ -73,9 +76,29 @@ class StopsOverlay extends MapLayer {
     }
     const zoom = leaflet.map.getZoom();
 
+    const flexGeometries = stops
+      .filter(stop => stop?.geometries?.geoJson?.type === "Polygon")
+      .map(stop => {
+        // Add first route color to GeoJSON
+        const { color, id } = stop;
+        stop.geometries.geoJson.properties = { color, id };
+        return stop.geometries.geoJson;
+      });
+
     return (
       <FeatureGroup>
         <ZoomBasedMarkers entities={stops} symbols={symbols} zoom={zoom} />
+        {/* Updating the react key is the only way to force the GeoJSON layer to update */}
+        {flexGeometries.length > 0 && (
+          <GeoJSON
+            data={flexGeometries}
+            key={flexGeometries[0].properties.id}
+            style={feature => {
+              const { color } = feature?.geometry?.properties;
+              return { color };
+            }}
+          />
+        )}
       </FeatureGroup>
     );
   }
@@ -101,3 +124,5 @@ StopsOverlay.propTypes = {
 };
 
 export default withLeaflet(StopsOverlay);
+
+export { DefaultStopMarker, Styled };

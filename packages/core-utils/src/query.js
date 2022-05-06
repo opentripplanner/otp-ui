@@ -2,14 +2,8 @@ import moment from "moment";
 import getGeocoder from "@opentripplanner/geocoder/lib";
 import qs from "qs";
 
-import {
-  getTransitModes,
-  hasCar,
-  hasTransit,
-  isAccessMode,
-  toSentenceCase
-} from "./itinerary";
-import { coordsToString, matchLatLon, stringToCoords } from "./map";
+import { getTransitModes, hasCar, isAccessMode } from "./itinerary";
+import { stringToCoords } from "./map";
 import queryParams from "./query-params";
 import {
   getCurrentTime,
@@ -18,11 +12,16 @@ import {
   OTP_API_TIME_FORMAT
 } from "./time";
 
+import { coordsToString, summarizeQuery } from "./deprecated";
+
+export { summarizeQuery };
+
 /* The list of default parameters considered in the settings panel */
 
 export const defaultParams = [
   "wheelchair",
   "maxWalkDistance",
+  "walkReluctance",
   "maxWalkTime",
   "walkSpeed",
   "maxBikeDistance",
@@ -82,24 +81,6 @@ export function getUrlParams() {
 
 export function getOtpUrlParams() {
   return Object.keys(getUrlParams()).filter(key => !key.startsWith("ui_"));
-}
-
-function findLocationType(
-  location,
-  locations = [],
-  types = ["home", "work", "suggested"]
-) {
-  const match = locations.find(l => matchLatLon(l, location));
-  return match && types.indexOf(match.type) !== -1 ? match.type : null;
-}
-
-export function summarizeQuery(query, locations = []) {
-  const from =
-    findLocationType(query.from, locations) || query.from.name.split(",")[0];
-  const to =
-    findLocationType(query.to, locations) || query.to.name.split(",")[0];
-  const mode = hasTransit(query.mode) ? "Transit" : toSentenceCase(query.mode);
-  return `${mode} from ${from} to ${to}`;
 }
 
 export function getTripOptionsFromQuery(query, keepPlace = false) {
@@ -164,12 +145,53 @@ function isParamApplicable(paramInfo, query, config) {
 }
 
 /**
+ * Helper method which replaces OTP flex modes with single FLEX mode that's
+ * more useful and easier to work with.
+ */
+export function reduceOtpFlexModes(modes) {
+  return modes.reduce((prev, cur) => {
+    const newModes = prev;
+    // Add the current mode if it is not a flex mode
+    if (!cur.includes("FLEX")) {
+      newModes.push(cur);
+      // If it is a flex mode, do not add it but rather add the custom flex mode
+      // if not already present
+    } else if (!newModes.includes("FLEX")) {
+      newModes.push("FLEX");
+    }
+    return newModes;
+  }, []);
+}
+
+/**
+ * Helper method to process a mode string, replacing all instances of FLEX
+ * with the full set of FLEX modes used by otp-2
+ * @param {*} mode a mode String, not an array
+ * @returns a mode String, not an array (with flex modes expanded)
+ */
+export function expandOtpFlexMode(mode) {
+  const modes = reduceOtpFlexModes(mode.split(","));
+  return modes
+    .map(m => {
+      // If both the expanded and shrunk modes are included, remove the exapnded one
+      if (m === "FLEX_EGRESS" || m === "FLEX_ACCESS" || m === "FLEX_DIRECT") {
+        if (mode.includes("FLEX")) return "";
+      }
+      if (m === "FLEX") {
+        return "FLEX_EGRESS,FLEX_ACCESS,FLEX_DIRECT";
+      }
+      return m;
+    })
+    .join(",");
+}
+
+/**
  * Determines whether the specified query differs from the default query, i.e.,
  * whether the user has modified any trip options (including mode) from their
  * default values.
  */
 export function isNotDefaultQuery(query, config) {
-  const activeModes = query.mode.split(",").sort();
+  const activeModes = reduceOtpFlexModes(query.mode.split(",").sort());
   if (
     activeModes.length !== 2 ||
     activeModes[0] !== "TRANSIT" ||
@@ -442,6 +464,13 @@ export function getRoutingParams(config, currentQuery, ignoreRealtimeUpdates) {
   // hack to add walking to driving/TNC trips
   if (hasCar(params.mode)) {
     params.mode += ",WALK";
+  }
+
+  // Replace FLEX placeholder with OTP flex modes
+  if (params.mode) {
+    // Ensure query is in reduced format to avoid replacing twice
+    const reducedMode = reduceOtpFlexModes(params.mode.split(",")).join(",");
+    params.mode = expandOtpFlexMode(reducedMode);
   }
 
   return params;

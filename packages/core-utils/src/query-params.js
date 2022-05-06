@@ -1,3 +1,11 @@
+// TODO: Remove this entire file, as it is deprecated in favor of i18n-queryParams within
+// the SettingsSelector package
+
+// This is only used within stories
+import cloneDeep from "lodash.clonedeep";
+import React from "react";
+import { Wheelchair } from "@styled-icons/foundation/Wheelchair";
+
 import {
   isTransit,
   isAccessMode,
@@ -50,10 +58,14 @@ import { getCurrentDate, getCurrentTime } from "./time";
 /**
  * Format location object as string for use in fromPlace or toPlace query param.
  */
-export function formatPlace(location, alternateName = "Place") {
+export function formatPlace(location, alternateName) {
   if (!location) return null;
   const name =
-    location.name || `${alternateName} (${location.lat},${location.lon})`;
+    location.name ||
+    `${alternateName ? `${alternateName} ` : ""}(${location.lat},${
+      location.lon
+    })`;
+  // This string is not language-specific
   return `${name}::${location.lat},${location.lon}`;
 }
 
@@ -66,7 +78,7 @@ const queryParams = [
     name: "from",
     routingTypes: ["ITINERARY", "PROFILE"],
     default: null,
-    itineraryRewrite: value => ({ fromPlace: formatPlace(value, "Origin") }),
+    itineraryRewrite: value => ({ fromPlace: formatPlace(value) }),
     profileRewrite: value => ({ from: { lat: value.lat, lon: value.lon } })
     // FIXME: Use for parsing URL values?
     // fromURL: stringToLocation
@@ -77,7 +89,7 @@ const queryParams = [
     name: "to",
     routingTypes: ["ITINERARY", "PROFILE"],
     default: null,
-    itineraryRewrite: value => ({ toPlace: formatPlace(value, "Destination") }),
+    itineraryRewrite: value => ({ toPlace: formatPlace(value) }),
     profileRewrite: value => ({ to: { lat: value.lat, lon: value.lon } })
     // FIXME: Use for parsing URL values?
     // fromURL: stringToLocation
@@ -156,8 +168,15 @@ const queryParams = [
     name: "maxWalkDistance",
     routingTypes: ["ITINERARY"],
     applicable: query =>
-      query.mode && hasTransit(query.mode) && query.mode.indexOf("WALK") !== -1,
-    default: 1207, // 3/4 mi.
+      /* Since this query variable isn't in this list, it's not included in the generated query
+       * It does however allow us to determine if we should show the OTP1 max walk distance
+       * dropdown or the OTP2 walk reluctance slider
+       */
+      !query.otp2 &&
+      query.mode &&
+      hasTransit(query.mode) &&
+      query.mode.indexOf("WALK") !== -1,
+    default: 1609, // 1 mi.
     selector: "DROPDOWN",
     label: "Maximum Walk",
     options: [
@@ -259,7 +278,8 @@ const queryParams = [
   {
     /* optimize -- how to optimize a trip (non-bike, non-micromobility trips) */
     name: "optimize",
-    applicable: query => hasTransit(query.mode) && !hasBike(query.mode),
+    // This parameter doesn't seem to do anything
+    applicable: () => false,
     routingTypes: ["ITINERARY"],
     default: "QUICK",
     selector: "DROPDOWN",
@@ -279,12 +299,12 @@ const queryParams = [
   {
     /* optimizeBike -- how to optimize an bike-based trip */
     name: "optimizeBike",
-    applicable: query => hasBike(query.mode),
+    applicable: query => !query.otp2 && hasBike(query.mode),
     routingTypes: ["ITINERARY"],
     default: "SAFE",
     selector: "DROPDOWN",
     label: "Optimize for",
-    options: query => {
+    options: () => {
       const opts = [
         {
           text: "Speed",
@@ -299,14 +319,6 @@ const queryParams = [
           value: "FLAT"
         }
       ];
-
-      // Include transit-specific option, if applicable
-      if (hasTransit(query.mode)) {
-        opts.splice(1, 0, {
-          text: "Fewest Transfers",
-          value: "TRANSFERS"
-        });
-      }
 
       return opts;
     },
@@ -378,6 +390,23 @@ const queryParams = [
     ]
   },
 
+  {
+    name: "walkReluctance",
+    routingTypes: ["ITINERARY", "PROFILE"],
+    selector: "SLIDER",
+    low: 0.5,
+    high: 20,
+    step: 0.5,
+    label: "walk reluctance",
+    labelLow: "More Walking",
+    labelHigh: "More Transit",
+    applicable: query =>
+      /* Since this query variable isn't in this list, it's not included in the generated query
+       * It does however allow us to determine if we should show the OTP1 max walk distance
+       * dropdown or the OTP2 walk reluctance slider
+       */
+      !!query.otp2 && query.mode && query.mode.indexOf("WALK") !== -1
+  },
   {
     /* maxBikeTime -- the maximum time the user will spend biking in minutes */
     name: "maxBikeTime",
@@ -524,7 +553,8 @@ const queryParams = [
     applicable: query =>
       query.mode &&
       query.mode.indexOf("MICROMOBILITY") !== -1 &&
-      query.mode.indexOf("MICROMOBILITY_RENT") === -1,
+      query.mode.indexOf("MICROMOBILITY_RENT") === -1 &&
+      query.mode.indexOf("SCOOTER") === -1,
     options: [
       {
         text: "Kid's hoverboard (6mph)",
@@ -598,10 +628,11 @@ const queryParams = [
   {
     /* wheelchair -- whether the user requires a wheelchair-accessible trip */
     name: "wheelchair",
-    routingTypes: ["ITINERARY"],
+    routingTypes: ["ITINERARY", "PROFILE"],
     default: false,
     selector: "CHECKBOX",
-    label: "Wheelchair Accessible",
+    label: "Prefer Wheelchair Accessible Routes",
+    icon: <Wheelchair />,
     applicable: (query, config) => {
       if (!query.mode || !config.modes) return false;
       const configModes = (config.modes.accessModes || []).concat(
@@ -658,10 +689,6 @@ const queryParams = [
   },
   {
     name: "maxPreTransitTime",
-    routingTypes: ["ITINERARY"]
-  },
-  {
-    name: "walkReluctance",
     routingTypes: ["ITINERARY"]
   },
   {
@@ -851,3 +878,41 @@ queryParams.forEach(param => {
 });
 
 export default queryParams;
+
+/**
+ * You can customize the queryParams labels and options, and labels and values for each option.
+ * @param customizations The optional customizations to apply: an object whose fields
+ *                       correspond to the items in queryParams with the corresponding name,
+ *                       the value for those fields being an object which fields (label, options...)
+ *                       will override the originals.
+ *                       Example:
+ *                         {
+ *                           // Matches the name param
+ *                           maxWalkDistance: {
+ *                             // Any fields that should be overridden go here
+ *                             options: [
+ *                               // ...new options
+ *                             ],
+ *                             default: 500,
+ *                             label: "max walk dist"
+ *                           }
+ *                         }
+ * @returns A copy of the default queryParams that has the given customizations applied.
+ *          If no customizations parameter is provided, returns the queryParams object itself.
+ */
+export function getCustomQueryParams(customizations) {
+  if (!customizations) return queryParams;
+
+  const clonedParams = cloneDeep(queryParams);
+  Object.keys(customizations).forEach(k => {
+    // Merge fields into the cloned object
+    const paramIndex = clonedParams.findIndex(param => param.name === k);
+    if (paramIndex !== -1) {
+      clonedParams[paramIndex] = {
+        ...clonedParams[paramIndex],
+        ...customizations[k]
+      };
+    }
+  });
+  return clonedParams;
+}

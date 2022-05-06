@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/itinerary-body",
-  "version": "2.3.1",
+  "version": "3.0.4",
   "description": "A component for displaying an itinerary body of a trip planning result",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -10,15 +10,19 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^3.0.4",
-    "@opentripplanner/humanize-distance": "^1.1.0",
-    "@opentripplanner/icons": "^1.0.4",
-    "@opentripplanner/location-icon": "^1.0.1",
-    "currency-formatter": "^1.5.5",
+    "@opentripplanner/core-utils": "^4.11.2",
+    "@opentripplanner/humanize-distance": "^1.2.0",
+    "@opentripplanner/icons": "^1.2.2",
+    "@opentripplanner/location-icon": "^1.4.0",
+    "@styled-icons/fa-solid": "^10.34.0",
+    "@styled-icons/foundation": "^10.34.0",
+    "flat": "^5.0.2",
     "moment": "^2.24.0",
-    "prop-types": "^15.7.2",
     "react-resize-detector": "^4.2.1",
     "velocity-react": "^1.4.3"
+  },
+  "devDependencies": {
+    "@types/flat": "^5.0.2"
   },
   "peerDependencies": {
     "react": "^16.14.0",
@@ -26,6 +30,9 @@
   },
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"
+  },
+  "scripts": {
+    "tsc": "tsc"
   },
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"
 }

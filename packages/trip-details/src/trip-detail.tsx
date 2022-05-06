@@ -1,13 +1,14 @@
 import React, { Component, ReactElement } from "react";
-import { QuestionCircle, TimesCircle } from "styled-icons/fa-solid";
+import { QuestionCircle } from "@styled-icons/fa-solid/QuestionCircle";
+import { TimesCircle } from "@styled-icons/fa-solid/TimesCircle";
 import { VelocityTransitionGroup } from "velocity-react";
 
-import * as Styled from "./styled";
+import * as S from "./styled";
 
 type Props = {
-  description?: ReactElement;
+  description?: ReactElement | string;
   icon: ReactElement;
-  summary: ReactElement;
+  summary: ReactElement | string;
 };
 
 type State = {
@@ -40,30 +41,30 @@ export default class TripDetail extends Component<Props, State> {
     const { icon, summary, description } = this.props;
     const { expanded } = this.state;
     return (
-      <Styled.TripDetail>
-        <Styled.TripDetailIcon>{icon}</Styled.TripDetailIcon>
-        <Styled.TripDetailSummary>
+      <S.TripDetail>
+        <S.TripDetailIcon>{icon}</S.TripDetailIcon>
+        <S.TripDetailSummary>
           {summary}
           {description && (
-            <Styled.ExpandButton onClick={this.toggle}>
+            <S.ExpandButton onClick={this.toggle}>
               <QuestionCircle size="0.92em" />
-            </Styled.ExpandButton>
+            </S.ExpandButton>
           )}
-          <VelocityTransitionGroup
-            enter={{ animation: "slideDown" }}
-            leave={{ animation: "slideUp" }}
-          >
-            {expanded && (
-              <Styled.TripDetailDescription>
-                <Styled.HideButton onClick={this.onHideClick}>
-                  <TimesCircle size="0.92em" />
-                </Styled.HideButton>
-                {description}
-              </Styled.TripDetailDescription>
-            )}
-          </VelocityTransitionGroup>
-        </Styled.TripDetailSummary>
-      </Styled.TripDetail>
+        </S.TripDetailSummary>
+        <VelocityTransitionGroup
+          enter={{ animation: "slideDown" }}
+          leave={{ animation: "slideUp" }}
+        >
+          {expanded && (
+            <S.TripDetailDescription>
+              <S.HideButton onClick={this.onHideClick}>
+                <TimesCircle size="0.92em" />
+              </S.HideButton>
+              {description}
+            </S.TripDetailDescription>
+          )}
+        </VelocityTransitionGroup>
+      </S.TripDetail>
     );
   }
 }

@@ -9,6 +9,6 @@ export default {
   component: TrimetLegIcon
 };
 
-export const Trimetxamples = () => {
-  return <LegIconRenderer component={TrimetLegIcon} />;
-};
+export const Trimetxamples = () => (
+  <LegIconRenderer component={TrimetLegIcon} />
+);

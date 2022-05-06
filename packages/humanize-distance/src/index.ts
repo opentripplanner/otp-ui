@@ -1,32 +1,70 @@
-export function humanizeDistanceStringImperial(
-  meters: number,
-  abbreviate?: boolean
-): string {
-  const feet = meters * 3.28084;
-  if (feet < 528)
-    return Math.round(feet) + (abbreviate === true ? " ft" : " feet");
-  return Math.round(feet / 528) / 10 + (abbreviate === true ? " mi" : " miles");
+import { IntlShape } from "react-intl";
+
+function roundToOneDecimalPlace(number: number): number {
+  return Math.round(number * 10) / 10;
 }
 
-export function humanizeDistanceStringMetric(meters: number): string {
+export function humanizeDistanceStringImperial(
+  meters: number,
+  abbreviate?: boolean,
+  intl?: IntlShape
+): string {
+  const feet = meters * 3.28084;
+
+  let unit = "mile";
+  let unitIfNoIntl = abbreviate ? "mi" : "miles";
+  let value = roundToOneDecimalPlace(feet / 5280);
+
+  if (feet < 528) {
+    unit = "foot";
+    unitIfNoIntl = abbreviate ? "ft" : "feet";
+    value = Math.round(feet);
+  }
+
+  return intl
+    ? intl.formatNumber(value, {
+        style: "unit",
+        unit,
+        unitDisplay: abbreviate ? "short" : "long"
+      })
+    : `${value} ${unitIfNoIntl}`;
+}
+
+export function humanizeDistanceStringMetric(
+  meters: number,
+  intl?: IntlShape
+): string {
   const km = meters / 1000;
-  if (km > 100) {
-    // 100 km => 999999999 km
-    return `${km.toFixed(0)} km`;
-  }
+  let unit = "meter";
+  let shortUnit = "m";
+  let value = Math.round(meters);
+
   if (km > 1) {
-    // 1.1 km => 99.9 km
-    return `${km.toFixed(1)} km`;
+    unit = "kilometer";
+    shortUnit = "km";
+    value =
+      km > 100
+        ? // 100 km and over
+          Math.round(km)
+        : // 1.1 km => 99.9 km
+          roundToOneDecimalPlace(km);
   }
-  // 1m => 999m
-  return `${meters.toFixed(0)} m`;
+
+  return intl
+    ? intl.formatNumber(value, {
+        style: "unit",
+        unit,
+        unitDisplay: "short"
+      })
+    : `${value} ${shortUnit}`;
 }
 
 export function humanizeDistanceString(
   meters: number,
-  outputMetricUnits = false
+  outputMetricUnits = false,
+  intl?: IntlShape
 ): string {
   return outputMetricUnits
-    ? humanizeDistanceStringMetric(meters)
-    : humanizeDistanceStringImperial(meters);
+    ? humanizeDistanceStringMetric(meters, intl)
+    : humanizeDistanceStringImperial(meters, null, intl);
 }

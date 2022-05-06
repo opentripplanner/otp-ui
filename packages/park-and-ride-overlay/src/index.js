@@ -1,4 +1,4 @@
-import { styled as BaseMapStyled } from "@opentripplanner/base-map";
+import { Styled as BaseMapStyled } from "@opentripplanner/base-map";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 import PropTypes from "prop-types";
 import React from "react";
@@ -9,7 +9,6 @@ import {
   Popup,
   withLeaflet
 } from "react-leaflet";
-
 import parkAndRideMarker from "./park-and-ride-marker";
 
 class ParkAndRideOverlay extends MapLayer {
@@ -22,13 +21,14 @@ class ParkAndRideOverlay extends MapLayer {
   updateLeafletElement() {}
 
   render() {
-    const { parkAndRideLocations, setLocation } = this.props;
+    const { keyboard, parkAndRideLocations, setLocation } = this.props;
     if (!parkAndRideLocations || parkAndRideLocations.length === 0)
       return <FeatureGroup />;
 
     return (
       <FeatureGroup>
         {parkAndRideLocations.map((location, k) => {
+          // TODO: extract park-and-ride names from international "Park-And-Ride" string constructs.
           const name = location.name.startsWith("P+R ")
             ? location.name.substring(4)
             : location.name;
@@ -36,16 +36,15 @@ class ParkAndRideOverlay extends MapLayer {
             <Marker
               icon={parkAndRideMarker}
               key={k}
+              keyboard={keyboard}
               position={[location.y, location.x]}
             >
               <Popup>
                 <BaseMapStyled.MapOverlayPopup>
                   <BaseMapStyled.PopupTitle>{name}</BaseMapStyled.PopupTitle>
-
-                  {/* Set as from/to toolbar */}
                   <BaseMapStyled.PopupRow>
-                    <b>Plan a trip:</b>
                     <FromToLocationPicker
+                      label
                       location={{
                         lat: location.y,
                         lon: location.x,
@@ -65,6 +64,7 @@ class ParkAndRideOverlay extends MapLayer {
 }
 
 ParkAndRideOverlay.propTypes = {
+  keyboard: PropTypes.bool,
   parkAndRideLocations: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
@@ -73,6 +73,10 @@ ParkAndRideOverlay.propTypes = {
     }).isRequired
   ),
   setLocation: PropTypes.func.isRequired
+};
+
+ParkAndRideOverlay.defaultProps = {
+  keyboard: false
 };
 
 export default withLeaflet(ParkAndRideOverlay);

@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/route-viewer-overlay",
-  "version": "1.1.0",
+  "version": "1.4.0",
   "description": "A map overlay to show a transit route",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -19,11 +19,12 @@
   },
   "dependencies": {
     "@mapbox/polyline": "^1.1.0",
-    "@opentripplanner/core-utils": "^3.0.4",
+    "@opentripplanner/core-utils": "^4.5.0",
+    "point-in-polygon": "^1.1.0",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {
-    "@opentripplanner/base-map": "^1.0.4",
+    "@opentripplanner/base-map": "^2.0.0",
     "react": "^16.14.0",
     "react-leaflet": "^2.6.1"
   },

@@ -3,7 +3,7 @@
  * used across more than one package in this repo.
  */
 
-import React from "react";
+import React, { FunctionComponent, ReactElement } from "react";
 
 /**
  * Shape for a transportation company.
@@ -181,7 +181,7 @@ type ElevationData = {
   second: number;
 }[];
 
-interface Alert {
+export interface Alert {
   alertHeaderText?: string;
   alertDescriptionText?: string;
   alertUrl?: string;
@@ -211,7 +211,9 @@ export interface Step {
  * Describe an origin, destination, or intermediate location in an itinerary.
  */
 export interface Place {
+  address?: string;
   arrival?: number;
+  bikeShareId?: string;
   departure?: number;
   lat: number;
   lon: number;
@@ -226,6 +228,30 @@ export interface Place {
 }
 
 /**
+ * Holds contact info and lead time for flex transit bookings.
+ * The information is optional and is for reminding the end-user
+ * of any advance reservations required prior to travel.
+ */
+export interface FlexBookingInfo {
+  contactInfo?: {
+    phoneNumber: string;
+  };
+  latestBookingTime?: {
+    daysPrior: number;
+  };
+}
+
+/** Dropoff-specific flex booking information */
+interface FlexDropOffBookingInfo extends FlexBookingInfo {
+  dropOffMessage?: string;
+}
+
+/** Pickup-specific flex booking information */
+interface FlexPickupBookingInfo extends FlexBookingInfo {
+  pickupMessage?: string;
+}
+
+/**
  * Represents a leg in an itinerary of an OTP plan response. Each leg represents
  * a portion of the overall itinerary that is done until either reaching the
  * destination or transitioning to another mode of travel. See OTP webservice
@@ -233,14 +259,18 @@ export interface Place {
  * http://otp-docs.ibi-transit.com/api/json_Leg.html
  */
 export interface Leg {
+  accessibilityScore?: number;
+  agencyBrandingUrl?: string;
   agencyId?: string;
   agencyName?: string;
   agencyTimeZoneOffset: number;
   agencyUrl?: string;
   alerts?: Alert[];
   arrivalDelay: number;
+  averageWait?: number;
   departureDelay: number;
   distance: number;
+  dropOffBookingInfo?: FlexDropOffBookingInfo;
   duration: number;
   endTime: number;
   from: Place;
@@ -252,12 +282,16 @@ export interface Leg {
   legGeometry: EncodedPolyline;
   mode: string;
   pathway: boolean;
+  pickupBookingInfo?: FlexPickupBookingInfo;
   realTime: boolean;
   rentedBike: boolean;
   rentedCar: boolean;
   rentedVehicle: boolean;
   route?: string;
+  routeColor?: string;
   routeId?: string;
+  routeLongName?: string;
+  routeShortName?: string;
   routeType?: number;
   serviceDate?: string;
   startTime: number;
@@ -276,6 +310,7 @@ export interface Leg {
   transitLeg: boolean;
   tripBlockId?: string;
   tripId?: string;
+  walkingBike?: boolean;
 }
 
 /**
@@ -359,3 +394,62 @@ export interface Location {
 export interface StopLayerStop extends LayerEntity {
   name: string;
 }
+
+/**
+ * @deprecated
+ * Describes time options, including time format and timezone-related offset.
+ */
+export interface TimeOptions {
+  format?: string;
+  offset?: string;
+}
+
+/**
+ * Describes a user location such as "home", "work" etc.
+ */
+export interface UserLocation extends Location {
+  icon?: string;
+  id?: string;
+}
+
+/**
+ * Associates a location with a type string.
+ */
+export interface UserLocationAndType {
+  location: UserLocation;
+  type: string;
+}
+
+/**
+ * Parameters for "clear location" event handlers.
+ */
+export interface ClearLocationArg {
+  locationType: string;
+}
+
+/**
+ * Parameters for location actions/event handlers.
+ */
+export interface MapLocationActionArg {
+  location: UserLocation;
+  locationType: string;
+  reverseGeocode?: boolean;
+}
+
+/**
+ * Supports leg icons for itinerary body and printable itinerary.
+ */
+export type LegIconComponent = FunctionComponent<{
+  leg: Leg;
+  title?: string;
+  width?: string;
+}>;
+
+/**
+ * Supports displaying accessibility ratings as a set of thresholds
+ * associated with an icon or text.
+ */
+export type GradationMap = Record<
+  number,
+  { color: string; icon?: ReactElement; text?: string }
+>;

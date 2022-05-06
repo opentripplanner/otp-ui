@@ -27,13 +27,14 @@ const walkOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__
 const walkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json");
 const walkTransitWalkItineraryNoIntermediateStops = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-no-intermediate-stops.json");
 const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json");
+const flexItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/flex-itinerary.json");
 
 const { itineraryToTransitive } = coreUtils.map;
 const companies = [
   {
     id: "RAZOR",
     label: "Razor",
-    modes: "MICROMOBILITY_RENT"
+    modes: "SCOOTER"
   },
   {
     id: "SHARED",
@@ -318,6 +319,20 @@ export const WalkTransitWalkItineraryAndCustomLabelStyles = () => (
         companies,
         getCustomRouteLabel
       )}
+      visible
+    />
+  </BaseMap>
+);
+export const FlexItinerary = () => (
+  <BaseMap center={[33.749, -84.388]} zoom={11}>
+    <EndpointsOverlay
+      fromLocation={getFromLocation(flexItinerary)}
+      setLocation={setLocation}
+      toLocation={getToLocation(flexItinerary)}
+      visible
+    />
+    <TransitiveOverlay
+      transitiveData={itineraryToTransitive(flexItinerary, companies)}
       visible
     />
   </BaseMap>

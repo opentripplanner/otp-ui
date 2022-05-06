@@ -1,3 +1,21 @@
+import { setupWorker } from "msw";
+import { withReactIntl } from "storybook-react-intl/dist/cjs/withReactIntl";
+
+import locationFieldHandlers from "../packages/location-field/src/mocks/handlers";
+import itineraryBodyHandlers from "../packages/itinerary-body/src/__mocks__/handlers";
+import geocoderHandlers from "../packages/geocoder/src/test-fixtures/handlers";
+
+import { reactIntl } from './react-intl.js';
+
+// Only install worker when running in browser
+if (typeof global.process === "undefined") {
+  const worker = setupWorker(
+    ...locationFieldHandlers,
+    ...itineraryBodyHandlers,
+    ...geocoderHandlers
+  );
+  worker.start({ onUnhandledRequest: "bypass" });
+}
 
 export const parameters = {
   a11y: {
@@ -5,17 +23,17 @@ export const parameters = {
       rules: [
         {
           //  moved to technical backlog
-          id: 'aria-required-parent',
+          id: "aria-required-parent",
           reviewOnFail: true,
         },
         {
           // Appears to be a story bug
-          id: 'duplicate-id',
+          id: "duplicate-id",
           reviewOnFail: true
         },
         {
           // Appears to be a story bug
-          id: 'duplicate-id-aria',
+          id: "duplicate-id-aria",
           reviewOnFail: true
         }
       ],
@@ -28,4 +46,16 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+  locale: reactIntl.defaultLocale,
+  locales: {
+    "en-US": { title: "English (US)" },
+    fr: { title: "Français" },
+    unknown: { title: "Unsupported locale" }
+  },
+  reactIntl
+};
+
+// Per https://www.npmjs.com/package/@storybook/addon-storyshots,
+// explicitly export the storybook-react-intl decorator
+// so it is included in jest snapshots.
+export const decorators = [withReactIntl];

@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/base-map",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Base Map Component",
   "author": "@binh-dam-ibigroup",
   "homepage": "https://github.com/opentripplanner/otp-ui/#readme",
@@ -9,7 +9,7 @@
   "module": "esm/index.js",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^3.0.4",
+    "@opentripplanner/core-utils": "^4.5.0",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {

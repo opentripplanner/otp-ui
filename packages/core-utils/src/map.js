@@ -1,17 +1,19 @@
-import moment from "moment";
+import {
+  getPlaceName,
+  isTransit,
+  isFlex,
+  toSentenceCase,
+  isAccessMode
+} from "./itinerary";
 
-import { getPlaceName, isTransit, toSentenceCase } from "./itinerary";
+import {
+  coordsToString,
+  getDetailText,
+  latlngToString,
+  logDeprecationWarning
+} from "./deprecated";
 
-export function latlngToString(latlng) {
-  return (
-    latlng &&
-    `${latlng.lat.toFixed(5)}, ${(latlng.lng || latlng.lon).toFixed(5)}`
-  );
-}
-
-export function coordsToString(coords) {
-  return coords.length && coords.map(c => (+c).toFixed(5)).join(", ");
-}
+export { coordsToString, getDetailText, latlngToString };
 
 export function currentPositionToLocation(currentPosition) {
   if (currentPosition.error || !currentPosition.coords) {
@@ -23,7 +25,6 @@ export function currentPositionToLocation(currentPosition) {
   return {
     lat: currentPosition.coords.latitude,
     lon: currentPosition.coords.longitude,
-    name: "(Current Location)",
     category: "CURRENT_LOCATION"
   };
 }
@@ -34,26 +35,16 @@ export function stringToCoords(str) {
 
 export function constructLocation(latlng) {
   return {
-    name: latlngToString(latlng),
     lat: latlng.lat,
     lon: latlng.lng
   };
 }
 
-export function getDetailText(location) {
-  let detailText;
-  if (location.type === "home" || location.type === "work") {
-    detailText = location.name;
-  }
-  if (location.type === "stop") {
-    detailText = location.id;
-  } else if (location.type === "recent" && location.timestamp) {
-    detailText = moment(location.timestamp).fromNow();
-  }
-  return detailText;
-}
-
 export function formatStoredPlaceName(location, withDetails = true) {
+  if (withDetails) {
+    logDeprecationWarning("the formatStoredPlaceName withDetails parameter");
+  }
+
   let displayName =
     location.type === "home" || location.type === "work"
       ? toSentenceCase(location.type)
@@ -78,7 +69,12 @@ export function matchLatLon(location1, location2) {
  *                          and returns a string representing the route label to display for that leg.
  * @returns An itinerary in the transitive.js format.
  */
-export function itineraryToTransitive(itin, companies, getRouteLabel) {
+export function itineraryToTransitive(
+  itin,
+  companies,
+  getRouteLabel,
+  disableFlexArc
+) {
   const tdata = {
     journeys: [],
     streetEdges: [],
@@ -94,6 +90,7 @@ export function itineraryToTransitive(itin, companies, getRouteLabel) {
 
   const journey = {
     journey_id: "itin",
+    // This string is not shown in the UI
     journey_name: "Iterarary-derived Journey",
     segments: []
   };
@@ -111,15 +108,11 @@ export function itineraryToTransitive(itin, companies, getRouteLabel) {
   });
 
   itin.legs.forEach((leg, idx) => {
-    if (
-      leg.mode === "WALK" ||
-      leg.mode === "BICYCLE" ||
-      leg.mode === "CAR" ||
-      leg.mode === "MICROMOBILITY"
-    ) {
+    if (isAccessMode(leg.mode)) {
       let fromPlaceId;
       if (leg.from.bikeShareId) {
         fromPlaceId = `bicycle_rent_station_${leg.from.bikeShareId}`;
+        // TODO: does this need to change to be OTP2 compatible?
       } else if (leg.from.vertexType === "VEHICLERENTAL") {
         fromPlaceId = `escooter_rent_station_${leg.from.name}`;
       } else if (
@@ -175,15 +168,23 @@ export function itineraryToTransitive(itin, companies, getRouteLabel) {
       });
       tdata.places.push({
         place_id: toPlaceId,
+        // This string is not shown in the UI
         place_name: getPlaceName(leg.to, companies),
         place_lat: leg.to.lat,
         place_lon: leg.to.lon
       });
       streetEdgeId++;
     }
+
     if (isTransit(leg.mode)) {
+      // Flex routes sometimes have the same from and to IDs, but
+      // these stops still need to be rendered separately!
+      if (leg.from.stopId === leg.to.stopId) {
+        leg.to.stopId = `${leg.to.stopId}_flexed_to`;
+      }
       // determine if we have valid inter-stop geometry
       const hasInterStopGeometry = !!leg.interStopGeometry;
+      const hasLegGeometry = !!leg.legGeometry?.points;
       const hasIntermediateStopGeometry =
         hasInterStopGeometry &&
         leg.intermediateStops &&
@@ -193,6 +194,7 @@ export function itineraryToTransitive(itin, companies, getRouteLabel) {
       const ptnId = `ptn_${patternId}`;
       const pattern = {
         pattern_id: ptnId,
+        // This string is not shown in the UI
         pattern_name: `Pattern ${patternId}`,
         route_id: leg.routeId,
         stops: []
@@ -208,7 +210,13 @@ export function itineraryToTransitive(itin, companies, getRouteLabel) {
       pattern.stops.push({ stop_id: leg.from.stopId });
 
       // add intermediate stops to stops dictionary and pattern object
-      if (leg.intermediateStops) {
+      // If there is no intermediateStopGeometry, do not add the intermediate stops
+      // as it will be straight lines instead of the nice legGeometry (but only if
+      // the legGeometry exists).
+      if (
+        leg.intermediateStops &&
+        (hasIntermediateStopGeometry || !hasLegGeometry)
+      ) {
         leg.intermediateStops.forEach((stop, i) => {
           stops[stop.stopId] = {
             stop_id: stop.stopId,
@@ -234,7 +242,8 @@ export function itineraryToTransitive(itin, companies, getRouteLabel) {
       pattern.stops.push({
         stop_id: leg.to.stopId,
         geometry:
-          hasInterStopGeometry &&
+          // Some legs don't have intermediateStopGeometry, but do have valid legGeometry
+          (hasInterStopGeometry || hasLegGeometry) &&
           (hasIntermediateStopGeometry
             ? leg.interStopGeometry[leg.interStopGeometry.length - 1].points
             : leg.legGeometry.points)
@@ -260,12 +269,14 @@ export function itineraryToTransitive(itin, companies, getRouteLabel) {
 
       // add the pattern reference to the journey object
       journey.segments.push({
+        arc:
+          typeof disableFlexArc === "undefined" ? isFlex(leg) : !disableFlexArc,
         type: "TRANSIT",
         patterns: [
           {
             pattern_id: ptnId,
             from_stop_index: 0,
-            to_stop_index: leg.intermediateStops
+            to_stop_index: hasIntermediateStopGeometry
               ? leg.intermediateStops.length + 2 - 1
               : 1
           }

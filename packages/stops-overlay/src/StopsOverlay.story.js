@@ -13,18 +13,17 @@ import { Bus, Subway } from "styled-icons/fa-solid";
 
 import StopsOverlay from ".";
 import mockStops from "../__mocks__/stops.json";
+import mockFlexStops from "../__mocks__/flex-stops.json";
 import DefaultStopMarker from "./default-stop-marker";
 
 import "../../../node_modules/leaflet/dist/leaflet.css";
 
 const center = [45.523092, -122.671202];
-const languageConfig = { stopViewer: "View Stop" };
 const refreshStopsAction = action("refreshStops");
 
 function ExampleMarker({ entity: stop }) {
   return (
     <DefaultStopMarker
-      languageConfig={languageConfig}
       setLocation={action("setLocation")}
       setViewedStop={action("setViewedStop")}
       stop={stop}
@@ -44,23 +43,33 @@ class Example extends Component {
     };
   }
 
+  componentDidMount = () => {
+    const { stops } = this.props;
+    this.setState({ stops });
+  };
+
   refreshStops = bounds => {
-    const stops = mockStops.filter(
+    const { filterStops, stops } = this.props;
+    const filteredStops = stops.filter(
       stop =>
         stop.lat < bounds.maxLat &&
         stop.lat > bounds.minLat &&
         stop.lon < bounds.maxLon &&
         stop.lon > bounds.minLon
     );
-    this.setState({ stops });
+    if (filterStops) {
+      this.setState({ stops: filteredStops });
+    } else {
+      this.setState({ stops });
+    }
     refreshStopsAction();
   };
 
   render() {
-    const { symbols } = this.props;
+    const { mapCenter, symbols } = this.props;
     const { stops } = this.state;
     return (
-      <BaseMap center={center}>
+      <BaseMap center={mapCenter}>
         <StopsOverlay
           name="Transit Stops"
           refreshStops={this.refreshStops}
@@ -74,10 +83,16 @@ class Example extends Component {
 }
 
 Example.propTypes = {
+  filterStops: PropTypes.bool,
+  mapCenter: [PropTypes.number, PropTypes.number],
+  stops: PropTypes.arrayOf(PropTypes.object),
   symbols: PropTypes.arrayOf(zoomBasedSymbolType)
 };
 
 Example.defaultProps = {
+  filterStops: true,
+  mapCenter: center,
+  stops: mockStops,
   symbols: [
     {
       minZoom: 15,
@@ -123,3 +138,17 @@ export default {
 export const Default = () => <Example />;
 
 export const WithCustomMarkers = () => <Example symbols={customSymbols} />;
+
+export const FlexStops = () => (
+  <Example
+    filterStops={false}
+    mapCenter={[33.85, -84.61]}
+    stops={mockFlexStops}
+    symbols={[
+      {
+        minZoom: 5,
+        symbol: ExampleMarker
+      }
+    ]}
+  />
+);

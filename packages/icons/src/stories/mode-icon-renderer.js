@@ -1,6 +1,6 @@
 import React from "react";
 
-import IconRenderer from "./icon-renderer";
+import IconRenderer from "../icon-renderer";
 
 const exampleModes = [
   "BICYCLE",
@@ -12,6 +12,7 @@ const exampleModes = [
   "GONDOLA",
   "MICROMOBILITY",
   "MICROMOBILITY_RENT",
+  "SCOOTER",
   "RAIL",
   "STREETCAR",
   "SUBWAY",
