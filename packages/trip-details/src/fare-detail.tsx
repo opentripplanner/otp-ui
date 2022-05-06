@@ -6,21 +6,18 @@ import styled from "styled-components";
 import { FormattedNumber } from "react-intl";
 import { FareDetailsProps } from "./types";
 
-type LegWithFare = Leg & { fares: { [key: string]: { price: Money } } };
-
 interface FareTypeTableProps {
   header: string;
   cols: {
     key: string;
     header: string;
   }[];
-  legs: LegWithFare[];
+  legs: (Leg & { fares: { [key: string]: { price: Money } } })[];
   fareTotals: { [fareKey: string]: Money };
 }
 
 const TableHeader = styled.thead`
   th {
-    max-width: 5ch;
     min-width: 5ch;
     padding: 0.75em 1.5em;
     text-align: center;
