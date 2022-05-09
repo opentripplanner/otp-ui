@@ -8,40 +8,15 @@
 // Example usage for all packages:
 //   node ./validate-i18n.js ../**/src/{,**/}*.{j,t}s{,x} ../**/i18n/*.yml
 
-const fs = require("fs").promises;
-const path = require("path");
-// const yargs = require("yargs/yargs");
-const { load } = require("js-yaml");
 const { extract } = require("@formatjs/cli");
 const flatten = require("flat");
 
-/**
- * Load yaml from a file into a js object
- */
-async function loadYamlFile(filename) {
-  return load(await fs.readFile(filename));
-}
+const { loadYamlFile, sortSourceAndYmlFiles } = require("../lib/util");
 
 /**
  * Checks message ids completeness between code and yml files for all locales in repo.
  */
 async function checkI18n({ sourceFiles, ymlFilesByLocale }) {
-  // const yargsCli = yargs
-  //  .scriptName("validate-i18n")
-  // .usage(" ../trip-details/src/{,**/}*.{j,t}s{,x} ../trip-details/i18n/*.yml")
-  /*
-    .demandCommand(1, 1, 'Must provide directory of config files for OTP deployment (e.g., ./deploy.js trimet/)')
-    .option('install', {
-      default: 'true',
-      description: 'skip installation of node_modules',
-      type: 'boolean'
-    })
-    */
-  //  .help();
-  // const args = yargsCli.argv;
-  // Get config folder from single non-hyphenated arg.
-  // const configFolder = yargsCli.argv._[0];
-
   // Filter out glob patterns, private (/__) folders, and .d.ts types-only files.
   sourceFiles = sourceFiles.filter(
     f => !f.includes("*") && !f.includes("/__") && !f.endsWith(".d.ts")
@@ -103,32 +78,4 @@ async function checkI18n({ sourceFiles, ymlFilesByLocale }) {
   }
 }
 
-/**
- * Helper function that sorts yml and source files into two buckets.
- * @returns A composite object with a list for yml files, and a list for source files.
- */
-function sortSourceAndYmlFiles() {
-  const sourceFiles = [];
-  const ymlFilesByLocale = {};
-
-  for (let i = 2; i < process.argv.length; i++) {
-    const arg = process.argv[i];
-    const parsedArg = path.parse(arg);
-    if (parsedArg.ext === ".yml") {
-      const locale = parsedArg.name;
-      if (!ymlFilesByLocale[locale]) {
-        ymlFilesByLocale[locale] = [];
-      }
-      ymlFilesByLocale[locale].push(arg);
-    } else {
-      sourceFiles.push(arg);
-    }
-  }
-
-  return {
-    sourceFiles,
-    ymlFilesByLocale
-  };
-}
-
-checkI18n(sortSourceAndYmlFiles());
+checkI18n(sortSourceAndYmlFiles(process.argv));

@@ -3,18 +3,10 @@
  * This script collects all i18n messages and create a formatted output.
  */
 
-const fs = require("fs").promises;
-const path = require("path");
-const { load } = require("js-yaml");
-const { extract } = require("@formatjs/cli");
-const flatten = require("flat");
+import { extract } from "@formatjs/cli";
+import flatten from "flat";
 
-/**
- * Load yaml from a file into a js object
- */
-async function loadYamlFile(filename) {
-  return load(await fs.readFile(filename));
-}
+import { loadYamlFile, sortSourceAndYmlFiles } from "./util";
 
 /**
  * Collect all messages and create a formatted output.
@@ -37,7 +29,7 @@ async function collectAndPrintOutMessages({ sourceFiles, ymlFilesByLocale }) {
     let allI18nMessagesFlattened = {};
 
     allI18nMessages.forEach(i18nMessages => {
-      const flattenedMessages = flatten(i18nMessages);
+      const flattenedMessages: Record<string, string> = flatten(i18nMessages);
       allI18nMessagesFlattened = {
         ...allI18nMessagesFlattened,
         ...flattenedMessages
@@ -53,32 +45,4 @@ async function collectAndPrintOutMessages({ sourceFiles, ymlFilesByLocale }) {
   });
 }
 
-/**
- * Helper function that sorts yml and source files into two buckets.
- * @returns A composite object with a list for yml files, and a list for source files.
- */
-function sortSourceAndYmlFiles() {
-  const sourceFiles = [];
-  const ymlFilesByLocale = {};
-
-  for (let i = 2; i < process.argv.length; i++) {
-    const arg = process.argv[i];
-    const parsedArg = path.parse(arg);
-    if (parsedArg.ext === ".yml") {
-      const locale = parsedArg.name;
-      if (!ymlFilesByLocale[locale]) {
-        ymlFilesByLocale[locale] = [];
-      }
-      ymlFilesByLocale[locale].push(arg);
-    } else {
-      sourceFiles.push(arg);
-    }
-  }
-
-  return {
-    sourceFiles,
-    ymlFilesByLocale
-  };
-}
-
-collectAndPrintOutMessages(sortSourceAndYmlFiles());
+collectAndPrintOutMessages(sortSourceAndYmlFiles(process.argv));
