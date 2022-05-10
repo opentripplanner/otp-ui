@@ -110,10 +110,17 @@ export function itineraryToTransitive(
   itin.legs.forEach((leg, idx) => {
     if (isAccessMode(leg.mode)) {
       let fromPlaceId;
-      if (leg.from.bikeShareId) {
+      if (
+        leg.from.bikeShareId &&
+        (leg.mode === "BICYCLE" || leg.mode === "BICYCLE_RENT")
+      ) {
         fromPlaceId = `bicycle_rent_station_${leg.from.bikeShareId}`;
-        // TODO: does this need to change to be OTP2 compatible?
-      } else if (leg.from.vertexType === "VEHICLERENTAL") {
+      } else if (
+        // OTP1 case
+        leg.from.vertexType === "VEHICLERENTAL" ||
+        // OTP2 case
+        (leg.from.bikeShareId && leg.mode === "SCOOTER")
+      ) {
         fromPlaceId = `escooter_rent_station_${leg.from.name}`;
       } else if (
         leg.mode === "CAR" &&

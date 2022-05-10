@@ -185,7 +185,9 @@ export default function LineColumnContent({
     legBadge = <StackedCircle size={17} color="red" />;
   } else if (
     leg.from.vertexType === "VEHICLERENTAL" ||
-    (lastLeg.from.vertexType === "VEHICLERENTAL" && leg.mode === "WALK")
+    leg.from.vertexType === "BIKESHARE" ||
+    (lastLeg.from.vertexType === "VEHICLERENTAL" && leg.mode === "WALK") ||
+    (lastLeg.from.vertexType === "BIKESHARE" && leg.mode === "WALK")
   ) {
     // start or end of a vehicle rental leg (not including origin or
     // destination)

@@ -1,8 +1,9 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
-import { Place, TimeOptions } from "@opentripplanner/types";
+import { Place } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
+import { FormattedTime } from "react-intl";
 import { action } from "@storybook/addon-actions";
 import styled from "styled-components";
 import { ExclamationTriangle } from "@styled-icons/fa-solid/ExclamationTriangle";
@@ -16,10 +17,6 @@ import {
   TransitLegSummaryProps
 } from "../types";
 
-type TimeColumnProps = TimeColumnContentProps & {
-  timeOptions: TimeOptions;
-};
-
 export function CustomPlaceName({ place }: { place: Place }): string {
   return `🎉✨🎊 ${place.name} 🎉✨🎊`;
 }
@@ -30,16 +27,15 @@ export function CustomPlaceName({ place }: { place: Place }): string {
  */
 export function CustomTimeColumnContent({
   isDestination,
-  leg,
-  timeOptions
-}: TimeColumnProps): ReactElement {
+  leg
+}: TimeColumnContentProps): ReactElement {
   const time = isDestination ? leg.endTime : leg.startTime;
 
   return (
     <>
       <div>
         <span style={{ color: "#E60000" }}>
-          {time && coreUtils.time.formatTime(time, timeOptions)}
+          <FormattedTime value={time} />
         </span>
       </div>
       <div style={{ fontSize: "80%", lineHeight: "1em" }}>

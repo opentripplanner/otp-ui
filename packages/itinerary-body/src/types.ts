@@ -8,7 +8,6 @@ import {
   Leg,
   LegIconComponent,
   Place,
-  TimeOptions,
   TransitOperator
 } from "@opentripplanner/types";
 
@@ -192,11 +191,8 @@ interface ItineraryBodySharedProps {
    * This component is sent the following props:
    * - isDestination - whether this place is the destination
    * - leg - the current leg
-   * - timeOptions - options for formatting time.
    */
   TimeColumnContent?: FunctionComponent<TimeColumnContentProps>;
-  /** Contains the preferred format string for time display and a timezone offset */
-  timeOptions?: TimeOptions;
   /** Converts a route's ID to its accepted badge abbreviation */
   toRouteAbbreviation?: ToRouteAbbreviationFunction;
   /**

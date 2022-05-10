@@ -1,9 +1,4 @@
-import {
-  Config,
-  Leg,
-  LegIconComponent,
-  TimeOptions
-} from "@opentripplanner/types";
+import { Config, Leg, LegIconComponent } from "@opentripplanner/types";
 import React, { Component, ReactElement } from "react";
 import { VelocityTransitionGroup } from "velocity-react";
 import { Duration } from "../defaults";
@@ -35,7 +30,6 @@ interface Props {
   setLegDiagram: (leg: Leg) => void;
   showElevationProfile: boolean;
   showLegIcon: boolean;
-  timeOptions?: TimeOptions;
 }
 
 interface State {
@@ -74,8 +68,7 @@ class AccessLegBody extends Component<Props, State> {
       mapillaryKey,
       setLegDiagram,
       showElevationProfile,
-      showLegIcon,
-      timeOptions
+      showLegIcon
     } = this.props;
     const { expanded } = this.state;
 
@@ -88,7 +81,6 @@ class AccessLegBody extends Component<Props, State> {
           LegIcon={LegIcon}
           onSummaryClick={this.onSummaryClick}
           showLegIcon={showLegIcon}
-          timeOptions={timeOptions}
         />
       );
     }

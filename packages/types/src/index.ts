@@ -398,6 +398,7 @@ export interface StopLayerStop extends LayerEntity {
 }
 
 /**
+ * @deprecated
  * Describes time options, including time format and timezone-related offset.
  */
 export interface TimeOptions {
