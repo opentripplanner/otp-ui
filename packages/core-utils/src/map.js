@@ -115,12 +115,14 @@ export function itineraryToTransitive(
         (leg.mode === "BICYCLE" || leg.mode === "BICYCLE_RENT")
       ) {
         fromPlaceId = `bicycle_rent_station_${leg.from.bikeShareId}`;
-      } else if (
-        // OTP1 case
-        leg.from.vertexType === "VEHICLERENTAL" ||
-        // OTP2 case
-        (leg.from.bikeShareId && leg.mode === "SCOOTER")
-      ) {
+        if (
+          // OTP2 Scooter case
+          leg.mode === "SCOOTER"
+        ) {
+          fromPlaceId = `escooter_rent_station_${leg.from.name}`;
+        }
+        // OTP1 Scooter case
+      } else if (leg.from.vertexType === "VEHICLERENTAL") {
         fromPlaceId = `escooter_rent_station_${leg.from.name}`;
       } else if (
         leg.mode === "CAR" &&
