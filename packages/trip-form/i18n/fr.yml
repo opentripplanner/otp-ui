@@ -24,8 +24,6 @@ otpUi:
     optimizeBikeFriendly: plus pratiques à vélo
     optimizeBikeSpeed: plus rapides
     optimizeFor: Privilégier les trajets
-    optimizeQuick: plus rapides
-    optimizeTransfers: avec moins de correspondances
     speedInMilesPerHour: "{mph} mi/h"
     walkSpeed: Vitesse à pied
     watts: Puissance de la trottinette électrique

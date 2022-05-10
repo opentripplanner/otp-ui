@@ -19,13 +19,11 @@ import DefaultStopMarker from "./default-stop-marker";
 import "../../../node_modules/leaflet/dist/leaflet.css";
 
 const center = [45.523092, -122.671202];
-const languageConfig = { stopViewer: "View Stop" };
 const refreshStopsAction = action("refreshStops");
 
 function ExampleMarker({ entity: stop }) {
   return (
     <DefaultStopMarker
-      languageConfig={languageConfig}
       setLocation={action("setLocation")}
       setViewedStop={action("setViewedStop")}
       stop={stop}

@@ -45,7 +45,6 @@ export default function PlaceRow({
   showMapButtonColumn,
   showViewTripButton,
   TimeColumnContent = DefaultTimeColumnContent,
-  timeOptions,
   toRouteAbbreviation,
   TransitLegSubheader,
   TransitLegSummary
@@ -140,7 +139,6 @@ export default function PlaceRow({
                 setLegDiagram={setLegDiagram}
                 showElevationProfile={showElevationProfile}
                 showLegIcon={showLegIcon}
-                timeOptions={timeOptions}
               />
             ))}
         </S.PlaceDetails>

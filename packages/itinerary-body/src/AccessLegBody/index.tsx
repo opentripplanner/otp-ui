@@ -1,9 +1,4 @@
-import {
-  Config,
-  Leg,
-  LegIconComponent,
-  TimeOptions
-} from "@opentripplanner/types";
+import { Config, Leg, LegIconComponent } from "@opentripplanner/types";
 import React, { Component, ReactElement } from "react";
 import { VelocityTransitionGroup } from "velocity-react";
 import { Duration } from "../defaults";
@@ -35,7 +30,6 @@ interface Props {
   setLegDiagram: (leg: Leg) => void;
   showElevationProfile: boolean;
   showLegIcon: boolean;
-  timeOptions?: TimeOptions;
 }
 
 interface State {
@@ -74,8 +68,7 @@ class AccessLegBody extends Component<Props, State> {
       mapillaryKey,
       setLegDiagram,
       showElevationProfile,
-      showLegIcon,
-      timeOptions
+      showLegIcon
     } = this.props;
     const { expanded } = this.state;
 
@@ -88,7 +81,6 @@ class AccessLegBody extends Component<Props, State> {
           LegIcon={LegIcon}
           onSummaryClick={this.onSummaryClick}
           showLegIcon={showLegIcon}
-          timeOptions={timeOptions}
         />
       );
     }
@@ -96,7 +88,7 @@ class AccessLegBody extends Component<Props, State> {
     return (
       <>
         {/* Place subheading: rented vehicle (e.g., scooter, bike, car)
-          pickup */}
+ pickup */}
         {leg && (leg.rentedVehicle || leg.rentedBike || leg.rentedCar) && (
           <RentedVehicleSubheader config={config} leg={leg} />
         )}
@@ -108,37 +100,40 @@ class AccessLegBody extends Component<Props, State> {
             onSummaryClick={this.onSummaryClick}
             showLegIcon={showLegIcon}
           />
-          <S.StepsHeader
-            aria-expanded={expanded}
-            onClick={this.onStepsHeaderClick}
-          >
-            <Duration seconds={leg.duration} />
-            {leg.steps && <S.CaretToggle expanded={expanded} />}
-          </S.StepsHeader>
-          <MapillaryButton
-            coords={leg.from}
-            clickCallback={mapillaryCallback}
-            mapillaryKey={mapillaryKey}
-            padTop
-          />
-          <LegDiagramPreview
-            diagramVisible={diagramVisible}
-            leg={leg}
-            setLegDiagram={setLegDiagram}
-            showElevationProfile={showElevationProfile}
-          />
-          <VelocityTransitionGroup
-            enter={{ animation: "slideDown" }}
-            leave={{ animation: "slideUp" }}
-          >
-            {expanded && (
-              <AccessLegSteps
-                steps={leg.steps}
-                mapillaryCallback={mapillaryCallback}
+          <S.LegDetails>
+            <S.StepsHeaderAndMapLink>
+              <S.StepsHeader
+                aria-expanded={expanded}
+                onClick={this.onStepsHeaderClick}
+              >
+                <Duration seconds={leg.duration} />
+                {leg.steps && <S.CaretToggle expanded={expanded} />}
+              </S.StepsHeader>
+              <MapillaryButton
+                clickCallback={mapillaryCallback}
+                coords={leg.from}
                 mapillaryKey={mapillaryKey}
               />
-            )}
-          </VelocityTransitionGroup>
+            </S.StepsHeaderAndMapLink>
+            <LegDiagramPreview
+              diagramVisible={diagramVisible}
+              leg={leg}
+              setLegDiagram={setLegDiagram}
+              showElevationProfile={showElevationProfile}
+            />
+            <VelocityTransitionGroup
+              enter={{ animation: "slideDown" }}
+              leave={{ animation: "slideUp" }}
+            >
+              {expanded && (
+                <AccessLegSteps
+                  mapillaryCallback={mapillaryCallback}
+                  mapillaryKey={mapillaryKey}
+                  steps={leg.steps}
+                />
+              )}
+            </VelocityTransitionGroup>
+          </S.LegDetails>
         </S.LegBody>
       </>
     );

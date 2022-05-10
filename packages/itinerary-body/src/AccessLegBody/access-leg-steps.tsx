@@ -38,7 +38,6 @@ export default function AccessLegSteps({
                 clickCallback={mapillaryCallback}
                 coords={{ lat, lon }}
                 mapillaryKey={mapillaryKey}
-                padLeft
               />
             </S.StepDescriptionContainer>
           </S.StepRow>
