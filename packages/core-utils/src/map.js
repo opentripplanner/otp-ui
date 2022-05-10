@@ -128,13 +128,18 @@ export function itineraryToTransitive(
       ) {
         // create a special place ID for car legs preceded by walking legs
         fromPlaceId = `itin_car_${streetEdgeId}_from`;
-      } else {
+      } else if (!fromPlaceId) {
         fromPlaceId = `itin_street_${streetEdgeId}_from`;
       }
 
       let toPlaceId;
       if (leg.to.bikeShareId) {
         toPlaceId = `bicycle_rent_station_${leg.to.bikeShareId}`;
+        // OTP2 scooter case
+        // Need to check next leg since this is a "to" place "
+        if (leg.mode === "SCOOTER" || itin.legs?.[idx + 1].mode === "SCOOTER") {
+          toPlaceId = `escooter_rent_station_${leg.to.bikeShareId}`;
+        }
       } else if (leg.to.vertexType === "VEHICLERENTAL") {
         toPlaceId = `escooter_rent_station_${leg.to.name}`;
       } else if (
@@ -144,7 +149,7 @@ export function itineraryToTransitive(
       ) {
         // create a special place ID for car legs followed by walking legs
         toPlaceId = `itin_car_${streetEdgeId}_to`;
-      } else {
+      } else if (!toPlaceId) {
         toPlaceId = `itin_street_${streetEdgeId}_to`;
       }
 
