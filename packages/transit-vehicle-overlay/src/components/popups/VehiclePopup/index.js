@@ -1,11 +1,12 @@
 import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 import PropTypes from "prop-types";
+import { FormattedDate, FormattedMessage } from "react-intl";
 import { Popup } from "react-leaflet";
 
 import { PopupStyle } from "../styled";
 import VehicleTracker from "../vehicle-tracker";
-import { linterIgnoreTheseProps } from "../../../utils";
+import { defaultMessages, linterIgnoreTheseProps } from "../../../utils";
 
 const { formatDurationWithSeconds } = coreUtils.time;
 
@@ -13,44 +14,150 @@ const { formatDurationWithSeconds } = coreUtils.time;
  * view component for vehicle marker popup
  * content is derived from the vehicle record
  */
-export default function VehiclePopup(props) {
-  const { vehicle, isTracked, setTracked } = props;
-
-  let status = "unknown";
-  if (vehicle.status === "IN_TRANSIT_TO") {
-    status = `en-route to stop #${vehicle.stopId}`;
-  } else if (vehicle.status === "STOPPED_AT") {
-    if (vehicle.stopSequence === 1) {
-      status = `start route at stop #${vehicle.stopId}`;
+export default function VehiclePopup({ isTracked, setTracked, vehicle }) {
+  const {
+    blockId,
+    reportDate,
+    routeLongName,
+    seconds,
+    status,
+    stopId,
+    stopSequence,
+    tripId,
+    vehicleId
+  } = vehicle;
+  let displayedStatus;
+  if (status === "IN_TRANSIT_TO") {
+    displayedStatus = (
+      <FormattedMessage
+        defaultMessage={
+          defaultMessages["otpUi.TransitVehicleOverlay.statusEnRoute"]
+        }
+        description="Text shown for a moving transit vehicle"
+        id="otpUi.TransitVehicleOverlay.statusEnRoute"
+        values={{ stopId }}
+      />
+    );
+  } else if (status === "STOPPED_AT") {
+    if (stopSequence === 1) {
+      displayedStatus = (
+        <FormattedMessage
+          defaultMessage={
+            defaultMessages["otpUi.TransitVehicleOverlay.statusAtStart"]
+          }
+          description="Text shown for a transit vehicle at the beginning of the line"
+          id="otpUi.TransitVehicleOverlay.statusAtStart"
+          values={{ stopId }}
+        />
+      );
     } else {
-      status = `at stop #${vehicle.stopId}`;
+      displayedStatus = (
+        <FormattedMessage
+          defaultMessage={
+            defaultMessages["otpUi.TransitVehicleOverlay.statusAtStop"]
+          }
+          description="Text shown for a transit vehicle stopped at a stop"
+          id="otpUi.TransitVehicleOverlay.statusAtStop"
+          values={{ stopId }}
+        />
+      );
     }
+  } else {
+    displayedStatus = (
+      <FormattedMessage
+        defaultMessage={
+          defaultMessages["otpUi.TransitVehicleOverlay.statusUnknown"]
+        }
+        description="Text shown for an unknown status"
+        id="otpUi.TransitVehicleOverlay.statusUnknown"
+      />
+    );
   }
 
-  let vid = "";
-  if (vehicle.vehicleId.indexOf("+") > 0) {
-    vid = `Vehicles: ${vehicle.vehicleId.replace(/\+/g, ", ")}`;
-  } else {
-    vid = `Vehicle: ${vehicle.vehicleId}`;
-  }
+  const isMultipleVehicles = vehicleId.indexOf("+") > 0;
+  const vehicleMessageValues = isMultipleVehicles
+    ? {
+        count: 2,
+        // TODO: ideally you would want to use the equivalent of the comma of the desired language.
+        vehicleIds: vehicleId.replace(/\+/g, ", ")
+      }
+    : {
+        count: 1,
+        vehicleIds: vehicleId
+      };
 
   return (
     <Popup>
       <PopupStyle>
-        <PopupStyle.Title>{vehicle.routeLongName}</PopupStyle.Title>
+        <PopupStyle.Title>{routeLongName}</PopupStyle.Title>
         <PopupStyle.Span>
-          Last seen: {formatDurationWithSeconds(vehicle.seconds)} ago
+          <FormattedMessage
+            defaultMessage={
+              defaultMessages["otpUi.TransitVehicleOverlay.lastSeen"]
+            }
+            description="Text describing how long ago a transit vehicle last reported its status"
+            id="otpUi.TransitVehicleOverlay.lastSeen"
+            values={{
+              durationText: (
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages["otpUi.TransitVehicleOverlay.durationAgo"]
+                  }
+                  description="Text describing a past duration"
+                  id="otpUi.TransitVehicleOverlay.durationAgo"
+                  values={{
+                    // FIXME: also localize formatDurationWithSeconds
+                    duration: formatDurationWithSeconds(seconds)
+                  }}
+                />
+              )
+            }}
+          />
         </PopupStyle.Span>
-        <PopupStyle.Span>Date: {vehicle.reportDate}</PopupStyle.Span>
-        <PopupStyle.Span>Status: {status} </PopupStyle.Span>
         <PopupStyle.Span>
-          Trip: {vehicle.tripId}, Block: {vehicle.blockId}
+          <FormattedMessage
+            defaultMessage={defaultMessages["otpUi.TransitVehicleOverlay.date"]}
+            description="Text describing when a transit vehicle last reported its status"
+            id="otpUi.TransitVehicleOverlay.date"
+            values={{
+              date: <FormattedDate value={reportDate} />
+            }}
+          />
         </PopupStyle.Span>
-        <PopupStyle.Span>{vid}</PopupStyle.Span>
+        <PopupStyle.Span>
+          <FormattedMessage
+            defaultMessage={
+              defaultMessages["otpUi.TransitVehicleOverlay.status"]
+            }
+            description="Text describing the status of a transit vehicle"
+            id="otpUi.TransitVehicleOverlay.status"
+            values={{ status: displayedStatus }}
+          />
+        </PopupStyle.Span>
+        <PopupStyle.Span>
+          <FormattedMessage
+            defaultMessage={
+              defaultMessages["otpUi.TransitVehicleOverlay.tripAndBlockIds"]
+            }
+            description="Text showing a transit vehicle trip and block ids"
+            id="otpUi.TransitVehicleOverlay.tripAndBlockIds"
+            values={{ blockId, tripId }}
+          />
+        </PopupStyle.Span>
+        <PopupStyle.Span>
+          <FormattedMessage
+            defaultMessage={
+              defaultMessages["otpUi.TransitVehicleOverlay.vehicleIds"]
+            }
+            description="Displays transit vehicle numbers"
+            id="otpUi.TransitVehicleOverlay.vehicleIds"
+            values={vehicleMessageValues}
+          />
+        </PopupStyle.Span>
         <VehicleTracker
-          vehicle={vehicle}
           isTracked={isTracked}
           setTracked={setTracked}
+          vehicle={vehicle}
         />
       </PopupStyle>
     </Popup>
@@ -58,20 +165,20 @@ export default function VehiclePopup(props) {
 }
 
 VehiclePopup.propTypes = {
-  /** vehicle record - @see: core-utils/types/transitVehicleType */
-  vehicle: coreUtils.types.transitVehicleType,
-
   /** indicate if this vehicle is being tracked, */
   isTracked: PropTypes.bool,
 
   /** callback which forwards the vehicle and tracking status from track button */
-  setTracked: PropTypes.func
+  setTracked: PropTypes.func,
+
+  /** vehicle record - @see: core-utils/src/types/transitVehicleType */
+  vehicle: coreUtils.types.transitVehicleType
 };
 
 VehiclePopup.defaultProps = {
-  vehicle: null,
   isTracked: false,
   setTracked: (vehicle, isTracked) => {
     linterIgnoreTheseProps(vehicle, isTracked);
-  }
+  },
+  vehicle: null
 };

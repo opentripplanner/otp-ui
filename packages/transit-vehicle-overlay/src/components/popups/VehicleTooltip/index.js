@@ -1,11 +1,12 @@
 import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 import PropTypes from "prop-types";
+import { FormattedMessage } from "react-intl";
 import { Tooltip } from "react-leaflet";
 import L from "leaflet";
 
 import { TooltipStyle } from "../styled";
-import { linterIgnoreTheseProps } from "../../../utils";
+import { defaultMessages, linterIgnoreTheseProps } from "../../../utils";
 
 const { formatDurationWithSeconds } = coreUtils.time;
 
@@ -14,17 +15,54 @@ export default function VehicleTooltip(props) {
   const { vehicle, isTracked, direction, permanent, offset } = props;
   linterIgnoreTheseProps(isTracked);
 
-  let name = vehicle.routeShortName;
-  if (name !== null && name.length <= 5) {
-    const mode = vehicle.routeType ? vehicle.routeType : "Line";
-    name = `${mode} ${name}`;
+  const { routeShortName, routeType, seconds } = vehicle;
+
+  let name = routeShortName;
+  // This condition avoids processing long route names such as "Portland Streetcar".
+  if (routeShortName?.length <= 5) {
+    name = routeType ? (
+      // This produces text such as "MAX Green", so don't localize.
+      `${routeType} ${routeShortName}`
+    ) : (
+      <FormattedMessage
+        defaultMessage={
+          defaultMessages["otpUi.TransitVehicleOverlay.genericRouteFormat"]
+        }
+        description="Formats a route label"
+        id="otpUi.TransitVehicleOverlay.genericRouteFormat"
+        values={{
+          route: routeShortName
+        }}
+      />
+    );
   }
 
   return (
     <Tooltip permanent={permanent} direction={direction} offset={offset}>
       <TooltipStyle>
-        <TooltipStyle.Title>{name}: </TooltipStyle.Title>
-        {formatDurationWithSeconds(vehicle.seconds)} ago
+        <TooltipStyle.Title>
+          <FormattedMessage
+            defaultMessage={
+              defaultMessages["otpUi.TransitVehicleOverlay.tooltipRouteLabel"]
+            }
+            description="Displays a route label in a tooltip"
+            id="otpUi.TransitVehicleOverlay.tooltipRouteLabel"
+            values={{
+              routeLabel: name
+            }}
+          />
+        </TooltipStyle.Title>
+        <FormattedMessage
+          defaultMessage={
+            defaultMessages["otpUi.TransitVehicleOverlay.durationAgo"]
+          }
+          description="Text describing a past duration"
+          id="otpUi.TransitVehicleOverlay.durationAgo"
+          values={{
+            // FIXME: also localize formatDurationWithSeconds
+            duration: formatDurationWithSeconds(seconds)
+          }}
+        />
       </TooltipStyle>
     </Tooltip>
   );
