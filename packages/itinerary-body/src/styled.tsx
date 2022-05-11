@@ -302,13 +302,17 @@ export const LegDescriptionHeadsignPrefix = styled.span`
  * Lets others apply styles to the mode text in
  * "Bicycle 0.5 miles to City Hall"
  */
-export const LegDescriptionMode = styled.span``;
+export const LegDescriptionMode = styled.span`
+  font-size: inherit;
+`;
 
 /**
  * Lets others apply styles to the place text in
  * "Bicycle 0.5 miles to City Hall"
  */
-export const LegDescriptionPlace = styled.span``;
+export const LegDescriptionPlace = styled.span`
+  font-size: inherit;
+`;
 
 export const LegDescriptionRouteLongName = styled.span`
   font-size: 13px;
