@@ -65,37 +65,44 @@ const MapillaryButton = ({
   coords: { lat: number; lon: number };
   mapillaryKey: string;
 }): JSX.Element => {
-  const [imageId, setImageId] = useState(null);
+  const [imageUrl, setImageUrl] = useState(null);
   const intl = useIntl();
 
   useEffect(() => {
     // useEffect only supports async actions as a child function
-    const getMapillaryId = async () => {
+    const getMapillaryUrl = async () => {
       const bounds = generateBoundingBoxFromCoordinate(coords).join(",");
       const raw = await fetch(
-        `https://graph.mapillary.com/images?fields=id&limit=1&access_token=${mapillaryKey}&bbox=${bounds}`
+        `https://graph.mapillary.com/images?fields=thumb_2048_url&limit=1&access_token=${mapillaryKey}&bbox=${bounds}`
       );
       const json = await raw.json();
+
       if (json?.data?.length > 0) {
-        setImageId(json.data[0].id);
+        const imageRaw = await fetch(
+          `https://graph.mapillary.com/${json.data[0].id}/?fields=thumb_2048_url&access_token=${mapillaryKey}`
+        );
+        const imageJson = await imageRaw.json();
+        if (imageJson?.thumb_2048_url) {
+          setImageUrl(imageJson.thumb_2048_url);
+        }
       }
     };
 
-    if (!imageId && !!mapillaryKey) getMapillaryId();
+    if (!imageUrl && !!mapillaryKey) getMapillaryUrl();
   }, [coords]);
 
   const handleClick = () => {
-    if (clickCallback) clickCallback(imageId);
+    if (clickCallback) clickCallback(imageUrl);
     else {
       window.open(
-        `https://www.mapillary.com/embed?image_key=${imageId}`,
+        `${imageUrl}?access_token=${mapillaryKey}`,
         "_blank",
         "location=no,height=600,width=600,scrollbars=no,status=no"
       );
     }
   };
 
-  if (!imageId) return null;
+  if (!imageUrl) return null;
   return (
     <Container
       onClick={handleClick}
