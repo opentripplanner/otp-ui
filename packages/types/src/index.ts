@@ -465,6 +465,7 @@ export type Route = {
 /**
  * Used to help display the time of day within the context of a particular itinerary.
  * Describes time options, including time format and timezone-related offset.
+ * @deprecated
  */
 export type TimeOptions = {
   /**

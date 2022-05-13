@@ -1,10 +1,5 @@
 import coreUtils from "@opentripplanner/core-utils";
-import {
-  Config,
-  Leg,
-  LegIconComponent,
-  TimeOptions
-} from "@opentripplanner/types";
+import { Config, Leg, LegIconComponent } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage, FormattedNumber } from "react-intl";
 import { Duration } from "../defaults";
@@ -16,26 +11,24 @@ import AccessLegSummary from "./access-leg-summary";
 
 interface Props {
   config: Config;
-  LYFT_CLIENT_ID?: string;
-  UBER_CLIENT_ID?: string;
   followsTransit: boolean;
   leg: Leg;
   LegIcon: LegIconComponent;
+  LYFT_CLIENT_ID?: string;
   onSummaryClick: () => void;
   showLegIcon: boolean;
-  timeOptions: TimeOptions;
+  UBER_CLIENT_ID?: string;
 }
 
 export default function TNCLeg({
   config,
-  LYFT_CLIENT_ID = "",
-  UBER_CLIENT_ID = "",
   followsTransit,
   leg,
   LegIcon,
+  LYFT_CLIENT_ID = "",
   onSummaryClick,
   showLegIcon,
-  timeOptions
+  UBER_CLIENT_ID = ""
 }: Props): ReactElement {
   const universalLinks = {
     UBER: `https://m.uber.com/${
@@ -108,10 +101,8 @@ export default function TNCLeg({
                     description="Hint text to book a ride at a later time."
                     id="otpUi.AccessLegBody.TncLeg.bookRideLater"
                     values={{
-                      timeMillis: coreUtils.time.offsetTime(
-                        leg.startTime - tncData.estimatedArrival * 1000,
-                        timeOptions
-                      )
+                      timeMillis:
+                        leg.startTime - tncData.estimatedArrival * 1000
                     }}
                   />
                 </S.BookLaterText>

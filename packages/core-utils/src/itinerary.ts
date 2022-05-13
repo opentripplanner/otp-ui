@@ -6,8 +6,7 @@ import {
   FlexBookingInfo,
   Itinerary,
   Leg,
-  Step,
-  TncFare
+  Step
 } from "@opentripplanner/types";
 import turfAlong from "@turf/along";
 
@@ -19,6 +18,7 @@ import {
   getStepDirection,
   getStepInstructions,
   getStepStreetName,
+  getTimeZoneOffset,
   getTransitFare
 } from "./deprecated";
 
@@ -30,6 +30,7 @@ export {
   getStepDirection,
   getStepInstructions,
   getStepStreetName,
+  getTimeZoneOffset,
   getTransitFare
 };
 
@@ -443,21 +444,7 @@ export function calculatePhysicalActivity(
   };
 }
 
-export function getTimeZoneOffset(itinerary: Itinerary): number {
-  if (!itinerary.legs || !itinerary.legs.length) return 0;
-
-  // Determine if there is a DST offset between now and the itinerary start date
-  const dstOffset =
-    new Date(itinerary.startTime).getTimezoneOffset() -
-    new Date().getTimezoneOffset();
-
-  return (
-    itinerary.legs[0].agencyTimeZoneOffset +
-    (new Date().getTimezoneOffset() + dstOffset) * 60000
-  );
-}
-
-export function calculateTncFares(itinerary: Itinerary): TncFare {
+export function calculateTncFares(itinerary) {
   // TODO: don't rely on deprecated methods!
   // At the moment this is safe as none of these exported variables contain strings
   const { maxTNCFare, minTNCFare, tncCurrencyCode } = calculateFares(

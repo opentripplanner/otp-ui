@@ -1,16 +1,30 @@
 // Removed as core-utils is typescripted. TODO: Remove when typescripting!
 /* eslint-disable react/forbid-prop-types */
 import React from "react";
+import { FormattedMessage } from "react-intl";
 import PropTypes from "prop-types";
+
+import { defaultMessages } from "../../utils";
 
 import * as S from "./styled";
 
 /**
  * presentational component for tracking button on marker popup
  */
-export default function VehicleTracker(props) {
-  const { vehicle, isTracked, setTracked } = props;
-  const text = isTracked ? "Stop Tracking" : "Track Vehicle";
+export default function VehicleTracker({ vehicle, isTracked, setTracked }) {
+  const text = isTracked ? (
+    <FormattedMessage
+      defaultMessage={defaultMessages["otpUi.TransitVehicleOverlay.trackStop"]}
+      description="Prompt to stop tracking a vehicle."
+      id="otpUi.TransitVehicleOverlay.trackStop"
+    />
+  ) : (
+    <FormattedMessage
+      defaultMessage={defaultMessages["otpUi.TransitVehicleOverlay.trackStart"]}
+      description="Prompt to start tracking a vehicle."
+      id="otpUi.TransitVehicleOverlay.trackStart"
+    />
+  );
   const cls = isTracked ? "active" : "";
 
   const handleClick = () => {

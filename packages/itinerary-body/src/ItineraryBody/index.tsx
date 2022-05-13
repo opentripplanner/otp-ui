@@ -37,7 +37,6 @@ const ItineraryBody = ({
   showRouteFares,
   showViewTripButton,
   TimeColumnContent,
-  timeOptions,
   toRouteAbbreviation = defaultRouteAbbr,
   TransitLegSubheader,
   TransitLegSummary
@@ -89,7 +88,6 @@ const ItineraryBody = ({
           showMapButtonColumn={showMapButtonColumn}
           showViewTripButton={showViewTripButton}
           TimeColumnContent={TimeColumnContent}
-          timeOptions={timeOptions}
           toRouteAbbreviation={toRouteAbbreviation}
           TransitLegSubheader={TransitLegSubheader}
           TransitLegSummary={TransitLegSummary}
