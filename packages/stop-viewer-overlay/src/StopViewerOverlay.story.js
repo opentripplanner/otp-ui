@@ -26,6 +26,7 @@ function CustomMarker({ stop }) {
 }
 
 CustomMarker.propTypes = {
+  // Typescript TODO: restore correct type ?
   // stop: coreUtils.types.stopLayerStopType.isRequired
   stop: PropTypes.object.isRequired
 };

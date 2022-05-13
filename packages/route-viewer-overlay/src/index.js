@@ -131,6 +131,7 @@ RouteViewerOverlay.propTypes = {
    *
    * See https://leafletjs.com/reference-1.6.0.html#path
    */
+  // Typescript TODO: restore correct type ?
   // path: coreUtils.types.leafletPathType,
   /**
    * This represents data about a route as obtained from a transit index.
@@ -141,6 +142,7 @@ RouteViewerOverlay.propTypes = {
     color: PropTypes.string,
     patterns: PropTypes.objectOf(
       PropTypes.shape({
+        // Typescript TODO: restore correct type ?
         // geometry: coreUtils.types.encodedPolylineType,
         id: PropTypes.string.isRequired,
         stops: PropTypes.arrayOf(
