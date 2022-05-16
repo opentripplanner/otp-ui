@@ -19583,10 +19583,10 @@ tr46@^1.0.1:
   dependencies:
     punycode "^2.1.0"
 
-transitive-js@^0.13.7:
-  version "0.13.7"
-  resolved "https://registry.yarnpkg.com/transitive-js/-/transitive-js-0.13.7.tgz#d95f1ffa0dfac5c0daed5061db7b62c69062f1c0"
-  integrity sha512-eaHeP1SppQzhZHMYNd3wKf+PFBSYtUE7T89zNTvtbENOWzcIXvvoNBDs0FIs38av9qiv8OmmA/7nqVgNX1cy9A==
+transitive-js@^0.14.1:
+  version "0.14.1"
+  resolved "https://registry.yarnpkg.com/transitive-js/-/transitive-js-0.14.1.tgz#0826ad3cc3b5cc950266ca8031e264974eae9124"
+  integrity sha512-jWtOEhSoiNZq1iwfjNSevampZNMYuOnpxwxib/UZ6mk68pRtwffZ4auN9bRqyuQ4R36msOSm61ZKdNXs2fgxkA==
   dependencies:
     augment "4.3.0"
     component-each "0.2.6"
