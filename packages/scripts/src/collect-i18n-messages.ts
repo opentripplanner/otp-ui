@@ -12,11 +12,6 @@ import { loadYamlFile, sortSourceAndYmlFiles } from "./util";
  * Collect all messages and create a formatted output.
  */
 async function collectAndPrintOutMessages({ sourceFiles, ymlFilesByLocale }) {
-  // Filter out glob patterns, private (/__) folders, and .d.ts types-only files.
-  sourceFiles = sourceFiles.filter(
-    f => !f.includes("*") && !f.includes("/__") && !f.endsWith(".d.ts")
-  );
-
   // Gather message ids from code.
   const messagesFromCode = JSON.parse(await extract(sourceFiles, {}));
   const messageIdsFromCode = Object.keys(messagesFromCode);
@@ -40,7 +35,8 @@ async function collectAndPrintOutMessages({ sourceFiles, ymlFilesByLocale }) {
     console.log(`ID,Description,${locale}`);
     messageIdsFromCode.forEach(id => {
       const { description } = messagesFromCode[id];
-      console.log(`${id},"${description}","${allI18nMessagesFlattened[id]}"`);
+      const message = allI18nMessagesFlattened[id].trim();
+      console.log(`${id},"${description}","${message}"`);
     });
   });
 }

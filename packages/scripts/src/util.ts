@@ -24,15 +24,22 @@ export function sortSourceAndYmlFiles(
   // - argv[2] and beyond are the parameters passed to the script.
   for (let i = 2; i < argv.length; i++) {
     const arg = argv[i];
-    const parsedArg = path.parse(arg);
-    if (parsedArg.ext === ".yml") {
-      const locale = parsedArg.name;
-      if (!ymlFilesByLocale[locale]) {
-        ymlFilesByLocale[locale] = [];
+    if (
+      !arg.includes("*") &&
+      !arg.includes("/__") &&
+      !arg.includes("node_modules") &&
+      !arg.endsWith(".d.ts")
+    ) {
+      const parsedArg = path.parse(arg);
+      if (parsedArg.ext === ".yml") {
+        const locale = parsedArg.name;
+        if (!ymlFilesByLocale[locale]) {
+          ymlFilesByLocale[locale] = [];
+        }
+        ymlFilesByLocale[locale].push(arg);
+      } else {
+        sourceFiles.push(arg);
       }
-      ymlFilesByLocale[locale].push(arg);
-    } else {
-      sourceFiles.push(arg);
     }
   }
 

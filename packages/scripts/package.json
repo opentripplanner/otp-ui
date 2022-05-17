@@ -10,11 +10,11 @@
   "author": "Binh Dam",
   "license": "MIT",
   "private": false,
-  "devDependencies": {
+  "dependencies": {
     "@formatjs/cli": "^4.2.33",
     "flat": "^5.0.2",
-    "js-yaml": "^4.1.0",
-    "yargs": "^17.1.1"
+    "glob": "^8.0.1",
+    "js-yaml": "^4.1.0"
   },
   "scripts": {
     "collect-i18n": "node lib/collect-i18n-messages.js ../**/src/{,**/}*.{j,t}s{,x} ../**/i18n/en-US.yml > i18n.csv",
