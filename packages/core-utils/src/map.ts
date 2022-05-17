@@ -4,7 +4,8 @@ import {
   Itinerary,
   Company,
   TransitiveData,
-  Leg
+  Leg,
+  LatLngArray
 } from "@opentripplanner/types";
 import {
   getPlaceName,
@@ -338,7 +339,7 @@ export function isValidLng(lng: number): boolean {
   return Number.isFinite(lng) && lng >= -180 && lng <= 180;
 }
 
-export function isValidLatLng(arr: [number, number]): boolean {
+export function isValidLatLng(arr: LatLngArray): boolean {
   return (
     Array.isArray(arr) &&
     arr.length === 2 &&

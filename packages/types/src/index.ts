@@ -5,6 +5,8 @@
 
 import React, { FunctionComponent, ReactElement } from "react";
 
+type ZeroOrOne = 0 | 1;
+
 /**
  * Shape for a transportation company.
  */
@@ -412,6 +414,11 @@ export type Location = {
 };
 
 /**
+ * Alias for a commonly used basic type
+ */
+export type LatLngArray = [number, number];
+
+/**
  * Describes a transit stop entity to be rendered on the map.
  */
 export type StopLayerStop = LayerEntity & {
@@ -426,8 +433,8 @@ export type Stop = {
   /**
    * The stop code if the stop has one
    */
-  code: string;
-  dist: number;
+  code?: string;
+  dist?: number;
   lat: number;
   lon: number;
   name: string;
@@ -445,20 +452,20 @@ export type Agency = {
 };
 export type Route = {
   agency: Agency;
-  agencyId?: string;
-  agencyName?: string;
+  agencyId?: string | number;
+  agencyName?: string | number;
   shortName: string;
-  longName: string;
+  longName?: string;
   mode?: string;
-  id?: string;
+  id: string;
   // TS TODO: route type enum
   type?: number;
   color?: string;
   textColor?: string;
-  routeBikesAllowed?: number;
-  bikesAllowed?: number;
+  routeBikesAllowed?: ZeroOrOne;
+  bikesAllowed?: ZeroOrOne;
   sortOrder: number;
-  eligibilityRestricted?: number;
+  eligibilityRestricted?: ZeroOrOne;
   sortOrderSet: boolean;
 };
 
@@ -483,57 +490,58 @@ export type TransitivePlace = {
   placeId: string;
   type: string;
 };
+export type TransitiveJourney = {
+  journey_id: string;
+  journey_name: string;
+  segments: {
+    arc?: boolean;
+    from: TransitivePlace;
+    patterns?: {
+      pattern_id: string;
+      from_stop_index: number;
+      to_stop_index: number;
+    }[];
+    streetEdges: number[];
+    to: TransitivePlace;
+    type: string;
+  }[];
+};
+export type TransitivePattern = {
+  pattern_id: string;
+  pattern_name: string;
+  route_id: string;
+  stops: {
+    geometry?: string;
+    stop_id: string;
+  }[];
+};
+export type TransitiveRoute = {
+  agency_id: string;
+  route_id: string;
+  route_short_name: string;
+  route_long_name: string;
+  route_type: number;
+  route_color?: string;
+};
+export type TransitiveStop = {
+  stop_id: string;
+  stop_name: string;
+  stop_lat: number;
+  stop_lon: number;
+};
+
+export type TransitiveStreetEdge = {
+  edge_id: number;
+  geometry: EncodedPolyline;
+};
 
 export type TransitiveData = {
-  journeys: {
-    journey_id: string;
-    journey_name: string;
-    segments: {
-      arc?: boolean;
-      from: TransitivePlace;
-      patterns?: {
-        pattern_id: string;
-        from_stop_index: number;
-        to_stop_index: number;
-      }[];
-      streetEdges: number[];
-      to: TransitivePlace;
-      type: string;
-    }[];
-  }[];
-  patterns: {
-    pattern_id: string;
-    pattern_name: string;
-    route_id: string;
-    stops: {
-      geometry?: string;
-      stop_id: string;
-    }[];
-  }[];
-  places: {
-    place_id: string;
-    place_lat: number;
-    place_lon: number;
-    place_name?: string;
-  }[];
-  routes: {
-    agency_id: string;
-    route_id: string;
-    route_short_name: string;
-    route_long_name: string;
-    route_type: number;
-    route_color?: string;
-  }[];
-  stops: {
-    stop_id: string;
-    stop_name: string;
-    stop_lat: number;
-    stop_lon: number;
-  }[];
-  streetEdges: {
-    edge_id: number;
-    geometry: EncodedPolyline;
-  }[];
+  journeys: TransitiveJourney[];
+  patterns: TransitivePattern[];
+  places: TransitivePlace[];
+  routes: TransitiveRoute[];
+  stops: TransitiveStop[];
+  streetEdges: TransitiveStreetEdge[];
 };
 
 export type Station = {

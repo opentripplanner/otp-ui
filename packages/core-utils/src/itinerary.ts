@@ -5,6 +5,7 @@ import {
   ElevationProfile,
   FlexBookingInfo,
   Itinerary,
+  LatLngArray,
   Leg,
   Step
 } from "@opentripplanner/types";
@@ -228,12 +229,12 @@ export function getCompanyFromLeg(leg: Leg): string {
   return null;
 }
 
-export function getItineraryBounds(itinerary: Itinerary): number[] {
+export function getItineraryBounds(itinerary: Itinerary): LatLngArray[] {
   let coords = [];
   itinerary.legs.forEach(leg => {
     const legCoords = polyline
       .toGeoJSON(leg.legGeometry.points)
-      .coordinates.map(c => [c[1], c[0]]);
+      .coordinates.map((c: number[]) => [c[1], c[0]]);
     coords = [...coords, ...legCoords];
   });
   return coords;
@@ -277,15 +278,14 @@ export function legLocationAtDistance(leg: Leg, distance: number): number[] {
 /* Returns an interpolated elevation at a specified distance along a leg */
 
 export function legElevationAtDistance(
-  points: number[],
+  points: number[][],
   distance: number
-): number[] {
+): number {
   // Iterate through the combined elevation profile
   let traversed = 0;
   // If first point distance is not zero, insert starting point at zero with
   // null elevation. Encountering this value should trigger the warning below.
   if (points[0][0] > 0) {
-    // @ts-expect-error TODO: how does this work??
     points.unshift([0, null]);
   }
   for (let i = 1; i < points.length; i++) {
@@ -369,12 +369,13 @@ export function getElevationProfile(
  * @see https://stackoverflow.com/questions/118241/calculate-text-width-with-javascript/21015393#21015393
  */
 export function getTextWidth(text: string, font = "22px Arial"): number {
+  // Create custom type for function including re-used canvas object
+  type GetTextWidth = typeof getTextWidth & { canvas: HTMLCanvasElement };
+
   // re-use canvas object for better performance
   const canvas =
-    // @ts-expect-error TODO: what is this doing? How does it work?
-    getTextWidth.canvas ||
-    // @ts-expect-error TODO: what is this doing? How does it work?
-    (getTextWidth.canvas = document.createElement("canvas"));
+    (getTextWidth as GetTextWidth).canvas ||
+    ((getTextWidth as GetTextWidth).canvas = document.createElement("canvas"));
   const context = canvas.getContext("2d");
   context.font = font;
   const metrics = context.measureText(text);

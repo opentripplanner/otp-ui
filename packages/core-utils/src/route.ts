@@ -13,7 +13,7 @@ import { Leg, Route, TransitOperator } from "@opentripplanner/types";
  */
 export function getTransitOperatorFromFeedIdAndAgencyId(
   feedId: string,
-  agencyId: string,
+  agencyId: string | number,
   transitOperators: TransitOperator[]
 ): TransitOperator {
   return (
@@ -62,7 +62,7 @@ export function getTransitOperatorFromOtpRoute(
 ): TransitOperator {
   if (!route.id) return null;
   const feedId = route.id.split(":")[0];
-  let agencyId: string;
+  let agencyId: string | number;
   if (route.agency) {
     // This is returned in the OTP Route model
     agencyId = route.agency.id;
@@ -414,7 +414,7 @@ function makeMultiCriteriaSort(
  */
 export function makeRouteComparator(
   transitOperators: TransitOperator[]
-): (a: unknown, b: unknown) => number {
+): (a: number, b: number) => number {
   return makeMultiCriteriaSort(
     makeTransitOperatorComparator(transitOperators),
     makeNumericValueComparator(obj => getRouteSortOrderValue(obj.sortOrder)),

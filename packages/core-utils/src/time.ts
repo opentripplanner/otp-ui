@@ -1,4 +1,4 @@
-import { Config, TimeOptions } from "@opentripplanner/types";
+import { Config } from "@opentripplanner/types";
 import {
   startOfDay,
   add,
@@ -6,6 +6,15 @@ import {
   formatDuration as dateFnsFormatDuration
 } from "date-fns";
 import { utcToZonedTime } from "date-fns-tz";
+
+/* eslint-disable import/no-cycle */
+import {
+  formatTime,
+  formatDurationWithSeconds,
+  formatDuration
+} from "./deprecated-with-types";
+
+export { formatTime, formatDuration, formatDurationWithSeconds };
 
 // special constants for making sure the following date format is always sent to
 // OTP regardless of whatever the user has configured as the display format
@@ -24,7 +33,7 @@ export const OTP_API_TIME_FORMAT = "HH:mm";
  * Otherwise, uses date-fns default
  * @returns                   Formatted duration
  */
-function formatDurationLikeMoment(
+export function formatDurationLikeMoment(
   seconds: number,
   showSeconds: boolean,
   localize: { enabled: boolean; code: string } = {
@@ -100,57 +109,12 @@ export function getDateFormat(config: Config): string {
 export function getLongDateFormat(config: Config): string {
   return config?.dateTime?.longDateFormat || "D MMMM YYYY";
 }
-
-/**
- * Formats an elapsed time duration for display in narrative.
- * TODO: internationalization
- * @param {number} seconds duration in seconds
- * @returns {string} formatted text representation
- */
-// TS TODO: region as type?
-export function formatDuration(seconds: number, region: string): string {
-  return formatDurationLikeMoment(seconds, false, {
-    enabled: true,
-    code: region
-  });
-}
-
-/**
- * Formats an elapsed time in seconds, minutes, hours duration for display in narrative
- * @param {number} seconds duration in seconds
- * @param {object} region  an object that allows internationalization of the time
- * @returns {string}       formatted text representation
- */
-// TS TODO: region as type?
-export function formatDurationWithSeconds(
-  seconds: number,
-  region: string
-): string {
-  return formatDurationLikeMoment(seconds, true, {
-    enabled: true,
-    code: region
-  });
-}
-
 /**
  * Offsets a time according to the provided time options
  * and returns the result.
  */
 export function offsetTime(ms, options) {
   return ms + (options?.offset || 0);
-}
-
-/**
- * Formats a time value for display in narrative
- * TODO: internationalization/timezone
- * @param {number} ms epoch time value in milliseconds
- * @returns {string} formatted text representation
- */
-export function formatTime(ms: number, options: TimeOptions): string {
-  return format(
-    offsetTime(ms, options),
-    options?.format || OTP_API_TIME_FORMAT
-  );
 }
 
 /**
