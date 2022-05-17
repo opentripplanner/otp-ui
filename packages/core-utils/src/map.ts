@@ -1,18 +1,18 @@
 import {
-  UserPosition,
-  Location,
-  Itinerary,
   Company,
-  TransitiveData,
+  Itinerary,
+  LatLngArray,
   Leg,
-  LatLngArray
+  Location,
+  TransitiveData,
+  UserPosition
 } from "@opentripplanner/types";
 import {
   getPlaceName,
-  isTransit,
+  isAccessMode,
   isFlex,
-  toSentenceCase,
-  isAccessMode
+  isTransit,
+  toSentenceCase
 } from "./itinerary";
 
 import {

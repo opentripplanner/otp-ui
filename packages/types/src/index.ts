@@ -611,7 +611,7 @@ export type ConfiguredCompany = {
  */
 export type GeocodedFeature = {
   geometry: {
-    coordinates: [number, number];
+    coordinates: LatLngArray;
     type: string;
   };
   properties: {
