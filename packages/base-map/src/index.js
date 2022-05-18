@@ -334,7 +334,7 @@ BaseMap.propTypes = {
   // center: utils.types.latlngType.isRequired,
   // Typescript TODO: restore correct type
   // eslint-disable-next-line react/forbid-prop-types
-  center: PropTypes.object.isRequired,
+  center: PropTypes.array.isRequired,
   /**
    * The maximum zoom level allowed on the map.
    */
