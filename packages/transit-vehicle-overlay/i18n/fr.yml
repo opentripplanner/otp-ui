@@ -1,0 +1,26 @@
+# Default messages for the TransitVehicleOverlay component.
+# To use from a react-intl application:
+# - merge the content of this file into the messages object
+#   that has your other localized strings,
+# - flatten the ids, i.e. convert a structure such as
+#      otpUi > TransitVehicleOverlay > status
+#   into "otpUi.TransitVehicleOverlay.status".
+# - pass the resulting object to the messages prop of IntlProvider.
+#
+
+otpUi:
+  TransitVehicleOverlay:
+    date: "Date : {date}"
+    durationAgo: "il y a {duration}"
+    genericRouteFormat: "Ligne {route}"
+    lastSeen: Mis à jour {durationText}
+    status: "État : {status}"
+    statusEnRoute: "prochain arrêt n°{stopId}"
+    statusAtStart: "au départ de l'arrêt n°{stopId}"
+    statusAtStop: "à l'arrêt n°{stopId}"
+    statusUnknown: inconnu
+    tooltipRouteLabel: "{routeLabel} :"
+    trackStart: Suivre le véhicle
+    trackStop: Arrêter le suivi
+    tripAndBlockIds: "Course n°{tripId}, Roulement n°{blockId}"
+    vehicleIds: "{count, plural, one {Véhicule} other {Véhicules}} n°{vehicleIds}"

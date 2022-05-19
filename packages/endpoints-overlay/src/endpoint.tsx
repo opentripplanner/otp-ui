@@ -1,7 +1,5 @@
 import flatten from "flat";
 import { divIcon } from "leaflet";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
 import {
   ClearLocationArg,

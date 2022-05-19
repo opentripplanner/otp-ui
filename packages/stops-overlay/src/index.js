@@ -1,4 +1,3 @@
-import utils from "@opentripplanner/core-utils";
 import ZoomBasedMarkers from "@opentripplanner/zoom-based-markers";
 import PropTypes from "prop-types";
 import React from "react";
@@ -115,12 +114,14 @@ StopsOverlay.propTypes = {
   refreshStops: PropTypes.func.isRequired,
   /**
    * The list of stops to create stop markers for.
+   * Typescript TODO: restore correct type
    */
-  stops: PropTypes.arrayOf(utils.types.stopLayerStopType).isRequired,
+  stops: PropTypes.arrayOf(PropTypes.object).isRequired,
   /**
    * A list of symbol definitions for the stops to be rendered at specific zoom levels.
+   * Typescript TODO: restore correct type
    */
-  symbols: PropTypes.arrayOf(utils.types.zoomBasedSymbolType).isRequired
+  symbols: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default withLeaflet(StopsOverlay);

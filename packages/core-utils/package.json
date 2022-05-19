@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/core-utils",
-  "version": "4.11.5",
+  "version": "5.0.0",
   "description": "Core functionality that is shared among numerous UI components",
   "engines": {
     "node": ">=13"
@@ -26,5 +26,8 @@
     "qs": "^6.9.1"
   },
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d",
+  "scripts": {
+    "tsc": "tsc"
+  },
   "devDependencies": {}
 }

@@ -17,7 +17,7 @@
     "velocity-react": "^1.4.3"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^1.2.2",
+    "@opentripplanner/types": "^2.0.0",
     "@types/flat": "^5.0.2"
   },
   "peerDependencies": {
@@ -30,6 +30,6 @@
   },
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d",
   "scripts": {
-    "tsc": "tsc && echo Remove the @ts-expect-error exception in index.tsx once core-utils is typed!"
+    "tsc": "tsc"
   }
 }

@@ -303,7 +303,7 @@ export const LegDescriptionHeadsignPrefix = styled.span`
  * "Bicycle 0.5 miles to City Hall"
  */
 export const LegDescriptionMode = styled.span`
-  font-size: inherit;
+  font-weight: inherit;
 `;
 
 /**
@@ -311,7 +311,7 @@ export const LegDescriptionMode = styled.span`
  * "Bicycle 0.5 miles to City Hall"
  */
 export const LegDescriptionPlace = styled.span`
-  font-size: inherit;
+  font-weight: inherit;
 `;
 
 export const LegDescriptionRouteLongName = styled.span`
