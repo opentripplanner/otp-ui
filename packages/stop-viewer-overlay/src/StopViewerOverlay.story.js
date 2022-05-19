@@ -1,6 +1,9 @@
+// TODO: remove when typescripting
+/* eslint-disable react/forbid-prop-types */
+
 import BaseMap from "@opentripplanner/base-map";
-import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
+import PropTypes from "prop-types";
 import { CircleMarker } from "react-leaflet";
 
 import DefaultStopMarker from "./default-stop-marker";
@@ -23,7 +26,9 @@ function CustomMarker({ stop }) {
 }
 
 CustomMarker.propTypes = {
-  stop: coreUtils.types.stopLayerStopType.isRequired
+  // Typescript TODO: restore correct type ?
+  // stop: coreUtils.types.stopLayerStopType.isRequired
+  stop: PropTypes.object.isRequired
 };
 
 export default {

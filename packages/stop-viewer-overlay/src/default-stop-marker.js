@@ -1,4 +1,5 @@
-import coreUtils from "@opentripplanner/core-utils";
+// TODO: UNDO WHEN TYPESCRIPTING!
+/* eslint-disable react/forbid-prop-types */
 import PropTypes from "prop-types";
 import React from "react";
 import { Popup, CircleMarker } from "react-leaflet";
@@ -20,9 +21,11 @@ export default function DefaultStopMarker({ leafletPath, radius, stop }) {
 }
 
 DefaultStopMarker.propTypes = {
-  leafletPath: coreUtils.types.leafletPathType,
+  // leafletPath: coreUtils.types.leafletPathType,
+  leafletPath: PropTypes.object,
   radius: PropTypes.number,
-  stop: coreUtils.types.stopLayerStopType.isRequired
+  stop: PropTypes.object.isRequired
+  // stop: coreUtils.types.stopLayerStopType.isRequired
 };
 
 DefaultStopMarker.defaultProps = {

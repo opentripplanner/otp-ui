@@ -26,6 +26,9 @@ otpUi:
     optimizeFor: Privilégier les trajets
     speedInMilesPerHour: "{mph} mi/h"
     walkSpeed: Vitesse à pied
+    walkReluctance: Je préfère
+    walkReluctanceHigh: Plus de transports
+    walkReluctanceLow: Plus de marche
     watts: Puissance de la trottinette électrique
     watts125kidsHoverboard: Hoverboard pour enfants (10 km/h)
     watts1500powerfulEscooter: Trottinette puissante (40 km/h)

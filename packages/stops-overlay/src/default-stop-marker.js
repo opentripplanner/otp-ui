@@ -1,5 +1,4 @@
 import { Styled as BaseMapStyled } from "@opentripplanner/base-map";
-import coreUtils from "@opentripplanner/core-utils";
 import flatten from "flat";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 import PropTypes from "prop-types";
@@ -17,8 +16,6 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 // - the yaml loader for webpack returns a nested object,
 // - the yaml loader for jest returns messages with flattened ids.
 export const defaultMessages = flatten(defaultEnglishMessages);
-
-const { leafletPathType, stopLayerStopType } = coreUtils.types;
 
 export default class StopMarker extends Component {
   onClickView = () => {
@@ -109,11 +106,15 @@ export default class StopMarker extends Component {
 }
 
 StopMarker.propTypes = {
-  leafletPath: leafletPathType,
+  // Typescript TODO: restore correct type
+  // eslint-disable-next-line react/forbid-prop-types
+  leafletPath: PropTypes.object,
   radius: PropTypes.number,
   setLocation: PropTypes.func.isRequired,
   setViewedStop: PropTypes.func.isRequired,
-  stop: stopLayerStopType.isRequired
+  // Typescript TODO: restore correct type
+  // eslint-disable-next-line react/forbid-prop-types
+  stop: PropTypes.object.isRequired
 };
 
 StopMarker.defaultProps = {

@@ -1,6 +1,5 @@
 import L from "leaflet";
 import isEqual from "lodash.isequal";
-import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import { MapLayer, withLeaflet } from "react-leaflet";
 import Transitive from "transitive-js";
@@ -209,14 +208,14 @@ TransitiveCanvasOverlay.propTypes = {
   styles: PropTypes.shape({
     labels: PropTypes.shape({}),
     segmentLabels: PropTypes.shape({})
-  }),
+  })
   /**
    * The transitiveData object is assumed to be the result of converting an
    * OpenTripPlanner itinerary result into a transitive-readable format. This is
    * typically done using the @opentripplanner/core-utils/map#itineraryToTransitive
    * function.
    */
-  transitiveData: coreUtils.types.transitiveDataType
+  // transitiveData: coreUtils.types.transitiveDataType
 };
 
 export default withLeaflet(TransitiveCanvasOverlay);

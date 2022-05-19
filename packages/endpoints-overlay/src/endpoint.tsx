@@ -1,7 +1,5 @@
 import flatten from "flat";
 import { divIcon } from "leaflet";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
 import {
   ClearLocationArg,
@@ -156,7 +154,7 @@ class Endpoint extends Component<Props> {
     const { intl, setLocation, type } = this.props;
 
     // This method is depcreated. the latlng object should be fed into react intl
-    const rawLocation = coreUtils.map.constructLocation(e.target.getLatLng());
+    const rawLocation = e.target.getLatLng();
     const location = {
       lat: rawLocation.lat,
       lon: rawLocation.lon,
