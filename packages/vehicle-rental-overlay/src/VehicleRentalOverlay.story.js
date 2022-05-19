@@ -1,5 +1,6 @@
+// Removed as core-utils is typescripted. TODO: Remove when typescripting!
+/* eslint-disable react/forbid-prop-types */
 import BaseMap from "@opentripplanner/base-map";
-import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 import { CircleMarker } from "react-leaflet";
@@ -37,7 +38,8 @@ const MyCircle = ({ fillColor = "gray", pixels, strokeColor }) => {
   );
   GeneratedCircle.propTypes = {
     children: PropTypes.node,
-    entity: coreUtils.types.stationType.isRequired
+    // entity: coreUtils.types.stationType.isRequired
+    entity: PropTypes.object.isRequired
   };
   GeneratedCircle.defaultProps = {
     children: null
@@ -194,10 +196,12 @@ const ZoomControlledMapWithVehicleRentalOverlay = ({
 ZoomControlledMapWithVehicleRentalOverlay.propTypes = {
   companies: PropTypes.arrayOf(PropTypes.string.isRequired),
   getStationName: PropTypes.func,
-  mapSymbols: coreUtils.types.vehicleRentalMapOverlaySymbolsType,
+  // mapSymbols: coreUtils.types.vehicleRentalMapOverlaySymbolsType,
+  mapSymbols: PropTypes.object,
   refreshVehicles: PropTypes.func.isRequired,
-  stations: PropTypes.arrayOf(coreUtils.types.stationType.isRequired)
-    .isRequired,
+  // stations: PropTypes.arrayOf(coreUtils.types.stationType.isRequired)
+  //   .isRequired,
+  stations: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
   visible: PropTypes.bool
 };
 

@@ -21,7 +21,8 @@ const LegIcon = ({ getCompanyIcon, leg, ModeIcon, ...props }) => {
 LegIcon.propTypes = {
   // Optional override function for deriving the company icon for a given leg.
   getCompanyIcon: PropTypes.func,
-  leg: coreUtils.types.legType.isRequired,
+  // TYPESCRIPT TODO: restore
+  // leg: coreUtils.types.legType.isRequired,
   ModeIcon: PropTypes.elementType.isRequired
 };
 

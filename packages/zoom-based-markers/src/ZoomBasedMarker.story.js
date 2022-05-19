@@ -1,7 +1,8 @@
+// Removed as core-utils is typescripted. TODO: Remove when typescripting!
+/* eslint-disable react/forbid-prop-types */
 // eslint-disable-next-line max-classes-per-file
 import { divIcon } from "leaflet";
 import BaseMap from "@opentripplanner/base-map";
-import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import ReactDOMServer from "react-dom/server";
@@ -34,7 +35,8 @@ const propTypes = {
   /** The children of the component. */
   children: PropTypes.node,
   /** The stop to render. */
-  entity: coreUtils.types.stopLayerStopType.isRequired
+  // entity: coreUtils.types.stopLayerStopType.isRequired
+  entity: PropTypes.object.isRequired
 };
 const defaultProps = {
   children: null
@@ -112,7 +114,8 @@ const exampleTransform = Symbol => {
     </Symbol>
   );
   InnerSymbol.propTypes = {
-    entity: coreUtils.types.stopLayerStopType.isRequired,
+    // entity: coreUtils.types.stopLayerStopType.isRequired,
+    entity: PropTypes.object.isRequired,
     zoom: PropTypes.number.isRequired
   };
 
@@ -155,8 +158,9 @@ class Example extends Component {
 }
 
 Example.propTypes = {
-  symbols: PropTypes.arrayOf(coreUtils.types.zoomBasedSymbolType.isRequired)
-    .isRequired,
+  // symbols: PropTypes.arrayOf(coreUtils.types.zoomBasedSymbolType.isRequired)
+  //   .isRequired,
+  symbols: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
   symbolTransform: PropTypes.func
 };
 Example.defaultProps = {

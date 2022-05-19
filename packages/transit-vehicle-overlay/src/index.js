@@ -1,4 +1,5 @@
-import coreUtils from "@opentripplanner/core-utils";
+/* eslint-disable react/forbid-prop-types */
+// Removed as core-utils is typescripted. TODO: Remove when typescripting!
 import ZoomBasedMarkers from "@opentripplanner/zoom-based-markers";
 import PropTypes from "prop-types";
 import React from "react";
@@ -73,7 +74,8 @@ function TransitVehicleOverlay(props) {
     };
 
     VehicleGeometryWrapper.propTypes = {
-      entity: coreUtils.types.transitVehicleType.isRequired,
+      // entity: coreUtils.types.transitVehicleType.isRequired,
+      entity: PropTypes.object.isRequired,
       zoom: PropTypes.number.isRequired
     };
 
@@ -131,10 +133,12 @@ TransitVehicleOverlay.propTypes = {
   center: PropTypes.arrayOf(PropTypes.number),
 
   /** array of vehicle records - @see: core-utils/types/coreUtils.types.transitVehicleType */
-  vehicleList: PropTypes.arrayOf(coreUtils.types.transitVehicleType),
+  vehicleList: PropTypes.arrayOf(PropTypes.object),
+  // vehicleList: PropTypes.arrayOf(coreUtils.types.transitVehicleType),
 
   /** optional vehicle record for the tracked vehicle (same rec must be in vehicleList) */
-  selectedVehicle: coreUtils.types.transitVehicleType,
+  // selectedVehicle: coreUtils.types.transitVehicleType,
+  selectedVehicle: PropTypes.object,
 
   /** showOnlyTracked will hide all other vehicles, except the tracked vehicle */
   showOnlyTracked: PropTypes.bool,
@@ -144,7 +148,8 @@ TransitVehicleOverlay.propTypes = {
    * where symbols are custom leaflet marker components with the signature
    * ({vehicle: object, onVehicleClicked: vehicle => {}, children: Element}) => Element.
    */
-  symbols: PropTypes.arrayOf(coreUtils.types.zoomBasedSymbolType),
+  // symbols: PropTypes.arrayOf(coreUtils.types.zoomBasedSymbolType),
+  symbols: PropTypes.arrayOf(PropTypes.object),
 
   // ////// VehicleGeometry types ////////
 

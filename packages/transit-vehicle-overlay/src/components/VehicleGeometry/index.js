@@ -1,4 +1,5 @@
-import coreUtils from "@opentripplanner/core-utils";
+// Removed as core-utils is typescripted. TODO: Remove when typescripting!
+/* eslint-disable react/forbid-prop-types */
 import React from "react";
 import PropTypes from "prop-types";
 import { useLeaflet } from "react-leaflet";
@@ -52,7 +53,8 @@ VehicleGeometry.propTypes = {
   zoom: PropTypes.number.isRequired,
 
   /** required vehicle record for the vehicle */
-  vehicle: coreUtils.types.transitVehicleType.isRequired,
+  // vehicle: coreUtils.types.transitVehicleType.isRequired,
+  vehicle: PropTypes.object.isRequired,
 
   isTracked: PropTypes.bool,
 
