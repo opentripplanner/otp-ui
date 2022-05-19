@@ -175,7 +175,7 @@ export default function LineColumnContent({
       </>
     );
   } else if (
-    leg.from.bikeShareId ||
+    (leg.from.bikeShareId && leg.mode.startsWith("BICYCLE")) ||
     (lastLeg.from.bikeShareId && leg.mode === "WALK")
   ) {
     // start or end of a bike rental leg (not including origin or
