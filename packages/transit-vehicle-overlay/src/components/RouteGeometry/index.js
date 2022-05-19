@@ -1,11 +1,8 @@
-import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 import PropTypes from "prop-types";
 import { FeatureGroup } from "react-leaflet";
 
 import * as utils from "../../utils";
-
-const { leafletPathType, transitVehicleType } = coreUtils.types;
 
 /**
  * vehicle geometry presentational component that creates a map overlay for the line
@@ -39,7 +36,7 @@ RouteGeometry.propTypes = {
   zoom: PropTypes.number,
 
   /** optional vehicle record for the (tracked) vehicle */
-  selectedVehicle: transitVehicleType,
+  // selectedVehicle: transitVehicleType,
 
   /** line geometry, ala { id: <tripId>, data: [[lat, lon], [45.50,-122.41], etc..] } */
   pattern: PropTypes.shape({
@@ -51,13 +48,13 @@ RouteGeometry.propTypes = {
   highlightColor: PropTypes.string,
 
   /** color of the *already travelled* tracked vehicle route (see highlightColor) */
-  lowlightColor: PropTypes.string,
+  lowlightColor: PropTypes.string
 
   /** line styling options for the to be traveled part of the line geom */
-  highlight: leafletPathType,
+  // highlight: leafletPathType,
 
   /** line styling options for the already traveled portion of the line geom */
-  lowlight: leafletPathType
+  // lowlight: leafletPathType
 };
 
 RouteGeometry.defaultProps = {

@@ -5,21 +5,23 @@
 
 import React, { FunctionComponent, ReactElement } from "react";
 
+type ZeroOrOne = 0 | 1;
+
 /**
  * Shape for a transportation company.
  */
-export interface Company {
+export type Company = {
   id: string;
   label: string;
   /** a comma-separated string listing the modes that this company has */
   modes: string;
-}
+};
 
 /**
  * Describes some options to help display data about a transit agency that is
  * configured in an opentripplanner instance.
  */
-export interface TransitOperator {
+export type TransitOperator = {
   agencyId: string;
   defaultRouteColor?: string;
   defaultRouteTextColor?: string;
@@ -28,21 +30,21 @@ export interface TransitOperator {
   longNameSplitter?: string;
   name?: string;
   order?: number;
-}
+};
 
 /**
  * Describes a map entity to be rendered.
  */
-export interface LayerEntity {
+export type LayerEntity = {
   id: string;
   lat: number;
   lon: number;
-}
+};
 
-interface SymbolComponentBaseProps {
+type SymbolComponentBaseProps = {
   entity: LayerEntity;
   zoom: number;
-}
+};
 
 /**
  * The symbol-representing component to draw; with the signature
@@ -55,7 +57,7 @@ type SymbolComponent = React.ComponentType<SymbolComponentBaseProps>;
  * Defines which symbol to render based on a zoom level; and optionally by entity type.
  * (Only one symbol is rendered for any zoom level.)
  */
-export interface ZoomBasedSymbol {
+export type ZoomBasedSymbol = {
   /**
    * A function with the signature (entity: object) => string
    * that determines the type of an entity.
@@ -82,12 +84,12 @@ export interface ZoomBasedSymbol {
   symbolByType?: {
     [name: string]: SymbolComponent;
   };
-}
+};
 
 /**
  * Describes the objects from the real-time vehicle service.
  */
-export interface TransitVehicle {
+export type TransitVehicle = {
   routeShortName?: string;
   routeLongName?: string;
   routeType?: string;
@@ -105,7 +107,7 @@ export interface TransitVehicle {
   lat?: number;
   lon?: number;
   heading?: number;
-}
+};
 
 export type VehicleRentalMapOverlaySymbol =
   | {
@@ -122,13 +124,14 @@ export type VehicleRentalMapOverlaySymbol =
  *
  * Note: this is an incomplete type mapping.
  */
-export interface Config {
+export type Config = {
   companies?: Company[];
   dateTime: {
     timeFormat?: string;
     dateFormat?: string;
     longDateFormat?: string;
   };
+  modes: ConfiguredModes;
   // TODO: add full typing
   map?: {
     overlays?: {
@@ -164,36 +167,36 @@ export interface Config {
     }[];
   };
   transitOperators?: TransitOperator[];
-}
+};
 
-interface FeedScopedId {
+type FeedScopedId = {
   agencyId?: string;
   id?: string;
-}
+};
 
-export interface EncodedPolyline {
+export type EncodedPolyline = {
   length: number;
   points: string;
-}
+};
 
-type ElevationData = {
+export type ElevationData = {
   first: number;
   second: number;
 }[];
 
-export interface Alert {
+export type Alert = {
   alertHeaderText?: string;
   alertDescriptionText?: string;
   alertUrl?: string;
   effectiveStartDate?: number;
-}
+};
 
 /**
  * Represents steps in a leg in an itinerary of an OTP plan response. These are
  * only for non-transit modes.
  * See documentation here: http://otp-docs.ibi-transit.com/api/json_WalkStep.html
  */
-export interface Step {
+export type Step = {
   absoluteDirection?: string;
   alerts?: Alert[];
   area: boolean;
@@ -205,12 +208,12 @@ export interface Step {
   relativeDirection: string;
   stayOn: boolean;
   streetName: string;
-}
+};
 
 /**
  * Describe an origin, destination, or intermediate location in an itinerary.
  */
-export interface Place {
+export type Place = {
   address?: string;
   arrival?: number;
   bikeShareId?: string;
@@ -225,31 +228,31 @@ export interface Place {
   stopSequence?: number;
   vertexType: string;
   zoneId?: string;
-}
+};
 
 /**
  * Holds contact info and lead time for flex transit bookings.
  * The information is optional and is for reminding the end-user
  * of any advance reservations required prior to travel.
  */
-export interface FlexBookingInfo {
+export type FlexBookingInfo = {
   contactInfo?: {
     phoneNumber: string;
   };
   latestBookingTime?: {
     daysPrior: number;
   };
-}
+};
 
 /** Dropoff-specific flex booking information */
-interface FlexDropOffBookingInfo extends FlexBookingInfo {
+type FlexDropOffBookingInfo = {
   dropOffMessage?: string;
-}
+} & FlexBookingInfo;
 
 /** Pickup-specific flex booking information */
-interface FlexPickupBookingInfo extends FlexBookingInfo {
+type FlexPickupBookingInfo = {
   pickupMessage?: string;
-}
+} & FlexBookingInfo;
 
 /**
  * Represents a leg in an itinerary of an OTP plan response. Each leg represents
@@ -258,7 +261,7 @@ interface FlexPickupBookingInfo extends FlexBookingInfo {
  * documentation here:
  * http://otp-docs.ibi-transit.com/api/json_Leg.html
  */
-export interface Leg {
+export type Leg = {
   accessibilityScore?: number;
   agencyBrandingUrl?: string;
   agencyId?: string;
@@ -266,6 +269,8 @@ export interface Leg {
   agencyTimeZoneOffset: number;
   agencyUrl?: string;
   alerts?: Alert[];
+  boardRule?: string;
+  alightRule?: string;
   arrivalDelay: number;
   averageWait?: number;
   departureDelay: number;
@@ -311,12 +316,12 @@ export interface Leg {
   tripBlockId?: string;
   tripId?: string;
   walkingBike?: boolean;
-}
+};
 
 /**
  * Describes the cost of an itinerary leg.
  */
-interface Money {
+export type Money = {
   cents: number;
   currency: {
     defaultFractionDigits: number;
@@ -324,7 +329,7 @@ interface Money {
     symbol: string;
     currency: string;
   };
-}
+};
 
 /**
  * Describes a fare id or route to which a fare applies.
@@ -339,7 +344,7 @@ type ApplicableId = string | FeedScopedId;
  * NOTE: so far the fare includes ONLY a fare encountered on public transit and
  * not any bike rental or TNC rental fees.
  */
-export interface Fare {
+export type Fare = {
   details: {
     [name: string]: {
       fareId: ApplicableId;
@@ -350,14 +355,14 @@ export interface Fare {
   fare?: {
     [name: string]: Money;
   };
-}
+};
 
 /**
  * Represents an itinerary of an OTP plan response. See detailed documentation
  * in OTP webservice documentation here:
  * http://otp-docs.ibi-transit.com/api/json_Itinerary.html
  */
-export interface Itinerary {
+export type Itinerary = {
   duration: number;
   elevationGained: number;
   elevationLost: number;
@@ -372,37 +377,264 @@ export interface Itinerary {
   walkDistance: number;
   walkLimitExceeded: boolean;
   walkTime: number;
-}
+};
+
+export type ElevationProfile = {
+  maxElev: number;
+  minElev: number;
+  points: number[];
+  traversed: number;
+  gain: number;
+  loss: number;
+};
 
 /**
  * Used to model a location that is used in planning a trip.
  */
-export interface Location {
+export type Location = {
   lat: number;
   lon: number;
-  name: string;
+  name?: string;
   /**
    * This is only used location that a user has saved. Can be either:
-   * "home" or "work"
+   * One of: 'home', 'work', 'stop' or 'recent'
    */
-  type?: string;
-}
+  type?: "home" | "work" | "stop" | "recent" | string;
+  category?: string;
+
+  /**
+   * This represents the last time that this location was selected in a
+   * search
+   */
+  timestamp?: number;
+
+  /* Sometimes used for displaying subinfo */
+  main?: string;
+  secondary?: string;
+};
+
+/**
+ * Alias for a commonly used basic type
+ */
+export type LatLngArray = [number, number];
 
 /**
  * Describes a transit stop entity to be rendered on the map.
  */
-export interface StopLayerStop extends LayerEntity {
+export type StopLayerStop = LayerEntity & {
   name: string;
-}
+};
 
 /**
- * @deprecated
- * Describes time options, including time format and timezone-related offset.
+ * This models data about a stop and it's associated routes that is obtained
+ * from a transit index API.
  */
-export interface TimeOptions {
-  format?: string;
-  offset?: string;
-}
+export type Stop = {
+  /**
+   * The stop code if the stop has one
+   */
+  code?: string;
+  dist?: number;
+  lat: number;
+  lon: number;
+  name: string;
+  routes?: Route[];
+};
+
+export type Agency = {
+  id: string;
+  name?: string;
+  url?: string;
+  timezone?: string;
+  lang?: string;
+  phone?: string;
+  fareUrl?: string;
+};
+export type Route = {
+  agency: Agency;
+  agencyId?: string | number;
+  agencyName?: string | number;
+  shortName: string;
+  longName?: string;
+  mode?: string;
+  id: string;
+  // TS TODO: route type enum
+  type?: number;
+  color?: string;
+  textColor?: string;
+  routeBikesAllowed?: ZeroOrOne;
+  bikesAllowed?: ZeroOrOne;
+  sortOrder: number;
+  eligibilityRestricted?: ZeroOrOne;
+  sortOrderSet: boolean;
+};
+
+/**
+ * Used to help display the time of day within the context of a particular itinerary.
+ * Describes time options, including time format and timezone-related offset.
+ * @deprecated
+ */
+export type TimeOptions = {
+  /**
+   * A format string template to be used to display a date using moment.js
+   */
+  format: string;
+  /*
+   * The timezone offset in milliseconds if any should be added. This is
+   * typically calculated using the itinerary.js#getTimeZoneOffset function.
+   */
+  offset: number;
+};
+
+export type TransitivePlace = {
+  placeId: string;
+  type: string;
+};
+export type TransitiveJourney = {
+  journey_id: string;
+  journey_name: string;
+  segments: {
+    arc?: boolean;
+    from: TransitivePlace;
+    patterns?: {
+      pattern_id: string;
+      from_stop_index: number;
+      to_stop_index: number;
+    }[];
+    streetEdges: number[];
+    to: TransitivePlace;
+    type: string;
+  }[];
+};
+export type TransitivePattern = {
+  pattern_id: string;
+  pattern_name: string;
+  route_id: string;
+  stops: {
+    geometry?: string;
+    stop_id: string;
+  }[];
+};
+export type TransitiveRoute = {
+  agency_id: string;
+  route_id: string;
+  route_short_name: string;
+  route_long_name: string;
+  route_type: number;
+  route_color?: string;
+};
+export type TransitiveStop = {
+  stop_id: string;
+  stop_name: string;
+  stop_lat: number;
+  stop_lon: number;
+};
+
+export type TransitiveStreetEdge = {
+  edge_id: number;
+  geometry: EncodedPolyline;
+};
+
+export type TransitiveData = {
+  journeys: TransitiveJourney[];
+  patterns: TransitivePattern[];
+  places: TransitivePlace[];
+  routes: TransitiveRoute[];
+  stops: TransitiveStop[];
+  streetEdges: TransitiveStreetEdge[];
+};
+
+export type Station = {
+  bikesAvailable?: number;
+  id: string;
+  isFloatingBike?: boolean;
+  isFloatingCar?: boolean;
+  isFloatingVehicle?: boolean;
+  name?: string;
+  networks: string[];
+  spacesAvailable?: number;
+  // TS TODO coordinate type
+  x: number;
+  y: number;
+};
+
+export type ModeOption = {
+  id: string;
+  selected?: boolean;
+  showTitle?: boolean;
+  text: JSX.Element;
+  title?: string;
+};
+
+export type ModeSelectorOptions = {
+  primary: ModeOption;
+  secondary?: ModeOption[];
+  tertiary?: ModeOption[];
+};
+
+export type ConfiguredMode =
+  | string
+  | {
+      mode: string;
+      label: string;
+      company?: string;
+    };
+
+export type ConfiguredModes = {
+  transitModes: ConfiguredMode[];
+  accessModes: ConfiguredMode[];
+  exlcusiveModes: ConfiguredMode[];
+  bicycleModes: ConfiguredMode[];
+  micromobilityModes: ConfiguredMode[];
+};
+
+export type ConfiguredCompany = {
+  /**
+   * The id of the company. This is typically in all-caps.
+   */
+  id: string;
+  /**
+   * A human readable text value that can be displayed to users.
+   */
+  label: string;
+  /**
+   * A comma-separated list of applicable modes of travel that the company
+   * offers.
+   */
+  modes: string;
+};
+
+/**
+ * Depending on the geocoder that is used, more properties than just the `label`
+ * property might be provided by the geocoder. For example, with the Pelias
+ * geocoder, properties such as `id`, `layer`, `source` are also included.
+ */
+export type GeocodedFeature = {
+  geometry: {
+    coordinates: LatLngArray;
+    type: string;
+  };
+  properties: {
+    label: string;
+    layer?: string;
+    source?: string;
+  };
+};
+
+export type TncFare = {
+  maxTNCFare: number;
+  minTNCFare: number;
+  tncCurrencyCode: string;
+};
+
+export type UserPosition = {
+  coords?: {
+    latitude: number;
+    longitude: number;
+  };
+  error?: { message: string } | string;
+  fetching?: boolean;
+};
 
 /**
  * Describes a user location such as "home", "work" etc.

@@ -1,3 +1,4 @@
+import { Location, Stop, UserLocation, UserPosition } from "@opentripplanner/types";
 import React from "react";
 // eslint-disable-next-line prettier/prettier
 import type { IntlShape } from "react-intl";
@@ -9,14 +10,7 @@ export type ResultType =
   | "SAVED"
   | "SESSION"
   | "STOP";
-export type Location = {
-  id?: string;
-  lat?: number;
-  lon?: number;
-  main?: string;
-  name?: string;
-  secondary?: string;
-};
+
 
 export interface LocationFieldProps {
   /**
@@ -47,14 +41,7 @@ export interface LocationFieldProps {
   /**
    * The current position of the user if it is available.
    */
-  currentPosition?: {
-    coords?: {
-      latitude: number;
-      longitude: number;
-    };
-    error?: { message: string };
-    fetching?: boolean;
-  };
+  currentPosition?: UserPosition
   /**
    * A slot for the icon to display for the current position
    */
@@ -261,7 +248,7 @@ export interface LocationFieldProps {
   /**
    * An index of stops by StopId
    */
-  stopsIndex?: { [key: string]: TransitIndexStopWithRoutes };
+  stopsIndex?: { [key: string]: Stop };
   /**
    * A slot for the icon to display for a stop option
    */
@@ -339,41 +326,3 @@ export interface Label {
   main: string;
   secondary?: string;
 }
-
-// FIXME: Move to core-utils once core-utils is typescripted
-export interface TransitIndexStopWithRoutes {
-  /**
-   * The stop code if the stop has one
-   */
-  code?: string;
-  /**
-   * The distance from the user to the stop in meters
-   */
-  dist?: number;
-  lat?: number;
-  lon?: number;
-  name?: string;
-  routes?: [
-    {
-      longName?: string;
-      shortName?: string;
-    }
-  ];
-}
-
-// FIXME: Move to core-utils once core-utils is typescripted
-export type UserLocation = Location & {
-  /**
-   * Can be either 'home', 'work', or null
-   */
-  icon?: string;
-  /**
-   * This represents the last time that this location was selected in a
-   * search
-   */
-  timestamp?: number;
-  /**
-   * One of: 'home', 'work', 'stop' or 'recent'
-   */
-  type: "home" | "work" | "stop" | "recent";
-};
