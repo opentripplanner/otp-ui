@@ -3,6 +3,9 @@
   "compilerOptions": {
     "composite": true,
     "outDir": "./lib",
+    "paths": {
+      "types": ["../types"]
+    },
     "rootDir": "./src",
     "skipLibCheck": true
   },
