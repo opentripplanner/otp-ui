@@ -262,6 +262,10 @@ export function TripDetails({
   const dropOffBookingInfo = itinerary.legs
     .map(leg => leg.dropOffBookingInfo)
     .filter(info => !!info);
+  const totalDistance = itinerary.legs.reduce(
+    (total, leg) => total + leg.distance,
+    0
+  );
 
   return (
     <S.TripDetails className={className}>
@@ -338,7 +342,7 @@ export function TripDetails({
             }
           />
         )}
-        {co2 > 0 && co2Config.enabled && (
+        {co2 > 0 && co2Config?.enabled && (
           <TripDetail
             icon={<Leaf size={17} />}
             summary={
@@ -367,6 +371,7 @@ export function TripDetails({
                 defaultMessage={
                   defaultMessages["otpUi.TripDetails.co2description"]
                 }
+                values={{ totalDistance }}
                 description="Text explaining how the CO2 emissions is calculated."
                 id="otpUi.TripDetails.co2description"
               />
