@@ -312,8 +312,15 @@ VehicleRentalOverlay.defaultProps = {
       configCompanies
     );
     let stationName = station.name || station.id;
+    // If the station name or id is a giant UUID (with more than 3 "-" characters)
+    // best not to show that at all.
+    if ((stationName.match(/-/g) || []).length > 3) {
+      stationName = null;
+    }
+
     if (station.isFloatingBike) {
-      stationName = `Free-floating bike: ${stationName}`;
+      if (stationName) stationName = `Free-floating bike: ${stationName}`;
+      else stationName = `${stationNetworks} Free-floating bike`;
     } else if (station.isFloatingCar) {
       stationName = `${stationNetworks} ${stationName}`;
     } else if (station.isFloatingVehicle) {
