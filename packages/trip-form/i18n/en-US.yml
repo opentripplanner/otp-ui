@@ -33,10 +33,11 @@ otpUi:
     optimizeBikeFriendly: Bike-Friendly Trip
     optimizeBikeSpeed: Speed
     optimizeFor: Optimize for
-    optimizeQuick: Speed
-    optimizeTransfers: Fewest Transfers
     speedInMilesPerHour: "{mph} MPH" # Original units were all caps.
     walkSpeed: Walk Speed
+    walkReluctance: Walking Avoidance
+    walkReluctanceHigh: More Transit
+    walkReluctanceLow: More Walking
     watts: E-scooter Power
     watts125kidsHoverboard: Kid's hoverboard (6 mph)
     watts1500powerfulEscooter: Powerful E-scooter (24 mph)

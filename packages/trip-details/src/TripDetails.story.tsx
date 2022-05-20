@@ -1,7 +1,11 @@
 import flatten from "flat";
 import React, { ReactElement } from "react";
-import { IntlProvider } from "react-intl";
-import { Meta, Story as StoryType } from "@storybook/react";
+import {
+  ComponentMeta,
+  ComponentStory,
+  Parameters,
+  StoryContext
+} from "@storybook/react";
 import styled from "styled-components";
 // The below eslint-disable is due to https://github.com/storybookjs/storybook/issues/13408
 // eslint-disable-next-line import/no-named-as-default
@@ -14,18 +18,7 @@ import {
   TripDetailsProps
 } from "./types";
 
-import englishMessages from "../i18n/en-US.yml";
-import frenchMessages from "../i18n/fr.yml";
 import customMessages from "../__mocks__/custom-messages.yml";
-
-/**
- * Describes args passed to stories.
- */
-interface StoryArgs {
-  locale?: string;
-  useCustomMessages?: boolean;
-  useLocalizedMessages?: boolean;
-}
 
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json");
@@ -122,17 +115,20 @@ const CustomCaloriesDetails = ({
  * @param Component The component to render.
  */
 function createTripDetailsTemplate(
-  Component: React.ElementType<TripDetailsProps> = TripDetails
-) {
-  const TripDetailsTemplate = ({
-    CaloriesDetails,
-    defaultFare,
-    DepartureDetails,
-    FareDetails,
-    itinerary,
-    locale,
-    useCustomFareKeyMap
-  }: TripDetailsProps): ReactElement => {
+  Component: typeof TripDetails = TripDetails
+): ComponentStory<typeof TripDetails> {
+  const TripDetailsTemplate = (
+    {
+      CaloriesDetails,
+      defaultFare,
+      DepartureDetails,
+      FareDetails,
+      itinerary
+    }: TripDetailsProps,
+    { globals, parameters }: StoryContext
+  ): ReactElement => {
+    const { locale } = globals;
+    const { useCustomFareKeyMap } = parameters;
     const fareKeyNameMap = useCustomFareKeyMap
       ? locale === "en-US"
         ? englishFareKeyMap
@@ -152,93 +148,35 @@ function createTripDetailsTemplate(
   return TripDetailsTemplate;
 }
 
-const intlDecorator = (
-  Story: StoryType,
-  context: {
-    args: StoryArgs;
-  }
-): ReactElement => {
-  const { args } = context;
-  const { locale, useCustomMessages, useLocalizedMessages } = args;
-  const messages = locale === "en-US" ? englishMessages : frenchMessages;
-
-  // Construct a messages object that customizes a subset
-  // of the default messages of the desired locale.
-  // The structure of the message objects is
-  // flattened before it is passed to IntlProvider.
-  // Note: the spread operator (...) is rejected if used with flatten,
-  // so we use Object.assign instead
-  // (see e.g. https://github.com/Microsoft/TypeScript/issues/10727#issuecomment-423712256).
-  let mergedMessages: Record<string, string> = flatten(messages);
-  if (useCustomMessages) {
-    mergedMessages = Object.assign(mergedMessages, flatten(customMessages));
-  }
-  return (
-    <IntlProvider
-      locale={locale}
-      messages={useLocalizedMessages ? mergedMessages : null}
-    >
-      <Story />
-    </IntlProvider>
-  );
-};
-
 /**
  * Helper to simplify story declaration.
  */
 function makeStory(
-  args: StoryArgs | TripDetailsProps,
-  Component?: React.ElementType<TripDetailsProps>
-) {
+  args: TripDetailsProps,
+  parameters: Parameters,
+  Component?: typeof TripDetails
+): ComponentStory<typeof TripDetails> {
   const BoundTripDetails = createTripDetailsTemplate(Component).bind({});
   BoundTripDetails.args = args;
+  BoundTripDetails.parameters = parameters;
   return BoundTripDetails;
 }
 
-const decoratorPropDescription = "(This prop is used by the decorator.)";
-// Hide story controls for some props (but still display in the controls and the docs section).
-const noControl = {
-  control: { type: false }
-};
-// Hide some story args completely.
-const hiddenProp = {
-  table: { disable: true }
-};
-
 export default {
-  argTypes: {
-    CaloriesDetails: noControl,
-    className: noControl,
-    Component: hiddenProp,
-    defaultFareKey: noControl,
-    DepartureDetails: noControl,
-    FareDetails: noControl,
-    fareKeyNameMap: noControl,
-    itinerary: noControl,
-    locale: {
-      control: "radio",
-      description: decoratorPropDescription,
-      options: ["en-US", "fr"]
-    },
-    useCustomFareKeyMap: hiddenProp,
-    useCustomMessages: {
-      description: decoratorPropDescription
-    },
-    useLocalizedMessages: {
-      description: decoratorPropDescription
-    }
-  },
   args: {
-    defaultFareKey: "regular",
-    locale: "en-US",
-    useCustomMessages: false,
-    useLocalizedMessages: true
+    defaultFareKey: "regular"
   },
   component: TripDetails,
-  decorators: [intlDecorator],
-  parameters: { controls: { sort: "alpha" } },
+  parameters: {
+    // Hide all controls
+    // (there are no args that the user can interactively change for this component).
+    controls: {
+      hideNoControlsWarning: true,
+      include: []
+    }
+  },
   title: "TripDetails"
-} as Meta;
+} as ComponentMeta<typeof TripDetails>;
 
 export const WalkOnlyItinerary = makeStory({
   itinerary: walkOnlyItinerary
@@ -256,6 +194,7 @@ export const StyledWalkTransitWalkItinerary = makeStory(
   {
     itinerary: walkTransitWalkItinerary
   },
+  null,
   StyledTripDetails
 );
 
@@ -263,11 +202,15 @@ export const BikeTransitBikeItinerary = makeStory({
   itinerary: bikeTransitBikeItinerary
 });
 
-export const WalkInterlinedTransitItinerary = makeStory({
-  defaultFareKey: "electronicRegular",
-  itinerary: walkInterlinedTransitItinerary,
-  useCustomFareKeyMap: true
-});
+export const WalkInterlinedTransitItinerary = makeStory(
+  {
+    defaultFareKey: "electronicRegular",
+    itinerary: walkInterlinedTransitItinerary
+  },
+  {
+    useCustomFareKeyMap: true
+  }
+);
 
 export const WalkTransitTransferItinerary = makeStory({
   itinerary: walkTransitWalkTransitWalkItinerary
@@ -293,18 +236,33 @@ export const EScooterRentalTransitItinerary = makeStory({
   itinerary: eScooterRentalTransiteScooterRentalItinerary
 });
 
-export const TncTransitItinerary = makeStory({
-  itinerary: tncTransitTncItinerary,
-  useCustomFareKeyMap: true
-});
+export const TncTransitItinerary = makeStory(
+  {
+    itinerary: tncTransitTncItinerary
+  },
+  {
+    useCustomFareKeyMap: true
+  }
+);
 
-export const TncTransitItineraryWithCustomDetails = makeStory(
+const flattenedMessages = flatten(customMessages);
+export const TncTransitItineraryWithCustomMessagesAndDetails = makeStory(
   {
     CaloriesDetails: CustomCaloriesDetails,
     defaultFareKey: "electronicRegular",
     DepartureDetails: CustomDepartureDetails,
     FareDetails: CustomFareDetails,
-    itinerary: tncTransitTncItinerary,
+    itinerary: tncTransitTncItinerary
+  },
+  {
+    // For illustration purposes,
+    // override a subset of localized strings with custom messages.
+    reactIntl: {
+      messages: {
+        "en-US": flattenedMessages,
+        fr: flattenedMessages
+      }
+    },
     useCustomFareKeyMap: true
   },
   StyledTripDetails

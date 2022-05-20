@@ -27,8 +27,8 @@ export function filterProfileOptions(response) {
   return response;
 }
 
-function locationString(str, defaultStr) {
-  return str ? str.split(",")[0] : defaultStr;
+function locationString(str) {
+  return str?.split(",")[0];
 }
 
 function accessToLeg(access, origin, destination) {
@@ -37,10 +37,10 @@ function accessToLeg(access, origin, destination) {
     duration: access.time,
     transitLeg: false,
     from: {
-      name: locationString(origin, "Origin")
+      name: locationString(origin)
     },
     to: {
-      name: locationString(destination, "Destination")
+      name: locationString(destination)
     }
   };
 }
@@ -98,7 +98,7 @@ function optionToItinerary(option, query) {
         duration: walkOnTime,
         transitLeg: false,
         from: {
-          name: locationString(query && query.from.name, "Destination")
+          name: locationString(query && query.from.name)
         },
         to: {
           name: onStationName
@@ -127,7 +127,7 @@ function optionToItinerary(option, query) {
           name: offStationName
         },
         to: {
-          name: locationString(query && query.to.name, "Destination")
+          name: locationString(query && query.to.name)
         }
       });
     } else {
@@ -176,16 +176,6 @@ function optionToItinerary(option, query) {
     if (option.egress[0].mode === "WALK")
       itin.walkTime += option.egress[0].time;
   }
-
-  // construct summary
-  if (option.transit) {
-    itin.summary = "Transit";
-  } else if (option.modes.length === 1 && option.modes[0] === "bicycle")
-    itin.summary = "Bicycle";
-  else if (option.modes.length === 1 && option.modes[0] === "walk")
-    itin.summary = "Walk";
-  else if (option.modes.indexOf("bicycle_rent") !== -1)
-    itin.summary = "Bikeshare";
 
   return itin;
 }

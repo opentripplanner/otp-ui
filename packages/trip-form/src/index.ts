@@ -5,6 +5,7 @@ import GeneralSettingsPanel from "./GeneralSettingsPanel";
 import ModeButton from "./ModeButton";
 import ModeSelector from "./ModeSelector";
 import SettingsSelectorPanel from "./SettingsSelectorPanel";
+import SliderSelector from "./SliderSelector";
 import * as Styled from "./styled";
 import SubmodeSelector from "./SubmodeSelector";
 import TripOptions, { Styled as TripOptionsStyled } from "./TripOptions";
@@ -17,6 +18,7 @@ export {
   ModeButton,
   ModeSelector,
   SettingsSelectorPanel,
+  SliderSelector,
   SubmodeSelector,
   TripOptions,
   TripOptionsStyled,

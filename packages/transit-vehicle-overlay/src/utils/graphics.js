@@ -1,4 +1,5 @@
-import coreUtils from "@opentripplanner/core-utils";
+// Removed as core-utils is typescripted. TODO: Remove when typescripting!
+/* eslint-disable react/forbid-prop-types */
 import PropTypes from "prop-types";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
@@ -139,6 +140,7 @@ export function makeVehicleIcon(
       );
       break;
     case "RAIL":
+    case "SUBWAY":
       icon = isTracked ? (
         <Styled.TrackedRail color={color} colorselected={highlightColor} />
       ) : (
@@ -303,7 +305,8 @@ export const makeRotatedMarker = (Icon, getSize) => {
     onVehicleClicked: PropTypes.func,
 
     /** vehicle record  - @see: core-utils/types/transitVehicleType */
-    vehicle: coreUtils.types.transitVehicleType.isRequired,
+    // vehicle: coreUtils.types.transitVehicleType.isRequired,
+    vehicle: PropTypes.object.isRequired,
 
     /** map zoom: is part of the props due to redrawing this layer on map zoom */
     zoom: PropTypes.number

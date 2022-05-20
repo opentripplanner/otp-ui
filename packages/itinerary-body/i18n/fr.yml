@@ -1,0 +1,149 @@
+# Default messages for the ItineraryBody component and subcomponents.
+# To use from a react-intl application:
+# - merge the content of this file into the messages object
+#   that has your other localized strings,
+# - flatten the ids, i.e. convert a structure such as
+#      otpUi > LocationField > stations
+#   into "otpUi.TripDetails.stations" (see story for an example),
+# - pass the resulting object to the messages prop of IntlProvider.
+
+otpUi:
+  AccessLegBody:
+    LegDiagramPreview:
+      elevationChart: Dénivelés
+      noElevationData: Aucune information sur les dénivelés
+      toggleElevationChart: Afficher/masquer les dénivelés
+    mapillaryTooltip: Afficher la vue panoramique à cet endroit
+    RentedVehicleSubheader:
+      resumeRentalRide: Continuez avec le véhicule loué
+      ### This message includes a TriMet customization
+      ### that drops company and vehicle ids from shared bikes.
+      pickupRental: "Récupérez {modeType, select,
+        BIKESHARE {le vélo partagé}
+        other {{modeType, select,
+        CARSHARE {la voiture}
+        VEHICLERENTAL {la trottinette électrique}
+        BIKEPARK {le vélo}
+        other {le véhicule}
+        } {company} {vehicleName}}
+        }"
+      ### If bikeshare comes with company info, this message should be used instead.
+      # pickupRental: "Récupérez {modeType, select,
+      #   CARSHARE {la voiture}
+      #   VEHICLERENTAL {la trottinette électrique}
+      #   BIKESHARE {le vélo}
+      #   BIKEPARK {le vélo}
+      #   other {le véhicule}
+      #   } {company} {vehicleName}"
+      walkVehicle: Emmenez à pied le véhicule le long de {place}
+    # TODO: elevator destinations (e.g. "3rd floor") may need to be localized.
+    step: "{relativeDirection, select,
+      CIRCLE_CLOCKWISE {Prenez le rond-point par la droite}
+      CIRCLE_COUNTERCLOCKWISE {Prenez le rond-point par la gauche}
+      CONTINUE {Continuez}
+      DEPART {Dirigez-vous vers {absoluteDirection, select,
+      EAST {l'est}
+      NORTH {le nord}
+      NORTHEAST {le nord-est}
+      NORTHWEST {le nord-ouest}
+      SOUTH {le sud}
+      SOUTHEAST {le sud-est}
+      SOUTHWEST {le sud-ouest}
+      WEST {l'ouest}
+      other {{absoluteDirection}}
+      }}
+      ELEVATOR {Prenez l'ascenseur}
+      HARD_LEFT {Virage à gauche}
+      HARD_RIGHT {Virage à droite}
+      LEFT {Tournez à gauche}
+      RIGHT {Tournez à droite}
+      SLIGHTLY_LEFT {Tournez légèrement à gauche}
+      SLIGHTLY_RIGHT {Tournez légèrement à droite}
+      UTURN_LEFT {Demi-tour à gauche}
+      UTURN_RIGHT {Demi-tour à droite}
+      other {{relativeDirection}}
+      }
+      {relativeDirection, select, ELEVATOR {jusqu'au} other {sur}}
+      {street}"
+    streetOrUnnamedRoad: "{streetName, select,
+      road {Route sans nom}
+      path {Chemin sans nom}
+      other {{streetName}}
+      }"
+    # In the summary below, only include access mode actions (ride, walk...).
+    # Note de traduction: nous utilisons le format
+    #   "Marche/velo/etc - 2,5 miles vers 10th Street" qui peut paraître un peu "robotique".
+    # Une formulation du type "2,5 miles à pied/en voiture/etc" est plus couramment "parlée"
+    # mais donne lieu à des expressions bizarres comme "230 pieds à pied vers 10th Street"
+    # à cause de l'utilisation d'unités impériales.
+    summary: "{mode}{distance, select,
+      0 {}
+      other { - {distance}}
+      }{place, select, undefined {} other { vers {place}}}"
+    # The summary modes below only include access mode actions (ride, walk...).
+    summaryMode: "{modeId, select,
+      BICYCLE {Vélo}
+      BICYCLE_RENT {Vélo partagé}
+      CAR {{isCarHail, select, true {Course en voiture} other {Voiture}}}
+      MICROMOBILITY {Trottinette}
+      WALK {Marche}
+      other {{modeId}}
+      }"
+    TncLeg:
+      bookRide: Réserver
+      bookRideLater: Attendez jusqu'à {timeMillis, time, short} avant de réserver.
+      estimatedCost: "Coût estimé : {minFare} - {maxFare}"
+      estimatedTravelTime: "Temps de trajet estimé : {duration} (ne tient pas compte de la circulation)"
+      waitForPickup: "Attendez{minutes, select,
+        undefined {}
+        other { {minutes} minutes pour}
+        } votre chauffeur {company}"
+    vehicleTitle: "{modeType, select,
+      CARSHARE {Voiture}
+      VEHICLERENTAL {Trottinette électrique}
+      BIKESHARE {Vélo}
+      BIKEPARK {Vélo}
+      other {Véhicule}
+      } {company}"
+  ItineraryBody:
+    common:
+      durationShort: "{hours, plural, =0 {} other {# h }}{minutes} mn"
+    stayOnBoard: Restez à bord à <strong>{placeName}</strong>
+    travelBy: "Effectué {modeId, select,
+      BICYCLE {en vélo}
+      CAR {en voiture}
+      MICROMOBILITY {en trottinette}
+      WALK {à pied}
+      other {en {modeId}}
+      }"
+    viewOnMap: Afficher sur le plan
+  TransitLegBody:
+    agencyLogo: "Logo de {agencyName}"
+    AlertsBody:
+      # À partir de 16:30, aujourd'hui
+      # À partir du 3 mars 2019
+      effectiveDate: "À partir {includeTime, select,
+        true {de {dateTime, time, short}, }
+        other {}
+        }{dayDiff, plural,
+        =-1 {hier}
+        =0 {aujourd'hui}
+        =1 {demain}
+        other {du {dateTime, date, long}}
+        }"
+    alertsHeader: "{alertCount, plural,
+      =0 {# alerte}
+      =1 {# alerte}
+      other {# alertes}
+      }"
+    fare: "Tarif : {fare}"
+    operatedBy: Exploité par {agencyLink}
+    reservationRequired: Non-assuré sans réservation préalable.
+    rideDurationAndStops: "Trajet : {duration}{numStops, plural, =1 {} other { / # arrêts}}"
+    routeDescription: "{routeName}{headsign, select,
+      undefined {} other {<toPrefix> vers </toPrefix>{headsign}}}"
+    stopId: Arrêt n°{stopId}
+    stopIdBasic: Arrêt n°{stopId}
+    stopViewer: Info arrêt
+    tripViewer: Info trajet
+    typicalWait: "Intervalle habituel : {waitTime}"

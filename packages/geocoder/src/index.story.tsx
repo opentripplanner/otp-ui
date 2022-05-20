@@ -1,4 +1,5 @@
 import React, { ReactElement, useState } from "react";
+import { AnyGeocoderQuery } from "./geocoders/types";
 import getGeocoder from "./index";
 
 const GeocoderTester = ({
@@ -16,6 +17,14 @@ const GeocoderTester = ({
 }): ReactElement => {
   const [searchTerm, setSearchTerm] = useState("");
   const [focusPoint, setFocusPoint] = useState({ lat: at.lat, lng: at.lng });
+  const [boundary, setBoundary] = useState({
+    maxLat: 48.687912,
+    minLat: 46.981852,
+    maxLon: -121.467028,
+    minLon: -123.148723
+  });
+  const [enableBoundary, setEnableBoundary] = useState(false);
+  const [enableFocusPoint, setEnableFocusPoint] = useState(true);
   const [enableGeocodeEarth, setEnableGeocodeEarth] = useState(true);
   const [enableHere, setEnableHere] = useState(true);
   const [
@@ -39,21 +48,23 @@ const GeocoderTester = ({
     reverseUseFeatureCollection
   });
 
+  const searchObj: AnyGeocoderQuery = {
+    text: searchTerm
+  };
+
+  if (enableBoundary) {
+    searchObj.boundary = { rect: boundary };
+  }
+  if (enableFocusPoint) {
+    searchObj.point = focusPoint;
+    searchObj.focusPoint = focusPoint;
+  }
+
   const search = async () => {
-    const hereRes = enableHere
-      ? await geocoder[endpoint]({
-          focusPoint,
-          point: focusPoint,
-          text: searchTerm
-        })
-      : {};
+    const hereRes = enableHere ? await geocoder[endpoint](searchObj) : null;
     const peliasRes = enableGeocodeEarth
-      ? await peliasGeocoder[endpoint]({
-          focusPoint,
-          point: focusPoint,
-          text: searchTerm
-        })
-      : {};
+      ? await peliasGeocoder[endpoint](searchObj)
+      : null;
     onResults({
       hereRes,
       peliasRes
@@ -62,11 +73,78 @@ const GeocoderTester = ({
 
   return (
     <div>
+      {/* Boundary Input */}
+      {endpoint !== "reverse" && (
+        <div>
+          <label htmlFor="maxLat">
+            maxLat:
+            <input
+              disabled={!enableBoundary}
+              id="maxLat"
+              onChange={e => {
+                setBoundary({
+                  ...boundary,
+                  maxLat: parseFloat(e.target.value)
+                });
+              }}
+              type="text"
+              value={boundary.maxLat}
+            />
+          </label>
+          <label htmlFor="minLat">
+            minLat:
+            <input
+              disabled={!enableBoundary}
+              id="minLat"
+              onChange={e => {
+                setBoundary({
+                  ...boundary,
+                  minLat: parseFloat(e.target.value)
+                });
+              }}
+              type="text"
+              value={boundary.minLat}
+            />
+          </label>
+          <label htmlFor="maxLon">
+            maxLon:
+            <input
+              disabled={!enableBoundary}
+              id="maxLon"
+              onChange={e => {
+                setBoundary({
+                  ...boundary,
+                  maxLon: parseFloat(e.target.value)
+                });
+              }}
+              type="text"
+              value={boundary.maxLon}
+            />
+          </label>
+          <label htmlFor="minLon">
+            minLon:
+            <input
+              disabled={!enableBoundary}
+              id="minLon"
+              onChange={e => {
+                setBoundary({
+                  ...boundary,
+                  minLon: parseFloat(e.target.value)
+                });
+              }}
+              type="text"
+              value={boundary.minLon}
+            />
+          </label>
+        </div>
+      )}
+      {/* Focus Point Input */}
       <div>
-        <label htmlFor="lon">
-          lng: lat:
+        <label htmlFor="lat">
+          lat:
           <input
-            id="lon"
+            disabled={!enableFocusPoint}
+            id="lat"
             onChange={e => {
               setFocusPoint({ ...focusPoint, lat: parseFloat(e.target.value) });
             }}
@@ -74,11 +152,10 @@ const GeocoderTester = ({
             value={focusPoint.lat}
           />
         </label>
-      </div>
-      <div>
         <label htmlFor="lng">
           lng:
           <input
+            disabled={!enableFocusPoint}
             id="lng"
             onChange={e => {
               setFocusPoint({ ...focusPoint, lng: parseFloat(e.target.value) });
@@ -120,6 +197,30 @@ const GeocoderTester = ({
             type="checkbox"
           />
         </label>
+      </div>
+      <div>
+        {endpoint !== "reverse" && (
+          <>
+            <label htmlFor="enableFocusPoint">
+              Enable Focus Point:
+              <input
+                checked={enableFocusPoint}
+                id="enableFocusPoint"
+                onChange={e => setEnableFocusPoint(e.target.checked)}
+                type="checkbox"
+              />
+            </label>
+            <label htmlFor="enableBoundary">
+              Enable Boundary Box:
+              <input
+                checked={enableBoundary}
+                id="enableBoundary"
+                onChange={e => setEnableBoundary(e.target.checked)}
+                type="checkbox"
+              />
+            </label>
+          </>
+        )}
       </div>
       <div>
         {endpoint === "reverse" && (

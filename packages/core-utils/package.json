@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/core-utils",
-  "version": "4.7.1",
+  "version": "5.0.0",
   "description": "Core functionality that is shared among numerous UI components",
   "engines": {
     "node": ">=13"
@@ -13,7 +13,7 @@
   "private": false,
   "dependencies": {
     "@mapbox/polyline": "^1.1.0",
-    "@opentripplanner/geocoder": "^1.1.2",
+    "@opentripplanner/geocoder": "^1.2.2",
     "@styled-icons/foundation": "^10.34.0",
     "@turf/along": "^6.0.1",
     "bowser": "^2.7.0",
@@ -26,5 +26,8 @@
     "qs": "^6.9.1"
   },
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d",
+  "scripts": {
+    "tsc": "tsc"
+  },
   "devDependencies": {}
 }

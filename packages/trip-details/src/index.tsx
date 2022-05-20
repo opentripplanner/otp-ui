@@ -1,6 +1,4 @@
 import flatten from "flat";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore FIXME: Create TypeScript types for core-utils packages.
 import coreUtils from "@opentripplanner/core-utils";
 import { FlexBookingInfo } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
@@ -132,8 +130,8 @@ const TransitFare = ({
           name: fareKeyNameMap[fareKey] || fareNameFallback || fareKey,
           strong: boldText,
           value: renderFare(
-            currentFare.currencyCode,
-            currentFare.transitFare / 100
+            currentFare.currency.currencyCode,
+            currentFare.cents / 100
           )
         }}
       />
@@ -154,13 +152,9 @@ export function TripDetails({
   itinerary
 }: TripDetailsProps): ReactElement {
   // process the transit fare
-  const fareResult = coreUtils.itinerary.calculateFares(itinerary, true);
-  const { maxTNCFare, minTNCFare, tncCurrencyCode, transitFares } = fareResult;
-
-  let defaultFare = defaultFareKey;
-  if (!transitFares[defaultFareKey]) {
-    defaultFare = "regular";
-  }
+  const fareResult = coreUtils.itinerary.calculateTncFares(itinerary);
+  const { maxTNCFare, minTNCFare, tncCurrencyCode } = fareResult;
+  const transitFares = itinerary?.fare?.fare;
 
   let companies = "";
   itinerary.legs.forEach(leg => {
@@ -173,6 +167,11 @@ export function TripDetails({
   const fareKeys = transitFares && Object.keys(transitFares).sort();
 
   if (transitFares && fareKeys.length > 0) {
+    let defaultFare = defaultFareKey;
+    if (!transitFares[defaultFareKey]) {
+      defaultFare = "regular";
+    }
+
     // Depending on if there are additional fares to display either render a <span> or a <details>
     const TransitFareWrapper =
       transitFares && fareKeys.length > 1 ? S.TransitFare : S.TransitFareSingle;

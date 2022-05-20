@@ -36,16 +36,16 @@ Array [
 exports[`util > route routeComparator should prioritize routes with valid sortOrder 1`] = `
 Array [
   Object {
-    "longName": "Around town",
-    "mode": "BUS",
-    "shortName": "20",
-    "sortOrder": 2,
-  },
-  Object {
     "longName": "Around another town",
     "shortName": "3",
     "sortOrder": -999,
     "type": 3,
+  },
+  Object {
+    "longName": "Around town",
+    "mode": "BUS",
+    "shortName": "20",
+    "sortOrder": 2,
   },
 ]
 `;
@@ -192,6 +192,30 @@ Array [
     "sortOrder": 2,
   },
   Object {
+    "longName": "A-line",
+    "mode": "BUS",
+    "shortName": "A",
+    "sortOrder": -999,
+  },
+  Object {
+    "longName": "B-line",
+    "mode": "BUS",
+    "shortName": "B",
+    "sortOrder": -999,
+  },
+  Object {
+    "longName": "Loop route",
+    "mode": "BUS",
+    "shortName": "2",
+    "sortOrder": -999,
+  },
+  Object {
+    "longName": "Around another town",
+    "shortName": "3",
+    "sortOrder": -999,
+    "type": 3,
+  },
+  Object {
     "longName": "Local route",
     "mode": "BUS",
     "shortName": "6",
@@ -238,30 +262,6 @@ Array [
     "mode": "BUS",
     "shortName": "10",
     "sortOrder": 10,
-  },
-  Object {
-    "longName": "A-line",
-    "mode": "BUS",
-    "shortName": "A",
-    "sortOrder": -999,
-  },
-  Object {
-    "longName": "B-line",
-    "mode": "BUS",
-    "shortName": "B",
-    "sortOrder": -999,
-  },
-  Object {
-    "longName": "Loop route",
-    "mode": "BUS",
-    "shortName": "2",
-    "sortOrder": -999,
-  },
-  Object {
-    "longName": "Around another town",
-    "shortName": "3",
-    "sortOrder": -999,
-    "type": 3,
   },
   Object {
     "longName": "A meandering route",

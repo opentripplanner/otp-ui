@@ -73,6 +73,8 @@ export interface ConfiguredCompany {
  */
 export interface CustomQueryParameter {
   label?: ReactNode;
+  labelHigh?: ReactNode;
+  labelLow?: ReactNode;
   options?:
     | QueryParamOptions[]
     | ((queryParams: QueryParams) => QueryParamOptions[]);

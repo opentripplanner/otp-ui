@@ -80,6 +80,14 @@ describe("query", () => {
           watts: 250
         })
       ).toMatchSnapshot();
+      expect(
+        getRoutingParams(fakeConfig, {
+          ...makeBaseTestQuery(),
+          companies: "FAKECOMPANY",
+          mode: "SCOOTER,BUS",
+          watts: 250
+        })
+      ).toMatchSnapshot();
     });
 
     it("should create routing params for intermediate places query", () => {

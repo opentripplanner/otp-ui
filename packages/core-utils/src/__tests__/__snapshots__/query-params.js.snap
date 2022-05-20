@@ -77,7 +77,7 @@ Array [
   },
   Object {
     "applicable": [Function],
-    "default": 1207,
+    "default": 1609,
     "label": "Max Walk Distance In Meters",
     "name": "maxWalkDistance",
     "options": Array [
@@ -244,6 +244,21 @@ Array [
       "PROFILE",
     ],
     "selector": "DROPDOWN",
+  },
+  Object {
+    "applicable": [Function],
+    "high": 20,
+    "label": "walk reluctance",
+    "labelHigh": "More Transit",
+    "labelLow": "More Walking",
+    "low": 0.5,
+    "name": "walkReluctance",
+    "routingTypes": Array [
+      "ITINERARY",
+      "PROFILE",
+    ],
+    "selector": "SLIDER",
+    "step": 0.5,
   },
   Object {
     "applicable": [Function],
@@ -458,12 +473,6 @@ Array [
   },
   Object {
     "name": "maxPreTransitTime",
-    "routingTypes": Array [
-      "ITINERARY",
-    ],
-  },
-  Object {
-    "name": "walkReluctance",
     "routingTypes": Array [
       "ITINERARY",
     ],
