@@ -60,12 +60,14 @@ export type SearchQuery = {
   sources?: string;
 };
 
+export type AnyGeocoderQuery = SearchQuery & AutocompleteQuery & ReverseQuery;
+
 export type MultiGeocoderResponse = FeatureCollection & {
-  isomorphicMapzenSearchQuery?: SearchQuery & AutocompleteQuery & ReverseQuery;
+  isomorphicMapzenSearchQuery?: AnyGeocoderQuery;
 };
 
 export type SingleGeocoderResponse = {
-  isomorphicMapzenSearchQuery?: SearchQuery & AutocompleteQuery & ReverseQuery;
+  isomorphicMapzenSearchQuery?: AnyGeocoderQuery;
   lat: number;
   lon: number;
   name: string;

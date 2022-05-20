@@ -34,6 +34,7 @@ import {
   handleGlobalError,
   handleHttpResponse
 } from "./fetch";
+import defaultMessages from "./default-messages";
 
 export {
   useZoomState,
@@ -64,5 +65,6 @@ export {
   recenterFlyTo,
   recenterPanTo,
   recenterPanToOffset,
-  linterIgnoreTheseProps
+  linterIgnoreTheseProps,
+  defaultMessages
 };

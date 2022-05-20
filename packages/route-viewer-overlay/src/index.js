@@ -1,4 +1,3 @@
-import coreUtils from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
 import React from "react";
 import { FeatureGroup, MapLayer, Polyline, withLeaflet } from "react-leaflet";
@@ -12,7 +11,7 @@ const isGeomComplete = routeData => {
     routeData &&
     routeData.patterns &&
     Object.values(routeData.patterns).every(
-      ptn => typeof ptn.geometry !== "undefined"
+      ptn => typeof ptn?.geometry !== "undefined"
     )
   );
 };
@@ -53,19 +52,21 @@ class RouteViewerOverlay extends MapLayer {
   // TODO: determine why the default MapLayer componentWillUnmount() method throws an error
   componentWillUnmount() {}
 
-  componentDidUpdate(prevProps) {
-    // if pattern geometry just finished populating, update the map points
-    if (
-      !isGeomComplete(prevProps.routeData) &&
-      isGeomComplete(this.props.routeData)
-    ) {
+  componentDidUpdate() {
+    // if pattern geometry updated, update the map points
+    if (this.props.allowMapCentering && isGeomComplete(this.props.routeData)) {
       const allPoints = Object.values(this.props.routeData.patterns).reduce(
         (acc, ptn) => {
           return acc.concat(polyline.decode(ptn.geometry.points));
         },
         []
       );
-      this.props.leaflet.map.fitBounds(allPoints);
+      if (allPoints.length > 0 && this.props.leaflet.map) {
+        this.props.leaflet.map.fitBounds(allPoints);
+        if (this.props.mapCenterCallback) {
+          this.props.mapCenterCallback();
+        }
+      }
     }
   }
 
@@ -81,7 +82,7 @@ class RouteViewerOverlay extends MapLayer {
     const routeColor = routeData.color ? `#${routeData.color}` : path.color;
     const segments = [];
     Object.values(routeData.patterns).forEach(pattern => {
-      if (!pattern.geometry) return;
+      if (!pattern?.geometry) return;
       const pts = polyline.decode(pattern.geometry.points);
       const clippedPts = clipToPatternStops
         ? removePointsInFlexZone(pattern?.stops, pts)
@@ -110,6 +111,10 @@ class RouteViewerOverlay extends MapLayer {
 
 RouteViewerOverlay.propTypes = {
   /**
+   * This boolean value allows disabling of map centering and panning.
+   */
+  allowMapCentering: PropTypes.bool,
+  /**
    * If pattern stops contain polygons, we can request that the routes are not drawn
    * inside of these polygons by setting this prop to true. If true, the layer will
    * check every zone of every stop in a pattern before drawing the route for that pattern
@@ -117,12 +122,17 @@ RouteViewerOverlay.propTypes = {
    */
   clipToPatternStops: PropTypes.bool,
   /**
+   * This method is called whenever the bounds are updated to fit a route
+   */
+  mapCenterCallback: PropTypes.func,
+  /**
    * Leaflet path properties to use to style each polyline that represents a
    * pattern of the route. Only a few of the items are actually used.
    *
    * See https://leafletjs.com/reference-1.6.0.html#path
    */
-  path: coreUtils.types.leafletPathType,
+  // Typescript TODO: restore correct type ?
+  // path: coreUtils.types.leafletPathType,
   /**
    * This represents data about a route as obtained from a transit index.
    * Typically a route has more data than these items, so this is only a list of
@@ -132,7 +142,8 @@ RouteViewerOverlay.propTypes = {
     color: PropTypes.string,
     patterns: PropTypes.objectOf(
       PropTypes.shape({
-        geometry: coreUtils.types.encodedPolylineType,
+        // Typescript TODO: restore correct type ?
+        // geometry: coreUtils.types.encodedPolylineType,
         id: PropTypes.string.isRequired,
         stops: PropTypes.arrayOf(
           PropTypes.shape({
@@ -150,6 +161,7 @@ RouteViewerOverlay.propTypes = {
 };
 
 RouteViewerOverlay.defaultProps = {
+  allowMapCentering: true,
   path: {
     color: "#00bfff",
     opacity: 1,

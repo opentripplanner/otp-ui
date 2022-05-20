@@ -34,7 +34,7 @@ const companies = [
   {
     id: "RAZOR",
     label: "Razor",
-    modes: "MICROMOBILITY_RENT"
+    modes: "SCOOTER"
   },
   {
     id: "SHARED",

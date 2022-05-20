@@ -42,6 +42,7 @@ function run({ options, query, url }: HereFetchArgs): Promise<HereResponse> {
 }
 
 const checkItemInBoundary = ({ rect }: Boundary) => ({ position }: Item) => {
+  if (!position) return true // Chain queries might not have position, ignore them
   const { maxLat, maxLon, minLat, minLon } = rect
   const { lat, lng } = position
   return lng <= maxLon && lng >= minLon && lat <= maxLat && lat >= minLat

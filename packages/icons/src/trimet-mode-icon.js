@@ -42,6 +42,7 @@ function TriMetModeIcon({ mode, ...props }) {
       return <AerialTram {...props} />;
     case "micromobility":
     case "micromobility_rent":
+    case "scooter":
       return <Micromobility {...props} />;
     case "rail":
       return <Wes {...props} />;

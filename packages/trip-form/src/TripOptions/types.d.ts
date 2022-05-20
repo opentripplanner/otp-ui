@@ -49,6 +49,10 @@ export interface QueryParams {
    */
   routingType?: string;
   /**
+   * Whether the query is an OTP2 query
+   */
+  otp2?: boolean;
+  /**
    * FIXME: other query params exist but are not populated here.
    */
 }

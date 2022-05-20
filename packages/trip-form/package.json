@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/trip-form",
-  "version": "1.10.1",
+  "version": "1.11.3",
   "description": "Trip Settings Form and Related Components",
   "author": "@binh-dam-ibigroup",
   "homepage": "https://github.com/opentripplanner/otp-ui/#readme",
@@ -10,8 +10,8 @@
   "types": "lib/index.d.ts",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^4.5.0",
-    "@opentripplanner/icons": "^1.2.1",
+    "@opentripplanner/core-utils": "^4.11.2",
+    "@opentripplanner/icons": "^1.2.2",
     "@styled-icons/bootstrap": "^10.34.0",
     "@styled-icons/boxicons-regular": "^10.38.0",
     "@styled-icons/fa-regular": "^10.34.0",
@@ -26,7 +26,7 @@
   },
   "peerDependencies": {
     "react": "^16.14.0",
-    "react-intl": "^5.20.4",
+    "react-intl": "^5.24.6",
     "styled-components": "^5.3.0"
   },
   "repository": {

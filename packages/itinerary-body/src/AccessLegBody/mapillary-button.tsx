@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useIntl } from "react-intl";
 import styled from "styled-components";
 import { StreetView } from "@styled-icons/fa-solid";
+
+import { defaultMessages } from "../util";
 
 /**
  * Helper method to generate bounding box from a location. Adding the WINDOW to the coordinate
@@ -24,10 +27,7 @@ const generateBoundingBoxFromCoordinate = ({
   return [west, south, east, north];
 };
 
-const Container = styled.a<{ padLeft?: boolean; padTop?: boolean }>`
-  display: inline-block;
-  margin-top: ${props => (props.padTop ? "10px" : "0")};
-
+const Container = styled.a`
   &:hover {
     cursor: pointer;
     text-decoration: none;
@@ -40,7 +40,6 @@ const Container = styled.a<{ padLeft?: boolean; padTop?: boolean }>`
   &::before {
     content: "| ";
     cursor: auto;
-    margin-left: ${props => (props.padLeft ? "1ch" : "0")};
   }
 `;
 
@@ -55,23 +54,19 @@ const Icon = styled(StreetView)`
  *
  * @param coords        The coordinates to find imagery for in the format [lat, lon]
  * @param mapillaryKey  A Mapillary api key used to check for imagery.
- * @param padTop        Whether to add padding to the top of the container.
  * @param clickCallback A method to fire when the button is clicked, which accepts an ID.
  *  If it is not passsed, a popup window will be opened. */
 const MapillaryButton = ({
   clickCallback,
   coords,
-  mapillaryKey,
-  padLeft,
-  padTop
+  mapillaryKey
 }: {
   clickCallback?: (id: string) => void;
   coords: { lat: number; lon: number };
   mapillaryKey: string;
-  padLeft?: boolean;
-  padTop?: boolean;
 }): JSX.Element => {
   const [imageId, setImageId] = useState(null);
+  const intl = useIntl();
 
   useEffect(() => {
     // useEffect only supports async actions as a child function
@@ -104,9 +99,11 @@ const MapillaryButton = ({
   return (
     <Container
       onClick={handleClick}
-      padLeft={padLeft}
-      padTop={padTop}
-      title="Show street imagery at this location"
+      title={intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.AccessLegBody.mapillaryTooltip"],
+        description: "Tooltip text describing the street view icon.",
+        id: "otpUi.AccessLegBody.mapillaryTooltip"
+      })}
     >
       <Icon style={{ paddingBottom: 1 }} />
     </Container>

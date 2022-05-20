@@ -1,7 +1,5 @@
-import flatten from "flat";
 import * as Icons from "@opentripplanner/icons";
 import React from "react";
-import { IntlProvider } from "react-intl";
 import { action } from "@storybook/addon-actions";
 
 import * as Core from ".";
@@ -11,7 +9,6 @@ import modeOptions from "./__mocks__/mode-options";
 import submodeOptions from "./__mocks__/submode-options";
 import trimet from "./__mocks__/trimet-styled";
 
-import englishMessages from "../i18n/en-US.yml";
 import { SettingsSelectorPanel } from "./styled";
 
 // Events
@@ -19,15 +16,15 @@ const onChange = action("onChange");
 const onClick = action("onClick");
 const onQueryParamChange = action("onQueryParamChange");
 
-const intlDecorator = (Story: StoryType): ReactElement => (
-  <IntlProvider locale="en-US" messages={flatten(englishMessages)}>
+const decorator = (Story: StoryType): ReactElement => (
+  <>
     <p>Plain</p>
     <div>
       <Story />
     </div>
     <p>Styled</p>
     <div>{trimet(<Story />)}</div>
-  </IntlProvider>
+  </>
 );
 
 /**
@@ -44,6 +41,7 @@ const GeneralSettingsTemplate = (args: StoryArgs) => (
     onQueryParamChange={onQueryParamChange}
     query={{
       mode: args.mode,
+      otp2: args.otp2,
       routingType: "ITINERARY"
     }}
     queryParamMessages={args.queryParamMessages}
@@ -51,26 +49,17 @@ const GeneralSettingsTemplate = (args: StoryArgs) => (
   />
 );
 
-// Hide story controls for some props (but still display in the controls and the docs section).
-const noControl = {
-  control: { type: false }
-};
-// Hide some story args completely.
-const hiddenProp = {
-  table: { disable: true }
-};
-
 export default {
-  argTypes: {
-    className: hiddenProp,
-    modes: noControl,
-    onChange: noControl,
-    onQueryParamChange: noControl,
-    style: hiddenProp
-  },
   component: SettingsSelectorPanel,
-  decorators: [intlDecorator],
-  parameters: { controls: { sort: "alpha" } },
+  decorators: [decorator],
+  parameters: {
+    // Hide all controls
+    // (there are no args that the user can interactively change for this component).
+    controls: {
+      hideNoControlsWarning: true,
+      include: []
+    }
+  },
   title: "Trip Form Components"
 } as Meta;
 
@@ -113,6 +102,19 @@ export const checkboxSelector = makeStory(Core.CheckboxSelector, {
   style: { display: "inline-block", width: "250px" }
 });
 
+export const sliderSelector = makeStory(Core.SliderSelector, {
+  label: "Drag me.",
+  labelHigh: "high",
+  labelLow: "low",
+  max: 20,
+  min: 0.5,
+  name: "MyParam",
+  onChange,
+  step: 0.5,
+  style: { display: "inline-block", width: "250px" },
+  value: 3
+});
+
 export const dateTimeSelector = makeStory(Core.DateTimeSelector, {
   date: "2020-02-15",
   dateFormatLegacy: "YY-M-d",
@@ -143,6 +145,11 @@ export const dropdownSelector = makeStory(Core.DropdownSelector, {
 
 export const generalSettingsPanel = makeStory(GeneralSettingsTemplate, {
   mode: "WALK,BUS,TRAM,SUBWAY"
+});
+
+export const generalSettingsPanelWithOtp2 = makeStory(GeneralSettingsTemplate, {
+  mode: "WALK,BUS,TRAM,SUBWAY",
+  otp2: true
 });
 
 export const generalSettingsPanelWithCustomMessages = makeStory(

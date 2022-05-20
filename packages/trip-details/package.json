@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/trip-details",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A component for displaying details about a trip planning itinerary",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -22,7 +22,7 @@
   },
   "peerDependencies": {
     "react": "^16.14.0",
-    "react-intl": "^5.20.4",
+    "react-intl": "^5.24.6",
     "styled-components": "^5.3.0"
   },
   "bugs": {
@@ -30,6 +30,6 @@
   },
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d",
   "scripts": {
-    "tsc": "tsc && echo Remove the @ts-expect-error exception in index.tsx once core-utils is typed!"
+    "tsc": "tsc"
   }
 }
