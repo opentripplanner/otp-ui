@@ -1,4 +1,3 @@
-import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 import { ComponentMeta } from "@storybook/react";
 import styled from "styled-components";
@@ -16,6 +15,7 @@ import {
   Train,
 } from "styled-icons/fa-solid";
 
+import { GeocodedFeature, Stop, UserLocation } from "@opentripplanner/types";
 import LocationField from "..";
 import {
   currentPosition,
@@ -28,7 +28,7 @@ import {
 import * as LocationFieldClasses from "../styled";
 
 // eslint-disable-next-line prettier/prettier
-import type { LocationType, TransitIndexStopWithRoutes, UserLocation } from "../types"
+import type { LocationType } from "../types"
 
 const nearbyStops = ["1", "2"];
 const sessionSearches = [
@@ -38,13 +38,14 @@ const sessionSearches = [
     name: "123 Main St"
   }
 ];
-const stopsIndex: { [key: string]: TransitIndexStopWithRoutes } = {
+const stopsIndex: { [key: string]: Stop } = {
   1: {
     code: "1",
     dist: 123,
     lat: 12.34,
     lon: 34.56,
     name: "1st & Main",
+    // @ts-expect-error demo data can be missing some fields
     routes: [{ shortName: "1" }]
   },
   2: {
@@ -53,6 +54,7 @@ const stopsIndex: { [key: string]: TransitIndexStopWithRoutes } = {
     lat: 23.45,
     lon: 67.89,
     name: "Main & 2nd",
+    // @ts-expect-error demo data can be missing some fields
     routes: [{ shortName: "2" }]
   }
 };
@@ -79,29 +81,23 @@ const userLocationsAndRecentPlaces: UserLocation[] = [
   }
 ];
 
-function GeocodedOptionIconComponent({ feature }) {
+function GeocodedOptionIconComponent({ feature }: { feature: GeocodedFeature }) {
   if (feature.properties.layer === "stops") return <MapSigns size={13} />;
   if (feature.properties.layer === "station") return <Train size={13} />;
   return <MapPin size={13} />;
 }
 
-GeocodedOptionIconComponent.propTypes = {
-  feature: coreUtils.types.geocodedFeatureType.isRequired
-};
 
 function LocationIconComponent({ locationType }: { locationType: LocationType }) {
   if (locationType === "from") return <PlaneDeparture size={13} />;
   return <PlaneArrival size={13} />;
 }
 
-function UserLocationIconComponent({ userLocation }) {
+function UserLocationIconComponent({ userLocation }: { userLocation: UserLocation }) {
   if (userLocation.icon === "work") return <Building size={13} />;
   return <Star size={13} />;
 }
 
-UserLocationIconComponent.propTypes = {
-  userLocation: coreUtils.types.userLocationType.isRequired
-};
 
 const StyledLocationField = styled(LocationField)`
   ${LocationFieldClasses.OptionContainer} {

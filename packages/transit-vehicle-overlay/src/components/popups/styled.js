@@ -6,6 +6,10 @@ export const TooltipStyle = styled.span``;
 TooltipStyle.Title = styled.span`
   font-size: 110%;
   font-weight: bold;
+  &::after {
+    content: "";
+    margin: 0 0.125em;
+  }
 `;
 
 export const PopupStyle = styled.div`

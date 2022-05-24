@@ -1,5 +1,3 @@
-import coreUtils from "@opentripplanner/core-utils";
-import PropTypes from "prop-types";
 import React from "react";
 import { FeatureGroup, MapLayer, Polyline, withLeaflet } from "react-leaflet";
 
@@ -48,15 +46,15 @@ TripViewerOverlay.propTypes = {
    *
    * See https://leafletjs.com/reference-1.6.0.html#path
    */
-  leafletPath: coreUtils.types.leafletPathType,
+  // leafletPath: coreUtils.types.leafletPathType,
   /**
    * This represents data about a trip as obtained from a transit index.
    * Typically a trip has more data than these items, so this is only a list of
    * the properties that this component actually uses.
    */
-  tripData: PropTypes.shape({
-    geometry: coreUtils.types.encodedPolylineType
-  })
+  // tripData: PropTypes.shape({
+  // geometry: coreUtils.types.encodedPolylineType
+  // })
 };
 
 TripViewerOverlay.defaultProps = {
