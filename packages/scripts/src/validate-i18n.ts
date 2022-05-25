@@ -29,52 +29,54 @@ async function checkI18n({ sourceFiles, ymlFilesByLocale }) {
 
   // For each locale, check that all ids in messages are in the yml files.
   // Accessorily, log message ids from yml files that are not used in the code.
-  Object.keys(ymlFilesByLocale).forEach(async locale => {
-    const idsChecked = [];
-    const idsNotInCode = [];
+  await Promise.all(
+    Object.keys(ymlFilesByLocale).map(async locale => {
+      const idsChecked = [];
+      const idsNotInCode = [];
 
-    const allI18nPromises = ymlFilesByLocale[locale].map(loadYamlFile);
-    const allI18nMessages = await Promise.all(allI18nPromises);
+      const allI18nPromises = ymlFilesByLocale[locale].map(loadYamlFile);
+      const allI18nMessages = await Promise.all(allI18nPromises);
 
-    allI18nMessages.forEach(i18nMessages => {
-      const flattenedMessages = flatten(i18nMessages);
+      allI18nMessages.forEach(i18nMessages => {
+        const flattenedMessages = flatten(i18nMessages);
 
-      // Message ids from code must be present in yml.
-      messageIdsFromCode.forEach(id => {
-        if (flattenedMessages[id]) {
-          idsChecked.push(id);
-        }
+        // Message ids from code must be present in yml.
+        messageIdsFromCode.forEach(id => {
+          if (flattenedMessages[id]) {
+            idsChecked.push(id);
+          }
+        });
+
+        // Message ids from yml must be present in code.
+        Object.keys(flattenedMessages).forEach(id => {
+          if (!messageIdsFromCode.includes(id)) {
+            idsNotInCode.push(id);
+          }
+        });
       });
 
-      // Message ids from yml must be present in code.
-      Object.keys(flattenedMessages).forEach(id => {
-        if (!messageIdsFromCode.includes(id)) {
-          idsNotInCode.push(id);
-        }
-      });
-    });
-
-    // Collect ids in code not found in yml.
-    const missingIdsForLocale = messageIdsFromCode.filter(
-      id => !idsChecked.includes(id)
-    );
-
-    // Print errors.
-    missingIdsForLocale.forEach(id => {
-      console.error(`Message '${id}' is missing from locale ${locale}.`);
-    });
-    idsNotInCode.forEach(id => {
-      console.error(
-        `Message '${id}' from locale ${locale} is not used in code.`
+      // Collect ids in code not found in yml.
+      const missingIdsForLocale = messageIdsFromCode.filter(
+        id => !idsChecked.includes(id)
       );
-    });
-    errorCount += missingIdsForLocale.length + idsNotInCode.length;
-    console.log(`${locale} - There were ${errorCount} error(s).`);
-  });
 
-  // if (errorCount > 0) {
-  //  process.exit(1);
-  // }
+      // Print errors.
+      missingIdsForLocale.forEach(id => {
+        console.error(`Message '${id}' is missing from locale ${locale}.`);
+      });
+      idsNotInCode.forEach(id => {
+        console.error(
+          `Message '${id}' from locale ${locale} is not used in code.`
+        );
+      });
+      errorCount += missingIdsForLocale.length + idsNotInCode.length;
+    })
+  );
+
+  console.log(`There were ${errorCount} error(s).`);
+  if (errorCount > 0) {
+    process.exit(1);
+  }
 }
 
 sortSourceAndYmlFiles(process.argv).then(checkI18n);
