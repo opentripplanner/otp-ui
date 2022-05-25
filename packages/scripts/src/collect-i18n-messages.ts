@@ -36,7 +36,7 @@ async function collectAndPrintOutMessages({ sourceFiles, ymlFilesByLocale }) {
       console.log(`ID,Description,${locale}`);
       messageIdsFromCode.filter(isNotSpecialId).forEach(id => {
         const { description } = messagesFromCode[id];
-        const message = allI18nMessagesFlattened[id].trim();
+        const message = allI18nMessagesFlattened[id]?.trim() || undefined;
         console.log(`${id},"${description}","${message}"`);
       });
     })
