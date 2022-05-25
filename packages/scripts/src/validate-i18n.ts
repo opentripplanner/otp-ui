@@ -7,9 +7,9 @@
  * This script is shipped as part of a package so it can be used in other code bases as needed.
  */
 // Example usage for one package in this repo:
-//   node ./validate-i18n.js ../trip-details/src ../trip-details/i18n
+//   node path-to/lib/validate-i18n.js ../trip-details/src ../trip-details/i18n
 // Example usage for all packages in this repo:
-//   node ./validate-i18n.js ../**/src ../**/i18n
+//   node path-to/lib/validate-i18n.js ../**/src ../**/i18n
 
 const { extract } = require("@formatjs/cli");
 const flatten = require("flat");
