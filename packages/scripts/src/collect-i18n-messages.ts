@@ -6,7 +6,7 @@
 import { extract } from "@formatjs/cli";
 import flatten from "flat";
 
-import { loadYamlFile, sortSourceAndYmlFiles } from "./util";
+import { isNotSpecialId, loadYamlFile, sortSourceAndYmlFiles } from "./util";
 
 /**
  * Collect all messages and create a formatted output.
@@ -34,7 +34,7 @@ async function collectAndPrintOutMessages({ sourceFiles, ymlFilesByLocale }) {
 
       // CSV heading
       console.log(`ID,Description,${locale}`);
-      messageIdsFromCode.forEach(id => {
+      messageIdsFromCode.filter(isNotSpecialId).forEach(id => {
         const { description } = messagesFromCode[id];
         const message = allI18nMessagesFlattened[id].trim();
         console.log(`${id},"${description}","${message}"`);

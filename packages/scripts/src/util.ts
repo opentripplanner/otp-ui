@@ -18,6 +18,13 @@ function shouldProcessFile(fileName: string): boolean {
 }
 
 /**
+ * @returns true if the id is not special or reserved (i.e. doesn't start with "_").
+ */
+export function isNotSpecialId(id: string): boolean {
+  return !id.startsWith("_");
+}
+
+/**
  * Helper function that sorts yml and source files into two buckets.
  * @param argv The value from process.argv.
  * @returns A composite object with a list for yml files by locale, and a list for source files.

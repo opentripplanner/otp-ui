@@ -11,7 +11,11 @@
 const { extract } = require("@formatjs/cli");
 const flatten = require("flat");
 
-const { loadYamlFile, sortSourceAndYmlFiles } = require("../lib/util");
+const {
+  isNotSpecialId,
+  loadYamlFile,
+  sortSourceAndYmlFiles
+} = require("./util");
 
 /**
  * Checks message ids completeness between code and yml files for all locales in repo.
@@ -41,18 +45,15 @@ async function checkI18n({ sourceFiles, ymlFilesByLocale }) {
         const flattenedMessages = flatten(i18nMessages);
 
         // Message ids from code must be present in yml.
-        messageIdsFromCode.forEach(id => {
-          if (flattenedMessages[id]) {
-            idsChecked.push(id);
-          }
-        });
+        messageIdsFromCode
+          .filter(id => flattenedMessages[id])
+          .forEach(id => idsChecked.push(id));
 
-        // Message ids from yml must be present in code.
-        Object.keys(flattenedMessages).forEach(id => {
-          if (!messageIdsFromCode.includes(id)) {
-            idsNotInCode.push(id);
-          }
-        });
+        // Message ids from yml (except those starting with "_") must be present in code.
+        Object.keys(flattenedMessages)
+          .filter(isNotSpecialId)
+          .filter(id => !messageIdsFromCode.includes(id))
+          .forEach(id => idsNotInCode.push(id));
       });
 
       // Collect ids in code not found in yml.
