@@ -18,27 +18,29 @@ async function collectAndPrintOutMessages({ sourceFiles, ymlFilesByLocale }) {
 
   // For each locale, check that all ids in messages are in the yml files.
   // Accessorily, log message ids from yml files that are not used in the code.
-  Object.keys(ymlFilesByLocale).forEach(async locale => {
-    const allI18nPromises = ymlFilesByLocale[locale].map(loadYamlFile);
-    const allI18nMessages = await Promise.all(allI18nPromises);
-    let allI18nMessagesFlattened = {};
+  await Promise.all(
+    Object.keys(ymlFilesByLocale).map(async locale => {
+      const allI18nPromises = ymlFilesByLocale[locale].map(loadYamlFile);
+      const allI18nMessages = await Promise.all(allI18nPromises);
+      let allI18nMessagesFlattened = {};
 
-    allI18nMessages.forEach(i18nMessages => {
-      const flattenedMessages: Record<string, string> = flatten(i18nMessages);
-      allI18nMessagesFlattened = {
-        ...allI18nMessagesFlattened,
-        ...flattenedMessages
-      };
-    });
+      allI18nMessages.forEach(i18nMessages => {
+        const flattenedMessages: Record<string, string> = flatten(i18nMessages);
+        allI18nMessagesFlattened = {
+          ...allI18nMessagesFlattened,
+          ...flattenedMessages
+        };
+      });
 
-    // CSV heading
-    console.log(`ID,Description,${locale}`);
-    messageIdsFromCode.forEach(id => {
-      const { description } = messagesFromCode[id];
-      const message = allI18nMessagesFlattened[id].trim();
-      console.log(`${id},"${description}","${message}"`);
-    });
-  });
+      // CSV heading
+      console.log(`ID,Description,${locale}`);
+      messageIdsFromCode.forEach(id => {
+        const { description } = messagesFromCode[id];
+        const message = allI18nMessagesFlattened[id].trim();
+        console.log(`${id},"${description}","${message}"`);
+      });
+    })
+  );
 }
 
 sortSourceAndYmlFiles(process.argv).then(collectAndPrintOutMessages);
