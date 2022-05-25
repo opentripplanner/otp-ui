@@ -5,7 +5,7 @@ import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 import ZoomBasedMarkers from "@opentripplanner/zoom-based-markers";
 import PropTypes from "prop-types";
 import React from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import { FeatureGroup, MapLayer, Popup, withLeaflet } from "react-leaflet";
 
 import {
@@ -22,6 +22,60 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 // - the yaml loader for webpack returns a nested object,
 // - the yaml loader for jest returns messages with flattened ids.
 const defaultMessages = flatten(defaultEnglishMessages);
+
+function makeDefaultGetStationName(intl) {
+  return function defaultGetStationName(configCompanies, station) {
+    const stationNetworks = coreUtils.itinerary.getCompaniesLabelFromNetworks(
+      station.networks,
+      configCompanies
+    );
+    let stationName = station.name || station.id;
+    // If the station name or id is a giant UUID (with more than 3 "-" characters)
+    // best not to show that at all and instead use the network name.
+    if ((stationName.match(/-/g) || []).length > 3) {
+      stationName = stationNetworks;
+    }
+
+    if (station.isFloatingBike) {
+      stationName = intl.formatMessage(
+        {
+          defaultMessage:
+            defaultEnglishMessages["otpUi.VehicleRentalOverlay.floatingBike"],
+          description: "Popup title for a free-floating bike",
+          id: "otpUi.VehicleRentalOverlay.floatingBike"
+        },
+        { name: stationName }
+      );
+    } else if (station.isFloatingCar) {
+      stationName = intl.formatMessage(
+        {
+          defaultMessage:
+            defaultEnglishMessages["otpUi.VehicleRentalOverlay.floatingCar"],
+          description: "Popup title for a free-floating car",
+          id: "otpUi.VehicleRentalOverlay.floatingCar"
+        },
+        {
+          company: stationNetworks,
+          name: stationName
+        }
+      );
+    } else if (station.isFloatingVehicle) {
+      // assumes that all floating vehicles are E-scooters
+      stationName = intl.formatMessage(
+        {
+          defaultMessage:
+            defaultEnglishMessages[
+              "otpUi.VehicleRentalOverlay.floatingEScooter"
+            ],
+          description: "Popup title for a free-floating e-scooter",
+          id: "otpUi.VehicleRentalOverlay.floatingEScooter"
+        },
+        { company: stationNetworks }
+      );
+    }
+    return stationName;
+  };
+}
 
 /**
  * This vehicle rental overlay can be used to render vehicle rentals of various
@@ -163,8 +217,10 @@ class VehicleRentalOverlay extends MapLayer {
    * applicable to other regions.
    */
   renderPopupForStation = (station, stationIsHub = false) => {
-    const { configCompanies, getStationName, setLocation } = this.props;
-    const stationName = getStationName(configCompanies, station);
+    const { configCompanies, getStationName, intl, setLocation } = this.props;
+    const getStationNameFunc =
+      getStationName || makeDefaultGetStationName(intl);
+    const stationName = getStationNameFunc(configCompanies, station);
     const location = {
       lat: station.y,
       lon: station.x,
@@ -306,29 +362,7 @@ VehicleRentalOverlay.props = {
 };
 
 VehicleRentalOverlay.defaultProps = {
-  getStationName: (configCompanies, station) => {
-    const stationNetworks = coreUtils.itinerary.getCompaniesLabelFromNetworks(
-      station.networks,
-      configCompanies
-    );
-    let stationName = station.name || station.id;
-    // If the station name or id is a giant UUID (with more than 3 "-" characters)
-    // best not to show that at all.
-    if ((stationName.match(/-/g) || []).length > 3) {
-      stationName = null;
-    }
-
-    if (station.isFloatingBike) {
-      if (stationName) stationName = `Free-floating bike: ${stationName}`;
-      else stationName = `${stationNetworks} Free-floating bike`;
-    } else if (station.isFloatingCar) {
-      stationName = `${stationNetworks} ${stationName}`;
-    } else if (station.isFloatingVehicle) {
-      // assumes that all floating vehicles are E-scooters
-      stationName = `${stationNetworks} E-scooter`;
-    }
-    return stationName;
-  },
+  getStationName: null,
   mapSymbols: [
     {
       zoom: 0,
@@ -340,4 +374,4 @@ VehicleRentalOverlay.defaultProps = {
   visible: false
 };
 
-export default withLeaflet(VehicleRentalOverlay);
+export default withLeaflet(injectIntl(VehicleRentalOverlay));
