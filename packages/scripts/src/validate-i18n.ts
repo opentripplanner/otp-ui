@@ -2,6 +2,9 @@
 /**
  * This script checks that message ids gathered by the formatjs extract command
  * are present in the specified folder(s).
+ * It will produce an error code if message ids are present in a language but not another,
+ * or if message ids are in a i18n yml files but not in the code or vice-versa.
+ * This script is shipped as part of a package so it can be used in other code bases as needed.
  */
 // Example usage for one package in this repo:
 //   node ./validate-i18n.js ../trip-details/src ../trip-details/i18n
