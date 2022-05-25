@@ -1,5 +1,6 @@
 import { promises as fs } from "fs";
 import { load } from "js-yaml";
+import glob from "glob-promise";
 import path from "path";
 
 export interface SourceFilesAndYmlFilesByLocale {
@@ -7,41 +8,61 @@ export interface SourceFilesAndYmlFilesByLocale {
   ymlFilesByLocale: Record<string, string>;
 }
 
+function shouldProcessFile(fileName: string): boolean {
+  return (
+    !fileName.includes("*") &&
+    !fileName.includes("/__") &&
+    !fileName.includes("node_modules") &&
+    !fileName.endsWith(".d.ts")
+  );
+}
+
 /**
  * Helper function that sorts yml and source files into two buckets.
  * @param argv The value from process.argv.
  * @returns A composite object with a list for yml files by locale, and a list for source files.
  */
-export function sortSourceAndYmlFiles(
-  argv: string[]
-): SourceFilesAndYmlFilesByLocale {
+export async function sortSourceAndYmlFiles(argv: string[]) {
   const sourceFiles = [];
   const ymlFilesByLocale = {};
+
+  // Places the give file into the source or yml file bucket above.
+  function sortFile(fileName: string): void {
+    const parsedArg = path.parse(fileName);
+    if (parsedArg.ext === ".yml") {
+      const locale = parsedArg.name;
+      if (!ymlFilesByLocale[locale]) {
+        ymlFilesByLocale[locale] = [];
+      }
+      ymlFilesByLocale[locale].push(fileName);
+    } else {
+      sourceFiles.push(fileName);
+    }
+  }
 
   // Note: reminder that node.js provides the first two argv values:
   // - argv[0] is the name of the executable file.
   // - argv[1] is the path to the script file.
-  // - argv[2] and beyond are the parameters passed to the script.
+  // - argv[2] and beyond are the folders passed to the script.
+  const allGlobPromises = [];
   for (let i = 2; i < argv.length; i++) {
+    // List the files recursively (glob) for this folder.
     const arg = argv[i];
-    if (
-      !arg.includes("*") &&
-      !arg.includes("/__") &&
-      !arg.includes("node_modules") &&
-      !arg.endsWith(".d.ts")
-    ) {
-      const parsedArg = path.parse(arg);
-      if (parsedArg.ext === ".yml") {
-        const locale = parsedArg.name;
-        if (!ymlFilesByLocale[locale]) {
-          ymlFilesByLocale[locale] = [];
-        }
-        ymlFilesByLocale[locale].push(arg);
-      } else {
-        sourceFiles.push(arg);
-      }
+
+    // If argument ends with .yml, treat as a file.
+    if (arg.endsWith(".yml")) {
+      sortFile(arg);
+    } else {
+      // Otherwise, it is a folder, and use glob to get files recursively.
+      // For glob argument info, see their docs at https://github.com/ahmadnassri/node-glob-promise#api.
+      allGlobPromises.push(glob(`${arg}/**/*.{{j,t}s{,x},yml}`, {}));
     }
   }
+
+  const allFileLists = await Promise.all(allGlobPromises);
+  allFileLists.forEach(files =>
+    files.filter(shouldProcessFile).forEach(sortFile)
+  );
 
   return {
     sourceFiles,

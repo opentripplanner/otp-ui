@@ -41,4 +41,4 @@ async function collectAndPrintOutMessages({ sourceFiles, ymlFilesByLocale }) {
   });
 }
 
-collectAndPrintOutMessages(sortSourceAndYmlFiles(process.argv));
+sortSourceAndYmlFiles(process.argv).then(collectAndPrintOutMessages);

@@ -1,12 +1,12 @@
 /* eslint-disable no-console */
 /**
  * This script checks that message ids gathered by the formatjs extract command
- * are present in the files in the i18n subfolders.
+ * are present in the specified folder(s).
  */
-// Example usage for one package:
-//   node ./validate-i18n.js ../trip-details/src/{,**/}*.{j,t}s{,x} ../trip-details/i18n/*.yml
-// Example usage for all packages:
-//   node ./validate-i18n.js ../**/src/{,**/}*.{j,t}s{,x} ../**/i18n/*.yml
+// Example usage for one package in this repo:
+//   node ./validate-i18n.js ../trip-details/src ../trip-details/i18n
+// Example usage for all packages in this repo:
+//   node ./validate-i18n.js ../**/src ../**/i18n
 
 const { extract } = require("@formatjs/cli");
 const flatten = require("flat");
@@ -17,14 +17,14 @@ const { loadYamlFile, sortSourceAndYmlFiles } = require("../lib/util");
  * Checks message ids completeness between code and yml files for all locales in repo.
  */
 async function checkI18n({ sourceFiles, ymlFilesByLocale }) {
-  // Filter out glob patterns, private (/__) folders, and .d.ts types-only files.
-  sourceFiles = sourceFiles.filter(
-    f => !f.includes("*") && !f.includes("/__") && !f.endsWith(".d.ts")
-  );
-
   // Gather message ids from code.
   const messagesFromCode = JSON.parse(await extract(sourceFiles, {}));
   const messageIdsFromCode = Object.keys(messagesFromCode);
+  console.log(
+    `Checking ${messageIdsFromCode.length} strings from ${
+      Object.keys(ymlFilesByLocale["en-US"]).length
+    } message files against ${sourceFiles.length} source files.`
+  );
   let errorCount = 0;
 
   // For each locale, check that all ids in messages are in the yml files.
@@ -69,13 +69,12 @@ async function checkI18n({ sourceFiles, ymlFilesByLocale }) {
       );
     });
     errorCount += missingIdsForLocale.length + idsNotInCode.length;
+    console.log(`${locale} - There were ${errorCount} error(s).`);
   });
 
-  console.log(`There were ${errorCount} error(s).`);
-
-  if (errorCount > 0) {
-    process.exit(1);
-  }
+  // if (errorCount > 0) {
+  //  process.exit(1);
+  // }
 }
 
-checkI18n(sortSourceAndYmlFiles(process.argv));
+sortSourceAndYmlFiles(process.argv).then(checkI18n);

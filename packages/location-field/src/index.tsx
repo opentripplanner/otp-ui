@@ -593,6 +593,7 @@ const LocationField = ({
             isActive={itemIndex === activeIndex}
             key={optionKey++}
             onClick={locationSelected}
+            // @ts-ignore Fixed in another PR
             title={coreUtils.map.formatStoredPlaceName(userLocation)}
           />
         );

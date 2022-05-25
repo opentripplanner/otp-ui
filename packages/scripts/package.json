@@ -13,13 +13,14 @@
   "dependencies": {
     "@formatjs/cli": "^4.2.33",
     "flat": "^5.0.2",
-    "glob": "^8.0.1",
+    "glob": "^8.0.3",
+    "glob-promise": "^4.2.2",
     "js-yaml": "^4.1.0"
   },
   "scripts": {
-    "collect-i18n": "node lib/collect-i18n-messages.js ../**/src/{,**/}*.{j,t}s{,x} ../**/i18n/en-US.yml > i18n.csv",
+    "collect-i18n": "node lib/collect-i18n-messages.js ../**/src ../**/i18n/en-US.yml > i18n.csv",
     "tsc": "tsc",
-    "validate-i18n": "node lib/validate-i18n.js ../**/src/{,**/}*.{j,t}s{,x} ../**/i18n/*.yml"
+    "validate-i18n": "node lib/validate-i18n.js ../**/{src,i18n} ../**/i18n"
   },
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"
