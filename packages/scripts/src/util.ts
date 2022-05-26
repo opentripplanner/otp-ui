@@ -40,8 +40,12 @@ export async function sortSourceAndYmlFiles(argv: string[]) {
       if (!ymlFilesByLocale[locale]) {
         ymlFilesByLocale[locale] = [];
       }
+      const ymlFilesForLocale = ymlFilesByLocale[locale];
+      if (!ymlFilesForLocale.includes(fileName)) {
+        ymlFilesForLocale.push(fileName);
+      }
       ymlFilesByLocale[locale].push(fileName);
-    } else {
+    } else if (!sourceFiles.includes(fileName)) {
       sourceFiles.push(fileName);
     }
   }
@@ -61,7 +65,7 @@ export async function sortSourceAndYmlFiles(argv: string[]) {
     } else {
       // Otherwise, it is a folder, and use glob to get files recursively.
       // For glob argument info, see their docs at https://github.com/ahmadnassri/node-glob-promise#api.
-      allGlobPromises.push(glob(`${arg}/**/*.{{j,t}s{,x},yml}`, {}));
+      allGlobPromises.push(glob(`${arg}/**/*.{{j,t}s{,x},yml}`));
     }
   }
 
