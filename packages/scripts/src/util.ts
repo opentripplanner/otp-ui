@@ -10,7 +10,6 @@ export interface SourceFilesAndYmlFilesByLocale {
 
 function shouldProcessFile(fileName: string): boolean {
   return (
-    !fileName.includes("*") &&
     !fileName.includes("/__") &&
     !fileName.includes("node_modules") &&
     !fileName.endsWith(".d.ts")

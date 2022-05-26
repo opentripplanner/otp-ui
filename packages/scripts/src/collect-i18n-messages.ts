@@ -14,6 +14,14 @@ import flatten from "flat";
 
 import { isNotSpecialId, loadYamlFile, sortSourceAndYmlFiles } from "./util";
 
+// The data that corresponds to rows in the CSV output.
+type MessageData = Record<
+  string,
+  Record<string, string> & {
+    description: string;
+  }
+>;
+
 /**
  * Collect all messages and create a formatted output.
  */
@@ -27,7 +35,7 @@ async function collectAndPrintOutMessages({ sourceFiles, ymlFilesByLocale }) {
   console.log(`ID,Description,${allLocales.join(",")}`);
 
   // Will contain id, description, and a column for each language.
-  const messageData = {};
+  const messageData: MessageData = {};
 
   // For each locale, check that all ids in messages are in the yml files.
   // Accessorily, log message ids from yml files that are not used in the code.
@@ -48,7 +56,6 @@ async function collectAndPrintOutMessages({ sourceFiles, ymlFilesByLocale }) {
       messageIdsFromCode.filter(isNotSpecialId).forEach(id => {
         const { description } = messagesFromCode[id];
         const message = allI18nMessagesFlattened[id]?.trim() || undefined;
-        // console.log(`${id},"${description}","${message}"`);
 
         if (!messageData[id]) {
           messageData[id] = {
