@@ -108,7 +108,7 @@ const LocationField = ({
     }
   }, [initialSearchResults]);
 
-  const geocodeAutocomplete = debounce(1000, text => {
+  const geocodeAutocomplete = debounce(300, text => {
     if (!text) {
       console.warn("No text entry provided for geocode autocomplete search.");
       return;
