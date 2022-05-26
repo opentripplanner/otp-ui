@@ -34,6 +34,7 @@ const walkOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__
 const walkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json");
 const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json");
 const fareComponentsItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/fare-components.json");
+const otp2ScooterItinerary = require("@opentripplanner/itinerary-body/__mocks__/itineraries/otp2-scooter.json");
 
 // Change currency code on one of the itineraries for illustration.
 // (other currency fields in the itinerary object are not used for display).
@@ -234,6 +235,10 @@ export const BikeRentalTransitItinerary = makeStory({
 
 export const EScooterRentalTransitItinerary = makeStory({
   itinerary: eScooterRentalTransiteScooterRentalItinerary
+});
+
+export const OTP2EScooterRentalTransitItinerary = makeStory({
+  itinerary: otp2ScooterItinerary
 });
 
 export const TncTransitItinerary = makeStory(
