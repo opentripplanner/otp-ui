@@ -129,8 +129,14 @@ export function itineraryToTransitive(
       let fromPlaceId: string;
       if (leg.from.bikeShareId) {
         fromPlaceId = `bicycle_rent_station_${leg.from.bikeShareId}`;
-        // TODO: does this need to change to be OTP2 compatible?
+        if (
+          // OTP2 Scooter case
+          leg.mode === "SCOOTER"
+        ) {
+          fromPlaceId = `escooter_rent_station_${leg.from.bikeShareId}`;
+        }
       } else if (leg.from.vertexType === "VEHICLERENTAL") {
+        // OTP1 Scooter case
         fromPlaceId = `escooter_rent_station_${leg.from.name}`;
       } else if (
         leg.mode === "CAR" &&
@@ -139,13 +145,18 @@ export function itineraryToTransitive(
       ) {
         // create a special place ID for car legs preceded by walking legs
         fromPlaceId = `itin_car_${streetEdgeId}_from`;
-      } else {
+      } else if (!fromPlaceId) {
         fromPlaceId = `itin_street_${streetEdgeId}_from`;
       }
 
       let toPlaceId;
       if (leg.to.bikeShareId) {
         toPlaceId = `bicycle_rent_station_${leg.to.bikeShareId}`;
+        // OTP2 scooter case
+        // Need to check next leg since this is a "to" place "
+        if (leg.mode === "SCOOTER" || itin.legs?.[idx + 1].mode === "SCOOTER") {
+          toPlaceId = `escooter_rent_station_${leg.to.bikeShareId}`;
+        }
       } else if (leg.to.vertexType === "VEHICLERENTAL") {
         toPlaceId = `escooter_rent_station_${leg.to.name}`;
       } else if (
@@ -155,7 +166,7 @@ export function itineraryToTransitive(
       ) {
         // create a special place ID for car legs followed by walking legs
         toPlaceId = `itin_car_${streetEdgeId}_to`;
-      } else {
+      } else if (!toPlaceId) {
         toPlaceId = `itin_street_${streetEdgeId}_to`;
       }
 
