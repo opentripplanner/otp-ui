@@ -133,10 +133,10 @@ export function itineraryToTransitive(
           // OTP2 Scooter case
           leg.mode === "SCOOTER"
         ) {
-          fromPlaceId = `escooter_rent_station_${leg.from.name}`;
+          fromPlaceId = `escooter_rent_station_${leg.from.bikeShareId}`;
         }
-        // OTP1 Scooter case
       } else if (leg.from.vertexType === "VEHICLERENTAL") {
+        // OTP1 Scooter case
         fromPlaceId = `escooter_rent_station_${leg.from.name}`;
       } else if (
         leg.mode === "CAR" &&

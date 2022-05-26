@@ -1,0 +1,232 @@
+{
+  "duration": 1229,
+  "startTime": 1653565500000,
+  "endTime": 1653566729000,
+  "walkTime": 1229,
+  "transitTime": 0,
+  "waitingTime": 0,
+  "walkDistance": 2783.159,
+  "walkLimitExceeded": false,
+  "generalizedCost": 3224,
+  "elevationLost": 0,
+  "elevationGained": 0,
+  "transfers": 0,
+  "fare": {
+    "fare": {},
+    "details": {}
+  },
+  "legs": [
+    {
+      "startTime": 1653565500000,
+      "endTime": 1653566242000,
+      "departureDelay": 0,
+      "arrivalDelay": 0,
+      "realTime": false,
+      "distance": 862.576,
+      "generalizedCost": 1415,
+      "pathway": false,
+      "mode": "WALK",
+      "transitLeg": false,
+      "route": "",
+      "agencyTimeZoneOffset": -14400000,
+      "interlineWithPreviousLeg": false,
+      "from": {
+        "name": "(33.771584815238775,-84.38461303710939)",
+        "lon": -84.38461303710939,
+        "lat": 33.771584815238775,
+        "departure": 1653565500000,
+        "vertexType": "NORMAL"
+      },
+      "to": {
+        "name": "2d9fd677-12b4-4c95-92a9-7c3ea04ae0e4",
+        "lon": -84.38605,
+        "lat": 33.76407,
+        "arrival": 1653566242000,
+        "departure": 1653566242000,
+        "vertexType": "BIKESHARE",
+        "bikeShareId": "2d9fd677-12b4-4c95-92a9-7c3ea04ae0e4"
+      },
+      "legGeometry": {
+        "points": "c~bmEzj`bO?j@@H?BABANT@T@`BHZ@dCJJ@L?vAFzAFR@R@H@hBHtBJN@TBj@@Z?J?T@bA?v@@p@@p@@l@BTBTBVDFBRBv@XRFPJ^Pb@ZDD",
+        "length": 42
+      },
+      "steps": [
+        {
+          "distance": 36.498999999999995,
+          "relativeDirection": "DEPART",
+          "streetName": "sidewalk",
+          "absoluteDirection": "WEST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": true,
+          "lon": -84.38461209009989,
+          "lat": 33.77138875735151,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 826.077,
+          "relativeDirection": "LEFT",
+          "streetName": "Peachtree Street Northeast",
+          "absoluteDirection": "SOUTH",
+          "stayOn": false,
+          "area": false,
+          "bogusName": false,
+          "lon": -84.3850029,
+          "lat": 33.7713946,
+          "elevation": "",
+          "walkingBike": false
+        }
+      ],
+      "rentedBike": false,
+      "walkingBike": false,
+      "duration": 742
+    },
+    {
+      "startTime": 1653566242000,
+      "endTime": 1653566729000,
+      "departureDelay": 0,
+      "arrivalDelay": 0,
+      "realTime": false,
+      "distance": 1920.583,
+      "generalizedCost": 1808,
+      "pathway": false,
+      "mode": "SCOOTER",
+      "transitLeg": false,
+      "route": "",
+      "agencyTimeZoneOffset": -14400000,
+      "interlineWithPreviousLeg": false,
+      "from": {
+        "name": "2d9fd677-12b4-4c95-92a9-7c3ea04ae0e4",
+        "lon": -84.38605,
+        "lat": 33.76407,
+        "arrival": 1653566242000,
+        "departure": 1653566242000,
+        "vertexType": "BIKESHARE",
+        "bikeShareId": "2d9fd677-12b4-4c95-92a9-7c3ea04ae0e4"
+      },
+      "to": {
+        "name": "171 Mitchell St SW, Atlanta, GA 30303-3426, United States",
+        "lon": -84.39336776733398,
+        "lat": 33.75131968968551,
+        "arrival": 1653566729000,
+        "vertexType": "NORMAL"
+      },
+      "legGeometry": {
+        "points": "opamE~s`bOBBJGNC`FB`BAL?L@dA?zCBL?L?`FBN?J?bFBJ?N?J?N@N?dE@tDBvB?D?@?B@H?lB@PBXN^ZPP?F?BAdE?H@|@?T?v@?XAH?F?D?P?~@?bB?N?TVPJHJFd@\\LHh@^RNFJ?@LVN\\p@hBFJHLLH|DvCNJLJlBtAtAbAGNA??DCFEH[p@",
+        "length": 75
+      },
+      "steps": [
+        {
+          "distance": 2.684,
+          "relativeDirection": "SLIGHTLY_RIGHT",
+          "streetName": "Peachtree Street Northeast",
+          "absoluteDirection": "SOUTHWEST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": false,
+          "lon": -84.3860734327704,
+          "lat": 33.764085765078626,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 1073.8190000000002,
+          "relativeDirection": "LEFT",
+          "streetName": "Peachtree Center Cycle Track",
+          "absoluteDirection": "SOUTH",
+          "stayOn": false,
+          "area": false,
+          "bogusName": false,
+          "lon": -84.38609170000001,
+          "lat": 33.764067000000004,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 291.914,
+          "relativeDirection": "RIGHT",
+          "streetName": "Edgewood Avenue Northeast",
+          "absoluteDirection": "WEST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": false,
+          "lon": -84.3865004,
+          "lat": 33.754499700000004,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 23.986,
+          "relativeDirection": "LEFT",
+          "streetName": "Peachtree Street Northeast",
+          "absoluteDirection": "SOUTHWEST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": false,
+          "lon": -84.3896577,
+          "lat": 33.7545038,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 120.477,
+          "relativeDirection": "CONTINUE",
+          "streetName": "Peachtree Street",
+          "absoluteDirection": "SOUTHWEST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": false,
+          "lon": -84.3897941,
+          "lat": 33.7543203,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 357.77,
+          "relativeDirection": "CONTINUE",
+          "streetName": "Peachtree Street Southwest",
+          "absoluteDirection": "SOUTHWEST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": false,
+          "lon": -84.3906115,
+          "lat": 33.7535009,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 8.466,
+          "relativeDirection": "RIGHT",
+          "streetName": "path",
+          "absoluteDirection": "NORTHWEST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": true,
+          "lon": -84.39297090000001,
+          "lat": 33.751017700000006,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 41.467,
+          "relativeDirection": "RIGHT",
+          "streetName": "sidewalk",
+          "absoluteDirection": "NORTH",
+          "stayOn": false,
+          "area": false,
+          "bogusName": true,
+          "lon": -84.3930514,
+          "lat": 33.751054,
+          "elevation": "",
+          "walkingBike": true
+        }
+      ],
+      "rentedBike": true,
+      "walkingBike": false,
+      "duration": 487
+    }
+  ],
+  "tooSloped": false,
+  "arrivedAtDestinationWithRentedBicycle": false
+}
