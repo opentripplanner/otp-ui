@@ -237,6 +237,8 @@ export const EScooterRentalTransitItinerary = makeStory({
   itinerary: eScooterRentalTransiteScooterRentalItinerary
 });
 
+// The render of this itinerary is uninteresting, but the test
+// is if we can parse an OTP2 itinerary without crashing
 export const OTP2EScooterRentalTransitItinerary = makeStory({
   itinerary: otp2ScooterItinerary
 });
