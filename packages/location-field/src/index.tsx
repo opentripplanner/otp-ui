@@ -11,7 +11,7 @@ import { ExclamationCircle } from "@styled-icons/fa-solid/ExclamationCircle";
 import { LocationArrow } from "@styled-icons/fa-solid/LocationArrow";
 import { Search } from "@styled-icons/fa-solid/Search";
 import { Times } from "@styled-icons/fa-solid/Times";
-import { throttle } from "throttle-debounce";
+import { debounce } from "throttle-debounce";
 import { useIntl, FormattedMessage } from "react-intl";
 // eslint-disable-next-line prettier/prettier
 import type { Location } from "@opentripplanner/types";
@@ -108,7 +108,7 @@ const LocationField = ({
     }
   }, [initialSearchResults]);
 
-  const geocodeAutocomplete = throttle(1000, text => {
+  const geocodeAutocomplete = debounce(300, text => {
     if (!text) {
       console.warn("No text entry provided for geocode autocomplete search.");
       return;
