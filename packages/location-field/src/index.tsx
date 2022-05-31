@@ -4,14 +4,14 @@ import coreUtils from "@opentripplanner/core-utils";
 import getGeocoder from "@opentripplanner/geocoder";
 // @ts-ignore Not Typescripted Yet
 import LocationIcon from "@opentripplanner/location-icon";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useMemo, useState, useRef } from "react";
 import { Ban } from "@styled-icons/fa-solid/Ban";
 import { Bus } from "@styled-icons/fa-solid/Bus";
 import { ExclamationCircle } from "@styled-icons/fa-solid/ExclamationCircle";
 import { LocationArrow } from "@styled-icons/fa-solid/LocationArrow";
 import { Search } from "@styled-icons/fa-solid/Search";
 import { Times } from "@styled-icons/fa-solid/Times";
-import { throttle } from "throttle-debounce";
+import { debounce } from "throttle-debounce";
 import { useIntl, FormattedMessage } from "react-intl";
 // eslint-disable-next-line prettier/prettier
 import type { Location } from "@opentripplanner/types";
@@ -108,7 +108,7 @@ const LocationField = ({
     }
   }, [initialSearchResults]);
 
-  const geocodeAutocomplete = throttle(1000, text => {
+  const geocodeAutocomplete = useMemo(() => debounce(300, (text: string) => {
     if (!text) {
       console.warn("No text entry provided for geocode autocomplete search.");
       return;
@@ -147,7 +147,7 @@ const LocationField = ({
       .catch((err: unknown) => {
         console.error(err);
       });
-  });
+  }), []);
 
   const getFormControlClassname = () => {
     return `${locationType}-form-control`;
