@@ -79,6 +79,7 @@ otpUi:
       BICYCLE_RENT {Bikeshare}
       CAR {{isCarHail, select, true {Ride} other {Drive}}}
       MICROMOBILITY {Ride}
+      SCOOTER {Ride}
       WALK {Walk}
       other {{modeId}}
       }"
@@ -106,6 +107,7 @@ otpUi:
       BICYCLE {bicycle}
       CAR {car}
       MICROMOBILITY {e-scooter}
+      SCOOTER {e-scooter}
       WALK {walking}
       other {{modeId}}
       }"

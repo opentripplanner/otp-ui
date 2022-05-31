@@ -30,6 +30,12 @@ function makeDefaultGetStationName(intl) {
       configCompanies
     );
     let stationName = station.name || station.id;
+    // If the station name or id is a giant UUID (with more than 3 "-" characters)
+    // best not to show that at all and instead use the network name.
+    if ((stationName.match(/-/g) || []).length > 3) {
+      stationName = stationNetworks;
+    }
+
     if (station.isFloatingBike) {
       stationName = intl.formatMessage(
         {
