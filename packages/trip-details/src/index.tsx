@@ -9,7 +9,7 @@ import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
 import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
 import { PhoneVolume } from "@styled-icons/fa-solid/PhoneVolume";
 import { Route } from "@styled-icons/fa-solid/Route";
-import { FareDetails } from "./fare-detail";
+import { FareDetails as FareDetailsDefault } from "./fare-detail";
 
 import * as S from "./styled";
 import TripDetail from "./trip-detail";
@@ -149,6 +149,7 @@ export function TripDetails({
   DepartureDetails = null,
   defaultFareKey = "regular",
   fareKeyNameMap = {},
+  FareDetails = FareDetailsDefault,
   itinerary,
   fareDetailsLayout
 }: TripDetailsProps): ReactElement {

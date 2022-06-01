@@ -41,6 +41,10 @@ export interface TransitFareProps {
 
 export interface TripDetailsProps {
   /**
+  * Slot for a custom component to render the expandable section for fares.
+  */
+    FareDetails?: React.ElementType<FareDetailsProps>;
+  /**
    * Slot for a custom component to render the expandable section for calories.
    */
   CaloriesDetails?: React.ElementType<CaloriesDetailsProps>;
