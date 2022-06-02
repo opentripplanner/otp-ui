@@ -12,3 +12,6 @@ otpUi:
   VehicleRentalOverlay:
     availableBikes: "Available bikes: {value}"
     availableDocks: "Available docks: {value}"
+    floatingBike: "Free-floating bike: {name}"
+    floatingCar: "{company} {name}" # as in "CarCompany Veh1234a"
+    floatingEScooter: "{company} E-scooter"
