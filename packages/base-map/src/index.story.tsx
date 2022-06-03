@@ -1,9 +1,9 @@
 import React from "react";
-import { Marker, Popup } from "react-map-gl";
+import { Popup } from "react-map-gl";
 import { action } from "@storybook/addon-actions";
 import { text } from "@storybook/addon-knobs";
 
-import BaseMap from ".";
+import BaseMap, { MarkerWithPopup } from ".";
 import AllVehiclesOverlay from "../__mocks__/AllVehicles";
 import ContextMenuDemo from "../__mocks__/ContextMenuDemo";
 
@@ -16,10 +16,6 @@ export default {
 
 const center: [number, number] = [45.522862, -122.667837];
 
-const sampleMarkers = (
-  <Marker longitude={center[1]} latitude={center[0]}></Marker>
-);
-
 const samplePopup = (
   <div>
     <h1>Popup Title</h1>
@@ -27,6 +23,13 @@ const samplePopup = (
       Sample <span style={{ color: "purple" }}>popup</span> content.
     </p>
   </div>
+);
+
+const sampleMarkers = (
+  <MarkerWithPopup
+    tooltipContents={samplePopup}
+    center={center}
+  ></MarkerWithPopup>
 );
 
 const onClick = action("onClick");

@@ -4,6 +4,8 @@ import Map from "react-map-gl";
 import maplibregl, { Event } from "maplibre-gl";
 
 import * as Styled from "./styled";
+import MarkerWithPopup from "./MarkerWithPopup";
+import callIfValid from "./util";
 /**
  * The BaseMap component renders a MapLibre map
  * markers that are declared as child elements of the BaseMap element.
@@ -51,9 +53,7 @@ const BaseMap = ({
   });
 
   useEffect(() => {
-    if (typeof onViewportChanged === "function") {
-      onViewportChanged(viewState);
-    }
+    callIfValid(onViewportChanged)(viewState);
   }, [viewState]);
 
   return (
@@ -77,4 +77,4 @@ const BaseMap = ({
 
 export default BaseMap;
 
-export { Styled };
+export { Styled, MarkerWithPopup };
