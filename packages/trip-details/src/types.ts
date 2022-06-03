@@ -1,6 +1,6 @@
 // Prettier does not recognize the import type syntax.
 // eslint-disable-next-line prettier/prettier
-import type { Fare, Leg, Itinerary, Money } from "@opentripplanner/types";
+import type { Fare, Leg, Itinerary, Money, FareDetails } from "@opentripplanner/types";
 import type { ReactElement } from "react";
 
 export interface CaloriesDetailsProps {
@@ -25,9 +25,10 @@ export interface TransitFareData {
 }
 
 export interface FareDetailsProps {
-  transitFares: Fare;
-  legs: Leg[];
-  layout: FareDetailsLayout[];
+  transitFares?: TransitFareData;
+  transitFareDetails?: FareDetails;
+  legs?: Leg[];
+  layout?: FareDetailsLayout[];
 }
 
 export interface TransitFareProps {
@@ -40,10 +41,6 @@ export interface TransitFareProps {
 }
 
 export interface TripDetailsProps {
-  /**
-  * Slot for a custom component to render the expandable section for fares.
-  */
-    FareDetails?: React.ElementType<FareDetailsProps>;
   /**
    * Slot for a custom component to render the expandable section for calories.
    */
@@ -60,6 +57,10 @@ export interface TripDetailsProps {
    * Slot for a custom component to render the expandable section for departure.
    */
   DepartureDetails?: React.ElementType<DepartureDetailsProps>;
+  /**
+  * Slot for a custom component to render the expandable section for fares.
+  */
+  FareDetails?: React.ElementType<FareDetailsProps>;
   /**
    * Mapping between fare keys and human-readable names for them.
    */

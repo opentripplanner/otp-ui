@@ -116,14 +116,14 @@ const FareTypeTable = (props: FareTypeTableProps): JSX.Element => {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const FareDetails = (props: FareDetailsProps): JSX.Element => {
-  const { legs, transitFares, layout } = props;
-  const fareKeys = Object.keys(transitFares.details);
+export const FareLegDetails = (props: FareDetailsProps): JSX.Element => {
+  const { legs, transitFares, transitFareDetails, layout } = props;
+  const fareKeys = Object.keys(transitFareDetails);
 
   const legsWithFares = legs
     .map((leg, index) => {
       const fares = fareKeys.reduce((prev, key) => {
-        const fareForKey = transitFares.details[key]?.find(
+        const fareForKey = transitFareDetails[key]?.find(
           detail => detail.legIndex === index
         );
         if (fareForKey) {
@@ -146,7 +146,7 @@ export const FareDetails = (props: FareDetailsProps): JSX.Element => {
           cols={config.cols}
           key={config.header}
           legs={legsWithFares}
-          fareTotals={transitFares.fare}
+          fareTotals={transitFares}
         />
       ))}
     </div>

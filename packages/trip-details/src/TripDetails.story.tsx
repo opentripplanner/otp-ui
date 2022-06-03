@@ -14,11 +14,12 @@ import * as TripDetailsClasses from "./styled";
 import {
   CaloriesDetailsProps,
   DepartureDetailsProps,
-  TripDetailsProps
+  TripDetailsProps,
+  FareDetailsProps
 } from "./types";
 
 import customMessages from "../__mocks__/custom-messages.yml";
-import { FareDetails } from "./fare-detail";
+import { FareLegDetails } from "./fare-detail";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json");
@@ -121,6 +122,15 @@ const frenchFareKeyMap = {
   electronicSenior: "Tarif Orca séniors"
 };
 
+const CustomFareDetails = ({
+  transitFares
+}: FareDetailsProps): ReactElement => (
+  <>
+    Custom details about fares (transitFares: {JSON.stringify(transitFares)}){" "}
+    (cents), can be constructed dynamically using any markup.
+  </>
+);
+
 // Custom slots for expandable detail sections.
 const CustomDepartureDetails = ({
   departureDate
@@ -155,6 +165,7 @@ function createTripDetailsTemplate(
     {
       CaloriesDetails,
       DepartureDetails,
+      FareDetails,
       itinerary,
       fareDetailsLayout
     }: TripDetailsProps,
@@ -171,6 +182,7 @@ function createTripDetailsTemplate(
       <Component
         CaloriesDetails={CaloriesDetails}
         DepartureDetails={DepartureDetails}
+        FareDetails={FareDetails}
         fareKeyNameMap={fareKeyNameMap}
         itinerary={itinerary}
         fareDetailsLayout={fareDetailsLayout}
@@ -271,7 +283,8 @@ export const EScooterRentalTransitItinerary = makeStory({
 
 export const TncTransitItinerary = makeStory(
   {
-    itinerary: tncTransitTncItinerary
+    itinerary: tncTransitTncItinerary,
+    FareDetails: CustomFareDetails
   },
   {
     useCustomFareKeyMap: true
@@ -305,9 +318,11 @@ export const FlexItinerary = makeStory({
 });
 
 const exampleItinerary = walkInterlinedTransitItinerary;
+
 export const FareDetailsComponent = () => (
-  <FareDetails
-    transitFares={exampleItinerary.fare}
+  <FareLegDetails
+    transitFares={exampleItinerary.fare.fare}
+    transitFareDetails={exampleItinerary.fare.details}
     legs={exampleItinerary.legs}
     layout={fareByLegLayout}
   />

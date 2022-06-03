@@ -336,6 +336,15 @@ export type Money = {
  */
 type ApplicableId = string | FeedScopedId;
 
+export type FareDetails = {
+  [name: string]: {
+    fareId?: ApplicableId;
+    price: Money;
+    legIndex?: number;
+    isTransfer?: boolean;
+    routes?: ApplicableId[];
+  }[];
+};
 /**
  * Represents the fare component of an itinerary of an OTP plan response. See
  * detailed documentation in OTP webservice documentation here:
@@ -345,15 +354,7 @@ type ApplicableId = string | FeedScopedId;
  * not any bike rental or TNC rental fees.
  */
 export type Fare = {
-  details?: {
-    [name: string]: {
-      fareId?: ApplicableId;
-      price: Money;
-      legIndex?: number;
-      isTransfer?: boolean;
-      routes?: ApplicableId[];
-    }[];
-  };
+  details?: FareDetails;
   fare?: {
     [name: string]: Money;
   };
