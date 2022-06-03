@@ -14,10 +14,10 @@ export interface DepartureDetailsProps {
 }
 
 export interface FareDetailsLayout {
-  header: string;
+  headeri18nKey: string;
   cols: {
     key: string;
-    header: string;
+    i18nKey: string;
   }[];
 }
 export interface TransitFareData {

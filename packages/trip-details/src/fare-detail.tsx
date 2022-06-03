@@ -1,16 +1,26 @@
 /* eslint-disable import/prefer-default-export */
 import { Leg, Money } from "@opentripplanner/types";
 
+import flatten from "flat";
 import React from "react";
 import styled from "styled-components";
-import { FormattedNumber } from "react-intl";
+import { FormattedMessage, FormattedNumber } from "react-intl";
 import { FareDetailsProps } from "./types";
 
+// Load the default messages.
+import defaultEnglishMessages from "../i18n/en-US.yml";
+
+// HACK: We should flatten the messages loaded above because
+// the YAML loaders behave differently between webpack and our version of jest:
+// - the yaml loader for webpack returns a nested object,
+// - the yaml loader for jest returns messages with flattened ids.
+const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
+
 interface FareTypeTableProps {
-  header: string;
+  headeri18nKey: string;
   cols: {
     key: string;
-    header: string;
+    i18nKey: string;
   }[];
   legs: (Leg & { fares: { [key: string]: { price: Money } } })[];
   fareTotals: { [fareKey: string]: Money };
@@ -60,13 +70,31 @@ const Table = styled.table`
 `;
 
 const FareTypeTable = (props: FareTypeTableProps): JSX.Element => {
-  const { header, fareTotals, cols, legs } = props;
+  const { headeri18nKey, fareTotals, cols, legs } = props;
   return (
     <Table>
       <TableHeader>
-        <th className="main">{header}</th>
+        <th className="main">
+          <FormattedMessage
+            defaultMessage={
+              defaultMessages[
+                `otpUi.TripDetails.fareDetailsHeaders.${headeri18nKey}`
+              ]
+            }
+            id={`otpUi.TripDetails.fareDetailsHeaders.${headeri18nKey}`}
+          />
+        </th>
         {cols.map(col => (
-          <th key={col.header}>{col.header}</th>
+          <th key={col.key}>
+            <FormattedMessage
+              defaultMessage={
+                defaultMessages[
+                  `otpUi.TripDetails.fareDetailsHeaders.${col.i18nKey}`
+                ]
+              }
+              id={`otpUi.TripDetails.fareDetailsHeaders.${col.i18nKey}`}
+            />
+          </th>
         ))}
       </TableHeader>
       {legs.map((leg, index) => (
@@ -142,9 +170,9 @@ export const FareLegDetails = (props: FareDetailsProps): JSX.Element => {
     <div>
       {layout.map(config => (
         <FareTypeTable
-          header={config.header}
           cols={config.cols}
-          key={config.header}
+          headeri18nKey={config.headeri18nKey}
+          key={config.headeri18nKey}
           legs={legsWithFares}
           fareTotals={transitFares}
         />
