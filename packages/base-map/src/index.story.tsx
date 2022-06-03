@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable react/button-has-type */
+import React, { useRef } from "react";
 import { Popup } from "react-map-gl";
 import { action } from "@storybook/addon-actions";
 import { text } from "@storybook/addon-knobs";
@@ -49,6 +50,32 @@ export const clickAndViewportchangedEvents = () => (
 );
 
 export const zoomed = () => <BaseMap center={center} zoom={17} />;
+export const clickToSetBounds = () => {
+  const ref = useRef();
+  const bbox = [
+    [-79, 43],
+    [-73, 45]
+  ];
+
+  return (
+    <div>
+      <button
+        onClick={
+          () =>
+            // @ts-expect-error we know the ref will be a map
+            ref.current.fitBounds(bbox, {
+              duration: 300,
+              padding: { top: 10, bottom: 25, left: 15, right: 5 }
+            })
+          // eslint-disable-next-line react/jsx-curly-newline
+        }
+      >
+        Set the bounds
+      </button>
+      <BaseMap passedRef={ref} center={center} zoom={17} />
+    </div>
+  );
+};
 
 export const maxZoom = () => <BaseMap center={center} maxZoom={18} zoom={30} />;
 

@@ -33,6 +33,8 @@ const ParkAndRideOverlay = (props: Props): JSX.Element => {
 
         return (
           <MarkerWithPopup
+            // TODO: find a better way to handle popupProps
+            // @ts-expect-error lat and lng aren't optional, but are being set by the child
             popupProps={{ offset: 10 }}
             popupContents={
               <BaseMapStyled.MapOverlayPopup>

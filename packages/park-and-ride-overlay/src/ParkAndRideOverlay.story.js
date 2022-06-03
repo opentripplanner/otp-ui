@@ -5,7 +5,7 @@ import { action } from "@storybook/addon-actions";
 import ParkAndRideOverlay from ".";
 import parkAndRideLocations from "../__mocks__/park-and-rides.json";
 
-import "../../../node_modules/leaflet/dist/leaflet.css";
+import "maplibre-gl/dist/maplibre-gl.css";
 
 const center = [45.518092, -122.671202];
 const zoom = 13;

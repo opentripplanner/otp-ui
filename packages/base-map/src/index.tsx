@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import Map from "react-map-gl";
+import { MapProvider, Map, MapRef } from "react-map-gl";
 import maplibregl, { Event } from "maplibre-gl";
 
 import * as Styled from "./styled";
@@ -34,6 +34,7 @@ type Props = {
     longitude: number;
     zoom: number;
   }) => void;
+  passedRef?: React.Ref<MapRef>;
   zoom?: number;
 };
 const BaseMap = ({
@@ -43,10 +44,23 @@ const BaseMap = ({
   maxZoom,
   onClick,
   onContextMenu,
+  passedRef,
   onViewportChanged,
   zoom: initZoom = 12
 }: Props): JSX.Element => {
-  const [viewState, setViewState] = React.useState({
+  const [viewState, setViewState] = React.useState<{
+    latitude: number;
+    longitude: number;
+    zoom: number;
+    fitBoundsOptions?: Record<string, number | string | boolean>;
+  }>({
+    fitBoundsOptions: {
+      animate: true,
+      padding: 10,
+      duration: 100,
+      maxDuration: 300,
+      essential: false
+    },
     latitude: center?.[0],
     longitude: center?.[1],
     zoom: initZoom
@@ -57,21 +71,25 @@ const BaseMap = ({
   }, [viewState]);
 
   return (
-    <Map
-      latitude={viewState.latitude}
-      longitude={viewState.longitude}
-      mapLib={maplibregl}
-      mapStyle={baseLayer}
-      maxZoom={maxZoom}
-      onClick={onClick}
-      onContextMenu={onContextMenu}
-      onMove={evt => setViewState(evt.viewState)}
-      // TODO: better way to set height and width?
-      style={{ display: "block", width: "100%", height: "90vh" }}
-      zoom={viewState.zoom}
-    >
-      {children}
-    </Map>
+    <MapProvider>
+      <Map
+        ref={passedRef}
+        id="mainMap"
+        latitude={viewState.latitude}
+        longitude={viewState.longitude}
+        mapLib={maplibregl}
+        mapStyle={baseLayer}
+        maxZoom={maxZoom}
+        onClick={onClick}
+        onContextMenu={onContextMenu}
+        onMove={evt => setViewState(evt.viewState)}
+        // TODO: better way to set height and width?
+        style={{ display: "block", width: "100%", height: "90vh" }}
+        zoom={viewState.zoom}
+      >
+        {children}
+      </Map>
+    </MapProvider>
   );
 };
 
