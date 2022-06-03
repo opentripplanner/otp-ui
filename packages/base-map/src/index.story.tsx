@@ -28,7 +28,7 @@ const samplePopup = (
 const sampleMarkers = (
   <MarkerWithPopup
     tooltipContents={samplePopup}
-    center={center}
+    position={center}
   ></MarkerWithPopup>
 );
 

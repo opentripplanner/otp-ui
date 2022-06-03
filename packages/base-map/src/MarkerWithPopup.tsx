@@ -3,7 +3,7 @@ import { Marker, MarkerProps, Popup, PopupProps } from "react-map-gl";
 import { LeafletStyleMarker } from "./styled";
 
 type Props = {
-  center: [number, number];
+  position: [number, number];
   markerProps?: MarkerProps;
   popupProps?: PopupProps;
   children?: React.ReactNode;
@@ -15,7 +15,7 @@ type Props = {
  * A MapLibre marker with a connected popup or tooltip
  */
 const MarkerWithPopup = ({
-  center,
+  position,
   markerProps,
   popupProps,
   popupContents,
@@ -29,8 +29,8 @@ const MarkerWithPopup = ({
     <Marker
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...markerProps}
-      longitude={center[1]}
-      latitude={center[0]}
+      longitude={position[1]}
+      latitude={position[0]}
       onClick={() => setShowPopup(true)}
       style={{ cursor: popupContents ? "pointer" : "inherit" }}
     >
@@ -48,8 +48,8 @@ const MarkerWithPopup = ({
           anchor="right"
           closeButton={false}
           closeOnClick={false}
-          longitude={center[1]}
-          latitude={center[0]}
+          longitude={position[1]}
+          latitude={position[0]}
         >
           {tooltipContents}
         </Popup>
@@ -59,8 +59,8 @@ const MarkerWithPopup = ({
           // eslint-disable-next-line react/jsx-props-no-spreading
           {...popupProps}
           onClose={() => setShowPopup(false)}
-          longitude={center[1]}
-          latitude={center[0]}
+          longitude={position[1]}
+          latitude={position[0]}
         >
           {popupContents}
         </Popup>
