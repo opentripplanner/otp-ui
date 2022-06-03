@@ -436,6 +436,7 @@ export type Stop = {
   code?: string;
   dist?: number;
   lat: number;
+  geometries?: { geoJson: GeoJSON.Polygon };
   lon: number;
   name: string;
   routes?: Route[];
