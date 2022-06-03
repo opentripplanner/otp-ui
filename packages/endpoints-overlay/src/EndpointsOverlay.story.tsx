@@ -8,7 +8,7 @@ import { Dog } from "@styled-icons/fa-solid/Dog";
 
 import EndpointsOverlay from ".";
 
-import "../../../node_modules/leaflet/dist/leaflet.css";
+import "maplibre-gl/dist/maplibre-gl.css";
 
 // BaseMap props
 const center = [45.5215, -122.686202];

@@ -21,6 +21,7 @@ const stacked = css`
   left: 0;
   position: absolute;
   text-align: center;
+  cursor: pointer;
 `;
 
 export const StackedCircle = styled(Circle)`
