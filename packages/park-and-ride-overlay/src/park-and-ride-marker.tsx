@@ -1,6 +1,4 @@
-import { divIcon } from "leaflet";
 import React from "react";
-import ReactDOMServer from "react-dom/server";
 import styled from "styled-components";
 
 const StyledParkAndRideIcon = styled.div`
@@ -16,11 +14,4 @@ const StyledParkAndRideIcon = styled.div`
   width: 17px;
 `;
 
-export default divIcon({
-  iconSize: [20, 20],
-  popupAnchor: [0, -10],
-  html: ReactDOMServer.renderToStaticMarkup(
-    <StyledParkAndRideIcon>P</StyledParkAndRideIcon>
-  ),
-  className: ""
-});
+export default <StyledParkAndRideIcon>P</StyledParkAndRideIcon>;
