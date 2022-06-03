@@ -15,7 +15,8 @@ import {
   CaloriesDetailsProps,
   DepartureDetailsProps,
   TripDetailsProps,
-  FareDetailsProps
+  FareDetailsProps,
+  FareDetailsLayout
 } from "./types";
 
 import customMessages from "../__mocks__/custom-messages.yml";
@@ -48,47 +49,47 @@ const StyledTripDetails = styled(TripDetails)`
   }
 `;
 
-const fareByLegLayout = [
+const fareByLegLayout: FareDetailsLayout[] = [
   {
-    header: "Adult",
+    headeri18nKey: "regular",
     cols: [
       {
         key: "regular",
-        header: "Cash"
+        i18nKey: "cash"
       },
       {
         key: "electronicRegular",
-        header: "ORCA"
+        i18nKey: "electronic"
       },
       {
         key: "electronicSpecial",
-        header: "ORCA Lift"
+        i18nKey: "special"
       }
     ]
   },
   {
-    header: "Youth",
+    headeri18nKey: "youth",
     cols: [
       {
         key: "youth",
-        header: "Cash"
+        i18nKey: "cash"
       },
       {
         key: "electronicYouth",
-        header: "ORCA"
+        i18nKey: "electronic"
       }
     ]
   },
   {
-    header: "Senior",
+    headeri18nKey: "senior",
     cols: [
       {
-        key: "senior",
-        header: "Cash"
+        key: "cash",
+        i18nKey: "cash"
       },
       {
-        key: "electronicSenior",
-        header: "ORCA"
+        key: "electronic",
+        i18nKey: "electronic"
       }
     ]
   }
