@@ -1,8 +1,8 @@
 import React from "react";
-import { Marker, Popup, FeatureGroup } from "react-leaflet";
-import L from "leaflet";
+import { Marker, Popup } from "react-map-gl";
+import { LeafletStyleMarker } from "../src/styled";
 
-const vehicleData = require("./vehicle-data/all-vehicles.json");
+const vehicleData = require("./vehicle-data/all-trimet.json");
 
 /**
  * This component demonstrates a example map overlay that shows real-time transit vehicle locations on a leaflet map.
@@ -10,28 +10,40 @@ const vehicleData = require("./vehicle-data/all-vehicles.json");
  * https://github.com/OpenTransitTools/transit-components/blob/master/lib/vehicles/AllVehicles.js
  */
 const AllVehiclesOverlay = () => {
+  const [showPopup, setShowPopup] = React.useState({
+    key: null,
+    latitude: null,
+    longitude: null
+  });
+
   return (
-    <FeatureGroup className="vehicles">
+    <>
       {vehicleData.map(vehicle => {
-        const key = vehicle.vehicleID;
-        const position = [vehicle.latitude, vehicle.longitude];
+        const { id: key, lat: latitude, lon: longitude } = vehicle;
 
         return (
           <Marker
             class="marker"
-            icon={L.divIcon({
-              html: `<span>${vehicle.routeNumber}</span>`
-            })}
             key={key}
-            position={position}
+            latitude={latitude}
+            longitude={longitude}
+            onClick={() => setShowPopup({ key, longitude, latitude })}
           >
-            <Popup>
-              <span>VEH: {key}</span>
-            </Popup>
+            <LeafletStyleMarker color="#333333" stroke={3} />
           </Marker>
         );
       })}
-    </FeatureGroup>
+      {showPopup.key && (
+        <Popup
+          longitude={showPopup.longitude}
+          latitude={showPopup.latitude}
+          anchor="bottom"
+          onClose={() => setShowPopup(false)}
+        >
+          <span>VEH: {showPopup.key}</span>
+        </Popup>
+      )}
+    </>
   );
 };
 
