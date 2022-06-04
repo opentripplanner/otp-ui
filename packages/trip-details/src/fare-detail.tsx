@@ -41,11 +41,6 @@ const TableHeader = styled.thead`
   }
 `;
 
-const TotalRow = styled.tr`
-  border-top: 2px solid #333;
-  font-weight: 600;
-`;
-
 const Table = styled.table`
   border-collapse: collapse;
   display: block;
@@ -84,18 +79,30 @@ const FareTypeTable = (props: FareTypeTableProps): JSX.Element => {
             id={`otpUi.TripDetails.fareDetailsHeaders.${headeri18nKey}`}
           />
         </th>
-        {cols.map(col => (
-          <th key={col.key}>
-            <FormattedMessage
-              defaultMessage={
-                defaultMessages[
-                  `otpUi.TripDetails.fareDetailsHeaders.${col.i18nKey}`
-                ]
-              }
-              id={`otpUi.TripDetails.fareDetailsHeaders.${col.i18nKey}`}
-            />
-          </th>
-        ))}
+        {cols.map(col => {
+          const fare = fareTotals[col.key];
+          return (
+            <th key={col.key}>
+              <FormattedMessage
+                defaultMessage={
+                  defaultMessages[
+                    `otpUi.TripDetails.fareDetailsHeaders.${col.i18nKey}`
+                  ]
+                }
+                id={`otpUi.TripDetails.fareDetailsHeaders.${col.i18nKey}`}
+              />
+              <br />
+              <FormattedNumber
+                value={(fare?.cents || 0) / 100}
+                // This isn't a "real" style prop
+                // eslint-disable-next-line react/style-prop-object
+                style="currency"
+                currency={fare?.currency?.currencyCode}
+                currencyDisplay="narrowSymbol"
+              />
+            </th>
+          );
+        })}
       </TableHeader>
       {legs.map((leg, index) => (
         <tr key={index}>
@@ -121,24 +128,6 @@ const FareTypeTable = (props: FareTypeTableProps): JSX.Element => {
           })}
         </tr>
       ))}
-      <TotalRow>
-        <td className="no-zebra">Total</td>
-        {cols.map(col => {
-          const fare = fareTotals[col.key];
-          return (
-            <td key={col.key}>
-              <FormattedNumber
-                value={(fare?.cents || 0) / 100}
-                // This isn't a "real" style prop
-                // eslint-disable-next-line react/style-prop-object
-                style="currency"
-                currency={fare?.currency?.currencyCode}
-                currencyDisplay="narrowSymbol"
-              />
-            </td>
-          );
-        })}
-      </TotalRow>
     </Table>
   );
 };
