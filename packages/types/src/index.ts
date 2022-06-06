@@ -433,6 +433,7 @@ export type Stop = {
   /**
    * The stop code if the stop has one
    */
+  id: string;
   code?: string;
   dist?: number;
   lat: number;

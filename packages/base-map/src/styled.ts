@@ -19,16 +19,17 @@ export const PopupTitle = styled.div`
 type LeafletStyleMarkerProps = {
   color?: string;
   stroke?: number;
+  strokeColor?: string;
   size?: number;
 };
 export const LeafletStyleMarker = styled.div<LeafletStyleMarkerProps>`
   width: ${props => props?.size || 10}px;
   content: "";
   display: block;
-  height: 10px;
+  height: ${props => props?.size || 10}px;
   background: ${props => props?.color || "#0000ff"}50;
   border: ${props => props?.stroke || 2}px solid
-    ${props => props?.color || "#0000ff"}f0;
+    ${props => props?.strokeColor || `${props?.color}f0` || "#0000fffo"};
   border-radius: ${props => props?.size || 10}px;
   cursor: pointer;
 `;
