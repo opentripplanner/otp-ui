@@ -86,6 +86,7 @@ otpUi:
       BICYCLE_RENT {Vélo partagé}
       CAR {{isCarHail, select, true {Course en voiture} other {Voiture}}}
       MICROMOBILITY {Trottinette}
+      SCOOTER {Trottinette}
       WALK {Marche}
       other {{modeId}}
       }"
