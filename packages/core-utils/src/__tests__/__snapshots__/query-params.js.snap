@@ -247,11 +247,11 @@ Array [
   },
   Object {
     "applicable": [Function],
-    "high": 20,
+    "high": 10,
     "label": "walk reluctance",
     "labelHigh": "More Transit",
     "labelLow": "More Walking",
-    "low": 0.5,
+    "low": 1,
     "name": "walkReluctance",
     "routingTypes": Array [
       "ITINERARY",
