@@ -1,13 +1,20 @@
 import cloneDeep from "lodash.clonedeep";
-import PropTypes from "prop-types";
 import React from "react";
+import {
+  LayerEntity,
+  SymbolComponent,
+  ZoomBasedSymbol
+} from "@opentripplanner/types";
 
 /**
  * Transforms the symbol and symbols by type from the specified symbolEntry
  * using the specified symbolTransform.
  * TODO: Should this be memoized?
  */
-const getTransformedSymbol = (symbolEntry, symbolTransform) => {
+const getTransformedSymbol = (
+  symbolEntry: ZoomBasedSymbol,
+  symbolTransform: (symbol: SymbolComponent) => SymbolComponent
+) => {
   // If no transform function provided, just return symbolEntry.
   if (typeof symbolTransform !== "function") {
     return symbolEntry;
@@ -32,7 +39,7 @@ const getTransformedSymbol = (symbolEntry, symbolTransform) => {
  * Finds the deepest symbol (the symbol associated with the highest minZoom)
  * for the specified symbols and zoom level.
  */
-const getSymbolEntry = (symbols, zoom) =>
+const getSymbolEntry = (symbols: ZoomBasedSymbol[], zoom: number) =>
   symbols.reduce((bestMarker, marker) => {
     if (zoom >= marker.minZoom) {
       if (!bestMarker || marker.minZoom > bestMarker.minZoom) {
@@ -42,10 +49,39 @@ const getSymbolEntry = (symbols, zoom) =>
     return bestMarker;
   }, null);
 
+type Props = {
+  /**
+   * A list of objects (entities) to be rendered on the map.
+   * Entities must have an id attribute and contain coordinates information for correct placement.
+   */
+  entities: LayerEntity[];
+  /**
+   * A list of symbols that represent the entities at the associated zoom level.
+   * The symbols must be able to obtain the position of the specified entities.
+   * (The list does not need to be sorted.)
+   */
+  symbols: ZoomBasedSymbol[];
+  /**
+   * An optional function(Component) to transforms components defined in the symbols prop prior to rendering,
+   * in cases you need to wrap symbols or inject children.
+   * The function must return a component that accepts these props: ({ entity, zoom }).
+   * In addition, to inject children, the returned component must explicitly render any applicable children passed to it.
+   */
+  symbolTransform?: (symbol: SymbolComponent) => SymbolComponent;
+  /**
+   * The current zoom level for rendering.
+   */
+  zoom: number;
+};
 /**
  * A component that renders different components based on zoom level.
  */
-const ZoomBasedMarkers = ({ entities, symbols, symbolTransform, zoom }) => {
+const ZoomBasedMarkers = ({
+  entities,
+  symbols,
+  symbolTransform,
+  zoom
+}: Props): JSX.Element => {
   if (!entities || !entities.length) return null;
 
   // Find the deepest symbol for the current zoom level.
@@ -61,58 +97,32 @@ const ZoomBasedMarkers = ({ entities, symbols, symbolTransform, zoom }) => {
     // hence the null checks before the return statements below.
 
     if (symbolByType && getType) {
-      return entities.map(entity => {
-        const EntitySymbol = symbolByType[getType(entity)] || DefaultSymbol;
-        return (
-          EntitySymbol && (
-            <EntitySymbol entity={entity} key={entity.id} zoom={zoom} />
-          )
-        );
-      });
+      return (
+        <>
+          {entities.map(entity => {
+            const EntitySymbol = symbolByType[getType(entity)] || DefaultSymbol;
+            return (
+              EntitySymbol && (
+                <EntitySymbol entity={entity} key={entity.id} zoom={zoom} />
+              )
+            );
+          })}
+        </>
+      );
     }
 
     if (DefaultSymbol) {
-      return entities.map(entity => (
-        <DefaultSymbol entity={entity} key={entity.id} zoom={zoom} />
-      ));
+      return (
+        <>
+          {entities.map(entity => (
+            <DefaultSymbol entity={entity} key={entity.id} zoom={zoom} />
+          ))}
+        </>
+      );
     }
   }
 
   return null;
 };
 
-ZoomBasedMarkers.propTypes = {
-  /**
-   * A list of objects (entities) to be rendered on the map.
-   * Entities must have an id attribute and contain coordinates information for correct placement.
-   */
-  entities: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired
-    })
-  ),
-  /**
-   * A list of symbols that represent the entities at the associated zoom level.
-   * The symbols must be able to obtain the position of the specified entities.
-   * (The list does not need to be sorted.)
-   */
-  // symbols: PropTypes.arrayOf(coreUtils.types.zoomBasedSymbolType).isRequired,
-  /**
-   * An optional function(Component) to transforms components defined in the symbols prop prior to rendering,
-   * in cases you need to wrap symbols or inject children.
-   * The function must return a component that accepts these props: ({ entity, zoom }).
-   * In addition, to inject children, the returned component must explicitly render any applicable children passed to it.
-   */
-  symbolTransform: PropTypes.func,
-  /**
-   * The current zoom level for rendering.
-   */
-  zoom: PropTypes.number.isRequired
-};
-
-ZoomBasedMarkers.defaultProps = {
-  entities: null,
-  symbolTransform: null
-};
-
-export default ZoomBasedMarkers;
+export default React.memo(ZoomBasedMarkers);

@@ -1,18 +1,24 @@
 // Removed as core-utils is typescripted. TODO: Remove when typescripting!
 /* eslint-disable react/forbid-prop-types */
 // eslint-disable-next-line max-classes-per-file
-import { divIcon } from "leaflet";
-import BaseMap from "@opentripplanner/base-map";
-import PropTypes from "prop-types";
-import React, { Component } from "react";
-import ReactDOMServer from "react-dom/server";
-import { CircleMarker, Marker, Popup } from "react-leaflet";
+import BaseMap, {
+  Styled as BaseMapStyles,
+  MarkerWithPopup
+} from "@opentripplanner/base-map";
+import React, { useState } from "react";
 import { action } from "@storybook/addon-actions";
 import { Bus, Streetcar } from "@opentripplanner/icons";
+import {
+  Stop,
+  ZoomBasedSymbol,
+  SymbolComponent,
+  SymbolComponentBaseProps,
+  LayerEntity
+} from "@opentripplanner/types";
 
 import ZoomBasedMarkers from ".";
 
-import "../../../node_modules/leaflet/dist/leaflet.css";
+import "maplibre-gl/dist/maplibre-gl.css";
 
 const mockStops = [
   {
@@ -25,56 +31,45 @@ const mockStops = [
   { id: "7", name: "A Ave & 8th St Bus", lat: 45.420411, lon: -122.67268 }
 ];
 
-const mapCenter = [45.420217, -122.67307];
+const mapCenter: [number, number] = [45.420217, -122.67307];
 const onViewportChanged = action("onViewportChanged");
 
 // Common prop types for the components used to render examples.
 // Some of the example components below have a children prop,
 // which is not required, unless you plan to inject children.
-const propTypes = {
-  /** The children of the component. */
-  children: PropTypes.node,
-  /** The stop to render. */
-  // entity: coreUtils.types.stopLayerStopType.isRequired
-  entity: PropTypes.object.isRequired
-};
-const defaultProps = {
-  children: null
-};
 
-const Circle = ({ children, entity }) => (
-  <CircleMarker
-    center={[entity.lat, entity.lon]}
-    fillColor="#00FF00"
-    radius={30}
-  >
-    {children}
-  </CircleMarker>
+type MarkerProps = {
+  /** The children of the component. */
+  children?: React.ReactNode;
+  /** The stop to render. */
+  entity: Stop;
+};
+const Circle: SymbolComponent = ({ children, entity }: MarkerProps) => (
+  <MarkerWithPopup position={[entity.lat, entity.lon]} popupContents={children}>
+    <BaseMapStyles.LeafletStyleMarker color="#00FF00" size={15} />
+  </MarkerWithPopup>
 );
-Circle.propTypes = propTypes;
-Circle.defaultProps = defaultProps;
 
 // Generates markers from icons.
-const IconMarker = Icon => {
-  const GeneratedMarker = ({ children, entity }) => {
-    const iconHtml = ReactDOMServer.renderToStaticMarkup(<Icon />);
+const IconMarker: SymbolComponent = (
+  Icon: React.FunctionComponent<{ width: number }>
+) => {
+  const GeneratedMarker = ({ children, entity }: MarkerProps) => {
     return (
-      <Marker
-        icon={divIcon({ html: iconHtml, className: "" })}
+      <MarkerWithPopup
+        popupContents={children}
         position={[entity.lat, entity.lon]}
       >
-        {children}
-      </Marker>
+        <Icon width={20} />
+      </MarkerWithPopup>
     );
   };
-  GeneratedMarker.propTypes = propTypes;
-  GeneratedMarker.defaultProps = defaultProps;
 
   return GeneratedMarker;
 };
 
 // Symbol definition passed to the ZoomBasedMarkers component.
-const mySymbols = [
+const mySymbols: ZoomBasedSymbol[] = [
   // Omit the zoom levels 0-9,
   // so no symbol will be drawn for these zoom levels.
   {
@@ -90,7 +85,7 @@ const mySymbols = [
     // Use symbolByType to define symbols shown for some entity types returned by the getType function.
     // If a value returned from getType is not listed here,
     // then the component defined in 'symbol' will be rendered by default.
-    getType: entity => (entity.id === "3" ? "streetcar" : "bus"),
+    getType: (entity: LayerEntity) => (entity.id === "3" ? "streetcar" : "bus"),
     minZoom: 14,
     symbol: IconMarker(Bus),
     symbolByType: {
@@ -103,68 +98,45 @@ const mySymbols = [
 // to inject child components or wrap Symbol within other components.
 // Here, we inject a sample popup to the components defined in the symbols props.
 // Note: to inject children to a symbol, the symbol must explicitly render any applicable children.
-const exampleTransform = Symbol => {
-  const InnerSymbol = ({ entity, zoom }) => (
+const exampleTransform = (Symbol: SymbolComponent): SymbolComponent => {
+  const InnerSymbol = ({ entity, zoom }: SymbolComponentBaseProps) => (
     <Symbol entity={entity} zoom={zoom}>
-      <Popup>
-        {/* eslint-disable-next-line react/prop-types */}
-        <h3>{entity.name}</h3>
-        This is a popup from symbolTransform
-      </Popup>
+      {/* eslint-disable-next-line react/prop-types */}
+      <h3>{entity.name}</h3>
+      This is a popup from symbolTransform
     </Symbol>
   );
-  InnerSymbol.propTypes = {
-    // entity: coreUtils.types.stopLayerStopType.isRequired,
-    entity: PropTypes.object.isRequired,
-    zoom: PropTypes.number.isRequired
-  };
-
   return InnerSymbol;
 };
 
 // Example container with a ZoomBasedMarkers component inside a BaseMap.
-class Example extends Component {
-  constructor() {
-    super();
+type ExampleProps = {
+  symbols: ZoomBasedSymbol[];
+  symbolTransform?: (symbol: SymbolComponent) => SymbolComponent;
+};
+const Example = (props: ExampleProps) => {
+  const [zoom, setZoom] = useState(12);
 
-    this.state = {
-      zoom: 10
-    };
-  }
-
-  handleViewportChanged = e => {
+  const handleViewportChanged = e => {
     onViewportChanged(e);
-    this.setState({ zoom: e.zoom });
+    setZoom(e.zoom);
   };
 
-  render() {
-    const { symbols, symbolTransform } = this.props;
-    const { zoom } = this.state;
-    return (
-      <BaseMap
-        center={mapCenter}
-        onViewportChanged={this.handleViewportChanged}
+  const { symbols, symbolTransform } = props;
+  return (
+    <BaseMap
+      center={mapCenter}
+      onViewportChanged={handleViewportChanged}
+      zoom={zoom}
+    >
+      <ZoomBasedMarkers
+        entities={mockStops}
+        symbols={symbols}
+        symbolTransform={symbolTransform}
         zoom={zoom}
-      >
-        <ZoomBasedMarkers
-          entities={mockStops}
-          symbols={symbols}
-          symbolTransform={symbolTransform}
-          zoom={zoom}
-        />
-      </BaseMap>
-    );
-  }
-}
-
-Example.propTypes = {
-  // symbols: PropTypes.arrayOf(coreUtils.types.zoomBasedSymbolType.isRequired)
-  //   .isRequired,
-  symbols: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
-  symbolTransform: PropTypes.func
-};
-Example.defaultProps = {
-  symbolTransform: null
+      />
+    </BaseMap>
+  );
 };
 
 export default {
