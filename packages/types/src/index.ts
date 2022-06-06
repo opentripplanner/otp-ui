@@ -41,7 +41,7 @@ export type LayerEntity = {
   lon: number;
 };
 
-type SymbolComponentBaseProps = {
+export type SymbolComponentBaseProps = {
   entity: LayerEntity;
   zoom: number;
 };
@@ -51,7 +51,7 @@ type SymbolComponentBaseProps = {
  * ({ entity: object; zoom: number }) => Element
  * where entity must have an id attribute and contain coordinates information for placement on the map.
  */
-type SymbolComponent = React.ComponentType<SymbolComponentBaseProps>;
+export type SymbolComponent = React.ComponentType<SymbolComponentBaseProps>;
 
 /**
  * Defines which symbol to render based on a zoom level; and optionally by entity type.
@@ -435,9 +435,10 @@ export type Stop = {
    */
   id: string;
   code?: string;
+  color?: string;
   dist?: number;
   lat: number;
-  geometries?: { geoJson: GeoJSON.Polygon };
+  geometries?: { geoJson?: GeoJSON.Polygon };
   lon: number;
   name: string;
   routes?: Route[];

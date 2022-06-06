@@ -1,5 +1,5 @@
 import cloneDeep from "lodash.clonedeep";
-import React from "react";
+import React, { useMemo } from "react";
 import {
   LayerEntity,
   SymbolComponent,
@@ -89,6 +89,7 @@ const ZoomBasedMarkers = ({
 
   // With that symbol entry, transform its symbols (if a symbolTransform prop is provided),
   // and use the transformed symbols to render the entities.
+  let renderedMarkers = null;
   if (symbolEntry) {
     const transformedEntry = getTransformedSymbol(symbolEntry, symbolTransform);
 
@@ -96,33 +97,26 @@ const ZoomBasedMarkers = ({
     // Note that the result of the transformed symbols can be null (even for DefaultSymbol),
     // hence the null checks before the return statements below.
 
-    if (symbolByType && getType) {
-      return (
-        <>
-          {entities.map(entity => {
-            const EntitySymbol = symbolByType[getType(entity)] || DefaultSymbol;
-            return (
-              EntitySymbol && (
-                <EntitySymbol entity={entity} key={entity.id} zoom={zoom} />
-              )
-            );
-          })}
-        </>
-      );
-    }
-
-    if (DefaultSymbol) {
-      return (
-        <>
-          {entities.map(entity => (
-            <DefaultSymbol entity={entity} key={entity.id} zoom={zoom} />
-          ))}
-        </>
-      );
-    }
+    renderedMarkers = useMemo(
+      () =>
+        entities.map(entity => {
+          const EntitySymbol =
+            (getType && symbolByType[getType(entity)]) || DefaultSymbol;
+          return (
+            EntitySymbol && (
+              <EntitySymbol
+                entity={entity}
+                key={entity.id}
+                zoom={Math.floor(zoom)}
+              />
+            )
+          );
+        }),
+      [entities, zoom]
+    );
   }
 
-  return null;
+  return renderedMarkers;
 };
 
-export default React.memo(ZoomBasedMarkers);
+export default ZoomBasedMarkers;

@@ -25,7 +25,7 @@ const StopViewerOverlay = ({
     mainMap?.flyTo({ center: [stop.lon, stop.lat] });
   }, [stop.lat, stop.lon]);
 
-  if (!visible || !stop || !StopMarker) return <></>;
+  if (visible === false || !stop || !StopMarker) return <></>;
 
   return <StopMarker stop={stop} />;
 };
