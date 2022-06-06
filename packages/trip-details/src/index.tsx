@@ -204,20 +204,29 @@ export function TripDetails({
               transitFares={transitFares}
             />
           </summary>
-          {fareKeys.map(fareKey => {
-            // Don't show the default fare twice!
-            if (fareKey === defaultFare) {
-              return null;
-            }
-            return (
-              <TransitFare
-                fareKey={fareKey}
-                key={fareKey}
-                fareKeyNameMap={fareKeyNameMap}
-                transitFares={transitFares}
-              />
-            );
-          })}
+          {FareDetailsOrDefault ? (
+            <FareDetailsOrDefault
+              transitFares={itinerary.fare?.fare}
+              transitFareDetails={itinerary.fare?.details}
+              legs={itinerary.legs}
+              layout={fareDetailsLayout}
+            />
+          ) : (
+            fareKeys.map(fareKey => {
+              // Don't show the default fare twice!
+              if (fareKey === defaultFare) {
+                return null;
+              }
+              return (
+                <TransitFare
+                  fareKey={fareKey}
+                  key={fareKey}
+                  fareKeyNameMap={fareKeyNameMap}
+                  transitFares={transitFares}
+                />
+              );
+            })
+          )}
         </TransitFareWrapper>
         {minTNCFare !== 0 && (
           <S.TNCFare>

@@ -45,7 +45,6 @@ const Table = styled.table`
   border-collapse: collapse;
   display: block;
   font-family: sans-serif;
-  margin: -8px;
   /* This line can not be sorted alphabetically, because it must come after the margin rule */
   margin-bottom: 16px;
   padding: 0;
