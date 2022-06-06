@@ -87,7 +87,7 @@ const StopsOverlay = (props: Props): JSX.Element => {
             paint={{
               "line-color": stop.color,
               "line-opacity": 1,
-              "line-width": 5
+              "line-width": 4
             }}
           />
         </Source>

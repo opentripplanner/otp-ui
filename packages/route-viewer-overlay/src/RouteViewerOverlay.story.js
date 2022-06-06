@@ -1,12 +1,12 @@
 import BaseMap from "@opentripplanner/base-map";
 import React from "react";
-import { Source, Layer } from "react-map-gl";
 
 import routeData from "../__mocks__/mock-route.json";
 import flexRouteData from "../__mocks__/mock-flex-route.json";
 import RouteViewerOverlay from ".";
 
 import "maplibre-gl/dist/maplibre-gl.css";
+import StopsOverlay from "../../stops-overlay/src";
 
 const PORTLAND = [45.543092, -122.671202];
 const POWDER_SPRINGS = [33.8595, -84.67483];
@@ -65,13 +65,13 @@ FlexRoute.args = {
   // Since the data is fixed, we know that stops[1] will contain the relevant flex zone.
   // Using the stopsOverlay is not possible as it is very complex to implement */}
   extraLayer: (
-    <Source
-      id="extra"
-      type="geojson"
-      data={flexRouteData.stops[1].geometries.geoJson}
-    >
-      <Layer id="extra" type="fill" paint={{ "fill-opacity": 0.2 }} />
-    </Source>
+    <StopsOverlay
+      stops={flexRouteData.patterns[0].stops
+        .filter(stop => stop?.geometries?.geoJson?.type === "Polygon")
+        .map(stop => ({ ...stop, color: `#${flexRouteData.color}` }))}
+      symbols={[]}
+      visible
+    />
   ),
   routeData: flexRouteData,
   zoom
