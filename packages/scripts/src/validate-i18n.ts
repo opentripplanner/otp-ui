@@ -1,24 +1,8 @@
 /* eslint-disable no-console */
-/**
- * This script checks that message ids gathered by the formatjs extract command
- * are present in the specified folder(s).
- * It will produce an error code if message ids are present in a language but not another,
- * or if message ids are in a i18n yml files but not in the code or vice-versa.
- * This script is shipped as part of a package so it can be used in other code bases as needed.
- */
-// Example usage for one package in this repo:
-//   node path-to/lib/validate-i18n.js ../trip-details/src ../trip-details/i18n
-// Example usage for all packages in this repo:
-//   node path-to/lib/validate-i18n.js ../**/src ../**/i18n
+import flatten from "flat";
+import { extract } from "@formatjs/cli";
 
-const { extract } = require("@formatjs/cli");
-const flatten = require("flat");
-
-const {
-  isNotSpecialId,
-  loadYamlFile,
-  sortSourceAndYmlFiles
-} = require("./util");
+import { isNotSpecialId, loadYamlFile, sortSourceAndYmlFiles } from "./util";
 
 /**
  * Checks message ids completeness between code and yml files for all locales in repo.
@@ -83,4 +67,12 @@ async function checkI18n({ sourceFiles, ymlFilesByLocale }) {
   }
 }
 
-sortSourceAndYmlFiles(process.argv).then(checkI18n);
+/**
+ * Checks that message ids gathered by the formatjs extract command are present in the specified folder(s).
+ * Produces a process error if message ids are present in a language but not another,
+ * or if message ids are found in i18n yml files but not in the code or vice-versa.
+ * This script is shipped as part of a package so it can be used in other code bases as needed.
+ */
+export default function run(): Promise<void> {
+  return sortSourceAndYmlFiles(process.argv).then(checkI18n);
+}
