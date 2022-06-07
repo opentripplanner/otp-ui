@@ -9,6 +9,7 @@
   "module": "esm/index.js",
   "private": false,
   "dependencies": {
+    "@opentripplanner/types": "^2.0.0",
     "mapbox-gl": "npm:empty-npm-package@1.0.0",
     "maplibre-gl": "^2.1.9",
     "react-map-gl": "^7.0.15"
