@@ -102,7 +102,10 @@ export function getPlaceName(
 ): string {
   // If address is provided (i.e. for carshare station, use it)
   if (place.address) return place.address.split(",")[0];
-  if (place.networks && place.vertexType === "VEHICLERENTAL") {
+  if (
+    place.networks &&
+    (place.vertexType === "VEHICLERENTAL" || place.vertexType === "BIKESHARE")
+  ) {
     // For vehicle rental pick up, do not use the place name. Rather, use
     // company name + vehicle type (e.g., SPIN E-scooter). Place name is often just
     // a UUID that has no relevance to the actual vehicle. For bikeshare, however,
