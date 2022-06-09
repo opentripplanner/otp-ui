@@ -490,8 +490,11 @@ export type TimeOptions = {
 };
 
 export type TransitivePlace = {
-  placeId: string;
+  placeId?: string;
   type: string;
+  place_name?: string;
+  place_lon?: number;
+  place_lat?: number;
 };
 export type TransitiveJourney = {
   journey_id: string;
