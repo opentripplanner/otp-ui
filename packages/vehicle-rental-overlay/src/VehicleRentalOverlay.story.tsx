@@ -78,7 +78,6 @@ export default {
 export const RentalBicycles = () => (
   <ZoomControlledMapWithVehicleRentalOverlay
     companies={["BIKETOWN"]}
-    // mapSymbols={bikeMapSymbols}
     refreshVehicles={action("refresh bicycles")}
     stations={bikeRentalStations}
   />
@@ -92,7 +91,6 @@ export const RentalBicyclesVisibilityControlledByKnob = () => {
   return (
     <ZoomControlledMapWithVehicleRentalOverlay
       companies={["BIKETOWN"]}
-      // mapSymbols={bikeMapSymbols}
       refreshVehicles={action("refresh bicycles")}
       stations={bikeRentalStations}
       visible={isOverlayVisible}
@@ -100,19 +98,9 @@ export const RentalBicyclesVisibilityControlledByKnob = () => {
   );
 };
 
-export const RentalBicyclesUsingNewSymbolsProp = () => (
-  <ZoomControlledMapWithVehicleRentalOverlay
-    companies={["BIKETOWN"]}
-    refreshVehicles={action("refresh bicycles")}
-    // mapSymbols={bikeSymbols}
-    stations={bikeRentalStations}
-  />
-);
-
 export const RentalCars = () => (
   <ZoomControlledMapWithVehicleRentalOverlay
     companies={["CAR2GO"]}
-    // mapSymbols={carMapSymbols}
     refreshVehicles={action("refresh cars")}
     stations={carRentalStations}
   />
@@ -121,7 +109,6 @@ export const RentalCars = () => (
 export const RentalEScooters = () => (
   <ZoomControlledMapWithVehicleRentalOverlay
     companies={["SHARED"]}
-    // mapSymbols={EScooterMapSymbols}
     refreshVehicles={action("refresh E-scooters")}
     stations={eScooterStations}
   />
@@ -131,7 +118,6 @@ export const RentalEScootersWithCustomNaming = () => (
   <ZoomControlledMapWithVehicleRentalOverlay
     companies={["SHARED"]}
     getStationName={customStationName}
-    // mapSymbols={EScooterMapSymbols}
     refreshVehicles={action("refresh E-scooters")}
     stations={eScooterStations}
   />

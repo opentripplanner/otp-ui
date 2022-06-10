@@ -7,7 +7,12 @@ import {
   MapLocationActionArg,
   ConfiguredCompany
 } from "@opentripplanner/types";
+import { MarkerWithPopup } from "@opentripplanner/base-map";
 import StationPopup from "./StationPopup";
+import { BaseBikeRentalIcon, StationMarker } from "./styled";
+
+// TODO: Make configurable?
+const DETAILED_MARKER_CUTOFF = 16;
 
 const getColorForStation = (v: Station) => {
   if (v.isFloatingCar) return "#009cde";
@@ -15,6 +20,25 @@ const getColorForStation = (v: Station) => {
   // TODO: nicer color to match transitive
   if (v.bikesAvailable !== undefined || v.isFloatingBike) return "#f00";
   return "gray";
+};
+
+const checkIfPositionInViewport = (
+  bounds: mapboxgl.LngLatBounds,
+  lat: number,
+  lng: number
+): boolean => {
+  const PADDING = 0.001;
+  // @ts-expect-error types appear to be wrong? version issue?
+  // eslint-disable-next-line no-underscore-dangle
+  const [sw, ne] = [bounds._sw, bounds._ne];
+  if (!sw || !ne) return false;
+
+  return (
+    lat >= sw.lat - PADDING &&
+    lat <= ne.lat + PADDING &&
+    lng >= sw.lng - PADDING &&
+    lng <= ne.lng + PADDING
+  );
 };
 
 type Props = {
@@ -64,6 +88,9 @@ type Props = {
    * Whether the overlay is currently visible.
    */
   visible?: boolean;
+  /**
+   * TODO: Add props for overriding symbols?
+   */
 };
 
 /**
@@ -73,6 +100,9 @@ type Props = {
  */
 const VehicleRentalOverlay = (props: Props): JSX.Element => {
   const { mainMap } = useMap();
+  const zoom = mainMap?.getZoom();
+  const bounds = mainMap?.getBounds();
+
   const {
     visible,
     setLocation,
@@ -108,9 +138,6 @@ const VehicleRentalOverlay = (props: Props): JSX.Element => {
     return <></>;
   }
 
-  const bounds = mainMap?.getBounds();
-  if (!bounds) return null;
-
   const vehiclesGeoJSON: GeoJSON.FeatureCollection = {
     type: "FeatureCollection",
     features: stations.map(vehicle => ({
@@ -128,19 +155,55 @@ const VehicleRentalOverlay = (props: Props): JSX.Element => {
 
   return (
     <>
-      <Source type="geojson" data={vehiclesGeoJSON}>
-        <Layer
-          id="rental-vehicles"
-          type="circle"
-          paint={{
-            "circle-color": ["get", "color"],
-            "circle-opacity": 0.9,
-            "circle-stroke-width": ["get", "stroke-width"],
-            "circle-stroke-color": "#333"
-          }}
-        />
-        {/* this is where we add the symbols layer. add a second layer that gets swapped in and out dynamically */}
-      </Source>
+      {zoom < DETAILED_MARKER_CUTOFF && (
+        <Source type="geojson" data={vehiclesGeoJSON}>
+          <Layer
+            id="rental-vehicles"
+            type="circle"
+            paint={{
+              "circle-color": ["get", "color"],
+              "circle-opacity": 0.9,
+              "circle-stroke-width": ["get", "stroke-width"],
+              "circle-stroke-color": "#333"
+            }}
+          />
+          {/* this is where we add the symbols layer. add a second layer that gets swapped in and out dynamically */}
+        </Source>
+      )}
+      {zoom >= DETAILED_MARKER_CUTOFF &&
+        stations
+          .filter(station =>
+            checkIfPositionInViewport(bounds, station.y, station.x)
+          )
+          .map(station => (
+            <MarkerWithPopup
+              key={station.id}
+              position={[station.y, station.x]}
+              popupContents={
+                <StationPopup
+                  configCompanies={configCompanies}
+                  setLocation={setLocation}
+                  getStationName={getStationName}
+                  station={station}
+                />
+              }
+            >
+              {station.bikesAvailable !== undefined &&
+              !station.isFloatingBike &&
+              !station.isFloatingVehicle &&
+              station.spacesAvailable !== undefined ? (
+                <BaseBikeRentalIcon
+                  percent={
+                    station?.bikesAvailable > 0
+                      ? station?.bikesAvailable / station?.spacesAvailable
+                      : 0
+                  }
+                />
+              ) : (
+                <StationMarker width={12} color={getColorForStation(station)} />
+              )}
+            </MarkerWithPopup>
+          ))}
       {clickedVehicle && (
         <Popup
           closeOnClick={false}
