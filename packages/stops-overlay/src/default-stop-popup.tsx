@@ -9,6 +9,7 @@ import { Location, Stop } from "@opentripplanner/types";
 import * as S from "./styled";
 
 // Load the default messages.
+// @ts-expect-error TODO: why is this failing?
 import defaultEnglishMessages from "../i18n/en-US.yml";
 
 // HACK: We should flatten the messages loaded above because

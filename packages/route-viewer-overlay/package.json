@@ -25,9 +25,11 @@
     "@opentripplanner/core-utils": "^4.5.0",
     "point-in-polygon": "^1.1.0"
   },
+  "devDependencies": {
+    "@opentripplanner/types": "^2.0.0"
+  },
   "peerDependencies": {
     "@opentripplanner/base-map": "^2.0.0",
-    "@opentripplanner/types": "^2.0.0",
     "react": "^16.14.0"
   },
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"

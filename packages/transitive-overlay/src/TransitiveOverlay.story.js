@@ -6,7 +6,7 @@ import { action } from "@storybook/addon-actions";
 
 import TransitiveOverlay from ".";
 
-import "../../../node_modules/leaflet/dist/leaflet.css";
+import "maplibre-gl/dist/maplibre-gl.css";
 
 // Use the font-family defined by storybook <body> element,
 // so we don't need to install/import extra fonts.

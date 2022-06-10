@@ -51,9 +51,9 @@ const removePointsInFlexZone = (stops: Stop[], points: [number, number][]) => {
  */
 const RouteViewerOverlay = (props: Props): JSX.Element => {
   const { mainMap } = useMap();
+  const { routeData } = props;
   useEffect(() => {
     const { allowMapCentering } = props || { allowMapCentering: true };
-    const { routeData } = props;
     // if pattern geometry updated, update the map points
     if (allowMapCentering && isGeomComplete(routeData)) {
       const allPoints: LngLatLike[] = Object.values(routeData.patterns).reduce(
@@ -77,9 +77,10 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
         }
       }
     }
-  }, []);
+    // TODO: This might be breaking the fitBounds
+  }, [routeData]);
 
-  const { clipToPatternStops, routeData, path } = props;
+  const { clipToPatternStops, path } = props;
 
   if (!routeData || !routeData.patterns) return <></>;
 
