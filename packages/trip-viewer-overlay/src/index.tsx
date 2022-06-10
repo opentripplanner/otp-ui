@@ -14,6 +14,8 @@ type Props = {
 };
 const TripViewerOverlay = (props: Props): JSX.Element => {
   const { path, tripData, visible } = props;
+  if (!tripData) return null;
+
   const { geometry } = tripData;
 
   const pts = polyline

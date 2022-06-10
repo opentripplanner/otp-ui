@@ -23,6 +23,7 @@ type Props = {
 };
 const TransitiveCanvasOverlay = (props: Props): JSX.Element => {
   const { transitiveData } = props;
+  if (!transitiveData) return null;
 
   transitiveData.patterns.flatMap((pattern: TransitivePattern) =>
     pattern.stops
