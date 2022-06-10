@@ -28,6 +28,7 @@ const walkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__
 const walkTransitWalkItineraryNoIntermediateStops = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-no-intermediate-stops.json");
 const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json");
 const flexItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/flex-itinerary.json");
+const otp2ScooterItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-scooter.json");
 
 const { itineraryToTransitive } = coreUtils.map;
 const companies = [
@@ -333,6 +334,21 @@ export const FlexItinerary = () => (
     />
     <TransitiveOverlay
       transitiveData={itineraryToTransitive(flexItinerary, companies)}
+      visible
+    />
+  </BaseMap>
+);
+
+export const OTP2ScooterItinerary = () => (
+  <BaseMap center={[33.749, -84.388]} zoom={11}>
+    <EndpointsOverlay
+      fromLocation={getFromLocation(otp2ScooterItinerary)}
+      setLocation={setLocation}
+      toLocation={getToLocation(otp2ScooterItinerary)}
+      visible
+    />
+    <TransitiveOverlay
+      transitiveData={itineraryToTransitive(otp2ScooterItinerary, companies)}
       visible
     />
   </BaseMap>

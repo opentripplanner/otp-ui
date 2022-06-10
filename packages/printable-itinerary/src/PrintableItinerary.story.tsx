@@ -20,6 +20,7 @@ const walkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__
 const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json");
 const walkTransitWalkTransitWalkA11yItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json");
 const config = require("@opentripplanner/itinerary-body/src/__mocks__/config.json");
+const otp2ScooterItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-scooter.json");
 
 const StyledPrintableItinerary = styled(PrintableItinerary)`
   ${PrintableItineraryClasses.LegBody} {
@@ -148,6 +149,14 @@ export const ClassicIconsAndParkAndRideItinerary = () => (
   <PrintableItinerary
     config={config}
     itinerary={parkAndRideItinerary}
+    LegIcon={ClassicLegIcon}
+  />
+);
+
+export const OTP2ScooterItinerary = () => (
+  <PrintableItinerary
+    config={config}
+    itinerary={otp2ScooterItinerary}
     LegIcon={ClassicLegIcon}
   />
 );
