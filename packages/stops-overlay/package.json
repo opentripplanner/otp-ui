@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "@opentripplanner/from-to-location-picker": "^2.1.2",
-    "@opentripplanner/zoom-based-markers": "^1.2.1",
     "flat": "^5.0.2"
   },
   "devDependencies": {

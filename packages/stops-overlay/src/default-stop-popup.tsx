@@ -1,7 +1,4 @@
-import {
-  MarkerWithPopup,
-  Styled as BaseMapStyled
-} from "@opentripplanner/base-map";
+import { Styled as BaseMapStyled } from "@opentripplanner/base-map";
 import flatten from "flat";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 import React, { Component } from "react";
@@ -9,7 +6,6 @@ import { FormattedMessage } from "react-intl";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Location, Stop } from "@opentripplanner/types";
 
-import { LeafletStyleMarker } from "@opentripplanner/base-map/lib/styled";
 import * as S from "./styled";
 
 // Load the default messages.
@@ -22,15 +18,13 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 export const defaultMessages = flatten(defaultEnglishMessages);
 
 type Props = {
-  // TODO re-add LeafletPath ?
-  radius?: number;
   // eslint-disable-next-line @typescript-eslint/no-shadow
   setLocation: ({ location: Location, locationType: string }) => void;
   setViewedStop: ({ stopId: string }) => void;
   stop: Stop;
 };
 
-export default class StopMarker extends Component<Props> {
+export default class StopPopup extends Component<Props> {
   onClickView = (): void => {
     const { setViewedStop, stop } = this.props;
     setViewedStop({ stopId: stop.id });
@@ -51,11 +45,11 @@ export default class StopMarker extends Component<Props> {
   }
 
   render(): JSX.Element {
-    const { radius, stop } = this.props;
-    const { code, id, lat, lon, name } = stop;
+    const { stop } = this.props;
+    const { code, id, name } = stop;
     const userFacingId = code || id.split(":")[1] || id;
 
-    const popup = (
+    return (
       <BaseMapStyled.MapOverlayPopup>
         <BaseMapStyled.PopupTitle>{name}</BaseMapStyled.PopupTitle>
         <BaseMapStyled.PopupRow>
@@ -89,15 +83,6 @@ export default class StopMarker extends Component<Props> {
           />
         </BaseMapStyled.PopupRow>
       </BaseMapStyled.MapOverlayPopup>
-    );
-    return (
-      <MarkerWithPopup position={[lat, lon]} popupContents={popup}>
-        <LeafletStyleMarker
-          strokeColor="#333333"
-          color={stop.color || "#fff"}
-          size={radius}
-        />
-      </MarkerWithPopup>
     );
   }
 }
