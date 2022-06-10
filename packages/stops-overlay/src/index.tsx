@@ -1,29 +1,10 @@
 import { Stop } from "@opentripplanner/types";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Layer, Popup, Source, useMap } from "react-map-gl";
 import { EventData } from "mapbox-gl";
 import * as Styled from "./styled";
 import StopPopup from "./default-stop-popup";
-
-const checkIfPositionInViewport = (
-  bounds: mapboxgl.LngLatBounds,
-  lat: number,
-  lng: number
-): boolean => {
-  const PADDING = 0.004;
-  // @ts-expect-error types appear to be wrong? version issue?
-  // eslint-disable-next-line no-underscore-dangle
-  const [sw, ne] = [bounds._sw, bounds._ne];
-  if (!sw || !ne) return false;
-
-  return (
-    lat >= sw.lat - PADDING &&
-    lat <= ne.lat + PADDING &&
-    lng >= sw.lng - PADDING &&
-    lng <= ne.lng + PADDING
-  );
-};
 
 type Props = {
   /**
@@ -57,6 +38,21 @@ const StopsOverlay = (props: Props): JSX.Element => {
   const { stops, minZoom, visible, setLocation, setViewedStop } = props;
   const [clickedStop, setClickedStop] = useState(null);
 
+  useEffect(() => {
+    const STOP_LAYERS = ["stops", "flex-stops"];
+    STOP_LAYERS.forEach(stopLayer => {
+      mainMap?.on("mouseenter", stopLayer, () => {
+        mainMap.getCanvas().style.cursor = "pointer";
+      });
+      mainMap?.on("mouseleave", stopLayer, () => {
+        mainMap.getCanvas().style.cursor = "";
+      });
+      mainMap?.on("click", stopLayer, (event: EventData) => {
+        setClickedStop(event.features?.[0].properties);
+      });
+    });
+  }, [mainMap]);
+
   // Don't render if no map or no stops are defined.
   // (ZoomBasedMarkers will also not render below the minimum zoom threshold defined in the symbols prop.)
   if (visible === false || !stops || stops.length === 0) {
@@ -68,12 +64,9 @@ const StopsOverlay = (props: Props): JSX.Element => {
 
   const bounds = mainMap?.getBounds();
   if (!bounds) return null;
-  const visibleStops = stops.filter(stop =>
-    checkIfPositionInViewport(bounds, stop.lat, stop.lon)
-  );
-  const visibleStopsGeojson: GeoJSON.FeatureCollection = {
+  const stopsGeoJSON: GeoJSON.FeatureCollection = {
     type: "FeatureCollection",
-    features: visibleStops.map(stop => ({
+    features: stops.map(stop => ({
       type: "Feature",
       properties: {
         ...stop,
@@ -83,22 +76,9 @@ const StopsOverlay = (props: Props): JSX.Element => {
     }))
   };
 
-  const STOP_LAYERS = ["stops", "flex-stops"];
-  STOP_LAYERS.forEach(stopLayer => {
-    mainMap?.on("mouseenter", stopLayer, () => {
-      mainMap.getCanvas().style.cursor = "pointer";
-    });
-    mainMap?.on("mouseleave", stopLayer, () => {
-      mainMap.getCanvas().style.cursor = "";
-    });
-    mainMap?.on("click", stopLayer, (event: EventData) => {
-      setClickedStop(event.features?.[0].properties);
-    });
-  });
-
   return (
     <>
-      <Source type="geojson" data={visibleStopsGeojson}>
+      <Source type="geojson" data={stopsGeoJSON}>
         <Layer
           id="stops"
           type="circle"
@@ -127,6 +107,7 @@ const StopsOverlay = (props: Props): JSX.Element => {
           closeOnClick={false}
           longitude={clickedStop.lon}
           latitude={clickedStop.lat}
+          maxWidth="100%"
         >
           <StopPopup
             setLocation={setLocation}

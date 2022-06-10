@@ -59,6 +59,7 @@ const MarkerWithPopup = ({
           // eslint-disable-next-line react/jsx-props-no-spreading
           {...popupProps}
           onClose={() => setShowPopup(false)}
+          maxWidth="100%"
           longitude={position[1]}
           latitude={position[0]}
         >
