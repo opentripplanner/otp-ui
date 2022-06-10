@@ -20,7 +20,13 @@ import defaultEnglishMessages from "../../i18n/en-US.yml";
 // - the yaml loader for jest returns messages with flattened ids.
 const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
-const { getCurrentDate, getCurrentTime, OTP_API_DATE_FORMAT, OTP_API_TIME_FORMAT } = coreUtils.time;
+const {
+  getCurrentDate,
+  getCurrentTime,
+  getUserTimezone,
+  OTP_API_DATE_FORMAT,
+  OTP_API_TIME_FORMAT
+} = coreUtils.time;
 
 type DepartArriveValue = "NOW" | "DEPART" | "ARRIVE";
 
@@ -120,7 +126,7 @@ export default function DateTimeSelector({
   style = null,
   time = null,
   timeFormatLegacy = OTP_API_TIME_FORMAT,
-  timeZone
+  timeZone = getUserTimezone()
 }: DateTimeSelectorProps): ReactElement {
   const handleQueryParamChange = useCallback(
     (queryParam: QueryParamChangeEvent): void => {
