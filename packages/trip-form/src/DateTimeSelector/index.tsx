@@ -20,7 +20,7 @@ import defaultEnglishMessages from "../../i18n/en-US.yml";
 // - the yaml loader for jest returns messages with flattened ids.
 const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
-const { OTP_API_DATE_FORMAT, OTP_API_TIME_FORMAT } = coreUtils.time;
+const { getCurrentDate, getCurrentTime, OTP_API_DATE_FORMAT, OTP_API_TIME_FORMAT } = coreUtils.time;
 
 type DepartArriveValue = "NOW" | "DEPART" | "ARRIVE";
 
@@ -63,6 +63,11 @@ interface DateTimeSelectorProps {
    * The time format string for legacy mode (on legacy browsers, or if `forceLegacy` is true).
    */
   timeFormatLegacy?: string;
+  /**
+   * An IANA timezone (e.g. "America/Los_Angeles") used to convert the "Leave now" time
+   * to the transit agency local time.
+   */
+  timeZone?: string;
 }
 
 interface DepartArriveOption {
@@ -114,7 +119,8 @@ export default function DateTimeSelector({
   onQueryParamChange = null,
   style = null,
   time = null,
-  timeFormatLegacy = OTP_API_TIME_FORMAT
+  timeFormatLegacy = OTP_API_TIME_FORMAT,
+  timeZone
 }: DateTimeSelectorProps): ReactElement {
   const handleQueryParamChange = useCallback(
     (queryParam: QueryParamChangeEvent): void => {
@@ -160,9 +166,9 @@ export default function DateTimeSelector({
     () => {
       if (option.type === "NOW") {
         handleQueryParamChange({
+          date: getCurrentDate(timeZone),
           departArrive: "NOW",
-          date: moment().format(OTP_API_DATE_FORMAT),
-          time: moment().format(OTP_API_TIME_FORMAT)
+          time: getCurrentTime(timeZone)
         });
       } else if (!option.isSelected) {
         handleQueryParamChange({
@@ -170,7 +176,7 @@ export default function DateTimeSelector({
         });
       }
     },
-    [onQueryParamChange, option.type]
+    [onQueryParamChange, option.type, option.isSelected, timeZone]
   );
 
   const departureOptions: DepartArriveOption[] = [

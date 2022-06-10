@@ -50,6 +50,12 @@ const GeneralSettingsTemplate = (args: StoryArgs) => (
 );
 
 export default {
+  argTypes: {
+    timeZone: {
+      control: "select",
+      options: ["America/New_York", "America/Los_Angeles"]
+    }
+  },
   component: SettingsSelectorPanel,
   decorators: [decorator],
   parameters: {
@@ -57,7 +63,7 @@ export default {
     // (there are no args that the user can interactively change for this component).
     controls: {
       hideNoControlsWarning: true,
-      include: []
+      include: ["timeZone"]
     }
   },
   title: "Trip Form Components"
@@ -122,7 +128,8 @@ export const dateTimeSelector = makeStory(Core.DateTimeSelector, {
   forceLegacy: false,
   onQueryParamChange,
   time: "14:17",
-  timeFormatLegacy: "HH:mm"
+  timeFormatLegacy: "HH:mm",
+  timeZone: "America/New_York"
 });
 
 export const dropdownSelector = makeStory(Core.DropdownSelector, {
