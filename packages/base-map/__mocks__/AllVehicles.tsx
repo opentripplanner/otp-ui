@@ -4,12 +4,17 @@ import { LeafletStyleMarker } from "../src/styled";
 
 const vehicleData = require("./vehicle-data/all-trimet.json");
 
+type Props = {
+  id?: string;
+};
 /**
  * This component demonstrates a example map overlay that shows real-time transit vehicle locations on a leaflet map.
  * It is modeled after the component available in this file:
  * https://github.com/OpenTransitTools/transit-components/blob/master/lib/vehicles/AllVehicles.js
  */
-const AllVehiclesOverlay = () => {
+const AllVehiclesOverlay = (props: Props): JSX.Element => {
+  const { id } = props;
+
   const [showPopup, setShowPopup] = React.useState({
     key: null,
     latitude: null,
@@ -17,13 +22,12 @@ const AllVehiclesOverlay = () => {
   });
 
   return (
-    <>
+    <React.Fragment key={id}>
       {vehicleData.map(vehicle => {
         const { id: key, lat: latitude, lon: longitude } = vehicle;
 
         return (
           <Marker
-            class="marker"
             key={key}
             latitude={latitude}
             longitude={longitude}
@@ -38,12 +42,12 @@ const AllVehiclesOverlay = () => {
           longitude={showPopup.longitude}
           latitude={showPopup.latitude}
           anchor="bottom"
-          onClose={() => setShowPopup(false)}
+          onClose={() => setShowPopup(null)}
         >
           <span>VEH: {showPopup.key}</span>
         </Popup>
       )}
-    </>
+    </React.Fragment>
   );
 };
 

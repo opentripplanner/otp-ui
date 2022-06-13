@@ -52,6 +52,10 @@ type Props = {
    */
   companies?: string[];
   /**
+   * An optional id, used to make this layer toggle-able
+   */
+  id?: string;
+  /**
    * An optional custom function to create a string name of a particular vehicle
    * rental station. This function takes two arguments of the configCompanies
    * prop and a vehicle rental station. The function must return a string.

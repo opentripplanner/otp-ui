@@ -9,6 +9,7 @@ import React from "react";
 import parkAndRideMarker from "./park-and-ride-marker";
 
 type Props = {
+  id?: string;
   keyboard?: boolean;
   parkAndRideLocations: { name: string; x: number; y: number }[];
   setLocation: ({

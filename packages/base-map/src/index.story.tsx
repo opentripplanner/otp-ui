@@ -4,7 +4,7 @@ import { Popup } from "react-map-gl";
 import { action } from "@storybook/addon-actions";
 import { text } from "@storybook/addon-knobs";
 
-import BaseMap, { MarkerWithPopup } from ".";
+import BaseMap, { MarkerWithPopup, LayerWrapper } from ".";
 import AllVehiclesOverlay from "../__mocks__/AllVehicles";
 import ContextMenuDemo from "../__mocks__/ContextMenuDemo";
 
@@ -108,6 +108,19 @@ export const customLocationPopupContent = () => (
     <Popup longitude={center[1]} latitude={center[0]}>
       {samplePopup}
     </Popup>
+  </BaseMap>
+);
+export const optionalLayers = () => (
+  <BaseMap center={center}>
+    <LayerWrapper
+      visible
+      name="This layer has a name prop, the second one doesn't"
+      id="layer-1"
+    >
+      <MarkerWithPopup position={[center[0], center[1]]} />
+      <MarkerWithPopup position={[center[0] + 0.01, center[1]]} />
+    </LayerWrapper>
+    <AllVehiclesOverlay id="layer-2" />
   </BaseMap>
 );
 // Custom styling for this story only, not in production

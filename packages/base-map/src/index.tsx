@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { MapProvider, Map, MapRef } from "react-map-gl";
 import maplibregl, { Event } from "maplibre-gl";
@@ -70,6 +70,19 @@ const BaseMap = ({
     callIfValid(onViewportChanged)(viewState);
   }, [viewState]);
 
+  const toggleableLayers = Array.isArray(children)
+    ? children
+        .filter(child => !!child.props.id)
+        .map(child => {
+          const { visible, name, id } = child.props;
+          return { visible, name, id };
+        })
+    : [];
+
+  const [hiddenLayers, setHiddenLayers] = useState(
+    toggleableLayers.filter(layer => !layer.visible).map(layer => layer.id)
+  );
+
   return (
     <MapProvider>
       <Map
@@ -87,7 +100,39 @@ const BaseMap = ({
         style={{ display: "block", width: "100%", height: "90vh" }}
         zoom={viewState.zoom}
       >
-        {children}
+        {toggleableLayers.length > 0 && (
+          <Styled.LayerSelector id="filter-group" className="filter-group">
+            <div className="layers-list">
+              {toggleableLayers.map((layer: LayerProps, index: number) => {
+                return (
+                  <label htmlFor={layer.id} key={index}>
+                    <input
+                      onChange={() => {
+                        const updatedLayers = [...hiddenLayers];
+                        // Delete the layer id if present, add it otherwise
+                        updatedLayers.includes(layer.id)
+                          ? updatedLayers.splice(
+                              updatedLayers.indexOf(layer.id),
+                              1
+                            )
+                          : updatedLayers.push(layer.id);
+
+                        setHiddenLayers(updatedLayers);
+                      }}
+                      type="checkbox"
+                      id={layer.id}
+                      checked={!hiddenLayers.includes(layer.id)}
+                    />
+                    {layer.name || layer.id}
+                  </label>
+                );
+              })}
+            </div>
+          </Styled.LayerSelector>
+        )}
+        {Array.isArray(children)
+          ? children.filter(child => !hiddenLayers.includes(child.props.id))
+          : children}
       </Map>
     </MapProvider>
   );
@@ -95,4 +140,15 @@ const BaseMap = ({
 
 export default BaseMap;
 
-export { Styled, MarkerWithPopup };
+type LayerProps = {
+  visible?: boolean;
+  name?: string;
+  id: string;
+  children?: JSX.Element | JSX.Element[];
+};
+const LayerWrapper = (props: LayerProps): JSX.Element => {
+  const { children, visible } = props;
+  return <>{visible && children}</>;
+};
+
+export { Styled, MarkerWithPopup, LayerWrapper };

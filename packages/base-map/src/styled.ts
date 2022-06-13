@@ -33,3 +33,25 @@ export const LeafletStyleMarker = styled.div<LeafletStyleMarkerProps>`
   border-radius: ${props => props?.size || 10}px;
   cursor: pointer;
 `;
+
+export const LayerSelector = styled.nav`
+  position: relative;
+  right: 0;
+  top: 0;
+  margin: 1em;
+
+  display: flex;
+  justify-content: end;
+  .layers-list {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1em;
+    border-radius: 0.5em;
+    box-shadow: 0px -1px 15px -3px rgba(0, 0, 0, 0.1);
+
+    label {
+      display: block;
+    }
+  }
+`;
