@@ -211,6 +211,9 @@ const VehicleRentalOverlay = (props: Props): JSX.Element => {
       {clickedVehicle && (
         <Popup
           closeOnClick={false}
+          onClose={() => {
+            setClickedVehicle(null);
+          }}
           longitude={clickedVehicle.x}
           latitude={clickedVehicle.y}
           maxWidth="100%"
