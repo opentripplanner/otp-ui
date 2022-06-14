@@ -1,5 +1,5 @@
 import { Stop } from "@opentripplanner/types";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 import { Layer, Popup, Source, useMap } from "react-map-gl";
 import { EventData } from "mapbox-gl";
@@ -7,6 +7,10 @@ import * as Styled from "./styled";
 import StopPopup from "./default-stop-popup";
 
 type Props = {
+  /**
+   * An optional id to override the active stop with
+   */
+  activeStop?: string;
   /**
    * The list of stops to create stop markers for.
    */
@@ -40,6 +44,7 @@ type Props = {
 const StopsOverlay = (props: Props): JSX.Element => {
   const { mainMap } = useMap();
   const {
+    activeStop,
     minZoom,
     refreshStops,
     setLocation,
@@ -48,6 +53,10 @@ const StopsOverlay = (props: Props): JSX.Element => {
     visible
   } = props;
   const [clickedStop, setClickedStop] = useState(null);
+
+  useEffect(() => {
+    setClickedStop(activeStop);
+  }, [activeStop]);
 
   useEffect(() => {
     const STOP_LAYERS = ["stops", "flex-stops"];
@@ -66,6 +75,10 @@ const StopsOverlay = (props: Props): JSX.Element => {
     mainMap?.on("moveend", () => {
       if (refreshStops) refreshStops();
     });
+
+    mainMap?.on("zoomend", event => {
+      if (event.viewState.zoom < minZoom) setClickedStop(null);
+    });
   }, [mainMap]);
 
   // Don't render if no map or no stops are defined.
@@ -73,23 +86,26 @@ const StopsOverlay = (props: Props): JSX.Element => {
   if (visible === false || !stops || stops.length === 0) {
     return <></>;
   }
-  const flexStops = stops.filter(
-    stop => stop?.geometries?.geoJson?.type === "Polygon"
+
+  const flexStops = useMemo(
+    () => stops.filter(stop => stop?.geometries?.geoJson?.type === "Polygon"),
+    [stops]
   );
 
-  const bounds = mainMap?.getBounds();
-  if (!bounds) return null;
-  const stopsGeoJSON: GeoJSON.FeatureCollection = {
-    type: "FeatureCollection",
-    features: stops.map(stop => ({
-      type: "Feature",
-      properties: {
-        ...stop,
-        flex: stop?.geometries?.geoJson?.type === "Polygon"
-      },
-      geometry: { type: "Point", coordinates: [stop.lon, stop.lat] }
-    }))
-  };
+  const stopsGeoJSON: GeoJSON.FeatureCollection = useMemo(
+    () => ({
+      type: "FeatureCollection",
+      features: stops.map(stop => ({
+        type: "Feature",
+        properties: {
+          ...stop,
+          flex: stop?.geometries?.geoJson?.type === "Polygon"
+        },
+        geometry: { type: "Point", coordinates: [stop.lon, stop.lat] }
+      }))
+    }),
+    [stops]
+  );
 
   return (
     <>
@@ -119,6 +135,9 @@ const StopsOverlay = (props: Props): JSX.Element => {
       </Source>
       {clickedStop && (
         <Popup
+          onClose={() => {
+            setClickedStop(null);
+          }}
           closeOnClick={false}
           longitude={clickedStop.lon}
           latitude={clickedStop.lat}
