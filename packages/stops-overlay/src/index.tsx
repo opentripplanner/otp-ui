@@ -21,6 +21,10 @@ type Props = {
    */
   minZoom?: number;
   /**
+   * A method to be fired when the map is moved
+   */
+  refreshStops?: () => void;
+  /**
    * A method fired when a stop is selected as from or to in the popup
    */
   setLocation?: ({ location: Location, locationType: string }) => void;
@@ -35,7 +39,14 @@ type Props = {
  */
 const StopsOverlay = (props: Props): JSX.Element => {
   const { mainMap } = useMap();
-  const { stops, minZoom, visible, setLocation, setViewedStop } = props;
+  const {
+    minZoom,
+    refreshStops,
+    setLocation,
+    setViewedStop,
+    stops,
+    visible
+  } = props;
   const [clickedStop, setClickedStop] = useState(null);
 
   useEffect(() => {
@@ -50,6 +61,10 @@ const StopsOverlay = (props: Props): JSX.Element => {
       mainMap?.on("click", stopLayer, (event: EventData) => {
         setClickedStop(event.features?.[0].properties);
       });
+    });
+
+    mainMap?.on("moveend", () => {
+      if (refreshStops) refreshStops();
     });
   }, [mainMap]);
 
