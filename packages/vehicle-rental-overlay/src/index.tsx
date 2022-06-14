@@ -119,6 +119,11 @@ const VehicleRentalOverlay = (props: Props): JSX.Element => {
 
   useEffect(() => {
     // TODO: Make 30s configurable?
+    if (!refreshVehicles || typeof refreshVehicles !== "function") {
+      return;
+    }
+
+    refreshVehicles();
     setInterval(refreshVehicles, 30_000);
   }, [refreshVehicles]);
 
@@ -186,7 +191,10 @@ const VehicleRentalOverlay = (props: Props): JSX.Element => {
               popupContents={
                 <StationPopup
                   configCompanies={configCompanies}
-                  setLocation={setLocation}
+                  setLocation={location => {
+                    setClickedVehicle(null);
+                    setLocation(location);
+                  }}
                   getStationName={getStationName}
                   station={station}
                 />
@@ -210,7 +218,6 @@ const VehicleRentalOverlay = (props: Props): JSX.Element => {
           ))}
       {clickedVehicle && (
         <Popup
-          closeOnClick={false}
           onClose={() => {
             setClickedVehicle(null);
           }}
@@ -220,7 +227,10 @@ const VehicleRentalOverlay = (props: Props): JSX.Element => {
         >
           <StationPopup
             configCompanies={configCompanies}
-            setLocation={setLocation}
+            setLocation={location => {
+              setClickedVehicle(null);
+              setLocation(location);
+            }}
             getStationName={getStationName}
             station={{
               ...clickedVehicle,

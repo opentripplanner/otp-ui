@@ -81,12 +81,6 @@ const StopsOverlay = (props: Props): JSX.Element => {
     });
   }, [mainMap]);
 
-  // Don't render if no map or no stops are defined.
-  // (ZoomBasedMarkers will also not render below the minimum zoom threshold defined in the symbols prop.)
-  if (visible === false || !stops || stops.length === 0) {
-    return <></>;
-  }
-
   const flexStops = useMemo(
     () => stops.filter(stop => stop?.geometries?.geoJson?.type === "Polygon"),
     [stops]
@@ -106,6 +100,12 @@ const StopsOverlay = (props: Props): JSX.Element => {
     }),
     [stops]
   );
+
+  // Don't render if no map or no stops are defined.
+  // (ZoomBasedMarkers will also not render below the minimum zoom threshold defined in the symbols prop.)
+  if (visible === false || !stops || stops.length === 0) {
+    return <></>;
+  }
 
   return (
     <>
@@ -138,14 +138,19 @@ const StopsOverlay = (props: Props): JSX.Element => {
           onClose={() => {
             setClickedStop(null);
           }}
-          closeOnClick={false}
           longitude={clickedStop.lon}
           latitude={clickedStop.lat}
           maxWidth="100%"
         >
           <StopPopup
-            setLocation={setLocation}
-            setViewedStop={setViewedStop}
+            setLocation={location => {
+              setClickedStop(null);
+              setLocation(location);
+            }}
+            setViewedStop={stop => {
+              setClickedStop(null);
+              setViewedStop(stop);
+            }}
             stop={clickedStop}
           />
         </Popup>
