@@ -63,11 +63,15 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
         []
       );
       if (allPoints.length > 0) {
-        const bounds = allPoints.reduce((bnds, coord) => {
+        const geoJsonedPoints: [number, number][] = allPoints.map(c => [
+          c[1],
+          c[0]
+        ]);
+        const bounds = geoJsonedPoints.reduce((bnds, coord) => {
           return bnds.extend(coord);
-        }, new LngLatBounds(allPoints[0], allPoints[0]));
+        }, new LngLatBounds(geoJsonedPoints[0], geoJsonedPoints[0]));
 
-        mainMap.fitBounds(bounds, {
+        mainMap?.fitBounds(bounds, {
           duration: 300,
           padding: { top: 10, bottom: 25, left: 15, right: 5 }
         });
@@ -77,7 +81,6 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
         }
       }
     }
-    // TODO: This might be breaking the fitBounds
   }, [routeData]);
 
   const { clipToPatternStops, path } = props;
