@@ -57,6 +57,13 @@ export function itineraryToTransitive(
   });
 
   itin.legs.forEach((leg, idx) => {
+    // OTP2 puts "BIKESHARE" as the vertexType for scooter share legs.
+    // Here we fix that by looking ahead at the next leg to find out if it is a scooter.
+    const toVertexType =
+      itin.legs[idx + 1]?.mode === "SCOOTER"
+        ? "VEHICLERENTAL"
+        : leg.to.vertexType;
+
     if (isAccessMode(leg.mode)) {
       let fromPlaceId: string;
       if (leg.from.bikeShareId) {
@@ -89,7 +96,7 @@ export function itineraryToTransitive(
         if (leg.mode === "SCOOTER" || itin.legs?.[idx + 1].mode === "SCOOTER") {
           toPlaceId = `escooter_rent_station_${leg.to.bikeShareId}`;
         }
-      } else if (leg.to.vertexType === "VEHICLERENTAL") {
+      } else if (toVertexType === "VEHICLERENTAL") {
         toPlaceId = `escooter_rent_station_${leg.to.name}`;
       } else if (
         leg.mode === "CAR" &&
@@ -130,7 +137,12 @@ export function itineraryToTransitive(
       tdata.places.push({
         place_id: toPlaceId,
         // This string is not shown in the UI
-        place_name: getPlaceName(leg.to, companies, intl),
+        place_name: getPlaceName(
+          // replace the vertex type since we tweaked it above
+          { ...leg.to, vertexType: toVertexType },
+          companies,
+          intl
+        ),
         place_lat: leg.to.lat,
         place_lon: leg.to.lon
       });
