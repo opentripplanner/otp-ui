@@ -52,6 +52,10 @@ export const LayerSelector = styled.nav`
 
     label {
       display: block;
+
+      input {
+        margin-right: 1ch;
+      }
     }
   }
 `;

@@ -72,7 +72,8 @@ const BaseMap = ({
 
   const toggleableLayers = Array.isArray(children)
     ? children
-        .filter(child => !!child.props.id)
+        .flat()
+        .filter(child => child?.props?.id !== undefined)
         .map(child => {
           const { visible, name, id } = child.props;
           return { visible, name, id };
@@ -80,7 +81,7 @@ const BaseMap = ({
     : [];
 
   const [hiddenLayers, setHiddenLayers] = useState(
-    toggleableLayers.filter(layer => !layer.visible).map(layer => layer.id)
+    toggleableLayers.filter(layer => !layer?.visible).map(layer => layer.id)
   );
 
   return (
@@ -131,7 +132,9 @@ const BaseMap = ({
           </Styled.LayerSelector>
         )}
         {Array.isArray(children)
-          ? children.filter(child => !hiddenLayers.includes(child.props.id))
+          ? children
+              .flat()
+              .filter(child => !hiddenLayers.includes(child?.props?.id))
           : children}
       </Map>
     </MapProvider>
