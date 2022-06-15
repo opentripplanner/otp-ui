@@ -25,7 +25,7 @@ export default class ContextMenuDemo extends Component<
     const { location, contents } = this.state;
 
     return (
-      <div>
+      <div style={{ height: "100vh" }}>
         {/* @ts-expect-error something weird is happening with imports */}
         <BaseMap center={center} onContextMenu={this.handleContextMenu}>
           {contents && (

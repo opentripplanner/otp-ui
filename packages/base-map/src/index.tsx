@@ -97,8 +97,7 @@ const BaseMap = ({
         onClick={onClick}
         onContextMenu={onContextMenu}
         onMove={evt => setViewState(evt.viewState)}
-        // TODO: better way to set height and width?
-        style={{ display: "block", width: "100%", height: "90vh" }}
+        style={{ display: "block", width: "100%" }}
         zoom={viewState.zoom}
       >
         {toggleableLayers.length > 0 && (
