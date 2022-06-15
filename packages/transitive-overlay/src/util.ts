@@ -18,12 +18,15 @@ import { IntlShape } from "react-intl";
  */
 export function itineraryToTransitive(
   itin: Itinerary,
-  companies: Company[],
-  getRouteLabel: (leg: Leg) => string,
-  disableFlexArc: boolean,
-  intl: IntlShape
+  options: {
+    companies?: Company[];
+    getRouteLabel?: (leg: Leg) => string;
+    disableFlexArc?: boolean;
+    intl?: IntlShape;
+  }
 ): TransitiveData {
   const { isAccessMode, isFlex, isTransit } = coreUtils.itinerary;
+  const { companies, getRouteLabel, disableFlexArc, intl } = options;
   const tdata = {
     journeys: [],
     streetEdges: [],
@@ -136,11 +139,10 @@ export function itineraryToTransitive(
       });
       tdata.places.push({
         place_id: toPlaceId,
-        // This string is not shown in the UI
         place_name: getPlaceName(
           // replace the vertex type since we tweaked it above
           { ...leg.to, vertexType: toVertexType },
-          companies,
+          companies || [],
           intl
         ),
         place_lat: leg.to.lat,
