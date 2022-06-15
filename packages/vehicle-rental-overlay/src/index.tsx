@@ -52,9 +52,9 @@ type Props = {
    */
   companies?: string[];
   /**
-   * An optional id, used to make this layer toggle-able
+   * An id, used to make this layer uniquely identifiable
    */
-  id?: string;
+  id: string;
   /**
    * An optional custom function to create a string name of a particular vehicle
    * rental station. This function takes two arguments of the configCompanies
@@ -108,13 +108,16 @@ const VehicleRentalOverlay = (props: Props): JSX.Element => {
   const bounds = mainMap?.getBounds();
 
   const {
-    visible,
-    setLocation,
-    refreshVehicles,
-    stations,
     configCompanies,
-    getStationName
+    companies,
+    getStationName,
+    id,
+    refreshVehicles,
+    setLocation,
+    stations,
+    visible
   } = props;
+  const layerId = `rental-vehicles-${id}`;
   const [clickedVehicle, setClickedVehicle] = useState(null);
 
   useEffect(() => {
@@ -128,7 +131,7 @@ const VehicleRentalOverlay = (props: Props): JSX.Element => {
   }, [refreshVehicles]);
 
   useEffect(() => {
-    const VEHICLE_LAYERS = ["rental-vehicles"];
+    const VEHICLE_LAYERS = [layerId];
     VEHICLE_LAYERS.forEach(stopLayer => {
       mainMap?.on("mouseenter", stopLayer, () => {
         mainMap.getCanvas().style.cursor = "pointer";
@@ -149,17 +152,25 @@ const VehicleRentalOverlay = (props: Props): JSX.Element => {
 
   const vehiclesGeoJSON: GeoJSON.FeatureCollection = {
     type: "FeatureCollection",
-    features: stations.map(vehicle => ({
-      type: "Feature",
-      properties: {
-        ...vehicle,
-        networks: JSON.stringify(vehicle.networks),
-        "stroke-width":
-          vehicle.isFloatingBike || vehicle.isFloatingVehicle ? 1 : 2,
-        color: getColorForStation(vehicle)
-      },
-      geometry: { type: "Point", coordinates: [vehicle.x, vehicle.y] }
-    }))
+    features: stations
+      .filter(
+        vehicle =>
+          // Include specified companies only if companies is specified and network info is available
+          !companies ||
+          !vehicle.networks ||
+          companies.includes(vehicle.networks[0])
+      )
+      .map(vehicle => ({
+        type: "Feature",
+        properties: {
+          ...vehicle,
+          networks: JSON.stringify(vehicle.networks),
+          "stroke-width":
+            vehicle.isFloatingBike || vehicle.isFloatingVehicle ? 1 : 2,
+          color: getColorForStation(vehicle)
+        },
+        geometry: { type: "Point", coordinates: [vehicle.x, vehicle.y] }
+      }))
   };
 
   return (
@@ -167,7 +178,7 @@ const VehicleRentalOverlay = (props: Props): JSX.Element => {
       {zoom < DETAILED_MARKER_CUTOFF && (
         <Source type="geojson" data={vehiclesGeoJSON}>
           <Layer
-            id="rental-vehicles"
+            id={layerId}
             type="circle"
             paint={{
               "circle-color": ["get", "color"],
