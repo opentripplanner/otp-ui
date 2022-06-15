@@ -16,7 +16,7 @@ export default {
 };
 
 export const Default = () => (
-  <BaseMap center={center} zoom={zoom}>
+  <BaseMap center={center} forceMaxHeight zoom={zoom}>
     <ParkAndRideOverlay
       parkAndRideLocations={parkAndRideLocations}
       setLocation={action("setLocation")}

@@ -46,7 +46,7 @@ function CatDogIcon({ type }: UserLocationAndType) {
 const withMap = (
   Story: ComponentStory<typeof EndpointsOverlay>
 ): ReactElement => (
-  <BaseMap center={center} zoom={zoom}>
+  <BaseMap center={center} forceMaxHeight zoom={zoom}>
     {/* For some reason, <Story /> does not work with snapshots,
         so use the function syntax instead. */}
     {Story()}

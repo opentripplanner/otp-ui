@@ -3,17 +3,12 @@ import React, { useRef } from "react";
 import { Popup } from "react-map-gl";
 import { action } from "@storybook/addon-actions";
 import { text } from "@storybook/addon-knobs";
-import styled from "styled-components";
 
 import BaseMap, { MarkerWithPopup, LayerWrapper } from ".";
 import AllVehiclesOverlay from "../__mocks__/AllVehicles";
 import ContextMenuDemo from "../__mocks__/ContextMenuDemo";
 
 import "maplibre-gl/dist/maplibre-gl.css";
-
-export const BaseMapContainer = styled.div`
-  height: 100vh;
-`;
 
 export default {
   title: "BaseMap",
@@ -46,20 +41,17 @@ const a11yOverrideParameters = {
 };
 
 export const clickAndViewportchangedEvents = () => (
-  <BaseMapContainer>
-    <BaseMap
-      center={center}
-      onClick={onClick}
-      onContextMenu={onContextMenu}
-      onViewportChanged={onViewportChanged}
-    ></BaseMap>
-  </BaseMapContainer>
+  <BaseMap
+    center={center}
+    forceMaxHeight
+    onClick={onClick}
+    onContextMenu={onContextMenu}
+    onViewportChanged={onViewportChanged}
+  ></BaseMap>
 );
 
 export const zoomed = () => (
-  <BaseMapContainer>
-    <BaseMap center={center} zoom={17} />
-  </BaseMapContainer>
+  <BaseMap center={center} forceMaxHeight zoom={17} />
 );
 export const clickToSetBounds = () => {
   const ref = useRef();
@@ -83,72 +75,61 @@ export const clickToSetBounds = () => {
       >
         Set the bounds
       </button>
-      <BaseMapContainer>
-        <BaseMap passedRef={ref} center={center} zoom={17} />
-      </BaseMapContainer>
+      <BaseMap passedRef={ref} center={center} forceMaxHeight zoom={17} />
     </div>
   );
 };
 
 export const maxZoom = () => (
-  <BaseMapContainer>
-    <BaseMap center={center} maxZoom={18} zoom={30} />
-  </BaseMapContainer>
+  <BaseMap center={center} forceMaxHeight maxZoom={18} zoom={30} />
 );
 
 export const withCustomBaseLayer = () => {
   const maptilerToken = text("Your MapTiler token", "my_token");
 
   return (
-    <BaseMapContainer>
-      <BaseMap
-        baseLayer={`https://api.maptiler.com/maps/voyager/style.json?key=${maptilerToken}`}
-        center={center}
-      />
-    </BaseMapContainer>
+    <BaseMap
+      baseLayer={`https://api.maptiler.com/maps/voyager/style.json?key=${maptilerToken}`}
+      center={center}
+      forceMaxHeight
+    />
   );
 };
 
 export const withSampleMarkers = () => (
-  <BaseMapContainer>
-    <BaseMap center={center}>{sampleMarkers}</BaseMap>
-  </BaseMapContainer>
+  <BaseMap center={center} forceMaxHeight>
+    {sampleMarkers}
+  </BaseMap>
 );
 
 export const overlayWithLargeDataSet = () => (
   <div>
     <div>Do not add Storybook overhead on layers with large dataset...</div>
-    <BaseMapContainer>
-      <BaseMap center={center}>
-        <AllVehiclesOverlay />
-      </BaseMap>
-    </BaseMapContainer>
+    <BaseMap center={center} forceMaxHeight>
+      <AllVehiclesOverlay />
+    </BaseMap>
   </div>
 );
 
 export const customLocationPopupContent = () => (
-  <BaseMapContainer>
-    <BaseMap center={center}>
-      <Popup longitude={center[1]} latitude={center[0]}>
-        {samplePopup}
-      </Popup>
-    </BaseMap>
-  </BaseMapContainer>
+  <BaseMap center={center} forceMaxHeight>
+    <Popup longitude={center[1]} latitude={center[0]}>
+      {samplePopup}
+    </Popup>
+  </BaseMap>
 );
 export const optionalLayers = () => (
-  <BaseMapContainer>
-    <BaseMap center={center}>
-      <LayerWrapper
-        visible
-        name="This layer has a name prop, the second one doesn't"
-        id="layer-1"
-      >
-        <MarkerWithPopup position={[center[0], center[1]]} />
-        <MarkerWithPopup position={[center[0] + 0.01, center[1]]} />
-      </LayerWrapper>
-      <AllVehiclesOverlay id="layer-2" />
-    </BaseMap>
-  </BaseMapContainer>
+  <BaseMap center={center} forceMaxHeight>
+    <LayerWrapper
+      visible
+      name="This layer has a name prop, the second one doesn't"
+      id="layer-1"
+    >
+      <MarkerWithPopup position={[center[0], center[1]]} />
+      <MarkerWithPopup position={[center[0] + 0.01, center[1]]} />
+    </LayerWrapper>
+    <AllVehiclesOverlay id="layer-2" />
+  </BaseMap>
 );
 // Custom styling for this story only, not in production
 customLocationPopupContent.parameters = a11yOverrideParameters;

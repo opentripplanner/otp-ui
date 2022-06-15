@@ -15,13 +15,13 @@ export default {
 };
 
 export const Default = (): JSX.Element => (
-  <BaseMap center={center} zoom={zoom}>
+  <BaseMap forceMaxHeight center={center} zoom={zoom}>
     <TripViewerOverlay tripData={tripData} visible />
   </BaseMap>
 );
 
 export const WithPathStyling = (): JSX.Element => (
-  <BaseMap center={center} zoom={zoom}>
+  <BaseMap forceMaxHeight center={center} zoom={zoom}>
     <TripViewerOverlay
       path={{
         color: "#000",

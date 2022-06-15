@@ -30,7 +30,7 @@ export default {
 };
 
 const Template = args => (
-  <BaseMap center={args.center} zoom={args.zoom}>
+  <BaseMap center={args.center} forceMaxHeight zoom={args.zoom}>
     <RouteViewerOverlay
       clipToPatternStops={args.clipToPatternStops}
       path={args.path}

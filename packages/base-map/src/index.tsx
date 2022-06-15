@@ -21,6 +21,7 @@ type Props = {
   baseLayer?: string;
   center?: [number, number];
   children?: JSX.Element | JSX.Element[];
+  forceMaxHeight?: boolean;
   maxZoom?: number;
   onClick?: (evt: Event) => void;
   // Unknown is used here becuase of a maplibre/mapbox issue with the true type, MapLayerMouseEvent
@@ -41,6 +42,7 @@ const BaseMap = ({
   baseLayer = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
   center,
   children,
+  forceMaxHeight,
   maxZoom,
   onClick,
   onContextMenu,
@@ -97,7 +99,11 @@ const BaseMap = ({
         onClick={onClick}
         onContextMenu={onContextMenu}
         onMove={evt => setViewState(evt.viewState)}
-        style={{ display: "block", width: "100%" }}
+        style={{
+          display: "block",
+          width: "100%",
+          height: forceMaxHeight ? "100vh" : "100%"
+        }}
         zoom={viewState.zoom}
       >
         {toggleableLayers.length > 0 && (

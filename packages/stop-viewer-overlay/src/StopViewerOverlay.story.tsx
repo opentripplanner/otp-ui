@@ -28,13 +28,13 @@ export default {
 };
 
 export const Default = (): JSX.Element => (
-  <BaseMap center={center} zoom={zoom}>
+  <BaseMap center={center} forceMaxHeight zoom={zoom}>
     <StopViewerOverlay stop={fakeStop} StopMarker={DefaultStopMarker} visible />
   </BaseMap>
 );
 
 export const WithCustomMarker = (): JSX.Element => (
-  <BaseMap center={center} zoom={zoom}>
+  <BaseMap center={center} forceMaxHeight zoom={zoom}>
     <StopViewerOverlay stop={fakeStop} StopMarker={CustomMarker} visible />
   </BaseMap>
 );

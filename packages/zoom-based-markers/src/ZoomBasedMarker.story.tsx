@@ -126,6 +126,7 @@ const Example = (props: ExampleProps) => {
   return (
     <BaseMap
       center={mapCenter}
+      forceMaxHeight
       onViewportChanged={handleViewportChanged}
       zoom={zoom}
     >

@@ -53,7 +53,7 @@ const ZoomControlledMapWithVehicleRentalOverlay = ({
 }: StoryProps) => (
   // Caution, <BaseMap> must be a direct parent of <VehicleRentalOverlay>.
   // Therefore, do not place <BaseMap> in a decorator at this time.
-  <BaseMap center={center} zoom={INITIAL_ZOOM}>
+  <BaseMap center={center} forceMaxHeight zoom={INITIAL_ZOOM}>
     <VehicleRentalOverlay
       configCompanies={configCompanies}
       companies={companies}

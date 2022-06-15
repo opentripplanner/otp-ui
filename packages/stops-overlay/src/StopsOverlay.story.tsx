@@ -19,7 +19,7 @@ const Example = ({
   minZoom = 15
 }: StopProps & { mapCenter?: [number, number] }) => {
   return (
-    <BaseMap center={mapCenter}>
+    <BaseMap center={mapCenter} forceMaxHeight>
       <StopsOverlay
         minZoom={minZoom}
         setLocation={setLocation}
