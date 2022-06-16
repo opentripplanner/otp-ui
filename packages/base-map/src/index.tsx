@@ -13,9 +13,9 @@ import callIfValid from "./util";
  * Overlays are groups of similar MapLibre markers, e.g. vehicle location
  * markers, bus stop markers, etc.
  *
- * TODO:
  * Overlays are automatically added to the overlay control displayed by the
- * BaseMap. The user uses that control to turn overlays on or off.
+ * BaseMap. The user uses that control to turn overlays on or off. Only overlays
+ * with an id are added to the control.
  */
 type Props = {
   baseLayer?: string;
@@ -24,7 +24,7 @@ type Props = {
   forceMaxHeight?: boolean;
   maxZoom?: number;
   onClick?: (evt: Event) => void;
-  // Unknown is used here becuase of a maplibre/mapbox issue with the true type, MapLayerMouseEvent
+  // Unknown is used here because of a maplibre/mapbox issue with the true type, MapLayerMouseEvent
   onContextMenu?: (e: unknown) => void;
   onViewportChanged?: ({
     latitude,
@@ -39,6 +39,7 @@ type Props = {
   zoom?: number;
 };
 const BaseMap = ({
+  // These tiles are free to use, but not in production
   baseLayer = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
   center,
   children,
@@ -107,6 +108,7 @@ const BaseMap = ({
         zoom={viewState.zoom}
       >
         {toggleableLayers.length > 0 && (
+          // TODO: Mobile view
           <Styled.LayerSelector id="filter-group" className="filter-group">
             <div className="layers-list">
               {toggleableLayers.map((layer: LayerProps, index: number) => {
