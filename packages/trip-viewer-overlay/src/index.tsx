@@ -18,6 +18,8 @@ const TripViewerOverlay = (props: Props): JSX.Element => {
 
   const { geometry } = tripData;
 
+  if (!geometry) return null;
+
   const pts = polyline
     .decode(geometry.points)
     .map((pt: [number, number]) => pt.reverse());
