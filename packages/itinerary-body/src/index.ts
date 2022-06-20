@@ -6,6 +6,7 @@ import PlaceRow from "./ItineraryBody/place-row";
 import RouteBadge from "./RouteBadge";
 import TransitLegBody from "./TransitLegBody";
 import * as Styled from "./styled";
+import { getPlaceName } from "./util";
 
 export default ItineraryBody;
 
@@ -17,5 +18,6 @@ export {
   PlaceRow,
   RouteBadge,
   Styled,
-  TransitLegBody
+  TransitLegBody,
+  getPlaceName
 };
