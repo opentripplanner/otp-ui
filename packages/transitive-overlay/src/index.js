@@ -5,11 +5,8 @@ import { MapLayer, withLeaflet } from "react-leaflet";
 import Transitive from "transitive-js";
 
 import transitiveStyles from "./transitive-styles";
-import { itineraryToTransitive } from "./util";
 
 require("./leaflet-canvas-layer");
-
-export { itineraryToTransitive };
 
 // TODO: move to util?
 function checkHiPPI(canvas) {
