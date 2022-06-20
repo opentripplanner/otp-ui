@@ -217,9 +217,8 @@ const VehicleRentalOverlay = (props: Props): JSX.Element => {
               station.spacesAvailable !== undefined ? (
                 <BaseBikeRentalIcon
                   percent={
-                    station?.bikesAvailable > 0
-                      ? station?.bikesAvailable / station?.spacesAvailable
-                      : 0
+                    station?.bikesAvailable /
+                    (station?.bikesAvailable + station?.spacesAvailable)
                   }
                 />
               ) : (
