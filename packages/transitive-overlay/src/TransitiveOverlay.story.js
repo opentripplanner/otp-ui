@@ -2,7 +2,7 @@ import BaseMap from "@opentripplanner/base-map";
 import EndpointsOverlay from "@opentripplanner/endpoints-overlay";
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { injectIntl, useIntl } from "react-intl";
+import { injectIntl } from "react-intl";
 
 import TransitiveOverlay, { itineraryToTransitive } from ".";
 
@@ -342,7 +342,7 @@ export const FlexItinerary = () => (
   </BaseMap>
 );
 
-export const OTP2ScooterItinerary = injectIntl(() => (
+export const OTP2ScooterItinerary = injectIntl(({ intl }) => (
   <BaseMap center={[33.749, -84.388]} zoom={11}>
     <EndpointsOverlay
       fromLocation={getFromLocation(otp2ScooterItinerary)}
@@ -353,7 +353,7 @@ export const OTP2ScooterItinerary = injectIntl(() => (
     <TransitiveOverlay
       transitiveData={itineraryToTransitive(otp2ScooterItinerary, {
         companies,
-        intl: useIntl()
+        intl
       })}
       visible
     />
