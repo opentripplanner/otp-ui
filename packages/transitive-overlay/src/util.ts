@@ -5,7 +5,7 @@ import {
   TransitiveData
 } from "@opentripplanner/types";
 import coreUtils from "@opentripplanner/core-utils";
-import { getPlaceName } from "@opentripplanner/itinerary-body/lib/util";
+import { getPlaceName } from "@opentripplanner/itinerary-body";
 import { IntlShape } from "react-intl";
 
 /**
