@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { Marker, MarkerProps, Popup, PopupProps } from "react-map-gl";
 import { LeafletStyleMarker } from "./styled";
 
-type Props = {
-  position: [number, number];
+type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
   markerProps?: MarkerProps;
-  popupProps?: PopupProps;
-  children?: React.ReactNode;
   popupContents?: React.ReactNode;
+  popupProps?: PopupProps;
+  position: [number, number];
   tooltipContents?: React.ReactNode;
 };
 
@@ -15,12 +14,12 @@ type Props = {
  * A MapLibre marker with a connected popup or tooltip
  */
 const MarkerWithPopup = ({
-  position,
+  children,
   markerProps,
-  popupProps,
   popupContents,
-  tooltipContents,
-  children
+  popupProps,
+  position,
+  tooltipContents
 }: Props): JSX.Element => {
   const [showPopup, setShowPopup] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
@@ -29,8 +28,8 @@ const MarkerWithPopup = ({
     <Marker
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...markerProps}
-      longitude={position[1]}
       latitude={position[0]}
+      longitude={position[1]}
       onClick={() => setShowPopup(true)}
       style={{ cursor: popupContents ? "pointer" : "inherit" }}
     >
@@ -48,8 +47,8 @@ const MarkerWithPopup = ({
           anchor="right"
           closeButton={false}
           closeOnClick={false}
-          longitude={position[1]}
           latitude={position[0]}
+          longitude={position[1]}
         >
           {tooltipContents}
         </Popup>
@@ -58,10 +57,10 @@ const MarkerWithPopup = ({
         <Popup
           // eslint-disable-next-line react/jsx-props-no-spreading
           {...popupProps}
-          onClose={() => setShowPopup(false)}
-          maxWidth="100%"
-          longitude={position[1]}
           latitude={position[0]}
+          longitude={position[1]}
+          maxWidth="100%"
+          onClose={() => setShowPopup(false)}
         >
           {popupContents}
         </Popup>

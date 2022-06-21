@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-
 import { MapProvider, Map, MapRef } from "react-map-gl";
 import maplibregl, { Event } from "maplibre-gl";
 
 import * as Styled from "./styled";
-import MarkerWithPopup from "./MarkerWithPopup";
 import callIfValid from "./util";
+import MarkerWithPopup from "./MarkerWithPopup";
+
 /**
  * The BaseMap component renders a MapLibre map
  * markers that are declared as child elements of the BaseMap element.
@@ -17,27 +17,26 @@ import callIfValid from "./util";
  * BaseMap. The user uses that control to turn overlays on or off. Only overlays
  * with an id are added to the control.
  */
-type Props = {
+type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
   baseLayer?: string;
   center?: [number, number];
-  children?: JSX.Element | JSX.Element[];
   forceMaxHeight?: boolean;
   maxZoom?: number;
   onClick?: (evt: Event) => void;
   // Unknown is used here because of a maplibre/mapbox issue with the true type, MapLayerMouseEvent
   onContextMenu?: (e: unknown) => void;
-  onViewportChanged?: ({
-    latitude,
-    longitude,
-    zoom
-  }: {
-    latitude: number;
-    longitude: number;
-    zoom: number;
-  }) => void;
+  // TODO: does this cause integration issues?
+  onViewportChanged?: (e: maplibregl.MapLibreEvent) => void;
   passedRef?: React.Ref<MapRef>;
   zoom?: number;
 };
+type State = {
+  latitude: number;
+  longitude: number;
+  zoom: number;
+  fitBoundsOptions?: Record<string, number | string | boolean>;
+};
+
 const BaseMap = ({
   // These tiles are free to use, but not in production
   baseLayer = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
@@ -51,18 +50,13 @@ const BaseMap = ({
   onViewportChanged,
   zoom: initZoom = 12
 }: Props): JSX.Element => {
-  const [viewState, setViewState] = React.useState<{
-    latitude: number;
-    longitude: number;
-    zoom: number;
-    fitBoundsOptions?: Record<string, number | string | boolean>;
-  }>({
+  const [viewState, setViewState] = React.useState<State>({
     fitBoundsOptions: {
       animate: true,
-      padding: 10,
       duration: 100,
+      essential: false,
       maxDuration: 300,
-      essential: false
+      padding: 10
     },
     latitude: center?.[0],
     longitude: center?.[1],
@@ -102,40 +96,43 @@ const BaseMap = ({
         onMove={evt => setViewState(evt.viewState)}
         style={{
           display: "block",
-          width: "100%",
-          height: forceMaxHeight ? "100vh" : "100%"
+          height: forceMaxHeight ? "100vh" : "100%",
+          width: "100%"
         }}
         zoom={viewState.zoom}
       >
         {toggleableLayers.length > 0 && (
           // TODO: Mobile view
-          <Styled.LayerSelector id="filter-group" className="filter-group">
-            <div className="layers-list">
+          <Styled.LayerSelector className="filter-group" id="filter-group">
+            <ul className="layers-list">
               {toggleableLayers.map((layer: LayerProps, index: number) => {
                 return (
-                  <label htmlFor={layer.id} key={index}>
-                    <input
-                      onChange={() => {
-                        const updatedLayers = [...hiddenLayers];
-                        // Delete the layer id if present, add it otherwise
-                        updatedLayers.includes(layer.id)
-                          ? updatedLayers.splice(
-                              updatedLayers.indexOf(layer.id),
-                              1
-                            )
-                          : updatedLayers.push(layer.id);
+                  <li key={index}>
+                    {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+                    <label>
+                      <input
+                        checked={!hiddenLayers.includes(layer.id)}
+                        id={layer.id}
+                        onChange={() => {
+                          const updatedLayers = [...hiddenLayers];
+                          // Delete the layer id if present, add it otherwise
+                          updatedLayers.includes(layer.id)
+                            ? updatedLayers.splice(
+                                updatedLayers.indexOf(layer.id),
+                                1
+                              )
+                            : updatedLayers.push(layer.id);
 
-                        setHiddenLayers(updatedLayers);
-                      }}
-                      type="checkbox"
-                      id={layer.id}
-                      checked={!hiddenLayers.includes(layer.id)}
-                    />
-                    {layer.name || layer.id}
-                  </label>
+                          setHiddenLayers(updatedLayers);
+                        }}
+                        type="checkbox"
+                      />
+                      {layer.name || layer.id}
+                    </label>
+                  </li>
                 );
               })}
-            </div>
+            </ul>
           </Styled.LayerSelector>
         )}
         {Array.isArray(children)
@@ -151,14 +148,14 @@ const BaseMap = ({
 export default BaseMap;
 
 type LayerProps = {
-  visible?: boolean;
-  name?: string;
-  id: string;
   children?: JSX.Element | JSX.Element[];
+  id: string;
+  name?: string;
+  visible?: boolean;
 };
 const LayerWrapper = (props: LayerProps): JSX.Element => {
   const { children, visible } = props;
   return <>{visible && children}</>;
 };
 
-export { Styled, MarkerWithPopup, LayerWrapper };
+export { LayerWrapper, MarkerWithPopup, Styled };
