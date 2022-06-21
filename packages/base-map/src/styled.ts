@@ -60,10 +60,25 @@ export const LayerSelector = styled.nav`
     right: 0;
 
     label {
-      display: block;
+      display: none;
 
       input {
         margin-right: 1ch;
+      }
+    }
+
+    &::after {
+      display: block;
+      content: "🌐";
+      cursor: pointer;
+    }
+
+    &:hover {
+      label {
+        display: block;
+      }
+      &::after {
+        display: none;
       }
     }
   }
