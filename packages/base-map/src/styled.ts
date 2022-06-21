@@ -23,7 +23,7 @@ type LeafletStyleMarkerProps = {
   strokeColor?: string;
 };
 /**
- * @deprecated this marker was created to make the transition from Leaflet more managable,
+ * @deprecated this marker was created to make the transition from Leaflet more manageable,
  * but in most cases this marker should not be used -- use a MapLibreGL Circle instead
  *
  * https://maplibre.org/maplibre-gl-js-docs/style-spec/layers/#circle
