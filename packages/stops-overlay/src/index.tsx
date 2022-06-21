@@ -72,9 +72,7 @@ const StopsOverlay = (props: Props): JSX.Element => {
       });
     });
 
-    mainMap?.on("moveend", () => {
-      if (refreshStops) refreshStops();
-    });
+    if (refreshStops) refreshStops();
 
     mainMap?.on("zoomend", event => {
       if (event.viewState.zoom < minZoom) setClickedStop(null);
