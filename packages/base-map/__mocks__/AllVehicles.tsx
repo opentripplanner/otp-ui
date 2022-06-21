@@ -37,7 +37,7 @@ const AllVehiclesOverlay = (props: Props): JSX.Element => {
           </Marker>
         );
       })}
-      {showPopup.key && (
+      {showPopup?.key && (
         <Popup
           longitude={showPopup.longitude}
           latitude={showPopup.latitude}

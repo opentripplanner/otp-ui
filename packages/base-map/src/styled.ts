@@ -18,20 +18,26 @@ export const PopupTitle = styled.div`
 
 type LeafletStyleMarkerProps = {
   color?: string;
+  size?: number;
   stroke?: number;
   strokeColor?: string;
-  size?: number;
 };
+/**
+ * @deprecated this marker was created to make the transition from Leaflet more managable,
+ * but in most cases this marker should not be used -- use a MapLibreGL Circle instead
+ *
+ * https://maplibre.org/maplibre-gl-js-docs/style-spec/layers/#circle
+ */
 export const LeafletStyleMarker = styled.div<LeafletStyleMarkerProps>`
-  width: ${props => props?.size || 10}px;
-  content: "";
-  display: block;
-  height: ${props => props?.size || 10}px;
   background: ${props => props?.color || "#0000ff"}50;
+  border-radius: ${props => props?.size || 10}px;
   border: ${props => props?.stroke || 2}px solid
     ${props => props?.strokeColor || `${props?.color}f0` || "#0000fffo"};
-  border-radius: ${props => props?.size || 10}px;
+  content: "";
   cursor: pointer;
+  display: block;
+  height: ${props => props?.size || 10}px;
+  width: ${props => props?.size || 10}px;
 `;
 
 export const LayerSelector = styled.nav`
@@ -48,6 +54,7 @@ export const LayerSelector = styled.nav`
     box-shadow: 0px -1px 15px -3px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
+    list-style-type: none;
     padding: 1em;
     position: absolute;
     right: 0;

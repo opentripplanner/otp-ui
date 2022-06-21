@@ -1,40 +1,43 @@
+import { LngLat } from "maplibre-gl";
 import React, { Component } from "react";
 import { Popup } from "react-map-gl";
 import BaseMap from "../lib";
 
 const center: [number, number] = [45.522862, -122.667837];
 
-export default class ContextMenuDemo extends Component<
-  Record<string, never>,
-  { location: [number, number]; contents: React.ReactNode }
-> {
-  constructor(props: undefined) {
+type State = {
+  contents?: React.ReactNode;
+  location?: [number, number];
+};
+type Props = Record<string, never>;
+
+export default class ContextMenuDemo extends Component<Props, State> {
+  constructor(props: Props) {
     super(props);
 
-    this.state = { location: center, contents: null };
+    this.state = { contents: null, location: center };
   }
 
-  handleContextMenu = (e: { lngLat: { lat: number; lng: number } }): void => {
+  handleContextMenu = (e: { lngLat: LngLat }): void => {
     this.setState({
-      location: [e.lngLat.lat, e.lngLat.lng],
-      contents: <h1>Context Popup</h1>
+      contents: <h1>Context Popup</h1>,
+      location: [e.lngLat.lat, e.lngLat.lng]
     });
   };
 
   render(): JSX.Element {
-    const { location, contents } = this.state;
+    const { contents, location } = this.state;
 
     return (
       <div style={{ height: "100vh" }}>
-        {/* @ts-expect-error something weird is happening with imports */}
         <BaseMap center={center} onContextMenu={this.handleContextMenu}>
-          {contents && (
+          {contents && location && (
             <Popup
+              latitude={location[0]}
+              longitude={location[1]}
               onClose={() => {
                 this.setState({ contents: null });
               }}
-              latitude={location[0]}
-              longitude={location[1]}
             >
               {contents}
             </Popup>
