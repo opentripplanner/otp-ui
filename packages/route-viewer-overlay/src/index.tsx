@@ -53,9 +53,8 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
   const { mainMap } = useMap();
   const { routeData } = props;
   useEffect(() => {
-    const { allowMapCentering } = props || { allowMapCentering: true };
     // if pattern geometry updated, update the map points
-    if (allowMapCentering && isGeomComplete(routeData)) {
+    if (isGeomComplete(routeData)) {
       const allPoints: LngLatLike[] = Object.values(routeData.patterns).reduce(
         (acc, ptn) => {
           return acc.concat(polyline.decode(ptn.geometry.points));
@@ -81,7 +80,7 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
         }
       }
     }
-  }, [routeData]);
+  }, [routeData.patterns]);
 
   const { clipToPatternStops, path } = props;
 
@@ -140,10 +139,6 @@ type RouteData = {
   }[];
 };
 type Props = {
-  /**
-   * This boolean value allows disabling of map centering and panning.
-   */
-  allowMapCentering?: boolean;
   /**
    * If pattern stops contain polygons, we can request that the routes are not drawn
    * inside of these polygons by setting this prop to true. If true, the layer will
