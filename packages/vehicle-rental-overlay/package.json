@@ -19,6 +19,7 @@
     "url": "git+https://github.com/opentripplanner/otp-ui.git"
   },
   "dependencies": {
+    "@opentripplanner/base-map": "^3.0.0-alpha.1",
     "@opentripplanner/core-utils": "^4.5.0",
     "react-map-gl": "^7.0.15",
     "@opentripplanner/from-to-location-picker": "^2.1.2",
@@ -30,7 +31,6 @@
     "@opentripplanner/types": "^2.0.0"
   },
   "peerDependencies": {
-    "@opentripplanner/base-map": "^2.0.0",
     "react": "^16.14.0",
     "react-dom": "^16.8.6",
     "react-intl": "^5.24.6",
