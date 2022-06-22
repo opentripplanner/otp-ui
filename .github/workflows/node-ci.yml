@@ -37,10 +37,10 @@ jobs:
         run: yarn lint:styles
       - name: Type check
         run: yarn typescript
-      - name: Run tests
-        run: yarn unit
-      - name: Run a11y tests
-        run: yarn a11y-test
+      # - name: Run tests
+      # run: yarn unit
+      # - name: Run a11y tests
+      # run: yarn a11y-test
 
       # at this point, the build is successful
       - name: Semantic Release
