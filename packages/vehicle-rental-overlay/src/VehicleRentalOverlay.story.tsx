@@ -55,6 +55,7 @@ const ZoomControlledMapWithVehicleRentalOverlay = ({
   // Therefore, do not place <BaseMap> in a decorator at this time.
   <BaseMap center={center} forceMaxHeight zoom={INITIAL_ZOOM}>
     <VehicleRentalOverlay
+      id="test"
       configCompanies={configCompanies}
       companies={companies}
       getStationName={getStationName}

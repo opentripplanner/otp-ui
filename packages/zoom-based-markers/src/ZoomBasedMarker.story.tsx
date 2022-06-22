@@ -18,8 +18,6 @@ import {
 
 import ZoomBasedMarkers from ".";
 
-import "maplibre-gl/dist/maplibre-gl.css";
-
 const mockStops = [
   {
     id: "3",

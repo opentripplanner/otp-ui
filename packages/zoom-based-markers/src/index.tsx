@@ -40,7 +40,7 @@ const getTransformedSymbol = (
  * for the specified symbols and zoom level.
  */
 const getSymbolEntry = (symbols: ZoomBasedSymbol[], zoom: number) =>
-  symbols.reduce((bestMarker, marker) => {
+  symbols?.reduce((bestMarker, marker) => {
     if (zoom >= marker.minZoom) {
       if (!bestMarker || marker.minZoom > bestMarker.minZoom) {
         return marker;
