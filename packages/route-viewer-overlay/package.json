@@ -8,7 +8,8 @@
   "license": "MIT",
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc"
   },
   "repository": {
     "type": "git",
@@ -19,14 +20,17 @@
   },
   "dependencies": {
     "@mapbox/polyline": "^1.1.0",
+    "maplibre-gl": "^2.1.9",
+    "react-map-gl": "^7.0.15",
     "@opentripplanner/core-utils": "^4.5.0",
-    "point-in-polygon": "^1.1.0",
-    "prop-types": "^15.7.2"
+    "point-in-polygon": "^1.1.0"
+  },
+  "devDependencies": {
+    "@opentripplanner/types": "^2.0.0"
   },
   "peerDependencies": {
     "@opentripplanner/base-map": "^2.0.0",
-    "react": "^16.14.0",
-    "react-leaflet": "^2.6.1"
+    "react": "^16.14.0"
   },
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"
 }

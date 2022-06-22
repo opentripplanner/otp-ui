@@ -8,7 +8,7 @@ import { Dog } from "@styled-icons/fa-solid/Dog";
 
 import EndpointsOverlay from ".";
 
-import "../../../node_modules/leaflet/dist/leaflet.css";
+import "maplibre-gl/dist/maplibre-gl.css";
 
 // BaseMap props
 const center = [45.5215, -122.686202];
@@ -46,7 +46,7 @@ function CatDogIcon({ type }: UserLocationAndType) {
 const withMap = (
   Story: ComponentStory<typeof EndpointsOverlay>
 ): ReactElement => (
-  <BaseMap center={center} zoom={zoom}>
+  <BaseMap center={center} forceMaxHeight zoom={zoom}>
     {/* For some reason, <Story /> does not work with snapshots,
         so use the function syntax instead. */}
     {Story()}

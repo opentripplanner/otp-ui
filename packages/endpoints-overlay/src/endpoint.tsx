@@ -1,5 +1,4 @@
 import flatten from "flat";
-import { divIcon } from "leaflet";
 import coreUtils from "@opentripplanner/core-utils";
 import {
   ClearLocationArg,
@@ -7,10 +6,9 @@ import {
   MapLocationActionArg,
   UserLocationAndType
 } from "@opentripplanner/types";
-import React, { Component, ComponentType, ReactElement } from "react";
-import { FormattedMessage, injectIntl, IntlShape } from "react-intl";
-import { Marker, Popup } from "react-leaflet";
-import ReactDOMServer from "react-dom/server";
+import React, { ComponentType, useState } from "react";
+import { FormattedMessage, IntlShape, useIntl } from "react-intl";
+import { Marker, Popup, MarkerDragEvent } from "react-map-gl";
 import { Briefcase } from "@styled-icons/fa-solid/Briefcase";
 import { Home } from "@styled-icons/fa-solid/Home";
 import { MapMarkerAlt } from "@styled-icons/fa-solid/MapMarkerAlt";
@@ -25,7 +23,6 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 interface Props {
   clearLocation: (arg: ClearLocationArg) => void;
   forgetPlace: (type: string) => void;
-  intl: IntlShape;
   location?: Location;
   locations: Location[];
   MapMarkerIcon: ComponentType<UserLocationAndType>;
@@ -37,16 +34,6 @@ interface Props {
 
 interface IconProps {
   type: string;
-}
-
-// FIXME: Use the correct [react-]leaflet type (has side effect on other packages)
-interface MarkerDragEvent {
-  target: {
-    getLatLng: () => {
-      lat: number;
-      lon: number;
-    };
-  };
 }
 
 // HACK: We should flatten the messages loaded above because
@@ -92,22 +79,27 @@ function UserLocationIcon({ type }: IconProps) {
  * TODO: Combine with the same method at
  * https://github.com/opentripplanner/otp-react-redux/blob/6d5bc90e57843822809b0dff397bad19d66aeb43/lib/components/form/user-settings.js#L34
  */
-function renderCoordinates(intl, place) {
+function renderCoordinates(
+  intl: IntlShape,
+  place: { lat: number; lng: number }
+) {
   const MAX_FRAC_DIGITS = 5;
 
   return {
     lat: intl.formatNumber(place.lat, {
       maximumFractionDigits: MAX_FRAC_DIGITS
     }),
-    lon: intl.formatNumber(place.lon, {
+    lon: intl.formatNumber(place.lng, {
       maximumFractionDigits: MAX_FRAC_DIGITS
     })
   };
 }
 
-class Endpoint extends Component<Props> {
-  rememberAsHome = (): void => {
-    const { location: propsLocation, rememberPlace } = this.props;
+const Endpoint = (props: Props): JSX.Element => {
+  const intl = useIntl();
+
+  const rememberAsHome = (): void => {
+    const { location: propsLocation, rememberPlace } = props;
     const location = {
       ...propsLocation,
       icon: "home",
@@ -117,8 +109,8 @@ class Endpoint extends Component<Props> {
     rememberPlace({ type: "home", location });
   };
 
-  rememberAsWork = (): void => {
-    const { location: propsLocation, rememberPlace } = this.props;
+  const rememberAsWork = (): void => {
+    const { location: propsLocation, rememberPlace } = props;
     const location = {
       ...propsLocation,
       icon: "briefcase",
@@ -128,36 +120,36 @@ class Endpoint extends Component<Props> {
     rememberPlace({ type: "work", location });
   };
 
-  forgetHome = (): void => {
-    const { forgetPlace } = this.props;
+  const forgetHome = (): void => {
+    const { forgetPlace } = props;
     forgetPlace("home");
   };
 
-  forgetWork = (): void => {
-    const { forgetPlace } = this.props;
+  const forgetWork = (): void => {
+    const { forgetPlace } = props;
     forgetPlace("work");
   };
 
-  clearLocation = (): void => {
-    const { clearLocation, type } = this.props;
-    clearLocation({ locationType: type });
+  const clearLocation = (): void => {
+    const { clearLocation: propsClearLocation, type } = props;
+    propsClearLocation({ locationType: type });
   };
 
-  swapLocation = (): void => {
-    const { location, setLocation, type } = this.props;
-    this.clearLocation();
+  const swapLocation = (): void => {
+    const { location, setLocation, type } = props;
+    clearLocation();
     const otherType = type === "from" ? "to" : "from";
     setLocation({ locationType: otherType, location });
   };
 
-  onDragEnd = (e: MarkerDragEvent) => {
-    const { intl, setLocation, type } = this.props;
+  const onDragEnd = (e: MarkerDragEvent) => {
+    const { setLocation, type } = props;
 
     // This method is depcreated. the latlng object should be fed into react intl
-    const rawLocation = e.target.getLatLng();
+    const rawLocation = e.lngLat;
     const location = {
       lat: rawLocation.lat,
-      lon: rawLocation.lon,
+      lon: rawLocation.lng,
       name: intl.formatMessage(
         {
           defaultMessage: "{lat}, {lon}",
@@ -172,133 +164,129 @@ class Endpoint extends Component<Props> {
     setLocation({ locationType: type, location, reverseGeocode: true });
   };
 
-  render(): ReactElement {
-    const {
-      location,
-      locations,
-      MapMarkerIcon,
-      showUserSettings,
-      type
-    } = this.props;
-    const position =
-      location && location.lat && location.lon
-        ? [location.lat, location.lon]
-        : null;
-    if (!position) return null;
-    const match = locations.find(l => coreUtils.map.matchLatLon(l, location));
-    const isWork = match && match.type === "work";
-    const isHome = match && match.type === "home";
-    const iconHtml = ReactDOMServer.renderToStaticMarkup(
-      <MapMarkerIcon location={location} type={type} />
-    );
-    const otherType = type === "from" ? "to" : "from";
-    const icon = isWork ? "briefcase" : isHome ? "home" : "map-marker";
-    return (
-      <Marker
-        draggable
-        icon={divIcon({ html: iconHtml, className: "" })}
-        position={position}
-        onDragEnd={this.onDragEnd}
-      >
-        {showUserSettings && (
-          <Popup>
+  const [showPopup, setShowPopup] = useState(false);
+  const { location, locations, MapMarkerIcon, showUserSettings, type } = props;
+  if (!(location && location.lat && location.lon)) return null;
+  const match = locations.find(l => coreUtils.map.matchLatLon(l, location));
+  const isWork = match && match.type === "work";
+  const isHome = match && match.type === "home";
+  const iconHtml = <MapMarkerIcon location={location} type={type} />;
+  const otherType = type === "from" ? "to" : "from";
+  const icon = isWork ? "briefcase" : isHome ? "home" : "map-marker";
+  return (
+    // We have to use the standard marker here since we need to adjust state
+    // after and during drag
+    <Marker
+      draggable
+      latitude={location.lat}
+      longitude={location.lon}
+      onDragEnd={e => onDragEnd(e)}
+      onDragStart={() => setShowPopup(false)}
+      onClick={() => setShowPopup(true)}
+    >
+      {iconHtml}
+      {showPopup && showUserSettings && (
+        <Popup
+          onClose={() => setShowPopup(false)}
+          latitude={location.lat}
+          longitude={location.lon}
+        >
+          <div>
+            <strong>
+              <UserLocationIcon type={icon} />
+              {location.name}
+            </strong>
             <div>
-              <strong>
-                <UserLocationIcon type={icon} />
-                {location.name}
-              </strong>
-              <div>
-                <S.Button
-                  disabled={isWork}
-                  onClick={isHome ? this.forgetHome : this.rememberAsHome}
-                >
-                  {isHome ? (
-                    <>
-                      <UserLocationIcon type="times" />
-                      <FormattedMessage
-                        defaultMessage={
-                          defaultMessages["otpUi.EndpointsOverlay.forgetHome"]
-                        }
-                        description="Button text to forget the home location"
-                        id="otpUi.EndpointsOverlay.forgetHome"
-                      />
-                    </>
-                  ) : (
-                    <>
-                      <UserLocationIcon type="home" />
-                      <FormattedMessage
-                        defaultMessage={
-                          defaultMessages["otpUi.EndpointsOverlay.saveAsHome"]
-                        }
-                        description="Button text to save the location as home location"
-                        id="otpUi.EndpointsOverlay.saveAsHome"
-                      />
-                    </>
-                  )}
-                </S.Button>
-              </div>
-              <div>
-                <S.Button
-                  disabled={isHome}
-                  onClick={isWork ? this.forgetWork : this.rememberAsWork}
-                >
-                  {isWork ? (
-                    <>
-                      <UserLocationIcon type="times" />
-                      <FormattedMessage
-                        defaultMessage={
-                          defaultMessages["otpUi.EndpointsOverlay.forgetWork"]
-                        }
-                        description="Button text to forget the work location"
-                        id="otpUi.EndpointsOverlay.forgetWork"
-                      />
-                    </>
-                  ) : (
-                    <>
-                      <UserLocationIcon type="briefcase" />
-                      <FormattedMessage
-                        defaultMessage={
-                          defaultMessages["otpUi.EndpointsOverlay.saveAsWork"]
-                        }
-                        description="Button text to save the location as work location"
-                        id="otpUi.EndpointsOverlay.saveAsWork"
-                      />
-                    </>
-                  )}
-                </S.Button>
-              </div>
-              <div>
-                <S.Button onClick={this.clearLocation}>
-                  <UserLocationIcon type="times" />
-                  <FormattedMessage
-                    defaultMessage={
-                      defaultMessages["otpUi.EndpointsOverlay.clearLocation"]
-                    }
-                    description="Button text to clear the from/to location"
-                    id="otpUi.EndpointsOverlay.clearLocation"
-                    values={{ locationType: type }}
-                  />
-                </S.Button>
-              </div>
-              <div>
-                <S.Button onClick={this.swapLocation}>
-                  <UserLocationIcon type="refresh" />
-                  <FormattedMessage
-                    defaultMessage={
-                      defaultMessages["otpUi.EndpointsOverlay.swapLocation"]
-                    }
-                    description="Button text to swap the from/to location"
-                    id="otpUi.EndpointsOverlay.swapLocation"
-                    values={{ locationType: otherType }}
-                  />
-                </S.Button>
-              </div>
+              <S.Button
+                disabled={isWork}
+                onClick={isHome ? forgetHome : rememberAsHome}
+              >
+                {isHome ? (
+                  <>
+                    <UserLocationIcon type="times" />
+                    <FormattedMessage
+                      defaultMessage={
+                        defaultMessages["otpUi.EndpointsOverlay.forgetHome"]
+                      }
+                      description="Button text to forget the home location"
+                      id="otpUi.EndpointsOverlay.forgetHome"
+                    />
+                  </>
+                ) : (
+                  <>
+                    <UserLocationIcon type="home" />
+                    <FormattedMessage
+                      defaultMessage={
+                        defaultMessages["otpUi.EndpointsOverlay.saveAsHome"]
+                      }
+                      description="Button text to save the location as home location"
+                      id="otpUi.EndpointsOverlay.saveAsHome"
+                    />
+                  </>
+                )}
+              </S.Button>
             </div>
-          </Popup>
-        )}
-      </Marker>
-    );
-  }
-}
+            <div>
+              <S.Button
+                disabled={isHome}
+                onClick={isWork ? forgetWork : rememberAsWork}
+              >
+                {isWork ? (
+                  <>
+                    <UserLocationIcon type="times" />
+                    <FormattedMessage
+                      defaultMessage={
+                        defaultMessages["otpUi.EndpointsOverlay.forgetWork"]
+                      }
+                      description="Button text to forget the work location"
+                      id="otpUi.EndpointsOverlay.forgetWork"
+                    />
+                  </>
+                ) : (
+                  <>
+                    <UserLocationIcon type="briefcase" />
+                    <FormattedMessage
+                      defaultMessage={
+                        defaultMessages["otpUi.EndpointsOverlay.saveAsWork"]
+                      }
+                      description="Button text to save the location as work location"
+                      id="otpUi.EndpointsOverlay.saveAsWork"
+                    />
+                  </>
+                )}
+              </S.Button>
+            </div>
+            <div>
+              <S.Button onClick={clearLocation}>
+                <UserLocationIcon type="times" />
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages["otpUi.EndpointsOverlay.clearLocation"]
+                  }
+                  description="Button text to clear the from/to location"
+                  id="otpUi.EndpointsOverlay.clearLocation"
+                  values={{ locationType: type }}
+                />
+              </S.Button>
+            </div>
+            <div>
+              <S.Button onClick={swapLocation}>
+                <UserLocationIcon type="refresh" />
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages["otpUi.EndpointsOverlay.swapLocation"]
+                  }
+                  description="Button text to swap the from/to location"
+                  id="otpUi.EndpointsOverlay.swapLocation"
+                  values={{ locationType: otherType }}
+                />
+              </S.Button>
+            </div>
+          </div>
+        </Popup>
+      )}
+    </Marker>
+  );
+};
 
-export default injectIntl(Endpoint);
+export default Endpoint;
