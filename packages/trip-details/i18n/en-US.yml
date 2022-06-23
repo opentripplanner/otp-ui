@@ -41,4 +41,4 @@ otpUi:
     tncFare: "{companies} Fare: <strong>{minTNCFare} - {maxTNCFare}</strong>"
     transitFare: Transit Fare
     transitFareEntry: "{name}: <strong>{value}</strong>"
-    tripIncludesFlex: This trip includes flexible routes.
+    tripIncludesFlex: This trip includes flexible routes. {extraMessage}

@@ -27,6 +27,7 @@ const walkTransitWalkTransitWalkItinerary = require("../__mocks__/itineraries/wa
 const fareComponentsItinerary = require("../__mocks__/itineraries/fare-components.json");
 const walkTransitWalkTransitWalkA11yItinerary = require("../__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json");
 const otp2ScooterItinerary = require("../__mocks__/itineraries/otp2-scooter.json");
+const flexItinerary = require("../__mocks__/itineraries/flex-itinerary.json");
 
 const a11yOverrideParameters = {
   a11y: { config: { rules: [{ id: "color-contrast", reviewOnFail: true }] } }
@@ -139,6 +140,10 @@ export const TncTransitItinerary = (): ReactElement => (
 
 export const OTP2ScooterItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper itinerary={otp2ScooterItinerary} />
+);
+
+export const OTP2FlexItinerary = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper itinerary={flexItinerary} />
 );
 
 export const IndividualLegFareComponents = (): ReactElement => (

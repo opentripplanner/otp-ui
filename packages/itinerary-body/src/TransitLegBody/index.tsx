@@ -177,14 +177,17 @@ class TransitLegBody extends Component<Props, State> {
             </S.AgencyInfo>
           )}
           {isReservationRequired && (
+            // TODO: include trip-details pickupMessage here?
             <S.CallAheadWarning>
-              <FormattedMessage
-                defaultMessage={
-                  defaultMessages["otpUi.TransitLegBody.reservationRequired"]
-                }
-                description="Warning text that a prior reservation is required"
-                id="otpUi.TransitLegBody.reservationRequired"
-              />
+              {leg?.pickupBookingInfo?.pickupMessage || (
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages["otpUi.TransitLegBody.reservationRequired"]
+                  }
+                  description="Warning text that a prior reservation is required"
+                  id="otpUi.TransitLegBody.reservationRequired"
+                />
+              )}
             </S.CallAheadWarning>
           )}
 

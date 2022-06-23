@@ -339,6 +339,12 @@ export function TripDetails({
                   }
                   description="Text stating that portions of the trip include a flex (on-demand) transit service."
                   id="otpUi.TripDetails.tripIncludesFlex"
+                  values={{
+                    extraMessage: [
+                      pickupBookingInfo.map(info => info.message),
+                      dropOffBookingInfo.map(info => info.message)
+                    ].join(" ")
+                  }}
                 />
               </S.FlexSummary>
             }
