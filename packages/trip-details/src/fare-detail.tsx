@@ -1,10 +1,9 @@
-/* eslint-disable import/prefer-default-export */
 import { Leg, Money } from "@opentripplanner/types";
-
 import flatten from "flat";
 import React from "react";
 import styled from "styled-components";
 import { FormattedMessage, FormattedNumber } from "react-intl";
+
 import { FareDetailsProps } from "./types";
 
 // Load the default messages.
@@ -17,11 +16,11 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
 interface FareTypeTableProps {
-  headeri18nKey: string;
   cols: {
-    key: string;
     i18nKey: string;
+    key: string;
   }[];
+  headeri18nKey: string;
   legs: (Leg & { fares: { [key: string]: { price: Money } } })[];
   fareTotals: { [fareKey: string]: Money };
 }
@@ -36,8 +35,8 @@ const TableHeader = styled.thead`
     background: #cccccc22;
   }
   th.main {
-    color: #ffffffcc;
     background: #333333;
+    color: #ffffffcc;
   }
 `;
 
@@ -63,8 +62,12 @@ const Table = styled.table`
   }
 `;
 
-const FareTypeTable = (props: FareTypeTableProps): JSX.Element => {
-  const { headeri18nKey, fareTotals, cols, legs } = props;
+const FareTypeTable = ({
+  headeri18nKey,
+  fareTotals,
+  cols,
+  legs
+}: FareTypeTableProps): JSX.Element => {
   return (
     <Table>
       <TableHeader>
@@ -132,11 +135,12 @@ const FareTypeTable = (props: FareTypeTableProps): JSX.Element => {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const FareLegDetails = (props: FareDetailsProps): JSX.Element => {
+const FareLegDetails = (props: FareDetailsProps): JSX.Element => {
   const { legs, transitFares, transitFareDetails, layout } = props;
   const fareKeys = Object.keys(transitFareDetails);
 
   const legsWithFares = legs
+    .filter(leg => leg.transitLeg)
     .map((leg, index) => {
       const fares = fareKeys.reduce((prev, key) => {
         const fareForKey = transitFareDetails[key]?.find(
@@ -151,20 +155,21 @@ export const FareLegDetails = (props: FareDetailsProps): JSX.Element => {
         ...leg,
         fares
       };
-    })
-    .filter(leg => leg.transitLeg);
+    });
 
   return (
     <div>
       {layout.map(config => (
         <FareTypeTable
           cols={config.cols}
+          fareTotals={transitFares}
           headeri18nKey={config.headeri18nKey}
           key={config.headeri18nKey}
           legs={legsWithFares}
-          fareTotals={transitFares}
         />
       ))}
     </div>
   );
 };
+
+export default FareLegDetails;

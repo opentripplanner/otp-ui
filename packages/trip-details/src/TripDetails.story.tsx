@@ -167,8 +167,8 @@ function createTripDetailsTemplate(
       CaloriesDetails,
       DepartureDetails,
       FareDetails,
-      itinerary,
-      fareDetailsLayout
+      fareDetailsLayout,
+      itinerary
     }: TripDetailsProps,
     { globals, parameters }: StoryContext
   ): ReactElement => {
@@ -184,9 +184,9 @@ function createTripDetailsTemplate(
         CaloriesDetails={CaloriesDetails}
         DepartureDetails={DepartureDetails}
         FareDetails={FareDetails}
+        fareDetailsLayout={fareDetailsLayout}
         fareKeyNameMap={fareKeyNameMap}
         itinerary={itinerary}
-        fareDetailsLayout={fareDetailsLayout}
       />
     );
   };
@@ -250,8 +250,8 @@ export const BikeTransitBikeItinerary = makeStory({
 export const WalkInterlinedTransitItinerary = makeStory(
   {
     defaultFareKey: "electronicRegular",
-    itinerary: walkInterlinedTransitItinerary,
-    fareDetailsLayout: fareByLegLayout
+    fareDetailsLayout: fareByLegLayout,
+    itinerary: walkInterlinedTransitItinerary
   },
   {
     useCustomFareKeyMap: true
@@ -320,11 +320,11 @@ export const FlexItinerary = makeStory({
 
 const exampleItinerary = walkInterlinedTransitItinerary;
 
-export const FareDetailsComponent = () => (
+export const FareDetailsComponent = (): ReactElement => (
   <FareLegDetails
-    transitFares={exampleItinerary.fare.fare}
-    transitFareDetails={exampleItinerary.fare.details}
-    legs={exampleItinerary.legs}
     layout={fareByLegLayout}
+    legs={exampleItinerary.legs}
+    transitFareDetails={exampleItinerary.fare.details}
+    transitFares={exampleItinerary.fare.fare}
   />
 );
