@@ -147,8 +147,7 @@ const BaseMap = ({
 
 export default BaseMap;
 
-type LayerProps = {
-  children?: JSX.Element | JSX.Element[];
+type LayerProps = React.ComponentPropsWithoutRef<React.ElementType> & {
   id: string;
   name?: string;
   visible?: boolean;

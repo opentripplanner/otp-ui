@@ -71,9 +71,9 @@ export const clickToSetBounds = () => {
             ref.current?.fitBounds(bbox, {
               duration: 300,
               padding: {
+                bottom: 25,
                 left: 15,
                 right: 5,
-                bottom: 25,
                 top: 10
               }
             })
