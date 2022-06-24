@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { MapProvider, Map, MapRef, MapProps } from "react-map-gl";
+import { MapProps, MapRef, Map, MapProvider } from "react-map-gl";
 import maplibregl, { Event } from "maplibre-gl";
 
 import * as Styled from "./styled";
@@ -9,6 +9,10 @@ import MarkerWithPopup from "./MarkerWithPopup";
 /**
  * The BaseMap component renders a MapLibre map
  * markers that are declared as child elements of the BaseMap element.
+ *
+ * As BaseMap wraps a react-map-gl Map component, ny control which can be added as a child of a react-map-gl map is supported.
+ * See https://visgl.github.io/react-map-gl/docs/api-reference/map to see which react-map-gl
+ * children are shipped by default. Others are also supported.
  *
  * Overlays are groups of similar MapLibre markers, e.g. vehicle location
  * markers, bus stop markers, etc.

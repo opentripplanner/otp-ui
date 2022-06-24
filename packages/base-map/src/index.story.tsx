@@ -1,10 +1,10 @@
 /* eslint-disable react/button-has-type */
 import React, { useRef } from "react";
 import {
-  MapboxMap,
-  Popup,
-  NavigationControl,
   AttributionControl,
+  MapboxMap,
+  NavigationControl,
+  Popup,
   ScaleControl
 } from "react-map-gl";
 import { action } from "@storybook/addon-actions";
@@ -156,9 +156,11 @@ export const onContextMenuPopup = () => <ContextMenuDemo />;
  */
 export const withOptionalControls = () => (
   <BaseMap
-    mapLibreProps={{ attributionControl: false }}
     center={center}
     forceMaxHeight
+    // We supply our own AttributionControl, so disable the default one
+    // See https://visgl.github.io/react-map-gl/docs/api-reference/attribution-control
+    mapLibreProps={{ attributionControl: false }}
   >
     <AttributionControl customAttribution="This adds to the attribution information supplied by the map style json" />
     <NavigationControl position="bottom-right" />
