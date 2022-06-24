@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { MapProvider, Map, MapRef } from "react-map-gl";
+import { MapProvider, Map, MapRef, MapProps } from "react-map-gl";
 import maplibregl, { Event } from "maplibre-gl";
 
 import * as Styled from "./styled";
@@ -21,6 +21,7 @@ type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
   baseLayer?: string;
   center?: [number, number];
   forceMaxHeight?: boolean;
+  mapLibreProps?: MapProps;
   maxZoom?: number;
   onClick?: (evt: Event) => void;
   // Unknown is used here because of a maplibre/mapbox issue with the true type, MapLayerMouseEvent
@@ -43,6 +44,7 @@ const BaseMap = ({
   center,
   children,
   forceMaxHeight,
+  mapLibreProps,
   maxZoom,
   onClick,
   onContextMenu,
@@ -97,6 +99,8 @@ const BaseMap = ({
   return (
     <MapProvider>
       <Map
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...mapLibreProps}
         ref={passedRef}
         id="mainMap"
         latitude={viewState.latitude}
@@ -109,7 +113,7 @@ const BaseMap = ({
         onMove={evt => setViewState(evt.viewState)}
         style={{
           display: "block",
-          height: forceMaxHeight ? "100vh" : "100%",
+          height: forceMaxHeight ? "90vh" : "100%",
           width: "100%"
         }}
         zoom={viewState.zoom}

@@ -1,6 +1,12 @@
 /* eslint-disable react/button-has-type */
 import React, { useRef } from "react";
-import { MapboxMap, Popup } from "react-map-gl";
+import {
+  MapboxMap,
+  Popup,
+  NavigationControl,
+  AttributionControl,
+  ScaleControl
+} from "react-map-gl";
 import { action } from "@storybook/addon-actions";
 
 import AllVehiclesOverlay from "../__mocks__/AllVehicles";
@@ -140,3 +146,22 @@ export const optionalLayers = () => (
 customLocationPopupContent.parameters = a11yOverrideParameters;
 
 export const onContextMenuPopup = () => <ContextMenuDemo />;
+
+/**
+ * See https://visgl.github.io/react-map-gl/docs/api-reference/attribution-control
+ * See https://visgl.github.io/react-map-gl/docs/api-reference/navigation-control
+ * See https://visgl.github.io/react-map-gl/docs/api-reference/scale-control
+ *
+ * Any control which is added as a child of a react-map-gl map is supported
+ */
+export const withOptionalControls = () => (
+  <BaseMap
+    mapLibreProps={{ attributionControl: false }}
+    center={center}
+    forceMaxHeight
+  >
+    <AttributionControl customAttribution="This adds to the attribution information supplied by the map style json" />
+    <NavigationControl position="bottom-right" />
+    <ScaleControl />
+  </BaseMap>
+);
