@@ -1,20 +1,7 @@
 // Prettier doesn't understand type imports
 // eslint-disable-next-line prettier/prettier
 import type { Properties, Label } from "./types";
-/**
- * Helper function to return either zip code or neighborhood, depending on
- * what is present.
- *
- * Neighborhood is spelled British and zip code is spelled postal code as
- * Pelias seems to adopt British address standards.
- */
-const zipOrNeighborhood = ({
-  neighbourhood,
-  postalcode
-}: {
-  neighbourhood: string;
-  postalcode: string;
-}) => neighbourhood || postalcode || "";
+
 
 // A mapping of Pelias layers to display modes. The label generator will run the generator
 // based on the layer of the feature. Adding a new method to this mapping will support
@@ -22,26 +9,26 @@ const zipOrNeighborhood = ({
 const layerDisplayMap = {
   address: (properties: Properties): Label => {
     const {
-      region,
-      region_a: state,
-      name,
-      postalcode,
       housenumber,
       locality,
+      name,
+      neighbourhood,
+      region_a: state,
+      region,
       street,
     } = properties;
     return {
       // if the housenumber is available, combining that with the street can
       // avoid duplicates which might be present in the name
       main: housenumber ? `${housenumber} ${street}` : name,
-      secondary: [locality, postalcode, state || region].filter(item => !!item).join(", ")
+      secondary: [locality, neighbourhood, state || region].filter(item => !!item).join(", ")
     };
   },
   venue: (properties: Properties): Label => {
-    const { name, street, locality, region_a: state } = properties;
+    const { region_a: state, neighbourhood, locality, name, street } = properties;
     return {
       main: name,
-      secondary: [street, zipOrNeighborhood(properties), locality, state]
+      secondary: [street, neighbourhood, locality, state]
         .filter(item => !!item)
         .join(", ")
     };
