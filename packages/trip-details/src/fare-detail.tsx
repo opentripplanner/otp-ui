@@ -15,14 +15,16 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 // - the yaml loader for jest returns messages with flattened ids.
 const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
+type LegAndFare = Leg & { fares: Record<string, { price: Money }> };
+
 interface FareTypeTableProps {
   cols: {
     i18nKey: string;
     key: string;
   }[];
   headeri18nKey: string;
-  legs: (Leg & { fares: { [key: string]: { price: Money } } })[];
-  fareTotals: { [fareKey: string]: Money };
+  legs: LegAndFare[];
+  fareTotals: Record<string, { price: Money }>;
 }
 
 const TableHeader = styled.thead`
