@@ -9,7 +9,7 @@ import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
 import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
 import { PhoneVolume } from "@styled-icons/fa-solid/PhoneVolume";
 import { Route } from "@styled-icons/fa-solid/Route";
-import { FareLegDetails } from "./fare-detail";
+import FareLegDetails from "./fare-detail";
 
 import * as S from "./styled";
 import TripDetail from "./trip-detail";

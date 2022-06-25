@@ -24,7 +24,7 @@ interface FareTypeTableProps {
   }[];
   headeri18nKey: string;
   legs: LegAndFare[];
-  fareTotals: Record<string, { price: Money }>;
+  fareTotals: Record<string, Money>;
 }
 
 const TableHeader = styled.thead`
@@ -142,7 +142,6 @@ const FareLegDetails = (props: FareDetailsProps): JSX.Element => {
   const fareKeys = Object.keys(transitFareDetails);
 
   const legsWithFares = legs
-    .filter(leg => leg.transitLeg)
     .map((leg, index) => {
       const fares = fareKeys.reduce((prev, key) => {
         const fareForKey = transitFareDetails[key]?.find(
@@ -157,7 +156,8 @@ const FareLegDetails = (props: FareDetailsProps): JSX.Element => {
         ...leg,
         fares
       };
-    });
+    })
+    .filter(leg => leg.transitLeg);
 
   return (
     <div>
