@@ -9,10 +9,10 @@ import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
 import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
 import { PhoneVolume } from "@styled-icons/fa-solid/PhoneVolume";
 import { Route } from "@styled-icons/fa-solid/Route";
-import FareLegDetails from "./fare-detail";
 
 import * as S from "./styled";
 import TripDetail from "./trip-detail";
+import FareLegTable from "./fare-table";
 
 import {
   CaloriesDetailsProps,
@@ -146,24 +146,18 @@ const TransitFare = ({
 export function TripDetails({
   CaloriesDetails = DefaultCaloriesDetails,
   className = "",
-  DepartureDetails = null,
   defaultFareKey = "regular",
+  DepartureDetails = null,
+  FareDetails = null,
+  fareDetailsLayout,
   fareKeyNameMap = {},
-  FareDetails,
-  itinerary,
-  fareDetailsLayout
+  itinerary
 }: TripDetailsProps): ReactElement {
   // process the transit fare
   const fareResult = coreUtils.itinerary.calculateTncFares(itinerary);
   const { maxTNCFare, minTNCFare, tncCurrencyCode } = fareResult;
   const transitFares = itinerary?.fare?.fare;
-
-  const FareDetailsOrDefault =
-    FareDetails ||
-    (fareDetailsLayout &&
-      Object.keys(itinerary.fare.details).length > 0 &&
-      FareLegDetails) ||
-    null;
+  const fareDetails = itinerary.fare?.details;
 
   let companies = "";
   itinerary.legs.forEach(leg => {
@@ -204,14 +198,16 @@ export function TripDetails({
               transitFares={transitFares}
             />
           </summary>
-          {FareDetailsOrDefault ? (
-            <FareDetailsOrDefault
-              transitFares={itinerary.fare?.fare}
-              transitFareDetails={itinerary.fare?.details}
+          {fareDetailsLayout ? (
+            // Show full ƒare details by leg
+            <FareLegTable
+              transitFares={transitFares}
+              transitFareDetails={fareDetails}
               legs={itinerary.legs}
               layout={fareDetailsLayout}
             />
           ) : (
+            // Just show the fares for each payment type
             fareKeys.map(fareKey => {
               // Don't show the default fare twice!
               if (fareKey === defaultFare) {
@@ -307,16 +303,8 @@ export function TripDetails({
         {fare && (
           <TripDetail
             // Any custom description for the transit fare needs to be handled by the slot.
-            //  TODO: add leg info
             description={
-              FareDetailsOrDefault && (
-                <FareDetailsOrDefault
-                  transitFares={itinerary.fare?.fare}
-                  transitFareDetails={itinerary.fare?.details}
-                  legs={itinerary.legs}
-                  layout={fareDetailsLayout}
-                />
-              )
+              FareDetails && <FareDetails transitFares={transitFares} />
             }
             icon={<MoneyBillAlt size={17} />}
             summary={fare}

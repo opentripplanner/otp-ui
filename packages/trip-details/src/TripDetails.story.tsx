@@ -20,7 +20,7 @@ import {
 } from "./types";
 
 import customMessages from "../__mocks__/custom-messages.yml";
-import { FareLegDetails } from "./fare-detail";
+import FareLegDetails from "./fare-table";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json");
