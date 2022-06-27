@@ -72,7 +72,7 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
 
         mainMap?.fitBounds(bounds, {
           duration: 300,
-          padding: { top: 30, bottom: 30, left: 30, right: 30 }
+          padding: { top: 60, bottom: 60, left: 60, right: 60 }
         });
 
         if (props.mapCenterCallback) {
