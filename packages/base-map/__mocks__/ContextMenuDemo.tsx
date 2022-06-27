@@ -29,7 +29,7 @@ export default class ContextMenuDemo extends Component<Props, State> {
     const { contents, location } = this.state;
 
     return (
-      <div style={{ height: "100vh" }}>
+      <div style={{ height: "90vh" }}>
         <BaseMap center={center} onContextMenu={this.handleContextMenu}>
           {contents && location && (
             <Popup

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { MapProvider, Map, MapRef } from "react-map-gl";
+import React, { useCallback, useEffect, useState } from "react";
+import { MapProps, MapRef, Map, MapProvider } from "react-map-gl";
 import maplibregl, { Event } from "maplibre-gl";
 
 import * as Styled from "./styled";
@@ -9,6 +9,10 @@ import MarkerWithPopup from "./MarkerWithPopup";
 /**
  * The BaseMap component renders a MapLibre map
  * markers that are declared as child elements of the BaseMap element.
+ *
+ * As BaseMap wraps a react-map-gl Map component, ny control which can be added as a child of a react-map-gl map is supported.
+ * See https://visgl.github.io/react-map-gl/docs/api-reference/map to see which react-map-gl
+ * children are shipped by default. Others are also supported.
  *
  * Overlays are groups of similar MapLibre markers, e.g. vehicle location
  * markers, bus stop markers, etc.
@@ -21,6 +25,7 @@ type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
   baseLayer?: string;
   center?: [number, number];
   forceMaxHeight?: boolean;
+  mapLibreProps?: MapProps;
   maxZoom?: number;
   onClick?: (evt: Event) => void;
   // Unknown is used here because of a maplibre/mapbox issue with the true type, MapLayerMouseEvent
@@ -43,6 +48,7 @@ const BaseMap = ({
   center,
   children,
   forceMaxHeight,
+  mapLibreProps,
   maxZoom,
   onClick,
   onContextMenu,
@@ -81,9 +87,24 @@ const BaseMap = ({
     toggleableLayers.filter(layer => !layer?.visible).map(layer => layer.id)
   );
 
+  const adjustHiddenLayers = useCallback(
+    id => {
+      const updatedLayers = [...hiddenLayers];
+      // Delete the layer id if present, add it otherwise
+      updatedLayers.includes(id)
+        ? updatedLayers.splice(updatedLayers.indexOf(id), 1)
+        : updatedLayers.push(id);
+
+      setHiddenLayers(updatedLayers);
+    },
+    [hiddenLayers]
+  );
+
   return (
     <MapProvider>
       <Map
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...mapLibreProps}
         ref={passedRef}
         id="mainMap"
         latitude={viewState.latitude}
@@ -96,7 +117,7 @@ const BaseMap = ({
         onMove={evt => setViewState(evt.viewState)}
         style={{
           display: "block",
-          height: forceMaxHeight ? "100vh" : "100%",
+          height: forceMaxHeight ? "90vh" : "100%",
           width: "100%"
         }}
         zoom={viewState.zoom}
@@ -113,18 +134,7 @@ const BaseMap = ({
                       <input
                         checked={!hiddenLayers.includes(layer.id)}
                         id={layer.id}
-                        onChange={() => {
-                          const updatedLayers = [...hiddenLayers];
-                          // Delete the layer id if present, add it otherwise
-                          updatedLayers.includes(layer.id)
-                            ? updatedLayers.splice(
-                                updatedLayers.indexOf(layer.id),
-                                1
-                              )
-                            : updatedLayers.push(layer.id);
-
-                          setHiddenLayers(updatedLayers);
-                        }}
+                        onChange={() => adjustHiddenLayers(layer.id)}
                         type="checkbox"
                       />
                       {layer.name || layer.id}
@@ -147,8 +157,7 @@ const BaseMap = ({
 
 export default BaseMap;
 
-type LayerProps = {
-  children?: JSX.Element | JSX.Element[];
+type LayerProps = React.ComponentPropsWithoutRef<React.ElementType> & {
   id: string;
   name?: string;
   visible?: boolean;
