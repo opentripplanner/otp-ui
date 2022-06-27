@@ -2,7 +2,9 @@ import { Leg, Money } from "@opentripplanner/types";
 import flatten from "flat";
 import React from "react";
 import styled from "styled-components";
-import { FormattedMessage, FormattedNumber } from "react-intl";
+import { FormattedMessage } from "react-intl";
+
+import { renderFare } from "./utils";
 
 import { FareDetailsProps } from "./types";
 
@@ -69,70 +71,62 @@ const FareTypeTable = ({
   cols,
   legs
 }: FareTypeTableProps): JSX.Element => {
-  return (
-    <Table>
-      <TableHeader>
-        <th className="main">
-          <FormattedMessage
-            defaultMessage={
-              defaultMessages[
-                `otpUi.TripDetails.fareDetailsHeaders.${headeri18nKey}`
-              ]
-            }
-            id={`otpUi.TripDetails.fareDetailsHeaders.${headeri18nKey}`}
-          />
-        </th>
-        {cols.map(col => {
-          const fare = fareTotals[col.key];
-          return (
-            <th key={col.key}>
-              <FormattedMessage
-                defaultMessage={
-                  defaultMessages[
-                    `otpUi.TripDetails.fareDetailsHeaders.${col.i18nKey}`
-                  ]
-                }
-                id={`otpUi.TripDetails.fareDetailsHeaders.${col.i18nKey}`}
-              />
-              <br />
-              <FormattedNumber
-                value={(fare?.cents || 0) / 100}
-                // This isn't a "real" style prop
-                // eslint-disable-next-line react/style-prop-object
-                style="currency"
-                currency={fare?.currency?.currencyCode}
-                currencyDisplay="narrowSymbol"
-              />
-            </th>
-          );
-        })}
-      </TableHeader>
-      {legs.map((leg, index) => (
-        <tr key={index}>
-          <td className="no-zebra">{leg.routeShortName}</td>
-          {cols.map(col => {
-            const fare = leg.fares[col.key];
+  const colsToRender = cols.filter(col => fareTotals[col.key]);
+  if (colsToRender.length) {
+    return (
+      <Table>
+        <TableHeader>
+          <th className="main">
+            <FormattedMessage
+              defaultMessage={
+                defaultMessages[
+                  `otpUi.TripDetails.fareDetailsHeaders.${headeri18nKey}`
+                ]
+              }
+              id={`otpUi.TripDetails.fareDetailsHeaders.${headeri18nKey}`}
+            />
+          </th>
+          {colsToRender.map(col => {
+            const fare = fareTotals[col.key];
             return (
-              <td key={col.key}>
-                <FormattedNumber
-                  value={fare?.price?.cents / 100 || 0}
-                  // This isn't a "real" style prop
-                  // eslint-disable-next-line react/style-prop-object
-                  style="currency"
-                  currency={
-                    fare?.price.currency.currencyCode ||
-                    // This is how the itinerary-wide currency code is calculated on the back-end
-                    legs?.[0].fares?.[col.key]?.price?.currency.currencyCode
+              <th key={col.key}>
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages[
+                      `otpUi.TripDetails.fareDetailsHeaders.${col.i18nKey}`
+                    ]
                   }
-                  currencyDisplay="narrowSymbol"
+                  id={`otpUi.TripDetails.fareDetailsHeaders.${col.i18nKey}`}
                 />
-              </td>
+                <br />
+                {renderFare(
+                  fare?.currency?.currencyCode,
+                  (fare?.cents || 0) / 100
+                )}
+              </th>
             );
           })}
-        </tr>
-      ))}
-    </Table>
-  );
+        </TableHeader>
+        {legs.map((leg, index) => (
+          <tr key={index}>
+            <td className="no-zebra">{leg.routeShortName}</td>
+            {colsToRender.map(col => {
+              const fare = leg.fares[col.key];
+              return (
+                <td key={col.key}>
+                  {renderFare(
+                    fare?.price.currency?.currencyCode,
+                    (fare?.price.cents || 0) / 100
+                  )}
+                </td>
+              );
+            })}
+          </tr>
+        ))}
+      </Table>
+    );
+  }
+  return null;
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
