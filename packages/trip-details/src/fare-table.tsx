@@ -7,7 +7,7 @@ import { Transfer } from "@styled-icons/boxicons-regular/Transfer";
 
 import { boldText, renderFare } from "./utils";
 
-import { FareDetailsLayout, FareDetailsProps } from "./types";
+import { FareTableLayout, FareDetailsProps, FareTableText } from "./types";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
@@ -22,7 +22,7 @@ type LegAndFare = Leg & {
   fares: Record<string, { price: Money; isTransfer?: boolean }>;
 };
 
-interface FareTypeTableProps extends FareDetailsLayout {
+interface FareTypeTableProps extends FareTableLayout {
   legs: LegAndFare[];
   fareTotals: Record<string, Money>;
 }
@@ -68,10 +68,70 @@ const TransferIcon = styled(Transfer)`
   padding-left: 4px;
 `;
 
+const getFormattedTextForConfigKey = (textKey: FareTableText) => {
+  switch (textKey) {
+    case FareTableText.cash:
+      return (
+        <FormattedMessage
+          defaultMessage={
+            defaultMessages["otpUi.TripDetails.fareDetailsHeaders.cash"]
+          }
+          id="otpUi.TripDetails.fareDetailsHeaders.cash"
+        />
+      );
+    case FareTableText.electronic:
+      return (
+        <FormattedMessage
+          defaultMessage={
+            defaultMessages["otpUi.TripDetails.fareDetailsHeaders.electronic"]
+          }
+          id="otpUi.TripDetails.fareDetailsHeaders.electronic"
+        />
+      );
+    case FareTableText.youth:
+      return (
+        <FormattedMessage
+          defaultMessage={
+            defaultMessages["otpUi.TripDetails.fareDetailsHeaders.youth"]
+          }
+          id="otpUi.TripDetails.fareDetailsHeaders.youth"
+        />
+      );
+    case FareTableText.senior:
+      return (
+        <FormattedMessage
+          defaultMessage={
+            defaultMessages["otpUi.TripDetails.fareDetailsHeaders.senior"]
+          }
+          id="otpUi.TripDetails.fareDetailsHeaders.senior"
+        />
+      );
+    case FareTableText.special:
+      return (
+        <FormattedMessage
+          defaultMessage={
+            defaultMessages["otpUi.TripDetails.fareDetailsHeaders.special"]
+          }
+          id="otpUi.TripDetails.fareDetailsHeaders.special"
+        />
+      );
+    case FareTableText.regular:
+    default:
+      return (
+        <FormattedMessage
+          defaultMessage={
+            defaultMessages["otpUi.TripDetails.fareDetailsHeaders.regular"]
+          }
+          id="otpUi.TripDetails.fareDetailsHeaders.regular"
+        />
+      );
+  }
+};
+
 const FareTypeTable = ({
   cols,
   fareTotals,
-  headeri18nKey,
+  header,
   legs
 }: FareTypeTableProps): JSX.Element => {
   const colsToRender = cols.filter(col => fareTotals[col.key]);
@@ -80,29 +140,13 @@ const FareTypeTable = ({
       <Table>
         <TableHeader>
           <th className="main">
-            <FormattedMessage
-              defaultMessage={
-                defaultMessages[
-                  `otpUi.TripDetails.fareDetailsHeaders.${headeri18nKey}`
-                ]
-              }
-              id={`otpUi.TripDetails.fareDetailsHeaders.${headeri18nKey}`}
-            />
+            {boldText(getFormattedTextForConfigKey(header))}
           </th>
           {colsToRender.map(col => {
             const fare = fareTotals[col.key];
             return (
               <th key={col.key}>
-                {boldText(
-                  <FormattedMessage
-                    defaultMessage={
-                      defaultMessages[
-                        `otpUi.TripDetails.fareDetailsHeaders.${col.i18nKey}`
-                      ]
-                    }
-                    id={`otpUi.TripDetails.fareDetailsHeaders.${col.i18nKey}`}
-                  />
-                )}
+                {boldText(getFormattedTextForConfigKey(col.header))}
                 <br />
                 {renderFare(
                   fare?.currency?.currencyCode,
@@ -163,8 +207,8 @@ const FareLegDetails = (props: FareDetailsProps): JSX.Element => {
         <FareTypeTable
           cols={config.cols}
           fareTotals={transitFares}
-          headeri18nKey={config.headeri18nKey}
-          key={config.headeri18nKey}
+          header={config.header}
+          key={config.header}
           legs={legsWithFares}
         />
       ))}

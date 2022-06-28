@@ -16,12 +16,12 @@ import {
   DepartureDetailsProps,
   TripDetailsProps,
   FareDetailsProps,
-  FareDetailsLayout
+  FareTableLayout,
+  FareTableText
 } from "./types";
 
 import customEnglishMessages from "../__mocks__/custom-english-messages.yml";
 import customFrenchMessages from "../__mocks__/custom-french-messages.yml";
-import FareLegDetails from "./fare-table";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json");
@@ -54,47 +54,47 @@ const StyledTripDetails = styled(TripDetails)`
   }
 `;
 
-const fareByLegLayout: FareDetailsLayout[] = [
+const fareByLegLayout: FareTableLayout[] = [
   {
-    headeri18nKey: "regular",
+    header: "regular" as FareTableText,
     cols: [
       {
         key: "regular",
-        i18nKey: "cash"
+        header: "cash" as FareTableText
       },
       {
         key: "electronicRegular",
-        i18nKey: "electronic"
+        header: "electronic" as FareTableText
       },
       {
         key: "electronicSpecial",
-        i18nKey: "special"
+        header: "special" as FareTableText
       }
     ]
   },
   {
-    headeri18nKey: "youth",
+    header: "youth" as FareTableText,
     cols: [
       {
         key: "youth",
-        i18nKey: "cash"
+        header: "cash" as FareTableText
       },
       {
         key: "electronicYouth",
-        i18nKey: "electronic"
+        header: "electronic" as FareTableText
       }
     ]
   },
   {
-    headeri18nKey: "senior",
+    header: "senior" as FareTableText,
     cols: [
       {
         key: "cash",
-        i18nKey: "cash"
+        header: "cash" as FareTableText
       },
       {
         key: "electronic",
-        i18nKey: "electronic"
+        header: "electronic" as FareTableText
       }
     ]
   }
@@ -335,14 +335,3 @@ export const TncTransitItineraryWithCustomMessages = makeStory(
 export const FlexItinerary = makeStory({
   itinerary: fareComponentsItinerary
 });
-
-const exampleItinerary = walkInterlinedTransitItinerary;
-
-export const FareDetailsComponent = (): ReactElement => (
-  <FareLegDetails
-    layout={fareByLegLayout}
-    legs={exampleItinerary.legs}
-    transitFareDetails={exampleItinerary.fare.details}
-    transitFares={exampleItinerary.fare.fare}
-  />
-);

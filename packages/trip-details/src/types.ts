@@ -13,19 +13,28 @@ export interface DepartureDetailsProps {
   departureDate: Date;
 }
 
-export interface FareDetailsLayout {
+export enum FareTableText {
+  regular = "regular",
+  youth = "youth",
+  senior = "senior",
+  special = "special",
+  cash = "cash",
+  electronic = "electronic"
+}
+
+export interface FareTableLayout {
   cols: {
-    i18nKey: string;
+    header: FareTableText;
     key: string;
   }[];
-  headeri18nKey: string;
+  header: FareTableText;
 }
 export interface TransitFareData {
   [key: string]: Money
 }
 
 export interface FareDetailsProps {
-  layout?: FareDetailsLayout[];
+  layout?: FareTableLayout[];
   legs?: Leg[];
   transitFareDetails?: FareDetails;
   transitFares?: TransitFareData;
@@ -64,7 +73,7 @@ export interface TripDetailsProps {
   /**
    * Column and table configuration for fare details/fare by leg table.
    */
-  fareDetailsLayout?: FareDetailsLayout[];
+  fareDetailsLayout?: FareTableLayout[];
   /**
    * Mapping between fare keys and human-readable names for them.
    */
