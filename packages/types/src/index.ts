@@ -339,9 +339,9 @@ type ApplicableId = string | FeedScopedId;
 export type FareDetails = {
   [name: string]: {
     fareId?: ApplicableId;
-    price: Money;
-    legIndex?: number;
     isTransfer?: boolean;
+    legIndex?: number;
+    price: Money;
     routes?: ApplicableId[];
   }[];
 };

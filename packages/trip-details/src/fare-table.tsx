@@ -3,6 +3,7 @@ import flatten from "flat";
 import React from "react";
 import styled from "styled-components";
 import { FormattedMessage } from "react-intl";
+import { Transfer } from "@styled-icons/boxicons-regular/Transfer";
 
 import { renderFare } from "./utils";
 
@@ -17,7 +18,9 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 // - the yaml loader for jest returns messages with flattened ids.
 const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
-type LegAndFare = Leg & { fares: Record<string, { price: Money }> };
+type LegAndFare = Leg & {
+  fares: Record<string, { price: Money; isTransfer?: boolean }>;
+};
 
 interface FareTypeTableProps extends FareDetailsLayout {
   legs: LegAndFare[];
@@ -58,6 +61,10 @@ const Table = styled.table`
   th:first-of-type {
     height: 40px;
   }
+`;
+
+const TransferIcon = styled(Transfer)`
+  padding-left: 4px;
 `;
 
 const FareTypeTable = ({
@@ -113,6 +120,7 @@ const FareTypeTable = ({
                     fare?.price.currency?.currencyCode,
                     (fare?.price.cents || 0) / 100
                   )}
+                  {fare?.isTransfer && <TransferIcon size={16} />}
                 </td>
               );
             })}

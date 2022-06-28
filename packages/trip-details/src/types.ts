@@ -25,10 +25,10 @@ export interface TransitFareData {
 }
 
 export interface FareDetailsProps {
-  transitFares?: TransitFareData;
-  transitFareDetails?: FareDetails;
-  legs?: Leg[];
   layout?: FareDetailsLayout[];
+  legs?: Leg[];
+  transitFareDetails?: FareDetails;
+  transitFares?: TransitFareData;
 }
 
 export interface TransitFareProps {
@@ -62,15 +62,15 @@ export interface TripDetailsProps {
   */
   FareDetails?: React.ElementType<FareDetailsProps>;
   /**
+   * Column and table configuration for fare details/fare by leg table.
+   */
+  fareDetailsLayout?: FareDetailsLayout[];
+  /**
    * Mapping between fare keys and human-readable names for them.
    */
   fareKeyNameMap?: {
     [name: string]: string;
   };
-  /**
-   * Column and table configuration for fare details/fare by leg table.
-   */
-  fareDetailsLayout?: FareDetailsLayout[];
   /**
    * Itinerary that the user has selected to view, contains multiple legs.
    */
