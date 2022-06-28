@@ -13,7 +13,7 @@ import { Route } from "@styled-icons/fa-solid/Route";
 import * as S from "./styled";
 import TripDetail from "./trip-detail";
 import FareLegTable from "./fare-table";
-import { boldText } from "./utils";
+import { boldText, renderFare } from "./utils";
 
 import {
   CaloriesDetailsProps,

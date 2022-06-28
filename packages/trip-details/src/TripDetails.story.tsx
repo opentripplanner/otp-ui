@@ -19,7 +19,8 @@ import {
   FareDetailsLayout
 } from "./types";
 
-import customMessages from "../__mocks__/custom-messages.yml";
+import customEnglishMessages from "../__mocks__/custom-english-messages.yml";
+import customFrenchMessages from "../__mocks__/custom-french-messages.yml";
 import FareLegDetails from "./fare-table";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
@@ -36,6 +37,9 @@ const walkOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__
 const walkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json");
 const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json");
 const fareComponentsItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/fare-components.json");
+
+const flattenedEnglishMessages = flatten(customEnglishMessages);
+const flattenedFrenchMessages = flatten(customFrenchMessages);
 
 // Change currency code on one of the itineraries for illustration.
 // (other currency fields in the itinerary object are not used for display).
@@ -254,7 +258,15 @@ export const WalkInterlinedTransitItinerary = makeStory(
     itinerary: walkInterlinedTransitItinerary
   },
   {
-    useCustomFareKeyMap: true
+    useCustomFareKeyMap: true,
+    // For illustration purposes,
+    // override a subset of localized strings with custom messages.
+    reactIntl: {
+      messages: {
+        "en-US": flattenedEnglishMessages,
+        fr: flattenedFrenchMessages
+      }
+    }
   }
 );
 
@@ -292,7 +304,6 @@ export const TncTransitItinerary = makeStory(
   }
 );
 
-const flattenedMessages = flatten(customMessages);
 export const TncTransitItineraryWithCustomMessages = makeStory(
   {
     CaloriesDetails: CustomCaloriesDetails,
@@ -305,8 +316,8 @@ export const TncTransitItineraryWithCustomMessages = makeStory(
     // override a subset of localized strings with custom messages.
     reactIntl: {
       messages: {
-        "en-US": flattenedMessages,
-        fr: flattenedMessages
+        "en-US": flattenedEnglishMessages,
+        fr: flattenedFrenchMessages
       }
     },
     useCustomFareKeyMap: true

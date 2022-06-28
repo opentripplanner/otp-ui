@@ -5,3 +5,10 @@ otpUi:
     departure: "<strong>Leave</strong> at <strong>{departureDate, time, short}</strong> on <strong>{departureDate, date, long}</strong>"
     title: "Custom Trip Details Title"
     tncFare: "Pay <strong>{minTNCFare}-{maxTNCFare}</strong> to {companies}"
+    fareDetailsHeaders:
+      regular: "Regular"
+      youth: "Youth"
+      senior: "Senior"
+      cash: "Cash"
+      electronic: "ORCA"
+      special: "LIFT"
