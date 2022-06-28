@@ -1,6 +1,6 @@
 // Prettier does not recognize the import type syntax.
 // eslint-disable-next-line prettier/prettier
-import type { Fare, Leg, Itinerary, Money, FareDetails } from "@opentripplanner/types";
+import type { FareDetails, Money, Itinerary, Leg, Fare, } from "@opentripplanner/types";
 import type { ReactElement } from "react";
 
 export interface CaloriesDetailsProps {
@@ -14,11 +14,11 @@ export interface DepartureDetailsProps {
 }
 
 export interface FareDetailsLayout {
-  headeri18nKey: string;
   cols: {
-    key: string;
     i18nKey: string;
+    key: string;
   }[];
+  headeri18nKey: string;
 }
 export interface TransitFareData {
   [key: string]: Money

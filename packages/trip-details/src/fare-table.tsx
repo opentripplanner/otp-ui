@@ -6,7 +6,7 @@ import { FormattedMessage } from "react-intl";
 
 import { renderFare } from "./utils";
 
-import { FareDetailsProps } from "./types";
+import { FareDetailsLayout, FareDetailsProps } from "./types";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
@@ -19,12 +19,7 @@ const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
 type LegAndFare = Leg & { fares: Record<string, { price: Money }> };
 
-interface FareTypeTableProps {
-  cols: {
-    i18nKey: string;
-    key: string;
-  }[];
-  headeri18nKey: string;
+interface FareTypeTableProps extends FareDetailsLayout {
   legs: LegAndFare[];
   fareTotals: Record<string, Money>;
 }
@@ -66,9 +61,9 @@ const Table = styled.table`
 `;
 
 const FareTypeTable = ({
-  headeri18nKey,
-  fareTotals,
   cols,
+  fareTotals,
+  headeri18nKey,
   legs
 }: FareTypeTableProps): JSX.Element => {
   const colsToRender = cols.filter(col => fareTotals[col.key]);
@@ -129,9 +124,8 @@ const FareTypeTable = ({
   return null;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const FareLegDetails = (props: FareDetailsProps): JSX.Element => {
-  const { legs, transitFares, transitFareDetails, layout } = props;
+  const { layout, transitFareDetails, transitFares, legs } = props;
   const fareKeys = Object.keys(transitFareDetails);
 
   const legsWithFares = legs
