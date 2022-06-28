@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { FormattedMessage } from "react-intl";
 import { Transfer } from "@styled-icons/boxicons-regular/Transfer";
 
-import { renderFare } from "./utils";
+import { boldText, renderFare } from "./utils";
 
 import { FareDetailsLayout, FareDetailsProps } from "./types";
 
@@ -32,6 +32,7 @@ const TableHeader = styled.thead`
     min-width: 5ch;
     padding: 0.75em 1.5em;
     text-align: center;
+    font-weight: normal;
   }
   th:nth-of-type(2n + 1) {
     background: #cccccc22;
@@ -92,14 +93,16 @@ const FareTypeTable = ({
             const fare = fareTotals[col.key];
             return (
               <th key={col.key}>
-                <FormattedMessage
-                  defaultMessage={
-                    defaultMessages[
-                      `otpUi.TripDetails.fareDetailsHeaders.${col.i18nKey}`
-                    ]
-                  }
-                  id={`otpUi.TripDetails.fareDetailsHeaders.${col.i18nKey}`}
-                />
+                {boldText(
+                  <FormattedMessage
+                    defaultMessage={
+                      defaultMessages[
+                        `otpUi.TripDetails.fareDetailsHeaders.${col.i18nKey}`
+                      ]
+                    }
+                    id={`otpUi.TripDetails.fareDetailsHeaders.${col.i18nKey}`}
+                  />
+                )}
                 <br />
                 {renderFare(
                   fare?.currency?.currencyCode,
