@@ -37,6 +37,7 @@ const walkOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__
 const walkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json");
 const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json");
 const fareComponentsItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/fare-components.json");
+const otp2ScooterItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-scooter.json");
 
 const flattenedEnglishMessages = flatten(customEnglishMessages);
 const flattenedFrenchMessages = flatten(customFrenchMessages);
@@ -292,6 +293,12 @@ export const BikeRentalTransitItinerary = makeStory({
 
 export const EScooterRentalTransitItinerary = makeStory({
   itinerary: eScooterRentalTransiteScooterRentalItinerary
+});
+
+// The render of this itinerary is uninteresting, but the test
+// is if we can parse an OTP2 itinerary without crashing
+export const OTP2EScooterRentalTransitItinerary = makeStory({
+  itinerary: otp2ScooterItinerary
 });
 
 export const TncTransitItinerary = makeStory(

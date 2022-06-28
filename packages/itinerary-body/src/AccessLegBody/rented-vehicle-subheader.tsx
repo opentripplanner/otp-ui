@@ -26,7 +26,9 @@ interface Props {
 export default function RentedVehicleSubheader({ config, leg }: Props) {
   const configCompanies = config.companies || [];
   const { from, mode, rentedBike, walkingBike } = leg;
-  const { name: legName, networks, vertexType: modeType } = from;
+  const { name: legName, networks, vertexType } = from;
+  // in OTP2 scooters are BIKERENTALs, so we need to override this
+  const modeType = mode === "SCOOTER" ? "VEHICLERENTAL" : vertexType;
 
   // Sometimes rented vehicles can be walked over things like stairs or other
   // ways that forbid the main mode of travel.
@@ -58,7 +60,7 @@ export default function RentedVehicleSubheader({ config, leg }: Props) {
   if (networks || rentedBike) {
     // Add company and vehicle labels.
     const company = coreUtils.itinerary.getCompaniesLabelFromNetworks(
-      networks,
+      networks || [],
       configCompanies
     );
     // Only show vehicle name for car rentals. For bikes and E-scooters, these
