@@ -24,7 +24,7 @@ async function collectAndPrintOutMessages({ sourceFiles, ymlFilesByLocale }) {
   // CSV heading
   console.log(`ID,Description,${allLocales.join(",")}`);
 
-  // Will contain id, description, and a column for each language.
+  // Will contain id, description, and a column for each selected language.
   const messageData: MessageData = {};
 
   // For each locale, check that all ids in messages are in the yml files.
