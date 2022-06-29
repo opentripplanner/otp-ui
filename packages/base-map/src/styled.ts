@@ -73,7 +73,8 @@ export const LayerSelector = styled.nav`
       cursor: pointer;
     }
 
-    &:hover {
+    &:hover,
+    &.fake-mobile-hover {
       label {
         display: block;
       }

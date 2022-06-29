@@ -68,6 +68,7 @@ const BaseMap = ({
     longitude: center?.[1],
     zoom: initZoom
   });
+  const [fakeMobileHover, setFakeMobileHover] = useState(false);
 
   useEffect(() => {
     callIfValid(onViewportChanged)(viewState);
@@ -115,6 +116,9 @@ const BaseMap = ({
         onClick={onClick}
         onContextMenu={onContextMenu}
         onMove={evt => setViewState(evt.viewState)}
+        onTouchStart={() => {
+          setFakeMobileHover(false);
+        }}
         style={{
           display: "block",
           height: forceMaxHeight ? "90vh" : "100%",
@@ -124,8 +128,17 @@ const BaseMap = ({
       >
         {toggleableLayers.length > 0 && (
           // TODO: Mobile view
-          <Styled.LayerSelector className="filter-group" id="filter-group">
-            <ul className="layers-list">
+          <Styled.LayerSelector
+            onTouchEnd={() => {
+              setFakeMobileHover(true);
+            }}
+            className="filter-group"
+            id="filter-group"
+          >
+            <ul
+              className={`layers-list ${fakeMobileHover &&
+                "fake-mobile-hover"}`}
+            >
               {toggleableLayers.map((layer: LayerProps, index: number) => {
                 return (
                   <li key={index}>
