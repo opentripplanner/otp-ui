@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import polyline from "@mapbox/polyline";
 import { Layer, Source, useMap } from "react-map-gl";
 import { LngLatBounds } from "maplibre-gl";
@@ -23,17 +23,22 @@ const TripViewerOverlay = (props: Props): JSX.Element => {
   const pts = polyline
     .decode(geometry.points)
     .map((pt: [number, number]) => pt.reverse());
-  const { mainMap } = useMap();
-  useEffect(() => {
-    const bounds = pts.reduce((bnds, coord) => {
+
+  const bounds = useMemo(() => {
+    return pts.reduce((bnds, coord) => {
       return bnds.extend(coord);
     }, new LngLatBounds(pts[0], pts[0]));
+  }, [pts]);
 
-    mainMap?.fitBounds(bounds, {
-      duration: 100,
-      padding: { top: 10, bottom: 25, left: 15, right: 5 }
-    });
-  }, [mainMap]);
+  const { mainMap } = useMap();
+  useEffect(() => {
+    if (bounds.length === 4 && bounds.every(Number.isFinite)) {
+      mainMap?.fitBounds(bounds, {
+        duration: 500,
+        padding: 200
+      });
+    }
+  }, [mainMap, bounds]);
 
   if (!visible || !pts) return null;
 
