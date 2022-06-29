@@ -3020,6 +3020,22 @@
     prop-types "^15.7.2"
     qs "^6.9.1"
 
+"@opentripplanner/itinerary-body@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/itinerary-body/-/itinerary-body-3.1.0.tgz#279b675b9bda7368b9c11b0c3dc09207c2ee78ed"
+  integrity sha512-g2LMW6Sb5RHm070FPUw77E6brUDJR8YCtsvRCcPBYgRdhQe6CgYvOFK2Cv/fd6NQsA/V6aqGRCjNxzdy9VePqQ==
+  dependencies:
+    "@opentripplanner/core-utils" "^5.0.0"
+    "@opentripplanner/humanize-distance" "^1.2.0"
+    "@opentripplanner/icons" "^1.2.2"
+    "@opentripplanner/location-icon" "^1.4.0"
+    "@styled-icons/fa-solid" "^10.34.0"
+    "@styled-icons/foundation" "^10.34.0"
+    flat "^5.0.2"
+    moment "^2.24.0"
+    react-resize-detector "^4.2.1"
+    velocity-react "^1.4.3"
+
 "@pmmmwh/react-refresh-webpack-plugin@^0.5.1":
   version "0.5.4"
   resolved "https://registry.yarnpkg.com/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.5.4.tgz#df0d0d855fc527db48aac93c218a0bf4ada41f99"
