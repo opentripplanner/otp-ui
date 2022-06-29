@@ -206,7 +206,7 @@ export const BikeRentalItinerary = () => (
   </BaseMap>
 );
 
-export const EScooterRentalItinerary = () => (
+export const EScooterRentalItinerary = injectIntl(({ intl }) => (
   <BaseMap center={[45.52041, -122.675302]} zoom={16}>
     <EndpointsOverlay
       fromLocation={getFromLocation(eScooterRentalItinerary)}
@@ -216,12 +216,13 @@ export const EScooterRentalItinerary = () => (
     />
     <TransitiveOverlay
       transitiveData={itineraryToTransitive(eScooterRentalItinerary, {
-        companies
+        companies,
+        intl
       })}
       visible
     />
   </BaseMap>
-);
+));
 
 export const ParkAndRideItinerary = () => (
   <BaseMap center={[45.515841, -122.75302]} zoom={13}>
@@ -258,7 +259,7 @@ export const BikeRentalTransitItinerary = () => (
   </BaseMap>
 );
 
-export const EScooterRentalTransitItinerary = () => (
+export const EScooterRentalTransitItinerary = injectIntl(({ intl }) => (
   <BaseMap center={[45.538841, -122.6302]} zoom={12}>
     <EndpointsOverlay
       fromLocation={getFromLocation(
@@ -271,12 +272,12 @@ export const EScooterRentalTransitItinerary = () => (
     <TransitiveOverlay
       transitiveData={itineraryToTransitive(
         eScooterRentalTransiteScooterRentalItinerary,
-        { companies }
+        { companies, intl }
       )}
       visible
     />
   </BaseMap>
-);
+));
 
 export const TncTransitItinerary = () => (
   <BaseMap center={[45.538841, -122.6302]} zoom={12}>
