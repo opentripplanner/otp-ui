@@ -98,16 +98,16 @@ function getCompanyForNetwork(
 export function getPlaceName(
   place: Place,
   companies: Company[] = [],
-  intl: IntlShape
+  intl?: IntlShape
 ): string {
   // If address is provided (i.e. for carshare station, use it)
-  if (place.address) return place.address.split(",")[0];
+  if (place.address) return place.address.split(",")?.[0];
   if ((place.name.match(/-/g) || []).length > 3) {
     // Some vehicle rental pick up locations are just a UUID.
     // Other times, it can be a name with relevant information for the user.
     // Here we detect if the name is just a UUID and generate a better name.
-    const company = getCompanyForNetwork(place.networks[0], companies);
-    if (company) {
+    const company = getCompanyForNetwork(place.networks?.[0], companies);
+    if (company && intl) {
       return intl.formatMessage(
         {
           defaultMessage: defaultMessages["otpUi.AccessLegBody.vehicleTitle"],
