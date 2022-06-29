@@ -71,8 +71,8 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
         }, new LngLatBounds(geoJsonedPoints[0], geoJsonedPoints[0]));
 
         mainMap?.fitBounds(bounds, {
-          duration: 300,
-          padding: { top: 60, bottom: 60, left: 60, right: 60 }
+          duration: 500,
+          padding: 100
         });
 
         if (props.mapCenterCallback) {

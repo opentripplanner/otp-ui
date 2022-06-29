@@ -1,5 +1,5 @@
-import React from "react";
-import { Layer, Source } from "react-map-gl";
+import React, { useEffect } from "react";
+import { Layer, Source, useMap } from "react-map-gl";
 import polyline from "@mapbox/polyline";
 import {
   TransitiveData,
@@ -7,6 +7,7 @@ import {
   TransitivePattern,
   TransitivePlace
 } from "@opentripplanner/types";
+import bbox from "@turf/bbox";
 
 // TODO: BETTER COLORS
 const modeColorMap = {
@@ -23,9 +24,9 @@ type Props = {
 };
 const TransitiveCanvasOverlay = (props: Props): JSX.Element => {
   const { transitiveData } = props;
-  if (!transitiveData) return null;
+  const { mainMap } = useMap();
 
-  transitiveData.patterns.flatMap((pattern: TransitivePattern) =>
+  transitiveData?.patterns.flatMap((pattern: TransitivePattern) =>
     pattern.stops
       .map(stop => stop.geometry)
       .filter(geometry => !!geometry)
@@ -38,7 +39,7 @@ const TransitiveCanvasOverlay = (props: Props): JSX.Element => {
     type: "FeatureCollection",
     // @ts-expect-error TODO: fix the type above for geojson
     features: [
-      ...transitiveData.places.flatMap((place: TransitivePlace) => {
+      ...(transitiveData?.places || []).flatMap((place: TransitivePlace) => {
         return {
           type: "Feature",
           properties: { name: place.place_name, type: "place" },
@@ -48,51 +49,65 @@ const TransitiveCanvasOverlay = (props: Props): JSX.Element => {
           }
         };
       }),
-      ...transitiveData.journeys.flatMap((journey: TransitiveJourney) =>
-        journey.segments
-          .filter(segment => segment.streetEdges?.length > 0)
-          .map(segment => ({
-            ...segment,
-            geometries: segment.streetEdges.map(
-              edge => transitiveData.streetEdges[edge]
-            )
-          }))
-          .flatMap(segment => {
-            return segment.geometries.map(geometry => {
+      ...(transitiveData?.journeys || []).flatMap(
+        (journey: TransitiveJourney) =>
+          journey.segments
+            .filter(segment => segment.streetEdges?.length > 0)
+            .map(segment => ({
+              ...segment,
+              geometries: segment.streetEdges.map(
+                edge => transitiveData.streetEdges[edge]
+              )
+            }))
+            .flatMap(segment => {
+              return segment.geometries.map(geometry => {
+                return {
+                  type: "Feature",
+                  properties: {
+                    type: "street-edge",
+                    color: modeColorMap[segment.type] || "#008",
+                    mode: segment.type
+                  },
+                  geometry: polyline.toGeoJSON(geometry.geometry.points)
+                };
+              });
+            })
+      ),
+      ...(transitiveData?.patterns || []).flatMap(
+        (pattern: TransitivePattern) =>
+          pattern.stops
+            .map(stop => stop.geometry)
+            .filter(geometry => !!geometry)
+            .map(geometry => {
+              const route = Object.entries(transitiveData.routes).find(
+                r => r[1].route_id === pattern.route_id
+              )[1];
+
               return {
                 type: "Feature",
                 properties: {
-                  type: "street-edge",
-                  color: modeColorMap[segment.type] || "#008",
-                  mode: segment.type
+                  color: `#${route.route_color || "000080"}`,
+                  type: "route",
+                  name: route.route_short_name || route.route_long_name || ""
                 },
-                geometry: polyline.toGeoJSON(geometry.geometry.points)
+                geometry: polyline.toGeoJSON(geometry)
               };
-            });
-          })
-      ),
-      ...transitiveData.patterns.flatMap((pattern: TransitivePattern) =>
-        pattern.stops
-          .map(stop => stop.geometry)
-          .filter(geometry => !!geometry)
-          .map(geometry => {
-            const route = Object.entries(transitiveData.routes).find(
-              r => r[1].route_id === pattern.route_id
-            )[1];
-
-            return {
-              type: "Feature",
-              properties: {
-                color: `#${route.route_color || "000080"}`,
-                type: "route",
-                name: route.route_short_name || route.route_long_name || ""
-              },
-              geometry: polyline.toGeoJSON(geometry)
-            };
-          })
+            })
       )
     ]
   };
+
+  useEffect(() => {
+    const b = bbox(geojson);
+    const bounds: [number, number, number, number] = [b[0], b[1], b[2], b[3]];
+
+    if (bounds.length === 4 && bounds.every(Number.isFinite)) {
+      mainMap?.fitBounds(bounds, {
+        duration: 500,
+        padding: 200
+      });
+    }
+  }, [transitiveData]);
 
   return (
     <Source id="itinierary" type="geojson" data={geojson}>
