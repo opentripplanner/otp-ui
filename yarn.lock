@@ -3020,10 +3020,10 @@
     prop-types "^15.7.2"
     qs "^6.9.1"
 
-"@opentripplanner/itinerary-body@^3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/itinerary-body/-/itinerary-body-3.1.0.tgz#279b675b9bda7368b9c11b0c3dc09207c2ee78ed"
-  integrity sha512-g2LMW6Sb5RHm070FPUw77E6brUDJR8YCtsvRCcPBYgRdhQe6CgYvOFK2Cv/fd6NQsA/V6aqGRCjNxzdy9VePqQ==
+"@opentripplanner/itinerary-body@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/itinerary-body/-/itinerary-body-3.1.1.tgz#854e83022de09cb023e7f96ae38bb6e625db82b5"
+  integrity sha512-fGKu7xSHok5FcKK5lEHtintHiEpcsUm1NE35ZZHRW7b5ejqBedq8/Be4Fo5WocEWZz9MWb1yyG2YqctceBYofw==
   dependencies:
     "@opentripplanner/core-utils" "^5.0.0"
     "@opentripplanner/humanize-distance" "^1.2.0"

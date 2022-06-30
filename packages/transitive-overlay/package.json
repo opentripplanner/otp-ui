@@ -21,7 +21,7 @@
     "@opentripplanner/core-utils": "^5.0.1",
     "lodash.isequal": "^4.5.0",
     "transitive-js": "^0.14.1",
-    "@opentripplanner/itinerary-body": "^3.1.0"
+    "@opentripplanner/itinerary-body": "^3.1.1"
   },
   "devDependencies": {
     "@opentripplanner/endpoints-overlay": "^1.4.1"
