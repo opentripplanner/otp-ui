@@ -93,7 +93,11 @@ function getCompanyForNetwork(
 }
 
 /**
- * FIXME: Move this method back to core-utils when package is localized.
+ * Generates a new place name for micromobility stations
+ * @param place OTP Place from micromobility location
+ * @param companies Configured micromobility companies
+ * @param intl IntlShape object
+ * @returns User facing string for place
  */
 export function getPlaceName(
   place: Place,
