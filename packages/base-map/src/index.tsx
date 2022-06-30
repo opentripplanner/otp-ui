@@ -74,6 +74,14 @@ const BaseMap = ({
     callIfValid(onViewportChanged)(viewState);
   }, [viewState]);
 
+  useEffect(() => {
+    setViewState({
+      ...viewState,
+      latitude: center?.[0],
+      longitude: center?.[1]
+    });
+  }, [center]);
+
   const toggleableLayers = Array.isArray(children)
     ? children
         .flat()

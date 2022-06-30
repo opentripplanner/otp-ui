@@ -109,6 +109,13 @@ export type TransitVehicle = {
   heading?: number;
 };
 
+export type OTPTransitVehicle = TransitVehicle & {
+  label?: string;
+  stopStatus?: string; // TODO: Make enum
+  speed?: number;
+  nextStopName?: string;
+};
+
 export type VehicleRentalMapOverlaySymbol =
   | {
       dockStrokeColor?: string;
