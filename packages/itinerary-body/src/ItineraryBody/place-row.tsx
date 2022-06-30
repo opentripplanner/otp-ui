@@ -54,7 +54,13 @@ export default function PlaceRow({
   // check the real-time arrival information for the next leg of their journey.
   const interline = !!(!isDestination && leg.interlineWithPreviousLeg);
   const hideBorder = interline || !legIndex;
-  const place = isDestination ? leg.to : leg.from;
+  const place = isDestination ? { ...leg.to } : { ...leg.from };
+  // OTP2 marks both bikes and scooters as BIKESHARE in the vertextype
+  // To get the right label, we need to fix scooters to be "VEHICLERENTAL"
+  place.vertexType =
+    leg.mode === "SCOOTER" && !isDestination
+      ? "VEHICLERENTAL"
+      : place.vertexType;
 
   const intl = useIntl();
   const viewOnMapMessage = intl.formatMessage({
