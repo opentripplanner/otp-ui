@@ -59,10 +59,10 @@ const BaseMap = ({
   const [viewState, setViewState] = React.useState<State>({
     fitBoundsOptions: {
       animate: true,
-      duration: 100,
+      duration: 400,
       essential: false,
-      maxDuration: 300,
-      padding: 10
+      maxDuration: 600,
+      padding: 200
     },
     latitude: center?.[0],
     longitude: center?.[1],
