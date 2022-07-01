@@ -59,7 +59,7 @@ const BaseMap = ({
   const [viewState, setViewState] = React.useState<State>({
     fitBoundsOptions: {
       animate: true,
-      duration: 400,
+      duration: 300,
       essential: false,
       maxDuration: 600,
       padding: 200
@@ -75,6 +75,8 @@ const BaseMap = ({
   }, [viewState]);
 
   useEffect(() => {
+    if (center?.[0] === null || center?.[1] === null) return;
+
     setViewState({
       ...viewState,
       latitude: center?.[0],
