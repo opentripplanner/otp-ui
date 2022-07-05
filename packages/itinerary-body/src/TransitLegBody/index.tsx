@@ -63,13 +63,11 @@ class TransitLegBody extends Component<Props, State> {
 
   getFareForLeg = (leg: Leg, fare: Fare) => {
     let fareForLeg;
-    if (fare?.details?.regular) {
-      fare.details.regular.forEach(fareComponent => {
-        if (fareComponent.routes?.includes(leg.routeId)) {
-          fareForLeg = coreUtils.itinerary.getTransitFare(fareComponent.price);
-        }
-      });
-    }
+    fare?.details?.regular?.forEach(fareComponent => {
+      if (fareComponent.routes?.includes(leg.routeId)) {
+        fareForLeg = coreUtils.itinerary.getTransitFare(fareComponent.price);
+      }
+    });
     return fareForLeg;
   };
 

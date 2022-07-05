@@ -7,7 +7,7 @@ import { Transfer } from "@styled-icons/boxicons-regular/Transfer";
 
 import { boldText, renderFare } from "./utils";
 
-import { FareTableLayout, FareDetailsProps, FareTableText } from "./types";
+import { FareDetailsProps, FareTableLayout, FareTableText } from "./types";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
@@ -23,16 +23,16 @@ type LegAndFare = Leg & {
 };
 
 interface FareTypeTableProps extends FareTableLayout {
-  legs: LegAndFare[];
   fareTotals: Record<string, Money>;
+  legs: LegAndFare[];
 }
 
 const TableHeader = styled.thead`
   th {
+    font-weight: normal;
     min-width: 5ch;
     padding: 0.75em 1.5em;
     text-align: center;
-    font-weight: normal;
   }
   th:nth-of-type(2n + 1) {
     background: #cccccc22;
@@ -46,7 +46,6 @@ const TableHeader = styled.thead`
 const Table = styled.table`
   border-collapse: collapse;
   display: block;
-  /* This line can not be sorted alphabetically, because it must come after the margin rule */
   margin-bottom: 16px;
   padding: 0;
 
@@ -57,7 +56,7 @@ const Table = styled.table`
     background: #cccccc22;
   }
   td.no-zebra {
-    background: transparent;
+    background: none;
   }
   th:first-of-type {
     height: 40px;
@@ -179,8 +178,12 @@ const FareTypeTable = ({
   return null;
 };
 
-const FareLegDetails = (props: FareDetailsProps): JSX.Element => {
-  const { layout, transitFareDetails, transitFares, legs } = props;
+const FareLegDetails = ({
+  layout,
+  transitFareDetails,
+  transitFares,
+  legs
+}: FareDetailsProps): JSX.Element => {
   const fareKeys = Object.keys(transitFareDetails);
 
   const legsWithFares = legs

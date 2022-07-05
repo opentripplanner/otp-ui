@@ -14,10 +14,10 @@ import * as TripDetailsClasses from "./styled";
 import {
   CaloriesDetailsProps,
   DepartureDetailsProps,
-  TripDetailsProps,
   FareDetailsProps,
   FareTableLayout,
-  FareTableText
+  FareTableText,
+  TripDetailsProps
 } from "./types";
 
 import customEnglishMessages from "../__mocks__/custom-english-messages.yml";
@@ -59,16 +59,16 @@ const fareByLegLayout: FareTableLayout[] = [
     header: "regular" as FareTableText,
     cols: [
       {
-        key: "regular",
-        header: "cash" as FareTableText
+        header: "cash" as FareTableText,
+        key: "regular"
       },
       {
-        key: "electronicRegular",
-        header: "electronic" as FareTableText
+        header: "electronic" as FareTableText,
+        key: "electronicRegular"
       },
       {
-        key: "electronicSpecial",
-        header: "special" as FareTableText
+        header: "special" as FareTableText,
+        key: "electronicSpecial"
       }
     ]
   },
@@ -76,12 +76,12 @@ const fareByLegLayout: FareTableLayout[] = [
     header: "youth" as FareTableText,
     cols: [
       {
-        key: "youth",
-        header: "cash" as FareTableText
+        header: "cash" as FareTableText,
+        key: "youth"
       },
       {
-        key: "electronicYouth",
-        header: "electronic" as FareTableText
+        header: "electronic" as FareTableText,
+        key: "electronicYouth"
       }
     ]
   },
@@ -89,12 +89,12 @@ const fareByLegLayout: FareTableLayout[] = [
     header: "senior" as FareTableText,
     cols: [
       {
-        key: "cash",
-        header: "cash" as FareTableText
+        header: "cash" as FareTableText,
+        key: "cash"
       },
       {
-        key: "electronic",
-        header: "electronic" as FareTableText
+        header: "electronic" as FareTableText,
+        key: "electronic"
       }
     ]
   }
@@ -303,8 +303,8 @@ export const OTP2EScooterRentalTransitItinerary = makeStory({
 
 export const TncTransitItinerary = makeStory(
   {
-    itinerary: tncTransitTncItinerary,
-    FareDetails: CustomFareDetails
+    FareDetails: CustomFareDetails,
+    itinerary: tncTransitTncItinerary
   },
   {
     useCustomFareKeyMap: true

@@ -67,8 +67,8 @@ export interface TripDetailsProps {
    */
   DepartureDetails?: React.ElementType<DepartureDetailsProps>;
   /**
-  * Slot for a custom component to render the expandable section for fares.
-  */
+   * Slot for a custom component to render the expandable section for fares.
+   */
   FareDetails?: React.ElementType<FareDetailsProps>;
   /**
    * Column and table configuration for fare details/fare by leg table.
