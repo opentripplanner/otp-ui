@@ -344,7 +344,7 @@ export type FareDetail = {
   routes?: ApplicableId[];
 };
 
-export type FareDetails = Record<string, FareDetail>[];
+export type FareDetails = Record<string, FareDetail[]>;
 
 /**
  * Represents the fare component of an itinerary of an OTP plan response. See
