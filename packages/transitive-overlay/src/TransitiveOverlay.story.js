@@ -1,10 +1,10 @@
 import BaseMap from "@opentripplanner/base-map";
-import coreUtils from "@opentripplanner/core-utils";
 import EndpointsOverlay from "@opentripplanner/endpoints-overlay";
 import React from "react";
 import { action } from "@storybook/addon-actions";
+import { injectIntl } from "react-intl";
 
-import TransitiveOverlay from ".";
+import TransitiveOverlay, { itineraryToTransitive } from ".";
 
 import "../../../node_modules/leaflet/dist/leaflet.css";
 
@@ -30,7 +30,6 @@ const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-
 const flexItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/flex-itinerary.json");
 const otp2ScooterItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-scooter.json");
 
-const { itineraryToTransitive } = coreUtils.map;
 const companies = [
   {
     id: "RAZOR",
@@ -80,7 +79,9 @@ export const WalkingItinerary = () => (
       visible
     />
     <TransitiveOverlay
-      transitiveData={itineraryToTransitive(walkOnlyItinerary, companies)}
+      transitiveData={itineraryToTransitive(walkOnlyItinerary, {
+        companies
+      })}
       visible
     />
   </BaseMap>
@@ -95,7 +96,7 @@ export const BikeOnlyItinerary = () => (
       visible
     />
     <TransitiveOverlay
-      transitiveData={itineraryToTransitive(bikeOnlyItinerary, companies)}
+      transitiveData={itineraryToTransitive(bikeOnlyItinerary, { companies })}
       visible
     />
   </BaseMap>
@@ -110,10 +111,9 @@ export const WalkTransitWalkItinerary = () => (
       visible
     />
     <TransitiveOverlay
-      transitiveData={itineraryToTransitive(
-        walkTransitWalkItinerary,
+      transitiveData={itineraryToTransitive(walkTransitWalkItinerary, {
         companies
-      )}
+      })}
       visible
     />
   </BaseMap>
@@ -132,7 +132,7 @@ export const WalkTransitWalkItineraryWithNoIntermediateStops = () => (
     <TransitiveOverlay
       transitiveData={itineraryToTransitive(
         walkTransitWalkItineraryNoIntermediateStops,
-        companies
+        { companies }
       )}
       visible
     />
@@ -148,10 +148,9 @@ export const BikeTransitBikeItinerary = () => (
       visible
     />
     <TransitiveOverlay
-      transitiveData={itineraryToTransitive(
-        bikeTransitBikeItinerary,
+      transitiveData={itineraryToTransitive(bikeTransitBikeItinerary, {
         companies
-      )}
+      })}
       visible
     />
   </BaseMap>
@@ -166,10 +165,9 @@ export const WalkInterlinedTransitItinerary = () => (
       visible
     />
     <TransitiveOverlay
-      transitiveData={itineraryToTransitive(
-        walkInterlinedTransitItinerary,
+      transitiveData={itineraryToTransitive(walkInterlinedTransitItinerary, {
         companies
-      )}
+      })}
       visible
     />
   </BaseMap>
@@ -186,7 +184,7 @@ export const WalkTransitTransferItinerary = () => (
     <TransitiveOverlay
       transitiveData={itineraryToTransitive(
         walkTransitWalkTransitWalkItinerary,
-        companies
+        { companies }
       )}
       visible
     />
@@ -202,13 +200,13 @@ export const BikeRentalItinerary = () => (
       visible
     />
     <TransitiveOverlay
-      transitiveData={itineraryToTransitive(bikeRentalItinerary, companies)}
+      transitiveData={itineraryToTransitive(bikeRentalItinerary, { companies })}
       visible
     />
   </BaseMap>
 );
 
-export const EScooterRentalItinerary = () => (
+export const EScooterRentalItinerary = injectIntl(({ intl }) => (
   <BaseMap center={[45.52041, -122.675302]} zoom={16}>
     <EndpointsOverlay
       fromLocation={getFromLocation(eScooterRentalItinerary)}
@@ -217,11 +215,14 @@ export const EScooterRentalItinerary = () => (
       visible
     />
     <TransitiveOverlay
-      transitiveData={itineraryToTransitive(eScooterRentalItinerary, companies)}
+      transitiveData={itineraryToTransitive(eScooterRentalItinerary, {
+        companies,
+        intl
+      })}
       visible
     />
   </BaseMap>
-);
+));
 
 export const ParkAndRideItinerary = () => (
   <BaseMap center={[45.515841, -122.75302]} zoom={13}>
@@ -232,7 +233,9 @@ export const ParkAndRideItinerary = () => (
       visible
     />
     <TransitiveOverlay
-      transitiveData={itineraryToTransitive(parkAndRideItinerary, companies)}
+      transitiveData={itineraryToTransitive(parkAndRideItinerary, {
+        companies
+      })}
       visible
     />
   </BaseMap>
@@ -249,14 +252,14 @@ export const BikeRentalTransitItinerary = () => (
     <TransitiveOverlay
       transitiveData={itineraryToTransitive(
         bikeRentalTransitBikeRentalItinerary,
-        companies
+        { companies }
       )}
       visible
     />
   </BaseMap>
 );
 
-export const EScooterRentalTransitItinerary = () => (
+export const EScooterRentalTransitItinerary = injectIntl(({ intl }) => (
   <BaseMap center={[45.538841, -122.6302]} zoom={12}>
     <EndpointsOverlay
       fromLocation={getFromLocation(
@@ -269,12 +272,12 @@ export const EScooterRentalTransitItinerary = () => (
     <TransitiveOverlay
       transitiveData={itineraryToTransitive(
         eScooterRentalTransiteScooterRentalItinerary,
-        companies
+        { companies, intl }
       )}
       visible
     />
   </BaseMap>
-);
+));
 
 export const TncTransitItinerary = () => (
   <BaseMap center={[45.538841, -122.6302]} zoom={12}>
@@ -285,7 +288,9 @@ export const TncTransitItinerary = () => (
       visible
     />
     <TransitiveOverlay
-      transitiveData={itineraryToTransitive(tncTransitTncItinerary, companies)}
+      transitiveData={itineraryToTransitive(tncTransitTncItinerary, {
+        companies
+      })}
       visible
     />
   </BaseMap>
@@ -315,11 +320,10 @@ export const WalkTransitWalkItineraryAndCustomLabelStyles = () => (
           "font-size": "18px"
         }
       }}
-      transitiveData={itineraryToTransitive(
-        walkTransitWalkItinerary,
+      transitiveData={itineraryToTransitive(walkTransitWalkItinerary, {
         companies,
         getCustomRouteLabel
-      )}
+      })}
       visible
     />
   </BaseMap>
@@ -333,13 +337,13 @@ export const FlexItinerary = () => (
       visible
     />
     <TransitiveOverlay
-      transitiveData={itineraryToTransitive(flexItinerary, companies)}
+      transitiveData={itineraryToTransitive(flexItinerary, { companies })}
       visible
     />
   </BaseMap>
 );
 
-export const OTP2ScooterItinerary = () => (
+export const OTP2ScooterItinerary = injectIntl(({ intl }) => (
   <BaseMap center={[33.749, -84.388]} zoom={11}>
     <EndpointsOverlay
       fromLocation={getFromLocation(otp2ScooterItinerary)}
@@ -348,8 +352,11 @@ export const OTP2ScooterItinerary = () => (
       visible
     />
     <TransitiveOverlay
-      transitiveData={itineraryToTransitive(otp2ScooterItinerary, companies)}
+      transitiveData={itineraryToTransitive(otp2ScooterItinerary, {
+        companies,
+        intl
+      })}
       visible
     />
   </BaseMap>
-);
+));
