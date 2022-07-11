@@ -22,6 +22,13 @@ export default function AccessLegDescription({
   style
 }: Props): ReactElement {
   const intl = useIntl();
+  // Replace the Vertex Type for BIKESHARE with VEHICLE as we do not know that
+  // it is a bike yet because that information is in the next leg with OTP2.
+  const toPlace = {
+    ...leg.to,
+    vertexType:
+      leg.to.vertexType === "BIKESHARE" ? "VEHICLE" : leg.to.vertexType
+  };
   return (
     // Return an HTML element which is passed a className (and style props)
     // for styled-components support.
@@ -51,7 +58,7 @@ export default function AccessLegDescription({
           ),
           place: (
             <S.LegDescriptionPlace>
-              {getPlaceName(leg.to, config.companies, intl)}
+              {getPlaceName(toPlace, config.companies, intl)}
             </S.LegDescriptionPlace>
           )
         }}

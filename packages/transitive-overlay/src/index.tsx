@@ -9,6 +9,10 @@ import {
 } from "@opentripplanner/types";
 import bbox from "@turf/bbox";
 
+import { itineraryToTransitive } from "./util";
+
+export { itineraryToTransitive };
+
 // TODO: BETTER COLORS
 const modeColorMap = {
   CAR: "#888",

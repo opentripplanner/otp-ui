@@ -15,10 +15,13 @@ import {
   CaloriesDetailsProps,
   DepartureDetailsProps,
   FareDetailsProps,
+  FareTableLayout,
+  FareTableText,
   TripDetailsProps
 } from "./types";
 
-import customMessages from "../__mocks__/custom-messages.yml";
+import customEnglishMessages from "../__mocks__/custom-english-messages.yml";
+import customFrenchMessages from "../__mocks__/custom-french-messages.yml";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json");
@@ -36,6 +39,9 @@ const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-
 const fareComponentsItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/fare-components.json");
 const otp2ScooterItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-scooter.json");
 
+const flattenedEnglishMessages = flatten(customEnglishMessages);
+const flattenedFrenchMessages = flatten(customFrenchMessages);
+
 // Change currency code on one of the itineraries for illustration.
 // (other currency fields in the itinerary object are not used for display).
 const itinCurrency =
@@ -47,6 +53,52 @@ const StyledTripDetails = styled(TripDetails)`
     background-color: pink;
   }
 `;
+
+const fareByLegLayout: FareTableLayout[] = [
+  {
+    header: "regular" as FareTableText,
+    cols: [
+      {
+        header: "cash" as FareTableText,
+        key: "regular"
+      },
+      {
+        header: "electronic" as FareTableText,
+        key: "electronicRegular"
+      },
+      {
+        header: "special" as FareTableText,
+        key: "electronicSpecial"
+      }
+    ]
+  },
+  {
+    header: "youth" as FareTableText,
+    cols: [
+      {
+        header: "cash" as FareTableText,
+        key: "youth"
+      },
+      {
+        header: "electronic" as FareTableText,
+        key: "electronicYouth"
+      }
+    ]
+  },
+  {
+    header: "senior" as FareTableText,
+    cols: [
+      {
+        header: "cash" as FareTableText,
+        key: "cash"
+      },
+      {
+        header: "electronic" as FareTableText,
+        key: "electronic"
+      }
+    ]
+  }
+];
 
 const longDateFormat = "MMMM D, YYYY";
 
@@ -76,24 +128,21 @@ const frenchFareKeyMap = {
   electronicSenior: "Tarif Orca séniors"
 };
 
+const CustomFareDetails = ({
+  transitFares
+}: FareDetailsProps): ReactElement => (
+  <>
+    Custom details about fares (transitFares: {JSON.stringify(transitFares)}){" "}
+    (cents), can be constructed dynamically using any markup.
+  </>
+);
+
 // Custom slots for expandable detail sections.
 const CustomDepartureDetails = ({
   departureDate
 }: DepartureDetailsProps): ReactElement => (
   <>
     Custom messages about {departureDate.format(longDateFormat)} can be
-    constructed dynamically using any markup.
-  </>
-);
-
-const CustomFareDetails = ({
-  maxTNCFare,
-  minTNCFare,
-  transitFares
-}: FareDetailsProps): ReactElement => (
-  <>
-    Custom details about fares (transitFares: {JSON.stringify(transitFares)}{" "}
-    (cents), minTNCFare: {minTNCFare} and maxTNCFare: {maxTNCFare} can be
     constructed dynamically using any markup.
   </>
 );
@@ -121,9 +170,9 @@ function createTripDetailsTemplate(
   const TripDetailsTemplate = (
     {
       CaloriesDetails,
-      defaultFare,
       DepartureDetails,
       FareDetails,
+      fareDetailsLayout,
       itinerary
     }: TripDetailsProps,
     { globals, parameters }: StoryContext
@@ -138,9 +187,9 @@ function createTripDetailsTemplate(
     return (
       <Component
         CaloriesDetails={CaloriesDetails}
-        defaultFare={defaultFare}
         DepartureDetails={DepartureDetails}
         FareDetails={FareDetails}
+        fareDetailsLayout={fareDetailsLayout}
         fareKeyNameMap={fareKeyNameMap}
         itinerary={itinerary}
       />
@@ -154,7 +203,7 @@ function createTripDetailsTemplate(
  */
 function makeStory(
   args: TripDetailsProps,
-  parameters: Parameters,
+  parameters?: Parameters,
   Component?: typeof TripDetails
 ): ComponentStory<typeof TripDetails> {
   const BoundTripDetails = createTripDetailsTemplate(Component).bind({});
@@ -206,10 +255,19 @@ export const BikeTransitBikeItinerary = makeStory({
 export const WalkInterlinedTransitItinerary = makeStory(
   {
     defaultFareKey: "electronicRegular",
+    fareDetailsLayout: fareByLegLayout,
     itinerary: walkInterlinedTransitItinerary
   },
   {
-    useCustomFareKeyMap: true
+    useCustomFareKeyMap: true,
+    // For illustration purposes,
+    // override a subset of localized strings with custom messages.
+    reactIntl: {
+      messages: {
+        "en-US": flattenedEnglishMessages,
+        fr: flattenedFrenchMessages
+      }
+    }
   }
 );
 
@@ -245,6 +303,7 @@ export const OTP2EScooterRentalTransitItinerary = makeStory({
 
 export const TncTransitItinerary = makeStory(
   {
+    FareDetails: CustomFareDetails,
     itinerary: tncTransitTncItinerary
   },
   {
@@ -252,13 +311,11 @@ export const TncTransitItinerary = makeStory(
   }
 );
 
-const flattenedMessages = flatten(customMessages);
-export const TncTransitItineraryWithCustomMessagesAndDetails = makeStory(
+export const TncTransitItineraryWithCustomMessages = makeStory(
   {
     CaloriesDetails: CustomCaloriesDetails,
     defaultFareKey: "electronicRegular",
     DepartureDetails: CustomDepartureDetails,
-    FareDetails: CustomFareDetails,
     itinerary: tncTransitTncItinerary
   },
   {
@@ -266,8 +323,8 @@ export const TncTransitItineraryWithCustomMessagesAndDetails = makeStory(
     // override a subset of localized strings with custom messages.
     reactIntl: {
       messages: {
-        "en-US": flattenedMessages,
-        fr: flattenedMessages
+        "en-US": flattenedEnglishMessages,
+        fr: flattenedFrenchMessages
       }
     },
     useCustomFareKeyMap: true
