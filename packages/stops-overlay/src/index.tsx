@@ -17,7 +17,7 @@ type Props = {
   stops?: Stop[];
 
   /**
-   * Whether or not to dispaly the overlay
+   * Whether or not to display the overlay
    */
   visible?: boolean;
   /**
