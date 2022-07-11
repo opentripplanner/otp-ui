@@ -33,8 +33,19 @@ export const Default = (): JSX.Element => (
   </BaseMap>
 );
 
-export const WithCustomMarker = (): JSX.Element => (
+const WithCustomMarker = (): JSX.Element => (
   <BaseMap center={center} forceMaxHeight zoom={zoom}>
     <StopViewerOverlay stop={fakeStop} StopMarker={CustomMarker} visible />
   </BaseMap>
 );
+// Can be disabled as this is a storybook-only marker
+const disableA11yParameters = {
+  a11y: {
+    config: {
+      rules: [{ id: "aria-allowed-attr", enabled: false }]
+    }
+  }
+};
+
+WithCustomMarker.parameters = disableA11yParameters;
+export { WithCustomMarker };
