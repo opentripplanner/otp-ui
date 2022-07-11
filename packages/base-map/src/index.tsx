@@ -137,7 +137,6 @@ const BaseMap = ({
         zoom={viewState.zoom}
       >
         {toggleableLayers.length > 0 && (
-          // TODO: Mobile view
           <Styled.LayerSelector
             onTouchEnd={() => {
               setFakeMobileHover(true);
