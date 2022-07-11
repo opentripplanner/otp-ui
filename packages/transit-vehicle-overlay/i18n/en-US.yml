@@ -10,17 +10,6 @@
 
 otpUi:
   TransitVehicleOverlay:
-    date: "Date: {date}"
     durationAgo: "{duration} ago"
     genericRouteFormat: "Line {route}"
-    lastSeen: "Last seen: {durationText}"
-    status: "Status: {status}"
-    statusEnRoute: "en-route to stop #{stopId}"
-    statusAtStart: "start route at stop #{stopId}"
-    statusAtStop: "at stop #${stopId}"
-    statusUnknown: unknown
     tooltipRouteLabel: "{routeLabel}:"
-    trackStart: Track Vehicle
-    trackStop: Stop Tracking
-    tripAndBlockIds: "Trip: {tripId}, Block: {blockId}"
-    vehicleIds: "{count, plural, one {Vehicle} other {Vehicles}}: {vehicleIds}"
