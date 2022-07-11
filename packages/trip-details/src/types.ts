@@ -1,6 +1,6 @@
 // Prettier does not recognize the import type syntax.
 // eslint-disable-next-line prettier/prettier
-import type { Itinerary, Money } from "@opentripplanner/types";
+import type { FareDetails, Money, Itinerary, Leg, Fare, } from "@opentripplanner/types";
 import type { ReactElement } from "react";
 
 export interface CaloriesDetailsProps {
@@ -13,14 +13,31 @@ export interface DepartureDetailsProps {
   departureDate: Date;
 }
 
+export enum FareTableText {
+  regular = "regular",
+  youth = "youth",
+  senior = "senior",
+  special = "special",
+  cash = "cash",
+  electronic = "electronic"
+}
+
+export interface FareTableLayout {
+  cols: {
+    header: FareTableText;
+    key: string;
+  }[];
+  header: FareTableText;
+}
 export interface TransitFareData {
   [key: string]: Money
 }
 
 export interface FareDetailsProps {
-  maxTNCFare: number;
-  minTNCFare: number;
-  transitFares: TransitFareData;
+  layout?: FareTableLayout[];
+  legs?: Leg[];
+  transitFareDetails?: FareDetails;
+  transitFares?: TransitFareData;
 }
 
 export interface TransitFareProps {
@@ -29,7 +46,7 @@ export interface TransitFareProps {
   fareKeyNameMap: {
     [key: string]: string;
   };
-  transitFares: TransitFareData;
+  transitFares: Fare;
 }
 
 export interface TripDetailsProps {
@@ -53,6 +70,10 @@ export interface TripDetailsProps {
    * Slot for a custom component to render the expandable section for fares.
    */
   FareDetails?: React.ElementType<FareDetailsProps>;
+  /**
+   * Column and table configuration for fare details/fare by leg table.
+   */
+  fareDetailsLayout?: FareTableLayout[];
   /**
    * Mapping between fare keys and human-readable names for them.
    */
