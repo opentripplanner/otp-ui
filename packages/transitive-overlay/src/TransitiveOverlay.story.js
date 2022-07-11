@@ -344,7 +344,7 @@ export const FlexItinerary = () => (
 );
 
 export const OTP2ScooterItinerary = injectIntl(({ intl }) => (
-  <BaseMap center={[33.749, -84.388]} zoom={11}>
+  <BaseMap forceMaxHeight center={[33.749, -84.388]} zoom={11}>
     <EndpointsOverlay
       fromLocation={getFromLocation(otp2ScooterItinerary)}
       setLocation={setLocation}
