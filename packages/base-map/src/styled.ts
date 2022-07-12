@@ -48,6 +48,14 @@ export const LayerSelector = styled.nav`
   right: 0;
   top: 0;
 
+  /* There are some situations where a map re-render can cause the
+     layer selector to be rendered multiple times. This is a bit of
+     a hack, but the most all-encompassing way to ensure that this is
+     not a usability issue. */
+  &:not(:last-of-type) {
+    display: none;
+  }
+
   .layers-list {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 0.5em;
