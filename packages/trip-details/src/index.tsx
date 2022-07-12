@@ -276,7 +276,13 @@ export function TripDetails({
           <TripDetail
             // Any custom description for the transit fare needs to be handled by the slot.
             description={
-              FareDetails && <FareDetails transitFares={transitFares} />
+              FareDetails && (
+                <FareDetails
+                  transitFares={transitFares}
+                  minTNCFare={minTNCFare}
+                  maxTNCFare={maxTNCFare}
+                />
+              )
             }
             icon={<MoneyBillAlt size={17} />}
             summary={fare}
