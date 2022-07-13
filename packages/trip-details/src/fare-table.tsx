@@ -180,9 +180,9 @@ const FareTypeTable = ({
 
 const FareLegDetails = ({
   layout,
+  legs,
   transitFareDetails,
-  transitFares,
-  legs
+  transitFares
 }: FareLegTableProps): JSX.Element => {
   const fareKeys = Object.keys(transitFareDetails);
 

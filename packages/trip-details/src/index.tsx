@@ -173,10 +173,10 @@ export function TripDetails({
           {fareDetailsLayout ? (
             // Show full ƒare details by leg
             <FareLegTable
-              transitFares={transitFares}
-              transitFareDetails={fareDetails}
-              legs={itinerary.legs}
               layout={fareDetailsLayout}
+              legs={itinerary.legs}
+              transitFareDetails={fareDetails}
+              transitFares={transitFares}
             />
           ) : (
             // Just show the fares for each payment type
@@ -278,9 +278,9 @@ export function TripDetails({
             description={
               FareDetails && (
                 <FareDetails
-                  transitFares={transitFares}
-                  minTNCFare={minTNCFare}
                   maxTNCFare={maxTNCFare}
+                  minTNCFare={minTNCFare}
+                  transitFares={transitFares}
                 />
               )
             }
