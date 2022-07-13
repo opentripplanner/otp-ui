@@ -34,6 +34,12 @@ export interface TransitFareData {
 }
 
 export interface FareDetailsProps {
+  maxTNCFare: number;
+  minTNCFare: number;
+  transitFares: TransitFareData;
+}
+
+export interface FareLegTableProps {
   layout?: FareTableLayout[];
   legs?: Leg[];
   transitFareDetails?: FareDetails;
