@@ -445,19 +445,25 @@ export function calculatePhysicalActivity(
   };
 }
 
+/**
+ * Sources:
+ * - https://www.itf-oecd.org/sites/default/files/docs/environmental-performance-new-mobility.pdf
+ * - https://www.thrustcarbon.com/insights/how-to-calculate-emissions-from-a-ferry-journey
+ * Other values extrapolated.
+ */
 const CARBON_INTENSITY_DEFAULTS = {
   walk: 0.026,
   bicycle: 0.014,
-  car: 0.283,
-  tram: 0.041,
-  subway: 0.041,
-  rail: 0.041,
-  bus: 0.105,
+  car: 0.16,
+  tram: 0.062,
+  subway: 0.062,
+  rail: 0.062,
+  bus: 0.09,
   ferry: 0.082,
   cable_car: 0.021,
   gondola: 0.021,
-  funicular: 0.041,
-  transit: 0.041,
+  funicular: 0.062,
+  transit: 0.062,
   leg_switch: 0,
   airplane: 0.382,
   micromobility: 0.014

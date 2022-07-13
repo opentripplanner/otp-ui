@@ -30,3 +30,10 @@ otpUi:
     transitFare: Tarif en transports
     transitFareEntry: "{name} : <strong>{value}</strong>"
     tripIncludesFlex: Ce trajet comprend un service à la demande (Flex).
+    fareDetailsHeaders:
+      regular: "Normal"
+      youth: "Jeunes"
+      senior: "Séniors"
+      cash: "Espèces"
+      electronic: "Électronique"
+      special: "Spécial"

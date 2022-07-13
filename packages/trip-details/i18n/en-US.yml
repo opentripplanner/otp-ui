@@ -44,3 +44,10 @@ otpUi:
     transitFare: Transit Fare
     transitFareEntry: "{name}: <strong>{value}</strong>"
     tripIncludesFlex: This trip includes flexible routes.
+    fareDetailsHeaders:
+      regular: "Adult"
+      youth: "Youth"
+      senior: "Senior"
+      electronic: "Electronic"
+      cash: "Cash"
+      special: "Special"

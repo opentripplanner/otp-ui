@@ -11,7 +11,6 @@ export type ResultType =
   | "SESSION"
   | "STOP";
 
-
 export interface LocationFieldProps {
   /**
    * Dispatched upon selecting a geocoded result
