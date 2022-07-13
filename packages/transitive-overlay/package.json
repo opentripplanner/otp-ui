@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/transitive-overlay",
-  "version": "1.1.4",
+  "version": "2.0.0",
   "description": "A map overlay to show an itinerary based on transitive.js",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -18,13 +18,13 @@
     "url": "git+https://github.com/opentripplanner/otp-ui.git"
   },
   "dependencies": {
-    "@opentripplanner/core-utils": "^4.5.0",
+    "@opentripplanner/itinerary-body": "^3.1.1",
+    "@opentripplanner/core-utils": "^5.0.1",
     "lodash.isequal": "^4.5.0",
     "transitive-js": "^0.14.1"
   },
   "devDependencies": {
-    "@opentripplanner/endpoints-overlay": "^1.3.0",
-    "@opentripplanner/itinerary-body": "^3.0.0"
+    "@opentripplanner/endpoints-overlay": "^1.4.1"
   },
   "peerDependencies": {
     "@opentripplanner/base-map": "^2.0.0",
