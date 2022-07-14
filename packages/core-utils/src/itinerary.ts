@@ -473,10 +473,15 @@ const CARBON_INTENSITY_DEFAULTS = {
  * @param  {itinerary} itinerary OTP trip itinierary
  * @param  {carbonIntensity} carbonIntensity carbon intensity by mode in grams/meter
  * @param {units} units units to be used in return value
+ * @return Grams of carbon
  */
-export function calculateEmissions(itinerary, carbonIntensity = {}, units) {
+export function calculateEmissions(
+  itinerary: Itinerary,
+  carbonIntensity: Record<string, number> = {},
+  units: string
+): number {
   // Apply defaults for any values that we don't have.
-  carbonIntensity = {
+  const carbonIntensityWithDefaults = {
     ...CARBON_INTENSITY_DEFAULTS,
     ...carbonIntensity
   };
@@ -485,7 +490,8 @@ export function calculateEmissions(itinerary, carbonIntensity = {}, units) {
   const totalCarbon =
     itinerary?.legs?.reduce((total, leg) => {
       return (
-        (leg.distance * carbonIntensity[leg.mode.toLowerCase()] || 0) + total
+        (leg.distance * carbonIntensityWithDefaults[leg.mode.toLowerCase()] ||
+          0) + total
       );
     }, 0) || 0;
 
