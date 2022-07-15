@@ -182,7 +182,7 @@ class TransitLegBody extends Component<Props, State> {
                     defaultMessages["otpUi.ItineraryBody.flexPickupMessage"]
                   }
                   description="Instructions for booking and boarding the flex (on-demand) transit service."
-                  id="otpUi.TripDetails.flexPickupMessage"
+                  id="otpUi.ItineraryBody.flexPickupMessage"
                   values={getFlexMessageValues(leg?.pickupBookingInfo)}
                 />
               )}
