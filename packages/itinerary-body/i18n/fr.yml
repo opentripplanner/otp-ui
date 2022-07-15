@@ -109,6 +109,23 @@ otpUi:
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# h }}{minutes} mn"
+    flexDropOffMessage: >
+      {hasLeadTime, select,
+        true {Pour descendre à votre destination, vous devez faire une réservation préalable
+          {hasPhone, select,
+            true {au {phoneNumber}}
+            other {}
+          } au moins {leadDays, plural, one {# jour} other {# jours}} à l'avance.}
+        other {Vous devez informer le conducteur de votre destination.}
+      }.
+    flexPickupMessage: >
+      Pour ce trajet, vous devez faire une réservation préalable {hasPhone, select,
+        true {au {phoneNumber}}
+        other {}
+      }{hasLeadTime, select,
+        true { au moins {leadDays, plural, one {# jour} other {# jours}} à l'avance}
+        other {}
+      }.
     stayOnBoard: Restez à bord à <strong>{placeName}</strong>
     travelBy: "Effectué {modeId, select,
       BICYCLE {en vélo}
@@ -139,7 +156,6 @@ otpUi:
       }"
     fare: "Tarif : {fare}"
     operatedBy: Exploité par {agencyLink}
-    reservationRequired: Non-assuré sans réservation préalable.
     rideDurationAndStops: "Trajet : {duration}{numStops, plural, =1 {} other { / # arrêts}}"
     routeDescription: "{routeName}{headsign, select,
       undefined {} other {<toPrefix> vers </toPrefix>{headsign}}}"

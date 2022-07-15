@@ -1,5 +1,6 @@
 import flatten from "flat";
-import { Company, Place } from "@opentripplanner/types";
+import { Company, FlexBookingInfo, Place } from "@opentripplanner/types";
+import coreUtils from "@opentripplanner/core-utils";
 import { IntlShape } from "react-intl";
 
 // Load the default messages.
@@ -127,4 +128,23 @@ export function getPlaceName(
   }
   // Default to place name
   return place.name;
+}
+
+/**
+ * Helper function that assembles values for flex pickup/dropoff messages.
+ */
+export function getFlexMessageValues(
+  info: FlexBookingInfo
+): {
+  hasLeadTime: boolean;
+  hasPhone: boolean;
+  leadDays?: number;
+  phoneNumber?: string;
+} {
+  return {
+    hasLeadTime: coreUtils.itinerary.isAdvanceBookingRequired(info),
+    hasPhone: !!info?.contactInfo?.phoneNumber,
+    leadDays: info.latestBookingTime.daysPrior,
+    phoneNumber: info?.contactInfo?.phoneNumber
+  };
 }

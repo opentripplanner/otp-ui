@@ -58,10 +58,6 @@ export const TransitFareSingle = styled.span``;
 
 export const FlexSummary = styled.span``;
 
-export const FlexPickupSummary = styled.span``;
-
-export const FlexDropOffSummary = styled.span``;
-
 export const TripDetail = styled.div`
   margin-top: 6px;
 `;

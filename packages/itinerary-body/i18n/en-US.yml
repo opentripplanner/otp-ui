@@ -102,6 +102,23 @@ otpUi:
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"
+    flexDropOffMessage: >
+      {hasLeadTime, select,
+        true {To get off at your destination, you must call
+          {hasPhone, select,
+            true {{phoneNumber}}
+            other {ahead}
+          } at least {leadDays, plural, one {# day} other {# days}} in advance}
+        other {You must tell the operator where you want to get off.}
+      }.
+    flexPickupMessage: >
+      To take this route, you must call {hasPhone, select,
+        true {{phoneNumber}}
+        other {ahead}
+      }{hasLeadTime, select,
+        true { at least {leadDays, plural, one {# day} other {# days}} in advance}
+        other {}
+      }.
     stayOnBoard: Stay on Board at <strong>{placeName}</strong>
     travelBy: "Travel by {modeId, select,
       BICYCLE {bicycle}
