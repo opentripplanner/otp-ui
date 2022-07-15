@@ -327,8 +327,10 @@ export function TripDetails({
                   id="otpUi.TripDetails.tripIncludesFlex"
                   values={{
                     extraMessage: [
-                      pickupBookingInfo.map(info => info.message),
-                      dropOffBookingInfo.map(info => info.message)
+                      ...new Set([
+                        ...pickupBookingInfo.map(info => info.message),
+                        ...dropOffBookingInfo.map(info => info.message)
+                      ])
                     ].join(" ")
                   }}
                 />
