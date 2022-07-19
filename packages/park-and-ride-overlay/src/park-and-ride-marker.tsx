@@ -14,4 +14,8 @@ const StyledParkAndRideIcon = styled.div`
   width: 17px;
 `;
 
-export default <StyledParkAndRideIcon>P</StyledParkAndRideIcon>;
+const ParkAndRideMarker = (): JSX.Element => (
+  <StyledParkAndRideIcon>P</StyledParkAndRideIcon>
+);
+
+export default ParkAndRideMarker;

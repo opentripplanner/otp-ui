@@ -1,18 +1,17 @@
-import React, { useEffect } from "react";
 import { Stop } from "@opentripplanner/types";
-import { Source, Layer, useMap, LngLatLike } from "react-map-gl";
 import { LngLatBounds } from "maplibre-gl";
+import { Source, Layer, useMap, LngLatLike } from "react-map-gl";
+import React, { useEffect } from "react";
 
 import polyline from "@mapbox/polyline";
 import pointInPolygon from "point-in-polygon";
 
 // helper fn to check if geometry has been populated for all patterns in route
-const isGeomComplete = (routeData: {
+const isGeometryComplete = (routeData: {
   patterns: { id: string; geometry?: { points: [number, number][] } }[];
 }) => {
   return (
-    routeData &&
-    routeData.patterns &&
+    routeData?.patterns &&
     Object.values(routeData.patterns).every(
       ptn => typeof ptn?.geometry !== "undefined"
     )
@@ -40,10 +39,9 @@ const removePointsInFlexZone = (stops: Stop[], points: [number, number][]) => {
       .filter(bbox => !!bbox) || [];
 
   // Points we keep can't be in any of the flex zones
-  return points.filter(point => {
-    const [y, x] = point;
-    return bboxes.every(bbox => !pointInPolygon([x, y], bbox));
-  });
+  return points.filter(([y, x]) =>
+    bboxes.every(bbox => !pointInPolygon([x, y], bbox))
+  );
 };
 
 /**
@@ -54,7 +52,7 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
   const { routeData } = props;
   useEffect(() => {
     // if pattern geometry updated, update the map points
-    if (isGeomComplete(routeData)) {
+    if (isGeometryComplete(routeData)) {
       const allPoints: LngLatLike[] = Object.values(routeData.patterns).reduce(
         (acc, ptn) => {
           return acc.concat(polyline.decode(ptn.geometry.points));
@@ -89,26 +87,23 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
   const routeColor = routeData.color
     ? `#${routeData.color}`
     : path?.color || "#00bfff";
-  const segments = [];
-  Object.values(routeData.patterns).forEach(pattern => {
-    if (!pattern?.geometry) return;
-    const pts = polyline.decode(pattern.geometry.points);
-    const clippedPts = clipToPatternStops
-      ? removePointsInFlexZone(pattern?.stops, pts)
-      : pts;
+  const segments = Object.values(routeData.patterns)
+    .filter(pattern => !!pattern?.geometry)
+    .map(pattern => {
+      const pts = polyline.decode(pattern.geometry.points);
+      const clippedPts = clipToPatternStops
+        ? removePointsInFlexZone(pattern?.stops, pts)
+        : pts;
 
-    segments.push(clippedPts.map((pt: [number, number]) => [pt[1], pt[0]]));
-  });
+      return clippedPts.map((pt: [number, number]) => [pt[1], pt[0]]);
+    });
 
   const geojson: GeoJSON.FeatureCollection = {
     type: "FeatureCollection",
     features: segments.map(segment => ({
       type: "Feature",
-      properties: [],
-      geometry: {
-        type: "LineString",
-        coordinates: segment
-      }
+      geometry: { type: "LineString", coordinates: segment },
+      properties: []
     }))
   };
 
@@ -117,13 +112,16 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
       <Source id="route" type="geojson" data={geojson}>
         <Layer
           id="route"
-          type="line"
-          layout={{ "line-join": "round", "line-cap": "round" }}
+          layout={{
+            "line-cap": "round",
+            "line-join": "round"
+          }}
           paint={{
             "line-color": path?.color || routeColor,
-            "line-width": path?.weight || 3,
-            "line-opacity": path?.opacity || 1
+            "line-opacity": path?.opacity || 1,
+            "line-width": path?.weight || 3
           }}
+          type="line"
         />
       </Source>
     </>

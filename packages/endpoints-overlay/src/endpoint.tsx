@@ -1,19 +1,19 @@
-import flatten from "flat";
-import coreUtils from "@opentripplanner/core-utils";
+import { Briefcase } from "@styled-icons/fa-solid/Briefcase";
 import {
   ClearLocationArg,
   Location,
   MapLocationActionArg,
   UserLocationAndType
 } from "@opentripplanner/types";
-import React, { ComponentType, useState } from "react";
 import { FormattedMessage, IntlShape, useIntl } from "react-intl";
-import { Marker, Popup, MarkerDragEvent } from "react-map-gl";
-import { Briefcase } from "@styled-icons/fa-solid/Briefcase";
 import { Home } from "@styled-icons/fa-solid/Home";
 import { MapMarkerAlt } from "@styled-icons/fa-solid/MapMarkerAlt";
+import { Marker, Popup, MarkerDragEvent } from "react-map-gl";
 import { Sync } from "@styled-icons/fa-solid/Sync";
 import { Times } from "@styled-icons/fa-solid/Times";
+import coreUtils from "@opentripplanner/core-utils";
+import flatten from "flat";
+import React, { ComponentType, useState } from "react";
 
 import * as S from "./styled";
 
@@ -145,7 +145,6 @@ const Endpoint = (props: Props): JSX.Element => {
   const onDragEnd = (e: MarkerDragEvent) => {
     const { setLocation, type } = props;
 
-    // This method is depcreated. the latlng object should be fed into react intl
     const rawLocation = e.lngLat;
     const location = {
       lat: rawLocation.lat,
@@ -180,7 +179,7 @@ const Endpoint = (props: Props): JSX.Element => {
       draggable
       latitude={location.lat}
       longitude={location.lon}
-      onDragEnd={e => onDragEnd(e)}
+      onDragEnd={onDragEnd}
       onDragStart={() => setShowPopup(false)}
       onClick={() => setShowPopup(true)}
     >

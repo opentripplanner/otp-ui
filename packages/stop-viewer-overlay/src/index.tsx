@@ -1,6 +1,8 @@
-import React, { useEffect } from "react";
 import { Stop } from "@opentripplanner/types";
 import { useMap } from "react-map-gl";
+import React, { useEffect } from "react";
+
+export type StopContainer = { stop: Stop };
 
 /**
  * This overlay is intended to highlight a specific stop on a map typically in
@@ -12,7 +14,7 @@ const StopViewerOverlay = ({
   visible
 }: {
   stop: Stop;
-  StopMarker: React.FunctionComponent<{ stop: Stop }>;
+  StopMarker: React.FunctionComponent<StopContainer>;
   visible?: boolean;
 }): JSX.Element => {
   const { current } = useMap();

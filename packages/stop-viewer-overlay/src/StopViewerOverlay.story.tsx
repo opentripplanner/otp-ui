@@ -1,10 +1,9 @@
 import BaseMap from "@opentripplanner/base-map";
 import React from "react";
-import { Stop } from "@opentripplanner/types";
 
 import { Marker } from "react-map-gl";
 import DefaultStopMarker from "./default-stop-marker";
-import StopViewerOverlay from ".";
+import StopViewerOverlay, { StopContainer } from ".";
 
 const center: [number, number] = [45.518092, -122.671202];
 const zoom = 13;
@@ -16,7 +15,7 @@ const fakeStop = {
   name: "Fake Stop"
 };
 
-function CustomMarker({ stop }: { stop: Stop }) {
+function CustomMarker({ stop }: StopContainer) {
   return <Marker longitude={stop.lon} latitude={stop.lat} key={stop.id} />;
 }
 

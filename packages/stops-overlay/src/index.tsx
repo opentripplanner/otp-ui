@@ -1,10 +1,10 @@
-import { Stop } from "@opentripplanner/types";
+import { Stop, MapLocationActionArg } from "@opentripplanner/types";
 import React, { useEffect, useMemo, useState } from "react";
 
-import { Layer, Popup, Source, useMap } from "react-map-gl";
 import { EventData } from "mapbox-gl";
-import * as Styled from "./styled";
+import { Layer, Popup, Source, useMap } from "react-map-gl";
 import StopPopup from "./default-stop-popup";
+import * as Styled from "./styled";
 
 type Props = {
   /**
@@ -31,7 +31,7 @@ type Props = {
   /**
    * A method fired when a stop is selected as from or to in the popup
    */
-  setLocation?: ({ location: Location, locationType: string }) => void;
+  setLocation?: (location: MapLocationActionArg) => void;
   /**
    * A method fired when the stop viewer is opened in the popup
    */
@@ -105,48 +105,50 @@ const StopsOverlay = (props: Props): JSX.Element => {
     return <></>;
   }
 
+  const setNullStop = () => {
+    setClickedStop(null);
+  };
+
   return (
     <>
       <Source type="geojson" data={stopsGeoJSON}>
         <Layer
           id="stops"
-          type="circle"
           minzoom={minZoom || 10}
           paint={{
             "circle-color": "#fff",
             "circle-opacity": 0.9,
-            "circle-stroke-width": 2,
-            "circle-stroke-color": "#333"
+            "circle-stroke-color": "#333",
+            "circle-stroke-width": 2
           }}
+          type="circle"
         />
         <Layer
-          id="flex-stops"
-          type="circle"
           filter={["==", "flex", true]}
+          id="flex-stops"
           paint={{
             "circle-color": ["get", "color"],
             "circle-opacity": 0.9,
-            "circle-stroke-width": 2,
-            "circle-stroke-color": "#333"
+            "circle-stroke-color": "#333",
+            "circle-stroke-width": 2
           }}
+          type="circle"
         />
       </Source>
       {clickedStop && (
         <Popup
-          onClose={() => {
-            setClickedStop(null);
-          }}
-          longitude={clickedStop.lon}
           latitude={clickedStop.lat}
+          longitude={clickedStop.lon}
           maxWidth="100%"
+          onClose={setNullStop}
         >
           <StopPopup
             setLocation={location => {
-              setClickedStop(null);
+              setNullStop();
               setLocation(location);
             }}
             setViewedStop={stop => {
-              setClickedStop(null);
+              setNullStop();
               setViewedStop(stop);
             }}
             stop={clickedStop}
@@ -155,30 +157,30 @@ const StopsOverlay = (props: Props): JSX.Element => {
       )}
       {flexStops.map(stop => (
         <Source
-          key={stop.id}
-          id={stop.id}
-          type="geojson"
           data={(stop.geometries.geoJson as unknown) as GeoJSON.Feature}
+          id={stop.id}
+          key={stop.id}
+          type="geojson"
         >
           {/* TODO:  add support for overriding layer styles */}
           <Layer
             id={stop.id}
-            type="fill"
             paint={{
               "fill-color": stop.color,
               "fill-opacity": 0.5,
               "fill-outline-color": stop.color
             }}
+            type="fill"
           />
           <Layer
             id={`${stop.id}-outline`}
-            type="line"
             layout={{ "line-join": "round", "line-cap": "round" }}
             paint={{
               "line-color": stop.color,
               "line-opacity": 1,
               "line-width": 4
             }}
+            type="line"
           />
         </Source>
       ))}

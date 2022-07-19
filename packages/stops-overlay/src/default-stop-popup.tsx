@@ -1,10 +1,10 @@
 import { Styled as BaseMapStyled } from "@opentripplanner/base-map";
-import flatten from "flat";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
-import React, { Component } from "react";
-import { FormattedMessage } from "react-intl";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Location, Stop } from "@opentripplanner/types";
+import flatten from "flat";
+import { FormattedMessage } from "react-intl";
+import React, { Component } from "react";
 
 import * as S from "./styled";
 

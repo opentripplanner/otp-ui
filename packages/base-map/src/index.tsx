@@ -42,7 +42,7 @@ type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
   onViewportChanged?: (e: maplibregl.MapLibreEvent) => void;
   /** A ref to pass to the MapLibre react component */
   passedRef?: React.Ref<MapRef>;
-  /** An inital zoom value for the map */
+  /** An initial zoom value for the map */
   zoom?: number;
 };
 type State = {

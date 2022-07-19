@@ -62,7 +62,10 @@ export const LayerSelector = styled.div`
     /* There are some situations when using MapLibreGL's \`reuseMap\` where 
   a map re-render can cause the layer selector to be rendered multiple times. 
   This is a bit of a hack, but the most all-encompassing way to ensure that this is
-  not a usability issue. */
+  not a usability issue.
+   
+  TODO: this hack seems to have broken during PR review (it worked when LayerSelector was a nav, but not when it's a ul)
+   */
     &:not(:last-of-type) {
       display: none;
     }
