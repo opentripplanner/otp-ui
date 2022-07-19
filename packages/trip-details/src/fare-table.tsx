@@ -7,7 +7,7 @@ import { Transfer } from "@styled-icons/boxicons-regular/Transfer";
 
 import { boldText, renderFare } from "./utils";
 
-import { FareDetailsProps, FareTableLayout, FareTableText } from "./types";
+import { FareLegTableProps, FareTableLayout, FareTableText } from "./types";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
@@ -180,10 +180,10 @@ const FareTypeTable = ({
 
 const FareLegDetails = ({
   layout,
+  legs,
   transitFareDetails,
-  transitFares,
-  legs
-}: FareDetailsProps): JSX.Element => {
+  transitFares
+}: FareLegTableProps): JSX.Element => {
   const fareKeys = Object.keys(transitFareDetails);
 
   const legsWithFares = legs
