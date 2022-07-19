@@ -7,8 +7,6 @@ import StopsOverlay, { StopProps } from ".";
 import mockStops from "../__mocks__/stops.json";
 import mockFlexStops from "../__mocks__/flex-stops.json";
 
-import "maplibre-gl/dist/maplibre-gl.css";
-
 const center: [number, number] = [45.523092, -122.671202];
 
 const Example = ({

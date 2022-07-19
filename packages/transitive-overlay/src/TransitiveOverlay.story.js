@@ -6,8 +6,6 @@ import { injectIntl } from "react-intl";
 
 import TransitiveOverlay, { itineraryToTransitive } from ".";
 
-import "maplibre-gl/dist/maplibre-gl.css";
-
 // Use the font-family defined by storybook <body> element,
 // so we don't need to install/import extra fonts.
 const storybookFonts =

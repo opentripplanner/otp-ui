@@ -18,10 +18,10 @@ export const Button = styled.button`
 `;
 
 const stacked = css`
+  cursor: pointer;
   left: 0;
   position: absolute;
   text-align: center;
-  cursor: pointer;
 `;
 
 export const StackedCircle = styled(Circle)`

@@ -103,9 +103,9 @@ type Props = {
  * different zoom levels.
  */
 const VehicleRentalOverlay = (props: Props): JSX.Element => {
-  const { mainMap } = useMap();
-  const zoom = mainMap?.getZoom();
-  const bounds = mainMap?.getBounds();
+  const { current: map } = useMap();
+  const zoom = map?.getZoom();
+  const bounds = map?.getBounds();
 
   const {
     configCompanies,
@@ -133,17 +133,17 @@ const VehicleRentalOverlay = (props: Props): JSX.Element => {
   useEffect(() => {
     const VEHICLE_LAYERS = [layerId];
     VEHICLE_LAYERS.forEach(stopLayer => {
-      mainMap?.on("mouseenter", stopLayer, () => {
-        mainMap.getCanvas().style.cursor = "pointer";
+      map?.on("mouseenter", stopLayer, () => {
+        map.getCanvas().style.cursor = "pointer";
       });
-      mainMap?.on("mouseleave", stopLayer, () => {
-        mainMap.getCanvas().style.cursor = "";
+      map?.on("mouseleave", stopLayer, () => {
+        map.getCanvas().style.cursor = "";
       });
-      mainMap?.on("click", stopLayer, (event: EventData) => {
+      map?.on("click", stopLayer, (event: EventData) => {
         setClickedVehicle(event.features?.[0].properties);
       });
     });
-  }, [mainMap]);
+  }, [map]);
 
   // Don't render if no map or no stops are defined.
   if (visible === false || !stations || stations.length === 0) {

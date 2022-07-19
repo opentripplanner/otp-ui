@@ -15,14 +15,14 @@ const StopViewerOverlay = ({
   StopMarker: React.FunctionComponent<{ stop: Stop }>;
   visible?: boolean;
 }): JSX.Element => {
-  const { mainMap } = useMap();
+  const { current } = useMap();
   /**
    * Only reset map view if a new stop is selected. This prevents resetting the
    * bounds if, for example, the arrival times have changed for the same stop
    * in the viewer.
    */
   useEffect(() => {
-    mainMap?.flyTo({ center: [stop.lon, stop.lat] });
+    current?.flyTo({ center: [stop.lon, stop.lat] });
   }, [stop.lat, stop.lon]);
 
   if (visible === false || !stop || !StopMarker) return <></>;

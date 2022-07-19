@@ -30,15 +30,15 @@ const TripViewerOverlay = (props: Props): JSX.Element => {
     }, new LngLatBounds(pts[0], pts[0]));
   }, [pts]);
 
-  const { mainMap } = useMap();
+  const { current: map } = useMap();
   useEffect(() => {
     if (bounds.length === 4 && bounds.every(Number.isFinite)) {
-      mainMap?.fitBounds(bounds, {
+      map?.fitBounds(bounds, {
         duration: 500,
         padding: 200
       });
     }
-  }, [mainMap, bounds]);
+  }, [map, bounds]);
 
   if (!visible || !pts) return null;
 

@@ -42,7 +42,7 @@ type Props = {
  * An overlay to view a collection of stops.
  */
 const StopsOverlay = (props: Props): JSX.Element => {
-  const { mainMap } = useMap();
+  const { current: map } = useMap();
   const {
     activeStop,
     minZoom,
@@ -61,23 +61,23 @@ const StopsOverlay = (props: Props): JSX.Element => {
   useEffect(() => {
     const STOP_LAYERS = ["stops", "flex-stops"];
     STOP_LAYERS.forEach(stopLayer => {
-      mainMap?.on("mouseenter", stopLayer, () => {
-        mainMap.getCanvas().style.cursor = "pointer";
+      map?.on("mouseenter", stopLayer, () => {
+        map.getCanvas().style.cursor = "pointer";
       });
-      mainMap?.on("mouseleave", stopLayer, () => {
-        mainMap.getCanvas().style.cursor = "";
+      map?.on("mouseleave", stopLayer, () => {
+        map.getCanvas().style.cursor = "";
       });
-      mainMap?.on("click", stopLayer, (event: EventData) => {
+      map?.on("click", stopLayer, (event: EventData) => {
         setClickedStop(event.features?.[0].properties);
       });
     });
 
     if (refreshStops) refreshStops();
 
-    mainMap?.on("zoomend", event => {
+    map?.on("zoomend", event => {
       if (event.viewState.zoom < minZoom) setClickedStop(null);
     });
-  }, [mainMap]);
+  }, [map]);
 
   const flexStops = useMemo(
     () => stops.filter(stop => stop?.geometries?.geoJson?.type === "Polygon"),

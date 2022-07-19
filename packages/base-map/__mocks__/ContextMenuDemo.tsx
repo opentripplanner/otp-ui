@@ -1,7 +1,7 @@
 import { LngLat } from "maplibre-gl";
 import React, { Component } from "react";
 import { Popup } from "react-map-gl";
-import BaseMap from "../lib";
+import BaseMap from "../src";
 
 const center: [number, number] = [45.522862, -122.667837];
 

@@ -50,7 +50,7 @@ const removePointsInFlexZone = (stops: Stop[], points: [number, number][]) => {
  * An overlay that will display all polylines of the patterns of a route.
  */
 const RouteViewerOverlay = (props: Props): JSX.Element => {
-  const { mainMap } = useMap();
+  const { current } = useMap();
   const { routeData } = props;
   useEffect(() => {
     // if pattern geometry updated, update the map points
@@ -70,7 +70,7 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
           return bnds.extend(coord);
         }, new LngLatBounds(geoJsonedPoints[0], geoJsonedPoints[0]));
 
-        mainMap?.fitBounds(bounds, {
+        current?.fitBounds(bounds, {
           duration: 500,
           padding: 200
         });

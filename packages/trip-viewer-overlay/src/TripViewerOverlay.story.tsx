@@ -4,8 +4,6 @@ import React from "react";
 import tripData from "../__mocks__/mock-trip.json";
 import TripViewerOverlay from ".";
 
-import "maplibre-gl/dist/maplibre-gl.css";
-
 const center: [number, number] = [45.518092, -122.671202];
 const zoom = 13;
 

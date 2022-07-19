@@ -28,7 +28,7 @@ type Props = {
 };
 const TransitiveCanvasOverlay = (props: Props): JSX.Element => {
   const { transitiveData } = props;
-  const { mainMap } = useMap();
+  const { current: map } = useMap();
 
   transitiveData?.patterns.flatMap((pattern: TransitivePattern) =>
     pattern.stops
@@ -106,7 +106,7 @@ const TransitiveCanvasOverlay = (props: Props): JSX.Element => {
     const bounds: [number, number, number, number] = [b[0], b[1], b[2], b[3]];
 
     if (bounds.length === 4 && bounds.every(Number.isFinite)) {
-      mainMap?.fitBounds(bounds, {
+      map?.fitBounds(bounds, {
         duration: 500,
         padding: 200
       });
