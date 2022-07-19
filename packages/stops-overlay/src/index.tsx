@@ -102,6 +102,7 @@ const StopsOverlay = (props: Props): JSX.Element => {
   // Don't render if no map or no stops are defined.
   // (ZoomBasedMarkers will also not render below the minimum zoom threshold defined in the symbols prop.)
   if (visible === false || !stops || stops.length === 0) {
+    // Null can't be returned here -- react-map-gl dislikes null values as children
     return <></>;
   }
 

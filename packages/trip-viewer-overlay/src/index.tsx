@@ -1,7 +1,7 @@
-import React, { useEffect, useMemo } from "react";
 import polyline from "@mapbox/polyline";
-import { Layer, Source, useMap } from "react-map-gl";
 import { LngLatBounds } from "maplibre-gl";
+import { Layer, Source, useMap } from "react-map-gl";
+import React, { useEffect, useMemo } from "react";
 
 type Props = {
   path?: {
@@ -44,21 +44,21 @@ const TripViewerOverlay = (props: Props): JSX.Element => {
 
   const geojson: GeoJSON.Feature = {
     type: "Feature",
-    properties: [],
-    geometry: { type: "LineString", coordinates: pts }
+    geometry: { type: "LineString", coordinates: pts },
+    properties: []
   };
 
   return (
     <Source id="route" type="geojson" data={geojson}>
       <Layer
         id="route"
-        type="line"
-        layout={{ "line-join": "round", "line-cap": "round" }}
+        layout={{ "line-cap": "round", "line-join": "round" }}
         paint={{
           "line-color": path?.color || "#00bfff",
-          "line-width": path?.weight || 8,
-          "line-opacity": path?.opacity || 0.6
+          "line-opacity": path?.opacity || 0.6,
+          "line-width": path?.weight || 8
         }}
+        type="line"
       />
     </Source>
   );

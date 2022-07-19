@@ -27,6 +27,7 @@ const StopViewerOverlay = ({
     current?.flyTo({ center: [stop.lon, stop.lat] });
   }, [stop.lat, stop.lon]);
 
+  // Null can't be returned here -- react-map-gl dislikes null values as children
   if (visible === false || !stop || !StopMarker) return <></>;
 
   return <StopMarker stop={stop} />;

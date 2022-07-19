@@ -114,14 +114,14 @@ const TransitiveCanvasOverlay = (props: Props): JSX.Element => {
   }, [transitiveData]);
 
   return (
-    <Source id="itinierary" type="geojson" data={geojson}>
+    <Source data={geojson} type="geojson" id="itinierary">
       <Layer
         id="street-edges"
         filter={["==", "type", "street-edge"]}
-        type="line"
         layout={{
           "line-cap": "butt"
         }}
+        type="line"
         paint={{
           // TODO: get from transitive properties
           "line-color": ["get", "color"],

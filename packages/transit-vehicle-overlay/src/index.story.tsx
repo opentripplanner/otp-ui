@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import React from "react";
 import BaseMap from "@opentripplanner/base-map";
 import TransitVehicleOverlay from ".";

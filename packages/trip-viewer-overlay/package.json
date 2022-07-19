@@ -21,7 +21,7 @@
   "dependencies": {
     "@mapbox/polyline": "^1.1.0",
     "@opentripplanner/base-map": "^3.0.0-alpha.1",
-    "@opentripplanner/core-utils": "^4.5.0"
+    "@opentripplanner/core-utils": "^6.0.0"
   },
   "peerDependencies": {
     "react": "^16.14.0",

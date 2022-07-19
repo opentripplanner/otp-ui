@@ -20,9 +20,7 @@ type Props = {
   vehicle: TransitVehicle;
 };
 
-export default function VehicleTooltip(props: Props): JSX.Element {
-  const { vehicle } = props;
-
+export default function VehicleTooltip({ vehicle }: Props): JSX.Element {
   const { routeShortName, routeType, seconds } = vehicle;
 
   let name: JSX.Element = <>{routeShortName}</>;

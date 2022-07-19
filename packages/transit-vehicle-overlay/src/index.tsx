@@ -1,30 +1,33 @@
+import { MarkerWithPopup } from "@opentripplanner/base-map";
 import { TransitVehicle } from "@opentripplanner/types";
 import React from "react";
 
-import { MarkerWithPopup } from "@opentripplanner/base-map";
 import { getTransitIcon } from "./TransitIcons";
 import VehicleTooltip from "./VehicleTooltip";
 
 type Props = {
   /**
-   * The list of vehicles to create stop markers for.
+   * A hex color in the form `#fffFFF` to highlight all vehicles as
    */
-  vehicles?: TransitVehicle[];
+  color?: string;
   /**
    * A tooltip JSX to render
    */
   TooltipSlot?: JSX.Element;
   /**
-   * A hex color in the form `#fffFFF` to highlight all vehicles as
+   * The list of vehicles to create stop markers for.
    */
-  color?: string;
+  vehicles?: TransitVehicle[];
 };
 
 /**
  * An overlay to view a collection of transit vehicles.
  */
-const TransitVehicleOverlay = (props: Props): JSX.Element => {
-  const { color, TooltipSlot, vehicles } = props;
+const TransitVehicleOverlay = ({
+  color,
+  TooltipSlot,
+  vehicles
+}: Props): JSX.Element => {
   const validVehicles = vehicles?.filter(
     vehicle => !!vehicle?.lat && !!vehicle?.lon
   );
@@ -45,10 +48,10 @@ const TransitVehicleOverlay = (props: Props): JSX.Element => {
           <MarkerWithPopup
             key={vehicle.vehicleId}
             position={[vehicle.lat, vehicle.lon]}
-            // @ts-expect-error TODO FIX
-            tooltipContents={<Tooltip vehicle={vehicle} />}
             // @ts-expect-error the prop override doesn't require all props to be present
             popupProps={{ offset: [-15, 0] }}
+            // @ts-expect-error TODO FIX
+            tooltipContents={<Tooltip vehicle={vehicle} />}
           >
             {/* @ts-expect-error We know the icon is set dynamically */}
             <Icon rotate={vehicle.heading} routeColor={color} />
