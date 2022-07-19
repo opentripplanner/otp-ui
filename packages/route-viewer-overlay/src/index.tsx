@@ -29,6 +29,11 @@ const removePointsInFlexZone = (stops: Stop[], points: [number, number][]) => {
   // First, go through all stops to find flex zones
   const bboxes =
     stops
+      // Although it is less clean, doing a single map with many if conditions
+      // is much faster than adding multiple filters (as the array is iterated over fewer times)
+      // Adding a separate filter would increase the time spent processing the array, which
+      // needs to be kept to a minimum as this is happening inside render()
+      // For more detail see https://github.com/dg92/Performance-Analysis-JS/blob/master/small_data_set_result.png
       ?.map(stop => {
         if (stop.geometries?.geoJson?.type !== "Polygon") {
           return null;
@@ -36,6 +41,7 @@ const removePointsInFlexZone = (stops: Stop[], points: [number, number][]) => {
         return stop.geometries.geoJson.coordinates?.[0] || null;
       })
       // Remove the null entries
+      // This filter is required, as there is no way to have map not return a value
       .filter(bbox => !!bbox) || [];
 
   // Points we keep can't be in any of the flex zones
@@ -82,6 +88,7 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
 
   const { clipToPatternStops, path } = props;
 
+  // Null can't be returned here -- react-map-gl dislikes null values as children
   if (!routeData || !routeData.patterns) return <></>;
 
   const routeColor = routeData.color
