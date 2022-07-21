@@ -40,13 +40,25 @@ export const LeafletStyleMarker = styled.div<LeafletStyleMarkerProps>`
   width: ${props => props?.size || 10}px;
 `;
 
-export const LayerSelector = styled.div`
+export const LayerSelector = styled.aside`
   display: flex;
   justify-content: end;
   margin: 1em;
   position: relative;
   right: 0;
   top: 0;
+
+  /* 
+  There are some situations when using MapLibreGL's \`reuseMap\` where 
+  a map re-render can cause the layer selector to be rendered multiple times. 
+  This is a bit of a hack, but the most all-encompassing way to ensure that this is
+  not a usability issue.
+
+  This hack *only* works if the LayerSelector is *not* a \`div\`. I'm not sure why...
+  */
+  &:not(:last-of-type) {
+    display: none;
+  }
 
   .layers-list {
     background: rgba(255, 255, 255, 0.95);
@@ -58,17 +70,6 @@ export const LayerSelector = styled.div`
     padding: 1em;
     position: absolute;
     right: 0;
-
-    /* There are some situations when using MapLibreGL's \`reuseMap\` where 
-  a map re-render can cause the layer selector to be rendered multiple times. 
-  This is a bit of a hack, but the most all-encompassing way to ensure that this is
-  not a usability issue.
-   
-  TODO: this hack seems to have broken during PR review (it worked when LayerSelector was a nav, but not when it's a ul)
-   */
-    &:not(:last-of-type) {
-      display: none;
-    }
 
     label {
       display: none;
