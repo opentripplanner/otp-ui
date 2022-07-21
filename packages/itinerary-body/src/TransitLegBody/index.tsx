@@ -23,7 +23,7 @@ import {
   TransitLegSubheaderProps,
   TransitLegSummaryProps
 } from "../types";
-import { defaultMessages } from "../util";
+import { defaultMessages, getFlexMessageValues } from "../util";
 
 import AlertsBody from "./alerts-body";
 import IntermediateStops from "./intermediate-stops";
@@ -176,13 +176,16 @@ class TransitLegBody extends Component<Props, State> {
           )}
           {isReservationRequired && (
             <S.CallAheadWarning>
-              <FormattedMessage
-                defaultMessage={
-                  defaultMessages["otpUi.TransitLegBody.reservationRequired"]
-                }
-                description="Warning text that a prior reservation is required"
-                id="otpUi.TransitLegBody.reservationRequired"
-              />
+              {leg?.pickupBookingInfo && (
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages["otpUi.ItineraryBody.flexPickupMessage"]
+                  }
+                  description="Instructions for booking and boarding the flex (on-demand) transit service."
+                  id="otpUi.ItineraryBody.flexPickupMessage"
+                  values={getFlexMessageValues(leg?.pickupBookingInfo)}
+                />
+              )}
             </S.CallAheadWarning>
           )}
 
