@@ -106,9 +106,8 @@ otpUi:
       To take this route, you must call {hasPhone, select,
         true {{phoneNumber}}
         other {ahead}
-      }{hasLeadTime, select,
-        true { at least {leadDays, plural, one {# day} other {# days}} in advance}
-        other {}
+      }{leadDays, plural, =0 {}
+        other { at least {leadDays, plural, one {# day} other {# days}} in advance}
       }.
     stayOnBoard: Stay on Board at <strong>{placeName}</strong>
     travelBy: "Travel by {modeId, select,

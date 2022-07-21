@@ -1,6 +1,5 @@
 import flatten from "flat";
 import { Company, FlexBookingInfo, Place } from "@opentripplanner/types";
-import coreUtils from "@opentripplanner/core-utils";
 import { IntlShape } from "react-intl";
 
 // Load the default messages.
@@ -136,13 +135,14 @@ export function getPlaceName(
 export function getFlexMessageValues(
   info: FlexBookingInfo
 ): {
-  hasLeadTime: boolean;
   hasPhone: boolean;
   leadDays?: number;
   phoneNumber?: string;
 } {
   return {
-    hasLeadTime: coreUtils.itinerary.isAdvanceBookingRequired(info),
+    // There used to be a varaible `hasLeadTime` here. This should be brought back
+    // if the leadTime check is ever to be more than just checking the value of
+    // daysPrior (which can be done within react-intl)
     hasPhone: !!info?.contactInfo?.phoneNumber,
     leadDays: info.latestBookingTime.daysPrior,
     phoneNumber: info?.contactInfo?.phoneNumber

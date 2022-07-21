@@ -113,9 +113,8 @@ otpUi:
       Pour ce trajet, vous devez faire une réservation préalable {hasPhone, select,
         true {au {phoneNumber}}
         other {}
-      }{hasLeadTime, select,
-        true { au moins {leadDays, plural, one {# jour} other {# jours}} à l'avance}
-        other {}
+      }{leadDays, plural, =0 {}
+        other { au moins {leadDays, plural, one {# jour} other {# jours}} à l'avance}
       }.
     stayOnBoard: Restez à bord à <strong>{placeName}</strong>
     travelBy: "Effectué {modeId, select,
