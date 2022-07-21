@@ -1,6 +1,6 @@
 import CSS from "csstype";
+import { format, parse } from "date-fns";
 import flatten from "flat";
-import moment from "moment";
 import coreUtils from "@opentripplanner/core-utils";
 import React, { ChangeEvent, ReactElement, ReactNode, useCallback } from "react";
 import { FormattedMessage } from "react-intl";
@@ -25,6 +25,7 @@ const {
   getCurrentTime,
   getUserTimezone,
   OTP_API_DATE_FORMAT,
+  OTP_API_DATE_FORMAT_DATE_FNS,
   OTP_API_TIME_FORMAT
 } = coreUtils.time;
 
@@ -97,6 +98,11 @@ function isInputTypeSupported(type: string): boolean {
 const supportsDateTimeInputs = isInputTypeSupported("date") && isInputTypeSupported("time");
 
 /**
+ * Reference date for parsing.
+ */
+const referenceDate = new Date();
+
+/**
  * The `DateTimeSelector` component lets the OTP user chose a departure or arrival date/time.
  * (The departure can be right now.)
  *
@@ -150,9 +156,7 @@ export default function DateTimeSelector({
 
   const handleTimeChangeLegacy = useCallback(
     (evt: ChangeEvent<HTMLInputElement>): void => {
-      const newTime = moment(evt.target.value, timeFormatLegacy).format(
-        OTP_API_TIME_FORMAT
-      );
+      const newTime = format(parse(evt.target.value, timeFormatLegacy, referenceDate), OTP_API_TIME_FORMAT);
       handleQueryParamChange({ newTime });
     },
     [onQueryParamChange]
@@ -160,9 +164,7 @@ export default function DateTimeSelector({
 
   const handleDateChangeLegacy = useCallback(
     (evt: ChangeEvent<HTMLInputElement>): void => {
-      const newDate = moment(evt.target.value, dateFormatLegacy).format(
-        OTP_API_DATE_FORMAT
-      );
+      const newDate = format(parse(evt.target.value, dateFormatLegacy, referenceDate), OTP_API_DATE_FORMAT_DATE_FNS);
       handleQueryParamChange({ newDate });
     },
     [onQueryParamChange]
@@ -265,9 +267,7 @@ export default function DateTimeSelector({
         <S.DateTimeSelector.DateTimeRow>
           <div>
             <input
-              defaultValue={moment(time, OTP_API_TIME_FORMAT).format(
-                timeFormatLegacy
-              )}
+              defaultValue={format(parse(time, OTP_API_TIME_FORMAT, referenceDate), timeFormatLegacy)}
               onChange={handleTimeChangeLegacy}
               required
               type="text"
@@ -275,9 +275,7 @@ export default function DateTimeSelector({
           </div>
           <div>
             <input
-              defaultValue={moment(date, OTP_API_DATE_FORMAT).format(
-                dateFormatLegacy
-              )}
+              defaultValue={format(parse(date, OTP_API_DATE_FORMAT_DATE_FNS, referenceDate), dateFormatLegacy)}
               onChange={handleDateChangeLegacy}
               required
               type="text"
