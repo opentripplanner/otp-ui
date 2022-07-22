@@ -79,6 +79,10 @@ const StopsOverlay = (props: Props): JSX.Element => {
     });
   }, [map]);
 
+  const setNullStop = useCallback(() => {
+    setClickedStop(null);
+  }, [clickedStop]);
+
   const flexStops = useMemo(
     () => stops.filter(stop => stop?.geometries?.geoJson?.type === "Polygon"),
     [stops]
@@ -105,10 +109,6 @@ const StopsOverlay = (props: Props): JSX.Element => {
     // Null can't be returned here -- react-map-gl dislikes null values as children
     return <></>;
   }
-
-  const setNullStop = useCallback(() => {
-    setClickedStop(null);
-  }, [clickedStop]);
 
   return (
     <>
