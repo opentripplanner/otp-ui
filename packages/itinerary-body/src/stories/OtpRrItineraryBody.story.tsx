@@ -31,6 +31,7 @@ const walkTransitWalkItinerary = require("../__mocks__/itineraries/walk-transit-
 const walkTransitWalkTransitWalkItinerary = require("../__mocks__/itineraries/walk-transit-walk-transit-walk.json");
 const walkTransitWalkTransitWalkA11yItinerary = require("../__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json");
 const otp2ScooterItinerary = require("../__mocks__/itineraries/otp2-scooter.json");
+const flexItinerary = require("../__mocks__/itineraries/flex-itinerary.json");
 
 if (!isRunningJest()) {
   // Generate same-day/next day alerts at a fixed time for the walk-transit-walk itinerary
@@ -139,6 +140,10 @@ export const TncTransitItinerary = (): ReactElement => (
 
 export const OTP2ScooterItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={otp2ScooterItinerary} />
+);
+
+export const OTP2FlexItinerary = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper itinerary={flexItinerary} />
 );
 
 export const IndividualLegFareComponents = (): ReactElement => (

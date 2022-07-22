@@ -249,6 +249,7 @@ export type FlexBookingInfo = {
   latestBookingTime?: {
     daysPrior: number;
   };
+  message?: string;
 };
 
 /** Dropoff-specific flex booking information */
