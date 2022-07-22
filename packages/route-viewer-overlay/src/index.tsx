@@ -1,6 +1,6 @@
 import { Stop } from "@opentripplanner/types";
 import { LngLatBounds } from "maplibre-gl";
-import { Source, Layer, useMap, LngLatLike } from "react-map-gl";
+import { Layer, LngLatLike, Source, useMap } from "react-map-gl";
 import React, { useEffect } from "react";
 
 import polyline from "@mapbox/polyline";

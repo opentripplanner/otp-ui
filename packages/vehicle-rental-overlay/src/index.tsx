@@ -1,13 +1,14 @@
-import { Layer, Popup, Source, useMap } from "react-map-gl";
-import { EventData } from "mapbox-gl";
-import React, { useEffect, useState } from "react";
+import { MarkerWithPopup } from "@opentripplanner/base-map";
 import {
   Company,
   ConfiguredCompany,
   MapLocationActionArg,
   Station
 } from "@opentripplanner/types";
-import { MarkerWithPopup } from "@opentripplanner/base-map";
+import { EventData } from "mapbox-gl";
+import { useMap, Layer, Popup, Source } from "react-map-gl";
+import React, { useEffect, useState } from "react";
+
 import StationPopup from "./StationPopup";
 import { BaseBikeRentalIcon, StationMarker } from "./styled";
 

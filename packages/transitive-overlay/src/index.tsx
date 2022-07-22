@@ -114,14 +114,13 @@ const TransitiveCanvasOverlay = (props: Props): JSX.Element => {
   }, [transitiveData]);
 
   return (
-    <Source data={geojson} type="geojson" id="itinierary">
+    <Source id="itinerary" type="geojson" data={geojson}>
       <Layer
-        id="street-edges"
         filter={["==", "type", "street-edge"]}
+        id="street-edges"
         layout={{
           "line-cap": "butt"
         }}
-        type="line"
         paint={{
           // TODO: get from transitive properties
           "line-color": ["get", "color"],
@@ -131,11 +130,11 @@ const TransitiveCanvasOverlay = (props: Props): JSX.Element => {
           "line-width": 4,
           "line-opacity": 0.9
         }}
+        type="line"
       />
       <Layer
-        id="routes"
         filter={["==", "type", "route"]}
-        type="line"
+        id="routes"
         layout={{
           "line-join": "round",
           "line-cap": "round"
@@ -145,11 +144,11 @@ const TransitiveCanvasOverlay = (props: Props): JSX.Element => {
           "line-width": 8,
           "line-opacity": 1
         }}
+        type="line"
       />
       <Layer
-        id="routes-labels"
-        type="symbol"
         filter={["==", "type", "route"]}
+        id="routes-labels"
         layout={{
           "symbol-placement": "line",
           "text-field": ["get", "name"],
@@ -161,12 +160,12 @@ const TransitiveCanvasOverlay = (props: Props): JSX.Element => {
           "text-halo-width": 15,
           "text-color": "#eee"
         }}
-      />
-      <Layer id="places" filter={["==", "type", "place"]} type="circle" />
-      <Layer
-        id="places-labels"
         type="symbol"
+      />
+      <Layer filter={["==", "type", "place"]} id="places" type="circle" />
+      <Layer
         filter={["==", "type", "place"]}
+        id="places-labels"
         layout={{
           "symbol-placement": "point",
           "text-field": ["get", "name"],
@@ -177,6 +176,7 @@ const TransitiveCanvasOverlay = (props: Props): JSX.Element => {
           "text-allow-overlap": false
         }}
         paint={{ "text-translate": [0, 5] }}
+        type="symbol"
       />
     </Source>
   );

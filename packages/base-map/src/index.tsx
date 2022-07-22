@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { Map, MapRef, MapProps } from "react-map-gl";
+import { MapProps, MapRef, Map } from "react-map-gl";
 import maplibregl, { Event } from "maplibre-gl";
 
 import * as Styled from "./styled";
