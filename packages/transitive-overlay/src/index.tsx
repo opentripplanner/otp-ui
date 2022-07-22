@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Layer, Source, useMap } from "react-map-gl";
 import polyline from "@mapbox/polyline";
 import {
+  Leg,
   TransitiveData,
   TransitiveJourney,
   TransitivePattern,
@@ -24,10 +25,13 @@ const modeColorMap = {
 };
 
 type Props = {
+  activeLeg?: Leg;
   transitiveData: TransitiveData;
 };
-const TransitiveCanvasOverlay = (props: Props): JSX.Element => {
-  const { transitiveData } = props;
+const TransitiveCanvasOverlay = ({
+  activeLeg,
+  transitiveData
+}: Props): JSX.Element => {
   const { current: map } = useMap();
 
   transitiveData?.patterns.flatMap((pattern: TransitivePattern) =>
@@ -101,8 +105,8 @@ const TransitiveCanvasOverlay = (props: Props): JSX.Element => {
     ]
   };
 
-  useEffect(() => {
-    const b = bbox(geojson);
+  const zoomToGeoJSON = geoJson => {
+    const b = bbox(geoJson);
     const bounds: [number, number, number, number] = [b[0], b[1], b[2], b[3]];
 
     if (bounds.length === 4 && bounds.every(Number.isFinite)) {
@@ -111,7 +115,16 @@ const TransitiveCanvasOverlay = (props: Props): JSX.Element => {
         padding: 200
       });
     }
+  };
+
+  useEffect(() => {
+    zoomToGeoJSON(geojson);
   }, [transitiveData]);
+
+  useEffect(() => {
+    if (!activeLeg?.legGeometry) return;
+    zoomToGeoJSON(polyline.toGeoJSON(activeLeg.legGeometry.points));
+  }, [activeLeg]);
 
   return (
     <Source id="itinerary" type="geojson" data={geojson}>
