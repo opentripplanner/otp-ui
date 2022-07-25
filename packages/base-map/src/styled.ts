@@ -96,3 +96,10 @@ export const LayerSelector = styled.aside`
     }
   }
 `;
+
+/**
+ * Map container for use with storybook across various packages in this repo.
+ */
+export const StoryMapContainer = styled.div`
+  height: 90vh;
+`;

@@ -26,8 +26,6 @@ type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
   baseLayer?: string;
   /** A [lat, lon] position to center the map at. */
   center?: [number, number];
-  /** Whether or not to override the default MapLibre 100% height to be 90vh */
-  forceMaxHeight?: boolean;
   /** An object of props which should be passed down to MapLibre */
   mapLibreProps?: MapProps;
   /** The maximum zoom level the map should allow */
@@ -57,13 +55,13 @@ const BaseMap = ({
   baseLayer = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
   center,
   children,
-  forceMaxHeight,
   mapLibreProps,
   maxZoom,
   onClick,
   onContextMenu,
   passedRef,
   onViewportChanged,
+  style,
   zoom: initZoom = 12
 }: Props): JSX.Element => {
   const [viewState, setViewState] = React.useState<State>({
@@ -140,11 +138,7 @@ const BaseMap = ({
         setFakeMobileHover(false);
       }}
       ref={passedRef}
-      style={{
-        display: "block",
-        height: forceMaxHeight ? "90vh" : "100%",
-        width: "100%"
-      }}
+      style={style}
       zoom={viewState.zoom}
     >
       {toggleableLayers.length > 0 && (

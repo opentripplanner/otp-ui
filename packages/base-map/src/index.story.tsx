@@ -8,18 +8,32 @@ import {
   ScaleControl
 } from "react-map-gl";
 import { action } from "@storybook/addon-actions";
+import { ComponentStory } from "@storybook/react";
 
 import AllVehiclesOverlay from "../__mocks__/AllVehicles";
 import ContextMenuDemo from "../__mocks__/ContextMenuDemo";
+
+import { StoryMapContainer } from "./styled";
 import BaseMap, { MarkerWithPopup, LayerWrapper } from ".";
 
 import "maplibre-gl/dist/maplibre-gl.css";
 
 const center: [number, number] = [45.522862, -122.667837];
 
+const mapDecorator = (
+  Story: ComponentStory<typeof EndpointsOverlay>
+): ReactElement => (
+  <StoryMapContainer>
+    {/* For some reason, <Story /> does not work with snapshots,
+        so use the function syntax instead. */}
+    {Story()}
+  </StoryMapContainer>
+);
+
 export default {
-  args: { center, forceMaxHeight: true },
+  args: { center },
   component: BaseMap,
+  decorators: [mapDecorator],
   title: "BaseMap"
 };
 
@@ -52,7 +66,6 @@ const a11yOverrideParameters = {
 export const clickAndViewportchangedEvents = Template.bind({});
 clickAndViewportchangedEvents.args = {
   center,
-  forceMaxHeight: true,
   onClick,
   onContextMenu,
   onViewportChanged
@@ -61,8 +74,7 @@ clickAndViewportchangedEvents.args = {
 export const zoomed = Template.bind({});
 zoomed.args = {
   center,
-  zoom: 17,
-  forceMaxHeight: true
+  zoom: 17
 };
 
 export const clickToSetBounds = () => {
@@ -70,7 +82,7 @@ export const clickToSetBounds = () => {
   const bbox: [number, number, number, number] = [-79, 43, -73, 45];
 
   return (
-    <div>
+    <>
       <button
         onClick={
           () =>
@@ -88,8 +100,8 @@ export const clickToSetBounds = () => {
       >
         Set the bounds
       </button>
-      <BaseMap passedRef={ref} center={center} forceMaxHeight zoom={17} />
-    </div>
+      <BaseMap passedRef={ref} center={center} />
+    </>
   );
 };
 
@@ -103,34 +115,31 @@ export const withCustomBaseLayer = Template.bind({});
 
 withCustomBaseLayer.args = {
   baseLayer: `https://api.maptiler.com/maps/voyager/style.json?key=<PASTE YOUR MAPTILER TOKEN HERE>`,
-  center,
-  forceMaxHeight: true
+  center
 };
 
 export const withSampleMarkers = () => (
-  <BaseMap center={center} forceMaxHeight>
-    {sampleMarkers}
-  </BaseMap>
+  <BaseMap center={center}>{sampleMarkers}</BaseMap>
 );
 
 export const overlayWithLargeDataSet = () => (
-  <div>
+  <>
     <div>Do not add Storybook overhead on layers with large dataset...</div>
-    <BaseMap center={center} forceMaxHeight>
+    <BaseMap center={center}>
       <AllVehiclesOverlay />
     </BaseMap>
-  </div>
+  </>
 );
 
 export const customLocationPopupContent = () => (
-  <BaseMap center={center} forceMaxHeight>
+  <BaseMap center={center}>
     <Popup longitude={center[1]} latitude={center[0]}>
       {samplePopup}
     </Popup>
   </BaseMap>
 );
 export const optionalLayers = () => (
-  <BaseMap center={center} forceMaxHeight>
+  <BaseMap center={center}>
     <LayerWrapper
       id="layer-1"
       name="This layer has a name prop, the second one doesn't"
@@ -157,7 +166,6 @@ export const onContextMenuPopup = () => <ContextMenuDemo />;
 export const withOptionalControls = () => (
   <BaseMap
     center={center}
-    forceMaxHeight
     // We supply our own AttributionControl, so disable the default one
     // See https://visgl.github.io/react-map-gl/docs/api-reference/attribution-control
     mapLibreProps={{ attributionControl: false }}
