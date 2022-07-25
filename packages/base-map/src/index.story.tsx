@@ -1,11 +1,12 @@
 /* eslint-disable react/button-has-type */
-import React, { useRef } from "react";
+import React from "react";
 import {
   AttributionControl,
-  MapboxMap,
+  MapProvider,
   NavigationControl,
   Popup,
-  ScaleControl
+  ScaleControl,
+  useMap
 } from "react-map-gl";
 import { action } from "@storybook/addon-actions";
 import { ComponentStory } from "@storybook/react";
@@ -77,33 +78,37 @@ zoomed.args = {
   zoom: 17
 };
 
-export const clickToSetBounds = () => {
-  const ref = useRef<MapboxMap>();
-  const bbox: [number, number, number, number] = [-79, 43, -73, 45];
+const SetBoundsButton = () => {
+  const { mapWithBounds } = useMap();
+  const bbox = [-79, 43, -73, 45];
 
   return (
-    <>
-      <button
-        onClick={
-          () =>
-            ref.current?.fitBounds(bbox, {
-              duration: 300,
-              padding: {
-                bottom: 25,
-                left: 15,
-                right: 5,
-                top: 10
-              }
-            })
-          // eslint-disable-next-line react/jsx-curly-newline
-        }
-      >
-        Set the bounds
-      </button>
-      <BaseMap passedRef={ref} center={center} />
-    </>
+    <button
+      onClick={
+        () =>
+          mapWithBounds?.fitBounds(bbox, {
+            duration: 300,
+            padding: {
+              bottom: 25,
+              left: 15,
+              right: 5,
+              top: 10
+            }
+          })
+        // eslint-disable-next-line react/jsx-curly-newline
+      }
+    >
+      Set the bounds
+    </button>
   );
 };
+
+export const clickToSetBounds = (): ComponentStory<BaseMap> => (
+  <MapProvider>
+    <SetBoundsButton />
+    <BaseMap center={center} id="mapWithBounds" />
+  </MapProvider>
+);
 
 export const maxZoom = Template.bind({});
 maxZoom.args = {

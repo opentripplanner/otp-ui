@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { MapProps, MapRef, Map } from "react-map-gl";
+import { MapProps, Map } from "react-map-gl";
 import maplibregl, { Event } from "maplibre-gl";
 
 import * as Styled from "./styled";
@@ -26,6 +26,8 @@ type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
   baseLayer?: string;
   /** A [lat, lon] position to center the map at. */
   center?: [number, number];
+  /** A unique identifier for the map (useful when using MapProvider) */
+  id?: string;
   /** An object of props which should be passed down to MapLibre */
   mapLibreProps?: MapProps;
   /** The maximum zoom level the map should allow */
@@ -38,8 +40,6 @@ type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
   /** A callback method which is fired when the map zoom or map bounds change */
   // TODO: does this cause integration issues?
   onViewportChanged?: (e: maplibregl.MapLibreEvent) => void;
-  /** A ref to pass to the MapLibre react component */
-  passedRef?: React.Ref<MapRef>;
   /** An initial zoom value for the map */
   zoom?: number;
 };
@@ -55,11 +55,11 @@ const BaseMap = ({
   baseLayer = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
   center,
   children,
+  id,
   mapLibreProps,
   maxZoom,
   onClick,
   onContextMenu,
-  passedRef,
   onViewportChanged,
   style,
   zoom: initZoom = 12
@@ -100,8 +100,8 @@ const BaseMap = ({
         .flat()
         .filter(child => child?.props?.id !== undefined)
         .map(child => {
-          const { id, name, visible } = child.props;
-          return { id, name, visible };
+          const { id: layerId, name, visible } = child.props;
+          return { id: layerId, name, visible };
         })
     : [];
 
@@ -110,11 +110,11 @@ const BaseMap = ({
   );
 
   const adjustHiddenLayers = useCallback(
-    id => {
+    layerId => {
       const updatedLayers = [...hiddenLayers];
       // Delete the layer id if present, add it otherwise
       updatedLayers.includes(id)
-        ? updatedLayers.splice(updatedLayers.indexOf(id), 1)
+        ? updatedLayers.splice(updatedLayers.indexOf(layerId), 1)
         : updatedLayers.push(id);
 
       setHiddenLayers(updatedLayers);
@@ -126,6 +126,7 @@ const BaseMap = ({
     <Map
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...mapLibreProps}
+      id={id}
       latitude={viewState.latitude}
       longitude={viewState.longitude}
       mapLib={maplibregl}
@@ -137,7 +138,6 @@ const BaseMap = ({
       onTouchStart={() => {
         setFakeMobileHover(false);
       }}
-      ref={passedRef}
       style={style}
       zoom={viewState.zoom}
     >
