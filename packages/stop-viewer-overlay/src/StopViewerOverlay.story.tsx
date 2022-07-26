@@ -1,4 +1,4 @@
-import BaseMap from "@opentripplanner/base-map";
+import BaseMap, { Styled as BaseMapStyled } from "@opentripplanner/base-map";
 import React from "react";
 
 import { Marker } from "react-map-gl";
@@ -25,15 +25,23 @@ export default {
 };
 
 export const Default = (): JSX.Element => (
-  <BaseMap center={center} forceMaxHeight zoom={zoom}>
-    <StopViewerOverlay stop={fakeStop} StopMarker={DefaultStopMarker} visible />
-  </BaseMap>
+  <BaseMapStyled.StoryMapContainer>
+    <BaseMap center={center} zoom={zoom}>
+      <StopViewerOverlay
+        stop={fakeStop}
+        StopMarker={DefaultStopMarker}
+        visible
+      />
+    </BaseMap>
+  </BaseMapStyled.StoryMapContainer>
 );
 
 const WithCustomMarker = (): JSX.Element => (
-  <BaseMap center={center} forceMaxHeight zoom={zoom}>
-    <StopViewerOverlay stop={fakeStop} StopMarker={CustomMarker} visible />
-  </BaseMap>
+  <BaseMapStyled.StoryMapContainer>
+    <BaseMap center={center} zoom={zoom}>
+      <StopViewerOverlay stop={fakeStop} StopMarker={CustomMarker} visible />
+    </BaseMap>
+  </BaseMapStyled.StoryMapContainer>
 );
 // Can be disabled as this is a storybook-only marker
 const disableA11yParameters = {

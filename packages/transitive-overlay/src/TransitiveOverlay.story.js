@@ -1,4 +1,4 @@
-import BaseMap from "@opentripplanner/base-map";
+import BaseMap, { Styled as BaseMapStyled } from "@opentripplanner/base-map";
 import EndpointsOverlay from "@opentripplanner/endpoints-overlay";
 import React from "react";
 import { action } from "@storybook/addon-actions";
@@ -63,13 +63,22 @@ function getCustomRouteLabel(itineraryLeg) {
   return null; // null or undefined or empty string will tell transitive-js not to render a route label
 }
 
+const withMapContainer = Story => (
+  <BaseMapStyled.StoryMapContainer>
+    {/* For some reason, <Story /> does not work with snapshots,
+        so use the function syntax instead. */}
+    {Story()}
+  </BaseMapStyled.StoryMapContainer>
+);
+
 export default {
   title: "TransitiveOverlay",
+  decorators: [withMapContainer],
   component: TransitiveOverlay
 };
 
 export const WalkingItinerary = () => (
-  <BaseMap forceMaxHeight center={[45.518841, -122.679302]} zoom={19}>
+  <BaseMap center={[45.518841, -122.679302]} zoom={19}>
     <EndpointsOverlay
       fromLocation={getFromLocation(walkOnlyItinerary)}
       setLocation={setLocation}
@@ -86,7 +95,7 @@ export const WalkingItinerary = () => (
 );
 
 export const BikeOnlyItinerary = () => (
-  <BaseMap forceMaxHeight center={[45.520441, -122.68302]} zoom={16}>
+  <BaseMap center={[45.520441, -122.68302]} zoom={16}>
     <EndpointsOverlay
       fromLocation={getFromLocation(bikeOnlyItinerary)}
       setLocation={setLocation}
@@ -101,7 +110,7 @@ export const BikeOnlyItinerary = () => (
 );
 
 export const WalkTransitWalkItinerary = () => (
-  <BaseMap forceMaxHeight center={[45.520441, -122.68302]} zoom={16}>
+  <BaseMap center={[45.520441, -122.68302]} zoom={16}>
     <EndpointsOverlay
       fromLocation={getFromLocation(walkTransitWalkItinerary)}
       setLocation={setLocation}
@@ -118,7 +127,7 @@ export const WalkTransitWalkItinerary = () => (
 );
 
 export const WalkTransitWalkItineraryWithNoIntermediateStops = () => (
-  <BaseMap forceMaxHeight center={[45.525841, -122.649302]} zoom={13}>
+  <BaseMap center={[45.525841, -122.649302]} zoom={13}>
     <EndpointsOverlay
       fromLocation={getFromLocation(
         walkTransitWalkItineraryNoIntermediateStops
@@ -138,7 +147,7 @@ export const WalkTransitWalkItineraryWithNoIntermediateStops = () => (
 );
 
 export const BikeTransitBikeItinerary = () => (
-  <BaseMap forceMaxHeight center={[45.520441, -122.68302]} zoom={16}>
+  <BaseMap center={[45.520441, -122.68302]} zoom={16}>
     <EndpointsOverlay
       fromLocation={getFromLocation(bikeTransitBikeItinerary)}
       setLocation={setLocation}
@@ -155,7 +164,7 @@ export const BikeTransitBikeItinerary = () => (
 );
 
 export const WalkInterlinedTransitItinerary = () => (
-  <BaseMap forceMaxHeight center={[45.511841, -122.679302]} zoom={14}>
+  <BaseMap center={[45.511841, -122.679302]} zoom={14}>
     <EndpointsOverlay
       fromLocation={getFromLocation(walkInterlinedTransitItinerary)}
       setLocation={setLocation}
@@ -172,7 +181,7 @@ export const WalkInterlinedTransitItinerary = () => (
 );
 
 export const WalkTransitTransferItinerary = () => (
-  <BaseMap forceMaxHeight center={[45.505841, -122.631302]} zoom={14}>
+  <BaseMap center={[45.505841, -122.631302]} zoom={14}>
     <EndpointsOverlay
       fromLocation={getFromLocation(walkTransitWalkTransitWalkItinerary)}
       setLocation={setLocation}
@@ -190,7 +199,7 @@ export const WalkTransitTransferItinerary = () => (
 );
 
 export const BikeRentalItinerary = () => (
-  <BaseMap forceMaxHeight center={[45.508841, -122.631302]} zoom={14}>
+  <BaseMap center={[45.508841, -122.631302]} zoom={14}>
     <EndpointsOverlay
       fromLocation={getFromLocation(bikeRentalItinerary)}
       setLocation={setLocation}
@@ -205,7 +214,7 @@ export const BikeRentalItinerary = () => (
 );
 
 export const EScooterRentalItinerary = injectIntl(({ intl }) => (
-  <BaseMap forceMaxHeight center={[45.52041, -122.675302]} zoom={16}>
+  <BaseMap center={[45.52041, -122.675302]} zoom={16}>
     <EndpointsOverlay
       fromLocation={getFromLocation(eScooterRentalItinerary)}
       setLocation={setLocation}
@@ -223,7 +232,7 @@ export const EScooterRentalItinerary = injectIntl(({ intl }) => (
 ));
 
 export const ParkAndRideItinerary = () => (
-  <BaseMap forceMaxHeight center={[45.515841, -122.75302]} zoom={13}>
+  <BaseMap center={[45.515841, -122.75302]} zoom={13}>
     <EndpointsOverlay
       fromLocation={getFromLocation(parkAndRideItinerary)}
       setLocation={setLocation}
@@ -240,7 +249,7 @@ export const ParkAndRideItinerary = () => (
 );
 
 export const BikeRentalTransitItinerary = () => (
-  <BaseMap forceMaxHeight center={[45.538841, -122.6302]} zoom={12}>
+  <BaseMap center={[45.538841, -122.6302]} zoom={12}>
     <EndpointsOverlay
       fromLocation={getFromLocation(bikeRentalTransitBikeRentalItinerary)}
       setLocation={setLocation}
@@ -258,7 +267,7 @@ export const BikeRentalTransitItinerary = () => (
 );
 
 export const EScooterRentalTransitItinerary = injectIntl(({ intl }) => (
-  <BaseMap forceMaxHeight center={[45.538841, -122.6302]} zoom={12}>
+  <BaseMap center={[45.538841, -122.6302]} zoom={12}>
     <EndpointsOverlay
       fromLocation={getFromLocation(
         eScooterRentalTransiteScooterRentalItinerary
@@ -278,7 +287,7 @@ export const EScooterRentalTransitItinerary = injectIntl(({ intl }) => (
 ));
 
 export const TncTransitItinerary = () => (
-  <BaseMap forceMaxHeight center={[45.538841, -122.6302]} zoom={12}>
+  <BaseMap center={[45.538841, -122.6302]} zoom={12}>
     <EndpointsOverlay
       fromLocation={getFromLocation(tncTransitTncItinerary)}
       setLocation={setLocation}
@@ -295,7 +304,7 @@ export const TncTransitItinerary = () => (
 );
 
 export const WalkTransitWalkItineraryAndCustomLabelStyles = () => (
-  <BaseMap forceMaxHeight center={[45.520441, -122.68302]} zoom={16}>
+  <BaseMap center={[45.520441, -122.68302]} zoom={16}>
     <EndpointsOverlay
       fromLocation={getFromLocation(walkTransitWalkItinerary)}
       setLocation={setLocation}
@@ -327,7 +336,7 @@ export const WalkTransitWalkItineraryAndCustomLabelStyles = () => (
   </BaseMap>
 );
 export const FlexItinerary = () => (
-  <BaseMap forceMaxHeight center={[33.749, -84.388]} zoom={11}>
+  <BaseMap center={[33.749, -84.388]} zoom={11}>
     <EndpointsOverlay
       fromLocation={getFromLocation(flexItinerary)}
       setLocation={setLocation}
@@ -342,7 +351,7 @@ export const FlexItinerary = () => (
 );
 
 export const OTP2ScooterItinerary = injectIntl(({ intl }) => (
-  <BaseMap forceMaxHeight center={[33.749, -84.388]} zoom={11}>
+  <BaseMap center={[33.749, -84.388]} zoom={11}>
     <EndpointsOverlay
       fromLocation={getFromLocation(otp2ScooterItinerary)}
       setLocation={setLocation}

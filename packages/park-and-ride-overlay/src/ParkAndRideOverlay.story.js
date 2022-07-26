@@ -1,4 +1,4 @@
-import BaseMap from "@opentripplanner/base-map";
+import BaseMap, { Styled as BaseMapStyled } from "@opentripplanner/base-map";
 import React from "react";
 import { action } from "@storybook/addon-actions";
 
@@ -14,11 +14,13 @@ export default {
 };
 
 export const Default = () => (
-  <BaseMap center={center} forceMaxHeight zoom={zoom}>
-    <ParkAndRideOverlay
-      parkAndRideLocations={parkAndRideLocations}
-      setLocation={action("setLocation")}
-      visible
-    />
-  </BaseMap>
+  <BaseMapStyled.StoryMapContainer>
+    <BaseMap center={center} zoom={zoom}>
+      <ParkAndRideOverlay
+        parkAndRideLocations={parkAndRideLocations}
+        setLocation={action("setLocation")}
+        visible
+      />
+    </BaseMap>
+  </BaseMapStyled.StoryMapContainer>
 );

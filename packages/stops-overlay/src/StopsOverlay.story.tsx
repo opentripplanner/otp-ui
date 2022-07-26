@@ -1,4 +1,4 @@
-import BaseMap from "@opentripplanner/base-map";
+import BaseMap, { Styled as BaseMapStyled } from "@opentripplanner/base-map";
 
 import React from "react";
 import { action } from "@storybook/addon-actions";
@@ -17,15 +17,17 @@ const Example = ({
   minZoom = 15
 }: StopProps & { mapCenter?: [number, number] }) => {
   return (
-    <BaseMap center={mapCenter} forceMaxHeight>
-      <StopsOverlay
-        minZoom={minZoom}
-        setLocation={setLocation}
-        setViewedStop={setViewedStop}
-        stops={stops}
-        visible
-      />
-    </BaseMap>
+    <BaseMapStyled.StoryMapContainer>
+      <BaseMap center={mapCenter}>
+        <StopsOverlay
+          minZoom={minZoom}
+          setLocation={setLocation}
+          setViewedStop={setViewedStop}
+          stops={stops}
+          visible
+        />
+      </BaseMap>
+    </BaseMapStyled.StoryMapContainer>
   );
 };
 

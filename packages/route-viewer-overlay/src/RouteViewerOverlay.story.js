@@ -1,4 +1,4 @@
-import BaseMap from "@opentripplanner/base-map";
+import BaseMap, { Styled as BaseMapStyled } from "@opentripplanner/base-map";
 import React from "react";
 
 import routeData from "../__mocks__/mock-route.json";
@@ -29,14 +29,16 @@ export default {
 };
 
 const Template = args => (
-  <BaseMap center={args.center} forceMaxHeight zoom={args.zoom}>
-    <RouteViewerOverlay
-      clipToPatternStops={args.clipToPatternStops}
-      path={args.path}
-      routeData={args.routeData}
-    />
-    {args.extraLayer}
-  </BaseMap>
+  <BaseMapStyled.StoryMapContainer>
+    <BaseMap center={args.center} zoom={args.zoom}>
+      <RouteViewerOverlay
+        clipToPatternStops={args.clipToPatternStops}
+        path={args.path}
+        routeData={args.routeData}
+      />
+      {args.extraLayer}
+    </BaseMap>
+  </BaseMapStyled.StoryMapContainer>
 );
 
 export const Default = Template.bind({});

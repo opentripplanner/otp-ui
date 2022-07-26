@@ -1,4 +1,4 @@
-import BaseMap from "@opentripplanner/base-map";
+import BaseMap, { Styled as BaseMapStyled } from "@opentripplanner/base-map";
 import React from "react";
 
 import tripData from "../__mocks__/mock-trip.json";
@@ -13,21 +13,25 @@ export default {
 };
 
 export const Default = (): JSX.Element => (
-  <BaseMap forceMaxHeight center={center} zoom={zoom}>
-    <TripViewerOverlay tripData={tripData} visible />
-  </BaseMap>
+  <BaseMapStyled.StoryMapContainer>
+    <BaseMap center={center} zoom={zoom}>
+      <TripViewerOverlay tripData={tripData} visible />
+    </BaseMap>
+  </BaseMapStyled.StoryMapContainer>
 );
 
 export const WithPathStyling = (): JSX.Element => (
-  <BaseMap forceMaxHeight center={center} zoom={zoom}>
-    <TripViewerOverlay
-      path={{
-        color: "#000",
-        opacity: 0.2,
-        weight: 5
-      }}
-      tripData={tripData}
-      visible
-    />
-  </BaseMap>
+  <BaseMapStyled.StoryMapContainer>
+    <BaseMap center={center} zoom={zoom}>
+      <TripViewerOverlay
+        path={{
+          color: "#000",
+          opacity: 0.2,
+          weight: 5
+        }}
+        tripData={tripData}
+        visible
+      />
+    </BaseMap>
+  </BaseMapStyled.StoryMapContainer>
 );

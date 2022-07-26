@@ -123,19 +123,20 @@ const Example = (props: ExampleProps) => {
 
   const { symbols, symbolTransform } = props;
   return (
-    <BaseMap
-      center={mapCenter}
-      forceMaxHeight
-      onViewportChanged={handleViewportChanged}
-      zoom={zoom}
-    >
-      <ZoomBasedMarkers
-        entities={mockStops}
-        symbols={symbols}
-        symbolTransform={symbolTransform}
+    <BaseMapStyles.StoryMapContainer>
+      <BaseMap
+        center={mapCenter}
+        onViewportChanged={handleViewportChanged}
         zoom={zoom}
-      />
-    </BaseMap>
+      >
+        <ZoomBasedMarkers
+          entities={mockStops}
+          symbols={symbols}
+          symbolTransform={symbolTransform}
+          zoom={zoom}
+        />
+      </BaseMap>
+    </BaseMapStyles.StoryMapContainer>
   );
 };
 

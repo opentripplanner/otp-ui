@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@mapbox/polyline": "^1.1.1",
-    "@opentripplanner/base-map": "^3.0.0-alpha.1",
+    "@opentripplanner/base-map": "^3.0.0-alpha.3",
     "@opentripplanner/itinerary-body": "^4.0.0",
     "@opentripplanner/core-utils": "^6.0.0",
     "lodash.isequal": "^4.5.0",

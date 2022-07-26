@@ -1,4 +1,4 @@
-import BaseMap from "@opentripplanner/base-map";
+import BaseMap, { Styled as BaseMapStyled } from "@opentripplanner/base-map";
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { boolean } from "@storybook/addon-knobs";
@@ -53,18 +53,20 @@ const ZoomControlledMapWithVehicleRentalOverlay = ({
 }: StoryProps) => (
   // Caution, <BaseMap> must be a direct parent of <VehicleRentalOverlay>.
   // Therefore, do not place <BaseMap> in a decorator at this time.
-  <BaseMap center={center} forceMaxHeight zoom={INITIAL_ZOOM}>
-    <VehicleRentalOverlay
-      id="test"
-      configCompanies={configCompanies}
-      companies={companies}
-      getStationName={getStationName}
-      setLocation={setLocation}
-      refreshVehicles={refreshVehicles}
-      stations={stations}
-      visible={visible}
-    />
-  </BaseMap>
+  <BaseMapStyled.StoryMapContainer>
+    <BaseMap center={center} zoom={INITIAL_ZOOM}>
+      <VehicleRentalOverlay
+        id="test"
+        configCompanies={configCompanies}
+        companies={companies}
+        getStationName={getStationName}
+        setLocation={setLocation}
+        refreshVehicles={refreshVehicles}
+        stations={stations}
+        visible={visible}
+      />
+    </BaseMap>
+  </BaseMapStyled.StoryMapContainer>
 );
 
 function customStationName(_, station) {
