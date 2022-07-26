@@ -1,7 +1,9 @@
-import React from "react";
+import {
+  MarkerWithPopup,
+  Styled as BaseMapStyled
+} from "@opentripplanner/base-map";
 import { Stop } from "@opentripplanner/types";
-import { MarkerWithPopup } from "../../base-map/lib";
-import { LeafletStyleMarker } from "../../base-map/lib/styled";
+import React from "react";
 
 export default function DefaultStopMarker({
   // leafletPath, TODO Re-add the path settings?
@@ -13,15 +15,15 @@ export default function DefaultStopMarker({
 }): JSX.Element {
   return (
     <MarkerWithPopup
-      position={[stop.lat, stop.lon]}
       key={stop.id}
       popupContents={<div>{stop.name}</div>}
+      position={[stop.lat, stop.lon]}
     >
-      <LeafletStyleMarker
+      <BaseMapStyled.LeafletStyleMarker
+        color="#00FFFF"
         size={radius * 2}
         stroke={radius / 3}
         strokeColor="#333"
-        color="#00FFFF"
       />
     </MarkerWithPopup>
   );

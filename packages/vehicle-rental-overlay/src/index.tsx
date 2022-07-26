@@ -1,13 +1,14 @@
-import { Source, Layer, useMap, Popup } from "react-map-gl";
-import { EventData } from "mapbox-gl";
-import React, { useEffect, useState } from "react";
+import { MarkerWithPopup } from "@opentripplanner/base-map";
 import {
   Company,
-  Station,
+  ConfiguredCompany,
   MapLocationActionArg,
-  ConfiguredCompany
+  Station
 } from "@opentripplanner/types";
-import { MarkerWithPopup } from "@opentripplanner/base-map";
+import { EventData } from "mapbox-gl";
+import { useMap, Layer, Popup, Source } from "react-map-gl";
+import React, { useEffect, useState } from "react";
+
 import StationPopup from "./StationPopup";
 import { BaseBikeRentalIcon, StationMarker } from "./styled";
 
@@ -43,14 +44,14 @@ const checkIfPositionInViewport = (
 
 type Props = {
   /**
-   * The entire companies config array.
-   */
-  configCompanies: ConfiguredCompany[];
-  /**
    * A list of companies that are applicable to just this instance of the
    * overlay.
    */
   companies?: string[];
+  /**
+   * The entire companies config array.
+   */
+  configCompanies: ConfiguredCompany[];
   /**
    * An id, used to make this layer uniquely identifiable
    */
@@ -102,21 +103,20 @@ type Props = {
  * types. This layer can be configured to show different styles of markers at
  * different zoom levels.
  */
-const VehicleRentalOverlay = (props: Props): JSX.Element => {
-  const { mainMap } = useMap();
-  const zoom = mainMap?.getZoom();
-  const bounds = mainMap?.getBounds();
+const VehicleRentalOverlay = ({
+  companies,
+  configCompanies,
+  getStationName,
+  id,
+  refreshVehicles,
+  setLocation,
+  stations,
+  visible
+}: Props): JSX.Element => {
+  const { current: map } = useMap();
+  const zoom = map?.getZoom();
+  const bounds = map?.getBounds();
 
-  const {
-    configCompanies,
-    companies,
-    getStationName,
-    id,
-    refreshVehicles,
-    setLocation,
-    stations,
-    visible
-  } = props;
   const layerId = `rental-vehicles-${id}`;
   const [clickedVehicle, setClickedVehicle] = useState(null);
 
@@ -133,20 +133,21 @@ const VehicleRentalOverlay = (props: Props): JSX.Element => {
   useEffect(() => {
     const VEHICLE_LAYERS = [layerId];
     VEHICLE_LAYERS.forEach(stopLayer => {
-      mainMap?.on("mouseenter", stopLayer, () => {
-        mainMap.getCanvas().style.cursor = "pointer";
+      map?.on("mouseenter", stopLayer, () => {
+        map.getCanvas().style.cursor = "pointer";
       });
-      mainMap?.on("mouseleave", stopLayer, () => {
-        mainMap.getCanvas().style.cursor = "";
+      map?.on("mouseleave", stopLayer, () => {
+        map.getCanvas().style.cursor = "";
       });
-      mainMap?.on("click", stopLayer, (event: EventData) => {
+      map?.on("click", stopLayer, (event: EventData) => {
         setClickedVehicle(event.features?.[0].properties);
       });
     });
-  }, [mainMap]);
+  }, [map]);
 
   // Don't render if no map or no stops are defined.
   if (visible === false || !stations || stations.length === 0) {
+    // Null can't be returned here -- react-map-gl dislikes null values as children
     return <></>;
   }
 
@@ -162,14 +163,14 @@ const VehicleRentalOverlay = (props: Props): JSX.Element => {
       )
       .map(vehicle => ({
         type: "Feature",
+        geometry: { type: "Point", coordinates: [vehicle.x, vehicle.y] },
         properties: {
           ...vehicle,
           networks: JSON.stringify(vehicle.networks),
           "stroke-width":
             vehicle.isFloatingBike || vehicle.isFloatingVehicle ? 1 : 2,
           color: getColorForStation(vehicle)
-        },
-        geometry: { type: "Point", coordinates: [vehicle.x, vehicle.y] }
+        }
       }))
   };
 
@@ -179,13 +180,13 @@ const VehicleRentalOverlay = (props: Props): JSX.Element => {
         <Source type="geojson" data={vehiclesGeoJSON}>
           <Layer
             id={layerId}
-            type="circle"
             paint={{
               "circle-color": ["get", "color"],
               "circle-opacity": 0.9,
-              "circle-stroke-width": ["get", "stroke-width"],
-              "circle-stroke-color": "#333"
+              "circle-stroke-color": "#333",
+              "circle-stroke-width": ["get", "stroke-width"]
             }}
+            type="circle"
           />
           {/* this is where we add the symbols layer. add a second layer that gets swapped in and out dynamically */}
         </Source>
@@ -198,7 +199,6 @@ const VehicleRentalOverlay = (props: Props): JSX.Element => {
           .map(station => (
             <MarkerWithPopup
               key={station.id}
-              position={[station.y, station.x]}
               popupContents={
                 <StationPopup
                   configCompanies={configCompanies}
@@ -210,6 +210,7 @@ const VehicleRentalOverlay = (props: Props): JSX.Element => {
                   station={station}
                 />
               }
+              position={[station.y, station.x]}
             >
               {station.bikesAvailable !== undefined &&
               !station.isFloatingBike &&
@@ -228,20 +229,20 @@ const VehicleRentalOverlay = (props: Props): JSX.Element => {
           ))}
       {clickedVehicle && (
         <Popup
+          latitude={clickedVehicle.y}
+          longitude={clickedVehicle.x}
+          maxWidth="100%"
           onClose={() => {
             setClickedVehicle(null);
           }}
-          longitude={clickedVehicle.x}
-          latitude={clickedVehicle.y}
-          maxWidth="100%"
         >
           <StationPopup
             configCompanies={configCompanies}
+            getStationName={getStationName}
             setLocation={location => {
               setClickedVehicle(null);
               setLocation(location);
             }}
-            getStationName={getStationName}
             station={{
               ...clickedVehicle,
               networks: JSON.parse(clickedVehicle.networks)

@@ -8,8 +8,6 @@ import { Dog } from "@styled-icons/fa-solid/Dog";
 
 import EndpointsOverlay from ".";
 
-import "maplibre-gl/dist/maplibre-gl.css";
-
 // BaseMap props
 const center = [45.5215, -122.686202];
 const zoom = 16;

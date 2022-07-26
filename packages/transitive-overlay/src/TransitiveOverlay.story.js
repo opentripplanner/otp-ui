@@ -6,8 +6,6 @@ import { injectIntl } from "react-intl";
 
 import TransitiveOverlay, { itineraryToTransitive } from ".";
 
-import "maplibre-gl/dist/maplibre-gl.css";
-
 // Use the font-family defined by storybook <body> element,
 // so we don't need to install/import extra fonts.
 const storybookFonts =
@@ -207,7 +205,7 @@ export const BikeRentalItinerary = () => (
 );
 
 export const EScooterRentalItinerary = injectIntl(({ intl }) => (
-  <BaseMap center={[45.52041, -122.675302]} zoom={16}>
+  <BaseMap forceMaxHeight center={[45.52041, -122.675302]} zoom={16}>
     <EndpointsOverlay
       fromLocation={getFromLocation(eScooterRentalItinerary)}
       setLocation={setLocation}
@@ -260,7 +258,7 @@ export const BikeRentalTransitItinerary = () => (
 );
 
 export const EScooterRentalTransitItinerary = injectIntl(({ intl }) => (
-  <BaseMap center={[45.538841, -122.6302]} zoom={12}>
+  <BaseMap forceMaxHeight center={[45.538841, -122.6302]} zoom={12}>
     <EndpointsOverlay
       fromLocation={getFromLocation(
         eScooterRentalTransiteScooterRentalItinerary
@@ -344,7 +342,7 @@ export const FlexItinerary = () => (
 );
 
 export const OTP2ScooterItinerary = injectIntl(({ intl }) => (
-  <BaseMap center={[33.749, -84.388]} zoom={11}>
+  <BaseMap forceMaxHeight center={[33.749, -84.388]} zoom={11}>
     <EndpointsOverlay
       fromLocation={getFromLocation(otp2ScooterItinerary)}
       setLocation={setLocation}

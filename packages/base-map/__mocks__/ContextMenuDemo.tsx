@@ -1,7 +1,7 @@
 import { LngLat } from "maplibre-gl";
 import React, { Component } from "react";
 import { Popup } from "react-map-gl";
-import BaseMap from "../lib";
+import BaseMap from "../src";
 
 const center: [number, number] = [45.522862, -122.667837];
 
@@ -29,7 +29,7 @@ export default class ContextMenuDemo extends Component<Props, State> {
     const { contents, location } = this.state;
 
     return (
-      <div style={{ height: "100vh" }}>
+      <div style={{ height: "90vh" }}>
         <BaseMap center={center} onContextMenu={this.handleContextMenu}>
           {contents && location && (
             <Popup

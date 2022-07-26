@@ -5,7 +5,6 @@ import routeData from "../__mocks__/mock-route.json";
 import flexRouteData from "../__mocks__/mock-flex-route.json";
 import RouteViewerOverlay from ".";
 
-import "maplibre-gl/dist/maplibre-gl.css";
 import StopsOverlay from "../../stops-overlay/src";
 
 const PORTLAND = [45.543092, -122.671202];

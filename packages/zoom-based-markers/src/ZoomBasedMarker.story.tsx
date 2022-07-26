@@ -1,24 +1,23 @@
-// Removed as core-utils is typescripted. TODO: Remove when typescripting!
+// Removed as these stories were built for Leaflet. It isn't worth fully updating them
+// as this layer is not really needed anymore with MapLibreGL and should be removed soon.
 /* eslint-disable react/forbid-prop-types */
 // eslint-disable-next-line max-classes-per-file
 import BaseMap, {
   Styled as BaseMapStyles,
   MarkerWithPopup
 } from "@opentripplanner/base-map";
-import React, { useState } from "react";
-import { action } from "@storybook/addon-actions";
 import { Bus, Streetcar } from "@opentripplanner/icons";
 import {
+  LayerEntity,
   Stop,
-  ZoomBasedSymbol,
   SymbolComponent,
   SymbolComponentBaseProps,
-  LayerEntity
+  ZoomBasedSymbol
 } from "@opentripplanner/types";
+import { action } from "@storybook/addon-actions";
+import React, { useState } from "react";
 
 import ZoomBasedMarkers from ".";
-
-import "maplibre-gl/dist/maplibre-gl.css";
 
 const mockStops = [
   {

@@ -1,12 +1,9 @@
 import BaseMap from "@opentripplanner/base-map";
 import React from "react";
-import { Stop } from "@opentripplanner/types";
 
 import { Marker } from "react-map-gl";
 import DefaultStopMarker from "./default-stop-marker";
-import StopViewerOverlay from ".";
-
-import "maplibre-gl/dist/maplibre-gl.css";
+import StopViewerOverlay, { StopContainer } from ".";
 
 const center: [number, number] = [45.518092, -122.671202];
 const zoom = 13;
@@ -18,7 +15,7 @@ const fakeStop = {
   name: "Fake Stop"
 };
 
-function CustomMarker({ stop }: { stop: Stop }) {
+function CustomMarker({ stop }: StopContainer) {
   return <Marker longitude={stop.lon} latitude={stop.lat} key={stop.id} />;
 }
 
@@ -33,8 +30,19 @@ export const Default = (): JSX.Element => (
   </BaseMap>
 );
 
-export const WithCustomMarker = (): JSX.Element => (
+const WithCustomMarker = (): JSX.Element => (
   <BaseMap center={center} forceMaxHeight zoom={zoom}>
     <StopViewerOverlay stop={fakeStop} StopMarker={CustomMarker} visible />
   </BaseMap>
 );
+// Can be disabled as this is a storybook-only marker
+const disableA11yParameters = {
+  a11y: {
+    config: {
+      rules: [{ id: "aria-allowed-attr", enabled: false }]
+    }
+  }
+};
+
+WithCustomMarker.parameters = disableA11yParameters;
+export { WithCustomMarker };

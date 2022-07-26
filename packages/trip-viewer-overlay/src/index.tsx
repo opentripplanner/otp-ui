@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
 import polyline from "@mapbox/polyline";
-import { Layer, Source, useMap } from "react-map-gl";
 import { LngLatBounds } from "maplibre-gl";
+import { Layer, Source, useMap } from "react-map-gl";
+import React, { useEffect, useMemo } from "react";
 
 type Props = {
   path?: {
@@ -23,37 +23,42 @@ const TripViewerOverlay = (props: Props): JSX.Element => {
   const pts = polyline
     .decode(geometry.points)
     .map((pt: [number, number]) => pt.reverse());
-  const { mainMap } = useMap();
-  useEffect(() => {
-    const bounds = pts.reduce((bnds, coord) => {
+
+  const bounds = useMemo(() => {
+    return pts.reduce((bnds, coord) => {
       return bnds.extend(coord);
     }, new LngLatBounds(pts[0], pts[0]));
+  }, [pts]);
 
-    mainMap?.fitBounds(bounds, {
-      duration: 100,
-      padding: { top: 10, bottom: 25, left: 15, right: 5 }
-    });
-  }, [mainMap]);
+  const { current: map } = useMap();
+  useEffect(() => {
+    if (bounds.length === 4 && bounds.every(Number.isFinite)) {
+      map?.fitBounds(bounds, {
+        duration: 500,
+        padding: 200
+      });
+    }
+  }, [map, bounds]);
 
   if (!visible || !pts) return null;
 
   const geojson: GeoJSON.Feature = {
     type: "Feature",
-    properties: [],
-    geometry: { type: "LineString", coordinates: pts }
+    geometry: { type: "LineString", coordinates: pts },
+    properties: []
   };
 
   return (
     <Source id="route" type="geojson" data={geojson}>
       <Layer
         id="route"
-        type="line"
-        layout={{ "line-join": "round", "line-cap": "round" }}
+        layout={{ "line-cap": "round", "line-join": "round" }}
         paint={{
           "line-color": path?.color || "#00bfff",
-          "line-width": path?.weight || 8,
-          "line-opacity": path?.opacity || 0.6
+          "line-opacity": path?.opacity || 0.6,
+          "line-width": path?.weight || 8
         }}
+        type="line"
       />
     </Source>
   );

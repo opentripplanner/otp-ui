@@ -109,6 +109,13 @@ export type TransitVehicle = {
   heading?: number;
 };
 
+export type OTPTransitVehicle = TransitVehicle & {
+  label?: string;
+  nextStopName?: string;
+  speed?: number;
+  stopStatus?: string; // TODO: Make enum
+};
+
 export type VehicleRentalMapOverlaySymbol =
   | {
       dockStrokeColor?: string;
@@ -436,12 +443,12 @@ export type Stop = {
   /**
    * The stop code if the stop has one
    */
-  id: string;
   code?: string;
   color?: string;
   dist?: number;
-  lat: number;
   geometries?: { geoJson?: GeoJSON.Polygon };
+  id: string;
+  lat: number;
   lon: number;
   name: string;
   routes?: Route[];
@@ -493,11 +500,11 @@ export type TimeOptions = {
 };
 
 export type TransitivePlace = {
+  place_lat?: number;
+  place_lon?: number;
+  place_name?: string;
   placeId?: string;
   type: string;
-  place_name?: string;
-  place_lon?: number;
-  place_lat?: number;
 };
 export type TransitiveJourney = {
   journey_id: string;

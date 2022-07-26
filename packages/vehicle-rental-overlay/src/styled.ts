@@ -36,17 +36,17 @@ const getPctIcon = (percent: number) => {
  * their own unique icon.
  */
 export const BaseBikeRentalIcon = styled.div<{ percent: number }>`
-  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: contain;
+  height: 24px;
   margin: auto;
   width: 24px;
-  height: 24px;
   ${props => getPctIcon(props.percent)}
 `;
 
 export const StationMarker = styled(MapMarkerAlt)`
+  color: ${props => props.color};
   height: 12;
   width: 12;
-  color: ${props => props.color};
 `;

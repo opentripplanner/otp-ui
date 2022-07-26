@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { MapProvider, Map, MapRef } from "react-map-gl";
+import React, { useCallback, useEffect, useState } from "react";
+import { MapProps, MapRef, Map } from "react-map-gl";
 import maplibregl, { Event } from "maplibre-gl";
 
 import * as Styled from "./styled";
@@ -8,7 +8,11 @@ import MarkerWithPopup from "./MarkerWithPopup";
 
 /**
  * The BaseMap component renders a MapLibre map
- * markers that are declared as child elements of the BaseMap element.
+ * as well as markers that are declared as child elements of the BaseMap element.
+ *
+ * As BaseMap wraps a react-map-gl Map component, any control which can be added as a child of a react-map-gl map is supported.
+ * See https://visgl.github.io/react-map-gl/docs/api-reference/map to see which react-map-gl
+ * children are shipped by default. Others are also supported.
  *
  * Overlays are groups of similar MapLibre markers, e.g. vehicle location
  * markers, bus stop markers, etc.
@@ -18,23 +22,34 @@ import MarkerWithPopup from "./MarkerWithPopup";
  * with an id are added to the control.
  */
 type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
+  /** A URL pointing to the vector tile specification which should be used as the main map.  */
   baseLayer?: string;
+  /** A [lat, lon] position to center the map at. */
   center?: [number, number];
+  /** Whether or not to override the default MapLibre 100% height to be 90vh */
   forceMaxHeight?: boolean;
+  /** An object of props which should be passed down to MapLibre */
+  mapLibreProps?: MapProps;
+  /** The maximum zoom level the map should allow */
   maxZoom?: number;
+  /** A callback method which is fired when the map is clicked with the left mouse button/tapped */
   onClick?: (evt: Event) => void;
+  /** A callback method which is fired when the map is clicked with the right mouse button/long tapped */
   // Unknown is used here because of a maplibre/mapbox issue with the true type, MapLayerMouseEvent
   onContextMenu?: (e: unknown) => void;
+  /** A callback method which is fired when the map zoom or map bounds change */
   // TODO: does this cause integration issues?
   onViewportChanged?: (e: maplibregl.MapLibreEvent) => void;
+  /** A ref to pass to the MapLibre react component */
   passedRef?: React.Ref<MapRef>;
+  /** An initial zoom value for the map */
   zoom?: number;
 };
 type State = {
+  fitBoundsOptions?: Record<string, number | string | boolean>;
   latitude: number;
   longitude: number;
   zoom: number;
-  fitBoundsOptions?: Record<string, number | string | boolean>;
 };
 
 const BaseMap = ({
@@ -43,6 +58,7 @@ const BaseMap = ({
   center,
   children,
   forceMaxHeight,
+  mapLibreProps,
   maxZoom,
   onClick,
   onContextMenu,
@@ -53,27 +69,41 @@ const BaseMap = ({
   const [viewState, setViewState] = React.useState<State>({
     fitBoundsOptions: {
       animate: true,
-      duration: 100,
+      duration: 300,
       essential: false,
-      maxDuration: 300,
-      padding: 10
+      maxDuration: 600,
+      padding: 200
     },
     latitude: center?.[0],
     longitude: center?.[1],
     zoom: initZoom
   });
 
+  // On mobile hover is unavailable, so we use this variable to use a two tap process
+  // to simulate a hover
+  const [fakeMobileHover, setFakeMobileHover] = useState(false);
+
   useEffect(() => {
     callIfValid(onViewportChanged)(viewState);
   }, [viewState]);
+
+  useEffect(() => {
+    if (center?.[0] === null || center?.[1] === null) return;
+
+    setViewState({
+      ...viewState,
+      latitude: center?.[0],
+      longitude: center?.[1]
+    });
+  }, [center]);
 
   const toggleableLayers = Array.isArray(children)
     ? children
         .flat()
         .filter(child => child?.props?.id !== undefined)
         .map(child => {
-          const { visible, name, id } = child.props;
-          return { visible, name, id };
+          const { id, name, visible } = child.props;
+          return { id, name, visible };
         })
     : [];
 
@@ -81,74 +111,84 @@ const BaseMap = ({
     toggleableLayers.filter(layer => !layer?.visible).map(layer => layer.id)
   );
 
-  return (
-    <MapProvider>
-      <Map
-        ref={passedRef}
-        id="mainMap"
-        latitude={viewState.latitude}
-        longitude={viewState.longitude}
-        mapLib={maplibregl}
-        mapStyle={baseLayer}
-        maxZoom={maxZoom}
-        onClick={onClick}
-        onContextMenu={onContextMenu}
-        onMove={evt => setViewState(evt.viewState)}
-        style={{
-          display: "block",
-          height: forceMaxHeight ? "100vh" : "100%",
-          width: "100%"
-        }}
-        zoom={viewState.zoom}
-      >
-        {toggleableLayers.length > 0 && (
-          // TODO: Mobile view
-          <Styled.LayerSelector className="filter-group" id="filter-group">
-            <ul className="layers-list">
-              {toggleableLayers.map((layer: LayerProps, index: number) => {
-                return (
-                  <li key={index}>
-                    {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                    <label>
-                      <input
-                        checked={!hiddenLayers.includes(layer.id)}
-                        id={layer.id}
-                        onChange={() => {
-                          const updatedLayers = [...hiddenLayers];
-                          // Delete the layer id if present, add it otherwise
-                          updatedLayers.includes(layer.id)
-                            ? updatedLayers.splice(
-                                updatedLayers.indexOf(layer.id),
-                                1
-                              )
-                            : updatedLayers.push(layer.id);
+  const adjustHiddenLayers = useCallback(
+    id => {
+      const updatedLayers = [...hiddenLayers];
+      // Delete the layer id if present, add it otherwise
+      updatedLayers.includes(id)
+        ? updatedLayers.splice(updatedLayers.indexOf(id), 1)
+        : updatedLayers.push(id);
 
-                          setHiddenLayers(updatedLayers);
-                        }}
-                        type="checkbox"
-                      />
-                      {layer.name || layer.id}
-                    </label>
-                  </li>
-                );
-              })}
-            </ul>
-          </Styled.LayerSelector>
-        )}
-        {Array.isArray(children)
-          ? children
-              .flat()
-              .filter(child => !hiddenLayers.includes(child?.props?.id))
-          : children}
-      </Map>
-    </MapProvider>
+      setHiddenLayers(updatedLayers);
+    },
+    [hiddenLayers]
+  );
+
+  return (
+    <Map
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...mapLibreProps}
+      latitude={viewState.latitude}
+      longitude={viewState.longitude}
+      mapLib={maplibregl}
+      mapStyle={baseLayer}
+      maxZoom={maxZoom}
+      onClick={onClick}
+      onContextMenu={onContextMenu}
+      onMove={evt => setViewState(evt.viewState)}
+      onTouchStart={() => {
+        setFakeMobileHover(false);
+      }}
+      ref={passedRef}
+      style={{
+        display: "block",
+        height: forceMaxHeight ? "90vh" : "100%",
+        width: "100%"
+      }}
+      zoom={viewState.zoom}
+    >
+      {toggleableLayers.length > 0 && (
+        <Styled.LayerSelector
+          onTouchEnd={() => {
+            setFakeMobileHover(true);
+          }}
+          className="filter-group"
+          id="filter-group"
+        >
+          <ul
+            className={`layers-list ${fakeMobileHover && "fake-mobile-hover"}`}
+          >
+            {toggleableLayers.map((layer: LayerProps, index: number) => {
+              return (
+                <li key={index}>
+                  {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+                  <label>
+                    <input
+                      checked={!hiddenLayers.includes(layer.id)}
+                      id={layer.id}
+                      onChange={() => adjustHiddenLayers(layer.id)}
+                      type="checkbox"
+                    />
+                    {layer.name || layer.id}
+                  </label>
+                </li>
+              );
+            })}
+          </ul>
+        </Styled.LayerSelector>
+      )}
+      {Array.isArray(children)
+        ? children
+            .flat()
+            .filter(child => !hiddenLayers.includes(child?.props?.id))
+        : children}
+    </Map>
   );
 };
 
 export default BaseMap;
 
-type LayerProps = {
-  children?: JSX.Element | JSX.Element[];
+type LayerProps = React.ComponentPropsWithoutRef<React.ElementType> & {
   id: string;
   name?: string;
   visible?: boolean;

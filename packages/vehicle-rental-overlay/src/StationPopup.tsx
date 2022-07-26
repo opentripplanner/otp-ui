@@ -1,15 +1,15 @@
+import { Styled as BaseMapStyled } from "@opentripplanner/base-map";
+import coreUtils from "@opentripplanner/core-utils";
+import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 import {
   Company,
   ConfiguredCompany,
   MapLocationActionArg,
   Station
 } from "@opentripplanner/types";
-import { Styled as BaseMapStyled } from "@opentripplanner/base-map";
-import React from "react";
-import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
-import coreUtils from "@opentripplanner/core-utils";
-import { IntlShape, useIntl, FormattedMessage } from "react-intl";
 import flatten from "flat";
+import { FormattedMessage, IntlShape, useIntl } from "react-intl";
+import React from "react";
 
 // Load the default messages.
 // @ts-expect-error why is this failing?
@@ -79,10 +79,10 @@ function makeDefaultGetStationName(intl: IntlShape) {
 }
 
 type Props = {
-  station: Station;
   configCompanies: ConfiguredCompany[];
   getStationName: (configCompanies: Company[], station: Station) => string;
   setLocation: (arg: MapLocationActionArg) => void;
+  station: Station;
 };
 /**
  * Render some popup html for a station. This contains custom logic for

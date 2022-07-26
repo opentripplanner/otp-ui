@@ -6,16 +6,16 @@ import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Location } from "@opentripplanner/types";
 import React from "react";
-import parkAndRideMarker from "./park-and-ride-marker";
+import ParkAndRideMarker from "./park-and-ride-marker";
 
 type Props = {
   id?: string;
   keyboard?: boolean;
   parkAndRideLocations: { name: string; x: number; y: number }[];
   setLocation: ({
-    locationType: string,
     // eslint-disable-next-line @typescript-eslint/no-shadow
     location: Location,
+    locationType: string,
     reverseGeocode: boolean
   }) => void;
 };
@@ -56,7 +56,7 @@ const ParkAndRideOverlay = (props: Props): JSX.Element => {
             key={k}
             position={[location.y, location.x]}
           >
-            {parkAndRideMarker}
+            <ParkAndRideMarker />
           </MarkerWithPopup>
         );
       })}
