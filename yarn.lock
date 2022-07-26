@@ -2992,16 +2992,6 @@
     prop-types "^15.7.2"
     qs "^6.9.1"
 
-"@opentripplanner/endpoints-overlay@^1.4.1":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/endpoints-overlay/-/endpoints-overlay-1.4.1.tgz#67c6ed98b0c08d70fc2aef22ccc97ef5b69f5cc9"
-  integrity sha512-aghe6THmdUDgudOdXbYpezWwbONyTxWrrGIrcgIO4/WoRSUFdmSSlWtSM2CmfAbYPMLUo2J5t7r4gjIAS4tLOA==
-  dependencies:
-    "@opentripplanner/core-utils" "^4.5.0"
-    "@opentripplanner/location-icon" "^1.4.0"
-    "@styled-icons/fa-solid" "^10.34.0"
-    flat "^5.0.2"
-
 "@opentripplanner/icons@1.2.2", "@opentripplanner/icons@^1.2.2":
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/@opentripplanner/icons/-/icons-1.2.2.tgz#18c93ce34afe2d83a2f0fc6ecea85aa587d14366"

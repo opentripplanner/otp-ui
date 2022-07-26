@@ -29,7 +29,6 @@
   },
   "devDependencies": {
     "@opentripplanner/types": "^2.0.0",
-    "@opentripplanner/endpoints-overlay": "^1.4.1",
     "@opentripplanner/itinerary-body": "^3.0.5"
   },
   "peerDependencies": {
