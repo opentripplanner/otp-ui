@@ -1,4 +1,4 @@
-import BaseMap from "@opentripplanner/base-map";
+import BaseMap, { Styled as BaseMapStyled } from "@opentripplanner/base-map";
 import { UserLocationAndType } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { action } from "@storybook/addon-actions";
@@ -9,7 +9,7 @@ import { Dog } from "@styled-icons/fa-solid/Dog";
 import EndpointsOverlay from ".";
 
 // BaseMap props
-const center = [45.5215, -122.686202];
+const center: [number, number] = [45.5215, -122.686202];
 const zoom = 16;
 
 // EndpointsOverlay props
@@ -44,11 +44,13 @@ function CatDogIcon({ type }: UserLocationAndType) {
 const withMap = (
   Story: ComponentStory<typeof EndpointsOverlay>
 ): ReactElement => (
-  <BaseMap center={center} forceMaxHeight zoom={zoom}>
-    {/* For some reason, <Story /> does not work with snapshots,
+  <BaseMapStyled.StoryMapContainer>
+    <BaseMap center={center} zoom={zoom}>
+      {/* For some reason, <Story /> does not work with snapshots,
         so use the function syntax instead. */}
-    {Story()}
-  </BaseMap>
+      {Story()}
+    </BaseMap>
+  </BaseMapStyled.StoryMapContainer>
 );
 
 export default {
