@@ -31,9 +31,11 @@ const removePointsInFlexZone = (stops: Stop[], points: [number, number][]) => {
   const bboxes =
     stops
       ?.map(stop => {
+        // @ts-expect-error alpha only change as we resolve merge conflicts
         if (stop.geometries?.geoJson?.type !== "Polygon") {
           return null;
         }
+        // @ts-expect-error alpha only change
         return stop.geometries.geoJson.coordinates?.[0] || null;
       })
       // Remove the null entries

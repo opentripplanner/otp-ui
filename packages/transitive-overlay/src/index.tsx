@@ -8,6 +8,10 @@ import {
   TransitivePlace
 } from "@opentripplanner/types";
 
+import { itineraryToTransitive } from "./util";
+
+export { itineraryToTransitive };
+
 // TODO: BETTER COLORS
 const modeColorMap = {
   CAR: "#888",

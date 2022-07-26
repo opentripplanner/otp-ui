@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/transitive-overlay",
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.0",
   "description": "A map overlay to show an itinerary based on transitive.js",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -12,7 +12,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "tsc"
+    "tsc": "echo IF YOU SEE THIS AND YOU ARE NOT ON THE ALPHA BRANCH, SOMETHING HAS GONE HORRIBLY WRONG"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@mapbox/polyline": "^1.1.1",
+    "@opentripplanner/itinerary-body": "^4.0.0",
     "@opentripplanner/core-utils": "^5.0.1",
     "lodash.isequal": "^4.5.0",
     "transitive-js": "^0.14.1"

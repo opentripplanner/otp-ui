@@ -1,6 +1,6 @@
 // Prettier does not recognize the import type syntax.
 // eslint-disable-next-line prettier/prettier
-import type { Fare, Leg, Itinerary, Money } from "@opentripplanner/types";
+import type { FareDetails, Money, Itinerary, Leg, Fare, } from "@opentripplanner/types";
 import type { ReactElement } from "react";
 
 export interface CaloriesDetailsProps {
@@ -13,21 +13,37 @@ export interface DepartureDetailsProps {
   departureDate: Date;
 }
 
-export interface FareDetailsLayout {
-  header: string;
+export enum FareTableText {
+  regular = "regular",
+  youth = "youth",
+  senior = "senior",
+  special = "special",
+  cash = "cash",
+  electronic = "electronic"
+}
+
+export interface FareTableLayout {
   cols: {
+    header: FareTableText;
     key: string;
-    header: string;
   }[];
+  header: FareTableText;
 }
 export interface TransitFareData {
   [key: string]: Money
 }
 
 export interface FareDetailsProps {
-  transitFares: Fare;
-  legs: Leg[];
-  layout: FareDetailsLayout[];
+  maxTNCFare: number;
+  minTNCFare: number;
+  transitFares: TransitFareData;
+}
+
+export interface FareLegTableProps {
+  layout?: FareTableLayout[];
+  legs?: Leg[];
+  transitFareDetails?: FareDetails;
+  transitFares?: TransitFareData;
 }
 
 export interface TransitFareProps {
@@ -57,15 +73,19 @@ export interface TripDetailsProps {
    */
   DepartureDetails?: React.ElementType<DepartureDetailsProps>;
   /**
+   * Slot for a custom component to render the expandable section for fares.
+   */
+  FareDetails?: React.ElementType<FareDetailsProps>;
+  /**
+   * Column and table configuration for fare details/fare by leg table.
+   */
+  fareDetailsLayout?: FareTableLayout[];
+  /**
    * Mapping between fare keys and human-readable names for them.
    */
   fareKeyNameMap?: {
     [name: string]: string;
   };
-  /**
-   * Column and table configuration for fare details/fare by leg table.
-   */
-  fareDetailsLayout?: FareDetailsLayout[];
   /**
    * Itinerary that the user has selected to view, contains multiple legs.
    */

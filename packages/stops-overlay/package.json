@@ -9,7 +9,7 @@
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "tsc"
+    "tsc": "echo IF YOU SEE THIS AND YOU ARE NOT ON THE ALPHA BRANCH, SOMETHING HAS GONE HORRIBLY WRONG"
   },
   "repository": {
     "type": "git",

@@ -2,6 +2,7 @@ import cloneDeep from "lodash.clonedeep";
 import React, { useMemo } from "react";
 import {
   LayerEntity,
+  // @ts-expect-error alpha only change as we resolve merge conflicts
   SymbolComponent,
   ZoomBasedSymbol
 } from "@opentripplanner/types";

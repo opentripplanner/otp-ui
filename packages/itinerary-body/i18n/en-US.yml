@@ -102,6 +102,13 @@ otpUi:
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"
+    flexPickupMessage: >
+      To take this route, you must call {hasPhone, select,
+        true {{phoneNumber}}
+        other {ahead}
+      }{leadDays, plural, =0 {}
+        other { at least {leadDays, plural, one {# day} other {# days}} in advance}
+      }.
     stayOnBoard: Stay on Board at <strong>{placeName}</strong>
     travelBy: "Travel by {modeId, select,
       BICYCLE {bicycle}
@@ -130,7 +137,6 @@ otpUi:
       }"
     fare: "Fare: {fare}"
     operatedBy: Service operated by {agencyLink}
-    reservationRequired: Will not run unless requested ahead of time!
     rideDurationAndStops: "Ride {duration}{numStops, plural, =1 {} other { / # stops}}"
     routeDescription: "{routeName}{headsign, select,
       undefined {} other {<toPrefix> to </toPrefix>{headsign}}}"

@@ -1,18 +1,16 @@
 import flatten from "flat";
 import coreUtils from "@opentripplanner/core-utils";
-import { FlexBookingInfo } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
-import { FormattedMessage, FormattedNumber } from "react-intl";
+import { FormattedMessage } from "react-intl";
 import { CalendarAlt } from "@styled-icons/fa-solid/CalendarAlt";
-import { HandPaper } from "@styled-icons/fa-solid/HandPaper";
 import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
 import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
-import { PhoneVolume } from "@styled-icons/fa-solid/PhoneVolume";
 import { Route } from "@styled-icons/fa-solid/Route";
-import { FareDetails } from "./fare-detail";
 
 import * as S from "./styled";
 import TripDetail from "./trip-detail";
+import FareLegTable from "./fare-table";
+import { boldText, renderFare } from "./utils";
 
 import {
   CaloriesDetailsProps,
@@ -30,35 +28,6 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
 /**
- * Format text bold (used with FormattedMessage).
- */
-// TODO: Find a better place for this utility.
-function boldText(contents: ReactElement): ReactElement {
-  return <strong>{contents}</strong>;
-}
-
-/**
- * Render formatted fare.
- * @param currencyCode The ISO currency code to use (USD, GBP, EUR).
- * @param fare The fare value, in currency units, to be shown.
- * @returns The formatted fare value according to the selected locale.
- */
-function renderFare(currencyCode: string, fare: number): ReactElement {
-  return (
-    <FormattedNumber
-      currency={currencyCode}
-      // For dollars in locales such as 'fr',
-      // this will limit the display to just the dollar sign
-      // (otherwise it will render e.g. '2,50 $US' instead of '2,50 $').
-      currencyDisplay="narrowSymbol"
-      value={fare}
-      // eslint-disable-next-line react/style-prop-object
-      style="currency"
-    />
-  );
-}
-
-/**
  * Helper function to specify the link to dietary table.
  */
 function dietaryLink(contents: ReactElement): ReactElement {
@@ -72,19 +41,6 @@ function dietaryLink(contents: ReactElement): ReactElement {
     </a>
   );
 }
-
-/**
- * Helper function that assembles values for flex pickup/dropoff messages.
- */
-function getFlexMessageValues(info: FlexBookingInfo) {
-  return {
-    hasLeadTime: coreUtils.itinerary.isAdvanceBookingRequired(info),
-    hasPhone: !!info?.contactInfo?.phoneNumber,
-    leadDays: info.latestBookingTime.daysPrior,
-    phoneNumber: info?.contactInfo?.phoneNumber
-  };
-}
-
 /**
  * Default rendering if no component is provided for the CaloriesDetails
  * slot in the TripDetails component.
@@ -146,16 +102,18 @@ const TransitFare = ({
 export function TripDetails({
   CaloriesDetails = DefaultCaloriesDetails,
   className = "",
-  DepartureDetails = null,
   defaultFareKey = "regular",
+  DepartureDetails = null,
+  FareDetails = null,
+  fareDetailsLayout,
   fareKeyNameMap = {},
-  itinerary,
-  fareDetailsLayout
+  itinerary
 }: TripDetailsProps): ReactElement {
   // process the transit fare
   const fareResult = coreUtils.itinerary.calculateTncFares(itinerary);
   const { maxTNCFare, minTNCFare, tncCurrencyCode } = fareResult;
   const transitFares = itinerary?.fare?.fare;
+  const fareDetails = itinerary.fare?.details;
 
   let companies = "";
   itinerary.legs.forEach(leg => {
@@ -199,20 +157,31 @@ export function TripDetails({
               transitFares={transitFares}
             />
           </summary>
-          {fareKeys.map(fareKey => {
-            // Don't show the default fare twice!
-            if (fareKey === defaultFare) {
-              return null;
-            }
-            return (
-              <TransitFare
-                fareKey={fareKey}
-                key={fareKey}
-                fareKeyNameMap={fareKeyNameMap}
-                transitFares={transitFares}
-              />
-            );
-          })}
+          {fareDetailsLayout ? (
+            // Show full ƒare details by leg
+            <FareLegTable
+              layout={fareDetailsLayout}
+              legs={itinerary.legs}
+              transitFareDetails={fareDetails}
+              transitFares={transitFares}
+            />
+          ) : (
+            // Just show the fares for each payment type
+            fareKeys.map(fareKey => {
+              // Don't show the default fare twice!
+              if (fareKey === defaultFare) {
+                return null;
+              }
+              return (
+                <TransitFare
+                  fareKey={fareKey}
+                  key={fareKey}
+                  fareKeyNameMap={fareKeyNameMap}
+                  transitFares={transitFares}
+                />
+              );
+            })
+          )}
         </TransitFareWrapper>
         {minTNCFare !== 0 && (
           <S.TNCFare>
@@ -293,14 +262,12 @@ export function TripDetails({
         {fare && (
           <TripDetail
             // Any custom description for the transit fare needs to be handled by the slot.
-            //  TODO: add leg info
             description={
-              fareDetailsLayout &&
-              Object.keys(itinerary.fare.details).length > 0 && (
+              FareDetails && (
                 <FareDetails
-                  transitFares={itinerary.fare}
-                  legs={itinerary.legs}
-                  layout={fareDetailsLayout}
+                  maxTNCFare={maxTNCFare}
+                  minTNCFare={minTNCFare}
+                  transitFares={transitFares}
                 />
               )
             }
@@ -345,58 +312,20 @@ export function TripDetails({
                   }
                   description="Text stating that portions of the trip include a flex (on-demand) transit service."
                   id="otpUi.TripDetails.tripIncludesFlex"
+                  values={{
+                    extraMessage: [
+                      ...new Set([
+                        ...pickupBookingInfo.map(info => info.message),
+                        ...dropOffBookingInfo.map(info => info.message)
+                      ])
+                    ].join(" ")
+                  }}
                 />
               </S.FlexSummary>
             }
             icon={<Route size={17} />}
           />
         )}
-        {pickupBookingInfo &&
-          pickupBookingInfo.map(info => (
-            <TripDetail
-              key={info.pickupMessage}
-              icon={<PhoneVolume size={17} />}
-              summary={
-                <S.FlexPickupSummary>
-                  <FormattedMessage
-                    defaultMessage={
-                      defaultMessages["otpUi.TripDetails.flexPickupMessage"]
-                    }
-                    description="Instructions for booking and boarding the flex (on-demand) transit service."
-                    id="otpUi.TripDetails.flexPickupMessage"
-                    values={getFlexMessageValues(info)}
-                  />
-                </S.FlexPickupSummary>
-              }
-              description={info.pickupMessage}
-            />
-          ))}
-        {dropOffBookingInfo &&
-          dropOffBookingInfo.map(info => (
-            <TripDetail
-              description={info.dropOffMessage}
-              icon={
-                coreUtils.itinerary.isAdvanceBookingRequired(info) ? (
-                  <PhoneVolume size={17} />
-                ) : (
-                  <HandPaper size={17} />
-                )
-              }
-              key={info.dropOffMessage}
-              summary={
-                <S.FlexDropOffSummary>
-                  <FormattedMessage
-                    defaultMessage={
-                      defaultMessages["otpUi.TripDetails.flexDropOffMessage"]
-                    }
-                    description="Instructions for getting off the flex (on-demand) transit service."
-                    id="otpUi.TripDetails.flexDropOffMessage"
-                    values={getFlexMessageValues(info)}
-                  />
-                </S.FlexDropOffSummary>
-              }
-            />
-          ))}
       </S.TripDetailsBody>
     </S.TripDetails>
   );
