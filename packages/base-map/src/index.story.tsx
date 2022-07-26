@@ -22,8 +22,8 @@ import "maplibre-gl/dist/maplibre-gl.css";
 const center: [number, number] = [45.522862, -122.667837];
 
 const mapDecorator = (
-  Story: ComponentStory<typeof EndpointsOverlay>
-): ReactElement => (
+  Story: ComponentStory<typeof BaseMap>
+): React.ReactElement => (
   <StoryMapContainer>
     {/* For some reason, <Story /> does not work with snapshots,
         so use the function syntax instead. */}
@@ -103,7 +103,7 @@ const SetBoundsButton = () => {
   );
 };
 
-export const clickToSetBounds = (): ComponentStory<BaseMap> => (
+export const clickToSetBounds = (): ComponentStory<typeof BaseMap> => (
   <MapProvider>
     <SetBoundsButton />
     <BaseMap center={center} id="mapWithBounds" />
