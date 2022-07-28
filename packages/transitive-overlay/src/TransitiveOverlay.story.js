@@ -140,7 +140,9 @@ export const WalkTransitWalkItineraryWithNoIntermediateStops = () => (
     />
   </>
 );
-WalkTransitWalkItinerary.decorators = [withMap([45.525841, -122.649302], 13)];
+WalkTransitWalkItineraryWithNoIntermediateStops.decorators = [
+  withMap([45.525841, -122.649302], 13)
+];
 
 export const BikeTransitBikeItinerary = () => (
   <>
