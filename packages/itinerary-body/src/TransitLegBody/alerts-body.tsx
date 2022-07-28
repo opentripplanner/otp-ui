@@ -40,7 +40,7 @@ export default function AlertsBody({
             // The difference is expressed in calendar days based on the agency's time zone.
             // Note: Previously, we used moment.diff(..., "days"), which reports the number of whole 24-hour periods
             // between two timestamps/dates (not considering timezones or daylight time changes).
-            const today = toDate(getCurrentDate(timeZone), getUserTimezone());
+            const today = toDate(getCurrentDate(timeZone));
             const compareDate = utcToZonedTime(
               new Date(effectiveStartDate),
               timeZone
