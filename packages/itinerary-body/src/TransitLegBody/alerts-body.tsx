@@ -1,4 +1,4 @@
-import moment from "moment";
+import { differenceInDays } from "date-fns";
 import { Alert } from "@opentripplanner/types";
 import React, { FunctionComponent, ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
@@ -31,9 +31,15 @@ export default function AlertsBody({
           ) => {
             // If alert is effective as of +/- one day, use today, tomorrow, or
             // yesterday with time. Otherwise, use long date format.
-            // FIXME: adding 24 hours to a date that is "today" can lead moment to
-            // report the result to still be "today" (see OTP-RR story).
-            const dayDiff = moment(effectiveStartDate).diff(moment(), "days");
+            const dayDiff = differenceInDays(
+              new Date(effectiveStartDate),
+              new Date()
+            );
+
+            // TODO: Express the difference in calendar days based on the agency's time zone.
+            // Note: Previously, we used moment.diff(..., "days"), which reports the number of whole 24-hour periods
+            // between two timestamps/dates (not considering timezones or daylight time changes).
+
             return (
               <S.TransitAlert key={i} href={alertUrl}>
                 <S.TransitAlertIconContainer>
