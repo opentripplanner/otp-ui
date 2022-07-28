@@ -121,6 +121,7 @@ export default function PlaceRow({
                 setViewedTrip={setViewedTrip}
                 showAgencyInfo={showAgencyInfo}
                 showViewTripButton={showViewTripButton}
+                timeZone={config.homeTimezone}
                 TransitLegSubheader={TransitLegSubheader}
                 TransitLegSummary={TransitLegSummary}
                 transitOperator={coreUtils.route.getTransitOperatorFromLeg(
