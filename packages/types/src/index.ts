@@ -625,9 +625,9 @@ export type GeocodedFeature = {
 };
 
 export type TncFare = {
+  currencyCode: string;
   maxTNCFare: number;
   minTNCFare: number;
-  tncCurrencyCode: string;
 };
 
 export type UserPosition = {

@@ -1,14 +1,16 @@
 import { LatLngArray, Location, UserPosition } from "@opentripplanner/types";
 import { toSentenceCase } from "./itinerary";
 
+/*
 import {
-  coordsToString,
-  getDetailText,
-  latlngToString,
-  logDeprecationWarning
+  // coordsToString,
+  // getDetailText //,
+  // latlngToString,
+  // logDeprecationWarning
 } from "./deprecated";
 
-export { coordsToString, getDetailText, latlngToString };
+export { coordsToString, getDetailText , latlngToString };
+*/
 
 export function currentPositionToLocation(
   currentPosition: UserPosition
@@ -26,6 +28,12 @@ export function currentPositionToLocation(
   };
 }
 
+// TRICKY: It is used in query.js and in the context of
+// otp-rr actions where the intl context is not available.
+export function coordsToString(coords: number[]): string {
+  return coords.length && coords.map(c => (+c).toFixed(5)).join(", ");
+}
+
 export function stringToCoords(str: string): number[] {
   return (str && str.split(",").map(c => +c)) || [];
 }
@@ -40,23 +48,10 @@ export function constructLocation(latlng: {
   };
 }
 
-export function formatStoredPlaceName(
-  location: Location,
-  withDetails = true
-): string {
-  if (withDetails) {
-    logDeprecationWarning("the formatStoredPlaceName withDetails parameter");
-  }
-
-  let displayName =
-    location.type === "home" || location.type === "work"
-      ? toSentenceCase(location.type)
-      : location.name;
-  if (withDetails) {
-    const detailText = getDetailText(location);
-    if (detailText) displayName += ` (${detailText})`;
-  }
-  return displayName;
+export function formatStoredPlaceName(location: Location): string {
+  return location.type === "home" || location.type === "work"
+    ? toSentenceCase(location.type)
+    : location.name;
 }
 
 export function matchLatLon(location1: Location, location2: Location): boolean {

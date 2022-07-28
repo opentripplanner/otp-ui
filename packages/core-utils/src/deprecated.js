@@ -1,10 +1,13 @@
-import moment from "moment";
+// import moment from "moment";
+
+// Just to satisfy lint, will be removed eventually.
+export const FOO = 1;
 
 /**
  * To disable cyclic dependency resolution we need to require() within methods
  * This is a good reason to disable this eslint-rule
  */
-/* eslint-disable global-require */
+/* eslint00-disable global-require */
 
 /**
  * Generates a warning to tell developer that they are using deprecated methods!
@@ -24,7 +27,7 @@ export function logDeprecationWarning(method, alternative) {
 }
 
 // itinerary.js
-
+/*
 export function getStepDirection(step) {
   logDeprecationWarning("getStepDirection");
 
@@ -96,7 +99,7 @@ export function getLegModeLabel(leg) {
       return require("./itinerary").toSentenceCase(leg.mode);
   }
 }
-
+*/
 /**
  * Returns mode name by checking the vertex type (VertexType class in OTP) for
  * the provided place. NOTE: this is currently only intended for vehicles at
@@ -104,6 +107,7 @@ export function getLegModeLabel(leg) {
  *
  * @param  {string} place place from itinerary leg
  */
+/*
 export function getModeForPlace(place) {
   logDeprecationWarning("getModeForPlace");
 
@@ -143,11 +147,12 @@ export function getPlaceName(place, companies) {
   // Default to place name
   return place.name;
 }
-
+*/
 /**
  * For a given fare component (either total fare or component parts), returns
  * an object with string formatters and the fare value (in cents).
  */
+/*
 export function getTransitFare(fareComponent) {
   logDeprecationWarning("getTransitFare", "the fare object and getTncFare");
 
@@ -179,7 +184,7 @@ export function getTransitFare(fareComponent) {
     transitFare
   };
 }
-
+*/
 /**
  * For an itinerary, calculates the transit/TNC fares and returns an object with
  * these values, currency info, as well as string formatters.
@@ -207,6 +212,7 @@ export function getTransitFare(fareComponent) {
  * which will get fares for every fare key in the leg, and a method to calculate the fare of
  * a tnc ride within the leg. This will make typescripting easier, as the types will be cleaner.
  */
+/*
 export function calculateFares(itinerary, multiple = false) {
   logDeprecationWarning("calculateFares", "the fare object and getTncFare");
 
@@ -262,9 +268,9 @@ export function calculateFares(itinerary, multiple = false) {
     transitFare
   };
 }
-
+*/
 // map.js
-
+/*
 export function latlngToString(latlng) {
   logDeprecationWarning("latlngToString", "the latlng object");
 
@@ -273,7 +279,8 @@ export function latlngToString(latlng) {
     `${latlng.lat.toFixed(5)}, ${(latlng.lng || latlng.lon).toFixed(5)}`
   );
 }
-
+*/
+/*
 export function coordsToString(coords) {
   logDeprecationWarning("coordsToString", "the coords object");
 
@@ -292,9 +299,9 @@ export function getDetailText(location) {
   }
   return detailText;
 }
-
+*/
 // query.js
-
+/*
 export function summarizeQuery(query, locations = []) {
   logDeprecationWarning("summarizeQuery");
 
@@ -332,3 +339,4 @@ export function getTimeZoneOffset(itinerary) {
     (new Date().getTimezoneOffset() + dstOffset) * 60000
   );
 }
+*/

@@ -7,33 +7,37 @@ import {
   Itinerary,
   LatLngArray,
   Leg,
-  Step
+  Money,
+  Step,
+  TncFare
 } from "@opentripplanner/types";
 import turfAlong from "@turf/along";
 
+/*
 import {
-  calculateFares,
-  getLegModeLabel,
-  getModeForPlace,
-  getPlaceName,
-  getStepDirection,
-  getStepInstructions,
-  getStepStreetName,
-  getTimeZoneOffset,
-  getTransitFare
+  // calculateFares,
+  // getLegModeLabel,
+  // getModeForPlace,
+  // getPlaceName,
+  // getStepDirection,
+  // getStepInstructions,
+  // getStepStreetName,
+  // getTimeZoneOffset,
+  // getTransitFare
 } from "./deprecated";
 
 export {
-  calculateFares,
-  getLegModeLabel,
-  getModeForPlace,
-  getPlaceName,
-  getStepDirection,
-  getStepInstructions,
-  getStepStreetName,
-  getTimeZoneOffset,
-  getTransitFare
+  // calculateFares,
+  // getLegModeLabel,
+  // getModeForPlace,
+  // getPlaceName,
+  // getStepDirection,
+  // getStepInstructions,
+  // getStepStreetName,
+  // getTimeZoneOffset,
+  // getTransitFare
 };
+*/
 
 // All OTP transit modes
 export const transitModes = [
@@ -445,12 +449,53 @@ export function calculatePhysicalActivity(
   };
 }
 
-export function calculateTncFares(itinerary) {
-  // TODO: don't rely on deprecated methods!
-  // At the moment this is safe as none of these exported variables contain strings
-  const { maxTNCFare, minTNCFare, tncCurrencyCode } = calculateFares(
-    itinerary,
-    true
-  );
-  return { maxTNCFare, minTNCFare, tncCurrencyCode };
+/**
+ * For an itinerary, calculates the TNC fares and returns an object with
+ * these values and currency info.
+ * It is assumed that the same currency is used for all TNC legs.
+ */
+export function calculateTncFares(itinerary: Itinerary): TncFare {
+  let minTNCFare = 0;
+  let maxTNCFare = 0;
+  let currencyCode;
+  itinerary.legs.forEach(({ hailedCar, mode, tncData }) => {
+    if (mode === "CAR" && hailedCar && tncData) {
+      const { currency, maxCost, minCost } = tncData;
+      minTNCFare += minCost;
+      maxTNCFare += maxCost;
+      // Assumes a single currency for entire itinerary.
+      currencyCode = currency;
+    }
+  });
+
+  return {
+    currencyCode,
+    maxTNCFare,
+    minTNCFare
+  };
+}
+
+/**
+ * For a given fare component (either total fare or component parts), returns
+ * an object with the fare value (in cents).
+ */
+export function getTransitFare(
+  fareComponent: Money
+): {
+  currencyCode: string;
+  transitFare: number;
+} {
+  // Default values (if fare component is not valid).
+  let transitFare = 0;
+  let currencyCode = "USD";
+  if (fareComponent) {
+    // Assign values without declaration.
+    // See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#assignment_without_declaration
+    ({ currencyCode } = fareComponent.currency);
+    transitFare = fareComponent.cents;
+  }
+  return {
+    currencyCode,
+    transitFare
+  };
 }

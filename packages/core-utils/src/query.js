@@ -3,7 +3,7 @@ import getGeocoder from "@opentripplanner/geocoder/lib";
 import qs from "qs";
 
 import { getTransitModes, hasCar, isAccessMode } from "./itinerary";
-import { stringToCoords } from "./map";
+import { coordsToString, stringToCoords } from "./map";
 import queryParams from "./query-params";
 import {
   getCurrentTime,
@@ -12,9 +12,9 @@ import {
   OTP_API_DATE_FORMAT_DATE_FNS
 } from "./time";
 
-import { coordsToString, summarizeQuery } from "./deprecated";
+// import { coordsToString, summarizeQuery } from "./deprecated";
 
-export { summarizeQuery };
+// export { summarizeQuery };
 
 /* The list of default parameters considered in the settings panel */
 
