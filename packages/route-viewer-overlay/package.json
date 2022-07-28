@@ -20,7 +20,6 @@
   },
   "dependencies": {
     "@mapbox/polyline": "^1.1.0",
-    "react-map-gl": "^7.0.15",
     "@opentripplanner/base-map": "^3.0.0-alpha.3",
     "@opentripplanner/core-utils": "^6.0.0",
     "point-in-polygon": "^1.1.0"

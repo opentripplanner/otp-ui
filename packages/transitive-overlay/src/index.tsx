@@ -127,7 +127,7 @@ const TransitiveCanvasOverlay = ({
   }, [activeLeg]);
 
   return (
-    <Source id="itinerary" type="geojson" data={geojson}>
+    <Source data={geojson} id="itinerary" type="geojson">
       <Layer
         filter={["==", "type", "street-edge"]}
         id="street-edges"
