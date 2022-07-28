@@ -8,7 +8,8 @@ import {
   getCurrentDate,
   getCurrentTime,
   getTimeFormat,
-  getUserTimezone
+  getUserTimezone,
+  toHoursMinutesSeconds
 } from "../time";
 
 describe("time", () => {
@@ -36,6 +37,13 @@ describe("time", () => {
       expect(
         formatSecondsAfterMidnight(durationInSeconds, getTimeFormat())
       ).toMatchSnapshot();
+    });
+  });
+
+  describe("toHoursMinutesSeconds", () => {
+    const durationInSeconds = 9401;
+    it(`should correctly break down ${durationInSeconds} in hours, minutes, and seconds`, () => {
+      expect(toHoursMinutesSeconds(durationInSeconds)).toMatchSnapshot();
     });
   });
 
