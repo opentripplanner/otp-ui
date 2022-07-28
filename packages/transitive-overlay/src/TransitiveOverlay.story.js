@@ -1,10 +1,10 @@
-import BaseMap, { Styled as BaseMapStyled } from "@opentripplanner/base-map";
 import EndpointsOverlay from "@opentripplanner/endpoints-overlay";
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { injectIntl } from "react-intl";
 
 import TransitiveOverlay, { itineraryToTransitive } from ".";
+import { withMap } from "../../../.storybook/base-map-wrapper";
 
 // Use the font-family defined by storybook <body> element,
 // so we don't need to install/import extra fonts.
@@ -63,22 +63,14 @@ function getCustomRouteLabel(itineraryLeg) {
   return null; // null or undefined or empty string will tell transitive-js not to render a route label
 }
 
-const withMapContainer = Story => (
-  <BaseMapStyled.StoryMapContainer>
-    {/* For some reason, <Story /> does not work with snapshots,
-        so use the function syntax instead. */}
-    {Story()}
-  </BaseMapStyled.StoryMapContainer>
-);
-
 export default {
   title: "TransitiveOverlay",
-  decorators: [withMapContainer],
+  decorators: [withMap()],
   component: TransitiveOverlay
 };
 
 export const WalkingItinerary = () => (
-  <BaseMap center={[45.518841, -122.679302]} zoom={19}>
+  <>
     <EndpointsOverlay
       fromLocation={getFromLocation(walkOnlyItinerary)}
       setLocation={setLocation}
@@ -91,11 +83,12 @@ export const WalkingItinerary = () => (
       })}
       visible
     />
-  </BaseMap>
+  </>
 );
+WalkingItinerary.decorators = [withMap([45.518841, -122.679302], 19)];
 
 export const BikeOnlyItinerary = () => (
-  <BaseMap center={[45.520441, -122.68302]} zoom={16}>
+  <>
     <EndpointsOverlay
       fromLocation={getFromLocation(bikeOnlyItinerary)}
       setLocation={setLocation}
@@ -106,11 +99,12 @@ export const BikeOnlyItinerary = () => (
       transitiveData={itineraryToTransitive(bikeOnlyItinerary, { companies })}
       visible
     />
-  </BaseMap>
+  </>
 );
+BikeOnlyItinerary.decorators = [withMap([45.520441, -122.68302], 16)];
 
 export const WalkTransitWalkItinerary = () => (
-  <BaseMap center={[45.520441, -122.68302]} zoom={16}>
+  <>
     <EndpointsOverlay
       fromLocation={getFromLocation(walkTransitWalkItinerary)}
       setLocation={setLocation}
@@ -123,11 +117,12 @@ export const WalkTransitWalkItinerary = () => (
       })}
       visible
     />
-  </BaseMap>
+  </>
 );
+WalkTransitWalkItinerary.decorators = [withMap([45.520441, -122.68302], 16)];
 
 export const WalkTransitWalkItineraryWithNoIntermediateStops = () => (
-  <BaseMap center={[45.525841, -122.649302]} zoom={13}>
+  <>
     <EndpointsOverlay
       fromLocation={getFromLocation(
         walkTransitWalkItineraryNoIntermediateStops
@@ -143,11 +138,12 @@ export const WalkTransitWalkItineraryWithNoIntermediateStops = () => (
       )}
       visible
     />
-  </BaseMap>
+  </>
 );
+WalkTransitWalkItinerary.decorators = [withMap([45.525841, -122.649302], 13)];
 
 export const BikeTransitBikeItinerary = () => (
-  <BaseMap center={[45.520441, -122.68302]} zoom={16}>
+  <>
     <EndpointsOverlay
       fromLocation={getFromLocation(bikeTransitBikeItinerary)}
       setLocation={setLocation}
@@ -160,11 +156,12 @@ export const BikeTransitBikeItinerary = () => (
       })}
       visible
     />
-  </BaseMap>
+  </>
 );
+BikeTransitBikeItinerary.decorators = [withMap([45.520441, -122.68302], 16)];
 
 export const WalkInterlinedTransitItinerary = () => (
-  <BaseMap center={[45.511841, -122.679302]} zoom={14}>
+  <>
     <EndpointsOverlay
       fromLocation={getFromLocation(walkInterlinedTransitItinerary)}
       setLocation={setLocation}
@@ -177,11 +174,14 @@ export const WalkInterlinedTransitItinerary = () => (
       })}
       visible
     />
-  </BaseMap>
+  </>
 );
+WalkInterlinedTransitItinerary.decorators = [
+  withMap([45.511841, -122.679302], 14)
+];
 
 export const WalkTransitTransferItinerary = () => (
-  <BaseMap center={[45.505841, -122.631302]} zoom={14}>
+  <>
     <EndpointsOverlay
       fromLocation={getFromLocation(walkTransitWalkTransitWalkItinerary)}
       setLocation={setLocation}
@@ -195,11 +195,14 @@ export const WalkTransitTransferItinerary = () => (
       )}
       visible
     />
-  </BaseMap>
+  </>
 );
+WalkTransitTransferItinerary.decorators = [
+  withMap([45.505841, -122.631302], 14)
+];
 
 export const BikeRentalItinerary = () => (
-  <BaseMap center={[45.508841, -122.631302]} zoom={14}>
+  <>
     <EndpointsOverlay
       fromLocation={getFromLocation(bikeRentalItinerary)}
       setLocation={setLocation}
@@ -210,11 +213,12 @@ export const BikeRentalItinerary = () => (
       transitiveData={itineraryToTransitive(bikeRentalItinerary, { companies })}
       visible
     />
-  </BaseMap>
+  </>
 );
+BikeRentalItinerary.decorators = [withMap([45.508841, -122.631302], 14)];
 
 export const EScooterRentalItinerary = injectIntl(({ intl }) => (
-  <BaseMap center={[45.52041, -122.675302]} zoom={16}>
+  <>
     <EndpointsOverlay
       fromLocation={getFromLocation(eScooterRentalItinerary)}
       setLocation={setLocation}
@@ -228,11 +232,12 @@ export const EScooterRentalItinerary = injectIntl(({ intl }) => (
       })}
       visible
     />
-  </BaseMap>
+  </>
 ));
+EScooterRentalItinerary.decorators = [withMap([45.52041, -122.675302], 16)];
 
 export const ParkAndRideItinerary = () => (
-  <BaseMap center={[45.515841, -122.75302]} zoom={13}>
+  <>
     <EndpointsOverlay
       fromLocation={getFromLocation(parkAndRideItinerary)}
       setLocation={setLocation}
@@ -245,11 +250,12 @@ export const ParkAndRideItinerary = () => (
       })}
       visible
     />
-  </BaseMap>
+  </>
 );
+ParkAndRideItinerary.decorators = [withMap([45.515841, -122.75302], 13)];
 
 export const BikeRentalTransitItinerary = () => (
-  <BaseMap center={[45.538841, -122.6302]} zoom={12}>
+  <>
     <EndpointsOverlay
       fromLocation={getFromLocation(bikeRentalTransitBikeRentalItinerary)}
       setLocation={setLocation}
@@ -263,11 +269,12 @@ export const BikeRentalTransitItinerary = () => (
       )}
       visible
     />
-  </BaseMap>
+  </>
 );
+BikeRentalTransitItinerary.decorators = [withMap([45.538841, -122.6302], 12)];
 
 export const EScooterRentalTransitItinerary = injectIntl(({ intl }) => (
-  <BaseMap center={[45.538841, -122.6302]} zoom={12}>
+  <>
     <EndpointsOverlay
       fromLocation={getFromLocation(
         eScooterRentalTransiteScooterRentalItinerary
@@ -283,11 +290,14 @@ export const EScooterRentalTransitItinerary = injectIntl(({ intl }) => (
       )}
       visible
     />
-  </BaseMap>
+  </>
 ));
+EScooterRentalTransitItinerary.decorators = [
+  withMap([45.538841, -122.6302], 12)
+];
 
 export const TncTransitItinerary = () => (
-  <BaseMap center={[45.538841, -122.6302]} zoom={12}>
+  <>
     <EndpointsOverlay
       fromLocation={getFromLocation(tncTransitTncItinerary)}
       setLocation={setLocation}
@@ -300,11 +310,12 @@ export const TncTransitItinerary = () => (
       })}
       visible
     />
-  </BaseMap>
+  </>
 );
+TncTransitItinerary.decorators = [withMap([45.538841, -122.6302], 12)];
 
 export const WalkTransitWalkItineraryAndCustomLabelStyles = () => (
-  <BaseMap center={[45.520441, -122.68302]} zoom={16}>
+  <>
     <EndpointsOverlay
       fromLocation={getFromLocation(walkTransitWalkItinerary)}
       setLocation={setLocation}
@@ -333,10 +344,14 @@ export const WalkTransitWalkItineraryAndCustomLabelStyles = () => (
       })}
       visible
     />
-  </BaseMap>
+  </>
 );
+WalkTransitWalkItineraryAndCustomLabelStyles.decorators = [
+  withMap([45.520441, -122.68302], 16)
+];
+
 export const FlexItinerary = () => (
-  <BaseMap center={[33.749, -84.388]} zoom={11}>
+  <>
     <EndpointsOverlay
       fromLocation={getFromLocation(flexItinerary)}
       setLocation={setLocation}
@@ -347,11 +362,12 @@ export const FlexItinerary = () => (
       transitiveData={itineraryToTransitive(flexItinerary, { companies })}
       visible
     />
-  </BaseMap>
+  </>
 );
+FlexItinerary.decorators = [withMap([33.749, -84.388], 11)];
 
 export const OTP2ScooterItinerary = injectIntl(({ intl }) => (
-  <BaseMap center={[33.749, -84.388]} zoom={11}>
+  <>
     <EndpointsOverlay
       fromLocation={getFromLocation(otp2ScooterItinerary)}
       setLocation={setLocation}
@@ -365,5 +381,6 @@ export const OTP2ScooterItinerary = injectIntl(({ intl }) => (
       })}
       visible
     />
-  </BaseMap>
+  </>
 ));
+OTP2ScooterItinerary.decorators = [withMap([33.749, -84.388], 11)];

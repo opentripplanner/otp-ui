@@ -1,22 +1,19 @@
 import React from "react";
-import BaseMap, { Styled as BaseMapStyled } from "@opentripplanner/base-map";
 import TransitVehicleOverlay from ".";
 
 import vehicleData from "../__mocks__/tm_all.json";
+import { withMap } from "../../../.storybook/base-map-wrapper";
 
 const PORTLAND: [number, number] = [45.523, -122.671];
 
 export const simpleExample = () => {
   return (
-    <BaseMapStyled.StoryMapContainer>
-      <BaseMap center={PORTLAND}>
-        <TransitVehicleOverlay vehicles={[vehicleData.resultSet.vehicle[0]]} />
-      </BaseMap>
-    </BaseMapStyled.StoryMapContainer>
+    <TransitVehicleOverlay vehicles={[vehicleData.resultSet.vehicle[0]]} />
   );
 };
 
 export default {
   title: "TransitVehicleOverlay",
-  component: simpleExample
+  component: simpleExample,
+  decorators: [withMap(PORTLAND, 8)]
 };

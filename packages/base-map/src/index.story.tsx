@@ -14,27 +14,18 @@ import { ComponentStory } from "@storybook/react";
 import AllVehiclesOverlay from "../__mocks__/AllVehicles";
 import ContextMenuDemo from "../__mocks__/ContextMenuDemo";
 
-import { StoryMapContainer } from "./styled";
 import BaseMap, { MarkerWithPopup, LayerWrapper } from ".";
+
+import { withMap } from "../../../.storybook/base-map-wrapper";
 
 import "maplibre-gl/dist/maplibre-gl.css";
 
 const center: [number, number] = [45.522862, -122.667837];
 
-const mapDecorator = (
-  Story: ComponentStory<typeof BaseMap>
-): React.ReactElement => (
-  <StoryMapContainer>
-    {/* For some reason, <Story /> does not work with snapshots,
-        so use the function syntax instead. */}
-    {Story()}
-  </StoryMapContainer>
-);
-
 export default {
   args: { center },
   component: BaseMap,
-  decorators: [mapDecorator],
+  decorators: [withMap()],
   title: "BaseMap"
 };
 
@@ -129,7 +120,9 @@ export const withSampleMarkers = () => (
 
 export const overlayWithLargeDataSet = () => (
   <>
-    <div>Do not add Storybook overhead on layers with large dataset...</div>
+    <div style={{ position: "relative", zIndex: 1000 }}>
+      Do not add Storybook overhead on layers with large dataset...
+    </div>
     <BaseMap center={center}>
       <AllVehiclesOverlay />
     </BaseMap>

@@ -122,6 +122,7 @@ const Example = (props: ExampleProps) => {
   };
 
   const { symbols, symbolTransform } = props;
+  // We can't use a decorator here because we need to supply a prop to BaseMap
   return (
     <BaseMapStyles.StoryMapContainer>
       <BaseMap
