@@ -16,8 +16,8 @@
     "@opentripplanner/location-icon": "^1.4.0",
     "@styled-icons/fa-solid": "^10.34.0",
     "@styled-icons/foundation": "^10.34.0",
+    "date-fns": "^2.28.0",
     "flat": "^5.0.2",
-    "moment": "^2.24.0",
     "react-resize-detector": "^4.2.1",
     "velocity-react": "^1.4.3"
   },
