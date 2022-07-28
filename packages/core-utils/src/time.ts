@@ -1,20 +1,6 @@
 import { Config } from "@opentripplanner/types";
-import {
-  startOfDay,
-  add,
-  format,
-  formatDuration as dateFnsFormatDuration
-} from "date-fns";
+import { startOfDay, add, format, formatDuration } from "date-fns";
 import { utcToZonedTime } from "date-fns-tz";
-
-/* eslint-disable import/no-cycle */
-import {
-  formatTime,
-  formatDurationWithSeconds,
-  formatDuration
-} from "./deprecated-with-types";
-
-export { formatTime, formatDuration, formatDurationWithSeconds };
 
 // special constants for making sure the following date format is always sent to
 // OTP regardless of whatever the user has configured as the display format
@@ -66,7 +52,7 @@ export function formatDurationLikeMoment(
       }
     : undefined;
 
-  return dateFnsFormatDuration(
+  return formatDuration(
     {
       hours,
       minutes,
