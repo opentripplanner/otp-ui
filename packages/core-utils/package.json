@@ -14,7 +14,7 @@
   "dependencies": {
     "@mapbox/polyline": "^1.1.0",
     "@opentripplanner/geocoder": "^1.2.2",
-    "@opentripplanner/types": "^2.0.0",
+    "@opentripplanner/types": "3.0.0-alpha.2",
     "@styled-icons/foundation": "^10.34.0",
     "@turf/along": "^6.0.1",
     "bowser": "^2.7.0",
