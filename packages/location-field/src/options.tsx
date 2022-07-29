@@ -120,8 +120,8 @@ export function StoredPlaceName({
   location,
   withDetails = true
 }: {
-  location: Location;
-  withDetails: boolean;
+  location: UserLocation;
+  withDetails?: boolean;
 }): React.ReactElement {
   let displayName;
   let detailText;
