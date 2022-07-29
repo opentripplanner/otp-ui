@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@opentripplanner/itinerary-body": "^4.0.0",
-    "@opentripplanner/core-utils": "^7.0.0-alpha.1",
+    "@opentripplanner/core-utils": "^7.0.0-alpha.3",
     "lodash.isequal": "^4.5.0",
     "transitive-js": "^0.14.1"
   },

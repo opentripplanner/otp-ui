@@ -11,13 +11,12 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^7.0.0-alpha.1",
+    "@opentripplanner/core-utils": "^7.0.0-alpha.3",
     "@styled-icons/fa-solid": "^10.34.0",
     "flat": "^5.0.2",
     "velocity-react": "^1.4.3"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^3.0.0-alpha.3",
     "@types/flat": "^5.0.2"
   },
   "peerDependencies": {
