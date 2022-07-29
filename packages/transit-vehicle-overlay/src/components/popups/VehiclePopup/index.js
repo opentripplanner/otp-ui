@@ -10,8 +10,6 @@ import { PopupStyle } from "../styled";
 import VehicleTracker from "../vehicle-tracker";
 import { defaultMessages, linterIgnoreTheseProps } from "../../../utils";
 
-const { formatDurationWithSeconds } = coreUtils.time;
-
 /**
  * view component for vehicle marker popup
  * content is derived from the vehicle record
@@ -108,8 +106,18 @@ export default function VehiclePopup({ isTracked, setTracked, vehicle }) {
                   description="Text describing a past duration"
                   id="otpUi.TransitVehicleOverlay.durationAgo"
                   values={{
-                    // FIXME: also localize formatDurationWithSeconds
-                    duration: formatDurationWithSeconds(seconds)
+                    duration: (
+                      <FormattedMessage
+                        defaultMessage={
+                          defaultMessages[
+                            "otpUi.TransitVehicleOverlay.durationWithSeconds"
+                          ]
+                        }
+                        description="Formats a duration in hours, minutes, and seconds"
+                        id="otpUi.TransitVehicleOverlay.durationWithSeconds"
+                        values={coreUtils.time.toHoursMinutesSeconds(seconds)}
+                      />
+                    )
                   }}
                 />
               )

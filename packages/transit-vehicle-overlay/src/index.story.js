@@ -153,16 +153,26 @@ function rectangles(popup = true) {
   };
 
   // silly function used to change the arrival time (tooltip) in this example
-  function makeRandomDate() {
+  function makeRandomDate(intl) {
     const secs = Date.now() % 379;
-    const prettyDate = coreUtils.time.formatDurationWithSeconds(secs);
+    const prettyDate = intl.formatMessage(
+      {
+        defaultMessage:
+          utils.defaultMessages[
+            "otpUi.TransitVehicleOverlay.durationWithSeconds"
+          ],
+        description: "Formats a duration in hours, minutes, and seconds",
+        id: "otpUi.TransitVehicleOverlay.durationWithSeconds"
+      },
+      { ...coreUtils.time.toHoursMinutesSeconds(secs) }
+    );
     return prettyDate;
   }
 
   // tooltip content callback function
-  CustomTooltip.defaultProps.getContent = (vehicle, isTracked) => {
+  CustomTooltip.defaultProps.getContent = (vehicle, isTracked, intl) => {
     utils.linterIgnoreTheseProps(isTracked);
-    const prettyDate = makeRandomDate();
+    const prettyDate = makeRandomDate(intl);
     let retVal;
     if (vehicle && vehicle.routeShortName) {
       retVal = `${vehicle.routeShortName} is arriving in ${prettyDate}`;

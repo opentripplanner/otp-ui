@@ -10,8 +10,6 @@ import L from "leaflet";
 import { TooltipStyle } from "../styled";
 import { defaultMessages, linterIgnoreTheseProps } from "../../../utils";
 
-const { formatDurationWithSeconds } = coreUtils.time;
-
 /** will show a (leaflet) map tooltip on a vehicle, showing route and update recency */
 export default function VehicleTooltip(props) {
   const { vehicle, isTracked, direction, permanent, offset } = props;
@@ -61,8 +59,18 @@ export default function VehicleTooltip(props) {
           description="Text describing a past duration"
           id="otpUi.TransitVehicleOverlay.durationAgo"
           values={{
-            // FIXME: also localize formatDurationWithSeconds
-            duration: formatDurationWithSeconds(seconds)
+            duration: (
+              <FormattedMessage
+                defaultMessage={
+                  defaultMessages[
+                    "otpUi.TransitVehicleOverlay.durationWithSeconds"
+                  ]
+                }
+                description="Formats a duration in hours, minutes, and seconds"
+                id="otpUi.TransitVehicleOverlay.durationWithSeconds"
+                values={coreUtils.time.toHoursMinutesSeconds(seconds)}
+              />
+            )
           }}
         />
       </TooltipStyle>
