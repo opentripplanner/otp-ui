@@ -27,5 +27,7 @@
   "scripts": {
     "tsc": "tsc"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@opentripplanner/types": "^3.0.0-alpha.4"
+  }
 }
