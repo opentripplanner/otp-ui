@@ -1,16 +1,4 @@
 import { LatLngArray, Location, UserPosition } from "@opentripplanner/types";
-import { toSentenceCase } from "./itinerary";
-
-/*
-import {
-  // coordsToString,
-  // getDetailText //,
-  // latlngToString,
-  // logDeprecationWarning
-} from "./deprecated";
-
-export { coordsToString, getDetailText , latlngToString };
-*/
 
 export function currentPositionToLocation(
   currentPosition: UserPosition
@@ -28,8 +16,8 @@ export function currentPositionToLocation(
   };
 }
 
-// TRICKY: It is used in query.js and in the context of
-// otp-rr actions where the intl context is not available.
+// TRICKY: This method is used in query.js and in the context of
+// otp-rr actions where the intl context is not available/does not apply.
 export function coordsToString(coords: number[]): string {
   return coords.length && coords.map(c => (+c).toFixed(5)).join(", ");
 }
@@ -46,12 +34,6 @@ export function constructLocation(latlng: {
     lat: latlng.lat,
     lon: latlng.lng
   };
-}
-
-export function formatStoredPlaceName(location: Location): string {
-  return location.type === "home" || location.type === "work"
-    ? toSentenceCase(location.type)
-    : location.name;
 }
 
 export function matchLatLon(location1: Location, location2: Location): boolean {
