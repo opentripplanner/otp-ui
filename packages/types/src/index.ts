@@ -131,6 +131,7 @@ export type Config = {
     dateFormat?: string;
     longDateFormat?: string;
   };
+  homeTimezone: string;
   modes: ConfiguredModes;
   // TODO: add full typing
   map?: {
