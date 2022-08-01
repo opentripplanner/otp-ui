@@ -1,6 +1,5 @@
 // Removed as core-utils is typescripted. TODO: Remove when typescripting!
 /* eslint-disable react/forbid-prop-types */
-import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 import PropTypes from "prop-types";
 import { FormattedDate, FormattedMessage } from "react-intl";
@@ -9,6 +8,7 @@ import { Popup } from "react-leaflet";
 import { PopupStyle } from "../styled";
 import VehicleTracker from "../vehicle-tracker";
 import { defaultMessages, linterIgnoreTheseProps } from "../../../utils";
+import FormattedDurationWithSeconds from "../../../utils/formatted-duration-with-seconds";
 
 /**
  * view component for vehicle marker popup
@@ -106,18 +106,7 @@ export default function VehiclePopup({ isTracked, setTracked, vehicle }) {
                   description="Text describing a past duration"
                   id="otpUi.TransitVehicleOverlay.durationAgo"
                   values={{
-                    duration: (
-                      <FormattedMessage
-                        defaultMessage={
-                          defaultMessages[
-                            "otpUi.TransitVehicleOverlay.durationWithSeconds"
-                          ]
-                        }
-                        description="Formats a duration in hours, minutes, and seconds"
-                        id="otpUi.TransitVehicleOverlay.durationWithSeconds"
-                        values={coreUtils.time.toHoursMinutesSeconds(seconds)}
-                      />
-                    )
+                    duration: <FormattedDurationWithSeconds seconds={seconds} />
                   }}
                 />
               )

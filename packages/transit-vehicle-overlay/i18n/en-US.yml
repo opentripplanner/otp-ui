@@ -24,7 +24,7 @@ otpUi:
     status: "Status: {status}"
     statusEnRoute: "en-route to stop #{stopId}"
     statusAtStart: "start route at stop #{stopId}"
-    statusAtStop: "at stop #${stopId}"
+    statusAtStop: "at stop #{stopId}"
     statusUnknown: unknown
     tooltipRouteLabel: "{routeLabel}:"
     trackStart: Track Vehicle
