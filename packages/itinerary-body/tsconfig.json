@@ -4,10 +4,5 @@
     "outDir": "./lib",
     "preserveSymlinks": true
   },
-  "include": ["src/**/*"],
-  "references": [
-    {
-      "path": "../types"
-    }
-  ]
+  "include": ["src/**/*"]
 }
