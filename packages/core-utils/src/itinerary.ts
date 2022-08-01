@@ -13,32 +13,6 @@ import {
 } from "@opentripplanner/types";
 import turfAlong from "@turf/along";
 
-/*
-import {
-  // calculateFares,
-  // getLegModeLabel,
-  // getModeForPlace,
-  // getPlaceName,
-  // getStepDirection,
-  // getStepInstructions,
-  // getStepStreetName,
-  // getTimeZoneOffset,
-  // getTransitFare
-} from "./deprecated";
-
-export {
-  // calculateFares,
-  // getLegModeLabel,
-  // getModeForPlace,
-  // getPlaceName,
-  // getStepDirection,
-  // getStepInstructions,
-  // getStepStreetName,
-  // getTimeZoneOffset,
-  // getTransitFare
-};
-*/
-
 // All OTP transit modes
 export const transitModes = [
   "TRAM",
