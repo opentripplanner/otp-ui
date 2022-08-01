@@ -25,7 +25,6 @@ const {
   getCurrentTime,
   getUserTimezone,
   OTP_API_DATE_FORMAT,
-  OTP_API_DATE_FORMAT_DATE_FNS,
   OTP_API_TIME_FORMAT
 } = coreUtils.time;
 
@@ -164,7 +163,7 @@ export default function DateTimeSelector({
 
   const handleDateChangeLegacy = useCallback(
     (evt: ChangeEvent<HTMLInputElement>): void => {
-      const newDate = format(parse(evt.target.value, dateFormatLegacy, referenceDate), OTP_API_DATE_FORMAT_DATE_FNS);
+      const newDate = format(parse(evt.target.value, dateFormatLegacy, referenceDate), OTP_API_DATE_FORMAT);
       handleQueryParamChange({ newDate });
     },
     [onQueryParamChange]
@@ -275,7 +274,7 @@ export default function DateTimeSelector({
           </div>
           <div>
             <input
-              defaultValue={format(parse(date, OTP_API_DATE_FORMAT_DATE_FNS, referenceDate), dateFormatLegacy)}
+              defaultValue={format(parse(date, OTP_API_DATE_FORMAT, referenceDate), dateFormatLegacy)}
               onChange={handleDateChangeLegacy}
               required
               type="text"

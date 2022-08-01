@@ -8,13 +8,9 @@ import queryParams from "./query-params";
 import {
   getCurrentTime,
   getCurrentDate,
-  OTP_API_TIME_FORMAT,
-  OTP_API_DATE_FORMAT_DATE_FNS
+  OTP_API_DATE_FORMAT,
+  OTP_API_TIME_FORMAT
 } from "./time";
-
-// import { coordsToString, summarizeQuery } from "./deprecated";
-
-// export { summarizeQuery };
 
 /* The list of default parameters considered in the settings panel */
 
@@ -427,7 +423,7 @@ export function getRoutingParams(config, currentQuery, ignoreRealtimeUpdates) {
     }
 
     // check date/time validity; ignore both if either is invalid
-    const dateValid = isMatch(params.date, OTP_API_DATE_FORMAT_DATE_FNS);
+    const dateValid = isMatch(params.date, OTP_API_DATE_FORMAT);
     const timeValid = isMatch(params.time, OTP_API_TIME_FORMAT);
 
     if (!dateValid || !timeValid) {

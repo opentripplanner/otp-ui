@@ -2,12 +2,9 @@ import { Config } from "@opentripplanner/types";
 import { startOfDay, add, format } from "date-fns";
 import { utcToZonedTime } from "date-fns-tz";
 
-// special constants for making sure the following date format is always sent to
-// OTP regardless of whatever the user has configured as the display format
-export const OTP_API_DATE_FORMAT = "YYYY-MM-DD";
-// Date-Fns uses a different string format than moment.js
-// see https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md
-export const OTP_API_DATE_FORMAT_DATE_FNS = "yyyy-MM-dd";
+// Date/time formats (per date-fns) when sending/receiving date from OTP
+// regardless of whatever the user has configured as the display format.
+export const OTP_API_DATE_FORMAT = "yyyy-MM-dd";
 export const OTP_API_TIME_FORMAT = "HH:mm";
 
 /**
@@ -89,8 +86,5 @@ export function getCurrentTime(timezone = getUserTimezone()): string {
  * The conversion to the user's timezone is needed for testing purposes.
  */
 export function getCurrentDate(timezone = getUserTimezone()): string {
-  return format(
-    utcToZonedTime(Date.now(), timezone),
-    OTP_API_DATE_FORMAT_DATE_FNS
-  );
+  return format(utcToZonedTime(Date.now(), timezone), OTP_API_DATE_FORMAT);
 }
