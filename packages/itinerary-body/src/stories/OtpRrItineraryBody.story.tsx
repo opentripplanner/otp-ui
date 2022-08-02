@@ -42,7 +42,7 @@ if (!isRunningJest()) {
   const now = todayWithTime.valueOf();
   alerts[0].effectiveStartDate = now; // Today
   alerts[1].effectiveStartDate = now - 24 * 3600000; // Yesterday
-  alerts[2].effectiveStartDate = now + 24 * 3600000 + 10000; // Tomorrow
+  alerts[2].effectiveStartDate = now + 24 * 3600000; // Tomorrow
 }
 
 interface StoryWrapperProps {

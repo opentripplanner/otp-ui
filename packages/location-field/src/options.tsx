@@ -1,6 +1,6 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceStringImperial } from "@opentripplanner/humanize-distance";
-import React from "react";
+import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 import { Bus } from "@styled-icons/fa-solid/Bus";
 import { Briefcase } from "@styled-icons/fa-solid/Briefcase";
@@ -116,6 +116,29 @@ export function UserLocationIcon({
   return <MapMarker size={13} />;
 }
 
+function LocationName({ location }: { location: UserLocation }): ReactElement {
+  switch (location.type) {
+    case "home":
+      return (
+        <FormattedMessage
+          defaultMessage="Home"
+          description="The home location"
+          id="otpUi.LocationField.homeLocation"
+        />
+      );
+    case "work":
+      return (
+        <FormattedMessage
+          defaultMessage="Work"
+          description="The work location"
+          id="otpUi.LocationField.workLocation"
+        />
+      );
+    default:
+      return <>{location.name}</>;
+  }
+}
+
 export function StoredPlaceName({
   location,
   withDetails = true
@@ -123,33 +146,11 @@ export function StoredPlaceName({
   location: UserLocation;
   withDetails?: boolean;
 }): React.ReactElement {
-  let displayName;
   let detailText;
-  if (location.type === "home") {
-    displayName = (
-      <FormattedMessage
-        defaultMessage="Home"
-        description="The home location"
-        id="otpUi.LocationField.homeLocation"
-      />
-    );
-  } else if (location.type === "work") {
-    displayName = (
-      <FormattedMessage
-        defaultMessage="Work"
-        description="The work location"
-        id="otpUi.LocationField.workLocation"
-      />
-    );
-  } else {
-    displayName = location.name;
-  }
-
   if (withDetails) {
     if (location.type === "home" || location.type === "work") {
       detailText = location.name;
-    }
-    if (location.type === "stop") {
+    } else if (location.type === "stop") {
       detailText = location.id;
     }
     // The case below for recent searches is not currently being used.
@@ -164,10 +165,10 @@ export function StoredPlaceName({
       id="otpUi.LocationField.placeNameWithDetails"
       values={{
         details: detailText,
-        placeName: displayName
+        placeName: <LocationName location={location} />
       }}
     />
   ) : (
-    displayName
+    <LocationName location={location} />
   );
 }

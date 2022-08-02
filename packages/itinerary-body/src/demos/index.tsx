@@ -58,7 +58,9 @@ export function CustomTransitLegSummary({
     /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
     <div onClick={onClick}>
       {leg.duration && (
-        <span>Ride for a custom duration of {leg.duration / 60} minutes</span>
+        <span>
+          Ride for a custom duration of {(leg.duration / 60).toFixed(3)} minutes
+        </span>
       )}
       {leg.intermediateStops && (
         <span>

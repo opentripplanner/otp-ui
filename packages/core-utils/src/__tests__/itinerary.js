@@ -7,7 +7,6 @@ import {
 
 const bikeRentalItinerary = require("./__mocks__/bike-rental-itinerary.json");
 const tncItinerary = require("./__mocks__/tnc-itinerary.json");
-// const multiCurrencyItinerary = require("./__mocks__/multi-currency-itinerary.json");
 
 describe("util > itinerary", () => {
   it("isTransit should work", () => {
