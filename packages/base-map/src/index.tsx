@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Map, MapProps } from "react-map-gl";
 import maplibregl, { Event } from "maplibre-gl";
 
@@ -109,19 +109,6 @@ const BaseMap = ({
     toggleableLayers.filter(layer => !layer?.visible).map(layer => layer.id)
   );
 
-  const adjustHiddenLayers = useCallback(
-    layerId => {
-      const updatedLayers = [...hiddenLayers];
-      // Delete the layer id if present, add it otherwise
-      updatedLayers.includes(id)
-        ? updatedLayers.splice(updatedLayers.indexOf(layerId), 1)
-        : updatedLayers.push(id);
-
-      setHiddenLayers(updatedLayers);
-    },
-    [hiddenLayers]
-  );
-
   return (
     <Map
       // eslint-disable-next-line react/jsx-props-no-spreading
@@ -160,7 +147,18 @@ const BaseMap = ({
                     <input
                       checked={!hiddenLayers.includes(layer.id)}
                       id={layer.id}
-                      onChange={() => adjustHiddenLayers(layer.id)}
+                      onChange={() => {
+                        const updatedLayers = [...hiddenLayers];
+                        // Delete the layer id if present, add it otherwise
+                        updatedLayers.includes(layer.id)
+                          ? updatedLayers.splice(
+                              updatedLayers.indexOf(layer.id),
+                              1
+                            )
+                          : updatedLayers.push(layer.id);
+
+                        setHiddenLayers(updatedLayers);
+                      }}
                       type="checkbox"
                     />
                     {layer.name || layer.id}
