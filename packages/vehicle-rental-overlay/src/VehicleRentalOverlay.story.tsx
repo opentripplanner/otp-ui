@@ -3,11 +3,11 @@ import { action } from "@storybook/addon-actions";
 import { boolean } from "@storybook/addon-knobs";
 
 import { Company, Station } from "@opentripplanner/types";
-import VehicleRentalOverlay from ".";
 import bikeRentalStations from "../__mocks__/bike-rental-stations.json";
 import carRentalStations from "../__mocks__/car-rental-stations.json";
 import eScooterStations from "../__mocks__/e-scooter-rental-stations.json";
 import { withMap } from "../../../.storybook/base-map-wrapper";
+import VehicleRentalOverlay from ".";
 
 const center: [number, number] = [45.518092, -122.671202];
 const configCompanies = [
@@ -52,12 +52,12 @@ const ZoomControlledMapWithVehicleRentalOverlay = ({
   visible
 }: StoryProps) => (
   <VehicleRentalOverlay
-    id="test"
-    configCompanies={configCompanies}
     companies={companies}
+    configCompanies={configCompanies}
     getStationName={getStationName}
-    setLocation={setLocation}
+    id="test"
     refreshVehicles={refreshVehicles}
+    setLocation={setLocation}
     stations={stations}
     visible={visible}
   />

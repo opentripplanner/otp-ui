@@ -5,9 +5,9 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Cat } from "@styled-icons/fa-solid/Cat";
 import { Dog } from "@styled-icons/fa-solid/Dog";
 
-import EndpointsOverlay from ".";
-
 import { withMap } from "../../../.storybook/base-map-wrapper";
+
+import EndpointsOverlay from ".";
 
 // EndpointsOverlay props
 const clearLocation = action("clearLocation");

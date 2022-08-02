@@ -1,12 +1,13 @@
 import React from "react";
-import TransitVehicleOverlay from ".";
 
 import vehicleData from "../__mocks__/tm_all.json";
 import { withMap } from "../../../.storybook/base-map-wrapper";
 
+import TransitVehicleOverlay from ".";
+
 const PORTLAND: [number, number] = [45.523, -122.671];
 
-export const simpleExample = () => {
+export const TransitVehicleOverlayExample = () => {
   return (
     <TransitVehicleOverlay vehicles={[vehicleData.resultSet.vehicle[0]]} />
   );
@@ -14,6 +15,6 @@ export const simpleExample = () => {
 
 export default {
   title: "TransitVehicleOverlay",
-  component: simpleExample,
+  component: TransitVehicleOverlayExample,
   decorators: [withMap(PORTLAND, 8)]
 };

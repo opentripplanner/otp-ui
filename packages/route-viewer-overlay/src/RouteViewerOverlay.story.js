@@ -2,10 +2,10 @@ import React from "react";
 
 import routeData from "../__mocks__/mock-route.json";
 import flexRouteData from "../__mocks__/mock-flex-route.json";
-import RouteViewerOverlay from ".";
 
 import StopsOverlay from "../../stops-overlay/src";
 import { withMap } from "../../../.storybook/base-map-wrapper";
+import RouteViewerOverlay from ".";
 
 const PORTLAND = [45.543092, -122.671202];
 const POWDER_SPRINGS = [33.8595, -84.67483];

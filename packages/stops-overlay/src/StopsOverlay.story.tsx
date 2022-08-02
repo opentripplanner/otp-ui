@@ -1,18 +1,19 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 
-import StopsOverlay, { StopProps } from ".";
 import mockStops from "../__mocks__/stops.json";
 import mockFlexStops from "../__mocks__/flex-stops.json";
 import { withMap } from "../../../.storybook/base-map-wrapper";
 
+import StopsOverlay, { StopProps } from ".";
+
 const center: [number, number] = [45.523092, -122.671202];
 
 const Example = ({
-  stops = mockStops,
+  minZoom = 15,
   setLocation = action("setLocation"),
   setViewedStop = action("setViewedStop"),
-  minZoom = 15
+  stops = mockStops
 }: StopProps & { mapCenter?: [number, number] }) => {
   return (
     <StopsOverlay

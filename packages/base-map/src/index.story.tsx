@@ -14,9 +14,9 @@ import { ComponentStory } from "@storybook/react";
 import AllVehiclesOverlay from "../__mocks__/AllVehicles";
 import ContextMenuDemo from "../__mocks__/ContextMenuDemo";
 
-import BaseMap, { MarkerWithPopup, LayerWrapper } from ".";
-
 import { withMap } from "../../../.storybook/base-map-wrapper";
+
+import BaseMap, { MarkerWithPopup, LayerWrapper } from ".";
 
 import "maplibre-gl/dist/maplibre-gl.css";
 
@@ -75,6 +75,7 @@ const SetBoundsButton = () => {
 
   return (
     <button
+      style={{ position: "relative", zIndex: 1000 }}
       onClick={
         () =>
           mapWithBounds?.fitBounds(bbox, {
@@ -94,6 +95,8 @@ const SetBoundsButton = () => {
   );
 };
 
+// This story causes the map to be rendered twice
+// This is a storybook bug: https://github.com/storybookjs/storybook/issues/12670
 export const clickToSetBounds = (): ComponentStory<typeof BaseMap> => (
   <MapProvider>
     <SetBoundsButton />

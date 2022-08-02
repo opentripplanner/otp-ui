@@ -2,14 +2,14 @@ import * as Icons from "@opentripplanner/icons";
 import React from "react";
 import { action } from "@storybook/addon-actions";
 
-import * as Core from ".";
-
 import commonModes from "./__mocks__/modes-en";
 import modeOptions from "./__mocks__/mode-options";
 import submodeOptions from "./__mocks__/submode-options";
 import trimet from "./__mocks__/trimet-styled";
 
 import { SettingsSelectorPanel } from "./styled";
+
+import * as Core from ".";
 
 // Events
 const onChange = action("onChange");

@@ -3,8 +3,8 @@ import React from "react";
 import { action } from "@storybook/addon-actions";
 import { injectIntl } from "react-intl";
 
-import TransitiveOverlay, { itineraryToTransitive } from ".";
 import { withMap } from "../../../.storybook/base-map-wrapper";
+import TransitiveOverlay, { itineraryToTransitive } from ".";
 
 // Use the font-family defined by storybook <body> element,
 // so we don't need to install/import extra fonts.

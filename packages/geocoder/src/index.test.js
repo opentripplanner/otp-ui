@@ -2,8 +2,9 @@ import path from "path";
 
 import nock from "nock";
 
-import getGeocoder from ".";
 import PeliasGeocoder from "./geocoders/pelias";
+
+import getGeocoder from ".";
 
 function mockResponsePath(geocoder, file) {
   return path.join(__dirname, "test-fixtures", geocoder, file);
