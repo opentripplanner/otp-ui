@@ -42,6 +42,19 @@ function dietaryLink(contents: ReactElement): ReactElement {
     </a>
   );
 }
+
+function CO2DescriptionLink(contents: ReactElement): ReactElement {
+  return (
+    <a
+      href="https://www.itf-oecd.org/sites/default/files/life-cycle-assessment-calculations-2020.xlsx"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      {contents}
+    </a>
+  );
+}
+
 /**
  * Default rendering if no component is provided for the CaloriesDetails
  * slot in the TripDetails component.
@@ -340,7 +353,10 @@ export function TripDetails({
                 defaultMessage={
                   defaultMessages["otpUi.TripDetails.co2description"]
                 }
-                values={{ totalDistance }}
+                values={{
+                  totalDistance,
+                  link: CO2DescriptionLink
+                }}
                 description="Text explaining how the CO2 emissions is calculated."
                 id="otpUi.TripDetails.co2description"
               />
