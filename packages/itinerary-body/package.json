@@ -19,7 +19,7 @@
     "flat": "^5.0.2",
     "moment": "^2.24.0",
     "react-resize-detector": "^4.2.1",
-    "velocity-react": "^1.4.3"
+    "react-animate-height": "^3.0.4"
   },
   "devDependencies": {
     "@types/flat": "^5.0.2"
