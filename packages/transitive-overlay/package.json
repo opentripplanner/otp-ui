@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/transitive-overlay",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A map overlay to show an itinerary based on transitive.js",
   "main": "lib/index.js",
   "module": "esm/index.js",
