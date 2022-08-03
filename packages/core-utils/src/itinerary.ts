@@ -429,24 +429,24 @@ export function calculatePhysicalActivity(
  * It is assumed that the same currency is used for all TNC legs.
  */
 export function calculateTncFares(itinerary: Itinerary): TncFare {
-  let minTNCFare = 0;
-  let maxTNCFare = 0;
-  let currencyCode;
-  itinerary.legs.forEach(({ hailedCar, mode, tncData }) => {
-    if (mode === "CAR" && hailedCar && tncData) {
-      const { currency, maxCost, minCost } = tncData;
-      minTNCFare += minCost;
-      maxTNCFare += maxCost;
-      // Assumes a single currency for entire itinerary.
-      currencyCode = currency;
-    }
-  });
-
-  return {
-    currencyCode,
-    maxTNCFare,
-    minTNCFare
-  };
+  return itinerary.legs
+    .filter(leg => leg.mode === "CAR" && leg.hailedCar && leg.tncData)
+    .reduce(
+      ({ maxTNCFare, minTNCFare }, { tncData }) => {
+        const { currency, maxCost, minCost } = tncData;
+        return {
+          // Assumes a single currency for entire itinerary.
+          currencyCode: currency,
+          maxTNCFare: maxTNCFare + maxCost,
+          minTNCFare: minTNCFare + minCost
+        };
+      },
+      {
+        currencyCode: null,
+        maxTNCFare: 0,
+        minTNCFare: 0
+      }
+    );
 }
 
 /**
@@ -459,17 +459,13 @@ export function getTransitFare(
   currencyCode: string;
   transitFare: number;
 } {
-  // Default values (if fare component is not valid).
-  let transitFare = 0;
-  let currencyCode = "USD";
-  if (fareComponent) {
-    // Assign values without declaration.
-    // See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#assignment_without_declaration
-    ({ currencyCode } = fareComponent.currency);
-    transitFare = fareComponent.cents;
-  }
-  return {
-    currencyCode,
-    transitFare
-  };
+  return fareComponent
+    ? {
+        currencyCode: fareComponent.currency.currencyCode,
+        transitFare: fareComponent.cents
+      }
+    : {
+        currencyCode: "USD",
+        transitFare: 0
+      };
 }
