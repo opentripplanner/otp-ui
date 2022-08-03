@@ -1,9 +1,9 @@
-import moment from "moment";
+import { format, isMatch, parse } from "date-fns";
 import getGeocoder from "@opentripplanner/geocoder/lib";
 import qs from "qs";
 
 import { getTransitModes, hasCar, isAccessMode } from "./itinerary";
-import { stringToCoords } from "./map";
+import { coordsToString, stringToCoords } from "./map";
 import queryParams from "./query-params";
 import {
   getCurrentTime,
@@ -11,10 +11,6 @@ import {
   OTP_API_DATE_FORMAT,
   OTP_API_TIME_FORMAT
 } from "./time";
-
-import { coordsToString, summarizeQuery } from "./deprecated";
-
-export { summarizeQuery };
 
 /* The list of default parameters considered in the settings panel */
 
@@ -315,9 +311,15 @@ export function planParamsToQuery(params) {
         break;
       case "time":
         {
-          const parsedTime = moment(params.time, TIME_FORMATS);
-          query.time = parsedTime.isValid()
-            ? parsedTime.format(OTP_API_TIME_FORMAT)
+          // Match one of the supported time formats
+          const matchedTimeFormat = TIME_FORMATS.find(timeFormat =>
+            isMatch(params.time, timeFormat)
+          );
+          query.time = matchedTimeFormat
+            ? format(
+                parse(params.time, matchedTimeFormat, new Date()),
+                OTP_API_TIME_FORMAT
+              )
             : getCurrentTime();
         }
         break;
@@ -421,8 +423,8 @@ export function getRoutingParams(config, currentQuery, ignoreRealtimeUpdates) {
     }
 
     // check date/time validity; ignore both if either is invalid
-    const dateValid = moment(params.date, OTP_API_DATE_FORMAT).isValid();
-    const timeValid = moment(params.time, OTP_API_TIME_FORMAT).isValid();
+    const dateValid = isMatch(params.date, OTP_API_DATE_FORMAT);
+    const timeValid = isMatch(params.time, OTP_API_TIME_FORMAT);
 
     if (!dateValid || !timeValid) {
       delete params.time;
@@ -447,11 +449,8 @@ export function getRoutingParams(config, currentQuery, ignoreRealtimeUpdates) {
     // Additional processing specific to PROFILE mode
   } else {
     // check start and end time validity; ignore both if either is invalid
-    const startTimeValid = moment(
-      params.startTime,
-      OTP_API_TIME_FORMAT
-    ).isValid();
-    const endTimeValid = moment(params.endTime, OTP_API_TIME_FORMAT).isValid();
+    const startTimeValid = isMatch(params.startTime, OTP_API_TIME_FORMAT);
+    const endTimeValid = isMatch(params.endTime, OTP_API_TIME_FORMAT);
 
     if (!startTimeValid || !endTimeValid) {
       delete params.startTimeValid;

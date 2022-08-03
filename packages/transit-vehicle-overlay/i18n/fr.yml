@@ -12,6 +12,13 @@ otpUi:
   TransitVehicleOverlay:
     date: "Date : {date}"
     durationAgo: "il y a {duration}"
+    durationWithSeconds: "{hours, plural,
+      =0 {}
+      other {# hr }}{minutes, plural,
+      =0 {{seconds, plural, =0 {# mn} other {}}}
+      other {# mn}}{seconds, plural,
+      =0 {}
+      other { # s}}"
     genericRouteFormat: "Ligne {route}"
     lastSeen: Mis à jour {durationText}
     status: "État : {status}"

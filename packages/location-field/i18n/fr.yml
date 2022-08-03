@@ -14,6 +14,7 @@ otpUi:
     currentLocationUnavailable: Position actuelle non disponible ({error})
     fetchingLocation: Chargement du lieu...
     geocoderUnreachable: Géocodeur introuvable{error, select, undefined {} other { ({error})}}
+    homeLocation: Domicile
     myPlaces: Mes lieux
     nearby: Arrêts à proximité
     noResultsFound: >
@@ -21,9 +22,11 @@ otpUi:
         null {votre requête}
         other {{input}}
       }
+    placeNameWithDetails: "{placeName} ({details})"
     # Note to translator: This is an implicit plural (as in "Other results").
     other: Autres
     recentlySearched: Recherches récentes
     stations: Stations
     stops: Arrêts
     useCurrentLocation: Utiliser ma position actuelle
+    workLocation: Lieu de travail
