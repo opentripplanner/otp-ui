@@ -1,13 +1,10 @@
 import flatten from "flat";
 import coreUtils from "@opentripplanner/core-utils";
-import { FlexBookingInfo } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage, FormattedNumber } from "react-intl";
 import { CalendarAlt } from "@styled-icons/fa-solid/CalendarAlt";
-import { HandPaper } from "@styled-icons/fa-solid/HandPaper";
 import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
 import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
-import { PhoneVolume } from "@styled-icons/fa-solid/PhoneVolume";
 import { Leaf } from "@styled-icons/fa-solid/Leaf";
 import { Route } from "@styled-icons/fa-solid/Route";
 
@@ -45,19 +42,6 @@ function dietaryLink(contents: ReactElement): ReactElement {
     </a>
   );
 }
-
-/**
- * Helper function that assembles values for flex pickup/dropoff messages.
- */
-function getFlexMessageValues(info: FlexBookingInfo) {
-  return {
-    hasLeadTime: coreUtils.itinerary.isAdvanceBookingRequired(info),
-    hasPhone: !!info?.contactInfo?.phoneNumber,
-    leadDays: info.latestBookingTime.daysPrior,
-    phoneNumber: info?.contactInfo?.phoneNumber
-  };
-}
-
 /**
  * Default rendering if no component is provided for the CaloriesDetails
  * slot in the TripDetails component.
@@ -373,58 +357,20 @@ export function TripDetails({
                   }
                   description="Text stating that portions of the trip include a flex (on-demand) transit service."
                   id="otpUi.TripDetails.tripIncludesFlex"
+                  values={{
+                    extraMessage: [
+                      ...new Set([
+                        ...pickupBookingInfo.map(info => info.message),
+                        ...dropOffBookingInfo.map(info => info.message)
+                      ])
+                    ].join(" ")
+                  }}
                 />
               </S.FlexSummary>
             }
             icon={<Route size={17} />}
           />
         )}
-        {pickupBookingInfo &&
-          pickupBookingInfo.map(info => (
-            <TripDetail
-              key={info.pickupMessage}
-              icon={<PhoneVolume size={17} />}
-              summary={
-                <S.FlexPickupSummary>
-                  <FormattedMessage
-                    defaultMessage={
-                      defaultMessages["otpUi.TripDetails.flexPickupMessage"]
-                    }
-                    description="Instructions for booking and boarding the flex (on-demand) transit service."
-                    id="otpUi.TripDetails.flexPickupMessage"
-                    values={getFlexMessageValues(info)}
-                  />
-                </S.FlexPickupSummary>
-              }
-              description={info.pickupMessage}
-            />
-          ))}
-        {dropOffBookingInfo &&
-          dropOffBookingInfo.map(info => (
-            <TripDetail
-              description={info.dropOffMessage}
-              icon={
-                coreUtils.itinerary.isAdvanceBookingRequired(info) ? (
-                  <PhoneVolume size={17} />
-                ) : (
-                  <HandPaper size={17} />
-                )
-              }
-              key={info.dropOffMessage}
-              summary={
-                <S.FlexDropOffSummary>
-                  <FormattedMessage
-                    defaultMessage={
-                      defaultMessages["otpUi.TripDetails.flexDropOffMessage"]
-                    }
-                    description="Instructions for getting off the flex (on-demand) transit service."
-                    id="otpUi.TripDetails.flexDropOffMessage"
-                    values={getFlexMessageValues(info)}
-                  />
-                </S.FlexDropOffSummary>
-              }
-            />
-          ))}
       </S.TripDetailsBody>
     </S.TripDetails>
   );

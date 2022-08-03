@@ -22,28 +22,12 @@ otpUi:
     co2: "CO2 Emitted: <strong>{co2}</strong>"
     co2description: "CO2 intensity is calculated by multiplying the distance of each leg of a trip by the CO2 intensity of each mode."
     departure: Depart <strong>{departureDate, date, long}</strong> at <strong>{departureDate, time, short}</strong>
-    flexDropOffMessage: >
-      {hasLeadTime, select,
-        true {To get off at your destination, you must call
-          {hasPhone, select,
-            true {{phoneNumber}}
-            other {ahead}
-          } at least {leadDays, plural, one {# day} other {# days}} in advance}
-        other {You must tell the operator where you want to get off.}
-      }.
-    flexPickupMessage: >
-      To take this route, you must call {hasPhone, select,
-        true {{phoneNumber}}
-        other {ahead}
-      }{hasLeadTime, select,
-        true { at least {leadDays, plural, one {# day} other {# days}} in advance}
-        other {}
-      }.
     title: Trip Details
     tncFare: "{companies} Fare: <strong>{minTNCFare} - {maxTNCFare}</strong>"
     transitFare: Transit Fare
     transitFareEntry: "{name}: <strong>{value}</strong>"
-    tripIncludesFlex: This trip includes flexible routes.
+    # The {extraMessage} string is included here instead of in the html so that it can be rearranged or surrounded as required in certain languages
+    tripIncludesFlex: This trip includes flexible routes. {extraMessage}
     fareDetailsHeaders:
       regular: "Adult"
       youth: "Youth"
