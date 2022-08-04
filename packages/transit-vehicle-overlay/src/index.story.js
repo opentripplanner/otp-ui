@@ -1,6 +1,5 @@
 // FIXME: refactor all these stories to 1) remove knobs (deprecated) and 2) un-disable them (remove invalid useState())
 import BaseMap from "@opentripplanner/base-map";
-import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 
 import { action } from "@storybook/addon-actions";
@@ -22,6 +21,7 @@ import VehicleTooltip from "./components/popups/VehicleTooltip";
 import VehiclePopup from "./components/popups/VehiclePopup";
 
 import * as utils from "./utils";
+import FormattedDurationWithSeconds from "./utils/formatted-duration-with-seconds";
 import * as proprietary from "../__mocks__/proprietaryFetchUtils";
 
 const geom = require("../__mocks__/lineGeom100.json");
@@ -152,25 +152,21 @@ function rectangles(popup = true) {
     }
   };
 
-  // silly function used to change the arrival time (tooltip) in this example
-  function makeRandomDate() {
+  // tooltip content callback function
+  function getTooltipContent(vehicle, isTracked) {
+    utils.linterIgnoreTheseProps(isTracked);
+    // Randomly change the arrival time (tooltip) in this example
     const secs = Date.now() % 379;
-    const prettyDate = coreUtils.time.formatDurationWithSeconds(secs);
-    return prettyDate;
+    const prettyDate = <FormattedDurationWithSeconds seconds={secs} />;
+    return (
+      <>
+        {vehicle && vehicle.routeShortName ? vehicle.routeShortName : "Vehicle"}{" "}
+        is arriving in {prettyDate}
+      </>
+    );
   }
 
-  // tooltip content callback function
-  CustomTooltip.defaultProps.getContent = (vehicle, isTracked) => {
-    utils.linterIgnoreTheseProps(isTracked);
-    const prettyDate = makeRandomDate();
-    let retVal;
-    if (vehicle && vehicle.routeShortName) {
-      retVal = `${vehicle.routeShortName} is arriving in ${prettyDate}`;
-    } else {
-      retVal = `Vehicle is arriving in ${prettyDate}`;
-    }
-    return retVal;
-  };
+  CustomTooltip.defaultProps.getContent = getTooltipContent;
 
   // if there's a popup, place the tooltip on bottom of marker (since popup opens on top)
   CustomTooltip.defaultProps.direction = popup ? "bottom" : "rotation";

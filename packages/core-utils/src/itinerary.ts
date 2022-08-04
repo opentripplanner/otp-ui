@@ -7,33 +7,11 @@ import {
   Itinerary,
   LatLngArray,
   Leg,
-  Step
+  Money,
+  Step,
+  TncFare
 } from "@opentripplanner/types";
 import turfAlong from "@turf/along";
-
-import {
-  calculateFares,
-  getLegModeLabel,
-  getModeForPlace,
-  getPlaceName,
-  getStepDirection,
-  getStepInstructions,
-  getStepStreetName,
-  getTimeZoneOffset,
-  getTransitFare
-} from "./deprecated";
-
-export {
-  calculateFares,
-  getLegModeLabel,
-  getModeForPlace,
-  getPlaceName,
-  getStepDirection,
-  getStepInstructions,
-  getStepStreetName,
-  getTimeZoneOffset,
-  getTransitFare
-};
 
 // All OTP transit modes
 export const transitModes = [
@@ -446,6 +424,53 @@ export function calculatePhysicalActivity(
 }
 
 /**
+ * For an itinerary, calculates the TNC fares and returns an object with
+ * these values and currency info.
+ * It is assumed that the same currency is used for all TNC legs.
+ */
+export function calculateTncFares(itinerary: Itinerary): TncFare {
+  return itinerary.legs
+    .filter(leg => leg.mode === "CAR" && leg.hailedCar && leg.tncData)
+    .reduce(
+      ({ maxTNCFare, minTNCFare }, { tncData }) => {
+        const { currency, maxCost, minCost } = tncData;
+        return {
+          // Assumes a single currency for entire itinerary.
+          currencyCode: currency,
+          maxTNCFare: maxTNCFare + maxCost,
+          minTNCFare: minTNCFare + minCost
+        };
+      },
+      {
+        currencyCode: null,
+        maxTNCFare: 0,
+        minTNCFare: 0
+      }
+    );
+}
+
+/**
+ * For a given fare component (either total fare or component parts), returns
+ * an object with the fare value (in cents).
+ */
+export function getTransitFare(
+  fareComponent: Money
+): {
+  currencyCode: string;
+  transitFare: number;
+} {
+  return fareComponent
+    ? {
+        currencyCode: fareComponent.currency.currencyCode,
+        transitFare: fareComponent.cents
+      }
+    : {
+        currencyCode: "USD",
+        transitFare: 0
+      };
+}
+
+/**
  * Sources:
  * - https://www.itf-oecd.org/sites/default/files/docs/environmental-performance-new-mobility.pdf
  * - https://www.thrustcarbon.com/insights/how-to-calculate-emissions-from-a-ferry-journey
@@ -507,14 +532,4 @@ export function calculateEmissions(
     default:
       return totalCarbon;
   }
-}
-
-export function calculateTncFares(itinerary) {
-  // TODO: don't rely on deprecated methods!
-  // At the moment this is safe as none of these exported variables contain strings
-  const { maxTNCFare, minTNCFare, tncCurrencyCode } = calculateFares(
-    itinerary,
-    true
-  );
-  return { maxTNCFare, minTNCFare, tncCurrencyCode };
 }

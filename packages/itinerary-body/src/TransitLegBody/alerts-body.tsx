@@ -1,4 +1,6 @@
-import moment from "moment";
+import { differenceInCalendarDays } from "date-fns";
+import { toDate, utcToZonedTime } from "date-fns-tz";
+import coreUtils from "@opentripplanner/core-utils";
 import { Alert } from "@opentripplanner/types";
 import React, { FunctionComponent, ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
@@ -6,14 +8,18 @@ import { FormattedMessage } from "react-intl";
 import * as S from "../styled";
 import { defaultMessages } from "../util";
 
+const { getUserTimezone, getCurrentDate } = coreUtils.time;
+
 interface Props {
   alerts: Alert[];
   AlertIcon?: FunctionComponent;
+  timeZone?: string;
 }
 
 export default function AlertsBody({
   alerts,
-  AlertIcon = S.DefaultAlertBodyIcon
+  AlertIcon = S.DefaultAlertBodyIcon,
+  timeZone = getUserTimezone()
 }: Props): ReactElement {
   return (
     <S.TransitAlerts>
@@ -31,9 +37,16 @@ export default function AlertsBody({
           ) => {
             // If alert is effective as of +/- one day, use today, tomorrow, or
             // yesterday with time. Otherwise, use long date format.
-            // FIXME: adding 24 hours to a date that is "today" can lead moment to
-            // report the result to still be "today" (see OTP-RR story).
-            const dayDiff = moment(effectiveStartDate).diff(moment(), "days");
+            // The difference is expressed in calendar days based on the agency's time zone.
+            // Note: Previously, we used moment.diff(..., "days"), which reports the number of whole 24-hour periods
+            // between two timestamps/dates (not considering timezones or daylight time changes).
+            const today = toDate(getCurrentDate(timeZone));
+            const compareDate = utcToZonedTime(
+              new Date(effectiveStartDate),
+              timeZone
+            );
+            const dayDiff = differenceInCalendarDays(compareDate, today);
+
             return (
               <S.TransitAlert key={i} href={alertUrl}>
                 <S.TransitAlertIconContainer>

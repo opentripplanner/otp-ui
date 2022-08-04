@@ -111,7 +111,7 @@ export function TripDetails({
 }: TripDetailsProps): ReactElement {
   // process the transit fare
   const fareResult = coreUtils.itinerary.calculateTncFares(itinerary);
-  const { maxTNCFare, minTNCFare, tncCurrencyCode } = fareResult;
+  const { currencyCode, maxTNCFare, minTNCFare } = fareResult;
   const transitFares = itinerary?.fare?.fare;
   const fareDetails = itinerary.fare?.details;
 
@@ -195,8 +195,8 @@ export function TripDetails({
                     {companies.toLowerCase()}
                   </S.TNCFareCompanies>
                 ),
-                maxTNCFare: renderFare(tncCurrencyCode, maxTNCFare),
-                minTNCFare: renderFare(tncCurrencyCode, minTNCFare),
+                maxTNCFare: renderFare(currencyCode, maxTNCFare),
+                minTNCFare: renderFare(currencyCode, minTNCFare),
                 strong: boldText
               }}
             />

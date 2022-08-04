@@ -42,6 +42,7 @@ interface Props {
   setViewedTrip: SetViewedTripFunction;
   showAgencyInfo: boolean;
   showViewTripButton: boolean;
+  timeZone: string;
   TransitLegSubheader?: FunctionComponent<TransitLegSubheaderProps>;
   TransitLegSummary: FunctionComponent<TransitLegSummaryProps>;
   transitOperator?: TransitOperator;
@@ -98,6 +99,7 @@ class TransitLegBody extends Component<Props, State> {
       setViewedTrip,
       showAgencyInfo,
       showViewTripButton,
+      timeZone,
       TransitLegSubheader,
       TransitLegSummary,
       transitOperator
@@ -209,7 +211,11 @@ class TransitLegBody extends Component<Props, State> {
 
           {/* The Alerts body, if visible */}
           <AnimateHeight duration={500} height={expandAlerts ? "auto" : 0}>
-            <AlertsBody alerts={leg.alerts} AlertIcon={AlertBodyIcon} />
+            <AlertsBody
+              alerts={leg.alerts}
+              AlertIcon={AlertBodyIcon}
+              timeZone={timeZone}
+            />
           </AnimateHeight>
           {/* The "Ride X Min / X Stops" Row, including IntermediateStops body */}
           {leg.intermediateStops && leg.intermediateStops.length > 0 && (
