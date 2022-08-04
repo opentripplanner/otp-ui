@@ -2787,27 +2787,6 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
-"@opentripplanner/core-utils@^7.0.0-alpha.3":
-  version "7.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-7.0.0-alpha.3.tgz#8f445f1e894f51b32f096730c34ae5e957e40848"
-  integrity sha512-wBVts5rAW0/L1pAUf5eNavEml3zCK1QAXt+8dPa+x23QjvcHSzJipxnH72Kezh1uWgTPRPDiqg3nObxdrDN0dg==
-  dependencies:
-    "@mapbox/polyline" "^1.1.0"
-    "@opentripplanner/geocoder" "^1.2.2"
-    "@styled-icons/foundation" "^10.34.0"
-    "@turf/along" "^6.0.1"
-    bowser "^2.7.0"
-    date-fns "^2.28.0"
-    date-fns-tz "^1.2.2"
-    lodash.clonedeep "^4.5.0"
-    lodash.isequal "^4.5.0"
-    qs "^6.9.1"
-
-"@opentripplanner/types@^3.0.0-alpha.4":
-  version "3.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-3.0.0-alpha.4.tgz#1804267d3bd5b138f1e715964fb238f79372c19b"
-  integrity sha512-6/6WuOQpve8De9Jbc+qweaSmebWO/fQgaheMLL/gLzS67KDPA8AstRN+z39liRvzp+McaHjNNfgD0UCWPZiakA==
-
 "@pmmmwh/react-refresh-webpack-plugin@^0.5.1":
   version "0.5.4"
   resolved "https://registry.yarnpkg.com/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.5.4.tgz#df0d0d855fc527db48aac93c218a0bf4ada41f99"
