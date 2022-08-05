@@ -28,6 +28,6 @@
     "tsc": "tsc"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^3.0.0-alpha.4"
+    "@opentripplanner/types": "^3.0.0"
   }
 }

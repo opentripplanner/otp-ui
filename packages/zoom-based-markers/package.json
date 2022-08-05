@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/zoom-based-markers",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A component that renders objects differently based on a zoom level.",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -18,7 +18,7 @@
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
   "dependencies": {
-    "@opentripplanner/core-utils": "^7.0.0-alpha.3"
+    "@opentripplanner/core-utils": "^7.0.0"
   },
   "peerDependencies": {
     "@opentripplanner/base-map": "^2.0.0",
