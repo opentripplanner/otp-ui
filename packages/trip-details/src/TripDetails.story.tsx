@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import flatten from "flat";
 import React, { ReactElement } from "react";
 import {
@@ -143,7 +144,7 @@ const CustomDepartureDetails = ({
   departureDate
 }: DepartureDetailsProps): ReactElement => (
   <>
-    Custom messages about {departureDate.format(longDateFormat)} can be
+    Custom messages about {format(departureDate, longDateFormat)} can be
     constructed dynamically using any markup.
   </>
 );
