@@ -102,7 +102,7 @@ const fareByLegLayout: FareTableLayout[] = [
   }
 ];
 
-const longDateFormat = "MMMM D, YYYY";
+const longDateFormat = "MMMM d, yyyy";
 
 const englishFareKeyMap = {
   regular: "Transit Fare",
