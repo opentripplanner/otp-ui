@@ -15,7 +15,7 @@ export type Company = {
   label: string;
   /** a comma-separated string listing the modes that this company has */
   modes: string;
-  overridePlaceNames?: boolean;
+  overrideStationNames?: boolean;
 };
 
 /**
