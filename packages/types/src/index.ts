@@ -19,7 +19,7 @@ export type Company = {
    * tells OTP-UI to ignore the API provided station names
    * and instead use generic ones.
    */
-  overrideStationNames?: boolean;
+  overridePlaceNames?: boolean;
 };
 
 /**
