@@ -1,11 +1,9 @@
-import coreUtils from "@opentripplanner/core-utils";
 import { TransitVehicle } from "@opentripplanner/types";
 import React from "react";
 import { FormattedMessage } from "react-intl";
 import styled from "styled-components";
 import defaultMessages from "./utils/default-messages";
-
-const { formatDurationLikeMoment } = coreUtils.time;
+import FormattedDurationWithSeconds from "./utils/formatted-duration-with-seconds";
 
 const Title = styled.span`
   font-size: 110%;
@@ -67,7 +65,7 @@ export default function VehicleTooltip({ vehicle }: Props): JSX.Element {
           description="Text describing a past duration"
           id="otpUi.TransitVehicleOverlay.durationAgo"
           values={{
-            duration: formatDurationLikeMoment(seconds, true)
+            duration: <FormattedDurationWithSeconds seconds={seconds} />
           }}
         />
       )}

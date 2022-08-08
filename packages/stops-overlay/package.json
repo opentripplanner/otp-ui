@@ -24,7 +24,7 @@
     "flat": "^5.0.2"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^2.0.0",
+    "@opentripplanner/types": "^3.0.0",
     "styled-icons": "^10.34.0"
   },
   "peerDependencies": {

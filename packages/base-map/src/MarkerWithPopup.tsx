@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from "react";
 import { Marker, MarkerProps, Popup, PopupProps } from "react-map-gl";
 import { LeafletStyleMarker } from "./styled";
@@ -26,7 +27,6 @@ const MarkerWithPopup = ({
 
   return (
     <Marker
-      // eslint-disable-next-line react/jsx-props-no-spreading
       {...markerProps}
       latitude={position[0]}
       longitude={position[1]}

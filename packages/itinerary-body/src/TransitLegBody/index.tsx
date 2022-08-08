@@ -42,6 +42,7 @@ interface Props {
   setViewedTrip: SetViewedTripFunction;
   showAgencyInfo: boolean;
   showViewTripButton: boolean;
+  timeZone: string;
   TransitLegSubheader?: FunctionComponent<TransitLegSubheaderProps>;
   TransitLegSummary: FunctionComponent<TransitLegSummaryProps>;
   transitOperator?: TransitOperator;
@@ -98,6 +99,7 @@ class TransitLegBody extends Component<Props, State> {
       setViewedTrip,
       showAgencyInfo,
       showViewTripButton,
+      timeZone,
       TransitLegSubheader,
       TransitLegSummary,
       transitOperator
@@ -213,7 +215,11 @@ class TransitLegBody extends Component<Props, State> {
             leave={{ animation: "slideUp" }}
           >
             {expandAlerts && (
-              <AlertsBody alerts={leg.alerts} AlertIcon={AlertBodyIcon} />
+              <AlertsBody
+                alerts={leg.alerts}
+                AlertIcon={AlertBodyIcon}
+                timeZone={timeZone}
+              />
             )}
           </VelocityTransitionGroup>
           {/* The "Ride X Min / X Stops" Row, including IntermediateStops body */}
