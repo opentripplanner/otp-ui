@@ -27,6 +27,8 @@ const MarkerWithPopup = ({
 
   return (
     <Marker
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore This type is very complex
       {...markerProps}
       latitude={position[0]}
       longitude={position[1]}
