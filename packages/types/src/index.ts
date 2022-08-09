@@ -16,7 +16,7 @@ export type Company = {
   /** a comma-separated string listing the modes that this company has */
   modes: string;
   /**
-   * tells OTP-UI to ignore the API provided station names
+   * tells OTP UI to ignore the API provided station names
    * and instead use generic ones.
    */
   overridePlaceNames?: boolean;
