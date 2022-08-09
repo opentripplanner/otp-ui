@@ -20,7 +20,7 @@
     "date-fns-tz": "^1.2.2",
     "flat": "^5.0.2",
     "react-resize-detector": "^4.2.1",
-    "velocity-react": "^1.4.3"
+    "react-animate-height": "^3.0.4"
   },
   "devDependencies": {
     "@opentripplanner/types": "^3.0.0",

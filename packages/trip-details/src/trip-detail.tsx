@@ -1,8 +1,8 @@
 import React, { Component, ReactElement } from "react";
 import { QuestionCircle } from "@styled-icons/fa-solid/QuestionCircle";
 import { TimesCircle } from "@styled-icons/fa-solid/TimesCircle";
-import { VelocityTransitionGroup } from "velocity-react";
 
+import AnimateHeight from "react-animate-height";
 import * as S from "./styled";
 
 type Props = {
@@ -51,19 +51,14 @@ export default class TripDetail extends Component<Props, State> {
             </S.ExpandButton>
           )}
         </S.TripDetailSummary>
-        <VelocityTransitionGroup
-          enter={{ animation: "slideDown" }}
-          leave={{ animation: "slideUp" }}
-        >
-          {expanded && (
-            <S.TripDetailDescription>
-              <S.HideButton onClick={this.onHideClick}>
-                <TimesCircle size="0.92em" />
-              </S.HideButton>
-              {description}
-            </S.TripDetailDescription>
-          )}
-        </VelocityTransitionGroup>
+        <AnimateHeight duration={300} height={expanded ? "auto" : 0}>
+          <S.TripDetailDescription>
+            <S.HideButton onClick={this.onHideClick}>
+              <TimesCircle size="0.92em" />
+            </S.HideButton>
+            {description}
+          </S.TripDetailDescription>
+        </AnimateHeight>
       </S.TripDetail>
     );
   }
