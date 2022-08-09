@@ -110,7 +110,7 @@ export function getPlaceName(
   // Some vehicle rental pick up locations are just a UUID.
   // Other times, it can be a name with relevant information for the user.
   // Here we detect if the name is just a UUID and generate a better name.
-  // It is also possible to configure station name overrides in the config.
+  // It is also possible to configure station name overrides in the config using overridePlaceNames.
   const company = getCompanyForNetwork(place.networks?.[0], companies);
   if (
     (place.name.match(/-/g) || []).length > 3 ||
