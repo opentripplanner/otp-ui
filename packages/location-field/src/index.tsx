@@ -20,6 +20,7 @@ import type { LocationFieldProps, ResultType } from "./types";
 import {
   GeocodedOptionIcon,
   Option,
+  StoredPlaceName,
   TransitStopOption,
   UserLocationIcon
 } from "./options";
@@ -593,8 +594,7 @@ const LocationField = ({
             isActive={itemIndex === activeIndex}
             key={optionKey++}
             onClick={locationSelected}
-            // @ts-ignore Fixed in another PR
-            title={coreUtils.map.formatStoredPlaceName(userLocation)}
+            title={<StoredPlaceName location={userLocation} />}
           />
         );
         itemIndex++;

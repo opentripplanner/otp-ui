@@ -6,10 +6,5 @@
     "rootDir": "./src",
     "skipLibCheck": true
   },
-  "include": ["src/**/*"],
-  "references": [
-    {
-      "path": "../types"
-    }
-  ]
+  "include": ["src/**/*"]
 }

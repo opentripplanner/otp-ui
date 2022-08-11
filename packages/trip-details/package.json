@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/trip-details",
-  "version": "2.1.2",
+  "version": "2.1.4",
   "description": "A component for displaying details about a trip planning itinerary",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -11,13 +11,14 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^6.1.0",
+    "@opentripplanner/core-utils": "^7.0.0",
     "@styled-icons/fa-solid": "^10.34.0",
+    "date-fns": "^2.29.1",
     "flat": "^5.0.2",
-    "velocity-react": "^1.4.3"
+    "react-animate-height": "^3.0.4"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^2.0.0",
+    "@opentripplanner/types": "^3.0.0",
     "@types/flat": "^5.0.2"
   },
   "peerDependencies": {

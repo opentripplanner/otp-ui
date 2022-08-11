@@ -12,6 +12,9 @@
     "@opentripplanner/location-icon": "^1.4.0",
     "flat": "^5.0.2"
   },
+  "devDependencies": {
+    "@opentripplanner/types": "^3.0.0"
+  },
   "peerDependencies": {
     "react": "^16.14.0",
     "react-intl": "^5.20.4",
