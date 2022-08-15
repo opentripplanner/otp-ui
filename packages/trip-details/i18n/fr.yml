@@ -7,6 +7,10 @@ otpUi:
       {walkMinutes, plural, one {<strong># minute</strong> effectuée} other {<strong># minutes</strong> effectuées}} à pied et
       {bikeMinutes, plural, one {<strong># minute</strong> effectuée} other {<strong># minutes</strong> effectuées}} en vélo sur ce trajet.
       (d'après <dietaryLink>Dietary Guidelines for Americans 2005, page 16, Table 4</dietaryLink>)
+    co2: "CO<sub>2</sub> émis: <strong>{co2}</strong>"
+    co2description:
+      "CO<sub>2</sub> intensity is calculated by multiplying the distance of each leg of a trip by the CO<sub>2</sub> intensity of each mode.
+      CO<sub>2</sub> intensity of each mode is derived from <link>this spreadsheet</link>."
     departure: Départ le <strong>{departureDate, date, long}</strong> à <strong>{departureDate, time, short}</strong>
     title: Détails du trajet
     tncFare: "Tarif {companies} : <strong>{minTNCFare} - {maxTNCFare}</strong>"
