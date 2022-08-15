@@ -9,8 +9,8 @@ otpUi:
       (d'après <dietaryLink>Dietary Guidelines for Americans 2005, page 16, Table 4</dietaryLink>)
     co2: "CO<sub>2</sub> émis: <strong>{co2}</strong>"
     co2description:
-      "CO<sub>2</sub> intensity is calculated by multiplying the distance of each leg of a trip by the CO<sub>2</sub> intensity of each mode.
-      CO<sub>2</sub> intensity of each mode is derived from <link>this spreadsheet</link>."
+      "L'intensité carbone est calculée en multipliant la distance de chaque portion d'un trajet par l'intensité en CO<sub>2</sub> du mode utilisé.
+      L'intensité en CO<sub>2</sub> de chaque mode est obtenue d'après <link>ce tableau</link>."
     departure: Départ le <strong>{departureDate, date, long}</strong> à <strong>{departureDate, time, short}</strong>
     title: Détails du trajet
     tncFare: "Tarif {companies} : <strong>{minTNCFare} - {maxTNCFare}</strong>"
