@@ -1,6 +1,6 @@
 import { Config, Leg, LegIconComponent } from "@opentripplanner/types";
 import React, { Component, ReactElement } from "react";
-import { VelocityTransitionGroup } from "velocity-react";
+import AnimateHeight from "react-animate-height";
 import { Duration } from "../defaults";
 
 import * as S from "../styled";
@@ -121,18 +121,13 @@ class AccessLegBody extends Component<Props, State> {
               setLegDiagram={setLegDiagram}
               showElevationProfile={showElevationProfile}
             />
-            <VelocityTransitionGroup
-              enter={{ animation: "slideDown" }}
-              leave={{ animation: "slideUp" }}
-            >
-              {expanded && (
-                <AccessLegSteps
-                  mapillaryCallback={mapillaryCallback}
-                  mapillaryKey={mapillaryKey}
-                  steps={leg.steps}
-                />
-              )}
-            </VelocityTransitionGroup>
+            <AnimateHeight duration={500} height={expanded ? "auto" : 0}>
+              <AccessLegSteps
+                mapillaryCallback={mapillaryCallback}
+                mapillaryKey={mapillaryKey}
+                steps={leg.steps}
+              />
+            </AnimateHeight>
           </S.LegDetails>
         </S.LegBody>
       </>
