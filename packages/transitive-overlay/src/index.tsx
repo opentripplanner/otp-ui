@@ -165,13 +165,14 @@ const TransitiveCanvasOverlay = ({
         layout={{
           "symbol-placement": "line",
           "text-field": ["get", "name"],
+          "text-keep-upright": true,
           "text-size": 16
         }}
         paint={{
+          "text-color": "#eee",
           "text-halo-blur": 15,
           "text-halo-color": ["get", "color"],
-          "text-halo-width": 15,
-          "text-color": "#eee"
+          "text-halo-width": 15
         }}
         type="symbol"
       />
