@@ -6,13 +6,13 @@ import {
   TransitOperator
 } from "@opentripplanner/types";
 import React, { Component, FunctionComponent, ReactElement } from "react";
+import AnimateHeight from "react-animate-height";
 import {
   FormattedMessage,
   FormattedNumber,
   injectIntl,
   IntlShape
 } from "react-intl";
-import { VelocityTransitionGroup } from "velocity-react";
 import { Duration } from "../defaults";
 
 import * as S from "../styled";
@@ -210,18 +210,13 @@ class TransitLegBody extends Component<Props, State> {
           )}
 
           {/* The Alerts body, if visible */}
-          <VelocityTransitionGroup
-            enter={{ animation: "slideDown" }}
-            leave={{ animation: "slideUp" }}
-          >
-            {expandAlerts && (
-              <AlertsBody
-                alerts={leg.alerts}
-                AlertIcon={AlertBodyIcon}
-                timeZone={timeZone}
-              />
-            )}
-          </VelocityTransitionGroup>
+          <AnimateHeight duration={500} height={expandAlerts ? "auto" : 0}>
+            <AlertsBody
+              alerts={leg.alerts}
+              AlertIcon={AlertBodyIcon}
+              timeZone={timeZone}
+            />
+          </AnimateHeight>
           {/* The "Ride X Min / X Stops" Row, including IntermediateStops body */}
           {leg.intermediateStops && leg.intermediateStops.length > 0 && (
             <S.TransitLegDetails>
@@ -243,39 +238,34 @@ class TransitLegBody extends Component<Props, State> {
                 )}
               </S.TransitLegDetailsHeader>
               {/* IntermediateStops expanded body */}
-              <VelocityTransitionGroup
-                enter={{ animation: "slideDown" }}
-                leave={{ animation: "slideUp" }}
-              >
-                {stopsExpanded && (
-                  <S.TransitLegExpandedBody>
-                    <IntermediateStops stops={leg.intermediateStops} />
-                    {fareForLeg && (
-                      <S.TransitLegFare>
-                        <FormattedMessage
-                          defaultMessage={
-                            defaultMessages["otpUi.TransitLegBody.fare"]
-                          }
-                          description="Describes the fare for a leg"
-                          id="otpUi.TransitLegBody.fare"
-                          values={{
-                            fare: (
-                              <FormattedNumber
-                                currency={fareForLeg.currencyCode}
-                                currencyDisplay="narrowSymbol"
-                                // This isn't a "real" style prop
-                                // eslint-disable-next-line react/style-prop-object
-                                style="currency"
-                                value={fareForLeg.transitFare / 100}
-                              />
-                            )
-                          }}
-                        />
-                      </S.TransitLegFare>
-                    )}
-                  </S.TransitLegExpandedBody>
-                )}
-              </VelocityTransitionGroup>
+              <AnimateHeight duration={500} height={stopsExpanded ? "auto" : 0}>
+                <S.TransitLegExpandedBody>
+                  <IntermediateStops stops={leg.intermediateStops} />
+                  {fareForLeg && (
+                    <S.TransitLegFare>
+                      <FormattedMessage
+                        defaultMessage={
+                          defaultMessages["otpUi.TransitLegBody.fare"]
+                        }
+                        description="Describes the fare for a leg"
+                        id="otpUi.TransitLegBody.fare"
+                        values={{
+                          fare: (
+                            <FormattedNumber
+                              currency={fareForLeg.currencyCode}
+                              currencyDisplay="narrowSymbol"
+                              // This isn't a "real" style prop
+                              // eslint-disable-next-line react/style-prop-object
+                              style="currency"
+                              value={fareForLeg.transitFare / 100}
+                            />
+                          )
+                        }}
+                      />
+                    </S.TransitLegFare>
+                  )}
+                </S.TransitLegExpandedBody>
+              </AnimateHeight>
 
               {/* Average wait details, if present */}
               {leg.averageWait && (

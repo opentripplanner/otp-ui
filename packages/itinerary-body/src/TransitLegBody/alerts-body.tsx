@@ -21,6 +21,7 @@ export default function AlertsBody({
   AlertIcon = S.DefaultAlertBodyIcon,
   timeZone = getUserTimezone()
 }: Props): ReactElement {
+  if (typeof alerts !== "object") return null;
   return (
     <S.TransitAlerts>
       {alerts
