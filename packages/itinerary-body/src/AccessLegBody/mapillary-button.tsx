@@ -55,7 +55,7 @@ const Icon = styled(StreetView)`
  * @param coords        The coordinates to find imagery for in the format [lat, lon]
  * @param mapillaryKey  A Mapillary api key used to check for imagery.
  * @param clickCallback A method to fire when the button is clicked, which accepts an ID.
- *  If it is not passsed, a popup window will be opened. */
+ *  If it is not passed, a popup window will be opened. */
 const MapillaryButton = ({
   clickCallback,
   coords,

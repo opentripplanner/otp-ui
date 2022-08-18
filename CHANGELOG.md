@@ -99,7 +99,7 @@ Handful of cleanup PRs:
 
 ### Changes
 
-- from-to-location-picker: [fixes issue #54 ](https://github.com/opentripplanner/otp-ui/issues/54) get rid of 'module' enteries in package.json
+- from-to-location-picker: [fixes issue #54 ](https://github.com/opentripplanner/otp-ui/issues/54) get rid of 'module' entries in package.json
 - trip-form: [fixes issue #46 ](https://github.com/opentripplanner/otp-ui/issues/46) no longer throwing exception on bike optimize drop-down
 - endpoints-overlay: [fixes issue #37](https://github.com/opentripplanner/otp-ui/issues/37) allow custom icons from/to on map
 - itinerary-body: [fixes issue #18 ](https://github.com/opentripplanner/otp-ui/issues/18) allows custom naming of route and other aspects of the itinerary
