@@ -130,6 +130,10 @@ const frenchFareKeyMap = {
   electronicSenior: "Tarif Orca séniors"
 };
 
+const defaultCo2Config = {
+  enabled: true
+};
+
 const CustomFareDetails = ({
   transitFares
 }: FareDetailsProps): ReactElement => (
@@ -194,6 +198,7 @@ function createTripDetailsTemplate(
         fareDetailsLayout={fareDetailsLayout}
         fareKeyNameMap={fareKeyNameMap}
         itinerary={itinerary}
+        co2Config={defaultCo2Config}
       />
     );
   };

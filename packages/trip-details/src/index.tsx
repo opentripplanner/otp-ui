@@ -1,10 +1,11 @@
 import flatten from "flat";
 import coreUtils from "@opentripplanner/core-utils";
 import React, { ReactElement } from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, FormattedNumber } from "react-intl";
 import { CalendarAlt } from "@styled-icons/fa-solid/CalendarAlt";
 import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
 import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
+import { Leaf } from "@styled-icons/fa-solid/Leaf";
 import { Route } from "@styled-icons/fa-solid/Route";
 
 import * as S from "./styled";
@@ -27,6 +28,8 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 // - the yaml loader for jest returns messages with flattened ids.
 const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
+const subText = contents => <sub>{contents}</sub>;
+
 /**
  * Helper function to specify the link to dietary table.
  */
@@ -41,6 +44,19 @@ function dietaryLink(contents: ReactElement): ReactElement {
     </a>
   );
 }
+
+function CO2DescriptionLink(contents: ReactElement): ReactElement {
+  return (
+    <a
+      href="https://www.itf-oecd.org/sites/default/files/life-cycle-assessment-calculations-2020.xlsx"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      {contents}
+    </a>
+  );
+}
+
 /**
  * Default rendering if no component is provided for the CaloriesDetails
  * slot in the TripDetails component.
@@ -107,7 +123,8 @@ export function TripDetails({
   FareDetails = null,
   fareDetailsLayout,
   fareKeyNameMap = {},
-  itinerary
+  itinerary,
+  co2Config
 }: TripDetailsProps): ReactElement {
   // process the transit fare
   const fareResult = coreUtils.itinerary.calculateTncFares(itinerary);
@@ -215,6 +232,12 @@ export function TripDetails({
     walkDuration
   } = coreUtils.itinerary.calculatePhysicalActivity(itinerary);
 
+  const co2 = coreUtils.itinerary.calculateEmissions(
+    itinerary,
+    co2Config?.carbonIntensity,
+    co2Config?.units
+  );
+
   // Parse flex info and generate appropriate strings
   const containsFlex = itinerary.legs.some(coreUtils.itinerary.isFlex);
   const pickupBookingInfo = itinerary.legs
@@ -223,6 +246,10 @@ export function TripDetails({
   const dropOffBookingInfo = itinerary.legs
     .map(leg => leg.dropOffBookingInfo)
     .filter(info => !!info);
+  const totalDistance = itinerary.legs.reduce(
+    (total, leg) => total + leg.distance,
+    0
+  );
 
   return (
     <S.TripDetails className={className}>
@@ -296,6 +323,47 @@ export function TripDetails({
                   walkSeconds={walkDuration}
                 />
               )
+            }
+          />
+        )}
+        {co2 > 0 && co2Config?.enabled && (
+          <TripDetail
+            icon={<Leaf size={17} />}
+            summary={
+              <S.CO2Summary>
+                <FormattedMessage
+                  defaultMessage={defaultMessages["otpUi.TripDetails.co2"]}
+                  description="Text showing the quantity of CO2 emitted by this trip."
+                  id="otpUi.TripDetails.co2"
+                  values={{
+                    co2: (
+                      <FormattedNumber
+                        value={Math.round(co2)}
+                        // eslint-disable-next-line react/style-prop-object
+                        style="unit"
+                        unit={co2Config?.units || "gram"}
+                        unitDisplay="narrow"
+                      />
+                    ),
+                    strong: boldText,
+                    sub: subText
+                  }}
+                />
+              </S.CO2Summary>
+            }
+            description={
+              <FormattedMessage
+                defaultMessage={
+                  defaultMessages["otpUi.TripDetails.co2description"]
+                }
+                values={{
+                  link: CO2DescriptionLink,
+                  sub: subText,
+                  totalDistance
+                }}
+                description="Text explaining how the CO2 emissions is calculated."
+                id="otpUi.TripDetails.co2description"
+              />
             }
           />
         )}

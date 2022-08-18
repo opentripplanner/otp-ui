@@ -19,6 +19,10 @@ otpUi:
       <strong>{walkMinutes, plural, one {# minute} other {# minutes}}</strong> spent walking and
       <strong>{bikeMinutes, plural, one {# minute} other {# minutes}}</strong> spent biking during this trip.
       Adapted from <dietaryLink>Dietary Guidelines for Americans 2005, page 16, Table 4</dietaryLink>.
+    co2: "CO<sub>2</sub> Emitted: <strong>{co2}</strong>"
+    co2description:
+      "CO<sub>2</sub> intensity is calculated by multiplying the distance of each leg of a trip by the CO<sub>2</sub> intensity of each mode.
+      CO<sub>2</sub> intensity of each mode is derived from <link>this spreadsheet</link>."
     departure: Depart <strong>{departureDate, date, long}</strong> at <strong>{departureDate, time, short}</strong>
     title: Trip Details
     tncFare: "{companies} Fare: <strong>{minTNCFare} - {maxTNCFare}</strong>"
