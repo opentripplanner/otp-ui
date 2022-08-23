@@ -49,12 +49,14 @@ interface StoryWrapperProps {
   itinerary: Itinerary;
   showRouteFares: boolean;
   TimeColumnContent: FunctionComponent<TimeColumnContentProps>;
+  shouldAlwaysCollapseAlerts: boolean;
 }
 
 function OtpRRItineraryBodyWrapper({
   itinerary,
   showRouteFares,
-  TimeColumnContent
+  TimeColumnContent,
+  shouldAlwaysCollapseAlerts
 }: StoryWrapperProps): ReactElement {
   return (
     <ItineraryBodyDefaultsWrapper
@@ -63,6 +65,7 @@ function OtpRRItineraryBodyWrapper({
       LineColumnContent={OtpRRLineColumnContent}
       PlaceName={OtpRRPlaceName}
       RouteDescription={OtpRRRouteDescription}
+      shouldAlwaysCollapseAlerts={shouldAlwaysCollapseAlerts}
       showAgencyInfo
       showLegIcon
       showMapButtonColumn={false}
@@ -156,4 +159,58 @@ export const CustomTimeColumn = (): ReactElement => (
     itinerary={tncTransitTncItinerary}
     TimeColumnContent={CustomTimeColumnContent}
   />
+);
+
+export const ThreeAlertsAlwaysCollapsing = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    itinerary={walkTransitWalkItinerary}
+    shouldAlwaysCollapseAlerts
+  />
+);
+
+export const TwoAlertsAlwaysCollapsing = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    itinerary={parkAndRideItinerary}
+    shouldAlwaysCollapseAlerts
+  />
+);
+
+export const ZeroAlertsAlwaysCollapsing = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    itinerary={walkInterlinedTransitItinerary}
+    shouldAlwaysCollapseAlerts
+  />
+);
+
+export const ThreeAlertsNotAlwaysCollapsing = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    itinerary={walkTransitWalkItinerary}
+    shouldAlwaysCollapseAlerts={false}
+  />
+);
+
+export const TwoAlertsNotAlwaysCollapsing = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    itinerary={parkAndRideItinerary}
+    shouldAlwaysCollapseAlerts={false}
+  />
+);
+
+export const ZeroAlertsNotAlwaysCollapsing = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    itinerary={walkInterlinedTransitItinerary}
+    shouldAlwaysCollapseAlerts={false}
+  />
+);
+
+export const ThreeAlertsWithoutCollapsingProp = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkItinerary} />
+);
+
+export const TwoAlertsWithoutCollapsingProp = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper itinerary={parkAndRideItinerary} />
+);
+
+export const ZeroAlertsWithoutCollapsingProp = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper itinerary={walkInterlinedTransitItinerary} />
 );

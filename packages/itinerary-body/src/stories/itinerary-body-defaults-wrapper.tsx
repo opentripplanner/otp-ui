@@ -46,6 +46,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
       LineColumnContent,
       PlaceName,
       RouteDescription,
+      shouldAlwaysCollapseAlerts,
       showAgencyInfo,
       showLegIcon,
       showMapButtonColumn = true,
@@ -88,6 +89,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
         setActiveLeg={action("setActiveLeg")}
         setLegDiagram={this.setLegDiagram}
         setViewedTrip={action("setViewedTrip")}
+        shouldAlwaysCollapseAlerts={shouldAlwaysCollapseAlerts}
         showAgencyInfo={showAgencyInfo}
         showElevationProfile
         showLegIcon={showLegIcon}

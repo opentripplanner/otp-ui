@@ -40,6 +40,7 @@ interface Props {
   RouteDescription: FunctionComponent<RouteDescriptionProps>;
   setActiveLeg: SetActiveLegFunction;
   setViewedTrip: SetViewedTripFunction;
+  shouldAlwaysCollapseAlerts: boolean;
   showAgencyInfo: boolean;
   showViewTripButton: boolean;
   timeZone: string;
@@ -97,6 +98,7 @@ class TransitLegBody extends Component<Props, State> {
       LegIcon,
       RouteDescription,
       setViewedTrip,
+      shouldAlwaysCollapseAlerts,
       showAgencyInfo,
       showViewTripButton,
       timeZone,
@@ -118,8 +120,13 @@ class TransitLegBody extends Component<Props, State> {
         ? transitOperator.logo
         : agencyBrandingUrl;
 
-    const expandAlerts =
-      alertsExpanded || (leg.alerts && leg.alerts.length < 3);
+    const maximumAlertCountToShowUncollapsed = 2;
+    const shouldCollapseDueToAlertCount =
+      leg.alerts?.length > maximumAlertCountToShowUncollapsed;
+    const shouldOnlyShowAlertsExpanded =
+      !(shouldCollapseDueToAlertCount || shouldAlwaysCollapseAlerts) ||
+      !leg.alerts;
+    const expandAlerts = alertsExpanded || shouldOnlyShowAlertsExpanded;
     const fareForLeg = this.getFareForLeg(leg, fare);
     return (
       <>
@@ -192,7 +199,7 @@ class TransitLegBody extends Component<Props, State> {
           )}
 
           {/* Alerts toggle */}
-          {alerts && alerts.length > 2 && (
+          {!shouldOnlyShowAlertsExpanded && (
             <S.TransitAlertToggle onClick={this.onToggleAlertsClick}>
               <AlertToggleIcon />{" "}
               <FormattedMessage

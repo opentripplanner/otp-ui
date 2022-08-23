@@ -30,6 +30,7 @@ const ItineraryBody = ({
   setActiveLeg,
   setLegDiagram,
   setViewedTrip,
+  shouldAlwaysCollapseAlerts = false,
   showAgencyInfo,
   showElevationProfile,
   showLegIcon,
@@ -82,6 +83,7 @@ const ItineraryBody = ({
           setActiveLeg={setActiveLeg}
           setLegDiagram={setLegDiagram}
           setViewedTrip={setViewedTrip}
+          shouldAlwaysCollapseAlerts={shouldAlwaysCollapseAlerts}
           showAgencyInfo={showAgencyInfo}
           showElevationProfile={showElevationProfile}
           showLegIcon={showLegIcon}

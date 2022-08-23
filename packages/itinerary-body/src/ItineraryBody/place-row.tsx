@@ -37,6 +37,7 @@ export default function PlaceRow({
   setActiveLeg,
   setLegDiagram,
   setViewedTrip,
+  shouldAlwaysCollapseAlerts,
   showAgencyInfo,
   showElevationProfile,
   showLegIcon,
@@ -119,6 +120,7 @@ export default function PlaceRow({
                 RouteDescription={RouteDescription}
                 setActiveLeg={setActiveLeg}
                 setViewedTrip={setViewedTrip}
+                shouldAlwaysCollapseAlerts={shouldAlwaysCollapseAlerts}
                 showAgencyInfo={showAgencyInfo}
                 showViewTripButton={showViewTripButton}
                 timeZone={config.homeTimezone}

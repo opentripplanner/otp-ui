@@ -160,3 +160,57 @@ export const CustomAlertIconsItinerary = (): ReactElement => (
     AlertBodyIcon={styled(Bomb).attrs({ size: 18 })``}
   />
 );
+
+export const ThreeAlertsAlwaysCollapsing = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkItinerary}
+    shouldAlwaysCollapseAlerts
+  />
+);
+
+export const TwoAlertsAlwaysCollapsing = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={parkAndRideItinerary}
+    shouldAlwaysCollapseAlerts
+  />
+);
+
+export const ZeroAlertsAlwaysCollapsing = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkInterlinedTransitItinerary}
+    shouldAlwaysCollapseAlerts
+  />
+);
+
+export const ThreeAlertsNotAlwaysCollapsing = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkItinerary}
+    shouldAlwaysCollapseAlerts={false}
+  />
+);
+
+export const TwoAlertsNotAlwaysCollapsing = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={parkAndRideItinerary}
+    shouldAlwaysCollapseAlerts={false}
+  />
+);
+
+export const ZeroAlertsNotAlwaysCollapsing = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkInterlinedTransitItinerary}
+    shouldAlwaysCollapseAlerts={false}
+  />
+);
+
+export const ThreeAlertsWithoutCollapsingProp = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper itinerary={walkTransitWalkItinerary} />
+);
+
+export const TwoAlertWithoutCollapsingProp = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper itinerary={parkAndRideItinerary} />
+);
+
+export const ZeroAlertsWithoutCollapsingProp = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper itinerary={walkInterlinedTransitItinerary} />
+);
