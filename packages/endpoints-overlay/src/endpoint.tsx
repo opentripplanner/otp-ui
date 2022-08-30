@@ -44,7 +44,7 @@ interface MarkerDragEvent {
   target: {
     getLatLng: () => {
       lat: number;
-      lon: number;
+      lng: number;
     };
   };
 }
@@ -85,24 +85,6 @@ function UserLocationIcon({ type }: IconProps) {
       <UserLocationInnerIcon type={type} />
     </S.IconWrapper>
   );
-}
-
-/**
- * Reformats a {lat, lon} object to be internationalized.
- * TODO: Combine with the same method at
- * https://github.com/opentripplanner/otp-react-redux/blob/6d5bc90e57843822809b0dff397bad19d66aeb43/lib/components/form/user-settings.js#L34
- */
-function renderCoordinates(intl, place) {
-  const MAX_FRAC_DIGITS = 5;
-
-  return {
-    lat: intl.formatNumber(place.lat, {
-      maximumFractionDigits: MAX_FRAC_DIGITS
-    }),
-    lon: intl.formatNumber(place.lon, {
-      maximumFractionDigits: MAX_FRAC_DIGITS
-    })
-  };
 }
 
 class Endpoint extends Component<Props> {
@@ -152,21 +134,21 @@ class Endpoint extends Component<Props> {
 
   onDragEnd = (e: MarkerDragEvent) => {
     const { intl, setLocation, type } = this.props;
-
-    // This method is depcreated. the latlng object should be fed into react intl
-    const rawLocation = e.target.getLatLng();
+    const { lat, lng: lon } = e.target.getLatLng();
     const location = {
-      lat: rawLocation.lat,
-      lon: rawLocation.lon,
+      lat,
+      lon,
       name: intl.formatMessage(
         {
-          defaultMessage: "{lat}, {lon}",
+          defaultMessage: defaultMessages["otpUi.EndpointsOverlay.coordinates"],
           description:
             "Formats rendering coordinates for a locale using the correct number separator",
-          // FIXME: Move this potentially shared message to an appropriate package.
+          // FIXME: Combine with the same method at
+          // https://github.com/opentripplanner/otp-react-redux/blob/6d5bc90e57843822809b0dff397bad19d66aeb43/lib/components/form/user-settings.js#L34
+          // and move this potentially shared message to an appropriate package.
           id: "otpUi.EndpointsOverlay.coordinates"
         },
-        renderCoordinates(intl, rawLocation)
+        { lat, lon }
       )
     };
     setLocation({ locationType: type, location, reverseGeocode: true });
