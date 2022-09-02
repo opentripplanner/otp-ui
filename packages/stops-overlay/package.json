@@ -19,7 +19,7 @@
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
   "dependencies": {
-    "@opentripplanner/base-map": "^3.0.0-alpha.3",
+    "@opentripplanner/base-map": "^3.0.0",
     "@opentripplanner/from-to-location-picker": "^2.1.2",
     "flat": "^5.0.2"
   },
