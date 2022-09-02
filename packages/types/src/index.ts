@@ -16,10 +16,10 @@ export type Company = {
   /** a comma-separated string listing the modes that this company has */
   modes: string;
   /**
-   * tells OTP-UI to ignore the API provided station names
+   * tells OTP UI to ignore the API provided station names
    * and instead use generic ones.
    */
-  overrideStationNames?: boolean;
+  overridePlaceNames?: boolean;
 };
 
 /**
@@ -486,23 +486,6 @@ export type Route = {
   sortOrder: number;
   eligibilityRestricted?: ZeroOrOne;
   sortOrderSet: boolean;
-};
-
-/**
- * Used to help display the time of day within the context of a particular itinerary.
- * Describes time options, including time format and timezone-related offset.
- * @deprecated
- */
-export type TimeOptions = {
-  /**
-   * A format string template to be used to display a date using moment.js
-   */
-  format: string;
-  /*
-   * The timezone offset in milliseconds if any should be added. This is
-   * typically calculated using the itinerary.js#getTimeZoneOffset function.
-   */
-  offset: number;
 };
 
 export type TransitivePlace = {

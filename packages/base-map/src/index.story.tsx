@@ -14,27 +14,17 @@ import { ComponentStory } from "@storybook/react";
 import AllVehiclesOverlay from "../__mocks__/AllVehicles";
 import ContextMenuDemo from "../__mocks__/ContextMenuDemo";
 
-import { StoryMapContainer } from "./styled";
-import BaseMap, { MarkerWithPopup, LayerWrapper } from ".";
+import { withMap } from "../../../.storybook/base-map-wrapper";
+
+import BaseMap, { MarkerWithPopup, LayerWrapper, Styled } from ".";
 
 import "maplibre-gl/dist/maplibre-gl.css";
 
 const center: [number, number] = [45.522862, -122.667837];
 
-const mapDecorator = (
-  Story: ComponentStory<typeof BaseMap>
-): React.ReactElement => (
-  <StoryMapContainer>
-    {/* For some reason, <Story /> does not work with snapshots,
-        so use the function syntax instead. */}
-    {Story()}
-  </StoryMapContainer>
-);
-
 export default {
   args: { center },
   component: BaseMap,
-  decorators: [mapDecorator],
   title: "BaseMap"
 };
 
@@ -71,12 +61,14 @@ clickAndViewportchangedEvents.args = {
   onContextMenu,
   onViewportChanged
 };
+clickAndViewportchangedEvents.decorators = [withMap()];
 
 export const zoomed = Template.bind({});
 zoomed.args = {
   center,
   zoom: 17
 };
+zoomed.decorators = [withMap()];
 
 const SetBoundsButton = () => {
   const { mapWithBounds } = useMap();
@@ -84,6 +76,7 @@ const SetBoundsButton = () => {
 
   return (
     <button
+      style={{ position: "relative", zIndex: 1000 }}
       onClick={
         () =>
           mapWithBounds?.fitBounds(bbox, {
@@ -103,11 +96,15 @@ const SetBoundsButton = () => {
   );
 };
 
+// This story causes the map to be rendered twice
+// This is a storybook bug: https://github.com/storybookjs/storybook/issues/12670
 export const clickToSetBounds = (): ComponentStory<typeof BaseMap> => (
-  <MapProvider>
-    <SetBoundsButton />
-    <BaseMap center={center} id="mapWithBounds" />
-  </MapProvider>
+  <Styled.StoryMapContainer>
+    <MapProvider>
+      <SetBoundsButton />
+      <BaseMap center={center} id="mapWithBounds" />
+    </MapProvider>
+  </Styled.StoryMapContainer>
 );
 
 export const maxZoom = Template.bind({});
@@ -115,46 +112,48 @@ maxZoom.args = {
   maxZoom: 18,
   zoom: 30
 };
-
-export const withCustomBaseLayer = Template.bind({});
-
-withCustomBaseLayer.args = {
-  baseLayer: `https://api.maptiler.com/maps/voyager/style.json?key=<PASTE YOUR MAPTILER TOKEN HERE>`,
-  center
-};
+maxZoom.decorators = [withMap()];
 
 export const withSampleMarkers = () => (
-  <BaseMap center={center}>{sampleMarkers}</BaseMap>
+  <Styled.StoryMapContainer>
+    <BaseMap center={center}>{sampleMarkers}</BaseMap>{" "}
+  </Styled.StoryMapContainer>
 );
 
 export const overlayWithLargeDataSet = () => (
   <>
-    <div>Do not add Storybook overhead on layers with large dataset...</div>
-    <BaseMap center={center}>
-      <AllVehiclesOverlay />
-    </BaseMap>
+    <div style={{ position: "relative", zIndex: 1000 }}>
+      Do not add Storybook overhead on layers with large dataset...
+    </div>
+    <AllVehiclesOverlay />
   </>
 );
+overlayWithLargeDataSet.decorators = [withMap()];
 
 export const customLocationPopupContent = () => (
-  <BaseMap center={center}>
-    <Popup longitude={center[1]} latitude={center[0]}>
-      {samplePopup}
-    </Popup>
-  </BaseMap>
+  <Styled.StoryMapContainer>
+    <BaseMap center={center}>
+      <Popup longitude={center[1]} latitude={center[0]}>
+        {samplePopup}
+      </Popup>
+    </BaseMap>
+  </Styled.StoryMapContainer>
 );
+
 export const optionalLayers = () => (
-  <BaseMap center={center}>
-    <LayerWrapper
-      id="layer-1"
-      name="This layer has a name prop, the second one doesn't"
-      visible
-    >
-      <MarkerWithPopup position={[center[0], center[1]]} />
-      <MarkerWithPopup position={[center[0] + 0.01, center[1]]} />
-    </LayerWrapper>
-    <AllVehiclesOverlay id="layer-2" />
-  </BaseMap>
+  <Styled.StoryMapContainer>
+    <BaseMap center={center}>
+      <LayerWrapper
+        id="layer-1"
+        name="This layer has a name prop, the second one doesn't"
+        visible
+      >
+        <MarkerWithPopup position={[center[0], center[1]]} />
+        <MarkerWithPopup position={[center[0] + 0.01, center[1]]} />
+      </LayerWrapper>
+      <AllVehiclesOverlay id="layer-2" />
+    </BaseMap>
+  </Styled.StoryMapContainer>
 );
 // Custom styling for this story only, not in production
 customLocationPopupContent.parameters = a11yOverrideParameters;
@@ -180,3 +179,4 @@ export const withOptionalControls = () => (
     <ScaleControl />
   </BaseMap>
 );
+withOptionalControls.decorators = [withMap()];

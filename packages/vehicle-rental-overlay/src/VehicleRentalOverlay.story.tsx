@@ -1,13 +1,13 @@
-import BaseMap from "@opentripplanner/base-map";
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { boolean } from "@storybook/addon-knobs";
 
 import { Company, Station } from "@opentripplanner/types";
-import VehicleRentalOverlay from ".";
 import bikeRentalStations from "../__mocks__/bike-rental-stations.json";
 import carRentalStations from "../__mocks__/car-rental-stations.json";
 import eScooterStations from "../__mocks__/e-scooter-rental-stations.json";
+import { withMap } from "../../../.storybook/base-map-wrapper";
+import VehicleRentalOverlay from ".";
 
 const center: [number, number] = [45.518092, -122.671202];
 const configCompanies = [
@@ -51,20 +51,16 @@ const ZoomControlledMapWithVehicleRentalOverlay = ({
   stations,
   visible
 }: StoryProps) => (
-  // Caution, <BaseMap> must be a direct parent of <VehicleRentalOverlay>.
-  // Therefore, do not place <BaseMap> in a decorator at this time.
-  <BaseMap center={center} forceMaxHeight zoom={INITIAL_ZOOM}>
-    <VehicleRentalOverlay
-      id="test"
-      configCompanies={configCompanies}
-      companies={companies}
-      getStationName={getStationName}
-      setLocation={setLocation}
-      refreshVehicles={refreshVehicles}
-      stations={stations}
-      visible={visible}
-    />
-  </BaseMap>
+  <VehicleRentalOverlay
+    companies={companies}
+    configCompanies={configCompanies}
+    getStationName={getStationName}
+    id="test"
+    refreshVehicles={refreshVehicles}
+    setLocation={setLocation}
+    stations={stations}
+    visible={visible}
+  />
 );
 
 function customStationName(_, station) {
@@ -73,7 +69,8 @@ function customStationName(_, station) {
 
 export default {
   title: "VehicleRentalOverlay",
-  component: VehicleRentalOverlay
+  component: VehicleRentalOverlay,
+  decorators: [withMap(center, INITIAL_ZOOM)]
 };
 
 export const RentalBicycles = () => (

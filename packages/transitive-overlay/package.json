@@ -20,16 +20,16 @@
   },
   "dependencies": {
     "@mapbox/polyline": "^1.1.1",
-    "@opentripplanner/base-map": "^3.0.0-alpha.1",
+    "@opentripplanner/base-map": "^3.0.0-alpha.3",
     "@opentripplanner/itinerary-body": "^4.0.0",
-    "@opentripplanner/core-utils": "^6.0.0",
+    "@opentripplanner/core-utils": "^7.0.0",
     "lodash.isequal": "^4.5.0",
-    "transitive-js": "^0.14.1",
     "@turf/bbox": "^6.5.0"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^2.0.0",
-    "@opentripplanner/itinerary-body": "^3.0.5"
+    "@opentripplanner/itinerary-body": "^3.0.5",
+    "@opentripplanner/endpoints-overlay": "2.0.0-alpha.1",
+    "@opentripplanner/types": "^3.0.0"
   },
   "peerDependencies": {
     "react": "^16.14.0",

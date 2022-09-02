@@ -1,9 +1,9 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from "react";
-import { Marker, MarkerProps, Popup, PopupProps } from "react-map-gl";
+import { Marker, Popup, PopupProps } from "react-map-gl";
 import { LeafletStyleMarker } from "./styled";
 
 type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
-  markerProps?: MarkerProps;
   popupContents?: React.ReactNode;
   popupProps?: PopupProps;
   position: [number, number];
@@ -15,7 +15,6 @@ type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
  */
 const MarkerWithPopup = ({
   children,
-  markerProps,
   popupContents,
   popupProps,
   position,
@@ -25,9 +24,9 @@ const MarkerWithPopup = ({
   const [showTooltip, setShowTooltip] = useState(false);
 
   return (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     <Marker
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...markerProps}
       latitude={position[0]}
       longitude={position[1]}
       onClick={() => setShowPopup(true)}

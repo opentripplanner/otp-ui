@@ -19,15 +19,15 @@
     "url": "git+https://github.com/opentripplanner/otp-ui.git"
   },
   "dependencies": {
-    "@opentripplanner/base-map": "^3.0.0-alpha.1",
-    "@opentripplanner/core-utils": "^6.0.0",
+    "@opentripplanner/base-map": "^3.0.0-alpha.3",
+    "@opentripplanner/core-utils": "^7.0.0",
     "@opentripplanner/from-to-location-picker": "^2.1.2",
     "@styled-icons/fa-solid": "^10.34.0",
     "flat": "^5.0.2",
     "lodash.memoize": "^4.1.2"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^2.0.0"
+    "@opentripplanner/types": "^3.0.0"
   },
   "peerDependencies": {
     "react": "^16.14.0",

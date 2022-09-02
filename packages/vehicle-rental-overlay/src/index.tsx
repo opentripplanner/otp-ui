@@ -6,8 +6,8 @@ import {
   Station
 } from "@opentripplanner/types";
 import { EventData } from "mapbox-gl";
-import { useMap, Layer, Popup, Source } from "react-map-gl";
 import React, { useEffect, useState } from "react";
+import { Layer, Popup, Source, useMap } from "react-map-gl";
 
 import StationPopup from "./StationPopup";
 import { BaseBikeRentalIcon, StationMarker } from "./styled";

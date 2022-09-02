@@ -13,32 +13,6 @@ import {
 } from "@opentripplanner/types";
 import turfAlong from "@turf/along";
 
-/*
-import {
-  // calculateFares,
-  // getLegModeLabel,
-  // getModeForPlace,
-  // getPlaceName,
-  // getStepDirection,
-  // getStepInstructions,
-  // getStepStreetName,
-  // getTimeZoneOffset,
-  // getTransitFare
-} from "./deprecated";
-
-export {
-  // calculateFares,
-  // getLegModeLabel,
-  // getModeForPlace,
-  // getPlaceName,
-  // getStepDirection,
-  // getStepInstructions,
-  // getStepStreetName,
-  // getTimeZoneOffset,
-  // getTransitFare
-};
-*/
-
 // All OTP transit modes
 export const transitModes = [
   "TRAM",
@@ -455,24 +429,24 @@ export function calculatePhysicalActivity(
  * It is assumed that the same currency is used for all TNC legs.
  */
 export function calculateTncFares(itinerary: Itinerary): TncFare {
-  let minTNCFare = 0;
-  let maxTNCFare = 0;
-  let currencyCode;
-  itinerary.legs.forEach(({ hailedCar, mode, tncData }) => {
-    if (mode === "CAR" && hailedCar && tncData) {
-      const { currency, maxCost, minCost } = tncData;
-      minTNCFare += minCost;
-      maxTNCFare += maxCost;
-      // Assumes a single currency for entire itinerary.
-      currencyCode = currency;
-    }
-  });
-
-  return {
-    currencyCode,
-    maxTNCFare,
-    minTNCFare
-  };
+  return itinerary.legs
+    .filter(leg => leg.mode === "CAR" && leg.hailedCar && leg.tncData)
+    .reduce(
+      ({ maxTNCFare, minTNCFare }, { tncData }) => {
+        const { currency, maxCost, minCost } = tncData;
+        return {
+          // Assumes a single currency for entire itinerary.
+          currencyCode: currency,
+          maxTNCFare: maxTNCFare + maxCost,
+          minTNCFare: minTNCFare + minCost
+        };
+      },
+      {
+        currencyCode: null,
+        maxTNCFare: 0,
+        minTNCFare: 0
+      }
+    );
 }
 
 /**
@@ -485,17 +459,77 @@ export function getTransitFare(
   currencyCode: string;
   transitFare: number;
 } {
-  // Default values (if fare component is not valid).
-  let transitFare = 0;
-  let currencyCode = "USD";
-  if (fareComponent) {
-    // Assign values without declaration.
-    // See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#assignment_without_declaration
-    ({ currencyCode } = fareComponent.currency);
-    transitFare = fareComponent.cents;
-  }
-  return {
-    currencyCode,
-    transitFare
+  return fareComponent
+    ? {
+        currencyCode: fareComponent.currency.currencyCode,
+        transitFare: fareComponent.cents
+      }
+    : {
+        currencyCode: "USD",
+        transitFare: 0
+      };
+}
+
+/**
+ * Sources:
+ * - https://www.itf-oecd.org/sites/default/files/docs/environmental-performance-new-mobility.pdf
+ * - https://www.thrustcarbon.com/insights/how-to-calculate-emissions-from-a-ferry-journey
+ * - https://www.itf-oecd.org/sites/default/files/life-cycle-assessment-calculations-2020.xlsx
+ * Other values extrapolated.
+ */
+const CARBON_INTENSITY_DEFAULTS = {
+  walk: 0.026,
+  bicycle: 0.017,
+  car: 0.162,
+  tram: 0.066,
+  subway: 0.066,
+  rail: 0.066,
+  bus: 0.09,
+  ferry: 0.082,
+  cable_car: 0.021,
+  gondola: 0.021,
+  funicular: 0.066,
+  transit: 0.066,
+  leg_switch: 0,
+  airplane: 0.382,
+  micromobility: 0.095
+};
+
+/**
+ * @param  {itinerary} itinerary OTP trip itinierary
+ * @param  {carbonIntensity} carbonIntensity carbon intensity by mode in grams/meter
+ * @param {units} units units to be used in return value
+ * @return Amount of carbon in chosen unit
+ */
+export function calculateEmissions(
+  itinerary: Itinerary,
+  carbonIntensity: Record<string, number> = {},
+  units?: string
+): number {
+  // Apply defaults for any values that we don't have.
+  const carbonIntensityWithDefaults = {
+    ...CARBON_INTENSITY_DEFAULTS,
+    ...carbonIntensity
   };
+
+  // Distance is in meters, totalCarbon is in grams
+  const totalCarbon =
+    itinerary?.legs?.reduce((total, leg) => {
+      return (
+        (leg.distance * carbonIntensityWithDefaults[leg.mode.toLowerCase()] ||
+          0) + total
+      );
+    }, 0) || 0;
+
+  switch (units) {
+    case "ounce":
+      return totalCarbon / 28.35;
+    case "kilogram":
+      return totalCarbon / 1000;
+    case "pound":
+      return totalCarbon / 454;
+    case "gram":
+    default:
+      return totalCarbon;
+  }
 }

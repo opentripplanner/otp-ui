@@ -5,7 +5,7 @@ import {
   MapLocationActionArg,
   UserLocationAndType
 } from "@opentripplanner/types";
-import { FormattedMessage, IntlShape, useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { Home } from "@styled-icons/fa-solid/Home";
 import { MapMarkerAlt } from "@styled-icons/fa-solid/MapMarkerAlt";
 import { Marker, Popup, MarkerDragEvent } from "react-map-gl";
@@ -74,27 +74,6 @@ function UserLocationIcon({ type }: IconProps) {
   );
 }
 
-/**
- * Reformats a {lat, lon} object to be internationalized.
- * TODO: Combine with the same method at
- * https://github.com/opentripplanner/otp-react-redux/blob/6d5bc90e57843822809b0dff397bad19d66aeb43/lib/components/form/user-settings.js#L34
- */
-function renderCoordinates(
-  intl: IntlShape,
-  place: { lat: number; lng: number }
-) {
-  const MAX_FRAC_DIGITS = 5;
-
-  return {
-    lat: intl.formatNumber(place.lat, {
-      maximumFractionDigits: MAX_FRAC_DIGITS
-    }),
-    lon: intl.formatNumber(place.lng, {
-      maximumFractionDigits: MAX_FRAC_DIGITS
-    })
-  };
-}
-
 const Endpoint = (props: Props): JSX.Element => {
   const intl = useIntl();
 
@@ -144,20 +123,25 @@ const Endpoint = (props: Props): JSX.Element => {
 
   const onDragEnd = (e: MarkerDragEvent) => {
     const { setLocation, type } = props;
-
     const rawLocation = e.lngLat;
-    const location = {
+    const coordinates = {
       lat: rawLocation.lat,
-      lon: rawLocation.lng,
+      lon: rawLocation.lng
+    };
+
+    const location = {
+      ...coordinates,
       name: intl.formatMessage(
         {
-          defaultMessage: "{lat}, {lon}",
+          defaultMessage: defaultMessages["otpUi.EndpointsOverlay.coordinates"],
           description:
             "Formats rendering coordinates for a locale using the correct number separator",
-          // FIXME: Move this potentially shared message to an appropriate package.
+          // FIXME: Combine with the same method at
+          // https://github.com/opentripplanner/otp-react-redux/blob/6d5bc90e57843822809b0dff397bad19d66aeb43/lib/components/form/user-settings.js#L34
+          // and move this potentially shared message to an appropriate package.
           id: "otpUi.EndpointsOverlay.coordinates"
         },
-        renderCoordinates(intl, rawLocation)
+        coordinates
       )
     };
     setLocation({ locationType: type, location, reverseGeocode: true });

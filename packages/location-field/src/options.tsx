@@ -1,6 +1,7 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceStringImperial } from "@opentripplanner/humanize-distance";
-import React from "react";
+import React, { ReactElement } from "react";
+import { FormattedMessage } from "react-intl";
 import { Bus } from "@styled-icons/fa-solid/Bus";
 import { Briefcase } from "@styled-icons/fa-solid/Briefcase";
 import { Home } from "@styled-icons/fa-solid/Home";
@@ -9,7 +10,6 @@ import { MapPin } from "@styled-icons/fa-solid/MapPin";
 
 import { Stop, UserLocation } from "@opentripplanner/types";
 import * as S from "./styled";
-// eslint-disable-next-line prettier/prettier
 
 export function GeocodedOptionIcon({
   feature = {}
@@ -114,4 +114,61 @@ export function UserLocationIcon({
   if (userLocation.icon === "work") return <Briefcase size={13} />;
   if (userLocation.icon === "home") return <Home size={13} />;
   return <MapMarker size={13} />;
+}
+
+function LocationName({ location }: { location: UserLocation }): ReactElement {
+  switch (location.type) {
+    case "home":
+      return (
+        <FormattedMessage
+          defaultMessage="Home"
+          description="The home location"
+          id="otpUi.LocationField.homeLocation"
+        />
+      );
+    case "work":
+      return (
+        <FormattedMessage
+          defaultMessage="Work"
+          description="The work location"
+          id="otpUi.LocationField.workLocation"
+        />
+      );
+    default:
+      return <>{location.name}</>;
+  }
+}
+
+export function StoredPlaceName({
+  location,
+  withDetails = true
+}: {
+  location: UserLocation;
+  withDetails?: boolean;
+}): React.ReactElement {
+  let detailText;
+  if (withDetails) {
+    if (location.type === "home" || location.type === "work") {
+      detailText = location.name;
+    } else if (location.type === "stop") {
+      detailText = location.id;
+    }
+    // The case below for recent searches is not currently being used.
+    // } else if (location.type === "recent" && location.timestamp) {
+    //   detailText = moment(location.timestamp).fromNow();
+  }
+
+  return detailText && detailText !== "" ? (
+    <FormattedMessage
+      defaultMessage="{placeName} ({details})"
+      description="Renders a place and some brief detail text."
+      id="otpUi.LocationField.placeNameWithDetails"
+      values={{
+        details: detailText,
+        placeName: <LocationName location={location} />
+      }}
+    />
+  ) : (
+    <LocationName location={location} />
+  );
 }

@@ -60,6 +60,7 @@
     "jest-styled-components": "^7.0.5",
     "jest-yaml-transform": "^0.2.0",
     "js-yaml": "^4.1.0",
+    "json-loader": "^0.5.7",
     "lerna": "^3.18.4",
     "lint-staged": "^8.2.0",
     "msw": "^0.34.0",

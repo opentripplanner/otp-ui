@@ -35,11 +35,9 @@ const removePointsInFlexZone = (stops: Stop[], points: [number, number][]) => {
       // needs to be kept to a minimum as this is happening inside render()
       // For more detail see https://github.com/dg92/Performance-Analysis-JS/blob/master/small_data_set_result.png
       ?.map(stop => {
-        // @ts-expect-error alpha only change as we resolve merge conflicts
         if (stop.geometries?.geoJson?.type !== "Polygon") {
           return null;
         }
-        // @ts-expect-error alpha only change
         return stop.geometries.geoJson.coordinates?.[0] || null;
       })
       // Remove the null entries

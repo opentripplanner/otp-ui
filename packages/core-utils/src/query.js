@@ -8,13 +8,9 @@ import queryParams from "./query-params";
 import {
   getCurrentTime,
   getCurrentDate,
-  OTP_API_TIME_FORMAT,
-  OTP_API_DATE_FORMAT_DATE_FNS
+  OTP_API_DATE_FORMAT,
+  OTP_API_TIME_FORMAT
 } from "./time";
-
-// import { coordsToString, summarizeQuery } from "./deprecated";
-
-// export { summarizeQuery };
 
 /* The list of default parameters considered in the settings panel */
 
@@ -148,7 +144,9 @@ function isParamApplicable(paramInfo, query, config) {
  * Helper method which replaces OTP flex modes with single FLEX mode that's
  * more useful and easier to work with.
  */
-export function reduceOtpFlexModes(modes) {
+export function reduceOtpFlexModes(modes, enabled = true) {
+  if (!enabled) return modes;
+
   return modes.reduce((prev, cur) => {
     const newModes = prev;
     // Add the current mode if it is not a flex mode
@@ -191,7 +189,10 @@ export function expandOtpFlexMode(mode) {
  * default values.
  */
 export function isNotDefaultQuery(query, config) {
-  const activeModes = reduceOtpFlexModes(query.mode.split(",").sort());
+  const activeModes = reduceOtpFlexModes(
+    query.mode.split(",").sort(),
+    config.modes?.mergeFlex
+  );
   if (
     activeModes.length !== 2 ||
     activeModes[0] !== "TRANSIT" ||
@@ -427,7 +428,7 @@ export function getRoutingParams(config, currentQuery, ignoreRealtimeUpdates) {
     }
 
     // check date/time validity; ignore both if either is invalid
-    const dateValid = isMatch(params.date, OTP_API_DATE_FORMAT_DATE_FNS);
+    const dateValid = isMatch(params.date, OTP_API_DATE_FORMAT);
     const timeValid = isMatch(params.time, OTP_API_TIME_FORMAT);
 
     if (!dateValid || !timeValid) {
@@ -470,7 +471,8 @@ export function getRoutingParams(config, currentQuery, ignoreRealtimeUpdates) {
   }
 
   // Replace FLEX placeholder with OTP flex modes
-  if (params.mode) {
+  // Explicit false check allows avoiding a breaking change -- undefined is true
+  if (params.mode && config.modes?.mergeFlex !== false) {
     // Ensure query is in reduced format to avoid replacing twice
     const reducedMode = reduceOtpFlexModes(params.mode.split(",")).join(",");
     params.mode = expandOtpFlexMode(reducedMode);

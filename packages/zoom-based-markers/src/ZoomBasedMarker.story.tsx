@@ -122,20 +122,22 @@ const Example = (props: ExampleProps) => {
   };
 
   const { symbols, symbolTransform } = props;
+  // We can't use a decorator here because we need to supply a prop to BaseMap
   return (
-    <BaseMap
-      center={mapCenter}
-      forceMaxHeight
-      onViewportChanged={handleViewportChanged}
-      zoom={zoom}
-    >
-      <ZoomBasedMarkers
-        entities={mockStops}
-        symbols={symbols}
-        symbolTransform={symbolTransform}
+    <BaseMapStyles.StoryMapContainer>
+      <BaseMap
+        center={mapCenter}
+        onViewportChanged={handleViewportChanged}
         zoom={zoom}
-      />
-    </BaseMap>
+      >
+        <ZoomBasedMarkers
+          entities={mockStops}
+          symbols={symbols}
+          symbolTransform={symbolTransform}
+          zoom={zoom}
+        />
+      </BaseMap>
+    </BaseMapStyles.StoryMapContainer>
   );
 };
 
