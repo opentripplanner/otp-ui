@@ -1,10 +1,14 @@
 ## WHAT:
 
-Presentational React Components used to build an interactive vehicle map (leaflet) overlay.
+Presentational React Components used to build an interactive vehicle map .
 This component uses functional components and hooks (no more class components).
 
 NOTE: eventually want this component (and OTP-UI in general) to support both leaflet and
 mapbox gl libraries.
+
+### CURRENTLY:
+
+This package is being re-built from the ground-up to instead generate and render geojson from realtime transit data. Some features (and most components) have initially been removed, but they will be restored in future.
 
 ## HOW:
 
@@ -18,6 +22,10 @@ realtime vehicle information information, based on GTFS-Realtime data
 Other realtime vehicle data may be used with this layer. For example, there is demo code within the component that
 shows converting another service response format (https://developer.trimet.org/ws_docs/vehicle_locations_ws.shtml)
 to work with this layer.
+
+### CURRENTLY:
+
+Only input in the form of https://github.com/opentripplanner/otp-ui/blob/master/packages/types/src/index.ts#L90 is supported.
 
 ## NOTES:
 

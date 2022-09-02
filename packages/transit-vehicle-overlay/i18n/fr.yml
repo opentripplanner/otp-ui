@@ -10,7 +10,6 @@
 
 otpUi:
   TransitVehicleOverlay:
-    date: "Date : {date}"
     durationAgo: "il y a {duration}"
     durationWithSeconds: "{hours, plural,
       =0 {}
@@ -20,14 +19,4 @@ otpUi:
       =0 {}
       other { # s}}"
     genericRouteFormat: "Ligne {route}"
-    lastSeen: Mis à jour {durationText}
-    status: "État : {status}"
-    statusEnRoute: "prochain arrêt n°{stopId}"
-    statusAtStart: "au départ de l'arrêt n°{stopId}"
-    statusAtStop: "à l'arrêt n°{stopId}"
-    statusUnknown: inconnu
     tooltipRouteLabel: "{routeLabel} :"
-    trackStart: Suivre le véhicle
-    trackStop: Arrêter le suivi
-    tripAndBlockIds: "Course n°{tripId}, Roulement n°{blockId}"
-    vehicleIds: "{count, plural, one {Véhicule} other {Véhicules}} n°{vehicleIds}"

@@ -46,7 +46,7 @@ export type LayerEntity = {
   lon: number;
 };
 
-type SymbolComponentBaseProps = {
+export type SymbolComponentBaseProps = {
   entity: LayerEntity;
   zoom: number;
 };
@@ -56,7 +56,7 @@ type SymbolComponentBaseProps = {
  * ({ entity: object; zoom: number }) => Element
  * where entity must have an id attribute and contain coordinates information for placement on the map.
  */
-type SymbolComponent = React.ComponentType<SymbolComponentBaseProps>;
+export type SymbolComponent = React.ComponentType<SymbolComponentBaseProps>;
 
 /**
  * Defines which symbol to render based on a zoom level; and optionally by entity type.
@@ -112,6 +112,13 @@ export type TransitVehicle = {
   lat?: number;
   lon?: number;
   heading?: number;
+};
+
+export type OTPTransitVehicle = TransitVehicle & {
+  label?: string;
+  nextStopName?: string;
+  speed?: number;
+  stopStatus?: string; // TODO: Make enum
 };
 
 export type VehicleRentalMapOverlaySymbol =
@@ -443,7 +450,10 @@ export type Stop = {
    * The stop code if the stop has one
    */
   code?: string;
+  color?: string;
   dist?: number;
+  geometries?: { geoJson?: GeoJSON.Polygon };
+  id: string;
   lat: number;
   lon: number;
   name: string;
@@ -479,7 +489,10 @@ export type Route = {
 };
 
 export type TransitivePlace = {
-  placeId: string;
+  place_lat?: number;
+  place_lon?: number;
+  place_name?: string;
+  placeId?: string;
   type: string;
 };
 export type TransitiveJourney = {

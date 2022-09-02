@@ -64,3 +64,28 @@ This repo utilizes the [Storyshot](https://storybook.js.org/docs/react/workflows
 This project uses semantic-release to create releases to NPM. It is expect that contributors create [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/) messages. These are then parsed by semantic-release which will automatically create an appropriate release for each package whenever a branch is merged to master.
 
 Sometimes when creating new releases, it will be necessary to update numerous packages within this repo at once to a newer internal package version. For this purpose there is the `update-internal-dependencies` script. This should be ran manually as needed. By default, `yarn update-internal-dependencies` will update all dependencies with the `@opentripplanner` scope in all packages within this project. To only update specific dependencies, it is possible to run something like `yarn update-internal-dependencies core-utils base-map`. This would update all dependencies on either the `@opentripplanner/base-map` or the `@opentripplanner/core-utils` in all packages in this project.
+
+## Raster Tile Versions
+
+As of Fall 2022, the otp-ui map layers have migrated from [Leaflet](https://leafletjs.com) to [MapLibreGL](https://maplibre.org/projects/maplibre-gl-js/). This migration was a breaking change, so existing uses of otp-ui should be unaffected. If you wish to migrate to the latest version, please see the [Migration Guide](https://github.com/opentripplanner/otp-ui/blob/master/VECTOR-TILES-MIGRATION-GUIDE.md).
+
+We understand not all will want to upgrade to vector tiles right away, and so will be maintaining the _raster tile_ versions of all relevant packages for the foreseeable future.
+
+The following table lists the last major version of each package which uses raster tiles. These major versions will receive fresh minor versions as updates are needed.
+
+| Package                   | Latest Major Version with Raster Tiles |
+| ------------------------- | -------------------------------------- |
+| `base-map`                | 2                                      |
+| `core-utils`              | 7                                      |
+| `endpoints-overlay`       | 1                                      |
+| `itinerary-body`          | 4                                      |
+| `park-and-ride-overlay`   | 1                                      |
+| `route-viewer-overlay`    | 1                                      |
+| `stop-viewer-overlay`     | 1                                      |
+| `stops-overlay`           | 4                                      |
+| `transit-vehicle-overlay` | 2                                      |
+| `transitive-overlay`      | 2                                      |
+| `trip-viewer-overlay`     | 1                                      |
+| `types`                   | 3                                      |
+| `vehicle-rental-overlay`  | 1                                      |
+| `zoom-based-markers`      | 1                                      |
