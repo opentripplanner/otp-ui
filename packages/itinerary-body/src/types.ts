@@ -101,6 +101,8 @@ interface ItineraryBodySharedProps {
    * within a transit leg, if this prop is not supplied a default icon is used
    */
   AlertToggleIcon?: FunctionComponent;
+  /** If true, alerts in a trip leg always open in a collapsed state. */
+  alwaysCollapseAlerts: boolean;
   /**
    * Used for additional styling with styled components for example.
    */
@@ -174,8 +176,6 @@ interface ItineraryBodySharedProps {
   setLegDiagram: (leg: Leg) => void;
   /** Fired when a user clicks on a view trip button of a transit leg */
   setViewedTrip: SetViewedTripFunction;
-  /** If true, alerts in a trip leg always open in a collapsed state. */
-  shouldAlwaysCollapseAlerts: boolean;
   /** If true, will show agency information in transit legs */
   showAgencyInfo?: boolean;
   /** If true, will show the elevation profile for walk/bike legs */

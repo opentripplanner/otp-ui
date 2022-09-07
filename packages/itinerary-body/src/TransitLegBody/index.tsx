@@ -32,6 +32,7 @@ import ViewTripButton from "./view-trip-button";
 interface Props {
   AlertBodyIcon?: FunctionComponent;
   AlertToggleIcon?: FunctionComponent;
+  alwaysCollapseAlerts: boolean;
   fare?: Fare;
   intl: IntlShape;
   leg: Leg;
@@ -40,7 +41,6 @@ interface Props {
   RouteDescription: FunctionComponent<RouteDescriptionProps>;
   setActiveLeg: SetActiveLegFunction;
   setViewedTrip: SetViewedTripFunction;
-  shouldAlwaysCollapseAlerts: boolean;
   showAgencyInfo: boolean;
   showViewTripButton: boolean;
   timeZone: string;
@@ -53,6 +53,8 @@ interface State {
   alertsExpanded: boolean;
   stopsExpanded: boolean;
 }
+
+const maximumAlertCountToShowUncollapsed = 2;
 
 class TransitLegBody extends Component<Props, State> {
   constructor(props) {
@@ -92,13 +94,13 @@ class TransitLegBody extends Component<Props, State> {
     const {
       AlertToggleIcon = S.DefaultAlertToggleIcon,
       AlertBodyIcon,
+      alwaysCollapseAlerts,
       fare,
       intl,
       leg,
       LegIcon,
       RouteDescription,
       setViewedTrip,
-      shouldAlwaysCollapseAlerts,
       showAgencyInfo,
       showViewTripButton,
       timeZone,
@@ -120,12 +122,10 @@ class TransitLegBody extends Component<Props, State> {
         ? transitOperator.logo
         : agencyBrandingUrl;
 
-    const maximumAlertCountToShowUncollapsed = 2;
     const shouldCollapseDueToAlertCount =
       leg.alerts?.length > maximumAlertCountToShowUncollapsed;
     const shouldOnlyShowAlertsExpanded =
-      !(shouldCollapseDueToAlertCount || shouldAlwaysCollapseAlerts) ||
-      !leg.alerts;
+      !(shouldCollapseDueToAlertCount || alwaysCollapseAlerts) || !leg.alerts;
     const expandAlerts = alertsExpanded || shouldOnlyShowAlertsExpanded;
     const fareForLeg = this.getFareForLeg(leg, fare);
     return (

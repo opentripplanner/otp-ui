@@ -15,6 +15,7 @@ const ItineraryBody = ({
   accessibilityScoreGradationMap,
   AlertBodyIcon,
   AlertToggleIcon,
+  alwaysCollapseAlerts = false,
   className,
   config,
   diagramVisible,
@@ -30,7 +31,6 @@ const ItineraryBody = ({
   setActiveLeg,
   setLegDiagram,
   setViewedTrip,
-  shouldAlwaysCollapseAlerts = false,
   showAgencyInfo,
   showElevationProfile,
   showLegIcon,
@@ -59,6 +59,7 @@ const ItineraryBody = ({
           accessibilityScoreGradationMap={accessibilityScoreGradationMap}
           AlertToggleIcon={AlertToggleIcon}
           AlertBodyIcon={AlertBodyIcon}
+          alwaysCollapseAlerts={alwaysCollapseAlerts}
           // eslint-disable-next-line react/no-array-index-key
           key={i + (isDestination ? 1 : 0)}
           config={config}
@@ -83,7 +84,6 @@ const ItineraryBody = ({
           setActiveLeg={setActiveLeg}
           setLegDiagram={setLegDiagram}
           setViewedTrip={setViewedTrip}
-          shouldAlwaysCollapseAlerts={shouldAlwaysCollapseAlerts}
           showAgencyInfo={showAgencyInfo}
           showElevationProfile={showElevationProfile}
           showLegIcon={showLegIcon}

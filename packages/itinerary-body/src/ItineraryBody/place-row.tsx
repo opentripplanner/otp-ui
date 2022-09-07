@@ -19,6 +19,7 @@ export default function PlaceRow({
   accessibilityScoreGradationMap,
   AlertBodyIcon,
   AlertToggleIcon,
+  alwaysCollapseAlerts,
   config,
   diagramVisible,
   fare,
@@ -37,7 +38,6 @@ export default function PlaceRow({
   setActiveLeg,
   setLegDiagram,
   setViewedTrip,
-  shouldAlwaysCollapseAlerts,
   showAgencyInfo,
   showElevationProfile,
   showLegIcon,
@@ -113,6 +113,7 @@ export default function PlaceRow({
               <TransitLegBody
                 AlertBodyIcon={AlertBodyIcon}
                 AlertToggleIcon={AlertToggleIcon}
+                alwaysCollapseAlerts={alwaysCollapseAlerts}
                 fare={fare}
                 leg={leg}
                 LegIcon={LegIcon}
@@ -120,7 +121,6 @@ export default function PlaceRow({
                 RouteDescription={RouteDescription}
                 setActiveLeg={setActiveLeg}
                 setViewedTrip={setViewedTrip}
-                shouldAlwaysCollapseAlerts={shouldAlwaysCollapseAlerts}
                 showAgencyInfo={showAgencyInfo}
                 showViewTripButton={showViewTripButton}
                 timeZone={config.homeTimezone}

@@ -49,23 +49,23 @@ interface StoryWrapperProps {
   itinerary: Itinerary;
   showRouteFares: boolean;
   TimeColumnContent: FunctionComponent<TimeColumnContentProps>;
-  shouldAlwaysCollapseAlerts: boolean;
+  alwaysCollapseAlerts: boolean;
 }
 
 function OtpRRItineraryBodyWrapper({
   itinerary,
   showRouteFares,
   TimeColumnContent,
-  shouldAlwaysCollapseAlerts
+  alwaysCollapseAlerts
 }: StoryWrapperProps): ReactElement {
   return (
     <ItineraryBodyDefaultsWrapper
+      alwaysCollapseAlerts={alwaysCollapseAlerts}
       itinerary={itinerary}
       LegIcon={ClassicLegIcon}
       LineColumnContent={OtpRRLineColumnContent}
       PlaceName={OtpRRPlaceName}
       RouteDescription={OtpRRRouteDescription}
-      shouldAlwaysCollapseAlerts={shouldAlwaysCollapseAlerts}
       showAgencyInfo
       showLegIcon
       showMapButtonColumn={false}
@@ -164,42 +164,42 @@ export const CustomTimeColumn = (): ReactElement => (
 export const ThreeAlertsAlwaysCollapsing = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
     itinerary={walkTransitWalkItinerary}
-    shouldAlwaysCollapseAlerts
+    alwaysCollapseAlerts
   />
 );
 
 export const TwoAlertsAlwaysCollapsing = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
     itinerary={parkAndRideItinerary}
-    shouldAlwaysCollapseAlerts
+    alwaysCollapseAlerts
   />
 );
 
 export const ZeroAlertsAlwaysCollapsing = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
     itinerary={walkInterlinedTransitItinerary}
-    shouldAlwaysCollapseAlerts
+    alwaysCollapseAlerts
   />
 );
 
 export const ThreeAlertsNotAlwaysCollapsing = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
     itinerary={walkTransitWalkItinerary}
-    shouldAlwaysCollapseAlerts={false}
+    alwaysCollapseAlerts={false}
   />
 );
 
 export const TwoAlertsNotAlwaysCollapsing = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
     itinerary={parkAndRideItinerary}
-    shouldAlwaysCollapseAlerts={false}
+    alwaysCollapseAlerts={false}
   />
 );
 
 export const ZeroAlertsNotAlwaysCollapsing = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
     itinerary={walkInterlinedTransitItinerary}
-    shouldAlwaysCollapseAlerts={false}
+    alwaysCollapseAlerts={false}
   />
 );
 
