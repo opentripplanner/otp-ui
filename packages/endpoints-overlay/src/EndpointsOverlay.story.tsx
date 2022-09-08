@@ -1,18 +1,13 @@
-import BaseMap from "@opentripplanner/base-map";
 import { UserLocationAndType } from "@opentripplanner/types";
-import React, { ReactElement } from "react";
+import React from "react";
 import { action } from "@storybook/addon-actions";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Cat } from "@styled-icons/fa-solid/Cat";
 import { Dog } from "@styled-icons/fa-solid/Dog";
 
+import { withMap } from "../../../.storybook/base-map-wrapper";
+
 import EndpointsOverlay from ".";
-
-import "../../../node_modules/leaflet/dist/leaflet.css";
-
-// BaseMap props
-const center = [45.5215, -122.686202];
-const zoom = 16;
 
 // EndpointsOverlay props
 const clearLocation = action("clearLocation");
@@ -43,19 +38,9 @@ function CatDogIcon({ type }: UserLocationAndType) {
   return type === "from" ? <Cat size={40} color="orange" /> : <Dog size={40} />;
 }
 
-const withMap = (
-  Story: ComponentStory<typeof EndpointsOverlay>
-): ReactElement => (
-  <BaseMap center={center} zoom={zoom}>
-    {/* For some reason, <Story /> does not work with snapshots,
-        so use the function syntax instead. */}
-    {Story()}
-  </BaseMap>
-);
-
 export default {
   component: EndpointsOverlay,
-  decorators: [withMap],
+  decorators: [withMap()],
   title: "EndpointsOverlay"
 } as ComponentMeta<typeof EndpointsOverlay>;
 
