@@ -13,7 +13,6 @@
   "dependencies": {
     "@opentripplanner/core-utils": "^7.0.0",
     "@styled-icons/fa-solid": "^10.34.0",
-    "date-fns": "^2.29.1",
     "flat": "^5.0.2",
     "react-animate-height": "^3.0.4"
   },

@@ -38,6 +38,7 @@ export function getDateFormat(config: Config): string {
   return config?.dateTime?.dateFormat || OTP_API_DATE_FORMAT;
 }
 
+/** @deprecated */
 export function getLongDateFormat(config: Config): string {
   return config?.dateTime?.longDateFormat || "D MMMM YYYY";
 }
