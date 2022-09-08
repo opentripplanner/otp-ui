@@ -124,6 +124,8 @@ class TransitLegBody extends Component<Props, State> {
 
     const shouldCollapseDueToAlertCount =
       leg.alerts?.length > maximumAlertCountToShowUncollapsed;
+    // The alerts expansion triangle is shown when `!shouldOnlyShowAlertsExpanded`.
+    // `!leg.alerts` is needed here so the triangle isn't shown when there are 0 alerts.
     const shouldOnlyShowAlertsExpanded =
       !(shouldCollapseDueToAlertCount || alwaysCollapseAlerts) || !leg.alerts;
     const expandAlerts = alertsExpanded || shouldOnlyShowAlertsExpanded;
