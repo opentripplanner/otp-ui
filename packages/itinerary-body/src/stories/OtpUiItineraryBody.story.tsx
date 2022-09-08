@@ -163,43 +163,43 @@ export const CustomAlertIconsItinerary = (): ReactElement => (
 
 export const ThreeAlertsAlwaysCollapsing = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
-    itinerary={walkTransitWalkItinerary}
     alwaysCollapseAlerts
+    itinerary={walkTransitWalkItinerary}
   />
 );
 
 export const TwoAlertsAlwaysCollapsing = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
-    itinerary={parkAndRideItinerary}
     alwaysCollapseAlerts
+    itinerary={parkAndRideItinerary}
   />
 );
 
 export const ZeroAlertsAlwaysCollapsing = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
-    itinerary={walkInterlinedTransitItinerary}
     alwaysCollapseAlerts
+    itinerary={walkInterlinedTransitItinerary}
   />
 );
 
 export const ThreeAlertsNotAlwaysCollapsing = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
-    itinerary={walkTransitWalkItinerary}
     alwaysCollapseAlerts={false}
+    itinerary={walkTransitWalkItinerary}
   />
 );
 
 export const TwoAlertsNotAlwaysCollapsing = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
-    itinerary={parkAndRideItinerary}
     alwaysCollapseAlerts={false}
+    itinerary={parkAndRideItinerary}
   />
 );
 
 export const ZeroAlertsNotAlwaysCollapsing = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
-    itinerary={walkInterlinedTransitItinerary}
     alwaysCollapseAlerts={false}
+    itinerary={walkInterlinedTransitItinerary}
   />
 );
 

@@ -163,43 +163,43 @@ export const CustomTimeColumn = (): ReactElement => (
 
 export const ThreeAlertsAlwaysCollapsing = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
-    itinerary={walkTransitWalkItinerary}
     alwaysCollapseAlerts
+    itinerary={walkTransitWalkItinerary}
   />
 );
 
 export const TwoAlertsAlwaysCollapsing = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
-    itinerary={parkAndRideItinerary}
     alwaysCollapseAlerts
+    itinerary={parkAndRideItinerary}
   />
 );
 
 export const ZeroAlertsAlwaysCollapsing = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
-    itinerary={walkInterlinedTransitItinerary}
     alwaysCollapseAlerts
+    itinerary={walkInterlinedTransitItinerary}
   />
 );
 
 export const ThreeAlertsNotAlwaysCollapsing = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
-    itinerary={walkTransitWalkItinerary}
     alwaysCollapseAlerts={false}
+    itinerary={walkTransitWalkItinerary}
   />
 );
 
 export const TwoAlertsNotAlwaysCollapsing = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
-    itinerary={parkAndRideItinerary}
     alwaysCollapseAlerts={false}
+    itinerary={parkAndRideItinerary}
   />
 );
 
 export const ZeroAlertsNotAlwaysCollapsing = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
-    itinerary={walkInterlinedTransitItinerary}
     alwaysCollapseAlerts={false}
+    itinerary={walkInterlinedTransitItinerary}
   />
 );
 
