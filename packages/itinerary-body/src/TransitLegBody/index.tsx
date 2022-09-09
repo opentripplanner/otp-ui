@@ -32,6 +32,7 @@ import ViewTripButton from "./view-trip-button";
 interface Props {
   AlertBodyIcon?: FunctionComponent;
   AlertToggleIcon?: FunctionComponent;
+  alwaysCollapseAlerts: boolean;
   fare?: Fare;
   intl: IntlShape;
   leg: Leg;
@@ -52,6 +53,8 @@ interface State {
   alertsExpanded: boolean;
   stopsExpanded: boolean;
 }
+
+const maximumAlertCountToShowUncollapsed = 2;
 
 class TransitLegBody extends Component<Props, State> {
   constructor(props) {
@@ -91,6 +94,7 @@ class TransitLegBody extends Component<Props, State> {
     const {
       AlertToggleIcon = S.DefaultAlertToggleIcon,
       AlertBodyIcon,
+      alwaysCollapseAlerts,
       fare,
       intl,
       leg,
@@ -118,8 +122,13 @@ class TransitLegBody extends Component<Props, State> {
         ? transitOperator.logo
         : agencyBrandingUrl;
 
-    const expandAlerts =
-      alertsExpanded || (leg.alerts && leg.alerts.length < 3);
+    const shouldCollapseDueToAlertCount =
+      leg.alerts?.length > maximumAlertCountToShowUncollapsed;
+    // The alerts expansion triangle is shown when `!shouldOnlyShowAlertsExpanded`.
+    // `!leg.alerts` is needed here so the triangle isn't shown when there are 0 alerts.
+    const shouldOnlyShowAlertsExpanded =
+      !(shouldCollapseDueToAlertCount || alwaysCollapseAlerts) || !leg.alerts;
+    const expandAlerts = alertsExpanded || shouldOnlyShowAlertsExpanded;
     const fareForLeg = this.getFareForLeg(leg, fare);
     return (
       <>
@@ -192,7 +201,7 @@ class TransitLegBody extends Component<Props, State> {
           )}
 
           {/* Alerts toggle */}
-          {alerts && alerts.length > 2 && (
+          {!shouldOnlyShowAlertsExpanded && (
             <S.TransitAlertToggle onClick={this.onToggleAlertsClick}>
               <AlertToggleIcon />{" "}
               <FormattedMessage
