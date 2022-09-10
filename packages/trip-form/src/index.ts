@@ -8,6 +8,7 @@ import SettingsSelectorPanel from "./SettingsSelectorPanel";
 import SliderSelector from "./SliderSelector";
 import * as Styled from "./styled";
 import SubmodeSelector from "./SubmodeSelector";
+import MetroModeSelector from "./MetroModeSelector";
 import TripOptions, { Styled as TripOptionsStyled } from "./TripOptions";
 
 export {
@@ -17,6 +18,7 @@ export {
   GeneralSettingsPanel,
   ModeButton,
   ModeSelector,
+  MetroModeSelector,
   SettingsSelectorPanel,
   SliderSelector,
   SubmodeSelector,

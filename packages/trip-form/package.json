@@ -10,6 +10,8 @@
   "types": "lib/index.d.ts",
   "private": false,
   "dependencies": {
+    "@floating-ui/react-dom": "^1.0.0",
+    "@floating-ui/react-dom-interactions": "^0.9.3",
     "@opentripplanner/core-utils": "^7.0.0",
     "@opentripplanner/icons": "^1.2.2",
     "@styled-icons/bootstrap": "^10.34.0",

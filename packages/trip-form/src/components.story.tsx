@@ -1,6 +1,7 @@
 import * as Icons from "@opentripplanner/icons";
 import React from "react";
 import { action } from "@storybook/addon-actions";
+import { Bus, Bicycle, Walking } from "@styled-icons/fa-solid";
 
 import * as Core from ".";
 
@@ -221,4 +222,28 @@ export const submodeSelector = makeStory(Core.SubmodeSelector, {
   label: "Submodes:",
   modes: submodeOptions,
   onChange
+});
+
+const MetroModeSelector = (props): ReactElement => (
+  <div style={{ width: "340px", position: "relative" }}>
+    {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+    <Core.MetroModeSelector {...props} />
+  </div>
+);
+
+export const metroModeSelector = makeStory(MetroModeSelector, {
+  modes: [
+    {
+      name: "Transit",
+      Icon: Bus
+    },
+    {
+      name: "Walking",
+      Icon: Walking
+    },
+    {
+      name: "Bike",
+      Icon: Bicycle
+    }
+  ]
 });
