@@ -8,9 +8,11 @@ import {
   safePolygon,
   FloatingPortal
 } from "@floating-ui/react-dom-interactions";
-import React, { useRef, useState } from "react";
+
+import React, { ReactElement, useRef, useState } from "react";
 import styled from "styled-components";
 import SubSettingsPane from "./SubSettingsPane";
+import { Combination } from "./types";
 
 const ModeBar = styled.div`
   display: inline-grid;
@@ -75,7 +77,12 @@ const Arrow = styled.div`
   transform: rotate(-45deg);
 `;
 
-function ModeButton({ mode, floatingTarget }) {
+interface ModeButtonProps {
+  mode: Combination;
+  floatingTarget: HTMLDivElement;
+}
+
+function ModeButton({ mode, floatingTarget }: ModeButtonProps) {
   const [open, setOpen] = useState(false);
   const arrowRef = useRef(null);
   const {
@@ -124,15 +131,19 @@ function ModeButton({ mode, floatingTarget }) {
   );
 }
 
-export default function ModeSelector({ modes = [], onChange }) {
+interface Props {
+  modes: Combination[];
+  onChange: () => void;
+}
+
+export default function ModeSelector({ modes = [] }: Props): ReactElement {
   const floatingTarget = useRef(null);
-  console.log(floatingTarget)
   return (
     <>
       <ModeBar>
         {modes.map(mode => (
           <ModeButton
-            key={mode.name}
+            key={mode.label}
             mode={mode}
             floatingTarget={floatingTarget.current}
           />

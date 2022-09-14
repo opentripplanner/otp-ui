@@ -1,5 +1,6 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import styled from "styled-components";
+import { Combination } from "./types";
 
 const Header = styled.div`
   font-size: 2em;
@@ -8,10 +9,13 @@ const Header = styled.div`
 
 const SettingsPanel = styled.div``;
 
-export default function SubSettingsPane({ mode }) {
+interface Props {
+  mode: Combination;
+}
+export default function SubSettingsPane({ mode }: Props): ReactElement {
   return (
     <SettingsPanel>
-      <Header>{mode.name}</Header>
+      <Header>{mode.label}</Header>
     </SettingsPanel>
   );
 }
