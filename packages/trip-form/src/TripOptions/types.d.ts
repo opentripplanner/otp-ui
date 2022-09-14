@@ -5,7 +5,7 @@ export interface ModeOption {
   /**
    * in TripOptions, this image is expected to be an imported svg
    */
-  image?: string | JSX.Element;
+  image?: string;
   hidden?: boolean;
   label: string;
   mode: string;
