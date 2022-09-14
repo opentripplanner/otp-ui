@@ -22,6 +22,7 @@ const ModeBar = styled.div`
 
 const ModeButtonItem = styled.button`
   display: inline-block;
+  /* stylelint-disable-next-line property-no-unknown */
   aspect-ratio: 1/1;
   cursor: pointer;
   margin: 0;

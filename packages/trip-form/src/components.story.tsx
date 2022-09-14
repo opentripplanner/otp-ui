@@ -1,5 +1,5 @@
 import * as Icons from "@opentripplanner/icons";
-import React from "react";
+import React, { ReactElement } from "react";
 import { action } from "@storybook/addon-actions";
 import { Bus, Bicycle, Walking } from "@styled-icons/fa-solid";
 
@@ -234,15 +234,15 @@ const MetroModeSelector = (props): ReactElement => (
 export const metroModeSelector = makeStory(MetroModeSelector, {
   modes: [
     {
-      name: "Transit",
+      label: "Transit",
       Icon: Bus
     },
     {
-      name: "Walking",
+      label: "Walking",
       Icon: Walking
     },
     {
-      name: "Bike",
+      label: "Bike",
       Icon: Bicycle
     }
   ]
