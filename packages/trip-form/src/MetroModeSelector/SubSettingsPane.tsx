@@ -10,12 +10,19 @@ const Header = styled.div`
 const SettingsPanel = styled.div``;
 
 interface Props {
-  mode: Combination;
+  combination: Combination;
 }
-export default function SubSettingsPane({ mode }: Props): ReactElement {
+export default function SubSettingsPane({ combination }: Props): ReactElement {
+  // const modesWithSettings = combination.modes.map(mode => ({
+  //   ...mode,
+  //   settings: queryParams.filter(param => param.routingTypes.includes(mode))
+  // }));
   return (
     <SettingsPanel>
-      <Header>{mode.label}</Header>
+      <Header>{combination.label}</Header>
+      {/* {modesWithSettings.map(mode => (
+        <div>{mode.mode}</div>
+      ))} */}
     </SettingsPanel>
   );
 }

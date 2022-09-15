@@ -20,7 +20,7 @@ const ModeBar = styled.div`
   grid-auto-flow: column;
 `;
 
-const ModeButtonItem = styled.button`
+const ModeButtonItem = styled.button<{ enabled?: boolean }>`
   display: inline-block;
   /* stylelint-disable-next-line property-no-unknown */
   aspect-ratio: 1/1;
@@ -30,7 +30,7 @@ const ModeButtonItem = styled.button`
   border: 1px solid #0062cc;
   padding: 0.375rem 0.75rem;
   border-radius: 0.25rem;
-  background: #007bff;
+  background: ${props => (props.enabled ? "#007bff" : "#004691")};
   transition: all 250ms cubic-bezier(0.27, 0.01, 0.38, 1.06);
   color: white;
 
@@ -79,11 +79,12 @@ const Arrow = styled.div`
 `;
 
 interface ModeButtonProps {
-  mode: Combination;
+  combination: Combination;
   floatingTarget: HTMLDivElement;
+  onClick: () => void;
 }
 
-function ModeButton({ mode, floatingTarget }: ModeButtonProps) {
+function ModeButton({ combination, floatingTarget, onClick }: ModeButtonProps) {
   const [open, setOpen] = useState(false);
   const arrowRef = useRef(null);
   const {
@@ -103,9 +104,14 @@ function ModeButton({ mode, floatingTarget }: ModeButtonProps) {
     useHover(context, { handleClose: safePolygon() })
   ]);
   return (
-    /* eslint-disable-next-line react/jsx-props-no-spreading */
-    <ModeButtonItem ref={reference} {...getReferenceProps()}>
-      <mode.Icon size={32} />
+    <ModeButtonItem
+      ref={reference}
+      onClick={onClick}
+      /* eslint-disable-next-line react/jsx-props-no-spreading */
+      {...getReferenceProps()}
+      enabled={combination.enabled}
+    >
+      <combination.Icon size={32} />
       <FloatingPortal root={floatingTarget} id="foobartest">
         {open && (
           <HoverPanel
@@ -123,7 +129,7 @@ function ModeButton({ mode, floatingTarget }: ModeButtonProps) {
               style={{ top: arrowY ?? 0, left: arrowX ?? 0 }}
             />
             <HoverInnerContainer>
-              <SubSettingsPane mode={mode} />
+              <SubSettingsPane combination={combination} />
             </HoverInnerContainer>
           </HoverPanel>
         )}
@@ -133,19 +139,23 @@ function ModeButton({ mode, floatingTarget }: ModeButtonProps) {
 }
 
 interface Props {
-  modes: Combination[];
-  onChange: () => void;
+  combinations: Combination[];
+  onToggleCombination: (key) => void;
 }
 
-export default function ModeSelector({ modes = [] }: Props): ReactElement {
+export default function ModeSelector({
+  onToggleCombination,
+  combinations = []
+}: Props): ReactElement {
   const floatingTarget = useRef(null);
   return (
     <>
       <ModeBar>
-        {modes.map(mode => (
+        {combinations.map(combination => (
           <ModeButton
-            key={mode.label}
-            mode={mode}
+            onClick={() => onToggleCombination(combination.key)}
+            key={combination.label}
+            combination={combination}
             floatingTarget={floatingTarget.current}
           />
         ))}

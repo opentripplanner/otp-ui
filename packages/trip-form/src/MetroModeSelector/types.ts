@@ -29,18 +29,33 @@ export interface CheckboxOptions {
 }
 
 export type ModeSetting = {
-  type: ModeSettingTypes;
   configuration: SliderOptions | CheckboxOptions | DropdownOptions;
+  value?: string | number;
+  key: string;
+  type: ModeSettingTypes;
 };
 
-export interface OTPMode {
+export type ModeSettingValues = Record<string, number | string>;
+
+/**
+ * Transportation mode is usually an OTP mode string,
+ * but it can be anything for more flexibility.
+ */
+export interface TransportationMode {
   mode: string;
-  settings: ModeSetting[];
+  settings?: ModeSetting[];
 }
 
+/**
+ * This is a combination of transportation modes,
+ * with a label to describe them. These are designed
+ * to appear in the mode selector as discrete options.
+ */
 export interface Combination {
-  modes: OTPMode[];
+  modes: TransportationMode[];
+  enabled?: boolean;
   label: string;
+  key: string;
   Icon: StyledIcon;
   modeSettings?: ModeSetting[];
 }

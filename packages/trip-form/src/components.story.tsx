@@ -11,6 +11,7 @@ import submodeOptions from "./__mocks__/submode-options";
 import trimet from "./__mocks__/trimet-styled";
 
 import { SettingsSelectorPanel } from "./styled";
+import { Combination } from "./MetroModeSelector/types";
 
 // Events
 const onChange = action("onChange");
@@ -224,26 +225,49 @@ export const submodeSelector = makeStory(Core.SubmodeSelector, {
   onChange
 });
 
-const MetroModeSelector = (props): ReactElement => (
-  <div style={{ width: "340px", position: "relative" }}>
-    {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-    <Core.MetroModeSelector {...props} />
-  </div>
-);
+const MetroModeSelector = ({
+  combinations
+}: {
+  combinations: Combination[];
+}): ReactElement => {
+  const initialState = {
+    enabledCombinations: ["TRANSIT"],
+    modeSettings: {}
+  };
+  const {
+    combinations: combinationsFromState,
+    toggleCombination
+  } = Core.useModeState(combinations, initialState);
+  return (
+    <div style={{ width: "340px", position: "relative" }}>
+      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+      <Core.MetroModeSelector
+        onToggleCombination={toggleCombination}
+        combinations={combinationsFromState}
+      />
+    </div>
+  );
+};
 
 export const metroModeSelector = makeStory(MetroModeSelector, {
-  modes: [
+  combinations: [
     {
       label: "Transit",
-      Icon: Bus
+      Icon: Bus,
+      key: "TRANSIT",
+      modes: ["TRANSIT"]
     },
     {
       label: "Walking",
-      Icon: Walking
+      Icon: Walking,
+      key: "WALK",
+      modes: ["WALK"]
     },
     {
       label: "Bike",
-      Icon: Bicycle
+      Icon: Bicycle,
+      key: "BIKE",
+      modes: ["BICYCLE", "BIKESHARE"]
     }
   ]
 });

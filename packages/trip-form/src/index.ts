@@ -9,6 +9,7 @@ import SliderSelector from "./SliderSelector";
 import * as Styled from "./styled";
 import SubmodeSelector from "./SubmodeSelector";
 import MetroModeSelector from "./MetroModeSelector";
+import { useModeState } from "./MetroModeSelector/utils";
 import TripOptions, { Styled as TripOptionsStyled } from "./TripOptions";
 
 export {
@@ -24,5 +25,6 @@ export {
   SubmodeSelector,
   TripOptions,
   TripOptionsStyled,
-  Styled
+  Styled,
+  useModeState
 };
