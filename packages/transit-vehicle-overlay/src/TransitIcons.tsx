@@ -4,11 +4,16 @@ import React from "react";
 import { Bus, Streetcar, Ferry } from "@opentripplanner/icons";
 import styled, { css } from "styled-components";
 
-const rounded = css<{ rotate?: number; routeColor?: string }>`
-  background: #eee;
+const rounded = css<{
+  ambient?: boolean;
+  rotate?: number;
+  routeColor?: string;
+}>`
+  background: ${props =>
+    props.ambient ? props.routeColor || "#9999ee" : "#eeeeee"}aa;
   &:hover {
     background: ${props => props.routeColor || "#9999ee"}aa;
-    cursor: cell;
+    cursor: ${props => (props.ambient ? "inherit" : "cell")};
   }
   transition: all 0.1s ease-in-out;
   border: 2px solid #333d;
@@ -28,16 +33,26 @@ export const StyledFerry = styled(Ferry)`
   ${rounded}
 `;
 
+export const StyledText = styled.div`
+  ${rounded}
+  font-size: 15px;
+  font-weight: 700;
+  height: inherit;
+  margin: 0;
+  padding: 5px 8px;
+`;
+
 export const getTransitIcon = (mode: string): React.ReactNode => {
-  switch (mode) {
+  switch (mode?.toLowerCase()) {
     case "bus":
       return StyledBus;
     case "streetcar":
+    case "tram":
     case "rail":
       return StyledStreetcar;
     case "ferry":
       return StyledFerry;
     default:
-      return StyledBus;
+      return StyledText;
   }
 };
