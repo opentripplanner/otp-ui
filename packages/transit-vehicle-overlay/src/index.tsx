@@ -7,6 +7,11 @@ import VehicleTooltip from "./VehicleTooltip";
 
 type Props = {
   /**
+   * Whether or not to render all icons in the "ambient" style (no hover effects, color
+   * always visible)
+   */
+  ambient?: boolean;
+  /**
    * A hex color in the form `#fffFFF` to highlight all vehicles as
    */
   color?: string;
@@ -24,6 +29,7 @@ type Props = {
  * An overlay to view a collection of transit vehicles.
  */
 const TransitVehicleOverlay = ({
+  ambient,
   color,
   TooltipSlot,
   vehicles
@@ -54,7 +60,7 @@ const TransitVehicleOverlay = ({
             tooltipContents={<Tooltip vehicle={vehicle} />}
           >
             {/* @ts-expect-error We know the icon is set dynamically */}
-            <Icon rotate={vehicle.heading} routeColor={color} ambient>
+            <Icon rotate={vehicle.heading} routeColor={color} ambient={ambient}>
               {/* If there is no route type, draw the route name, or a generic bullet */}
               {!vehicle.routeType && (vehicle?.routeShortName || "🚌")}
             </Icon>
