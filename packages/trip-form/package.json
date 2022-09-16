@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/trip-form",
-  "version": "2.0.2",
+  "version": "2.0.3-alpha.1",
   "description": "Trip Settings Form and Related Components",
   "author": "@binh-dam-ibigroup",
   "homepage": "https://github.com/opentripplanner/otp-ui/#readme",
