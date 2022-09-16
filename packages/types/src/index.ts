@@ -141,6 +141,7 @@ export type Config = {
   dateTime: {
     timeFormat?: string;
     dateFormat?: string;
+    /** @deprecated */
     longDateFormat?: string;
   };
   homeTimezone: string;

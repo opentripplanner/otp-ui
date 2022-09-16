@@ -19,6 +19,7 @@ export default function PlaceRow({
   accessibilityScoreGradationMap,
   AlertBodyIcon,
   AlertToggleIcon,
+  alwaysCollapseAlerts,
   config,
   diagramVisible,
   fare,
@@ -112,6 +113,7 @@ export default function PlaceRow({
               <TransitLegBody
                 AlertBodyIcon={AlertBodyIcon}
                 AlertToggleIcon={AlertToggleIcon}
+                alwaysCollapseAlerts={alwaysCollapseAlerts}
                 fare={fare}
                 leg={leg}
                 LegIcon={LegIcon}

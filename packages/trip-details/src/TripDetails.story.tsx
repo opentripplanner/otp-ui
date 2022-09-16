@@ -1,6 +1,6 @@
-import { format } from "date-fns";
 import flatten from "flat";
 import React, { ReactElement } from "react";
+import { FormattedDate } from "react-intl";
 import {
   ComponentMeta,
   ComponentStory,
@@ -102,8 +102,6 @@ const fareByLegLayout: FareTableLayout[] = [
   }
 ];
 
-const longDateFormat = "MMMM d, yyyy";
-
 const englishFareKeyMap = {
   regular: "Transit Fare",
   student: "Student Fare",
@@ -148,8 +146,14 @@ const CustomDepartureDetails = ({
   departureDate
 }: DepartureDetailsProps): ReactElement => (
   <>
-    Custom messages about {format(departureDate, longDateFormat)} can be
-    constructed dynamically using any markup.
+    Custom messages about{" "}
+    <FormattedDate
+      value={departureDate}
+      year="numeric"
+      month="long"
+      day="numeric"
+    />{" "}
+    can be constructed dynamically using any markup.
   </>
 );
 
