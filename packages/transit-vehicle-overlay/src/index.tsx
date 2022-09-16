@@ -60,7 +60,11 @@ const TransitVehicleOverlay = ({
             tooltipContents={<Tooltip vehicle={vehicle} />}
           >
             {/* @ts-expect-error We know the icon is set dynamically */}
-            <Icon rotate={vehicle.heading} routeColor={color} ambient={ambient}>
+            <Icon
+              rotate={vehicle.heading}
+              routeColor={vehicle?.routeColor || color}
+              ambient={ambient}
+            >
               {/* If there is no route type, draw the route name, or a generic bullet */}
               {!vehicle.routeType && (vehicle?.routeShortName || "🚌")}
             </Icon>
