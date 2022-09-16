@@ -26,9 +26,7 @@ export default function VehicleTooltip({ vehicle }: Props): JSX.Element {
   if (routeShortName?.length <= 5) {
     name = routeType ? (
       // This produces text such as "MAX Green", so don't localize.
-      <>
-        `${routeType} ${routeShortName}`
-      </>
+      <>{`${routeType} ${routeShortName}`}</>
     ) : (
       <FormattedMessage
         defaultMessage={
@@ -42,6 +40,8 @@ export default function VehicleTooltip({ vehicle }: Props): JSX.Element {
       />
     );
   }
+
+  if (!seconds) return name;
 
   return (
     <>
@@ -57,18 +57,16 @@ export default function VehicleTooltip({ vehicle }: Props): JSX.Element {
           }}
         />
       </Title>
-      {seconds && (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.TransitVehicleOverlay.durationAgo"]
-          }
-          description="Text describing a past duration"
-          id="otpUi.TransitVehicleOverlay.durationAgo"
-          values={{
-            duration: <FormattedDurationWithSeconds seconds={seconds} />
-          }}
-        />
-      )}
+      <FormattedMessage
+        defaultMessage={
+          defaultMessages["otpUi.TransitVehicleOverlay.durationAgo"]
+        }
+        description="Text describing a past duration"
+        id="otpUi.TransitVehicleOverlay.durationAgo"
+        values={{
+          duration: <FormattedDurationWithSeconds seconds={seconds} />
+        }}
+      />
     </>
   );
 }
