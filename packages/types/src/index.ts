@@ -93,6 +93,8 @@ export type TransitVehicle = {
   routeShortName?: string;
   routeLongName?: string;
   routeType?: string;
+  routeColor?: string;
+  highlightColor?: string;
 
   status?: string;
   reportDate?: string;
