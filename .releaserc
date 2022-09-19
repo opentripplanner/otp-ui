@@ -1,4 +1,9 @@
 {
+  "branches": [
+    "master",
+    "alpha",
+    "raster-tiles"
+  ],
   "fail": [],
   "plugins": [
     "@semantic-release/commit-analyzer",
