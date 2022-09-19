@@ -8,6 +8,7 @@ on:
       - beta
       - next
       - next-major
+      - raster-tiles
       # This is an attempt to match semantic-release's branch pattern using
       # GitHub Actions' regex-like matching
       # See https://semantic-release.gitbook.io/semantic-release/v/beta/usage/configuration#branches
