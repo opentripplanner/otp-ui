@@ -1,20 +1,34 @@
 import React from "react";
 
-import vehicleData from "../__mocks__/tm_all.json";
+import vehicleData from "../__mocks__/seattle.json";
 import { withMap } from "../../../.storybook/base-map-wrapper";
 
 import TransitVehicleOverlay from ".";
 
-const PORTLAND: [number, number] = [45.523, -122.671];
+const SEATTLE: [number, number] = [47.6, -122.3];
 
 export const TransitVehicleOverlayExample = () => {
+  // @ts-expect-error the mock data is incomplete
+  return <TransitVehicleOverlay vehicles={vehicleData.vehiclePositions} />;
+};
+export const TransitVehicleOverlayExampleAmbientStyle = () => {
   return (
-    <TransitVehicleOverlay vehicles={[vehicleData.resultSet.vehicle[0]]} />
+    // @ts-expect-error the mock data is incomplete
+    <TransitVehicleOverlay ambient vehicles={vehicleData.vehiclePositions} />
+  );
+};
+export const TransitVehicleOverlayExampleRenderingText = () => {
+  return (
+    <TransitVehicleOverlay
+      alwaysRenderText
+      // @ts-expect-error the mock data is incomplete
+      vehicles={vehicleData.vehiclePositions}
+    />
   );
 };
 
 export default {
   title: "TransitVehicleOverlay",
   component: TransitVehicleOverlayExample,
-  decorators: [withMap(PORTLAND, 8)]
+  decorators: [withMap(SEATTLE, 12)]
 };

@@ -26,7 +26,9 @@ export default function VehicleTooltip({ vehicle }: Props): JSX.Element {
   if (routeShortName?.length <= 5) {
     name = routeType ? (
       // This produces text such as "MAX Green", so don't localize.
-      <>{`${routeType} ${routeShortName}`}</>
+      <>
+        {routeType} {routeShortName}
+      </>
     ) : (
       <FormattedMessage
         defaultMessage={
