@@ -11,16 +11,11 @@ export const TransitVehicleOverlayExample = () => {
   // @ts-expect-error the mock data is incomplete
   return <TransitVehicleOverlay vehicles={vehicleData.vehiclePositions} />;
 };
-export const TransitVehicleOverlayExampleAmbientStyle = () => {
-  return (
-    // @ts-expect-error the mock data is incomplete
-    <TransitVehicleOverlay ambient vehicles={vehicleData.vehiclePositions} />
-  );
-};
-export const TransitVehicleOverlayExampleRenderingText = () => {
+export const TransitVehicleOverlayExampleWithoutHoverEffects = () => {
   return (
     <TransitVehicleOverlay
       alwaysRenderText
+      disableHoverEffects
       // @ts-expect-error the mock data is incomplete
       vehicles={vehicleData.vehiclePositions}
     />

@@ -17,7 +17,7 @@ type Props = {
    * Whether or not to render all icons in the "ambient" style (no hover effects, color
    * always visible)
    */
-  ambient?: boolean;
+  disableHoverEffects?: boolean;
 
   /**
    * A hex color in the form `#fffFFF` to highlight all vehicles as
@@ -40,7 +40,7 @@ type Props = {
  */
 const TransitVehicleOverlay = ({
   alwaysRenderText,
-  ambient,
+  disableHoverEffects,
   color,
   TooltipSlot,
   vehicles
@@ -74,7 +74,7 @@ const TransitVehicleOverlay = ({
           >
             {/* @ts-expect-error We know the icon is set dynamically */}
             <Icon
-              ambient={ambient}
+              disableHoverEffects={disableHoverEffects}
               // Don't rotate if all the icons are text! It looks weird
               rotate={!alwaysRenderText && vehicle.heading}
               routeColor={vehicle?.routeColor || color}

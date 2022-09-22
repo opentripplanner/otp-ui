@@ -7,15 +7,17 @@ import styled, { css } from "styled-components";
 const getBackgroundColor = routeColor => routeColor || "#9999ee";
 
 const rounded = css<{
-  ambient?: boolean;
+  disableHoverEffects?: boolean;
   rotate?: number;
   routeColor?: string;
 }>`
   background: ${props =>
-    props.ambient ? getBackgroundColor(props.routeColor) : "#eeeeee"}aa;
+    props.disableHoverEffects
+      ? getBackgroundColor(props.routeColor)
+      : "#eeeeee"}aa;
   &:hover {
     background: ${props => getBackgroundColor(props.routeColor)}aa;
-    cursor: ${props => (props.ambient ? "inherit" : "cell")};
+    cursor: ${props => (props.disableHoverEffects ? "inherit" : "default")};
   }
   transition: all 0.1s ease-in-out;
   border: 2px solid #333d;
