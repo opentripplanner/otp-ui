@@ -1,0 +1,10 @@
+- applicableMode: WALK
+  type: SLIDER
+  key: walkReluctance
+  default: null
+  low: 0
+  high: 10
+  step: 0.5
+  label: Walk Reluctance
+  labelLow: More Walking
+  labelHigh: More Transit

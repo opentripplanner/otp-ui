@@ -1,9 +1,23 @@
 import { useState } from "react";
-import { Combination, ModeSettingValues } from "./types";
+import { Combination, ModeSetting, ModeSettingValues } from "./types";
+import modeSettingsDefinitions from "./modeSettings.yml";
+import { QueryParamChangeEvent } from "../types";
 
 export type InitialStateType = {
   enabledCombinations: string[];
-  modeSettings: ModeSettingValues;
+  modeSettingValues: ModeSettingValues;
+};
+
+export const getSettingsForCombination = (settings: ModeSetting[]) => (
+  combination: Combination
+): Combination => {
+  return {
+    ...combination,
+    modes: combination.modes.map(mode => ({
+      ...mode,
+      settings: settings.filter(def => def.applicableMode === mode.mode)
+    }))
+  };
 };
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -31,22 +45,32 @@ export function useModeState(
     }
   };
 
-  const [modeSettings, setModeSettings] = useState<ModeSettingValues>(
-    initialState.modeSettings
-  );
+  const [modeSettingsValues, setModeSettingsValues] = useState<
+    ModeSettingValues
+  >(initialState.modeSettingValues);
 
-  const setIndividualModeSetting = (settingKey, value) => {
-    setModeSettings({
-      ...modeSettings,
-      [settingKey]: value
+  const setModeSettingValue = (setting: QueryParamChangeEvent) => {
+    setModeSettingsValues({
+      ...modeSettingsValues,
+      ...setting
     });
   };
 
+  const definitionsWithValues: ModeSetting[] = modeSettingsDefinitions.map(
+    def => ({
+      ...def,
+      value: modeSettingsValues[def.key]
+    })
+  );
+
+  const combosWithSettings = combinations.map(
+    getSettingsForCombination(definitionsWithValues)
+  );
+
   return {
-    setIndividualModeSetting,
-    combinations,
+    setModeSettingValue,
+    combinations: combosWithSettings,
     enabledCombinationKeys,
-    modeSettings,
     toggleCombination
   };
 }

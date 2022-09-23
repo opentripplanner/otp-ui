@@ -1,9 +1,9 @@
 import { StyledIcon } from "@styled-icons/styled-icon";
 
 export enum ModeSettingTypes {
-  SLIDER,
-  CHECKBOX,
-  DROPDOWN
+  SLIDER = "SLIDER",
+  CHECKBOX = "CHECKBOX",
+  DROPDOWN = "DROPDOWN"
 }
 
 export interface DropdownOptions {
@@ -12,6 +12,8 @@ export interface DropdownOptions {
     text: string;
     value: number;
   }>;
+  type: ModeSettingTypes.DROPDOWN;
+  value?: string;
 }
 
 export interface SliderOptions {
@@ -21,21 +23,25 @@ export interface SliderOptions {
   label: string;
   labelLow: string;
   labelHigh: string;
+  type: ModeSettingTypes.SLIDER;
+  value?: number;
 }
 
 export interface CheckboxOptions {
   label: string;
   icon: JSX.Element;
+  type: ModeSettingTypes.CHECKBOX;
+  value?: string;
 }
 
-export type ModeSetting = {
-  configuration: SliderOptions | CheckboxOptions | DropdownOptions;
-  value?: string | number;
+export interface ModeSettingBase {
+  applicableMode: string;
   key: string;
-  type: ModeSettingTypes;
-};
+}
 
-export type ModeSettingValues = Record<string, number | string>;
+export type ModeSetting = (CheckboxOptions | SliderOptions | DropdownOptions) &
+  ModeSettingBase;
+export type ModeSettingValues = Record<string, number | string | boolean>;
 
 /**
  * Transportation mode is usually an OTP mode string,

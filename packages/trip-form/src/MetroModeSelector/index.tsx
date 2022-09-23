@@ -82,9 +82,15 @@ interface ModeButtonProps {
   combination: Combination;
   floatingTarget: HTMLDivElement;
   onClick: () => void;
+  onSettingsUpdate: (QueryParamChangeEvent) => void;
 }
 
-function ModeButton({ combination, floatingTarget, onClick }: ModeButtonProps) {
+function ModeButton({
+  combination,
+  floatingTarget,
+  onClick,
+  onSettingsUpdate
+}: ModeButtonProps) {
   const [open, setOpen] = useState(false);
   const arrowRef = useRef(null);
   const {
@@ -101,17 +107,21 @@ function ModeButton({ combination, floatingTarget, onClick }: ModeButtonProps) {
     middleware: [offset(8), shift(), arrow({ element: arrowRef })]
   });
   const { getFloatingProps, getReferenceProps } = useInteractions([
-    useHover(context, { handleClose: safePolygon() })
+    useHover(context, {
+      handleClose: safePolygon({ blockPointerEvents: true })
+    })
   ]);
   return (
-    <ModeButtonItem
-      ref={reference}
-      onClick={onClick}
-      /* eslint-disable-next-line react/jsx-props-no-spreading */
-      {...getReferenceProps()}
-      enabled={combination.enabled}
-    >
-      <combination.Icon size={32} />
+    <>
+      <ModeButtonItem
+        ref={reference}
+        onClick={onClick}
+        /* eslint-disable-next-line react/jsx-props-no-spreading */
+        {...getReferenceProps()}
+        enabled={combination.enabled}
+      >
+        <combination.Icon size={32} />
+      </ModeButtonItem>
       <FloatingPortal root={floatingTarget} id="foobartest">
         {open && (
           <HoverPanel
@@ -129,22 +139,27 @@ function ModeButton({ combination, floatingTarget, onClick }: ModeButtonProps) {
               style={{ top: arrowY ?? 0, left: arrowX ?? 0 }}
             />
             <HoverInnerContainer>
-              <SubSettingsPane combination={combination} />
+              <SubSettingsPane
+                combination={combination}
+                onSettingUpdate={onSettingsUpdate}
+              />
             </HoverInnerContainer>
           </HoverPanel>
         )}
       </FloatingPortal>
-    </ModeButtonItem>
+    </>
   );
 }
 
 interface Props {
   combinations: Combination[];
   onToggleCombination: (key) => void;
+  onSettingsUpdate: (QueryParamChangeEvent) => void;
 }
 
 export default function ModeSelector({
   onToggleCombination,
+  onSettingsUpdate,
   combinations = []
 }: Props): ReactElement {
   const floatingTarget = useRef(null);
@@ -157,6 +172,7 @@ export default function ModeSelector({
             key={combination.label}
             combination={combination}
             floatingTarget={floatingTarget.current}
+            onSettingsUpdate={onSettingsUpdate}
           />
         ))}
       </ModeBar>

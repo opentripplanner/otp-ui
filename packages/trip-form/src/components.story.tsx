@@ -232,18 +232,20 @@ const MetroModeSelector = ({
 }): ReactElement => {
   const initialState = {
     enabledCombinations: ["TRANSIT"],
-    modeSettings: {}
+    modeSettingValues: {}
   };
   const {
     combinations: combinationsFromState,
-    toggleCombination
+    toggleCombination,
+    setModeSettingValue
   } = Core.useModeState(combinations, initialState);
+  console.log(combinationsFromState);
   return (
     <div style={{ width: "340px", position: "relative" }}>
-      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
       <Core.MetroModeSelector
         onToggleCombination={toggleCombination}
         combinations={combinationsFromState}
+        onSettingsUpdate={setModeSettingValue}
       />
     </div>
   );
@@ -255,19 +257,19 @@ export const metroModeSelector = makeStory(MetroModeSelector, {
       label: "Transit",
       Icon: Bus,
       key: "TRANSIT",
-      modes: ["TRANSIT"]
+      modes: [{ mode: "TRANSIT" }]
     },
     {
       label: "Walking",
       Icon: Walking,
       key: "WALK",
-      modes: ["WALK"]
+      modes: [{ mode: "WALK" }]
     },
     {
       label: "Bike",
       Icon: Bicycle,
       key: "BIKE",
-      modes: ["BICYCLE", "BIKESHARE"]
+      modes: [{ mode: "BICYCLE" }, { mode: "BIKESHARE" }]
     }
   ]
 });
