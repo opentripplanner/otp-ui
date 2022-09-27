@@ -74,15 +74,18 @@ export function useModeState(
     }
   };
 
+  const defaultModeSettingsValues = {
+    ...modeSettingsDefinitions.reduce((prev, cur) => {
+      prev[cur.key] = cur.default;
+      return prev;
+    }, {}),
+    ...initialState.modeSettingValues
+  };
+
   // Handle ModeSettings state
   const [modeSettingsValues, setModeSettingsValues] = useStateStorage<
     ModeSettingValues
-  >(
-    "modeSettings",
-    ObjectParam,
-    queryParamState,
-    initialState.modeSettingValues
-  );
+  >("modeSettings", ObjectParam, queryParamState, defaultModeSettingsValues);
 
   const setModeSettingValue = (setting: QueryParamChangeEvent) => {
     setModeSettingsValues({
@@ -101,6 +104,8 @@ export function useModeState(
   const combosWithSettings = combinations.map(
     getSettingsForCombination(definitionsWithValues)
   );
+
+  console.log(modeSettingsValues);
 
   return {
     setModeSettingValue,

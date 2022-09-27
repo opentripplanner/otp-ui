@@ -1,5 +1,7 @@
 import React, { ReactElement } from "react";
 import styled from "styled-components";
+import CheckboxSelector from "../CheckboxSelector";
+import DropdownSelector from "../DropdownSelector";
 import SliderSelector from "../SliderSelector";
 import { Combination, ModeSetting, ModeSettingTypes } from "./types";
 
@@ -20,17 +22,36 @@ const ModeSettingRenderer = ({
   onChange: (QueryParamChangeEvent) => void;
 }) => {
   switch (setting.type) {
+    case ModeSettingTypes.CHECKBOX:
+      return (
+        <CheckboxSelector
+          label={setting.label}
+          name={setting.key}
+          onChange={onChange}
+          value={setting.value}
+        />
+      );
+    case ModeSettingTypes.DROPDOWN:
+      return (
+        <DropdownSelector
+          label={setting.label}
+          name={setting.key}
+          onChange={onChange}
+          value={setting.value}
+          options={setting.options}
+        />
+      );
     case ModeSettingTypes.SLIDER:
       return (
         <SliderSelector
-          max={setting.high}
-          min={setting.low}
+          label={setting.label}
           labelHigh={setting.labelHigh}
           labelLow={setting.labelLow}
-          label={setting.label}
-          step={setting.step}
+          max={setting.high}
+          min={setting.low}
           name={setting.key}
           onChange={onChange}
+          step={setting.step}
           value={setting.value}
         />
       );
