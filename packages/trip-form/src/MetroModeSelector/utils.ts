@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useQueryParam, ArrayParam, ObjectParam } from "use-query-params";
+import { QueryParamConfig } from "serialize-query-params";
 import { Combination, ModeSetting, ModeSettingValues } from "./types";
 import modeSettingsDefinitions from "./modeSettings.yml";
 import { QueryParamChangeEvent } from "../types";
@@ -6,6 +8,10 @@ import { QueryParamChangeEvent } from "../types";
 export type InitialStateType = {
   enabledCombinations: string[];
   modeSettingValues: ModeSettingValues;
+};
+
+export type ModeStateConfig = {
+  queryParamState?: boolean;
 };
 
 export const getSettingsForCombination = (settings: ModeSetting[]) => (
@@ -20,15 +26,38 @@ export const getSettingsForCombination = (settings: ModeSetting[]) => (
   };
 };
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export function useStateStorage<Type>(
+  name: string,
+  stateType: QueryParamConfig<Type>,
+  storeInQueryParam: boolean,
+  defaultState?: Type
+): [Type, (newValue: Type) => void] {
+  const [qpState, setQpState] = useQueryParam<Type>(name, stateType);
+  const [reactState, setReactState] = useState<Type>(defaultState);
+
+  if (!storeInQueryParam) {
+    return [reactState, setReactState];
+  }
+
+  if (qpState === undefined) {
+    return [defaultState, setQpState];
+  }
+  return [qpState, setQpState];
+}
+
 export function useModeState(
   combinationsFromConfig: Combination[],
-  initialState: InitialStateType
+  initialState: InitialStateType,
+  { queryParamState }: ModeStateConfig
 ) {
-  // Handle combination state
-  const [enabledCombinationKeys, setEnabledCombinationKeys] = useState<
+  const [enabledCombinationKeys, setEnabledCombinationKeys] = useStateStorage<
     string[]
-  >(initialState.enabledCombinations);
+  >(
+    "combinations",
+    ArrayParam,
+    queryParamState,
+    initialState.enabledCombinations
+  );
 
   const combinations = combinationsFromConfig.map(combo => ({
     ...combo,
@@ -45,9 +74,15 @@ export function useModeState(
     }
   };
 
-  const [modeSettingsValues, setModeSettingsValues] = useState<
+  // Handle ModeSettings state
+  const [modeSettingsValues, setModeSettingsValues] = useStateStorage<
     ModeSettingValues
-  >(initialState.modeSettingValues);
+  >(
+    "modeSettings",
+    ObjectParam,
+    queryParamState,
+    initialState.modeSettingValues
+  );
 
   const setModeSettingValue = (setting: QueryParamChangeEvent) => {
     setModeSettingsValues({

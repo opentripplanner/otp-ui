@@ -2,6 +2,8 @@ import * as Icons from "@opentripplanner/icons";
 import React, { ReactElement } from "react";
 import { action } from "@storybook/addon-actions";
 import { Bus, Bicycle, Walking } from "@styled-icons/fa-solid";
+import { QueryParamProvider } from "use-query-params";
+import { WindowHistoryAdapter } from "use-query-params/adapters/window";
 
 import * as Core from ".";
 
@@ -238,8 +240,9 @@ const MetroModeSelector = ({
     combinations: combinationsFromState,
     toggleCombination,
     setModeSettingValue
-  } = Core.useModeState(combinations, initialState);
-  console.log(combinationsFromState);
+  } = Core.useModeState(combinations, initialState, {
+    queryParamState: false
+  });
   return (
     <div style={{ width: "340px", position: "relative" }}>
       <Core.MetroModeSelector
@@ -251,7 +254,17 @@ const MetroModeSelector = ({
   );
 };
 
-export const metroModeSelector = makeStory(MetroModeSelector, {
+const MetroModeSelectorWithQP = ({
+  combinations
+}: {
+  combinations: Combination[];
+}): ReactElement => (
+  <QueryParamProvider adapter={WindowHistoryAdapter}>
+    <MetroModeSelector combinations={combinations} />
+  </QueryParamProvider>
+);
+
+export const metroModeSelector = makeStory(MetroModeSelectorWithQP, {
   combinations: [
     {
       label: "Transit",
