@@ -11,6 +11,7 @@ import {
 
 import React, { ReactElement, useRef, useState } from "react";
 import styled from "styled-components";
+import { QueryParamChangeEvent } from "../types";
 import SubSettingsPane from "./SubSettingsPane";
 import { Combination } from "./types";
 
@@ -81,14 +82,14 @@ const Arrow = styled.div`
 interface ModeButtonProps {
   combination: Combination;
   floatingTarget: HTMLDivElement;
-  onClick: () => void;
+  onToggle: () => void;
   onSettingsUpdate: (QueryParamChangeEvent) => void;
 }
 
 function ModeButton({
   combination,
   floatingTarget,
-  onClick,
+  onToggle,
   onSettingsUpdate
 }: ModeButtonProps) {
   const [open, setOpen] = useState(false);
@@ -111,11 +112,17 @@ function ModeButton({
       handleClose: safePolygon({ blockPointerEvents: true })
     })
   ]);
+  const updateSetting = (event: QueryParamChangeEvent) => {
+    if (!combination.enabled) {
+      onToggle();
+    }
+    onSettingsUpdate(event);
+  };
   return (
     <>
       <ModeButtonItem
         ref={reference}
-        onClick={onClick}
+        onClick={onToggle}
         /* eslint-disable-next-line react/jsx-props-no-spreading */
         {...getReferenceProps()}
         enabled={combination.enabled}
@@ -141,7 +148,7 @@ function ModeButton({
             <HoverInnerContainer>
               <SubSettingsPane
                 combination={combination}
-                onSettingUpdate={onSettingsUpdate}
+                onSettingUpdate={updateSetting}
               />
             </HoverInnerContainer>
           </HoverPanel>
@@ -168,7 +175,7 @@ export default function ModeSelector({
       <ModeBar>
         {combinations.map(combination => (
           <ModeButton
-            onClick={() => onToggleCombination(combination.key)}
+            onToggle={() => onToggleCombination(combination.key)}
             key={combination.label}
             combination={combination}
             floatingTarget={floatingTarget.current}
