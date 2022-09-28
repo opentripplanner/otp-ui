@@ -11,7 +11,6 @@ import {
 
 import React, { ReactElement, useRef, useState } from "react";
 import styled from "styled-components";
-import { QueryParamChangeEvent } from "../types";
 import SubSettingsPane from "./SubSettingsPane";
 import { Combination } from "./types";
 
@@ -45,8 +44,7 @@ const ModeButtonItem = styled.button<{ enabled?: boolean }>`
   }
 
   &:hover {
-    color: #fff;
-    background: #006fe6;
+    background: ${props => (props.enabled ? "#006fe6" : "#0355ad")};
     border-color: #006fe6;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05),
       0 4px 10px rgba(0, 123, 255, 0.25);
@@ -107,22 +105,24 @@ function ModeButton({
     onOpenChange: setOpen,
     middleware: [offset(8), shift(), arrow({ element: arrowRef })]
   });
+
   const { getFloatingProps, getReferenceProps } = useInteractions([
     useHover(context, {
-      handleClose: safePolygon({ blockPointerEvents: true })
+      handleClose: safePolygon(),
+      enabled: combination.enabled
     })
   ]);
-  const updateSetting = (event: QueryParamChangeEvent) => {
-    if (!combination.enabled) {
-      onToggle();
-    }
-    onSettingsUpdate(event);
+
+  const modeButtonClicked = () => {
+    setOpen(!combination.enabled);
+    onToggle();
   };
+
   return (
     <>
       <ModeButtonItem
         ref={reference}
-        onClick={onToggle}
+        onClick={modeButtonClicked}
         /* eslint-disable-next-line react/jsx-props-no-spreading */
         {...getReferenceProps()}
         enabled={combination.enabled}
@@ -148,7 +148,7 @@ function ModeButton({
             <HoverInnerContainer>
               <SubSettingsPane
                 combination={combination}
-                onSettingUpdate={updateSetting}
+                onSettingUpdate={onSettingsUpdate}
               />
             </HoverInnerContainer>
           </HoverPanel>
