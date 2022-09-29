@@ -10,6 +10,7 @@ import {
 } from "@opentripplanner/types";
 import bbox from "@turf/bbox";
 
+import { getRouteLayerLayout, patternToRouteFeature } from "./route-layers";
 import { itineraryToTransitive } from "./util";
 
 export { itineraryToTransitive };
@@ -24,10 +25,13 @@ const modeColorMap = {
   WALK: "#86cdf9"
 };
 
+const routeFilter = ["==", "type", "route"];
+
 type Props = {
   activeLeg?: Leg;
   transitiveData: TransitiveData;
 };
+
 const TransitiveCanvasOverlay = ({
   activeLeg,
   transitiveData
@@ -35,7 +39,7 @@ const TransitiveCanvasOverlay = ({
   const { current: map } = useMap();
   const geojson: GeoJSON.FeatureCollection<
     GeoJSON.Geometry,
-    Record<any, any>
+    Record<string, unknown>
   > = {
     type: "FeatureCollection",
     // @ts-expect-error TODO: fix the type above for geojson
@@ -74,42 +78,10 @@ const TransitiveCanvasOverlay = ({
               });
             })
       ),
-      ...(transitiveData?.patterns || []).flatMap(
-        (pattern: TransitivePattern) => {
-          const route = transitiveData.routes.find(
-            r => r.route_id === pattern.route_id
-          );
-          // Concatenate geometries (arrays of coordinates) to help maplibre spread out labels (not perfect).
-          const concatenatedLines = pattern.stops
-            .map(stop => stop.geometry)
-            .filter(geometry => !!geometry)
-            .reduce((result, geom, index) => {
-              const coords = polyline.decode(geom);
-              // Remove the first element (except for the first array) because it is a duplicate
-              // of the last element of the previous array.
-              if (index !== 0) coords.shift();
-              return result.concat(coords);
-            }, []);
-          const routeName =
-            route.route_short_name || route.route_long_name || "";
-          // HACK: Create an uppercase version of the route name to paint the background, where
-          // spaces are replaced with '!' (~same width as space) to create a background with a uniform height.
-          // Also, ensure there is a minimum background width (3 characters).
-          const routeNameUpper = (routeName.length < 3 ? "000" : routeName)
-            .toUpperCase()
-            .replace(/\s/g, "!");
-
-          return {
-            geometry: polyline.toGeoJSON(polyline.encode(concatenatedLines)),
-            properties: {
-              color: `#${route.route_color || "000080"}`,
-              name: routeName,
-              nameUpper: routeNameUpper,
-              type: "route"
-            },
-            type: "Feature"
-          };
-        }
+      ...(
+        transitiveData?.patterns || []
+      ).flatMap((pattern: TransitivePattern) =>
+        patternToRouteFeature(pattern, transitiveData.routes)
       )
     ]
   };
@@ -155,7 +127,7 @@ const TransitiveCanvasOverlay = ({
         type="line"
       />
       <Layer
-        filter={["==", "type", "route"]}
+        filter={routeFilter}
         id="routes"
         layout={{
           "line-join": "round",
@@ -170,16 +142,9 @@ const TransitiveCanvasOverlay = ({
       />
       <Layer
         // Render a solid background of fixed height using the uppercase route name.
-        filter={["==", "type", "route"]}
+        filter={routeFilter}
         id="routes-labels-background"
-        layout={{
-          "symbol-placement": "line-center",
-          "text-allow-overlap": true,
-          "text-field": ["get", "nameUpper"],
-          "text-ignore-placement": true,
-          "text-rotation-alignment": "viewport",
-          "text-size": 16
-        }}
+        layout={getRouteLayerLayout("nameUpper")}
         paint={{
           "text-color": ["get", "color"],
           "text-halo-color": ["get", "color"],
@@ -189,19 +154,10 @@ const TransitiveCanvasOverlay = ({
       />
       <Layer
         // This layer renders transit route names (foreground).
-        filter={["==", "type", "route"]}
+        filter={routeFilter}
         id="routes-labels"
-        layout={{
-          "symbol-placement": "line-center",
-          "text-allow-overlap": true,
-          "text-field": ["get", "name"],
-          "text-ignore-placement": true,
-          "text-rotation-alignment": "viewport",
-          "text-size": 16
-        }}
-        paint={{
-          "text-color": "#eee"
-        }}
+        layout={getRouteLayerLayout("name")}
+        paint={{ "text-color": "#eee" }}
         type="symbol"
       />
       <Layer filter={["==", "type", "place"]} id="places" type="circle" />
