@@ -33,13 +33,8 @@ const TransitiveCanvasOverlay = ({
   transitiveData
 }: Props): JSX.Element => {
   const { current: map } = useMap();
+  // console.log(transitiveData);
 
-  transitiveData?.patterns.flatMap((pattern: TransitivePattern) =>
-    pattern.stops
-      .map(stop => stop.geometry)
-      .filter(geometry => !!geometry)
-      .map(geometry => polyline.toGeoJSON(geometry))
-  );
   const geojson: GeoJSON.FeatureCollection<
     GeoJSON.Geometry,
     Record<any, any>
@@ -82,25 +77,32 @@ const TransitiveCanvasOverlay = ({
             })
       ),
       ...(transitiveData?.patterns || []).flatMap(
-        (pattern: TransitivePattern) =>
-          pattern.stops
+        (pattern: TransitivePattern) => {
+          const route = transitiveData.routes.find(
+            r => r.route_id === pattern.route_id
+          );
+          // Need to concatenate the polylines (arrays of coordinates) from all geometries,
+          // so that labels are rendered spread out evenly and to avoid to close repeats of the label.
+          const concatenatedLines = pattern.stops
             .map(stop => stop.geometry)
             .filter(geometry => !!geometry)
-            .map(geometry => {
-              const route = Object.entries(transitiveData.routes).find(
-                r => r[1].route_id === pattern.route_id
-              )[1];
-
-              return {
-                type: "Feature",
-                properties: {
-                  color: `#${route.route_color || "000080"}`,
-                  type: "route",
-                  name: route.route_short_name || route.route_long_name || ""
-                },
-                geometry: polyline.toGeoJSON(geometry)
-              };
-            })
+            .reduce((result, geom, index) => {
+              const coords = polyline.decode(geom);
+              // Remove the first element (except for the first array) because it is a duplicate
+              // of the last element of the previous array.
+              if (index !== 0) coords.shift();
+              return result.concat(coords);
+            }, []);
+          return {
+            geometry: polyline.toGeoJSON(polyline.encode(concatenatedLines)),
+            properties: {
+              color: `#${route.route_color || "000080"}`,
+              name: route.route_short_name || route.route_long_name || "",
+              type: "route"
+            },
+            type: "Feature"
+          };
+        }
       )
     ]
   };
@@ -160,12 +162,15 @@ const TransitiveCanvasOverlay = ({
         type="line"
       />
       <Layer
+        // This layer renders transit route names.
         filter={["==", "type", "route"]}
         id="routes-labels"
         layout={{
-          "symbol-placement": "line",
+          "symbol-placement": "line-center",
+          "text-allow-overlap": true,
           "text-field": ["get", "name"],
-          "text-keep-upright": true,
+          "text-ignore-placement": true,
+          "text-rotation-alignment": "viewport",
           "text-size": 16
         }}
         paint={{
