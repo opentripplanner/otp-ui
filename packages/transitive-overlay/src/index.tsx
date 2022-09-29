@@ -33,8 +33,6 @@ const TransitiveCanvasOverlay = ({
   transitiveData
 }: Props): JSX.Element => {
   const { current: map } = useMap();
-  // console.log(transitiveData);
-
   const geojson: GeoJSON.FeatureCollection<
     GeoJSON.Geometry,
     Record<any, any>
@@ -93,11 +91,21 @@ const TransitiveCanvasOverlay = ({
               if (index !== 0) coords.shift();
               return result.concat(coords);
             }, []);
+          const routeName =
+            route.route_short_name || route.route_long_name || "";
+          // HACK: Create an uppercase version of the route name to paint the background, where
+          // spaces are replaced with '!' (~same width as space) to creeate a background with a uniform height.
+          // Also, ensure there is a minimum background width (~3 characters).
+          const routeNameUpper = (routeName.length < 3 ? "000" : routeName)
+            .toUpperCase()
+            .replace(/\s/g, "!");
+
           return {
             geometry: polyline.toGeoJSON(polyline.encode(concatenatedLines)),
             properties: {
               color: `#${route.route_color || "000080"}`,
-              name: route.route_short_name || route.route_long_name || "",
+              name: routeName,
+              nameUpper: routeNameUpper,
               type: "route"
             },
             type: "Feature"
@@ -162,7 +170,27 @@ const TransitiveCanvasOverlay = ({
         type="line"
       />
       <Layer
-        // This layer renders transit route names.
+        // This layer renders the background of transit route names with a halo
+        // using that route name in uppercase.
+        filter={["==", "type", "route"]}
+        id="routes-labels-background"
+        layout={{
+          "symbol-placement": "line-center",
+          "text-allow-overlap": true,
+          "text-field": ["get", "nameUpper"],
+          "text-ignore-placement": true,
+          "text-rotation-alignment": "viewport",
+          "text-size": 16
+        }}
+        paint={{
+          "text-color": ["get", "color"],
+          "text-halo-color": ["get", "color"],
+          "text-halo-width": 4 // Max value is 1/4 of text size.
+        }}
+        type="symbol"
+      />
+      <Layer
+        // This layer renders transit route names (foreground).
         filter={["==", "type", "route"]}
         id="routes-labels"
         layout={{
@@ -174,10 +202,7 @@ const TransitiveCanvasOverlay = ({
           "text-size": 16
         }}
         paint={{
-          "text-color": "#eee",
-          "text-halo-blur": 15,
-          "text-halo-color": ["get", "color"],
-          "text-halo-width": 15
+          "text-color": "#eee"
         }}
         type="symbol"
       />
