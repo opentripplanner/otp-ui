@@ -79,8 +79,7 @@ const TransitiveCanvasOverlay = ({
           const route = transitiveData.routes.find(
             r => r.route_id === pattern.route_id
           );
-          // Need to concatenate the polylines (arrays of coordinates) from all geometries,
-          // so that labels are rendered spread out evenly and to avoid to close repeats of the label.
+          // Concatenate geometries (arrays of coordinates) to help maplibre spread out labels (not perfect).
           const concatenatedLines = pattern.stops
             .map(stop => stop.geometry)
             .filter(geometry => !!geometry)
@@ -94,8 +93,8 @@ const TransitiveCanvasOverlay = ({
           const routeName =
             route.route_short_name || route.route_long_name || "";
           // HACK: Create an uppercase version of the route name to paint the background, where
-          // spaces are replaced with '!' (~same width as space) to creeate a background with a uniform height.
-          // Also, ensure there is a minimum background width (~3 characters).
+          // spaces are replaced with '!' (~same width as space) to create a background with a uniform height.
+          // Also, ensure there is a minimum background width (3 characters).
           const routeNameUpper = (routeName.length < 3 ? "000" : routeName)
             .toUpperCase()
             .replace(/\s/g, "!");
@@ -170,8 +169,7 @@ const TransitiveCanvasOverlay = ({
         type="line"
       />
       <Layer
-        // This layer renders the background of transit route names with a halo
-        // using that route name in uppercase.
+        // Render a solid background of fixed height using the uppercase route name.
         filter={["==", "type", "route"]}
         id="routes-labels-background"
         layout={{
@@ -185,7 +183,7 @@ const TransitiveCanvasOverlay = ({
         paint={{
           "text-color": ["get", "color"],
           "text-halo-color": ["get", "color"],
-          "text-halo-width": 4 // Max value is 1/4 of text size.
+          "text-halo-width": 4 // Max value is 1/4 of text size per maplibre docs.
         }}
         type="symbol"
       />
