@@ -21,7 +21,10 @@ export const getSettingsForCombination = (settings: ModeSetting[]) => (
     ...combination,
     modes: combination.modes.map(mode => ({
       ...mode,
-      settings: settings.filter(def => def.applicableMode === mode.mode)
+      settings: [
+        ...settings.filter(def => def.applicableMode === mode.mode),
+        ...(mode.settings || [])
+      ]
     }))
   };
 };
@@ -49,7 +52,12 @@ export function useModeState(
   combinationsFromConfig: Combination[],
   initialState: InitialStateType,
   { queryParamState }: ModeStateConfig
-) {
+): {
+  setModeSettingValue: (setting: QueryParamChangeEvent) => void;
+  combinations: Combination[];
+  enabledCombinationKeys: string[];
+  toggleCombination: (key: string) => void;
+} {
   const [enabledCombinationKeys, setEnabledCombinationKeys] = useStateStorage<
     string[]
   >(
@@ -104,8 +112,6 @@ export function useModeState(
   const combosWithSettings = combinations.map(
     getSettingsForCombination(definitionsWithValues)
   );
-
-  console.log(modeSettingsValues);
 
   return {
     setModeSettingValue,

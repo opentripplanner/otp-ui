@@ -270,7 +270,19 @@ export const metroModeSelector = makeStory(MetroModeSelectorWithQP, {
       label: "Transit",
       Icon: Bus,
       key: "TRANSIT",
-      modes: [{ mode: "TRANSIT" }]
+      modes: [
+        {
+          mode: "TRANSIT",
+          settings: [
+            {
+              type: "CHECKBOX",
+              key: "hyperloop",
+              default: "true",
+              label: "Hyperloop Enabled"
+            }
+          ]
+        }
+      ]
     },
     {
       label: "Walking",
