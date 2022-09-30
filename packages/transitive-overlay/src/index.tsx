@@ -95,8 +95,9 @@ const TransitiveCanvasOverlay = ({
                 type: "Feature",
                 properties: {
                   color: `#${route.route_color || "000080"}`,
-                  type: "route",
-                  name: route.route_short_name || route.route_long_name || ""
+                  name: route.route_short_name || route.route_long_name || "",
+                  routeType: route.route_type,
+                  type: "route"
                 },
                 geometry: polyline.toGeoJSON(geometry)
               };
@@ -177,7 +178,8 @@ const TransitiveCanvasOverlay = ({
         }}
         paint={{
           "line-color": ["get", "color"],
-          "line-width": 8,
+          // Apply a thinner line (width = 6) for bus routes (route_type = 3), set width to 10 otherwise.
+          "line-width": ["match", ["get", "routeType"], 3, 6, 10],
           "line-opacity": 1
         }}
         type="line"
