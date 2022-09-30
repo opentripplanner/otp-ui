@@ -2,7 +2,8 @@
   "branches": [
     "master",
     "alpha",
-    "raster-tiles"
+    "raster-tiles",
+    "2.x"
   ],
   "fail": [],
   "plugins": [
