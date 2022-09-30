@@ -3,7 +3,7 @@
     "master",
     "alpha",
     "raster-tiles",
-    "2.x"
+    "3.x"
   ],
   "fail": [],
   "plugins": [
