@@ -157,7 +157,9 @@ const TransitiveCanvasOverlay = ({
         filter={routeFilter}
         id="routes-labels"
         layout={getRouteLayerLayout("name")}
-        paint={{ "text-color": "#eee" }}
+        paint={{
+          "text-color": ["get", "textColor"]
+        }}
         type="symbol"
       />
       <Layer filter={["==", "type", "place"]} id="places" type="circle" />
