@@ -47,6 +47,15 @@ function TransitVehicleOverlay(props) {
   } = props;
   utils.linterIgnoreTheseProps(name, visible, center);
 
+  // Check if possibleColor is a string in format `#000` or `#000000`
+  const isValidColor = possibleColor => {
+    if (typeof possibleColor !== "string") {
+      return false;
+    }
+
+    return /^#[A-Fa-f0-9]{3}(?:[A-Fa-f0-9]{3})?$/.test(possibleColor);
+  };
+
   /**
    * This helper method will be passed to the ZoomBasedMarkers symbolTranform prop.
    * It wraps symbols originally defined in the symbols prop
@@ -57,8 +66,12 @@ function TransitVehicleOverlay(props) {
     const VehicleGeometryWrapper = ({ entity: vehicle, zoom: renderZoom }) => {
       return (
         <VehicleGeometry
-          color={color}
-          highlightColor={highlightColor}
+          color={isValidColor(vehicle.routeColor) ? vehicle.routeColor : color}
+          highlightColor={
+            isValidColor(vehicle.highlightColor)
+              ? vehicle.highlightColor
+              : highlightColor
+          }
           isTracked={
             selectedVehicle && selectedVehicle.tripId === vehicle.tripId
           }
