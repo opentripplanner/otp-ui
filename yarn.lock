@@ -2832,6 +2832,15 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
+"@opentripplanner/base-map@^3.0.0":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/base-map/-/base-map-3.0.1.tgz#49664b0d3892d30adb118ed2bf0b098d99ce951b"
+  integrity sha512-1qnw3UyQb5luLXr6GTlREODMvFrzjSJLZFu4NMKpCLpCksoTAZaVp544j24NXHsl4I1HbwyKHbpQ1yheOLEyAg==
+  dependencies:
+    mapbox-gl "npm:empty-npm-package@1.0.0"
+    maplibre-gl "^2.1.9"
+    react-map-gl "^7.0.15"
+
 "@opentripplanner/core-utils@^7.0.0", "@opentripplanner/core-utils@^7.0.1":
   version "7.0.2"
   resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-7.0.2.tgz#79576d0163e2d4223ccbaeb1b4b409e60b95c7cd"
@@ -2855,6 +2864,36 @@
   dependencies:
     "@opentripplanner/core-utils" "^7.0.0"
     prop-types "^15.7.2"
+
+"@opentripplanner/icons@^1.2.4":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/icons/-/icons-1.2.5.tgz#f7dc379f4f6ce4c414eca37f1beb309ec3987b54"
+  integrity sha512-EazOvFTzVort1FC3cZi9bWOV5oe+KWF1ZLEicZTRegPcB5Eli79xyxIt33Sn4HT5VyfxaTeRmEF1TIlf/jr8xw==
+  dependencies:
+    "@opentripplanner/core-utils" "^7.0.1"
+    prop-types "^15.7.2"
+
+"@opentripplanner/itinerary-body@^4.0.4":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/itinerary-body/-/itinerary-body-4.1.0.tgz#e40c8d4c614020ac949bc68fb39baef592590f9f"
+  integrity sha512-cjlLQm46ys/Bsl8CJMdJg1h4zsvMbpi+XwAuvXCwW4byX3dwCUlh0STU3lsWNmMVbHg+Thnq5e0uPuZ/Z+FcCQ==
+  dependencies:
+    "@opentripplanner/core-utils" "^7.0.1"
+    "@opentripplanner/humanize-distance" "^1.2.0"
+    "@opentripplanner/icons" "^1.2.4"
+    "@opentripplanner/location-icon" "^1.4.0"
+    "@styled-icons/fa-solid" "^10.34.0"
+    "@styled-icons/foundation" "^10.34.0"
+    date-fns "^2.28.0"
+    date-fns-tz "^1.2.2"
+    flat "^5.0.2"
+    react-animate-height "^3.0.4"
+    react-resize-detector "^4.2.1"
+
+"@opentripplanner/types@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-4.0.0.tgz#3bc0c667a99682591029e128737f8f3800fa5c33"
+  integrity sha512-le/CEfYWaSEgXAP07IOMn3dBaR+5Dn+/ijaN0xeLCky+wqR2EeA36h1/YORMfTYJU805a42Gxd66+nuQO1h4lQ==
 
 "@pmmmwh/react-refresh-webpack-plugin@^0.5.1":
   version "0.5.4"
