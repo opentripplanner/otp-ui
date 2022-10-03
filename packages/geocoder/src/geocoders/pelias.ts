@@ -23,6 +23,7 @@ export default class PeliasGeocoder extends Geocoder {
       baseUrl,
       boundary,
       focusPoint,
+      layers,
       options,
       sources
     } = this.geocoderConfig;
@@ -30,6 +31,7 @@ export default class PeliasGeocoder extends Geocoder {
       apiKey,
       boundary,
       focusPoint,
+      layers,
       options,
       // explicitly send over null for sources if provided sources is not truthy
       // in order to avoid default isomorphic-mapzen-search sources form being
