@@ -182,14 +182,27 @@ const TransitiveCanvasOverlay = ({
         id="places-labels"
         layout={{
           "symbol-placement": "point",
+          "text-allow-overlap": false,
           "text-field": ["get", "name"],
-          "text-size": 12,
-          "text-anchor": "top",
           "text-padding": 5,
-          "text-optional": true,
-          "text-allow-overlap": false
+          "text-radial-offset": 0.5,
+          "text-size": 15,
+          "text-variable-anchor": [
+            "left",
+            "right",
+            "top",
+            "bottom",
+            "top-left",
+            "top-right",
+            "bottom-left",
+            "bottom-right"
+          ]
         }}
-        paint={{ "text-translate": [0, 5] }}
+        paint={{
+          "text-halo-blur": 1,
+          "text-halo-color": "#ffffff",
+          "text-halo-width": 1.5
+        }}
         type="symbol"
       />
     </Source>
