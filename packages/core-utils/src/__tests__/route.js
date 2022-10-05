@@ -169,6 +169,8 @@ describe("util > route", () => {
 
       expect(getMostReadableTextColor("#E32400", "#FFFFFF")).toBe("#FFFFFF");
       expect(getMostReadableTextColor("#d18881", "#000000")).toBe("#000000");
+
+      expect(getMostReadableTextColor("#004080", "#FFFFFF")).toBe("#FFFFFF");
     });
 
     it("should modify inappropriate color pairings", () => {
@@ -187,7 +189,7 @@ describe("util > route", () => {
 
       expect(getMostReadableTextColor("#00FF00", "#ffffff")).toBe("#000000");
       expect(getMostReadableTextColor("#321b26", "#000000")).toBe("#ffffff");
-      expect(getMostReadableTextColor("#321b26", "brown")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#321b26", "9e4141")).toBe("#ffffff");
     });
   });
 });
