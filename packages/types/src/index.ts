@@ -312,6 +312,7 @@ export type Leg = {
   routeId?: string;
   routeLongName?: string;
   routeShortName?: string;
+  routeTextColor?: string;
   routeType?: number;
   serviceDate?: string;
   startTime: number;
@@ -523,11 +524,12 @@ export type TransitivePattern = {
 };
 export type TransitiveRoute = {
   agency_id: string;
-  route_id: string;
-  route_short_name: string;
-  route_long_name: string;
-  route_type: number;
   route_color?: string;
+  route_id: string;
+  route_long_name: string;
+  route_short_name: string;
+  route_text_color?: string;
+  route_type: number;
 };
 export type TransitiveStop = {
   stop_id: string;
