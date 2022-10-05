@@ -1,4 +1,5 @@
 import { Leg, Route, TransitOperator } from "@opentripplanner/types";
+import chroma from "chroma-js";
 /**
  * Returns the transit operator (if an exact match is found) from the transit
  * operators config value. It is critical to use both the feedId and agencyId in
@@ -424,4 +425,33 @@ export function makeRouteComparator(
     makeStringValueComparator(obj => obj.shortName),
     makeStringValueComparator(obj => obj.longName)
   );
+}
+
+/**
+ * Tests if a pair of colors is readable. If it is, that readble color is returned.
+ * If it is not, a more appropriate alternative is returned.
+ *
+ * Uses algorithm based on combined luminance. Values have been derived from
+ * looking at real agency color pairings. These pairings are difficult to
+ * generate for, as some colors see both white and black used by different agencies.
+ *
+ * This method therefore can accept black and white for the same background color.
+ *
+ * When generating colors, white is preferred.
+ * @param backgroundColor     A hex string, usually the "routeColor"
+ * @param proposedTextColor   A hex string, usually the "routeTextColor"
+ */
+export function getMostReadableTextColor(
+  backgroundColor: string,
+  proposedTextColor: string
+): string {
+  // Check if proposed color is readable
+  const fgLuminance = chroma(proposedTextColor).luminance();
+  const bgLuminance = chroma(backgroundColor).luminance();
+  if (bgLuminance + fgLuminance < 1.41 && bgLuminance + fgLuminance > 0.25) {
+    return proposedTextColor;
+  }
+
+  // Return black or white based on luminance of background color
+  return chroma(backgroundColor).luminance() < 0.4 ? "#ffffff" : "#000000";
 }
