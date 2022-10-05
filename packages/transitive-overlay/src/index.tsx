@@ -54,7 +54,11 @@ const TransitiveCanvasOverlay = ({
       ...(transitiveData?.places || []).flatMap((place: TransitivePlace) => {
         return {
           type: "Feature",
-          properties: { name: place.place_name, type: place.type || "place" },
+          properties: {
+            color: modeColorMap[place.type] || "#008",
+            name: place.place_name,
+            type: place.type || "place"
+          },
           geometry: {
             type: "Point",
             coordinates: [place.place_lon, place.place_lat]
@@ -67,9 +71,11 @@ const TransitiveCanvasOverlay = ({
             .filter(segment => segment.streetEdges?.length > 0)
             .map(segment => ({
               ...segment,
-              geometries: segment.streetEdges.map(
-                edge => transitiveData.streetEdges[edge]
-              )
+              geometries: segment.streetEdges.map(edge => {
+                return transitiveData.streetEdges.find(
+                  entry => entry.edge_id === edge
+                );
+              })
             }))
             .flatMap(segment => {
               return segment.geometries.map(geometry => {
@@ -222,6 +228,57 @@ const TransitiveCanvasOverlay = ({
       <Layer
         filter={["==", "type", "stop"]}
         id="stops-labels"
+        layout={{
+          "symbol-placement": "point",
+          "text-allow-overlap": false,
+          "text-field": ["get", "name"],
+          "text-padding": 5,
+          "text-radial-offset": 0.5,
+          "text-size": 15,
+          "text-variable-anchor": [
+            "left",
+            "right",
+            "top",
+            "bottom",
+            "top-left",
+            "top-right",
+            "bottom-left",
+            "bottom-right"
+          ]
+        }}
+        paint={{
+          "text-halo-blur": 1,
+          "text-halo-color": "#ffffff",
+          "text-halo-width": 2
+        }}
+        type="symbol"
+      />
+      <Layer
+        filter={[
+          "match",
+          ["get", "type"],
+          ["BICYCLE", "SCOOTER", "MICROMOBILITY", "MICROMOBILITY_RENT"],
+          true,
+          false
+        ]}
+        id="rental-circles"
+        paint={{
+          "circle-color": ["get", "color"],
+          "circle-radius": 5,
+          "circle-stroke-color": "#fff",
+          "circle-stroke-width": 2
+        }}
+        type="circle"
+      />
+      <Layer
+        filter={[
+          "match",
+          ["get", "type"],
+          ["BICYCLE", "SCOOTER", "MICROMOBILITY", "MICROMOBILITY_RENT"],
+          true,
+          false
+        ]}
+        id="rental-labels"
         layout={{
           "symbol-placement": "point",
           "text-allow-overlap": false,
