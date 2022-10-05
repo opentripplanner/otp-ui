@@ -1,4 +1,5 @@
 import {
+  getMostReadableTextColor,
   getTransitOperatorFromLeg,
   getTransitOperatorFromOtpRoute,
   makeRouteComparator
@@ -133,6 +134,60 @@ describe("util > route", () => {
 
     it("should sort based off of route type", () => {
       expect(sortRoutes(route12, route13)).toMatchSnapshot();
+    });
+  });
+
+  describe("route text color generation", () => {
+    it("should not modify appropriate color pairings", () => {
+      expect(getMostReadableTextColor("#EE352E", "#ffffff")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#00933C", "#ffffff")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#b933ad", "#ffffff")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#808183", "#ffffff")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#0039a6", "#ffffff")).toBe("#ffffff");
+
+      // Both work
+      expect(getMostReadableTextColor("#ff6319", "#ffffff")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#ff6319", "#000000")).toBe("#000000");
+      expect(getMostReadableTextColor("#6cbe45", "#ffffff")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#6cbe45", "#000000")).toBe("#000000");
+      expect(getMostReadableTextColor("#a7a9ac", "#ffffff")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#a7a9ac", "#000000")).toBe("#000000");
+      expect(getMostReadableTextColor("#FF00FF", "#ffffff")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#FF00FF", "#000000")).toBe("#000000");
+
+      expect(getMostReadableTextColor("#996633", "#ffffff")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#fccc0a", "#000000")).toBe("#000000");
+
+      expect(getMostReadableTextColor("#0075B2", "#ffffff")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#D4A723", "#000000")).toBe("#000000");
+      expect(getMostReadableTextColor("#009D4B", "#ffffff")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#CE242B", "#ffffff")).toBe("#ffffff");
+
+      expect(getMostReadableTextColor("#00FF00", "#000000")).toBe("#000000");
+      expect(getMostReadableTextColor("#009999", "#ffffff")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#009999", "#000000")).toBe("#000000");
+
+      expect(getMostReadableTextColor("#E32400", "#FFFFFF")).toBe("#FFFFFF");
+      expect(getMostReadableTextColor("#d18881", "#000000")).toBe("#000000");
+    });
+
+    it("should modify inappropriate color pairings", () => {
+      expect(getMostReadableTextColor("#EE352E", "#000000")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#00933C", "#000000")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#b933ad", "#000000")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#808183", "#000000")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#0039a6", "#000000")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#996633", "#000000")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#fccc0a", "#ffffff")).toBe("#000000");
+
+      expect(getMostReadableTextColor("#0075B2", "#000000")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#D4A723", "#ffffff")).toBe("#000000");
+      expect(getMostReadableTextColor("#009D4B", "#000000")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#CE242B", "#000000")).toBe("#ffffff");
+
+      expect(getMostReadableTextColor("#00FF00", "#ffffff")).toBe("#000000");
+      expect(getMostReadableTextColor("#321b26", "#000000")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#321b26", "brown")).toBe("#ffffff");
     });
   });
 });
