@@ -1,8 +1,11 @@
 import { useState } from "react";
-import { useQueryParam, ArrayParam, ObjectParam } from "use-query-params";
+import {
+  useQueryParam,
+  DelimitedArrayParam,
+  ObjectParam
+} from "use-query-params";
 import { QueryParamConfig } from "serialize-query-params";
 import { Combination, ModeSetting, ModeSettingValues } from "./types";
-import modeSettingsDefinitions from "./modeSettings.yml";
 import { QueryParamChangeEvent } from "../types";
 
 export type InitialStateType = {
@@ -14,17 +17,22 @@ export type ModeStateConfig = {
   queryParamState?: boolean;
 };
 
-export const getSettingsForCombination = (settings: ModeSetting[]) => (
-  combination: Combination
-): Combination => {
+export const getSettingsForCombination = (
+  settings: ModeSetting[],
+  values: ModeSettingValues
+) => (combination: Combination): Combination => {
+  const definitionsWithValues = settings.map(def => ({
+    ...def,
+    value: values[def.key] as boolean & number & string
+  }));
+
   return {
     ...combination,
     modes: combination.modes.map(mode => ({
       ...mode,
-      settings: [
-        ...settings.filter(def => def.applicableMode === mode.mode),
-        ...(mode.settings || [])
-      ]
+      settings: definitionsWithValues.filter(
+        def => def.applicableMode === mode.mode
+      )
     }))
   };
 };
@@ -51,6 +59,7 @@ export function useStateStorage<Type>(
 export function useModeState(
   combinationsFromConfig: Combination[],
   initialState: InitialStateType,
+  modeSettingDefinitions: ModeSetting[],
   { queryParamState }: ModeStateConfig
 ): {
   setModeSettingValue: (setting: QueryParamChangeEvent) => void;
@@ -62,7 +71,7 @@ export function useModeState(
     string[]
   >(
     "combinations",
-    ArrayParam,
+    DelimitedArrayParam,
     queryParamState,
     initialState.enabledCombinations
   );
@@ -83,7 +92,7 @@ export function useModeState(
   };
 
   const defaultModeSettingsValues = {
-    ...modeSettingsDefinitions.reduce((prev, cur) => {
+    ...modeSettingDefinitions.reduce((prev, cur) => {
       prev[cur.key] = cur.default;
       return prev;
     }, {}),
@@ -102,15 +111,8 @@ export function useModeState(
     });
   };
 
-  const definitionsWithValues: ModeSetting[] = modeSettingsDefinitions.map(
-    def => ({
-      ...def,
-      value: modeSettingsValues[def.key]
-    })
-  );
-
   const combosWithSettings = combinations.map(
-    getSettingsForCombination(definitionsWithValues)
+    getSettingsForCombination(modeSettingDefinitions, modeSettingsValues)
   );
 
   return {

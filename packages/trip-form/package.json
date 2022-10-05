@@ -21,7 +21,8 @@
     "date-fns": "^2.28.0",
     "flat": "^5.0.2",
     "react-indiana-drag-scroll": "^2.0.1",
-    "react-inlinesvg": "^2.3.0"
+    "react-inlinesvg": "^2.3.0",
+    "use-query-params": "^2.1.1"
   },
   "devDependencies": {
     "@types/flat": "^5.0.2"

@@ -14,6 +14,7 @@ export interface DropdownOptions {
   }>;
   type: ModeSettingTypes.DROPDOWN;
   value?: string;
+  default?: string;
 }
 
 export interface SliderOptions {
@@ -25,13 +26,15 @@ export interface SliderOptions {
   labelHigh: string;
   type: ModeSettingTypes.SLIDER;
   value?: number;
+  default?: number;
 }
 
 export interface CheckboxOptions {
   label: string;
   icon: JSX.Element;
   type: ModeSettingTypes.CHECKBOX;
-  value?: string;
+  value?: boolean;
+  default?: boolean;
 }
 
 export interface ModeSettingBase {

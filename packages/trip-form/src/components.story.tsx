@@ -15,6 +15,8 @@ import trimet from "./__mocks__/trimet-styled";
 import { SettingsSelectorPanel } from "./styled";
 import { Combination } from "./MetroModeSelector/types";
 
+import modeSettingDefinitions from "./modeSettings.yml";
+
 // Events
 const onChange = action("onChange");
 const onClick = action("onClick");
@@ -240,7 +242,7 @@ const MetroModeSelector = ({
     combinations: combinationsFromState,
     toggleCombination,
     setModeSettingValue
-  } = Core.useModeState(combinations, initialState, {
+  } = Core.useModeState(combinations, initialState, modeSettingDefinitions, {
     queryParamState: false
   });
   return (
@@ -272,15 +274,7 @@ export const metroModeSelector = makeStory(MetroModeSelectorWithQP, {
       key: "TRANSIT",
       modes: [
         {
-          mode: "TRANSIT",
-          settings: [
-            {
-              type: "CHECKBOX",
-              key: "hyperloop",
-              default: "true",
-              label: "Hyperloop Enabled"
-            }
-          ]
+          mode: "TRANSIT"
         }
       ]
     },
