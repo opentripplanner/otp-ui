@@ -54,7 +54,7 @@ const TransitiveCanvasOverlay = ({
       ...(transitiveData?.places || []).flatMap((place: TransitivePlace) => {
         return {
           type: "Feature",
-          properties: { name: place.place_name, type: "place" },
+          properties: { name: place.place_name, type: place.type || "place" },
           geometry: {
             type: "Point",
             coordinates: [place.place_lon, place.place_lat]
@@ -130,8 +130,37 @@ const TransitiveCanvasOverlay = ({
     zoomToGeoJSON(polyline.toGeoJSON(activeLeg.legGeometry.points));
   }, [activeLeg]);
 
+  // Text/symbol layers placed first will be rendered last.
   return (
     <Source data={geojson} id="itinerary" type="geojson">
+      <Layer
+        filter={["==", "type", "from-to"]}
+        id="from-to-labels"
+        layout={{
+          "symbol-placement": "point",
+          "text-allow-overlap": false,
+          "text-field": ["get", "name"],
+          "text-padding": 5,
+          "text-radial-offset": 0.5,
+          "text-size": 15,
+          "text-variable-anchor": [
+            "left",
+            "right",
+            "top",
+            "bottom",
+            "top-left",
+            "top-right",
+            "bottom-left",
+            "bottom-right"
+          ]
+        }}
+        paint={{
+          "text-halo-blur": 1,
+          "text-halo-color": "#ffffff",
+          "text-halo-width": 2
+        }}
+        type="symbol"
+      />
       <Layer
         filter={["==", "type", "street-edge"]}
         id="street-edges"

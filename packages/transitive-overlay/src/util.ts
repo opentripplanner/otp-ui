@@ -48,6 +48,21 @@ function addStop(
   }
 }
 
+function addFromToPlace(place: Place, id: string, places: TransitivePlace[]) {
+  places.push({
+    placeId: id,
+    place_lat: place.lat,
+    place_lon: place.lon,
+    place_name: place.name,
+    type: "from-to"
+  });
+}
+
+function addFromToPlaces(from: Place, to: Place, places: TransitivePlace[]) {
+  addFromToPlace(from, "from", places);
+  addFromToPlace(to, "to", places);
+}
+
 /**
  * Converts an OTP itinerary object to a transtive.js itinerary object.
  * @param {*} itin Required OTP itinerary (see @opentripplanner/core-utils/types#itineraryType) to convert.
@@ -90,19 +105,12 @@ export function itineraryToTransitive(
   const newPlaces = [];
   const newStops = [];
 
-  // add 'from' and 'to' places to the tdata places array
-  /*
-  tdata.places.push({
-    place_id: "from",
-    place_lat: itin.legs[0].from.lat,
-    place_lon: itin.legs[0].from.lon
-  });
-  tdata.places.push({
-    place_id: "to",
-    place_lat: itin.legs[itin.legs.length - 1].to.lat,
-    place_lon: itin.legs[itin.legs.length - 1].to.lon
-  });
-*/
+  addFromToPlaces(
+    itin.legs[0].from,
+    itin.legs[itin.legs.length - 1].to,
+    newPlaces
+  );
+
   itin.legs.forEach((leg, idx) => {
     // OTP2 puts "BIKESHARE" as the vertexType for scooter share legs.
     // Here we fix that by looking ahead at the next leg to find out if it is a scooter.
