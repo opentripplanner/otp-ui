@@ -443,7 +443,7 @@ export function makeRouteComparator(
  */
 export function getMostReadableTextColor(
   backgroundColor: string,
-  proposedTextColor: string
+  proposedTextColor = "#ffffff"
 ): string {
   // Check if proposed color is readable
   const fgLuminance = chroma(proposedTextColor).luminance();
