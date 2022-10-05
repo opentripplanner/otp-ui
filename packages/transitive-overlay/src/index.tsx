@@ -34,12 +34,6 @@ const TransitiveCanvasOverlay = ({
 }: Props): JSX.Element => {
   const { current: map } = useMap();
 
-  transitiveData?.patterns.flatMap((pattern: TransitivePattern) =>
-    pattern.stops
-      .map(stop => stop.geometry)
-      .filter(geometry => !!geometry)
-      .map(geometry => polyline.toGeoJSON(geometry))
-  );
   const geojson: GeoJSON.FeatureCollection<
     GeoJSON.Geometry,
     Record<any, any>
@@ -47,6 +41,16 @@ const TransitiveCanvasOverlay = ({
     type: "FeatureCollection",
     // @ts-expect-error TODO: fix the type above for geojson
     features: [
+      ...transitiveData?.stops.flatMap((stop: TransitiveStop) => {
+        return {
+          type: "Feature",
+          properties: { name: stop.stop_name, type: "stop" },
+          geometry: {
+            type: "Point",
+            coordinates: [stop.stop_lon, stop.stop_lat]
+          }
+        };
+      }),
       ...(transitiveData?.places || []).flatMap((place: TransitivePlace) => {
         return {
           type: "Feature",
@@ -173,6 +177,44 @@ const TransitiveCanvasOverlay = ({
           "text-halo-blur": 15,
           "text-halo-color": ["get", "color"],
           "text-halo-width": 15
+        }}
+        type="symbol"
+      />
+      <Layer
+        filter={["==", "type", "stop"]}
+        id="stops-circles"
+        paint={{
+          "circle-color": "#fff",
+          "circle-radius": 5,
+          "circle-stroke-width": 2
+        }}
+        type="circle"
+      />
+      <Layer
+        filter={["==", "type", "stop"]}
+        id="stops-labels"
+        layout={{
+          "symbol-placement": "point",
+          "text-allow-overlap": false,
+          "text-field": ["get", "name"],
+          "text-padding": 5,
+          "text-radial-offset": 0.5,
+          "text-size": 15,
+          "text-variable-anchor": [
+            "left",
+            "right",
+            "top",
+            "bottom",
+            "top-left",
+            "top-right",
+            "bottom-left",
+            "bottom-right"
+          ]
+        }}
+        paint={{
+          "text-halo-blur": 1,
+          "text-halo-color": "#ffffff",
+          "text-halo-width": 2
         }}
         type="symbol"
       />

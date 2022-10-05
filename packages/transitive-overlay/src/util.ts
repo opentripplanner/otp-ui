@@ -2,11 +2,51 @@ import {
   Company,
   Itinerary,
   Leg,
-  TransitiveData
+  Place,
+  TransitiveData,
+  TransitiveStop
 } from "@opentripplanner/types";
 import coreUtils from "@opentripplanner/core-utils";
 import { getPlaceName } from "@opentripplanner/itinerary-body";
 import { IntlShape } from "react-intl";
+
+const { isAccessMode, isFlex, isTransit, isWalk } = coreUtils.itinerary;
+
+/**
+ * Helper function to convert a stop from an itinerary leg
+ * to a TransitiveStop for rendering on the map.
+ */
+function stopToTransitive(
+  stop: Place,
+  knownStopNames: Record<string, string>
+): TransitiveStop {
+  // Collapse case and spaces for comparison.
+  // ("Midtown Station" and "Midtown   Station" are considered the same name.)
+  const normalizedStopName = stop.name.toUpperCase().replace(/\s+/g, "");
+  const stopNameExists = knownStopNames[normalizedStopName];
+  if (!stopNameExists) knownStopNames[normalizedStopName] = 1;
+  return {
+    stop_id: stop.stopId,
+    stop_name: stopNameExists ? null : stop.name,
+    stop_lat: stop.lat,
+    stop_lon: stop.lon
+  };
+}
+
+function addStop(
+  stop: Place,
+  stops: TransitiveStop[],
+  knownStopIds: Record<string, string>,
+  knownStopNames: Record<string, string>
+) {
+  const { stopId } = stop;
+  const stopIdIsBlank =
+    stopId === null || stopId === undefined || stopId === "";
+  if (stopIdIsBlank || !knownStopIds[stopId]) {
+    stops.push(stopToTransitive(stop, knownStopNames));
+    if (!stopIdIsBlank) knownStopIds[stopId] = 1;
+  }
+}
 
 /**
  * Converts an OTP itinerary object to a transtive.js itinerary object.
@@ -25,7 +65,6 @@ export function itineraryToTransitive(
     intl?: IntlShape;
   }
 ): TransitiveData {
-  const { isAccessMode, isFlex, isTransit } = coreUtils.itinerary;
   const { companies, getRouteLabel, disableFlexArc, intl } = options;
   const tdata = {
     journeys: [],
@@ -36,18 +75,23 @@ export function itineraryToTransitive(
     stops: []
   };
   const routes = {};
-  const stops = {};
+  const knownStopIds = {};
+  const knownStopNames = {};
   let streetEdgeId = 0;
   let patternId = 0;
 
   const journey = {
     journey_id: "itin",
     // This string is not shown in the UI
-    journey_name: "Iterarary-derived Journey",
+    journey_name: "Itinerary-derived Journey",
     segments: []
   };
 
+  const newPlaces = [];
+  const newStops = [];
+
   // add 'from' and 'to' places to the tdata places array
+  /*
   tdata.places.push({
     place_id: "from",
     place_lat: itin.legs[0].from.lat,
@@ -58,7 +102,7 @@ export function itineraryToTransitive(
     place_lat: itin.legs[itin.legs.length - 1].to.lat,
     place_lon: itin.legs[itin.legs.length - 1].to.lon
   });
-
+*/
   itin.legs.forEach((leg, idx) => {
     // OTP2 puts "BIKESHARE" as the vertexType for scooter share legs.
     // Here we fix that by looking ahead at the next leg to find out if it is a scooter.
@@ -66,6 +110,23 @@ export function itineraryToTransitive(
       itin.legs[idx + 1]?.mode === "SCOOTER"
         ? "VEHICLERENTAL"
         : leg.to.vertexType;
+    const fromVertexType =
+      leg.mode === "SCOOTER" ? "VEHICLERENTAL" : leg.from.vertexType;
+
+    // The behavior implemented here is to show labels for:
+    // - all transit stops for legs with valid geometry (where to get on and get off, including transfer points)
+    // - locations of rental bike/scoooter pickup, including floating vehicles
+    // - location for dropping off rental vehicles that should be docked.
+    // - origin/destination, but with a lower priority
+    //   (i.e. the labels will not be drawn if other text is already rendered there).
+    // To accomplish that, we label all leg extremities except for walk and own-bike legs.
+
+    if (isTransit(leg.mode)) {
+      // Add both ends of transit legs to the list of places.
+      // (Do not label stop names if they repeat.)
+      addStop(leg.from, newStops, knownStopIds, knownStopNames);
+      addStop(leg.to, newStops, knownStopIds, knownStopNames);
+    }
 
     if (isAccessMode(leg.mode)) {
       let fromPlaceId: string;
@@ -134,17 +195,26 @@ export function itineraryToTransitive(
         // appear twice on the rendered transitive view.
         // See https://github.com/conveyal/trimet-mod-otp/issues/152
         // place_name: leg.from.name,
+        place_name: isWalk(leg.mode)
+          ? null
+          : getPlaceName(
+              { ...leg.from, vertexType: fromVertexType },
+              companies || [],
+              intl
+            ),
         place_lat: leg.from.lat,
         place_lon: leg.from.lon
       });
       tdata.places.push({
         place_id: toPlaceId,
-        place_name: getPlaceName(
-          // replace the vertex type since we tweaked it above
-          { ...leg.to, vertexType: toVertexType },
-          companies || [],
-          intl
-        ),
+        place_name: isWalk(leg.mode)
+          ? null
+          : getPlaceName(
+              // replace the vertex type since we tweaked it above
+              { ...leg.to, vertexType: toVertexType },
+              companies || [],
+              intl
+            ),
         place_lat: leg.to.lat,
         place_lon: leg.to.lon
       });
@@ -175,13 +245,6 @@ export function itineraryToTransitive(
         stops: []
       };
 
-      // add 'from' stop to stops dictionary and pattern object
-      stops[leg.from.stopId] = {
-        stop_id: leg.from.stopId,
-        stop_name: leg.from.name,
-        stop_lat: leg.from.lat,
-        stop_lon: leg.from.lon
-      };
       pattern.stops.push({ stop_id: leg.from.stopId });
 
       // add intermediate stops to stops dictionary and pattern object
@@ -193,12 +256,6 @@ export function itineraryToTransitive(
         (hasIntermediateStopGeometry || !hasLegGeometry)
       ) {
         leg.intermediateStops.forEach((stop, i) => {
-          stops[stop.stopId] = {
-            stop_id: stop.stopId,
-            stop_name: stop.name,
-            stop_lat: stop.lat,
-            stop_lon: stop.lon
-          };
           pattern.stops.push({
             stop_id: stop.stopId,
             geometry:
@@ -207,13 +264,6 @@ export function itineraryToTransitive(
         });
       }
 
-      // add 'to' stop to stops dictionary and pattern object
-      stops[leg.to.stopId] = {
-        stop_id: leg.to.stopId,
-        stop_name: leg.to.name,
-        stop_lat: leg.to.lat,
-        stop_lon: leg.to.lon
-      };
       pattern.stops.push({
         stop_id: leg.to.stopId,
         geometry:
@@ -264,12 +314,13 @@ export function itineraryToTransitive(
 
   // add the routes and stops to the tdata arrays
   tdata.routes.push(...Object.values(routes));
-  tdata.stops.push(...Object.values(stops));
+  tdata.stops = newStops;
 
   // add the journey to the tdata journeys array
   tdata.journeys.push(journey);
+  tdata.places = newPlaces;
 
-  // console.log('derived tdata', tdata);
+  // console.log("derived tdata", tdata);
   return tdata;
 }
 
