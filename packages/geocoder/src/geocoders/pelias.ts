@@ -53,6 +53,7 @@ export default class PeliasGeocoder extends Geocoder {
       apiKey,
       baseUrl,
       boundary,
+      layers,
       focusPoint,
       options,
       sources
@@ -60,6 +61,7 @@ export default class PeliasGeocoder extends Geocoder {
     return {
       apiKey,
       boundary,
+      layers,
       focusPoint,
       options,
       // explicitly send over null for sources if provided sources is not truthy
