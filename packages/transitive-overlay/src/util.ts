@@ -13,6 +13,8 @@ import { IntlShape } from "react-intl";
 
 const { isAccessMode, isFlex, isTransit } = coreUtils.itinerary;
 
+const CAR_PARK_ITIN_PREFIX = "itin_car_";
+
 /**
  * Helper function to convert a stop from an itinerary leg
  * to a TransitiveStop for rendering on the map.
@@ -74,55 +76,36 @@ function addFromToPlaces(from: Place, to: Place, places: TransitivePlace[]) {
 }
 
 /**
- * Builds a place id string for the "from" place of the given leg.
+ * Builds a from/to place id string for the given leg.
  */
-function getFromPlaceId(leg: Leg, prevLeg?: Leg): string {
-  const { from, mode, startTime: streetEdgeId } = leg;
-  const { bikeShareId, name, vertexType } = from;
-  let fromPlaceId: string;
+function getPlaceId(
+  fromTo: "from" | "to",
+  leg: Leg,
+  otherLeg?: Leg,
+  forcedVertexType?: string
+): string {
+  const { mode, startTime: streetEdgeId } = leg;
+  const { bikeShareId, name, vetexType: legVertexType } = leg[fromTo];
+  const vertexType = forcedVertexType || legVertexType;
+  let placeId: string;
   if (bikeShareId) {
-    fromPlaceId = `bicycle_rent_station_${bikeShareId}`;
+    placeId = `bicycle_rent_station_${bikeShareId}`;
     if (
       // OTP2 Scooter case
       mode === "SCOOTER"
     ) {
-      fromPlaceId = `escooter_rent_station_${bikeShareId}`;
+      placeId = `escooter_rent_station_${bikeShareId}`;
     }
   } else if (vertexType === "VEHICLERENTAL") {
     // OTP1 Scooter case
-    fromPlaceId = `escooter_rent_station_${name}`;
-  } else if (mode === "CAR" && prevLeg?.mode === "WALK") {
-    // create a special place ID for car legs preceded by walking legs
-    fromPlaceId = `itin_car_${streetEdgeId}_from`;
-  } else if (!fromPlaceId) {
-    fromPlaceId = `itin_street_${streetEdgeId}_from`;
+    placeId = `escooter_rent_station_${name}`;
+  } else if (mode === "CAR" && otherLeg?.mode === "WALK") {
+    // create a special place ID for car legs preceded/followed by walking legs
+    placeId = `${CAR_PARK_ITIN_PREFIX}${streetEdgeId}_${fromTo}`;
+  } else {
+    placeId = `itin_street_${streetEdgeId}_${fromTo}`;
   }
-  return fromPlaceId;
-}
-
-/**
- * Builds a place id string for the "to" place of the given leg.
- */
-function getToPlaceId(leg: Leg, nextLeg?: Leg, toVertexType?: string): string {
-  const { mode, startTime: streetEdgeId, to } = leg;
-  const { bikeShareId, name } = to;
-  let toPlaceId;
-  if (bikeShareId) {
-    toPlaceId = `bicycle_rent_station_${bikeShareId}`;
-    // OTP2 scooter case
-    // Need to check next leg since this is a "to" place "
-    if (mode === "SCOOTER" || nextLeg?.mode === "SCOOTER") {
-      toPlaceId = `escooter_rent_station_${bikeShareId}`;
-    }
-  } else if (toVertexType === "VEHICLERENTAL") {
-    toPlaceId = `escooter_rent_station_${name}`;
-  } else if (mode === "CAR" && nextLeg?.mode === "WALK") {
-    // create a special place ID for car legs followed by walking legs
-    toPlaceId = `itin_car_${streetEdgeId}_to`;
-  } else if (!toPlaceId) {
-    toPlaceId = `itin_street_${streetEdgeId}_to`;
-  }
-  return toPlaceId;
+  return placeId;
 }
 
 /**
@@ -193,13 +176,15 @@ export function itineraryToTransitive(
     //   (i.e. the labels will not be drawn if other text is already rendered there).
 
     if (isAccessMode(leg.mode)) {
-      const fromPlaceId = getFromPlaceId(
+      const fromPlaceId = getPlaceId(
+        "from",
         leg,
         idx > 0 ? itin.legs[idx - 1] : null
       );
-      const toPlaceId = getToPlaceId(
+      const toPlaceId = getPlaceId(
+        "to",
         leg,
-        idx < itin.legs?.length - 1 ? itin.legs?.[idx + 1] : null,
+        idx < itin.legs.length - 1 ? itin.legs[idx + 1] : null,
         toVertexType
       );
       let addFromPlace = false;
@@ -215,12 +200,12 @@ export function itineraryToTransitive(
       }
 
       // Add a place and label for park-and-ride facilities in driving legs.
-      // Park-and-ride facilties are hinted by car (not TNC) legs followed by walk legs.
+      // Park-and-ride facilties are hinted by car (not TNC, so don't use isCar()) legs followed by walk legs.
       if (leg.mode === "CAR") {
-        if (fromPlaceId.startsWith("itin_car_")) {
+        if (fromPlaceId.startsWith(CAR_PARK_ITIN_PREFIX)) {
           addFromPlace = true;
         }
-        if (toPlaceId.startsWith("itin_car_")) {
+        if (toPlaceId.startsWith(CAR_PARK_ITIN_PREFIX)) {
           addToPlace = true;
         }
       }
