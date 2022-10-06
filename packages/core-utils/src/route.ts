@@ -445,6 +445,13 @@ export function getMostReadableTextColor(
   backgroundColor: string,
   proposedTextColor = "#ffffff"
 ): string {
+  if (!backgroundColor.includes("#")) {
+    backgroundColor = `#${backgroundColor}`;
+  }
+  if (!proposedTextColor.includes("#")) {
+    proposedTextColor = `#${proposedTextColor}`;
+  }
+
   // Check if proposed color is readable
   const fgLuminance = chroma(proposedTextColor).luminance();
   const bgLuminance = chroma(backgroundColor).luminance();
