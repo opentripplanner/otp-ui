@@ -1,3 +1,4 @@
+import { SymbolLayout } from "mapbox-gl";
 import React, { useEffect } from "react";
 import { Layer, Source, useMap } from "react-map-gl";
 import polyline from "@mapbox/polyline";
@@ -37,7 +38,7 @@ const defaultTextPaintParams = {
 /**
  * Text size and layout that lets maplibre relocate text space permitting.
  */
-const defaultTextLayoutParams = {
+const defaultTextLayoutParams: SymbolLayout = {
   "symbol-placement": "point",
   "text-allow-overlap": false,
   "text-field": ["get", "name"],
