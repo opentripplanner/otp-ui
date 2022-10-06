@@ -202,7 +202,7 @@ export function itineraryToTransitive(
       }
 
       // Add a place and label for park-and-ride facilities in driving legs.
-      // Park-and-ride facilties are hinted by car (not TNC, so don't use isCar()) legs followed by walk legs.
+      // Park-and-ride facilities are hinted by car (not TNC, so don't use isCar()) legs followed by walk legs.
       if (leg.mode === "CAR") {
         if (fromPlaceId.startsWith(CAR_PARK_ITIN_PREFIX)) {
           addFromPlace = true;
