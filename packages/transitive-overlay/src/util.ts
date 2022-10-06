@@ -24,7 +24,7 @@ function stopToTransitive(
   knownStopNames: Record<string, string>
 ): TransitiveStop {
   // Collapse case and spaces for comparison.
-  // ("Midtown Station" and "Midtown   Station" are considered the same name.)
+  // ("Midtown Station" and "Midtown   STATION" are considered the same name.)
   const normalizedStopName = stop.name.toUpperCase().replace(/\s+/g, "");
   const stopNameExists = knownStopNames[normalizedStopName];
   if (!stopNameExists) knownStopNames[normalizedStopName] = normalizedStopName;
@@ -55,24 +55,23 @@ function addStop(
 }
 
 /**
- * Helper function to add the origin or destination locations.
- */
-function addFromToPlace(place: Place, id: string, places: TransitivePlace[]) {
-  places.push({
-    placeId: id,
-    place_lat: place.lat,
-    place_lon: place.lon,
-    place_name: place.name,
-    type: "from-to"
-  });
-}
-
-/**
  * Helper function to add the origin and destination locations.
  */
 function addFromToPlaces(from: Place, to: Place, places: TransitivePlace[]) {
-  addFromToPlace(from, "from", places);
-  addFromToPlace(to, "to", places);
+  places.push({
+    placeId: "from",
+    place_lat: from.lat,
+    place_lon: from.lon,
+    place_name: from.name,
+    type: "from-to"
+  });
+  places.push({
+    placeId: "to",
+    place_lat: to.lat,
+    place_lon: to.lon,
+    place_name: to.name,
+    type: "from-to"
+  });
 }
 
 /**
@@ -80,12 +79,13 @@ function addFromToPlaces(from: Place, to: Place, places: TransitivePlace[]) {
  */
 function getPlaceId(
   fromTo: "from" | "to",
+  streetEdgeId: string | number,
   leg: Leg,
   otherLeg?: Leg,
   forcedVertexType?: string
 ): string {
-  const { mode, startTime: streetEdgeId } = leg;
-  const { bikeShareId, name, vetexType: legVertexType } = leg[fromTo];
+  const { mode } = leg;
+  const { bikeShareId, name, vertexType: legVertexType } = leg[fromTo];
   const vertexType = forcedVertexType || legVertexType;
   let placeId: string;
   if (bikeShareId) {
@@ -165,7 +165,7 @@ export function itineraryToTransitive(
         : leg.to.vertexType;
     const fromVertexType =
       leg.mode === "SCOOTER" ? "VEHICLERENTAL" : leg.from.vertexType;
-    const streetEdgeId = leg.startTime;
+    const streetEdgeId = idx;
 
     // Show on the map the labels for:
     // - all transit stops for legs with valid geometry (where to get on and get off, including transfer points)
@@ -178,11 +178,13 @@ export function itineraryToTransitive(
     if (isAccessMode(leg.mode)) {
       const fromPlaceId = getPlaceId(
         "from",
+        streetEdgeId,
         leg,
         idx > 0 ? itin.legs[idx - 1] : null
       );
       const toPlaceId = getPlaceId(
         "to",
+        streetEdgeId,
         leg,
         idx < itin.legs.length - 1 ? itin.legs[idx + 1] : null,
         toVertexType
