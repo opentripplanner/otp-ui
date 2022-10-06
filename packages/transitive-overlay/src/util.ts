@@ -4,6 +4,7 @@ import {
   Leg,
   Place,
   TransitiveData,
+  TransitivePlace,
   TransitiveStop
 } from "@opentripplanner/types";
 import coreUtils from "@opentripplanner/core-utils";
@@ -24,7 +25,7 @@ function stopToTransitive(
   // ("Midtown Station" and "Midtown   Station" are considered the same name.)
   const normalizedStopName = stop.name.toUpperCase().replace(/\s+/g, "");
   const stopNameExists = knownStopNames[normalizedStopName];
-  if (!stopNameExists) knownStopNames[normalizedStopName] = 1;
+  if (!stopNameExists) knownStopNames[normalizedStopName] = normalizedStopName;
   return {
     stop_id: stop.stopId,
     stop_name: stopNameExists ? null : stop.name,
@@ -33,6 +34,9 @@ function stopToTransitive(
   };
 }
 
+/**
+ * Helper function to add a stop, checking whether a stop id and name has already been added.
+ */
 function addStop(
   stop: Place,
   stops: TransitiveStop[],
@@ -44,10 +48,13 @@ function addStop(
     stopId === null || stopId === undefined || stopId === "";
   if (stopIdIsBlank || !knownStopIds[stopId]) {
     stops.push(stopToTransitive(stop, knownStopNames));
-    if (!stopIdIsBlank) knownStopIds[stopId] = 1;
+    if (!stopIdIsBlank) knownStopIds[stopId] = stopId;
   }
 }
 
+/**
+ * Helper function to add the origin or destination locations.
+ */
 function addFromToPlace(place: Place, id: string, places: TransitivePlace[]) {
   places.push({
     placeId: id,
@@ -58,13 +65,16 @@ function addFromToPlace(place: Place, id: string, places: TransitivePlace[]) {
   });
 }
 
+/**
+ * Helper function to add the origin and destination locations.
+ */
 function addFromToPlaces(from: Place, to: Place, places: TransitivePlace[]) {
   addFromToPlace(from, "from", places);
   addFromToPlace(to, "to", places);
 }
 
 /**
- * Builds a place id string for a place.
+ * Builds a place id string for the "from" place of the given leg.
  */
 function getFromPlaceId(leg: Leg, prevLeg?: Leg): string {
   const { from, mode, startTime: streetEdgeId } = leg;
@@ -87,10 +97,12 @@ function getFromPlaceId(leg: Leg, prevLeg?: Leg): string {
   } else if (!fromPlaceId) {
     fromPlaceId = `itin_street_${streetEdgeId}_from`;
   }
-
   return fromPlaceId;
 }
 
+/**
+ * Builds a place id string for the "to" place of the given leg.
+ */
 function getToPlaceId(leg: Leg, nextLeg?: Leg, toVertexType?: string): string {
   const { mode, startTime: streetEdgeId, to } = leg;
   const { bikeShareId, name } = to;
@@ -130,6 +142,7 @@ export function itineraryToTransitive(
     intl?: IntlShape;
   }
 ): TransitiveData {
+  console.log(itin);
   const { companies, getRouteLabel, disableFlexArc, intl } = options;
   const tdata = {
     journeys: [],
@@ -171,13 +184,13 @@ export function itineraryToTransitive(
       leg.mode === "SCOOTER" ? "VEHICLERENTAL" : leg.from.vertexType;
     const streetEdgeId = leg.startTime;
 
-    // The behavior implemented here is to show labels for:
+    // Show on the map the labels for:
     // - all transit stops for legs with valid geometry (where to get on and get off, including transfer points)
     // - locations of rental bike/scoooter pickup, including floating vehicles
-    // - location for dropping off rental vehicles that should be docked.
-    // - origin/destination, but with a lower priority
+    // - location for dropping off rental vehicles that should be docked
+    // - park-and-ride facilities (with a lower display priority than transit stations)
+    // - origin/destination, but with a lower display priority than anything above
     //   (i.e. the labels will not be drawn if other text is already rendered there).
-    // To accomplish that, we label all leg extremities except for walk and own-bike legs.
 
     if (isAccessMode(leg.mode)) {
       const fromPlaceId = getFromPlaceId(
@@ -189,7 +202,30 @@ export function itineraryToTransitive(
         idx < itin.legs?.length - 1 ? itin.legs?.[idx + 1] : null,
         toVertexType
       );
+      let addFromPlace = false;
+      let addToPlace = false;
       if (leg.rentedBike || leg.rentedVehicle || leg.rentedCar) {
+        addFromPlace = true;
+
+        // Only add the "to" portion of rental legs if they involve docking a vehicle on arrival
+        // (this is to avoid https://github.com/conveyal/trimet-mod-otp/issues/152).
+        if (leg.to.vertexType !== "NORMAL") {
+          addToPlace = true;
+        }
+      }
+
+      // Add a place and label for park-and-ride facilities in driving legs.
+      // Park-and-ride facilties are hinted by car (not TNC) legs followed by walk legs.
+      if (leg.mode === "CAR") {
+        if (fromPlaceId.startsWith("itin_car_")) {
+          addFromPlace = true;
+        }
+        if (toPlaceId.startsWith("itin_car_")) {
+          addToPlace = true;
+        }
+      }
+
+      if (addFromPlace) {
         newPlaces.push({
           placeId: fromPlaceId,
           place_name: getPlaceName(
@@ -201,23 +237,20 @@ export function itineraryToTransitive(
           place_lon: leg.from.lon,
           type: leg.mode
         });
-
-        // Only add the "to" portion of rental legs if they involve docking a vehicle on arrival
-        // (this is to avoid https://github.com/conveyal/trimet-mod-otp/issues/152).
-        if (leg.to.vertexType !== "NORMAL") {
-          newPlaces.push({
-            placeId: toPlaceId,
-            place_name: getPlaceName(
-              // replace the vertex type since we tweaked it above
-              { ...leg.to, vertexType: toVertexType },
-              companies || [],
-              intl
-            ),
-            place_lat: leg.to.lat,
-            place_lon: leg.to.lon,
-            type: leg.mode
-          });
-        }
+      }
+      if (addToPlace) {
+        newPlaces.push({
+          placeId: toPlaceId,
+          place_name: getPlaceName(
+            // replace the vertex type since we tweaked it above
+            { ...leg.to, vertexType: toVertexType },
+            companies || [],
+            intl
+          ),
+          place_lat: leg.to.lat,
+          place_lon: leg.to.lon,
+          type: leg.mode
+        });
       }
 
       const segment = {
@@ -342,7 +375,7 @@ export function itineraryToTransitive(
   tdata.journeys.push(journey);
   tdata.places = newPlaces;
 
-  // console.log("derived tdata", tdata);
+  console.log("derived tdata", tdata);
   return tdata;
 }
 

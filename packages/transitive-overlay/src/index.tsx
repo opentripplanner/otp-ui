@@ -6,7 +6,8 @@ import {
   TransitiveData,
   TransitiveJourney,
   TransitivePattern,
-  TransitivePlace
+  TransitivePlace,
+  TransitiveStop
 } from "@opentripplanner/types";
 import bbox from "@turf/bbox";
 
@@ -257,14 +258,14 @@ const TransitiveCanvasOverlay = ({
         filter={[
           "match",
           ["get", "type"],
-          ["BICYCLE", "SCOOTER", "MICROMOBILITY", "MICROMOBILITY_RENT"],
+          ["BICYCLE", "SCOOTER", "MICROMOBILITY", "MICROMOBILITY_RENT", "CAR"],
           true,
           false
         ]}
-        id="rental-circles"
+        id="access-mode-circles"
         paint={{
           "circle-color": ["get", "color"],
-          "circle-radius": 5,
+          "circle-radius": 6,
           "circle-stroke-color": "#fff",
           "circle-stroke-width": 2
         }}
@@ -274,11 +275,11 @@ const TransitiveCanvasOverlay = ({
         filter={[
           "match",
           ["get", "type"],
-          ["BICYCLE", "SCOOTER", "MICROMOBILITY", "MICROMOBILITY_RENT"],
+          ["BICYCLE", "SCOOTER", "MICROMOBILITY", "MICROMOBILITY_RENT", "CAR"],
           true,
           false
         ]}
-        id="rental-labels"
+        id="access-mode-labels"
         layout={{
           "symbol-placement": "point",
           "text-allow-overlap": false,
