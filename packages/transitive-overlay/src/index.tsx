@@ -25,10 +25,49 @@ const modeColorMap = {
   WALK: "#86cdf9"
 };
 
+/**
+ * Apply a thin, white halo around the (black) text.
+ */
+const defaultTextPaintParams = {
+  "text-halo-blur": 1,
+  "text-halo-color": "#ffffff",
+  "text-halo-width": 2
+};
+
+/**
+ * Text size and layout that lets maplibre relocate text space permitting.
+ */
+const defaultTextLayoutParams = {
+  "symbol-placement": "point",
+  "text-allow-overlap": false,
+  "text-field": ["get", "name"],
+  "text-radial-offset": 1,
+  "text-size": 15,
+  "text-variable-anchor": [
+    "left",
+    "right",
+    "top",
+    "bottom",
+    "top-left",
+    "top-right",
+    "bottom-left",
+    "bottom-right"
+  ]
+};
+
+const accessLegFilter = [
+  "match",
+  ["get", "type"],
+  ["BICYCLE", "SCOOTER", "MICROMOBILITY", "MICROMOBILITY_RENT", "CAR"],
+  true,
+  false
+];
+
 type Props = {
   activeLeg?: Leg;
   transitiveData: TransitiveData;
 };
+
 const TransitiveCanvasOverlay = ({
   activeLeg,
   transitiveData
@@ -143,29 +182,26 @@ const TransitiveCanvasOverlay = ({
       <Layer
         filter={["==", "type", "from-to"]}
         id="from-to-labels"
-        layout={{
-          "symbol-placement": "point",
-          "text-allow-overlap": false,
-          "text-field": ["get", "name"],
-          "text-padding": 5,
-          "text-radial-offset": 0.5,
-          "text-size": 15,
-          "text-variable-anchor": [
-            "left",
-            "right",
-            "top",
-            "bottom",
-            "top-left",
-            "top-right",
-            "bottom-left",
-            "bottom-right"
-          ]
-        }}
+        layout={defaultTextLayoutParams}
+        paint={defaultTextPaintParams}
+        type="symbol"
+      />
+      <Layer
+        filter={accessLegFilter}
+        id="access-leg-circles"
         paint={{
-          "text-halo-blur": 1,
-          "text-halo-color": "#ffffff",
-          "text-halo-width": 2
+          "circle-color": ["get", "color"],
+          "circle-radius": 6,
+          "circle-stroke-color": "#fff",
+          "circle-stroke-width": 2
         }}
+        type="circle"
+      />
+      <Layer
+        filter={accessLegFilter}
+        id="access-leg-labels"
+        layout={defaultTextLayoutParams}
+        paint={defaultTextPaintParams}
         type="symbol"
       />
       <Layer
@@ -194,8 +230,7 @@ const TransitiveCanvasOverlay = ({
         }}
         paint={{
           "line-color": ["get", "color"],
-          "line-width": 8,
-          "line-opacity": 1
+          "line-width": 8
         }}
         type="line"
       />
@@ -229,109 +264,8 @@ const TransitiveCanvasOverlay = ({
       <Layer
         filter={["==", "type", "stop"]}
         id="stops-labels"
-        layout={{
-          "symbol-placement": "point",
-          "text-allow-overlap": false,
-          "text-field": ["get", "name"],
-          "text-padding": 5,
-          "text-radial-offset": 0.5,
-          "text-size": 15,
-          "text-variable-anchor": [
-            "left",
-            "right",
-            "top",
-            "bottom",
-            "top-left",
-            "top-right",
-            "bottom-left",
-            "bottom-right"
-          ]
-        }}
-        paint={{
-          "text-halo-blur": 1,
-          "text-halo-color": "#ffffff",
-          "text-halo-width": 2
-        }}
-        type="symbol"
-      />
-      <Layer
-        filter={[
-          "match",
-          ["get", "type"],
-          ["BICYCLE", "SCOOTER", "MICROMOBILITY", "MICROMOBILITY_RENT", "CAR"],
-          true,
-          false
-        ]}
-        id="access-mode-circles"
-        paint={{
-          "circle-color": ["get", "color"],
-          "circle-radius": 6,
-          "circle-stroke-color": "#fff",
-          "circle-stroke-width": 2
-        }}
-        type="circle"
-      />
-      <Layer
-        filter={[
-          "match",
-          ["get", "type"],
-          ["BICYCLE", "SCOOTER", "MICROMOBILITY", "MICROMOBILITY_RENT", "CAR"],
-          true,
-          false
-        ]}
-        id="access-mode-labels"
-        layout={{
-          "symbol-placement": "point",
-          "text-allow-overlap": false,
-          "text-field": ["get", "name"],
-          "text-padding": 5,
-          "text-radial-offset": 0.5,
-          "text-size": 15,
-          "text-variable-anchor": [
-            "left",
-            "right",
-            "top",
-            "bottom",
-            "top-left",
-            "top-right",
-            "bottom-left",
-            "bottom-right"
-          ]
-        }}
-        paint={{
-          "text-halo-blur": 1,
-          "text-halo-color": "#ffffff",
-          "text-halo-width": 2
-        }}
-        type="symbol"
-      />
-      <Layer filter={["==", "type", "place"]} id="places" type="circle" />
-      <Layer
-        filter={["==", "type", "place"]}
-        id="places-labels"
-        layout={{
-          "symbol-placement": "point",
-          "text-allow-overlap": false,
-          "text-field": ["get", "name"],
-          "text-padding": 5,
-          "text-radial-offset": 0.5,
-          "text-size": 15,
-          "text-variable-anchor": [
-            "left",
-            "right",
-            "top",
-            "bottom",
-            "top-left",
-            "top-right",
-            "bottom-left",
-            "bottom-right"
-          ]
-        }}
-        paint={{
-          "text-halo-blur": 1,
-          "text-halo-color": "#ffffff",
-          "text-halo-width": 1.5
-        }}
+        layout={defaultTextLayoutParams}
+        paint={defaultTextPaintParams}
         type="symbol"
       />
     </Source>
