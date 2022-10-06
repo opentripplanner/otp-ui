@@ -55,6 +55,8 @@ const defaultTextLayoutParams = {
   ]
 };
 
+const routeFilter = ["==", "type", "route"];
+const stopFilter = ["==", "type", "stop"];
 const accessLegFilter = [
   "match",
   ["get", "type"],
@@ -222,7 +224,7 @@ const TransitiveCanvasOverlay = ({
         type="line"
       />
       <Layer
-        filter={["==", "type", "route"]}
+        filter={routeFilter}
         id="routes"
         layout={{
           "line-join": "round",
@@ -235,7 +237,7 @@ const TransitiveCanvasOverlay = ({
         type="line"
       />
       <Layer
-        filter={["==", "type", "route"]}
+        filter={routeFilter}
         id="routes-labels"
         layout={{
           "symbol-placement": "line",
@@ -252,7 +254,7 @@ const TransitiveCanvasOverlay = ({
         type="symbol"
       />
       <Layer
-        filter={["==", "type", "stop"]}
+        filter={stopFilter}
         id="stops-circles"
         paint={{
           "circle-color": "#fff",
@@ -262,7 +264,7 @@ const TransitiveCanvasOverlay = ({
         type="circle"
       />
       <Layer
-        filter={["==", "type", "stop"]}
+        filter={stopFilter}
         id="stops-labels"
         layout={defaultTextLayoutParams}
         paint={defaultTextPaintParams}
