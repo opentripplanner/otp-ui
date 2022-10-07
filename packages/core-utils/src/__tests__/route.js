@@ -137,6 +137,8 @@ describe("util > route", () => {
     });
   });
 
+  // These color pairings are taken from real agencies.
+  // See the method jsdoc for more details.
   describe("route text color generation", () => {
     it("should not modify appropriate color pairings", () => {
       expect(getMostReadableTextColor("#EE352E", "#ffffff")).toBe("#ffffff");
@@ -145,7 +147,8 @@ describe("util > route", () => {
       expect(getMostReadableTextColor("#808183", "#ffffff")).toBe("#ffffff");
       expect(getMostReadableTextColor("#0039a6", "#ffffff")).toBe("#ffffff");
 
-      // Both work
+      // Both colors are readable and used by transit agencies.
+      // The function accepts both colors.
       expect(getMostReadableTextColor("#ff6319", "#ffffff")).toBe("#ffffff");
       expect(getMostReadableTextColor("#ff6319", "#000000")).toBe("#000000");
       expect(getMostReadableTextColor("#6cbe45", "#ffffff")).toBe("#ffffff");
@@ -154,6 +157,8 @@ describe("util > route", () => {
       expect(getMostReadableTextColor("#a7a9ac", "#000000")).toBe("#000000");
       expect(getMostReadableTextColor("#FF00FF", "#ffffff")).toBe("#ffffff");
       expect(getMostReadableTextColor("#FF00FF", "#000000")).toBe("#000000");
+      expect(getMostReadableTextColor("#009999", "#ffffff")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#009999", "#000000")).toBe("#000000");
 
       expect(getMostReadableTextColor("#996633", "#ffffff")).toBe("#ffffff");
       expect(getMostReadableTextColor("#fccc0a", "#000000")).toBe("#000000");
@@ -164,8 +169,6 @@ describe("util > route", () => {
       expect(getMostReadableTextColor("#CE242B", "#ffffff")).toBe("#ffffff");
 
       expect(getMostReadableTextColor("#00FF00", "#000000")).toBe("#000000");
-      expect(getMostReadableTextColor("#009999", "#ffffff")).toBe("#ffffff");
-      expect(getMostReadableTextColor("#009999", "#000000")).toBe("#000000");
 
       expect(getMostReadableTextColor("#E32400", "#FFFFFF")).toBe("#FFFFFF");
       expect(getMostReadableTextColor("#d18881", "#000000")).toBe("#000000");
