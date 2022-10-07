@@ -125,7 +125,6 @@ export function itineraryToTransitive(
     intl?: IntlShape;
   }
 ): TransitiveData {
-  console.log(itin);
   const { companies, getRouteLabel, disableFlexArc, intl } = options;
   const tdata = {
     journeys: [],
@@ -362,7 +361,7 @@ export function itineraryToTransitive(
   tdata.journeys.push(journey);
   tdata.places = newPlaces;
 
-  console.log("derived tdata", tdata);
+  // console.log("derived tdata", tdata);
   return tdata;
 }
 
