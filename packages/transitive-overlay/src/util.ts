@@ -11,7 +11,7 @@ import coreUtils from "@opentripplanner/core-utils";
 import { getPlaceName } from "@opentripplanner/itinerary-body";
 import { IntlShape } from "react-intl";
 
-const { isAccessMode, isFlex, isTransit } = coreUtils.itinerary;
+const { getLegBounds, isAccessMode, isFlex, isTransit } = coreUtils.itinerary;
 
 const CAR_PARK_ITIN_PREFIX = "itin_car_";
 
@@ -106,6 +106,19 @@ function getPlaceId(
     placeId = `itin_street_${streetEdgeId}_${fromTo}`;
   }
   return placeId;
+}
+
+/**
+ * Helper function that overrides stop coordinates with those provided, if any.
+ */
+function makeStop(stop: Place, coordinate?: number[]) {
+  return coordinate
+    ? {
+        ...stop,
+        lat: coordinate[0],
+        lon: coordinate[1]
+      }
+    : stop;
 }
 
 /**
@@ -271,6 +284,10 @@ export function itineraryToTransitive(
         leg.intermediateStops &&
         leg.interStopGeometry.length === leg.intermediateStops.length + 1;
 
+      // Coordinates of the leg geometry, used to draw the stop marker on the line,
+      // otherwise the logical stop is often times off the line.
+      const legCoords = getLegBounds(leg);
+
       // create leg-specific pattern
       const ptnId = `ptn_${patternId}`;
       const pattern = {
@@ -282,7 +299,8 @@ export function itineraryToTransitive(
       };
 
       // Add the "from" end of transit legs to the list of stops.
-      addStop(leg.from, newStops, knownStopIds, knownStopNames);
+      const fromStop = makeStop(leg.from, hasLegGeometry && legCoords[0]);
+      addStop(fromStop, newStops, knownStopIds, knownStopNames);
       pattern.stops.push({ stop_id: leg.from.stopId });
 
       // add intermediate stops to stops dictionary and pattern object
@@ -304,7 +322,9 @@ export function itineraryToTransitive(
 
       // Add the "to" end of transit legs to the list of stops.
       // (Do not label stop names if they repeat.)
-      addStop(leg.to, newStops, knownStopIds, knownStopNames);
+      const lastCoord = hasLegGeometry && legCoords[legCoords.length - 1];
+      const toStop = makeStop(leg.to, lastCoord);
+      addStop(toStop, newStops, knownStopIds, knownStopNames);
       pattern.stops.push({
         stop_id: leg.to.stopId,
         geometry:
