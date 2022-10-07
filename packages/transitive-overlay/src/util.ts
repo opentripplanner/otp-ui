@@ -57,21 +57,14 @@ function addStop(
 /**
  * Helper function to add the origin and destination locations.
  */
-function addFromToPlaces(from: Place, to: Place, places: TransitivePlace[]) {
-  places.push({
-    placeId: "from",
-    place_lat: from.lat,
-    place_lon: from.lon,
-    place_name: from.name,
-    type: "from-to"
-  });
-  places.push({
-    placeId: "to",
-    place_lat: to.lat,
-    place_lon: to.lon,
-    place_name: to.name,
-    type: "from-to"
-  });
+function makeFromToPlace(place: Place, id: "from" | "to"): TransitivePlace {
+  return {
+    placeId: id,
+    place_lat: place.lat,
+    place_lon: place.lon,
+    place_name: place.name,
+    type: id
+  };
 }
 
 /**
@@ -162,11 +155,8 @@ export function itineraryToTransitive(
   const newPlaces = [];
   const newStops = [];
 
-  addFromToPlaces(
-    itin.legs[0].from,
-    itin.legs[itin.legs.length - 1].to,
-    newPlaces
-  );
+  newPlaces.push(makeFromToPlace(itin.legs[0].from, "from"));
+  newPlaces.push(makeFromToPlace(itin.legs[itin.legs.length - 1].to, "to"));
 
   itin.legs.forEach((leg, idx) => {
     // OTP2 puts "BIKESHARE" as the vertexType for scooter share legs.

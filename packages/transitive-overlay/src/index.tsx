@@ -56,6 +56,15 @@ const defaultTextLayoutParams: SymbolLayout = {
   ]
 };
 
+/**
+ * Default text + bold default fonts
+ */
+const defaultBoldTextLayoutParams = {
+  ...defaultTextLayoutParams,
+  // FIXME: find a better way to set a bold font
+  "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"]
+};
+
 const routeFilter = ["==", "type", "route"];
 const stopFilter = ["==", "type", "stop"];
 const accessLegFilter = [
@@ -240,15 +249,8 @@ const TransitiveCanvasOverlay = ({
         type="circle"
       />
 
-      {/* Render origin/destinations (lowest priority), then access leg places then transit stop and route labels (highest priority)
+      {/* Render access leg places (lowest priority) then transit stop and route labels, then origin/destination (highest priority)
           so the text appears above all graphics. */}
-      <Layer
-        filter={["==", "type", "from-to"]}
-        id="from-to-labels"
-        layout={defaultTextLayoutParams}
-        paint={defaultTextPaintParams}
-        type="symbol"
-      />
       <Layer
         filter={accessLegFilter}
         id="access-leg-labels"
@@ -277,6 +279,23 @@ const TransitiveCanvasOverlay = ({
           "text-halo-blur": 15,
           "text-halo-color": ["get", "color"],
           "text-halo-width": 15
+        }}
+        type="symbol"
+      />
+      <Layer
+        filter={["==", "type", "from"]}
+        id="from-label"
+        layout={defaultBoldTextLayoutParams}
+        paint={defaultTextPaintParams}
+        type="symbol"
+      />
+      <Layer
+        filter={["==", "type", "to"]}
+        id="to-label"
+        layout={defaultBoldTextLayoutParams}
+        paint={{
+          ...defaultTextPaintParams,
+          "text-color": "#910818"
         }}
         type="symbol"
       />
