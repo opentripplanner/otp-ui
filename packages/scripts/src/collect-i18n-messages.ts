@@ -60,7 +60,7 @@ async function collectAndPrintOutMessages({ sourceFiles, ymlFilesByLocale }) {
   Object.keys(messageData).forEach(id => {
     const row = messageData[id];
     const messages = allLocales.map(locale => row[locale]);
-    console.log(`${id},"${row.description}","${messages}"`);
+    console.log(`${id},"${row.description}","${messages.join('","')}"`);
   });
 }
 
