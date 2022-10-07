@@ -179,34 +179,12 @@ const TransitiveCanvasOverlay = ({
     zoomToGeoJSON(polyline.toGeoJSON(activeLeg.legGeometry.points));
   }, [activeLeg]);
 
-  // Text/symbol layers placed first will be rendered last.
+  // Generally speaking, text/symbol layers placed first will be rendered in a lower layer
+  // (or, if it is text, rendered with a lower priority or not at all if higher-priority text overlaps).
   return (
     <Source data={geojson} id="itinerary" type="geojson">
-      <Layer
-        filter={["==", "type", "from-to"]}
-        id="from-to-labels"
-        layout={defaultTextLayoutParams}
-        paint={defaultTextPaintParams}
-        type="symbol"
-      />
-      <Layer
-        filter={accessLegFilter}
-        id="access-leg-circles"
-        paint={{
-          "circle-color": ["get", "color"],
-          "circle-radius": 6,
-          "circle-stroke-color": "#fff",
-          "circle-stroke-width": 2
-        }}
-        type="circle"
-      />
-      <Layer
-        filter={accessLegFilter}
-        id="access-leg-labels"
-        layout={defaultTextLayoutParams}
-        paint={defaultTextPaintParams}
-        type="symbol"
-      />
+      {/* First, render access legs then transit lines so that all lines under any text or circle
+          and transit lines appears above access legs. */}
       <Layer
         filter={["==", "type", "street-edge"]}
         id="street-edges"
@@ -237,6 +215,54 @@ const TransitiveCanvasOverlay = ({
         }}
         type="line"
       />
+
+      {/* Render access leg places then transit stops so that they appear sandwiched between text and lines,
+          with transit stops appearing above access leg places. */}
+      <Layer
+        filter={accessLegFilter}
+        id="access-leg-circles"
+        paint={{
+          "circle-color": ["get", "color"],
+          "circle-radius": 8,
+          "circle-stroke-color": "#fff",
+          "circle-stroke-width": 3
+        }}
+        type="circle"
+      />
+      <Layer
+        filter={stopFilter}
+        id="stops-circles"
+        paint={{
+          "circle-color": "#fff",
+          "circle-radius": 7,
+          "circle-stroke-width": 3
+        }}
+        type="circle"
+      />
+
+      {/* Render origin/destinations (lowest priority), then access leg places then transit stop and route labels (highest priority)
+          so the text appears above all graphics. */}
+      <Layer
+        filter={["==", "type", "from-to"]}
+        id="from-to-labels"
+        layout={defaultTextLayoutParams}
+        paint={defaultTextPaintParams}
+        type="symbol"
+      />
+      <Layer
+        filter={accessLegFilter}
+        id="access-leg-labels"
+        layout={defaultTextLayoutParams}
+        paint={defaultTextPaintParams}
+        type="symbol"
+      />
+      <Layer
+        filter={stopFilter}
+        id="stops-labels"
+        layout={defaultTextLayoutParams}
+        paint={defaultTextPaintParams}
+        type="symbol"
+      />
       <Layer
         filter={routeFilter}
         id="routes-labels"
@@ -252,23 +278,6 @@ const TransitiveCanvasOverlay = ({
           "text-halo-color": ["get", "color"],
           "text-halo-width": 15
         }}
-        type="symbol"
-      />
-      <Layer
-        filter={stopFilter}
-        id="stops-circles"
-        paint={{
-          "circle-color": "#fff",
-          "circle-radius": 5,
-          "circle-stroke-width": 2
-        }}
-        type="circle"
-      />
-      <Layer
-        filter={stopFilter}
-        id="stops-labels"
-        layout={defaultTextLayoutParams}
-        paint={defaultTextPaintParams}
         type="symbol"
       />
     </Source>
