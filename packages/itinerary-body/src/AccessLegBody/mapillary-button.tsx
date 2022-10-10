@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useIntl } from "react-intl";
 import styled from "styled-components";
-import { StreetView } from "@styled-icons/fa-solid/StreetView"; //
+import { StreetView } from "@styled-icons/fa-solid/StreetView";
 
 import { defaultMessages } from "../util";
 
