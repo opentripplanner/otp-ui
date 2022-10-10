@@ -23,11 +23,14 @@ export function patternToRouteFeature(
     }, []);
   const routeName = route.route_short_name || route.route_long_name || "";
   // HACK: Create an uppercase version of the route name to paint the background, where
-  // spaces are replaced with '!' (~same width as space) to create a background with a uniform height.
+  // - spaces are replaced with '!' (~same width as space)
+  // - "+", "-", certain letters and numbers are replaced with "E" to create a background with a uniform height and fill.
   // Also, ensure there is a minimum background width (3 characters).
-  const routeNameUpper = (routeName.length < 3 ? "000" : routeName)
+  // Disclaimer: height of substitution characters can vary from font to font.
+  const routeNameUpper = (routeName.length < 3 ? "EEE" : routeName)
     .toUpperCase()
-    .replace(/\s/g, "!");
+    .replace(/\s/g, "!")
+    .replace(/[+-0124679FHJLPTVXYZ]/g, "E");
 
   return {
     geometry: polyline.toGeoJSON(polyline.encode(concatenatedLines)),
