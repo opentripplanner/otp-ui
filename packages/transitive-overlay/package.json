@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@opentripplanner/endpoints-overlay": "^2.0.0",
-    "@opentripplanner/types": "^4.0.0"
+    "@opentripplanner/types": "^4.0.1"
   },
   "peerDependencies": {
     "react": "^16.14.0",
