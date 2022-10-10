@@ -109,8 +109,32 @@ const TransitiveCanvasOverlay = ({
 
   return (
     <Source data={geojson} id="itinerary" type="geojson">
+      {/* Create a layer for each line type
+          (conditional expressions are not supported for line-dash attributes). */}
       <Layer
-        filter={["==", "type", "street-edge"]}
+        // This layer is for WALK modes - dotted path
+        filter={["all", ["==", "type", "street-edge"], ["==", "mode", "WALK"]]}
+        id="street-edges-walk"
+        layout={{
+          "line-cap": "round",
+          "line-join": "round"
+        }}
+        paint={{
+          // TODO: get from transitive properties
+          "line-color": ["get", "color"],
+          // First parameter of array is the length of the dash which is set to zero,
+          // so that maplibre simply adds the rounded ends to make things look like dots.
+          // Even so, note that maplibre still renders beans instead of dots
+          // (as if maplibre fuses dots together).
+          "line-dasharray": [0, 1.3],
+          "line-opacity": 0.9,
+          "line-width": 6
+        }}
+        type="line"
+      />
+      <Layer
+        // This layer is for other modes - dashed path
+        filter={["all", ["==", "type", "street-edge"], ["!=", "mode", "WALK"]]}
         id="street-edges"
         layout={{
           "line-cap": "butt"
@@ -118,7 +142,6 @@ const TransitiveCanvasOverlay = ({
         paint={{
           // TODO: get from transitive properties
           "line-color": ["get", "color"],
-          // TODO: get from transitive properties
           "line-dasharray": [2, 1],
           // TODO: get from transitive properties
           "line-width": 4,
@@ -135,7 +158,8 @@ const TransitiveCanvasOverlay = ({
         }}
         paint={{
           "line-color": ["get", "color"],
-          "line-width": 8,
+          // Apply a thinner line (width = 6) for bus routes (route_type = 3), set width to 10 otherwise.
+          "line-width": ["match", ["get", "routeType"], 3, 6, 10],
           "line-opacity": 1
         }}
         type="line"
