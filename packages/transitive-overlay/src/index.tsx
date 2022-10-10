@@ -157,8 +157,9 @@ const TransitiveCanvasOverlay = ({
                 type: "Feature",
                 properties: {
                   color: `#${route.route_color || "000080"}`,
-                  type: "route",
-                  name: route.route_short_name || route.route_long_name || ""
+                  name: route.route_short_name || route.route_long_name || "",
+                  routeType: route.route_type,
+                  type: "route"
                 },
                 geometry: polyline.toGeoJSON(geometry)
               };
@@ -192,10 +193,33 @@ const TransitiveCanvasOverlay = ({
   // (or, if it is text, rendered with a lower priority or not at all if higher-priority text overlaps).
   return (
     <Source data={geojson} id="itinerary" type="geojson">
-      {/* First, render access legs then transit lines so that all lines under any text or circle
-          and transit lines appears above access legs. */}
+      {/* First, render access legs then transit lines so that all lines appear under any text or circle
+          and transit lines appears above access legs. Walking legs are under a separate layer
+          because they use a different line dash that cannot be an expression. */}
       <Layer
-        filter={["==", "type", "street-edge"]}
+        // This layer is for WALK modes - dotted path
+        filter={["all", ["==", "type", "street-edge"], ["==", "mode", "WALK"]]}
+        id="street-edges-walk"
+        layout={{
+          "line-cap": "round",
+          "line-join": "round"
+        }}
+        paint={{
+          // TODO: get from transitive properties
+          "line-color": ["get", "color"],
+          // First parameter of array is the length of the dash which is set to zero,
+          // so that maplibre simply adds the rounded ends to make things look like dots.
+          // Even so, note that maplibre still renders beans instead of dots
+          // (as if maplibre fuses dots together).
+          "line-dasharray": [0, 1.3],
+          "line-opacity": 0.9,
+          "line-width": 6
+        }}
+        type="line"
+      />
+      <Layer
+        // This layer is for other modes - dashed path
+        filter={["all", ["==", "type", "street-edge"], ["!=", "mode", "WALK"]]}
         id="street-edges"
         layout={{
           "line-cap": "butt"
@@ -203,7 +227,6 @@ const TransitiveCanvasOverlay = ({
         paint={{
           // TODO: get from transitive properties
           "line-color": ["get", "color"],
-          // TODO: get from transitive properties
           "line-dasharray": [2, 1],
           // TODO: get from transitive properties
           "line-width": 4,
@@ -220,7 +243,9 @@ const TransitiveCanvasOverlay = ({
         }}
         paint={{
           "line-color": ["get", "color"],
-          "line-width": 8
+          // Apply a thinner line (width = 6) for bus routes (route_type = 3), set width to 10 otherwise.
+          "line-width": ["match", ["get", "routeType"], 3, 6, 10],
+          "line-opacity": 1
         }}
         type="line"
       />
