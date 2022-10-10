@@ -21,16 +21,18 @@ const CAR_PARK_ITIN_PREFIX = "itin_car_";
  */
 function stopToTransitive(
   stop: Place,
-  knownStopNames: Record<string, string>
+  knownStopNames: Record<string, Place>
 ): TransitiveStop {
   // Collapse case and spaces for comparison.
   // ("Midtown Station" and "Midtown   STATION" are considered the same name.)
-  const normalizedStopName = stop.name.toUpperCase().replace(/\s+/g, "");
-  const stopNameExists = knownStopNames[normalizedStopName];
-  if (!stopNameExists) knownStopNames[normalizedStopName] = normalizedStopName;
+  const normalizedStopName = stop.name.trim().replace(/\s+/g, " ");
+  const normalizedStopNameKey = normalizedStopName.toLowerCase();
+  const stopNameExists = knownStopNames[normalizedStopNameKey];
+  if (!stopNameExists) knownStopNames[normalizedStopNameKey] = stop;
   return {
     stop_id: stop.stopId,
-    stop_name: stopNameExists ? null : stop.name,
+    // Don't render this stop name if another one or similar exists.
+    stop_name: stopNameExists ? null : normalizedStopName,
     stop_lat: stop.lat,
     stop_lon: stop.lon
   };
@@ -43,7 +45,7 @@ function addStop(
   stop: Place,
   stops: TransitiveStop[],
   knownStopIds: Record<string, string>,
-  knownStopNames: Record<string, string>
+  knownStopNames: Record<string, Place>
 ) {
   const { stopId } = stop;
   const stopIdIsBlank =
