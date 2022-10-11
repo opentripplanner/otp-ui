@@ -20,6 +20,27 @@ export default function TransitLeg({
   LegIcon,
   interlineFollows
 }: Props): ReactElement {
+  const stopIdFrom = (
+    <FormattedMessage
+      defaultMessage={defaultMessages["otpUi.TransitLegBody.stopId"]}
+      description="Displays the stop ID"
+      id="otpUi.TransitLegBody.stopId"
+      values={{
+        stopId: leg.from.stopCode || leg.stopId.split(":")[1]
+      }}
+    />
+  );
+  const stopIdTo = (
+    <FormattedMessage
+      defaultMessage={defaultMessages["otpUi.TransitLegBody.stopId"]}
+      description="Displays the stop ID"
+      id="otpUi.TransitLegBody.stopId"
+      values={{
+        stopId: leg.to.stopCode
+      }}
+    />
+  );
+
   const routeDescription = (
     <>
       <strong>{leg.routeShortName}</strong> <S.RouteLongName leg={leg} />
@@ -35,6 +56,7 @@ export default function TransitLeg({
       id="otpUi.PrintableItinerary.TransitLeg.alight"
       values={{
         place: leg.to.name,
+        stopId: stopIdTo,
         strong: strongText,
         time: leg.endTime
       }}
@@ -88,6 +110,7 @@ export default function TransitLeg({
               id="otpUi.PrintableItinerary.TransitLeg.board"
               values={{
                 place: leg.from.name,
+                stopId: stopIdFrom,
                 strong: strongText,
                 time: leg.startTime
               }}
