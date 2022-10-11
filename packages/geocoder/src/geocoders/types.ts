@@ -21,6 +21,7 @@ export type GeocoderConfig = {
   baseUrl?: string;
   boundary?: Boundary;
   focusPoint?: LonLatInput;
+  layers?: string;
   options?: RequestInit;
   sources?: string;
   size?: number;
@@ -41,16 +42,18 @@ export type AutocompleteQuery = {
   boundary?: Boundary;
   focusPoint?: LonLatInput;
   format?: boolean;
+  layers?: string;
   options?: RequestInit;
   size?: number;
+  sources?: string;
   text?: string;
   url?: string;
-  sources?: string;
 };
 
 export type SearchQuery = {
   apiKey?: string;
   boundary?: Boundary;
+  layers?: string;
   focusPoint?: LonLatInput;
   format?: boolean;
   options?: RequestInit;
