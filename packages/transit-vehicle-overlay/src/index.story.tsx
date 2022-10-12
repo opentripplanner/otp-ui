@@ -13,8 +13,19 @@ export const TransitVehicleOverlayExample = () => {
   );
 };
 
+export const TransitVehicleOverlayCustomRouteColorOnly = () => {
+  return (
+    <TransitVehicleOverlay vehicles={[vehicleData.resultSet.vehicle[1]]} />
+  );
+};
+export const TransitVehicleOverlayNoCustomColorExample = () => {
+  return (
+    <TransitVehicleOverlay vehicles={[vehicleData.resultSet.vehicle[2]]} />
+  );
+};
+
 export default {
   title: "TransitVehicleOverlay",
-  component: TransitVehicleOverlayExample,
+  component: TransitVehicleOverlay,
   decorators: [withMap(PORTLAND, 8)]
 };
