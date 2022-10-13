@@ -1,3 +1,4 @@
+import { Anchor } from "mapbox-gl";
 import {
   Company,
   Itinerary,
@@ -68,8 +69,8 @@ function makeFromToPlace(place: Place, id: "from" | "to"): TransitivePlace {
 export function getFromToAnchors(
   transitiveData: TransitiveData
 ): {
-  fromAnchor?: string;
-  toAnchor?: string;
+  fromAnchor?: Anchor;
+  toAnchor?: Anchor;
 } {
   const fromPlace = transitiveData.places.find(pl => pl.placeId === "from");
   const toPlace = transitiveData.places.find(pl => pl.placeId === "to");
