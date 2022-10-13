@@ -43,16 +43,12 @@ function stopToTransitive(
  */
 function addStop(
   stop: Place,
-  stops: TransitiveStop[],
-  knownStopIds: Record<string, string>,
+  stops: Record<string, TransitiveStop>,
   knownStopNames: Record<string, Place>
 ) {
   const { stopId } = stop;
-  const stopIdIsBlank =
-    stopId === null || stopId === undefined || stopId === "";
-  if (stopIdIsBlank || !knownStopIds[stopId]) {
-    stops.push(stopToTransitive(stop, knownStopNames));
-    if (!stopIdIsBlank) knownStopIds[stopId] = stopId;
+  if (!stops[stopId]) {
+    stops[stopId] = stopToTransitive(stop, knownStopNames);
   }
 }
 
@@ -143,7 +139,6 @@ export function itineraryToTransitive(
     stops: []
   };
   const routes = {};
-  const knownStopIds = {};
   const knownStopNames = {};
   let patternId = 0;
 
@@ -155,7 +150,7 @@ export function itineraryToTransitive(
   };
 
   const newPlaces = [];
-  const newStops = [];
+  const newStops = {};
 
   newPlaces.push(makeFromToPlace(itin.legs[0].from, "from"));
   newPlaces.push(makeFromToPlace(itin.legs[itin.legs.length - 1].to, "to"));
@@ -292,7 +287,7 @@ export function itineraryToTransitive(
 
       // Add the "from" end of transit legs to the list of stops.
       const fromStop = makeStop(leg.from, hasLegGeometry && legCoords[0]);
-      addStop(fromStop, newStops, knownStopIds, knownStopNames);
+      addStop(fromStop, newStops, knownStopNames);
       pattern.stops.push({ stop_id: leg.from.stopId });
 
       // add intermediate stops to stops dictionary and pattern object
@@ -305,7 +300,7 @@ export function itineraryToTransitive(
       ) {
         leg.intermediateStops.forEach((stop, i) => {
           // FIXME: line up the coordinates of the stops so they appear on the line.
-          addStop(stop, newStops, knownStopIds, knownStopNames);
+          addStop(stop, newStops, knownStopNames);
           pattern.stops.push({
             stop_id: stop.stopId,
             geometry:
@@ -318,7 +313,7 @@ export function itineraryToTransitive(
       // (Do not label stop names if they repeat.)
       const lastCoord = hasLegGeometry && legCoords[legCoords.length - 1];
       const toStop = makeStop(leg.to, lastCoord);
-      addStop(toStop, newStops, knownStopIds, knownStopNames);
+      addStop(toStop, newStops, knownStopNames);
       pattern.stops.push({
         stop_id: leg.to.stopId,
         geometry:
@@ -368,8 +363,8 @@ export function itineraryToTransitive(
   });
 
   // add the routes and stops to the tdata arrays
-  tdata.routes.push(...Object.values(routes));
-  tdata.stops = newStops;
+  tdata.routes = Object.values(routes);
+  tdata.stops = Object.values(newStops);
 
   // add the journey to the tdata journeys array
   tdata.journeys.push(journey);
