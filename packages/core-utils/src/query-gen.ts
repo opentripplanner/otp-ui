@@ -1,5 +1,6 @@
-import gql from "graphql-tag";
-import { DocumentNode } from "graphql/language/ast";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { Combination } from "@opentripplanner/types";
+import PlanQuery from "./planQuery.graphql";
 
 type LonLat = {
   lon: number;
@@ -9,7 +10,7 @@ type LonLat = {
 type OTPQueryParams = {
   to: LonLat;
   from: LonLat;
-  combinations: Array<unknown>;
+  combinations: Array<Combination>;
   walkReluctance: number;
   bikeReluctance: number;
   walkSpeed: number;
@@ -20,14 +21,20 @@ type OTPQueryParams = {
   minTransferTime: number;
 };
 
-// eslint-disable-next-line import/prefer-default-export, @typescript-eslint/no-unused-vars
-export function generateOtpQueries(params: OTPQueryParams): DocumentNode[] {
-  // const allCombinations = params.combinations.reduce(
-  //   (prev, cur) => [...prev],
-  //   []
-  // );
-  const query = gql`
-    fasdf
-  `;
-  return [query];
+// type SplitModeOptions = {
+//   transitRequiresWalk?: boolean;
+// };
+
+const addAllToSet = (set: Set<unknown>, items: Array<unknown>) => {
+  items.forEach(item => set.add(item));
+  return set;
+};
+
+// eslint-disable-next-line import/prefer-default-export
+export async function runOtp2Query(params: OTPQueryParams): Promise<any> {
+  const allEnabledModes = params.combinations.reduce(
+    (prev, cur) => addAllToSet(prev, cur.modes),
+    new Set()
+  );
+  return {};
 }
