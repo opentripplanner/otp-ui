@@ -65,6 +65,49 @@ function makeFromToPlace(place: Place, id: "from" | "to"): TransitivePlace {
   };
 }
 
+export function getFromToAnchors(
+  transitiveData: TransitiveData
+): {
+  fromAnchor?: string;
+  toAnchor?: string;
+} {
+  const fromPlace = transitiveData.places.find(pl => pl.placeId === "from");
+  const toPlace = transitiveData.places.find(pl => pl.placeId === "to");
+
+  // Compute general direction of travel to better position from/to markers.
+  let direction;
+  if (fromPlace && toPlace) {
+    const directionLat = fromPlace.place_lat < toPlace.place_lat ? "N" : "S";
+    const directionLon = fromPlace.place_lon < toPlace.place_lon ? "E" : "W";
+    direction = `${directionLat}${directionLon}`;
+  }
+  let fromAnchor;
+  let toAnchor;
+  switch (direction) {
+    case "NE":
+      fromAnchor = "top-right";
+      toAnchor = "bottom-left";
+      break;
+    case "NW":
+      fromAnchor = "top-left";
+      toAnchor = "bottom-right";
+      break;
+    case "SE":
+      fromAnchor = "bottom-right";
+      toAnchor = "top-left";
+      break;
+    case "SW":
+      fromAnchor = "bottom-left";
+      toAnchor = "top-right";
+      break;
+    default:
+  }
+  return {
+    fromAnchor,
+    toAnchor
+  };
+}
+
 /**
  * Builds a from/to place id string for the given leg.
  */

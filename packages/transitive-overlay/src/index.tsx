@@ -11,7 +11,7 @@ import {
 } from "@opentripplanner/types";
 import bbox from "@turf/bbox";
 
-import { itineraryToTransitive } from "./util";
+import { getFromToAnchors, itineraryToTransitive } from "./util";
 
 export { itineraryToTransitive };
 
@@ -35,14 +35,21 @@ const defaultTextPaintParams = {
 };
 
 /**
- * Text size and layout that lets maplibre relocate text space permitting.
+ * Common text settings.
  */
-const defaultTextLayoutParams: SymbolLayout = {
+const commonTextLayoutParams: SymbolLayout = {
   "symbol-placement": "point",
   "text-allow-overlap": false,
   "text-field": ["get", "name"],
   "text-radial-offset": 1,
-  "text-size": 15,
+  "text-size": 15
+};
+
+/**
+ * Text size and layout that lets maplibre relocate text space permitting.
+ */
+const defaultTextLayoutParams: SymbolLayout = {
+  ...commonTextLayoutParams,
   "text-variable-anchor": [
     "left",
     "right",
@@ -59,9 +66,10 @@ const defaultTextLayoutParams: SymbolLayout = {
  * Default text + bold default fonts
  */
 const defaultBoldTextLayoutParams = {
-  ...defaultTextLayoutParams,
+  ...commonTextLayoutParams,
   // FIXME: find a better way to set a bold font
-  "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"]
+  "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+  "text-overlap": "never"
 };
 
 const routeFilter = ["==", "type", "route"];
@@ -183,6 +191,8 @@ const TransitiveCanvasOverlay = ({
         }))
     ]
   };
+
+  const { fromAnchor, toAnchor } = getFromToAnchors(transitiveData);
 
   const zoomToGeoJSON = geoJson => {
     const b = bbox(geoJson);
@@ -326,14 +336,20 @@ const TransitiveCanvasOverlay = ({
       <Layer
         filter={["==", "type", "from"]}
         id="from-label"
-        layout={defaultBoldTextLayoutParams}
+        layout={{
+          ...defaultBoldTextLayoutParams,
+          "text-anchor": fromAnchor
+        }}
         paint={defaultTextPaintParams}
         type="symbol"
       />
       <Layer
         filter={["==", "type", "to"]}
         id="to-label"
-        layout={defaultBoldTextLayoutParams}
+        layout={{
+          ...defaultBoldTextLayoutParams,
+          "text-anchor": toAnchor
+        }}
         paint={{
           ...defaultTextPaintParams,
           "text-color": "#910818"
