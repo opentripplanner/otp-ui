@@ -304,6 +304,8 @@ export function itineraryToTransitive(
         (hasIntermediateStopGeometry || !hasLegGeometry)
       ) {
         leg.intermediateStops.forEach((stop, i) => {
+          // FIXME: line up the coordinates of the stops so they appear on the line.
+          addStop(stop, newStops, knownStopIds, knownStopNames);
           pattern.stops.push({
             stop_id: stop.stopId,
             geometry:

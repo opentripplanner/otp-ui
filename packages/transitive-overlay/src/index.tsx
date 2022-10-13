@@ -7,8 +7,7 @@ import {
   TransitiveData,
   TransitiveJourney,
   TransitivePattern,
-  TransitivePlace,
-  TransitiveStop
+  TransitivePlace
 } from "@opentripplanner/types";
 import bbox from "@turf/bbox";
 
@@ -93,16 +92,6 @@ const TransitiveCanvasOverlay = ({
     type: "FeatureCollection",
     // @ts-expect-error TODO: fix the type above for geojson
     features: [
-      ...transitiveData?.stops.flatMap((stop: TransitiveStop) => {
-        return {
-          type: "Feature",
-          properties: { name: stop.stop_name, type: "stop" },
-          geometry: {
-            type: "Point",
-            coordinates: [stop.stop_lon, stop.stop_lat]
-          }
-        };
-      }),
       ...(transitiveData?.places || []).flatMap((place: TransitivePlace) => {
         return {
           type: "Feature",
@@ -164,7 +153,34 @@ const TransitiveCanvasOverlay = ({
                 geometry: polyline.toGeoJSON(geometry)
               };
             })
-      )
+      ),
+      // Extract the first and last stops of each transit segment for display.
+      ...(transitiveData?.journeys || [])
+        .flatMap(journey => journey.segments)
+        .filter(segment => segment.type === "TRANSIT")
+        .map(segment =>
+          transitiveData.patterns.find(
+            p => p.pattern_id === segment.patterns[0]?.pattern_id
+          )
+        )
+        .filter(pattern => !!pattern)
+        .flatMap(pattern =>
+          pattern.stops.filter(
+            (_, index, stopsArr) => index === 0 || index === stopsArr.length - 1
+          )
+        )
+        .map(pStop =>
+          // pStop (from pattern.stops) only has an id (and sometimes line geometry)
+          transitiveData.stops.find(stop => stop.stop_id === pStop.stop_id)
+        )
+        .map(stop => ({
+          type: "Feature",
+          properties: { name: stop.stop_name, type: "stop" },
+          geometry: {
+            type: "Point",
+            coordinates: [stop.stop_lon, stop.stop_lat]
+          }
+        }))
     ]
   };
 
