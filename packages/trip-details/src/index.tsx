@@ -232,6 +232,16 @@ export function TripDetails({
     walkDuration
   } = coreUtils.itinerary.calculatePhysicalActivity(itinerary);
 
+  // Calculate CO2 if it's not provided by the itinerary
+  const co2 =
+    itinerary.co2 ||
+    (co2Config.enabled &&
+      coreUtils.itinerary.calculateEmissions(
+        itinerary,
+        co2Config?.carbonIntensity,
+        co2Config?.units
+      ));
+
   // Parse flex info and generate appropriate strings
   const containsFlex = itinerary.legs.some(coreUtils.itinerary.isFlex);
   const pickupBookingInfo = itinerary.legs
@@ -320,7 +330,7 @@ export function TripDetails({
             }
           />
         )}
-        {itinerary.co2 > 0 && co2Config?.enabled && (
+        {co2 > 0 && co2Config?.enabled && (
           <TripDetail
             icon={<Leaf size={17} />}
             summary={
@@ -332,7 +342,7 @@ export function TripDetails({
                   values={{
                     co2: (
                       <FormattedNumber
-                        value={Math.round(itinerary.co2)}
+                        value={Math.round(co2)}
                         // eslint-disable-next-line react/style-prop-object
                         style="unit"
                         unit={co2Config?.units || "gram"}
