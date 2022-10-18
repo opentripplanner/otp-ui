@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/core-utils",
-  "version": "7.0.1",
+  "version": "7.0.3",
   "description": "Core functionality that is shared among numerous UI components",
   "engines": {
     "node": ">=13"
@@ -29,7 +29,7 @@
     "tsc": "tsc"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^3.0.0",
-    "babel-plugin-graphql-tag": "^3.3.0"
+    "babel-plugin-graphql-tag": "^3.3.0",
+    "@opentripplanner/types": "^4.0.0"
   }
 }

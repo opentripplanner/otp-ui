@@ -47,7 +47,7 @@ export type LayerEntity = {
   lon: number;
 };
 
-type SymbolComponentBaseProps = {
+export type SymbolComponentBaseProps = {
   entity: LayerEntity;
   zoom: number;
 };
@@ -57,7 +57,7 @@ type SymbolComponentBaseProps = {
  * ({ entity: object; zoom: number }) => Element
  * where entity must have an id attribute and contain coordinates information for placement on the map.
  */
-type SymbolComponent = React.ComponentType<SymbolComponentBaseProps>;
+export type SymbolComponent = React.ComponentType<SymbolComponentBaseProps>;
 
 /**
  * Defines which symbol to render based on a zoom level; and optionally by entity type.
@@ -115,6 +115,13 @@ export type TransitVehicle = {
   heading?: number;
 };
 
+export type OTPTransitVehicle = TransitVehicle & {
+  label?: string;
+  nextStopName?: string;
+  speed?: number;
+  stopStatus?: string; // TODO: Make enum
+};
+
 export type VehicleRentalMapOverlaySymbol =
   | {
       dockStrokeColor?: string;
@@ -135,6 +142,7 @@ export type Config = {
   dateTime: {
     timeFormat?: string;
     dateFormat?: string;
+    /** @deprecated */
     longDateFormat?: string;
   };
   homeTimezone: string;
@@ -305,6 +313,7 @@ export type Leg = {
   routeId?: string;
   routeLongName?: string;
   routeShortName?: string;
+  routeTextColor?: string;
   routeType?: number;
   serviceDate?: string;
   startTime: number;
@@ -444,7 +453,10 @@ export type Stop = {
    * The stop code if the stop has one
    */
   code?: string;
+  color?: string;
   dist?: number;
+  geometries?: { geoJson?: GeoJSON.Polygon };
+  id: string;
   lat: number;
   lon: number;
   name: string;
@@ -480,7 +492,10 @@ export type Route = {
 };
 
 export type TransitivePlace = {
-  placeId: string;
+  place_lat?: number;
+  place_lon?: number;
+  place_name?: string;
+  placeId?: string;
   type: string;
 };
 export type TransitiveJourney = {
@@ -510,11 +525,12 @@ export type TransitivePattern = {
 };
 export type TransitiveRoute = {
   agency_id: string;
-  route_id: string;
-  route_short_name: string;
-  route_long_name: string;
-  route_type: number;
   route_color?: string;
+  route_id: string;
+  route_long_name: string;
+  route_short_name: string;
+  route_text_color?: string;
+  route_type: number;
 };
 export type TransitiveStop = {
   stop_id: string;

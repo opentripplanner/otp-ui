@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/vehicle-rental-overlay",
-  "version": "1.4.5",
+  "version": "2.0.1",
   "description": "A map overlay to show vehicle rentals from a specific company",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -11,27 +11,29 @@
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/opentripplanner/otp-ui.git"
   },
   "dependencies": {
-    "@opentripplanner/core-utils": "^7.0.0",
+    "@opentripplanner/base-map": "^3.0.0",
+    "@opentripplanner/core-utils": "^7.0.1",
     "@opentripplanner/from-to-location-picker": "^2.1.2",
-    "@opentripplanner/zoom-based-markers": "^1.2.1",
     "@styled-icons/fa-solid": "^10.34.0",
     "flat": "^5.0.2",
-    "lodash.memoize": "^4.1.2",
-    "prop-types": "^15.7.2"
+    "lodash.memoize": "^4.1.2"
+  },
+  "devDependencies": {
+    "@opentripplanner/types": "^4.0.0"
   },
   "peerDependencies": {
-    "@opentripplanner/base-map": "^2.0.0",
     "react": "^16.14.0",
     "react-dom": "^16.8.6",
     "react-intl": "^5.24.6",
-    "react-leaflet": "^2.6.1",
+    "react-map-gl": "^7.0.15",
     "styled-components": "^5.3.0"
   }
 }

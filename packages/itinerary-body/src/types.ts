@@ -101,6 +101,8 @@ interface ItineraryBodySharedProps {
    * within a transit leg, if this prop is not supplied a default icon is used
    */
   AlertToggleIcon?: FunctionComponent;
+  /** If true, alerts in a trip leg always open in a collapsed state. */
+  alwaysCollapseAlerts: boolean;
   /**
    * Used for additional styling with styled components for example.
    */

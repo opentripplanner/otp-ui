@@ -35,6 +35,11 @@ export const parameters = {
           // Appears to be a story bug
           id: "duplicate-id-aria",
           reviewOnFail: true
+        },
+        {
+          // Not really applicable to stories and causes problems with the WithMap decorator
+          id: "landmark-unique", 
+          enabled: false
         }
       ],
     },

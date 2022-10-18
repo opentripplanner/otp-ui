@@ -5,8 +5,6 @@ import { Bus, Bicycle, Walking } from "@styled-icons/fa-solid";
 import { QueryParamProvider } from "use-query-params";
 import { WindowHistoryAdapter } from "use-query-params/adapters/window";
 
-import * as Core from ".";
-
 import commonModes from "./__mocks__/modes-en";
 import modeOptions from "./__mocks__/mode-options";
 import submodeOptions from "./__mocks__/submode-options";
@@ -16,6 +14,8 @@ import { SettingsSelectorPanel } from "./styled";
 import { Combination } from "./MetroModeSelector/types";
 
 import modeSettingDefinitions from "./modeSettings.yml";
+
+import * as Core from ".";
 
 // Events
 const onChange = action("onChange");
