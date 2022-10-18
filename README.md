@@ -89,3 +89,20 @@ The following table lists the last major version of each package which uses rast
 | `types`                   | 3                                      |
 | `vehicle-rental-overlay`  | 1                                      |
 | `zoom-based-markers`      | 1                                      |
+
+## Internationalization
+
+OTP-UI uses `react-intl` from the [`formatjs`](https://github.com/formatjs/formatjs) library for internationalization.
+Both `react-intl` and `formatjs` take advantage of native internationalization features provided by web browsers.
+
+Language-specific content is located in YML files under the `i18n` folder of packages that have internationalizable content
+(e.g. `en-US.yml` for American English, `fr.yml` for generic French, etc.).
+
+### Contributing translations
+
+OTP-UI now uses [Weblate](https://www.weblate.org) to manage translations!
+Translations from the community are welcome and very much appreciated,
+please see instructions at https://hosted.weblate.org/projects/otp-react-redux/.
+Community input from Weblate will appear as pull requests with changes to files in the applicable `i18n` folders for our review.
+
+If changes to a specific language file is needed but not enabled in Weblate, please open an issue or a pull request with the changes needed.
