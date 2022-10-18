@@ -155,7 +155,7 @@ export interface LocationFieldProps {
   locationType: LocationType;
   /**
    * A list of stopIds of the stops that should be shown as being nearby. These
-   * must be referencable in the stopsIndex prop.
+   * must be referenceable in the stopsIndex prop.
    */
   nearbyStops?: string[];
   /**
