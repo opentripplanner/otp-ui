@@ -13,7 +13,7 @@
   "private": false,
   "dependencies": {
     "@mapbox/polyline": "^1.1.0",
-    "@opentripplanner/geocoder": "^1.3.0",
+    "@opentripplanner/geocoder": "^1.3.1",
     "@styled-icons/foundation": "^10.34.0",
     "@turf/along": "^6.0.1",
     "bowser": "^2.7.0",
@@ -28,6 +28,6 @@
     "tsc": "tsc"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^4.0.0"
+    "@opentripplanner/types": "^4.0.1"
   }
 }
