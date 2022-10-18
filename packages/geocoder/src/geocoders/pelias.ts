@@ -4,7 +4,7 @@ import Geocoder from "./abstract-geocoder";
 import type { AutocompleteQuery, SearchQuery } from "..";
 import type { SingleOrMultiGeocoderResponse } from "./types";
 
-const DEFAULT_LAYERS = "address,venue,street,intersection,stops,stations"
+const DEFAULT_LAYERS = "address,venue,street,intersection"
 
 /**
  * Geocoder implementation for the Pelias geocoder.
