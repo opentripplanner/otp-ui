@@ -44,7 +44,7 @@ export function generateOtp2Query(params: OTPQueryParams): any {
     variables: {
       fromPlace: [from.lon, from.lat].join(","),
       toPlace: [to.lon, to.lat].join(","),
-      modes: [...allEnabledModes]
+      modes: Array.from(allEnabledModes)
     }
   };
 }
