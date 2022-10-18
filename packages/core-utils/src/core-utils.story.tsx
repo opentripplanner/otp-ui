@@ -60,5 +60,6 @@ export const RouteColorTester = (): JSX.Element => {
 };
 // Disable color contrast checking for the uncorrected color pairs
 RouteColorTester.parameters = {
-  a11y: { config: { rules: [{ id: "color-contrast", reviewOnFail: true }] } }
+  a11y: { config: { rules: [{ id: "color-contrast", reviewOnFail: true }] } },
+  storyshots: { disable: true }
 };
