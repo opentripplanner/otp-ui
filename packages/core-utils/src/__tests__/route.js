@@ -193,6 +193,10 @@ describe("util > route", () => {
       expect(getMostReadableTextColor("#00FF00", "#ffffff")).toBe("#000000");
       expect(getMostReadableTextColor("#321b26", "#000000")).toBe("#ffffff");
       expect(getMostReadableTextColor("#321b26", "9e4141")).toBe("#ffffff");
+
+      expect(getMostReadableTextColor("#f00", "#f00")).toBe("#ffffff");
+      expect(getMostReadableTextColor("#fff", "#fff")).toBe("#000000");
+      expect(getMostReadableTextColor("#000", "#000")).toBe("#ffffff");
     });
   });
 });
