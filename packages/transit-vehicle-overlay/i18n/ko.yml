@@ -1,1 +1,5 @@
-{}
+otpUi:
+  TransitVehicleOverlay:
+    durationAgo: '{duration} 전'
+    genericRouteFormat: 선 {route}
+    tooltipRouteLabel: '{routeLabel}:'
