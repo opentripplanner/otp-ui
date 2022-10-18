@@ -1,1 +1,7 @@
-{}
+otpUi:
+  DateTimeSelector:
+    now: 지금 출발하기
+    depart: 출발 시간
+    arrive: 도착 시간
+  queryParameters:
+    bikeSpeed: 자전거 속도
