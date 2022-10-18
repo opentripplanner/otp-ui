@@ -80,22 +80,27 @@ function DefaultMapMarkerIcon({
   location,
   type
 }: UserLocationAndType): ReactElement {
+  const pixels = 20;
   let inner;
   switch (type) {
-    case "to":
+    case "to": {
+      // The fa-solid's "location-dot" icon used here has a width-height ratio of 3/4,
+      // so the desired width for the outline/"stacked" element is 4/3 of the pixels prop.
+      const toPixels = pixels * 1.3;
       inner = (
         <>
-          <S.StackedToIcon size={24} type={type} />
-          <S.ToIcon size={20} type={type} />
+          <S.StackedToIcon size={toPixels} type={type} />
+          <S.ToIcon size={toPixels - 5} type={type} />
         </>
       );
       break;
+    }
     default:
       // Default to the location icon on top of a white background.
       inner = (
         <>
-          <S.StackedCircle size={24} />
-          <S.StackedLocationIcon size={24} type={type} />
+          <S.StackedCircle size={pixels} />
+          <S.StackedLocationIcon size={pixels} type={type} />
         </>
       );
       break;
@@ -134,9 +139,9 @@ const EndpointsOverlay = ({
     {intermediatePlaces.map((place, index) => {
       return (
         <Endpoint
-          key={index}
           clearLocation={clearLocation}
           forgetPlace={forgetPlace}
+          key={index}
           location={place}
           locations={locations}
           MapMarkerIcon={MapMarkerIcon}
