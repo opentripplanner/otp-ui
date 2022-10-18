@@ -85,7 +85,7 @@ function DefaultMapMarkerIcon({
   switch (type) {
     case "to": {
       // The fa-solid's "location-dot" icon used here has a width-height ratio of 3/4,
-      // so the desired width for the outline/"stacked" element is 4/3 of the pixels prop.
+      // so the desired width for the outline/"stacked" element is 4/3 of the "apparent" width.
       const toPixels = pixels * 1.3;
       inner = (
         <>
