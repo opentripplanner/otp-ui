@@ -40,20 +40,12 @@ export const RouteColorTester = (): JSX.Element => {
       {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
       <label>
         Foreground Color
-        <input
-          type="color"
-          value={fg}
-          onChange={e => setFg(e.target.value)}
-        ></input>
+        <input onChange={e => setFg(e.target.value)} type="color" value={fg} />
       </label>
       {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
       <label>
         Background Color
-        <input
-          type="color"
-          value={bg}
-          onChange={e => setBg(e.target.value)}
-        ></input>
+        <input onChange={e => setBg(e.target.value)} type="color" value={bg} />
       </label>
     </>
   );
