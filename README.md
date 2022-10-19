@@ -100,7 +100,17 @@ Language-specific content is located in YML files under the `i18n` folder of pac
 
 ### Contributing translations
 
-OTP-UI now uses [Weblate](https://www.weblate.org) to manage translations!
+OTP-UI now uses [Hosted Weblate](https://www.weblate.org) to manage translations!
+
+<figure>
+  <a href="https://hosted.weblate.org/engage/otp-react-redux/">
+    <img src="https://hosted.weblate.org/widgets/otp-react-redux/-/horizontal-auto.svg" alt="Translation status" />
+  </a>
+  <figcaption>Translation status for
+    <a href="https://hosted.weblate.org/engage/otp-react-redux/">OTP-react-redux and OTP-UI on Hosted Weblate</a>
+  </figcaption>
+</figure>
+
 Translations from the community are welcome and very much appreciated,
 please see instructions at https://hosted.weblate.org/projects/otp-react-redux/.
 Community input from Weblate will appear as pull requests with changes to files in the applicable `i18n` folders for our review.
