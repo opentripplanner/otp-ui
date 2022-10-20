@@ -1,9 +1,9 @@
 import { MarkerWithPopup } from "@opentripplanner/base-map";
+import utils from "@opentripplanner/core-utils";
 import { TransitVehicle } from "@opentripplanner/types";
 import React from "react";
 
 import { getTransitIcon } from "./TransitIcons";
-import getContrastYIQ from "./utils/get-contrast-color";
 import VehicleTooltip from "./VehicleTooltip";
 
 type Props = {
@@ -81,7 +81,11 @@ const TransitVehicleOverlay = ({
             >
               {/* If there is no route type, draw the route name, or a generic bullet */}
               <span
-                style={{ color: getContrastYIQ(vehicle?.routeColor || color) }}
+                style={{
+                  color: utils.route.getMostReadableTextColor(
+                    vehicle?.routeColor || color
+                  )
+                }}
               >
                 {(!vehicle.routeType || alwaysRenderText) &&
                   (vehicle?.routeShortName || "🚌")}
