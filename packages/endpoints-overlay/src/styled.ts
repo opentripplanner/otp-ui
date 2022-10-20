@@ -34,7 +34,7 @@ export const StackedLocationIcon = styled(LocationIcon)`
 
 export const StackedToIcon = styled(StackedLocationIcon)`
   color: #333;
-  margin-left: -2.5px;
+  margin-left: -3px;
   margin-top: -2px;
 `;
 
