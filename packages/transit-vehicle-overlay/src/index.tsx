@@ -2,7 +2,7 @@ import { MarkerWithPopup } from "@opentripplanner/base-map";
 import { TransitVehicle } from "@opentripplanner/types";
 import React from "react";
 
-import { getTransitIcon } from "./TransitIcons";
+import { Caret, Circle, getTransitIcon } from "./TransitIcons";
 import VehicleTooltip from "./VehicleTooltip";
 
 type Props = {
@@ -53,8 +53,10 @@ const TransitVehicleOverlay = ({
             // @ts-expect-error TODO FIX
             tooltipContents={<Tooltip vehicle={vehicle} />}
           >
-            {/* @ts-expect-error We know the icon is set dynamically */}
-            <Icon rotate={vehicle.heading} routeColor={color} />
+            <Circle routeColor={color}>
+              <Icon />
+              <Caret rotate={vehicle.heading} />
+            </Circle>
           </MarkerWithPopup>
         );
       })}
