@@ -179,7 +179,7 @@ export const WalkInterlinedTransitItinerary = () => (
   </>
 );
 WalkInterlinedTransitItinerary.decorators = [
-  withMap([45.511841, -122.679302], 14)
+  withMap([47.703022, -122.328041], 12.5)
 ];
 
 export const WalkTransitTransferItinerary = () => (
@@ -366,7 +366,7 @@ export const FlexItinerary = () => (
     />
   </>
 );
-FlexItinerary.decorators = [withMap([33.749, -84.388], 11)];
+FlexItinerary.decorators = [withMap([40.038487, -105.0529011], 11)];
 
 export const OTP2ScooterItinerary = injectIntl(({ intl }) => (
   <>

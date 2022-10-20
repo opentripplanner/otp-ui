@@ -4,6 +4,8 @@ import Geocoder from "./abstract-geocoder";
 import type { AutocompleteQuery, SearchQuery } from "..";
 import type { SingleOrMultiGeocoderResponse } from "./types";
 
+const DEFAULT_LAYERS = "address,venue,street,intersection"
+
 /**
  * Geocoder implementation for the Pelias geocoder.
  * See https://pelias.io
@@ -23,6 +25,7 @@ export default class PeliasGeocoder extends Geocoder {
       baseUrl,
       boundary,
       focusPoint,
+      layers = DEFAULT_LAYERS,
       options,
       sources
     } = this.geocoderConfig;
@@ -30,6 +33,7 @@ export default class PeliasGeocoder extends Geocoder {
       apiKey,
       boundary,
       focusPoint,
+      layers,
       options,
       // explicitly send over null for sources if provided sources is not truthy
       // in order to avoid default isomorphic-mapzen-search sources form being
@@ -51,6 +55,7 @@ export default class PeliasGeocoder extends Geocoder {
       apiKey,
       baseUrl,
       boundary,
+      layers = DEFAULT_LAYERS,
       focusPoint,
       options,
       sources
@@ -58,6 +63,7 @@ export default class PeliasGeocoder extends Geocoder {
     return {
       apiKey,
       boundary,
+      layers,
       focusPoint,
       options,
       // explicitly send over null for sources if provided sources is not truthy
