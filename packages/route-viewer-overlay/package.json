@@ -20,12 +20,12 @@
   },
   "dependencies": {
     "@mapbox/polyline": "^1.1.0",
-    "@opentripplanner/base-map": "^3.0.0",
-    "@opentripplanner/core-utils": "^7.0.1",
+    "@opentripplanner/base-map": "^3.0.1",
+    "@opentripplanner/core-utils": "^7.0.3",
     "point-in-polygon": "^1.1.0"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^4.0.0",
+    "@opentripplanner/types": "^4.0.1",
     "point-in-polygon": "^1.1.0",
     "prop-types": "^15.7.2"
   },
