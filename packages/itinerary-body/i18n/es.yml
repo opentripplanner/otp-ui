@@ -1,1 +1,64 @@
-{}
+otpUi:
+  AccessLegBody:
+    RentedVehicleSubheader:
+      walkVehicle: Caminar vehículo por la {place}
+      pickupRental: Recoger {modeType, select, BIKESHARE {la bicicleta compartida}
+        other {{company} {modeType, select, CARSHARE {coche} VEHICLERENTAL {e-scooter}
+        BIKEPARK {la bicicleta} other {el veh’culo} } {vehicleName}} }
+      resumeRentalRide: Seguir utilizando el alquiler
+    summaryMode: '{modeId, select, BICYCLE {Bicicleta} BICYCLE_RENT {Compartir Bicicleta}
+      CAR {{isCarHail, select, true {Paseo} other {Conducir}}} MICROMOBILITY {Paseo}
+      WALK {Caminar} other {{modeId}} }'
+    TncLeg:
+      bookRide: Reservar un viaje
+      bookRideLater: Espere hasta las {timeMillis, time, short} para reservar
+      estimatedCost: 'Coste estimado: {minFare} - {maxFare}'
+      estimatedTravelTime: 'Tiempo estimado de viaje: {duration} (no tiene en cuenta
+        el tr‡fico)'
+      waitForPickup: Espere{minutes, select, undefined {} other { {minutes} minutos}
+        } para que lo recoja un {company}
+    LegDiagramPreview:
+      elevationChart: Gráfico de elevación
+      noElevationData: No hay datos de elevación disponibles.
+      toggleElevationChart: Activar carta de elevación
+    streetOrUnnamedRoad: '{streetName, select, road {Calle sin Nombre} path {Sendero
+      sin Nombre} other {{streetName}} }'
+    summary: '{mode}{distance, select, 0 {} other { - {distance}} }{place, select,
+      undefined {} other { a {place}}}'
+    mapillaryTooltip: Mostrar im‡genes de la calle en esta ubicación
+    step: '{relativeDirection, select, CIRCLE_CLOCKWISE {Siga el círculo en el sentido
+      de las agujas del reloj} CIRCLE_COUNTERCLOCKWISE {Siga el círculo en sentido
+      contrario a las agujas del reloj} CONTINUE {Continuar} DEPART {Dirígete {absoluteDirection,
+      select, EAST {al este} NORTH {al norte} NORTHEAST {al noreste} NORTHWEST {al
+      noroeste} SOUTH {al sur} SOUTHEAST {al sureste} SOUTHWEST {al suroeste} WEST
+      {al oeste} other {{absoluteDirection}} }} ELEVATOR {Toma el ascensor} HARD_LEFT
+      {la izquierda} HARD_RIGHT {a la derecha} LEFT {la izquierda} RIGHT {a la derecha}
+      SLIGHTLY_LEFT {ligeramente a la izquierda} SLIGHTLY_RIGHT {ligeramente a la
+      derecha} UTURN_LEFT {U a la izquierda} UTURN_RIGHT {U a la derecha} other {{relativeDirection}}
+      } {relativeDirection, select, ELEVATOR {hasta} other {en}} {street}'
+    vehicleTitle: '{company} {modeType, select, BIKESHARE {Bicicleta} CARSHARE {Coche}
+      VEHICLERENTAL {Patinete eléctrico} BIKEPARK {Bicicleta} other {Vehículo} }'
+  ItineraryBody:
+    stayOnBoard: Permanecer a bordo a la <strong>{placeName}</strong>
+    travelBy: Viajar {modeId, select, BICYCLE {en bicicleta} CAR {en coche} MICROMOBILITY
+      {en e-scooter} WALK {a pie} other {{modeId}} }
+    common:
+      durationShort: '{hours, plural, =0 {} other {# hr }}{minutes} min'
+    viewOnMap: Ver en el mapa
+  TransitLegBody:
+    stopId: ID de Parada {stopId}
+    stopIdBasic: ID {stopId}
+    stopViewer: Visor de paradas
+    tripViewer: Visor de viajes
+    AlertsBody:
+      effectiveDate: En vigor desde {includeTime, select, true {{dateTime, time, short},
+        } other {} }{dayDiff, plural, =-1 {Ayer} =0 {Hoy} =1 {Ma–ana} other {{dateTime,
+        date, long}} }
+    agencyLogo: Logo de {agencyName}
+    alertsHeader: '{alertCount, plural, =1 {# alerta} other {# alertas} }'
+    fare: 'Tarifa: {fare}'
+    operatedBy: Servicio operado por {agencyLink}
+    rideDurationAndStops: 'Paseo {duration}{numStops, plural, =1 {} other { / # paradas}}'
+    routeDescription: '{routeName}{headsign, select, undefined {} other {<toPrefix>
+      a </toPrefix>{headsign}}}'
+    typicalWait: 'La típica espera: {waitTime}'
