@@ -28,6 +28,7 @@
       "routeShortName": "FH",
       "routeColor": "#FFFF00",
       "label": "402",
+      "routeType": "TRAM",
       "lat": 47.6017303,
       "lon": -122.3171387,
       "stopRelationship": {
@@ -51,6 +52,7 @@
       "routeShortName": "FH",
       "routeColor": "#FFFF00",
       "label": "405",
+      "routeType": "BUS",
       "lat": 47.5993271,
       "lon": -122.3333588,
       "stopRelationship": {
