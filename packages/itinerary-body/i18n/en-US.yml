@@ -64,11 +64,6 @@ otpUi:
       }
       {relativeDirection, select, ELEVATOR {to} other {on}}
       {street}"
-    streetOrUnnamedRoad: "{streetName, select,
-      road {Unnamed Road}
-      path {Unnamed Path}
-      other {{streetName}}
-      }"
     summary: "{mode}{distance, select,
       0 {}
       other { {distance}}
@@ -92,6 +87,8 @@ otpUi:
         undefined {}
         other { {minutes} minutes}
         } for {company} pickup"
+    unnamedPath: Unnamed Path
+    unnamedRoad: Unnamed Road
     vehicleTitle: "{company} {modeType, select,
       BIKESHARE {Bike}
       CARSHARE {Car}

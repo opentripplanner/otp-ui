@@ -9,6 +9,29 @@ interface Props extends HTMLAttributes<HTMLSpanElement> {
   step: Step;
 }
 
+function getStreetNameContent(streetName: string) {
+  switch (streetName) {
+    case "road":
+      return (
+        <FormattedMessage
+          defaultMessage={defaultMessages["otpUi.AccessLegBody.unnamedRoad"]}
+          description="Text for an unnamed road"
+          id="otpUi.AccessLegBody.unnamedRoad"
+        />
+      );
+    case "path":
+      return (
+        <FormattedMessage
+          defaultMessage={defaultMessages["otpUi.AccessLegBody.unnamedPath"]}
+          description="Text for an unnamed path"
+          id="otpUi.AccessLegBody.unnamedPath"
+        />
+      );
+    default:
+      return streetName;
+  }
+}
+
 /**
  * Renders a step of an access leg.
  */
@@ -31,14 +54,7 @@ export default function AccessLegStep({
           relativeDirection,
           street: (
             <S.StepStreetName>
-              <FormattedMessage
-                defaultMessage={
-                  defaultMessages["otpUi.AccessLegBody.streetOrUnnamedRoad"]
-                }
-                description="Displays a street name or unnamed road"
-                id="otpUi.AccessLegBody.streetOrUnnamedRoad"
-                values={{ streetName }}
-              />
+              {getStreetNameContent(streetName)}
             </S.StepStreetName>
           )
         }}
