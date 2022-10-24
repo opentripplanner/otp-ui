@@ -64,6 +64,7 @@ export function useModeState(
 ): {
   setModeSettingValue: (setting: QueryParamChangeEvent) => void;
   combinations: Combination[];
+  enabledCombinations: Combination[];
   enabledCombinationKeys: string[];
   toggleCombination: (key: string) => void;
 } {
@@ -115,9 +116,14 @@ export function useModeState(
     getSettingsForCombination(modeSettingDefinitions, modeSettingsValues)
   );
 
+  const enabledCombinations = combosWithSettings.filter(c =>
+    enabledCombinationKeys.includes(c.key)
+  );
+
   return {
     setModeSettingValue,
     combinations: combosWithSettings,
+    enabledCombinations,
     enabledCombinationKeys,
     toggleCombination
   };
