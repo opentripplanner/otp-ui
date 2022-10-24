@@ -9,6 +9,15 @@
 
 otpUi:
   AccessLegBody:
+    compass:
+      east: est
+      north: nord
+      northeast: nord-est
+      northwest: nord-ouest
+      south: sud
+      southeast: sud-est
+      southwest: sud-ouest
+      west: ouest
     LegDiagramPreview:
       elevationChart: Dénivelés
       noElevationData: Aucune information sur les dénivelés
@@ -36,35 +45,22 @@ otpUi:
       #   other {le véhicule}
       #   } {company} {vehicleName}"
       walkVehicle: Emmenez à pied le véhicule le long de {place}
+    step:
+      circleClockwise: Prenez le rond-point par la gauche
+      circleCounterClockwise: Prenez le rond-point par la droite
+      continue: Continuez
+      hardLeft: Virage à gauche
+      hardRight: Virage à droite
+      left: Tournez à gauche
+      right: Tournez à droite
+      slightlyLeft: Tournez légèrement à gauche
+      slightlyRight: Tournez légèrement à droite
+      uTurnLeft: Demi-tour par la gauche
+      uTurnRight: Demi-tour par la droite
+    stepDepart: Prenez la direction {compassDirection} sur {street}
     # TODO: elevator destinations (e.g. "3rd floor") may need to be localized.
-    step: "{relativeDirection, select,
-      CIRCLE_CLOCKWISE {Prenez le rond-point par la droite}
-      CIRCLE_COUNTERCLOCKWISE {Prenez le rond-point par la gauche}
-      CONTINUE {Continuez}
-      DEPART {Dirigez-vous vers {absoluteDirection, select,
-      EAST {l'est}
-      NORTH {le nord}
-      NORTHEAST {le nord-est}
-      NORTHWEST {le nord-ouest}
-      SOUTH {le sud}
-      SOUTHEAST {le sud-est}
-      SOUTHWEST {le sud-ouest}
-      WEST {l'ouest}
-      other {{absoluteDirection}}
-      }}
-      ELEVATOR {Prenez l'ascenseur}
-      HARD_LEFT {Virage à gauche}
-      HARD_RIGHT {Virage à droite}
-      LEFT {Tournez à gauche}
-      RIGHT {Tournez à droite}
-      SLIGHTLY_LEFT {Tournez légèrement à gauche}
-      SLIGHTLY_RIGHT {Tournez légèrement à droite}
-      UTURN_LEFT {Demi-tour à gauche}
-      UTURN_RIGHT {Demi-tour à droite}
-      other {{relativeDirection}}
-      }
-      {relativeDirection, select, ELEVATOR {jusqu'au} other {sur}}
-      {street}"
+    stepElevator: Prenez l'ascenseur jusqu'à {street}
+    stepGeneric: "{step} sur {street}"
     # In the summary below, only include access mode actions (ride, walk...).
     # Note de traduction: nous utilisons le format
     #   "Marche/velo/etc - 2,5 miles vers 10th Street" qui peut paraître un peu "robotique".

@@ -9,6 +9,15 @@
 
 otpUi:
   AccessLegBody:
+    compass:
+      east: east
+      north: north
+      northeast: northeast
+      northwest: northwest
+      south: south
+      southeast: southeast
+      southwest: southwest
+      west: west
     LegDiagramPreview:
       elevationChart: Elevation chart
       noElevationData: No elevation data available.
@@ -36,34 +45,21 @@ otpUi:
       #   other {vehicle}
       #   } {vehicleName}"
       walkVehicle: Walk vehicle along {place}
-    step: "{relativeDirection, select,
-      CIRCLE_CLOCKWISE {Follow circle clockwise}
-      CIRCLE_COUNTERCLOCKWISE {Follow circle counterclockwise}
-      CONTINUE {Continue}
-      DEPART {Head {absoluteDirection, select,
-      EAST {east}
-      NORTH {north}
-      NORTHEAST {northeast}
-      NORTHWEST {northwest}
-      SOUTH {south}
-      SOUTHEAST {southeast}
-      SOUTHWEST {southwest}
-      WEST {west}
-      other {{absoluteDirection}}
-      }}
-      ELEVATOR {Take elevator}
-      HARD_LEFT {Hard left}
-      HARD_RIGHT {Hard right}
-      LEFT {Left}
-      RIGHT {Right}
-      SLIGHTLY_LEFT {Slight left}
-      SLIGHTLY_RIGHT {Slight right}
-      UTURN_LEFT {Left U-turn}
-      UTURN_RIGHT {Right U-turn}
-      other {{relativeDirection}}
-      }
-      {relativeDirection, select, ELEVATOR {to} other {on}}
-      {street}"
+    step:
+      circleClockwise: Follow circle clockwise
+      circleCounterClockwise: Follow circle counterclockwise
+      continue: Continue
+      hardLeft: Hard left
+      hardRight: Hard right
+      left: Left
+      right: Right
+      slightlyLeft: Slight left
+      slightlyRight: Slight right
+      uTurnLeft: Left U-turn
+      uTurnRight: Right U-turn
+    stepDepart: Head {compassDirection} on {street}
+    stepElevator: Take elevator to {street}
+    stepGeneric: "{step} on {street}"
     summary: "{mode}{distance, select,
       0 {}
       other { {distance}}
