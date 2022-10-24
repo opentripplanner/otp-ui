@@ -9,15 +9,6 @@
 
 otpUi:
   AccessLegBody:
-    compass:
-      east: east
-      north: north
-      northeast: northeast
-      northwest: northwest
-      south: south
-      southeast: southeast
-      southwest: southwest
-      west: west
     LegDiagramPreview:
       elevationChart: Elevation chart
       noElevationData: No elevation data available.
@@ -57,7 +48,16 @@ otpUi:
       slightlyRight: Slight right
       uTurnLeft: Left U-turn
       uTurnRight: Right U-turn
-    stepDepart: Head {compassDirection} on {street}
+    stepDepart: Head {heading} on {street}
+    stepHeading:
+      east: east
+      north: north
+      northeast: northeast
+      northwest: northwest
+      south: south
+      southeast: southeast
+      southwest: southwest
+      west: west
     stepElevator: Take elevator to {street}
     stepGeneric: "{step} on {street}"
     summary: "{mode}{distance, select,

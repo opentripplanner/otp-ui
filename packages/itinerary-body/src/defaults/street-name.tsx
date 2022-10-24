@@ -28,6 +28,6 @@ export default function StreetName({ rawStreetName }: Props): ReactElement {
         />
       );
     default:
-      return rawStreetName;
+      return <>{rawStreetName}</>;
   }
 }

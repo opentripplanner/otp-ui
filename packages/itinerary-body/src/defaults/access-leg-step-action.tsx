@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
-enum Action {
+export enum Action {
   circleClockwise = "CIRCLE_CLOCKWISE",
   circleCounterClockwise = "CIRCLE_COUNTERCLOCKWISE",
   continue = "CONTINUE",

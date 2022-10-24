@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
-enum Direction {
+export enum Heading {
   east = "EAST",
   north = "NORTH",
   northeast = "NORTHEAST",
@@ -13,81 +13,81 @@ enum Direction {
 }
 
 interface Props {
-  direction: Direction;
+  heading: Heading;
 }
 
 /**
  * Displays text for a compass direction.
  */
-export default function CompassDirection({ direction }: Props): ReactElement {
+export default function AccessLegStepHeading({ heading }: Props): ReactElement {
   // Note that we don't make use of dynamic message ids,
   // so that formatjs CLI tools can pick the strings up for analysis.
-  switch (direction) {
-    case Direction.east:
+  switch (heading) {
+    case Heading.east:
       return (
         <FormattedMessage
-          defaultMessage={direction}
+          defaultMessage={heading}
           description="Compass direction east"
-          id="otpUi.AccessLegBody.compass.east"
+          id="otpUi.AccessLegBody.stepHeading.east"
         />
       );
-    case Direction.north:
+    case Heading.north:
       return (
         <FormattedMessage
-          defaultMessage={direction}
+          defaultMessage={heading}
           description="Compass direction north"
-          id="otpUi.AccessLegBody.compass.north"
+          id="otpUi.AccessLegBody.stepHeading.north"
         />
       );
-    case Direction.northeast:
+    case Heading.northeast:
       return (
         <FormattedMessage
-          defaultMessage={direction}
+          defaultMessage={heading}
           description="Compass direction northeast"
-          id="otpUi.AccessLegBody.compass.northeast"
+          id="otpUi.AccessLegBody.stepHeading.northeast"
         />
       );
-    case Direction.northwest:
+    case Heading.northwest:
       return (
         <FormattedMessage
-          defaultMessage={direction}
+          defaultMessage={heading}
           description="Compass direction northwest"
-          id="otpUi.AccessLegBody.compass.northwest"
+          id="otpUi.AccessLegBody.stepHeading.northwest"
         />
       );
-    case Direction.south:
+    case Heading.south:
       return (
         <FormattedMessage
-          defaultMessage={direction}
+          defaultMessage={heading}
           description="Compass direction south"
-          id="otpUi.AccessLegBody.compass.south"
+          id="otpUi.AccessLegBody.stepHeading.south"
         />
       );
-    case Direction.southeast:
+    case Heading.southeast:
       return (
         <FormattedMessage
-          defaultMessage={direction}
+          defaultMessage={heading}
           description="Compass direction southeast"
-          id="otpUi.AccessLegBody.compass.southeast"
+          id="otpUi.AccessLegBody.stepHeading.southeast"
         />
       );
-    case Direction.southwest:
+    case Heading.southwest:
       return (
         <FormattedMessage
-          defaultMessage={direction}
+          defaultMessage={heading}
           description="Compass direction southwest"
-          id="otpUi.AccessLegBody.compass.southwest"
+          id="otpUi.AccessLegBody.stepHeading.southwest"
         />
       );
-    case Direction.west:
+    case Heading.west:
       return (
         <FormattedMessage
-          defaultMessage={direction}
+          defaultMessage={heading}
           description="Compass direction west"
-          id="otpUi.AccessLegBody.compass.west"
+          id="otpUi.AccessLegBody.stepHeading.west"
         />
       );
     default:
-      throw new Error(`Invalid direction: ${direction}`);
+      throw new Error(`Invalid heading: ${heading}`);
   }
 }

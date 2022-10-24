@@ -4,8 +4,8 @@ import { FormattedMessage } from "react-intl";
 import { defaultMessages } from "../util";
 
 import * as S from "../styled";
-import AccessLegStepAction from "./access-leg-step-action";
-import CompassDirection from "./compass-direction";
+import AccessLegStepAction, { Action } from "./access-leg-step-action";
+import AccessLegStepHeading, { Heading } from "./access-leg-step-heading";
 import StreetName from "./street-name";
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {
@@ -38,25 +38,27 @@ export default function AccessLegStep({
       />
     );
   } else if (relativeDirection === "DEPART") {
+    const heading = absoluteDirection as Heading;
     stepContent = (
       <FormattedMessage
         defaultMessage={defaultMessages["otpUi.AccessLegBody.stepDepart"]}
         description="Describes the initial action to take for an itinerary"
         id="otpUi.AccessLegBody.stepDepart"
         values={{
-          compassDirection: <CompassDirection direction={absoluteDirection} />,
+          heading: <AccessLegStepHeading heading={heading} />,
           street
         }}
       />
     );
   } else {
+    const action = relativeDirection as Action;
     stepContent = (
       <FormattedMessage
         defaultMessage={defaultMessages["otpUi.AccessLegBody.stepGeneric"]}
         description="Describes an action to progress through an itinerary"
         id="otpUi.AccessLegBody.stepGeneric"
         values={{
-          step: <AccessLegStepAction action={relativeDirection} />,
+          step: <AccessLegStepAction action={action} />,
           street
         }}
       />

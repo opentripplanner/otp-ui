@@ -9,15 +9,6 @@
 
 otpUi:
   AccessLegBody:
-    compass:
-      east: est
-      north: nord
-      northeast: nord-est
-      northwest: nord-ouest
-      south: sud
-      southeast: sud-est
-      southwest: sud-ouest
-      west: ouest
     LegDiagramPreview:
       elevationChart: Dénivelés
       noElevationData: Aucune information sur les dénivelés
@@ -57,7 +48,16 @@ otpUi:
       slightlyRight: Tournez légèrement à droite
       uTurnLeft: Demi-tour par la gauche
       uTurnRight: Demi-tour par la droite
-    stepDepart: Prenez la direction {compassDirection} sur {street}
+    stepDepart: Dirigez-vous vers {heading} sur {street}
+    stepHeading:
+      east: l'est
+      north: le nord
+      northeast: le nord-est
+      northwest: le nord-ouest
+      south: le sud
+      southeast: le sud-est
+      southwest: le sud-ouest
+      west: l'ouest
     # TODO: elevator destinations (e.g. "3rd floor") may need to be localized.
     stepElevator: Prenez l'ascenseur jusqu'à {street}
     stepGeneric: "{step} sur {street}"
