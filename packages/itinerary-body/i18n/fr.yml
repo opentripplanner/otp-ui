@@ -86,10 +86,8 @@ otpUi:
       bookRideLater: Attendez jusqu'à {timeMillis, time, short} avant de réserver.
       estimatedCost: "Coût estimé : {minFare} - {maxFare}"
       estimatedTravelTime: "Temps de trajet estimé : {duration} (ne tient pas compte de la circulation)"
-      waitForPickup: "Attendez{minutes, select,
-        undefined {}
-        other { {minutes} minutes pour}
-        } votre chauffeur {company}"
+      waitForPickup: Attendez votre chauffeur {company}
+      waitMinutesForPickup: "Attendez votre chauffeur {company} {minutes} minutes"
     unnamedPath: Chemin sans nom
     unnamedRoad: Route sans nom
     vehicleTitle: "{modeType, select,

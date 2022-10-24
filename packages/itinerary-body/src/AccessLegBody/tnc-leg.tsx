@@ -43,24 +43,34 @@ export default function TNCLeg({
     LYFT: `https://lyft.com/ride?id=lyft&partner=${LYFT_CLIENT_ID}&pickup[latitude]=${leg.from.lat}&pickup[longitude]=${leg.from.lon}&destination[latitude]=${leg.to.lat}&destination[longitude]=${leg.to.lon}`
   };
   const { tncData } = leg;
-
   if (!tncData || !tncData.estimatedArrival) return null;
+
+  const company = tncData.displayName;
   return (
     <div>
       <S.PlaceSubheader>
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.AccessLegBody.TncLeg.waitForPickup"]
-          }
-          description="Action text for waiting for a ride-hail vehicle."
-          id="otpUi.AccessLegBody.TncLeg.waitForPickup"
-          values={{
-            company: tncData.displayName,
-            minutes: followsTransit
-              ? undefined
-              : Math.round(tncData.estimatedArrival / 60)
-          }}
-        />
+        {followsTransit ? (
+          <FormattedMessage
+            defaultMessage={
+              defaultMessages["otpUi.AccessLegBody.TncLeg.waitForPickup"]
+            }
+            description="Action text for waiting for a ride-hail vehicle."
+            id="otpUi.AccessLegBody.TncLeg.waitForPickup"
+            values={{ company }}
+          />
+        ) : (
+          <FormattedMessage
+            defaultMessage={
+              defaultMessages["otpUi.AccessLegBody.TncLeg.waitMinutesForPickup"]
+            }
+            description="Action text for waiting some time for a ride-hail vehicle."
+            id="otpUi.AccessLegBody.TncLeg.waitMinutesForPickup"
+            values={{
+              company,
+              minutes: Math.round(tncData.estimatedArrival / 60)
+            }}
+          />
+        )}
       </S.PlaceSubheader>
 
       <S.LegBody>
