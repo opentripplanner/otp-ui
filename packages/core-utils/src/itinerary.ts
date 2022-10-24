@@ -221,7 +221,7 @@ export function getItineraryBounds(itinerary: Itinerary): LatLngArray[] {
 /**
  * Return a coords object that encloses the given leg's geometry.
  */
-export function getLegBounds(leg: Leg): number[] {
+export function getLegBounds(leg: Leg): number[][] {
   const coords = polyline
     .toGeoJSON(leg.legGeometry.points)
     .coordinates.map(c => [c[1], c[0]]);

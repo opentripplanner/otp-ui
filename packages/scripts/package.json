@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/scripts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Utility scripts for the OTP-UI library",
   "main": "lib/index.js",
   "module": "esm/index.js",
