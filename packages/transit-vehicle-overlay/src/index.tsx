@@ -59,7 +59,7 @@ const TransitVehicleOverlay = ({
   return (
     <>
       {validVehicles.map(vehicle => {
-        const Icon = getTransitIcon(vehicle.routeType, alwaysRenderText);
+        const Icon = getTransitIcon(vehicle.routeType);
 
         return (
           <MarkerWithPopup
@@ -73,8 +73,8 @@ const TransitVehicleOverlay = ({
             }
           >
             <Circle routeColor={color}>
-              {/* @ts-expect-error We know the icon is set dynamically */}
               <Icon
+                // @ts-expect-error Prop needs to be fixed
                 disableHoverEffects={disableHoverEffects}
                 // Don't rotate if all the icons are text! It looks weird
                 rotate={!alwaysRenderText && vehicle.heading}
