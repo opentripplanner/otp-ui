@@ -76,7 +76,7 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
 
         current?.fitBounds(bounds, {
           duration: 500,
-          padding: 200
+          padding: window.innerWidth > 500 ? 200 : undefined
         });
 
         if (props.mapCenterCallback) {
