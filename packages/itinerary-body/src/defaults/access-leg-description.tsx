@@ -29,40 +29,52 @@ export default function AccessLegDescription({
     vertexType:
       leg.to.vertexType === "BIKESHARE" ? "VEHICLE" : leg.to.vertexType
   };
+  const modeContent = (
+    <S.LegDescriptionMode>
+      <FormattedMessage
+        defaultMessage="{modeId}"
+        description="The mode action for an access leg"
+        id="otpUi.AccessLegBody.summaryMode"
+        values={{
+          isCarHail: leg.hailedCar,
+          modeId: leg.mode
+        }}
+      />
+    </S.LegDescriptionMode>
+  );
+  const placeContent = (
+    <S.LegDescriptionPlace>
+      {getPlaceName(toPlace, config.companies, intl)}
+    </S.LegDescriptionPlace>
+  );
+
   return (
     // Return an HTML element which is passed a className (and style props)
     // for styled-components support.
     <span className={className} style={style}>
-      <FormattedMessage
-        defaultMessage="{mode} {distance} to {place}"
-        description="Summarizes an access leg"
-        id="otpUi.AccessLegBody.summary"
-        values={{
-          // TODO: Implement metric vs imperial (up until now it's just imperial).
-          distance:
-            leg.distance > 0
-              ? humanizeDistanceString(leg.distance, false, intl)
-              : 0,
-          mode: (
-            <S.LegDescriptionMode>
-              <FormattedMessage
-                defaultMessage="{modeId}"
-                description="The mode action for an access leg"
-                id="otpUi.AccessLegBody.summaryMode"
-                values={{
-                  isCarHail: leg.hailedCar,
-                  modeId: leg.mode
-                }}
-              />
-            </S.LegDescriptionMode>
-          ),
-          place: (
-            <S.LegDescriptionPlace>
-              {getPlaceName(toPlace, config.companies, intl)}
-            </S.LegDescriptionPlace>
-          )
-        }}
-      />
+      {leg.distance > 0 ? (
+        <FormattedMessage
+          defaultMessage="{mode} {distance} to {place}"
+          description="Summarizes an access leg, including distance"
+          id="otpUi.AccessLegBody.summaryAndDistance"
+          values={{
+            // TODO: Implement metric vs imperial (up until now it's just imperial).
+            distance: humanizeDistanceString(leg.distance, false, intl),
+            mode: modeContent,
+            place: placeContent
+          }}
+        />
+      ) : (
+        <FormattedMessage
+          defaultMessage="{mode} to {place}"
+          description="Summarizes an access leg"
+          id="otpUi.AccessLegBody.summary"
+          values={{
+            mode: modeContent,
+            place: placeContent
+          }}
+        />
+      )}
     </span>
   );
 }

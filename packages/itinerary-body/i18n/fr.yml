@@ -67,10 +67,8 @@ otpUi:
     # Une formulation du type "2,5 miles à pied/en voiture/etc" est plus couramment "parlée"
     # mais donne lieu à des expressions bizarres comme "230 pieds à pied vers 10th Street"
     # à cause de l'utilisation d'unités impériales.
-    summary: "{mode}{distance, select,
-      0 {}
-      other { - {distance}}
-      }{place, select, undefined {} other { vers {place}}}"
+    summary: "{mode} vers {place}"
+    summaryAndDistance: "{mode} - {distance} vers {place}"
     # The summary modes below only include access mode actions (ride, walk...).
     summaryMode: "{modeId, select,
       BICYCLE {Vélo}

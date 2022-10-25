@@ -60,10 +60,8 @@ otpUi:
       west: west
     stepElevator: Take elevator to {street}
     stepGeneric: "{step} on {street}"
-    summary: "{mode}{distance, select,
-      0 {}
-      other { {distance}}
-      }{place, select, undefined {} other { to {place}}}"
+    summary: "{mode} to {place}"
+    summaryAndDistance: "{mode} {distance} to {place}"
     # The summary modes below only include access mode actions (ride, walk...).
     summaryMode: "{modeId, select,
       BICYCLE {Bicycle}
