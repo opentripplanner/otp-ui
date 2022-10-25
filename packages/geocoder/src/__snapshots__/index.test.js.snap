@@ -672,7 +672,7 @@ Object {
   },
   "isomorphicMapzenSearchQuery": Object {
     "api_key": "dummy-mapzen-key",
-    "layers": "address,venue,street,intersection,stops,stations",
+    "layers": "address,venue,street,intersection",
     "text": "Mill Ends",
   },
   "type": "FeatureCollection",

@@ -28,6 +28,7 @@
       "routeShortName": "FH",
       "routeColor": "#FFFF00",
       "label": "402",
+      "routeType": "TRAM",
       "lat": 47.6017303,
       "lon": -122.3171387,
       "stopRelationship": {
@@ -38,7 +39,7 @@
         }
       },
       "speed": null,
-      "heading": 270,
+      "heading": 258,
       "lastUpdated": 1663680670,
       "trip": {
         "pattern": {
@@ -74,6 +75,7 @@
       "routeShortName": "FH",
       "routeColor": "#FFFF00",
       "label": "405",
+      "routeType": "BUS",
       "lat": 47.5993271,
       "lon": -122.3333588,
       "stopRelationship": {
@@ -84,7 +86,7 @@
         }
       },
       "speed": null,
-      "heading": 225,
+      "heading": 278,
       "lastUpdated": 1663680676,
       "trip": {
         "pattern": {
