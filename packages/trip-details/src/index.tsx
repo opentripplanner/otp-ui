@@ -119,6 +119,7 @@ export function TripDetails({
   CaloriesDetails = DefaultCaloriesDetails,
   className = "",
   defaultFareKey = "regular",
+  displayCalories = true,
   DepartureDetails = null,
   FareDetails = null,
   fareDetailsLayout,
@@ -299,7 +300,7 @@ export function TripDetails({
             summary={fare}
           />
         )}
-        {caloriesBurned > 0 && (
+        {displayCalories && caloriesBurned > 0 && (
           <TripDetail
             icon={<Heartbeat size={17} />}
             summary={
