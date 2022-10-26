@@ -14,11 +14,13 @@ const Title = styled.span`
   }
 `;
 
-type Props = {
+export type VehicleTooltipProps = {
   vehicle: TransitVehicle;
 };
 
-export default function VehicleTooltip({ vehicle }: Props): JSX.Element {
+export default function VehicleTooltip({
+  vehicle
+}: VehicleTooltipProps): JSX.Element {
   const { routeShortName, routeType, seconds } = vehicle;
 
   let name: JSX.Element = <>{routeShortName}</>;

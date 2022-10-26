@@ -1,12 +1,12 @@
 import { MarkerWithPopup } from "@opentripplanner/base-map";
 import { TransitVehicle } from "@opentripplanner/types";
-import React from "react";
+import React, { FC, ReactNode } from "react";
 import CircleWithCaret from "./CircleWithCaret";
-import { RotatingCircle } from "./TransitIcons";
-import DefaultRouteIcon from "./RouteIcon";
+import { IconContainerProps, RotatingCircle } from "./TransitIcons";
+import DefaultVehicleIcon, { VehicleIconProps } from "./VehicleIcon";
 import RouteNumberIcon from "./RouteNumberIcon";
 
-import VehicleTooltip from "./VehicleTooltip";
+import VehicleTooltip, { VehicleTooltipProps } from "./VehicleTooltip";
 
 type Props = {
   /**
@@ -27,9 +27,39 @@ type Props = {
   color?: string;
 
   /**
+   * Default mode to assume if not provided in the vehicle data. Defaults to "bus".
+   */
+  defaultMode?: string;
+
+  /**
+   * Containing component in which route icons/numbers are rendered.
+   */
+  IconContainer?: FC<IconContainerProps>;
+
+  /**
+   * Sets the padding between component and icon in IconContainer instances that support it.
+   */
+  iconPadding?: number;
+
+  /**
+   * Sets the size in pixels of the icon in IconContainer instances that support it.
+   */
+  iconPixels?: number;
+
+  /**
+   * Component that renders the icons given transit modes.
+   */
+  ModeIcon?: FC;
+
+  /**
    * A tooltip JSX to render
    */
-  TooltipSlot?: JSX.Element;
+  TooltipSlot?: FC<VehicleTooltipProps>;
+
+  /**
+   * Component that renders the icons for each transit vehicle.
+   */
+  VehicleIcon?: FC<VehicleIconProps>;
 
   /**
    * The list of vehicles to create stop markers for.
@@ -49,10 +79,10 @@ const TransitVehicleOverlay = ({
   iconPadding = 5,
   iconPixels = 15,
   ModeIcon,
-  RouteIcon = DefaultRouteIcon,
   TooltipSlot = VehicleTooltip,
+  VehicleIcon = DefaultVehicleIcon,
   vehicles
-}: Props): JSX.Element => {
+}: Props): ReactNode => {
   const validVehicles = vehicles?.filter(
     vehicle => !!vehicle?.lat && !!vehicle?.lon
   );
@@ -71,7 +101,6 @@ const TransitVehicleOverlay = ({
       popupProps={{ offset: [-iconPixels / 2 - iconPadding, 0] }}
       position={[vehicle.lat, vehicle.lon]}
       tooltipContents={
-        // @ts-expect-error TODO FIX
         vehicle.routeShortName && <TooltipSlot vehicle={vehicle} />
       }
     >
@@ -80,7 +109,7 @@ const TransitVehicleOverlay = ({
         pixels={iconPixels}
         vehicle={vehicle}
       >
-        <RouteIcon
+        <VehicleIcon
           defaultMode={defaultMode}
           ModeIcon={ModeIcon}
           vehicle={vehicle}
@@ -93,9 +122,4 @@ const TransitVehicleOverlay = ({
 export default TransitVehicleOverlay;
 
 // Export the other subcomponents
-export {
-  CircleWithCaret,
-  RotatingCircle,
-  DefaultRouteIcon as RouteIcon,
-  RouteNumberIcon
-};
+export { CircleWithCaret, DefaultVehicleIcon, RotatingCircle, RouteNumberIcon };
