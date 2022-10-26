@@ -2,7 +2,9 @@ import { MarkerWithPopup } from "@opentripplanner/base-map";
 import { TransitVehicle } from "@opentripplanner/types";
 import React from "react";
 import CircleWithCaret from "./CircleWithCaret";
-import RouteIcon from "./RouteIcon";
+import { RotatingCircle } from "./TransitIcons";
+import DefaultRouteIcon from "./RouteIcon";
+import RouteNumberIcon from "./RouteNumberIcon";
 
 import VehicleTooltip from "./VehicleTooltip";
 
@@ -42,10 +44,12 @@ const TransitVehicleOverlay = ({
   alwaysRenderText,
   disableHoverEffects,
   color,
+  defaultMode = "bus",
   IconContainer = CircleWithCaret,
   iconPadding = 5,
   iconPixels = 15,
   ModeIcon,
+  RouteIcon = DefaultRouteIcon,
   TooltipSlot = VehicleTooltip,
   vehicles
 }: Props): JSX.Element => {
@@ -76,10 +80,22 @@ const TransitVehicleOverlay = ({
         pixels={iconPixels}
         vehicle={vehicle}
       >
-        <RouteIcon ModeIcon={ModeIcon} vehicle={vehicle} />
+        <RouteIcon
+          defaultMode={defaultMode}
+          ModeIcon={ModeIcon}
+          vehicle={vehicle}
+        />
       </IconContainer>
     </MarkerWithPopup>
   ));
 };
 
 export default TransitVehicleOverlay;
+
+// Export the other subcomponents
+export {
+  CircleWithCaret,
+  RotatingCircle,
+  DefaultRouteIcon as RouteIcon,
+  RouteNumberIcon
+};

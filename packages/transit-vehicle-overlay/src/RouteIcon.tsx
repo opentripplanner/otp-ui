@@ -8,6 +8,7 @@ interface BasicProps {
 }
 
 interface Props {
+  defaultMode?: string;
   ModeIcon?: FC<BasicProps>;
   vehicle: TransitVehicle;
 }
@@ -17,13 +18,14 @@ interface Props {
  * Falls back to the route short name if no icon is found for the desired mode.
  */
 export default function RouteIcon({
+  defaultMode,
   ModeIcon = BasicModeIcon,
   vehicle
 }: Props): ReactElement {
   // Try to see if content is returned by the ModeIcon function component,
   // if null, fall back to route number.
   return (
-    ModeIcon({ mode: vehicle.routeType }) || (
+    ModeIcon({ mode: vehicle.routeType || defaultMode, ModeIcon }) || (
       <RouteNumberIcon vehicle={vehicle} />
     )
   );

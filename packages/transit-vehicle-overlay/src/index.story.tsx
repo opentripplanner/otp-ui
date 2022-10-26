@@ -1,23 +1,28 @@
 import React from "react";
+import { ClassicModeIcon } from "@opentripplanner/icons";
 
 import vehicleData from "../__mocks__/seattle.json";
 import { withMap } from "../../../.storybook/base-map-wrapper";
 
-import CircleWithCaret from "./CircleWithCaret";
-import RouteIcon from "./RouteIcon";
 import { RotatingCircle } from "./TransitIcons";
 import TransitVehicleOverlay from ".";
+import RouteNumberIcon from "./RouteNumberIcon";
 
 const SEATTLE: [number, number] = [47.6, -122.3];
 
-export const Empty = () => <TransitVehicleOverlay />;
-Empty.decorators = [withMap(SEATTLE, 12)];
+const vehicles: TransitVehicle[] = vehicleData.vehiclePositions;
 
-export const TransitVehicleOverlayExample = () => {
-  // @ts-expect-error the mock data is incomplete
-  return <TransitVehicleOverlay vehicles={vehicleData.vehiclePositions} />;
-};
-TransitVehicleOverlayExample.decorators = [withMap(SEATTLE, 12)];
+export const DefaultAppearance = () => (
+  <TransitVehicleOverlay iconPixels={25} vehicles={vehicles} />
+);
+
+export const WithRotatingIcons = () => (
+  <TransitVehicleOverlay IconContainer={RotatingCircle} vehicles={vehicles} />
+);
+
+export const WithCustomModeIcon = () => (
+  <TransitVehicleOverlay ModeIcon={ClassicModeIcon} vehicles={vehicles} />
+);
 
 export const TransitVehicleOverlayExampleWithoutHoverEffects = () => {
   return (
@@ -25,14 +30,16 @@ export const TransitVehicleOverlayExampleWithoutHoverEffects = () => {
       alwaysRenderText
       disableHoverEffects
       // @ts-expect-error the mock data is incomplete
-      vehicles={vehicleData.vehiclePositions}
+      vehicles={vehicles}
     />
   );
 };
-TransitVehicleOverlayExampleWithoutHoverEffects.decorators = [
-  withMap(SEATTLE, 12)
-];
 
+export const ShowingRouteNumbersOnly = () => (
+  <TransitVehicleOverlay RouteIcon={RouteNumberIcon} vehicles={vehicles} />
+);
+
+/*
 // Route icons for different vehicles
 export const DefaultRouteIconsWithCarets = () => {
   return vehicleData.vehiclePositions.map((v, i) => (
@@ -50,8 +57,10 @@ export const DefaultRouteIconsRotating = () => {
     </RotatingCircle>
   ));
 };
+*/
 
 export default {
   title: "TransitVehicleOverlay",
-  component: TransitVehicleOverlay
+  component: TransitVehicleOverlay,
+  decorators: [withMap(SEATTLE, 12)]
 };

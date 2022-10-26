@@ -15,7 +15,6 @@ interface Props {
 export default function BasicModeIcon({ mode }: Props): ReactElement {
   switch (mode?.toLowerCase()) {
     case "bus":
-    case undefined:
       return <Bus />;
     case "tram":
     case "streetcar":
