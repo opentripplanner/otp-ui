@@ -6,7 +6,7 @@ describe("util > query-gen", () => {
     const query = generateOtp2Query({
       to: location,
       from: location,
-      combinations: []
+      modes: []
     });
     expect(query).toMatchSnapshot();
   });

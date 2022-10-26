@@ -748,6 +748,7 @@ export type ModeSettingValues = Record<string, number | string | boolean>;
 export type TransportationMode = {
   mode: string;
   settings?: ModeSetting[];
+  qualifier: string;
 };
 
 /**

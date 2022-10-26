@@ -10,15 +10,43 @@ query Query1(
     locale: "en"
   ) {
     itineraries {
-      legs {
-        mode
-        startTime
-        endTime
-        route {
-          shortName
-        }
-        duration
-      }
+			duration
+			startTime
+			endTime
+			walkTime
+			waitingTime
+			legs {
+				mode
+				startTime
+				endTime
+				distance
+				duration
+				transitLeg
+				agency {
+					name
+					id
+					timezone
+					url
+				}
+				legGeometry {
+					length
+					points
+				}
+				intermediateStops {
+					lat
+					lon
+					name
+					stopCode: code
+					stopId: id
+					locationType
+				}
+				route {
+					shortName
+					color
+					textColor
+					type
+				}
+			}
     }
   }
 }
