@@ -75,7 +75,7 @@
       "routeShortName": "FH",
       "routeColor": "#FFFF00",
       "label": "405",
-      "routeType": "BUS",
+      "routeType": "DUMMY",
       "lat": 47.5993271,
       "lon": -122.3333588,
       "stopRelationship": {

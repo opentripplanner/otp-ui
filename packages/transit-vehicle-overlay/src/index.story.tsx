@@ -3,8 +3,10 @@ import React from "react";
 import vehicleData from "../__mocks__/seattle.json";
 import { withMap } from "../../../.storybook/base-map-wrapper";
 
+import CircleWithCaret from "./CircleWithCaret";
 import RouteIcon from "./RouteIcon";
 import RouteNumberIcon from "./RouteNumberIcon";
+import { RotatingCircle } from "./TransitIcons";
 import TransitVehicleOverlay from ".";
 
 const SEATTLE: [number, number] = [47.6, -122.3];
@@ -48,9 +50,20 @@ export const CircleWithModeIconRotated = () => <div>Placeholder</div>;
 export const CircleWithLineNumberRotated = () => <div>Placeholder</div>;
 
 // Route icons for different vehicles
-export const DefaultRouteIcons = () => {
+export const DefaultRouteIconswithCarets = () => {
   return vehicleData.vehiclePositions.map((v, i) => (
-    <RouteIcon key={i} vehicle={v} />
+    <CircleWithCaret key={i} pixels={25} vehicle={v}>
+      <RouteIcon vehicle={v} />
+    </CircleWithCaret>
+  ));
+};
+
+// Route icons for different vehicles
+export const DefaultRouteIconsRotating = () => {
+  return vehicleData.vehiclePositions.map((v, i) => (
+    <RotatingCircle key={i} pixels={30} vehicle={v}>
+      <RouteIcon vehicle={v} />
+    </RotatingCircle>
   ));
 };
 

@@ -3,29 +3,57 @@ import { FC } from "react";
 // @ts-ignore FIXME: Create TypeScript types for the icons package.
 import { Bus, Streetcar, Ferry } from "@opentripplanner/icons";
 import styled from "styled-components";
+import { TransitVehicle } from "@opentripplanner/types";
 
-interface TransitIconProps {
+export interface TransitIconProps {
+  pixels?: number;
   rotate?: number;
   routeColor?: string;
+}
+
+export interface IconContainerProps {
+  children: React.ReactNode;
+  padding?: number;
+  pixels?: number;
+  /**
+   * The transit vehicle for which to render a symbol.
+   */
+  vehicle: TransitVehicle;
 }
 
 export const StyledBus = styled(Bus)``;
 export const StyledStreetcar = styled(Streetcar)``;
 export const StyledFerry = styled(Ferry)``;
 
+const getPixels = props => props.pixels || 15;
+const getPadding = props => props.padding || 5;
+
+/**
+ * Displays a circle with basic settings.
+ */
 export const Circle = styled.div<TransitIconProps>`
   background: #eee;
   border: 2px solid #333;
-  border-radius: 40px;
-  height: 20px;
-  padding: 5px;
+  border-radius: ${getPixels}px;
+  height: ${getPixels}px;
+  line-height: ${getPixels}px;
+  padding: ${getPadding}px;
+  position: relative;
+  text-align: center;
   transition: all 0.1s ease-in-out;
-  width: 20px;
+  width: ${getPixels}px;
 
   &:hover {
     background: ${props => props.routeColor || "#9999ee"};
     cursor: default;
   }
+`;
+
+/**
+ * Displays a circle with contents that is rotated according to vehicle heading.
+ */
+export const RotatingCircle = styled(Circle)<IconContainerProps>`
+  transform: rotate(${props => props.vehicle.heading || 0}deg);
 `;
 
 export const Caret = styled.div<TransitIconProps>`
@@ -45,7 +73,7 @@ export const Caret = styled.div<TransitIconProps>`
     left: 50%;
     margin-left: -6px;
     position: absolute;
-    top: 2px;
+    top: 0px;
     width: 0;
   }
 `;

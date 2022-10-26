@@ -6,7 +6,7 @@ import Ferry from "@opentripplanner/icons/lib/trimet/Ferry";
 import Streetcar from "@opentripplanner/icons/lib/trimet/Streetcar";
 
 interface Props {
-  mode: string;
+  mode?: string;
 }
 
 /**
@@ -14,6 +14,9 @@ interface Props {
  */
 export default function BasicModeIcon({ mode }: Props): ReactElement {
   switch (mode?.toLowerCase()) {
+    case "bus":
+    case undefined:
+      return <Bus />;
     case "tram":
     case "streetcar":
     case "rail":
@@ -21,6 +24,6 @@ export default function BasicModeIcon({ mode }: Props): ReactElement {
     case "ferry":
       return <Ferry />;
     default:
-      return <Bus />;
+      return null;
   }
 }
