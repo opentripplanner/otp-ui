@@ -233,11 +233,15 @@ export function TripDetails({
     walkDuration
   } = coreUtils.itinerary.calculatePhysicalActivity(itinerary);
 
-  const co2 = coreUtils.itinerary.calculateEmissions(
-    itinerary,
-    co2Config?.carbonIntensity,
-    co2Config?.units
-  );
+  // Calculate CO2 if it's not provided by the itinerary
+  const co2 =
+    itinerary.co2 ||
+    (co2Config.enabled &&
+      coreUtils.itinerary.calculateEmissions(
+        itinerary,
+        co2Config?.carbonIntensity,
+        co2Config?.units
+      ));
 
   // Parse flex info and generate appropriate strings
   const containsFlex = itinerary.legs.some(coreUtils.itinerary.isFlex);
