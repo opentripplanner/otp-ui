@@ -1,9 +1,9 @@
 import { MarkerWithPopup } from "@opentripplanner/base-map";
-import utils from "@opentripplanner/core-utils";
 import { TransitVehicle } from "@opentripplanner/types";
 import React from "react";
+import CircleWithCaret from "./CircleWithCaret";
+import RouteIcon from "./RouteIcon";
 
-import { Caret, Circle, getTransitIcon } from "./TransitIcons";
 import VehicleTooltip from "./VehicleTooltip";
 
 type Props = {
@@ -42,7 +42,11 @@ const TransitVehicleOverlay = ({
   alwaysRenderText,
   disableHoverEffects,
   color,
-  TooltipSlot,
+  IconContainer = CircleWithCaret,
+  iconPadding = 5,
+  iconPixels = 15,
+  ModeIcon,
+  TooltipSlot = VehicleTooltip,
   vehicles
 }: Props): JSX.Element => {
   const validVehicles = vehicles?.filter(
@@ -54,51 +58,28 @@ const TransitVehicleOverlay = ({
     return null;
   }
 
-  const Tooltip = TooltipSlot || VehicleTooltip;
+  console.log(alwaysRenderText, disableHoverEffects, color);
 
-  return (
-    <>
-      {validVehicles.map(vehicle => {
-        const Icon = getTransitIcon(vehicle.routeType);
-
-        return (
-          <MarkerWithPopup
-            key={vehicle.vehicleId}
-            position={[vehicle.lat, vehicle.lon]}
-            // @ts-expect-error the prop override doesn't require all props to be present
-            popupProps={{ offset: [-15, 0] }}
-            tooltipContents={
-              // @ts-expect-error TODO FIX
-              vehicle.routeShortName && <Tooltip vehicle={vehicle} />
-            }
-          >
-            <Circle routeColor={color}>
-              <Icon
-                // @ts-expect-error Prop needs to be fixed
-                disableHoverEffects={disableHoverEffects}
-                // Don't rotate if all the icons are text! It looks weird
-                rotate={!alwaysRenderText && vehicle.heading}
-                routeColor={vehicle?.routeColor || color}
-              >
-                {/* If there is no route type, draw the route name, or a generic bullet */}
-                <span
-                  style={{
-                    color: utils.route.getMostReadableTextColor(
-                      vehicle?.routeColor || color
-                    )
-                  }}
-                >
-                  {(!vehicle.routeType || alwaysRenderText) &&
-                    (vehicle?.routeShortName || "🚌")}
-                </span>
-              </Icon>
-              <Caret rotate={vehicle.heading} />
-            </Circle>
-          </MarkerWithPopup>
-        );
-      })}
-    </>
-  );
+  return validVehicles?.map(vehicle => (
+    <MarkerWithPopup
+      key={vehicle.vehicleId}
+      // @ts-expect-error the prop override doesn't require all props to be present
+      popupProps={{ offset: [-iconPixels / 2 - iconPadding, 0] }}
+      position={[vehicle.lat, vehicle.lon]}
+      tooltipContents={
+        // @ts-expect-error TODO FIX
+        vehicle.routeShortName && <TooltipSlot vehicle={vehicle} />
+      }
+    >
+      <IconContainer
+        padding={iconPadding}
+        pixels={iconPixels}
+        vehicle={vehicle}
+      >
+        <RouteIcon ModeIcon={ModeIcon} vehicle={vehicle} />
+      </IconContainer>
+    </MarkerWithPopup>
+  ));
 };
 
 export default TransitVehicleOverlay;

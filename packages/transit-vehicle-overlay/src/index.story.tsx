@@ -5,11 +5,13 @@ import { withMap } from "../../../.storybook/base-map-wrapper";
 
 import CircleWithCaret from "./CircleWithCaret";
 import RouteIcon from "./RouteIcon";
-import RouteNumberIcon from "./RouteNumberIcon";
 import { RotatingCircle } from "./TransitIcons";
 import TransitVehicleOverlay from ".";
 
 const SEATTLE: [number, number] = [47.6, -122.3];
+
+export const Empty = () => <TransitVehicleOverlay />;
+Empty.decorators = [withMap(SEATTLE, 12)];
 
 export const TransitVehicleOverlayExample = () => {
   // @ts-expect-error the mock data is incomplete
@@ -31,26 +33,8 @@ TransitVehicleOverlayExampleWithoutHoverEffects.decorators = [
   withMap(SEATTLE, 12)
 ];
 
-export const CircleWithModeIconAndChevron = () => <div>Placeholder</div>;
-
-// Params: angle, [show] route color
-export const CircleWithLineNumberAndChevron = () => {
-  const vehicle = vehicleData.vehiclePositions[0];
-  const { routeColor } = vehicle;
-  return (
-    <div style={{ backgroundColor: routeColor }}>
-      <RouteNumberIcon vehicle={vehicle} />
-    </div>
-  );
-};
-
-// Params: angle, [show] route color
-export const CircleWithModeIconRotated = () => <div>Placeholder</div>;
-
-export const CircleWithLineNumberRotated = () => <div>Placeholder</div>;
-
 // Route icons for different vehicles
-export const DefaultRouteIconswithCarets = () => {
+export const DefaultRouteIconsWithCarets = () => {
   return vehicleData.vehiclePositions.map((v, i) => (
     <CircleWithCaret key={i} pixels={25} vehicle={v}>
       <RouteIcon vehicle={v} />

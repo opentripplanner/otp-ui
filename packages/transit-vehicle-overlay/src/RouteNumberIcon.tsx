@@ -25,7 +25,7 @@ export default function RouteNumberIcon({
           : coreUtils.route.getMostReadableTextColor(routeColor)
       }}
     >
-      {routeShortName}
+      {routeShortName || "🚌"}
     </span>
   );
 }
