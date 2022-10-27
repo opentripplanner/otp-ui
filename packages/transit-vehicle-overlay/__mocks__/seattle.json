@@ -3,7 +3,7 @@
     {
       "vehicleId": "kcm:406",
       "routeShortName": "FH",
-      "routeColor": "#FFFF00",
+      "routeColor": "#FF2233",
       "label": "406",
       "lat": 47.6146202,
       "lon": -122.3207016,
@@ -26,7 +26,7 @@
     {
       "vehicleId": "kcm:402",
       "routeShortName": "FH",
-      "routeColor": "#FFFF00",
+      "routeColor": "#2233AA",
       "label": "402",
       "routeType": "TRAM",
       "lat": 47.6017303,
@@ -50,7 +50,7 @@
     {
       "vehicleId": "kcm:422",
       "routeShortName": "FH",
-      "routeColor": "#FFFF00",
+      "routeColor": "#CCFF88",
       "label": "422",
       "lat": 47.6617303,
       "lon": -122.1171387,
@@ -73,7 +73,7 @@
     {
       "vehicleId": "kcm:405",
       "routeShortName": "FH",
-      "routeColor": "#FFFF00",
+      "routeColor": "#449966",
       "label": "405",
       "routeType": "DUMMY",
       "lat": 47.5993271,

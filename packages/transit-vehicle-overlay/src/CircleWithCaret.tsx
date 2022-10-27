@@ -7,12 +7,19 @@ import { Caret, Circle, IconContainerProps } from "./TransitIcons";
  * the specified transit vehicle is heading.
  */
 export default function CircleWithCaret({
+  className,
   children,
   pixels,
+  style,
   vehicle
 }: IconContainerProps): JSX.Element {
   return (
-    <Circle pixels={pixels} routeColor={vehicle.routeColor}>
+    <Circle
+      className={className}
+      pixels={pixels}
+      routeColor={vehicle.routeColor}
+      style={style}
+    >
       {children}
       <Caret rotate={vehicle.heading} />
     </Circle>

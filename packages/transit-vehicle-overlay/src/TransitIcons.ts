@@ -1,8 +1,6 @@
-import { FC } from "react";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore FIXME: Create TypeScript types for the icons package.
-import { Bus, Streetcar, Ferry } from "@opentripplanner/icons";
-import styled from "styled-components";
+import coreUtils from "@opentripplanner/core-utils";
+import { FC, HTMLAttributes } from "react";
+import styled, { css } from "styled-components";
 import { TransitVehicle } from "@opentripplanner/types";
 
 export interface TransitIconProps {
@@ -11,9 +9,14 @@ export interface TransitIconProps {
   routeColor?: string;
 }
 
-export interface IconContainerProps {
-  children: React.ReactNode;
+export interface IconContainerProps extends HTMLAttributes<HTMLDivElement> {
+  /**
+   * The padding around icons, in pixels.
+   */
   padding?: number;
+  /**
+   * The size of the icon in pixels.
+   */
   pixels?: number;
   /**
    * The transit vehicle for which to render a symbol.
@@ -21,12 +24,28 @@ export interface IconContainerProps {
   vehicle: TransitVehicle;
 }
 
-export const StyledBus = styled(Bus)``;
-export const StyledStreetcar = styled(Streetcar)``;
-export const StyledFerry = styled(Ferry)``;
+interface ColorProps {
+  backgroundColor: string;
+  foregroundColor: string;
+}
 
+// CSS helper functions.
 const getPixels = props => props.pixels || 15;
 const getPadding = props => props.padding || 5;
+const getForegroundColor = props => props.foregroundColor;
+
+/**
+ * Computes color props to simplify the CSS filler code.
+ */
+function getColorProps(defaultColor: string) {
+  return (props: IconContainerProps): ColorProps => {
+    const routeColor = props.vehicle.routeColor || defaultColor;
+    return {
+      backgroundColor: routeColor,
+      foregroundColor: coreUtils.route.getMostReadableTextColor(routeColor)
+    };
+  };
+}
 
 /**
  * Displays a circle with basic settings.
@@ -35,6 +54,7 @@ export const Circle = styled.div<TransitIconProps>`
   background: #eee;
   border: 2px solid #333;
   border-radius: ${getPixels}px;
+  cursor: default;
   height: ${getPixels}px;
   line-height: ${getPixels}px;
   padding: ${getPadding}px;
@@ -42,11 +62,6 @@ export const Circle = styled.div<TransitIconProps>`
   text-align: center;
   transition: all 0.1s ease-in-out;
   width: ${getPixels}px;
-
-  &:hover {
-    background: ${props => props.routeColor || "#9999ee"};
-    cursor: default;
-  }
 `;
 
 /**
@@ -56,6 +71,9 @@ export const RotatingCircle = styled(Circle)<IconContainerProps>`
   transform: rotate(${props => props.vehicle.heading || 0}deg);
 `;
 
+/**
+ * Renders a caret that fits within another component and indicates the heading.
+ */
 export const Caret = styled.div<TransitIconProps>`
   height: 100%;
   left: 0;
@@ -78,16 +96,43 @@ export const Caret = styled.div<TransitIconProps>`
   }
 `;
 
-export const getTransitIcon = (mode: string): FC => {
-  switch (mode) {
-    case "bus":
-      return StyledBus;
-    case "streetcar":
-    case "rail":
-      return StyledStreetcar;
-    case "ferry":
-      return StyledFerry;
-    default:
-      return StyledBus;
+const routeColorBackgroundCss = css<ColorProps>`
+  background: ${props => props.backgroundColor};
+  color: ${getForegroundColor};
+  & svg path {
+    fill: ${getForegroundColor};
   }
-};
+  ${Caret} {
+    &::before {
+      border-bottom-color: ${getForegroundColor};
+    }
+  }
+`;
+
+/**
+ * Applies the vehicle's route color as a fixed background to a component
+ * and a foreground color that is contrast compatible with that color.
+ */
+export function withRouteColorBackground(
+  Container: FC,
+  defaultColor = "#9999ee"
+): FC<IconContainerProps> {
+  return styled(Container).attrs(getColorProps(defaultColor))`
+    ${routeColorBackgroundCss}
+  `;
+}
+
+/**
+ * Applies the vehicle's route color a background on hovering a component
+ * and a foreground color that is contrast compatible with that color.
+ */
+export function withRouteColorBackgroundOnHover(
+  Container: FC,
+  defaultColor = "#9999ee"
+): FC<IconContainerProps> {
+  return styled(Container).attrs(getColorProps(defaultColor))`
+    &:hover {
+      ${routeColorBackgroundCss}
+    }
+  `;
+}
