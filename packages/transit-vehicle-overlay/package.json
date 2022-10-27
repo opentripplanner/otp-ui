@@ -11,7 +11,7 @@
   "dependencies": {
     "@opentripplanner/base-map": "^3.0.1",
     "@opentripplanner/core-utils": "^7.0.3",
-    "@opentripplanner/icons": "^1.2.5",
+    "@opentripplanner/icons": "^1.2.6",
     "flat": "^5.0.2"
   },
   "devDependencies": {
