@@ -3,6 +3,9 @@ import { FC, HTMLAttributes } from "react";
 import styled, { css } from "styled-components";
 import { TransitVehicle } from "@opentripplanner/types";
 
+// Need this to find null or undefined values while not including zero which is a valid value.
+import { isNull } from "./utils/strings";
+
 export interface IconContainerProps extends HTMLAttributes<HTMLDivElement> {
   /**
    * The padding around icons, in pixels.
@@ -24,8 +27,8 @@ interface ColorProps {
 }
 
 // CSS helper functions.
-const getPixels = props => props.pixels || 15;
-const getPadding = props => props.padding || 5;
+const getPixels = props => (isNull(props.pixels) ? 15 : props.pixels);
+const getPadding = props => (isNull(props.padding) ? 5 : props.padding);
 const getForegroundColor = props => props.foregroundColor;
 
 /**
@@ -93,7 +96,8 @@ export const Caret = styled.div<{ rotate: number }>`
 const routeColorBackgroundCss = css<ColorProps>`
   background: ${props => props.backgroundColor};
   color: ${getForegroundColor};
-  & svg path {
+  & svg path,
+  & svg text {
     fill: ${getForegroundColor};
   }
   ${Caret} {

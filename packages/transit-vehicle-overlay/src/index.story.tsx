@@ -52,8 +52,13 @@ export const DefaultRouteColorWhenVehicleRouteColorAbsent = () => (
   />
 );
 
-export const RouteNumbersOnly = () => (
-  <TransitVehicleOverlay VehicleIcon={RouteNumberIcon} vehicles={vehicles} />
+export const RouteNumbersOnlyWithCustomSizeAndPadding = () => (
+  <TransitVehicleOverlay
+    iconPadding={2}
+    iconPixels={25}
+    VehicleIcon={RouteNumberIcon}
+    vehicles={vehicles}
+  />
 );
 
 export default {

@@ -10,10 +10,25 @@ export interface VehicleIconProps {
 }
 
 /**
- * Renders the route number (no consideration for length of route short name).
+ * Renders the route number so it gets fitted into the icon shape.
  */
 export function RouteNumberIcon({ vehicle }: VehicleIconProps): ReactElement {
-  return <>{vehicle.routeShortName || "🚌"}</>;
+  const { routeShortName } = vehicle;
+  const length = routeShortName?.length || 0;
+  const size = Math.max(length * 8, 20);
+  return routeShortName ? (
+    // Render as SVG to autofit the icon regardless of the ambient font size,
+    // while centering horizontally and vertically and reducing size for larger route short names
+    // (see for instance https://css-tricks.com/fitting-text-to-a-container/#aa-just-use-svg).
+    <svg viewBox={`0 0 ${size} ${size}`}>
+      <text textAnchor="middle" x="50%" y={size / 2 + 4.5}>
+        {routeShortName}
+      </text>
+    </svg>
+  ) : (
+    // Default content is an emoji, but emojis don't work in SVG mode.
+    <>🚌</>
+  );
 }
 
 /**

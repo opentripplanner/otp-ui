@@ -9,6 +9,7 @@ import { Caret, Circle, IconContainerProps } from "./styled";
 export default function CircleWithCaret({
   className,
   children,
+  padding,
   pixels,
   style,
   vehicle
@@ -16,6 +17,7 @@ export default function CircleWithCaret({
   return (
     <Circle
       className={className}
+      padding={padding}
       pixels={pixels}
       style={style}
       vehicle={vehicle}
