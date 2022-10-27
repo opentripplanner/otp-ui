@@ -1,5 +1,7 @@
-import { Bus, Streetcar, Ferry } from "@opentripplanner/icons";
 import React, { ReactElement } from "react";
+import Bus from "@opentripplanner/icons/lib/trimet/Bus";
+import Ferry from "@opentripplanner/icons/lib/trimet/Ferry";
+import Streetcar from "@opentripplanner/icons/lib/trimet/Streetcar";
 
 /**
  * Fill-in type for the icons package.
