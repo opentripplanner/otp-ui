@@ -3,14 +3,17 @@ import Bus from "@opentripplanner/icons/lib/trimet/Bus";
 import Ferry from "@opentripplanner/icons/lib/trimet/Ferry";
 import Streetcar from "@opentripplanner/icons/lib/trimet/Streetcar";
 
-interface Props {
+/**
+ * Fill-in type for the icons package.
+ */
+export interface ModeIconProps {
   mode?: string;
 }
 
 /**
  * Default, minimal mode icon renderer.
  */
-export default function BasicModeIcon({ mode }: Props): ReactElement {
+export default function BasicModeIcon({ mode }: ModeIconProps): ReactElement {
   switch (mode?.toLowerCase()) {
     case "bus":
       return <Bus />;

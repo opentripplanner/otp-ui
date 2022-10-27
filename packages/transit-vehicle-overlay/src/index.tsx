@@ -1,6 +1,7 @@
 import { MarkerWithPopup } from "@opentripplanner/base-map";
 import { TransitVehicle } from "@opentripplanner/types";
 import React, { FC, ReactNode } from "react";
+
 import CircleWithCaret from "./CircleWithCaret";
 import {
   IconContainerProps,
@@ -8,9 +9,10 @@ import {
   withRouteColorBackground,
   withRouteColorBackgroundOnHover
 } from "./styled";
-import DefaultVehicleIcon, { VehicleIconProps } from "./VehicleIcon";
-import RouteNumberIcon from "./RouteNumberIcon";
-
+import DefaultVehicleIcon, {
+  RouteNumberIcon,
+  VehicleIconProps
+} from "./VehicleIcon";
 import VehicleTooltip, { VehicleTooltipProps } from "./VehicleTooltip";
 
 type Props = {

@@ -1,16 +1,20 @@
 import { TransitVehicle } from "@opentripplanner/types";
 import React, { FC, ReactElement } from "react";
-import BasicModeIcon from "./BasicModeIcon";
-import RouteNumberIcon from "./RouteNumberIcon";
 
-interface BasicProps {
-  mode: string;
-}
+import BasicModeIcon, { ModeIconProps } from "./BasicModeIcon";
 
 export interface VehicleIconProps {
   defaultMode?: string;
-  ModeIcon?: FC<BasicProps>;
+  ModeIcon?: FC<ModeIconProps>;
   vehicle: TransitVehicle;
+}
+
+/**
+ * Renders the route number (no consideration for length of route short name).
+ */
+export function RouteNumberIcon({ vehicle }: VehicleIconProps): ReactElement {
+  const { routeShortName } = vehicle;
+  return <>{routeShortName || "🚌"}</>;
 }
 
 /**
