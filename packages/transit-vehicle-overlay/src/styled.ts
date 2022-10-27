@@ -3,12 +3,6 @@ import { FC, HTMLAttributes } from "react";
 import styled, { css } from "styled-components";
 import { TransitVehicle } from "@opentripplanner/types";
 
-export interface TransitIconProps {
-  pixels?: number;
-  rotate?: number;
-  routeColor?: string;
-}
-
 export interface IconContainerProps extends HTMLAttributes<HTMLDivElement> {
   /**
    * The padding around icons, in pixels.
@@ -50,7 +44,7 @@ function getColorProps(defaultColor: string) {
 /**
  * Displays a circle with basic settings.
  */
-export const Circle = styled.div<TransitIconProps>`
+export const Circle = styled.div<IconContainerProps>`
   background: #eee;
   border: 2px solid #333;
   border-radius: ${getPixels}px;
@@ -74,7 +68,7 @@ export const RotatingCircle = styled(Circle)<IconContainerProps>`
 /**
  * Renders a caret that fits within another component and indicates the heading.
  */
-export const Caret = styled.div<TransitIconProps>`
+export const Caret = styled.div<{ rotate: number }>`
   height: 100%;
   left: 0;
   position: absolute;

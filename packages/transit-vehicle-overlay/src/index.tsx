@@ -7,7 +7,7 @@ import {
   RotatingCircle,
   withRouteColorBackground,
   withRouteColorBackgroundOnHover
-} from "./TransitIcons";
+} from "./styled";
 import DefaultVehicleIcon, { VehicleIconProps } from "./VehicleIcon";
 import RouteNumberIcon from "./RouteNumberIcon";
 

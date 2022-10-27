@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Caret, Circle, IconContainerProps } from "./TransitIcons";
+import { Caret, Circle, IconContainerProps } from "./styled";
 
 /**
  * Displays a circle, content, and an arrow pointing in the direction
@@ -17,8 +17,8 @@ export default function CircleWithCaret({
     <Circle
       className={className}
       pixels={pixels}
-      routeColor={vehicle.routeColor}
       style={style}
+      vehicle={vehicle}
     >
       {children}
       <Caret rotate={vehicle.heading} />
