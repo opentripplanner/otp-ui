@@ -17,23 +17,6 @@ import VehicleTooltip, { VehicleTooltipProps } from "./VehicleTooltip";
 
 type Props = {
   /**
-   * Whether to always use the fallback route name renderer instead of using
-   * a mode icon.
-   */
-  alwaysRenderText?: boolean;
-
-  /**
-   * Whether or not to render all icons in the "ambient" style (no hover effects, color
-   * always visible)
-   */
-  disableHoverEffects?: boolean;
-
-  /**
-   * A hex color in the form `#fffFFF` to highlight all vehicles as
-   */
-  color?: string;
-
-  /**
    * Default mode to assume if not provided in the vehicle data. Defaults to "bus".
    */
   defaultMode?: string;
@@ -78,9 +61,6 @@ type Props = {
  * An overlay to view a collection of transit vehicles.
  */
 const TransitVehicleOverlay = ({
-  alwaysRenderText,
-  disableHoverEffects,
-  color,
   defaultMode = "bus",
   IconContainer = CircleWithCaret,
   iconPadding = 5,
@@ -98,8 +78,6 @@ const TransitVehicleOverlay = ({
   if (!validVehicles || validVehicles.length === 0) {
     return null;
   }
-
-  console.log(alwaysRenderText, disableHoverEffects, color);
 
   return validVehicles?.map(vehicle => (
     <MarkerWithPopup
