@@ -13,8 +13,7 @@ export interface VehicleIconProps {
  * Renders the route number (no consideration for length of route short name).
  */
 export function RouteNumberIcon({ vehicle }: VehicleIconProps): ReactElement {
-  const { routeShortName } = vehicle;
-  return <>{routeShortName || "🚌"}</>;
+  return <>{vehicle.routeShortName || "🚌"}</>;
 }
 
 /**

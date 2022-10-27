@@ -20,29 +20,39 @@ export const CustomIconSize = () => (
   <TransitVehicleOverlay iconPixels={25} vehicles={vehicles} />
 );
 
-export const WithRotatingIcons = () => (
+export const RotatingIcons = () => (
   <TransitVehicleOverlay IconContainer={RotatingCircle} vehicles={vehicles} />
 );
 
-export const WithCustomModeIcon = () => (
+export const CustomModeIcon = () => (
   <TransitVehicleOverlay ModeIcon={ClassicModeIcon} vehicles={vehicles} />
 );
 
-export const WithRouteColorBackground = () => (
+export const RouteColorBackground = () => (
   <TransitVehicleOverlay
     IconContainer={withRouteColorBackground(CircleWithCaret)}
     vehicles={vehicles}
   />
 );
 
-export const WithRouteColorBackgroundOnHover = () => (
+export const RouteColorBackgroundOnHover = () => (
   <TransitVehicleOverlay
     IconContainer={withRouteColorBackgroundOnHover(CircleWithCaret)}
     vehicles={vehicles}
   />
 );
 
-export const ShowingRouteNumbersOnly = () => (
+export const DefaultRouteColorWhenVehicleRouteColorAbsent = () => (
+  <TransitVehicleOverlay
+    IconContainer={withRouteColorBackground(CircleWithCaret, "#00FF00")}
+    vehicles={vehicles.map(v => {
+      const { routeColor, ...vehicleProps } = v;
+      return vehicleProps;
+    })}
+  />
+);
+
+export const RouteNumbersOnly = () => (
   <TransitVehicleOverlay VehicleIcon={RouteNumberIcon} vehicles={vehicles} />
 );
 
