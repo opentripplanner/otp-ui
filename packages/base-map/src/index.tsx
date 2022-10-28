@@ -97,7 +97,7 @@ const BaseMap = ({
 
   const toggleableLayers = Array.isArray(children)
     ? children
-        .flat()
+        .flat(10)
         .filter(
           child =>
             child?.props?.id !== undefined &&
@@ -177,7 +177,7 @@ const BaseMap = ({
       )}
       {Array.isArray(children)
         ? children
-            .flat()
+            .flat(10)
             .filter(child => !hiddenLayers.includes(child?.props?.id))
         : children}
     </Map>
