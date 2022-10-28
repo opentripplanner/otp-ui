@@ -1,0 +1,25 @@
+{
+  "name": "@opentripplanner/otp2-tile-overlay",
+  "version": "1.0.0",
+  "description": "Render data from OTP2's vector tile server",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "types": "lib/index.d.ts",
+  "repository": "https://github.com/opentripplanner/otp-ui.git",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "peerDependencies": {
+    "react": "^16.14.0",
+    "react-map-gl": "^7.0.15"
+  },
+  "dependencies": {
+    "@opentripplanner/stops-overlay": "^5.0.2",
+    "@opentripplanner/vehicle-rental-overlay": "^2.0.2"
+  },
+  "devDependencies": {
+    "@opentripplanner/types": "^4.0.2"
+  }
+}

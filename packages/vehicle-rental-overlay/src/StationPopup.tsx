@@ -26,15 +26,16 @@ function makeDefaultGetStationName(intl: IntlShape) {
     configCompanies: Company[],
     station: Station
   ) {
-    const stationNetworks = coreUtils.itinerary.getCompaniesLabelFromNetworks(
-      station?.networks || [],
-      configCompanies
-    );
+    const stationNetworks =
+      coreUtils.itinerary.getCompaniesLabelFromNetworks(
+        station?.networks || [],
+        configCompanies
+      ) || station?.networks?.[0];
     let stationName = station.name || station.id;
     // If the station name or id is a giant UUID (with more than 3 "-" characters)
-    // best not to show that at all and instead use the network name.
+    // best not to show that at all. The company name will still be shown.
     if ((stationName.match(/-/g) || []).length > 3) {
-      stationName = stationNetworks;
+      stationName = null;
     }
 
     if (station.isFloatingBike) {
@@ -45,7 +46,7 @@ function makeDefaultGetStationName(intl: IntlShape) {
           description: "Popup title for a free-floating bike",
           id: "otpUi.VehicleRentalOverlay.floatingBike"
         },
-        { name: stationName }
+        { name: stationName || stationNetworks }
       );
     } else if (station.isFloatingCar) {
       stationName = intl.formatMessage(
@@ -71,7 +72,7 @@ function makeDefaultGetStationName(intl: IntlShape) {
           description: "Popup title for a free-floating e-scooter",
           id: "otpUi.VehicleRentalOverlay.floatingEScooter"
         },
-        { company: stationNetworks }
+        { name: stationName || stationNetworks }
       );
     }
     return stationName;
@@ -80,7 +81,7 @@ function makeDefaultGetStationName(intl: IntlShape) {
 
 type Props = {
   configCompanies: ConfiguredCompany[];
-  getStationName: (configCompanies: Company[], station: Station) => string;
+  getStationName?: (configCompanies: Company[], station: Station) => string;
   setLocation: (arg: MapLocationActionArg) => void;
   station: Station;
 };

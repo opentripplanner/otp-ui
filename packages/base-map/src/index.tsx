@@ -97,8 +97,14 @@ const BaseMap = ({
 
   const toggleableLayers = Array.isArray(children)
     ? children
-        .flat()
-        .filter(child => child?.props?.id !== undefined)
+        .flat(10)
+        .filter(
+          child =>
+            child?.props?.id !== undefined &&
+            // Some sources will not have layers as children, and should be ignored
+            // from the list.
+            child?.props?.alwaysShow !== true
+        )
         .map(child => {
           const { id: layerId, name, visible } = child.props;
           return { id: layerId, name, visible };
@@ -171,7 +177,7 @@ const BaseMap = ({
       )}
       {Array.isArray(children)
         ? children
-            .flat()
+            .flat(10)
             .filter(child => !hiddenLayers.includes(child?.props?.id))
         : children}
     </Map>

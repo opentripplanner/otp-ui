@@ -191,4 +191,4 @@ const StopsOverlay = (props: Props): JSX.Element => {
 
 export default StopsOverlay;
 
-export { Styled, Props as StopProps };
+export { Styled, Props as StopProps, StopPopup };
