@@ -122,11 +122,7 @@ otpUi:
       today: aujourd'hui
       tomorrow: demain
       yesterday: hier
-    alertsHeader: "{alertCount, plural,
-      =0 {# alerte}
-      =1 {# alerte}
-      other {# alertes}
-      }"
+    alertsHeader: "{alertCount, plural, =0 {# alerte} =1 {# alerte} other {# alertes}}"
     fare: "Tarif : {fare}"
     operatedBy: Exploité par {agencyLink}
     rideDurationAndStops: "Trajet : {duration}{numStops, plural, =1 {} other { / # arrêts}}"

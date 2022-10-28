@@ -116,10 +116,7 @@ otpUi:
       today: Today
       tomorrow: Tomorrow
       yesterday: Yesterday
-    alertsHeader: "{alertCount, plural,
-      =1 {# alert}
-      other {# alerts}
-      }"
+    alertsHeader: "{alertCount, plural, =1 {# alert} other {# alerts}}"
     fare: "Fare: {fare}"
     operatedBy: Service operated by {agencyLink}
     rideDurationAndStops: "Ride {duration}{numStops, plural, =1 {} other { / # stops}}"
