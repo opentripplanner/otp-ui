@@ -1,6 +1,6 @@
 import React from "react";
-import { Marker, Popup } from "react-map-gl";
-import { LeafletStyleMarker } from "../src/styled";
+import { Marker } from "react-map-gl";
+import { LeafletStyleMarker, Popup } from "../src/styled";
 
 const vehicleData = require("./vehicle-data/all-trimet.json");
 
