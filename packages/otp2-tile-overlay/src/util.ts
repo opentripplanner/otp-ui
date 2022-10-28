@@ -22,14 +22,14 @@ export const LAYER_PAINT = {
     "circle-stroke-width": 2
   },
   stations: {
-    "circle-color": "pink",
+    "circle-color": "#fff",
     "circle-opacity": 0.9,
     "circle-radius": 10,
     "circle-stroke-color": "#333",
     "circle-stroke-width": 3
   },
   stops: {
-    "circle-color": "pink",
+    "circle-color": "#fff",
     "circle-opacity": 0.9,
     "circle-stroke-color": "#333",
     "circle-stroke-width": 2
