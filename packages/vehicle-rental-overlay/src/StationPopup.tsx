@@ -81,7 +81,7 @@ function makeDefaultGetStationName(intl: IntlShape) {
 
 type Props = {
   configCompanies: ConfiguredCompany[];
-  getStationName: (configCompanies: Company[], station: Station) => string;
+  getStationName?: (configCompanies: Company[], station: Station) => string;
   setLocation: (arg: MapLocationActionArg) => void;
   station: Station;
 };
