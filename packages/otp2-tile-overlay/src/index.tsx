@@ -19,7 +19,7 @@ const OTP2TileLayerWithPopup = ({
   type
 }: {
   /**
-   * Optional configuation item which allows for customizing properties of scooter and
+   * Optional configuration item which allows for customizing properties of scooter and
    * bikeshare companies
    */
   configCompanies?: ConfiguredCompany[]
