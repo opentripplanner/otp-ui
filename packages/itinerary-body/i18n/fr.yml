@@ -117,17 +117,11 @@ otpUi:
   TransitLegBody:
     agencyLogo: "Logo de {agencyName}"
     AlertsBody:
-      # À partir de 16:30, aujourd'hui
-      # À partir du 3 mars 2019
-      effectiveDate: "À partir {includeTime, select,
-        true {de {dateTime, time, short}, }
-        other {}
-        }{dayDiff, plural,
-        =-1 {hier}
-        =0 {aujourd'hui}
-        =1 {demain}
-        other {du {dateTime, date, long}}
-        }"
+      effectiveDate: À partir du {dateTime, date, long}
+      effectiveTimeAndDate: À partir de {dateTime, time, short}, {day}
+      today: aujourd'hui
+      tomorrow: demain
+      yesterday: hier
     alertsHeader: "{alertCount, plural,
       =0 {# alerte}
       =1 {# alerte}

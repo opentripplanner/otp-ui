@@ -111,15 +111,11 @@ otpUi:
   TransitLegBody:
     agencyLogo: "{agencyName} logo"
     AlertsBody:
-      effectiveDate: "Effective as of {includeTime, select,
-        true {{dateTime, time, short}, }
-        other {}
-        }{dayDiff, plural,
-        =-1 {Yesterday}
-        =0 {Today}
-        =1 {Tomorrow}
-        other {{dateTime, date, long}}
-        }"
+      effectiveDate: Effective as of {dateTime, date, long}
+      effectiveTimeAndDate: Effective as of {dateTime, time, short}, {day}
+      today: Today
+      tomorrow: Tomorrow
+      yesterday: Yesterday
     alertsHeader: "{alertCount, plural,
       =1 {# alert}
       other {# alerts}
