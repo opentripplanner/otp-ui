@@ -455,7 +455,11 @@ export function getMostReadableTextColor(
   // Luminance thresholds have been selected based on actual transit agency colors
   const fgLuminance = chroma(proposedTextColor).luminance();
   const bgLuminance = chroma(backgroundColor).luminance();
-  if (bgLuminance + fgLuminance < 1.41 && bgLuminance + fgLuminance > 0.25) {
+  if (
+    bgLuminance + fgLuminance < 1.41 &&
+    bgLuminance + fgLuminance > 0.25 &&
+    Math.abs(bgLuminance - fgLuminance) > 0.2
+  ) {
     return proposedTextColor;
   }
 
