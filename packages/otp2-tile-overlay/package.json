@@ -16,8 +16,8 @@
     "react-map-gl": "^7.0.15"
   },
   "dependencies": {
-    "@opentripplanner/stops-overlay": "^5.0.2",
-    "@opentripplanner/vehicle-rental-overlay": "^2.0.2"
+    "@opentripplanner/stops-overlay": "^5.0.3-alpha.1",
+    "@opentripplanner/vehicle-rental-overlay": "^2.1.0-alpha.1"
   },
   "devDependencies": {
     "@opentripplanner/types": "^4.0.2"

@@ -176,4 +176,4 @@ const generateOTP2TileLayers = (
   ]
 }
 
-export { OTP2TileLayerWithPopup, generateOTP2TileLayers }
+export default { OTP2TileLayerWithPopup, generateOTP2TileLayers }
