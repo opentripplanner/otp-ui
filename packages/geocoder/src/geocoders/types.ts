@@ -53,6 +53,7 @@ export type AutocompleteQuery = {
 export type SearchQuery = {
   apiKey?: string;
   boundary?: Boundary;
+  layers?: string;
   focusPoint?: LonLatInput;
   format?: boolean;
   options?: RequestInit;

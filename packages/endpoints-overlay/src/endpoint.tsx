@@ -160,6 +160,7 @@ const Endpoint = (props: Props): JSX.Element => {
     // We have to use the standard marker here since we need to adjust state
     // after and during drag
     <Marker
+      anchor="center"
       draggable
       latitude={location.lat}
       longitude={location.lon}

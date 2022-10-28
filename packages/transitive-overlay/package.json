@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/transitive-overlay",
-  "version": "3.0.1",
+  "version": "3.0.3",
   "description": "A map overlay to show an itinerary based on transitive.js",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -12,7 +12,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "echo IF YOU SEE THIS AND YOU ARE NOT ON THE ALPHA BRANCH, SOMETHING HAS GONE HORRIBLY WRONG"
+    "tsc": "tsc"
   },
   "repository": {
     "type": "git",
@@ -20,16 +20,16 @@
   },
   "dependencies": {
     "@mapbox/polyline": "^1.1.1",
-    "@opentripplanner/base-map": "^3.0.0",
-    "@opentripplanner/itinerary-body": "^4.0.4",
-    "@opentripplanner/core-utils": "^7.0.1",
+    "@opentripplanner/base-map": "^3.0.1",
+    "@opentripplanner/itinerary-body": "^4.1.1",
+    "@opentripplanner/core-utils": "^7.0.3",
     "lodash.isequal": "^4.5.0",
     "@turf/bbox": "^6.5.0"
   },
   "devDependencies": {
     "@opentripplanner/itinerary-body": "^3.0.5",
-    "@opentripplanner/endpoints-overlay": "^2.0.0",
-    "@opentripplanner/types": "^4.0.0"
+    "@opentripplanner/endpoints-overlay": "^2.0.1",
+    "@opentripplanner/types": "^4.0.1"
   },
   "peerDependencies": {
     "react": "^16.14.0",

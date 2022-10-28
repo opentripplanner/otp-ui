@@ -119,6 +119,7 @@ export function TripDetails({
   CaloriesDetails = DefaultCaloriesDetails,
   className = "",
   defaultFareKey = "regular",
+  displayCalories = true,
   DepartureDetails = null,
   FareDetails = null,
   fareDetailsLayout,
@@ -235,11 +236,15 @@ export function TripDetails({
     walkDuration
   } = coreUtils.itinerary.calculatePhysicalActivity(itinerary);
 
-  const co2 = coreUtils.itinerary.calculateEmissions(
-    itinerary,
-    co2Config?.carbonIntensity,
-    co2Config?.units
-  );
+  // Calculate CO2 if it's not provided by the itinerary
+  const co2 =
+    itinerary.co2 ||
+    (co2Config.enabled &&
+      coreUtils.itinerary.calculateEmissions(
+        itinerary,
+        co2Config?.carbonIntensity,
+        co2Config?.units
+      ));
 
   // Parse flex info and generate appropriate strings
   const containsFlex = itinerary.legs.some(coreUtils.itinerary.isFlex);
@@ -302,7 +307,7 @@ export function TripDetails({
             summary={fare}
           />
         )}
-        {caloriesBurned > 0 && (
+        {displayCalories && caloriesBurned > 0 && (
           <TripDetail
             icon={<Heartbeat size={17} />}
             summary={
