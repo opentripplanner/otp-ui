@@ -52,7 +52,6 @@ const OTP2TileLayerWithPopup = ({
       map.getCanvas().style.cursor = ""
     })
     map?.on("click", id, (event: EventData) => {
-      // TODO: event.features?.[0].sourceLayer may help here...
       const { sourceLayer } = event.features?.[0]
       const synthesizedEntity = {
         ...event.features?.[0].properties,

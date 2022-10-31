@@ -81,7 +81,12 @@ export default class StopPopup extends Component<Props> {
     const { stop } = this.props;
     const { name, stops: stopsString } = stop;
 
-    const stops = stopsString && JSON.parse(stopsString);
+    let stops = [];
+    try {
+      stops = stopsString && JSON.parse(stopsString);
+    } catch {
+      console.warn(`Invalid data recieved! ${stopsString} is not valid json.`);
+    }
 
     return (
       <BaseMapStyled.MapOverlayPopup>
