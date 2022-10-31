@@ -85,7 +85,7 @@ export default class StopPopup extends Component<Props> {
     try {
       stops = stopsString && JSON.parse(stopsString);
     } catch {
-      console.warn(`Invalid data recieved! ${stopsString} is not valid json.`);
+      console.warn(`Invalid data received! ${stopsString} is not valid json.`);
     }
 
     return (
