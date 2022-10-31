@@ -1,10 +1,10 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { Config, Leg } from "@opentripplanner/types";
-import React from "react";
-import { FormattedMessage } from "react-intl";
+import React, { ReactElement } from "react";
+import { FormattedMessage, useIntl } from "react-intl";
 
 import * as S from "../styled";
-import { defaultMessages } from "../util";
+import { defaultMessages, getVehicleType } from "../util";
 
 interface Props {
   config: Config;
@@ -23,7 +23,11 @@ interface Props {
  * assuming that the leg.rentedCar and leg.rentedBike response elements from OTP
  * will eventually be merged into the leg.rentedVehicle element.
  */
-export default function RentedVehicleSubheader({ config, leg }: Props) {
+export default function RentedVehicleSubheader({
+  config,
+  leg
+}: Props): ReactElement {
+  const intl = useIntl();
   const configCompanies = config.companies || [];
   const { from, mode, rentedBike, walkingBike } = leg;
   const { name: legName, networks, vertexType } = from;
@@ -78,8 +82,8 @@ export default function RentedVehicleSubheader({ config, leg }: Props) {
         id="otpUi.AccessLegBody.RentedVehicleSubheader.pickupRental"
         values={{
           company,
-          modeType,
-          vehicleName
+          vehicleName,
+          vehicleType: getVehicleType(modeType, intl)
         }}
       />
     );

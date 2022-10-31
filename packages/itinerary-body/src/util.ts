@@ -93,6 +93,47 @@ function getCompanyForNetwork(
 }
 
 /**
+ * Gets a localized version of a vehicle type.
+ */
+export function getVehicleType(type: string, intl: IntlShape): string {
+  switch (type) {
+    case "BIKEPARK":
+      return intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.AccessLegBody.vehicleType.bike"],
+        description: "Bike vehicle type",
+        id: "otpUi.AccessLegBody.vehicleType.bike"
+      });
+    case "BIKESHARE":
+      return intl.formatMessage({
+        defaultMessage:
+          defaultMessages["otpUi.AccessLegBody.vehicleType.bikeshare"],
+        description: "Bike share vehicle type",
+        id: "otpUi.AccessLegBody.vehicleType.bikeshare"
+      });
+    case "CARSHARE":
+      return intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.AccessLegBody.vehicleType.car"],
+        description: "Car vehicle type",
+        id: "otpUi.AccessLegBody.vehicleType.car"
+      });
+    case "VEHICLERENTAL":
+      return intl.formatMessage({
+        defaultMessage:
+          defaultMessages["otpUi.AccessLegBody.vehicleType.escooter"],
+        description: "E-scooter vehicle type",
+        id: "otpUi.AccessLegBody.vehicleType.escooter"
+      });
+    default:
+      return intl.formatMessage({
+        defaultMessage:
+          defaultMessages["otpUi.AccessLegBody.vehicleType.vehicle"],
+        description: "Generic vehicle type",
+        id: "otpUi.AccessLegBody.vehicleType.vehicle"
+      });
+  }
+}
+
+/**
  * Generates a new place name for micromobility stations
  * @param place OTP Place from micromobility location
  * @param companies Configured micromobility companies
@@ -125,7 +166,7 @@ export function getPlaceName(
         },
         {
           company: company.label,
-          modeType: place.vertexType
+          vehicleType: getVehicleType(place.vertexType, intl)
         }
       );
     }

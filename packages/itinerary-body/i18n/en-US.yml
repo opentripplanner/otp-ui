@@ -15,26 +15,8 @@ otpUi:
       toggleElevationChart: Toggle elevation chart
     mapillaryTooltip: Show street imagery at this location
     RentedVehicleSubheader:
+      pickupRental: Pick up {company} {vehicleType} {vehicleName}
       resumeRentalRide: Continue using rental
-      ### This message includes a TriMet customization
-      ### that drops company and vehicle ids from shared bikes.
-      pickupRental: "Pick up {modeType, select,
-        BIKESHARE {shared bike}
-        other {{company} {modeType, select,
-        CARSHARE {car}
-        VEHICLERENTAL {E-scooter}
-        BIKEPARK {bike}
-        other {vehicle}
-        } {vehicleName}}
-        }"
-      ### If bikeshare comes with company info, this message should be used instead.
-      # pickupRental: "Pick up {company} {modeType, select,
-      #   CARSHARE {car}
-      #   VEHICLERENTAL {E-scooter}
-      #   BIKESHARE {bike}
-      #   BIKEPARK {bike}
-      #   other {vehicle}
-      #   } {vehicleName}"
       walkVehicle: Walk vehicle along {place}
     step:
       circleClockwise: Follow circle clockwise
@@ -81,13 +63,13 @@ otpUi:
       waitMinutesForPickup: "Wait {minutes} minutes for {company} pickup"
     unnamedPath: Unnamed Path
     unnamedRoad: Unnamed Road
-    vehicleTitle: "{company} {modeType, select,
-      BIKESHARE {Bike}
-      CARSHARE {Car}
-      VEHICLERENTAL {E-scooter}
-      BIKEPARK {Bike}
-      other {Vehicle}
-      }"
+    vehicleTitle: "{company} {vehicleType}"
+    vehicleType:
+      bike: bike
+      bikeshare: shared bike
+      car: car
+      escooter: E-scooter
+      vehicle: vehicle
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"

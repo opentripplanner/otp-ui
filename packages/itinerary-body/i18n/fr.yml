@@ -15,26 +15,8 @@ otpUi:
       toggleElevationChart: Afficher/masquer les dénivelés
     mapillaryTooltip: Afficher la vue panoramique à cet endroit
     RentedVehicleSubheader:
+      pickupRental: Récupérez {vehicleType} {company} {vehicleName}
       resumeRentalRide: Continuez avec le véhicule loué
-      ### This message includes a TriMet customization
-      ### that drops company and vehicle ids from shared bikes.
-      pickupRental: "Récupérez {modeType, select,
-        BIKESHARE {le vélo partagé}
-        other {{modeType, select,
-        CARSHARE {la voiture}
-        VEHICLERENTAL {la trottinette électrique}
-        BIKEPARK {le vélo}
-        other {le véhicule}
-        } {company} {vehicleName}}
-        }"
-      ### If bikeshare comes with company info, this message should be used instead.
-      # pickupRental: "Récupérez {modeType, select,
-      #   CARSHARE {la voiture}
-      #   VEHICLERENTAL {la trottinette électrique}
-      #   BIKESHARE {le vélo}
-      #   BIKEPARK {le vélo}
-      #   other {le véhicule}
-      #   } {company} {vehicleName}"
       walkVehicle: Emmenez à pied le véhicule le long de {place}
     step:
       circleClockwise: Prenez le rond-point par la gauche
@@ -88,13 +70,13 @@ otpUi:
       waitMinutesForPickup: "Attendez votre chauffeur {company} {minutes} minutes"
     unnamedPath: Chemin sans nom
     unnamedRoad: Route sans nom
-    vehicleTitle: "{modeType, select,
-      CARSHARE {Voiture}
-      VEHICLERENTAL {Trottinette électrique}
-      BIKESHARE {Vélo}
-      BIKEPARK {Vélo}
-      other {Véhicule}
-      } {company}"
+    vehicleTitle: "{vehicleType} {company}"
+    vehicleType:
+      bike: le vélo
+      bikeshare: le vélo partagé
+      car: la voiture
+      escooter: la trottinette
+      vehicle: le véhicule
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# h }}{minutes} mn"
