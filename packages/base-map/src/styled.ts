@@ -7,8 +7,8 @@ import styled from "styled-components";
 export const Popup = styled(MapGlPopup)`
   & > .maplibregl-popup-content,
   & > .mapboxgl-popup-content {
-    border-radius: 6px;
-    box-shadow: 0 3px 14px rgb(0 0 0 / 40%);
+    border-radius: 10px;
+    box-shadow: 0 3px 14px 4px rgb(0 0 0 / 40%);
   }
 `;
 
