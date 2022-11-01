@@ -45,15 +45,13 @@ otpUi:
     summary: "{mode} to {place}"
     summaryAndDistance: "{mode} {distance} to {place}"
     # The summary modes below only include access mode actions (ride, walk...).
-    summaryMode: "{modeId, select,
-      BICYCLE {Bicycle}
-      BICYCLE_RENT {Bikeshare}
-      CAR {{isCarHail, select, true {Ride} other {Drive}}}
-      MICROMOBILITY {Ride}
-      SCOOTER {Ride}
-      WALK {Walk}
-      other {{modeId}}
-      }"
+    summaryMode:
+      bike: Bicycle
+      bikeshare: Bikeshare
+      carDrive: Drive
+      carHail: Ride
+      escooter: Ride
+      walk: Walk
     TncLeg:
       bookRide: Book Ride
       bookRideLater: Wait until {timeMillis, time, short} to book
@@ -81,14 +79,12 @@ otpUi:
         other { at least {leadDays, plural, one {# day} other {# days}} in advance}
       }.
     stayOnBoard: Stay on Board at <strong>{placeName}</strong>
-    travelBy: "Travel by {modeId, select,
-      BICYCLE {bicycle}
-      CAR {car}
-      MICROMOBILITY {e-scooter}
-      SCOOTER {e-scooter}
-      WALK {walking}
-      other {{modeId}}
-      }"
+    travelBy: Travel {mode}
+    travelByMode:
+      bike: by bicycle
+      car: by car
+      escooter: by e-scooter
+      walk: by walking
     viewOnMap: View on map
   TransitLegBody:
     agencyLogo: "{agencyName} logo"

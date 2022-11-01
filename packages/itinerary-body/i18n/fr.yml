@@ -52,15 +52,13 @@ otpUi:
     summary: "{mode} vers {place}"
     summaryAndDistance: "{mode} - {distance} vers {place}"
     # The summary modes below only include access mode actions (ride, walk...).
-    summaryMode: "{modeId, select,
-      BICYCLE {Vélo}
-      BICYCLE_RENT {Vélo partagé}
-      CAR {{isCarHail, select, true {Course en voiture} other {Voiture}}}
-      MICROMOBILITY {Trottinette}
-      SCOOTER {Trottinette}
-      WALK {Marche}
-      other {{modeId}}
-      }"
+    summaryMode:
+      bike: Vélo
+      bikeshare: Vélo partagé
+      carDrive: Voiture
+      carHail: Course en voiture
+      escooter: Trottinette
+      walk: Marche
     TncLeg:
       bookRide: Réserver
       bookRideLater: Attendez jusqu'à {timeMillis, time, short} avant de réserver.
@@ -88,13 +86,12 @@ otpUi:
         other { au moins {leadDays, plural, one {# jour} other {# jours}} à l'avance}
       }.
     stayOnBoard: Restez à bord à <strong>{placeName}</strong>
-    travelBy: "Effectué {modeId, select,
-      BICYCLE {en vélo}
-      CAR {en voiture}
-      MICROMOBILITY {en trottinette}
-      WALK {à pied}
-      other {en {modeId}}
-      }"
+    travelBy: Trajet {mode}
+    travelByMode:
+      bicycle: en vélo
+      car: en voiture
+      escooter: en trottinette
+      walk: à pied
     viewOnMap: Afficher sur le plan
   TransitLegBody:
     agencyLogo: "Logo de {agencyName}"

@@ -1,14 +1,57 @@
 import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
 import { Config, Leg } from "@opentripplanner/types";
 import React, { HTMLAttributes, ReactElement } from "react";
-import { FormattedMessage, useIntl } from "react-intl";
+import { FormattedMessage, IntlShape, useIntl } from "react-intl";
 import * as S from "../styled";
 
-import { getPlaceName } from "../util";
+import { defaultMessages, getPlaceName } from "../util";
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {
   config: Config;
   leg: Leg;
+}
+
+/**
+ * Gets the summary mode in the ambient language.
+ */
+function getSummaryMode(leg: Leg, intl: IntlShape): string {
+  switch (leg.mode) {
+    case "BICYCLE":
+      return intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.AccessLegBody.summaryMode.bike"],
+        description: "Bike to somewhere",
+        id: "otpUi.AccessLegBody.summaryMode.bike"
+      });
+    case "BICYCLE_RENT":
+      return intl.formatMessage({
+        defaultMessage:
+          defaultMessages["otpUi.AccessLegBody.summaryMode.bikeshare"],
+        description: "Bikeshare to somewhere",
+        id: "otpUi.AccessLegBody.summaryMode.bikeshare"
+      });
+    case "CAR":
+      return leg.hailedCar
+        ? intl.formatMessage({
+            defaultMessage:
+              defaultMessages["otpUi.AccessLegBody.summaryMode.carDrive"],
+            description: "Drive somewhere",
+            id: "otpUi.AccessLegBody.summaryMode.carDrive"
+          })
+        : intl.formatMessage({
+            defaultMessage:
+              defaultMessages["otpUi.AccessLegBody.summaryMode.carHail"],
+            description: "Ride in a car/taxi to somewhere",
+            id: "otpUi.AccessLegBody.summaryMode.carHail"
+          });
+    case "WALK":
+      return intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.AccessLegBody.summaryMode.walk"],
+        description: "Walk to somewhere",
+        id: "otpUi.AccessLegBody.summaryMode.walk"
+      });
+    default:
+      return leg.mode;
+  }
 }
 
 /**
@@ -29,19 +72,7 @@ export default function AccessLegDescription({
     vertexType:
       leg.to.vertexType === "BIKESHARE" ? "VEHICLE" : leg.to.vertexType
   };
-  const modeContent = (
-    <S.LegDescriptionMode>
-      <FormattedMessage
-        defaultMessage="{modeId}"
-        description="The mode action for an access leg"
-        id="otpUi.AccessLegBody.summaryMode"
-        values={{
-          isCarHail: leg.hailedCar,
-          modeId: leg.mode
-        }}
-      />
-    </S.LegDescriptionMode>
-  );
+  const modeContent = getSummaryMode(leg, intl);
   const placeContent = (
     <S.LegDescriptionPlace>
       {getPlaceName(toPlace, config.companies, intl)}
