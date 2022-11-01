@@ -44,8 +44,6 @@ export default function TNCLeg({
   };
   const { tncData } = leg;
   if (!tncData || !tncData.estimatedArrival) return null;
-
-  const company = tncData.displayName;
   return (
     <div>
       <S.PlaceSubheader>
@@ -56,7 +54,7 @@ export default function TNCLeg({
           description="Action text for waiting for a ride-hail vehicle."
           id="otpUi.AccessLegBody.TncLeg.waitForPickup"
           values={{
-            company,
+            company: tncData.displayName,
             minutes: followsTransit
               ? 0
               : Math.round(tncData.estimatedArrival / 60)
