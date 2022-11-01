@@ -9,14 +9,6 @@ interface Props {
 }
 
 /**
- * Format text bold (used with FormattedMessage).
- */
-// TODO: Find a better place for this utility.
-function boldText(contents: ReactElement): ReactElement {
-  return <strong>{contents}</strong>;
-}
-
-/**
  * Renders a "Stay on board at <station>" step in an interlined itinerary.
  */
 export default function StayOnBoard({ place }: Props): ReactElement {
@@ -26,8 +18,7 @@ export default function StayOnBoard({ place }: Props): ReactElement {
       description="Instructs riders to stay on board"
       id="otpUi.ItineraryBody.stayOnBoard"
       values={{
-        placeName: place.name,
-        strong: boldText
+        place: <strong>{place.name}</strong>
       }}
     />
   );

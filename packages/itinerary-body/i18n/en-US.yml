@@ -78,7 +78,7 @@ otpUi:
       }{leadDays, plural, =0 {}
         other { at least {leadDays, plural, one {# day} other {# days}} in advance}
       }.
-    stayOnBoard: Stay on Board at <strong>{placeName}</strong>
+    stayOnBoard: Stay on Board at {place}
     travelBy: Travel {mode}
     travelByMode:
       bike: by bicycle
