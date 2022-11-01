@@ -49,28 +49,19 @@ export default function TNCLeg({
   return (
     <div>
       <S.PlaceSubheader>
-        {followsTransit ? (
-          <FormattedMessage
-            defaultMessage={
-              defaultMessages["otpUi.AccessLegBody.TncLeg.waitForPickup"]
-            }
-            description="Action text for waiting for a ride-hail vehicle."
-            id="otpUi.AccessLegBody.TncLeg.waitForPickup"
-            values={{ company }}
-          />
-        ) : (
-          <FormattedMessage
-            defaultMessage={
-              defaultMessages["otpUi.AccessLegBody.TncLeg.waitMinutesForPickup"]
-            }
-            description="Action text for waiting some time for a ride-hail vehicle."
-            id="otpUi.AccessLegBody.TncLeg.waitMinutesForPickup"
-            values={{
-              company,
-              minutes: Math.round(tncData.estimatedArrival / 60)
-            }}
-          />
-        )}
+        <FormattedMessage
+          defaultMessage={
+            defaultMessages["otpUi.AccessLegBody.TncLeg.waitForPickup"]
+          }
+          description="Action text for waiting for a ride-hail vehicle."
+          id="otpUi.AccessLegBody.TncLeg.waitForPickup"
+          values={{
+            company,
+            minutes: followsTransit
+              ? 0
+              : Math.round(tncData.estimatedArrival / 60)
+          }}
+        />
       </S.PlaceSubheader>
 
       <S.LegBody>
