@@ -71,13 +71,10 @@ otpUi:
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"
-    flexPickupMessage: >
-      To take this route, you must call {hasPhone, select,
-        true {{phoneNumber}}
-        other {ahead}
-      }{leadDays, plural, =0 {}
-        other { at least {leadDays, plural, one {# day} other {# days}} in advance}
-      }.
+    flexAdvanceNotice: " at least {leadDays, plural, one {# day} other {# days}} in advance"
+    flexCallAhead: call ahead
+    flexCallNumber: call {phoneNumber}
+    flexPickupMessage: To take this route, you must {action}{advanceNotice}.
     stayOnBoard: Stay on Board at {place}
     travelBy: Travel {mode}
     travelByMode:

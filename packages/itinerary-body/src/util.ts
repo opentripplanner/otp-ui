@@ -1,5 +1,5 @@
 import flatten from "flat";
-import { Company, FlexBookingInfo, Place } from "@opentripplanner/types";
+import { Company, Place } from "@opentripplanner/types";
 import { IntlShape } from "react-intl";
 
 // Load the default messages.
@@ -173,24 +173,4 @@ export function getPlaceName(
   }
   // Default to place name
   return place.name;
-}
-
-/**
- * Helper function that assembles values for flex pickup/dropoff messages.
- */
-export function getFlexMessageValues(
-  info: FlexBookingInfo
-): {
-  hasPhone: boolean;
-  leadDays?: number;
-  phoneNumber?: string;
-} {
-  return {
-    // There used to be a variable `hasLeadTime` here. This should be brought back
-    // if the leadTime check is ever to be more than just checking the value of
-    // daysPrior (which can be done within react-intl)
-    hasPhone: !!info?.contactInfo?.phoneNumber,
-    leadDays: info.latestBookingTime.daysPrior,
-    phoneNumber: info?.contactInfo?.phoneNumber
-  };
 }
