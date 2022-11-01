@@ -98,8 +98,7 @@ otpUi:
     fare: "Fare: {fare}"
     operatedBy: Service operated by {agencyLink}
     rideDurationAndStops: "Ride {duration}{numStops, plural, =1 {} other { / # stops}}"
-    routeDescription: "{routeName}{headsign, select,
-      undefined {} other {<toPrefix> to </toPrefix>{headsign}}}"
+    routeDescription: "{routeName} <toPrefix>to</toPrefix> {headsign}"
     stopId: Stop ID {stopId}
     stopIdBasic: ID {stopId}
     stopViewer: Stop Viewer

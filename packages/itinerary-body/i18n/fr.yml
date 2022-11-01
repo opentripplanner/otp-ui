@@ -105,8 +105,7 @@ otpUi:
     fare: "Tarif : {fare}"
     operatedBy: Exploité par {agencyLink}
     rideDurationAndStops: "Trajet : {duration}{numStops, plural, =1 {} other { / # arrêts}}"
-    routeDescription: "{routeName}{headsign, select,
-      undefined {} other {<toPrefix> vers </toPrefix>{headsign}}}"
+    routeDescription: "{routeName} <toPrefix>vers</toPrefix> {headsign}"
     stopId: Arrêt n°{stopId}
     stopIdBasic: Arrêt n°{stopId}
     stopViewer: Info arrêt
