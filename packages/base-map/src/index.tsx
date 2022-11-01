@@ -201,4 +201,6 @@ const LayerWrapper = (props: LayerProps): JSX.Element => {
   return <>{visible && children}</>;
 };
 
+export const Popup = Styled.Popup;
+
 export { LayerWrapper, MarkerWithPopup, Styled };
