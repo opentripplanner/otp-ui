@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/core-utils",
-  "version": "7.0.4",
+  "version": "7.0.5",
   "description": "Core functionality that is shared among numerous UI components",
   "engines": {
     "node": ">=13"
