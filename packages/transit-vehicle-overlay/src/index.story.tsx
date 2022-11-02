@@ -8,8 +8,7 @@ import TransitVehicleOverlay, {
   CircleWithCaret,
   RouteNumberIcon,
   RotatingCircle,
-  withRouteColorBackground,
-  withRouteColorBackgroundOnHover
+  withRouteColorBackground
 } from ".";
 
 const SEATTLE: [number, number] = [47.6, -122.3];
@@ -37,14 +36,18 @@ export const RouteColorBackground = () => (
 
 export const RouteColorBackgroundOnHover = () => (
   <TransitVehicleOverlay
-    IconContainer={withRouteColorBackgroundOnHover(CircleWithCaret)}
+    IconContainer={withRouteColorBackground(CircleWithCaret, {
+      display: "onhover"
+    })}
     vehicles={vehicles}
   />
 );
 
 export const DefaultRouteColorWhenVehicleRouteColorAbsent = () => (
   <TransitVehicleOverlay
-    IconContainer={withRouteColorBackground(CircleWithCaret, "#00FF00")}
+    IconContainer={withRouteColorBackground(CircleWithCaret, {
+      defaultColor: "#00FF00"
+    })}
     vehicles={vehicles.map(v => {
       const { routeColor, ...vehicleProps } = v;
       return vehicleProps;

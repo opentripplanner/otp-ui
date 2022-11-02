@@ -6,8 +6,7 @@ import CircleWithCaret from "./CircleWithCaret";
 import {
   IconContainerProps,
   RotatingCircle,
-  withRouteColorBackground,
-  withRouteColorBackgroundOnHover
+  withRouteColorBackground
 } from "./styled";
 import DefaultVehicleIcon, {
   RouteNumberIcon,
@@ -112,6 +111,5 @@ export {
   DefaultVehicleIcon,
   RotatingCircle,
   RouteNumberIcon,
-  withRouteColorBackground,
-  withRouteColorBackgroundOnHover
+  withRouteColorBackground
 };

@@ -21,6 +21,11 @@ export interface IconContainerProps extends HTMLAttributes<HTMLDivElement> {
   vehicle: TransitVehicle;
 }
 
+interface RouteColorBackgroundOptions {
+  defaultColor: string;
+  display: "fixed" | "onhover";
+}
+
 interface ColorProps {
   backgroundColor: string;
   foregroundColor: string;
@@ -57,7 +62,7 @@ export const Circle = styled.div<IconContainerProps>`
   padding: ${getPadding}px;
   position: relative;
   text-align: center;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.2s ease-in-out;
   width: ${getPixels}px;
 `;
 
@@ -108,29 +113,24 @@ const routeColorBackgroundCss = css<ColorProps>`
 `;
 
 /**
- * Applies the vehicle's route color as a fixed background to a component
+ * Applies the vehicle's route color to a component
  * and a foreground color that is contrast compatible with that color.
  */
 export function withRouteColorBackground(
   Container: FC,
-  defaultColor = "#9999ee"
+  options: RouteColorBackgroundOptions
 ): FC<IconContainerProps> {
-  return styled(Container).attrs(getColorProps(defaultColor))`
-    ${routeColorBackgroundCss}
-  `;
-}
+  const defaultColor = options?.defaultColor || "#9999ee";
+  const innerCss =
+    options?.display === "onhover"
+      ? css`
+          &:hover {
+            ${routeColorBackgroundCss}
+          }
+        `
+      : routeColorBackgroundCss;
 
-/**
- * Applies the vehicle's route color a background on hovering a component
- * and a foreground color that is contrast compatible with that color.
- */
-export function withRouteColorBackgroundOnHover(
-  Container: FC,
-  defaultColor = "#9999ee"
-): FC<IconContainerProps> {
   return styled(Container).attrs(getColorProps(defaultColor))`
-    &:hover {
-      ${routeColorBackgroundCss}
-    }
+    ${innerCss}
   `;
 }
