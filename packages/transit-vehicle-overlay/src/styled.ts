@@ -22,8 +22,12 @@ export interface IconContainerProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 interface RouteColorBackgroundOptions {
-  defaultColor: string;
-  display: "fixed" | "onhover";
+  /**
+   * The alpha component of a color in hexadecimal.
+   */
+  alphaHex?: string;
+  defaultColor?: string;
+  display?: "fixed" | "onhover";
 }
 
 interface ColorProps {
@@ -39,11 +43,13 @@ const getForegroundColor = props => props.foregroundColor;
 /**
  * Computes color props to simplify the CSS filler code.
  */
-function getColorProps(defaultColor: string) {
+function getColorProps(options?: RouteColorBackgroundOptions) {
+  const defaultColor = options?.defaultColor || "#9999ee";
+
   return (props: IconContainerProps): ColorProps => {
     const routeColor = props.vehicle.routeColor || defaultColor;
     return {
-      backgroundColor: routeColor,
+      backgroundColor: `${routeColor}${options?.alphaHex || ""}`,
       foregroundColor: coreUtils.route.getMostReadableTextColor(routeColor)
     };
   };
@@ -114,13 +120,12 @@ const routeColorBackgroundCss = css<ColorProps>`
 
 /**
  * Applies the vehicle's route color to a component
- * and a foreground color that is contrast compatible with that color.
+ * and a foreground color that is contrast-compatible with that color.
  */
 export function withRouteColorBackground(
   Container: FC,
   options: RouteColorBackgroundOptions
 ): FC<IconContainerProps> {
-  const defaultColor = options?.defaultColor || "#9999ee";
   const innerCss =
     options?.display === "onhover"
       ? css`
@@ -130,7 +135,7 @@ export function withRouteColorBackground(
         `
       : routeColorBackgroundCss;
 
-  return styled(Container).attrs(getColorProps(defaultColor))`
+  return styled(Container).attrs(getColorProps(options))`
     ${innerCss}
   `;
 }

@@ -34,9 +34,10 @@ export const RouteColorBackground = () => (
   />
 );
 
-export const RouteColorBackgroundOnHover = () => (
+export const RouteColorBackgroundWithTransparencyOnHover = () => (
   <TransitVehicleOverlay
     IconContainer={withRouteColorBackground(CircleWithCaret, {
+      alphaHex: "aa",
       display: "onhover"
     })}
     vehicles={vehicles}
