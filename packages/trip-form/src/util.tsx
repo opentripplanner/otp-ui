@@ -2,7 +2,7 @@ import coreUtils from "@opentripplanner/core-utils";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore FIXME: Create TypeScript types for the icons package.
 import { getCompanyIcon } from "@opentripplanner/icons";
-import React from "react";
+import React, { Suspense } from "react";
 import { IntlShape } from "react-intl";
 
 // eslint-disable-next-line prettier/prettier
@@ -364,7 +364,7 @@ export function getCompaniesOptions(
       selected: selectedCompanies.includes(comp.id),
       text: (
         <span>
-          {CompanyIcon && <CompanyIcon />} {comp.label}
+          {CompanyIcon && <Suspense fallback={<span>{comp.label}</span>}><CompanyIcon /></Suspense>} {comp.label}
         </span>
       ),
       title: comp.label
