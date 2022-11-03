@@ -104,6 +104,14 @@ export const Caret = styled.div<{ rotate: number }>`
   }
 `;
 
+export const InnerCaret = styled(Caret)``;
+
+export const OuterCaret = styled(Caret)`
+  &::before {
+    top: -6px;
+  }
+`;
+
 const routeColorBackgroundCss = css<ColorProps>`
   background: ${props => props.backgroundColor};
   color: ${getForegroundColor};
@@ -111,7 +119,9 @@ const routeColorBackgroundCss = css<ColorProps>`
   & svg text {
     fill: ${getForegroundColor};
   }
-  ${Caret} {
+  /* Change the caret foreground color only if it is an inner caret
+     (i.e. renders over the route color background being set above). */
+  ${InnerCaret} {
     &::before {
       border-bottom-color: ${getForegroundColor};
     }

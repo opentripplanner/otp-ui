@@ -5,9 +5,10 @@ import vehicleData from "../__mocks__/seattle.json";
 import { withMap } from "../../../.storybook/base-map-wrapper";
 
 import TransitVehicleOverlay, {
-  CircleWithCaret,
+  Circle,
   RouteNumberIcon,
   RotatingCircle,
+  withCaret,
   withRouteColorBackground
 } from ".";
 
@@ -27,16 +28,27 @@ export const CustomModeIcon = () => (
   <TransitVehicleOverlay ModeIcon={ClassicModeIcon} vehicles={vehicles} />
 );
 
+export const NoCaret = () => (
+  <TransitVehicleOverlay IconContainer={Circle} vehicles={vehicles} />
+);
+
+export const InnerCaret = () => (
+  <TransitVehicleOverlay
+    IconContainer={withCaret(Circle, false)}
+    vehicles={vehicles}
+  />
+);
+
 export const RouteColorBackground = () => (
   <TransitVehicleOverlay
-    IconContainer={withRouteColorBackground(CircleWithCaret)}
+    IconContainer={withRouteColorBackground(withCaret(Circle, true))}
     vehicles={vehicles}
   />
 );
 
 export const RouteColorBackgroundWithTransparencyOnHover = () => (
   <TransitVehicleOverlay
-    IconContainer={withRouteColorBackground(CircleWithCaret, {
+    IconContainer={withRouteColorBackground(withCaret(Circle, false), {
       alphaHex: "aa",
       display: "onhover"
     })}
@@ -46,7 +58,7 @@ export const RouteColorBackgroundWithTransparencyOnHover = () => (
 
 export const DefaultRouteColorWhenVehicleRouteColorAbsent = () => (
   <TransitVehicleOverlay
-    IconContainer={withRouteColorBackground(CircleWithCaret, {
+    IconContainer={withRouteColorBackground(withCaret(Circle, true), {
       defaultColor: "#00FF00"
     })}
     vehicles={vehicles.map(v => {
