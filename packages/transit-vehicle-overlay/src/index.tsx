@@ -62,7 +62,7 @@ type Props = {
  */
 const TransitVehicleOverlay = ({
   defaultMode = "bus",
-  IconContainer = withCaret(Circle, true),
+  IconContainer = withCaret(Circle),
   iconPadding = 5,
   iconPixels = 15,
   ModeIcon,

@@ -1,15 +1,34 @@
 import React, { FC } from "react";
+import styled from "styled-components";
 
 import { IconContainerProps, InnerCaret, OuterCaret } from "./styled";
+
+interface CaretOptions {
+  pixels?: number;
+  position?: "inner" | "outer";
+}
 
 /**
  * Adds a caret to a component.
  */
 export default function withCaret(
   Component: FC<IconContainerProps>,
-  isOuter: boolean
+  options: CaretOptions
 ): FC<IconContainerProps> {
-  const Caret = isOuter ? OuterCaret : InnerCaret;
+  const isInner = options?.position === "inner";
+  const caretPx = options?.pixels || 0;
+  const RawCaret = isInner ? InnerCaret : OuterCaret;
+  const SizedCaret = caretPx
+    ? styled(RawCaret)`
+        &::before {
+          border-bottom: ${Math.max(0, caretPx - 1)}px solid #333;
+          border-left: ${caretPx}px solid transparent;
+          border-right: ${caretPx}px solid transparent;
+          margin-left: -${caretPx}px;
+          top: -${isInner ? 0 : caretPx}px;
+        }
+      `
+    : RawCaret;
 
   /**
    * Displays a circle, content, and an arrow pointing in the direction
@@ -31,7 +50,7 @@ export default function withCaret(
       vehicle={vehicle}
     >
       {children}
-      <Caret rotate={vehicle.heading} />
+      <SizedCaret rotate={vehicle.heading} />
     </Component>
   );
 

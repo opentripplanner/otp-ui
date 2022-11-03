@@ -104,6 +104,7 @@ export const Caret = styled.div<{ rotate: number }>`
   }
 `;
 
+// Inner/OuterCaret are used for determining whether to apply foreground color with route colors.
 export const InnerCaret = styled(Caret)``;
 
 export const OuterCaret = styled(Caret)`

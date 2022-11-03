@@ -20,7 +20,7 @@ export const CustomIconSize = () => (
   <TransitVehicleOverlay iconPixels={25} vehicles={vehicles} />
 );
 
-export const RotatingIcons = () => (
+export const RotatingIconsNoCaret = () => (
   <TransitVehicleOverlay IconContainer={RotatingCircle} vehicles={vehicles} />
 );
 
@@ -28,37 +28,43 @@ export const CustomModeIcon = () => (
   <TransitVehicleOverlay ModeIcon={ClassicModeIcon} vehicles={vehicles} />
 );
 
-export const NoCaret = () => (
-  <TransitVehicleOverlay IconContainer={Circle} vehicles={vehicles} />
-);
-
 export const InnerCaret = () => (
   <TransitVehicleOverlay
-    IconContainer={withCaret(Circle, false)}
+    IconContainer={withCaret(Circle, { position: "inner" })}
+    vehicles={vehicles}
+  />
+);
+
+export const OuterCaretWithCustomSize = () => (
+  <TransitVehicleOverlay
+    IconContainer={withCaret(Circle, { pixels: 12 })}
     vehicles={vehicles}
   />
 );
 
 export const RouteColorBackground = () => (
   <TransitVehicleOverlay
-    IconContainer={withRouteColorBackground(withCaret(Circle, true))}
+    IconContainer={withRouteColorBackground(withCaret(Circle))}
     vehicles={vehicles}
   />
 );
 
 export const RouteColorBackgroundWithTransparencyOnHover = () => (
   <TransitVehicleOverlay
-    IconContainer={withRouteColorBackground(withCaret(Circle, false), {
-      alphaHex: "aa",
-      display: "onhover"
-    })}
+    IconContainer={withRouteColorBackground(
+      withCaret(Circle, { position: "inner" }),
+      {
+        alphaHex: "aa",
+        display: "onhover"
+      }
+    )}
     vehicles={vehicles}
   />
 );
 
 export const DefaultRouteColorWhenVehicleRouteColorAbsent = () => (
   <TransitVehicleOverlay
-    IconContainer={withRouteColorBackground(withCaret(Circle, true), {
+    IconContainer={withRouteColorBackground(withCaret(Circle), {
       defaultColor: "#00FF00"
     })}
     vehicles={vehicles.map(v => {
