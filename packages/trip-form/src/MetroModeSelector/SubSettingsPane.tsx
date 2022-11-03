@@ -1,9 +1,10 @@
+import { Combination, ModeSetting } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 import CheckboxSelector from "../CheckboxSelector";
 import DropdownSelector from "../DropdownSelector";
 import SliderSelector from "../SliderSelector";
-import { Combination, ModeSetting, ModeSettingTypes } from "./types";
+import { ModeSettingTypes } from "./types";
 
 const Header = styled.div`
   font-size: 2em;
@@ -71,15 +72,13 @@ export default function SubSettingsPane({
   return (
     <SettingsPanel>
       <Header>{combination.label}</Header>
-      {combination.modes.map(mode => (
-        <div key={mode.mode}>
-          {mode.settings.map(setting => (
-            <ModeSettingRenderer
-              setting={setting}
-              key={setting.key}
-              onChange={onSettingUpdate}
-            />
-          ))}
+      {combination.modeSettings.map(setting => (
+        <div key={setting.key}>
+          <ModeSettingRenderer
+            setting={setting}
+            key={setting.key}
+            onChange={onSettingUpdate}
+          />
         </div>
       ))}
     </SettingsPanel>

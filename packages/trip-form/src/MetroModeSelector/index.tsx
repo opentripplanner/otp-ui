@@ -8,11 +8,11 @@ import {
   safePolygon,
   FloatingPortal
 } from "@floating-ui/react-dom-interactions";
+import { Combination } from "@opentripplanner/types";
 
 import React, { ReactElement, useRef, useState } from "react";
 import styled from "styled-components";
 import SubSettingsPane from "./SubSettingsPane";
-import { Combination } from "./types";
 
 const ModeBar = styled.div`
   display: inline-grid;

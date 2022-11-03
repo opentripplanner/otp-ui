@@ -1,20 +1,21 @@
 query Query1(
-  $fromPlace: String!
-  $toPlace: String!
-  $modes: [TransportMode]
+	$fromPlace: String!,
+	$toPlace: String!,
+	$modes: [TransportMode]
 ) {
-  plan(
-    fromPlace: $fromPlace
-    toPlace: $toPlace
-    transportModes: $modes
-    locale: "en"
-  ) {
-    itineraries {
+	plan(
+		fromPlace: $fromPlace
+		toPlace: $toPlace
+		transportModes: $modes
+		locale: "en"
+	) {
+		itineraries {
 			duration
 			startTime
 			endTime
 			walkTime
 			waitingTime
+			
 			legs {
 				mode
 				startTime
@@ -22,6 +23,7 @@ query Query1(
 				distance
 				duration
 				transitLeg
+				
 				agency {
 					name
 					id
@@ -46,7 +48,37 @@ query Query1(
 					textColor
 					type
 				}
+				from {
+					lat
+					lon
+					name
+					vertexType
+					stop {
+						id
+						code
+						
+					}
+				}
+				to {
+					lat
+					lon
+					name
+					vertexType
+					stop {
+						id
+						code
+					}
+				}
+				steps {
+					distance
+					lat
+					lon
+					elevationProfile {
+						distance
+						elevation
+					}
+				}
 			}
-    }
-  }
+		}
+	}
 }

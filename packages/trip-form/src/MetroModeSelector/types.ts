@@ -1,5 +1,3 @@
-import { StyledIcon } from "@styled-icons/styled-icon";
-
 export enum ModeSettingTypes {
   SLIDER = "SLIDER",
   CHECKBOX = "CHECKBOX",
@@ -40,31 +38,4 @@ export interface CheckboxOptions {
 export interface ModeSettingBase {
   applicableMode: string;
   key: string;
-}
-
-export type ModeSetting = (CheckboxOptions | SliderOptions | DropdownOptions) &
-  ModeSettingBase;
-export type ModeSettingValues = Record<string, number | string | boolean>;
-
-/**
- * Transportation mode is usually an OTP mode string,
- * but it can be anything for more flexibility.
- */
-export interface TransportationMode {
-  mode: string;
-  settings?: ModeSetting[];
-}
-
-/**
- * This is a combination of transportation modes,
- * with a label to describe them. These are designed
- * to appear in the mode selector as discrete options.
- */
-export interface Combination {
-  modes: TransportationMode[];
-  enabled?: boolean;
-  label: string;
-  key: string;
-  Icon: StyledIcon;
-  modeSettings?: ModeSetting[];
 }

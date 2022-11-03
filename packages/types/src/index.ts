@@ -737,6 +737,10 @@ export type ModeSettingBase = {
   key: string;
 };
 
+export type AdditionalModeSetting = {
+  mode: string;
+};
+
 export type ModeSetting = (CheckboxOptions | SliderOptions | DropdownOptions) &
   ModeSettingBase;
 export type ModeSettingValues = Record<string, number | string | boolean>;
@@ -747,8 +751,7 @@ export type ModeSettingValues = Record<string, number | string | boolean>;
  */
 export type TransportationMode = {
   mode: string;
-  settings?: ModeSetting[];
-  qualifier: string;
+  qualifier?: string;
 };
 
 /**

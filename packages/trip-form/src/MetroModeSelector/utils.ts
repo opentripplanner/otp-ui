@@ -4,8 +4,13 @@ import {
   DelimitedArrayParam,
   ObjectParam
 } from "use-query-params";
-import { QueryParamConfig } from "serialize-query-params";
-import { Combination, ModeSetting, ModeSettingValues } from "./types";
+import { QueryParamConfig, decodeQueryParams } from "serialize-query-params";
+import {
+  Combination,
+  ModeSetting,
+  ModeSettingValues,
+  TransportationMode
+} from "@opentripplanner/types";
 import { QueryParamChangeEvent } from "../types";
 
 export type InitialStateType = {
@@ -26,14 +31,19 @@ export const getSettingsForCombination = (
     value: values[def.key] as boolean & number & string
   }));
 
+  const settingsForThisCombination = combination.modes.reduce<ModeSetting[]>(
+    (prev, mode) => {
+      return [
+        ...prev,
+        ...definitionsWithValues.filter(def => def.applicableMode === mode.mode)
+      ];
+    },
+    []
+  );
+
   return {
     ...combination,
-    modes: combination.modes.map(mode => ({
-      ...mode,
-      settings: definitionsWithValues.filter(
-        def => def.applicableMode === mode.mode
-      )
-    }))
+    modeSettings: settingsForThisCombination
   };
 };
 
@@ -56,6 +66,17 @@ export function useStateStorage<Type>(
   return [qpState, setQpState];
 }
 
+export function getActivatedModesFromQueryParams(
+  searchString: string
+): string[] {
+  const queryObject = new URLSearchParams(searchString);
+  decodeQueryParams(
+    { combinations: DelimitedArrayParam },
+    { combinations: queryObject.get("combinations") }
+  );
+  return [];
+}
+
 export function useModeState(
   combinationsFromConfig: Combination[],
   initialState: InitialStateType,
@@ -66,6 +87,7 @@ export function useModeState(
   combinations: Combination[];
   enabledCombinations: Combination[];
   enabledCombinationKeys: string[];
+  enabledModes: TransportationMode[];
   toggleCombination: (key: string) => void;
 } {
   const [enabledCombinationKeys, setEnabledCombinationKeys] = useStateStorage<
@@ -120,11 +142,19 @@ export function useModeState(
     enabledCombinationKeys.includes(c.key)
   );
 
+  const enabledModes = Array.from(
+    enabledCombinations.reduce((set, combo) => {
+      combo.modes.forEach(mode => set.add(mode));
+      return set;
+    }, new Set<TransportationMode>())
+  );
+
   return {
     setModeSettingValue,
     combinations: combosWithSettings,
     enabledCombinations,
     enabledCombinationKeys,
+    enabledModes,
     toggleCombination
   };
 }
