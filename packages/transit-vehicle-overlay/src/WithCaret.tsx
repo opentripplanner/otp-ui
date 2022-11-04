@@ -4,9 +4,10 @@ import styled from "styled-components";
 import { IconContainerProps, InnerCaret, OuterCaret } from "./styled";
 
 interface CaretOptions {
-  /** How "tall" the caret should be. */
-  pixels?: number;
+  height?: number;
+  offset?: number;
   position?: "inner" | "outer";
+  width?: number;
 }
 
 /**
@@ -17,16 +18,19 @@ export default function withCaret(
   options?: CaretOptions
 ): FC<IconContainerProps> {
   const isInner = options?.position === "inner";
-  const caretPx = options?.pixels || 0;
+  const height = options?.height || 0;
+  const width = options?.width || height * 2;
+  const halfWidth = width / 2;
+  const offset = options?.offset || 0;
   const RawCaret = isInner ? InnerCaret : OuterCaret;
-  const SizedCaret = caretPx
+  const SizedCaret = height
     ? styled(RawCaret)`
         &::before {
-          border-bottom: ${Math.max(0, caretPx - 1)}px solid #333;
-          border-left: ${caretPx}px solid transparent;
-          border-right: ${caretPx}px solid transparent;
-          margin-left: -${caretPx}px;
-          top: -${isInner ? 0 : caretPx}px;
+          border-bottom-width: ${Math.max(0, height)}px;
+          border-left-width: ${halfWidth}px;
+          border-right-width: ${halfWidth}px;
+          margin-left: -${halfWidth}px;
+          top: -${offset + (isInner ? 0 : height)}px;
         }
       `
     : RawCaret;
