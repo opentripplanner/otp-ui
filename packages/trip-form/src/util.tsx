@@ -269,7 +269,9 @@ function getTransitCombinedModeOptions(
             selectedCompanies.includes(modeCompanyUpper)),
         text: (
           <span>
+            <Suspense fallback={company || "Loading..."}>
             <ModeIcon mode="TRANSIT" />+{finalIcon}
+            </Suspense>
           </span>
         ),
         title: modeLabel
@@ -364,7 +366,7 @@ export function getCompaniesOptions(
       selected: selectedCompanies.includes(comp.id),
       text: (
         <span>
-          {CompanyIcon && <Suspense fallback={<span>{comp.label}</span>}><CompanyIcon /></Suspense>} {comp.label}
+          <Suspense fallback={comp.label || comp.id || "Loading"}>{CompanyIcon ? <CompanyIcon /> : comp.id }</Suspense>
         </span>
       ),
       title: comp.label
