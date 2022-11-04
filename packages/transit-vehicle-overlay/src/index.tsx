@@ -6,15 +6,16 @@ import withCaret from "./WithCaret";
 import {
   Circle,
   getStyledContainer,
-  IconContainerProps,
   RotatingCircle,
   withRouteColorBackground
 } from "./styled";
+import { VehicleComponentProps } from "./types";
 import DefaultVehicleIcon, {
+  ModeIconProps,
   RouteNumberIcon,
   VehicleIconProps
 } from "./VehicleIcon";
-import VehicleTooltip, { VehicleTooltipProps } from "./VehicleTooltip";
+import VehicleTooltip from "./VehicleTooltip";
 
 type Props = {
   /**
@@ -24,8 +25,9 @@ type Props = {
 
   /**
    * Containing component in which route icons/numbers are rendered.
+   * Can optionally support a vehicle prop.
    */
-  IconContainer?: FC<IconContainerProps>;
+  IconContainer?: FC;
 
   /**
    * Sets the padding between component and icon in IconContainer instances that support it.
@@ -40,12 +42,12 @@ type Props = {
   /**
    * Component that renders the icons given transit modes.
    */
-  ModeIcon: FC;
+  ModeIcon: FC<ModeIconProps>;
 
   /**
    * A tooltip JSX to render
    */
-  TooltipSlot?: FC<VehicleTooltipProps>;
+  TooltipSlot?: FC<VehicleComponentProps>;
 
   /**
    * Component that renders the icons or other content such as route number for each transit vehicle.
@@ -63,7 +65,7 @@ type Props = {
  */
 const TransitVehicleOverlay = ({
   defaultMode = "bus",
-  IconContainer = withCaret(Circle),
+  IconContainer,
   iconPadding = 5,
   iconPixels = 15,
   ModeIcon,
@@ -81,7 +83,7 @@ const TransitVehicleOverlay = ({
   }
 
   const StyledContainer = getStyledContainer(
-    IconContainer,
+    IconContainer || withCaret(Circle),
     iconPadding,
     iconPixels
   );

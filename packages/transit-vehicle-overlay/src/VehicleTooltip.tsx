@@ -1,7 +1,8 @@
-import { TransitVehicle } from "@opentripplanner/types";
 import React from "react";
 import { FormattedMessage } from "react-intl";
 import styled from "styled-components";
+
+import { VehicleComponentProps } from "./types";
 import defaultMessages from "./utils/default-messages";
 import FormattedDurationWithSeconds from "./utils/formatted-duration-with-seconds";
 
@@ -14,13 +15,9 @@ const Title = styled.span`
   }
 `;
 
-export type VehicleTooltipProps = {
-  vehicle: TransitVehicle;
-};
-
 export default function VehicleTooltip({
   vehicle
-}: VehicleTooltipProps): JSX.Element {
+}: VehicleComponentProps): JSX.Element {
   const { routeShortName, routeType, seconds } = vehicle;
 
   let name: JSX.Element = <>{routeShortName}</>;

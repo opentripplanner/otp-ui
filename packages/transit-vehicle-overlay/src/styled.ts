@@ -1,12 +1,9 @@
 import memoize from "lodash.memoize";
 import coreUtils from "@opentripplanner/core-utils";
-import { FC, HTMLAttributes } from "react";
+import { FC } from "react";
 import styled, { css } from "styled-components";
-import { TransitVehicle } from "@opentripplanner/types";
 
-export interface IconContainerProps extends HTMLAttributes<HTMLDivElement> {
-  vehicle: TransitVehicle;
-}
+import { VehicleComponentProps } from "./types";
 
 interface RouteColorBackgroundOptions {
   /**
@@ -31,7 +28,7 @@ const getForegroundColor = props => props.foregroundColor;
 function getColorProps(options?: RouteColorBackgroundOptions) {
   const defaultColor = options?.defaultColor || "#9999ee";
 
-  return (props: IconContainerProps): ColorProps => {
+  return (props: VehicleComponentProps): ColorProps => {
     const routeColor = props.vehicle.routeColor || defaultColor;
     return {
       backgroundColor: `${routeColor}${options?.alphaHex || ""}`,
@@ -62,7 +59,7 @@ export const Circle = styled.div`
 /**
  * Displays a circle with contents that is rotated according to vehicle heading.
  */
-export const RotatingCircle = styled(Circle)<IconContainerProps>`
+export const RotatingCircle = styled(Circle)<VehicleComponentProps>`
   transform: rotate(${props => props.vehicle.heading || 0}deg);
 `;
 
@@ -123,7 +120,7 @@ const routeColorBackgroundCss = css<ColorProps>`
 export function withRouteColorBackground(
   Container: FC,
   options: RouteColorBackgroundOptions
-): FC<IconContainerProps> {
+): FC {
   const innerCss =
     options?.display === "onhover"
       ? css`
@@ -142,8 +139,12 @@ export function withRouteColorBackground(
  * Generate and memoize a container component once per set of container/pixels/padding parameters.
  */
 export const getStyledContainer = memoize(
-  (IconContainer: FC, padding: number, pixels: number) => {
-    return styled(IconContainer)`
+  (
+    IconContainer: FC<VehicleComponentProps>,
+    padding: number,
+    pixels: number
+  ) => {
+    return styled(IconContainer)<VehicleComponentProps>`
       height: ${pixels}px;
       line-height: ${pixels}px;
       padding: ${padding}px;

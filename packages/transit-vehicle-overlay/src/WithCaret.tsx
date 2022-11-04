@@ -1,7 +1,8 @@
-import React, { FC } from "react";
+import React, { FC, HTMLAttributes } from "react";
 import styled from "styled-components";
 
-import { IconContainerProps, InnerCaret, OuterCaret } from "./styled";
+import { InnerCaret, OuterCaret } from "./styled";
+import { VehicleComponentProps } from "./types";
 
 interface CaretOptions {
   height?: number;
@@ -9,6 +10,9 @@ interface CaretOptions {
   position?: "inner" | "outer";
   width?: number;
 }
+
+type IconContainerProps = HTMLAttributes<HTMLDivElement> &
+  VehicleComponentProps;
 
 /**
  * Adds a caret to a component.
