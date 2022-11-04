@@ -1,18 +1,25 @@
-import { TransitVehicle } from "@opentripplanner/types";
 import React, { FC, ReactElement } from "react";
 
-import BasicModeIcon, { ModeIconProps } from "./BasicModeIcon";
+import { VehicleComponentProps } from "./types";
 
-export interface VehicleIconProps {
+/**
+ * Fill-in type for the icons package.
+ */
+export interface ModeIconProps {
+  mode?: string;
+}
+
+export interface VehicleIconProps extends VehicleComponentProps {
   defaultMode?: string;
-  ModeIcon?: FC<ModeIconProps>;
-  vehicle: TransitVehicle;
+  ModeIcon: FC<ModeIconProps>;
 }
 
 /**
  * Renders the route number so it gets fitted into the icon shape.
  */
-export function RouteNumberIcon({ vehicle }: VehicleIconProps): ReactElement {
+export function RouteNumberIcon({
+  vehicle
+}: VehicleComponentProps): ReactElement {
   const { routeShortName } = vehicle;
   const length = routeShortName?.length || 0;
   const size = Math.max(length * 8, 20);
@@ -37,7 +44,7 @@ export function RouteNumberIcon({ vehicle }: VehicleIconProps): ReactElement {
  */
 export default function VehicleIcon({
   defaultMode,
-  ModeIcon = BasicModeIcon,
+  ModeIcon,
   vehicle
 }: VehicleIconProps): ReactElement {
   // Try to see if content is returned by the ModeIcon function component,

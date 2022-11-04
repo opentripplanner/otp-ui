@@ -40,7 +40,7 @@ type Props = {
   /**
    * Component that renders the icons given transit modes.
    */
-  ModeIcon?: FC;
+  ModeIcon: FC;
 
   /**
    * A tooltip JSX to render
@@ -48,7 +48,7 @@ type Props = {
   TooltipSlot?: FC<VehicleTooltipProps>;
 
   /**
-   * Component that renders the icons for each transit vehicle.
+   * Component that renders the icons or other content such as route number for each transit vehicle.
    */
   VehicleIcon?: FC<VehicleIconProps>;
 
