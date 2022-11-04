@@ -1,23 +1,10 @@
+import memoize from "lodash.memoize";
 import coreUtils from "@opentripplanner/core-utils";
 import { FC, HTMLAttributes } from "react";
 import styled, { css } from "styled-components";
 import { TransitVehicle } from "@opentripplanner/types";
 
-// Need this to find null or undefined values while not including zero which is a valid value.
-import { isNull } from "./utils/strings";
-
 export interface IconContainerProps extends HTMLAttributes<HTMLDivElement> {
-  /**
-   * The padding around icons, in pixels.
-   */
-  padding?: number;
-  /**
-   * The size of the icon in pixels.
-   */
-  pixels?: number;
-  /**
-   * The transit vehicle for which to render a symbol.
-   */
   vehicle: TransitVehicle;
 }
 
@@ -36,8 +23,6 @@ interface ColorProps {
 }
 
 // CSS helper functions.
-const getPixels = props => (isNull(props.pixels) ? 15 : props.pixels);
-const getPadding = props => (isNull(props.padding) ? 5 : props.padding);
 const getForegroundColor = props => props.foregroundColor;
 
 /**
@@ -58,18 +43,20 @@ function getColorProps(options?: RouteColorBackgroundOptions) {
 /**
  * Displays a circle with basic settings.
  */
-export const Circle = styled.div<IconContainerProps>`
+export const Circle = styled.div`
   background: #eee;
   border: 2px solid #333;
-  border-radius: ${getPixels}px;
+  /* Set an arbitrary large border radius so that the circle stays that way.
+     (should render fine in Chromium, Firefox, and Safari) */
+  border-radius: 10000px;
   cursor: default;
-  height: ${getPixels}px;
-  line-height: ${getPixels}px;
-  padding: ${getPadding}px;
+  height: 15px;
+  line-height: 15px;
+  padding: 15px;
   position: relative;
   text-align: center;
   transition: all 0.2s ease-in-out;
-  width: ${getPixels}px;
+  width: 15px;
 `;
 
 /**
@@ -150,3 +137,17 @@ export function withRouteColorBackground(
     ${innerCss}
   `;
 }
+
+/**
+ * Generate and memoize a container component once per set of container/pixels/padding parameters.
+ */
+export const getStyledContainer = memoize(
+  (IconContainer: FC, padding: number, pixels: number) => {
+    return styled(IconContainer)`
+      height: ${pixels}px;
+      line-height: ${pixels}px;
+      padding: ${padding}px;
+      width: ${pixels}px;
+    `;
+  }
+);

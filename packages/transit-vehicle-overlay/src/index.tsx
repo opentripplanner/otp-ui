@@ -5,6 +5,7 @@ import React, { FC, ReactNode } from "react";
 import withCaret from "./WithCaret";
 import {
   Circle,
+  getStyledContainer,
   IconContainerProps,
   RotatingCircle,
   withRouteColorBackground
@@ -79,6 +80,12 @@ const TransitVehicleOverlay = ({
     return null;
   }
 
+  const StyledContainer = getStyledContainer(
+    IconContainer,
+    iconPadding,
+    iconPixels
+  );
+
   return validVehicles?.map(vehicle => (
     <MarkerWithPopup
       key={vehicle.vehicleId}
@@ -89,17 +96,13 @@ const TransitVehicleOverlay = ({
         vehicle.routeShortName && <TooltipSlot vehicle={vehicle} />
       }
     >
-      <IconContainer
-        padding={iconPadding}
-        pixels={iconPixels}
-        vehicle={vehicle}
-      >
+      <StyledContainer vehicle={vehicle}>
         <VehicleIcon
           defaultMode={defaultMode}
           ModeIcon={ModeIcon}
           vehicle={vehicle}
         />
-      </IconContainer>
+      </StyledContainer>
     </MarkerWithPopup>
   ));
 };

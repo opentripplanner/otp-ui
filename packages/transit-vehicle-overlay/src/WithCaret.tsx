@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { IconContainerProps, InnerCaret, OuterCaret } from "./styled";
 
 interface CaretOptions {
+  /** How "tall" the caret should be. */
   pixels?: number;
   position?: "inner" | "outer";
 }
@@ -13,7 +14,7 @@ interface CaretOptions {
  */
 export default function withCaret(
   Component: FC<IconContainerProps>,
-  options: CaretOptions
+  options?: CaretOptions
 ): FC<IconContainerProps> {
   const isInner = options?.position === "inner";
   const caretPx = options?.pixels || 0;
@@ -37,18 +38,10 @@ export default function withCaret(
   const WrappedComponent = ({
     className,
     children,
-    padding,
-    pixels,
     style,
     vehicle
   }: IconContainerProps): JSX.Element => (
-    <Component
-      className={className}
-      padding={padding}
-      pixels={pixels}
-      style={style}
-      vehicle={vehicle}
-    >
+    <Component className={className} style={style} vehicle={vehicle}>
       {children}
       <SizedCaret rotate={vehicle.heading} />
     </Component>

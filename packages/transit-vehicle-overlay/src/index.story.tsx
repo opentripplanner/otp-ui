@@ -16,10 +16,6 @@ const SEATTLE: [number, number] = [47.6, -122.3];
 
 const vehicles: TransitVehicle[] = vehicleData.vehiclePositions;
 
-export const CustomIconSize = () => (
-  <TransitVehicleOverlay iconPixels={25} vehicles={vehicles} />
-);
-
 export const RotatingIconsNoCaret = () => (
   <TransitVehicleOverlay IconContainer={RotatingCircle} vehicles={vehicles} />
 );
@@ -38,6 +34,7 @@ export const InnerCaret = () => (
 export const OuterCaretWithCustomSize = () => (
   <TransitVehicleOverlay
     IconContainer={withCaret(Circle, { pixels: 12 })}
+    iconPixels={25}
     vehicles={vehicles}
   />
 );
