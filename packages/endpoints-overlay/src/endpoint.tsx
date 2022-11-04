@@ -1,4 +1,5 @@
 import { Briefcase } from "@styled-icons/fa-solid/Briefcase";
+import { Popup } from "@opentripplanner/base-map";
 import {
   ClearLocationArg,
   Location,
@@ -8,7 +9,7 @@ import {
 import { FormattedMessage, useIntl } from "react-intl";
 import { Home } from "@styled-icons/fa-solid/Home";
 import { MapMarkerAlt } from "@styled-icons/fa-solid/MapMarkerAlt";
-import { Marker, Popup, MarkerDragEvent } from "react-map-gl";
+import { Marker, MarkerDragEvent } from "react-map-gl";
 import { Sync } from "@styled-icons/fa-solid/Sync";
 import { Times } from "@styled-icons/fa-solid/Times";
 import coreUtils from "@opentripplanner/core-utils";
@@ -160,6 +161,7 @@ const Endpoint = (props: Props): JSX.Element => {
     // We have to use the standard marker here since we need to adjust state
     // after and during drag
     <Marker
+      anchor="center"
       draggable
       latitude={location.lat}
       longitude={location.lon}

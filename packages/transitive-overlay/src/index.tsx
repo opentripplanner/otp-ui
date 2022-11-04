@@ -93,7 +93,7 @@ const TransitiveCanvasOverlay = ({
     if (bounds.length === 4 && bounds.every(Number.isFinite)) {
       map?.fitBounds(bounds, {
         duration: 500,
-        padding: 200
+        padding: window.innerWidth > 500 ? 200 : undefined
       });
     }
   };

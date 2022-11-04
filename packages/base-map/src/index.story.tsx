@@ -4,7 +4,6 @@ import {
   AttributionControl,
   MapProvider,
   NavigationControl,
-  Popup,
   ScaleControl,
   useMap
 } from "react-map-gl";
@@ -16,7 +15,7 @@ import ContextMenuDemo from "../__mocks__/ContextMenuDemo";
 
 import { withMap } from "../../../.storybook/base-map-wrapper";
 
-import BaseMap, { MarkerWithPopup, LayerWrapper, Styled } from ".";
+import BaseMap, { MarkerWithPopup, LayerWrapper, Popup, Styled } from ".";
 
 import "maplibre-gl/dist/maplibre-gl.css";
 
