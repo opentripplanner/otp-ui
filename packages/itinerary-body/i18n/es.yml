@@ -18,11 +18,51 @@ otpUi:
       elevationChart: Gráfico de elevación
       noElevationData: No hay datos de elevación disponibles.
       toggleElevationChart: Activar gráfica de elevación
-    summary: '{mode}{distance, select, 0 {} other { - {distance}} }{place, select,
-      undefined {} other { a {place}}}'
+    summary: '{mode} a {place}'
     mapillaryTooltip: Mostrar imágenes de la calle en esta ubicación
     vehicleTitle: '{company} {modeType, select, BIKESHARE {Bicicleta} CARSHARE {Coche}
       VEHICLERENTAL {Scooter Eléctrico} BIKEPARK {Bicicleta} other {Vehículo} }'
+    step:
+      circleCounterClockwise: Siga el círculo en sentido contrario a las agujas del
+        reloj
+      continue: Continuar
+      hardLeft: Giro a la izquierda
+      hardRight: Giro a la derecha
+      left: Vire a la izquierda
+      uTurnLeft: Media vuelta a la izquierda
+      circleClockwise: Siga el círculo en el sentido de las agujas del reloj
+      right: Vire a la derecha
+      slightlyLeft: Ligeramente a la izquierda
+      slightlyRight: Ligeramente a la derecha
+      uTurnRight: Media vuelta a la derecha
+    stepHeading:
+      east: el este
+      northeast: el noreste
+      northwest: el noroeste
+      south: el sur
+      southeast: el sureste
+      southwest: el suroeste
+      west: el oeste
+      north: el norte
+    stepElevator: Toma el ascensor hasta {street}
+    stepGeneric: '{step} por {street}'
+    summaryAndDistance: '{mode} - {distance} a {place}'
+    summaryMode:
+      bike: Bicicleta
+      bikeshare: Bicicleta compartida
+      carDrive: Carro
+      carHail: Paseo
+      escooter: Patineta
+      walk: Caminata
+    unnamedRoad: Calle sin nombre
+    unnamedPath: Sendero sin nombre
+    vehicleType:
+      bike: la bicicleta
+      bikeshare: la bicicleta compartida
+      car: el carro
+      escooter: la patineta
+      vehicle: el vehículo
+    stepDepart: Dirígete hacia {heading} por {street}
   ItineraryBody:
     stayOnBoard: Permanecer a bordo a la <strong>{placeName}</strong>
     travelBy: Viajar {modeId, select, BICYCLE {en bicicleta} CAR {en coche} MICROMOBILITY
@@ -34,6 +74,15 @@ otpUi:
       \  true {1{phoneNumber}}\n  other 2{con antelación}\n}{leadDays, plural, =0\
       \ {}\n  other { al menos {leadDays, plural, one {# día} other {# días}} de antelación}\n\
       }.\n"
+    flexCallAhead: llama con anticipación
+    flexCallNumber: llama {phoneNumber}
+    travelByMode:
+      bike: en bicicleta
+      car: en carro
+      escooter: en patineta
+      walk: a pie
+    flexAdvanceNotice: ' al menos {leadDays, plural, one {# día} other {# días}} de
+      antelación'
   TransitLegBody:
     stopId: ID de Parada {stopId}
     stopIdBasic: ID {stopId}
@@ -43,6 +92,10 @@ otpUi:
       effectiveDate: En vigor desde {includeTime, select, true {{dateTime, time, short},
         } other {} }{dayDiff, plural, =-1 {Ayer} =0 {Hoy} =1 {Mañana} other {{dateTime,
         date, long}} }
+      effectiveTimeAndDate: A partir de {dateTime, time, short}, {day}
+      today: Hoy dia
+      tomorrow: Mañana
+      yesterday: Ayer
     agencyLogo: Logo de {agencyName}
     alertsHeader: '{alertCount, plural, =1 {# alerta} other {# alertas} }'
     fare: 'Tarifa: {fare}'
