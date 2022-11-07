@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@opentripplanner/core-utils": "^7.0.3",
-    "@opentripplanner/base-map": "^3.0.1"
+    "@opentripplanner/base-map": "^3.0.4"
   },
   "devDependencies": {
     "@opentripplanner/types": "^4.0.1"
