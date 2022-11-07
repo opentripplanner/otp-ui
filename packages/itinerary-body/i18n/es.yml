@@ -6,9 +6,6 @@ otpUi:
         other {{company} {modeType, select, CARSHARE {el coche} VEHICLERENTAL {e-scooter}
         BIKEPARK {la bicicleta} other {el vehículo} } {vehicleName}} }
       resumeRentalRide: Seguir utilizando el alquiler
-    summaryMode: '{modeId, select, BICYCLE {Bicicleta} BICYCLE_RENT {Bicicleta Compartida}
-      CAR {{isCarHail, select, true {Paseo} other {Conducir}}} MICROMOBILITY {Paseo}
-      WALK {Caminar} other {{modeId}} }'
     TncLeg:
       bookRide: Reservar un viaje
       bookRideLater: Espere hasta las {timeMillis, time, short} para reservar
@@ -21,21 +18,9 @@ otpUi:
       elevationChart: Gráfico de elevación
       noElevationData: No hay datos de elevación disponibles.
       toggleElevationChart: Activar gráfica de elevación
-    streetOrUnnamedRoad: '{streetName, select, road {Calle sin Nombre} path {Sendero
-      sin Nombre} other {{streetName}} }'
     summary: '{mode}{distance, select, 0 {} other { - {distance}} }{place, select,
       undefined {} other { a {place}}}'
     mapillaryTooltip: Mostrar imágenes de la calle en esta ubicación
-    step: '{relativeDirection, select, CIRCLE_CLOCKWISE {Siga el círculo en el sentido
-      de las agujas del reloj} CIRCLE_COUNTERCLOCKWISE {Siga el círculo en sentido
-      contrario a las agujas del reloj} CONTINUE {Continuar} DEPART {Dirígete {absoluteDirection,
-      select, EAST {al este} NORTH {al norte} NORTHEAST {al noreste} NORTHWEST {al
-      noroeste} SOUTH {al sur} SOUTHEAST {al sureste} SOUTHWEST {al suroeste} WEST
-      {al oeste} other {{absoluteDirection}} }} ELEVATOR {Toma el ascensor} HARD_LEFT
-      {la izquierda} HARD_RIGHT {a la derecha} LEFT {a la izquierda} RIGHT {a la derecha}
-      SLIGHTLY_LEFT {ligeramente a la izquierda} SLIGHTLY_RIGHT {ligeramente a la
-      derecha} UTURN_LEFT {U a la izquierda} UTURN_RIGHT {U a la derecha} other {{relativeDirection}}
-      } {relativeDirection, select, ELEVATOR {hasta} other {en}} {street}'
     vehicleTitle: '{company} {modeType, select, BIKESHARE {Bicicleta} CARSHARE {Coche}
       VEHICLERENTAL {Scooter Eléctrico} BIKEPARK {Bicicleta} other {Vehículo} }'
   ItineraryBody:
