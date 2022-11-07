@@ -1,5 +1,5 @@
 import flatten from "flat";
-import { Company, FlexBookingInfo, Place } from "@opentripplanner/types";
+import { Company, Place } from "@opentripplanner/types";
 import { IntlShape } from "react-intl";
 
 // Load the default messages.
@@ -93,6 +93,47 @@ function getCompanyForNetwork(
 }
 
 /**
+ * Gets a localized version of a vehicle type.
+ */
+export function getVehicleType(type: string, intl: IntlShape): string {
+  switch (type) {
+    case "BIKEPARK":
+      return intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.AccessLegBody.vehicleType.bike"],
+        description: "Bike vehicle type",
+        id: "otpUi.AccessLegBody.vehicleType.bike"
+      });
+    case "BIKESHARE":
+      return intl.formatMessage({
+        defaultMessage:
+          defaultMessages["otpUi.AccessLegBody.vehicleType.bikeshare"],
+        description: "Bike share vehicle type",
+        id: "otpUi.AccessLegBody.vehicleType.bikeshare"
+      });
+    case "CARSHARE":
+      return intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.AccessLegBody.vehicleType.car"],
+        description: "Car vehicle type",
+        id: "otpUi.AccessLegBody.vehicleType.car"
+      });
+    case "VEHICLERENTAL":
+      return intl.formatMessage({
+        defaultMessage:
+          defaultMessages["otpUi.AccessLegBody.vehicleType.escooter"],
+        description: "E-scooter vehicle type",
+        id: "otpUi.AccessLegBody.vehicleType.escooter"
+      });
+    default:
+      return intl.formatMessage({
+        defaultMessage:
+          defaultMessages["otpUi.AccessLegBody.vehicleType.vehicle"],
+        description: "Generic vehicle type",
+        id: "otpUi.AccessLegBody.vehicleType.vehicle"
+      });
+  }
+}
+
+/**
  * Generates a new place name for micromobility stations
  * @param place OTP Place from micromobility location
  * @param companies Configured micromobility companies
@@ -125,31 +166,11 @@ export function getPlaceName(
         },
         {
           company: company.label,
-          modeType: place.vertexType
+          vehicleType: getVehicleType(place.vertexType, intl)
         }
       );
     }
   }
   // Default to place name
   return place.name;
-}
-
-/**
- * Helper function that assembles values for flex pickup/dropoff messages.
- */
-export function getFlexMessageValues(
-  info: FlexBookingInfo
-): {
-  hasPhone: boolean;
-  leadDays?: number;
-  phoneNumber?: string;
-} {
-  return {
-    // There used to be a variable `hasLeadTime` here. This should be brought back
-    // if the leadTime check is ever to be more than just checking the value of
-    // daysPrior (which can be done within react-intl)
-    hasPhone: !!info?.contactInfo?.phoneNumber,
-    leadDays: info.latestBookingTime.daysPrior,
-    phoneNumber: info?.contactInfo?.phoneNumber
-  };
 }
