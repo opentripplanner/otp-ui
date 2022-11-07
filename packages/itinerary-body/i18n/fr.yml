@@ -11,7 +11,7 @@ otpUi:
   AccessLegBody:
     LegDiagramPreview:
       elevationChart: Dénivelés
-      noElevationData: Aucune information sur les dénivelés
+      noElevationData: Aucune information sur les dénivelés.
       toggleElevationChart: Afficher/masquer les dénivelés
     mapillaryTooltip: Afficher la vue panoramique à cet endroit
     RentedVehicleSubheader:
@@ -61,7 +61,7 @@ otpUi:
       walk: Marche
     TncLeg:
       bookRide: Réserver
-      bookRideLater: Attendez jusqu'à {timeMillis, time, short} avant de réserver.
+      bookRideLater: Attendez jusqu'à {timeMillis, time, short} avant de réserver
       estimatedCost: "Coût estimé : {minFare} - {maxFare}"
       estimatedTravelTime: "Temps de trajet estimé : {duration} (ne tient pas compte\
         \ de la circulation)"
@@ -90,6 +90,7 @@ otpUi:
       car: en voiture
       escooter: en trottinette
       walk: à pied
+      bike: en vélo
     viewOnMap: Afficher sur le plan
   TransitLegBody:
     agencyLogo: "Logo de {agencyName}"
