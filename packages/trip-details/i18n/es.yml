@@ -12,12 +12,16 @@ otpUi:
     fareDetailsHeaders:
       cash: Efectivo
       regular: Adulto
-      senior: Major edad
+      senior: Mayor edad
       special: Especial
       youth: Juventud
       electronic: Electrónico
     title: Detalles del viaje
     tncFare: '{companies} Tarifa: <strong>{minTNCFare} - {maxTNCFare}</strong>'
-    transitFare: Tarifa de tr‡nsito
+    transitFare: Tarifa de tránsito
     transitFareEntry: '{name} : <strong>{value}</strong>'
     tripIncludesFlex: Este viaje incluye rutas flexibles. {extraMessage}
+    co2description: La intensidad de CO<sub>2 </sub> se calcula multiplicando la distancia
+      de cada tramo de un viaje por la intensidad de CO<sub>2</sub> de cada modo.
+      La intensidad de CO<sub>2 </sub> de cada modo se deriva de esta <link>hoja de
+      cálculo</link>.
