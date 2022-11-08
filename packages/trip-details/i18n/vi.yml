@@ -1,1 +1,14 @@
-{}
+otpUi:
+  TripDetails:
+    calories: 'Calo bị đốt cháy: <strong>{calories, number, ::.}</strong>'
+    departure: Khởi hành <strong>{departureDate, date, long}</strong> lúc <strong>{departureDate,
+      time, short}</strong>
+    title: Chi tiết chuyến đi
+    tncFare: '{companies} Giá vé: <strong>{minTNCFare} - {maxTNCFare}</strong>'
+    transitFare: Giá vé quá cảnh
+    transitFareEntry: '{name}: <strong>{value}</strong>'
+    caloriesDescription: "Lượng calo bị đốt cháy dựa trên <strong>{walkMinutes} phút</strong>\
+      \ đi bộ và <strong>{bikeMinutes} phút</strong> đi xe đạp trong chuyến đi này.\
+      \ Phỏng theo <dietaryLink>Dietary Guidelines for Americans 2005, trang 16, hình\
+      \ ảnh 4</dietaryLink>.\n"
+    co2: 'CO<sub>2</sub> thải ra: <strong>{co2}</strong>'
