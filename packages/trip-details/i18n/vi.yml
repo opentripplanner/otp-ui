@@ -12,3 +12,14 @@ otpUi:
       \ Phỏng theo <dietaryLink>Dietary Guidelines for Americans 2005, trang 16, hình\
       \ ảnh 4</dietaryLink>.\n"
     co2: 'CO<sub>2</sub> thải ra: <strong>{co2}</strong>'
+    co2description: Cường độ O<sub>2</sub> được tính bằng cách nhân khoảng cách của
+      mỗi chặng của chuyến đi với cường độ O<sub>2</sub> của mỗi chế độ. Cường độ
+      O<sub>2</sub> của mỗi chế độ được lấy từ <link>bảng tính này</link>.
+    tripIncludesFlex: Chuyến đi này bao gồm các tuyến đường linh hoạt
+    fareDetailsHeaders:
+      regular: Người lớn
+      youth: Người trẻ
+      senior: Người lớn tuổi
+      electronic: Thanh toán bằng thẻ
+      cash: Tiền mặt
+      special: Đặc biệt
