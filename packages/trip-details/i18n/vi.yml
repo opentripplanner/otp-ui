@@ -15,7 +15,7 @@ otpUi:
     co2description: Cường độ O<sub>2</sub> được tính bằng cách nhân khoảng cách của
       mỗi chặng của chuyến đi với cường độ O<sub>2</sub> của mỗi chế độ. Cường độ
       O<sub>2</sub> của mỗi chế độ được lấy từ <link>bảng tính này</link>.
-    tripIncludesFlex: Chuyến đi này bao gồm các tuyến đường linh hoạt
+    tripIncludesFlex: Chuyến đi này bao gồm các tuyến đường linh hoạt. {extraMessage}
     fareDetailsHeaders:
       regular: Người lớn
       youth: Người trẻ
