@@ -1,1 +1,5 @@
-{}
+otpUi:
+  FromToLocationPicker:
+    from: 从这里
+    planATrip: '计划行程:'
+    to: 到这里
