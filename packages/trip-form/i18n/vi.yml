@@ -1,1 +1,36 @@
-{}
+otpUi:
+  SettingsSelectorPanel:
+    takeTransit: Sử dụng phương tiện công cộng
+    bikeOnly: Chỉ dành cho xe đạp
+    escooterOnly: Chỉ xe tay ga điện
+    travelPreferences: Sở thích Du lịch
+    use: Sử dụng
+    useCompanies: Sử dụng các công ty
+    walkOnly: Chỉ đi bộ
+  DateTimeSelector:
+    depart: Khởi hành lúc
+    now: Rời đi ngay bây giờ
+    arrive: Đến trước
+  queryParameters:
+    bikeSpeed: Tốc độ xe đạp
+    maxBikeDistance: Xe đạp tối đa
+    maxBikeTime: Thời gian xe đạp tối đa
+    maxEScooterDistance: Khoảng cách xe tay ga điện tối đa
+    maxWalkDistance: Đi bộ tối đa
+    maxWalkTime: Thời gian đi bộ tối đa
+    optimizeBikeFlat: Chuyến đi bằng phẳng
+    optimizeBikeFriendly: Chuyến đi Thân thiện với Xe đạp
+    optimizeBikeSpeed: Tốc độ
+    optimizeFor: Tối ưu hóa cho
+    speedInMilesPerHour: '{mph} MPH'
+    walkReluctance: Tránh đi bộ
+    walkReluctanceHigh: Thêm phương tiện công cộng
+    walkReluctanceLow: Đi bộ nhiều hơn
+    walkSpeed: Tốc độ đi bộ
+    watts: Sức mạnh xe tay ga điện
+    watts125kidsHoverboard: Ván trượt của trẻ em (10 km/h)
+    watts1500powerfulEscooter: Xe tay ga điện mạnh mẽ (40 km/h)
+    watts250entryLevelEscooter: Xe tay ga cấp nhập cảnh (18 km/h)
+    watts500robustEscooter: Xe tay ga điện mạnh mẽ (30 km/h)
+    wheelchair: Thích các tuyến xe lăn có thể truy cập
+    distanceInMiles: "{miles, number, :: unit/mile unit-width-full-name}\n"
