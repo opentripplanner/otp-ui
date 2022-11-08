@@ -1,1 +1,11 @@
-{}
+otpUi:
+  PrintableItinerary:
+    TncLeg:
+      estimatedTravelTime: '估计的旅行时间: <strong>{duration}</strong> (不包括流量)'
+      estimatedWaitTime: '预计等待取货的时间: <strong>{duration}</strong>'
+      header: <strong>乘坐 {company}</strong> 前往 <strong>{place}</strong>
+    TransitLeg:
+      alight: <strong>{time, time, short}</strong> 在 <strong>{place}</strong> 下车
+      board: <strong>{time, time, short}</strong> 在 <strong>{place}</strong> 上车
+      continuesAs: 继续作为 {routeDescription}
+    depart: 从 <strong>{place}</strong> <strong>出发</strong>
