@@ -1,1 +1,39 @@
-{}
+otpUi:
+  AccessLegBody:
+    RentedVehicleSubheader:
+      resumeRentalRide: Tiếp tục sử dụng cho thuê
+      walkVehicle: Đẩy phương tiện giao thông dọc theo {place}
+    summaryMode:
+      bikeshare: Chia sẻ xe đạp
+      carDrive: Lái xe
+      walk: Đi bộ
+    TncLeg:
+      bookRide: Đặt trước một chuyến đi
+      bookRideLater: Chờ cho đến {timeMillis, time, short} để đặt chỗ
+      estimatedCost: 'Chi phí ước tính: {minFare} - {maxFare}'
+      estimatedTravelTime: 'Thời gian di chuyển ước tính: {duration} (không tính đến
+        giao thông)'
+    LegDiagramPreview:
+      elevationChart: Biểu đồ cao độ
+      noElevationData: Không có sẵn dữ liệu độ cao.
+      toggleElevationChart: Bật biểu đồ độ cao
+    mapillaryTooltip: Hiển thị hình ảnh đường phố tại vị trí này
+  ItineraryBody:
+    common:
+      durationShort: '{hours, plural, =0 {} other {# giờ }}{minutes} phút'
+    viewOnMap: Xem trên bản đồ
+  TransitLegBody:
+    agencyLogo: logo {agencyName}
+    AlertsBody:
+      today: Hôm nay
+      tomorrow: Ngày mai
+      yesterday: Hôm qua
+    fare: 'Giá vé: {fare}'
+    stopViewer: Trình xem trạm dừng
+    tripViewer: Trình xem chuyến đi
+    stopId: ID điểm dừng {stopId}
+    operatedBy: Dịch vụ do {agencyLink}
+    rideDurationAndStops: 'Đi {duration}{numStops, plural, =1 {} other { / # điểm
+      dừng}}'
+    stopIdBasic: ID {stopId}
+    typicalWait: 'Chờ thông thường: {waitTime}'
