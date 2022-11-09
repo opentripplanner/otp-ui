@@ -2832,15 +2832,6 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
-"@opentripplanner/base-map@^3.0.1":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/base-map/-/base-map-3.0.2.tgz#ff7e5a81ee3937f4cf982d5eb03066fbf90f3e44"
-  integrity sha512-PuLh6XfJeYQmZAs2JruT3QfWzAmwoK8nPMAVE2bjmN032SXlaGUJru2kERGD2vkmaUud+XqQIvdQ6ZlcQkpS1g==
-  dependencies:
-    mapbox-gl "npm:empty-npm-package@1.0.0"
-    maplibre-gl "^2.1.9"
-    react-map-gl "^7.0.15"
-
 "@opentripplanner/core-utils@^7.0.3":
   version "7.0.4"
   resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-7.0.4.tgz#8fdbd547d4ca02ccef22c4e69a77941f84af7dc5"
@@ -2864,23 +2855,6 @@
   dependencies:
     "@opentripplanner/core-utils" "^7.0.3"
     prop-types "^15.7.2"
-
-"@opentripplanner/itinerary-body@^4.1.1":
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/itinerary-body/-/itinerary-body-4.1.2.tgz#4ec2a28b5523e2351f2dc31873d7200aa6b1fbe3"
-  integrity sha512-ZnfqEycHD8dcIMGfvsWhcHhaFHVuv2hpBwRFb+reaSKe+AU3TjWRJv+BcoToC0ZegK3Qy854Dzkt2zDxEvKUkQ==
-  dependencies:
-    "@opentripplanner/core-utils" "^7.0.3"
-    "@opentripplanner/humanize-distance" "^1.2.0"
-    "@opentripplanner/icons" "^1.2.5"
-    "@opentripplanner/location-icon" "^1.4.0"
-    "@styled-icons/fa-solid" "^10.34.0"
-    "@styled-icons/foundation" "^10.34.0"
-    date-fns "^2.28.0"
-    date-fns-tz "^1.2.2"
-    flat "^5.0.2"
-    react-animate-height "^3.0.4"
-    react-resize-detector "^4.2.1"
 
 "@opentripplanner/types@^4.0.1", "@opentripplanner/types@^4.0.2":
   version "4.0.2"

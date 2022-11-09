@@ -239,7 +239,7 @@ export function TripDetails({
   // Calculate CO2 if it's not provided by the itinerary
   const co2 =
     itinerary.co2 ||
-    (co2Config.enabled &&
+    (co2Config?.enabled &&
       coreUtils.itinerary.calculateEmissions(
         itinerary,
         co2Config?.carbonIntensity,

@@ -1,0 +1,92 @@
+otpUi:
+  AccessLegBody:
+    RentedVehicleSubheader:
+      resumeRentalRide: 继续使用租赁
+      pickupRental: "{company} {vehicleType} {vehicleName} 捡起"
+      walkVehicle: 沿着 {place} 推车辆
+    step:
+      continue: 继续
+      hardLeft: 硬左
+      left: 左转
+      right: 右转
+      slightlyLeft: 稍稍左
+      slightlyRight: 稍向右
+      uTurnLeft: 左掉头
+      uTurnRight: 右掉头
+      circleClockwise: 顺时针跟随圆圈
+      circleCounterClockwise: 逆时针跟随圆圈
+      hardRight: 硬右
+    stepDepart: 走{heading}在{street}
+    stepHeading:
+      east: 向东
+      north: 向北
+      northwest: 西北
+      south: 向南
+      southwest: 西南
+      west: 向西
+      northeast: 东北方向
+      southeast: 东南
+    stepElevator: 乘坐电梯到 {street}
+    stepGeneric: "{street} 在 {step}"
+    summaryAndDistance: "{place} 至 {distance} {mode}"
+    summaryMode:
+      bike: 自行车
+      carHail: 骑
+      escooter: 骑
+      carDrive: 驾驶
+      walk: 步行
+      bikeshare: 共享单车
+    unnamedPath: 未命名路径
+    unnamedRoad: 未命名路
+    vehicleType:
+      bike: 自行车
+      bikeshare: 自行车
+      vehicle: 车辆
+      car: 汽车
+      escooter: 电动滑板车
+    LegDiagramPreview:
+      elevationChart: 海拔图表
+      noElevationData: 没有可用的高程数据.
+      toggleElevationChart: 切换海拔图表
+    mapillaryTooltip: 在这个位置显示街道图像
+    TncLeg:
+      bookRide: 预订旅行
+      bookRideLater: 等到 {timeMillis, time, short} 进行预订
+      estimatedCost: "估计费用: {minFare} - {maxFare}"
+      estimatedTravelTime: "估计的旅行时间: {duration} (不包括流量)"
+      waitForPickup: "等待 {minutes, plural, =0 {} other { # 分钟} } {company} 来接你"
+    summary: "{place} 至 {mode}"
+    vehicleTitle: "{company} {vehicleType}"
+  ItineraryBody:
+    flexAdvanceNotice: " 至少提前 {leadDays} 天"
+    flexCallAhead: 提前打电话
+    flexCallNumber: 拨打 {phoneNumber}
+    flexPickupMessage: 要走这条路，你必须{action}
+    travelBy: "{mode} 旅行"
+    viewOnMap: 在地图上查看
+    travelByMode:
+      bike: 骑自行车
+      car: 乘车
+      escooter: 乘坐电动滑板车
+      walk: 步行出
+    common:
+      durationShort: "{hours, plural, =0 {} other {# 시간 }}{minutes} 分钟"
+    stayOnBoard: 留在 {place} 的巴士上
+  TransitLegBody:
+    AlertsBody:
+      today: 今天
+      effectiveDate: 从 {dateTime, date, long} 起生效
+      effectiveTimeAndDate: 从 {dateTime, time, short}, {day} 起生效
+      tomorrow: 明天
+      yesterday: 昨日
+    alertsHeader: "{alertCount} 个警报"
+    routeDescription: "{routeName} <toPrefix>至</toPrefix> {headsign}"
+    stopViewer: 车站查看器
+    tripViewer: 行程查看器
+    stopIdBasic: ID {stopId}
+    typicalWait: "典型的等待时间: {waitTime}"
+    agencyLogo: "{agencyName} 徽标"
+    fare: "票价: {fare}"
+    operatedBy: 公交运营商 {agencyLink}
+    rideDurationAndStops: "乘坐 {duration}{numStops, plural, =1 {} other { / # 站}}"
+    stopId: 车站 ID {stopId}

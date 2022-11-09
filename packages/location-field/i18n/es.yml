@@ -1,0 +1,22 @@
+otpUi:
+  LocationField:
+    useCurrentLocation: Usar ubicación actual
+    workLocation: Ubicación de trabajo
+    currentLocationUnavailable: Ubicación actual no disponible ({error})
+    fetchingLocation: Buscando la ubicación...
+    beingTypingPrompt: Comience a escribir para buscar ubicaciones
+    clearLocation: Restablecer la ubicación
+    geocoderUnreachable:
+      No se ha podido contactar con el geocodificador{error, select,
+      undefined {} other { ({error})}}
+    homeLocation: Residencia
+    myPlaces: Mis Lugares
+    nearby: Paradas cercanas
+    other: Otro
+    placeNameWithDetails: "{placeName} ({details})"
+    stops: Paradas
+    recentlySearched: Buscado Recientemente
+    stations: Estaciones
+    noResultsFound:
+      "No se han encontrado resultados para {input, select,\n null {su\
+      \ consulta}\n other {{input}}\n }\n"

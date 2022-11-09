@@ -4,6 +4,9 @@ import { FormattedMessage } from "react-intl";
 import { defaultMessages } from "../util";
 
 import * as S from "../styled";
+import AccessLegStepAction, { Action } from "./access-leg-step-action";
+import AccessLegStepHeading, { Heading } from "./access-leg-step-heading";
+import StreetName from "./street-name";
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {
   step: Step;
@@ -18,31 +21,55 @@ export default function AccessLegStep({
   style
 }: Props): ReactElement {
   const { absoluteDirection, relativeDirection, streetName } = step;
+  const street = (
+    <S.StepStreetName>
+      <StreetName rawStreetName={streetName} />
+    </S.StepStreetName>
+  );
+
+  let stepContent;
+  if (relativeDirection === "ELEVATOR") {
+    stepContent = (
+      <FormattedMessage
+        defaultMessage={defaultMessages["otpUi.AccessLegBody.stepElevator"]}
+        description="Text for taking an elevator"
+        id="otpUi.AccessLegBody.stepElevator"
+        values={{ street }}
+      />
+    );
+  } else if (relativeDirection === "DEPART") {
+    const heading = absoluteDirection as Heading;
+    stepContent = (
+      <FormattedMessage
+        defaultMessage={defaultMessages["otpUi.AccessLegBody.stepDepart"]}
+        description="Describes the initial action to take for an itinerary"
+        id="otpUi.AccessLegBody.stepDepart"
+        values={{
+          heading: <AccessLegStepHeading heading={heading} />,
+          street
+        }}
+      />
+    );
+  } else {
+    const action = relativeDirection as Action;
+    stepContent = (
+      <FormattedMessage
+        defaultMessage={defaultMessages["otpUi.AccessLegBody.stepGeneric"]}
+        description="Describes an action to progress through an itinerary"
+        id="otpUi.AccessLegBody.stepGeneric"
+        values={{
+          step: <AccessLegStepAction action={action} />,
+          street
+        }}
+      />
+    );
+  }
+
   return (
     // Return an HTML element which is passed a className (and style props)
     // for styled-components support.
     <span className={className} style={style}>
-      <FormattedMessage
-        defaultMessage="{relativeDirection} {absoluteDirection} on {street}"
-        description="Describes a step of a set of directions to reach a destination."
-        id="otpUi.AccessLegBody.step"
-        values={{
-          absoluteDirection,
-          relativeDirection,
-          street: (
-            <S.StepStreetName>
-              <FormattedMessage
-                defaultMessage={
-                  defaultMessages["otpUi.AccessLegBody.streetOrUnnamedRoad"]
-                }
-                description="Displays a street name or unnamed road"
-                id="otpUi.AccessLegBody.streetOrUnnamedRoad"
-                values={{ streetName }}
-              />
-            </S.StepStreetName>
-          )
-        }}
-      />
+      {stepContent}
     </span>
   );
 }

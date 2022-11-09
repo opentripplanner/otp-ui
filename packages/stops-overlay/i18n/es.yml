@@ -1,0 +1,4 @@
+otpUi:
+  StopsOverlay:
+    stopId: ID de Parada {stopId}
+    stopViewer: Visor de paradas
