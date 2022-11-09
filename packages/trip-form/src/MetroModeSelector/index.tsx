@@ -8,7 +8,7 @@ import {
   safePolygon,
   FloatingPortal
 } from "@floating-ui/react-dom-interactions";
-import { Combination } from "@opentripplanner/types";
+import Types from "@opentripplanner/types";
 
 import React, { ReactElement, useRef, useState } from "react";
 import styled from "styled-components";
@@ -78,14 +78,14 @@ const Arrow = styled.div`
 `;
 
 interface ModeButtonProps {
-  combination: Combination;
+  modeButton: Types.ModeButton;
   floatingTarget: HTMLDivElement;
   onToggle: () => void;
   onSettingsUpdate: (QueryParamChangeEvent) => void;
 }
 
 function ModeButton({
-  combination,
+  modeButton,
   floatingTarget,
   onToggle,
   onSettingsUpdate
@@ -109,12 +109,12 @@ function ModeButton({
   const { getFloatingProps, getReferenceProps } = useInteractions([
     useHover(context, {
       handleClose: safePolygon(),
-      enabled: combination.enabled
+      enabled: modeButton.enabled
     })
   ]);
 
   const modeButtonClicked = () => {
-    setOpen(!combination.enabled);
+    setOpen(!modeButton.enabled);
     onToggle();
   };
 
@@ -125,9 +125,9 @@ function ModeButton({
         onClick={modeButtonClicked}
         /* eslint-disable-next-line react/jsx-props-no-spreading */
         {...getReferenceProps()}
-        enabled={combination.enabled}
+        enabled={modeButton.enabled}
       >
-        <combination.Icon size={32} />
+        <modeButton.Icon size={32} />
       </ModeButtonItem>
       <FloatingPortal root={floatingTarget} id="foobartest">
         {open && (
@@ -147,7 +147,7 @@ function ModeButton({
             />
             <HoverInnerContainer>
               <SubSettingsPane
-                combination={combination}
+                modeButton={modeButton}
                 onSettingUpdate={onSettingsUpdate}
               />
             </HoverInnerContainer>
@@ -159,25 +159,25 @@ function ModeButton({
 }
 
 interface Props {
-  combinations: Combination[];
-  onToggleCombination: (key) => void;
+  modeButtons: Types.ModeButton[];
+  onToggleModeButton: (key) => void;
   onSettingsUpdate: (QueryParamChangeEvent) => void;
 }
 
 export default function ModeSelector({
-  onToggleCombination,
+  onToggleModeButton,
   onSettingsUpdate,
-  combinations = []
+  modeButtons = []
 }: Props): ReactElement {
   const floatingTarget = useRef(null);
   return (
     <>
       <ModeBar>
-        {combinations.map(combination => (
+        {modeButtons.map(combination => (
           <ModeButton
-            onToggle={() => onToggleCombination(combination.key)}
+            onToggle={() => onToggleModeButton(combination.key)}
             key={combination.label}
-            combination={combination}
+            modeButton={combination}
             floatingTarget={floatingTarget.current}
             onSettingsUpdate={onSettingsUpdate}
           />

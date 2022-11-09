@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { print } from "graphql";
-import { TransportationMode } from "@opentripplanner/types";
+import { TransportMode } from "@opentripplanner/types";
 import PlanQuery from "./planQuery.graphql";
 
 type LonLat = {
@@ -11,7 +11,7 @@ type LonLat = {
 type OTPQueryParams = {
   to: LonLat;
   from: LonLat;
-  modes: Array<TransportationMode>;
+  modes: Array<TransportMode>;
   walkReluctance?: number;
   bikeReluctance?: number;
   walkSpeed?: number;

@@ -6,15 +6,15 @@ import {
 } from "use-query-params";
 import { QueryParamConfig, decodeQueryParams } from "serialize-query-params";
 import {
-  Combination,
+  ModeButton,
   ModeSetting,
   ModeSettingValues,
-  TransportationMode
+  TransportMode
 } from "@opentripplanner/types";
 import { QueryParamChangeEvent } from "../types";
 
 export type InitialStateType = {
-  enabledCombinations: string[];
+  enabledModeButtons: string[];
   modeSettingValues: ModeSettingValues;
 };
 
@@ -25,7 +25,7 @@ export type ModeStateConfig = {
 export const getSettingsForCombination = (
   settings: ModeSetting[],
   values: ModeSettingValues
-) => (combination: Combination): Combination => {
+) => (combination: ModeButton): ModeButton => {
   const definitionsWithValues = settings.map(def => ({
     ...def,
     value: values[def.key] as boolean & number & string
@@ -78,39 +78,38 @@ export function getActivatedModesFromQueryParams(
 }
 
 export function useModeState(
-  combinationsFromConfig: Combination[],
+  buttonsFromConfig: ModeButton[],
   initialState: InitialStateType,
   modeSettingDefinitions: ModeSetting[],
   { queryParamState }: ModeStateConfig
 ): {
   setModeSettingValue: (setting: QueryParamChangeEvent) => void;
-  combinations: Combination[];
-  enabledCombinations: Combination[];
-  enabledCombinationKeys: string[];
-  enabledModes: TransportationMode[];
-  toggleCombination: (key: string) => void;
+  buttonsWithSettings: ModeButton[];
+  enabledModeButtonKeys: string[];
+  enabledModes: TransportMode[];
+  toggleModeButton: (key: string) => void;
 } {
-  const [enabledCombinationKeys, setEnabledCombinationKeys] = useStateStorage<
+  const [enabledModeButtonKeys, setEnabledModeButtonKeys] = useStateStorage<
     string[]
   >(
-    "combinations",
+    "modeButtons",
     DelimitedArrayParam,
     queryParamState,
-    initialState.enabledCombinations
+    initialState.enabledModeButtons
   );
 
-  const combinations = combinationsFromConfig.map(combo => ({
+  const modeButtons = buttonsFromConfig.map(combo => ({
     ...combo,
-    enabled: enabledCombinationKeys.includes(combo.key)
+    enabled: enabledModeButtonKeys.includes(combo.key)
   }));
 
-  const toggleCombination = combinationKey => {
-    if (enabledCombinationKeys.includes(combinationKey)) {
-      setEnabledCombinationKeys(
-        enabledCombinationKeys.filter(c => c !== combinationKey)
+  const toggleModeButton = (modeButtonKey: string) => {
+    if (enabledModeButtonKeys.includes(modeButtonKey)) {
+      setEnabledModeButtonKeys(
+        enabledModeButtonKeys.filter(c => c !== modeButtonKey)
       );
     } else {
-      setEnabledCombinationKeys([...enabledCombinationKeys, combinationKey]);
+      setEnabledModeButtonKeys([...enabledModeButtonKeys, modeButtonKey]);
     }
   };
 
@@ -134,27 +133,26 @@ export function useModeState(
     });
   };
 
-  const combosWithSettings = combinations.map(
+  const buttonsWithSettings = modeButtons.map(
     getSettingsForCombination(modeSettingDefinitions, modeSettingsValues)
   );
 
-  const enabledCombinations = combosWithSettings.filter(c =>
-    enabledCombinationKeys.includes(c.key)
+  const enabledModeButtons = buttonsWithSettings.filter(c =>
+    enabledModeButtonKeys.includes(c.key)
   );
 
   const enabledModes = Array.from(
-    enabledCombinations.reduce((set, combo) => {
+    enabledModeButtons.reduce((set, combo) => {
       combo.modes.forEach(mode => set.add(mode));
       return set;
-    }, new Set<TransportationMode>())
+    }, new Set<TransportMode>())
   );
 
   return {
     setModeSettingValue,
-    combinations: combosWithSettings,
-    enabledCombinations,
-    enabledCombinationKeys,
+    buttonsWithSettings,
+    enabledModeButtonKeys,
     enabledModes,
-    toggleCombination
+    toggleModeButton
   };
 }

@@ -749,7 +749,7 @@ export type ModeSettingValues = Record<string, number | string | boolean>;
  * Transportation mode is usually an OTP mode string,
  * but it can be anything for more flexibility.
  */
-export type TransportationMode = {
+export type TransportMode = {
   mode: string;
   qualifier?: string;
 };
@@ -759,11 +759,11 @@ export type TransportationMode = {
  * with a label to describe them. These are designed
  * to appear in the mode selector as discrete options.
  */
-export type Combination = {
-  modes: TransportationMode[];
-  enabled?: boolean;
-  label: string;
-  key: string;
-  Icon: StyledIcon;
-  modeSettings?: ModeSetting[];
+export type ModeButton = {
+  modes?: TransportMode[]; // This comes from config
+  enabled?: boolean; // User has enabled this mode
+  label: string; // From config
+  key: string; // From config
+  Icon: StyledIcon; // From config
+  modeSettings?: ModeSetting[]; // From OTP definitions + config
 };

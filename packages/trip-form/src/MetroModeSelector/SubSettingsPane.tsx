@@ -1,4 +1,4 @@
-import { Combination, ModeSetting } from "@opentripplanner/types";
+import { ModeButton, ModeSetting } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 import CheckboxSelector from "../CheckboxSelector";
@@ -62,17 +62,17 @@ const ModeSettingRenderer = ({
 };
 
 interface Props {
-  combination: Combination;
+  modeButton: ModeButton;
   onSettingUpdate: (QueryParamChangeEvent) => void;
 }
 export default function SubSettingsPane({
-  combination,
+  modeButton,
   onSettingUpdate
 }: Props): ReactElement {
   return (
     <SettingsPanel>
-      <Header>{combination.label}</Header>
-      {combination.modeSettings.map(setting => (
+      <Header>{modeButton.label}</Header>
+      {modeButton.modeSettings.map(setting => (
         <div key={setting.key}>
           <ModeSettingRenderer
             setting={setting}
