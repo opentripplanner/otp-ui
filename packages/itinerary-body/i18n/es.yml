@@ -2,9 +2,7 @@ otpUi:
   AccessLegBody:
     RentedVehicleSubheader:
       walkVehicle: Caminar vehículo por la {place}
-      pickupRental: Recoger {modeType, select, BIKESHARE {la bicicleta compartida}
-        other {{company} {modeType, select, CARSHARE {el coche} VEHICLERENTAL {e-scooter}
-        BIKEPARK {la bicicleta} other {el vehículo} } {vehicleName}} }
+      pickupRental: Recoger {vehicleType} {company} {vehicleName}
       resumeRentalRide: Seguir utilizando el alquiler
     TncLeg:
       bookRide: Reservar un viaje
@@ -12,16 +10,15 @@ otpUi:
       estimatedCost: 'Costo estimado: {minFare} - {maxFare}'
       estimatedTravelTime: 'Tiempo estimado de viaje: {duration} (no tiene en cuenta
         el tráfico)'
-      waitForPickup: Espere{minutes, select, undefined {} other { {minutes} minutos}
-        } para que lo recoja un {company}
+      waitForPickup: 'Espera al conductor {company}{minutes, plural, =0 {} other {
+        # minutes}}'
     LegDiagramPreview:
       elevationChart: Gráfico de elevación
       noElevationData: No hay datos de elevación disponibles.
       toggleElevationChart: Activar gráfica de elevación
     summary: '{mode} a {place}'
     mapillaryTooltip: Mostrar imágenes de la calle en esta ubicación
-    vehicleTitle: '{company} {modeType, select, BIKESHARE {Bicicleta} CARSHARE {Coche}
-      VEHICLERENTAL {Scooter Eléctrico} BIKEPARK {Bicicleta} other {Vehículo} }'
+    vehicleTitle: '{vehicleType} {company}'
     step:
       circleCounterClockwise: Siga el círculo en sentido contrario a las agujas del
         reloj
@@ -64,16 +61,12 @@ otpUi:
       vehicle: el vehículo
     stepDepart: Dirígete hacia {heading} por {street}
   ItineraryBody:
-    stayOnBoard: Permanecer a bordo a la <strong>{placeName}</strong>
-    travelBy: Viajar {modeId, select, BICYCLE {en bicicleta} CAR {en coche} MICROMOBILITY
-      {en e-scooter} WALK {a pie} other {{modeId}} }
+    stayOnBoard: Permanecer a bordo a {place}
+    travelBy: Viajar {mode}
     common:
       durationShort: '{hours, plural, =0 {} other {# hr }}{minutes} min'
     viewOnMap: Ver en el mapa
-    flexPickupMessage: "Para tomar esta ruta, tiene que llamar {hasPhone, select,\n\
-      \  true {1{phoneNumber}}\n  other 2{con antelación}\n}{leadDays, plural, =0\
-      \ {}\n  other { al menos {leadDays, plural, one {# día} other {# días}} de antelación}\n\
-      }.\n"
+    flexPickupMessage: "Para tomar esta ruta, tiene que {action}{advanceNotice}."
     flexCallAhead: llama con anticipación
     flexCallNumber: llama {phoneNumber}
     travelByMode:
@@ -89,9 +82,7 @@ otpUi:
     stopViewer: Visor de paradas
     tripViewer: Visor de viajes
     AlertsBody:
-      effectiveDate: En vigor desde {includeTime, select, true {{dateTime, time, short},
-        } other {} }{dayDiff, plural, =-1 {Ayer} =0 {Hoy} =1 {Mañana} other {{dateTime,
-        date, long}} }
+      effectiveDate: A partir de {dateTime, date, long}
       effectiveTimeAndDate: A partir de {dateTime, time, short}, {day}
       today: Hoy dia
       tomorrow: Mañana
