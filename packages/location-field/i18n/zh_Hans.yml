@@ -1,0 +1,18 @@
+otpUi:
+  LocationField:
+    beingTypingPrompt: 开始打字搜索地点
+    clearLocation: 重置位置
+    homeLocation: 家
+    noResultsFound: "找不到与 {input, select,\n null {您的搜索}\n other {{input}}\n } 相关的结果\n"
+    stops: 车站
+    currentLocationUnavailable: 当前位置不详 ({error})
+    fetchingLocation: 获取的位置…
+    geocoderUnreachable: 无法到达地理编码器{error, select, undefined {} other { ({error})}}
+    myPlaces: 我的地方
+    nearby: 附近的车站
+    other: 其他
+    placeNameWithDetails: '{placeName} ({details})'
+    recentlySearched: 最近搜索到的
+    stations: 站台
+    useCurrentLocation: 使用当前位置
+    workLocation: 工作场所

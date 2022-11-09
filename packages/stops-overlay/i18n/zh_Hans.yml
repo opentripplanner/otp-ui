@@ -1,0 +1,4 @@
+otpUi:
+  StopsOverlay:
+    stopViewer: 车站查看器
+    stopId: '车站 ID: {stopId}'

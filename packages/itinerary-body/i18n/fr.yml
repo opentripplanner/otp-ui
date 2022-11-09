@@ -11,7 +11,7 @@ otpUi:
   AccessLegBody:
     LegDiagramPreview:
       elevationChart: Dénivelés
-      noElevationData: Aucune information sur les dénivelés
+      noElevationData: Aucune information sur les dénivelés.
       toggleElevationChart: Afficher/masquer les dénivelés
     mapillaryTooltip: Afficher la vue panoramique à cet endroit
     RentedVehicleSubheader:
@@ -61,10 +61,12 @@ otpUi:
       walk: Marche
     TncLeg:
       bookRide: Réserver
-      bookRideLater: Attendez jusqu'à {timeMillis, time, short} avant de réserver.
+      bookRideLater: Attendez jusqu'à {timeMillis, time, short} avant de réserver
       estimatedCost: "Coût estimé : {minFare} - {maxFare}"
-      estimatedTravelTime: "Temps de trajet estimé : {duration} (ne tient pas compte de la circulation)"
-      waitForPickup: "Attendez votre chauffeur {company}{minutes, plural, =0 {} other { # minutes}}"
+      estimatedTravelTime: "Temps de trajet estimé : {duration} (ne tient pas compte\
+        \ de la circulation)"
+      waitForPickup: "Attendez votre chauffeur {company}{minutes, plural, =0 {} other\
+        \ { # minutes}}"
     unnamedPath: Chemin sans nom
     unnamedRoad: Route sans nom
     vehicleTitle: "{vehicleType} {company}"
@@ -77,17 +79,18 @@ otpUi:
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# h }}{minutes} mn"
-    flexAdvanceNotice: " au moins {leadDays, plural, one {# jour} other {# jours}} à l'avance"
+    flexAdvanceNotice: " au moins {leadDays, plural, one {# jour} other {# jours}}\
+      \ à l'avance"
     flexCallAhead: réserver au préalable
     flexCallNumber: réserver au {phoneNumber}
     flexPickupMessage: Pour emprunter cette ligne, vous devez {action}{advanceNotice}.
     stayOnBoard: Restez à bord à {place}
     travelBy: Trajet {mode}
     travelByMode:
-      bicycle: en vélo
       car: en voiture
       escooter: en trottinette
       walk: à pied
+      bike: en vélo
     viewOnMap: Afficher sur le plan
   TransitLegBody:
     agencyLogo: "Logo de {agencyName}"
@@ -100,7 +103,8 @@ otpUi:
     alertsHeader: "{alertCount, plural, =0 {# alerte} =1 {# alerte} other {# alertes}}"
     fare: "Tarif : {fare}"
     operatedBy: Exploité par {agencyLink}
-    rideDurationAndStops: "Trajet : {duration}{numStops, plural, =1 {} other { / # arrêts}}"
+    rideDurationAndStops: "Trajet : {duration}{numStops, plural, =1 {} other { / #\
+      \ arrêts}}"
     routeDescription: "{routeName} <toPrefix>vers</toPrefix> {headsign}"
     stopId: Arrêt n°{stopId}
     stopIdBasic: Arrêt n°{stopId}

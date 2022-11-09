@@ -1,0 +1,9 @@
+otpUi:
+  EndpointsOverlay:
+    clearLocation: 删除 {locationType} 地点
+    forgetHome: 忘记家
+    forgetWork: 忘记工作
+    saveAsHome: 保存为首页
+    saveAsWork: 保存为工作
+    swapLocation: 更改为 {locationType} 位置
+    coordinates: '{lat, number, ::.00000}; {lon, number, ::.00000}'
