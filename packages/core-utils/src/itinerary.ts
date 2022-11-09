@@ -44,18 +44,21 @@ export function isTransit(mode: string): boolean {
 /**
  * Returns true if the leg pickup rules enabled which require
  * calling ahead for the service to run. "mustPhone" is the only
- * property of boardRule which encodes this info.
+ * property which encodes this info.
  */
 export function isReservationRequired(leg: Leg): boolean {
-  return leg.boardRule === "mustPhone";
+  return leg.boardRule === "mustPhone" || leg.alightRule === "mustPhone";
 }
 /**
- * Returns true if the leg has continuous dropoff enabled which requires
- * asking the driver to let the user off. "coordinateWithDriver" is the only
- * property of alightRule which encodes this info.
+ * Returns true if a user must ask the driver to let the user off
+ * or if the user must flag the driver down for pickup.
+ * "coordinateWithDriver" is the only property which encodes this info.
  */
-export function isContinuousDropoff(leg: Leg): boolean {
-  return leg.alightRule === "coordinateWithDriver";
+export function isCoordinationRequired(leg: Leg): boolean {
+  return (
+    leg.boardRule === "coordinateWithDriver" ||
+    leg.alightRule === "coordinateWithDriver"
+  );
 }
 /**
  * The two rules checked by the above two functions are the only values
