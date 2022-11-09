@@ -65,7 +65,7 @@ export function isCoordinationRequired(leg: Leg): boolean {
  * returned by OTP when a leg is a flex leg.
  */
 export function isFlex(leg: Leg): boolean {
-  return isReservationRequired(leg) || isContinuousDropoff(leg);
+  return isReservationRequired(leg) || isCoordinationRequired(leg);
 }
 
 export function isAdvanceBookingRequired(info: FlexBookingInfo): boolean {
