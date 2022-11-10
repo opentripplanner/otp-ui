@@ -15,6 +15,7 @@ const ItineraryBody = ({
   accessibilityScoreGradationMap,
   AlertBodyIcon,
   AlertToggleIcon,
+  alwaysCollapseAlerts = false,
   className,
   config,
   diagramVisible,
@@ -58,6 +59,7 @@ const ItineraryBody = ({
           accessibilityScoreGradationMap={accessibilityScoreGradationMap}
           AlertToggleIcon={AlertToggleIcon}
           AlertBodyIcon={AlertBodyIcon}
+          alwaysCollapseAlerts={alwaysCollapseAlerts}
           // eslint-disable-next-line react/no-array-index-key
           key={i + (isDestination ? 1 : 0)}
           config={config}

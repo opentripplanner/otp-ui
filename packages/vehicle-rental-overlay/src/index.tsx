@@ -1,4 +1,4 @@
-import { MarkerWithPopup } from "@opentripplanner/base-map";
+import { MarkerWithPopup, Popup } from "@opentripplanner/base-map";
 import {
   Company,
   ConfiguredCompany,
@@ -7,7 +7,7 @@ import {
 } from "@opentripplanner/types";
 import { EventData } from "mapbox-gl";
 import React, { useEffect, useState } from "react";
-import { Layer, Popup, Source, useMap } from "react-map-gl";
+import { Layer, Source, useMap } from "react-map-gl";
 
 import StationPopup from "./StationPopup";
 import { BaseBikeRentalIcon, StationMarker } from "./styled";

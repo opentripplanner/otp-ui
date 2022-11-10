@@ -41,6 +41,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
 
   render(): ReactElement {
     const {
+      alwaysCollapseAlerts,
       itinerary,
       LegIcon = TriMetLegIcon,
       LineColumnContent,
@@ -75,6 +76,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
       <ItineraryBodyComponent
         AlertBodyIcon={AlertBodyIcon}
         AlertToggleIcon={AlertToggleIcon}
+        alwaysCollapseAlerts={alwaysCollapseAlerts}
         config={config}
         diagramVisible={diagramVisible}
         frameLeg={action("frameLeg")}

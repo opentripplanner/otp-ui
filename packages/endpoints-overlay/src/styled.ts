@@ -21,7 +21,6 @@ const stacked = css`
   cursor: pointer;
   left: 0;
   position: absolute;
-  text-align: center;
 `;
 
 export const StackedCircle = styled(Circle)`
@@ -35,26 +34,19 @@ export const StackedLocationIcon = styled(LocationIcon)`
 
 export const StackedToIcon = styled(StackedLocationIcon)`
   color: #333;
+  margin-left: -3px;
+  margin-top: -2px;
 `;
 
 export const StackedIconContainer = styled.span`
   display: inline-block;
-  height: 2em;
-  line-height: 2em;
-  line-height: inherit;
-  margin-left: -10px;
-  margin-top: -7px;
-  opacity: 1;
-  position: relative;
-  vertical-align: middle;
-  width: 2em;
+  height: 20px;
+  margin-top: 2px;
+  width: 20px;
 `;
 
 export const ToIcon = styled(LocationIcon)`
   ${stacked}
-  line-height: inherit;
-  margin-left: 2px;
-  margin-top: 2px;
 `;
 
 export const IconWrapper = styled.span`

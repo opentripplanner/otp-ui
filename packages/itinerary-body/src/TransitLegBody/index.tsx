@@ -1,6 +1,7 @@
 import coreUtils from "@opentripplanner/core-utils";
 import {
   Fare,
+  FlexBookingInfo,
   Leg,
   LegIconComponent,
   TransitOperator
@@ -23,7 +24,7 @@ import {
   TransitLegSubheaderProps,
   TransitLegSummaryProps
 } from "../types";
-import { defaultMessages, getFlexMessageValues } from "../util";
+import { defaultMessages } from "../util";
 
 import AlertsBody from "./alerts-body";
 import IntermediateStops from "./intermediate-stops";
@@ -32,6 +33,7 @@ import ViewTripButton from "./view-trip-button";
 interface Props {
   AlertBodyIcon?: FunctionComponent;
   AlertToggleIcon?: FunctionComponent;
+  alwaysCollapseAlerts: boolean;
   fare?: Fare;
   intl: IntlShape;
   leg: Leg;
@@ -51,6 +53,49 @@ interface Props {
 interface State {
   alertsExpanded: boolean;
   stopsExpanded: boolean;
+}
+
+const maximumAlertCountToShowUncollapsed = 2;
+
+/**
+ * Helper function that assembles values for flex pickup/dropoff messages.
+ */
+function getFlexMessageValues(info: FlexBookingInfo) {
+  // There used to be a variable `hasLeadTime` here. This should be brought back
+  // if the leadTime check is ever to be more than just checking the value of
+  // daysPrior (which can be done within react-intl)
+  const hasPhone = !!info?.contactInfo?.phoneNumber;
+  const leadDays = info.latestBookingTime.daysPrior;
+  const phoneNumber = info?.contactInfo?.phoneNumber;
+  return {
+    action: hasPhone ? (
+      <FormattedMessage
+        defaultMessage={defaultMessages["otpUi.ItineraryBody.flexCallNumber"]}
+        description="For calling a phone number."
+        id="otpUi.ItineraryBody.flexCallNumber"
+        values={{ phoneNumber }}
+      />
+    ) : (
+      <FormattedMessage
+        defaultMessage={defaultMessages["otpUi.ItineraryBody.flexCallAhead"]}
+        description="For calling ahead."
+        id="otpUi.ItineraryBody.flexCallAhead"
+      />
+    ),
+    advanceNotice:
+      leadDays > 0 ? (
+        <FormattedMessage
+          defaultMessage={
+            defaultMessages["otpUi.ItineraryBody.flexAdvanceNotice"]
+          }
+          description="Advance notice for flex service."
+          id="otpUi.ItineraryBody.flexAdvanceNotice"
+          values={{ leadDays }}
+        />
+      ) : (
+        ""
+      )
+  };
 }
 
 class TransitLegBody extends Component<Props, State> {
@@ -91,6 +136,7 @@ class TransitLegBody extends Component<Props, State> {
     const {
       AlertToggleIcon = S.DefaultAlertToggleIcon,
       AlertBodyIcon,
+      alwaysCollapseAlerts,
       fare,
       intl,
       leg,
@@ -118,8 +164,13 @@ class TransitLegBody extends Component<Props, State> {
         ? transitOperator.logo
         : agencyBrandingUrl;
 
-    const expandAlerts =
-      alertsExpanded || (leg.alerts && leg.alerts.length < 3);
+    const shouldCollapseDueToAlertCount =
+      leg.alerts?.length > maximumAlertCountToShowUncollapsed;
+    // The alerts expansion triangle is shown when `!shouldOnlyShowAlertsExpanded`.
+    // `!leg.alerts` is needed here so the triangle isn't shown when there are 0 alerts.
+    const shouldOnlyShowAlertsExpanded =
+      !(shouldCollapseDueToAlertCount || alwaysCollapseAlerts) || !leg.alerts;
+    const expandAlerts = alertsExpanded || shouldOnlyShowAlertsExpanded;
     const fareForLeg = this.getFareForLeg(leg, fare);
     return (
       <>
@@ -176,23 +227,21 @@ class TransitLegBody extends Component<Props, State> {
               />
             </S.AgencyInfo>
           )}
-          {isReservationRequired && (
+          {isReservationRequired && leg.pickupBookingInfo && (
             <S.CallAheadWarning>
-              {leg?.pickupBookingInfo && (
-                <FormattedMessage
-                  defaultMessage={
-                    defaultMessages["otpUi.ItineraryBody.flexPickupMessage"]
-                  }
-                  description="Instructions for booking and boarding the flex (on-demand) transit service."
-                  id="otpUi.ItineraryBody.flexPickupMessage"
-                  values={getFlexMessageValues(leg?.pickupBookingInfo)}
-                />
-              )}
+              <FormattedMessage
+                defaultMessage={
+                  defaultMessages["otpUi.ItineraryBody.flexPickupMessage"]
+                }
+                description="Instructions for booking and boarding the flex (on-demand) transit service."
+                id="otpUi.ItineraryBody.flexPickupMessage"
+                values={getFlexMessageValues(leg.pickupBookingInfo)}
+              />
             </S.CallAheadWarning>
           )}
 
           {/* Alerts toggle */}
-          {alerts && alerts.length > 2 && (
+          {!shouldOnlyShowAlertsExpanded && (
             <S.TransitAlertToggle onClick={this.onToggleAlertsClick}>
               <AlertToggleIcon />{" "}
               <FormattedMessage
