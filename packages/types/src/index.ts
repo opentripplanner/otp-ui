@@ -759,11 +759,12 @@ export type TransportMode = {
  * with a label to describe them. These are designed
  * to appear in the mode selector as discrete options.
  */
-export type ModeButton = {
+export type ModeButtonDefinition = {
   modes?: TransportMode[]; // This comes from config
   enabled?: boolean; // User has enabled this mode
   label: string; // From config
   key: string; // From config
-  Icon: StyledIcon; // From config
+  Icon: StyledIcon; // From iconName (below)
+  iconName: string; // From config
   modeSettings?: ModeSetting[]; // From OTP definitions + config
 };

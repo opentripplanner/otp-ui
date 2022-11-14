@@ -1,4 +1,4 @@
-import { ModeButton, ModeSetting } from "@opentripplanner/types";
+import { ModeButtonDefinition, ModeSetting } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 import CheckboxSelector from "../CheckboxSelector";
@@ -62,7 +62,7 @@ const ModeSettingRenderer = ({
 };
 
 interface Props {
-  modeButton: ModeButton;
+  modeButton: ModeButtonDefinition;
   onSettingUpdate: (QueryParamChangeEvent) => void;
 }
 export default function SubSettingsPane({

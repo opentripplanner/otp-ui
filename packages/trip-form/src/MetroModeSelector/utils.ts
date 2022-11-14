@@ -6,7 +6,7 @@ import {
 } from "use-query-params";
 import { QueryParamConfig, decodeQueryParams } from "serialize-query-params";
 import {
-  ModeButton,
+  ModeButtonDefinition,
   ModeSetting,
   ModeSettingValues,
   TransportMode
@@ -21,11 +21,26 @@ export type InitialStateType = {
 export type ModeStateConfig = {
   queryParamState?: boolean;
 };
+function agregateModes(modeButtonDefinitions: ModeButtonDefinition[]) {
+  return Array.from(
+    modeButtonDefinitions.reduce<Set<TransportMode>>((set, combo) => {
+      combo.modes.forEach(mode => set.add(mode));
+      return set;
+    }, new Set<TransportMode>())
+  );
+}
+
+function filterModeDefitionsByKey(
+  modeButtonDefinitions: ModeButtonDefinition[],
+  keys: string[]
+) {
+  return modeButtonDefinitions.filter(def => keys.includes(def.key));
+}
 
 export const getSettingsForCombination = (
   settings: ModeSetting[],
   values: ModeSettingValues
-) => (combination: ModeButton): ModeButton => {
+) => (combination: ModeButtonDefinition): ModeButtonDefinition => {
   const definitionsWithValues = settings.map(def => ({
     ...def,
     value: values[def.key] as boolean & number & string
@@ -67,24 +82,29 @@ export function useStateStorage<Type>(
 }
 
 export function getActivatedModesFromQueryParams(
-  searchString: string
-): string[] {
+  searchString: string,
+  modeButtons: ModeButtonDefinition[],
+  initialState: InitialStateType
+): TransportMode[] {
   const queryObject = new URLSearchParams(searchString);
-  decodeQueryParams(
-    { combinations: DelimitedArrayParam },
-    { combinations: queryObject.get("combinations") }
+  const decodedQuery = decodeQueryParams(
+    { modeButtons: DelimitedArrayParam },
+    { modeButtons: queryObject.get("modeButtons") }
   );
-  return [];
+  const enabledKeys =
+    decodedQuery.modeButtons || initialState.enabledModeButtons;
+  const activeButtons = filterModeDefitionsByKey(modeButtons, enabledKeys);
+  return agregateModes(activeButtons);
 }
 
 export function useModeState(
-  buttonsFromConfig: ModeButton[],
+  buttonsFromConfig: ModeButtonDefinition[],
   initialState: InitialStateType,
   modeSettingDefinitions: ModeSetting[],
   { queryParamState }: ModeStateConfig
 ): {
   setModeSettingValue: (setting: QueryParamChangeEvent) => void;
-  buttonsWithSettings: ModeButton[];
+  buttonsWithSettings: ModeButtonDefinition[];
   enabledModeButtonKeys: string[];
   enabledModes: TransportMode[];
   toggleModeButton: (key: string) => void;
@@ -137,16 +157,11 @@ export function useModeState(
     getSettingsForCombination(modeSettingDefinitions, modeSettingsValues)
   );
 
-  const enabledModeButtons = buttonsWithSettings.filter(c =>
-    enabledModeButtonKeys.includes(c.key)
+  const enabledModeButtons = filterModeDefitionsByKey(
+    buttonsWithSettings,
+    enabledModeButtonKeys
   );
-
-  const enabledModes = Array.from(
-    enabledModeButtons.reduce((set, combo) => {
-      combo.modes.forEach(mode => set.add(mode));
-      return set;
-    }, new Set<TransportMode>())
-  );
+  const enabledModes = agregateModes(enabledModeButtons);
 
   return {
     setModeSettingValue,

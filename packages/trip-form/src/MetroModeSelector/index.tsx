@@ -8,7 +8,7 @@ import {
   safePolygon,
   FloatingPortal
 } from "@floating-ui/react-dom-interactions";
-import Types from "@opentripplanner/types";
+import { ModeButtonDefinition } from "@opentripplanner/types";
 
 import React, { ReactElement, useRef, useState } from "react";
 import styled from "styled-components";
@@ -78,7 +78,7 @@ const Arrow = styled.div`
 `;
 
 interface ModeButtonProps {
-  modeButton: Types.ModeButton;
+  modeButton: ModeButtonDefinition;
   floatingTarget: HTMLDivElement;
   onToggle: () => void;
   onSettingsUpdate: (QueryParamChangeEvent) => void;
@@ -159,7 +159,7 @@ function ModeButton({
 }
 
 interface Props {
-  modeButtons: Types.ModeButton[];
+  modeButtons: ModeButtonDefinition[];
   onToggleModeButton: (key) => void;
   onSettingsUpdate: (QueryParamChangeEvent) => void;
 }
