@@ -1,6 +1,7 @@
+import { Popup } from "@opentripplanner/base-map";
 import { MapLocationActionArg, Stop } from "@opentripplanner/types";
 import { EventData } from "mapbox-gl";
-import { Layer, Popup, Source, useMap } from "react-map-gl";
+import { Layer, Source, useMap } from "react-map-gl";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 
 import StopPopup from "./default-stop-popup";

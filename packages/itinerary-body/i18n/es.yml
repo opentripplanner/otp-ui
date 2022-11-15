@@ -1,0 +1,97 @@
+otpUi:
+  AccessLegBody:
+    RentedVehicleSubheader:
+      walkVehicle: Caminar vehículo por la {place}
+      pickupRental: Recoger {vehicleType} {company} {vehicleName}
+      resumeRentalRide: Seguir utilizando el alquiler
+    TncLeg:
+      bookRide: Reservar un viaje
+      bookRideLater: Espere hasta las {timeMillis, time, short} para reservar
+      estimatedCost: 'Costo estimado: {minFare} - {maxFare}'
+      estimatedTravelTime: 'Tiempo estimado de viaje: {duration} (no tiene en cuenta
+        el tráfico)'
+      waitForPickup: 'Espera al conductor {company}{minutes, plural, =0 {} other {
+        # minutes}}'
+    LegDiagramPreview:
+      elevationChart: Gráfico de elevación
+      noElevationData: No hay datos de elevación disponibles.
+      toggleElevationChart: Activar gráfica de elevación
+    summary: '{mode} a {place}'
+    mapillaryTooltip: Mostrar imágenes de la calle en esta ubicación
+    vehicleTitle: '{vehicleType} {company}'
+    step:
+      circleCounterClockwise: Siga el círculo en sentido contrario a las agujas del
+        reloj
+      continue: Continuar
+      hardLeft: Giro a la izquierda
+      hardRight: Giro a la derecha
+      left: Vire a la izquierda
+      uTurnLeft: Media vuelta a la izquierda
+      circleClockwise: Siga el círculo en el sentido de las agujas del reloj
+      right: Vire a la derecha
+      slightlyLeft: Ligeramente a la izquierda
+      slightlyRight: Ligeramente a la derecha
+      uTurnRight: Media vuelta a la derecha
+    stepHeading:
+      east: el este
+      northeast: el noreste
+      northwest: el noroeste
+      south: el sur
+      southeast: el sureste
+      southwest: el suroeste
+      west: el oeste
+      north: el norte
+    stepElevator: Toma el ascensor hasta {street}
+    stepGeneric: '{step} por {street}'
+    summaryAndDistance: '{mode} - {distance} a {place}'
+    summaryMode:
+      bike: Bicicleta
+      bikeshare: Bicicleta compartida
+      carDrive: Carro
+      carHail: Paseo
+      escooter: Patineta
+      walk: Caminata
+    unnamedRoad: Calle sin nombre
+    unnamedPath: Sendero sin nombre
+    vehicleType:
+      bike: la bicicleta
+      bikeshare: la bicicleta compartida
+      car: el carro
+      escooter: la patineta
+      vehicle: el vehículo
+    stepDepart: Dirígete hacia {heading} por {street}
+  ItineraryBody:
+    stayOnBoard: Permanecer a bordo a {place}
+    travelBy: Viajar {mode}
+    common:
+      durationShort: '{hours, plural, =0 {} other {# hr }}{minutes} min'
+    viewOnMap: Ver en el mapa
+    flexPickupMessage: "Para tomar esta ruta, tiene que {action}{advanceNotice}."
+    flexCallAhead: llama con anticipación
+    flexCallNumber: llama {phoneNumber}
+    travelByMode:
+      bike: en bicicleta
+      car: en carro
+      escooter: en patineta
+      walk: a pie
+    flexAdvanceNotice: ' al menos {leadDays, plural, one {# día} other {# días}} de
+      antelación'
+  TransitLegBody:
+    stopId: ID de Parada {stopId}
+    stopIdBasic: ID {stopId}
+    stopViewer: Visor de paradas
+    tripViewer: Visor de viajes
+    AlertsBody:
+      effectiveDate: A partir de {dateTime, date, long}
+      effectiveTimeAndDate: A partir de {dateTime, time, short}, {day}
+      today: Hoy dia
+      tomorrow: Mañana
+      yesterday: Ayer
+    agencyLogo: Logo de {agencyName}
+    alertsHeader: '{alertCount, plural, =1 {# alerta} other {# alertas} }'
+    fare: 'Tarifa: {fare}'
+    operatedBy: Servicio operado por {agencyLink}
+    rideDurationAndStops: 'Paseo {duration}{numStops, plural, =1 {} other { / # paradas}}'
+    routeDescription: '{routeName}{headsign, select, undefined {} other {<toPrefix>
+      destino </toPrefix>{headsign}}}'
+    typicalWait: 'La típica espera: {waitTime}'

@@ -1,0 +1,9 @@
+otpUi:
+  EndpointsOverlay:
+    clearLocation: Xóa dưới dạng vị trí {locationType}
+    forgetHome: Xóa vị trí nhà riêng
+    forgetWork: Xóa vị trí cơ quan của tôi
+    saveAsHome: Lưu làm vị trí nhà riêng
+    saveAsWork: Lưu làm vị trí cơ quan
+    coordinates: '{lat, number, ::.00000}; {lon, number, ::.00000}'
+    swapLocation: Thay đổi thành địa điểm {locationType}
