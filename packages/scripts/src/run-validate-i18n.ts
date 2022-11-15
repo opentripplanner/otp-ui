@@ -6,6 +6,6 @@
 // Example usage for all packages in this repo:
 //   node path-to/lib/run-validate-i18n.js ../**/src ../**/i18n
 
-import validateI18n from "./validate-i18n";
+// import validateI18n from "./validate-i18n";
 
-validateI18n();
+// validateI18n();

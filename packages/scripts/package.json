@@ -18,9 +18,9 @@
     "js-yaml": "^4.1.0"
   },
   "scripts": {
-    "collect-i18n": "node lib/run-collect-i18n-messages.js ../**/src ../**/i18n/en-US.yml > i18n.csv",
+    "collect-i18n": "echo node lib/run-collect-i18n-messages.js ../**/src ../**/i18n/en-US.yml > i18n.csv",
     "tsc": "tsc",
-    "validate-i18n": "node lib/run-validate-i18n.js ../**/src ../**/i18n"
+    "validate-i18n": "echo node lib/run-validate-i18n.js ../**/src ../**/i18n"
   },
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"

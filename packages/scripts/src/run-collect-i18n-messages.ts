@@ -7,6 +7,6 @@
 // Example usage for all packages and one language in this repo:
 //   node path-to-lib/run-collect-i18n-messages.js ../**/src ../**/i18n/en-US.yml
 
-import collectI18nMessages from "./collect-i18n-messages";
+// import collectI18nMessages from "./collect-i18n-messages";
 
-collectI18nMessages();
+// collectI18nMessages();
