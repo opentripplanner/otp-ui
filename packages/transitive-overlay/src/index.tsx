@@ -41,6 +41,7 @@ const commonTextLayoutParams: SymbolLayout = {
   "symbol-placement": "point",
   "text-allow-overlap": false,
   "text-field": ["get", "name"],
+  "text-justify": "auto",
   "text-radial-offset": 1,
   "text-size": 15
 };
