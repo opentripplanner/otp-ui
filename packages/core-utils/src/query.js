@@ -34,6 +34,8 @@ export const defaultParams = [
  */
 const TIME_FORMATS = [
   "HH:mm:ss",
+  "HH:mm",
+  "H:mm",
   "h:mm:ss a",
   "h:mm:ssa",
   "h:mm a",
