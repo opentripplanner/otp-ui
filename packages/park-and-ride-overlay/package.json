@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/park-and-ride-overlay",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "A map overlay to show park and rides",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@opentripplanner/base-map": "^3.0.4",
-    "@opentripplanner/from-to-location-picker": "^2.1.3"
+    "@opentripplanner/from-to-location-picker": "^2.1.4"
   },
   "peerDependencies": {
     "react": "^16.14.0",

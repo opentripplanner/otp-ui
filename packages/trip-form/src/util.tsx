@@ -2,7 +2,7 @@ import coreUtils from "@opentripplanner/core-utils";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore FIXME: Create TypeScript types for the icons package.
 import { getCompanyIcon } from "@opentripplanner/icons";
-import React from "react";
+import React, { Suspense } from "react";
 import { IntlShape } from "react-intl";
 
 // eslint-disable-next-line prettier/prettier
@@ -269,7 +269,9 @@ function getTransitCombinedModeOptions(
             selectedCompanies.includes(modeCompanyUpper)),
         text: (
           <span>
-            <ModeIcon mode="TRANSIT" />+{finalIcon}
+            <Suspense fallback={company || "Loading..."}>
+              <ModeIcon mode="TRANSIT" />+{finalIcon}
+            </Suspense>
           </span>
         ),
         title: modeLabel
@@ -364,7 +366,9 @@ export function getCompaniesOptions(
       selected: selectedCompanies.includes(comp.id),
       text: (
         <span>
-          {CompanyIcon && <CompanyIcon />} {comp.label}
+          <Suspense fallback={comp.label || comp.id || "Loading"}>
+            {CompanyIcon ? <CompanyIcon /> : comp.id }
+          </Suspense>
         </span>
       ),
       title: comp.label
