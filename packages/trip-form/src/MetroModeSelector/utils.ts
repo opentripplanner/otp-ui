@@ -21,7 +21,7 @@ export type InitialStateType = {
 export type ModeStateConfig = {
   queryParamState?: boolean;
 };
-function agregateModes(modeButtonDefinitions: ModeButtonDefinition[]) {
+function aggregateModes(modeButtonDefinitions: ModeButtonDefinition[]) {
   return Array.from(
     modeButtonDefinitions.reduce<Set<TransportMode>>((set, combo) => {
       combo.modes.forEach(mode => set.add(mode));
@@ -94,7 +94,7 @@ export function getActivatedModesFromQueryParams(
   const enabledKeys =
     decodedQuery.modeButtons || initialState.enabledModeButtons;
   const activeButtons = filterModeDefitionsByKey(modeButtons, enabledKeys);
-  return agregateModes(activeButtons);
+  return aggregateModes(activeButtons);
 }
 
 export function useModeState(
@@ -161,7 +161,7 @@ export function useModeState(
     buttonsWithSettings,
     enabledModeButtonKeys
   );
-  const enabledModes = agregateModes(enabledModeButtons);
+  const enabledModes = aggregateModes(enabledModeButtons);
 
   return {
     setModeSettingValue,
