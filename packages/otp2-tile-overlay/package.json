@@ -20,6 +20,7 @@
     "@opentripplanner/vehicle-rental-overlay": "^2.1.0-alpha.1"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^4.0.2"
+    "@opentripplanner/types": "^4.0.2",
+    "@opentripplanner/base-map": "^3.0.2"
   }
 }

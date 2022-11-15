@@ -91,9 +91,10 @@ export default class StopPopup extends Component<Props> {
     return (
       <BaseMapStyled.MapOverlayPopup>
         <BaseMapStyled.PopupTitle>{name}</BaseMapStyled.PopupTitle>
-        {setViewedStop && stops && stops.length > 1
-          ? stops.map((s: Stop) => renderStop(s, this.onClickView))
-          : renderStop(stop, this.onClickView)}
+        {setViewedStop &&
+          (stops && stops.length > 1
+            ? stops.map((s: Stop) => renderStop(s, this.onClickView))
+            : renderStop(stop, this.onClickView))}
 
         {/* The "Set as [from/to]" ButtonGroup */}
         {setLocation && (
