@@ -63,6 +63,9 @@ export const RotatingCircle = styled(Circle)<VehicleComponentProps>`
   transform: rotate(${props => props.vehicle.heading || 0}deg);
 `;
 
+export const defaultCaretHeight = 5;
+export const defaultCaretHalfWidth = 6;
+
 /**
  * Renders a caret that fits within another component and indicates the heading.
  */
@@ -75,13 +78,13 @@ export const Caret = styled.div<{ rotate: number }>`
   width: 100%;
 
   &::before {
-    border-bottom: 5px solid #333;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
+    border-bottom: ${defaultCaretHeight}px solid #333;
+    border-left: ${defaultCaretHalfWidth}px solid transparent;
+    border-right: ${defaultCaretHalfWidth}px solid transparent;
     content: "";
     height: 0;
     left: 50%;
-    margin-left: -6px;
+    margin-left: ${-defaultCaretHalfWidth}px;
     position: absolute;
     top: 0px;
     width: 0;
@@ -93,7 +96,7 @@ export const InnerCaret = styled(Caret)``;
 
 export const OuterCaret = styled(Caret)`
   &::before {
-    top: -6px;
+    top: ${-defaultCaretHeight}px;
   }
 `;
 

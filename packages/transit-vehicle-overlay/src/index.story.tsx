@@ -6,6 +6,7 @@ import { withMap } from "../../../.storybook/base-map-wrapper";
 
 import TransitVehicleOverlay, {
   Circle,
+  DefaultIconContainer,
   RouteNumberIcon,
   RotatingCircle,
   withCaret,
@@ -17,6 +18,10 @@ const SEATTLE: [number, number] = [47.6, -122.3];
 const vehicles: TransitVehicle[] = vehicleData.vehiclePositions;
 
 const CircleWithInnerCaret = withCaret(Circle, { position: "inner" });
+
+export const Default = () => (
+  <TransitVehicleOverlay ModeIcon={TriMetModeIcon} vehicles={vehicles} />
+);
 
 export const RotatingIconsNoCaret = () => (
   <TransitVehicleOverlay
@@ -49,7 +54,7 @@ export const OuterCaretWithCustomSize = () => (
 
 export const RouteColorBackground = () => (
   <TransitVehicleOverlay
-    IconContainer={withRouteColorBackground(CircleWithInnerCaret)}
+    IconContainer={withRouteColorBackground(DefaultIconContainer)}
     ModeIcon={TriMetModeIcon}
     vehicles={vehicles}
   />
@@ -57,7 +62,7 @@ export const RouteColorBackground = () => (
 
 export const RouteColorBackgroundWithTransparencyOnHover = () => (
   <TransitVehicleOverlay
-    IconContainer={withRouteColorBackground(CircleWithInnerCaret, {
+    IconContainer={withRouteColorBackground(DefaultIconContainer, {
       alphaHex: "aa",
       display: "onhover"
     })}
@@ -66,9 +71,18 @@ export const RouteColorBackgroundWithTransparencyOnHover = () => (
   />
 );
 
+export const RouteColorBackgroundWithInnerCaret = () => (
+  <TransitVehicleOverlay
+    IconContainer={withRouteColorBackground(CircleWithInnerCaret)}
+    iconPaddding={4}
+    ModeIcon={TriMetModeIcon}
+    vehicles={vehicles}
+  />
+);
+
 export const DefaultRouteColorWhenVehicleRouteColorAbsent = () => (
   <TransitVehicleOverlay
-    IconContainer={withRouteColorBackground(withCaret(Circle), {
+    IconContainer={withRouteColorBackground(DefaultIconContainer, {
       defaultColor: "#00FF00"
     })}
     ModeIcon={TriMetModeIcon}

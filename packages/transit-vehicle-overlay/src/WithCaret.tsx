@@ -1,7 +1,12 @@
 import React, { FC, HTMLAttributes } from "react";
 import styled from "styled-components";
 
-import { InnerCaret, OuterCaret } from "./styled";
+import {
+  defaultCaretHalfWidth,
+  defaultCaretHeight,
+  InnerCaret,
+  OuterCaret
+} from "./styled";
 import { VehicleComponentProps } from "./types";
 
 interface CaretOptions {
@@ -22,22 +27,23 @@ export default function withCaret(
   options?: CaretOptions
 ): FC<IconContainerProps> {
   const isInner = options?.position === "inner";
-  const height = options?.height || 0;
-  const width = options?.width || height * 2;
+  const height = options?.height || defaultCaretHeight;
+  const width = options?.width || defaultCaretHalfWidth * 2;
   const halfWidth = width / 2;
   const offset = options?.offset || 0;
   const RawCaret = isInner ? InnerCaret : OuterCaret;
-  const SizedCaret = height
-    ? styled(RawCaret)`
-        &::before {
-          border-bottom-width: ${Math.max(0, height)}px;
-          border-left-width: ${halfWidth}px;
-          border-right-width: ${halfWidth}px;
-          margin-left: -${halfWidth}px;
-          top: -${offset + (isInner ? 0 : height)}px;
-        }
-      `
-    : RawCaret;
+  const SizedCaret =
+    options?.height || offset
+      ? styled(RawCaret)`
+          &::before {
+            border-bottom-width: ${Math.max(0, height)}px;
+            border-left-width: ${halfWidth}px;
+            border-right-width: ${halfWidth}px;
+            margin-left: -${halfWidth}px;
+            top: -${offset + (isInner ? 0 : height)}px;
+          }
+        `
+      : RawCaret;
 
   /**
    * Displays a circle, content, and an arrow pointing in the direction

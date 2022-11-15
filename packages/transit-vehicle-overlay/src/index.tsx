@@ -60,14 +60,16 @@ type Props = {
   vehicles?: TransitVehicle[];
 };
 
+const DefaultIconContainer = withCaret(Circle, { offset: 3.75 });
+
 /**
  * An overlay to view a collection of transit vehicles.
  */
 const TransitVehicleOverlay = ({
   defaultMode = "bus",
-  IconContainer,
-  iconPadding = 5,
-  iconPixels = 15,
+  IconContainer = DefaultIconContainer,
+  iconPadding = 2,
+  iconPixels = 20,
   ModeIcon,
   TooltipSlot = VehicleTooltip,
   VehicleIcon = DefaultVehicleIcon,
@@ -83,7 +85,7 @@ const TransitVehicleOverlay = ({
   }
 
   const StyledContainer = getStyledContainer(
-    IconContainer || withCaret(Circle),
+    IconContainer,
     iconPadding,
     iconPixels
   );
@@ -114,6 +116,7 @@ export default TransitVehicleOverlay;
 // Export the other subcomponents
 export {
   Circle,
+  DefaultIconContainer,
   DefaultVehicleIcon,
   RotatingCircle,
   RouteNumberIcon,
