@@ -3,7 +3,11 @@ import {
   MapLocationActionArg,
 } from "@opentripplanner/types"
 import { Layer, Popup,  Source, useMap } from "react-map-gl"
+// TODO: Once OTP1 support is deprecated, move this into this package and merge
+// See: https://github.com/opentripplanner/otp-ui/pull/472#discussion_r1023121840
 import { StationPopup } from "@opentripplanner/vehicle-rental-overlay"
+// TODO: Once OTP1 support is deprecated, move this into this package and merge
+// See: https://github.com/opentripplanner/otp-ui/pull/472#discussion_r1023121840
 import { StopPopup } from "@opentripplanner/stops-overlay"
 import React, { useEffect, useState } from "react"
 // eslint-disable-next-line prettier/prettier
@@ -33,11 +37,11 @@ const OTP2TileLayerWithPopup = ({
   /**
    * A method fired when a stop is selected as from or to in the popup
    */
-  setLocation: (location: MapLocationActionArg) => void
+  setLocation?: (location: MapLocationActionArg) => void
   /**
    * A method fired when the stop viewer is opened in the popup
    */
-  setViewedStop: ({ stopId }: { stopId: string }) => void
+  setViewedStop?: ({ stopId }: { stopId: string }) => void
   type: string
 }): JSX.Element => {
   const { current: map } = useMap()
@@ -60,6 +64,9 @@ const OTP2TileLayerWithPopup = ({
         sourceLayer
       }
 
+      // TODO: once the popup converges into a single one that can handle
+      // stops, stations, and vehicles, this re-writing will not be needed.
+      // See: https://github.com/opentripplanner/otp-ui/pull/472#discussion_r1023124055
       if (sourceLayer === "stops" || sourceLayer === "stations") {
         setClickedEntity(synthesizedEntity)
       }
@@ -112,24 +119,24 @@ const OTP2TileLayerWithPopup = ({
           {clickedEntity.sourceLayer.includes("rental") && (
             <StationPopup
               configCompanies={configCompanies}
-              setLocation={(location) => {
+              setLocation={setLocation ? (location) => {
                 setClickedEntity(null)
                 setLocation(location)
-              }}
+              } : null}
               station={clickedEntity}
             />
           )}
           {(clickedEntity.sourceLayer.includes("stop") ||
             clickedEntity.sourceLayer.includes("station")) && (
             <StopPopup
-                setLocation={(location) => {
+                setLocation={setLocation ? (location) => {
                 setClickedEntity(null)
                 setLocation(location)
-              }}
-                setViewedStop={(stop) => {
+              } : null}
+                setViewedStop={setViewedStop ? (stop) => {
                 setClickedEntity(null)
                 setViewedStop(stop)
-              }}
+              } : null}
                 stop={{ ...clickedEntity, id: clickedEntity.gtfsId }}
               />
           )}
@@ -142,8 +149,8 @@ const OTP2TileLayerWithPopup = ({
 const generateOTP2TileLayers = (
   layers: { name?: string; network?: string; type: string }[],
   endpoint: string,
-  setLocation: (location: MapLocationActionArg) => void,
-  setViewedStop: ({ stopId }: { stopId: string }) => void,
+  setLocation?: (location: MapLocationActionArg) => void,
+  setViewedStop?: ({ stopId }: { stopId: string }) => void,
   configCompanies?: ConfiguredCompany[]
 ): JSX.Element[] => {
   return [
