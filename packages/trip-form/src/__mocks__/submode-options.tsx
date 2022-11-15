@@ -3,6 +3,8 @@ import React from "react";
 // @ts-ignore FIXME: Create TypeScript types for the icons package.
 import * as Icons from "@opentripplanner/icons";
 
+const UberIcon = Icons.getCompanyIcon("uber");
+
 const submodeOptions = [
   {
     id: "BUS",
@@ -29,7 +31,7 @@ const submodeOptions = [
     title: "Uber",
     text: (
       <span>
-        <Icons.Uber /> Uber
+        <UberIcon /> Uber
       </span>
     )
   }

@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/endpoints-overlay",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "A map overlay to show the from and to locations of an itinerary",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -21,7 +21,7 @@
   "dependencies": {
     "@opentripplanner/base-map": "^3.0.4",
     "@opentripplanner/location-icon": "^1.4.0",
-    "@opentripplanner/core-utils": "^7.0.3",
+    "@opentripplanner/core-utils": "^7.0.5",
     "flat": "^5.0.2",
     "@styled-icons/fa-solid": "^10.34.0"
   },
@@ -29,7 +29,7 @@
     "@types/flat": "^5.0.2"
   },
   "peerDependencies": {
-    "@opentripplanner/types": "^4.0.1",
+    "@opentripplanner/types": "^4.0.2",
     "react": "^16.14.0",
     "react-dom": "^16.8.6",
     "react-intl": "^5.24.6",
