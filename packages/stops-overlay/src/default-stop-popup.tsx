@@ -78,7 +78,7 @@ export default class StopPopup extends Component<Props> {
   }
 
   render(): JSX.Element {
-    const { stop } = this.props;
+    const { stop, setLocation, setViewedStop } = this.props;
     const { name, stops: stopsString } = stop;
 
     let stops = [];
@@ -91,18 +91,20 @@ export default class StopPopup extends Component<Props> {
     return (
       <BaseMapStyled.MapOverlayPopup>
         <BaseMapStyled.PopupTitle>{name}</BaseMapStyled.PopupTitle>
-        {stops && stops.length > 1
+        {setViewedStop && stops && stops.length > 1
           ? stops.map((s: Stop) => renderStop(s, this.onClickView))
           : renderStop(stop, this.onClickView)}
 
         {/* The "Set as [from/to]" ButtonGroup */}
-        <BaseMapStyled.PopupRow>
-          <FromToLocationPicker
-            label
-            onFromClick={this.onFromClick}
-            onToClick={this.onToClick}
-          />
-        </BaseMapStyled.PopupRow>
+        {setLocation && (
+          <BaseMapStyled.PopupRow>
+            <FromToLocationPicker
+              label
+              onFromClick={this.onFromClick}
+              onToClick={this.onToClick}
+            />
+          </BaseMapStyled.PopupRow>
+        )}
       </BaseMapStyled.MapOverlayPopup>
     );
   }

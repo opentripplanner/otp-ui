@@ -133,13 +133,15 @@ const StationPopup = (props: Props): JSX.Element => {
       )}
 
       {/* Set as from/to toolbar */}
-      <BaseMapStyled.PopupRow>
-        <FromToLocationPicker
-          label
-          location={location}
-          setLocation={setLocation}
-        />
-      </BaseMapStyled.PopupRow>
+      {setLocation && (
+        <BaseMapStyled.PopupRow>
+          <FromToLocationPicker
+            label
+            location={location}
+            setLocation={setLocation}
+          />
+        </BaseMapStyled.PopupRow>
+      )}
     </BaseMapStyled.MapOverlayPopup>
   );
 };
