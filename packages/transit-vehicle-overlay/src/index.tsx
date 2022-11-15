@@ -39,6 +39,15 @@ const TransitVehicleOverlay = ({
 
   const Tooltip = TooltipSlot || VehicleTooltip;
 
+  // Check if possibleColor is a string in format `#000` or `#000000`
+  const isValidColor = possibleColor => {
+    if (typeof possibleColor !== "string") {
+      return false;
+    }
+
+    return /^#[A-Fa-f0-9]{3}(?:[A-Fa-f0-9]{3})?$/.test(possibleColor);
+  };
+
   return (
     <>
       {validVehicles.map(vehicle => {
@@ -54,7 +63,17 @@ const TransitVehicleOverlay = ({
             tooltipContents={<Tooltip vehicle={vehicle} />}
           >
             {/* @ts-expect-error We know the icon is set dynamically */}
-            <Icon rotate={vehicle.heading} routeColor={color} />
+            <Icon
+              highlightColor={
+                isValidColor(vehicle.highlightColor)
+                  ? vehicle.highlightColor
+                  : null
+              }
+              rotate={vehicle.heading}
+              routeColor={
+                isValidColor(vehicle.routeColor) ? vehicle.routeColor : color
+              }
+            />
           </MarkerWithPopup>
         );
       })}

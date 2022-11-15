@@ -4,10 +4,14 @@ import React from "react";
 import { Bus, Streetcar, Ferry } from "@opentripplanner/icons";
 import styled, { css } from "styled-components";
 
-const rounded = css<{ rotate?: number; routeColor?: string }>`
-  background: #eee;
+const rounded = css<{
+  highlightColor?: string;
+  rotate?: number;
+  routeColor?: string;
+}>`
+  background: ${props => props.routeColor || "#eeeeee"}aa;
   &:hover {
-    background: ${props => props.routeColor || "#9999ee"}aa;
+    background: ${props => props.highlightColor || "#9999ee"}aa;
     cursor: cell;
   }
   transition: all 0.1s ease-in-out;
