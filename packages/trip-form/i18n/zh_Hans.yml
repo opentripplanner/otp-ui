@@ -1,0 +1,36 @@
+otpUi:
+  DateTimeSelector:
+    arrive: 到达
+    now: 现在离开
+    depart: 出发时间
+  queryParameters:
+    bikeSpeed: 自行车速度
+    maxWalkDistance: 最大步行
+    speedInMilesPerHour: '{mph} 英里/小时'
+    maxBikeDistance: 最大自行车
+    maxBikeTime: 最大自行车时间
+    maxEScooterDistance: 电动滑板车最大距离
+    maxWalkTime: 最大步行时间
+    optimizeBikeFlat: 往返旅行
+    optimizeBikeFriendly: 自行车友好旅行
+    optimizeBikeSpeed: 速度
+    optimizeFor: 优化
+    walkReluctance: 避免步行
+    walkReluctanceHigh: 更多公共交通
+    walkReluctanceLow: 更多步行
+    walkSpeed: 步行速度
+    watts: 电动滑板车动力
+    watts125kidsHoverboard: 孩子的悬浮滑板 (10 km/h)
+    watts1500powerfulEscooter: 强大的电动滑板车 (40km/h)
+    distanceInMiles: "{miles, number, :: unit/mile unit-width-full-name}\n"
+    watts250entryLevelEscooter: 入门级踏板车 (18 km/h)
+    watts500robustEscooter: 坚固的电动滑板车 (30km/h)
+    wheelchair: 倾向于选择轮椅无障碍路线
+  SettingsSelectorPanel:
+    walkOnly: 仅步行
+    bikeOnly: 仅限单车
+    escooterOnly: 仅限电动滑板车
+    takeTransit: 乘坐公共交通工具
+    travelPreferences: 出行偏好
+    use: 使用
+    useCompanies: 使用公司

@@ -428,7 +428,7 @@ Array [
   Object {
     "applicable": [Function],
     "default": false,
-    "icon": <ForwardRef />,
+    "icon": <ForwardRef(Wheelchair) />,
     "label": "Prefer Wheelchair Accessible Routes",
     "name": "wheelchair",
     "routingTypes": Array [

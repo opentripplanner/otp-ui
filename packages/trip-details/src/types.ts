@@ -79,6 +79,11 @@ export interface TripDetailsProps {
    */
   DepartureDetails?: React.ElementType<DepartureDetailsProps>;
   /**
+   * If this is set to true, a row will be added to the trip details displaying how
+   * many calories were burned on the active legs of the trip.
+   */
+  displayCalories?: boolean;
+  /**
    * Slot for a custom component to render the expandable section for fares.
    */
   FareDetails?: React.ElementType<FareDetailsProps>;
