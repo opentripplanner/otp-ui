@@ -49,6 +49,10 @@ const ModeButtonItem = styled.button<{ enabled?: boolean }>`
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05),
       0 4px 10px rgba(0, 123, 255, 0.25);
   }
+
+  svg {
+    vertical-align: middle;
+  }
 `;
 
 const HoverPanel = styled.div`
@@ -108,13 +112,11 @@ function ModeButton({
 
   const { getFloatingProps, getReferenceProps } = useInteractions([
     useHover(context, {
-      handleClose: safePolygon(),
-      enabled: modeButton.enabled
+      handleClose: safePolygon({ blockPointerEvents: false })
     })
   ]);
 
   const modeButtonClicked = () => {
-    setOpen(!modeButton.enabled);
     onToggle();
   };
 
@@ -127,10 +129,11 @@ function ModeButton({
         {...getReferenceProps()}
         enabled={modeButton.enabled}
       >
+        {/* {`${open}`} */}
         <modeButton.Icon size={32} />
       </ModeButtonItem>
       <FloatingPortal root={floatingTarget} id="foobartest">
-        {open && (
+        {open && modeButton.enabled && (
           <HoverPanel
             // eslint-disable-next-line react/jsx-props-no-spreading
             {...getFloatingProps()}

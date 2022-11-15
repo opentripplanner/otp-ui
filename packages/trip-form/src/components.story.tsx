@@ -5,13 +5,13 @@ import { Bus, Bicycle, Walking } from "@styled-icons/fa-solid";
 import { QueryParamProvider } from "use-query-params";
 import { WindowHistoryAdapter } from "use-query-params/adapters/window";
 
+import { ModeButtonDefinition } from "@opentripplanner/types";
 import commonModes from "./__mocks__/modes-en";
 import modeOptions from "./__mocks__/mode-options";
 import submodeOptions from "./__mocks__/submode-options";
 import trimet from "./__mocks__/trimet-styled";
 
 import { SettingsSelectorPanel } from "./styled";
-import { Combination } from "./MetroModeSelector/types";
 
 import modeSettingDefinitions from "./modeSettings.yml";
 
@@ -230,26 +230,31 @@ export const submodeSelector = makeStory(Core.SubmodeSelector, {
 });
 
 const MetroModeSelector = ({
-  combinations
+  modeButtonDefinitions
 }: {
-  combinations: Combination[];
+  modeButtonDefinitions: ModeButtonDefinition[];
 }): ReactElement => {
   const initialState = {
-    enabledCombinations: ["TRANSIT"],
+    enabledModeButtons: ["TRANSIT"],
     modeSettingValues: {}
   };
   const {
-    combinations: combinationsFromState,
-    toggleCombination,
+    buttonsWithSettings,
+    toggleModeButton,
     setModeSettingValue
-  } = Core.useModeState(combinations, initialState, modeSettingDefinitions, {
-    queryParamState: false
-  });
+  } = Core.useModeState(
+    modeButtonDefinitions,
+    initialState,
+    modeSettingDefinitions,
+    {
+      queryParamState: false
+    }
+  );
   return (
     <div style={{ width: "340px", position: "relative" }}>
       <Core.MetroModeSelector
-        onToggleCombination={toggleCombination}
-        combinations={combinationsFromState}
+        onToggleModeButton={toggleModeButton}
+        modeButtons={buttonsWithSettings}
         onSettingsUpdate={setModeSettingValue}
       />
     </div>
@@ -257,17 +262,17 @@ const MetroModeSelector = ({
 };
 
 const MetroModeSelectorWithQP = ({
-  combinations
+  modeButtonDefinitions
 }: {
-  combinations: Combination[];
+  modeButtonDefinitions: ModeButtonDefinition[];
 }): ReactElement => (
   <QueryParamProvider adapter={WindowHistoryAdapter}>
-    <MetroModeSelector combinations={combinations} />
+    <MetroModeSelector modeButtonDefinitions={modeButtonDefinitions} />
   </QueryParamProvider>
 );
 
 export const metroModeSelector = makeStory(MetroModeSelectorWithQP, {
-  combinations: [
+  modeButtonDefinitions: [
     {
       label: "Transit",
       Icon: Bus,
