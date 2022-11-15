@@ -77,12 +77,14 @@ const TransitVehicleOverlay = ({
               disableHoverEffects={disableHoverEffects}
               // Don't rotate if all the icons are text! It looks weird
               rotate={!alwaysRenderText && vehicle.heading}
+              // @ts-expect-error alpha branch
               routeColor={vehicle?.routeColor || color}
             >
               {/* If there is no route type, draw the route name, or a generic bullet */}
               <span
                 style={{
                   color: utils.route.getMostReadableTextColor(
+                    // @ts-expect-error alpha branch
                     vehicle?.routeColor || color
                   )
                 }}
