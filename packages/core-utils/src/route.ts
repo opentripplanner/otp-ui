@@ -442,8 +442,10 @@ export function makeRouteComparator(
  */
 export function getMostReadableTextColor(
   backgroundColor: string,
-  proposedTextColor = "#ffffff"
+  proposedTextColor?: string
 ): string {
+  if (!proposedTextColor) proposedTextColor = "#ffffff";
+
   if (!backgroundColor.startsWith("#")) {
     backgroundColor = `#${backgroundColor}`;
   }
