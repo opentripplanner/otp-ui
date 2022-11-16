@@ -17,6 +17,12 @@ otpUi:
     RentedVehicleSubheader:
       pickupRental: Récupérez {vehicleType} {company} {vehicleName}
       resumeRentalRide: Continuez avec le véhicule loué
+      vehicleType:
+        bike: le vélo
+        bikeshare: le vélo partagé
+        car: la voiture
+        escooter: la trottinette
+        vehicle: le véhicule
       walkVehicle: Emmenez à pied le véhicule le long de {place}
     step:
       circleClockwise: Prenez le rond-point par la gauche
@@ -63,23 +69,26 @@ otpUi:
       bookRide: Réserver
       bookRideLater: Attendez jusqu'à {timeMillis, time, short} avant de réserver
       estimatedCost: "Coût estimé : {minFare} - {maxFare}"
-      estimatedTravelTime: "Temps de trajet estimé : {duration} (ne tient pas compte\
+      estimatedTravelTime:
+        "Temps de trajet estimé : {duration} (ne tient pas compte\
         \ de la circulation)"
-      waitForPickup: "Attendez votre chauffeur {company}{minutes, plural, =0 {} other\
+      waitForPickup:
+        "Attendez votre chauffeur {company}{minutes, plural, =0 {} other\
         \ { # minutes}}"
     unnamedPath: Chemin sans nom
     unnamedRoad: Route sans nom
     vehicleTitle: "{vehicleType} {company}"
     vehicleType:
-      bike: le vélo
-      bikeshare: le vélo partagé
-      car: la voiture
-      escooter: la trottinette
-      vehicle: le véhicule
+      bike: Vélo
+      bikeshare: Vélo partagé
+      car: Voiture
+      escooter: Trottinette
+      vehicle: Véhicule
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# h }}{minutes} mn"
-    flexAdvanceNotice: " au moins {leadDays, plural, one {# jour} other {# jours}}\
+    flexAdvanceNotice:
+      " au moins {leadDays, plural, one {# jour} other {# jours}}\
       \ à l'avance"
     flexCallAhead: réserver au préalable
     flexCallNumber: réserver au {phoneNumber}
@@ -103,7 +112,8 @@ otpUi:
     alertsHeader: "{alertCount, plural, =0 {# alerte} =1 {# alerte} other {# alertes}}"
     fare: "Tarif : {fare}"
     operatedBy: Exploité par {agencyLink}
-    rideDurationAndStops: "Trajet : {duration}{numStops, plural, =1 {} other { / #\
+    rideDurationAndStops:
+      "Trajet : {duration}{numStops, plural, =1 {} other { / #\
       \ arrêts}}"
     routeDescription: "{routeName} <toPrefix>vers</toPrefix> {headsign}"
     stopId: Arrêt n°{stopId}
