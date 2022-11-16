@@ -293,7 +293,7 @@ export const metroModeSelector = makeStory(MetroModeSelectorWithQP, {
       label: "Bike",
       Icon: Bicycle,
       key: "BIKE",
-      modes: [{ mode: "BICYCLE" }, { mode: "BIKESHARE" }]
+      modes: [{ mode: "BICYCLE" }]
     }
   ]
 });

@@ -1,18 +1,21 @@
-- applicableMode: WALK
+- applicableMode: TRANSIT
   type: SLIDER
   key: walkReluctance
   default: 0
   low: 0
-  high: 10
-  step: 0.5
+  high: 5
+  step: 0.1
   label: Walk Reluctance
   labelLow: More Walking
   labelHigh: More Transit
-- applicableMode: WALK
-  type: CHECKBOX
-  key: onlyArtic
+- applicableMode: BICYCLE
+  type: CHECKBOX_ADD_MODE
+  key: enableBikeshare
   default: true
-  label: Only Articulated Bus
+  addMode:
+    mode: BICYCLE
+    qualifier: RENT
+  label: Enable Bike Rental
 - applicableMode: TRANSIT
   type: DROPDOWN
   key: busColor

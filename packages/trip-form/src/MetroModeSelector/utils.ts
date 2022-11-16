@@ -37,20 +37,24 @@ function filterModeDefitionsByKey(
   return modeButtonDefinitions.filter(def => keys.includes(def.key));
 }
 
-export const getSettingsForCombination = (
-  settings: ModeSetting[],
+function populateSettingsWithValues(
+  modeSettings: ModeSetting[],
   values: ModeSettingValues
-) => (combination: ModeButtonDefinition): ModeButtonDefinition => {
-  const definitionsWithValues = settings.map(def => ({
-    ...def,
-    value: values[def.key] as boolean & number & string
+): ModeSetting[] {
+  return modeSettings.map(setting => ({
+    ...setting,
+    value: values[setting.key] as boolean & number & string
   }));
+}
 
+export const addSettingsToButton = (settings: ModeSetting[]) => (
+  combination: ModeButtonDefinition
+): ModeButtonDefinition => {
   const settingsForThisCombination = combination.modes.reduce<ModeSetting[]>(
     (prev, mode) => {
       return [
         ...prev,
-        ...definitionsWithValues.filter(def => def.applicableMode === mode.mode)
+        ...settings.filter(def => def.applicableMode === mode.mode)
       ];
     },
     []
@@ -108,6 +112,7 @@ export function useModeState(
   enabledModeButtonKeys: string[];
   enabledModes: TransportMode[];
   toggleModeButton: (key: string) => void;
+  modeSettings: ModeSetting[];
 } {
   const [enabledModeButtonKeys, setEnabledModeButtonKeys] = useStateStorage<
     string[]
@@ -153,8 +158,13 @@ export function useModeState(
     });
   };
 
+  const settingsWithValues = populateSettingsWithValues(
+    modeSettingDefinitions,
+    modeSettingsValues
+  );
+
   const buttonsWithSettings = modeButtons.map(
-    getSettingsForCombination(modeSettingDefinitions, modeSettingsValues)
+    addSettingsToButton(settingsWithValues)
   );
 
   const enabledModeButtons = filterModeDefitionsByKey(
@@ -168,6 +178,7 @@ export function useModeState(
     buttonsWithSettings,
     enabledModeButtonKeys,
     enabledModes,
+    modeSettings: settingsWithValues,
     toggleModeButton
   };
 }

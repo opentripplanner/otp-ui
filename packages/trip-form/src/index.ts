@@ -11,6 +11,7 @@ import SubmodeSelector from "./SubmodeSelector";
 import MetroModeSelector from "./MetroModeSelector";
 import { useModeState } from "./MetroModeSelector/utils";
 import TripOptions, { Styled as TripOptionsStyled } from "./TripOptions";
+import defaultModeSettings from "./modeSettings.yml";
 
 export {
   CheckboxSelector,
@@ -26,5 +27,6 @@ export {
   TripOptions,
   TripOptionsStyled,
   Styled,
-  useModeState
+  useModeState,
+  defaultModeSettings
 };
