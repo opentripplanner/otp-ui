@@ -21,6 +21,12 @@ export type InitialStateType = {
 export type ModeStateConfig = {
   queryParamState?: boolean;
 };
+
+/**
+ * Aggregates all the unique modes from buttons passed in
+ * @param modeButtonDefinitions Array of mode buttons
+ * @returns All the (unique) modes from the buttons
+ */
 function aggregateModes(modeButtonDefinitions: ModeButtonDefinition[]) {
   return Array.from(
     modeButtonDefinitions.reduce<Set<TransportMode>>((set, combo) => {
@@ -30,6 +36,13 @@ function aggregateModes(modeButtonDefinitions: ModeButtonDefinition[]) {
   );
 }
 
+/**
+ * Filters mode buttons by list of keys, used to find enabled buttons.
+ * TODO: Remove this function? Is it needed?
+ * @param modeButtonDefinitions All mode definitions
+ * @param keys List of keys of buttons to include
+ * @returns Filtered list of buttons
+ */
 function filterModeDefitionsByKey(
   modeButtonDefinitions: ModeButtonDefinition[],
   keys: string[]
@@ -37,6 +50,13 @@ function filterModeDefitionsByKey(
   return modeButtonDefinitions.filter(def => keys.includes(def.key));
 }
 
+/**
+ * Connects the mode setting values from a values object, where each key corresponds
+ * to a mode setting in the modeSettings parameter.
+ * @param modeSettings The mode settings with empty `value` params
+ * @param values An object containing setting values
+ * @returns Mode settings with values populated
+ */
 function populateSettingsWithValues(
   modeSettings: ModeSetting[],
   values: ModeSettingValues
@@ -47,6 +67,26 @@ function populateSettingsWithValues(
   }));
 }
 
+/**
+ * Extracts the values from each mode setting into an object
+ * where the keys correspond with the keys from the mode setting.
+ * @param modeSetting Mode settings with `values` populated
+ * @returns Object containing just the keys and values
+ */
+function extractModeSettingValuesToObject(
+  modeSettings: ModeSetting[]
+): ModeSettingValues {
+  return modeSettings.reduce((prev, cur) => {
+    prev[cur.key] = cur.default;
+    return prev;
+  }, {});
+}
+
+/**
+ * Higher order function that can be used in `map` to add mode settings to mode button definitions.
+ * @param settings Mode settings to be added to button
+ * @returns Function that accepts a mode button definition, returning mode button def with populated settings
+ */
 export const addSettingsToButton = (settings: ModeSetting[]) => (
   combination: ModeButtonDefinition
 ): ModeButtonDefinition => {
@@ -85,20 +125,51 @@ export function useStateStorage<Type>(
   return [qpState, setQpState];
 }
 
+/**
+ * Grabs the activated modes and mode settings from the URL string
+ * when provided with all the necessary parameters. This allows access to the
+ * same parmeters as useModeState in a context where React Hooks are not available,
+ * such as in Redux.
+ * @param searchString URL String
+ * @param modeButtons Mode button definitions (from config)
+ * @param modeSettingDefinitions Mode setting definitions (from config/defaults)
+ * @param initialState Initial state (from config)
+ * @returns Array of active TransportModes and all the mode settings
+ */
 export function getActivatedModesFromQueryParams(
   searchString: string,
   modeButtons: ModeButtonDefinition[],
+  modeSettingDefinitions: ModeSetting[],
   initialState: InitialStateType
-): TransportMode[] {
+): { activeModes: TransportMode[]; modeSettings: ModeSetting[] } {
   const queryObject = new URLSearchParams(searchString);
+
   const decodedQuery = decodeQueryParams(
-    { modeButtons: DelimitedArrayParam },
-    { modeButtons: queryObject.get("modeButtons") }
+    { modeButtons: DelimitedArrayParam, modeSettings: ObjectParam },
+    {
+      modeButtons: queryObject.get("modeButtons"),
+      modeSettings: queryObject.get("modeSettings")
+    }
   );
+
   const enabledKeys =
     decodedQuery.modeButtons || initialState.enabledModeButtons;
   const activeButtons = filterModeDefitionsByKey(modeButtons, enabledKeys);
-  return aggregateModes(activeButtons);
+
+  const modeSettingValues = {
+    // TODO: Do we want to keep these defaults with the definitions or only support it in initial state?
+    ...extractModeSettingValuesToObject(modeSettingDefinitions),
+    ...initialState.modeSettingValues,
+    ...decodedQuery.modeSettings
+  };
+  const modeSettingsWithValues = populateSettingsWithValues(
+    modeSettingDefinitions,
+    modeSettingValues
+  );
+  return {
+    activeModes: aggregateModes(activeButtons),
+    modeSettings: modeSettingsWithValues
+  };
 }
 
 export function useModeState(
@@ -139,10 +210,7 @@ export function useModeState(
   };
 
   const defaultModeSettingsValues = {
-    ...modeSettingDefinitions.reduce((prev, cur) => {
-      prev[cur.key] = cur.default;
-      return prev;
-    }, {}),
+    ...extractModeSettingValuesToObject(modeSettingDefinitions),
     ...initialState.modeSettingValues
   };
 

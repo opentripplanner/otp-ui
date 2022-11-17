@@ -1,4 +1,4 @@
-- applicableMode: TRANSIT
+- applicableMode: WALK
   type: SLIDER
   key: walkReluctance
   default: 0
@@ -16,7 +16,7 @@
     mode: BICYCLE
     qualifier: RENT
   label: Enable Bike Rental
-- applicableMode: TRANSIT
+- applicableMode: BUS
   type: DROPDOWN
   key: busColor
   default: BLUE
