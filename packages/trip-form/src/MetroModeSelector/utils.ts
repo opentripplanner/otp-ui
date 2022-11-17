@@ -106,6 +106,17 @@ export const addSettingsToButton = (settings: ModeSetting[]) => (
   };
 };
 
+/**
+ * State storage hook that can either store the state in React useState hook or in the
+ * the URL Query Params using useQueryParam library. The reason this exists is so that the mode
+ * selector can function in the storybook where modifying the URL doesn't work. It also
+ * helps handle the initial value for when the URL doesn't have the associated query param.
+ * @param name Name of parameter
+ * @param stateType Type of object to be stored
+ * @param storeInQueryParam Store this object in query params or in React state hook
+ * @param defaultState The default state/initial state
+ * @returns Getter and setter just like useState
+ */
 export function useStateStorage<Type>(
   name: string,
   stateType: QueryParamConfig<Type>,
@@ -172,6 +183,15 @@ export function getActivatedModesFromQueryParams(
   };
 }
 
+/**
+ * This useModeState hook is designed to handle all the state relating to the mode selector.
+ * It consumes and provides all the needed data to make the mode selector work.
+ * @param buttonsFromConfig List of mode buttons to be displayed
+ * @param initialState Initial state object for mode button activation and mode setting defaults
+ * @param modeSettingDefinitions Definitions of all the mode settings available
+ * @param param3 Config to specify whether to store in url query param or react useState hook
+ * @returns Data to be used by mode selector and query generation
+ */
 export function useModeState(
   buttonsFromConfig: ModeButtonDefinition[],
   initialState: InitialStateType,
