@@ -1,0 +1,5 @@
+otpUi:
+  FromToLocationPicker:
+    planATrip: "여행 계획:"
+    to: 도착
+    from: 출발

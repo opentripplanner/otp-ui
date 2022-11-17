@@ -1,33 +1,21 @@
-import Biketown from "./biketown-icon";
-import Bird from "./bird-icon";
-import Bolt from "./bolt-icon";
-import BoltEu from "./bolt-eu-icon";
-import Car2go from "./car2go-icon";
-import Gruv from "./gruv-icon";
-import Hopr from "./hopr-icon";
-import Lime from "./lime-icon";
-import Lyft from "./lyft-icon";
-import Razor from "./razor-icon";
-import Reachnow from "./reachnow-icon";
-import Shared from "./shared-icon";
-import Spin from "./spin-icon";
-import Uber from "./uber-icon";
+/* eslint-disable import/prefer-default-export */
+import { lazy } from "react";
 
 const companyLookup = {
-  biketown: Biketown,
-  bird: Bird,
-  bolt: Bolt,
-  boltEu: BoltEu,
-  car2go: Car2go,
-  gruv: Gruv,
-  hopr: Hopr,
-  lime: Lime,
-  lyft: Lyft,
-  razor: Razor,
-  reachnow: Reachnow,
-  shared: Shared,
-  spin: Spin,
-  uber: Uber
+  biketown: lazy(() => import("./biketown-icon")),
+  bird: lazy(() => import("./bird-icon")),
+  bolt: lazy(() => import("./bolt-icon")),
+  boltEu: lazy(() => import("./bolt-eu-icon")),
+  car2go: lazy(() => import("./car2go-icon")),
+  gruv: lazy(() => import("./gruv-icon")),
+  hopr: lazy(() => import("./hopr-icon")),
+  lime: lazy(() => import("./lime-icon")),
+  lyft: lazy(() => import("./lime-icon")),
+  razor: lazy(() => import("./razor-icon")),
+  reachnow: lazy(() => import("./reachnow-icon")),
+  shared: lazy(() => import("./shared-icon")),
+  spin: lazy(() => import("./spin-icon")),
+  uber: lazy(() => import("./uber-icon"))
 };
 
 function getCompanyIcon(name) {
@@ -38,20 +26,4 @@ function getCompanyIcon(name) {
   return icon;
 }
 
-export {
-  Biketown,
-  Bird,
-  Bolt,
-  BoltEu,
-  Car2go,
-  getCompanyIcon,
-  Gruv,
-  Hopr,
-  Lime,
-  Lyft,
-  Razor,
-  Reachnow,
-  Shared,
-  Spin,
-  Uber
-};
+export { getCompanyIcon };

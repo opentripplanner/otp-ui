@@ -43,7 +43,6 @@ export default function TNCLeg({
     LYFT: `https://lyft.com/ride?id=lyft&partner=${LYFT_CLIENT_ID}&pickup[latitude]=${leg.from.lat}&pickup[longitude]=${leg.from.lon}&destination[latitude]=${leg.to.lat}&destination[longitude]=${leg.to.lon}`
   };
   const { tncData } = leg;
-
   if (!tncData || !tncData.estimatedArrival) return null;
   return (
     <div>
@@ -57,7 +56,7 @@ export default function TNCLeg({
           values={{
             company: tncData.displayName,
             minutes: followsTransit
-              ? undefined
+              ? 0
               : Math.round(tncData.estimatedArrival / 60)
           }}
         />

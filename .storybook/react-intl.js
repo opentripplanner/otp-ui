@@ -7,8 +7,8 @@ export function isRunningJest() {
     return process.env.JEST_WORKER_ID !== undefined;
 }
 
-/** Locales supported in the storybook "Globe" dropdown menu. */
-const locales = ["en-US", "fr", "unknown"];
+/** Locale supported in the storybook "Globe" dropdown menu. */
+const locales = ["en-US", "fr", "es", "vi", "ko", "zh", "unknown"];
 
 /**
  * List of packages that will have localization support in Storybook.
@@ -35,10 +35,12 @@ if (!isRunningJest()) {
   // (Message printouts would be unnecessary replicated in snapshots without that check.)
   packages.forEach((pkg) => {
     locales.forEach((locale) => {
+      // Chinese-simplified is assigned a special file name by Weblate.
+      const localeFile = locale === "zh" ? "zh_Hans" : locale;
       try {
         messages[locale] = {
           ...messages[locale],
-          ...flatten(require(`../packages/${pkg}/i18n/${locale}.yml`))
+          ...flatten(require(`../packages/${pkg}/i18n/${localeFile}.yml`))
         };
       } catch (e) {
         // There is no yml files for the "unknown" locale,

@@ -1,0 +1,36 @@
+otpUi:
+  queryParameters:
+    bikeSpeed: Velocidad de la bicicleta
+    maxBikeDistance: Bicicleta máxima
+    maxBikeTime: Tiempo máximo en bicicleta
+    maxEScooterDistance: Distancia máxima del e-scooter
+    maxWalkDistance: Caminata máxima
+    maxWalkTime: Tiempo máximo de caminata
+    distanceInMiles: "{miles, number, :: unit/mile unit-width-full-name}\n"
+    optimizeBikeFlat: Viaje plano
+    optimizeBikeFriendly: Viaje en bicicleta
+    optimizeBikeSpeed: Velocidad
+    optimizeFor: Optimizar para
+    speedInMilesPerHour: "{mph} MPH"
+    walkSpeed: Velocidad caminando
+    walkReluctanceHigh: Más Transporte Público
+    walkReluctanceLow: Más Caminando
+    watts: Potencia del e-scooter
+    watts125kidsHoverboard: Hoverboard para niños (10 km/h)
+    watts1500powerfulEscooter: Potente E-scooter (40km/h)
+    wheelchair: Prefiera las rutas accesibles para las sillas de ruedas
+    walkReluctance: Evasión de caminar
+    watts250entryLevelEscooter: Scooter de nivel de entrada (18 km/h)
+    watts500robustEscooter: Scooter eléctrico robusto (30km/h)
+  DateTimeSelector:
+    arrive: Llegada a las
+    depart: Partir a las
+    now: Partir ahora
+  SettingsSelectorPanel:
+    bikeOnly: Solo Bicicleta
+    takeTransit: Tomar transporte publico
+    travelPreferences: Preferencias de viaje
+    useCompanies: Usar compañías
+    walkOnly: Solo Caminar
+    escooterOnly: Solo E-Scooter
+    use: Usar

@@ -1,11 +1,49 @@
 import LocationIcon from "@opentripplanner/location-icon";
 import React, { ReactElement } from "react";
-import { useIntl } from "react-intl";
+import { IntlShape, useIntl } from "react-intl";
 
 import RouteBadge from "../RouteBadge";
 import * as S from "../styled";
 import { LineColumnContentProps } from "../types";
 import { defaultMessages } from "../util";
+
+/**
+ * Gets the travel mode in the ambient language.
+ */
+function getTravelMode(modeId: string, intl: IntlShape): string {
+  switch (modeId) {
+    case "BICYCLE":
+      return intl.formatMessage({
+        defaultMessage:
+          defaultMessages["otpUi.ItineraryBody.travelByMode.bike"],
+        description: "Travel by bike",
+        id: "otpUi.ItineraryBody.travelByMode.bike"
+      });
+    case "CAR":
+      return intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.ItineraryBody.travelByMode.car"],
+        description: "Travel by car",
+        id: "otpUi.ItineraryBody.travelByMode.car"
+      });
+    case "MICROMOBILITY":
+    case "SCOOTER":
+      return intl.formatMessage({
+        defaultMessage:
+          defaultMessages["otpUi.ItineraryBody.travelByMode.escooter"],
+        description: "Travel by e-scooter",
+        id: "otpUi.ItineraryBody.travelByMode.escooter"
+      });
+    case "WALK":
+      return intl.formatMessage({
+        defaultMessage:
+          defaultMessages["otpUi.ItineraryBody.travelByMode.walk"],
+        description: "Travel by walking",
+        id: "otpUi.ItineraryBody.travelByMode.walk"
+      });
+    default:
+      return modeId;
+  }
+}
 
 export default function LineColumnContent({
   interline,
@@ -23,7 +61,7 @@ export default function LineColumnContent({
       id: "otpUi.ItineraryBody.travelBy"
     },
     {
-      modeId: mode
+      mode: getTravelMode(mode, intl)
     }
   );
 

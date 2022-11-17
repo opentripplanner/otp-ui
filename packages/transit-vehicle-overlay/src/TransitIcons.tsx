@@ -4,11 +4,20 @@ import React from "react";
 import { Bus, Streetcar, Ferry } from "@opentripplanner/icons";
 import styled, { css } from "styled-components";
 
-const rounded = css<{ rotate?: number; routeColor?: string }>`
-  background: #eee;
+const getBackgroundColor = routeColor => routeColor || "#9999ee";
+
+const rounded = css<{
+  disableHoverEffects?: boolean;
+  rotate?: number;
+  routeColor?: string;
+}>`
+  background: ${props =>
+    props.disableHoverEffects
+      ? getBackgroundColor(props.routeColor)
+      : "#eeeeee"}aa;
   &:hover {
-    background: ${props => props.routeColor || "#9999ee"}aa;
-    cursor: cell;
+    background: ${props => getBackgroundColor(props.routeColor)}aa;
+    cursor: ${props => (props.disableHoverEffects ? "inherit" : "default")};
   }
   transition: all 0.1s ease-in-out;
   border: 2px solid #333d;
@@ -28,16 +37,31 @@ export const StyledFerry = styled(Ferry)`
   ${rounded}
 `;
 
-export const getTransitIcon = (mode: string): React.ReactNode => {
-  switch (mode) {
+export const StyledText = styled.div`
+  ${rounded}
+  font-size: 15px;
+  font-weight: 700;
+  height: inherit;
+  margin: 0;
+  padding: 5px 8px;
+`;
+
+export const getTransitIcon = (
+  mode: string,
+  forceText?: boolean
+): React.ReactNode => {
+  if (forceText) return StyledText;
+
+  switch (mode?.toLowerCase()) {
     case "bus":
       return StyledBus;
     case "streetcar":
+    case "tram":
     case "rail":
       return StyledStreetcar;
     case "ferry":
       return StyledFerry;
     default:
-      return StyledBus;
+      return StyledText;
   }
 };

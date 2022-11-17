@@ -80,6 +80,7 @@ const BaseMap = ({
   // On mobile hover is unavailable, so we use this variable to use a two tap process
   // to simulate a hover
   const [fakeMobileHover, setFakeMobileHover] = useState(false);
+  const [longPressTimer, setLongPressTimer] = useState(null);
 
   useEffect(() => {
     callIfValid(onViewportChanged)(viewState);
@@ -121,9 +122,19 @@ const BaseMap = ({
       maxZoom={maxZoom}
       onClick={onClick}
       onContextMenu={onContextMenu}
-      onMove={evt => setViewState(evt.viewState)}
-      onTouchStart={() => {
+      onMove={evt => {
+        setViewState(evt.viewState);
+        clearTimeout(longPressTimer);
+      }}
+      onTouchStart={e => {
         setFakeMobileHover(false);
+        setLongPressTimer(setTimeout(() => onContextMenu(e), 600));
+      }}
+      onTouchCancel={() => {
+        clearTimeout(longPressTimer);
+      }}
+      onTouchEnd={() => {
+        clearTimeout(longPressTimer);
       }}
       style={style}
       zoom={viewState.zoom}
@@ -189,5 +200,7 @@ const LayerWrapper = (props: LayerProps): JSX.Element => {
   const { children, visible } = props;
   return <>{visible && children}</>;
 };
+
+export const Popup = Styled.Popup;
 
 export { LayerWrapper, MarkerWithPopup, Styled };

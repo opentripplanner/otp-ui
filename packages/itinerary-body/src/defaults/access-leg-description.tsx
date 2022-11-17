@@ -1,14 +1,66 @@
 import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
 import { Config, Leg } from "@opentripplanner/types";
 import React, { HTMLAttributes, ReactElement } from "react";
-import { FormattedMessage, useIntl } from "react-intl";
+import { FormattedMessage, IntlShape, useIntl } from "react-intl";
 import * as S from "../styled";
 
-import { getPlaceName } from "../util";
+import { defaultMessages, getPlaceName } from "../util";
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {
   config: Config;
   leg: Leg;
+}
+
+/**
+ * Gets the summary mode in the ambient language.
+ */
+function getSummaryMode(leg: Leg, intl: IntlShape): string {
+  switch (leg.mode) {
+    case "BICYCLE":
+      return intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.AccessLegBody.summaryMode.bike"],
+        description: "Bike to somewhere",
+        id: "otpUi.AccessLegBody.summaryMode.bike"
+      });
+    case "BICYCLE_RENT":
+      return intl.formatMessage({
+        defaultMessage:
+          defaultMessages["otpUi.AccessLegBody.summaryMode.bikeshare"],
+        description: "Bikeshare to somewhere",
+        id: "otpUi.AccessLegBody.summaryMode.bikeshare"
+      });
+    case "CAR":
+      return leg.hailedCar
+        ? intl.formatMessage({
+            defaultMessage:
+              defaultMessages["otpUi.AccessLegBody.summaryMode.carDrive"],
+            description: "Drive somewhere",
+            id: "otpUi.AccessLegBody.summaryMode.carDrive"
+          })
+        : intl.formatMessage({
+            defaultMessage:
+              defaultMessages["otpUi.AccessLegBody.summaryMode.carHail"],
+            description: "Ride in a car/taxi to somewhere",
+            id: "otpUi.AccessLegBody.summaryMode.carHail"
+          });
+    case "MICROMOBILITY":
+    case "MICROMOBILITY_RENT":
+    case "SCOOTER":
+      return intl.formatMessage({
+        defaultMessage:
+          defaultMessages["otpUi.AccessLegBody.summaryMode.escooter"],
+        description: "Use an e-scooter",
+        id: "otpUi.AccessLegBody.summaryMode.escooter"
+      });
+    case "WALK":
+      return intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.AccessLegBody.summaryMode.walk"],
+        description: "Walk to somewhere",
+        id: "otpUi.AccessLegBody.summaryMode.walk"
+      });
+    default:
+      return leg.mode;
+  }
 }
 
 /**
@@ -29,40 +81,40 @@ export default function AccessLegDescription({
     vertexType:
       leg.to.vertexType === "BIKESHARE" ? "VEHICLE" : leg.to.vertexType
   };
+  const modeContent = getSummaryMode(leg, intl);
+  const placeContent = (
+    <S.LegDescriptionPlace>
+      {getPlaceName(toPlace, config.companies, intl)}
+    </S.LegDescriptionPlace>
+  );
+
   return (
     // Return an HTML element which is passed a className (and style props)
     // for styled-components support.
     <span className={className} style={style}>
-      <FormattedMessage
-        defaultMessage="{mode} {distance} to {place}"
-        description="Summarizes an access leg"
-        id="otpUi.AccessLegBody.summary"
-        values={{
-          // TODO: Implement metric vs imperial (up until now it's just imperial).
-          distance:
-            leg.distance > 0
-              ? humanizeDistanceString(leg.distance, false, intl)
-              : 0,
-          mode: (
-            <S.LegDescriptionMode>
-              <FormattedMessage
-                defaultMessage="{modeId}"
-                description="The mode action for an access leg"
-                id="otpUi.AccessLegBody.summaryMode"
-                values={{
-                  isCarHail: leg.hailedCar,
-                  modeId: leg.mode
-                }}
-              />
-            </S.LegDescriptionMode>
-          ),
-          place: (
-            <S.LegDescriptionPlace>
-              {getPlaceName(toPlace, config.companies, intl)}
-            </S.LegDescriptionPlace>
-          )
-        }}
-      />
+      {leg.distance > 0 ? (
+        <FormattedMessage
+          defaultMessage="{mode} {distance} to {place}"
+          description="Summarizes an access leg, including distance"
+          id="otpUi.AccessLegBody.summaryAndDistance"
+          values={{
+            // TODO: Implement metric vs imperial (up until now it's just imperial).
+            distance: humanizeDistanceString(leg.distance, false, intl),
+            mode: modeContent,
+            place: placeContent
+          }}
+        />
+      ) : (
+        <FormattedMessage
+          defaultMessage="{mode} to {place}"
+          description="Summarizes an access leg"
+          id="otpUi.AccessLegBody.summary"
+          values={{
+            mode: modeContent,
+            place: placeContent
+          }}
+        />
+      )}
     </span>
   );
 }

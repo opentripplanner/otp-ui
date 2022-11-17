@@ -1,0 +1,27 @@
+otpUi:
+  TripDetails:
+    calories: "소모 칼로리: <strong>{calories, number, ::.}</strong>"
+    fareDetailsHeaders:
+      cash: 현금
+      special: 특별한
+      regular: 성인
+      youth: 젊은이
+      senior: 고위 사람들
+      electronic: 카드로 지불
+    departure:
+      <strong>{departureDate, time, short}</strong> 에 <strong>{departureDate,
+      date, long}</strong> 출발
+    title: 여행 정보
+    tncFare: "{companies} 요금: <strong>{minTNCFare} - {maxTNCFare}</strong>"
+    transitFare: 요금
+    transitFareEntry: "{name} : <strong>{value}</strong>"
+    caloriesDescription:
+      "소모된 칼로리는 이 여행에서 도보 <strong>{walkMinutes, plural, one {#\
+      \ 분} other {# 분}}</strong> 과 자전거 타기 <strong>{bikeMinutes, plural, one {# 분}\
+      \ other {# 분}}</strong> 을 기준으로 합니다. <dietaryLink>Dietary Guidelines for Americans\
+      \ 2005, page 16, Table 4</dietaryLink>에서 각색.\n"
+    co2: "CO<sub>2</sub> 배출: <strong>{co2}</strong>"
+    co2description:
+      CO<sub>2</sub> 강도는 각 이동 구간의 거리에 각 모드의 CO<sub>2</sub> 강도를 곱하여 계산됩니다.
+      각 모드의 CO<sub>2</sub> 강도는 <link>이 스프레드시트</link>에서 파생됩니다.
+    tripIncludesFlex: 이 여행에는 유연한 경로가 포함되어 있습니다. {extraMessage}
