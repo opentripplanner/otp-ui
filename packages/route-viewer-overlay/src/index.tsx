@@ -58,6 +58,7 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
   const { routeData } = props;
   useEffect(() => {
     // if pattern geometry updated, update the map points
+    let bounds;
     if (isGeometryComplete(routeData)) {
       const allPoints: LngLatLike[] = Object.values(routeData.patterns).reduce(
         (acc, ptn) => {
@@ -65,26 +66,43 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
         },
         []
       );
+
       if (allPoints.length > 0) {
-        const geoJsonedPoints: [number, number][] = allPoints.map(c => [
-          c[1],
-          c[0]
-        ]);
-        const bounds = geoJsonedPoints.reduce((bnds, coord) => {
+        const geoJsonedPoints: [number, number][] = allPoints.map(c => {
+          return [c[1], c[0]];
+        });
+        bounds = geoJsonedPoints.reduce((bnds, coord) => {
           return bnds.extend(coord);
         }, new LngLatBounds(geoJsonedPoints[0], geoJsonedPoints[0]));
-
-        current?.fitBounds(bounds, {
-          duration: 500,
-          padding: window.innerWidth > 500 ? 200 : undefined
-        });
-
-        if (props.mapCenterCallback) {
-          props.mapCenterCallback();
-        }
       }
     }
-  }, [routeData.patterns]);
+
+    // if pattern geometry updated, update the map points
+    if (bounds && current) {
+      const canvas = current.getCanvas();
+      // @ts-expect-error getOixelRatio not defeined in MapRef type.
+      const pixelRatio = current.getPixelRatio();
+      const horizPadding = canvas.width / pixelRatio / 10;
+      const vertPadding = canvas.height / pixelRatio / 10;
+
+      current.fitBounds(bounds, {
+        duration: 500,
+        padding: {
+          left: horizPadding,
+          right: horizPadding,
+          top: vertPadding,
+          bottom: vertPadding
+        }
+      });
+
+      // Often times, the map is not updated right away, so try to force an update.
+      current.triggerRepaint();
+
+      if (props.mapCenterCallback) {
+        props.mapCenterCallback();
+      }
+    }
+  }, [routeData, routeData.patterns, current]);
 
   const { clipToPatternStops, path } = props;
 
