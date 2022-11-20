@@ -27,6 +27,7 @@ const GeocoderTester = ({
   const [enableFocusPoint, setEnableFocusPoint] = useState(true);
   const [enableGeocodeEarth, setEnableGeocodeEarth] = useState(true);
   const [enableHere, setEnableHere] = useState(true);
+  const [enablePhoton, setEnablePhoton] = useState(true);
   const [
     reverseUseFeatureCollection,
     setReverseUseFeatureCollection
@@ -48,6 +49,14 @@ const GeocoderTester = ({
     reverseUseFeatureCollection
   });
 
+  const photonGeocoder = getGeocoder({
+    baseUrl: "https://photon.komoot.io",
+    focusPoint,
+    size: 1,
+    type: "PHOTON",
+    reverseUseFeatureCollection
+  });
+
   const searchObj: AnyGeocoderQuery = {
     text: searchTerm
   };
@@ -65,9 +74,13 @@ const GeocoderTester = ({
     const peliasRes = enableGeocodeEarth
       ? await peliasGeocoder[endpoint](searchObj)
       : null;
+    const photonRes = enablePhoton
+      ? await photonGeocoder[endpoint](searchObj)
+      : null;
     onResults({
       hereRes,
-      peliasRes
+      peliasRes,
+      photonRes
     });
   };
 
@@ -194,6 +207,15 @@ const GeocoderTester = ({
             checked={enableHere}
             id="here"
             onChange={e => setEnableHere(e.target.checked)}
+            type="checkbox"
+          />
+        </label>
+        <label htmlFor="photon">
+          Photon (Komoot):
+          <input
+            checked={enablePhoton}
+            id="photon"
+            onChange={e => setEnablePhoton(e.target.checked)}
             type="checkbox"
           />
         </label>
