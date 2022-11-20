@@ -1,9 +1,25 @@
+import { GeoJsonProperties } from "geojson";
 import Geocoder from "./abstract-geocoder";
 // Prettier does not support typescript annotation
 // eslint-disable-next-line prettier/prettier
 import type { AutocompleteQuery, SearchQuery } from "..";
 import type { SingleOrMultiGeocoderResponse } from "./types";
 import { MultiGeocoderResponse } from "./types";
+
+const generateLabel = (properties: GeoJsonProperties): string => {
+  const propertyList = [];
+  ["name", "street", "district", "state", "postcode", "city", "country"].forEach((propertyName) => {
+        if (typeof properties[propertyName] === "undefined") {
+          return;
+        }
+        const value = `${properties[propertyName]}`;
+        if (value.length > 0) {
+          propertyList.push(value);
+        }
+      }
+  )
+  return propertyList.join(", ");
+}
 
 /**
  * Geocoder implementation for the Photon geocoder.
@@ -12,12 +28,6 @@ import { MultiGeocoderResponse } from "./types";
  * @extends Geocoder
  */
 export default class PhotonGeocoder extends Geocoder {
-  /**
-   * Generate an autocomplete query specifically for the Pelias API. The
-   * `sources` parameter is a Pelias-specific option.
-   * This function fills in some more fields of the query
-   * from the existing values in the GeocoderConfig.
-   */
   getAutocompleteQuery(query: AutocompleteQuery): AutocompleteQuery {
     const {
       baseUrl,
@@ -72,7 +82,12 @@ export default class PhotonGeocoder extends Geocoder {
    * first feature returned from the geocoder.
    */
   rewriteReverseResponse(response): SingleOrMultiGeocoderResponse {
-    if (this.geocoderConfig?.reverseUseFeatureCollection) return response
+    if (this.geocoderConfig?.reverseUseFeatureCollection) {
+      response.features.forEach((value) => {
+        value.properties.label = generateLabel(value.properties);
+      })
+      return response
+    }
 
     const { lat, lon } = response.point;
 
@@ -80,16 +95,15 @@ export default class PhotonGeocoder extends Geocoder {
     return {
       lat,
       lon,
-      name: firstFeature.properties.name,
+      name: generateLabel(firstFeature.properties),
       rawGeocodedFeature: firstFeature
     };
   }
 
   rewriteAutocompleteResponse(response: MultiGeocoderResponse): MultiGeocoderResponse {
     response.features.forEach((value) => {
-      value.properties.label = value.properties.name;
+      value.properties.label = generateLabel(value.properties);
     })
-
     return response;
 
   }
