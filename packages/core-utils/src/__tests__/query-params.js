@@ -1,5 +1,6 @@
 import { reduceOtpFlexModes } from "../query";
 import queryParams, { getCustomQueryParams } from "../query-params";
+import { generateCombinations } from "../query-gen";
 
 const customWalkDistanceOptions = [
   {
@@ -11,6 +12,66 @@ const customWalkDistanceOptions = [
     value: 500
   }
 ];
+
+function modeStrToTransportMode(m) {
+  const splitVals = m.split("_");
+  return {
+    mode: splitVals[0],
+    qualifier: splitVals?.[1] || null
+  };
+}
+
+//            string array.  string array array
+function help(modes, expectedModes) {
+  const generatedModesList = generateCombinations({
+    modes: modes.map(modeStrToTransportMode)
+  });
+  const expandedExpectedModesList = expectedModes.map(em => ({
+    modes: em.map(modeStrToTransportMode)
+  }));
+  return it(
+    modes.join(" "),
+    () =>
+      expect(generatedModesList.length === expandedExpectedModesList.length) &&
+      expect(new Set(generatedModesList)).toEqual(
+        new Set(expandedExpectedModesList)
+      )
+  );
+}
+
+describe("query-gen", () => {
+  describe("generateCombinations", () => {
+    help(["WALK"], [["WALK"]]);
+    help(["WALK", "TRANSIT"], [["WALK"], ["WALK", "TRANSIT"]]);
+    help(
+      ["WALK", "TRANSIT", "BICYCLE"],
+      [["WALK"], ["WALK", "TRANSIT"], ["BICYCLE"], ["TRANSIT", "BICYCLE"]]
+    );
+    help(
+      ["WALK", "TRANSIT", "CAR"],
+      [["WALK"], ["WALK", "TRANSIT"], ["TRANSIT", "CAR"]]
+    );
+    help(["TRANSIT", "CAR"], [["TRANSIT", "CAR"]]);
+    help(
+      ["WALK", "TRANSIT", "BICYCLE", "CAR"],
+      [
+        ["WALK"],
+        ["WALK", "TRANSIT"],
+        ["TRANSIT", "BICYCLE"],
+        ["BICYCLE"],
+        ["TRANSIT", "CAR"]
+      ]
+    );
+    help(
+      ["BICYCLE_RENT", "TRANSIT", "WALK"],
+      [
+        ["TRANSIT", "WALK"],
+        ["BICYCLE_RENT", "TRANSIT", "WALK"],
+        ["BICYCLE_RENT", "WALK"]
+      ]
+    );
+  });
+});
 
 describe("query-params", () => {
   describe("getCustomQueryParams", () => {

@@ -73,7 +73,7 @@ function populateSettingsWithValues(
  * @param modeSetting Mode settings with `values` populated
  * @returns Object containing just the keys and values
  */
-function extractModeSettingValuesToObject(
+export function extractModeSettingValuesToObject(
   modeSettings: ModeSetting[]
 ): ModeSettingValues {
   return modeSettings.reduce((prev, cur) => {
@@ -117,7 +117,7 @@ export const addSettingsToButton = (settings: ModeSetting[]) => (
  * @param defaultState The default state/initial state
  * @returns Getter and setter just like useState
  */
-export function useStateStorage<Type>(
+function useStateStorage<Type>(
   name: string,
   stateType: QueryParamConfig<Type>,
   storeInQueryParam: boolean,
