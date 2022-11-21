@@ -46,10 +46,14 @@ const WithChangingRoute = () => {
   const [rtData, setRouteData] = useState(routeData);
 
   useEffect(() => {
-    setTimeout(() => {
-      setRouteData(routeData2);
+    const interval = setInterval(() => {
+      setRouteData(rtData === routeData2 ? routeData : routeData2);
     }, 5000);
-  }, []);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [rtData]);
 
   return <RouteViewerOverlay routeData={rtData} />;
 };

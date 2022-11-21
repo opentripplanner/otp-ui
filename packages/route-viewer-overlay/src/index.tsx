@@ -80,7 +80,7 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
     // if pattern geometry updated, update the map points
     if (bounds && current) {
       const canvas = current.getCanvas();
-      // @ts-expect-error getOixelRatio not defeined in MapRef type.
+      // @ts-expect-error getPixelRatio not defined in MapRef type.
       const pixelRatio = current.getPixelRatio();
       const horizPadding = canvas.width / pixelRatio / 10;
       const vertPadding = canvas.height / pixelRatio / 10;
