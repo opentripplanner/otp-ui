@@ -4,14 +4,18 @@ import { LngLatBoundsLike, MapRef, PaddingOptions } from "react-map-gl";
  * Computes padding dimensions based on roughly 1/20 of the map's canvas dimensions
  * (under a 2:1 canvas-to-screen pixel ratio).
  * @param map The map where the bounds fitting is to occur.
+ * @param paddingRatio The ratio of the canvas dimensions set aside for padding.
  * @returns The object with the computed padding dimensions.
  */
-export function getFitBoundsPadding(map: MapRef): PaddingOptions {
+export function getFitBoundsPadding(
+  map: MapRef,
+  paddingRatio = 0.1
+): PaddingOptions {
   const canvas = map.getCanvas();
   // @ts-expect-error getPixelRatio not defined in MapRef type.
   const pixelRatio = map.getPixelRatio();
-  const horizPadding = canvas.width / pixelRatio / 10;
-  const vertPadding = canvas.height / pixelRatio / 10;
+  const horizPadding = (canvas.width * paddingRatio) / pixelRatio;
+  const vertPadding = (canvas.height * paddingRatio) / pixelRatio;
 
   return {
     bottom: vertPadding,
