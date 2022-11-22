@@ -43,7 +43,7 @@ function run({ options, query, url }: PhotonFetchArgs): Promise<PhotonResponse> 
 
 /**
  * Search for an address using
- * Here's {@link https://developer.here.com/documentation/geocoding-search-api/api-reference-swagger.html|Autocomplete}
+ * Komoot's Photon {@link https://github.com/komoot/photon}
  * service.
  *
  * @param  {Object} $0
@@ -97,8 +97,8 @@ async function autocomplete({
 
 /**
  * Search for an address using
- * HERE's {@link https://developer.here.com/documentation/geocoding-search-api/api-reference-swagger.html|Search}
- * service. NOTE: Here does not support a boundary for Search queries, unlike Pelias.
+ * Komoot's Photon {@link https://github.com/komoot/photon}
+ * service.
  *
  * @param  {Object} $0
  * @param  {Object} $0.focusPoint
@@ -131,7 +131,7 @@ function search({
 
 /**
  * Search for an address using
- * HERE's {@link https://developer.here.com/documentation/geocoding-search-api/api-reference-swagger.html|Search}
+ * Komoot's Photon {@link https://github.com/komoot/photon} reverse
  * service.
  *
  * @param  {Object} $0
