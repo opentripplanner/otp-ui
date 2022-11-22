@@ -60,6 +60,13 @@ export default class PhotonGeocoder extends Geocoder {
     };
   }
 
+  rewriteAutocompleteResponse(response: MultiGeocoderResponse): MultiGeocoderResponse {
+    response.features.forEach((value) => {
+      value.properties.label = generateLabel(value.properties);
+    })
+    return response;
+  }
+
   /**
    * Rewrite the response into an application-specific data format using the
    * first feature returned from the geocoder.
@@ -69,7 +76,7 @@ export default class PhotonGeocoder extends Geocoder {
       response.features.forEach((value) => {
         value.properties.label = generateLabel(value.properties);
       })
-      return response
+      return response as MultiGeocoderResponse;
     }
 
     const { lat, lon } = response.point;
@@ -83,11 +90,7 @@ export default class PhotonGeocoder extends Geocoder {
     };
   }
 
-  rewriteAutocompleteResponse(response: MultiGeocoderResponse): MultiGeocoderResponse {
-    response.features.forEach((value) => {
-      value.properties.label = generateLabel(value.properties);
-    })
-    return response;
-
+  rewriteSearchResponse(response: MultiGeocoderResponse): MultiGeocoderResponse {
+    return this.rewriteAutocompleteResponse(response) as MultiGeocoderResponse;
   }
 }
