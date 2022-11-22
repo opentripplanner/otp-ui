@@ -9,15 +9,14 @@ import { MultiGeocoderResponse } from "./types";
 const generateLabel = (properties: GeoJsonProperties): string => {
   const propertyList = [];
   ["name", "street", "district", "state", "postcode", "city", "country"].forEach((propertyName) => {
-        if (typeof properties[propertyName] === "undefined") {
-          return;
-        }
-        const value = `${properties[propertyName]}`;
-        if (value.length > 0) {
-          propertyList.push(value);
-        }
-      }
-  )
+    if (typeof properties[propertyName] === "undefined") {
+      return;
+    }
+    const value = `${properties[propertyName]}`;
+    if (value.length > 0) {
+      propertyList.push(value);
+    }
+  })
   return propertyList.join(", ");
 }
 
