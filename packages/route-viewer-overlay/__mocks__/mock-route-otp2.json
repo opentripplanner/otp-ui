@@ -1,0 +1,579 @@
+{
+  "id": "4:101",
+  "desc": null,
+  "agency": {
+    "id": "4:1",
+    "name": "CobbLinc",
+    "url": "https://www.atltransit.org/about/agencies/cobblinc/",
+    "timezone": "America/New_York",
+    "lang": "en",
+    "phone": "770-427-4444"
+  },
+  "longName": "MARTA Civic/5 Points - MTC",
+  "shortName": "101",
+  "mode": "BUS",
+  "type": 3,
+  "color": "0d0d0d",
+  "textColor": "f2f2f2",
+  "bikesAllowed": "NO_INFORMATION",
+  "routeBikesAllowed": "NO_INFORMATION",
+  "url": null,
+  "patterns": {
+    "UGF0dGVybjo0OjEwMTowOjAx": {
+      "id": "UGF0dGVybjo0OjEwMTowOjAx",
+      "name": "101 MARTA CIVIC CENTER/FIVE POINTS",
+      "patternGeometry": {
+        "points": "ofdnEht|bOEf@Gh@Ih@Kh@?LDJFDB@HCLGV[Z[XYZ[TSTSTUJKDSBM@O?YAUIe@CMMBM?UC_@Ic@Mc@OYIJg@Hg@Jg@Ji@Ha@Hc@Ha@Hc@Hc@He@Jg@Ji@DWFU?GLk@?QD[Be@@e@?M?k@AGA]A[AWCYGUCQKe@Ke@IWOc@Q_@Qa@Q_@Qa@Qa@Q_@K[K[K]K_@K_@Ii@Ik@E[C[CMEWEa@FUCg@Ci@?]?_@A_@?_@?a@Cg@?i@?W?[?]CUBe@?g@Be@@e@Da@Dc@]SWCKASBC@QBQB[HYFK?e@@SAQEa@Ia@K[I]SYIWIYI[Mc@K_@MYIYKWGWGc@?e@?c@Ae@?e@AG?]@_@@_@BC?_@D_@D_@D]DQ@_@B]@a@@a@@_@@a@@_@@]@[@]@O@SDIBEBGBKFMLQVW^Y^MPOPMTIVI\\CZCXGh@CVGPMRSHK@MBQB?S?W?Y?U?Y?Y@a@@i@@i@@i@@i@`@E`@C`@EXGZGXGRGRGZM\\M\\M\\M\\M^S`@U`@S`@UZWZWZYZWZ_@Z]X]Z]Z_@Xa@Va@Xa@LQJOXa@Xc@Xa@Rc@Tc@Tc@Tc@Tc@Tc@Rc@Tc@Tc@Tc@Tc@Tc@Tc@Ta@Tc@Tc@Ta@Tc@Ra@Tc@Ta@Va@T_@Ta@T_@T_@Ta@T_@Ta@T_@Te@Tc@Ve@Tc@Tc@Te@Vc@Te@Tc@Te@Re@Re@Pg@Re@Pe@Rg@R]P_@R_@R]P_@V_@Ta@V_@T_@Ta@V_@T_@Va@Tc@Rc@Tc@Tc@Ta@Tc@Tc@Rc@Tc@Tc@Tc@Tc@Rc@Tc@Tc@Ta@Tc@Tc@Rc@Tc@Tc@Vc@Tc@Tc@Vc@Tc@Tc@Vc@Tc@Tc@Va@Tc@Tc@Vc@Tc@Tc@Vc@Tc@Tc@Tc@Vc@Tc@Tc@Vc@Tc@Tc@Tc@T[R[R[R[V_@V_@V]T_@V_@X]X]X[X]X]X[X]X[V[X[V]X[\\Y\\[\\Y^[\\Y\\[^W\\W^U^W^W\\W^U\\U^S\\U\\Sb@S`@S`@S`@S`@Qb@S`@S`@S`@S`@S^Q`@O^Q^Q^O^Q`@Q^O^Q^Q`@O^Q`@Q^O`@Q`@Q^O`@Q^Q`@O`@Q^Q`@O^Q`@Q`@S`@S`@S`@S`@S`@S`@Sb@S`@S`@U`@S`@S`@S`@S`@Sb@S`@S`@S`@S`@S`@U`@S^S^S^U`@S^S^U^S^S^U^S^U^S^S^U^S^S`@U^Q`@S`@Q`@S`@Q`@S^Q`@S`@Q`@S^Q`@S`@S`@Q`@S`@Q^S`@Q`@Q`@S`@Q^Q`@S`@Q`@S`@Q^Q`@S`@Q`@Q^S`@Q`@Q`@S`@Q^S`@Q`@Q`@S`@Q`@Q`@S`@Qb@S`@Q`@Q`@S`@Q`@Qb@S`@Q`@S`@Q`@Q`@Sb@Q`@Q`@S\\O^Q^O\\Q^Q^O\\Q^O\\Q^M^M^M\\M^M^M^O`@O^Q`@O^O`@O`@Q^S\\U^U^S^U^S^U\\U^S\\WZW\\UZW\\WZUZW\\WZU\\[Z[\\YZ[\\[ZY\\[Z[\\]Z[Z]\\[Z]Z[\\]Z[\\]Z[Z]\\[Z]X_@X_@X]V_@X_@Te@Rc@Re@Lc@Nc@Le@Hc@Hc@Hc@He@Jc@Jc@Jc@Jc@Jc@P[P]P[N]T_@Ta@Ra@V]T]V_@T]V]T]T]\\]Z]\\]Z]\\]Z]\\]\\W\\WZW\\W\\U^U`@S`@U^S`@U`@S^U`@S^U^W^U^W^W^U\\W^W^U^W\\W^W^U^W^W\\U^W^W^U\\W^W^U^W^W^WRMTMNGVQXQXSZS\\U^U\\UVOVQ\\U\\UPKZSZS\\UNQ\\W\\W\\YZWXYZUVWTUTUTUFEX[\\[\\[Z[XYX[XYXYXYBAPQPQZYZ[TSTSRUVSVUTULMZW\\YNMNONMNOFEVWBC\\YZ[XUVUVUVU\\[ZWXWZWXWXYXUVUVWVUVUTUTW\\[Z[Z[TSRUVUTWVWFITSRSRUVWVYXWXUVWVUVWBAHKPQ@CDCRQRSFKVWVWZYX[X[XYX[X[Z[Z]LOLMZ_@PSVWVWVWVWTWZYX[Z[X[POPQNMPOPOPMPMVQVSVSPKPMZS\\U^S^S`@SPI`@Q`@Sb@Q`@S^O^O\\Q^O^QXMXMZMXO^Q^Q^Q^Q\\SZQXS\\SZS\\SZSZU\\SRQRQLGXUXUXUXW\\YVSVUXSVUVSXULKVSTUTU@??AVSXUZWZY\\YZYXUXUVUXUXWVUVW@?BABCTSVSTU\\W\\YZW\\YZY\\W\\YZY\\Y\\YZY\\YZYZWZWZYZWXY\\WZYZY\\YZY\\YZYZ[XUVUXUXUTQVQNKVOVQVQTQTQ\\Q\\Q\\Q\\QZQ^O\\O^O^O^M`@M`@O\\GZIZIZIb@K`@K`@Kb@I^Kb@K`@K^I^I^I^I\\KJAZGVGXG\\E\\G\\E\\G^E^G\\C\\CZ?ZAXA`@?^?^?^A^AX?V?^?\\?\\?@?T?TA^A\\AF?XAVCZC\\CTCVCd@EZEVE^G^I\\IVGVI\\I\\I\\ILC`@I^IXGZG\\G^G\\G\\IXEXE^ETAb@GF?T?TAT?RAT?RAV@V?T@T?^B^@`@B^B\\BZBZBT@T@\\B\\BZ@`@@^?T?T?^?`@?T?R?VATA\\AZAZCTATCTARC`@E^G^E^GTETE^I`@INETETGZI\\IXKZKZKXKZKXKXMBA`@O`@O^QZKZKZKJIVITKRIRIZKZKXKFCXKZMXM`@O^O^OZKZM\\MXKZMXMXKZMVMTIRIRI^M\\O\\M\\MTITKPGNGZM\\M\\M^M\\M\\M\\O^M^Ob@O^M`@MZIZKXKZI\\IXKFCJCRGRGLCDA^G\\I\\ITETGTETG^I\\I^I^I\\I^K^I`@I`@I^IB?\\IZIPE`@K^K`@K^K`@K`@M\\I^I^I^I^I`@IHA^G^G`@G??b@E`@G`@Gb@E\\EXCXEXE\\Eb@Eb@Gd@Eb@Gb@Eb@Gb@Eb@Gb@E`@G\\CZEZERCHA`@E\\G^Gb@G`@GDA^EHCTETCTE^G\\Ib@Ib@Ib@IRCPE`@Ib@IVIRERG`@KDA\\IZKZKZIZIZKZIZIZKVKXIXIXKb@M`@M`@O`@M`@O^O`@M^ORIRIRIRKVIFE\\O@APGPIZMZMZO^Q`@S`@Q`@S`@Q^SVMTMXO@A\\M^SVOVOVOXOVQXQXQVSXSVUPMNMPONO\\Y\\[ZY\\[V[V]TWVYNSNUPWPWXa@Xa@Va@R[P[R[P]BCP[P]P]Tc@Pe@Te@Pe@P_@Pa@Pa@Te@Re@Te@Rg@Ra@Ra@Pa@Pc@Pc@Pc@N_@Na@La@Nc@Na@Nc@Na@Nc@L]J]J_@J_@J_@L]H[H[J_@J_@H_@@ENe@@GH_@Ha@F[HSHg@Lg@Ji@Ji@Ji@Je@BKBUDUFa@Fa@@IFa@Fa@Ha@BWDYDYB[Fg@Fi@Fe@D_@F_@B_@D_@Fa@?GFk@Fk@Fk@Dk@Fk@Fk@Dk@Fk@Fk@Fm@Bc@Dc@Fc@Fe@De@Fe@De@BYD[DWDYDYBMBOJ_@H[H_@BKBIFMBOHUJUJSHSLWLOTc@T[NSNQPSLOVUPOXU\\U^W^QXM^Q^Q`@Q^SZK\\MXOZOXMLG^SJGXMPIPKJG`@UHE?AHEDAZQZQ\\QXQTMRM\\QZSZQZQZQ^UVOZOTMRMDC\\OZOXO^O^QNG\\M\\M\\O\\KZKZMXIXKXKZIZK\\KTETGLC??LE`@I`@I^IXGXGVEVGd@Gb@ILCZEZE^C\\E\\E@?@?@A@?PO^A\\Cd@Ad@Cb@CD?^?^A\\Ad@?b@?b@AT?Z?XAf@A^A`@?`@?`@?`@A`@?^A`@?^AZ?XAXAb@C`@AXAXAZA\\Cb@A`@C\\CXANAN?ZAXAd@AL?T?b@?b@?b@?b@?`@?b@?b@?b@?b@?b@?^?^?^?^?\\?X?`@?`@?^Ab@?b@Ad@?R?RA`@A`@C\\A^A\\AZCZCTAPCZELCd@Eb@Gd@Gb@Gb@Gd@Gb@Gb@Gb@G`@Gb@Ib@I`@E^E^E^EPC@?@?@?PAX?XAZAZ?B?b@@b@?b@?b@Bb@@b@Bb@@`@@`@B^@^@P@b@Bb@@d@Bd@@b@@b@@d@@d@@b@?`@C`@C\\PDB`@@@?`@AHAXAJAVAJA\\CZE`@Eb@E@?`@EPAXAXA@?X?X?T?RAN?Z@\\?J?Z?X?TAb@@b@?Z?T@T?B?@AB?B?RK`@@\\??k@?k@?e@?e@@i@?k@?Wc@C_@Ac@AUEUE[M]O_@Oc@Oa@Qa@QOIWKWKYKGC_@Qa@OICIEOE?e@?U?WV?T?^@^@^?`@@AR??`@KZIb@?T?b@@b@?b@?F?b@@b@?Z?X?b@?Z@b@?N?R?N?b@@^?`@?HURc@Pc@DGJYJH\\VV`@V^BF??`@Hb@JL?b@?b@@H?b@?L?b@?b@?R@F?FS?k@@k@?i@?k@?i@@k@?Q?U?k@@W?W?W?W@U?W?W@WBk@Bk@??CS@EFCV?X?X?X?XAV?X?X?R?N?L?b@@J?b@?b@?b@?`@HTD??`@Eb@Eb@?b@?b@@b@?b@?P?N@L?N?b@?b@?b@@X?b@Db@DJ@??b@GTCN@d@?b@?b@@V?H?H?b@?LDFBJHZZFDX\\ZZXZZZNNFFJJLLDDV`@T^FJ??^T\\RXZX\\ZZZZX\\ZZXZTTZZXXZX^T\\T^R\\TRLXZRT??`@NRJFBHDINSb@KVEJSb@Sb@Sb@Sb@MXKTIRSb@Sb@Sb@Qb@KPKVINIPSb@Sb@Sb@Sb@CB??Sb@O`@INSb@Sb@Sb@S`@Ub@U`@GL??cAgn@??yVxh@C@ONU]S]W_@Wa@Ua@Wa@U_@Wa@Ua@Wa@Qe@EK??[WYUUa@OSKOCIEEWa@W_@Ua@MOGMWa@KMICMESCM?c@?M?c@Ac@?c@?c@?a@E_@E??c@Ba@Dc@Ac@?c@Ec@EGA??c@D_@Bc@?c@?c@?a@?Q?OAO?c@?a@MSE",
+        "length": 1951
+      },
+      "stops": [
+        {
+          "code": "920030",
+          "id": "4:30",
+          "lat": 33.941682,
+          "lon": -84.529481,
+          "name": "MARIETTA TRANSFER CENTER",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.5295, 33.9417]
+            }
+          },
+          "color": "#404040"
+        },
+        {
+          "code": "600008",
+          "id": "4:715",
+          "lat": 33.766146,
+          "lon": -84.387608,
+          "name": "Civic Center Station (West Peachtreet Street)",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3876, 33.7661]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "600053",
+          "id": "4:489",
+          "lat": 33.762633,
+          "lon": -84.387348,
+          "name": "Peachtree Street at Baker Street",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3873, 33.7626]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "600005",
+          "id": "4:490",
+          "lat": 33.760901,
+          "lon": -84.384659,
+          "name": "John Portman Boulevard at Courtland Street",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3847, 33.7609]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "600029",
+          "id": "4:491",
+          "lat": 33.7585,
+          "lon": -84.384307,
+          "name": "Courtland Street at Ellis Street",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3843, 33.7585]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "600028",
+          "id": "4:492",
+          "lat": 33.755912,
+          "lon": -84.384348,
+          "name": "Courtland Street at Auburn Avenue",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3843, 33.7559]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "600030",
+          "id": "4:493",
+          "lat": 33.753111,
+          "lon": -84.385795,
+          "name": "Courtland Street at Gilmer St",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3858, 33.7531]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "600015",
+          "id": "4:494",
+          "lat": 33.750359,
+          "lon": -84.388304,
+          "name": "Washington Street at Martin Luther King Junior Drive",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3883, 33.7504]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "600039",
+          "id": "4:495",
+          "lat": 33.751932,
+          "lon": -84.391726,
+          "name": "Martin Luther King Junior Drive at Peachtree Street",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3917, 33.7519]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "920512",
+          "id": "4:496",
+          "lat": 33.752779,
+          "lon": -84.393352,
+          "name": "MLK JR DR + FORSYTH ST",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3934, 33.7528]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "600031",
+          "id": "4:716",
+          "lat": 33.753111,
+          "lon": -84.385795,
+          "name": "Five Points Station (Forsyth Street at Alabama Street)",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3858, 33.7531]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "600036",
+          "id": "4:946",
+          "lat": 33.756927,
+          "lon": -84.392485,
+          "name": "Marietta Street Northwest at Ted Turner Drive",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3925, 33.7569]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "920479",
+          "id": "4:474",
+          "lat": 33.75828,
+          "lon": -84.390686,
+          "name": "SPRING ST + LUCKIE ST",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3907, 33.7583]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "920481",
+          "id": "4:476",
+          "lat": 33.761081,
+          "lon": -84.388996,
+          "name": "SPRING ST + JOHN PORTMAN BLVD",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.389, 33.7611]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "920482",
+          "id": "4:477",
+          "lat": 33.762194,
+          "lon": -84.388966,
+          "name": "SPRING ST + BAKER ST",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.389, 33.7622]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "600057",
+          "id": "4:945",
+          "lat": 33.76394,
+          "lon": -84.388931,
+          "name": "Ted Turner Drive at West Peachtree Place",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3889, 33.7639]
+            }
+          },
+          "color": "#0d0d0d"
+        }
+      ],
+      "desc": "101 MARTA CIVIC CENTER/FIVE POINTS",
+      "geometry": {
+        "points": "ofdnEht|bOEf@Gh@Ih@Kh@?LDJFDB@HCLGV[Z[XYZ[TSTSTUJKDSBM@O?YAUIe@CMMBM?UC_@Ic@Mc@OYIJg@Hg@Jg@Ji@Ha@Hc@Ha@Hc@Hc@He@Jg@Ji@DWFU?GLk@?QD[Be@@e@?M?k@AGA]A[AWCYGUCQKe@Ke@IWOc@Q_@Qa@Q_@Qa@Qa@Q_@K[K[K]K_@K_@Ii@Ik@E[C[CMEWEa@FUCg@Ci@?]?_@A_@?_@?a@Cg@?i@?W?[?]CUBe@?g@Be@@e@Da@Dc@]SWCKASBC@QBQB[HYFK?e@@SAQEa@Ia@K[I]SYIWIYI[Mc@K_@MYIYKWGWGc@?e@?c@Ae@?e@AG?]@_@@_@BC?_@D_@D_@D]DQ@_@B]@a@@a@@_@@a@@_@@]@[@]@O@SDIBEBGBKFMLQVW^Y^MPOPMTIVI\\CZCXGh@CVGPMRSHK@MBQB?S?W?Y?U?Y?Y@a@@i@@i@@i@@i@`@E`@C`@EXGZGXGRGRGZM\\M\\M\\M\\M^S`@U`@S`@UZWZWZYZWZ_@Z]X]Z]Z_@Xa@Va@Xa@LQJOXa@Xc@Xa@Rc@Tc@Tc@Tc@Tc@Tc@Rc@Tc@Tc@Tc@Tc@Tc@Tc@Ta@Tc@Tc@Ta@Tc@Ra@Tc@Ta@Va@T_@Ta@T_@T_@Ta@T_@Ta@T_@Te@Tc@Ve@Tc@Tc@Te@Vc@Te@Tc@Te@Re@Re@Pg@Re@Pe@Rg@R]P_@R_@R]P_@V_@Ta@V_@T_@Ta@V_@T_@Va@Tc@Rc@Tc@Tc@Ta@Tc@Tc@Rc@Tc@Tc@Tc@Tc@Rc@Tc@Tc@Ta@Tc@Tc@Rc@Tc@Tc@Vc@Tc@Tc@Vc@Tc@Tc@Vc@Tc@Tc@Va@Tc@Tc@Vc@Tc@Tc@Vc@Tc@Tc@Tc@Vc@Tc@Tc@Vc@Tc@Tc@Tc@T[R[R[R[V_@V_@V]T_@V_@X]X]X[X]X]X[X]X[V[X[V]X[\\Y\\[\\Y^[\\Y\\[^W\\W^U^W^W\\W^U\\U^S\\U\\Sb@S`@S`@S`@S`@Qb@S`@S`@S`@S`@S^Q`@O^Q^Q^O^Q`@Q^O^Q^Q`@O^Q`@Q^O`@Q`@Q^O`@Q^Q`@O`@Q^Q`@O^Q`@Q`@S`@S`@S`@S`@S`@S`@Sb@S`@S`@U`@S`@S`@S`@S`@Sb@S`@S`@S`@S`@S`@U`@S^S^S^U`@S^S^U^S^S^U^S^U^S^S^U^S^S`@U^Q`@S`@Q`@S`@Q`@S^Q`@S`@Q`@S^Q`@S`@S`@Q`@S`@Q^S`@Q`@Q`@S`@Q^Q`@S`@Q`@S`@Q^Q`@S`@Q`@Q^S`@Q`@Q`@S`@Q^S`@Q`@Q`@S`@Q`@Q`@S`@Qb@S`@Q`@Q`@S`@Q`@Qb@S`@Q`@S`@Q`@Q`@Sb@Q`@Q`@S\\O^Q^O\\Q^Q^O\\Q^O\\Q^M^M^M\\M^M^M^O`@O^Q`@O^O`@O`@Q^S\\U^U^S^U^S^U\\U^S\\WZW\\UZW\\WZUZW\\WZU\\[Z[\\YZ[\\[ZY\\[Z[\\]Z[Z]\\[Z]Z[\\]Z[\\]Z[Z]\\[Z]X_@X_@X]V_@X_@Te@Rc@Re@Lc@Nc@Le@Hc@Hc@Hc@He@Jc@Jc@Jc@Jc@Jc@P[P]P[N]T_@Ta@Ra@V]T]V_@T]V]T]T]\\]Z]\\]Z]\\]Z]\\]\\W\\WZW\\W\\U^U`@S`@U^S`@U`@S^U`@S^U^W^U^W^W^U\\W^W^U^W\\W^W^U^W^W\\U^W^W^U\\W^W^U^W^W^WRMTMNGVQXQXSZS\\U^U\\UVOVQ\\U\\UPKZSZS\\UNQ\\W\\W\\YZWXYZUVWTUTUTUFEX[\\[\\[Z[XYX[XYXYXYBAPQPQZYZ[TSTSRUVSVUTULMZW\\YNMNONMNOFEVWBC\\YZ[XUVUVUVU\\[ZWXWZWXWXYXUVUVWVUVUTUTW\\[Z[Z[TSRUVUTWVWFITSRSRUVWVYXWXUVWVUVWBAHKPQ@CDCRQRSFKVWVWZYX[X[XYX[X[Z[Z]LOLMZ_@PSVWVWVWVWTWZYX[Z[X[POPQNMPOPOPMPMVQVSVSPKPMZS\\U^S^S`@SPI`@Q`@Sb@Q`@S^O^O\\Q^O^QXMXMZMXO^Q^Q^Q^Q\\SZQXS\\SZS\\SZSZU\\SRQRQLGXUXUXUXW\\YVSVUXSVUVSXULKVSTUTU@??AVSXUZWZY\\YZYXUXUVUXUXWVUVW@?BABCTSVSTU\\W\\YZW\\YZY\\W\\YZY\\Y\\YZY\\YZYZWZWZYZWXY\\WZYZY\\YZY\\YZYZ[XUVUXUXUTQVQNKVOVQVQTQTQ\\Q\\Q\\Q\\QZQ^O\\O^O^O^M`@M`@O\\GZIZIZIb@K`@K`@Kb@I^Kb@K`@K^I^I^I^I\\KJAZGVGXG\\E\\G\\E\\G^E^G\\C\\CZ?ZAXA`@?^?^?^A^AX?V?^?\\?\\?@?T?TA^A\\AF?XAVCZC\\CTCVCd@EZEVE^G^I\\IVGVI\\I\\I\\ILC`@I^IXGZG\\G^G\\G\\IXEXE^ETAb@GF?T?TAT?RAT?RAV@V?T@T?^B^@`@B^B\\BZBZBT@T@\\B\\BZ@`@@^?T?T?^?`@?T?R?VATA\\AZAZCTATCTARC`@E^G^E^GTETE^I`@INETETGZI\\IXKZKZKXKZKXKXMBA`@O`@O^QZKZKZKJIVITKRIRIZKZKXKFCXKZMXM`@O^O^OZKZM\\MXKZMXMXKZMVMTIRIRI^M\\O\\M\\MTITKPGNGZM\\M\\M^M\\M\\M\\O^M^Ob@O^M`@MZIZKXKZI\\IXKFCJCRGRGLCDA^G\\I\\ITETGTETG^I\\I^I^I\\I^K^I`@I`@I^IB?\\IZIPE`@K^K`@K^K`@K`@M\\I^I^I^I^I`@IHA^G^G`@G??b@E`@G`@Gb@E\\EXCXEXE\\Eb@Eb@Gd@Eb@Gb@Eb@Gb@Eb@Gb@E`@G\\CZEZERCHA`@E\\G^Gb@G`@GDA^EHCTETCTE^G\\Ib@Ib@Ib@IRCPE`@Ib@IVIRERG`@KDA\\IZKZKZIZIZKZIZIZKVKXIXIXKb@M`@M`@O`@M`@O^O`@M^ORIRIRIRKVIFE\\O@APGPIZMZMZO^Q`@S`@Q`@S`@Q^SVMTMXO@A\\M^SVOVOVOXOVQXQXQVSXSVUPMNMPONO\\Y\\[ZY\\[V[V]TWVYNSNUPWPWXa@Xa@Va@R[P[R[P]BCP[P]P]Tc@Pe@Te@Pe@P_@Pa@Pa@Te@Re@Te@Rg@Ra@Ra@Pa@Pc@Pc@Pc@N_@Na@La@Nc@Na@Nc@Na@Nc@L]J]J_@J_@J_@L]H[H[J_@J_@H_@@ENe@@GH_@Ha@F[HSHg@Lg@Ji@Ji@Ji@Je@BKBUDUFa@Fa@@IFa@Fa@Ha@BWDYDYB[Fg@Fi@Fe@D_@F_@B_@D_@Fa@?GFk@Fk@Fk@Dk@Fk@Fk@Dk@Fk@Fk@Fm@Bc@Dc@Fc@Fe@De@Fe@De@BYD[DWDYDYBMBOJ_@H[H_@BKBIFMBOHUJUJSHSLWLOTc@T[NSNQPSLOVUPOXU\\U^W^QXM^Q^Q`@Q^SZK\\MXOZOXMLG^SJGXMPIPKJG`@UHE?AHEDAZQZQ\\QXQTMRM\\QZSZQZQZQ^UVOZOTMRMDC\\OZOXO^O^QNG\\M\\M\\O\\KZKZMXIXKXKZIZK\\KTETGLC??LE`@I`@I^IXGXGVEVGd@Gb@ILCZEZE^C\\E\\E@?@?@A@?PO^A\\Cd@Ad@Cb@CD?^?^A\\Ad@?b@?b@AT?Z?XAf@A^A`@?`@?`@?`@A`@?^A`@?^AZ?XAXAb@C`@AXAXAZA\\Cb@A`@C\\CXANAN?ZAXAd@AL?T?b@?b@?b@?b@?`@?b@?b@?b@?b@?b@?^?^?^?^?\\?X?`@?`@?^Ab@?b@Ad@?R?RA`@A`@C\\A^A\\AZCZCTAPCZELCd@Eb@Gd@Gb@Gb@Gd@Gb@Gb@Gb@G`@Gb@Ib@I`@E^E^E^EPC@?@?@?PAX?XAZAZ?B?b@@b@?b@?b@Bb@@b@Bb@@`@@`@B^@^@P@b@Bb@@d@Bd@@b@@b@@d@@d@@b@?`@C`@C\\PDB`@@@?`@AHAXAJAVAJA\\CZE`@Eb@E@?`@EPAXAXA@?X?X?T?RAN?Z@\\?J?Z?X?TAb@@b@?Z?T@T?B?@AB?B?RK`@@\\??k@?k@?e@?e@@i@?k@?Wc@C_@Ac@AUEUE[M]O_@Oc@Oa@Qa@QOIWKWKYKGC_@Qa@OICIEOE?e@?U?WV?T?^@^@^?`@@AR??`@KZIb@?T?b@@b@?b@?F?b@@b@?Z?X?b@?Z@b@?N?R?N?b@@^?`@?HURc@Pc@DGJYJH\\VV`@V^BF??`@Hb@JL?b@?b@@H?b@?L?b@?b@?R@F?FS?k@@k@?i@?k@?i@@k@?Q?U?k@@W?W?W?W@U?W?W@WBk@Bk@??CS@EFCV?X?X?X?XAV?X?X?R?N?L?b@@J?b@?b@?b@?`@HTD??`@Eb@Eb@?b@?b@@b@?b@?P?N@L?N?b@?b@?b@@X?b@Db@DJ@??b@GTCN@d@?b@?b@@V?H?H?b@?LDFBJHZZFDX\\ZZXZZZNNFFJJLLDDV`@T^FJ??^T\\RXZX\\ZZZZX\\ZZXZTTZZXXZX^T\\T^R\\TRLXZRT??`@NRJFBHDINSb@KVEJSb@Sb@Sb@Sb@MXKTIRSb@Sb@Sb@Qb@KPKVINIPSb@Sb@Sb@Sb@CB??Sb@O`@INSb@Sb@Sb@S`@Ub@U`@GL??cAgn@??yVxh@C@ONU]S]W_@Wa@Ua@Wa@U_@Wa@Ua@Wa@Qe@EK??[WYUUa@OSKOCIEEWa@W_@Ua@MOGMWa@KMICMESCM?c@?M?c@Ac@?c@?c@?a@E_@E??c@Ba@Dc@Ac@?c@Ec@EGA??c@D_@Bc@?c@?c@?a@?Q?OAO?c@?a@MSE",
+        "length": 1951
+      }
+    },
+    "UGF0dGVybjo0OjEwMToxOjAx": {
+      "id": "UGF0dGVybjo0OjEwMToxOjAx",
+      "name": "101 MARIETTA TRANSFER CENTER",
+      "patternGeometry": {
+        "points": "o_bmEp}`bO`@KZIb@?T?b@@b@?b@?F?b@@b@?Z?X?b@?Z@b@?N?R?N?b@@^?`@?HURc@Pc@DGJYJH\\VV`@V^BF??`@Hb@J?P?j@?j@AV?h@?j@?j@?R?N?P?h@Aj@?j@?R?j@?j@?\\?P?R?h@?j@?j@?h@?j@?h@?PT?b@@b@?b@?b@@b@?b@?L?X@b@?b@?R?X@`@Fb@HB???b@GREb@?^@J@N@NBLFHFNJHHV^X^NTNPHLV^TZV^DFNRFEDEHIZY\\YZY`@Mb@K??RYRWRWRYTSRUXYVYZ[Z]LOPQA@??Z[ZYJKDFV^JPV`@HNX\\VX\\VZZXZDB??^LVHZR^V\\V\\V\\VTNXT\\TNJZT\\VRb@HT??b@FZF\\T\\VPJN_@DGJWTc@LYRc@BKTa@DKJUFOFMRc@Rc@Rc@Pc@Rc@LYDIJWRc@Rc@Rc@Rc@Rc@LWFOMK]W]W]W]U]WKIa@KUIOM_@U]W]U]W]W_@UEEMIOK[YKIQSQe@M]??_@Qa@QECMKOYIQK[KOKI]YOM]Y]Y[WKI]Y[YYUMKMKUQ]YSMMEa@M[I??a@H]HG?KAc@?c@?c@?K?I?c@?c@AO?c@?a@?M?c@Ac@?Q?c@?c@?[A[?O?I?MAK?c@?c@?c@?M?c@Ac@?a@?K?O?c@Ac@?c@?c@Ac@?O?]?MAO?c@?c@?c@Ac@?c@?c@AG?M??R?j@?h@Aj@Kf@GZ??Jh@DR?X?P?j@?j@AV?h@?j@?j@?R?NQ?c@Ac@?c@?a@?c@?Q?OAO?c@?a@MSE??c@HYFc@?SAW?@Q?i@?_@A_@A[Ea@C[Ii@AMEWU?c@?c@Ac@?c@?c@AM?c@?c@Ka@MIC??a@La@Jc@@OAc@@QEO?c@Ac@Cc@Ac@A]AKBOFc@?c@?M?c@?c@?c@?c@AY?M?O?_@Ac@?c@?WAc@?c@?c@?U?Y?YAQ?c@Ac@Ca@OYK??a@Ha@Hc@?_@?Y?c@?c@Aa@MUG??a@J_@Hc@?Y?c@Ac@?a@GWE??a@FWDc@Ac@?c@?_@?]UOK??a@La@Nc@@W?K?c@?c@Ac@?W?M?Q?c@?c@?c@Ac@?c@?G?K?M?Q?c@AI?c@?c@?Q?M?Q?c@?[?c@BI?a@HIBa@ESA??[Z[Z_@Nc@JMB[F?X?j@?j@?R?j@?N?d@?f@?j@?\\?RQf@GV??Ld@FR?j@?V[?c@?c@?c@?c@?c@?c@?c@?c@?c@Ac@?c@?c@?c@?c@?W?]?c@Ac@Cc@Ac@Ac@Ca@Ac@Ac@Cc@Ac@Ac@CYA]?c@?c@?W?c@?c@?c@?c@?c@?U?c@?c@?c@?c@?c@AM?c@HYDODc@Fc@DI@c@?c@?K?c@?c@?c@?c@?c@A_@?c@?c@?c@?U?c@?Y?c@B[@c@BK?c@Dc@DG?c@F]Fa@Ha@Ja@Ja@N_@P_@T]TQRQPOXYZWXU`@MRUb@EHOd@O^Qd@Qd@K\\U`@Sb@MVSb@U`@GJY^W^IHY\\[ZIH]X[VOL]T_@RYP_@P_@R_@P_@Ra@R]R_@R]V]TOLYT[ZQNW^Y\\W^KLW`@GJSb@Qb@KZOd@Od@Mf@CLKf@G`@Ih@G`@Eh@Gh@CTGh@Gh@AJEj@Gh@Gh@C`@Gh@Gj@Eh@E`@Gh@Eh@Gh@Eh@Gj@Gh@ANGh@Gh@Gh@Ih@Ed@If@Ih@CPKf@Ih@Kh@CNKh@Mf@G\\Mf@Kf@I\\Of@Md@Of@Mf@Od@Mf@Of@Md@Of@Mf@Od@Mf@EJMf@Md@Of@Mf@Od@Of@Md@Of@GTQf@Od@Od@Of@Od@Qd@Qb@Qd@Sb@Sb@Qd@Sb@Sb@Qb@Sd@Sb@Sb@GLSb@O\\U`@Sb@U`@U`@GJU`@W^W^W^W^QVY\\WXYZQRY\\OP[\\YZ[Z]V]V[XOJ]V]VOL_@R]TSL]T_@RWN_@R_@Ra@N_@Pa@P_@P_@Pa@P_@P_@Ra@P_@P_@Pa@Na@N_@Na@Na@P_@Na@N_@Na@La@Na@L_@Na@Na@La@NQFc@La@Ja@La@La@La@JWHc@Ja@Hc@Ja@Ha@Jc@Ha@Jc@Ha@Hc@Fa@Hc@Ha@HQBc@Ha@Fc@F_@Dc@Fa@Fc@Dc@Fc@Fa@DMBc@Dc@Dc@Da@Dc@Fc@Dc@Fa@Fc@Dc@Fa@Dc@Fc@FK@c@Ha@Fc@Fa@Hc@Fc@Ha@Fc@HSBc@Ja@JOBa@Ha@Jc@Ha@Jc@HUFc@Ha@Jc@Ha@Hc@Ja@Ja@Hc@Ja@Ja@Jc@Ha@Ja@Jc@Ja@Ha@Jc@J[FUFc@Ja@Ja@La@La@Ja@La@Na@La@La@Na@N_@Na@Na@N_@Na@Na@Na@N_@Na@Na@N_@Na@N_@Pa@Na@N_@Pa@Na@N_@Pa@Na@La@N_@La@Na@La@La@NUHa@N_@Pa@Na@N_@PGBa@N_@Pa@La@N_@Na@Pa@N_@N]Na@La@LSHa@Jc@JQDc@Ja@Ja@Hc@Fc@Ha@Dc@Fa@Dc@D]Bc@B]Bc@@a@@c@?c@@]?c@Ac@?I?c@Cc@Aa@Cc@Ca@Cc@Cc@EYAc@Cc@Cc@Ac@Ac@AIAc@@Y@c@@[?c@Dc@Bc@DI@a@FWDa@Fc@HWFc@HWFc@Ja@Ja@Hc@Ja@Ja@HSFa@Hc@HUDa@Fa@Da@D[Bc@DK@c@BO@c@BO@c@@c@?c@@c@@c@@W@c@?c@?c@?c@?c@?_@?c@Bc@Bc@Da@BWBc@FUBa@Ha@Fc@HG@a@JUDa@Ja@Jc@HQDc@Ja@Ha@Jc@HODa@Hc@Ja@JQBa@Jc@JGBa@Ja@La@Na@N_@Na@N_@Pa@P_@P_@R_@R_@RKD_@V]T]V_@T]T]X]V[V]X[X]X[X]X[X[X]X[X]X[XOL]X[X]X[X]X[X[X]X[X]X[X]XQN]V[X]V]X]V]V[X]X[X]V[X]X[X]V[X]X[X]X[V]X[X]X[X]V]X[X]V[X]V]VMJ]V]V]VGD_@R]T_@R_@T]R_@R_@R_@RID_@P_@Pa@P_@POF_@P_@Pa@N_@PYL_@Pa@P_@Pa@N_@P_@RYL_@R_@TKF_@T]TID_@VSN]VQL]XQL[Z[X[X[Z[Z[ZYZGF[ZYZ[Z[ZMN[ZYX[Z[Z[ZYZ[Z[Z[ZYZ[Z[Z[ZYZGF[\\YZ[Z[Z[ZYZ[Z[Z[ZYZKJ[X[Z[Z[X[Z[Z[Z[XGH]X[X]X[X[X]X[X]XKH[Z[X[Z[Z[XYX]X[X[X]XWT[X]X[X[X]X[ZIF]X]V]V[XYT]V[X]X]V[X]X[XKH]V[V]XSN]X[V]X]V]XWR]V]X]V[V]V]V]V]X]V]VOJ[V]VSN]V]X]VUP]V]V]X]V[V]V_@TOL]V]T[T]V]T]V_@T]V]T]V_@T]V]V]VQNED]X]V[X]VGF_@V]T]T_@V]T]VGB]V]V]V[X[X[ZUT[ZOP[\\YZY^WZW\\W^W`@W^GJW`@U^W^S\\U`@INSd@GNOd@Of@EPK`@Id@Kh@CHIf@ENIh@Of@CJOf@Od@Sb@Sb@U`@W^Y\\Y\\Y\\[ZYZMLY\\[\\YZY\\[ZY\\Y\\[ZYZ[ZUVWZ[Z[X[X[Z[X[Z[X[XMJ[X[Z[X]X]V[XOJ]T]T_@V]T]T_@V_@R]TKFa@P_@Pa@N_@Pa@Na@P_@Na@Na@N_@Na@Na@Na@La@N_@Na@NGBa@N_@NQF_@P_@Pa@P_@R_@Pa@P_@P]Pa@N_@Na@Na@P_@Na@Na@N_@R_@P_@Pa@P_@R_@PWL_@Pa@P_@P_@R_@Pa@P_@P_@RWJ_@Pa@P_@P_@Pa@P_@P_@R_@Pa@P_@P_@Ra@P_@P_@P_@Ra@P_@P_@P_@Ra@P_@P_@P_@Ra@P_@P_@P_@Ra@P_@P_@PYN_@P_@Pa@R_@PWNa@P_@R_@R_@R_@P_@R_@R_@R[N_@R]T_@R_@T_@R]TKF_@R_@R_@R_@RGB_@R_@R_@R_@R_@RUL_@P_@Ra@P_@R_@R_@P_@RMD_@R_@P_@Pa@PGD_@Pa@P]Na@P_@Na@P_@Pa@NKD_@P_@Pa@P_@Pa@PSH_@Pa@P_@Na@P_@Pa@N_@Pa@PUJa@P_@RGB_@Pa@P_@P_@Pa@N_@Pa@P_@P_@P_@Ra@P_@P_@RSJ_@R]R_@T_@R_@TIF_@T]V]V]T]V]V]X[V]X]XYT[Z[X[Z[ZYZ[ZY\\[ZONY\\Y^W\\Y\\Y\\SXW^W`@W^U^W`@OVU`@W`@U`@U`@U`@U`@EFU`@Ub@U`@U`@U`@U`@U`@U`@Ub@U`@U`@INU`@S`@U`@Ub@EFUb@U`@Sb@U`@U`@Ub@S`@U`@Ub@S`@Ub@Sb@Sb@Sb@Sb@EHSb@U`@Sb@Sb@EHU`@U`@U`@Sb@IJSb@U`@Ub@U`@U`@U`@Ub@U^W^W`@W^U^Ub@Sb@Sb@Sb@Sb@Qd@Qb@Sd@Qb@Qd@Qd@GNU`@U`@U`@U`@U`@GJU`@W`@U`@U^U`@W`@KRW`@U^W`@U`@W^U`@KPU`@W`@U`@IPU`@Ub@U`@Sb@U`@U`@Sb@U`@Ub@Sb@U`@U`@MVUb@S`@Ub@S`@Ub@U`@Ub@U`@S`@KPW`@W^W\\Y^KL[ZYZMN[ZUR[XWTSPQLOJ[R]R_@R_@PMF_@NYLGBa@N[La@NKDa@LGB_@HSAU@Y@c@BG?U?@TAj@?RAh@?j@?HA^?L?XA^?j@?J?L^?PCLEHIDIFOF]D]?KB[D[DQHWHOJUT[V_@V_@NUNMNMPGPERCPCb@Ab@Ab@AH?b@Cb@Ab@AH?b@AXCRCb@EHATEVCZCZAb@Ab@AN?b@Ab@?b@?b@@P?TBRBRF\\H\\L`@L`@LLD`@N`@NZL`@JVFXHb@FVDP@R?N?LATC`@Ib@IHDFDFFDNDNCZCVCZAZ?Z?V?h@@j@@b@@d@Bh@?P?J@^Bh@Bh@Bh@Bj@Df@Ld@Hh@@HFh@Jh@BPH^Jf@FRL`@L^HTLXBHRb@Rd@JTPd@Pb@HRJZFRFVFTHh@BJFh@Bf@@\\@VAj@?HAb@AZEXANIf@ETCPIb@Kf@Kh@ERIf@Kh@Kf@Kh@Ih@Kf@Kh@Kf@CJ`@LXHGVKZKf@Od@Of@A@",
+        "length": 1907
+      },
+      "stops": [
+        {
+          "code": "600008",
+          "id": "4:715",
+          "lat": 33.766146,
+          "lon": -84.387608,
+          "name": "Civic Center Station (West Peachtreet Street)",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3876, 33.7661]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "600053",
+          "id": "4:489",
+          "lat": 33.762633,
+          "lon": -84.387348,
+          "name": "Peachtree Street at Baker Street",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3873, 33.7626]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "920492",
+          "id": "4:485",
+          "lat": 33.759924,
+          "lon": -84.392159,
+          "name": "CENTENNIAL OLYMPIC PARK DR + ANDREW YOUNG INTL BLV",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3922, 33.7599]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "920493",
+          "id": "4:486",
+          "lat": 33.757017,
+          "lon": -84.392883,
+          "name": "MARIETTA ST + TED TURNER DR",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3929, 33.757]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "600035",
+          "id": "4:487",
+          "lat": 33.75562,
+          "lon": -84.391408,
+          "name": "Marietta Street Northwest at Fairlie Street Northwest",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3914, 33.7556]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "600032",
+          "id": "4:722",
+          "lat": 33.75407,
+          "lon": -84.392577,
+          "name": "Five Points Station (Forsyth Street at Alabama Street)",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3926, 33.7541]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "600004",
+          "id": "4:488",
+          "lat": 33.752241,
+          "lon": -84.39396,
+          "name": "Forsyth Street at Martin Luther King Junior Drive",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.394, 33.7522]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "600002",
+          "id": "4:498",
+          "lat": 33.752412,
+          "lon": -84.388429,
+          "name": "Central Avenue at Wall Street",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3884, 33.7524]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "600006",
+          "id": "4:499",
+          "lat": 33.755261,
+          "lon": -84.386054,
+          "name": "Peachtree Center Avenue at Auburn Avenue",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3861, 33.7553]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "600001",
+          "id": "4:502",
+          "lat": 33.762306,
+          "lon": -84.38718,
+          "name": "Baker Street at Peachtree Street",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3872, 33.7623]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "600057",
+          "id": "4:945",
+          "lat": 33.76394,
+          "lon": -84.388931,
+          "name": "Ted Turner Drive at West Peachtree Place",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3889, 33.7639]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "600007",
+          "id": "4:721",
+          "lat": 33.766731,
+          "lon": -84.387403,
+          "name": "Civic Center Station (West Peachtreet Street)",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3874, 33.7667]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "600013",
+          "id": "4:927",
+          "lat": 33.771924,
+          "lon": -84.387247,
+          "name": "North Avenue Station (West Peachtree Street)",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3872, 33.7719]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "920483",
+          "id": "4:478",
+          "lat": 33.773604,
+          "lon": -84.387223,
+          "name": "WEST PEACHTREE ST + 3RD ST",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3872, 33.7736]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "920484",
+          "id": "4:479",
+          "lat": 33.77489,
+          "lon": -84.387259,
+          "name": "WEST PEACHTREE ST + 4TH ST",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3873, 33.7749]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "600012",
+          "id": "4:480",
+          "lat": 33.776185,
+          "lon": -84.387253,
+          "name": "West Peachtree Street at 5th Street",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3873, 33.7762]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "600011",
+          "id": "4:718",
+          "lat": 33.780654,
+          "lon": -84.387333,
+          "name": "West Peachtree Street at Peachtree Place",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3873, 33.7807]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "600018",
+          "id": "4:504",
+          "lat": 33.781629,
+          "lon": -84.390228,
+          "name": "10th Street Northeast at Williams Street",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.3902, 33.7816]
+            }
+          },
+          "color": "#0d0d0d"
+        },
+        {
+          "code": "920030",
+          "id": "4:30",
+          "lat": 33.941682,
+          "lon": -84.529481,
+          "name": "MARIETTA TRANSFER CENTER",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.5295, 33.9417]
+            }
+          },
+          "color": "#404040"
+        }
+      ],
+      "desc": "101 MARIETTA TRANSFER CENTER",
+      "geometry": {
+        "points": "o_bmEp}`bO`@KZIb@?T?b@@b@?b@?F?b@@b@?Z?X?b@?Z@b@?N?R?N?b@@^?`@?HURc@Pc@DGJYJH\\VV`@V^BF??`@Hb@J?P?j@?j@AV?h@?j@?j@?R?N?P?h@Aj@?j@?R?j@?j@?\\?P?R?h@?j@?j@?h@?j@?h@?PT?b@@b@?b@?b@@b@?b@?L?X@b@?b@?R?X@`@Fb@HB???b@GREb@?^@J@N@NBLFHFNJHHV^X^NTNPHLV^TZV^DFNRFEDEHIZY\\YZY`@Mb@K??RYRWRWRYTSRUXYVYZ[Z]LOPQA@??Z[ZYJKDFV^JPV`@HNX\\VX\\VZZXZDB??^LVHZR^V\\V\\V\\VTNXT\\TNJZT\\VRb@HT??b@FZF\\T\\VPJN_@DGJWTc@LYRc@BKTa@DKJUFOFMRc@Rc@Rc@Pc@Rc@LYDIJWRc@Rc@Rc@Rc@Rc@LWFOMK]W]W]W]U]WKIa@KUIOM_@U]W]U]W]W_@UEEMIOK[YKIQSQe@M]??_@Qa@QECMKOYIQK[KOKI]YOM]Y]Y[WKI]Y[YYUMKMKUQ]YSMMEa@M[I??a@H]HG?KAc@?c@?c@?K?I?c@?c@AO?c@?a@?M?c@Ac@?Q?c@?c@?[A[?O?I?MAK?c@?c@?c@?M?c@Ac@?a@?K?O?c@Ac@?c@?c@Ac@?O?]?MAO?c@?c@?c@Ac@?c@?c@AG?M??R?j@?h@Aj@Kf@GZ??Jh@DR?X?P?j@?j@AV?h@?j@?j@?R?NQ?c@Ac@?c@?a@?c@?Q?OAO?c@?a@MSE??c@HYFc@?SAW?@Q?i@?_@A_@A[Ea@C[Ii@AMEWU?c@?c@Ac@?c@?c@AM?c@?c@Ka@MIC??a@La@Jc@@OAc@@QEO?c@Ac@Cc@Ac@A]AKBOFc@?c@?M?c@?c@?c@?c@AY?M?O?_@Ac@?c@?WAc@?c@?c@?U?Y?YAQ?c@Ac@Ca@OYK??a@Ha@Hc@?_@?Y?c@?c@Aa@MUG??a@J_@Hc@?Y?c@Ac@?a@GWE??a@FWDc@Ac@?c@?_@?]UOK??a@La@Nc@@W?K?c@?c@Ac@?W?M?Q?c@?c@?c@Ac@?c@?G?K?M?Q?c@AI?c@?c@?Q?M?Q?c@?[?c@BI?a@HIBa@ESA??[Z[Z_@Nc@JMB[F?X?j@?j@?R?j@?N?d@?f@?j@?\\?RQf@GV??Ld@FR?j@?V[?c@?c@?c@?c@?c@?c@?c@?c@?c@Ac@?c@?c@?c@?c@?W?]?c@Ac@Cc@Ac@Ac@Ca@Ac@Ac@Cc@Ac@Ac@CYA]?c@?c@?W?c@?c@?c@?c@?c@?U?c@?c@?c@?c@?c@AM?c@HYDODc@Fc@DI@c@?c@?K?c@?c@?c@?c@?c@A_@?c@?c@?c@?U?c@?Y?c@B[@c@BK?c@Dc@DG?c@F]Fa@Ha@Ja@Ja@N_@P_@T]TQRQPOXYZWXU`@MRUb@EHOd@O^Qd@Qd@K\\U`@Sb@MVSb@U`@GJY^W^IHY\\[ZIH]X[VOL]T_@RYP_@P_@R_@P_@Ra@R]R_@R]V]TOLYT[ZQNW^Y\\W^KLW`@GJSb@Qb@KZOd@Od@Mf@CLKf@G`@Ih@G`@Eh@Gh@CTGh@Gh@AJEj@Gh@Gh@C`@Gh@Gj@Eh@E`@Gh@Eh@Gh@Eh@Gj@Gh@ANGh@Gh@Gh@Ih@Ed@If@Ih@CPKf@Ih@Kh@CNKh@Mf@G\\Mf@Kf@I\\Of@Md@Of@Mf@Od@Mf@Of@Md@Of@Mf@Od@Mf@EJMf@Md@Of@Mf@Od@Of@Md@Of@GTQf@Od@Od@Of@Od@Qd@Qb@Qd@Sb@Sb@Qd@Sb@Sb@Qb@Sd@Sb@Sb@GLSb@O\\U`@Sb@U`@U`@GJU`@W^W^W^W^QVY\\WXYZQRY\\OP[\\YZ[Z]V]V[XOJ]V]VOL_@R]TSL]T_@RWN_@R_@Ra@N_@Pa@P_@P_@Pa@P_@P_@Ra@P_@P_@Pa@Na@N_@Na@Na@P_@Na@N_@Na@La@Na@L_@Na@Na@La@NQFc@La@Ja@La@La@La@JWHc@Ja@Hc@Ja@Ha@Jc@Ha@Jc@Ha@Hc@Fa@Hc@Ha@HQBc@Ha@Fc@F_@Dc@Fa@Fc@Dc@Fc@Fa@DMBc@Dc@Dc@Da@Dc@Fc@Dc@Fa@Fc@Dc@Fa@Dc@Fc@FK@c@Ha@Fc@Fa@Hc@Fc@Ha@Fc@HSBc@Ja@JOBa@Ha@Jc@Ha@Jc@HUFc@Ha@Jc@Ha@Hc@Ja@Ja@Hc@Ja@Ja@Jc@Ha@Ja@Jc@Ja@Ha@Jc@J[FUFc@Ja@Ja@La@La@Ja@La@Na@La@La@Na@N_@Na@Na@N_@Na@Na@Na@N_@Na@Na@N_@Na@N_@Pa@Na@N_@Pa@Na@N_@Pa@Na@La@N_@La@Na@La@La@NUHa@N_@Pa@Na@N_@PGBa@N_@Pa@La@N_@Na@Pa@N_@N]Na@La@LSHa@Jc@JQDc@Ja@Ja@Hc@Fc@Ha@Dc@Fa@Dc@D]Bc@B]Bc@@a@@c@?c@@]?c@Ac@?I?c@Cc@Aa@Cc@Ca@Cc@Cc@EYAc@Cc@Cc@Ac@Ac@AIAc@@Y@c@@[?c@Dc@Bc@DI@a@FWDa@Fc@HWFc@HWFc@Ja@Ja@Hc@Ja@Ja@HSFa@Hc@HUDa@Fa@Da@D[Bc@DK@c@BO@c@BO@c@@c@?c@@c@@c@@W@c@?c@?c@?c@?c@?_@?c@Bc@Bc@Da@BWBc@FUBa@Ha@Fc@HG@a@JUDa@Ja@Jc@HQDc@Ja@Ha@Jc@HODa@Hc@Ja@JQBa@Jc@JGBa@Ja@La@Na@N_@Na@N_@Pa@P_@P_@R_@R_@RKD_@V]T]V_@T]T]X]V[V]X[X]X[X]X[X[X]X[X]X[XOL]X[X]X[X]X[X[X]X[X]X[X]XQN]V[X]V]X]V]V[X]X[X]V[X]X[X]V[X]X[X]X[V]X[X]X[X]V]X[X]V[X]V]VMJ]V]V]VGD_@R]T_@R_@T]R_@R_@R_@RID_@P_@Pa@P_@POF_@P_@Pa@N_@PYL_@Pa@P_@Pa@N_@P_@RYL_@R_@TKF_@T]TID_@VSN]VQL]XQL[Z[X[X[Z[Z[ZYZGF[ZYZ[Z[ZMN[ZYX[Z[Z[ZYZ[Z[Z[ZYZ[Z[Z[ZYZGF[\\YZ[Z[Z[ZYZ[Z[Z[ZYZKJ[X[Z[Z[X[Z[Z[Z[XGH]X[X]X[X[X]X[X]XKH[Z[X[Z[Z[XYX]X[X[X]XWT[X]X[X[X]X[ZIF]X]V]V[XYT]V[X]X]V[X]X[XKH]V[V]XSN]X[V]X]V]XWR]V]X]V[V]V]V]V]X]V]VOJ[V]VSN]V]X]VUP]V]V]X]V[V]V_@TOL]V]T[T]V]T]V_@T]V]T]V_@T]V]V]VQNED]X]V[X]VGF_@V]T]T_@V]T]VGB]V]V]V[X[X[ZUT[ZOP[\\YZY^WZW\\W^W`@W^GJW`@U^W^S\\U`@INSd@GNOd@Of@EPK`@Id@Kh@CHIf@ENIh@Of@CJOf@Od@Sb@Sb@U`@W^Y\\Y\\Y\\[ZYZMLY\\[\\YZY\\[ZY\\Y\\[ZYZ[ZUVWZ[Z[X[X[Z[X[Z[X[XMJ[X[Z[X]X]V[XOJ]T]T_@V]T]T_@V_@R]TKFa@P_@Pa@N_@Pa@Na@P_@Na@Na@N_@Na@Na@Na@La@N_@Na@NGBa@N_@NQF_@P_@Pa@P_@R_@Pa@P_@P]Pa@N_@Na@Na@P_@Na@Na@N_@R_@P_@Pa@P_@R_@PWL_@Pa@P_@P_@R_@Pa@P_@P_@RWJ_@Pa@P_@P_@Pa@P_@P_@R_@Pa@P_@P_@Ra@P_@P_@P_@Ra@P_@P_@P_@Ra@P_@P_@P_@Ra@P_@P_@P_@Ra@P_@P_@PYN_@P_@Pa@R_@PWNa@P_@R_@R_@R_@P_@R_@R_@R[N_@R]T_@R_@T_@R]TKF_@R_@R_@R_@RGB_@R_@R_@R_@R_@RUL_@P_@Ra@P_@R_@R_@P_@RMD_@R_@P_@Pa@PGD_@Pa@P]Na@P_@Na@P_@Pa@NKD_@P_@Pa@P_@Pa@PSH_@Pa@P_@Na@P_@Pa@N_@Pa@PUJa@P_@RGB_@Pa@P_@P_@Pa@N_@Pa@P_@P_@P_@Ra@P_@P_@RSJ_@R]R_@T_@R_@TIF_@T]V]V]T]V]V]X[V]X]XYT[Z[X[Z[ZYZ[ZY\\[ZONY\\Y^W\\Y\\Y\\SXW^W`@W^U^W`@OVU`@W`@U`@U`@U`@U`@EFU`@Ub@U`@U`@U`@U`@U`@U`@Ub@U`@U`@INU`@S`@U`@Ub@EFUb@U`@Sb@U`@U`@Ub@S`@U`@Ub@S`@Ub@Sb@Sb@Sb@Sb@EHSb@U`@Sb@Sb@EHU`@U`@U`@Sb@IJSb@U`@Ub@U`@U`@U`@Ub@U^W^W`@W^U^Ub@Sb@Sb@Sb@Sb@Qd@Qb@Sd@Qb@Qd@Qd@GNU`@U`@U`@U`@U`@GJU`@W`@U`@U^U`@W`@KRW`@U^W`@U`@W^U`@KPU`@W`@U`@IPU`@Ub@U`@Sb@U`@U`@Sb@U`@Ub@Sb@U`@U`@MVUb@S`@Ub@S`@Ub@U`@Ub@U`@S`@KPW`@W^W\\Y^KL[ZYZMN[ZUR[XWTSPQLOJ[R]R_@R_@PMF_@NYLGBa@N[La@NKDa@LGB_@HSAU@Y@c@BG?U?@TAj@?RAh@?j@?HA^?L?XA^?j@?J?L^?PCLEHIDIFOF]D]?KB[D[DQHWHOJUT[V_@V_@NUNMNMPGPERCPCb@Ab@Ab@AH?b@Cb@Ab@AH?b@AXCRCb@EHATEVCZCZAb@Ab@AN?b@Ab@?b@?b@@P?TBRBRF\\H\\L`@L`@LLD`@N`@NZL`@JVFXHb@FVDP@R?N?LATC`@Ib@IHDFDFFDNDNCZCVCZAZ?Z?V?h@@j@@b@@d@Bh@?P?J@^Bh@Bh@Bh@Bj@Df@Ld@Hh@@HFh@Jh@BPH^Jf@FRL`@L^HTLXBHRb@Rd@JTPd@Pb@HRJZFRFVFTHh@BJFh@Bf@@\\@VAj@?HAb@AZEXANIf@ETCPIb@Kf@Kh@ERIf@Kh@Kf@Kh@Ih@Kf@Kh@Kf@CJ`@LXHGVKZKf@Od@Of@A@",
+        "length": 1907
+      }
+    }
+  },
+  "v2": true
+}
