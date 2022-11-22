@@ -32,12 +32,14 @@ export default class PhotonGeocoder extends Geocoder {
       baseUrl,
       boundary,
       focusPoint,
-      options
+      options,
+      size,
     } = this.geocoderConfig;
     return {
       boundary,
       focusPoint,
       options,
+      size,
       url: baseUrl ? `${baseUrl}/autocomplete` : undefined,
       ...query
     };
@@ -48,12 +50,14 @@ export default class PhotonGeocoder extends Geocoder {
       baseUrl,
       boundary,
       focusPoint,
-      options
+      options,
+      size,
     } = this.geocoderConfig;
     return {
       boundary,
       focusPoint,
       options,
+      size,
       url: baseUrl ? `${baseUrl}/search` : undefined,
       ...query
     };
