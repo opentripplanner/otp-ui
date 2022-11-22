@@ -44,17 +44,17 @@ const GeocoderTester = ({
     apiKey: geocodeEarthApiKey,
     baseUrl: "https://api.geocode.earth/v1",
     focusPoint,
+    reverseUseFeatureCollection,
     size: 1,
-    type: "PELIAS",
-    reverseUseFeatureCollection
+    type: "PELIAS"
   });
 
   const photonGeocoder = getGeocoder({
     baseUrl: "https://photon.komoot.io",
     focusPoint,
+    reverseUseFeatureCollection,
     size: 1,
-    type: "PHOTON",
-    reverseUseFeatureCollection
+    type: "PHOTON"
   });
 
   const searchObj: AnyGeocoderQuery = {
