@@ -66,8 +66,8 @@ async function autocomplete({
 
   if (focusPoint) {
     const { lat, lon }: LonLatOutput = normalize(focusPoint);
-    query.lat = `${lat}`;
-    query.lon = `${lon}`;
+    query.lat = lat.toString();
+    query.lon = lon.toString();
     const res = await run({
       options,
       query,
@@ -122,8 +122,8 @@ function search({
 
   if (focusPoint) {
     const { lat, lon }: LonLatOutput = normalize(focusPoint);
-    query.lat = `${lat}`;
-    query.lon = `${lon}`;
+    query.lat = lat.toString();
+    query.lon = lon.toString();
   }
 
   return run({ options, query, url: GEOCODE_URL });
@@ -145,8 +145,8 @@ function reverse({ options, point }: ReverseQuery): Promise<PhotonResponse> {
 
   if (point) {
     const { lat, lon }: LonLatOutput = normalize(point);
-    query.lat = `${lat}`;
-    query.lon = `${lon}`;
+    query.lat = lat.toString();
+    query.lon = lon.toString();
   } else {
     throw new GeocoderException("No point provided for reverse geocoder.");
   }
