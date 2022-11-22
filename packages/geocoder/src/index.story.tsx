@@ -33,7 +33,7 @@ const GeocoderTester = ({
     setReverseUseFeatureCollection
   ] = useState(false);
 
-  const geocoder = getGeocoder({
+  const hereGeocoder = getGeocoder({
     apiKey: hereApiKey,
     focusPoint,
     reverseUseFeatureCollection,
@@ -70,7 +70,7 @@ const GeocoderTester = ({
   }
 
   const search = async () => {
-    const hereRes = enableHere ? await geocoder[endpoint](searchObj) : null;
+    const hereRes = enableHere ? await hereGeocoder[endpoint](searchObj) : null;
     const peliasRes = enableGeocodeEarth
       ? await peliasGeocoder[endpoint](searchObj)
       : null;
