@@ -33,46 +33,29 @@ export default class PhotonGeocoder extends Geocoder {
       baseUrl,
       boundary,
       focusPoint,
-      options,
-      sources
+      options
     } = this.geocoderConfig;
     return {
       boundary,
       focusPoint,
       options,
-      // explicitly send over null for sources if provided sources is not truthy
-      // in order to avoid default isomorphic-mapzen-search sources form being
-      // applied
-      sources: sources || null,
       url: baseUrl ? `${baseUrl}/autocomplete` : undefined,
       ...query
     };
   }
 
-  /**
-   * Generate a search query specifically for the Pelias API. The
-   * `sources` parameter is a Pelias-specific option.
-   * This function fills in some more fields of the query
-   * from the existing values in the GeocoderConfig.
-   */
   getSearchQuery(query: SearchQuery): SearchQuery {
     const {
       baseUrl,
       boundary,
       focusPoint,
-      options,
-      sources
+      options
     } = this.geocoderConfig;
     return {
       boundary,
       focusPoint,
       options,
-      // explicitly send over null for sources if provided sources is not truthy
-      // in order to avoid default isomorphic-mapzen-search sources form being
-      // applied
-      sources: sources || null,
       url: baseUrl ? `${baseUrl}/search` : undefined,
-      format: false, // keep as returned GeoJSON,
       ...query
     };
   }
