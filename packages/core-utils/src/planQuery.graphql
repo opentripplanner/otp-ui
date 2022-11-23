@@ -1,13 +1,37 @@
 query Query1(
 	$fromPlace: String!,
 	$toPlace: String!,
-	$modes: [TransportMode]
+	$modes: [TransportMode],
+	$time: String,
+	$date: String,
+	$wheelchair: Boolean,
+	$bikeReluctance: Float,
+	$carReluctance: Float,
+	$walkReluctance: Float,
+	$arriveBy: Boolean,
+	$intermediatePlaces: [InputCoordinates],
+	$preferred: InputPreferred,
+	$unpreferred: InputUnpreferred,
+	$banned: InputBanned,
+	$allowBikeRental: Boolean
 ) {
 	plan(
 		fromPlace: $fromPlace
 		toPlace: $toPlace
 		transportModes: $modes
-		locale: "en"
+		locale: "en",
+		time: $time,
+		date: $date,
+		wheelchair: $wheelchair,
+		bikeReluctance: $bikeReluctance,
+		carReluctance: $carReluctance,
+		walkReluctance: $walkReluctance,
+		arriveBy: $arriveBy,
+		intermediatePlaces: $intermediatePlaces,
+		preferred: $preferred,
+		unpreferred: $unpreferred,
+		banned: $banned,
+		allowBikeRental: $allowBikeRental
 	) {
 		itineraries {
 			duration

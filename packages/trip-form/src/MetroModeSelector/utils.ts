@@ -8,6 +8,7 @@ import { QueryParamConfig, decodeQueryParams } from "serialize-query-params";
 import {
   ModeButtonDefinition,
   ModeSetting,
+  ModeSettingTypes,
   ModeSettingValues,
   TransportMode
 } from "@opentripplanner/types";
@@ -61,19 +62,27 @@ function populateSettingsWithValues(
   modeSettings: ModeSetting[],
   values: ModeSettingValues
 ): ModeSetting[] {
-  return modeSettings.map(setting => ({
-    ...setting,
-    value: values[setting.key] as boolean & number & string
-  }));
+  return modeSettings.map(setting => {
+    let convertedVal;
+    if (setting.type === ModeSettingTypes.CHECKBOX) {
+      convertedVal = Boolean(values[setting.key]);
+    } else if (setting.type === ModeSettingTypes.SLIDER) {
+      convertedVal = Number(values[setting.key]);
+    }
+    return {
+      ...setting,
+      value: convertedVal as boolean & number & string
+    };
+  });
 }
 
 /**
- * Extracts the values from each mode setting into an object
+ * Extracts the defaults from each mode setting into an object
  * where the keys correspond with the keys from the mode setting.
- * @param modeSetting Mode settings with `values` populated
- * @returns Object containing just the keys and values
+ * @param modeSetting Mode settings with `default`s populated
+ * @returns Object containing just the keys and values from defaults
  */
-export function extractModeSettingValuesToObject(
+export function extractModeSettingDefaultsToObject(
   modeSettings: ModeSetting[]
 ): ModeSettingValues {
   return modeSettings.reduce((prev, cur) => {
@@ -155,6 +164,10 @@ export function getActivatedModesFromQueryParams(
 ): { activeModes: TransportMode[]; modeSettings: ModeSetting[] } {
   const queryObject = new URLSearchParams(searchString);
 
+  // console.log({
+  //   modeButtons: queryObject.get("modeButtons"),
+  //   modeSettings: queryObject.get("modeSettings")
+  // });
   const decodedQuery = decodeQueryParams(
     { modeButtons: DelimitedArrayParam, modeSettings: ObjectParam },
     {
@@ -163,16 +176,22 @@ export function getActivatedModesFromQueryParams(
     }
   );
 
+  // console.log(decodedQuery);
+
   const enabledKeys =
     decodedQuery.modeButtons || initialState.enabledModeButtons;
   const activeButtons = filterModeDefitionsByKey(modeButtons, enabledKeys);
 
   const modeSettingValues = {
     // TODO: Do we want to keep these defaults with the definitions or only support it in initial state?
-    ...extractModeSettingValuesToObject(modeSettingDefinitions),
+    ...extractModeSettingDefaultsToObject(modeSettingDefinitions),
     ...initialState.modeSettingValues,
     ...decodedQuery.modeSettings
   };
+  console.log(extractModeSettingDefaultsToObject(modeSettingDefinitions));
+  console.log(decodedQuery.modeSettings);
+  console.log(modeSettingValues);
+
   const modeSettingsWithValues = populateSettingsWithValues(
     modeSettingDefinitions,
     modeSettingValues
@@ -230,7 +249,7 @@ export function useModeState(
   };
 
   const defaultModeSettingsValues = {
-    ...extractModeSettingValuesToObject(modeSettingDefinitions),
+    ...extractModeSettingDefaultsToObject(modeSettingDefinitions),
     ...initialState.modeSettingValues
   };
 

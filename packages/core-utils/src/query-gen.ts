@@ -2,7 +2,7 @@
 import { print } from "graphql";
 import {
   ModeSetting,
-  ModeSettingTypes,
+  ModeSettingValues,
   TransportMode
 } from "@opentripplanner/types";
 import PlanQuery from "./planQuery.graphql";
@@ -90,14 +90,32 @@ export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
 
 // eslint-disable-next-line import/prefer-default-export
 export function generateOtp2Query(params: OTPQueryParams): any {
-  const { to, from } = params;
+  const { to, from, modeSettings } = params;
+
+  const modeSettingValues = modeSettings.reduce((prev, cur) => {
+    prev[cur.key] = cur.value;
+    return prev;
+  }, {}) as ModeSettingValues;
+
+  const {
+    walkReluctance,
+    wheelchair,
+    bikeReluctance,
+    carReluctance,
+    allowBikeRental
+  } = modeSettingValues;
 
   return {
     query: print(PlanQuery),
     variables: {
       fromPlace: [from.lat, from.lon].join(","),
       toPlace: [to.lat, to.lon].join(","),
-      modes: params.modes
+      modes: params.modes,
+      allowBikeRental,
+      walkReluctance,
+      wheelchair,
+      bikeReluctance,
+      carReluctance
     }
   };
 }
