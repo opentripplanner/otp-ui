@@ -6,17 +6,50 @@ import React, { useEffect } from "react";
 import polyline from "@mapbox/polyline";
 import pointInPolygon from "point-in-polygon";
 
-// helper fn to check if geometry has been populated for all patterns in route
-const isGeometryComplete = (routeData: {
-  patterns: { id: string; geometry?: { points: [number, number][] } }[];
-}) => {
-  return (
-    routeData?.patterns &&
-    Object.values(routeData.patterns).every(
-      ptn => typeof ptn?.geometry !== "undefined"
-    )
-  );
+type RouteData = {
+  color?: string;
+  patterns: Record<
+    string,
+    {
+      id: string;
+      name?: string;
+      geometry?: { points: [number, number][] };
+      stops?: Stop[];
+    }
+  >;
 };
+
+type Props = {
+  /**
+   * If pattern stops contain polygons, we can request that the routes are not drawn
+   * inside of these polygons by setting this prop to true. If true, the layer will
+   * check every zone of every stop in a pattern before drawing the route for that pattern
+   * and only draw the route outside of the polygon.
+   */
+  clipToPatternStops?: boolean;
+  /**
+   * This method is called whenever the bounds are updated to fit a route
+   */
+  mapCenterCallback: () => void;
+  /**
+   * Some Leaflet properties that have been mapped to MapLibreGL
+   * TODO: expose MapLibre properties?
+   */
+  path?: { color?: string; opacity?: number; weight?: number };
+  /**
+   * This represents data about a route as obtained from a transit index.
+   * Typically a route has more data than these items, so this is only a list of
+   * the properties that this component actually uses.
+   */
+  routeData: RouteData;
+};
+
+// helper fn to check if geometry has been populated for all patterns in route
+const isGeometryComplete = (routeData: RouteData) =>
+  routeData?.patterns &&
+  Object.values(routeData.patterns).every(
+    ptn => typeof ptn?.geometry !== "undefined"
+  );
 
 /**
  * helper function that removes all points from array of points that are
@@ -51,33 +84,55 @@ const removePointsInFlexZone = (stops: Stop[], points: [number, number][]) => {
 };
 
 /**
+ * Reducer helper for computing the bounds of a geometry.
+ */
+const reduceBounds = (bnds, coord) => bnds.extend(coord);
+
+/**
  * An overlay that will display all polylines of the patterns of a route.
  */
 const RouteViewerOverlay = (props: Props): JSX.Element => {
   const { current } = useMap();
   const { routeData } = props;
+  const patterns = Object.values(routeData.patterns);
   useEffect(() => {
     // if pattern geometry updated, update the map points
     let bounds;
     if (isGeometryComplete(routeData)) {
-      const allPoints: LngLatLike[] = Object.values(routeData.patterns).reduce(
-        (acc, ptn) => {
-          return acc.concat(polyline.decode(ptn.geometry.points));
-        },
-        []
-      );
+      const allPoints: LngLatLike[] = patterns.reduce((acc, ptn) => {
+        return acc.concat(polyline.decode(ptn.geometry.points));
+      }, []);
 
       if (allPoints.length > 0) {
         const geoJsonedPoints: [number, number][] = allPoints.map(c => {
           return [c[1], c[0]];
         });
-        bounds = geoJsonedPoints.reduce((bnds, coord) => {
-          return bnds.extend(coord);
-        }, new LngLatBounds(geoJsonedPoints[0], geoJsonedPoints[0]));
+        bounds = geoJsonedPoints.reduce(
+          reduceBounds,
+          new LngLatBounds(geoJsonedPoints[0], geoJsonedPoints[0])
+        );
       }
     }
 
-    // if pattern geometry updated, update the map points
+    patterns.forEach(ptn => {
+      ptn.stops?.forEach(stop => {
+        if (stop.geometries?.geoJson?.type === "Polygon") {
+          // If flex location, add the polygon (the first and only entry in coordinates) to the route bounds.
+          const coordsArray = stop.geometries.geoJson.coordinates[0];
+          bounds = coordsArray.reduce(
+            reduceBounds,
+            bounds || new LngLatBounds(coordsArray[0], coordsArray[0])
+          );
+        } else {
+          // Regular stops might be (well) outside of route pattern shapes, so add them.
+          const coords = stop.geometries.geoJson.coordinates;
+          bounds = bounds
+            ? bounds.extend(coords)
+            : new LngLatBounds(coords, coords);
+        }
+      });
+    });
+
     if (bounds && current) {
       const canvas = current.getCanvas();
       // @ts-expect-error getPixelRatio not defined in MapRef type.
@@ -102,7 +157,7 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
         props.mapCenterCallback();
       }
     }
-  }, [routeData, routeData.patterns, current]);
+  }, [routeData, patterns, current]);
 
   const { clipToPatternStops, path } = props;
 
@@ -112,7 +167,7 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
   const routeColor = routeData.color
     ? `#${routeData.color}`
     : path?.color || "#00bfff";
-  const segments = Object.values(routeData.patterns)
+  const segments = patterns
     .filter(pattern => !!pattern?.geometry)
     .map(pattern => {
       const pts = polyline.decode(pattern.geometry.points);
@@ -151,39 +206,6 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
       </Source>
     </>
   ) : null;
-};
-
-type RouteData = {
-  color?: string;
-  patterns: {
-    id: string;
-    geometry?: { points: [number, number][] };
-    stops?: Stop[];
-  }[];
-};
-type Props = {
-  /**
-   * If pattern stops contain polygons, we can request that the routes are not drawn
-   * inside of these polygons by setting this prop to true. If true, the layer will
-   * check every zone of every stop in a pattern before drawing the route for that pattern
-   * and only draw the route outside of the polygon.
-   */
-  clipToPatternStops?: boolean;
-  /**
-   * This method is called whenever the bounds are updated to fit a route
-   */
-  mapCenterCallback: () => void;
-  /**
-   * Some Leaflet properties that have been mapped to MapLibreGL
-   * TODO: expose MapLibre properties?
-   */
-  path?: { color?: string; opacity?: number; weight?: number };
-  /**
-   * This represents data about a route as obtained from a transit index.
-   * Typically a route has more data than these items, so this is only a list of
-   * the properties that this component actually uses.
-   */
-  routeData: RouteData;
 };
 
 export default RouteViewerOverlay;
