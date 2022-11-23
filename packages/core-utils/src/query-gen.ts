@@ -31,39 +31,61 @@ function combinations(array: TransportMode[]): TransportMode[][] {
 }
 
 export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
-  const BANNED_SOLO = ["TRANSIT", "CAR"];
-  const BANNED_TOGETHER = ["BICYCLE", "CAR", "MICROMOBILITY", "WALK"];
-  // take the mode list
-  const combos = combinations(params.modes)
-    .filter(combo => combo.length > 0)
-    .filter(
-      combo =>
-        combo.length !== 1 ||
-        (combo.length === 1 && !!combo[0].qualifier) ||
-        (combo.length === 1 && !BANNED_SOLO.includes(combo[0].mode))
-    )
-    .filter(
-      combo =>
-        // If the combo is WALK and a mode with a qualifier, always approve it.
-        !(
-          combo.length === 2 &&
-          combo.find(c => c.mode === "WALK") &&
-          combo.find(c => !!c.qualifier)
-        ) &&
-        combo.reduce((acc, cur) => {
-          if (BANNED_TOGETHER.includes(cur.mode)) {
-            return acc + 1;
-          }
-          return acc;
-        }, 0) < 2
-    );
+  const SIMPLIFICATIONS = {
+    AIRPLANE: "TRANSIT",
+    BICYCLE: "PERSONAL",
+    BUS: "TRANSIT",
+    CABLE_CAR: "TRANSIT",
+    CAR: "CAR",
+    FERRY: "TRANSIT",
+    FLEX: "SHARED", // TODO: this allows FLEX+WALK. Is this reasonable?
+    FUNICULAR: "TRANSIT",
+    GONDOLA: "TRANSIT",
+    RAIL: "TRANSIT",
+    SCOOTER: "PERSONAL",
+    SUBWAY: "TRANSIT",
+    TRAM: "TRANSIT",
+    TRANSIT: "TRANSIT",
+    WALK: "WALK"
+  };
 
-  // generate all combinations without order-based duplicates
+  const VALID_COMBOS = [
+    ["WALK"],
+    ["PERSONAL"],
+    ["TRANSIT", "SHARED"],
+    ["WALK", "SHARED"],
+    ["TRANSIT"],
+    ["TRANSIT", "PERSONAL"],
+    ["TRANSIT", "CAR"]
+  ];
 
-  // filter based on pre-set rules
+  const BANNED_TOGETHER = ["SCOOTER", "BICYCLE"];
 
-  // return array
-  return combos.map(combo => ({ ...params, modes: combo }));
+  return (
+    combinations(params.modes)
+      .filter(combo => {
+        if (combo.length === 0) return false;
+
+        // All current qualifiers currently simplify to "SHARED"
+        const simplifiedModes = Array.from(
+          new Set(
+            combo.map(c => (c.qualifier ? "SHARED" : SIMPLIFICATIONS[c.mode]))
+          )
+        );
+        // OTP doesn't support multiple non-walk modes
+        if (BANNED_TOGETHER.every(m => combo.find(c => c.mode === m)))
+          return false;
+
+        return !!VALID_COMBOS.find(
+          vc =>
+            simplifiedModes.every(m => vc.includes(m)) &&
+            vc.every(m => simplifiedModes.includes(m))
+        );
+      })
+      // create new filter that removes subTransit modes from appearing on their own
+      // ONLY IF there's mulitple of them!
+      .map(combo => ({ ...params, modes: combo }))
+  );
 }
 
 // eslint-disable-next-line import/prefer-default-export

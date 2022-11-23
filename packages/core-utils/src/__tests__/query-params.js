@@ -23,9 +23,12 @@ function modeStrToTransportMode(m) {
 
 //            string array.  string array array
 function help(modes, expectedModes) {
+  console.log(modes);
+
   const generatedModesList = generateCombinations({
     modes: modes.map(modeStrToTransportMode)
   });
+  console.log(JSON.stringify(generatedModesList));
   const expandedExpectedModesList = expectedModes.map(em => ({
     modes: em.map(modeStrToTransportMode)
   }));
@@ -42,21 +45,22 @@ function help(modes, expectedModes) {
 describe("query-gen", () => {
   describe("generateCombinations", () => {
     help(["WALK"], [["WALK"]]);
-    help(["WALK", "TRANSIT"], [["WALK"], ["WALK", "TRANSIT"]]);
+    help(["WALK", "TRANSIT"], [["WALK"], ["TRANSIT"]]);
     help(
       ["WALK", "TRANSIT", "BICYCLE"],
-      [["WALK"], ["WALK", "TRANSIT"], ["BICYCLE"], ["TRANSIT", "BICYCLE"]]
+      [["WALK"], ["TRANSIT"], ["BICYCLE"], ["TRANSIT", "BICYCLE"]]
     );
     help(
       ["WALK", "TRANSIT", "CAR"],
-      [["WALK"], ["WALK", "TRANSIT"], ["TRANSIT", "CAR"]]
+      [["WALK"], ["TRANSIT"], ["TRANSIT", "CAR"]]
     );
-    help(["TRANSIT", "CAR"], [["TRANSIT", "CAR"]]);
+    help(["TRANSIT", "CAR"], [["TRANSIT"], ["TRANSIT", "CAR"]]);
+    help(["CAR"], []);
     help(
       ["WALK", "TRANSIT", "BICYCLE", "CAR"],
       [
         ["WALK"],
-        ["WALK", "TRANSIT"],
+        ["TRANSIT"],
         ["TRANSIT", "BICYCLE"],
         ["BICYCLE"],
         ["TRANSIT", "CAR"]
@@ -65,10 +69,63 @@ describe("query-gen", () => {
     help(
       ["BICYCLE_RENT", "TRANSIT", "WALK"],
       [
-        ["TRANSIT", "WALK"],
-        ["BICYCLE_RENT", "TRANSIT", "WALK"],
-        ["BICYCLE_RENT", "WALK"]
+        ["TRANSIT"],
+        ["BICYCLE_RENT", "TRANSIT"],
+        ["BICYCLE_RENT", "WALK"],
+        ["WALK"]
       ]
+    );
+    help(
+      ["BICYCLE_RENT", "BICYCLE", "TRANSIT", "WALK"],
+      [
+        ["TRANSIT"],
+        ["BICYCLE_RENT", "TRANSIT"],
+        ["BICYCLE", "TRANSIT"],
+        ["BICYCLE_RENT", "WALK"],
+        ["BICYCLE"],
+        ["WALK"]
+      ]
+    );
+    help(
+      ["SCOOTER_RENT", "BICYCLE_RENT", "TRANSIT", "WALK"],
+      [
+        ["TRANSIT"],
+        ["BICYCLE_RENT", "TRANSIT"],
+        ["BICYCLE_RENT", "WALK"],
+        ["SCOOTER_RENT", "TRANSIT"],
+        ["SCOOTER_RENT", "WALK"],
+        ["WALK"]
+      ]
+    );
+    help(
+      ["FLEX", "TRANSIT", "WALK"],
+      [["TRANSIT"], ["FLEX", "TRANSIT"], ["FLEX", "WALK"], ["WALK"]]
+    );
+    help(
+      ["FLEX", "SCOOTER_RENT", "TRANSIT", "WALK"],
+      [
+        ["TRANSIT"],
+        ["FLEX", "TRANSIT"],
+        ["WALK"],
+        ["FLEX", "WALK"],
+        ["FLEX", "SCOOTER_RENT", "WALK"], // Is this sensible?
+        ["FLEX", "SCOOTER_RENT", "TRANSIT"],
+        ["SCOOTER_RENT", "WALK"],
+        ["SCOOTER_RENT", "TRANSIT"]
+      ]
+    );
+    help(
+      ["FLEX", "SCOOTER_RENT", "TRANSIT"],
+      [
+        ["TRANSIT"],
+        ["FLEX", "TRANSIT"],
+        ["FLEX", "SCOOTER_RENT", "TRANSIT"],
+        ["SCOOTER_RENT", "TRANSIT"]
+      ]
+    );
+    help(
+      ["BUS", "RAIL", "GONDOLA", "TRAM"],
+      [["BUS", "GONDOLA", "TRAM", "RAIL"]]
     );
   });
 });
