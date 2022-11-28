@@ -55,30 +55,56 @@ const StopsOverlay = (props: Props): JSX.Element => {
   } = props;
   const [clickedStop, setClickedStop] = useState(null);
 
+  const onLayerEnter = useCallback(() => {
+    map.getCanvas().style.cursor = "pointer";
+  }, [map]);
+
+  const onLayerLeave = useCallback(() => {
+    map.getCanvas().style.cursor = "";
+  }, [map]);
+
+  const onLayerClick = useCallback(
+    (event: EventData) => {
+      setClickedStop(event.features?.[0].properties);
+    },
+    [setClickedStop]
+  );
+
+  const onZoomEnd = useCallback(
+    (event: EventData) => {
+      if (event.viewState.zoom < minZoom) setClickedStop(null);
+    },
+    [setClickedStop, minZoom]
+  );
+
   useEffect(() => {
     setClickedStop(activeStop);
   }, [activeStop]);
 
   useEffect(() => {
     const STOP_LAYERS = ["stops", "flex-stops"];
+
     STOP_LAYERS.forEach(stopLayer => {
-      map?.on("mouseenter", stopLayer, () => {
-        map.getCanvas().style.cursor = "pointer";
-      });
-      map?.on("mouseleave", stopLayer, () => {
-        map.getCanvas().style.cursor = "";
-      });
-      map?.on("click", stopLayer, (event: EventData) => {
-        setClickedStop(event.features?.[0].properties);
-      });
+      map?.on("mouseenter", stopLayer, onLayerEnter);
+      map?.on("mouseleave", stopLayer, onLayerLeave);
+      map?.on("click", stopLayer, onLayerClick);
     });
 
-    if (refreshStops) refreshStops();
+    if (visible && refreshStops) refreshStops();
 
-    map?.on("zoomend", event => {
-      if (event.viewState.zoom < minZoom) setClickedStop(null);
-    });
-  }, [map]);
+    map?.on("zoomend", onZoomEnd);
+
+    // Remove event handlers when component unmounts
+    // (prevents error messages about performing state updates on unmounted component).
+    return () => {
+      STOP_LAYERS.forEach(stopLayer => {
+        map?.off("mouseenter", stopLayer, onLayerEnter);
+        map?.off("mouseleave", stopLayer, onLayerLeave);
+        map?.off("click", stopLayer, onLayerClick);
+      });
+      map?.off("zoomend", onZoomEnd);
+    };
+  }, [map, visible]);
 
   const setNullStop = useCallback(() => {
     setClickedStop(null);
