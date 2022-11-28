@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import routeData from "../__mocks__/mock-route.json";
+import routeData2 from "../__mocks__/mock-route2.json";
+import routeDataOtp2 from "../__mocks__/mock-route-otp2.json";
 import flexRouteData from "../__mocks__/mock-flex-route.json";
 
 import StopsOverlay from "../../stops-overlay/src";
@@ -38,6 +40,24 @@ const Template = args => (
   </>
 );
 
+/** Should zoom to pattern. */
+
+const WithChangingRoute = () => {
+  const [rtData, setRouteData] = useState(routeData);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRouteData(rtData === routeData2 ? routeData : routeData2);
+    }, 5000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [rtData]);
+
+  return <RouteViewerOverlay routeData={rtData} />;
+};
+
 export const Default = Template.bind({});
 Default.args = {
   routeData
@@ -51,6 +71,13 @@ WithPathStyling.args = {
   },
   routeData
 };
+
+export const OTP2RouteOutsideOfInitialView = Template.bind({});
+OTP2RouteOutsideOfInitialView.args = {
+  routeData: routeDataOtp2
+};
+
+export const WithChangingPath = () => <WithChangingRoute />;
 
 export const FlexRoute = Template.bind({});
 FlexRoute.args = {

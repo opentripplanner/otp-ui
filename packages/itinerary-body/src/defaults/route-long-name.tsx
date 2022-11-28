@@ -26,18 +26,22 @@ export default function RouteLongName({
   const { headsign, routeLongName } = leg;
   return (
     <span className={className} style={style}>
-      <FormattedMessage
-        defaultMessage={
-          defaultMessages["otpUi.TransitLegBody.routeDescription"]
-        }
-        description="Displays the route name and destination"
-        id="otpUi.TransitLegBody.routeDescription"
-        values={{
-          headsign,
-          routeName: routeLongName,
-          toPrefix
-        }}
-      />
+      {headsign ? (
+        <FormattedMessage
+          defaultMessage={
+            defaultMessages["otpUi.TransitLegBody.routeDescription"]
+          }
+          description="Displays the route name and destination"
+          id="otpUi.TransitLegBody.routeDescription"
+          values={{
+            headsign,
+            routeName: routeLongName,
+            toPrefix
+          }}
+        />
+      ) : (
+        routeLongName
+      )}
     </span>
   );
 }

@@ -27,12 +27,13 @@ const GeocoderTester = ({
   const [enableFocusPoint, setEnableFocusPoint] = useState(true);
   const [enableGeocodeEarth, setEnableGeocodeEarth] = useState(true);
   const [enableHere, setEnableHere] = useState(true);
+  const [enablePhoton, setEnablePhoton] = useState(true);
   const [
     reverseUseFeatureCollection,
     setReverseUseFeatureCollection
   ] = useState(false);
 
-  const geocoder = getGeocoder({
+  const hereGeocoder = getGeocoder({
     apiKey: hereApiKey,
     focusPoint,
     reverseUseFeatureCollection,
@@ -43,9 +44,17 @@ const GeocoderTester = ({
     apiKey: geocodeEarthApiKey,
     baseUrl: "https://api.geocode.earth/v1",
     focusPoint,
+    reverseUseFeatureCollection,
     size: 1,
-    type: "PELIAS",
-    reverseUseFeatureCollection
+    type: "PELIAS"
+  });
+
+  const photonGeocoder = getGeocoder({
+    baseUrl: "https://photon.komoot.io",
+    focusPoint,
+    reverseUseFeatureCollection,
+    size: 1,
+    type: "PHOTON"
   });
 
   const searchObj: AnyGeocoderQuery = {
@@ -61,13 +70,17 @@ const GeocoderTester = ({
   }
 
   const search = async () => {
-    const hereRes = enableHere ? await geocoder[endpoint](searchObj) : null;
+    const hereRes = enableHere ? await hereGeocoder[endpoint](searchObj) : null;
     const peliasRes = enableGeocodeEarth
       ? await peliasGeocoder[endpoint](searchObj)
       : null;
+    const photonRes = enablePhoton
+      ? await photonGeocoder[endpoint](searchObj)
+      : null;
     onResults({
       hereRes,
-      peliasRes
+      peliasRes,
+      photonRes
     });
   };
 
@@ -194,6 +207,15 @@ const GeocoderTester = ({
             checked={enableHere}
             id="here"
             onChange={e => setEnableHere(e.target.checked)}
+            type="checkbox"
+          />
+        </label>
+        <label htmlFor="photon">
+          Photon (Komoot):
+          <input
+            checked={enablePhoton}
+            id="photon"
+            onChange={e => setEnablePhoton(e.target.checked)}
             type="checkbox"
           />
         </label>

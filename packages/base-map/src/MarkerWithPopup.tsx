@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from "react";
-import { Marker, Popup, PopupProps } from "react-map-gl";
-import { LeafletStyleMarker } from "./styled";
+import { Marker, PopupProps } from "react-map-gl";
+import { LeafletStyleMarker, Popup } from "./styled";
 
 type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
   popupContents?: React.ReactNode;

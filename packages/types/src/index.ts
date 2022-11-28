@@ -98,6 +98,7 @@ export type TransitVehicle = {
   routeShortName?: string;
   routeLongName?: string;
   routeType?: string;
+  routeColor?: string;
 
   status?: string;
   reportDate?: string;
@@ -381,6 +382,8 @@ export type Fare = {
  * http://otp-docs.ibi-transit.com/api/json_Itinerary.html
  */
 export type Itinerary = {
+  co2?: number;
+  co2VsBaseline?: number;
   duration: number;
   elevationGained: number;
   elevationLost: number;

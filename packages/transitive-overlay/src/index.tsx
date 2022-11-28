@@ -11,6 +11,7 @@ import {
 } from "@opentripplanner/types";
 import bbox from "@turf/bbox";
 
+import { getRouteLayerLayout, patternToRouteFeature } from "./route-layers";
 import { getFromToAnchors, itineraryToTransitive } from "./util";
 
 export { itineraryToTransitive };
@@ -93,10 +94,9 @@ const TransitiveCanvasOverlay = ({
   transitiveData
 }: Props): JSX.Element => {
   const { current: map } = useMap();
-
   const geojson: GeoJSON.FeatureCollection<
     GeoJSON.Geometry,
-    Record<any, any>
+    Record<string, unknown>
   > = {
     type: "FeatureCollection",
     // @ts-expect-error TODO: fix the type above for geojson
@@ -141,28 +141,6 @@ const TransitiveCanvasOverlay = ({
               });
             })
       ),
-      ...(transitiveData?.patterns || []).flatMap(
-        (pattern: TransitivePattern) =>
-          pattern.stops
-            .map(stop => stop.geometry)
-            .filter(geometry => !!geometry)
-            .map(geometry => {
-              const route = Object.entries(transitiveData.routes).find(
-                r => r[1].route_id === pattern.route_id
-              )[1];
-
-              return {
-                type: "Feature",
-                properties: {
-                  color: `#${route.route_color || "000080"}`,
-                  name: route.route_short_name || route.route_long_name || "",
-                  routeType: route.route_type,
-                  type: "route"
-                },
-                geometry: polyline.toGeoJSON(geometry)
-              };
-            })
-      ),
       // Extract the first and last stops of each transit segment for display.
       ...(transitiveData?.journeys || [])
         .flatMap(journey => journey.segments)
@@ -189,7 +167,12 @@ const TransitiveCanvasOverlay = ({
             type: "Point",
             coordinates: [stop.stop_lon, stop.stop_lat]
           }
-        }))
+        })),
+      ...(
+        transitiveData?.patterns || []
+      ).flatMap((pattern: TransitivePattern) =>
+        patternToRouteFeature(pattern, transitiveData.routes)
+      )
     ]
   };
 
@@ -202,7 +185,7 @@ const TransitiveCanvasOverlay = ({
     if (bounds.length === 4 && bounds.every(Number.isFinite)) {
       map?.fitBounds(bounds, {
         duration: 500,
-        padding: 200
+        padding: window.innerWidth > 500 ? 200 : undefined
       });
     }
   };
@@ -318,19 +301,24 @@ const TransitiveCanvasOverlay = ({
         type="symbol"
       />
       <Layer
+        // Render a solid background of fixed height using the uppercase route name.
+        filter={routeFilter}
+        id="routes-labels-background"
+        layout={getRouteLayerLayout("nameUpper")}
+        paint={{
+          "text-color": ["get", "color"],
+          "text-halo-color": ["get", "color"],
+          "text-halo-width": 4 // Max value is 1/4 of text size per maplibre docs.
+        }}
+        type="symbol"
+      />
+      <Layer
+        // This layer renders transit route names (foreground).
         filter={routeFilter}
         id="routes-labels"
-        layout={{
-          "symbol-placement": "line",
-          "text-field": ["get", "name"],
-          "text-keep-upright": true,
-          "text-size": 16
-        }}
+        layout={getRouteLayerLayout("name")}
         paint={{
-          "text-color": "#eee",
-          "text-halo-blur": 15,
-          "text-halo-color": ["get", "color"],
-          "text-halo-width": 15
+          "text-color": ["get", "textColor"]
         }}
         type="symbol"
       />
