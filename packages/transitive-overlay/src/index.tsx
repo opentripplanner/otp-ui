@@ -10,6 +10,7 @@ import {
 } from "@opentripplanner/types";
 import bbox from "@turf/bbox";
 
+import { getRouteLayerLayout, patternToRouteFeature } from "./route-layers";
 import { itineraryToTransitive } from "./util";
 
 export { itineraryToTransitive };
@@ -24,25 +25,21 @@ const modeColorMap = {
   WALK: "#86cdf9"
 };
 
+const routeFilter = ["==", "type", "route"];
+
 type Props = {
   activeLeg?: Leg;
   transitiveData: TransitiveData;
 };
+
 const TransitiveCanvasOverlay = ({
   activeLeg,
   transitiveData
 }: Props): JSX.Element => {
   const { current: map } = useMap();
-
-  transitiveData?.patterns.flatMap((pattern: TransitivePattern) =>
-    pattern.stops
-      .map(stop => stop.geometry)
-      .filter(geometry => !!geometry)
-      .map(geometry => polyline.toGeoJSON(geometry))
-  );
   const geojson: GeoJSON.FeatureCollection<
     GeoJSON.Geometry,
-    Record<any, any>
+    Record<string, unknown>
   > = {
     type: "FeatureCollection",
     // @ts-expect-error TODO: fix the type above for geojson
@@ -81,27 +78,10 @@ const TransitiveCanvasOverlay = ({
               });
             })
       ),
-      ...(transitiveData?.patterns || []).flatMap(
-        (pattern: TransitivePattern) =>
-          pattern.stops
-            .map(stop => stop.geometry)
-            .filter(geometry => !!geometry)
-            .map(geometry => {
-              const route = Object.entries(transitiveData.routes).find(
-                r => r[1].route_id === pattern.route_id
-              )[1];
-
-              return {
-                type: "Feature",
-                properties: {
-                  color: `#${route.route_color || "000080"}`,
-                  name: route.route_short_name || route.route_long_name || "",
-                  routeType: route.route_type,
-                  type: "route"
-                },
-                geometry: polyline.toGeoJSON(geometry)
-              };
-            })
+      ...(
+        transitiveData?.patterns || []
+      ).flatMap((pattern: TransitivePattern) =>
+        patternToRouteFeature(pattern, transitiveData.routes)
       )
     ]
   };
@@ -170,7 +150,7 @@ const TransitiveCanvasOverlay = ({
         type="line"
       />
       <Layer
-        filter={["==", "type", "route"]}
+        filter={routeFilter}
         id="routes"
         layout={{
           "line-join": "round",
@@ -185,19 +165,24 @@ const TransitiveCanvasOverlay = ({
         type="line"
       />
       <Layer
-        filter={["==", "type", "route"]}
-        id="routes-labels"
-        layout={{
-          "symbol-placement": "line",
-          "text-field": ["get", "name"],
-          "text-keep-upright": true,
-          "text-size": 16
-        }}
+        // Render a solid background of fixed height using the uppercase route name.
+        filter={routeFilter}
+        id="routes-labels-background"
+        layout={getRouteLayerLayout("nameUpper")}
         paint={{
-          "text-color": "#eee",
-          "text-halo-blur": 15,
+          "text-color": ["get", "color"],
           "text-halo-color": ["get", "color"],
-          "text-halo-width": 15
+          "text-halo-width": 4 // Max value is 1/4 of text size per maplibre docs.
+        }}
+        type="symbol"
+      />
+      <Layer
+        // This layer renders transit route names (foreground).
+        filter={routeFilter}
+        id="routes-labels"
+        layout={getRouteLayerLayout("name")}
+        paint={{
+          "text-color": ["get", "textColor"]
         }}
         type="symbol"
       />

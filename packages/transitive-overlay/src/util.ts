@@ -236,7 +236,8 @@ export function itineraryToTransitive(
         route_short_name: routeLabel || "",
         route_long_name: leg.routeLongName || "",
         route_type: leg.routeType,
-        route_color: leg.routeColor
+        route_color: leg.routeColor,
+        route_text_color: leg.routeTextColor
       };
 
       // add the pattern to the tdata patterns array
