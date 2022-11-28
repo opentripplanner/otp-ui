@@ -1,8 +1,9 @@
 otpUi:
   TransitVehicleOverlay:
-    durationAgo: Hace {duration}
-    durationWithSeconds: '{hours, plural, =0 {} other {# hr }}{minutes, plural, =0
+    defaultTooltip: "{route}: hace {duration}"
+    durationWithSeconds:
+      "{hours, plural, =0 {} other {# hr }}{minutes, plural, =0
       {{seconds, plural, =0 {# min} other {}}} other {# min}}{seconds, plural, =0
-      {} other { # sec}}'
-    genericRouteFormat: Línea {route}
-    tooltipRouteLabel: '{routeLabel}:'
+      {} other { # sec}}"
+    routeTitle: "{type} {name}"
+    transitLine: Línea

@@ -10,7 +10,7 @@
 
 otpUi:
   TransitVehicleOverlay:
-    durationAgo: "il y a {duration}"
+    defaultTooltip: "{route} : il y a {duration}"
     durationWithSeconds: "{hours, plural,
       =0 {}
       other {# hr }}{minutes, plural,
@@ -18,5 +18,5 @@ otpUi:
       other {# mn}}{seconds, plural,
       =0 {}
       other { # s}}"
-    genericRouteFormat: "Ligne {route}"
-    tooltipRouteLabel: "{routeLabel} :"
+    routeTitle: "{type} {name}"
+    transitLine: Ligne
