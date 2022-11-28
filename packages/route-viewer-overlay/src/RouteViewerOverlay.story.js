@@ -83,7 +83,7 @@ export const WithChangingPath = () => <WithChangingRoute />;
 export const FlexRoute = Template.bind({});
 FlexRoute.args = {
   clipToPatternStops: true,
-  // Since the data is fixed, we know that stops[1] will contain the relevant flex zone.
+  // Since the data is fixed, we know where the relevant flex zone is.
   // Using the stopsOverlay is not possible as it is very complex to implement */}
   extraLayer: (
     <StopsOverlay
@@ -105,7 +105,7 @@ FlexRoute.decorators = [withMap(POWDER_SPRINGS, zoom)];
 export const FlexRoute2 = Template.bind({});
 FlexRoute2.args = {
   clipToPatternStops: true,
-  // Since the data is fixed, we know that stops[1] will contain the relevant flex zone.
+  // Since the data is fixed, we know where the relevant flex zone is.
   // Using the stopsOverlay is not possible as it is very complex to implement */}
   extraLayer: (
     <StopsOverlay

@@ -188,24 +188,24 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
   };
 
   return segments.length > 0 ? (
-    <>
-      <Source id="route" type="geojson" data={geojson}>
-        <Layer
-          id="route"
-          layout={{
-            "line-cap": "round",
-            "line-join": "round"
-          }}
-          paint={{
-            "line-color": path?.color || routeColor,
-            "line-opacity": path?.opacity || 1,
-            "line-width": path?.weight || 3
-          }}
-          type="line"
-        />
-      </Source>
-    </>
-  ) : null;
+    <Source id="route" type="geojson" data={geojson}>
+      <Layer
+        id="route"
+        layout={{
+          "line-cap": "round",
+          "line-join": "round"
+        }}
+        paint={{
+          "line-color": path?.color || routeColor,
+          "line-opacity": path?.opacity || 1,
+          "line-width": path?.weight || 3
+        }}
+        type="line"
+      />
+    </Source>
+  ) : (
+    <></>
+  );
 };
 
 export default RouteViewerOverlay;
