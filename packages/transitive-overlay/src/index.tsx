@@ -86,7 +86,7 @@ const accessLegFilter = [
 
 type Props = {
   activeLeg?: Leg;
-  transitiveData: TransitiveData;
+  transitiveData?: TransitiveData;
 };
 
 const TransitiveCanvasOverlay = ({
@@ -94,89 +94,91 @@ const TransitiveCanvasOverlay = ({
   transitiveData
 }: Props): JSX.Element => {
   const { current: map } = useMap();
+
   const geojson: GeoJSON.FeatureCollection<
     GeoJSON.Geometry,
     Record<string, unknown>
   > = {
     type: "FeatureCollection",
     // @ts-expect-error TODO: fix the type above for geojson
-    features: [
-      ...(transitiveData?.places || []).flatMap((place: TransitivePlace) => {
-        return {
-          type: "Feature",
-          properties: {
-            color: modeColorMap[place.type] || "#008",
-            name: place.place_name,
-            type: place.type || "place"
-          },
-          geometry: {
-            type: "Point",
-            coordinates: [place.place_lon, place.place_lat]
-          }
-        };
-      }),
-      ...(transitiveData?.journeys || []).flatMap(
-        (journey: TransitiveJourney) =>
-          journey.segments
-            .filter(segment => segment.streetEdges?.length > 0)
-            .map(segment => ({
-              ...segment,
-              geometries: segment.streetEdges.map(edge => {
-                return transitiveData.streetEdges.find(
-                  entry => entry.edge_id === edge
-                );
-              })
-            }))
-            .flatMap(segment => {
-              return segment.geometries.map(geometry => {
-                return {
-                  type: "Feature",
-                  properties: {
-                    type: "street-edge",
-                    color: modeColorMap[segment.type] || "#008",
-                    mode: segment.type
-                  },
-                  geometry: polyline.toGeoJSON(geometry.geometry.points)
-                };
-              });
-            })
-      ),
-      // Extract the first and last stops of each transit segment for display.
-      ...(transitiveData?.journeys || [])
-        .flatMap(journey => journey.segments)
-        .filter(segment => segment.type === "TRANSIT")
-        .map(segment =>
-          transitiveData.patterns.find(
-            p => p.pattern_id === segment.patterns[0]?.pattern_id
+    features: transitiveData
+      ? [
+          ...(transitiveData.places || []).flatMap((place: TransitivePlace) => {
+            return {
+              type: "Feature",
+              properties: {
+                color: modeColorMap[place.type] || "#008",
+                name: place.place_name,
+                type: place.type || "place"
+              },
+              geometry: {
+                type: "Point",
+                coordinates: [place.place_lon, place.place_lat]
+              }
+            };
+          }),
+          ...(transitiveData.journeys || []).flatMap(
+            (journey: TransitiveJourney) =>
+              journey.segments
+                .filter(segment => segment.streetEdges?.length > 0)
+                .map(segment => ({
+                  ...segment,
+                  geometries: segment.streetEdges.map(edge => {
+                    return transitiveData.streetEdges.find(
+                      entry => entry.edge_id === edge
+                    );
+                  })
+                }))
+                .flatMap(segment => {
+                  return segment.geometries.map(geometry => {
+                    return {
+                      type: "Feature",
+                      properties: {
+                        type: "street-edge",
+                        color: modeColorMap[segment.type] || "#008",
+                        mode: segment.type
+                      },
+                      geometry: polyline.toGeoJSON(geometry.geometry.points)
+                    };
+                  });
+                })
+          ),
+          // Extract the first and last stops of each transit segment for display.
+          ...(transitiveData.journeys || [])
+            .flatMap(journey => journey.segments)
+            .filter(segment => segment.type === "TRANSIT")
+            .map(segment =>
+              transitiveData.patterns.find(
+                p => p.pattern_id === segment.patterns[0]?.pattern_id
+              )
+            )
+            .filter(pattern => !!pattern)
+            .flatMap(pattern =>
+              pattern.stops.filter(
+                (_, index, stopsArr) =>
+                  index === 0 || index === stopsArr.length - 1
+              )
+            )
+            .map(pStop =>
+              // pStop (from pattern.stops) only has an id (and sometimes line geometry)
+              transitiveData.stops.find(stop => stop.stop_id === pStop.stop_id)
+            )
+            .map(stop => ({
+              type: "Feature",
+              properties: { name: stop.stop_name, type: "stop" },
+              geometry: {
+                type: "Point",
+                coordinates: [stop.stop_lon, stop.stop_lat]
+              }
+            })),
+          ...(
+            transitiveData.patterns || []
+          ).flatMap((pattern: TransitivePattern) =>
+            patternToRouteFeature(pattern, transitiveData.routes)
           )
-        )
-        .filter(pattern => !!pattern)
-        .flatMap(pattern =>
-          pattern.stops.filter(
-            (_, index, stopsArr) => index === 0 || index === stopsArr.length - 1
-          )
-        )
-        .map(pStop =>
-          // pStop (from pattern.stops) only has an id (and sometimes line geometry)
-          transitiveData.stops.find(stop => stop.stop_id === pStop.stop_id)
-        )
-        .map(stop => ({
-          type: "Feature",
-          properties: { name: stop.stop_name, type: "stop" },
-          geometry: {
-            type: "Point",
-            coordinates: [stop.stop_lon, stop.stop_lat]
-          }
-        })),
-      ...(
-        transitiveData?.patterns || []
-      ).flatMap((pattern: TransitivePattern) =>
-        patternToRouteFeature(pattern, transitiveData.routes)
-      )
-    ]
+        ]
+      : []
   };
-
-  const { fromAnchor, toAnchor } = getFromToAnchors(transitiveData);
 
   const zoomToGeoJSON = geoJson => {
     const b = bbox(geoJson);
@@ -198,6 +200,10 @@ const TransitiveCanvasOverlay = ({
     if (!activeLeg?.legGeometry) return;
     zoomToGeoJSON(polyline.toGeoJSON(activeLeg.legGeometry.points));
   }, [activeLeg]);
+
+  if (!transitiveData) return <></>;
+
+  const { fromAnchor, toAnchor } = getFromToAnchors(transitiveData);
 
   // Generally speaking, text/symbol layers placed first will be rendered in a lower layer
   // (or, if it is text, rendered with a lower priority or not at all if higher-priority text overlaps).
