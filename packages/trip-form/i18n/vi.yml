@@ -22,7 +22,7 @@ otpUi:
     optimizeBikeFriendly: Chuyến đi Thân thiện với Xe đạp
     optimizeBikeSpeed: Tốc độ
     optimizeFor: Tối ưu hóa cho
-    speedInMilesPerHour: '{mph} MPH'
+    speedInMilesPerHour: "{mph} MPH"
     walkReluctance: Tránh đi bộ
     walkReluctanceHigh: Thêm phương tiện công cộng
     walkReluctanceLow: Đi bộ nhiều hơn

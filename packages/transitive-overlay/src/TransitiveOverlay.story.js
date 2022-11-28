@@ -6,11 +6,6 @@ import { injectIntl } from "react-intl";
 import { withMap } from "../../../.storybook/base-map-wrapper";
 import TransitiveOverlay, { itineraryToTransitive } from ".";
 
-// Use the font-family defined by storybook <body> element,
-// so we don't need to install/import extra fonts.
-const storybookFonts =
-  '"Nunito Sans", -apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif';
-
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json");
 const bikeRentalItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-rental.json");
@@ -49,18 +44,6 @@ function getFromLocation(itinerary) {
 
 function getToLocation(itinerary) {
   return itinerary.legs[itinerary.legs.length - 1].to;
-}
-
-/**
- * Example of a custom route label provider to pass to @opentripplanner/core-utils/map#itineraryToTransitive.
- * @param {*} itineraryLeg The OTP itinerary leg for which to obtain a custom route label.
- * @returns A string with the custom label to display for the given leg.
- */
-function getCustomRouteLabel(itineraryLeg) {
-  if (itineraryLeg.mode === "TRAM") return "MAX";
-  if (itineraryLeg.mode === "RAIL") return "WES";
-  if (itineraryLeg.mode === "BUS") return itineraryLeg.routeShortName;
-  return null; // null or undefined or empty string will tell transitive-js not to render a route label
 }
 
 export default {
@@ -315,42 +298,6 @@ export const TncTransitItinerary = () => (
   </>
 );
 TncTransitItinerary.decorators = [withMap([45.538841, -122.6302], 12)];
-
-export const WalkTransitWalkItineraryAndCustomLabelStyles = () => (
-  <>
-    <EndpointsOverlay
-      fromLocation={getFromLocation(walkTransitWalkItinerary)}
-      setLocation={setLocation}
-      toLocation={getToLocation(walkTransitWalkItinerary)}
-      visible
-    />
-    <TransitiveOverlay
-      labeledModes={["TRAM"]}
-      styles={{
-        labels: {
-          "font-size": "14px",
-          "font-family": storybookFonts
-        },
-        segment_labels: {
-          "border-color": "#FFFFFF",
-          "border-radius": 6,
-          "border-width": 2,
-          color: "#FFE0D0",
-          "font-family": storybookFonts,
-          "font-size": "18px"
-        }
-      }}
-      transitiveData={itineraryToTransitive(walkTransitWalkItinerary, {
-        companies,
-        getCustomRouteLabel
-      })}
-      visible
-    />
-  </>
-);
-WalkTransitWalkItineraryAndCustomLabelStyles.decorators = [
-  withMap([45.520441, -122.68302], 16)
-];
 
 export const FlexItinerary = () => (
   <>

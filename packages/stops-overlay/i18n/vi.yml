@@ -1,4 +1,4 @@
 otpUi:
   StopsOverlay:
     stopViewer: Trình xem trạm dừng
-    stopId: 'ID điểm dừng: {stopId}'
+    stopId: "ID điểm dừng: {stopId}"

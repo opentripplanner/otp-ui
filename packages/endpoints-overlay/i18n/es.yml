@@ -2,7 +2,7 @@ otpUi:
   EndpointsOverlay:
     clearLocation: Eliminar como lugar de {locationType}
     forgetHome: Olvidar lugar de casa
-    coordinates: '{lat, number, ::.00000}; {lon, number, ::.00000}'
+    coordinates: "{lat, number, ::.00000}; {lon, number, ::.00000}"
     saveAsHome: Guardar como ubicación de casa
     saveAsWork: Guardar como ubicación de trabajo
     swapLocation: Cambio de lugar de {locationType}

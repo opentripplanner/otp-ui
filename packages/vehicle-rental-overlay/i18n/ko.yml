@@ -1,7 +1,7 @@
 otpUi:
   VehicleRentalOverlay:
-    floatingEScooter: '{company} 전기 스쿠터'
-    availableDocks: '사용 가능한 독: {value}'
-    availableBikes: '사용 가능한 자전거: {value}'
-    floatingCar: '{company} {name}'
-    floatingBike: '프리 플로팅 자전거: {name}'
+    floatingEScooter: "{company} 전기 스쿠터"
+    availableDocks: "사용 가능한 독: {value}"
+    availableBikes: "사용 가능한 자전거: {value}"
+    floatingCar: "{company} {name}"
+    floatingBike: "프리 플로팅 자전거: {name}"

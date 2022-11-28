@@ -6,4 +6,4 @@ otpUi:
     saveAsHome: 保存为首页
     saveAsWork: 保存为工作
     swapLocation: 更改为 {locationType} 位置
-    coordinates: '{lat, number, ::.00000}; {lon, number, ::.00000}'
+    coordinates: "{lat, number, ::.00000}; {lon, number, ::.00000}"
