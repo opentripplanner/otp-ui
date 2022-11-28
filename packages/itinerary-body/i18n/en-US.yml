@@ -17,6 +17,12 @@ otpUi:
     RentedVehicleSubheader:
       pickupRental: Pick up {company} {vehicleType} {vehicleName}
       resumeRentalRide: Continue using rental
+      vehicleType:
+        bike: bike
+        bikeshare: shared bike
+        car: car
+        escooter: E-scooter
+        vehicle: vehicle
       walkVehicle: Walk vehicle along {place}
     step:
       circleClockwise: Follow circle clockwise
@@ -62,11 +68,11 @@ otpUi:
     unnamedRoad: Unnamed Road
     vehicleTitle: "{company} {vehicleType}"
     vehicleType:
-      bike: bike
-      bikeshare: shared bike
-      car: car
+      bike: Bike
+      bikeshare: Shared bike
+      car: Car
       escooter: E-scooter
-      vehicle: vehicle
+      vehicle: Vehicle
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"

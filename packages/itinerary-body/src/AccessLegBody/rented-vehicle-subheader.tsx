@@ -1,14 +1,83 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { Config, Leg } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
-import { FormattedMessage, useIntl } from "react-intl";
+import { FormattedMessage } from "react-intl";
 
 import * as S from "../styled";
-import { defaultMessages, getVehicleType } from "../util";
+import { defaultMessages } from "../util";
 
 interface Props {
   config: Config;
   leg: Leg;
+}
+
+/**
+ * Although similar to utils/getVehicleType, this version accommodates gendered articles
+ * for Spanish and French, so sentences literally read like "Pickup the scooter ABC".
+ */
+function VehicleType({ type }: { type: string }) {
+  switch (type) {
+    case "BIKEPARK":
+      return (
+        <FormattedMessage
+          defaultMessage={
+            defaultMessages[
+              "otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.bike"
+            ]
+          }
+          description="Bike vehicle type"
+          id="otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.bike"
+        />
+      );
+    case "BIKESHARE":
+      return (
+        <FormattedMessage
+          defaultMessage={
+            defaultMessages[
+              "otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.bikeshare"
+            ]
+          }
+          description="Bike vehicle type"
+          id="otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.bikeshare"
+        />
+      );
+    case "CARSHARE":
+      return (
+        <FormattedMessage
+          defaultMessage={
+            defaultMessages[
+              "otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.car"
+            ]
+          }
+          description="Bike vehicle type"
+          id="otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.car"
+        />
+      );
+    case "VEHICLERENTAL":
+      return (
+        <FormattedMessage
+          defaultMessage={
+            defaultMessages[
+              "otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.escooter"
+            ]
+          }
+          description="Bike vehicle type"
+          id="otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.escooter"
+        />
+      );
+    default:
+      return (
+        <FormattedMessage
+          defaultMessage={
+            defaultMessages[
+              "otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.vehicle"
+            ]
+          }
+          description="Bike vehicle type"
+          id="otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.vehicle"
+        />
+      );
+  }
 }
 
 /**
@@ -27,7 +96,6 @@ export default function RentedVehicleSubheader({
   config,
   leg
 }: Props): ReactElement {
-  const intl = useIntl();
   const configCompanies = config.companies || [];
   const { from, mode, rentedBike, walkingBike } = leg;
   const { name: legName, networks, vertexType } = from;
@@ -83,7 +151,7 @@ export default function RentedVehicleSubheader({
         values={{
           company,
           vehicleName,
-          vehicleType: getVehicleType(modeType, intl)
+          vehicleType: <VehicleType type={modeType} />
         }}
       />
     );

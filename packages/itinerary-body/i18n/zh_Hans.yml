@@ -1,8 +1,14 @@
 otpUi:
   AccessLegBody:
     RentedVehicleSubheader:
-      resumeRentalRide: 继续使用租赁
       pickupRental: "{company} {vehicleType} {vehicleName} 捡起"
+      resumeRentalRide: 继续使用租赁
+      vehicleType:
+        bike: 自行车
+        bikeshare: 自行车
+        car: 汽车
+        escooter: 电动滑板车
+        vehicle: 车辆
       walkVehicle: 沿着 {place} 推车辆
     step:
       continue: 继续

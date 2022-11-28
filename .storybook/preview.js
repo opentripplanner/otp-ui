@@ -60,6 +60,10 @@ export const parameters = {
   locales: {
     "en-US": { title: "English (US)" },
     fr: { title: "Français" },
+    es: { title: "Español" },
+    vi: { title: "Tiếng Việt" },
+    ko: { title: "한국어" },
+    zh: { title: "中文" },
     unknown: { title: "Unsupported locale" }
   },
   reactIntl

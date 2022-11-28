@@ -43,8 +43,7 @@ const TIME_FORMATS = [
   "h:mm",
   "HHmm",
   "hmm",
-  "ha",
-  OTP_API_TIME_FORMAT // 'HH:mm'
+  "ha"
 ];
 
 /* A function to retrieve a property value from an entry in the query-params

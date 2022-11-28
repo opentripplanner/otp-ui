@@ -1,9 +1,15 @@
 otpUi:
   AccessLegBody:
     RentedVehicleSubheader:
-      walkVehicle: "{place} 를 따라 차량를 밀다"
       pickupRental: "{company} {vehicleType} {vehicleName} 픽업"
       resumeRentalRide: 임대료를 계속 사용하십시오
+      vehicleType:
+        vehicle: 차량
+        bike: 자전거
+        bikeshare: 자전거
+        car: 자동차
+        escooter: 전기 스쿠터
+      walkVehicle: "{place} 를 따라 차량를 밀다"
     LegDiagramPreview:
       elevationChart: 고도 차트
       noElevationData: 사용 가능한 고도 데이터가 없습니다.

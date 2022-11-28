@@ -3,6 +3,12 @@ otpUi:
     RentedVehicleSubheader:
       walkVehicle: Caminar vehículo por la {place}
       pickupRental: Recoger {vehicleType} {company} {vehicleName}
+      vehicleType:
+        bike: la bicicleta
+        bikeshare: la bicicleta compartida
+        car: el carro
+        escooter: la patineta
+        vehicle: el vehículo
       resumeRentalRide: Seguir utilizando el alquiler
     TncLeg:
       bookRide: Reservar un viaje
@@ -57,11 +63,11 @@ otpUi:
     unnamedRoad: Calle sin nombre
     unnamedPath: Sendero sin nombre
     vehicleType:
-      bike: la bicicleta
-      bikeshare: la bicicleta compartida
-      car: el carro
-      escooter: la patineta
-      vehicle: el vehículo
+      bike: Bicicleta
+      bikeshare: Bicicleta compartida
+      car: Carro
+      escooter: Patineta
+      vehicle: Vehículo
     stepDepart: Dirígete hacia {heading} por {street}
   ItineraryBody:
     stayOnBoard: Permanecer a bordo a {place}

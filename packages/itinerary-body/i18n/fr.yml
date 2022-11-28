@@ -17,6 +17,12 @@ otpUi:
     RentedVehicleSubheader:
       pickupRental: Récupérez {vehicleType} {company} {vehicleName}
       resumeRentalRide: Continuez avec le véhicule loué
+      vehicleType:
+        bike: le vélo
+        bikeshare: le vélo partagé
+        car: la voiture
+        escooter: la trottinette
+        vehicle: le véhicule
       walkVehicle: Emmenez à pied le véhicule le long de {place}
     step:
       circleClockwise: Prenez le rond-point par la gauche
@@ -73,11 +79,11 @@ otpUi:
     unnamedRoad: Route sans nom
     vehicleTitle: "{vehicleType} {company}"
     vehicleType:
-      bike: le vélo
-      bikeshare: le vélo partagé
-      car: la voiture
-      escooter: la trottinette
-      vehicle: le véhicule
+      bike: Vélo
+      bikeshare: Vélo partagé
+      car: Voiture
+      escooter: Trottinette
+      vehicle: Véhicule
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# h }}{minutes} mn"

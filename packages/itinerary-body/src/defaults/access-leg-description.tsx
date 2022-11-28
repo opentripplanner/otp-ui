@@ -43,6 +43,15 @@ function getSummaryMode(leg: Leg, intl: IntlShape): string {
             description: "Ride in a car/taxi to somewhere",
             id: "otpUi.AccessLegBody.summaryMode.carHail"
           });
+    case "MICROMOBILITY":
+    case "MICROMOBILITY_RENT":
+    case "SCOOTER":
+      return intl.formatMessage({
+        defaultMessage:
+          defaultMessages["otpUi.AccessLegBody.summaryMode.escooter"],
+        description: "Use an e-scooter",
+        id: "otpUi.AccessLegBody.summaryMode.escooter"
+      });
     case "WALK":
       return intl.formatMessage({
         defaultMessage: defaultMessages["otpUi.AccessLegBody.summaryMode.walk"],

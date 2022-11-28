@@ -2,11 +2,13 @@ import * as arcgis from "@conveyal/geocoder-arcgis-geojson";
 import * as pelias from "isomorphic-mapzen-search";
 import memoize from "lodash.memoize";
 import * as here from "./apis/here";
+import * as photon from "./apis/photon";
 
 import ArcGISGeocoder from "./geocoders/arcgis";
 import NoApiGeocoder from "./geocoders/noapi";
 import PeliasGeocoder from "./geocoders/pelias";
 import HereGeocoder from "./geocoders/here";
+import PhotonGeocoder from "./geocoders/photon";
 
 // Prettier does not support typescript annotation
 // eslint-disable-next-line prettier/prettier
@@ -25,8 +27,10 @@ const getGeocoder = memoize((geocoderConfig: GeocoderConfig & { type: string }) 
       return new PeliasGeocoder(pelias, geocoderConfig);
     case "HERE":
       return new HereGeocoder(here, geocoderConfig);
+    case "PHOTON":
+      return new PhotonGeocoder(photon, geocoderConfig);
     default:
-      console.error(`Unkown geocoder type: "${type}". Using NoApiGeocoder.`);
+      console.error(`Unknown geocoder type: "${type}". Using NoApiGeocoder.`);
       return new NoApiGeocoder();
   }
 });
