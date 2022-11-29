@@ -1,3 +1,4 @@
+import { util } from "@opentripplanner/base-map";
 import { Stop } from "@opentripplanner/types";
 import { LngLatBounds } from "maplibre-gl";
 import { Layer, LngLatLike, Source, useMap } from "react-map-gl";
@@ -79,25 +80,7 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
 
     // if pattern geometry updated, update the map points
     if (bounds && current) {
-      const canvas = current.getCanvas();
-      // @ts-expect-error getPixelRatio not defined in MapRef type.
-      const pixelRatio = current.getPixelRatio();
-      const horizPadding = canvas.width / pixelRatio / 10;
-      const vertPadding = canvas.height / pixelRatio / 10;
-
-      current.fitBounds(bounds, {
-        duration: 500,
-        padding: {
-          left: horizPadding,
-          right: horizPadding,
-          top: vertPadding,
-          bottom: vertPadding
-        }
-      });
-
-      // Often times, the map is not updated right away, so try to force an update.
-      current.triggerRepaint();
-
+      util.fitMapBounds(current, bounds);
       if (props.mapCenterCallback) {
         props.mapCenterCallback();
       }
