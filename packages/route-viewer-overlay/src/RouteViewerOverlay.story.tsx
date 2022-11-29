@@ -77,7 +77,7 @@ OTP2RouteOutsideOfInitialView.args = {
   routeData: routeDataOtp2
 };
 
-export const WithChangingPath = () => <WithChangingRoute />;
+export const WithChangingPath = (): JSX.Element => <WithChangingRoute />;
 
 export const FlexRoute = Template.bind({});
 FlexRoute.args = {
