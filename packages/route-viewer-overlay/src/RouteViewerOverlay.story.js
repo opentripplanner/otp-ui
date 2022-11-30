@@ -4,6 +4,7 @@ import routeData from "../__mocks__/mock-route.json";
 import routeData2 from "../__mocks__/mock-route2.json";
 import routeDataOtp2 from "../__mocks__/mock-route-otp2.json";
 import flexRouteData from "../__mocks__/mock-flex-route.json";
+import flexRouteData2 from "../__mocks__/mock-flex-route2.json";
 
 import StopsOverlay from "../../stops-overlay/src";
 import { withMap } from "../../../.storybook/base-map-wrapper";
@@ -82,7 +83,7 @@ export const WithChangingPath = () => <WithChangingRoute />;
 export const FlexRoute = Template.bind({});
 FlexRoute.args = {
   clipToPatternStops: true,
-  // Since the data is fixed, we know that stops[1] will contain the relevant flex zone.
+  // Since the data is fixed, we know where the relevant flex zone is.
   // Using the stopsOverlay is not possible as it is very complex to implement */}
   extraLayer: (
     <StopsOverlay
@@ -100,3 +101,25 @@ FlexRoute.argTypes = {
   clipToPatternStops: { control: "boolean" }
 };
 FlexRoute.decorators = [withMap(POWDER_SPRINGS, zoom)];
+
+export const FlexRoute2 = Template.bind({});
+FlexRoute2.args = {
+  clipToPatternStops: true,
+  // Since the data is fixed, we know where the relevant flex zone is.
+  // Using the stopsOverlay is not possible as it is very complex to implement */}
+  extraLayer: (
+    <StopsOverlay
+      stops={Object.values(flexRouteData2.patterns)[0]
+        .stops.filter(stop => stop?.geometries?.geoJson?.type === "Polygon")
+        .map(stop => ({ ...stop, color: `#${flexRouteData2.color}` }))}
+      symbols={[]}
+      visible
+    />
+  ),
+  routeData: flexRouteData2
+};
+
+FlexRoute2.argTypes = {
+  clipToPatternStops: { control: "boolean" }
+};
+FlexRoute2.decorators = [withMap(POWDER_SPRINGS, zoom)];

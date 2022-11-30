@@ -1,0 +1,240 @@
+{
+  "id": "Cobb-flex:090z",
+  "desc": null,
+  "agency": {
+    "id": "Cobb-flex:1",
+    "name": "Cobblinc",
+    "url": "https://www.cobbcounty.org/transportation/cobblinc",
+    "timezone": "America/New_York",
+    "lang": "en",
+    "phone": null
+  },
+  "longName": "PUBLIX Super Market",
+  "shortName": "Zone 1",
+  "mode": "BUS",
+  "type": 3,
+  "color": "7eafd7",
+  "textColor": "FFFFFF",
+  "bikesAllowed": "NO_INFORMATION",
+  "routeBikesAllowed": "NO_INFORMATION",
+  "url": null,
+  "patterns": {
+    "UGF0dGVybjpDb2JiLWZsZXg6MDkwejoxOjAx": {
+      "id": "UGF0dGVybjpDb2JiLWZsZXg6MDkwejoxOjAx",
+      "name": "Zone 1 to Transfer Point for Route 30 (Cobb-flex:cujv)",
+      "patternGeometry": {
+        "points": "_bumEv}xcO]lA[`BAb@?p@`IFrHw]Ny@b@eDN{AjBwWCm@pBwX??VkDP_DBcCSuUD}BD{@NmA`@eCzCkO^oCJoABaCGmBIo@YeBc@_Bk@uAut@u~AViAzA{H|@mEnAiGxAeI\\qA^_Ab@y@b@u@l@u@bDyCfw@or@fAoALQ\\m@d@iA`@uAJk@NiAFy@BsEF}O@sMCiVMkBS}AgBgHSJ`@dB",
+        "length": 61
+      },
+      "stops": [
+        {
+          "code": null,
+          "id": "Cobb-flex:yz85",
+          "lat": 33.86446,
+          "lon": -84.6742,
+          "name": "Zone 1 - PUBLIX Super Market",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.6742, 33.8645]
+            }
+          },
+          "color": "#7eafd7"
+        },
+        {
+          "code": null,
+          "id": "Cobb-flex:zone_1",
+          "lat": 33.8666514,
+          "lon": -84.6595585,
+          "name": "Flex Zone 1",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [-84.7046, 33.8678],
+                  [-84.6955, 33.8647],
+                  [-84.6873, 33.8616],
+                  [-84.6857, 33.8598],
+                  [-84.6851, 33.8597],
+                  [-84.6845, 33.8596],
+                  [-84.6819, 33.8595],
+                  [-84.68, 33.8593],
+                  [-84.6773, 33.8588],
+                  [-84.6723, 33.8589],
+                  [-84.671, 33.8589],
+                  [-84.6667, 33.8607],
+                  [-84.6609, 33.8599],
+                  [-84.6571, 33.8597],
+                  [-84.6537, 33.8598],
+                  [-84.6506, 33.8588],
+                  [-84.6486, 33.8584],
+                  [-84.6465, 33.8586],
+                  [-84.6436, 33.8606],
+                  [-84.6322, 33.867],
+                  [-84.6189, 33.8492],
+                  [-84.6148, 33.8515],
+                  [-84.6136, 33.8505],
+                  [-84.6117, 33.8515],
+                  [-84.6122, 33.8524],
+                  [-84.61, 33.8525],
+                  [-84.61, 33.8531],
+                  [-84.6044, 33.8533],
+                  [-84.6, 33.8589],
+                  [-84.6076, 33.8599],
+                  [-84.6069, 33.8542],
+                  [-84.6131, 33.8542],
+                  [-84.6152, 33.8557],
+                  [-84.6245, 33.8656],
+                  [-84.6267, 33.8663],
+                  [-84.632, 33.8681],
+                  [-84.6334, 33.8691],
+                  [-84.6348, 33.8711],
+                  [-84.6462, 33.8762],
+                  [-84.6512, 33.8768],
+                  [-84.697, 33.8762],
+                  [-84.697, 33.8675],
+                  [-84.6994, 33.8685],
+                  [-84.7041, 33.8697],
+                  [-84.7046, 33.8678]
+                ]
+              ]
+            }
+          },
+          "color": "#7eafd7"
+        },
+        {
+          "code": null,
+          "id": "Cobb-flex:cujv",
+          "lat": 33.85465,
+          "lon": -84.60039,
+          "name": "Transfer Point for Route 30",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.6004, 33.8546]
+            }
+          },
+          "color": "#a9ca95"
+        }
+      ],
+      "desc": "Zone 1 to Transfer Point for Route 30 (Cobb-flex:cujv)",
+      "geometry": {
+        "points": "_bumEv}xcO]lA[`BAb@?p@`IFrHw]Ny@b@eDN{AjBwWCm@pBwX??VkDP_DBcCSuUD}BD{@NmA`@eCzCkO^oCJoABaCGmBIo@YeBc@_Bk@uAut@u~AViAzA{H|@mEnAiGxAeI\\qA^_Ab@y@b@u@l@u@bDyCfw@or@fAoALQ\\m@d@iA`@uAJk@NiAFy@BsEF}O@sMCiVMkBS}AgBgHSJ`@dB",
+        "length": 61
+      }
+    },
+    "UGF0dGVybjpDb2JiLWZsZXg6MDkwejowOjAx": {
+      "id": "UGF0dGVybjpDb2JiLWZsZXg6MDkwejowOjAx",
+      "name": "Zone 1 to Zone 1 - PUBLIX Super Market (Cobb-flex:yz85)",
+      "patternGeometry": {
+        "points": "kfsmEjojcOa@eBRKfBfHR|ALjBBhVArMG|OCrEGx@OhAKj@a@tAe@hA]l@MPgAnAgw@nr@cDxCm@t@c@t@c@x@_@~@]pAyAdIoAhG}@lE{AzHWhAtt@t~Aj@tAb@~AXdBHn@FlBC`CKnA_@nC{CjOa@dCOlAEz@E|BRtUCbCQ~CWjD??qBvXBl@kBvWOzAc@dDOx@sHv]aIG?q@@c@ZaB\\mA",
+        "length": 61
+      },
+      "stops": [
+        {
+          "code": null,
+          "id": "Cobb-flex:cujv",
+          "lat": 33.85465,
+          "lon": -84.60039,
+          "name": "Transfer Point for Route 30",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.6004, 33.8546]
+            }
+          },
+          "color": "#a9ca95"
+        },
+        {
+          "code": null,
+          "id": "Cobb-flex:zone_1",
+          "lat": 33.8666514,
+          "lon": -84.6595585,
+          "name": "Flex Zone 1",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [-84.7046, 33.8678],
+                  [-84.6955, 33.8647],
+                  [-84.6873, 33.8616],
+                  [-84.6857, 33.8598],
+                  [-84.6851, 33.8597],
+                  [-84.6845, 33.8596],
+                  [-84.6819, 33.8595],
+                  [-84.68, 33.8593],
+                  [-84.6773, 33.8588],
+                  [-84.6723, 33.8589],
+                  [-84.671, 33.8589],
+                  [-84.6667, 33.8607],
+                  [-84.6609, 33.8599],
+                  [-84.6571, 33.8597],
+                  [-84.6537, 33.8598],
+                  [-84.6506, 33.8588],
+                  [-84.6486, 33.8584],
+                  [-84.6465, 33.8586],
+                  [-84.6436, 33.8606],
+                  [-84.6322, 33.867],
+                  [-84.6189, 33.8492],
+                  [-84.6148, 33.8515],
+                  [-84.6136, 33.8505],
+                  [-84.6117, 33.8515],
+                  [-84.6122, 33.8524],
+                  [-84.61, 33.8525],
+                  [-84.61, 33.8531],
+                  [-84.6044, 33.8533],
+                  [-84.6, 33.8589],
+                  [-84.6076, 33.8599],
+                  [-84.6069, 33.8542],
+                  [-84.6131, 33.8542],
+                  [-84.6152, 33.8557],
+                  [-84.6245, 33.8656],
+                  [-84.6267, 33.8663],
+                  [-84.632, 33.8681],
+                  [-84.6334, 33.8691],
+                  [-84.6348, 33.8711],
+                  [-84.6462, 33.8762],
+                  [-84.6512, 33.8768],
+                  [-84.697, 33.8762],
+                  [-84.697, 33.8675],
+                  [-84.6994, 33.8685],
+                  [-84.7041, 33.8697],
+                  [-84.7046, 33.8678]
+                ]
+              ]
+            }
+          },
+          "color": "#7eafd7"
+        },
+        {
+          "code": null,
+          "id": "Cobb-flex:yz85",
+          "lat": 33.86446,
+          "lon": -84.6742,
+          "name": "Zone 1 - PUBLIX Super Market",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "Point",
+              "coordinates": [-84.6742, 33.8645]
+            }
+          },
+          "color": "#7eafd7"
+        }
+      ],
+      "desc": "Zone 1 to Zone 1 - PUBLIX Super Market (Cobb-flex:yz85)",
+      "geometry": {
+        "points": "kfsmEjojcOa@eBRKfBfHR|ALjBBhVArMG|OCrEGx@OhAKj@a@tAe@hA]l@MPgAnAgw@nr@cDxCm@t@c@t@c@x@_@~@]pAyAdIoAhG}@lE{AzHWhAtt@t~Aj@tAb@~AXdBHn@FlBC`CKnA_@nC{CjOa@dCOlAEz@E|BRtUCbCQ~CWjD??qBvXBl@kBvWOzAc@dDOx@sHv]aIG?q@@c@ZaB\\mA",
+        "length": 61
+      }
+    }
+  },
+  "v2": true
+}
