@@ -6,7 +6,7 @@ import type { Feature } from "geojson"
 import type { GeocoderConfig, ReverseQuery, AutocompleteQuery, SearchQuery, MultiGeocoderResponse, SingleGeocoderResponse, SingleOrMultiGeocoderResponse } from "./types"
 
 /**
- * The exact format of the Geocoder response depends on the specific geocoder implementation.
+ * The exact format of the Geocoder response depends on the specific geocoder implementation
  */
 type GeocoderAPI = {
   autocomplete: (query: AutocompleteQuery) => Promise<unknown>;

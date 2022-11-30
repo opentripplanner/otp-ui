@@ -52,6 +52,10 @@ export default {
   component: TransitiveOverlay
 };
 
+export const Empty = (): JSX.Element => (
+  <TransitiveOverlay transitiveData={null} visible />
+);
+
 export const WalkingItinerary = (): JSX.Element => (
   <>
     <EndpointsOverlay
