@@ -49,6 +49,10 @@ export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
     WALK: "WALK"
   };
 
+  const TRANSIT_SUBMODES = Object.keys(SIMPLIFICATIONS).filter(
+    mode => SIMPLIFICATIONS[mode] === "TRANSIT" && mode !== "TRANSIT"
+  );
+
   const VALID_COMBOS = [
     ["WALK"],
     ["PERSONAL"],
@@ -61,6 +65,10 @@ export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
 
   const BANNED_TOGETHER = ["SCOOTER", "BICYCLE"];
 
+  const queryTransitSubmodes = params.modes
+    .filter(mode => TRANSIT_SUBMODES.includes(mode.mode))
+    .map(mode => mode.mode);
+
   return (
     combinations(params.modes)
       .filter(combo => {
@@ -72,6 +80,22 @@ export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
             combo.map(c => (c.qualifier ? "SHARED" : SIMPLIFICATIONS[c.mode]))
           )
         );
+
+        // Ensure that if we have one transit mode, then we include ALL transit modes
+        if (simplifiedModes.includes("TRANSIT")) {
+          const flatModes = combo.map(m => m.mode);
+          if (
+            combo.reduce((prev, cur) => {
+              if (queryTransitSubmodes.includes(cur.mode)) {
+                return prev - 1;
+              }
+              return prev;
+            }, queryTransitSubmodes.length) !== 0
+          ) {
+            return false;
+          }
+        }
+
         // OTP doesn't support multiple non-walk modes
         if (BANNED_TOGETHER.every(m => combo.find(c => c.mode === m)))
           return false;

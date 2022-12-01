@@ -23,12 +23,9 @@ function modeStrToTransportMode(m) {
 
 //            string array.  string array array
 function help(modes, expectedModes) {
-  console.log(modes);
-
   const generatedModesList = generateCombinations({
     modes: modes.map(modeStrToTransportMode)
   });
-  console.log(JSON.stringify(generatedModesList));
   const expandedExpectedModesList = expectedModes.map(em => ({
     modes: em.map(modeStrToTransportMode)
   }));
@@ -125,7 +122,7 @@ describe("query-gen", () => {
     );
     help(
       ["BUS", "RAIL", "GONDOLA", "TRAM"],
-      [["BUS", "GONDOLA", "TRAM", "RAIL"]]
+      [["BUS", "RAIL", "GONDOLA", "TRAM"]]
     );
   });
 });
