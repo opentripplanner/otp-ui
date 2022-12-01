@@ -20,11 +20,13 @@ const OTP2TileLayerWithPopup = ({
   network,
   setLocation,
   setViewedStop,
+  onMapClick,
   type
 }: {
   /**
    * Optional configuration item which allows for customizing properties of scooter and
-   * bikeshare companies
+   * bikeshare companies. If this is provided, scooter/bikeshare company names can be rendered in the
+   * default scooter/bike popup.
    */
   configCompanies?: ConfiguredCompany[]
   id: string
@@ -35,19 +37,72 @@ const OTP2TileLayerWithPopup = ({
    */
   network?: string
   /**
-   * A method fired when a stop is selected as from or to in the popup
+   * A method fired when a stop is selected as from or to in the default popup. If this method
+   * is not passed, the from/to buttons will not be shown.
    */
   setLocation?: (location: MapLocationActionArg) => void
   /**
-   * A method fired when the stop viewer is opened in the popup
+   * A method fired when the stop viewer is opened in the default popup. If this method is
+   * not passed, the stop viewer link will not be shown.
    */
   setViewedStop?: ({ stopId }: { stopId: string }) => void
+  /**
+   * An optional method to override the map click handler. If a method is passed, NO POPUPS
+   * WILL APPEAR ON CLICK. The implementer will be responsible for handling all click events
+   * in accordance with the MapLibreGL api.
+   */
+  onMapClick?: (event: EventData) => void
+  /**
+   * Determines which layer of the OTP2 tile data to display. Also determines icon color.
+   */
   type: string
 }): JSX.Element => {
   const { current: map } = useMap()
 
   // TODO: handle this complex type: it can be a stop, a station, and some extra fields too
   const [clickedEntity, setClickedEntity] = useState<any>(null)
+
+  const defaultClickHandler = (event: EventData) => {
+    const { sourceLayer } = event.features?.[0]
+    const synthesizedEntity = {
+      ...event.features?.[0].properties,
+      lat: event.lngLat.lat,
+      lon: event.lngLat.lng,
+      sourceLayer
+    }
+
+    // TODO: once the popup converges into a single one that can handle
+    // stops, stations, and vehicles, this re-writing will not be needed.
+    // See: https://github.com/opentripplanner/otp-ui/pull/472#discussion_r1023124055
+    if (sourceLayer === "stops" || sourceLayer === "stations") {
+      setClickedEntity(synthesizedEntity)
+    }
+    if (
+      sourceLayer === "rentalVehicles" ||
+      sourceLayer === "rentalStations"
+    ) {
+      setClickedEntity({
+        // GraphQL field not in the tile info, but we can deduce it
+        isFloatingBike:
+          sourceLayer === "rentalVehicles" &&
+          synthesizedEntity.formFactor === "BICYCLE",
+        // GraphQL field not in the tile info, but we can deduce it
+        isFloatingVehicle:
+          sourceLayer === "rentalVehicles" &&
+          synthesizedEntity.formFactor === "SCOOTER",
+        // OTP1 compatibility -- will get overwritten if possible
+        networks: [synthesizedEntity.network],
+        ...synthesizedEntity,
+        // OTP1 compatibility
+        bikesAvailable: synthesizedEntity.vehiclesAvailable,
+        // OTP1 compatibility
+        x: synthesizedEntity.lon,
+        // OTP1 compatibility
+        y: synthesizedEntity.lat
+      })
+    }
+  }
+
   useEffect(() => {
     map?.on("mouseenter", id, () => {
       map.getCanvas().style.cursor = "pointer"
@@ -55,46 +110,7 @@ const OTP2TileLayerWithPopup = ({
     map?.on("mouseleave", id, () => {
       map.getCanvas().style.cursor = ""
     })
-    map?.on("click", id, (event: EventData) => {
-      const { sourceLayer } = event.features?.[0]
-      const synthesizedEntity = {
-        ...event.features?.[0].properties,
-        lat: event.lngLat.lat,
-        lon: event.lngLat.lng,
-        sourceLayer
-      }
-
-      // TODO: once the popup converges into a single one that can handle
-      // stops, stations, and vehicles, this re-writing will not be needed.
-      // See: https://github.com/opentripplanner/otp-ui/pull/472#discussion_r1023124055
-      if (sourceLayer === "stops" || sourceLayer === "stations") {
-        setClickedEntity(synthesizedEntity)
-      }
-      if (
-        sourceLayer === "rentalVehicles" ||
-        sourceLayer === "rentalStations"
-      ) {
-        setClickedEntity({
-          // GraphQL field not in the tile info, but we can deduce it
-          isFloatingBike:
-            sourceLayer === "rentalVehicles" &&
-            synthesizedEntity.formFactor === "BICYCLE",
-          // GraphQL field not in the tile info, but we can deduce it
-          isFloatingVehicle:
-            sourceLayer === "rentalVehicles" &&
-            synthesizedEntity.formFactor === "SCOOTER",
-          // OTP1 compatibility -- will get overwritten if possible
-          networks: [synthesizedEntity.network],
-          ...synthesizedEntity,
-          // OTP1 compatibility
-          bikesAvailable: synthesizedEntity.vehiclesAvailable,
-          // OTP1 compatibility
-          x: synthesizedEntity.lon,
-          // OTP1 compatibility
-          y: synthesizedEntity.lat
-        })
-      }
-    })
+    map?.on("click", id, onMapClick || defaultClickHandler)
   }, [id, map])
 
   return (
