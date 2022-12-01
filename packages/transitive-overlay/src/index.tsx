@@ -1,3 +1,4 @@
+import { SymbolLayout } from "mapbox-gl";
 import React, { useEffect } from "react";
 import { Layer, Source, useMap } from "react-map-gl";
 import polyline from "@mapbox/polyline";
@@ -10,7 +11,8 @@ import {
 } from "@opentripplanner/types";
 import bbox from "@turf/bbox";
 
-import { itineraryToTransitive } from "./util";
+import { getRouteLayerLayout, patternToRouteFeature } from "./route-layers";
+import { getFromToAnchors, itineraryToTransitive } from "./util";
 
 export { itineraryToTransitive };
 
@@ -24,86 +26,158 @@ const modeColorMap = {
   WALK: "#86cdf9"
 };
 
+/**
+ * Apply a thin, white halo around the (black) text.
+ */
+const defaultTextPaintParams = {
+  "text-halo-blur": 1,
+  "text-halo-color": "#ffffff",
+  "text-halo-width": 2
+};
+
+/**
+ * Common text settings.
+ */
+const commonTextLayoutParams: SymbolLayout = {
+  "symbol-placement": "point",
+  "text-allow-overlap": false,
+  "text-field": ["get", "name"],
+  "text-justify": "auto",
+  "text-radial-offset": 1,
+  "text-size": 15
+};
+
+/**
+ * Text size and layout that lets maplibre relocate text space permitting.
+ */
+const defaultTextLayoutParams: SymbolLayout = {
+  ...commonTextLayoutParams,
+  "text-variable-anchor": [
+    "left",
+    "right",
+    "top",
+    "bottom",
+    "top-left",
+    "top-right",
+    "bottom-left",
+    "bottom-right"
+  ]
+};
+
+/**
+ * Default text + bold default fonts
+ */
+const defaultBoldTextLayoutParams = {
+  ...commonTextLayoutParams,
+  // FIXME: find a better way to set a bold font
+  "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+  "text-overlap": "never"
+};
+
+const routeFilter = ["==", "type", "route"];
+const stopFilter = ["==", "type", "stop"];
+const accessLegFilter = [
+  "match",
+  ["get", "type"],
+  ["BICYCLE", "SCOOTER", "MICROMOBILITY", "MICROMOBILITY_RENT", "CAR"],
+  true,
+  false
+];
+
 type Props = {
   activeLeg?: Leg;
-  transitiveData: TransitiveData;
+  transitiveData?: TransitiveData;
 };
+
 const TransitiveCanvasOverlay = ({
   activeLeg,
   transitiveData
 }: Props): JSX.Element => {
   const { current: map } = useMap();
 
-  transitiveData?.patterns.flatMap((pattern: TransitivePattern) =>
-    pattern.stops
-      .map(stop => stop.geometry)
-      .filter(geometry => !!geometry)
-      .map(geometry => polyline.toGeoJSON(geometry))
-  );
   const geojson: GeoJSON.FeatureCollection<
     GeoJSON.Geometry,
-    Record<any, any>
+    Record<string, unknown>
   > = {
     type: "FeatureCollection",
     // @ts-expect-error TODO: fix the type above for geojson
-    features: [
-      ...(transitiveData?.places || []).flatMap((place: TransitivePlace) => {
-        return {
-          type: "Feature",
-          properties: { name: place.place_name, type: "place" },
-          geometry: {
-            type: "Point",
-            coordinates: [place.place_lon, place.place_lat]
-          }
-        };
-      }),
-      ...(transitiveData?.journeys || []).flatMap(
-        (journey: TransitiveJourney) =>
-          journey.segments
-            .filter(segment => segment.streetEdges?.length > 0)
-            .map(segment => ({
-              ...segment,
-              geometries: segment.streetEdges.map(
-                edge => transitiveData.streetEdges[edge]
+    features: transitiveData
+      ? [
+          ...(transitiveData.places || []).flatMap((place: TransitivePlace) => {
+            return {
+              type: "Feature",
+              properties: {
+                color: modeColorMap[place.type] || "#008",
+                name: place.place_name,
+                type: place.type || "place"
+              },
+              geometry: {
+                type: "Point",
+                coordinates: [place.place_lon, place.place_lat]
+              }
+            };
+          }),
+          ...(transitiveData.journeys || []).flatMap(
+            (journey: TransitiveJourney) =>
+              journey.segments
+                .filter(segment => segment.streetEdges?.length > 0)
+                .map(segment => ({
+                  ...segment,
+                  geometries: segment.streetEdges.map(edge => {
+                    return transitiveData.streetEdges.find(
+                      entry => entry.edge_id === edge
+                    );
+                  })
+                }))
+                .flatMap(segment => {
+                  return segment.geometries.map(geometry => {
+                    return {
+                      type: "Feature",
+                      properties: {
+                        type: "street-edge",
+                        color: modeColorMap[segment.type] || "#008",
+                        mode: segment.type
+                      },
+                      geometry: polyline.toGeoJSON(geometry.geometry.points)
+                    };
+                  });
+                })
+          ),
+          // Extract the first and last stops of each transit segment for display.
+          ...(transitiveData.journeys || [])
+            .flatMap(journey => journey.segments)
+            .filter(segment => segment.type === "TRANSIT")
+            .map(segment =>
+              transitiveData.patterns.find(
+                p => p.pattern_id === segment.patterns[0]?.pattern_id
               )
-            }))
-            .flatMap(segment => {
-              return segment.geometries.map(geometry => {
-                return {
-                  type: "Feature",
-                  properties: {
-                    type: "street-edge",
-                    color: modeColorMap[segment.type] || "#008",
-                    mode: segment.type
-                  },
-                  geometry: polyline.toGeoJSON(geometry.geometry.points)
-                };
-              });
-            })
-      ),
-      ...(transitiveData?.patterns || []).flatMap(
-        (pattern: TransitivePattern) =>
-          pattern.stops
-            .map(stop => stop.geometry)
-            .filter(geometry => !!geometry)
-            .map(geometry => {
-              const route = Object.entries(transitiveData.routes).find(
-                r => r[1].route_id === pattern.route_id
-              )[1];
-
-              return {
-                type: "Feature",
-                properties: {
-                  color: `#${route.route_color || "000080"}`,
-                  name: route.route_short_name || route.route_long_name || "",
-                  routeType: route.route_type,
-                  type: "route"
-                },
-                geometry: polyline.toGeoJSON(geometry)
-              };
-            })
-      )
-    ]
+            )
+            .filter(pattern => !!pattern)
+            .flatMap(pattern =>
+              pattern.stops.filter(
+                (_, index, stopsArr) =>
+                  index === 0 || index === stopsArr.length - 1
+              )
+            )
+            .map(pStop =>
+              // pStop (from pattern.stops) only has an id (and sometimes line geometry)
+              transitiveData.stops.find(stop => stop.stop_id === pStop.stop_id)
+            )
+            .map(stop => ({
+              type: "Feature",
+              properties: { name: stop.stop_name, type: "stop" },
+              geometry: {
+                type: "Point",
+                coordinates: [stop.stop_lon, stop.stop_lat]
+              }
+            })),
+          ...(
+            transitiveData.patterns || []
+          ).flatMap((pattern: TransitivePattern) =>
+            patternToRouteFeature(pattern, transitiveData.routes)
+          )
+        ]
+      : []
   };
 
   const zoomToGeoJSON = geoJson => {
@@ -127,10 +201,17 @@ const TransitiveCanvasOverlay = ({
     zoomToGeoJSON(polyline.toGeoJSON(activeLeg.legGeometry.points));
   }, [activeLeg]);
 
+  if (!transitiveData) return <></>;
+
+  const { fromAnchor, toAnchor } = getFromToAnchors(transitiveData);
+
+  // Generally speaking, text/symbol layers placed first will be rendered in a lower layer
+  // (or, if it is text, rendered with a lower priority or not at all if higher-priority text overlaps).
   return (
     <Source data={geojson} id="itinerary" type="geojson">
-      {/* Create a layer for each line type
-          (conditional expressions are not supported for line-dash attributes). */}
+      {/* First, render access legs then transit lines so that all lines appear under any text or circle
+          and transit lines appears above access legs. Walking legs are under a separate layer
+          because they use a different line dash that cannot be an expression. */}
       <Layer
         // This layer is for WALK modes - dotted path
         filter={["all", ["==", "type", "street-edge"], ["==", "mode", "WALK"]]}
@@ -170,7 +251,7 @@ const TransitiveCanvasOverlay = ({
         type="line"
       />
       <Layer
-        filter={["==", "type", "route"]}
+        filter={routeFilter}
         id="routes"
         layout={{
           "line-join": "round",
@@ -184,37 +265,90 @@ const TransitiveCanvasOverlay = ({
         }}
         type="line"
       />
+
+      {/* Render access leg places then transit stops so that they appear sandwiched between text and lines,
+          with transit stops appearing above access leg places. */}
       <Layer
-        filter={["==", "type", "route"]}
-        id="routes-labels"
-        layout={{
-          "symbol-placement": "line",
-          "text-field": ["get", "name"],
-          "text-keep-upright": true,
-          "text-size": 16
-        }}
+        filter={accessLegFilter}
+        id="access-leg-circles"
         paint={{
-          "text-color": "#eee",
-          "text-halo-blur": 15,
+          "circle-color": ["get", "color"],
+          "circle-radius": 8,
+          "circle-stroke-color": "#fff",
+          "circle-stroke-width": 3
+        }}
+        type="circle"
+      />
+      <Layer
+        filter={stopFilter}
+        id="stops-circles"
+        paint={{
+          "circle-color": "#fff",
+          "circle-radius": 7,
+          "circle-stroke-width": 3
+        }}
+        type="circle"
+      />
+
+      {/* Render access leg places (lowest priority) then transit stop and route labels, then origin/destination (highest priority)
+          so the text appears above all graphics. */}
+      <Layer
+        filter={accessLegFilter}
+        id="access-leg-labels"
+        layout={defaultTextLayoutParams}
+        paint={defaultTextPaintParams}
+        type="symbol"
+      />
+      <Layer
+        filter={stopFilter}
+        id="stops-labels"
+        layout={defaultTextLayoutParams}
+        paint={defaultTextPaintParams}
+        type="symbol"
+      />
+      <Layer
+        // Render a solid background of fixed height using the uppercase route name.
+        filter={routeFilter}
+        id="routes-labels-background"
+        layout={getRouteLayerLayout("nameUpper")}
+        paint={{
+          "text-color": ["get", "color"],
           "text-halo-color": ["get", "color"],
-          "text-halo-width": 15
+          "text-halo-width": 4 // Max value is 1/4 of text size per maplibre docs.
         }}
         type="symbol"
       />
-      <Layer filter={["==", "type", "place"]} id="places" type="circle" />
       <Layer
-        filter={["==", "type", "place"]}
-        id="places-labels"
-        layout={{
-          "symbol-placement": "point",
-          "text-field": ["get", "name"],
-          "text-size": 12,
-          "text-anchor": "top",
-          "text-padding": 5,
-          "text-optional": true,
-          "text-allow-overlap": false
+        // This layer renders transit route names (foreground).
+        filter={routeFilter}
+        id="routes-labels"
+        layout={getRouteLayerLayout("name")}
+        paint={{
+          "text-color": ["get", "textColor"]
         }}
-        paint={{ "text-translate": [0, 5] }}
+        type="symbol"
+      />
+      <Layer
+        filter={["==", "type", "from"]}
+        id="from-label"
+        layout={{
+          ...defaultBoldTextLayoutParams,
+          "text-anchor": fromAnchor
+        }}
+        paint={defaultTextPaintParams}
+        type="symbol"
+      />
+      <Layer
+        filter={["==", "type", "to"]}
+        id="to-label"
+        layout={{
+          ...defaultBoldTextLayoutParams,
+          "text-anchor": toAnchor
+        }}
+        paint={{
+          ...defaultTextPaintParams,
+          "text-color": "#910818"
+        }}
         type="symbol"
       />
     </Source>

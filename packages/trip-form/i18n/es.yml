@@ -11,7 +11,7 @@ otpUi:
     optimizeBikeFriendly: Viaje en bicicleta
     optimizeBikeSpeed: Velocidad
     optimizeFor: Optimizar para
-    speedInMilesPerHour: '{mph} MPH'
+    speedInMilesPerHour: "{mph} MPH"
     walkSpeed: Velocidad caminando
     walkReluctanceHigh: Más Transporte Público
     walkReluctanceLow: Más Caminando

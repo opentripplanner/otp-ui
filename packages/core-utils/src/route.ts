@@ -442,8 +442,12 @@ export function makeRouteComparator(
  */
 export function getMostReadableTextColor(
   backgroundColor: string,
-  proposedTextColor = "#ffffff"
+  proposedTextColor?: string
 ): string {
+  // Sometimes input will defy the method signature. Therefore we need extra fallbacks
+  if (!backgroundColor) backgroundColor = "#333333";
+  if (!proposedTextColor) proposedTextColor = "#ffffff";
+
   if (!backgroundColor.startsWith("#")) {
     backgroundColor = `#${backgroundColor}`;
   }

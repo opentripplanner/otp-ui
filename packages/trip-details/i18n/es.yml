@@ -1,13 +1,15 @@
 otpUi:
   TripDetails:
-    calories: 'Calorías quemadas: <strong>{calories, number, ::.}</strong>'
-    caloriesDescription: "Las calorías quemadas se basan en <strong>{walkMinutes,\
+    calories: "Calorías quemadas: <strong>{calories, number, ::.}</strong>"
+    caloriesDescription:
+      "Las calorías quemadas se basan en <strong>{walkMinutes,\
       \ plural, one {# minuto} other {# minutos}}</strong> de caminata y <strong>{bikeMinutes,\
       \ plural, one {# minuto} other {# minutos}}</strong> en bicicleta durante este\
       \ viaje. Adaptado del <dietaryLink>Dietary Guidelines for Americans 2005, page\
       \ 16, Table 4</dietaryLink>.\n"
-    co2: 'CO<sub>2</sub> emitido: <strong>{co2}</strong>'
-    departure: Salida <strong>{departureDate, date, long}</strong> a las <strong>{departureDate,
+    co2: "CO<sub>2</sub> emitido: <strong>{co2}</strong>"
+    departure:
+      Salida <strong>{departureDate, date, long}</strong> a las <strong>{departureDate,
       time, short}</strong>
     fareDetailsHeaders:
       cash: Efectivo
@@ -17,11 +19,12 @@ otpUi:
       youth: Juventud
       electronic: Electrónico
     title: Detalles del viaje
-    tncFare: '{companies} Tarifa: <strong>{minTNCFare} - {maxTNCFare}</strong>'
+    tncFare: "{companies} Tarifa: <strong>{minTNCFare} - {maxTNCFare}</strong>"
     transitFare: Tarifa de tránsito
-    transitFareEntry: '{name} : <strong>{value}</strong>'
+    transitFareEntry: "{name} : <strong>{value}</strong>"
     tripIncludesFlex: Este viaje incluye rutas flexibles. {extraMessage}
-    co2description: La intensidad de CO<sub>2 </sub> se calcula multiplicando la distancia
+    co2description:
+      La intensidad de CO<sub>2 </sub> se calcula multiplicando la distancia
       de cada tramo de un viaje por la intensidad de CO<sub>2</sub> de cada modo.
       La intensidad de CO<sub>2 </sub> de cada modo se deriva de esta <link>hoja de
       cálculo</link>.

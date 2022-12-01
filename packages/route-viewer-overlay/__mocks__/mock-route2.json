@@ -1,0 +1,31 @@
+{
+  "id": "TriMet:90",
+  "agency": {
+    "id": "TRIMET",
+    "name": "TriMet",
+    "url": "http://trimet.org/",
+    "timezone": "America/Los_Angeles",
+    "lang": "en",
+    "phone": "503-238-RIDE",
+    "fareUrl": "http://trimet.org/fares/"
+  },
+  "longName": "MAX Red Line",
+  "type": 0,
+  "url": "http://trimet.org//schedules/r090.htm",
+  "color": "D81526",
+  "textColor": "FFFFFF",
+  "routeBikesAllowed": 0,
+  "bikesAllowed": 0,
+  "sortOrder": 120,
+  "sortOrderSet": true,
+  "patterns": {
+    "TriMet:90:1:01": {
+      "id": "TriMet:90:1:01",
+      "desc": "MAX Red Line to Gateway/NE 99th Ave TC MAX Station (TriMet:8370)",
+      "geometry": {
+        "points": "cyfuGh~fkV~@mAx@iAPOLMFEHEFERMRMb@WPMLKLMLOJOFIFMDIFMFMDKDO`@uAb@{AbAmDvA_FPo@FWFWBQBOBQBK@QBUB]@Q@]@O?Q?Q?Q?O?QAUCe@AOAQCUCSEUEWEQCMKc@a@yAGWEOEOCMCMCMCOAKAMCOAO?QAO?O@O?O@O@QBOD]BIBMBMDSDOZiAT{@HYJ_@p@aC~@eDp@oBPi@H[JYJ[p@_C^uALa@Tq@Na@X}@L_@J_@l@uBlAgEb@wAVaAJ[Ja@T}@Ha@Pk@Ps@J[FSFWNi@x@wCz@yCt@eC|@_DJ[DMFOBKN_@FMFMN[FKR]HMHMHKFGHMJMLMHIJIJKPMHGFGTMNKLGJEXMRGFCTG\\KzAYRCREf@K^GRE\\G\\G^Gr@M^K^KZKNILGLINININMVSLMJKHKJKJMLOLQJOHMFMR_@FMFMJWFQFKHWBKL_@xAcFj@qBHYFWBODMBKBMBO@M@KBO@O@M@O?M@O?O?Q?SAa@AYCe@KwCAWAYAS?M?O?W?K@K@M@M@ODSBMBMBOBKJ]DQt@gCLc@DOHWDOHSBIDILUHOHKHKHIJIHEJIJELELEJCLAJAN?RAV?tMBpD@tC@\\?J?J?J@H?PBL@LBHBJBJDHBNHLFJJNJJJTVX^v@hAv@jAnBrCvApB^j@PT`@l@hF`IjAfBfA~AfDzEvApBlAfBfA~ATZTZp@v@RR@@PPNL\\^XRTPTL\\T^P`@P^NVHd@Ld@LVDRBRBRBTBT@T@P?P@b@AV?XCZATCTEZEXEZGRGTGRGRGb@ONIPGRINIPKPITOTMTQTOXUVUVSTUTWTWJK^e@NSPWb@q@fAgBx@sAr@iAjCgET]R[RWTYVYVWXWVUXUZUZSZSVMXMXMZMXKZIt@OZGZEZCZEZA\\AZ?\\@Z@ZB\\BZDZD\\H\\H\\J^JhEvAdEtAZJXF\\HD@VD\\Bh@@h@Ah@Ad@Ah@ClAKXCVAJ?JAV?V@T@VBJ@\\DRDRFRDjBh@fAZ`Cp@|Bp@hBf@xDfAl@NTFjBf@JBx@VNDZJb@JTFl@JjARrGdAh@Hf@FZDVB^D~@Hz@Dx@BH@v@@t@@r@ArAAhDEJCFENOFM@KBSAYCQOWKIm@WKEi@OYOSIQGICIAWGIAk@Gc@?UBgAZi@L",
+        "length": 479
+      }
+    }
+  }
+}

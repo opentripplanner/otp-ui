@@ -6,7 +6,7 @@ otpUi:
   queryParameters:
     bikeSpeed: 自行车速度
     maxWalkDistance: 最大步行
-    speedInMilesPerHour: '{mph} 英里/小时'
+    speedInMilesPerHour: "{mph} 英里/小时"
     maxBikeDistance: 最大自行车
     maxBikeTime: 最大自行车时间
     maxEScooterDistance: 电动滑板车最大距离

@@ -11,7 +11,7 @@ otpUi:
     myPlaces: 我的地方
     nearby: 附近的车站
     other: 其他
-    placeNameWithDetails: '{placeName} ({details})'
+    placeNameWithDetails: "{placeName} ({details})"
     recentlySearched: 最近搜索到的
     stations: 站台
     useCurrentLocation: 使用当前位置

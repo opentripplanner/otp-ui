@@ -3,7 +3,7 @@ import { Map, MapProps } from "react-map-gl";
 import maplibregl, { Event } from "maplibre-gl";
 
 import * as Styled from "./styled";
-import callIfValid from "./util";
+import * as util from "./util";
 import MarkerWithPopup from "./MarkerWithPopup";
 
 /**
@@ -38,13 +38,11 @@ type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
   // Unknown is used here because of a maplibre/mapbox issue with the true type, MapLayerMouseEvent
   onContextMenu?: (e: unknown) => void;
   /** A callback method which is fired when the map zoom or map bounds change */
-  // TODO: does this cause integration issues?
-  onViewportChanged?: (e: maplibregl.MapLibreEvent) => void;
+  onViewportChanged?: (e: State) => void;
   /** An initial zoom value for the map */
   zoom?: number;
 };
 type State = {
-  fitBoundsOptions?: Record<string, number | string | boolean>;
   latitude: number;
   longitude: number;
   zoom: number;
@@ -65,13 +63,6 @@ const BaseMap = ({
   zoom: initZoom = 12
 }: Props): JSX.Element => {
   const [viewState, setViewState] = React.useState<State>({
-    fitBoundsOptions: {
-      animate: true,
-      duration: 300,
-      essential: false,
-      maxDuration: 600,
-      padding: 200
-    },
     latitude: center?.[0],
     longitude: center?.[1],
     zoom: initZoom
@@ -83,7 +74,9 @@ const BaseMap = ({
   const [longPressTimer, setLongPressTimer] = useState(null);
 
   useEffect(() => {
-    callIfValid(onViewportChanged)(viewState);
+    if (typeof onViewportChanged === "function") {
+      onViewportChanged(viewState);
+    }
   }, [viewState]);
 
   useEffect(() => {
@@ -209,4 +202,4 @@ const LayerWrapper = (props: LayerProps): JSX.Element => {
 
 export const Popup = Styled.Popup;
 
-export { LayerWrapper, MarkerWithPopup, Styled };
+export { LayerWrapper, MarkerWithPopup, Styled, util };

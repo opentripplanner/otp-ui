@@ -1,7 +1,7 @@
 otpUi:
   VehicleRentalOverlay:
-    availableBikes: 'Bicicletas disponibles: {value}'
-    availableDocks: 'Estaciones de carga disponibles: {value}'
-    floatingBike: 'Bicicleta flotante: {name}'
-    floatingCar: '{company} {name}'
-    floatingEScooter: '{company} E-scooter'
+    availableBikes: "Bicicletas disponibles: {value}"
+    availableDocks: "Estaciones de carga disponibles: {value}"
+    floatingBike: "Bicicleta flotante: {name}"
+    floatingCar: "{company} {name}"
+    floatingEScooter: "{company} E-scooter"

@@ -14,7 +14,7 @@ otpUi:
     optimizeBikeFlat: 플랫 트립
     optimizeBikeFriendly: 자전거 친화적 인 여행
     optimizeBikeSpeed: 속도
-    speedInMilesPerHour: '{mph} MPH'
+    speedInMilesPerHour: "{mph} MPH"
     walkReluctance: 걷는 회피
     walkReluctanceHigh: 더 많은 대중 교통
     walkReluctanceLow: 더 많은 걷기

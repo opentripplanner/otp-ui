@@ -6,15 +6,17 @@ otpUi:
     fetchingLocation: Buscando la ubicación...
     beingTypingPrompt: Comience a escribir para buscar ubicaciones
     clearLocation: Restablecer la ubicación
-    geocoderUnreachable: No se ha podido contactar con el geocodificador{error, select,
+    geocoderUnreachable:
+      No se ha podido contactar con el geocodificador{error, select,
       undefined {} other { ({error})}}
     homeLocation: Residencia
     myPlaces: Mis Lugares
     nearby: Paradas cercanas
     other: Otro
-    placeNameWithDetails: '{placeName} ({details})'
+    placeNameWithDetails: "{placeName} ({details})"
     stops: Paradas
     recentlySearched: Buscado Recientemente
     stations: Estaciones
-    noResultsFound: "No se han encontrado resultados para {input, select,\n null {su\
+    noResultsFound:
+      "No se han encontrado resultados para {input, select,\n null {su\
       \ consulta}\n other {{input}}\n }\n"

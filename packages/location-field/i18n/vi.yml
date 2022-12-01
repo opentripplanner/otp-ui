@@ -1,18 +1,20 @@
 otpUi:
   LocationField:
     beingTypingPrompt: Bắt đầu gõ để tìm kiếm các địa điểm
-    noResultsFound: "Không tìm thấy kết quả cho {input, select,\n null {vấn của bạn}\n\
+    noResultsFound:
+      "Không tìm thấy kết quả cho {input, select,\n null {vấn của bạn}\n\
       \ other {{input}}\n }\n"
     clearLocation: Vị trí rõ ràng
     currentLocationUnavailable: Vị trí hiện tại không có sẵn ({error})
     fetchingLocation: Tìm nạp vị trí…
-    geocoderUnreachable: Không thể đến bộ định vị địa lý{error, select, undefined
+    geocoderUnreachable:
+      Không thể đến bộ định vị địa lý{error, select, undefined
       {} other { ({error})}}
     homeLocation: Nhà
     myPlaces: Những địa điểm của tôi
     nearby: Trạm dừng liền kề
     other: Khác
-    placeNameWithDetails: '{placeName} ({details})'
+    placeNameWithDetails: "{placeName} ({details})"
     recentlySearched: Gần đây đã tìm kiếm
     stations: Trạm
     stops: Điểm dừng

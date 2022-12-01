@@ -5,5 +5,5 @@ otpUi:
     forgetWork: Xóa vị trí cơ quan của tôi
     saveAsHome: Lưu làm vị trí nhà riêng
     saveAsWork: Lưu làm vị trí cơ quan
-    coordinates: '{lat, number, ::.00000}; {lon, number, ::.00000}'
+    coordinates: "{lat, number, ::.00000}; {lon, number, ::.00000}"
     swapLocation: Thay đổi thành địa điểm {locationType}
