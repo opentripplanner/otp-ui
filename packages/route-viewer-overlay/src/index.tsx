@@ -117,16 +117,17 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
 
     patterns.forEach(ptn => {
       ptn.stops?.forEach(stop => {
-        if (stop.geometries?.geoJson?.type === "Polygon") {
+        const { geoJson } = stop.geometries || {};
+        if (geoJson?.type === "Polygon") {
           // If flex location, add the polygon (the first and only entry in coordinates) to the route bounds.
-          const coordsArray = stop.geometries.geoJson.coordinates[0];
+          const coordsArray = geoJson.coordinates[0];
           bounds = coordsArray.reduce(
             reduceBounds,
             bounds || new LngLatBounds(coordsArray[0], coordsArray[0])
           );
-        } else {
+        } else if (geoJson) {
           // Regular stops might be (well) outside of route pattern shapes, so add them.
-          const coords = stop.geometries.geoJson.coordinates;
+          const coords = geoJson.coordinates;
           bounds = bounds
             ? bounds.extend(coords)
             : new LngLatBounds(coords, coords);
