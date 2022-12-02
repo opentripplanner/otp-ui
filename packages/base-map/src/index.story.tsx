@@ -1,5 +1,5 @@
 /* eslint-disable react/button-has-type */
-import React from "react";
+import React, { useState } from "react";
 import {
   AttributionControl,
   MapProvider,
@@ -179,3 +179,31 @@ export const withOptionalControls = () => (
   </BaseMap>
 );
 withOptionalControls.decorators = [withMap()];
+
+export const withMultipleBaseLayers = () => {
+  const [mapTilerKey, setMapTilerKey] = useState("");
+  return (
+    <Styled.StoryMapContainer>
+      <input
+        type="text"
+        value={mapTilerKey}
+        placeholder="MapTiler API Key"
+        onChange={e => setMapTilerKey(e.target.value)}
+      />
+      {mapTilerKey && (
+        <BaseMap
+          center={center}
+          baseLayer={[
+            `https://api.maptiler.com/maps/streets/style.json?key=${mapTilerKey}`,
+            `https://api.maptiler.com/maps/ocean/style.json?key=${mapTilerKey}`,
+            `https://api.maptiler.com/maps/hybrid/style.json?key=${mapTilerKey}`
+          ]}
+          baseLayerNames={["Streets", "Ocean", "Hybrid"]}
+        >
+          {" "}
+          <AllVehiclesOverlay />
+        </BaseMap>
+      )}
+    </Styled.StoryMapContainer>
+  );
+};

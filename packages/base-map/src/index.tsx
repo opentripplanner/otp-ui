@@ -23,7 +23,9 @@ import MarkerWithPopup from "./MarkerWithPopup";
  */
 type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
   /** A URL pointing to the vector tile specification which should be used as the main map.  */
-  baseLayer?: string;
+  baseLayer?: string | string[];
+  /** A list of names to match onto the base layers */
+  baseLayerNames?: string[];
   /** A [lat, lon] position to center the map at. */
   center?: [number, number];
   /** A unique identifier for the map (useful when using MapProvider) */
@@ -51,6 +53,7 @@ type State = {
 const BaseMap = ({
   // These tiles are free to use, but not in production
   baseLayer = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
+  baseLayerNames,
   center,
   children,
   id,
@@ -102,6 +105,9 @@ const BaseMap = ({
   const [hiddenLayers, setHiddenLayers] = useState(
     toggleableLayers.filter(layer => !layer?.visible).map(layer => layer.id)
   );
+  const [activeBaseLayer, setActiveBaseLayer] = useState(
+    typeof baseLayer === "object" ? baseLayer?.[0] : baseLayer
+  );
 
   return (
     <Map
@@ -111,7 +117,7 @@ const BaseMap = ({
       latitude={viewState.latitude}
       longitude={viewState.longitude}
       mapLib={maplibregl}
-      mapStyle={baseLayer}
+      mapStyle={activeBaseLayer}
       maxZoom={maxZoom}
       onClick={onClick}
       onContextMenu={onContextMenu}
@@ -132,7 +138,8 @@ const BaseMap = ({
       style={style}
       zoom={viewState.zoom}
     >
-      {toggleableLayers.length > 0 && (
+      {(toggleableLayers.length > 0 ||
+        (typeof baseLayer === "object" && baseLayer.length > 1)) && (
         <Styled.LayerSelector
           onTouchEnd={() => {
             setFakeMobileHover(true);
@@ -143,6 +150,24 @@ const BaseMap = ({
           <ul
             className={`layers-list ${fakeMobileHover && "fake-mobile-hover"}`}
           >
+            {typeof baseLayer === "object" &&
+              baseLayer.map((layer: string, index: number) => {
+                return (
+                  <li key={index}>
+                    {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+                    <label>
+                      <input
+                        type="radio"
+                        checked={activeBaseLayer === layer}
+                        onChange={() => setActiveBaseLayer(layer)}
+                        id={layer}
+                      />
+                      {baseLayerNames?.[index] || layer}
+                    </label>
+                  </li>
+                );
+              })}
+
             {toggleableLayers.map((layer: LayerProps, index: number) => {
               return (
                 <li key={index}>
