@@ -91,26 +91,49 @@ export function extractModeSettingDefaultsToObject(
   }, {});
 }
 
+const TRANSIT_MODES = [
+  "AIRPLANE",
+  "BUS",
+  "CABLE_CAR",
+  "FERRY",
+  "FUNICULAR",
+  "GONDOLA",
+  "RAIL",
+  "SUBWAY",
+  "TRAM",
+  "TRANSIT"
+];
+
+function checkIfModeSettingApplies(
+  setting: ModeSetting,
+  mode: TransportMode
+): boolean {
+  if (setting.applicableMode === "TRANSIT") {
+    return TRANSIT_MODES.includes(setting.applicableMode);
+  }
+  return setting.applicableMode === mode.mode;
+}
+
 /**
  * Higher order function that can be used in `map` to add mode settings to mode button definitions.
  * @param settings Mode settings to be added to button
  * @returns Function that accepts a mode button definition, returning mode button def with populated settings
  */
 export const addSettingsToButton = (settings: ModeSetting[]) => (
-  combination: ModeButtonDefinition
+  button: ModeButtonDefinition
 ): ModeButtonDefinition => {
-  const settingsForThisCombination = combination.modes.reduce<ModeSetting[]>(
+  const settingsForThisCombination = button.modes.reduce<ModeSetting[]>(
     (prev, mode) => {
       return [
         ...prev,
-        ...settings.filter(def => def.applicableMode === mode.mode)
+        ...settings.filter(def => checkIfModeSettingApplies(def, mode))
       ];
     },
     []
   );
 
   return {
-    ...combination,
+    ...button,
     modeSettings: settingsForThisCombination
   };
 };
