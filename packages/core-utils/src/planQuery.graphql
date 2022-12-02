@@ -70,6 +70,7 @@ query Query1(
 					shortName
 					color
 					textColor
+					id
 					type
 				}
 				from {
