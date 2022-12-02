@@ -199,10 +199,7 @@ export const withMultipleBaseLayers = () => {
             `https://api.maptiler.com/maps/hybrid/style.json?key=${mapTilerKey}`
           ]}
           baseLayerNames={["Streets", "Ocean", "Hybrid"]}
-        >
-          {" "}
-          <AllVehiclesOverlay />
-        </BaseMap>
+        />
       )}
     </Styled.StoryMapContainer>
   );
