@@ -10,7 +10,7 @@ import {
 import styled from "styled-components";
 // The below eslint-disable is due to https://github.com/storybookjs/storybook/issues/13408
 // eslint-disable-next-line import/no-named-as-default
-import TripDetails from ".";
+import TripDetails, { FareLegTable } from ".";
 import * as TripDetailsClasses from "./styled";
 import {
   CaloriesDetailsProps,
@@ -348,3 +348,14 @@ export const FareComponentsItinerary = makeStory({
 });
 
 export const OTP2FlexItinerary = makeStory({ itinerary: flexItinerary });
+
+export const FareLegTableStory = (): ReactElement => {
+  return (
+    <FareLegTable
+      layout={fareByLegLayout}
+      legs={walkInterlinedTransitItinerary.legs}
+      transitFareDetails={walkInterlinedTransitItinerary.fare?.details}
+      transitFares={walkInterlinedTransitItinerary.fare?.fare}
+    />
+  );
+};
