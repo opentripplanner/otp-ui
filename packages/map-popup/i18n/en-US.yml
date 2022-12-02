@@ -1,0 +1,16 @@
+# Default messages for the TripDetails component.
+# To use from a react-intl application:
+# - merge the content of this file into the messages object
+#   that has your other localized strings,
+# - flatten the ids, i.e. convert a structure such as
+#      otpUi > TripDetails > calories
+#   into "otpUi.TripDetails.calories" (see TripDetail story for an example),
+# - pass the resulting object to the messages prop of IntlProvider.
+#
+# The meaning of the pseudo <tags> used in the strings below is as follows:
+# - <dietaryLink>: The link to the Dietary Guidelines for Americans will surround the text enclosed by the tag.
+# - <strong>: The enclosed text will be rendered as strong (bold) text (same meaning as in HTML).
+
+otpUi:
+  MapPopup:
+    test: test
