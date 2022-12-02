@@ -1,5 +1,6 @@
 import polyline from "@mapbox/polyline";
 import { LngLatBounds } from "maplibre-gl";
+import { util } from "@opentripplanner/base-map";
 import { Layer, Source, useMap } from "react-map-gl";
 import React, { useEffect, useMemo } from "react";
 
@@ -32,11 +33,8 @@ const TripViewerOverlay = (props: Props): JSX.Element => {
 
   const { current: map } = useMap();
   useEffect(() => {
-    if (bounds.length === 4 && bounds.every(Number.isFinite)) {
-      map?.fitBounds(bounds, {
-        duration: 500,
-        padding: 200
-      });
+    if (map && bounds.length === 4 && bounds.every(Number.isFinite)) {
+      util.fitMapBounds(map, bounds);
     }
   }, [map, bounds]);
 
