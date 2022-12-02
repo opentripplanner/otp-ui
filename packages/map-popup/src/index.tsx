@@ -66,20 +66,20 @@ export function MapPopup({ configCompanies, entity, getEntityName, setLocation, 
           <div>
             <FormattedMessage
               defaultMessage={
-                defaultMessages["otpUi.VehicleRentalOverlay.availableBikes"]
+                defaultMessages["otpUi.MapPopup.availableBikes"]
               }
               description="Label text for the number of bikes available"
-              id="otpUi.VehicleRentalOverlay.availableBikes"
+              id="otpUi.MapPopup.availableBikes"
               values={{ value: entity.bikesAvailable }}
             />
           </div>
           <div>
             <FormattedMessage
               defaultMessage={
-                defaultMessages["otpUi.VehicleRentalOverlay.availableDocks"]
+                defaultMessages["otpUi.MapPopup.availableDocks"]
               }
               description="Label text for the number of docks available"
-              id="otpUi.VehicleRentalOverlay.availableDocks"
+              id="otpUi.MapPopup.availableDocks"
               values={{ value: entity.spacesAvailable }}
             />
           </div>
@@ -91,9 +91,9 @@ export function MapPopup({ configCompanies, entity, getEntityName, setLocation, 
         <span>
           <strong>
             <FormattedMessage
-              defaultMessage={defaultMessages["otpUi.StopsOverlay.stopId"]}
+              defaultMessage={defaultMessages["otpUi.MapPopup.stopId"]}
               description="Displays the stop id"
-              id="otpUi.StopsOverlay.stopId"
+              id="otpUi.MapPopup.stopId"
               values={{
                 stopId
               }}
@@ -102,9 +102,9 @@ export function MapPopup({ configCompanies, entity, getEntityName, setLocation, 
         </span>
         <S.ViewStopButton onClick={() => setViewedStop(stopId)}>
           <FormattedMessage
-            defaultMessage={defaultMessages["otpUi.StopsOverlay.stopViewer"]}
+            defaultMessage={defaultMessages["otpUi.MapPopup.stopViewer"]}
             description="Text for link that opens the stop viewer"
-            id="otpUi.StopsOverlay.stopViewer"
+            id="otpUi.MapPopup.stopViewer"
           />
         </S.ViewStopButton>
       </BaseMapStyled.PopupRow>}

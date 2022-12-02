@@ -28,20 +28,18 @@ export function makeDefaultGetEntityName(
     if ("isFloatingBike" in entity && entity.isFloatingBike) {
       stationName = intl.formatMessage(
         {
-          defaultMessage:
-            defaultEnglishMessages["otpUi.VehicleRentalOverlay.floatingBike"],
+          defaultMessage: defaultEnglishMessages["otpUi.MapPopup.floatingBike"],
           description: "Popup title for a free-floating bike",
-          id: "otpUi.VehicleRentalOverlay.floatingBike"
+          id: "otpUi.MapPopup.floatingBike"
         },
         { name: stationName || stationNetworks }
       );
     } else if ("isFloatingCar" in entity && entity.isFloatingCar) {
       stationName = intl.formatMessage(
         {
-          defaultMessage:
-            defaultEnglishMessages["otpUi.VehicleRentalOverlay.floatingCar"],
+          defaultMessage: defaultEnglishMessages["otpUi.MapPopup.floatingCar"],
           description: "Popup title for a free-floating car",
-          id: "otpUi.VehicleRentalOverlay.floatingCar"
+          id: "otpUi.MapPopup.floatingCar"
         },
         {
           company: stationNetworks,
@@ -53,11 +51,9 @@ export function makeDefaultGetEntityName(
       stationName = intl.formatMessage(
         {
           defaultMessage:
-            defaultEnglishMessages[
-              "otpUi.VehicleRentalOverlay.floatingEScooter"
-            ],
+            defaultEnglishMessages["otpUi.MapPopup.floatingEScooter"],
           description: "Popup title for a free-floating e-scooter",
-          id: "otpUi.VehicleRentalOverlay.floatingEScooter"
+          id: "otpUi.MapPopup.floatingEScooter"
         },
         { name: stationName || stationNetworks }
       );
