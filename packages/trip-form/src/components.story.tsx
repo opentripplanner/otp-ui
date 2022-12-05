@@ -279,7 +279,10 @@ export const metroModeSelector = makeStory(MetroModeSelectorWithQP, {
       key: "TRANSIT",
       modes: [
         {
-          mode: "TRANSIT"
+          mode: "BUS"
+        },
+        {
+          mode: "RAIL"
         }
       ]
     },

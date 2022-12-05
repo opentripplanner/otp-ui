@@ -109,7 +109,7 @@ function checkIfModeSettingApplies(
   mode: TransportMode
 ): boolean {
   if (setting.applicableMode === "TRANSIT") {
-    return TRANSIT_MODES.includes(setting.applicableMode);
+    return TRANSIT_MODES.includes(mode.mode);
   }
   return setting.applicableMode === mode.mode;
 }
@@ -122,14 +122,15 @@ function checkIfModeSettingApplies(
 export const addSettingsToButton = (settings: ModeSetting[]) => (
   button: ModeButtonDefinition
 ): ModeButtonDefinition => {
-  const settingsForThisCombination = button.modes.reduce<ModeSetting[]>(
-    (prev, mode) => {
-      return [
-        ...prev,
-        ...settings.filter(def => checkIfModeSettingApplies(def, mode))
-      ];
-    },
-    []
+  const settingsForThisCombination = Array.from(
+    new Set(
+      button.modes.reduce<ModeSetting[]>((prev, mode) => {
+        return [
+          ...prev,
+          ...settings.filter(def => checkIfModeSettingApplies(def, mode))
+        ];
+      }, [])
+    )
   );
 
   return {
