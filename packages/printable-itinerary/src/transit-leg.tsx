@@ -20,6 +20,9 @@ export default function TransitLeg({
   LegIcon,
   interlineFollows
 }: Props): ReactElement {
+  const stopIdFrom = leg.from.stopCode || leg.from.stopId.split(":")[1];
+  const stopIdTo = leg.to.stopCode || leg.to.stopId.split(":")[1];
+
   const routeDescription = (
     <>
       <strong>{leg.routeShortName}</strong> <S.RouteLongName leg={leg} />
@@ -35,6 +38,7 @@ export default function TransitLeg({
       id="otpUi.PrintableItinerary.TransitLeg.alight"
       values={{
         place: leg.to.name,
+        stopId: stopIdTo,
         strong: strongText,
         time: leg.endTime
       }}
@@ -88,6 +92,7 @@ export default function TransitLeg({
               id="otpUi.PrintableItinerary.TransitLeg.board"
               values={{
                 place: leg.from.name,
+                stopId: stopIdFrom,
                 strong: strongText,
                 time: leg.startTime
               }}
