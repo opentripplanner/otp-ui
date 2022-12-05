@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[36],{"./node_modules/mapbox-gl/index.js":function(module,exports){exports.printMsg=function(){console.log("This is a message from the demo package")}}}]);
