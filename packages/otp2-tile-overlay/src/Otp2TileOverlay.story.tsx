@@ -28,3 +28,8 @@ export const OtpTileLayer = (): JSX.Element => {
     </>
   );
 };
+
+// Don't take a snapshot of an interactive component
+OtpTileLayer.parameters = {
+  storyshots: { disable: true }
+};

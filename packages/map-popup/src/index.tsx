@@ -35,7 +35,7 @@ type Props = {
  * Renders a map popup for a stop, scooter, or shared bike
  */
 export function MapPopup({ configCompanies, entity, getEntityName, setLocation, setViewedStop, }: Props): JSX.Element {
-  if (!entity) return null
+  if (!entity) return <></>
   const intl = useIntl()
 
   const getNameFunc = getEntityName || makeDefaultGetEntityName(intl, defaultEnglishMessages);

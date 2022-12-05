@@ -10,7 +10,7 @@ export function makeDefaultGetEntityName(
   return function defaultGetEntityName(
     entity: Station | Stop,
     configCompanies: Company[]
-  ): string {
+  ): string | null {
     const stationNetworks =
       "networks" in entity &&
       (coreUtils.itinerary.getCompaniesLabelFromNetworks(
@@ -18,7 +18,7 @@ export function makeDefaultGetEntityName(
         configCompanies
       ) ||
         entity?.networks?.[0]);
-    let stationName = entity.name || entity.id;
+    let stationName: string | null = entity.name || entity.id;
     // If the station name or id is a giant UUID (with more than 3 "-" characters)
     // best not to show that at all. The company name will still be shown.
     if ((stationName.match(/-/g) || []).length > 3) {

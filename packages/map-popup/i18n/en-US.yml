@@ -1,10 +1,10 @@
-# Default messages for the TripDetails component.
+# Default messages for the MapPopup component.
 # To use from a react-intl application:
 # - merge the content of this file into the messages object
 #   that has your other localized strings,
 # - flatten the ids, i.e. convert a structure such as
-#      otpUi > TripDetails > calories
-#   into "otpUi.TripDetails.calories" (see TripDetail story for an example),
+#      otpUi > MapPopup > stopViewer
+#   into "otpUi.MapPopup.stopViewer" (see TripDetail story for an example),
 # - pass the resulting object to the messages prop of IntlProvider.
 #
 # The meaning of the pseudo <tags> used in the strings below is as follows:

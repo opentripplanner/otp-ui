@@ -3,12 +3,7 @@ import {
   MapLocationActionArg,
 } from "@opentripplanner/types"
 import { Layer, Popup,  Source, useMap } from "react-map-gl"
-// TODO: Once OTP1 support is deprecated, move this into this package and merge
-// See: https://github.com/opentripplanner/otp-ui/pull/472#discussion_r1023121840
-import { StationPopup } from "@opentripplanner/vehicle-rental-overlay"
-// TODO: Once OTP1 support is deprecated, move this into this package and merge
-// See: https://github.com/opentripplanner/otp-ui/pull/472#discussion_r1023121840
-import { StopPopup } from "@opentripplanner/stops-overlay"
+import EntityPopup from "@opentripplanner/map-popup"
 import React, { useEffect, useState } from "react"
 // eslint-disable-next-line prettier/prettier
 import type { EventData } from "mapbox-gl"
@@ -132,30 +127,16 @@ const OTP2TileLayerWithPopup = ({
           // TODO: only set null if the x is clicked, not a new stop
           onClose={() => setClickedEntity(null)}
         >
-          {clickedEntity.sourceLayer.includes("rental") && (
-            <StationPopup
+            <EntityPopup
               configCompanies={configCompanies}
+              setViewedStop={setViewedStop}
               setLocation={setLocation ? (location) => {
                 setClickedEntity(null)
                 setLocation(location)
               } : null}
-              station={clickedEntity}
+              entity={{ ...clickedEntity, id: clickedEntity?.id || clickedEntity?.gtfsId }}
             />
-          )}
-          {(clickedEntity.sourceLayer.includes("stop") ||
-            clickedEntity.sourceLayer.includes("station")) && (
-            <StopPopup
-                setLocation={setLocation ? (location) => {
-                setClickedEntity(null)
-                setLocation(location)
-              } : null}
-                setViewedStop={setViewedStop ? (stop) => {
-                setClickedEntity(null)
-                setViewedStop(stop)
-              } : null}
-                stop={{ ...clickedEntity, id: clickedEntity.gtfsId }}
-              />
-          )}
+         
         </Popup>
       )}
     </>
