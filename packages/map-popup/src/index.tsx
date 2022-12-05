@@ -18,7 +18,7 @@ import { makeDefaultGetEntityName } from "./util";
 // the YAML loaders behave differently between webpack and our version of jest:
 // - the yaml loader for webpack returns a nested object,
 // - the yaml loader for jest returns messages with flattened ids.
-export const defaultMessages = flatten(defaultEnglishMessages);
+export const defaultMessages: { [key:string]:string } = flatten(defaultEnglishMessages);
 
 type Entity = Stop | Station
 type Props = {
@@ -38,7 +38,7 @@ export function MapPopup({ configCompanies, entity, getEntityName, setLocation, 
   if (!entity) return <></>
   const intl = useIntl()
 
-  const getNameFunc = getEntityName || makeDefaultGetEntityName(intl, defaultEnglishMessages);
+  const getNameFunc = getEntityName || makeDefaultGetEntityName(intl, defaultMessages);
   const name = getNameFunc(entity, configCompanies);
 
   const generateLocation = () => {
