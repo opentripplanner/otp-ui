@@ -65,7 +65,8 @@ function populateSettingsWithValues(
   return modeSettings.map(setting => {
     let convertedVal;
     if (setting.type === ModeSettingTypes.CHECKBOX) {
-      convertedVal = Boolean(values[setting.key]);
+      // If the parameter is anything besides the string "true", it will be false
+      convertedVal = values[setting.key] === "true";
     } else if (setting.type === ModeSettingTypes.SLIDER) {
       convertedVal = Number(values[setting.key]);
     }
@@ -188,10 +189,6 @@ export function getActivatedModesFromQueryParams(
 ): { activeModes: TransportMode[]; modeSettings: ModeSetting[] } {
   const queryObject = new URLSearchParams(searchString);
 
-  // console.log({
-  //   modeButtons: queryObject.get("modeButtons"),
-  //   modeSettings: queryObject.get("modeSettings")
-  // });
   const decodedQuery = decodeQueryParams(
     { modeButtons: DelimitedArrayParam, modeSettings: ObjectParam },
     {
@@ -199,8 +196,6 @@ export function getActivatedModesFromQueryParams(
       modeSettings: queryObject.get("modeSettings")
     }
   );
-
-  // console.log(decodedQuery);
 
   const enabledKeys =
     decodedQuery.modeButtons || initialState.enabledModeButtons;
@@ -212,9 +207,6 @@ export function getActivatedModesFromQueryParams(
     ...initialState.modeSettingValues,
     ...decodedQuery.modeSettings
   };
-  console.log(extractModeSettingDefaultsToObject(modeSettingDefinitions));
-  console.log(decodedQuery.modeSettings);
-  console.log(modeSettingValues);
 
   const modeSettingsWithValues = populateSettingsWithValues(
     modeSettingDefinitions,
