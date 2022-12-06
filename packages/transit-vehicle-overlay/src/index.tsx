@@ -1,33 +1,58 @@
 import { MarkerWithPopup } from "@opentripplanner/base-map";
-import utils from "@opentripplanner/core-utils";
 import { TransitVehicle } from "@opentripplanner/types";
-import React from "react";
+import React, { FC, ReactNode } from "react";
 
-import { getTransitIcon } from "./TransitIcons";
+import withCaret from "./WithCaret";
+import {
+  Circle,
+  getStyledContainer,
+  RotatingCircle,
+  withRouteColorBackground
+} from "./styled";
+import { VehicleComponentProps } from "./types";
+import DefaultVehicleIcon, {
+  ModeIconProps,
+  RouteNumberIcon,
+  VehicleIconProps
+} from "./VehicleIcon";
 import VehicleTooltip from "./VehicleTooltip";
 
 type Props = {
   /**
-   * Whether to always use the fallback route name renderer instead of using
-   * a mode icon.
+   * Default mode to assume if not provided in the vehicle data. Defaults to "bus".
    */
-  alwaysRenderText?: boolean;
+  defaultMode?: string;
 
   /**
-   * Whether or not to render all icons in the "ambient" style (no hover effects, color
-   * always visible)
+   * Containing component in which route icons/numbers are rendered.
+   * Can optionally support a vehicle prop.
    */
-  disableHoverEffects?: boolean;
+  IconContainer?: FC;
 
   /**
-   * A hex color in the form `#fffFFF` to highlight all vehicles as
+   * Sets the padding between component and icon in IconContainer instances that support it.
    */
-  color?: string;
+  iconPadding?: number;
+
+  /**
+   * Sets the size in pixels of the icon in IconContainer instances that support it.
+   */
+  iconPixels?: number;
+
+  /**
+   * Component that renders the icons given transit modes.
+   */
+  ModeIcon: FC<ModeIconProps>;
 
   /**
    * A tooltip JSX to render
    */
-  TooltipSlot?: JSX.Element;
+  TooltipSlot?: FC<VehicleComponentProps>;
+
+  /**
+   * Component that renders the icons or other content such as route number for each transit vehicle.
+   */
+  VehicleIcon?: FC<VehicleIconProps>;
 
   /**
    * The list of vehicles to create stop markers for.
@@ -35,16 +60,21 @@ type Props = {
   vehicles?: TransitVehicle[];
 };
 
+const DefaultIconContainer = withCaret(Circle, { offset: 3.75 });
+
 /**
  * An overlay to view a collection of transit vehicles.
  */
 const TransitVehicleOverlay = ({
-  alwaysRenderText,
-  disableHoverEffects,
-  color,
-  TooltipSlot,
+  defaultMode = "bus",
+  IconContainer = DefaultIconContainer,
+  iconPadding = 2,
+  iconPixels = 20,
+  ModeIcon,
+  TooltipSlot = VehicleTooltip,
+  VehicleIcon = DefaultVehicleIcon,
   vehicles
-}: Props): JSX.Element => {
+}: Props): ReactNode => {
   const validVehicles = vehicles?.filter(
     vehicle => !!vehicle?.lat && !!vehicle?.lon
   );
@@ -54,48 +84,42 @@ const TransitVehicleOverlay = ({
     return null;
   }
 
-  const Tooltip = TooltipSlot || VehicleTooltip;
-
-  return (
-    <>
-      {validVehicles.map(vehicle => {
-        const Icon = getTransitIcon(vehicle.routeType, alwaysRenderText);
-
-        return (
-          <MarkerWithPopup
-            key={vehicle.vehicleId}
-            position={[vehicle.lat, vehicle.lon]}
-            // @ts-expect-error the prop override doesn't require all props to be present
-            popupProps={{ offset: [-15, 0] }}
-            tooltipContents={
-              // @ts-expect-error TODO FIX
-              vehicle.routeShortName && <Tooltip vehicle={vehicle} />
-            }
-          >
-            {/* @ts-expect-error We know the icon is set dynamically */}
-            <Icon
-              disableHoverEffects={disableHoverEffects}
-              // Don't rotate if all the icons are text! It looks weird
-              rotate={!alwaysRenderText && vehicle.heading}
-              routeColor={vehicle?.routeColor || color}
-            >
-              {/* If there is no route type, draw the route name, or a generic bullet */}
-              <span
-                style={{
-                  color: utils.route.getMostReadableTextColor(
-                    vehicle?.routeColor || color
-                  )
-                }}
-              >
-                {(!vehicle.routeType || alwaysRenderText) &&
-                  (vehicle?.routeShortName || "🚌")}
-              </span>
-            </Icon>
-          </MarkerWithPopup>
-        );
-      })}
-    </>
+  const StyledContainer = getStyledContainer(
+    IconContainer,
+    iconPadding,
+    iconPixels
   );
+
+  return validVehicles?.map(vehicle => (
+    <MarkerWithPopup
+      key={vehicle.vehicleId}
+      // @ts-expect-error the prop override doesn't require all props to be present
+      popupProps={{ offset: [-iconPixels / 2 - iconPadding, 0] }}
+      position={[vehicle.lat, vehicle.lon]}
+      tooltipContents={
+        vehicle.routeShortName && <TooltipSlot vehicle={vehicle} />
+      }
+    >
+      <StyledContainer vehicle={vehicle}>
+        <VehicleIcon
+          defaultMode={defaultMode}
+          ModeIcon={ModeIcon}
+          vehicle={vehicle}
+        />
+      </StyledContainer>
+    </MarkerWithPopup>
+  ));
 };
 
 export default TransitVehicleOverlay;
+
+// Export the other subcomponents
+export {
+  Circle,
+  DefaultIconContainer,
+  DefaultVehicleIcon,
+  RotatingCircle,
+  RouteNumberIcon,
+  withCaret,
+  withRouteColorBackground
+};

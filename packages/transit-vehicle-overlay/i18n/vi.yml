@@ -3,7 +3,10 @@ otpUi:
     genericRouteFormat: Đường {route}
     tooltipRouteLabel: "{routeLabel}:"
     durationAgo: "{duration} trước"
+    defaultTooltip: "{route}: {duration} trước"
     durationWithSeconds:
       "{hours, plural, =0 {} other {# giờ }}{minutes, plural, =0
       {{seconds, plural, =0 {# phút} other {}}} other {# phút}}{seconds, plural, =0
       {} other { # giây}}"
+    routeTitle: "{type} {name}"
+    transitLine: Đường
