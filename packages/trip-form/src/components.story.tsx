@@ -1,11 +1,12 @@
 import * as Icons from "@opentripplanner/icons";
 import React, { ReactElement } from "react";
 import { action } from "@storybook/addon-actions";
-import { Bus, Bicycle, Walking } from "@styled-icons/fa-solid";
+import { Bicycle, Walking } from "@styled-icons/fa-solid";
 import { QueryParamProvider } from "use-query-params";
 import { WindowHistoryAdapter } from "use-query-params/adapters/window";
-
 import { ModeButtonDefinition } from "@opentripplanner/types";
+import { Bus } from "@opentripplanner/icons";
+
 import commonModes from "./__mocks__/modes-en";
 import modeOptions from "./__mocks__/mode-options";
 import submodeOptions from "./__mocks__/submode-options";
