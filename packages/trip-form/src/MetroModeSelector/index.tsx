@@ -51,7 +51,13 @@ const ModeButtonItem = styled.button<{ enabled?: boolean }>`
   }
 
   svg {
+    display: block;
+    margin: auto;
+    width: 32px;
+    height: 32px;
     vertical-align: middle;
+    fill: currentcolor;
+    color: white;
   }
 `;
 
