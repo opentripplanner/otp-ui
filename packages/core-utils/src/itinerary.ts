@@ -8,7 +8,9 @@ import {
   LatLngArray,
   Leg,
   Money,
+  Place,
   Step,
+  Stop,
   TncFare
 } from "@opentripplanner/types";
 import turfAlong from "@turf/along";
@@ -532,4 +534,21 @@ export function calculateEmissions(
     default:
       return totalCarbon;
   }
+}
+
+/**
+ * Returns the user-facing stop id to display for a stop or place, using the following priority:
+ * 1. stop code,
+ * 2. stop id without the agency id portion, if stop id contains an agency portion,
+ * 3. stop id, whether null or not (this is the fallback case).
+ */
+export function getDisplayedStopId(placeOrStop: Place | Stop): string {
+  let stopId;
+  let stopCode;
+  if ("stopId" in placeOrStop) {
+    ({ stopCode, stopId } = placeOrStop);
+  } else if ("id" in placeOrStop) {
+    ({ code: stopCode, id: stopId } = placeOrStop);
+  }
+  return stopCode || stopId?.split(":")[1] || stopId;
 }
