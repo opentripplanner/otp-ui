@@ -139,7 +139,9 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
     if (bounds && current) {
       // Use a timeout to wait for other map rendering to finish
       // before fitting to the route or pattern shape.
-      timeout = setTimeout(() => util.fitMapBounds(current, bounds), 500);
+      const fitBounds = () => util.fitMapBounds(current, bounds);
+      fitBounds();
+      timeout = setTimeout(fitBounds, 250);
       if (props.mapCenterCallback) {
         props.mapCenterCallback();
       }
