@@ -35,19 +35,19 @@ query Query1(
 	) {
 		itineraries {
 			duration
-			startTime
 			endTime
-			walkTime
+			startTime
 			waitingTime
-			
+			walkTime
 			legs {
-				mode
-				startTime
-				endTime
 				distance
 				duration
+				endTime
+				mode
+				realTime
+				realTimeStatus	
+				startTime
 				transitLeg
-				
 				agency {
 					name
 					id
