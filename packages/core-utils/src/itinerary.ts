@@ -52,7 +52,7 @@ export function isReservationRequired(leg: Leg): boolean {
 /**
  * Returns true if a user must ask the driver to let the user off
  * or if the user must flag the driver down for pickup.
- * "coordinateWithDriver" is the only property which encodes this info.
+ * "coordinateWithDriver" in board/alight rule encodes this info.
  */
 export function isCoordinationRequired(leg: Leg): boolean {
   return (
