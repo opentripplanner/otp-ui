@@ -137,8 +137,8 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
     });
 
     if (bounds && current) {
-      // Use a timeout to wait for other map rendering to finish
-      // before fitting to the route or pattern shape.
+      // Try to fit the map to route bounds immediately. If other overlays are still populating contents
+      // and/or the map skips/aborts fitting for any reason, try fitting bounds again after a short delay.
       const fitBounds = () => util.fitMapBounds(current, bounds);
       fitBounds();
       timeout = setTimeout(fitBounds, 250);
