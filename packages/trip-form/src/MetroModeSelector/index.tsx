@@ -8,7 +8,8 @@ import {
   safePolygon,
   FloatingPortal,
   useClick,
-  useDismiss
+  useDismiss,
+  useRole
 } from "@floating-ui/react-dom-interactions";
 import { ModeButtonDefinition } from "@opentripplanner/types";
 
@@ -141,6 +142,7 @@ function ModeButton({
       })
     }),
     useClick(context, { enabled: disableHover }),
+    useRole(context),
     useDismiss(context),
     { reference: { onClick: modeButtonClicked } }
   ]);
