@@ -1,7 +1,7 @@
 import * as Icons from "@opentripplanner/icons";
 import React, { ReactElement } from "react";
 import { action } from "@storybook/addon-actions";
-import { Bicycle, Walking } from "@styled-icons/fa-solid";
+import { Bicycle, PersonWalking } from "@styled-icons/fa-solid";
 import { QueryParamProvider } from "use-query-params";
 import { WindowHistoryAdapter } from "use-query-params/adapters/window";
 import { ModeButtonDefinition } from "@opentripplanner/types";
@@ -231,8 +231,10 @@ export const submodeSelector = makeStory(Core.SubmodeSelector, {
 });
 
 const MetroModeSelector = ({
+  disableHover,
   modeButtonDefinitions
 }: {
+  disableHover?: boolean;
   modeButtonDefinitions: ModeButtonDefinition[];
 }): ReactElement => {
   const initialState = {
@@ -257,47 +259,60 @@ const MetroModeSelector = ({
         onToggleModeButton={toggleModeButton}
         modeButtons={buttonsWithSettings}
         onSettingsUpdate={setModeSettingValue}
+        disableHover={disableHover}
       />
     </div>
   );
 };
 
 const MetroModeSelectorWithQP = ({
+  disableHover,
   modeButtonDefinitions
 }: {
+  disableHover?: boolean;
   modeButtonDefinitions: ModeButtonDefinition[];
 }): ReactElement => (
   <QueryParamProvider adapter={WindowHistoryAdapter}>
-    <MetroModeSelector modeButtonDefinitions={modeButtonDefinitions} />
+    <MetroModeSelector
+      modeButtonDefinitions={modeButtonDefinitions}
+      disableHover={disableHover}
+    />
   </QueryParamProvider>
 );
 
+const modeButtonDefinitions = [
+  {
+    label: "Transit",
+    Icon: Bus,
+    key: "TRANSIT",
+    modes: [
+      {
+        mode: "BUS"
+      },
+      {
+        mode: "RAIL"
+      }
+    ]
+  },
+  {
+    label: "Walking",
+    Icon: PersonWalking,
+    key: "WALK",
+    modes: [{ mode: "WALK" }]
+  },
+  {
+    label: "Bike",
+    Icon: Bicycle,
+    key: "BIKE",
+    modes: [{ mode: "BICYCLE" }]
+  }
+];
+
 export const metroModeSelector = makeStory(MetroModeSelectorWithQP, {
-  modeButtonDefinitions: [
-    {
-      label: "Transit",
-      Icon: Bus,
-      key: "TRANSIT",
-      modes: [
-        {
-          mode: "BUS"
-        },
-        {
-          mode: "RAIL"
-        }
-      ]
-    },
-    {
-      label: "Walking",
-      Icon: Walking,
-      key: "WALK",
-      modes: [{ mode: "WALK" }]
-    },
-    {
-      label: "Bike",
-      Icon: Bicycle,
-      key: "BIKE",
-      modes: [{ mode: "BICYCLE" }]
-    }
-  ]
+  modeButtonDefinitions
+});
+
+export const metroModeSelectorNoHover = makeStory(MetroModeSelectorWithQP, {
+  modeButtonDefinitions,
+  disableHover: true
 });

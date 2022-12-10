@@ -6,7 +6,9 @@ import {
   shift,
   arrow,
   safePolygon,
-  FloatingPortal
+  FloatingPortal,
+  useClick,
+  useDismiss
 } from "@floating-ui/react-dom-interactions";
 import { ModeButtonDefinition } from "@opentripplanner/types";
 
@@ -88,16 +90,18 @@ const Arrow = styled.div`
 `;
 
 interface ModeButtonProps {
-  modeButton: ModeButtonDefinition;
   floatingTarget: HTMLDivElement;
-  onToggle: () => void;
+  disableHover?: boolean;
+  modeButton: ModeButtonDefinition;
   onSettingsUpdate: (QueryParamChangeEvent) => void;
+  onToggle: () => void;
 }
 
 function ModeButton({
   modeButton,
   floatingTarget,
   onToggle,
+  disableHover,
   onSettingsUpdate
 }: ModeButtonProps) {
   const [open, setOpen] = useState(false);
@@ -116,26 +120,47 @@ function ModeButton({
     middleware: [offset(8), shift(), arrow({ element: arrowRef })]
   });
 
+  const modeButtonClicked = () => {
+    if (disableHover) {
+      if (!modeButton.enabled) {
+        // enable mode button if it's off
+        onToggle();
+      }
+    } else {
+      onToggle();
+    }
+  };
+
   const { getFloatingProps, getReferenceProps } = useInteractions([
     useHover(context, {
-      handleClose: safePolygon({ blockPointerEvents: false })
-    })
+      enabled: !disableHover,
+      handleClose: safePolygon({
+        blockPointerEvents: false,
+        restMs: 500,
+        buffer: 0
+      })
+    }),
+    useClick(context, { enabled: disableHover }),
+    useDismiss(context),
+    { reference: { onClick: modeButtonClicked } }
   ]);
 
-  const modeButtonClicked = () => {
-    onToggle();
+  const disableModeButton = () => {
+    if (modeButton.enabled) {
+      onToggle();
+    }
+    setOpen(false);
   };
 
   return (
     <>
       <ModeButtonItem
         ref={reference}
-        onClick={modeButtonClicked}
+        // onClick={modeButtonClicked}
         /* eslint-disable-next-line react/jsx-props-no-spreading */
         {...getReferenceProps()}
         enabled={modeButton.enabled}
       >
-        {/* {`${open}`} */}
         <modeButton.Icon size={32} />
       </ModeButtonItem>
       <FloatingPortal root={floatingTarget} id="foobartest">
@@ -158,6 +183,11 @@ function ModeButton({
               <SubSettingsPane
                 modeButton={modeButton}
                 onSettingUpdate={onSettingsUpdate}
+                showControls={disableHover}
+                onDismiss={() => {
+                  setOpen(false);
+                }}
+                onDisableMode={disableModeButton}
               />
             </HoverInnerContainer>
           </HoverPanel>
@@ -168,15 +198,17 @@ function ModeButton({
 }
 
 interface Props {
+  disableHover?: boolean;
   modeButtons: ModeButtonDefinition[];
-  onToggleModeButton: (key) => void;
   onSettingsUpdate: (QueryParamChangeEvent) => void;
+  onToggleModeButton: (key) => void;
 }
 
 export default function ModeSelector({
   onToggleModeButton,
   onSettingsUpdate,
-  modeButtons = []
+  modeButtons = [],
+  disableHover
 }: Props): ReactElement {
   const floatingTarget = useRef(null);
   return (
@@ -184,11 +216,14 @@ export default function ModeSelector({
       <ModeBar>
         {modeButtons.map(combination => (
           <ModeButton
-            onToggle={() => onToggleModeButton(combination.key)}
+            onToggle={() => {
+              onToggleModeButton(combination.key);
+            }}
             key={combination.label}
             modeButton={combination}
             floatingTarget={floatingTarget.current}
             onSettingsUpdate={onSettingsUpdate}
+            disableHover={disableHover}
           />
         ))}
       </ModeBar>
