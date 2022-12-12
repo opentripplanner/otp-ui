@@ -19,8 +19,10 @@ import SubSettingsPane from "./SubSettingsPane";
 
 const ModeBar = styled.div`
   display: inline-grid;
-  gap: 0;
+  gap: 0 3px;
+  margin-right: 4px;
   grid-auto-flow: column;
+  grid-row: 2;
 `;
 
 const ModeButtonItem = styled.button<{ enabled?: boolean }>`
@@ -30,10 +32,10 @@ const ModeButtonItem = styled.button<{ enabled?: boolean }>`
   cursor: pointer;
   margin: 0;
   user-select: none;
-  border: 1px solid #0062cc;
+  border: 2px solid #084c8d;
   padding: 0.375rem 0.75rem;
-  border-radius: 0.25rem;
-  background: ${props => (props.enabled ? "#007bff" : "#004691")};
+  border-radius: 5px;
+  background: ${props => (props.enabled ? "#084c8d" : "#fff")};
   transition: all 250ms cubic-bezier(0.27, 0.01, 0.38, 1.06);
   color: white;
 
@@ -47,8 +49,8 @@ const ModeButtonItem = styled.button<{ enabled?: boolean }>`
   }
 
   &:hover {
-    background: ${props => (props.enabled ? "#006fe6" : "#0355ad")};
-    border-color: #006fe6;
+    background: ${props => (props.enabled ? "#0e5faa" : "#eee")};
+    border-color: #0e5faa;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05),
       0 4px 10px rgba(0, 123, 255, 0.25);
   }
@@ -60,19 +62,20 @@ const ModeButtonItem = styled.button<{ enabled?: boolean }>`
     height: 32px;
     vertical-align: middle;
     fill: currentcolor;
-    color: white;
+    color: ${props => (props.enabled ? "#eee" : "#084c8d")};
   }
 `;
 
 const HoverPanel = styled.div`
   z-index: 10;
-  width: 100%;
+  width: 75%;
+  min-width: 300px;
   padding: 0 10px;
 `;
 
 const HoverInnerContainer = styled.div`
-  background: #006fe6;
-  color: white;
+  background: #fff;
+  color: #2e2e2e;
   font-weight: bold;
   padding: 5px;
   border-radius: 4px;
@@ -83,7 +86,7 @@ const HoverInnerContainer = styled.div`
 
 const Arrow = styled.div`
   position: absolute;
-  background: #006fe6;
+  background: #fff;
   width: 10px;
   height: 10px;
   margin-top: -5px;
@@ -157,6 +160,7 @@ function ModeButton({
   return (
     <>
       <ModeButtonItem
+        className={modeButton.enabled ? "enabled" : ""}
         ref={reference}
         // onClick={modeButtonClicked}
         /* eslint-disable-next-line react/jsx-props-no-spreading */
@@ -215,7 +219,7 @@ export default function ModeSelector({
   const floatingTarget = useRef(null);
   return (
     <>
-      <ModeBar>
+      <ModeBar className="metro-mode-selector">
         {modeButtons.map(combination => (
           <ModeButton
             onToggle={() => {

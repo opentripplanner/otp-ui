@@ -8,7 +8,8 @@ import SliderSelector from "../SliderSelector";
 import { ModeSettingTypes } from "./types";
 
 const Header = styled.div`
-  font-size: 2em;
+  font-size: 1.5em;
+  margin-bottom: 0.5rem;
   text-align: left;
   display: flex;
   justify-content: space-between;
@@ -16,6 +17,7 @@ const Header = styled.div`
 
 const SettingsPanel = styled.div`
   pointer-events: auto;
+  padding: 15px;
 `;
 
 const DisableButton = styled.button`
@@ -38,6 +40,7 @@ const ModeSettingRenderer = ({
           name={setting.key}
           onChange={onChange}
           value={setting.value}
+          style={{ marginLeft: "4px" }}
         />
       );
     case ModeSettingTypes.DROPDOWN:

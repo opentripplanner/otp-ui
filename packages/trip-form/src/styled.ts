@@ -14,6 +14,7 @@ export const SettingsSection = styled.div``;
 
 export const SettingLabel = styled.label`
   padding-left: 6px;
+  font-weight: 300;
 
   svg {
     width: 22pt;
