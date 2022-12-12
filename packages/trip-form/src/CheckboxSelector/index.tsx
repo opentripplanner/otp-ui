@@ -1,5 +1,6 @@
 import CSS from "csstype";
 import React, { ChangeEvent, ReactElement, useCallback } from "react";
+import styled from "styled-components"
 
 import * as S from "../styled";
 
