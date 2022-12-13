@@ -44,6 +44,7 @@ interface Props {
   setViewedTrip: SetViewedTripFunction;
   showAgencyInfo: boolean;
   showViewTripButton: boolean;
+  shouldAnimate: boolean;
   timeZone: string;
   TransitLegSubheader?: FunctionComponent<TransitLegSubheaderProps>;
   TransitLegSummary: FunctionComponent<TransitLegSummaryProps>;
@@ -145,6 +146,7 @@ class TransitLegBody extends Component<Props, State> {
       setViewedTrip,
       showAgencyInfo,
       showViewTripButton,
+      shouldAnimate = true,
       timeZone,
       TransitLegSubheader,
       TransitLegSummary,
@@ -259,7 +261,10 @@ class TransitLegBody extends Component<Props, State> {
           )}
 
           {/* The Alerts body, if visible */}
-          <AnimateHeight duration={500} height={expandAlerts ? "auto" : 0}>
+          <AnimateHeight
+            duration={shouldAnimate ? 500 : 0}
+            height={expandAlerts ? "auto" : 0}
+          >
             <AlertsBody
               alerts={leg.alerts}
               AlertIcon={AlertBodyIcon}
@@ -287,7 +292,10 @@ class TransitLegBody extends Component<Props, State> {
                 )}
               </S.TransitLegDetailsHeader>
               {/* IntermediateStops expanded body */}
-              <AnimateHeight duration={500} height={stopsExpanded ? "auto" : 0}>
+              <AnimateHeight
+                duration={shouldAnimate ? 500 : 0}
+                height={stopsExpanded ? "auto" : 0}
+              >
                 <S.TransitLegExpandedBody>
                   <IntermediateStops stops={leg.intermediateStops} />
                   {fareForLeg && (
