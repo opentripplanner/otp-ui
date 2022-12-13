@@ -8,6 +8,6 @@ otpUi:
         (không tính đến giao thông)"
     TransitLeg:
       continuesAs: Tiếp tục là {routeDescription}
-      alight: Xuống xe lúc <strong>{place}</strong> lúc <strong>{time, time, short}</strong>
-      board: Lên xe lúc <strong>{place}</strong> lúc <strong>{time, time, short}</strong>
+      alight: Xuống xe ở <strong>{place}</strong> ({stopId}) lúc <strong>{time, time, short}</strong>
+      board: Lên xe ở <strong>{place}</strong> ({stopId}) lúc <strong>{time, time, short}</strong>
     depart: <strong>Khởi hành</strong> từ <strong>{place}</strong>

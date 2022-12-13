@@ -15,6 +15,6 @@ otpUi:
       estimatedWaitTime: "Temps d'attente estimé : <strong>{duration}</strong>"
       header: <strong>Prenez {company}</strong> vers <strong>{place}</strong>
     TransitLeg:
-      alight: Descendez à <strong>{place}</strong> à <strong>{time, time, short}</strong>
-      board: Montez à <strong>{place}</strong> à <strong>{time, time, short}</strong>
+      alight: Descendez à <strong>{place}</strong> ({stopId}) à <strong>{time, time, short}</strong>
+      board: Montez à <strong>{place}</strong> ({stopId}) à <strong>{time, time, short}</strong>
       continuesAs: Devient {routeDescription}

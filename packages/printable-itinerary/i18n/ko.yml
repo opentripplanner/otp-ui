@@ -6,6 +6,6 @@ otpUi:
       estimatedWaitTime: "예상 픽업 대기 시간: <strong>{duration}</strong>"
       header: <strong> {company}</strong> 로 <strong>{place}</strong> 로 이동합니다
     TransitLeg:
-      alight: <strong>{time, time, short}</strong>에 <strong>{place}</strong>에서 하차
+      alight: <strong>{time, time, short}</strong>에 <strong>{place}</strong> ({stopId}) 에서 하차
       continuesAs: "{routeDescription}로 계속"
-      board: <strong>{time, time, short}</strong> 에 <strong>{place}</strong> 탑승
+      board: <strong>{time, time, short}</strong> 에 <strong>{place}</strong> ({stopId}) 탑승

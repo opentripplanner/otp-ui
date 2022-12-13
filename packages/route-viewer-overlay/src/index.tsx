@@ -99,6 +99,7 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
   useEffect(() => {
     // if pattern geometry updated, update the map points
     let bounds;
+    let timeout;
     if (isGeometryComplete(routeData)) {
       const allPoints: LngLatLike[] = patterns.reduce((acc, ptn) => {
         return acc.concat(polyline.decode(ptn.geometry.points));
@@ -136,11 +137,18 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
     });
 
     if (bounds && current) {
-      util.fitMapBounds(current, bounds);
+      // Try to fit the map to route bounds immediately. If other overlays are still populating contents
+      // and/or the map skips/aborts fitting for any reason, try fitting bounds again after a short delay.
+      const fitBounds = () => util.fitMapBounds(current, bounds);
+      fitBounds();
+      timeout = setTimeout(fitBounds, 250);
       if (props.mapCenterCallback) {
         props.mapCenterCallback();
       }
     }
+
+    // Clear any timeouts when the component unmounts.
+    return () => clearTimeout(timeout);
   }, [routeData, patterns, current]);
 
   const { clipToPatternStops, path } = props;
