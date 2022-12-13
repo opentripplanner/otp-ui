@@ -13,7 +13,6 @@ query Query1(
 	$preferred: InputPreferred,
 	$unpreferred: InputUnpreferred,
 	$banned: InputBanned,
-	$allowBikeRental: Boolean
 ) {
 	plan(
 		fromPlace: $fromPlace
@@ -31,7 +30,6 @@ query Query1(
 		preferred: $preferred,
 		unpreferred: $unpreferred,
 		banned: $banned,
-		allowBikeRental: $allowBikeRental
 	) {
 		itineraries {
 			duration
@@ -45,7 +43,7 @@ query Query1(
 				endTime
 				mode
 				realTime
-				realTimeStatus	
+				realtimeState	
 				startTime
 				transitLeg
 				agency {
