@@ -86,7 +86,7 @@ function populateSettingsWithValues(
 export function extractModeSettingDefaultsToObject(
   modeSettings: ModeSetting[]
 ): ModeSettingValues {
-  return modeSettings.reduce((prev, cur) => {
+  return modeSettings?.reduce((prev, cur) => {
     prev[cur.key] = cur.default;
     return prev;
   }, {});
