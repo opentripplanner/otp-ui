@@ -90,14 +90,10 @@ interface DepartArriveOption {
  */
 function isInputTypeSupported(type: string): boolean {
   let retVal = false;
-  try {
-    if (typeof document !== "undefined") {
-      const input = document.createElement("input");
-      input.setAttribute("type", type);
-      retVal = input.type === type;
-    }
-  } catch {
-    retVal = false;
+  if (typeof document !== "undefined") {
+    const input = document.createElement("input");
+    input.setAttribute("type", type);
+    retVal = input.type === type;
   }
   return retVal;
 }
