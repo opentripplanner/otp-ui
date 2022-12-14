@@ -29,6 +29,6 @@ module.exports = {
   testPathIgnorePatterns: ["<rootDir>/packages/(?:.+?)/(esm|lib)/"],
   transform: {
     "\\.[jt]sx?$": "babel-jest",
-    "\\.ya?ml$": "jest-yaml-transform"
+    "\\.ya?ml$": "jest-transform-yaml"
   }
 };
