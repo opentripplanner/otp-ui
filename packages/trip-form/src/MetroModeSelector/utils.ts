@@ -173,7 +173,7 @@ function useStateStorage<Type>(
 /**
  * Grabs the activated modes and mode settings from the URL string
  * when provided with all the necessary parameters. This allows access to the
- * same parmeters as useModeState in a context where React Hooks are not available,
+ * same parameters as useModeState in a context where React Hooks are not available,
  * such as in Redux.
  * @param searchString URL String
  * @param modeButtons Mode button definitions (from config)

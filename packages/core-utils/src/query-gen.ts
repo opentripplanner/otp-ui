@@ -107,7 +107,7 @@ export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
         );
       })
       // create new filter that removes subTransit modes from appearing on their own
-      // ONLY IF there's mulitple of them!
+      // ONLY IF there's multiple of them!
       .map(combo => ({ ...params, modes: combo }))
   );
 }
