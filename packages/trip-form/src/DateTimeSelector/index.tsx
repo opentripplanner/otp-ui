@@ -89,13 +89,12 @@ interface DepartArriveOption {
  * @param {*} type One of the HTML5 input types.
  */
 function isInputTypeSupported(type: string): boolean {
-  let retVal = false;
-  if (typeof document !== "undefined") {
-    const input = document.createElement("input");
-    input.setAttribute("type", type);
-    retVal = input.type === type;
-  }
-  return retVal;
+  // SSR: use of 'document' variable is only valid in a browser (not server-side)
+  if (typeof document === "undefined") return false;
+
+  const input = document.createElement("input");
+  input.setAttribute("type", type);
+  return input.type === type;
 }
 
 const supportsDateTimeInputs = isInputTypeSupported("date") && isInputTypeSupported("time");
