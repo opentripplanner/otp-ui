@@ -6,7 +6,8 @@ import { RouteDescriptionProps } from "../types";
 import RouteLongName from "./route-long-name";
 
 export default function RouteDescription({
-  leg
+  leg,
+  onlyShowTripHeadsign
 }: RouteDescriptionProps): ReactElement {
   const { routeShortName } = leg;
   return (
@@ -19,7 +20,7 @@ export default function RouteDescription({
         </div>
       )}
       <S.LegDescriptionRouteLongName>
-        <RouteLongName leg={leg} />
+        <RouteLongName leg={leg} onlyShowHeadsign={onlyShowTripHeadsign} />
       </S.LegDescriptionRouteLongName>
     </S.LegDescriptionForTransit>
   );

@@ -18,6 +18,8 @@ export interface RouteDescriptionProps {
   LegIcon: LegIconComponent;
   /** The transit operator associated with the route if available */
   transitOperator: TransitOperator;
+  /** If true, hides route_long_name in transit legs, only showing headsign. */
+  onlyShowTripHeadsign?: boolean;
 }
 
 export type ToRouteAbbreviationFunction = (route: string | number) => string;
@@ -211,6 +213,11 @@ interface ItineraryBodySharedProps {
    * - stopsExpanded: whether the intermediate stop display is currently expanded
    */
   TransitLegSummary: FunctionComponent<TransitLegSummaryProps>;
+  /**
+   * If true, only displays the trip headsign or route long name
+   * (if headsign is not available)
+   */
+  onlyShowTripHeadsign?: boolean;
 }
 
 export interface PlaceRowProps

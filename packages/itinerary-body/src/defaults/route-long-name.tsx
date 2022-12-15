@@ -7,6 +7,8 @@ import { defaultMessages } from "../util";
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {
   leg: Leg;
+  /** If true, hides route_long_name in transit legs, only showing headsign. */
+  onlyShowHeadsign?: boolean;
 }
 
 /**
@@ -21,12 +23,15 @@ function toPrefix(contents: ReactElement): ReactElement {
 export default function RouteLongName({
   className,
   leg,
-  style
+  style,
+  onlyShowHeadsign
 }: Props): ReactElement {
   const { headsign, routeLongName } = leg;
   return (
     <span className={className} style={style}>
-      {headsign ? (
+      {onlyShowHeadsign ? (
+        headsign || routeLongName
+      ) : headsign ? (
         <FormattedMessage
           defaultMessage={
             defaultMessages["otpUi.TransitLegBody.routeDescription"]

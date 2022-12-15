@@ -45,6 +45,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
       itinerary,
       LegIcon = TriMetLegIcon,
       LineColumnContent,
+      onlyShowTripHeadsign,
       PlaceName,
       RouteDescription,
       showAgencyInfo,
@@ -83,6 +84,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
         itinerary={itinerary}
         LegIcon={LegIcon}
         LineColumnContent={LineColumnContent || DefaultLineColumnContent}
+        onlyShowTripHeadsign={onlyShowTripHeadsign}
         mapillaryKey="fake key, but ok because the api response is also fake"
         PlaceName={PlaceName || DefaultPlaceName}
         RouteDescription={RouteDescription || DefaultRouteDescription}

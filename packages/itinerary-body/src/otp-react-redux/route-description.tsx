@@ -6,7 +6,8 @@ import { RouteDescriptionProps } from "../types";
 
 export default function RouteDescription({
   leg,
-  LegIcon
+  LegIcon,
+  onlyShowTripHeadsign
 }: RouteDescriptionProps): ReactElement {
   const { routeShortName } = leg;
   return (
@@ -22,7 +23,7 @@ export default function RouteDescription({
         )}
       </S.LegIconAndRouteShortName>
       <S.LegDescriptionRouteLongName>
-        <RouteLongName leg={leg} />
+        <RouteLongName leg={leg} onlyShowHeadsign={onlyShowTripHeadsign} />
       </S.LegDescriptionRouteLongName>
     </S.LegDescriptionForTransit>
   );

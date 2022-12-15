@@ -25,6 +25,7 @@ const ItineraryBody = ({
   LineColumnContent,
   mapillaryCallback,
   mapillaryKey,
+  onlyShowTripHeadsign,
   PlaceName,
   RouteDescription,
   routingType = "ITINERARY",
@@ -78,6 +79,7 @@ const ItineraryBody = ({
           LineColumnContent={LineColumnContent}
           mapillaryCallback={mapillaryCallback}
           mapillaryKey={mapillaryKey}
+          onlyShowTripHeadsign={onlyShowTripHeadsign}
           PlaceName={PlaceName}
           RouteDescription={RouteDescription}
           routingType={routingType}

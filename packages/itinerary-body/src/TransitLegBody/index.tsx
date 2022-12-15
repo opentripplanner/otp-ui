@@ -39,6 +39,7 @@ interface Props {
   leg: Leg;
   LegIcon: LegIconComponent;
   legIndex: number;
+  onlyShowTripHeadsign?: boolean;
   RouteDescription: FunctionComponent<RouteDescriptionProps>;
   setActiveLeg: SetActiveLegFunction;
   setViewedTrip: SetViewedTripFunction;
@@ -134,13 +135,14 @@ class TransitLegBody extends Component<Props, State> {
 
   render(): ReactElement {
     const {
-      AlertToggleIcon = S.DefaultAlertToggleIcon,
       AlertBodyIcon,
+      AlertToggleIcon = S.DefaultAlertToggleIcon,
       alwaysCollapseAlerts,
       fare,
       intl,
       leg,
       LegIcon,
+      onlyShowTripHeadsign,
       RouteDescription,
       setViewedTrip,
       showAgencyInfo,
@@ -182,6 +184,7 @@ class TransitLegBody extends Component<Props, State> {
               leg={leg}
               LegIcon={LegIcon}
               transitOperator={transitOperator}
+              onlyShowTripHeadsign={onlyShowTripHeadsign}
             />
           </S.LegClickable>
 

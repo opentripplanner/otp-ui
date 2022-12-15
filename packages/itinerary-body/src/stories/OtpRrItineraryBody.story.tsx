@@ -46,17 +46,19 @@ if (!isRunningJest()) {
 }
 
 interface StoryWrapperProps {
+  alwaysCollapseAlerts: boolean;
   itinerary: Itinerary;
+  onlyShowTripHeadsign?: boolean;
   showRouteFares: boolean;
   TimeColumnContent: FunctionComponent<TimeColumnContentProps>;
-  alwaysCollapseAlerts: boolean;
 }
 
 function OtpRRItineraryBodyWrapper({
+  alwaysCollapseAlerts,
   itinerary,
+  onlyShowTripHeadsign,
   showRouteFares,
-  TimeColumnContent,
-  alwaysCollapseAlerts
+  TimeColumnContent
 }: StoryWrapperProps): ReactElement {
   return (
     <ItineraryBodyDefaultsWrapper
@@ -64,6 +66,7 @@ function OtpRRItineraryBodyWrapper({
       itinerary={itinerary}
       LegIcon={ClassicLegIcon}
       LineColumnContent={OtpRRLineColumnContent}
+      onlyShowTripHeadsign={onlyShowTripHeadsign}
       PlaceName={OtpRRPlaceName}
       RouteDescription={OtpRRRouteDescription}
       showAgencyInfo
@@ -100,7 +103,10 @@ export const BikeTransitBikeItinerary = (): ReactElement => (
 );
 
 export const WalkInterlinedTransitItinerary = (): ReactElement => (
-  <OtpRRItineraryBodyWrapper itinerary={walkInterlinedTransitItinerary} />
+  <OtpRRItineraryBodyWrapper
+    itinerary={walkInterlinedTransitItinerary}
+    onlyShowTripHeadsign
+  />
 );
 
 export const WalkTransitTransferItinerary = (): ReactElement => (

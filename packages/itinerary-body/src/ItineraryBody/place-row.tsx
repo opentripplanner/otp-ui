@@ -31,6 +31,7 @@ export default function PlaceRow({
   LegIcon,
   legIndex,
   LineColumnContent,
+  onlyShowTripHeadsign,
   mapillaryCallback,
   mapillaryKey,
   PlaceName,
@@ -118,6 +119,7 @@ export default function PlaceRow({
                 leg={leg}
                 LegIcon={LegIcon}
                 legIndex={legIndex}
+                onlyShowTripHeadsign={onlyShowTripHeadsign}
                 RouteDescription={RouteDescription}
                 setActiveLeg={setActiveLeg}
                 setViewedTrip={setViewedTrip}
