@@ -194,4 +194,27 @@ const commonModes = {
   ]
 };
 
+// This variant of the data adds an option with a company as the first
+// option in the "CAR" category that has mixed modes ("CAR_PARK", "CAR_HAIL")
+export const modesWithCompanyFirstMixedCategory = {
+  ...commonModes,
+  categories: commonModes.categories.map(c => {
+    const nextCategory = { ...c };
+
+    if (c.id === "CAR") {
+      nextCategory.options = [
+        {
+          company: "LYFT",
+          mode: "CAR_HAIL",
+          label: "Lyft",
+          url: "https://www.lyft.com"
+        },
+        ...nextCategory.options
+      ];
+    }
+
+    return nextCategory;
+  })
+};
+
 export default commonModes;
