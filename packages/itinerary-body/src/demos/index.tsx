@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore FIXME: Create TypeScript types for core-utils packages.
-import coreUtils from "@opentripplanner/core-utils";
+// import coreUtils from "@opentripplanner/core-utils";
 import { Place } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedTime } from "react-intl";
@@ -60,9 +60,7 @@ export function CustomTransitLegSummary({
   return (
     /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
     <div onClick={onClick}>
-      {leg.duration && (
-        <span>Ride {coreUtils.time.formatDuration(leg.duration, "en-US")}</span>
-      )}
+      {leg.duration && <span>Ride </span>}
       {leg.intermediateStops && (
         <span>
           {` (${leg.intermediateStops.length + 1} stops)`}
