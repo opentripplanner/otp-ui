@@ -48,36 +48,31 @@ export function patternToRouteFeature(
     type: "route"
   };
 
-  const isFlex = pattern.stops[pattern.stops.length - 1].stop_id.includes(
+  const isFlex = pattern.stops[pattern.stops.length - 1].stop_id.endsWith(
     "flexed_to"
   );
   const straight = polyline.toGeoJSON(polyline.encode(concatenatedLines));
 
+  // TODO: add a second condition for TNC routes to also be drawn as arcs
   if (isFlex) {
     // Create clone of plain route that only includes first and last point
-    const extraStraight = { ...straight };
-    extraStraight.coordinates = [
-      extraStraight.coordinates[0],
-      extraStraight.coordinates[extraStraight.coordinates.length - 1]
+    straight.coordinates = [
+      straight.coordinates[0],
+      straight.coordinates[straight.coordinates.length - 1]
     ];
+    const orig = straight.coordinates[0];
+    const dest = straight.coordinates[1];
 
     // Adapted from https://github.com/Turfjs/turf/issues/1218#issuecomment-592421977
-    const length = lineDistance(extraStraight, "kilometers");
-    const mp = midpoint(
-      extraStraight.coordinates[0],
-      extraStraight.coordinates[1]
-    );
-    const center = destination(
-      mp,
-      length,
-      bearing(extraStraight.coordinates[0], extraStraight.coordinates[1]) - 90
-    );
+    const length = lineDistance(straight, "kilometers");
+    const mp = midpoint(orig, dest);
+    const center = destination(mp, length, bearing(orig, dest) - 90);
 
     const arc = lineArc(
       center,
-      distance(center, extraStraight.coordinates[0]),
-      bearing(center, extraStraight.coordinates[1]),
-      bearing(center, extraStraight.coordinates[0]),
+      distance(center, orig),
+      bearing(center, dest),
+      bearing(center, orig),
       { steps: 500 }
     ).geometry;
 
