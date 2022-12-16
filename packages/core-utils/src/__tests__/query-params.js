@@ -22,7 +22,7 @@ function modeStrToTransportMode(m) {
 }
 
 //            string array.  string array array
-function help(modes, expectedModes) {
+function expectModes(modes, expectedModes) {
   const generatedModesList = generateCombinations({
     modes: modes.map(modeStrToTransportMode)
   });
@@ -41,19 +41,19 @@ function help(modes, expectedModes) {
 
 describe("query-gen", () => {
   describe("generateCombinations", () => {
-    help(["WALK"], [["WALK"]]);
-    help(["WALK", "TRANSIT"], [["WALK"], ["TRANSIT"]]);
-    help(
+    expectModes(["WALK"], [["WALK"]]);
+    expectModes(["WALK", "TRANSIT"], [["WALK"], ["TRANSIT"]]);
+    expectModes(
       ["WALK", "TRANSIT", "BICYCLE"],
       [["WALK"], ["TRANSIT"], ["BICYCLE"], ["TRANSIT", "BICYCLE"]]
     );
-    help(
+    expectModes(
       ["WALK", "TRANSIT", "CAR"],
       [["WALK"], ["TRANSIT"], ["TRANSIT", "CAR"]]
     );
-    help(["TRANSIT", "CAR"], [["TRANSIT"], ["TRANSIT", "CAR"]]);
-    help(["CAR"], []);
-    help(
+    expectModes(["TRANSIT", "CAR"], [["TRANSIT"], ["TRANSIT", "CAR"]]);
+    expectModes(["CAR"], []);
+    expectModes(
       ["WALK", "TRANSIT", "BICYCLE", "CAR"],
       [
         ["WALK"],
@@ -63,7 +63,7 @@ describe("query-gen", () => {
         ["TRANSIT", "CAR"]
       ]
     );
-    help(
+    expectModes(
       ["BICYCLE_RENT", "TRANSIT", "WALK"],
       [
         ["TRANSIT"],
@@ -72,7 +72,7 @@ describe("query-gen", () => {
         ["WALK"]
       ]
     );
-    help(
+    expectModes(
       ["BICYCLE_RENT", "BICYCLE", "TRANSIT", "WALK"],
       [
         ["TRANSIT"],
@@ -83,7 +83,7 @@ describe("query-gen", () => {
         ["WALK"]
       ]
     );
-    help(
+    expectModes(
       ["SCOOTER_RENT", "BICYCLE_RENT", "TRANSIT", "WALK"],
       [
         ["TRANSIT"],
@@ -94,11 +94,11 @@ describe("query-gen", () => {
         ["WALK"]
       ]
     );
-    help(
+    expectModes(
       ["FLEX", "TRANSIT", "WALK"],
       [["TRANSIT"], ["FLEX", "TRANSIT"], ["FLEX", "WALK"], ["WALK"]]
     );
-    help(
+    expectModes(
       ["FLEX", "SCOOTER_RENT", "TRANSIT", "WALK"],
       [
         ["TRANSIT"],
@@ -111,7 +111,7 @@ describe("query-gen", () => {
         ["SCOOTER_RENT", "TRANSIT"]
       ]
     );
-    help(
+    expectModes(
       ["FLEX", "SCOOTER_RENT", "TRANSIT"],
       [
         ["TRANSIT"],
@@ -120,7 +120,7 @@ describe("query-gen", () => {
         ["SCOOTER_RENT", "TRANSIT"]
       ]
     );
-    help(
+    expectModes(
       ["BUS", "RAIL", "GONDOLA", "TRAM"],
       [["BUS", "RAIL", "GONDOLA", "TRAM"]]
     );
