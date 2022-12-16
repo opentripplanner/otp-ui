@@ -444,6 +444,8 @@ export function getMostReadableTextColor(
   backgroundColor: string,
   proposedTextColor?: string
 ): string {
+  // Sometimes input will defy the method signature. Therefore we need extra fallbacks
+  if (!backgroundColor) backgroundColor = "#333333";
   if (!proposedTextColor) proposedTextColor = "#ffffff";
 
   if (!backgroundColor.startsWith("#")) {
