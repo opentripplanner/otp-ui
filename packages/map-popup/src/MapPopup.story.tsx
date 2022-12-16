@@ -7,45 +7,45 @@ export default {
 };
 
 const STOP = {
+  flex: false,
   id: "9526",
-  name: "W Burnside & SW 2nd",
   lat: 45.523009,
   lon: -122.672529,
-  flex: false
+  name: "W Burnside & SW 2nd"
 };
 
 const STATION = {
-  id: '"hub_1580"',
-  name: "SW Morrison at 18th",
-  x: -122.6896771788597,
-  y: 45.5219604810172,
+  "stroke-width": 2,
   allowDropoff: true,
   allowPickup: true,
-  networks: ["BIKETOWN"],
   bikesAvailable: 6,
-  spacesAvailable: 11,
-  isFloatingBike: false,
+  color: "#f00",
+  id: '"hub_1580"',
   isCarStation: false,
+  isFloatingBike: false,
+  name: "SW Morrison at 18th",
+  networks: ["BIKETOWN"],
   realTimeData: true,
-  "stroke-width": 2,
-  color: "#f00"
+  spacesAvailable: 11,
+  x: -122.6896771788597,
+  y: 45.5219604810172
 };
 
-const SCOOTER = {
-  id: '"bike_6861"',
-  name: "0541 BIKETOWN",
-  x: -122.70486,
-  y: 45.525486666666666,
+const FLOATING_VEHICLE = {
+  "stroke-width": 1,
   allowDropoff: false,
   allowPickup: true,
-  networks: ["BIKETOWN"],
   bikesAvailable: 1,
-  spacesAvailable: 0,
-  isFloatingBike: true,
+  color: "#f00",
+  id: '"bike_6861"',
   isCarStation: false,
+  isFloatingBike: true,
+  name: "0541 BIKETOWN",
+  networks: ["BIKETOWN"],
   realTimeData: true,
-  "stroke-width": 1,
-  color: "#f00"
+  spacesAvailable: 0,
+  x: -122.70486,
+  y: 45.525486666666666
 };
 
 export const StopEntity = (): JSX.Element => {
@@ -68,10 +68,10 @@ export const StationEntity = (): JSX.Element => {
   );
 };
 
-export const ScooterEntity = (): JSX.Element => {
+export const FloatingVehicleEntity = (): JSX.Element => {
   return (
     <MapPopupContents
-      entity={SCOOTER}
+      entity={FLOATING_VEHICLE}
       setLocation={action("setLocation")}
       setViewedStop={action("setViewedStop")}
     />

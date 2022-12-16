@@ -15,7 +15,6 @@ export const OtpTileLayer = (): JSX.Element => {
         OTP2 Server with stops layer enabled
         <input
           onChange={e => setEndpoint(e.target.value)}
-          type="text"
           placeholder="http://localhost:8001/otp"
         />
       </label>

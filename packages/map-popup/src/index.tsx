@@ -10,7 +10,6 @@ import { flatten } from "flat";
 import * as S from "./styled";
 
 // Load the default messages.
-// @ts-expect-error TODO: why is this failing?
 import defaultEnglishMessages from "../i18n/en-US.yml";
 import { makeDefaultGetEntityName } from "./util";
 
@@ -18,17 +17,78 @@ import { makeDefaultGetEntityName } from "./util";
 // the YAML loaders behave differently between webpack and our version of jest:
 // - the yaml loader for webpack returns a nested object,
 // - the yaml loader for jest returns messages with flattened ids.
-export const defaultMessages: { [key:string]:string } = flatten(defaultEnglishMessages);
+export const defaultMessages: { [key: string]: string } = flatten(defaultEnglishMessages);
+
+
+const generateLocation = (entity: Entity, name: string) => {
+  // @ts-expect-error some of these values may be null, but that's ok
+  const { lon: entityLon, lat: entityLat, x, y } = entity
+
+  const lat = entityLat || x
+  const lon = entityLon || y
+  if (!lat || !lon) return null
+
+  return { lat, lon, name };
+}
+
+const StationHubDetails = ({ station }: { station: Station }) => {
+  return (
+    <BaseMapStyled.PopupRow>
+      <div>
+        <FormattedMessage
+          defaultMessage={
+            defaultMessages["otpUi.MapPopup.availableBikes"]
+          }
+          description="Label text for the number of bikes available"
+          id="otpUi.MapPopup.availableBikes"
+          values={{ value: station.bikesAvailable }}
+        />
+      </div>
+      <div>
+        <FormattedMessage
+          defaultMessage={
+            defaultMessages["otpUi.MapPopup.availableDocks"]
+          }
+          description="Label text for the number of docks available"
+          id="otpUi.MapPopup.availableDocks"
+          values={{ value: station.spacesAvailable }}
+        />
+      </div>
+    </BaseMapStyled.PopupRow>
+  )
+}
+
+const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: ({ stopId }: { stopId: string }) => void; }) => {
+  return (
+    <BaseMapStyled.PopupRow>
+        <strong>
+          <FormattedMessage
+            defaultMessage={defaultMessages["otpUi.MapPopup.stopId"]}
+            description="Displays the stop id"
+            id="otpUi.MapPopup.stopId"
+            values={{
+              stopId: id
+            }}
+          />
+        </strong>
+      <S.ViewStopButton onClick={() => setViewedStop({ stopId: id })}>
+        <FormattedMessage
+          defaultMessage={defaultMessages["otpUi.MapPopup.stopViewer"]}
+          description="Text for link that opens the stop viewer"
+          id="otpUi.MapPopup.stopViewer"
+        />
+      </S.ViewStopButton>
+    </BaseMapStyled.PopupRow>
+  )
+}
 
 type Entity = Stop | Station
 type Props = {
   configCompanies?: ConfiguredCompany[];
+  entity: Entity
   getEntityName?: (entity: Entity, configCompanies: Company[],) => string;
-
   setLocation?: ({ location, locationType }: { location: Location, locationType: string }) => void;
   setViewedStop?: ({ stopId }: { stopId: string }) => void;
-
-  entity: Entity
 };
 
 /**
@@ -41,80 +101,27 @@ export function MapPopup({ configCompanies, entity, getEntityName, setLocation, 
   const getNameFunc = getEntityName || makeDefaultGetEntityName(intl, defaultMessages);
   const name = getNameFunc(entity, configCompanies);
 
-  const generateLocation = () => {
-    // @ts-expect-error some of these values may be null, but that's ok
-    const { lon: entityLon, lat: entityLat, x, y } = entity
 
-    const lat = entityLat || x
-    const lon = entityLon || y
-    if (!lat || !lon) return null
-
-    return { lat, lon, name };
-  }
-
-  const entityIsStationHub = "bikesAvailable" in entity && entity?.bikesAvailable !== undefined && !entity?.isFloatingBike;
-  const entityIsStop = !("bikesAvailable" in entity)
+  const bikesAvailablePresent = "bikesAvailable" in entity
+  const entityIsStationHub = bikesAvailablePresent && entity?.bikesAvailable !== undefined && !entity?.isFloatingBike;
   // @ts-expect-error ts doesn't understand entityIsStop
-  const stopId = entityIsStop && entity?.code || entity.id.split(":")[1] || entity.id
+  const stopId = !bikesAvailablePresent && entity?.code || entity.id.split(":")[1] || entity.id
 
   return (
     <BaseMapStyled.MapOverlayPopup>
       <BaseMapStyled.PopupTitle>{name}</BaseMapStyled.PopupTitle>
       {/* render dock info if it is available */}
-      {entityIsStationHub && (
-        <BaseMapStyled.PopupRow>
-          <div>
-            <FormattedMessage
-              defaultMessage={
-                defaultMessages["otpUi.MapPopup.availableBikes"]
-              }
-              description="Label text for the number of bikes available"
-              id="otpUi.MapPopup.availableBikes"
-              values={{ value: entity.bikesAvailable }}
-            />
-          </div>
-          <div>
-            <FormattedMessage
-              defaultMessage={
-                defaultMessages["otpUi.MapPopup.availableDocks"]
-              }
-              description="Label text for the number of docks available"
-              id="otpUi.MapPopup.availableDocks"
-              values={{ value: entity.spacesAvailable }}
-            />
-          </div>
-        </BaseMapStyled.PopupRow>
-      )}
+      {entityIsStationHub && <StationHubDetails station={entity} />}
 
       {/* render stop viewer link if available */}
-      {setViewedStop && entityIsStop && <BaseMapStyled.PopupRow>
-        <span>
-          <strong>
-            <FormattedMessage
-              defaultMessage={defaultMessages["otpUi.MapPopup.stopId"]}
-              description="Displays the stop id"
-              id="otpUi.MapPopup.stopId"
-              values={{
-                stopId
-              }}
-            />
-          </strong>
-        </span>
-        <S.ViewStopButton onClick={() => setViewedStop(stopId)}>
-          <FormattedMessage
-            defaultMessage={defaultMessages["otpUi.MapPopup.stopViewer"]}
-            description="Text for link that opens the stop viewer"
-            id="otpUi.MapPopup.stopViewer"
-          />
-        </S.ViewStopButton>
-      </BaseMapStyled.PopupRow>}
+      {setViewedStop && !bikesAvailablePresent && <StopDetails id={stopId} setViewedStop={setViewedStop} />}
 
       {/* The "Set as [from/to]" ButtonGroup */}
       {setLocation && (
         <BaseMapStyled.PopupRow>
           <FromToLocationPicker
             label
-            location={generateLocation()}
+            location={generateLocation(entity, name)}
             setLocation={setLocation}
           />
         </BaseMapStyled.PopupRow>

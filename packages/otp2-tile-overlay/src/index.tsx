@@ -1,21 +1,23 @@
+import EntityPopup from "@opentripplanner/map-popup"
 import {
   ConfiguredCompany,
   MapLocationActionArg,
 } from "@opentripplanner/types"
-import { Layer, Popup,  Source, useMap } from "react-map-gl"
-import EntityPopup from "@opentripplanner/map-popup"
-import React, { useEffect, useState } from "react"
 // eslint-disable-next-line prettier/prettier
 import type { EventData } from "mapbox-gl"
+import React, { useEffect, useState } from "react"
+import { Layer, Popup, Source, useMap } from "react-map-gl"
+
+// eslint-disable-next-line prettier/prettier
 import { LAYER_PAINT } from "./util"
 
 const OTP2TileLayerWithPopup = ({
   configCompanies,
   id,
   network,
+  onMapClick,
   setLocation,
   setViewedStop,
-  onMapClick,
   type
 }: {
   /**
@@ -32,6 +34,12 @@ const OTP2TileLayerWithPopup = ({
    */
   network?: string
   /**
+   * An optional method to override the map click handler. If a method is passed, NO POPUPS
+   * WILL APPEAR ON CLICK. The implementer will be responsible for handling all click events
+   * in accordance with the MapLibreGL api.
+   */
+  onMapClick?: (event: EventData) => void
+  /**
    * A method fired when a stop is selected as from or to in the default popup. If this method
    * is not passed, the from/to buttons will not be shown.
    */
@@ -41,12 +49,6 @@ const OTP2TileLayerWithPopup = ({
    * not passed, the stop viewer link will not be shown.
    */
   setViewedStop?: ({ stopId }: { stopId: string }) => void
-  /**
-   * An optional method to override the map click handler. If a method is passed, NO POPUPS
-   * WILL APPEAR ON CLICK. The implementer will be responsible for handling all click events
-   * in accordance with the MapLibreGL api.
-   */
-  onMapClick?: (event: EventData) => void
   /**
    * Determines which layer of the OTP2 tile data to display. Also determines icon color.
    */
@@ -129,12 +131,9 @@ const OTP2TileLayerWithPopup = ({
         >
             <EntityPopup
               configCompanies={configCompanies}
-              setViewedStop={setViewedStop}
-              setLocation={setLocation ? (location) => {
-                setClickedEntity(null)
-                setLocation(location)
-              } : null}
               entity={{ ...clickedEntity, id: clickedEntity?.id || clickedEntity?.gtfsId }}
+              setLocation={setLocation ? (location) => { setClickedEntity(null); setLocation(location) } : null}
+              setViewedStop={setViewedStop}
             />
          
         </Popup>
@@ -143,6 +142,18 @@ const OTP2TileLayerWithPopup = ({
   )
 }
 
+/**
+ * Generates an array of MapLibreGL Source and Layer components with included popups for 
+ * rendering OTP2 tile data.
+ * 
+ * @param layers          A list of layers, with some minimal config, matching what is configured on the server.
+ *                        This list will be used to craft the tilejson request to OTP.
+ * @param endpoint        The OTP endpoint to make the requests to
+ * @param setLocation     An optional method to make from/to buttons functional. See component for more detail.
+ * @param setViewedStop   An optional method to make stop viewer button functional. See component for more detail. 
+ * @param configCompanies An optional list of companies used to prettify network information.
+ * @returns               Array of <Source> and <OTP2TileLayerWithPopup> components
+ */
 const generateOTP2TileLayers = (
   layers: { name?: string; network?: string; type: string }[],
   endpoint: string,
@@ -157,6 +168,7 @@ const generateOTP2TileLayers = (
       id="otp2-tiles"
       key="otp2-tiles"
       type="vector"
+      // Only grab the data we need based on layers defined
       url={`${endpoint}/${layers.map((l) => l.type).join(",")}/tilejson.json`}
     />,
     ...layers.map((layer) => {
