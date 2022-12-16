@@ -1,6 +1,7 @@
 import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 import PropTypes from "prop-types";
+import { useIntl } from "react-intl";
 import { Tooltip } from "react-leaflet";
 import L from "leaflet";
 
@@ -18,10 +19,13 @@ export default function CustomTooltip(props) {
     permanent,
     direction
   } = props;
+  const intl = useIntl();
 
   // note: only build tooltip content if we're about to render it on a tooltip
   let tooltipContent = null;
-  if (isTracked || allMarkers) tooltipContent = getContent(vehicle, isTracked);
+  if (isTracked || allMarkers) {
+    tooltipContent = getContent(vehicle, isTracked, intl);
+  }
 
   // the custom "rotation" tooltip orientation is either top or bottom
   let dir = direction;
