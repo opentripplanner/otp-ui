@@ -52,9 +52,11 @@ export default {
   component: TransitiveOverlay
 };
 
-export const Empty = () => <TransitiveOverlay transitiveData={null} visible />;
+export const Empty = (): JSX.Element => (
+  <TransitiveOverlay transitiveData={null} visible />
+);
 
-export const WalkingItinerary = () => (
+export const WalkingItinerary = (): JSX.Element => (
   <>
     <EndpointsOverlay
       fromLocation={getFromLocation(walkOnlyItinerary)}
@@ -72,7 +74,7 @@ export const WalkingItinerary = () => (
 );
 WalkingItinerary.decorators = [withMap([45.518841, -122.679302], 19)];
 
-export const BikeOnlyItinerary = () => (
+export const BikeOnlyItinerary = (): JSX.Element => (
   <>
     <EndpointsOverlay
       fromLocation={getFromLocation(bikeOnlyItinerary)}
@@ -88,7 +90,7 @@ export const BikeOnlyItinerary = () => (
 );
 BikeOnlyItinerary.decorators = [withMap([45.520441, -122.68302], 16)];
 
-export const WalkTransitWalkItinerary = () => (
+export const WalkTransitWalkItinerary = (): JSX.Element => (
   <>
     <EndpointsOverlay
       fromLocation={getFromLocation(walkTransitWalkItinerary)}
@@ -106,7 +108,7 @@ export const WalkTransitWalkItinerary = () => (
 );
 WalkTransitWalkItinerary.decorators = [withMap([45.520441, -122.68302], 16)];
 
-export const WalkTransitWalkItineraryWithNoIntermediateStops = () => (
+export const WalkTransitWalkItineraryWithNoIntermediateStops = (): JSX.Element => (
   <>
     <EndpointsOverlay
       fromLocation={getFromLocation(
@@ -129,7 +131,7 @@ WalkTransitWalkItineraryWithNoIntermediateStops.decorators = [
   withMap([45.525841, -122.649302], 13)
 ];
 
-export const BikeTransitBikeItinerary = () => (
+export const BikeTransitBikeItinerary = (): JSX.Element => (
   <>
     <EndpointsOverlay
       fromLocation={getFromLocation(bikeTransitBikeItinerary)}
@@ -147,7 +149,7 @@ export const BikeTransitBikeItinerary = () => (
 );
 BikeTransitBikeItinerary.decorators = [withMap([45.520441, -122.68302], 16)];
 
-export const WalkInterlinedTransitItinerary = () => (
+export const WalkInterlinedTransitItinerary = (): JSX.Element => (
   <>
     <EndpointsOverlay
       fromLocation={getFromLocation(walkInterlinedTransitItinerary)}
@@ -167,7 +169,7 @@ WalkInterlinedTransitItinerary.decorators = [
   withMap([47.703022, -122.328041], 12.5)
 ];
 
-export const WalkTransitTransferItinerary = () => (
+export const WalkTransitTransferItinerary = (): JSX.Element => (
   <>
     <EndpointsOverlay
       fromLocation={getFromLocation(walkTransitWalkTransitWalkItinerary)}
@@ -188,7 +190,7 @@ WalkTransitTransferItinerary.decorators = [
   withMap([45.505841, -122.631302], 14)
 ];
 
-export const BikeRentalItinerary = () => (
+export const BikeRentalItinerary = (): JSX.Element => (
   <>
     <EndpointsOverlay
       fromLocation={getFromLocation(bikeRentalItinerary)}
@@ -223,7 +225,7 @@ export const EScooterRentalItinerary = injectIntl(({ intl }) => (
 ));
 EScooterRentalItinerary.decorators = [withMap([45.52041, -122.675302], 16)];
 
-export const ParkAndRideItinerary = () => (
+export const ParkAndRideItinerary = (): JSX.Element => (
   <>
     <EndpointsOverlay
       fromLocation={getFromLocation(parkAndRideItinerary)}
@@ -241,7 +243,7 @@ export const ParkAndRideItinerary = () => (
 );
 ParkAndRideItinerary.decorators = [withMap([45.515841, -122.75302], 13)];
 
-export const BikeRentalTransitItinerary = () => (
+export const BikeRentalTransitItinerary = (): JSX.Element => (
   <>
     <EndpointsOverlay
       fromLocation={getFromLocation(bikeRentalTransitBikeRentalItinerary)}
@@ -283,7 +285,7 @@ EScooterRentalTransitItinerary.decorators = [
   withMap([45.538841, -122.6302], 12)
 ];
 
-export const TncTransitItinerary = () => (
+export const TncTransitItinerary = (): JSX.Element => (
   <>
     <EndpointsOverlay
       fromLocation={getFromLocation(tncTransitTncItinerary)}
@@ -301,7 +303,7 @@ export const TncTransitItinerary = () => (
 );
 TncTransitItinerary.decorators = [withMap([45.538841, -122.6302], 12)];
 
-export const FlexItinerary = () => (
+export const FlexItinerary = (): JSX.Element => (
   <>
     <EndpointsOverlay
       fromLocation={getFromLocation(flexItinerary)}

@@ -25,7 +25,21 @@
       "geometry": {
         "points": "es{tGheakV??DALEHANCH?DAH?P?F@H@PBF@F@HBFBdB^JDl@VJHNVBP@XCRAJGLONGDKBiDDsA@s@@u@Aw@AIAy@C{@E_AI_@EWC[Eg@Gi@IsGeAkASm@KUGc@K[KOEy@WKCiBk@]Me@OyAc@sCw@aBe@gBg@gBg@kA]kBi@[IMCMCMCMCMAGAGAQAQAS?S?S?U@g@BoAJg@Bg@@g@Bk@?g@?]EUEE?]IYIYIgEuAgEwAa@K]M]I]G]G[C[E]A[A]A[?]@[@]BYD]D[D[HYF[H[JYL[LWLYN[P[R[TYTWTYVWXWXUVSXUZU\\iCdEu@jAy@rAe@x@k@~@[b@KNSVUXQTUTSTUTYV[V[VMHMHSNQJYNSLMFMF[LQHe@P[H[J[FQDSDQBi@HYDM?K@S@U@S?Y?Y?[AYCYC[EYE[Ga@K_@KKC]MMGQIOGQI]UOKQMSOSOUSUYgBsBMMY]Y]UYa@i@U]q@aAk@u@m@}@{@mAgA_BiAcB]e@_J_Nk@y@iBkCqAmBqAkBg@u@QWKKIMMKIIMKOIMISKSGICICKAKAIAQAOAS?uDAsDA_FAyEAs@?Y?K@G?G@I@G@E@MBEBMDEBEBKFEDEBIHEFGDEHEFGHGJCFEFCFCHGPEJK^m@rBI\\Ut@CJENELIZAHCLAFCNCN?JAFAR?J?H?J?N?H@T@b@@`@JtBBdA@N?J?J@T?\\AP?NAHANALANAJEXERAJCJENCNENOh@KZ]nAiAzDQj@Qj@GNO^EJIPKRKPKPILSXSXSTUTIHMJMJMJSLOJID]P[He@N[Hm@Jc@Hw@LMB_@Hq@L}AVUDOBSDi@RQFWJEBSHWNMHKHWRWRWXMLKLUZMPMRMRMXGLGJGPMZEHM^EPk@nB{AhFUx@K\\K^Y~@YbASt@IXIXg@dBaAfD[bAsBjH[hAGPWz@w@pCmAbEW~@s@dCm@rB_AdDq@`CK^IXUz@[hAENERCLCLCHE\\CNAPAN?NAN?N@N?P@NBN@L@JBNBLBLBLDNDNFV`@xAJb@BLDPDVDTBRBT@P@NBd@@T?P?N?P?P?PANA\\APC\\CTAPCJCPCNCPGVGVQn@wA~EcAlDc@zAa@tAENEJGLGLEHGLGHKNMNMLMJQLc@VSLSLGDIDGDMLQNy@hA_AlA",
         "length": 481
-      }
+      },
+      "stops": [
+        {
+          "id": "20",
+          "name": "Dummy stop 1",
+          "lat": 45.54267,
+          "lon": -122.569774
+        },
+        {
+          "id": "26",
+          "name": "Dummy stop 2",
+          "lat": 45.545655,
+          "lon": -122.570035
+        }
+      ]
     },
     "TriMet:90:0:03": {
       "id": "TriMet:90:0:03",
