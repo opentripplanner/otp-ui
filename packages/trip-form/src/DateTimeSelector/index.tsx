@@ -89,6 +89,9 @@ interface DepartArriveOption {
  * @param {*} type One of the HTML5 input types.
  */
 function isInputTypeSupported(type: string): boolean {
+  // SSR: use of 'document' variable is only valid in a browser (not server-side)
+  if (typeof document === "undefined") return false;
+
   const input = document.createElement("input");
   input.setAttribute("type", type);
   return input.type === type;
