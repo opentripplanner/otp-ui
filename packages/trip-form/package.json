@@ -14,6 +14,7 @@
     "@floating-ui/react-dom-interactions": "^0.11.0",
     "@opentripplanner/core-utils": "^7.0.5",
     "@opentripplanner/icons": "^2.0.0",
+    "@opentripplanner/types": "^4.0.4",
     "@styled-icons/bootstrap": "^10.46.0",
     "@styled-icons/boxicons-regular": "^10.46.0",
     "@styled-icons/fa-regular": "^10.46.0",
