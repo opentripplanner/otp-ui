@@ -24,17 +24,18 @@ type ModeStateConfig = {
 };
 
 /**
- * Aggregates all the unique modes from buttons passed in
+ * Aggregates all the modes from the input mode button definitions
+ * Should probably filter unique values, but it's not possible with a Set due to them being objects
  * @param modeButtonDefinitions Array of mode buttons
  * @returns All the (unique) modes from the buttons
  */
-function aggregateModes(modeButtonDefinitions: ModeButtonDefinition[]) {
-  return Array.from(
-    modeButtonDefinitions.reduce<Set<TransportMode>>((set, combo) => {
-      combo.modes.forEach(mode => set.add(mode));
-      return set;
-    }, new Set<TransportMode>())
-  );
+export function aggregateModes(
+  modeButtonDefinitions: ModeButtonDefinition[]
+): TransportMode[] {
+  return modeButtonDefinitions.reduce<Array<TransportMode>>((array, combo) => {
+    combo.modes.forEach(mode => array.push(mode));
+    return array;
+  }, new Array<TransportMode>());
 }
 
 /**
@@ -44,10 +45,10 @@ function aggregateModes(modeButtonDefinitions: ModeButtonDefinition[]) {
  * @param keys List of keys of buttons to include
  * @returns Filtered list of buttons
  */
-function filterModeDefitionsByKey(
+export function filterModeDefitionsByKey(
   modeButtonDefinitions: ModeButtonDefinition[],
   keys: string[]
-) {
+): ModeButtonDefinition[] {
   return modeButtonDefinitions.filter(def => keys.includes(def.key));
 }
 
@@ -58,7 +59,7 @@ function filterModeDefitionsByKey(
  * @param values An object containing setting values
  * @returns Mode settings with values populated
  */
-function populateSettingsWithValues(
+export function populateSettingsWithValues(
   modeSettings: ModeSetting[],
   values: ModeSettingValues
 ): ModeSetting[] {
@@ -105,7 +106,7 @@ const TRANSIT_MODES = [
   "TRANSIT"
 ];
 
-function checkIfModeSettingApplies(
+export function checkIfModeSettingApplies(
   setting: ModeSetting,
   mode: TransportMode
 ): boolean {
