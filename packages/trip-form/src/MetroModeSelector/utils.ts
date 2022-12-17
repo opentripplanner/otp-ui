@@ -14,12 +14,12 @@ import {
 } from "@opentripplanner/types";
 import { QueryParamChangeEvent } from "../types";
 
-export type InitialStateType = {
+type InitialStateType = {
   enabledModeButtons: string[];
   modeSettingValues: ModeSettingValues;
 };
 
-export type ModeStateConfig = {
+type ModeStateConfig = {
   queryParamState?: boolean;
 };
 

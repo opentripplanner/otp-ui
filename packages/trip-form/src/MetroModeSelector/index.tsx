@@ -162,16 +162,20 @@ function ModeButton({
       <ModeButtonItem
         className={modeButton.enabled ? "enabled" : ""}
         ref={reference}
-        // onClick={modeButtonClicked}
+        // This library relies on prop spreading
         /* eslint-disable-next-line react/jsx-props-no-spreading */
         {...getReferenceProps()}
         enabled={modeButton.enabled}
       >
         <modeButton.Icon size={32} />
       </ModeButtonItem>
-      <FloatingPortal root={floatingTarget} id="foobartest">
+      <FloatingPortal
+        root={floatingTarget}
+        id="otp-ui-metro-mode-selector-hover"
+      >
         {open && modeButton.enabled && (
           <HoverPanel
+            // This library relies on prop spreading
             // eslint-disable-next-line react/jsx-props-no-spreading
             {...getFloatingProps()}
             ref={floating}
@@ -233,7 +237,9 @@ export default function ModeSelector({
           />
         ))}
       </ModeBar>
-      <div ref={floatingTarget} id="foobartest" />
+      {/* TODO: Get the ref based portal to work, rather than using IDs. */}
+      {/* Alternatively, use some fancy CSS. */}
+      <div ref={floatingTarget} id="otp-ui-metro-mode-selector-hover" />
     </>
   );
 }
