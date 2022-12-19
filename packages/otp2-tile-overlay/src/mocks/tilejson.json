@@ -1,0 +1,13 @@
+{
+  "tilejson": "2.2.0",
+  "scheme": "xyz",
+  "minzoom": 9,
+  "maxzoom": 20,
+  "name": "OpenTripPlanner",
+  "attribution": "<a href='http://septa.org'>SEPTA</a>, <a href='http://www.ridepatco.org'>PATCO</a>, <a href='http://amtrak.com'>Amtrak</a>, <a href='http://septa.org'>SEPTA</a>",
+  "tiles": [
+    "https://fake-otp-server.com/otp/routers/default/vectorTiles/stops/{z}/{x}/{y}.pbf"
+  ],
+  "bounds": [-79.992307, 36.843509, -71.055304, 42.352311],
+  "center": [-75.1747415, 40.0110865, 9.0]
+}

@@ -58,6 +58,10 @@ export const StopEntity = (): JSX.Element => {
   );
 };
 
+export const StopEntityNoHandlers = (): JSX.Element => {
+  return <MapPopupContents entity={STOP} />;
+};
+
 export const StationEntity = (): JSX.Element => {
   return (
     <MapPopupContents

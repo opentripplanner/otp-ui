@@ -7,7 +7,7 @@ export default {
 };
 
 export const OtpTileLayer = (): JSX.Element => {
-  const [endpoint, setEndpoint] = useState("");
+  const [endpoint, setEndpoint] = useState("https://fake-otp-server.com/otp");
   return (
     <>
       {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
@@ -16,8 +16,13 @@ export const OtpTileLayer = (): JSX.Element => {
         <input
           onChange={e => setEndpoint(e.target.value)}
           placeholder="http://localhost:8001/otp"
+          value={endpoint}
         />
       </label>
+      <pre style={{ display: "inline", paddingLeft: 5 }}>
+        https://fake-otp-server.com/otp
+      </pre>{" "}
+      mocks downtown Philadelphia stop tile data.
       <BaseMap center={[0, 0]} zoom={3} style={{ height: "80vh" }}>
         {generateOTP2TileLayers(
           [{ type: "stops" }],
