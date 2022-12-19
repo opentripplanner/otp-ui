@@ -521,8 +521,10 @@ export function calculateEmissions(
   const totalCarbon =
     itinerary?.legs?.reduce((total, leg) => {
       return (
-        (leg.distance * carbonIntensityWithDefaults[leg.mode.toLowerCase()] ||
-          0) + total
+        // We estimate that the actual driving distance is 1.34x the "crow-flying" distance
+        (leg.distance *
+          1.34 *
+          carbonIntensityWithDefaults[leg.mode.toLowerCase()] || 0) + total
       );
     }, 0) || 0;
 
