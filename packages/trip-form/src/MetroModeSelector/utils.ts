@@ -187,8 +187,6 @@ export function getActivatedModesFromQueryParams(
   modeSettingDefinitions: ModeSetting[],
   initialState: InitialStateType
 ): { activeModes: TransportMode[]; modeSettings: ModeSetting[] } {
-  console.log(searchString);
-  console.log(initialState);
   const queryObject = new URLSearchParams(searchString);
 
   const decodedQuery = decodeQueryParams(
