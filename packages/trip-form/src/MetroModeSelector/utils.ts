@@ -8,7 +8,6 @@ import { QueryParamConfig, decodeQueryParams } from "serialize-query-params";
 import {
   ModeButtonDefinition,
   ModeSetting,
-  ModeSettingTypes,
   ModeSettingValues,
   TransportMode
 } from "@opentripplanner/types";
@@ -65,10 +64,10 @@ export function populateSettingsWithValues(
 ): ModeSetting[] {
   return modeSettings.map(setting => {
     let convertedVal;
-    if (setting.type === ModeSettingTypes.CHECKBOX) {
+    if (setting.type === "CHECKBOX") {
       // If the parameter is anything besides the string "true", it will be false
       convertedVal = values[setting.key] === "true";
-    } else if (setting.type === ModeSettingTypes.SLIDER) {
+    } else if (setting.type === "SLIDER") {
       convertedVal = Number(values[setting.key]);
     }
     return {
@@ -188,6 +187,8 @@ export function getActivatedModesFromQueryParams(
   modeSettingDefinitions: ModeSetting[],
   initialState: InitialStateType
 ): { activeModes: TransportMode[]; modeSettings: ModeSetting[] } {
+  console.log(searchString);
+  console.log(initialState);
   const queryObject = new URLSearchParams(searchString);
 
   const decodedQuery = decodeQueryParams(

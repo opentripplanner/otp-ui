@@ -698,11 +698,11 @@ export type GradationMap = Record<
   { color: string; icon?: ReactElement; text?: string }
 >;
 
-export enum ModeSettingTypes {
-  SLIDER = "SLIDER",
-  CHECKBOX = "CHECKBOX",
-  DROPDOWN = "DROPDOWN"
-}
+export const ModeSettingTypes = {
+  SLIDER: "SLIDER",
+  CHECKBOX: "CHECKBOX",
+  DROPDOWN: "DROPDOWN"
+};
 
 export type DropdownOptions = {
   label: string;
@@ -710,7 +710,7 @@ export type DropdownOptions = {
     text: string;
     value: number;
   }>;
-  type: ModeSettingTypes.DROPDOWN;
+  type: "DROPDOWN";
   value?: string;
   default?: string;
 };
@@ -722,7 +722,7 @@ export type SliderOptions = {
   label: string;
   labelLow: string;
   labelHigh: string;
-  type: ModeSettingTypes.SLIDER;
+  type: "SLIDER";
   value?: number;
   default?: number;
 };
@@ -730,7 +730,7 @@ export type SliderOptions = {
 export type CheckboxOptions = {
   label: string;
   icon: JSX.Element;
-  type: ModeSettingTypes.CHECKBOX;
+  type: "CHECKBOX";
   value?: boolean;
   default?: boolean;
 };

@@ -5,7 +5,6 @@ import { CircleXmark } from "@styled-icons/fa-solid";
 import CheckboxSelector from "../CheckboxSelector";
 import DropdownSelector from "../DropdownSelector";
 import SliderSelector from "../SliderSelector";
-import { ModeSettingTypes } from "./types";
 
 const Header = styled.div`
   font-size: 1.5em;
@@ -33,7 +32,7 @@ const ModeSettingRenderer = ({
   onChange: (QueryParamChangeEvent) => void;
 }) => {
   switch (setting.type) {
-    case ModeSettingTypes.CHECKBOX:
+    case "CHECKBOX":
       return (
         <CheckboxSelector
           label={setting.label}
@@ -43,7 +42,7 @@ const ModeSettingRenderer = ({
           style={{ marginLeft: "4px" }}
         />
       );
-    case ModeSettingTypes.DROPDOWN:
+    case "DROPDOWN":
       return (
         <DropdownSelector
           label={setting.label}
@@ -53,7 +52,7 @@ const ModeSettingRenderer = ({
           options={setting.options}
         />
       );
-    case ModeSettingTypes.SLIDER:
+    case "SLIDER":
       return (
         <SliderSelector
           label={setting.label}

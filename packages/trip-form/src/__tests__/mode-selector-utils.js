@@ -4,6 +4,7 @@ import {
   checkIfModeSettingApplies,
   extractModeSettingDefaultsToObject,
   filterModeDefitionsByKey,
+  getActivatedModesFromQueryParams,
   populateSettingsWithValues
 } from "../MetroModeSelector/utils";
 
@@ -249,5 +250,18 @@ describe("mode selector utils", () => {
         )
       ).toMatchSnapshot();
     });
+  });
+
+  const searchString =
+    "?modeButtons=transit_walk_bike_car&modeSettings=carReluctance-3_bikeReluctance-2_walkReluctance-3.4_allowBikeRental-true_wheelchair-true";
+  describe("get activated modes and settings from query params", () => {
+    expect(
+      getActivatedModesFromQueryParams(
+        searchString,
+        modeButtonDefinitions,
+        modeSettingDefinitions,
+        {}
+      )
+    ).toMatchSnapshot();
   });
 });
