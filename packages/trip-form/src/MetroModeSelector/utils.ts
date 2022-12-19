@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { URLSearchParams } from "url";
 import {
   useQueryParam,
   DelimitedArrayParam,
@@ -11,6 +12,7 @@ import {
   ModeSettingValues,
   TransportMode
 } from "@opentripplanner/types";
+
 import { QueryParamChangeEvent } from "../types";
 
 type InitialStateType = {
@@ -105,6 +107,14 @@ const TRANSIT_MODES = [
   "TRANSIT"
 ];
 
+/**
+ * This function is used to apply the ModeSettings to the ModeButtons by checking
+ * each setting against all the transport modes in the button. It also handles the special
+ * case of a "TRANSIT" mode setting, which can apply to all of the different possible TRANSIT_MODES.
+ * @param setting Mode setting to check
+ * @param mode TransportMode to check against
+ * @returns Whether this mode setting applies to this TransportMode
+ */
 export function checkIfModeSettingApplies(
   setting: ModeSetting,
   mode: TransportMode
@@ -224,7 +234,7 @@ export function getActivatedModesFromQueryParams(
  * @param buttonsFromConfig List of mode buttons to be displayed
  * @param initialState Initial state object for mode button activation and mode setting defaults
  * @param modeSettingDefinitions Definitions of all the mode settings available
- * @param param3 Config to specify whether to store in url query param or react useState hook
+ * @param configuration Config to specify whether to store in url query param or react useState hook
  * @returns Data to be used by mode selector and query generation
  */
 export function useModeState(
