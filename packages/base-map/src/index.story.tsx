@@ -204,3 +204,33 @@ export const withMultipleBaseLayers = () => {
     </Styled.StoryMapContainer>
   );
 };
+
+export const withMultipleBaseLayersAndOptionalLayers = () => {
+  const [mapTilerKey, setMapTilerKey] = useState("");
+  return (
+    <Styled.StoryMapContainer>
+      <input
+        type="text"
+        value={mapTilerKey}
+        placeholder="MapTiler API Key"
+        onChange={e => setMapTilerKey(e.target.value)}
+      />
+      {mapTilerKey && (
+        <BaseMap
+          center={center}
+          baseLayer={[
+            `https://api.maptiler.com/maps/streets/style.json?key=${mapTilerKey}`,
+            `https://api.maptiler.com/maps/ocean/style.json?key=${mapTilerKey}`,
+            `https://api.maptiler.com/maps/hybrid/style.json?key=${mapTilerKey}`
+          ]}
+          baseLayerNames={["Streets", "Ocean", "Hybrid"]}
+        >
+          <AllVehiclesOverlay id="layer-1" />
+          <LayerWrapper id="layer-2">
+            <MarkerWithPopup position={[center[0], center[1]]} />
+          </LayerWrapper>
+        </BaseMap>
+      )}
+    </Styled.StoryMapContainer>
+  );
+};
