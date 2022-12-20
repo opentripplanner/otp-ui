@@ -8,7 +8,9 @@ import {
   LatLngArray,
   Leg,
   Money,
+  Place,
   Step,
+  Stop,
   TncFare
 } from "@opentripplanner/types";
 import turfAlong from "@turf/along";
@@ -44,25 +46,28 @@ export function isTransit(mode: string): boolean {
 /**
  * Returns true if the leg pickup rules enabled which require
  * calling ahead for the service to run. "mustPhone" is the only
- * property of boardRule which encodes this info.
+ * property which encodes this info.
  */
 export function isReservationRequired(leg: Leg): boolean {
-  return leg.boardRule === "mustPhone";
+  return leg.boardRule === "mustPhone" || leg.alightRule === "mustPhone";
 }
 /**
- * Returns true if the leg has continuous dropoff enabled which requires
- * asking the driver to let the user off. "coordinateWithDriver" is the only
- * property of alightRule which encodes this info.
+ * Returns true if a user must ask the driver to let the user off
+ * or if the user must flag the driver down for pickup.
+ * "coordinateWithDriver" in board/alight rule encodes this info.
  */
-export function isContinuousDropoff(leg: Leg): boolean {
-  return leg.alightRule === "coordinateWithDriver";
+export function isCoordinationRequired(leg: Leg): boolean {
+  return (
+    leg.boardRule === "coordinateWithDriver" ||
+    leg.alightRule === "coordinateWithDriver"
+  );
 }
 /**
  * The two rules checked by the above two functions are the only values
  * returned by OTP when a leg is a flex leg.
  */
 export function isFlex(leg: Leg): boolean {
-  return isReservationRequired(leg) || isContinuousDropoff(leg);
+  return isReservationRequired(leg) || isCoordinationRequired(leg);
 }
 
 export function isAdvanceBookingRequired(info: FlexBookingInfo): boolean {
@@ -532,4 +537,21 @@ export function calculateEmissions(
     default:
       return totalCarbon;
   }
+}
+
+/**
+ * Returns the user-facing stop id to display for a stop or place, using the following priority:
+ * 1. stop code,
+ * 2. stop id without the agency id portion, if stop id contains an agency portion,
+ * 3. stop id, whether null or not (this is the fallback case).
+ */
+export function getDisplayedStopId(placeOrStop: Place | Stop): string {
+  let stopId;
+  let stopCode;
+  if ("stopId" in placeOrStop) {
+    ({ stopCode, stopId } = placeOrStop);
+  } else if ("id" in placeOrStop) {
+    ({ code: stopCode, id: stopId } = placeOrStop);
+  }
+  return stopCode || stopId?.split(":")[1] || stopId;
 }

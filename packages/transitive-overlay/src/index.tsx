@@ -1,4 +1,5 @@
 import { SymbolLayout } from "mapbox-gl";
+import { util } from "@opentripplanner/base-map";
 import React, { useEffect } from "react";
 import { Layer, Source, useMap } from "react-map-gl";
 import polyline from "@mapbox/polyline";
@@ -184,10 +185,10 @@ const TransitiveCanvasOverlay = ({
     const b = bbox(geoJson);
     const bounds: [number, number, number, number] = [b[0], b[1], b[2], b[3]];
 
-    if (bounds.length === 4 && bounds.every(Number.isFinite)) {
-      map?.fitBounds(bounds, {
+    if (map && bounds.length === 4 && bounds.every(Number.isFinite)) {
+      map.fitBounds(bounds, {
         duration: 500,
-        padding: window.innerWidth > 500 ? 200 : undefined
+        padding: util.getFitBoundsPadding(map, 0.2)
       });
     }
   };

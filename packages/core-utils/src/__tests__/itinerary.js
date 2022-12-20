@@ -1,12 +1,19 @@
 import {
   calculateTncFares,
   getCompanyFromLeg,
+  getDisplayedStopId,
   getTransitFare,
   isTransit
 } from "../itinerary";
 
 const bikeRentalItinerary = require("./__mocks__/bike-rental-itinerary.json");
 const tncItinerary = require("./__mocks__/tnc-itinerary.json");
+
+const basePlace = {
+  lat: 0,
+  lon: 0,
+  name: "stop"
+};
 
 describe("util > itinerary", () => {
   describe("isTransit", () => {
@@ -58,6 +65,50 @@ describe("util > itinerary", () => {
       expect(fareResult.currencyCode).toEqual("USD");
       expect(fareResult.maxTNCFare).toEqual(19);
       expect(fareResult.minTNCFare).toEqual(17);
+    });
+  });
+
+  describe("getDisplayedStopId", () => {
+    it("should return the stop code if one is provided", () => {
+      const place = {
+        ...basePlace,
+        stopCode: "code123",
+        stopId: "xagency:id123"
+      };
+      expect(getDisplayedStopId(place)).toEqual("code123");
+      const stop = {
+        ...basePlace,
+        code: "code123",
+        id: "xagency:id123"
+      };
+      expect(getDisplayedStopId(stop)).toEqual("code123");
+    });
+    it("should return the id part of stopId it contains and agencyId (and no stopCode is provided)", () => {
+      const place = {
+        ...basePlace,
+        stopId: "xagency:id123"
+      };
+      expect(getDisplayedStopId(place)).toEqual("id123");
+      const stop = {
+        ...basePlace,
+        id: "xagency:id123"
+      };
+      expect(getDisplayedStopId(stop)).toEqual("id123");
+    });
+    it("should return the whole stopId it does not contain an agency part (and no stopCode is provided)", () => {
+      const place = {
+        ...basePlace,
+        stopId: "wholeid123"
+      };
+      expect(getDisplayedStopId(place)).toEqual("wholeid123");
+      const stop = {
+        ...basePlace,
+        stopId: "wholeid123"
+      };
+      expect(getDisplayedStopId(stop)).toEqual("wholeid123");
+    });
+    it("should return null if stopId is null (and no stopCode is provided)", () => {
+      expect(getDisplayedStopId(basePlace)).toBeFalsy();
     });
   });
 });
