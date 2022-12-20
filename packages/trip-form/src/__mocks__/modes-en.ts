@@ -1,3 +1,5 @@
+import cloneDeep from "lodash.clonedeep";
+
 import bikeImage from "./static/bike.svg";
 import carImage from "./static/car.svg";
 import scooterImage from "./static/scooter.svg";
@@ -196,25 +198,17 @@ const commonModes = {
 
 // This variant of the data adds an option with a company as the first
 // option in the "CAR" category that has mixed modes ("CAR_PARK", "CAR_HAIL")
-export const modesWithCompanyFirstMixedCategory = {
-  ...commonModes,
-  categories: commonModes.categories.map(c => {
-    const nextCategory = { ...c };
-
-    if (c.id === "CAR") {
-      nextCategory.options = [
-        {
-          company: "LYFT",
-          mode: "CAR_HAIL",
-          label: "Lyft",
-          url: "https://www.lyft.com"
-        },
-        ...nextCategory.options
-      ];
-    }
-
-    return nextCategory;
-  })
-};
+const modesWithCompanyFirstMixedCategory = cloneDeep(commonModes);
+modesWithCompanyFirstMixedCategory.categories.forEach(c => {
+  if (c.id === "CAR") {
+    c.options.unshift({
+      company: "LYFT",
+      mode: "CAR_HAIL",
+      label: "Lyft",
+      url: "https://www.lyft.com"
+    });
+  }
+});
 
 export default commonModes;
+export { modesWithCompanyFirstMixedCategory };
