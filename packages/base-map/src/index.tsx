@@ -22,9 +22,9 @@ import MarkerWithPopup from "./MarkerWithPopup";
  * with an id are added to the control.
  */
 type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
-  /** A URL pointing to the vector tile specification which should be used as the main map.  */
+  /** A URL, or list of URLs pointing to the vector tile specification which should be used as the main map.  */
   baseLayer?: string | string[];
-  /** A list of names to match onto the base layers */
+  /** A list of names to match onto the base layers. Used only if there are multiple entries defined for `BaseLayer` */
   baseLayerNames?: string[];
   /** A [lat, lon] position to center the map at. */
   center?: [number, number];
@@ -139,28 +139,31 @@ const BaseMap = ({
       zoom={viewState.zoom}
     >
       {(toggleableLayers.length > 0 ||
-        (typeof baseLayer === "object" && baseLayer.length > 1)) && (
+        (!!baseLayer &&
+          typeof baseLayer === "object" &&
+          baseLayer.length > 1)) && (
         <Styled.LayerSelector
+          className="filter-group"
+          id="filter-group"
           onTouchEnd={() => {
             setFakeMobileHover(true);
           }}
-          className="filter-group"
-          id="filter-group"
         >
           <ul
             className={`layers-list ${fakeMobileHover && "fake-mobile-hover"}`}
           >
-            {typeof baseLayer === "object" &&
+            {!!baseLayer &&
+              typeof baseLayer === "object" &&
               baseLayer.map((layer: string, index: number) => {
                 return (
                   <li key={index}>
                     {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                     <label>
                       <input
-                        type="radio"
                         checked={activeBaseLayer === layer}
-                        onChange={() => setActiveBaseLayer(layer)}
                         id={layer}
+                        onChange={() => setActiveBaseLayer(layer)}
+                        type="radio"
                       />
                       {baseLayerNames?.[index] || layer}
                     </label>

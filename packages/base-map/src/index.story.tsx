@@ -185,20 +185,20 @@ export const withMultipleBaseLayers = () => {
   return (
     <Styled.StoryMapContainer>
       <input
+        onChange={e => setMapTilerKey(e.target.value)}
+        placeholder="MapTiler API Key"
         type="text"
         value={mapTilerKey}
-        placeholder="MapTiler API Key"
-        onChange={e => setMapTilerKey(e.target.value)}
       />
       {mapTilerKey && (
         <BaseMap
-          center={center}
           baseLayer={[
             `https://api.maptiler.com/maps/streets/style.json?key=${mapTilerKey}`,
             `https://api.maptiler.com/maps/ocean/style.json?key=${mapTilerKey}`,
             `https://api.maptiler.com/maps/hybrid/style.json?key=${mapTilerKey}`
           ]}
           baseLayerNames={["Streets", "Ocean", "Hybrid"]}
+          center={center}
         />
       )}
     </Styled.StoryMapContainer>
@@ -210,20 +210,20 @@ export const withMultipleBaseLayersAndOptionalLayers = () => {
   return (
     <Styled.StoryMapContainer>
       <input
+        onChange={e => setMapTilerKey(e.target.value)}
+        placeholder="MapTiler API Key"
         type="text"
         value={mapTilerKey}
-        placeholder="MapTiler API Key"
-        onChange={e => setMapTilerKey(e.target.value)}
       />
       {mapTilerKey && (
         <BaseMap
-          center={center}
           baseLayer={[
             `https://api.maptiler.com/maps/streets/style.json?key=${mapTilerKey}`,
             `https://api.maptiler.com/maps/ocean/style.json?key=${mapTilerKey}`,
             `https://api.maptiler.com/maps/hybrid/style.json?key=${mapTilerKey}`
           ]}
           baseLayerNames={["Streets", "Ocean", "Hybrid"]}
+          center={center}
         >
           <AllVehiclesOverlay id="layer-1" />
           <LayerWrapper id="layer-2">
