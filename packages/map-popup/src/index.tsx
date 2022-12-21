@@ -95,8 +95,8 @@ type Props = {
  * Renders a map popup for a stop, scooter, or shared bike
  */
 export function MapPopup({ configCompanies, entity, getEntityName, setLocation, setViewedStop, }: Props): JSX.Element {
-  if (!entity) return <></>
   const intl = useIntl()
+  if (!entity) return <></>
 
   const getNameFunc = getEntityName || makeDefaultGetEntityName(intl, defaultMessages);
   const name = getNameFunc(entity, configCompanies);

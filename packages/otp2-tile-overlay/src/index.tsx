@@ -5,11 +5,13 @@ import {
 } from "@opentripplanner/types"
 // eslint-disable-next-line prettier/prettier
 import type { EventData } from "mapbox-gl"
-import React, { useEffect, useState } from "react"
+import React, { useCallback, useEffect, useState } from "react"
 import { Layer, Popup, Source, useMap } from "react-map-gl"
 
 // eslint-disable-next-line prettier/prettier
 import { LAYER_PAINT } from "./util"
+
+const SOURCE_ID = "otp2-tiles"
 
 const OTP2TileLayerWithPopup = ({
   configCompanies,
@@ -100,14 +102,24 @@ const OTP2TileLayerWithPopup = ({
     }
   }
 
+  const onLayerEnter = useCallback(() => {
+    map.getCanvas().style.cursor = "pointer";
+  }, [map]);
+
+  const onLayerLeave = useCallback(() => {
+    map.getCanvas().style.cursor = "";
+  }, [map]);
+
   useEffect(() => {
-    map?.on("mouseenter", id, () => {
-      map.getCanvas().style.cursor = "pointer"
-    })
-    map?.on("mouseleave", id, () => {
-      map.getCanvas().style.cursor = ""
-    })
+    map?.on("mouseenter", id, onLayerEnter)
+    map?.on("mouseleave", id, onLayerLeave)
     map?.on("click", id, onMapClick || defaultClickHandler)
+
+    return () => {
+        map?.off("mouseenter", id, onLayerEnter);
+        map?.off("mouseleave", id, onLayerLeave);
+        map?.off("click", id, onMapClick || defaultClickHandler);
+      };
   }, [id, map])
 
   return (
@@ -117,7 +129,7 @@ const OTP2TileLayerWithPopup = ({
         id={id}
         key={id}
         paint={LAYER_PAINT[type]}
-        source="otp2-tiles"
+        source={SOURCE_ID}
         source-layer={type}
         type="circle"
       />
@@ -165,8 +177,8 @@ const generateOTP2TileLayers = (
     <Source
       // @ts-expect-error we use a nonstandard prop
       alwaysShow
-      id="otp2-tiles"
-      key="otp2-tiles"
+      id={SOURCE_ID}
+      key={SOURCE_ID}
       type="vector"
       // Only grab the data we need based on layers defined
       url={`${endpoint}/${layers.map((l) => l.type).join(",")}/tilejson.json`}
