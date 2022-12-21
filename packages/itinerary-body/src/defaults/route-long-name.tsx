@@ -1,6 +1,7 @@
 import { Leg } from "@opentripplanner/types";
 import React, { HTMLAttributes, ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
+import { compareTwoStrings } from "string-similarity";
 
 import * as S from "../styled";
 import { defaultMessages } from "../util";
@@ -24,9 +25,10 @@ export default function RouteLongName({
   style
 }: Props): ReactElement {
   const { headsign, routeLongName } = leg;
+  const badGtfs = compareTwoStrings(headsign || "", routeLongName || "") > 0.5;
   return (
     <span className={className} style={style}>
-      {headsign ? (
+      {!badGtfs && headsign ? (
         <FormattedMessage
           defaultMessage={
             defaultMessages["otpUi.TransitLegBody.routeDescription"]
@@ -39,6 +41,8 @@ export default function RouteLongName({
             toPrefix
           }}
         />
+      ) : badGtfs ? (
+        headsign
       ) : (
         routeLongName
       )}
