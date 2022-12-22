@@ -366,11 +366,7 @@ export const LineColumn = styled.div`
   padding-right: 5px;
 `;
 
-export const LegDetails = styled.span`
-  *:not(.fa) {
-    vertical-align: middle;
-  }
-`;
+export const LegDetails = styled.span``;
 
 export const PlaceRowWrapper = styled.div`
   /* needs to be a flexbox row */
