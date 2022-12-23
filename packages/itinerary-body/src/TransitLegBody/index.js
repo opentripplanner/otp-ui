@@ -59,7 +59,7 @@ export default class TransitLegBody extends Component {
       transitOperator
     } = this.props;
     const { language: languageConfig } = config;
-    const { agencyBrandingUrl, agencyName, agencyUrl, alerts } = leg;
+    const { agencyBrandingUrl, agencyName, agencyUrl, agencyId, alerts } = leg;
     const { alertsExpanded, stopsExpanded } = this.state;
 
     // If the config contains an operator with a logo URL, prefer that over the
@@ -71,6 +71,10 @@ export default class TransitLegBody extends Component {
 
     const expandAlerts =
       alertsExpanded || (leg.alerts && leg.alerts.length < 3);
+
+    // Use transit operator from config to use any custom names/logos
+
+    const operator = config?.transitOperators?.find(x => x.id === agencyId);
 
     return (
       <>
@@ -92,9 +96,13 @@ export default class TransitLegBody extends Component {
             <Styled.AgencyInfo>
               Service operated by{" "}
               <a href={agencyUrl} rel="noopener noreferrer" target="_blank">
-                {agencyName}
+                {operator.name || agencyName}
                 {logoUrl && (
-                  <img alt={`${agencyName} logo`} src={logoUrl} height={25} />
+                  <img
+                    alt={`${agencyName} logo`}
+                    src={operator.logo || logoUrl}
+                    height={25}
+                  />
                 )}
               </a>
             </Styled.AgencyInfo>
