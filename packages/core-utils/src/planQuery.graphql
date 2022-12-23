@@ -1,4 +1,4 @@
-query Query1(
+query PlanQuery(
 	$fromPlace: String!,
 	$toPlace: String!,
 	$modes: [TransportMode],
