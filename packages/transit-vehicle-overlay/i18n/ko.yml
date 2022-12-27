@@ -1,8 +1,5 @@
 otpUi:
   TransitVehicleOverlay:
-    durationAgo: "{duration} 전"
-    genericRouteFormat: 선 {route}
-    tooltipRouteLabel: "{routeLabel}:"
     defaultTooltip: "{route}: {duration} 전"
     durationWithSeconds:
       "{hours, plural, =0 {} other {# 시간 }}{minutes, plural, =0\

@@ -36,12 +36,6 @@ module.exports = {
       loader: ["json-loader", "yaml-loader"]
     });
 
-    config.module.rules.push({ 
-      test: /\.graphql$/,
-      exclude: /node_modules/,
-      loader: 'graphql-tag/loader',
-    });
-
     // Return the altered config
     return config;
   }
