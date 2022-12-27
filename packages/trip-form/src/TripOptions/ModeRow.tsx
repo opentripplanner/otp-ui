@@ -108,10 +108,15 @@ const ModeRow = ({
           }
 
           let mode = getCategoryPrimaryMode(category);
+
+          // If the category has a single mode select companies from all
+          // options, if the category has mixed modes select the company
+          // (if any) associated with first option
           const companies =
-            typeof category.mode === "undefined"
-              ? ""
-              : category.options?.map(o => o.company).join(",") || "";
+            (category.mode
+              ? category.options?.map(o => o.company).join(",")
+              : category.options?.[0]?.company) || "";
+
           if (category.type === "access") {
             mode = isChecked
               ? selectedTransitString
