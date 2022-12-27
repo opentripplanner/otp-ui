@@ -8,7 +8,10 @@ import SettingsSelectorPanel from "./SettingsSelectorPanel";
 import SliderSelector from "./SliderSelector";
 import * as Styled from "./styled";
 import SubmodeSelector from "./SubmodeSelector";
+import MetroModeSelector from "./MetroModeSelector";
+import { useModeState } from "./MetroModeSelector/utils";
 import TripOptions, { Styled as TripOptionsStyled } from "./TripOptions";
+import defaultModeSettings from "./modeSettings.yml";
 
 export {
   CheckboxSelector,
@@ -17,10 +20,13 @@ export {
   GeneralSettingsPanel,
   ModeButton,
   ModeSelector,
+  MetroModeSelector,
   SettingsSelectorPanel,
   SliderSelector,
   SubmodeSelector,
   TripOptions,
   TripOptionsStyled,
-  Styled
+  Styled,
+  useModeState,
+  defaultModeSettings
 };
