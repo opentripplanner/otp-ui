@@ -5,20 +5,23 @@ import {
   ModeSettingValues,
   TransportMode
 } from "@opentripplanner/types";
+import { LonLatOutput } from "@conveyal/lonlat";
 import PlanQuery from "./planQuery.graphql";
 
-type LonLat = {
-  lon: number;
-  lat: number;
-};
-
 type OTPQueryParams = {
-  to: LonLat;
-  from: LonLat;
+  to: LonLatOutput;
+  from: LonLatOutput;
   modes: Array<TransportMode>;
   modeSettings: ModeSetting[];
 };
 
+/**
+ * Generates every possible mathematical subset of the input TransportModes.
+ * Uses code from:
+ * https://stackoverflow.com/questions/5752002/find-all-possible-subset-combos-in-an-array
+ * @param array Array of input transport modes
+ * @returns 2D array representing every possible subset of transport modes from input
+ */
 function combinations(array: TransportMode[]): TransportMode[][] {
   if (!array) return [];
   return (
@@ -65,6 +68,7 @@ export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
 
   const BANNED_TOGETHER = ["SCOOTER", "BICYCLE"];
 
+  // List of the transit submodes that are included in the input params
   const queryTransitSubmodes = params.modes
     .filter(mode => TRANSIT_SUBMODES.includes(mode.mode))
     .map(mode => mode.mode);
@@ -116,6 +120,7 @@ export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
 export function generateOtp2Query(params: OTPQueryParams): any {
   const { to, from, modeSettings } = params;
 
+  // This extracts the values from the mode settings to key value pairs
   const modeSettingValues = modeSettings.reduce((prev, cur) => {
     prev[cur.key] = cur.value;
     return prev;
