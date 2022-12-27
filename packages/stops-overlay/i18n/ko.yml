@@ -1,4 +1,0 @@
-otpUi:
-  StopsOverlay:
-    stopViewer: 뷰어 중지하기
-    stopId: "중지 ID: {stopId}"

@@ -2884,15 +2884,6 @@
     react-animate-height "^3.0.4"
     react-resize-detector "^4.2.1"
 
-"@opentripplanner/stops-overlay@^5.0.3-alpha.1":
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/stops-overlay/-/stops-overlay-5.0.5.tgz#7b9f89baeefa447c58ae8dd9b1b337be04338a9f"
-  integrity sha512-urCfGnLQkfabUiEprZ/8jU8+AL44i9YMVEsYM+ArBeQEWhNpHccvAsmvHha2I7EC4YIGr9hgGiUTRrNB6201ig==
-  dependencies:
-    "@opentripplanner/base-map" "^3.0.4"
-    "@opentripplanner/from-to-location-picker" "^2.1.4"
-    flat "^5.0.2"
-
 "@opentripplanner/types@^4.0.2":
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-4.0.2.tgz#5eff9d8d69adeb7475099b7c5296fbf23c8b0dd7"
