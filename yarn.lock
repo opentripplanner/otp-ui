@@ -2832,10 +2832,36 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
-"@opentripplanner/core-utils@^7.0.10", "@opentripplanner/core-utils@^7.0.5":
+"@opentripplanner/base-map@^3.0.2", "@opentripplanner/base-map@^3.0.4", "@opentripplanner/base-map@^3.0.6", "@opentripplanner/base-map@^3.0.7":
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/base-map/-/base-map-3.0.7.tgz#6641f03b8c509d2b3a9beda966367938f0c278ad"
+  integrity sha512-RzbB5RRPZ4q/Ajd8mPXH8zBoipb7K4wNErDug0//jg8t8whPiyGOoTrQxLtoTwohOlvmxmRIKuvyfuqXhBmA1Q==
+  dependencies:
+    mapbox-gl "npm:empty-npm-package@1.0.0"
+    maplibre-gl "^2.1.9"
+    react-map-gl "^7.0.15"
+
+"@opentripplanner/core-utils@^7.0.10", "@opentripplanner/core-utils@^7.0.5", "@opentripplanner/core-utils@^7.0.9":
   version "7.0.10"
   resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-7.0.10.tgz#697aa2309cee35716bcc3f38311739a75353172c"
   integrity sha512-dDioXTuhP+Slg7GRWsLayDgwx0XaLQVDP7NtRGHBQ+pEFjgm66Xq4SkmyV+8UCi1uIDp7v49nTU3gBmnsywicQ==
+  dependencies:
+    "@mapbox/polyline" "^1.1.0"
+    "@opentripplanner/geocoder" "^1.3.2"
+    "@styled-icons/foundation" "^10.34.0"
+    "@turf/along" "^6.0.1"
+    bowser "^2.7.0"
+    chroma-js "^2.4.2"
+    date-fns "^2.28.0"
+    date-fns-tz "^1.2.2"
+    lodash.clonedeep "^4.5.0"
+    lodash.isequal "^4.5.0"
+    qs "^6.9.1"
+
+"@opentripplanner/core-utils@^8.0.0":
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-8.0.0.tgz#2d248c2ec3ea1458d39963e890144da682b60075"
+  integrity sha512-TxPVrBQoAWNUWX+lfvi1tiCLlW1s2s9Gr8JqEmaTm6Gn4F8TpRDJETp0nXqvpuf5EdIir0mv44T5wpKTLj1Lvw==
   dependencies:
     "@mapbox/polyline" "^1.1.0"
     "@opentripplanner/geocoder" "^1.3.2"
@@ -2883,6 +2909,16 @@
     flat "^5.0.2"
     react-animate-height "^3.0.4"
     react-resize-detector "^4.2.1"
+
+"@opentripplanner/map-popup@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/map-popup/-/map-popup-0.0.1.tgz#90a8b812895ceba0c8ce6b4fa566e5766d78bbeb"
+  integrity sha512-Zpm0VIsnJSBsdaDbwENCVvFWTcSzgLb1Rd3YfQRKB32+yatkLn/I5I0ykCqTvJqw4WEkQv1iaW9UXAGc4ZHltg==
+  dependencies:
+    "@opentripplanner/base-map" "^3.0.6"
+    "@opentripplanner/core-utils" "^7.0.9"
+    "@opentripplanner/from-to-location-picker" "^2.1.5"
+    flat "^5.0.2"
 
 "@opentripplanner/types@^4.0.2":
   version "4.0.2"
