@@ -32,30 +32,32 @@ function combinations(array: TransportMode[]): TransportMode[][] {
       .map((e1, i) => array.filter((e2, j) => i & (1 << j)))
   );
 }
+export const SIMPLIFICATIONS = {
+  AIRPLANE: "TRANSIT",
+  BICYCLE: "PERSONAL",
+  BUS: "TRANSIT",
+  CABLE_CAR: "TRANSIT",
+  CAR: "CAR",
+  FERRY: "TRANSIT",
+  FLEX: "SHARED", // TODO: this allows FLEX+WALK. Is this reasonable?
+  FUNICULAR: "TRANSIT",
+  GONDOLA: "TRANSIT",
+  RAIL: "TRANSIT",
+  SCOOTER: "PERSONAL",
+  SUBWAY: "TRANSIT",
+  TRAM: "TRANSIT",
+  TRANSIT: "TRANSIT",
+  WALK: "WALK"
+};
+
+export const TRANSIT_SUBMODES = Object.keys(SIMPLIFICATIONS).filter(
+  mode => SIMPLIFICATIONS[mode] === "TRANSIT" && mode !== "TRANSIT"
+);
+export const TRANSIT_SUBMODES_AND_TRANSIT = Object.keys(SIMPLIFICATIONS).filter(
+  mode => SIMPLIFICATIONS[mode] === "TRANSIT"
+);
 
 export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
-  const SIMPLIFICATIONS = {
-    AIRPLANE: "TRANSIT",
-    BICYCLE: "PERSONAL",
-    BUS: "TRANSIT",
-    CABLE_CAR: "TRANSIT",
-    CAR: "CAR",
-    FERRY: "TRANSIT",
-    FLEX: "SHARED", // TODO: this allows FLEX+WALK. Is this reasonable?
-    FUNICULAR: "TRANSIT",
-    GONDOLA: "TRANSIT",
-    RAIL: "TRANSIT",
-    SCOOTER: "PERSONAL",
-    SUBWAY: "TRANSIT",
-    TRAM: "TRANSIT",
-    TRANSIT: "TRANSIT",
-    WALK: "WALK"
-  };
-
-  const TRANSIT_SUBMODES = Object.keys(SIMPLIFICATIONS).filter(
-    mode => SIMPLIFICATIONS[mode] === "TRANSIT" && mode !== "TRANSIT"
-  );
-
   const VALID_COMBOS = [
     ["WALK"],
     ["PERSONAL"],

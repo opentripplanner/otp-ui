@@ -15,7 +15,7 @@ const customWalkDistanceOptions = [
   }
 ];
 
-function modeStrToTransportMode(m): Array<TransportMode> {
+function modeStrToTransportMode(m): TransportMode {
   const splitVals = m.split("_");
   return {
     mode: splitVals[0],
