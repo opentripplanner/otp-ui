@@ -3,7 +3,7 @@ import { Map, MapProps } from "react-map-gl";
 import maplibregl, { Event } from "maplibre-gl";
 
 import * as Styled from "./styled";
-import callIfValid from "./util";
+import * as util from "./util";
 import MarkerWithPopup from "./MarkerWithPopup";
 
 /**
@@ -22,8 +22,10 @@ import MarkerWithPopup from "./MarkerWithPopup";
  * with an id are added to the control.
  */
 type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
-  /** A URL pointing to the vector tile specification which should be used as the main map.  */
-  baseLayer?: string;
+  /** A URL, or list of URLs pointing to the vector tile specification which should be used as the main map.  */
+  baseLayer?: string | string[];
+  /** A list of names to match onto the base layers. Used only if there are multiple entries defined for `BaseLayer` */
+  baseLayerNames?: string[];
   /** A [lat, lon] position to center the map at. */
   center?: [number, number];
   /** A unique identifier for the map (useful when using MapProvider) */
@@ -38,13 +40,11 @@ type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
   // Unknown is used here because of a maplibre/mapbox issue with the true type, MapLayerMouseEvent
   onContextMenu?: (e: unknown) => void;
   /** A callback method which is fired when the map zoom or map bounds change */
-  // TODO: does this cause integration issues?
-  onViewportChanged?: (e: maplibregl.MapLibreEvent) => void;
+  onViewportChanged?: (e: State) => void;
   /** An initial zoom value for the map */
   zoom?: number;
 };
 type State = {
-  fitBoundsOptions?: Record<string, number | string | boolean>;
   latitude: number;
   longitude: number;
   zoom: number;
@@ -53,6 +53,7 @@ type State = {
 const BaseMap = ({
   // These tiles are free to use, but not in production
   baseLayer = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
+  baseLayerNames,
   center,
   children,
   id,
@@ -65,13 +66,6 @@ const BaseMap = ({
   zoom: initZoom = 12
 }: Props): JSX.Element => {
   const [viewState, setViewState] = React.useState<State>({
-    fitBoundsOptions: {
-      animate: true,
-      duration: 300,
-      essential: false,
-      maxDuration: 600,
-      padding: 200
-    },
     latitude: center?.[0],
     longitude: center?.[1],
     zoom: initZoom
@@ -83,7 +77,9 @@ const BaseMap = ({
   const [longPressTimer, setLongPressTimer] = useState(null);
 
   useEffect(() => {
-    callIfValid(onViewportChanged)(viewState);
+    if (typeof onViewportChanged === "function") {
+      onViewportChanged(viewState);
+    }
   }, [viewState]);
 
   useEffect(() => {
@@ -115,6 +111,9 @@ const BaseMap = ({
   const [hiddenLayers, setHiddenLayers] = useState(
     toggleableLayers.filter(layer => !layer?.visible).map(layer => layer.id)
   );
+  const [activeBaseLayer, setActiveBaseLayer] = useState(
+    typeof baseLayer === "object" ? baseLayer?.[0] : baseLayer
+  );
 
   return (
     <Map
@@ -124,7 +123,7 @@ const BaseMap = ({
       latitude={viewState.latitude}
       longitude={viewState.longitude}
       mapLib={maplibregl}
-      mapStyle={baseLayer}
+      mapStyle={activeBaseLayer}
       maxZoom={maxZoom}
       onClick={onClick}
       onContextMenu={onContextMenu}
@@ -145,17 +144,39 @@ const BaseMap = ({
       style={style}
       zoom={viewState.zoom}
     >
-      {toggleableLayers.length > 0 && (
+      {(toggleableLayers.length > 0 ||
+        (!!baseLayer &&
+          typeof baseLayer === "object" &&
+          baseLayer.length > 1)) && (
         <Styled.LayerSelector
+          className="filter-group"
+          id="filter-group"
           onTouchEnd={() => {
             setFakeMobileHover(true);
           }}
-          className="filter-group"
-          id="filter-group"
         >
           <ul
             className={`layers-list ${fakeMobileHover && "fake-mobile-hover"}`}
           >
+            {!!baseLayer &&
+              typeof baseLayer === "object" &&
+              baseLayer.map((layer: string, index: number) => {
+                return (
+                  <li key={index}>
+                    {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+                    <label>
+                      <input
+                        checked={activeBaseLayer === layer}
+                        id={layer}
+                        onChange={() => setActiveBaseLayer(layer)}
+                        type="radio"
+                      />
+                      {baseLayerNames?.[index] || layer}
+                    </label>
+                  </li>
+                );
+              })}
+
             {toggleableLayers.map((layer: LayerProps, index: number) => {
               return (
                 <li key={index}>
@@ -209,4 +230,4 @@ const LayerWrapper = (props: LayerProps): JSX.Element => {
 
 export const Popup = Styled.Popup;
 
-export { LayerWrapper, MarkerWithPopup, Styled };
+export { LayerWrapper, MarkerWithPopup, Styled, util };

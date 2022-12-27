@@ -1,5 +1,5 @@
 /* eslint-disable react/button-has-type */
-import React from "react";
+import React, { useState } from "react";
 import {
   AttributionControl,
   MapProvider,
@@ -179,3 +179,58 @@ export const withOptionalControls = () => (
   </BaseMap>
 );
 withOptionalControls.decorators = [withMap()];
+
+export const withMultipleBaseLayers = () => {
+  const [mapTilerKey, setMapTilerKey] = useState("");
+  return (
+    <Styled.StoryMapContainer>
+      <input
+        onChange={e => setMapTilerKey(e.target.value)}
+        placeholder="MapTiler API Key"
+        type="text"
+        value={mapTilerKey}
+      />
+      {mapTilerKey && (
+        <BaseMap
+          baseLayer={[
+            `https://api.maptiler.com/maps/streets/style.json?key=${mapTilerKey}`,
+            `https://api.maptiler.com/maps/ocean/style.json?key=${mapTilerKey}`,
+            `https://api.maptiler.com/maps/hybrid/style.json?key=${mapTilerKey}`
+          ]}
+          baseLayerNames={["Streets", "Ocean", "Hybrid"]}
+          center={center}
+        />
+      )}
+    </Styled.StoryMapContainer>
+  );
+};
+
+export const withMultipleBaseLayersAndOptionalLayers = () => {
+  const [mapTilerKey, setMapTilerKey] = useState("");
+  return (
+    <Styled.StoryMapContainer>
+      <input
+        onChange={e => setMapTilerKey(e.target.value)}
+        placeholder="MapTiler API Key"
+        type="text"
+        value={mapTilerKey}
+      />
+      {mapTilerKey && (
+        <BaseMap
+          baseLayer={[
+            `https://api.maptiler.com/maps/streets/style.json?key=${mapTilerKey}`,
+            `https://api.maptiler.com/maps/ocean/style.json?key=${mapTilerKey}`,
+            `https://api.maptiler.com/maps/hybrid/style.json?key=${mapTilerKey}`
+          ]}
+          baseLayerNames={["Streets", "Ocean", "Hybrid"]}
+          center={center}
+        >
+          <AllVehiclesOverlay id="layer-1" />
+          <LayerWrapper id="layer-2">
+            <MarkerWithPopup position={[center[0], center[1]]} />
+          </LayerWrapper>
+        </BaseMap>
+      )}
+    </Styled.StoryMapContainer>
+  );
+};

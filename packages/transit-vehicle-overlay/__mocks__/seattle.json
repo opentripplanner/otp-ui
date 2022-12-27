@@ -3,7 +3,7 @@
     {
       "vehicleId": "kcm:406",
       "routeShortName": "FH",
-      "routeColor": "#FFFF00",
+      "routeColor": "#FF2233",
       "label": "406",
       "lat": 47.6146202,
       "lon": -122.3207016,
@@ -26,7 +26,7 @@
     {
       "vehicleId": "kcm:402",
       "routeShortName": "FH",
-      "routeColor": "#FFFF00",
+      "routeColor": "#2233AA",
       "label": "402",
       "routeType": "TRAM",
       "lat": 47.6017303,
@@ -48,11 +48,34 @@
       }
     },
     {
-      "vehicleId": "kcm:405",
+      "vehicleId": "kcm:422",
       "routeShortName": "FH",
-      "routeColor": "#FFFF00",
+      "routeColor": "#CCFF88",
+      "label": "422",
+      "lat": 47.6617303,
+      "lon": -122.1171387,
+      "stopRelationship": {
+        "status": "IN_TRANSIT_TO",
+        "stop": {
+          "name": "E Yesler Way & Broadway",
+          "gtfsId": "kcm:27420"
+        }
+      },
+      "speed": null,
+      "heading": 135,
+      "lastUpdated": 1663680670,
+      "trip": {
+        "pattern": {
+          "id": "UGF0dGVybjprY206MTAyNjM4OjA6MDE"
+        }
+      }
+    },
+    {
+      "vehicleId": "kcm:405",
+      "routeShortName": "FHH",
+      "routeColor": "#449966",
       "label": "405",
-      "routeType": "BUS",
+      "routeType": "DUMMY",
       "lat": 47.5993271,
       "lon": -122.3333588,
       "stopRelationship": {
@@ -64,6 +87,29 @@
       },
       "speed": null,
       "heading": 278,
+      "lastUpdated": 1663680676,
+      "trip": {
+        "pattern": {
+          "id": "UGF0dGVybjprY206MTAyNjM4OjA6MDE"
+        }
+      }
+    },
+    {
+      "vehicleId": "kcm:409",
+      "routeShortName": "FH",
+      "routeColor": "#FFFF00",
+      "label": "409",
+      "lat": 47.6993271,
+      "lon": -122.2333588,
+      "stopRelationship": {
+        "status": "IN_TRANSIT_TO",
+        "stop": {
+          "name": "S Jackson St & Occidental Ave Walk",
+          "gtfsId": "kcm:1551"
+        }
+      },
+      "speed": null,
+      "heading": 180,
       "lastUpdated": 1663680676,
       "trip": {
         "pattern": {

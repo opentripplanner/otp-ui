@@ -8,12 +8,13 @@ import { defaultMessages } from "../util";
 
 import ViewStopButton from "./view-stop-button";
 
+const { getDisplayedStopId, isFlex } = coreUtils.itinerary;
+
 export default function TransitLegSubheader({
   leg,
   onStopClick
 }: TransitLegSubheaderProps): ReactElement {
   const { from } = leg;
-  const isFlex = coreUtils.itinerary.isFlex(leg);
   return (
     <S.PlaceSubheader>
       <FormattedMessage
@@ -21,10 +22,10 @@ export default function TransitLegSubheader({
         description="Displays the stop ID"
         id="otpUi.TransitLegBody.stopId"
         values={{
-          stopId: from.stopCode || from.stopId.split(":")[1]
+          stopId: getDisplayedStopId(from)
         }}
       />
-      {!isFlex && (
+      {!isFlex(leg) && (
         <ViewStopButton onStopClick={onStopClick} stopId={from.stopId} />
       )}
     </S.PlaceSubheader>

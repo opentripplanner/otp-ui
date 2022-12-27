@@ -1,3 +1,4 @@
+import coreUtils from "@opentripplanner/core-utils";
 import { Defaults } from "@opentripplanner/itinerary-body";
 import { GradationMap, Leg, LegIconComponent } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
@@ -6,6 +7,8 @@ import { FormattedMessage } from "react-intl";
 import AccessibilityAnnotation from "./accessibility-annotation";
 import * as S from "./styled";
 import { defaultMessages, strongText } from "./util";
+
+const { getDisplayedStopId } = coreUtils.itinerary;
 
 interface Props {
   accessibilityScoreGradationMap?: GradationMap;
@@ -20,6 +23,9 @@ export default function TransitLeg({
   LegIcon,
   interlineFollows
 }: Props): ReactElement {
+  const stopIdFrom = getDisplayedStopId(leg.from);
+  const stopIdTo = getDisplayedStopId(leg.to);
+
   const routeDescription = (
     <>
       <strong>{leg.routeShortName}</strong> <S.RouteLongName leg={leg} />
@@ -35,6 +41,7 @@ export default function TransitLeg({
       id="otpUi.PrintableItinerary.TransitLeg.alight"
       values={{
         place: leg.to.name,
+        stopId: stopIdTo,
         strong: strongText,
         time: leg.endTime
       }}
@@ -55,9 +62,7 @@ export default function TransitLeg({
               }
               description="Informs of an interlined transit route"
               id="otpUi.PrintableItinerary.TransitLeg.continuesAs"
-              values={{
-                routeDescription
-              }}
+              values={{ routeDescription }}
             />
           </S.LegHeader>
           <S.LegDetails>
@@ -88,6 +93,7 @@ export default function TransitLeg({
               id="otpUi.PrintableItinerary.TransitLeg.board"
               values={{
                 place: leg.from.name,
+                stopId: stopIdFrom,
                 strong: strongText,
                 time: leg.startTime
               }}
