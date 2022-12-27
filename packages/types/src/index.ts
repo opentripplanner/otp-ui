@@ -698,11 +698,11 @@ export type GradationMap = Record<
   { color: string; icon?: ReactElement; text?: string }
 >;
 
-export enum ModeSettingTypes {
-  SLIDER = "SLIDER",
-  CHECKBOX = "CHECKBOX",
-  DROPDOWN = "DROPDOWN"
-}
+export const ModeSettingTypes = {
+  SLIDER: "SLIDER",
+  CHECKBOX: "CHECKBOX",
+  DROPDOWN: "DROPDOWN"
+};
 
 export type DropdownOptions = {
   label: string;
@@ -710,7 +710,7 @@ export type DropdownOptions = {
     text: string;
     value: number;
   }>;
-  type: ModeSettingTypes.DROPDOWN;
+  type: "DROPDOWN";
   value?: string;
   default?: string;
 };
@@ -722,7 +722,7 @@ export type SliderOptions = {
   label: string;
   labelLow: string;
   labelHigh: string;
-  type: ModeSettingTypes.SLIDER;
+  type: "SLIDER";
   value?: number;
   default?: number;
 };
@@ -730,7 +730,7 @@ export type SliderOptions = {
 export type CheckboxOptions = {
   label: string;
   icon: JSX.Element;
-  type: ModeSettingTypes.CHECKBOX;
+  type: "CHECKBOX";
   value?: boolean;
   default?: boolean;
 };
@@ -738,6 +738,10 @@ export type CheckboxOptions = {
 export type ModeSettingBase = {
   applicableMode: string;
   key: string;
+};
+
+export type AdditionalModeSetting = {
+  mode: string;
 };
 
 export type ModeSetting = (CheckboxOptions | SliderOptions | DropdownOptions) &
@@ -748,9 +752,9 @@ export type ModeSettingValues = Record<string, number | string | boolean>;
  * Transportation mode is usually an OTP mode string,
  * but it can be anything for more flexibility.
  */
-export type TransportationMode = {
+export type TransportMode = {
   mode: string;
-  settings?: ModeSetting[];
+  qualifier?: string;
 };
 
 /**
@@ -758,11 +762,12 @@ export type TransportationMode = {
  * with a label to describe them. These are designed
  * to appear in the mode selector as discrete options.
  */
-export type Combination = {
-  modes: TransportationMode[];
-  enabled?: boolean;
-  label: string;
-  key: string;
-  Icon: StyledIcon;
-  modeSettings?: ModeSetting[];
+export type ModeButtonDefinition = {
+  modes?: TransportMode[]; // This comes from config
+  enabled?: boolean; // User has enabled this mode
+  label: string; // From config
+  key: string; // From config
+  Icon: StyledIcon; // From iconName (below)
+  iconName: string; // From config
+  modeSettings?: ModeSetting[]; // From OTP definitions + config
 };
