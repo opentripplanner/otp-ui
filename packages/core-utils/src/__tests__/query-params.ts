@@ -1,3 +1,5 @@
+import { TransportMode } from "@opentripplanner/types";
+
 import { reduceOtpFlexModes } from "../query";
 import queryParams, { getCustomQueryParams } from "../query-params";
 import { generateCombinations } from "../query-gen";
@@ -13,7 +15,7 @@ const customWalkDistanceOptions = [
   }
 ];
 
-function modeStrToTransportMode(m) {
+function modeStrToTransportMode(m): Array<TransportMode> {
   const splitVals = m.split("_");
   return {
     mode: splitVals[0],
@@ -21,10 +23,20 @@ function modeStrToTransportMode(m) {
   };
 }
 
-//            string array.  string array array
-function expectModes(modes, expectedModes) {
+const mockLatLon = {
+  lat: 1,
+  lon: 2
+};
+
+function expectModes(
+  modes: Array<string>,
+  expectedModes: Array<Array<string>>
+) {
   const generatedModesList = generateCombinations({
-    modes: modes.map(modeStrToTransportMode)
+    modes: modes.map(modeStrToTransportMode),
+    to: mockLatLon,
+    from: mockLatLon,
+    modeSettings: []
   });
   const expandedExpectedModesList = expectedModes.map(em => ({
     modes: em.map(modeStrToTransportMode)
