@@ -10,16 +10,20 @@
   "types": "lib/index.d.ts",
   "private": false,
   "dependencies": {
+    "@floating-ui/react-dom": "^1.0.1",
+    "@floating-ui/react-dom-interactions": "^0.11.0",
     "@opentripplanner/core-utils": "^7.0.5",
     "@opentripplanner/icons": "^2.0.0",
-    "@styled-icons/bootstrap": "^10.34.0",
-    "@styled-icons/boxicons-regular": "^10.38.0",
-    "@styled-icons/fa-regular": "^10.34.0",
-    "@styled-icons/fa-solid": "^10.34.0",
+    "@opentripplanner/types": "^4.0.4",
+    "@styled-icons/bootstrap": "^10.46.0",
+    "@styled-icons/boxicons-regular": "^10.46.0",
+    "@styled-icons/fa-regular": "^10.46.0",
+    "@styled-icons/fa-solid": "^10.46.0",
     "date-fns": "^2.28.0",
     "flat": "^5.0.2",
     "react-indiana-drag-scroll": "^2.0.1",
-    "react-inlinesvg": "^2.3.0"
+    "react-inlinesvg": "^2.3.0",
+    "use-query-params": "^2.1.1"
   },
   "devDependencies": {
     "@types/flat": "^5.0.2"

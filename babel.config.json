@@ -9,7 +9,9 @@
     ["@babel/plugin-proposal-private-methods", { "loose": true }],
     ["@babel/plugin-proposal-private-property-in-object", { "loose": true }],
     "babel-plugin-styled-components",
-    "@babel/plugin-transform-runtime"
+    "@babel/plugin-transform-runtime",
+    "babel-plugin-graphql-tag",
+    "import-graphql"
   ],
   "presets": [
     ["@babel/preset-env", { "targets": { "node": "current" } }],
