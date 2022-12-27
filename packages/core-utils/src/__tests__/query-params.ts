@@ -39,7 +39,10 @@ function expectModes(
     modeSettings: []
   });
   const expandedExpectedModesList = expectedModes.map(em => ({
-    modes: em.map(modeStrToTransportMode)
+    modes: em.map(modeStrToTransportMode),
+    to: mockLatLon,
+    from: mockLatLon,
+    modeSettings: []
   }));
   return it(
     modes.join(" "),
