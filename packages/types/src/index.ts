@@ -708,7 +708,8 @@ export type DropdownOptions = {
   label: string;
   options: Array<{
     text: string;
-    value: number;
+    value: string;
+    addTransportMode?: TransportMode;
   }>;
   type: "DROPDOWN";
   value?: string;
@@ -733,15 +734,12 @@ export type CheckboxOptions = {
   type: "CHECKBOX";
   value?: boolean;
   default?: boolean;
+  addTransportMode?: TransportMode;
 };
 
 export type ModeSettingBase = {
   applicableMode: string;
   key: string;
-};
-
-export type AdditionalModeSetting = {
-  mode: string;
 };
 
 export type ModeSetting = (CheckboxOptions | SliderOptions | DropdownOptions) &
