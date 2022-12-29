@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/map-popup",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A component for displaying map popup contents",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -11,8 +11,8 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/base-map": "^3.0.6",
-    "@opentripplanner/core-utils": "^7.0.9",
+    "@opentripplanner/base-map": "^3.0.7",
+    "@opentripplanner/core-utils": "^8.0.0",
     "@opentripplanner/from-to-location-picker": "^2.1.5",
     "flat": "^5.0.2"
   },
