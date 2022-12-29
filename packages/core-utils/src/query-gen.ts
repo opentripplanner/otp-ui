@@ -30,7 +30,7 @@ type GraphQLQuery = {
 export function extractAdditionalModes(
   modeSettings: ModeSetting[]
 ): Array<TransportMode> {
-  return modeSettings.reduce((prev, cur) => {
+  return modeSettings.reduce<TransportMode[]>((prev, cur) => {
     // In checkboxes, mode must be enabled and have a transport mode in it
     if (cur.type === "CHECKBOX" && cur.addTransportMode && cur.value) {
       return [...prev, cur.addTransportMode];
@@ -116,52 +116,63 @@ export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
     ...params.modes
   ];
 
-  // List of the transit submodes that are included in the input params
+  // List of the transit *submodes* that are included in the input params
   const queryTransitSubmodes = completeModeList
     .filter(mode => TRANSIT_SUBMODES.includes(mode.mode))
     .map(mode => mode.mode);
 
-  return (
-    combinations(completeModeList)
-      .filter(combo => {
-        if (combo.length === 0) return false;
+  // Transit combos are only allowed if "TRANSIT" is found in the original query
+  const enableTransitCombos = params.modes.map(m => m.mode).includes("TRANSIT");
 
-        // All current qualifiers currently simplify to "SHARED"
-        const simplifiedModes = Array.from(
-          new Set(
-            combo.map(c => (c.qualifier ? "SHARED" : SIMPLIFICATIONS[c.mode]))
-          )
-        );
+  return combinations(completeModeList)
+    .filter(combo => {
+      if (combo.length === 0) return false;
 
-        // Ensure that if we have one transit mode, then we include ALL transit modes
-        if (simplifiedModes.includes("TRANSIT")) {
-          const flatModes = combo.map(m => m.mode);
-          if (
-            combo.reduce((prev, cur) => {
-              if (queryTransitSubmodes.includes(cur.mode)) {
-                return prev - 1;
-              }
-              return prev;
-            }, queryTransitSubmodes.length) !== 0
-          ) {
-            return false;
-          }
+      // All current qualifiers currently simplify to "SHARED"
+      const simplifiedModes = Array.from(
+        new Set(
+          combo.map(c => (c.qualifier ? "SHARED" : SIMPLIFICATIONS[c.mode]))
+        )
+      );
+
+      // Ensure that if we have one transit mode, then we include ALL transit modes
+      if (simplifiedModes.includes("TRANSIT")) {
+        if (!enableTransitCombos) {
+          return false;
         }
 
-        // OTP doesn't support multiple non-walk modes
-        if (BANNED_TOGETHER.every(m => combo.find(c => c.mode === m)))
+        // Don't allow TRANSIT along with any other submodes
+        if (
+          queryTransitSubmodes.length &&
+          combo.find(c => c.mode === "TRANSIT")
+        ) {
           return false;
+        }
 
-        return !!VALID_COMBOS.find(
-          vc =>
-            simplifiedModes.every(m => vc.includes(m)) &&
-            vc.every(m => simplifiedModes.includes(m))
-        );
-      })
-      // create new filter that removes subTransit modes from appearing on their own
-      // ONLY IF there's multiple of them!
-      .map(combo => ({ ...params, modes: combo }))
-  );
+        if (
+          combo.reduce((prev, cur) => {
+            if (queryTransitSubmodes.includes(cur.mode)) {
+              return prev - 1;
+            }
+            return prev;
+          }, queryTransitSubmodes.length) !== 0
+        ) {
+          return false;
+        }
+        // Continue to the other checks
+      }
+
+      // OTP doesn't support multiple non-walk modes
+      if (BANNED_TOGETHER.every(m => combo.find(c => c.mode === m)))
+        return false;
+
+      return !!VALID_COMBOS.find(
+        vc =>
+          simplifiedModes.every(m => vc.includes(m)) &&
+          vc.every(m => simplifiedModes.includes(m))
+      );
+    })
+    .map(combo => ({ ...params, modes: combo }));
 }
 
 // eslint-disable-next-line import/prefer-default-export

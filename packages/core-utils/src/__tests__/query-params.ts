@@ -136,8 +136,19 @@ describe("query-gen", () => {
       ]
     );
     expectModes(
-      ["BUS", "RAIL", "GONDOLA", "TRAM"],
+      // Transit is required to enable other transit submodes
+      ["BUS", "RAIL", "GONDOLA", "TRAM", "TRANSIT"],
       [["BUS", "RAIL", "GONDOLA", "TRAM"]]
+    );
+    expectModes(
+      // Transit is required to enable other transit submodes
+      ["BUS", "RAIL", "GONDOLA", "TRAM"],
+      []
+    );
+    expectModes(
+      // Transit is required to enable other transit submodes
+      ["TRANSIT"],
+      [["TRANSIT"]]
     );
   });
 });
