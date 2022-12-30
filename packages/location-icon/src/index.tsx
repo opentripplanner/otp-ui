@@ -1,9 +1,11 @@
 import React, { ReactElement } from "react";
+import { injectIntl, IntlShape } from "react-intl";
 
 import * as S from "./styled";
 
 type Props = {
   className?: string;
+  intl: IntlShape;
   /**
    * Can be either a number or a string.
    * See https://github.com/jacobwgillespie/styled-icons#props
@@ -27,6 +29,7 @@ type Props = {
  */
 export function LocationIcon({
   className = "",
+  intl,
   size = 10,
   title = "",
   type = ""
@@ -37,7 +40,7 @@ export function LocationIcon({
         <S.FromIcon
           className={className}
           size={size}
-          title={title || "From Location Icon"}
+          title={title || intl.formatMessage({ id: "otpUi.LocationIcon.from" })}
         />
       );
     case "to":
@@ -45,7 +48,7 @@ export function LocationIcon({
         <S.ToIcon
           className={className}
           size={size}
-          title={title || "To Location Icon"}
+          title={title || intl.formatMessage({ id: "otpUi.LocationIcon.to" })}
         />
       );
     default:
@@ -53,13 +56,16 @@ export function LocationIcon({
         <S.PlaceIcon
           className={className}
           size={size}
-          title={title || "Location Icon"}
+          title={
+            title ||
+            intl.formatMessage({ id: "otpUi.LocationIcon.locationIcon" })
+          }
         />
       );
   }
 }
 
-export default LocationIcon;
+export default injectIntl(LocationIcon);
 
 // Rename styled components for export
 export { S as Styled };
