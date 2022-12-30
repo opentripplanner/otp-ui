@@ -1,8 +1,8 @@
-import { TransportMode } from "@opentripplanner/types";
+import { ModeSetting, TransportMode } from "@opentripplanner/types";
 
 import { reduceOtpFlexModes } from "../query";
 import queryParams, { getCustomQueryParams } from "../query-params";
-import { generateCombinations } from "../query-gen";
+import { extractAdditionalModes, generateCombinations } from "../query-gen";
 
 const customWalkDistanceOptions = [
   {
@@ -53,6 +53,42 @@ function expectModes(
       )
   );
 }
+
+describe("extract-modes", () => {
+  const mode = {
+    mode: "UNICYCLE"
+  };
+  const checkboxModeSetting: ModeSetting = {
+    type: "CHECKBOX",
+    icon: null,
+    label: "test",
+    applicableMode: "test",
+    key: "test",
+    value: true,
+    addTransportMode: mode
+  };
+
+  const dropdownModeSetting: ModeSetting = {
+    type: "DROPDOWN",
+    label: "test",
+    applicableMode: "test",
+    key: "test",
+    options: [{ text: "testop", value: "1", addTransportMode: mode }],
+    value: "1"
+  };
+
+  it("a checkbox setting", () => {
+    expect(extractAdditionalModes([checkboxModeSetting])).toEqual([mode]);
+  });
+  it("a dropdown setting", () => {
+    expect(extractAdditionalModes([dropdownModeSetting])).toEqual([mode]);
+  });
+  it("a disabled mode setting", () => {
+    expect(
+      extractAdditionalModes([{ ...checkboxModeSetting, value: false }])
+    ).toEqual([]);
+  });
+});
 
 describe("query-gen", () => {
   describe("generateCombinations", () => {
