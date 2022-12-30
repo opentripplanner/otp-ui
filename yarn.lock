@@ -3182,15 +3182,6 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
-"@opentripplanner/base-map@^3.0.2", "@opentripplanner/base-map@^3.0.4", "@opentripplanner/base-map@^3.0.6", "@opentripplanner/base-map@^3.0.7":
-  version "3.0.7"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/base-map/-/base-map-3.0.7.tgz#6641f03b8c509d2b3a9beda966367938f0c278ad"
-  integrity sha512-RzbB5RRPZ4q/Ajd8mPXH8zBoipb7K4wNErDug0//jg8t8whPiyGOoTrQxLtoTwohOlvmxmRIKuvyfuqXhBmA1Q==
-  dependencies:
-    mapbox-gl "npm:empty-npm-package@1.0.0"
-    maplibre-gl "^2.1.9"
-    react-map-gl "^7.0.15"
-
 "@opentripplanner/core-utils@^7.0.10", "@opentripplanner/core-utils@^7.0.5", "@opentripplanner/core-utils@^7.0.9":
   version "7.0.10"
   resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-7.0.10.tgz#697aa2309cee35716bcc3f38311739a75353172c"

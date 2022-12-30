@@ -2995,7 +2995,7 @@ exports[`Storyshots LocationField/Desktop Context Auto Focus With Multiple Contr
             xmlns="http://www.w3.org/2000/svg"
           >
             <title>
-              From Location Icon
+              otpUi.LocationIcon.from
             </title>
             <path
               d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
@@ -3003,22 +3003,22 @@ exports[`Storyshots LocationField/Desktop Context Auto Focus With Multiple Contr
             />
           </svg>
         </button>
+        <input
+          aria-autocomplete="list"
+          aria-controls="listbox-5"
+          aria-expanded={false}
+          aria-haspopup="listbox"
+          aria-label="Select from location"
+          autoFocus={true}
+          className="c7 from-form-control"
+          onChange={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          placeholder="Select from location"
+          role="combobox"
+          value=""
+        />
       </span>
-      <input
-        aria-autocomplete="list"
-        aria-controls="listbox-5"
-        aria-expanded={false}
-        aria-haspopup="listbox"
-        aria-label="Select from location"
-        autoFocus={true}
-        className="c7 from-form-control"
-        onChange={[Function]}
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        placeholder="Select from location"
-        role="combobox"
-        value=""
-      />
     </span>
   </div>
 </div>
@@ -3139,7 +3139,7 @@ exports[`Storyshots LocationField/Desktop Context Blank 2`] = `
           xmlns="http://www.w3.org/2000/svg"
         >
           <title>
-            From Location Icon
+            otpUi.LocationIcon.from
           </title>
           <path
             d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
@@ -3147,22 +3147,22 @@ exports[`Storyshots LocationField/Desktop Context Blank 2`] = `
           />
         </svg>
       </button>
+      <input
+        aria-autocomplete="list"
+        aria-controls="listbox-0"
+        aria-expanded={false}
+        aria-haspopup="listbox"
+        aria-label="Select from location"
+        autoFocus={false}
+        className="c7 from-form-control"
+        onChange={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Select from location"
+        role="combobox"
+        value=""
+      />
     </span>
-    <input
-      aria-autocomplete="list"
-      aria-controls="listbox-0"
-      aria-expanded={false}
-      aria-haspopup="listbox"
-      aria-label="Select from location"
-      autoFocus={false}
-      className="c7 from-form-control"
-      onChange={[Function]}
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      placeholder="Select from location"
-      role="combobox"
-      value=""
-    />
   </span>
 </div>
 `;
@@ -3277,7 +3277,7 @@ exports[`Storyshots LocationField/Desktop Context Here Geocoder 2`] = `
           xmlns="http://www.w3.org/2000/svg"
         >
           <title>
-            From Location Icon
+            otpUi.LocationIcon.from
           </title>
           <path
             d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
@@ -3285,22 +3285,22 @@ exports[`Storyshots LocationField/Desktop Context Here Geocoder 2`] = `
           />
         </svg>
       </button>
+      <input
+        aria-autocomplete="list"
+        aria-controls="listbox-1"
+        aria-expanded={false}
+        aria-haspopup="listbox"
+        aria-label="Select from location"
+        autoFocus={false}
+        className="c7 from-form-control"
+        onChange={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Select from location"
+        role="combobox"
+        value=""
+      />
     </span>
-    <input
-      aria-autocomplete="list"
-      aria-controls="listbox-1"
-      aria-expanded={false}
-      aria-haspopup="listbox"
-      aria-label="Select from location"
-      autoFocus={false}
-      className="c7 from-form-control"
-      onChange={[Function]}
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      placeholder="Select from location"
-      role="combobox"
-      value=""
-    />
   </span>
 </div>
 `;
@@ -3441,7 +3441,7 @@ exports[`Storyshots LocationField/Desktop Context No Auto Focus With Multiple Co
             xmlns="http://www.w3.org/2000/svg"
           >
             <title>
-              From Location Icon
+              otpUi.LocationIcon.from
             </title>
             <path
               d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
@@ -3449,22 +3449,22 @@ exports[`Storyshots LocationField/Desktop Context No Auto Focus With Multiple Co
             />
           </svg>
         </button>
+        <input
+          aria-autocomplete="list"
+          aria-controls="listbox-4"
+          aria-expanded={false}
+          aria-haspopup="listbox"
+          aria-label="Select from location"
+          autoFocus={false}
+          className="c7 from-form-control"
+          onChange={[Function]}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          placeholder="Select from location"
+          role="combobox"
+          value=""
+        />
       </span>
-      <input
-        aria-autocomplete="list"
-        aria-controls="listbox-4"
-        aria-expanded={false}
-        aria-haspopup="listbox"
-        aria-label="Select from location"
-        autoFocus={false}
-        className="c7 from-form-control"
-        onChange={[Function]}
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        placeholder="Select from location"
-        role="combobox"
-        value=""
-      />
     </span>
   </div>
 </div>
@@ -3610,7 +3610,7 @@ exports[`Storyshots LocationField/Desktop Context Selected Location 2`] = `
           xmlns="http://www.w3.org/2000/svg"
         >
           <title>
-            To Location Icon
+            otpUi.LocationIcon.to
           </title>
           <path
             d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
@@ -3618,46 +3618,46 @@ exports[`Storyshots LocationField/Desktop Context Selected Location 2`] = `
           />
         </svg>
       </button>
-    </span>
-    <input
-      aria-autocomplete="list"
-      aria-controls="listbox-2"
-      aria-expanded={false}
-      aria-haspopup="listbox"
-      aria-label="to"
-      autoFocus={false}
-      className="c7 to-form-control"
-      onChange={[Function]}
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      placeholder="to"
-      role="combobox"
-      value="123 Main St"
-    />
-    <span
-      className="c8"
-    >
-      <button
-        aria-label="otpUi.LocationField.clearLocation"
-        className="c3 c9"
+      <input
+        aria-autocomplete="list"
+        aria-controls="listbox-2"
+        aria-expanded={false}
+        aria-haspopup="listbox"
+        aria-label="to"
+        autoFocus={false}
+        className="c7 to-form-control"
+        onChange={[Function]}
         onClick={[Function]}
+        onKeyDown={[Function]}
+        placeholder="to"
+        role="combobox"
+        value="123 Main St"
+      />
+      <span
+        className="c8"
       >
-        <svg
-          aria-hidden="true"
-          className="c5"
-          fill="currentColor"
-          focusable="false"
-          height={13}
-          viewBox="0 0 352 512"
-          width={13}
-          xmlns="http://www.w3.org/2000/svg"
+        <button
+          aria-label="otpUi.LocationField.clearLocation"
+          className="c3 c9"
+          onClick={[Function]}
         >
-          <path
-            d="m242.72 256 100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+          <svg
+            aria-hidden="true"
+            className="c5"
             fill="currentColor"
-          />
-        </svg>
-      </button>
+            focusable="false"
+            height={13}
+            viewBox="0 0 352 512"
+            width={13}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m242.72 256 100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+      </span>
     </span>
   </span>
 </div>
@@ -3808,7 +3808,7 @@ exports[`Storyshots LocationField/Desktop Context Selected Location Custom Clear
           xmlns="http://www.w3.org/2000/svg"
         >
           <title>
-            To Location Icon
+            otpUi.LocationIcon.to
           </title>
           <path
             d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
@@ -3816,46 +3816,46 @@ exports[`Storyshots LocationField/Desktop Context Selected Location Custom Clear
           />
         </svg>
       </button>
-    </span>
-    <input
-      aria-autocomplete="list"
-      aria-controls="listbox-3"
-      aria-expanded={false}
-      aria-haspopup="listbox"
-      aria-label="to"
-      autoFocus={false}
-      className="c7 to-form-control"
-      onChange={[Function]}
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      placeholder="to"
-      role="combobox"
-      value="123 Main St"
-    />
-    <span
-      className="c8"
-    >
-      <button
-        aria-label="otpUi.LocationField.clearLocation"
-        className="c3 c9"
+      <input
+        aria-autocomplete="list"
+        aria-controls="listbox-3"
+        aria-expanded={false}
+        aria-haspopup="listbox"
+        aria-label="to"
+        autoFocus={false}
+        className="c7 to-form-control"
+        onChange={[Function]}
         onClick={[Function]}
+        onKeyDown={[Function]}
+        placeholder="to"
+        role="combobox"
+        value="123 Main St"
+      />
+      <span
+        className="c8"
       >
-        <svg
-          aria-hidden="true"
-          className="c5"
-          fill="currentColor"
-          focusable="false"
-          height={13}
-          viewBox="0 0 512 512"
-          width={13}
-          xmlns="http://www.w3.org/2000/svg"
+        <button
+          aria-label="otpUi.LocationField.clearLocation"
+          className="c3 c9"
+          onClick={[Function]}
         >
-          <path
-            d="M488 128h-8V80c0-44.8-99.2-80-224-80S32 35.2 32 80v48h-8c-13.25 0-24 10.74-24 24v80c0 13.25 10.75 24 24 24h8v160c0 17.67 14.33 32 32 32v32c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32v-32h192v32c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32v-32h6.4c16 0 25.6-12.8 25.6-25.6V256h8c13.25 0 24-10.75 24-24v-80c0-13.26-10.75-24-24-24zM112 400c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm16-112c-17.67 0-32-14.33-32-32V128c0-17.67 14.33-32 32-32h256c17.67 0 32 14.33 32 32v128c0 17.67-14.33 32-32 32H128zm272 112c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z"
+          <svg
+            aria-hidden="true"
+            className="c5"
             fill="currentColor"
-          />
-        </svg>
-      </button>
+            focusable="false"
+            height={13}
+            viewBox="0 0 512 512"
+            width={13}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M488 128h-8V80c0-44.8-99.2-80-224-80S32 35.2 32 80v48h-8c-13.25 0-24 10.74-24 24v80c0 13.25 10.75 24 24 24h8v160c0 17.67 14.33 32 32 32v32c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32v-32h192v32c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32v-32h6.4c16 0 25.6-12.8 25.6-25.6V256h8c13.25 0 24-10.75 24-24v-80c0-13.26-10.75-24-24-24zM112 400c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm16-112c-17.67 0-32-14.33-32-32V128c0-17.67 14.33-32 32-32h256c17.67 0 32 14.33 32 32v128c0 17.67-14.33 32-32 32H128zm272 112c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+      </span>
     </span>
   </span>
 </div>
@@ -3977,7 +3977,7 @@ exports[`Storyshots LocationField/Desktop Context With Bad Api Key Handles Bad A
           xmlns="http://www.w3.org/2000/svg"
         >
           <title>
-            From Location Icon
+            otpUi.LocationIcon.from
           </title>
           <path
             d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
@@ -3985,22 +3985,22 @@ exports[`Storyshots LocationField/Desktop Context With Bad Api Key Handles Bad A
           />
         </svg>
       </button>
+      <input
+        aria-autocomplete="list"
+        aria-controls="listbox-6"
+        aria-expanded={false}
+        aria-haspopup="listbox"
+        aria-label="Select from location"
+        autoFocus={false}
+        className="c7 from-form-control"
+        onChange={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Select from location"
+        role="combobox"
+        value=""
+      />
     </span>
-    <input
-      aria-autocomplete="list"
-      aria-controls="listbox-6"
-      aria-expanded={false}
-      aria-haspopup="listbox"
-      aria-label="Select from location"
-      autoFocus={false}
-      className="c7 from-form-control"
-      onChange={[Function]}
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      placeholder="Select from location"
-      role="combobox"
-      value=""
-    />
   </span>
 </div>
 `;
@@ -4133,7 +4133,7 @@ exports[`Storyshots LocationField/Desktop Context With Custom Result Colors And 
           xmlns="http://www.w3.org/2000/svg"
         >
           <title>
-            From Location Icon
+            otpUi.LocationIcon.from
           </title>
           <path
             d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
@@ -4141,22 +4141,22 @@ exports[`Storyshots LocationField/Desktop Context With Custom Result Colors And 
           />
         </svg>
       </button>
+      <input
+        aria-autocomplete="list"
+        aria-controls="listbox-7"
+        aria-expanded={false}
+        aria-haspopup="listbox"
+        aria-label="Select from location"
+        autoFocus={false}
+        className="c7 from-form-control"
+        onChange={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Select from location"
+        role="combobox"
+        value=""
+      />
     </span>
-    <input
-      aria-autocomplete="list"
-      aria-controls="listbox-7"
-      aria-expanded={false}
-      aria-haspopup="listbox"
-      aria-label="Select from location"
-      autoFocus={false}
-      className="c7 from-form-control"
-      onChange={[Function]}
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      placeholder="Select from location"
-      role="combobox"
-      value=""
-    />
   </span>
 </div>
 `;
@@ -4843,7 +4843,7 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 2`] = `
           xmlns="http://www.w3.org/2000/svg"
         >
           <title>
-            From Location Icon
+            otpUi.LocationIcon.from
           </title>
           <path
             d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
@@ -4851,22 +4851,22 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 2`] = `
           />
         </svg>
       </button>
+      <input
+        aria-autocomplete="list"
+        aria-controls="listbox-8"
+        aria-expanded={false}
+        aria-haspopup="listbox"
+        aria-label="Select from location"
+        autoFocus={false}
+        className="c7 from-form-control"
+        onChange={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Select from location"
+        role="combobox"
+        value=""
+      />
     </span>
-    <input
-      aria-autocomplete="list"
-      aria-controls="listbox-8"
-      aria-expanded={false}
-      aria-haspopup="listbox"
-      aria-label="Select from location"
-      autoFocus={false}
-      className="c7 from-form-control"
-      onChange={[Function]}
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      placeholder="Select from location"
-      role="combobox"
-      value=""
-    />
   </span>
 </div>
 `;
@@ -5052,7 +5052,7 @@ exports[`Storyshots LocationField/Mobile Context Blank 2`] = `
           xmlns="http://www.w3.org/2000/svg"
         >
           <title>
-            From Location Icon
+            otpUi.LocationIcon.from
           </title>
           <path
             d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
@@ -5342,7 +5342,7 @@ exports[`Storyshots LocationField/Mobile Context Selected Location 2`] = `
           xmlns="http://www.w3.org/2000/svg"
         >
           <title>
-            To Location Icon
+            otpUi.LocationIcon.to
           </title>
           <path
             d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
@@ -5655,7 +5655,7 @@ exports[`Storyshots LocationField/Mobile Context Selected Location Custom Clear 
           xmlns="http://www.w3.org/2000/svg"
         >
           <title>
-            To Location Icon
+            otpUi.LocationIcon.to
           </title>
           <path
             d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
@@ -5957,7 +5957,7 @@ exports[`Storyshots LocationField/Mobile Context Styled 2`] = `
           xmlns="http://www.w3.org/2000/svg"
         >
           <title>
-            From Location Icon
+            otpUi.LocationIcon.from
           </title>
           <path
             d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
@@ -7037,7 +7037,7 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 2`] = `
           xmlns="http://www.w3.org/2000/svg"
         >
           <title>
-            To Location Icon
+            otpUi.LocationIcon.to
           </title>
           <path
             d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
@@ -7457,7 +7457,7 @@ exports[`Storyshots LocationField/Mobile Context With Session Searches 2`] = `
           xmlns="http://www.w3.org/2000/svg"
         >
           <title>
-            To Location Icon
+            otpUi.LocationIcon.to
           </title>
           <path
             d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
@@ -7822,7 +7822,7 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 2`] = `
           xmlns="http://www.w3.org/2000/svg"
         >
           <title>
-            To Location Icon
+            otpUi.LocationIcon.to
           </title>
           <path
             d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
@@ -8105,7 +8105,7 @@ exports[`Storyshots LocationIcon Custom Style For To 2`] = `
   xmlns="http://www.w3.org/2000/svg"
 >
   <title>
-    To Location Icon
+    otpUi.LocationIcon.to
   </title>
   <path
     d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
@@ -8125,7 +8125,7 @@ exports[`Storyshots LocationIcon From 1`] = `
   onError={[Function]}
   textComponent={Symbol(react.fragment)}
 >
-  <LocationIcon
+  <injectIntl(LocationIcon)
     size={25}
     type="from"
   />
@@ -8154,7 +8154,7 @@ exports[`Storyshots LocationIcon From 2`] = `
   xmlns="http://www.w3.org/2000/svg"
 >
   <title>
-    From Location Icon
+    otpUi.LocationIcon.from
   </title>
   <path
     d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
@@ -8174,7 +8174,7 @@ exports[`Storyshots LocationIcon Generic Place 1`] = `
   onError={[Function]}
   textComponent={Symbol(react.fragment)}
 >
-  <LocationIcon
+  <injectIntl(LocationIcon)
     size="25"
     type="intermediate-place-1"
   />
@@ -8203,7 +8203,7 @@ exports[`Storyshots LocationIcon Generic Place 2`] = `
   xmlns="http://www.w3.org/2000/svg"
 >
   <title>
-    Location Icon
+    otpUi.LocationIcon.locationIcon
   </title>
   <path
     d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
@@ -8223,7 +8223,7 @@ exports[`Storyshots LocationIcon To 1`] = `
   onError={[Function]}
   textComponent={Symbol(react.fragment)}
 >
-  <LocationIcon
+  <injectIntl(LocationIcon)
     size={25}
     type="to"
   />
@@ -8252,7 +8252,7 @@ exports[`Storyshots LocationIcon To 2`] = `
   xmlns="http://www.w3.org/2000/svg"
 >
   <title>
-    To Location Icon
+    otpUi.LocationIcon.to
   </title>
   <path
     d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"

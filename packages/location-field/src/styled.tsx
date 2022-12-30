@@ -59,7 +59,8 @@ export const Dropdown = ({
   locationType,
   onToggle = () => {},
   open,
-  title
+  title,
+  input
 }: {
   children: React.ReactNode;
   listBoxIdentifier: string;
@@ -67,6 +68,7 @@ export const Dropdown = ({
   open: boolean;
   onToggle?: () => void;
   title: React.ReactNode;
+  input?: JSX.Element;
 }): React.ReactElement => {
   const dropdownButtonAriaLabel = `List the suggested ${locationType} locations as you type`;
   return (
@@ -74,6 +76,7 @@ export const Dropdown = ({
       <DropdownButton aria-label={dropdownButtonAriaLabel} onClick={onToggle}>
         {title}
       </DropdownButton>
+      {input}
       {open && (
         <MenuItemList uniqueId={listBoxIdentifier}>{children}</MenuItemList>
       )}
