@@ -28,9 +28,15 @@ type GraphQLQuery = {
  * @returns Additional transport modes to add to query
  */
 export function extractAdditionalModes(
-  modeSettings: ModeSetting[]
+  modeSettings: ModeSetting[],
+  enabledModes: TransportMode[]
 ): Array<TransportMode> {
   return modeSettings.reduce<TransportMode[]>((prev, cur) => {
+    // First, ensure that the mode associated with this setting is even enabled
+    if (!enabledModes.map(m => m.mode).includes(cur.applicableMode)) {
+      return prev;
+    }
+
     // In checkboxes, mode must be enabled and have a transport mode in it
     if (cur.type === "CHECKBOX" && cur.addTransportMode && cur.value) {
       return [...prev, cur.addTransportMode];
@@ -112,7 +118,7 @@ export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
   const BANNED_TOGETHER = ["SCOOTER", "BICYCLE"];
 
   const completeModeList = [
-    ...extractAdditionalModes(params.modeSettings),
+    ...extractAdditionalModes(params.modeSettings, params.modes),
     ...params.modes
   ];
 
@@ -120,9 +126,6 @@ export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
   const queryTransitSubmodes = completeModeList
     .filter(mode => TRANSIT_SUBMODES.includes(mode.mode))
     .map(mode => mode.mode);
-
-  // Transit combos are only allowed if "TRANSIT" is found in the original query
-  const enableTransitCombos = params.modes.map(m => m.mode).includes("TRANSIT");
 
   return combinations(completeModeList)
     .filter(combo => {
@@ -137,10 +140,6 @@ export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
 
       // Ensure that if we have one transit mode, then we include ALL transit modes
       if (simplifiedModes.includes("TRANSIT")) {
-        if (!enableTransitCombos) {
-          return false;
-        }
-
         // Don't allow TRANSIT along with any other submodes
         if (
           queryTransitSubmodes.length &&
