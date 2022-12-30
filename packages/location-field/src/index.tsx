@@ -740,11 +740,10 @@ const LocationField = ({
           onToggle={onDropdownToggle}
           open={menuVisible}
           title={<LocationIconComponent locationType={locationType} />}
+          input={<>{textControl}{clearButton}</>}
         >
           {menuItems}
         </S.Dropdown>
-        {textControl}
-        {clearButton}
       </S.InputGroup>
     </S.FormGroup>
   );
