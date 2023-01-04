@@ -735,12 +735,12 @@ const LocationField = ({
       <S.InputGroup>
         {/* location field icon -- also serves as dropdown anchor */}
         <S.Dropdown
+          input={<>{textControl}{clearButton}</>}
           listBoxIdentifier={listBoxId}
           locationType={locationType}
           onToggle={onDropdownToggle}
           open={menuVisible}
           title={<LocationIconComponent locationType={locationType} />}
-          input={<>{textControl}{clearButton}</>}
         >
           {menuItems}
         </S.Dropdown>

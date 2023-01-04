@@ -19,7 +19,6 @@ const packages = [
   "from-to-location-picker",
   "itinerary-body",
   "location-field",
-  "location-icon",
   "printable-itinerary",
   "stops-overlay",
   "transit-vehicle-overlay",

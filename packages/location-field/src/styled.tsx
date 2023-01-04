@@ -55,20 +55,20 @@ export const MenuItemList = styled.ul.attrs((props: MenuItemListProps) => ({
 
 export const Dropdown = ({
   children,
+  input,
   listBoxIdentifier,
   locationType,
   onToggle = () => {},
   open,
-  title,
-  input
+  title
 }: {
   children: React.ReactNode;
+  input?: JSX.Element;
   listBoxIdentifier: string;
   locationType: string;
-  open: boolean;
   onToggle?: () => void;
+  open: boolean;
   title: React.ReactNode;
-  input?: JSX.Element;
 }): React.ReactElement => {
   const dropdownButtonAriaLabel = `List the suggested ${locationType} locations as you type`;
   return (
@@ -154,22 +154,22 @@ export const MenuItemLi = styled.li<{ disabled?: boolean }>`
 
 export const MenuItem = ({
   active = false,
-  centeredText = false,
-  children,
   // foregroundColor and backgroundColor would be preferred, but React has issues with
   // these since they are style keywords
   bgColor = null,
+  centeredText = false,
+  children,
   disabled = false,
   fgColor = null,
   header = false,
   onClick = null
 }: {
   active?: boolean;
+  bgColor?: string;
   centeredText?: boolean;
   children: React.ReactNode;
-  fgColor?: string;
-  bgColor?: string;
   disabled?: boolean;
+  fgColor?: string;
   header?: boolean;
   onClick?: () => void;
 }): React.ReactElement => {
@@ -179,10 +179,10 @@ export const MenuItem = ({
 
   return header ? (
     <MenuItemHeader
-      className="header"
-      fgColor={fgColor}
       bgColor={bgColor}
       centeredText={centeredText}
+      className="header"
+      fgColor={fgColor}
       role="none"
     >
       {children}
