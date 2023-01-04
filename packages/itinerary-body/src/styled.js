@@ -348,10 +348,12 @@ export const PlaceHeader = styled.div`
   font-size: 1.2em;
 `;
 
-export const PlaceName = styled.div`
+export const PlaceName = styled.h2`
   /* text styling */
+  font-size: inherit;
   font-weight: bold;
   height: 1.2em;
+  margin: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
