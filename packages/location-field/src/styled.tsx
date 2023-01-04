@@ -27,7 +27,7 @@ export const DropdownContainer = styled.span`
 `;
 
 type MenuItemListProps = {
-  uniqueId: string;
+  id: string;
   intl: IntlShape;
 };
 
@@ -35,7 +35,7 @@ export const MenuItemList = styled.ul.attrs((props: MenuItemListProps) => ({
   "aria-label": props.intl.formatMessage({
     id: "otpUi.LocationField.suggestedLocations"
   }),
-  id: props.uniqueId,
+  id: props.id,
   role: "listbox"
 }))<MenuItemListProps>`
   background-clip: padding-box;
@@ -81,7 +81,7 @@ export const Dropdown = ({
       </DropdownButton>
       {input}
       {open && (
-        <MenuItemList intl={intl} uniqueId={listBoxIdentifier}>
+        <MenuItemList id={listBoxIdentifier} intl={intl}>
           {children}
         </MenuItemList>
       )}

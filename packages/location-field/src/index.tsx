@@ -713,7 +713,7 @@ const LocationField = ({
             {clearButton}
           </S.InputGroup>
         </S.FormGroup>
-        <S.StaticMenuItemList intl={intl} uniqueId={listBoxId}>
+        <S.StaticMenuItemList id={listBoxId} intl={intl}>
           {menuItems.length > 0 ? ( // Show typing prompt to avoid empty screen
             menuItems
           ) : (
