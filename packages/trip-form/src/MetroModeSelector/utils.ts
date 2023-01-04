@@ -13,6 +13,7 @@ import {
   TransportMode
 } from "@opentripplanner/types";
 
+import { TRANSIT_SUBMODES_AND_TRANSIT } from "@opentripplanner/core-utils/lib/query-gen";
 import { QueryParamChangeEvent } from "../types";
 
 type InitialStateType = {
@@ -94,19 +95,6 @@ export function extractModeSettingDefaultsToObject(
   }, {});
 }
 
-const TRANSIT_MODES = [
-  "AIRPLANE",
-  "BUS",
-  "CABLE_CAR",
-  "FERRY",
-  "FUNICULAR",
-  "GONDOLA",
-  "RAIL",
-  "SUBWAY",
-  "TRAM",
-  "TRANSIT"
-];
-
 /**
  * This function is used to apply the ModeSettings to the ModeButtons by checking
  * each setting against all the transport modes in the button. It also handles the special
@@ -120,7 +108,7 @@ export function checkIfModeSettingApplies(
   mode: TransportMode
 ): boolean {
   if (setting.applicableMode === "TRANSIT") {
-    return TRANSIT_MODES.includes(mode.mode);
+    return TRANSIT_SUBMODES_AND_TRANSIT.includes(mode.mode);
   }
   return setting.applicableMode === mode.mode;
 }

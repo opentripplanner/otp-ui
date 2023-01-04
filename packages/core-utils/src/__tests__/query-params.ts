@@ -1,8 +1,8 @@
-import { TransportMode } from "@opentripplanner/types";
+import { ModeSetting, TransportMode } from "@opentripplanner/types";
 
 import { reduceOtpFlexModes } from "../query";
 import queryParams, { getCustomQueryParams } from "../query-params";
-import { generateCombinations } from "../query-gen";
+import { extractAdditionalModes, generateCombinations } from "../query-gen";
 
 const customWalkDistanceOptions = [
   {
@@ -53,6 +53,59 @@ function expectModes(
       )
   );
 }
+
+describe("extract-modes", () => {
+  const mode = {
+    mode: "UNICYCLE"
+  };
+
+  const testTransportMode: TransportMode = {
+    mode: "testMode"
+  };
+
+  const checkboxModeSetting: ModeSetting = {
+    type: "CHECKBOX",
+    icon: null,
+    label: "test",
+    applicableMode: testTransportMode.mode,
+    key: "test",
+    value: true,
+    addTransportMode: mode
+  };
+
+  const dropdownModeSetting: ModeSetting = {
+    type: "DROPDOWN",
+    label: "test",
+    applicableMode: testTransportMode.mode,
+    key: "test",
+    options: [{ text: "testop", value: "1", addTransportMode: mode }],
+    value: "1"
+  };
+
+  it("a checkbox setting", () => {
+    expect(
+      extractAdditionalModes([checkboxModeSetting], [testTransportMode])
+    ).toEqual([mode]);
+  });
+  it("a dropdown setting", () => {
+    expect(
+      extractAdditionalModes([dropdownModeSetting], [testTransportMode])
+    ).toEqual([mode]);
+  });
+  it("a disabled mode setting", () => {
+    expect(
+      extractAdditionalModes(
+        [{ ...checkboxModeSetting, value: false }],
+        [testTransportMode]
+      )
+    ).toEqual([]);
+  });
+  it("a setting from a disabled mode", () => {
+    expect(extractAdditionalModes([{ ...checkboxModeSetting }], [])).toEqual(
+      []
+    );
+  });
+});
 
 describe("query-gen", () => {
   describe("generateCombinations", () => {
@@ -136,8 +189,14 @@ describe("query-gen", () => {
       ]
     );
     expectModes(
-      ["BUS", "RAIL", "GONDOLA", "TRAM"],
+      // Transit is required to enable other transit submodes
+      ["BUS", "RAIL", "GONDOLA", "TRAM", "TRANSIT"],
       [["BUS", "RAIL", "GONDOLA", "TRAM"]]
+    );
+    expectModes(
+      // Transit is required to enable other transit submodes
+      ["TRANSIT"],
+      [["TRANSIT"]]
     );
   });
 });
