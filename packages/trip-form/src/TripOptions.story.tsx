@@ -4,7 +4,9 @@ import React, { Component, ReactElement, useState } from "react";
 import TripOptions from "./TripOptions";
 
 import commonCompanies from "./__mocks__/companies";
-import commonModes from "./__mocks__/modes-en";
+import commonModes, {
+  modesWithCompanyFirstMixedCategory
+} from "./__mocks__/modes-en";
 
 const onQueryParamChange = action("onQueryParamChange");
 
@@ -43,19 +45,46 @@ class PanelWrapper extends Component {
 
 export default {
   component: TripOptions,
-  title: "TripOptions"
+  title: "TripOptions",
+  args: {
+    featuredItemOverlayBackButton: true,
+    supportedCompanies: commonCompanies
+  },
+  parameters: {
+    // TODO: resolve a11y issues
+    a11y: {
+      config: {
+        rules: [
+          { id: "color-contrast", enabled: false },
+          { id: "duplicate-id-aria", enabled: false },
+          { id: "duplicate-id", enabled: false }
+        ]
+      }
+    }
+  }
 };
 
-export const tripOptions = (): ReactElement => (
+const Template = args => (
   <PanelWrapper>
-    <TripOptions
-      featuredItemOverlayBackButton
-      supportedCompanies={commonCompanies}
-      supportedModes={commonModes}
-    />
+    {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+    <TripOptions {...args} />
   </PanelWrapper>
 );
-export const tripOptionsWithCustomIconsAndCloseButton = (): ReactElement => {
+
+export const Default = Template.bind({});
+Default.args = {
+  supportedModes: commonModes
+};
+
+// This story serves as a regression test for a bug that led to
+// categories in the structure the "CAR" category in this data to fail
+// to be given a default selection
+export const CompanyFirstMixedCategory = Template.bind({});
+CompanyFirstMixedCategory.args = {
+  supportedModes: modesWithCompanyFirstMixedCategory
+};
+
+export const CustomIconsAndCloseButton = (): ReactElement => {
   const [featuredOverlayShown, setFeaturedOverlayShown] = useState(false);
 
   return (
@@ -94,24 +123,8 @@ export const tripOptionsWithCustomIconsAndCloseButton = (): ReactElement => {
   );
 };
 
-// TODO: resolve a11y issues
-const disableA11yParameters = {
-  a11y: {
-    config: {
-      rules: [
-        { id: "color-contrast", enabled: false },
-        { id: "duplicate-id-aria", enabled: false },
-        { id: "duplicate-id", enabled: false }
-      ]
-    }
-  }
-};
-
-tripOptions.parameters = disableA11yParameters;
-
-// Disable storyshot for this story, as it is mostly the same as TripOptions except with
-// a hook that storyshot can't handle
-tripOptionsWithCustomIconsAndCloseButton.parameters = {
-  storyshots: { disable: true },
-  ...disableA11yParameters
+// Disable storyshot for this story, as it is mostly the same as TripOptions
+// except with a hook that storyshot can't handle
+CustomIconsAndCloseButton.parameters = {
+  storyshots: { disable: true }
 };
