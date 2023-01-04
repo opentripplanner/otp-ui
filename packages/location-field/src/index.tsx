@@ -713,7 +713,7 @@ const LocationField = ({
             {clearButton}
           </S.InputGroup>
         </S.FormGroup>
-        <S.StaticMenuItemList uniqueId={listBoxId}>
+        <S.StaticMenuItemList intl={intl} uniqueId={listBoxId}>
           {menuItems.length > 0 ? ( // Show typing prompt to avoid empty screen
             menuItems
           ) : (
@@ -737,7 +737,6 @@ const LocationField = ({
         <S.Dropdown
           input={<>{textControl}{clearButton}</>}
           listBoxIdentifier={listBoxId}
-          locationType={locationType}
           onToggle={onDropdownToggle}
           open={menuVisible}
           title={<LocationIconComponent locationType={locationType} />}

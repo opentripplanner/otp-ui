@@ -1,4 +1,5 @@
 import React from "react";
+import { IntlShape, useIntl } from "react-intl";
 import styled from "styled-components";
 
 export const BaseButton = styled.button`
@@ -27,10 +28,13 @@ export const DropdownContainer = styled.span`
 
 type MenuItemListProps = {
   uniqueId: string;
+  intl: IntlShape;
 };
 
 export const MenuItemList = styled.ul.attrs((props: MenuItemListProps) => ({
-  "aria-label": "Search Results",
+  "aria-label": props.intl.formatMessage({
+    id: "otpUi.LocationField.suggestedLocations"
+  }),
   id: props.uniqueId,
   role: "listbox"
 }))<MenuItemListProps>`
@@ -57,7 +61,6 @@ export const Dropdown = ({
   children,
   input,
   listBoxIdentifier,
-  locationType,
   onToggle = () => {},
   open,
   title
@@ -65,20 +68,22 @@ export const Dropdown = ({
   children: React.ReactNode;
   input?: JSX.Element;
   listBoxIdentifier: string;
-  locationType: string;
   onToggle?: () => void;
   open: boolean;
   title: React.ReactNode;
 }): React.ReactElement => {
-  const dropdownButtonAriaLabel = `List the suggested ${locationType} locations as you type`;
+  const intl = useIntl();
+
   return (
     <DropdownContainer>
-      <DropdownButton aria-label={dropdownButtonAriaLabel} onClick={onToggle}>
+      <DropdownButton tabIndex={-1} onClick={onToggle}>
         {title}
       </DropdownButton>
       {input}
       {open && (
-        <MenuItemList uniqueId={listBoxIdentifier}>{children}</MenuItemList>
+        <MenuItemList intl={intl} uniqueId={listBoxIdentifier}>
+          {children}
+        </MenuItemList>
       )}
     </DropdownContainer>
   );

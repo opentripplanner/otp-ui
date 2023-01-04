@@ -26,6 +26,7 @@ otpUi:
     # Note to translator: This is an implicit plural (as in "Other results").
     other: Other
     recentlySearched: Recently Searched
+    suggestedLocations: Suggested locations
     stations: Stations
     stops: Stops
     useCurrentLocation: Use Current Location
