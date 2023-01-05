@@ -74,7 +74,10 @@ export const Dropdown = ({
         aria-expanded={open}
         aria-label={intl.formatMessage(
           {
-            id: "otpUi.LocationField.suggestedLocationsLong"
+            id: "otpUi.LocationField.suggestedLocationsLong",
+            defaultMessage: "Open the list of location suggestions",
+            description:
+              "Text to show as a a11y label for the button that opens the dropdown list of locations"
           },
           { locationType }
         )}
@@ -87,7 +90,10 @@ export const Dropdown = ({
       {open && (
         <MenuItemList
           aria-label={intl.formatMessage({
-            id: "otpUi.LocationField.suggestedLocations"
+            id: "otpUi.LocationField.suggestedLocations",
+            defaultMessage: "Suggested locations",
+            description:
+              "Text to show as a label for the dropdown list of locations"
           })}
           id={listBoxIdentifier}
         >

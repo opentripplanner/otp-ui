@@ -723,7 +723,9 @@ const LocationField = ({
         </S.FormGroup>
         <S.StaticMenuItemList
           aria-label={intl.formatMessage({
-            id: "otpUi.LocationField.suggestedLocations"
+            id: "otpUi.LocationField.suggestedLocations",
+            defaultMessage: "Suggested locations",
+            description: "Text to show as a label for the dropdown list of locations"
           })}
           id={listBoxId}
         >
