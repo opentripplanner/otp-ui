@@ -737,6 +737,7 @@ const LocationField = ({
         <S.Dropdown
           input={<>{textControl}{clearButton}</>}
           listBoxIdentifier={listBoxId}
+          locationType={locationType}
           onToggle={onDropdownToggle}
           open={menuVisible}
           title={<LocationIconComponent locationType={locationType} />}

@@ -61,6 +61,7 @@ export const Dropdown = ({
   children,
   input,
   listBoxIdentifier,
+  locationType,
   onToggle = () => {},
   open,
   title
@@ -68,6 +69,7 @@ export const Dropdown = ({
   children: React.ReactNode;
   input?: JSX.Element;
   listBoxIdentifier: string;
+  locationType: string;
   onToggle?: () => void;
   open: boolean;
   title: React.ReactNode;
@@ -76,7 +78,18 @@ export const Dropdown = ({
 
   return (
     <DropdownContainer>
-      <DropdownButton tabIndex={-1} onClick={onToggle}>
+      <DropdownButton
+        aria-controls={listBoxIdentifier}
+        aria-expanded={open}
+        aria-label={intl.formatMessage(
+          {
+            id: "otpUi.LocationField.suggestedLocationsLong"
+          },
+          { locationType }
+        )}
+        tabIndex={-1}
+        onClick={onToggle}
+      >
         {title}
       </DropdownButton>
       {input}
