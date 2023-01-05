@@ -55,9 +55,9 @@ otpUi:
   modeSelector:
     labels:
       TRANSIT: Transit
-      BIKE: Bike
+      BICYCLE: Bike
       WALK: Walk
-      DRIVE: Drive
+      CAR: Drive
       RENT: Rent
     settings:
       walkReluctance-labelLow: More walking
@@ -66,4 +66,10 @@ otpUi:
       bikeReluctance-labelLow: More biking
       bikeReluctance-labelHigh: Less biking
       bikeReluctance-label: Bike Reluctance
+      allowBikeRental-label: Bike Rental
+      carReluctance-label: Drive Relcutance
+      carReluctance-labelHigh: More Driving
+      carReluctance-labelLow: Less Driving
       wheelchair-label: Accessible Routing
+      addBus-label: Bus
+      addRail-label: Train
