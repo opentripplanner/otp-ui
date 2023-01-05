@@ -5,6 +5,7 @@
 
 import React, { FunctionComponent, ReactElement } from "react";
 import { StyledIcon } from "@styled-icons/styled-icon";
+import { ConfiguredModes } from "./deprecated";
 
 type ZeroOrOne = 0 | 1;
 
@@ -147,7 +148,8 @@ export type Config = {
     longDateFormat?: string;
   };
   homeTimezone: string;
-  modes: ConfiguredModes;
+  /** @deprecated */
+  modes?: ConfiguredModes;
   // TODO: add full typing
   map?: {
     overlays?: {
@@ -570,52 +572,6 @@ export type Station = {
   y: number;
 };
 
-export type ModeOption = {
-  id: string;
-  selected?: boolean;
-  showTitle?: boolean;
-  text: JSX.Element;
-  title?: string;
-};
-
-export type ModeSelectorOptions = {
-  primary: ModeOption;
-  secondary?: ModeOption[];
-  tertiary?: ModeOption[];
-};
-
-export type ConfiguredMode =
-  | string
-  | {
-      mode: string;
-      label: string;
-      company?: string;
-    };
-
-export type ConfiguredModes = {
-  transitModes: ConfiguredMode[];
-  accessModes: ConfiguredMode[];
-  exlcusiveModes: ConfiguredMode[];
-  bicycleModes: ConfiguredMode[];
-  micromobilityModes: ConfiguredMode[];
-};
-
-export type ConfiguredCompany = {
-  /**
-   * The id of the company. This is typically in all-caps.
-   */
-  id: string;
-  /**
-   * A human readable text value that can be displayed to users.
-   */
-  label: string;
-  /**
-   * A comma-separated list of applicable modes of travel that the company
-   * offers.
-   */
-  modes: string;
-};
-
 /**
  * Depending on the geocoder that is used, more properties than just the `label`
  * property might be provided by the geocoder. For example, with the Pelias
@@ -688,6 +644,22 @@ export type LegIconComponent = FunctionComponent<{
   title?: string;
   width?: string;
 }>;
+
+export type ConfiguredCompany = {
+  /**
+   * The id of the company. This is typically in all-caps.
+   */
+  id: string;
+  /**
+   * A human readable text value that can be displayed to users.
+   */
+  label: string;
+  /**
+   * A comma-separated list of applicable modes of travel that the company
+   * offers.
+   */
+  modes: string;
+};
 
 /**
  * Supports displaying accessibility ratings as a set of thresholds
