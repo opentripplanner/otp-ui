@@ -252,16 +252,26 @@ describe("mode selector utils", () => {
     });
   });
 
-  const searchString =
-    "?modeButtons=transit_walk_bike_car&modeSettings=carReluctance-3_bikeReluctance-2_walkReluctance-3.4_allowBikeRental-true_wheelchair-true";
   describe("get activated modes and settings from query params", () => {
-    expect(
-      getActivatedModesFromQueryParams(
-        searchString,
-        modeButtonDefinitions,
-        modeSettingDefinitions,
-        {}
-      )
-    ).toMatchSnapshot();
+    it("should work for basic set of buttons and settings", () => {
+      expect(
+        getActivatedModesFromQueryParams(
+          "?modeButtons=transit_walk_bike_car&modeSettings=carReluctance-3_bikeReluctance-2_walkReluctance-3.4_allowBikeRental-true_wheelchair-true",
+          modeButtonDefinitions,
+          modeSettingDefinitions,
+          {}
+        )
+      ).toMatchSnapshot();
+    });
+    it("should work with some other parameters that we don't need", () => {
+      expect(
+        getActivatedModesFromQueryParams(
+          "?modeButtons=transit_walk_bike_car&foo=bar&mode=notamode&mode=anothermode",
+          modeButtonDefinitions,
+          modeSettingDefinitions,
+          {}
+        )
+      ).toMatchSnapshot();
+    });
   });
 });
