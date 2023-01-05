@@ -188,8 +188,7 @@ export function generateOtp2Query(params: OTPQueryParams): GraphQLQuery {
     walkReluctance,
     wheelchair,
     bikeReluctance,
-    carReluctance,
-    allowBikeRental
+    carReluctance
   } = modeSettingValues;
 
   return {
@@ -198,7 +197,6 @@ export function generateOtp2Query(params: OTPQueryParams): GraphQLQuery {
       fromPlace: [from.lat, from.lon].join(","),
       toPlace: [to.lat, to.lon].join(","),
       modes: params.modes,
-      allowBikeRental,
       walkReluctance,
       wheelchair,
       bikeReluctance,
