@@ -66,12 +66,13 @@ export function populateSettingsWithValues(
   values: ModeSettingValues
 ): ModeSetting[] {
   return modeSettings.map(setting => {
+    const value = values[setting.key];
     let convertedVal;
     if (setting.type === "CHECKBOX") {
       // If the parameter is anything besides the string "true", it will be false
-      convertedVal = values[setting.key] === "true";
+      convertedVal = value === "true" || value === true;
     } else if (setting.type === "SLIDER") {
-      convertedVal = Number(values[setting.key]);
+      convertedVal = Number(value);
     }
     return {
       ...setting,

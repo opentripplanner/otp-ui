@@ -76,7 +76,7 @@ Array [
         "default": true,
         "key": "allowBikeRental",
         "label": "Enable Bike Rental",
-        "type": "CHECKBOX_ADD_MODE",
+        "type": "CHECKBOX",
       },
     ],
     "modes": Array [
@@ -100,7 +100,20 @@ Object {
 
 exports[`mode selector utils get activated modes and settings from query params should work for basic set of buttons and settings 1`] = `
 Object {
-  "activeModes": Array [],
+  "activeModes": Array [
+    Object {
+      "mode": "BUS",
+    },
+    Object {
+      "mode": "RAIL",
+    },
+    Object {
+      "mode": "WALK",
+    },
+    Object {
+      "mode": "BICYCLE",
+    },
+  ],
   "modeSettings": Array [
     Object {
       "applicableMode": "CAR",
@@ -150,8 +163,8 @@ Object {
       "default": true,
       "key": "allowBikeRental",
       "label": "Enable Bike Rental",
-      "type": "CHECKBOX_ADD_MODE",
-      "value": undefined,
+      "type": "CHECKBOX",
+      "value": true,
     },
     Object {
       "applicableMode": "TRANSIT",
@@ -160,73 +173,6 @@ Object {
       "label": "Use Accessible Routing",
       "type": "CHECKBOX",
       "value": true,
-    },
-  ],
-}
-`;
-
-exports[`mode selector utils get activated modes and settings from query params should work with some other parameters that we don't need 1`] = `
-Object {
-  "activeModes": Array [],
-  "modeSettings": Array [
-    Object {
-      "applicableMode": "CAR",
-      "default": 3,
-      "high": 5,
-      "key": "carReluctance",
-      "label": "Car Reluctance",
-      "labelHigh": "More Transit",
-      "labelLow": "More Driving",
-      "low": 0,
-      "step": 0.1,
-      "type": "SLIDER",
-      "value": 3,
-    },
-    Object {
-      "applicableMode": "BICYCLE",
-      "default": 2,
-      "high": 5,
-      "key": "bikeReluctance",
-      "label": "Bike Reluctance",
-      "labelHigh": "More Transit",
-      "labelLow": "More Biking",
-      "low": 0,
-      "step": 0.1,
-      "type": "SLIDER",
-      "value": 2,
-    },
-    Object {
-      "applicableMode": "WALK",
-      "default": 2,
-      "high": 5,
-      "key": "walkReluctance",
-      "label": "Walk Reluctance",
-      "labelHigh": "More Transit",
-      "labelLow": "More Walking",
-      "low": 0,
-      "step": 0.1,
-      "type": "SLIDER",
-      "value": 2,
-    },
-    Object {
-      "addMode": Object {
-        "mode": "BICYCLE",
-        "qualifier": "RENT",
-      },
-      "applicableMode": "BICYCLE",
-      "default": true,
-      "key": "allowBikeRental",
-      "label": "Enable Bike Rental",
-      "type": "CHECKBOX_ADD_MODE",
-      "value": undefined,
-    },
-    Object {
-      "applicableMode": "TRANSIT",
-      "default": false,
-      "key": "wheelchair",
-      "label": "Use Accessible Routing",
-      "type": "CHECKBOX",
-      "value": false,
     },
   ],
 }
@@ -282,8 +228,8 @@ Array [
     "default": true,
     "key": "allowBikeRental",
     "label": "Enable Bike Rental",
-    "type": "CHECKBOX_ADD_MODE",
-    "value": undefined,
+    "type": "CHECKBOX",
+    "value": true,
   },
   Object {
     "applicableMode": "TRANSIT",
