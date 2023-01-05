@@ -391,6 +391,7 @@ export const PreviewContainer = styled.div<PreviewContainerProps>`
   position: relative;
   text-align: center;
   text-decoration: none;
+  vertical-align: middle;
   width: 75%;
 
   &:hover {
