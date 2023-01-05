@@ -713,7 +713,12 @@ const LocationField = ({
             {clearButton}
           </S.InputGroup>
         </S.FormGroup>
-        <S.StaticMenuItemList id={listBoxId} intl={intl}>
+        <S.StaticMenuItemList
+          aria-label={intl.formatMessage({
+            id: "otpUi.LocationField.suggestedLocations"
+          })}
+          id={listBoxId}
+        >
           {menuItems.length > 0 ? ( // Show typing prompt to avoid empty screen
             menuItems
           ) : (

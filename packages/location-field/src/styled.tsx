@@ -1,5 +1,5 @@
 import React from "react";
-import { IntlShape, useIntl } from "react-intl";
+import { useIntl } from "react-intl";
 import styled from "styled-components";
 
 export const BaseButton = styled.button`
@@ -26,18 +26,9 @@ export const DropdownContainer = styled.span`
   width: 100%;
 `;
 
-type MenuItemListProps = {
-  id: string;
-  intl: IntlShape;
-};
-
-export const MenuItemList = styled.ul.attrs((props: MenuItemListProps) => ({
-  "aria-label": props.intl.formatMessage({
-    id: "otpUi.LocationField.suggestedLocations"
-  }),
-  id: props.id,
+export const MenuItemList = styled.ul.attrs({
   role: "listbox"
-}))<MenuItemListProps>`
+})`
   background-clip: padding-box;
   background-color: #fff;
   border-radius: 4px;
@@ -94,7 +85,12 @@ export const Dropdown = ({
       </DropdownButton>
       {input}
       {open && (
-        <MenuItemList id={listBoxIdentifier} intl={intl}>
+        <MenuItemList
+          aria-label={intl.formatMessage({
+            id: "otpUi.LocationField.suggestedLocations"
+          })}
+          id={listBoxIdentifier}
+        >
           {children}
         </MenuItemList>
       )}
