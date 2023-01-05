@@ -1,7 +1,7 @@
 import * as Icons from "@opentripplanner/icons";
 import React, { ReactElement } from "react";
 import { action } from "@storybook/addon-actions";
-import { Bicycle, PersonWalking } from "@styled-icons/fa-solid";
+import { Bicycle, Car, PersonWalking } from "@styled-icons/fa-solid";
 import { QueryParamProvider } from "use-query-params";
 import { WindowHistoryAdapter } from "use-query-params/adapters/window";
 import { ModeButtonDefinition } from "@opentripplanner/types";
@@ -287,10 +287,7 @@ const modeButtonDefinitions = [
     key: "TRANSIT",
     modes: [
       {
-        mode: "BUS"
-      },
-      {
-        mode: "RAIL"
+        mode: "TRANSIT"
       }
     ]
   },
@@ -303,8 +300,14 @@ const modeButtonDefinitions = [
   {
     label: "Bike",
     Icon: Bicycle,
-    key: "BIKE",
+    key: "BICYCLE",
     modes: [{ mode: "BICYCLE" }]
+  },
+  {
+    label: "Drive",
+    Icon: Car,
+    key: "CAR",
+    modes: [{ mode: "CAR" }]
   }
 ];
 
