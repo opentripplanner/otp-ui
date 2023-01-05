@@ -439,6 +439,7 @@ const LocationField = ({
           bgColor={layerColorMap.stations}
           centeredText
           header
+          role="group"
           key="gtfs-stations-header"
         >
           <FormattedMessage
@@ -454,6 +455,7 @@ const LocationField = ({
           bgColor={layerColorMap.stops}
           centeredText
           header
+          role="group"
           key="gtfs-stops-header"
         >
           <FormattedMessage
@@ -465,7 +467,13 @@ const LocationField = ({
       stopFeatures.map(feature => renderFeature(itemIndex++, feature)),
 
       transitFeaturesPresent && otherFeatures.length > 0 && (
-        <S.MenuItem bgColor="#333" centeredText header key="other-header">
+        <S.MenuItem
+          bgColor="#333"
+          centeredText
+          header
+          role="group"
+          key="other-header"
+        >
           <FormattedMessage
             description="Text for header above the 'other'"
             id="otpUi.LocationField.other"
@@ -480,7 +488,7 @@ const LocationField = ({
   if (nearbyStops.length > 0 && !suppressNearby) {
     // Add the menu sub-heading (not a selectable item)
     menuItems.push(
-      <S.MenuItem centeredText header key="ns-header">
+      <S.MenuItem centeredText header key="ns-header" role="group">
         <FormattedMessage
           description="Text for header above nearby stops"
           id="otpUi.LocationField.nearby"
@@ -528,7 +536,7 @@ const LocationField = ({
   if (sessionSearches.length > 0) {
     // Add the menu sub-heading (not a selectable item)
     menuItems.push(
-      <S.MenuItem header centeredText key="ss-header">
+      <S.MenuItem header centeredText role="group" key="ss-header">
         <FormattedMessage
           description="Text for header above recently searched items"
           id="otpUi.LocationField.recentlySearched"
@@ -568,7 +576,7 @@ const LocationField = ({
   if (userLocationsAndRecentPlaces.length > 0 && showUserSettings) {
     // Add the menu sub-heading (not a selectable item)
     menuItems.push(
-      <S.MenuItem header centeredText key="mp-header">
+      <S.MenuItem header centeredText key="mp-header" role="group">
         <FormattedMessage
           description="Text for header above user-saved places"
           id="otpUi.LocationField.myPlaces"
