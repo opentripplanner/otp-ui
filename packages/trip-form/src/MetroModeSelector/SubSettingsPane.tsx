@@ -2,9 +2,19 @@ import { ModeButtonDefinition, ModeSetting } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 import { CircleXmark } from "@styled-icons/fa-solid";
+import { IntlShape, useIntl } from "react-intl";
+import { flatten } from "flat";
+
 import CheckboxSelector from "../CheckboxSelector";
 import DropdownSelector from "../DropdownSelector";
 import SliderSelector from "../SliderSelector";
+
+import defaultEnglishMessages from "../../i18n/en-US.yml";
+// HACK: We should flatten the messages loaded above because
+// the YAML loaders behave differently between webpack and our version of jest:
+// - the yaml loader for webpack returns a nested object,
+// - the yaml loader for jest returns messages with flattened ids.
+const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
 const Header = styled.div`
   font-size: 1.5em;
@@ -24,6 +34,48 @@ const DisableButton = styled.button`
   cursor: pointer;
 `;
 
+const generateModeButtonLabel = (key: string, intl: IntlShape): string => {
+  switch (key) {
+    case "TRANSIT":
+      return intl.formatMessage({
+        id: `otpUi.modeSelector.labels.TRANSIT`,
+        description: `Metro Mode Selector Label (TRANSIT)`,
+        defaultMessage: defaultMessages[`otpUi.modeSelector.labels.TRANSIT`]
+      });
+    case "WALK":
+      return intl.formatMessage({
+        id: `otpUi.modeSelector.labels.WALK`,
+        description: `Metro Mode Selector Label (WALK)`,
+        defaultMessage: defaultMessages[`otpUi.modeSelector.labels.WALK`]
+      });
+    case "BIKE":
+      return intl.formatMessage({
+        id: `otpUi.modeSelector.labels.BIKE`,
+        description: `Metro Mode Selector Label (BIKE)`,
+        defaultMessage: defaultMessages[`otpUi.modeSelector.labels.BIKE`]
+      });
+    case "DRIVE":
+      return intl.formatMessage({
+        id: `otpUi.modeSelector.labels.DRIVE`,
+        description: `Metro Mode Selector Label (DRIVE)`,
+        defaultMessage: defaultMessages[`otpUi.modeSelector.labels.DRIVE`]
+      });
+    case "RENT":
+      return intl.formatMessage({
+        id: `otpUi.modeSelector.labels.RENT`,
+        description: `Metro Mode Selector Label (RENT)`,
+        defaultMessage: defaultMessages[`otpUi.modeSelector.labels.RENT`]
+      });
+    // Default case adds support for custom mode buttons
+    default:
+      return intl.formatMessage({
+        id: `otpUi.modeSelector.labels.${key}`,
+        description: `Metro Mode Selector Label (${key})`,
+        defaultMessage: defaultMessages[`otpUi.modeSelector.labels.${key}`]
+      });
+  }
+};
+
 const ModeSettingRenderer = ({
   setting,
   onChange
@@ -31,11 +83,18 @@ const ModeSettingRenderer = ({
   setting: ModeSetting;
   onChange: (QueryParamChangeEvent) => void;
 }) => {
+  const intl = useIntl();
+  const label = intl.formatMessage({
+    id: `otpUi.modeSelector.settings.${setting.key}-label`,
+    description: `Metro Mode Selector Setting Label (${setting.key})`,
+    defaultMessage:
+      defaultMessages[`otpUi.modeSelector.settings.${setting.key}-label`]
+  });
   switch (setting.type) {
     case "CHECKBOX":
       return (
         <CheckboxSelector
-          label={setting.label}
+          label={label}
           name={setting.key}
           onChange={onChange}
           value={setting.value}
@@ -45,19 +104,31 @@ const ModeSettingRenderer = ({
     case "DROPDOWN":
       return (
         <DropdownSelector
-          label={setting.label}
+          label={label}
           name={setting.key}
           onChange={onChange}
           value={setting.value}
-          options={setting.options}
+          options={setting.options.map(o => ({
+            ...o,
+            text: intl.formatMessage({
+              id: `otpUi.modeSelector.settings.${setting.key}-options.${o.value}`,
+              description: `Metro Mode Selector Setting (${setting.key}) Option Label (${o.value})`
+            })
+          }))}
         />
       );
     case "SLIDER":
       return (
         <SliderSelector
-          label={setting.label}
-          labelHigh={setting.labelHigh}
-          labelLow={setting.labelLow}
+          label={label}
+          labelHigh={intl.formatMessage({
+            id: `otpUi.modeSelector.settings.${setting.key}-labelHigh`,
+            description: `Metro Mode Selector Setting Label High (${setting.key})`
+          })}
+          labelLow={intl.formatMessage({
+            id: `otpUi.modeSelector.settings.${setting.key}-labelLow`,
+            description: `Metro Mode Selector Setting Label Low (${setting.key})`
+          })}
           max={setting.high}
           min={setting.low}
           name={setting.key}
@@ -84,13 +155,15 @@ export default function SubSettingsPane({
   showControls,
   onDisableMode
 }: Props): ReactElement {
+  const intl = useIntl();
+  const label = generateModeButtonLabel(modeButton.key, intl);
   return (
     <SettingsPanel>
       <Header>
-        {modeButton.label}
+        {label}
         {showControls && (
           <DisableButton type="button" onClick={onDisableMode}>
-            Disable {modeButton.label} <CircleXmark size={16} />
+            Disable {label} <CircleXmark size={16} />
           </DisableButton>
         )}
       </Header>

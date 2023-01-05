@@ -52,3 +52,18 @@ otpUi:
     use: Use # as in "Use bus, train, subway".
     useCompanies: Use companies # as in :"Use companies: Spin, Lime, Bolt"
     walkOnly: Walk Only
+  modeSelector:
+    labels:
+      TRANSIT: Transit
+      BIKE: Bike
+      WALK: Walk
+      DRIVE: Drive
+      RENT: Rent
+    settings:
+      walkReluctance-labelLow: More walking
+      walkReluctance-labelHigh: Less walking
+      walkReluctance-label: Walk Reluctance
+      bikeReluctance-labelLow: More biking
+      bikeReluctance-labelHigh: Less biking
+      bikeReluctance-label: Bike Reluctance
+      wheelchair-label: Accessible Routing

@@ -1,4 +1,5 @@
 - applicableMode: CAR
+  graphQLQueryParam: true
   type: SLIDER
   key: carReluctance
   default: 3
@@ -9,6 +10,7 @@
   labelLow: More Driving
   labelHigh: More Transit
 - applicableMode: BICYCLE
+  graphQLQueryParam: true
   type: SLIDER
   key: bikeReluctance
   default: 2
@@ -19,6 +21,7 @@
   labelLow: More Biking
   labelHigh: More Transit
 - applicableMode: WALK
+  graphQLQueryParam: true
   type: SLIDER
   key: walkReluctance
   default: 2
