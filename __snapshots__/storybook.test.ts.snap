@@ -9558,7 +9558,7 @@ exports[`Storyshots StopsOverlay No Min Zoom 2`] = `
 </div>
 `;
 
-exports[`Storyshots TransitiveOverlay Bike Only Itinerary 1`] = `
+exports[`Storyshots TripOptions Company First Mixed Category 1`] = `
 <IntlProvider
   defaultFormats={Object {}}
   defaultLocale="en-US"
@@ -9569,3961 +9569,995 @@ exports[`Storyshots TransitiveOverlay Bike Only Itinerary 1`] = `
   onError={[Function]}
   textComponent={Symbol(react.fragment)}
 >
-  <ForwardRef(styled__StoryMapContainer)>
-    <BaseMap
-      center={
+  <PanelWrapper>
+    <TripOptions
+      featuredItemOverlayBackButton={true}
+      supportedCompanies={
         Array [
-          45.5215,
-          -122.686202,
+          Object {
+            "id": "BIKETOWN",
+            "label": "Biketown",
+            "modes": "BICYCLE_RENT",
+          },
+          Object {
+            "id": "LIME",
+            "label": "Lime",
+            "modes": "MICROMOBILITY_RENT",
+          },
+          Object {
+            "id": "BOLT",
+            "label": "Bolt",
+            "modes": "MICROMOBILITY_RENT",
+          },
+          Object {
+            "id": "RAZOR",
+            "label": "Razor",
+            "modes": "MICROMOBILITY_RENT",
+          },
+          Object {
+            "id": "UBER",
+            "label": "Uber",
+            "modes": "CAR_HAIL",
+          },
+          Object {
+            "id": "LYFT",
+            "label": "Lyft",
+            "modes": "CAR_HAIL",
+          },
+          Object {
+            "id": "UNKNOWN_BIKESHARE",
+            "label": "Unknown Bikeshare",
+            "modes": "BICYCLE_RENT",
+          },
         ]
       }
-      zoom={16}
+      supportedModes={
+        Object {
+          "accessModes": Array [
+            Object {
+              "label": "Saunter",
+              "mode": "WALK",
+            },
+            Object {
+              "label": "Transit + Personal Bike",
+              "mode": "BICYCLE",
+            },
+            Object {
+              "label": "Transit + Biketown",
+              "mode": "BICYCLE_RENT",
+            },
+            Object {
+              "label": "Transit + E-scooter",
+              "mode": "MICROMOBILITY_RENT",
+            },
+            Object {
+              "label": "Park & Ride",
+              "mode": "CAR_PARK",
+            },
+            Object {
+              "company": "Uber",
+              "label": "Transit + Uber",
+              "mode": "CAR_HAIL",
+            },
+            Object {
+              "company": "ReachNow",
+              "label": "Transit + ReachNow",
+              "mode": "CAR_RENT",
+              "showWheelchairSetting": true,
+            },
+            Object {
+              "company": "Car2Go",
+              "label": "Transit + Car2Go",
+              "mode": "CAR_RENT",
+              "showWheelchairSetting": true,
+            },
+          ],
+          "bicycleModes": Array [
+            Object {
+              "label": "Own Bike",
+              "mode": "BICYCLE",
+              "showWheelchairSetting": true,
+            },
+            Object {
+              "label": "Biketown",
+              "mode": "BICYCLE_RENT",
+            },
+          ],
+          "categories": Array [
+            Object {
+              "description": "A bicycle, also called a bike or cycle, is a human-powered or motor-powered, pedal-driven, single-track vehicle, having two wheels attached to a frame, one behind the other. A bicycle rider is called a cyclist, or bicyclist.",
+              "id": "BICYCLE",
+              "image": "mocked svg file contents",
+              "label": "+ Bike or Bike Rental",
+              "options": Array [
+                Object {
+                  "label": "Personal Bike",
+                  "mode": "BICYCLE",
+                },
+                Object {
+                  "company": "BIKETOWN",
+                  "label": "BIKETOWN",
+                  "mode": "BICYCLE_RENT",
+                },
+              ],
+              "type": "access",
+            },
+            Object {
+              "description": "A ridesharing company (also known as a transportation network company, ride-hailing service; the vehicles are called app-taxis or e-taxis) is a company that, via websites and mobile apps, matches passengers with drivers of vehicles for hire that, unlike taxicabs, cannot legally be hailed from the street.",
+              "id": "CAR",
+              "image": "mocked svg file contents",
+              "label": "+ Ridehail or Park & Ride",
+              "options": Array [
+                Object {
+                  "company": "LYFT",
+                  "label": "Lyft",
+                  "mode": "CAR_HAIL",
+                  "url": "https://www.lyft.com",
+                },
+                Object {
+                  "label": "Park & Ride",
+                  "mode": "CAR_PARK",
+                },
+                Object {
+                  "company": "UBER",
+                  "image": "https://trimet-web.s3.amazonaws.com/uber.svg",
+                  "label": "Uber",
+                  "mode": "CAR_HAIL",
+                  "url": "https://uber.com",
+                },
+              ],
+              "type": "access",
+            },
+            Object {
+              "description": "E-scooters are battery-powered devices that you can rent on-the-spot using an app on your phone. You can quickly and easily connect to and from your transit stop, using one of several scooter brands operating in the Portland area.",
+              "id": "SCOOTER",
+              "image": "mocked svg file contents",
+              "label": "+ E-Scooter Rental",
+              "mode": "MICROMOBILITY_RENT",
+              "options": Array [
+                Object {
+                  "company": "BOLT",
+                  "image": "mocked svg file contents",
+                  "label": "Bolt",
+                  "url": "https://example.com",
+                },
+                Object {
+                  "company": "BIRD",
+                  "label": "Bird",
+                  "url": "https://example.com",
+                },
+                Object {
+                  "company": "LIME",
+                  "label": "Lime",
+                  "url": "https://example.com",
+                },
+                Object {
+                  "company": "SPIN",
+                  "image": "https://trimet-web.s3.amazonaws.com/spin.svg",
+                  "label": "Spin",
+                  "url": "https://example.com",
+                },
+              ],
+              "type": "access",
+            },
+            Object {
+              "id": "WALK",
+              "label": "Walk Only",
+              "mode": "WALK",
+              "type": "exclusive",
+            },
+            Object {
+              "id": "BICYCLE",
+              "label": "Bike Only",
+              "options": Array [
+                Object {
+                  "label": "Personal Bike",
+                  "mode": "BICYCLE",
+                },
+                Object {
+                  "label": "BIKETOWN",
+                  "mode": "BICYCLE_RENT",
+                },
+              ],
+              "type": "exclusive",
+            },
+          ],
+          "exclusiveModes": Array [
+            "WALK",
+            "BICYCLE",
+            "MICROMOBILITY",
+          ],
+          "micromobilityModes": Array [
+            Object {
+              "label": "Own E-scooter",
+              "mode": "MICROMOBILITY",
+            },
+            Object {
+              "label": "Rental E-scooter",
+              "mode": "MICROMOBILITY_RENT",
+            },
+          ],
+          "transitModes": Array [
+            Object {
+              "image": "https://trimet.org/global/img/mode-bus.png",
+              "label": "Buses",
+              "mode": "BUS",
+            },
+            Object {
+              "image": "https://trimet.org/global/img/mode-max.png",
+              "label": "MAX and Portland Streetcar",
+              "mode": "TRAM",
+            },
+            Object {
+              "image": "https://trimet.org/global/img/mode-wes.png",
+              "label": "WES Commuter Rail",
+              "mode": "RAIL",
+            },
+            Object {
+              "hidden": true,
+              "label": "Aerial Tram",
+              "mode": "GONDOLA",
+            },
+          ],
+        }
+      }
+    />
+  </PanelWrapper>
+</IntlProvider>
+`;
+
+exports[`Storyshots TripOptions Company First Mixed Category 2`] = `
+.c3 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.c13 {
+  padding-left: 6px;
+  font-weight: 300;
+}
+
+.c13 svg {
+  width: 22pt;
+}
+
+.c12 > div {
+  width: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.c12 select {
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.c0 {
+  background-color: #0d5eac;
+  color: white;
+  font-weight: 40;
+  max-width: 992px;
+  min-height: 400px;
+}
+
+.c11 {
+  max-width: 700px;
+  padding: 12px;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+.c14 > button {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c5 {
+  border-radius: 50%;
+  height: 2.5em;
+  margin-bottom: 10px;
+  width: 2.5em;
+  z-index: 10;
+  background-color: rgb(84,174,88);
+  color: white;
+}
+
+.c9 {
+  border-radius: 50%;
+  height: 2.5em;
+  margin-bottom: 10px;
+  width: 2.5em;
+  z-index: 10;
+}
+
+.c16 {
+  max-width: 100%;
+}
+
+.c7 ~ .c4,
+.c7 ~ .c8 {
+  height: 1.5em;
+  margin-bottom: -1em;
+  position: relative;
+  right: -30px;
+  top: -50px;
+  width: 1.5em;
+}
+
+.c7 svg {
+  fill: white;
+  height: 3em;
+  position: relative;
+  width: 3em;
+}
+
+.c2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0);
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 77px;
+  opacity: 1;
+  padding: 20px 0px;
+  white-space: pre-wrap;
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0);
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 50px;
+  opacity: 0.65;
+  padding: 20px 0px;
+  white-space: pre-wrap;
+}
+
+.c10 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0);
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 77px;
+  opacity: 0.65;
+  padding: 20px 0px;
+  white-space: pre-wrap;
+}
+
+.c15 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0);
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 77px;
+  opacity: 1;
+  padding: 20px 0px;
+  white-space: pre-wrap;
+  margin: 20px 0;
+  position: relative;
+}
+
+.c15 .c8 {
+  background: #0d5eac;
+}
+
+.c15 .c4,
+.c15 .c8 {
+  position: absolute;
+  right: 5.5%;
+  top: 11%;
+}
+
+.c1 {
+  background-color: #0a4c8d;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+  padding: 0 12px;
+  -ms-overflow-style: none;
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+}
+
+.c1 > button {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-right: 24px;
+}
+
+.c1:hover > button:hover {
+  opacity: 1;
+}
+
+.c1:hover > button:hover svg {
+  opacity: 1;
+}
+
+.c1::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width:768px) {
+  .c15 .c4,
+  .c15 .c8 {
+    max-height: 20px;
+    max-width: 20px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <button
+      aria-checked={true}
+      aria-label="Go by Transit"
+      className="c2"
+      onClick={[Function]}
+      role="checkbox"
+      selected={true}
+      tabIndex={0}
     >
-      <ForwardRef(styled__StoryMapContainer)>
-        <BaseMap
-          center={
-            Array [
-              45.520441,
-              -122.68302,
-            ]
-          }
-          zoom={16}
+      <svg
+        aria-hidden="true"
+        className="c3 c4 c5"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 16 16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"
+        />
+      </svg>
+      Go by Transit
+    </button>
+    <button
+      aria-checked={false}
+      aria-label="+ Bike or Bike Rental"
+      className="c6"
+      mode="BICYCLE"
+      onClick={[Function]}
+      role="checkbox"
+      selected={false}
+      tabIndex={0}
+    >
+      <span
+        className="c7"
+      >
+        <svg
+          id="Layer_2_1_"
+          version="1.1"
+          viewBox="0 0 390 390"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
         >
-          <React.Fragment>
-            <EndpointsOverlay
-              fromLocation={
-                Object {
-                  "departure": 1573688520000,
-                  "lat": 45.519610192858764,
-                  "lon": -122.67747003370778,
-                  "name": "503 SW Alder St, Portland, OR, USA 97204",
-                  "orig": "503 SW Alder St, Portland, OR, USA 97204",
-                  "vertexType": "NORMAL",
-                }
-              }
-              setLocation={[Function]}
-              toLocation={
-                Object {
-                  "arrival": 1573688966000,
-                  "lat": 45.522170898252,
-                  "lon": -122.68959868692157,
-                  "name": "1737 SW Morrison St, Portland, OR, USA 97205",
-                  "orig": "1737 SW Morrison St, Portland, OR, USA 97205",
-                  "vertexType": "NORMAL",
-                }
-              }
-              visible={true}
+          <g>
+            <path
+              d="M84.7,188.3C38,188.5,0,226.3,0,273s37.9,84.5,84.7,84.7c46.6-0.2,84.5-38.1,84.5-84.7S131.1,188.5,84.7,188.3z M129.7,318.1c-11.5,11.7-27.4,19-45.1,19s-33.6-7.3-45.3-19c-11.5-11.5-18.8-27.4-18.8-45.1c0-17.6,7.3-33.6,18.8-45.1 c11.7-11.7,27.7-18.8,45.3-18.8s33.6,7,45.1,18.8c11.7,11.5,18.8,27.4,18.8,45.1C148.6,290.7,141.5,306.6,129.7,318.1z"
             />
-            <TransitiveCanvasOverlay
-              transitiveData={
-                Object {
-                  "journeys": Array [
-                    Object {
-                      "journey_id": "itin",
-                      "journey_name": "Itinerary-derived Journey",
-                      "segments": Array [
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_0_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            0,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_0_to",
-                            "type": "PLACE",
-                          },
-                          "type": "BICYCLE",
-                        },
-                      ],
-                    },
-                  ],
-                  "patterns": Array [],
-                  "places": Array [
-                    Object {
-                      "placeId": "from",
-                      "place_lat": 45.519610192858764,
-                      "place_lon": -122.67747003370778,
-                      "place_name": "503 SW Alder St, Portland, OR, USA 97204",
-                      "type": "from",
-                    },
-                    Object {
-                      "placeId": "to",
-                      "place_lat": 45.522170898252,
-                      "place_lon": -122.68959868692157,
-                      "place_name": "1737 SW Morrison St, Portland, OR, USA 97205",
-                      "type": "to",
-                    },
-                  ],
-                  "routes": Array [],
-                  "stops": Array [],
-                  "streetEdges": Array [
-                    Object {
-                      "edge_id": 0,
-                      "geometry": Object {
-                        "length": 61,
-                        "points": "cpytGlmwkVF]@GDQ@ERFxAp@LFFBCJCJ?@m@hDCJAJCHW|AMn@EVCPEVk@zCCNCLUnAALENg@zCCJAHEPAHi@vCEVCTe@lCEPEVERi@~CCRGZ_@xBIb@EVERi@~CCLCRKl@O|@G\\\\EPCNG\\\\i@|CCLCRSfAAHAB",
-                      },
-                    },
-                  ],
-                }
-              }
-              visible={true}
+            <path
+              d="M234.3,94.1c17,0,31-14,31-31s-14-30.8-31-30.8c-16.9,0-30.8,13.8-30.8,30.8C203.5,80.3,217.4,94.1,234.3,94.1z"
             />
-          </React.Fragment>
-        </BaseMap>
-      </ForwardRef(styled__StoryMapContainer)>
-    </BaseMap>
-  </ForwardRef(styled__StoryMapContainer)>
-</IntlProvider>
-`;
-
-exports[`Storyshots TransitiveOverlay Bike Only Itinerary 2`] = `
-.c0 {
-  height: 90vh;
-}
-
-<div
-  className="c0"
->
-  <div
-    style={
-      Object {
-        "height": "100%",
-        "position": "relative",
-        "width": "100%",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`Storyshots TransitiveOverlay Bike Rental Itinerary 1`] = `
-<IntlProvider
-  defaultFormats={Object {}}
-  defaultLocale="en-US"
-  fallbackOnEmptyString={true}
-  formats={Object {}}
-  locale="en-US"
-  messages={Object {}}
-  onError={[Function]}
-  textComponent={Symbol(react.fragment)}
->
-  <ForwardRef(styled__StoryMapContainer)>
-    <BaseMap
-      center={
-        Array [
-          45.5215,
-          -122.686202,
-        ]
-      }
-      zoom={16}
+            <path
+              d="M291.5,168.9c18.5,0,18.5-24.4-0.8-24.4h-49.3l-33.5-55.6c-7.3-10-28.2-11.2-36.7-1.1l-59.8,59.6 c-13.4,14.5-5.4,36,9.9,40.9l55.4,34.6v56.1c0,12.6,9.5,19.1,18.2,19.1c8.6,0,18.3-6.4,18.3-19.6v-71.7c0-6.5-0.9-14.1-6.4-16.3 l-36.4-23l30.3-32l18.2,24.3c3.1,7.8,11.4,9.2,18,9.2L291.5,168.9L291.5,168.9z"
+            />
+            <g>
+              <path
+                d="M305.4,187c-46.7,0-84.7,37.9-84.7,84.6c0.2,46.7,37.9,84.7,84.7,84.7c46.6,0,84.6-38,84.6-84.7S352,187,305.4,187z M350.6,316.8c-11.5,11.6-27.4,18.8-45.1,18.8s-33.6-7.2-45.3-18.8c-11.5-11.6-18.8-27.7-18.8-45.2c0-17.7,7.3-33.6,18.8-45.1 c11.7-11.7,27.7-18.8,45.3-18.8c17.7,0,33.6,7,45.1,18.8c11.7,11.7,18.8,27.4,18.8,45.1C369.4,289.1,362.3,305.1,350.6,316.8z"
+              />
+            </g>
+          </g>
+        </svg>
+      </span>
+      <svg
+        aria-hidden="true"
+        className="c3 c8 c9"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4z"
+        />
+        <path
+          d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"
+        />
+      </svg>
+      + Bike or Bike Rental
+    </button>
+    <button
+      aria-checked={false}
+      aria-label="+ Ridehail or Park & Ride"
+      className="c10"
+      mode="CAR_HAIL"
+      onClick={[Function]}
+      role="checkbox"
+      selected={false}
+      tabIndex={0}
     >
-      <ForwardRef(styled__StoryMapContainer)>
-        <BaseMap
-          center={
-            Array [
-              45.508841,
-              -122.631302,
-            ]
-          }
-          zoom={14}
+      <span
+        className="c7"
+      >
+        <svg
+          id="Layer_3"
+          version="1.1"
+          viewBox="0 0 390 390"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
         >
-          <React.Fragment>
-            <EndpointsOverlay
-              fromLocation={
-                Object {
-                  "departure": 1573688700000,
-                  "lat": 45.50357980690456,
-                  "lon": -122.63428176817192,
-                  "name": "2624 SE 30th Ave, Portland, OR, USA 97202",
-                  "orig": "2624 SE 30th Ave, Portland, OR, USA 97202",
-                  "vertexType": "NORMAL",
-                }
-              }
-              setLocation={[Function]}
-              toLocation={
-                Object {
-                  "arrival": 1573689492000,
-                  "lat": 45.51258575759002,
-                  "lon": -122.63757592401461,
-                  "name": "1415 SE 28th Ave, Portland, OR, USA 97214",
-                  "orig": "1415 SE 28th Ave, Portland, OR, USA 97214",
-                  "vertexType": "NORMAL",
-                }
-              }
-              visible={true}
+          <g>
+            <path
+              d="M371.2,175.3l-3.7-12.1l-29.8-95.7c-5.8-18.6-22.9-31.2-42.4-31.2H94.7c-19.5,0-36.5,12.6-42.4,31.2l-29.8,95.7l-3.7,12.1 C7.6,181.4,0,193.1,0,206.5v76.2c0,7.8,6.4,14.2,14.2,14.2h12.4v35.5c0,11.7,9.6,21.3,21.3,21.3H62c11.7,0,21.3-9.6,21.3-21.3 v-35.5h223.4v35.5c0,11.7,9.6,21.3,21.3,21.3h14.2c11.7,0,21.3-9.6,21.3-21.3v-35.5h12.4c7.8,0,14.2-6.4,14.2-14.2v-76.2 C390,193.2,382.4,181.4,371.2,175.3z M55,252.8c-14.7,0-26.6-11.9-26.6-26.6s11.9-26.6,26.6-26.6s26.6,11.9,26.6,26.6 S69.7,252.8,55,252.8z M295.7,171.2c-9-14.9-25.4-24.8-44-24.8s-34.9,9.9-44,24.8H47.9l29.8-95.6c2.3-7.4,9.2-12.4,16.8-12.4h200.9 c7.8,0,14.5,5,16.8,12.4l29.8,95.7L295.7,171.2z M335,252.8c-14.7,0-26.6-11.9-26.6-26.6s11.9-26.6,26.6-26.6 c14.7,0,26.6,11.9,26.6,26.6S349.8,252.8,335,252.8z"
             />
-            <TransitiveCanvasOverlay
-              transitiveData={
-                Object {
-                  "journeys": Array [
-                    Object {
-                      "journey_id": "itin",
-                      "journey_name": "Itinerary-derived Journey",
-                      "segments": Array [
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_0_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            0,
-                          ],
-                          "to": Object {
-                            "place_id": "bicycle_rent_station_\\"hub_1549\\"",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "bicycle_rent_station_\\"hub_1549\\"",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            1,
-                          ],
-                          "to": Object {
-                            "place_id": "bicycle_rent_station_\\"hub_1608\\"",
-                            "type": "PLACE",
-                          },
-                          "type": "BICYCLE",
-                        },
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "bicycle_rent_station_\\"hub_1608\\"",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            2,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_2_to",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                      ],
-                    },
-                  ],
-                  "patterns": Array [],
-                  "places": Array [
-                    Object {
-                      "placeId": "from",
-                      "place_lat": 45.50357980690456,
-                      "place_lon": -122.63428176817192,
-                      "place_name": "2624 SE 30th Ave, Portland, OR, USA 97202",
-                      "type": "from",
-                    },
-                    Object {
-                      "placeId": "to",
-                      "place_lat": 45.51258575759002,
-                      "place_lon": -122.63757592401461,
-                      "place_name": "1415 SE 28th Ave, Portland, OR, USA 97214",
-                      "type": "to",
-                    },
-                    Object {
-                      "placeId": "bicycle_rent_station_\\"hub_1549\\"",
-                      "place_lat": 45.504688916692,
-                      "place_lon": -122.63455510139465,
-                      "place_name": "SE 30th at Division",
-                      "type": "BICYCLE",
-                    },
-                    Object {
-                      "placeId": "bicycle_rent_station_\\"hub_1608\\"",
-                      "place_lat": 45.51202352994066,
-                      "place_lon": -122.6363119482994,
-                      "place_name": "SE 29th at Hawthorne",
-                      "type": "BICYCLE",
-                    },
-                  ],
-                  "routes": Array [],
-                  "stops": Array [],
-                  "streetEdges": Array [
-                    Object {
-                      "edge_id": 0,
-                      "geometry": Object {
-                        "length": 4,
-                        "points": "alvtGh_okVArA?UcF?",
-                      },
-                    },
-                    Object {
-                      "edge_id": 1,
-                      "geometry": Object {
-                        "length": 29,
-                        "points": "gsvtGfaokVa@HD?D?QLC?wB?qC?kB@_B?mEBS@GVET?R?\`@?~A?pAWAgB?}B?I@mCAmCAqAAg@?]?W??f@",
-                      },
-                    },
-                    Object {
-                      "edge_id": 2,
-                      "geometry": Object {
-                        "length": 6,
-                        "points": "maxtG~kokV?xA?hAY?eCAAxA",
-                      },
-                    },
-                  ],
-                }
-              }
-              visible={true}
+            <circle
+              cx="251.7"
+              cy="107.4"
+              r="33.7"
             />
-          </React.Fragment>
-        </BaseMap>
-      </ForwardRef(styled__StoryMapContainer)>
-    </BaseMap>
-  </ForwardRef(styled__StoryMapContainer)>
-</IntlProvider>
-`;
-
-exports[`Storyshots TransitiveOverlay Bike Rental Itinerary 2`] = `
-.c0 {
-  height: 90vh;
-}
-
-<div
-  className="c0"
->
-  <div
-    style={
-      Object {
-        "height": "100%",
-        "position": "relative",
-        "width": "100%",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`Storyshots TransitiveOverlay Bike Rental Transit Itinerary 1`] = `
-<IntlProvider
-  defaultFormats={Object {}}
-  defaultLocale="en-US"
-  fallbackOnEmptyString={true}
-  formats={Object {}}
-  locale="en-US"
-  messages={Object {}}
-  onError={[Function]}
-  textComponent={Symbol(react.fragment)}
->
-  <ForwardRef(styled__StoryMapContainer)>
-    <BaseMap
-      center={
-        Array [
-          45.5215,
-          -122.686202,
-        ]
-      }
-      zoom={16}
+          </g>
+        </svg>
+      </span>
+      <svg
+        aria-hidden="true"
+        className="c3 c8 c9"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4z"
+        />
+        <path
+          d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"
+        />
+      </svg>
+      + Ridehail or Park & Ride
+    </button>
+    <button
+      aria-checked={false}
+      aria-label="+ E-Scooter Rental"
+      className="c10"
+      mode="MICROMOBILITY_RENT"
+      onClick={[Function]}
+      role="checkbox"
+      selected={false}
+      tabIndex={0}
     >
-      <ForwardRef(styled__StoryMapContainer)>
-        <BaseMap
-          center={
-            Array [
-              45.538841,
-              -122.6302,
-            ]
-          }
-          zoom={12}
+      <span
+        className="c7"
+      >
+        <svg
+          id="wes"
+          version="1.1"
+          viewBox="0 0 390 390"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
         >
-          <React.Fragment>
-            <EndpointsOverlay
-              fromLocation={
-                Object {
-                  "departure": 1573689019000,
-                  "lat": 45.519031121242776,
-                  "lon": -122.63470154379792,
-                  "name": "2943 SE Washington St, Portland, OR, USA 97214",
-                  "orig": "2943 SE Washington St, Portland, OR, USA 97214",
-                  "vertexType": "NORMAL",
-                }
-              }
-              setLocation={[Function]}
-              toLocation={
-                Object {
-                  "arrival": 1573691203000,
-                  "lat": 45.556544990525936,
-                  "lon": -122.6017648693917,
-                  "name": "5916 NE Going St, Portland, OR, USA 97218",
-                  "orig": "5916 NE Going St, Portland, OR, USA 97218",
-                  "vertexType": "NORMAL",
-                }
-              }
-              visible={true}
+          <g>
+            <path
+              className="st0"
+              d="M334.7,277.7c-24.9,0-46,16.5-52.9,39.2H133.7l-57-115.2l36-178.8H72.4c-5,0-9.1,4.1-9.1,9.1s4.1,9.1,9.1,9.1 h18.1L40,292c-22.1,0.5-40,18.7-40,41c0,22.6,18.4,41,41,41s41-18.4,41-41c0-16.6-10-31-24.2-37.4l10.8-53.6l37.2,75.2 c-7.5,1.3-13.3,7.9-13.3,15.8c0,8.9,7.2,16,16,16H297c6.3,14.7,20.8,24.9,37.7,24.9c22.6,0,41-18.4,41-41c0-22.6-18.4-41-41-41 c-16.9,0-31.5,10.3-37.7,24.9h-5.6c6.5-17.6,23.5-30.1,43.3-30.1c25.5,0,46.2,20.7,46.2,46.2c0,2.5,2,4.5,4.5,4.5s4.5-2,4.5-4.5 C390,302.5,365.2,277.7,334.7,277.7z M63.8,332.9c0,12.6-10.3,22.9-22.9,22.9s-22.9-10.3-22.9-22.9c0-11,7.8-20.2,18.1-22.4 l-4.1,20.6c-1,4.9,2.2,9.7,7.1,10.7c0.6,0.1,1.2,0.2,1.8,0.2c4.2,0,8-3,8.9-7.3l4.1-20.6C59.9,318.3,63.8,325.2,63.8,332.9z M334.7,310.1c12.6,0,22.9,10.3,22.9,22.9c0,12.6-10.3,22.9-22.9,22.9c-6.4,0-12.1-2.6-16.3-6.8h16.3c8.9,0,16-7.2,16-16 s-7.2-16-16-16h-16.3C322.6,312.7,328.4,310.1,334.7,310.1z"
             />
-            <TransitiveCanvasOverlay
-              transitiveData={
-                Object {
-                  "journeys": Array [
-                    Object {
-                      "journey_id": "itin",
-                      "journey_name": "Itinerary-derived Journey",
-                      "segments": Array [
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_0_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            0,
-                          ],
-                          "to": Object {
-                            "place_id": "bicycle_rent_station_\\"hub_1551\\"",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "bicycle_rent_station_\\"hub_1551\\"",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            1,
-                          ],
-                          "to": Object {
-                            "place_id": "bicycle_rent_station_\\"hub_1522\\"",
-                            "type": "PLACE",
-                          },
-                          "type": "BICYCLE",
-                        },
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "bicycle_rent_station_\\"hub_1522\\"",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            2,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_2_to",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                        Object {
-                          "arc": false,
-                          "patterns": Array [
-                            Object {
-                              "from_stop_index": 0,
-                              "pattern_id": "ptn_0",
-                              "to_stop_index": 13,
-                            },
-                          ],
-                          "type": "TRANSIT",
-                        },
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_4_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            4,
-                          ],
-                          "to": Object {
-                            "place_id": "bicycle_rent_station_\\"bike_6884\\"",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "bicycle_rent_station_\\"bike_6884\\"",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            5,
-                          ],
-                          "to": Object {
-                            "place_id": "bicycle_rent_station_\\"hub_5470\\"",
-                            "type": "PLACE",
-                          },
-                          "type": "BICYCLE",
-                        },
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "bicycle_rent_station_\\"hub_5470\\"",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            6,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_6_to",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                      ],
-                    },
-                  ],
-                  "patterns": Array [
-                    Object {
-                      "pattern_id": "ptn_0",
-                      "pattern_name": "Pattern 0",
-                      "route_id": "TriMet:12",
-                      "stops": Array [
-                        Object {
-                          "stop_id": "TriMet:5066",
-                        },
-                        Object {
-                          "geometry": "mb{tGpjpkVGS]iA]sAkAeE[gA",
-                          "stop_id": "TriMet:5049",
-                        },
-                        Object {
-                          "geometry": "yg{tGp|okVSs@Qi@Oi@i@mBOg@",
-                          "stop_id": "TriMet:5070",
-                        },
-                        Object {
-                          "geometry": "ik{tGrsokVMe@Mc@GSQq@q@aCOe@CKISMg@Uw@I[a@uASq@uA_Fc@aBEOY{@",
-                          "stop_id": "TriMet:5076",
-                        },
-                        Object {
-                          "geometry": "mw{tGhtnkVg@cBe@cBUw@K_@Y}@GUOa@Wy@CI",
-                          "stop_id": "TriMet:5079",
-                        },
-                        Object {
-                          "geometry": "k}{tGnenkVK[}@{CwAwEUu@",
-                          "stop_id": "TriMet:5048",
-                        },
-                        Object {
-                          "geometry": "cc|tGhwmkVo@sBy@sC]iAUs@AYMc@}@uCICW_AM_@M_@Qi@GQAC",
-                          "stop_id": "TriMet:10793",
-                        },
-                        Object {
-                          "geometry": "im|tGj~lkVEOk@gB_@oAISm@qBUs@oAcEGSIU[cAa@mAIUa@gA",
-                          "stop_id": "TriMet:5087",
-                        },
-                        Object {
-                          "geometry": "ux|tGjclkVs@oBGSOa@]eA]cAM]Sm@",
-                          "stop_id": "TriMet:5091",
-                        },
-                        Object {
-                          "geometry": "_~|tGnwkkVOa@M_@Sg@Qg@IUe@sAWu@Ma@g@wAi@yAIUISQi@Wu@Ka@EM",
-                          "stop_id": "TriMet:14073",
-                        },
-                        Object {
-                          "geometry": "{g}tGnakkVCIGWK_@_@aBYoAaAcE[sA",
-                          "stop_id": "TriMet:5097",
-                        },
-                        Object {
-                          "geometry": "km}tGbqjkVMg@[oAk@aCS{@GWKc@Mi@EO",
-                          "stop_id": "TriMet:5054",
-                        },
-                        Object {
-                          "geometry": "}q}tGvcjkVI[Ka@Qo@u@cC_@gASo@CI",
-                          "stop_id": "TriMet:5102",
-                        },
-                        Object {
-                          "geometry": "sv}tGbxikVeAmDo@yBCKYcA_@oA_@qA",
-                          "stop_id": "TriMet:5104",
-                        },
-                      ],
-                    },
-                  ],
-                  "places": Array [
-                    Object {
-                      "placeId": "from",
-                      "place_lat": 45.519031121242776,
-                      "place_lon": -122.63470154379792,
-                      "place_name": "2943 SE Washington St, Portland, OR, USA 97214",
-                      "type": "from",
-                    },
-                    Object {
-                      "placeId": "to",
-                      "place_lat": 45.556544990525936,
-                      "place_lon": -122.6017648693917,
-                      "place_name": "5916 NE Going St, Portland, OR, USA 97218",
-                      "type": "to",
-                    },
-                    Object {
-                      "placeId": "bicycle_rent_station_\\"hub_1551\\"",
-                      "place_lat": 45.51936282546957,
-                      "place_lon": -122.63599276542662,
-                      "place_name": "SE 29th at Stark",
-                      "type": "BICYCLE",
-                    },
-                    Object {
-                      "placeId": "bicycle_rent_station_\\"hub_1522\\"",
-                      "place_lat": 45.526494932914076,
-                      "place_lon": -122.6416327804327,
-                      "place_name": "NE Glisan at 24th",
-                      "type": "BICYCLE",
-                    },
-                    Object {
-                      "placeId": "bicycle_rent_station_\\"bike_6884\\"",
-                      "place_lat": 45.542406666666665,
-                      "place_lon": -122.60542166666667,
-                      "place_name": "0086 BIKETOWN",
-                      "type": "BICYCLE",
-                    },
-                    Object {
-                      "placeId": "bicycle_rent_station_\\"hub_5470\\"",
-                      "place_lat": 45.555925802180894,
-                      "place_lon": -122.6008129119873,
-                      "place_name": "NE 60th at Cully ",
-                      "type": "BICYCLE",
-                    },
-                  ],
-                  "routes": Array [
-                    Object {
-                      "agency_id": "TRIMET",
-                      "route_color": undefined,
-                      "route_id": "TriMet:12",
-                      "route_long_name": "Barbur/Sandy Blvd",
-                      "route_short_name": "12",
-                      "route_text_color": undefined,
-                      "route_type": 3,
-                    },
-                  ],
-                  "stops": Array [
-                    Object {
-                      "stop_id": "TriMet:5066",
-                      "stop_lat": 45.52759,
-                      "stop_lon": -122.64121,
-                      "stop_name": "NE Sandy & 24th",
-                    },
-                    Object {
-                      "stop_id": "TriMet:5049",
-                      "stop_lat": 45.528373,
-                      "stop_lon": -122.638908,
-                      "stop_name": "NE Sandy & Lawrence",
-                    },
-                    Object {
-                      "stop_id": "TriMet:5070",
-                      "stop_lat": 45.528932,
-                      "stop_lon": -122.637476,
-                      "stop_name": "NE Sandy & 28th",
-                    },
-                    Object {
-                      "stop_id": "TriMet:5076",
-                      "stop_lat": 45.530883,
-                      "stop_lon": -122.632469,
-                      "stop_name": "NE Sandy & 31st",
-                    },
-                    Object {
-                      "stop_id": "TriMet:5079",
-                      "stop_lat": 45.531835,
-                      "stop_lon": -122.630092,
-                      "stop_name": "NE Sandy & 33rd",
-                    },
-                    Object {
-                      "stop_id": "TriMet:5048",
-                      "stop_lat": 45.532756,
-                      "stop_lon": -122.627831,
-                      "stop_name": "NE Sandy & Imperial",
-                    },
-                    Object {
-                      "stop_id": "TriMet:10793",
-                      "stop_lat": 45.534366,
-                      "stop_lon": -122.623829,
-                      "stop_name": "NE Sandy & 38th",
-                    },
-                    Object {
-                      "stop_id": "TriMet:5087",
-                      "stop_lat": 45.536199,
-                      "stop_lon": -122.61951,
-                      "stop_name": "NE Sandy & 42nd",
-                    },
-                    Object {
-                      "stop_id": "TriMet:5091",
-                      "stop_lat": 45.537054,
-                      "stop_lon": -122.617607,
-                      "stop_name": "NE Sandy & 44th",
-                    },
-                    Object {
-                      "stop_id": "TriMet:14073",
-                      "stop_lat": 45.538632,
-                      "stop_lon": -122.614099,
-                      "stop_name": "NE Sandy & 48th",
-                    },
-                    Object {
-                      "stop_id": "TriMet:5097",
-                      "stop_lat": 45.539503,
-                      "stop_lon": -122.611486,
-                      "stop_name": "NE Sandy & 50th",
-                    },
-                    Object {
-                      "stop_id": "TriMet:5054",
-                      "stop_lat": 45.540236,
-                      "stop_lon": -122.609338,
-                      "stop_name": "NE Sandy & Sacramento",
-                    },
-                    Object {
-                      "stop_id": "TriMet:5102",
-                      "stop_lat": 45.540992,
-                      "stop_lon": -122.607476,
-                      "stop_name": "NE Sandy & 54th",
-                    },
-                    Object {
-                      "stop_id": "TriMet:5104",
-                      "stop_lat": 45.54212,
-                      "stop_lon": -122.60485,
-                      "stop_name": "NE Sandy & 57th",
-                    },
-                  ],
-                  "streetEdges": Array [
-                    Object {
-                      "edge_id": 0,
-                      "geometry": Object {
-                        "length": 5,
-                        "points": "}lytGnbokV{AFd@??xEK?",
-                      },
-                    },
-                    Object {
-                      "edge_id": 1,
-                      "geometry": Object {
-                        "length": 23,
-                        "points": "_oytGpiokVmGC?dG?PqCAiCAAX?pD?zB?l@?ZAxF?b@?X?tBq@?{A?oCAmCAmC?oCAuCA?l@",
-                      },
-                    },
-                    Object {
-                      "edge_id": 2,
-                      "geometry": Object {
-                        "length": 8,
-                        "points": "m{ztGfmpkV?m@S@}BAg@?W?EOGU",
-                      },
-                    },
-                    Object {
-                      "edge_id": 4,
-                      "geometry": Object {
-                        "length": 8,
-                        "points": "g}}tGhgikVCKOe@iBxFJWHWF[Ni@",
-                      },
-                    },
-                    Object {
-                      "edge_id": 5,
-                      "geometry": Object {
-                        "length": 57,
-                        "points": "w_~tGziikVJOLWFUH]Ng@_@@C?W?[AA?c@?eA?cB?aBAuA?aC?SAM?eHA{B?oAAG?I?]?M@M?_C?mC?oCCqBAKAOAMGIEw@m@a@]_@[eCmBUSWSw@o@c@]{@q@oAcAkByAo@g@[W??c@_@OIy@m@CAQOYFK?w@E",
-                      },
-                    },
-                    Object {
-                      "edge_id": 6,
-                      "geometry": Object {
-                        "length": 5,
-                        "points": "qs\`uGtnhkVGAeA?eAA?nD",
-                      },
-                    },
-                  ],
-                }
-              }
-              visible={true}
+            <polygon
+              className="st0"
+              points="280.5,194.3 247.1,194.3 280.8,146.6 233.3,146.6 194.8,223.6 223.3,223.6 190.7,301 	"
             />
-          </React.Fragment>
-        </BaseMap>
-      </ForwardRef(styled__StoryMapContainer)>
-    </BaseMap>
-  </ForwardRef(styled__StoryMapContainer)>
-</IntlProvider>
-`;
-
-exports[`Storyshots TransitiveOverlay Bike Rental Transit Itinerary 2`] = `
-.c0 {
-  height: 90vh;
-}
-
-<div
-  className="c0"
->
-  <div
-    style={
-      Object {
-        "height": "100%",
-        "position": "relative",
-        "width": "100%",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`Storyshots TransitiveOverlay Bike Transit Bike Itinerary 1`] = `
-<IntlProvider
-  defaultFormats={Object {}}
-  defaultLocale="en-US"
-  fallbackOnEmptyString={true}
-  formats={Object {}}
-  locale="en-US"
-  messages={Object {}}
-  onError={[Function]}
-  textComponent={Symbol(react.fragment)}
->
-  <ForwardRef(styled__StoryMapContainer)>
-    <BaseMap
-      center={
-        Array [
-          45.5215,
-          -122.686202,
-        ]
-      }
-      zoom={16}
+          </g>
+        </svg>
+      </span>
+      <svg
+        aria-hidden="true"
+        className="c3 c8 c9"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4z"
+        />
+        <path
+          d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"
+        />
+      </svg>
+      + E-Scooter Rental
+    </button>
+    <button
+      aria-checked={false}
+      aria-label="Walk Only"
+      className="c6"
+      mode="WALK"
+      onClick={[Function]}
+      role="checkbox"
+      selected={false}
+      tabIndex={0}
     >
-      <ForwardRef(styled__StoryMapContainer)>
-        <BaseMap
-          center={
-            Array [
-              45.520441,
-              -122.68302,
-            ]
-          }
-          zoom={16}
+      <span
+        className="c7"
+      >
+        <svg
+          id="bus_circle"
+          version="1.1"
+          viewBox="0 0 390 390"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
         >
-          <React.Fragment>
-            <EndpointsOverlay
-              fromLocation={
-                Object {
-                  "departure": 1573688657000,
-                  "lat": 45.5187219673841,
-                  "lon": -122.67914856500536,
-                  "name": "KGW Studio on the Sq, Portland, OR, USA",
-                  "orig": "KGW Studio on the Sq, Portland, OR, USA",
-                  "vertexType": "NORMAL",
-                }
-              }
-              setLocation={[Function]}
-              toLocation={
-                Object {
-                  "arrival": 1573689016000,
-                  "lat": 45.522170898252,
-                  "lon": -122.68959868692157,
-                  "name": "1737 SW Morrison St, Portland, OR, USA 97205",
-                  "orig": "1737 SW Morrison St, Portland, OR, USA 97205",
-                  "vertexType": "NORMAL",
-                }
-              }
-              visible={true}
+          <g>
+            <path
+              d="M209,0c17.8,0,32.3,14.5,32.3,32.3S226.8,64.6,209,64.6s-32.3-14.5-32.3-32.3S191.2,0,209,0z M307.5,201.8 c-4.5,6.6-13.5,8.3-20.1,3.8l0,0c0,0-44.7-30.5-47.9-32.7c-3.2-2.2-5.1-6.8-6.5-9.8c-1-2-6-11.8-9.3-18.3l-4,17l-10.4,47.1 c0,0,55.7,65.6,56.8,66.9c1.6,1.8,2.5,5.5,3.2,8.3c0.7,2.7,14.9,79.9,14.9,79.9c2.2,11.9-5.7,23.4-17.6,25.7 c-11.9,2.2-23.4-5.7-25.7-17.6l-14.2-76.3l-46.3-50.6c0,0-10.3,48.1-10.5,49.1s-0.7,2.5-1.3,3.9c-0.6,1.3-47.6,81.1-47.6,81.1 c-6.2,10.4-19.7,13.9-30.2,7.7c-10.4-6.2-13.9-19.7-7.7-30.2l41.8-70.3l33.6-152.1l-22.6,18l-12.5,55.1l0,0 c0,7.8-8.8,12.9-16.6,11.2c-7.8-1.7-12.4-4.9-10.6-17.1h0.2c0,0,13-61.2,14-63.9c0.9-2.7,2.3-5.7,3.7-6.8 c9.4-7.6,45.8-37.4,56.5-46c12.3-10,17.7-13.7,28.2-13.7c7.9,0,16.5,2.4,25.6,11.8c4,4.1,6.9,10.8,8.9,15 c2,4.1,27.1,53.7,27.1,53.7l43.3,30l0,0C310.3,186.2,312,195.2,307.5,201.8z"
             />
-            <TransitiveCanvasOverlay
-              transitiveData={
-                Object {
-                  "journeys": Array [
-                    Object {
-                      "journey_id": "itin",
-                      "journey_name": "Itinerary-derived Journey",
-                      "segments": Array [
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_0_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            0,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_0_to",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_1_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            1,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_1_to",
-                            "type": "PLACE",
-                          },
-                          "type": "BICYCLE",
-                        },
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_2_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            2,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_2_to",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                        Object {
-                          "arc": false,
-                          "patterns": Array [
-                            Object {
-                              "from_stop_index": 0,
-                              "pattern_id": "ptn_0",
-                              "to_stop_index": 2,
-                            },
-                          ],
-                          "type": "TRANSIT",
-                        },
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_4_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            4,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_4_to",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_5_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            5,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_5_to",
-                            "type": "PLACE",
-                          },
-                          "type": "BICYCLE",
-                        },
-                      ],
-                    },
-                  ],
-                  "patterns": Array [
-                    Object {
-                      "pattern_id": "ptn_0",
-                      "pattern_name": "Pattern 0",
-                      "route_id": "TriMet:100",
-                      "stops": Array [
-                        Object {
-                          "stop_id": "TriMet:8383",
-                        },
-                        Object {
-                          "geometry": "onytGrywkVCNEPEVm@jDCPKh@G\`@CNg@tC",
-                          "stop_id": "TriMet:8384",
-                        },
-                        Object {
-                          "geometry": "qrytG|hxkVADGZAHETER]pBCHG^AD?DGVg@tCEVo@tDEPE\\\\k@zCEVETi@|CCLCRi@zCCNG\\\\g@rCCLAHAD?D?H?H?H@HLlA",
-                          "stop_id": "TriMet:9757",
-                        },
-                      ],
-                    },
-                  ],
-                  "places": Array [
-                    Object {
-                      "placeId": "from",
-                      "place_lat": 45.5187219673841,
-                      "place_lon": -122.67914856500536,
-                      "place_name": "KGW Studio on the Sq, Portland, OR, USA",
-                      "type": "from",
-                    },
-                    Object {
-                      "placeId": "to",
-                      "place_lat": 45.522170898252,
-                      "place_lon": -122.68959868692157,
-                      "place_name": "1737 SW Morrison St, Portland, OR, USA 97205",
-                      "type": "to",
-                    },
-                  ],
-                  "routes": Array [
-                    Object {
-                      "agency_id": "TRIMET",
-                      "route_color": "084C8D",
-                      "route_id": "TriMet:100",
-                      "route_long_name": "MAX Blue Line",
-                      "route_short_name": "",
-                      "route_text_color": "FFFFFF",
-                      "route_type": 0,
-                    },
-                  ],
-                  "stops": Array [
-                    Object {
-                      "stop_id": "TriMet:8383",
-                      "stop_lat": 45.51928,
-                      "stop_lon": -122.67946,
-                      "stop_name": "Pioneer Square North MAX Station",
-                    },
-                    Object {
-                      "stop_id": "TriMet:8384",
-                      "stop_lat": 45.51991,
-                      "stop_lon": -122.681919,
-                      "stop_name": "Galleria/SW 10th Ave MAX Station",
-                    },
-                    Object {
-                      "stop_id": "TriMet:9757",
-                      "stop_lat": 45.5218,
-                      "stop_lon": -122.68981,
-                      "stop_name": "Providence Park MAX Station",
-                    },
-                  ],
-                  "streetEdges": Array [
-                    Object {
-                      "edge_id": 0,
-                      "geometry": Object {
-                        "length": 3,
-                        "points": "_kytGvwwkVXOTE",
-                      },
-                    },
-                    Object {
-                      "edge_id": 1,
-                      "geometry": Object {
-                        "length": 11,
-                        "points": "oiytG\`wwkVBOoBw@IECACHW|AMn@EVD@FB",
-                      },
-                    },
-                    Object {
-                      "edge_id": 2,
-                      "geometry": Object {
-                        "length": 2,
-                        "points": "knytGfzwkVBM",
-                      },
-                    },
-                    Object {
-                      "edge_id": 4,
-                      "geometry": Object {
-                        "length": 2,
-                        "points": "m~ytGjzykVBL",
-                      },
-                    },
-                    Object {
-                      "edge_id": 5,
-                      "geometry": Object {
-                        "length": 5,
-                        "points": "i~ytGxzykVa@JOVMERgA",
-                      },
-                    },
-                  ],
-                }
-              }
-              visible={true}
-            />
-          </React.Fragment>
-        </BaseMap>
-      </ForwardRef(styled__StoryMapContainer)>
-    </BaseMap>
-  </ForwardRef(styled__StoryMapContainer)>
-</IntlProvider>
-`;
-
-exports[`Storyshots TransitiveOverlay Bike Transit Bike Itinerary 2`] = `
-.c0 {
-  height: 90vh;
-}
-
-<div
-  className="c0"
->
-  <div
-    style={
-      Object {
-        "height": "100%",
-        "position": "relative",
-        "width": "100%",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`Storyshots TransitiveOverlay E Scooter Rental Itinerary 1`] = `
-<IntlProvider
-  defaultFormats={Object {}}
-  defaultLocale="en-US"
-  fallbackOnEmptyString={true}
-  formats={Object {}}
-  locale="en-US"
-  messages={Object {}}
-  onError={[Function]}
-  textComponent={Symbol(react.fragment)}
->
-  <ForwardRef(styled__StoryMapContainer)>
-    <BaseMap
-      center={
-        Array [
-          45.5215,
-          -122.686202,
-        ]
-      }
-      zoom={16}
+          </g>
+        </svg>
+      </span>
+      <svg
+        aria-hidden="true"
+        className="c3 c8 c9"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4z"
+        />
+        <path
+          d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"
+        />
+      </svg>
+      Walk Only
+    </button>
+    <button
+      aria-checked={false}
+      aria-label="Bike Only"
+      className="c6"
+      mode="BICYCLE"
+      onClick={[Function]}
+      role="checkbox"
+      selected={false}
+      tabIndex={0}
     >
-      <ForwardRef(styled__StoryMapContainer)>
-        <BaseMap
-          center={
-            Array [
-              45.52041,
-              -122.675302,
-            ]
-          }
-          zoom={16}
+      <span
+        className="c7"
+      >
+        <svg
+          id="Layer_2_1_"
+          version="1.1"
+          viewBox="0 0 390 390"
+          x="0px"
+          xmlSpace="preserve"
+          y="0px"
         >
-          <Context.Consumer>
-            [Function]
-          </Context.Consumer>
-        </BaseMap>
-      </ForwardRef(styled__StoryMapContainer)>
-    </BaseMap>
-  </ForwardRef(styled__StoryMapContainer)>
-</IntlProvider>
-`;
-
-exports[`Storyshots TransitiveOverlay E Scooter Rental Itinerary 2`] = `
-.c0 {
-  height: 90vh;
-}
-
-<div
-  className="c0"
->
+          <g>
+            <path
+              d="M84.7,188.3C38,188.5,0,226.3,0,273s37.9,84.5,84.7,84.7c46.6-0.2,84.5-38.1,84.5-84.7S131.1,188.5,84.7,188.3z M129.7,318.1c-11.5,11.7-27.4,19-45.1,19s-33.6-7.3-45.3-19c-11.5-11.5-18.8-27.4-18.8-45.1c0-17.6,7.3-33.6,18.8-45.1 c11.7-11.7,27.7-18.8,45.3-18.8s33.6,7,45.1,18.8c11.7,11.5,18.8,27.4,18.8,45.1C148.6,290.7,141.5,306.6,129.7,318.1z"
+            />
+            <path
+              d="M234.3,94.1c17,0,31-14,31-31s-14-30.8-31-30.8c-16.9,0-30.8,13.8-30.8,30.8C203.5,80.3,217.4,94.1,234.3,94.1z"
+            />
+            <path
+              d="M291.5,168.9c18.5,0,18.5-24.4-0.8-24.4h-49.3l-33.5-55.6c-7.3-10-28.2-11.2-36.7-1.1l-59.8,59.6 c-13.4,14.5-5.4,36,9.9,40.9l55.4,34.6v56.1c0,12.6,9.5,19.1,18.2,19.1c8.6,0,18.3-6.4,18.3-19.6v-71.7c0-6.5-0.9-14.1-6.4-16.3 l-36.4-23l30.3-32l18.2,24.3c3.1,7.8,11.4,9.2,18,9.2L291.5,168.9L291.5,168.9z"
+            />
+            <g>
+              <path
+                d="M305.4,187c-46.7,0-84.7,37.9-84.7,84.6c0.2,46.7,37.9,84.7,84.7,84.7c46.6,0,84.6-38,84.6-84.7S352,187,305.4,187z M350.6,316.8c-11.5,11.6-27.4,18.8-45.1,18.8s-33.6-7.2-45.3-18.8c-11.5-11.6-18.8-27.7-18.8-45.2c0-17.7,7.3-33.6,18.8-45.1 c11.7-11.7,27.7-18.8,45.3-18.8c17.7,0,33.6,7,45.1,18.8c11.7,11.7,18.8,27.4,18.8,45.1C369.4,289.1,362.3,305.1,350.6,316.8z"
+              />
+            </g>
+          </g>
+        </svg>
+      </span>
+      <svg
+        aria-hidden="true"
+        className="c3 c8 c9"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4z"
+        />
+        <path
+          d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"
+        />
+      </svg>
+      Bike Only
+    </button>
+  </div>
   <div
-    style={
-      Object {
-        "height": "100%",
-        "position": "relative",
-        "width": "100%",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`Storyshots TransitiveOverlay E Scooter Rental Transit Itinerary 1`] = `
-<IntlProvider
-  defaultFormats={Object {}}
-  defaultLocale="en-US"
-  fallbackOnEmptyString={true}
-  formats={Object {}}
-  locale="en-US"
-  messages={Object {}}
-  onError={[Function]}
-  textComponent={Symbol(react.fragment)}
->
-  <ForwardRef(styled__StoryMapContainer)>
-    <BaseMap
-      center={
-        Array [
-          45.5215,
-          -122.686202,
-        ]
-      }
-      zoom={16}
+    className="c11"
+  >
+    <div
+      className="styled__GeneralSettingsPanel-sc-122ziys-19"
     >
-      <ForwardRef(styled__StoryMapContainer)>
-        <BaseMap
-          center={
-            Array [
-              45.538841,
-              -122.6302,
-            ]
-          }
-          zoom={12}
+      <div
+        className="c12"
+        style={null}
+      >
+        <div>
+          <label
+            className="c13"
+            htmlFor="id-query-param-maxWalkDistance"
+          >
+            Maximum Walk
+          </label>
+        </div>
+        <div>
+          <select
+            id="id-query-param-maxWalkDistance"
+            onChange={[Function]}
+            value={1609}
+          >
+            <option
+              value={160.9}
+            >
+              1/10 mile
+            </option>
+            <option
+              value={402.3}
+            >
+              1/4 mile
+            </option>
+            <option
+              value={804.7}
+            >
+              1/2 mile
+            </option>
+            <option
+              value={1207}
+            >
+              3/4 mile
+            </option>
+            <option
+              value={1609}
+            >
+              1 mile
+            </option>
+            <option
+              value={3219}
+            >
+              2 miles
+            </option>
+            <option
+              value={8047}
+            >
+              5 miles
+            </option>
+          </select>
+        </div>
+      </div>
+      <div
+        className="c12"
+        style={null}
+      >
+        <div>
+          <label
+            className="c13"
+            htmlFor="id-query-param-walkSpeed"
+          >
+            Walk Speed
+          </label>
+        </div>
+        <div>
+          <select
+            id="id-query-param-walkSpeed"
+            onChange={[Function]}
+            value={1.34}
+          >
+            <option
+              value={0.89}
+            >
+              2 MPH
+            </option>
+            <option
+              value={1.34}
+            >
+              3 MPH
+            </option>
+            <option
+              value={1.79}
+            >
+              4 MPH
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c14"
+    >
+      <button
+        aria-checked={true}
+        aria-label="Buses"
+        className="c15"
+        disabled={false}
+        onClick={[Function]}
+        role="checkbox"
+        selected={true}
+        tabIndex={0}
+      >
+        <svg
+          aria-hidden="true"
+          className="c3 c4 c5"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <Context.Consumer>
-            [Function]
-          </Context.Consumer>
-        </BaseMap>
-      </ForwardRef(styled__StoryMapContainer)>
-    </BaseMap>
-  </ForwardRef(styled__StoryMapContainer)>
-</IntlProvider>
-`;
-
-exports[`Storyshots TransitiveOverlay E Scooter Rental Transit Itinerary 2`] = `
-.c0 {
-  height: 90vh;
-}
-
-<div
-  className="c0"
->
-  <div
-    style={
-      Object {
-        "height": "100%",
-        "position": "relative",
-        "width": "100%",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`Storyshots TransitiveOverlay Empty 1`] = `
-<IntlProvider
-  defaultFormats={Object {}}
-  defaultLocale="en-US"
-  fallbackOnEmptyString={true}
-  formats={Object {}}
-  locale="en-US"
-  messages={Object {}}
-  onError={[Function]}
-  textComponent={Symbol(react.fragment)}
->
-  <ForwardRef(styled__StoryMapContainer)>
-    <BaseMap
-      center={
-        Array [
-          45.5215,
-          -122.686202,
-        ]
-      }
-      zoom={16}
-    >
-      <TransitiveCanvasOverlay
-        transitiveData={null}
-        visible={true}
-      />
-    </BaseMap>
-  </ForwardRef(styled__StoryMapContainer)>
-</IntlProvider>
-`;
-
-exports[`Storyshots TransitiveOverlay Empty 2`] = `
-.c0 {
-  height: 90vh;
-}
-
-<div
-  className="c0"
->
-  <div
-    style={
-      Object {
-        "height": "100%",
-        "position": "relative",
-        "width": "100%",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`Storyshots TransitiveOverlay Flex Itinerary 1`] = `
-<IntlProvider
-  defaultFormats={Object {}}
-  defaultLocale="en-US"
-  fallbackOnEmptyString={true}
-  formats={Object {}}
-  locale="en-US"
-  messages={Object {}}
-  onError={[Function]}
-  textComponent={Symbol(react.fragment)}
->
-  <ForwardRef(styled__StoryMapContainer)>
-    <BaseMap
-      center={
-        Array [
-          45.5215,
-          -122.686202,
-        ]
-      }
-      zoom={16}
-    >
-      <ForwardRef(styled__StoryMapContainer)>
-        <BaseMap
-          center={
-            Array [
-              40.038487,
-              -105.0529011,
-            ]
+          <path
+            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"
+          />
+        </svg>
+        <img
+          alt="Image for Buses"
+          className="c16"
+          src="https://trimet.org/global/img/mode-bus.png"
+        />
+        <span
+          style={
+            Object {
+              "zIndex": 5,
+            }
           }
-          zoom={11}
         >
-          <React.Fragment>
-            <EndpointsOverlay
-              fromLocation={
-                Object {
-                  "departure": 1655942390000,
-                  "lat": 40.16208338164619,
-                  "lon": -105.09933471679689,
-                  "name": "2nd Avenue, Longmont, CO, USA",
-                  "vertexType": "NORMAL",
-                }
-              }
-              setLocation={[Function]}
-              toLocation={
-                Object {
-                  "arrival": 1655948239000,
-                  "lat": 40.23236350185715,
-                  "lon": -104.98809814453126,
-                  "name": "60plusride-co-us:area_626",
-                  "stopId": "60plusride-co-us:area_626_flexed_to",
-                  "stopIndex": 0,
-                  "vertexType": "TRANSIT",
-                }
-              }
-              visible={true}
-            />
-            <TransitiveCanvasOverlay
-              transitiveData={
-                Object {
-                  "journeys": Array [
-                    Object {
-                      "journey_id": "itin",
-                      "journey_name": "Itinerary-derived Journey",
-                      "segments": Array [
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_0_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            0,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_0_to",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                        Object {
-                          "arc": false,
-                          "patterns": Array [
-                            Object {
-                              "from_stop_index": 0,
-                              "pattern_id": "ptn_0",
-                              "to_stop_index": 1,
-                            },
-                          ],
-                          "type": "TRANSIT",
-                        },
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_2_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            2,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_2_to",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                        Object {
-                          "arc": false,
-                          "patterns": Array [
-                            Object {
-                              "from_stop_index": 0,
-                              "pattern_id": "ptn_1",
-                              "to_stop_index": 1,
-                            },
-                          ],
-                          "type": "TRANSIT",
-                        },
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_4_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            4,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_4_to",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                        Object {
-                          "arc": true,
-                          "patterns": Array [
-                            Object {
-                              "from_stop_index": 0,
-                              "pattern_id": "ptn_2",
-                              "to_stop_index": 1,
-                            },
-                          ],
-                          "type": "TRANSIT",
-                        },
-                      ],
-                    },
-                  ],
-                  "patterns": Array [
-                    Object {
-                      "pattern_id": "ptn_0",
-                      "pattern_name": "Pattern 0",
-                      "route_id": "3:LD3",
-                      "stops": Array [
-                        Object {
-                          "stop_id": "3:25633",
-                        },
-                        Object {
-                          "geometry": "_ubtFzyn\`SnGAp@?n@@Z?dA???|@?L???D?B?pB?b@???b@???D?\\\\@??\\\\???|A???H??@x@AR???nC?tA@??v@?L?@?d@A~ACP?R?d@Af@?R?rA?jG???rAAbB?d@???j@???|C?fEA??tG???~A???N?fC???dPCH???~A???F?bA@jAAzACrCI~BE??r@A??z@@B???rNNz@@??~CD??b@?dC@??|@@??rA?hA@fC@pEDrEBpEDpE?pEArE?pEAvD@??zCAjE?\`GAnH@vB?bD?|E?B?bHD??vC@tCBjHFxQHnd@XnABnA@??jFB??tP?hPAJ@HA??lDA??vFEfHE??|E@bB@??rI???d@@pA?P?N?lAAjAA??\`HErCIzCQb@C??fDKlVIrFChCA??P?hGE??zJ?vCE\`BB??~C@??bGJpCHdBFpGPvCHlHDpB???zDC\`KS?@|@C????|BCvF?|B?zC@~U@??t@?|A???\`@???bP@pEA\`@?f@A??~FClBA~@?bAAvHAhI?tF@??zFB??jENfCJ??^???vNd@~AHvBF^???\`@@?@dC@xBCnIWpBOlNc@??|BEjDCjDBpIAtI@zDD|@B??lO\`@??hBD??\`E@TLf@?N@L?zB?~@?",
-                          "stop_id": "3:33109",
-                        },
-                      ],
-                    },
-                    Object {
-                      "pattern_id": "ptn_1",
-                      "pattern_name": "Pattern 1",
-                      "route_id": "3:JUMP",
-                      "stops": Array [
-                        Object {
-                          "stop_id": "3:33465",
-                        },
-                        Object {
-                          "geometry": "_kfsFzfo\`S?S?K??@_ACi@??E_@CMOeA??COMs@AKCMAI??E]S{A??MgDAc@?e@?gCJeBHe@??L}@b@sB??CUJk@Hi@Hw@??FaABgB??EcR?cA?eA?qB??A{LG}X?gA??C}HA]@oA@_FD}PBcDC}@Em@SyAGu@???Y@oO?mB{H@_C@??oFCwF@??mL?s@?c@?iJ@yD@{C@e@?kC@iB?q@?g@?uC?gE???g@???g@???qRAkF?M@M???Q???]@??i@@{HCg@?a@KUEGAGE?MAOAU?_B?QBsG?oA??B_H?yBFiSBmH?_B??@oD?iE@qA?wA?aA@c@?g@?W@]?m@@k@@cDBuB@gD@uD?mD@iAAg@?Q@Y?_@?e@?q@@sA?cB?[@c@As@AcAAQAi@Ci@Gg@ASEWEUCOKi@ESMe@M_@Si@We@Ye@MSu@{@]a@_AcAMTwBhEK\\\\E\\\\Cp@?h@D\`@@JBFNn@BHPh@FT",
-                          "stop_id": "3:33200",
-                        },
-                      ],
-                    },
-                    Object {
-                      "pattern_id": "ptn_2",
-                      "pattern_name": "Pattern 2",
-                      "route_id": "60plusride-co-us:32995",
-                      "stops": Array [
-                        Object {
-                          "stop_id": "60plusride-co-us:area_626",
-                        },
-                        Object {
-                          "geometry": "o_ksFtce\`SEm@Qw@c@uAAECSAMCi@By@Hg@Hi@Vm@tA{BHONYKMoCyCg@i@uA}A{AeBqDaESSKMwBcCgCuCCCuB}Bq@_A]o@Wm@W{@Os@O_ACq@CaAA}@BkA@iBD{F?wG@kF?Y?UEgL?yDAyF?s@IsLCwM?[Kq_@?e@Ay@CmFEiN?KGa@?oP?oJ?u@?wn@@qg@?uDC_RBUBmH?wJEwLCSAeG?c@?s@@uB@eBB]HwG?cB@oC@gDA{F?iB?wB?sB?gBM@O?}BFiAP_Fl@eANkDl@gE\`@c}@KgAAui@@}D?}SFeYCyUGiU?qAAiEAsf@CoJAuGG}@@ya@?qYHgVCeMBoJAgKIoNc@_I_@}CMqICcE?aC?eE?qH?aA?}Rz@qFVaF?kOC{ACcNH_^G}d@IsBEmBAaDQwBKmJy@cE]sK_AiCYsCOi@EiCMmCGyBC}BAeACwC?mGC_EJuCDyCByCN{EVmBFyQ~@cOj@aCBwBAiFB}HEeDEcECyKDsEJsRp@yRX}ZByA?yOGqUE_B?aGC{ECeOA{F?eHAq]FuKAiB?qAAq[MgKBaA?uE@ad@FiE@cI@uG?{DY}AYyGsA_AUOAU@?tBB|C?xBFfW@tCDvM",
-                          "stop_id": "60plusride-co-us:area_626_flexed_to",
-                        },
-                      ],
-                    },
-                  ],
-                  "places": Array [
-                    Object {
-                      "placeId": "from",
-                      "place_lat": 40.16208338164619,
-                      "place_lon": -105.09933471679689,
-                      "place_name": "2nd Avenue, Longmont, CO, USA",
-                      "type": "from",
-                    },
-                    Object {
-                      "placeId": "to",
-                      "place_lat": 40.23236350185715,
-                      "place_lon": -104.98809814453126,
-                      "place_name": "60plusride-co-us:area_626",
-                      "type": "to",
-                    },
-                  ],
-                  "routes": Array [
-                    Object {
-                      "agency_id": "3:RTD",
-                      "route_color": "111",
-                      "route_id": "3:LD3",
-                      "route_long_name": "Longmont / Denver",
-                      "route_short_name": "LD3",
-                      "route_text_color": "FFFFFF",
-                      "route_type": 3,
-                    },
-                    Object {
-                      "agency_id": "3:RTD",
-                      "route_color": "0076CE",
-                      "route_id": "3:JUMP",
-                      "route_long_name": "Boulder / Lafayette via Arapahoe",
-                      "route_short_name": "JUMP",
-                      "route_text_color": "FFFFFF",
-                      "route_type": 3,
-                    },
-                    Object {
-                      "agency_id": "60plusride-co-us:2305",
-                      "route_color": undefined,
-                      "route_id": "60plusride-co-us:32995",
-                      "route_long_name": "60+ Ride",
-                      "route_short_name": "",
-                      "route_text_color": undefined,
-                      "route_type": 3,
-                    },
-                  ],
-                  "stops": Array [
-                    Object {
-                      "stop_id": "3:25633",
-                      "stop_lat": 40.15968,
-                      "stop_lon": -105.10254,
-                      "stop_name": "S Main St & 1st Ave",
-                    },
-                    Object {
-                      "stop_id": "3:33109",
-                      "stop_lat": 40.01713,
-                      "stop_lon": -105.10302,
-                      "stop_name": "US 287 & Arapahoe Rd",
-                    },
-                    Object {
-                      "stop_id": "3:33465",
-                      "stop_lat": 40.01472,
-                      "stop_lon": -105.10462,
-                      "stop_name": "Arapahoe Rd & Stonehenge Dr",
-                    },
-                    Object {
-                      "stop_id": "3:33200",
-                      "stop_lat": 40.03855,
-                      "stop_lon": -105.05256,
-                      "stop_name": "Erie Community Center",
-                    },
-                    Object {
-                      "stop_id": "60plusride-co-us:area_626",
-                      "stop_lat": 40.03848,
-                      "stop_lon": -105.05291,
-                      "stop_name": "60plusride-co-us:area_626",
-                    },
-                    Object {
-                      "stop_id": "60plusride-co-us:area_626_flexed_to",
-                      "stop_lat": 40.23338,
-                      "stop_lon": -104.98813,
-                      "stop_name": null,
-                    },
-                  ],
-                  "streetEdges": Array [
-                    Object {
-                      "edge_id": 0,
-                      "geometry": Object {
-                        "length": 22,
-                        "points": "mdctF|en\`S?hBF@\`@?T?B?F?X?nB?bAA\`@?H?N?J?^??F?xC?jA?pCh@??pC\`AV",
-                      },
-                    },
-                    Object {
-                      "edge_id": 2,
-                      "geometry": Object {
-                        "length": 12,
-                        "points": "azfsFl}n\`S?_@n@?d@?zFAtAA^vBP|ABn@?j@?^F?",
-                      },
-                    },
-                    Object {
-                      "edge_id": 4,
-                      "geometry": Object {
-                        "length": 8,
-                        "points": "k\`ksFvae\`SC@@BD\\\\@L?JD?N?",
-                      },
-                    },
-                  ],
-                }
-              }
-              visible={true}
-            />
-          </React.Fragment>
-        </BaseMap>
-      </ForwardRef(styled__StoryMapContainer)>
-    </BaseMap>
-  </ForwardRef(styled__StoryMapContainer)>
-</IntlProvider>
-`;
-
-exports[`Storyshots TransitiveOverlay Flex Itinerary 2`] = `
-.c0 {
-  height: 90vh;
-}
-
-<div
-  className="c0"
->
-  <div
-    style={
-      Object {
-        "height": "100%",
-        "position": "relative",
-        "width": "100%",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`Storyshots TransitiveOverlay OTP 2 Scooter Itinerary 1`] = `
-<IntlProvider
-  defaultFormats={Object {}}
-  defaultLocale="en-US"
-  fallbackOnEmptyString={true}
-  formats={Object {}}
-  locale="en-US"
-  messages={Object {}}
-  onError={[Function]}
-  textComponent={Symbol(react.fragment)}
->
-  <ForwardRef(styled__StoryMapContainer)>
-    <BaseMap
-      center={
-        Array [
-          45.5215,
-          -122.686202,
-        ]
-      }
-      zoom={16}
-    >
-      <ForwardRef(styled__StoryMapContainer)>
-        <BaseMap
-          center={
-            Array [
-              33.749,
-              -84.388,
-            ]
+          Buses
+        </span>
+      </button>
+      <button
+        aria-checked={true}
+        aria-label="MAX and Portland Streetcar"
+        className="c15"
+        disabled={false}
+        onClick={[Function]}
+        role="checkbox"
+        selected={true}
+        tabIndex={0}
+      >
+        <svg
+          aria-hidden="true"
+          className="c3 c4 c5"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"
+          />
+        </svg>
+        <img
+          alt="Image for MAX and Portland Streetcar"
+          className="c16"
+          src="https://trimet.org/global/img/mode-max.png"
+        />
+        <span
+          style={
+            Object {
+              "zIndex": 5,
+            }
           }
-          zoom={11}
         >
-          <Context.Consumer>
-            [Function]
-          </Context.Consumer>
-        </BaseMap>
-      </ForwardRef(styled__StoryMapContainer)>
-    </BaseMap>
-  </ForwardRef(styled__StoryMapContainer)>
-</IntlProvider>
-`;
-
-exports[`Storyshots TransitiveOverlay OTP 2 Scooter Itinerary 2`] = `
-.c0 {
-  height: 90vh;
-}
-
-<div
-  className="c0"
->
-  <div
-    style={
-      Object {
-        "height": "100%",
-        "position": "relative",
-        "width": "100%",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`Storyshots TransitiveOverlay Park And Ride Itinerary 1`] = `
-<IntlProvider
-  defaultFormats={Object {}}
-  defaultLocale="en-US"
-  fallbackOnEmptyString={true}
-  formats={Object {}}
-  locale="en-US"
-  messages={Object {}}
-  onError={[Function]}
-  textComponent={Symbol(react.fragment)}
->
-  <ForwardRef(styled__StoryMapContainer)>
-    <BaseMap
-      center={
-        Array [
-          45.5215,
-          -122.686202,
-        ]
-      }
-      zoom={16}
-    >
-      <ForwardRef(styled__StoryMapContainer)>
-        <BaseMap
-          center={
-            Array [
-              45.515841,
-              -122.75302,
-            ]
+          MAX and Portland Streetcar
+        </span>
+      </button>
+      <button
+        aria-checked={true}
+        aria-label="WES Commuter Rail"
+        className="c15"
+        disabled={false}
+        onClick={[Function]}
+        role="checkbox"
+        selected={true}
+        tabIndex={0}
+      >
+        <svg
+          aria-hidden="true"
+          className="c3 c4 c5"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"
+          />
+        </svg>
+        <img
+          alt="Image for WES Commuter Rail"
+          className="c16"
+          src="https://trimet.org/global/img/mode-wes.png"
+        />
+        <span
+          style={
+            Object {
+              "zIndex": 5,
+            }
           }
-          zoom={13}
         >
-          <React.Fragment>
-            <EndpointsOverlay
-              fromLocation={
-                Object {
-                  "departure": 1573689007000,
-                  "lat": 45.516960039867676,
-                  "lon": -122.81684703934856,
-                  "name": "330 SW Murray Blvd, Washington County, OR, USA 97005",
-                  "orig": "330 SW Murray Blvd, Washington County, OR, USA 97005",
-                  "vertexType": "NORMAL",
-                }
-              }
-              setLocation={[Function]}
-              toLocation={
-                Object {
-                  "arrival": 1573691399000,
-                  "lat": 45.521469054694954,
-                  "lon": -122.67307275796767,
-                  "name": "205 SW Pine St, Portland, OR, USA 97204",
-                  "orig": "205 SW Pine St, Portland, OR, USA 97204",
-                  "vertexType": "NORMAL",
-                }
-              }
-              visible={true}
-            />
-            <TransitiveCanvasOverlay
-              transitiveData={
-                Object {
-                  "journeys": Array [
-                    Object {
-                      "journey_id": "itin",
-                      "journey_name": "Itinerary-derived Journey",
-                      "segments": Array [
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_0_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            0,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_car_0_to",
-                            "type": "PLACE",
-                          },
-                          "type": "CAR",
-                        },
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_1_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            1,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_1_to",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                        Object {
-                          "arc": false,
-                          "patterns": Array [
-                            Object {
-                              "from_stop_index": 0,
-                              "pattern_id": "ptn_0",
-                              "to_stop_index": 9,
-                            },
-                          ],
-                          "type": "TRANSIT",
-                        },
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_3_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            3,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_3_to",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                      ],
-                    },
-                  ],
-                  "patterns": Array [
-                    Object {
-                      "pattern_id": "ptn_0",
-                      "pattern_name": "Pattern 0",
-                      "route_id": "TriMet:100",
-                      "stops": Array [
-                        Object {
-                          "stop_id": "TriMet:9969",
-                        },
-                        Object {
-                          "geometry": "guwtGrrklVDOH]Po@Pq@Jc@Rs@h@uBl@yBZoAFUNo@Po@JYJ[HWJYFSTk@\\\\w@Xw@L]J[Tq@La@J_@Ja@H_@l@kCTgAHc@Hc@Lu@LcAt@aGJ}@J{@J}@^wDRyBHcAH_APcCNaCJcCJiCJgCJgCFiCBeA@cA@eA@gA@gC@mC@_E?aBA_BAcAA_ACaACcAIiBIuBE]MqAGwAOkC?Q?q@AaACs@YsFKcAWqBa@mDO}@uBsMeBmKq@mDUsASoAUuASsAc@oCa@gCmAoHGa@Ig@[mDWwCEa@SsEGuAG{AKwDAU?kACoFCsBIcHGqCOyHOiKKwGKuGGgFEgFKmKAcDCcDEaHGkEA_@",
-                          "stop_id": "TriMet:10120",
-                        },
-                        Object {
-                          "geometry": "kxwtGb\`_lVCqACsAM}CIsAIqAa@mEG_@G[WoAq@uC{BwIwAwFcAcDs@aCq@{BUw@iCkJKW[y@cAkCEKIK}BaDe@o@OOYUk@YkAg@oCsAaCgAm@U{@SWGGEIEWQGEKKMMMMKOIMO]Kg@COGk@Cq@?c@Bi@RoCHcA?ELqAFs@LcAPaAf@{CHe@d@cBJg@DYl@gD",
-                          "stop_id": "TriMet:10118",
-                        },
-                        Object {
-                          "geometry": "qfytGrqzkVJm@BQ@Y?G?IAIAIAGISEGGEIG_Bu@KE}BcAKGIEYM]UWSSWSQg@g@YQk@_@EC",
-                          "stop_id": "TriMet:9759",
-                        },
-                        Object {
-                          "geometry": "svytGrazkVKGc@SKEu@[i@WCCACACCEAEAIAG?G?I@G@E@GLu@",
-                          "stop_id": "TriMet:9758",
-                        },
-                        Object {
-                          "geometry": "m{ytGtzykV@AN}@BQ@EJm@Lk@PcAF[l@mDDQBMn@uDDUj@gDDSl@mDFWDW\\\\oBHe@@KBI@I@EF]f@uCBQBI@KTqAP}@",
-                          "stop_id": "TriMet:8333",
-                        },
-                        Object {
-                          "geometry": "qmytGfgxkV@IDS@GTqABSBKn@sDBQf@qC",
-                          "stop_id": "TriMet:8334",
-                        },
-                        Object {
-                          "geometry": "miytGvwwkVFa@@Ep@wD@MBMBKf@sC",
-                          "stop_id": "TriMet:8335",
-                        },
-                        Object {
-                          "geometry": "_fytGzjwkV@IFYBQj@aDDWHa@DYDQDOBMJ_@FQBMDQDQHe@BYFa@@M@O?G",
-                          "stop_id": "TriMet:8336",
-                        },
-                        Object {
-                          "geometry": "aaytGrxvkV?G?OAKAGCIEGKI]Ok@WGCIGKGUKUKaD{AyAk@OGUIc@OQEMGcBw@",
-                          "stop_id": "TriMet:8337",
-                        },
-                      ],
-                    },
-                  ],
-                  "places": Array [
-                    Object {
-                      "placeId": "from",
-                      "place_lat": 45.516960039867676,
-                      "place_lon": -122.81684703934856,
-                      "place_name": "330 SW Murray Blvd, Washington County, OR, USA 97005",
-                      "type": "from",
-                    },
-                    Object {
-                      "placeId": "to",
-                      "place_lat": 45.521469054694954,
-                      "place_lon": -122.67307275796767,
-                      "place_name": "205 SW Pine St, Portland, OR, USA 97204",
-                      "type": "to",
-                    },
-                    Object {
-                      "placeId": "itin_car_0_to",
-                      "place_lat": 45.51062185,
-                      "place_lon": -122.7823028,
-                      "place_name": "P+R Sunset TC",
-                      "type": "CAR",
-                    },
-                  ],
-                  "routes": Array [
-                    Object {
-                      "agency_id": "TRIMET",
-                      "route_color": "084C8D",
-                      "route_id": "TriMet:100",
-                      "route_long_name": "MAX Blue Line",
-                      "route_short_name": "",
-                      "route_text_color": "FFFFFF",
-                      "route_type": 0,
-                    },
-                  ],
-                  "stops": Array [
-                    Object {
-                      "stop_id": "TriMet:9969",
-                      "stop_lat": 45.51012,
-                      "stop_lon": -122.78074,
-                      "stop_name": "Sunset TC MAX Station",
-                    },
-                    Object {
-                      "stop_id": "TriMet:10120",
-                      "stop_lat": 45.510653,
-                      "stop_lon": -122.71634,
-                      "stop_name": "Washington Park MAX Station",
-                    },
-                    Object {
-                      "stop_id": "TriMet:10118",
-                      "stop_lat": 45.517989,
-                      "stop_lon": -122.693544,
-                      "stop_name": "Goose Hollow/SW Jefferson St MAX Station",
-                    },
-                    Object {
-                      "stop_id": "TriMet:9759",
-                      "stop_lat": 45.520592,
-                      "stop_lon": -122.691005,
-                      "stop_name": "Kings Hill/SW Salmon St MAX Station",
-                    },
-                    Object {
-                      "stop_id": "TriMet:9758",
-                      "stop_lat": 45.521321,
-                      "stop_lon": -122.689886,
-                      "stop_name": "Providence Park MAX Station",
-                    },
-                    Object {
-                      "stop_id": "TriMet:8333",
-                      "stop_lat": 45.51916,
-                      "stop_lon": -122.68162,
-                      "stop_name": "Library/SW 9th Ave MAX Station",
-                    },
-                    Object {
-                      "stop_id": "TriMet:8334",
-                      "stop_lat": 45.518496,
-                      "stop_lon": -122.679145,
-                      "stop_name": "Pioneer Square South MAX Station",
-                    },
-                    Object {
-                      "stop_id": "TriMet:8335",
-                      "stop_lat": 45.517942,
-                      "stop_lon": -122.677088,
-                      "stop_name": "Mall/SW 4th Ave MAX Station",
-                    },
-                    Object {
-                      "stop_id": "TriMet:8336",
-                      "stop_lat": 45.517153,
-                      "stop_lon": -122.674172,
-                      "stop_name": "Yamhill District MAX Station",
-                    },
-                    Object {
-                      "stop_id": "TriMet:8337",
-                      "stop_lat": 45.52029,
-                      "stop_lon": -122.6722,
-                      "stop_name": "Oak/ SW 1st Ave MAX Station",
-                    },
-                  ],
-                  "streetEdges": Array [
-                    Object {
-                      "edge_id": 0,
-                      "geometry": Object {
-                        "length": 150,
-                        "points": "k\`ytG\`urlVJTAAAPK\`@Eh@UGSI_A_@KW??UMuC}AY?qAq@EAOIk@Sk@So@Q?AWEe@GSAWCa@_@g@IWAq@AWGKGCCIKKOESEWAU?OB[Dg@BMJa@zBoJrAaGhAcFh@cDlWc_A|AmE|AwEjAuC~D_JJ[OKw@k@wB{A{B}Au@i@_@WaAs@eAq@AAUOHk@\`@cCFYF[@IFWBIFSFWJYHUL[Xs@JWFKR]FKPYX_@h@m@XUNMJIDCVQh@Y@ARMTMXQRMBAPMRQLORUX_@Ra@Ta@Pc@L]L_@@IDOHa@Fa@BOFe@Dc@Be@@i@@cB@aA@o@V?V@JBJBHDHHVVHJFDFFHDNDH@F?J?HAHAJEHEFEFGFGFIXo@Vq@Vm@Ne@Ni@BMBKDOKMSWRu@",
-                      },
-                    },
-                    Object {
-                      "edge_id": 1,
-                      "geometry": Object {
-                        "length": 9,
-                        "points": "ivwtGnyklVDGIKIMDQNm@GEb@cBBK",
-                      },
-                    },
-                    Object {
-                      "edge_id": 3,
-                      "geometry": Object {
-                        "length": 19,
-                        "points": "wtytG\`lvkVCAACMGAHADAB?DMGgBu@OGADERIb@Kr@Kj@EPEVKl@",
-                      },
-                    },
-                  ],
-                }
-              }
-              visible={true}
-            />
-          </React.Fragment>
-        </BaseMap>
-      </ForwardRef(styled__StoryMapContainer)>
-    </BaseMap>
-  </ForwardRef(styled__StoryMapContainer)>
-</IntlProvider>
-`;
-
-exports[`Storyshots TransitiveOverlay Park And Ride Itinerary 2`] = `
-.c0 {
-  height: 90vh;
-}
-
-<div
-  className="c0"
->
-  <div
-    style={
-      Object {
-        "height": "100%",
-        "position": "relative",
-        "width": "100%",
-      }
-    }
-  />
+          WES Commuter Rail
+        </span>
+      </button>
+    </div>
+  </div>
 </div>
 `;
 
-exports[`Storyshots TransitiveOverlay Tnc Transit Itinerary 1`] = `
-<IntlProvider
-  defaultFormats={Object {}}
-  defaultLocale="en-US"
-  fallbackOnEmptyString={true}
-  formats={Object {}}
-  locale="en-US"
-  messages={Object {}}
-  onError={[Function]}
-  textComponent={Symbol(react.fragment)}
->
-  <ForwardRef(styled__StoryMapContainer)>
-    <BaseMap
-      center={
-        Array [
-          45.5215,
-          -122.686202,
-        ]
-      }
-      zoom={16}
-    >
-      <ForwardRef(styled__StoryMapContainer)>
-        <BaseMap
-          center={
-            Array [
-              45.538841,
-              -122.6302,
-            ]
-          }
-          zoom={12}
-        >
-          <React.Fragment>
-            <EndpointsOverlay
-              fromLocation={
-                Object {
-                  "departure": 1573688700000,
-                  "lat": 45.519031121242776,
-                  "lon": -122.63470154379792,
-                  "name": "2943 SE Washington St, Portland, OR, USA 97214",
-                  "orig": "2943 SE Washington St, Portland, OR, USA 97214",
-                  "vertexType": "NORMAL",
-                }
-              }
-              setLocation={[Function]}
-              toLocation={
-                Object {
-                  "arrival": 1573690962000,
-                  "lat": 45.56161609098961,
-                  "lon": -122.6025660202473,
-                  "name": "5825 NE Emerson St, Portland, OR, USA 97218",
-                  "orig": "5825 NE Emerson St, Portland, OR, USA 97218",
-                  "vertexType": "NORMAL",
-                }
-              }
-              visible={true}
-            />
-            <TransitiveCanvasOverlay
-              transitiveData={
-                Object {
-                  "journeys": Array [
-                    Object {
-                      "journey_id": "itin",
-                      "journey_name": "Itinerary-derived Journey",
-                      "segments": Array [
-                        Object {
-                          "arc": true,
-                          "from": Object {
-                            "place_id": "itin_street_0_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            0,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_0_to",
-                            "type": "PLACE",
-                          },
-                          "type": "CAR",
-                        },
-                        Object {
-                          "arc": false,
-                          "patterns": Array [
-                            Object {
-                              "from_stop_index": 0,
-                              "pattern_id": "ptn_0",
-                              "to_stop_index": 23,
-                            },
-                          ],
-                          "type": "TRANSIT",
-                        },
-                        Object {
-                          "arc": true,
-                          "from": Object {
-                            "place_id": "itin_street_2_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            2,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_2_to",
-                            "type": "PLACE",
-                          },
-                          "type": "CAR",
-                        },
-                      ],
-                    },
-                  ],
-                  "patterns": Array [
-                    Object {
-                      "pattern_id": "ptn_0",
-                      "pattern_name": "Pattern 0",
-                      "route_id": "TriMet:75",
-                      "stops": Array [
-                        Object {
-                          "stop_id": "TriMet:7485",
-                        },
-                        Object {
-                          "geometry": "}mytG\`ylkVE?M?K?i@@a@?mBAmC?kB?",
-                          "stop_id": "TriMet:7435",
-                        },
-                        Object {
-                          "geometry": "q|ytG\`ylkVc@AQ?eB?WK{@?I?mAAK?_@?",
-                          "stop_id": "TriMet:7440",
-                        },
-                        Object {
-                          "geometry": "ehztGpxlkVG?Q?iC?K?mA?]H_@?mCAa@IMCKCGEMIYSIKKIICI?E?",
-                          "stop_id": "TriMet:7451",
-                        },
-                        Object {
-                          "geometry": "k{ztGhvlkVC?KDKFILWRIFOFKBI@_@H{BAQ?wB?",
-                          "stop_id": "TriMet:7482",
-                        },
-                        Object {
-                          "geometry": "_h{tGvxlkVG?M?M?cC?mBA",
-                          "stop_id": "TriMet:7461",
-                        },
-                        Object {
-                          "geometry": "up{tGtxlkV]?aC?S?Q?kB?",
-                          "stop_id": "TriMet:7475",
-                        },
-                        Object {
-                          "geometry": "gz{tGtxlkVSAo@?iA?gA?sAAM?}A?IA",
-                          "stop_id": "TriMet:11487",
-                        },
-                        Object {
-                          "geometry": "gg|tGnxlkVq@?G?EAGe@@u@?E@]Bo@?Y@I?]?wA?u@?ORAJEB@D@Z?FKDO?K?[?K?CMa@O?",
-                          "stop_id": "TriMet:10872",
-                        },
-                        Object {
-                          "geometry": "og|tGbhlkVe@?OEO?kA?Y?U?K?i@?U?Q?",
-                          "stop_id": "TriMet:7509",
-                        },
-                        Object {
-                          "geometry": "op|tG|glkVS@KA?{@UKEAG?_D?y@?",
-                          "stop_id": "TriMet:7528",
-                        },
-                        Object {
-                          "geometry": "my|tGrelkVI?M?]?]AkB?s@?_@?o@?K?",
-                          "stop_id": "TriMet:7537",
-                        },
-                        Object {
-                          "geometry": "}c}tGpelkVU?iD?iH?",
-                          "stop_id": "TriMet:7507",
-                        },
-                        Object {
-                          "geometry": "gs}tGpelkVI?cH?",
-                          "stop_id": "TriMet:7521",
-                        },
-                        Object {
-                          "geometry": "u|}tGpelkVO?}B?O?aA?I?G@IBIDEDEDGFGJCJENI\\\\aAhFEPCNGHELIHGDKFKDK@G?GAIAIEIEIICEGIe@w@e@w@GKOSAA",
-                          "stop_id": "TriMet:7497",
-                        },
-                        Object {
-                          "geometry": "ep~tG~llkVMOMMKKKGIECAEAcHAc@?",
-                          "stop_id": "TriMet:7499",
-                        },
-                        Object {
-                          "geometry": "u|~tG\`klkVuDAGAIAMCOC?eAm@?",
-                          "stop_id": "TriMet:7501",
-                        },
-                        Object {
-                          "geometry": "ie_uGlhlkV]?c@CaD@kA?",
-                          "stop_id": "TriMet:7506",
-                        },
-                        Object {
-                          "geometry": "yn_uGjhlkVQ?_@?sC@mC?",
-                          "stop_id": "TriMet:7529",
-                        },
-                        Object {
-                          "geometry": "my_uGlhlkVS?eE@}C?",
-                          "stop_id": "TriMet:7533",
-                        },
-                        Object {
-                          "geometry": "ee\`uGnhlkVS?wD@}B?",
-                          "stop_id": "TriMet:7526",
-                        },
-                        Object {
-                          "geometry": "oo\`uGphlkVw@?aF@}CA}C?M?{A@",
-                          "stop_id": "TriMet:7505",
-                        },
-                        Object {
-                          "geometry": "oeauGrhlkVS?uF?",
-                          "stop_id": "TriMet:7535",
-                        },
-                        Object {
-                          "geometry": "ymauGrhlkVS?iC?mA?c@?aB?yA?w@?Q?{A?A?a@BC?",
-                          "stop_id": "TriMet:7520",
-                        },
-                      ],
-                    },
-                  ],
-                  "places": Array [
-                    Object {
-                      "placeId": "from",
-                      "place_lat": 45.519031121242776,
-                      "place_lon": -122.63470154379792,
-                      "place_name": "2943 SE Washington St, Portland, OR, USA 97214",
-                      "type": "from",
-                    },
-                    Object {
-                      "placeId": "to",
-                      "place_lat": 45.56161609098961,
-                      "place_lon": -122.6025660202473,
-                      "place_name": "5825 NE Emerson St, Portland, OR, USA 97218",
-                      "type": "to",
-                    },
-                  ],
-                  "routes": Array [
-                    Object {
-                      "agency_id": "TRIMET",
-                      "route_color": undefined,
-                      "route_id": "TriMet:75",
-                      "route_long_name": "Cesar Chavez/Lombard",
-                      "route_short_name": "75",
-                      "route_text_color": undefined,
-                      "route_type": 3,
-                    },
-                  ],
-                  "stops": Array [
-                    Object {
-                      "stop_id": "TriMet:7485",
-                      "stop_lat": 45.51919,
-                      "stop_lon": -122.62305,
-                      "stop_name": "SE Cesar Chavez Blvd & Stark",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7435",
-                      "stop_lat": 45.521538,
-                      "stop_lon": -122.622944,
-                      "stop_name": "SE Cesar Chavez Blvd & Ash",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7440",
-                      "stop_lat": 45.523398,
-                      "stop_lon": -122.622915,
-                      "stop_name": "SE Cesar Chavez Blvd & E Burnside",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7451",
-                      "stop_lat": 45.52647,
-                      "stop_lon": -122.622451,
-                      "stop_name": "NE Cesar Chavez Blvd & Glisan",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7482",
-                      "stop_lat": 45.528475,
-                      "stop_lon": -122.622889,
-                      "stop_name": "NE Cesar Chavez Blvd & Royal",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7461",
-                      "stop_lat": 45.529874,
-                      "stop_lon": -122.622891,
-                      "stop_name": "NE Cesar Chavez Blvd & Hazelfern",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7475",
-                      "stop_lat": 45.531406,
-                      "stop_lon": -122.62288,
-                      "stop_name": "NE Cesar Chavez Blvd & Multnomah",
-                    },
-                    Object {
-                      "stop_id": "TriMet:11487",
-                      "stop_lat": 45.533479,
-                      "stop_lon": -122.622769,
-                      "stop_name": "NE Cesar Chavez Blvd & Halsey",
-                    },
-                    Object {
-                      "stop_id": "TriMet:10872",
-                      "stop_lat": 45.533528,
-                      "stop_lon": -122.620249,
-                      "stop_name": "Hollywood Transit Center",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7509",
-                      "stop_lat": 45.534967,
-                      "stop_lon": -122.620229,
-                      "stop_name": "NE 42nd & Broadway",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7528",
-                      "stop_lat": 45.536397,
-                      "stop_lon": -122.619832,
-                      "stop_name": "NE 42nd & Sandy",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7537",
-                      "stop_lat": 45.538072,
-                      "stop_lon": -122.61984,
-                      "stop_name": "NE 42nd & Tillamook",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7507",
-                      "stop_lat": 45.54052,
-                      "stop_lon": -122.619836,
-                      "stop_name": "NE 42nd & Brazee",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7521",
-                      "stop_lat": 45.542032,
-                      "stop_lon": -122.619834,
-                      "stop_name": "NE 42nd & Knott",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7497",
-                      "stop_lat": 45.545112,
-                      "stop_lon": -122.621045,
-                      "stop_name": "NE 41st & Alameda",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7499",
-                      "stop_lat": 45.547156,
-                      "stop_lon": -122.620719,
-                      "stop_name": "NE 41st & Klickitat",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7501",
-                      "stop_lat": 45.548535,
-                      "stop_lon": -122.620267,
-                      "stop_name": "NE 42nd & Fremont",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7506",
-                      "stop_lat": 45.550054,
-                      "stop_lon": -122.620294,
-                      "stop_name": "NE 42nd & Beech",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7529",
-                      "stop_lat": 45.551757,
-                      "stop_lon": -122.620265,
-                      "stop_name": "NE 42nd & Shaver",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7533",
-                      "stop_lat": 45.553635,
-                      "stop_lon": -122.620315,
-                      "stop_name": "NE 42nd & Skidmore",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7526",
-                      "stop_lat": 45.55529,
-                      "stop_lon": -122.62032,
-                      "stop_name": "NE 42nd & Prescott",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7505",
-                      "stop_lat": 45.558805,
-                      "stop_lon": -122.620339,
-                      "stop_name": "NE 42nd & Alberta St",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7535",
-                      "stop_lat": 45.560133,
-                      "stop_lon": -122.620324,
-                      "stop_name": "NE 42nd & Sumner",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7520",
-                      "stop_lat": 45.56346,
-                      "stop_lon": -122.62044,
-                      "stop_name": "NE 42nd & Killingsworth",
-                    },
-                  ],
-                  "streetEdges": Array [
-                    Object {
-                      "edge_id": 0,
-                      "geometry": Object {
-                        "length": 24,
-                        "points": "}lytGnbokV{AFd@??kC?_@?O?yD?{B?gA?oC?q@?M?Q@eG?kF?}F?wF?O?oG?a@?uE?Y?W?E",
-                      },
-                    },
-                    Object {
-                      "edge_id": 2,
-                      "geometry": Object {
-                        "length": 60,
-                        "points": "qbbuGvhlkV@?\`@C@?p@?V?P??S?gA?O?I?W@eB?o@?G?{A?w@@}B?yB?}C?k@?Y@uB?Y?c@?I?_C@_D?m@?{D?u@@_A?k@?gB?uC?iA?c@@M?U?O?W?U?c@?uA?mE?a@?c@?o@?oA?W?w@?kA?aD?cB\`CAnAGN?N@?yDSiD",
-                      },
-                    },
-                  ],
-                }
-              }
-              visible={true}
-            />
-          </React.Fragment>
-        </BaseMap>
-      </ForwardRef(styled__StoryMapContainer)>
-    </BaseMap>
-  </ForwardRef(styled__StoryMapContainer)>
-</IntlProvider>
-`;
-
-exports[`Storyshots TransitiveOverlay Tnc Transit Itinerary 2`] = `
-.c0 {
-  height: 90vh;
-}
-
-<div
-  className="c0"
->
-  <div
-    style={
-      Object {
-        "height": "100%",
-        "position": "relative",
-        "width": "100%",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`Storyshots TransitiveOverlay Walk Interlined Transit Itinerary 1`] = `
-<IntlProvider
-  defaultFormats={Object {}}
-  defaultLocale="en-US"
-  fallbackOnEmptyString={true}
-  formats={Object {}}
-  locale="en-US"
-  messages={Object {}}
-  onError={[Function]}
-  textComponent={Symbol(react.fragment)}
->
-  <ForwardRef(styled__StoryMapContainer)>
-    <BaseMap
-      center={
-        Array [
-          45.5215,
-          -122.686202,
-        ]
-      }
-      zoom={16}
-    >
-      <ForwardRef(styled__StoryMapContainer)>
-        <BaseMap
-          center={
-            Array [
-              47.703022,
-              -122.328041,
-            ]
-          }
-          zoom={12.5}
-        >
-          <React.Fragment>
-            <EndpointsOverlay
-              fromLocation={
-                Object {
-                  "departure": 1651694250000,
-                  "lat": 47.97766686876693,
-                  "lon": -122.20034419816042,
-                  "name": "47.97767, -122.20034",
-                  "orig": "47.97767, -122.20034",
-                  "vertexType": "NORMAL",
-                  "wheelchairBoarding": "UNKNOWN",
-                }
-              }
-              setLocation={[Function]}
-              toLocation={
-                Object {
-                  "arrival": 1651700473000,
-                  "lat": 47.602632914527724,
-                  "lon": -122.33197990547832,
-                  "name": "208 James St, Seattle, WA 98104-2212, United States",
-                  "orig": "208 James St, Seattle, WA 98104-2212, United States",
-                  "vertexType": "NORMAL",
-                  "wheelchairBoarding": "UNKNOWN",
-                }
-              }
-              visible={true}
-            />
-            <TransitiveCanvasOverlay
-              transitiveData={
-                Object {
-                  "journeys": Array [
-                    Object {
-                      "journey_id": "itin",
-                      "journey_name": "Itinerary-derived Journey",
-                      "segments": Array [
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_0_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            0,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_0_to",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                        Object {
-                          "arc": false,
-                          "patterns": Array [
-                            Object {
-                              "from_stop_index": 0,
-                              "pattern_id": "ptn_0",
-                              "to_stop_index": 6,
-                            },
-                          ],
-                          "type": "TRANSIT",
-                        },
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_2_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            2,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_2_to",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                        Object {
-                          "arc": false,
-                          "patterns": Array [
-                            Object {
-                              "from_stop_index": 0,
-                              "pattern_id": "ptn_1",
-                              "to_stop_index": 8,
-                            },
-                          ],
-                          "type": "TRANSIT",
-                        },
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_4_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            4,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_4_to",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                        Object {
-                          "arc": false,
-                          "patterns": Array [
-                            Object {
-                              "from_stop_index": 0,
-                              "pattern_id": "ptn_2",
-                              "to_stop_index": 17,
-                            },
-                          ],
-                          "type": "TRANSIT",
-                        },
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_6_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            6,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_6_to",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                      ],
-                    },
-                  ],
-                  "patterns": Array [
-                    Object {
-                      "pattern_id": "ptn_0",
-                      "pattern_name": "Pattern 0",
-                      "route_id": "CommTrans:512",
-                      "stops": Array [
-                        Object {
-                          "stop_id": "CommTrans:2345",
-                        },
-                        Object {
-                          "geometry": "saycHxvyhVODWHGq@?KDIVIx@Y?Af@QDA\\\\O@?????PIJAHFHTATELSJDv@B\`D@hC@nC@hCBvC\\\\?H?D?DAJ?^AJ?vACj@A",
-                          "stop_id": "CommTrans:2367",
-                        },
-                        Object {
-                          "geometry": "cuxcHdmzhVT?BAF?N?LAv@AdBC~@Af@At@AbBC\`ACv@Cf@AJ?tAEhACp@Ap@AxAAhAA~@AzBEdAA\`BCd@Ab@Af@Ah@A|AIRC\\\\Ep@In@I\\\\Gt@Kv@AZAf@G\`@Cr@OVEh@ExAI|AGr@E\`@C\\\\G^In@SxAk@x@U^Id@En@C~@A\\\\?v@?~B?vAAhACxACfCErACvB@n@@tADfABh@B\`AD|ENNA\`AGxAO\`AOJAv@MbAQnAWj@MbAUp@Oh@Kb@KxFmAzMuCfDs@\`AQp@Iv@Et@Al@Ap@Bx@F~ALn@F|BP|AJp@Dt@Bf@@dAEvAMfBY~Ce@\`C_@rF{@xCe@ZEn@Kl@Gn@Id@Ch@Ap@@h@@\`AH|@N\`AT~@\\\\LDNFZN\`@RZRt@j@|@t@r@r@\\\\^Z\`@Xb@Zf@^n@\\\\p@n@pAv@bBl@rAf@fAx@fB|@fBj@~@^h@PVb@j@\`@d@X\\\\f@d@n@j@x@j@|@b@~@b@h@P\\\\JhA\\\\jOvEd@NdEvAzCdAlDjAvBp@NFxFpB\`LvDpS\`HpDfARFTFp@RvDhAvH~BRFHBPDLDdBj@xAj@vC\`APFF@jExAXJj@PtCf@jGxArJtCZeCZJzB|@\\\\Lh@Rp@X",
-                          "stop_id": "CommTrans:2868",
-                        },
-                        Object {
-                          "geometry": "ugjcH|~|hVlAd@nCfA[jBpCnAhD|A|DnBvBfBhAlAd@j@fAzAjBtChBfDpCxDbB~BtAjBp@z@fClDzHnKhQhVr@\`AtG~IdJjMtAlBpKvNnNrRnAdBhBdCz@lA|@jAz@jAx@~@dAfAlAfApA~@~@j@vAr@hAb@fA^hAXbBZbC^vBZbG~@dLfBlDh@~AVhBb@fA^xAj@tAp@fBjAhBvArAfAfErD|[~WjI|GvK~Iz@p@^n@^h@d@b@l@l@\`@\`@\\\\\\\\Z^Z\`@^j@nBvC\\\\f@NPJLTLJDJ@N?LALDPFLJLTFT?j@AfBAdBqDWYCiAIc@Ca@G]Ic@Qc@Ue@]OMQQe@o@Yg@c@w@k@kAUe@MU_@k@Ya@b@q@Lc@VZ??JJBZNn@Pf@HNP^PZ\\\\@JWEi@UY",
-                          "stop_id": "CommTrans:2164",
-                        },
-                        Object {
-                          "geometry": "sfacHtreiVAA]e@A?SW[_@OEKK??W[Bg@?EC_AB}AJiAVkAJOHGJAL@t@l@bAt@vAz@rAl@tAf@dBb@lB^f@JvGfARLvGrB|MvB\`BXVDdC\`@hBZrDl@\`Dh@fFx@nCd@bEp@xIvAzB^xDl@fAR~AXdAVzAd@h@Rn@TLFd@Rz@\`@VLXNdAf@\`Aj@n@^r@f@dAv@t@n@\`A|@hAhA~@fAv@~@b@h@^d@\`@l@d@p@b@p@v@pAp@pA\\\\n@\`@z@z@jBb@|@Xl@~AxD~@xBVn@P\`@\`A|Bz@lBpAvCl@pAxB|ExC\`HlAvCl@tAv@hBhExJhE~JnFbM\`AzBlApC\`BvDhFtL~AnCx@~Av@~AzA|Cj@fAjC\`Gp@~A|BpFW^W\\\\[\\\\g@j@]Xg@Xq@T[DW@Y?a@?wDEgAA?jAKBEFEJ?FAB?L?b@?R??A|@?F???@?r@?FA|@?@?P?r@A?@LBHDHDBH?FCDEBI@K@C?s@???S@}@?G?u@",
-                          "stop_id": "CommTrans:2422",
-                        },
-                        Object {
-                          "geometry": "w\`zbHz~liV?t@?FA|@?R???r@ABAJCHEDGBI?ECEICIAM@??s@?Q?A@}@?G?s@?A???G@}@???S?c@?M@C?GDKDGJC?c@?g@fA@vDD\`@?X?VAZEp@Uf@Y\\\\Yf@k@Z]V]V_@xGfOH^f@pAn@~AhAjCtBdF\`AbCJ\`@R~@bCvFLXP\`@LZj@pATh@Zr@b@bAn@xATd@lCjGj@pAbA~B^z@~F~MJVbA~Bx@hBl@pA\`AlBz@rA~@pA\`AnAl@l@b@b@TRh@f@d@^n@d@f@Zn@^RJVLb@Rl@Vj@R\`@Ln@P~@Tl@JnATvATdAPdBXtATJBr@JjBXt@LnARt@LjBZj@JdC\`@pATv@JTBjAJ\`AFfAFrADV@b@@R?J?p@Sh@Cf@AvCKV?lACxBCdC@R?lBAX@B?Z?",
-                          "stop_id": "CommTrans:2765",
-                        },
-                        Object {
-                          "geometry": "cmtbHp|piVD?X?dA?^?tCAxC@Z?r@@~@DtBPnCVrC^vCb@dBTj@P^Rx@L|@LtInAVDn@Jl@JVDt@H~Cb@~Dl@fARz@Tr@Tt@XD@RJd@Tv@\`@r@b@vClB~@n@~AdAb@XfDxB\\\\Tf@\\\\h@ZLHHDZN\`Ad@h@Rt@Tt@Rj@Lt@Lt@Jv@Jz@LzMdBnAPdAPz@P~@Tp@Rl@Pl@P|@\\\\zB\`AnAp@dAl@z@h@p@d@\`@Zn@f@x@r@n@l@lEhEn@p@v@z@dBdBhAfA\`A|@z@p@l@\`@NJfAl@hAj@v@Xv@Vx@Tx@Pb@HTDdALbAHx@BfBAJ?n@CB?r@ELAtAQfAURE^KnAc@hAa@pAc@n@S\`@KdAUr@KjAIx@Ct@?~@Dt@D~@Lz@NjDn@\`APD@jARfAPfAPj@DVBT@j@@p@?v@CXCNAf@GNCz@Mv@S^KXI~@]pAm@rFuChJ{E|FuCvFsCv@a@\`Ae@bAe@x@]x@Yp@UzA]z@Q|@Qv@Mx@Kv@I\`AG\`AEhAC|A?~D?^?|C@~A@zB@lB?zMBxH@nKBvF@dA?zBDD?t@Dv@Fv@JpAVpA\\\\dA\\\\bAb@fAl@hAr@hAv@rF|Db@Zt@j@nA~@\`@ZxB|ATd@??\`@l@f@d@FFh@f@p@f@r@f@l@\`@PJn@^VDn@T^Lt@PNBd@Jv@LXBl@@|A?xBCh@Fz@JNDNLHLDPBP@TCPENGJIHULi@@kC?WUKSMc@BeB?m@?gA?[?O?O?[Na@L[JQHIFITQd@[dA?b@?X?t@@??t@B~AAV?P?J?hCAbAArA?b@?X?rA?fCCB_A?S?]X?BI@GBABC@A|C?",
-                          "stop_id": "CommTrans:2191",
-                        },
-                      ],
-                    },
-                    Object {
-                      "pattern_id": "ptn_1",
-                      "pattern_name": "Pattern 1",
-                      "route_id": "kcm:102574",
-                      "stops": Array [
-                        Object {
-                          "stop_id": "kcm:35318",
-                        },
-                        Object {
-                          "geometry": "{~cbHpdsiV~@?hBAtA?lAAApBxB?jB?x@AjE?hF?",
-                          "stop_id": "kcm:17697",
-                        },
-                        Object {
-                          "geometry": "y}bbH|gsiV@?jDC~DACxDAdF",
-                          "stop_id": "kcm:17698",
-                        },
-                        Object {
-                          "geometry": "qrbbHvtsiV?xBAtG?\`GAhFiJ?kHH",
-                          "stop_id": "kcm:17710",
-                        },
-                        Object {
-                          "geometry": "kgcbH|ptiV_A?gIDa@AY?WCYKWOYWWWq@eASUWU_@Q_@Qa@EMB",
-                          "stop_id": "kcm:17730",
-                        },
-                        Object {
-                          "geometry": "y_dbHxitiVI@_DBsC@",
-                          "stop_id": "kcm:17740",
-                        },
-                        Object {
-                          "geometry": "widbH\`jtiVu@?{DDoD@{IDI?b@rB",
-                          "stop_id": "kcm:17755",
-                        },
-                        Object {
-                          "geometry": "{\`ebHbntiV@DTp@V\`@n@r@xBxAdB|AnEhF\`@h@h@r@LVNZLb@J\\\\F^DX@RBZ@\`@@\`@?jG?rF",
-                          "stop_id": "kcm:40030",
-                        },
-                        Object {
-                          "geometry": "okdbHt{uiV?ZAfG?dG?V?H?|C",
-                          "stop_id": "kcm:40032",
-                        },
-                      ],
-                    },
-                    Object {
-                      "pattern_id": "ptn_2",
-                      "pattern_name": "Pattern 2",
-                      "route_id": "kcm:102615",
-                      "stops": Array [
-                        Object {
-                          "stop_id": "kcm:7080",
-                        },
-                        Object {
-                          "geometry": "widbHvmviVvAAnCAnC?pCCnC?dAA",
-                          "stop_id": "kcm:7100",
-                        },
-                        Object {
-                          "geometry": "wrcbHlmviVnB?\`DCRItDC\\\\?rC?~@?",
-                          "stop_id": "kcm:7120",
-                        },
-                        Object {
-                          "geometry": "i|bbHzlviVpACpC?pCArA?NHh@?pCCj@?",
-                          "stop_id": "kcm:7140",
-                        },
-                        Object {
-                          "geometry": "gfbbHzlviVbB?jA?JKx@?fAAhA?~A?LH\`@?pCAfC?",
-                          "stop_id": "kcm:7160",
-                        },
-                        Object {
-                          "geometry": "ulabHtlviVL?hC?nCCpC?nC?t@?",
-                          "stop_id": "kcm:7180",
-                        },
-                        Object {
-                          "geometry": "ux\`bHplviVxA?pCApC?xB?",
-                          "stop_id": "kcm:7200",
-                        },
-                        Object {
-                          "geometry": "}h\`bHnlviVV?pC?nB?rAAX?pAC\`@?N?LBL?LBLBNDLHPHJJVVJLRLNHLHNJNFLFJBZHJDN@N@LBN@ZBpAH\`BPh@Bb@DV@ZDTDNBNDLDPFRFNJPHNJLJJJNLRPZTVPVLd@VTHZLJB",
-                          "stop_id": "kcm:7210",
-                        },
-                        Object {
-                          "geometry": "kv~aHxzviVLDVJ\`@JZFZJf@Jh@Fh@Dh@DXBh@@pB?jB?lC@nC?rd@JzC@zB?lCBnC?fC@dB?",
-                          "stop_id": "kcm:75408",
-                        },
-                        Object {
-                          "geometry": "m|{aHf~viVl@?fC?nC?lCAfC?tD?vE?|F?zFC~C?tB?\`EAnB?\`M@lM?xLApAAZC^?j@E~@G\`@EXCVEd@Ih@KdBa@jA[lA]fA]bA]t@[jAe@hAg@pAq@DA",
-                          "stop_id": "kcm:6070",
-                        },
-                        Object {
-                          "geometry": "inwaHnrviVbAo@pCcBdEkCZSXMTQRIRKTGTGVGTENARCV?\\\\?lC?zFD\`FBF?",
-                          "stop_id": "kcm:6100",
-                        },
-                        Object {
-                          "geometry": "qdvaHjfviVlI@|A?lA?bD@nD?nDHv@@vBFtBBr@B^?~BFd@G\`@@\`@Db@Fv@PlA^VFX@VAXGb@U\\\\ONGPERELELARCZ?b@?l@Bx@?",
-                          "stop_id": "kcm:6176",
-                        },
-                        Object {
-                          "geometry": "q~saHjgviV^@fABbCC\\\\IhFGj@hA~@tA|BbD",
-                          "stop_id": "kcm:7430",
-                        },
-                        Object {
-                          "geometry": "sgsaH~pviVDH\`ArA\`AvA\`AnAbAxAlB{DxCaGh@gA",
-                          "stop_id": "kcm:400",
-                        },
-                        Object {
-                          "geometry": "quraHxkviVnB{DxCeGfCeF",
-                          "stop_id": "kcm:420",
-                        },
-                        Object {
-                          "geometry": "_iraHpvuiVN]\`BaDNa@JSNWLUHQFIFGHGjCcCl@k@hC}B",
-                          "stop_id": "kcm:431",
-                        },
-                        Object {
-                          "geometry": "kxqaHrbuiVLKfEsDdEwDlCcCdB{A",
-                          "stop_id": "kcm:468",
-                        },
-                        Object {
-                          "geometry": "{cqaHzotiVh@c@lCaClCcCnCcCnBcBBA",
-                          "stop_id": "kcm:490",
-                        },
-                      ],
-                    },
-                  ],
-                  "places": Array [
-                    Object {
-                      "placeId": "from",
-                      "place_lat": 47.97766686876693,
-                      "place_lon": -122.20034419816042,
-                      "place_name": "47.97767, -122.20034",
-                      "type": "from",
-                    },
-                    Object {
-                      "placeId": "to",
-                      "place_lat": 47.602632914527724,
-                      "place_lon": -122.33197990547832,
-                      "place_name": "208 James St, Seattle, WA 98104-2212, United States",
-                      "type": "to",
-                    },
-                  ],
-                  "routes": Array [
-                    Object {
-                      "agency_id": "29",
-                      "route_color": "0070c0",
-                      "route_id": "CommTrans:512",
-                      "route_long_name": "Everett - Northgate Station",
-                      "route_short_name": "512",
-                      "route_text_color": "ffffff",
-                      "route_type": 3,
-                    },
-                    Object {
-                      "agency_id": "1",
-                      "route_color": undefined,
-                      "route_id": "kcm:102574",
-                      "route_long_name": "",
-                      "route_short_name": "40",
-                      "route_text_color": undefined,
-                      "route_type": 3,
-                    },
-                    Object {
-                      "agency_id": "1",
-                      "route_color": undefined,
-                      "route_id": "kcm:102615",
-                      "route_long_name": "",
-                      "route_short_name": "E Line",
-                      "route_text_color": undefined,
-                      "route_type": 3,
-                    },
-                  ],
-                  "stops": Array [
-                    Object {
-                      "stop_id": "CommTrans:2345",
-                      "stop_lat": 47.97482,
-                      "stop_lon": -122.19773,
-                      "stop_name": "Everett Station Bay C1",
-                    },
-                    Object {
-                      "stop_id": "CommTrans:2367",
-                      "stop_lat": 47.972881,
-                      "stop_lon": -122.201485,
-                      "stop_name": "Broadway & 34th St",
-                    },
-                    Object {
-                      "stop_id": "CommTrans:2868",
-                      "stop_lat": 47.89901771,
-                      "stop_lon": -122.2144774,
-                      "stop_name": "South Everett Fwy Station Bay 3",
-                    },
-                    Object {
-                      "stop_id": "CommTrans:2164",
-                      "stop_lat": 47.85271272,
-                      "stop_lon": -122.2584482,
-                      "stop_name": "Ash Way Park & Ride Bay 1",
-                    },
-                    Object {
-                      "stop_id": "CommTrans:2422",
-                      "stop_lat": 47.81588022,
-                      "stop_lon": -122.2963008,
-                      "stop_name": "Lynnwood Transit Center Bay D3",
-                    },
-                    Object {
-                      "stop_id": "CommTrans:2765",
-                      "stop_lat": 47.78722526,
-                      "stop_lon": -122.3164054,
-                      "stop_name": "Mountlake Terrace Fwy Station Bay 6",
-                    },
-                    Object {
-                      "stop_id": "CommTrans:2191",
-                      "stop_lat": 47.70219,
-                      "stop_lon": -122.32789,
-                      "stop_name": "Northgate Station",
-                    },
-                    Object {
-                      "stop_id": "kcm:35318",
-                      "stop_lat": 47.70302,
-                      "stop_lon": -122.32793,
-                      "stop_name": "Northgate Station - Bay 4",
-                    },
-                    Object {
-                      "stop_id": "kcm:17697",
-                      "stop_lat": 47.6977348,
-                      "stop_lon": -122.32856,
-                      "stop_name": "1st Ave NE & NE 95th St",
-                    },
-                    Object {
-                      "stop_id": "kcm:17698",
-                      "stop_lat": 47.6959953,
-                      "stop_lon": -122.330513,
-                      "stop_name": "N 92nd St & Corliss Ave N",
-                    },
-                    Object {
-                      "stop_id": "kcm:17710",
-                      "stop_lat": 47.6992683,
-                      "stop_lon": -122.334908,
-                      "stop_name": "College Way N & N 97th St",
-                    },
-                    Object {
-                      "stop_id": "kcm:17730",
-                      "stop_lat": 47.7032013,
-                      "stop_lon": -122.333794,
-                      "stop_name": "College Way N & N 103rd St",
-                    },
-                    Object {
-                      "stop_id": "kcm:17740",
-                      "stop_lat": 47.7047577,
-                      "stop_lon": -122.333832,
-                      "stop_name": "Meridian Ave N & N 105th St",
-                    },
-                    Object {
-                      "stop_id": "kcm:17755",
-                      "stop_lat": 47.7085342,
-                      "stop_lon": -122.33461,
-                      "stop_name": "N Northgate Way & Meridian Ave N",
-                    },
-                    Object {
-                      "stop_id": "kcm:40030",
-                      "stop_lat": 47.7051163,
-                      "stop_lon": -122.341866,
-                      "stop_name": "N Northgate Way & Stone Ave N",
-                    },
-                    Object {
-                      "stop_id": "kcm:40032",
-                      "stop_lat": 47.70505,
-                      "stop_lon": -122.3456,
-                      "stop_name": "N 105th St & Aurora Ave N",
-                    },
-                    Object {
-                      "stop_id": "kcm:7080",
-                      "stop_lat": 47.70476,
-                      "stop_lon": -122.34476,
-                      "stop_name": "Aurora Ave N & N 105th St",
-                    },
-                    Object {
-                      "stop_id": "kcm:7100",
-                      "stop_lat": 47.701088,
-                      "stop_lon": -122.34481,
-                      "stop_name": "Aurora Ave N & N 100th St",
-                    },
-                    Object {
-                      "stop_id": "kcm:7120",
-                      "stop_lat": 47.6974945,
-                      "stop_lon": -122.344704,
-                      "stop_name": "Aurora Ave N & N 95th St",
-                    },
-                    Object {
-                      "stop_id": "kcm:7140",
-                      "stop_lat": 47.6939621,
-                      "stop_lon": -122.344734,
-                      "stop_name": "Aurora Ave N & N 90th St",
-                    },
-                    Object {
-                      "stop_id": "kcm:7160",
-                      "stop_lat": 47.6898766,
-                      "stop_lon": -122.344681,
-                      "stop_name": "Aurora Ave N & N 85th St",
-                    },
-                    Object {
-                      "stop_id": "kcm:7180",
-                      "stop_lat": 47.6866722,
-                      "stop_lon": -122.344666,
-                      "stop_name": "Aurora Ave N & N 80th St",
-                    },
-                    Object {
-                      "stop_id": "kcm:7200",
-                      "stop_lat": 47.6841507,
-                      "stop_lon": -122.34465,
-                      "stop_name": "Aurora Ave N & N 76th St",
-                    },
-                    Object {
-                      "stop_id": "kcm:7210",
-                      "stop_lat": 47.6760826,
-                      "stop_lon": -122.346947,
-                      "stop_name": "Aurora Ave N & N 65th St",
-                    },
-                    Object {
-                      "stop_id": "kcm:75408",
-                      "stop_lat": 47.6616707,
-                      "stop_lon": -122.347488,
-                      "stop_name": "Aurora Ave N & N 46th St",
-                    },
-                    Object {
-                      "stop_id": "kcm:6070",
-                      "stop_lat": 47.6389084,
-                      "stop_lon": -122.345596,
-                      "stop_name": "Aurora Ave N & Lynn St",
-                    },
-                    Object {
-                      "stop_id": "kcm:6100",
-                      "stop_lat": 47.6322517,
-                      "stop_lon": -122.343666,
-                      "stop_name": "Aurora Ave N & Galer St",
-                    },
-                    Object {
-                      "stop_id": "kcm:6176",
-                      "stop_lat": 47.6210556,
-                      "stop_lon": -122.343842,
-                      "stop_name": "7th Ave N & Thomas St",
-                    },
-                    Object {
-                      "stop_id": "kcm:7430",
-                      "stop_lat": 47.6174316,
-                      "stop_lon": -122.345345,
-                      "stop_name": "Wall St & 5th Ave",
-                    },
-                    Object {
-                      "stop_id": "kcm:400",
-                      "stop_lat": 47.6144447,
-                      "stop_lon": -122.344513,
-                      "stop_name": "3rd Ave & Bell St",
-                    },
-                    Object {
-                      "stop_id": "kcm:420",
-                      "stop_lat": 47.6124382,
-                      "stop_lon": -122.34111,
-                      "stop_name": "3rd Ave & Virginia St",
-                    },
-                    Object {
-                      "stop_id": "kcm:431",
-                      "stop_lat": 47.6097908,
-                      "stop_lon": -122.337959,
-                      "stop_name": "3rd Ave & Pike St",
-                    },
-                    Object {
-                      "stop_id": "kcm:468",
-                      "stop_lat": 47.6065025,
-                      "stop_lon": -122.334938,
-                      "stop_name": "3rd Ave & Seneca St",
-                    },
-                    Object {
-                      "stop_id": "kcm:490",
-                      "stop_lat": 47.60361,
-                      "stop_lon": -122.3322,
-                      "stop_name": "3rd Ave & Cherry St",
-                    },
-                  ],
-                  "streetEdges": Array [
-                    Object {
-                      "edge_id": 0,
-                      "geometry": Object {
-                        "length": 27,
-                        "points": "srycH\`hzhVd@?HEBGBKL]?Yp@C?e@AwCGc@bA]^KCSCa@vBq@l@OCSf@QHAbA[CQB?PGFCHCPG",
-                      },
-                    },
-                    Object {
-                      "edge_id": 2,
-                      "geometry": Object {
-                        "length": 2,
-                        "points": "{~cbHfesiV??",
-                      },
-                    },
-                    Object {
-                      "edge_id": 4,
-                      "geometry": Object {
-                        "length": 13,
-                        "points": "skdbH~rviV?[FSF??K?cABGDGB?B?L?D?@?",
-                      },
-                    },
-                    Object {
-                      "edge_id": 6,
-                      "geometry": Object {
-                        "length": 13,
-                        "points": "gqpaH|_tiVJKBA@AFEDE@?BEnBkB@@B??@^fA",
-                      },
-                    },
-                  ],
-                }
-              }
-              visible={true}
-            />
-          </React.Fragment>
-        </BaseMap>
-      </ForwardRef(styled__StoryMapContainer)>
-    </BaseMap>
-  </ForwardRef(styled__StoryMapContainer)>
-</IntlProvider>
-`;
-
-exports[`Storyshots TransitiveOverlay Walk Interlined Transit Itinerary 2`] = `
-.c0 {
-  height: 90vh;
-}
-
-<div
-  className="c0"
->
-  <div
-    style={
-      Object {
-        "height": "100%",
-        "position": "relative",
-        "width": "100%",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`Storyshots TransitiveOverlay Walk Transit Transfer Itinerary 1`] = `
-<IntlProvider
-  defaultFormats={Object {}}
-  defaultLocale="en-US"
-  fallbackOnEmptyString={true}
-  formats={Object {}}
-  locale="en-US"
-  messages={Object {}}
-  onError={[Function]}
-  textComponent={Symbol(react.fragment)}
->
-  <ForwardRef(styled__StoryMapContainer)>
-    <BaseMap
-      center={
-        Array [
-          45.5215,
-          -122.686202,
-        ]
-      }
-      zoom={16}
-    >
-      <ForwardRef(styled__StoryMapContainer)>
-        <BaseMap
-          center={
-            Array [
-              45.505841,
-              -122.631302,
-            ]
-          }
-          zoom={14}
-        >
-          <React.Fragment>
-            <EndpointsOverlay
-              fromLocation={
-                Object {
-                  "departure": 1573688769000,
-                  "lat": 45.501198436772924,
-                  "lon": -122.62183393468378,
-                  "name": "3940 SE Brooklyn St, Portland, OR, USA 97202",
-                  "orig": "3940 SE Brooklyn St, Portland, OR, USA 97202",
-                  "vertexType": "NORMAL",
-                }
-              }
-              setLocation={[Function]}
-              toLocation={
-                Object {
-                  "arrival": 1573690001000,
-                  "lat": 45.51258575759002,
-                  "lon": -122.63757592401461,
-                  "name": "1415 SE 28th Ave, Portland, OR, USA 97214",
-                  "orig": "1415 SE 28th Ave, Portland, OR, USA 97214",
-                  "vertexType": "NORMAL",
-                }
-              }
-              visible={true}
-            />
-            <TransitiveCanvasOverlay
-              transitiveData={
-                Object {
-                  "journeys": Array [
-                    Object {
-                      "journey_id": "itin",
-                      "journey_name": "Itinerary-derived Journey",
-                      "segments": Array [
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_0_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            0,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_0_to",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                        Object {
-                          "arc": false,
-                          "patterns": Array [
-                            Object {
-                              "from_stop_index": 0,
-                              "pattern_id": "ptn_0",
-                              "to_stop_index": 5,
-                            },
-                          ],
-                          "type": "TRANSIT",
-                        },
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_2_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            2,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_2_to",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                        Object {
-                          "arc": false,
-                          "patterns": Array [
-                            Object {
-                              "from_stop_index": 0,
-                              "pattern_id": "ptn_1",
-                              "to_stop_index": 5,
-                            },
-                          ],
-                          "type": "TRANSIT",
-                        },
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_4_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            4,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_4_to",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                      ],
-                    },
-                  ],
-                  "patterns": Array [
-                    Object {
-                      "pattern_id": "ptn_0",
-                      "pattern_name": "Pattern 0",
-                      "route_id": "TriMet:75",
-                      "stops": Array [
-                        Object {
-                          "stop_id": "TriMet:7439",
-                        },
-                        Object {
-                          "geometry": "a}utGnvlkVQ?mCAmC@aAAu@?",
-                          "stop_id": "TriMet:7442",
-                        },
-                        Object {
-                          "geometry": "gjvtGlvlkVW?O?{@?q@?O@aA?E?y@?K@M?Y?",
-                          "stop_id": "TriMet:7445",
-                        },
-                        Object {
-                          "geometry": "cuvtGpvlkVU?]@U?I?O?O?w@?aA@iCBgCBM?_A@",
-                          "stop_id": "TriMet:7468",
-                        },
-                        Object {
-                          "geometry": "qgwtG~vlkVK?M@s@@{A@qB@Y@",
-                          "stop_id": "TriMet:7489",
-                        },
-                        Object {
-                          "geometry": "gqwtGhwlkV??gFFg@?cC@k@?G?",
-                          "stop_id": "TriMet:7459",
-                        },
-                      ],
-                    },
-                    Object {
-                      "pattern_id": "ptn_1",
-                      "pattern_name": "Pattern 1",
-                      "route_id": "TriMet:14",
-                      "stops": Array [
-                        Object {
-                          "stop_id": "TriMet:2626",
-                        },
-                        Object {
-                          "geometry": "gaxtGbzlkV?D?f@?dB?\`B?FAdF",
-                          "stop_id": "TriMet:2624",
-                        },
-                        Object {
-                          "geometry": "iaxtGfimkV?V?X?zC?b@?hA?rA?tB?tA?P?fC",
-                          "stop_id": "TriMet:12892",
-                        },
-                        Object {
-                          "geometry": "iaxtG|\`nkV?\`@?\`@?ZAd@?Z?dA?|@?jC?T?lC",
-                          "stop_id": "TriMet:2619",
-                        },
-                        Object {
-                          "geometry": "kaxtGrsnkV?x@?bC?lA?zB?n@",
-                          "stop_id": "TriMet:2616",
-                        },
-                        Object {
-                          "geometry": "kaxtGjaokV?J?R?T?fAAlD?\`C?hA?jD",
-                          "stop_id": "TriMet:2613",
-                        },
-                      ],
-                    },
-                  ],
-                  "places": Array [
-                    Object {
-                      "placeId": "from",
-                      "place_lat": 45.501198436772924,
-                      "place_lon": -122.62183393468378,
-                      "place_name": "3940 SE Brooklyn St, Portland, OR, USA 97202",
-                      "type": "from",
-                    },
-                    Object {
-                      "placeId": "to",
-                      "place_lat": 45.51258575759002,
-                      "place_lon": -122.63757592401461,
-                      "place_name": "1415 SE 28th Ave, Portland, OR, USA 97214",
-                      "type": "to",
-                    },
-                  ],
-                  "routes": Array [
-                    Object {
-                      "agency_id": "TRIMET",
-                      "route_color": undefined,
-                      "route_id": "TriMet:75",
-                      "route_long_name": "Cesar Chavez/Lombard (very long route name)",
-                      "route_short_name": "755X",
-                      "route_text_color": undefined,
-                      "route_type": 3,
-                    },
-                    Object {
-                      "agency_id": "TRIMET",
-                      "route_color": undefined,
-                      "route_id": "TriMet:14",
-                      "route_long_name": "Hawthorne",
-                      "route_short_name": "1",
-                      "route_text_color": undefined,
-                      "route_type": 3,
-                    },
-                  ],
-                  "stops": Array [
-                    Object {
-                      "stop_id": "TriMet:7439",
-                      "stop_lat": 45.50113,
-                      "stop_lon": -122.62264,
-                      "stop_name": "SE Cesar Chavez Blvd & Brooklyn",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7442",
-                      "stop_lat": 45.503239,
-                      "stop_lon": -122.622527,
-                      "stop_name": "SE Cesar Chavez Blvd & Clinton",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7445",
-                      "stop_lat": 45.504987,
-                      "stop_lon": -122.622518,
-                      "stop_name": "SE Cesar Chavez Blvd & Division",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7468",
-                      "stop_lat": 45.507935,
-                      "stop_lon": -122.622619,
-                      "stop_name": "SE Cesar Chavez Blvd & Lincoln",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7489",
-                      "stop_lat": 45.509481,
-                      "stop_lon": -122.622655,
-                      "stop_name": "SE Cesar Chavez Blvd & Stephens",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7459",
-                      "stop_lat": 45.51176,
-                      "stop_lon": -122.62282,
-                      "stop_name": "SE Cesar Chavez Blvd & Hawthorne",
-                    },
-                    Object {
-                      "stop_id": "TriMet:2626",
-                      "stop_lat": 45.51204,
-                      "stop_lon": -122.62322,
-                      "stop_name": "SE Hawthorne & Cesar Chavez Blvd",
-                    },
-                    Object {
-                      "stop_id": "TriMet:2624",
-                      "stop_lat": 45.512123,
-                      "stop_lon": -122.625631,
-                      "stop_name": "SE Hawthorne & 37th",
-                    },
-                    Object {
-                      "stop_id": "TriMet:12892",
-                      "stop_lat": 45.51212,
-                      "stop_lon": -122.62943,
-                      "stop_name": "SE Hawthorne & 34th",
-                    },
-                    Object {
-                      "stop_id": "TriMet:2619",
-                      "stop_lat": 45.512139,
-                      "stop_lon": -122.632417,
-                      "stop_name": "SE Hawthorne & 32nd",
-                    },
-                    Object {
-                      "stop_id": "TriMet:2616",
-                      "stop_lat": 45.51214,
-                      "stop_lon": -122.634614,
-                      "stop_name": "SE Hawthorne & 30th",
-                    },
-                    Object {
-                      "stop_id": "TriMet:2613",
-                      "stop_lat": 45.51207,
-                      "stop_lon": -122.638,
-                      "stop_name": "SE Hawthorne & 27th",
-                    },
-                  ],
-                  "streetEdges": Array [
-                    Object {
-                      "edge_id": 0,
-                      "geometry": Object {
-                        "length": 4,
-                        "points": "q}utGnqlkVAlH?mCP?",
-                      },
-                    },
-                    Object {
-                      "edge_id": 2,
-                      "geometry": Object {
-                        "length": 9,
-                        "points": "e_xtG|ulkVh@??t@i@?o@?QB?\\\\?R?X",
-                      },
-                    },
-                    Object {
-                      "edge_id": 4,
-                      "geometry": Object {
-                        "length": 7,
-                        "points": "maxtGnvokV?J?RQ?oCA?iB?G",
-                      },
-                    },
-                  ],
-                }
-              }
-              visible={true}
-            />
-          </React.Fragment>
-        </BaseMap>
-      </ForwardRef(styled__StoryMapContainer)>
-    </BaseMap>
-  </ForwardRef(styled__StoryMapContainer)>
-</IntlProvider>
-`;
-
-exports[`Storyshots TransitiveOverlay Walk Transit Transfer Itinerary 2`] = `
-.c0 {
-  height: 90vh;
-}
-
-<div
-  className="c0"
->
-  <div
-    style={
-      Object {
-        "height": "100%",
-        "position": "relative",
-        "width": "100%",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`Storyshots TransitiveOverlay Walk Transit Walk Itinerary 1`] = `
-<IntlProvider
-  defaultFormats={Object {}}
-  defaultLocale="en-US"
-  fallbackOnEmptyString={true}
-  formats={Object {}}
-  locale="en-US"
-  messages={Object {}}
-  onError={[Function]}
-  textComponent={Symbol(react.fragment)}
->
-  <ForwardRef(styled__StoryMapContainer)>
-    <BaseMap
-      center={
-        Array [
-          45.5215,
-          -122.686202,
-        ]
-      }
-      zoom={16}
-    >
-      <ForwardRef(styled__StoryMapContainer)>
-        <BaseMap
-          center={
-            Array [
-              45.520441,
-              -122.68302,
-            ]
-          }
-          zoom={16}
-        >
-          <React.Fragment>
-            <EndpointsOverlay
-              fromLocation={
-                Object {
-                  "departure": 1573688698000,
-                  "lat": 45.5187219673841,
-                  "lon": -122.67914856500536,
-                  "name": "KGW Studio on the Sq, Portland, OR, USA",
-                  "orig": "KGW Studio on the Sq, Portland, OR, USA",
-                  "vertexType": "NORMAL",
-                }
-              }
-              setLocation={[Function]}
-              toLocation={
-                Object {
-                  "arrival": 1573689055000,
-                  "lat": 45.522170898252,
-                  "lon": -122.68959868692157,
-                  "name": "1737 SW Morrison St, Portland, OR, USA 97205",
-                  "orig": "1737 SW Morrison St, Portland, OR, USA 97205",
-                  "vertexType": "NORMAL",
-                }
-              }
-              visible={true}
-            />
-            <TransitiveCanvasOverlay
-              transitiveData={
-                Object {
-                  "journeys": Array [
-                    Object {
-                      "journey_id": "itin",
-                      "journey_name": "Itinerary-derived Journey",
-                      "segments": Array [
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_0_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            0,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_0_to",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                        Object {
-                          "arc": false,
-                          "patterns": Array [
-                            Object {
-                              "from_stop_index": 0,
-                              "pattern_id": "ptn_0",
-                              "to_stop_index": 2,
-                            },
-                          ],
-                          "type": "TRANSIT",
-                        },
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_2_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            2,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_2_to",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                      ],
-                    },
-                  ],
-                  "patterns": Array [
-                    Object {
-                      "pattern_id": "ptn_0",
-                      "pattern_name": "Pattern 0",
-                      "route_id": "TriMet:100",
-                      "stops": Array [
-                        Object {
-                          "stop_id": "TriMet:8383",
-                        },
-                        Object {
-                          "geometry": "onytGrywkVCNEPEVm@jDCPKh@G\`@CNg@tC",
-                          "stop_id": "TriMet:8384",
-                        },
-                        Object {
-                          "geometry": "qrytG|hxkVADGZAHETER]pBCHG^AD?DGVg@tCEVo@tDEPE\\\\k@zCEVETi@|CCLCRi@zCCNG\\\\g@rCCLAHAD?D?H?H?H@HLlA",
-                          "stop_id": "TriMet:9757",
-                        },
-                      ],
-                    },
-                  ],
-                  "places": Array [
-                    Object {
-                      "placeId": "from",
-                      "place_lat": 45.5187219673841,
-                      "place_lon": -122.67914856500536,
-                      "place_name": "KGW Studio on the Sq, Portland, OR, USA",
-                      "type": "from",
-                    },
-                    Object {
-                      "placeId": "to",
-                      "place_lat": 45.522170898252,
-                      "place_lon": -122.68959868692157,
-                      "place_name": "1737 SW Morrison St, Portland, OR, USA 97205",
-                      "type": "to",
-                    },
-                  ],
-                  "routes": Array [
-                    Object {
-                      "agency_id": "TRIMET",
-                      "route_color": "084C8D",
-                      "route_id": "TriMet:100",
-                      "route_long_name": "MAX Blue Line",
-                      "route_short_name": "",
-                      "route_text_color": "FFFFFF",
-                      "route_type": 0,
-                    },
-                  ],
-                  "stops": Array [
-                    Object {
-                      "stop_id": "TriMet:8383",
-                      "stop_lat": 45.51928,
-                      "stop_lon": -122.67946,
-                      "stop_name": "Pioneer Square North MAX Station",
-                    },
-                    Object {
-                      "stop_id": "TriMet:8384",
-                      "stop_lat": 45.51991,
-                      "stop_lon": -122.681919,
-                      "stop_name": "Galleria/SW 10th Ave MAX Station",
-                    },
-                    Object {
-                      "stop_id": "TriMet:9757",
-                      "stop_lat": 45.5218,
-                      "stop_lon": -122.68981,
-                      "stop_name": "Providence Park MAX Station",
-                    },
-                  ],
-                  "streetEdges": Array [
-                    Object {
-                      "edge_id": 0,
-                      "geometry": Object {
-                        "length": 5,
-                        "points": "_kytGvwwkVGBSPw@]ShA",
-                      },
-                    },
-                    Object {
-                      "edge_id": 2,
-                      "geometry": Object {
-                        "length": 6,
-                        "points": "m~ytGjzykVBLa@JOVMERgA",
-                      },
-                    },
-                  ],
-                }
-              }
-              visible={true}
-            />
-          </React.Fragment>
-        </BaseMap>
-      </ForwardRef(styled__StoryMapContainer)>
-    </BaseMap>
-  </ForwardRef(styled__StoryMapContainer)>
-</IntlProvider>
-`;
-
-exports[`Storyshots TransitiveOverlay Walk Transit Walk Itinerary 2`] = `
-.c0 {
-  height: 90vh;
-}
-
-<div
-  className="c0"
->
-  <div
-    style={
-      Object {
-        "height": "100%",
-        "position": "relative",
-        "width": "100%",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`Storyshots TransitiveOverlay Walk Transit Walk Itinerary With No Intermediate Stops 1`] = `
-<IntlProvider
-  defaultFormats={Object {}}
-  defaultLocale="en-US"
-  fallbackOnEmptyString={true}
-  formats={Object {}}
-  locale="en-US"
-  messages={Object {}}
-  onError={[Function]}
-  textComponent={Symbol(react.fragment)}
->
-  <ForwardRef(styled__StoryMapContainer)>
-    <BaseMap
-      center={
-        Array [
-          45.5215,
-          -122.686202,
-        ]
-      }
-      zoom={16}
-    >
-      <ForwardRef(styled__StoryMapContainer)>
-        <BaseMap
-          center={
-            Array [
-              45.525841,
-              -122.649302,
-            ]
-          }
-          zoom={13}
-        >
-          <React.Fragment>
-            <EndpointsOverlay
-              fromLocation={
-                Object {
-                  "departure": 1574121578000,
-                  "lat": 45.53173643895572,
-                  "lon": -122.58010103963917,
-                  "name": "1205 NE 81st Ave, Portland, OR, USA 97213",
-                  "orig": "1205 NE 81st Ave, Portland, OR, USA 97213",
-                  "vertexType": "NORMAL",
-                }
-              }
-              setLocation={[Function]}
-              toLocation={
-                Object {
-                  "arrival": 1574123311000,
-                  "lat": 45.518998702452805,
-                  "lon": -122.67912504605157,
-                  "name": "Weather Machine, Portland, OR, USA",
-                  "orig": "Weather Machine, Portland, OR, USA",
-                  "vertexType": "NORMAL",
-                }
-              }
-              visible={true}
-            />
-            <TransitiveCanvasOverlay
-              transitiveData={
-                Object {
-                  "journeys": Array [
-                    Object {
-                      "journey_id": "itin",
-                      "journey_name": "Itinerary-derived Journey",
-                      "segments": Array [
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_0_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            0,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_0_to",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                        Object {
-                          "arc": false,
-                          "patterns": Array [
-                            Object {
-                              "from_stop_index": 0,
-                              "pattern_id": "ptn_0",
-                              "to_stop_index": 1,
-                            },
-                          ],
-                          "type": "TRANSIT",
-                        },
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_2_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            2,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_2_to",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                      ],
-                    },
-                  ],
-                  "patterns": Array [
-                    Object {
-                      "pattern_id": "ptn_0",
-                      "pattern_name": "Pattern 0",
-                      "route_id": "TriMet:200",
-                      "stops": Array [
-                        Object {
-                          "stop_id": "TriMet:8371",
-                        },
-                        Object {
-                          "geometry": "ig|tGdbdkVEPOh@e@fBo@\`CYbAIZQp@mBrHkAzEYfAGZIZMp@Kt@EXEVCNGn@Gl@C\`@CVATAXARCt@A\\\\AR?\\\\?\\\\?p@?\`@B~@@T@d@@R@NB\\\\Bb@D^BZBVD\\\\BTDRBVF\\\\DRBRFVDTJb@J\`@FTJb@N\`@Nf@HTL\\\\Rf@rB~E|AtDnFnMrAbD|ElLh@nAvDfJx@nBx@bBnAvCTh@N^Vn@JVHR?@Pd@BJDNJ^HXHXDRFTJd@F\\\\FZJj@DVDXJt@D^BVDXBZBZBZB\`@Bd@@b@Bd@@b@@p@?p@?b@?b@Ab@A\`@AZAZCf@Cb@E\`@CZEXCXG\\\\EVEVETETETGRMh@IZIVKXIXO\`@Q^O^S^S\`@_@n@i@~@eAbBwC~Ek@|@iAlB{@xAQXMTOVMVS\`@GNGNMXGPKXITGTIVGTGREPGZI\\\\Gb@Y|ACTi@nDg@jDW~A]dCAFIh@Kt@SrAGf@Gb@EVOlA_@tCu@pFo@dEq@|Eo@~ECPAPCXAXALAPAN?P?VAP@\`@?R?N@NB^@L@N@L@PBTBLBL@LH\`@FXHZDLDPFPBHNZFNFLHPJPNTNTNPTVRRTRbAz@n@f@fBvAXTXTXVVVPPNRNPNRRXP\\\\HPHPHPTj@HZHTFXDRH^DZDVDZD\\\\B\`@B\`@B^@f@@h@DbCN~GRbL\\\\jTF|CF|CF|CLvH@f@?f@@^?f@A\\\\?R?^ElB?ZC|@?h@An@Ax@?dB?bAAl@?Z?d@?p@?xA?tC??@T?X?D?R@V?R?f@?r@?xB?xA?^?d@?~@CdB?\`C?V?N@\\\\?D?X?nD?zD?JAX@vC?X?ZAlC??@Z?JAnD?R?\`@ATAVAl@?FAL?FCNAJARAbD?T?L?H?H@H@D@HDJBHR\\\\PZPVHJBDFFDFFDFDDDDBLHl@PZHVHXJJDJFHDJHHFHJNNDFFHHLHLHPFRVr@dAvC~@nCb@nAb@lAN\`@JVFPBF@F@D@D@F@H?H@F?HAV?d@AdAChA?r@?R?L@Z@j@@^?H?LAHCHAFGJGFGDE@E?S?G?G@GBA?GDEFABEFCHAFCHETIh@Kj@EVETEZCJ?FAHAF?H?H@H@H@F@D??@FRj@BF@BBDDDBDL?LAnBC??D?J?J?tBAJAlCCnCEH?pBCD?J?H?jBCJAVCJAF@F@b@NPHDBF@fA\`@JBJDfBv@@@NFNHfBt@JFxB\`AJDNF~At@JDHBRHfBx@FBB@DBdBt@",
-                          "stop_id": "TriMet:7646",
-                        },
-                      ],
-                    },
-                  ],
-                  "places": Array [
-                    Object {
-                      "placeId": "from",
-                      "place_lat": 45.53173643895572,
-                      "place_lon": -122.58010103963917,
-                      "place_name": "1205 NE 81st Ave, Portland, OR, USA 97213",
-                      "type": "from",
-                    },
-                    Object {
-                      "placeId": "to",
-                      "place_lat": 45.518998702452805,
-                      "place_lon": -122.67912504605157,
-                      "place_name": "Weather Machine, Portland, OR, USA",
-                      "type": "to",
-                    },
-                  ],
-                  "routes": Array [
-                    Object {
-                      "agency_id": "TRIMET",
-                      "route_color": "008852",
-                      "route_id": "TriMet:200",
-                      "route_long_name": "MAX Green Line",
-                      "route_short_name": "",
-                      "route_text_color": "FFFFFF",
-                      "route_type": 0,
-                    },
-                  ],
-                  "stops": Array [
-                    Object {
-                      "stop_id": "TriMet:8371",
-                      "stop_lat": 45.53349,
-                      "stop_lon": -122.57843,
-                      "stop_name": "NE 82nd Ave MAX Station",
-                    },
-                    Object {
-                      "stop_id": "TriMet:7646",
-                      "stop_lat": 45.51823,
-                      "stop_lon": -122.67785,
-                      "stop_name": "Pioneer Place/SW 5th Ave MAX Station",
-                    },
-                  ],
-                  "streetEdges": Array [
-                    Object {
-                      "edge_id": 0,
-                      "geometry": Object {
-                        "length": 23,
-                        "points": "e|{tG\`fdkVK?iAAg@?M?Q?s@?O?W?KM]?aA?[?c@?@MZADE?IDMFDLm@DEBI",
-                      },
-                    },
-                    Object {
-                      "edge_id": 2,
-                      "geometry": Object {
-                        "length": 14,
-                        "points": "chytGlpwkVHDFBDBo@hDAJAFCLEAECUDa@RSP]O",
-                      },
-                    },
-                  ],
-                }
-              }
-              visible={true}
-            />
-          </React.Fragment>
-        </BaseMap>
-      </ForwardRef(styled__StoryMapContainer)>
-    </BaseMap>
-  </ForwardRef(styled__StoryMapContainer)>
-</IntlProvider>
-`;
-
-exports[`Storyshots TransitiveOverlay Walk Transit Walk Itinerary With No Intermediate Stops 2`] = `
-.c0 {
-  height: 90vh;
-}
-
-<div
-  className="c0"
->
-  <div
-    style={
-      Object {
-        "height": "100%",
-        "position": "relative",
-        "width": "100%",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`Storyshots TransitiveOverlay Walking Itinerary 1`] = `
-<IntlProvider
-  defaultFormats={Object {}}
-  defaultLocale="en-US"
-  fallbackOnEmptyString={true}
-  formats={Object {}}
-  locale="en-US"
-  messages={Object {}}
-  onError={[Function]}
-  textComponent={Symbol(react.fragment)}
->
-  <ForwardRef(styled__StoryMapContainer)>
-    <BaseMap
-      center={
-        Array [
-          45.5215,
-          -122.686202,
-        ]
-      }
-      zoom={16}
-    >
-      <ForwardRef(styled__StoryMapContainer)>
-        <BaseMap
-          center={
-            Array [
-              45.518841,
-              -122.679302,
-            ]
-          }
-          zoom={19}
-        >
-          <React.Fragment>
-            <EndpointsOverlay
-              fromLocation={
-                Object {
-                  "departure": 1576265340000,
-                  "lat": 45.5187219673841,
-                  "lon": -122.67914856500536,
-                  "name": "KGW Studio on the Sq, Portland, OR, USA",
-                  "orig": "KGW Studio on the Sq, Portland, OR, USA",
-                  "vertexType": "NORMAL",
-                }
-              }
-              setLocation={[Function]}
-              toLocation={
-                Object {
-                  "arrival": 1576265401000,
-                  "lat": 45.51890847886523,
-                  "lon": -122.67962369485272,
-                  "name": "701 SW 6th Ave, Portland, OR, USA 97204",
-                  "orig": "701 SW 6th Ave, Portland, OR, USA 97204",
-                  "vertexType": "NORMAL",
-                }
-              }
-              visible={true}
-            />
-            <TransitiveCanvasOverlay
-              transitiveData={
-                Object {
-                  "journeys": Array [
-                    Object {
-                      "journey_id": "itin",
-                      "journey_name": "Itinerary-derived Journey",
-                      "segments": Array [
-                        Object {
-                          "arc": false,
-                          "from": Object {
-                            "place_id": "itin_street_0_from",
-                            "type": "PLACE",
-                          },
-                          "streetEdges": Array [
-                            0,
-                          ],
-                          "to": Object {
-                            "place_id": "itin_street_0_to",
-                            "type": "PLACE",
-                          },
-                          "type": "WALK",
-                        },
-                      ],
-                    },
-                  ],
-                  "patterns": Array [],
-                  "places": Array [
-                    Object {
-                      "placeId": "from",
-                      "place_lat": 45.5187219673841,
-                      "place_lon": -122.67914856500536,
-                      "place_name": "KGW Studio on the Sq, Portland, OR, USA",
-                      "type": "from",
-                    },
-                    Object {
-                      "placeId": "to",
-                      "place_lat": 45.51890847886523,
-                      "place_lon": -122.67962369485272,
-                      "place_name": "701 SW 6th Ave, Portland, OR, USA 97204",
-                      "type": "to",
-                    },
-                  ],
-                  "routes": Array [],
-                  "stops": Array [],
-                  "streetEdges": Array [
-                    Object {
-                      "edge_id": 0,
-                      "geometry": Object {
-                        "length": 15,
-                        "points": "_kytGvwwkVGBBJ@H@JAHAH??CFEDEDEBG@AD??",
-                      },
-                    },
-                  ],
-                }
-              }
-              visible={true}
-            />
-          </React.Fragment>
-        </BaseMap>
-      </ForwardRef(styled__StoryMapContainer)>
-    </BaseMap>
-  </ForwardRef(styled__StoryMapContainer)>
-</IntlProvider>
-`;
-
-exports[`Storyshots TransitiveOverlay Walking Itinerary 2`] = `
-.c0 {
-  height: 90vh;
-}
-
-<div
-  className="c0"
->
-  <div
-    style={
-      Object {
-        "height": "100%",
-        "position": "relative",
-        "width": "100%",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`Storyshots TripOptions Trip Options 1`] = `
+exports[`Storyshots TripOptions Default 1`] = `
 <IntlProvider
   defaultFormats={Object {}}
   defaultLocale="en-US"
@@ -13765,7 +10799,7 @@ exports[`Storyshots TripOptions Trip Options 1`] = `
 </IntlProvider>
 `;
 
-exports[`Storyshots TripOptions Trip Options 2`] = `
+exports[`Storyshots TripOptions Default 2`] = `
 .c3 {
   display: inline-block;
   vertical-align: middle;

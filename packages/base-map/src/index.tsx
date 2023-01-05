@@ -22,8 +22,10 @@ import MarkerWithPopup from "./MarkerWithPopup";
  * with an id are added to the control.
  */
 type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
-  /** A URL pointing to the vector tile specification which should be used as the main map.  */
-  baseLayer?: string;
+  /** A URL, or list of URLs pointing to the vector tile specification which should be used as the main map.  */
+  baseLayer?: string | string[];
+  /** A list of names to match onto the base layers. Used only if there are multiple entries defined for `BaseLayer` */
+  baseLayerNames?: string[];
   /** A [lat, lon] position to center the map at. */
   center?: [number, number];
   /** A unique identifier for the map (useful when using MapProvider) */
@@ -51,6 +53,7 @@ type State = {
 const BaseMap = ({
   // These tiles are free to use, but not in production
   baseLayer = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
+  baseLayerNames,
   center,
   children,
   id,
@@ -91,8 +94,14 @@ const BaseMap = ({
 
   const toggleableLayers = Array.isArray(children)
     ? children
-        .flat()
-        .filter(child => child?.props?.id !== undefined)
+        .flat(10)
+        .filter(
+          child =>
+            child?.props?.id !== undefined &&
+            // Some sources will not have layers as children, and should be ignored
+            // from the list.
+            child?.props?.alwaysShow !== true
+        )
         .map(child => {
           const { id: layerId, name, visible } = child.props;
           return { id: layerId, name, visible };
@@ -101,6 +110,9 @@ const BaseMap = ({
 
   const [hiddenLayers, setHiddenLayers] = useState(
     toggleableLayers.filter(layer => !layer?.visible).map(layer => layer.id)
+  );
+  const [activeBaseLayer, setActiveBaseLayer] = useState(
+    typeof baseLayer === "object" ? baseLayer?.[0] : baseLayer
   );
 
   return (
@@ -111,7 +123,7 @@ const BaseMap = ({
       latitude={viewState.latitude}
       longitude={viewState.longitude}
       mapLib={maplibregl}
-      mapStyle={baseLayer}
+      mapStyle={activeBaseLayer}
       maxZoom={maxZoom}
       onClick={onClick}
       onContextMenu={onContextMenu}
@@ -132,17 +144,39 @@ const BaseMap = ({
       style={style}
       zoom={viewState.zoom}
     >
-      {toggleableLayers.length > 0 && (
+      {(toggleableLayers.length > 0 ||
+        (!!baseLayer &&
+          typeof baseLayer === "object" &&
+          baseLayer.length > 1)) && (
         <Styled.LayerSelector
+          className="filter-group"
+          id="filter-group"
           onTouchEnd={() => {
             setFakeMobileHover(true);
           }}
-          className="filter-group"
-          id="filter-group"
         >
           <ul
             className={`layers-list ${fakeMobileHover && "fake-mobile-hover"}`}
           >
+            {!!baseLayer &&
+              typeof baseLayer === "object" &&
+              baseLayer.map((layer: string, index: number) => {
+                return (
+                  <li key={index}>
+                    {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+                    <label>
+                      <input
+                        checked={activeBaseLayer === layer}
+                        id={layer}
+                        onChange={() => setActiveBaseLayer(layer)}
+                        type="radio"
+                      />
+                      {baseLayerNames?.[index] || layer}
+                    </label>
+                  </li>
+                );
+              })}
+
             {toggleableLayers.map((layer: LayerProps, index: number) => {
               return (
                 <li key={index}>
@@ -175,7 +209,7 @@ const BaseMap = ({
       )}
       {Array.isArray(children)
         ? children
-            .flat()
+            .flat(10)
             .filter(child => !hiddenLayers.includes(child?.props?.id))
         : children}
     </Map>

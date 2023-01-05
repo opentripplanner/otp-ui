@@ -82,8 +82,7 @@ export default class PhotonGeocoder extends Geocoder {
       return response as MultiGeocoderResponse;
     }
 
-    const lat = response.point.lat;
-    const lon = response.point.lng;
+    const { lat, lon } = response.point;
 
     const firstFeature = response.features[0];
     return {
