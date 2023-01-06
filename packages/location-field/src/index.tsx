@@ -489,10 +489,10 @@ const LocationField = ({
     // Add the menu sub-heading (not a selectable item)
     menuItems.push(
       <S.MenuItem
-        key="ns-header"
-        role="heading"
         centeredText
         header
+        key="ns-header"
+        role="heading"
       >
         <FormattedMessage
           description="Text for header above nearby stops"
@@ -542,9 +542,9 @@ const LocationField = ({
     // Add the menu sub-heading (not a selectable item)
     menuItems.push(
       <S.MenuItem
-        key="ss-header"
         centeredText
         header
+        key="ss-header"
         role="heading"
       >
         <FormattedMessage
@@ -587,10 +587,10 @@ const LocationField = ({
     // Add the menu sub-heading (not a selectable item)
     menuItems.push(
       <S.MenuItem
-        key="mp-header"
-        role="heading"
         centeredText
         header
+        key="mp-header"
+        role="heading"
       >
         <FormattedMessage
           description="Text for header above user-saved places"
