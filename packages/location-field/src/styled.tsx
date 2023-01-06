@@ -52,7 +52,6 @@ export const Dropdown = ({
   children,
   input,
   listBoxIdentifier,
-  locationType,
   onToggle = () => {},
   open,
   title
@@ -60,7 +59,6 @@ export const Dropdown = ({
   children: React.ReactNode;
   input?: JSX.Element;
   listBoxIdentifier: string;
-  locationType: string;
   onToggle?: () => void;
   open: boolean;
   title: React.ReactNode;
@@ -72,17 +70,14 @@ export const Dropdown = ({
       <DropdownButton
         aria-controls={listBoxIdentifier}
         aria-expanded={open}
-        aria-label={intl.formatMessage(
-          {
-            id: "otpUi.LocationField.suggestedLocationsLong",
-            defaultMessage: "Open the list of location suggestions",
-            description:
-              "Text to show as a a11y label for the button that opens the dropdown list of locations"
-          },
-          { locationType }
-        )}
-        tabIndex={-1}
+        aria-label={intl.formatMessage({
+          defaultMessage: "Open the list of location suggestions",
+          description:
+            "Text to show as a a11y label for the button that opens the dropdown list of locations",
+          id: "otpUi.LocationField.suggestedLocationsLong"
+        })}
         onClick={onToggle}
+        tabIndex={-1}
       >
         {title}
       </DropdownButton>
@@ -90,10 +85,10 @@ export const Dropdown = ({
       {open && (
         <MenuItemList
           aria-label={intl.formatMessage({
-            id: "otpUi.LocationField.suggestedLocations",
             defaultMessage: "Suggested locations",
             description:
-              "Text to show as a label for the dropdown list of locations"
+              "Text to show as a label for the dropdown list of locations",
+            id: "otpUi.LocationField.suggestedLocations"
           })}
           id={listBoxIdentifier}
         >

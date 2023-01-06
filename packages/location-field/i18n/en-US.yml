@@ -27,7 +27,7 @@ otpUi:
     other: Other
     recentlySearched: Recently Searched
     suggestedLocations: Suggested locations
-    suggestedLocationsLong: Open the list of {locationType} location suggestions
+    suggestedLocationsLong: Toggle displaying the list of suggested locations
     stations: Stations
     stops: Stops
     useCurrentLocation: Use Current Location

@@ -439,8 +439,8 @@ const LocationField = ({
           bgColor={layerColorMap.stations}
           centeredText
           header
-          role="group"
           key="gtfs-stations-header"
+          role="heading"
         >
           <FormattedMessage
             description="Text for header above Stations"
@@ -455,8 +455,8 @@ const LocationField = ({
           bgColor={layerColorMap.stops}
           centeredText
           header
-          role="group"
           key="gtfs-stops-header"
+          role="heading"
         >
           <FormattedMessage
             description="Text for header above Stops"
@@ -471,8 +471,8 @@ const LocationField = ({
           bgColor="#333"
           centeredText
           header
-          role="group"
           key="other-header"
+          role="heading"
         >
           <FormattedMessage
             description="Text for header above the 'other'"
@@ -488,7 +488,12 @@ const LocationField = ({
   if (nearbyStops.length > 0 && !suppressNearby) {
     // Add the menu sub-heading (not a selectable item)
     menuItems.push(
-      <S.MenuItem centeredText header key="ns-header" role="group">
+      <S.MenuItem
+        key="ns-header"
+        role="heading"
+        centeredText
+        header
+      >
         <FormattedMessage
           description="Text for header above nearby stops"
           id="otpUi.LocationField.nearby"
@@ -536,7 +541,12 @@ const LocationField = ({
   if (sessionSearches.length > 0) {
     // Add the menu sub-heading (not a selectable item)
     menuItems.push(
-      <S.MenuItem header centeredText role="group" key="ss-header">
+      <S.MenuItem
+        key="ss-header"
+        centeredText
+        header
+        role="heading"
+      >
         <FormattedMessage
           description="Text for header above recently searched items"
           id="otpUi.LocationField.recentlySearched"
@@ -576,7 +586,12 @@ const LocationField = ({
   if (userLocationsAndRecentPlaces.length > 0 && showUserSettings) {
     // Add the menu sub-heading (not a selectable item)
     menuItems.push(
-      <S.MenuItem header centeredText key="mp-header" role="group">
+      <S.MenuItem
+        key="mp-header"
+        role="heading"
+        centeredText
+        header
+      >
         <FormattedMessage
           description="Text for header above user-saved places"
           id="otpUi.LocationField.myPlaces"
@@ -752,7 +767,6 @@ const LocationField = ({
         <S.Dropdown
           input={<>{textControl}{clearButton}</>}
           listBoxIdentifier={listBoxId}
-          locationType={locationType}
           onToggle={onDropdownToggle}
           open={menuVisible}
           title={<LocationIconComponent locationType={locationType} />}
