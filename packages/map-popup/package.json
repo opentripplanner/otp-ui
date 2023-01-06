@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/map-popup",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A component for displaying map popup contents",
   "main": "lib/index.js",
   "module": "esm/index.js",
