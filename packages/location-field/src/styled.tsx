@@ -177,6 +177,7 @@ export const MenuItem = ({
   disabled = false,
   fgColor = null,
   header = false,
+  level = 1,
   onClick = null,
   role = undefined
 }: {
@@ -187,6 +188,7 @@ export const MenuItem = ({
   disabled?: boolean;
   fgColor?: string;
   header?: boolean;
+  level?: number;
   onClick?: () => void;
   role?: string;
 }): React.ReactElement => {
@@ -196,6 +198,7 @@ export const MenuItem = ({
 
   return header ? (
     <MenuItemHeader
+      aria-level={level}
       bgColor={bgColor}
       centeredText={centeredText}
       className="header"
