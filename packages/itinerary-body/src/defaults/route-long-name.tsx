@@ -25,7 +25,7 @@ export default function RouteLongName({
   style
 }: Props): ReactElement {
   const { headsign, routeLongName } = leg;
-  const badGtfs = compareTwoStrings(headsign || "", routeLongName || "") > 0.5;
+  const badGtfs = compareTwoStrings(headsign || "", routeLongName || "") > 0.25;
   return (
     <span className={className} style={style}>
       {!badGtfs && headsign ? (
