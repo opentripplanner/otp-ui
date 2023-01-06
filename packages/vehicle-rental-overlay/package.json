@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/vehicle-rental-overlay",
-  "version": "2.0.4",
+  "version": "2.1.0",
   "description": "A map overlay to show vehicle rentals from a specific company",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -19,15 +19,16 @@
     "url": "git+https://github.com/opentripplanner/otp-ui.git"
   },
   "dependencies": {
-    "@opentripplanner/base-map": "^3.0.4",
-    "@opentripplanner/core-utils": "^7.0.5",
-    "@opentripplanner/from-to-location-picker": "^2.1.4",
+    "@opentripplanner/base-map": "^3.0.8",
+    "@opentripplanner/core-utils": "^8.0.0",
+    "@opentripplanner/from-to-location-picker": "^2.1.5",
+    "@opentripplanner/map-popup": "^1.0.0",
     "@styled-icons/fa-solid": "^10.34.0",
     "flat": "^5.0.2",
     "lodash.memoize": "^4.1.2"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^4.0.2"
+    "@opentripplanner/types": "^4.0.4"
   },
   "peerDependencies": {
     "react": "^16.14.0",

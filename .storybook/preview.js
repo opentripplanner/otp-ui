@@ -4,6 +4,7 @@ import { withReactIntl } from "storybook-react-intl/dist/cjs/withReactIntl";
 import locationFieldHandlers from "../packages/location-field/src/mocks/handlers";
 import itineraryBodyHandlers from "../packages/itinerary-body/src/__mocks__/handlers";
 import geocoderHandlers from "../packages/geocoder/src/test-fixtures/handlers";
+import tileLayerHandlers from '../packages/otp2-tile-overlay/src/mocks/handlers'
 
 import { reactIntl } from './react-intl.js';
 
@@ -12,7 +13,8 @@ if (typeof global.process === "undefined") {
   const worker = setupWorker(
     ...locationFieldHandlers,
     ...itineraryBodyHandlers,
-    ...geocoderHandlers
+    ...geocoderHandlers,
+    ...tileLayerHandlers
   );
   worker.start({ onUnhandledRequest: "bypass" });
 }

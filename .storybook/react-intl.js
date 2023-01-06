@@ -20,6 +20,7 @@ const packages = [
   "itinerary-body",
   "location-field",
   "printable-itinerary",
+  "map-popup",
   "stops-overlay",
   "transit-vehicle-overlay",
   "trip-details",
