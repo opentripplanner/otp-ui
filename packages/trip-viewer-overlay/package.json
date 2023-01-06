@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@mapbox/polyline": "^1.1.0",
-    "@opentripplanner/base-map": "^3.0.8",
+    "@opentripplanner/base-map": "^3.0.9",
     "@opentripplanner/core-utils": "^8.0.0"
   },
   "peerDependencies": {

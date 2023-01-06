@@ -2832,16 +2832,6 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
-"@opentripplanner/map-popup@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/map-popup/-/map-popup-1.0.0.tgz#537faa42de5119ab6667e7147b81b868f8832238"
-  integrity sha512-VEaVUJ0uYbLqPTLfFQ/bpHGSCxn44uWagBEq7Z2RTD5UlCEemIR+3g+efVANhIM5Lq1cRRUKbneno0mYdM0QvA==
-  dependencies:
-    "@opentripplanner/base-map" "^3.0.7"
-    "@opentripplanner/core-utils" "^8.0.0"
-    "@opentripplanner/from-to-location-picker" "^2.1.5"
-    flat "^5.0.2"
-
 "@pmmmwh/react-refresh-webpack-plugin@^0.5.1":
   version "0.5.4"
   resolved "https://registry.yarnpkg.com/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.5.4.tgz#df0d0d855fc527db48aac93c218a0bf4ada41f99"
