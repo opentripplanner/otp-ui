@@ -14,7 +14,7 @@
   "dependencies": {
     "@conveyal/lonlat": "^1.4.1",
     "@mapbox/polyline": "^1.1.0",
-    "@opentripplanner/geocoder": "^1.3.2",
+    "@opentripplanner/geocoder": "^1.3.4",
     "@styled-icons/foundation": "^10.34.0",
     "@turf/along": "^6.0.1",
     "bowser": "^2.7.0",
@@ -30,7 +30,7 @@
     "tsc": "tsc"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^4.0.2",
-    "@types/chroma-js": "^2.1.4"
+    "@types/chroma-js": "^2.1.4",
+    "@opentripplanner/types": "^4.0.4"
   }
 }

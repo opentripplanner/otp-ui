@@ -24,6 +24,7 @@ module.exports = {
   ],
   moduleNameMapper: {
     "\\.(s?css|less)$": "identity-obj-proxy",
+    "\\.(pbf)$": "<rootDir>/__mocks__/file-mock.js",
     "\\.(svg)$": "<rootDir>/__mocks__/file-mock.js"
   },
   testPathIgnorePatterns: ["<rootDir>/packages/(?:.+?)/(esm|lib)/"],
