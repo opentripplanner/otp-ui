@@ -71,7 +71,7 @@ const ModeSettingRenderer = ({
           options={setting.options.map(o => ({
             ...o,
             text: intl.formatMessage({
-              id: `otpUi.modeSelector.settings.${setting.key}-options.${o.value}`,
+              id: `otpUi.modeSelector.settings.${setting.key}-options-${o.value}`,
               description: `Metro Mode Selector Setting (${setting.key}) Option Label (${o.value})`
             })
           }))}
