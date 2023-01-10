@@ -58,7 +58,7 @@ const StationHubDetails = ({ station }: { station: Station }) => {
   )
 }
 
-const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: ({ stopId }: { stopId: string }) => void; }) => {
+const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: () => void; }) => {
   return (
     <BaseMapStyled.PopupRow>
         <strong>
@@ -71,7 +71,7 @@ const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: ({ stop
             }}
           />
         </strong>
-      <S.ViewStopButton onClick={() => setViewedStop({ stopId: id })}>
+      <S.ViewStopButton onClick={setViewedStop}>
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.MapPopup.stopViewer"]}
           description="Text for link that opens the stop viewer"
@@ -114,7 +114,7 @@ export function MapPopup({ configCompanies, entity, getEntityName, setLocation, 
       {entityIsStationHub && <StationHubDetails station={entity} />}
 
       {/* render stop viewer link if available */}
-      {setViewedStop && !bikesAvailablePresent && <StopDetails id={stopId} setViewedStop={setViewedStop} />}
+      {setViewedStop && !bikesAvailablePresent && <StopDetails id={stopId} setViewedStop={() => setViewedStop({ stopId: entity.id })} />}
 
       {/* The "Set as [from/to]" ButtonGroup */}
       {setLocation && (
