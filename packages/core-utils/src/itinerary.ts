@@ -501,15 +501,15 @@ const CARBON_INTENSITY_DEFAULTS = {
 };
 
 /**
- * @param  {itinerary} itinerary OTP trip itinierary
+ * @param  {itinerary} itinerary OTP trip itinierary, only legs is required.
  * @param  {carbonIntensity} carbonIntensity carbon intensity by mode in grams/meter
  * @param {units} units units to be used in return value
  * @return Amount of carbon in chosen unit
  */
 export function calculateEmissions(
-  itinerary: Itinerary,
+  itinerary: Partial<Itinerary> & Pick<Itinerary, "legs">,
   carbonIntensity: Record<string, number> = {},
-  units?: string
+  units?: "ounce" | "kilogram" | "pound" | "gram"
 ): number {
   // Apply defaults for any values that we don't have.
   const carbonIntensityWithDefaults = {
