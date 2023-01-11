@@ -25,10 +25,13 @@ export default function RouteLongName({
   style
 }: Props): ReactElement {
   const { headsign, routeLongName } = leg;
-  const badGtfs = compareTwoStrings(headsign || "", routeLongName || "") > 0.25;
+  // Hide route long name if it contains similar information to the headsign
+  const hideRouteLongName =
+    compareTwoStrings(headsign || "", routeLongName || "") > 0.25 ||
+    !routeLongName;
   return (
     <span className={className} style={style}>
-      {!badGtfs && headsign ? (
+      {!hideRouteLongName && headsign ? (
         <FormattedMessage
           defaultMessage={
             defaultMessages["otpUi.TransitLegBody.routeDescription"]
@@ -41,10 +44,8 @@ export default function RouteLongName({
             toPrefix
           }}
         />
-      ) : badGtfs ? (
-        headsign
       ) : (
-        routeLongName
+        headsign || routeLongName
       )}
     </span>
   );
