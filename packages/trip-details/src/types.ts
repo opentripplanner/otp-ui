@@ -10,7 +10,7 @@ export interface CaloriesDetailsProps {
 }
 
 export interface CO2ConfigType {
-  carbonIntensity?: { [index: string]: number };
+  carbonIntensity?: Record<string, number>;
   units?: MassUnitOption;
   enabled?: boolean;
 }
