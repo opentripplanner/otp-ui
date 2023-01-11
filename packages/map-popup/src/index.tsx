@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 
 import { Styled as BaseMapStyled } from "@opentripplanner/base-map";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
@@ -94,7 +94,7 @@ type Props = {
 /**
  * Renders a map popup for a stop, scooter, or shared bike
  */
-export function MapPopup({ configCompanies, entity, getEntityName, setLocation, setViewedStop, }: Props): JSX.Element {
+export function MapPopup({ configCompanies, entity, getEntityName, setLocation, setViewedStop }: Props): JSX.Element {
   const intl = useIntl()
   if (!entity) return <></>
 
@@ -114,7 +114,7 @@ export function MapPopup({ configCompanies, entity, getEntityName, setLocation, 
       {entityIsStationHub && <StationHubDetails station={entity} />}
 
       {/* render stop viewer link if available */}
-      {setViewedStop && !bikesAvailablePresent && <StopDetails id={stopId} setViewedStop={() => setViewedStop({ stopId: entity.id })} />}
+      {setViewedStop && !bikesAvailablePresent && <StopDetails id={stopId} setViewedStop={useCallback(() => setViewedStop({ stopId: entity.id }), [entity.id])} />}
 
       {/* The "Set as [from/to]" ButtonGroup */}
       {setLocation && (
