@@ -4,9 +4,10 @@ import {
   Config,
   ElevationProfile,
   FlexBookingInfo,
-  Itinerary,
+  ItineraryOnlyLegsRequired,
   LatLngArray,
   Leg,
+  MassUnitOption,
   Money,
   Place,
   Step,
@@ -212,7 +213,9 @@ export function getCompanyFromLeg(leg: Leg): string {
   return null;
 }
 
-export function getItineraryBounds(itinerary: Itinerary): LatLngArray[] {
+export function getItineraryBounds(
+  itinerary: ItineraryOnlyLegsRequired
+): LatLngArray[] {
   let coords = [];
   itinerary.legs.forEach(leg => {
     const legCoords = polyline
@@ -407,7 +410,7 @@ export function getTNCLocation(leg: Leg, type: string): string {
 }
 
 export function calculatePhysicalActivity(
-  itinerary: Itinerary
+  itinerary: ItineraryOnlyLegsRequired
 ): {
   bikeDuration: number;
   caloriesBurned: number;
@@ -433,7 +436,9 @@ export function calculatePhysicalActivity(
  * these values and currency info.
  * It is assumed that the same currency is used for all TNC legs.
  */
-export function calculateTncFares(itinerary: Itinerary): TncFare {
+export function calculateTncFares(
+  itinerary: ItineraryOnlyLegsRequired
+): TncFare {
   return itinerary.legs
     .filter(leg => leg.mode === "CAR" && leg.hailedCar && leg.tncData)
     .reduce(
@@ -508,9 +513,9 @@ const CARBON_INTENSITY_DEFAULTS = {
  */
 export function calculateEmissions(
   // This type makes all the properties from Itinerary optional except legs.
-  itinerary: Partial<Itinerary> & Pick<Itinerary, "legs">,
+  itinerary: ItineraryOnlyLegsRequired,
   carbonIntensity: Record<string, number> = {},
-  units?: "ounce" | "kilogram" | "pound" | "gram"
+  units?: MassUnitOption
 ): number {
   // Apply defaults for any values that we don't have.
   const carbonIntensityWithDefaults = {
