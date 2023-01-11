@@ -9,7 +9,7 @@ import { EventData } from "mapbox-gl";
 import React, { useEffect, useState } from "react";
 import { Layer, Source, useMap } from "react-map-gl";
 
-import StationPopup from "./StationPopup";
+import StationPopup from "@opentripplanner/map-popup";
 import { BaseBikeRentalIcon, StationMarker } from "./styled";
 
 // TODO: Make configurable?
@@ -206,8 +206,11 @@ const VehicleRentalOverlay = ({
                     setClickedVehicle(null);
                     setLocation(location);
                   }}
-                  getStationName={getStationName}
-                  station={station}
+                  getEntityName={
+                    // @ts-expect-error no stop support. Avoid a breaking change
+                    getStationName && ((s, cc) => getStationName(cc, s))
+                  }
+                  entity={station}
                 />
               }
               position={[station.y, station.x]}
@@ -238,12 +241,15 @@ const VehicleRentalOverlay = ({
         >
           <StationPopup
             configCompanies={configCompanies}
-            getStationName={getStationName}
+            getEntityName={
+              // @ts-expect-error no stop support. Avoid a breaking change
+              getStationName && ((s, cc) => getStationName(cc, s))
+            }
             setLocation={location => {
               setClickedVehicle(null);
               setLocation(location);
             }}
-            station={{
+            entity={{
               ...clickedVehicle,
               networks: JSON.parse(clickedVehicle.networks)
             }}
@@ -254,3 +260,4 @@ const VehicleRentalOverlay = ({
   );
 };
 export default VehicleRentalOverlay;
+export { StationPopup };

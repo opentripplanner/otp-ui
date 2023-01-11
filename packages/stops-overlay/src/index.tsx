@@ -4,8 +4,7 @@ import { EventData } from "mapbox-gl";
 import { Layer, Source, useMap } from "react-map-gl";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 
-import StopPopup from "./default-stop-popup";
-import * as Styled from "./styled";
+import StopPopup from "@opentripplanner/map-popup";
 
 type Props = {
   /**
@@ -179,7 +178,7 @@ const StopsOverlay = (props: Props): JSX.Element => {
               setNullStop();
               setViewedStop(stop);
             }}
-            stop={clickedStop}
+            entity={clickedStop}
           />
         </Popup>
       )}
@@ -218,4 +217,4 @@ const StopsOverlay = (props: Props): JSX.Element => {
 
 export default StopsOverlay;
 
-export { Styled, Props as StopProps };
+export { Props as StopProps };
