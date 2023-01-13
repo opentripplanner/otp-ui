@@ -41,19 +41,25 @@ export default class TripDetail extends Component<Props, State> {
     const { icon, summary, description } = this.props;
     const { expanded } = this.state;
     return (
-      <S.TripDetail>
-        <S.TripDetailIcon>{icon}</S.TripDetailIcon>
+      <S.TripDetail role="group">
+        <S.TripDetailIcon role="presentation">{icon}</S.TripDetailIcon>
         <S.TripDetailSummary>
           {summary}
           {description && (
-            <S.ExpandButton onClick={this.toggle}>
+            <S.ExpandButton id="expand-button" onClick={this.toggle}>
               <QuestionCircle size="0.92em" />
             </S.ExpandButton>
           )}
         </S.TripDetailSummary>
         <AnimateHeight duration={300} height={expanded ? "auto" : 0}>
-          <S.TripDetailDescription>
-            <S.HideButton onClick={this.onHideClick}>
+          <S.TripDetailDescription
+            aria-expanded={expanded}
+            aria-labelledby="expand-button"
+          >
+            {/** This button isn't needed for screen readers as the main expand-button is
+             * more convineient.
+             */}
+            <S.HideButton role="presentation" onClick={this.onHideClick}>
               <TimesCircle size="0.92em" />
             </S.HideButton>
             {description}

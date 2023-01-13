@@ -89,9 +89,10 @@ export const TripDetails = styled.div`
 
 export const TripDetailsBody = styled.div``;
 
-export const TripDetailsHeader = styled.div`
+export const TripDetailsHeader = styled.h2`
   font-size: 18px;
   font-weight: 600;
+  margin: 0;
 `;
 
 export const TripDetailSummary = styled.div`
