@@ -57,7 +57,7 @@ export default class TripDetail extends Component<Props, State> {
             aria-labelledby="expand-button"
           >
             {/** This button isn't needed for screen readers as the main expand-button is
-             * more convineient.
+             * more convenient.
              */}
             <S.HideButton role="presentation" onClick={this.onHideClick}>
               <TimesCircle size="0.92em" />
