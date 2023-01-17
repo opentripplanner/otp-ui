@@ -9,6 +9,7 @@ type Props = {
   description?: ReactElement | string;
   icon: ReactElement;
   summary: ReactElement | string;
+  shouldAnimate: boolean;
 };
 
 type State = {
@@ -38,7 +39,7 @@ export default class TripDetail extends Component<Props, State> {
   };
 
   render(): ReactElement {
-    const { icon, summary, description } = this.props;
+    const { icon, summary, description, shouldAnimate = true } = this.props;
     const { expanded } = this.state;
     return (
       <S.TripDetail>
@@ -51,7 +52,10 @@ export default class TripDetail extends Component<Props, State> {
             </S.ExpandButton>
           )}
         </S.TripDetailSummary>
-        <AnimateHeight duration={300} height={expanded ? "auto" : 0}>
+        <AnimateHeight
+          duration={shouldAnimate ? 300 : 0}
+          height={expanded ? "auto" : 0}
+        >
           <S.TripDetailDescription>
             <S.HideButton onClick={this.onHideClick}>
               <TimesCircle size="0.92em" />
