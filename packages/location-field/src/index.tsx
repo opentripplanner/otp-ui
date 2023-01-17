@@ -622,7 +622,7 @@ const LocationField = ({
     optionIcon = currentPositionUnavailableIcon;
     optionTitle = intl.formatMessage({
       id: "otpUi.LocationField.currentLocationUnavailable"
-    }, { error: typeof currentPosition.error === "string" ? currentPosition.error : currentPosition.error.message });
+    }, { error: !currentPosition ? "<unknown>" : typeof currentPosition.error === "string" ? currentPosition.error : currentPosition.error.message });
     positionUnavailable = true;
   }
 

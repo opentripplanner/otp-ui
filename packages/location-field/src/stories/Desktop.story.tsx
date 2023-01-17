@@ -65,6 +65,16 @@ export const Blank = (): JSX.Element => (
   />
 );
 
+export const LocationUnavailable = (): JSX.Element => (
+  <LocationField
+    geocoderConfig={geocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    inputPlaceholder="Select from location"
+    locationType="from"
+    onLocationSelected={onLocationSelected}
+  />
+);
+
 export const HereGeocoder = (): JSX.Element => (
   <LocationField
     currentPosition={currentPosition}
