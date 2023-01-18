@@ -188,6 +188,7 @@ export const MenuItem = ({
     <MenuItemLi disabled={disabled} role="none">
       <MenuItemA
         active={active}
+        aria-disabled={disabled}
         onClick={handleClick}
         role="option"
         tabIndex={-1}
@@ -255,4 +256,12 @@ export const StopName = styled.div``;
 
 export const StopRoutes = styled.div`
   font-size: 9px;
+`;
+
+export const HiddenContent = styled.span`
+  clip: rect(0, 0, 0, 0);
+  display: block;
+  height: 0;
+  overflow: hidden;
+  width: 0;
 `;

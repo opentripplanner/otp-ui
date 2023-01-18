@@ -606,21 +606,21 @@ const LocationField = ({
   /* 4) Process the current location */
   let locationSelected;
   let optionIcon;
-  let optionTitle;
   let positionUnavailable;
+  const defaultPositionTitle = intl.formatMessage({
+      id: "otpUi.LocationField.useCurrentLocation"
+    });
+  let positionUnavailableTitle;
 
   if (currentPosition && !currentPosition.error) {
     // current position detected successfully
     locationSelected = useCurrentLocation;
     optionIcon = currentPositionIcon;
-    optionTitle = intl.formatMessage({
-      id: "otpUi.LocationField.useCurrentLocation"
-    });
     positionUnavailable = false;
   } else {
     // error detecting current position
     optionIcon = currentPositionUnavailableIcon;
-    optionTitle = intl.formatMessage({
+    positionUnavailableTitle = intl.formatMessage({
       id: "otpUi.LocationField.currentLocationUnavailable"
     }, { error: !currentPosition ? "<unknown>" : typeof currentPosition.error === "string" ? currentPosition.error : currentPosition.error.message });
     positionUnavailable = true;
@@ -631,6 +631,9 @@ const LocationField = ({
 
   if (!suppressNearby) {
     // Create and add the option item to the menu items array
+
+    // Always show "Use Current Location" to screen readers.
+    const TitleWrapper = positionUnavailable ? S.HiddenContent : "span";
     const currentLocationOption = (
       <Option
         disabled={positionUnavailable}
@@ -638,7 +641,25 @@ const LocationField = ({
         isActive={itemIndex === activeIndex}
         key={optionKey++}
         onClick={locationSelected}
-        title={optionTitle}
+        title={(
+          <>
+            <TitleWrapper>
+              {/* When enabled, this should read "Use Current Location".
+                  When disabled, screen readers should read something like:
+                  "(disabled) Use Current Location - (Status) Current location unavailable...".
+                  With disabled and with CSS stripped, this should still read like:
+                  "Use current location - Current location unavailable..." */}
+              {defaultPositionTitle}
+              {positionUnavailable && " - "}
+            </TitleWrapper>
+            <span role="status">
+              {/* Use a status role (non-intrusive) to report position/geocoder failures.
+                  The status is shown to all users.
+                  (Note that the status container should be always present so it can be monitored by assistive technology) */}
+              {positionUnavailableTitle}
+            </span>
+          </>
+        )}
       />
     );
     menuItems.push(currentLocationOption);
