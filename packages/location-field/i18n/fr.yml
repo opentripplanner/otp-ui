@@ -28,8 +28,7 @@ otpUi:
     recentlySearched: Recherches récentes
     resultsFound: >
       {count, plural, =0 {Aucun résultat} =1 {# résultat} other {# résultats}} du
-      géocodeur pour {input, select, null {votre requête} other {"{input}"}
-      }
+      géocodeur pour {input, select, null {votre requête} other {"{input}"}}
     stations: Stations
     stops: Arrêts
     useCurrentLocation: Utiliser ma position actuelle
