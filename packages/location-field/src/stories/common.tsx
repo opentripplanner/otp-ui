@@ -24,6 +24,12 @@ export const hereGeocoderConfig = {
   focusPoint: { lat: 47.67552, lng: -122.31831 }
 };
 
+export const badGeocoderConfig = {
+  type: "BAD",
+  apiKey: "placeholder_here_key",
+  focusPoint: { lat: 47.67552, lng: -122.31831 }
+};
+
 export const getCurrentPosition = action("getCurrentPosition");
 export const onLocationSelected = action("onLocationSelected");
 export const selectedLocation = { lat: 0, lon: 0, name: "123 Main St" };

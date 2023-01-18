@@ -20,12 +20,15 @@ otpUi:
     noResultsFound: >
       No results found for {input, select,
         null {your query}
-        other {{input}}
+        other {"{input}"}
       }
     placeNameWithDetails: "{placeName} ({details})"
     # Note to translator: This is an implicit plural (as in "Other results").
     other: Other
     recentlySearched: Recently Searched
+    resultsFound: >
+      {count, plural, =0 {No results} =1 {# geocoder result} other {# geocoder results}}
+      found for {input, select, null {your query} other {{input}}}
     stations: Stations
     stops: Stops
     useCurrentLocation: Use Current Location

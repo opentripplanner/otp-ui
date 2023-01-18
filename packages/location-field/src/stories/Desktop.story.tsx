@@ -5,6 +5,7 @@ import { Ship } from "@styled-icons/fa-solid/Ship";
 import { Bus } from "@styled-icons/fa-solid/Bus";
 import LocationField from "..";
 import {
+  badGeocoderConfig,
   currentPosition,
   geocoderConfig,
   getCurrentPosition,
@@ -79,6 +80,17 @@ export const HereGeocoder = (): JSX.Element => (
   <LocationField
     currentPosition={currentPosition}
     geocoderConfig={hereGeocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    inputPlaceholder="Select from location"
+    locationType="from"
+    onLocationSelected={onLocationSelected}
+  />
+);
+
+export const BadGeocoder = (): JSX.Element => (
+  <LocationField
+    currentPosition={currentPosition}
+    geocoderConfig={badGeocoderConfig}
     getCurrentPosition={getCurrentPosition}
     inputPlaceholder="Select from location"
     locationType="from"

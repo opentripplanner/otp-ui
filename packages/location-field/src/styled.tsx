@@ -1,6 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
+export const HiddenContent = styled.span`
+  clip: rect(0, 0, 0, 0);
+  display: inline-block;
+  height: 0;
+  overflow: hidden;
+  width: 0;
+`;
+
 export const BaseButton = styled.button`
   border: none;
   background: none;
@@ -30,7 +38,6 @@ type MenuItemListProps = {
 };
 
 export const MenuItemList = styled.ul.attrs((props: MenuItemListProps) => ({
-  "aria-label": "Search Results",
   id: props.uniqueId,
   role: "listbox"
 }))<MenuItemListProps>`
@@ -59,6 +66,7 @@ export const Dropdown = ({
   locationType,
   onToggle = () => {},
   open,
+  status,
   title
 }: {
   children: React.ReactNode;
@@ -66,6 +74,7 @@ export const Dropdown = ({
   locationType: string;
   open: boolean;
   onToggle?: () => void;
+  status: string;
   title: React.ReactNode;
 }): React.ReactElement => {
   const dropdownButtonAriaLabel = `List the suggested ${locationType} locations as you type`;
@@ -74,6 +83,7 @@ export const Dropdown = ({
       <DropdownButton aria-label={dropdownButtonAriaLabel} onClick={onToggle}>
         {title}
       </DropdownButton>
+      <HiddenContent role="status">{status}</HiddenContent>
       {open && (
         <MenuItemList uniqueId={listBoxIdentifier}>{children}</MenuItemList>
       )}
@@ -185,10 +195,15 @@ export const MenuItem = ({
       {children}
     </MenuItemHeader>
   ) : (
-    <MenuItemLi disabled={disabled} role="none">
+    <MenuItemLi
+      // Hide disabled choices from screen readers
+      // (a relevant status is already provided)
+      aria-hidden={disabled}
+      disabled={disabled}
+      role={disabled ? undefined : "none"}
+    >
       <MenuItemA
         active={active}
-        aria-disabled={disabled}
         onClick={handleClick}
         role="option"
         tabIndex={-1}
@@ -256,12 +271,4 @@ export const StopName = styled.div``;
 
 export const StopRoutes = styled.div`
   font-size: 9px;
-`;
-
-export const HiddenContent = styled.span`
-  clip: rect(0, 0, 0, 0);
-  display: block;
-  height: 0;
-  overflow: hidden;
-  width: 0;
 `;
