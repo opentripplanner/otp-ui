@@ -12,6 +12,7 @@ type Props = {
   summary: ReactElement | string;
 };
 
+// TODO: Remove these two helper methods by moving to semantically correct HTML
 /**
  * Copied from https://stackoverflow.com/questions/50940640/how-to-determine-if-jest-is-running-the-code-or-not
  */
@@ -44,15 +45,21 @@ const TripDetail = ({ icon, summary, description }: Props): JSX.Element => {
   return (
     <S.TripDetail role="group">
       <S.TripDetailIcon role="presentation">{icon}</S.TripDetailIcon>
+      {/* TODO: Adjust the summary and description to be a `summary`/`details` pair, therefore semantically correct */}
+      {/* https://github.com/opentripplanner/otp-ui/pull/530#discussion_r1074006057 */}
       <S.TripDetailSummary>
         {summary}
         {description && (
           <S.ExpandButton
-            aria-label={intl.formatMessage({
-              id: expanded
-                ? "otpUi.TripDetails.hideDetail"
-                : "otpUi.TripDetails.showDetail"
-            })}
+            aria-label={
+              expanded
+                ? intl.formatMessage({
+                    id: "otpUi.TripDetails.hideDetail"
+                  })
+                : intl.formatMessage({
+                    id: "otpUi.TripDetails.showDetail"
+                  })
+            }
             aria-controls={id}
             aria-expanded={expanded}
             id="expand-button"
