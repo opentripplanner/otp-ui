@@ -12,7 +12,8 @@ import {
   hereGeocoderConfig,
   layerColorMap,
   onLocationSelected,
-  selectedLocation
+  selectedLocation,
+  unreachableGeocoderConfig
 } from "./common";
 
 import mockedGeocoderResponse from "../mocks/autocomplete.json";
@@ -87,10 +88,21 @@ export const HereGeocoder = (): JSX.Element => (
   />
 );
 
-export const BadGeocoder = (): JSX.Element => (
+export const GeocoderNoResults = (): JSX.Element => (
   <LocationField
     currentPosition={currentPosition}
     geocoderConfig={badGeocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    inputPlaceholder="Select from location"
+    locationType="from"
+    onLocationSelected={onLocationSelected}
+  />
+);
+
+export const GeocoderUnreachable = (): JSX.Element => (
+  <LocationField
+    currentPosition={currentPosition}
+    geocoderConfig={unreachableGeocoderConfig}
     getCurrentPosition={getCurrentPosition}
     inputPlaceholder="Select from location"
     locationType="from"

@@ -18,12 +18,14 @@ import {
 import { GeocodedFeature, Stop, UserLocation } from "@opentripplanner/types";
 import LocationField from "..";
 import {
+  badGeocoderConfig,
   currentPosition,
   geocoderConfig,
   getCurrentPosition,
   layerColorMap,
   onLocationSelected,
-  selectedLocation
+  selectedLocation,
+  unreachableGeocoderConfig
 } from "./common";
 import * as LocationFieldClasses from "../styled";
 
@@ -123,6 +125,38 @@ export const Blank = (): JSX.Element => (
   <LocationField
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    isStatic
+    locationType="from"
+    onLocationSelected={onLocationSelected}
+  />
+);
+
+export const LocationUnavailable = (): JSX.Element => (
+  <LocationField
+    geocoderConfig={geocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    isStatic
+    locationType="from"
+    onLocationSelected={onLocationSelected}
+  />
+);
+
+export const GeocoderNoResults = (): JSX.Element => (
+  <LocationField
+    currentPosition={currentPosition}
+    geocoderConfig={badGeocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    isStatic
+    locationType="from"
+    onLocationSelected={onLocationSelected}
+  />
+);
+
+export const GeocoderUnreachable = (): JSX.Element => (
+  <LocationField
+    currentPosition={currentPosition}
+    geocoderConfig={unreachableGeocoderConfig}
     getCurrentPosition={getCurrentPosition}
     isStatic
     locationType="from"

@@ -140,7 +140,7 @@ const LocationField = ({
   const [activeIndex, setActiveIndex] = useState(null);
   const [stateGeocodedFeatures, setGeocodedFeatures] = useState([]);
   const [menuVisible, setMenuVisible] = useState(false);
-  const [stateMessage, setMessage] = useState<string>(null);
+  const [stateMessage, setMessage] = useState(null);
   const [stateValue, setValue] = useState(getValueFromLocation());
 
   const inputRef = useRef(null);
@@ -201,6 +201,11 @@ const LocationField = ({
       )
       .catch((err: unknown) => {
         console.error(err);
+        const message = intl.formatMessage(
+          { id: "otpUi.LocationField.geocoderUnreachable" },
+          { error: err.toString() }
+        );
+        setMessage(message);
       });
   }), []);
 
@@ -623,25 +628,24 @@ const LocationField = ({
   /* 4) Process the current location */
   let locationSelected;
   let optionIcon;
+  let optionTitle;
   let positionUnavailable;
-  const defaultPositionTitle = intl.formatMessage({
-      id: "otpUi.LocationField.useCurrentLocation"
-    });
-  let positionUnavailableTitle: string;
 
   if (currentPosition && !currentPosition.error) {
     // current position detected successfully
     locationSelected = useCurrentLocation;
     optionIcon = currentPositionIcon;
-    positionUnavailable = false;
+    optionTitle = intl.formatMessage({
+      id: "otpUi.LocationField.useCurrentLocation"
+    });    positionUnavailable = false;
   } else {
     // error detecting current position
     optionIcon = currentPositionUnavailableIcon;
-    positionUnavailableTitle = intl.formatMessage({
+    optionTitle = intl.formatMessage({
       id: "otpUi.LocationField.currentLocationUnavailable"
     }, { error: !currentPosition ? undefined : typeof currentPosition.error === "string" ? currentPosition.error : currentPosition.error.message });
     positionUnavailable = true;
-    statusMessages.push(positionUnavailableTitle)
+    statusMessages.push(optionTitle)
   }
 
   // Add to the selection handler lookup (for use in onKeyDown)
@@ -649,38 +653,16 @@ const LocationField = ({
 
   if (!suppressNearby) {
     // Create and add the option item to the menu items array
-
-    // Always show "Use Current Location" to screen readers.
-    const TitleWrapper = positionUnavailable ? S.HiddenContent : "span";
-    const currentLocationOption = (
+    menuItems.push(
       <Option
         disabled={positionUnavailable}
         icon={optionIcon}
         isActive={itemIndex === activeIndex}
         key={optionKey++}
         onClick={locationSelected}
-        title={(
-          <>
-            <TitleWrapper>
-              {/* When enabled, this should read "Use Current Location".
-                  When disabled, screen readers should read something like:
-                  "(disabled) Use Current Location - (Status) Current location unavailable...".
-                  With disabled and with CSS stripped, this should still read like:
-                  "Use current location - Current location unavailable..." */}
-              {defaultPositionTitle}
-              {positionUnavailable && " - "}
-            </TitleWrapper>
-            <span role="status">
-              {/* Use a status role (non-intrusive) to report position/geocoder failures.
-                  The status is shown to all users.
-                  (Note that the status container should be always present so it can be monitored by assistive technology) */}
-              {positionUnavailableTitle}
-            </span>
-          </>
-        )}
+        title={optionTitle}
       />
     );
-    menuItems.push(currentLocationOption);
     itemIndex++;
   }
   if (message) {

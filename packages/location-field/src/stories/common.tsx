@@ -18,6 +18,12 @@ export const geocoderConfig = {
   type: "PELIAS"
 };
 
+export const unreachableGeocoderConfig = {
+  ...geocoderConfig,
+  // Putting an erroneous URL on purpose.
+  baseUrl: "https://ws-st.trimet1.org/pelias/v1"
+};
+
 export const hereGeocoderConfig = {
   type: "HERE",
   apiKey: "placeholder_here_key",
