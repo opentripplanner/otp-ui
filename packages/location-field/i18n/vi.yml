@@ -5,7 +5,7 @@ otpUi:
       "Không tìm thấy kết quả cho {input, select,\n null {vấn của bạn}\n\
       \ other {{input}}\n }\n"
     clearLocation: Vị trí rõ ràng
-    currentLocationUnavailable: Vị trí hiện tại không có sẵn ({error})
+    currentLocationUnavailable: Vị trí hiện tại không có sẵn{error, select, undefined {} other { ({error})}}
     fetchingLocation: Tìm nạp vị trí…
     geocoderUnreachable:
       Không thể đến bộ định vị địa lý{error, select, undefined

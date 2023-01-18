@@ -2,7 +2,7 @@ otpUi:
   LocationField:
     useCurrentLocation: Usar ubicación actual
     workLocation: Ubicación de trabajo
-    currentLocationUnavailable: Ubicación actual no disponible ({error})
+    currentLocationUnavailable: Ubicación actual no disponible{error, select, undefined {} other { ({error})}}
     fetchingLocation: Buscando la ubicación...
     beingTypingPrompt: Comience a escribir para buscar ubicaciones
     clearLocation: Restablecer la ubicación
