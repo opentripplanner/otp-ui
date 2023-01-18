@@ -129,6 +129,14 @@ export interface LocationFieldProps {
    */
   inputPlaceholder?: string;
   /**
+   * Setting this to true adds properties to the rendered input marking the field as required.
+   */
+  isRequired?: boolean;
+  /**
+   * Setting this to false adds properties to the rendered input marking the field as invalid.
+   */
+  isValid?: boolean;
+  /**
    * Mapping from Pelias layer to color. Allows results from different
    * Pelias sources to be shown in a different color.
    */
