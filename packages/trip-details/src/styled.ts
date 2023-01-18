@@ -25,9 +25,7 @@ export const CO2Description = styled.span``;
 
 export const CO2Summary = styled.span``;
 
-export const ExpandButton = styled(BaseButton).attrs({
-  "aria-label": "What does this mean?"
-})`
+export const ExpandButton = styled(BaseButton)`
   color: #00f;
   font-size: 16px;
   margin-left: 6px;

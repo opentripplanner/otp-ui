@@ -258,9 +258,9 @@ export function TripDetails({
 
   return (
     <S.TripDetails
+      aria-labelledby="trip-details-header"
       className={className}
       role="group"
-      aria-labelledby="trip-details-header"
     >
       {/* this can be presentation as S.TripDetails is already labeled by this */}
       <S.TripDetailsHeader id="trip-details-header" role="presentation">
