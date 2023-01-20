@@ -732,7 +732,7 @@ const LocationField = ({
     return (
       <div className={className}>
         <S.FormGroup>
-          <S.InputGroup>
+          <S.InputGroup role="group">
             <S.InputGroupAddon>
               <LocationIconComponent locationType={locationType} />
             </S.InputGroupAddon>
@@ -766,7 +766,7 @@ const LocationField = ({
   // default display mode with dropdown menu
   return (
     <S.FormGroup onBlur={onBlurFormGroup} className={className}>
-      <S.InputGroup>
+      <S.InputGroup role="group">
         {/* location field icon -- also serves as dropdown anchor */}
         <S.Dropdown
           input={<>{textControl}{clearButton}</>}
