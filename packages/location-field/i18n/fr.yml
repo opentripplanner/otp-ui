@@ -13,7 +13,8 @@ otpUi:
     clearLocation: Effacer le lieu
     currentLocationUnavailable: Position actuelle non disponible ({error})
     fetchingLocation: Chargement du lieu...
-    geocoderUnreachable: Géocodeur introuvable{error, select, undefined {} other { ({error})}}
+    geocoderUnreachable: Géocodeur introuvable{error, select, undefined {} other {
+      ({error})}}
     homeLocation: Domicile
     myPlaces: Mes lieux
     nearby: Arrêts à proximité
@@ -30,3 +31,5 @@ otpUi:
     stops: Arrêts
     useCurrentLocation: Utiliser ma position actuelle
     workLocation: Lieu de travail
+    suggestedLocations: Lieux suggérés
+    suggestedLocationsLong: Basculer l'affichage de la liste de lieux suggérés
