@@ -25,7 +25,10 @@ const ModeBar = styled.div`
   grid-row: 2;
 `;
 
-const ModeButtonItem = styled.button<{ ["aria-checked"]?: boolean }>`
+const ModeButtonItem = styled.button<{
+  ["aria-checked"]?: boolean;
+  fillModeIcons?: boolean;
+}>`
   display: inline-block;
   /* stylelint-disable-next-line property-no-unknown */
   aspect-ratio: 1/1;
@@ -61,7 +64,7 @@ const ModeButtonItem = styled.button<{ ["aria-checked"]?: boolean }>`
     width: 32px;
     height: 32px;
     vertical-align: middle;
-    fill: currentcolor;
+    ${props => props.fillModeIcons && "fill: currentcolor;"}
     color: ${props => (props["aria-checked"] ? "#eee" : "#084c8d")};
   }
 `;
@@ -99,6 +102,7 @@ interface ModeButtonProps {
   modeButton: ModeButtonDefinition;
   onSettingsUpdate: (QueryParamChangeEvent) => void;
   onToggle: () => void;
+  fillModeIcons?: boolean;
 }
 
 function ModeButton({
@@ -106,7 +110,8 @@ function ModeButton({
   floatingTarget,
   onToggle,
   disableHover,
-  onSettingsUpdate
+  onSettingsUpdate,
+  fillModeIcons
 }: ModeButtonProps) {
   const [open, setOpen] = useState(false);
   const arrowRef = useRef(null);
@@ -169,6 +174,7 @@ function ModeButton({
         aria-expanded={null}
         aria-checked={modeButton.enabled}
         aria-label={modeButton.label}
+        fillModeIcons={fillModeIcons || fillModeIcons !== false}
       >
         <modeButton.Icon size={32} />
       </ModeButtonItem>
@@ -215,13 +221,15 @@ interface Props {
   modeButtons: ModeButtonDefinition[];
   onSettingsUpdate: (QueryParamChangeEvent) => void;
   onToggleModeButton: (key) => void;
+  fillModeIcons?: boolean;
 }
 
 export default function ModeSelector({
   onToggleModeButton,
   onSettingsUpdate,
   modeButtons = [],
-  disableHover
+  disableHover,
+  fillModeIcons
 }: Props): ReactElement {
   const floatingTarget = useRef(null);
   return (
@@ -237,6 +245,7 @@ export default function ModeSelector({
             floatingTarget={floatingTarget.current}
             onSettingsUpdate={onSettingsUpdate}
             disableHover={disableHover}
+            fillModeIcons={fillModeIcons}
           />
         ))}
       </ModeBar>
