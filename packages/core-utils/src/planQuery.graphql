@@ -96,6 +96,17 @@ query PlanQuery(
 					distance
 					lat
 					lon
+          relativeDirection
+          absoluteDirection
+          stayOn
+          streetName
+          area
+          alerts{
+            alertHeaderText
+            alertDescriptionText
+            alertUrl
+            effectiveStartDate
+          }
 					elevationProfile {
 						distance
 						elevation
