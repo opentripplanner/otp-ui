@@ -9,8 +9,8 @@ import { LonLatOutput } from "@conveyal/lonlat";
 import PlanQuery from "./planQuery.graphql";
 
 type OTPQueryParams = {
-  to: LonLatOutput;
-  from: LonLatOutput;
+  to: LonLatOutput & { name?: string };
+  from: LonLatOutput & { name?: string };
   modes: Array<TransportMode>;
   modeSettings: ModeSetting[];
 };
@@ -194,8 +194,8 @@ export function generateOtp2Query(params: OTPQueryParams): GraphQLQuery {
   return {
     query: print(PlanQuery),
     variables: {
-      fromPlace: [from.lat, from.lon].join(","),
-      toPlace: [to.lat, to.lon].join(","),
+      fromPlace: `${from.name}::${from.lat},${from.lon}}`,
+      toPlace: `${to.name}::${to.lat},${to.lon}}`,
       modes: params.modes,
       walkReluctance,
       wheelchair,
