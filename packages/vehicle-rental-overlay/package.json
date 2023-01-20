@@ -19,10 +19,10 @@
     "url": "git+https://github.com/opentripplanner/otp-ui.git"
   },
   "dependencies": {
-    "@opentripplanner/base-map": "^3.0.8",
+    "@opentripplanner/base-map": "^3.0.9",
     "@opentripplanner/core-utils": "^8.0.0",
     "@opentripplanner/from-to-location-picker": "^2.1.5",
-    "@opentripplanner/map-popup": "^1.0.0",
+    "@opentripplanner/map-popup": "^2.0.0",
     "@styled-icons/fa-solid": "^10.34.0",
     "flat": "^5.0.2",
     "lodash.memoize": "^4.1.2"
