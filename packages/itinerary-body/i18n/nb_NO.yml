@@ -1,1 +1,13 @@
-{}
+otpUi:
+  AccessLegBody:
+    LegDiagramPreview:
+      elevationChart: Høydediagram
+      noElevationData: Ingen høydedata tilgjengelig.
+    stepElevator: Ta heisen til {street}
+    step:
+      right: Høyre
+      left: Venstre
+      continue: Fortsett
+    RentedVehicleSubheader:
+      vehicleType:
+        escooter: E-scooter
