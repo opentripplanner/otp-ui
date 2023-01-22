@@ -1,1 +1,4 @@
-{}
+otpUi:
+  TransitVehicleOverlay:
+    defaultTooltip: '{route}: {duration} siden'
+    routeTitle: '{type} {name}'
