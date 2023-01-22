@@ -4,3 +4,6 @@ otpUi:
     floatingCar: '{company} {name}'
     stopId: 'Stopp-ID: {stopId}'
     stopViewer: Stopp-viser
+    availableDocks: 'Tilgjengelige stasjoner: {value}'
+    floatingEScooter: 'E-scooter: {name}'
+    floatingBike: 'Stasjonsløs sykkel: {name}'
