@@ -1,1 +1,3 @@
-{}
+otpUi:
+  MapPopup:
+    availableBikes: 'Tilgjengelige sykler: {value}'
