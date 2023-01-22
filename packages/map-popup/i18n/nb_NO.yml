@@ -1,3 +1,6 @@
 otpUi:
   MapPopup:
     availableBikes: 'Tilgjengelige sykler: {value}'
+    floatingCar: '{company} {name}'
+    stopId: 'Stopp-ID: {stopId}'
+    stopViewer: Stopp-viser
