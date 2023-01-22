@@ -11,3 +11,15 @@ otpUi:
     RentedVehicleSubheader:
       vehicleType:
         escooter: E-scooter
+    vehicleType:
+      bike: Sykkel
+    summaryMode:
+      bike: Sykkel
+    summary: '{mode} til {place}'
+  TransitLegBody:
+    routeDescription: '{routeName} <toPrefix>til</toPrefix> {headsign}'
+    AlertsBody:
+      today: I dag
+      yesterday: I går
+      tomorrow: I morgen
+    agencyLogo: '{agencyName}-logo'
