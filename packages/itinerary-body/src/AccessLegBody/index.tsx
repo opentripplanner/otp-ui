@@ -126,19 +126,23 @@ class AccessLegBody extends Component<Props, State> {
                 mapillaryKey={mapillaryKey}
               />
             </S.StepsHeaderAndMapLink>
-            <LegDiagramPreview
-              diagramVisible={diagramVisible}
-              leg={leg}
-              setLegDiagram={setLegDiagram}
-              showElevationProfile={showElevationProfile}
-            />
-            <AnimateHeight duration={500} height={expanded ? "auto" : 0}>
+            <AnimateHeight
+              duration={500}
+              height={expanded ? "auto" : 0}
+              style={{ gridColumn: "1 / span 2" }}
+            >
               <AccessLegSteps
                 mapillaryCallback={mapillaryCallback}
                 mapillaryKey={mapillaryKey}
                 steps={leg.steps}
               />
             </AnimateHeight>
+            <LegDiagramPreview
+              diagramVisible={diagramVisible}
+              leg={leg}
+              setLegDiagram={setLegDiagram}
+              showElevationProfile={showElevationProfile}
+            />
           </S.LegDetails>
         </S.LegBody>
       </>

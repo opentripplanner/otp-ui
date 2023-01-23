@@ -11,15 +11,6 @@ const StyledItineraryBody = styled(ItineraryBody)`
     font-family: Hind, sans-serif;
   }
 
-  ${ItineraryBodyClasses.DetailsColumn} {
-    border: 0;
-    display: table-cell;
-    font-size: 13px;
-    padding-bottom: 0;
-    padding-top: 4px;
-    transform: inherit;
-  }
-
   ${ItineraryBodyClasses.InterlineDot} {
     margin-left: -18px;
     margin-right: 3px;
@@ -67,7 +58,6 @@ const StyledItineraryBody = styled(ItineraryBody)`
   }
 
   ${ItineraryBodyClasses.PlaceRowWrapper} {
-    display: table;
     width: 100%;
   }
 
