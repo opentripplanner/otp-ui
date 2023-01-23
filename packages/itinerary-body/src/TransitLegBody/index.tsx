@@ -175,7 +175,12 @@ class TransitLegBody extends Component<Props, State> {
     return (
       <>
         {TransitLegSubheader && <TransitLegSubheader leg={leg} />}
-        <S.LegBody role="group" aria-label="leg details">
+        <S.LegBody
+          role="group"
+          aria-label={intl.formatMessage({
+            id: "otpUi.TransitLegBody.legDetails"
+          })}
+        >
           {/* The Route Icon/Name Bar; clickable to set as active leg */}
           <S.LegClickable onClick={this.onSummaryClick}>
             <RouteDescription
