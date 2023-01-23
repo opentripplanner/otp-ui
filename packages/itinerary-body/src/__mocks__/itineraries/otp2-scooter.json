@@ -1,0 +1,260 @@
+{
+  "duration": 685,
+  "startTime": 1655309700000,
+  "endTime": 1655310385000,
+  "walkTime": 685,
+  "transitTime": 0,
+  "waitingTime": 0,
+  "walkDistance": 1845.674,
+  "walkLimitExceeded": false,
+  "generalizedCost": 2010,
+  "elevationLost": 0,
+  "elevationGained": 0,
+  "transfers": 0,
+  "fare": {
+    "fare": {},
+    "details": {}
+  },
+  "legs": [
+    {
+      "startTime": 1655309700000,
+      "endTime": 1655309976000,
+      "departureDelay": 0,
+      "arrivalDelay": 0,
+      "realTime": false,
+      "distance": 266.417,
+      "generalizedCost": 526,
+      "pathway": false,
+      "mode": "WALK",
+      "transitLeg": false,
+      "route": "",
+      "agencyTimeZoneOffset": -14400000,
+      "interlineWithPreviousLeg": false,
+      "from": {
+        "name": "300 Courtland St NE, Atlanta, GA 30303-12ND, United States",
+        "lon": -84.3844002328133,
+        "lat": 33.76261572454295,
+        "departure": 1655309700000,
+        "vertexType": "NORMAL"
+      },
+      "to": {
+        "name": "fd289bac-5280-4a00-af3e-685f44050a8d",
+        "lon": -84.38606,
+        "lat": 33.76178,
+        "arrival": 1655309976000,
+        "departure": 1655309976000,
+        "vertexType": "BIKESHARE",
+        "bikeShareId": "fd289bac-5280-4a00-af3e-685f44050a8d",
+        "networks": ["RAZOR"]
+      },
+      "legGeometry": {
+        "points": "igamE`h`bON?n@?N@L??LAHA|H?J?F?DdA@F?",
+        "length": 13
+      },
+      "steps": [
+        {
+          "distance": 52.548,
+          "relativeDirection": "DEPART",
+          "streetName": "Courtland Street Northeast",
+          "absoluteDirection": "SOUTH",
+          "stayOn": false,
+          "area": false,
+          "bogusName": false,
+          "lon": -84.38416504660155,
+          "lat": 33.76261325291033,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 171.07699999999997,
+          "relativeDirection": "RIGHT",
+          "streetName": "path",
+          "absoluteDirection": "WEST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": true,
+          "lon": -84.3841721,
+          "lat": 33.7621407,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 42.792,
+          "relativeDirection": "LEFT",
+          "streetName": "Peachtree Center Avenue Northeast",
+          "absoluteDirection": "SOUTH",
+          "stayOn": false,
+          "area": false,
+          "bogusName": false,
+          "lon": -84.3860173,
+          "lat": 33.7621644,
+          "elevation": "",
+          "walkingBike": false
+        }
+      ],
+      "rentedBike": false,
+      "walkingBike": false,
+      "duration": 276
+    },
+    {
+      "startTime": 1655309976000,
+      "endTime": 1655310385000,
+      "departureDelay": 0,
+      "arrivalDelay": 0,
+      "realTime": false,
+      "distance": 1579.257,
+      "generalizedCost": 1483,
+      "pathway": false,
+      "mode": "SCOOTER",
+      "transitLeg": false,
+      "route": "",
+      "agencyTimeZoneOffset": -14400000,
+      "interlineWithPreviousLeg": false,
+      "from": {
+        "name": "fd289bac-5280-4a00-af3e-685f44050a8d",
+        "lon": -84.38606,
+        "lat": 33.76178,
+        "arrival": 1655309976000,
+        "departure": 1655309976000,
+        "vertexType": "BIKESHARE",
+        "bikeShareId": "fd289bac-5280-4a00-af3e-685f44050a8d",
+        "networks": ["RAZOR"]
+      },
+      "to": {
+        "name": "126 Mitchell St SW, Atlanta, GA 30303-3524, United States",
+        "lon": -84.39187533825107,
+        "lat": 33.75048449782606,
+        "arrival": 1655310385000,
+        "vertexType": "NORMAL"
+      },
+      "legGeometry": {
+        "points": "abamEts`bOG??DzCBL?L?`FBN?J?bFBJ?N?J?N@N?dE@tDBvB?D?@?B@H?lB@PBXN^ZPP?F?BAdE?H@|@?T?v@?XAH?FJFRLnA|@JJHFj@`@\\VTPLHLJh@^TRd@\\VRJHLH`At@pBzAHDPJPJzD~CEHIG",
+        "length": 61
+      },
+      "steps": [
+        {
+          "distance": 3.792,
+          "relativeDirection": "HARD_RIGHT",
+          "streetName": "Peachtree Center Avenue Northeast",
+          "absoluteDirection": "NORTH",
+          "stayOn": false,
+          "area": false,
+          "bogusName": false,
+          "lon": -84.38602445700776,
+          "lat": 33.76177959874698,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 3.032,
+          "relativeDirection": "LEFT",
+          "streetName": "service road",
+          "absoluteDirection": "WEST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": true,
+          "lon": -84.38602390000001,
+          "lat": 33.761813700000005,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 822.329,
+          "relativeDirection": "LEFT",
+          "streetName": "Peachtree Center Cycle Track",
+          "absoluteDirection": "SOUTH",
+          "stayOn": false,
+          "area": false,
+          "bogusName": false,
+          "lon": -84.38605670000001,
+          "lat": 33.7618142,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 186.854,
+          "relativeDirection": "RIGHT",
+          "streetName": "Edgewood Avenue Northeast",
+          "absoluteDirection": "WEST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": false,
+          "lon": -84.3865004,
+          "lat": 33.754499700000004,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 81.88100000000001,
+          "relativeDirection": "LEFT",
+          "streetName": "Pryor Street Southwest",
+          "absoluteDirection": "SOUTHWEST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": false,
+          "lon": -84.38852130000001,
+          "lat": 33.7545008,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 157.972,
+          "relativeDirection": "CONTINUE",
+          "streetName": "Pryor Street",
+          "absoluteDirection": "SOUTHWEST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": false,
+          "lon": -84.389003,
+          "lat": 33.753883,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 310.786,
+          "relativeDirection": "CONTINUE",
+          "streetName": "Pryor Street Southwest",
+          "absoluteDirection": "SOUTHWEST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": false,
+          "lon": -84.38994960000001,
+          "lat": 33.7527003,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 5.783,
+          "relativeDirection": "RIGHT",
+          "streetName": "path",
+          "absoluteDirection": "NORTHWEST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": true,
+          "lon": -84.3918258,
+          "lat": 33.7503831,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 6.828,
+          "relativeDirection": "RIGHT",
+          "streetName": "sidewalk",
+          "absoluteDirection": "NORTHEAST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": true,
+          "lon": -84.3918774,
+          "lat": 33.7504125,
+          "elevation": "",
+          "walkingBike": true
+        }
+      ],
+      "rentedBike": true,
+      "walkingBike": false,
+      "duration": 409
+    }
+  ],
+  "tooSloped": false,
+  "arrivedAtDestinationWithRentedBicycle": false
+}

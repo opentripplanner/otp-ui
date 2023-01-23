@@ -1,3 +1,11 @@
+// TODO: Remove this entire file, as it is deprecated in favor of i18n-queryParams within
+// the SettingsSelector package
+
+// This is only used within stories
+import cloneDeep from "lodash.clonedeep";
+import React from "react";
+import { Wheelchair } from "@styled-icons/foundation/Wheelchair";
+
 import {
   isTransit,
   isAccessMode,
@@ -23,7 +31,7 @@ import { getCurrentDate, getCurrentTime } from "./time";
  *
  * itineraryRewrite: an optional function for translating the key and/or value
  *   for ITINERARY mode only (e.g. 'to' is rewritten as 'toPlace'). Accepts the
- *   intial internal value as a function parameter.
+ *   initial internal value as a function parameter.
  *
  * profileRewrite: an optional function for translating the value for PROFILE mode
  *
@@ -47,13 +55,19 @@ import { getCurrentDate, getCurrentTime } from "./time";
 //     : {lat: null, lon: null}
 // }
 
-const formatPlace = (location, alternateName) => {
+/**
+ * Format location object as string for use in fromPlace or toPlace query param.
+ */
+export function formatPlace(location, alternateName) {
   if (!location) return null;
   const name =
     location.name ||
-    `${alternateName || "Place"} (${location.lat},${location.lon})`;
+    `${alternateName ? `${alternateName} ` : ""}(${location.lat},${
+      location.lon
+    })`;
+  // This string is not language-specific
   return `${name}::${location.lat},${location.lon}`;
-};
+}
 
 // Load stored default query settings from local storage
 const storedSettings = getItem("defaultQuery", {});
@@ -64,7 +78,7 @@ const queryParams = [
     name: "from",
     routingTypes: ["ITINERARY", "PROFILE"],
     default: null,
-    itineraryRewrite: value => ({ fromPlace: formatPlace(value, "Origin") }),
+    itineraryRewrite: value => ({ fromPlace: formatPlace(value) }),
     profileRewrite: value => ({ from: { lat: value.lat, lon: value.lon } })
     // FIXME: Use for parsing URL values?
     // fromURL: stringToLocation
@@ -75,7 +89,7 @@ const queryParams = [
     name: "to",
     routingTypes: ["ITINERARY", "PROFILE"],
     default: null,
-    itineraryRewrite: value => ({ toPlace: formatPlace(value, "Destination") }),
+    itineraryRewrite: value => ({ toPlace: formatPlace(value) }),
     profileRewrite: value => ({ to: { lat: value.lat, lon: value.lon } })
     // FIXME: Use for parsing URL values?
     // fromURL: stringToLocation
@@ -154,8 +168,15 @@ const queryParams = [
     name: "maxWalkDistance",
     routingTypes: ["ITINERARY"],
     applicable: query =>
-      query.mode && hasTransit(query.mode) && query.mode.indexOf("WALK") !== -1,
-    default: 1207, // 3/4 mi.
+      /* Since this query variable isn't in this list, it's not included in the generated query
+       * It does however allow us to determine if we should show the OTP1 max walk distance
+       * dropdown or the OTP2 walk reluctance slider
+       */
+      !query.otp2 &&
+      query.mode &&
+      hasTransit(query.mode) &&
+      query.mode.indexOf("WALK") !== -1,
+    default: 1609, // 1 mi.
     selector: "DROPDOWN",
     label: "Maximum Walk",
     options: [
@@ -257,7 +278,8 @@ const queryParams = [
   {
     /* optimize -- how to optimize a trip (non-bike, non-micromobility trips) */
     name: "optimize",
-    applicable: query => hasTransit(query.mode) && !hasBike(query.mode),
+    // This parameter doesn't seem to do anything
+    applicable: () => false,
     routingTypes: ["ITINERARY"],
     default: "QUICK",
     selector: "DROPDOWN",
@@ -277,12 +299,12 @@ const queryParams = [
   {
     /* optimizeBike -- how to optimize an bike-based trip */
     name: "optimizeBike",
-    applicable: query => hasBike(query.mode),
+    applicable: query => !query.otp2 && hasBike(query.mode),
     routingTypes: ["ITINERARY"],
     default: "SAFE",
     selector: "DROPDOWN",
     label: "Optimize for",
-    options: query => {
+    options: () => {
       const opts = [
         {
           text: "Speed",
@@ -297,14 +319,6 @@ const queryParams = [
           value: "FLAT"
         }
       ];
-
-      // Include transit-specific option, if applicable
-      if (hasTransit(query.mode)) {
-        opts.splice(1, 0, {
-          text: "Fewest Transfers",
-          value: "TRANSFERS"
-        });
-      }
 
       return opts;
     },
@@ -376,6 +390,23 @@ const queryParams = [
     ]
   },
 
+  {
+    name: "walkReluctance",
+    routingTypes: ["ITINERARY", "PROFILE"],
+    selector: "SLIDER",
+    low: 1,
+    high: 10,
+    step: 0.5,
+    label: "walk reluctance",
+    labelLow: "More Walking",
+    labelHigh: "More Transit",
+    applicable: query =>
+      /* Since this query variable isn't in this list, it's not included in the generated query
+       * It does however allow us to determine if we should show the OTP1 max walk distance
+       * dropdown or the OTP2 walk reluctance slider
+       */
+      !!query.otp2 && query.mode && query.mode.indexOf("WALK") !== -1
+  },
   {
     /* maxBikeTime -- the maximum time the user will spend biking in minutes */
     name: "maxBikeTime",
@@ -522,7 +553,8 @@ const queryParams = [
     applicable: query =>
       query.mode &&
       query.mode.indexOf("MICROMOBILITY") !== -1 &&
-      query.mode.indexOf("MICROMOBILITY_RENT") === -1,
+      query.mode.indexOf("MICROMOBILITY_RENT") === -1 &&
+      query.mode.indexOf("SCOOTER") === -1,
     options: [
       {
         text: "Kid's hoverboard (6mph)",
@@ -590,17 +622,17 @@ const queryParams = [
   {
     /* companies -- tnc companies to query */
     name: "companies",
-    routingTypes: ["ITINERARY"],
-    default: null
+    routingTypes: ["ITINERARY"]
   },
 
   {
     /* wheelchair -- whether the user requires a wheelchair-accessible trip */
     name: "wheelchair",
-    routingTypes: ["ITINERARY"],
+    routingTypes: ["ITINERARY", "PROFILE"],
     default: false,
     selector: "CHECKBOX",
-    label: "Wheelchair Accessible",
+    label: "Prefer Wheelchair Accessible Routes",
+    icon: <Wheelchair />,
     applicable: (query, config) => {
       if (!query.mode || !config.modes) return false;
       const configModes = (config.modes.accessModes || []).concat(
@@ -618,6 +650,222 @@ const queryParams = [
         return true;
       });
     }
+  },
+
+  {
+    name: "bannedRoutes",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "numItineraries",
+    routingTypes: ["ITINERARY"],
+    default: 3
+  },
+  {
+    name: "intermediatePlaces",
+    default: [],
+    routingTypes: ["ITINERARY"],
+    itineraryRewrite: places =>
+      Array.isArray(places) && places.length > 0
+        ? {
+            intermediatePlaces: places.map(place => formatPlace(place))
+          }
+        : undefined
+  },
+  {
+    // Time penalty in seconds the requester is willing to accept in order to
+    // complete journey on preferred route. I.e., number of seconds that we are
+    // willing to wait for the preferred route.
+    name: "otherThanPreferredRoutesPenalty",
+    default: 15 * 60, // 15 minutes
+    routingTypes: ["ITINERARY"]
+  },
+  // Below are less commonly used query params included so that in case they are
+  // passed in a query parameter they do not get filtered out from the ultimate
+  // API request.
+  {
+    name: "preferredRoutes",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "maxPreTransitTime",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "waitReluctance",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "driveDistanceReluctance",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "driveTimeReluctance",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "waitAtBeginningFactor",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "bikeSwitchTime",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "bikeSwitchCost",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "minTransferTime",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "preferredAgencies",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "unpreferredRoutes",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "unpreferredAgencies",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "walkBoardCost",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "bikeBoardCost",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "whiteListedRoutes",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "bannedAgencies",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "whiteListedAgencies",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "bannedTrips",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "bannedStops",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "bannedStopsHard",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "transferPenalty",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "nonpreferredTransferPenalty",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "maxTransfers",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "batch",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "startTransitStopId",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "startTransitTripId",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "clampInitialWait",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "reverseOptimizeOnTheFly",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "boardSlack",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "alightSlack",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "locale",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "disableRemainingWeightHeuristic",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "flexFlagStopBufferSize",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "flexUseReservationServices",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "flexUseEligibilityServices",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "flexIgnoreDrtAdvanceBookMin",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "maxHours",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "useRequestedDateTimeInMaxHours",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "disableAlertFiltering",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "geoidElevation",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "invalidDateStrategy",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "minTransitDistance",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "searchTimeout",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "pathComparator",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "onlyTransitTrips",
+    routingTypes: ["ITINERARY"]
+  },
+  {
+    name: "minimumMicromobilitySpeed",
+    routingTypes: ["ITINERARY"]
   }
 ];
 // Iterate over stored settings and update query param defaults.
@@ -630,3 +878,41 @@ queryParams.forEach(param => {
 });
 
 export default queryParams;
+
+/**
+ * You can customize the queryParams labels and options, and labels and values for each option.
+ * @param customizations The optional customizations to apply: an object whose fields
+ *                       correspond to the items in queryParams with the corresponding name,
+ *                       the value for those fields being an object which fields (label, options...)
+ *                       will override the originals.
+ *                       Example:
+ *                         {
+ *                           // Matches the name param
+ *                           maxWalkDistance: {
+ *                             // Any fields that should be overridden go here
+ *                             options: [
+ *                               // ...new options
+ *                             ],
+ *                             default: 500,
+ *                             label: "max walk dist"
+ *                           }
+ *                         }
+ * @returns A copy of the default queryParams that has the given customizations applied.
+ *          If no customizations parameter is provided, returns the queryParams object itself.
+ */
+export function getCustomQueryParams(customizations) {
+  if (!customizations) return queryParams;
+
+  const clonedParams = cloneDeep(queryParams);
+  Object.keys(customizations).forEach(k => {
+    // Merge fields into the cloned object
+    const paramIndex = clonedParams.findIndex(param => param.name === k);
+    if (paramIndex !== -1) {
+      clonedParams[paramIndex] = {
+        ...clonedParams[paramIndex],
+        ...customizations[k]
+      };
+    }
+  });
+  return clonedParams;
+}

@@ -1,17 +1,53 @@
 {
-  "duration": 701,
-  "startTime": 1573688874000,
-  "endTime": 1573689575000,
-  "walkTime": 384,
-  "transitTime": 315,
-  "waitingTime": 2,
-  "walkDistance": 447.5804179056796,
+  "duration": 6223,
+  "startTime": 1651694250000,
+  "endTime": 1651700473000,
+  "walkTime": 560,
+  "transitTime": 5390,
+  "waitingTime": 273,
+  "walkDistance": 677.2714626770405,
   "walkLimitExceeded": false,
-  "elevationLost": 4.679999999999998,
-  "elevationGained": 7.629999999999997,
-  "transfers": 0,
+  "elevationLost": 11.050000000000002,
+  "elevationGained": 0.930000000000005,
+  "transfers": 2,
   "fare": {
     "fare": {
+      "electronicYouth": {
+        "currency": {
+          "symbol": "$",
+          "currency": "USD",
+          "defaultFractionDigits": 2,
+          "currencyCode": "USD"
+        },
+        "cents": 150
+      },
+      "electronicSenior": {
+        "currency": {
+          "symbol": "$",
+          "currency": "USD",
+          "defaultFractionDigits": 2,
+          "currencyCode": "USD"
+        },
+        "cents": 100
+      },
+      "electronicSpecial": {
+        "currency": {
+          "symbol": "$",
+          "currency": "USD",
+          "defaultFractionDigits": 2,
+          "currencyCode": "USD"
+        },
+        "cents": 150
+      },
+      "electronicRegular": {
+        "currency": {
+          "symbol": "$",
+          "currency": "USD",
+          "defaultFractionDigits": 2,
+          "currencyCode": "USD"
+        },
+        "cents": 325
+      },
       "regular": {
         "currency": {
           "symbol": "$",
@@ -19,588 +55,1842 @@
           "defaultFractionDigits": 2,
           "currencyCode": "USD"
         },
-        "cents": 250
+        "cents": 550
+      },
+      "senior": {
+        "currency": {
+          "symbol": "$",
+          "currency": "USD",
+          "defaultFractionDigits": 2,
+          "currencyCode": "USD"
+        },
+        "cents": 200
+      },
+      "youth": {
+        "currency": {
+          "symbol": "$",
+          "currency": "USD",
+          "defaultFractionDigits": 2,
+          "currencyCode": "USD"
+        },
+        "cents": 300
       }
     },
-    "details": {}
+    "details": {
+      "electronicYouth": [
+        {
+          "price": {
+            "currency": {
+              "symbol": "$",
+              "currency": "USD",
+              "defaultFractionDigits": 2,
+              "currencyCode": "USD"
+            },
+            "cents": 150
+          },
+          "legIndex": 1,
+          "isTransfer": true
+        },
+        {
+          "price": {
+            "currency": {
+              "symbol": "$",
+              "currency": "USD",
+              "defaultFractionDigits": 2,
+              "currencyCode": "USD"
+            },
+            "cents": 0
+          },
+          "legIndex": 3,
+          "isTransfer": true
+        },
+        {
+          "price": {
+            "currency": {
+              "symbol": "$",
+              "currency": "USD",
+              "defaultFractionDigits": 2,
+              "currencyCode": "USD"
+            },
+            "cents": 0
+          },
+          "legIndex": 5,
+          "isTransfer": true
+        }
+      ],
+      "electronicSenior": [
+        {
+          "price": {
+            "currency": {
+              "symbol": "$",
+              "currency": "USD",
+              "defaultFractionDigits": 2,
+              "currencyCode": "USD"
+            },
+            "cents": 100
+          },
+          "legIndex": 1,
+          "isTransfer": true
+        },
+        {
+          "price": {
+            "currency": {
+              "symbol": "$",
+              "currency": "USD",
+              "defaultFractionDigits": 2,
+              "currencyCode": "USD"
+            },
+            "cents": 0
+          },
+          "legIndex": 3,
+          "isTransfer": true
+        },
+        {
+          "price": {
+            "currency": {
+              "symbol": "$",
+              "currency": "USD",
+              "defaultFractionDigits": 2,
+              "currencyCode": "USD"
+            },
+            "cents": 0
+          },
+          "legIndex": 5,
+          "isTransfer": true
+        }
+      ],
+      "electronicSpecial": [
+        {
+          "price": {
+            "currency": {
+              "symbol": "$",
+              "currency": "USD",
+              "defaultFractionDigits": 2,
+              "currencyCode": "USD"
+            },
+            "cents": 150
+          },
+          "legIndex": 1,
+          "isTransfer": true
+        },
+        {
+          "price": {
+            "currency": {
+              "symbol": "$",
+              "currency": "USD",
+              "defaultFractionDigits": 2,
+              "currencyCode": "USD"
+            },
+            "cents": 0
+          },
+          "legIndex": 3,
+          "isTransfer": true
+        },
+        {
+          "price": {
+            "currency": {
+              "symbol": "$",
+              "currency": "USD",
+              "defaultFractionDigits": 2,
+              "currencyCode": "USD"
+            },
+            "cents": 0
+          },
+          "legIndex": 5,
+          "isTransfer": true
+        }
+      ],
+      "electronicRegular": [
+        {
+          "price": {
+            "currency": {
+              "symbol": "$",
+              "currency": "USD",
+              "defaultFractionDigits": 2,
+              "currencyCode": "USD"
+            },
+            "cents": 325
+          },
+          "legIndex": 1,
+          "isTransfer": true
+        },
+        {
+          "price": {
+            "currency": {
+              "symbol": "$",
+              "currency": "USD",
+              "defaultFractionDigits": 2,
+              "currencyCode": "USD"
+            },
+            "cents": 0
+          },
+          "legIndex": 3,
+          "isTransfer": true
+        },
+        {
+          "price": {
+            "currency": {
+              "symbol": "$",
+              "currency": "USD",
+              "defaultFractionDigits": 2,
+              "currencyCode": "USD"
+            },
+            "cents": 0
+          },
+          "legIndex": 5,
+          "isTransfer": true
+        }
+      ],
+      "regular": [
+        {
+          "price": {
+            "currency": {
+              "symbol": "$",
+              "currency": "USD",
+              "defaultFractionDigits": 2,
+              "currencyCode": "USD"
+            },
+            "cents": 325
+          },
+          "legIndex": 1,
+          "isTransfer": false
+        },
+        {
+          "price": {
+            "currency": {
+              "symbol": "$",
+              "currency": "USD",
+              "defaultFractionDigits": 2,
+              "currencyCode": "USD"
+            },
+            "cents": 225
+          },
+          "legIndex": 3,
+          "isTransfer": true
+        },
+        {
+          "price": {
+            "currency": {
+              "symbol": "$",
+              "currency": "USD",
+              "defaultFractionDigits": 2,
+              "currencyCode": "USD"
+            },
+            "cents": 0
+          },
+          "legIndex": 5,
+          "isTransfer": true
+        }
+      ],
+      "senior": [
+        {
+          "price": {
+            "currency": {
+              "symbol": "$",
+              "currency": "USD",
+              "defaultFractionDigits": 2,
+              "currencyCode": "USD"
+            },
+            "cents": 100
+          },
+          "legIndex": 1,
+          "isTransfer": false
+        },
+        {
+          "price": {
+            "currency": {
+              "symbol": "$",
+              "currency": "USD",
+              "defaultFractionDigits": 2,
+              "currencyCode": "USD"
+            },
+            "cents": 100
+          },
+          "legIndex": 3,
+          "isTransfer": true
+        },
+        {
+          "price": {
+            "currency": {
+              "symbol": "$",
+              "currency": "USD",
+              "defaultFractionDigits": 2,
+              "currencyCode": "USD"
+            },
+            "cents": 0
+          },
+          "legIndex": 5,
+          "isTransfer": true
+        }
+      ],
+      "youth": [
+        {
+          "price": {
+            "currency": {
+              "symbol": "$",
+              "currency": "USD",
+              "defaultFractionDigits": 2,
+              "currencyCode": "USD"
+            },
+            "cents": 150
+          },
+          "legIndex": 1,
+          "isTransfer": false
+        },
+        {
+          "price": {
+            "currency": {
+              "symbol": "$",
+              "currency": "USD",
+              "defaultFractionDigits": 2,
+              "currencyCode": "USD"
+            },
+            "cents": 150
+          },
+          "legIndex": 3,
+          "isTransfer": true
+        },
+        {
+          "price": {
+            "currency": {
+              "symbol": "$",
+              "currency": "USD",
+              "defaultFractionDigits": 2,
+              "currencyCode": "USD"
+            },
+            "cents": 0
+          },
+          "legIndex": 5,
+          "isTransfer": true
+        }
+      ]
+    }
   },
   "legs": [
     {
-      "startTime": 1573688874000,
-      "endTime": 1573689069000,
+      "startTime": 1651694250000,
+      "endTime": 1651694639000,
       "departureDelay": 0,
       "arrivalDelay": 0,
       "realTime": false,
-      "distance": 226.31699999999998,
+      "distance": 462.78599999999994,
       "pathway": false,
       "mode": "WALK",
       "route": "",
-      "agencyTimeZoneOffset": -28800000,
+      "agencyTimeZoneOffset": -25200000,
       "interlineWithPreviousLeg": false,
       "from": {
-        "name": "SW 1st Ave, Portland, OR, USA",
-        "lon": -122.67843192290314,
-        "lat": 45.508340365279345,
-        "departure": 1573688874000,
-        "orig": "SW 1st Ave, Portland, OR, USA",
+        "name": "47.97767, -122.20034",
+        "wheelchairBoarding": "UNKNOWN",
+        "lon": -122.20034419816042,
+        "lat": 47.97766686876693,
+        "departure": 1651694250000,
+        "orig": "47.97767, -122.20034",
         "vertexType": "NORMAL"
       },
       "to": {
-        "name": "Lincoln St/SW 3rd Ave MAX Station",
-        "stopId": "TriMet:13729",
-        "stopCode": "13729",
-        "lon": -122.680858,
-        "lat": 45.507942,
-        "arrival": 1573689069000,
-        "departure": 1573689070000,
-        "zoneId": "R",
-        "stopIndex": 9,
-        "stopSequence": 10,
-        "vertexType": "TRANSIT"
+        "name": "Everett Station Bay C1",
+        "stopId": "CommTrans:2345",
+        "wheelchairBoarding": "UNKNOWN",
+        "stopCode": "2345",
+        "lon": -122.1976189,
+        "lat": 47.97485103,
+        "arrival": 1651694639000,
+        "departure": 1651694640000,
+        "stopIndex": 0,
+        "stopSequence": 1,
+        "vertexType": "TRANSIT",
+        "boardAlightType": "DEFAULT"
       },
       "legGeometry": {
-        "points": "cjwtGfswkVJ`@CEf@@J?@^@ZBl@?^@f@?J?`@?N?^?PH?D??VAdAAdA",
-        "length": 20
+        "points": "srycH`hzhVd@?HEBGBKL]?Yp@C?e@AwCGc@bA]^KCSCa@vBq@l@OCSf@QHAbA[CQB?PGFCHCPG",
+        "length": 27
       },
       "rentedBike": false,
       "rentedCar": false,
       "rentedVehicle": false,
       "hailedCar": false,
-      "duration": 195,
+      "flexDrtAdvanceBookMin": 0,
+      "duration": 389,
       "transitLeg": false,
       "intermediateStops": [],
       "steps": [
         {
-          "distance": 11.755,
+          "distance": 173.423,
           "relativeDirection": "DEPART",
           "streetName": "service road",
-          "absoluteDirection": "SOUTHWEST",
-          "stayOn": false,
-          "area": false,
-          "bogusName": true,
-          "lon": -122.67843877803429,
-          "lat": 45.508345508923014,
-          "elevation": [
-            {
-              "first": 0,
-              "second": 31.222842545446778
-            },
-            {
-              "first": 10,
-              "second": 30.992842545446777
-            },
-            {
-              "first": 11.76,
-              "second": 31.05284254544678
-            }
-          ]
-        },
-        {
-          "distance": 28.928,
-          "relativeDirection": "LEFT",
-          "streetName": "SW 1st Ave",
           "absoluteDirection": "SOUTH",
           "stayOn": false,
           "area": false,
-          "bogusName": false,
-          "lon": -122.6785757,
-          "lat": 45.5083062,
+          "bogusName": true,
+          "lon": -122.20049,
+          "lat": 47.9775488,
           "elevation": [
             {
               "first": 0,
-              "second": 33.09284254544678
+              "second": 19.72
             },
             {
               "first": 10,
-              "second": 33.26284254544678
+              "second": 19.74
             },
             {
               "first": 20,
-              "second": 33.42284254544678
+              "second": 19.78
             },
             {
-              "first": 28.93,
-              "second": 33.542842545446774
+              "first": 30,
+              "second": 19.66
+            },
+            {
+              "first": 40,
+              "second": 19.34
+            },
+            {
+              "first": 50.07,
+              "second": 19.05
+            },
+            {
+              "first": 50.093,
+              "second": 19.05
+            },
+            {
+              "first": 59.583000000000006,
+              "second": 18.69
+            },
+            {
+              "first": 87.879,
+              "second": 18.69
+            },
+            {
+              "first": 97.879,
+              "second": 18.69
+            },
+            {
+              "first": 107.879,
+              "second": 18.7
+            },
+            {
+              "first": 116.179,
+              "second": 18.71
+            },
+            {
+              "first": 102.55600000000001,
+              "second": 18.2
+            },
+            {
+              "first": 112.55600000000001,
+              "second": 17.89
+            },
+            {
+              "first": 122.55600000000001,
+              "second": 17.59
+            },
+            {
+              "first": 132.556,
+              "second": 17.29
+            },
+            {
+              "first": 142.556,
+              "second": 17
+            },
+            {
+              "first": 152.556,
+              "second": 16.73
+            },
+            {
+              "first": 159.166,
+              "second": 16.53
+            },
+            {
+              "first": 159.166,
+              "second": 16.53
+            },
+            {
+              "first": 173.426,
+              "second": 16.12
             }
           ]
         },
         {
-          "distance": 112.755,
+          "distance": 39.188,
           "relativeDirection": "RIGHT",
-          "streetName": "SW Lincoln St",
-          "absoluteDirection": "WEST",
-          "stayOn": false,
-          "area": false,
-          "bogusName": false,
-          "lon": -122.6785885,
-          "lat": 45.5080462,
-          "elevation": [
-            {
-              "first": 0,
-              "second": 33.542842545446774
-            },
-            {
-              "first": 12.09,
-              "second": 34.08284254544678
-            },
-            {
-              "first": 12.088,
-              "second": 34.08284254544678
-            },
-            {
-              "first": 22.088,
-              "second": 34.51284254544678
-            },
-            {
-              "first": 32.088,
-              "second": 34.83284254544678
-            },
-            {
-              "first": 40.998,
-              "second": 35.212842545446776
-            },
-            {
-              "first": 41.001,
-              "second": 35.212842545446776
-            },
-            {
-              "first": 51.001,
-              "second": 35.61284254544678
-            },
-            {
-              "first": 61.001,
-              "second": 35.962842545446776
-            },
-            {
-              "first": 69.161,
-              "second": 36.25284254544678
-            },
-            {
-              "first": 93.422,
-              "second": 37.00284254544678
-            },
-            {
-              "first": 106.27199999999999,
-              "second": 37.64284254544678
-            },
-            {
-              "first": 106.27199999999999,
-              "second": 37.64284254544678
-            },
-            {
-              "first": 112.752,
-              "second": 37.902842545446774
-            }
-          ]
-        },
-        {
-          "distance": 8.607,
-          "relativeDirection": "LEFT",
-          "streetName": "path",
+          "streetName": "Smith Avenue",
           "absoluteDirection": "SOUTH",
           "stayOn": false,
           "area": false,
-          "bogusName": true,
-          "lon": -122.6800322,
-          "lat": 45.5079935,
+          "bogusName": false,
+          "lon": -122.1989226,
+          "lat": 47.976997100000006,
           "elevation": [
             {
               "first": 0,
-              "second": 37.902842545446774
+              "second": 16.12
             },
             {
-              "first": 8.61,
-              "second": 37.902842545446774
+              "first": 10,
+              "second": 16.11
+            },
+            {
+              "first": 20,
+              "second": 16.11
+            },
+            {
+              "first": 30,
+              "second": 16.09
+            },
+            {
+              "first": 39.19,
+              "second": 16.08
             }
           ]
         },
         {
-          "distance": 64.272,
-          "relativeDirection": "RIGHT",
-          "streetName": "Lincoln Street /SW 3rd Ave (path)",
-          "absoluteDirection": "WEST",
+          "distance": 18.465,
+          "relativeDirection": "CONTINUE",
+          "streetName": "Paine Avenue",
+          "absoluteDirection": "SOUTH",
           "stayOn": false,
           "area": false,
           "bogusName": false,
-          "lon": -122.680034,
-          "lat": 45.5079161,
-          "elevation": []
+          "lon": -122.19877100000001,
+          "lat": 47.976659600000005,
+          "elevation": [
+            {
+              "first": 0,
+              "second": 16.08
+            },
+            {
+              "first": 10,
+              "second": 15.88
+            },
+            {
+              "first": 18.47,
+              "second": 15.61
+            }
+          ]
+        },
+        {
+          "distance": 20.528,
+          "relativeDirection": "LEFT",
+          "streetName": "32nd Street",
+          "absoluteDirection": "EAST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": false,
+          "lon": -122.19871780000001,
+          "lat": 47.9764974,
+          "elevation": [
+            {
+              "first": 0,
+              "second": 15.61
+            },
+            {
+              "first": 7.9,
+              "second": 15.6
+            },
+            {
+              "first": 7.9,
+              "second": 15.6
+            },
+            {
+              "first": 20.53,
+              "second": 15.52
+            }
+          ]
+        },
+        {
+          "distance": 95.40899999999999,
+          "relativeDirection": "RIGHT",
+          "streetName": "32nd Street",
+          "absoluteDirection": "SOUTH",
+          "stayOn": true,
+          "area": false,
+          "bogusName": false,
+          "lon": -122.19844760000001,
+          "lat": 47.976534400000006,
+          "elevation": [
+            {
+              "first": 0,
+              "second": 15.52
+            },
+            {
+              "first": 10,
+              "second": 15.35
+            },
+            {
+              "first": 20,
+              "second": 15.19
+            },
+            {
+              "first": 30,
+              "second": 15.04
+            },
+            {
+              "first": 40,
+              "second": 14.88
+            },
+            {
+              "first": 50,
+              "second": 14.73
+            },
+            {
+              "first": 60,
+              "second": 14.71
+            },
+            {
+              "first": 69.33,
+              "second": 14.65
+            },
+            {
+              "first": 69.33,
+              "second": 14.65
+            },
+            {
+              "first": 79.33,
+              "second": 14.62
+            },
+            {
+              "first": 89.33,
+              "second": 14.54
+            },
+            {
+              "first": 95.41,
+              "second": 14.5
+            }
+          ]
+        },
+        {
+          "distance": 115.773,
+          "relativeDirection": "LEFT",
+          "streetName": "path",
+          "absoluteDirection": "EAST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": true,
+          "lon": -122.19811390000001,
+          "lat": 47.975706,
+          "elevation": [
+            {
+              "first": 0,
+              "second": 14.5
+            },
+            {
+              "first": 7.62,
+              "second": 14.44
+            },
+            {
+              "first": 7.619,
+              "second": 14.44
+            },
+            {
+              "first": 17.619,
+              "second": 14.43
+            },
+            {
+              "first": 27.619,
+              "second": 14.45
+            },
+            {
+              "first": 36.789,
+              "second": 14.49
+            },
+            {
+              "first": 36.787,
+              "second": 14.49
+            },
+            {
+              "first": 46.787,
+              "second": 14.64
+            },
+            {
+              "first": 56.787,
+              "second": 14.84
+            },
+            {
+              "first": 66.787,
+              "second": 15.06
+            },
+            {
+              "first": 75.487,
+              "second": 15.22
+            },
+            {
+              "first": 75.489,
+              "second": 15.22
+            },
+            {
+              "first": 81.809,
+              "second": 15.1
+            },
+            {
+              "first": 81.804,
+              "second": 15.1
+            },
+            {
+              "first": 84.014,
+              "second": 15.13
+            },
+            {
+              "first": 84.009,
+              "second": 15.13
+            },
+            {
+              "first": 94.009,
+              "second": 15.14
+            },
+            {
+              "first": 99.189,
+              "second": 15.11
+            },
+            {
+              "first": 99.186,
+              "second": 15.11
+            },
+            {
+              "first": 105.52600000000001,
+              "second": 15.13
+            }
+          ]
         }
       ]
     },
     {
-      "startTime": 1573689070000,
-      "endTime": 1573689165000,
+      "startTime": 1651694640000,
+      "endTime": 1651697460000,
       "departureDelay": 0,
       "arrivalDelay": 0,
       "realTime": false,
-      "distance": 282.96845309578106,
+      "distance": 37716.533319948845,
       "pathway": false,
-      "mode": "TRAM",
-      "route": "MAX Orange Line",
-      "agencyName": "TriMet",
-      "agencyUrl": "http://trimet.org/",
-      "agencyTimeZoneOffset": -28800000,
-      "routeColor": "F58220",
-      "routeType": 0,
-      "routeId": "TriMet:290",
-      "routeTextColor": "000000",
+      "mode": "BUS",
+      "route": "512",
+      "agencyName": "Community Transit",
+      "agencyUrl": "http://www.communitytransit.org/",
+      "agencyTimeZoneOffset": -25200000,
+      "routeColor": "0070c0",
+      "routeType": 3,
+      "routeId": "CommTrans:512",
+      "routeTextColor": "ffffff",
       "interlineWithPreviousLeg": false,
-      "tripBlockId": "9071",
-      "headsign": "City Center/Expo Center",
-      "agencyId": "TRIMET",
-      "tripId": "TriMet:9269760",
-      "serviceDate": "20191113",
+      "tripBlockId": "KPOB-CS:221:0:Weekday:1:22MAR:85017:12345",
+      "headsign": "Northgate Station",
+      "agencyId": "29",
+      "tripId": "CommTrans:9683834__KPOB-CS:221:0:Weekday:1:22MAR:85017:12345",
+      "serviceDate": "20220504",
       "from": {
-        "name": "Lincoln St/SW 3rd Ave MAX Station",
-        "stopId": "TriMet:13729",
-        "stopCode": "13729",
-        "lon": -122.680858,
-        "lat": 45.507942,
-        "arrival": 1573689069000,
-        "departure": 1573689070000,
-        "zoneId": "R",
-        "stopIndex": 9,
-        "stopSequence": 10,
-        "vertexType": "TRANSIT"
+        "name": "Everett Station Bay C1",
+        "stopId": "CommTrans:2345",
+        "wheelchairBoarding": "UNKNOWN",
+        "stopCode": "2345",
+        "lon": -122.1976189,
+        "lat": 47.97485103,
+        "arrival": 1651694639000,
+        "departure": 1651694640000,
+        "stopIndex": 0,
+        "stopSequence": 1,
+        "vertexType": "TRANSIT",
+        "boardAlightType": "DEFAULT"
       },
       "to": {
-        "name": "PSU South/SW 6th & College MAX Stn",
-        "stopId": "TriMet:10293",
-        "stopCode": "10293",
-        "lon": -122.683593,
-        "lat": 45.509616,
-        "arrival": 1573689165000,
-        "departure": 1573689205000,
-        "zoneId": "R",
-        "stopIndex": 10,
-        "stopSequence": 11,
-        "vertexType": "TRANSIT"
+        "name": "Northgate Station",
+        "stopId": "CommTrans:2191",
+        "wheelchairBoarding": "UNKNOWN",
+        "stopCode": "2191",
+        "lon": -122.328041,
+        "lat": 47.703022,
+        "arrival": 1651697460000,
+        "departure": 1651697460000,
+        "stopIndex": 6,
+        "stopSequence": 7,
+        "vertexType": "TRANSIT",
+        "boardAlightType": "DEFAULT"
       },
       "legGeometry": {
-        "points": "wgwtGjbxkV?@?J?HAPAt@?H?H?FAHAHAFAJCRCTAD?BANAJ?HC~@?JAL?HAJAHCNALCFADENCLENCLIXSt@CHCJEFEDGDE@G@_@?UAIAIAOC_AWe@C",
-        "length": 50
+        "points": "saycHxvyhVODWHGq@?KDIVIx@Y?Af@QDA\\O@?????PIJAHFHTATELSJDv@B`D@hC@nC@hCBvC\\?H?D?DAJ?^AJ?vACj@AT?BAF?N?LAv@AdBC~@Af@At@AbBC`ACv@Cf@AJ?tAEhACp@Ap@AxAAhAA~@AzBEdAA`BCd@Ab@Af@Ah@A|AIRC\\Ep@In@I\\Gt@Kv@AZAf@G`@Cr@OVEh@ExAI|AGr@E`@C\\G^In@SxAk@x@U^Id@En@C~@A\\?v@?~B?vAAhACxACfCErACvB@n@@tADfABh@B`AD|ENNA`AGxAO`AOJAv@MbAQnAWj@MbAUp@Oh@Kb@KxFmAzMuCfDs@`AQp@Iv@Et@Al@Ap@Bx@F~ALn@F|BP|AJp@Dt@Bf@@dAEvAMfBY~Ce@`C_@rF{@xCe@ZEn@Kl@Gn@Id@Ch@Ap@@h@@`AH|@N`AT~@\\LDNFZN`@RZRt@j@|@t@r@r@\\^Z`@Xb@Zf@^n@\\p@n@pAv@bBl@rAf@fAx@fB|@fBj@~@^h@PVb@j@`@d@X\\f@d@n@j@x@j@|@b@~@b@h@P\\JhA\\jOvEd@NdEvAzCdAlDjAvBp@NFxFpB`LvDpS`HpDfARFTFp@RvDhAvH~BRFHBPDLDdBj@xAj@vC`APFF@jExAXJj@PtCf@jGxArJtCZeCZJzB|@\\Lh@Rp@XlAd@nCfA[jBpCnAhD|A|DnBvBfBhAlAd@j@fAzAjBtChBfDpCxDbB~BtAjBp@z@fClDzHnKhQhVr@`AtG~IdJjMtAlBpKvNnNrRnAdBhBdCz@lA|@jAz@jAx@~@dAfAlAfApA~@~@j@vAr@hAb@fA^hAXbBZbC^vBZbG~@dLfBlDh@~AVhBb@fA^xAj@tAp@fBjAhBvArAfAfErD|[~WjI|GvK~Iz@p@^n@^h@d@b@l@l@`@`@\\\\Z^Z`@^j@nBvC\\f@NPJLTLJDJ@N?LALDPFLJLTFT?j@AfBAdBqDWYCiAIc@Ca@G]Ic@Qc@Ue@]OMQQe@o@Yg@c@w@k@kAUe@MU_@k@Ya@b@q@Lc@VZ??JJBZNn@Pf@HNP^PZ\\@JWEi@UYAA]e@A?SW[_@OEKK??W[Bg@?EC_AB}AJiAVkAJOHGJAL@t@l@bAt@vAz@rAl@tAf@dBb@lB^f@JvGfARLvGrB|MvB`BXVDdC`@hBZrDl@`Dh@fFx@nCd@bEp@xIvAzB^xDl@fAR~AXdAVzAd@h@Rn@TLFd@Rz@`@VLXNdAf@`Aj@n@^r@f@dAv@t@n@`A|@hAhA~@fAv@~@b@h@^d@`@l@d@p@b@p@v@pAp@pA\\n@`@z@z@jBb@|@Xl@~AxD~@xBVn@P`@`A|Bz@lBpAvCl@pAxB|ExC`HlAvCl@tAv@hBhExJhE~JnFbM`AzBlApC`BvDhFtL~AnCx@~Av@~AzA|Cj@fAjC`Gp@~A|BpFW^W\\[\\g@j@]Xg@Xq@T[DW@Y?a@?wDEgAA?jAKBEFEJ?FAB?L?b@?R??A|@?F???@?r@?FA|@?@?P?r@A?@LBHDHDBH?FCDEBI@K@C?s@???S@}@?G?u@?t@?FA|@?R???r@ABAJCHEDGBI?ECEICIAM@??s@?Q?A@}@?G?s@?A???G@}@???S?c@?M@C?GDKDGJC?c@?g@fA@vDD`@?X?VAZEp@Uf@Y\\Yf@k@Z]V]V_@xGfOH^f@pAn@~AhAjCtBdF`AbCJ`@R~@bCvFLXP`@LZj@pATh@Zr@b@bAn@xATd@lCjGj@pAbA~B^z@~F~MJVbA~Bx@hBl@pA`AlBz@rA~@pA`AnAl@l@b@b@TRh@f@d@^n@d@f@Zn@^RJVLb@Rl@Vj@R`@Ln@P~@Tl@JnATvATdAPdBXtATJBr@JjBXt@LnARt@LjBZj@JdC`@pATv@JTBjAJ`AFfAFrADV@b@@R?J?p@Sh@Cf@AvCKV?lACxBCdC@R?lBAX@B?Z?D?X?dA?^?tCAxC@Z?r@@~@DtBPnCVrC^vCb@dBTj@P^Rx@L|@LtInAVDn@Jl@JVDt@H~Cb@~Dl@fARz@Tr@Tt@XD@RJd@Tv@`@r@b@vClB~@n@~AdAb@XfDxB\\Tf@\\h@ZLHHDZN`Ad@h@Rt@Tt@Rj@Lt@Lt@Jv@Jz@LzMdBnAPdAPz@P~@Tp@Rl@Pl@P|@\\zB`AnAp@dAl@z@h@p@d@`@Zn@f@x@r@n@l@lEhEn@p@v@z@dBdBhAfA`A|@z@p@l@`@NJfAl@hAj@v@Xv@Vx@Tx@Pb@HTDdALbAHx@BfBAJ?n@CB?r@ELAtAQfAURE^KnAc@hAa@pAc@n@S`@KdAUr@KjAIx@Ct@?~@Dt@D~@Lz@NjDn@`APD@jARfAPfAPj@DVBT@j@@p@?v@CXCNAf@GNCz@Mv@S^KXI~@]pAm@rFuChJ{E|FuCvFsCv@a@`Ae@bAe@x@]x@Yp@UzA]z@Q|@Qv@Mx@Kv@I`AG`AEhAC|A?~D?^?|C@~A@zB@lB?zMBxH@nKBvF@dA?zBDD?t@Dv@Fv@JpAVpA\\dA\\bAb@fAl@hAr@hAv@rF|Db@Zt@j@nA~@`@ZxB|ATd@??`@l@f@d@FFh@f@p@f@r@f@l@`@PJn@^VDn@T^Lt@PNBd@Jv@LXBl@@|A?xBCh@Fz@JNDNLHLDPBP@TCPENGJIHULi@@kC?WUKSMc@BeB?m@?gA?[?O?O?[Na@L[JQHIFITQd@[dA?b@?X?t@@??t@B~AAV?P?J?hCAbAArA?b@?X?rA?fCCB_A?S?]X?BI@GBABC@A|C?",
+        "length": 907
       },
       "interStopGeometry": [
         {
-          "points": "wgwtGjbxkV?@?J?HAPAt@?H?H?FAHAHAFAJCRCTAD?BANAJ?HC~@?JAL?HAJAHCNALCFADENCLENCLIXSt@CHCJEFEDGDE@G@_@?UAIAIAOC_AWe@C",
-          "length": 50
+          "points": "saycHxvyhVODWHGq@?KDIVIx@Y?Af@QDA\\O@?????PIJAHFHTATELSJDv@B`D@hC@nC@hCBvC\\?H?D?DAJ?^AJ?vACj@A",
+          "length": 37
+        },
+        {
+          "points": "cuxcHdmzhVT?BAF?N?LAv@AdBC~@Af@At@AbBC`ACv@Cf@AJ?tAEhACp@Ap@AxAAhAA~@AzBEdAA`BCd@Ab@Af@Ah@A|AIRC\\Ep@In@I\\Gt@Kv@AZAf@G`@Cr@OVEh@ExAI|AGr@E`@C\\G^In@SxAk@x@U^Id@En@C~@A\\?v@?~B?vAAhACxACfCErACvB@n@@tADfABh@B`AD|ENNA`AGxAO`AOJAv@MbAQnAWj@MbAUp@Oh@Kb@KxFmAzMuCfDs@`AQp@Iv@Et@Al@Ap@Bx@F~ALn@F|BP|AJp@Dt@Bf@@dAEvAMfBY~Ce@`C_@rF{@xCe@ZEn@Kl@Gn@Id@Ch@Ap@@h@@`AH|@N`AT~@\\LDNFZN`@RZRt@j@|@t@r@r@\\^Z`@Xb@Zf@^n@\\p@n@pAv@bBl@rAf@fAx@fB|@fBj@~@^h@PVb@j@`@d@X\\f@d@n@j@x@j@|@b@~@b@h@P\\JhA\\jOvEd@NdEvAzCdAlDjAvBp@NFxFpB`LvDpS`HpDfARFTFp@RvDhAvH~BRFHBPDLDdBj@xAj@vC`APFF@jExAXJj@PtCf@jGxArJtCZeCZJzB|@\\Lh@Rp@X",
+          "length": 192
+        },
+        {
+          "points": "ugjcH|~|hVlAd@nCfA[jBpCnAhD|A|DnBvBfBhAlAd@j@fAzAjBtChBfDpCxDbB~BtAjBp@z@fClDzHnKhQhVr@`AtG~IdJjMtAlBpKvNnNrRnAdBhBdCz@lA|@jAz@jAx@~@dAfAlAfApA~@~@j@vAr@hAb@fA^hAXbBZbC^vBZbG~@dLfBlDh@~AVhBb@fA^xAj@tAp@fBjAhBvArAfAfErD|[~WjI|GvK~Iz@p@^n@^h@d@b@l@l@`@`@\\\\Z^Z`@^j@nBvC\\f@NPJLTLJDJ@N?LALDPFLJLTFT?j@AfBAdBqDWYCiAIc@Ca@G]Ic@Qc@Ue@]OMQQe@o@Yg@c@w@k@kAUe@MU_@k@Ya@b@q@Lc@VZ??JJBZNn@Pf@HNP^PZ\\@JWEi@UY",
+          "length": 119
+        },
+        {
+          "points": "sfacHtreiVAA]e@A?SW[_@OEKK??W[Bg@?EC_AB}AJiAVkAJOHGJAL@t@l@bAt@vAz@rAl@tAf@dBb@lB^f@JvGfARLvGrB|MvB`BXVDdC`@hBZrDl@`Dh@fFx@nCd@bEp@xIvAzB^xDl@fAR~AXdAVzAd@h@Rn@TLFd@Rz@`@VLXNdAf@`Aj@n@^r@f@dAv@t@n@`A|@hAhA~@fAv@~@b@h@^d@`@l@d@p@b@p@v@pAp@pA\\n@`@z@z@jBb@|@Xl@~AxD~@xBVn@P`@`A|Bz@lBpAvCl@pAxB|ExC`HlAvCl@tAv@hBhExJhE~JnFbM`AzBlApC`BvDhFtL~AnCx@~Av@~AzA|Cj@fAjC`Gp@~A|BpFW^W\\[\\g@j@]Xg@Xq@T[DW@Y?a@?wDEgAA?jAKBEFEJ?FAB?L?b@?R??A|@?F???@?r@?FA|@?@?P?r@A?@LBHDHDBH?FCDEBI@K@C?s@???S@}@?G?u@",
+          "length": 155
+        },
+        {
+          "points": "w`zbHz~liV?t@?FA|@?R???r@ABAJCHEDGBI?ECEICIAM@??s@?Q?A@}@?G?s@?A???G@}@???S?c@?M@C?GDKDGJC?c@?g@fA@vDD`@?X?VAZEp@Uf@Y\\Yf@k@Z]V]V_@xGfOH^f@pAn@~AhAjCtBdF`AbCJ`@R~@bCvFLXP`@LZj@pATh@Zr@b@bAn@xATd@lCjGj@pAbA~B^z@~F~MJVbA~Bx@hBl@pA`AlBz@rA~@pA`AnAl@l@b@b@TRh@f@d@^n@d@f@Zn@^RJVLb@Rl@Vj@R`@Ln@P~@Tl@JnATvATdAPdBXtATJBr@JjBXt@LnARt@LjBZj@JdC`@pATv@JTBjAJ`AFfAFrADV@b@@R?J?p@Sh@Cf@AvCKV?lACxBCdC@R?lBAX@B?Z?",
+          "length": 139
+        },
+        {
+          "points": "cmtbHp|piVD?X?dA?^?tCAxC@Z?r@@~@DtBPnCVrC^vCb@dBTj@P^Rx@L|@LtInAVDn@Jl@JVDt@H~Cb@~Dl@fARz@Tr@Tt@XD@RJd@Tv@`@r@b@vClB~@n@~AdAb@XfDxB\\Tf@\\h@ZLHHDZN`Ad@h@Rt@Tt@Rj@Lt@Lt@Jv@Jz@LzMdBnAPdAPz@P~@Tp@Rl@Pl@P|@\\zB`AnAp@dAl@z@h@p@d@`@Zn@f@x@r@n@l@lEhEn@p@v@z@dBdBhAfA`A|@z@p@l@`@NJfAl@hAj@v@Xv@Vx@Tx@Pb@HTDdALbAHx@BfBAJ?n@CB?r@ELAtAQfAURE^KnAc@hAa@pAc@n@S`@KdAUr@KjAIx@Ct@?~@Dt@D~@Lz@NjDn@`APD@jARfAPfAPj@DVBT@j@@p@?v@CXCNAf@GNCz@Mv@S^KXI~@]pAm@rFuChJ{E|FuCvFsCv@a@`Ae@bAe@x@]x@Yp@UzA]z@Q|@Qv@Mx@Kv@I`AG`AEhAC|A?~D?^?|C@~A@zB@lB?zMBxH@nKBvF@dA?zBDD?t@Dv@Fv@JpAVpA\\dA\\bAb@fAl@hAr@hAv@rF|Db@Zt@j@nA~@`@ZxB|ATd@??`@l@f@d@FFh@f@p@f@r@f@l@`@PJn@^VDn@T^Lt@PNBd@Jv@LXBl@@|A?xBCh@Fz@JNDNLHLDPBP@TCPENGJIHULi@@kC?WUKSMc@BeB?m@?gA?[?O?O?[Na@L[JQHIFITQd@[dA?b@?X?t@@??t@B~AAV?P?J?hCAbAArA?b@?X?rA?fCCB_A?S?]X?BI@GBABC@A|C?",
+          "length": 270
         }
       ],
-      "routeLongName": "MAX Orange Line",
+      "routeShortName": "512",
+      "routeLongName": "Everett - Northgate Station",
       "rentedBike": false,
       "rentedCar": false,
       "rentedVehicle": false,
       "hailedCar": false,
-      "duration": 95,
+      "flexDrtAdvanceBookMin": 0,
+      "duration": 2820,
       "transitLeg": true,
+      "intermediateStops": [
+        {
+          "name": "Broadway & 34th St",
+          "stopId": "CommTrans:2367",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "2367",
+          "lon": -122.201485,
+          "lat": 47.972881,
+          "arrival": 1651694640000,
+          "departure": 1651694640000,
+          "stopIndex": 1,
+          "stopSequence": 2,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "South Everett Fwy Station Bay 3",
+          "stopId": "CommTrans:2868",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "2868",
+          "lon": -122.2144774,
+          "lat": 47.89901771,
+          "arrival": 1651695180000,
+          "departure": 1651695180000,
+          "stopIndex": 2,
+          "stopSequence": 3,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "Ash Way Park & Ride Bay 1",
+          "stopId": "CommTrans:2164",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "2164",
+          "lon": -122.2584482,
+          "lat": 47.85271272,
+          "arrival": 1651695660000,
+          "departure": 1651695660000,
+          "stopIndex": 3,
+          "stopSequence": 4,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "Lynnwood Transit Center Bay D3",
+          "stopId": "CommTrans:2422",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "2422",
+          "lon": -122.2963008,
+          "lat": 47.81588022,
+          "arrival": 1651696080000,
+          "departure": 1651696080000,
+          "stopIndex": 4,
+          "stopSequence": 5,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "Mountlake Terrace Fwy Station Bay 6",
+          "stopId": "CommTrans:2765",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "2765",
+          "lon": -122.3164054,
+          "lat": 47.78722526,
+          "arrival": 1651696320000,
+          "departure": 1651696320000,
+          "stopIndex": 5,
+          "stopSequence": 6,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "startTime": 1651697460000,
+      "endTime": 1651697462000,
+      "departureDelay": 0,
+      "arrivalDelay": 0,
+      "realTime": false,
+      "distance": 0,
+      "pathway": false,
+      "mode": "WALK",
+      "route": "",
+      "agencyTimeZoneOffset": -25200000,
+      "interlineWithPreviousLeg": false,
+      "from": {
+        "name": "Northgate Station",
+        "stopId": "CommTrans:2191",
+        "wheelchairBoarding": "UNKNOWN",
+        "stopCode": "2191",
+        "lon": -122.328041,
+        "lat": 47.703022,
+        "arrival": 1651697460000,
+        "departure": 1651697460000,
+        "stopIndex": 6,
+        "stopSequence": 7,
+        "vertexType": "TRANSIT",
+        "boardAlightType": "DEFAULT"
+      },
+      "to": {
+        "name": "Northgate Station - Bay 4",
+        "stopId": "kcm:35318",
+        "wheelchairBoarding": "UNKNOWN",
+        "stopCode": "35318",
+        "lon": -122.328041,
+        "lat": 47.703022,
+        "arrival": 1651697462000,
+        "departure": 1651697700000,
+        "zoneId": "1",
+        "stopIndex": 0,
+        "stopSequence": 1,
+        "vertexType": "TRANSIT",
+        "boardAlightType": "DEFAULT"
+      },
+      "legGeometry": {
+        "points": "{~cbHfesiV??",
+        "length": 2
+      },
+      "rentedBike": false,
+      "rentedCar": false,
+      "rentedVehicle": false,
+      "hailedCar": false,
+      "flexDrtAdvanceBookMin": 0,
+      "duration": 2,
+      "transitLeg": false,
       "intermediateStops": [],
       "steps": []
     },
     {
-      "startTime": 1573689205000,
-      "endTime": 1573689385000,
+      "startTime": 1651697700000,
+      "endTime": 1651698360000,
       "departureDelay": 0,
       "arrivalDelay": 0,
       "realTime": false,
-      "distance": 714.3440742174371,
+      "distance": 3819.702008552735,
       "pathway": false,
-      "mode": "TRAM",
-      "route": "MAX Yellow Line",
-      "agencyName": "TriMet",
-      "agencyUrl": "http://trimet.org/",
-      "agencyTimeZoneOffset": -28800000,
-      "routeColor": "F8C213",
-      "routeType": 0,
-      "routeId": "TriMet:190",
-      "routeTextColor": "000000",
-      "interlineWithPreviousLeg": true,
-      "tripBlockId": "9071",
-      "headsign": "Expo Center",
-      "agencyId": "TRIMET",
-      "tripId": "TriMet:9266764",
-      "serviceDate": "20191113",
+      "mode": "BUS",
+      "route": "40",
+      "agencyName": "Metro Transit",
+      "agencyUrl": "http://metro.kingcounty.gov",
+      "agencyTimeZoneOffset": -25200000,
+      "routeType": 3,
+      "routeId": "kcm:102574",
+      "interlineWithPreviousLeg": false,
+      "tripShortName": "LOCAL",
+      "tripBlockId": "6367535",
+      "headsign": "Downtown Seattle Ballard",
+      "agencyId": "1",
+      "tripId": "kcm:546784580",
+      "serviceDate": "20220504",
       "from": {
-        "name": "PSU South/SW 6th & College MAX Stn",
-        "stopId": "TriMet:10293",
-        "stopCode": "10293",
-        "lon": -122.683593,
-        "lat": 45.509616,
-        "arrival": 1573689165000,
-        "departure": 1573689205000,
-        "zoneId": "R",
+        "name": "Northgate Station - Bay 4",
+        "stopId": "kcm:35318",
+        "wheelchairBoarding": "UNKNOWN",
+        "stopCode": "35318",
+        "lon": -122.328041,
+        "lat": 47.703022,
+        "arrival": 1651697462000,
+        "departure": 1651697700000,
+        "zoneId": "1",
         "stopIndex": 0,
         "stopSequence": 1,
-        "vertexType": "TRANSIT"
+        "vertexType": "TRANSIT",
+        "boardAlightType": "DEFAULT"
       },
       "to": {
-        "name": "SW 6th & Madison MAX Station",
-        "stopId": "TriMet:13123",
-        "stopCode": "13123",
-        "lon": -122.680381,
-        "lat": 45.515633,
-        "arrival": 1573689385000,
-        "departure": 1573689386000,
-        "zoneId": "R",
-        "stopIndex": 2,
-        "stopSequence": 3,
-        "vertexType": "TRANSIT"
+        "name": "N 105th St & Aurora Ave N",
+        "stopId": "kcm:40032",
+        "wheelchairBoarding": "UNKNOWN",
+        "stopCode": "40032",
+        "lon": -122.345596,
+        "lat": 47.7051239,
+        "arrival": 1651698360000,
+        "departure": 1651698360000,
+        "zoneId": "1",
+        "stopIndex": 8,
+        "stopSequence": 74,
+        "vertexType": "TRANSIT",
+        "boardAlightType": "DEFAULT"
       },
       "legGeometry": {
-        "points": "crwtGbtxkVWCgAe@}@a@aAc@MGs@[mB{@KEMG{BcAGCgBw@EAUMGA{@a@aAc@mBy@WMcCgAsB}@",
-        "length": 22
+        "points": "{~cbHpdsiV~@?hBAtA?lAAApBxB?jB?x@AjE?hF?@?jDC~DACxDAdF?xBAtG?`GAhFiJ?kHH_A?gIDa@AY?WCYKWOYWWWq@eASUWU_@Q_@Qa@EMBI@_DBsC@u@?{DDoD@{IDI?b@rB@DTp@V`@n@r@xBxAdB|AnEhF`@h@h@r@LVNZLb@J\\F^DX@RBZ@`@@`@?jG?rF?ZAfG?dG?V?H?|C",
+        "length": 74
       },
       "interStopGeometry": [
         {
-          "points": "crwtGbtxkVWCgAe@}@a@aAc@MGs@[mB{@",
-          "length": 8
+          "points": "{~cbHpdsiV~@?hBAtA?lAAApBxB?jB?x@AjE?hF?",
+          "length": 11
         },
         {
-          "points": "s~wtGrmxkVKEMG{BcAGCgBw@EAUMGA{@a@aAc@mBy@WMcCgAsB}@",
-          "length": 15
+          "points": "y}bbH|gsiV@?jDC~DACxDAdF",
+          "length": 6
+        },
+        {
+          "points": "qrbbHvtsiV?xBAtG?`GAhFiJ?kHH",
+          "length": 7
+        },
+        {
+          "points": "kgcbH|ptiV_A?gIDa@AY?WCYKWOYWWWq@eASUWU_@Q_@Qa@EMB",
+          "length": 17
+        },
+        {
+          "points": "y_dbHxitiVI@_DBsC@",
+          "length": 4
+        },
+        {
+          "points": "widbH`jtiVu@?{DDoD@{IDI?b@rB",
+          "length": 7
+        },
+        {
+          "points": "{`ebHbntiV@DTp@V`@n@r@xBxAdB|AnEhF`@h@h@r@LVNZLb@J\\F^DX@RBZ@`@@`@?jG?rF",
+          "length": 22
+        },
+        {
+          "points": "okdbHt{uiV?ZAfG?dG?V?H?|C",
+          "length": 7
         }
       ],
-      "routeLongName": "MAX Yellow Line",
+      "routeShortName": "40",
       "rentedBike": false,
       "rentedCar": false,
       "rentedVehicle": false,
       "hailedCar": false,
-      "duration": 180,
+      "flexDrtAdvanceBookMin": 0,
+      "duration": 660,
       "transitLeg": true,
       "intermediateStops": [
         {
-          "name": "PSU Urban Center/SW 6th & Montgomery MAX Stn",
-          "stopId": "TriMet:7774",
-          "stopCode": "7774",
-          "lon": -122.68255,
-          "lat": 45.511597,
-          "arrival": 1573689250000,
-          "departure": 1573689300000,
-          "zoneId": "R",
+          "name": "1st Ave NE & NE 95th St",
+          "stopId": "kcm:17697",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "17697",
+          "lon": -122.32856,
+          "lat": 47.6977348,
+          "arrival": 1651697809000,
+          "departure": 1651697809000,
+          "zoneId": "1",
           "stopIndex": 1,
-          "stopSequence": 2,
-          "vertexType": "TRANSIT"
+          "stopSequence": 11,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "N 92nd St & Corliss Ave N",
+          "stopId": "kcm:17698",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "17698",
+          "lon": -122.330513,
+          "lat": 47.6959953,
+          "arrival": 1651697871000,
+          "departure": 1651697871000,
+          "zoneId": "1",
+          "stopIndex": 2,
+          "stopSequence": 16,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "College Way N & N 97th St",
+          "stopId": "kcm:17710",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "17710",
+          "lon": -122.334908,
+          "lat": 47.6992683,
+          "arrival": 1651697993000,
+          "departure": 1651697993000,
+          "zoneId": "1",
+          "stopIndex": 3,
+          "stopSequence": 22,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "College Way N & N 103rd St",
+          "stopId": "kcm:17730",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "17730",
+          "lon": -122.333794,
+          "lat": 47.7032013,
+          "arrival": 1651698072000,
+          "departure": 1651698072000,
+          "zoneId": "1",
+          "stopIndex": 4,
+          "stopSequence": 38,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "Meridian Ave N & N 105th St",
+          "stopId": "kcm:17740",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "17740",
+          "lon": -122.333832,
+          "lat": 47.7047577,
+          "arrival": 1651698103000,
+          "departure": 1651698103000,
+          "zoneId": "1",
+          "stopIndex": 5,
+          "stopSequence": 41,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "N Northgate Way & Meridian Ave N",
+          "stopId": "kcm:17755",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "17755",
+          "lon": -122.33461,
+          "lat": 47.7085342,
+          "arrival": 1651698185000,
+          "departure": 1651698185000,
+          "zoneId": "1",
+          "stopIndex": 6,
+          "stopSequence": 47,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "N Northgate Way & Stone Ave N",
+          "stopId": "kcm:40030",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "40030",
+          "lon": -122.341866,
+          "lat": 47.7051163,
+          "arrival": 1651698312000,
+          "departure": 1651698312000,
+          "zoneId": "1",
+          "stopIndex": 7,
+          "stopSequence": 68,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
         }
       ],
       "steps": []
     },
     {
-      "startTime": 1573689386000,
-      "endTime": 1573689575000,
+      "startTime": 1651698360000,
+      "endTime": 1651698421000,
       "departureDelay": 0,
       "arrivalDelay": 0,
       "realTime": false,
-      "distance": 221.07199999999997,
+      "distance": 78.93199999999999,
       "pathway": false,
       "mode": "WALK",
       "route": "",
-      "agencyTimeZoneOffset": -28800000,
+      "agencyTimeZoneOffset": -25200000,
       "interlineWithPreviousLeg": false,
       "from": {
-        "name": "SW 6th & Madison MAX Station",
-        "stopId": "TriMet:13123",
-        "stopCode": "13123",
-        "lon": -122.680381,
-        "lat": 45.515633,
-        "arrival": 1573689385000,
-        "departure": 1573689386000,
-        "zoneId": "R",
-        "stopIndex": 2,
-        "stopSequence": 3,
-        "vertexType": "TRANSIT"
+        "name": "N 105th St & Aurora Ave N",
+        "stopId": "kcm:40032",
+        "wheelchairBoarding": "UNKNOWN",
+        "stopCode": "40032",
+        "lon": -122.345596,
+        "lat": 47.7051239,
+        "arrival": 1651698360000,
+        "departure": 1651698360000,
+        "zoneId": "1",
+        "stopIndex": 8,
+        "stopSequence": 74,
+        "vertexType": "TRANSIT",
+        "boardAlightType": "DEFAULT"
       },
       "to": {
-        "name": "1000 SW Broadway, Portland, OR, USA 97205",
-        "lon": -122.68073965894222,
-        "lat": 45.51695792552151,
-        "arrival": 1573689575000,
-        "orig": "1000 SW Broadway, Portland, OR, USA 97205",
-        "vertexType": "NORMAL"
+        "name": "Aurora Ave N & N 105th St",
+        "stopId": "kcm:7080",
+        "wheelchairBoarding": "UNKNOWN",
+        "stopCode": "7080",
+        "lon": -122.344856,
+        "lat": 47.7047806,
+        "arrival": 1651698421000,
+        "departure": 1651698454000,
+        "zoneId": "1",
+        "stopIndex": 16,
+        "stopSequence": 117,
+        "vertexType": "TRANSIT",
+        "boardAlightType": "DEFAULT"
       },
       "legGeometry": {
-        "points": "swxtGd_xkVEAKEAJCJGZ_@|BGVCRMEkB{@MEIEs@[",
-        "length": 14
+        "points": "skdbH~rviV?[FSF??K?cABGDGB?B?L?D?@?",
+        "length": 13
       },
       "rentedBike": false,
       "rentedCar": false,
       "rentedVehicle": false,
       "hailedCar": false,
-      "duration": 189,
+      "flexDrtAdvanceBookMin": 0,
+      "duration": 61,
       "transitLeg": false,
       "intermediateStops": [],
       "steps": [
         {
-          "distance": 3.497,
+          "distance": 19.622999999999998,
           "relativeDirection": "DEPART",
-          "streetName": "SW 6th & Madison (path)",
-          "absoluteDirection": "NORTH",
+          "streetName": "North 105th Street",
+          "absoluteDirection": "EAST",
           "stayOn": false,
           "area": false,
           "bogusName": false,
-          "lon": -122.6803484328138,
-          "lat": 45.5156245203574,
-          "elevation": []
+          "lon": -122.34559550720056,
+          "lat": 47.705065371872415,
+          "elevation": [
+            {
+              "first": 10.365,
+              "second": 98.12
+            },
+            {
+              "first": 19.625,
+              "second": 97.7
+            }
+          ]
         },
         {
-          "distance": 6.818,
-          "relativeDirection": "CONTINUE",
-          "streetName": "path",
-          "absoluteDirection": "NORTH",
+          "distance": 4.369,
+          "relativeDirection": "RIGHT",
+          "streetName": "service road",
+          "absoluteDirection": "SOUTH",
           "stayOn": false,
           "area": false,
           "bogusName": true,
-          "lon": -122.6803328,
-          "lat": 45.515654,
+          "lon": -122.3453515,
+          "lat": 47.705022400000004,
           "elevation": [
             {
               "first": 0,
-              "second": 25.69284254544678
+              "second": 97.7
             },
             {
-              "first": 6.82,
-              "second": 25.352842545446777
+              "first": 4.37,
+              "second": 97.64
             }
           ]
         },
         {
-          "distance": 93.255,
+          "distance": 54.94,
           "relativeDirection": "LEFT",
-          "streetName": "SW Madison St",
-          "absoluteDirection": "WEST",
-          "stayOn": false,
+          "streetName": "path",
+          "absoluteDirection": "EAST",
+          "stayOn": true,
           "area": false,
-          "bogusName": false,
-          "lon": -122.6803009,
-          "lat": 45.5157111,
+          "bogusName": true,
+          "lon": -122.3453516,
+          "lat": 47.7049831,
           "elevation": [
             {
               "first": 0,
-              "second": 25.352842545446777
+              "second": 97.64
             },
             {
-              "first": 10.41,
-              "second": 25.73284254544678
+              "first": 4.26,
+              "second": 97.45
             },
             {
-              "first": 10.408,
-              "second": 25.73284254544678
+              "first": 4.265,
+              "second": 97.45
             },
             {
-              "first": 20.408,
-              "second": 25.792842545446778
+              "first": 14.265,
+              "second": 96.91
             },
             {
-              "first": 30.408,
-              "second": 26.132842545446778
+              "first": 24.265,
+              "second": 96.65
             },
             {
-              "first": 40.408,
-              "second": 26.57284254544678
+              "first": 33.175,
+              "second": 96.62
             },
             {
-              "first": 50.408,
-              "second": 27.202842545446778
+              "first": 33.174,
+              "second": 96.62
             },
             {
-              "first": 60.408,
-              "second": 27.73284254544678
+              "first": 37.164,
+              "second": 96.62
             },
             {
-              "first": 74.768,
-              "second": 28.112842545446778
+              "first": 37.16,
+              "second": 96.62
             },
             {
-              "first": 74.77,
-              "second": 28.112842545446778
+              "first": 39.589999999999996,
+              "second": 96.62
             },
             {
-              "first": 84.77,
-              "second": 28.50284254544678
+              "first": 39.586,
+              "second": 96.62
             },
             {
-              "first": 93.25999999999999,
-              "second": 28.862842545446778
+              "first": 41.976,
+              "second": 96.62
+            },
+            {
+              "first": 41.976,
+              "second": 96.62
+            },
+            {
+              "first": 50.196,
+              "second": 96.62
+            },
+            {
+              "first": 50.193,
+              "second": 96.62
+            },
+            {
+              "first": 53.443,
+              "second": 96.62
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "startTime": 1651698454000,
+      "endTime": 1651700364000,
+      "departureDelay": 0,
+      "arrivalDelay": 0,
+      "realTime": false,
+      "distance": 11857.370334253566,
+      "pathway": false,
+      "mode": "BUS",
+      "route": "E Line",
+      "agencyName": "Metro Transit",
+      "agencyUrl": "http://metro.kingcounty.gov",
+      "agencyTimeZoneOffset": -25200000,
+      "routeType": 3,
+      "routeId": "kcm:102615",
+      "interlineWithPreviousLeg": false,
+      "tripShortName": "LOCAL",
+      "tripBlockId": "6367577",
+      "headsign": "Downtown Seattle",
+      "agencyId": "1",
+      "tripId": "kcm:491944150",
+      "serviceDate": "20220504",
+      "from": {
+        "name": "Aurora Ave N & N 105th St",
+        "stopId": "kcm:7080",
+        "wheelchairBoarding": "UNKNOWN",
+        "stopCode": "7080",
+        "lon": -122.344856,
+        "lat": 47.7047806,
+        "arrival": 1651698421000,
+        "departure": 1651698454000,
+        "zoneId": "1",
+        "stopIndex": 16,
+        "stopSequence": 117,
+        "vertexType": "TRANSIT",
+        "boardAlightType": "DEFAULT"
+      },
+      "to": {
+        "name": "3rd Ave & Cherry St",
+        "stopId": "kcm:490",
+        "wheelchairBoarding": "UNKNOWN",
+        "stopCode": "490",
+        "lon": -122.332275,
+        "lat": 47.6035805,
+        "arrival": 1651700364000,
+        "departure": 1651700365000,
+        "zoneId": "21",
+        "stopIndex": 33,
+        "stopSequence": 372,
+        "vertexType": "TRANSIT",
+        "boardAlightType": "DEFAULT"
+      },
+      "legGeometry": {
+        "points": "widbHvmviVvAAnCAnC?pCCnC?dAAnB?`DCRItDC\\?rC?~@?pACpC?pCArA?NHh@?pCCj@?bB?jA?JKx@?fAAhA?~A?LH`@?pCAfC?L?hC?nCCpC?nC?t@?xA?pCApC?xB?V?pC?nB?rAAX?pAC`@?N?LBL?LBLBNDLHPHJJVVJLRLNHLHNJNFLFJBZHJDN@N@LBN@ZBpAH`BPh@Bb@DV@ZDTDNBNDLDPFRFNJPHNJLJJJNLRPZTVPVLd@VTHZLJBLDVJ`@JZFZJf@Jh@Fh@Dh@DXBh@@pB?jB?lC@nC?rd@JzC@zB?lCBnC?fC@dB?l@?fC?nC?lCAfC?tD?vE?|F?zFC~C?tB?`EAnB?`M@lM?xLApAAZC^?j@E~@G`@EXCVEd@Ih@KdBa@jA[lA]fA]bA]t@[jAe@hAg@pAq@DAbAo@pCcBdEkCZSXMTQRIRKTGTGVGTENARCV?\\?lC?zFD`FBF?lI@|A?lA?bD@nD?nDHv@@vBFtBBr@B^?~BFd@G`@@`@Db@Fv@PlA^VFX@VAXGb@U\\ONGPERELELARCZ?b@?l@Bx@?^@fABbCC\\IhFGj@hA~@tA|BbDDH`ArA`AvA`AnAbAxAlB{DxCaGh@gAnB{DxCeGfCeFN]`BaDNa@JSNWLUHQFIFGHGjCcCl@k@hC}BLKfEsDdEwDlCcCdB{Ah@c@lCaClCcCnCcCnBcBBA",
+        "length": 256
+      },
+      "interStopGeometry": [
+        {
+          "points": "widbHvmviVvAAnCAnC?pCCnC?dAA",
+          "length": 7
+        },
+        {
+          "points": "wrcbHlmviVnB?`DCRItDC\\?rC?~@?",
+          "length": 8
+        },
+        {
+          "points": "i|bbHzlviVpACpC?pCArA?NHh@?pCCj@?",
+          "length": 9
+        },
+        {
+          "points": "gfbbHzlviVbB?jA?JKx@?fAAhA?~A?LH`@?pCAfC?",
+          "length": 12
+        },
+        {
+          "points": "ulabHtlviVL?hC?nCCpC?nC?t@?",
+          "length": 7
+        },
+        {
+          "points": "ux`bHplviVxA?pCApC?xB?",
+          "length": 5
+        },
+        {
+          "points": "}h`bHnlviVV?pC?nB?rAAX?pAC`@?N?LBL?LBLBNDLHPHJJVVJLRLNHLHNJNFLFJBZHJDN@N@LBN@ZBpAH`BPh@Bb@DV@ZDTDNBNDLDPFRFNJPHNJLJJJNLRPZTVPVLd@VTHZLJB",
+          "length": 59
+        },
+        {
+          "points": "kv~aHxzviVLDVJ`@JZFZJf@Jh@Fh@Dh@DXBh@@pB?jB?lC@nC?rd@JzC@zB?lCBnC?fC@dB?",
+          "length": 23
+        },
+        {
+          "points": "m|{aHf~viVl@?fC?nC?lCAfC?tD?vE?|F?zFC~C?tB?`EAnB?`M@lM?xLApAAZC^?j@E~@G`@EXCVEd@Ih@KdBa@jA[lA]fA]bA]t@[jAe@hAg@pAq@DA",
+          "length": 37
+        },
+        {
+          "points": "inwaHnrviVbAo@pCcBdEkCZSXMTQRIRKTGTGVGTENARCV?\\?lC?zFD`FBF?",
+          "length": 21
+        },
+        {
+          "points": "qdvaHjfviVlI@|A?lA?bD@nD?nDHv@@vBFtBBr@B^?~BFd@G`@@`@Db@Fv@PlA^VFX@VAXGb@U\\ONGPERELELARCZ?b@?l@Bx@?",
+          "length": 35
+        },
+        {
+          "points": "q~saHjgviV^@fABbCC\\IhFGj@hA~@tA|BbD",
+          "length": 9
+        },
+        {
+          "points": "sgsaH~pviVDH`ArA`AvA`AnAbAxAlB{DxCaGh@gA",
+          "length": 9
+        },
+        {
+          "points": "quraHxkviVnB{DxCeGfCeF",
+          "length": 4
+        },
+        {
+          "points": "_iraHpvuiVN]`BaDNa@JSNWLUHQFIFGHGjCcCl@k@hC}B",
+          "length": 14
+        },
+        {
+          "points": "kxqaHrbuiVLKfEsDdEwDlCcCdB{A",
+          "length": 6
+        },
+        {
+          "points": "{cqaHzotiVh@c@lCaClCcCnCcCnBcBBA",
+          "length": 7
+        }
+      ],
+      "routeShortName": "E Line",
+      "rentedBike": false,
+      "rentedCar": false,
+      "rentedVehicle": false,
+      "hailedCar": false,
+      "flexDrtAdvanceBookMin": 0,
+      "duration": 1910,
+      "transitLeg": true,
+      "intermediateStops": [
+        {
+          "name": "Aurora Ave N & N 100th St",
+          "stopId": "kcm:7100",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "7100",
+          "lon": -122.34481,
+          "lat": 47.701088,
+          "arrival": 1651698520000,
+          "departure": 1651698520000,
+          "zoneId": "1",
+          "stopIndex": 17,
+          "stopSequence": 123,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "Aurora Ave N & N 95th St",
+          "stopId": "kcm:7120",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "7120",
+          "lon": -122.344704,
+          "lat": 47.6974945,
+          "arrival": 1651698584000,
+          "departure": 1651698584000,
+          "zoneId": "1",
+          "stopIndex": 18,
+          "stopSequence": 130,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "Aurora Ave N & N 90th St",
+          "stopId": "kcm:7140",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "7140",
+          "lon": -122.344734,
+          "lat": 47.6939621,
+          "arrival": 1651698647000,
+          "departure": 1651698647000,
+          "zoneId": "1",
+          "stopIndex": 19,
+          "stopSequence": 138,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "Aurora Ave N & N 85th St",
+          "stopId": "kcm:7160",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "7160",
+          "lon": -122.344681,
+          "lat": 47.6898766,
+          "arrival": 1651698720000,
+          "departure": 1651698720000,
+          "zoneId": "1",
+          "stopIndex": 20,
+          "stopSequence": 149,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "Aurora Ave N & N 80th St",
+          "stopId": "kcm:7180",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "7180",
+          "lon": -122.344666,
+          "lat": 47.6866722,
+          "arrival": 1651698775000,
+          "departure": 1651698775000,
+          "zoneId": "1",
+          "stopIndex": 21,
+          "stopSequence": 155,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "Aurora Ave N & N 76th St",
+          "stopId": "kcm:7200",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "7200",
+          "lon": -122.34465,
+          "lat": 47.6841507,
+          "arrival": 1651698817000,
+          "departure": 1651698817000,
+          "zoneId": "1",
+          "stopIndex": 22,
+          "stopSequence": 159,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "Aurora Ave N & N 65th St",
+          "stopId": "kcm:7210",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "7210",
+          "lon": -122.346947,
+          "lat": 47.6760826,
+          "arrival": 1651698960000,
+          "departure": 1651698960000,
+          "zoneId": "1",
+          "stopIndex": 23,
+          "stopSequence": 217,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "Aurora Ave N & N 46th St",
+          "stopId": "kcm:75408",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "75408",
+          "lon": -122.347488,
+          "lat": 47.6616707,
+          "arrival": 1651699080000,
+          "departure": 1651699080000,
+          "zoneId": "1",
+          "stopIndex": 24,
+          "stopSequence": 239,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "Aurora Ave N & Lynn St",
+          "stopId": "kcm:6070",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "6070",
+          "lon": -122.345596,
+          "lat": 47.6389084,
+          "arrival": 1651699474000,
+          "departure": 1651699474000,
+          "zoneId": "1",
+          "stopIndex": 25,
+          "stopSequence": 275,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "Aurora Ave N & Galer St",
+          "stopId": "kcm:6100",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "6100",
+          "lon": -122.343666,
+          "lat": 47.6322517,
+          "arrival": 1651699593000,
+          "departure": 1651699593000,
+          "zoneId": "1",
+          "stopIndex": 26,
+          "stopSequence": 295,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "7th Ave N & Thomas St",
+          "stopId": "kcm:6176",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "6176",
+          "lon": -122.343842,
+          "lat": 47.6210556,
+          "arrival": 1651699787000,
+          "departure": 1651699787000,
+          "zoneId": "1",
+          "stopIndex": 27,
+          "stopSequence": 329,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "Wall St & 5th Ave",
+          "stopId": "kcm:7430",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "7430",
+          "lon": -122.345345,
+          "lat": 47.6174316,
+          "arrival": 1651699857000,
+          "departure": 1651699857000,
+          "zoneId": "1",
+          "stopIndex": 28,
+          "stopSequence": 337,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "3rd Ave & Bell St",
+          "stopId": "kcm:400",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "400",
+          "lon": -122.344513,
+          "lat": 47.6144447,
+          "arrival": 1651699928000,
+          "departure": 1651699928000,
+          "zoneId": "21",
+          "stopIndex": 29,
+          "stopSequence": 345,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "3rd Ave & Virginia St",
+          "stopId": "kcm:420",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "420",
+          "lon": -122.34111,
+          "lat": 47.6124382,
+          "arrival": 1651699981000,
+          "departure": 1651699981000,
+          "zoneId": "21",
+          "stopIndex": 30,
+          "stopSequence": 348,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "3rd Ave & Pike St",
+          "stopId": "kcm:431",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "431",
+          "lon": -122.337959,
+          "lat": 47.6097908,
+          "arrival": 1651700040000,
+          "departure": 1651700040000,
+          "zoneId": "21",
+          "stopIndex": 31,
+          "stopSequence": 361,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        },
+        {
+          "name": "3rd Ave & Seneca St",
+          "stopId": "kcm:468",
+          "wheelchairBoarding": "UNKNOWN",
+          "stopCode": "468",
+          "lon": -122.334938,
+          "lat": 47.6065025,
+          "arrival": 1651700212000,
+          "departure": 1651700212000,
+          "zoneId": "21",
+          "stopIndex": 32,
+          "stopSequence": 366,
+          "vertexType": "TRANSIT",
+          "boardAlightType": "DEFAULT"
+        }
+      ],
+      "steps": []
+    },
+    {
+      "startTime": 1651700365000,
+      "endTime": 1651700473000,
+      "departureDelay": 0,
+      "arrivalDelay": 0,
+      "realTime": false,
+      "distance": 135.17100000000002,
+      "pathway": false,
+      "mode": "WALK",
+      "route": "",
+      "agencyTimeZoneOffset": -25200000,
+      "interlineWithPreviousLeg": false,
+      "from": {
+        "name": "3rd Ave & Cherry St",
+        "stopId": "kcm:490",
+        "wheelchairBoarding": "UNKNOWN",
+        "stopCode": "490",
+        "lon": -122.332275,
+        "lat": 47.6035805,
+        "arrival": 1651700364000,
+        "departure": 1651700365000,
+        "zoneId": "21",
+        "stopIndex": 33,
+        "stopSequence": 372,
+        "vertexType": "TRANSIT",
+        "boardAlightType": "DEFAULT"
+      },
+      "to": {
+        "name": "208 James St, Seattle, WA 98104-2212, United States",
+        "wheelchairBoarding": "UNKNOWN",
+        "lon": -122.33197990547832,
+        "lat": 47.602632914527724,
+        "arrival": 1651700473000,
+        "orig": "208 James St, Seattle, WA 98104-2212, United States",
+        "vertexType": "NORMAL"
+      },
+      "legGeometry": {
+        "points": "gqpaH|_tiVJKBA@AFEDE@?BEnBkB@@B??@^fA",
+        "length": 13
+      },
+      "rentedBike": false,
+      "rentedCar": false,
+      "rentedVehicle": false,
+      "hailedCar": false,
+      "flexDrtAdvanceBookMin": 0,
+      "duration": 108,
+      "transitLeg": false,
+      "intermediateStops": [],
+      "steps": [
+        {
+          "distance": 99.492,
+          "relativeDirection": "DEPART",
+          "streetName": "sidewalk",
+          "absoluteDirection": "SOUTHEAST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": true,
+          "lon": -122.33230777867696,
+          "lat": 47.603566786898504,
+          "elevation": [
+            {
+              "first": 8.543,
+              "second": 20.99
+            },
+            {
+              "first": 11.142999999999999,
+              "second": 20.74
+            },
+            {
+              "first": 11.140999999999998,
+              "second": 20.74
+            },
+            {
+              "first": 11.450999999999999,
+              "second": 20.71
+            },
+            {
+              "first": 11.446999999999997,
+              "second": 20.71
+            },
+            {
+              "first": 17.386999999999997,
+              "second": 20.23
+            },
+            {
+              "first": 17.381999999999998,
+              "second": 20.23
+            },
+            {
+              "first": 21.191999999999997,
+              "second": 19.99
+            },
+            {
+              "first": 25.188,
+              "second": 19.7
+            },
+            {
+              "first": 35.188,
+              "second": 19.35
+            },
+            {
+              "first": 45.188,
+              "second": 19.17
+            },
+            {
+              "first": 55.188,
+              "second": 18.99
+            },
+            {
+              "first": 65.188,
+              "second": 18.75
+            },
+            {
+              "first": 75.188,
+              "second": 18.52
+            },
+            {
+              "first": 85.188,
+              "second": 18.27
+            },
+            {
+              "first": 99.488,
+              "second": 17.93
             }
           ]
         },
         {
-          "distance": 117.502,
-          "relativeDirection": "RIGHT",
-          "streetName": "SW Broadway",
-          "absoluteDirection": "NORTH",
-          "stayOn": false,
+          "distance": 35.679,
+          "relativeDirection": "UTURN_RIGHT",
+          "streetName": "sidewalk",
+          "absoluteDirection": "SOUTHWEST",
+          "stayOn": true,
           "area": false,
-          "bogusName": false,
-          "lon": -122.6814199,
-          "lat": 45.5160087,
+          "bogusName": true,
+          "lon": -122.3316056,
+          "lat": 47.602787500000005,
           "elevation": [
             {
-              "first": 0,
-              "second": 28.862842545446778
+              "first": 0.416,
+              "second": 17.66
             },
             {
-              "first": 10,
-              "second": 28.62284254544678
+              "first": 10.416,
+              "second": 16.75
             },
             {
-              "first": 20,
-              "second": 28.202842545446778
+              "first": 20.416,
+              "second": 15.91
             },
             {
-              "first": 30,
-              "second": 27.75284254544678
+              "first": 30.416,
+              "second": 15.12
             },
             {
-              "first": 40,
-              "second": 27.362842545446778
-            },
-            {
-              "first": 50,
-              "second": 27.00284254544678
-            },
-            {
-              "first": 60,
-              "second": 26.62284254544678
-            },
-            {
-              "first": 72.52,
-              "second": 26.202842545446778
-            },
-            {
-              "first": 72.515,
-              "second": 26.202842545446778
-            },
-            {
-              "first": 80.005,
-              "second": 25.952842545446778
-            },
-            {
-              "first": 80.007,
-              "second": 25.952842545446778
-            },
-            {
-              "first": 86.84700000000001,
-              "second": 25.882842545446778
-            },
-            {
-              "first": 86.851,
-              "second": 25.882842545446778
-            },
-            {
-              "first": 96.851,
-              "second": 25.652842545446777
-            },
-            {
-              "first": 106.851,
-              "second": 25.23284254544678
-            },
-            {
-              "first": 116.851,
-              "second": 24.792842545446778
-            },
-            {
-              "first": 117.501,
-              "second": 24.75284254544678
+              "first": 32.906,
+              "second": 14.9
             }
           ]
         }

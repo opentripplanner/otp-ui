@@ -5,6 +5,7 @@ import {
   StandardBike,
   StandardBus,
   StandardGondola,
+  StandardRail,
   StandardTram,
   StandardWalk
 } from "./standard";
@@ -13,11 +14,11 @@ import {
  * Icons for all standard MOD-UI modes.
  * Any hail and rental modes managed by one or multiple companies
  * are optional (by default, the company logo will be displayed)
- * but can be overriden here using the pattern
+ * but can be overridden here using the pattern
  * <otp_mode>_<company_id> (e.g. 'car_hail_uber').
  * Furthermore, any hail or rental modes managed by a single company
  * are optional (by default, the company logo will be displayed)
- * but can be overriden here using the pattern
+ * but can be overridden here using the pattern
  * <otp_mode> (e.g. 'bicycle_rent').
  */
 function StandardModeIcon({ mode, ...props }) {
@@ -37,8 +38,10 @@ function StandardModeIcon({ mode, ...props }) {
       return <StandardGondola {...props} />;
     case "micromobility":
     case "micromobility_rent":
+    case "scooter":
       return <ClassicMicromobility {...props} />;
     case "rail":
+      return <StandardRail {...props} />;
     case "subway":
     case "tram":
       return <StandardTram {...props} />;

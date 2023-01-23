@@ -1,0 +1,529 @@
+{
+  "geocoding": {
+    "version": "0.2",
+    "attribution": "https://geocode.earth/guidelines",
+    "query": {
+      "text": "clinton",
+      "parser": "pelias",
+      "parsed_text": { "subject": "clinton", "locality": "clinton" },
+      "size": 10,
+      "layers": [
+        "venue",
+        "street",
+        "locality",
+        "neighbourhood",
+        "county",
+        "localadmin",
+        "region",
+        "macrocounty",
+        "country",
+        "macroregion",
+        "borough",
+        "postalcode",
+        "macrohood",
+        "marinearea",
+        "disputed",
+        "dependency",
+        "empire",
+        "continent",
+        "ocean"
+      ],
+      "private": false,
+      "lang": {
+        "name": "English",
+        "iso6391": "en",
+        "iso6393": "eng",
+        "via": "default",
+        "defaulted": true
+      },
+      "querySize": 20
+    },
+    "warnings": ["performance optimization: excluding 'address' layer"],
+    "engine": { "name": "Pelias", "author": "Mapzen", "version": "1.0" },
+    "timestamp": 1628862085588
+  },
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.436623, 47.244865]
+      },
+      "properties": {
+        "id": "TL_US::Sound Transit::stations",
+        "gid": "transit:stations:TL_US::Sound Transit::stations",
+        "layer": "stations",
+        "source": "transit",
+        "source_id": "TL_US::Sound Transit::stations",
+        "name": "Union Station (Sound Transit Stop)",
+        "accuracy": "centroid",
+        "label": "Union Station (Sound Transit Stop)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-122.352037, 47.974564] },
+      "properties": {
+        "id": "5::WA State Ferry::stops",
+        "gid": "transit:stops:5::WA State Ferry::stops",
+        "layer": "stops",
+        "source": "transit",
+        "source_id": "5::WA State Ferry::stops",
+        "name": "Clinton (WA State Ferry Stop)",
+        "accuracy": "centroid",
+        "label": "Clinton (WA State Ferry Stop)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.195504, 48.05579]
+      },
+      "properties": {
+        "id": "1::Community Transit::stops",
+        "gid": "transit:stops:1::Community Transit::stops",
+        "layer": "stops",
+        "source": "transit",
+        "source_id": "1::Community Transit::stops",
+        "distance": 4,
+        "name": "Marine Dr NE & 27th Ave NE (Community Transit Stop ID 1)",
+        "accuracy": "centroid",
+        "label": "Marine Dr NE & 27th Ave NE (Community Transit Stop ID 1)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.200918, 48.054792]
+      },
+      "properties": {
+        "id": "7::Community Transit::stops",
+        "gid": "transit:stops:7::Community Transit::stops",
+        "layer": "stops",
+        "source": "transit",
+        "source_id": "7::Community Transit::stops",
+        "name": "Marine Dr NE & 23rd Ave NE (Community Transit Stop ID 7)",
+        "distance": 2,
+        "accuracy": "centroid",
+        "label": "Marine Dr NE & 23rd Ave NE (Community Transit Stop ID 7)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.321062, 47.611343]
+      },
+      "properties": {
+        "id": "node/5662026889",
+        "gid": "openstreetmap:venue:node/5662026889",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node/5662026889",
+        "country_code": "US",
+        "name": "Whole Foods Market",
+        "housenumber": "1001",
+        "street": "Broadway",
+        "postalcode": "98122",
+        "accuracy": "point",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Washington",
+        "region_gid": "whosonfirst:region:85688623",
+        "region_a": "WA",
+        "county": "King County",
+        "county_gid": "whosonfirst:county:102086191",
+        "county_a": "KN",
+        "locality": "Seattle",
+        "locality_gid": "whosonfirst:locality:101730401",
+        "neighbourhood": "First Hill",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85867279",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Whole Foods Market, Seattle, WA, USA",
+        "addendum": {
+          "osm": {
+            "wheelchair": "yes",
+            "brand": "Whole Foods Market",
+            "website": "https://www.wholefoodsmarket.com/stores/madisonbroadway",
+            "phone": "+1 206-802-3720",
+            "opening_hours": "07:00-22:00"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.338176, 47.618316]
+      },
+      "properties": {
+        "id": "node/1934511929",
+        "gid": "openstreetmap:venue:node/1934511929",
+        "layer": "address",
+        "source": "openstreetmap",
+        "source_id": "node/1934511929",
+        "country_code": "US",
+        "housenumber": "2200",
+        "street": "Westlake Avenue",
+        "accuracy": "point",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Washington",
+        "region_gid": "whosonfirst:region:85688623",
+        "region_a": "WA",
+        "county_gid": "whosonfirst:county:102086191",
+        "postalcode": "10001",
+        "county_a": "KN",
+        "locality": "Downtown Seattle",
+        "locality_gid": "whosonfirst:locality:101730401",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85805569",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Whole Foods Market, Seattle, WA, USA",
+        "addendum": {
+          "osm": {
+            "brand": "Whole Foods Market",
+            "website": "https://m.wholefoodsmarket.com/mobile/stores/westlake",
+            "phone": "+1 206 6219700",
+            "opening_hours": "Mo-Su 07:00-22:00"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.316204, 47.675128]
+      },
+      "properties": {
+        "id": "node/477829394",
+        "gid": "openstreetmap:venue:node/477829394",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node/477829394",
+        "country_code": "US",
+        "name": "Whole Foods Market",
+        "housenumber": "1026",
+        "street": "NE 64th Street",
+        "postalcode": "98115",
+        "accuracy": "point",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Washington",
+        "region_gid": "whosonfirst:region:85688623",
+        "region_a": "WA",
+        "county": "King County",
+        "county_gid": "whosonfirst:county:102086191",
+        "county_a": "KN",
+        "locality": "Seattle",
+        "locality_gid": "whosonfirst:locality:101730401",
+        "neighbourhood": "Roosevelt",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85869631",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Whole Foods Market, Seattle, WA, USA",
+        "addendum": {
+          "osm": {
+            "wheelchair": "yes",
+            "brand": "Whole Foods Market",
+            "website": "https://www.wholefoodsmarket.com/stores/rooseveltsquare",
+            "phone": "+1 206-985-1500",
+            "opening_hours": "07:00-22:00"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.376908, 47.63698]
+      },
+      "properties": {
+        "id": "node/2081763609",
+        "gid": "openstreetmap:venue:node/2081763609",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node/2081763609",
+        "country_code": "US",
+        "name": "Whole Foods Market",
+        "housenumber": "2001",
+        "street": "15th Avenue West",
+        "postalcode": "98119",
+        "accuracy": "point",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Washington",
+        "region_gid": "whosonfirst:region:85688623",
+        "region_a": "WA",
+        "county": "King County",
+        "county_gid": "whosonfirst:county:102086191",
+        "county_a": "KN",
+        "locality": "Seattle",
+        "locality_gid": "whosonfirst:locality:101730401",
+        "neighbourhood": "Interbay",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85826973",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Whole Foods Market, Seattle, WA, USA",
+        "addendum": {
+          "osm": {
+            "brand": "Whole Foods Market",
+            "website": "https://wholefoodsmarket.com/",
+            "phone": "+1 206 3525440",
+            "opening_hours": "Mo-Su 07:00-22:00"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.1014, 47.666145]
+      },
+      "properties": {
+        "id": "way/316907627",
+        "gid": "openstreetmap:venue:way/316907627",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "way/316907627",
+        "country_code": "US",
+        "name": "Whole Foods Market",
+        "housenumber": "17991",
+        "street": "Redmond Way NE",
+        "postalcode": "98052",
+        "accuracy": "point",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Washington",
+        "region_gid": "whosonfirst:region:85688623",
+        "region_a": "WA",
+        "county": "King County",
+        "county_gid": "whosonfirst:county:102086191",
+        "county_a": "KN",
+        "locality": "Redmond",
+        "locality_gid": "whosonfirst:locality:101730409",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Whole Foods Market, Redmond, WA, USA",
+        "addendum": {
+          "osm": {
+            "brand": "Whole Foods Market",
+            "website": "https://www.wholefoodsmarket.com/stores/redmond",
+            "phone": "+1-425-8812600"
+          }
+        }
+      },
+      "bbox": [-122.1020694, 47.6656979, -122.1005992, 47.6665656]
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.184843, 47.617886]
+      },
+      "properties": {
+        "id": "way/38224227",
+        "gid": "openstreetmap:venue:way/38224227",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "way/38224227",
+        "country_code": "US",
+        "name": "Whole Foods Market",
+        "housenumber": "888",
+        "street": "116th Avenue NE",
+        "postalcode": "98005",
+        "accuracy": "point",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Washington",
+        "region_gid": "whosonfirst:region:85688623",
+        "region_a": "WA",
+        "county": "King County",
+        "county_gid": "whosonfirst:county:102086191",
+        "county_a": "KN",
+        "locality": "Bellevue",
+        "locality_gid": "whosonfirst:locality:101730457",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Whole Foods Market, Bellevue, WA, USA",
+        "addendum": {
+          "osm": {
+            "brand": "Whole Foods Market",
+            "phone": "+1-425-4621400"
+          }
+        }
+      },
+      "bbox": [-122.1849628, 47.617805, -122.1841119, 47.618645]
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.180073, 47.711584]
+      },
+      "properties": {
+        "id": "node/5836842692",
+        "gid": "openstreetmap:venue:node/5836842692",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node/5836842692",
+        "country_code": "US",
+        "name": "Whole Foods Market",
+        "housenumber": "12501",
+        "street": "120th Avenue NE",
+        "postalcode": "98034",
+        "accuracy": "point",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Washington",
+        "region_gid": "whosonfirst:region:85688623",
+        "region_a": "WA",
+        "county": "King County",
+        "county_gid": "whosonfirst:county:102086191",
+        "county_a": "KN",
+        "locality": "Kirkland",
+        "locality_gid": "whosonfirst:locality:101730427",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Whole Foods Market, Kirkland, WA, USA",
+        "addendum": {
+          "osm": {
+            "brand": "Whole Foods Market",
+            "phone": "+1-425-979-3301"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.271838, 47.820172]
+      },
+      "properties": {
+        "id": "way/311857316",
+        "gid": "openstreetmap:venue:way/311857316",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "way/311857316",
+        "country_code": "US",
+        "name": "Whole Foods Market",
+        "housenumber": "2800",
+        "street": "196th Street SW",
+        "accuracy": "point",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Washington",
+        "region_gid": "whosonfirst:region:85688623",
+        "region_a": "WA",
+        "county": "Snohomish County",
+        "county_gid": "whosonfirst:county:102087537",
+        "county_a": "SN",
+        "locality": "Lynnwood",
+        "locality_gid": "whosonfirst:locality:101729895",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Whole Foods Market, Lynnwood, WA, USA",
+        "addendum": {
+          "osm": {
+            "brand": "Whole Foods Market"
+          }
+        }
+      },
+      "bbox": [-122.272843, 47.8195744, -122.271739, 47.8202859]
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.53601, 47.227373]
+      },
+      "properties": {
+        "id": "way/555892536",
+        "gid": "openstreetmap:venue:way/555892536",
+        "layer": "example_layer",
+        "source": "openstreetmap",
+        "source_id": "way/555892536",
+        "country_code": "US",
+        "distance": 999999,
+        "name": "Important, far away Whole Foods Market",
+        "accuracy": "point",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Washington",
+        "region_gid": "whosonfirst:region:85688623",
+        "region_a": "WA",
+        "county": "Pierce County",
+        "county_gid": "whosonfirst:county:102087547",
+        "county_a": "PI",
+        "locality": "University Place",
+        "locality_gid": "whosonfirst:locality:101730265",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Whole Foods that is far away, but prioritized",
+        "addendum": {
+          "osm": {
+            "brand": "Whole Foods Market"
+          }
+        }
+      },
+      "bbox": [-122.5363312, 47.2268889, -122.5356427, 47.2275789]
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.381946, 47.560895]
+      },
+      "properties": {
+        "id": "node/6975089659",
+        "gid": "openstreetmap:venue:node/6975089659",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node/6975089659",
+        "country_code": "US",
+        "name": "Whole Foods Market",
+        "accuracy": "point",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Washington",
+        "region_gid": "whosonfirst:region:85688623",
+        "region_a": "WA",
+        "county": "King County",
+        "county_gid": "whosonfirst:county:102086191",
+        "county_a": "KN",
+        "locality": "Seattle",
+        "locality_gid": "whosonfirst:locality:101730401",
+        "neighbourhood": "Genesee",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85869275",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Whole Foods Market, Seattle, WA, USA",
+        "addendum": {
+          "osm": {
+            "brand": "Whole Foods Market"
+          }
+        }
+      }
+    }
+  ],
+  "bbox": [-90.898975, 38.415667, -73.333152, 45.01084]
+}

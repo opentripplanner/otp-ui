@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`humanizeDistanceString 10m should output correct  metric 1`] = `"10 m"`;
+
+exports[`humanizeDistanceString 10m should output correct abbreviated imperial 1`] = `"33 ft"`;

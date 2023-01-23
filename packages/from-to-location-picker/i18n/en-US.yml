@@ -1,0 +1,15 @@
+# Default messages for the FromToLocationPicker component.
+# To use from a react-intl application:
+# - merge the content of this file into the messages object
+#   that has your other localized strings,
+# - flatten the ids, i.e. convert a structure such as
+#      otpUi > FromToLocationPicker > from
+#   into "otpUi.FromToLocationPicker.from" (see FromToLocationPicker story for an example),
+# - pass the resulting object to the messages prop of IntlProvider.
+#
+
+otpUi:
+  FromToLocationPicker:
+    from: From here
+    planATrip: "Plan a trip:"
+    to: To here

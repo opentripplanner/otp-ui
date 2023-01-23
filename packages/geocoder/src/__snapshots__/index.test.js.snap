@@ -11,7 +11,7 @@ Object {
         0.1296100000000706,
         51.973520000000065,
       ],
-      "type": "point",
+      "type": "Point",
     },
     "properties": Object {
       "confidence": 0.875,
@@ -25,7 +25,7 @@ Object {
       "region": "England",
       "resultId": undefined,
     },
-    "type": "feature",
+    "type": "Feature",
   },
 }
 `;
@@ -64,7 +64,7 @@ Object {
         -122.67320084756255,
         45.516175523600715,
       ],
-      "type": "point",
+      "type": "Point",
     },
     "properties": Object {
       "country_a": "USA",
@@ -75,7 +75,37 @@ Object {
       "neighbourhood": "Downtown",
       "region": "Oregon",
     },
-    "type": "feature",
+    "type": "Feature",
+  },
+}
+`;
+
+exports[`geocoder ARCGIS should make reverse query with featurecollection enabled 1`] = `
+Object {
+  "features": Array [
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.67320084756255,
+          45.516175523600715,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "country_a": "USA",
+        "county": "Multnomah County",
+        "label": "SW Naito Pkwy, Portland, OR, 97204, USA",
+        "locality": undefined,
+        "name": "SW Naito Pkwy",
+        "neighbourhood": "Downtown",
+        "region": "Oregon",
+      },
+      "type": "Feature",
+    },
+  ],
+  "query": Object {
+    "x": -122.67324,
+    "y": 45.516198,
   },
 }
 `;
@@ -89,7 +119,7 @@ Object {
           0.1296100000000706,
           51.973520000000065,
         ],
-        "type": "point",
+        "type": "Point",
       },
       "properties": Object {
         "confidence": 0.875,
@@ -103,7 +133,7 @@ Object {
         "region": "England",
         "resultId": undefined,
       },
-      "type": "feature",
+      "type": "Feature",
     },
     Object {
       "geometry": Object {
@@ -111,7 +141,7 @@ Object {
           -0.8668999999999301,
           51.558340000000044,
         ],
-        "type": "point",
+        "type": "Point",
       },
       "properties": Object {
         "confidence": 0.875,
@@ -125,12 +155,344 @@ Object {
         "region": "England",
         "resultId": undefined,
       },
-      "type": "feature",
+      "type": "Feature",
     },
   ],
   "query": Object {
     "text": "Mill Ends",
   },
+}
+`;
+
+exports[`geocoder HERE should get location from geocode feature 1`] = `
+Object {
+  "lat": 45.516198,
+  "lon": -122.67324,
+  "name": "Mill Ends Park, Portland, OR, USA",
+  "rawGeocodedFeature": Object {
+    "geometry": Object {
+      "coordinates": Array [
+        -122.67324,
+        45.516198,
+      ],
+      "type": "Point",
+    },
+    "properties": Object {
+      "label": "Mill Ends Park, Portland, OR, USA",
+    },
+  },
+}
+`;
+
+exports[`geocoder HERE should make autocomplete query 1`] = `
+Object {
+  "features": Array [
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.31701,
+          47.68199,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "addendum": Object {
+          "categories": Array [
+            Object {
+              "id": "600-6300-0066",
+              "name": "Grocery",
+              "primary": true,
+            },
+            Object {
+              "id": "600-6400-0000",
+              "name": "Drugstore or Pharmacy",
+            },
+            Object {
+              "id": "600-6400-0069",
+              "name": "Drugstore",
+            },
+            Object {
+              "id": "600-6400-0070",
+              "name": "Pharmacy",
+            },
+          ],
+        },
+        "country": "United States",
+        "country_a": "USA",
+        "country_code": "USA",
+        "county": "King",
+        "housenumber": "7300",
+        "label": "Safeway, 7300 Roosevelt Way NE, Seattle, WA 98115-5658, United States",
+        "layer": "venue",
+        "locality": "Seattle",
+        "name": "Safeway",
+        "neighbourhood": "Roosevelt",
+        "postalcode": "98115-5658",
+        "region": "Washington",
+        "source": "here",
+        "street": "Roosevelt Way NE",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.31388,
+          47.66427,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "addendum": Object {
+          "categories": Array [
+            Object {
+              "id": "600-6300-0066",
+              "name": "Grocery",
+              "primary": true,
+            },
+            Object {
+              "id": "600-6400-0000",
+              "name": "Drugstore or Pharmacy",
+            },
+            Object {
+              "id": "600-6400-0070",
+              "name": "Pharmacy",
+            },
+          ],
+        },
+        "country": "United States",
+        "country_a": "USA",
+        "country_code": "USA",
+        "county": "King",
+        "housenumber": "4732",
+        "label": "Safeway, 4732 Brooklyn Ave NE, Seattle, WA 98105-4411, United States",
+        "layer": "venue",
+        "locality": "Seattle",
+        "name": "Safeway",
+        "neighbourhood": "University District",
+        "postalcode": "98105-4411",
+        "region": "Washington",
+        "source": "here",
+        "street": "Brooklyn Ave NE",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.28943,
+          47.68261,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "addendum": Object {
+          "categories": Array [
+            Object {
+              "id": "600-6300-0066",
+              "name": "Grocery",
+              "primary": true,
+            },
+            Object {
+              "id": "600-6400-0000",
+              "name": "Drugstore or Pharmacy",
+            },
+            Object {
+              "id": "600-6400-0069",
+              "name": "Drugstore",
+            },
+            Object {
+              "id": "600-6400-0070",
+              "name": "Pharmacy",
+            },
+          ],
+        },
+        "country": "United States",
+        "country_a": "USA",
+        "country_code": "USA",
+        "county": "King",
+        "housenumber": "7340",
+        "label": "Safeway, 7340 35th Ave NE, Seattle, WA 98115, United States",
+        "layer": "venue",
+        "locality": "Seattle",
+        "name": "Safeway",
+        "neighbourhood": "Bryant",
+        "postalcode": "98115",
+        "region": "Washington",
+        "source": "here",
+        "street": "35th Ave NE",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.35496,
+          47.69285,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "addendum": Object {
+          "categories": Array [
+            Object {
+              "id": "600-6300-0066",
+              "name": "Grocery",
+              "primary": true,
+            },
+            Object {
+              "id": "600-6400-0000",
+              "name": "Drugstore or Pharmacy",
+            },
+            Object {
+              "id": "600-6400-0070",
+              "name": "Pharmacy",
+            },
+          ],
+        },
+        "country": "United States",
+        "country_a": "USA",
+        "country_code": "USA",
+        "county": "King",
+        "housenumber": "8704",
+        "label": "Safeway, 8704 Greenwood Ave N, Seattle, WA 98103, United States",
+        "layer": "venue",
+        "locality": "Seattle",
+        "name": "Safeway",
+        "neighbourhood": "Greenwood",
+        "postalcode": "98103",
+        "region": "Washington",
+        "source": "here",
+        "street": "Greenwood Ave N",
+      },
+      "type": "Feature",
+    },
+  ],
+  "type": "FeatureCollection",
+}
+`;
+
+exports[`geocoder HERE should make reverse query 1`] = `
+Object {
+  "lat": 45.516198,
+  "lon": -122.67324,
+  "name": "833 SW Naito Pkwy, Portland, OR 97204-3309, United States",
+  "rawGeocodedFeature": Object {
+    "geometry": Object {
+      "coordinates": Array [
+        -122.67357,
+        45.5164,
+      ],
+      "type": "Point",
+    },
+    "properties": Object {
+      "country": "United States",
+      "country_a": "USA",
+      "country_code": "USA",
+      "county": "Multnomah",
+      "housenumber": "833",
+      "label": "833 SW Naito Pkwy, Portland, OR 97204-3309, United States",
+      "layer": "address",
+      "locality": "Portland",
+      "name": "833 SW Naito Pkwy, Portland, OR 97204-3309, United States",
+      "neighbourhood": "Downtown",
+      "postalcode": "97204-3309",
+      "region": "Oregon",
+      "source": "here",
+      "street": "SW Naito Pkwy",
+    },
+    "type": "Feature",
+  },
+}
+`;
+
+exports[`geocoder HERE should make reverse query with featurecollection enabled 1`] = `
+Object {
+  "features": Array [
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.67357,
+          45.5164,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "country": "United States",
+        "country_a": "USA",
+        "country_code": "USA",
+        "county": "Multnomah",
+        "housenumber": "833",
+        "label": "833 SW Naito Pkwy, Portland, OR 97204-3309, United States",
+        "layer": "address",
+        "locality": "Portland",
+        "name": "833 SW Naito Pkwy, Portland, OR 97204-3309, United States",
+        "neighbourhood": "Downtown",
+        "postalcode": "97204-3309",
+        "region": "Oregon",
+        "source": "here",
+        "street": "SW Naito Pkwy",
+      },
+      "type": "Feature",
+    },
+  ],
+  "type": "FeatureCollection",
+}
+`;
+
+exports[`geocoder HERE should make search query 1`] = `
+Object {
+  "features": Array [
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.31701,
+          47.68199,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "addendum": Object {
+          "categories": Array [
+            Object {
+              "id": "600-6300-0066",
+              "name": "Grocery",
+              "primary": true,
+            },
+            Object {
+              "id": "600-6400-0000",
+              "name": "Drugstore or Pharmacy",
+            },
+            Object {
+              "id": "600-6400-0069",
+              "name": "Drugstore",
+            },
+            Object {
+              "id": "600-6400-0070",
+              "name": "Pharmacy",
+            },
+          ],
+        },
+        "confidence": 1,
+        "country": "United States",
+        "country_a": "USA",
+        "country_code": "USA",
+        "county": "King",
+        "housenumber": "7300",
+        "label": "Safeway, 7300 Roosevelt Way NE, Seattle, WA 98115-5658, United States",
+        "layer": "venue",
+        "locality": "Seattle",
+        "name": "Safeway",
+        "neighbourhood": "Roosevelt",
+        "postalcode": "98115-5658",
+        "region": "Washington",
+        "source": "here",
+        "street": "Roosevelt Way NE",
+      },
+      "type": "Feature",
+    },
+  ],
+  "type": "FeatureCollection",
 }
 `;
 
@@ -157,6 +519,7 @@ Object {
 exports[`geocoder NoApiGeocoder should make autocomplete query 1`] = `
 Object {
   "features": Array [],
+  "type": "FeatureCollection",
 }
 `;
 
@@ -166,9 +529,38 @@ Object {
   "lon": -122.67324,
   "name": "45.5162, -122.67324",
   "rawGeocodedFeature": Object {
-    "lat": 45.5162,
-    "lon": -122.67324,
-    "name": "45.5162, -122.67324",
+    "geometry": Object {
+      "coordinates": Array [
+        45.5162,
+        -122.67324,
+      ],
+      "type": "Point",
+    },
+    "properties": Object {
+      "name": "45.5162, -122.67324",
+    },
+    "type": "Feature",
+  },
+}
+`;
+
+exports[`geocoder NoApiGeocoder should make reverse query with featurecollection enabled 1`] = `
+Object {
+  "lat": 45.5162,
+  "lon": -122.67324,
+  "name": "45.5162, -122.67324",
+  "rawGeocodedFeature": Object {
+    "geometry": Object {
+      "coordinates": Array [
+        45.5162,
+        -122.67324,
+      ],
+      "type": "Point",
+    },
+    "properties": Object {
+      "name": "45.5162, -122.67324",
+    },
+    "type": "Feature",
   },
 }
 `;
@@ -176,6 +568,7 @@ Object {
 exports[`geocoder NoApiGeocoder should make search query 1`] = `
 Object {
   "features": Array [],
+  "type": "FeatureCollection",
 }
 `;
 
@@ -279,6 +672,7 @@ Object {
   },
   "isomorphicMapzenSearchQuery": Object {
     "api_key": "dummy-mapzen-key",
+    "layers": "address,venue,street,intersection",
     "text": "Mill Ends",
   },
   "type": "FeatureCollection",
@@ -325,6 +719,141 @@ Object {
     "source_id": "way/156366633",
     "street": "SW Taylor St",
   },
+}
+`;
+
+exports[`geocoder PELIAS should make reverse query with featurecollection enabled 1`] = `
+Object {
+  "bbox": Array [
+    -122.673883,
+    45.5161964,
+    -122.673234,
+    45.516689,
+  ],
+  "features": Array [
+    Object {
+      "bbox": Array [
+        -122.6732557,
+        45.5161964,
+        -122.673234,
+        45.5162067,
+      ],
+      "geometry": Object {
+        "coordinates": Array [
+          -122.673245,
+          45.516201,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "accuracy": "point",
+        "confidence": 0.9,
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "country": "United States",
+        "country_a": "USA",
+        "country_gid": "whosonfirst:country:85633793",
+        "county": "Multnomah County",
+        "county_a": "MU",
+        "county_gid": "whosonfirst:county:102081631",
+        "distance": 0.001,
+        "gid": "openstreetmap:venue:way/156366633",
+        "housenumber": "56",
+        "id": "way/156366633",
+        "label": "Mill Ends Park, 56 SW Taylor St, Portland",
+        "layer": "venue",
+        "locality": "Portland",
+        "locality_gid": "whosonfirst:locality:101715829",
+        "name": "Mill Ends Park",
+        "neighbourhood": "Downtown",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85867131",
+        "postalcode": "97204",
+        "region": "Oregon",
+        "region_a": "OR",
+        "region_gid": "whosonfirst:region:85688513",
+        "source": "openstreetmap",
+        "source_id": "way/156366633",
+        "street": "SW Taylor St",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.673609,
+          45.516337,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "accuracy": "point",
+        "confidence": 0.8,
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "country": "United States",
+        "country_a": "USA",
+        "country_gid": "whosonfirst:country:85633793",
+        "county": "Multnomah County",
+        "county_a": "MU",
+        "county_gid": "whosonfirst:county:102081631",
+        "distance": 0.033,
+        "gid": "openaddresses:address:us/or/portland_metro:bd3f9863242e4ec7",
+        "housenumber": "833",
+        "id": "us/or/portland_metro:bd3f9863242e4ec7",
+        "label": "833 SW Naito Pkwy, Portland, OR, USA",
+        "layer": "address",
+        "locality": "Portland",
+        "locality_gid": "whosonfirst:locality:101715829",
+        "name": "833 SW Naito Pkwy",
+        "neighbourhood": "Downtown",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85867131",
+        "postalcode": "97204",
+        "region": "Oregon",
+        "region_a": "OR",
+        "region_gid": "whosonfirst:region:85688513",
+        "source": "openaddresses",
+        "source_id": "us/or/portland_metro:bd3f9863242e4ec7",
+        "street": "SW Naito Pkwy",
+      },
+      "type": "Feature",
+    },
+  ],
+  "geocoding": Object {
+    "attribution": "http://lb-st-mapgeo.tri-met.org:4000/attribution",
+    "engine": Object {
+      "author": "Mapzen",
+      "name": "Pelias",
+      "version": "1.0",
+    },
+    "query": Object {
+      "boundary.circle.lat": 45.516198,
+      "boundary.circle.lon": -122.67324,
+      "lang": Object {
+        "defaulted": true,
+        "iso6391": "en",
+        "iso6393": "eng",
+        "name": "English",
+      },
+      "point.lat": 45.516198,
+      "point.lon": -122.67324,
+      "private": false,
+      "querySize": 20,
+      "size": 10,
+    },
+    "timestamp": 1563949092620,
+    "version": "0.2",
+    "warnings": Array [
+      "Invalid Parameter: api_key",
+    ],
+  },
+  "isomorphicMapzenSearchQuery": Object {
+    "api_key": "dummy-mapzen-key",
+    "point": Object {
+      "lat": 45.516198,
+      "lon": -122.67324,
+    },
+  },
+  "type": "FeatureCollection",
 }
 `;
 

@@ -14,8 +14,7 @@ See:
 
 ```bash
  git checkout https://github.com/opentripplanner/otp-ui.git
- yarn install
- yarn dev # (opens storybook to running component library on localhost:5555)
+ yarn dev # (installs packages, transpiles files, opens storybook to running component library on localhost:5555)
 ```
 
 ## Development
@@ -30,16 +29,12 @@ Some packages in otp-ui depend on sibling packages (e.g., `@opentripplanner/core
 
    > "@opentripplanner/package-to-test": **"file:../package-to-test"**
 
-2. In your source files, find and replace:
-
-   > opentripplanner/package-to-test/**lib**/types
-
-   with
-
-   > opentripplanner/package-to-test/**src**/types
-
-3. Run:
+2. Run:
    `yarn && yarn dev`
+
+### Storyshot testing
+
+This repo utilizes the [Storyshot](https://storybook.js.org/docs/react/workflows/snapshot-testing) Storybook addon to perform snapshot tests of every story in this monorepo. Whenever the script `yarn unit` is ran, the Storyshot addon will be included along with all the other tests. It will compare the initial output of every story to the saved snapshot of that story. This provides a quick way to make sure nothing drastic has changed and that every single story is able to initially render without an error. Storyshot doesn't snapshot all possible changes that can be done while interacting with story components. Often times these snapshots will need to be updated and that can be accomplished by running `yarn unit -u`.
 
 ## Stack
 
@@ -64,15 +59,60 @@ Some packages in otp-ui depend on sibling packages (e.g., `@opentripplanner/core
 - `npx lerna diff` - Show specifically what files have cause the packages to change.
 - `npx lerna create <packageName>` - Creates new package and walks through setting up package.json
 
-## Lerna Publish to NPM
+## Releasing
 
-Some commands you might need to execute for lerna to publish to npm:
+This project uses semantic-release to create releases to NPM. It is expect that contributors create [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/) messages. These are then parsed by semantic-release which will automatically create an appropriate release for each package whenever a branch is merged to master.
 
-```bash
- npm whoami
- (if whomai comes back null, then: npm login; npm config set access public)
- npx lerna changed
- npx lerna publish  # option 1: default publish
- npx lerna publish 0.0.21 --force-publish=*  # option 2: publish all components to version X
- yarn deploy-storybook
-```
+Sometimes when creating new releases, it will be necessary to update numerous packages within this repo at once to a newer internal package version. For this purpose there is the `update-internal-dependencies` script. This should be ran manually as needed. By default, `yarn update-internal-dependencies` will update all dependencies with the `@opentripplanner` scope in all packages within this project. To only update specific dependencies, it is possible to run something like `yarn update-internal-dependencies core-utils base-map`. This would update all dependencies on either the `@opentripplanner/base-map` or the `@opentripplanner/core-utils` in all packages in this project.
+
+## Raster Tile Versions
+
+As of Fall 2022, the otp-ui map layers have migrated from [Leaflet](https://leafletjs.com) to [MapLibreGL](https://maplibre.org/projects/maplibre-gl-js/). This migration was a breaking change, so existing uses of otp-ui should be unaffected. If you wish to migrate to the latest version, please see the [Migration Guide](https://github.com/opentripplanner/otp-ui/blob/master/VECTOR-TILES-MIGRATION-GUIDE.md).
+
+We understand not all will want to upgrade to vector tiles right away, and so will be maintaining the _raster tile_ versions of all relevant packages for the foreseeable future.
+
+The following table lists the last major version of each package which uses raster tiles. These major versions will receive fresh minor versions as updates are needed.
+
+| Package                   | Latest Major Version with Raster Tiles |
+| ------------------------- | -------------------------------------- |
+| `base-map`                | 2                                      |
+| `core-utils`              | 7                                      |
+| `endpoints-overlay`       | 1                                      |
+| `itinerary-body`          | 4                                      |
+| `park-and-ride-overlay`   | 1                                      |
+| `route-viewer-overlay`    | 1                                      |
+| `stop-viewer-overlay`     | 1                                      |
+| `stops-overlay`           | 4                                      |
+| `transit-vehicle-overlay` | 2                                      |
+| `transitive-overlay`      | 2                                      |
+| `trip-viewer-overlay`     | 1                                      |
+| `types`                   | 3                                      |
+| `vehicle-rental-overlay`  | 1                                      |
+| `zoom-based-markers`      | 1                                      |
+
+## Internationalization
+
+OTP-UI uses `react-intl` from the [`formatjs`](https://github.com/formatjs/formatjs) library for internationalization.
+Both `react-intl` and `formatjs` take advantage of native internationalization features provided by web browsers.
+
+Language-specific content is located in YML files under the `i18n` folder of packages that have internationalizable content
+(e.g. `en-US.yml` for American English, `fr.yml` for generic French, etc.).
+
+### Contributing translations
+
+OTP-UI now uses [Hosted Weblate](https://www.weblate.org) to manage translations!
+
+<figure>
+  <a href="https://hosted.weblate.org/engage/otp-react-redux/">
+    <img src="https://hosted.weblate.org/widgets/otp-react-redux/-/horizontal-auto.svg" alt="Translation status" />
+  </a>
+  <figcaption>Translation status for
+    <a href="https://hosted.weblate.org/engage/otp-react-redux/">OTP-react-redux and OTP-UI on Hosted Weblate</a>
+  </figcaption>
+</figure>
+
+Translations from the community are welcome and very much appreciated,
+please see instructions at https://hosted.weblate.org/projects/otp-react-redux/.
+Community input from Weblate will appear as pull requests with changes to files in the applicable `i18n` folders for our review.
+
+If changes to a specific language file is needed but not enabled in Weblate, please open an issue or a pull request with the changes needed.
