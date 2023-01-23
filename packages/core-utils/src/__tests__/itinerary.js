@@ -1,90 +1,114 @@
-import { isTransit, routeComparator } from "../itinerary";
+import {
+  calculateTncFares,
+  getCompanyFromLeg,
+  getDisplayedStopId,
+  getTransitFare,
+  isTransit
+} from "../itinerary";
 
-const {
-  route1,
-  route2,
-  route3,
-  route4,
-  route5,
-  route6,
-  route7,
-  route8,
-  route9,
-  route10,
-  route11,
-  route12,
-  route13,
-  route14,
-  route15
-} = require("./__mocks__/itinerary.json");
+const bikeRentalItinerary = require("./__mocks__/bike-rental-itinerary.json");
+const tncItinerary = require("./__mocks__/tnc-itinerary.json");
 
-function sortRoutes(...routes) {
-  routes.sort(routeComparator);
-  return routes;
-}
+const basePlace = {
+  lat: 0,
+  lon: 0,
+  name: "stop"
+};
 
 describe("util > itinerary", () => {
-  it("isTransit should work", () => {
-    expect(isTransit("CAR")).toBeFalsy();
+  describe("isTransit", () => {
+    it("should work", () => {
+      expect(isTransit("CAR")).toBeFalsy();
+      expect(isTransit("BUS")).toBeTruthy();
+    });
   });
 
-  describe("routeComparator", () => {
-    it("should sort routes based off of sortOrder", () => {
-      expect(sortRoutes(route1, route2)).toMatchSnapshot();
+  describe("getCompanyFromLeg", () => {
+    it("should return company for bike rental leg", () => {
+      const company = getCompanyFromLeg(bikeRentalItinerary.legs[1]);
+      expect(company).toEqual("GBFS");
     });
 
-    it("should prioritize routes with valid sortOrder", () => {
-      expect(sortRoutes(route2, route3)).toMatchSnapshot();
+    it("should return company for TNC leg", () => {
+      const company = getCompanyFromLeg(tncItinerary.legs[0]);
+      expect(company).toEqual("UBER");
+    });
+  });
+
+  describe("getTransitFare", () => {
+    it("should return defaults with missing fare", () => {
+      const { transitFare } = getTransitFare(null);
+      // transit fare value should be zero
+      expect(transitFare).toMatchSnapshot();
     });
 
-    it("should sort routes based off of integer shortName", () => {
-      expect(sortRoutes(route3, route4)).toMatchSnapshot();
+    it("should work with valid fare component", () => {
+      const fareComponent = {
+        currency: {
+          currency: "USD",
+          defaultFractionDigits: 2,
+          currencyCode: "USD",
+          symbol: "$"
+        },
+        cents: 575
+      };
+      const { currencyCode, transitFare } = getTransitFare(fareComponent);
+      expect(currencyCode).toEqual(fareComponent.currency.currencyCode);
+      // Snapshot tests
+      expect(transitFare).toMatchSnapshot();
     });
+  });
 
-    it("should prioritize routes with integer shortNames over alphabetic shortNames", () => {
-      expect(sortRoutes(route4, route5)).toMatchSnapshot();
+  describe("calculateTncFares", () => {
+    it("should return the correct amounts and currency for an itinerary with TNC", () => {
+      const fareResult = calculateTncFares(tncItinerary, true);
+      expect(fareResult.currencyCode).toEqual("USD");
+      expect(fareResult.maxTNCFare).toEqual(19);
+      expect(fareResult.minTNCFare).toEqual(17);
     });
+  });
 
-    it("should sort routes based off of shortNames", () => {
-      expect(sortRoutes(route5, route6)).toMatchSnapshot();
+  describe("getDisplayedStopId", () => {
+    it("should return the stop code if one is provided", () => {
+      const place = {
+        ...basePlace,
+        stopCode: "code123",
+        stopId: "xagency:id123"
+      };
+      expect(getDisplayedStopId(place)).toEqual("code123");
+      const stop = {
+        ...basePlace,
+        code: "code123",
+        id: "xagency:id123"
+      };
+      expect(getDisplayedStopId(stop)).toEqual("code123");
     });
-
-    it("should sort routes with alphanumeric shortNames", () => {
-      expect(sortRoutes(route14, route15)).toMatchSnapshot();
+    it("should return the id part of stopId it contains and agencyId (and no stopCode is provided)", () => {
+      const place = {
+        ...basePlace,
+        stopId: "xagency:id123"
+      };
+      expect(getDisplayedStopId(place)).toEqual("id123");
+      const stop = {
+        ...basePlace,
+        id: "xagency:id123"
+      };
+      expect(getDisplayedStopId(stop)).toEqual("id123");
     });
-
-    it("should prioritize routes with shortNames over those with just longNames", () => {
-      expect(sortRoutes(route6, route7)).toMatchSnapshot();
+    it("should return the whole stopId it does not contain an agency part (and no stopCode is provided)", () => {
+      const place = {
+        ...basePlace,
+        stopId: "wholeid123"
+      };
+      expect(getDisplayedStopId(place)).toEqual("wholeid123");
+      const stop = {
+        ...basePlace,
+        stopId: "wholeid123"
+      };
+      expect(getDisplayedStopId(stop)).toEqual("wholeid123");
     });
-
-    it("should sort routes based off of longNames", () => {
-      expect(sortRoutes(route9, route10)).toMatchSnapshot();
-    });
-
-    it("should sort routes on all of the criteria at once", () => {
-      expect(
-        sortRoutes(
-          route1,
-          route2,
-          route3,
-          route4,
-          route5,
-          route6,
-          route7,
-          route8,
-          route9,
-          route10,
-          route11,
-          route12,
-          route13,
-          route14,
-          route15
-        )
-      ).toMatchSnapshot();
-    });
-
-    it("should sort based off of route type", () => {
-      expect(sortRoutes(route12, route13)).toMatchSnapshot();
+    it("should return null if stopId is null (and no stopCode is provided)", () => {
+      expect(getDisplayedStopId(basePlace)).toBeFalsy();
     });
   });
 });

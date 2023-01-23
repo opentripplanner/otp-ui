@@ -3,7 +3,7 @@
     {
       "id": "RAZOR",
       "label": "Razor",
-      "modes": "MICROMOBILITY_RENT"
+      "modes": "SCOOTER"
     },
     {
       "id": "SHARED",
@@ -13,15 +13,12 @@
   ],
   "dateTime": {
     "timeFormat": "h:mm a",
-    "dateFormat": " MM/DD/YYYY",
-    "longDateFormat": "MMMM D, YYYY"
-  },
-  "language": {
-    "stopViewer": "Transit Tracker"
+    "dateFormat": " MM/DD/YYYY"
   },
   "transitOperators": [
     {
-      "id": "TRIMET",
+      "agencyId": "TRIMET",
+      "feedId": "TriMet",
       "name": "TriMet",
       "logo": "http://news.trimet.org/wordpress/wp-content/uploads/2019/04/TriMet-logo-300x300.png"
     }

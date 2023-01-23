@@ -1,0 +1,108 @@
+# Default messages for the ItineraryBody component and subcomponents.
+# To use from a react-intl application:
+# - merge the content of this file into the messages object
+#   that has your other localized strings,
+# - flatten the ids, i.e. convert a structure such as
+#      otpUi > LocationField > stations
+#   into "otpUi.TripDetails.stations" (see story for an example),
+# - pass the resulting object to the messages prop of IntlProvider.
+
+otpUi:
+  AccessLegBody:
+    LegDiagramPreview:
+      elevationChart: Elevation chart
+      noElevationData: No elevation data available.
+      toggleElevationChart: Toggle elevation chart
+    mapillaryTooltip: Show street imagery at this location
+    RentedVehicleSubheader:
+      pickupRental: Pick up {company} {vehicleType} {vehicleName}
+      resumeRentalRide: Continue using rental
+      vehicleType:
+        bike: bike
+        bikeshare: shared bike
+        car: car
+        escooter: E-scooter
+        vehicle: vehicle
+      walkVehicle: Walk vehicle along {place}
+    step:
+      circleClockwise: Follow circle clockwise
+      circleCounterClockwise: Follow circle counterclockwise
+      continue: Continue
+      hardLeft: Hard left
+      hardRight: Hard right
+      left: Left
+      right: Right
+      slightlyLeft: Slight left
+      slightlyRight: Slight right
+      uTurnLeft: Left U-turn
+      uTurnRight: Right U-turn
+    stepDepart: Head {heading} on {street}
+    stepHeading:
+      east: east
+      north: north
+      northeast: northeast
+      northwest: northwest
+      south: south
+      southeast: southeast
+      southwest: southwest
+      west: west
+    stepElevator: Take elevator to {street}
+    stepGeneric: "{step} on {street}"
+    summary: "{mode} to {place}"
+    summaryAndDistance: "{mode} {distance} to {place}"
+    # The summary modes below only include access mode actions (ride, walk...).
+    summaryMode:
+      bike: Bicycle
+      bikeshare: Bikeshare
+      carDrive: Drive
+      carHail: Ride
+      escooter: Ride
+      walk: Walk
+    TncLeg:
+      bookRide: Book Ride
+      bookRideLater: Wait until {timeMillis, time, short} to book
+      estimatedCost: "Estimated cost: {minFare} - {maxFare}"
+      estimatedTravelTime: "Estimated travel time: {duration} (does not account for traffic)"
+      waitForPickup: "Wait{minutes, plural, =0 {} other { # minutes}} for {company} pickup"
+    unnamedPath: Unnamed Path
+    unnamedRoad: Unnamed Road
+    vehicleTitle: "{company} {vehicleType}"
+    vehicleType:
+      bike: Bike
+      bikeshare: Shared bike
+      car: Car
+      escooter: E-scooter
+      vehicle: Vehicle
+  ItineraryBody:
+    common:
+      durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"
+    flexAdvanceNotice: " at least {leadDays, plural, one {# day} other {# days}} in advance"
+    flexCallAhead: call ahead
+    flexCallNumber: call {phoneNumber}
+    flexPickupMessage: To take this route, you must {action}{advanceNotice}.
+    stayOnBoard: Stay on Board at {place}
+    travelBy: Travel {mode}
+    travelByMode:
+      bike: by bicycle
+      car: by car
+      escooter: by e-scooter
+      walk: by walking
+    viewOnMap: View on map
+  TransitLegBody:
+    agencyLogo: "{agencyName} logo"
+    AlertsBody:
+      effectiveDate: Effective as of {dateTime, date, long}
+      effectiveTimeAndDate: Effective as of {dateTime, time, short}, {day}
+      today: Today
+      tomorrow: Tomorrow
+      yesterday: Yesterday
+    alertsHeader: "{alertCount, plural, =1 {# alert} other {# alerts}}"
+    fare: "Fare: {fare}"
+    operatedBy: Service operated by {agencyLink}
+    rideDurationAndStops: "Ride {duration}{numStops, plural, =1 {} other { / # stops}}"
+    routeDescription: "{routeName} <toPrefix>to</toPrefix> {headsign}"
+    stopId: Stop ID {stopId}
+    stopIdBasic: ID {stopId}
+    stopViewer: Stop Viewer
+    tripViewer: Trip Viewer
+    typicalWait: "Typical wait: {waitTime}"

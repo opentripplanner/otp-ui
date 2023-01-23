@@ -1,0 +1,33 @@
+{
+  "name": "@opentripplanner/map-popup",
+  "version": "2.0.1",
+  "description": "A component for displaying map popup contents",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "types": "lib/index.d.js",
+  "repository": "https://github.com/opentripplanner/otp-ui.git",
+  "homepage": "https://github.com/opentripplanner/otp-ui#readme",
+  "author": "Evan Siroky",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@opentripplanner/base-map": "^3.0.9",
+    "@opentripplanner/core-utils": "^8.0.0",
+    "@opentripplanner/from-to-location-picker": "^2.1.5",
+    "flat": "^5.0.2"
+  },
+  "devDependencies": {
+    "@opentripplanner/types": "^4.0.4"
+  },
+  "peerDependencies": {
+    "react": "^16.14.0",
+    "react-intl": "^5.24.6",
+    "styled-components": "^5.3.0"
+  },
+  "bugs": {
+    "url": "https://github.com/opentripplanner/otp-ui/issues"
+  },
+  "scripts": {
+    "tsc": "tsc"
+  }
+}

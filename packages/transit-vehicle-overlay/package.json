@@ -1,37 +1,35 @@
 {
   "name": "@opentripplanner/transit-vehicle-overlay",
-  "version": "0.0.22",
+  "version": "4.0.0",
   "description": "Realtime Transit Vehicles Component",
   "author": "Frank Purcell",
   "homepage": "https://github.com/opentripplanner/otp-ui/tree/master/packages/transit-vehicle-overlay/#readme",
   "license": "MIT",
   "main": "lib/index.js",
+  "module": "esm/index.js",
   "private": false,
   "dependencies": {
-    "@opentripplanner/base-map": "^0.0.22",
-    "@opentripplanner/core-utils": "^0.0.22",
-    "@opentripplanner/icons": "^0.0.22",
-    "@turf/nearest-point-on-line": "^6.0.1",
-    "es6-promise": "^4.2.8",
-    "isomorphic-fetch": "^2.2.1",
-    "leaflet-rotatedmarker": "^0.2.0",
-    "lodash.clonedeep": "^4.5.0",
-    "styled-icons": "^9.1.0",
-    "throttle-debounce": "^2.1.0"
+    "@opentripplanner/base-map": "^3.0.9",
+    "@opentripplanner/core-utils": "^8.0.0",
+    "@opentripplanner/icons": "^2.0.1",
+    "flat": "^5.0.2"
+  },
+  "devDependencies": {
+    "@opentripplanner/types": "^4.0.4"
   },
   "peerDependencies": {
-    "leaflet": "^1.6.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-leaflet": "^2.6.1",
-    "styled-components": "^4.3.1"
+    "react": "^16.14.0",
+    "react-intl": "^5.24.6",
+    "react-map-gl": "^7.0.15",
+    "styled-components": "^5.3.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/opentripplanner/otp-ui.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "tsc": "tsc"
   },
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"

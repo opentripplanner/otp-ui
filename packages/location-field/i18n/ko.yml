@@ -1,0 +1,20 @@
+otpUi:
+  LocationField:
+    beingTypingPrompt: 위치를 검색하기 위해 입력을 시작하십시오
+    noResultsFound:
+      "No results found for {input, select,\n null {이 검색어}\n other {{input}}\n\
+      \ } 에 대한 검색결과가 없습니다\n"
+    other: 다른
+    recentlySearched: 최근에 검색했습니다
+    workLocation: 근무지
+    homeLocation: 집
+    clearLocation: 위치 재설정
+    currentLocationUnavailable: 현재 위치를 사용할 수 없습니다 ({error})
+    fetchingLocation: 페치 위치…
+    geocoderUnreachable: 지오 코더에 도달 할 수 없습니다{error, select, undefined {} other { ({error})}}
+    myPlaces: 내 장소
+    nearby: 근처 정지
+    placeNameWithDetails: "{placeName} ({details})"
+    stations: 버스터미널
+    stops: 정류장
+    useCurrentLocation: 현재 위치 사용

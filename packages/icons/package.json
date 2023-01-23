@@ -1,19 +1,20 @@
 {
   "name": "@opentripplanner/icons",
-  "version": "0.0.22",
+  "version": "2.0.1",
   "description": "Icons for otp-ui",
   "main": "lib/index.js",
+  "module": "esm/index.js",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "author": "Evan Siroky",
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^0.0.22",
+    "@opentripplanner/core-utils": "^8.0.0",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {
-    "react": "^16.8.6"
+    "react": "^16.14.0"
   },
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"

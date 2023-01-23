@@ -1,25 +1,24 @@
 {
   "name": "@opentripplanner/printable-itinerary",
-  "version": "0.0.22",
+  "version": "2.0.7",
   "description": "A component for displaying a printable itinerary body of a trip planning result",
   "main": "lib/index.js",
+  "module": "esm/index.js",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "author": "Evan Siroky",
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^0.0.22",
-    "@opentripplanner/humanize-distance": "^0.0.22",
-    "prop-types": "^15.7.2"
+    "@opentripplanner/core-utils": "^8.0.0",
+    "@opentripplanner/itinerary-body": "^4.1.5"
   },
   "devDependencies": {
-    "@opentripplanner/icons": "^0.0.22",
-    "@opentripplanner/itinerary-body": "^0.0.22"
+    "@opentripplanner/icons": "^2.0.1"
   },
   "peerDependencies": {
-    "react": "^16.8.6",
-    "styled-components": "^4.3.1"
+    "react": "^16.14.0",
+    "styled-components": "^5.3.0"
   },
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"

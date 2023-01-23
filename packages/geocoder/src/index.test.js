@@ -2,8 +2,9 @@ import path from "path";
 
 import nock from "nock";
 
-import getGeocoder from ".";
 import PeliasGeocoder from "./geocoders/pelias";
+
+import getGeocoder from ".";
 
 function mockResponsePath(geocoder, file) {
   return path.join(__dirname, "test-fixtures", geocoder, file);
@@ -19,6 +20,10 @@ describe("geocoder", () => {
       baseUrl: "https://ws-st.trimet.org/pelias/v1",
       type: "PELIAS"
     },
+    {
+      apiKey: "dummy-here-key",
+      type: "HERE"
+    },
     // this entry represents no geocoder configuration. In this case it is
     // expected that the NoApiGeocoder will be used.
     undefined
@@ -33,6 +38,7 @@ describe("geocoder", () => {
     .replyWithFile(200, mockResponsePath("arcgis", "suggest-response.json"))
     // reverse
     .get(`${baseArcGisPath}reverseGeocode`)
+    .twice()
     .query(true)
     .replyWithFile(
       200,
@@ -69,8 +75,26 @@ describe("geocoder", () => {
     .replyWithFile(200, mockResponsePath("pelias", "search-response.json"))
     // reverse, includes not using zip/country in returned location.name.
     .get(`${basePeliasPath}reverse`)
+    .twice()
     .query(true)
     .replyWithFile(200, mockResponsePath("pelias", "reverse-response.json"));
+
+  // nocks for HERE
+  nock(/.*\.hereapi\.com/)
+    .persist()
+    // autocomplete
+    .get(`/v1/autosuggest`)
+    .query(true)
+    .replyWithFile(200, mockResponsePath("here", "autosuggest-response.json"))
+    // geocode
+    .get("/v1/geocode")
+    .query(true)
+    .replyWithFile(200, mockResponsePath("here", "search-response.json"))
+    // reverse
+    .get("/v1/revgeocode")
+    .twice()
+    .query(true)
+    .replyWithFile(200, mockResponsePath("here", "reverse-response.json"));
 
   geocoders.forEach(geocoder => {
     const geocoderType = geocoder ? geocoder.type : "NoApiGeocoder";
@@ -97,6 +121,16 @@ describe("geocoder", () => {
         expect(result).toMatchSnapshot();
       });
 
+      it("should make reverse query with featurecollection enabled", async () => {
+        const result = await getGeocoder({
+          ...geocoder,
+          reverseUseFeatureCollection: true
+        }).reverse({
+          point: { lat: 45.516198, lon: -122.67324 }
+        });
+        expect(result).toMatchSnapshot();
+      });
+
       it("should get location from geocode feature", async () => {
         let mockFeature;
         switch (geocoderType) {
@@ -110,6 +144,17 @@ describe("geocoder", () => {
             };
             break;
           case "PELIAS":
+            mockFeature = {
+              geometry: {
+                coordinates: [-122.67324, 45.516198],
+                type: "Point"
+              },
+              properties: {
+                label: "Mill Ends Park, Portland, OR, USA"
+              }
+            };
+            break;
+          case "HERE":
             mockFeature = {
               geometry: {
                 coordinates: [-122.67324, 45.516198],
