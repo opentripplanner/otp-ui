@@ -51,6 +51,12 @@ query PlanQuery(
 					id
 					timezone
 					url
+					alerts {
+            alertHeaderText
+            alertDescriptionText
+            alertUrl
+            effectiveStartDate
+          }
 				}
 				legGeometry {
 					length
@@ -70,6 +76,12 @@ query PlanQuery(
 					textColor
 					id
 					type
+					alerts {
+            alertHeaderText
+            alertDescriptionText
+            alertUrl
+            effectiveStartDate
+          }
 				}
 				from {
 					lat
@@ -79,7 +91,12 @@ query PlanQuery(
 					stop {
 						id
 						code
-						
+						alerts {
+							alertHeaderText
+							alertDescriptionText
+							alertUrl
+							effectiveStartDate
+						}	
 					}
 				}
 				to {
@@ -90,6 +107,12 @@ query PlanQuery(
 					stop {
 						id
 						code
+						alerts {
+							alertHeaderText
+							alertDescriptionText
+							alertUrl
+							effectiveStartDate
+						}
 					}
 				}
 				steps {
