@@ -266,9 +266,11 @@ export const InterlineName = styled.div`
   /* special messaging, not sure yet */
 `;
 
-export const IntermediateStops = styled.div`
+export const IntermediateStops = styled.ol`
   display: block;
   font-size: 13px;
+  list-style: none;
+  padding: 0;
 `;
 
 export const ItineraryBody = styled.div``;
@@ -292,6 +294,13 @@ export const LegDescription = styled.span`
   display: flex;
   line-height: 16px;
   min-height: 31px;
+`;
+
+// additional description added to ClickableLeg for screenreaders
+export const AccessibilityLinkDetails = styled.span`
+  height: 0;
+  overflow: hidden;
+  width: 0;
 `;
 
 export const LegDescriptionHeadsignPrefix = styled.span`
@@ -368,7 +377,7 @@ export const LineColumn = styled.div`
 
 export const LegDetails = styled.span``;
 
-export const PlaceRowWrapper = styled.div`
+export const PlaceRowWrapper = styled.section`
   /* needs to be a flexbox row */
   max-width: 500px;
   display: flex;
@@ -528,8 +537,10 @@ export const SROnly = styled.span`
 
 export const SRHidden = styled.span.attrs({ "aria-hidden": true })``;
 
-export const Steps = styled.div`
+export const Steps = styled.ol`
   display: block;
+  list-style: none;
+  padding: 0;
 `;
 
 export const StepDescriptionContainer = styled.div`
@@ -560,7 +571,7 @@ export const StepIconContainer = styled.div`
   width: 16px;
 `;
 
-export const StepRow = styled.div`
+export const StepRow = styled.li`
   font-size: 13px;
   margin-top: 8px;
   color: #676767;
@@ -588,7 +599,7 @@ export const StopName = styled.div`
   margin-top: 3px;
 `;
 
-export const StopRow = styled.div`
+export const StopRow = styled.li`
   z-index: 30;
   position: relative;
 `;

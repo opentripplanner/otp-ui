@@ -1,6 +1,8 @@
 import { Config, Leg, LegIconComponent } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
+import { FormattedMessage } from "react-intl";
 import { AccessLegDescription } from "../defaults";
+import { defaultMessages } from "../util";
 
 import * as S from "../styled";
 
@@ -31,6 +33,12 @@ export default function AccessLegSummary({
         </S.LegIconAndRouteShortName>
         <AccessLegDescription config={config} leg={leg} />
       </S.LegDescription>
+      <S.AccessibilityLinkDetails>
+        <FormattedMessage
+          defaultMessage={defaultMessages["otpUi.TransitLegBody.zoomToLeg"]}
+          id="otpUi.TransitLegBody.zoomToLeg"
+        />
+      </S.AccessibilityLinkDetails>
     </S.LegClickable>
   );
 }

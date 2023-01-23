@@ -70,7 +70,7 @@ export default function PlaceRow({
     id: "otpUi.ItineraryBody.viewOnMap"
   });
   return (
-    <S.PlaceRowWrapper key={legIndex || "destination-place"}>
+    <S.PlaceRowWrapper key={legIndex || "destination-place"} role="group">
       <S.TimeColumn>
         {/* Custom rendering of the departure/arrival time of the specified leg. */}
         <TimeColumnContent isDestination={isDestination} leg={leg} />

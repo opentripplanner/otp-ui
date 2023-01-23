@@ -175,7 +175,7 @@ class TransitLegBody extends Component<Props, State> {
     return (
       <>
         {TransitLegSubheader && <TransitLegSubheader leg={leg} />}
-        <S.LegBody>
+        <S.LegBody role="group" aria-label="leg details">
           {/* The Route Icon/Name Bar; clickable to set as active leg */}
           <S.LegClickable onClick={this.onSummaryClick}>
             <RouteDescription
@@ -200,6 +200,14 @@ class TransitLegBody extends Component<Props, State> {
                       href={agencyUrl}
                       rel="noopener noreferrer"
                       target="_blank"
+                      aria-label={intl.formatMessage(
+                        {
+                          id: "otpUi.TransitLegBody.agencyExternalLink"
+                        },
+                        {
+                          agencyName
+                        }
+                      )}
                     >
                       {agencyName}
                       {logoUrl && (

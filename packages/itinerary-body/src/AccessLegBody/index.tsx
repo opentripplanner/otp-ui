@@ -1,6 +1,7 @@
 import { Config, Leg, LegIconComponent } from "@opentripplanner/types";
 import React, { Component, ReactElement } from "react";
 import AnimateHeight from "react-animate-height";
+import { FormattedMessage } from "react-intl";
 import { Duration } from "../defaults";
 
 import * as S from "../styled";
@@ -12,6 +13,8 @@ import LegDiagramPreview from "./leg-diagram-preview";
 import MapillaryButton from "./mapillary-button";
 import RentedVehicleSubheader from "./rented-vehicle-subheader";
 import TNCLeg from "./tnc-leg";
+
+import { defaultMessages } from "../util";
 
 interface Props {
   config: Config;
@@ -108,6 +111,14 @@ class AccessLegBody extends Component<Props, State> {
               >
                 <Duration seconds={leg.duration} />
                 {leg.steps && <S.CaretToggle expanded={expanded} />}
+                <S.AccessibilityLinkDetails>
+                  <FormattedMessage
+                    defaultMessage={
+                      defaultMessages["otpUi.TransitLegBody.expandDetails"]
+                    }
+                    id="otpUi.TransitLegBody.expandDetails"
+                  />
+                </S.AccessibilityLinkDetails>
               </S.StepsHeader>
               <MapillaryButton
                 clickCallback={mapillaryCallback}
