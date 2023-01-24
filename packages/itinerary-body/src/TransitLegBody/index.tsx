@@ -222,7 +222,7 @@ class TransitLegBody extends Component<Props, State> {
                               id: "otpUi.TransitLegBody.agencyLogo"
                             },
                             {
-                              transitOperatorName
+                              agencyName: transitOperatorName
                             }
                           )}
                           src={logoUrl}
