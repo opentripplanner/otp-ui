@@ -180,7 +180,6 @@ class TransitLegBody extends Component<Props, State> {
     const expandAlerts = alertsExpanded || shouldOnlyShowAlertsExpanded;
     const fareForLeg = this.getFareForLeg(leg, fare);
 
-    // const operator = config?.transitOperators?.find(x => x.id === agencyId);
     return (
       <>
         {TransitLegSubheader && <TransitLegSubheader leg={leg} />}
