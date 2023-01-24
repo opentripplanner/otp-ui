@@ -206,3 +206,16 @@ export const WithPrefilledSearch = (): JSX.Element => (
     style={{ fontFamily: "sans-serif" }}
   />
 );
+
+export const RequiredAndInvalidState = (): JSX.Element => (
+  <LocationField
+    currentPosition={currentPosition}
+    geocoderConfig={unreachableGeocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    inputPlaceholder="Select from location"
+    isRequired
+    isValid={false}
+    locationType="from"
+    onLocationSelected={onLocationSelected}
+  />
+);

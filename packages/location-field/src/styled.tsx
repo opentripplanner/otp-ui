@@ -91,8 +91,10 @@ export const Dropdown = ({
       >
         {title}
       </DropdownButton>
-      <HiddenContent role="status">{status}</HiddenContent>
       {input}
+      {/* Note: always render this status tag regardless of the open state,
+          so that assistive technologies correctly set up status monitoring. */}
+      <HiddenContent role="status">{status}</HiddenContent>
       {open && (
         <MenuItemList
           aria-label={intl.formatMessage({
