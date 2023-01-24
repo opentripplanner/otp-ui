@@ -1,22 +1,16 @@
 import { Leg, Money } from "@opentripplanner/types";
-import flatten from "flat";
 import React from "react";
 import styled from "styled-components";
-import { FormattedMessage } from "react-intl";
 import { Transfer } from "@styled-icons/boxicons-regular/Transfer";
 
-import { boldText, renderFare } from "./utils";
+import {
+  getItineraryCost,
+  getLegCost,
+  getLegsWithFares
+} from "@opentripplanner/core-utils/lib/itinerary";
+import { boldText, getFormattedTextForConfigKey, renderFare } from "./utils";
 
-import { FareLegTableProps, FareTableLayout, FareTableText } from "./types";
-
-// Load the default messages.
-import defaultEnglishMessages from "../i18n/en-US.yml";
-
-// HACK: We should flatten the messages loaded above because
-// the YAML loaders behave differently between webpack and our version of jest:
-// - the yaml loader for webpack returns a nested object,
-// - the yaml loader for jest returns messages with flattened ids.
-const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
+import { FareLegTableProps, FareTableLayout } from "./types";
 
 type LegAndFare = Leg & {
   fares: Record<string, { price: Money; isTransfer?: boolean }>;
@@ -25,6 +19,7 @@ type LegAndFare = Leg & {
 interface FareTypeTableProps extends FareTableLayout {
   fareTotals: Record<string, Money>;
   legs: LegAndFare[];
+  hasLegProducts?: boolean;
 }
 
 const TableHeader = styled.thead`
@@ -67,71 +62,12 @@ const TransferIcon = styled(Transfer)`
   padding-left: 4px;
 `;
 
-const getFormattedTextForConfigKey = (textKey: FareTableText) => {
-  switch (textKey) {
-    case FareTableText.cash:
-      return (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.TripDetails.fareDetailsHeaders.cash"]
-          }
-          id="otpUi.TripDetails.fareDetailsHeaders.cash"
-        />
-      );
-    case FareTableText.electronic:
-      return (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.TripDetails.fareDetailsHeaders.electronic"]
-          }
-          id="otpUi.TripDetails.fareDetailsHeaders.electronic"
-        />
-      );
-    case FareTableText.youth:
-      return (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.TripDetails.fareDetailsHeaders.youth"]
-          }
-          id="otpUi.TripDetails.fareDetailsHeaders.youth"
-        />
-      );
-    case FareTableText.senior:
-      return (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.TripDetails.fareDetailsHeaders.senior"]
-          }
-          id="otpUi.TripDetails.fareDetailsHeaders.senior"
-        />
-      );
-    case FareTableText.special:
-      return (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.TripDetails.fareDetailsHeaders.special"]
-          }
-          id="otpUi.TripDetails.fareDetailsHeaders.special"
-        />
-      );
-    case FareTableText.regular:
-    default:
-      return (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.TripDetails.fareDetailsHeaders.regular"]
-          }
-          id="otpUi.TripDetails.fareDetailsHeaders.regular"
-        />
-      );
-  }
-};
-
 const FareTypeTable = ({
   cols,
   fareTotals,
   header,
-  legs
+  legs,
+  hasLegProducts
 }: FareTypeTableProps): JSX.Element => {
   const colsToRender = cols.filter(col => fareTotals[col.key]);
   if (colsToRender.length) {
@@ -142,7 +78,16 @@ const FareTypeTable = ({
             {boldText(getFormattedTextForConfigKey(header))}
           </th>
           {colsToRender.map(col => {
-            const fare = fareTotals[col.key];
+            let fare;
+            if (hasLegProducts) {
+              fare = fareTotals[col.key];
+            } else {
+              fare = getItineraryCost(
+                legs,
+                col.riderCategory,
+                col.fareContainer
+              );
+            }
             return (
               <th key={col.key}>
                 {boldText(getFormattedTextForConfigKey(col.header))}
@@ -159,12 +104,17 @@ const FareTypeTable = ({
           <tr key={index}>
             <td className="no-zebra">{leg.routeShortName}</td>
             {colsToRender.map(col => {
-              const fare = leg.fares[col.key];
+              let fare;
+              if (!hasLegProducts) {
+                fare = leg.fares[col.key];
+              } else {
+                fare = getLegCost(leg, col.riderCategory, col.fareContainer);
+              }
               return (
                 <td key={col.key}>
                   {renderFare(
-                    fare?.price.currency?.currencyCode,
-                    (fare?.price.cents || 0) / 100
+                    fare?.price?.currency?.currencyCode,
+                    (fare?.price?.cents || 0) / 100
                   )}
                   {fare?.isTransfer && <TransferIcon size={16} />}
                 </td>
@@ -180,39 +130,47 @@ const FareTypeTable = ({
 
 const FareLegDetails = ({
   layout,
-  legs,
-  transitFareDetails,
-  transitFares
+  itinerary
 }: FareLegTableProps): JSX.Element => {
-  const fareKeys = Object.keys(transitFareDetails);
+  const hasLegProducts = !!itinerary?.fare?.legProducts;
+  const fareKeys = Object.keys(itinerary?.fare?.details);
 
-  const legsWithFares = legs
-    .map((leg, index) => {
-      const fares = fareKeys.reduce((prev, key) => {
-        const fareForKey = transitFareDetails[key]?.find(
-          detail => detail.legIndex === index
-        );
-        if (fareForKey) {
-          prev[key] = fareForKey;
-        }
-        return prev;
-      }, {});
-      return {
-        ...leg,
-        fares
-      };
-    })
-    .filter(leg => leg.transitLeg);
+  let legsWithFares;
+
+  if (!hasLegProducts) {
+    // OTP1 Logic
+    legsWithFares = itinerary.legs
+      .map((leg, index) => {
+        const fares = fareKeys.reduce((prev, key) => {
+          const fareForKey = itinerary.fare.details[key]?.find(
+            detail => detail.legIndex === index
+          );
+          if (fareForKey) {
+            prev[key] = fareForKey;
+          }
+          return prev;
+        }, {});
+        return {
+          ...leg,
+          fares
+        };
+      })
+      .filter(leg => leg.transitLeg);
+  } else {
+    // OTP2 Logic
+    legsWithFares = getLegsWithFares(itinerary);
+  }
 
   return (
     <div>
       {layout.map(config => (
         <FareTypeTable
           cols={config.cols}
-          fareTotals={transitFares}
+          fareTotals={itinerary.fare.fare}
           header={config.header}
           key={config.header}
           legs={legsWithFares}
+          hasLegProducts={hasLegProducts}
         />
       ))}
     </div>

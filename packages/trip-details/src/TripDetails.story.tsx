@@ -353,9 +353,7 @@ export const FareLegTableStory = (): ReactElement => {
   return (
     <FareLegTable
       layout={fareByLegLayout}
-      legs={walkInterlinedTransitItinerary.legs}
-      transitFareDetails={walkInterlinedTransitItinerary.fare?.details}
-      transitFares={walkInterlinedTransitItinerary.fare?.fare}
+      itinerary={walkInterlinedTransitItinerary}
     />
   );
 };
