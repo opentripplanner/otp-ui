@@ -555,3 +555,46 @@ export function getDisplayedStopId(placeOrStop: Place | Stop): string {
   }
   return stopCode || stopId?.split(":")[1] || stopId;
 }
+
+export function getLegsWithFares(itinerary: Itinerary): Leg[] {
+  return itinerary.legs.map((leg, i) => ({
+    ...leg,
+    legProducts: itinerary.fare.legProducts.filter(lp =>
+      lp.legIndicies.includes(i)
+    )
+  }));
+}
+
+export function getLegCost(
+  leg: Leg,
+  category: string,
+  container: string
+): { cost: Money | undefined; usesTransfer?: boolean } {
+  if (!leg.fareProducts) return { cost: undefined };
+  const relevantFareProducts = leg.fareProducts.filter(
+    fp => fp.category.name === category && fp.container.name === container
+  );
+  const totalCost = relevantFareProducts.find(fp => fp.name === "rideCost")
+    .amount;
+  const usesTransfer = !!relevantFareProducts.find(
+    fp => fp.name === "transfer"
+  );
+  return { cost: totalCost, usesTransfer };
+}
+
+export function getItineraryCost(
+  legs: Leg[],
+  category: string,
+  container: string
+): Money {
+  return legs
+    .filter(leg => !!leg.fareProducts)
+    .map(leg => getLegCost(leg, category, container).cost)
+    .reduce<Money>(
+      (prev, cur) => ({
+        cents: prev.cents + cur.cents,
+        currency: prev.currency ?? cur.currency
+      }),
+      { cents: 0, currency: null }
+    );
+}
