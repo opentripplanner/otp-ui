@@ -662,13 +662,21 @@ const LocationField = ({
     optionIcon = currentPositionIcon;
     optionTitle = intl.formatMessage({
       id: "otpUi.LocationField.useCurrentLocation"
-    });    positionUnavailable = false;
+    });
+    positionUnavailable = false;
   } else {
     // error detecting current position
     optionIcon = currentPositionUnavailableIcon;
-    optionTitle = intl.formatMessage({
-      id: "otpUi.LocationField.currentLocationUnavailable"
-    }, { error: !currentPosition ? undefined : typeof currentPosition.error === "string" ? currentPosition.error : currentPosition.error.message });
+    optionTitle = intl.formatMessage(
+      {
+        id: "otpUi.LocationField.currentLocationUnavailable"
+      },
+      {
+        error: !currentPosition
+          ? undefined
+          : typeof currentPosition.error === "string" ? currentPosition.error : currentPosition.error.message
+      }
+    );
     positionUnavailable = true;
     statusMessages.push(optionTitle)
   }
