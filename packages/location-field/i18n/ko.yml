@@ -1,9 +1,6 @@
 otpUi:
   LocationField:
-    beingTypingPrompt: 위치를 검색하기 위해 입력을 시작하십시오
-    noResultsFound:
-      "No results found for {input, select,\n null {이 검색어}\n other {{input}}\n\
-      \ } 에 대한 검색결과가 없습니다\n"
+    beginTypingPrompt: 위치를 검색하기 위해 입력을 시작하십시오
     other: 다른
     recentlySearched: 최근에 검색했습니다
     workLocation: 근무지

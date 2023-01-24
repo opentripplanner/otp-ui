@@ -1,9 +1,6 @@
 otpUi:
   LocationField:
-    beingTypingPrompt: Bắt đầu gõ để tìm kiếm các địa điểm
-    noResultsFound:
-      "Không tìm thấy kết quả cho {input, select,\n null {vấn của bạn}\n\
-      \ other {{input}}\n }\n"
+    beginTypingPrompt: Bắt đầu gõ để tìm kiếm các địa điểm
     resultsFound: >
       {count, plural, =0 {Không có}, other {#}} kết quả
       cho {input, select, null {vấn của bạn} other {"{input}"}}"

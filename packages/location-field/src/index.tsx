@@ -786,7 +786,7 @@ const LocationField = ({
             <S.MenuItem header centeredText>
               <FormattedMessage
                 description="Text to show as initial placeholder in location search field"
-                id="otpUi.LocationField.beingTypingPrompt"
+                id="otpUi.LocationField.beginTypingPrompt"
               />
             </S.MenuItem>
           )}

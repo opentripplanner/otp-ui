@@ -9,7 +9,7 @@
 
 otpUi:
   LocationField:
-    beingTypingPrompt: Begin typing to search for locations
+    beginTypingPrompt: Begin typing to search for locations
     clearLocation: Clear location
     currentLocationUnavailable: Current location not available{error, select, undefined {} other { ({error})}}
     fetchingLocation: Fetching location...
@@ -17,11 +17,6 @@ otpUi:
     homeLocation: Home
     myPlaces: My Places
     nearby: Nearby Stops
-    noResultsFound: >
-      No results found for {input, select,
-        null {your query}
-        other {{input}}
-      }
     placeNameWithDetails: "{placeName} ({details})"
     # Note to translator: This is an implicit plural (as in "Other results").
     other: Other

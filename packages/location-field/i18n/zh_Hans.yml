@@ -1,9 +1,8 @@
 otpUi:
   LocationField:
-    beingTypingPrompt: 开始打字搜索地点
+    beginTypingPrompt: 开始打字搜索地点
     clearLocation: 重置位置
     homeLocation: 家
-    noResultsFound: "找不到与 {input, select,\n null {您的搜索}\n other {{input}}\n } 相关的结果\n"
     stops: 车站
     currentLocationUnavailable: 当前位置不详{error, select, undefined {} other { ({error})}}
     fetchingLocation: 获取的位置…
