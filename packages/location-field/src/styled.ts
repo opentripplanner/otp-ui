@@ -157,10 +157,6 @@ export const StaticMenuItemList = styled(MenuItemList)`
   box-shadow: none;
   display: block;
   position: static;
-
-  li:not(.header):hover {
-    background-color: transparent;
-  }
 `;
 
 export const StopContentContainer = styled.span`
