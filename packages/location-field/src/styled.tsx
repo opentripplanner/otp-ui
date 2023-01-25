@@ -240,6 +240,7 @@ export const MenuItem = ({
 };
 
 export const OptionContainer = styled.span`
+  display: block;
   padding-top: 5px;
   padding-bottom: 3px;
 `;
