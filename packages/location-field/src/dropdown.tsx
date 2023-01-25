@@ -23,7 +23,7 @@ export const Dropdown = ({
   const intl = useIntl();
 
   return (
-    <S.DropdownContainer>
+    <S.InputGroup role="group">
       <S.DropdownButton
         aria-controls={listBoxIdentifier}
         aria-expanded={open}
@@ -55,7 +55,7 @@ export const Dropdown = ({
           {children}
         </S.MenuItemList>
       )}
-    </S.DropdownContainer>
+    </S.InputGroup>
   );
 };
 

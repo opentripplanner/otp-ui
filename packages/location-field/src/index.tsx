@@ -799,24 +799,21 @@ const LocationField = ({
   // default display mode with dropdown menu
   return (
     <S.FormGroup onBlur={onBlurFormGroup} className={className}>
-      <S.InputGroup role="group">
-        {/* location field icon -- also serves as dropdown anchor */}
-        <DropdownControl
-          input={
-            <>
-              {textControl}
-              {clearButton}
-            </>
-          }
-          listBoxIdentifier={listBoxId}
-          onToggle={onDropdownToggle}
-          open={menuVisible}
-          status={statusMessages.join(", ")}
-          title={<LocationIconComponent locationType={locationType} />}
-        >
-          {menuItems}
-        </DropdownControl>
-      </S.InputGroup>
+      <DropdownControl
+        input={
+          <>
+            {textControl}
+            {clearButton}
+          </>
+        }
+        listBoxIdentifier={listBoxId}
+        onToggle={onDropdownToggle}
+        open={menuVisible}
+        status={statusMessages.join(", ")}
+        title={<LocationIconComponent locationType={locationType} />}
+      >
+        {menuItems}
+      </DropdownControl>
     </S.FormGroup>
   );
 };
@@ -825,5 +822,3 @@ export default LocationField;
 
 // Rename styled components for export
 export { S as Styled };
-
-export { DropdownControl as Dropdown };

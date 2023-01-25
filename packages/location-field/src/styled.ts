@@ -27,11 +27,6 @@ export const DropdownButton = styled(BaseButton)`
   width: 30px;
 `;
 
-export const DropdownContainer = styled.span`
-  position: contents;
-  width: 100%;
-`;
-
 export const MenuItemList = styled.ul.attrs({
   role: "listbox"
 })`
