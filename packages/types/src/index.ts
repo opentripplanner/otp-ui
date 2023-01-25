@@ -718,6 +718,6 @@ export type FareProduct = {
 };
 
 export type LegProduct = {
-  legIndicies: Array<number>;
+  legIndices: Array<number>;
   products: Array<FareProduct>;
 };

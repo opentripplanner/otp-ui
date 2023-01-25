@@ -69,7 +69,12 @@ const FareTypeTable = ({
   legs,
   hasLegProducts
 }: FareTypeTableProps): JSX.Element => {
-  const colsToRender = cols.filter(col => fareTotals[col.key]);
+  const colsToRender = cols.filter(col =>
+    hasLegProducts
+      ? getItineraryCost(legs, col.riderCategory, col.fareContainer)
+      : fareTotals[col.key]
+  );
+
   if (colsToRender.length) {
     return (
       <Table>
@@ -79,7 +84,7 @@ const FareTypeTable = ({
           </th>
           {colsToRender.map(col => {
             let fare;
-            if (hasLegProducts) {
+            if (!hasLegProducts) {
               fare = fareTotals[col.key];
             } else {
               fare = getItineraryCost(
@@ -89,7 +94,7 @@ const FareTypeTable = ({
               );
             }
             return (
-              <th key={col.key}>
+              <th key={col.key || `${col.fareContainer}-${col.riderCategory}`}>
                 {boldText(getFormattedTextForConfigKey(col.header))}
                 <br />
                 {renderFare(
@@ -158,7 +163,7 @@ const FareLegDetails = ({
       .filter(leg => leg.transitLeg);
   } else {
     // OTP2 Logic
-    legsWithFares = getLegsWithFares(itinerary);
+    legsWithFares = getLegsWithFares(itinerary).filter(leg => leg.transitLeg);
   }
 
   return (
