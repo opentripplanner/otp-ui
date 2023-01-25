@@ -569,17 +569,21 @@ export function getLegCost(
   leg: Leg,
   category: string,
   container: string
-): { price: Money | undefined; usesTransfer?: boolean } {
+): { price: Money | undefined; transferAmount?: number } {
   if (!leg.fareProducts) return { price: undefined };
   const relevantFareProducts = leg.fareProducts.filter(
     fp => fp.category.name === category && fp.container.name === container
   );
   const totalCost = relevantFareProducts.find(fp => fp.name === "rideCost")
     ?.amount;
-  const usesTransfer = !!relevantFareProducts.find(
+  const transferFareProduct = relevantFareProducts.find(
     fp => fp.name === "transfer"
   );
-  return { price: totalCost, usesTransfer };
+
+  return {
+    price: totalCost,
+    transferAmount: transferFareProduct?.amount?.cents || undefined
+  };
 }
 
 export function getItineraryCost(

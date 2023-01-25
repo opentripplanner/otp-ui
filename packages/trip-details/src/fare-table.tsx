@@ -8,9 +8,20 @@ import {
   getLegCost,
   getLegsWithFares
 } from "@opentripplanner/core-utils/lib/itinerary";
+import { useIntl } from "react-intl";
+import { flatten } from "flat";
 import { boldText, getFormattedTextForConfigKey, renderFare } from "./utils";
 
 import { FareLegTableProps, FareTableLayout } from "./types";
+
+// Load the default messages.
+import defaultEnglishMessages from "../i18n/en-US.yml";
+
+// HACK: We should flatten the messages loaded above because
+// the YAML loaders behave differently between webpack and our version of jest:
+// - the yaml loader for webpack returns a nested object,
+// - the yaml loader for jest returns messages with flattened ids.
+const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
 type LegAndFare = Leg & {
   fares: Record<string, { price: Money; isTransfer?: boolean }>;
@@ -75,6 +86,8 @@ const FareTypeTable = ({
       : fareTotals[col.key]
   );
 
+  const intl = useIntl();
+
   if (colsToRender.length) {
     return (
       <Table>
@@ -116,12 +129,40 @@ const FareTypeTable = ({
                 fare = getLegCost(leg, col.riderCategory, col.fareContainer);
               }
               return (
-                <td key={col.key}>
+                <td
+                  key={col.key}
+                  title={
+                    fare.transferAmount &&
+                    intl.formatMessage(
+                      {
+                        defaultMessage:
+                          defaultMessages[
+                            "otpUi.TripDetails.transferDiscountExplanation"
+                          ],
+                        description:
+                          "Text explaining the transfer discount applied to this fare.",
+                        id: "otpUi.TripDetails.transferDiscountExplanation"
+                      },
+                      {
+                        transferAmount: intl.formatNumber(
+                          fare.transferAmount / 100,
+                          {
+                            currency: fare?.price?.currency?.currencyCode,
+                            currencyDisplay: "narrowSymbol",
+                            style: "currency"
+                          }
+                        )
+                      }
+                    )
+                  }
+                >
                   {renderFare(
                     fare?.price?.currency?.currencyCode,
                     (fare?.price?.cents || 0) / 100
                   )}
-                  {fare?.isTransfer && <TransferIcon size={16} />}
+                  {(fare?.isTransfer || fare.transferAmount) && (
+                    <TransferIcon size={16} />
+                  )}
                 </td>
               );
             })}
