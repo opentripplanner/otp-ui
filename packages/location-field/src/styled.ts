@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 export const HiddenContent = styled.span`
@@ -101,9 +100,9 @@ export const MenuItemA = styled.a<{ active?: boolean }>`
   white-space: nowrap;
 `;
 
-export const MenuItemHeader = styled.div<{
+// A menu group header that looks like one but does not behave like one.
+export const MenuGroupMisc = styled.div<{
   bgColor?: string;
-  centeredText?: boolean;
   fgColor?: string;
 }>`
   color: ${props => props.fgColor || "#eee"};
@@ -112,75 +111,21 @@ export const MenuItemHeader = styled.div<{
   font-size: 12px;
   line-height: 1.42857143;
   padding: 0px 10px;
-  text-align: ${props => (props.centeredText ? "center" : "left")};
+  text-align: center;
   white-space: nowrap;
 `;
+export const MenuGroupHeader = styled(MenuGroupMisc).attrs({
+  "aria-level": 1,
+  role: "heading"
+})``;
+
 export const MenuItemLi = styled.li<{ disabled?: boolean }>`
   &:hover {
-    cursor: pointer;
+    cursor: ${props => (props.disabled ? "default" : "pointer")};
     /* TODO: adjust highlight color based on props.color? */
     background-color: ${props => !props.disabled && "#f5f5f5"};
   }
 `;
-
-export const MenuItem = ({
-  active = false,
-  // foregroundColor and backgroundColor would be preferred, but React has issues with
-  // these since they are style keywords
-  bgColor = null,
-  centeredText = false,
-  children,
-  disabled = false,
-  fgColor = null,
-  header = false,
-  level = 1,
-  onClick = null,
-  role = undefined
-}: {
-  active?: boolean;
-  bgColor?: string;
-  centeredText?: boolean;
-  children: React.ReactNode;
-  disabled?: boolean;
-  fgColor?: string;
-  header?: boolean;
-  level?: number;
-  onClick?: () => void;
-  role?: string;
-}): React.ReactElement => {
-  const handleClick = () => {
-    if (!disabled) onClick();
-  };
-
-  return header ? (
-    <MenuItemHeader
-      aria-level={level}
-      bgColor={bgColor}
-      centeredText={centeredText}
-      className="header"
-      fgColor={fgColor}
-      role={role || "none"}
-    >
-      {children}
-    </MenuItemHeader>
-  ) : (
-    <MenuItemLi
-      // Hide disabled choices from screen readers (a relevant status is already provided).
-      aria-hidden={disabled || undefined}
-      disabled={disabled}
-      role={disabled ? undefined : "none"}
-    >
-      <MenuItemA
-        active={active}
-        onClick={handleClick}
-        role="option"
-        tabIndex={-1}
-      >
-        {children}
-      </MenuItemA>
-    </MenuItemLi>
-  );
-};
 
 export const OptionContainer = styled.span`
   padding-top: 5px;

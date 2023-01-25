@@ -28,6 +28,34 @@ export function GeocodedOptionIcon({
   return <MapPin size={13} />;
 }
 
+export const MenuItem = ({
+  active = false,
+  children,
+  disabled = false,
+  onClick = null
+}: {
+  active?: boolean;
+  children: React.ReactNode;
+  disabled?: boolean;
+  onClick?: () => void;
+}): React.ReactElement => (
+  <S.MenuItemLi
+    // Hide disabled choices from screen readers (a relevant status is already provided).
+    aria-hidden={disabled || undefined}
+    disabled={disabled}
+    role={disabled ? undefined : "none"}
+  >
+    <S.MenuItemA
+      active={active}
+      onClick={disabled ? null : onClick}
+      role="option"
+      tabIndex={-1}
+    >
+      {children}
+    </S.MenuItemA>
+  </S.MenuItemLi>
+);
+
 export function Option({
   classes = "",
   color = null,
@@ -48,7 +76,7 @@ export function Option({
   title?: React.ReactNode;
 }): React.ReactElement {
   return (
-    <S.MenuItem onClick={onClick} active={isActive} disabled={disabled}>
+    <MenuItem onClick={onClick} active={isActive} disabled={disabled}>
       {coreUtils.ui.isIE() ? (
         // In internet explorer 11, some really weird stuff is happening where it
         // is not possible to click the text of the title, but if you click just
@@ -67,7 +95,7 @@ export function Option({
           </S.OptionContent>
         </S.OptionContainer>
       )}
-    </S.MenuItem>
+    </MenuItem>
   );
 }
 
@@ -83,7 +111,7 @@ export function TransitStopOption({
   stopOptionIcon: React.ReactNode;
 }): React.ReactElement {
   return (
-    <S.MenuItem onClick={onClick} active={isActive}>
+    <MenuItem onClick={onClick} active={isActive}>
       <S.StopIconAndDistanceContainer>
         {stopOptionIcon}
         <S.StopDistance>
@@ -102,7 +130,7 @@ export function TransitStopOption({
         </S.StopRoutes>
       </S.StopContentContainer>
       <S.ClearBoth />
-    </S.MenuItem>
+    </MenuItem>
   );
 }
 

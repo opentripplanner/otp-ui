@@ -480,50 +480,38 @@ const LocationField = ({
     // Iterate through the geocoder results
     menuItems = menuItems.concat(
       stationFeatures.length > 0 && (
-        <S.MenuItem
+        <S.MenuGroupHeader
           bgColor={layerColorMap.stations}
-          centeredText
-          header
           key="gtfs-stations-header"
-          role="heading"
         >
           <FormattedMessage
             description="Text for header above Stations"
             id="otpUi.LocationField.stations"
           />
-        </S.MenuItem>
+        </S.MenuGroupHeader>
       ),
       stationFeatures.map(feature => renderFeature(itemIndex++, feature)),
 
       stopFeatures.length > 0 && (
-        <S.MenuItem
+        <S.MenuGroupHeader
           bgColor={layerColorMap.stops}
-          centeredText
-          header
           key="gtfs-stops-header"
-          role="heading"
         >
           <FormattedMessage
             description="Text for header above Stops"
             id="otpUi.LocationField.stops"
           />
-        </S.MenuItem>
+        </S.MenuGroupHeader>
       ),
       stopFeatures.map(feature => renderFeature(itemIndex++, feature)),
 
       transitFeaturesPresent && otherFeatures.length > 0 && (
-        <S.MenuItem
-          bgColor="#333"
-          centeredText
-          header
-          key="other-header"
-          role="heading"
-        >
+        <S.MenuGroupHeader bgColor="#333" key="other-header">
           <FormattedMessage
             description="Text for header above the 'other'"
             id="otpUi.LocationField.other"
           />
-        </S.MenuItem>
+        </S.MenuGroupHeader>
       ),
       otherFeatures.map(feature => renderFeature(itemIndex++, feature))
     );
@@ -533,12 +521,12 @@ const LocationField = ({
   if (nearbyStops.length > 0 && !suppressNearby) {
     // Add the menu sub-heading (not a selectable item)
     menuItems.push(
-      <S.MenuItem centeredText header key="ns-header" role="heading">
+      <S.MenuGroupHeader key="ns-header">
         <FormattedMessage
           description="Text for header above nearby stops"
           id="otpUi.LocationField.nearby"
         />
-      </S.MenuItem>
+      </S.MenuGroupHeader>
     );
 
     // Iterate through the found nearby stops
@@ -581,12 +569,12 @@ const LocationField = ({
   if (sessionSearches.length > 0) {
     // Add the menu sub-heading (not a selectable item)
     menuItems.push(
-      <S.MenuItem centeredText header key="ss-header" role="heading">
+      <S.MenuGroupHeader key="ss-header">
         <FormattedMessage
           description="Text for header above recently searched items"
           id="otpUi.LocationField.recentlySearched"
         />
-      </S.MenuItem>
+      </S.MenuGroupHeader>
     );
 
     // Iterate through any saved locations
@@ -621,12 +609,12 @@ const LocationField = ({
   if (userLocationsAndRecentPlaces.length > 0 && showUserSettings) {
     // Add the menu sub-heading (not a selectable item)
     menuItems.push(
-      <S.MenuItem centeredText header key="mp-header" role="heading">
+      <S.MenuGroupHeader key="mp-header">
         <FormattedMessage
           description="Text for header above user-saved places"
           id="otpUi.LocationField.myPlaces"
         />
-      </S.MenuItem>
+      </S.MenuGroupHeader>
     );
 
     // Iterate through any saved locations
@@ -796,12 +784,12 @@ const LocationField = ({
           {menuItems.length > 0 ? ( // Show typing prompt to avoid empty screen
             menuItems
           ) : (
-            <S.MenuItem header centeredText>
+            <S.MenuGroupMisc role="none">
               <FormattedMessage
                 description="Text to show as initial placeholder in location search field"
                 id="otpUi.LocationField.beginTypingPrompt"
               />
-            </S.MenuItem>
+            </S.MenuGroupMisc>
           )}
         </S.StaticMenuItemList>
       </div>
