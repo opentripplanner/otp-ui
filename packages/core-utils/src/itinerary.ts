@@ -559,9 +559,9 @@ export function getDisplayedStopId(placeOrStop: Place | Stop): string {
 export function getLegsWithFares(itinerary: Itinerary): Leg[] {
   return itinerary.legs.map((leg, i) => ({
     ...leg,
-    legProducts: itinerary.fare.legProducts.filter(lp =>
-      lp.legIndicies.includes(i)
-    )
+    fareProducts: itinerary.fare?.legProducts
+      ?.filter(lp => lp?.legIndices?.includes(i))
+      .flatMap(lp => lp.products)
   }));
 }
 
@@ -569,17 +569,17 @@ export function getLegCost(
   leg: Leg,
   category: string,
   container: string
-): { cost: Money | undefined; usesTransfer?: boolean } {
-  if (!leg.fareProducts) return { cost: undefined };
+): { price: Money | undefined; usesTransfer?: boolean } {
+  if (!leg.fareProducts) return { price: undefined };
   const relevantFareProducts = leg.fareProducts.filter(
     fp => fp.category.name === category && fp.container.name === container
   );
   const totalCost = relevantFareProducts.find(fp => fp.name === "rideCost")
-    .amount;
+    ?.amount;
   const usesTransfer = !!relevantFareProducts.find(
     fp => fp.name === "transfer"
   );
-  return { cost: totalCost, usesTransfer };
+  return { price: totalCost, usesTransfer };
 }
 
 export function getItineraryCost(
@@ -589,11 +589,11 @@ export function getItineraryCost(
 ): Money {
   return legs
     .filter(leg => !!leg.fareProducts)
-    .map(leg => getLegCost(leg, category, container).cost)
+    .map(leg => getLegCost(leg, category, container).price)
     .reduce<Money>(
       (prev, cur) => ({
-        cents: prev.cents + cur.cents,
-        currency: prev.currency ?? cur.currency
+        cents: prev.cents + cur?.cents || 0,
+        currency: prev.currency ?? cur?.currency
       }),
       { cents: 0, currency: null }
     );
