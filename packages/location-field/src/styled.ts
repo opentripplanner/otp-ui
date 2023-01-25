@@ -128,6 +128,7 @@ export const MenuItemLi = styled.li<{ disabled?: boolean }>`
 `;
 
 export const OptionContainer = styled.span`
+  display: block;
   padding-top: 5px;
   padding-bottom: 3px;
 `;
