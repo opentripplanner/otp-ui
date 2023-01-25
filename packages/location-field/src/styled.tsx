@@ -1,5 +1,4 @@
 import React from "react";
-import { useIntl } from "react-intl";
 import styled from "styled-components";
 
 export const HiddenContent = styled.span`
@@ -55,62 +54,6 @@ export const MenuItemList = styled.ul.attrs({
   /* this is an annoyingly high number, but is needed to be on top of some otp-rr components */
   z-index: 1000000;
 `;
-
-export const Dropdown = ({
-  children,
-  input,
-  listBoxIdentifier,
-  onToggle = () => {},
-  open,
-  status,
-  title
-}: {
-  children: React.ReactNode;
-  input?: JSX.Element;
-  listBoxIdentifier: string;
-  onToggle?: () => void;
-  open: boolean;
-  status: string;
-  title: React.ReactNode;
-}): React.ReactElement => {
-  const intl = useIntl();
-
-  return (
-    <DropdownContainer>
-      <DropdownButton
-        aria-controls={listBoxIdentifier}
-        aria-expanded={open}
-        aria-label={intl.formatMessage({
-          defaultMessage: "Open the list of location suggestions",
-          description:
-            "Text to show as a a11y label for the button that opens the dropdown list of locations",
-          id: "otpUi.LocationField.suggestedLocationsLong"
-        })}
-        onClick={onToggle}
-        tabIndex={-1}
-      >
-        {title}
-      </DropdownButton>
-      {input}
-      {/* Note: always render this status tag regardless of the open state,
-          so that assistive technologies correctly set up status monitoring. */}
-      <HiddenContent role="status">{status}</HiddenContent>
-      {open && (
-        <MenuItemList
-          aria-label={intl.formatMessage({
-            defaultMessage: "Suggested locations",
-            description:
-              "Text to show as a label for the dropdown list of locations",
-            id: "otpUi.LocationField.suggestedLocations"
-          })}
-          id={listBoxIdentifier}
-        >
-          {children}
-        </MenuItemList>
-      )}
-    </DropdownContainer>
-  );
-};
 
 export const FormGroup = styled.div`
   border-collapse: separate;
