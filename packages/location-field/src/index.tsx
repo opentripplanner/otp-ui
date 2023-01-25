@@ -64,9 +64,6 @@ function getFeaturesByCategoryWithLimit(
     })
   ];
 
-  // Add the menu sub-heading (not a selectable item)
-  // menuItems.push(<MenuItem header key='sr-header'>Search Results</MenuItem>)
-
   // Split out different types of transit results
   // To keep the list tidy, only include a subset of the responses for each category
   const stopFeatures = sortedGeocodedFeatures
