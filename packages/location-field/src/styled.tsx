@@ -223,7 +223,7 @@ export const MenuItem = ({
   ) : (
     <MenuItemLi
       // Hide disabled choices from screen readers (a relevant status is already provided).
-      aria-hidden={disabled}
+      aria-hidden={disabled || undefined}
       disabled={disabled}
       role={disabled ? undefined : "none"}
     >

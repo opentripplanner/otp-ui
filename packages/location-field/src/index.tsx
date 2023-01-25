@@ -696,7 +696,7 @@ const LocationField = ({
         title={optionTitle}
       />
     );
-    itemIndex++;
+    if (!positionUnavailable) itemIndex++;
   }
   if (message) {
     if (geocodedFeatures.length === 0) {
@@ -773,10 +773,12 @@ const LocationField = ({
         </S.FormGroup>
         <S.HiddenContent role="status">{statusMessages?.join(", ")}</S.HiddenContent>
         <S.StaticMenuItemList
+          // Hide the listbox from assistive technology if no valid items are shown.
+          aria-hidden={menuItemCount === 0 || undefined}
           aria-label={intl.formatMessage({
-            id: "otpUi.LocationField.suggestedLocations",
             defaultMessage: "Suggested locations",
-            description: "Text to show as a label for the dropdown list of locations"
+            description: "Text to show as a label for the dropdown list of locations",
+            id: "otpUi.LocationField.suggestedLocations"
           })}
           id={listBoxId}
         >
