@@ -556,6 +556,11 @@ export function getDisplayedStopId(placeOrStop: Place | Stop): string {
   return stopCode || stopId?.split(":")[1] || stopId;
 }
 
+/**
+ * Adds the fare product info to each leg in an itinerary, from the itinerary's fare property
+ * @param itinerary Itinerary with legProducts in fare object
+ * @returns Itinerary with legs that have fare products attached to them
+ */
 export function getLegsWithFares(itinerary: Itinerary): Leg[] {
   return itinerary.legs.map((leg, i) => ({
     ...leg,
@@ -565,6 +570,13 @@ export function getLegsWithFares(itinerary: Itinerary): Leg[] {
   }));
 }
 
+/**
+ * Extracts useful data from the fare products on a leg, such as the leg cost and transfer info.
+ * @param leg Leg with fare products (must have used getLegsWithFares)
+ * @param category Rider category
+ * @param container Fare container (cash, electronic)
+ * @returns Object containing price as well as the transfer discount amount, if a transfer was used.
+ */
 export function getLegCost(
   leg: Leg,
   category: string,
@@ -586,6 +598,13 @@ export function getLegCost(
   };
 }
 
+/**
+ * Returns the total itinerary cost for a given set of legs.
+ * @param legs Itinerary legs with fare products (must have used getLegsWithFares)
+ * @param category Rider category (youth, regular, senior)
+ * @param container Fare container (cash, electronic)
+ * @returns Money object for the total itinerary cost.
+ */
 export function getItineraryCost(
   legs: Leg[],
   category: string,
