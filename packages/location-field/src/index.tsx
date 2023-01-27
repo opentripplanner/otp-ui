@@ -36,11 +36,28 @@ function DefaultLocationIcon({
   return <LocationIcon size={13} type={locationType} />;
 }
 
+/**
+ * Helper function that includes or excludes features based om layers.
+ */
+function filter(
+  list: any[],
+  layers: string[],
+  include: boolean,
+  limit: number
+): any[] {
+  return list
+    .filter(feature => layers.includes(feature.properties.layer) === include)
+    .slice(0, limit);
+}
+
+/**
+ * Puts the given geocoded features into several categories with upper bounds.
+ */
 function getFeaturesByCategoryWithLimit(
-  geocodedFeatures,
-  suggestionCount,
-  sortByDistance,
-  preferredLayers
+  geocodedFeatures: any[],
+  suggestionCount: number,
+  sortByDistance: boolean,
+  preferredLayers: string[]
 ) {
   // Split features into those we want to always show above others
   const { special, normal } = geocodedFeatures.reduce(
@@ -66,16 +83,24 @@ function getFeaturesByCategoryWithLimit(
 
   // Split out different types of transit results
   // To keep the list tidy, only include a subset of the responses for each category
-  const stopFeatures = sortedGeocodedFeatures
-    .filter(feature => feature.properties.layer === "stops")
-    .slice(0, suggestionCount);
-  const stationFeatures = sortedGeocodedFeatures
-    .filter(feature => feature.properties.layer === "stations")
-    .slice(0, suggestionCount);
-  const otherFeatures = sortedGeocodedFeatures
-    .filter(feature => feature.properties.layer !== "stops")
-    .filter(feature => feature.properties.layer !== "stations")
-    .slice(0, suggestionCount);
+  const stopFeatures = filter(
+    sortedGeocodedFeatures,
+    ["stops"],
+    true,
+    suggestionCount
+  );
+  const stationFeatures = filter(
+    sortedGeocodedFeatures,
+    ["stations"],
+    true,
+    suggestionCount
+  );
+  const otherFeatures = filter(
+    sortedGeocodedFeatures,
+    ["stops", "stations"],
+    false,
+    suggestionCount
+  );
 
   return {
     count: otherFeatures.length + stationFeatures.length + stopFeatures.length,
