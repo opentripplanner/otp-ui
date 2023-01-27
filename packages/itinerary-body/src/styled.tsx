@@ -291,7 +291,7 @@ export const LegDescription = styled.span`
 `;
 
 // additional description added to ClickableLeg for screenreaders
-export const AccessibilityLinkDetails = styled.span`
+export const InvisibleAdditionalDetails = styled.span`
   display: block;
   height: 0;
   overflow: hidden;

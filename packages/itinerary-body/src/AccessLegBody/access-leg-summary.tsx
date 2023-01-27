@@ -33,12 +33,12 @@ export default function AccessLegSummary({
         </S.LegIconAndRouteShortName>
         <AccessLegDescription config={config} leg={leg} />
       </S.LegDescription>
-      <S.AccessibilityLinkDetails>
+      <S.InvisibleAdditionalDetails>
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.TransitLegBody.zoomToLeg"]}
           id="otpUi.TransitLegBody.zoomToLeg"
         />
-      </S.AccessibilityLinkDetails>
+      </S.InvisibleAdditionalDetails>
     </S.LegClickable>
   );
 }

@@ -26,12 +26,12 @@ export default function RouteDescription({
       <S.LegDescriptionRouteLongName>
         <RouteLongName leg={leg} />
       </S.LegDescriptionRouteLongName>
-      <S.AccessibilityLinkDetails>
+      <S.InvisibleAdditionalDetails>
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.TransitLegBody.zoomToLeg"]}
           id="otpUi.TransitLegBody.zoomToLeg"
         />
-      </S.AccessibilityLinkDetails>
+      </S.InvisibleAdditionalDetails>
     </S.LegDescriptionForTransit>
   );
 }

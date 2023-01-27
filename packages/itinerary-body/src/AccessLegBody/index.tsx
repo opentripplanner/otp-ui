@@ -111,14 +111,14 @@ class AccessLegBody extends Component<Props, State> {
               >
                 <Duration seconds={leg.duration} />
                 {leg.steps && <S.CaretToggle expanded={expanded} />}
-                <S.AccessibilityLinkDetails>
+                <S.InvisibleAdditionalDetails>
                   <FormattedMessage
                     defaultMessage={
                       defaultMessages["otpUi.TransitLegBody.expandDetails"]
                     }
                     id="otpUi.TransitLegBody.expandDetails"
                   />
-                </S.AccessibilityLinkDetails>
+                </S.InvisibleAdditionalDetails>
               </S.StepsHeader>
               <MapillaryButton
                 clickCallback={mapillaryCallback}

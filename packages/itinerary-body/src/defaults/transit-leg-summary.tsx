@@ -29,12 +29,12 @@ export default function TransitLegSummary({
         }}
       />
       {leg.intermediateStops && <S.CaretToggle expanded={stopsExpanded} />}
-      <S.AccessibilityLinkDetails>
+      <S.InvisibleAdditionalDetails>
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.TransitLegBody.expandDetails"]}
           id="otpUi.TransitLegBody.expandDetails"
         />
-      </S.AccessibilityLinkDetails>
+      </S.InvisibleAdditionalDetails>
     </S.TransitLegSummary>
   );
 }
