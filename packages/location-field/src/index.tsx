@@ -4,6 +4,7 @@ import coreUtils from "@opentripplanner/core-utils";
 import getGeocoder from "@opentripplanner/geocoder";
 // @ts-ignore Not Typescripted Yet
 import LocationIcon from "@opentripplanner/location-icon";
+import { Location } from "@opentripplanner/types";
 import React, { useEffect, useMemo, useState, useRef } from "react";
 import { Ban } from "@styled-icons/fa-solid/Ban";
 import { Bus } from "@styled-icons/fa-solid/Bus";
@@ -23,6 +24,7 @@ import {
   UserLocationIcon
 } from "./options";
 import * as S from "./styled";
+import { LocationFieldProps, ResultType } from "./types";
 import { generateLabel, getCombinedLabel } from "./utils";
 
 // FIXME have a better key generator for options
