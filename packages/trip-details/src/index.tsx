@@ -257,13 +257,9 @@ export function TripDetails({
   );
 
   return (
-    <S.TripDetails
-      aria-labelledby="trip-details-header"
-      className={className}
-      role="group"
-    >
+    <S.TripDetails className={className}>
       {/* this can be presentation as S.TripDetails is already labeled by this */}
-      <S.TripDetailsHeader id="trip-details-header" role="presentation">
+      <S.TripDetailsHeader id="trip-details-header">
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.TripDetails.title"]}
           description="Title (heading) text of the component."
