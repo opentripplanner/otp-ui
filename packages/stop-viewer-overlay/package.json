@@ -20,10 +20,10 @@
   },
   "dependencies": {
     "@opentripplanner/base-map": "^3.0.9",
-    "@opentripplanner/core-utils": "^8.0.0"
+    "@opentripplanner/core-utils": "^8.0.1"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^4.0.4"
+    "@opentripplanner/types": "^4.0.5"
   },
   "peerDependencies": {
     "react": "^16.14.0",
