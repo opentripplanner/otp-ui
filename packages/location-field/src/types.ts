@@ -205,7 +205,6 @@ export interface LocationFieldProps {
    * "STOP": A transit stop
    */
   onLocationSelected: (
-    intl: IntlShape,
     {
       locationType,
       location,

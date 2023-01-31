@@ -252,7 +252,7 @@ const LocationField = ({
   };
 
   const setLocation = (newLocation: Location, resultType: ResultType) => {
-    onLocationSelected(intl, {
+    onLocationSelected({
       location: newLocation,
       locationType,
       resultType
@@ -267,7 +267,7 @@ const LocationField = ({
     if (newLocation) {
       // If geolocation is successful (i.e., user has granted app geolocation
       // permission and coords exist), set location.
-      onLocationSelected(intl, {
+      onLocationSelected({
         location: newLocation,
         locationType,
         resultType: "CURRENT_LOCATION"
