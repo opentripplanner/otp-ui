@@ -32,6 +32,7 @@ export default function TransitLegSummary({
       <S.InvisibleAdditionalDetails>
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.TransitLegBody.expandDetails"]}
+          description="Screen reader text to expand stops"
           id="otpUi.TransitLegBody.expandDetails"
         />
       </S.InvisibleAdditionalDetails>

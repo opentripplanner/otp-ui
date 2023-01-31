@@ -267,7 +267,10 @@ export const IntermediateStops = styled.ol`
   padding: 0;
 `;
 
-export const ItineraryBody = styled.div``;
+export const ItineraryBody = styled.ol`
+  list-style: none;
+  padding: 0;
+`;
 
 export const LegBody = styled.div`
   color: #676767;
@@ -376,7 +379,7 @@ export const LegDetails = styled.span`
   grid-template-columns: 100px auto;
 `;
 
-export const PlaceRowWrapper = styled.section`
+export const PlaceRowWrapper = styled.li`
   /* needs to be a flexbox row */
   max-width: 500px;
   display: grid;
@@ -449,7 +452,7 @@ export const PlaceHeader = styled.div`
   font-size: 1.2em;
 `;
 
-export const PlaceName = styled.h2`
+export const PlaceName = styled.span`
   /* text styling */
   font-size: inherit;
   font-weight: bold;

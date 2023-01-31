@@ -176,10 +176,12 @@ class TransitLegBody extends Component<Props, State> {
       <>
         {TransitLegSubheader && <TransitLegSubheader leg={leg} />}
         <S.LegBody
-          role="group"
           aria-label={intl.formatMessage({
-            id: "otpUi.TransitLegBody.legDetails"
+            id: "otpUi.TransitLegBody.legDetails",
+            description: "Identifies this section as trip leg details",
+            defaultMessage: defaultMessages["otpUi.TransitLegBody.legDetails"]
           })}
+          role="group"
         >
           {/* The Route Icon/Name Bar; clickable to set as active leg */}
           <S.LegClickable onClick={this.onSummaryClick}>
@@ -215,25 +217,7 @@ class TransitLegBody extends Component<Props, State> {
                       )}
                     >
                       {agencyName}
-                      {logoUrl && (
-                        <img
-                          alt={intl.formatMessage(
-                            {
-                              defaultMessage:
-                                defaultMessages[
-                                  "otpUi.TransitLegBody.agencyLogo"
-                                ],
-                              description: "Alt text for agency logo",
-                              id: "otpUi.TransitLegBody.agencyLogo"
-                            },
-                            {
-                              agencyName
-                            }
-                          )}
-                          src={logoUrl}
-                          height={25}
-                        />
-                      )}
+                      {logoUrl && <img alt="" src={logoUrl} height={25} />}
                     </a>
                   )
                 }}

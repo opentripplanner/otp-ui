@@ -103,10 +103,10 @@ const MapillaryButton = ({
   });
   return (
     <Container
-      onClick={handleClick}
-      title={mapilaryLabel}
       aria-label={mapilaryLabel}
+      onClick={handleClick}
       role="link"
+      title={mapilaryLabel}
     >
       <Icon style={{ paddingBottom: 1 }} />
     </Container>

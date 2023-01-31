@@ -116,6 +116,7 @@ class AccessLegBody extends Component<Props, State> {
                     defaultMessage={
                       defaultMessages["otpUi.TransitLegBody.expandDetails"]
                     }
+                    description="Screen reader text added to expand steps"
                     id="otpUi.TransitLegBody.expandDetails"
                   />
                 </S.InvisibleAdditionalDetails>

@@ -70,7 +70,7 @@ export default function PlaceRow({
     id: "otpUi.ItineraryBody.viewOnMap"
   });
   return (
-    <S.PlaceRowWrapper key={legIndex || "destination-place"} role="group">
+    <S.PlaceRowWrapper key={legIndex || "destination-place"}>
       <S.LineColumn>
         <LineColumnContent
           interline={interline}

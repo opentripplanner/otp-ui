@@ -30,6 +30,7 @@ export default function RouteDescription({
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.TransitLegBody.zoomToLeg"]}
           id="otpUi.TransitLegBody.zoomToLeg"
+          description="Identifies behavior of clickable leg"
         />
       </S.InvisibleAdditionalDetails>
     </S.LegDescriptionForTransit>
