@@ -177,9 +177,9 @@ class TransitLegBody extends Component<Props, State> {
         {TransitLegSubheader && <TransitLegSubheader leg={leg} />}
         <S.LegBody
           aria-label={intl.formatMessage({
-            id: "otpUi.TransitLegBody.legDetails",
+            defaultMessage: defaultMessages["otpUi.TransitLegBody.legDetails"],
             description: "Identifies this section as trip leg details",
-            defaultMessage: defaultMessages["otpUi.TransitLegBody.legDetails"]
+            id: "otpUi.TransitLegBody.legDetails"
           })}
           role="group"
         >
@@ -204,9 +204,6 @@ class TransitLegBody extends Component<Props, State> {
                 values={{
                   agencyLink: (
                     <a
-                      href={agencyUrl}
-                      rel="noopener noreferrer"
-                      target="_blank"
                       aria-label={intl.formatMessage(
                         {
                           id: "otpUi.TransitLegBody.agencyExternalLink"
@@ -215,6 +212,9 @@ class TransitLegBody extends Component<Props, State> {
                           agencyName
                         }
                       )}
+                      href={agencyUrl}
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
                       {agencyName}
                       {logoUrl && <img alt="" src={logoUrl} height={25} />}

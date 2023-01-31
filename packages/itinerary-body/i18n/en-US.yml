@@ -89,7 +89,6 @@ otpUi:
       walk: by walking
     viewOnMap: View on map
   TransitLegBody:
-    agencyLogo: "{agencyName} logo"
     agencyExternalLink: "{agencyName} (External Link)"
     AlertsBody:
       effectiveDate: Effective as of {dateTime, date, long}

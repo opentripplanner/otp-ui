@@ -36,8 +36,8 @@ export default function AccessLegSummary({
       <S.InvisibleAdditionalDetails>
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.TransitLegBody.zoomToLeg"]}
-          id="otpUi.TransitLegBody.zoomToLeg"
           description="Identifies behavior of clickable leg"
+          id="otpUi.TransitLegBody.zoomToLeg"
         />
       </S.InvisibleAdditionalDetails>
     </S.LegClickable>
