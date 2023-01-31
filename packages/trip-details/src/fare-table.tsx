@@ -156,12 +156,14 @@ const FareTypeTable = ({
                     )
                   }
                 >
+                  {(fare?.isTransfer || fare.transferAmount) && (
+                    <>
+                      <TransferIcon size={16} />{" "}
+                    </>
+                  )}
                   {renderFare(
                     fare?.price?.currency?.currencyCode,
                     (fare?.price?.cents || 0) / 100
-                  )}
-                  {(fare?.isTransfer || fare.transferAmount) && (
-                    <TransferIcon size={16} />
                   )}
                 </td>
               );
