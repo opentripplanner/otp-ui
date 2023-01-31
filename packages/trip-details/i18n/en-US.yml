@@ -30,6 +30,8 @@ otpUi:
     transitFareEntry: "{name}: <strong>{value}</strong>"
     # The {extraMessage} string is included here instead of in the html so that it can be rearranged or surrounded as required in certain languages
     tripIncludesFlex: This trip includes flexible routes. {extraMessage}
+    showDetail: Show details
+    hideDetail: Hide details
     fareDetailsHeaders:
       regular: "Adult"
       youth: "Youth"

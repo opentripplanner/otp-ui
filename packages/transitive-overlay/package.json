@@ -21,8 +21,8 @@
   "dependencies": {
     "@mapbox/polyline": "^1.1.1",
     "@opentripplanner/base-map": "^3.0.9",
-    "@opentripplanner/core-utils": "^8.0.0",
-    "@opentripplanner/itinerary-body": "^4.1.5",
+    "@opentripplanner/core-utils": "^8.0.1",
+    "@opentripplanner/itinerary-body": "^4.1.7",
     "@turf/bbox": "^6.5.0",
     "@turf/bearing": "^6.5.0",
     "@turf/destination": "^6.5.0",
@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@opentripplanner/endpoints-overlay": "^2.0.5",
-    "@opentripplanner/types": "^4.0.4"
+    "@opentripplanner/types": "^4.0.5"
   },
   "peerDependencies": {
     "react": "^16.14.0",

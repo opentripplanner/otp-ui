@@ -406,6 +406,13 @@ export type Itinerary = {
   walkTime: number;
 };
 
+/**
+ * In many places all we need from the Itinerary is the legs,
+ * this type makes all the other types optional except legs.
+ */
+export type ItineraryOnlyLegsRequired = Partial<Itinerary> &
+  Pick<Itinerary, "legs">;
+
 export type ElevationProfile = {
   maxElev: number;
   minElev: number;
@@ -721,3 +728,8 @@ export type LegProduct = {
   legIndices: Array<number>;
   products: Array<FareProduct>;
 };
+
+/**
+ * Options for units of mass (used in CO2 calculation config)
+ */
+export type MassUnitOption = "ounce" | "kilogram" | "pound" | "gram";
