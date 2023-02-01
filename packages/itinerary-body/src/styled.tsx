@@ -237,12 +237,6 @@ export const Destination = styled.div`
   text-align: center;
 `;
 
-export const DetailsColumn = styled(LightBorderDiv)`
-  /* flexbox column -- remaining space */
-  flex: 2 2 auto;
-  /* overflow: hidden; this is commented out in order to show Intermediate Stop Markers */
-`;
-
 export const InnerLine = styled.div<ModeRouteProps>`
   /* the actual line element */
   border-left: ${props => toModeBorder(props.mode, props.routeColor)};
@@ -266,17 +260,22 @@ export const InterlineName = styled.div`
   /* special messaging, not sure yet */
 `;
 
-export const IntermediateStops = styled.div`
+export const IntermediateStops = styled.ol`
   display: block;
   font-size: 13px;
+  list-style: none;
+  padding: 0;
 `;
 
-export const ItineraryBody = styled.div``;
+export const ItineraryBody = styled.ol`
+  list-style: none;
+  padding: 0;
+`;
 
 export const LegBody = styled.div`
   color: #676767;
   font-size: 13px;
-  padding: 12px 0 18px 4px;
+  padding: 12px 0 12px 4px;
 `;
 
 export const LegClickable = styled(TransparentButton)`
@@ -292,6 +291,14 @@ export const LegDescription = styled.span`
   display: flex;
   line-height: 16px;
   min-height: 31px;
+`;
+
+// additional description added to ClickableLeg for screenreaders
+export const InvisibleAdditionalDetails = styled.span`
+  display: block;
+  height: 0;
+  overflow: hidden;
+  width: 0;
 `;
 
 export const LegDescriptionHeadsignPrefix = styled.span`
@@ -362,17 +369,21 @@ export const LineBadgeContainer = styled.div`
 
 export const LineColumn = styled.div`
   /* flexbox column */
-  flex: 0 0 50px;
+  grid-column-start: 2;
+  grid-row: span 2;
   padding-right: 5px;
 `;
 
-export const LegDetails = styled.span``;
+export const LegDetails = styled.span`
+  display: grid;
+  grid-template-columns: 100px auto;
+`;
 
-export const PlaceRowWrapper = styled.div`
+export const PlaceRowWrapper = styled.li`
   /* needs to be a flexbox row */
   max-width: 500px;
-  display: flex;
-  flex-flow: row;
+  display: grid;
+  grid-template-columns: 65px 30px auto;
 `;
 
 interface PreviewContainerProps {
@@ -387,6 +398,8 @@ export const PreviewContainer = styled.div<PreviewContainerProps>`
   border-width: 1px;
   display: inline-block;
   font-style: normal;
+  grid-column: 2;
+  grid-row: 1;
   margin: 0 4px;
   position: relative;
   text-align: center;
@@ -401,8 +414,8 @@ export const PreviewContainer = styled.div<PreviewContainerProps>`
 `;
 
 export const TimeColumn = styled.div`
-  /* flexbox column */
-  flex: 0 0 60px;
+  grid-column-start: 1;
+  grid-row: 1 / span 2;
   padding-right: 5px;
   font-size: 0.9em;
 `;
@@ -430,9 +443,8 @@ export const MapIcon = styled(Map).attrs(props => ({
 }))``;
 
 export const PlaceDetails = styled.div`
-  /* container for Leg details */
-  /* padding: 15px 0 15px 15px; */
-  /* padding-bottom: 15px; */
+  grid-row-start: 2;
+  grid-column-start: 3;
 `;
 
 export const PlaceHeader = styled.div`
@@ -440,10 +452,12 @@ export const PlaceHeader = styled.div`
   font-size: 1.2em;
 `;
 
-export const PlaceName = styled.div`
+export const PlaceName = styled.span`
   /* text styling */
+  font-size: inherit;
   font-weight: bold;
   height: 1.2em;
+  margin: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -526,8 +540,10 @@ export const SROnly = styled.span`
 
 export const SRHidden = styled.span.attrs({ "aria-hidden": true })``;
 
-export const Steps = styled.div`
+export const Steps = styled.ol`
   display: block;
+  list-style: none;
+  padding: 0;
 `;
 
 export const StepDescriptionContainer = styled.div`
@@ -542,6 +558,7 @@ export const StepDescriptionContainer = styled.div`
 
 export const StepsHeaderAndMapLink = styled.span`
   display: inline-block;
+  align-self: center;
   margin-top: 10px;
 `;
 
@@ -558,7 +575,7 @@ export const StepIconContainer = styled.div`
   width: 16px;
 `;
 
-export const StepRow = styled.div`
+export const StepRow = styled.li`
   font-size: 13px;
   margin-top: 8px;
   color: #676767;
@@ -586,7 +603,7 @@ export const StopName = styled.div`
   margin-top: 3px;
 `;
 
-export const StopRow = styled.div`
+export const StopRow = styled.li`
   z-index: 30;
   position: relative;
 `;
