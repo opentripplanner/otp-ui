@@ -466,6 +466,7 @@ export const PlaceName = styled.span`
 
 export const PlaceSubheader = styled.div`
   color: #807373;
+  font-size: 13px;
   font-weight: 300;
   padding-left: 4px;
   padding-top: 1px;
