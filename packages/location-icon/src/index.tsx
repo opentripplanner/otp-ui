@@ -10,12 +10,6 @@ type Props = {
    */
   size: number | string;
   /**
-   * Title as used by styled-icons. If left blank defaults to either
-   * `From Location Icon` or `To Location Icon`.
-   * See https://github.com/jacobwgillespie/styled-icons#props
-   */
-  title?: string;
-  /**
    * `from` or `to` or some other string value to trigger generic place icon.
    */
   type: string;
@@ -28,34 +22,15 @@ type Props = {
 export function LocationIcon({
   className = "",
   size = 10,
-  title = "",
   type = ""
 }: Props): ReactElement {
   switch (type) {
     case "from":
-      return (
-        <S.FromIcon
-          className={className}
-          size={size}
-          title={title || "From Location Icon"}
-        />
-      );
+      return <S.FromIcon className={className} size={size} />;
     case "to":
-      return (
-        <S.ToIcon
-          className={className}
-          size={size}
-          title={title || "To Location Icon"}
-        />
-      );
+      return <S.ToIcon className={className} size={size} />;
     default:
-      return (
-        <S.PlaceIcon
-          className={className}
-          size={size}
-          title={title || "Location Icon"}
-        />
-      );
+      return <S.PlaceIcon className={className} size={size} />;
   }
 }
 
