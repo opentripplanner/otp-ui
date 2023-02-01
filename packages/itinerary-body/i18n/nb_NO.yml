@@ -22,4 +22,3 @@ otpUi:
       today: I dag
       yesterday: I går
       tomorrow: I morgen
-    agencyLogo: '{agencyName}-logo'
