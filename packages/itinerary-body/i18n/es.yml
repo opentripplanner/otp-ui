@@ -97,7 +97,6 @@ otpUi:
       today: Hoy dia
       tomorrow: Mañana
       yesterday: Ayer
-    agencyLogo: Logo de {agencyName}
     alertsHeader: "{alertCount, plural, =1 {# alerta} other {# alertas} }"
     fare: "Tarifa: {fare}"
     operatedBy: Servicio operado por {agencyLink}

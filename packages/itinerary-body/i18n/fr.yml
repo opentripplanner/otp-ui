@@ -102,7 +102,6 @@ otpUi:
       bike: en vélo
     viewOnMap: Afficher sur le plan
   TransitLegBody:
-    agencyLogo: "Logo de {agencyName}"
     AlertsBody:
       effectiveDate: À partir du {dateTime, date, long}
       effectiveTimeAndDate: À partir de {dateTime, time, short}, {day}

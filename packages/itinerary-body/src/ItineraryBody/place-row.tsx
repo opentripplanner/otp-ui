@@ -71,16 +71,6 @@ export default function PlaceRow({
   });
   return (
     <S.PlaceRowWrapper key={legIndex || "destination-place"}>
-      <S.TimeColumn>
-        {/* Custom rendering of the departure/arrival time of the specified leg. */}
-        <TimeColumnContent isDestination={isDestination} leg={leg} />
-        {!isDestination && leg.accessibilityScore && (
-          <AccessibilityRating
-            gradationMap={accessibilityScoreGradationMap}
-            score={leg.accessibilityScore}
-          />
-        )}
-      </S.TimeColumn>
       <S.LineColumn>
         <LineColumnContent
           interline={interline}
@@ -92,64 +82,72 @@ export default function PlaceRow({
           toRouteAbbreviation={toRouteAbbreviation}
         />
       </S.LineColumn>
-      <S.DetailsColumn hideBorder={hideBorder.toString()}>
-        <S.PlaceDetails>
-          {/* Dot separating interlined segments, if applicable */}
-          <S.PlaceHeader>
-            {/*
+      {/* Dot separating interlined segments, if applicable */}
+      <S.PlaceHeader>
+        {/*
               TODO: Need to rework this -- Need to display a marker
               for an interline place
             */}
-            {interline && <S.InterlineDot>&bull;</S.InterlineDot>}
-            <S.PlaceName>
-              <PlaceName config={config} interline={interline} place={place} />
-            </S.PlaceName>
-          </S.PlaceHeader>
+        {interline && <S.InterlineDot>&bull;</S.InterlineDot>}
+        <S.PlaceName>
+          <PlaceName config={config} interline={interline} place={place} />
+        </S.PlaceName>
+      </S.PlaceHeader>
 
-          {/* Show the leg, if not rendering the destination */}
-          {!isDestination &&
-            (leg.transitLeg ? (
-              /* This is a transit leg */
-              <TransitLegBody
-                AlertBodyIcon={AlertBodyIcon}
-                AlertToggleIcon={AlertToggleIcon}
-                alwaysCollapseAlerts={alwaysCollapseAlerts}
-                fare={fare}
-                leg={leg}
-                LegIcon={LegIcon}
-                legIndex={legIndex}
-                RouteDescription={RouteDescription}
-                setActiveLeg={setActiveLeg}
-                setViewedTrip={setViewedTrip}
-                showAgencyInfo={showAgencyInfo}
-                showViewTripButton={showViewTripButton}
-                timeZone={config.homeTimezone}
-                TransitLegSubheader={TransitLegSubheader}
-                TransitLegSummary={TransitLegSummary}
-                transitOperator={coreUtils.route.getTransitOperatorFromLeg(
-                  leg,
-                  config.transitOperators
-                )}
-              />
-            ) : (
-              /* This is an access (e.g. walk/bike/etc.) leg */
-              <AccessLegBody
-                config={config}
-                diagramVisible={diagramVisible}
-                followsTransit={followsTransit}
-                leg={leg}
-                LegIcon={LegIcon}
-                legIndex={legIndex}
-                mapillaryCallback={mapillaryCallback}
-                mapillaryKey={mapillaryKey}
-                setActiveLeg={setActiveLeg}
-                setLegDiagram={setLegDiagram}
-                showElevationProfile={showElevationProfile}
-                showLegIcon={showLegIcon}
-              />
-            ))}
-        </S.PlaceDetails>
-      </S.DetailsColumn>
+      <S.TimeColumn>
+        {/* Custom rendering of the departure/arrival time of the specified leg. */}
+        <TimeColumnContent isDestination={isDestination} leg={leg} />
+        {!isDestination && leg.accessibilityScore && (
+          <AccessibilityRating
+            gradationMap={accessibilityScoreGradationMap}
+            score={leg.accessibilityScore}
+          />
+        )}
+      </S.TimeColumn>
+      <S.PlaceDetails>
+        {/* Show the leg, if not rendering the destination */}
+        {!isDestination &&
+          (leg.transitLeg ? (
+            /* This is a transit leg */
+            <TransitLegBody
+              AlertBodyIcon={AlertBodyIcon}
+              AlertToggleIcon={AlertToggleIcon}
+              alwaysCollapseAlerts={alwaysCollapseAlerts}
+              fare={fare}
+              leg={leg}
+              LegIcon={LegIcon}
+              legIndex={legIndex}
+              RouteDescription={RouteDescription}
+              setActiveLeg={setActiveLeg}
+              setViewedTrip={setViewedTrip}
+              showAgencyInfo={showAgencyInfo}
+              showViewTripButton={showViewTripButton}
+              timeZone={config.homeTimezone}
+              TransitLegSubheader={TransitLegSubheader}
+              TransitLegSummary={TransitLegSummary}
+              transitOperator={coreUtils.route.getTransitOperatorFromLeg(
+                leg,
+                config.transitOperators
+              )}
+            />
+          ) : (
+            /* This is an access (e.g. walk/bike/etc.) leg */
+            <AccessLegBody
+              config={config}
+              diagramVisible={diagramVisible}
+              followsTransit={followsTransit}
+              leg={leg}
+              LegIcon={LegIcon}
+              legIndex={legIndex}
+              mapillaryCallback={mapillaryCallback}
+              mapillaryKey={mapillaryKey}
+              setActiveLeg={setActiveLeg}
+              setLegDiagram={setLegDiagram}
+              showElevationProfile={showElevationProfile}
+              showLegIcon={showLegIcon}
+            />
+          ))}
+      </S.PlaceDetails>
       {showMapButtonColumn && (
         <S.MapButtonColumn hideBorder={hideBorder.toString()}>
           <S.MapButton
