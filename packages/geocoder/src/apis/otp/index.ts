@@ -1,6 +1,6 @@
 
 // eslint-disable-next-line prettier/prettier
-import type { AutocompleteQuery  } from "../../geocoders/types"
+import type { AutocompleteQuery } from "../../geocoders/types"
 
 type FetchArgs = {
   url: string
@@ -14,10 +14,10 @@ type OTPGeocoderResponse = {
     description: string,
     id: string
   }[]
-}
+} | undefined
 
 
-function run({  query, url }: FetchArgs): Promise<OTPGeocoderResponse> {
+function run({ query, url }: FetchArgs): Promise<OTPGeocoderResponse> {
   // TODO: Support corners/osm nodes?
   return fetch(`${url}/geocode?corners=false&query=${query}`)
     .then(res => res.text())
@@ -29,9 +29,9 @@ function run({  query, url }: FetchArgs): Promise<OTPGeocoderResponse> {
  * OTP Geocoder
  *
  * @param  {Object} $0
- * @param  {string} $0.url                    The OTP instance, ending with /default/
- * @param  {string} $0.text                       query
- * @return {Promise}                              A Promise that'll get resolved with the autocomplete result
+ * @param  {string} $0.url  The OTP instance, ending with /default/
+ * @param  {string} $0.text query
+ * @return {Promise}        A Promise that'll get resolved with the autocomplete result
  */
 async function autocomplete({
   url,
@@ -47,5 +47,5 @@ function search(): Promise<unknown> { console.warn("Not implemented"); return nu
 function reverse(): Promise<unknown> { console.warn("Not implemented"); return null }
 
 
-export { autocomplete, reverse, search,  };
+export { autocomplete, reverse, search };
 export type { OTPGeocoderResponse }
