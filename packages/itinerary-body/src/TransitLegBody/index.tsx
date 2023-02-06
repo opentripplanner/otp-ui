@@ -160,7 +160,7 @@ class TransitLegBody extends Component<Props, State> {
     // If the config contains an operator name, prefer that one over the
     // one provided by OTP
 
-    const transitOperatorName = transitOperator.name
+    const transitOperatorName = transitOperator?.name
       ? transitOperator.name
       : agencyName;
 
