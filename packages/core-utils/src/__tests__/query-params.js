@@ -1,5 +1,3 @@
-import { ModeSetting, TransportMode } from "@opentripplanner/types";
-
 import { reduceOtpFlexModes } from "../query";
 import queryParams, { getCustomQueryParams } from "../query-params";
 import { extractAdditionalModes, generateCombinations } from "../query-gen";
@@ -56,11 +54,11 @@ describe("extract-modes", () => {
     mode: "UNICYCLE"
   };
 
-  const testTransportMode: TransportMode = {
+  const testTransportMode = {
     mode: "testMode"
   };
 
-  const checkboxModeSetting: ModeSetting = {
+  const checkboxModeSetting = {
     type: "CHECKBOX",
     icon: null,
     label: "test",
@@ -70,7 +68,7 @@ describe("extract-modes", () => {
     addTransportMode: mode
   };
 
-  const dropdownModeSetting: ModeSetting = {
+  const dropdownModeSetting = {
     type: "DROPDOWN",
     label: "test",
     applicableMode: testTransportMode.mode,
