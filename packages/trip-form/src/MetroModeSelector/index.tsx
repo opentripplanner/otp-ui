@@ -218,7 +218,7 @@ function ModeButton({
 
 interface Props {
   disableHover?: boolean;
-  modeButtons: ModeButtonDefinition[];
+  modeButtons?: ModeButtonDefinition[];
   onSettingsUpdate: (QueryParamChangeEvent) => void;
   onToggleModeButton: (key) => void;
   fillModeIcons?: boolean;
