@@ -29,7 +29,6 @@ function getColorProps(options?: RouteColorBackgroundOptions) {
   const defaultColor = options?.defaultColor || "#9999ee";
 
   return (props: VehicleComponentProps): ColorProps => {
-    // @ts-expect-error alpha branch. you should not see this outside the alpha branch
     const routeColor = props.vehicle.routeColor || defaultColor;
     return {
       backgroundColor: `${routeColor}${options?.alphaHex || ""}`,
