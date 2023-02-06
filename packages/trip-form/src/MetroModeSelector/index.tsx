@@ -25,7 +25,10 @@ const ModeBar = styled.div`
   grid-row: 2;
 `;
 
-const ModeButtonItem = styled.button<{ enabled?: boolean }>`
+const ModeButtonItem = styled.button<{
+  ["aria-checked"]?: boolean;
+  fillModeIcons?: boolean;
+}>`
   display: inline-block;
   /* stylelint-disable-next-line property-no-unknown */
   aspect-ratio: 1/1;
@@ -35,7 +38,7 @@ const ModeButtonItem = styled.button<{ enabled?: boolean }>`
   border: 2px solid #084c8d;
   padding: 0.375rem 0.75rem;
   border-radius: 5px;
-  background: ${props => (props.enabled ? "#084c8d" : "#fff")};
+  background: ${props => (props["aria-checked"] ? "#084c8d" : "#fff")};
   transition: all 250ms cubic-bezier(0.27, 0.01, 0.38, 1.06);
   color: white;
 
@@ -49,7 +52,7 @@ const ModeButtonItem = styled.button<{ enabled?: boolean }>`
   }
 
   &:hover {
-    background: ${props => (props.enabled ? "#0e5faa" : "#eee")};
+    background: ${props => (props["aria-checked"] ? "#0e5faa" : "#eee")};
     border-color: #0e5faa;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05),
       0 4px 10px rgba(0, 123, 255, 0.25);
@@ -61,8 +64,8 @@ const ModeButtonItem = styled.button<{ enabled?: boolean }>`
     width: 32px;
     height: 32px;
     vertical-align: middle;
-    fill: currentcolor;
-    color: ${props => (props.enabled ? "#eee" : "#084c8d")};
+    ${props => props.fillModeIcons && "fill: currentcolor;"}
+    color: ${props => (props["aria-checked"] ? "#eee" : "#084c8d")};
   }
 `;
 
@@ -99,6 +102,7 @@ interface ModeButtonProps {
   modeButton: ModeButtonDefinition;
   onSettingsUpdate: (QueryParamChangeEvent) => void;
   onToggle: () => void;
+  fillModeIcons?: boolean;
 }
 
 function ModeButton({
@@ -106,7 +110,8 @@ function ModeButton({
   floatingTarget,
   onToggle,
   disableHover,
-  onSettingsUpdate
+  onSettingsUpdate,
+  fillModeIcons
 }: ModeButtonProps) {
   const [open, setOpen] = useState(false);
   const arrowRef = useRef(null);
@@ -162,10 +167,14 @@ function ModeButton({
       <ModeButtonItem
         className={modeButton.enabled ? "enabled" : ""}
         ref={reference}
+        role="checkbox"
         // This library relies on prop spreading
         /* eslint-disable-next-line react/jsx-props-no-spreading */
         {...getReferenceProps()}
-        enabled={modeButton.enabled}
+        aria-expanded={null}
+        aria-checked={modeButton.enabled}
+        aria-label={modeButton.label}
+        fillModeIcons={fillModeIcons || fillModeIcons !== false}
       >
         <modeButton.Icon size={32} />
       </ModeButtonItem>
@@ -212,13 +221,15 @@ interface Props {
   modeButtons: ModeButtonDefinition[];
   onSettingsUpdate: (QueryParamChangeEvent) => void;
   onToggleModeButton: (key) => void;
+  fillModeIcons?: boolean;
 }
 
 export default function ModeSelector({
   onToggleModeButton,
   onSettingsUpdate,
   modeButtons = [],
-  disableHover
+  disableHover,
+  fillModeIcons
 }: Props): ReactElement {
   const floatingTarget = useRef(null);
   return (
@@ -234,6 +245,7 @@ export default function ModeSelector({
             floatingTarget={floatingTarget.current}
             onSettingsUpdate={onSettingsUpdate}
             disableHover={disableHover}
+            fillModeIcons={fillModeIcons}
           />
         ))}
       </ModeBar>

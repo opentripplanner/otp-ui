@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { URLSearchParams } from "url";
 import {
   useQueryParam,
   DelimitedArrayParam,
@@ -13,6 +12,7 @@ import {
   TransportMode
 } from "@opentripplanner/types";
 
+import { TRANSIT_SUBMODES_AND_TRANSIT } from "@opentripplanner/core-utils/lib/query-gen";
 import { QueryParamChangeEvent } from "../types";
 
 type InitialStateType = {
@@ -65,12 +65,13 @@ export function populateSettingsWithValues(
   values: ModeSettingValues
 ): ModeSetting[] {
   return modeSettings.map(setting => {
+    const value = values[setting.key];
     let convertedVal;
     if (setting.type === "CHECKBOX") {
       // If the parameter is anything besides the string "true", it will be false
-      convertedVal = values[setting.key] === "true";
+      convertedVal = value === "true" || value === true;
     } else if (setting.type === "SLIDER") {
-      convertedVal = Number(values[setting.key]);
+      convertedVal = Number(value);
     }
     return {
       ...setting,
@@ -94,19 +95,6 @@ export function extractModeSettingDefaultsToObject(
   }, {});
 }
 
-const TRANSIT_MODES = [
-  "AIRPLANE",
-  "BUS",
-  "CABLE_CAR",
-  "FERRY",
-  "FUNICULAR",
-  "GONDOLA",
-  "RAIL",
-  "SUBWAY",
-  "TRAM",
-  "TRANSIT"
-];
-
 /**
  * This function is used to apply the ModeSettings to the ModeButtons by checking
  * each setting against all the transport modes in the button. It also handles the special
@@ -120,7 +108,7 @@ export function checkIfModeSettingApplies(
   mode: TransportMode
 ): boolean {
   if (setting.applicableMode === "TRANSIT") {
-    return TRANSIT_MODES.includes(mode.mode);
+    return TRANSIT_SUBMODES_AND_TRANSIT.includes(mode.mode);
   }
   return setting.applicableMode === mode.mode;
 }

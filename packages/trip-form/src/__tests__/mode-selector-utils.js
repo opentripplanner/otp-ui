@@ -141,7 +141,7 @@ const modeSettingDefinitions = [
   },
   {
     applicableMode: "BICYCLE",
-    type: "CHECKBOX_ADD_MODE",
+    type: "CHECKBOX",
     key: "allowBikeRental",
     default: true,
     addMode: {
@@ -252,16 +252,46 @@ describe("mode selector utils", () => {
     });
   });
 
-  const searchString =
-    "?modeButtons=transit_walk_bike_car&modeSettings=carReluctance-3_bikeReluctance-2_walkReluctance-3.4_allowBikeRental-true_wheelchair-true";
   describe("get activated modes and settings from query params", () => {
-    expect(
-      getActivatedModesFromQueryParams(
-        searchString,
-        modeButtonDefinitions,
-        modeSettingDefinitions,
-        {}
-      )
-    ).toMatchSnapshot();
+    const modeSettingsWithValues = populateSettingsWithValues(
+      modeSettingDefinitions,
+      extractModeSettingDefaultsToObject(modeSettingDefinitions)
+    );
+    it("should work for basic set of buttons and settings", () => {
+      expect(
+        getActivatedModesFromQueryParams(
+          "?modeButtons=TRANSIT_WALK_BIKE_CAR&modeSettings=carReluctance-3_bikeReluctance-2_walkReluctance-3.4_allowBikeRental-true_wheelchair-true",
+          modeButtonDefinitions,
+          modeSettingDefinitions,
+          {}
+        )
+      ).toMatchSnapshot();
+    });
+    it("should work with some other parameters that we don't need", () => {
+      expect(
+        getActivatedModesFromQueryParams(
+          "?modeButtons=TRANSIT_WALK&foo=bar&mode=notamode&mode=anothermode",
+          modeButtonDefinitions,
+          modeSettingDefinitions,
+          {}
+        )
+      ).toEqual({
+        activeModes: [{ mode: "BUS" }, { mode: "RAIL" }, { mode: "WALK" }],
+        modeSettings: modeSettingsWithValues
+      });
+    });
+    it("should ignore modes and settings that are not defined", () => {
+      expect(
+        getActivatedModesFromQueryParams(
+          "?modeButtons=undefinedMode_WALK&modeSettings=bungeeJumping-true",
+          modeButtonDefinitions,
+          modeSettingDefinitions,
+          {}
+        )
+      ).toEqual({
+        activeModes: [{ mode: "WALK" }],
+        modeSettings: modeSettingsWithValues
+      });
+    });
   });
 });

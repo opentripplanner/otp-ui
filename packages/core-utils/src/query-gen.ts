@@ -9,11 +9,51 @@ import { LonLatOutput } from "@conveyal/lonlat";
 import PlanQuery from "./planQuery.graphql";
 
 type OTPQueryParams = {
-  to: LonLatOutput;
-  from: LonLatOutput;
+  to: LonLatOutput & { name?: string };
+  from: LonLatOutput & { name?: string };
   modes: Array<TransportMode>;
   modeSettings: ModeSetting[];
 };
+
+type GraphQLQuery = {
+  query: string;
+  variables: Record<string, unknown>;
+};
+
+/**
+ * Mode Settings can contain additional modes to add to the query,
+ * this function extracts those additional modes from the settings
+ * and returns them in an array.
+ * @param modeSettings List of mode settings with values populated
+ * @returns Additional transport modes to add to query
+ */
+export function extractAdditionalModes(
+  modeSettings: ModeSetting[],
+  enabledModes: TransportMode[]
+): Array<TransportMode> {
+  return modeSettings.reduce<TransportMode[]>((prev, cur) => {
+    // First, ensure that the mode associated with this setting is even enabled
+    if (!enabledModes.map(m => m.mode).includes(cur.applicableMode)) {
+      return prev;
+    }
+
+    // In checkboxes, mode must be enabled and have a transport mode in it
+    if (cur.type === "CHECKBOX" && cur.addTransportMode && cur.value) {
+      return [...prev, cur.addTransportMode];
+    }
+    if (cur.type === "DROPDOWN") {
+      const transportMode = cur.options.find(o => o.value === cur.value)
+        .addTransportMode;
+      if (transportMode) {
+        return [
+          ...prev,
+          cur.options.find(o => o.value === cur.value).addTransportMode
+        ];
+      }
+    }
+    return prev;
+  }, []);
+}
 
 /**
  * Generates every possible mathematical subset of the input TransportModes.
@@ -32,6 +72,7 @@ function combinations(array: TransportMode[]): TransportMode[][] {
       .map((e1, i) => array.filter((e2, j) => i & (1 << j)))
   );
 }
+
 export const SIMPLIFICATIONS = {
   AIRPLANE: "TRANSIT",
   BICYCLE: "PERSONAL",
@@ -57,6 +98,12 @@ export const TRANSIT_SUBMODES_AND_TRANSIT = Object.keys(SIMPLIFICATIONS).filter(
   mode => SIMPLIFICATIONS[mode] === "TRANSIT"
 );
 
+/**
+ * Generates list of queries for OTP to get a comprehensive
+ * set of results based on the modes input.
+ * @param params OTP Query Params
+ * @returns Set of parameters to generate queries
+ */
 export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
   const VALID_COMBOS = [
     ["WALK"],
@@ -70,56 +117,65 @@ export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
 
   const BANNED_TOGETHER = ["SCOOTER", "BICYCLE"];
 
-  // List of the transit submodes that are included in the input params
-  const queryTransitSubmodes = params.modes
+  const completeModeList = [
+    ...extractAdditionalModes(params.modeSettings, params.modes),
+    ...params.modes
+  ];
+
+  // List of the transit *submodes* that are included in the input params
+  const queryTransitSubmodes = completeModeList
     .filter(mode => TRANSIT_SUBMODES.includes(mode.mode))
     .map(mode => mode.mode);
 
-  return (
-    combinations(params.modes)
-      .filter(combo => {
-        if (combo.length === 0) return false;
+  return combinations(completeModeList)
+    .filter(combo => {
+      if (combo.length === 0) return false;
 
-        // All current qualifiers currently simplify to "SHARED"
-        const simplifiedModes = Array.from(
-          new Set(
-            combo.map(c => (c.qualifier ? "SHARED" : SIMPLIFICATIONS[c.mode]))
-          )
-        );
+      // All current qualifiers currently simplify to "SHARED"
+      const simplifiedModes = Array.from(
+        new Set(
+          combo.map(c => (c.qualifier ? "SHARED" : SIMPLIFICATIONS[c.mode]))
+        )
+      );
 
-        // Ensure that if we have one transit mode, then we include ALL transit modes
-        if (simplifiedModes.includes("TRANSIT")) {
-          const flatModes = combo.map(m => m.mode);
-          if (
-            combo.reduce((prev, cur) => {
-              if (queryTransitSubmodes.includes(cur.mode)) {
-                return prev - 1;
-              }
-              return prev;
-            }, queryTransitSubmodes.length) !== 0
-          ) {
-            return false;
-          }
+      // Ensure that if we have one transit mode, then we include ALL transit modes
+      if (simplifiedModes.includes("TRANSIT")) {
+        // Don't allow TRANSIT along with any other submodes
+        if (
+          queryTransitSubmodes.length &&
+          combo.find(c => c.mode === "TRANSIT")
+        ) {
+          return false;
         }
 
-        // OTP doesn't support multiple non-walk modes
-        if (BANNED_TOGETHER.every(m => combo.find(c => c.mode === m)))
+        if (
+          combo.reduce((prev, cur) => {
+            if (queryTransitSubmodes.includes(cur.mode)) {
+              return prev - 1;
+            }
+            return prev;
+          }, queryTransitSubmodes.length) !== 0
+        ) {
           return false;
+        }
+        // Continue to the other checks
+      }
 
-        return !!VALID_COMBOS.find(
-          vc =>
-            simplifiedModes.every(m => vc.includes(m)) &&
-            vc.every(m => simplifiedModes.includes(m))
-        );
-      })
-      // create new filter that removes subTransit modes from appearing on their own
-      // ONLY IF there's multiple of them!
-      .map(combo => ({ ...params, modes: combo }))
-  );
+      // OTP doesn't support multiple non-walk modes
+      if (BANNED_TOGETHER.every(m => combo.find(c => c.mode === m)))
+        return false;
+
+      return !!VALID_COMBOS.find(
+        vc =>
+          simplifiedModes.every(m => vc.includes(m)) &&
+          vc.every(m => simplifiedModes.includes(m))
+      );
+    })
+    .map(combo => ({ ...params, modes: combo }));
 }
 
 // eslint-disable-next-line import/prefer-default-export
-export function generateOtp2Query(params: OTPQueryParams): any {
+export function generateOtp2Query(params: OTPQueryParams): GraphQLQuery {
   const { to, from, modeSettings } = params;
 
   // This extracts the values from the mode settings to key value pairs
@@ -132,17 +188,15 @@ export function generateOtp2Query(params: OTPQueryParams): any {
     walkReluctance,
     wheelchair,
     bikeReluctance,
-    carReluctance,
-    allowBikeRental
+    carReluctance
   } = modeSettingValues;
 
   return {
     query: print(PlanQuery),
     variables: {
-      fromPlace: [from.lat, from.lon].join(","),
-      toPlace: [to.lat, to.lon].join(","),
+      fromPlace: `${from.name}::${from.lat},${from.lon}}`,
+      toPlace: `${to.name}::${to.lat},${to.lon}}`,
       modes: params.modes,
-      allowBikeRental,
       walkReluctance,
       wheelchair,
       bikeReluctance,
