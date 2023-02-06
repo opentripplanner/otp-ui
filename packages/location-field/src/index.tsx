@@ -54,7 +54,9 @@ const LocationField = ({
   hideExistingValue = false,
   initialSearchResults = null,
   inputPlaceholder = null,
+  isRequired = false,
   isStatic = false,
+  isValid = true,
   layerColorMap = {},
   location = null,
   LocationIconComponent = DefaultLocationIcon,
@@ -440,6 +442,7 @@ const LocationField = ({
           centeredText
           header
           key="gtfs-stations-header"
+          role="heading"
         >
           <FormattedMessage
             description="Text for header above Stations"
@@ -455,6 +458,7 @@ const LocationField = ({
           centeredText
           header
           key="gtfs-stops-header"
+          role="heading"
         >
           <FormattedMessage
             description="Text for header above Stops"
@@ -465,7 +469,13 @@ const LocationField = ({
       stopFeatures.map(feature => renderFeature(itemIndex++, feature)),
 
       transitFeaturesPresent && otherFeatures.length > 0 && (
-        <S.MenuItem bgColor="#333" centeredText header key="other-header">
+        <S.MenuItem
+          bgColor="#333"
+          centeredText
+          header
+          key="other-header"
+          role="heading"
+        >
           <FormattedMessage
             description="Text for header above the 'other'"
             id="otpUi.LocationField.other"
@@ -480,7 +490,12 @@ const LocationField = ({
   if (nearbyStops.length > 0 && !suppressNearby) {
     // Add the menu sub-heading (not a selectable item)
     menuItems.push(
-      <S.MenuItem centeredText header key="ns-header">
+      <S.MenuItem
+        centeredText
+        header
+        key="ns-header"
+        role="heading"
+      >
         <FormattedMessage
           description="Text for header above nearby stops"
           id="otpUi.LocationField.nearby"
@@ -528,7 +543,12 @@ const LocationField = ({
   if (sessionSearches.length > 0) {
     // Add the menu sub-heading (not a selectable item)
     menuItems.push(
-      <S.MenuItem header centeredText key="ss-header">
+      <S.MenuItem
+        centeredText
+        header
+        key="ss-header"
+        role="heading"
+      >
         <FormattedMessage
           description="Text for header above recently searched items"
           id="otpUi.LocationField.recentlySearched"
@@ -568,7 +588,12 @@ const LocationField = ({
   if (userLocationsAndRecentPlaces.length > 0 && showUserSettings) {
     // Add the menu sub-heading (not a selectable item)
     menuItems.push(
-      <S.MenuItem header centeredText key="mp-header">
+      <S.MenuItem
+        centeredText
+        header
+        key="mp-header"
+        role="heading"
+      >
         <FormattedMessage
           description="Text for header above user-saved places"
           id="otpUi.LocationField.myPlaces"
@@ -672,7 +697,9 @@ const LocationField = ({
       aria-controls={listBoxId}
       aria-expanded={menuVisible}
       aria-haspopup="listbox"
+      aria-invalid={!isValid}
       aria-label={defaultPlaceholder}
+      aria-required={isRequired}
       autoFocus={autoFocus}
       className={getFormControlClassname()}
       onChange={onTextInputChange}
@@ -705,7 +732,7 @@ const LocationField = ({
     return (
       <div className={className}>
         <S.FormGroup>
-          <S.InputGroup>
+          <S.InputGroup role="group">
             <S.InputGroupAddon>
               <LocationIconComponent locationType={locationType} />
             </S.InputGroupAddon>
@@ -713,7 +740,14 @@ const LocationField = ({
             {clearButton}
           </S.InputGroup>
         </S.FormGroup>
-        <S.StaticMenuItemList uniqueId={listBoxId}>
+        <S.StaticMenuItemList
+          aria-label={intl.formatMessage({
+            id: "otpUi.LocationField.suggestedLocations",
+            defaultMessage: "Suggested locations",
+            description: "Text to show as a label for the dropdown list of locations"
+          })}
+          id={listBoxId}
+        >
           {menuItems.length > 0 ? ( // Show typing prompt to avoid empty screen
             menuItems
           ) : (
@@ -732,15 +766,14 @@ const LocationField = ({
   // default display mode with dropdown menu
   return (
     <S.FormGroup onBlur={onBlurFormGroup} className={className}>
-      <S.InputGroup>
+      <S.InputGroup role="group">
         {/* location field icon -- also serves as dropdown anchor */}
         <S.Dropdown
+          input={<>{textControl}{clearButton}</>}
           listBoxIdentifier={listBoxId}
-          locationType={locationType}
           onToggle={onDropdownToggle}
           open={menuVisible}
           title={<LocationIconComponent locationType={locationType} />}
-          input={<>{textControl}{clearButton}</>}
         >
           {menuItems}
         </S.Dropdown>

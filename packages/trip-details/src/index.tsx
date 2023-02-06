@@ -261,7 +261,8 @@ export function TripDetails({
 
   return (
     <S.TripDetails className={className}>
-      <S.TripDetailsHeader>
+      {/* this can be presentation as S.TripDetails is already labeled by this */}
+      <S.TripDetailsHeader id="trip-details-header">
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.TripDetails.title"]}
           description="Title (heading) text of the component."

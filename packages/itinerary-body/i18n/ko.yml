@@ -85,7 +85,6 @@ otpUi:
       yesterday: 어제
       effectiveDate: "{dateTime, date, long}부터 시행"
       effectiveTimeAndDate: "{day} {dateTime, time, short}부터 시행"
-    agencyLogo: "{agencyName} 로고"
     fare: "요금: {fare}"
     operatedBy: 운영하는 서비스 {agencyLink}
     alertsHeader: "{alertCount}개의 알림"

@@ -1,6 +1,7 @@
 import { Config, Leg, LegIconComponent } from "@opentripplanner/types";
 import React, { Component, ReactElement } from "react";
 import AnimateHeight from "react-animate-height";
+import { FormattedMessage } from "react-intl";
 import { Duration } from "../defaults";
 
 import * as S from "../styled";
@@ -12,6 +13,8 @@ import LegDiagramPreview from "./leg-diagram-preview";
 import MapillaryButton from "./mapillary-button";
 import RentedVehicleSubheader from "./rented-vehicle-subheader";
 import TNCLeg from "./tnc-leg";
+
+import { defaultMessages } from "../util";
 
 interface Props {
   config: Config;
@@ -108,6 +111,15 @@ class AccessLegBody extends Component<Props, State> {
               >
                 <Duration seconds={leg.duration} />
                 {leg.steps && <S.CaretToggle expanded={expanded} />}
+                <S.InvisibleAdditionalDetails>
+                  <FormattedMessage
+                    defaultMessage={
+                      defaultMessages["otpUi.TransitLegBody.expandDetails"]
+                    }
+                    description="Screen reader text added to expand steps"
+                    id="otpUi.TransitLegBody.expandDetails"
+                  />
+                </S.InvisibleAdditionalDetails>
               </S.StepsHeader>
               <MapillaryButton
                 clickCallback={mapillaryCallback}
@@ -115,19 +127,23 @@ class AccessLegBody extends Component<Props, State> {
                 mapillaryKey={mapillaryKey}
               />
             </S.StepsHeaderAndMapLink>
-            <LegDiagramPreview
-              diagramVisible={diagramVisible}
-              leg={leg}
-              setLegDiagram={setLegDiagram}
-              showElevationProfile={showElevationProfile}
-            />
-            <AnimateHeight duration={500} height={expanded ? "auto" : 0}>
+            <AnimateHeight
+              duration={500}
+              height={expanded ? "auto" : 0}
+              style={{ gridColumn: "1 / span 2" }}
+            >
               <AccessLegSteps
                 mapillaryCallback={mapillaryCallback}
                 mapillaryKey={mapillaryKey}
                 steps={leg.steps}
               />
             </AnimateHeight>
+            <LegDiagramPreview
+              diagramVisible={diagramVisible}
+              leg={leg}
+              setLegDiagram={setLegDiagram}
+              showElevationProfile={showElevationProfile}
+            />
           </S.LegDetails>
         </S.LegBody>
       </>

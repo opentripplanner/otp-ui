@@ -2975,28 +2975,29 @@ exports[`Storyshots LocationField/Desktop Context Auto Focus With Multiple Contr
   >
     <span
       className="c1"
+      role="group"
     >
       <span
         className="c2"
       >
         <button
-          aria-label="List the suggested from locations as you type"
+          aria-controls="listbox-5"
+          aria-expanded={false}
+          aria-label="Open the list of location suggestions"
           className="c3 c4"
           onClick={[Function]}
+          tabIndex={-1}
         >
           <svg
+            aria-hidden="true"
             className="c5 c6"
             fill="currentColor"
             focusable="false"
             height={13}
-            role="img"
             viewBox="0 0 512 512"
             width={13}
             xmlns="http://www.w3.org/2000/svg"
           >
-            <title>
-              otpUi.LocationIcon.from
-            </title>
             <path
               d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
               fill="currentColor"
@@ -3008,7 +3009,9 @@ exports[`Storyshots LocationField/Desktop Context Auto Focus With Multiple Contr
           aria-controls="listbox-5"
           aria-expanded={false}
           aria-haspopup="listbox"
+          aria-invalid={false}
           aria-label="Select from location"
+          aria-required={false}
           autoFocus={true}
           className="c7 from-form-control"
           onChange={[Function]}
@@ -3119,28 +3122,29 @@ exports[`Storyshots LocationField/Desktop Context Blank 2`] = `
 >
   <span
     className="c1"
+    role="group"
   >
     <span
       className="c2"
     >
       <button
-        aria-label="List the suggested from locations as you type"
+        aria-controls="listbox-0"
+        aria-expanded={false}
+        aria-label="Open the list of location suggestions"
         className="c3 c4"
         onClick={[Function]}
+        tabIndex={-1}
       >
         <svg
+          aria-hidden="true"
           className="c5 c6"
           fill="currentColor"
           focusable="false"
           height={13}
-          role="img"
           viewBox="0 0 512 512"
           width={13}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <title>
-            otpUi.LocationIcon.from
-          </title>
           <path
             d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
             fill="currentColor"
@@ -3152,7 +3156,9 @@ exports[`Storyshots LocationField/Desktop Context Blank 2`] = `
         aria-controls="listbox-0"
         aria-expanded={false}
         aria-haspopup="listbox"
+        aria-invalid={false}
         aria-label="Select from location"
+        aria-required={false}
         autoFocus={false}
         className="c7 from-form-control"
         onChange={[Function]}
@@ -3257,28 +3263,29 @@ exports[`Storyshots LocationField/Desktop Context Here Geocoder 2`] = `
 >
   <span
     className="c1"
+    role="group"
   >
     <span
       className="c2"
     >
       <button
-        aria-label="List the suggested from locations as you type"
+        aria-controls="listbox-1"
+        aria-expanded={false}
+        aria-label="Open the list of location suggestions"
         className="c3 c4"
         onClick={[Function]}
+        tabIndex={-1}
       >
         <svg
+          aria-hidden="true"
           className="c5 c6"
           fill="currentColor"
           focusable="false"
           height={13}
-          role="img"
           viewBox="0 0 512 512"
           width={13}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <title>
-            otpUi.LocationIcon.from
-          </title>
           <path
             d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
             fill="currentColor"
@@ -3290,7 +3297,9 @@ exports[`Storyshots LocationField/Desktop Context Here Geocoder 2`] = `
         aria-controls="listbox-1"
         aria-expanded={false}
         aria-haspopup="listbox"
+        aria-invalid={false}
         aria-label="Select from location"
+        aria-required={false}
         autoFocus={false}
         className="c7 from-form-control"
         onChange={[Function]}
@@ -3421,28 +3430,29 @@ exports[`Storyshots LocationField/Desktop Context No Auto Focus With Multiple Co
   >
     <span
       className="c1"
+      role="group"
     >
       <span
         className="c2"
       >
         <button
-          aria-label="List the suggested from locations as you type"
+          aria-controls="listbox-4"
+          aria-expanded={false}
+          aria-label="Open the list of location suggestions"
           className="c3 c4"
           onClick={[Function]}
+          tabIndex={-1}
         >
           <svg
+            aria-hidden="true"
             className="c5 c6"
             fill="currentColor"
             focusable="false"
             height={13}
-            role="img"
             viewBox="0 0 512 512"
             width={13}
             xmlns="http://www.w3.org/2000/svg"
           >
-            <title>
-              otpUi.LocationIcon.from
-            </title>
             <path
               d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
               fill="currentColor"
@@ -3454,7 +3464,9 @@ exports[`Storyshots LocationField/Desktop Context No Auto Focus With Multiple Co
           aria-controls="listbox-4"
           aria-expanded={false}
           aria-haspopup="listbox"
+          aria-invalid={false}
           aria-label="Select from location"
+          aria-required={false}
           autoFocus={false}
           className="c7 from-form-control"
           onChange={[Function]}
@@ -3590,28 +3602,29 @@ exports[`Storyshots LocationField/Desktop Context Selected Location 2`] = `
 >
   <span
     className="c1"
+    role="group"
   >
     <span
       className="c2"
     >
       <button
-        aria-label="List the suggested to locations as you type"
+        aria-controls="listbox-2"
+        aria-expanded={false}
+        aria-label="Open the list of location suggestions"
         className="c3 c4"
         onClick={[Function]}
+        tabIndex={-1}
       >
         <svg
+          aria-hidden="true"
           className="c5 c6"
           fill="currentColor"
           focusable="false"
           height={13}
-          role="img"
           viewBox="0 0 384 512"
           width={13}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <title>
-            otpUi.LocationIcon.to
-          </title>
           <path
             d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
             fill="currentColor"
@@ -3623,7 +3636,9 @@ exports[`Storyshots LocationField/Desktop Context Selected Location 2`] = `
         aria-controls="listbox-2"
         aria-expanded={false}
         aria-haspopup="listbox"
+        aria-invalid={false}
         aria-label="to"
+        aria-required={false}
         autoFocus={false}
         className="c7 to-form-control"
         onChange={[Function]}
@@ -3788,28 +3803,29 @@ exports[`Storyshots LocationField/Desktop Context Selected Location Custom Clear
 >
   <span
     className="c1"
+    role="group"
   >
     <span
       className="c2"
     >
       <button
-        aria-label="List the suggested to locations as you type"
+        aria-controls="listbox-3"
+        aria-expanded={false}
+        aria-label="Open the list of location suggestions"
         className="c3 c4"
         onClick={[Function]}
+        tabIndex={-1}
       >
         <svg
+          aria-hidden="true"
           className="c5 c6"
           fill="currentColor"
           focusable="false"
           height={13}
-          role="img"
           viewBox="0 0 384 512"
           width={13}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <title>
-            otpUi.LocationIcon.to
-          </title>
           <path
             d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
             fill="currentColor"
@@ -3821,7 +3837,9 @@ exports[`Storyshots LocationField/Desktop Context Selected Location Custom Clear
         aria-controls="listbox-3"
         aria-expanded={false}
         aria-haspopup="listbox"
+        aria-invalid={false}
         aria-label="to"
+        aria-required={false}
         autoFocus={false}
         className="c7 to-form-control"
         onChange={[Function]}
@@ -3957,28 +3975,29 @@ exports[`Storyshots LocationField/Desktop Context With Bad Api Key Handles Bad A
 >
   <span
     className="c1"
+    role="group"
   >
     <span
       className="c2"
     >
       <button
-        aria-label="List the suggested from locations as you type"
+        aria-controls="listbox-6"
+        aria-expanded={false}
+        aria-label="Open the list of location suggestions"
         className="c3 c4"
         onClick={[Function]}
+        tabIndex={-1}
       >
         <svg
+          aria-hidden="true"
           className="c5 c6"
           fill="currentColor"
           focusable="false"
           height={13}
-          role="img"
           viewBox="0 0 512 512"
           width={13}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <title>
-            otpUi.LocationIcon.from
-          </title>
           <path
             d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
             fill="currentColor"
@@ -3990,7 +4009,9 @@ exports[`Storyshots LocationField/Desktop Context With Bad Api Key Handles Bad A
         aria-controls="listbox-6"
         aria-expanded={false}
         aria-haspopup="listbox"
+        aria-invalid={false}
         aria-label="Select from location"
+        aria-required={false}
         autoFocus={false}
         className="c7 from-form-control"
         onChange={[Function]}
@@ -4113,28 +4134,29 @@ exports[`Storyshots LocationField/Desktop Context With Custom Result Colors And 
 >
   <span
     className="c1"
+    role="group"
   >
     <span
       className="c2"
     >
       <button
-        aria-label="List the suggested from locations as you type"
+        aria-controls="listbox-7"
+        aria-expanded={false}
+        aria-label="Open the list of location suggestions"
         className="c3 c4"
         onClick={[Function]}
+        tabIndex={-1}
       >
         <svg
+          aria-hidden="true"
           className="c5 c6"
           fill="currentColor"
           focusable="false"
           height={13}
-          role="img"
           viewBox="0 0 512 512"
           width={13}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <title>
-            otpUi.LocationIcon.from
-          </title>
           <path
             d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
             fill="currentColor"
@@ -4146,7 +4168,9 @@ exports[`Storyshots LocationField/Desktop Context With Custom Result Colors And 
         aria-controls="listbox-7"
         aria-expanded={false}
         aria-haspopup="listbox"
+        aria-invalid={false}
         aria-label="Select from location"
+        aria-required={false}
         autoFocus={false}
         className="c7 from-form-control"
         onChange={[Function]}
@@ -4823,28 +4847,29 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 2`] = `
 >
   <span
     className="c1"
+    role="group"
   >
     <span
       className="c2"
     >
       <button
-        aria-label="List the suggested from locations as you type"
+        aria-controls="listbox-8"
+        aria-expanded={false}
+        aria-label="Open the list of location suggestions"
         className="c3 c4"
         onClick={[Function]}
+        tabIndex={-1}
       >
         <svg
+          aria-hidden="true"
           className="c5 c6"
           fill="currentColor"
           focusable="false"
           height={13}
-          role="img"
           viewBox="0 0 512 512"
           width={13}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <title>
-            otpUi.LocationIcon.from
-          </title>
           <path
             d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
             fill="currentColor"
@@ -4856,7 +4881,9 @@ exports[`Storyshots LocationField/Desktop Context With Prefilled Search 2`] = `
         aria-controls="listbox-8"
         aria-expanded={false}
         aria-haspopup="listbox"
+        aria-invalid={false}
         aria-label="Select from location"
+        aria-required={false}
         autoFocus={false}
         className="c7 from-form-control"
         onChange={[Function]}
@@ -5037,23 +5064,21 @@ exports[`Storyshots LocationField/Mobile Context Blank 2`] = `
   >
     <span
       className="c1"
+      role="group"
     >
       <span
         className="c2"
       >
         <svg
+          aria-hidden="true"
           className="c3 c4"
           fill="currentColor"
           focusable="false"
           height={13}
-          role="img"
           viewBox="0 0 512 512"
           width={13}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <title>
-            otpUi.LocationIcon.from
-          </title>
           <path
             d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
             fill="currentColor"
@@ -5065,7 +5090,9 @@ exports[`Storyshots LocationField/Mobile Context Blank 2`] = `
         aria-controls="listbox-9"
         aria-expanded={false}
         aria-haspopup="listbox"
+        aria-invalid={false}
         aria-label="from"
+        aria-required={false}
         autoFocus={false}
         className="c5 from-form-control"
         onChange={[Function]}
@@ -5078,7 +5105,7 @@ exports[`Storyshots LocationField/Mobile Context Blank 2`] = `
     </span>
   </div>
   <ul
-    aria-label="Search Results"
+    aria-label="Suggested locations"
     className="c6 c7"
     id="listbox-9"
     role="listbox"
@@ -5094,10 +5121,10 @@ exports[`Storyshots LocationField/Mobile Context Blank 2`] = `
         role="option"
         tabIndex={-1}
       >
-        <div
+        <span
           className="c10"
         >
-          <div
+          <span
             className="c11"
             style={
               Object {
@@ -5120,16 +5147,16 @@ exports[`Storyshots LocationField/Mobile Context Blank 2`] = `
                 fill="currentColor"
               />
             </svg>
-          </div>
-          <div
+          </span>
+          <span
             className="c12"
           >
             otpUi.LocationField.useCurrentLocation
             <span
               className="c13"
             />
-          </div>
-        </div>
+          </span>
+        </span>
       </a>
     </li>
   </ul>
@@ -5327,23 +5354,21 @@ exports[`Storyshots LocationField/Mobile Context Selected Location 2`] = `
   >
     <span
       className="c1"
+      role="group"
     >
       <span
         className="c2"
       >
         <svg
+          aria-hidden="true"
           className="c3 c4"
           fill="currentColor"
           focusable="false"
           height={13}
-          role="img"
           viewBox="0 0 384 512"
           width={13}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <title>
-            otpUi.LocationIcon.to
-          </title>
           <path
             d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
             fill="currentColor"
@@ -5355,7 +5380,9 @@ exports[`Storyshots LocationField/Mobile Context Selected Location 2`] = `
         aria-controls="listbox-11"
         aria-expanded={false}
         aria-haspopup="listbox"
+        aria-invalid={false}
         aria-label="to"
+        aria-required={false}
         autoFocus={false}
         className="c5 to-form-control"
         onChange={[Function]}
@@ -5393,7 +5420,7 @@ exports[`Storyshots LocationField/Mobile Context Selected Location 2`] = `
     </span>
   </div>
   <ul
-    aria-label="Search Results"
+    aria-label="Suggested locations"
     className="c8 c9"
     id="listbox-11"
     role="listbox"
@@ -5409,10 +5436,10 @@ exports[`Storyshots LocationField/Mobile Context Selected Location 2`] = `
         role="option"
         tabIndex={-1}
       >
-        <div
+        <span
           className="c12"
         >
-          <div
+          <span
             className="c13"
             style={
               Object {
@@ -5435,16 +5462,16 @@ exports[`Storyshots LocationField/Mobile Context Selected Location 2`] = `
                 fill="currentColor"
               />
             </svg>
-          </div>
-          <div
+          </span>
+          <span
             className="c14"
           >
             otpUi.LocationField.useCurrentLocation
             <span
               className="c15"
             />
-          </div>
-        </div>
+          </span>
+        </span>
       </a>
     </li>
   </ul>
@@ -5640,23 +5667,21 @@ exports[`Storyshots LocationField/Mobile Context Selected Location Custom Clear 
   >
     <span
       className="c1"
+      role="group"
     >
       <span
         className="c2"
       >
         <svg
+          aria-hidden="true"
           className="c3 c4"
           fill="currentColor"
           focusable="false"
           height={13}
-          role="img"
           viewBox="0 0 384 512"
           width={13}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <title>
-            otpUi.LocationIcon.to
-          </title>
           <path
             d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
             fill="currentColor"
@@ -5668,7 +5693,9 @@ exports[`Storyshots LocationField/Mobile Context Selected Location Custom Clear 
         aria-controls="listbox-12"
         aria-expanded={false}
         aria-haspopup="listbox"
+        aria-invalid={false}
         aria-label="to"
+        aria-required={false}
         autoFocus={false}
         className="c5 to-form-control"
         onChange={[Function]}
@@ -5706,7 +5733,7 @@ exports[`Storyshots LocationField/Mobile Context Selected Location Custom Clear 
     </span>
   </div>
   <ul
-    aria-label="Search Results"
+    aria-label="Suggested locations"
     className="c8 c9"
     id="listbox-12"
     role="listbox"
@@ -5722,10 +5749,10 @@ exports[`Storyshots LocationField/Mobile Context Selected Location Custom Clear 
         role="option"
         tabIndex={-1}
       >
-        <div
+        <span
           className="c12"
         >
-          <div
+          <span
             className="c13"
             style={
               Object {
@@ -5748,16 +5775,16 @@ exports[`Storyshots LocationField/Mobile Context Selected Location Custom Clear 
                 fill="currentColor"
               />
             </svg>
-          </div>
-          <div
+          </span>
+          <span
             className="c14"
           >
             otpUi.LocationField.useCurrentLocation
             <span
               className="c15"
             />
-          </div>
-        </div>
+          </span>
+        </span>
       </a>
     </li>
   </ul>
@@ -5942,23 +5969,21 @@ exports[`Storyshots LocationField/Mobile Context Styled 2`] = `
   >
     <span
       className="c2"
+      role="group"
     >
       <span
         className="c3"
       >
         <svg
+          aria-hidden="true"
           className="c4 c5"
           fill="currentColor"
           focusable="false"
           height={13}
-          role="img"
           viewBox="0 0 512 512"
           width={13}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <title>
-            otpUi.LocationIcon.from
-          </title>
           <path
             d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
             fill="currentColor"
@@ -5970,7 +5995,9 @@ exports[`Storyshots LocationField/Mobile Context Styled 2`] = `
         aria-controls="listbox-10"
         aria-expanded={false}
         aria-haspopup="listbox"
+        aria-invalid={false}
         aria-label="from"
+        aria-required={false}
         autoFocus={false}
         className="c6 from-form-control"
         onChange={[Function]}
@@ -5983,7 +6010,7 @@ exports[`Storyshots LocationField/Mobile Context Styled 2`] = `
     </span>
   </div>
   <ul
-    aria-label="Search Results"
+    aria-label="Suggested locations"
     className="c7 c8"
     id="listbox-10"
     role="listbox"
@@ -5999,10 +6026,10 @@ exports[`Storyshots LocationField/Mobile Context Styled 2`] = `
         role="option"
         tabIndex={-1}
       >
-        <div
+        <span
           className="c11 c12"
         >
-          <div
+          <span
             className="c13"
             style={
               Object {
@@ -6025,16 +6052,16 @@ exports[`Storyshots LocationField/Mobile Context Styled 2`] = `
                 fill="currentColor"
               />
             </svg>
-          </div>
-          <div
+          </span>
+          <span
             className="c14"
           >
             otpUi.LocationField.useCurrentLocation
             <span
               className="c15"
             />
-          </div>
-        </div>
+          </span>
+        </span>
       </a>
     </li>
   </ul>
@@ -6340,6 +6367,7 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 2`] = `
   >
     <span
       className="c1"
+      role="group"
     >
       <span
         className="c2"
@@ -6365,7 +6393,9 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 2`] = `
         aria-controls="listbox-22"
         aria-expanded={false}
         aria-haspopup="listbox"
+        aria-invalid={false}
         aria-label="to"
+        aria-required={false}
         autoFocus={false}
         className="c4 to-form-control"
         onChange={[Function]}
@@ -6378,17 +6408,18 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 2`] = `
     </span>
   </div>
   <ul
-    aria-label="Search Results"
+    aria-label="Suggested locations"
     className="c5 c6"
     id="listbox-22"
     role="listbox"
   >
-    <li
+    <div
+      aria-level={1}
       className="c7 header"
-      role="none"
+      role="heading"
     >
       otpUi.LocationField.nearby
-    </li>
+    </div>
     <li
       className="c8"
       disabled={false}
@@ -6400,7 +6431,7 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 2`] = `
         role="option"
         tabIndex={-1}
       >
-        <div
+        <span
           className="c10"
         >
           <svg
@@ -6418,24 +6449,24 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 2`] = `
               fill="currentColor"
             />
           </svg>
-          <div
+          <span
             className="c11"
           >
             404 ft
-          </div>
-        </div>
-        <div
+          </span>
+        </span>
+        <span
           className="c12"
         >
-          <div
+          <span
             className="styled__StopName-sc-wgpkt8-22"
           >
             1st & Main
              (
             1
             )
-          </div>
-          <div
+          </span>
+          <span
             className="c13"
           >
             <span
@@ -6443,8 +6474,8 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 2`] = `
             >
               1
             </span>
-          </div>
-        </div>
+          </span>
+        </span>
         <div
           className="c15"
         />
@@ -6461,7 +6492,7 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 2`] = `
         role="option"
         tabIndex={-1}
       >
-        <div
+        <span
           className="c10"
         >
           <svg
@@ -6479,24 +6510,24 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 2`] = `
               fill="currentColor"
             />
           </svg>
-          <div
+          <span
             className="c11"
           >
             0.2 mi
-          </div>
-        </div>
-        <div
+          </span>
+        </span>
+        <span
           className="c12"
         >
-          <div
+          <span
             className="styled__StopName-sc-wgpkt8-22"
           >
             Main & 2nd
              (
             2
             )
-          </div>
-          <div
+          </span>
+          <span
             className="c13"
           >
             <span
@@ -6504,19 +6535,20 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 2`] = `
             >
               2
             </span>
-          </div>
-        </div>
+          </span>
+        </span>
         <div
           className="c15"
         />
       </a>
     </li>
-    <li
+    <div
+      aria-level={1}
       className="c7 header"
-      role="none"
+      role="heading"
     >
       otpUi.LocationField.recentlySearched
-    </li>
+    </div>
     <li
       className="c8"
       disabled={false}
@@ -6528,10 +6560,10 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 2`] = `
         role="option"
         tabIndex={-1}
       >
-        <div
+        <span
           className="c16"
         >
-          <div
+          <span
             className="c17"
             style={
               Object {
@@ -6554,8 +6586,8 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 2`] = `
                 fill="currentColor"
               />
             </svg>
-          </div>
-          <div
+          </span>
+          <span
             className="c18"
           >
             123 Main St
@@ -6564,16 +6596,17 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 2`] = `
             >
               
             </span>
-          </div>
-        </div>
+          </span>
+        </span>
       </a>
     </li>
-    <li
+    <div
+      aria-level={1}
       className="c7 header"
-      role="none"
+      role="heading"
     >
       otpUi.LocationField.myPlaces
-    </li>
+    </div>
     <li
       className="c8"
       disabled={false}
@@ -6585,10 +6618,10 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 2`] = `
         role="option"
         tabIndex={-1}
       >
-        <div
+        <span
           className="c16"
         >
-          <div
+          <span
             className="c17"
             style={
               Object {
@@ -6611,8 +6644,8 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 2`] = `
                 fill="currentColor"
               />
             </svg>
-          </div>
-          <div
+          </span>
+          <span
             className="c18"
           >
             Home
@@ -6620,8 +6653,8 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 2`] = `
             <span
               className="c19"
             />
-          </div>
-        </div>
+          </span>
+        </span>
       </a>
     </li>
     <li
@@ -6635,10 +6668,10 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 2`] = `
         role="option"
         tabIndex={-1}
       >
-        <div
+        <span
           className="c16"
         >
-          <div
+          <span
             className="c17"
             style={
               Object {
@@ -6661,8 +6694,8 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 2`] = `
                 fill="currentColor"
               />
             </svg>
-          </div>
-          <div
+          </span>
+          <span
             className="c18"
           >
             Work
@@ -6670,8 +6703,8 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 2`] = `
             <span
               className="c19"
             />
-          </div>
-        </div>
+          </span>
+        </span>
       </a>
     </li>
     <li
@@ -6685,10 +6718,10 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 2`] = `
         role="option"
         tabIndex={-1}
       >
-        <div
+        <span
           className="c16"
         >
-          <div
+          <span
             className="c17"
             style={
               Object {
@@ -6711,16 +6744,16 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 2`] = `
                 fill="currentColor"
               />
             </svg>
-          </div>
-          <div
+          </span>
+          <span
             className="c18"
           >
             123 Main St
             <span
               className="c19"
             />
-          </div>
-        </div>
+          </span>
+        </span>
       </a>
     </li>
     <li
@@ -6734,10 +6767,10 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 2`] = `
         role="option"
         tabIndex={-1}
       >
-        <div
+        <span
           className="c16"
         >
-          <div
+          <span
             className="c17"
             style={
               Object {
@@ -6760,16 +6793,16 @@ exports[`Storyshots LocationField/Mobile Context With Custom Icons 2`] = `
                 fill="currentColor"
               />
             </svg>
-          </div>
-          <div
+          </span>
+          <span
             className="c18"
           >
             otpUi.LocationField.useCurrentLocation
             <span
               className="c19"
             />
-          </div>
-        </div>
+          </span>
+        </span>
       </a>
     </li>
   </ul>
@@ -7022,23 +7055,21 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 2`] = `
   >
     <span
       className="c1"
+      role="group"
     >
       <span
         className="c2"
       >
         <svg
+          aria-hidden="true"
           className="c3 c4"
           fill="currentColor"
           focusable="false"
           height={13}
-          role="img"
           viewBox="0 0 384 512"
           width={13}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <title>
-            otpUi.LocationIcon.to
-          </title>
           <path
             d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
             fill="currentColor"
@@ -7050,7 +7081,9 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 2`] = `
         aria-controls="listbox-13"
         aria-expanded={false}
         aria-haspopup="listbox"
+        aria-invalid={false}
         aria-label="to"
+        aria-required={false}
         autoFocus={false}
         className="c5 to-form-control"
         onChange={[Function]}
@@ -7063,17 +7096,18 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 2`] = `
     </span>
   </div>
   <ul
-    aria-label="Search Results"
+    aria-label="Suggested locations"
     className="c6 c7"
     id="listbox-13"
     role="listbox"
   >
-    <li
+    <div
+      aria-level={1}
       className="c8 header"
-      role="none"
+      role="heading"
     >
       otpUi.LocationField.nearby
-    </li>
+    </div>
     <li
       className="c9"
       disabled={false}
@@ -7085,7 +7119,7 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 2`] = `
         role="option"
         tabIndex={-1}
       >
-        <div
+        <span
           className="c11"
         >
           <svg
@@ -7103,24 +7137,24 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 2`] = `
               fill="currentColor"
             />
           </svg>
-          <div
+          <span
             className="c12"
           >
             404 ft
-          </div>
-        </div>
-        <div
+          </span>
+        </span>
+        <span
           className="c13"
         >
-          <div
+          <span
             className="styled__StopName-sc-wgpkt8-22"
           >
             1st & Main
              (
             1
             )
-          </div>
-          <div
+          </span>
+          <span
             className="c14"
           >
             <span
@@ -7128,8 +7162,8 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 2`] = `
             >
               1
             </span>
-          </div>
-        </div>
+          </span>
+        </span>
         <div
           className="c16"
         />
@@ -7146,7 +7180,7 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 2`] = `
         role="option"
         tabIndex={-1}
       >
-        <div
+        <span
           className="c11"
         >
           <svg
@@ -7164,24 +7198,24 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 2`] = `
               fill="currentColor"
             />
           </svg>
-          <div
+          <span
             className="c12"
           >
             0.2 mi
-          </div>
-        </div>
-        <div
+          </span>
+        </span>
+        <span
           className="c13"
         >
-          <div
+          <span
             className="styled__StopName-sc-wgpkt8-22"
           >
             Main & 2nd
              (
             2
             )
-          </div>
-          <div
+          </span>
+          <span
             className="c14"
           >
             <span
@@ -7189,8 +7223,8 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 2`] = `
             >
               2
             </span>
-          </div>
-        </div>
+          </span>
+        </span>
         <div
           className="c16"
         />
@@ -7207,10 +7241,10 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 2`] = `
         role="option"
         tabIndex={-1}
       >
-        <div
+        <span
           className="c17"
         >
-          <div
+          <span
             className="c18"
             style={
               Object {
@@ -7233,16 +7267,16 @@ exports[`Storyshots LocationField/Mobile Context With Nearby Stops 2`] = `
                 fill="currentColor"
               />
             </svg>
-          </div>
-          <div
+          </span>
+          <span
             className="c19"
           >
             otpUi.LocationField.useCurrentLocation
             <span
               className="c20"
             />
-          </div>
-        </div>
+          </span>
+        </span>
       </a>
     </li>
   </ul>
@@ -7442,23 +7476,21 @@ exports[`Storyshots LocationField/Mobile Context With Session Searches 2`] = `
   >
     <span
       className="c1"
+      role="group"
     >
       <span
         className="c2"
       >
         <svg
+          aria-hidden="true"
           className="c3 c4"
           fill="currentColor"
           focusable="false"
           height={13}
-          role="img"
           viewBox="0 0 384 512"
           width={13}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <title>
-            otpUi.LocationIcon.to
-          </title>
           <path
             d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
             fill="currentColor"
@@ -7470,7 +7502,9 @@ exports[`Storyshots LocationField/Mobile Context With Session Searches 2`] = `
         aria-controls="listbox-16"
         aria-expanded={false}
         aria-haspopup="listbox"
+        aria-invalid={false}
         aria-label="to"
+        aria-required={false}
         autoFocus={false}
         className="c5 to-form-control"
         onChange={[Function]}
@@ -7483,17 +7517,18 @@ exports[`Storyshots LocationField/Mobile Context With Session Searches 2`] = `
     </span>
   </div>
   <ul
-    aria-label="Search Results"
+    aria-label="Suggested locations"
     className="c6 c7"
     id="listbox-16"
     role="listbox"
   >
-    <li
+    <div
+      aria-level={1}
       className="c8 header"
-      role="none"
+      role="heading"
     >
       otpUi.LocationField.recentlySearched
-    </li>
+    </div>
     <li
       className="c9"
       disabled={false}
@@ -7505,10 +7540,10 @@ exports[`Storyshots LocationField/Mobile Context With Session Searches 2`] = `
         role="option"
         tabIndex={-1}
       >
-        <div
+        <span
           className="c11"
         >
-          <div
+          <span
             className="c12"
             style={
               Object {
@@ -7531,8 +7566,8 @@ exports[`Storyshots LocationField/Mobile Context With Session Searches 2`] = `
                 fill="currentColor"
               />
             </svg>
-          </div>
-          <div
+          </span>
+          <span
             className="c13"
           >
             123 Main St
@@ -7541,8 +7576,8 @@ exports[`Storyshots LocationField/Mobile Context With Session Searches 2`] = `
             >
               
             </span>
-          </div>
-        </div>
+          </span>
+        </span>
       </a>
     </li>
     <li
@@ -7556,10 +7591,10 @@ exports[`Storyshots LocationField/Mobile Context With Session Searches 2`] = `
         role="option"
         tabIndex={-1}
       >
-        <div
+        <span
           className="c11"
         >
-          <div
+          <span
             className="c12"
             style={
               Object {
@@ -7582,16 +7617,16 @@ exports[`Storyshots LocationField/Mobile Context With Session Searches 2`] = `
                 fill="currentColor"
               />
             </svg>
-          </div>
-          <div
+          </span>
+          <span
             className="c13"
           >
             otpUi.LocationField.useCurrentLocation
             <span
               className="c14"
             />
-          </div>
-        </div>
+          </span>
+        </span>
       </a>
     </li>
   </ul>
@@ -7807,23 +7842,21 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 2`] = `
   >
     <span
       className="c1"
+      role="group"
     >
       <span
         className="c2"
       >
         <svg
+          aria-hidden="true"
           className="c3 c4"
           fill="currentColor"
           focusable="false"
           height={13}
-          role="img"
           viewBox="0 0 384 512"
           width={13}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <title>
-            otpUi.LocationIcon.to
-          </title>
           <path
             d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
             fill="currentColor"
@@ -7835,7 +7868,9 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 2`] = `
         aria-controls="listbox-18"
         aria-expanded={false}
         aria-haspopup="listbox"
+        aria-invalid={false}
         aria-label="to"
+        aria-required={false}
         autoFocus={false}
         className="c5 to-form-control"
         onChange={[Function]}
@@ -7848,17 +7883,18 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 2`] = `
     </span>
   </div>
   <ul
-    aria-label="Search Results"
+    aria-label="Suggested locations"
     className="c6 c7"
     id="listbox-18"
     role="listbox"
   >
-    <li
+    <div
+      aria-level={1}
       className="c8 header"
-      role="none"
+      role="heading"
     >
       otpUi.LocationField.myPlaces
-    </li>
+    </div>
     <li
       className="c9"
       disabled={false}
@@ -7870,10 +7906,10 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 2`] = `
         role="option"
         tabIndex={-1}
       >
-        <div
+        <span
           className="c11"
         >
-          <div
+          <span
             className="c12"
             style={
               Object {
@@ -7896,8 +7932,8 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 2`] = `
                 fill="currentColor"
               />
             </svg>
-          </div>
-          <div
+          </span>
+          <span
             className="c13"
           >
             Home
@@ -7905,8 +7941,8 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 2`] = `
             <span
               className="c14"
             />
-          </div>
-        </div>
+          </span>
+        </span>
       </a>
     </li>
     <li
@@ -7920,10 +7956,10 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 2`] = `
         role="option"
         tabIndex={-1}
       >
-        <div
+        <span
           className="c11"
         >
-          <div
+          <span
             className="c12"
             style={
               Object {
@@ -7946,8 +7982,8 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 2`] = `
                 fill="currentColor"
               />
             </svg>
-          </div>
-          <div
+          </span>
+          <span
             className="c13"
           >
             Work
@@ -7955,8 +7991,8 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 2`] = `
             <span
               className="c14"
             />
-          </div>
-        </div>
+          </span>
+        </span>
       </a>
     </li>
     <li
@@ -7970,10 +8006,10 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 2`] = `
         role="option"
         tabIndex={-1}
       >
-        <div
+        <span
           className="c11"
         >
-          <div
+          <span
             className="c12"
             style={
               Object {
@@ -7996,16 +8032,16 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 2`] = `
                 fill="currentColor"
               />
             </svg>
-          </div>
-          <div
+          </span>
+          <span
             className="c13"
           >
             123 Main St
             <span
               className="c14"
             />
-          </div>
-        </div>
+          </span>
+        </span>
       </a>
     </li>
     <li
@@ -8019,10 +8055,10 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 2`] = `
         role="option"
         tabIndex={-1}
       >
-        <div
+        <span
           className="c11"
         >
-          <div
+          <span
             className="c12"
             style={
               Object {
@@ -8045,16 +8081,16 @@ exports[`Storyshots LocationField/Mobile Context With User Settings 2`] = `
                 fill="currentColor"
               />
             </svg>
-          </div>
-          <div
+          </span>
+          <span
             className="c13"
           >
             otpUi.LocationField.useCurrentLocation
             <span
               className="c14"
             />
-          </div>
-        </div>
+          </span>
+        </span>
       </a>
     </li>
   </ul>
@@ -8095,18 +8131,15 @@ exports[`Storyshots LocationIcon Custom Style For To 2`] = `
 }
 
 <svg
+  aria-hidden="true"
   className="c0 c1 c2"
   fill="currentColor"
   focusable="false"
   height={25}
-  role="img"
   viewBox="0 0 384 512"
   width={25}
   xmlns="http://www.w3.org/2000/svg"
 >
-  <title>
-    otpUi.LocationIcon.to
-  </title>
   <path
     d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
     fill="currentColor"
@@ -8125,7 +8158,7 @@ exports[`Storyshots LocationIcon From 1`] = `
   onError={[Function]}
   textComponent={Symbol(react.fragment)}
 >
-  <injectIntl(LocationIcon)
+  <LocationIcon
     size={25}
     type="from"
   />
@@ -8144,18 +8177,15 @@ exports[`Storyshots LocationIcon From 2`] = `
 }
 
 <svg
+  aria-hidden="true"
   className="c0 c1"
   fill="currentColor"
   focusable="false"
   height={25}
-  role="img"
   viewBox="0 0 512 512"
   width={25}
   xmlns="http://www.w3.org/2000/svg"
 >
-  <title>
-    otpUi.LocationIcon.from
-  </title>
   <path
     d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
     fill="currentColor"
@@ -8174,7 +8204,7 @@ exports[`Storyshots LocationIcon Generic Place 1`] = `
   onError={[Function]}
   textComponent={Symbol(react.fragment)}
 >
-  <injectIntl(LocationIcon)
+  <LocationIcon
     size="25"
     type="intermediate-place-1"
   />
@@ -8193,18 +8223,15 @@ exports[`Storyshots LocationIcon Generic Place 2`] = `
 }
 
 <svg
+  aria-hidden="true"
   className="c0 c1"
   fill="currentColor"
   focusable="false"
   height="25"
-  role="img"
   viewBox="0 0 512 512"
   width="25"
   xmlns="http://www.w3.org/2000/svg"
 >
-  <title>
-    otpUi.LocationIcon.locationIcon
-  </title>
   <path
     d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
     fill="currentColor"
@@ -8223,7 +8250,7 @@ exports[`Storyshots LocationIcon To 1`] = `
   onError={[Function]}
   textComponent={Symbol(react.fragment)}
 >
-  <injectIntl(LocationIcon)
+  <LocationIcon
     size={25}
     type="to"
   />
@@ -8242,18 +8269,15 @@ exports[`Storyshots LocationIcon To 2`] = `
 }
 
 <svg
+  aria-hidden="true"
   className="c0 c1"
   fill="currentColor"
   focusable="false"
   height={25}
-  role="img"
   viewBox="0 0 384 512"
   width={25}
   xmlns="http://www.w3.org/2000/svg"
 >
-  <title>
-    otpUi.LocationIcon.to
-  </title>
   <path
     d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
     fill="currentColor"

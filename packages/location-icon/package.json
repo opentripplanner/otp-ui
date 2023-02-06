@@ -15,7 +15,6 @@
   },
   "peerDependencies": {
     "react": "^16.14.0",
-    "react-intl": "^5.24.6",
     "styled-components": "^5.3.0"
   },
   "gitHead": "644c72e0d08f8daf93b44eaf0deec88a1e16f414",
