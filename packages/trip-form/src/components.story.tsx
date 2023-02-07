@@ -14,7 +14,7 @@ import trimet from "./__mocks__/trimet-styled";
 
 import { SettingsSelectorPanel } from "./styled";
 
-import modeSettingDefinitions from "./modeSettings.yml";
+import modeSettingDefinitions from "../modeSettings.yml";
 
 import * as Core from ".";
 
