@@ -30,7 +30,7 @@
     "tsc": "tsc"
   },
   "devDependencies": {
-    "@opentripplanner/types": "4.1.0-alpha.4",
+    "@opentripplanner/types": "5.0.0-alpha.1",
     "@types/chroma-js": "^2.1.4",
     "babel-plugin-graphql-tag": "^3.3.0"
   }
