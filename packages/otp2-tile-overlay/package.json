@@ -16,10 +16,10 @@
     "react-map-gl": "^7.0.15"
   },
   "dependencies": {
-    "@opentripplanner/map-popup": "^2.0.0"
+    "@opentripplanner/map-popup": "^2.0.1"
   },
   "devDependencies": {
     "@opentripplanner/base-map": "^3.0.9",
-    "@opentripplanner/types": "^4.0.4"
+    "@opentripplanner/types": "^4.0.5"
   }
 }

@@ -96,14 +96,17 @@ const MapillaryButton = ({
   };
 
   if (!imageId) return null;
+  const mapilaryLabel = intl.formatMessage({
+    defaultMessage: defaultMessages["otpUi.AccessLegBody.mapillaryTooltip"],
+    description: "Tooltip text describing the street view icon.",
+    id: "otpUi.AccessLegBody.mapillaryTooltip"
+  });
   return (
     <Container
+      aria-label={mapilaryLabel}
       onClick={handleClick}
-      title={intl.formatMessage({
-        defaultMessage: defaultMessages["otpUi.AccessLegBody.mapillaryTooltip"],
-        description: "Tooltip text describing the street view icon.",
-        id: "otpUi.AccessLegBody.mapillaryTooltip"
-      })}
+      role="link"
+      title={mapilaryLabel}
     >
       <Icon style={{ paddingBottom: 1 }} />
     </Container>
