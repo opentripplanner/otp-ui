@@ -46,3 +46,15 @@
   default: true
   addTransportMode:
     mode: RAIL
+- applicableMode: TRANSIT
+  type: CHECKBOX
+  key: addSubway
+  default: true
+  addTransportMode:
+    mode: SUBWAY
+- applicableMode: TRANSIT
+  type: CHECKBOX
+  key: addTram
+  default: true
+  addTransportMode:
+    mode: TRAM
