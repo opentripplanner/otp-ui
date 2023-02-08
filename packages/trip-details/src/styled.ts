@@ -25,9 +25,7 @@ export const CO2Description = styled.span``;
 
 export const CO2Summary = styled.span``;
 
-export const ExpandButton = styled(BaseButton).attrs({
-  "aria-label": "What does this mean?"
-})`
+export const ExpandButton = styled(BaseButton)`
   color: #00f;
   font-size: 16px;
   margin-left: 6px;
@@ -89,9 +87,10 @@ export const TripDetails = styled.div`
 
 export const TripDetailsBody = styled.div``;
 
-export const TripDetailsHeader = styled.div`
+export const TripDetailsHeader = styled.h2`
   font-size: 18px;
   font-weight: 600;
+  margin: 0;
 `;
 
 export const TripDetailSummary = styled.div`

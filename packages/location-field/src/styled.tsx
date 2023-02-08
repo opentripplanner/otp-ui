@@ -1,4 +1,5 @@
 import React from "react";
+import { useIntl } from "react-intl";
 import styled from "styled-components";
 
 export const BaseButton = styled.button`
@@ -25,15 +26,9 @@ export const DropdownContainer = styled.span`
   width: 100%;
 `;
 
-type MenuItemListProps = {
-  uniqueId: string;
-};
-
-export const MenuItemList = styled.ul.attrs((props: MenuItemListProps) => ({
-  "aria-label": "Search Results",
-  id: props.uniqueId,
+export const MenuItemList = styled.ul.attrs({
   role: "listbox"
-}))<MenuItemListProps>`
+})`
   background-clip: padding-box;
   background-color: #fff;
   border-radius: 4px;
@@ -55,27 +50,50 @@ export const MenuItemList = styled.ul.attrs((props: MenuItemListProps) => ({
 
 export const Dropdown = ({
   children,
+  input,
   listBoxIdentifier,
-  locationType,
   onToggle = () => {},
   open,
   title
 }: {
   children: React.ReactNode;
+  input?: JSX.Element;
   listBoxIdentifier: string;
-  locationType: string;
-  open: boolean;
   onToggle?: () => void;
+  open: boolean;
   title: React.ReactNode;
 }): React.ReactElement => {
-  const dropdownButtonAriaLabel = `List the suggested ${locationType} locations as you type`;
+  const intl = useIntl();
+
   return (
     <DropdownContainer>
-      <DropdownButton aria-label={dropdownButtonAriaLabel} onClick={onToggle}>
+      <DropdownButton
+        aria-controls={listBoxIdentifier}
+        aria-expanded={open}
+        aria-label={intl.formatMessage({
+          defaultMessage: "Open the list of location suggestions",
+          description:
+            "Text to show as a a11y label for the button that opens the dropdown list of locations",
+          id: "otpUi.LocationField.suggestedLocationsLong"
+        })}
+        onClick={onToggle}
+        tabIndex={-1}
+      >
         {title}
       </DropdownButton>
+      {input}
       {open && (
-        <MenuItemList uniqueId={listBoxIdentifier}>{children}</MenuItemList>
+        <MenuItemList
+          aria-label={intl.formatMessage({
+            defaultMessage: "Suggested locations",
+            description:
+              "Text to show as a label for the dropdown list of locations",
+            id: "otpUi.LocationField.suggestedLocations"
+          })}
+          id={listBoxIdentifier}
+        >
+          {children}
+        </MenuItemList>
       )}
     </DropdownContainer>
   );
@@ -127,7 +145,7 @@ export const MenuItemA = styled.a<{ active?: boolean }>`
   white-space: nowrap;
 `;
 
-export const MenuItemHeader = styled.li<{
+export const MenuItemHeader = styled.div<{
   bgColor?: string;
   centeredText?: boolean;
   fgColor?: string;
@@ -151,24 +169,28 @@ export const MenuItemLi = styled.li<{ disabled?: boolean }>`
 
 export const MenuItem = ({
   active = false,
-  centeredText = false,
-  children,
   // foregroundColor and backgroundColor would be preferred, but React has issues with
   // these since they are style keywords
   bgColor = null,
+  centeredText = false,
+  children,
   disabled = false,
   fgColor = null,
   header = false,
-  onClick = null
+  level = 1,
+  onClick = null,
+  role = undefined
 }: {
   active?: boolean;
+  bgColor?: string;
   centeredText?: boolean;
   children: React.ReactNode;
-  fgColor?: string;
-  bgColor?: string;
   disabled?: boolean;
+  fgColor?: string;
   header?: boolean;
+  level?: number;
   onClick?: () => void;
+  role?: string;
 }): React.ReactElement => {
   const handleClick = () => {
     if (!disabled) onClick();
@@ -176,11 +198,12 @@ export const MenuItem = ({
 
   return header ? (
     <MenuItemHeader
-      className="header"
-      fgColor={fgColor}
+      aria-level={level}
       bgColor={bgColor}
       centeredText={centeredText}
-      role="none"
+      className="header"
+      fgColor={fgColor}
+      role={role || "none"}
     >
       {children}
     </MenuItemHeader>
@@ -198,7 +221,7 @@ export const MenuItem = ({
   );
 };
 
-export const OptionContainer = styled.div`
+export const OptionContainer = styled.span`
   padding-top: 5px;
   padding-bottom: 3px;
 `;
@@ -209,14 +232,14 @@ export const OptionSubTitle = styled.span`
   margin-left: 6px;
 `;
 
-export const OptionContent = styled.div`
+export const OptionContent = styled.span`
   margin-left: 30px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 `;
 
-export const OptionIconContainer = styled.div`
+export const OptionIconContainer = styled.span`
   float: left;
 `;
 
@@ -238,21 +261,21 @@ export const StaticMenuItemList = styled(MenuItemList)`
   }
 `;
 
-export const StopContentContainer = styled.div`
+export const StopContentContainer = styled.span`
   margin-left: 30px;
 `;
 
-export const StopDistance = styled.div`
+export const StopDistance = styled.span`
   font-size: 8px;
 `;
 
-export const StopIconAndDistanceContainer = styled.div`
+export const StopIconAndDistanceContainer = styled.span`
   float: left;
   padding-top: 3px;
 `;
 
-export const StopName = styled.div``;
+export const StopName = styled.span``;
 
-export const StopRoutes = styled.div`
+export const StopRoutes = styled.span`
   font-size: 9px;
 `;

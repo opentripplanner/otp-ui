@@ -160,10 +160,7 @@ class TransitLegBody extends Component<Props, State> {
     // If the config contains an operator name, prefer that one over the
     // one provided by OTP
 
-    const transitOperatorName = transitOperator?.name
-      ? transitOperator.name
-      : agencyName;
-
+    const transitOperatorName = transitOperator?.name || agencyName;
     // If the config contains an operator with a logo URL, prefer that over the
     // one provided by OTP (which is derived from agency.txt#agency_branding_url)
     const logoUrl =
@@ -183,7 +180,14 @@ class TransitLegBody extends Component<Props, State> {
     return (
       <>
         {TransitLegSubheader && <TransitLegSubheader leg={leg} />}
-        <S.LegBody>
+        <S.LegBody
+          aria-label={intl.formatMessage({
+            defaultMessage: defaultMessages["otpUi.TransitLegBody.legDetails"],
+            description: "Identifies this section as trip leg details",
+            id: "otpUi.TransitLegBody.legDetails"
+          })}
+          role="group"
+        >
           {/* The Route Icon/Name Bar; clickable to set as active leg */}
           <S.LegClickable onClick={this.onSummaryClick}>
             <RouteDescription
@@ -205,28 +209,20 @@ class TransitLegBody extends Component<Props, State> {
                 values={{
                   agencyLink: (
                     <a
+                      aria-label={intl.formatMessage(
+                        {
+                          id: "otpUi.TransitLegBody.agencyExternalLink"
+                        },
+                        {
+                          agencyName
+                        }
+                      )}
                       href={agencyUrl}
                       rel="noopener noreferrer"
                       target="_blank"
                     >
                       {transitOperatorName}
-                      {logoUrl && (
-                        <img
-                          alt={intl.formatMessage(
-                            {
-                              defaultMessage:
-                                defaultMessages[
-                                  "otpUi.TransitLegBody.agencyLogo"
-                                ],
-                              description: "Alt text for agency logo",
-                              id: "otpUi.TransitLegBody.agencyLogo"
-                            },
-                            { agencyName: transitOperatorName }
-                          )}
-                          src={logoUrl}
-                          height={25}
-                        />
-                      )}
+                      {logoUrl && <img alt="" src={logoUrl} height={25} />}
                     </a>
                   )
                 }}
