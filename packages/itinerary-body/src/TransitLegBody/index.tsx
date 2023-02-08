@@ -241,7 +241,6 @@ class TransitLegBody extends Component<Props, State> {
               />
             </S.CallAheadWarning>
           )}
-
           {/* Alerts toggle */}
           {!shouldOnlyShowAlertsExpanded && (
             <S.TransitAlertToggle onClick={this.onToggleAlertsClick}>
