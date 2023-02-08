@@ -221,9 +221,7 @@ class TransitLegBody extends Component<Props, State> {
                               description: "Alt text for agency logo",
                               id: "otpUi.TransitLegBody.agencyLogo"
                             },
-                            {
-                              agencyName: transitOperatorName
-                            }
+                            { agencyName: transitOperatorName }
                           )}
                           src={logoUrl}
                           height={25}
