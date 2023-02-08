@@ -73,3 +73,5 @@ otpUi:
       wheelchair-label: Accessible Routing
       addBus-label: Bus
       addRail-label: Train
+      addSubway-label: Subway
+      addTram-label: Tram
