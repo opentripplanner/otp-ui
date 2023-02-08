@@ -26,7 +26,7 @@
   type: CHECKBOX
   key: allowBikeRental
   default: true
-  addMode:
+  addTransportMode:
     mode: BICYCLE
     qualifier: RENT
 - applicableMode: TRANSIT
@@ -38,11 +38,11 @@
   type: CHECKBOX
   key: addBus
   default: true
-  addMode:
+  addTransportMode:
     mode: BUS
 - applicableMode: TRANSIT
   type: CHECKBOX
   key: addRail
   default: true
-  addMode:
+  addTransportMode:
     mode: RAIL

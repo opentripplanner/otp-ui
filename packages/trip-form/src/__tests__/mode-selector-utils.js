@@ -87,7 +87,7 @@ const modeButtonDefinitions = [
         type: "CHECKBOX_ADD_MODE",
         key: "allowBikeRental",
         default: true,
-        addMode: {
+        addTransportMode: {
           mode: "BICYCLE",
           qualifier: "RENT"
         },
@@ -144,7 +144,7 @@ const modeSettingDefinitions = [
     type: "CHECKBOX",
     key: "allowBikeRental",
     default: true,
-    addMode: {
+    addTransportMode: {
       mode: "BICYCLE",
       qualifier: "RENT"
     },

@@ -68,7 +68,7 @@ Array [
         "type": "SLIDER",
       },
       Object {
-        "addMode": Object {
+        "addTransportMode": Object {
           "mode": "BICYCLE",
           "qualifier": "RENT",
         },
@@ -155,7 +155,7 @@ Object {
       "value": 3.4,
     },
     Object {
-      "addMode": Object {
+      "addTransportMode": Object {
         "mode": "BICYCLE",
         "qualifier": "RENT",
       },
@@ -220,7 +220,7 @@ Array [
     "value": 2,
   },
   Object {
-    "addMode": Object {
+    "addTransportMode": Object {
       "mode": "BICYCLE",
       "qualifier": "RENT",
     },
