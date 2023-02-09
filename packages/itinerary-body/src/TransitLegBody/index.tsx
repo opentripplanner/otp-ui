@@ -175,7 +175,14 @@ class TransitLegBody extends Component<Props, State> {
     return (
       <>
         {TransitLegSubheader && <TransitLegSubheader leg={leg} />}
-        <S.LegBody>
+        <S.LegBody
+          aria-label={intl.formatMessage({
+            defaultMessage: defaultMessages["otpUi.TransitLegBody.legDetails"],
+            description: "Identifies this section as trip leg details",
+            id: "otpUi.TransitLegBody.legDetails"
+          })}
+          role="group"
+        >
           {/* The Route Icon/Name Bar; clickable to set as active leg */}
           <S.LegClickable onClick={this.onSummaryClick}>
             <RouteDescription
@@ -197,30 +204,20 @@ class TransitLegBody extends Component<Props, State> {
                 values={{
                   agencyLink: (
                     <a
+                      aria-label={intl.formatMessage(
+                        {
+                          id: "otpUi.TransitLegBody.agencyExternalLink"
+                        },
+                        {
+                          agencyName
+                        }
+                      )}
                       href={agencyUrl}
                       rel="noopener noreferrer"
                       target="_blank"
                     >
                       {agencyName}
-                      {logoUrl && (
-                        <img
-                          alt={intl.formatMessage(
-                            {
-                              defaultMessage:
-                                defaultMessages[
-                                  "otpUi.TransitLegBody.agencyLogo"
-                                ],
-                              description: "Alt text for agency logo",
-                              id: "otpUi.TransitLegBody.agencyLogo"
-                            },
-                            {
-                              agencyName
-                            }
-                          )}
-                          src={logoUrl}
-                          height={25}
-                        />
-                      )}
+                      {logoUrl && <img alt="" src={logoUrl} height={25} />}
                     </a>
                   )
                 }}

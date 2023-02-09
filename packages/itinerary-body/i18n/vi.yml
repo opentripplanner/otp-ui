@@ -81,7 +81,6 @@ otpUi:
       escooter: bằng xe tay ga điện tử
       walk: bằng cách đi bộ
   TransitLegBody:
-    agencyLogo: logo {agencyName}
     AlertsBody:
       today: Hôm nay
       tomorrow: Ngày mai
