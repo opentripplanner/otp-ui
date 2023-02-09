@@ -588,7 +588,7 @@ export function getLegCost(
   leg: Leg,
   category: string,
   container: string
-): { price: Money | undefined; transferAmount?: number } {
+): { price?: Money; transferAmount?: number } {
   if (!leg.fareProducts) return { price: undefined };
   const relevantFareProducts = leg.fareProducts.filter(
     fp => fp.category.name === category && fp.container.name === container
@@ -601,7 +601,7 @@ export function getLegCost(
 
   return {
     price: totalCost,
-    transferAmount: transferFareProduct?.amount?.cents || undefined
+    transferAmount: transferFareProduct?.amount?.cents
   };
 }
 

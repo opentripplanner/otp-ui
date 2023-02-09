@@ -96,16 +96,9 @@ const FareTypeTable = ({
             {boldText(getFormattedTextForConfigKey(header))}
           </th>
           {colsToRender.map(col => {
-            let fare;
-            if (!hasLegProducts) {
-              fare = fareTotals[col.key];
-            } else {
-              fare = getItineraryCost(
-                legs,
-                col.riderCategory,
-                col.fareContainer
-              );
-            }
+            const fare = hasLegProducts
+              ? getItineraryCost(legs, col.riderCategory, col.fareContainer)
+              : fareTotals[col.key];
             return (
               <th key={col.key || `${col.fareContainer}-${col.riderCategory}`}>
                 {boldText(getFormattedTextForConfigKey(col.header))}
@@ -122,17 +115,15 @@ const FareTypeTable = ({
           <tr key={index}>
             <td className="no-zebra">{leg.routeShortName}</td>
             {colsToRender.map(col => {
-              let fare;
-              if (!hasLegProducts) {
-                fare = leg.fares[col.key];
-              } else {
-                fare = getLegCost(leg, col.riderCategory, col.fareContainer);
-              }
+              const fare = hasLegProducts
+                ? getLegCost(leg, col.riderCategory, col.fareContainer)
+                : leg.fares[col.key];
+
               return (
                 <td
                   key={col.key}
                   title={
-                    fare.transferAmount &&
+                    "transferAmount" in fare &&
                     intl.formatMessage(
                       {
                         defaultMessage:
@@ -156,7 +147,8 @@ const FareTypeTable = ({
                     )
                   }
                 >
-                  {(fare?.isTransfer || fare.transferAmount) && (
+                  {(("isTransfer" in fare && fare?.isTransfer) ||
+                    "transferAmount" in fare) && (
                     <>
                       <TransferIcon size={16} />{" "}
                     </>
