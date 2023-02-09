@@ -39,4 +39,4 @@ otpUi:
       electronic: "Electronic"
       cash: "Cash"
       special: "Special"
-    transferDiscountExplanation: Transfer discount of {transferAmount} is applied.
+    transferDiscountExplanation: Transfer discount of {transferAmount} is applied
