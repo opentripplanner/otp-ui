@@ -122,6 +122,11 @@ export interface LocationFieldProps {
    * initial render.
    */
   hideExistingValue?: boolean;
+
+  /**
+   * Whether to display metric units
+   */
+  outputMetricUnits?: boolean;
   /**
    * Placeholder text to show in the input element. If the current position is
    * set to have a true fetching property, then the text "Fetching location..."
