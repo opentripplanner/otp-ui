@@ -65,6 +65,7 @@ const LocationField = ({
   onLocationSelected,
   onTextInputClick = null,
   operatorIconMap = {},
+  outputMetricUnits = false,
   preferredLayers = [],
   sessionOptionIcon = <Search size={13} />,
   sessionSearches = [],
@@ -531,6 +532,7 @@ const LocationField = ({
             onClick={locationSelected}
             stop={stop}
             stopOptionIcon={stopOptionIcon}
+            outputMetricUnits={outputMetricUnits}
           />
         );
         itemIndex++;
