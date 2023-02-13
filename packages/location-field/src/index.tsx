@@ -38,6 +38,62 @@ function DefaultLocationIcon({
   return <LocationIcon size={13} type={locationType} />;
 }
 
+/**
+ * Helper function that includes or excludes features based om layers.
+ */
+function filter(list: any[], layers: string[], include: boolean, limit: number): any[] {
+  return list
+    .filter(feature => layers.includes(feature.properties.layer) === include)
+    .slice(0, limit);
+}
+
+/**
+ * Puts the given geocoded features into several categories with upper bounds.
+ */
+function getFeaturesByCategoryWithLimit(
+  geocodedFeatures: any[],
+  suggestionCount: number,
+  sortByDistance: boolean,
+  preferredLayers: string[]
+) {
+  // Split features into those we want to always show above others
+  const { special, normal } = geocodedFeatures.reduce(
+    (prev, cur) => {
+      prev[
+        preferredLayers.includes(cur?.properties?.layer)
+          ? "special"
+          : "normal"
+      ].push(cur);
+      return prev;
+    },
+    { special: [], normal: [] }
+  );
+
+  const sortedGeocodedFeatures = [
+    ...special,
+    ...normal.sort((a, b) => {
+      if (!sortByDistance) return 0;
+      return (
+        (b.properties?.distance || Infinity) -
+        (a.properties?.distance || Infinity)
+      );
+    })
+  ];
+
+  // Split out different types of transit results
+  // To keep the list tidy, only include a subset of the responses for each category
+  const stopFeatures = filter(sortedGeocodedFeatures, ["stops"], true, suggestionCount);
+  const stationFeatures = filter(sortedGeocodedFeatures, ["stations"], true, suggestionCount);
+  const otherFeatures = filter(sortedGeocodedFeatures, ["stops", "stations"], false, suggestionCount);
+
+  return {
+    count: otherFeatures.length + stationFeatures.length + stopFeatures.length,
+    otherFeatures,
+    stationFeatures,
+    stopFeatures
+  }
+}
+
 const LocationField = ({
   addLocationSearch = () => {},
   autoFocus = false,
@@ -114,6 +170,7 @@ const LocationField = ({
   const geocodeAutocomplete = useMemo(() => debounce(300, (text: string) => {
     if (!text) {
       console.warn("No text entry provided for geocode autocomplete search.");
+      setMessage(null)
       return;
     }
     getGeocoder(geocoderConfig)
@@ -137,10 +194,14 @@ const LocationField = ({
               { error: errorMessage }
             );
             geocodedFeatures = [];
-          } else if (geocodedFeatures.length === 0) {
+          } else {
+            const { count } = getFeaturesByCategoryWithLimit(geocodedFeatures, suggestionCount, sortByDistance, preferredLayers);
             message = intl.formatMessage(
-              { id: "otpUi.LocationField.noResultsFound" },
-              { input: text }
+              { id: "otpUi.LocationField.resultsFound" },
+              {
+                count,
+                input: text
+              }
             );
           }
           setGeocodedFeatures(geocodedFeatures);
@@ -149,6 +210,11 @@ const LocationField = ({
       )
       .catch((err: unknown) => {
         console.error(err);
+        const message = intl.formatMessage(
+          { id: "otpUi.LocationField.geocoderUnreachable" },
+          { error: err.toString() }
+        );
+        setMessage(message);
       });
   }), []);
 
@@ -375,7 +441,7 @@ const LocationField = ({
   };
 
   const message = stateMessage;
-  let geocodedFeatures = stateGeocodedFeatures;
+  const geocodedFeatures = stateGeocodedFeatures;
 
   if (sessionSearches.length > 5) sessionSearches = sessionSearches.slice(0, 5);
 
@@ -383,51 +449,14 @@ const LocationField = ({
   // Menu items are created in four phases: (1) the current location, (2) any
   // geocoder search results; (3) nearby transit stops; and (4) saved searches
 
+  const statusMessages = [];
   let menuItems = []; // array of menu items for display (may include non-selectable items e.g. dividers/headings)
   let itemIndex = 0; // the index of the current location-associated menu item (excluding non-selectable items)
   const locationSelectedLookup = {}; // maps itemIndex to a location selection handler (for use by the onKeyDown method)
 
   /* 1) Process geocode search result option(s) */
   if (geocodedFeatures.length > 0) {
-    // Split features into those we want to always show above others
-    const { special, normal } = geocodedFeatures.reduce(
-      (prev, cur) => {
-        prev[
-          preferredLayers.includes(cur?.properties?.layer)
-            ? "special"
-            : "normal"
-        ].push(cur);
-        return prev;
-      },
-      { special: [], normal: [] }
-    );
-
-    geocodedFeatures = [
-      ...special,
-      ...normal.sort((a, b) => {
-        if (!sortByDistance) return 0;
-        return (
-          (b.properties?.distance || Infinity) -
-          (a.properties?.distance || Infinity)
-        );
-      })
-    ];
-
-    // Add the menu sub-heading (not a selectable item)
-    // menuItems.push(<MenuItem header key='sr-header'>Search Results</MenuItem>)
-
-    // Split out different types of transit results
-    // To keep the list tidy, only include a subset of the responses for each category
-    const stopFeatures = geocodedFeatures
-      .filter(feature => feature.properties.layer === "stops")
-      .slice(0, suggestionCount);
-    const stationFeatures = geocodedFeatures
-      .filter(feature => feature.properties.layer === "stations")
-      .slice(0, suggestionCount);
-    const otherFeatures = geocodedFeatures
-      .filter(feature => feature.properties.layer !== "stops")
-      .filter(feature => feature.properties.layer !== "stations")
-      .slice(0, suggestionCount);
+    const { otherFeatures, stationFeatures, stopFeatures } = getFeaturesByCategoryWithLimit(geocodedFeatures, suggestionCount, sortByDistance, preferredLayers)
 
     // If no categories of features are returned, this variable is used to
     // avoid displaying headers
@@ -645,10 +674,18 @@ const LocationField = ({
   } else {
     // error detecting current position
     optionIcon = currentPositionUnavailableIcon;
-    optionTitle = intl.formatMessage({
-      id: "otpUi.LocationField.currentLocationUnavailable"
-    }, { error: typeof currentPosition.error === "string" ? currentPosition.error : currentPosition.error.message });
+    optionTitle = intl.formatMessage(
+      {
+        id: "otpUi.LocationField.currentLocationUnavailable"
+      },
+      {
+        error: !currentPosition
+          ? undefined
+          : typeof currentPosition.error === "string" ? currentPosition.error : currentPosition.error.message
+      }
+    );
     positionUnavailable = true;
+    statusMessages.push(optionTitle)
   }
 
   // Add to the selection handler lookup (for use in onKeyDown)
@@ -656,7 +693,7 @@ const LocationField = ({
 
   if (!suppressNearby) {
     // Create and add the option item to the menu items array
-    const currentLocationOption = (
+    menuItems.push(
       <Option
         disabled={positionUnavailable}
         icon={optionIcon}
@@ -666,19 +703,20 @@ const LocationField = ({
         title={optionTitle}
       />
     );
-    menuItems.push(currentLocationOption);
-    itemIndex++;
+    if (!positionUnavailable) itemIndex++;
   }
   if (message) {
-    const messageItem = (
-      <Option
-        disabled
-        icon={<ExclamationCircle size={20} />}
-        key={optionKey++}
-        title={message}
-      />
-    );
-    menuItems.unshift(messageItem);
+    if (geocodedFeatures.length === 0) {
+      menuItems.unshift(
+        <Option
+          disabled
+          icon={<ExclamationCircle size={20} />}
+          key={optionKey++}
+          title={message}
+        />
+      );
+    }
+    statusMessages.push(message)
   }
 
   // Store the number of location-associated items for reference in the onKeyDown method
@@ -740,11 +778,14 @@ const LocationField = ({
             {clearButton}
           </S.InputGroup>
         </S.FormGroup>
+        <S.HiddenContent role="status">{statusMessages?.join(", ")}</S.HiddenContent>
         <S.StaticMenuItemList
+          // Hide the listbox from assistive technology if no valid items are shown.
+          aria-hidden={menuItemCount === 0 || undefined}
           aria-label={intl.formatMessage({
-            id: "otpUi.LocationField.suggestedLocations",
             defaultMessage: "Suggested locations",
-            description: "Text to show as a label for the dropdown list of locations"
+            description: "Text to show as a label for the dropdown list of locations",
+            id: "otpUi.LocationField.suggestedLocations"
           })}
           id={listBoxId}
         >
@@ -773,6 +814,7 @@ const LocationField = ({
           listBoxIdentifier={listBoxId}
           onToggle={onDropdownToggle}
           open={menuVisible}
+          status={statusMessages.join(", ")}
           title={<LocationIconComponent locationType={locationType} />}
         >
           {menuItems}

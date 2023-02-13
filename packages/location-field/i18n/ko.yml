@@ -9,7 +9,7 @@ otpUi:
     workLocation: 근무지
     homeLocation: 집
     clearLocation: 위치 재설정
-    currentLocationUnavailable: 현재 위치를 사용할 수 없습니다 ({error})
+    currentLocationUnavailable: 현재 위치를 사용할 수 없습니다{error, select, undefined {} other { ({error})}}
     fetchingLocation: 페치 위치…
     geocoderUnreachable: 지오 코더에 도달 할 수 없습니다{error, select, undefined {} other { ({error})}}
     myPlaces: 내 장소

@@ -18,8 +18,20 @@ export const geocoderConfig = {
   type: "PELIAS"
 };
 
+export const unreachableGeocoderConfig = {
+  ...geocoderConfig,
+  // Putting an erroneous URL on purpose.
+  baseUrl: "https://ws-st.trimet1.org/pelias/v1"
+};
+
 export const hereGeocoderConfig = {
   type: "HERE",
+  apiKey: "placeholder_here_key",
+  focusPoint: { lat: 47.67552, lng: -122.31831 }
+};
+
+export const badGeocoderConfig = {
+  type: "BAD",
   apiKey: "placeholder_here_key",
   focusPoint: { lat: 47.67552, lng: -122.31831 }
 };

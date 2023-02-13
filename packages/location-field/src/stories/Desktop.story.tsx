@@ -5,13 +5,15 @@ import { Ship } from "@styled-icons/fa-solid/Ship";
 import { Bus } from "@styled-icons/fa-solid/Bus";
 import LocationField from "..";
 import {
+  badGeocoderConfig,
   currentPosition,
   geocoderConfig,
   getCurrentPosition,
   hereGeocoderConfig,
   layerColorMap,
   onLocationSelected,
-  selectedLocation
+  selectedLocation,
+  unreachableGeocoderConfig
 } from "./common";
 
 import mockedGeocoderResponse from "../mocks/autocomplete.json";
@@ -65,10 +67,42 @@ export const Blank = (): JSX.Element => (
   />
 );
 
+export const LocationUnavailable = (): JSX.Element => (
+  <LocationField
+    geocoderConfig={geocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    inputPlaceholder="Select from location"
+    locationType="from"
+    onLocationSelected={onLocationSelected}
+  />
+);
+
 export const HereGeocoder = (): JSX.Element => (
   <LocationField
     currentPosition={currentPosition}
     geocoderConfig={hereGeocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    inputPlaceholder="Select from location"
+    locationType="from"
+    onLocationSelected={onLocationSelected}
+  />
+);
+
+export const GeocoderNoResults = (): JSX.Element => (
+  <LocationField
+    currentPosition={currentPosition}
+    geocoderConfig={badGeocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    inputPlaceholder="Select from location"
+    locationType="from"
+    onLocationSelected={onLocationSelected}
+  />
+);
+
+export const GeocoderUnreachable = (): JSX.Element => (
+  <LocationField
+    currentPosition={currentPosition}
+    geocoderConfig={unreachableGeocoderConfig}
     getCurrentPosition={getCurrentPosition}
     inputPlaceholder="Select from location"
     locationType="from"
@@ -170,5 +204,18 @@ export const WithPrefilledSearch = (): JSX.Element => (
     onLocationSelected={onLocationSelected}
     sortByDistance
     style={{ fontFamily: "sans-serif" }}
+  />
+);
+
+export const RequiredAndInvalidState = (): JSX.Element => (
+  <LocationField
+    currentPosition={currentPosition}
+    geocoderConfig={unreachableGeocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    inputPlaceholder="Select from location"
+    isRequired
+    isValid={false}
+    locationType="from"
+    onLocationSelected={onLocationSelected}
   />
 );
