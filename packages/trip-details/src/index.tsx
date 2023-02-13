@@ -131,7 +131,6 @@ export function TripDetails({
   const fareResult = coreUtils.itinerary.calculateTncFares(itinerary);
   const { currencyCode, maxTNCFare, minTNCFare } = fareResult;
   const transitFares = itinerary?.fare?.fare;
-  const fareDetails = itinerary.fare?.details;
 
   let companies = "";
   itinerary.legs.forEach(leg => {
@@ -174,12 +173,7 @@ export function TripDetails({
           </summary>
           {fareDetailsLayout ? (
             // Show full ƒare details by leg
-            <FareLegTable
-              layout={fareDetailsLayout}
-              legs={itinerary.legs}
-              transitFareDetails={fareDetails}
-              transitFares={transitFares}
-            />
+            <FareLegTable layout={fareDetailsLayout} itinerary={itinerary} />
           ) : (
             // Just show the fares for each payment type
             fareKeys.map(fareKey => {
@@ -258,7 +252,8 @@ export function TripDetails({
 
   return (
     <S.TripDetails className={className}>
-      <S.TripDetailsHeader>
+      {/* this can be presentation as S.TripDetails is already labeled by this */}
+      <S.TripDetailsHeader id="trip-details-header">
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.TripDetails.title"]}
           description="Title (heading) text of the component."

@@ -91,7 +91,6 @@ otpUi:
     tripViewer: 行程查看器
     stopIdBasic: ID {stopId}
     typicalWait: "典型的等待时间: {waitTime}"
-    agencyLogo: "{agencyName} 徽标"
     fare: "票价: {fare}"
     operatedBy: 公交运营商 {agencyLink}
     rideDurationAndStops: "乘坐 {duration}{numStops, plural, =1 {} other { / # 站}}"

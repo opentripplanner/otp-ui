@@ -300,7 +300,7 @@ export function itineraryToTransitive(
       });
     }
 
-    if (isTransit(leg.mode)) {
+    if (leg.transitLeg || isTransit(leg.mode)) {
       // Flex routes sometimes have the same from and to IDs, but
       // these stops still need to be rendered separately!
       if (leg.from.stopId === leg.to.stopId) {
