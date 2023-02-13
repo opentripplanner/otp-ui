@@ -4,6 +4,7 @@ import {
   Config,
   ElevationProfile,
   FlexBookingInfo,
+  Itinerary,
   ItineraryOnlyLegsRequired,
   LatLngArray,
   Leg,
@@ -560,4 +561,70 @@ export function getDisplayedStopId(placeOrStop: Place | Stop): string {
     ({ code: stopCode, id: stopId } = placeOrStop);
   }
   return stopCode || stopId?.split(":")[1] || stopId;
+}
+
+/**
+ * Adds the fare product info to each leg in an itinerary, from the itinerary's fare property
+ * @param itinerary Itinerary with legProducts in fare object
+ * @returns Itinerary with legs that have fare products attached to them
+ */
+export function getLegsWithFares(itinerary: Itinerary): Leg[] {
+  return itinerary.legs.map((leg, i) => ({
+    ...leg,
+    fareProducts: itinerary.fare?.legProducts
+      ?.filter(lp => lp?.legIndices?.includes(i))
+      .flatMap(lp => lp.products)
+  }));
+}
+
+/**
+ * Extracts useful data from the fare products on a leg, such as the leg cost and transfer info.
+ * @param leg Leg with fare products (must have used getLegsWithFares)
+ * @param category Rider category
+ * @param container Fare container (cash, electronic)
+ * @returns Object containing price as well as the transfer discount amount, if a transfer was used.
+ */
+export function getLegCost(
+  leg: Leg,
+  category: string,
+  container: string
+): { price?: Money; transferAmount?: number } {
+  if (!leg.fareProducts) return { price: undefined };
+  const relevantFareProducts = leg.fareProducts.filter(
+    fp => fp.category.name === category && fp.container.name === container
+  );
+  const totalCost = relevantFareProducts.find(fp => fp.name === "rideCost")
+    ?.amount;
+  const transferFareProduct = relevantFareProducts.find(
+    fp => fp.name === "transfer"
+  );
+
+  return {
+    price: totalCost,
+    transferAmount: transferFareProduct?.amount?.cents
+  };
+}
+
+/**
+ * Returns the total itinerary cost for a given set of legs.
+ * @param legs Itinerary legs with fare products (must have used getLegsWithFares)
+ * @param category Rider category (youth, regular, senior)
+ * @param container Fare container (cash, electronic)
+ * @returns Money object for the total itinerary cost.
+ */
+export function getItineraryCost(
+  legs: Leg[],
+  category: string,
+  container: string
+): Money {
+  return legs
+    .filter(leg => !!leg.fareProducts)
+    .map(leg => getLegCost(leg, category, container).price)
+    .reduce<Money>(
+      (prev, cur) => ({
+        cents: prev.cents + cur?.cents || 0,
+        currency: prev.currency ?? cur?.currency
+      }),
+      { cents: 0, currency: null }
+    );
 }
