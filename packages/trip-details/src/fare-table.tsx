@@ -197,7 +197,7 @@ const FareLegDetails = ({
       })
       .filter(leg => leg.transitLeg);
   } else {
-    // OTP2 Logic
+    // OTP2 Logic using core-utils function
     legsWithFares = getLegsWithFares(itinerary).filter(leg => leg.transitLeg);
   }
 
