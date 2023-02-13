@@ -590,6 +590,7 @@ export function getLegCost(
   container: string
 ): { price?: Money; transferAmount?: number } {
   if (!leg.fareProducts) return { price: undefined };
+
   const relevantFareProducts = leg.fareProducts.filter(
     fp => fp.category.name === category && fp.container.name === container
   );
