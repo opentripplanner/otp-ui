@@ -63,7 +63,12 @@ export function Option({
           </S.OptionIconContainer>
           <S.OptionContent>
             {title}
-            <S.OptionSubTitle>{subTitle}</S.OptionSubTitle>
+            {subTitle && (
+              <S.OptionSubTitle>
+                <S.HiddenContent>, </S.HiddenContent>
+                {subTitle}
+              </S.OptionSubTitle>
+            )}
           </S.OptionContent>
         </S.OptionContainer>
       )}
