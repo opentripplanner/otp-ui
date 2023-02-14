@@ -11,6 +11,8 @@ import { MapPin } from "@styled-icons/fa-solid/MapPin";
 import { Stop, UserLocation } from "@opentripplanner/types";
 import * as S from "./styled";
 
+export const ICON_SIZE = 13;
+
 export function GeocodedOptionIcon({
   feature = {}
 }: {
@@ -22,10 +24,10 @@ export function GeocodedOptionIcon({
   if (feature && properties) {
     const { source } = properties;
     if (source === "transit") {
-      return <Bus size={13} />;
+      return <Bus size={ICON_SIZE} />;
     }
   }
-  return <MapPin size={13} />;
+  return <MapPin size={ICON_SIZE} />;
 }
 
 export function Option({
@@ -116,9 +118,9 @@ export function UserLocationIcon({
 }: {
   userLocation: UserLocation;
 }): React.ReactElement {
-  if (userLocation.icon === "work") return <Briefcase size={13} />;
-  if (userLocation.icon === "home") return <Home size={13} />;
-  return <MapMarker size={13} />;
+  if (userLocation.icon === "work") return <Briefcase size={ICON_SIZE} />;
+  if (userLocation.icon === "home") return <Home size={ICON_SIZE} />;
+  return <MapMarker size={ICON_SIZE} />;
 }
 
 function LocationName({ location }: { location: UserLocation }): ReactElement {

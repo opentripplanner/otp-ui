@@ -19,6 +19,7 @@ import type { LocationFieldProps, ResultType } from "./types";
 
 import {
   GeocodedOptionIcon,
+  ICON_SIZE,
   Option,
   StoredPlaceName,
   TransitStopOption,
@@ -35,7 +36,7 @@ function DefaultLocationIcon({
 }: {
   locationType: string;
 }): React.ReactElement {
-  return <LocationIcon size={13} type={locationType} />;
+  return <LocationIcon size={ICON_SIZE} type={locationType} />;
 }
 
 /**
@@ -98,11 +99,11 @@ const LocationField = ({
   addLocationSearch = () => {},
   autoFocus = false,
   className = null,
-  clearButtonIcon = <Times size={13} />,
+  clearButtonIcon = <Times size={ICON_SIZE} />,
   clearLocation = () => {},
   currentPosition = null,
-  currentPositionIcon = <LocationArrow size={13} />,
-  currentPositionUnavailableIcon = <Ban size={13} />,
+  currentPositionIcon = <LocationArrow size={ICON_SIZE} />,
+  currentPositionUnavailableIcon = <Ban size={ICON_SIZE} />,
   findNearbyStops = () => {},
   GeocodedOptionIconComponent = GeocodedOptionIcon,
   geocoderConfig,
@@ -122,12 +123,12 @@ const LocationField = ({
   onTextInputClick = null,
   operatorIconMap = {},
   preferredLayers = [],
-  sessionOptionIcon = <Search size={13} />,
+  sessionOptionIcon = <Search size={ICON_SIZE} />,
   sessionSearches = [],
   showClearButton = true,
   showUserSettings = false,
   sortByDistance = false,
-  stopOptionIcon = <Bus size={13} />,
+  stopOptionIcon = <Bus size={ICON_SIZE} />,
   stopsIndex = null,
   suggestionCount = 3,
   suppressNearby = false,
@@ -710,7 +711,7 @@ const LocationField = ({
       menuItems.unshift(
         <Option
           disabled
-          icon={<ExclamationCircle size={20} />}
+          icon={<ExclamationCircle size={ICON_SIZE} />}
           key={optionKey++}
           title={message}
         />
