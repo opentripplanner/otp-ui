@@ -124,6 +124,7 @@ const FareTypeTable = ({
                   key={col.key}
                   title={
                     "transferAmount" in fare &&
+                    fare?.transferAmount &&
                     intl.formatMessage(
                       {
                         defaultMessage:
@@ -148,7 +149,7 @@ const FareTypeTable = ({
                   }
                 >
                   {(("isTransfer" in fare && fare?.isTransfer) ||
-                    "transferAmount" in fare) && (
+                    ("transferAmount" in fare && fare?.transferAmount)) && (
                     <>
                       <TransferIcon size={16} />{" "}
                     </>
