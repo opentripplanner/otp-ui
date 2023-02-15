@@ -225,6 +225,7 @@ const LocationField = ({
           { error: err.toString() }
         );
         setMessage(message);
+        setFetching(false)
       });
   }), []);
 
