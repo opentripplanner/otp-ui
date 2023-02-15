@@ -5,7 +5,6 @@ import getGeocoder from "@opentripplanner/geocoder";
 // @ts-ignore Not Typescripted Yet
 import LocationIcon from "@opentripplanner/location-icon";
 import React, { useEffect, useMemo, useState, useRef } from "react";
-import { Spinner } from "@styled-icons/fa-solid/Spinner";
 import { Ban } from "@styled-icons/fa-solid/Ban";
 import { Bus } from "@styled-icons/fa-solid/Bus";
 import { ExclamationCircle } from "@styled-icons/fa-solid/ExclamationCircle";
@@ -191,31 +190,35 @@ const LocationField = ({
           features: Location[]
           results: { error: { message: string } };
         }) => {
-          let message: string;
-          // If no features found in response, default to empty array.
-          let geocodedFeatures = result?.features;
-          if (!geocodedFeatures) {
-            // Get the Pelias error message if exists.
-            // TODO: determine how other geocoders return error messages.
-            const errorMessage = result?.results?.error?.message;
-            // If the result did not contain a list of features, add special note.
-            message = intl.formatMessage(
-              { id: "otpUi.LocationField.geocoderUnreachable" },
-              { error: errorMessage }
-            );
-            geocodedFeatures = [];
-          } else {
-            const { count } = getFeaturesByCategoryWithLimit(geocodedFeatures, suggestionCount, sortByDistance, preferredLayers);
-            message = intl.formatMessage(
-              { id: "otpUi.LocationField.resultsFound" },
-              {
-                count,
-                input: text
-              }
-            );
-          }
-          setGeocodedFeatures(geocodedFeatures);
-          setMessage(message);
+          setTimeout(() => {
+
+            let message: string;
+            // If no features found in response, default to empty array.
+            let geocodedFeatures = result?.features;
+            if (!geocodedFeatures) {
+              // Get the Pelias error message if exists.
+              // TODO: determine how other geocoders return error messages.
+              const errorMessage = result?.results?.error?.message;
+              // If the result did not contain a list of features, add special note.
+              message = intl.formatMessage(
+                { id: "otpUi.LocationField.geocoderUnreachable" },
+                { error: errorMessage }
+              );
+              geocodedFeatures = [];
+            } else {
+              const { count } = getFeaturesByCategoryWithLimit(geocodedFeatures, suggestionCount, sortByDistance, preferredLayers);
+              message = intl.formatMessage(
+                { id: "otpUi.LocationField.resultsFound" },
+                {
+                  count,
+                  input: text
+                }
+              );
+            }
+            setGeocodedFeatures(geocodedFeatures);
+            setMessage(message);
+            setFetching(false)
+          }, 30000)
         }
       )
       .catch((err: unknown) => {
@@ -718,11 +721,7 @@ const LocationField = ({
   if (message) {
     if (geocodedFeatures.length === 0) {
       const icon = isFetching
-        ? (
-          <S.SpinningIcon>
-            <Spinner size={ICON_SIZE} />
-          </S.SpinningIcon>
-        )
+        ? <S.Spinner size={ICON_SIZE} />
         : <ExclamationCircle size={ICON_SIZE} />;
       menuItems.unshift(
         <Option
