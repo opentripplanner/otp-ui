@@ -190,35 +190,32 @@ const LocationField = ({
           features: Location[]
           results: { error: { message: string } };
         }) => {
-          setTimeout(() => {
-
-            let message: string;
-            // If no features found in response, default to empty array.
-            let geocodedFeatures = result?.features;
-            if (!geocodedFeatures) {
-              // Get the Pelias error message if exists.
-              // TODO: determine how other geocoders return error messages.
-              const errorMessage = result?.results?.error?.message;
-              // If the result did not contain a list of features, add special note.
-              message = intl.formatMessage(
-                { id: "otpUi.LocationField.geocoderUnreachable" },
-                { error: errorMessage }
-              );
-              geocodedFeatures = [];
-            } else {
-              const { count } = getFeaturesByCategoryWithLimit(geocodedFeatures, suggestionCount, sortByDistance, preferredLayers);
-              message = intl.formatMessage(
-                { id: "otpUi.LocationField.resultsFound" },
-                {
-                  count,
-                  input: text
-                }
-              );
-            }
-            setGeocodedFeatures(geocodedFeatures);
-            setMessage(message);
-            setFetching(false)
-          }, 30000)
+          let message: string;
+          // If no features found in response, default to empty array.
+          let geocodedFeatures = result?.features;
+          if (!geocodedFeatures) {
+            // Get the Pelias error message if exists.
+            // TODO: determine how other geocoders return error messages.
+            const errorMessage = result?.results?.error?.message;
+            // If the result did not contain a list of features, add special note.
+            message = intl.formatMessage(
+              { id: "otpUi.LocationField.geocoderUnreachable" },
+              { error: errorMessage }
+            );
+            geocodedFeatures = [];
+          } else {
+            const { count } = getFeaturesByCategoryWithLimit(geocodedFeatures, suggestionCount, sortByDistance, preferredLayers);
+            message = intl.formatMessage(
+              { id: "otpUi.LocationField.resultsFound" },
+              {
+                count,
+                input: text
+              }
+            );
+          }
+          setGeocodedFeatures(geocodedFeatures);
+          setMessage(message);
+          setFetching(false)
         }
       )
       .catch((err: unknown) => {

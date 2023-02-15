@@ -13,6 +13,7 @@ import {
   layerColorMap,
   onLocationSelected,
   selectedLocation,
+  slowGeocoderConfig,
   unreachableGeocoderConfig
 } from "./common";
 
@@ -103,6 +104,17 @@ export const GeocoderUnreachable = (): JSX.Element => (
   <LocationField
     currentPosition={currentPosition}
     geocoderConfig={unreachableGeocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    inputPlaceholder="Select from location"
+    locationType="from"
+    onLocationSelected={onLocationSelected}
+  />
+);
+
+export const SlowGeocoder = (): JSX.Element => (
+  <LocationField
+    currentPosition={currentPosition}
+    geocoderConfig={slowGeocoderConfig}
     getCurrentPosition={getCurrentPosition}
     inputPlaceholder="Select from location"
     locationType="from"
