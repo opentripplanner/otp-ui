@@ -5,6 +5,7 @@ import getGeocoder from "@opentripplanner/geocoder";
 // @ts-ignore Not Typescripted Yet
 import LocationIcon from "@opentripplanner/location-icon";
 import React, { useEffect, useMemo, useState, useRef } from "react";
+import { Spinner } from "@styled-icons/fa-solid/Spinner";
 import { Ban } from "@styled-icons/fa-solid/Ban";
 import { Bus } from "@styled-icons/fa-solid/Bus";
 import { ExclamationCircle } from "@styled-icons/fa-solid/ExclamationCircle";
@@ -150,6 +151,7 @@ const LocationField = ({
   const [activeIndex, setActiveIndex] = useState(null);
   const [stateGeocodedFeatures, setGeocodedFeatures] = useState([]);
   const [menuVisible, setMenuVisible] = useState(false);
+  const [isFetching, setFetching] = useState(false);
   const [stateMessage, setMessage] = useState(null);
   const [stateValue, setValue] = useState(getValueFromLocation());
 
@@ -174,6 +176,9 @@ const LocationField = ({
       setMessage(null)
       return;
     }
+    setFetching(true)
+    setMessage("Fetching suggestions...")
+
     getGeocoder(geocoderConfig)
       .autocomplete({ text })
       // TODO: Better type?
@@ -708,10 +713,17 @@ const LocationField = ({
   }
   if (message) {
     if (geocodedFeatures.length === 0) {
+      const icon = isFetching
+        ? (
+          <S.SpinningIcon>
+            <Spinner size={ICON_SIZE} />
+          </S.SpinningIcon>
+        )
+        : <ExclamationCircle size={ICON_SIZE} />;
       menuItems.unshift(
         <Option
           disabled
-          icon={<ExclamationCircle size={ICON_SIZE} />}
+          icon={icon}
           key={optionKey++}
           title={message}
         />
