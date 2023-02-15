@@ -177,7 +177,11 @@ const LocationField = ({
       return;
     }
     setFetching(true)
-    setMessage("Fetching suggestions...")
+    setMessage(intl.formatMessage({
+      defaultMessage: "Fetching suggestions…",
+      description: "Hint shown while geocoder suggestions are being fetched",
+      id: "otpUi.LocationField.fetchingSuggestions"
+    }))
 
     getGeocoder(geocoderConfig)
       .autocomplete({ text })
