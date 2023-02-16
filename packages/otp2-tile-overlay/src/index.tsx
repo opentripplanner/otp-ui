@@ -72,7 +72,7 @@ const OTP2TileLayerWithPopup = ({
     }
 
     // TODO: once the popup converges into a single one that can handle
-    // stops, stations, and vehicles, this re-writing will not be needed.
+    // stops, stations, and vehicles, this re-writing will not be needed
     // See: https://github.com/opentripplanner/otp-ui/pull/472#discussion_r1023124055
     if (sourceLayer === "stops" || sourceLayer === "stations") {
       setClickedEntity(synthesizedEntity)
