@@ -46,6 +46,10 @@ query PlanQuery(
 				realtimeState	
 				startTime
 				transitLeg
+				trip {
+					id
+					gtfsId
+				}
 				agency {
 					name
 					id
