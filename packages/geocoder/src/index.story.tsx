@@ -28,6 +28,8 @@ const GeocoderTester = ({
   const [enableGeocodeEarth, setEnableGeocodeEarth] = useState(true);
   const [enableHere, setEnableHere] = useState(true);
   const [enablePhoton, setEnablePhoton] = useState(true);
+  const [enableOtp, setEnableOtp] = useState(false);
+  const [otpHost, setOtpHost] = useState("");
   const [
     reverseUseFeatureCollection,
     setReverseUseFeatureCollection
@@ -57,6 +59,12 @@ const GeocoderTester = ({
     type: "PHOTON"
   });
 
+  const otpGeocoder = getGeocoder({
+    baseUrl: otpHost,
+    size: 1,
+    type: "OTP"
+  });
+
   const searchObj: AnyGeocoderQuery = {
     text: searchTerm
   };
@@ -77,15 +85,29 @@ const GeocoderTester = ({
     const photonRes = enablePhoton
       ? await photonGeocoder[endpoint](searchObj)
       : null;
+    const otpRes = enableOtp ? await otpGeocoder[endpoint](searchObj) : null;
     onResults({
       hereRes,
       peliasRes,
-      photonRes
+      photonRes,
+      otpRes
     });
   };
 
   return (
     <div>
+      {endpoint === "autocomplete" && (
+        <div>
+          <label htmlFor="otpHost">
+            OTP Host (ending with{" "}
+            <pre style={{ display: "inline" }}>/router/default</pre>)
+          </label>
+          <input
+            id="otpHost"
+            onChange={e => setOtpHost(e.target.value)}
+          ></input>
+        </div>
+      )}
       {/* Boundary Input */}
       {endpoint !== "reverse" && (
         <div>
@@ -216,6 +238,15 @@ const GeocoderTester = ({
             checked={enablePhoton}
             id="photon"
             onChange={e => setEnablePhoton(e.target.checked)}
+            type="checkbox"
+          />
+        </label>
+        <label htmlFor="otp">
+          OTP:
+          <input
+            checked={enableOtp}
+            id="otp"
+            onChange={e => setEnableOtp(e.target.checked)}
             type="checkbox"
           />
         </label>
