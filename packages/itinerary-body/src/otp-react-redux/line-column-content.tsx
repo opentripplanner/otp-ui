@@ -90,7 +90,7 @@ const IconStacker = styled.span`
 
 const legLineBackgroundColor = ({ leg, routeColor }: LegLineProps): string => {
   const { mode } = leg;
-  return coreUtils.itinerary.isTransit(mode)
+  return leg.transitLeg || coreUtils.itinerary.isTransit(mode)
     ? routeColor
       ? `#${routeColor}`
       : "#000088"

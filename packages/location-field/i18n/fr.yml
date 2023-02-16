@@ -11,7 +11,7 @@ otpUi:
   LocationField:
     beingTypingPrompt: Tapez pour rechercher des lieux
     clearLocation: Effacer le lieu
-    currentLocationUnavailable: Position actuelle non disponible ({error})
+    currentLocationUnavailable: Position actuelle non disponible{error, select, undefined {} other { ({error})}}
     fetchingLocation: Chargement du lieu...
     geocoderUnreachable: Géocodeur introuvable{error, select, undefined {} other { ({error})}}
     homeLocation: Domicile
@@ -26,6 +26,9 @@ otpUi:
     # Note to translator: This is an implicit plural (as in "Other results").
     other: Autres
     recentlySearched: Recherches récentes
+    resultsFound: >
+      {count, plural, =0 {Aucun résultat} =1 {# résultat} other {# résultats}} du
+      géocodeur pour {input, select, null {votre requête} other {"{input}"}}
     stations: Stations
     stops: Arrêts
     useCurrentLocation: Utiliser ma position actuelle
