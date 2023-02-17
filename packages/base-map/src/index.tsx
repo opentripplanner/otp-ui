@@ -151,11 +151,11 @@ const BaseMap = ({
         <Styled.LayerSelector
           className="filter-group"
           id="filter-group"
-          tabIndex={0}
           onFocus={() => setFakeMobileHover(true)}
           onTouchEnd={() => {
             setFakeMobileHover(true);
           }}
+          tabIndex={0}
         >
           <ul
             className={`layers-list ${fakeMobileHover && "fake-mobile-hover"}`}
@@ -170,8 +170,8 @@ const BaseMap = ({
                       <input
                         checked={activeBaseLayer === layer}
                         id={layer}
-                        onChange={() => setActiveBaseLayer(layer)}
                         name="base-layer"
+                        onChange={() => setActiveBaseLayer(layer)}
                         type="radio"
                       />
                       {baseLayerNames?.[index] || layer}
