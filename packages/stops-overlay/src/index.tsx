@@ -94,7 +94,7 @@ const StopsOverlay = (props: Props): JSX.Element => {
     map?.on("zoomend", onZoomEnd);
 
     // Remove event handlers when component unmounts
-    // (prevents error messages about performing state updates on unmounted component).
+    // (prevents error messages about performing state updates on unmounted component)
     return () => {
       STOP_LAYERS.forEach(stopLayer => {
         map?.off("mouseenter", stopLayer, onLayerEnter);
