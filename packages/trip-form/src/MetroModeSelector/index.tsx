@@ -174,7 +174,7 @@ function ModeButton({
         aria-expanded={null}
         aria-checked={modeButton.enabled}
         aria-label={modeButton.label}
-        fillModeIcons={fillModeIcons || fillModeIcons !== false}
+        fillModeIcons={fillModeIcons !== false}
       >
         <modeButton.Icon size={32} />
       </ModeButtonItem>
