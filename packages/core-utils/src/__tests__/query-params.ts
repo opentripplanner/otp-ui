@@ -28,10 +28,7 @@ const mockLatLon = {
   lon: 2
 };
 
-function expectModes(
-  modes: Array<string>,
-  expectedModes: Array<Array<string>>
-) {
+function expectModes(modes: string[], expectedModes: string[][]) {
   const generatedModesList = generateCombinations({
     modes: modes.map(modeStrToTransportMode),
     to: mockLatLon,

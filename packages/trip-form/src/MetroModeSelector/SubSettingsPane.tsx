@@ -18,29 +18,29 @@ import defaultEnglishMessages from "../../i18n/en-US.yml";
 const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
 const Header = styled.div`
+  display: flex;
   font-size: 1.5em;
+  justify-content: space-between;
   margin-bottom: 0.5rem;
   text-align: left;
-  display: flex;
-  justify-content: space-between;
 `;
 
 const SettingsPanel = styled.div`
-  pointer-events: auto;
   padding: 15px;
+  pointer-events: auto;
 `;
 
 const DisableButton = styled.button`
-  padding: 4px;
   cursor: pointer;
+  padding: 4px;
 `;
 
 const ModeSettingRenderer = ({
-  setting,
-  onChange
+  onChange,
+  setting
 }: {
-  setting: ModeSetting;
   onChange: (QueryParamChangeEvent) => void;
+  setting: ModeSetting;
 }) => {
   const intl = useIntl();
   const label = intl.formatMessage({
@@ -57,8 +57,8 @@ const ModeSettingRenderer = ({
           label={label}
           name={setting.key}
           onChange={onChange}
-          value={setting.value}
           style={{ marginLeft: "4px" }}
+          value={setting.value}
         />
       );
     case "DROPDOWN":
@@ -67,7 +67,6 @@ const ModeSettingRenderer = ({
           label={label}
           name={setting.key}
           onChange={onChange}
-          value={setting.value}
           options={setting.options.map(o => ({
             ...o,
             text: intl.formatMessage({
@@ -75,6 +74,7 @@ const ModeSettingRenderer = ({
               description: `Metro Mode Selector Setting (${setting.key}) Option Label (${o.value})`
             })
           }))}
+          value={setting.value}
         />
       );
     case "SLIDER":
@@ -104,16 +104,16 @@ const ModeSettingRenderer = ({
 
 interface Props {
   modeButton: ModeButtonDefinition;
+  onDisableMode: () => void;
+  onDismiss: () => void;
   onSettingUpdate: (QueryParamChangeEvent) => void;
   showControls: boolean;
-  onDismiss: () => void;
-  onDisableMode: () => void;
 }
 export default function SubSettingsPane({
   modeButton,
+  onDisableMode,
   onSettingUpdate,
-  showControls,
-  onDisableMode
+  showControls
 }: Props): ReactElement {
   const intl = useIntl();
   const label = generateModeButtonLabel(modeButton.key, intl);

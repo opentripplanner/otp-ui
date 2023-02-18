@@ -1,54 +1,54 @@
 import {
-  useHover,
-  useInteractions,
-  useFloating,
-  offset,
-  shift,
   arrow,
-  safePolygon,
   FloatingPortal,
+  offset,
+  safePolygon,
+  shift,
   useClick,
   useDismiss,
+  useFloating,
+  useHover,
+  useInteractions,
   useRole
 } from "@floating-ui/react-dom-interactions";
 import { ModeButtonDefinition } from "@opentripplanner/types";
-
 import React, { ReactElement, useRef, useState } from "react";
 import styled from "styled-components";
+
 import SubSettingsPane from "./SubSettingsPane";
 
 const ModeBar = styled.div`
   display: inline-grid;
   gap: 0 3px;
-  margin-right: 4px;
   grid-auto-flow: column;
   grid-row: 2;
+  margin-right: 4px;
 `;
 
 const ModeButtonItem = styled.button<{
   ["aria-checked"]?: boolean;
   fillModeIcons?: boolean;
 }>`
-  display: inline-block;
   /* stylelint-disable-next-line property-no-unknown */
   aspect-ratio: 1/1;
-  cursor: pointer;
-  margin: 0;
-  user-select: none;
-  border: 2px solid #084c8d;
-  padding: 0.375rem 0.75rem;
-  border-radius: 5px;
   background: ${props => (props["aria-checked"] ? "#084c8d" : "#fff")};
-  transition: all 250ms cubic-bezier(0.27, 0.01, 0.38, 1.06);
+  border-radius: 5px;
+  border: 2px solid #084c8d;
   color: white;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  padding: 0.375rem 0.75rem;
+  transition: all 250ms cubic-bezier(0.27, 0.01, 0.38, 1.06);
+  user-select: none;
 
   &:not(:last-child) {
-    border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
   }
   &:not(:first-child) {
-    border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
   }
 
   &:hover {
@@ -59,74 +59,74 @@ const ModeButtonItem = styled.button<{
   }
 
   svg {
-    display: block;
-    margin: auto;
-    width: 32px;
-    height: 32px;
-    vertical-align: middle;
-    ${props => props.fillModeIcons && "fill: currentcolor;"}
     color: ${props => (props["aria-checked"] ? "#eee" : "#084c8d")};
+    display: block;
+    ${props => props.fillModeIcons && "fill: currentcolor;"}
+    height: 32px;
+    margin: auto;
+    vertical-align: middle;
+    width: 32px;
   }
 `;
 
 const HoverPanel = styled.div`
-  z-index: 10;
-  width: 75%;
   min-width: 300px;
   padding: 0 10px;
+  width: 75%;
+  z-index: 10;
 `;
 
 const HoverInnerContainer = styled.div`
   background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(0, 123, 255, 0.25);
   color: #2e2e2e;
+  font-size: 90%;
   font-weight: bold;
   padding: 5px;
-  border-radius: 4px;
-  font-size: 90%;
   pointer-events: none;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(0, 123, 255, 0.25);
 `;
 
 const Arrow = styled.div`
-  position: absolute;
   background: #fff;
-  width: 10px;
   height: 10px;
   margin-top: -5px;
+  position: absolute;
   transform: rotate(-45deg);
+  width: 10px;
 `;
 
 interface ModeButtonProps {
-  floatingTarget: HTMLDivElement;
   disableHover?: boolean;
+  fillModeIcons?: boolean;
+  floatingTarget: HTMLDivElement;
   modeButton: ModeButtonDefinition;
   onSettingsUpdate: (QueryParamChangeEvent) => void;
   onToggle: () => void;
-  fillModeIcons?: boolean;
 }
 
 function ModeButton({
-  modeButton,
-  floatingTarget,
-  onToggle,
   disableHover,
+  fillModeIcons,
+  floatingTarget,
+  modeButton,
   onSettingsUpdate,
-  fillModeIcons
+  onToggle
 }: ModeButtonProps) {
   const [open, setOpen] = useState(false);
   const arrowRef = useRef(null);
   const {
     context,
-    x,
-    y,
-    reference,
     floating,
+    middlewareData: { arrow: { x: arrowX, y: arrowY } = {} },
+    reference,
     strategy,
-    middlewareData: { arrow: { x: arrowX, y: arrowY } = {} }
+    x,
+    y
   } = useFloating({
-    open,
+    middleware: [offset(8), shift(), arrow({ element: arrowRef })],
     onOpenChange: setOpen,
-    middleware: [offset(8), shift(), arrow({ element: arrowRef })]
+    open
   });
 
   const modeButtonClicked = () => {

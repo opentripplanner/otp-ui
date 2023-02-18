@@ -16697,8 +16697,8 @@ exports[`Storyshots TripOptions Company First Mixed Category 2`] = `
 }
 
 .c13 {
-  padding-left: 6px;
   font-weight: 300;
+  padding-left: 6px;
 }
 
 .c13 svg {
@@ -17690,8 +17690,8 @@ exports[`Storyshots TripOptions Default 2`] = `
 }
 
 .c13 {
-  padding-left: 6px;
   font-weight: 300;
+  padding-left: 6px;
 }
 
 .c13 svg {

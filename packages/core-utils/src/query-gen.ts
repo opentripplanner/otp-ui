@@ -1,18 +1,18 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+import { LonLatOutput } from "@conveyal/lonlat";
 import { print } from "graphql";
 import {
   ModeSetting,
   ModeSettingValues,
   TransportMode
 } from "@opentripplanner/types";
-import { LonLatOutput } from "@conveyal/lonlat";
+
 import PlanQuery from "./planQuery.graphql";
 
 type OTPQueryParams = {
-  to: LonLatOutput & { name?: string };
   from: LonLatOutput & { name?: string };
-  modes: Array<TransportMode>;
+  modes: TransportMode[];
   modeSettings: ModeSetting[];
+  to: LonLatOutput & { name?: string };
 };
 
 type GraphQLQuery = {
@@ -30,7 +30,7 @@ type GraphQLQuery = {
 export function extractAdditionalModes(
   modeSettings: ModeSetting[],
   enabledModes: TransportMode[]
-): Array<TransportMode> {
+): TransportMode[] {
   return modeSettings.reduce<TransportMode[]>((prev, cur) => {
     // First, ensure that the mode associated with this setting is even enabled
     if (!enabledModes.map(m => m.mode).includes(cur.applicableMode)) {
@@ -91,12 +91,66 @@ export const SIMPLIFICATIONS = {
   WALK: "WALK"
 };
 
+// Inclusion of "TRANSIT" alone automatically implies "WALK" in OTP
+const VALID_COMBOS = [
+  ["WALK"],
+  ["PERSONAL"],
+  ["TRANSIT", "SHARED"],
+  ["WALK", "SHARED"],
+  ["TRANSIT"],
+  ["TRANSIT", "PERSONAL"],
+  ["TRANSIT", "CAR"]
+];
+
+const BANNED_TOGETHER = ["SCOOTER", "BICYCLE"];
+
 export const TRANSIT_SUBMODES = Object.keys(SIMPLIFICATIONS).filter(
   mode => SIMPLIFICATIONS[mode] === "TRANSIT" && mode !== "TRANSIT"
 );
 export const TRANSIT_SUBMODES_AND_TRANSIT = Object.keys(SIMPLIFICATIONS).filter(
   mode => SIMPLIFICATIONS[mode] === "TRANSIT"
 );
+
+function isCombinationValid(
+  combo: TransportMode[],
+  queryTransitSubmodes: string[]
+): boolean {
+  if (combo.length === 0) return false;
+
+  // All current qualifiers currently simplify to "SHARED"
+  const simplifiedModes = Array.from(
+    new Set(combo.map(c => (c.qualifier ? "SHARED" : SIMPLIFICATIONS[c.mode])))
+  );
+
+  // Ensure that if we have one transit mode, then we include ALL transit modes
+  if (simplifiedModes.includes("TRANSIT")) {
+    // Don't allow TRANSIT along with any other submodes
+    if (queryTransitSubmodes.length && combo.find(c => c.mode === "TRANSIT")) {
+      return false;
+    }
+
+    if (
+      combo.reduce((prev, cur) => {
+        if (queryTransitSubmodes.includes(cur.mode)) {
+          return prev - 1;
+        }
+        return prev;
+      }, queryTransitSubmodes.length) !== 0
+    ) {
+      return false;
+    }
+    // Continue to the other checks
+  }
+
+  // OTP doesn't support multiple non-walk modes
+  if (BANNED_TOGETHER.every(m => combo.find(c => c.mode === m))) return false;
+
+  return !!VALID_COMBOS.find(
+    vc =>
+      simplifiedModes.every(m => vc.includes(m)) &&
+      vc.every(m => simplifiedModes.includes(m))
+  );
+}
 
 /**
  * Generates list of queries for OTP to get a comprehensive
@@ -105,18 +159,6 @@ export const TRANSIT_SUBMODES_AND_TRANSIT = Object.keys(SIMPLIFICATIONS).filter(
  * @returns Set of parameters to generate queries
  */
 export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
-  const VALID_COMBOS = [
-    ["WALK"],
-    ["PERSONAL"],
-    ["TRANSIT", "SHARED"],
-    ["WALK", "SHARED"],
-    ["TRANSIT"],
-    ["TRANSIT", "PERSONAL"],
-    ["TRANSIT", "CAR"]
-  ];
-
-  const BANNED_TOGETHER = ["SCOOTER", "BICYCLE"];
-
   const completeModeList = [
     ...extractAdditionalModes(params.modeSettings, params.modes),
     ...params.modes
@@ -128,55 +170,12 @@ export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
     .map(mode => mode.mode);
 
   return combinations(completeModeList)
-    .filter(combo => {
-      if (combo.length === 0) return false;
-
-      // All current qualifiers currently simplify to "SHARED"
-      const simplifiedModes = Array.from(
-        new Set(
-          combo.map(c => (c.qualifier ? "SHARED" : SIMPLIFICATIONS[c.mode]))
-        )
-      );
-
-      // Ensure that if we have one transit mode, then we include ALL transit modes
-      if (simplifiedModes.includes("TRANSIT")) {
-        // Don't allow TRANSIT along with any other submodes
-        if (
-          queryTransitSubmodes.length &&
-          combo.find(c => c.mode === "TRANSIT")
-        ) {
-          return false;
-        }
-
-        if (
-          combo.reduce((prev, cur) => {
-            if (queryTransitSubmodes.includes(cur.mode)) {
-              return prev - 1;
-            }
-            return prev;
-          }, queryTransitSubmodes.length) !== 0
-        ) {
-          return false;
-        }
-        // Continue to the other checks
-      }
-
-      // OTP doesn't support multiple non-walk modes
-      if (BANNED_TOGETHER.every(m => combo.find(c => c.mode === m)))
-        return false;
-
-      return !!VALID_COMBOS.find(
-        vc =>
-          simplifiedModes.every(m => vc.includes(m)) &&
-          vc.every(m => simplifiedModes.includes(m))
-      );
-    })
+    .filter(combo => isCombinationValid(combo, queryTransitSubmodes))
     .map(combo => ({ ...params, modes: combo }));
 }
 
-// eslint-disable-next-line import/prefer-default-export
 export function generateOtp2Query(params: OTPQueryParams): GraphQLQuery {
-  const { to, from, modeSettings } = params;
+  const { from, modeSettings, to } = params;
 
   // This extracts the values from the mode settings to key value pairs
   const modeSettingValues = modeSettings.reduce((prev, cur) => {
@@ -185,22 +184,22 @@ export function generateOtp2Query(params: OTPQueryParams): GraphQLQuery {
   }, {}) as ModeSettingValues;
 
   const {
-    walkReluctance,
-    wheelchair,
     bikeReluctance,
-    carReluctance
+    carReluctance,
+    walkReluctance,
+    wheelchair
   } = modeSettingValues;
 
   return {
     query: print(PlanQuery),
     variables: {
-      fromPlace: `${from.name}::${from.lat},${from.lon}}`,
-      toPlace: `${to.name}::${to.lat},${to.lon}}`,
-      modes: params.modes,
-      walkReluctance,
-      wheelchair,
       bikeReluctance,
-      carReluctance
+      carReluctance,
+      fromPlace: `${from.name}::${from.lat},${from.lon}}`,
+      modes: params.modes,
+      toPlace: `${to.name}::${to.lat},${to.lon}}`,
+      walkReluctance,
+      wheelchair
     }
   };
 }
