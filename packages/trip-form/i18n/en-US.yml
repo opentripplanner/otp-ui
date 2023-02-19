@@ -67,7 +67,7 @@ otpUi:
       bikeReluctance-labelHigh: Less biking
       bikeReluctance-label: Bike Reluctance
       allowBikeRental-label: Bike Rental
-      carReluctance-label: Drive Relcutance
+      carReluctance-label: Drive Reluctance
       carReluctance-labelHigh: More Driving
       carReluctance-labelLow: Less Driving
       wheelchair-label: Accessible Routing
