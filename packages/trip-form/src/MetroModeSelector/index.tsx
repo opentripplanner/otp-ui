@@ -26,12 +26,11 @@ const ModeBar = styled.div`
 `;
 
 const ModeButtonItem = styled.button<{
-  ["aria-checked"]?: boolean;
   fillModeIcons?: boolean;
 }>`
   /* stylelint-disable-next-line property-no-unknown */
   aspect-ratio: 1/1;
-  background: ${props => (props["aria-checked"] ? "#084c8d" : "#fff")};
+  background: #fff;
   border-radius: 5px;
   border: 2px solid #084c8d;
   color: white;
@@ -52,20 +51,32 @@ const ModeButtonItem = styled.button<{
   }
 
   &:hover {
-    background: ${props => (props["aria-checked"] ? "#0e5faa" : "#eee")};
+    background: #eee;
     border-color: #0e5faa;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05),
       0 4px 10px rgba(0, 123, 255, 0.25);
   }
 
+  &[aria-checked="true"] {
+    background: #084c8d;
+  }
+
+  &[aria-checked="true"]:hover {
+    background: #0e5faa;
+  }
+
   svg {
-    color: ${props => (props["aria-checked"] ? "#eee" : "#084c8d")};
+    color: #084c8d;
     display: block;
     ${props => props.fillModeIcons && "fill: currentcolor;"}
     height: 32px;
     margin: auto;
     vertical-align: middle;
     width: 32px;
+  }
+
+  &[aria-checked="true"] > svg {
+    color: #eee;
   }
 `;
 
@@ -99,7 +110,7 @@ const Arrow = styled.div`
 interface ModeButtonProps {
   disableHover?: boolean;
   fillModeIcons?: boolean;
-  floatingTarget: HTMLDivElement;
+  floatingTarget?: HTMLDivElement;
   modeButton: ModeButtonDefinition;
   onSettingsUpdate: (QueryParamChangeEvent) => void;
   onToggle: () => void;
@@ -171,8 +182,8 @@ function ModeButton({
         // This library relies on prop spreading
         /* eslint-disable-next-line react/jsx-props-no-spreading */
         {...getReferenceProps()}
-        aria-expanded={null}
-        aria-checked={modeButton.enabled}
+        aria-expanded={undefined}
+        aria-checked={modeButton.enabled ?? false}
         aria-label={modeButton.label}
         fillModeIcons={fillModeIcons !== false}
       >
@@ -202,7 +213,7 @@ function ModeButton({
               <SubSettingsPane
                 modeButton={modeButton}
                 onSettingUpdate={onSettingsUpdate}
-                showControls={disableHover}
+                showControls={disableHover ?? false}
                 onDismiss={() => {
                   setOpen(false);
                 }}

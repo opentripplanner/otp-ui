@@ -52,7 +52,7 @@ otpUi:
     use: Use # as in "Use bus, train, subway".
     useCompanies: Use companies # as in :"Use companies: Spin, Lime, Bolt"
     walkOnly: Walk Only
-  modeSelector:
+  ModeSelector:
     labels:
       TRANSIT: Transit
       BICYCLE: Bike

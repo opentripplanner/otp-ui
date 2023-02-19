@@ -15,40 +15,40 @@ export default function generateModeButtonLabel(
   switch (key) {
     case "TRANSIT":
       return intl.formatMessage({
-        id: `otpUi.modeSelector.labels.TRANSIT`,
+        id: `otpUi.ModeSelector.labels.TRANSIT`,
         description: `Metro Mode Selector Label (TRANSIT)`,
-        defaultMessage: defaultMessages[`otpUi.modeSelector.labels.TRANSIT`]
+        defaultMessage: defaultMessages[`otpUi.ModeSelector.labels.TRANSIT`]
       });
     case "WALK":
       return intl.formatMessage({
-        id: `otpUi.modeSelector.labels.WALK`,
+        id: `otpUi.ModeSelector.labels.WALK`,
         description: `Metro Mode Selector Label (WALK)`,
-        defaultMessage: defaultMessages[`otpUi.modeSelector.labels.WALK`]
+        defaultMessage: defaultMessages[`otpUi.ModeSelector.labels.WALK`]
       });
     case "BICYCLE":
       return intl.formatMessage({
-        id: `otpUi.modeSelector.labels.BICYCLE`,
+        id: `otpUi.ModeSelector.labels.BICYCLE`,
         description: `Metro Mode Selector Label (BICYCLE)`,
-        defaultMessage: defaultMessages[`otpUi.modeSelector.labels.BICYCLE`]
+        defaultMessage: defaultMessages[`otpUi.ModeSelector.labels.BICYCLE`]
       });
     case "CAR":
       return intl.formatMessage({
-        id: `otpUi.modeSelector.labels.CAR`,
+        id: `otpUi.ModeSelector.labels.CAR`,
         description: `Metro Mode Selector Label (CAR)`,
-        defaultMessage: defaultMessages[`otpUi.modeSelector.labels.CAR`]
+        defaultMessage: defaultMessages[`otpUi.ModeSelector.labels.CAR`]
       });
     case "RENT":
       return intl.formatMessage({
-        id: `otpUi.modeSelector.labels.RENT`,
+        id: `otpUi.ModeSelector.labels.RENT`,
         description: `Metro Mode Selector Label (RENT)`,
-        defaultMessage: defaultMessages[`otpUi.modeSelector.labels.RENT`]
+        defaultMessage: defaultMessages[`otpUi.ModeSelector.labels.RENT`]
       });
     // Default case adds support for custom mode buttons
     default:
       return intl.formatMessage({
-        id: `otpUi.modeSelector.labels.${key}`,
+        id: `otpUi.ModeSelector.labels.${key}`,
         description: `Metro Mode Selector Label (${key})`,
-        defaultMessage: defaultMessages[`otpUi.modeSelector.labels.${key}`]
+        defaultMessage: defaultMessages[`otpUi.ModeSelector.labels.${key}`]
       });
   }
 }

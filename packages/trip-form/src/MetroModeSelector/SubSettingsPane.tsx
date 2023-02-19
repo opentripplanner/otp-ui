@@ -44,10 +44,10 @@ const ModeSettingRenderer = ({
 }) => {
   const intl = useIntl();
   const label = intl.formatMessage({
-    id: `otpUi.modeSelector.settings.${setting.key}-label`,
+    id: `otpUi.ModeSelector.settings.${setting.key}-label`,
     description: `Metro Mode Selector Setting Label (${setting.key})`,
     defaultMessage:
-      defaultMessages[`otpUi.modeSelector.settings.${setting.key}-label`]
+      defaultMessages[`otpUi.ModeSelector.settings.${setting.key}-label`]
   });
 
   switch (setting.type) {
@@ -70,7 +70,7 @@ const ModeSettingRenderer = ({
           options={setting.options.map(o => ({
             ...o,
             text: intl.formatMessage({
-              id: `otpUi.modeSelector.settings.${setting.key}-options-${o.value}`,
+              id: `otpUi.ModeSelector.settings.${setting.key}-options-${o.value}`,
               description: `Metro Mode Selector Setting (${setting.key}) Option Label (${o.value})`
             })
           }))}
@@ -82,11 +82,11 @@ const ModeSettingRenderer = ({
         <SliderSelector
           label={label}
           labelHigh={intl.formatMessage({
-            id: `otpUi.modeSelector.settings.${setting.key}-labelHigh`,
+            id: `otpUi.ModeSelector.settings.${setting.key}-labelHigh`,
             description: `Metro Mode Selector Setting Label High (${setting.key})`
           })}
           labelLow={intl.formatMessage({
-            id: `otpUi.modeSelector.settings.${setting.key}-labelLow`,
+            id: `otpUi.ModeSelector.settings.${setting.key}-labelLow`,
             description: `Metro Mode Selector Setting Label Low (${setting.key})`
           })}
           max={setting.high}
@@ -127,7 +127,7 @@ export default function SubSettingsPane({
           </DisableButton>
         )}
       </Header>
-      {modeButton.modeSettings.map(setting => (
+      {modeButton.modeSettings?.map(setting => (
         <div key={setting.key}>
           <ModeSettingRenderer
             setting={setting}
