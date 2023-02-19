@@ -9,24 +9,28 @@ import SliderSelector from "./SliderSelector";
 import * as Styled from "./styled";
 import SubmodeSelector from "./SubmodeSelector";
 import MetroModeSelector from "./MetroModeSelector";
-import { useModeState } from "./MetroModeSelector/utils";
+import {
+  getActivatedModesFromQueryParams,
+  useModeState
+} from "./MetroModeSelector/utils";
 import TripOptions, { Styled as TripOptionsStyled } from "./TripOptions";
 import defaultModeSettings from "../modeSettings.yml";
 
 export {
   CheckboxSelector,
   DateTimeSelector,
+  defaultModeSettings,
   DropdownSelector,
   GeneralSettingsPanel,
+  getActivatedModesFromQueryParams,
+  MetroModeSelector,
   ModeButton,
   ModeSelector,
-  MetroModeSelector,
   SettingsSelectorPanel,
   SliderSelector,
+  Styled,
   SubmodeSelector,
   TripOptions,
   TripOptionsStyled,
-  Styled,
-  useModeState,
-  defaultModeSettings
+  useModeState
 };
