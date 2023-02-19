@@ -12,7 +12,7 @@ import {
   useRole
 } from "@floating-ui/react-dom-interactions";
 import { ModeButtonDefinition } from "@opentripplanner/types";
-import React, { ReactElement, useRef, useState } from "react";
+import React, { ReactElement, useCallback, useRef, useState } from "react";
 import styled from "styled-components";
 
 import SubSettingsPane from "./SubSettingsPane";
@@ -226,12 +226,28 @@ function ModeButton({
     </>
   );
 }
-
 interface Props {
+  /**
+   * Switches mode selector into click rather than hover mode, for mobile use.
+   */
   disableHover?: boolean;
+  /**
+   * List of mode buttons to be displayed
+   */
   modeButtons?: ModeButtonDefinition[];
+  /**
+   * Event handler for settings changes
+   * @param QueryParamChangeEvent Event from when the mode settings change
+   */
   onSettingsUpdate: (QueryParamChangeEvent) => void;
+  /**
+   * Event for when a mode button is toggled
+   * @param key Mode button to be toggled
+   */
   onToggleModeButton: (key) => void;
+  /**
+   * Whether to fill the mode buttons with a color
+   */
   fillModeIcons?: boolean;
 }
 
@@ -248,9 +264,9 @@ export default function ModeSelector({
       <ModeBar className="metro-mode-selector">
         {modeButtons.map(combination => (
           <ModeButton
-            onToggle={() => {
+            onToggle={useCallback(() => {
               onToggleModeButton(combination.key);
-            }}
+            }, [combination])}
             key={combination.label}
             modeButton={combination}
             floatingTarget={floatingTarget.current}
