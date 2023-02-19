@@ -698,6 +698,7 @@ export type DropdownOptions = {
 export type SliderOptions = {
   default?: number;
   high: number;
+  inverseKey?: string;
   label: string;
   labelHigh: string;
   labelLow: string;

@@ -60,16 +60,16 @@ otpUi:
       CAR: Drive
       RENT: Rent
     settings:
-      walkReluctance-labelLow: More walking
-      walkReluctance-labelHigh: Less walking
-      walkReluctance-label: Walk Reluctance
-      bikeReluctance-labelLow: More biking
-      bikeReluctance-labelHigh: Less biking
-      bikeReluctance-label: Bike Reluctance
+      walkTolerance-labelLow: More walking
+      walkTolerance-labelHigh: Less walking
+      walkTolerance-label: Walk Tolerance
+      bikeTolerance-labelLow: More biking
+      bikeTolerance-labelHigh: Less biking
+      bikeTolerance-label: Bike Tolerance
       allowBikeRental-label: Bike Rental
-      carReluctance-label: Drive Reluctance
-      carReluctance-labelHigh: More Driving
-      carReluctance-labelLow: Less Driving
+      carTolerance-label: Drive Tolerance
+      carTolerance-labelHigh: More Driving
+      carTolerance-labelLow: Less Driving
       wheelchair-label: Accessible Routing
       addBus-label: Bus
       addRail-label: Train
