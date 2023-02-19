@@ -35,6 +35,10 @@ const DisableButton = styled.button`
   padding: 4px;
 `;
 
+const SubSettingsCheckbox = styled(CheckboxSelector)`
+  margin-left: 4px;
+`;
+
 const ModeSettingRenderer = ({
   onChange,
   setting
@@ -53,11 +57,10 @@ const ModeSettingRenderer = ({
   switch (setting.type) {
     case "CHECKBOX":
       return (
-        <CheckboxSelector
+        <SubSettingsCheckbox
           label={label}
           name={setting.key}
           onChange={onChange}
-          style={{ marginLeft: "4px" }}
           value={setting.value}
         />
       );
