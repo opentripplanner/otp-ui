@@ -73,7 +73,7 @@ const BaseMap = ({
 
   // On mobile hover is unavailable, so we use this variable to use a two tap process
   // to simulate a hover
-  const [fakeMobileHover, setFakeMobileHover] = useState(false);
+  const [fakeMobileHover, setFakeHover] = useState(false);
   const [longPressTimer, setLongPressTimer] = useState(null);
 
   useEffect(() => {
@@ -132,7 +132,7 @@ const BaseMap = ({
         clearTimeout(longPressTimer);
       }}
       onTouchStart={e => {
-        setFakeMobileHover(false);
+        setFakeHover(false);
         setLongPressTimer(setTimeout(() => onContextMenu(e), 600));
       }}
       onTouchCancel={() => {
@@ -151,9 +151,27 @@ const BaseMap = ({
         <Styled.LayerSelector
           className="filter-group"
           id="filter-group"
-          onFocus={() => setFakeMobileHover(true)}
+          onFocus={() => setFakeHover(true)}
+          onBlur={e => {
+            // Identify the first and last item in the list
+            // by doing this, we can determine if we should close the list when
+            // we leave it via keyboard
+
+            // Every list item fires a blur event, so we need to ignore some of them
+            if (typeof toggleableLayers === "object") {
+              const firstId =
+                typeof baseLayer === "object"
+                  ? "first-layer"
+                  : toggleableLayers[0].id;
+
+              const lastId = toggleableLayers[toggleableLayers.length - 1].id;
+              if (e.target.id === firstId || e.target.id === lastId) {
+                setFakeHover(false);
+              }
+            }
+          }}
           onTouchEnd={() => {
-            setFakeMobileHover(true);
+            setFakeHover(true);
           }}
           tabIndex={0}
         >
@@ -164,7 +182,7 @@ const BaseMap = ({
               typeof baseLayer === "object" &&
               baseLayer.map((layer: string, index: number) => {
                 return (
-                  <li key={index}>
+                  <li key={index} id={index === 0 ? "first-layer" : ""}>
                     {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                     <label>
                       <input
