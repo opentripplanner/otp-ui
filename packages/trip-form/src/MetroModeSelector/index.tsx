@@ -110,7 +110,6 @@ const Arrow = styled.div`
 interface ModeButtonProps {
   disableHover?: boolean;
   fillModeIcons?: boolean;
-  floatingTarget?: HTMLDivElement;
   modeButton: ModeButtonDefinition;
   onSettingsUpdate: (QueryParamChangeEvent) => void;
   onToggle: () => void;
@@ -119,7 +118,6 @@ interface ModeButtonProps {
 function ModeButton({
   disableHover,
   fillModeIcons,
-  floatingTarget,
   modeButton,
   onSettingsUpdate,
   onToggle
@@ -189,10 +187,7 @@ function ModeButton({
       >
         <modeButton.Icon size={32} />
       </ModeButtonItem>
-      <FloatingPortal
-        root={floatingTarget}
-        id="otp-ui-metro-mode-selector-hover"
-      >
+      <FloatingPortal id="otp-ui-metro-mode-selector-hover">
         {open && modeButton.enabled && (
           <HoverPanel
             // This library relies on prop spreading
@@ -258,7 +253,6 @@ export default function ModeSelector({
   disableHover,
   fillModeIcons
 }: Props): ReactElement {
-  const floatingTarget = useRef(null);
   return (
     <>
       <ModeBar className="metro-mode-selector">
@@ -269,7 +263,6 @@ export default function ModeSelector({
             }, [combination])}
             key={combination.label}
             modeButton={combination}
-            floatingTarget={floatingTarget.current}
             onSettingsUpdate={onSettingsUpdate}
             disableHover={disableHover}
             fillModeIcons={fillModeIcons}
@@ -278,7 +271,7 @@ export default function ModeSelector({
       </ModeBar>
       {/* TODO: Get the ref based portal to work, rather than using IDs. */}
       {/* Alternatively, use some fancy CSS. */}
-      <div ref={floatingTarget} id="otp-ui-metro-mode-selector-hover" />
+      <div id="otp-ui-metro-mode-selector-hover" />
     </>
   );
 }
