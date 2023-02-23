@@ -171,8 +171,12 @@ function ModeButton({
     setOpen(false);
   };
 
+  const renderDropdown = open && modeButton.enabled;
+
   return (
     <>
+      {/* useRole adds aria-controls */}
+      {/* eslint-disable-next-line jsx-a11y/role-supports-aria-props */}
       <ModeButtonItem
         className={modeButton.enabled ? "enabled" : ""}
         ref={reference}
@@ -180,19 +184,24 @@ function ModeButton({
         // This library relies on prop spreading
         /* eslint-disable-next-line react/jsx-props-no-spreading */
         {...getReferenceProps()}
-        aria-expanded={undefined}
+        aria-expanded={renderDropdown}
         aria-checked={modeButton.enabled ?? false}
         aria-label={modeButton.label}
+        title={modeButton.label}
+        // Defaults to true
         fillModeIcons={fillModeIcons !== false}
       >
         <modeButton.Icon size={32} />
       </ModeButtonItem>
       <FloatingPortal id="otp-ui-metro-mode-selector-hover">
-        {open && modeButton.enabled && (
+        {renderDropdown && (
           <HoverPanel
             // This library relies on prop spreading
+            // useRole adds aria-haspopup and aria-controls
             // eslint-disable-next-line react/jsx-props-no-spreading
             {...getFloatingProps()}
+            // Matches ID on Header element in SubSettingsPane
+            aria-labelledby={`metro-mode-selector-${modeButton.key}-button-label`}
             ref={floating}
             style={{
               position: strategy,

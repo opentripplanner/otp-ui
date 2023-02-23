@@ -130,7 +130,7 @@ export default function SubSettingsPane({
   const label = generateModeButtonLabel(modeButton.key, intl);
   return (
     <SettingsPanel>
-      <Header>
+      <Header id={`metro-mode-selector-${modeButton.key}-button-label`}>
         {label}
         {showControls && (
           <DisableButton type="button" onClick={onDisableMode}>
