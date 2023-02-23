@@ -10,7 +10,7 @@ import {
   useHover,
   useInteractions,
   useRole
-} from "@floating-ui/react-dom-interactions";
+} from "@floating-ui/react";
 import { ModeButtonDefinition } from "@opentripplanner/types";
 import React, { ReactElement, useCallback, useRef, useState } from "react";
 import styled from "styled-components";
