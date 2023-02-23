@@ -164,7 +164,10 @@ const BaseMap = ({
                   ? "first-layer"
                   : toggleableLayers[0].id;
 
-              const lastId = toggleableLayers[toggleableLayers.length - 1].id;
+              const lastId =
+                toggleableLayers && toggleableLayers?.length > 0
+                  ? toggleableLayers[toggleableLayers.length - 1].id
+                  : baseLayer[baseLayer.length - 1];
               if (e.target.id === firstId || e.target.id === lastId) {
                 setFakeHover(false);
               }
