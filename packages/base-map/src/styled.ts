@@ -84,7 +84,10 @@ export const LayerSelector = styled.aside`
     right: 0;
 
     label {
-      display: none;
+      display: block;
+      height: 0;
+      overflow: hidden;
+      width: 0;
 
       input {
         margin-right: 1ch;
@@ -101,6 +104,9 @@ export const LayerSelector = styled.aside`
     &.fake-mobile-hover {
       label {
         display: block;
+        height: unset;
+        overflow: unset;
+        width: unset;
       }
       &::after {
         display: none;

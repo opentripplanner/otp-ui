@@ -151,32 +151,9 @@ const BaseMap = ({
         <Styled.LayerSelector
           className="filter-group"
           id="filter-group"
+          onBlur={() => setFakeHover(false)}
           onFocus={() => setFakeHover(true)}
-          onBlur={e => {
-            // Identify the first and last item in the list
-            // by doing this, we can determine if we should close the list when
-            // we leave it via keyboard
-
-            // Every list item fires a blur event, so we need to ignore some of them
-            if (typeof toggleableLayers === "object") {
-              const firstId =
-                typeof baseLayer === "object"
-                  ? "first-layer"
-                  : toggleableLayers[0].id;
-
-              const lastId =
-                toggleableLayers && toggleableLayers?.length > 0
-                  ? toggleableLayers[toggleableLayers.length - 1].id
-                  : baseLayer[baseLayer.length - 1];
-              if (e.target.id === firstId || e.target.id === lastId) {
-                setFakeHover(false);
-              }
-            }
-          }}
-          onTouchEnd={() => {
-            setFakeHover(true);
-          }}
-          tabIndex={0}
+          onTouchEnd={() => setFakeHover(true)}
         >
           <ul
             className={`layers-list ${fakeMobileHover && "fake-mobile-hover"}`}
@@ -185,7 +162,7 @@ const BaseMap = ({
               typeof baseLayer === "object" &&
               baseLayer.map((layer: string, index: number) => {
                 return (
-                  <li key={index} id={index === 0 ? "first-layer" : ""}>
+                  <li key={index}>
                     {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                     <label>
                       <input
