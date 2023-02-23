@@ -124,6 +124,7 @@ const FareTypeTable = ({
                   key={col.key}
                   title={
                     "transferAmount" in fare &&
+                    fare?.transferAmount &&
                     intl.formatMessage(
                       {
                         defaultMessage:
@@ -148,7 +149,7 @@ const FareTypeTable = ({
                   }
                 >
                   {(("isTransfer" in fare && fare?.isTransfer) ||
-                    "transferAmount" in fare) && (
+                    ("transferAmount" in fare && fare?.transferAmount)) && (
                     <>
                       <TransferIcon size={16} />{" "}
                     </>
@@ -197,7 +198,7 @@ const FareLegDetails = ({
       })
       .filter(leg => leg.transitLeg);
   } else {
-    // OTP2 Logic
+    // OTP2 Logic using core-utils function
     legsWithFares = getLegsWithFares(itinerary).filter(leg => leg.transitLeg);
   }
 

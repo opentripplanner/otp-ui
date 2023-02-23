@@ -18,6 +18,7 @@ import { useIntl, FormattedMessage } from "react-intl";
 import DropdownControl from "./dropdown";
 import {
   GeocodedOptionIcon,
+  ICON_SIZE,
   Option,
   StoredPlaceName,
   TransitStopOption,
@@ -35,7 +36,7 @@ function DefaultLocationIcon({
 }: {
   locationType: string;
 }): React.ReactElement {
-  return <LocationIcon size={13} type={locationType} />;
+  return <LocationIcon size={ICON_SIZE} type={locationType} />;
 }
 
 /**
@@ -116,11 +117,11 @@ const LocationField = ({
   addLocationSearch = () => {},
   autoFocus = false,
   className = null,
-  clearButtonIcon = <Times size={13} />,
+  clearButtonIcon = <Times size={ICON_SIZE} />,
   clearLocation = () => {},
   currentPosition = null,
-  currentPositionIcon = <LocationArrow size={13} />,
-  currentPositionUnavailableIcon = <Ban size={13} />,
+  currentPositionIcon = <LocationArrow size={ICON_SIZE} />,
+  currentPositionUnavailableIcon = <Ban size={ICON_SIZE} />,
   findNearbyStops = () => {},
   GeocodedOptionIconComponent = GeocodedOptionIcon,
   geocoderConfig,
@@ -140,12 +141,12 @@ const LocationField = ({
   onTextInputClick = null,
   operatorIconMap = {},
   preferredLayers = [],
-  sessionOptionIcon = <Search size={13} />,
+  sessionOptionIcon = <Search size={ICON_SIZE} />,
   sessionSearches = [],
   showClearButton = true,
   showUserSettings = false,
   sortByDistance = false,
-  stopOptionIcon = <Bus size={13} />,
+  stopOptionIcon = <Bus size={ICON_SIZE} />,
   stopsIndex = null,
   suggestionCount = 3,
   suppressNearby = false,
@@ -167,6 +168,7 @@ const LocationField = ({
   const [activeIndex, setActiveIndex] = useState(null);
   const [stateGeocodedFeatures, setGeocodedFeatures] = useState([]);
   const [menuVisible, setMenuVisible] = useState(false);
+  const [isFetching, setFetching] = useState(false);
   const [stateMessage, setMessage] = useState(null);
   const [stateValue, setValue] = useState(getValueFromLocation());
 
@@ -195,6 +197,16 @@ const LocationField = ({
           setMessage(null);
           return;
         }
+        setFetching(true);
+        setMessage(
+          intl.formatMessage({
+            defaultMessage: "Fetching suggestions…",
+            description:
+              "Hint shown while geocoder suggestions are being fetched",
+            id: "otpUi.LocationField.fetchingSuggestions"
+          })
+        );
+
         getGeocoder(geocoderConfig)
           .autocomplete({ text })
           // TODO: Better type?
@@ -233,6 +245,7 @@ const LocationField = ({
               }
               setGeocodedFeatures(geocodedFeatures);
               setMessage(message);
+              setFetching(false);
             }
           )
           .catch((err: unknown) => {
@@ -723,13 +736,13 @@ const LocationField = ({
   }
   if (message) {
     if (geocodedFeatures.length === 0) {
+      const icon = isFetching ? (
+        <S.Spinner size={ICON_SIZE} />
+      ) : (
+        <ExclamationCircle size={ICON_SIZE} />
+      );
       menuItems.unshift(
-        <Option
-          disabled
-          icon={<ExclamationCircle size={20} />}
-          key={optionKey++}
-          title={message}
-        />
+        <Option disabled icon={icon} key={optionKey++} title={message} />
       );
     }
     statusMessages.push(message);
