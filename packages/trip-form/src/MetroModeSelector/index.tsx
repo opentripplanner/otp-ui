@@ -1,12 +1,13 @@
 import {
   arrow,
-  FloatingPortal,
+  FloatingFocusManager,
   offset,
   safePolygon,
   shift,
   useClick,
   useDismiss,
   useFloating,
+  useFocus,
   useHover,
   useInteractions,
   useRole
@@ -41,7 +42,7 @@ const ModeButtonItem = styled.button<{
   transition: all 250ms cubic-bezier(0.27, 0.01, 0.38, 1.06);
   user-select: none;
 
-  &:not(:last-child) {
+  &:not(:last-of-type) {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
   }
@@ -158,6 +159,7 @@ function ModeButton({
         buffer: 0
       })
     }),
+    useFocus(context, { keyboardOnly: true }),
     useClick(context, { enabled: disableHover }),
     useRole(context),
     useDismiss(context),
@@ -193,8 +195,8 @@ function ModeButton({
       >
         <modeButton.Icon size={32} />
       </ModeButtonItem>
-      <FloatingPortal id="otp-ui-metro-mode-selector-hover">
-        {renderDropdown && (
+      {renderDropdown && (
+        <FloatingFocusManager context={context} modal={false}>
           <HoverPanel
             // This library relies on prop spreading
             // useRole adds aria-haspopup and aria-controls
@@ -225,8 +227,8 @@ function ModeButton({
               />
             </HoverInnerContainer>
           </HoverPanel>
-        )}
-      </FloatingPortal>
+        </FloatingFocusManager>
+      )}
     </>
   );
 }
@@ -278,9 +280,6 @@ export default function ModeSelector({
           />
         ))}
       </ModeBar>
-      {/* TODO: Get the ref based portal to work, rather than using IDs. */}
-      {/* Alternatively, use some fancy CSS. */}
-      <div id="otp-ui-metro-mode-selector-hover" />
     </>
   );
 }
