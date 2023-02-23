@@ -43,6 +43,18 @@ const defaultModeButtonDefinitions = [
   }
 ];
 
+const modeSettingDefinitionsWithDropdown = [
+  ...modeSettingDefinitions,
+  {
+    applicableMode: "TRANSIT",
+    type: "DROPDOWN",
+    key: "busColor",
+    default: "blue",
+    label: "Bus Color",
+    options: [{ value: "blue" }]
+  }
+];
+
 const MetroModeSelectorComponent = ({
   disableHover,
   modeButtonDefinitions,
@@ -65,7 +77,7 @@ const MetroModeSelectorComponent = ({
   } = Core.useModeState(
     modeButtonDefinitions,
     initialState,
-    modeSettingDefinitions,
+    modeSettingDefinitionsWithDropdown,
     {
       queryParamState: false
     }
