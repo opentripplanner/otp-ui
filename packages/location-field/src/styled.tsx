@@ -191,6 +191,7 @@ export const MenuItem = ({
   disabled = false,
   fgColor = null,
   header = false,
+  id,
   level = 1,
   onClick = null,
   role = undefined
@@ -202,6 +203,7 @@ export const MenuItem = ({
   disabled?: boolean;
   fgColor?: string;
   header?: boolean;
+  id?: string;
   level?: number;
   onClick?: () => void;
   role?: string;
@@ -230,6 +232,7 @@ export const MenuItem = ({
     >
       <MenuItemA
         active={active}
+        id={id}
         onClick={handleClick}
         role="option"
         tabIndex={-1}

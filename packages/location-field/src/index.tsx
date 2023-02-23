@@ -28,6 +28,8 @@ import {
 import * as S from "./styled";
 import { generateLabel, getCombinedLabel } from "./utils";
 
+const optionIdPrefix = "otpui-locf-option-";
+
 // FIXME have a better key generator for options
 let optionKey = 0;
 
@@ -442,6 +444,7 @@ const LocationField = ({
         classes={classNames.join(" ")}
         color={layerColorMap[layer]}
         icon={operatorIcon || <GeocodedOptionIconComponent feature={feature} />}
+        id={`${optionIdPrefix}${itemIndex}`}
         isActive={itemIndex === activeIndex}
         key={optionKey++}
         onClick={locationSelected}
@@ -566,6 +569,7 @@ const LocationField = ({
         // Create and return the option menu item
         const option = (
           <TransitStopOption
+            id={`${optionIdPrefix}${itemIndex}`}
             isActive={itemIndex === activeIndex}
             key={optionKey++}
             onClick={locationSelected}
@@ -610,6 +614,7 @@ const LocationField = ({
         const option = (
           <Option
             icon={sessionOptionIcon}
+            id={`${optionIdPrefix}${itemIndex}`}
             isActive={itemIndex === activeIndex}
             key={optionKey++}
             onClick={locationSelected}
@@ -656,6 +661,7 @@ const LocationField = ({
         const option = (
           <Option
             icon={<UserLocationIconComponent userLocation={userLocation} />}
+            id={`${optionIdPrefix}${itemIndex}`}
             isActive={itemIndex === activeIndex}
             key={optionKey++}
             onClick={locationSelected}
@@ -708,6 +714,7 @@ const LocationField = ({
       <Option
         disabled={positionUnavailable}
         icon={optionIcon}
+        id={`${optionIdPrefix}${itemIndex}`}
         isActive={itemIndex === activeIndex}
         key={optionKey++}
         onClick={locationSelected}
@@ -745,6 +752,7 @@ const LocationField = ({
       : defaultPlaceholder;
   const textControl = (
     <S.Input
+      aria-activedescendant={activeIndex !== null ? `${optionIdPrefix}${activeIndex}` : null}
       aria-autocomplete="list"
       aria-controls={listBoxId}
       aria-expanded={menuVisible}
