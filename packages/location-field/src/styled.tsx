@@ -1,6 +1,7 @@
 import React from "react";
 import { useIntl } from "react-intl";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { Spinner as FASpinner } from "@styled-icons/fa-solid/Spinner";
 
 export const HiddenContent = styled.span`
   clip: rect(0, 0, 0, 0);
@@ -297,4 +298,17 @@ export const StopName = styled.span``;
 
 export const StopRoutes = styled.span`
   font-size: 9px;
+`;
+
+const rotateAnimation = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
+
+export const Spinner = styled(FASpinner)`
+  animation: ${rotateAnimation} 1.2s linear infinite;
 `;
