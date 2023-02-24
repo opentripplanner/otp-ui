@@ -1,8 +1,8 @@
 import { ModeButtonDefinition } from "@opentripplanner/types";
+import { Bicycle, Bus, Car, PersonWalking } from "@styled-icons/fa-solid";
 import React, { ReactElement } from "react";
 import { QueryParamProvider } from "use-query-params";
 import { WindowHistoryAdapter } from "use-query-params/adapters/window";
-import { Bicycle, Bus, Car, PersonWalking } from "@styled-icons/fa-solid";
 import * as Core from "..";
 import { QueryParamChangeEvent } from "../types";
 
@@ -10,32 +10,24 @@ import modeSettingDefinitions from "../../modeSettings.yml";
 
 const defaultModeButtonDefinitions = [
   {
-    label: "Transit",
     Icon: Bus,
     iconName: "bus",
     key: "TRANSIT",
-    modes: [
-      {
-        mode: "TRANSIT"
-      }
-    ]
+    modes: [{ mode: "TRANSIT" }]
   },
   {
-    label: "Walking",
     Icon: PersonWalking,
     iconName: "person-walking",
     key: "WALK",
     modes: [{ mode: "WALK" }]
   },
   {
-    label: "Bike",
     Icon: Bicycle,
     iconName: "bicycle",
     key: "BICYCLE",
     modes: [{ mode: "BICYCLE" }]
   },
   {
-    label: "Drive",
     Icon: Car,
     iconName: "car",
     key: "CAR",
@@ -50,23 +42,22 @@ const modeSettingDefinitionsWithDropdown = [
     type: "DROPDOWN",
     key: "busColor",
     default: "blue",
-    label: "Bus Color",
     options: [{ value: "blue" }]
   }
 ];
 
 const MetroModeSelectorComponent = ({
   disableHover,
-  modeButtonDefinitions,
   fillModeIcons,
-  onToggleModeButton,
-  onSetModeSettingValue
+  modeButtonDefinitions,
+  onSetModeSettingValue,
+  onToggleModeButton
 }: {
   disableHover?: boolean;
-  modeButtonDefinitions: ModeButtonDefinition[];
-  onToggleModeButton: (key: string) => void;
   fillModeIcons?: boolean;
+  modeButtonDefinitions: ModeButtonDefinition[];
   onSetModeSettingValue: (event: QueryParamChangeEvent) => void;
+  onToggleModeButton: (key: string) => void;
 }): ReactElement => {
   const initialState = {
     enabledModeButtons: ["TRANSIT"],
@@ -74,8 +65,8 @@ const MetroModeSelectorComponent = ({
   };
   const {
     buttonsWithSettings,
-    toggleModeButton,
-    setModeSettingValue
+    setModeSettingValue,
+    toggleModeButton
   } = Core.useModeState(
     modeButtonDefinitions,
     initialState,
@@ -96,7 +87,7 @@ const MetroModeSelectorComponent = ({
   };
 
   return (
-    <div style={{ width: "340px", position: "relative" }}>
+    <div style={{ position: "relative", width: "340px" }}>
       <Core.MetroModeSelector
         onToggleModeButton={toggleModeButtonAction}
         modeButtons={buttonsWithSettings}
@@ -111,8 +102,8 @@ const MetroModeSelectorComponent = ({
 const Template = (args: {
   disableHover?: boolean;
   fillModeIcons?: boolean;
-  onToggleModeButton: (key: string) => void;
   onSetModeSettingValue: (event: QueryParamChangeEvent) => void;
+  onToggleModeButton: (key: string) => void;
 }): ReactElement => (
   <QueryParamProvider adapter={WindowHistoryAdapter}>
     <MetroModeSelectorComponent
