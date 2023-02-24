@@ -101,6 +101,8 @@ const HoverInnerContainer = styled.div`
 
 const Arrow = styled.div`
   background: #fff;
+  box-shadow: 3px -2px 3px rgba(0, 0, 0, 0.06),
+    2px -2px 5px -3px rgba(0, 123, 255, 0.25);
   height: 10px;
   margin-top: -5px;
   position: absolute;
