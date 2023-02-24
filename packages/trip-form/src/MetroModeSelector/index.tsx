@@ -40,24 +40,24 @@ const ModeBar = styled.fieldset`
   padding: 0;
 
   /* <legend> is not shown visually. */
-  /* TODO: refactor CSS */
   & > legend {
     ${invisibleCss}
   }
 `;
 
+const accentColor = "#084c8d";
+const activeHoverColor = "0e5faa";
+
 const ModeButtonWrapper = styled.span`
   position: relative;
 
   & > label {
-    /* stylelint-disable-next-line property-no-unknown */
-    aspect-ratio: 1/1;
     background: #fff;
     border-radius: 5px;
-    border: 2px solid #084c8d;
+    border: 2px solid ${accentColor};
     cursor: pointer;
     display: inline-block;
-    padding: 0.375rem 0.75rem;
+    padding: 0.75rem 0.75rem;
     transition: all 250ms cubic-bezier(0.27, 0.01, 0.38, 1.06);
     user-select: none;
   }
@@ -72,7 +72,7 @@ const ModeButtonWrapper = styled.span`
   }
   & > label:hover {
     background: #eee;
-    border-color: #0e5faa;
+    border-color: ${activeHoverColor};
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05),
       0 4px 10px rgba(0, 123, 255, 0.25);
   }
@@ -89,19 +89,21 @@ const ModeButtonWrapper = styled.span`
     ${invisibleCss}
     background: none;
     border: none;
-    bottom: 2px;
-    left: 0;
+    /* Position is offset so that the button outline is visible when focused. */
+    bottom: 4px;
+    left: 4px;
     position: absolute;
+    right: 4px;
   }
 
   & > button:focus {
     clip: initial;
     height: initial;
-    width: 100%;
+    width: initial;
   }
 
   & > input:checked + label {
-    background: #084c8d;
+    background: ${accentColor};
   }
 
   & > input:checked + label,
@@ -113,16 +115,17 @@ const ModeButtonWrapper = styled.span`
     outline: 5px auto blue;
     /* This next line enhances the visuals in Chromium (webkit) browsers */
     outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px;
+    /* Render the focus outline inside and distinct from the border for both Chrome and Firefox. */
+    outline-offset: -4px;
   }
 
   & > input:checked + label:hover {
-    background: #0e5faa;
+    background: ${activeHoverColor};
   }
 
   & > label > svg {
-    color: #084c8d;
-    display: block;
+    color: ${accentColor};
+    display: inline-block;
     height: 32px;
     margin: auto;
     vertical-align: middle;
@@ -247,22 +250,20 @@ function ModeButton({
         <modeButton.Icon size={32} />
         <InvisibleA11yLabel>{modeButton.label}</InvisibleA11yLabel>
       </label>
-      {modeButton.enabled && (
-        // eslint-disable-next-line react/jsx-props-no-spreading
-        <button type="button" {...interactionProps}>
-          <span role="none">
-            {open ? <CaretDown size={12} /> : <CaretUp size={12} />}
-          </span>
-          <InvisibleA11yLabel>
-            <FormattedMessage
-              defaultMessage="Settings"
-              description="Label for the button to open settings for a travel mode."
-              id="otpUi.ModeSelector.settingsLabel"
-              values={{ mode: modeButton.label }}
-            />
-          </InvisibleA11yLabel>
-        </button>
-      )}
+      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+      <button type="button" {...interactionProps}>
+        <span role="none">
+          {open ? <CaretDown size={14} /> : <CaretUp size={14} />}
+        </span>
+        <InvisibleA11yLabel>
+          <FormattedMessage
+            defaultMessage="Settings"
+            description="Label for the button to open settings for a travel mode."
+            id="otpUi.ModeSelector.settingsLabel"
+            values={{ mode: modeButton.label }}
+          />
+        </InvisibleA11yLabel>
+      </button>
       {renderDropdown && (
         <FloatingFocusManager context={context} modal={false}>
           <HoverPanel
