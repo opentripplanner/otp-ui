@@ -19,17 +19,15 @@ export const defaultMessages: Record<string, string> = flatten(
   defaultEnglishMessages
 );
 
-const Header = styled.div`
-  display: flex;
-  font-size: 1.5em;
-  justify-content: space-between;
-  margin-bottom: 0.5rem;
-  text-align: left;
-`;
-
-const SettingsPanel = styled.div`
-  padding: 15px;
+const SettingsPanel = styled.fieldset`
+  border: none;
   pointer-events: auto;
+
+  legend {
+    font-size: 1.5em;
+    margin-bottom: 0.5rem;
+    padding-top: 15px;
+  }
 `;
 
 const SubSettingsCheckbox = styled(CheckboxSelector)`
@@ -121,18 +119,14 @@ export default function SubSettingsPane({
   const label = generateModeButtonLabel(modeButton.key, intl);
   return (
     <SettingsPanel>
-      <Header>
+      <legend>
         <span id={`metro-mode-selector-${modeButton.key}-button-label`}>
           {label}
         </span>
-      </Header>
+      </legend>
       {modeButton.modeSettings?.map(setting => (
         <div key={setting.key}>
-          <ModeSettingRenderer
-            key={setting.key}
-            onChange={onSettingUpdate}
-            setting={setting}
-          />
+          <ModeSettingRenderer onChange={onSettingUpdate} setting={setting} />
         </div>
       ))}
     </SettingsPanel>
