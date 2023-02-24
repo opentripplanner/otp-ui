@@ -18,7 +18,7 @@ import React, { ReactElement, useCallback, useRef, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import styled, { css } from "styled-components";
 
-import SubSettingsPane from "./SubSettingsPane";
+import SubSettingsPane, { defaultMessages } from "./SubSettingsPane";
 
 const invisibleCss = css`
   clip: rect(0, 0, 0, 0);
@@ -208,19 +208,12 @@ function ModeButton({
     useDismiss(context)
   ]);
 
-  const disableModeButton = () => {
-    if (modeButton.enabled) {
-      onToggle();
-    }
-    setOpen(false);
-  };
-
   const renderDropdown = open && modeButton.enabled;
   const interactionProps = getReferenceProps();
 
   // ARIA roles are added by the `useRole` hook.
   // Remove the aria-controls, aria-expanded, and aria-haspopup props from the label, they will
-  // be passed to the button instead, so it can properly triggered by keyboard or screen readers.
+  // instead be passed to the button for keyboard/screen reader users to trigger the popup.
   const {
     "aria-controls": ariaControls,
     "aria-expanded": ariaExpanded,
@@ -230,22 +223,25 @@ function ModeButton({
 
   return (
     <ModeButtonWrapper>
+      {/* Basic checkbox that states whether a mode is selected. */}
       <input
         checked={modeButton.enabled ?? undefined}
-        id={id}
+        id={`metro-mode-selector-mode-${id}`}
         onChange={onToggle}
         type="checkbox"
       />
+      {/* Label for the above checkbox, placed right after, so that CSS applies based on checkbox state. */}
       {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
       <label
         // This library relies on prop spreading
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...labelInteractionProps}
-        htmlFor={id}
+        htmlFor={`metro-mode-selector-mode-${id}`}
+        // This will trigger mouse effects such as showing popup on hover of on check.
         ref={reference}
         title={modeButton.label}
       >
-        <modeButton.Icon size={32} />
+        <modeButton.Icon role="none" size={32} />
         <InvisibleA11yLabel>{modeButton.label}</InvisibleA11yLabel>
       </label>
       <button
@@ -261,7 +257,7 @@ function ModeButton({
         </span>
         <InvisibleA11yLabel>
           <FormattedMessage
-            defaultMessage="Settings"
+            defaultMessage={defaultMessages["otpUi.ModeSelector.settingsLabel"]}
             description="Label for the button to open settings for a travel mode."
             id="otpUi.ModeSelector.settingsLabel"
             values={{ mode: modeButton.label }}
@@ -278,9 +274,9 @@ function ModeButton({
             aria-labelledby={`metro-mode-selector-${modeButton.key}-button-label`}
             ref={floating}
             style={{
+              left: x ?? 0,
               position: strategy,
-              top: y ?? 0,
-              left: x ?? 0
+              top: y ?? 0
             }}
           >
             <Arrow
@@ -290,10 +286,6 @@ function ModeButton({
             <HoverInnerContainer>
               <SubSettingsPane
                 modeButton={modeButton}
-                onDisableMode={disableModeButton}
-                onDismiss={() => {
-                  setOpen(false);
-                }}
                 onSettingUpdate={onSettingsUpdate}
               />
             </HoverInnerContainer>
@@ -308,7 +300,9 @@ interface Props {
    * Whether to fill the mode buttons with a color
    */
   fillModeIcons?: boolean;
-  /** Text that describes the contents */
+  /**
+   * Text that prompts to select a travel mode.
+   */
   label?: string;
   /**
    * List of mode buttons to be displayed
@@ -323,7 +317,7 @@ interface Props {
    * Event for when a mode button is toggled
    * @param key Mode button to be toggled
    */
-  onToggleModeButton: (key) => void;
+  onToggleModeButton: (key: string) => void;
 }
 
 export default function ModeSelector({
@@ -345,7 +339,7 @@ export default function ModeSelector({
           onSettingsUpdate={onSettingsUpdate}
           onToggle={useCallback(() => {
             onToggleModeButton(combination.key);
-          }, [combination])}
+          }, [combination, onToggleModeButton])}
         />
       ))}
     </ModeBar>
