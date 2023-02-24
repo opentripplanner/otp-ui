@@ -56,17 +56,15 @@ const modeSettingDefinitionsWithDropdown = [
 ];
 
 const MetroModeSelectorComponent = ({
-  disableHover,
-  modeButtonDefinitions,
   fillModeIcons,
-  onToggleModeButton,
-  onSetModeSettingValue
+  modeButtonDefinitions,
+  onSetModeSettingValue,
+  onToggleModeButton
 }: {
-  disableHover?: boolean;
-  modeButtonDefinitions: ModeButtonDefinition[];
-  onToggleModeButton: (key: string) => void;
   fillModeIcons?: boolean;
+  modeButtonDefinitions: ModeButtonDefinition[];
   onSetModeSettingValue: (event: QueryParamChangeEvent) => void;
+  onToggleModeButton: (key: string) => void;
 }): ReactElement => {
   const initialState = {
     enabledModeButtons: ["TRANSIT"],
@@ -74,8 +72,8 @@ const MetroModeSelectorComponent = ({
   };
   const {
     buttonsWithSettings,
-    toggleModeButton,
-    setModeSettingValue
+    setModeSettingValue,
+    toggleModeButton
   } = Core.useModeState(
     modeButtonDefinitions,
     initialState,
@@ -98,22 +96,20 @@ const MetroModeSelectorComponent = ({
   return (
     <div style={{ position: "relative" }}>
       <Core.MetroModeSelector
+        fillModeIcons={fillModeIcons}
         label="Select a transit mode"
-        onToggleModeButton={toggleModeButtonAction}
         modeButtons={buttonsWithSettings}
         onSettingsUpdate={setModeSettingValueAction}
-        fillModeIcons={fillModeIcons}
-        disableHover={disableHover}
+        onToggleModeButton={toggleModeButtonAction}
       />
     </div>
   );
 };
 
 const Template = (args: {
-  disableHover?: boolean;
   fillModeIcons?: boolean;
-  onToggleModeButton: (key: string) => void;
   onSetModeSettingValue: (event: QueryParamChangeEvent) => void;
+  onToggleModeButton: (key: string) => void;
 }): ReactElement => (
   <QueryParamProvider adapter={WindowHistoryAdapter}>
     <MetroModeSelectorComponent
@@ -128,10 +124,9 @@ export default {
   component: MetroModeSelectorComponent,
   title: "Trip Form Components/Metro Mode Selector",
   argTypes: {
-    disableHover: { control: "boolean" },
     fillModeIcons: { control: "boolean" },
-    onToggleModeButton: { action: "toggle button" },
-    onSetModeSettingValue: { action: "set mode setting value" }
+    onSetModeSettingValue: { action: "set mode setting value" },
+    onToggleModeButton: { action: "toggle button" }
   }
 };
 

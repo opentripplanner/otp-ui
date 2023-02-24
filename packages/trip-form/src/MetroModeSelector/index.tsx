@@ -89,8 +89,8 @@ const ModeButtonWrapper = styled.span`
     ${invisibleCss}
     background: none;
     border: none;
-    /* Position is offset so that the button outline is visible when focused. */
-    bottom: 4px;
+    /* Lateral position is offset so that the button outline is visible when focused. */
+    bottom: 0;
     left: 4px;
     position: absolute;
     right: 4px;
@@ -165,7 +165,6 @@ const Arrow = styled.div`
 `;
 
 interface ModeButtonProps {
-  disableHover?: boolean;
   fillModeIcons?: boolean;
   id: string;
   modeButton: ModeButtonDefinition;
@@ -174,7 +173,6 @@ interface ModeButtonProps {
 }
 
 function ModeButton({
-  disableHover,
   id,
   modeButton,
   onSettingsUpdate,
@@ -250,10 +248,16 @@ function ModeButton({
         <modeButton.Icon size={32} />
         <InvisibleA11yLabel>{modeButton.label}</InvisibleA11yLabel>
       </label>
-      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-      <button type="button" {...interactionProps}>
+      <button
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...interactionProps}
+        // Disable button if mode is not checked (but keep in DOM for screen reader awareness)
+        disabled={!modeButton.enabled}
+        // Required by linter settings
+        type="button"
+      >
         <span role="none">
-          {open ? <CaretDown size={14} /> : <CaretUp size={14} />}
+          {open ? <CaretUp size={14} /> : <CaretDown size={14} />}
         </span>
         <InvisibleA11yLabel>
           <FormattedMessage
@@ -286,12 +290,11 @@ function ModeButton({
             <HoverInnerContainer>
               <SubSettingsPane
                 modeButton={modeButton}
-                onSettingUpdate={onSettingsUpdate}
-                showControls={disableHover ?? false}
+                onDisableMode={disableModeButton}
                 onDismiss={() => {
                   setOpen(false);
                 }}
-                onDisableMode={disableModeButton}
+                onSettingUpdate={onSettingsUpdate}
               />
             </HoverInnerContainer>
           </HoverPanel>
@@ -302,9 +305,11 @@ function ModeButton({
 }
 interface Props {
   /**
-   * Switches mode selector into click rather than hover mode, for mobile use.
+   * Whether to fill the mode buttons with a color
    */
-  disableHover?: boolean;
+  fillModeIcons?: boolean;
+  /** Text that describes the contents */
+  label?: string;
   /**
    * List of mode buttons to be displayed
    */
@@ -319,36 +324,28 @@ interface Props {
    * @param key Mode button to be toggled
    */
   onToggleModeButton: (key) => void;
-  /**
-   * Whether to fill the mode buttons with a color
-   */
-  fillModeIcons?: boolean;
-  /** Text that describes the contents */
-  label?: string;
 }
 
 export default function ModeSelector({
-  onToggleModeButton,
-  onSettingsUpdate,
-  modeButtons = [],
-  disableHover,
   fillModeIcons,
-  label
+  label,
+  modeButtons = [],
+  onSettingsUpdate,
+  onToggleModeButton
 }: Props): ReactElement {
   return (
     <ModeBar className="metro-mode-selector">
       <legend>{label}</legend>
       {modeButtons.map(combination => (
         <ModeButton
+          fillModeIcons={fillModeIcons}
           id={combination.key}
-          onToggle={useCallback(() => {
-            onToggleModeButton(combination.key);
-          }, [combination])}
           key={combination.label}
           modeButton={combination}
           onSettingsUpdate={onSettingsUpdate}
-          disableHover={disableHover}
-          fillModeIcons={fillModeIcons}
+          onToggle={useCallback(() => {
+            onToggleModeButton(combination.key);
+          }, [combination])}
         />
       ))}
     </ModeBar>
