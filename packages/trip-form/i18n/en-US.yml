@@ -75,3 +75,4 @@ otpUi:
       addRail-label: Train
       addSubway-label: Subway
       addTram-label: Tram
+    settingsLabel: "{mode} settings"

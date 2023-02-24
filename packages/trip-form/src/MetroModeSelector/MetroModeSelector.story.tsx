@@ -96,8 +96,9 @@ const MetroModeSelectorComponent = ({
   };
 
   return (
-    <div style={{ width: "340px", position: "relative" }}>
+    <div style={{ position: "relative" }}>
       <Core.MetroModeSelector
+        label="Select a transit mode"
         onToggleModeButton={toggleModeButtonAction}
         modeButtons={buttonsWithSettings}
         onSettingsUpdate={setModeSettingValueAction}
