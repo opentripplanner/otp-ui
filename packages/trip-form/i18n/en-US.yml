@@ -60,18 +60,21 @@ otpUi:
       CAR: Drive
       RENT: Rent
     settings:
-      walkTolerance-labelLow: More walking
-      walkTolerance-labelHigh: Less walking
+      walkTolerance-labelLow: Less walking
+      walkTolerance-labelHigh: More walking
       walkTolerance-label: Walk Tolerance
-      bikeTolerance-labelLow: More biking
-      bikeTolerance-labelHigh: Less biking
+      bikeTolerance-labelLow: Less biking
+      bikeTolerance-labelHigh: More biking
       bikeTolerance-label: Bike Tolerance
       allowBikeRental-label: Bike Rental
       carTolerance-label: Drive Tolerance
-      carTolerance-labelHigh: More Driving
-      carTolerance-labelLow: Less Driving
+      carTolerance-labelHigh: Less Driving
+      carTolerance-labelLow: More Driving
       wheelchair-label: Accessible Routing
       addBus-label: Bus
       addRail-label: Train
       addSubway-label: Subway
       addTram-label: Tram
+      # Following ones used for storybook
+      busColor-label: Bus Color
+      busColor-options-blue: Blue

@@ -220,12 +220,12 @@ function ModeButton({
             <HoverInnerContainer>
               <SubSettingsPane
                 modeButton={modeButton}
-                onSettingUpdate={onSettingsUpdate}
-                showControls={disableHover ?? false}
+                onDisableMode={disableModeButton}
                 onDismiss={() => {
                   setOpen(false);
                 }}
-                onDisableMode={disableModeButton}
+                onSettingUpdate={onSettingsUpdate}
+                showControls={disableHover ?? false}
               />
             </HoverInnerContainer>
           </HoverPanel>
@@ -267,21 +267,19 @@ export default function ModeSelector({
   fillModeIcons
 }: Props): ReactElement {
   return (
-    <>
-      <ModeBar className="metro-mode-selector">
-        {modeButtons.map(combination => (
-          <ModeButton
-            onToggle={useCallback(() => {
-              onToggleModeButton(combination.key);
-            }, [combination])}
-            key={combination.label}
-            modeButton={combination}
-            onSettingsUpdate={onSettingsUpdate}
-            disableHover={disableHover}
-            fillModeIcons={fillModeIcons}
-          />
-        ))}
-      </ModeBar>
-    </>
+    <ModeBar className="metro-mode-selector">
+      {modeButtons.map(combination => (
+        <ModeButton
+          onToggle={useCallback(() => {
+            onToggleModeButton(combination.key);
+          }, [combination])}
+          key={combination.label}
+          modeButton={combination}
+          onSettingsUpdate={onSettingsUpdate}
+          disableHover={disableHover}
+          fillModeIcons={fillModeIcons}
+        />
+      ))}
+    </ModeBar>
   );
 }
