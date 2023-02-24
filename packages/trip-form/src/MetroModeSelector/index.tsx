@@ -1,132 +1,144 @@
 import {
-  useHover,
-  useInteractions,
-  useFloating,
-  offset,
-  shift,
   arrow,
+  FloatingFocusManager,
+  offset,
   safePolygon,
-  FloatingPortal,
+  shift,
   useClick,
   useDismiss,
+  useFloating,
+  useFocus,
+  useHover,
+  useInteractions,
   useRole
-} from "@floating-ui/react-dom-interactions";
+} from "@floating-ui/react";
 import { ModeButtonDefinition } from "@opentripplanner/types";
-
-import React, { ReactElement, useRef, useState } from "react";
+import React, { ReactElement, useCallback, useRef, useState } from "react";
 import styled from "styled-components";
+
 import SubSettingsPane from "./SubSettingsPane";
 
 const ModeBar = styled.div`
   display: inline-grid;
   gap: 0 3px;
-  margin-right: 4px;
   grid-auto-flow: column;
   grid-row: 2;
+  margin-right: 4px;
 `;
 
 const ModeButtonItem = styled.button<{
-  ["aria-checked"]?: boolean;
   fillModeIcons?: boolean;
 }>`
-  display: inline-block;
   /* stylelint-disable-next-line property-no-unknown */
   aspect-ratio: 1/1;
-  cursor: pointer;
-  margin: 0;
-  user-select: none;
-  border: 2px solid #084c8d;
-  padding: 0.375rem 0.75rem;
+  background: #fff;
   border-radius: 5px;
-  background: ${props => (props["aria-checked"] ? "#084c8d" : "#fff")};
-  transition: all 250ms cubic-bezier(0.27, 0.01, 0.38, 1.06);
+  border: 2px solid #084c8d;
   color: white;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  padding: 0.375rem 0.75rem;
+  transition: all 250ms cubic-bezier(0.27, 0.01, 0.38, 1.06);
+  user-select: none;
 
-  &:not(:last-child) {
-    border-top-right-radius: 0;
+  &:not(:last-of-type) {
     border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
   }
   &:not(:first-child) {
-    border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
   }
 
   &:hover {
-    background: ${props => (props["aria-checked"] ? "#0e5faa" : "#eee")};
+    background: #eee;
     border-color: #0e5faa;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05),
       0 4px 10px rgba(0, 123, 255, 0.25);
   }
 
+  &[aria-checked="true"] {
+    background: #084c8d;
+  }
+
+  &[aria-checked="true"]:hover {
+    background: #0e5faa;
+  }
+
   svg {
+    color: #084c8d;
     display: block;
-    margin: auto;
-    width: 32px;
-    height: 32px;
-    vertical-align: middle;
     ${props => props.fillModeIcons && "fill: currentcolor;"}
-    color: ${props => (props["aria-checked"] ? "#eee" : "#084c8d")};
+    height: 32px;
+    margin: auto;
+    vertical-align: middle;
+    width: 32px;
+  }
+
+  &[aria-checked="true"] > svg {
+    color: #eee;
   }
 `;
 
 const HoverPanel = styled.div`
-  z-index: 10;
-  width: 75%;
   min-width: 300px;
   padding: 0 10px;
+  width: 75%;
+  z-index: 10;
 `;
 
 const HoverInnerContainer = styled.div`
   background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(0, 123, 255, 0.25);
   color: #2e2e2e;
+  font-size: 90%;
   font-weight: bold;
   padding: 5px;
-  border-radius: 4px;
-  font-size: 90%;
   pointer-events: none;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(0, 123, 255, 0.25);
 `;
 
 const Arrow = styled.div`
-  position: absolute;
   background: #fff;
-  width: 10px;
+  box-shadow: 3px -2px 3px rgba(0, 0, 0, 0.06),
+    2px -2px 5px -3px rgba(0, 123, 255, 0.25);
   height: 10px;
   margin-top: -5px;
+  position: absolute;
   transform: rotate(-45deg);
+  width: 10px;
 `;
 
 interface ModeButtonProps {
-  floatingTarget: HTMLDivElement;
   disableHover?: boolean;
+  fillModeIcons?: boolean;
   modeButton: ModeButtonDefinition;
   onSettingsUpdate: (QueryParamChangeEvent) => void;
   onToggle: () => void;
-  fillModeIcons?: boolean;
 }
 
 function ModeButton({
-  modeButton,
-  floatingTarget,
-  onToggle,
   disableHover,
+  fillModeIcons,
+  modeButton,
   onSettingsUpdate,
-  fillModeIcons
+  onToggle
 }: ModeButtonProps) {
   const [open, setOpen] = useState(false);
   const arrowRef = useRef(null);
   const {
     context,
-    x,
-    y,
-    reference,
     floating,
+    middlewareData: { arrow: { x: arrowX, y: arrowY } = {} },
+    reference,
     strategy,
-    middlewareData: { arrow: { x: arrowX, y: arrowY } = {} }
+    x,
+    y
   } = useFloating({
-    open,
+    middleware: [offset(8), shift(), arrow({ element: arrowRef })],
     onOpenChange: setOpen,
-    middleware: [offset(8), shift(), arrow({ element: arrowRef })]
+    open
   });
 
   const modeButtonClicked = () => {
@@ -149,6 +161,7 @@ function ModeButton({
         buffer: 0
       })
     }),
+    useFocus(context, { keyboardOnly: true }),
     useClick(context, { enabled: disableHover }),
     useRole(context),
     useDismiss(context),
@@ -162,8 +175,12 @@ function ModeButton({
     setOpen(false);
   };
 
+  const renderDropdown = open && modeButton.enabled;
+
   return (
     <>
+      {/* useRole adds aria-controls */}
+      {/* eslint-disable-next-line jsx-a11y/role-supports-aria-props */}
       <ModeButtonItem
         className={modeButton.enabled ? "enabled" : ""}
         ref={reference}
@@ -171,22 +188,24 @@ function ModeButton({
         // This library relies on prop spreading
         /* eslint-disable-next-line react/jsx-props-no-spreading */
         {...getReferenceProps()}
-        aria-expanded={null}
-        aria-checked={modeButton.enabled}
+        aria-expanded={renderDropdown}
+        aria-checked={modeButton.enabled ?? false}
         aria-label={modeButton.label}
-        fillModeIcons={fillModeIcons || fillModeIcons !== false}
+        title={modeButton.label}
+        // Defaults to true
+        fillModeIcons={fillModeIcons !== false}
       >
         <modeButton.Icon size={32} />
       </ModeButtonItem>
-      <FloatingPortal
-        root={floatingTarget}
-        id="otp-ui-metro-mode-selector-hover"
-      >
-        {open && modeButton.enabled && (
+      {renderDropdown && (
+        <FloatingFocusManager context={context} modal={false}>
           <HoverPanel
             // This library relies on prop spreading
+            // useRole adds aria-haspopup and aria-controls
             // eslint-disable-next-line react/jsx-props-no-spreading
             {...getFloatingProps()}
+            // Matches ID on Header element in SubSettingsPane
+            aria-labelledby={`metro-mode-selector-${modeButton.key}-button-label`}
             ref={floating}
             style={{
               position: strategy,
@@ -201,26 +220,42 @@ function ModeButton({
             <HoverInnerContainer>
               <SubSettingsPane
                 modeButton={modeButton}
-                onSettingUpdate={onSettingsUpdate}
-                showControls={disableHover}
+                onDisableMode={disableModeButton}
                 onDismiss={() => {
                   setOpen(false);
                 }}
-                onDisableMode={disableModeButton}
+                onSettingUpdate={onSettingsUpdate}
+                showControls={disableHover ?? false}
               />
             </HoverInnerContainer>
           </HoverPanel>
-        )}
-      </FloatingPortal>
+        </FloatingFocusManager>
+      )}
     </>
   );
 }
-
 interface Props {
+  /**
+   * Switches mode selector into click rather than hover mode, for mobile use.
+   */
   disableHover?: boolean;
+  /**
+   * List of mode buttons to be displayed
+   */
   modeButtons?: ModeButtonDefinition[];
+  /**
+   * Event handler for settings changes
+   * @param QueryParamChangeEvent Event from when the mode settings change
+   */
   onSettingsUpdate: (QueryParamChangeEvent) => void;
+  /**
+   * Event for when a mode button is toggled
+   * @param key Mode button to be toggled
+   */
   onToggleModeButton: (key) => void;
+  /**
+   * Whether to fill the mode buttons with a color
+   */
   fillModeIcons?: boolean;
 }
 
@@ -231,27 +266,20 @@ export default function ModeSelector({
   disableHover,
   fillModeIcons
 }: Props): ReactElement {
-  const floatingTarget = useRef(null);
   return (
-    <>
-      <ModeBar className="metro-mode-selector">
-        {modeButtons.map(combination => (
-          <ModeButton
-            onToggle={() => {
-              onToggleModeButton(combination.key);
-            }}
-            key={combination.label}
-            modeButton={combination}
-            floatingTarget={floatingTarget.current}
-            onSettingsUpdate={onSettingsUpdate}
-            disableHover={disableHover}
-            fillModeIcons={fillModeIcons}
-          />
-        ))}
-      </ModeBar>
-      {/* TODO: Get the ref based portal to work, rather than using IDs. */}
-      {/* Alternatively, use some fancy CSS. */}
-      <div ref={floatingTarget} id="otp-ui-metro-mode-selector-hover" />
-    </>
+    <ModeBar className="metro-mode-selector">
+      {modeButtons.map(combination => (
+        <ModeButton
+          onToggle={useCallback(() => {
+            onToggleModeButton(combination.key);
+          }, [combination])}
+          key={combination.label}
+          modeButton={combination}
+          onSettingsUpdate={onSettingsUpdate}
+          disableHover={disableHover}
+          fillModeIcons={fillModeIcons}
+        />
+      ))}
+    </ModeBar>
   );
 }

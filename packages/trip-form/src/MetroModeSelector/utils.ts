@@ -91,6 +91,9 @@ export function extractModeSettingDefaultsToObject(
 ): ModeSettingValues {
   return modeSettings?.reduce((prev, cur) => {
     prev[cur.key] = cur.default;
+    if (cur.type === "SLIDER" && cur.inverseKey && cur.default) {
+      prev[cur.inverseKey] = cur.high - cur.default + cur.low;
+    }
     return prev;
   }, {});
 }
@@ -123,7 +126,7 @@ export const addSettingsToButton = (settings: ModeSetting[]) => (
 ): ModeButtonDefinition => {
   const settingsForThisCombination = Array.from(
     new Set(
-      button.modes.reduce<ModeSetting[]>((prev, mode) => {
+      button.modes?.reduce<ModeSetting[]>((prev, mode) => {
         return [
           ...prev,
           ...settings.filter(def => checkIfModeSettingApplies(def, mode))

@@ -1,11 +1,6 @@
 import * as Icons from "@opentripplanner/icons";
 import React, { ReactElement } from "react";
 import { action } from "@storybook/addon-actions";
-import { Bicycle, Car, PersonWalking } from "@styled-icons/fa-solid";
-import { QueryParamProvider } from "use-query-params";
-import { WindowHistoryAdapter } from "use-query-params/adapters/window";
-import { ModeButtonDefinition } from "@opentripplanner/types";
-import { Bus } from "@opentripplanner/icons";
 
 import commonModes from "./__mocks__/modes-en";
 import modeOptions from "./__mocks__/mode-options";
@@ -13,8 +8,6 @@ import submodeOptions from "./__mocks__/submode-options";
 import trimet from "./__mocks__/trimet-styled";
 
 import { SettingsSelectorPanel } from "./styled";
-
-import modeSettingDefinitions from "../modeSettings.yml";
 
 import * as Core from ".";
 
@@ -228,94 +221,4 @@ export const submodeSelector = makeStory(Core.SubmodeSelector, {
   label: "Submodes:",
   modes: submodeOptions,
   onChange
-});
-
-const MetroModeSelector = ({
-  disableHover,
-  modeButtonDefinitions
-}: {
-  disableHover?: boolean;
-  modeButtonDefinitions: ModeButtonDefinition[];
-}): ReactElement => {
-  const initialState = {
-    enabledModeButtons: ["TRANSIT"],
-    modeSettingValues: {}
-  };
-  const {
-    buttonsWithSettings,
-    toggleModeButton,
-    setModeSettingValue
-  } = Core.useModeState(
-    modeButtonDefinitions,
-    initialState,
-    modeSettingDefinitions,
-    {
-      queryParamState: false
-    }
-  );
-  return (
-    <div style={{ width: "340px", position: "relative" }}>
-      <Core.MetroModeSelector
-        onToggleModeButton={toggleModeButton}
-        modeButtons={buttonsWithSettings}
-        onSettingsUpdate={setModeSettingValue}
-        disableHover={disableHover}
-      />
-    </div>
-  );
-};
-
-const MetroModeSelectorWithQP = ({
-  disableHover,
-  modeButtonDefinitions
-}: {
-  disableHover?: boolean;
-  modeButtonDefinitions: ModeButtonDefinition[];
-}): ReactElement => (
-  <QueryParamProvider adapter={WindowHistoryAdapter}>
-    <MetroModeSelector
-      modeButtonDefinitions={modeButtonDefinitions}
-      disableHover={disableHover}
-    />
-  </QueryParamProvider>
-);
-
-const modeButtonDefinitions = [
-  {
-    label: "Transit",
-    Icon: Bus,
-    key: "TRANSIT",
-    modes: [
-      {
-        mode: "TRANSIT"
-      }
-    ]
-  },
-  {
-    label: "Walking",
-    Icon: PersonWalking,
-    key: "WALK",
-    modes: [{ mode: "WALK" }]
-  },
-  {
-    label: "Bike",
-    Icon: Bicycle,
-    key: "BICYCLE",
-    modes: [{ mode: "BICYCLE" }]
-  },
-  {
-    label: "Drive",
-    Icon: Car,
-    key: "CAR",
-    modes: [{ mode: "CAR" }]
-  }
-];
-
-export const metroModeSelector = makeStory(MetroModeSelectorWithQP, {
-  modeButtonDefinitions
-});
-
-export const metroModeSelectorNoHover = makeStory(MetroModeSelectorWithQP, {
-  modeButtonDefinitions,
-  disableHover: true
 });

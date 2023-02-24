@@ -1,7 +1,8 @@
 - applicableMode: CAR
   graphQLQueryParam: true
   type: SLIDER
-  key: carReluctance
+  key: carTolerance
+  inverseKey: carReluctance
   default: 3
   low: 0
   high: 5
@@ -9,7 +10,8 @@
 - applicableMode: BICYCLE
   graphQLQueryParam: true
   type: SLIDER
-  key: bikeReluctance
+  key: bikeTolerance
+  inverseKey: bikeReluctance
   default: 2
   low: 0
   high: 5
@@ -17,7 +19,8 @@
 - applicableMode: WALK
   graphQLQueryParam: true
   type: SLIDER
-  key: walkReluctance
+  key: walkTolerance
+  inverseKey: walkReluctance
   default: 2
   low: 0
   high: 5

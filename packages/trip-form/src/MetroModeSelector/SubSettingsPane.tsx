@@ -11,6 +11,7 @@ import SliderSelector from "../SliderSelector";
 import generateModeButtonLabel from "./i18n";
 
 import defaultEnglishMessages from "../../i18n/en-US.yml";
+import { QueryParamChangeEvent } from "../types";
 // HACK: We should flatten the messages loaded above because
 // the YAML loaders behave differently between webpack and our version of jest:
 // - the yaml loader for webpack returns a nested object,
@@ -18,47 +19,50 @@ import defaultEnglishMessages from "../../i18n/en-US.yml";
 const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
 const Header = styled.div`
+  display: flex;
   font-size: 1.5em;
+  justify-content: space-between;
   margin-bottom: 0.5rem;
   text-align: left;
-  display: flex;
-  justify-content: space-between;
 `;
 
 const SettingsPanel = styled.div`
-  pointer-events: auto;
   padding: 15px;
+  pointer-events: auto;
 `;
 
 const DisableButton = styled.button`
-  padding: 4px;
   cursor: pointer;
+  padding: 4px;
+`;
+
+const SubSettingsCheckbox = styled(CheckboxSelector)`
+  margin-left: 4px;
 `;
 
 const ModeSettingRenderer = ({
-  setting,
-  onChange
+  onChange,
+  setting
 }: {
-  setting: ModeSetting;
   onChange: (QueryParamChangeEvent) => void;
+  setting: ModeSetting;
 }) => {
   const intl = useIntl();
   const label = intl.formatMessage({
-    id: `otpUi.modeSelector.settings.${setting.key}-label`,
+    id: `otpUi.ModeSelector.settings.${setting.key}-label`,
     description: `Metro Mode Selector Setting Label (${setting.key})`,
     defaultMessage:
-      defaultMessages[`otpUi.modeSelector.settings.${setting.key}-label`]
+      defaultMessages[`otpUi.ModeSelector.settings.${setting.key}-label`]
   });
 
   switch (setting.type) {
     case "CHECKBOX":
       return (
-        <CheckboxSelector
+        <SubSettingsCheckbox
           label={label}
           name={setting.key}
           onChange={onChange}
           value={setting.value}
-          style={{ marginLeft: "4px" }}
         />
       );
     case "DROPDOWN":
@@ -67,14 +71,14 @@ const ModeSettingRenderer = ({
           label={label}
           name={setting.key}
           onChange={onChange}
-          value={setting.value}
           options={setting.options.map(o => ({
             ...o,
             text: intl.formatMessage({
-              id: `otpUi.modeSelector.settings.${setting.key}-options-${o.value}`,
+              id: `otpUi.ModeSelector.settings.${setting.key}-options-${o.value}`,
               description: `Metro Mode Selector Setting (${setting.key}) Option Label (${o.value})`
             })
           }))}
+          value={setting.value}
         />
       );
     case "SLIDER":
@@ -82,17 +86,24 @@ const ModeSettingRenderer = ({
         <SliderSelector
           label={label}
           labelHigh={intl.formatMessage({
-            id: `otpUi.modeSelector.settings.${setting.key}-labelHigh`,
+            id: `otpUi.ModeSelector.settings.${setting.key}-labelHigh`,
             description: `Metro Mode Selector Setting Label High (${setting.key})`
           })}
           labelLow={intl.formatMessage({
-            id: `otpUi.modeSelector.settings.${setting.key}-labelLow`,
+            id: `otpUi.ModeSelector.settings.${setting.key}-labelLow`,
             description: `Metro Mode Selector Setting Label Low (${setting.key})`
           })}
           max={setting.high}
           min={setting.low}
           name={setting.key}
-          onChange={onChange}
+          onChange={(event: QueryParamChangeEvent) => {
+            // If an inverse key is specified, calculate its value here
+            if (setting.inverseKey) {
+              event[setting.inverseKey] =
+                setting.high - Number(event[setting.key]) + setting.low;
+            }
+            onChange(event);
+          }}
           step={setting.step}
           value={setting.value}
         />
@@ -104,30 +115,32 @@ const ModeSettingRenderer = ({
 
 interface Props {
   modeButton: ModeButtonDefinition;
+  onDisableMode: () => void;
+  onDismiss: () => void;
   onSettingUpdate: (QueryParamChangeEvent) => void;
   showControls: boolean;
-  onDismiss: () => void;
-  onDisableMode: () => void;
 }
 export default function SubSettingsPane({
   modeButton,
+  onDisableMode,
   onSettingUpdate,
-  showControls,
-  onDisableMode
+  showControls
 }: Props): ReactElement {
   const intl = useIntl();
   const label = generateModeButtonLabel(modeButton.key, intl);
   return (
     <SettingsPanel>
       <Header>
-        {label}
+        <span id={`metro-mode-selector-${modeButton.key}-button-label`}>
+          {label}
+        </span>
         {showControls && (
           <DisableButton type="button" onClick={onDisableMode}>
             Disable {label} <CircleXmark size={16} />
           </DisableButton>
         )}
       </Header>
-      {modeButton.modeSettings.map(setting => (
+      {modeButton.modeSettings?.map(setting => (
         <div key={setting.key}>
           <ModeSettingRenderer
             setting={setting}

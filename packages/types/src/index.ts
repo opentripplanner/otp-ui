@@ -684,42 +684,43 @@ export type GradationMap = Record<
 >;
 
 export const ModeSettingTypes = {
-  SLIDER: "SLIDER",
   CHECKBOX: "CHECKBOX",
-  DROPDOWN: "DROPDOWN"
+  DROPDOWN: "DROPDOWN",
+  SLIDER: "SLIDER"
 };
 
 export type DropdownOptions = {
+  default?: string;
   label: string;
-  options: Array<{
+  options: {
     text: string;
     value: string;
     addTransportMode?: TransportMode;
-  }>;
+  }[];
   type: "DROPDOWN";
   value?: string;
-  default?: string;
 };
 
 export type SliderOptions = {
-  low: number;
+  default?: number;
   high: number;
-  step: number;
+  inverseKey?: string;
   label: string;
-  labelLow: string;
   labelHigh: string;
+  labelLow: string;
+  low: number;
+  step: number;
   type: "SLIDER";
   value?: number;
-  default?: number;
 };
 
 export type CheckboxOptions = {
-  label: string;
+  addTransportMode?: TransportMode;
+  default?: boolean;
   icon: JSX.Element;
+  label: string;
   type: "CHECKBOX";
   value?: boolean;
-  default?: boolean;
-  addTransportMode?: TransportMode;
 };
 
 export type ModeSettingBase = {
@@ -746,12 +747,12 @@ export type TransportMode = {
  * to appear in the mode selector as discrete options.
  */
 export type ModeButtonDefinition = {
-  modes?: TransportMode[]; // This comes from config
   enabled?: boolean; // User has enabled this mode
-  label: string; // From config
-  key: string; // From config
   Icon: StyledIcon; // From iconName (below)
   iconName: string; // From config
+  key: string; // From config
+  label: string; // From config
+  modes?: TransportMode[]; // This comes from config
   modeSettings?: ModeSetting[]; // From OTP definitions + config
 };
 export type FareProduct = {
