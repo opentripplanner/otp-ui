@@ -336,6 +336,11 @@ export type Leg = {
   tripBlockId?: string;
   tripId?: string;
   walkingBike?: boolean;
+  /**
+   * Below this are extra properties added in OTP-RR
+   * They are not returned in the API response
+   */
+  fareProducts?: Array<FareProduct>;
 };
 
 /**
@@ -377,6 +382,7 @@ export type FareDetails = Record<string, FareDetail[]>;
 export type Fare = {
   details?: FareDetails;
   fare?: Record<string, Money>;
+  legProducts?: Array<LegProduct>;
 };
 
 /**
@@ -748,6 +754,25 @@ export type ModeButtonDefinition = {
   iconName: string; // From config
   modeSettings?: ModeSetting[]; // From OTP definitions + config
 };
+export type FareProduct = {
+  amount: Money;
+  id: string;
+  name: string;
+  category: {
+    id: string;
+    name: string;
+  };
+  container: {
+    id: string;
+    name: string;
+  };
+};
+
+export type LegProduct = {
+  legIndices: Array<number>;
+  products: Array<FareProduct>;
+};
+
 /**
  * Options for units of mass (used in CO2 calculation config)
  */

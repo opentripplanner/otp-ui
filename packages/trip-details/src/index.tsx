@@ -131,7 +131,6 @@ export function TripDetails({
   const fareResult = coreUtils.itinerary.calculateTncFares(itinerary);
   const { currencyCode, maxTNCFare, minTNCFare } = fareResult;
   const transitFares = itinerary?.fare?.fare;
-  const fareDetails = itinerary.fare?.details;
 
   let companies = "";
   itinerary.legs.forEach(leg => {
@@ -177,12 +176,7 @@ export function TripDetails({
           </summary>
           {fareDetailsLayout ? (
             // Show full ƒare details by leg
-            <FareLegTable
-              layout={fareDetailsLayout}
-              legs={itinerary.legs}
-              transitFareDetails={fareDetails}
-              transitFares={transitFares}
-            />
+            <FareLegTable layout={fareDetailsLayout} itinerary={itinerary} />
           ) : (
             // Just show the fares for each payment type
             fareKeys.map(fareKey => {

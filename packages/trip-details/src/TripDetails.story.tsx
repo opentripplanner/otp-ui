@@ -40,6 +40,7 @@ const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-
 const fareComponentsItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/fare-components.json");
 const flexItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/flex-itinerary.json");
 const otp2ScooterItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-scooter.json");
+const otp2FareProducts = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-with-fareproducts.json");
 
 const flattenedEnglishMessages = flatten(customEnglishMessages);
 const flattenedFrenchMessages = flatten(customFrenchMessages);
@@ -56,6 +57,58 @@ const StyledTripDetails = styled(TripDetails)`
   }
 `;
 
+const otp2FareByLegLayout: FareTableLayout[] = [
+  {
+    header: "regular" as FareTableText,
+    cols: [
+      {
+        header: "cash" as FareTableText,
+        riderCategory: "regular",
+        fareContainer: "cash"
+      },
+      {
+        header: "electronic" as FareTableText,
+        riderCategory: "regular",
+        fareContainer: "electronic"
+      },
+      {
+        header: "special" as FareTableText,
+        riderCategory: "special",
+        fareContainer: "electronic"
+      }
+    ]
+  },
+  {
+    header: "youth" as FareTableText,
+    cols: [
+      {
+        header: "cash" as FareTableText,
+        riderCategory: "youth",
+        fareContainer: "cash"
+      },
+      {
+        header: "electronic" as FareTableText,
+        riderCategory: "youth",
+        fareContainer: "electronic"
+      }
+    ]
+  },
+  {
+    header: "senior" as FareTableText,
+    cols: [
+      {
+        header: "cash" as FareTableText,
+        riderCategory: "senior",
+        fareContainer: "cash"
+      },
+      {
+        header: "electronic" as FareTableText,
+        riderCategory: "senior",
+        fareContainer: "electronic"
+      }
+    ]
+  }
+];
 const fareByLegLayout: FareTableLayout[] = [
   {
     header: "regular" as FareTableText,
@@ -353,9 +406,13 @@ export const FareLegTableStory = (): ReactElement => {
   return (
     <FareLegTable
       layout={fareByLegLayout}
-      legs={walkInterlinedTransitItinerary.legs}
-      transitFareDetails={walkInterlinedTransitItinerary.fare?.details}
-      transitFares={walkInterlinedTransitItinerary.fare?.fare}
+      itinerary={walkInterlinedTransitItinerary}
     />
+  );
+};
+
+export const FareLegTableStoryLegProducts = (): ReactElement => {
+  return (
+    <FareLegTable layout={otp2FareByLegLayout} itinerary={otp2FareProducts} />
   );
 };
