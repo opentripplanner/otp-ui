@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/trip-details",
-  "version": "2.2.10-alpha.1",
+  "version": "3.0.4-alpha.1",
   "description": "A component for displaying details about a trip planning itinerary",
   "main": "lib/index.js",
   "module": "esm/index.js",
