@@ -55,6 +55,7 @@ const OTP2TileLayerWithPopup = ({
    * Determines which layer of the OTP2 tile data to display. Also determines icon color.
    */
   type: string
+  visible?: boolean
 }): JSX.Element => {
   const { current: map } = useMap()
 
@@ -71,7 +72,7 @@ const OTP2TileLayerWithPopup = ({
     }
 
     // TODO: once the popup converges into a single one that can handle
-    // stops, stations, and vehicles, this re-writing will not be needed.
+    // stops, stations, and vehicles, this re-writing will not be needed
     // See: https://github.com/opentripplanner/otp-ui/pull/472#discussion_r1023124055
     if (sourceLayer === "stops" || sourceLayer === "stations") {
       setClickedEntity(synthesizedEntity)
@@ -167,7 +168,7 @@ const OTP2TileLayerWithPopup = ({
  * @returns               Array of <Source> and <OTP2TileLayerWithPopup> components
  */
 const generateOTP2TileLayers = (
-  layers: { name?: string; network?: string; type: string }[],
+  layers: { name?: string; network?: string; type: string, initiallyVisible?: boolean }[],
   endpoint: string,
   setLocation?: (location: MapLocationActionArg) => void,
   setViewedStop?: ({ stopId }: { stopId: string }) => void,
@@ -184,7 +185,7 @@ const generateOTP2TileLayers = (
       url={`${endpoint}/${layers.map((l) => l.type).join(",")}/tilejson.json`}
     />,
     ...layers.map((layer) => {
-      const { name, network, type } = layer
+      const { name, network, type, initiallyVisible } = layer
 
       const id = `${type}${network ? `-${network}` : ""}`
       return (
@@ -197,6 +198,7 @@ const generateOTP2TileLayers = (
           setLocation={setLocation}
           setViewedStop={setViewedStop}
           type={type}
+          visible={initiallyVisible}
         />
       )
     })

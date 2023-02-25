@@ -1,13 +1,18 @@
 import { Leg, Money } from "@opentripplanner/types";
-import flatten from "flat";
 import React from "react";
 import styled from "styled-components";
-import { FormattedMessage } from "react-intl";
 import { Transfer } from "@styled-icons/boxicons-regular/Transfer";
 
-import { boldText, renderFare } from "./utils";
+import {
+  getItineraryCost,
+  getLegCost,
+  getLegsWithFares
+} from "@opentripplanner/core-utils/lib/itinerary";
+import { useIntl } from "react-intl";
+import { flatten } from "flat";
+import { boldText, getFormattedTextForConfigKey, renderFare } from "./utils";
 
-import { FareLegTableProps, FareTableLayout, FareTableText } from "./types";
+import { FareLegTableProps, FareTableLayout } from "./types";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
@@ -25,6 +30,7 @@ type LegAndFare = Leg & {
 interface FareTypeTableProps extends FareTableLayout {
   fareTotals: Record<string, Money>;
   legs: LegAndFare[];
+  hasLegProducts?: boolean;
 }
 
 const TableHeader = styled.thead`
@@ -67,73 +73,21 @@ const TransferIcon = styled(Transfer)`
   padding-left: 4px;
 `;
 
-const getFormattedTextForConfigKey = (textKey: FareTableText) => {
-  switch (textKey) {
-    case FareTableText.cash:
-      return (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.TripDetails.fareDetailsHeaders.cash"]
-          }
-          id="otpUi.TripDetails.fareDetailsHeaders.cash"
-        />
-      );
-    case FareTableText.electronic:
-      return (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.TripDetails.fareDetailsHeaders.electronic"]
-          }
-          id="otpUi.TripDetails.fareDetailsHeaders.electronic"
-        />
-      );
-    case FareTableText.youth:
-      return (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.TripDetails.fareDetailsHeaders.youth"]
-          }
-          id="otpUi.TripDetails.fareDetailsHeaders.youth"
-        />
-      );
-    case FareTableText.senior:
-      return (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.TripDetails.fareDetailsHeaders.senior"]
-          }
-          id="otpUi.TripDetails.fareDetailsHeaders.senior"
-        />
-      );
-    case FareTableText.special:
-      return (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.TripDetails.fareDetailsHeaders.special"]
-          }
-          id="otpUi.TripDetails.fareDetailsHeaders.special"
-        />
-      );
-    case FareTableText.regular:
-    default:
-      return (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.TripDetails.fareDetailsHeaders.regular"]
-          }
-          id="otpUi.TripDetails.fareDetailsHeaders.regular"
-        />
-      );
-  }
-};
-
 const FareTypeTable = ({
   cols,
   fareTotals,
   header,
-  legs
+  legs,
+  hasLegProducts
 }: FareTypeTableProps): JSX.Element => {
-  const colsToRender = cols.filter(col => fareTotals[col.key]);
+  const colsToRender = cols.filter(col =>
+    hasLegProducts
+      ? getItineraryCost(legs, col.riderCategory, col.fareContainer)
+      : fareTotals[col.key]
+  );
+
+  const intl = useIntl();
+
   if (colsToRender.length) {
     return (
       <Table>
@@ -142,9 +96,11 @@ const FareTypeTable = ({
             {boldText(getFormattedTextForConfigKey(header))}
           </th>
           {colsToRender.map(col => {
-            const fare = fareTotals[col.key];
+            const fare = hasLegProducts
+              ? getItineraryCost(legs, col.riderCategory, col.fareContainer)
+              : fareTotals[col.key];
             return (
-              <th key={col.key}>
+              <th key={col.key || `${col.fareContainer}-${col.riderCategory}`}>
                 {boldText(getFormattedTextForConfigKey(col.header))}
                 <br />
                 {renderFare(
@@ -159,14 +115,49 @@ const FareTypeTable = ({
           <tr key={index}>
             <td className="no-zebra">{leg.routeShortName}</td>
             {colsToRender.map(col => {
-              const fare = leg.fares[col.key];
+              const fare = hasLegProducts
+                ? getLegCost(leg, col.riderCategory, col.fareContainer)
+                : leg.fares[col.key];
+
               return (
-                <td key={col.key}>
-                  {renderFare(
-                    fare?.price.currency?.currencyCode,
-                    (fare?.price.cents || 0) / 100
+                <td
+                  key={col.key}
+                  title={
+                    "transferAmount" in fare &&
+                    fare?.transferAmount &&
+                    intl.formatMessage(
+                      {
+                        defaultMessage:
+                          defaultMessages[
+                            "otpUi.TripDetails.transferDiscountExplanation"
+                          ],
+                        description:
+                          "Text explaining the transfer discount applied to this fare.",
+                        id: "otpUi.TripDetails.transferDiscountExplanation"
+                      },
+                      {
+                        transferAmount: intl.formatNumber(
+                          fare.transferAmount / 100,
+                          {
+                            currency: fare?.price?.currency?.currencyCode,
+                            currencyDisplay: "narrowSymbol",
+                            style: "currency"
+                          }
+                        )
+                      }
+                    )
+                  }
+                >
+                  {(("isTransfer" in fare && fare?.isTransfer) ||
+                    ("transferAmount" in fare && fare?.transferAmount)) && (
+                    <>
+                      <TransferIcon size={16} />{" "}
+                    </>
                   )}
-                  {fare?.isTransfer && <TransferIcon size={16} />}
+                  {renderFare(
+                    fare?.price?.currency?.currencyCode,
+                    (fare?.price?.cents || 0) / 100
+                  )}
                 </td>
               );
             })}
@@ -180,39 +171,47 @@ const FareTypeTable = ({
 
 const FareLegDetails = ({
   layout,
-  legs,
-  transitFareDetails,
-  transitFares
+  itinerary
 }: FareLegTableProps): JSX.Element => {
-  const fareKeys = Object.keys(transitFareDetails);
+  const hasLegProducts = !!itinerary?.fare?.legProducts;
+  const fareKeys = Object.keys(itinerary?.fare?.details);
 
-  const legsWithFares = legs
-    .map((leg, index) => {
-      const fares = fareKeys.reduce((prev, key) => {
-        const fareForKey = transitFareDetails[key]?.find(
-          detail => detail.legIndex === index
-        );
-        if (fareForKey) {
-          prev[key] = fareForKey;
-        }
-        return prev;
-      }, {});
-      return {
-        ...leg,
-        fares
-      };
-    })
-    .filter(leg => leg.transitLeg);
+  let legsWithFares;
+
+  if (!hasLegProducts) {
+    // OTP1 Logic
+    legsWithFares = itinerary.legs
+      .map((leg, index) => {
+        const fares = fareKeys.reduce((prev, key) => {
+          const fareForKey = itinerary.fare.details[key]?.find(
+            detail => detail.legIndex === index
+          );
+          if (fareForKey) {
+            prev[key] = fareForKey;
+          }
+          return prev;
+        }, {});
+        return {
+          ...leg,
+          fares
+        };
+      })
+      .filter(leg => leg.transitLeg);
+  } else {
+    // OTP2 Logic using core-utils function
+    legsWithFares = getLegsWithFares(itinerary).filter(leg => leg.transitLeg);
+  }
 
   return (
     <div>
       {layout.map(config => (
         <FareTypeTable
           cols={config.cols}
-          fareTotals={transitFares}
+          fareTotals={itinerary.fare.fare}
           header={config.header}
           key={config.header}
           legs={legsWithFares}
+          hasLegProducts={hasLegProducts}
         />
       ))}
     </div>

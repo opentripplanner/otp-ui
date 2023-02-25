@@ -3,12 +3,14 @@ import * as pelias from "isomorphic-mapzen-search";
 import memoize from "lodash.memoize";
 import * as here from "./apis/here";
 import * as photon from "./apis/photon";
+import * as otp from "./apis/otp";
 
 import ArcGISGeocoder from "./geocoders/arcgis";
 import NoApiGeocoder from "./geocoders/noapi";
 import PeliasGeocoder from "./geocoders/pelias";
 import HereGeocoder from "./geocoders/here";
 import PhotonGeocoder from "./geocoders/photon";
+import OTPGeocoder from "./geocoders/otp";
 
 // Prettier does not support typescript annotation
 // eslint-disable-next-line prettier/prettier
@@ -29,6 +31,8 @@ const getGeocoder = memoize((geocoderConfig: GeocoderConfig & { type: string }) 
       return new HereGeocoder(here, geocoderConfig);
     case "PHOTON":
       return new PhotonGeocoder(photon, geocoderConfig);
+    case "OTP":
+      return new OTPGeocoder(otp, geocoderConfig);
     default:
       console.error(`Unknown geocoder type: "${type}". Using NoApiGeocoder.`);
       return new NoApiGeocoder();
