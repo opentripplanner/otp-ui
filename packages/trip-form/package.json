@@ -21,11 +21,11 @@
     "flat": "^5.0.2",
     "react-indiana-drag-scroll": "^2.0.1",
     "react-inlinesvg": "^2.3.0",
-    "@opentripplanner/types": "^4.1.0-alpha.4",
     "use-query-params": "^2.1.1"
   },
   "devDependencies": {
-    "@types/flat": "^5.0.2"
+    "@types/flat": "^5.0.2",
+    "@opentripplanner/types": "5.0.0-alpha.2"
   },
   "peerDependencies": {
     "react": "^16.14.0",
