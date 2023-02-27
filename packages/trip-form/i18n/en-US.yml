@@ -78,3 +78,4 @@ otpUi:
       # Following ones used for storybook
       busColor-label: Bus Color
       busColor-options-blue: Blue
+    settingsLabel: "{mode} settings"
