@@ -1,0 +1,1131 @@
+{
+  "duration": 3583,
+  "startTime": 1674505485000,
+  "endTime": 1674509068000,
+  "walkTime": 930,
+  "transitTime": 2340,
+  "waitingTime": 313,
+  "walkDistance": 1157.33,
+  "walkLimitExceeded": false,
+  "generalizedCost": 5616,
+  "elevationLost": 0,
+  "elevationGained": 0,
+  "transfers": 1,
+  "fare": {
+    "fare": {
+      "senior": {
+        "cents": 225,
+        "currency": {
+          "currency": "USD",
+          "defaultFractionDigits": 2,
+          "currencyCode": "USD",
+          "symbol": "$"
+        }
+      },
+      "electronicSpecial": {
+        "cents": 150,
+        "currency": {
+          "currency": "USD",
+          "defaultFractionDigits": 2,
+          "currencyCode": "USD",
+          "symbol": "$"
+        }
+      },
+      "electronicSenior": {
+        "cents": 125,
+        "currency": {
+          "currency": "USD",
+          "defaultFractionDigits": 2,
+          "currencyCode": "USD",
+          "symbol": "$"
+        }
+      },
+      "electronicYouth": {
+        "cents": 0,
+        "currency": {
+          "currency": "USD",
+          "defaultFractionDigits": 2,
+          "currencyCode": "USD",
+          "symbol": "$"
+        }
+      },
+      "electronicRegular": {
+        "cents": 250,
+        "currency": {
+          "currency": "USD",
+          "defaultFractionDigits": 2,
+          "currencyCode": "USD",
+          "symbol": "$"
+        }
+      },
+      "youth": {
+        "cents": 0,
+        "currency": {
+          "currency": "USD",
+          "defaultFractionDigits": 2,
+          "currencyCode": "USD",
+          "symbol": "$"
+        }
+      },
+      "regular": {
+        "cents": 250,
+        "currency": {
+          "currency": "USD",
+          "defaultFractionDigits": 2,
+          "currencyCode": "USD",
+          "symbol": "$"
+        }
+      }
+    },
+    "details": {
+      "senior": [],
+      "electronicSpecial": [],
+      "electronicSenior": [],
+      "electronicYouth": [],
+      "electronicRegular": [],
+      "youth": [],
+      "regular": []
+    },
+    "legProducts": [
+      {
+        "legIndices": [1],
+        "products": [
+          {
+            "id": "orcaFares:farePayment",
+            "name": "rideCost",
+            "amount": {
+              "cents": 0,
+              "currency": {
+                "currency": "USD",
+                "defaultFractionDigits": 2,
+                "currencyCode": "USD",
+                "symbol": "$"
+              }
+            },
+            "container": {
+              "id": "orcaFares",
+              "name": "electronic"
+            },
+            "category": {
+              "id": "orcaFares",
+              "name": "youth"
+            }
+          },
+          {
+            "id": "orcaFares:farePayment",
+            "name": "rideCost",
+            "amount": {
+              "cents": 125,
+              "currency": {
+                "currency": "USD",
+                "defaultFractionDigits": 2,
+                "currencyCode": "USD",
+                "symbol": "$"
+              }
+            },
+            "container": {
+              "id": "orcaFares",
+              "name": "cash"
+            },
+            "category": {
+              "id": "orcaFares",
+              "name": "senior"
+            }
+          },
+          {
+            "id": "orcaFares:farePayment",
+            "name": "rideCost",
+            "amount": {
+              "cents": 0,
+              "currency": {
+                "currency": "USD",
+                "defaultFractionDigits": 2,
+                "currencyCode": "USD",
+                "symbol": "$"
+              }
+            },
+            "container": {
+              "id": "orcaFares",
+              "name": "cash"
+            },
+            "category": {
+              "id": "orcaFares",
+              "name": "youth"
+            }
+          },
+          {
+            "id": "orcaFares:farePayment",
+            "name": "rideCost",
+            "amount": {
+              "cents": 125,
+              "currency": {
+                "currency": "USD",
+                "defaultFractionDigits": 2,
+                "currencyCode": "USD",
+                "symbol": "$"
+              }
+            },
+            "container": {
+              "id": "orcaFares",
+              "name": "electronic"
+            },
+            "category": {
+              "id": "orcaFares",
+              "name": "special"
+            }
+          },
+          {
+            "id": "orcaFares:farePayment",
+            "name": "rideCost",
+            "amount": {
+              "cents": 125,
+              "currency": {
+                "currency": "USD",
+                "defaultFractionDigits": 2,
+                "currencyCode": "USD",
+                "symbol": "$"
+              }
+            },
+            "container": {
+              "id": "orcaFares",
+              "name": "electronic"
+            },
+            "category": {
+              "id": "orcaFares",
+              "name": "senior"
+            }
+          },
+          {
+            "id": "orcaFares:farePayment",
+            "name": "rideCost",
+            "amount": {
+              "cents": 250,
+              "currency": {
+                "currency": "USD",
+                "defaultFractionDigits": 2,
+                "currencyCode": "USD",
+                "symbol": "$"
+              }
+            },
+            "container": {
+              "id": "orcaFares",
+              "name": "electronic"
+            },
+            "category": {
+              "id": "orcaFares",
+              "name": "regular"
+            }
+          },
+          {
+            "id": "orcaFares:farePayment",
+            "name": "rideCost",
+            "amount": {
+              "cents": 250,
+              "currency": {
+                "currency": "USD",
+                "defaultFractionDigits": 2,
+                "currencyCode": "USD",
+                "symbol": "$"
+              }
+            },
+            "container": {
+              "id": "orcaFares",
+              "name": "cash"
+            },
+            "category": {
+              "id": "orcaFares",
+              "name": "regular"
+            }
+          }
+        ]
+      },
+      {
+        "legIndices": [3],
+        "products": [
+          {
+            "id": "orcaFares:farePayment",
+            "name": "rideCost",
+            "amount": {
+              "cents": 0,
+              "currency": {
+                "currency": "USD",
+                "defaultFractionDigits": 2,
+                "currencyCode": "USD",
+                "symbol": "$"
+              }
+            },
+            "container": {
+              "id": "orcaFares",
+              "name": "electronic"
+            },
+            "category": {
+              "id": "orcaFares",
+              "name": "youth"
+            }
+          },
+          {
+            "id": "orcaFares:farePayment",
+            "name": "rideCost",
+            "amount": {
+              "cents": 100,
+              "currency": {
+                "currency": "USD",
+                "defaultFractionDigits": 2,
+                "currencyCode": "USD",
+                "symbol": "$"
+              }
+            },
+            "container": {
+              "id": "orcaFares",
+              "name": "cash"
+            },
+            "category": {
+              "id": "orcaFares",
+              "name": "senior"
+            }
+          },
+          {
+            "id": "orcaFares:farePayment",
+            "name": "rideCost",
+            "amount": {
+              "cents": 0,
+              "currency": {
+                "currency": "USD",
+                "defaultFractionDigits": 2,
+                "currencyCode": "USD",
+                "symbol": "$"
+              }
+            },
+            "container": {
+              "id": "orcaFares",
+              "name": "cash"
+            },
+            "category": {
+              "id": "orcaFares",
+              "name": "youth"
+            }
+          },
+          {
+            "id": "orcaFares:farePayment",
+            "name": "rideCost",
+            "amount": {
+              "cents": 25,
+              "currency": {
+                "currency": "USD",
+                "defaultFractionDigits": 2,
+                "currencyCode": "USD",
+                "symbol": "$"
+              }
+            },
+            "container": {
+              "id": "orcaFares",
+              "name": "electronic"
+            },
+            "category": {
+              "id": "orcaFares",
+              "name": "special"
+            }
+          },
+          {
+            "id": "orcaFares:farePayment",
+            "name": "transfer",
+            "amount": {
+              "cents": 125,
+              "currency": {
+                "currency": "USD",
+                "defaultFractionDigits": 2,
+                "currencyCode": "USD",
+                "symbol": "$"
+              }
+            },
+            "container": {
+              "id": "orcaFares",
+              "name": "electronic"
+            },
+            "category": {
+              "id": "orcaFares",
+              "name": "special"
+            }
+          },
+          {
+            "id": "orcaFares:farePayment",
+            "name": "rideCost",
+            "amount": {
+              "cents": 0,
+              "currency": {
+                "currency": "USD",
+                "defaultFractionDigits": 2,
+                "currencyCode": "USD",
+                "symbol": "$"
+              }
+            },
+            "container": {
+              "id": "orcaFares",
+              "name": "electronic"
+            },
+            "category": {
+              "id": "orcaFares",
+              "name": "senior"
+            }
+          },
+          {
+            "id": "orcaFares:farePayment",
+            "name": "transfer",
+            "amount": {
+              "cents": 125,
+              "currency": {
+                "currency": "USD",
+                "defaultFractionDigits": 2,
+                "currencyCode": "USD",
+                "symbol": "$"
+              }
+            },
+            "container": {
+              "id": "orcaFares",
+              "name": "electronic"
+            },
+            "category": {
+              "id": "orcaFares",
+              "name": "senior"
+            }
+          },
+          {
+            "id": "orcaFares:farePayment",
+            "name": "rideCost",
+            "amount": {
+              "cents": 0,
+              "currency": {
+                "currency": "USD",
+                "defaultFractionDigits": 2,
+                "currencyCode": "USD",
+                "symbol": "$"
+              }
+            },
+            "container": {
+              "id": "orcaFares",
+              "name": "electronic"
+            },
+            "category": {
+              "id": "orcaFares",
+              "name": "regular"
+            }
+          },
+          {
+            "id": "orcaFares:farePayment",
+            "name": "rideCost",
+            "amount": {
+              "cents": 0,
+              "currency": {
+                "currency": "USD",
+                "defaultFractionDigits": 2,
+                "currencyCode": "USD",
+                "symbol": "$"
+              }
+            },
+            "container": {
+              "id": "orcaFares",
+              "name": "cash"
+            },
+            "category": {
+              "id": "orcaFares",
+              "name": "regular"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "legs": [
+    {
+      "startTime": 1674505485000,
+      "endTime": 1674506100000,
+      "departureDelay": 0,
+      "arrivalDelay": 0,
+      "realTime": false,
+      "distance": 802.9,
+      "generalizedCost": 1204,
+      "pathway": false,
+      "mode": "WALK",
+      "transitLeg": false,
+      "route": "",
+      "agencyTimeZoneOffset": -28800000,
+      "interlineWithPreviousLeg": false,
+      "from": {
+        "name": "47.83549, -122.31293",
+        "lon": -122.3129313,
+        "lat": 47.8354853,
+        "departure": 1674505485000,
+        "vertexType": "NORMAL"
+      },
+      "to": {
+        "name": "Hwy 99 & 180th St SW",
+        "stopId": "CommTrans:1521",
+        "stopCode": "1521",
+        "lon": -122.303382,
+        "lat": 47.834973,
+        "arrival": 1674506100000,
+        "departure": 1674506100000,
+        "vertexType": "TRANSIT"
+      },
+      "legGeometry": {
+        "points": "u{}bHxfpiV?q@@eE?wG?_D?Y@o@?kCBqF?{D@qI?qA?c@?qA?i@?IZWB?d@ZBAPa@b@^EL",
+        "length": 23
+      },
+      "steps": [
+        {
+          "distance": 717.88,
+          "relativeDirection": "DEPART",
+          "streetName": "180th Street Southwest",
+          "absoluteDirection": "EAST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": false,
+          "lon": -122.3129292,
+          "lat": 47.8356351,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 62.21,
+          "relativeDirection": "RIGHT",
+          "streetName": "service road",
+          "absoluteDirection": "SOUTHEAST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": true,
+          "lon": -122.3033119,
+          "lat": 47.8355803,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 22.81,
+          "relativeDirection": "RIGHT",
+          "streetName": "Highway 99",
+          "absoluteDirection": "SOUTHWEST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": false,
+          "lon": -122.3031554,
+          "lat": 47.8351213,
+          "elevation": "",
+          "walkingBike": false
+        }
+      ],
+      "rentedBike": false,
+      "walkingBike": false,
+      "duration": 615
+    },
+    {
+      "startTime": 1674506100000,
+      "endTime": 1674507660000,
+      "departureDelay": 0,
+      "arrivalDelay": 0,
+      "realTime": false,
+      "distance": 7813.43,
+      "generalizedCost": 2160,
+      "pathway": false,
+      "mode": "BUS",
+      "transitLeg": true,
+      "route": "Mariner P&R - Aurora Village",
+      "agencyName": "Community Transit",
+      "agencyUrl": "http://www.communitytransit.org/",
+      "agencyTimeZoneOffset": -28800000,
+      "routeColor": "0070c0",
+      "routeType": 3,
+      "routeId": "CommTrans:101",
+      "routeTextColor": "ffffff",
+      "interlineWithPreviousLeg": false,
+      "tripBlockId": "MCOB-DO:123:0:Weekday:1:22SEP:41028:12345",
+      "headsign": "Aurora Village",
+      "agencyId": "CommTrans:29",
+      "tripId": "CommTrans:10499096__MCOB-DO:123:0:Weekday:1:22SEP:41028:12345",
+      "serviceDate": "2023-01-23",
+      "from": {
+        "name": "Hwy 99 & 180th St SW",
+        "stopId": "CommTrans:1521",
+        "stopCode": "1521",
+        "lon": -122.303382,
+        "lat": 47.834973,
+        "arrival": 1674506100000,
+        "departure": 1674506100000,
+        "stopIndex": 16,
+        "stopSequence": 17,
+        "vertexType": "TRANSIT"
+      },
+      "to": {
+        "name": "Aurora Village Transit Center",
+        "stopId": "CommTrans:2877",
+        "stopCode": "2877",
+        "lon": -122.34277,
+        "lat": 47.77435,
+        "arrival": 1674507660000,
+        "departure": 1674507660000,
+        "stopIndex": 30,
+        "stopSequence": 31,
+        "vertexType": "TRANSIT"
+      },
+      "intermediateStops": [
+        {
+          "name": "Hwy 99 & 188th St SW",
+          "stopId": "CommTrans:1502",
+          "stopCode": "1502",
+          "lon": -122.309711,
+          "lat": 47.827669,
+          "arrival": 1674506220000,
+          "departure": 1674506220000,
+          "stopIndex": 17,
+          "stopSequence": 18,
+          "vertexType": "TRANSIT"
+        },
+        {
+          "name": "Hwy 99 & 60th Ave W",
+          "stopId": "CommTrans:1495",
+          "stopCode": "1495",
+          "lon": -122.312185,
+          "lat": 47.824801,
+          "arrival": 1674506280000,
+          "departure": 1674506280000,
+          "stopIndex": 18,
+          "stopSequence": 19,
+          "vertexType": "TRANSIT"
+        },
+        {
+          "name": "Hwy 99 & 196th St SW",
+          "stopId": "CommTrans:1503",
+          "stopCode": "1503",
+          "lon": -122.31592,
+          "lat": 47.820482,
+          "arrival": 1674506340000,
+          "departure": 1674506340000,
+          "stopIndex": 19,
+          "stopSequence": 20,
+          "vertexType": "TRANSIT"
+        },
+        {
+          "name": "Hwy 99 & 200th St SW",
+          "stopId": "CommTrans:1504",
+          "stopCode": "1504",
+          "lon": -122.318702,
+          "lat": 47.81725,
+          "arrival": 1674506340000,
+          "departure": 1674506340000,
+          "stopIndex": 20,
+          "stopSequence": 21,
+          "vertexType": "TRANSIT"
+        },
+        {
+          "name": "Hwy 99 & 202nd St SW",
+          "stopId": "CommTrans:1505",
+          "stopCode": "1505",
+          "lon": -122.320426,
+          "lat": 47.815264,
+          "arrival": 1674506400000,
+          "departure": 1674506400000,
+          "stopIndex": 21,
+          "stopSequence": 22,
+          "vertexType": "TRANSIT"
+        },
+        {
+          "name": "Hwy 99 & 208th St SW",
+          "stopId": "CommTrans:1506",
+          "stopCode": "1506",
+          "lon": -122.324693,
+          "lat": 47.809703,
+          "arrival": 1674506520000,
+          "departure": 1674506520000,
+          "stopIndex": 22,
+          "stopSequence": 23,
+          "vertexType": "TRANSIT"
+        },
+        {
+          "name": "Hwy 99 & 212th St SW",
+          "stopId": "CommTrans:1507",
+          "stopCode": "1507",
+          "lon": -122.327809,
+          "lat": 47.805379,
+          "arrival": 1674506580000,
+          "departure": 1674506580000,
+          "stopIndex": 23,
+          "stopSequence": 24,
+          "vertexType": "TRANSIT"
+        },
+        {
+          "name": "Hwy 99 & 216th St SW",
+          "stopId": "CommTrans:1508",
+          "stopCode": "1508",
+          "lon": -122.329866,
+          "lat": 47.802523,
+          "arrival": 1674506640000,
+          "departure": 1674506640000,
+          "stopIndex": 24,
+          "stopSequence": 25,
+          "vertexType": "TRANSIT"
+        },
+        {
+          "name": "Hwy 99 & 220th St SW",
+          "stopId": "CommTrans:1509",
+          "stopCode": "1509",
+          "lon": -122.332468,
+          "lat": 47.798918,
+          "arrival": 1674506700000,
+          "departure": 1674506700000,
+          "stopIndex": 25,
+          "stopSequence": 26,
+          "vertexType": "TRANSIT"
+        },
+        {
+          "name": "Hwy 99 & 224th St SW",
+          "stopId": "CommTrans:1510",
+          "stopCode": "1510",
+          "lon": -122.334893,
+          "lat": 47.795549,
+          "arrival": 1674506820000,
+          "departure": 1674506820000,
+          "stopIndex": 26,
+          "stopSequence": 27,
+          "vertexType": "TRANSIT"
+        },
+        {
+          "name": "Hwy 99 & 230th St SW",
+          "stopId": "CommTrans:1511",
+          "stopCode": "1511",
+          "lon": -122.338743,
+          "lat": 47.790207,
+          "arrival": 1674507000000,
+          "departure": 1674507000000,
+          "stopIndex": 27,
+          "stopSequence": 28,
+          "vertexType": "TRANSIT"
+        },
+        {
+          "name": "Hwy 99 & 238th St SW",
+          "stopId": "CommTrans:1517",
+          "stopCode": "1517",
+          "lon": -122.343432,
+          "lat": 47.783697,
+          "arrival": 1674507240000,
+          "departure": 1674507240000,
+          "stopIndex": 28,
+          "stopSequence": 29,
+          "vertexType": "TRANSIT"
+        },
+        {
+          "name": "Hwy 99 & N 205th St",
+          "stopId": "CommTrans:2089",
+          "stopCode": "2089",
+          "lon": -122.346379,
+          "lat": 47.777264,
+          "arrival": 1674507420000,
+          "departure": 1674507420000,
+          "stopIndex": 29,
+          "stopSequence": 30,
+          "vertexType": "TRANSIT"
+        }
+      ],
+      "legGeometry": {
+        "points": "ew}bHfjniVj@d@JHLJPNTRb@^h@b@XThA~@n@h@j@d@l@f@VTd@^v@n@RPZVNLVRZVLJrAfAd@`@z@r@^Zf@`@LJbAz@dCrBj@d@ZV~ApA`BtATP\\X??NLNJ^ZPNb@\\HFRPl@f@NL`@^NLn@f@`@\\RPf@`@jA`Ad@^t@l@@@??t@n@JHRP^ZZVHFNLNLb@\\PNJHTRPLd@^TPd@^VRPNVTXTd@^n@h@^Zb@^fA|@bAz@pAdABB??HFh@b@dA|@TPHFXT|@t@ZVPNl@f@f@`@LJ`@Zl@h@n@h@t@l@\\Vn@h@??|@t@b@^f@`@VTNLNJnAbArAhATRNL??LJHF\\XLJf@`@LJTRzAnAf@^RNNJNJ`@ZLHh@`@JHRLf@\\LHdAp@PLf@Zr@d@PJv@f@HFb@XXRrAz@`@Vv@f@\\TXRLHLHLHFD??B@n@b@LHJHb@Xp@b@NJfAp@HF\\TRLl@^\\TTN\\Td@XXPv@f@xA`Aj@^PJn@b@p@b@TN`@V??zA`ADBLHb@ZTNHFl@^HFVNXP\\T^Th@\\\\TfAt@x@h@HFHF??VNNHTNZRj@^d@ZjAv@bAn@bAn@FDxBvAt@d@bAn@JFNJNHh@^??l@^hAt@t@d@NJ^T`@VTNXPn@b@r@f@LHHF|@j@ZTv@f@vA|@JF??BBVNZRd@Zb@XTNXPf@\\TLb@XdAr@zA`ARLj@`@PLh@\\VNf@\\hAt@RLTLTNTNLHLHRLPLTNdAp@h@\\pAx@??FDb@XLHZR~@l@^V`BdANJd@Z`An@VNZR^V\\TZRjBjAfAr@d@Z`GxD^VXPNJh@Zt@d@z@j@b@XJHDB??fAr@`Al@VPTNZRTNPLHFJHNJNLPLLJ\\VLJt@l@b@\\RP`@Z\\VXRXPd@VPJTJRHPFZJVHXHVFPDRD`@FXB\\@X@^?T?hAEz@GdAILATA??f@Cb@ANAjACr@Cr@AX?R?P?VAX?l@?T?f@?T?|AAH?BqBAg@?{A?m@?c@?iB?u@?yCe@??K",
+        "length": 368
+      },
+      "steps": [],
+      "routeShortName": "101",
+      "routeLongName": "Mariner P&R - Aurora Village",
+      "duration": 1560
+    },
+    {
+      "startTime": 1674507660000,
+      "endTime": 1674507707000,
+      "departureDelay": 0,
+      "arrivalDelay": 0,
+      "realTime": false,
+      "distance": 38.11,
+      "generalizedCost": 67,
+      "pathway": false,
+      "mode": "WALK",
+      "transitLeg": false,
+      "route": "",
+      "agencyTimeZoneOffset": -28800000,
+      "interlineWithPreviousLeg": false,
+      "from": {
+        "name": "Aurora Village Transit Center",
+        "stopId": "CommTrans:2877",
+        "stopCode": "2877",
+        "lon": -122.34277,
+        "lat": 47.77435,
+        "arrival": 1674507660000,
+        "departure": 1674507660000,
+        "vertexType": "TRANSIT"
+      },
+      "to": {
+        "name": "Aurora Village Transit Center - Bay 10",
+        "stopId": "kcm:16100",
+        "stopCode": "16100",
+        "lon": -122.342407,
+        "lat": 47.7742424,
+        "arrival": 1674507707000,
+        "departure": 1674508020000,
+        "zoneId": "18",
+        "vertexType": "TRANSIT"
+      },
+      "legGeometry": {
+        "points": "u|qbHhaviV??R??]@C?A@C?C?ACI?O@?",
+        "length": 12
+      },
+      "steps": [
+        {
+          "distance": 10.22,
+          "relativeDirection": "DEPART",
+          "streetName": "service road",
+          "absoluteDirection": "SOUTH",
+          "stayOn": false,
+          "area": false,
+          "bogusName": true,
+          "lon": -122.3427609,
+          "lat": 47.77435,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 11.17,
+          "relativeDirection": "LEFT",
+          "streetName": "path",
+          "absoluteDirection": "EAST",
+          "stayOn": true,
+          "area": false,
+          "bogusName": true,
+          "lon": -122.3427605,
+          "lat": 47.7742581,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 16.73,
+          "relativeDirection": "RIGHT",
+          "streetName": "open area",
+          "absoluteDirection": "SOUTHEAST",
+          "stayOn": true,
+          "area": true,
+          "bogusName": true,
+          "lon": -122.3426111,
+          "lat": 47.7742565,
+          "elevation": "",
+          "walkingBike": false
+        }
+      ],
+      "rentedBike": false,
+      "walkingBike": false,
+      "duration": 47
+    },
+    {
+      "startTime": 1674508020000,
+      "endTime": 1674508800000,
+      "departureDelay": 0,
+      "arrivalDelay": 0,
+      "realTime": false,
+      "distance": 4792.95,
+      "generalizedCost": 1693,
+      "pathway": false,
+      "mode": "BUS",
+      "transitLeg": true,
+      "agencyName": "Metro Transit",
+      "agencyUrl": "http://metro.kingcounty.gov",
+      "agencyTimeZoneOffset": -28800000,
+      "routeType": 3,
+      "routeId": "kcm:102615",
+      "interlineWithPreviousLeg": false,
+      "tripShortName": "LOCAL",
+      "tripBlockId": "6649263",
+      "headsign": "Downtown Seattle",
+      "agencyId": "kcm:1",
+      "tripId": "kcm:585679422",
+      "serviceDate": "2023-01-23",
+      "from": {
+        "name": "Aurora Village Transit Center - Bay 10",
+        "stopId": "kcm:16100",
+        "stopCode": "16100",
+        "lon": -122.342407,
+        "lat": 47.7742424,
+        "arrival": 1674507707000,
+        "departure": 1674508020000,
+        "zoneId": "18",
+        "stopIndex": 0,
+        "stopSequence": 1,
+        "vertexType": "TRANSIT"
+      },
+      "to": {
+        "name": "Aurora Ave N & N 145th St",
+        "stopId": "kcm:6950",
+        "stopCode": "6950",
+        "lon": -122.345268,
+        "lat": 47.7335701,
+        "arrival": 1674508800000,
+        "departure": 1674508800000,
+        "zoneId": "20",
+        "stopIndex": 11,
+        "stopSequence": 84,
+        "vertexType": "TRANSIT"
+      },
+      "intermediateStops": [
+        {
+          "name": "Aurora Ave N & N 200th St",
+          "stopId": "kcm:75700",
+          "stopCode": "75700",
+          "lon": -122.346207,
+          "lat": 47.7737427,
+          "arrival": 1674508073000,
+          "departure": 1674508073000,
+          "zoneId": "18",
+          "stopIndex": 1,
+          "stopSequence": 6,
+          "vertexType": "TRANSIT"
+        },
+        {
+          "name": "Aurora Ave N & N 192nd St",
+          "stopId": "kcm:75730",
+          "stopCode": "75730",
+          "lon": -122.3461,
+          "lat": 47.7672043,
+          "arrival": 1674508191000,
+          "departure": 1674508191000,
+          "zoneId": "18",
+          "stopIndex": 2,
+          "stopSequence": 13,
+          "vertexType": "TRANSIT"
+        },
+        {
+          "name": "Aurora Ave N & N 185th St",
+          "stopId": "kcm:75740",
+          "stopCode": "75740",
+          "lon": -122.346184,
+          "lat": 47.7628479,
+          "arrival": 1674508270000,
+          "departure": 1674508270000,
+          "zoneId": "18",
+          "stopIndex": 3,
+          "stopSequence": 22,
+          "vertexType": "TRANSIT"
+        },
+        {
+          "name": "Aurora Ave N & N 180th St",
+          "stopId": "kcm:75750",
+          "stopCode": "75750",
+          "lon": -122.346237,
+          "lat": 47.7594452,
+          "arrival": 1674508331000,
+          "departure": 1674508331000,
+          "zoneId": "18",
+          "stopIndex": 4,
+          "stopSequence": 32,
+          "vertexType": "TRANSIT"
+        },
+        {
+          "name": "Aurora Ave N & N 175th St",
+          "stopId": "kcm:75760",
+          "stopCode": "75760",
+          "lon": -122.345856,
+          "lat": 47.7552986,
+          "arrival": 1674508407000,
+          "departure": 1674508407000,
+          "zoneId": "18",
+          "stopIndex": 5,
+          "stopSequence": 40,
+          "vertexType": "TRANSIT"
+        },
+        {
+          "name": "Aurora Ave N & N 170th St",
+          "stopId": "kcm:75770",
+          "stopCode": "75770",
+          "lon": -122.345741,
+          "lat": 47.7520294,
+          "arrival": 1674508466000,
+          "departure": 1674508466000,
+          "zoneId": "18",
+          "stopIndex": 6,
+          "stopSequence": 48,
+          "vertexType": "TRANSIT"
+        },
+        {
+          "name": "Aurora Ave N & N 165th St",
+          "stopId": "kcm:75780",
+          "stopCode": "75780",
+          "lon": -122.345688,
+          "lat": 47.7483559,
+          "arrival": 1674508532000,
+          "departure": 1674508532000,
+          "zoneId": "18",
+          "stopIndex": 7,
+          "stopSequence": 56,
+          "vertexType": "TRANSIT"
+        },
+        {
+          "name": "Aurora Ave N & N 160th St",
+          "stopId": "kcm:75790",
+          "stopCode": "75790",
+          "lon": -122.34565,
+          "lat": 47.7446899,
+          "arrival": 1674508599000,
+          "departure": 1674508599000,
+          "zoneId": "18",
+          "stopIndex": 8,
+          "stopSequence": 66,
+          "vertexType": "TRANSIT"
+        },
+        {
+          "name": "Aurora Ave N & N 155th St",
+          "stopId": "kcm:75800",
+          "stopCode": "75800",
+          "lon": -122.345497,
+          "lat": 47.7408867,
+          "arrival": 1674508668000,
+          "departure": 1674508668000,
+          "zoneId": "18",
+          "stopIndex": 9,
+          "stopSequence": 73,
+          "vertexType": "TRANSIT"
+        },
+        {
+          "name": "Aurora Ave N & N 152nd St",
+          "stopId": "kcm:75810",
+          "stopCode": "75810",
+          "lon": -122.345428,
+          "lat": 47.7386818,
+          "arrival": 1674508707000,
+          "departure": 1674508707000,
+          "zoneId": "18",
+          "stopIndex": 10,
+          "stopSequence": 75,
+          "vertexType": "TRANSIT"
+        }
+      ],
+      "legGeometry": {
+        "points": "q{qbH`_viV?`AB~R?b@\\Cr@???dB?rBE~@A`HA|IElGArBC??f@?`DBpA?fB?pA@r@BhDBdB@lA???~@BbDDr@?|BBxAB|@?v@?PCb@?HA??v@AtAIjBInBGn@AvAGhES~BM??TA`AE`AA`B?hACbDCfB?|@C??v@AxDCnAAhA?bB?pA?xAA`AA??l@?n@?r@?|@CxAAj@?pB@vA?vB?dAA??|CEv@?fAE`CIhA?~CEnBC??~JIt@A??vBEz@AZCrAApAEfBEvFCvDCrBA",
+        "length": 94
+      },
+      "steps": [],
+      "routeShortName": "E Line",
+      "duration": 780
+    },
+    {
+      "startTime": 1674508800000,
+      "endTime": 1674509068000,
+      "departureDelay": 0,
+      "arrivalDelay": 0,
+      "realTime": false,
+      "distance": 316.32,
+      "generalizedCost": 490,
+      "pathway": false,
+      "mode": "WALK",
+      "transitLeg": false,
+      "route": "",
+      "agencyTimeZoneOffset": -28800000,
+      "interlineWithPreviousLeg": false,
+      "from": {
+        "name": "Aurora Ave N & N 145th St",
+        "stopId": "kcm:6950",
+        "stopCode": "6950",
+        "lon": -122.345268,
+        "lat": 47.7335701,
+        "arrival": 1674508800000,
+        "departure": 1674508800000,
+        "zoneId": "20",
+        "vertexType": "TRANSIT"
+      },
+      "to": {
+        "name": "1318 North 145th Street, Seattle, WA, USA",
+        "lon": -122.3420287,
+        "lat": 47.7342206,
+        "arrival": 1674509068000,
+        "vertexType": "NORMAL"
+      },
+      "legGeometry": {
+        "points": "y}ibH|pviV@Be@?I??Q]?O?Q??c@?W?qB?aA?kA@e@AiEQ??Q@K?o@",
+        "length": 19
+      },
+      "steps": [
+        {
+          "distance": 26.16,
+          "relativeDirection": "DEPART",
+          "streetName": "sidewalk",
+          "absoluteDirection": "NORTH",
+          "stayOn": false,
+          "area": false,
+          "bogusName": true,
+          "lon": -122.3452855,
+          "lat": 47.73357,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 7.06,
+          "relativeDirection": "RIGHT",
+          "streetName": "service road",
+          "absoluteDirection": "EAST",
+          "stayOn": true,
+          "area": false,
+          "bogusName": true,
+          "lon": -122.3452885,
+          "lat": 47.7338053,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 35.59,
+          "relativeDirection": "LEFT",
+          "streetName": "Aurora Avenue North",
+          "absoluteDirection": "NORTH",
+          "stayOn": false,
+          "area": false,
+          "bogusName": false,
+          "lon": -122.3451941,
+          "lat": 47.7338066,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 207.88,
+          "relativeDirection": "RIGHT",
+          "streetName": "North 145th Street",
+          "absoluteDirection": "EAST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": false,
+          "lon": -122.3451971,
+          "lat": 47.7341266,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 10.3,
+          "relativeDirection": "LEFT",
+          "streetName": "Stone Avenue North",
+          "absoluteDirection": "NORTH",
+          "stayOn": false,
+          "area": false,
+          "bogusName": false,
+          "lon": -122.3424174,
+          "lat": 47.7341208,
+          "elevation": "",
+          "walkingBike": false
+        },
+        {
+          "distance": 29.32,
+          "relativeDirection": "RIGHT",
+          "streetName": "path",
+          "absoluteDirection": "EAST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": true,
+          "lon": -122.3424186,
+          "lat": 47.7342134,
+          "elevation": "",
+          "walkingBike": false
+        }
+      ],
+      "rentedBike": false,
+      "walkingBike": false,
+      "duration": 268
+    }
+  ],
+  "tooSloped": false,
+  "arrivedAtDestinationWithRentedBicycle": false
+}

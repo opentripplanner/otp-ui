@@ -1,8 +1,8 @@
 import { ModeButtonDefinition } from "@opentripplanner/types";
+import { Bicycle, Bus, Car, PersonWalking } from "@styled-icons/fa-solid";
 import React, { ReactElement } from "react";
 import { QueryParamProvider } from "use-query-params";
 import { WindowHistoryAdapter } from "use-query-params/adapters/window";
-import { Bicycle, Bus, Car, PersonWalking } from "@styled-icons/fa-solid";
 import * as Core from "..";
 import { QueryParamChangeEvent } from "../types";
 
@@ -10,32 +10,24 @@ import modeSettingDefinitions from "../../modeSettings.yml";
 
 const defaultModeButtonDefinitions = [
   {
-    label: "Transit",
     Icon: Bus,
     iconName: "bus",
     key: "TRANSIT",
-    modes: [
-      {
-        mode: "TRANSIT"
-      }
-    ]
+    modes: [{ mode: "TRANSIT" }]
   },
   {
-    label: "Walking",
     Icon: PersonWalking,
     iconName: "person-walking",
     key: "WALK",
     modes: [{ mode: "WALK" }]
   },
   {
-    label: "Bike",
     Icon: Bicycle,
     iconName: "bicycle",
     key: "BICYCLE",
     modes: [{ mode: "BICYCLE" }]
   },
   {
-    label: "Drive",
     Icon: Car,
     iconName: "car",
     key: "CAR",
@@ -50,7 +42,6 @@ const modeSettingDefinitionsWithDropdown = [
     type: "DROPDOWN",
     key: "busColor",
     default: "blue",
-    label: "Bus Color",
     options: [{ value: "blue" }]
   }
 ];

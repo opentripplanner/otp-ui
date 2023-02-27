@@ -157,6 +157,10 @@ class TransitLegBody extends Component<Props, State> {
       leg
     );
 
+    // If the config contains an operator name, prefer that one over the
+    // one provided by OTP
+
+    const transitOperatorName = transitOperator?.name || agencyName;
     // If the config contains an operator with a logo URL, prefer that over the
     // one provided by OTP (which is derived from agency.txt#agency_branding_url)
     const logoUrl =
@@ -172,6 +176,7 @@ class TransitLegBody extends Component<Props, State> {
       !(shouldCollapseDueToAlertCount || alwaysCollapseAlerts) || !leg.alerts;
     const expandAlerts = alertsExpanded || shouldOnlyShowAlertsExpanded;
     const fareForLeg = this.getFareForLeg(leg, fare);
+
     return (
       <>
         {TransitLegSubheader && <TransitLegSubheader leg={leg} />}
@@ -216,7 +221,7 @@ class TransitLegBody extends Component<Props, State> {
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      {agencyName}
+                      {transitOperatorName}
                       {logoUrl && <img alt="" src={logoUrl} height={25} />}
                     </a>
                   )
@@ -236,7 +241,6 @@ class TransitLegBody extends Component<Props, State> {
               />
             </S.CallAheadWarning>
           )}
-
           {/* Alerts toggle */}
           {!shouldOnlyShowAlertsExpanded && (
             <S.TransitAlertToggle onClick={this.onToggleAlertsClick}>
