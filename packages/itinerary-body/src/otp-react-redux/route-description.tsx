@@ -10,7 +10,7 @@ export default function RouteDescription({
 }: RouteDescriptionProps): ReactElement {
   const { routeShortName } = leg;
   return (
-    <S.LegDescriptionForTransit aria-label="zoom to map">
+    <S.LegDescriptionForTransit>
       <S.LegIconAndRouteShortName>
         <S.LegIconContainer>
           <LegIcon leg={leg} />

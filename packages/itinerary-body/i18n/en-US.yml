@@ -121,7 +121,7 @@ otpUi:
       yesterday: Yesterday
     alertsHeader: "{alertCount, plural, =1 {# alert} other {# alerts}}"
     fare: "Fare: {fare}"
-    zoomToLeg: (Zoom to leg on map)
+    zoomToLeg: Zoom to leg on map
     legDetails: Leg details
     expandDetails: (Expand details)
     operatedBy: Service operated by {agencyLink}

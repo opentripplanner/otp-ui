@@ -189,7 +189,12 @@ class TransitLegBody extends Component<Props, State> {
           role="group"
         >
           {/* The Route Icon/Name Bar; clickable to set as active leg */}
-          <S.LegClickable onClick={this.onSummaryClick}>
+          <S.LegClickable
+            onClick={this.onSummaryClick}
+            aria-label={intl.formatMessage({
+              id: "otpUi.TransitLegBody.zoomToLeg"
+            })}
+          >
             <RouteDescription
               leg={leg}
               LegIcon={LegIcon}
