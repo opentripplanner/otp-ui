@@ -1,9 +1,8 @@
+import { flatten } from "flat";
 import { ModeButtonDefinition, ModeSetting } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
-import styled from "styled-components";
-import { CircleXmark } from "@styled-icons/fa-solid";
 import { useIntl } from "react-intl";
-import { flatten } from "flat";
+import styled from "styled-components";
 
 import CheckboxSelector from "../CheckboxSelector";
 import DropdownSelector from "../DropdownSelector";
@@ -16,24 +15,19 @@ import { QueryParamChangeEvent } from "../types";
 // the YAML loaders behave differently between webpack and our version of jest:
 // - the yaml loader for webpack returns a nested object,
 // - the yaml loader for jest returns messages with flattened ids.
-const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
+export const defaultMessages: Record<string, string> = flatten(
+  defaultEnglishMessages
+);
 
-const Header = styled.div`
-  display: flex;
-  font-size: 1.5em;
-  justify-content: space-between;
-  margin-bottom: 0.5rem;
-  text-align: left;
-`;
-
-const SettingsPanel = styled.div`
-  padding: 15px;
+const SettingsPanel = styled.fieldset`
+  border: none;
   pointer-events: auto;
-`;
 
-const DisableButton = styled.button`
-  cursor: pointer;
-  padding: 4px;
+  legend {
+    font-size: 1.5em;
+    margin-bottom: 0.5rem;
+    padding-top: 15px;
+  }
 `;
 
 const SubSettingsCheckbox = styled(CheckboxSelector)`
@@ -49,10 +43,10 @@ const ModeSettingRenderer = ({
 }) => {
   const intl = useIntl();
   const label = intl.formatMessage({
-    id: `otpUi.ModeSelector.settings.${setting.key}-label`,
-    description: `Metro Mode Selector Setting Label (${setting.key})`,
     defaultMessage:
-      defaultMessages[`otpUi.ModeSelector.settings.${setting.key}-label`]
+      defaultMessages[`otpUi.ModeSelector.settings.${setting.key}-label`],
+    description: `Metro Mode Selector Setting Label (${setting.key})`,
+    id: `otpUi.ModeSelector.settings.${setting.key}-label`
   });
 
   switch (setting.type) {
@@ -74,8 +68,8 @@ const ModeSettingRenderer = ({
           options={setting.options.map(o => ({
             ...o,
             text: intl.formatMessage({
-              id: `otpUi.ModeSelector.settings.${setting.key}-options-${o.value}`,
-              description: `Metro Mode Selector Setting (${setting.key}) Option Label (${o.value})`
+              description: `Metro Mode Selector Setting (${setting.key}) Option Label (${o.value})`,
+              id: `otpUi.ModeSelector.settings.${setting.key}-options-${o.value}`
             })
           }))}
           value={setting.value}
@@ -86,12 +80,12 @@ const ModeSettingRenderer = ({
         <SliderSelector
           label={label}
           labelHigh={intl.formatMessage({
-            id: `otpUi.ModeSelector.settings.${setting.key}-labelHigh`,
-            description: `Metro Mode Selector Setting Label High (${setting.key})`
+            description: `Metro Mode Selector Setting Label High (${setting.key})`,
+            id: `otpUi.ModeSelector.settings.${setting.key}-labelHigh`
           })}
           labelLow={intl.formatMessage({
-            id: `otpUi.ModeSelector.settings.${setting.key}-labelLow`,
-            description: `Metro Mode Selector Setting Label Low (${setting.key})`
+            description: `Metro Mode Selector Setting Label Low (${setting.key})`,
+            id: `otpUi.ModeSelector.settings.${setting.key}-labelLow`
           })}
           max={setting.high}
           min={setting.low}
@@ -115,38 +109,24 @@ const ModeSettingRenderer = ({
 
 interface Props {
   modeButton: ModeButtonDefinition;
-  onDisableMode: () => void;
-  onDismiss: () => void;
   onSettingUpdate: (QueryParamChangeEvent) => void;
-  showControls: boolean;
 }
 export default function SubSettingsPane({
   modeButton,
-  onDisableMode,
-  onSettingUpdate,
-  showControls
+  onSettingUpdate
 }: Props): ReactElement {
   const intl = useIntl();
   const label = generateModeButtonLabel(modeButton.key, intl);
   return (
     <SettingsPanel>
-      <Header>
+      <legend>
         <span id={`metro-mode-selector-${modeButton.key}-button-label`}>
           {label}
         </span>
-        {showControls && (
-          <DisableButton type="button" onClick={onDisableMode}>
-            Disable {label} <CircleXmark size={16} />
-          </DisableButton>
-        )}
-      </Header>
+      </legend>
       {modeButton.modeSettings?.map(setting => (
         <div key={setting.key}>
-          <ModeSettingRenderer
-            setting={setting}
-            key={setting.key}
-            onChange={onSettingUpdate}
-          />
+          <ModeSettingRenderer onChange={onSettingUpdate} setting={setting} />
         </div>
       ))}
     </SettingsPanel>

@@ -7,76 +7,132 @@ import {
   useClick,
   useDismiss,
   useFloating,
-  useFocus,
   useHover,
   useInteractions,
   useRole
 } from "@floating-ui/react";
 import { ModeButtonDefinition } from "@opentripplanner/types";
+import { CaretDown } from "@styled-icons/fa-solid/CaretDown";
+import { CaretUp } from "@styled-icons/fa-solid/CaretUp";
 import React, { ReactElement, useCallback, useRef, useState } from "react";
-import styled from "styled-components";
+import { FormattedMessage } from "react-intl";
+import styled, { css } from "styled-components";
 
-import SubSettingsPane from "./SubSettingsPane";
+import SubSettingsPane, { defaultMessages } from "./SubSettingsPane";
 
-const ModeBar = styled.div`
-  display: inline-grid;
-  gap: 0 3px;
-  grid-auto-flow: column;
-  grid-row: 2;
-  margin-right: 4px;
+const invisibleCss = css`
+  clip: rect(0, 0, 0, 0);
+  height: 0;
+  overflow: hidden;
+  width: 0;
 `;
 
-const ModeButtonItem = styled.button<{
-  fillModeIcons?: boolean;
-}>`
-  /* stylelint-disable-next-line property-no-unknown */
-  aspect-ratio: 1/1;
-  background: #fff;
-  border-radius: 5px;
-  border: 2px solid #084c8d;
-  color: white;
-  cursor: pointer;
+const InvisibleA11yLabel = styled.span`
   display: inline-block;
-  margin: 0;
-  padding: 0.375rem 0.75rem;
-  transition: all 250ms cubic-bezier(0.27, 0.01, 0.38, 1.06);
-  user-select: none;
+  ${invisibleCss}
+`;
 
-  &:not(:last-of-type) {
+const ModeBar = styled.fieldset`
+  border: none;
+  display: inline-flex;
+  gap: 0 3px;
+  margin: 0 4px 0 0;
+  padding: 0;
+
+  /* <legend> is not shown visually. */
+  & > legend {
+    ${invisibleCss}
+  }
+`;
+
+const accentColor = "#084c8d";
+const activeHoverColor = "0e5faa";
+
+const ModeButtonWrapper = styled.span`
+  position: relative;
+
+  & > label {
+    background: #fff;
+    border-radius: 5px;
+    border: 2px solid ${accentColor};
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.75rem 0.75rem;
+    transition: all 250ms cubic-bezier(0.27, 0.01, 0.38, 1.06);
+    user-select: none;
+  }
+
+  &:not(:last-of-type) > label {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
   }
-  &:not(:first-child) {
+  &:not(:first-of-type) > label {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
   }
-
-  &:hover {
+  & > label:hover {
     background: #eee;
-    border-color: #0e5faa;
+    border-color: ${activeHoverColor};
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05),
       0 4px 10px rgba(0, 123, 255, 0.25);
   }
 
-  &[aria-checked="true"] {
-    background: #084c8d;
+  & > input {
+    ${invisibleCss}
+    /* Firefox will still render (tiny) controls, even if their bounds are empty,
+       so move them out of sight. */
+    left: -20px;
+    position: absolute;
   }
 
-  &[aria-checked="true"]:hover {
-    background: #0e5faa;
+  & > button {
+    ${invisibleCss}
+    background: none;
+    border: none;
+    /* Lateral position is offset so that the button outline is visible when focused. */
+    bottom: 0;
+    left: 4px;
+    position: absolute;
+    right: 4px;
   }
 
-  svg {
-    color: #084c8d;
-    display: block;
-    ${props => props.fillModeIcons && "fill: currentcolor;"}
+  & > button:focus {
+    clip: initial;
+    height: initial;
+    width: initial;
+  }
+
+  & > input:checked + label {
+    background: ${accentColor};
+  }
+
+  & > input:checked + label,
+  & > input:checked ~ button {
+    color: white;
+  }
+
+  & > input:focus + label {
+    outline: 5px auto blue;
+    /* This next line enhances the visuals in Chromium (webkit) browsers */
+    outline: 5px auto -webkit-focus-ring-color;
+    /* Render the focus outline inside and distinct from the border for both Chrome and Firefox. */
+    outline-offset: -4px;
+  }
+
+  & > input:checked + label:hover {
+    background: ${activeHoverColor};
+  }
+
+  & > label > svg {
+    color: ${accentColor};
+    display: inline-block;
     height: 32px;
     margin: auto;
     vertical-align: middle;
     width: 32px;
   }
 
-  &[aria-checked="true"] > svg {
+  & > input:checked + label > svg {
     color: #eee;
   }
 `;
@@ -111,16 +167,15 @@ const Arrow = styled.div`
 `;
 
 interface ModeButtonProps {
-  disableHover?: boolean;
   fillModeIcons?: boolean;
+  id: string;
   modeButton: ModeButtonDefinition;
   onSettingsUpdate: (QueryParamChangeEvent) => void;
   onToggle: () => void;
 }
 
 function ModeButton({
-  disableHover,
-  fillModeIcons,
+  id,
   modeButton,
   onSettingsUpdate,
   onToggle
@@ -141,76 +196,89 @@ function ModeButton({
     open
   });
 
-  const modeButtonClicked = () => {
-    if (disableHover) {
-      if (!modeButton.enabled) {
-        // enable mode button if it's off
-        onToggle();
-      }
-    } else {
-      onToggle();
-    }
-  };
-
   const { getFloatingProps, getReferenceProps } = useInteractions([
     useHover(context, {
-      enabled: !disableHover,
+      enabled: true,
       handleClose: safePolygon({
         blockPointerEvents: false,
         restMs: 500,
         buffer: 0
       })
     }),
-    useFocus(context, { keyboardOnly: true }),
-    useClick(context, { enabled: disableHover }),
+    useClick(context),
     useRole(context),
-    useDismiss(context),
-    { reference: { onClick: modeButtonClicked } }
+    useDismiss(context)
   ]);
 
-  const disableModeButton = () => {
-    if (modeButton.enabled) {
-      onToggle();
-    }
-    setOpen(false);
-  };
-
   const renderDropdown = open && modeButton.enabled;
+  const interactionProps = getReferenceProps();
+
+  // ARIA roles are added by the `useRole` hook.
+  // Remove the aria-controls, aria-expanded, and aria-haspopup props from the label, they will
+  // instead be passed to the button for keyboard/screen reader users to trigger the popup.
+  const {
+    "aria-controls": ariaControls,
+    "aria-expanded": ariaExpanded,
+    "aria-haspopup": ariaHasPopup,
+    ...labelInteractionProps
+  } = interactionProps;
 
   return (
-    <>
-      {/* useRole adds aria-controls */}
-      {/* eslint-disable-next-line jsx-a11y/role-supports-aria-props */}
-      <ModeButtonItem
-        className={modeButton.enabled ? "enabled" : ""}
-        ref={reference}
-        role="checkbox"
+    <ModeButtonWrapper>
+      {/* Basic checkbox that states whether a mode is selected. */}
+      <input
+        checked={modeButton.enabled ?? undefined}
+        id={`metro-mode-selector-mode-${id}`}
+        onChange={onToggle}
+        type="checkbox"
+      />
+      {/* Label for the above checkbox, placed right after, so that CSS applies based on checkbox state. */}
+      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+      <label
         // This library relies on prop spreading
-        /* eslint-disable-next-line react/jsx-props-no-spreading */
-        {...getReferenceProps()}
-        aria-expanded={renderDropdown}
-        aria-checked={modeButton.enabled ?? false}
-        aria-label={modeButton.label}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...labelInteractionProps}
+        htmlFor={`metro-mode-selector-mode-${id}`}
+        // This will trigger mouse effects such as showing popup on hover of on check.
+        ref={reference}
         title={modeButton.label}
-        // Defaults to true
-        fillModeIcons={fillModeIcons !== false}
       >
-        <modeButton.Icon size={32} />
-      </ModeButtonItem>
+        <modeButton.Icon role="none" size={32} />
+        <InvisibleA11yLabel>{modeButton.label}</InvisibleA11yLabel>
+      </label>
+      <button
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...interactionProps}
+        // Disable button if mode is not checked (but keep in DOM for screen reader awareness)
+        disabled={!modeButton.enabled}
+        // Required by linter settings
+        type="button"
+      >
+        <span role="none">
+          {open ? <CaretUp size={14} /> : <CaretDown size={14} />}
+        </span>
+        <InvisibleA11yLabel>
+          <FormattedMessage
+            defaultMessage={defaultMessages["otpUi.ModeSelector.settingsLabel"]}
+            description="Label for the button to open settings for a travel mode."
+            id="otpUi.ModeSelector.settingsLabel"
+            values={{ mode: modeButton.label }}
+          />
+        </InvisibleA11yLabel>
+      </button>
       {renderDropdown && (
-        <FloatingFocusManager context={context} modal={false}>
+        <FloatingFocusManager context={context}>
           <HoverPanel
             // This library relies on prop spreading
-            // useRole adds aria-haspopup and aria-controls
             // eslint-disable-next-line react/jsx-props-no-spreading
             {...getFloatingProps()}
             // Matches ID on Header element in SubSettingsPane
             aria-labelledby={`metro-mode-selector-${modeButton.key}-button-label`}
             ref={floating}
             style={{
+              left: x ?? 0,
               position: strategy,
-              top: y ?? 0,
-              left: x ?? 0
+              top: y ?? 0
             }}
           >
             <Arrow
@@ -220,25 +288,24 @@ function ModeButton({
             <HoverInnerContainer>
               <SubSettingsPane
                 modeButton={modeButton}
-                onDisableMode={disableModeButton}
-                onDismiss={() => {
-                  setOpen(false);
-                }}
                 onSettingUpdate={onSettingsUpdate}
-                showControls={disableHover ?? false}
               />
             </HoverInnerContainer>
           </HoverPanel>
         </FloatingFocusManager>
       )}
-    </>
+    </ModeButtonWrapper>
   );
 }
 interface Props {
   /**
-   * Switches mode selector into click rather than hover mode, for mobile use.
+   * Whether to fill the mode buttons with a color
    */
-  disableHover?: boolean;
+  fillModeIcons?: boolean;
+  /**
+   * Text that prompts to select a travel mode.
+   */
+  label?: string;
   /**
    * List of mode buttons to be displayed
    */
@@ -252,32 +319,29 @@ interface Props {
    * Event for when a mode button is toggled
    * @param key Mode button to be toggled
    */
-  onToggleModeButton: (key) => void;
-  /**
-   * Whether to fill the mode buttons with a color
-   */
-  fillModeIcons?: boolean;
+  onToggleModeButton: (key: string) => void;
 }
 
 export default function ModeSelector({
-  onToggleModeButton,
-  onSettingsUpdate,
+  fillModeIcons,
+  label,
   modeButtons = [],
-  disableHover,
-  fillModeIcons
+  onSettingsUpdate,
+  onToggleModeButton
 }: Props): ReactElement {
   return (
     <ModeBar className="metro-mode-selector">
+      <legend>{label}</legend>
       {modeButtons.map(combination => (
         <ModeButton
-          onToggle={useCallback(() => {
-            onToggleModeButton(combination.key);
-          }, [combination])}
+          fillModeIcons={fillModeIcons}
+          id={combination.key}
           key={combination.label}
           modeButton={combination}
           onSettingsUpdate={onSettingsUpdate}
-          disableHover={disableHover}
-          fillModeIcons={fillModeIcons}
+          onToggle={useCallback(() => {
+            onToggleModeButton(combination.key);
+          }, [combination, onToggleModeButton])}
         />
       ))}
     </ModeBar>

@@ -47,13 +47,11 @@ const modeSettingDefinitionsWithDropdown = [
 ];
 
 const MetroModeSelectorComponent = ({
-  disableHover,
   fillModeIcons,
   modeButtonDefinitions,
   onSetModeSettingValue,
   onToggleModeButton
 }: {
-  disableHover?: boolean;
   fillModeIcons?: boolean;
   modeButtonDefinitions: ModeButtonDefinition[];
   onSetModeSettingValue: (event: QueryParamChangeEvent) => void;
@@ -87,20 +85,19 @@ const MetroModeSelectorComponent = ({
   };
 
   return (
-    <div style={{ position: "relative", width: "340px" }}>
+    <div style={{ position: "relative" }}>
       <Core.MetroModeSelector
-        onToggleModeButton={toggleModeButtonAction}
+        fillModeIcons={fillModeIcons}
+        label="Select a transit mode"
         modeButtons={buttonsWithSettings}
         onSettingsUpdate={setModeSettingValueAction}
-        fillModeIcons={fillModeIcons}
-        disableHover={disableHover}
+        onToggleModeButton={toggleModeButtonAction}
       />
     </div>
   );
 };
 
 const Template = (args: {
-  disableHover?: boolean;
   fillModeIcons?: boolean;
   onSetModeSettingValue: (event: QueryParamChangeEvent) => void;
   onToggleModeButton: (key: string) => void;
@@ -118,10 +115,9 @@ export default {
   component: MetroModeSelectorComponent,
   title: "Trip Form Components/Metro Mode Selector",
   argTypes: {
-    disableHover: { control: "boolean" },
     fillModeIcons: { control: "boolean" },
-    onToggleModeButton: { action: "toggle button" },
-    onSetModeSettingValue: { action: "set mode setting value" }
+    onSetModeSettingValue: { action: "set mode setting value" },
+    onToggleModeButton: { action: "toggle button" }
   }
 };
 
