@@ -296,6 +296,8 @@ export const LegDescription = styled.span`
 // additional description added to ClickableLeg for screenreaders
 export const InvisibleAdditionalDetails = styled.span`
   display: block;
+  grid-row-start: 2;
+  grid-column-start: 1;
   height: 0;
   overflow: hidden;
   width: 0;
@@ -450,6 +452,8 @@ export const PlaceDetails = styled.div`
 export const PlaceHeader = styled.div`
   display: flex;
   font-size: 1.2em;
+  grid-row-start: 1;
+  grid-column-start: 3;
 `;
 
 export const PlaceName = styled.span`

@@ -1,10 +1,8 @@
 import React, { ReactElement } from "react";
-import { FormattedMessage } from "react-intl";
 
 import RouteLongName from "../defaults/route-long-name";
 import * as S from "../styled";
 import { RouteDescriptionProps } from "../types";
-import { defaultMessages } from "../util";
 
 export default function RouteDescription({
   leg,
@@ -12,7 +10,7 @@ export default function RouteDescription({
 }: RouteDescriptionProps): ReactElement {
   const { routeShortName } = leg;
   return (
-    <S.LegDescriptionForTransit>
+    <S.LegDescriptionForTransit aria-label="zoom to map">
       <S.LegIconAndRouteShortName>
         <S.LegIconContainer>
           <LegIcon leg={leg} />
@@ -26,13 +24,6 @@ export default function RouteDescription({
       <S.LegDescriptionRouteLongName>
         <RouteLongName leg={leg} />
       </S.LegDescriptionRouteLongName>
-      <S.InvisibleAdditionalDetails>
-        <FormattedMessage
-          defaultMessage={defaultMessages["otpUi.TransitLegBody.zoomToLeg"]}
-          description="Identifies behavior of clickable leg"
-          id="otpUi.TransitLegBody.zoomToLeg"
-        />
-      </S.InvisibleAdditionalDetails>
     </S.LegDescriptionForTransit>
   );
 }

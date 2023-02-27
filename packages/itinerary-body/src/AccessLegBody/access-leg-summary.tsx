@@ -1,6 +1,6 @@
 import { Config, Leg, LegIconComponent } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
-import { FormattedMessage } from "react-intl";
+import { injectIntl, IntlShape } from "react-intl";
 import { AccessLegDescription } from "../defaults";
 import { defaultMessages } from "../util";
 
@@ -8,21 +8,30 @@ import * as S from "../styled";
 
 interface Props {
   config: Config;
+  intl: IntlShape;
   leg: Leg;
   LegIcon: LegIconComponent;
   onSummaryClick: () => void;
   showLegIcon: boolean;
 }
 
-export default function AccessLegSummary({
+function AccessLegSummary({
   config,
+  intl,
   leg,
   LegIcon,
   onSummaryClick,
   showLegIcon
 }: Props): ReactElement {
   return (
-    <S.LegClickable onClick={onSummaryClick}>
+    <S.LegClickable
+      onClick={onSummaryClick}
+      aria-label={intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.TransitLegBody.zoomToLeg"],
+        description: "Identifies behavior of clickable leg",
+        id: "otpUi.TransitLegBody.zoomToLeg"
+      })}
+    >
       <S.LegDescription>
         <S.LegIconAndRouteShortName>
           {showLegIcon && (
@@ -33,13 +42,8 @@ export default function AccessLegSummary({
         </S.LegIconAndRouteShortName>
         <AccessLegDescription config={config} leg={leg} />
       </S.LegDescription>
-      <S.InvisibleAdditionalDetails>
-        <FormattedMessage
-          defaultMessage={defaultMessages["otpUi.TransitLegBody.zoomToLeg"]}
-          description="Identifies behavior of clickable leg"
-          id="otpUi.TransitLegBody.zoomToLeg"
-        />
-      </S.InvisibleAdditionalDetails>
     </S.LegClickable>
   );
 }
+
+export default injectIntl(AccessLegSummary);

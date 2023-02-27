@@ -1,6 +1,6 @@
 import coreUtils from "@opentripplanner/core-utils";
 import React, { ReactElement } from "react";
-import { useIntl } from "react-intl";
+import { FormattedMessage, FormattedTime, useIntl } from "react-intl";
 
 import DefaultTimeColumnContent from "../defaults/time-column-content";
 import AccessLegBody from "../AccessLegBody";
@@ -9,7 +9,7 @@ import TransitLegBody from "../TransitLegBody";
 
 import AccessibilityRating from "./accessibility-rating";
 import { PlaceRowProps } from "../types";
-import { defaultMessages } from "../util";
+import { defaultMessages, getFormattedMode } from "../util";
 
 /*
   TODO: Wondering if it's possible for us to destructure the time
@@ -69,8 +69,34 @@ export default function PlaceRow({
     description: "Text describing the view-on-map button",
     id: "otpUi.ItineraryBody.viewOnMap"
   });
+
+  const time = isDestination ? leg.endTime : leg.startTime;
+  const a11yDetailsValues = {
+    mode: getFormattedMode(leg.mode, intl),
+    place: <PlaceName config={config} interline={interline} place={place} />,
+    time: <FormattedTime value={time} />
+  };
+
   return (
     <S.PlaceRowWrapper key={legIndex || "destination-place"}>
+      <S.InvisibleAdditionalDetails>
+        <FormattedMessage
+          description="Invisible description of leg for screen readers"
+          id={
+            leg.routeShortName
+              ? "otpUi.TransitLegBody.accessibilityTransitLegDesc"
+              : "otpUi.TransitLegBody.accessibilityLegDesc"
+          }
+          values={
+            leg.routeShortName
+              ? {
+                  ...a11yDetailsValues,
+                  routeShortName: leg.routeShortName
+                }
+              : a11yDetailsValues
+          }
+        />
+      </S.InvisibleAdditionalDetails>
       <S.LineColumn>
         <LineColumnContent
           interline={interline}
@@ -89,12 +115,12 @@ export default function PlaceRow({
               for an interline place
             */}
         {interline && <S.InterlineDot>&bull;</S.InterlineDot>}
-        <S.PlaceName>
+        <S.PlaceName aria-hidden>
           <PlaceName config={config} interline={interline} place={place} />
         </S.PlaceName>
       </S.PlaceHeader>
 
-      <S.TimeColumn>
+      <S.TimeColumn aria-hidden>
         {/* Custom rendering of the departure/arrival time of the specified leg. */}
         <TimeColumnContent isDestination={isDestination} leg={leg} />
         {!isDestination && leg.accessibilityScore && (

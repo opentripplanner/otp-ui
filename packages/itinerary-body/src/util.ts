@@ -133,6 +133,73 @@ export function getVehicleType(type: string, intl: IntlShape): string {
   }
 }
 
+export function getLocalizedStringIfAvailable(intl, key) {
+  const localized = intl.formatMessage({ id: key });
+  return localized === key ? null : localized;
+}
+
+export function getFormattedMode(mode, intl) {
+  switch (mode?.toLowerCase()) {
+    case "bicycle":
+      return intl.formatMessage({ id: "otpUi.ItineraryBody.modes.bike" });
+    case "bicycle_rent":
+      return intl.formatMessage({
+        id: "otpUi.ItineraryBody.modes.bicycle_rent"
+      });
+    case "bus":
+      return intl.formatMessage({ id: "otpUi.ItineraryBody.modes.bus" });
+    case "cable_car":
+      return intl.formatMessage({ id: "otpUi.ItineraryBody.modes.cable_car" });
+    case "car":
+      return intl.formatMessage({ id: "otpUi.ItineraryBody.modes.car" });
+    case "car_park":
+      return intl.formatMessage({ id: "otpUi.ItineraryBody.modes.car_park" });
+    case "drive":
+      return intl.formatMessage({ id: "otpUi.ItineraryBody.modes.drive" });
+    case "ferry":
+      return intl.formatMessage({ id: "otpUi.ItineraryBody.modes.ferry" });
+    case "flex_direct":
+    case "flex_egress":
+    case "flex_access":
+    case "flex":
+    case "on_demand":
+      return intl.formatMessage({ id: "otpUi.ItineraryBody.modes.flex" });
+    case "funicular":
+      return intl.formatMessage({ id: "otpUi.ItineraryBody.modes.funicular" });
+    case "gondola":
+      return intl.formatMessage({ id: "otpUi.ItineraryBody.modes.gondola" });
+    case "micromobility":
+      return intl.formatMessage({
+        id: "otpUi.ItineraryBody.modes.micromobility"
+      });
+    case "micromobility_rent":
+    case "scooter":
+      return intl.formatMessage({
+        id: "otpUi.ItineraryBody.modes.micromobility_rent"
+      });
+    case "rail":
+      return intl.formatMessage({ id: "otpUi.ItineraryBody.modes.rail" });
+    case "rent":
+      return intl.formatMessage({ id: "otpUi.ItineraryBody.modes.rent" });
+    case "subway":
+      return intl.formatMessage({ id: "otpUi.ItineraryBody.modes.subway" });
+    case "tram":
+      return intl.formatMessage({ id: "otpUi.ItineraryBody.modes.tram" });
+    case "transit":
+      return intl.formatMessage({ id: "otpUi.ItineraryBody.modes.transit" });
+    case "walk":
+      return intl.formatMessage({ id: "otpUi.ItineraryBody.modes.walk" });
+    default:
+      console.warn(`Mode ${mode} does not have a corresponding translation.`);
+      return (
+        getLocalizedStringIfAvailable(
+          intl,
+          `otpUi.ItineraryBody.modes.${mode.toLowerCase()}`
+        ) || mode
+      );
+  }
+}
+
 /**
  * Generates a new place name for micromobility stations
  * @param place OTP Place from micromobility location
