@@ -1,6 +1,15 @@
 import React from "react";
 import { useIntl } from "react-intl";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { Spinner as FASpinner } from "@styled-icons/fa-solid/Spinner";
+
+export const HiddenContent = styled.span`
+  clip: rect(0, 0, 0, 0);
+  display: inline-block;
+  height: 0;
+  overflow: hidden;
+  width: 0;
+`;
 
 export const BaseButton = styled.button`
   border: none;
@@ -54,6 +63,7 @@ export const Dropdown = ({
   listBoxIdentifier,
   onToggle = () => {},
   open,
+  status,
   title
 }: {
   children: React.ReactNode;
@@ -61,6 +71,7 @@ export const Dropdown = ({
   listBoxIdentifier: string;
   onToggle?: () => void;
   open: boolean;
+  status: string;
   title: React.ReactNode;
 }): React.ReactElement => {
   const intl = useIntl();
@@ -82,6 +93,9 @@ export const Dropdown = ({
         {title}
       </DropdownButton>
       {input}
+      {/* Note: always render this status tag regardless of the open state,
+          so that assistive technologies correctly set up status monitoring. */}
+      <HiddenContent role="status">{status}</HiddenContent>
       {open && (
         <MenuItemList
           aria-label={intl.formatMessage({
@@ -208,7 +222,12 @@ export const MenuItem = ({
       {children}
     </MenuItemHeader>
   ) : (
-    <MenuItemLi disabled={disabled} role="none">
+    <MenuItemLi
+      // Hide disabled choices from screen readers (a relevant status is already provided).
+      aria-hidden={disabled || undefined}
+      disabled={disabled}
+      role={disabled ? undefined : "none"}
+    >
       <MenuItemA
         active={active}
         onClick={handleClick}
@@ -222,6 +241,7 @@ export const MenuItem = ({
 };
 
 export const OptionContainer = styled.span`
+  display: block;
   padding-top: 5px;
   padding-bottom: 3px;
 `;
@@ -278,4 +298,17 @@ export const StopName = styled.span``;
 
 export const StopRoutes = styled.span`
   font-size: 9px;
+`;
+
+const rotateAnimation = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
+
+export const Spinner = styled(FASpinner)`
+  animation: ${rotateAnimation} 1.2s linear infinite;
 `;
