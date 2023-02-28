@@ -4,6 +4,8 @@
  */
 
 import React, { FunctionComponent, ReactElement } from "react";
+import { StyledIcon } from "@styled-icons/styled-icon";
+import { ConfiguredModes } from "./deprecated";
 
 type ZeroOrOne = 0 | 1;
 
@@ -146,7 +148,8 @@ export type Config = {
     longDateFormat?: string;
   };
   homeTimezone: string;
-  modes: ConfiguredModes;
+  /** @deprecated */
+  modes?: ConfiguredModes;
   // TODO: add full typing
   map?: {
     overlays?: {
@@ -582,52 +585,6 @@ export type Station = {
   y: number;
 };
 
-export type ModeOption = {
-  id: string;
-  selected?: boolean;
-  showTitle?: boolean;
-  text: JSX.Element;
-  title?: string;
-};
-
-export type ModeSelectorOptions = {
-  primary: ModeOption;
-  secondary?: ModeOption[];
-  tertiary?: ModeOption[];
-};
-
-export type ConfiguredMode =
-  | string
-  | {
-      mode: string;
-      label: string;
-      company?: string;
-    };
-
-export type ConfiguredModes = {
-  transitModes: ConfiguredMode[];
-  accessModes: ConfiguredMode[];
-  exlcusiveModes: ConfiguredMode[];
-  bicycleModes: ConfiguredMode[];
-  micromobilityModes: ConfiguredMode[];
-};
-
-export type ConfiguredCompany = {
-  /**
-   * The id of the company. This is typically in all-caps.
-   */
-  id: string;
-  /**
-   * A human readable text value that can be displayed to users.
-   */
-  label: string;
-  /**
-   * A comma-separated list of applicable modes of travel that the company
-   * offers.
-   */
-  modes: string;
-};
-
 /**
  * Depending on the geocoder that is used, more properties than just the `label`
  * property might be provided by the geocoder. For example, with the Pelias
@@ -701,6 +658,22 @@ export type LegIconComponent = FunctionComponent<{
   width?: string;
 }>;
 
+export type ConfiguredCompany = {
+  /**
+   * The id of the company. This is typically in all-caps.
+   */
+  id: string;
+  /**
+   * A human readable text value that can be displayed to users.
+   */
+  label: string;
+  /**
+   * A comma-separated list of applicable modes of travel that the company
+   * offers.
+   */
+  modes: string;
+};
+
 /**
  * Supports displaying accessibility ratings as a set of thresholds
  * associated with an icon or text.
@@ -710,6 +683,78 @@ export type GradationMap = Record<
   { color: string; icon?: ReactElement; text?: string }
 >;
 
+export const ModeSettingTypes = {
+  CHECKBOX: "CHECKBOX",
+  DROPDOWN: "DROPDOWN",
+  SLIDER: "SLIDER"
+};
+
+export type DropdownOptions = {
+  default?: string;
+  label: string;
+  options: {
+    text: string;
+    value: string;
+    addTransportMode?: TransportMode;
+  }[];
+  type: "DROPDOWN";
+  value?: string;
+};
+
+export type SliderOptions = {
+  default?: number;
+  high: number;
+  inverseKey?: string;
+  label: string;
+  labelHigh: string;
+  labelLow: string;
+  low: number;
+  step: number;
+  type: "SLIDER";
+  value?: number;
+};
+
+export type CheckboxOptions = {
+  addTransportMode?: TransportMode;
+  default?: boolean;
+  icon: JSX.Element;
+  label: string;
+  type: "CHECKBOX";
+  value?: boolean;
+};
+
+export type ModeSettingBase = {
+  applicableMode: string;
+  key: string;
+};
+
+export type ModeSetting = (CheckboxOptions | SliderOptions | DropdownOptions) &
+  ModeSettingBase;
+export type ModeSettingValues = Record<string, number | string | boolean>;
+
+/**
+ * Transportation mode is usually an OTP mode string,
+ * but it can be anything for more flexibility.
+ */
+export type TransportMode = {
+  mode: string;
+  qualifier?: string;
+};
+
+/**
+ * This is a combination of transportation modes,
+ * with a label to describe them. These are designed
+ * to appear in the mode selector as discrete options.
+ */
+export type ModeButtonDefinition = {
+  enabled?: boolean; // User has enabled this mode
+  Icon: StyledIcon; // From iconName (below)
+  iconName: string; // From config
+  key: string; // From config
+  label: string; // From config
+  modes?: TransportMode[]; // This comes from config
+  modeSettings?: ModeSetting[]; // From OTP definitions + config
+};
 export type FareProduct = {
   amount: Money;
   id: string;
