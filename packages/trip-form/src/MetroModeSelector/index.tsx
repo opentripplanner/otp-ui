@@ -167,7 +167,6 @@ const Arrow = styled.div`
 `;
 
 interface ModeButtonProps {
-  fillModeIcons?: boolean;
   id: string;
   modeButton: ModeButtonDefinition;
   onSettingsUpdate: (QueryParamChangeEvent) => void;
@@ -299,10 +298,6 @@ function ModeButton({
 }
 interface Props {
   /**
-   * Whether to fill the mode buttons with a color
-   */
-  fillModeIcons?: boolean;
-  /**
    * Text that prompts to select a travel mode.
    */
   label?: string;
@@ -323,7 +318,6 @@ interface Props {
 }
 
 export default function ModeSelector({
-  fillModeIcons,
   label,
   modeButtons = [],
   onSettingsUpdate,
@@ -334,7 +328,6 @@ export default function ModeSelector({
       <legend>{label}</legend>
       {modeButtons.map(combination => (
         <ModeButton
-          fillModeIcons={fillModeIcons}
           id={combination.key}
           key={combination.label}
           modeButton={combination}
