@@ -12,6 +12,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "@conveyal/lonlat": "^1.4.1",
     "@mapbox/polyline": "^1.1.0",
     "@opentripplanner/geocoder": "^1.3.4",
     "@styled-icons/foundation": "^10.34.0",
