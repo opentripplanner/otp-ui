@@ -60,11 +60,11 @@ otpUi:
       CAR: Drive
       RENT: Rent
     settings:
-      walkTolerance-labelLow: Less walking
-      walkTolerance-labelHigh: More walking
+      walkTolerance-labelLow: Less Walking
+      walkTolerance-labelHigh: More Walking
       walkTolerance-label: Walk Tolerance
-      bikeTolerance-labelLow: Less biking
-      bikeTolerance-labelHigh: More biking
+      bikeTolerance-labelLow: Less Biking
+      bikeTolerance-labelHigh: More Biking
       bikeTolerance-label: Bike Tolerance
       allowBikeRental-label: Bike Rental
       carTolerance-label: Drive Tolerance

@@ -47,12 +47,10 @@ const modeSettingDefinitionsWithDropdown = [
 ];
 
 const MetroModeSelectorComponent = ({
-  fillModeIcons,
   modeButtonDefinitions,
   onSetModeSettingValue,
   onToggleModeButton
 }: {
-  fillModeIcons?: boolean;
   modeButtonDefinitions: ModeButtonDefinition[];
   onSetModeSettingValue: (event: QueryParamChangeEvent) => void;
   onToggleModeButton: (key: string) => void;
@@ -87,7 +85,6 @@ const MetroModeSelectorComponent = ({
   return (
     <div style={{ position: "relative" }}>
       <Core.MetroModeSelector
-        fillModeIcons={fillModeIcons}
         label="Select a transit mode"
         modeButtons={buttonsWithSettings}
         onSettingsUpdate={setModeSettingValueAction}
@@ -98,7 +95,6 @@ const MetroModeSelectorComponent = ({
 };
 
 const Template = (args: {
-  fillModeIcons?: boolean;
   onSetModeSettingValue: (event: QueryParamChangeEvent) => void;
   onToggleModeButton: (key: string) => void;
 }): ReactElement => (
@@ -115,7 +111,6 @@ export default {
   component: MetroModeSelectorComponent,
   title: "Trip Form Components/Metro Mode Selector",
   argTypes: {
-    fillModeIcons: { control: "boolean" },
     onSetModeSettingValue: { action: "set mode setting value" },
     onToggleModeButton: { action: "toggle button" }
   }
