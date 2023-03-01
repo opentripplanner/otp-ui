@@ -35,6 +35,7 @@ export function Option({
   color = null,
   disabled = false,
   icon = null,
+  id,
   isActive = false,
   onClick,
   subTitle = null,
@@ -44,13 +45,14 @@ export function Option({
   color?: string;
   disabled?: boolean;
   icon?: React.ReactNode;
+  id?: string;
   isActive?: boolean;
   onClick?: () => void;
   subTitle?: React.ReactNode;
   title?: React.ReactNode;
 }): React.ReactElement {
   return (
-    <S.MenuItem onClick={onClick} active={isActive} disabled={disabled}>
+    <S.MenuItem active={isActive} disabled={disabled} id={id} onClick={onClick}>
       {coreUtils.ui.isIE() ? (
         // In internet explorer 11, some really weird stuff is happening where it
         // is not possible to click the text of the title, but if you click just
@@ -79,18 +81,20 @@ export function Option({
 }
 
 export function TransitStopOption({
+  id,
   isActive = false,
   onClick,
   stop,
   stopOptionIcon
 }: {
+  id?: string;
   isActive?: boolean;
   onClick: () => void;
   stop: Stop;
   stopOptionIcon: React.ReactNode;
 }): React.ReactElement {
   return (
-    <S.MenuItem onClick={onClick} active={isActive}>
+    <S.MenuItem id={id} onClick={onClick} active={isActive}>
       <S.StopIconAndDistanceContainer>
         {stopOptionIcon}
         <S.StopDistance>
