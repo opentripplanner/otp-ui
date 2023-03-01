@@ -9,7 +9,7 @@ import TransitLegBody from "../TransitLegBody";
 
 import AccessibilityRating from "./accessibility-rating";
 import { PlaceRowProps } from "../types";
-import { defaultMessages, getFormattedMode } from "../util";
+import { defaultMessages } from "../util";
 
 /*
   TODO: Wondering if it's possible for us to destructure the time
@@ -24,6 +24,7 @@ export default function PlaceRow({
   diagramVisible,
   fare,
   followsTransit,
+  formattedModesByLeg,
   frameLeg,
   isDestination,
   lastLeg,
@@ -72,7 +73,7 @@ export default function PlaceRow({
 
   const time = isDestination ? leg.endTime : leg.startTime;
   const a11yDetailsValues = {
-    mode: getFormattedMode(leg.mode, intl),
+    mode: formattedModesByLeg ? formattedModesByLeg[legIndex] : leg.mode,
     place: <PlaceName config={config} interline={interline} place={place} />,
     time: <FormattedTime value={time} />
   };

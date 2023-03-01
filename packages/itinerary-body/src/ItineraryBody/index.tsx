@@ -20,6 +20,7 @@ const ItineraryBody = ({
   config,
   diagramVisible,
   frameLeg = noop,
+  formattedModesByLeg,
   itinerary,
   LegIcon,
   LineColumnContent,
@@ -69,6 +70,7 @@ const ItineraryBody = ({
           // shown for all legs.
           fare={showRouteFares ? fare : null}
           followsTransit={followsTransit}
+          formattedModesByLeg={formattedModesByLeg}
           frameLeg={frameLeg}
           isDestination={isDestination}
           lastLeg={lastLeg}

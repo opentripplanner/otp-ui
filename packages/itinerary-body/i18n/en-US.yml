@@ -88,27 +88,6 @@ otpUi:
       escooter: by e-scooter
       walk: by walking
     viewOnMap: View on map
-    modes:
-      bike: Bike
-      bicycle_rent: Bikeshare
-      bus: Bus
-      # The original OTP mode id is CABLE_CAR. Lowercase makes it cable_car.
-      cable_car: Cable Car
-      car: Car
-      car_park: Park and Ride
-      drive: Drive
-      ferry: Ferry
-      flex: Flex Routes
-      funicular: Funicular
-      gondola: Gondola
-      micromobility: E-Scooter
-      micromobility_rent: E-Scooter
-      rail: Rail
-      rent: Rental options
-      subway: Subway
-      tram: Streetcar
-      transit: Transit
-      walk: Walk
   TransitLegBody:
     accessibilityLegDesc: "{mode} from {place} leaving at {time}"
     accessibilityTransitLegDesc: "{mode} {routeShortName} from {place} leaving at {time}"
