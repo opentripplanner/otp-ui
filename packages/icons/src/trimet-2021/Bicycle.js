@@ -1,6 +1,5 @@
 import React from "react";
 
-// TODO: Add TypeScript
 const SvgBicycle = () => (
   <svg
     version="1.1"

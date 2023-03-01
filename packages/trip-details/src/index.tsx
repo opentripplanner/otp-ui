@@ -155,10 +155,7 @@ export function TripDetails({
     fare = (
       <S.Fare>
         <TransitFareWrapper>
-          <summary
-            role="button"
-            style={{ display: fareKeys.length > 1 ? "list-item" : "" }}
-          >
+          <summary style={{ display: fareKeys.length > 1 ? "list-item" : "" }}>
             <TransitFare
               fareNameFallback={
                 <FormattedMessage

@@ -234,7 +234,6 @@ export default function DateTimeSelector({
         {departureOptions.map(opt => (
           <ModeButton
             key={opt.type}
-            uniqueId={opt.type}
             onClick={setDepartArrive(opt)}
             selected={opt.isSelected}
           >

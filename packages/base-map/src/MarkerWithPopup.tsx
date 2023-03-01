@@ -11,7 +11,7 @@ type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
 };
 
 /**
- * A MapLibre marker with a connected popup or tooltip.
+ * A MapLibre marker with a connected popup or tooltip
  */
 const MarkerWithPopup = ({
   children,

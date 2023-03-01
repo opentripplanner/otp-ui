@@ -32,9 +32,8 @@
     "lodash.isequal": "^4.5.0"
   },
   "devDependencies": {
-    "@opentripplanner/itinerary-body": "^3.0.5",
-    "@opentripplanner/endpoints-overlay": "^2.0.4",
-    "@opentripplanner/types": "^4.0.2"
+    "@opentripplanner/endpoints-overlay": "^2.0.5",
+    "@opentripplanner/types": "^4.0.5"
   },
   "peerDependencies": {
     "react": "^16.14.0",

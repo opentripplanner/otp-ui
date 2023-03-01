@@ -13,10 +13,10 @@ export const SettingsHeader = styled.div``;
 export const SettingsSection = styled.div``;
 
 export const SettingLabel = styled.label`
-  font-weight: 300;
   padding-left: 6px;
+
   svg {
-    width: 22pt; 
+    width: 22pt;
   }
 `;
 

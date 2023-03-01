@@ -26,10 +26,10 @@
     "@styled-icons/fa-solid": "^10.34.0"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^4.0.5",
     "@types/flat": "^5.0.2"
   },
   "peerDependencies": {
+    "@opentripplanner/types": "^4.0.5",
     "react": "^16.14.0",
     "react-dom": "^16.8.6",
     "react-intl": "^5.24.6",

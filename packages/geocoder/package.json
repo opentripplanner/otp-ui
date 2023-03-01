@@ -12,7 +12,6 @@
   "dependencies": {
     "@conveyal/geocoder-arcgis-geojson": "^0.0.3",
     "@conveyal/lonlat": "^1.4.1",
-    "geojson": "^0.5.0",
     "isomorphic-mapzen-search": "^1.6.1",
     "lodash.memoize": "^4.1.2"
   },

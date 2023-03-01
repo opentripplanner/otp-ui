@@ -53,7 +53,6 @@ export default function ModeSelector({
   const makeButton = (option: ModeSelectorOption): ReactElement => (
     <ModeButton
       key={option.id}
-      uniqueId={option.id}
       selected={option.selected}
       showTitle={option.showTitle}
       title={option.title}
