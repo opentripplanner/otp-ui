@@ -755,6 +755,7 @@ export type ModeButtonDefinition = {
   modes?: TransportMode[]; // This comes from config
   modeSettings?: ModeSetting[]; // From OTP definitions + config
 };
+
 export type FareProduct = {
   amount: Money;
   id: string;
