@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/location-field",
-  "version": "1.12.14",
+  "version": "1.12.15",
   "description": "A component for display and finding a location",
   "main": "lib/index.js",
   "module": "esm/index.js",
