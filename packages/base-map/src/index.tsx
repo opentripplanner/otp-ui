@@ -44,6 +44,7 @@ type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
   /** An initial zoom value for the map */
   zoom?: number;
 };
+
 type State = {
   latitude: number;
   longitude: number;
