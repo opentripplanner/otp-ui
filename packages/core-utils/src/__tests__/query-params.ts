@@ -30,16 +30,16 @@ const mockLatLon = {
 
 function expectModes(modes: string[], expectedModes: string[][]) {
   const generatedModesList = generateCombinations({
-    modes: modes.map(modeStrToTransportMode),
-    to: mockLatLon,
     from: mockLatLon,
-    modeSettings: []
+    modes: modes.map(modeStrToTransportMode),
+    modeSettings: [],
+    to: mockLatLon
   });
   const expandedExpectedModesList = expectedModes.map(em => ({
-    modes: em.map(modeStrToTransportMode),
-    to: mockLatLon,
     from: mockLatLon,
-    modeSettings: []
+    modes: em.map(modeStrToTransportMode),
+    modeSettings: [],
+    to: mockLatLon
   }));
   return it(
     modes.join(" "),
@@ -61,21 +61,21 @@ describe("extract-modes", () => {
   };
 
   const checkboxModeSetting: ModeSetting = {
-    type: "CHECKBOX",
-    icon: null,
-    label: "test",
+    addTransportMode: mode,
     applicableMode: testTransportMode.mode,
+    icon: null,
     key: "test",
-    value: true,
-    addTransportMode: mode
+    label: "test",
+    type: "CHECKBOX",
+    value: true
   };
 
   const dropdownModeSetting: ModeSetting = {
-    type: "DROPDOWN",
-    label: "test",
     applicableMode: testTransportMode.mode,
     key: "test",
+    label: "test",
     options: [{ text: "testop", value: "1", addTransportMode: mode }],
+    type: "DROPDOWN",
     value: "1"
   };
 
