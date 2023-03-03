@@ -45,10 +45,7 @@ export function extractAdditionalModes(
       const transportMode = cur.options.find(o => o.value === cur.value)
         .addTransportMode;
       if (transportMode) {
-        return [
-          ...prev,
-          cur.options.find(o => o.value === cur.value).addTransportMode
-        ];
+        return [...prev, transportMode];
       }
     }
     return prev;
@@ -73,6 +70,10 @@ function combinations(array: TransportMode[]): TransportMode[][] {
   );
 }
 
+/**
+ * This constant maps all the transport mode to a broader mode type,
+ * which is used to determine the valid combinations of modes used in query generation.
+ */
 export const SIMPLIFICATIONS = {
   AIRPLANE: "TRANSIT",
   BICYCLE: "PERSONAL",
@@ -153,7 +154,7 @@ function isCombinationValid(
 }
 
 /**
- * Generates list of queries for OTP to get a comprehensive
+ * Generates a list of queries for OTP to get a comprehensive
  * set of results based on the modes input.
  * @param params OTP Query Params
  * @returns Set of parameters to generate queries
@@ -174,9 +175,12 @@ export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
     .map(combo => ({ ...params, modes: combo }));
 }
 
-export function generateOtp2Query(params: OTPQueryParams): GraphQLQuery {
-  const { from, modeSettings, to } = params;
-
+export function generateOtp2Query({
+  from,
+  modeSettings,
+  modes,
+  to
+}: OTPQueryParams): GraphQLQuery {
   // This extracts the values from the mode settings to key value pairs
   const modeSettingValues = modeSettings.reduce((prev, cur) => {
     prev[cur.key] = cur.value;
@@ -196,7 +200,7 @@ export function generateOtp2Query(params: OTPQueryParams): GraphQLQuery {
       bikeReluctance,
       carReluctance,
       fromPlace: `${from.name}::${from.lat},${from.lon}}`,
-      modes: params.modes,
+      modes,
       toPlace: `${to.name}::${to.lat},${to.lon}}`,
       walkReluctance,
       wheelchair
