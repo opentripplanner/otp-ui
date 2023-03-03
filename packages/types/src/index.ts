@@ -730,7 +730,6 @@ export type ModeSettingBase = {
 
 export type ModeSetting = (CheckboxOptions | SliderOptions | DropdownOptions) &
   ModeSettingBase;
-
 export type ModeSettingValues = Record<string, number | string | boolean>;
 
 /**
