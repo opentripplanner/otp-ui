@@ -74,7 +74,7 @@ describe("extract-modes", () => {
     applicableMode: testTransportMode.mode,
     key: "test",
     label: "test",
-    options: [{ text: "testop", value: "1", addTransportMode: mode }],
+    options: [{ text: "testOption", value: "1", addTransportMode: mode }],
     type: "DROPDOWN",
     value: "1"
   };
