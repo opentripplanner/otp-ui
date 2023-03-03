@@ -18,6 +18,7 @@ query PlanQuery(
 		fromPlace: $fromPlace
 		toPlace: $toPlace
 		transportModes: $modes
+		# Currently only supporting EN locale, used for times and text
 		locale: "en",
 		time: $time,
 		date: $date,
