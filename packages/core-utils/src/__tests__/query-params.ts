@@ -79,17 +79,17 @@ describe("extract-modes", () => {
     value: "1"
   };
 
-  it("a checkbox setting", () => {
+  it("determines whether a checkbox setting is extracted correctly", () => {
     expect(
       extractAdditionalModes([checkboxModeSetting], [testTransportMode])
     ).toEqual([mode]);
   });
-  it("a dropdown setting", () => {
+  it("determines whether a dropdown setting is extracted correctly", () => {
     expect(
       extractAdditionalModes([dropdownModeSetting], [testTransportMode])
     ).toEqual([mode]);
   });
-  it("a disabled mode setting", () => {
+  it("determines whether a checkbox setting set to false is ignored", () => {
     expect(
       extractAdditionalModes(
         [{ ...checkboxModeSetting, value: false }],
@@ -97,7 +97,7 @@ describe("extract-modes", () => {
       )
     ).toEqual([]);
   });
-  it("a setting from a disabled mode", () => {
+  it("determines whether a checkbox setting with no modes is ignored", () => {
     expect(extractAdditionalModes([{ ...checkboxModeSetting }], [])).toEqual(
       []
     );
