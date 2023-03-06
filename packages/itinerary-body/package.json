@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/itinerary-body",
-  "version": "4.1.9",
+  "version": "4.1.10-alpha.1",
   "description": "A component for displaying an itinerary body of a trip planning result",
   "main": "lib/index.js",
   "module": "esm/index.js",
