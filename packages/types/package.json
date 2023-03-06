@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/types",
-  "version": "4.0.6",
+  "version": "5.0.0",
   "description": "TypeScript types used across multiple OTP-UI packages",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
