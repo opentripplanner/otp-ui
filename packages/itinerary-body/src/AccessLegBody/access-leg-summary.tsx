@@ -22,7 +22,7 @@ export default function AccessLegSummary({
   showLegIcon
 }: Props): ReactElement {
   return (
-    <S.LegClickable onClick={onSummaryClick}>
+    <S.LegClickable>
       <S.LegDescription>
         <S.LegIconAndRouteShortName>
           {showLegIcon && (
@@ -32,13 +32,15 @@ export default function AccessLegSummary({
           )}
         </S.LegIconAndRouteShortName>
         <AccessLegDescription config={config} leg={leg} />
-        <S.InvisibleAdditionalDetails>
-          <FormattedMessage
-            defaultMessage={defaultMessages["otpUi.TransitLegBody.zoomToLeg"]}
-            description="Identifies behavior of button"
-            id="otpUi.TransitLegBody.zoomToLeg"
-          />
-        </S.InvisibleAdditionalDetails>
+        <S.LegClickableButton onClick={onSummaryClick}>
+          <S.InvisibleAdditionalDetails>
+            <FormattedMessage
+              defaultMessage={defaultMessages["otpUi.TransitLegBody.zoomToLeg"]}
+              description="Identifies behavior of button"
+              id="otpUi.TransitLegBody.zoomToLeg"
+            />
+          </S.InvisibleAdditionalDetails>
+        </S.LegClickableButton>
       </S.LegDescription>
     </S.LegClickable>
   );
