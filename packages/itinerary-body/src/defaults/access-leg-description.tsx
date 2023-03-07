@@ -14,7 +14,7 @@ interface Props extends HTMLAttributes<HTMLSpanElement> {
 /**
  * Gets the summary mode in the ambient language.
  */
-function getSummaryMode(leg: Leg, intl: IntlShape): string {
+export function getSummaryMode(leg: Leg, intl: IntlShape): string {
   switch (leg.mode) {
     case "BICYCLE":
       return intl.formatMessage({

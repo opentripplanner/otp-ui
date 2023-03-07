@@ -10,6 +10,7 @@ import TransitLegBody from "../TransitLegBody";
 import AccessibilityRating from "./accessibility-rating";
 import { PlaceRowProps } from "../types";
 import { defaultMessages } from "../util";
+import { getSummaryMode } from "../defaults/access-leg-description";
 
 /*
   TODO: Wondering if it's possible for us to destructure the time
@@ -71,32 +72,46 @@ export default function PlaceRow({
     id: "otpUi.ItineraryBody.viewOnMap"
   });
 
+  const formattedPlace = (
+    <PlaceName config={config} interline={interline} place={place} />
+  );
   const time = isDestination ? leg.endTime : leg.startTime;
   const a11yDetailsValues = {
-    mode: formattedModesByLeg ? formattedModesByLeg[legIndex] : leg.mode,
-    place: <PlaceName config={config} interline={interline} place={place} />,
+    mode: formattedModesByLeg
+      ? formattedModesByLeg[legIndex]
+      : getSummaryMode(leg, intl),
+    place: formattedPlace,
     time: <FormattedTime value={time} />
   };
 
   return (
     <S.PlaceRowWrapper key={legIndex || "destination-place"}>
       <S.InvisibleAdditionalDetails>
-        <FormattedMessage
-          description="Invisible description of leg for screen readers"
-          id={
-            leg.routeShortName
-              ? "otpUi.TransitLegBody.accessibilityTransitLegDesc"
-              : "otpUi.TransitLegBody.accessibilityLegDesc"
-          }
-          values={
-            leg.routeShortName
-              ? {
-                  ...a11yDetailsValues,
-                  routeShortName: leg.routeShortName
-                }
-              : a11yDetailsValues
-          }
-        />
+        {!isDestination ? (
+          <FormattedMessage
+            description="Invisible description of leg for screen readers"
+            id={
+              leg.routeShortName
+                ? "otpUi.TransitLegBody.accessibilityTransitLegDesc"
+                : "otpUi.TransitLegBody.accessibilityLegDesc"
+            }
+            values={
+              leg.routeShortName
+                ? {
+                    ...a11yDetailsValues,
+                    routeShortName: leg.routeShortName
+                  }
+                : a11yDetailsValues
+            }
+          />
+        ) : (
+          <FormattedMessage
+            id="otpUi.TransitLegBody.arriveAt"
+            defaultMessage={defaultMessages["otpUi.TransitLegBody.arriveAt"]}
+            description="Identifies end of the trip to screenreaders"
+            values={{ place: formattedPlace }}
+          />
+        )}
       </S.InvisibleAdditionalDetails>
       <S.LineColumn>
         <LineColumnContent
@@ -121,7 +136,7 @@ export default function PlaceRow({
         </S.PlaceName>
       </S.PlaceHeader>
 
-      <S.TimeColumn aria-hidden>
+      <S.TimeColumn>
         {/* Custom rendering of the departure/arrival time of the specified leg. */}
         <TimeColumnContent isDestination={isDestination} leg={leg} />
         {!isDestination && leg.accessibilityScore && (

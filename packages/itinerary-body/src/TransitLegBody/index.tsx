@@ -189,17 +189,21 @@ class TransitLegBody extends Component<Props, State> {
           role="group"
         >
           {/* The Route Icon/Name Bar; clickable to set as active leg */}
-          <S.LegClickable
-            onClick={this.onSummaryClick}
-            aria-label={intl.formatMessage({
-              id: "otpUi.TransitLegBody.zoomToLeg"
-            })}
-          >
+          <S.LegClickable onClick={this.onSummaryClick}>
             <RouteDescription
               leg={leg}
               LegIcon={LegIcon}
               transitOperator={transitOperator}
             />
+            <S.InvisibleAdditionalDetails>
+              <FormattedMessage
+                defaultMessage={
+                  defaultMessages["otpUi.TransitLegBody.zoomToLeg"]
+                }
+                description="Identifies behavior of button"
+                id="otpUi.TransitLegBody.zoomToLeg"
+              />
+            </S.InvisibleAdditionalDetails>
           </S.LegClickable>
 
           {/* Agency information */}
