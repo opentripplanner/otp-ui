@@ -113,7 +113,9 @@ const FareTypeTable = ({
         </TableHeader>
         {legs.map((leg, index) => (
           <tr key={index}>
-            <td className="no-zebra">{leg.routeShortName}</td>
+            <td className="no-zebra">
+              {leg.routeShortName || leg.route || leg.routeLongName}
+            </td>
             {colsToRender.map(col => {
               const fare = hasLegProducts
                 ? getLegCost(leg, col.riderCategory, col.fareContainer)
