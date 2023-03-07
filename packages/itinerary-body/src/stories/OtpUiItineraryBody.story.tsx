@@ -214,3 +214,11 @@ export const TwoAlertWithoutCollapsingProp = (): ReactElement => (
 export const ZeroAlertsWithoutCollapsingProp = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper itinerary={walkInterlinedTransitItinerary} />
 );
+
+export const ModeStringsItinerary = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkItinerary}
+    // Mode translations will be passed from implementer
+    formattedModesByLeg={["Walk", "Tram", "Walk"]}
+  />
+);

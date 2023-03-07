@@ -50,18 +50,21 @@ interface StoryWrapperProps {
   showRouteFares: boolean;
   TimeColumnContent: FunctionComponent<TimeColumnContentProps>;
   alwaysCollapseAlerts: boolean;
+  formattedModesByLeg: Array<string>;
 }
 
 function OtpRRItineraryBodyWrapper({
   itinerary,
   showRouteFares,
   TimeColumnContent,
-  alwaysCollapseAlerts
+  alwaysCollapseAlerts,
+  formattedModesByLeg
 }: StoryWrapperProps): ReactElement {
   return (
     <ItineraryBodyDefaultsWrapper
       alwaysCollapseAlerts={alwaysCollapseAlerts}
       itinerary={itinerary}
+      formattedModesByLeg={formattedModesByLeg}
       LegIcon={ClassicLegIcon}
       LineColumnContent={OtpRRLineColumnContent}
       PlaceName={OtpRRPlaceName}
@@ -213,4 +216,12 @@ export const TwoAlertsWithoutCollapsingProp = (): ReactElement => (
 
 export const ZeroAlertsWithoutCollapsingProp = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkInterlinedTransitItinerary} />
+);
+
+export const ModeStringsItinerary = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    itinerary={walkTransitWalkItinerary}
+    // Mode translations will be passed from implementer
+    formattedModesByLeg={["Walk", "Tram", "Walk"]}
+  />
 );
