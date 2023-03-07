@@ -38,12 +38,6 @@ export const TransparentButton = styled.button`
   cursor: pointer;
   font-size: inherit;
   text-decoration: none;
-  &:focus {
-    /*
-      TODO: Add outline for keyboard tabbing only:
-      https://stackoverflow.com/a/45191208/915811
-    */
-  }
 `;
 
 export const AnchorButton = styled.a`
@@ -292,6 +286,9 @@ export const LegClickableButton = styled(TransparentButton)`
   position: absolute;
   right: 0;
   top: 0;
+  /* Place the button just above the elevation chart, 
+     so that its outline doesn't appear clipped in Chromium. */
+  z-index: 1;
 `;
 
 // Use <span> for correct semantics as it is the contents of a button or a link.
