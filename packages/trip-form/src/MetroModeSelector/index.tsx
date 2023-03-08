@@ -230,6 +230,7 @@ function ModeButton({
         id={`metro-mode-selector-mode-${id}`}
         onChange={onToggle}
         type="checkbox"
+        aria-label={modeButton.label}
       />
       {/* Label for the above checkbox, placed right after, so that CSS applies based on checkbox state. */}
       {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
