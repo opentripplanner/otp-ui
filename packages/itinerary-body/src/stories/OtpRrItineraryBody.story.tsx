@@ -63,8 +63,8 @@ function OtpRRItineraryBodyWrapper({
   return (
     <ItineraryBodyDefaultsWrapper
       alwaysCollapseAlerts={alwaysCollapseAlerts}
-      itinerary={itinerary}
       formattedModesByLeg={formattedModesByLeg}
+      itinerary={itinerary}
       LegIcon={ClassicLegIcon}
       LineColumnContent={OtpRRLineColumnContent}
       PlaceName={OtpRRPlaceName}

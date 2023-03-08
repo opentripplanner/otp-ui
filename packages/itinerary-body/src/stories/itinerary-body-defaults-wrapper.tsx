@@ -80,8 +80,8 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
         alwaysCollapseAlerts={alwaysCollapseAlerts}
         config={config}
         diagramVisible={diagramVisible}
-        frameLeg={action("frameLeg")}
         formattedModesByLeg={formattedModesByLeg}
+        frameLeg={action("frameLeg")}
         itinerary={itinerary}
         LegIcon={LegIcon}
         LineColumnContent={LineColumnContent || DefaultLineColumnContent}

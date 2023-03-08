@@ -180,17 +180,10 @@ class TransitLegBody extends Component<Props, State> {
     return (
       <>
         {TransitLegSubheader && <TransitLegSubheader leg={leg} />}
-        <S.LegBody
-          aria-label={intl.formatMessage({
-            defaultMessage: defaultMessages["otpUi.TransitLegBody.legDetails"],
-            description: "Identifies this section as trip leg details",
-            id: "otpUi.TransitLegBody.legDetails"
-          })}
-          role="group"
-        >
+        <S.LegBody>
           {/* The Route Icon/Name Bar */}
           <S.LegClickable>
-            <S.LegDescription>
+            <S.LegDescription aria-hidden>
               <RouteDescription
                 leg={leg}
                 LegIcon={LegIcon}
@@ -209,144 +202,157 @@ class TransitLegBody extends Component<Props, State> {
               </S.LegClickableButton>
             </S.LegDescription>
           </S.LegClickable>
-
-          {/* Agency information */}
-          {showAgencyInfo && (
-            <S.AgencyInfo>
-              <FormattedMessage
-                defaultMessage={
-                  defaultMessages["otpUi.TransitLegBody.operatedBy"]
-                }
-                description="Tells which agency operates the service"
-                id="otpUi.TransitLegBody.operatedBy"
-                values={{
-                  agencyLink: (
-                    <a
-                      aria-label={intl.formatMessage(
-                        {
-                          id: "otpUi.TransitLegBody.agencyExternalLink"
-                        },
-                        {
-                          agencyName
-                        }
-                      )}
-                      href={agencyUrl}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      {transitOperatorName}
-                      {logoUrl && <img alt="" src={logoUrl} height={25} />}
-                    </a>
-                  )
-                }}
-              />
-            </S.AgencyInfo>
-          )}
-          {isReservationRequired && leg.pickupBookingInfo && (
-            <S.CallAheadWarning>
-              <FormattedMessage
-                defaultMessage={
-                  defaultMessages["otpUi.ItineraryBody.flexPickupMessage"]
-                }
-                description="Instructions for booking and boarding the flex (on-demand) transit service."
-                id="otpUi.ItineraryBody.flexPickupMessage"
-                values={getFlexMessageValues(leg.pickupBookingInfo)}
-              />
-            </S.CallAheadWarning>
-          )}
-          {/* Alerts toggle */}
-          {!shouldOnlyShowAlertsExpanded && (
-            <S.TransitAlertToggle onClick={this.onToggleAlertsClick}>
-              <AlertToggleIcon />{" "}
-              <FormattedMessage
-                defaultMessage={
-                  defaultMessages["otpUi.TransitLegBody.alertsHeader"]
-                }
-                description="Number of alerts header"
-                id="otpUi.TransitLegBody.alertsHeader"
-                values={{
-                  alertCount: alerts.length
-                }}
-              />
-              <S.CaretToggle expanded={alertsExpanded} />
-            </S.TransitAlertToggle>
-          )}
-
-          {/* The Alerts body, if visible */}
-          <AnimateHeight duration={500} height={expandAlerts ? "auto" : 0}>
-            <AlertsBody
-              alerts={leg.alerts}
-              AlertIcon={AlertBodyIcon}
-              timeZone={timeZone}
-            />
-          </AnimateHeight>
-          {/* The "Ride X Min / X Stops" Row, including IntermediateStops body */}
-          {leg.intermediateStops && leg.intermediateStops.length > 0 && (
-            <S.TransitLegDetails>
-              {/* The header summary row, clickable to expand intermediate stops */}
-              <S.TransitLegDetailsHeader>
-                <TransitLegSummary
-                  leg={leg}
-                  onClick={this.onToggleStopsClick}
-                  stopsExpanded={stopsExpanded}
+          <div
+            // Creates a group of leg details for screenreaders after the initial leg description.
+            aria-label={intl.formatMessage({
+              defaultMessage:
+                defaultMessages["otpUi.TransitLegBody.legDetails"],
+              description: "Identifies this section as trip leg details",
+              id: "otpUi.TransitLegBody.legDetails"
+            })}
+            role="group"
+          >
+            {/* Agency information */}
+            {showAgencyInfo && (
+              <S.AgencyInfo>
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages["otpUi.TransitLegBody.operatedBy"]
+                  }
+                  description="Tells which agency operates the service"
+                  id="otpUi.TransitLegBody.operatedBy"
+                  values={{
+                    agencyLink: (
+                      <a
+                        aria-label={intl.formatMessage(
+                          {
+                            id: "otpUi.TransitLegBody.agencyExternalLink"
+                          },
+                          {
+                            agencyName
+                          }
+                        )}
+                        href={agencyUrl}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        {transitOperatorName}
+                        {logoUrl && <img alt="" src={logoUrl} height={25} />}
+                      </a>
+                    )
+                  }}
                 />
+              </S.AgencyInfo>
+            )}
+            {isReservationRequired && leg.pickupBookingInfo && (
+              <S.CallAheadWarning>
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages["otpUi.ItineraryBody.flexPickupMessage"]
+                  }
+                  description="Instructions for booking and boarding the flex (on-demand) transit service."
+                  id="otpUi.ItineraryBody.flexPickupMessage"
+                  values={getFlexMessageValues(leg.pickupBookingInfo)}
+                />
+              </S.CallAheadWarning>
+            )}
+            {/* Alerts toggle */}
+            {!shouldOnlyShowAlertsExpanded && (
+              <S.TransitAlertToggle onClick={this.onToggleAlertsClick}>
+                <AlertToggleIcon />{" "}
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages["otpUi.TransitLegBody.alertsHeader"]
+                  }
+                  description="Number of alerts header"
+                  id="otpUi.TransitLegBody.alertsHeader"
+                  values={{
+                    alertCount: alerts.length
+                  }}
+                />
+                <S.CaretToggle expanded={alertsExpanded} />
+              </S.TransitAlertToggle>
+            )}
 
-                {showViewTripButton && (
-                  <ViewTripButton
-                    tripId={leg.tripId}
-                    fromIndex={leg.from.stopIndex}
-                    setViewedTrip={setViewedTrip}
-                    toIndex={leg.to.stopIndex}
+            {/* The Alerts body, if visible */}
+            <AnimateHeight duration={500} height={expandAlerts ? "auto" : 0}>
+              <AlertsBody
+                alerts={leg.alerts}
+                AlertIcon={AlertBodyIcon}
+                timeZone={timeZone}
+              />
+            </AnimateHeight>
+            {/* The "Ride X Min / X Stops" Row, including IntermediateStops body */}
+            {leg.intermediateStops && leg.intermediateStops.length > 0 && (
+              <S.TransitLegDetails>
+                {/* The header summary row, clickable to expand intermediate stops */}
+                <S.TransitLegDetailsHeader>
+                  <TransitLegSummary
+                    leg={leg}
+                    onClick={this.onToggleStopsClick}
+                    stopsExpanded={stopsExpanded}
                   />
-                )}
-              </S.TransitLegDetailsHeader>
-              {/* IntermediateStops expanded body */}
-              <AnimateHeight duration={500} height={stopsExpanded ? "auto" : 0}>
-                <S.TransitLegExpandedBody>
-                  <IntermediateStops stops={leg.intermediateStops} />
-                  {fareForLeg && (
-                    <S.TransitLegFare>
-                      <FormattedMessage
-                        defaultMessage={
-                          defaultMessages["otpUi.TransitLegBody.fare"]
-                        }
-                        description="Describes the fare for a leg"
-                        id="otpUi.TransitLegBody.fare"
-                        values={{
-                          fare: (
-                            <FormattedNumber
-                              currency={fareForLeg.currencyCode}
-                              currencyDisplay="narrowSymbol"
-                              // This isn't a "real" style prop
-                              // eslint-disable-next-line react/style-prop-object
-                              style="currency"
-                              value={fareForLeg.transitFare / 100}
-                            />
-                          )
-                        }}
-                      />
-                    </S.TransitLegFare>
+
+                  {showViewTripButton && (
+                    <ViewTripButton
+                      tripId={leg.tripId}
+                      fromIndex={leg.from.stopIndex}
+                      setViewedTrip={setViewedTrip}
+                      toIndex={leg.to.stopIndex}
+                    />
                   )}
-                </S.TransitLegExpandedBody>
-              </AnimateHeight>
+                </S.TransitLegDetailsHeader>
+                {/* IntermediateStops expanded body */}
+                <AnimateHeight
+                  duration={500}
+                  height={stopsExpanded ? "auto" : 0}
+                >
+                  <S.TransitLegExpandedBody>
+                    <IntermediateStops stops={leg.intermediateStops} />
+                    {fareForLeg && (
+                      <S.TransitLegFare>
+                        <FormattedMessage
+                          defaultMessage={
+                            defaultMessages["otpUi.TransitLegBody.fare"]
+                          }
+                          description="Describes the fare for a leg"
+                          id="otpUi.TransitLegBody.fare"
+                          values={{
+                            fare: (
+                              <FormattedNumber
+                                currency={fareForLeg.currencyCode}
+                                currencyDisplay="narrowSymbol"
+                                // This isn't a "real" style prop
+                                // eslint-disable-next-line react/style-prop-object
+                                style="currency"
+                                value={fareForLeg.transitFare / 100}
+                              />
+                            )
+                          }}
+                        />
+                      </S.TransitLegFare>
+                    )}
+                  </S.TransitLegExpandedBody>
+                </AnimateHeight>
 
-              {/* Average wait details, if present */}
-              {leg.averageWait && (
-                <span>
-                  <FormattedMessage
-                    defaultMessage={
-                      defaultMessages["otpUi.TransitLegBody.typicalWait"]
-                    }
-                    description="Describes the typical wait for a transit leg"
-                    id="otpUi.TransitLegBody.typicalWait"
-                    values={{
-                      waitTime: <Duration seconds={leg.averageWait} />
-                    }}
-                  />
-                </span>
-              )}
-            </S.TransitLegDetails>
-          )}
+                {/* Average wait details, if present */}
+                {leg.averageWait && (
+                  <span>
+                    <FormattedMessage
+                      defaultMessage={
+                        defaultMessages["otpUi.TransitLegBody.typicalWait"]
+                      }
+                      description="Describes the typical wait for a transit leg"
+                      id="otpUi.TransitLegBody.typicalWait"
+                      values={{
+                        waitTime: <Duration seconds={leg.averageWait} />
+                      }}
+                    />
+                  </span>
+                )}
+              </S.TransitLegDetails>
+            )}
+          </div>
         </S.LegBody>
       </>
     );

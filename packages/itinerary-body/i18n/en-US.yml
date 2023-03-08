@@ -89,8 +89,10 @@ otpUi:
       walk: by walking
     viewOnMap: View on map
   TransitLegBody:
-    accessibilityLegDesc: "{mode} from {place}"
-    accessibilityTransitLegDesc: "{mode} {routeShortName} from {place}"
+    accessibilityTransitLegDesc: " Ride {routeName} {mode} {headsign, select,
+      true {to {legHeadsign}}
+      other {}
+      } to {place}"
     arriveAt: "Arrive at {place}"
     agencyExternalLink: "{agencyName} (External Link)"
     AlertsBody:

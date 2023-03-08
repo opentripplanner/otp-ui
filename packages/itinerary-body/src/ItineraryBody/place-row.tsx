@@ -1,6 +1,6 @@
 import coreUtils from "@opentripplanner/core-utils";
 import React, { ReactElement } from "react";
-import { FormattedMessage, FormattedTime, useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 
 import DefaultTimeColumnContent from "../defaults/time-column-content";
 import AccessLegBody from "../AccessLegBody";
@@ -73,46 +73,11 @@ export default function PlaceRow({
   });
 
   const formattedPlace = (
-    <PlaceName config={config} interline={interline} place={place} />
+    <PlaceName config={config} interline={interline} place={leg.to} />
   );
-  const time = isDestination ? leg.endTime : leg.startTime;
-  const a11yDetailsValues = {
-    mode: formattedModesByLeg
-      ? formattedModesByLeg[legIndex]
-      : getSummaryMode(leg, intl),
-    place: formattedPlace,
-    time: <FormattedTime value={time} />
-  };
 
   return (
     <S.PlaceRowWrapper key={legIndex || "destination-place"}>
-      <S.InvisibleAdditionalDetails>
-        {!isDestination ? (
-          <FormattedMessage
-            description="Invisible description of leg for screen readers"
-            id={
-              leg.routeShortName
-                ? "otpUi.TransitLegBody.accessibilityTransitLegDesc"
-                : "otpUi.TransitLegBody.accessibilityLegDesc"
-            }
-            values={
-              leg.routeShortName
-                ? {
-                    ...a11yDetailsValues,
-                    routeShortName: leg.routeShortName
-                  }
-                : a11yDetailsValues
-            }
-          />
-        ) : (
-          <FormattedMessage
-            id="otpUi.TransitLegBody.arriveAt"
-            defaultMessage={defaultMessages["otpUi.TransitLegBody.arriveAt"]}
-            description="Identifies end of the trip to screenreaders"
-            values={{ place: formattedPlace }}
-          />
-        )}
-      </S.InvisibleAdditionalDetails>
       <S.LineColumn>
         <LineColumnContent
           interline={interline}
@@ -146,6 +111,32 @@ export default function PlaceRow({
           />
         )}
       </S.TimeColumn>
+      <S.InvisibleAdditionalDetails>
+        {!isDestination ? (
+          leg.transitLeg && (
+            <FormattedMessage
+              description="Invisible description of transit leg for screen readers"
+              id="otpUi.TransitLegBody.accessibilityTransitLegDesc"
+              values={{
+                headsign: !!leg.headsign,
+                legHeadsign: leg.headsign,
+                mode: formattedModesByLeg
+                  ? formattedModesByLeg[legIndex]
+                  : getSummaryMode(leg, intl),
+                place: formattedPlace,
+                routeName: leg.routeShortName || leg.routeLongName
+              }}
+            />
+          )
+        ) : (
+          <FormattedMessage
+            id="otpUi.TransitLegBody.arriveAt"
+            defaultMessage={defaultMessages["otpUi.TransitLegBody.arriveAt"]}
+            description="Identifies end of the trip to screenreaders"
+            values={{ place: formattedPlace }}
+          />
+        )}
+      </S.InvisibleAdditionalDetails>
       <S.PlaceDetails>
         {/* Show the leg, if not rendering the destination */}
         {!isDestination &&
