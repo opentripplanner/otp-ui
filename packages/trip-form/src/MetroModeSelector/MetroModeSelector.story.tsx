@@ -117,3 +117,8 @@ export default {
 };
 
 export const MetroModeSelector = Template.bind({});
+
+const a11yOverrideParameters = {
+  a11y: { config: { rules: [{ id: "label", reviewOnFail: true }] } }
+};
+MetroModeSelector.parameters = a11yOverrideParameters;

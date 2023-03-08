@@ -222,12 +222,14 @@ function ModeButton({
     ...labelInteractionProps
   } = interactionProps;
 
+  const checkboxId = `metro-mode-selector-mode-${id}`;
+
   return (
     <ModeButtonWrapper>
       {/* Basic checkbox that states whether a mode is selected. */}
       <input
         checked={modeButton.enabled ?? undefined}
-        id={`metro-mode-selector-mode-${id}`}
+        id={checkboxId}
         onChange={onToggle}
         type="checkbox"
         aria-label={modeButton.label}
@@ -238,7 +240,7 @@ function ModeButton({
         // This library relies on prop spreading
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...labelInteractionProps}
-        htmlFor={`metro-mode-selector-mode-${id}`}
+        htmlFor={checkboxId}
         // This will trigger mouse effects such as showing popup on hover of on check.
         ref={reference}
         title={modeButton.label}
