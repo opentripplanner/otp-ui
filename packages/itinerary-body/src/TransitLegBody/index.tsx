@@ -159,10 +159,8 @@ class TransitLegBody extends Component<Props, State> {
 
     // If the config contains an operator name, prefer that one over the
     // one provided by OTP
-
-    // alpha-only: does anything wokr here
-
     const transitOperatorName = transitOperator?.name || agencyName;
+
     // If the config contains an operator with a logo URL, prefer that over the
     // one provided by OTP (which is derived from agency.txt#agency_branding_url)
     const logoUrl =
