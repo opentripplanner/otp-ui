@@ -38,12 +38,6 @@ export const TransparentButton = styled.button`
   cursor: pointer;
   font-size: inherit;
   text-decoration: none;
-  &:focus {
-    /*
-      TODO: Add outline for keyboard tabbing only:
-      https://stackoverflow.com/a/45191208/915811
-    */
-  }
 `;
 
 export const AnchorButton = styled.a`
@@ -278,19 +272,32 @@ export const LegBody = styled.div`
   padding: 12px 0 12px 4px;
 `;
 
-export const LegClickable = styled(TransparentButton)`
+export const LegClickable = styled.div``;
+
+/**
+ * Transparent button, clickable by all, with a text about zooming to a leg on the map.
+ * The button sits on top of LegDescription, so that the button's text visually appears to be
+ * that of LegDescription.
+ */
+export const LegClickableButton = styled(TransparentButton)`
+  bottom: 0;
   cursor: pointer;
-  display: block;
-  padding: 0;
-  text-align: start;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  /* Place the button just above the elevation chart, 
+     so that its outline doesn't appear clipped in Chromium. */
+  z-index: 1;
 `;
 
 // Use <span> for correct semantics as it is the contents of a button or a link.
 export const LegDescription = styled.span`
   align-items: center;
-  display: flex;
+  display: inline-flex;
   line-height: 16px;
   min-height: 31px;
+  position: relative;
 `;
 
 // additional description added to ClickableLeg for screenreaders

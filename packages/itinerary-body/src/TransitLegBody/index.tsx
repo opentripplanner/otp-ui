@@ -188,22 +188,26 @@ class TransitLegBody extends Component<Props, State> {
           })}
           role="group"
         >
-          {/* The Route Icon/Name Bar; clickable to set as active leg */}
-          <S.LegClickable onClick={this.onSummaryClick}>
-            <RouteDescription
-              leg={leg}
-              LegIcon={LegIcon}
-              transitOperator={transitOperator}
-            />
-            <S.InvisibleAdditionalDetails>
-              <FormattedMessage
-                defaultMessage={
-                  defaultMessages["otpUi.TransitLegBody.zoomToLeg"]
-                }
-                description="Identifies behavior of button"
-                id="otpUi.TransitLegBody.zoomToLeg"
+          {/* The Route Icon/Name Bar */}
+          <S.LegClickable>
+            <S.LegDescription>
+              <RouteDescription
+                leg={leg}
+                LegIcon={LegIcon}
+                transitOperator={transitOperator}
               />
-            </S.InvisibleAdditionalDetails>
+              <S.LegClickableButton onClick={this.onSummaryClick}>
+                <S.InvisibleAdditionalDetails>
+                  <FormattedMessage
+                    defaultMessage={
+                      defaultMessages["otpUi.TransitLegBody.zoomToLeg"]
+                    }
+                    description="Identifies behavior of button"
+                    id="otpUi.TransitLegBody.zoomToLeg"
+                  />
+                </S.InvisibleAdditionalDetails>
+              </S.LegClickableButton>
+            </S.LegDescription>
           </S.LegClickable>
 
           {/* Agency information */}
