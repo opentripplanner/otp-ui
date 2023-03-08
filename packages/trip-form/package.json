@@ -11,7 +11,7 @@
   "private": false,
   "dependencies": {
     "@floating-ui/react": "^0.19.2",
-    "@opentripplanner/core-utils": "^8.0.1",
+    "@opentripplanner/core-utils": "^9.0.0-alpha.7",
     "@opentripplanner/icons": "^2.0.1",
     "@styled-icons/bootstrap": "^10.34.0",
     "@styled-icons/boxicons-regular": "^10.38.0",
@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@types/flat": "^5.0.2",
-    "@opentripplanner/types": "5.0.0-alpha.2"
+    "@opentripplanner/types": "5.0.0"
   },
   "peerDependencies": {
     "react": "^16.14.0",
