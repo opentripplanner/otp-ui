@@ -232,10 +232,10 @@ export default function DateTimeSelector({
 
   return (
     <S.DateTimeSelector
-      className={className}
-      style={style}
-      role="group"
       aria-label={intl.formatMessage({ id: "otpUi.DateTimeSelector.dateTimeSelector" })}
+      className={className}
+      role="group"
+      style={style}
     >
       <S.DateTimeSelector.DepartureRow>
         {departureOptions.map(opt => (
