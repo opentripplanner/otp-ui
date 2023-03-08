@@ -1,6 +1,5 @@
 import React from "react";
 import { ClassicModeIcon, TriMetModeIcon } from "@opentripplanner/icons";
-
 import vehicleData from "../__mocks__/seattle.json";
 import { withMap } from "../../../.storybook/base-map-wrapper";
 
@@ -15,6 +14,7 @@ import TransitVehicleOverlay, {
 
 const SEATTLE: [number, number] = [47.6, -122.3];
 
+// TODO: TransitVehicle[] type doesn't match with vehicles object
 const vehicles: TransitVehicle[] = vehicleData.vehiclePositions;
 
 const CircleWithInnerCaret = withCaret(Circle, { position: "inner" });
@@ -54,7 +54,7 @@ export const OuterCaretWithCustomSize = () => (
 
 export const RouteColorBackground = () => (
   <TransitVehicleOverlay
-    IconContainer={withRouteColorBackground(DefaultIconContainer)}
+    IconContainer={withRouteColorBackground(DefaultIconContainer, null)}
     ModeIcon={TriMetModeIcon}
     vehicles={vehicles}
   />
@@ -73,8 +73,8 @@ export const RouteColorBackgroundWithTransparencyOnHover = () => (
 
 export const RouteColorBackgroundWithInnerCaret = () => (
   <TransitVehicleOverlay
-    IconContainer={withRouteColorBackground(CircleWithInnerCaret)}
-    iconPaddding={4}
+    IconContainer={withRouteColorBackground(CircleWithInnerCaret, null)}
+    iconPadding={4}
     ModeIcon={TriMetModeIcon}
     vehicles={vehicles}
   />

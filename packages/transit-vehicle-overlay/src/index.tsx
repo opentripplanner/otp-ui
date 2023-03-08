@@ -1,6 +1,6 @@
 import { MarkerWithPopup } from "@opentripplanner/base-map";
 import { TransitVehicle } from "@opentripplanner/types";
-import React, { FC, ReactNode } from "react";
+import React, { FC } from "react";
 
 import withCaret from "./WithCaret";
 import {
@@ -74,7 +74,7 @@ const TransitVehicleOverlay = ({
   TooltipSlot = VehicleTooltip,
   VehicleIcon = DefaultVehicleIcon,
   vehicles
-}: Props): ReactNode => {
+}: Props): JSX.Element | null => {
   const validVehicles = vehicles?.filter(
     vehicle => !!vehicle?.lat && !!vehicle?.lon
   );
@@ -90,25 +90,29 @@ const TransitVehicleOverlay = ({
     iconPixels
   );
 
-  return validVehicles?.map(vehicle => (
-    <MarkerWithPopup
-      key={vehicle.vehicleId}
-      // @ts-expect-error the prop override doesn't require all props to be present
-      popupProps={{ offset: [-iconPixels / 2 - iconPadding, 0] }}
-      position={[vehicle.lat, vehicle.lon]}
-      tooltipContents={
-        vehicle.routeShortName && <TooltipSlot vehicle={vehicle} />
-      }
-    >
-      <StyledContainer vehicle={vehicle}>
-        <VehicleIcon
-          defaultMode={defaultMode}
-          ModeIcon={ModeIcon}
-          vehicle={vehicle}
-        />
-      </StyledContainer>
-    </MarkerWithPopup>
-  ));
+  return (
+    <>
+      {validVehicles?.map(vehicle => (
+        <MarkerWithPopup
+          key={vehicle.vehicleId}
+          // @ts-expect-error the prop override doesn't require all props to be present
+          popupProps={{ offset: [-iconPixels / 2 - iconPadding, 0] }}
+          position={[vehicle.lat, vehicle.lon]}
+          tooltipContents={
+            vehicle.routeShortName && <TooltipSlot vehicle={vehicle} />
+          }
+        >
+          <StyledContainer vehicle={vehicle}>
+            <VehicleIcon
+              defaultMode={defaultMode}
+              ModeIcon={ModeIcon}
+              vehicle={vehicle}
+            />
+          </StyledContainer>
+        </MarkerWithPopup>
+      ))}
+    </>
+  );
 };
 
 export default TransitVehicleOverlay;
