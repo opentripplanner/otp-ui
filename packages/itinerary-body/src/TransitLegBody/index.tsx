@@ -186,32 +186,35 @@ class TransitLegBody extends Component<Props, State> {
           {/* The Route Icon/Name Bar */}
           <S.LegClickable>
             <S.LegDescription>
-              <S.InvisibleAdditionalDetails>
-                {/* Include the screen reader text here, knowing that the RouteDescription portion can be overriden. */}
-                <FormattedMessage
-                  description="Invisible description of transit leg for screen readers"
-                  id="otpUi.TransitLegBody.accessibilityTransitLegDesc"
-                  values={{
-                    headsign: !!leg.headsign,
-                    legHeadsign: leg.headsign,
-                    routeName: leg.routeShortName || leg.routeLongName
-                  }}
-                />
-                {". " /* TODO: conjunctions. */}
-                <FormattedMessage
-                  // TODO: Accommodate interline itineraries with "Stay on board" instructions.
-                  id="otpUi.TransitLegBody.disembarkAt"
-                  values={{
-                    legDestination
-                  }}
-                />
-              </S.InvisibleAdditionalDetails>
-              <span aria-hidden>
+              <span>
+                <S.InvisibleAdditionalDetails>
+                  <FormattedMessage
+                    defaultMessage={
+                      defaultMessages["otpUi.TransitLegBody.ride"]
+                    }
+                    description="Prompt to ride a transit vehicle."
+                    id="otpUi.TransitLegBody.ride"
+                  />
+                </S.InvisibleAdditionalDetails>
                 <RouteDescription
                   leg={leg}
                   LegIcon={LegIcon}
                   transitOperator={transitOperator}
                 />
+                <S.InvisibleAdditionalDetails>
+                  {". " /* TODO: conjunctions. */}
+                  <FormattedMessage
+                    // TODO: Accommodate interline itineraries with "Stay on board" instructions.
+                    defaultMessage={
+                      defaultMessages["otpUi.TransitLegBody.disembarkAt"]
+                    }
+                    description="Prompt to exit a transit vehicle."
+                    id="otpUi.TransitLegBody.disembarkAt"
+                    values={{
+                      legDestination
+                    }}
+                  />
+                </S.InvisibleAdditionalDetails>
               </span>
               <S.LegClickableButton onClick={this.onSummaryClick}>
                 <S.InvisibleAdditionalDetails>

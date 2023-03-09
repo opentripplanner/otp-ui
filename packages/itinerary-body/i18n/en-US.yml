@@ -89,10 +89,6 @@ otpUi:
       walk: by walking
     viewOnMap: View on map
   TransitLegBody:
-    accessibilityTransitLegDesc: "Ride {routeName} {headsign, select,
-      true {to {legHeadsign}}
-      other {}
-      }"
     disembarkAt: Disembark at {legDestination}
     fromLocation: "from {location}"
     arriveAt: "Arrive at {place}"
@@ -109,6 +105,7 @@ otpUi:
     legDetails: Leg details
     expandDetails: (Expand details)
     operatedBy: Service operated by {agencyLink}
+    ride: Ride
     rideDurationAndStops: "Ride {duration}{numStops, plural, =1 {} other { / # stops}}"
     routeDescription: "{routeName} <toPrefix>to</toPrefix> {headsign}"
     stopId: Stop ID {stopId}
