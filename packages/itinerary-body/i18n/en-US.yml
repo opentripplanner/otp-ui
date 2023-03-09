@@ -94,6 +94,7 @@ otpUi:
       other {}
       } from {place}"
     disembarkAt: Disembark at {legDestination}
+    fromLocation: "from {location}"
     arriveAt: "Arrive at {place}"
     agencyExternalLink: "{agencyName} (External Link)"
     AlertsBody:

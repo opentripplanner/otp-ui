@@ -113,7 +113,7 @@ export default function PlaceRow({
       </S.TimeColumn>
       <S.InvisibleAdditionalDetails>
         {!isDestination ? (
-          leg.transitLeg && (
+          leg.transitLeg ? (
             <FormattedMessage
               description="Invisible description of transit leg for screen readers"
               id="otpUi.TransitLegBody.accessibilityTransitLegDesc"
@@ -125,6 +125,14 @@ export default function PlaceRow({
                   : getSummaryMode(leg, intl),
                 place: formattedPlace(leg.from),
                 routeName: leg.routeShortName || leg.routeLongName
+              }}
+            />
+          ) : (
+            <FormattedMessage
+              description="Add starting location for access legs"
+              id="otpUi.TransitLegBody.fromLocation"
+              values={{
+                location: formattedPlace(leg.from)
               }}
             />
           )
