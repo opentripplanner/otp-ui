@@ -188,6 +188,7 @@ class TransitLegBody extends Component<Props, State> {
             <S.LegDescription>
               <span>
                 <S.InvisibleAdditionalDetails>
+                  {" - "}
                   <FormattedMessage
                     defaultMessage={
                       defaultMessages["otpUi.TransitLegBody.ride"]
@@ -202,7 +203,7 @@ class TransitLegBody extends Component<Props, State> {
                   transitOperator={transitOperator}
                 />
                 <S.InvisibleAdditionalDetails>
-                  {". " /* TODO: conjunctions. */}
+                  {" - "}
                   <FormattedMessage
                     // TODO: Accommodate interline itineraries with "Stay on board" instructions.
                     defaultMessage={

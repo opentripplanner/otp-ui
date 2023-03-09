@@ -31,6 +31,7 @@ export default function AccessLegSummary({
             </S.LegIconContainer>
           )}
         </S.LegIconAndRouteShortName>
+        <S.InvisibleAdditionalDetails> - </S.InvisibleAdditionalDetails>
         <AccessLegDescription config={config} leg={leg} />
         <S.LegClickableButton onClick={onSummaryClick}>
           <S.InvisibleAdditionalDetails>
