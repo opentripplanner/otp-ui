@@ -28,6 +28,16 @@ import {
 import * as S from "./styled";
 import { generateLabel, getCombinedLabel } from "./utils";
 
+const optionIdPrefix = "otpui-locf-option";
+
+/**
+ * Formats the option id based on its given index position.
+ * This assumes only one location dropdown is shown at a time.
+ */
+function getOptionId(index: number): string {
+  return `${optionIdPrefix}-${index}`
+}
+
 // FIXME have a better key generator for options
 let optionKey = 0;
 
@@ -442,6 +452,7 @@ const LocationField = ({
         classes={classNames.join(" ")}
         color={layerColorMap[layer]}
         icon={operatorIcon || <GeocodedOptionIconComponent feature={feature} />}
+        id={getOptionId(itemIndex)}
         isActive={itemIndex === activeIndex}
         key={optionKey++}
         onClick={locationSelected}
@@ -566,6 +577,7 @@ const LocationField = ({
         // Create and return the option menu item
         const option = (
           <TransitStopOption
+            id={getOptionId(itemIndex)}
             isActive={itemIndex === activeIndex}
             key={optionKey++}
             onClick={locationSelected}
@@ -610,6 +622,7 @@ const LocationField = ({
         const option = (
           <Option
             icon={sessionOptionIcon}
+            id={getOptionId(itemIndex)}
             isActive={itemIndex === activeIndex}
             key={optionKey++}
             onClick={locationSelected}
@@ -656,6 +669,7 @@ const LocationField = ({
         const option = (
           <Option
             icon={<UserLocationIconComponent userLocation={userLocation} />}
+            id={getOptionId(itemIndex)}
             isActive={itemIndex === activeIndex}
             key={optionKey++}
             onClick={locationSelected}
@@ -708,6 +722,7 @@ const LocationField = ({
       <Option
         disabled={positionUnavailable}
         icon={optionIcon}
+        id={getOptionId(itemIndex)}
         isActive={itemIndex === activeIndex}
         key={optionKey++}
         onClick={locationSelected}
@@ -745,6 +760,7 @@ const LocationField = ({
       : defaultPlaceholder;
   const textControl = (
     <S.Input
+      aria-activedescendant={activeIndex !== null ? getOptionId(activeIndex) : null}
       aria-autocomplete="list"
       aria-controls={listBoxId}
       aria-expanded={menuVisible}

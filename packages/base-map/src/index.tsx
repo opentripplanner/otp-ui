@@ -73,7 +73,7 @@ const BaseMap = ({
 
   // On mobile hover is unavailable, so we use this variable to use a two tap process
   // to simulate a hover
-  const [fakeMobileHover, setFakeMobileHover] = useState(false);
+  const [fakeMobileHover, setFakeHover] = useState(false);
   const [longPressTimer, setLongPressTimer] = useState(null);
 
   useEffect(() => {
@@ -132,7 +132,7 @@ const BaseMap = ({
         clearTimeout(longPressTimer);
       }}
       onTouchStart={e => {
-        setFakeMobileHover(false);
+        setFakeHover(false);
         setLongPressTimer(setTimeout(() => onContextMenu(e), 600));
       }}
       onTouchCancel={() => {
@@ -151,9 +151,9 @@ const BaseMap = ({
         <Styled.LayerSelector
           className="filter-group"
           id="filter-group"
-          onTouchEnd={() => {
-            setFakeMobileHover(true);
-          }}
+          onBlur={() => setFakeHover(false)}
+          onFocus={() => setFakeHover(true)}
+          onTouchEnd={() => setFakeHover(true)}
         >
           <ul
             className={`layers-list ${fakeMobileHover && "fake-mobile-hover"}`}
@@ -168,6 +168,7 @@ const BaseMap = ({
                       <input
                         checked={activeBaseLayer === layer}
                         id={layer}
+                        name="base-layer"
                         onChange={() => setActiveBaseLayer(layer)}
                         type="radio"
                       />
