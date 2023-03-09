@@ -10,7 +10,6 @@ import TransitLegBody from "../TransitLegBody";
 import AccessibilityRating from "./accessibility-rating";
 import { PlaceRowProps } from "../types";
 import { defaultMessages } from "../util";
-import { getSummaryMode } from "../defaults/access-leg-description";
 
 /*
   TODO: Wondering if it's possible for us to destructure the time
@@ -25,7 +24,6 @@ export default function PlaceRow({
   diagramVisible,
   fare,
   followsTransit,
-  formattedModesByLeg,
   frameLeg,
   isDestination,
   lastLeg,
@@ -113,29 +111,13 @@ export default function PlaceRow({
       </S.TimeColumn>
       <S.InvisibleAdditionalDetails>
         {!isDestination ? (
-          leg.transitLeg ? (
-            <FormattedMessage
-              description="Invisible description of transit leg for screen readers"
-              id="otpUi.TransitLegBody.accessibilityTransitLegDesc"
-              values={{
-                headsign: !!leg.headsign,
-                legHeadsign: leg.headsign,
-                mode: formattedModesByLeg
-                  ? formattedModesByLeg[legIndex]
-                  : getSummaryMode(leg, intl),
-                place: formattedPlace(leg.from),
-                routeName: leg.routeShortName || leg.routeLongName
-              }}
-            />
-          ) : (
-            <FormattedMessage
-              description="Add starting location for access legs"
-              id="otpUi.TransitLegBody.fromLocation"
-              values={{
-                location: formattedPlace(leg.from)
-              }}
-            />
-          )
+          <FormattedMessage
+            description="Add starting location for access legs"
+            id="otpUi.TransitLegBody.fromLocation"
+            values={{
+              location: formattedPlace(leg.from)
+            }}
+          />
         ) : (
           <FormattedMessage
             id="otpUi.TransitLegBody.arriveAt"
