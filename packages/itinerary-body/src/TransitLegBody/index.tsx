@@ -39,6 +39,7 @@ interface Props {
   leg: Leg;
   LegIcon: LegIconComponent;
   legIndex: number;
+  legDestination: string;
   RouteDescription: FunctionComponent<RouteDescriptionProps>;
   setActiveLeg: SetActiveLegFunction;
   setViewedTrip: SetViewedTripFunction;
@@ -141,6 +142,7 @@ class TransitLegBody extends Component<Props, State> {
       intl,
       leg,
       LegIcon,
+      legDestination,
       RouteDescription,
       setViewedTrip,
       showAgencyInfo,
@@ -180,6 +182,14 @@ class TransitLegBody extends Component<Props, State> {
     return (
       <>
         {TransitLegSubheader && <TransitLegSubheader leg={leg} />}
+        <S.InvisibleAdditionalDetails>
+          <FormattedMessage
+            id="otpUi.TransitLegBody.disembarkAt"
+            values={{
+              legDestination
+            }}
+          />
+        </S.InvisibleAdditionalDetails>
         <S.LegBody>
           {/* The Route Icon/Name Bar */}
           <S.LegClickable>

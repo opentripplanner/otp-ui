@@ -72,8 +72,8 @@ export default function PlaceRow({
     id: "otpUi.ItineraryBody.viewOnMap"
   });
 
-  const formattedPlace = (
-    <PlaceName config={config} interline={interline} place={leg.to} />
+  const formattedPlace = direction => (
+    <PlaceName config={config} interline={interline} place={direction} />
   );
 
   return (
@@ -123,7 +123,7 @@ export default function PlaceRow({
                 mode: formattedModesByLeg
                   ? formattedModesByLeg[legIndex]
                   : getSummaryMode(leg, intl),
-                place: formattedPlace,
+                place: formattedPlace(leg.from),
                 routeName: leg.routeShortName || leg.routeLongName
               }}
             />
@@ -133,7 +133,7 @@ export default function PlaceRow({
             id="otpUi.TransitLegBody.arriveAt"
             defaultMessage={defaultMessages["otpUi.TransitLegBody.arriveAt"]}
             description="Identifies end of the trip to screenreaders"
-            values={{ place: formattedPlace }}
+            values={{ place: formattedPlace(leg.to) }}
           />
         )}
       </S.InvisibleAdditionalDetails>
@@ -150,6 +150,7 @@ export default function PlaceRow({
               leg={leg}
               LegIcon={LegIcon}
               legIndex={legIndex}
+              legDestination={formattedPlace(leg.to)}
               RouteDescription={RouteDescription}
               setActiveLeg={setActiveLeg}
               setViewedTrip={setViewedTrip}

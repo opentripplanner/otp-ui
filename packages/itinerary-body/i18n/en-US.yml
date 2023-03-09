@@ -92,7 +92,8 @@ otpUi:
     accessibilityTransitLegDesc: " Ride {routeName} {mode} {headsign, select,
       true {to {legHeadsign}}
       other {}
-      } to {place}"
+      } from {place}"
+    disembarkAt: Disembark at {legDestination}
     arriveAt: "Arrive at {place}"
     agencyExternalLink: "{agencyName} (External Link)"
     AlertsBody:
