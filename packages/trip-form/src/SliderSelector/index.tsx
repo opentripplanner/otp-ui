@@ -19,11 +19,11 @@ interface SliderSelectorProps {
   /**
    * The label for the right end of the slider
    */
-  labelHigh?: ReactElement | string;
+  labelHigh?: string;
   /**
    * The label for the left end of the slider
    */
-  labelLow?: ReactElement | string;
+  labelLow?: string;
   /**
    * The initial max value for the contained <input> control.
    */
@@ -84,7 +84,13 @@ export default function SliderSelector({
   const id = `id-query-param-${name}`;
 
   return (
-    <S.SliderSelector className={className} style={style}>
+    <S.SliderSelector
+      aria-label={label}
+      className={className}
+      role="group"
+      style={style}
+    >
+
       {/* The <div> elements below are here for the grid layout, see S.DropdownSelector. */}
       {!labelLow && !labelHigh && (
         <div>
@@ -93,11 +99,11 @@ export default function SliderSelector({
       )}
 
       <div>
-        <S.SettingLabel htmlFor={id}>
+        <S.SettingLabel aria-hidden="true" htmlFor={id}>
           {labelLow}
         </S.SettingLabel>
         <input
-          aria-label={label}
+          aria-label={`${labelLow} (${min}) - ${labelHigh} (${max})`}
           id={id}
           max={max}
           min={min}
@@ -106,7 +112,7 @@ export default function SliderSelector({
           type="range"
           value={value}
         />
-        <S.SettingLabel htmlFor={id} style={{ paddingLeft:0 }}>
+        <S.SettingLabel aria-hidden="true" htmlFor={id} style={{ paddingLeft:0 }}>
           {labelHigh}
         </S.SettingLabel>
       </div>

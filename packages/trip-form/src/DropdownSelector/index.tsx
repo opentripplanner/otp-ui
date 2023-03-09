@@ -71,12 +71,12 @@ export default function DropdownSelector({
   return (
     <S.DropdownSelector className={className} style={style}>
       {/* The <div> elements below are here for the grid layout, see S.DropdownSelector. */}
-      <div>
-        <S.SettingLabel htmlFor={id}>{label}</S.SettingLabel>
+      <div aria-hidden="true">
+        <S.SettingLabel htmlFor={id} id={`${id}-label`}>{label}</S.SettingLabel>
       </div>
 
       <div>
-        <select id={id} value={value} onChange={handleChange}>
+        <select id={id} value={value} onChange={handleChange} aria-labelledby={`${id}-label`}>
           {options &&
             options.map((o, i) => (
               <option key={i} value={o.value}>

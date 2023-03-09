@@ -246,25 +246,19 @@ export default function SettingsSelectorPanel({
     selectedModes
   );
 
-  const submodeLabel = (
-    <FormattedMessage
-      defaultMessage={defaultMessages["otpUi.SettingsSelectorPanel.use"]}
-      description="Text announcing a list of submodes to use."
-      id="otpUi.SettingsSelectorPanel.use"
-    />
-  );
-  const submodeCompaniesLabel = (
-    <FormattedMessage
-      defaultMessage={
-        defaultMessages["otpUi.SettingsSelectorPanel.useCompanies"]
-      }
-      description="Text announcing a list of rental companies to use."
-      id="otpUi.SettingsSelectorPanel.useCompanies"
-    />
-  );
+  const submodeLabel = intl.formatMessage({
+    defaultMessage: defaultMessages["otpUi.SettingsSelectorPanel.use"],
+    description: "Text announcing a list of submodes to use.",
+    id: "otpUi.SettingsSelectorPanel.use"
+  });
+  const submodeCompaniesLabel = intl.formatMessage({
+    defaultMessage: defaultMessages["otpUi.SettingsSelectorPanel.useCompanies"],
+    description: "Text announcing a list of rental companies to use.",
+    id: "otpUi.SettingsSelectorPanel.useCompanies"
+  });
 
   return (
-    <S.SettingsSelectorPanel className={className} style={style}>
+    <S.SettingsSelectorPanel className={className} style={style} role="group" aria-label="Trip Settings">
       <ModeSelector
         modes={modeOptions}
         onChange={handleMainModeChange}
