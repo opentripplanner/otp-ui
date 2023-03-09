@@ -193,12 +193,14 @@ class TransitLegBody extends Component<Props, State> {
         <S.LegBody>
           {/* The Route Icon/Name Bar */}
           <S.LegClickable>
-            <S.LegDescription aria-hidden>
-              <RouteDescription
-                leg={leg}
-                LegIcon={LegIcon}
-                transitOperator={transitOperator}
-              />
+            <S.LegDescription>
+              <span aria-hidden>
+                <RouteDescription
+                  leg={leg}
+                  LegIcon={LegIcon}
+                  transitOperator={transitOperator}
+                />
+              </span>
               <S.LegClickableButton onClick={this.onSummaryClick}>
                 <S.InvisibleAdditionalDetails>
                   <FormattedMessage
