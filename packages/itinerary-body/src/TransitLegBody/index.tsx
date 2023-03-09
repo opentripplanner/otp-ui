@@ -182,18 +182,30 @@ class TransitLegBody extends Component<Props, State> {
     return (
       <>
         {TransitLegSubheader && <TransitLegSubheader leg={leg} />}
-        <S.InvisibleAdditionalDetails>
-          <FormattedMessage
-            id="otpUi.TransitLegBody.disembarkAt"
-            values={{
-              legDestination
-            }}
-          />
-        </S.InvisibleAdditionalDetails>
         <S.LegBody>
           {/* The Route Icon/Name Bar */}
           <S.LegClickable>
             <S.LegDescription>
+              <S.InvisibleAdditionalDetails>
+                {/* Include the screen reader text here, knowing that the RouteDescription portion can be overriden. */}
+                <FormattedMessage
+                  description="Invisible description of transit leg for screen readers"
+                  id="otpUi.TransitLegBody.accessibilityTransitLegDesc"
+                  values={{
+                    headsign: !!leg.headsign,
+                    legHeadsign: leg.headsign,
+                    routeName: leg.routeShortName || leg.routeLongName
+                  }}
+                />
+                {". " /* TODO: conjunctions. */}
+                <FormattedMessage
+                  // TODO: Accommodate interline itineraries with "Stay on board" instructions.
+                  id="otpUi.TransitLegBody.disembarkAt"
+                  values={{
+                    legDestination
+                  }}
+                />
+              </S.InvisibleAdditionalDetails>
               <span aria-hidden>
                 <RouteDescription
                   leg={leg}
