@@ -9,9 +9,12 @@ import {
 import PlanQuery from "./planQuery.graphql";
 
 type OTPQueryParams = {
+  arriveBy: boolean;
+  date: string;
   from: LonLatOutput & { name?: string };
   modes: TransportMode[];
   modeSettings: ModeSetting[];
+  time: string;
   to: LonLatOutput & { name?: string };
 };
 
@@ -176,9 +179,12 @@ export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
 }
 
 export function generateOtp2Query({
+  arriveBy,
+  date,
   from,
-  modeSettings,
   modes,
+  modeSettings,
+  time,
   to
 }: OTPQueryParams): GraphQLQuery {
   // This extracts the values from the mode settings to key value pairs
@@ -197,10 +203,13 @@ export function generateOtp2Query({
   return {
     query: print(PlanQuery),
     variables: {
+      arriveBy,
       bikeReluctance,
       carReluctance,
+      date,
       fromPlace: `${from.name}::${from.lat},${from.lon}}`,
       modes,
+      time,
       toPlace: `${to.name}::${to.lat},${to.lon}}`,
       walkReluctance,
       wheelchair
