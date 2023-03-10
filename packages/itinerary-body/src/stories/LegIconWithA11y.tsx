@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
 import coreUtils from "@opentripplanner/core-utils";
 import { ClassicLegIcon } from "@opentripplanner/icons";
 import { Leg } from "@opentripplanner/types";
