@@ -34,7 +34,7 @@ otpUi:
     watts1500powerfulEscooter: Trottinette puissante (40 km/h)
     watts250entryLevelEscooter: Trottinette de base (18 km/h)
     watts500robustEscooter: Trottinette robuste (30 km/h)
-    wheelchair: Privilégier les trajets accessibles en fauteuil roulant
+    wheelchair: Privilégier l'accès en fauteuil roulant
   SettingsSelectorPanel:
     bikeOnly: Vélo uniquement
     escooterOnly: Trottinette uniquement

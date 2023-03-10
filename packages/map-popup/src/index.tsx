@@ -24,8 +24,8 @@ const generateLocation = (entity: Entity, name: string) => {
   // @ts-expect-error some of these values may be null, but that's ok
   const { lon: entityLon, lat: entityLat, x, y } = entity
 
-  const lat = entityLat || x
-  const lon = entityLon || y
+  const lat = entityLat || y
+  const lon = entityLon || x
   if (!lat || !lon) return null
 
   return { lat, lon, name };
