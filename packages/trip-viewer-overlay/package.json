@@ -20,8 +20,8 @@
   },
   "dependencies": {
     "@mapbox/polyline": "^1.1.0",
-    "@opentripplanner/base-map": "^3.0.9",
-    "@opentripplanner/core-utils": "^8.0.1"
+    "@opentripplanner/base-map": "^3.0.10",
+    "@opentripplanner/core-utils": "^8.1.1"
   },
   "peerDependencies": {
     "react": "^16.14.0",
