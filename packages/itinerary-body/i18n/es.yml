@@ -87,10 +87,7 @@ otpUi:
       " al menos {leadDays, plural, one {# día} other {# días}} de
       antelación"
   TransitLegBody:
-    stopId: ID de Parada {stopId}
-    stopIdBasic: ID {stopId}
-    stopViewer: Visor de paradas
-    tripViewer: Visor de viajes
+    agencyExternalLink: "{agencyName} (Enlace external)"
     AlertsBody:
       effectiveDate: A partir de {dateTime, date, long}
       effectiveTimeAndDate: A partir de {dateTime, time, short}, {day}
@@ -98,10 +95,21 @@ otpUi:
       tomorrow: Mañana
       yesterday: Ayer
     alertsHeader: "{alertCount, plural, =1 {# alerta} other {# alertas} }"
+    arriveAt: "Llegada a {place}"
+    disembarkAt: Disembarque a {legDestination}
+    expandDetails: (Ver mas detalles)
     fare: "Tarifa: {fare}"
+    fromLocation: "de {location}"
+    legDetails: Detalles de la etapa
     operatedBy: Servicio operado por {agencyLink}
+    ride: Toma la línea
     rideDurationAndStops: "Paseo {duration}{numStops, plural, =1 {} other { / # paradas}}"
     routeDescription:
       "{routeName}{headsign, select, undefined {} other {<toPrefix>
       destino </toPrefix>{headsign}}}"
-    typicalWait: "La típica espera: {waitTime}"
+    stopId: Parada n°{stopId}
+    stopIdBasic: Parada n°{stopId}
+    stopViewer: Visor de paradas
+    tripViewer: Visor de viajes
+    typicalWait: "Espera típica: {waitTime}"
+    zoomToLeg: Acercar el mapa a este etapa
