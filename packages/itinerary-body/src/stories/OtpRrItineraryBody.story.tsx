@@ -1,4 +1,3 @@
-import { ClassicLegIcon } from "@opentripplanner/icons";
 import { Itinerary } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 
@@ -14,6 +13,7 @@ import { isRunningJest } from "../../../../.storybook/react-intl";
 import { TimeColumnContentProps } from "../types";
 
 import ItineraryBodyDefaultsWrapper from "./itinerary-body-defaults-wrapper";
+import LegIconWithA11y from "./LegIconWithA11y";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("../__mocks__/itineraries/bike-only.json");
@@ -65,7 +65,7 @@ function OtpRRItineraryBodyWrapper({
       alwaysCollapseAlerts={alwaysCollapseAlerts}
       formattedModesByLeg={formattedModesByLeg}
       itinerary={itinerary}
-      LegIcon={ClassicLegIcon}
+      LegIcon={LegIconWithA11y}
       LineColumnContent={OtpRRLineColumnContent}
       PlaceName={OtpRRPlaceName}
       RouteDescription={OtpRRRouteDescription}

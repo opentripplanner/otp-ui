@@ -182,24 +182,40 @@ class TransitLegBody extends Component<Props, State> {
     return (
       <>
         {TransitLegSubheader && <TransitLegSubheader leg={leg} />}
-        <S.InvisibleAdditionalDetails>
-          <FormattedMessage
-            id="otpUi.TransitLegBody.disembarkAt"
-            values={{
-              legDestination
-            }}
-          />
-        </S.InvisibleAdditionalDetails>
         <S.LegBody>
           {/* The Route Icon/Name Bar */}
           <S.LegClickable>
             <S.LegDescription>
-              <span aria-hidden>
+              <span>
+                <S.InvisibleAdditionalDetails>
+                  {" - "}
+                  <FormattedMessage
+                    defaultMessage={
+                      defaultMessages["otpUi.TransitLegBody.ride"]
+                    }
+                    description="Prompt to ride a transit vehicle."
+                    id="otpUi.TransitLegBody.ride"
+                  />
+                </S.InvisibleAdditionalDetails>
                 <RouteDescription
                   leg={leg}
                   LegIcon={LegIcon}
                   transitOperator={transitOperator}
                 />
+                <S.InvisibleAdditionalDetails>
+                  {" - "}
+                  <FormattedMessage
+                    // TODO: Accommodate interline itineraries with "Stay on board" instructions.
+                    defaultMessage={
+                      defaultMessages["otpUi.TransitLegBody.disembarkAt"]
+                    }
+                    description="Prompt to exit a transit vehicle."
+                    id="otpUi.TransitLegBody.disembarkAt"
+                    values={{
+                      legDestination
+                    }}
+                  />
+                </S.InvisibleAdditionalDetails>
               </span>
               <S.LegClickableButton onClick={this.onSummaryClick}>
                 <S.InvisibleAdditionalDetails>
