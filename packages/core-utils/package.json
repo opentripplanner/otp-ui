@@ -12,6 +12,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "@conveyal/lonlat": "^1.4.1",
     "@mapbox/polyline": "^1.1.0",
     "@opentripplanner/geocoder": "^1.4.0",
     "@styled-icons/foundation": "^10.34.0",
@@ -30,6 +31,6 @@
   },
   "devDependencies": {
     "@types/chroma-js": "^2.1.4",
-    "@opentripplanner/types": "^4.0.6"
+    "@opentripplanner/types": "^5.0.0"
   }
 }
