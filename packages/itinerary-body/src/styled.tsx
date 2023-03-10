@@ -275,7 +275,7 @@ export const LegBody = styled.div`
 export const LegClickable = styled.div``;
 
 /**
- * Transparent button, clickable by all, with a text about zooming to a leg on the map.
+ * Transparent button, clickable by all, with an invisible text about zooming to a leg on the map.
  * The button sits on top of LegDescription, so that the button's text visually appears to be
  * that of LegDescription.
  */
