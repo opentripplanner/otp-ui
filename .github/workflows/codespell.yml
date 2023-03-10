@@ -13,4 +13,4 @@ jobs:
         with:
           check_filenames: true
           # skip git, yarn, mocks, and i18n resources.
-          skip: ./.git,yarn.lock,*__mocks__/*,*__snapshots__/*,*i18n/*
+          skip: ./.git,yarn.lock,./a11y/a11y.test.js,./a11y/mocks,./percy/percy.test.js,./i18n
