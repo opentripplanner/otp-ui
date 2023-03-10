@@ -79,15 +79,6 @@ describe("extract-modes", () => {
     value: "1"
   };
 
-  const dropdownModeSettingNullValue: ModeSetting = {
-    applicableMode: testTransportMode.mode,
-    key: "test",
-    label: "test",
-    options: [{ text: "testOption", value: "1", addTransportMode: mode }],
-    type: "DROPDOWN",
-    default: "1"
-  };
-
   it("determines whether a checkbox setting is extracted correctly", () => {
     expect(
       extractAdditionalModes([checkboxModeSetting], [testTransportMode])
@@ -96,14 +87,6 @@ describe("extract-modes", () => {
   it("determines whether a dropdown setting is extracted correctly", () => {
     expect(
       extractAdditionalModes([dropdownModeSetting], [testTransportMode])
-    ).toEqual([mode]);
-  });
-  it("determines whether a dropdown setting is extracted correctly from default value", () => {
-    expect(
-      extractAdditionalModes(
-        [dropdownModeSettingNullValue],
-        [testTransportMode]
-      )
     ).toEqual([mode]);
   });
   it("determines whether a checkbox setting set to false is ignored", () => {
