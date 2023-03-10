@@ -25,6 +25,7 @@ const invisibleCss = css`
   height: 0;
   overflow: hidden;
   width: 0;
+  position: absolute;
 `;
 
 const InvisibleA11yLabel = styled.span`
