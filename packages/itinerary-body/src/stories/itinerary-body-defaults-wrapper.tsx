@@ -42,7 +42,6 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
   render(): ReactElement {
     const {
       alwaysCollapseAlerts,
-      formattedModesByLeg,
       itinerary,
       LegIcon = TriMetLegIcon,
       LineColumnContent,
@@ -80,7 +79,6 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
         alwaysCollapseAlerts={alwaysCollapseAlerts}
         config={config}
         diagramVisible={diagramVisible}
-        formattedModesByLeg={formattedModesByLeg}
         frameLeg={action("frameLeg")}
         itinerary={itinerary}
         LegIcon={LegIcon}

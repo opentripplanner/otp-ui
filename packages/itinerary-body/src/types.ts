@@ -124,7 +124,6 @@ interface ItineraryBodySharedProps {
    * - `place`: The place associated with the click event
    */
   frameLeg?: FrameLegFunction;
-  formattedModesByLeg?: Array<string>;
   /** A component class that is used to render icons for legs of an itinerary */
   LegIcon: LegIconComponent;
   /**
