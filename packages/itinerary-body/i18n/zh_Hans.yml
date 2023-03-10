@@ -79,19 +79,27 @@ otpUi:
       durationShort: "{hours, plural, =0 {} other {# 시간 }}{minutes} 分钟"
     stayOnBoard: 留在 {place} 的巴士上
   TransitLegBody:
+    agencyExternalLink: "{agencyName} (外部链接)"
     AlertsBody:
-      today: 今天
       effectiveDate: 从 {dateTime, date, long} 起生效
       effectiveTimeAndDate: 从 {dateTime, time, short}, {day} 起生效
+      today: 今天
       tomorrow: 明天
       yesterday: 昨日
     alertsHeader: "{alertCount} 个警报"
+    arriveAt: 到达
+    disembarkAt: "{legDestination} 下车"
+    expandDetails: (展开详情)
+    fare: "票价: {fare}"
+    fromLocation: "从 {location}"
+    legDetails: 腿的细节
+    operatedBy: 公交运营商 {agencyLink}
+    ride: 乘坐
+    rideDurationAndStops: "乘坐 {duration}{numStops, plural, =1 {} other { / # 站}}"
     routeDescription: "{routeName} <toPrefix>至</toPrefix> {headsign}"
+    stopId: 车站 ID {stopId}
+    stopIdBasic: ID {stopId}
     stopViewer: 车站查看器
     tripViewer: 行程查看器
-    stopIdBasic: ID {stopId}
     typicalWait: "典型的等待时间: {waitTime}"
-    fare: "票价: {fare}"
-    operatedBy: 公交运营商 {agencyLink}
-    rideDurationAndStops: "乘坐 {duration}{numStops, plural, =1 {} other { / # 站}}"
-    stopId: 车站 ID {stopId}
+    zoomToLeg: 在地图上放大到腿

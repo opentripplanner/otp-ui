@@ -79,19 +79,27 @@ otpUi:
       escooter: 전자 스쿠터로
       walk: 걸어서
   TransitLegBody:
+    agencyExternalLink: "{agencyName} (외부 링크)"
     AlertsBody:
       today: 오늘
       tomorrow: 내일
       yesterday: 어제
       effectiveDate: "{dateTime, date, long}부터 시행"
       effectiveTimeAndDate: "{day} {dateTime, time, short}부터 시행"
-    fare: "요금: {fare}"
-    operatedBy: 운영하는 서비스 {agencyLink}
     alertsHeader: "{alertCount}개의 알림"
-    stopViewer: 정류장 뷰어
-    tripViewer: 여행 뷰어
-    routeDescription: "{routeName} <toPrefix>에</toPrefix> {headsign}"
+    arriveAt: "{place} 시장에 도착하다"
+    disembarkAt: "{legDestination} 에서 하차"
+    expandDetails: (세부정보 펼치기)
+    fare: "요금: {fare}"
+    fromLocation: "{location}에서"
+    legDetails: 다리 세부 사항
+    operatedBy: 운영하는 서비스 {agencyLink}
+    ride: 타다
     rideDurationAndStops: "승차 {duration}{numStops, plural, =1 {} other { / # 정거장}}"
+    routeDescription: "{routeName} <toPrefix>에</toPrefix> {headsign}"
     stopId: 정류장 ID {stopId}
     stopIdBasic: ID {stopId}
+    stopViewer: 정류장 뷰어
+    tripViewer: 여행 뷰어
     typicalWait: "일반적인 대기 시간: {waitTime}"
+    zoomToLeg: 지도에서 다리 확대
