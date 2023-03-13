@@ -167,7 +167,12 @@ export const generalSettingsPanelWithOtp2 = makeStory(GeneralSettingsTemplate, {
 // This error may be raised by us rendering two copies of eagh story.
 generalSettingsPanelWithOtp2.parameters = {
   a11y: {
-    config: { rules: [{ id: "duplicate-id-aria", reviewOnFail: true }] }
+    config: {
+      rules: [
+        { id: "duplicate-id-active", reviewOnFail: true },
+        { id: "duplicate-id-aria", reviewOnFail: true }
+      ]
+    }
   }
 };
 
