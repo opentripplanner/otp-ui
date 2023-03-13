@@ -22,8 +22,9 @@ const decorator = (Story: StoryType): ReactElement => (
     <div>
       <Story />
     </div>
+    {/* We render a secind copy just to look at styles. Hide the second copy from a11y */}
     <p>Styled</p>
-    <div>{trimet(<Story />)}</div>
+    <div aria-hidden>{trimet(<Story />)}</div>
   </>
 );
 
@@ -33,6 +34,13 @@ const decorator = (Story: StoryType): ReactElement => (
 function makeStory(Component?: React.ElementType, args: StoryArgs) {
   const BoundComponent = Component.bind({});
   BoundComponent.args = args;
+  // We are hiding the second copy of the input component story from a11y, so waive this requirement.
+  BoundComponents.parameters = {
+    a11y: {
+      config: { rules: [{ id: "aria-hidden-focus", reviewOnFail: true }] }
+    }
+  };
+
   return BoundComponent;
 }
 
