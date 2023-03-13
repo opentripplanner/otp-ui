@@ -4,7 +4,7 @@ import CSS from "csstype";
 // @ts-ignore FIXME: Create TypeScript types for the icons package.
 import { TriMetModeIcon } from "@opentripplanner/icons";
 import React, { ReactElement, useCallback, useState } from "react";
-import { FormattedMessage, useIntl } from "react-intl";
+import { useIntl } from "react-intl";
 
 import ModeSelector from "../ModeSelector";
 import SubmodeSelector from "../SubmodeSelector";
@@ -256,24 +256,26 @@ export default function SettingsSelectorPanel({
     description: "Text announcing a list of rental companies to use.",
     id: "otpUi.SettingsSelectorPanel.useCompanies"
   });
+  const settingsHeader = intl.formatMessage({
+    defaultMessage: defaultMessages["otpUi.SettingsSelectorPanel.travelPreferences"],
+    description: "Header text for the travel preferences.",
+    id: "otpUi.SettingsSelectorPanel.travelPreferences"
+  })
 
   return (
-    <S.SettingsSelectorPanel className={className} style={style} role="group" aria-label="Trip Settings">
+    <S.SettingsSelectorPanel
+      aria-label={settingsHeader}
+      className={className}
+      role="group"
+      style={style}
+    >
       <ModeSelector
         modes={modeOptions}
         onChange={handleMainModeChange}
         style={{ margin: "0px -5px", paddingBottom: "8px" }}
       />
 
-      <S.SettingsHeader>
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.SettingsSelectorPanel.travelPreferences"]
-          }
-          description="Header text for the travel preferences."
-          id="otpUi.SettingsSelectorPanel.travelPreferences"
-        />
-      </S.SettingsHeader>
+      <S.SettingsHeader>{settingsHeader}</S.SettingsHeader>
 
       {selectedModes.some(isTransit) && transitModes.length >= 2 && (
         <SubmodeSelector
