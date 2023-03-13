@@ -101,13 +101,6 @@ const queryParamMessages = {
   }
 };
 
-// This error may be raised by us rendering two copies of eagh story.
-const a11yActiveIdWaiver = {
-  a11y: {
-    config: { rules: [{ id: "duplicate-id-active", reviewOnFail: true }] }
-  }
-};
-
 export const checkboxSelector = makeStory(Core.CheckboxSelector, {
   label: "Check me.",
   name: "MyParam",
@@ -127,8 +120,12 @@ export const sliderSelector = makeStory(Core.SliderSelector, {
   style: { display: "inline-block", width: "250px" },
   value: 3
 });
-
-sliderSelector.parameters = a11yActiveIdWaiver;
+// This error may be raised by us rendering two copies of eagh story.
+sliderSelector.parameters = {
+  a11y: {
+    config: { rules: [{ id: "duplicate-id-active", reviewOnFail: true }] }
+  }
+};
 
 export const dateTimeSelector = makeStory(Core.DateTimeSelector, {
   date: "2020-02-15",
@@ -167,7 +164,12 @@ export const generalSettingsPanelWithOtp2 = makeStory(GeneralSettingsTemplate, {
   mode: "WALK,BUS,TRAM,SUBWAY",
   otp2: true
 });
-generalSettingsPanelWithOtp2.parameters = a11yActiveIdWaiver;
+// This error may be raised by us rendering two copies of eagh story.
+generalSettingsPanelWithOtp2.parameters = {
+  a11y: {
+    config: { rules: [{ id: "duplicate-id-aria", reviewOnFail: true }] }
+  }
+};
 
 export const generalSettingsPanelWithCustomMessages = makeStory(
   GeneralSettingsTemplate,
