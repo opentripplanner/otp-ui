@@ -94,16 +94,16 @@ export default function SliderSelector({
       {/* The <div> elements below are here for the grid layout, see S.DropdownSelector. */}
       {!labelLow && !labelHigh && (
         <div>
-          <S.SettingLabel htmlFor={id}>{label}</S.SettingLabel>
+          <S.SettingLabel aria-hidden="true" as="span">{label}</S.SettingLabel>
         </div>
       )}
 
       <div>
-        <S.SettingLabel aria-hidden="true" htmlFor={id}>
+        <S.SettingLabel aria-hidden="true" as="span">
           {labelLow}
         </S.SettingLabel>
         <input
-          aria-label={`${labelLow} (${min}) - ${labelHigh} (${max})`}
+          aria-label={`${label}: ${labelLow} (${min}) - ${labelHigh} (${max})`}
           id={id}
           max={max}
           min={min}
@@ -112,7 +112,7 @@ export default function SliderSelector({
           type="range"
           value={value}
         />
-        <S.SettingLabel aria-hidden="true" htmlFor={id} style={{ paddingLeft:0 }}>
+        <S.SettingLabel aria-hidden="true" as="span" style={{ paddingLeft:0 }}>
           {labelHigh}
         </S.SettingLabel>
       </div>

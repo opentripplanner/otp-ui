@@ -59,7 +59,7 @@ export default function SubmodeSelector({
       role="group"
       style={style}
     >
-      {label && <LabelType aria-hidden="true">{label}</LabelType>}
+      {label && <LabelType aria-hidden="true" as="span">{label}</LabelType>}
       <RowType>
         {modes &&
           modes.map(option => (
