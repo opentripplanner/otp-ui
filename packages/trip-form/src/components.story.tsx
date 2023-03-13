@@ -35,7 +35,7 @@ function makeStory(Component?: React.ElementType, args: StoryArgs) {
   const BoundComponent = Component.bind({});
   BoundComponent.args = args;
   // We are hiding the second copy of the input component story from a11y, so waive this requirement.
-  BoundComponents.parameters = {
+  BoundComponent.parameters = {
     a11y: {
       config: { rules: [{ id: "aria-hidden-focus", reviewOnFail: true }] }
     }
