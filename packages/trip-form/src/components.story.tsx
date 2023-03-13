@@ -22,9 +22,8 @@ const decorator = (Story: StoryType): ReactElement => (
     <div>
       <Story />
     </div>
-    {/* We render a secind copy just to look at styles. Hide the second copy from a11y */}
     <p>Styled</p>
-    <div aria-hidden>{trimet(<Story />)}</div>
+    <div>{trimet(<Story />)}</div>
   </>
 );
 
@@ -34,13 +33,6 @@ const decorator = (Story: StoryType): ReactElement => (
 function makeStory(Component?: React.ElementType, args: StoryArgs) {
   const BoundComponent = Component.bind({});
   BoundComponent.args = args;
-  // We are hiding the second copy of the input component story from a11y, so waive this requirement.
-  BoundComponent.parameters = {
-    a11y: {
-      config: { rules: [{ id: "aria-hidden-focus", reviewOnFail: true }] }
-    }
-  };
-
   return BoundComponent;
 }
 
@@ -109,6 +101,13 @@ const queryParamMessages = {
   }
 };
 
+// This error may be raised by us rendering two copies of eagh story.
+const a11yActiveIdWaiver = {
+  a11y: {
+    config: { rules: [{ id: "duplicate-id-active", reviewOnFail: true }] }
+  }
+};
+
 export const checkboxSelector = makeStory(Core.CheckboxSelector, {
   label: "Check me.",
   name: "MyParam",
@@ -128,6 +127,8 @@ export const sliderSelector = makeStory(Core.SliderSelector, {
   style: { display: "inline-block", width: "250px" },
   value: 3
 });
+
+sliderSelector.parameters = a11yActiveIdWaiver;
 
 export const dateTimeSelector = makeStory(Core.DateTimeSelector, {
   date: "2020-02-15",
@@ -166,6 +167,7 @@ export const generalSettingsPanelWithOtp2 = makeStory(GeneralSettingsTemplate, {
   mode: "WALK,BUS,TRAM,SUBWAY",
   otp2: true
 });
+generalSettingsPanelWithOtp2.parameters = a11yActiveIdWaiver;
 
 export const generalSettingsPanelWithCustomMessages = makeStory(
   GeneralSettingsTemplate,
