@@ -14,7 +14,7 @@ import TransitVehicleOverlay, {
 
 const SEATTLE: [number, number] = [47.6, -122.3];
 
-// TODO: TransitVehicle[] type doesn't match with vehicles object
+// TODO: TransitVehicle[] type doesn't match vehicles object
 const vehicles: TransitVehicle[] = vehicleData.vehiclePositions;
 
 const CircleWithInnerCaret = withCaret(Circle, { position: "inner" });
@@ -54,7 +54,7 @@ export const OuterCaretWithCustomSize = () => (
 
 export const RouteColorBackground = () => (
   <TransitVehicleOverlay
-    IconContainer={withRouteColorBackground(DefaultIconContainer, null)}
+    IconContainer={withRouteColorBackground(DefaultIconContainer)}
     ModeIcon={TriMetModeIcon}
     vehicles={vehicles}
   />
@@ -73,7 +73,7 @@ export const RouteColorBackgroundWithTransparencyOnHover = () => (
 
 export const RouteColorBackgroundWithInnerCaret = () => (
   <TransitVehicleOverlay
-    IconContainer={withRouteColorBackground(CircleWithInnerCaret, null)}
+    IconContainer={withRouteColorBackground(CircleWithInnerCaret)}
     iconPadding={4}
     ModeIcon={TriMetModeIcon}
     vehicles={vehicles}
