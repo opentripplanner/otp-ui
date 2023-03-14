@@ -120,7 +120,7 @@ export const sliderSelector = makeStory(Core.SliderSelector, {
   style: { display: "inline-block", width: "250px" },
   value: 3
 });
-// This error may be raised by us rendering two copies of eagh story.
+// This error may be raised by us rendering two copies of each story.
 sliderSelector.parameters = {
   a11y: {
     config: { rules: [{ id: "duplicate-id-active", reviewOnFail: true }] }
@@ -164,7 +164,7 @@ export const generalSettingsPanelWithOtp2 = makeStory(GeneralSettingsTemplate, {
   mode: "WALK,BUS,TRAM,SUBWAY",
   otp2: true
 });
-// This error may be raised by us rendering two copies of eagh story.
+// This error may be raised by us rendering two copies of each story.
 generalSettingsPanelWithOtp2.parameters = {
   a11y: {
     config: {
