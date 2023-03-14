@@ -50,6 +50,7 @@ query PlanQuery(
 				trip {
 					id
 					gtfsId
+					tripHeadsign
 				}
 				agency {
 					name
@@ -77,6 +78,7 @@ query PlanQuery(
 				}
 				route {
 					shortName
+					longName
 					color
 					textColor
 					id
