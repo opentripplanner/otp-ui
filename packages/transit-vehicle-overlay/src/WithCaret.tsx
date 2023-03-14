@@ -57,7 +57,9 @@ export default function withCaret(
   }: IconContainerProps): JSX.Element => (
     <Component className={className} style={style} vehicle={vehicle}>
       {children}
-      {vehicle.heading != null && <SizedCaret rotate={vehicle.heading} />}
+      {vehicle.heading !== null && vehicle.heading !== undefined && (
+        <SizedCaret rotate={vehicle.heading} />
+      )}
     </Component>
   );
 
