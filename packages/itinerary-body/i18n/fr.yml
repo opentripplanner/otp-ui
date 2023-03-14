@@ -102,6 +102,7 @@ otpUi:
       bike: en vélo
     viewOnMap: Afficher sur le plan
   TransitLegBody:
+    agencyExternalLink: "{agencyName} (Lien externe)"
     AlertsBody:
       effectiveDate: À partir du {dateTime, date, long}
       effectiveTimeAndDate: À partir de {dateTime, time, short}, {day}
@@ -109,8 +110,14 @@ otpUi:
       tomorrow: demain
       yesterday: hier
     alertsHeader: "{alertCount, plural, =0 {# alerte} =1 {# alerte} other {# alertes}}"
+    arriveAt: "Arrivée à {place}"
+    disembarkAt: Descendez à {legDestination}
+    expandDetails: (Plus de détails)
     fare: "Tarif : {fare}"
+    fromLocation: "de {location}"
+    legDetails: Détails de l'étape
     operatedBy: Exploité par {agencyLink}
+    ride: Prenez la ligne
     rideDurationAndStops:
       "Trajet : {duration}{numStops, plural, =1 {} other { / #\
       \ arrêts}}"
@@ -119,4 +126,5 @@ otpUi:
     stopIdBasic: Arrêt n°{stopId}
     stopViewer: Info arrêt
     tripViewer: Info trajet
-    typicalWait: "Intervalle habituel : {waitTime}"
+    typicalWait: "Attente habituelle : {waitTime}"
+    zoomToLeg: Zoomer la carte sur cette étape.
