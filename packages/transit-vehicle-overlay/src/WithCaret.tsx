@@ -48,7 +48,7 @@ export default function withCaret(
   /**
    * Displays a circle, content, and an arrow pointing in the direction
    * the specified transit vehicle is heading. If no heading is defined,
-   * no arrow/caret is displayed.
+   * no arrow/caret is displayed
    */
   const WrappedComponent = ({
     className,
