@@ -39,6 +39,7 @@ query PlanQuery(
 			waitingTime
 			walkTime
 			legs {
+        interlineWithPreviousLeg
 				distance
 				duration
 				endTime
