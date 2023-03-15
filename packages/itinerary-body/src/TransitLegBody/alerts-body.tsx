@@ -81,11 +81,13 @@ export default function AlertsBody({
             },
             i
           ) => {
-            // If alert is effective as of +/- one day, use today, tomorrow, or
-            // yesterday with time. Otherwise, use long date format.
-            // The difference is expressed in calendar days based on the agency's time zone.
-            // Note: Previously, we used moment.diff(..., "days"), which reports the number of whole 24-hour periods
-            // between two timestamps/dates (not considering timezones or daylight time changes).
+            /**
+             * If alert is effective as of +/- one day, use today, tomorrow, or
+             * yesterday with time. Otherwise, use long date format.
+             * The difference is expressed in calendar days based on the agency's time zone.
+             * Note: Previously, we used moment.diff(..., "days"), which reports the number of whole 24-hour periods
+             * between two timestamps/dates (not considering timezones or daylight time changes).
+             */
             const today = toDate(getCurrentDate(timeZone));
             const compareDate = utcToZonedTime(
               new Date(effectiveStartDate),

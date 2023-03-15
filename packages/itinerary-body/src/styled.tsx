@@ -628,6 +628,12 @@ export const TransitAlert = styled.a`
   margin-top: 5px;
   padding: 8px;
   text-decoration: none;
+  @media only screen and (max-width: 375px) {
+    width: 55%;
+  }
+  @media only screen and (max-width: 480px) {
+    width: 60%;
+  }
 `;
 
 export const TransitAlertBody = styled.div`
