@@ -41,6 +41,7 @@ query PlanQuery(
 			legs {
         interlineWithPreviousLeg
 				departureDelay
+				arrivalDelay
 				distance
 				duration
 				endTime
