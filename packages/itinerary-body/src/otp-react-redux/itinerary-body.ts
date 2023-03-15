@@ -49,7 +49,6 @@ const StyledItineraryBody = styled(ItineraryBody)`
     font-size: 18px;
     font-weight: 500;
     line-height: 20px;
-    padding-left: 4px;
   }
 
   ${ItineraryBodyClasses.PlaceName} {
