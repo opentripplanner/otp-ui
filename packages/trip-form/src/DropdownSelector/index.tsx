@@ -76,6 +76,15 @@ export default function DropdownSelector({
     value: option.value
   }));
 
+  const customStyles = {
+    option: (provided, state) => ({
+      ...provided,
+      backgroundColor: '#fff',
+      color: '#000',
+      zIndex: 100
+    }),
+  };
+
   return (
     <S.DropdownSelector className={className} style={style}>
       {/* The <div> elements below are here for the grid layout, see S.DropdownSelector. */}
@@ -85,6 +94,7 @@ export default function DropdownSelector({
 
       <div>
         <Select
+        styles={customStyles}
         defaultValue={transformedOptions.find(option => option.value === value)}
         isClearable={false}
         isSearchable={false}
