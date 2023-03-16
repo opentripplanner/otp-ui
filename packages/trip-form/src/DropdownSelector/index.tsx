@@ -77,10 +77,14 @@ export default function DropdownSelector({
   }));
 
   const customStyles = {
-    option: (provided, state) => ({
+    menu: (base) => ({
+      ...base,
+      zIndex: 9999
+    }),
+    option: (provided) => ({
       ...provided,
-      backgroundColor: '#fff',
-      color: '#000',
+      backgroundColor: "#fff",
+      color: "#000",
       zIndex: 100
     }),
   };
