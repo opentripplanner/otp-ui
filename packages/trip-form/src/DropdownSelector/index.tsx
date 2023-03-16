@@ -1,8 +1,7 @@
 import CSS from "csstype";
-import React, { ChangeEvent, ReactElement, useCallback } from "react";
-
+import React, { ReactElement, useCallback } from "react";
+import Select  from "react-select";
 import * as S from "../styled";
-
 // eslint-disable-next-line prettier/prettier
 import type { QueryParamChangeEvent } from "../types";
 
@@ -41,6 +40,11 @@ interface DropdownSelectorProps {
   value?: string | number;
 }
 
+type TransformedOption = {
+    label: string | number;
+    value: string | number;
+ }
+
 /**
  * A wrapper that includes a <select> dropdown control and a <label> for the dropdown control.
  */
@@ -54,9 +58,9 @@ export default function DropdownSelector({
   value = null
 }: DropdownSelectorProps): ReactElement {
   const handleChange = useCallback(
-    (evt: ChangeEvent<HTMLSelectElement>) => {
+    (evt: TransformedOption) => {
       if (typeof onChange === "function") {
-        const val = evt.target.value;
+        const val: string = evt.value.toString();
         const floatVal = parseFloat(val);
         onChange({
           [name]: Number.isNaN(floatVal) ? val : floatVal
@@ -67,6 +71,10 @@ export default function DropdownSelector({
   );
 
   const id = `id-query-param-${name}`;
+  const transformedOptions: TransformedOption[] = options.map(option => ({
+    label: option.text,
+    value: option.value
+  }));
 
   return (
     <S.DropdownSelector className={className} style={style}>
@@ -76,14 +84,13 @@ export default function DropdownSelector({
       </div>
 
       <div>
-        <select id={id} onChange={handleChange} value={value}>
-          {options &&
-            options.map((o, i) => (
-              <option key={i} value={o.value}>
-                {o.text}
-              </option>
-            ))}
-        </select>
+        <Select
+        defaultValue={transformedOptions.find(option => option.value === value)}
+        isClearable={false}
+        isSearchable={false}
+        onChange={(option: TransformedOption) => handleChange(option)}
+        options={transformedOptions}
+      />
       </div>
     </S.DropdownSelector>
   );
