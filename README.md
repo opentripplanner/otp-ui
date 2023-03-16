@@ -98,6 +98,23 @@ Both `react-intl` and `formatjs` take advantage of native internationalization f
 Language-specific content is located in YML files under the `i18n` folder of packages that have internationalizable content
 (e.g. `en-US.yml` for American English, `fr.yml` for generic French, etc.).
 
+Note: Do not add comments to these YML files! Comments are removed by `yaml-sort` during pre-commit.
+
+To use the YML files in your react-intl application:
+
+- Merge the content of this file into the messages object that has your other localized strings,
+- Flatten the ids, i.e. convert a structure such as
+  ```
+    otpUi > ItineraryBody > travelByMode > bike
+  ```
+  into
+  ```
+    otpUi.ItineraryBody.travelByMode.bike
+  ```
+- Pass the resulting object to the messages prop of `IntlProvider`.
+
+See `packages/from-to-location-picker/src/index.story.tsx` for an example of how to initialize localized messages with `IntlProvider`.
+
 ### Contributing translations
 
 OTP-UI now uses [Hosted Weblate](https://www.weblate.org) to manage translations!
@@ -114,5 +131,6 @@ OTP-UI now uses [Hosted Weblate](https://www.weblate.org) to manage translations
 Translations from the community are welcome and very much appreciated,
 please see instructions at https://hosted.weblate.org/projects/otp-react-redux/.
 Community input from Weblate will appear as pull requests with changes to files in the applicable `i18n` folders for our review.
+(We reserve the right to edit or reject contributions as we see fit.)
 
 If changes to a specific language file is needed but not enabled in Weblate, please open an issue or a pull request with the changes needed.

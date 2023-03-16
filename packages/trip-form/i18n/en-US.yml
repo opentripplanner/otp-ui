@@ -1,12 +1,3 @@
-# Default messages for components in the trip-form package.
-# To use from a react-intl application:
-# - merge the content of this file into the messages object
-#   that has your other localized strings,
-# - flatten the ids, i.e. convert a structure such as
-#      otpUi > DateTimeSelector > now
-#   into "otpUi.DateTimeSelector.now" (see the DateTimeSelector story for an example),
-# - pass the resulting object to the messages prop of your IntlProvider.
-
 otpUi:
   DateTimeSelector:
     arrive: Arrive by
@@ -15,11 +6,17 @@ otpUi:
     depart: Depart at
     now: Leave now
     time: Time
+  SettingsSelectorPanel:
+    bikeOnly: Bike Only
+    escooterOnly: E-scooter Only
+    takeTransit: Take Transit
+    travelPreferences: Travel Preferences
+    use: Use
+    useCompanies: Use companies
+    walkOnly: Walk Only
   queryParameters:
     bikeSpeed: Bicycle Speed
-    # 1 mile = 100 "centimiles"
-    # There are exceptions in English for 1/10 mile , 1/4 mile, 1/2 mile etc.
-    distanceInMiles: >
+    distanceInMiles: |
       {centimiles, select, 
         10 {1/10 mile}
         25 {1/4 mile}
@@ -36,22 +33,14 @@ otpUi:
     optimizeBikeFriendly: Bike-Friendly Trip
     optimizeBikeSpeed: Speed
     optimizeFor: Optimize for
-    speedInMilesPerHour: "{mph} MPH" # Original units were all caps.
-    walkSpeed: Walk Speed
+    speedInMilesPerHour: "{mph} MPH"
     walkReluctance: Walking Avoidance
     walkReluctanceHigh: More Transit
     walkReluctanceLow: More Walking
+    walkSpeed: Walk Speed
     watts: E-scooter Power
     watts125kidsHoverboard: Kid's hoverboard (6 mph)
     watts1500powerfulEscooter: Powerful E-scooter (24 mph)
     watts250entryLevelEscooter: Entry-level scooter (11 mph)
     watts500robustEscooter: Robust E-scooter (18 mph)
     wheelchair: Prefer Wheelchair Accessible Routes
-  SettingsSelectorPanel:
-    bikeOnly: Bike Only
-    escooterOnly: E-scooter Only
-    takeTransit: Take Transit
-    travelPreferences: Travel Preferences
-    use: Use # as in "Use bus, train, subway".
-    useCompanies: Use companies # as in :"Use companies: Spin, Lime, Bolt"
-    walkOnly: Walk Only

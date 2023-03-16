@@ -1,22 +1,9 @@
-# Default messages for the TransitVehicleOverlay component.
-# To use from a react-intl application:
-# - merge the content of this file into the messages object
-#   that has your other localized strings,
-# - flatten the ids, i.e. convert a structure such as
-#      otpUi > TransitVehicleOverlay > status
-#   into "otpUi.TransitVehicleOverlay.status".
-# - pass the resulting object to the messages prop of IntlProvider.
-#
-
 otpUi:
   TransitVehicleOverlay:
     defaultTooltip: "{route}: {duration} ago"
-    durationWithSeconds: "{hours, plural,
-      =0 {}
-      other {# hr }}{minutes, plural,
-      =0 {{seconds, plural, =0 {# min} other {}}}
-      other {# min}}{seconds, plural,
-      =0 {}
-      other { # sec}}"
+    durationWithSeconds: >-
+      {hours, plural, =0 {} other {# hr }}{minutes, plural, =0 {{seconds,
+      plural, =0 {# min} other {}}} other {# min}}{seconds, plural, =0 {} other
+      { # sec}}
     routeTitle: "{type} {name}"
     transitLine: Line

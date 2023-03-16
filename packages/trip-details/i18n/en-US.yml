@@ -1,42 +1,32 @@
-# Default messages for the TripDetails component.
-# To use from a react-intl application:
-# - merge the content of this file into the messages object
-#   that has your other localized strings,
-# - flatten the ids, i.e. convert a structure such as
-#      otpUi > TripDetails > calories
-#   into "otpUi.TripDetails.calories" (see TripDetail story for an example),
-# - pass the resulting object to the messages prop of IntlProvider.
-#
-# The meaning of the pseudo <tags> used in the strings below is as follows:
-# - <dietaryLink>: The link to the Dietary Guidelines for Americans will surround the text enclosed by the tag.
-# - <strong>: The enclosed text will be rendered as strong (bold) text (same meaning as in HTML).
-
 otpUi:
   TripDetails:
     calories: "Calories Burned: <strong>{calories, number, ::.}</strong>"
     caloriesDescription: >
-      Calories burned is based on
-      <strong>{walkMinutes, plural, one {# minute} other {# minutes}}</strong> spent walking and
-      <strong>{bikeMinutes, plural, one {# minute} other {# minutes}}</strong> spent biking during this trip.
-      Adapted from <dietaryLink>Dietary Guidelines for Americans 2005, page 16, Table 4</dietaryLink>.
+      Calories burned is based on <strong>{walkMinutes, plural, one {# minute}
+      other {# minutes}}</strong> spent walking and <strong>{bikeMinutes,
+      plural, one {# minute} other {# minutes}}</strong> spent biking during
+      this trip. Adapted from <dietaryLink>Dietary Guidelines for Americans
+      2005, page 16, Table 4</dietaryLink>.
     co2: "CO<sub>2</sub> Emitted: <strong>{co2}</strong>"
-    co2description:
-      "CO<sub>2</sub> intensity is calculated by multiplying the distance of each leg of a trip by the CO<sub>2</sub> intensity of each mode.
-      CO<sub>2</sub> intensity of each mode is derived from <link>this spreadsheet</link>."
-    departure: Depart <strong>{departureDate, date, long}</strong> at <strong>{departureDate, time, short}</strong>
+    co2description: >-
+      CO<sub>2</sub> intensity is calculated by multiplying the distance of each
+      leg of a trip by the CO<sub>2</sub> intensity of each mode. CO<sub>2</sub>
+      intensity of each mode is derived from <link>this spreadsheet</link>.
+    departure: >-
+      Depart <strong>{departureDate, date, long}</strong> at
+      <strong>{departureDate, time, short}</strong>
+    fareDetailsHeaders:
+      cash: Cash
+      electronic: Electronic
+      regular: Adult
+      senior: Senior
+      special: Special
+      youth: Youth
+    hideDetail: Hide details
+    showDetail: Show details
     title: Trip Details
     tncFare: "{companies} Fare: <strong>{minTNCFare} - {maxTNCFare}</strong>"
+    transferDiscountExplanation: Transfer discount of {transferAmount} is applied
     transitFare: Transit Fare
     transitFareEntry: "{name}: <strong>{value}</strong>"
-    # The {extraMessage} string is included here instead of in the html so that it can be rearranged or surrounded as required in certain languages
     tripIncludesFlex: This trip includes flexible routes. {extraMessage}
-    showDetail: Show details
-    hideDetail: Hide details
-    fareDetailsHeaders:
-      regular: "Adult"
-      youth: "Youth"
-      senior: "Senior"
-      electronic: "Electronic"
-      cash: "Cash"
-      special: "Special"
-    transferDiscountExplanation: Transfer discount of {transferAmount} is applied
