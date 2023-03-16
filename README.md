@@ -112,8 +112,25 @@ To use the YML files in your react-intl application:
     otpUi.ItineraryBody.travelByMode.bike
   ```
 - Pass the resulting object to the messages prop of `IntlProvider`.
+  See `packages/from-to-location-picker/src/index.story.tsx` for an example of how to initialize localized messages with `IntlProvider`.
 
-See `packages/from-to-location-picker/src/index.story.tsx` for an example of how to initialize localized messages with `IntlProvider`.
+### Using internationalizable content in the code
+
+Use message id **literals** (no variables or other dynamic content) with either
+
+```jsx
+<FormattedMessage id="..." />
+```
+
+or
+
+```js
+intl.formatMessage({ id: ... })
+```
+
+The reason for passing **literals** to `FormattedMessage` and `intl.formatMessage` is that we have a checker script `yarn check:i18n` that is based on the `formatJS` CLI and that detects unused messages in the code and exports translation tables.
+Passing variables or dynamic content will cause the `formatJS` CLI and the checker to ignore the corresponding messages and
+incorrectly claim that a string is unused or missing from a translation file.
 
 ### Contributing translations
 
