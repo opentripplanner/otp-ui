@@ -474,6 +474,7 @@ export const PlaceName = styled.span`
   white-space: nowrap;
   text-overflow: ellipsis;
   flex: 1 1 auto;
+  padding: 3px 0 10px 0;
 `;
 
 export const PlaceSubheader = styled.div`

@@ -69,7 +69,7 @@ const StyledItineraryBody = styled(ItineraryBody)`
     display: table-cell;
     font-size: 14px;
     padding-right: 4px;
-    padding-top: 1px;
+    padding-top: 2px;
     text-align: right;
     vertical-align: top;
     width: 60px;
