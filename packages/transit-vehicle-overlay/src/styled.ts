@@ -122,7 +122,7 @@ const routeColorBackgroundCss = css<ColorProps>`
  */
 export function withRouteColorBackground(
   Container: FC,
-  options: RouteColorBackgroundOptions
+  options?: RouteColorBackgroundOptions
 ): FC {
   const innerCss =
     options?.display === "onhover"

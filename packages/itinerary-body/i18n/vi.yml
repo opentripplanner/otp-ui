@@ -81,21 +81,29 @@ otpUi:
       escooter: bằng xe tay ga điện tử
       walk: bằng cách đi bộ
   TransitLegBody:
+    agencyExternalLink: "{agencyName} (Liên kết bên ngoài)"
     AlertsBody:
+      effectiveDate: Có hiệu lực kể từ {dateTime, date, long}
+      effectiveTimeAndDate: Có hiệu lực kể từ {dateTime, time, short}, {day}
       today: Hôm nay
       tomorrow: Ngày mai
       yesterday: Hôm qua
-      effectiveDate: Có hiệu lực kể từ {dateTime, date, long}
-      effectiveTimeAndDate: Có hiệu lực kể từ {dateTime, time, short}, {day}
+    alertsHeader: "{alertCount} cảnh báo"
+    arriveAt: "Đến {place}"
+    disembarkAt: Xuống xe ở {legDestination}
+    expandDetails: (Mở rộng chi tiết)
     fare: "Giá vé: {fare}"
-    stopViewer: Trình xem trạm dừng
-    tripViewer: Trình xem chuyến đi
-    stopId: ID điểm dừng {stopId}
+    fromLocation: "Từ {location}"
+    legDetails: Chi tiết sân khấu
     operatedBy: Dịch vụ do {agencyLink}
+    ride: Đi đường
     rideDurationAndStops:
       "Đi {duration}{numStops, plural, =1 {} other { / # điểm
       dừng}}"
-    stopIdBasic: ID {stopId}
-    typicalWait: "Chờ thông thường: {waitTime}"
-    alertsHeader: "{alertCount} cảnh báo"
     routeDescription: "{routeName} <toPrefix>đến</toPrefix> {headsign}"
+    stopId: Điểm dừng số {stopId}
+    stopIdBasic: Điểm dừng số {stopId}
+    stopViewer: Trình xem trạm dừng
+    tripViewer: Trình xem chuyến đi
+    typicalWait: "Chờ thông thường: {waitTime}"
+    zoomToLeg: Thu phóng đến sân khấu trí trên bản đồ
