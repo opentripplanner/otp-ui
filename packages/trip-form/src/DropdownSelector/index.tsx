@@ -76,7 +76,7 @@ export default function DropdownSelector({
       </div>
 
       <div>
-        <select id={id} value={value} onChange={handleChange}>
+        <select id={id} onChange={handleChange} value={value}>
           {options &&
             options.map((o, i) => (
               <option key={i} value={o.value}>

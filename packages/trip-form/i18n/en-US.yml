@@ -10,8 +10,11 @@
 otpUi:
   DateTimeSelector:
     arrive: Arrive by
+    date: Date
+    dateTimeSelector: Date/Time Selector
     depart: Depart at
     now: Leave now
+    time: Time
   queryParameters:
     bikeSpeed: Bicycle Speed
     # 1 mile = 100 "centimiles"

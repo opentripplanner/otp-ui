@@ -1,6 +1,6 @@
 import coreUtils from "@opentripplanner/core-utils";
 import React, { ReactElement } from "react";
-import { useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 
 import DefaultTimeColumnContent from "../defaults/time-column-content";
 import AccessLegBody from "../AccessLegBody";
@@ -54,7 +54,7 @@ export default function PlaceRow({
   // on the stop viewer in this case, which they may want to do in order to
   // check the real-time arrival information for the next leg of their journey.
   const interline = !!(!isDestination && leg.interlineWithPreviousLeg);
-  const hideBorder = interline || !legIndex;
+  // const hideBorder = interline || !legIndex;
   const place = isDestination ? { ...leg.to } : { ...leg.from };
   // OTP2 marks both bikes and scooters as BIKESHARE in the vertextype
   // To get the right label, we need to fix scooters to be "VEHICLERENTAL"
@@ -69,6 +69,11 @@ export default function PlaceRow({
     description: "Text describing the view-on-map button",
     id: "otpUi.ItineraryBody.viewOnMap"
   });
+
+  const formattedPlace = direction => (
+    <PlaceName config={config} interline={interline} place={direction} />
+  );
+
   return (
     <S.PlaceRowWrapper key={legIndex || "destination-place"}>
       <S.LineColumn>
@@ -89,11 +94,10 @@ export default function PlaceRow({
               for an interline place
             */}
         {interline && <S.InterlineDot>&bull;</S.InterlineDot>}
-        <S.PlaceName>
+        <S.PlaceName aria-hidden>
           <PlaceName config={config} interline={interline} place={place} />
         </S.PlaceName>
       </S.PlaceHeader>
-
       <S.TimeColumn>
         {/* Custom rendering of the departure/arrival time of the specified leg. */}
         <TimeColumnContent isDestination={isDestination} leg={leg} />
@@ -104,6 +108,24 @@ export default function PlaceRow({
           />
         )}
       </S.TimeColumn>
+      <S.InvisibleAdditionalDetails>
+        {!isDestination ? (
+          <FormattedMessage
+            description="Add starting location for access legs"
+            id="otpUi.TransitLegBody.fromLocation"
+            values={{
+              location: formattedPlace(leg.from)
+            }}
+          />
+        ) : (
+          <FormattedMessage
+            id="otpUi.TransitLegBody.arriveAt"
+            defaultMessage={defaultMessages["otpUi.TransitLegBody.arriveAt"]}
+            description="Identifies end of the trip to screenreaders"
+            values={{ place: formattedPlace(leg.to) }}
+          />
+        )}
+      </S.InvisibleAdditionalDetails>
       <S.PlaceDetails>
         {/* Show the leg, if not rendering the destination */}
         {!isDestination &&
@@ -117,6 +139,7 @@ export default function PlaceRow({
               leg={leg}
               LegIcon={LegIcon}
               legIndex={legIndex}
+              legDestination={formattedPlace(leg.to)}
               RouteDescription={RouteDescription}
               setActiveLeg={setActiveLeg}
               setViewedTrip={setViewedTrip}
@@ -148,8 +171,9 @@ export default function PlaceRow({
             />
           ))}
       </S.PlaceDetails>
+      {/* This prop is a string for some reason... */}
       {showMapButtonColumn && (
-        <S.MapButtonColumn hideBorder={hideBorder.toString()}>
+        <S.MapButtonColumn hideBorder="true">
           <S.MapButton
             aria-label={viewOnMapMessage}
             onClick={() => frameLeg({ isDestination, leg, legIndex, place })}

@@ -16,7 +16,7 @@ export const SettingLabel = styled.label`
   font-weight: 400;
   padding-left: 6px;
   svg {
-    width: 22pt; 
+    width: 22pt;
   }
 `;
 

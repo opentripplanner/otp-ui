@@ -39,10 +39,10 @@ const modeSettingDefinitionsWithDropdown = [
   ...modeSettingDefinitions,
   {
     applicableMode: "TRANSIT",
-    type: "DROPDOWN",
-    key: "busColor",
     default: "blue",
-    options: [{ value: "blue" }]
+    key: "busColor",
+    options: [{ value: "blue" }],
+    type: "DROPDOWN"
   }
 ];
 
@@ -83,14 +83,12 @@ const MetroModeSelectorComponent = ({
   };
 
   return (
-    <div style={{ position: "relative" }}>
-      <Core.MetroModeSelector
-        label="Select a transit mode"
-        modeButtons={buttonsWithSettings}
-        onSettingsUpdate={setModeSettingValueAction}
-        onToggleModeButton={toggleModeButtonAction}
-      />
-    </div>
+    <Core.MetroModeSelector
+      label="Select a transit mode"
+      modeButtons={buttonsWithSettings}
+      onSettingsUpdate={setModeSettingValueAction}
+      onToggleModeButton={toggleModeButtonAction}
+    />
   );
 };
 
@@ -108,12 +106,12 @@ const Template = (args: {
 );
 
 export default {
-  component: MetroModeSelectorComponent,
-  title: "Trip Form Components/Metro Mode Selector",
   argTypes: {
     onSetModeSettingValue: { action: "set mode setting value" },
     onToggleModeButton: { action: "toggle button" }
-  }
+  },
+  component: MetroModeSelectorComponent,
+  title: "Trip Form Components/Metro Mode Selector"
 };
 
 export const MetroModeSelector = Template.bind({});

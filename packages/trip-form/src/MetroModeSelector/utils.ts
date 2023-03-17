@@ -1,19 +1,22 @@
-import { useState } from "react";
-import {
-  useQueryParam,
-  DelimitedArrayParam,
-  ObjectParam
-} from "use-query-params";
-import { QueryParamConfig, decodeQueryParams } from "serialize-query-params";
 import {
   ModeButtonDefinition,
   ModeSetting,
   ModeSettingValues,
   TransportMode
 } from "@opentripplanner/types";
+import { useState } from "react";
+import { QueryParamConfig, decodeQueryParams } from "serialize-query-params";
+import {
+  useQueryParam,
+  DelimitedArrayParam,
+  ObjectParam
+} from "use-query-params";
 
-import { TRANSIT_SUBMODES_AND_TRANSIT } from "@opentripplanner/core-utils/lib/query-gen";
+import coreUtils from "@opentripplanner/core-utils";
 import { QueryParamChangeEvent } from "../types";
+
+const { queryGen } = coreUtils;
+const { TRANSIT_SUBMODES_AND_TRANSIT } = queryGen;
 
 type InitialStateType = {
   enabledModeButtons: string[];

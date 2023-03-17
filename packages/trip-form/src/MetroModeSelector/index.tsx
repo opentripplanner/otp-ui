@@ -24,6 +24,7 @@ const invisibleCss = css`
   clip: rect(0, 0, 0, 0);
   height: 0;
   overflow: hidden;
+  position: absolute;
   width: 0;
 `;
 
@@ -46,7 +47,7 @@ const ModeBar = styled.fieldset`
 `;
 
 const accentColor = "#084c8d";
-const activeHoverColor = "0e5faa";
+const activeHoverColor = "#0e5faa";
 
 const ModeButtonWrapper = styled.span`
   position: relative;
@@ -269,7 +270,7 @@ function ModeButton({
         </InvisibleA11yLabel>
       </button>
       {renderDropdown && (
-        <FloatingFocusManager context={context}>
+        <FloatingFocusManager context={context} returnFocus={false}>
           <HoverPanel
             // This library relies on prop spreading
             // eslint-disable-next-line react/jsx-props-no-spreading
