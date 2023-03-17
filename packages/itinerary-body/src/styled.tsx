@@ -269,7 +269,7 @@ export const ItineraryBody = styled.ol`
 export const LegBody = styled.div`
   color: #676767;
   font-size: 13px;
-  padding: 12px 0 12px 4px;
+  padding-bottom: 12px;
 `;
 
 export const LegClickable = styled.div``;
@@ -442,6 +442,7 @@ export const MapButton = styled(LinkButton)`
 
 export const MapButtonColumn = styled(LightBorderDiv)`
   flex: 0 0 25px;
+  grid-column: -1;
 `;
 
 export const MapIcon = styled(Map).attrs(props => ({
@@ -473,6 +474,7 @@ export const PlaceName = styled.span`
   white-space: nowrap;
   text-overflow: ellipsis;
   flex: 1 1 auto;
+  padding: 3px 0 10px 0;
 `;
 
 export const PlaceSubheader = styled.div`

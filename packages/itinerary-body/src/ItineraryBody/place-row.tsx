@@ -54,7 +54,7 @@ export default function PlaceRow({
   // on the stop viewer in this case, which they may want to do in order to
   // check the real-time arrival information for the next leg of their journey.
   const interline = !!(!isDestination && leg.interlineWithPreviousLeg);
-  const hideBorder = interline || !legIndex;
+  // const hideBorder = interline || !legIndex;
   const place = isDestination ? { ...leg.to } : { ...leg.from };
   // OTP2 marks both bikes and scooters as BIKESHARE in the vertextype
   // To get the right label, we need to fix scooters to be "VEHICLERENTAL"
@@ -98,7 +98,6 @@ export default function PlaceRow({
           <PlaceName config={config} interline={interline} place={place} />
         </S.PlaceName>
       </S.PlaceHeader>
-
       <S.TimeColumn>
         {/* Custom rendering of the departure/arrival time of the specified leg. */}
         <TimeColumnContent isDestination={isDestination} leg={leg} />
@@ -172,8 +171,9 @@ export default function PlaceRow({
             />
           ))}
       </S.PlaceDetails>
+      {/* This prop is a string for some reason... */}
       {showMapButtonColumn && (
-        <S.MapButtonColumn hideBorder={hideBorder.toString()}>
+        <S.MapButtonColumn hideBorder="true">
           <S.MapButton
             aria-label={viewOnMapMessage}
             onClick={() => frameLeg({ isDestination, leg, legIndex, place })}
