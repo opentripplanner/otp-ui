@@ -270,7 +270,7 @@ function ModeButton({
         </InvisibleA11yLabel>
       </button>
       {renderDropdown && (
-        <FloatingFocusManager context={context}>
+        <FloatingFocusManager context={context} returnFocus={false}>
           <HoverPanel
             // This library relies on prop spreading
             // eslint-disable-next-line react/jsx-props-no-spreading
