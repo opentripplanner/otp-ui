@@ -24,10 +24,10 @@ const modeButtonDefinitions = [
     modeSettings: [
       {
         applicableMode: "TRANSIT",
-        type: "CHECKBOX",
-        key: "wheelchair",
         default: false,
+        key: "wheelchair",
         label: "Use Accessible Routing",
+        type: "CHECKBOX",
         value: false
       }
     ]
@@ -45,15 +45,15 @@ const modeButtonDefinitions = [
     modeSettings: [
       {
         applicableMode: "WALK",
-        type: "SLIDER",
-        key: "walkReluctance",
         default: 2,
-        low: 0,
         high: 5,
-        step: 0.1,
+        key: "walkReluctance",
         label: "Walk Reluctance",
-        labelLow: "More Walking",
         labelHigh: "More Transit",
+        labelLow: "More Walking",
+        low: 0,
+        step: 0.1,
+        type: "SLIDER",
         value: 2
       }
     ]
@@ -71,27 +71,24 @@ const modeButtonDefinitions = [
     modeSettings: [
       {
         applicableMode: "BICYCLE",
-        type: "SLIDER",
-        key: "bikeReluctance",
         default: 2,
-        low: 0,
         high: 5,
-        step: 0.1,
+        key: "bikeReluctance",
         label: "Bike Reluctance",
-        labelLow: "More Biking",
         labelHigh: "More Transit",
+        labelLow: "More Biking",
+        low: 0,
+        step: 0.1,
+        type: "SLIDER",
         value: 2
       },
       {
+        addTransportMode: { mode: "BICYCLE", qualifier: "RENT" },
         applicableMode: "BICYCLE",
-        type: "CHECKBOX_ADD_MODE",
-        key: "allowBikeRental",
         default: true,
-        addTransportMode: {
-          mode: "BICYCLE",
-          qualifier: "RENT"
-        },
-        label: "Enable Bike Rental"
+        key: "allowBikeRental",
+        label: "Enable Bike Rental",
+        type: "CHECKBOX_ADD_MODE"
       }
     ]
   }
@@ -105,57 +102,54 @@ const modeButtonsWithoutSettings = modeButtonDefinitions.map(b => ({
 const modeSettingDefinitions = [
   {
     applicableMode: "CAR",
-    type: "SLIDER",
-    key: "carReluctance",
     default: 3,
-    low: 0,
     high: 5,
-    step: 0.1,
+    key: "carReluctance",
     label: "Car Reluctance",
+    labelHigh: "More Transit",
     labelLow: "More Driving",
-    labelHigh: "More Transit"
+    low: 0,
+    step: 0.1,
+    type: "SLIDER"
   },
   {
     applicableMode: "BICYCLE",
-    type: "SLIDER",
-    key: "bikeReluctance",
     default: 2,
-    low: 0,
     high: 5,
-    step: 0.1,
+    key: "bikeReluctance",
     label: "Bike Reluctance",
+    labelHigh: "More Transit",
     labelLow: "More Biking",
-    labelHigh: "More Transit"
+    low: 0,
+    step: 0.1,
+    type: "SLIDER"
   },
   {
     applicableMode: "WALK",
-    type: "SLIDER",
-    key: "walkReluctance",
     default: 2,
-    low: 0,
     high: 5,
-    step: 0.1,
+    key: "walkReluctance",
     label: "Walk Reluctance",
+    labelHigh: "More Transit",
     labelLow: "More Walking",
-    labelHigh: "More Transit"
+    low: 0,
+    step: 0.1,
+    type: "SLIDER"
   },
   {
+    addTransportMode: { mode: "BICYCLE", qualifier: "RENT" },
     applicableMode: "BICYCLE",
-    type: "CHECKBOX",
-    key: "allowBikeRental",
     default: true,
-    addTransportMode: {
-      mode: "BICYCLE",
-      qualifier: "RENT"
-    },
-    label: "Enable Bike Rental"
+    key: "allowBikeRental",
+    label: "Enable Bike Rental",
+    type: "CHECKBOX"
   },
   {
     applicableMode: "TRANSIT",
-    type: "CHECKBOX",
-    key: "wheelchair",
     default: false,
-    label: "Use Accessible Routing"
+    key: "wheelchair",
+    label: "Use Accessible Routing",
+    type: "CHECKBOX"
   }
 ];
 

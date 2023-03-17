@@ -24,8 +24,8 @@ const invisibleCss = css`
   clip: rect(0, 0, 0, 0);
   height: 0;
   overflow: hidden;
-  width: 0;
   position: absolute;
+  width: 0;
 `;
 
 const InvisibleA11yLabel = styled.span`
@@ -47,7 +47,7 @@ const ModeBar = styled.fieldset`
 `;
 
 const accentColor = "#084c8d";
-const activeHoverColor = "0e5faa";
+const activeHoverColor = "#0e5faa";
 
 const ModeButtonWrapper = styled.span`
   position: relative;
