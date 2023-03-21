@@ -1,6 +1,6 @@
 import CSS from "csstype";
-import React, { ReactElement, useCallback } from "react";
-import Select  from "react-select";
+import React, { ChangeEvent, TouchEvent, ReactElement, useCallback } from "react";
+
 import * as S from "../styled";
 // eslint-disable-next-line prettier/prettier
 import type { QueryParamChangeEvent } from "../types";
@@ -24,6 +24,11 @@ interface DropdownSelectorProps {
    */
   onChange?: (evt: QueryParamChangeEvent) => void;
   /**
+   * Triggered when the 'touch' event is fired; typically 
+   * applicable to some mobile-devices and tablets.
+   */
+  onTouchStart?: (evt: TouchEvent<HTMLSelectElement>) => void;
+  /**
    * A list of {text, value} options for the <select> control.
    */
   options: {
@@ -40,11 +45,6 @@ interface DropdownSelectorProps {
   value?: string | number;
 }
 
-type TransformedOption = {
-    label: string | number;
-    value: string | number;
- }
-
 /**
  * A wrapper that includes a <select> dropdown control and a <label> for the dropdown control.
  */
@@ -58,9 +58,9 @@ export default function DropdownSelector({
   value = null
 }: DropdownSelectorProps): ReactElement {
   const handleChange = useCallback(
-    (evt: TransformedOption) => {
+    (evt: ChangeEvent<HTMLSelectElement>) => {
       if (typeof onChange === "function") {
-        const val: string = evt.value.toString();
+        const val = evt.target.value;
         const floatVal = parseFloat(val);
         onChange({
           [name]: Number.isNaN(floatVal) ? val : floatVal
@@ -71,22 +71,10 @@ export default function DropdownSelector({
   );
 
   const id = `id-query-param-${name}`;
-  const transformedOptions: TransformedOption[] = options.map(option => ({
-    label: option.text,
-    value: option.value
-  }));
 
-  const customStyles = {
-    menu: (base) => ({
-      ...base,
-      zIndex: 9999
-    }),
-    option: (provided) => ({
-      ...provided,
-      backgroundColor: "#fff",
-      color: "#000",
-      zIndex: 100
-    }),
+  const handleTouchStart = (e: TouchEvent<HTMLSelectElement>) => {
+    e.preventDefault();
+    e.currentTarget.focus();
   };
 
   return (
@@ -97,14 +85,14 @@ export default function DropdownSelector({
       </div>
 
       <div>
-        <Select
-        styles={customStyles}
-        defaultValue={transformedOptions.find(option => option.value === value)}
-        isClearable={false}
-        isSearchable={false}
-        onChange={(option: TransformedOption) => handleChange(option)}
-        options={transformedOptions}
-      />
+        <select id={id} onChange={handleChange} value={value} onTouchStart={handleTouchStart}>
+          {options &&
+            options.map((o, i) => (
+              <option key={i} value={o.value}>
+                {o.text}
+              </option>
+            ))}
+        </select>
       </div>
     </S.DropdownSelector>
   );
