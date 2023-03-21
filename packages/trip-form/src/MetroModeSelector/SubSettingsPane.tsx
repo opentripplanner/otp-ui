@@ -10,7 +10,6 @@ import SliderSelector from "../SliderSelector";
 import generateModeButtonLabel from "./i18n";
 
 import defaultEnglishMessages from "../../i18n/en-US.yml";
-import { QueryParamChangeEvent } from "../types";
 // HACK: We should flatten the messages loaded above because
 // the YAML loaders behave differently between webpack and our version of jest:
 // - the yaml loader for webpack returns a nested object,
@@ -90,14 +89,7 @@ const ModeSettingRenderer = ({
           max={setting.high}
           min={setting.low}
           name={setting.key}
-          onChange={(event: QueryParamChangeEvent) => {
-            // If an inverse key is specified, calculate its value here
-            if (setting.inverseKey) {
-              event[setting.inverseKey] =
-                setting.high - Number(event[setting.key]) + setting.low;
-            }
-            onChange(event);
-          }}
+          onChange={onChange}
           step={setting.step}
           value={setting.value}
         />
