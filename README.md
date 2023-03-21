@@ -99,6 +99,8 @@ Language-specific content is located in YML files under the `i18n` folder of pac
 (e.g. `en-US.yml` for American English, `fr.yml` for generic French, etc.).
 
 Note: Do not add comments to these YML files! Comments are removed by `yaml-sort` during pre-commit.
+Instead, comments for other developers should be placed in the corresponding js/jsx/ts/tsx file.
+Comments for translators should be entered into Weblate (see [Contributing Translations](#contributing-translations))
 
 To use the YML files in your react-intl application:
 
@@ -148,6 +150,6 @@ OTP-UI now uses [Hosted Weblate](https://www.weblate.org) to manage translations
 Translations from the community are welcome and very much appreciated,
 please see instructions at https://hosted.weblate.org/projects/otp-react-redux/.
 Community input from Weblate will appear as pull requests with changes to files in the applicable `i18n` folders for our review.
-(We reserve the right to edit or reject contributions as we see fit.)
+(Contributions may be edited or rejected to remain in line with long-term project goals.)
 
 If changes to a specific language file is needed but not enabled in Weblate, please open an issue or a pull request with the changes needed.
