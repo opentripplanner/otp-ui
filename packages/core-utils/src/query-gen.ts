@@ -191,6 +191,9 @@ export function generateOtp2Query({
 }: OTPQueryParams): GraphQLQuery {
   // This extracts the values from the mode settings to key value pairs
   const modeSettingValues = modeSettings.reduce((prev, cur) => {
+    if (cur.type === "SLIDER" && cur.inverseKey) {
+      prev[cur.inverseKey] = cur.high - cur.value + cur.low;
+    }
     prev[cur.key] = cur.value;
     return prev;
   }, {}) as ModeSettingValues;
