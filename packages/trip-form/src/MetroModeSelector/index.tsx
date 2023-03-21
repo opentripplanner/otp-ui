@@ -365,20 +365,23 @@ export default function ModeSelector({
   onSettingsUpdate,
   onToggleModeButton
 }: Props): ReactElement {
-  const [keyboardPopup, setKeyboardPopup] = useState(null);
+  // State that holds the id of the active mode combination popup that was triggered via keyboard.
+  // It is used to enable/disable hover effects to avoid keyboard focus being stolen
+  // and overlapping popups on mouse hover.
+  const [itemWithKeyboard, setItemWithKeyboard] = useState<string>(null);
   return (
     <ModeBar className="metro-mode-selector">
       <legend>{label}</legend>
       {modeButtons.map(combination => (
         <ModeButton
           id={combination.key}
-          itemWithKeyboard={keyboardPopup}
+          itemWithKeyboard={itemWithKeyboard}
           key={combination.label}
           modeButton={combination}
           onPopupClose={useCallback(() => {
-            setKeyboardPopup(null);
-          }, [setKeyboardPopup])}
-          onPopupKeyboardExpand={setKeyboardPopup}
+            setItemWithKeyboard(null);
+          }, [setItemWithKeyboard])}
+          onPopupKeyboardExpand={setItemWithKeyboard}
           onSettingsUpdate={onSettingsUpdate}
           onToggle={useCallback(() => {
             onToggleModeButton(combination.key);
