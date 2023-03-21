@@ -10,11 +10,12 @@ import PlanQuery from "./planQuery.graphql";
 
 type OTPQueryParams = {
   arriveBy: boolean;
-  date: string;
+  date?: string;
   from: LonLatOutput & { name?: string };
   modes: TransportMode[];
   modeSettings: ModeSetting[];
-  time: string;
+  time?: string;
+  numItineraries?: number;
   to: LonLatOutput & { name?: string };
 };
 
@@ -184,6 +185,7 @@ export function generateOtp2Query({
   from,
   modes,
   modeSettings,
+  numItineraries,
   time,
   to
 }: OTPQueryParams): GraphQLQuery {
@@ -209,6 +211,7 @@ export function generateOtp2Query({
       date,
       fromPlace: `${from.name}::${from.lat},${from.lon}}`,
       modes,
+      numItineraries,
       time,
       toPlace: `${to.name}::${to.lat},${to.lon}}`,
       walkReluctance,
