@@ -14,7 +14,7 @@ interface Props extends HTMLAttributes<HTMLSpanElement> {
 /**
  * Gets the summary mode in the ambient language.
  */
-function getSummaryMode(leg: Leg, intl: IntlShape): string {
+export function getSummaryMode(leg: Leg, intl: IntlShape): string {
   switch (leg.mode) {
     case "BICYCLE":
       return intl.formatMessage({
@@ -33,15 +33,15 @@ function getSummaryMode(leg: Leg, intl: IntlShape): string {
       return leg.hailedCar
         ? intl.formatMessage({
             defaultMessage:
-              defaultMessages["otpUi.AccessLegBody.summaryMode.carDrive"],
-            description: "Drive somewhere",
-            id: "otpUi.AccessLegBody.summaryMode.carDrive"
-          })
-        : intl.formatMessage({
-            defaultMessage:
               defaultMessages["otpUi.AccessLegBody.summaryMode.carHail"],
             description: "Ride in a car/taxi to somewhere",
             id: "otpUi.AccessLegBody.summaryMode.carHail"
+          })
+        : intl.formatMessage({
+            defaultMessage:
+              defaultMessages["otpUi.AccessLegBody.summaryMode.carDrive"],
+            description: "Drive somewhere",
+            id: "otpUi.AccessLegBody.summaryMode.carDrive"
           });
     case "MICROMOBILITY":
     case "MICROMOBILITY_RENT":

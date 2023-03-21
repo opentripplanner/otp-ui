@@ -1,5 +1,5 @@
 import CSS from "csstype";
-import React, { ReactElement, ReactNode } from "react";
+import React, { ReactElement } from "react";
 
 import ModeButton from "../ModeButton";
 import * as S from "../styled";
@@ -19,7 +19,7 @@ interface SubmodeSelectorProps {
   /**
    * The optional text to display before the submodes.
    */
-  label?: ReactNode;
+  label?: string;
   /**
    * An array of submodes for the trip query, i.e. transit modes, TNC, or rental companies.
    */
@@ -53,12 +53,18 @@ export default function SubmodeSelector({
     : S.SubmodeSelector.Row;
 
   return (
-    <S.SubmodeSelector className={className} style={style}>
-      {label && <LabelType>{label}</LabelType>}
+    <S.SubmodeSelector
+      aria-label={label}
+      className={className}
+      role="group"
+      style={style}
+    >
+      {label && <LabelType aria-hidden="true" as="span">{label}</LabelType>}
       <RowType>
         {modes &&
           modes.map(option => (
             <ModeButton
+              aria-pressed={option.selected}
               key={option.id}
               selected={option.selected}
               showTitle={false}

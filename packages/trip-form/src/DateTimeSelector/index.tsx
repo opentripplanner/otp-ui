@@ -3,7 +3,7 @@ import { format, parse } from "date-fns";
 import flatten from "flat";
 import coreUtils from "@opentripplanner/core-utils";
 import React, { ChangeEvent, ReactElement, ReactNode, useCallback } from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 
 import ModeButton from "../ModeButton";
 import * as S from "../styled";
@@ -136,6 +136,8 @@ export default function DateTimeSelector({
   timeFormatLegacy = OTP_API_TIME_FORMAT,
   timeZone = getUserTimezone()
 }: DateTimeSelectorProps): ReactElement {
+  const intl = useIntl()
+
   const handleQueryParamChange = useCallback(
     (queryParam: QueryParamChangeEvent): void => {
       if (typeof onQueryParamChange === "function") {
@@ -229,10 +231,16 @@ export default function DateTimeSelector({
   const isLegacy = forceLegacy || !supportsDateTimeInputs;
 
   return (
-    <S.DateTimeSelector className={className} style={style}>
+    <S.DateTimeSelector
+      aria-label={intl.formatMessage({ id: "otpUi.DateTimeSelector.dateTimeSelector" })}
+      className={className}
+      role="group"
+      style={style}
+    >
       <S.DateTimeSelector.DepartureRow>
         {departureOptions.map(opt => (
           <ModeButton
+            aria-pressed={opt.isSelected}
             key={opt.type}
             onClick={setDepartArrive(opt)}
             selected={opt.isSelected}
@@ -247,6 +255,7 @@ export default function DateTimeSelector({
           {/* The <div> elements below are used for layout, see S.DateTimeSelector. */}
           <div>
             <input
+              aria-label={intl.formatMessage({ id: "otpUi.DateTimeSelector.time" })}
               onChange={handleTimeChange}
               required
               type="time"
@@ -255,6 +264,7 @@ export default function DateTimeSelector({
           </div>
           <div>
             <input
+              aria-label={intl.formatMessage({ id: "otpUi.DateTimeSelector.date" })}
               onChange={handleDateChange}
               required
               type="date"
