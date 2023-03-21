@@ -98,6 +98,42 @@ Both `react-intl` and `formatjs` take advantage of native internationalization f
 Language-specific content is located in YML files under the `i18n` folder of packages that have internationalizable content
 (e.g. `en-US.yml` for American English, `fr.yml` for generic French, etc.).
 
+Note: Do not add comments to these YML files! Comments are removed by `yaml-sort` during pre-commit.
+Instead, comments for other developers should be placed in the corresponding js/jsx/ts/tsx file.
+Comments for translators should be entered into Weblate (see [Contributing Translations](#contributing-translations))
+
+To use the YML files in your react-intl application:
+
+- Merge the content of this file into the messages object that has your other localized strings,
+- Flatten the ids, i.e. convert a structure such as
+  ```
+    otpUi > ItineraryBody > travelByMode > bike
+  ```
+  into
+  ```
+    otpUi.ItineraryBody.travelByMode.bike
+  ```
+- Pass the resulting object to the messages prop of `IntlProvider`.
+  See `packages/from-to-location-picker/src/index.story.tsx` for an example of how to initialize localized messages with `IntlProvider`.
+
+### Using internationalizable content in the code
+
+Use message id **literals** (no variables or other dynamic content) with either
+
+```jsx
+<FormattedMessage id="..." />
+```
+
+or
+
+```js
+intl.formatMessage({ id: ... })
+```
+
+The reason for passing **literals** to `FormattedMessage` and `intl.formatMessage` is that we have a checker script `yarn check:i18n` that is based on the `formatJS` CLI and that detects unused messages in the code and exports translation tables.
+Passing variables or dynamic content will cause the `formatJS` CLI and the checker to ignore the corresponding messages and
+incorrectly claim that a string is unused or missing from a translation file.
+
 ### Contributing translations
 
 OTP-UI now uses [Hosted Weblate](https://www.weblate.org) to manage translations!
@@ -114,5 +150,6 @@ OTP-UI now uses [Hosted Weblate](https://www.weblate.org) to manage translations
 Translations from the community are welcome and very much appreciated,
 please see instructions at https://hosted.weblate.org/projects/otp-react-redux/.
 Community input from Weblate will appear as pull requests with changes to files in the applicable `i18n` folders for our review.
+(Contributions may be edited or rejected to remain in line with long-term project goals.)
 
 If changes to a specific language file is needed but not enabled in Weblate, please open an issue or a pull request with the changes needed.
