@@ -13,6 +13,7 @@ query PlanQuery(
 	$preferred: InputPreferred,
 	$unpreferred: InputUnpreferred,
 	$banned: InputBanned,
+	$numItineraries: Int,
 ) {
 	plan(
 		fromPlace: $fromPlace
@@ -31,6 +32,7 @@ query PlanQuery(
 		preferred: $preferred,
 		unpreferred: $unpreferred,
 		banned: $banned,
+		numItineraries: $numItineraries,
 	) {
 		itineraries {
 			duration
@@ -39,6 +41,7 @@ query PlanQuery(
 			waitingTime
 			walkTime
 			legs {
+				rentedBike
         interlineWithPreviousLeg
 				departureDelay
 				arrivalDelay
