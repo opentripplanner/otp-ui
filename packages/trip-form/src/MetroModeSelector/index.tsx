@@ -110,6 +110,7 @@ const ModeButtonWrapper = styled.span`
   & > input:checked + label,
   & > input:checked ~ button {
     color: white;
+    fill: currentcolor;
   }
 
   & > input:focus + label {
