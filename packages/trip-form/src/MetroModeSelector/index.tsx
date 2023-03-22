@@ -57,10 +57,12 @@ const ModeButtonWrapper = styled.span<{ fillModeIcons?: boolean }>`
     border-radius: 5px;
     border: 2px solid ${accentColor};
     cursor: pointer;
-    display: inline-block;
+    display: inline-flex;
     padding: 0.75rem 0.75rem;
     transition: all 250ms cubic-bezier(0.27, 0.01, 0.38, 1.06);
     user-select: none;
+    justify-content: center;
+    aspect-ratio: 1/1; /* stylelint-disable-line property-no-unknown */
   }
 
   &:not(:last-of-type) > label {
