@@ -52,11 +52,11 @@ otpUi:
       escooter: 电动滑板车
     LegDiagramPreview:
       elevationChart: 海拔图表
-      noElevationData: 没有可用的高程数据.
+      noElevationData: 没有可用的海拔数据.
       toggleElevationChart: 切换海拔图表
     mapillaryTooltip: 在这个位置显示街道图像
     TncLeg:
-      bookRide: 预订旅行
+      bookRide: 预订乘车
       bookRideLater: 等到 {timeMillis, time, short} 进行预订
       estimatedCost: "估计费用: {minFare} - {maxFare}"
       estimatedTravelTime: "估计的旅行时间: {duration} (不包括流量)"
@@ -85,7 +85,7 @@ otpUi:
       effectiveTimeAndDate: 从 {dateTime, time, short}, {day} 起生效
       today: 今天
       tomorrow: 明天
-      yesterday: 昨日
+      yesterday: 昨天
     alertsHeader: "{alertCount} 个警报"
     arriveAt: 到达
     disembarkAt: "{legDestination} 下车"
@@ -93,7 +93,7 @@ otpUi:
     fare: "票价: {fare}"
     fromLocation: "从 {location}"
     legDetails: 腿的细节
-    operatedBy: 公交运营商 {agencyLink}
+    operatedBy: 服务运营商 {agencyLink}
     ride: 乘坐
     rideDurationAndStops: "乘坐 {duration}{numStops, plural, =1 {} other { / # 站}}"
     routeDescription: "{routeName} <toPrefix>至</toPrefix> {headsign}"
