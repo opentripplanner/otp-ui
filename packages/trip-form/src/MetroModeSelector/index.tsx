@@ -49,7 +49,7 @@ const ModeBar = styled.fieldset`
 const accentColor = "#084c8d";
 const activeHoverColor = "#0e5faa";
 
-const ModeButtonWrapper = styled.span`
+const ModeButtonWrapper = styled.span<{ fillModeIcons?: boolean }>`
   position: relative;
 
   & > label {
@@ -57,10 +57,12 @@ const ModeButtonWrapper = styled.span`
     border-radius: 5px;
     border: 2px solid ${accentColor};
     cursor: pointer;
-    display: inline-block;
+    display: inline-flex;
     padding: 0.75rem 0.75rem;
     transition: all 250ms cubic-bezier(0.27, 0.01, 0.38, 1.06);
     user-select: none;
+    justify-content: center;
+    aspect-ratio: 1/1; /* stylelint-disable-line property-no-unknown */
   }
 
   &:not(:last-of-type) > label {
@@ -110,7 +112,8 @@ const ModeButtonWrapper = styled.span`
   & > input:checked + label,
   & > input:checked ~ button {
     color: white;
-    fill: currentcolor;
+    fill: ${props =>
+      props.fillModeIcons === false ? "inherit" : "currentcolor"};
   }
 
   & > input:focus + label {
@@ -170,19 +173,36 @@ const Arrow = styled.div`
 
 interface ModeButtonProps {
   id: string;
+  itemWithKeyboard?: string;
   modeButton: ModeButtonDefinition;
+  onPopupClose: () => void;
+  onPopupKeyboardExpand: (id: string) => void;
   onSettingsUpdate: (QueryParamChangeEvent) => void;
   onToggle: () => void;
+  fillModeIcons?: boolean;
 }
 
 function ModeButton({
   id,
+  itemWithKeyboard,
   modeButton,
+  onPopupClose,
+  onPopupKeyboardExpand,
   onSettingsUpdate,
-  onToggle
+  onToggle,
+  fillModeIcons
 }: ModeButtonProps) {
   const [open, setOpen] = useState(false);
   const arrowRef = useRef(null);
+  const onOpenChange = useCallback(
+    value => {
+      setOpen(value);
+      if (!value && typeof onPopupClose === "function") {
+        onPopupClose();
+      }
+    },
+    [onPopupClose, setOpen]
+  );
   const {
     context,
     floating,
@@ -193,13 +213,15 @@ function ModeButton({
     y
   } = useFloating({
     middleware: [offset(8), shift(), arrow({ element: arrowRef })],
-    onOpenChange: setOpen,
+    onOpenChange,
     open
   });
 
   const { getFloatingProps, getReferenceProps } = useInteractions([
     useHover(context, {
-      enabled: true,
+      // Enable hover only if no popup has been triggered via keyboard.
+      // (This is to avoid focus being stolen by hovering out of another button.)
+      enabled: itemWithKeyboard === null,
       handleClose: safePolygon({
         blockPointerEvents: false,
         restMs: 500,
@@ -226,15 +248,27 @@ function ModeButton({
 
   const checkboxId = `metro-mode-selector-mode-${id}`;
 
+  const handleButtonClick = useCallback(
+    e => {
+      if (typeof onPopupKeyboardExpand === "function") {
+        onPopupKeyboardExpand(id);
+      }
+      if (typeof interactionProps.onClick === "function") {
+        interactionProps.onClick(e);
+      }
+    },
+    [id, interactionProps, onPopupKeyboardExpand]
+  );
+
   return (
-    <ModeButtonWrapper>
+    <ModeButtonWrapper fillModeIcons={fillModeIcons}>
       {/* Basic checkbox that states whether a mode is selected. */}
       <input
+        aria-label={modeButton.label}
         checked={modeButton.enabled ?? undefined}
         id={checkboxId}
         onChange={onToggle}
         type="checkbox"
-        aria-label={modeButton.label}
       />
       {/* Label for the above checkbox, placed right after, so that CSS applies based on checkbox state. */}
       {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
@@ -255,6 +289,9 @@ function ModeButton({
         {...interactionProps}
         // Disable button if mode is not checked (but keep in DOM for screen reader awareness)
         disabled={!modeButton.enabled}
+        // Separate handler to communicate to the parent element
+        // which item had a popup triggered using the keyboard.
+        onClick={handleButtonClick}
         // Required by linter settings
         type="button"
       >
@@ -271,7 +308,13 @@ function ModeButton({
         </InvisibleA11yLabel>
       </button>
       {renderDropdown && (
-        <FloatingFocusManager context={context} returnFocus={false}>
+        <FloatingFocusManager
+          context={context}
+          // Restore the keyboard focus AND show focus cue on hovering out of the label
+          // only if this component triggered the popup using the keyboard.
+          // (Don't show focus cue if the popup was not triggered via keyboard.)
+          returnFocus={itemWithKeyboard === id}
+        >
           <HoverPanel
             // This library relies on prop spreading
             // eslint-disable-next-line react/jsx-props-no-spreading
@@ -328,14 +371,23 @@ export default function ModeSelector({
   onSettingsUpdate,
   onToggleModeButton
 }: Props): ReactElement {
+  // State that holds the id of the active mode combination popup that was triggered via keyboard.
+  // It is used to enable/disable hover effects to avoid keyboard focus being stolen
+  // and overlapping popups on mouse hover.
+  const [itemWithKeyboard, setItemWithKeyboard] = useState<string>(null);
   return (
     <ModeBar className="metro-mode-selector">
       <legend>{label}</legend>
       {modeButtons.map(combination => (
         <ModeButton
           id={combination.key}
+          itemWithKeyboard={itemWithKeyboard}
           key={combination.label}
           modeButton={combination}
+          onPopupClose={useCallback(() => {
+            setItemWithKeyboard(null);
+          }, [setItemWithKeyboard])}
+          onPopupKeyboardExpand={setItemWithKeyboard}
           onSettingsUpdate={onSettingsUpdate}
           onToggle={useCallback(() => {
             onToggleModeButton(combination.key);
