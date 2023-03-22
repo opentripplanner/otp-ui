@@ -1,28 +1,25 @@
 otpUi:
   TripDetails:
     calories: "Calo bị đốt cháy: <strong>{calories, number, ::.}</strong>"
-    departure:
-      Khởi hành <strong>{departureDate, date, long}</strong> lúc <strong>{departureDate,
+    departure: Khởi hành <strong>{departureDate, date, long}</strong> lúc <strong>{departureDate,
       time, short}</strong>
     title: Chi tiết chuyến đi
     tncFare: "{companies} Giá vé: <strong>{minTNCFare} - {maxTNCFare}</strong>"
-    transitFare: Giá vé quá cảnh
+    transitFare: Giá vé xe công cộng
     transitFareEntry: "{name}: <strong>{value}</strong>"
-    caloriesDescription:
-      "Lượng calo bị đốt cháy dựa trên <strong>{walkMinutes} phút</strong>\
-      \ đi bộ và <strong>{bikeMinutes} phút</strong> đi xe đạp trong chuyến đi này.\
-      \ Phỏng theo <dietaryLink>Dietary Guidelines for Americans 2005, trang 16, hình\
-      \ ảnh 4</dietaryLink>.\n"
+    caloriesDescription: "Lượng calo bị đốt cháy dựa trên <strong>{walkMinutes} phút</strong>\
+      \ đi bộ và <strong>{bikeMinutes} phút</strong> dành cho chuyến đi xe đạp trong\
+      \ chuyến đi này. Phỏng theo <dietaryLink>Dietary Guidelines for Americans 2005,\
+      \ trang 16, hình ảnh 4</dietaryLink>.\n"
     co2: "CO<sub>2</sub> thải ra: <strong>{co2}</strong>"
-    co2description:
-      Cường độ O<sub>2</sub> được tính bằng cách nhân khoảng cách của
-      mỗi chặng của chuyến đi với cường độ O<sub>2</sub> của mỗi chế độ. Cường độ
-      O<sub>2</sub> của mỗi chế độ được lấy từ <link>bảng tính này</link>.
+    co2description: Nồng độ CO<sub>2</sub> được tính bằng cách nhân khoảng cách của
+      mỗi chặng của một chuyến đi với nồng độ CO<sub>2</sub> của mỗi phương tiện.
+      Nồng độ CO<sub>2</sub> của mỗi phương tiện được lấy từ <link>bảng tính này</link>.
     tripIncludesFlex: Chuyến đi này bao gồm các tuyến đường linh hoạt. {extraMessage}
     fareDetailsHeaders:
       regular: Người lớn
-      youth: Người trẻ
+      youth: Thiếu niên
       senior: Người lớn tuổi
-      electronic: Thanh toán bằng thẻ
+      electronic: Điện tử
       cash: Tiền mặt
       special: Đặc biệt
