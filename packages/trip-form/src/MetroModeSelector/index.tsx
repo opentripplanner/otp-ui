@@ -49,7 +49,7 @@ const ModeBar = styled.fieldset`
 const accentColor = "#084c8d";
 const activeHoverColor = "#0e5faa";
 
-const ModeButtonWrapper = styled.span`
+const ModeButtonWrapper = styled.span<{ fillModeIcons?: boolean }>`
   position: relative;
 
   & > label {
@@ -110,7 +110,8 @@ const ModeButtonWrapper = styled.span`
   & > input:checked + label,
   & > input:checked ~ button {
     color: white;
-    fill: currentcolor;
+    fill: ${props =>
+      props.fillModeIcons === false ? "inherit" : "currentcolor"};
   }
 
   & > input:focus + label {
@@ -176,6 +177,7 @@ interface ModeButtonProps {
   onPopupKeyboardExpand: (id: string) => void;
   onSettingsUpdate: (QueryParamChangeEvent) => void;
   onToggle: () => void;
+  fillModeIcons?: boolean;
 }
 
 function ModeButton({
@@ -185,7 +187,8 @@ function ModeButton({
   onPopupClose,
   onPopupKeyboardExpand,
   onSettingsUpdate,
-  onToggle
+  onToggle,
+  fillModeIcons
 }: ModeButtonProps) {
   const [open, setOpen] = useState(false);
   const arrowRef = useRef(null);
@@ -256,7 +259,7 @@ function ModeButton({
   );
 
   return (
-    <ModeButtonWrapper>
+    <ModeButtonWrapper fillModeIcons={fillModeIcons}>
       {/* Basic checkbox that states whether a mode is selected. */}
       <input
         aria-label={modeButton.label}
