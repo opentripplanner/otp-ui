@@ -10,11 +10,11 @@ otpUi:
   DateTimeSelector:
     depart: Khởi hành lúc
     now: Rời đi ngay bây giờ
-    arrive: Đến trước
+    arrive: Đến nơi trước
   queryParameters:
     bikeSpeed: Tốc độ xe đạp
     maxBikeDistance: Xe đạp tối đa
-    maxBikeTime: Thời gian xe đạp tối đa
+    maxBikeTime: Thời gian đạp xe tối đa
     maxEScooterDistance: Khoảng cách xe tay ga điện tối đa
     maxWalkDistance: Đi bộ tối đa
     maxWalkTime: Thời gian đi bộ tối đa
@@ -27,10 +27,10 @@ otpUi:
     walkReluctanceHigh: Thêm phương tiện công cộng
     walkReluctanceLow: Đi bộ nhiều hơn
     walkSpeed: Tốc độ đi bộ
-    watts: Sức mạnh xe tay ga điện
-    watts125kidsHoverboard: Ván trượt của trẻ em (10 km/h)
-    watts1500powerfulEscooter: Xe tay ga điện mạnh mẽ (40 km/h)
-    watts250entryLevelEscooter: Xe tay ga cấp nhập cảnh (18 km/h)
-    watts500robustEscooter: Xe tay ga điện mạnh mẽ (30 km/h)
-    wheelchair: Thích các tuyến xe lăn có thể truy cập
+    watts: Công suất xe tay ga điện
+    watts125kidsHoverboard: Ván trượt của trẻ em (6 mph)
+    watts1500powerfulEscooter: Xe tay ga điện công suất mạnh (24 mph)
+    watts250entryLevelEscooter: Xe tay ga dành cho người mới biết chạy (11 mph)
+    watts500robustEscooter: Xe tay ga điện công suất trung bình (18 mph)
+    wheelchair: Ưu tiên các tuyến đường mà xe lăn có thể đi được
     distanceInMiles: "{miles, number, :: unit/mile unit-width-full-name}\n"
