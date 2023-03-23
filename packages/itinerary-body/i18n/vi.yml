@@ -99,8 +99,8 @@ otpUi:
     rideDurationAndStops: "Đi {duration}{numStops, plural, =1 {} other { / # điểm\
       \ dừng}}"
     routeDescription: "{routeName} <toPrefix>hướng</toPrefix> {headsign}"
-    stopId: ID điểm dừng {stopId}
-    stopIdBasic: ID {stopId}
+    stopId: Điểm dừng số {stopId}
+    stopIdBasic: Điểm dừng số {stopId}
     stopViewer: Xem điểm dừng
     tripViewer: Xem chuyến đi
     typicalWait: "Chờ thông thường: {waitTime}"
