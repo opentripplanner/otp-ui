@@ -22,3 +22,6 @@ otpUi:
     stops: Điểm dừng
     useCurrentLocation: Sử dụng vị trí hiện tại
     workLocation: Nơi làm việc
+    fetchingSuggestions: Tìm nạp đề xuất…
+    suggestedLocations: Địa điểm được đề xuất
+    suggestedLocationsLong: Bật tắt hiển thị danh sách địa điểm gợi ý
