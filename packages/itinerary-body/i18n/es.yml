@@ -14,22 +14,19 @@ otpUi:
       bookRide: Reservar un viaje
       bookRideLater: Espere hasta las {timeMillis, time, short} para reservar
       estimatedCost: "Costo estimado: {minFare} - {maxFare}"
-      estimatedTravelTime:
-        "Tiempo estimado de viaje: {duration} (no tiene en cuenta
-        el tráfico)"
-      waitForPickup:
-        "Espera al conductor {company}{minutes, plural, =0 {} other {
-        # minutes}}"
+      estimatedTravelTime: "Tiempo de viaje estimado: {duration} (no tiene en cuenta\
+        \ el tráfico)"
+      waitForPickup: "Espera al conductor {company}{minutes, plural, =0 {} other {\
+        \ # minutes}}"
     LegDiagramPreview:
       elevationChart: Gráfico de elevación
       noElevationData: No hay datos de elevación disponibles.
-      toggleElevationChart: Activar gráfica de elevación
+      toggleElevationChart: Cambiar carta de elevación
     summary: "{mode} a {place}"
     mapillaryTooltip: Mostrar imágenes de la calle en esta ubicación
     vehicleTitle: "{vehicleType} {company}"
     step:
-      circleCounterClockwise:
-        Siga el círculo en sentido contrario a las agujas del
+      circleCounterClockwise: Siga el círculo en sentido contrario a las agujas del
         reloj
       continue: Continuar
       hardLeft: Giro a la izquierda
@@ -55,17 +52,17 @@ otpUi:
     summaryAndDistance: "{mode} - {distance} a {place}"
     summaryMode:
       bike: Bicicleta
-      bikeshare: Bicicleta compartida
-      carDrive: Carro
+      bikeshare: Compartir bicicleta
+      carDrive: Conducir
       carHail: Paseo
       escooter: Patineta
-      walk: Caminata
+      walk: Caminar
     unnamedRoad: Calle sin nombre
     unnamedPath: Sendero sin nombre
     vehicleType:
       bike: Bicicleta
       bikeshare: Bicicleta compartida
-      car: Carro
+      car: Coche
       escooter: Patineta
       vehicle: Vehículo
     stepDepart: Dirígete hacia {heading} por {street}
@@ -83,18 +80,17 @@ otpUi:
       car: en carro
       escooter: en patineta
       walk: a pie
-    flexAdvanceNotice:
-      " al menos {leadDays, plural, one {# día} other {# días}} de
-      antelación"
+    flexAdvanceNotice: " al menos {leadDays, plural, one {# día} other {# días}} de\
+      \ antelación"
   TransitLegBody:
     agencyExternalLink: "{agencyName} (Enlace external)"
     AlertsBody:
       effectiveDate: A partir de {dateTime, date, long}
       effectiveTimeAndDate: A partir de {dateTime, time, short}, {day}
-      today: Hoy dia
+      today: Hoy
       tomorrow: Mañana
       yesterday: Ayer
-    alertsHeader: "{alertCount, plural, =1 {# alerta} other {# alertas} }"
+    alertsHeader: "{alertCount, plural, =1 {# alerta} other {# alertas}}"
     arriveAt: "Llegada a {place}"
     disembarkAt: Disembarque a {legDestination}
     expandDetails: (Ver mas detalles)
@@ -104,12 +100,10 @@ otpUi:
     operatedBy: Servicio operado por {agencyLink}
     ride: Toma la línea
     rideDurationAndStops: "Paseo {duration}{numStops, plural, =1 {} other { / # paradas}}"
-    routeDescription:
-      "{routeName}{headsign, select, undefined {} other {<toPrefix>
-      destino </toPrefix>{headsign}}}"
-    stopId: Parada n°{stopId}
-    stopIdBasic: Parada n°{stopId}
+    routeDescription: "{routeName} <toPrefix>destino</toPrefix> {headsign}"
+    stopId: ID de Parada {stopId}
+    stopIdBasic: ID {stopId}
     stopViewer: Visor de paradas
     tripViewer: Visor de viajes
-    typicalWait: "Espera típica: {waitTime}"
+    typicalWait: "Tiempo de espera regular: {waitTime}"
     zoomToLeg: Acercar el mapa a este etapa
