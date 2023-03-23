@@ -5,6 +5,11 @@ import * as S from "../styled";
 // eslint-disable-next-line prettier/prettier
 import type { QueryParamChangeEvent } from "../types";
 
+const handleTouchStart = (e: TouchEvent<HTMLSelectElement>) => {
+  e.preventDefault();
+  e.currentTarget.focus();
+};
+
 interface DropdownSelectorProps {
   /**
    * The CSS class name(s) to apply to this element.
@@ -72,11 +77,6 @@ export default function DropdownSelector({
 
   const id = `id-query-param-${name}`;
 
-  const handleTouchStart = (e: TouchEvent<HTMLSelectElement>) => {
-    e.preventDefault();
-    e.currentTarget.focus();
-  };
-
   return (
     <S.DropdownSelector className={className} style={style}>
       {/* The <div> elements below are here for the grid layout, see S.DropdownSelector. */}
@@ -85,7 +85,7 @@ export default function DropdownSelector({
       </div>
 
       <div>
-        <select id={id} onChange={handleChange} value={value} onTouchStart={handleTouchStart}>
+        <select id={id} onChange={handleChange} onTouchStart={handleTouchStart} value={value} >
           {options &&
             options.map((o, i) => (
               <option key={i} value={o.value}>
