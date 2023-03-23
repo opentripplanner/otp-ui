@@ -101,8 +101,8 @@ otpUi:
     ride: Toma la línea
     rideDurationAndStops: "Paseo {duration}{numStops, plural, =1 {} other { / # paradas}}"
     routeDescription: "{routeName} <toPrefix>destino</toPrefix> {headsign}"
-    stopId: ID de Parada {stopId}
-    stopIdBasic: ID {stopId}
+    stopId: Parada n°{stopId}
+    stopIdBasic: Parada n°{stopId}
     stopViewer: Visor de paradas
     tripViewer: Visor de viajes
     typicalWait: "Tiempo de espera regular: {waitTime}"
