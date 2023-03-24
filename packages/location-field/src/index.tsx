@@ -856,5 +856,5 @@ const LocationField = ({
 
 export default LocationField;
 
-// Rename styled components for export
+// Rename styled components for export.
 export { S as Styled };
