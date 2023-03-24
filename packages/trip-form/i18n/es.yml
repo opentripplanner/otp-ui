@@ -26,6 +26,9 @@ otpUi:
     arrive: Llegada por
     depart: Salida a las
     now: Salir ahora
+    dateTimeSelector: Selector de fecha y hora
+    time: Hora
+    date: Fecha
   SettingsSelectorPanel:
     bikeOnly: Solo bicicleta
     takeTransit: Tomar tránsito
