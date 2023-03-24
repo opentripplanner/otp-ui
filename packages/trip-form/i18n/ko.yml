@@ -3,6 +3,9 @@ otpUi:
     now: 지금 출발
     depart: 출발 시간
     arrive: 도착 시간
+    dateTimeSelector: 날짜 및 시간 선택기
+    time: 시간
+    date: 날짜
   queryParameters:
     bikeSpeed: 자전거 속도
     optimizeFor: 최적화
