@@ -11,6 +11,9 @@ otpUi:
     depart: Khởi hành lúc
     now: Rời đi ngay bây giờ
     arrive: Đến nơi trước
+    date: Ngày
+    dateTimeSelector: Bộ chọn ngày và giờ
+    time: Giờ
   queryParameters:
     bikeSpeed: Tốc độ xe đạp
     maxBikeDistance: Xe đạp tối đa
