@@ -109,6 +109,7 @@ query PlanQuery(
 					stop {
 						id
 						code
+						gtfsId
 						alerts {
 							alertHeaderText
 							alertDescriptionText
@@ -125,6 +126,7 @@ query PlanQuery(
 					stop {
 						id
 						code
+						gtfsId
 						alerts {
 							alertHeaderText
 							alertDescriptionText
