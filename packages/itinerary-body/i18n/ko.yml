@@ -48,8 +48,7 @@ otpUi:
       bookRideLater: 예약하려면 {timeMillis, time, short}까지 대기
       estimatedCost: "예상 비용: {minFare} - {maxFare}"
       estimatedTravelTime: "예상 이동 시간: {duration} (교통사정을 고려하지 않음)"
-      waitForPickup: "{company} 승차까지 {minutes, select, undefined {} other { # 분 }\
-        \ 대기"
+      waitForPickup: "{company} 승차까지 {minutes, plural, =0 {} other { # 분} } 대기"
     unnamedPath: 이름 없는 경로
     vehicleType:
       vehicle: 차량
