@@ -135,6 +135,8 @@ const ModeButtonWrapper = styled.span<{ fillModeIcons?: boolean }>`
     margin: auto;
     vertical-align: middle;
     width: 32px;
+    fill: ${props =>
+      props.fillModeIcons === false ? "inherit" : "currentcolor"};
   }
 
   & > input:checked + label > svg {
