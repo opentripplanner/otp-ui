@@ -23,7 +23,7 @@ otpUi:
       estimatedCost: "Chi phí ước tính: {minFare} - {maxFare}"
       estimatedTravelTime: "Thời gian di chuyển ước tính: {duration} (không tính đến\
         \ giao thông)"
-      waitForPickup: "Chờ{minutes, plural, =0 {} other { # phút}} để {company} đón"
+      waitForPickup: "Chờ{minutes, plural, =0 {} other { # phút}} cho {company} đón"
     LegDiagramPreview:
       elevationChart: Biểu đồ cao độ
       noElevationData: Không có sẵn dữ liệu độ cao.
