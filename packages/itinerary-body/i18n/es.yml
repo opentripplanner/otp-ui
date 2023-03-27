@@ -17,7 +17,7 @@ otpUi:
       estimatedTravelTime: "Tiempo de viaje estimado: {duration} (no tiene en cuenta\
         \ el tráfico)"
       waitForPickup: "Espera al conductor {company}{minutes, plural, =0 {} other {\
-        \ # minutes}}"
+        \ # minutos}}"
     LegDiagramPreview:
       elevationChart: Gráfico de elevación
       noElevationData: No hay datos de elevación disponibles.
