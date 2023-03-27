@@ -25,3 +25,6 @@ otpUi:
       de cada tramo de un viaje por la intensidad de CO<sub>2</sub> de cada modo.
       La intensidad de CO<sub>2 </sub> de cada modo se deriva de esta <link>hoja de
       cálculo</link>.
+    hideDetail: Ocultar detalles
+    showDetail: Mostrar detalles
+    transferDiscountExplanation: Se aplica un descuento de transferencia de {transferAmount}

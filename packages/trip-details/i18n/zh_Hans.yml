@@ -19,3 +19,6 @@ otpUi:
     co2description: CO<sub>2</sub> 强度的计算方法是将行程的每条腿的距离乘以每种模式的 CO<sub>2</sub> 强度。 每种模式的二氧化碳强度来自<link>此电子表格</link>。
     caloriesDescription: "燃烧的卡路里是根据这次旅行中的 <strong>{walkMinutes}分钟</strong> 步行和 <strong>{bikeMinutes}分钟</strong>\
       \ 骑自行车计算的. 改编自< <dietaryLink>Dietary Guidelines for Americans 2005, 页16, 图片4</dietaryLink>.\n"
+    hideDetail: 隐藏细节
+    showDetail: 显示详细资料
+    transferDiscountExplanation: 应用了 {transferAmount} 的转让折扣

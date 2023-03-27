@@ -3,6 +3,9 @@ otpUi:
     arrive: 到达
     now: 现在离开
     depart: 出发时间
+    dateTimeSelector: 日期和时间选择器
+    time: 时间
+    date: 日期
   queryParameters:
     bikeSpeed: 自行车速度
     maxWalkDistance: 最大步行

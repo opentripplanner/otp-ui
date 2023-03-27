@@ -23,3 +23,6 @@ otpUi:
       electronic: Điện tử
       cash: Tiền mặt
       special: Đặc biệt
+    hideDetail: Ẩn chi tiết
+    transferDiscountExplanation: Giảm giá chuyển khoản {transferAmount} được áp dụng
+    showDetail: Hiển thị chi tiết

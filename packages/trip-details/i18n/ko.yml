@@ -22,3 +22,6 @@ otpUi:
     co2description: CO<sub>2</sub> 강도는 각 모드의 CO<sub>2</sub> 강도를 트립에서 각 다리가 걸은 거리를
       곱하여 계산됩니다. 각 모드의 CO<sub>2</sub> 강도는 <link>이 스프레드시트</link>에 기반합니다.
     tripIncludesFlex: 이 트립에는 가변 경로가 포함되어 있습니다. {extraMessage}
+    hideDetail: 세부정보 숨기기
+    showDetail: 세부정보 표시
+    transferDiscountExplanation: 환승 할인 {transferAmount} 적용
