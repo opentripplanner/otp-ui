@@ -363,13 +363,18 @@ interface Props {
    * @param key Mode button to be toggled
    */
   onToggleModeButton: (key: string) => void;
+  /**
+   * Fill the mode icons (default true)
+   */
+  fillModeIcons?: boolean;
 }
 
 export default function ModeSelector({
   label,
   modeButtons = [],
   onSettingsUpdate,
-  onToggleModeButton
+  onToggleModeButton,
+  fillModeIcons
 }: Props): ReactElement {
   // State that holds the id of the active mode combination popup that was triggered via keyboard.
   // It is used to enable/disable hover effects to avoid keyboard focus being stolen
@@ -381,6 +386,7 @@ export default function ModeSelector({
       {modeButtons.map(combination => (
         <ModeButton
           id={combination.key}
+          fillModeIcons={fillModeIcons}
           itemWithKeyboard={itemWithKeyboard}
           key={combination.label}
           modeButton={combination}

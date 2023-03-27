@@ -1,5 +1,6 @@
 import { ModeButtonDefinition } from "@opentripplanner/types";
-import { Bicycle, Bus, Car, PersonWalking } from "@styled-icons/fa-solid";
+import { Bus, Car, PersonWalking } from "@styled-icons/fa-solid";
+import { ClassicBike } from "@opentripplanner/icons/lib/classic";
 import React, { ReactElement } from "react";
 import { QueryParamProvider } from "use-query-params";
 import { WindowHistoryAdapter } from "use-query-params/adapters/window";
@@ -13,24 +14,28 @@ const defaultModeButtonDefinitions = [
     Icon: Bus,
     iconName: "bus",
     key: "TRANSIT",
+    label: "Bus",
     modes: [{ mode: "TRANSIT" }]
   },
   {
     Icon: PersonWalking,
     iconName: "person-walking",
     key: "WALK",
+    label: "Walk",
     modes: [{ mode: "WALK" }]
   },
   {
-    Icon: Bicycle,
+    Icon: ClassicBike,
     iconName: "bicycle",
     key: "BICYCLE",
+    label: "Bike",
     modes: [{ mode: "BICYCLE" }]
   },
   {
     Icon: Car,
     iconName: "car",
     key: "CAR",
+    label: "Car",
     modes: [{ mode: "CAR" }]
   }
 ];
@@ -49,11 +54,13 @@ const modeSettingDefinitionsWithDropdown = [
 const MetroModeSelectorComponent = ({
   modeButtonDefinitions,
   onSetModeSettingValue,
-  onToggleModeButton
+  onToggleModeButton,
+  fillModeIcons
 }: {
   modeButtonDefinitions: ModeButtonDefinition[];
   onSetModeSettingValue: (event: QueryParamChangeEvent) => void;
   onToggleModeButton: (key: string) => void;
+  fillModeIcons?: boolean;
 }): ReactElement => {
   const initialState = {
     enabledModeButtons: ["TRANSIT"],
@@ -88,6 +95,7 @@ const MetroModeSelectorComponent = ({
       modeButtons={buttonsWithSettings}
       onSettingsUpdate={setModeSettingValueAction}
       onToggleModeButton={toggleModeButtonAction}
+      fillModeIcons={fillModeIcons}
     />
   );
 };
@@ -95,6 +103,7 @@ const MetroModeSelectorComponent = ({
 const Template = (args: {
   onSetModeSettingValue: (event: QueryParamChangeEvent) => void;
   onToggleModeButton: (key: string) => void;
+  fillModeIcons?: boolean;
 }): ReactElement => (
   <QueryParamProvider adapter={WindowHistoryAdapter}>
     <MetroModeSelectorComponent
@@ -108,7 +117,8 @@ const Template = (args: {
 export default {
   argTypes: {
     onSetModeSettingValue: { action: "set mode setting value" },
-    onToggleModeButton: { action: "toggle button" }
+    onToggleModeButton: { action: "toggle button" },
+    fillModeIcons: { control: "boolean" }
   },
   component: MetroModeSelectorComponent,
   title: "Trip Form Components/Metro Mode Selector"
