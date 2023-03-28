@@ -52,8 +52,8 @@ otpUi:
     summaryAndDistance: "{mode} - {distance} a {place}"
     summaryMode:
       bike: Bicicleta
-      bikeshare: Compartir bicicleta
-      carDrive: Conducir
+      bikeshare: Bicicleta compartida
+      carDrive: Coche
       carHail: Paseo
       escooter: Patineta
       walk: Caminar
