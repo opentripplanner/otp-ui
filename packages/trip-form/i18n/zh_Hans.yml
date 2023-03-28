@@ -24,10 +24,10 @@ otpUi:
     walkSpeed: 步行速度
     watts: 电动滑板车动力
     watts125kidsHoverboard: 儿童悬浮滑板 (10 km/h)
-    watts1500powerfulEscooter: 强大的电动滑板车 (40km/h)
+    watts1500powerfulEscooter: 强大的电动滑板车 (40 km/h)
     distanceInMiles: "{miles, number, :: unit/mile unit-width-full-name}\n"
     watts250entryLevelEscooter: 入门级踏板车 (18 km/h)
-    watts500robustEscooter: 坚固的电动滑板车 (30km/h)
+    watts500robustEscooter: 坚固的电动滑板车 (30 km/h)
     wheelchair: 倾向于选择轮椅无障碍路线
   SettingsSelectorPanel:
     walkOnly: 仅步行
