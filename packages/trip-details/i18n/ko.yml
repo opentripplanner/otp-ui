@@ -14,9 +14,8 @@ otpUi:
     tncFare: "{companies} 운임: <strong>{minTNCFare} - {maxTNCFare}</strong>"
     transitFare: 대중 교통 운임
     transitFareEntry: "{name} : <strong>{value}</strong>"
-    caloriesDescription: "소모된 칼로리는 이 트립에서 <strong>{walkMinutes, plural, one {# minute}\
-      \ other {# minutes}} 동안 </strong>걷고<strong> <strong>{bikeMinutes, plural, one\
-      \ {# minute} other {# minutes}}</strong> 동안 자전거를 탄 것을 기준으로 합니다. <dietaryLink>Dietary\
+    caloriesDescription: "소모된 칼로리는 이 트립에서 <strong>{walkMinutes}분 동안 </strong>걷고<strong>\
+      \ <strong>{bikeMinutes}분</strong> 동안 자전거를 탄 것을 기준으로 합니다. <dietaryLink>Dietary\
       \ Guidelines for Americans 2005, 16 페이지, 표 4</dietaryLink> 적용.\n"
     co2: "CO<sub>2</sub> 배출: <strong>{co2}</strong>"
     co2description: CO<sub>2</sub> 강도는 각 모드의 CO<sub>2</sub> 강도를 트립에서 각 다리가 걸은 거리를
