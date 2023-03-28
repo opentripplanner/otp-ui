@@ -3,6 +3,32 @@ otpUi:
     arrive: Arrivée
     depart: Départ
     now: Maintenant
+  ModeSelector:
+    labels:
+      BICYCLE: Vélo
+      CAR: Voiture
+      RENT: Location
+      TRANSIT: Transports
+      WALK: Marche
+    settings:
+      addBus-label: Bus
+      addRail-label: Train
+      addSubway-label: Métro
+      addTram-label: Tram
+      allowBikeRental-label: Vélo en location
+      bikeTolerance-label: Tolérance pour le vélo
+      bikeTolerance-labelHigh: Plus de vélo
+      bikeTolerance-labelLow: Moins de vélo
+      busColor-label: Bus Color
+      busColor-options-blue: Blue
+      carTolerance-label: Tolérance pour la voiture
+      carTolerance-labelHigh: Plus de voiture
+      carTolerance-labelLow: Moins de voiture
+      walkTolerance-label: Tolérance pour la marche
+      walkTolerance-labelHigh: Plus de marche
+      walkTolerance-labelLow: Moins de marche
+      wheelchair-label: Accès avec mobilité réduite
+    settingsLabel: "Paramètres pour : {mode}"
   SettingsSelectorPanel:
     bikeOnly: Vélo uniquement
     escooterOnly: Trottinette uniquement

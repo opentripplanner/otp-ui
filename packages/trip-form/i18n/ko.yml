@@ -1,11 +1,46 @@
 otpUi:
   DateTimeSelector:
-    now: 지금 출발하기
-    depart: 출발 시간
     arrive: 도착 시간
+    depart: 출발 시간
+    now: 지금 출발하기
+  ModeSelector:
+    labels:
+      BICYCLE: 자전거
+      CAR: 운전
+      RENT: 렌탈
+      TRANSIT: 대중 교통
+      WALK: 걷기
+    settings:
+      addBus-label: 버스
+      addRail-label: 기차
+      addSubway-label: 지하철
+      addTram-label: 시가 전차
+      allowBikeRental-label: 공유자전거
+      bikeTolerance-label: 자전거 허용 오차
+      bikeTolerance-labelHigh: 더 많은 자전거 타기
+      bikeTolerance-labelLow: 덜 자전거 타기
+      busColor-label: Bus Color
+      busColor-options-blue: Blue
+      carTolerance-label: 운전 공차
+      carTolerance-labelHigh: 더 많은 운전
+      carTolerance-labelLow: 덜 운전
+      walkTolerance-label: 걷기 내성
+      walkTolerance-labelHigh: 더 많이 걷기
+      walkTolerance-labelLow: 덜 걷기
+      wheelchair-label: 액세스 가능한 라우팅
+    settingsLabel: "{mode} 설정"
+  SettingsSelectorPanel:
+    bikeOnly: 자전거 만
+    escooterOnly: 전동 스쿠터 전용
+    takeTransit: 대중 교통 이용
+    travelPreferences: 여행 선호도
+    use: 사용하다
+    useCompanies: 회사를 사용합니다
+    walkOnly: 걷기 만
   queryParameters:
     bikeSpeed: 자전거 속도
-    optimizeFor: 최적화
+    distanceInMiles: |
+      {miles, number, :: unit/mile unit-width-full-name}
     maxBikeDistance: 최대 자전거
     maxBikeTime: 맥스 자전거 시간
     maxEScooterDistance: 최대 전기 스쿠터 거리
@@ -14,6 +49,7 @@ otpUi:
     optimizeBikeFlat: 플랫 트립
     optimizeBikeFriendly: 자전거 친화적 인 여행
     optimizeBikeSpeed: 속도
+    optimizeFor: 최적화
     speedInMilesPerHour: "{mph} MPH"
     walkReluctance: 걷는 회피
     walkReluctanceHigh: 더 많은 대중 교통
@@ -25,12 +61,3 @@ otpUi:
     watts250entryLevelEscooter: 보급형 스쿠터 (18 km/h)
     watts500robustEscooter: 튼튼한 전기 스쿠터 (30km/h)
     wheelchair: 휠체어 접근 가능한 경로를 선호합니다
-    distanceInMiles: "{miles, number, :: unit/mile unit-width-full-name}\n"
-  SettingsSelectorPanel:
-    useCompanies: 회사를 사용합니다
-    bikeOnly: 자전거 만
-    escooterOnly: 전동 스쿠터 전용
-    takeTransit: 대중 교통 이용
-    travelPreferences: 여행 선호도
-    use: 사용하다
-    walkOnly: 걷기 만

@@ -1,18 +1,46 @@
 otpUi:
+  DateTimeSelector:
+    arrive: Đến trước
+    depart: Khởi hành lúc
+    now: Rời đi ngay bây giờ
+  ModeSelector:
+    labels:
+      BICYCLE: Xe đạp
+      CAR: Lái xe
+      RENT: Thuê xe
+      TRANSIT: Giao thông công cộng
+      WALK: Đi bộ
+    settings:
+      addBus-label: Xe buýt
+      addRail-label: Xe lửa
+      addSubway-label: Tàu điện
+      addTram-label: Xe điện
+      allowBikeRental-label: Xe đạp thuê
+      bikeTolerance-label: Sức chịu đựng đi xe đạp
+      bikeTolerance-labelHigh: Đi xe đạp nhiều hơn
+      bikeTolerance-labelLow: Ít đi xe đạp
+      busColor-label: Bus Color
+      busColor-options-blue: Blue
+      carTolerance-label: Sức chịu đựng lái xe
+      carTolerance-labelHigh: Lái xe nhiều hơn
+      carTolerance-labelLow: Ít lái xe
+      walkTolerance-label: Sức chịu đựng đi bộ
+      walkTolerance-labelHigh: Đi bộ nhiều hơn
+      walkTolerance-labelLow: Ít đi bộ
+      wheelchair-label: Định tuyến có thể truy cập
+    settingsLabel: Cài đặt {mode}
   SettingsSelectorPanel:
-    takeTransit: Sử dụng phương tiện công cộng
     bikeOnly: Chỉ dành cho xe đạp
     escooterOnly: Chỉ xe tay ga điện
+    takeTransit: Sử dụng phương tiện công cộng
     travelPreferences: Sở thích Du lịch
     use: Sử dụng
     useCompanies: Sử dụng các công ty
     walkOnly: Chỉ đi bộ
-  DateTimeSelector:
-    depart: Khởi hành lúc
-    now: Rời đi ngay bây giờ
-    arrive: Đến trước
   queryParameters:
     bikeSpeed: Tốc độ xe đạp
+    distanceInMiles: |
+      {miles, number, :: unit/mile unit-width-full-name}
     maxBikeDistance: Xe đạp tối đa
     maxBikeTime: Thời gian xe đạp tối đa
     maxEScooterDistance: Khoảng cách xe tay ga điện tối đa
@@ -33,4 +61,3 @@ otpUi:
     watts250entryLevelEscooter: Xe tay ga cấp nhập cảnh (18 km/h)
     watts500robustEscooter: Xe tay ga điện mạnh mẽ (30 km/h)
     wheelchair: Thích các tuyến xe lăn có thể truy cập
-    distanceInMiles: "{miles, number, :: unit/mile unit-width-full-name}\n"
