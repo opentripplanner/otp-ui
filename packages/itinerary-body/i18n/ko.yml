@@ -65,7 +65,7 @@ otpUi:
     summary: "{place} 에 {mode}"
   ItineraryBody:
     common:
-      durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} 분"
+      durationShort: "{hours, plural, =0 {} other {# 시간 }}{minutes} 분"
     flexAdvanceNotice: " 최소 {leadDays}일 전에"
     flexCallAhead: 미리 전화
     flexCallNumber: "{phoneNumber}에 전화"
