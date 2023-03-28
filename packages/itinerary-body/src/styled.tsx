@@ -286,6 +286,7 @@ export const LegClickableButton = styled(TransparentButton)`
   position: absolute;
   right: 0;
   top: 0;
+  width: 100%;
   /* Place the button just above the elevation chart, 
      so that its outline doesn't appear clipped in Chromium. */
   z-index: 1;
@@ -483,6 +484,10 @@ export const PlaceSubheader = styled.div`
   font-weight: 300;
   padding-left: 4px;
   padding-top: 1px;
+
+  /* TODO: Why is this needed? */
+  margin-top: -14px;
+  margin-left: -4px;
 `;
 
 export const PreviewDiagram = styled(TransparentButton)`
@@ -571,7 +576,7 @@ export const StepDescriptionContainer = styled.div`
 `;
 
 export const StepsHeaderAndMapLink = styled.span`
-  display: inline-block;
+  display: inline-flex;
   align-self: center;
   margin-top: 10px;
 `;
@@ -580,6 +585,7 @@ export const StepsHeader = styled(TransparentButton)`
   color: #676767;
   font-size: 13px;
   font-style: normal;
+  width: 100%;
 `;
 
 export const StepIconContainer = styled.div`
@@ -676,6 +682,7 @@ export const TransitLegDetails = styled.div`
 
 export const TransitLegDetailsHeader = styled.div`
   color: #676767;
+  display: flex;
 `;
 
 export const TransitLegExpandedBody = styled.div`
