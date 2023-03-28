@@ -21,7 +21,7 @@ otpUi:
     wheelchair: Prefiera las rutas accesibles para las sillas de ruedas
     walkReluctance: Evasión de caminata
     watts250entryLevelEscooter: Scooter básico (18 km/h)
-    watts500robustEscooter: Scooter eléctrico robusto (30km/h)
+    watts500robustEscooter: Scooter eléctrico robusto (30 km/h)
   DateTimeSelector:
     arrive: Llegada por
     depart: Salida a las
