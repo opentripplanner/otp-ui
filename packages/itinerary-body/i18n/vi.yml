@@ -5,13 +5,13 @@ otpUi:
       resumeRentalRide: Tiếp tục sử dụng cho thuê
       vehicleType:
         bike: xe đạp
-        bikeshare: xe đạp chia sẻ
+        bikeshare: xe đạp thuê
         car: xe hơi
         escooter: xe tay ga điện
         vehicle: xe
       walkVehicle: Đẩy phương tiện giao thông dọc theo {place}
     summaryMode:
-      bikeshare: Xe đạp chung
+      bikeshare: Xe đạp thuê
       carDrive: Lái xe
       walk: Đi bộ
       carHail: Ngồi trên xe
@@ -23,7 +23,7 @@ otpUi:
       estimatedCost: "Chi phí ước tính: {minFare} - {maxFare}"
       estimatedTravelTime: "Thời gian di chuyển ước tính: {duration} (không tính đến\
         \ giao thông)"
-      waitForPickup: "Chờ{minutes, plural, =0 {} other { # phút}} để {company} đón"
+      waitForPickup: "Chờ{minutes, plural, =0 {} other { # phút}} cho {company} đón"
     LegDiagramPreview:
       elevationChart: Biểu đồ cao độ
       noElevationData: Không có sẵn dữ liệu độ cao.
@@ -58,7 +58,7 @@ otpUi:
     vehicleTitle: "{vehicleType} {company}"
     vehicleType:
       bike: Xe đạp
-      bikeshare: Xe đạp chia sẻ
+      bikeshare: Xe đạp thuê
       car: Xe hơi
       vehicle: Xe
       escooter: Xe tay ga điện
