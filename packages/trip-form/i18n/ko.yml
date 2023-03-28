@@ -23,10 +23,10 @@ otpUi:
     walkReluctanceLow: 더 걷기
     walkSpeed: 걷기 속도
     watts: 전동스쿠터 전원
-    watts125kidsHoverboard: 어린이용 호버보드 (6 mph)
-    watts1500powerfulEscooter: 강력한 전동스쿠터 (24 mph)
-    watts250entryLevelEscooter: 초급형 스쿠터 (11 mph)
-    watts500robustEscooter: 견고한 전동스쿠터 (18 mph)
+    watts125kidsHoverboard: 어린이용 호버보드 (10 km/h)
+    watts1500powerfulEscooter: 강력한 전동스쿠터 (40 km/h)
+    watts250entryLevelEscooter: 초급형 스쿠터 (18 km/h)
+    watts500robustEscooter: 견고한 전동스쿠터 (30 km/h)
     wheelchair: 휠체어 접근이 가능한 경로 선호
     distanceInMiles: "{miles, number, :: unit/mile unit-width-full-name}\n"
   SettingsSelectorPanel:
