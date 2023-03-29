@@ -28,8 +28,6 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 // - the yaml loader for jest returns messages with flattened ids.
 const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
-const subText = contents => <sub>{contents}</sub>;
-
 /**
  * Helper function to specify the link to dietary table.
  */
@@ -345,8 +343,7 @@ export function TripDetails({
                         unitDisplay="narrow"
                       />
                     ),
-                    strong: boldText,
-                    sub: subText
+                    strong: boldText
                   }}
                 />
               </S.CO2Summary>
@@ -358,7 +355,6 @@ export function TripDetails({
                 }
                 values={{
                   link: CO2DescriptionLink,
-                  sub: subText,
                   totalDistance
                 }}
                 description="Text explaining how the CO2 emissions is calculated."
