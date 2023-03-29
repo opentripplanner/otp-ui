@@ -98,8 +98,7 @@ const ItineraryBody = ({
     }
 
     createPlaceRow(false);
-    // If this is the last leg, create a special PlaceRow for the destination
-    // only
+    // If this is the last leg, create a special PlaceRow for the destination only.
     if (i === itinerary.legs.length - 1) {
       createPlaceRow(true);
     }

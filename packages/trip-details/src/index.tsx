@@ -398,5 +398,5 @@ export function TripDetails({
 
 export default TripDetails;
 
-// Rename styled components for export
+// Rename styled components for export.
 export { S as Styled, FareLegTable };

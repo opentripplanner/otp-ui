@@ -5,13 +5,13 @@ otpUi:
       resumeRentalRide: Tiếp tục sử dụng cho thuê
       vehicleType:
         bike: xe đạp
-        bikeshare: xe đạp chia sẻ
+        bikeshare: xe đạp thuê
         car: xe hơi
         escooter: xe tay ga điện
         vehicle: xe
       walkVehicle: Đẩy phương tiện giao thông dọc theo {place}
     summaryMode:
-      bikeshare: Chia sẻ xe đạp
+      bikeshare: Xe đạp thuê
       carDrive: Lái xe
       walk: Đi bộ
       carHail: Ngồi trên xe
@@ -21,10 +21,9 @@ otpUi:
       bookRide: Đặt trước một chuyến đi
       bookRideLater: Chờ cho đến {timeMillis, time, short} để đặt chỗ
       estimatedCost: "Chi phí ước tính: {minFare} - {maxFare}"
-      estimatedTravelTime:
-        "Thời gian di chuyển ước tính: {duration} (không tính đến
-        giao thông)"
-      waitForPickup: "Chờ{minutes, plural, =0 {} other { # phút}} để {company} đón"
+      estimatedTravelTime: "Thời gian di chuyển ước tính: {duration} (không tính đến\
+        \ giao thông)"
+      waitForPickup: "Chờ{minutes, plural, =0 {} other { # phút}} cho {company} đón"
     LegDiagramPreview:
       elevationChart: Biểu đồ cao độ
       noElevationData: Không có sẵn dữ liệu độ cao.
@@ -59,7 +58,7 @@ otpUi:
     vehicleTitle: "{vehicleType} {company}"
     vehicleType:
       bike: Xe đạp
-      bikeshare: Xe đạp chia sẻ
+      bikeshare: Xe đạp thuê
       car: Xe hơi
       vehicle: Xe
       escooter: Xe tay ga điện
@@ -69,10 +68,10 @@ otpUi:
     common:
       durationShort: "{hours, plural, =0 {} other {# giờ }}{minutes} phút"
     viewOnMap: Xem trên bản đồ
-    flexAdvanceNotice: " trước ít nhất {leadDays} ngày"
-    flexCallAhead: gọi điện trước
-    flexCallNumber: gọi số điện thoại {phoneNumber}
-    flexPickupMessage: Để dụng đường này, bạn phải {action}{advanceNotice}.
+    flexAdvanceNotice: " ít nhất trước {leadDays} ngày"
+    flexCallAhead: gọi điện trước khi đi
+    flexCallNumber: gọi {phoneNumber}
+    flexPickupMessage: Để đi tuyến đường này, bạn phải {action}{advanceNotice}.
     stayOnBoard: Ở trên xe tại {place}
     travelBy: Di chuyển {mode}
     travelByMode:
@@ -95,15 +94,14 @@ otpUi:
     fare: "Giá vé: {fare}"
     fromLocation: "Từ {location}"
     legDetails: Chi tiết sân khấu
-    operatedBy: Dịch vụ do {agencyLink}
+    operatedBy: Dịch vụ được điều hành bởi {agencyLink}
     ride: Đi đường
-    rideDurationAndStops:
-      "Đi {duration}{numStops, plural, =1 {} other { / # điểm
-      dừng}}"
-    routeDescription: "{routeName} <toPrefix>đến</toPrefix> {headsign}"
+    rideDurationAndStops: "Đi {duration}{numStops, plural, =1 {} other { / # điểm\
+      \ dừng}}"
+    routeDescription: "{routeName} <toPrefix>hướng</toPrefix> {headsign}"
     stopId: Điểm dừng số {stopId}
     stopIdBasic: Điểm dừng số {stopId}
-    stopViewer: Trình xem trạm dừng
-    tripViewer: Trình xem chuyến đi
+    stopViewer: Xem điểm dừng
+    tripViewer: Xem chuyến đi
     typicalWait: "Chờ thông thường: {waitTime}"
     zoomToLeg: Thu phóng đến sân khấu trí trên bản đồ

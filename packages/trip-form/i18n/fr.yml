@@ -3,6 +3,9 @@ otpUi:
     arrive: Arrivée
     depart: Départ
     now: Maintenant
+    date: Date
+    dateTimeSelector: Sélecteur de date et heure
+    time: Heure
   SettingsSelectorPanel:
     bikeOnly: Vélo uniquement
     escooterOnly: Trottinette uniquement

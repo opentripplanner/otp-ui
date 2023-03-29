@@ -17,7 +17,7 @@ interface SliderSelectorProps {
    */
   label?: string;
   /**
-   * The label for the right end of the slider
+   * The label for the right end of the slider.
    */
   labelHigh?: string;
   /**

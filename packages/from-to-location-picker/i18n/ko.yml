@@ -1,5 +1,5 @@
 otpUi:
   FromToLocationPicker:
-    planATrip: "여행 계획:"
-    to: 도착
-    from: 출발
+    planATrip: "트립 계획하기:"
+    to: 여기로 도착
+    from: 여기서 출발

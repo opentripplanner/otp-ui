@@ -132,5 +132,5 @@ export function MapPopup({ configCompanies, entity, getEntityName, setLocation, 
 
 export default MapPopup;
 
-// Rename styled components for export
+// Rename styled components for export.
 export { S as Styled };
