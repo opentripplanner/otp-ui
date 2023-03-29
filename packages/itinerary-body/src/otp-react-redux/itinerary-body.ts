@@ -61,7 +61,7 @@ const StyledItineraryBody = styled(ItineraryBody)`
   }
 
   ${ItineraryBodyClasses.StopMarker} {
-    margin-left: -17px;
+    margin-left: -23px;
   }
 
   ${ItineraryBodyClasses.TimeColumn} {

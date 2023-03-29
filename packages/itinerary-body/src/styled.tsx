@@ -131,24 +131,6 @@ export const AccessBadge = styled.div<ModeRouteProps>`
   /* Add in border for dark mode */
 `;
 
-export const AgencyInfo = styled.div`
-  margin-top: 5px;
-
-  a {
-    color: #337ab7;
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  img {
-    margin-left: 5px;
-    vertical-align: middle;
-  }
-`;
-
 export const CallAheadWarning = styled.div`
   color: #b22727;
   margin-top: 5px;
@@ -579,6 +561,12 @@ export const StepsHeaderAndMapLink = styled.span`
   display: inline-flex;
   align-self: center;
   margin-top: 10px;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const StepsHeader = styled(TransparentButton)`
@@ -704,3 +692,21 @@ export const DefaultAlertToggleIcon = styled(ExclamationTriangle).attrs({
 export const DefaultAlertBodyIcon = styled(ExclamationTriangle).attrs({
   size: 18
 })``;
+
+export const AgencyInfo = styled.div`
+  margin-top: 5px;
+
+  a {
+    color: #337ab7;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  img {
+    margin-left: 5px;
+    vertical-align: middle;
+  }
+`;
