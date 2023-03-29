@@ -332,7 +332,7 @@ export const LegIconContainer = styled.span`
   img,
   svg {
     margin-right: 6px;
-    max-height: 24px;
+    height: 24px;
     width: 24px;
     vertical-align: bottom;
   }
