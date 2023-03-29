@@ -225,7 +225,7 @@ export function TripDetails({
     walkDuration
   } = coreUtils.itinerary.calculatePhysicalActivity(itinerary);
 
-  // Calculate CO2 if it's not provided by the itinerary
+  // Calculate CO₂ if it's not provided by the itinerary
   const co2 =
     itinerary.co2 ||
     (co2Config?.enabled &&
@@ -331,7 +331,7 @@ export function TripDetails({
               <S.CO2Summary>
                 <FormattedMessage
                   defaultMessage={defaultMessages["otpUi.TripDetails.co2"]}
-                  description="Text showing the quantity of CO2 emitted by this trip."
+                  description="Text showing the quantity of CO₂ emitted by this trip."
                   id="otpUi.TripDetails.co2"
                   values={{
                     co2: (
@@ -353,12 +353,12 @@ export function TripDetails({
                 defaultMessage={
                   defaultMessages["otpUi.TripDetails.co2description"]
                 }
+                description="Text explaining how the CO₂ emissions are calculated."
+                id="otpUi.TripDetails.co2description"
                 values={{
                   link: CO2DescriptionLink,
                   totalDistance
                 }}
-                description="Text explaining how the CO2 emissions is calculated."
-                id="otpUi.TripDetails.co2description"
               />
             }
           />
