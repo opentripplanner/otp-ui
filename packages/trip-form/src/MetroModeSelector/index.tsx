@@ -174,6 +174,7 @@ const Arrow = styled.div`
 `;
 
 interface ModeButtonProps {
+  fillModeIcons?: boolean;
   id: string;
   itemWithKeyboard?: string;
   modeButton: ModeButtonDefinition;
@@ -181,18 +182,17 @@ interface ModeButtonProps {
   onPopupKeyboardExpand: (id: string) => void;
   onSettingsUpdate: (QueryParamChangeEvent) => void;
   onToggle: () => void;
-  fillModeIcons?: boolean;
 }
 
 function ModeButton({
+  fillModeIcons,
   id,
   itemWithKeyboard,
   modeButton,
   onPopupClose,
   onPopupKeyboardExpand,
   onSettingsUpdate,
-  onToggle,
-  fillModeIcons
+  onToggle
 }: ModeButtonProps) {
   const [open, setOpen] = useState(false);
   const arrowRef = useRef(null);
@@ -348,6 +348,10 @@ function ModeButton({
 }
 interface Props {
   /**
+   * Apply fill color to the mode icons when the button is selected. (default true)
+   */
+  fillModeIcons?: boolean;
+  /**
    * Text that prompts to select a travel mode.
    */
   label?: string;
@@ -365,18 +369,14 @@ interface Props {
    * @param key Mode button to be toggled
    */
   onToggleModeButton: (key: string) => void;
-  /**
-   * Fill the mode icons (default true)
-   */
-  fillModeIcons?: boolean;
 }
 
 export default function ModeSelector({
+  fillModeIcons,
   label,
   modeButtons = [],
   onSettingsUpdate,
-  onToggleModeButton,
-  fillModeIcons
+  onToggleModeButton
 }: Props): ReactElement {
   // State that holds the id of the active mode combination popup that was triggered via keyboard.
   // It is used to enable/disable hover effects to avoid keyboard focus being stolen
@@ -387,8 +387,8 @@ export default function ModeSelector({
       <legend>{label}</legend>
       {modeButtons.map(combination => (
         <ModeButton
-          id={combination.key}
           fillModeIcons={fillModeIcons}
+          id={combination.key}
           itemWithKeyboard={itemWithKeyboard}
           key={combination.label}
           modeButton={combination}

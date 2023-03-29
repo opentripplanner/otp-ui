@@ -43,7 +43,8 @@ const ModeSettingRenderer = ({
   const intl = useIntl();
   const label = intl.formatMessage({
     defaultMessage:
-      defaultMessages[`otpUi.ModeSelector.settings.${setting.key}-label`],
+      defaultMessages[`otpUi.ModeSelector.settings.${setting.key}-label`] ||
+      setting.label,
     description: `Metro Mode Selector Setting Label (${setting.key})`,
     id: `otpUi.ModeSelector.settings.${setting.key}-label`
   });
@@ -68,7 +69,8 @@ const ModeSettingRenderer = ({
             ...o,
             text: intl.formatMessage({
               description: `Metro Mode Selector Setting (${setting.key}) Option Label (${o.value})`,
-              id: `otpUi.ModeSelector.settings.${setting.key}-options-${o.value}`
+              id: `otpUi.ModeSelector.settings.${setting.key}-options-${o.value}`,
+              defaultMessage: o.text
             })
           }))}
           value={setting.value}

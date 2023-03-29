@@ -22,8 +22,6 @@ otpUi:
       bikeTolerance-label: Bike Tolerance
       bikeTolerance-labelHigh: More Biking
       bikeTolerance-labelLow: Less Biking
-      busColor-label: Bus Color
-      busColor-options-blue: Blue
       carTolerance-label: Drive Tolerance
       carTolerance-labelHigh: Less Driving
       carTolerance-labelLow: More Driving

@@ -10,17 +10,10 @@ import {
 
 const modeButtonDefinitions = [
   {
-    label: "Transit",
-    key: "TRANSIT",
-    modes: [
-      {
-        mode: "BUS"
-      },
-      {
-        mode: "RAIL"
-      }
-    ],
     enabled: true,
+    key: "TRANSIT",
+    label: "Transit",
+    modes: [{ mode: "BUS" }, { mode: "RAIL" }],
     modeSettings: [
       {
         applicableMode: "TRANSIT",
@@ -33,6 +26,7 @@ const modeButtonDefinitions = [
     ]
   },
   {
+    enabled: true,
     label: "Walking",
     Icon: {},
     key: "WALK",
@@ -41,7 +35,6 @@ const modeButtonDefinitions = [
         mode: "WALK"
       }
     ],
-    enabled: true,
     modeSettings: [
       {
         applicableMode: "WALK",
@@ -59,6 +52,7 @@ const modeButtonDefinitions = [
     ]
   },
   {
+    enabled: true,
     label: "Bike",
     Icon: {},
     key: "BIKE",
@@ -67,7 +61,6 @@ const modeButtonDefinitions = [
         mode: "BICYCLE"
       }
     ],
-    enabled: true,
     modeSettings: [
       {
         applicableMode: "BICYCLE",
@@ -154,10 +147,10 @@ const modeSettingDefinitions = [
 ];
 
 const valueObject = {
-  carReluctance: 3,
-  bikeReluctance: 2,
-  walkReluctance: 2,
   allowBikeRental: true,
+  bikeReluctance: 2,
+  carReluctance: 3,
+  walkReluctance: 2,
   wheelchair: false
 };
 

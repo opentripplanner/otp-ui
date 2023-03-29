@@ -25,6 +25,7 @@ const defaultModeButtonDefinitions = [
     modes: [{ mode: "WALK" }]
   },
   {
+    // Using TriMet icon here to illustrate the use of fillModeIcons prop.
     Icon: ClassicBike,
     iconName: "bicycle",
     key: "BICYCLE",
@@ -46,26 +47,28 @@ const modeSettingDefinitionsWithDropdown = [
     applicableMode: "TRANSIT",
     default: "blue",
     key: "busColor",
-    options: [{ value: "blue" }],
+    label: "Bus Color",
+    options: [{ value: "blue", text: "Blue" }],
     type: "DROPDOWN"
   }
 ];
 
+const initialState = {
+  enabledModeButtons: ["TRANSIT"],
+  modeSettingValues: {}
+};
+
 const MetroModeSelectorComponent = ({
+  fillModeIcons,
   modeButtonDefinitions,
   onSetModeSettingValue,
-  onToggleModeButton,
-  fillModeIcons
+  onToggleModeButton
 }: {
+  fillModeIcons?: boolean;
   modeButtonDefinitions: ModeButtonDefinition[];
   onSetModeSettingValue: (event: QueryParamChangeEvent) => void;
   onToggleModeButton: (key: string) => void;
-  fillModeIcons?: boolean;
 }): ReactElement => {
-  const initialState = {
-    enabledModeButtons: ["TRANSIT"],
-    modeSettingValues: {}
-  };
   const {
     buttonsWithSettings,
     setModeSettingValue,
@@ -91,19 +94,19 @@ const MetroModeSelectorComponent = ({
 
   return (
     <Core.MetroModeSelector
+      fillModeIcons={fillModeIcons}
       label="Select a transit mode"
       modeButtons={buttonsWithSettings}
       onSettingsUpdate={setModeSettingValueAction}
       onToggleModeButton={toggleModeButtonAction}
-      fillModeIcons={fillModeIcons}
     />
   );
 };
 
 const Template = (args: {
+  fillModeIcons?: boolean;
   onSetModeSettingValue: (event: QueryParamChangeEvent) => void;
   onToggleModeButton: (key: string) => void;
-  fillModeIcons?: boolean;
 }): ReactElement => (
   <QueryParamProvider adapter={WindowHistoryAdapter}>
     <MetroModeSelectorComponent
@@ -116,9 +119,9 @@ const Template = (args: {
 
 export default {
   argTypes: {
+    fillModeIcons: { control: "boolean" },
     onSetModeSettingValue: { action: "set mode setting value" },
-    onToggleModeButton: { action: "toggle button" },
-    fillModeIcons: { control: "boolean" }
+    onToggleModeButton: { action: "toggle button" }
   },
   component: MetroModeSelectorComponent,
   title: "Trip Form Components/Metro Mode Selector"
