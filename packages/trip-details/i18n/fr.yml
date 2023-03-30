@@ -8,12 +8,11 @@ otpUi:
       minute</strong> effectuée} other {<strong># minutes</strong> effectuées}}
       en vélo sur ce trajet. (d'après <dietaryLink>Dietary Guidelines for
       Americans 2005, page 16, Table 4</dietaryLink>)
-    co2: "CO<sub>2</sub> émis : <strong>{co2}</strong>"
+    co2: "CO₂ émis : <strong>{co2}</strong>"
     co2description: >-
       L'intensité carbone est calculée en multipliant la distance de chaque
-      portion d'un trajet par l'intensité en CO<sub>2</sub> du mode utilisé.
-      L'intensité en CO<sub>2</sub> de chaque mode est obtenue d'après <link>ce
-      tableau</link>.
+      portion d'un trajet par l'intensité en CO₂ du mode utilisé. L'intensité en
+      CO₂ de chaque mode est obtenue d'après <link>ce tableau</link>.
     departure: >-
       Départ le <strong>{departureDate, date, long}</strong> à
       <strong>{departureDate, time, short}</strong>
@@ -24,12 +23,11 @@ otpUi:
       senior: Séniors
       special: Spécial
       youth: Jeunes
+    hideDetail: Masquer les détails
+    showDetail: Afficher les détails
     title: Détails du trajet
     tncFare: "Tarif {companies} : <strong>{minTNCFare} - {maxTNCFare}</strong>"
+    transferDiscountExplanation: Cette correspondance vous donne une réduction de {transferAmount}
     transitFare: Tarif en transports
     transitFareEntry: "{name} : <strong>{value}</strong>"
     tripIncludesFlex: Ce trajet comprend un service à la demande (Flex). {extraMessage}
-    showDetail: Afficher les détails
-    hideDetail: Masquer les détails
-    transferDiscountExplanation: Cette correspondance vous donne une réduction de
-      {transferAmount}
