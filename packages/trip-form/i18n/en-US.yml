@@ -8,11 +8,11 @@ otpUi:
     time: Time
   ModeSelector:
     labels:
-      BICYCLE: Bike
-      CAR: Drive
-      RENT: Rent
-      TRANSIT: Transit
-      WALK: Walk
+      bicycle: Bike
+      car: Drive
+      rent: Rent
+      transit: Transit
+      walk: Walk
     settings:
       addBus-label: Bus
       addRail-label: Train

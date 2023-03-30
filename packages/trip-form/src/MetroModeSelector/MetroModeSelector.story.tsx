@@ -13,14 +13,14 @@ const defaultModeButtonDefinitions = [
   {
     Icon: Bus,
     iconName: "bus",
-    key: "TRANSIT",
+    key: "transit",
     label: "Bus",
     modes: [{ mode: "TRANSIT" }]
   },
   {
     Icon: PersonWalking,
     iconName: "person-walking",
-    key: "WALK",
+    key: "walk",
     label: "Walk",
     modes: [{ mode: "WALK" }]
   },
@@ -28,14 +28,14 @@ const defaultModeButtonDefinitions = [
     // Using TriMet icon here to illustrate the use of fillModeIcons prop.
     Icon: ClassicBike,
     iconName: "bicycle",
-    key: "BICYCLE",
+    key: "bicycle",
     label: "Bike",
     modes: [{ mode: "BICYCLE" }]
   },
   {
     Icon: Car,
     iconName: "car",
-    key: "CAR",
+    key: "car",
     label: "Car",
     modes: [{ mode: "CAR" }]
   }
