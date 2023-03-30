@@ -54,7 +54,7 @@ const modeSettingDefinitionsWithDropdown = [
 ];
 
 const initialState = {
-  enabledModeButtons: ["TRANSIT"],
+  enabledModeButtons: ["transit"],
   modeSettingValues: {}
 };
 
