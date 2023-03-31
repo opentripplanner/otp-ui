@@ -1,23 +1,27 @@
 otpUi:
   TripDetails:
-    tncFare: "{companies} 票价: <strong>{minTNCFare} - {maxTNCFare}</strong>"
-    transitFare: 公共交通费
-    tripIncludesFlex: 这次旅行包括灵活的路线. {extraMessage}
-    fareDetailsHeaders:
-      regular: 成年人
-      youth: 年轻人
-      senior: 资深人士
-      electronic: 用卡支付
-      cash: 现金
-      special: 特别的
     calories: "卡路里消耗: <strong>{calories, number, ::.}</strong>"
-    departure:
-      <strong>{departureDate, date, long}</strong> <strong>{departureDate,
-      time, short}</strong> 出发
-    title: 行程详情
-    transitFareEntry: "{name}: <strong>{value}</strong>"
+    caloriesDescription: >
+      燃烧的卡路里是根据这次旅行中的 <strong>{walkMinutes}分钟</strong> 步行和
+      <strong>{bikeMinutes}分钟</strong> 骑自行车计算的. 改编自< <dietaryLink>Dietary
+      Guidelines for Americans 2005, 页16, 图片4</dietaryLink>.
     co2: "排放的二氧化碳: <strong>{co2}</strong>"
-    co2description: CO<sub>2</sub> 强度的计算方法是将行程的每条腿的距离乘以每种模式的 CO<sub>2</sub> 强度。 每种模式的二氧化碳强度来自<link>此电子表格</link>。
-    caloriesDescription:
-      "燃烧的卡路里是根据这次旅行中的 <strong>{walkMinutes}分钟</strong> 步行和 <strong>{bikeMinutes}分钟}</strong>\
-      \ 骑自行车计算的. 改编自< <dietaryLink>Dietary Guidelines for Americans 2005, 页16, 图片4</dietaryLink>.\n"
+    co2description: CO₂ 强度的计算方法是将行程的每条腿的距离乘以每种模式的 CO₂ 强度。 每种模式的二氧化碳强度来自<link>此电子表格</link>。
+    departure: >-
+      <strong>{departureDate, date, long}</strong> <strong>{departureDate, time,
+      short}</strong> 出发
+    fareDetailsHeaders:
+      cash: 现金
+      electronic: 电子的
+      regular: 成人
+      senior: 长者
+      special: 特别的
+      youth: 青年
+    hideDetail: 隐藏细节
+    showDetail: 显示详细资料
+    title: 行程详情
+    tncFare: "{companies} 票价: <strong>{minTNCFare} - {maxTNCFare}</strong>"
+    transferDiscountExplanation: 应用了 {transferAmount} 的转让折扣
+    transitFare: 公共交通费
+    transitFareEntry: "{name}: <strong>{value}</strong>"
+    tripIncludesFlex: 这个行程包括灵活的路线. {extraMessage}

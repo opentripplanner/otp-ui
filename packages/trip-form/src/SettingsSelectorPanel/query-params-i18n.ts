@@ -1,6 +1,5 @@
 import flatten from "flat";
-import React from "react";
-import { FormattedMessage, IntlShape } from "react-intl";
+import { IntlShape } from "react-intl";
 
 // eslint-disable-next-line prettier/prettier
 import type { CustomQueryParameters } from "../types";
@@ -141,52 +140,37 @@ export function getQueryParamMessagesWithI18n(
 ): CustomQueryParameters {
   return {
     maxWalkDistance: {
-      label: (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.queryParameters.maxWalkDistance"]
-          }
-          description="Max walk distance label"
-          id="otpUi.queryParameters.maxWalkDistance"
-        />
-      ),
+      label: intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.queryParameters.maxWalkDistance"],
+        description: "Max walk distance label",
+        id: "otpUi.queryParameters.maxWalkDistance"
+      }),
       options: getDistanceOptionsInMiles(intl, [0.1, 0.25, 0.5, 0.75, 1, 2, 5])
     },
     walkReluctance: {
-      label: (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.queryParameters.walkReluctance"]
-          }
-          description="Walk reluctance label"
-          id="otpUi.queryParameters.walkReluctance"
-        />
-      ),
-      labelLow: <FormattedMessage
-        defaultMessage={
-          defaultMessages["otpUi.queryParameters.walkReluctanceLow"]
-        }
-        description="Label displayed at left side of walk reluctance slider"
-        id="otpUi.queryParameters.walkReluctanceLow"
-      />,
-      labelHigh: <FormattedMessage
-        defaultMessage={
-          defaultMessages["otpUi.queryParameters.walkReluctanceHigh"]
-        }
-        description="Label displayed at right side of walk reluctance slider"
-        id="otpUi.queryParameters.walkReluctanceHigh"
-      />
+      label: intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.queryParameters.walkReluctance"],
+        description: "Walk reluctance label",
+        id : "otpUi.queryParameters.walkReluctance"
+      })
+      ,
+      labelLow: intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.queryParameters.walkReluctanceLow"],
+        description: "Label displayed at left side of walk reluctance slider",
+        id: "otpUi.queryParameters.walkReluctanceLow"
+      }),
+      labelHigh: intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.queryParameters.walkReluctanceHigh"],
+        description: "Label displayed at right side of walk reluctance slider",
+        id: "otpUi.queryParameters.walkReluctanceHigh"
+      })
     },
     maxBikeDistance: {
-      label: (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.queryParameters.maxBikeDistance"]
-          }
-          description="Max bike distance label"
-          id="otpUi.queryParameters.maxBikeDistance"
-        />
-      ),
+      label: intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.queryParameters.maxBikeDistance"],
+        description: "Max bike distance label",
+        id: "otpUi.queryParameters.maxBikeDistance"
+      }),
       options: getDistanceOptionsInMiles(intl, [
         0.25,
         0.5,
@@ -201,65 +185,51 @@ export function getQueryParamMessagesWithI18n(
       ])
     },
     optimizeBike: {
-      label: (
-        <FormattedMessage
-          defaultMessage={defaultMessages["otpUi.queryParameters.optimizeFor"]}
-          description="Optimize selector label"
-          id="otpUi.queryParameters.optimizeFor"
-        />
-      ),
+      label: intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.queryParameters.optimizeFor"],
+        description: "Optimize selector label",
+        id: "otpUi.queryParameters.optimizeFor"
+      }),
       options: () => getBikeTripOptions(intl)
     },
     maxWalkTime: {
-      label: (
-        <FormattedMessage
-          defaultMessage={defaultMessages["otpUi.queryParameters.maxWalkTime"]}
-          description="Max walk time label"
-          id="otpUi.queryParameters.maxWalkTime"
-        />
-      ),
+      label: intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.queryParameters.maxWalkTime"],
+        description: "Max walk time label",
+        id: "otpUi.queryParameters.maxWalkTime"
+      }),
       options: getDurationOptions(intl, [5, 10, 15, 20, 30, 45, 60])
     },
     walkSpeed: {
-      label: (
-        <FormattedMessage
-          defaultMessage={defaultMessages["otpUi.queryParameters.walkSpeed"]}
-          description="Max walk speed label"
-          id="otpUi.queryParameters.walkSpeed"
-        />
-      ),
+      label: intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.queryParameters.walkSpeed"],
+        description: "Max walk speed label",
+        id: "otpUi.queryParameters.walkSpeed"
+      }),
       options: getSpeedOptionsInMilesPerHour(intl, [2, 3, 4])
     },
     maxBikeTime: {
-      label: (
-        <FormattedMessage
-          defaultMessage={defaultMessages["otpUi.queryParameters.maxBikeTime"]}
-          description="Max bike time label"
-          id="otpUi.queryParameters.maxBikeTime"
-        />
-      ),
+      label: intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.queryParameters.maxBikeTime"],
+        description: "Max bike time label",
+        id: "otpUi.queryParameters.maxBikeTime"
+      }),
       options: getDurationOptions(intl, [5, 10, 15, 20, 30, 45, 60])
     },
     bikeSpeed: {
-      label: (
-        <FormattedMessage
-          defaultMessage={defaultMessages["otpUi.queryParameters.bikeSpeed"]}
-          description="Bike speed selector label"
-          id="otpUi.queryParameters.bikeSpeed"
-        />
-      ),
+      label: intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.queryParameters.bikeSpeed"],
+        description: "Bike speed selector label",
+        id: "otpUi.queryParameters.bikeSpeed"
+      }),
       options: getSpeedOptionsInMilesPerHour(intl, [6, 8, 10, 12])
     },
     maxEScooterDistance: {
-      label: (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.queryParameters.maxEScooterDistance"]
-          }
-          description="Max e-scooter distance label"
-          id="otpUi.queryParameters.maxEScooterDistance"
-        />
-      ),
+      label: intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.queryParameters.maxEScooterDistance"],
+        description: "Max e-scooter distance label",
+        id: "otpUi.queryParameters.maxEScooterDistance"
+      }),
       options: getDistanceOptionsInMiles(intl, [
         0.25,
         0.5,
@@ -274,13 +244,11 @@ export function getQueryParamMessagesWithI18n(
       ])
     },
     watts: {
-      label: (
-        <FormattedMessage
-          defaultMessage={defaultMessages["otpUi.queryParameters.watts"]}
-          description="E-scooter power label"
-          id="otpUi.queryParameters.watts"
-        />
-      ),
+      label: intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.queryParameters.watts"],
+        description: "E-scooter power label",
+        id: "otpUi.queryParameters.watts"
+      }),
       options: [
         {
           text: intl.formatMessage({
@@ -325,13 +293,11 @@ export function getQueryParamMessagesWithI18n(
       ]
     },
     wheelchair: {
-      label: (
-        <FormattedMessage
-          defaultMessage={defaultMessages["otpUi.queryParameters.wheelchair"]}
-          description="Label for wheelchair option"
-          id="otpUi.queryParameters.wheelchair"
-        />
-      )
+      label: intl.formatMessage({
+        defaultMessage: defaultMessages["otpUi.queryParameters.wheelchair"],
+        description: "Label for wheelchair option",
+        id:"otpUi.queryParameters.wheelchair"
+      })
     }
   };
 }

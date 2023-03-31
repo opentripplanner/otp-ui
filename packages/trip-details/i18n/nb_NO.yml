@@ -1,0 +1,5 @@
+otpUi:
+  TripDetails:
+    calories: "Forbrente kalorier: <strong>{calories, number, ::.}</strong>"
+    fareDetailsHeaders:
+      cash: Kontanter

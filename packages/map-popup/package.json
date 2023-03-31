@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/map-popup",
-  "version": "2.0.1",
+  "version": "2.0.3",
   "description": "A component for displaying map popup contents",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -11,13 +11,13 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/base-map": "^3.0.9",
-    "@opentripplanner/core-utils": "^8.0.1",
+    "@opentripplanner/base-map": "^3.0.10",
+    "@opentripplanner/core-utils": "^8.1.1",
     "@opentripplanner/from-to-location-picker": "^2.1.5",
     "flat": "^5.0.2"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^4.0.5"
+    "@opentripplanner/types": "^4.0.6"
   },
   "peerDependencies": {
     "react": "^16.14.0",

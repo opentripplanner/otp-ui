@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/printable-itinerary",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "A component for displaying a printable itinerary body of a trip planning result",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -10,8 +10,8 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^8.0.1",
-    "@opentripplanner/itinerary-body": "^4.1.7"
+    "@opentripplanner/core-utils": "^8.1.1",
+    "@opentripplanner/itinerary-body": "^4.1.9"
   },
   "devDependencies": {
     "@opentripplanner/icons": "^2.0.1"

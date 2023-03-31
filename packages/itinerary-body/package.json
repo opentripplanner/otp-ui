@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/itinerary-body",
-  "version": "4.1.9",
+  "version": "4.1.14",
   "description": "A component for displaying an itinerary body of a trip planning result",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -10,7 +10,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^8.0.1",
+    "@opentripplanner/core-utils": "^8.1.1",
     "@opentripplanner/humanize-distance": "^1.2.0",
     "@opentripplanner/icons": "^2.0.1",
     "@opentripplanner/location-icon": "^1.4.1",
@@ -24,7 +24,7 @@
     "string-similarity": "^4.0.4"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^4.0.5",
+    "@opentripplanner/types": "^4.0.6",
     "@types/flat": "^5.0.2"
   },
   "peerDependencies": {

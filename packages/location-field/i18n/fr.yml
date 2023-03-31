@@ -1,31 +1,25 @@
-# Default messages for the LocationField component.
-# To use from a react-intl application:
-# - merge the content of this file into the messages object
-#   that has your other localized strings,
-# - flatten the ids, i.e. convert a structure such as
-#      otpUi > LocationField > stations
-#   into "otpUi.TripDetails.stations" (see LocationField story for an example),
-# - pass the resulting object to the messages prop of IntlProvider.
-
 otpUi:
   LocationField:
     beginTypingPrompt: Tapez pour rechercher des lieux
     clearLocation: Effacer le lieu
-    currentLocationUnavailable: Position actuelle non disponible{error, select, undefined {} other { ({error})}}
+    currentLocationUnavailable: >-
+      Position actuelle non disponible{error, select, undefined {} other {
+      ({error})}}
     fetchingLocation: Chargement du lieu…
     fetchingSuggestions: Chargement des suggestions…
     geocoderUnreachable: Géocodeur introuvable{error, select, undefined {} other { ({error})}}
     homeLocation: Domicile
     myPlaces: Mes lieux
     nearby: Arrêts à proximité
-    placeNameWithDetails: "{placeName} ({details})"
-    # Note to translator: This is an implicit plural (as in "Other results").
     other: Autres
+    placeNameWithDetails: "{placeName} ({details})"
     recentlySearched: Recherches récentes
     resultsFound: >
-      {count, plural, =0 {Aucun résultat} =1 {# résultat} other {# résultats}} du
-      géocodeur pour {input, select, null {votre requête} other {"{input}"}}
+      {count, plural, =0 {Aucun résultat} =1 {# résultat} other {# résultats}}
+      du géocodeur pour {input, select, null {votre requête} other {"{input}"}}
     stations: Stations
     stops: Arrêts
+    suggestedLocations: Lieux suggérés
+    suggestedLocationsLong: Basculer l'affichage de la liste de lieux suggérés
     useCurrentLocation: Utiliser ma position actuelle
     workLocation: Lieu de travail

@@ -1,107 +1,105 @@
 otpUi:
   AccessLegBody:
+    LegDiagramPreview:
+      elevationChart: Gráfico de elevación
+      noElevationData: No hay datos de elevación disponibles.
+      toggleElevationChart: Cambiar carta de elevación
     RentedVehicleSubheader:
-      walkVehicle: Caminar vehículo por la {place}
       pickupRental: Recoger {vehicleType} {company} {vehicleName}
+      resumeRentalRide: Seguir utilizando el alquiler
       vehicleType:
         bike: la bicicleta
         bikeshare: la bicicleta compartida
         car: el carro
         escooter: la patineta
         vehicle: el vehículo
-      resumeRentalRide: Seguir utilizando el alquiler
+      walkVehicle: Caminar vehículo por la {place}
     TncLeg:
       bookRide: Reservar un viaje
       bookRideLater: Espere hasta las {timeMillis, time, short} para reservar
       estimatedCost: "Costo estimado: {minFare} - {maxFare}"
-      estimatedTravelTime:
-        "Tiempo estimado de viaje: {duration} (no tiene en cuenta
-        el tráfico)"
-      waitForPickup:
-        "Espera al conductor {company}{minutes, plural, =0 {} other {
-        # minutes}}"
-    LegDiagramPreview:
-      elevationChart: Gráfico de elevación
-      noElevationData: No hay datos de elevación disponibles.
-      toggleElevationChart: Activar gráfica de elevación
-    summary: "{mode} a {place}"
+      estimatedTravelTime: "Tiempo de viaje estimado: {duration} (no tiene en cuenta el tráfico)"
+      waitForPickup: "Espera al conductor {company}{minutes, plural, =0 {} other { # minutos}}"
     mapillaryTooltip: Mostrar imágenes de la calle en esta ubicación
-    vehicleTitle: "{vehicleType} {company}"
     step:
-      circleCounterClockwise:
-        Siga el círculo en sentido contrario a las agujas del
-        reloj
+      circleClockwise: Siga el círculo en el sentido de las agujas del reloj
+      circleCounterClockwise: Siga el círculo en sentido contrario a las agujas del reloj
       continue: Continuar
       hardLeft: Giro a la izquierda
       hardRight: Giro a la derecha
       left: Vire a la izquierda
-      uTurnLeft: Media vuelta a la izquierda
-      circleClockwise: Siga el círculo en el sentido de las agujas del reloj
       right: Vire a la derecha
       slightlyLeft: Ligeramente a la izquierda
       slightlyRight: Ligeramente a la derecha
+      uTurnLeft: Media vuelta a la izquierda
       uTurnRight: Media vuelta a la derecha
+    stepDepart: Dirígete hacia {heading} por {street}
+    stepElevator: Toma el ascensor hasta {street}
+    stepGeneric: "{step} por {street}"
     stepHeading:
       east: el este
+      north: el norte
       northeast: el noreste
       northwest: el noroeste
       south: el sur
       southeast: el sureste
       southwest: el suroeste
       west: el oeste
-      north: el norte
-    stepElevator: Toma el ascensor hasta {street}
-    stepGeneric: "{step} por {street}"
+    summary: "{mode} a {place}"
     summaryAndDistance: "{mode} - {distance} a {place}"
     summaryMode:
       bike: Bicicleta
       bikeshare: Bicicleta compartida
-      carDrive: Carro
+      carDrive: Coche
       carHail: Paseo
       escooter: Patineta
-      walk: Caminata
-    unnamedRoad: Calle sin nombre
+      walk: Caminar
     unnamedPath: Sendero sin nombre
+    unnamedRoad: Calle sin nombre
+    vehicleTitle: "{vehicleType} {company}"
     vehicleType:
       bike: Bicicleta
       bikeshare: Bicicleta compartida
-      car: Carro
+      car: Coche
       escooter: Patineta
       vehicle: Vehículo
-    stepDepart: Dirígete hacia {heading} por {street}
   ItineraryBody:
-    stayOnBoard: Permanecer a bordo a {place}
-    travelBy: Viajar {mode}
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"
-    viewOnMap: Ver en el mapa
-    flexPickupMessage: "Para tomar esta ruta, tiene que {action}{advanceNotice}."
+    flexAdvanceNotice: " al menos {leadDays, plural, one {# día} other {# días}} de antelación"
     flexCallAhead: llama con anticipación
     flexCallNumber: llama {phoneNumber}
+    flexPickupMessage: Para tomar esta ruta, tiene que {action}{advanceNotice}.
+    stayOnBoard: Permanecer a bordo a {place}
+    travelBy: Viajar {mode}
     travelByMode:
       bike: en bicicleta
       car: en carro
       escooter: en patineta
       walk: a pie
-    flexAdvanceNotice:
-      " al menos {leadDays, plural, one {# día} other {# días}} de
-      antelación"
+    viewOnMap: Ver en el mapa
   TransitLegBody:
-    stopId: ID de Parada {stopId}
-    stopIdBasic: ID {stopId}
-    stopViewer: Visor de paradas
-    tripViewer: Visor de viajes
     AlertsBody:
       effectiveDate: A partir de {dateTime, date, long}
       effectiveTimeAndDate: A partir de {dateTime, time, short}, {day}
-      today: Hoy dia
+      today: Hoy
       tomorrow: Mañana
       yesterday: Ayer
-    alertsHeader: "{alertCount, plural, =1 {# alerta} other {# alertas} }"
+    agencyExternalLink: "{agencyName} (Enlace external)"
+    alertsHeader: "{alertCount, plural, =1 {# alerta} other {# alertas}}"
+    arriveAt: Llegada a {place}
+    disembarkAt: Disembarque a {legDestination}
+    expandDetails: (Ver mas detalles)
     fare: "Tarifa: {fare}"
+    fromLocation: de {location}
+    legDetails: Detalles de la etapa
     operatedBy: Servicio operado por {agencyLink}
+    ride: Toma la línea
     rideDurationAndStops: "Paseo {duration}{numStops, plural, =1 {} other { / # paradas}}"
-    routeDescription:
-      "{routeName}{headsign, select, undefined {} other {<toPrefix>
-      destino </toPrefix>{headsign}}}"
-    typicalWait: "La típica espera: {waitTime}"
+    routeDescription: "{routeName} <toPrefix>destino</toPrefix> {headsign}"
+    stopId: Parada n°{stopId}
+    stopIdBasic: Parada n°{stopId}
+    stopViewer: Visor de paradas
+    tripViewer: Visor de viajes
+    typicalWait: "Tiempo de espera regular: {waitTime}"
+    zoomToLeg: Acercar el mapa a este etapa

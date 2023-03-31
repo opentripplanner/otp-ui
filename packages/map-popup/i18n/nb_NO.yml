@@ -1,0 +1,9 @@
+otpUi:
+  MapPopup:
+    availableBikes: "Tilgjengelige sykler: {value}"
+    availableDocks: "Tilgjengelige stasjoner: {value}"
+    floatingBike: "Stasjonsløs sykkel: {name}"
+    floatingCar: "{company} {name}"
+    floatingEScooter: "E-scooter: {name}"
+    stopId: "Stopp-ID: {stopId}"
+    stopViewer: Stopp-viser

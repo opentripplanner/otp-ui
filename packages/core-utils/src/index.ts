@@ -7,12 +7,14 @@ import * as route from "./route";
 import * as storage from "./storage";
 import * as time from "./time";
 import * as ui from "./ui";
+import * as queryGen from "./query-gen";
 
 const core = {
   itinerary,
   map,
   profile,
   query,
+  queryGen,
   queryParams,
   route,
   storage,

@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/transit-vehicle-overlay",
-  "version": "4.0.0",
+  "version": "4.0.2",
   "description": "Realtime Transit Vehicles Component",
   "author": "Frank Purcell",
   "homepage": "https://github.com/opentripplanner/otp-ui/tree/master/packages/transit-vehicle-overlay/#readme",
@@ -9,13 +9,13 @@
   "module": "esm/index.js",
   "private": false,
   "dependencies": {
-    "@opentripplanner/base-map": "^3.0.9",
-    "@opentripplanner/core-utils": "^8.0.1",
+    "@opentripplanner/base-map": "^3.0.10",
+    "@opentripplanner/core-utils": "^8.1.1",
     "@opentripplanner/icons": "^2.0.1",
     "flat": "^5.0.2"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^4.0.5"
+    "@opentripplanner/types": "^4.0.6"
   },
   "peerDependencies": {
     "react": "^16.14.0",

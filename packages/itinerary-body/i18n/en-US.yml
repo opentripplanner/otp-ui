@@ -1,19 +1,9 @@
-# Default messages for the ItineraryBody component and subcomponents.
-# To use from a react-intl application:
-# - merge the content of this file into the messages object
-#   that has your other localized strings,
-# - flatten the ids, i.e. convert a structure such as
-#      otpUi > LocationField > stations
-#   into "otpUi.TripDetails.stations" (see story for an example),
-# - pass the resulting object to the messages prop of IntlProvider.
-
 otpUi:
   AccessLegBody:
     LegDiagramPreview:
       elevationChart: Elevation chart
       noElevationData: No elevation data available.
       toggleElevationChart: Toggle elevation chart
-    mapillaryTooltip: Show street imagery at this location
     RentedVehicleSubheader:
       pickupRental: Pick up {company} {vehicleType} {vehicleName}
       resumeRentalRide: Continue using rental
@@ -24,6 +14,13 @@ otpUi:
         escooter: E-scooter
         vehicle: vehicle
       walkVehicle: Walk vehicle along {place}
+    TncLeg:
+      bookRide: Book Ride
+      bookRideLater: Wait until {timeMillis, time, short} to book
+      estimatedCost: "Estimated cost: {minFare} - {maxFare}"
+      estimatedTravelTime: "Estimated travel time: {duration} (does not account for traffic)"
+      waitForPickup: "Wait{minutes, plural, =0 {} other { # minutes}} for {company} pickup"
+    mapillaryTooltip: Show street imagery at this location
     step:
       circleClockwise: Follow circle clockwise
       circleCounterClockwise: Follow circle counterclockwise
@@ -37,6 +34,8 @@ otpUi:
       uTurnLeft: Left U-turn
       uTurnRight: Right U-turn
     stepDepart: Head {heading} on {street}
+    stepElevator: Take elevator to {street}
+    stepGeneric: "{step} on {street}"
     stepHeading:
       east: east
       north: north
@@ -46,11 +45,8 @@ otpUi:
       southeast: southeast
       southwest: southwest
       west: west
-    stepElevator: Take elevator to {street}
-    stepGeneric: "{step} on {street}"
     summary: "{mode} to {place}"
     summaryAndDistance: "{mode} {distance} to {place}"
-    # The summary modes below only include access mode actions (ride, walk...).
     summaryMode:
       bike: Bicycle
       bikeshare: Bikeshare
@@ -58,12 +54,6 @@ otpUi:
       carHail: Ride
       escooter: Ride
       walk: Walk
-    TncLeg:
-      bookRide: Book Ride
-      bookRideLater: Wait until {timeMillis, time, short} to book
-      estimatedCost: "Estimated cost: {minFare} - {maxFare}"
-      estimatedTravelTime: "Estimated travel time: {duration} (does not account for traffic)"
-      waitForPickup: "Wait{minutes, plural, =0 {} other { # minutes}} for {company} pickup"
     unnamedPath: Unnamed Path
     unnamedRoad: Unnamed Road
     vehicleTitle: "{company} {vehicleType}"
@@ -89,19 +79,22 @@ otpUi:
       walk: by walking
     viewOnMap: View on map
   TransitLegBody:
-    agencyExternalLink: "{agencyName} (External Link)"
     AlertsBody:
       effectiveDate: Effective as of {dateTime, date, long}
       effectiveTimeAndDate: Effective as of {dateTime, time, short}, {day}
       today: Today
       tomorrow: Tomorrow
       yesterday: Yesterday
+    agencyExternalLink: "{agencyName} (External Link)"
     alertsHeader: "{alertCount, plural, =1 {# alert} other {# alerts}}"
-    fare: "Fare: {fare}"
-    zoomToLeg: (Zoom to leg on map)
-    legDetails: Leg details
+    arriveAt: Arrive at {place}
+    disembarkAt: Disembark at {legDestination}
     expandDetails: (Expand details)
+    fare: "Fare: {fare}"
+    fromLocation: from {location}
+    legDetails: Leg details
     operatedBy: Service operated by {agencyLink}
+    ride: Ride
     rideDurationAndStops: "Ride {duration}{numStops, plural, =1 {} other { / # stops}}"
     routeDescription: "{routeName} <toPrefix>to</toPrefix> {headsign}"
     stopId: Stop ID {stopId}
@@ -109,3 +102,4 @@ otpUi:
     stopViewer: Stop Viewer
     tripViewer: Trip Viewer
     typicalWait: "Typical wait: {waitTime}"
+    zoomToLeg: Zoom to leg on map

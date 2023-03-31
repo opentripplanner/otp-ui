@@ -1,0 +1,7 @@
+otpUi:
+  LocationField:
+    fetchingLocation: Henter posisjon …
+    homeLocation: Hjem
+    stations: Stasjoner
+    stops: Stopp
+    workLocation: Arbeid

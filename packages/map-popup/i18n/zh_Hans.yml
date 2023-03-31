@@ -3,8 +3,7 @@ otpUi:
     availableBikes: "可用的自行车: {value}"
     availableDocks: "可用的充电座: {value}"
     floatingBike: "自由浮动的自行车: {name}"
-    floatingCar: "{company} {name}" # as in "CarCompany Veh1234a"
-    floatingEScooter: "{company} 电动滑板车"
-
-    stopId: 车站查看器
-    stopViewer: "车站 ID: {stopId}"
+    floatingCar: "{company} {name}"
+    floatingEScooter: "{name} 电动滑板车"
+    stopId: "车站 ID: {stopId}"
+    stopViewer: 车站查看器
