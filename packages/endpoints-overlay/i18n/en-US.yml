@@ -1,22 +1,9 @@
-# Default messages for the EndpointsOverlay component.
-# To use from a react-intl application:
-# - merge the content of this file into the messages object
-#   that has your other localized strings,
-# - flatten the ids, i.e. convert a structure such as
-#      otpUi > EndpointsOverlay > saveAsHome
-#   into "otpUi.EndpointsOverlay.saveAsHome",
-# - pass the resulting object to the messages prop of IntlProvider.
-
 otpUi:
   EndpointsOverlay:
-    # Note to translator:
-    # This should read, in English, as e.g. "Remove as 'from' location" (quotes not included).
     clearLocation: Remove as {locationType} location
     coordinates: "{lat, number, ::.00000}, {lon, number, ::.00000}"
     forgetHome: Forget home
     forgetWork: Forget work
     saveAsHome: Save as home
     saveAsWork: Save as work
-    # Note to translator:
-    # This should read, in English, as e.g. "Change to 'from' location" (quotes not included).
     swapLocation: Change to {locationType} location

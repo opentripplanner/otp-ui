@@ -1,25 +1,32 @@
 otpUi:
   LocationField:
     beingTypingPrompt: Bắt đầu gõ để tìm kiếm các địa điểm
-    noResultsFound:
-      "Không tìm thấy kết quả cho {input, select,\n null {vấn của bạn}\n\
-      \ other {{input}}\n }\n"
-    resultsFound: >
-      {count, plural, =0 {Không có}, other {#}} kết quả
-      cho {input, select, null {vấn của bạn} other {"{input}"}}"
-    clearLocation: Vị trí rõ ràng
-    currentLocationUnavailable: Vị trí hiện tại không có sẵn{error, select, undefined {} other { ({error})}}
+    clearLocation: Xóa vị trí
+    currentLocationUnavailable: >-
+      Vị trí hiện tại không có sẵn{error, select, undefined {} other {
+      ({error})}}
     fetchingLocation: Tìm nạp vị trí…
-    geocoderUnreachable:
-      Không thể đến bộ định vị địa lý{error, select, undefined
-      {} other { ({error})}}
+    fetchingSuggestions: Tìm nạp đề xuất…
+    geocoderUnreachable: >-
+      Không thể đến bộ định vị địa lý{error, select, undefined {} other {
+      ({error})}}
     homeLocation: Nhà
     myPlaces: Những địa điểm của tôi
-    nearby: Trạm dừng liền kề
+    nearby: Điểm dừng liền kề
+    noResultsFound: |
+      Không tìm thấy kết quả cho {input, select,
+       null {vấn của bạn}
+       other {{input}}
+       }
     other: Khác
     placeNameWithDetails: "{placeName} ({details})"
     recentlySearched: Gần đây đã tìm kiếm
-    stations: Trạm
+    resultsFound: >
+      {count, plural, =0 {Không có}, other {#}} kết quả cho {input, select, null
+      {vấn của bạn} other {"{input}"}}"
+    stations: Ga
     stops: Điểm dừng
+    suggestedLocations: Địa điểm được đề xuất
+    suggestedLocationsLong: Bật tắt hiển thị danh sách địa điểm gợi ý
     useCurrentLocation: Sử dụng vị trí hiện tại
     workLocation: Nơi làm việc

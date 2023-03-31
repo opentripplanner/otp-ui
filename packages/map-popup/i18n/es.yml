@@ -4,7 +4,6 @@ otpUi:
     availableDocks: "Estaciones de carga disponibles: {value}"
     floatingBike: "Bicicleta flotante: {name}"
     floatingCar: "{company} {name}"
-    floatingEScooter: "{company} E-scooter"
-
-    stopId: ID de Parada {stopId}
+    floatingEScooter: Scooter eléctrico {name}
+    stopId: Parada n°{stopId}
     stopViewer: Visor de paradas

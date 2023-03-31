@@ -1,10 +1,14 @@
 import CSS from "csstype";
-import React, { ChangeEvent, ReactElement, useCallback } from "react";
+import React, { ChangeEvent, TouchEvent, ReactElement, useCallback } from "react";
 
 import * as S from "../styled";
-
 // eslint-disable-next-line prettier/prettier
 import type { QueryParamChangeEvent } from "../types";
+
+const handleTouchStart = (e: TouchEvent<HTMLSelectElement>) => {
+  e.preventDefault();
+  e.currentTarget.focus();
+};
 
 interface DropdownSelectorProps {
   /**
@@ -24,6 +28,11 @@ interface DropdownSelectorProps {
    * @param arg The data {name: value} for the selected option.
    */
   onChange?: (evt: QueryParamChangeEvent) => void;
+  /**
+   * Triggered when the 'touch' event is fired; typically 
+   * applicable to some mobile-devices and tablets.
+   */
+  onTouchStart?: (evt: TouchEvent<HTMLSelectElement>) => void;
   /**
    * A list of {text, value} options for the <select> control.
    */
@@ -76,7 +85,7 @@ export default function DropdownSelector({
       </div>
 
       <div>
-        <select id={id} onChange={handleChange} value={value}>
+        <select id={id} onChange={handleChange} onTouchStart={handleTouchStart} value={value} >
           {options &&
             options.map((o, i) => (
               <option key={i} value={o.value}>
