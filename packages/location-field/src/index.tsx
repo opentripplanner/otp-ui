@@ -816,15 +816,13 @@ const LocationField = ({
     // 'static' mode (menu is displayed alongside input, e.g., for mobile view)
     return (
       <div className={className}>
-        <S.FormGroup>
-          <S.InputGroup role="group">
-            <S.InputGroupAddon>
-              <LocationIconComponent locationType={locationType} />
-            </S.InputGroupAddon>
-            {textControl}
-            {clearButton}
-          </S.InputGroup>
-        </S.FormGroup>
+        <S.InputGroup role="group">
+          <S.InputGroupAddon>
+            <LocationIconComponent locationType={locationType} />
+          </S.InputGroupAddon>
+          {textControl}
+          {clearButton}
+        </S.InputGroup>
         <S.HiddenContent role="status">
           {statusMessages?.join(", ")}
         </S.HiddenContent>
@@ -856,23 +854,23 @@ const LocationField = ({
 
   // default display mode with dropdown menu
   return (
-    <S.FormGroup onBlur={onBlurFormGroup} className={className}>
-      <DropdownControl
-        input={
-          <>
-            {textControl}
-            {clearButton}
-          </>
-        }
-        listBoxIdentifier={listBoxId}
-        onToggle={onDropdownToggle}
-        open={menuVisible}
-        status={statusMessages.join(", ")}
-        title={<LocationIconComponent locationType={locationType} />}
-      >
-        {menuItems}
-      </DropdownControl>
-    </S.FormGroup>
+    <DropdownControl
+      className={className}
+      input={
+        <>
+          {textControl}
+          {clearButton}
+        </>
+      }
+      listBoxIdentifier={listBoxId}
+      onBlur={onBlurFormGroup}
+      onToggle={onDropdownToggle}
+      open={menuVisible}
+      status={statusMessages.join(", ")}
+      title={<LocationIconComponent locationType={locationType} />}
+    >
+      {menuItems}
+    </DropdownControl>
   );
 };
 

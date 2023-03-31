@@ -50,13 +50,6 @@ export const MenuItemList = styled.ul.attrs({
   z-index: 1000000;
 `;
 
-export const FormGroup = styled.div`
-  border-collapse: separate;
-  display: table;
-  margin-bottom: 15px;
-  position: relative;
-`;
-
 export const Input = styled.input`
   border: none;
   box-shadow: none;
@@ -64,10 +57,11 @@ export const Input = styled.input`
   outline: none;
 `;
 
-export const InputGroup = styled.span`
+export const InputGroup = styled.div`
   border-bottom: 1px solid #000;
   border-collapse: separate;
   display: table;
+  margin-bottom: 15px;
   position: relative;
 `;
 

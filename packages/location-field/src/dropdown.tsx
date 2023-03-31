@@ -1,20 +1,24 @@
-import React from "react";
+import React, { FocusEventHandler } from "react";
 import { useIntl } from "react-intl";
 
 import * as S from "./styled";
 
 export const Dropdown = ({
   children,
+  className,
   input,
   listBoxIdentifier,
+  onBlur,
   onToggle = () => {},
   open,
   status,
   title
 }: {
   children: React.ReactNode;
+  className: string;
   input?: JSX.Element;
   listBoxIdentifier: string;
+  onBlur?: FocusEventHandler;
   onToggle?: () => void;
   open: boolean;
   status: string;
@@ -23,7 +27,7 @@ export const Dropdown = ({
   const intl = useIntl();
 
   return (
-    <S.InputGroup role="group">
+    <S.InputGroup className={className} onBlur={onBlur} role="group">
       <S.DropdownButton
         aria-controls={listBoxIdentifier}
         aria-expanded={open}
