@@ -1,17 +1,14 @@
 otpUi:
   PrintableItinerary:
     TncLeg:
-      estimatedTravelTime: >-
-        Tiempo estimado de viaje: <strong>{duration}</strong> (no tiene en
-        cuenta el tráfico)
       estimatedWaitTime: "Tiempo estimado de espera para la recogida: <strong>{duration}</strong>"
+      estimatedTravelTime: "Tiempo estimado de viaje: <strong>{duration}</strong>\
+        \ (no tiene en cuenta el tráfico)"
       header: <strong>Tomar el {company}</strong> hasta <strong>{place}</strong>
     TransitLeg:
-      alight: >-
-        Bajar en la <strong>{place}</strong> ({stopId}) a las <strong>{time,
+      alight: Bajar en la <strong>{place}</strong> ({stopId}) a las <strong>{time,
         time, short}</strong>
-      board: >-
-        Embarque en <strong>{place}</strong> ({stopId}) a las <strong>{time,
+      board: Embarque en <strong>{place}</strong> ({stopId}) a las <strong>{time,
         time, short}</strong>
       continuesAs: Continuar como {routeDescription}
     depart: <strong>Salir</strong> de <strong>{place}</strong>

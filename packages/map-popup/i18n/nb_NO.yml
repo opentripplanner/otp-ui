@@ -1,9 +1,9 @@
 otpUi:
   MapPopup:
-    availableBikes: "Tilgjengelige sykler: {value}"
-    availableDocks: "Tilgjengelige stasjoner: {value}"
-    floatingBike: "Stasjonsløs sykkel: {name}"
-    floatingCar: "{company} {name}"
-    floatingEScooter: "E-scooter: {name}"
-    stopId: "Stopp-ID: {stopId}"
+    availableBikes: 'Tilgjengelige sykler: {value}'
+    floatingCar: '{company} {name}'
+    stopId: 'Stopp-ID: {stopId}'
     stopViewer: Stopp-viser
+    availableDocks: 'Tilgjengelige stasjoner: {value}'
+    floatingEScooter: 'E-scooter: {name}'
+    floatingBike: 'Stasjonsløs sykkel: {name}'

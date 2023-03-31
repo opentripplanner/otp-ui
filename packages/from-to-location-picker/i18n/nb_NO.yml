@@ -1,4 +1,4 @@
 otpUi:
   FromToLocationPicker:
     from: Herfra
-    planATrip: "Planlegg en tur:"
+    planATrip: 'Planlegg en tur:'

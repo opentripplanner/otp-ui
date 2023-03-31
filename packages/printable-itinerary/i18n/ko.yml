@@ -1,15 +1,13 @@
 otpUi:
   PrintableItinerary:
+    depart: <strong>{place}</strong>에서 <strong>출발</strong>
     TncLeg:
       estimatedTravelTime: "예상 트립 시간: <strong>{duration}</strong> (교통사정을 고려하지 않음)"
       estimatedWaitTime: "픽업까지 예상 대기 시간: <strong>{duration}</strong>"
       header: <strong>{place}</strong>(으)로 가는 <strong> {company}</strong>(을)를 승차
     TransitLeg:
-      alight: >-
-        <strong>{time, time, short}</strong>에 <strong>{place}</strong>
-        ({stopId}) 에서 하차
-      board: >-
-        <strong>{time, time, short}</strong> 에 <strong>{place}</strong>
-        ({stopId}) 탑승
+      alight: <strong>{time, time, short}</strong>에 <strong>{place}</strong> ({stopId})
+        에서 하차
       continuesAs: "{routeDescription}로 계속"
-    depart: <strong>{place}</strong>에서 <strong>출발</strong>
+      board: <strong>{time, time, short}</strong> 에 <strong>{place}</strong> ({stopId})
+        탑승

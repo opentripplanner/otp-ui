@@ -3,22 +3,22 @@ otpUi:
     LegDiagramPreview:
       elevationChart: Høydediagram
       noElevationData: Ingen høydedata tilgjengelig.
+    stepElevator: Ta heisen til {street}
+    step:
+      right: Høyre
+      left: Venstre
+      continue: Fortsett
     RentedVehicleSubheader:
       vehicleType:
         escooter: E-scooter
-    step:
-      continue: Fortsett
-      left: Venstre
-      right: Høyre
-    stepElevator: Ta heisen til {street}
-    summary: "{mode} til {place}"
-    summaryMode:
-      bike: Sykkel
     vehicleType:
       bike: Sykkel
+    summaryMode:
+      bike: Sykkel
+    summary: '{mode} til {place}'
   TransitLegBody:
+    routeDescription: '{routeName} <toPrefix>til</toPrefix> {headsign}'
     AlertsBody:
       today: I dag
-      tomorrow: I morgen
       yesterday: I går
-    routeDescription: "{routeName} <toPrefix>til</toPrefix> {headsign}"
+      tomorrow: I morgen

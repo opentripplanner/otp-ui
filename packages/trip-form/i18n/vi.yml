@@ -1,23 +1,21 @@
 otpUi:
-  DateTimeSelector:
-    arrive: Đến nơi trước
-    date: Ngày
-    dateTimeSelector: Bộ chọn ngày và giờ
-    depart: Khởi hành lúc
-    now: Rời đi ngay bây giờ
-    time: Giờ
   SettingsSelectorPanel:
+    takeTransit: Sử dụng phương tiện công cộng
     bikeOnly: Chỉ dành cho xe đạp
     escooterOnly: Chỉ xe tay ga điện
-    takeTransit: Sử dụng phương tiện công cộng
     travelPreferences: Sở thích Du lịch
     use: Sử dụng
     useCompanies: Sử dụng các công ty
     walkOnly: Chỉ đi bộ
+  DateTimeSelector:
+    depart: Khởi hành lúc
+    now: Rời đi ngay bây giờ
+    arrive: Đến nơi trước
+    date: Ngày
+    dateTimeSelector: Bộ chọn ngày và giờ
+    time: Giờ
   queryParameters:
     bikeSpeed: Tốc độ xe đạp
-    distanceInMiles: |
-      {miles, number, :: unit/mile unit-width-full-name}
     maxBikeDistance: Xe đạp tối đa
     maxBikeTime: Thời gian đạp xe tối đa
     maxEScooterDistance: Khoảng cách xe tay ga điện tối đa
@@ -38,3 +36,4 @@ otpUi:
     watts250entryLevelEscooter: Xe tay ga dành cho người mới biết chạy (18 km/h)
     watts500robustEscooter: Xe tay ga điện công suất trung bình (30 km/h)
     wheelchair: Ưu tiên các tuyến đường mà xe lăn có thể đi được
+    distanceInMiles: "{miles, number, :: unit/mile unit-width-full-name}\n"

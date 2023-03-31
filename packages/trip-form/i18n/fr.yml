@@ -1,10 +1,10 @@
 otpUi:
   DateTimeSelector:
     arrive: Arrivée
-    date: Date
-    dateTimeSelector: Sélecteur de date et heure
     depart: Départ
     now: Maintenant
+    date: Date
+    dateTimeSelector: Sélecteur de date et heure
     time: Heure
   SettingsSelectorPanel:
     bikeOnly: Vélo uniquement

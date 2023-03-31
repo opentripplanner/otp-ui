@@ -1,9 +1,5 @@
 otpUi:
   AccessLegBody:
-    LegDiagramPreview:
-      elevationChart: Biểu đồ cao độ
-      noElevationData: Không có sẵn dữ liệu độ cao.
-      toggleElevationChart: Bật biểu đồ độ cao
     RentedVehicleSubheader:
       pickupRental: Nhận {vehicleType} {company} {vehicleName}
       resumeRentalRide: Tiếp tục sử dụng cho thuê
@@ -14,12 +10,24 @@ otpUi:
         escooter: xe tay ga điện
         vehicle: xe
       walkVehicle: Đẩy phương tiện giao thông dọc theo {place}
+    summaryMode:
+      bikeshare: Xe đạp thuê
+      carDrive: Lái xe
+      walk: Đi bộ
+      carHail: Ngồi trên xe
+      escooter: Đi xe tay ga điện
+      bike: Xe đạp
     TncLeg:
       bookRide: Đặt trước một chuyến đi
       bookRideLater: Chờ cho đến {timeMillis, time, short} để đặt chỗ
       estimatedCost: "Chi phí ước tính: {minFare} - {maxFare}"
-      estimatedTravelTime: "Thời gian di chuyển ước tính: {duration} (không tính đến giao thông)"
+      estimatedTravelTime: "Thời gian di chuyển ước tính: {duration} (không tính đến\
+        \ giao thông)"
       waitForPickup: "Chờ{minutes, plural, =0 {} other { # phút}} cho {company} đón"
+    LegDiagramPreview:
+      elevationChart: Biểu đồ cao độ
+      noElevationData: Không có sẵn dữ liệu độ cao.
+      toggleElevationChart: Bật biểu đồ độ cao
     mapillaryTooltip: Hiển thị hình ảnh đường phố tại vị trí này
     step:
       circleClockwise: Đi theo vòng tròn theo chiều kim đồng hồ
@@ -34,8 +42,6 @@ otpUi:
       uTurnLeft: Quay mặt bên trái
       uTurnRight: Quay mặt bên phải
     stepDepart: Đi về hướng {heading} trên đường {street}
-    stepElevator: Đi thang máy đến {street}
-    stepGeneric: "{step} trên đường {street}"
     stepHeading:
       east: đông
       north: bắc
@@ -45,15 +51,8 @@ otpUi:
       southeast: đông nam
       southwest: tây nam
       west: tây
-    summary: "{mode} đến {place}"
+    stepGeneric: "{step} trên đường {street}"
     summaryAndDistance: "{mode} {distance} đến {place}"
-    summaryMode:
-      bike: Xe đạp
-      bikeshare: Xe đạp thuê
-      carDrive: Lái xe
-      carHail: Ngồi trên xe
-      escooter: Đi xe tay ga điện
-      walk: Đi bộ
     unnamedPath: Con đường không tên
     unnamedRoad: Con đường không tên
     vehicleTitle: "{vehicleType} {company}"
@@ -61,11 +60,14 @@ otpUi:
       bike: Xe đạp
       bikeshare: Xe đạp thuê
       car: Xe hơi
-      escooter: Xe tay ga điện
       vehicle: Xe
+      escooter: Xe tay ga điện
+    stepElevator: Đi thang máy đến {street}
+    summary: "{mode} đến {place}"
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# giờ }}{minutes} phút"
+    viewOnMap: Xem trên bản đồ
     flexAdvanceNotice: " ít nhất trước {leadDays} ngày"
     flexCallAhead: gọi điện trước khi đi
     flexCallNumber: gọi {phoneNumber}
@@ -77,25 +79,25 @@ otpUi:
       car: bằng xe hơi
       escooter: bằng xe tay ga điện tử
       walk: bằng cách đi bộ
-    viewOnMap: Xem trên bản đồ
   TransitLegBody:
+    agencyExternalLink: "{agencyName} (Liên kết bên ngoài)"
     AlertsBody:
       effectiveDate: Có hiệu lực kể từ {dateTime, date, long}
       effectiveTimeAndDate: Có hiệu lực kể từ {dateTime, time, short}, {day}
       today: Hôm nay
       tomorrow: Ngày mai
       yesterday: Hôm qua
-    agencyExternalLink: "{agencyName} (Liên kết bên ngoài)"
     alertsHeader: "{alertCount} cảnh báo"
-    arriveAt: Đến {place}
+    arriveAt: "Đến {place}"
     disembarkAt: Xuống xe ở {legDestination}
     expandDetails: (Mở rộng chi tiết)
     fare: "Giá vé: {fare}"
-    fromLocation: Từ {location}
+    fromLocation: "Từ {location}"
     legDetails: Chi tiết sân khấu
     operatedBy: Dịch vụ được điều hành bởi {agencyLink}
     ride: Đi đường
-    rideDurationAndStops: "Đi {duration}{numStops, plural, =1 {} other { / # điểm dừng}}"
+    rideDurationAndStops: "Đi {duration}{numStops, plural, =1 {} other { / # điểm\
+      \ dừng}}"
     routeDescription: "{routeName} <toPrefix>hướng</toPrefix> {headsign}"
     stopId: Điểm dừng số {stopId}
     stopIdBasic: Điểm dừng số {stopId}

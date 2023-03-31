@@ -1,41 +1,31 @@
 otpUi:
   AccessLegBody:
-    LegDiagramPreview:
-      elevationChart: 고도 차트
-      noElevationData: 사용 가능한 고도 데이터가 없습니다.
-      toggleElevationChart: 고도 차트 토글
     RentedVehicleSubheader:
       pickupRental: "{company} {vehicleType} {vehicleName} 픽업"
       resumeRentalRide: 대여 서비스 이용 계속하기
       vehicleType:
+        vehicle: 차량
         bike: 자전거
         bikeshare: 자전거
         car: 자동차
         escooter: 전기 스쿠터
-        vehicle: 차량
       walkVehicle: "{place}을(를) 따라 차량을 움직이기"
-    TncLeg:
-      bookRide: 승차 예약
-      bookRideLater: 예약하려면 {timeMillis, time, short}까지 대기
-      estimatedCost: "예상 비용: {minFare} - {maxFare}"
-      estimatedTravelTime: "예상 이동 시간: {duration} (교통사정을 고려하지 않음)"
-      waitForPickup: "{company} 승차까지 {minutes, plural, =0 {} other { # 분} } 대기"
-    mapillaryTooltip: 이 위치의 거리 이미지 보기
+    LegDiagramPreview:
+      elevationChart: 고도 차트
+      noElevationData: 사용 가능한 고도 데이터가 없습니다.
+      toggleElevationChart: 고도 차트 토글
     step:
       circleClockwise: 시계 방향으로 원을 따라갑니다
-      circleCounterClockwise: 시계 반대 방향으로 서클을 따르십시오
-      continue: 계속
       hardLeft: 날카로운 왼쪽
       hardRight: 날카로운 권리
-      left: 왼쪽
       right: 오른
       slightlyLeft: 약간 왼쪽
-      slightlyRight: 약간 오른쪽
       uTurnLeft: 유턴
       uTurnRight: 유턴
-    stepDepart: "{street} 에서 {heading}으로 향하다"
-    stepElevator: 엘리베이터를 타고 {street} 이동
-    stepGeneric: "{street} 에 {step}"
+      continue: 계속
+      circleCounterClockwise: 시계 반대 방향으로 서클을 따르십시오
+      left: 왼쪽
+      slightlyRight: 약간 오른쪽
     stepHeading:
       east: 동쪽
       north: 북쪽
@@ -45,30 +35,41 @@ otpUi:
       southeast: 남동쪽
       southwest: 남서쪽
       west: 서쪽
-    summary: "{place} 에 {mode}"
-    summaryAndDistance: "{place} 에 {mode} {distance}"
+    stepGeneric: "{street} 에 {step}"
     summaryMode:
-      bike: 자전거
       bikeshare: 공유자전거
       carDrive: 운전
+      walk: 걷기
+      bike: 자전거
       carHail: 타다
       escooter: 타다
-      walk: 걷기
+    TncLeg:
+      bookRide: 승차 예약
+      bookRideLater: 예약하려면 {timeMillis, time, short}까지 대기
+      estimatedCost: "예상 비용: {minFare} - {maxFare}"
+      estimatedTravelTime: "예상 이동 시간: {duration} (교통사정을 고려하지 않음)"
+      waitForPickup: "{company} 승차까지 {minutes, plural, =0 {} other { # 분} } 대기"
     unnamedPath: 이름 없는 경로
-    unnamedRoad: 이름 없는 길
-    vehicleTitle: "{company} {vehicleType}"
     vehicleType:
+      vehicle: 차량
       bike: 자전거
       bikeshare: 자전거
       car: 자동차
       escooter: 전기 스쿠터
-      vehicle: 차량
+    unnamedRoad: 이름 없는 길
+    vehicleTitle: "{company} {vehicleType}"
+    stepDepart: "{street} 에서 {heading}으로 향하다"
+    stepElevator: 엘리베이터를 타고 {street} 이동
+    summaryAndDistance: "{place} 에 {mode} {distance}"
+    mapillaryTooltip: 이 위치의 거리 이미지 보기
+    summary: "{place} 에 {mode}"
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# 시간 }}{minutes} 분"
     flexAdvanceNotice: " 최소 {leadDays}일 전에"
     flexCallAhead: 미리 전화
     flexCallNumber: "{phoneNumber}에 전화"
+    viewOnMap: 지도 보기
     flexPickupMessage: 이 경로를 이용하려면 {advanceNotice}{action}야 합니다.
     stayOnBoard: "{place}에서는 그대로 타고 계십시오"
     travelBy: "{mode} 여행하다"
@@ -77,15 +78,14 @@ otpUi:
       car: 차로
       escooter: 전자 스쿠터로
       walk: 걸어서
-    viewOnMap: 지도 보기
   TransitLegBody:
+    agencyExternalLink: "{agencyName} (외부 링크)"
     AlertsBody:
-      effectiveDate: "{dateTime, date, long}자로 유효"
-      effectiveTimeAndDate: "{day} {dateTime, time, short}자로 유효"
       today: 오늘
       tomorrow: 내일
       yesterday: 어제
-    agencyExternalLink: "{agencyName} (외부 링크)"
+      effectiveDate: "{dateTime, date, long}자로 유효"
+      effectiveTimeAndDate: "{day} {dateTime, time, short}자로 유효"
     alertsHeader: "{alertCount}개의 알림"
     arriveAt: "{place} 시장에 도착하다"
     disembarkAt: "{legDestination} 에서 하차"
@@ -93,7 +93,7 @@ otpUi:
     fare: "운임: {fare}"
     fromLocation: "{location}에서"
     legDetails: 다리 세부 사항
-    operatedBy: "{agencyLink}에서 운영하는 서비스"
+    operatedBy: '{agencyLink}에서 운영하는 서비스'
     ride: 타다
     rideDurationAndStops: "승차 {duration}{numStops, plural, =1 {} other { / # 정거장}}"
     routeDescription: "{routeName} <toPrefix>에</toPrefix> {headsign}"

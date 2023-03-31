@@ -1,17 +1,14 @@
 otpUi:
   PrintableItinerary:
     TncLeg:
-      estimatedTravelTime: >-
-        Không tính đến giao thông: <strong>{duration}</strong> (không tính đến
-        giao thông)
       estimatedWaitTime: "Thời gian chờ ước tính để đón: <strong>{duration}</strong>"
       header: <strong>Đi {company}</strong> đến <strong>{place}</strong>
+      estimatedTravelTime: "Không tính đến giao thông: <strong>{duration}</strong>\
+        \ (không tính đến giao thông)"
     TransitLeg:
-      alight: >-
-        Xuống xe ở <strong>{place}</strong> ({stopId}) lúc <strong>{time, time,
-        short}</strong>
-      board: >-
-        Lên xe ở <strong>{place}</strong> ({stopId}) lúc <strong>{time, time,
-        short}</strong>
       continuesAs: Tiếp tục là {routeDescription}
+      alight: Xuống xe ở <strong>{place}</strong> ({stopId}) lúc <strong>{time, time,
+        short}</strong>
+      board: Lên xe ở <strong>{place}</strong> ({stopId}) lúc <strong>{time, time,
+        short}</strong>
     depart: <strong>Khởi hành</strong> từ <strong>{place}</strong>

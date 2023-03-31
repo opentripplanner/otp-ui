@@ -4,6 +4,6 @@ otpUi:
     availableDocks: "Chỗ dựng xe đạp có sẵn: {value}"
     floatingBike: "Xe đạp để tự do: {name}"
     floatingCar: "{company} {name}"
-    floatingEScooter: Xe tay ga điện {name}
-    stopId: Điểm dừng số {stopId}
+    floatingEScooter: "Xe tay ga điện {name}"
     stopViewer: Xem điểm dừng
+    stopId: "Điểm dừng số {stopId}"

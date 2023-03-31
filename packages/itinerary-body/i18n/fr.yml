@@ -70,7 +70,8 @@ otpUi:
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# h }}{minutes} min"
-    flexAdvanceNotice: " au moins {leadDays, plural, one {# jour} other {# jours}} à l'avance"
+    flexAdvanceNotice: " au moins {leadDays, plural, one {# jour} other {# jours}}\
+      \ à l'avance"
     flexCallAhead: réserver au préalable
     flexCallNumber: réserver au {phoneNumber}
     flexPickupMessage: Pour emprunter cette ligne, vous devez {action}{advanceNotice}.
@@ -99,7 +100,8 @@ otpUi:
     legDetails: Détails de l'étape
     operatedBy: Exploité par {agencyLink}
     ride: Prenez la ligne
-    rideDurationAndStops: "Trajet : {duration}{numStops, plural, =1 {} other { / # arrêts}}"
+    rideDurationAndStops: "Trajet : {duration}{numStops, plural, =1 {} other { / #\
+      \ arrêts}}"
     routeDescription: "{routeName} <toPrefix>vers</toPrefix> {headsign}"
     stopId: Arrêt n°{stopId}
     stopIdBasic: Arrêt n°{stopId}
