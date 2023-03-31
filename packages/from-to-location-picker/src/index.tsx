@@ -94,5 +94,5 @@ const FromToLocationPicker = ({
 
 export default FromToLocationPicker;
 
-// Rename styled components for export
+// Rename styled components for export.
 export { S as Styled };

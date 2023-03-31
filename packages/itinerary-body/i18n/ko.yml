@@ -2,18 +2,18 @@ otpUi:
   AccessLegBody:
     RentedVehicleSubheader:
       pickupRental: "{company} {vehicleType} {vehicleName} 픽업"
-      resumeRentalRide: 임대료를 계속 사용하십시오
+      resumeRentalRide: 대여 서비스 이용 계속하기
       vehicleType:
         vehicle: 차량
         bike: 자전거
         bikeshare: 자전거
         car: 자동차
         escooter: 전기 스쿠터
-      walkVehicle: "{place} 를 따라 차량를 밀다"
+      walkVehicle: "{place}을(를) 따라 차량을 움직이기"
     LegDiagramPreview:
       elevationChart: 고도 차트
       noElevationData: 사용 가능한 고도 데이터가 없습니다.
-      toggleElevationChart: 토글 고도 차트
+      toggleElevationChart: 고도 차트 토글
     step:
       circleClockwise: 시계 방향으로 원을 따라갑니다
       hardLeft: 날카로운 왼쪽
@@ -37,18 +37,18 @@ otpUi:
       west: 서쪽
     stepGeneric: "{street} 에 {step}"
     summaryMode:
-      bikeshare: 자전거 공유
-      carDrive: 운전하다
-      walk: 걷다
+      bikeshare: 공유자전거
+      carDrive: 운전
+      walk: 걷기
       bike: 자전거
       carHail: 타다
       escooter: 타다
     TncLeg:
-      bookRide: 차량을 예약하다
-      bookRideLater: 예약은 {timeMillis, time, short} 까지 기다려주세요
-      estimatedCost: "예상 비용은 : {minFare} - {maxFare}"
-      estimatedTravelTime: "예상 여행 시간: {duration} (트래픽을 고려하지 않음)"
-      waitForPickup: "{company} 픽업 {minutes, plural, =0 {} other { # 분} } 대기"
+      bookRide: 승차 예약
+      bookRideLater: 예약하려면 {timeMillis, time, short}까지 대기
+      estimatedCost: "예상 비용: {minFare} - {maxFare}"
+      estimatedTravelTime: "예상 이동 시간: {duration} (교통사정을 고려하지 않음)"
+      waitForPickup: "{company} 승차까지 {minutes, plural, =0 {} other { # 분} } 대기"
     unnamedPath: 이름 없는 경로
     vehicleType:
       vehicle: 차량
@@ -61,7 +61,7 @@ otpUi:
     stepDepart: "{street} 에서 {heading}으로 향하다"
     stepElevator: 엘리베이터를 타고 {street} 이동
     summaryAndDistance: "{place} 에 {mode} {distance}"
-    mapillaryTooltip: 이 위치에 거리 이미지를 보여줍니다
+    mapillaryTooltip: 이 위치의 거리 이미지 보기
     summary: "{place} 에 {mode}"
   ItineraryBody:
     common:
@@ -69,9 +69,9 @@ otpUi:
     flexAdvanceNotice: " 최소 {leadDays}일 전에"
     flexCallAhead: 미리 전화
     flexCallNumber: "{phoneNumber}에 전화"
-    viewOnMap: 지도에서
+    viewOnMap: 지도 보기
     flexPickupMessage: 이 경로를 이용하려면 {advanceNotice}{action}야 합니다.
-    stayOnBoard: "{place} 에 도착하면 현재 버스에 머무르십시오."
+    stayOnBoard: "{place}에서는 그대로 타고 계십시오"
     travelBy: "{mode} 여행하다"
     travelByMode:
       bike: 자전거로
@@ -84,22 +84,22 @@ otpUi:
       today: 오늘
       tomorrow: 내일
       yesterday: 어제
-      effectiveDate: "{dateTime, date, long}부터 시행"
-      effectiveTimeAndDate: "{day} {dateTime, time, short}부터 시행"
+      effectiveDate: "{dateTime, date, long}자로 유효"
+      effectiveTimeAndDate: "{day} {dateTime, time, short}자로 유효"
     alertsHeader: "{alertCount}개의 알림"
     arriveAt: "{place} 시장에 도착하다"
     disembarkAt: "{legDestination} 에서 하차"
     expandDetails: (세부정보 펼치기)
-    fare: "요금: {fare}"
+    fare: "운임: {fare}"
     fromLocation: "{location}에서"
     legDetails: 다리 세부 사항
-    operatedBy: 운영하는 서비스 {agencyLink}
+    operatedBy: '{agencyLink}에서 운영하는 서비스'
     ride: 타다
     rideDurationAndStops: "승차 {duration}{numStops, plural, =1 {} other { / # 정거장}}"
     routeDescription: "{routeName} <toPrefix>에</toPrefix> {headsign}"
     stopId: 정류장 ID {stopId}
     stopIdBasic: ID {stopId}
     stopViewer: 정류장 뷰어
-    tripViewer: 여행 뷰어
-    typicalWait: "일반적인 대기 시간: {waitTime}"
+    tripViewer: 트립 뷰어
+    typicalWait: "일반 대기 시간: {waitTime}"
     zoomToLeg: 지도에서 다리 확대

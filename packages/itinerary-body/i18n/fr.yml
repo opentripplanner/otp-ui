@@ -1,19 +1,9 @@
-# Default messages for the ItineraryBody component and subcomponents.
-# To use from a react-intl application:
-# - merge the content of this file into the messages object
-#   that has your other localized strings,
-# - flatten the ids, i.e. convert a structure such as
-#      otpUi > LocationField > stations
-#   into "otpUi.TripDetails.stations" (see story for an example),
-# - pass the resulting object to the messages prop of IntlProvider.
-
 otpUi:
   AccessLegBody:
     LegDiagramPreview:
       elevationChart: Dénivelés
       noElevationData: Aucune information sur les dénivelés.
       toggleElevationChart: Afficher/masquer les dénivelés
-    mapillaryTooltip: Afficher la vue panoramique à cet endroit
     RentedVehicleSubheader:
       pickupRental: Récupérez {vehicleType} {company} {vehicleName}
       resumeRentalRide: Continuez avec le véhicule loué
@@ -24,6 +14,17 @@ otpUi:
         escooter: la trottinette
         vehicle: le véhicule
       walkVehicle: Emmenez à pied le véhicule le long de {place}
+    TncLeg:
+      bookRide: Réserver
+      bookRideLater: Attendez jusqu'à {timeMillis, time, short} avant de réserver
+      estimatedCost: "Coût estimé : {minFare} - {maxFare}"
+      estimatedTravelTime: >-
+        Temps de trajet estimé : {duration} (ne tient pas compte de la
+        circulation)
+      waitForPickup: >-
+        Attendez votre chauffeur {company}{minutes, plural, =0 {} other { #
+        minutes}}
+    mapillaryTooltip: Afficher la vue panoramique à cet endroit
     step:
       circleClockwise: Prenez le rond-point par la gauche
       circleCounterClockwise: Prenez le rond-point par la droite
@@ -37,6 +38,8 @@ otpUi:
       uTurnLeft: Demi-tour par la gauche
       uTurnRight: Demi-tour par la droite
     stepDepart: Dirigez-vous vers {heading} sur {street}
+    stepElevator: Prenez l'ascenseur jusqu'à {street}
+    stepGeneric: "{step} sur {street}"
     stepHeading:
       east: l'est
       north: le nord
@@ -46,18 +49,8 @@ otpUi:
       southeast: le sud-est
       southwest: le sud-ouest
       west: l'ouest
-    # TODO: elevator destinations (e.g. "3rd floor") may need to be localized.
-    stepElevator: Prenez l'ascenseur jusqu'à {street}
-    stepGeneric: "{step} sur {street}"
-    # In the summary below, only include access mode actions (ride, walk...).
-    # Note de traduction: nous utilisons le format
-    #   "Marche/velo/etc - 2,5 miles vers 10th Street" qui peut paraître un peu "robotique".
-    # Une formulation du type "2,5 miles à pied/en voiture/etc" est plus couramment "parlée"
-    # mais donne lieu à des expressions bizarres comme "230 pieds à pied vers 10th Street"
-    # à cause de l'utilisation d'unités impériales.
     summary: "{mode} vers {place}"
     summaryAndDistance: "{mode} - {distance} vers {place}"
-    # The summary modes below only include access mode actions (ride, walk...).
     summaryMode:
       bike: Vélo
       bikeshare: Vélo partagé
@@ -65,16 +58,6 @@ otpUi:
       carHail: Course en voiture
       escooter: Trottinette
       walk: Marche
-    TncLeg:
-      bookRide: Réserver
-      bookRideLater: Attendez jusqu'à {timeMillis, time, short} avant de réserver
-      estimatedCost: "Coût estimé : {minFare} - {maxFare}"
-      estimatedTravelTime:
-        "Temps de trajet estimé : {duration} (ne tient pas compte\
-        \ de la circulation)"
-      waitForPickup:
-        "Attendez votre chauffeur {company}{minutes, plural, =0 {} other\
-        \ { # minutes}}"
     unnamedPath: Chemin sans nom
     unnamedRoad: Route sans nom
     vehicleTitle: "{vehicleType} {company}"
@@ -86,9 +69,8 @@ otpUi:
       vehicle: Véhicule
   ItineraryBody:
     common:
-      durationShort: "{hours, plural, =0 {} other {# h }}{minutes} mn"
-    flexAdvanceNotice:
-      " au moins {leadDays, plural, one {# jour} other {# jours}}\
+      durationShort: "{hours, plural, =0 {} other {# h }}{minutes} min"
+    flexAdvanceNotice: " au moins {leadDays, plural, one {# jour} other {# jours}}\
       \ à l'avance"
     flexCallAhead: réserver au préalable
     flexCallNumber: réserver au {phoneNumber}
@@ -96,30 +78,29 @@ otpUi:
     stayOnBoard: Restez à bord à {place}
     travelBy: Trajet {mode}
     travelByMode:
+      bike: en vélo
       car: en voiture
       escooter: en trottinette
       walk: à pied
-      bike: en vélo
     viewOnMap: Afficher sur le plan
   TransitLegBody:
-    agencyExternalLink: "{agencyName} (Lien externe)"
     AlertsBody:
       effectiveDate: À partir du {dateTime, date, long}
       effectiveTimeAndDate: À partir de {dateTime, time, short}, {day}
       today: aujourd'hui
       tomorrow: demain
       yesterday: hier
+    agencyExternalLink: "{agencyName} (Lien externe)"
     alertsHeader: "{alertCount, plural, =0 {# alerte} =1 {# alerte} other {# alertes}}"
-    arriveAt: "Arrivée à {place}"
+    arriveAt: Arrivée à {place}
     disembarkAt: Descendez à {legDestination}
     expandDetails: (Plus de détails)
     fare: "Tarif : {fare}"
-    fromLocation: "de {location}"
+    fromLocation: de {location}
     legDetails: Détails de l'étape
     operatedBy: Exploité par {agencyLink}
     ride: Prenez la ligne
-    rideDurationAndStops:
-      "Trajet : {duration}{numStops, plural, =1 {} other { / #\
+    rideDurationAndStops: "Trajet : {duration}{numStops, plural, =1 {} other { / #\
       \ arrêts}}"
     routeDescription: "{routeName} <toPrefix>vers</toPrefix> {headsign}"
     stopId: Arrêt n°{stopId}

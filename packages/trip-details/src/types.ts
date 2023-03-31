@@ -102,7 +102,7 @@ export interface TripDetailsProps {
    */
   itinerary: Itinerary;
   /**
-   * Object containing the CO2 config.
+   * Object containing the CO₂ config.
    */
   co2Config?: CO2ConfigType;
 }
