@@ -21,6 +21,9 @@ export const defaultMessages: Record<string, string> = flatten(
 const SettingsPanel = styled.fieldset`
   border: none;
   pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 
   legend {
     font-size: 1.5em;

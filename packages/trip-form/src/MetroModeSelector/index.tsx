@@ -81,7 +81,7 @@ const ModeButtonWrapper = styled.span<{
     background: #eee;
     border-color: ${props => props.activeHoverColor || defaultActiveHoverColor};
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05),
-      0 4px 10px rgba(0, 123, 255, 0.25);
+      0 4px 15px rgba(14, 95, 170, 0.15);
   }
 
   & > input {
@@ -158,11 +158,11 @@ const HoverPanel = styled.div`
 const HoverInnerContainer = styled.div`
   background: #fff;
   border-radius: 4px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(0, 123, 255, 0.25);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05), 0 4px 20px rgba(14, 95, 170, 0.15);
   color: #2e2e2e;
   font-size: 90%;
   font-weight: bold;
-  padding: 5px;
+  padding: 15px;
   pointer-events: none;
 `;
 
