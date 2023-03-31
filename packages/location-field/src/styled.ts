@@ -109,11 +109,18 @@ export const MenuGroupHeader = styled(MenuGroupMisc).attrs({
   role: "heading"
 })``;
 
-export const MenuItemLi = styled.li<{ disabled?: boolean }>`
+export const MenuItemLi = styled.li`
   &:hover {
-    cursor: ${props => (props.disabled ? "default" : "pointer")};
     /* TODO: adjust highlight color based on props.color? */
-    background-color: ${props => !props.disabled && "#f5f5f5"};
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }
+
+  /* For disabled (aria-hidden) elements,
+     show an arrow pointer (no I-beam) and don't highlight the background. */
+  &[aria-hidden="true"]:hover {
+    background-color: unset;
+    cursor: default;
   }
 `;
 
