@@ -34,11 +34,13 @@ export const MenuItem = ({
   active = false,
   children,
   disabled = false,
+  id,
   onClick = null
 }: {
   active?: boolean;
   children: React.ReactNode;
   disabled?: boolean;
+  id?: string;
   onClick?: () => void;
 }): React.ReactElement => (
   <S.MenuItemLi
@@ -49,6 +51,7 @@ export const MenuItem = ({
   >
     <S.MenuItemA
       active={active}
+      id={id}
       onClick={disabled ? null : onClick}
       role="option"
       tabIndex={-1}
