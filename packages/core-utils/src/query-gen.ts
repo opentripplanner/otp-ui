@@ -8,6 +8,20 @@ import {
 
 import PlanQuery from "./planQuery.graphql";
 
+type InputBanned = {
+  routes?: string;
+  agencies?: string;
+  trips?: string;
+  stops?: string;
+  stopsHard?: string;
+};
+
+type InputPreferred = {
+  routes?: string;
+  agencies?: string;
+  unpreferredCost?: string;
+};
+
 type OTPQueryParams = {
   arriveBy: boolean;
   date?: string;
@@ -17,6 +31,8 @@ type OTPQueryParams = {
   time?: string;
   numItineraries?: number;
   to: LonLatOutput & { name?: string };
+  banned?: InputBanned;
+  preferred?: InputPreferred;
 };
 
 type GraphQLQuery = {
@@ -181,11 +197,13 @@ export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
 
 export function generateOtp2Query({
   arriveBy,
+  banned,
   date,
   from,
   modes,
   modeSettings,
   numItineraries,
+  preferred,
   time,
   to
 }: OTPQueryParams): GraphQLQuery {
@@ -209,12 +227,14 @@ export function generateOtp2Query({
     query: print(PlanQuery),
     variables: {
       arriveBy,
+      banned,
       bikeReluctance,
       carReluctance,
       date,
       fromPlace: `${from.name}::${from.lat},${from.lon}}`,
       modes,
       numItineraries,
+      preferred,
       time,
       toPlace: `${to.name}::${to.lat},${to.lon}}`,
       walkReluctance,
