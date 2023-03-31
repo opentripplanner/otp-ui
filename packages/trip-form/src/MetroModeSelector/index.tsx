@@ -46,16 +46,20 @@ const ModeBar = styled.fieldset`
   }
 `;
 
-const accentColor = "#084c8d";
-const activeHoverColor = "#0e5faa";
+const defaultAccentColor = "#084c8d";
+const defaultActiveHoverColor = "#0e5faa";
 
-const ModeButtonWrapper = styled.span<{ fillModeIcons?: boolean }>`
+const ModeButtonWrapper = styled.span<{
+  fillModeIcons?: boolean;
+  accentColor?: string;
+  activeHoverColor?: string;
+}>`
   position: relative;
 
   & > label {
     background: #fff;
     border-radius: 5px;
-    border: 2px solid ${accentColor};
+    border: 2px solid ${props => props.accentColor || defaultAccentColor};
     cursor: pointer;
     display: inline-flex;
     padding: 0.75rem 0.75rem;
@@ -75,7 +79,7 @@ const ModeButtonWrapper = styled.span<{ fillModeIcons?: boolean }>`
   }
   & > label:hover {
     background: #eee;
-    border-color: ${activeHoverColor};
+    border-color: ${props => props.activeHoverColor || defaultActiveHoverColor};
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05),
       0 4px 10px rgba(0, 123, 255, 0.25);
   }
@@ -106,7 +110,7 @@ const ModeButtonWrapper = styled.span<{ fillModeIcons?: boolean }>`
   }
 
   & > input:checked + label {
-    background: ${accentColor};
+    background: ${defaultAccentColor};
   }
 
   & > input:checked + label,
@@ -125,11 +129,11 @@ const ModeButtonWrapper = styled.span<{ fillModeIcons?: boolean }>`
   }
 
   & > input:checked + label:hover {
-    background: ${activeHoverColor};
+    background: ${props => props.activeHoverColor || defaultActiveHoverColor};
   }
 
   & > label > svg {
-    color: ${accentColor};
+    color: ${props => props.accentColor || defaultAccentColor};
     display: inline-block;
     height: 32px;
     margin: auto;
@@ -174,6 +178,10 @@ const Arrow = styled.div`
 `;
 
 interface ModeButtonProps {
+  // Optional properties for styling
+  accentColor?: string;
+  activeHoverColor?: string;
+
   fillModeIcons?: boolean;
   id: string;
   itemWithKeyboard?: string;
@@ -185,6 +193,8 @@ interface ModeButtonProps {
 }
 
 function ModeButton({
+  accentColor,
+  activeHoverColor,
   fillModeIcons,
   id,
   itemWithKeyboard,
@@ -263,7 +273,11 @@ function ModeButton({
   );
 
   return (
-    <ModeButtonWrapper fillModeIcons={fillModeIcons}>
+    <ModeButtonWrapper
+      accentColor={accentColor}
+      activeHoverColor={activeHoverColor}
+      fillModeIcons={fillModeIcons}
+    >
       {/* Basic checkbox that states whether a mode is selected. */}
       <input
         aria-label={modeButton.label}
@@ -348,6 +362,14 @@ function ModeButton({
 }
 interface Props {
   /**
+   * Accent color override
+   */
+  accentColor?: string;
+  /**
+   * Hover color override
+   */
+  activeHoverColor?: string;
+  /**
    * Apply fill color to the mode icons when the button is selected. (default true)
    */
   fillModeIcons?: boolean;
@@ -372,6 +394,8 @@ interface Props {
 }
 
 export default function ModeSelector({
+  accentColor,
+  activeHoverColor,
   fillModeIcons,
   label,
   modeButtons = [],
@@ -387,6 +411,8 @@ export default function ModeSelector({
       <legend>{label}</legend>
       {modeButtons.map(combination => (
         <ModeButton
+          accentColor={accentColor}
+          activeHoverColor={activeHoverColor}
           fillModeIcons={fillModeIcons}
           id={combination.key}
           itemWithKeyboard={itemWithKeyboard}
