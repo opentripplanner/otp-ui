@@ -49,6 +49,10 @@ const ModeBar = styled.fieldset`
 const defaultAccentColor = "#084c8d";
 const defaultActiveHoverColor = "#0e5faa";
 
+const boxShadowCss = css`
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05), 0 4px 20px rgba(14, 95, 170, 0.15);
+`;
+
 const ModeButtonWrapper = styled.span<{
   fillModeIcons?: boolean;
   accentColor?: string;
@@ -80,8 +84,7 @@ const ModeButtonWrapper = styled.span<{
   & > label:hover {
     background: #eee;
     border-color: ${props => props.activeHoverColor || defaultActiveHoverColor};
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05),
-      0 4px 15px rgba(14, 95, 170, 0.15);
+    ${boxShadowCss}
   }
 
   & > input {
@@ -158,23 +161,22 @@ const HoverPanel = styled.div`
 const HoverInnerContainer = styled.div`
   background: #fff;
   border-radius: 4px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05), 0 4px 20px rgba(14, 95, 170, 0.15);
   color: #2e2e2e;
   font-size: 90%;
   font-weight: bold;
   padding: 15px;
   pointer-events: none;
+  ${boxShadowCss}
 `;
 
 const Arrow = styled.div`
   background: #fff;
-  box-shadow: 3px -2px 3px rgba(0, 0, 0, 0.06),
-    2px -2px 5px -3px rgba(0, 123, 255, 0.25);
   height: 10px;
   margin-top: -5px;
   position: absolute;
   transform: rotate(-45deg);
   width: 10px;
+  ${boxShadowCss}
 `;
 
 interface ModeButtonProps {
