@@ -8,26 +8,24 @@ otpUi:
     time: Time
   ModeSelector:
     labels:
-      BICYCLE: Bike
-      CAR: Drive
-      RENT: Rent
-      TRANSIT: Transit
-      WALK: Walk
+      bicycle: Bike
+      car: Drive
+      rent: Rent
+      transit: Transit
+      walk: Walk
     settings:
       addBus-label: Bus
       addRail-label: Train
       addSubway-label: Subway
       addTram-label: Tram
       allowBikeRental-label: Bike Rental
-      bikeTolerance-label: Bike Tolerance
+      bikeTolerance-label: Biking Tolerance
       bikeTolerance-labelHigh: More Biking
       bikeTolerance-labelLow: Less Biking
-      busColor-label: Bus Color
-      busColor-options-blue: Blue
-      carTolerance-label: Drive Tolerance
-      carTolerance-labelHigh: Less Driving
-      carTolerance-labelLow: More Driving
-      walkTolerance-label: Walk Tolerance
+      carTolerance-label: Driving Tolerance
+      carTolerance-labelHigh: More Driving
+      carTolerance-labelLow: Less Driving
+      walkTolerance-label: Walking Tolerance
       walkTolerance-labelHigh: More Walking
       walkTolerance-labelLow: Less Walking
       wheelchair-label: Accessible Routing

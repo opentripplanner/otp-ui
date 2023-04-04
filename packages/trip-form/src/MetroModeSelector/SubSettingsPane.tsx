@@ -21,6 +21,9 @@ export const defaultMessages: Record<string, string> = flatten(
 const SettingsPanel = styled.fieldset`
   border: none;
   pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 
   legend {
     font-size: 1.5em;
@@ -31,6 +34,19 @@ const SettingsPanel = styled.fieldset`
 
 const SubSettingsCheckbox = styled(CheckboxSelector)`
   margin-left: 4px;
+  input {
+    vertical-align: middle;
+  }
+`;
+
+const FormLabelIconWrapper = styled.span`
+  svg {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+  }
 `;
 
 const ModeSettingRenderer = ({
@@ -43,16 +59,25 @@ const ModeSettingRenderer = ({
   const intl = useIntl();
   const label = intl.formatMessage({
     defaultMessage:
-      defaultMessages[`otpUi.ModeSelector.settings.${setting.key}-label`],
+      defaultMessages[`otpUi.ModeSelector.settings.${setting.key}-label`] ||
+      setting.label,
     description: `Metro Mode Selector Setting Label (${setting.key})`,
     id: `otpUi.ModeSelector.settings.${setting.key}-label`
   });
+
+  const labelWithIcon = setting.icon ? (
+    <FormLabelIconWrapper>
+      {setting.icon} {label}
+    </FormLabelIconWrapper>
+  ) : (
+    label
+  );
 
   switch (setting.type) {
     case "CHECKBOX":
       return (
         <SubSettingsCheckbox
-          label={label}
+          label={labelWithIcon}
           name={setting.key}
           onChange={onChange}
           value={setting.value}
@@ -61,14 +86,15 @@ const ModeSettingRenderer = ({
     case "DROPDOWN":
       return (
         <DropdownSelector
-          label={label}
+          label={labelWithIcon}
           name={setting.key}
           onChange={onChange}
           options={setting.options.map(o => ({
             ...o,
             text: intl.formatMessage({
               description: `Metro Mode Selector Setting (${setting.key}) Option Label (${o.value})`,
-              id: `otpUi.ModeSelector.settings.${setting.key}-options-${o.value}`
+              id: `otpUi.ModeSelector.settings.${setting.key}-options-${o.value}`,
+              defaultMessage: o.text
             })
           }))}
           value={setting.value}
