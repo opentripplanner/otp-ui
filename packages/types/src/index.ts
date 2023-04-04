@@ -717,6 +717,7 @@ export type SliderOptions = {
 export type CheckboxOptions = {
   addTransportMode?: TransportMode;
   default?: boolean;
+  icon: JSX.Element;
   label: string;
   type: "CHECKBOX";
   value?: boolean;
@@ -724,8 +725,6 @@ export type CheckboxOptions = {
 
 export type ModeSettingBase = {
   applicableMode: string;
-  iconName?: string;
-  icon?: JSX.Element;
   key: string;
 };
 

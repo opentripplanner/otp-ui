@@ -1,13 +1,5 @@
 import { ModeButtonDefinition } from "@opentripplanner/types";
-import {
-  Bus,
-  Car,
-  PersonWalking,
-  Train,
-  TrainSubway,
-  TrainTram
-} from "@styled-icons/fa-solid";
-import { ClassicBike } from "@opentripplanner/icons/lib/classic";
+import { Bicycle, Bus, Car, PersonWalking } from "@styled-icons/fa-solid";
 import React, { ReactElement } from "react";
 import { QueryParamProvider } from "use-query-params";
 import { WindowHistoryAdapter } from "use-query-params/adapters/window";
@@ -16,49 +8,29 @@ import { QueryParamChangeEvent } from "../types";
 
 import modeSettingDefinitions from "../../modeSettings.yml";
 
-const getIcon = (iconName: string): JSX.Element | null => {
-  switch (iconName) {
-    case "bus":
-      return <Bus />;
-    case "tram":
-      return <TrainTram />;
-    case "subway":
-      return <TrainSubway />;
-    case "train":
-      return <Train />;
-    default:
-      return null;
-  }
-};
-
 const defaultModeButtonDefinitions = [
   {
     Icon: Bus,
     iconName: "bus",
-    key: "transit",
-    label: "Bus",
+    key: "TRANSIT",
     modes: [{ mode: "TRANSIT" }]
   },
   {
     Icon: PersonWalking,
     iconName: "person-walking",
-    key: "walk",
-    label: "Walk",
+    key: "WALK",
     modes: [{ mode: "WALK" }]
   },
   {
-    // Using TriMet icon here to illustrate the use of fillModeIcons prop.
-    Icon: ClassicBike,
+    Icon: Bicycle,
     iconName: "bicycle",
-    key: "bicycle",
-    label: "Bike",
+    key: "BICYCLE",
     modes: [{ mode: "BICYCLE" }]
   },
   {
     Icon: Car,
     iconName: "car",
-    key: "car",
-    label: "Car",
+    key: "CAR",
     modes: [{ mode: "CAR" }]
   }
 ];
@@ -69,34 +41,24 @@ const modeSettingDefinitionsWithDropdown = [
     applicableMode: "TRANSIT",
     default: "blue",
     key: "busColor",
-    label: "Bus Color",
-    options: [{ value: "blue", text: "Blue" }],
+    options: [{ value: "blue" }],
     type: "DROPDOWN"
   }
 ];
 
-const initialState = {
-  enabledModeButtons: ["transit"],
-  modeSettingValues: {}
-};
-
 const MetroModeSelectorComponent = ({
-  fillModeIcons,
   modeButtonDefinitions,
   onSetModeSettingValue,
   onToggleModeButton
 }: {
-  fillModeIcons?: boolean;
   modeButtonDefinitions: ModeButtonDefinition[];
   onSetModeSettingValue: (event: QueryParamChangeEvent) => void;
   onToggleModeButton: (key: string) => void;
 }): ReactElement => {
-  const modeSettingDefinitionsWithIconsAndSettings = modeSettingDefinitionsWithDropdown.map(
-    msd => ({
-      ...msd,
-      icon: getIcon(msd.iconName)
-    })
-  );
+  const initialState = {
+    enabledModeButtons: ["TRANSIT"],
+    modeSettingValues: {}
+  };
   const {
     buttonsWithSettings,
     setModeSettingValue,
@@ -104,7 +66,7 @@ const MetroModeSelectorComponent = ({
   } = Core.useModeState(
     modeButtonDefinitions,
     initialState,
-    modeSettingDefinitionsWithIconsAndSettings,
+    modeSettingDefinitionsWithDropdown,
     {
       queryParamState: false
     }
@@ -122,7 +84,6 @@ const MetroModeSelectorComponent = ({
 
   return (
     <Core.MetroModeSelector
-      fillModeIcons={fillModeIcons}
       label="Select a transit mode"
       modeButtons={buttonsWithSettings}
       onSettingsUpdate={setModeSettingValueAction}
@@ -132,7 +93,6 @@ const MetroModeSelectorComponent = ({
 };
 
 const Template = (args: {
-  fillModeIcons?: boolean;
   onSetModeSettingValue: (event: QueryParamChangeEvent) => void;
   onToggleModeButton: (key: string) => void;
 }): ReactElement => (
@@ -147,7 +107,6 @@ const Template = (args: {
 
 export default {
   argTypes: {
-    fillModeIcons: { control: "boolean" },
     onSetModeSettingValue: { action: "set mode setting value" },
     onToggleModeButton: { action: "toggle button" }
   },

@@ -1,42 +1,19 @@
 otpUi:
   DateTimeSelector:
     arrive: 도착 시간
+    date: 날짜
+    dateTimeSelector: 날짜 및 시간 선택기
     depart: 출발 시간
-    now: 지금 출발하기
-  ModeSelector:
-    labels:
-      BICYCLE: 자전거
-      CAR: 운전
-      RENT: 렌탈
-      TRANSIT: 대중 교통
-      WALK: 걷기
-    settings:
-      addBus-label: 버스
-      addRail-label: 기차
-      addSubway-label: 지하철
-      addTram-label: 시가 전차
-      allowBikeRental-label: 공유자전거
-      bikeTolerance-label: 자전거 허용 오차
-      bikeTolerance-labelHigh: 더 많은 자전거 타기
-      bikeTolerance-labelLow: 덜 자전거 타기
-      busColor-label: Bus Color
-      busColor-options-blue: Blue
-      carTolerance-label: 운전 공차
-      carTolerance-labelHigh: 더 많은 운전
-      carTolerance-labelLow: 덜 운전
-      walkTolerance-label: 걷기 내성
-      walkTolerance-labelHigh: 더 많이 걷기
-      walkTolerance-labelLow: 덜 걷기
-      wheelchair-label: 액세스 가능한 라우팅
-    settingsLabel: "{mode} 설정"
+    now: 지금 출발
+    time: 시간
   SettingsSelectorPanel:
-    bikeOnly: 자전거 만
-    escooterOnly: 전동 스쿠터 전용
+    bikeOnly: 자전거 전용
+    escooterOnly: 전동스쿠터 전용
     takeTransit: 대중 교통 이용
-    travelPreferences: 여행 선호도
-    use: 사용하다
-    useCompanies: 회사를 사용합니다
-    walkOnly: 걷기 만
+    travelPreferences: 이동 환경설정
+    use: 이용
+    useCompanies: 회사 이용
+    walkOnly: 도보 전용
   queryParameters:
     bikeSpeed: 자전거 속도
     distanceInMiles: |
@@ -51,13 +28,13 @@ otpUi:
     optimizeBikeSpeed: 속도
     optimizeFor: 최적화
     speedInMilesPerHour: "{mph} MPH"
-    walkReluctance: 걷는 회피
-    walkReluctanceHigh: 더 많은 대중 교통
-    walkReluctanceLow: 더 많은 걷기
-    walkSpeed: 도보 속도
-    watts: 전기 스쿠터 전원
-    watts125kidsHoverboard: 아이의 호버보드 (10 km/h)
-    watts1500powerfulEscooter: 강력한 전기 스쿠터 (40km/h)
-    watts250entryLevelEscooter: 보급형 스쿠터 (18 km/h)
-    watts500robustEscooter: 튼튼한 전기 스쿠터 (30km/h)
-    wheelchair: 휠체어 접근 가능한 경로를 선호합니다
+    walkReluctance: 걷기 제외
+    walkReluctanceHigh: 대중 교통 더 이용
+    walkReluctanceLow: 더 걷기
+    walkSpeed: 걷기 속도
+    watts: 전동스쿠터 전원
+    watts125kidsHoverboard: 어린이용 호버보드 (10 km/h)
+    watts1500powerfulEscooter: 강력한 전동스쿠터 (40 km/h)
+    watts250entryLevelEscooter: 초급형 스쿠터 (18 km/h)
+    watts500robustEscooter: 견고한 전동스쿠터 (30 km/h)
+    wheelchair: 휠체어 접근이 가능한 경로 선호

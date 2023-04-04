@@ -1,34 +1,11 @@
 otpUi:
   DateTimeSelector:
     arrive: 到达
+    date: 日期
+    dateTimeSelector: 日期和时间选择器
     depart: 出发时间
     now: 现在离开
-  ModeSelector:
-    labels:
-      BICYCLE: 自行车
-      CAR: 驾驶
-      RENT: 租
-      TRANSIT: 公共交通
-      WALK: 步行
-    settings:
-      addBus-label: 公共汽车
-      addRail-label: 火车
-      addSubway-label: 地铁
-      addTram-label: 电车
-      allowBikeRental-label: 共享单车
-      bikeTolerance-label: 骑自行车的容忍度
-      bikeTolerance-labelHigh: 更多骑自行车
-      bikeTolerance-labelLow: 少骑自行车
-      busColor-label: Bus Color
-      busColor-options-blue: Blue
-      carTolerance-label: 驾驶容忍度
-      carTolerance-labelHigh: 更多驾驶
-      carTolerance-labelLow: 少开车
-      walkTolerance-label: 步行公差
-      walkTolerance-labelHigh: 多走路
-      walkTolerance-labelLow: 少走路
-      wheelchair-label: 无障碍路由
-    settingsLabel: "{mode} 设置"
+    time: 时间
   SettingsSelectorPanel:
     bikeOnly: 仅限单车
     escooterOnly: 仅限电动滑板车
@@ -56,8 +33,8 @@ otpUi:
     walkReluctanceLow: 更多步行
     walkSpeed: 步行速度
     watts: 电动滑板车动力
-    watts125kidsHoverboard: 孩子的悬浮滑板 (10 km/h)
-    watts1500powerfulEscooter: 强大的电动滑板车 (40km/h)
+    watts125kidsHoverboard: 儿童悬浮滑板 (10 km/h)
+    watts1500powerfulEscooter: 强大的电动滑板车 (40 km/h)
     watts250entryLevelEscooter: 入门级踏板车 (18 km/h)
-    watts500robustEscooter: 坚固的电动滑板车 (30km/h)
+    watts500robustEscooter: 坚固的电动滑板车 (30 km/h)
     wheelchair: 倾向于选择轮椅无障碍路线

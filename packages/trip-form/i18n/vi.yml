@@ -1,34 +1,11 @@
 otpUi:
   DateTimeSelector:
-    arrive: Đến trước
+    arrive: Đến nơi trước
+    date: Ngày
+    dateTimeSelector: Bộ chọn ngày và giờ
     depart: Khởi hành lúc
     now: Rời đi ngay bây giờ
-  ModeSelector:
-    labels:
-      BICYCLE: Xe đạp
-      CAR: Lái xe
-      RENT: Thuê xe
-      TRANSIT: Giao thông công cộng
-      WALK: Đi bộ
-    settings:
-      addBus-label: Xe buýt
-      addRail-label: Xe lửa
-      addSubway-label: Tàu điện
-      addTram-label: Xe điện
-      allowBikeRental-label: Xe đạp thuê
-      bikeTolerance-label: Sức chịu đựng đi xe đạp
-      bikeTolerance-labelHigh: Đi xe đạp nhiều hơn
-      bikeTolerance-labelLow: Ít đi xe đạp
-      busColor-label: Bus Color
-      busColor-options-blue: Blue
-      carTolerance-label: Sức chịu đựng lái xe
-      carTolerance-labelHigh: Lái xe nhiều hơn
-      carTolerance-labelLow: Ít lái xe
-      walkTolerance-label: Sức chịu đựng đi bộ
-      walkTolerance-labelHigh: Đi bộ nhiều hơn
-      walkTolerance-labelLow: Ít đi bộ
-      wheelchair-label: Định tuyến có thể truy cập
-    settingsLabel: Cài đặt {mode}
+    time: Giờ
   SettingsSelectorPanel:
     bikeOnly: Chỉ dành cho xe đạp
     escooterOnly: Chỉ xe tay ga điện
@@ -57,7 +34,7 @@ otpUi:
     walkSpeed: Tốc độ đi bộ
     watts: Công suất xe tay ga điện
     watts125kidsHoverboard: Ván trượt của trẻ em (10 km/h)
-    watts1500powerfulEscooter: Xe tay ga điện mạnh mẽ (40 km/h)
-    watts250entryLevelEscooter: Xe tay ga cấp nhập cảnh (18 km/h)
-    watts500robustEscooter: Xe tay ga điện mạnh mẽ (30 km/h)
-    wheelchair: Thích các tuyến xe lăn có thể truy cập
+    watts1500powerfulEscooter: Xe tay ga điện công suất mạnh (40 km/h)
+    watts250entryLevelEscooter: Xe tay ga dành cho người mới biết chạy (18 km/h)
+    watts500robustEscooter: Xe tay ga điện công suất trung bình (30 km/h)
+    wheelchair: Ưu tiên các tuyến đường mà xe lăn có thể đi được
