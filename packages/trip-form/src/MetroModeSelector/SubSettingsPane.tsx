@@ -39,6 +39,15 @@ const SubSettingsCheckbox = styled(CheckboxSelector)`
   }
 `;
 
+const FormLabelIconWrapper = styled.span`
+  svg {
+    width: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+  }
+`;
+
 const ModeSettingRenderer = ({
   onChange,
   setting
@@ -56,9 +65,9 @@ const ModeSettingRenderer = ({
   });
 
   const labelWithIcon = setting.icon ? (
-    <>
+    <FormLabelIconWrapper>
       {setting.icon} {label}
-    </>
+    </FormLabelIconWrapper>
   ) : (
     label
   );

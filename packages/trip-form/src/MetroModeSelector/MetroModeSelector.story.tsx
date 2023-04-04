@@ -18,14 +18,14 @@ import modeSettingDefinitions from "../../modeSettings.yml";
 
 const getIcon = (iconName: string): JSX.Element | null => {
   switch (iconName) {
-    case "Bus":
-      return <Bus size={16} />;
-    case "TrainTram":
-      return <TrainTram size={16} />;
-    case "TrainSubway":
-      return <TrainSubway size={16} />;
-    case "Train":
-      return <Train size={16} />;
+    case "bus":
+      return <Bus />;
+    case "tram":
+      return <TrainTram />;
+    case "subway":
+      return <TrainSubway />;
+    case "train":
+      return <Train />;
     default:
       return null;
   }
