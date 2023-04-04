@@ -41,27 +41,27 @@
     mode: BUS
   applicableMode: TRANSIT
   default: true
-  iconName: Bus
+  iconName: bus
   key: addBus
   type: CHECKBOX
 - addTransportMode:
     mode: RAIL
   applicableMode: TRANSIT
   default: true
-  iconName: Train
+  iconName: rail
   key: addRail
   type: CHECKBOX
 - addTransportMode:
     mode: SUBWAY
   applicableMode: TRANSIT
   default: true
-  iconName: TrainSubway
+  iconName: subway
   key: addSubway
   type: CHECKBOX
 - addTransportMode:
     mode: TRAM
   applicableMode: TRANSIT
   default: true
-  iconName: TrainTram
+  iconName: tram
   key: addTram
   type: CHECKBOX
