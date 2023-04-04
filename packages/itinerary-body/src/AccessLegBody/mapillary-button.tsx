@@ -45,7 +45,7 @@ const Container = styled.a`
 
 const Icon = styled(StreetView)`
   height: 16px;
-  padding-left: 2px;
+  padding-left: 5px;
 `;
 
 /**
