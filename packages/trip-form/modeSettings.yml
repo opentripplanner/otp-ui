@@ -1,63 +1,67 @@
 - applicableMode: CAR
-  graphQLQueryParam: true
-  type: SLIDER
-  key: carTolerance
-  inverseKey: carReluctance
   default: 3
-  low: 0
-  high: 5
-  step: 0.1
-- applicableMode: BICYCLE
   graphQLQueryParam: true
+  high: 5
+  inverseKey: carReluctance
+  key: carTolerance
+  low: 0
+  step: 0.1
   type: SLIDER
-  key: bikeTolerance
+- applicableMode: BICYCLE
+  default: 2
+  graphQLQueryParam: true
+  high: 5
   inverseKey: bikeReluctance
-  default: 2
+  key: bikeTolerance
   low: 0
-  high: 5
   step: 0.1
-- applicableMode: WALK
-  graphQLQueryParam: true
   type: SLIDER
-  key: walkTolerance
-  inverseKey: walkReluctance
+- applicableMode: WALK
   default: 2
-  low: 0
+  graphQLQueryParam: true
   high: 5
+  inverseKey: walkReluctance
+  key: walkTolerance
+  low: 0
   step: 0.1
-- applicableMode: BICYCLE
-  type: CHECKBOX
-  key: allowBikeRental
-  default: true
-  addTransportMode:
+  type: SLIDER
+- addTransportMode:
     mode: BICYCLE
     qualifier: RENT
-- applicableMode: TRANSIT
+  applicableMode: BICYCLE
+  default: true
+  key: allowBikeRental
   type: CHECKBOX
-  key: wheelchair
+- applicableMode: TRANSIT
   default: false
+  key: wheelchair
   label: Use Accessible Routing
-- applicableMode: TRANSIT
   type: CHECKBOX
-  key: addBus
-  default: true
-  addTransportMode:
+- addTransportMode:
     mode: BUS
-- applicableMode: TRANSIT
-  type: CHECKBOX
-  key: addRail
+  applicableMode: TRANSIT
   default: true
-  addTransportMode:
+  iconName: bus
+  key: addBus
+  type: CHECKBOX
+- addTransportMode:
     mode: RAIL
-- applicableMode: TRANSIT
-  type: CHECKBOX
-  key: addSubway
+  applicableMode: TRANSIT
   default: true
-  addTransportMode:
+  iconName: rail
+  key: addRail
+  type: CHECKBOX
+- addTransportMode:
     mode: SUBWAY
-- applicableMode: TRANSIT
-  type: CHECKBOX
-  key: addTram
+  applicableMode: TRANSIT
   default: true
-  addTransportMode:
+  iconName: subway
+  key: addSubway
+  type: CHECKBOX
+- addTransportMode:
     mode: TRAM
+  applicableMode: TRANSIT
+  default: true
+  iconName: tram
+  key: addTram
+  type: CHECKBOX

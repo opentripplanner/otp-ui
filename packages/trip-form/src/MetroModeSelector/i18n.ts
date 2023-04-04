@@ -12,36 +12,36 @@ export default function generateModeButtonLabel(
   key: string,
   intl: IntlShape
 ): string {
-  switch (key) {
-    case "TRANSIT":
+  switch (key.toLocaleLowerCase()) {
+    case "transit":
       return intl.formatMessage({
-        defaultMessage: defaultMessages[`otpUi.ModeSelector.labels.TRANSIT`],
-        description: `Metro Mode Selector Label (TRANSIT)`,
-        id: `otpUi.ModeSelector.labels.TRANSIT`
+        defaultMessage: defaultMessages[`otpUi.ModeSelector.labels.transit`],
+        description: `Metro Mode Selector Label (transit)`,
+        id: `otpUi.ModeSelector.labels.transit`
       });
-    case "WALK":
+    case "walk":
       return intl.formatMessage({
-        defaultMessage: defaultMessages[`otpUi.ModeSelector.labels.WALK`],
-        description: `Metro Mode Selector Label (WALK)`,
-        id: `otpUi.ModeSelector.labels.WALK`
+        defaultMessage: defaultMessages[`otpUi.ModeSelector.labels.walk`],
+        description: `Metro Mode Selector Label (walk)`,
+        id: `otpUi.ModeSelector.labels.walk`
       });
-    case "BICYCLE":
+    case "bicycle":
       return intl.formatMessage({
-        defaultMessage: defaultMessages[`otpUi.ModeSelector.labels.BICYCLE`],
-        description: `Metro Mode Selector Label (BICYCLE)`,
-        id: `otpUi.ModeSelector.labels.BICYCLE`
+        defaultMessage: defaultMessages[`otpUi.ModeSelector.labels.bicycle`],
+        description: `Metro Mode Selector Label (bicycle)`,
+        id: `otpUi.ModeSelector.labels.bicycle`
       });
-    case "CAR":
+    case "car":
       return intl.formatMessage({
-        defaultMessage: defaultMessages[`otpUi.ModeSelector.labels.CAR`],
-        description: `Metro Mode Selector Label (CAR)`,
-        id: `otpUi.ModeSelector.labels.CAR`
+        defaultMessage: defaultMessages[`otpUi.ModeSelector.labels.car`],
+        description: `Metro Mode Selector Label (car)`,
+        id: `otpUi.ModeSelector.labels.car`
       });
-    case "RENT":
+    case "rent":
       return intl.formatMessage({
-        defaultMessage: defaultMessages[`otpUi.ModeSelector.labels.RENT`],
-        description: `Metro Mode Selector Label (RENT)`,
-        id: `otpUi.ModeSelector.labels.RENT`
+        defaultMessage: defaultMessages[`otpUi.ModeSelector.labels.rent`],
+        description: `Metro Mode Selector Label (rent)`,
+        id: `otpUi.ModeSelector.labels.rent`
       });
     // Default case adds support for custom mode buttons
     default:
