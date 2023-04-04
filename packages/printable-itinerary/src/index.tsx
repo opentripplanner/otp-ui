@@ -69,5 +69,5 @@ function PrintableItinerary({
 
 export default PrintableItinerary;
 
-// Rename styled components for export
+// Rename styled components for export.
 export { S as Styled };

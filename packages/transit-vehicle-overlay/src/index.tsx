@@ -113,7 +113,7 @@ const TransitVehicleOverlay = ({
 
 export default TransitVehicleOverlay;
 
-// Export the other subcomponents
+// Export the other subcomponents.
 export {
   Circle,
   DefaultIconContainer,

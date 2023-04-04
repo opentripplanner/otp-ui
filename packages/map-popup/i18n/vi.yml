@@ -1,9 +1,9 @@
 otpUi:
   MapPopup:
     availableBikes: "Xe đạp có sẵn: {value}"
-    availableDocks: "Đế sạc có sẵn: {value}"
-    floatingBike: "Xe đạp nổi tự do: {name}"
+    availableDocks: "Chỗ dựng xe đạp có sẵn: {value}"
+    floatingBike: "Xe đạp để tự do: {name}"
     floatingCar: "{company} {name}"
-    floatingEScooter: "{company} Xe tay ga điện"
-    stopViewer: Trình xem trạm dừng
-    stopId: "ID điểm dừng: {stopId}"
+    floatingEScooter: "Xe tay ga điện {name}"
+    stopViewer: Xem điểm dừng
+    stopId: "Điểm dừng số {stopId}"

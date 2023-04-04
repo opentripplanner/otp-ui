@@ -2,7 +2,7 @@ otpUi:
   LocationField:
     beingTypingPrompt: 开始打字搜索地点
     clearLocation: 重置位置
-    homeLocation: 家
+    homeLocation: 家位置
     noResultsFound: "找不到与 {input, select,\n null {您的搜索}\n other {{input}}\n } 相关的结果\n"
     stops: 车站
     currentLocationUnavailable: 当前位置不详{error, select, undefined {} other { ({error})}}
@@ -16,3 +16,7 @@ otpUi:
     stations: 站台
     useCurrentLocation: 使用当前位置
     workLocation: 工作场所
+    suggestedLocations: 建议地点
+    fetchingSuggestions: 获取建议
+    resultsFound: "为 {input, select, null {您的查询} other {\"{input}\"}} 找到 # 个地理编码器结果\n"
+    suggestedLocationsLong: 切换显示建议位置列表
