@@ -15,9 +15,6 @@ export const SettingsSection = styled.div``;
 export const SettingLabel = styled.label`
   font-weight: 400;
   padding-left: 6px;
-  svg {
-    width: 22pt;
-  }
 `;
 
 export const FloatingSettingLabel = styled(SettingLabel)`

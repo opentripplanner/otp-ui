@@ -34,6 +34,9 @@ const SettingsPanel = styled.fieldset`
 
 const SubSettingsCheckbox = styled(CheckboxSelector)`
   margin-left: 4px;
+  input {
+    vertical-align: middle;
+  }
 `;
 
 const ModeSettingRenderer = ({
@@ -52,11 +55,19 @@ const ModeSettingRenderer = ({
     id: `otpUi.ModeSelector.settings.${setting.key}-label`
   });
 
+  const labelWithIcon = setting.icon ? (
+    <>
+      {setting.icon} {label}
+    </>
+  ) : (
+    label
+  );
+
   switch (setting.type) {
     case "CHECKBOX":
       return (
         <SubSettingsCheckbox
-          label={label}
+          label={labelWithIcon}
           name={setting.key}
           onChange={onChange}
           value={setting.value}
@@ -65,7 +76,7 @@ const ModeSettingRenderer = ({
     case "DROPDOWN":
       return (
         <DropdownSelector
-          label={label}
+          label={labelWithIcon}
           name={setting.key}
           onChange={onChange}
           options={setting.options.map(o => ({

@@ -1,5 +1,12 @@
 import { ModeButtonDefinition } from "@opentripplanner/types";
-import { Bus, Car, PersonWalking } from "@styled-icons/fa-solid";
+import {
+  Bus,
+  Car,
+  PersonWalking,
+  Train,
+  TrainSubway,
+  TrainTram
+} from "@styled-icons/fa-solid";
 import { ClassicBike } from "@opentripplanner/icons/lib/classic";
 import React, { ReactElement } from "react";
 import { QueryParamProvider } from "use-query-params";
@@ -8,6 +15,21 @@ import * as Core from "..";
 import { QueryParamChangeEvent } from "../types";
 
 import modeSettingDefinitions from "../../modeSettings.yml";
+
+const getIcon = (iconName: string): JSX.Element | null => {
+  switch (iconName) {
+    case "Bus":
+      return <Bus size={16} />;
+    case "TrainTram":
+      return <TrainTram size={16} />;
+    case "TrainSubway":
+      return <TrainSubway size={16} />;
+    case "Train":
+      return <Train size={16} />;
+    default:
+      return null;
+  }
+};
 
 const defaultModeButtonDefinitions = [
   {
@@ -69,6 +91,12 @@ const MetroModeSelectorComponent = ({
   onSetModeSettingValue: (event: QueryParamChangeEvent) => void;
   onToggleModeButton: (key: string) => void;
 }): ReactElement => {
+  const modeSettingDefinitionsWithIconsAndSettings = modeSettingDefinitionsWithDropdown.map(
+    msd => ({
+      ...msd,
+      icon: getIcon(msd.iconName)
+    })
+  );
   const {
     buttonsWithSettings,
     setModeSettingValue,
@@ -76,7 +104,7 @@ const MetroModeSelectorComponent = ({
   } = Core.useModeState(
     modeButtonDefinitions,
     initialState,
-    modeSettingDefinitionsWithDropdown,
+    modeSettingDefinitionsWithIconsAndSettings,
     {
       queryParamState: false
     }
