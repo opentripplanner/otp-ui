@@ -57,6 +57,25 @@ export function filterModeDefitionsByKey(
 }
 
 /**
+ * Sometimes we might get a string when we want a boolean or number,
+ * since the URL state is stored as a string. This method helps convert
+ * those values into the correct type.
+ */
+export function convertModeSettingValue(
+  setting: ModeSetting,
+  value: string | boolean | number
+): string | boolean | number {
+  switch (setting.type) {
+    case "CHECKBOX":
+      return value === "true" || value === true;
+    case "SLIDER":
+      return Number(value);
+    default:
+      return value;
+  }
+}
+
+/**
  * Connects the mode setting values from a values object, where each key corresponds
  * to a mode setting in the modeSettings parameter.
  * @param modeSettings The mode settings with empty `value` params
@@ -69,16 +88,10 @@ export function populateSettingsWithValues(
 ): ModeSetting[] {
   return modeSettings.map(setting => {
     const value = values[setting.key];
-    let convertedVal;
-    if (setting.type === "CHECKBOX") {
-      // If the parameter is anything besides the string "true", it will be false
-      convertedVal = value === "true" || value === true;
-    } else if (setting.type === "SLIDER") {
-      convertedVal = Number(value);
-    }
+    const convertedValue = convertModeSettingValue(setting, value);
     return {
       ...setting,
-      value: convertedVal as boolean & number & string
+      value: convertedValue as string & number & boolean
     };
   });
 }
