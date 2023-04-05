@@ -749,7 +749,7 @@ export type TransportMode = {
  */
 export type ModeButtonDefinition = {
   enabled?: boolean; // User has enabled this mode
-  Icon: StyledIcon; // From iconName (below)
+  Icon: StyledIcon | React.ComponentType; // From iconName (below)
   iconName: string; // From config
   key: string; // From config
   label: string; // From config
