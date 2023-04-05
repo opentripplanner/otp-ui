@@ -749,13 +749,14 @@ export type TransportMode = {
  */
 export type ModeButtonDefinition = {
   enabled?: boolean; // User has enabled this mode
-  Icon: StyledIcon; // From iconName (below)
+  Icon: StyledIcon | React.ComponentType; // From iconName (below)
   iconName: string; // From config
   key: string; // From config
   label: string; // From config
   modes?: TransportMode[]; // This comes from config
   modeSettings?: ModeSetting[]; // From OTP definitions + config
 };
+
 export type FareProduct = {
   amount: Money;
   id: string;
