@@ -465,12 +465,10 @@ export const PlaceSubheader = styled.div`
   color: #807373;
   font-size: 13px;
   font-weight: 300;
-  padding-left: 4px;
   padding-top: 1px;
 
   /* Reduce vertical space and fix horizontal alignment of stop id and stop viewer link for transit stops. */
   margin-top: -14px;
-  margin-left: -4px;
 `;
 
 export const PreviewDiagram = styled(TransparentButton)`
