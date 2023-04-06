@@ -91,6 +91,16 @@ const TransitFare = ({
 }: TransitFareProps): ReactElement => {
   const currentFare = transitFares[fareKey];
 
+  if (!currentFare?.cents) {
+    return (
+      <FormattedMessage
+        defaultMessage={defaultMessages["otpUi.TripDetails.transitFareUnknown"]}
+        description="Text showing that no fare information is present."
+        id="otpUi.TripDetails.transitFareUnknown"
+      />
+    );
+  }
+
   return (
     <span>
       <FormattedMessage
@@ -101,7 +111,7 @@ const TransitFare = ({
           name: fareKeyNameMap[fareKey] || fareNameFallback || fareKey,
           strong: boldText,
           value: renderFare(
-            currentFare.currency.currencyCode,
+            currentFare?.currency?.currencyCode || "USD",
             currentFare.cents / 100
           )
         }}
@@ -150,7 +160,7 @@ export function TripDetails({
     const TransitFareWrapper =
       transitFares && fareKeys.length > 1 ? S.TransitFare : S.TransitFareSingle;
 
-    fare = (
+    fare = transitFares?.[defaultFare] && (
       <S.Fare>
         <TransitFareWrapper>
           <summary style={{ display: fareKeys.length > 1 ? "list-item" : "" }}>
@@ -169,26 +179,29 @@ export function TripDetails({
               transitFares={transitFares}
             />
           </summary>
-          {fareDetailsLayout ? (
-            // Show full ƒare details by leg
-            <FareLegTable layout={fareDetailsLayout} itinerary={itinerary} />
-          ) : (
-            // Just show the fares for each payment type
-            fareKeys.map(fareKey => {
-              // Don't show the default fare twice!
-              if (fareKey === defaultFare) {
-                return null;
-              }
-              return (
-                <TransitFare
-                  fareKey={fareKey}
-                  key={fareKey}
-                  fareKeyNameMap={fareKeyNameMap}
-                  transitFares={transitFares}
+          {fareDetailsLayout
+            ? // Show full ƒare details by leg
+              transitFares?.[defaultFare] && (
+                <FareLegTable
+                  layout={fareDetailsLayout}
+                  itinerary={itinerary}
                 />
-              );
-            })
-          )}
+              )
+            : // Just show the fares for each payment type
+              fareKeys.map(fareKey => {
+                // Don't show the default fare twice!
+                if (fareKey === defaultFare) {
+                  return null;
+                }
+                return (
+                  <TransitFare
+                    fareKey={fareKey}
+                    key={fareKey}
+                    fareKeyNameMap={fareKeyNameMap}
+                    transitFares={transitFares}
+                  />
+                );
+              })}
         </TransitFareWrapper>
         {minTNCFare !== 0 && (
           <S.TNCFare>
