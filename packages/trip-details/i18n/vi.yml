@@ -28,4 +28,5 @@ otpUi:
     transferDiscountExplanation: Giảm giá chuyển khoản {transferAmount} được áp dụng
     transitFare: Giá vé xe công cộng
     transitFareEntry: "{name}: <strong>{value}</strong>"
+    transitFareUnknown: Không có thông tin giá vé
     tripIncludesFlex: Chuyến đi này bao gồm các tuyến đường linh hoạt. {extraMessage}

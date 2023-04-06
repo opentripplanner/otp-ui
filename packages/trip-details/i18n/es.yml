@@ -29,4 +29,5 @@ otpUi:
     transferDiscountExplanation: Se aplica un descuento de transferencia de {transferAmount}
     transitFare: Tarifa de tránsito
     transitFareEntry: "{name} : <strong>{value}</strong>"
+    transitFareUnknown: No hay información sobre las tarifas
     tripIncludesFlex: Este viaje incluye rutas flexibles. {extraMessage}
