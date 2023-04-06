@@ -91,6 +91,7 @@ const TransitFare = ({
 }: TransitFareProps): ReactElement => {
   const currentFare = transitFares[fareKey];
 
+  // TODO: Is this needed? Every implementation of TransitFare does a check for currentFare's existence, although not the cents field
   if (!currentFare?.cents) {
     return (
       <FormattedMessage
