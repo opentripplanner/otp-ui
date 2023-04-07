@@ -11,6 +11,12 @@ export type ResultType =
   | "SESSION"
   | "STOP";
 
+export interface LocationSelectedEvent {
+  locationType: LocationType;
+  location: Location;
+  resultType: ResultType;
+}
+
 export interface LocationFieldProps {
   /**
    * Dispatched upon selecting a geocoded result
@@ -28,6 +34,10 @@ export interface LocationFieldProps {
    * Used for additional styling with styled components for example.
    */
   className?: string;
+  /** A slot for a component that can be used to display a custom icon for the
+   * clear location button.
+   */
+  clearButtonIcon?: React.ReactNode;
   /**
    * Dispatched whenever the clear location button is clicked.
    * Provides an argument in the format:
@@ -49,19 +59,6 @@ export interface LocationFieldProps {
    * A slot for the icon to display for when the current position is unavailable
    */
   currentPositionUnavailableIcon?: React.ReactNode;
-  /**
-   * Allows the component to be rendered with pre-filled results
-   */
-  initialSearchResults?: {
-    geometry?: {
-      type?: string;
-      // coordinates?: [number, number];
-      coordinates?: number[];
-    };
-    properties?: { id?: string };
-    type?: string;
-  }[];
-
   /**
    * Invoked whenever the currentPosition is set, but the nearbyStops are not.
    * Sends the following argument:
@@ -123,6 +120,18 @@ export interface LocationFieldProps {
    */
   hideExistingValue?: boolean;
   /**
+   * Allows the component to be rendered with pre-filled results
+   */
+  initialSearchResults?: {
+    geometry?: {
+      type?: string;
+      // coordinates?: [number, number];
+      coordinates?: number[];
+    };
+    properties?: { id?: string };
+    type?: string;
+  }[];
+  /**
    * Placeholder text to show in the input element. If the current position is
    * set to have a true fetching property, then the text "Fetching location..."
    * will display. If this value isn't provided, the locationType will be shown.
@@ -132,6 +141,10 @@ export interface LocationFieldProps {
    * Setting this to true adds properties to the rendered input marking the field as required.
    */
   isRequired?: boolean;
+  /**
+   * show autocomplete options as fixed/inline element rather than dropdown
+   */
+  isStatic?: boolean;
   /**
    * Setting this to false adds properties to the rendered input marking the field as invalid.
    */
@@ -167,64 +180,34 @@ export interface LocationFieldProps {
    */
   nearbyStops?: string[];
   /**
-   * Invoked whenever the text input is clicked or when the clear button is
-   * clicked.
+   * A function to handle when a location is selected. This is always dispatched
+   * with an object of type LocationSelectedEvent, with the following fields:
+   * - locationType is either "from" or "to" per the locationType prop passed to this component.
+   * - location:
+   *   lat and lon always available.
+   *   id is only populated for stops and user-saved locations.
+   *   Other attributes vary per location type.
+   * - resultType indicates the type of location that was selected:
+   *   "CURRENT_LOCATION": The user's current location.
+   *   "GEOCODE": A location that was found via a geocode search result
+   *   "SAVED": A location that was saved by the user.
+   *   "SESSION": A geocoded search result that was recently selected by the user.
+   *   "STOP": A transit stop
+   */
+  onLocationSelected: (e: LocationSelectedEvent) => void;
+  /**
+   * Invoked whenever the text input is clicked or when the clear button is clicked.
    */
   onTextInputClick?: () => void;
   /**
-   * A function to handle when a location is selected. This is always dispatched
-   * with an object of the following form:
-   *
-   * ```js
-   * {
-   *  locationType: string,
-   *  location: object,
-   *  resultType: string
-   * }
-   * '''
-   *
-   * The locationType string will be either "from" or "to" as was set by the
-   * locationType prop for the instance of this component.
-   *
-   * The location object will be an object in the form below:
-   * ```js
-   * {
-   *  id: string, // only populated for stops and user-saved locations
-   *  lat: number,
-   *  lon: number,
-   *  name: string
-   * }
-   *
-   * The resultType string indicates the type of location that was selected.
-   * It can be one of the following:
-   *
-   * "CURRENT_LOCATION": The user's current location.
-   * "GEOCODE": A location that was found via a geocode search result
-   * "SAVED": A location that was saved by the user.
-   * "SESSION": A geocoded search result that was recently selected by the user.
-   * "STOP": A transit stop
-   */
-  onLocationSelected: (
-    {
-      locationType,
-      location,
-      resultType
-    }: {
-      locationType: LocationType;
-      location: Location;
-      resultType: ResultType;
-    }
-  ) => void;
-  /**
-   * Mapping from Pelias *operator* to icon (represented as jsx). Allows results from different Pelias
-   * operators to be given a unique Icon.
+   * Mapping from Pelias *operator* to icon (represented as jsx). Allows results
+   * from different Pelias operators to be given a unique Icon.
    */
   operatorIconMap?: { [key: string]: React.ReactNode };
   /**
-   * A boolean for whether to override the result sort order and sort by
-   * distance.
+   * Results are sorted by distance, but favored layers will always appear first.
    */
-  sortByDistance?: boolean;
+  preferredLayers?: string[];
   /**
    * A slot for the icon to display for an option that was used during the
    * current session.
@@ -244,25 +227,22 @@ export interface LocationFieldProps {
    */
   showUserSettings?: boolean;
   /**
-   * React style object
+   * A boolean for whether to override the result sort order and sort by
+   * distance.
    */
-  style?: React.CSSProperties;
-  /**
-   * show autocomplete options as fixed/inline element rather than dropdown
-   */
-  isStatic?: boolean;
-  /**
-   * An index of stops by StopId
-   */
-  stopsIndex?: { [key: string]: Stop };
+  sortByDistance?: boolean;
   /**
    * A slot for the icon to display for a stop option
    */
   stopOptionIcon?: React.ReactNode;
   /**
-   * If true, do not show nearbyStops or current location as options
+   * An index of stops by StopId
    */
-  suppressNearby?: boolean;
+  stopsIndex?: { [key: string]: Stop };
+  /**
+   * React style object
+   */
+  style?: React.CSSProperties;
   /**
    * When showing special categories of transit response, these can be capped
    * to prevent the list of responses from getting too long. This value declares
@@ -270,14 +250,9 @@ export interface LocationFieldProps {
    */
   suggestionCount?: number;
   /**
-   * Results are sorted by distance, but favored layers will always appear
-   * first.
+   * If true, do not show nearbyStops or current location as options
    */
-  preferredLayers?: string[];
-  /**
-   * An array of recent locations and places a user has searched for.
-   */
-  userLocationsAndRecentPlaces?: UserLocation[];
+  suppressNearby?: boolean;
   /**
    * A custom component for rendering the icon for options that are either saved
    * user locations or recent places. The component will be sent a single prop
@@ -286,10 +261,10 @@ export interface LocationFieldProps {
   UserLocationIconComponent?: React.FunctionComponent<{
     userLocation: UserLocation;
   }>;
-  /** A slot for a component that can be used to display a custom icon for the
-   * clear location button.
+  /**
+   * An array of recent locations and places a user has searched for.
    */
-  clearButtonIcon?: React.ReactNode;
+  userLocationsAndRecentPlaces?: UserLocation[];
 }
 
 export interface Properties {
