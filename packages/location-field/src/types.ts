@@ -3,7 +3,7 @@ import React from "react";
 // eslint-disable-next-line prettier/prettier
 import type { IntlShape } from "react-intl";
 
-export type LocationType = "from" | "to";
+export type LocationType = "from" | "to" | `intermediate-place-${number}`;
 export type ResultType =
   | "CURRENT_LOCATION"
   | "GEOCODE"
@@ -171,7 +171,7 @@ export interface LocationFieldProps {
     locationType: LocationType;
   }>;
   /**
-   * Either `from` or `to`
+   * Either `from` or `to`, or `intermediate-place-${number}`.
    */
   locationType: LocationType;
   /**
@@ -182,7 +182,7 @@ export interface LocationFieldProps {
   /**
    * A function to handle when a location is selected. This is always dispatched
    * with an object of type LocationSelectedEvent, with the following fields:
-   * - locationType is either "from" or "to" per the locationType prop passed to this component.
+   * - locationType is set with the same value as the locationType prop passed to this component.
    * - location:
    *   lat and lon always available.
    *   id is only populated for stops and user-saved locations.
