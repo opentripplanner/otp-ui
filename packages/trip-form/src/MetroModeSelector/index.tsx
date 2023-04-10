@@ -165,7 +165,7 @@ const HoverInnerContainer = styled.div`
   color: #2e2e2e;
   font-size: 90%;
   font-weight: bold;
-  padding: 15px;
+  padding: 10px 15px 15px 15px;
   pointer-events: none;
   ${boxShadowCss}
 `;

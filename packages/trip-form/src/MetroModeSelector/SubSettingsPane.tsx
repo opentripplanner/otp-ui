@@ -67,7 +67,7 @@ const ModeSettingRenderer = ({
 
   const labelWithIcon = setting.icon ? (
     <FormLabelIconWrapper>
-      {setting.icon} {label}
+      <span role="none">{setting.icon}</span> {label}
     </FormLabelIconWrapper>
   ) : (
     label
