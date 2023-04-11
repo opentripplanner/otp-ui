@@ -112,11 +112,13 @@ const MetroModeSelectorComponent = ({
 
   const toggleModeButtonAction = (key: string) => {
     toggleModeButton(key);
+    // Storybook Action:
     onToggleModeButton(key);
   };
 
   const setModeSettingValueAction = (event: QueryParamChangeEvent) => {
     setModeSettingValue(event);
+    // Storybook Action:
     onSetModeSettingValue(event);
   };
 
