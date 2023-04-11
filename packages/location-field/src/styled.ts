@@ -158,7 +158,6 @@ export const StaticMenuItemList = styled(MenuItemList)`
   border: none;
   box-shadow: none;
   display: block;
-  position: static;
 `;
 
 export const StopContentContainer = styled.span`

@@ -815,40 +815,21 @@ const LocationField = ({
   if (isStatic) {
     // 'static' mode (menu is displayed alongside input, e.g., for mobile view)
     return (
-      <div className={className}>
-        <S.InputGroup role="group">
-          <S.InputGroupAddon>
-            <LocationIconComponent locationType={locationType} />
-          </S.InputGroupAddon>
-          {textControl}
-          {clearButton}
-        </S.InputGroup>
-        <S.HiddenContent role="status">
-          {statusMessages?.join(", ")}
-        </S.HiddenContent>
-        <S.StaticMenuItemList
-          // Hide the listbox from assistive technology if no valid items are shown.
-          aria-hidden={menuItemCount === 0 || undefined}
-          aria-label={intl.formatMessage({
-            defaultMessage: "Suggested locations",
-            description:
-              "Text to show as a label for the dropdown list of locations",
-            id: "otpUi.LocationField.suggestedLocations"
-          })}
-          id={listBoxId}
-        >
-          {menuItems.length > 0 ? ( // Show typing prompt to avoid empty screen
-            menuItems
-          ) : (
-            <S.MenuGroupMisc role="none">
-              <FormattedMessage
-                description="Text to show as initial placeholder in location search field"
-                id="otpUi.LocationField.beginTypingPrompt"
-              />
-            </S.MenuGroupMisc>
-          )}
-        </S.StaticMenuItemList>
-      </div>
+      <DropdownControl
+        className={className}
+        input={
+          <>
+            {textControl}
+            {clearButton}
+          </>
+        }
+        isStatic
+        listBoxIdentifier={listBoxId}
+        menuItems={menuItems}
+        onToggle={onDropdownToggle}
+        status={statusMessages.join(", ")}
+        title={<LocationIconComponent locationType={locationType} />}
+      />
     );
   }
 
@@ -863,14 +844,13 @@ const LocationField = ({
         </>
       }
       listBoxIdentifier={listBoxId}
+      menuItems={menuItems}
       onBlur={onBlurFormGroup}
       onToggle={onDropdownToggle}
       open={menuVisible}
       status={statusMessages.join(", ")}
       title={<LocationIconComponent locationType={locationType} />}
-    >
-      {menuItems}
-    </DropdownControl>
+    />
   );
 };
 
