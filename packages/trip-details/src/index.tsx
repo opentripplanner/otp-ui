@@ -3,7 +3,6 @@ import coreUtils from "@opentripplanner/core-utils";
 import React, { ReactElement } from "react";
 import { FormattedMessage, FormattedNumber } from "react-intl";
 import { CalendarAlt } from "@styled-icons/fa-solid/CalendarAlt";
-import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
 import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
 import { Leaf } from "@styled-icons/fa-solid/Leaf";
 import { Route } from "@styled-icons/fa-solid/Route";
@@ -13,11 +12,7 @@ import TripDetail from "./trip-detail";
 import FareLegTable from "./fare-table";
 import { boldText, renderFare } from "./utils";
 
-import {
-  CaloriesDetailsProps,
-  TransitFareProps,
-  TripDetailsProps
-} from "./types";
+import { TransitFareProps, TripDetailsProps } from "./types";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
@@ -28,21 +23,6 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 // - the yaml loader for jest returns messages with flattened ids.
 const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
-/**
- * Helper function to specify the link to dietary table.
- */
-function dietaryLink(contents: ReactElement): ReactElement {
-  return (
-    <a
-      href="https://health.gov/dietaryguidelines/dga2005/document/html/chapter3.htm#table4"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      {contents}
-    </a>
-  );
-}
-
 function CO2DescriptionLink(contents: ReactElement): ReactElement {
   return (
     <a
@@ -52,31 +32,6 @@ function CO2DescriptionLink(contents: ReactElement): ReactElement {
     >
       {contents}
     </a>
-  );
-}
-
-/**
- * Default rendering if no component is provided for the CaloriesDetails
- * slot in the TripDetails component.
- */
-function DefaultCaloriesDetails({
-  bikeSeconds,
-  calories,
-  walkSeconds
-}: CaloriesDetailsProps): ReactElement {
-  return (
-    <FormattedMessage
-      defaultMessage={defaultMessages["otpUi.TripDetails.caloriesDescription"]}
-      description="Text describing how the calories relate to the walking and biking duration of a trip."
-      id="otpUi.TripDetails.caloriesDescription"
-      values={{
-        bikeMinutes: Math.round(bikeSeconds / 60),
-        calories: Math.round(calories),
-        dietaryLink,
-        strong: boldText,
-        walkMinutes: Math.round(walkSeconds / 60)
-      }}
-    />
   );
 }
 
@@ -111,13 +66,11 @@ const TransitFare = ({
 };
 
 /**
- * Renders trip details such as departure instructions, fare amount, and calories spent.
+ * Renders trip details such as departure instructions and fare amount.
  */
 export function TripDetails({
-  CaloriesDetails = DefaultCaloriesDetails,
   className = "",
   defaultFareKey = "regular",
-  displayCalories = true,
   DepartureDetails = null,
   FareDetails = null,
   fareDetailsLayout,
@@ -218,13 +171,6 @@ export function TripDetails({
 
   const departureDate = new Date(itinerary.startTime);
 
-  // Compute calories burned.
-  const {
-    bikeDuration,
-    caloriesBurned,
-    walkDuration
-  } = coreUtils.itinerary.calculatePhysicalActivity(itinerary);
-
   // Calculate CO₂ if it's not provided by the itinerary
   const co2 =
     itinerary.co2 ||
@@ -295,33 +241,6 @@ export function TripDetails({
             }
             icon={<MoneyBillAlt size={17} />}
             summary={fare}
-          />
-        )}
-        {displayCalories && caloriesBurned > 0 && (
-          <TripDetail
-            icon={<Heartbeat size={17} />}
-            summary={
-              <S.CaloriesSummary>
-                <FormattedMessage
-                  defaultMessage={defaultMessages["otpUi.TripDetails.calories"]}
-                  description="Text showing the number of calories for the walking and biking legs of a trip."
-                  id="otpUi.TripDetails.calories"
-                  values={{
-                    calories: caloriesBurned,
-                    strong: boldText
-                  }}
-                />
-              </S.CaloriesSummary>
-            }
-            description={
-              CaloriesDetails && (
-                <CaloriesDetails
-                  bikeSeconds={bikeDuration}
-                  calories={caloriesBurned}
-                  walkSeconds={walkDuration}
-                />
-              )
-            }
           />
         )}
         {co2 > 0 && co2Config?.enabled && (

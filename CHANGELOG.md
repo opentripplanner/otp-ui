@@ -79,7 +79,7 @@ Handful of cleanup PRs:
 
 - [printable-itinerary](http://www.opentripplanner.org/otp-ui/?path=/story/printableitinerary--itinerarybody-with-walk-only-itinerary) adds a component for rendering an OTP itinerary formatted for printing on 8.5x11 paper. Resolves issue [#38](https://github.com/opentripplanner/otp-ui/issues/38)
 
-- [trip-details](http://www.opentripplanner.org/otp-ui/?path=/story/tripdetails--tripdetails-with-tnc-transit-itinerary) adds a component to render cost, date/time and calories based on an OTP itinerary.
+- [trip-details](http://www.opentripplanner.org/otp-ui/?path=/story/tripdetails--tripdetails-with-tnc-transit-itinerary) adds a component to render cost and date/time based on an OTP itinerary.
 
 ### Changes
 

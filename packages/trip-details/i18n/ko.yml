@@ -1,11 +1,5 @@
 otpUi:
   TripDetails:
-    calories: "소모 칼로리: <strong>{calories, number, ::.}</strong>"
-    caloriesDescription: >
-      소모된 칼로리는 이 트립에서 <strong>{walkMinutes}분 동안 </strong>걷고<strong>
-      <strong>{bikeMinutes}분</strong> 동안 자전거를 탄 것을 기준으로 합니다.
-      <dietaryLink>Dietary Guidelines for Americans 2005, 16 페이지, 표
-      4</dietaryLink> 적용.
     co2: "CO₂ 배출: <strong>{co2}</strong>"
     co2description: >-
       CO₂ 강도는 각 모드의 CO₂ 강도를 트립에서 각 다리가 걸은 거리를 곱하여 계산됩니다. 각 모드의 CO₂ 강도는 <link>이
