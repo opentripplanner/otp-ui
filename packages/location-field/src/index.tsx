@@ -15,7 +15,6 @@ import { Times } from "@styled-icons/fa-solid/Times";
 import { debounce } from "throttle-debounce";
 import { useIntl, FormattedMessage } from "react-intl";
 
-import DropdownControl from "./dropdown";
 import {
   GeocodedOptionIcon,
   ICON_SIZE,
@@ -773,13 +772,17 @@ const LocationField = ({
     currentPosition && currentPosition.fetching
       ? intl.formatMessage({ id: "otpUi.LocationField.fetchingLocation" })
       : defaultPlaceholder;
+  const shouldRenderList = isStatic || menuVisible;
+  // Only populate the aria-controls fields if the suggestion list is shown.
+  const controlledId = shouldRenderList ? listBoxId : undefined;
+
   const textControl = (
     <S.Input
       aria-activedescendant={
         activeIndex !== null ? getOptionId(activeIndex) : null
       }
       aria-autocomplete="list"
-      aria-controls={listBoxId}
+      aria-controls={controlledId}
       aria-expanded={menuVisible}
       aria-haspopup="listbox"
       aria-invalid={!isValid}
@@ -812,45 +815,62 @@ const LocationField = ({
         </S.Button>
       </S.InputGroupAddon>
     ) : null;
-  if (isStatic) {
-    // 'static' mode (menu is displayed alongside input, e.g., for mobile view)
-    return (
-      <DropdownControl
-        className={className}
-        input={
-          <>
-            {textControl}
-            {clearButton}
-          </>
-        }
-        isStatic
-        listBoxIdentifier={listBoxId}
-        menuItems={menuItems}
-        onToggle={onDropdownToggle}
-        status={statusMessages.join(", ")}
-        title={<LocationIconComponent locationType={locationType} />}
-      />
-    );
-  }
 
-  // default display mode with dropdown menu
+  const ItemList = isStatic ? S.StaticMenuItemList : S.MenuItemList;
+
   return (
-    <DropdownControl
-      className={className}
-      input={
-        <>
-          {textControl}
-          {clearButton}
-        </>
-      }
-      listBoxIdentifier={listBoxId}
-      menuItems={menuItems}
-      onBlur={onBlurFormGroup}
-      onToggle={onDropdownToggle}
-      open={menuVisible}
-      status={statusMessages.join(", ")}
-      title={<LocationIconComponent locationType={locationType} />}
-    />
+    <S.InputGroup className={className} onBlur={onBlurFormGroup} role="group">
+      <S.DropdownButton
+        aria-controls={controlledId}
+        aria-expanded={shouldRenderList}
+        aria-label={intl.formatMessage({
+          defaultMessage: "Open the list of location suggestions",
+          description:
+            "Text to show as a a11y label for the button that opens the dropdown list of locations",
+          id: "otpUi.LocationField.suggestedLocationsLong"
+        })}
+        onClick={onDropdownToggle}
+        tabIndex={-1}
+      >
+        <LocationIconComponent locationType={locationType} />
+      </S.DropdownButton>
+      {textControl}
+      {clearButton}
+      {/* Note: always render this status tag regardless of the open state,
+          so that assistive technologies correctly set up status monitoring. */}
+      <S.HiddenContent role="status">
+        {statusMessages.join(", ")}
+      </S.HiddenContent>
+      {/* Note: always render the suggestion list because it is
+          being referenced through aria-controls of the dropdown button. */}
+      {shouldRenderList && (
+        <ItemList
+          aria-label={intl.formatMessage({
+            defaultMessage: "Suggested locations",
+            description:
+              "Text to show as a label for the dropdown list of locations",
+            id: "otpUi.LocationField.suggestedLocations"
+          })}
+          id={listBoxId}
+        >
+          {isStatic ? (
+            menuItems.length > 0 ? ( // Show typing prompt to avoid empty screen
+              menuItems
+            ) : (
+              <S.MenuGroupMisc role="none">
+                <FormattedMessage
+                  defaultMessage="Begin typing to search for locations"
+                  description="Text to show as initial placeholder in location search field"
+                  id="otpUi.LocationField.beginTypingPrompt"
+                />
+              </S.MenuGroupMisc>
+            )
+          ) : (
+            menuVisible && menuItems
+          )}
+        </ItemList>
+      )}
+    </S.InputGroup>
   );
 };
 
