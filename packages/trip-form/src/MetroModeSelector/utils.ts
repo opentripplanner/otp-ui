@@ -242,17 +242,11 @@ export function getActivatedModesFromQueryParams(
  * @param enabledKeys Array of enabled keys, if not provided default to initial state
  * @returns Function that accepts mode button and returns a mode button with enabled key set
  */
-export function setModeButtonEnabled(
-  initialState: InitialStateType,
-  enabledKeys?: string[]
-) {
+export function setModeButtonEnabled(enabledKeys: string[]) {
   return (modeButton: ModeButtonDefinition): ModeButtonDefinition => {
     return {
       ...modeButton,
-      // If we have a list of enabled keys, use that, otherwise check the inital state
-      enabled: enabledKeys
-        ? enabledKeys.includes(modeButton.key)
-        : initialState.enabledModeButtons.includes(modeButton.key)
+      enabled: enabledKeys.includes(modeButton.key)
     };
   };
 }
