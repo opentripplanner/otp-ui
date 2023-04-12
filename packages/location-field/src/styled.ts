@@ -14,10 +14,10 @@ export const BaseButton = styled.button`
   background: none;
 `;
 
-export const Button = styled(BaseButton)`
+export const ClearButton = styled(BaseButton)`
   color: #888;
-  margin: 0;
-  padding: 2px 5px;
+  cursor: pointer;
+  width: 30px;
 `;
 
 export const ClearBoth = styled.div`
@@ -63,19 +63,6 @@ export const InputGroup = styled.div`
   display: table;
   margin-bottom: 15px;
   position: relative;
-`;
-
-export const InputGroupAddon = styled.span`
-  background: none;
-  border-radius: 4px;
-  border: none;
-  color: #888;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1;
-  padding: 6px 12px;
-  text-align: center;
 `;
 
 export const MenuItemA = styled.a<{ active?: boolean }>`

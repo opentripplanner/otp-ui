@@ -804,16 +804,14 @@ const LocationField = ({
   // or if the input field has text.
   const clearButton =
     showClearButton && location ? (
-      <S.InputGroupAddon>
-        <S.Button
-          aria-label={intl.formatMessage({
-            id: "otpUi.LocationField.clearLocation"
-          })}
-          onClick={onClearButtonClick}
-        >
-          {clearButtonIcon}
-        </S.Button>
-      </S.InputGroupAddon>
+      <S.ClearButton
+        aria-label={intl.formatMessage({
+          id: "otpUi.LocationField.clearLocation"
+        })}
+        onClick={onClearButtonClick}
+      >
+        {clearButtonIcon}
+      </S.ClearButton>
     ) : null;
 
   const ItemList = isStatic ? S.StaticMenuItemList : S.MenuItemList;
