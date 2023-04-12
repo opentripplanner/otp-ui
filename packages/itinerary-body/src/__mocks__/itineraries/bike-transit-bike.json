@@ -18,8 +18,7 @@
           "currency": "USD",
           "defaultFractionDigits": 2,
           "currencyCode": "USD"
-        },
-        "cents": 250
+        }
       }
     },
     "details": {

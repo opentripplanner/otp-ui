@@ -24,4 +24,5 @@ otpUi:
     transferDiscountExplanation: 应用了 {transferAmount} 的转让折扣
     transitFare: 公共交通费
     transitFareEntry: "{name}: <strong>{value}</strong>"
+    transitFareUnknown: 没有票价信息
     tripIncludesFlex: 这个行程包括灵活的路线. {extraMessage}
