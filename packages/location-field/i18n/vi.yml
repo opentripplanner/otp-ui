@@ -5,7 +5,7 @@ otpUi:
     currentLocationUnavailable: Vị trí hiện tại không có sẵn
     fetchingLocation: Tìm nạp vị trí…
     fetchingSuggestions: Tìm nạp đề xuất…
-    geocoderUnreachable: Không thể đến bộ định vị địa lý
+    geocoderUnreachable: Không thể nhận đề xuất
     homeLocation: Nhà
     howToAccessResults: >-
       Sử dụng phím mũi tên xuống duyệt danh sách kết quả. Để chọn một kết quả,

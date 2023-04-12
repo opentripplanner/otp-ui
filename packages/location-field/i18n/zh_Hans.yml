@@ -5,7 +5,7 @@ otpUi:
     currentLocationUnavailable: 当前位置不详
     fetchingLocation: 获取的位置…
     fetchingSuggestions: 获取建议
-    geocoderUnreachable: 无法到达地理编码器
+    geocoderUnreachable: 无法获取建议
     homeLocation: 家位置
     howtoAccessResults: 使用向下箭头键浏览结果列表。 要选择结果，请使用 Enter 键。
     myPlaces: 我的地方

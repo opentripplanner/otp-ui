@@ -5,7 +5,7 @@ otpUi:
     currentLocationUnavailable: Position actuelle non disponible
     fetchingLocation: Chargement du lieu…
     fetchingSuggestions: Chargement des suggestions…
-    geocoderUnreachable: Géocodeur introuvable
+    geocoderUnreachable: Impossible d'obtenir des suggestions
     homeLocation: Domicile
     howToAccessResults: >-
       Utilisez la touche Flèche bas pour parcourir la liste des résultats. Pour
