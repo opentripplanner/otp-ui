@@ -236,6 +236,28 @@ export function getActivatedModesFromQueryParams(
 }
 
 /**
+ * Provides a function that sets mode buttons' enabled state
+ * Intended to be composed in a map
+ * @param initialState Initial State object
+ * @param enabledKeys Array of enabled keys, if not provided default to initial state
+ * @returns Function that accepts mode button and returns a mode button with enabled key set
+ */
+export function setModeButtonEnabled(
+  initialState: InitialStateType,
+  enabledKeys?: string[]
+) {
+  return (modeButton: ModeButtonDefinition): ModeButtonDefinition => {
+    return {
+      ...modeButton,
+      // If we have a list of enabled keys, use that, otherwise check the inital state
+      enabled: enabledKeys
+        ? enabledKeys.includes(modeButton.key)
+        : initialState.enabledModeButtons.includes(modeButton.key)
+    };
+  };
+}
+
+/**
  * This useModeState hook is designed to handle all the state relating to the mode selector.
  * It consumes and provides all the needed data to make the mode selector work.
  * @param buttonsFromConfig List of mode buttons to be displayed
