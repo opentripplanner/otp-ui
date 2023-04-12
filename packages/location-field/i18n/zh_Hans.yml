@@ -7,6 +7,7 @@ otpUi:
     fetchingSuggestions: 获取建议
     geocoderUnreachable: 无法到达地理编码器{error, select, undefined {} other { ({error})}}
     homeLocation: 家位置
+    howtoAccessResults: 使用向下箭头键浏览结果列表。 要选择结果，请使用 Enter 键。
     myPlaces: 我的地方
     nearby: 附近的车站
     other: 其他

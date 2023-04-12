@@ -9,6 +9,9 @@ otpUi:
     fetchingSuggestions: Fetching suggestions…
     geocoderUnreachable: Could not reach geocoder{error, select, undefined {} other { ({error})}}
     homeLocation: Home
+    howToAccessResults: >-
+      Use the down arrow key browse the results list. To select a result, use
+      the Enter key.
     myPlaces: My Places
     nearby: Nearby Stops
     other: Other

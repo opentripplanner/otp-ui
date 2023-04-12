@@ -244,13 +244,36 @@ const LocationField = ({
                   sortByDistance,
                   preferredLayers
                 );
-                message = intl.formatMessage(
-                  { id: "otpUi.LocationField.resultsFound" },
+                const resultsFoundText = intl.formatMessage(
+                  {
+                    description:
+                      "Indicates the number of geocoder results found",
+                    id: "otpUi.LocationField.resultsFound"
+                  },
                   {
                     count,
                     input: text
                   }
                 );
+                message =
+                  // If there are results, concatenate sentences about results found and
+                  // instructions for assistive technology users on how to access results.
+                  count > 0
+                    ? [
+                        resultsFoundText,
+                        intl.formatMessage(
+                          {
+                            description:
+                              "Instructions on accessing the results",
+                            id: "otpUi.LocationField.howToAccessResults"
+                          },
+                          {
+                            count,
+                            input: text
+                          }
+                        )
+                      ].join(" ")
+                    : resultsFoundText;
               }
               setGeocodedFeatures(geocodedFeatures);
               setMessage(message);

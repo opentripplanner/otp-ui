@@ -11,6 +11,9 @@ otpUi:
       Không thể đến bộ định vị địa lý{error, select, undefined {} other {
       ({error})}}
     homeLocation: Nhà
+    howToAccessResults: >-
+      Sử dụng phím mũi tên xuống duyệt danh sách kết quả. Để chọn một kết quả,
+      hãy sử dụng phím Enter.
     myPlaces: Những địa điểm của tôi
     nearby: Điểm dừng liền kề
     other: Khác

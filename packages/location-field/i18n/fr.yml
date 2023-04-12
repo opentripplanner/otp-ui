@@ -9,6 +9,9 @@ otpUi:
     fetchingSuggestions: Chargement des suggestions…
     geocoderUnreachable: Géocodeur introuvable{error, select, undefined {} other { ({error})}}
     homeLocation: Domicile
+    howToAccessResults: >-
+      Utilisez la touche Flèche bas pour parcourir la liste des résultats. Pour
+      sélectioner un résultat, utilisez la touche Entrée.
     myPlaces: Mes lieux
     nearby: Arrêts à proximité
     other: Autres

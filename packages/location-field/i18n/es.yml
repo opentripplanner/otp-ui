@@ -11,6 +11,9 @@ otpUi:
       No se ha podido contactar con el geocodificador{error, select, undefined
       {} other { ({error})}}
     homeLocation: Hogar
+    howToAccessResults: >-
+      Utilice la tecla de flecha hacia abajo para desplazarse por la lista de
+      resultados. Para seleccionar un resultado, utilice la tecla Intro.
     myPlaces: Mis lugares
     nearby: Paradas cercanas
     other: Otro

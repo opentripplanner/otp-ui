@@ -7,6 +7,7 @@ otpUi:
     fetchingSuggestions: 제안을 가져오는 중
     geocoderUnreachable: 지오 코더에 도달할 수 없음{error, select, undefined {} other { ({error})}}
     homeLocation: 집
+    howToAccessResults: 아래쪽 화살표 키를 사용하여 결과 목록을 찾습니다. 결과를 선택하려면 Enter 키를 사용하십시오.
     myPlaces: 내 장소
     nearby: 근처 정류장
     other: 기타
