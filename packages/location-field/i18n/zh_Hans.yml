@@ -14,7 +14,7 @@ otpUi:
     placeNameWithDetails: "{placeName} ({details})"
     recentlySearched: 最近搜索到的
     resultsFound: |
-      为 "{input}" 找到 # 个地理编码器结果
+      为 "{input}" 找到 {count, plural, =0 {未找到结果} other {找到 # 个结果}}
     stations: 站台
     stops: 车站
     suggestedLocations: 建议地点

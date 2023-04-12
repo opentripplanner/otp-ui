@@ -17,7 +17,7 @@ otpUi:
     recentlySearched: Recherches récentes
     resultsFound: >
       {count, plural, =0 {Aucun résultat} =1 {# résultat} other {# résultats}}
-      du géocodeur pour "{input}".
+      pour "{input}".
     stations: Stations
     stops: Arrêts
     suggestedLocations: Lieux suggérés
