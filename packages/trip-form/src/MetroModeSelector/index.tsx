@@ -15,10 +15,11 @@ import { ModeButtonDefinition } from "@opentripplanner/types";
 import { CaretDown } from "@styled-icons/fa-solid/CaretDown";
 import { CaretUp } from "@styled-icons/fa-solid/CaretUp";
 import React, { ReactElement, useCallback, useRef, useState } from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import styled, { css } from "styled-components";
 
 import SubSettingsPane, { defaultMessages } from "./SubSettingsPane";
+import generateModeButtonLabel from "./i18n";
 
 const invisibleCss = css`
   clip: rect(0, 0, 0, 0);
@@ -164,7 +165,7 @@ const HoverInnerContainer = styled.div`
   color: #2e2e2e;
   font-size: 90%;
   font-weight: bold;
-  padding: 15px;
+  padding: 10px 15px 15px 15px;
   pointer-events: none;
   ${boxShadowCss}
 `;
@@ -206,6 +207,8 @@ function ModeButton({
   onSettingsUpdate,
   onToggle
 }: ModeButtonProps) {
+  const intl = useIntl();
+
   const [open, setOpen] = useState(false);
   const arrowRef = useRef(null);
   const onOpenChange = useCallback(
@@ -274,6 +277,8 @@ function ModeButton({
     [id, interactionProps, onPopupKeyboardExpand]
   );
 
+  const label = generateModeButtonLabel(modeButton.key, intl, modeButton.label);
+
   return (
     <ModeButtonWrapper
       accentColor={accentColor}
@@ -282,7 +287,7 @@ function ModeButton({
     >
       {/* Basic checkbox that states whether a mode is selected. */}
       <input
-        aria-label={modeButton.label}
+        aria-label={label}
         checked={modeButton.enabled ?? undefined}
         id={checkboxId}
         onChange={onToggle}
@@ -297,10 +302,10 @@ function ModeButton({
         htmlFor={checkboxId}
         // This will trigger mouse effects such as showing popup on hover of on check.
         ref={reference}
-        title={modeButton.label}
+        title={label}
       >
         <modeButton.Icon role="none" size={32} />
-        <InvisibleA11yLabel>{modeButton.label}</InvisibleA11yLabel>
+        <InvisibleA11yLabel>{label}</InvisibleA11yLabel>
       </label>
       <button
         // eslint-disable-next-line react/jsx-props-no-spreading
@@ -321,7 +326,7 @@ function ModeButton({
             defaultMessage={defaultMessages["otpUi.ModeSelector.settingsLabel"]}
             description="Label for the button to open settings for a travel mode."
             id="otpUi.ModeSelector.settingsLabel"
-            values={{ mode: modeButton.label }}
+            values={{ mode: label }}
           />
         </InvisibleA11yLabel>
       </button>
@@ -411,23 +416,23 @@ export default function ModeSelector({
   return (
     <ModeBar className="metro-mode-selector">
       <legend>{label}</legend>
-      {modeButtons.map(combination => (
+      {modeButtons.map(button => (
         <ModeButton
           accentColor={accentColor}
           activeHoverColor={activeHoverColor}
           fillModeIcons={fillModeIcons}
-          id={combination.key}
+          id={button.key}
           itemWithKeyboard={itemWithKeyboard}
-          key={combination.label}
-          modeButton={combination}
+          key={button.label}
+          modeButton={button}
           onPopupClose={useCallback(() => {
             setItemWithKeyboard(null);
           }, [setItemWithKeyboard])}
           onPopupKeyboardExpand={setItemWithKeyboard}
           onSettingsUpdate={onSettingsUpdate}
           onToggle={useCallback(() => {
-            onToggleModeButton(combination.key);
-          }, [combination, onToggleModeButton])}
+            onToggleModeButton(button.key);
+          }, [button, onToggleModeButton])}
         />
       ))}
     </ModeBar>

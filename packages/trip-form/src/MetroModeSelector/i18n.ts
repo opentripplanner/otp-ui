@@ -10,7 +10,8 @@ const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
 export default function generateModeButtonLabel(
   key: string,
-  intl: IntlShape
+  intl: IntlShape,
+  defaultLabel?: string
 ): string {
   switch (key.toLocaleLowerCase()) {
     case "transit":
@@ -46,7 +47,8 @@ export default function generateModeButtonLabel(
     // Default case adds support for custom mode buttons
     default:
       return intl.formatMessage({
-        defaultMessage: defaultMessages[`otpUi.ModeSelector.labels.${key}`],
+        defaultMessage:
+          defaultLabel || defaultMessages[`otpUi.ModeSelector.labels.${key}`],
         description: `Metro Mode Selector Label (${key})`,
         id: `otpUi.ModeSelector.labels.${key}`
       });

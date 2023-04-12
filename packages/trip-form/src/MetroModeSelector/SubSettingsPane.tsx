@@ -67,7 +67,7 @@ const ModeSettingRenderer = ({
 
   const labelWithIcon = setting.icon ? (
     <FormLabelIconWrapper>
-      {setting.icon} {label}
+      <span role="none">{setting.icon}</span> {label}
     </FormLabelIconWrapper>
   ) : (
     label
@@ -134,7 +134,7 @@ export default function SubSettingsPane({
   onSettingUpdate
 }: Props): ReactElement {
   const intl = useIntl();
-  const label = generateModeButtonLabel(modeButton.key, intl);
+  const label = generateModeButtonLabel(modeButton.key, intl, modeButton.label);
   return (
     <SettingsPanel>
       <legend>
