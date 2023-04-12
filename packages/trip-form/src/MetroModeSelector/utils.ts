@@ -76,8 +76,27 @@ export function convertModeSettingValue(
 }
 
 /**
+ * Connects the mode setting value from a values object, where each key corresponds
+ * to a mode setting in the modeSettings parameter.
+ * @param modeSettings The mode setting with an empty `value` param
+ * @param values An object containing setting values
+ * @returns Mode Setting with populated value
+ */
+export const populateSettingWithValue = (values: ModeSettingValues) => (
+  setting: ModeSetting
+): ModeSetting => {
+  const value = values[setting.key];
+  const convertedValue = convertModeSettingValue(setting, value);
+  return {
+    ...setting,
+    value: convertedValue as string & number & boolean
+  };
+};
+
+/**
  * Connects the mode setting values from a values object, where each key corresponds
  * to a mode setting in the modeSettings parameter.
+ * TODO: Remove
  * @param modeSettings The mode settings with empty `value` params
  * @param values An object containing setting values
  * @returns Mode settings with values populated
@@ -87,12 +106,7 @@ export function populateSettingsWithValues(
   values: ModeSettingValues
 ): ModeSetting[] {
   return modeSettings.map(setting => {
-    const value = values[setting.key];
-    const convertedValue = convertModeSettingValue(setting, value);
-    return {
-      ...setting,
-      value: convertedValue as string & number & boolean
-    };
+    return populateSettingWithValue(values)(setting);
   });
 }
 
