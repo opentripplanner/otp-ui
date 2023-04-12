@@ -397,7 +397,7 @@ interface Props {
    * Event for when a mode button is toggled
    * @param key Mode button to be toggled
    */
-  onToggleModeButton: (key: string) => void;
+  onToggleModeButton: (key: string, newState: boolean) => void;
 }
 
 export default function ModeSelector({
@@ -431,7 +431,7 @@ export default function ModeSelector({
           onPopupKeyboardExpand={setItemWithKeyboard}
           onSettingsUpdate={onSettingsUpdate}
           onToggle={useCallback(() => {
-            onToggleModeButton(button.key);
+            onToggleModeButton(button.key, !button.enabled);
           }, [button, onToggleModeButton])}
         />
       ))}
