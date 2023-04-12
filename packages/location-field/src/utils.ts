@@ -1,7 +1,5 @@
-// Prettier doesn't understand type imports
-// eslint-disable-next-line prettier/prettier
-import type { Properties, Label } from "./types";
-
+import { IntlShape } from "react-intl";
+import { Properties, Label } from "./types";
 
 // A mapping of Pelias layers to display modes. The label generator will run the generator
 // based on the layer of the feature. Adding a new method to this mapping will support
@@ -15,17 +13,25 @@ const layerDisplayMap = {
       neighbourhood,
       region_a: state,
       region,
-      street,
+      street
     } = properties;
     return {
       // if the housenumber is available, combining that with the street can
       // avoid duplicates which might be present in the name
       main: housenumber ? `${housenumber} ${street}` : name,
-      secondary: [locality, neighbourhood, state || region].filter(item => !!item).join(", ")
+      secondary: [locality, neighbourhood, state || region]
+        .filter(item => !!item)
+        .join(", ")
     };
   },
   venue: (properties: Properties): Label => {
-    const { region_a: state, neighbourhood, locality, name, street } = properties;
+    const {
+      region_a: state,
+      neighbourhood,
+      locality,
+      name,
+      street
+    } = properties;
     return {
       main: name,
       secondary: [street, neighbourhood, locality, state]
@@ -63,4 +69,29 @@ export const getCombinedLabel = (properties: Properties): string => {
     return `${main}, ${secondary}`;
   }
   return properties?.label || "";
+};
+
+/**
+ * Helper method to append text in parentheses to some other text, if needed.
+ */
+export const addInParentheses = (
+  mainText: string,
+  extraText?: string
+): string => {
+  return extraText ? `${mainText} (${extraText})` : mainText;
+};
+
+/**
+ * Helper function to assemble a geocoder error message.
+ */
+export const getGeocoderErrorMessage = (
+  intl: IntlShape,
+  errorText?: string
+): string => {
+  const geocoderUnreachableText = intl.formatMessage({
+    description: "Geocoder unreachable status",
+    id: "otpUi.LocationField.geocoderUnreachable"
+  });
+
+  return addInParentheses(geocoderUnreachableText, errorText);
 };

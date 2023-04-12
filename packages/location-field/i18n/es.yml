@@ -2,14 +2,10 @@ otpUi:
   LocationField:
     beingTypingPrompt: Comience a escribir para buscar ubicaciones
     clearLocation: Restablecer la ubicación
-    currentLocationUnavailable: >-
-      Ubicación actual no disponible{error, select, undefined {} other {
-      ({error})}}
+    currentLocationUnavailable: Ubicación actual no disponible
     fetchingLocation: Buscando la ubicación…
     fetchingSuggestions: Buscando las sugerencias…
-    geocoderUnreachable: >-
-      No se ha podido contactar con el geocodificador{error, select, undefined
-      {} other { ({error})}}
+    geocoderUnreachable: No se ha podido contactar con el geocodificador
     homeLocation: Hogar
     howToAccessResults: >-
       Utilice la tecla de flecha hacia abajo para desplazarse por la lista de

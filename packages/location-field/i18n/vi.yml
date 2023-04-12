@@ -2,14 +2,10 @@ otpUi:
   LocationField:
     beginTypingPrompt: Bắt đầu gõ để tìm kiếm các địa điểm
     clearLocation: Xóa vị trí
-    currentLocationUnavailable: >-
-      Vị trí hiện tại không có sẵn{error, select, undefined {} other {
-      ({error})}}
+    currentLocationUnavailable: Vị trí hiện tại không có sẵn
     fetchingLocation: Tìm nạp vị trí…
     fetchingSuggestions: Tìm nạp đề xuất…
-    geocoderUnreachable: >-
-      Không thể đến bộ định vị địa lý{error, select, undefined {} other {
-      ({error})}}
+    geocoderUnreachable: Không thể đến bộ định vị địa lý
     homeLocation: Nhà
     howToAccessResults: >-
       Sử dụng phím mũi tên xuống duyệt danh sách kết quả. Để chọn một kết quả,

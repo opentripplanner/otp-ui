@@ -25,7 +25,12 @@ import {
 } from "./options";
 import * as S from "./styled";
 import { LocationFieldProps, ResultType } from "./types";
-import { generateLabel, getCombinedLabel } from "./utils";
+import {
+  addInParentheses,
+  generateLabel,
+  getCombinedLabel,
+  getGeocoderErrorMessage
+} from "./utils";
 
 const optionIdPrefix = "otpui-locf-option";
 
@@ -232,10 +237,7 @@ const LocationField = ({
                 // TODO: determine how other geocoders return error messages.
                 const errorMessage = result?.results?.error?.message;
                 // If the result did not contain a list of features, add special note.
-                message = intl.formatMessage(
-                  { id: "otpUi.LocationField.geocoderUnreachable" },
-                  { error: errorMessage }
-                );
+                message = getGeocoderErrorMessage(intl, errorMessage);
                 geocodedFeatures = [];
               } else {
                 const { count } = getFeaturesByCategoryWithLimit(
@@ -282,10 +284,7 @@ const LocationField = ({
           )
           .catch((err: unknown) => {
             console.error(err);
-            const message = intl.formatMessage(
-              { id: "otpUi.LocationField.geocoderUnreachable" },
-              { error: err.toString() }
-            );
+            const message = getGeocoderErrorMessage(intl, err.toString());
             setMessage(message);
           });
       }),
@@ -735,20 +734,20 @@ const LocationField = ({
     });
     positionUnavailable = false;
   } else {
-    // error detecting current position
+    // Error detecting current position.
+    // If there is an error, concatenate the error message in parentheses.
     optionIcon = currentPositionUnavailableIcon;
-    optionTitle = intl.formatMessage(
-      {
-        id: "otpUi.LocationField.currentLocationUnavailable"
-      },
-      {
-        error: !currentPosition
-          ? undefined
-          : typeof currentPosition.error === "string"
-          ? currentPosition.error
-          : currentPosition.error.message
-      }
-    );
+    const locationUnavailableText = intl.formatMessage({
+      description: "Current location unavailable status",
+      id: "otpUi.LocationField.currentLocationUnavailable"
+    });
+    const errorText = !currentPosition
+      ? undefined
+      : typeof currentPosition.error === "string"
+      ? currentPosition.error
+      : currentPosition.error.message;
+
+    optionTitle = addInParentheses(locationUnavailableText, errorText);
     positionUnavailable = true;
     statusMessages.push(optionTitle);
   }
