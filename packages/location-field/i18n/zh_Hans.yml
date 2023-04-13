@@ -7,15 +7,18 @@ otpUi:
     fetchingSuggestions: 获取建议
     geocoderUnreachable: 无法获取建议
     homeLocation: 家位置
-    howtoAccessResults: 使用向下箭头键浏览结果列表。 要选择结果，请使用 Enter 键。
+    howToAccessResults: 使用向下箭头键浏览结果列表。 要选择结果，请使用 Enter 键。
     myPlaces: 我的地方
     nearby: 附近的车站
+    noResults: 未找到结果
     other: 其他
+    otherCount: "{count}兴趣点"
     placeNameWithDetails: "{placeName} ({details})"
     recentlySearched: 最近搜索到的
-    resultsFound: |
-      为 "{input}" 找到 {count, plural, =0 {未找到结果} other {找到 # 个结果}}
+    resultsFound: 为 "{input}" 找到 找到 {results}
+    stationCount: "{count}站台"
     stations: 站台
+    stopCount: "{count}车站"
     stops: 车站
     suggestedLocations: 建议地点
     suggestedLocationsLong: 切换显示建议位置列表

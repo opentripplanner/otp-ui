@@ -12,13 +12,15 @@ otpUi:
       the Enter key.
     myPlaces: My Places
     nearby: Nearby Stops
+    noResults: No results
     other: Other
+    otherCount: "{count, plural, =1 {# other point} other {# other points}} of interest"
     placeNameWithDetails: "{placeName} ({details})"
     recentlySearched: Recently Searched
-    resultsFound: >
-      {count, plural, =0 {No results} =1 {# result} other {# results}} found for
-      "{input}".
+    resultsFound: "{results} found for \"{input}\"."
+    stationCount: "{count, plural, =1 {# station} other {# stations}}"
     stations: Stations
+    stopCount: "{count, plural, =1 {# stop} other {# stops}}"
     stops: Stops
     suggestedLocations: Suggested locations
     suggestedLocationsLong: Toggle displaying the list of suggested locations

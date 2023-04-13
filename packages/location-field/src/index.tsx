@@ -240,42 +240,79 @@ const LocationField = ({
                 message = getGeocoderErrorMessage(intl, errorMessage);
                 geocodedFeatures = [];
               } else {
-                const { count } = getFeaturesByCategoryWithLimit(
+                const {
+                  otherFeatures,
+                  stationFeatures,
+                  stopFeatures
+                } = getFeaturesByCategoryWithLimit(
                   geocodedFeatures,
                   suggestionCount,
                   sortByDistance,
                   preferredLayers
                 );
+                // Breakdown results found by type.
+                const parts = [];
+                if (stopFeatures.length) {
+                  parts.push(
+                    intl.formatMessage(
+                      {
+                        description: "Shows the count of transit stops",
+                        id: "otpUi.LocationField.stopCount"
+                      },
+                      { count: stopFeatures.length }
+                    )
+                  );
+                }
+                if (stationFeatures.length) {
+                  parts.push(
+                    intl.formatMessage(
+                      {
+                        description: "Shows the count of stations",
+                        id: "otpUi.LocationField.stationCount"
+                      },
+                      { count: stationFeatures.length }
+                    )
+                  );
+                }
+                if (otherFeatures.length) {
+                  parts.push(
+                    intl.formatMessage(
+                      {
+                        description: "Shows the count of other places",
+                        id: "otpUi.LocationField.otherCount"
+                      },
+                      { count: otherFeatures.length }
+                    )
+                  );
+                }
+                const hasResults = parts.length !== 0;
+                const results = hasResults
+                  ? intl.formatList(parts, { type: "conjunction" })
+                  : intl.formatMessage({
+                      description: "Indicates no results",
+                      id: "otpUi.LocationField.noResults"
+                    });
                 const resultsFoundText = intl.formatMessage(
                   {
-                    description:
-                      "Indicates the number of geocoder results found",
+                    description: "Text about geocoder results found",
                     id: "otpUi.LocationField.resultsFound"
                   },
                   {
-                    count,
-                    input: text
+                    input: text,
+                    results
                   }
                 );
-                message =
+                if (hasResults) {
                   // If there are results, concatenate sentences about results found and
                   // instructions for assistive technology users on how to access results.
-                  count > 0
-                    ? [
-                        resultsFoundText,
-                        intl.formatMessage(
-                          {
-                            description:
-                              "Instructions on accessing the results",
-                            id: "otpUi.LocationField.howToAccessResults"
-                          },
-                          {
-                            count,
-                            input: text
-                          }
-                        )
-                      ].join(" ")
-                    : resultsFoundText;
+                  const instructions = intl.formatMessage({
+                    description: "Instructions on accessing geocoder results",
+                    id: "otpUi.LocationField.howToAccessResults"
+                  });
+                  message = `${resultsFoundText} ${instructions}`;
+                } else {
+                  message = resultsFoundText;
+                }
               }
               setGeocodedFeatures(geocodedFeatures);
               setMessage(message);

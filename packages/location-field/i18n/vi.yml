@@ -12,12 +12,15 @@ otpUi:
       hãy sử dụng phím Enter.
     myPlaces: Những địa điểm của tôi
     nearby: Điểm dừng liền kề
+    noResults: Không có kết quả
     other: Khác
+    otherCount: "{count} điểm ưa thích"
     placeNameWithDetails: "{placeName} ({details})"
     recentlySearched: Gần đây đã tìm kiếm
-    resultsFound: |
-      {count, plural, =0 {Không có} other {#}} kết quả cho "{input}".
+    resultsFound: "{results} tìm cho \"{input}\"."
+    stationCount: "{count} ga"
     stations: Ga
+    stopCount: "{count} điểm dừng"
     stops: Điểm dừng
     suggestedLocations: Địa điểm được đề xuất
     suggestedLocationsLong: Bật tắt hiển thị danh sách địa điểm gợi ý

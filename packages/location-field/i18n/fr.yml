@@ -12,13 +12,15 @@ otpUi:
       sélectioner un résultat, utilisez la touche Entrée.
     myPlaces: Mes lieux
     nearby: Arrêts à proximité
+    noResults: Aucun résultat
     other: Autres
+    otherCount: "{count, plural, =1 {# autre point} other {# autres points}} d'intérêt"
     placeNameWithDetails: "{placeName} ({details})"
     recentlySearched: Recherches récentes
-    resultsFound: >
-      {count, plural, =0 {Aucun résultat} =1 {# résultat} other {# résultats}}
-      pour "{input}".
+    resultsFound: "{results} pour \"{input}\"."
+    stationCount: "{count, plural, =1 {# station} other {# stations}}"
     stations: Stations
+    stopCount: "{count, plural, =1 {# arrêt} other {# arrêts}}"
     stops: Arrêts
     suggestedLocations: Lieux suggérés
     suggestedLocationsLong: Basculer l'affichage de la liste de lieux suggérés

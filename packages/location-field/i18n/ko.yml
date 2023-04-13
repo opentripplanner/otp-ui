@@ -10,12 +10,15 @@ otpUi:
     howToAccessResults: 아래쪽 화살표 키를 사용하여 결과 목록을 찾습니다. 결과를 선택하려면 Enter 키를 사용하십시오.
     myPlaces: 내 장소
     nearby: 근처 정류장
+    noResults: 검색된 결과가 없
     other: 기타
+    otherCount: "{count}관심 지점"
     placeNameWithDetails: "{placeName} ({details})"
     recentlySearched: 최근 검색 내역
-    resultsFound: |
-      "{input}" 에 대해 {count, plural, =0 {검색된 결과가 없} other {#결과가 검색되었}}습니다.
+    resultsFound: "\"{input}\" 에 대해 {results} 습니다."
+    stationCount: "{count}역"
     stations: 역
+    stopCount: "{count}정류장"
     stops: 정류장
     suggestedLocations: 제안된 위치
     suggestedLocationsLong: 추천 위치 목록 표시 전환
