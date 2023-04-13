@@ -15,7 +15,6 @@ otpUi:
     noResults: No results
     other: Other
     otherCount: "{count, plural, =1 {# other point} other {# other points}} of interest"
-    placeNameWithDetails: "{placeName} ({details})"
     recentlySearched: Recently Searched
     resultsFound: "{results} found for \"{input}\"."
     stationCount: "{count, plural, =1 {# station} other {# stations}}"

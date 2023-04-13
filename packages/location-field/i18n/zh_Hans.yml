@@ -13,7 +13,6 @@ otpUi:
     noResults: 未找到结果
     other: 其他
     otherCount: "{count}兴趣点"
-    placeNameWithDetails: "{placeName} ({details})"
     recentlySearched: 最近搜索到的
     resultsFound: 为 "{input}" 找到 找到 {results}
     stationCount: "{count}站台"

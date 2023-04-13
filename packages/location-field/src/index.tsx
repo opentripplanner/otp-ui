@@ -17,9 +17,9 @@ import { useIntl, FormattedMessage } from "react-intl";
 
 import {
   GeocodedOptionIcon,
+  getStoredPlaceName,
   ICON_SIZE,
   Option,
-  StoredPlaceName,
   TransitStopOption,
   UserLocationIcon
 } from "./options";
@@ -747,7 +747,7 @@ const LocationField = ({
             isActive={itemIndex === activeIndex}
             key={optionKey++}
             onClick={locationSelected}
-            title={<StoredPlaceName location={userLocation} />}
+            title={getStoredPlaceName(userLocation)}
           />
         );
         itemIndex++;

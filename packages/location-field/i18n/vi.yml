@@ -15,7 +15,6 @@ otpUi:
     noResults: Không có kết quả
     other: Khác
     otherCount: "{count} điểm ưa thích"
-    placeNameWithDetails: "{placeName} ({details})"
     recentlySearched: Gần đây đã tìm kiếm
     resultsFound: "{results} tìm cho \"{input}\"."
     stationCount: "{count} ga"

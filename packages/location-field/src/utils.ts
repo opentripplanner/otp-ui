@@ -72,13 +72,16 @@ export const getCombinedLabel = (properties: Properties): string => {
 };
 
 /**
- * Helper method to append text in parentheses to some other text, if needed.
+ * Helper method to append text in parentheses to some other text,
+ * if the added text is not null or blank.
  */
 export const addInParentheses = (
   mainText: string,
   extraText?: string
 ): string => {
-  return extraText ? `${mainText} (${extraText})` : mainText;
+  return extraText && extraText !== ""
+    ? `${mainText} (${extraText})`
+    : mainText;
 };
 
 /**

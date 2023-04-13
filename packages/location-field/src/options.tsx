@@ -1,7 +1,7 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceStringImperial } from "@opentripplanner/humanize-distance";
-import React, { ReactElement } from "react";
-import { FormattedMessage } from "react-intl";
+import React from "react";
+import { IntlShape, useIntl } from "react-intl";
 import { Bus } from "@styled-icons/fa-solid/Bus";
 import { Briefcase } from "@styled-icons/fa-solid/Briefcase";
 import { Home } from "@styled-icons/fa-solid/Home";
@@ -10,6 +10,7 @@ import { MapPin } from "@styled-icons/fa-solid/MapPin";
 
 import { Stop, UserLocation } from "@opentripplanner/types";
 import * as S from "./styled";
+import { addInParentheses } from "./utils";
 
 export const ICON_SIZE = 13;
 
@@ -157,36 +158,30 @@ export function UserLocationIcon({
   return <MapMarker size={ICON_SIZE} />;
 }
 
-function LocationName({ location }: { location: UserLocation }): ReactElement {
+function getLocationName(location: UserLocation, intl: IntlShape): string {
   switch (location.type) {
     case "home":
-      return (
-        <FormattedMessage
-          defaultMessage="Home"
-          description="The home location"
-          id="otpUi.LocationField.homeLocation"
-        />
-      );
+      return intl.formatMessage({
+        defaultMessage: "Home",
+        description: "The home location",
+        id: "otpUi.LocationField.homeLocation"
+      });
     case "work":
-      return (
-        <FormattedMessage
-          defaultMessage="Work"
-          description="The work location"
-          id="otpUi.LocationField.workLocation"
-        />
-      );
+      return intl.formatMessage({
+        defaultMessage: "Work",
+        description: "The work location",
+        id: "otpUi.LocationField.workLocation"
+      });
     default:
-      return <>{location.name}</>;
+      return location.name;
   }
 }
 
-export function StoredPlaceName({
-  location,
+export function getStoredPlaceName(
+  location: UserLocation,
   withDetails = true
-}: {
-  location: UserLocation;
-  withDetails?: boolean;
-}): React.ReactElement {
+): string {
+  const intl = useIntl();
   let detailText;
   if (withDetails) {
     if (location.type === "home" || location.type === "work") {
@@ -199,17 +194,5 @@ export function StoredPlaceName({
     //   detailText = moment(location.timestamp).fromNow();
   }
 
-  return detailText && detailText !== "" ? (
-    <FormattedMessage
-      defaultMessage="{placeName} ({details})"
-      description="Renders a place and some brief detail text."
-      id="otpUi.LocationField.placeNameWithDetails"
-      values={{
-        details: detailText,
-        placeName: <LocationName location={location} />
-      }}
-    />
-  ) : (
-    <LocationName location={location} />
-  );
+  return addInParentheses(getLocationName(location, intl), detailText);
 }
