@@ -26,10 +26,10 @@ const layerDisplayMap = {
   },
   venue: (properties: Properties): Label => {
     const {
-      region_a: state,
-      neighbourhood,
       locality,
       name,
+      neighbourhood,
+      region_a: state,
       street
     } = properties;
     return {

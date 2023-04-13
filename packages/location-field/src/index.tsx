@@ -120,7 +120,6 @@ function getFeaturesByCategoryWithLimit(
   );
 
   return {
-    count: otherFeatures.length + stationFeatures.length + stopFeatures.length,
     otherFeatures,
     stationFeatures,
     stopFeatures
