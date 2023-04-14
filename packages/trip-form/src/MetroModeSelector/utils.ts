@@ -20,7 +20,7 @@ export function aggregateModes(
   modeButtonDefinitions: ModeButtonDefinition[]
 ): TransportMode[] {
   return modeButtonDefinitions.reduce<Array<TransportMode>>((array, combo) => {
-    combo.modes.forEach(mode => array.push(mode));
+    combo?.modes?.forEach(mode => array.push(mode));
     return array;
   }, new Array<TransportMode>());
 }
