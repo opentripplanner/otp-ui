@@ -4,28 +4,11 @@ import {
   ModeSettingValues,
   TransportMode
 } from "@opentripplanner/types";
-import { useState } from "react";
-import { QueryParamConfig, decodeQueryParams } from "serialize-query-params";
-import {
-  useQueryParam,
-  DelimitedArrayParam,
-  ObjectParam
-} from "use-query-params";
 
 import coreUtils from "@opentripplanner/core-utils";
-import { QueryParamChangeEvent } from "../types";
 
 const { queryGen } = coreUtils;
 const { TRANSIT_SUBMODES_AND_TRANSIT } = queryGen;
-
-type InitialStateType = {
-  enabledModeButtons: string[];
-  modeSettingValues: ModeSettingValues;
-};
-
-type ModeStateConfig = {
-  queryParamState?: boolean;
-};
 
 /**
  * Aggregates all the modes from the input mode button definitions
@@ -94,23 +77,6 @@ export const populateSettingWithValue = (values: ModeSettingValues) => (
 };
 
 /**
- * Connects the mode setting values from a values object, where each key corresponds
- * to a mode setting in the modeSettings parameter.
- * TODO: Remove
- * @param modeSettings The mode settings with empty `value` params
- * @param values An object containing setting values
- * @returns Mode settings with values populated
- */
-export function populateSettingsWithValues(
-  modeSettings: ModeSetting[],
-  values: ModeSettingValues
-): ModeSetting[] {
-  return modeSettings.map(setting => {
-    return populateSettingWithValue(values)(setting);
-  });
-}
-
-/**
  * Extracts the defaults from each mode setting into an object
  * where the keys correspond with the keys from the mode setting.
  * @param modeSetting Mode settings with `default`s populated
@@ -170,85 +136,6 @@ export const addSettingsToButton = (settings: ModeSetting[]) => (
     modeSettings: settingsForThisCombination
   };
 };
-
-/**
- * State storage hook that can either store the state in React useState hook or in the
- * the URL Query Params using useQueryParam library. The reason this exists is so that the mode
- * selector can function in the storybook where modifying the URL doesn't work. It also
- * helps handle the initial value for when the URL doesn't have the associated query param.
- * @param name Name of parameter
- * @param stateType Type of object to be stored
- * @param storeInQueryParam Store this object in query params or in React state hook
- * @param defaultState The default state/initial state
- * @returns Getter and setter just like useState
- */
-function useStateStorage<Type>(
-  name: string,
-  stateType: QueryParamConfig<Type>,
-  storeInQueryParam: boolean,
-  defaultState?: Type
-): [Type, (newValue: Type) => void] {
-  const [qpState, setQpState] = useQueryParam<Type>(name, stateType);
-  const [reactState, setReactState] = useState<Type>(defaultState);
-
-  if (!storeInQueryParam) {
-    return [reactState, setReactState];
-  }
-
-  if (qpState === undefined) {
-    return [defaultState, setQpState];
-  }
-  return [qpState, setQpState];
-}
-
-/**
- * Grabs the activated modes and mode settings from the URL string
- * when provided with all the necessary parameters. This allows access to the
- * same parameters as useModeState in a context where React Hooks are not available,
- * such as in Redux.
- * @param searchString URL String
- * @param modeButtons Mode button definitions (from config)
- * @param modeSettingDefinitions Mode setting definitions (from config/defaults)
- * @param initialState Initial state (from config)
- * @returns Array of active TransportModes and all the mode settings
- */
-export function getActivatedModesFromQueryParams(
-  searchString: string,
-  modeButtons: ModeButtonDefinition[],
-  modeSettingDefinitions: ModeSetting[],
-  initialState: InitialStateType
-): { activeModes: TransportMode[]; modeSettings: ModeSetting[] } {
-  const queryObject = new URLSearchParams(searchString);
-
-  const decodedQuery = decodeQueryParams(
-    { modeButtons: DelimitedArrayParam, modeSettings: ObjectParam },
-    {
-      modeButtons: queryObject.get("modeButtons"),
-      modeSettings: queryObject.get("modeSettings")
-    }
-  );
-
-  const enabledKeys =
-    decodedQuery.modeButtons || initialState.enabledModeButtons;
-  const activeButtons = filterModeDefitionsByKey(modeButtons, enabledKeys);
-
-  const modeSettingValues = {
-    // TODO: Do we want to keep these defaults with the definitions or only support it in initial state?
-    ...extractModeSettingDefaultsToObject(modeSettingDefinitions),
-    ...initialState.modeSettingValues,
-    ...decodedQuery.modeSettings
-  };
-
-  const modeSettingsWithValues = populateSettingsWithValues(
-    modeSettingDefinitions,
-    modeSettingValues
-  );
-  return {
-    activeModes: aggregateModes(activeButtons),
-    modeSettings: modeSettingsWithValues
-  };
-}
-
 /**
  * Provides a function that sets mode buttons' enabled state
  * Intended to be composed in a map
@@ -256,99 +143,11 @@ export function getActivatedModesFromQueryParams(
  * @param enabledKeys Array of enabled keys, if not provided default to initial state
  * @returns Function that accepts mode button and returns a mode button with enabled key set
  */
-export function setModeButtonEnabled(enabledKeys: string[]) {
-  return (modeButton: ModeButtonDefinition): ModeButtonDefinition => {
-    return {
-      ...modeButton,
-      enabled: enabledKeys.includes(modeButton.key)
-    };
-  };
-}
-
-/**
- * This useModeState hook is designed to handle all the state relating to the mode selector.
- * It consumes and provides all the needed data to make the mode selector work.
- * @param buttonsFromConfig List of mode buttons to be displayed
- * @param initialState Initial state object for mode button activation and mode setting defaults
- * @param modeSettingDefinitions Definitions of all the mode settings available
- * @param configuration Config to specify whether to store in url query param or react useState hook
- * @returns Data to be used by mode selector and query generation
- */
-export function useModeState(
-  buttonsFromConfig: ModeButtonDefinition[],
-  initialState: InitialStateType,
-  modeSettingDefinitions: ModeSetting[],
-  { queryParamState }: ModeStateConfig
-): {
-  setModeSettingValue: (setting: QueryParamChangeEvent) => void;
-  buttonsWithSettings: ModeButtonDefinition[];
-  enabledModeButtonKeys: string[];
-  enabledModes: TransportMode[];
-  toggleModeButton: (key: string) => void;
-  modeSettings: ModeSetting[];
-} {
-  const [enabledModeButtonKeys, setEnabledModeButtonKeys] = useStateStorage<
-    string[]
-  >(
-    "modeButtons",
-    DelimitedArrayParam,
-    queryParamState,
-    initialState.enabledModeButtons
-  );
-
-  const modeButtons = buttonsFromConfig.map(combo => ({
-    ...combo,
-    enabled: enabledModeButtonKeys.includes(combo.key)
-  }));
-
-  const toggleModeButton = (modeButtonKey: string) => {
-    if (enabledModeButtonKeys.includes(modeButtonKey)) {
-      setEnabledModeButtonKeys(
-        enabledModeButtonKeys.filter(c => c !== modeButtonKey)
-      );
-    } else {
-      setEnabledModeButtonKeys([...enabledModeButtonKeys, modeButtonKey]);
-    }
-  };
-
-  const defaultModeSettingsValues = {
-    ...extractModeSettingDefaultsToObject(modeSettingDefinitions),
-    ...initialState.modeSettingValues
-  };
-
-  // Handle ModeSettings state
-  const [modeSettingsValues, setModeSettingsValues] = useStateStorage<
-    ModeSettingValues
-  >("modeSettings", ObjectParam, queryParamState, defaultModeSettingsValues);
-
-  const setModeSettingValue = (setting: QueryParamChangeEvent) => {
-    setModeSettingsValues({
-      ...modeSettingsValues,
-      ...setting
-    });
-  };
-
-  const settingsWithValues = populateSettingsWithValues(
-    modeSettingDefinitions,
-    modeSettingsValues
-  );
-
-  const buttonsWithSettings = modeButtons.map(
-    addSettingsToButton(settingsWithValues)
-  );
-
-  const enabledModeButtons = filterModeDefitionsByKey(
-    buttonsWithSettings,
-    enabledModeButtonKeys
-  );
-  const enabledModes = aggregateModes(enabledModeButtons);
-
+export const setModeButtonEnabled = (enabledKeys: string[]) => (
+  modeButton: ModeButtonDefinition
+): ModeButtonDefinition => {
   return {
-    setModeSettingValue,
-    buttonsWithSettings,
-    enabledModeButtonKeys,
-    enabledModes,
-    modeSettings: settingsWithValues,
-    toggleModeButton
+    ...modeButton,
+    enabled: enabledKeys.includes(modeButton.key)
   };
-}
+};
