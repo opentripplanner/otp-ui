@@ -831,8 +831,11 @@ const LocationField = ({
       ? intl.formatMessage({ id: "otpUi.LocationField.fetchingLocation" })
       : defaultPlaceholder;
   const shouldRenderList = isStatic || menuVisible;
-  // Only populate the aria-controls fields if the suggestion list is shown.
-  const controlledId = shouldRenderList ? listBoxId : undefined;
+  const hasNoEnabledOptions = menuItemCount === 0;
+  // Only populate the aria-controls fields if the suggestion list is shown
+  // and the list has an enabled option.
+  const controlledId =
+    shouldRenderList && !hasNoEnabledOptions ? listBoxId : undefined;
 
   const textControl = (
     <S.Input
@@ -897,10 +900,10 @@ const LocationField = ({
       <S.HiddenContent role="status">
         {statusMessages.join(", ")}
       </S.HiddenContent>
-      {/* Note: always render the suggestion list because it is
-          being referenced through aria-controls of the dropdown button. */}
       {shouldRenderList && (
         <ItemList
+          // Hide the list from screen readers if no enabled options are shown.
+          aria-hidden={hasNoEnabledOptions}
           aria-label={intl.formatMessage({
             defaultMessage: "Suggested locations",
             description:
