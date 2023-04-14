@@ -2,10 +2,10 @@ import {
   addSettingsToButton,
   aggregateModes,
   checkIfModeSettingApplies,
+  convertModeSettingValue,
   extractModeSettingDefaultsToObject,
   filterModeDefitionsByKey,
-  getActivatedModesFromQueryParams,
-  populateSettingsWithValues
+  populateSettingWithValue
 } from "../MetroModeSelector/utils";
 
 const modeButtonDefinitions = [
@@ -179,7 +179,7 @@ describe("mode selector utils", () => {
   describe("populate mode settings with values", () => {
     it("should populate settings with values", () => {
       expect(
-        populateSettingsWithValues(modeSettingDefinitions, valueObject)
+        modeSettingDefinitions.map(populateSettingWithValue(valueObject))
       ).toMatchSnapshot();
     });
   });
@@ -227,6 +227,17 @@ describe("mode selector utils", () => {
         })
       ).toBeTruthy();
     });
+
+    describe("check type conversion of mode setting value", () => {
+      it("should convert to number", () => {
+        expect(convertModeSettingValue(modeSettingDefinitions[0], 4)).toBe(4);
+      });
+      it("should convert to boolean", () => {
+        expect(
+          convertModeSettingValue(modeSettingDefinitions[4], "false")
+        ).toBeFalsy();
+      });
+    });
   });
 
   describe("check add settings to button", () => {
@@ -236,49 +247,6 @@ describe("mode selector utils", () => {
           addSettingsToButton(modeSettingDefinitions)
         )
       ).toMatchSnapshot();
-    });
-  });
-
-  describe("get activated modes and settings from query params", () => {
-    const modeSettingsWithValues = populateSettingsWithValues(
-      modeSettingDefinitions,
-      extractModeSettingDefaultsToObject(modeSettingDefinitions)
-    );
-    it("should work for basic set of buttons and settings", () => {
-      expect(
-        getActivatedModesFromQueryParams(
-          "?modeButtons=TRANSIT_WALK_BIKE_CAR&modeSettings=carReluctance-3_bikeReluctance-2_walkReluctance-3.4_allowBikeRental-true_wheelchair-true",
-          modeButtonDefinitions,
-          modeSettingDefinitions,
-          {}
-        )
-      ).toMatchSnapshot();
-    });
-    it("should work with some other parameters that we don't need", () => {
-      expect(
-        getActivatedModesFromQueryParams(
-          "?modeButtons=TRANSIT_WALK&foo=bar&mode=notamode&mode=anothermode",
-          modeButtonDefinitions,
-          modeSettingDefinitions,
-          {}
-        )
-      ).toEqual({
-        activeModes: [{ mode: "BUS" }, { mode: "RAIL" }, { mode: "WALK" }],
-        modeSettings: modeSettingsWithValues
-      });
-    });
-    it("should ignore modes and settings that are not defined", () => {
-      expect(
-        getActivatedModesFromQueryParams(
-          "?modeButtons=undefinedMode_WALK&modeSettings=bungeeJumping-true",
-          modeButtonDefinitions,
-          modeSettingDefinitions,
-          {}
-        )
-      ).toEqual({
-        activeModes: [{ mode: "WALK" }],
-        modeSettings: modeSettingsWithValues
-      });
     });
   });
 });
