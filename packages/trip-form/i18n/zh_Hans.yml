@@ -5,11 +5,11 @@ otpUi:
     now: 现在离开
   ModeSelector:
     labels:
-      BICYCLE: 自行车
-      CAR: 驾驶
-      RENT: 租
-      TRANSIT: 公共交通
-      WALK: 步行
+      bicycle: 自行车
+      car: 驾驶
+      rent: 租
+      transit: 公共交通
+      walk: 步行
     settings:
       addBus-label: 公共汽车
       addRail-label: 火车

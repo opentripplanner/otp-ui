@@ -5,11 +5,11 @@ otpUi:
     now: Maintenant
   ModeSelector:
     labels:
-      BICYCLE: Vélo
-      CAR: Voiture
-      RENT: Location
-      TRANSIT: Transports
-      WALK: Marche
+      bicycle: Vélo
+      car: Voiture
+      rent: Location
+      transit: Transports
+      walk: Marche
     settings:
       addBus-label: Bus
       addRail-label: Train

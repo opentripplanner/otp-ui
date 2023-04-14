@@ -5,11 +5,11 @@ otpUi:
     now: Partir ahora
   ModeSelector:
     labels:
-      BICYCLE: Bicicleta
-      CAR: Coche
-      RENT: Alquiler
-      TRANSIT: Transportes
-      WALK: Caminar
+      bicycle: Bicicleta
+      car: Coche
+      rent: Alquiler
+      transit: Transportes
+      walk: Caminar
     settings:
       addBus-label: Autobús
       addRail-label: Tren
