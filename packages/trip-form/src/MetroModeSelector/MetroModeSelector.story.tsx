@@ -8,11 +8,15 @@ import {
   TrainTram
 } from "@styled-icons/fa-solid";
 import { ClassicBike } from "@opentripplanner/icons/lib/classic";
-import React, { ReactElement } from "react";
-import { QueryParamProvider } from "use-query-params";
-import { WindowHistoryAdapter } from "use-query-params/adapters/window";
+import React, { ReactElement, useState } from "react";
 import * as Core from "..";
 import { QueryParamChangeEvent } from "../types";
+import {
+  addSettingsToButton,
+  extractModeSettingDefaultsToObject,
+  populateSettingWithValue,
+  setModeButtonEnabled
+} from "./utils";
 
 import modeSettingDefinitions from "../../modeSettings.yml";
 
@@ -80,6 +84,10 @@ const initialState = {
   modeSettingValues: {}
 };
 
+function pipe<T>(...fns: Array<(arg: T) => T>) {
+  return (value: T) => fns.reduce((acc, fn) => fn(acc), value);
+}
+
 const MetroModeSelectorComponent = ({
   fillModeIcons,
   modeButtonDefinitions,
@@ -89,35 +97,50 @@ const MetroModeSelectorComponent = ({
   fillModeIcons?: boolean;
   modeButtonDefinitions: ModeButtonDefinition[];
   onSetModeSettingValue: (event: QueryParamChangeEvent) => void;
-  onToggleModeButton: (key: string) => void;
+  onToggleModeButton: (key: string, newState: boolean) => void;
 }): ReactElement => {
-  const modeSettingDefinitionsWithIconsAndSettings = modeSettingDefinitionsWithDropdown.map(
-    msd => ({
-      ...msd,
-      icon: getIcon(msd.iconName)
-    })
-  );
-  const {
-    buttonsWithSettings,
-    setModeSettingValue,
-    toggleModeButton
-  } = Core.useModeState(
-    modeButtonDefinitions,
-    initialState,
-    modeSettingDefinitionsWithIconsAndSettings,
-    {
-      queryParamState: false
-    }
+  const [modeSettingValues, setModeSettingValues] = useState({});
+  const modeSettingValuesWithDefaults = {
+    ...extractModeSettingDefaultsToObject(modeSettingDefinitionsWithDropdown),
+    ...initialState.modeSettingValues,
+    ...modeSettingValues
+  };
+
+  const [activeModeButtonKeys, setModeButtonKeys] = useState(
+    initialState.enabledModeButtons
   );
 
-  const toggleModeButtonAction = (key: string) => {
-    toggleModeButton(key);
+  const addIconToModeSetting = msd => ({
+    ...msd,
+    icon: getIcon(msd.iconName)
+  });
+
+  const processedModeSettings = modeSettingDefinitionsWithDropdown.map(
+    pipe(
+      addIconToModeSetting,
+      populateSettingWithValue(modeSettingValuesWithDefaults)
+    )
+  );
+
+  const processedModeButtons = modeButtonDefinitions.map(
+    pipe(
+      addSettingsToButton(processedModeSettings),
+      setModeButtonEnabled(activeModeButtonKeys)
+    )
+  );
+
+  const toggleModeButtonAction = (key: string, newState: boolean) => {
+    if (newState) {
+      setModeButtonKeys([...activeModeButtonKeys, key]);
+    } else {
+      setModeButtonKeys(activeModeButtonKeys.filter(button => button !== key));
+    }
     // Storybook Action:
-    onToggleModeButton(key);
+    onToggleModeButton(key, newState);
   };
 
   const setModeSettingValueAction = (event: QueryParamChangeEvent) => {
-    setModeSettingValue(event);
+    setModeSettingValues({ ...modeSettingValues, ...event });
     // Storybook Action:
     onSetModeSettingValue(event);
   };
@@ -126,7 +149,7 @@ const MetroModeSelectorComponent = ({
     <Core.MetroModeSelector
       fillModeIcons={fillModeIcons}
       label="Select a transit mode"
-      modeButtons={buttonsWithSettings}
+      modeButtons={processedModeButtons}
       onSettingsUpdate={setModeSettingValueAction}
       onToggleModeButton={toggleModeButtonAction}
     />
@@ -136,15 +159,13 @@ const MetroModeSelectorComponent = ({
 const Template = (args: {
   fillModeIcons?: boolean;
   onSetModeSettingValue: (event: QueryParamChangeEvent) => void;
-  onToggleModeButton: (key: string) => void;
+  onToggleModeButton: (key: string, newState: boolean) => void;
 }): ReactElement => (
-  <QueryParamProvider adapter={WindowHistoryAdapter}>
-    <MetroModeSelectorComponent
-      modeButtonDefinitions={defaultModeButtonDefinitions}
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...args}
-    />
-  </QueryParamProvider>
+  <MetroModeSelectorComponent
+    modeButtonDefinitions={defaultModeButtonDefinitions}
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    {...args}
+  />
 );
 
 export default {
