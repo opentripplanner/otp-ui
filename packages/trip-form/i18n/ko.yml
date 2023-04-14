@@ -5,11 +5,11 @@ otpUi:
     now: 지금 출발하기
   ModeSelector:
     labels:
-      BICYCLE: 자전거
-      CAR: 운전
-      RENT: 렌탈
-      TRANSIT: 대중 교통
-      WALK: 걷기
+      bicycle: 자전거
+      car: 운전
+      rent: 렌탈
+      transit: 대중 교통
+      walk: 걷기
     settings:
       addBus-label: 버스
       addRail-label: 기차

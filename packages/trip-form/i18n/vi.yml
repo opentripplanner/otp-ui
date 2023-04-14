@@ -5,11 +5,11 @@ otpUi:
     now: Rời đi ngay bây giờ
   ModeSelector:
     labels:
-      BICYCLE: Xe đạp
-      CAR: Lái xe
-      RENT: Thuê xe
-      TRANSIT: Giao thông công cộng
-      WALK: Đi bộ
+      bicycle: Xe đạp
+      car: Lái xe
+      rent: Thuê xe
+      transit: Giao thông công cộng
+      walk: Đi bộ
     settings:
       addBus-label: Xe buýt
       addRail-label: Xe lửa
