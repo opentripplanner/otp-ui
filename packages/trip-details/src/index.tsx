@@ -7,12 +7,17 @@ import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
 import { Leaf } from "@styled-icons/fa-solid/Leaf";
 import { Route } from "@styled-icons/fa-solid/Route";
 
+import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
 import * as S from "./styled";
 import TripDetail from "./trip-detail";
 import FareLegTable from "./fare-table";
 import { boldText, renderFare } from "./utils";
 
-import { TransitFareProps, TripDetailsProps } from "./types";
+import {
+  TransitFareProps,
+  TripDetailsProps,
+  TimeActiveDetailsProps
+} from "./types";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
@@ -34,7 +39,29 @@ function CO2DescriptionLink(contents: ReactElement): ReactElement {
     </a>
   );
 }
-
+/**
+ * Default rendering if no component is provided for the TimeActiveDetails
+ * slot in the TripDetails component.
+ */
+function DefaultTimeActiveDetails({
+  bikeDuration,
+  walkDuration
+}: TimeActiveDetailsProps): ReactElement {
+  return (
+    <FormattedMessage
+      defaultMessage={
+        defaultMessages["otpUi.TripDetails.timeActiveDescription"]
+      }
+      description="Text describing  the walking and biking durations of a trip."
+      id="otpUi.TripDetails.timeActiveDescription"
+      values={{
+        bikeMinutes: bikeDuration,
+        strong: boldText,
+        walkMinutes: walkDuration
+      }}
+    />
+  );
+}
 /**
  * Helper component that renders a transit fare entry.
  */
@@ -69,8 +96,10 @@ const TransitFare = ({
  * Renders trip details such as departure instructions and fare amount.
  */
 export function TripDetails({
+  TimeActiveDetails = DefaultTimeActiveDetails,
   className = "",
   defaultFareKey = "regular",
+  displayTimeActive = true,
   DepartureDetails = null,
   FareDetails = null,
   fareDetailsLayout,
@@ -171,6 +200,14 @@ export function TripDetails({
 
   const departureDate = new Date(itinerary.startTime);
 
+  // Compute total time spent active.
+
+  const {
+    minutesActive,
+    walkDuration,
+    bikeDuration
+  } = coreUtils.itinerary.calculatePhysicalActivity(itinerary);
+
   // Calculate CO₂ if it's not provided by the itinerary
   const co2 =
     itinerary.co2 ||
@@ -241,6 +278,31 @@ export function TripDetails({
             }
             icon={<MoneyBillAlt size={17} />}
             summary={fare}
+          />
+        )}
+        {displayTimeActive && minutesActive > 0 && (
+          <TripDetail
+            icon={<Heartbeat size={17} />}
+            summary={
+              <FormattedMessage
+                defaultMessage={
+                  defaultMessages["otpUi.TripDetails.minutesActive"]
+                }
+                description="Text showing the number of minutes spent walking or biking throughout trip."
+                id="otpUi.TripDetails.minutesActive"
+                values={{
+                  minutes: minutesActive
+                }}
+              />
+            }
+            description={
+              TimeActiveDetails && (
+                <TimeActiveDetails
+                  bikeDuration={bikeDuration}
+                  walkDuration={walkDuration}
+                />
+              )
+            }
           />
         )}
         {co2 > 0 && co2Config?.enabled && (

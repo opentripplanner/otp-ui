@@ -13,6 +13,7 @@ import styled from "styled-components";
 import TripDetails, { FareLegTable } from ".";
 import * as TripDetailsClasses from "./styled";
 import {
+  TimeActiveDetailsProps,
   DepartureDetailsProps,
   FareDetailsProps,
   FareTableLayout,
@@ -209,6 +210,12 @@ const CustomDepartureDetails = ({
   </>
 );
 
+const CustomTimeActiveDetails = ({
+  minutesActive
+}: TimeActiveDetailsProps): ReactElement => (
+  <>Custom message about {minutesActive} active minutes.</>
+);
+
 /**
  * Create a template component for each TripDetails story.
  * A Component argument is passed. Once bound,
@@ -220,6 +227,7 @@ function createTripDetailsTemplate(
 ): ComponentStory<typeof TripDetails> {
   const TripDetailsTemplate = (
     {
+      TimeActiveDetails,
       DepartureDetails,
       FareDetails,
       fareDetailsLayout,
@@ -236,6 +244,7 @@ function createTripDetailsTemplate(
       : {};
     return (
       <Component
+        TimeActiveDetails={TimeActiveDetails}
         DepartureDetails={DepartureDetails}
         FareDetails={FareDetails}
         fareDetailsLayout={fareDetailsLayout}
@@ -363,6 +372,7 @@ export const TncTransitItinerary = makeStory(
 
 export const TncTransitItineraryWithCustomMessages = makeStory(
   {
+    TimeActiveDetails: CustomTimeActiveDetails,
     defaultFareKey: "electronicRegular",
     DepartureDetails: CustomDepartureDetails,
     itinerary: tncTransitTncItinerary

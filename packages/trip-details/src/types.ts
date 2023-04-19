@@ -3,6 +3,11 @@
 import type { MassUnitOption, Fare, Itinerary, Money } from "@opentripplanner/types";
 import type { ReactElement } from "react";
 
+export interface TimeActiveDetailsProps {
+  bikeDuration: number;
+  minutesActive?: number;
+  walkDuration: number;
+}
 
 export interface CO2ConfigType {
   carbonIntensity?: Record<string, number>;
@@ -58,6 +63,10 @@ export interface TransitFareProps {
 
 export interface TripDetailsProps {
   /**
+   * Slot for a custom component to render the expandable section for time active.
+   */
+  TimeActiveDetails?: React.ElementType<TimeActiveDetailsProps>;
+  /**
    * Used for additional styling with styled components for example.
    */
   className?: string;
@@ -69,6 +78,11 @@ export interface TripDetailsProps {
    * Slot for a custom component to render the expandable section for departure.
    */
   DepartureDetails?: React.ElementType<DepartureDetailsProps>;
+  /**
+   * If this is set to true, a row will be added to the trip details displaying how
+   * many minutes in total the user will spend walking or biking.
+   */
+  displayTimeActive?: boolean;
   /**
    * Slot for a custom component to render the expandable section for fares.
    */
