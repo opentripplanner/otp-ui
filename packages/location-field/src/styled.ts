@@ -77,24 +77,20 @@ export const MenuItemA = styled.a<{ active?: boolean }>`
   white-space: nowrap;
 `;
 
-// A menu group header that looks like one but does not behave like one.
-export const MenuGroupMisc = styled.div<{
+export const MenuGroupHeader = styled.h2<{
   bgColor?: string;
   fgColor?: string;
 }>`
   color: ${props => props.fgColor || "#eee"};
   background-color: ${props => props.bgColor || "#333"};
-  display: block;
   font-size: 12px;
+  font-weight: normal;
   line-height: 1.42857143;
+  margin: 0;
   padding: 0px 10px;
   text-align: center;
   white-space: nowrap;
 `;
-export const MenuGroupHeader = styled(MenuGroupMisc).attrs({
-  "aria-level": 1,
-  role: "heading"
-})``;
 
 export const MenuItemLi = styled.li`
   &:hover {

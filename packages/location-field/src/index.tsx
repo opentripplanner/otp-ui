@@ -162,6 +162,7 @@ const LocationField = ({
   stopOptionIcon = <Bus size={ICON_SIZE} />,
   stopsIndex = null,
   suggestionCount = 3,
+  suggestionHeadingType: headingType,
   suppressNearby = false,
   UserLocationIconComponent = UserLocationIcon,
   userLocationsAndRecentPlaces = []
@@ -589,6 +590,7 @@ const LocationField = ({
     menuItems = menuItems.concat(
       stationFeatures.length > 0 && (
         <S.MenuGroupHeader
+          as={headingType}
           bgColor={layerColorMap.stations}
           key="gtfs-stations-header"
         >
@@ -602,6 +604,7 @@ const LocationField = ({
 
       stopFeatures.length > 0 && (
         <S.MenuGroupHeader
+          as={headingType}
           bgColor={layerColorMap.stops}
           key="gtfs-stops-header"
         >
@@ -614,7 +617,7 @@ const LocationField = ({
       stopFeatures.map(feature => renderFeature(itemIndex++, feature)),
 
       transitFeaturesPresent && otherFeatures.length > 0 && (
-        <S.MenuGroupHeader bgColor="#333" key="other-header">
+        <S.MenuGroupHeader as={headingType} bgColor="#333" key="other-header">
           <FormattedMessage
             description="Text for header above the 'other'"
             id="otpUi.LocationField.other"
@@ -629,7 +632,7 @@ const LocationField = ({
   if (nearbyStops.length > 0 && !suppressNearby) {
     // Add the menu sub-heading (not a selectable item)
     menuItems.push(
-      <S.MenuGroupHeader key="ns-header">
+      <S.MenuGroupHeader as={headingType} key="ns-header">
         <FormattedMessage
           description="Text for header above nearby stops"
           id="otpUi.LocationField.nearby"
@@ -678,7 +681,7 @@ const LocationField = ({
   if (sessionSearches.length > 0) {
     // Add the menu sub-heading (not a selectable item)
     menuItems.push(
-      <S.MenuGroupHeader key="ss-header">
+      <S.MenuGroupHeader as={headingType} key="ss-header">
         <FormattedMessage
           description="Text for header above recently searched items"
           id="otpUi.LocationField.recentlySearched"
@@ -719,7 +722,7 @@ const LocationField = ({
   if (userLocationsAndRecentPlaces.length > 0 && showUserSettings) {
     // Add the menu sub-heading (not a selectable item)
     menuItems.push(
-      <S.MenuGroupHeader key="mp-header">
+      <S.MenuGroupHeader as={headingType} key="mp-header">
         <FormattedMessage
           description="Text for header above user-saved places"
           id="otpUi.LocationField.myPlaces"
@@ -916,13 +919,13 @@ const LocationField = ({
             menuItems.length > 0 ? ( // Show typing prompt to avoid empty screen
               menuItems
             ) : (
-              <S.MenuGroupMisc role="none">
+              <S.MenuGroupHeader as="div">
                 <FormattedMessage
                   defaultMessage="Begin typing to search for locations"
                   description="Text to show as initial placeholder in location search field"
                   id="otpUi.LocationField.beginTypingPrompt"
                 />
-              </S.MenuGroupMisc>
+              </S.MenuGroupHeader>
             )
           ) : (
             menuVisible && menuItems

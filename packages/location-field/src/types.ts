@@ -250,6 +250,10 @@ export interface LocationFieldProps {
    */
   suggestionCount?: number;
   /**
+   * Optional heading tag for rendering suggestion categories.
+   */
+  suggestionHeadingType?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  /**
    * If true, do not show nearbyStops or current location as options
    */
   suppressNearby?: boolean;
