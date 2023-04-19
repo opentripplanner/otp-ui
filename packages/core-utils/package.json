@@ -21,6 +21,7 @@
     "chroma-js": "^2.4.2",
     "date-fns": "^2.28.0",
     "date-fns-tz": "^1.2.2",
+    "graphql": "^16.6.0",
     "lodash.clonedeep": "^4.5.0",
     "lodash.isequal": "^4.5.0",
     "qs": "^6.9.1"
@@ -30,7 +31,7 @@
     "tsc": "tsc"
   },
   "devDependencies": {
-    "@types/chroma-js": "^2.1.4",
-    "@opentripplanner/types": "^5.0.0"
+    "@opentripplanner/types": "^5.0.0",
+    "@types/chroma-js": "^2.1.4"
   }
 }
