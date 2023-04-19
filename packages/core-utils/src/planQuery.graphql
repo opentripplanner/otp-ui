@@ -106,6 +106,9 @@ query PlanQuery(
           lon
           name
           vertexType
+          rentalVehicle {
+            network
+          }
           stop {
             id
             code
@@ -123,6 +126,9 @@ query PlanQuery(
           lon
           name
           vertexType
+          rentalVehicle {
+            network
+          }
           stop {
             id
             code
