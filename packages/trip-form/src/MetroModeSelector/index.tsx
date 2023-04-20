@@ -304,7 +304,7 @@ function ModeButton({
         ref={reference}
         title={label}
       >
-        <modeButton.Icon role="none" size={32} />
+        <modeButton.Icon role="presentation" size={32} />
         <InvisibleA11yLabel>{label}</InvisibleA11yLabel>
       </label>
       <button

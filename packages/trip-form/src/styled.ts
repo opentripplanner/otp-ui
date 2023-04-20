@@ -13,7 +13,7 @@ export const SettingsHeader = styled.div``;
 export const SettingsSection = styled.div``;
 
 export const SettingLabel = styled.label`
-  font-weight: 400;
+  font-weight: normal;
   padding-left: 6px;
 `;
 
