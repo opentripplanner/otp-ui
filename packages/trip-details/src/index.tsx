@@ -92,7 +92,7 @@ const TransitFare = ({
   const currentFare = transitFares[fareKey];
 
   // TODO: Is this needed? Every implementation of TransitFare does a check for currentFare's existence, although not the cents field
-  if (!currentFare?.cents) {
+  if (typeof currentFare?.cents !== "number") {
     return (
       <FormattedMessage
         defaultMessage={defaultMessages["otpUi.TripDetails.transitFareUnknown"]}
@@ -180,29 +180,26 @@ export function TripDetails({
               transitFares={transitFares}
             />
           </summary>
-          {fareDetailsLayout
-            ? // Show full ƒare details by leg
-              transitFares?.[defaultFare] && (
-                <FareLegTable
-                  layout={fareDetailsLayout}
-                  itinerary={itinerary}
+          {fareDetailsLayout ? (
+            // Show full ƒare details by leg
+            <FareLegTable layout={fareDetailsLayout} itinerary={itinerary} />
+          ) : (
+            // Just show the fares for each payment type
+            fareKeys.map(fareKey => {
+              // Don't show the default fare twice!
+              if (fareKey === defaultFare) {
+                return null;
+              }
+              return (
+                <TransitFare
+                  fareKey={fareKey}
+                  fareKeyNameMap={fareKeyNameMap}
+                  key={fareKey}
+                  transitFares={transitFares}
                 />
-              )
-            : // Just show the fares for each payment type
-              fareKeys.map(fareKey => {
-                // Don't show the default fare twice!
-                if (fareKey === defaultFare) {
-                  return null;
-                }
-                return (
-                  <TransitFare
-                    fareKey={fareKey}
-                    key={fareKey}
-                    fareKeyNameMap={fareKeyNameMap}
-                    transitFares={transitFares}
-                  />
-                );
-              })}
+              );
+            })
+          )}
         </TransitFareWrapper>
         {minTNCFare !== 0 && (
           <S.TNCFare>
