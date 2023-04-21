@@ -51,7 +51,7 @@ const defaultAccentColor = "#084c8d";
 const defaultActiveHoverColor = "#0e5faa";
 
 const boxShadowCss = css`
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05), 0 4px 20px rgba(14, 95, 170, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px;
 `;
 
 const ModeButtonWrapper = styled.span<{
@@ -165,7 +165,7 @@ const HoverInnerContainer = styled.div`
   color: #2e2e2e;
   font-size: 90%;
   font-weight: bold;
-  padding: 10px 15px 15px 15px;
+  padding: 0px 10px 5px;
   pointer-events: none;
   ${boxShadowCss}
 `;
@@ -304,7 +304,7 @@ function ModeButton({
         ref={reference}
         title={label}
       >
-        <modeButton.Icon role="none" size={32} />
+        <modeButton.Icon role="presentation" size={32} />
         <InvisibleA11yLabel>{label}</InvisibleA11yLabel>
       </label>
       <button

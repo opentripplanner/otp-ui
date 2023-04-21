@@ -21,9 +21,18 @@ export const defaultMessages: Record<string, string> = flatten(
 const SettingsPanel = styled.fieldset`
   border: none;
   pointer-events: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+
+  display: grid;
+  gap: 10px 5px;
+  grid-template-columns: 1fr 1fr;
+
+  .wide {
+    grid-column: span 2;
+  }
+  .slim {
+    font-size: 125%;
+    font-weight: 125%;
+  }
 
   legend {
     font-size: 1.5em;
@@ -143,7 +152,11 @@ export default function SubSettingsPane({
         </span>
       </legend>
       {modeButton.modeSettings?.map(setting => (
-        <div key={setting.key}>
+        <div
+          key={setting.key}
+          // @ts-expect-error TODO Fix
+          className={setting?.addTransportMode ? "slim" : "wide"}
+        >
           <ModeSettingRenderer onChange={onSettingUpdate} setting={setting} />
         </div>
       ))}
