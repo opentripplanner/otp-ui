@@ -149,6 +149,10 @@ describe("query-gen", () => {
       ]
     );
     expectModes(
+      ["BICYCLE_RENT", "BICYCLE", "WALK"],
+      [["BICYCLE_RENT", "WALK"], ["BICYCLE"], ["WALK"]]
+    );
+    expectModes(
       ["SCOOTER_RENT", "BICYCLE_RENT", "TRANSIT", "WALK"],
       [
         ["TRANSIT"],
