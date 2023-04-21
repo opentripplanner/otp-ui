@@ -381,7 +381,7 @@ interface Props {
    */
   fillModeIcons?: boolean;
   /**
-   * Text that prompts to select a travel mode.
+   * Text that prompts to select a travel mode
    */
   label?: string;
   /**
