@@ -133,7 +133,14 @@ const BaseMap = ({
       }}
       onTouchStart={e => {
         setFakeHover(false);
-        setLongPressTimer(setTimeout(() => onContextMenu(e), 600));
+        // Start detecting long presses on screens when there is only one touch point.
+        // If the user is pinching the map or does other multi-touch actions, cancel long-press detection.
+        const touchPointCount = e.points.length;
+        if (touchPointCount === 1) {
+          setLongPressTimer(setTimeout(() => onContextMenu(e), 600));
+        } else {
+          clearTimeout(longPressTimer);
+        }
       }}
       onTouchCancel={() => {
         clearTimeout(longPressTimer);
