@@ -777,6 +777,6 @@ export type LegProduct = {
 };
 
 /**
- * Options for units of mass (used in CO2 calculation config)
+ * Options for units of mass (used in CO₂ calculation config)
  */
 export type MassUnitOption = "ounce" | "kilogram" | "pound" | "gram";

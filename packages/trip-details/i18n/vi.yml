@@ -1,28 +1,32 @@
 otpUi:
   TripDetails:
     calories: "Calo bị đốt cháy: <strong>{calories, number, ::.}</strong>"
-    departure:
-      Khởi hành <strong>{departureDate, date, long}</strong> lúc <strong>{departureDate,
-      time, short}</strong>
+    caloriesDescription: >
+      Lượng calo bị đốt cháy dựa trên <strong>{walkMinutes} phút</strong> đi bộ
+      và <strong>{bikeMinutes} phút</strong> dành cho chuyến đi xe đạp trong
+      chuyến đi này. Phỏng theo <dietaryLink>Dietary Guidelines for Americans
+      2005, trang 16, hình ảnh 4</dietaryLink>.
+    co2: "CO₂ thải ra: <strong>{co2}</strong>"
+    co2description: >-
+      Nồng độ CO₂ được tính bằng cách nhân khoảng cách của mỗi chặng của một
+      chuyến đi với nồng độ CO₂ của mỗi phương tiện. Nồng độ CO₂ của mỗi phương
+      tiện được lấy từ <link>bảng tính này</link>.
+    departure: >-
+      Khởi hành <strong>{departureDate, date, long}</strong> lúc
+      <strong>{departureDate, time, short}</strong>
+    fareDetailsHeaders:
+      cash: Tiền mặt
+      electronic: Điện tử
+      regular: Người lớn
+      senior: Người lớn tuổi
+      special: Đặc biệt
+      youth: Thiếu niên
+    hideDetail: Ẩn chi tiết
+    showDetail: Hiển thị chi tiết
     title: Chi tiết chuyến đi
     tncFare: "{companies} Giá vé: <strong>{minTNCFare} - {maxTNCFare}</strong>"
-    transitFare: Giá vé quá cảnh
+    transferDiscountExplanation: Giảm giá chuyển khoản {transferAmount} được áp dụng
+    transitFare: Giá vé xe công cộng
     transitFareEntry: "{name}: <strong>{value}</strong>"
-    caloriesDescription:
-      "Lượng calo bị đốt cháy dựa trên <strong>{walkMinutes} phút</strong>\
-      \ đi bộ và <strong>{bikeMinutes} phút</strong> đi xe đạp trong chuyến đi này.\
-      \ Phỏng theo <dietaryLink>Dietary Guidelines for Americans 2005, trang 16, hình\
-      \ ảnh 4</dietaryLink>.\n"
-    co2: "CO<sub>2</sub> thải ra: <strong>{co2}</strong>"
-    co2description:
-      Cường độ O<sub>2</sub> được tính bằng cách nhân khoảng cách của
-      mỗi chặng của chuyến đi với cường độ O<sub>2</sub> của mỗi chế độ. Cường độ
-      O<sub>2</sub> của mỗi chế độ được lấy từ <link>bảng tính này</link>.
+    transitFareUnknown: Không có thông tin giá vé
     tripIncludesFlex: Chuyến đi này bao gồm các tuyến đường linh hoạt. {extraMessage}
-    fareDetailsHeaders:
-      regular: Người lớn
-      youth: Người trẻ
-      senior: Người lớn tuổi
-      electronic: Thanh toán bằng thẻ
-      cash: Tiền mặt
-      special: Đặc biệt

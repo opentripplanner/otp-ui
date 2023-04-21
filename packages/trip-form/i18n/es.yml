@@ -1,8 +1,11 @@
 otpUi:
   DateTimeSelector:
-    arrive: Llegada a las
-    depart: Partir a las
-    now: Partir ahora
+    arrive: Llegada por
+    depart: Salida a las
+    now: Sortir ahora
+    dateTimeSelector: Selector de fecha y hora
+    time: Hora
+    date: Fecha
   ModeSelector:
     labels:
       bicycle: Bicicleta
@@ -30,34 +33,34 @@ otpUi:
       wheelchair-label: Acceso con discapacidades
     settingsLabel: Ajustes para {mode}
   SettingsSelectorPanel:
-    bikeOnly: Solo Bicicleta
-    escooterOnly: Solo E-Scooter
-    takeTransit: Tomar transporte publico
+    bikeOnly: Solo bicicleta
+    takeTransit: Tomar tránsito
     travelPreferences: Preferencias de viaje
+    useCompanies: Usar las empresas
+    walkOnly: Solo caminar
+    escooterOnly: Solo scooters eléctricos
     use: Usar
-    useCompanies: Usar compañías
-    walkOnly: Solo Caminar
   queryParameters:
     bikeSpeed: Velocidad de la bicicleta
     distanceInMiles: |
       {miles, number, :: unit/mile unit-width-full-name}
-    maxBikeDistance: Bicicleta máxima
+    maxBikeDistance: Máximo de bicicleta
     maxBikeTime: Tiempo máximo en bicicleta
-    maxEScooterDistance: Distancia máxima del e-scooter
-    maxWalkDistance: Caminata máxima
+    maxEScooterDistance: Distancia máxima del scooter eléctrico
+    maxWalkDistance: Máximo de caminata
     maxWalkTime: Tiempo máximo de caminata
     optimizeBikeFlat: Viaje plano
     optimizeBikeFriendly: Viaje en bicicleta
     optimizeBikeSpeed: Velocidad
     optimizeFor: Optimizar para
     speedInMilesPerHour: "{mph} MPH"
-    walkReluctance: Evasión de caminar
-    walkReluctanceHigh: Más Transporte Público
-    walkReluctanceLow: Más Caminando
-    walkSpeed: Velocidad caminando
-    watts: Potencia del e-scooter
+    walkSpeed: Velocidad de caminata
+    walkReluctanceHigh: Más Tránsito
+    walkReluctanceLow: Más Caminata
+    watts: Potencia del scooter eléctrico
     watts125kidsHoverboard: Hoverboard para niños (10 km/h)
-    watts1500powerfulEscooter: Potente E-scooter (40km/h)
-    watts250entryLevelEscooter: Scooter de nivel de entrada (18 km/h)
-    watts500robustEscooter: Scooter eléctrico robusto (30km/h)
+    watts1500powerfulEscooter: Scooter eléctrico potente (40km/h)
     wheelchair: Prefiera las rutas accesibles para las sillas de ruedas
+    walkReluctance: Evasión de caminata
+    watts250entryLevelEscooter: Scooter básico (18 km/h)
+    watts500robustEscooter: Scooter eléctrico robusto (30 km/h)

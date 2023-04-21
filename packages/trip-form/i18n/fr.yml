@@ -3,6 +3,10 @@ otpUi:
     arrive: Arrivée
     depart: Départ
     now: Maintenant
+    settingsLabel: "Paramètres pour : {mode}"
+    date: Date
+    dateTimeSelector: Sélecteur de date et heure
+    time: Heure
   ModeSelector:
     labels:
       bicycle: Vélo

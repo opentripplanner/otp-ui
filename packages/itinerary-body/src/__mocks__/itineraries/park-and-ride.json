@@ -15,9 +15,7 @@
       "regular": {
         "currency": {
           "symbol": "$",
-          "currency": "USD",
-          "defaultFractionDigits": 2,
-          "currencyCode": "USD"
+          "defaultFractionDigits": 2
         },
         "cents": 250
       }

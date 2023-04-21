@@ -28,8 +28,6 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 // - the yaml loader for jest returns messages with flattened ids.
 const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
-const subText = contents => <sub>{contents}</sub>;
-
 /**
  * Helper function to specify the link to dietary table.
  */
@@ -93,6 +91,17 @@ const TransitFare = ({
 }: TransitFareProps): ReactElement => {
   const currentFare = transitFares[fareKey];
 
+  // TODO: Is this needed? Every implementation of TransitFare does a check for currentFare's existence, although not the cents field
+  if (typeof currentFare?.cents !== "number") {
+    return (
+      <FormattedMessage
+        defaultMessage={defaultMessages["otpUi.TripDetails.transitFareUnknown"]}
+        description="Text showing that no fare information is present."
+        id="otpUi.TripDetails.transitFareUnknown"
+      />
+    );
+  }
+
   return (
     <span>
       <FormattedMessage
@@ -103,7 +112,7 @@ const TransitFare = ({
           name: fareKeyNameMap[fareKey] || fareNameFallback || fareKey,
           strong: boldText,
           value: renderFare(
-            currentFare.currency.currencyCode,
+            currentFare?.currency?.currencyCode || "USD",
             currentFare.cents / 100
           )
         }}
@@ -152,7 +161,7 @@ export function TripDetails({
     const TransitFareWrapper =
       transitFares && fareKeys.length > 1 ? S.TransitFare : S.TransitFareSingle;
 
-    fare = (
+    fare = transitFares?.[defaultFare] && (
       <S.Fare>
         <TransitFareWrapper>
           <summary style={{ display: fareKeys.length > 1 ? "list-item" : "" }}>
@@ -184,8 +193,8 @@ export function TripDetails({
               return (
                 <TransitFare
                   fareKey={fareKey}
-                  key={fareKey}
                   fareKeyNameMap={fareKeyNameMap}
+                  key={fareKey}
                   transitFares={transitFares}
                 />
               );
@@ -227,7 +236,7 @@ export function TripDetails({
     walkDuration
   } = coreUtils.itinerary.calculatePhysicalActivity(itinerary);
 
-  // Calculate CO2 if it's not provided by the itinerary
+  // Calculate CO₂ if it's not provided by the itinerary
   const co2 =
     itinerary.co2 ||
     (co2Config?.enabled &&
@@ -333,7 +342,7 @@ export function TripDetails({
               <S.CO2Summary>
                 <FormattedMessage
                   defaultMessage={defaultMessages["otpUi.TripDetails.co2"]}
-                  description="Text showing the quantity of CO2 emitted by this trip."
+                  description="Text showing the quantity of CO₂ emitted by this trip."
                   id="otpUi.TripDetails.co2"
                   values={{
                     co2: (
@@ -345,8 +354,7 @@ export function TripDetails({
                         unitDisplay="narrow"
                       />
                     ),
-                    strong: boldText,
-                    sub: subText
+                    strong: boldText
                   }}
                 />
               </S.CO2Summary>
@@ -356,13 +364,12 @@ export function TripDetails({
                 defaultMessage={
                   defaultMessages["otpUi.TripDetails.co2description"]
                 }
+                description="Text explaining how the CO₂ emissions are calculated."
+                id="otpUi.TripDetails.co2description"
                 values={{
                   link: CO2DescriptionLink,
-                  sub: subText,
                   totalDistance
                 }}
-                description="Text explaining how the CO2 emissions is calculated."
-                id="otpUi.TripDetails.co2description"
               />
             }
           />
@@ -398,5 +405,5 @@ export function TripDetails({
 
 export default TripDetails;
 
-// Rename styled components for export
+// Rename styled components for export.
 export { S as Styled, FareLegTable };

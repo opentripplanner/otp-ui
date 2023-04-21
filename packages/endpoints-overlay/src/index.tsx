@@ -168,5 +168,5 @@ const EndpointsOverlay = ({
 
 export default EndpointsOverlay;
 
-// Rename styled components for export
+// Rename styled components for export.
 export { S as Styled };

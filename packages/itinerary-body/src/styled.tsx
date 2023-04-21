@@ -131,24 +131,6 @@ export const AccessBadge = styled.div<ModeRouteProps>`
   /* Add in border for dark mode */
 `;
 
-export const AgencyInfo = styled.div`
-  margin-top: 5px;
-
-  a {
-    color: #337ab7;
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  img {
-    margin-left: 5px;
-    vertical-align: middle;
-  }
-`;
-
 export const CallAheadWarning = styled.div`
   color: #b22727;
   margin-top: 5px;
@@ -286,6 +268,8 @@ export const LegClickableButton = styled(TransparentButton)`
   position: absolute;
   right: 0;
   top: 0;
+  /* This is required for the entire leg to be clickable in Firefox. */
+  width: 100%;
   /* Place the button just above the elevation chart, 
      so that its outline doesn't appear clipped in Chromium. */
   z-index: 1;
@@ -349,7 +333,7 @@ export const LegIconContainer = styled.span`
   img,
   svg {
     margin-right: 6px;
-    max-height: 24px;
+    height: 24px;
     width: 24px;
     vertical-align: bottom;
   }
@@ -481,8 +465,10 @@ export const PlaceSubheader = styled.div`
   color: #807373;
   font-size: 13px;
   font-weight: 300;
-  padding-left: 4px;
   padding-top: 1px;
+
+  /* Reduce vertical space and fix horizontal alignment of stop id and stop viewer link for transit stops. */
+  margin-top: -14px;
 `;
 
 export const PreviewDiagram = styled(TransparentButton)`
@@ -571,15 +557,23 @@ export const StepDescriptionContainer = styled.div`
 `;
 
 export const StepsHeaderAndMapLink = styled.span`
-  display: inline-block;
+  display: inline-flex;
   align-self: center;
   margin-top: 10px;
+
+  /* This is needed to avoid vertical jumps on Safari and Firefox */
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const StepsHeader = styled(TransparentButton)`
   color: #676767;
   font-size: 13px;
   font-style: normal;
+  width: 100%;
 `;
 
 export const StepIconContainer = styled.div`
@@ -676,6 +670,7 @@ export const TransitLegDetails = styled.div`
 
 export const TransitLegDetailsHeader = styled.div`
   color: #676767;
+  display: flex;
 `;
 
 export const TransitLegExpandedBody = styled.div`
@@ -697,3 +692,21 @@ export const DefaultAlertToggleIcon = styled(ExclamationTriangle).attrs({
 export const DefaultAlertBodyIcon = styled(ExclamationTriangle).attrs({
   size: 18
 })``;
+
+export const AgencyInfo = styled.div`
+  margin-top: 5px;
+
+  a {
+    color: #337ab7;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  img {
+    margin-left: 5px;
+    vertical-align: middle;
+  }
+`;

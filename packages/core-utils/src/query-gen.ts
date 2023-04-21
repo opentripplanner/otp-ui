@@ -8,11 +8,31 @@ import {
 
 import PlanQuery from "./planQuery.graphql";
 
+type InputBanned = {
+  routes?: string;
+  agencies?: string;
+  trips?: string;
+  stops?: string;
+  stopsHard?: string;
+};
+
+type InputPreferred = {
+  routes?: string;
+  agencies?: string;
+  unpreferredCost?: string;
+};
+
 type OTPQueryParams = {
+  arriveBy: boolean;
+  date?: string;
   from: LonLatOutput & { name?: string };
   modes: TransportMode[];
   modeSettings: ModeSetting[];
+  time?: string;
+  numItineraries?: number;
   to: LonLatOutput & { name?: string };
+  banned?: InputBanned;
+  preferred?: InputPreferred;
 };
 
 type GraphQLQuery = {
@@ -176,13 +196,22 @@ export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
 }
 
 export function generateOtp2Query({
+  arriveBy,
+  banned,
+  date,
   from,
-  modeSettings,
   modes,
+  modeSettings,
+  numItineraries,
+  preferred,
+  time,
   to
 }: OTPQueryParams): GraphQLQuery {
   // This extracts the values from the mode settings to key value pairs
   const modeSettingValues = modeSettings.reduce((prev, cur) => {
+    if (cur.type === "SLIDER" && cur.inverseKey) {
+      prev[cur.inverseKey] = cur.high - cur.value + cur.low;
+    }
     prev[cur.key] = cur.value;
     return prev;
   }, {}) as ModeSettingValues;
@@ -197,10 +226,16 @@ export function generateOtp2Query({
   return {
     query: print(PlanQuery),
     variables: {
+      arriveBy,
+      banned,
       bikeReluctance,
       carReluctance,
+      date,
       fromPlace: `${from.name}::${from.lat},${from.lon}}`,
       modes,
+      numItineraries,
+      preferred,
+      time,
       toPlace: `${to.name}::${to.lat},${to.lon}}`,
       walkReluctance,
       wheelchair
