@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Map, MapProps } from "react-map-gl";
 import maplibregl, { Event } from "maplibre-gl";
 
@@ -115,6 +115,10 @@ const BaseMap = ({
     typeof baseLayer === "object" ? baseLayer?.[0] : baseLayer
   );
 
+  const clearLongPressTimer = useCallback(() => clearTimeout(longPressTimer), [
+    longPressTimer
+  ]);
+
   return (
     <Map
       // eslint-disable-next-line react/jsx-props-no-spreading
@@ -129,7 +133,7 @@ const BaseMap = ({
       onContextMenu={onContextMenu}
       onMove={evt => {
         setViewState(evt.viewState);
-        clearTimeout(longPressTimer);
+        clearLongPressTimer();
       }}
       onTouchStart={e => {
         setFakeHover(false);
@@ -139,15 +143,11 @@ const BaseMap = ({
         if (touchPointCount === 1) {
           setLongPressTimer(setTimeout(() => onContextMenu(e), 600));
         } else {
-          clearTimeout(longPressTimer);
+          clearLongPressTimer();
         }
       }}
-      onTouchCancel={() => {
-        clearTimeout(longPressTimer);
-      }}
-      onTouchEnd={() => {
-        clearTimeout(longPressTimer);
-      }}
+      onTouchCancel={clearLongPressTimer}
+      onTouchEnd={clearLongPressTimer}
       style={style}
       zoom={viewState.zoom}
     >
