@@ -5,6 +5,8 @@ otpUi:
     dateTimeSelector: Sélecteur de date et heure
     depart: Départ
     now: Maintenant
+    settingsLabel: "Paramètres pour : {mode}"
+    time: Heure
   ModeSelector:
     labels:
       bicycle: Vélo

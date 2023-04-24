@@ -1,8 +1,9 @@
 otpUi:
   DateTimeSelector:
-    arrive: 到达
-    depart: 出发时间
+    date: 日期
+    dateTimeSelector: 日期和时间选择器
     now: 现在离开
+    time: 时间
   ModeSelector:
     labels:
       bicycle: 自行车
@@ -56,8 +57,8 @@ otpUi:
     walkReluctanceLow: 更多步行
     walkSpeed: 步行速度
     watts: 电动滑板车动力
-    watts125kidsHoverboard: 孩子的悬浮滑板 (10 km/h)
-    watts1500powerfulEscooter: 强大的电动滑板车 (40km/h)
+    watts125kidsHoverboard: 儿童悬浮滑板 (10 km/h)
+    watts1500powerfulEscooter: 强大的电动滑板车 (40 km/h)
     watts250entryLevelEscooter: 入门级踏板车 (18 km/h)
     watts500robustEscooter: 坚固的电动滑板车 (30km/h)
     wheelchair: 倾向于选择轮椅无障碍路线
