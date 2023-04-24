@@ -22,10 +22,14 @@ const SettingsPanel = styled.fieldset`
   border: none;
   pointer-events: auto;
 
+  /* Grid rules */
   display: grid;
-  gap: 10px 5px;
+  grid-gap: 10px 5px;
   grid-template-columns: 1fr 1fr;
 
+  div {
+    padding: 5px 0;
+  }
   .wide {
     grid-column: span 2;
   }
