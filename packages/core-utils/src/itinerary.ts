@@ -395,10 +395,13 @@ export function getCompanyForNetwork(
  * @return {string}  A label for use in presentation on a website.
  */
 export function getCompaniesLabelFromNetworks(
-  networks: string[],
+  networks: string | string[],
   companies: Company[] = []
 ): string {
-  return networks
+  let networksArray = networks;
+  if (typeof networks === "string") networksArray = [networks];
+
+  return (networksArray as string[])
     .map(network => getCompanyForNetwork(network, companies))
     .filter(co => !!co)
     .map(co => co.label)
