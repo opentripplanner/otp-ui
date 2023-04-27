@@ -16,6 +16,7 @@ otpUi:
       special: Đặc biệt
       youth: Thiếu niên
     hideDetail: Ẩn chi tiết
+    minutesActive: "Thời gian hoạt động: {minutes, plural, one {# phút} other {# phút}}"
     showDetail: Hiển thị chi tiết
     title: Chi tiết chuyến đi
     tncFare: "{companies} Giá vé: <strong>{minTNCFare} - {maxTNCFare}</strong>"

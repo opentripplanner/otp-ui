@@ -15,6 +15,7 @@ otpUi:
       special: 특별
       youth: 청소년
     hideDetail: 세부정보 숨기기
+    minutesActive: "활동적인 시간: {minutes, plural, one {# 분} other {# 분}}"
     showDetail: 세부정보 표시
     title: 트립 상세정보
     tncFare: "{companies} 운임: <strong>{minTNCFare} - {maxTNCFare}</strong>"

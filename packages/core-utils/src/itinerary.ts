@@ -410,26 +410,6 @@ export function getTNCLocation(leg: Leg, type: string): string {
   return `${location.lat.toFixed(5)},${location.lon.toFixed(5)}`;
 }
 
-export function calculatePhysicalActivity(
-  itinerary: ItineraryOnlyLegsRequired
-) {
-  let walkDurationSeconds = 0;
-  let bikeDurationSeconds = 0;
-  itinerary.legs.forEach(leg => {
-    if (leg.mode.startsWith("WALK")) walkDurationSeconds += leg.duration;
-    if (leg.mode.startsWith("BICYCLE")) bikeDurationSeconds += leg.duration;
-  });
-  const bikeDuration = Math.round(bikeDurationSeconds / 60);
-  const walkDuration = Math.round(walkDurationSeconds / 60);
-  const minutesActive = bikeDuration + walkDuration;
-
-  return {
-    bikeDuration,
-    minutesActive,
-    walkDuration
-  };
-}
-
 /**
  * For an itinerary, calculates the TNC fares and returns an object with
  * these values and currency info.

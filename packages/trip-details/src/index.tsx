@@ -52,7 +52,7 @@ function DefaultTimeActiveDetails({
       defaultMessage={
         defaultMessages["otpUi.TripDetails.timeActiveDescription"]
       }
-      description="Text describing  the walking and biking durations of a trip."
+      description="Text describing the walking and biking durations of a trip."
       id="otpUi.TripDetails.timeActiveDescription"
       values={{
         bikeMinutes: bikeDuration,
@@ -202,11 +202,15 @@ export function TripDetails({
 
   // Compute total time spent active.
 
-  const {
-    minutesActive,
-    walkDuration,
-    bikeDuration
-  } = coreUtils.itinerary.calculatePhysicalActivity(itinerary);
+  let walkDurationSeconds = 0;
+  let bikeDurationSeconds = 0;
+  itinerary.legs.forEach(leg => {
+    if (leg.mode.startsWith("WALK")) walkDurationSeconds += leg.duration;
+    if (leg.mode.startsWith("BICYCLE")) bikeDurationSeconds += leg.duration;
+  });
+  const bikeDuration = Math.round(bikeDurationSeconds / 60);
+  const walkDuration = Math.round(walkDurationSeconds / 60);
+  const minutesActive = bikeDuration + walkDuration;
 
   // Calculate CO₂ if it's not provided by the itinerary
   const co2 =
