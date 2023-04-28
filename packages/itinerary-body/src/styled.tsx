@@ -594,6 +594,12 @@ export const StepStreetName = styled.span`
   font-weight: 500;
 `;
 
+export const StepLength = styled.span`
+  font-weight: 200;
+  opacity: 0.8;
+  padding-left: 1ch;
+`;
+
 export const StopIdSpan = styled.span`
   font-weight: 200;
   font-size: 0.9em;

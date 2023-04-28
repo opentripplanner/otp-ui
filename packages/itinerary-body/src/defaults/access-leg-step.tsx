@@ -1,6 +1,7 @@
 import { Step } from "@opentripplanner/types";
 import React, { HTMLAttributes, ReactElement } from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
+import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
 import { defaultMessages } from "../util";
 
 import * as S from "../styled";
@@ -21,6 +22,8 @@ export default function AccessLegStep({
   style
 }: Props): ReactElement {
   const { absoluteDirection, relativeDirection, streetName } = step;
+  const intl = useIntl();
+
   const street = (
     <S.StepStreetName>
       <StreetName rawStreetName={streetName} />
@@ -70,6 +73,12 @@ export default function AccessLegStep({
     // for styled-components support.
     <span className={className} style={style}>
       {stepContent}
+      {/* TODO: Implement metric vs imperial (up until now it's just imperial). */}
+      {step?.distance && (
+        <S.StepLength>
+          {humanizeDistanceString(step.distance, false, intl)}
+        </S.StepLength>
+      )}
     </span>
   );
 }
