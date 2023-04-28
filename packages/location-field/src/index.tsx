@@ -6,6 +6,7 @@ import getGeocoder from "@opentripplanner/geocoder";
 import LocationIcon from "@opentripplanner/location-icon";
 import { Location } from "@opentripplanner/types";
 import React, { useEffect, useMemo, useState, useRef } from "react";
+import { FormattedList, FormattedMessage, useIntl } from "react-intl";
 import { Ban } from "@styled-icons/fa-solid/Ban";
 import { Bus } from "@styled-icons/fa-solid/Bus";
 import { ExclamationCircle } from "@styled-icons/fa-solid/ExclamationCircle";
@@ -13,7 +14,6 @@ import { LocationArrow } from "@styled-icons/fa-solid/LocationArrow";
 import { Search } from "@styled-icons/fa-solid/Search";
 import { Times } from "@styled-icons/fa-solid/Times";
 import { debounce } from "throttle-debounce";
-import { useIntl, FormattedMessage } from "react-intl";
 
 import {
   GeocodedOptionIcon,
@@ -901,7 +901,12 @@ const LocationField = ({
       {/* Note: always render this status tag regardless of the open state,
           so that assistive technologies correctly set up status monitoring. */}
       <S.HiddenContent role="status">
-        {statusMessages.join(", ")}
+        <FormattedList
+          // eslint-disable-next-line react/style-prop-object
+          style="narrow"
+          type="conjunction"
+          value={statusMessages}
+        />
       </S.HiddenContent>
       {shouldRenderList && (
         <ItemList
