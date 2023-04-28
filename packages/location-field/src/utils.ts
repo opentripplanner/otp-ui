@@ -76,11 +76,15 @@ export const getCombinedLabel = (properties: Properties): string => {
  * if the added text is not null or blank.
  */
 export const addInParentheses = (
+  intl: IntlShape,
   mainText: string,
   extraText?: string
 ): string => {
   return extraText && extraText !== ""
-    ? `${mainText} (${extraText})`
+    ? intl.formatMessage(
+        { id: "otpUi.LocationField.parenthesisFormat" },
+        { detail: extraText, main: mainText }
+      )
     : mainText;
 };
 
@@ -96,5 +100,5 @@ export const getGeocoderErrorMessage = (
     id: "otpUi.LocationField.geocoderUnreachable"
   });
 
-  return addInParentheses(geocoderUnreachableText, errorText);
+  return addInParentheses(intl, geocoderUnreachableText, errorText);
 };

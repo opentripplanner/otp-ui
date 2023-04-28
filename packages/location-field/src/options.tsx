@@ -194,5 +194,5 @@ export function getStoredPlaceName(
     //   detailText = moment(location.timestamp).fromNow();
   }
 
-  return addInParentheses(getLocationName(location, intl), detailText);
+  return addInParentheses(intl, getLocationName(location, intl), detailText);
 }

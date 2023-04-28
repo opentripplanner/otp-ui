@@ -15,6 +15,7 @@ otpUi:
     noResults: Không có kết quả
     other: Khác
     otherCount: "{count} điểm ưa thích"
+    parenthesisFormat: "{main} ({detail})"
     recentlySearched: Gần đây đã tìm kiếm
     resultsFound: "{results} tìm cho \"{input}\"."
     stationCount: "{count} ga"

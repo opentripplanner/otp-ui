@@ -786,7 +786,7 @@ const LocationField = ({
       ? currentPosition.error
       : currentPosition.error.message;
 
-    optionTitle = addInParentheses(locationUnavailableText, errorText);
+    optionTitle = addInParentheses(intl, locationUnavailableText, errorText);
     positionUnavailable = true;
     statusMessages.push(optionTitle);
   }
