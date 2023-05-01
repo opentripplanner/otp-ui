@@ -4,7 +4,9 @@ import coreUtils from "@opentripplanner/core-utils";
 import getGeocoder from "@opentripplanner/geocoder";
 // @ts-ignore Not Typescripted Yet
 import LocationIcon from "@opentripplanner/location-icon";
+import { Location } from "@opentripplanner/types";
 import React, { useEffect, useMemo, useState, useRef } from "react";
+import { FormattedList, FormattedMessage, useIntl } from "react-intl";
 import { Ban } from "@styled-icons/fa-solid/Ban";
 import { Bus } from "@styled-icons/fa-solid/Bus";
 import { ExclamationCircle } from "@styled-icons/fa-solid/ExclamationCircle";
@@ -12,21 +14,23 @@ import { LocationArrow } from "@styled-icons/fa-solid/LocationArrow";
 import { Search } from "@styled-icons/fa-solid/Search";
 import { Times } from "@styled-icons/fa-solid/Times";
 import { debounce } from "throttle-debounce";
-import { useIntl, FormattedMessage } from "react-intl";
-// eslint-disable-next-line prettier/prettier
-import type { Location } from "@opentripplanner/types";
-import type { LocationFieldProps, ResultType } from "./types";
 
 import {
   GeocodedOptionIcon,
+  getStoredPlaceName,
   ICON_SIZE,
   Option,
-  StoredPlaceName,
   TransitStopOption,
   UserLocationIcon
 } from "./options";
 import * as S from "./styled";
-import { generateLabel, getCombinedLabel } from "./utils";
+import { LocationFieldProps, ResultType } from "./types";
+import {
+  addInParentheses,
+  generateLabel,
+  getCombinedLabel,
+  getGeocoderErrorMessage
+} from "./utils";
 
 const optionIdPrefix = "otpui-locf-option";
 
@@ -35,7 +39,7 @@ const optionIdPrefix = "otpui-locf-option";
  * This assumes only one location dropdown is shown at a time.
  */
 function getOptionId(index: number): string {
-  return `${optionIdPrefix}-${index}`
+  return `${optionIdPrefix}-${index}`;
 }
 
 // FIXME have a better key generator for options
@@ -52,7 +56,12 @@ function DefaultLocationIcon({
 /**
  * Helper function that includes or excludes features based om layers.
  */
-function filter(list: any[], layers: string[], include: boolean, limit: number): any[] {
+function filter(
+  list: any[],
+  layers: string[],
+  include: boolean,
+  limit: number
+): any[] {
   return list
     .filter(feature => layers.includes(feature.properties.layer) === include)
     .slice(0, limit);
@@ -71,9 +80,7 @@ function getFeaturesByCategoryWithLimit(
   const { special, normal } = geocodedFeatures.reduce(
     (prev, cur) => {
       prev[
-        preferredLayers.includes(cur?.properties?.layer)
-          ? "special"
-          : "normal"
+        preferredLayers.includes(cur?.properties?.layer) ? "special" : "normal"
       ].push(cur);
       return prev;
     },
@@ -93,16 +100,30 @@ function getFeaturesByCategoryWithLimit(
 
   // Split out different types of transit results
   // To keep the list tidy, only include a subset of the responses for each category
-  const stopFeatures = filter(sortedGeocodedFeatures, ["stops"], true, suggestionCount);
-  const stationFeatures = filter(sortedGeocodedFeatures, ["stations"], true, suggestionCount);
-  const otherFeatures = filter(sortedGeocodedFeatures, ["stops", "stations"], false, suggestionCount);
+  const stopFeatures = filter(
+    sortedGeocodedFeatures,
+    ["stops"],
+    true,
+    suggestionCount
+  );
+  const stationFeatures = filter(
+    sortedGeocodedFeatures,
+    ["stations"],
+    true,
+    suggestionCount
+  );
+  const otherFeatures = filter(
+    sortedGeocodedFeatures,
+    ["stops", "stations"],
+    false,
+    suggestionCount
+  );
 
   return {
-    count: otherFeatures.length + stationFeatures.length + stopFeatures.length,
     otherFeatures,
     stationFeatures,
     stopFeatures
-  }
+  };
 }
 
 const LocationField = ({
@@ -141,9 +162,10 @@ const LocationField = ({
   stopOptionIcon = <Bus size={ICON_SIZE} />,
   stopsIndex = null,
   suggestionCount = 3,
+  suggestionHeadingType: headingType,
   suppressNearby = false,
   UserLocationIconComponent = UserLocationIcon,
-  userLocationsAndRecentPlaces = [],
+  userLocationsAndRecentPlaces = []
 }: LocationFieldProps): React.ReactElement => {
   /**
    * Gets the initial value to place in the input field.
@@ -179,72 +201,143 @@ const LocationField = ({
     }
   }, [initialSearchResults]);
 
-  const geocodeAutocomplete = useMemo(() => debounce(300, (text: string) => {
-    if (!text) {
-      console.warn("No text entry provided for geocode autocomplete search.");
-      setMessage(null)
-      return;
-    }
-    setFetching(true)
-    setMessage(intl.formatMessage({
-      defaultMessage: "Fetching suggestions…",
-      description: "Hint shown while geocoder suggestions are being fetched",
-      id: "otpUi.LocationField.fetchingSuggestions"
-    }))
-
-    getGeocoder(geocoderConfig)
-      .autocomplete({ text })
-      // TODO: Better type?
-      .then(
-        (result: {
-          features: Location[]
-          results: { error: { message: string } };
-        }) => {
-          let message: string;
-          // If no features found in response, default to empty array.
-          let geocodedFeatures = result?.features;
-          if (!geocodedFeatures) {
-            // Get the Pelias error message if exists.
-            // TODO: determine how other geocoders return error messages.
-            const errorMessage = result?.results?.error?.message;
-            // If the result did not contain a list of features, add special note.
-            message = intl.formatMessage(
-              { id: "otpUi.LocationField.geocoderUnreachable" },
-              { error: errorMessage }
-            );
-            geocodedFeatures = [];
-          } else {
-            const { count } = getFeaturesByCategoryWithLimit(geocodedFeatures, suggestionCount, sortByDistance, preferredLayers);
-            message = intl.formatMessage(
-              { id: "otpUi.LocationField.resultsFound" },
-              {
-                count,
-                input: text
-              }
-            );
-          }
-          setGeocodedFeatures(geocodedFeatures);
-          setMessage(message);
-          setFetching(false)
+  const geocodeAutocomplete = useMemo(
+    () =>
+      debounce(300, (text: string) => {
+        if (!text) {
+          console.warn(
+            "No text entry provided for geocode autocomplete search."
+          );
+          setMessage(null);
+          return;
         }
-      )
-      .catch((err: unknown) => {
-        console.error(err);
-        const message = intl.formatMessage(
-          { id: "otpUi.LocationField.geocoderUnreachable" },
-          { error: err.toString() }
+        setFetching(true);
+        setMessage(
+          intl.formatMessage({
+            defaultMessage: "Fetching suggestions…",
+            description:
+              "Hint shown while geocoder suggestions are being fetched",
+            id: "otpUi.LocationField.fetchingSuggestions"
+          })
         );
-        setMessage(message);
-        setFetching(false)
-      });
-  }), []);
+
+        getGeocoder(geocoderConfig)
+          .autocomplete({ text })
+          // TODO: Better type?
+          .then(
+            (result: {
+              features: Location[];
+              results: { error: { message: string } };
+            }) => {
+              let message: string;
+              // If no features found in response, default to empty array.
+              let geocodedFeatures = result?.features;
+              if (!geocodedFeatures) {
+                // Get the Pelias error message if exists.
+                // TODO: determine how other geocoders return error messages.
+                const errorMessage = result?.results?.error?.message;
+                // If the result did not contain a list of features, add special note.
+                message = getGeocoderErrorMessage(intl, errorMessage);
+                geocodedFeatures = [];
+              } else {
+                const {
+                  otherFeatures,
+                  stationFeatures,
+                  stopFeatures
+                } = getFeaturesByCategoryWithLimit(
+                  geocodedFeatures,
+                  suggestionCount,
+                  sortByDistance,
+                  preferredLayers
+                );
+                // Breakdown results found by type.
+                const parts = [];
+                if (stopFeatures.length) {
+                  parts.push(
+                    intl.formatMessage(
+                      {
+                        description: "Shows the count of transit stops",
+                        id: "otpUi.LocationField.stopCount"
+                      },
+                      { count: stopFeatures.length }
+                    )
+                  );
+                }
+                if (stationFeatures.length) {
+                  parts.push(
+                    intl.formatMessage(
+                      {
+                        description: "Shows the count of stations",
+                        id: "otpUi.LocationField.stationCount"
+                      },
+                      { count: stationFeatures.length }
+                    )
+                  );
+                }
+                if (otherFeatures.length) {
+                  parts.push(
+                    intl.formatMessage(
+                      {
+                        description: "Shows the count of other places",
+                        id: "otpUi.LocationField.otherCount"
+                      },
+                      { count: otherFeatures.length }
+                    )
+                  );
+                }
+                const hasResults = parts.length !== 0;
+                const results = hasResults
+                  ? intl.formatList(parts, { type: "conjunction" })
+                  : intl.formatMessage({
+                      description: "Indicates no results",
+                      id: "otpUi.LocationField.noResults"
+                    });
+                const resultsFoundText = intl.formatMessage(
+                  {
+                    description: "Text about geocoder results found",
+                    id: "otpUi.LocationField.resultsFound"
+                  },
+                  {
+                    input: text,
+                    results
+                  }
+                );
+                if (hasResults) {
+                  // If there are results, concatenate sentences about results found and
+                  // instructions for assistive technology users on how to access results.
+                  const instructions = intl.formatMessage({
+                    description: "Instructions on accessing geocoder results",
+                    id: "otpUi.LocationField.howToAccessResults"
+                  });
+                  message = `${resultsFoundText} ${instructions}`;
+                } else {
+                  message = resultsFoundText;
+                }
+              }
+              setGeocodedFeatures(geocodedFeatures);
+              setMessage(message);
+              setFetching(false);
+            }
+          )
+          .catch((err: unknown) => {
+            console.error(err);
+            const message = getGeocoderErrorMessage(intl, err.toString());
+            setMessage(message);
+          });
+      }),
+    []
+  );
 
   const getFormControlClassname = () => {
     return `${locationType}-form-control`;
   };
 
   const setLocation = (newLocation: Location, resultType: ResultType) => {
-    onLocationSelected(intl, { location: newLocation, locationType, resultType });
+    onLocationSelected({
+      location: newLocation,
+      locationType,
+      resultType
+    });
     setMenuVisible(false);
   };
 
@@ -255,7 +348,7 @@ const LocationField = ({
     if (newLocation) {
       // If geolocation is successful (i.e., user has granted app geolocation
       // permission and coords exist), set location.
-      onLocationSelected(intl, {
+      onLocationSelected({
         location: newLocation,
         locationType,
         resultType: "CURRENT_LOCATION"
@@ -266,7 +359,6 @@ const LocationField = ({
     }
     setMenuVisible(false);
   };
-
 
   const onClearButtonClick = () => {
     clearLocation({ locationType });
@@ -478,7 +570,16 @@ const LocationField = ({
 
   /* 1) Process geocode search result option(s) */
   if (geocodedFeatures.length > 0) {
-    const { otherFeatures, stationFeatures, stopFeatures } = getFeaturesByCategoryWithLimit(geocodedFeatures, suggestionCount, sortByDistance, preferredLayers)
+    const {
+      otherFeatures,
+      stationFeatures,
+      stopFeatures
+    } = getFeaturesByCategoryWithLimit(
+      geocodedFeatures,
+      suggestionCount,
+      sortByDistance,
+      preferredLayers
+    );
 
     // If no categories of features are returned, this variable is used to
     // avoid displaying headers
@@ -488,50 +589,40 @@ const LocationField = ({
     // Iterate through the geocoder results
     menuItems = menuItems.concat(
       stationFeatures.length > 0 && (
-        <S.MenuItem
+        <S.MenuGroupHeader
+          as={headingType}
           bgColor={layerColorMap.stations}
-          centeredText
-          header
           key="gtfs-stations-header"
-          role="heading"
         >
           <FormattedMessage
             description="Text for header above Stations"
             id="otpUi.LocationField.stations"
           />
-        </S.MenuItem>
+        </S.MenuGroupHeader>
       ),
       stationFeatures.map(feature => renderFeature(itemIndex++, feature)),
 
       stopFeatures.length > 0 && (
-        <S.MenuItem
+        <S.MenuGroupHeader
+          as={headingType}
           bgColor={layerColorMap.stops}
-          centeredText
-          header
           key="gtfs-stops-header"
-          role="heading"
         >
           <FormattedMessage
             description="Text for header above Stops"
             id="otpUi.LocationField.stops"
           />
-        </S.MenuItem>
+        </S.MenuGroupHeader>
       ),
       stopFeatures.map(feature => renderFeature(itemIndex++, feature)),
 
       transitFeaturesPresent && otherFeatures.length > 0 && (
-        <S.MenuItem
-          bgColor="#333"
-          centeredText
-          header
-          key="other-header"
-          role="heading"
-        >
+        <S.MenuGroupHeader as={headingType} bgColor="#333" key="other-header">
           <FormattedMessage
             description="Text for header above the 'other'"
             id="otpUi.LocationField.other"
           />
-        </S.MenuItem>
+        </S.MenuGroupHeader>
       ),
       otherFeatures.map(feature => renderFeature(itemIndex++, feature))
     );
@@ -541,17 +632,12 @@ const LocationField = ({
   if (nearbyStops.length > 0 && !suppressNearby) {
     // Add the menu sub-heading (not a selectable item)
     menuItems.push(
-      <S.MenuItem
-        centeredText
-        header
-        key="ns-header"
-        role="heading"
-      >
+      <S.MenuGroupHeader as={headingType} key="ns-header">
         <FormattedMessage
           description="Text for header above nearby stops"
           id="otpUi.LocationField.nearby"
         />
-      </S.MenuItem>
+      </S.MenuGroupHeader>
     );
 
     // Iterate through the found nearby stops
@@ -595,17 +681,12 @@ const LocationField = ({
   if (sessionSearches.length > 0) {
     // Add the menu sub-heading (not a selectable item)
     menuItems.push(
-      <S.MenuItem
-        centeredText
-        header
-        key="ss-header"
-        role="heading"
-      >
+      <S.MenuGroupHeader as={headingType} key="ss-header">
         <FormattedMessage
           description="Text for header above recently searched items"
           id="otpUi.LocationField.recentlySearched"
         />
-      </S.MenuItem>
+      </S.MenuGroupHeader>
     );
 
     // Iterate through any saved locations
@@ -641,17 +722,12 @@ const LocationField = ({
   if (userLocationsAndRecentPlaces.length > 0 && showUserSettings) {
     // Add the menu sub-heading (not a selectable item)
     menuItems.push(
-      <S.MenuItem
-        centeredText
-        header
-        key="mp-header"
-        role="heading"
-      >
+      <S.MenuGroupHeader as={headingType} key="mp-header">
         <FormattedMessage
           description="Text for header above user-saved places"
           id="otpUi.LocationField.myPlaces"
         />
-      </S.MenuItem>
+      </S.MenuGroupHeader>
     );
 
     // Iterate through any saved locations
@@ -673,7 +749,7 @@ const LocationField = ({
             isActive={itemIndex === activeIndex}
             key={optionKey++}
             onClick={locationSelected}
-            title={<StoredPlaceName location={userLocation} />}
+            title={getStoredPlaceName(userLocation)}
           />
         );
         itemIndex++;
@@ -697,20 +773,22 @@ const LocationField = ({
     });
     positionUnavailable = false;
   } else {
-    // error detecting current position
+    // Error detecting current position.
+    // If there is an error, concatenate the error message in parentheses.
     optionIcon = currentPositionUnavailableIcon;
-    optionTitle = intl.formatMessage(
-      {
-        id: "otpUi.LocationField.currentLocationUnavailable"
-      },
-      {
-        error: !currentPosition
-          ? undefined
-          : typeof currentPosition.error === "string" ? currentPosition.error : currentPosition.error.message
-      }
-    );
+    const locationUnavailableText = intl.formatMessage({
+      description: "Current location unavailable status",
+      id: "otpUi.LocationField.currentLocationUnavailable"
+    });
+    const errorText = !currentPosition
+      ? undefined
+      : typeof currentPosition.error === "string"
+      ? currentPosition.error
+      : currentPosition.error.message;
+
+    optionTitle = addInParentheses(intl, locationUnavailableText, errorText);
     positionUnavailable = true;
-    statusMessages.push(optionTitle)
+    statusMessages.push(optionTitle);
   }
 
   // Add to the selection handler lookup (for use in onKeyDown)
@@ -733,19 +811,16 @@ const LocationField = ({
   }
   if (message) {
     if (geocodedFeatures.length === 0) {
-      const icon = isFetching
-        ? <S.Spinner size={ICON_SIZE} />
-        : <ExclamationCircle size={ICON_SIZE} />;
+      const icon = isFetching ? (
+        <S.Spinner size={ICON_SIZE} />
+      ) : (
+        <ExclamationCircle size={ICON_SIZE} />
+      );
       menuItems.unshift(
-        <Option
-          disabled
-          icon={icon}
-          key={optionKey++}
-          title={message}
-        />
+        <Option disabled icon={icon} key={optionKey++} title={message} />
       );
     }
-    statusMessages.push(message)
+    statusMessages.push(message);
   }
 
   // Store the number of location-associated items for reference in the onKeyDown method
@@ -758,11 +833,20 @@ const LocationField = ({
     currentPosition && currentPosition.fetching
       ? intl.formatMessage({ id: "otpUi.LocationField.fetchingLocation" })
       : defaultPlaceholder;
+  const shouldRenderList = isStatic || menuVisible;
+  const hasNoEnabledOptions = menuItemCount === 0;
+  // Only populate the aria-controls fields if the suggestion list is shown
+  // and the list has an enabled option.
+  const controlledId =
+    shouldRenderList && !hasNoEnabledOptions ? listBoxId : undefined;
+
   const textControl = (
     <S.Input
-      aria-activedescendant={activeIndex !== null ? getOptionId(activeIndex) : null}
+      aria-activedescendant={
+        activeIndex !== null ? getOptionId(activeIndex) : null
+      }
       aria-autocomplete="list"
-      aria-controls={listBoxId}
+      aria-controls={controlledId}
       aria-expanded={menuVisible}
       aria-haspopup="listbox"
       aria-invalid={!isValid}
@@ -784,73 +868,76 @@ const LocationField = ({
   // or if the input field has text.
   const clearButton =
     showClearButton && location ? (
-      <S.InputGroupAddon>
-        <S.Button
-          aria-label={intl.formatMessage({
-            id: "otpUi.LocationField.clearLocation"
-          })}
-          onClick={onClearButtonClick}
-        >
-          {clearButtonIcon}
-        </S.Button>
-      </S.InputGroupAddon>
+      <S.ClearButton
+        aria-label={intl.formatMessage({
+          id: "otpUi.LocationField.clearLocation"
+        })}
+        onClick={onClearButtonClick}
+      >
+        {clearButtonIcon}
+      </S.ClearButton>
     ) : null;
-  if (isStatic) {
-    // 'static' mode (menu is displayed alongside input, e.g., for mobile view)
-    return (
-      <div className={className}>
-        <S.FormGroup>
-          <S.InputGroup role="group">
-            <S.InputGroupAddon>
-              <LocationIconComponent locationType={locationType} />
-            </S.InputGroupAddon>
-            {textControl}
-            {clearButton}
-          </S.InputGroup>
-        </S.FormGroup>
-        <S.HiddenContent role="status">{statusMessages?.join(", ")}</S.HiddenContent>
-        <S.StaticMenuItemList
-          // Hide the listbox from assistive technology if no valid items are shown.
-          aria-hidden={menuItemCount === 0 || undefined}
+
+  const ItemList = isStatic ? S.StaticMenuItemList : S.MenuItemList;
+
+  return (
+    <S.InputGroup className={className} onBlur={onBlurFormGroup} role="group">
+      <S.DropdownButton
+        aria-controls={controlledId}
+        aria-expanded={shouldRenderList}
+        aria-label={intl.formatMessage({
+          defaultMessage: "Open the list of location suggestions",
+          description:
+            "Text to show as a a11y label for the button that opens the dropdown list of locations",
+          id: "otpUi.LocationField.suggestedLocationsLong"
+        })}
+        onClick={onDropdownToggle}
+        tabIndex={-1}
+      >
+        <LocationIconComponent locationType={locationType} />
+      </S.DropdownButton>
+      {textControl}
+      {clearButton}
+      {/* Note: always render this status tag regardless of the open state,
+          so that assistive technologies correctly set up status monitoring. */}
+      <S.HiddenContent role="status">
+        <FormattedList
+          // eslint-disable-next-line react/style-prop-object
+          style="narrow"
+          type="conjunction"
+          value={statusMessages}
+        />
+      </S.HiddenContent>
+      {shouldRenderList && (
+        <ItemList
+          // Hide the list from screen readers if no enabled options are shown.
+          aria-hidden={hasNoEnabledOptions}
           aria-label={intl.formatMessage({
             defaultMessage: "Suggested locations",
-            description: "Text to show as a label for the dropdown list of locations",
+            description:
+              "Text to show as a label for the dropdown list of locations",
             id: "otpUi.LocationField.suggestedLocations"
           })}
           id={listBoxId}
         >
-          {menuItems.length > 0 ? ( // Show typing prompt to avoid empty screen
-            menuItems
+          {isStatic ? (
+            menuItems.length > 0 ? ( // Show typing prompt to avoid empty screen
+              menuItems
+            ) : (
+              <S.MenuGroupHeader as="div">
+                <FormattedMessage
+                  defaultMessage="Begin typing to search for locations"
+                  description="Text to show as initial placeholder in location search field"
+                  id="otpUi.LocationField.beginTypingPrompt"
+                />
+              </S.MenuGroupHeader>
+            )
           ) : (
-            <S.MenuItem header centeredText>
-              <FormattedMessage
-                description="Text to show as initial placeholder in location search field"
-                id="otpUi.LocationField.beingTypingPrompt"
-              />
-            </S.MenuItem>
+            menuVisible && menuItems
           )}
-        </S.StaticMenuItemList>
-      </div>
-    );
-  }
-
-  // default display mode with dropdown menu
-  return (
-    <S.FormGroup onBlur={onBlurFormGroup} className={className}>
-      <S.InputGroup role="group">
-        {/* location field icon -- also serves as dropdown anchor */}
-        <S.Dropdown
-          input={<>{textControl}{clearButton}</>}
-          listBoxIdentifier={listBoxId}
-          onToggle={onDropdownToggle}
-          open={menuVisible}
-          status={statusMessages.join(", ")}
-          title={<LocationIconComponent locationType={locationType} />}
-        >
-          {menuItems}
-        </S.Dropdown>
-      </S.InputGroup>
-    </S.FormGroup>
+        </ItemList>
+      )}
+    </S.InputGroup>
   );
 };
 

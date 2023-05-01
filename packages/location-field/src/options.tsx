@@ -1,7 +1,7 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceStringImperial } from "@opentripplanner/humanize-distance";
-import React, { ReactElement } from "react";
-import { FormattedMessage } from "react-intl";
+import React from "react";
+import { IntlShape, useIntl } from "react-intl";
 import { Bus } from "@styled-icons/fa-solid/Bus";
 import { Briefcase } from "@styled-icons/fa-solid/Briefcase";
 import { Home } from "@styled-icons/fa-solid/Home";
@@ -10,6 +10,7 @@ import { MapPin } from "@styled-icons/fa-solid/MapPin";
 
 import { Stop, UserLocation } from "@opentripplanner/types";
 import * as S from "./styled";
+import { addInParentheses } from "./utils";
 
 export const ICON_SIZE = 13;
 
@@ -29,6 +30,36 @@ export function GeocodedOptionIcon({
   }
   return <MapPin size={ICON_SIZE} />;
 }
+
+export const MenuItem = ({
+  active = false,
+  children,
+  disabled = false,
+  id,
+  onClick = null
+}: {
+  active?: boolean;
+  children: React.ReactNode;
+  disabled?: boolean;
+  id?: string;
+  onClick?: () => void;
+}): React.ReactElement => (
+  <S.MenuItemLi
+    // Hide disabled choices from screen readers (a relevant status is already provided).
+    aria-hidden={disabled || undefined}
+    role={disabled ? undefined : "none"}
+  >
+    <S.MenuItemA
+      active={active}
+      id={id}
+      onClick={disabled ? null : onClick}
+      role="option"
+      tabIndex={-1}
+    >
+      {children}
+    </S.MenuItemA>
+  </S.MenuItemLi>
+);
 
 export function Option({
   classes = "",
@@ -52,7 +83,7 @@ export function Option({
   title?: React.ReactNode;
 }): React.ReactElement {
   return (
-    <S.MenuItem active={isActive} disabled={disabled} id={id} onClick={onClick}>
+    <MenuItem active={isActive} disabled={disabled} id={id} onClick={onClick}>
       {coreUtils.ui.isIE() ? (
         // In internet explorer 11, some really weird stuff is happening where it
         // is not possible to click the text of the title, but if you click just
@@ -76,7 +107,7 @@ export function Option({
           </S.OptionContent>
         </S.OptionContainer>
       )}
-    </S.MenuItem>
+    </MenuItem>
   );
 }
 
@@ -94,7 +125,7 @@ export function TransitStopOption({
   stopOptionIcon: React.ReactNode;
 }): React.ReactElement {
   return (
-    <S.MenuItem id={id} onClick={onClick} active={isActive}>
+    <MenuItem active={isActive} id={id} onClick={onClick}>
       <S.StopIconAndDistanceContainer>
         {stopOptionIcon}
         <S.StopDistance>
@@ -113,7 +144,7 @@ export function TransitStopOption({
         </S.StopRoutes>
       </S.StopContentContainer>
       <S.ClearBoth />
-    </S.MenuItem>
+    </MenuItem>
   );
 }
 
@@ -127,36 +158,30 @@ export function UserLocationIcon({
   return <MapMarker size={ICON_SIZE} />;
 }
 
-function LocationName({ location }: { location: UserLocation }): ReactElement {
+function getLocationName(location: UserLocation, intl: IntlShape): string {
   switch (location.type) {
     case "home":
-      return (
-        <FormattedMessage
-          defaultMessage="Home"
-          description="The home location"
-          id="otpUi.LocationField.homeLocation"
-        />
-      );
+      return intl.formatMessage({
+        defaultMessage: "Home",
+        description: "The home location",
+        id: "otpUi.LocationField.homeLocation"
+      });
     case "work":
-      return (
-        <FormattedMessage
-          defaultMessage="Work"
-          description="The work location"
-          id="otpUi.LocationField.workLocation"
-        />
-      );
+      return intl.formatMessage({
+        defaultMessage: "Work",
+        description: "The work location",
+        id: "otpUi.LocationField.workLocation"
+      });
     default:
-      return <>{location.name}</>;
+      return location.name;
   }
 }
 
-export function StoredPlaceName({
-  location,
+export function getStoredPlaceName(
+  location: UserLocation,
   withDetails = true
-}: {
-  location: UserLocation;
-  withDetails?: boolean;
-}): React.ReactElement {
+): string {
+  const intl = useIntl();
   let detailText;
   if (withDetails) {
     if (location.type === "home" || location.type === "work") {
@@ -169,17 +194,5 @@ export function StoredPlaceName({
     //   detailText = moment(location.timestamp).fromNow();
   }
 
-  return detailText && detailText !== "" ? (
-    <FormattedMessage
-      defaultMessage="{placeName} ({details})"
-      description="Renders a place and some brief detail text."
-      id="otpUi.LocationField.placeNameWithDetails"
-      values={{
-        details: detailText,
-        placeName: <LocationName location={location} />
-      }}
-    />
-  ) : (
-    <LocationName location={location} />
-  );
+  return addInParentheses(intl, getLocationName(location, intl), detailText);
 }
