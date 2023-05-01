@@ -594,6 +594,13 @@ export const StepStreetName = styled.span`
   font-weight: 500;
 `;
 
+export const StepLength = styled.span`
+  font-weight: 200;
+  /* This is the lowest opacity which still meets AA text color contrast standards */
+  opacity: 0.8975;
+  padding-left: 1ch;
+`;
+
 export const StopIdSpan = styled.span`
   font-weight: 200;
   font-size: 0.9em;
