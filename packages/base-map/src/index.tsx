@@ -71,9 +71,6 @@ const BaseMap = ({
     zoom: initZoom
   });
 
-  // On mobile hover is unavailable, so we use this variable to use a two tap process
-  // to simulate a hover
-  const [fakeMobileHover, setFakeHover] = useState(false);
   const [longPressTimer, setLongPressTimer] = useState(null);
 
   useEffect(() => {
@@ -136,7 +133,6 @@ const BaseMap = ({
         clearLongPressTimer();
       }}
       onTouchStart={e => {
-        setFakeHover(false);
         // Start detecting long presses on screens when there is only one touch point.
         // If the user is pinching the map or does other multi-touch actions, cancel long-press detection.
         const touchPointCount = e.points.length;
@@ -155,16 +151,8 @@ const BaseMap = ({
         (!!baseLayer &&
           typeof baseLayer === "object" &&
           baseLayer.length > 1)) && (
-        <Styled.LayerSelector
-          className="filter-group"
-          id="filter-group"
-          onBlur={() => setFakeHover(false)}
-          onFocus={() => setFakeHover(true)}
-          onTouchEnd={() => setFakeHover(true)}
-        >
-          <ul
-            className={`layers-list ${fakeMobileHover && "fake-mobile-hover"}`}
-          >
+        <Styled.LayerSelector className="filter-group" id="filter-group">
+          <ul className="maplibregl-ctrl-group layers-list">
             {!!baseLayer &&
               typeof baseLayer === "object" &&
               baseLayer.map((layer: string, index: number) => {
