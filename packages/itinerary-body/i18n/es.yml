@@ -67,7 +67,7 @@ otpUi:
       vehicle: Vehículo
     stepDepart: Dirígete hacia {heading} por {street}
   ItineraryBody:
-    stayOnBoard: Permanecer a bordo a {place}
+    stayOnBoard: Quédate a bordo de {place}
     travelBy: Viajar {mode}
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"
