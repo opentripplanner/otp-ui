@@ -1,13 +1,5 @@
 otpUi:
   TripDetails:
-    calories: "Calories dépensées : <strong>{calories, number, ::.}</strong>"
-    caloriesDescription: >
-      La dépense calorique est calculée sur la base de {walkMinutes, plural, one
-      {<strong># minute</strong> effectuée} other {<strong># minutes</strong>
-      effectuées}} à pied et {bikeMinutes, plural, one {<strong>#
-      minute</strong> effectuée} other {<strong># minutes</strong> effectuées}}
-      en vélo sur ce trajet. (d'après <dietaryLink>Dietary Guidelines for
-      Americans 2005, page 16, Table 4</dietaryLink>)
     co2: "CO₂ émis : <strong>{co2}</strong>"
     co2description: >-
       L'intensité carbone est calculée en multipliant la distance de chaque
@@ -24,7 +16,12 @@ otpUi:
       special: Spécial
       youth: Jeunes
     hideDetail: Masquer les détails
+    minutesActive: "Activité physique: {minutes, plural, one {# minute} other {# minutes}}"
     showDetail: Afficher les détails
+    timeActiveDescription: >
+      En faisant ce voyage, vous passerez <strong>{walkMinutes, plural, one {#
+      minute} other {# minutes}}</strong> à pied et <strong>{bikeMinutes,
+      plural, one {# minute} other {# minutes}}</strong> à vélo.
     title: Détails du trajet
     tncFare: "Tarif {companies} : <strong>{minTNCFare} - {maxTNCFare}</strong>"
     transferDiscountExplanation: Cette correspondance vous donne une réduction de {transferAmount}
