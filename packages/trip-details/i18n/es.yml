@@ -16,7 +16,6 @@ otpUi:
       special: Especial
       youth: Juventud
     hideDetail: Ocultar detalles
-    minutesActive: "Tiempo pasado activo: {minutes, plural, one {# minuto} other {# minutos}}"
     showDetail: Mostrar detalles
     title: Detalles del viaje
     tncFare: "{companies} Tarifa: <strong>{minTNCFare} - {maxTNCFare}</strong>"

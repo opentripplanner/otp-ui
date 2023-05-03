@@ -13,7 +13,6 @@ otpUi:
       special: 特别的
       youth: 青年
     hideDetail: 隐藏细节
-    minutesActive: "活跃时间: {minutes, plural, one {# 分钟} other {# 分钟}}"
     showDetail: 显示详细资料
     title: 行程详情
     tncFare: "{companies} 票价: <strong>{minTNCFare} - {maxTNCFare}</strong>"

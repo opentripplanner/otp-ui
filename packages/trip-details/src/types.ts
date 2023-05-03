@@ -63,13 +63,13 @@ export interface TransitFareProps {
 
 export interface TripDetailsProps {
   /**
-   * Slot for a custom component to render the expandable section for time active.
-   */
-  TimeActiveDetails?: React.ElementType<TimeActiveDetailsProps>;
-  /**
    * Used for additional styling with styled components for example.
    */
   className?: string;
+    /**
+   * Object containing the CO₂ config.
+   */
+  co2Config?: CO2ConfigType;
   /**
    * Determines which transit fare should be displayed by default, should there be multiple transit fare types.
    */
@@ -101,8 +101,8 @@ export interface TripDetailsProps {
    * Itinerary that the user has selected to view, contains multiple legs.
    */
   itinerary: Itinerary;
-  /**
-   * Object containing the CO₂ config.
+    /**
+   * Slot for a custom component to render the expandable section for time active.
    */
-  co2Config?: CO2ConfigType;
+  TimeActiveDetails?: React.ElementType<TimeActiveDetailsProps>;
 }

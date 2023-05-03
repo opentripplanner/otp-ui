@@ -3,20 +3,20 @@ import coreUtils from "@opentripplanner/core-utils";
 import React, { ReactElement } from "react";
 import { FormattedMessage, FormattedNumber } from "react-intl";
 import { CalendarAlt } from "@styled-icons/fa-solid/CalendarAlt";
+import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
 import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
 import { Leaf } from "@styled-icons/fa-solid/Leaf";
 import { Route } from "@styled-icons/fa-solid/Route";
 
-import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
 import * as S from "./styled";
 import TripDetail from "./trip-detail";
 import FareLegTable from "./fare-table";
 import { boldText, renderFare } from "./utils";
 
 import {
+  TimeActiveDetailsProps,
   TransitFareProps,
-  TripDetailsProps,
-  TimeActiveDetailsProps
+  TripDetailsProps
 } from "./types";
 
 // Load the default messages.
@@ -96,16 +96,16 @@ const TransitFare = ({
  * Renders trip details such as departure instructions and fare amount.
  */
 export function TripDetails({
-  TimeActiveDetails = DefaultTimeActiveDetails,
   className = "",
+  co2Config,
   defaultFareKey = "regular",
-  displayTimeActive = true,
   DepartureDetails = null,
+  displayTimeActive = true,
   FareDetails = null,
   fareDetailsLayout,
   fareKeyNameMap = {},
   itinerary,
-  co2Config
+  TimeActiveDetails = DefaultTimeActiveDetails
 }: TripDetailsProps): ReactElement {
   // process the transit fare
   const fareResult = coreUtils.itinerary.calculateTncFares(itinerary);
