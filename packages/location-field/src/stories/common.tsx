@@ -51,3 +51,33 @@ export const layerColorMap = {
   stations: "navy",
   locality: "orange"
 };
+
+export const userLocationsAndRecentPlaces = [
+  {
+    icon: "home",
+    lat: 45.89,
+    lon: 67.12,
+    name: "456 Suburb St",
+    type: "home"
+  },
+  {
+    icon: "work",
+    lat: 54.32,
+    lon: 43.21,
+    name: "789 Busy St",
+    type: "work"
+  },
+  {
+    icon: "map-marker",
+    lat: 34.22,
+    lon: -84.11,
+    name: "Coffee Roasters Shop, 55 Coffee Street",
+    type: "custom"
+  },
+  {
+    lat: 12.34,
+    lon: 34.45,
+    name: "123 Main St",
+    type: "recent"
+  }
+];

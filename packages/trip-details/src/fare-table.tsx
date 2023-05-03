@@ -92,7 +92,7 @@ const FareTypeTable = ({
     return (
       <Table>
         <TableHeader>
-          <th className="main">
+          <th className="main" scope="col">
             {boldText(getFormattedTextForConfigKey(header))}
           </th>
           {colsToRender.map(col => {
@@ -100,7 +100,10 @@ const FareTypeTable = ({
               ? getItineraryCost(legs, col.riderCategory, col.fareContainer)
               : fareTotals[col.key];
             return (
-              <th key={col.key || `${col.fareContainer}-${col.riderCategory}`}>
+              <th
+                scope="col"
+                key={col.key || `${col.fareContainer}-${col.riderCategory}`}
+              >
                 {boldText(getFormattedTextForConfigKey(col.header))}
                 <br />
                 {renderFare(

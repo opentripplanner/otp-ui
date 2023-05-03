@@ -73,6 +73,17 @@ const TransitFare = ({
 }: TransitFareProps): ReactElement => {
   const currentFare = transitFares[fareKey];
 
+  // TODO: Is this needed? Every implementation of TransitFare does a check for currentFare's existence, although not the cents field
+  if (typeof currentFare?.cents !== "number") {
+    return (
+      <FormattedMessage
+        defaultMessage={defaultMessages["otpUi.TripDetails.transitFareUnknown"]}
+        description="Text showing that no fare information is present."
+        id="otpUi.TripDetails.transitFareUnknown"
+      />
+    );
+  }
+
   return (
     <span>
       <FormattedMessage
@@ -83,7 +94,7 @@ const TransitFare = ({
           name: fareKeyNameMap[fareKey] || fareNameFallback || fareKey,
           strong: boldText,
           value: renderFare(
-            currentFare.currency.currencyCode,
+            currentFare?.currency?.currencyCode || "USD",
             currentFare.cents / 100
           )
         }}
@@ -132,7 +143,7 @@ export function TripDetails({
     const TransitFareWrapper =
       transitFares && fareKeys.length > 1 ? S.TransitFare : S.TransitFareSingle;
 
-    fare = (
+    fare = transitFares?.[defaultFare] && (
       <S.Fare>
         <TransitFareWrapper>
           <summary style={{ display: fareKeys.length > 1 ? "list-item" : "" }}>
@@ -164,8 +175,8 @@ export function TripDetails({
               return (
                 <TransitFare
                   fareKey={fareKey}
-                  key={fareKey}
                   fareKeyNameMap={fareKeyNameMap}
+                  key={fareKey}
                   transitFares={transitFares}
                 />
               );

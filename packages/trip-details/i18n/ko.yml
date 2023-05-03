@@ -21,4 +21,5 @@ otpUi:
     transferDiscountExplanation: 환승 할인 {transferAmount} 적용
     transitFare: 대중 교통 운임
     transitFareEntry: "{name} : <strong>{value}</strong>"
+    transitFareUnknown: 운임 정보 없음
     tripIncludesFlex: 이 트립에는 가변 경로가 포함되어 있습니다. {extraMessage}

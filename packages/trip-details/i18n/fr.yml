@@ -27,4 +27,5 @@ otpUi:
     transferDiscountExplanation: Cette correspondance vous donne une réduction de {transferAmount}
     transitFare: Tarif en transports
     transitFareEntry: "{name} : <strong>{value}</strong>"
+    transitFareUnknown: Tarif inconnu
     tripIncludesFlex: Ce trajet comprend un service à la demande (Flex). {extraMessage}

@@ -14,7 +14,8 @@ import {
   onLocationSelected,
   selectedLocation,
   slowGeocoderConfig,
-  unreachableGeocoderConfig
+  unreachableGeocoderConfig,
+  userLocationsAndRecentPlaces
 } from "./common";
 
 import mockedGeocoderResponse from "../mocks/autocomplete.json";
@@ -229,5 +230,18 @@ export const RequiredAndInvalidState = (): JSX.Element => (
     isValid={false}
     locationType="from"
     onLocationSelected={onLocationSelected}
+  />
+);
+
+export const WithUserSettings = (): JSX.Element => (
+  <LocationField
+    currentPosition={currentPosition}
+    geocoderConfig={geocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    inputPlaceholder="Select from location"
+    locationType="from"
+    onLocationSelected={onLocationSelected}
+    showUserSettings
+    userLocationsAndRecentPlaces={userLocationsAndRecentPlaces}
   />
 );
