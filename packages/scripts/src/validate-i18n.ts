@@ -40,6 +40,7 @@ async function checkI18n({ sourceFiles, ymlFilesByLocale }) {
         Object.keys(flattenedMessages)
           .filter(isNotSpecialId)
           .filter(id => !messageIdsFromCode.includes(id))
+          .filter(id => !idsNotInCode.includes(id))
           .forEach(id => idsNotInCode.push(id));
       });
 
