@@ -1,10 +1,9 @@
 otpUi:
   LocationField:
-    beingTypingPrompt: Comience a escribir para buscar ubicaciones
     clearLocation: Restablecer la ubicación
     currentLocationUnavailable: Ubicación actual no disponible
     fetchingLocation: Buscando la ubicación…
-    fetchingSuggestions: Buscando las sugerencias…
+    fetchingSuggestions: Buscando sugerencias…
     geocoderUnreachable: No se pueden obtener sugerencias
     homeLocation: Hogar
     howToAccessResults: >-
@@ -22,7 +21,8 @@ otpUi:
     stations: Estaciones
     stopCount: "{count, plural, =1 {# parada} other {# paradas}}"
     stops: Paradas
-    suggestedLocations: Ubicaciones sugeridas
-    suggestedLocationsLong: Alternar la visualización de la lista de ubicaciones sugeridas
+    suggestedLocations: Lugares recomendados
+    suggestedLocationsLong: Alternar la visualización de la lista de lugares recomendamos
     useCurrentLocation: Usar ubicación actual
     workLocation: Ubicación de trabajo
+    beginTypingPrompt: Comience a escribir para buscar ubicaciones
