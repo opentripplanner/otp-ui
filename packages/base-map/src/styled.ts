@@ -73,6 +73,7 @@ export const LayerSelector = styled.aside`
   }
 
   .layers-list {
+    background: rgba(255, 255, 255, 0.95);
     list-style-type: none;
     padding: 1em;
     position: absolute;
@@ -96,8 +97,8 @@ export const LayerSelector = styled.aside`
       cursor: pointer;
     }
 
-    /* :hover state is set on mouse over and on click on touch screens. */
-    &:hover {
+    &:hover,
+    &.fake-mobile-hover {
       label {
         height: unset;
         overflow: unset;
