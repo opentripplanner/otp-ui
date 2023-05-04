@@ -4,9 +4,9 @@ import type { MassUnitOption, Fare, Itinerary, Money } from "@opentripplanner/ty
 import type { ReactElement } from "react";
 
 export interface TimeActiveDetailsProps {
-  bikeDuration: number;
+  bikeMinutes: number;
   minutesActive?: number;
-  walkDuration: number;
+  walkMinutes: number;
 }
 
 export interface CO2ConfigType {

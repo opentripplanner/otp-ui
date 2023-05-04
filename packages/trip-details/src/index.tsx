@@ -44,8 +44,8 @@ function CO2DescriptionLink(contents: ReactElement): ReactElement {
  * slot in the TripDetails component.
  */
 function DefaultTimeActiveDetails({
-  bikeDuration,
-  walkDuration
+  bikeMinutes,
+  walkMinutes
 }: TimeActiveDetailsProps): ReactElement {
   return (
     <FormattedMessage
@@ -55,9 +55,9 @@ function DefaultTimeActiveDetails({
       description="Text describing the walking and biking durations of a trip."
       id="otpUi.TripDetails.timeActiveDescription"
       values={{
-        bikeMinutes: bikeDuration,
+        bikeMinutes,
         strong: boldText,
-        walkMinutes: walkDuration
+        walkMinutes
       }}
     />
   );
@@ -209,9 +209,9 @@ export function TripDetails({
     if (leg.mode.startsWith("WALK")) walkDurationSeconds += leg.duration;
     if (leg.mode.startsWith("BICYCLE")) bikeDurationSeconds += leg.duration;
   });
-  const bikeDuration = Math.round(bikeDurationSeconds / 60);
-  const walkDuration = Math.round(walkDurationSeconds / 60);
-  const minutesActive = bikeDuration + walkDuration;
+  const bikeMinutes = Math.round(bikeDurationSeconds / 60);
+  const walkMinutes = Math.round(walkDurationSeconds / 60);
+  const minutesActive = bikeMinutes + walkMinutes;
 
   // Calculate CO₂ if it's not provided by the itinerary
   const co2 =
@@ -303,8 +303,8 @@ export function TripDetails({
             description={
               TimeActiveDetails && (
                 <TimeActiveDetails
-                  bikeDuration={bikeDuration}
-                  walkDuration={walkDuration}
+                  bikeMinutes={bikeMinutes}
+                  walkMinutes={walkMinutes}
                 />
               )
             }
