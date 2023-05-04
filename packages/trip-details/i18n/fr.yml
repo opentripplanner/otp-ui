@@ -19,7 +19,7 @@ otpUi:
     minutesActive: "Activité physique: {minutes, plural, one {# minute} other {# minutes}}"
     showDetail: Afficher les détails
     timeActiveDescription: >
-      En faisant ce voyage, vous passerez <strong>{walkMinutes, plural, one {#
+      Sur ce trajet, vous effectuerez <strong>{walkMinutes, plural, one {#
       minute} other {# minutes}}</strong> à pied et <strong>{bikeMinutes,
       plural, one {# minute} other {# minutes}}</strong> à vélo.
     title: Détails du trajet
