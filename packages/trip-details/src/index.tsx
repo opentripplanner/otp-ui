@@ -203,7 +203,7 @@ export function TripDetails({
 
   // Compute total time spent active.
 
-  // TODO: seperate into two reducers
+  // TODO: separate into two reducers
   let walkDurationSeconds = 0;
   let bikeDurationSeconds = 0;
   itinerary.legs.forEach(leg => {
