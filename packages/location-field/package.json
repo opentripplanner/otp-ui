@@ -10,7 +10,7 @@
   "private": false,
   "dependencies": {
     "@conveyal/geocoder-arcgis-geojson": "^0.0.3",
-    "@opentripplanner/core-utils": "^8.1.1",
+    "@opentripplanner/core-utils": "^8.2.1",
     "@opentripplanner/geocoder": "1.4.0",
     "@opentripplanner/humanize-distance": "^1.2.0",
     "@opentripplanner/location-icon": "^1.4.1",

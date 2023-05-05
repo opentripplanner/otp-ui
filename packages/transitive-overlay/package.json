@@ -20,9 +20,9 @@
   },
   "dependencies": {
     "@mapbox/polyline": "^1.1.1",
-    "@opentripplanner/base-map": "^3.0.10",
-    "@opentripplanner/core-utils": "^8.1.1",
-    "@opentripplanner/itinerary-body": "^4.1.9",
+    "@opentripplanner/base-map": "^3.0.11",
+    "@opentripplanner/core-utils": "^8.2.1",
+    "@opentripplanner/itinerary-body": "^4.1.17",
     "@turf/bbox": "^6.5.0",
     "@turf/bearing": "^6.5.0",
     "@turf/destination": "^6.5.0",
@@ -32,8 +32,8 @@
     "lodash.isequal": "^4.5.0"
   },
   "devDependencies": {
-    "@opentripplanner/endpoints-overlay": "^2.0.5",
-    "@opentripplanner/types": "^4.0.6"
+    "@opentripplanner/endpoints-overlay": "^2.0.6",
+    "@opentripplanner/types": "^5.0.0"
   },
   "peerDependencies": {
     "react": "^16.14.0",
