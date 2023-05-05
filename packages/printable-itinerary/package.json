@@ -10,8 +10,8 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^8.1.1",
-    "@opentripplanner/itinerary-body": "^4.1.9"
+    "@opentripplanner/core-utils": "^8.2.1",
+    "@opentripplanner/itinerary-body": "^4.1.17"
   },
   "devDependencies": {
     "@opentripplanner/icons": "^2.0.1"
