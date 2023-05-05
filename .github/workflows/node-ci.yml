@@ -1,26 +1,6 @@
-name: Node.js CI
-
-on:
-  push:
-    branches:
-      - master
-      - alpha
-      - beta
-      - next
-      - next-major
-      # This is an attempt to match semantic-release's branch pattern using
-      # GitHub Actions' regex-like matching
-      # See https://semantic-release.gitbook.io/semantic-release/v/beta/usage/configuration#branches
-      # See https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
-      - "[0-9]+.[0-9]+.x"
-      - "[0-9]+.x.x"
-      - "[0-9]+.x"
-  pull_request:
-
 jobs:
   test-build-release:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
         with:
@@ -35,16 +15,29 @@ jobs:
         run: yarn lint:js
       - name: Lint styles
         run: yarn lint:styles
+      - name: i18n check (en-US, fr only)
+        run: yarn check:i18n-en-fr
       - name: Type check
         run: yarn typescript
       - name: Run tests
         run: yarn unit
       - name: Run a11y tests
         run: yarn a11y-test
-
-      # at this point, the build is successful
-      - name: Semantic Release
-        env:
+      - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        name: Semantic Release
         run: yarn semantic-release
+name: Node.js CI
+"on":
+  pull_request: null
+  push:
+    branches:
+      - master
+      - alpha
+      - beta
+      - next
+      - next-major
+      - "[0-9]+.[0-9]+.x"
+      - "[0-9]+.x.x"
+      - "[0-9]+.x"
