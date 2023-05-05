@@ -1,6 +1,5 @@
 otpUi:
   LocationField:
-    beingTypingPrompt: 위치 검색 입력 시작
     clearLocation: 위치 지우기
     currentLocationUnavailable: 현재 위치를 사용할 수 없습니다
     fetchingLocation: 위치를 가져오는 중…
