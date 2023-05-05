@@ -99,6 +99,7 @@ export const LayerSelector = styled.aside`
 
     &:hover,
     &.fake-mobile-hover {
+      box-shadow: 0px -1px 15px -3px rgba(0, 0, 0, 0.1);
       label {
         height: unset;
         overflow: unset;
