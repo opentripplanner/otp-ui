@@ -16,7 +16,9 @@ otpUi:
       special: Special
       youth: Youth
     hideDetail: Hide details
-    minutesActive: "Time Spent Active: {minutes, plural, one {# minute} other {# minutes}}"
+    minutesActive: >-
+      Time Spent Active:  <strong> {minutes, plural, one {# minute} other {#
+      minutes}}</strong>
     showDetail: Show details
     timeActiveDescription: >
       By taking this trip, you'll spend <strong>{walkMinutes, plural, one {#

@@ -203,6 +203,7 @@ export function TripDetails({
 
   // Compute total time spent active.
 
+  // TODO: seperate into two reducers
   let walkDurationSeconds = 0;
   let bikeDurationSeconds = 0;
   itinerary.legs.forEach(leg => {
@@ -296,7 +297,8 @@ export function TripDetails({
                 description="Text showing the number of minutes spent walking or biking throughout trip."
                 id="otpUi.TripDetails.minutesActive"
                 values={{
-                  minutes: minutesActive
+                  minutes: minutesActive,
+                  strong: boldText
                 }}
               />
             }
