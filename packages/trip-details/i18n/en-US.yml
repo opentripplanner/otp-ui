@@ -17,7 +17,7 @@ otpUi:
       youth: Youth
     hideDetail: Hide details
     minutesActive: >-
-      Time Spent Active:  <strong> {minutes, plural, one {# minute} other {#
+      Time Spent Active: <strong>{minutes, plural, one {# minute} other {#
       minutes}}</strong>
     showDetail: Show details
     timeActiveDescription: >

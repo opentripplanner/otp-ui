@@ -94,4 +94,5 @@ export const TripDetailSummary = styled.div`
   padding-top: 2px;
   display: flex;
   align-items: baseline;
+  white-space: pre;
 `;
