@@ -1,11 +1,5 @@
 otpUi:
   TripDetails:
-    calories: "Calo bị đốt cháy: <strong>{calories, number, ::.}</strong>"
-    caloriesDescription: >
-      Lượng calo bị đốt cháy dựa trên <strong>{walkMinutes} phút</strong> đi bộ
-      và <strong>{bikeMinutes} phút</strong> dành cho chuyến đi xe đạp trong
-      chuyến đi này. Phỏng theo <dietaryLink>Dietary Guidelines for Americans
-      2005, trang 16, hình ảnh 4</dietaryLink>.
     co2: "CO₂ thải ra: <strong>{co2}</strong>"
     co2description: >-
       Nồng độ CO₂ được tính bằng cách nhân khoảng cách của mỗi chặng của một
