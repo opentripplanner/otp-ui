@@ -71,8 +71,8 @@ const BaseMap = ({
     zoom: initZoom
   });
 
-  // On mobile hover is unavailable, so we use this variable to use a two tap process
-  // to simulate a hover
+  // Firefox and Safari on iOS: hover is not triggered when the user touches the layer selector
+  // (unlike Firefox or Chromium on Android), so we have to detect touch and trigger hover ourselves.
   const [fakeMobileHover, setFakeHover] = useState(false);
   const [longPressTimer, setLongPressTimer] = useState(null);
 
@@ -163,7 +163,9 @@ const BaseMap = ({
           onTouchEnd={() => setFakeHover(true)}
         >
           <ul
-            className={`layers-list ${fakeMobileHover && "fake-mobile-hover"}`}
+            className={`maplibregl-ctrl-group layers-list ${
+              fakeMobileHover ? "fake-mobile-hover" : ""
+            }`}
           >
             {!!baseLayer &&
               typeof baseLayer === "object" &&
