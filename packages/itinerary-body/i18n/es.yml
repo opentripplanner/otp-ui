@@ -70,7 +70,7 @@ otpUi:
     stayOnBoard: Quédate a bordo de {place}
     travelBy: Viajar {mode}
     common:
-      durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"
+      durationShort: "{horas, plural, =0 {} otro {# hr }}{minutes} min"
     viewOnMap: Ver en el mapa
     flexPickupMessage: "Para tomar esta ruta, tiene que {action}{advanceNotice}."
     flexCallAhead: llama con anticipación
