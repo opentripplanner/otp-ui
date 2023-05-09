@@ -24,3 +24,8 @@ otpUi:
     transitFareEntry: "{name} : <strong>{value}</strong>"
     transitFareUnknown: No hay información sobre las tarifas
     tripIncludesFlex: Este viaje incluye rutas flexibles. {extraMessage}
+    minutesActive: 'Tiempo de actividad: <strong>{minutos, plural, uno {# minuto}
+      otro {# minutos}}</strong>'
+    timeActiveDescription: "Al hacer este viaje, gastarás <strong>{walkMinutes, plural,\
+      \ one {# minute} other {# minutes}}</strong> caminando y <strong>{bikeMinutes,\
+      \ plural, one {# minute} other {# minutos}}</strong> en bicicleta.\n"
