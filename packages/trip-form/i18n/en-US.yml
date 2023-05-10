@@ -9,7 +9,6 @@ otpUi:
   ModeSelector:
     labels:
       bicycle: Bike
-      bike: Bike
       car: Drive
       rent: Rent
       transit: Transit
