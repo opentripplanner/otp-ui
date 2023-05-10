@@ -47,8 +47,8 @@ const ModeBar = styled.fieldset`
   }
 `;
 
-const defaultAccentColor = "#ccc";
-const defaultActiveHoverColor = "#ddd";
+const defaultAccentColor = "#666";
+const defaultActiveHoverColor = "#333";
 
 const boxShadowCss = css`
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px;
