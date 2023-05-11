@@ -76,6 +76,48 @@ const modeSettingDefinitionsWithDropdown = [
     label: "Bus Color",
     options: [{ value: "blue", text: "Blue" }],
     type: "DROPDOWN"
+  },
+  {
+    applicableMode: "TRANSIT",
+    default: true,
+    key: "tram",
+    label: "Tram",
+    addTransportMode: {
+      mode: "TRAM"
+    },
+    type: "SUBMODE"
+  },
+  {
+    applicableMode: "TRANSIT",
+    default: true,
+    key: "bus",
+    label: "Bus",
+    iconName: "bus",
+    addTransportMode: {
+      mode: "BUS"
+    },
+    type: "SUBMODE"
+  },
+  {
+    applicableMode: "TRANSIT",
+    default: true,
+    key: "ferry",
+    label: "Subway",
+    iconName: "subway",
+    addTransportMode: {
+      mode: "SUBWAY"
+    },
+    type: "SUBMODE"
+  },
+  {
+    applicableMode: "TRANSIT",
+    default: true,
+    key: "ferry",
+    label: "Ferry",
+    addTransportMode: {
+      mode: "FERRY"
+    },
+    type: "SUBMODE"
   }
 ];
 
