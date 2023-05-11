@@ -722,14 +722,6 @@ export type CheckboxOptions = {
   value?: boolean;
 };
 
-export type TransitSubmodeCheckboxOption = {
-  addTransportMode: TransportMode;
-  default?: boolean;
-  label: string;
-  type: "SUBMODE";
-  value?: boolean;
-};
-
 export type ModeSettingBase = {
   applicableMode: string;
   iconName?: string;
@@ -737,18 +729,13 @@ export type ModeSettingBase = {
   key: string;
 };
 
-export type ModeSetting = (
-  | CheckboxOptions
-  | SliderOptions
-  | DropdownOptions
-  | TransitSubmodeCheckboxOption
-) &
+export type ModeSetting = (CheckboxOptions | SliderOptions | DropdownOptions) &
   ModeSettingBase;
 export type ModeSettingValues = Record<string, number | string | boolean>;
 
 /**
- * TransportModes correspond with the OTP GraphQL TransportMode.
- * Could be anything from walk, bike (qualifier: rent) to transit, tram, or bus.
+ * Transportation mode is usually an OTP mode string,
+ * but it can be anything for more flexibility.
  */
 export type TransportMode = {
   mode: string;
