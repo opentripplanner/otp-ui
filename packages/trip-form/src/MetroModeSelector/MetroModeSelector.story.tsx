@@ -101,7 +101,7 @@ const modeSettingDefinitionsWithDropdown = [
   {
     applicableMode: "TRANSIT",
     default: true,
-    key: "ferry",
+    key: "subway",
     label: "Subway",
     iconName: "subway",
     addTransportMode: {
