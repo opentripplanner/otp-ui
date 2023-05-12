@@ -18,14 +18,16 @@ export const defaultMessages: Record<string, string> = flatten(
   defaultEnglishMessages
 );
 
+const SubmodeGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  grid-column: span 2;
+`;
+
 const SettingsPanel = styled.fieldset`
   border: none;
   pointer-events: auto;
-
-  /* Grid rules */
-  display: grid;
-  grid-gap: 10px 5px;
-  grid-template-columns: 1fr 1fr;
 
   div {
     padding: 5px 0;
@@ -45,7 +47,7 @@ const SettingsPanel = styled.fieldset`
   }
 `;
 
-const SubSettingsCheckbox = styled(CheckboxSelector)`
+export const SubSettingsCheckbox = styled(CheckboxSelector)`
   margin-left: 4px;
   input {
     vertical-align: middle;
@@ -78,16 +80,18 @@ const ModeSettingRenderer = ({
     id: `otpUi.ModeSelector.settings.${setting.key}-label`
   });
 
-  const labelWithIcon = setting.icon ? (
-    <FormLabelIconWrapper>
-      <span role="none">{setting.icon}</span> {label}
-    </FormLabelIconWrapper>
-  ) : (
-    label
-  );
+  const labelWithIcon =
+    "icon" in setting ? (
+      <FormLabelIconWrapper>
+        <span role="none">{setting.icon}</span> {label}
+      </FormLabelIconWrapper>
+    ) : (
+      label
+    );
 
   switch (setting.type) {
     case "CHECKBOX":
+    case "SUBMODE":
       return (
         <SubSettingsCheckbox
           label={labelWithIcon}
@@ -148,6 +152,12 @@ export default function SubSettingsPane({
 }: Props): ReactElement {
   const intl = useIntl();
   const label = generateModeButtonLabel(modeButton.key, intl, modeButton.label);
+  const settingsNoSubmodes = modeButton.modeSettings.filter(
+    ms => ms.type !== "SUBMODE"
+  );
+  const settingsOnlySubmodes = modeButton.modeSettings.filter(
+    ms => ms.type === "SUBMODE"
+  );
   return (
     <SettingsPanel>
       <legend>
@@ -155,14 +165,21 @@ export default function SubSettingsPane({
           {label}
         </span>
       </legend>
-      {modeButton.modeSettings?.map(setting => (
-        <div
+      <SubmodeGrid>
+        {settingsOnlySubmodes.map(setting => (
+          <ModeSettingRenderer
+            key={setting.key}
+            onChange={onSettingUpdate}
+            setting={setting}
+          />
+        ))}
+      </SubmodeGrid>
+      {settingsNoSubmodes.map(setting => (
+        <ModeSettingRenderer
           key={setting.key}
-          // @ts-expect-error TODO Fix
-          className={setting?.addTransportMode ? "slim" : "wide"}
-        >
-          <ModeSettingRenderer onChange={onSettingUpdate} setting={setting} />
-        </div>
+          onChange={onSettingUpdate}
+          setting={setting}
+        />
       ))}
     </SettingsPanel>
   );

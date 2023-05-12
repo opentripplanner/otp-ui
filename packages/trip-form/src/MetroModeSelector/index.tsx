@@ -47,8 +47,8 @@ const ModeBar = styled.fieldset`
   }
 `;
 
-const defaultAccentColor = "#084c8d";
-const defaultActiveHoverColor = "#0e5faa";
+const defaultAccentColor = "#666";
+const defaultActiveHoverColor = "#333";
 
 const boxShadowCss = css`
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px;
@@ -114,7 +114,7 @@ const ModeButtonWrapper = styled.span<{
   }
 
   & > input:checked + label {
-    background: ${defaultAccentColor};
+    background: ${props => props.accentColor || defaultAccentColor};
   }
 
   & > input:checked + label,
@@ -156,7 +156,7 @@ const HoverPanel = styled.div`
   min-width: 300px;
   padding: 0 10px;
   width: 75%;
-  z-index: 10;
+  z-index: 100;
 `;
 
 const HoverInnerContainer = styled.div`
