@@ -156,7 +156,7 @@ const HoverPanel = styled.div`
   min-width: 300px;
   padding: 0 10px;
   width: 75%;
-  z-index: 10;
+  z-index: 100;
 `;
 
 const HoverInnerContainer = styled.div`
