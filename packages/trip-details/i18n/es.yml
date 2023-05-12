@@ -1,12 +1,5 @@
 otpUi:
   TripDetails:
-    calories: "Calorías quemadas: <strong>{calories, number, ::.}</strong>"
-    caloriesDescription: >
-      Las calorías quemadas se basan en <strong>{walkMinutes, plural, one {#
-      minuto} other {# minutos}}</strong> de caminata y <strong>{bikeMinutes,
-      plural, one {# minuto} other {# minutos}}</strong> en bicicleta durante
-      este viaje. Adaptado del <dietaryLink>Dietary Guidelines for Americans
-      2005, page 16, Table 4</dietaryLink>.
     co2: "CO₂ emitido: <strong>{co2}</strong>"
     co2description: >-
       La intensidad de CO₂ se calcula multiplicando la distancia de cada tramo

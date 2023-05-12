@@ -1,14 +1,14 @@
-# Example used to overwrite a subset of the messages from /i18n/en-US.yml.
 otpUi:
   TripDetails:
-    caloriesDescription: "Walking <strong>{walkMinutes}</strong> minute(s) and biking <strong>{bikeMinutes}</strong> minute(s) will consume {calories} Calories."
-    departure: "<strong>Leave</strong> at <strong>{departureDate, time, short}</strong> on <strong>{departureDate, date, long}</strong>"
-    title: "Custom Trip Details Title"
-    tncFare: "Pay <strong>{minTNCFare}-{maxTNCFare}</strong> to {companies}"
+    departure: >-
+      <strong>Leave</strong> at <strong>{departureDate, time, short}</strong> on
+      <strong>{departureDate, date, long}</strong>
     fareDetailsHeaders:
-      regular: "Regular"
-      youth: "Youth"
-      senior: "Senior"
-      cash: "Cash"
-      electronic: "ORCA"
-      special: "LIFT"
+      cash: Cash
+      electronic: ORCA
+      regular: Regular
+      senior: Senior
+      special: LIFT
+      youth: Youth
+    title: Custom Trip Details Title
+    tncFare: Pay <strong>{minTNCFare}-{maxTNCFare}</strong> to {companies}
