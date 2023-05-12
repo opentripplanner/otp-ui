@@ -1,25 +1,24 @@
 otpUi:
   LocationField:
-    beingTypingPrompt: 开始打字搜索地点
+    beginTypingPrompt: 开始打字搜索地点
     clearLocation: 重置位置
-    currentLocationUnavailable: 当前位置不详{error, select, undefined {} other { ({error})}}
+    currentLocationUnavailable: 当前位置不详
     fetchingLocation: 获取的位置…
     fetchingSuggestions: 获取建议
-    geocoderUnreachable: 无法到达地理编码器{error, select, undefined {} other { ({error})}}
+    geocoderUnreachable: 无法获取建议
     homeLocation: 家位置
+    howToAccessResults: 使用向下箭头键浏览结果列表。 要选择结果，请使用 Enter 键。
     myPlaces: 我的地方
     nearby: 附近的车站
-    noResultsFound: |
-      找不到与 {input, select,
-       null {您的搜索}
-       other {{input}}
-       } 相关的结果
+    noResults: 未找到结果
     other: 其他
-    placeNameWithDetails: "{placeName} ({details})"
+    otherCount: "{count}兴趣点"
+    parenthesisFormat: "{main}（{detail}）"
     recentlySearched: 最近搜索到的
-    resultsFound: |
-      为 {input, select, null {您的查询} other {"{input}"}} 找到 # 个地理编码器结果
+    resultsFound: 为 "{input}" 找到 找到 {results}
+    stationCount: "{count}站台"
     stations: 站台
+    stopCount: "{count}车站"
     stops: 车站
     suggestedLocations: 建议地点
     suggestedLocationsLong: 切换显示建议位置列表

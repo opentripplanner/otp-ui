@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Map, MapProps } from "react-map-gl";
 import maplibregl, { Event } from "maplibre-gl";
 
@@ -72,8 +72,8 @@ const BaseMap = ({
     zoom: initZoom
   });
 
-  // On mobile hover is unavailable, so we use this variable to use a two tap process
-  // to simulate a hover
+  // Firefox and Safari on iOS: hover is not triggered when the user touches the layer selector
+  // (unlike Firefox or Chromium on Android), so we have to detect touch and trigger hover ourselves.
   const [fakeMobileHover, setFakeHover] = useState(false);
   const [longPressTimer, setLongPressTimer] = useState(null);
 
@@ -116,6 +116,10 @@ const BaseMap = ({
     typeof baseLayer === "object" ? baseLayer?.[0] : baseLayer
   );
 
+  const clearLongPressTimer = useCallback(() => clearTimeout(longPressTimer), [
+    longPressTimer
+  ]);
+
   return (
     <Map
       // eslint-disable-next-line react/jsx-props-no-spreading
@@ -130,18 +134,21 @@ const BaseMap = ({
       onContextMenu={onContextMenu}
       onMove={evt => {
         setViewState(evt.viewState);
-        clearTimeout(longPressTimer);
+        clearLongPressTimer();
       }}
       onTouchStart={e => {
         setFakeHover(false);
-        setLongPressTimer(setTimeout(() => onContextMenu(e), 600));
+        // Start detecting long presses on screens when there is only one touch point.
+        // If the user is pinching the map or does other multi-touch actions, cancel long-press detection.
+        const touchPointCount = e.points.length;
+        if (touchPointCount === 1) {
+          setLongPressTimer(setTimeout(() => onContextMenu(e), 600));
+        } else {
+          clearLongPressTimer();
+        }
       }}
-      onTouchCancel={() => {
-        clearTimeout(longPressTimer);
-      }}
-      onTouchEnd={() => {
-        clearTimeout(longPressTimer);
-      }}
+      onTouchCancel={clearLongPressTimer}
+      onTouchEnd={clearLongPressTimer}
       style={style}
       zoom={viewState.zoom}
     >
@@ -157,7 +164,9 @@ const BaseMap = ({
           onTouchEnd={() => setFakeHover(true)}
         >
           <ul
-            className={`layers-list ${fakeMobileHover && "fake-mobile-hover"}`}
+            className={`maplibregl-ctrl-group layers-list ${
+              fakeMobileHover ? "fake-mobile-hover" : ""
+            }`}
           >
             {!!baseLayer &&
               typeof baseLayer === "object" &&

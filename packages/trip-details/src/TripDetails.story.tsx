@@ -13,7 +13,7 @@ import styled from "styled-components";
 import TripDetails, { FareLegTable } from ".";
 import * as TripDetailsClasses from "./styled";
 import {
-  CaloriesDetailsProps,
+  TimeActiveDetailsProps,
   DepartureDetailsProps,
   FareDetailsProps,
   FareTableLayout,
@@ -210,15 +210,10 @@ const CustomDepartureDetails = ({
   </>
 );
 
-const CustomCaloriesDetails = ({
-  bikeSeconds,
-  calories,
-  walkSeconds
-}: CaloriesDetailsProps): ReactElement => (
-  <>
-    Custom message about {calories} calories burned,
-    {walkSeconds} seconds and {bikeSeconds} seconds.
-  </>
+const CustomTimeActiveDetails = ({
+  minutesActive
+}: TimeActiveDetailsProps): ReactElement => (
+  <>Custom message about {minutesActive} active minutes.</>
 );
 
 /**
@@ -232,7 +227,7 @@ function createTripDetailsTemplate(
 ): ComponentStory<typeof TripDetails> {
   const TripDetailsTemplate = (
     {
-      CaloriesDetails,
+      TimeActiveDetails,
       DepartureDetails,
       FareDetails,
       fareDetailsLayout,
@@ -249,7 +244,7 @@ function createTripDetailsTemplate(
       : {};
     return (
       <Component
-        CaloriesDetails={CaloriesDetails}
+        TimeActiveDetails={TimeActiveDetails}
         DepartureDetails={DepartureDetails}
         FareDetails={FareDetails}
         fareDetailsLayout={fareDetailsLayout}
@@ -377,7 +372,7 @@ export const TncTransitItinerary = makeStory(
 
 export const TncTransitItineraryWithCustomMessages = makeStory(
   {
-    CaloriesDetails: CustomCaloriesDetails,
+    TimeActiveDetails: CustomTimeActiveDetails,
     defaultFareKey: "electronicRegular",
     DepartureDetails: CustomDepartureDetails,
     itinerary: tncTransitTncItinerary

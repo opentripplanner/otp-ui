@@ -2,25 +2,23 @@ otpUi:
   LocationField:
     beingTypingPrompt: 위치 검색 입력 시작
     clearLocation: 위치 지우기
-    currentLocationUnavailable: 현재 위치를 사용할 수 없습니다{error, select, undefined {} other { ({error})}}
+    currentLocationUnavailable: 현재 위치를 사용할 수 없습니다
     fetchingLocation: 위치를 가져오는 중…
     fetchingSuggestions: 제안을 가져오는 중
-    geocoderUnreachable: 지오 코더에 도달할 수 없음{error, select, undefined {} other { ({error})}}
+    geocoderUnreachable: 제안을 가져올 수 없습니다
     homeLocation: 집
+    howToAccessResults: 아래쪽 화살표 키를 사용하여 결과 목록을 찾습니다. 결과를 선택하려면 Enter 키를 사용하십시오.
     myPlaces: 내 장소
     nearby: 근처 정류장
-    noResultsFound: |
-      {input, select,
-       null {이 검색어}
-       other {{input}}
-       }에 대한 결과가 없음
+    noResults: 검색된 결과가 없
     other: 기타
-    placeNameWithDetails: "{placeName} ({details})"
+    otherCount: "{count}관심 지점"
+    parenthesisFormat: "{main}({detail})"
     recentlySearched: 최근 검색 내역
-    resultsFound: >
-      {input, select, null {당신의 질문} other {"{input}"}} 에 대해 {count, plural, =0 {
-      결과가 없} other {#개의 지오코더 결과가 검색되었}} 습니다.
+    resultsFound: "\"{input}\" 에 대해 {results} 습니다."
+    stationCount: "{count}역"
     stations: 역
+    stopCount: "{count}정류장"
     stops: 정류장
     suggestedLocations: 제안된 위치
     suggestedLocationsLong: 추천 위치 목록 표시 전환

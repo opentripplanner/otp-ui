@@ -1,28 +1,26 @@
 otpUi:
   LocationField:
-    beingTypingPrompt: Begin typing to search for locations
+    beginTypingPrompt: Begin typing to search for locations
     clearLocation: Clear location
-    currentLocationUnavailable: >-
-      Current location not available{error, select, undefined {} other {
-      ({error})}}
+    currentLocationUnavailable: Current location not available
     fetchingLocation: Fetching location…
     fetchingSuggestions: Fetching suggestions…
-    geocoderUnreachable: Could not reach geocoder{error, select, undefined {} other { ({error})}}
+    geocoderUnreachable: Unable to obtain suggestions
     homeLocation: Home
+    howToAccessResults: >-
+      Use the down arrow key browse the results list. To select a result, use
+      the Enter key.
     myPlaces: My Places
     nearby: Nearby Stops
-    noResultsFound: |
-      No results found for {input, select,
-        null {your query}
-        other {{input}}
-      }
+    noResults: No results
     other: Other
-    placeNameWithDetails: "{placeName} ({details})"
+    otherCount: "{count, plural, =1 {# other point} other {# other points}} of interest"
+    parenthesisFormat: "{main} ({detail})"
     recentlySearched: Recently Searched
-    resultsFound: >
-      {count, plural, =0 {No results} =1 {# geocoder result} other {# geocoder
-      results}} found for {input, select, null {your query} other {"{input}"}}
+    resultsFound: "{results} found for \"{input}\"."
+    stationCount: "{count, plural, =1 {# station} other {# stations}}"
     stations: Stations
+    stopCount: "{count, plural, =1 {# stop} other {# stops}}"
     stops: Stops
     suggestedLocations: Suggested locations
     suggestedLocationsLong: Toggle displaying the list of suggested locations

@@ -1,30 +1,26 @@
 otpUi:
   LocationField:
-    beingTypingPrompt: Bắt đầu gõ để tìm kiếm các địa điểm
+    beginTypingPrompt: Bắt đầu gõ để tìm kiếm các địa điểm
     clearLocation: Xóa vị trí
-    currentLocationUnavailable: >-
-      Vị trí hiện tại không có sẵn{error, select, undefined {} other {
-      ({error})}}
+    currentLocationUnavailable: Vị trí hiện tại không có sẵn
     fetchingLocation: Tìm nạp vị trí…
     fetchingSuggestions: Tìm nạp đề xuất…
-    geocoderUnreachable: >-
-      Không thể đến bộ định vị địa lý{error, select, undefined {} other {
-      ({error})}}
+    geocoderUnreachable: Không thể nhận đề xuất
     homeLocation: Nhà
+    howToAccessResults: >-
+      Sử dụng phím mũi tên xuống duyệt danh sách kết quả. Để chọn một kết quả,
+      hãy sử dụng phím Enter.
     myPlaces: Những địa điểm của tôi
     nearby: Điểm dừng liền kề
-    noResultsFound: |
-      Không tìm thấy kết quả cho {input, select,
-       null {vấn của bạn}
-       other {{input}}
-       }
+    noResults: Không có kết quả
     other: Khác
-    placeNameWithDetails: "{placeName} ({details})"
+    otherCount: "{count} điểm ưa thích"
+    parenthesisFormat: "{main} ({detail})"
     recentlySearched: Gần đây đã tìm kiếm
-    resultsFound: >
-      {count, plural, =0 {Không có}, other {#}} kết quả cho {input, select, null
-      {vấn của bạn} other {"{input}"}}"
+    resultsFound: "{results} tìm cho \"{input}\"."
+    stationCount: "{count} ga"
     stations: Ga
+    stopCount: "{count} điểm dừng"
     stops: Điểm dừng
     suggestedLocations: Địa điểm được đề xuất
     suggestedLocationsLong: Bật tắt hiển thị danh sách địa điểm gợi ý
