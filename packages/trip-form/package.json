@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@types/flat": "^5.0.2",
-    "@opentripplanner/types": "6.0.0-alpha.2"
+    "@opentripplanner/types": "6.0.0-alpha.4"
   },
   "peerDependencies": {
     "react": "^16.14.0",

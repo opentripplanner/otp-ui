@@ -3328,10 +3328,10 @@
     react-resize-detector "^4.2.1"
     string-similarity "^4.0.4"
 
-"@opentripplanner/types@6.0.0-alpha.2":
-  version "6.0.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-6.0.0-alpha.2.tgz#c2ff1c2782092a0a552f7e24b5246cd2cbe90923"
-  integrity sha512-Xdh7TqkD2VbRP8Gf/SlHXWfAhOAZviTrFhp6bnbomOuVJ8GaM5mXcnKJir7eyDFuMQIPoIEO+xA6XAYqTqRBdg==
+"@opentripplanner/types@6.0.0-alpha.4":
+  version "6.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-6.0.0-alpha.4.tgz#dee3c06675e30c596159d182ed707e7710cd937c"
+  integrity sha512-FlYsHm/tk+x0ldrEG1X9Ph1R1k3way1oEdKX7XSnhu9lNTzL4lO0hfT1PLzNXMfBRar7TzK94PHNDibJsod8Kw==
 
 "@opentripplanner/types@^4.0.6":
   version "4.0.6"
