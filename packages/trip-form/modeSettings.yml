@@ -16,7 +16,7 @@
   low: 0
   step: 0.1
   type: SLIDER
-- applicableMode: WALK
+- applicableMode: TRANSIT
   default: 2
   graphQLQueryParam: true
   high: 5
