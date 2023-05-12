@@ -1,5 +1,8 @@
 # OTP-UI React Component Library
 
+[![Join the chat at https://gitter.im/opentripplanner/otp-react-redux](https://badges.gitter.im/repo.png)](https://gitter.im/opentripplanner/otp-react-redux)
+[![Build process badge](https://img.shields.io/github/actions/workflow/status/opentripplanner/otp-ui/node-ci.yml)](https://github.com/opentripplanner/otp-ui/actions/workflows/node-ci.yml)
+
 ## Description
 
 React component library, which can be used to build trip planner webapps.
