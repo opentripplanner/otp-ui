@@ -15,6 +15,7 @@ otpUi:
       walk: Walk
     settings:
       addBus-label: Bus
+      addFerry-label: Ferry
       addRail-label: Train
       addSubway-label: Subway
       addTram-label: Tram
