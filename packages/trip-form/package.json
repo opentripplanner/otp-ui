@@ -10,6 +10,7 @@
   "types": "lib/index.d.ts",
   "private": false,
   "dependencies": {
+    "@opentripplanner/core-utils": "^8.2.1",
     "@floating-ui/react": "^0.19.2",
     "@styled-icons/bootstrap": "^10.34.0",
     "@styled-icons/boxicons-regular": "^10.38.0",
