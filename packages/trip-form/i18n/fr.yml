@@ -1,11 +1,10 @@
 otpUi:
   DateTimeSelector:
     arrive: Arrivée
-    depart: Départ
-    now: Maintenant
-    settingsLabel: "Paramètres pour : {mode}"
     date: Date
     dateTimeSelector: Sélecteur de date et heure
+    depart: Départ
+    now: Maintenant
     time: Heure
   ModeSelector:
     labels:
@@ -15,19 +14,17 @@ otpUi:
       transit: Transports
       walk: Marche
     settings:
-      addBus-label: Bus
-      addRail-label: Train
-      addSubway-label: Métro
-      addTram-label: Tram
-      allowBikeRental-label: Vélo en location
       bikeTolerance-label: Tolérance pour le vélo
       bikeTolerance-labelHigh: Plus de vélo
       bikeTolerance-labelLow: Moins de vélo
-      busColor-label: Bus Color
-      busColor-options-blue: Blue
+      bus-label: Bus
       carTolerance-label: Tolérance pour la voiture
       carTolerance-labelHigh: Plus de voiture
       carTolerance-labelLow: Moins de voiture
+      ferry-label: Ferry
+      rail-label: Train
+      subway-label: Métro
+      tram-label: Tram
       walkTolerance-label: Tolérance pour la marche
       walkTolerance-labelHigh: Plus de marche
       walkTolerance-labelLow: Moins de marche

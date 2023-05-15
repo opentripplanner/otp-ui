@@ -7,7 +7,7 @@ import styled from "styled-components";
 import CheckboxSelector from "../CheckboxSelector";
 import DropdownSelector from "../DropdownSelector";
 import SliderSelector from "../SliderSelector";
-import generateModeButtonLabel from "./i18n";
+import generateModeButtonLabel, { generateModeSettingLabels } from "./i18n";
 
 import defaultEnglishMessages from "../../i18n/en-US.yml";
 // HACK: We should flatten the messages loaded above because
@@ -72,14 +72,12 @@ const ModeSettingRenderer = ({
   setting: ModeSetting;
 }) => {
   const intl = useIntl();
-  const label = intl.formatMessage({
-    defaultMessage:
-      defaultMessages[`otpUi.ModeSelector.settings.${setting.key}-label`] ||
-      setting.label,
-    description: `Metro Mode Selector Setting Label (${setting.key})`,
-    id: `otpUi.ModeSelector.settings.${setting.key}-label`
-  });
-
+  const { label, labelHigh, labelLow } = generateModeSettingLabels(
+    setting.type,
+    setting.key,
+    intl,
+    setting.label
+  );
   const labelWithIcon =
     "icon" in setting ? (
       <FormLabelIconWrapper>
@@ -121,14 +119,8 @@ const ModeSettingRenderer = ({
       return (
         <SliderSelector
           label={label}
-          labelHigh={intl.formatMessage({
-            description: `Metro Mode Selector Setting Label High (${setting.key})`,
-            id: `otpUi.ModeSelector.settings.${setting.key}-labelHigh`
-          })}
-          labelLow={intl.formatMessage({
-            description: `Metro Mode Selector Setting Label Low (${setting.key})`,
-            id: `otpUi.ModeSelector.settings.${setting.key}-labelLow`
-          })}
+          labelHigh={labelHigh}
+          labelLow={labelLow}
           max={setting.high}
           min={setting.low}
           name={setting.key}
