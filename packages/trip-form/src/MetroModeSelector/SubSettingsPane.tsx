@@ -152,12 +152,24 @@ export default function SubSettingsPane({
 }: Props): ReactElement {
   const intl = useIntl();
   const label = generateModeButtonLabel(modeButton.key, intl, modeButton.label);
-  const settingsNoSubmodes = modeButton.modeSettings.filter(
-    ms => ms.type !== "SUBMODE"
+
+  // Split the mode settings out based on whether they're submodes or not
+  // This is so we can display submodes in a grid at the top
+  const {
+    settingsNoSubmodes,
+    settingsOnlySubmodes
+  } = modeButton.modeSettings.reduce(
+    (accumulator, cur) => {
+      if (cur.type === "SUBMODE") {
+        accumulator.settingsOnlySubmodes.push(cur);
+      } else {
+        accumulator.settingsNoSubmodes.push(cur);
+      }
+      return accumulator;
+    },
+    { settingsNoSubmodes: [], settingsOnlySubmodes: [] }
   );
-  const settingsOnlySubmodes = modeButton.modeSettings.filter(
-    ms => ms.type === "SUBMODE"
-  );
+
   return (
     <SettingsPanel>
       <legend>
