@@ -6,6 +6,7 @@ import React, { useEffect } from "react";
 
 import polyline from "@mapbox/polyline";
 import pointInPolygon from "point-in-polygon";
+import { objectExistsAndPopulated } from "./util";
 
 type RouteData = {
   color?: string;
@@ -136,7 +137,7 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
       });
     });
 
-    if (bounds && current) {
+    if (objectExistsAndPopulated(bounds) && current) {
       // Try to fit the map to route bounds immediately. If other overlays are still populating contents
       // and/or the map skips/aborts fitting for any reason, try fitting bounds again after a short delay.
       const fitBounds = () => util.fitMapBounds(current, bounds);
@@ -160,7 +161,7 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
     ? `#${routeData.color}`
     : path?.color || "#00bfff";
   const segments = patterns
-    .filter(pattern => !!pattern?.geometry)
+    .filter(pattern => objectExistsAndPopulated(pattern?.geometry))
     .map(pattern => {
       const pts = polyline.decode(pattern.geometry.points);
       const clippedPts = clipToPatternStops
