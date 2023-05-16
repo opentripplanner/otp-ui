@@ -14,18 +14,17 @@ otpUi:
       transit: Transit
       walk: Walk
     settings:
-      addBus-label: Bus
-      addFerry-label: Ferry
-      addRail-label: Train
-      addSubway-label: Subway
-      addTram-label: Tram
-      allowBikeRental-label: Bike Rental
       bikeTolerance-label: Biking Tolerance
       bikeTolerance-labelHigh: More Biking
       bikeTolerance-labelLow: Less Biking
+      bus-label: Bus
       carTolerance-label: Driving Tolerance
       carTolerance-labelHigh: More Driving
       carTolerance-labelLow: Less Driving
+      ferry-label: Ferry
+      rail-label: Train
+      subway-label: Subway
+      tram-label: Tram
       walkTolerance-label: Walking Tolerance
       walkTolerance-labelHigh: More Walking
       walkTolerance-labelLow: Less Walking
