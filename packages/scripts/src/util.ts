@@ -4,8 +4,9 @@ import glob from "glob-promise";
 import path from "path";
 
 export interface SourceFilesAndYmlFilesByLocale {
+  exceptionFiles: string[];
   sourceFiles: string[];
-  ymlFilesByLocale: Record<string, string>;
+  ymlFilesByLocale: Record<string, string[]>;
 }
 
 function shouldProcessFile(fileName: string): boolean {
@@ -23,20 +24,28 @@ export function isNotSpecialId(id: string): boolean {
   return !id.startsWith("_");
 }
 
+const exceptionFileName = "i18n-exceptions.json";
+
 /**
- * Helper function that sorts yml and source files into two buckets.
+ * Helper function that sorts yml, source, and exception files into different buckets.
  * @param argv The value from process.argv.
  * @returns A composite object with a list for yml files by locale, and a list for source files.
  */
-export async function sortSourceAndYmlFiles(argv: string[]) {
+export async function sortSourceAndYmlFiles(
+  argv: string[]
+): Promise<SourceFilesAndYmlFilesByLocale> {
   const sourceFiles = [];
   const ymlFilesByLocale = {};
+  const exceptionFiles = [];
 
-  // Places the give file into the source or yml file bucket above.
+  // Places the given file into the source, yml, or ignoredId file bucket above.
   function sortFile(fileName: string): void {
     const parsedArg = path.parse(fileName);
-    if (parsedArg.ext === ".yml") {
-      const locale = parsedArg.name;
+    const baseName = parsedArg.name;
+    if (parsedArg.base === exceptionFileName) {
+      exceptionFiles.push(fileName);
+    } else if (parsedArg.ext === ".yml") {
+      const locale = baseName;
       if (!ymlFilesByLocale[locale]) {
         ymlFilesByLocale[locale] = [];
       }
@@ -75,6 +84,7 @@ export async function sortSourceAndYmlFiles(argv: string[]) {
   );
 
   return {
+    exceptionFiles,
     sourceFiles,
     ymlFilesByLocale
   };
