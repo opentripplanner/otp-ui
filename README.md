@@ -22,6 +22,8 @@ See:
 
 ## Development
 
+You can chat with the main OTP-RR developers in our [Gitter chat](https://gitter.im/opentripplanner/otp-react-redux). Support is not guaranteed, but we may be able to answer questions and assist people wishing to make contributions.
+
 Some packages in otp-ui depend on sibling packages (e.g., `@opentripplanner/core-utils` is used by many of its siblings). In order to test a package with local changes you have made to its sibling, you can run the following find/replace operations to make sure you're depending on your latest work (and not the released version):
 
 1. In the `package.json` files for packages in which you want to test the sibling, find and replace (package-to-test being the package with local changes -- make sure these are committed to first to avoid the find/replace operations below polluting your work):
