@@ -5,6 +5,7 @@ import { Layer, Source, useMap } from "react-map-gl";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 
 import StopPopup from "@opentripplanner/map-popup";
+import { isGeoJsonFlex } from "./utils";
 
 type Props = {
   /**
@@ -110,7 +111,7 @@ const StopsOverlay = (props: Props): JSX.Element => {
   }, [clickedStop]);
 
   const flexStops = useMemo(
-    () => stops.filter(stop => stop?.geometries?.geoJson?.type === "Polygon"),
+    () => stops.filter(stop => isGeoJsonFlex(stop?.geometries?.geoJson)),
     [stops]
   );
 
@@ -121,7 +122,7 @@ const StopsOverlay = (props: Props): JSX.Element => {
         type: "Feature",
         properties: {
           ...stop,
-          flex: stop?.geometries?.geoJson?.type === "Polygon"
+          flex: isGeoJsonFlex(stop?.geometries?.geoJson)
         },
         geometry: { type: "Point", coordinates: [stop.lon, stop.lat] }
       }))
