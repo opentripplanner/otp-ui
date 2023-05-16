@@ -85,40 +85,40 @@ function generateMainSettingLabel(key: string, intl: IntlShape): string {
         description: `Metro Mode Selector Setting Label (wheelchair)`,
         id: "otpUi.ModeSelector.settings.wheelchair-label"
       });
-    case "addBus":
+    case "bus":
       return intl.formatMessage({
         defaultMessage:
-          defaultMessages["otpUi.ModeSelector.settings.addBus-label"],
-        description: `Metro Mode Selector Setting Label (addBus)`,
-        id: "otpUi.ModeSelector.settings.addBus-label"
+          defaultMessages["otpUi.ModeSelector.settings.bus-label"],
+        description: `Metro Mode Selector Setting Label (bus)`,
+        id: "otpUi.ModeSelector.settings.bus-label"
       });
-    case "addFerry":
+    case "ferry":
       return intl.formatMessage({
         defaultMessage:
-          defaultMessages["otpUi.ModeSelector.settings.addFerry-label"],
-        description: `Metro Mode Selector Setting Label (addFerry)`,
-        id: "otpUi.ModeSelector.settings.addFerry-label"
+          defaultMessages["otpUi.ModeSelector.settings.ferry-label"],
+        description: `Metro Mode Selector Setting Label (ferry)`,
+        id: "otpUi.ModeSelector.settings.ferry-label"
       });
-    case "addSubway":
+    case "subway":
       return intl.formatMessage({
         defaultMessage:
-          defaultMessages["otpUi.ModeSelector.settings.addSubway-label"],
-        description: `Metro Mode Selector Setting Label (addSubway)`,
-        id: "otpUi.ModeSelector.settings.addSubway-label"
+          defaultMessages["otpUi.ModeSelector.settings.subway-label"],
+        description: `Metro Mode Selector Setting Label (subway)`,
+        id: "otpUi.ModeSelector.settings.subway-label"
       });
-    case "addTram":
+    case "tram":
       return intl.formatMessage({
         defaultMessage:
-          defaultMessages["otpUi.ModeSelector.settings.addTram-label"],
-        description: `Metro Mode Selector Setting Label (addTram)`,
-        id: "otpUi.ModeSelector.settings.addTram-label"
+          defaultMessages["otpUi.ModeSelector.settings.tram-label"],
+        description: `Metro Mode Selector Setting Label (tram)`,
+        id: "otpUi.ModeSelector.settings.tram-label"
       });
-    case "addRail":
+    case "rail":
       return intl.formatMessage({
         defaultMessage:
-          defaultMessages["otpUi.ModeSelector.settings.addRail-label"],
-        description: `Metro Mode Selector Setting Label (addRail)`,
-        id: "otpUi.ModeSelector.settings.addRail-label"
+          defaultMessages["otpUi.ModeSelector.settings.rail-label"],
+        description: `Metro Mode Selector Setting Label (rail)`,
+        id: "otpUi.ModeSelector.settings.rail-label"
       });
     default:
       return intl.formatMessage({
