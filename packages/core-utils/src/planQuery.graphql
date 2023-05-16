@@ -45,6 +45,7 @@ query PlanQuery(
       startTime
       waitingTime
       walkTime
+      accessibilityScore
       legs {
         rentedBike
         interlineWithPreviousLeg
@@ -58,6 +59,7 @@ query PlanQuery(
         realtimeState
         startTime
         transitLeg
+        accessibilityScore
         trip {
           id
           gtfsId
