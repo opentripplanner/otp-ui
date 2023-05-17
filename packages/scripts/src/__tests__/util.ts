@@ -8,7 +8,9 @@ export const sourceFileList = [
   "index.tsx",
   "index.story.tsx",
   "styled.ts",
-  "types.ts"
+  "types.ts",
+  // Should not be picked up.
+  "data.json"
 ];
 
 describe("util", () => {
@@ -36,7 +38,7 @@ describe("util", () => {
       expect(localeKeys.includes("en-US")).toBe(true);
       expect(localeKeys.includes("fr")).toBe(true);
 
-      expect(sourceFiles.length).toBe(sourceFileList.length);
+      expect(sourceFiles.length).toBe(sourceFileList.length - 1);
       sourceFiles.forEach(f => {
         const fromToIndex = f.indexOf(fromToPickerSrcFolder);
         expect(fromToIndex !== -1);

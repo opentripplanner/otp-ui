@@ -44,6 +44,8 @@ export async function sortSourceAndYmlFiles(
     const baseName = parsedArg.name;
     if (parsedArg.base === exceptionFileName) {
       exceptionFiles.push(fileName);
+    } else if (parsedArg.ext === ".json") {
+      // Ignore other JSON files.
     } else if (parsedArg.ext === ".yml") {
       const locale = baseName;
       if (!ymlFilesByLocale[locale]) {
