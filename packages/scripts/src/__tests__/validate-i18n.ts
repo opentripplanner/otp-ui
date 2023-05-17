@@ -1,4 +1,4 @@
-import { combineExceptionFiles } from "../validate-i18n";
+import { checkLocale, combineExceptionFiles } from "../validate-i18n";
 
 import { mocksFolderFromCwd } from "./util";
 
@@ -17,6 +17,34 @@ describe("validate-i18n", () => {
       expect(
         ignoredIds.has("otpUi.TestComponent2.unusedTextThatIsIgnored")
       ).toBe(true);
+    });
+  });
+
+  describe("checkLocale", () => {
+    it("should detect unused message ids", async () => {
+      const ignoredIds = new Set([
+        "otpUi.TestComponent1.unusedTextThatIsIgnored"
+      ]);
+      const ymlFiles = [`${mocksFolderFromCwd}/i18n1/en-US.yml`];
+      const messageIdsFromCode = [
+        "otpUi.FromToLocationPicker.from",
+        "otpUi.FromToLocationPicker.planATrip",
+        "otpUi.FromToLocationPicker.to",
+        // Extra one not in the language files for detecting untranslated ids.
+        "otpUi.ExtraId.fromCode"
+      ];
+
+      const { idsNotInCode, missingIdsForLocale } = await checkLocale(
+        ymlFiles,
+        messageIdsFromCode,
+        ignoredIds
+      );
+
+      expect(missingIdsForLocale.length).toBe(1);
+      expect(missingIdsForLocale[0]).toBe("otpUi.ExtraId.fromCode");
+
+      expect(idsNotInCode.length).toBe(1);
+      expect(idsNotInCode[0]).toBe("otpUi.TestComponent1.unusedText");
     });
   });
 });

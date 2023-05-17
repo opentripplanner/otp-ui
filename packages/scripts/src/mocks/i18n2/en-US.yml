@@ -1,4 +1,4 @@
 otpUi:
-  testComponent2:
+  TestComponent2:
     unusedText: I am unused.
     unusedTextThatIsIgnored: I am unused and ignored.

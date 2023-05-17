@@ -1,9 +1,15 @@
 import { sortSourceAndYmlFiles } from "../util";
 
-// eslint-disable-next-line import/prefer-default-export
 export const mocksFolderFromCwd = `${process.cwd()}/packages/scripts/src/mocks`;
 
 const fromToPickerSrcFolder = "from-to-location-picker/src";
+
+export const sourceFileList = [
+  "index.tsx",
+  "index.story.tsx",
+  "styled.ts",
+  "types.ts"
+];
 
 describe("util", () => {
   describe("sortSourceAndYmlFiles", () => {
@@ -30,12 +36,6 @@ describe("util", () => {
       expect(localeKeys.includes("en-US")).toBe(true);
       expect(localeKeys.includes("fr")).toBe(true);
 
-      const sourceFileList = [
-        "index.tsx",
-        "index.story.tsx",
-        "styled.ts",
-        "types.ts"
-      ];
       expect(sourceFiles.length).toBe(sourceFileList.length);
       sourceFiles.forEach(f => {
         const fromToIndex = f.indexOf(fromToPickerSrcFolder);
