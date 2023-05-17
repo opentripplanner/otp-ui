@@ -12,6 +12,7 @@ import MetroModeSelector from "./MetroModeSelector";
 import {
   addSettingsToButton,
   convertModeSettingValue,
+  generateModeSettingValues,
   populateSettingWithValue
 } from "./MetroModeSelector/utils";
 import TripOptions, { Styled as TripOptionsStyled } from "./TripOptions";
@@ -25,6 +26,7 @@ export {
   defaultModeSettings,
   DropdownSelector,
   GeneralSettingsPanel,
+  generateModeSettingValues,
   MetroModeSelector,
   ModeButton,
   ModeSelector,
