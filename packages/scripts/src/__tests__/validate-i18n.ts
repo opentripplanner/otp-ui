@@ -23,15 +23,17 @@ describe("validate-i18n", () => {
   describe("checkLocale", () => {
     it("should detect unused message ids", async () => {
       const ignoredIds = new Set([
-        "otpUi.TestComponent1.unusedTextThatIsIgnored"
+        "otpUi.TestComponent1.unusedTextThatIsIgnored",
+        "otpUi.ExtraId.fromCodeThatIsIgnored"
       ]);
       const ymlFiles = [`${mocksFolderFromCwd}/i18n1/en-US.yml`];
       const messageIdsFromCode = [
         "otpUi.FromToLocationPicker.from",
         "otpUi.FromToLocationPicker.planATrip",
         "otpUi.FromToLocationPicker.to",
-        // Extra one not in the language files for detecting untranslated ids.
-        "otpUi.ExtraId.fromCode"
+        // Extra ones not in the language files for detecting untranslated ids.
+        "otpUi.ExtraId.fromCode",
+        "otpUi.ExtraId.fromCodeThatIsIgnored"
       ];
 
       const { idsNotInCode, missingIdsForLocale } = await checkLocale(

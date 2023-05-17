@@ -51,28 +51,23 @@ export async function checkLocale(
 
     // Message ids from code must be present in yml (except those in ignoredIds).
     messageIdsFromCode
-      .filter(id => !ignoredIds.has(id))
       .filter(id => flattenedMessages[id])
       .forEach(id => idsChecked.push(id));
 
     // Message ids from yml (except those starting with "_" or those in ignoredIds)
     // must be present in code.
-    console.log(Array.from(ignoredIds).join(", "));
     Object.keys(flattenedMessages)
       .filter(isNotSpecialId)
-      .filter(id => {
-        console.log(id, "ignored", ignoredIds.has(id));
-        return !ignoredIds.has(id);
-      })
+      .filter(id => !ignoredIds.has(id))
       .filter(id => !messageIdsFromCode.includes(id))
       .filter(id => !idsNotInCode.includes(id))
       .forEach(id => idsNotInCode.push(id));
   });
 
   // Collect ids in code not found in yml.
-  const missingIdsForLocale = messageIdsFromCode.filter(
-    id => !idsChecked.includes(id)
-  );
+  const missingIdsForLocale = messageIdsFromCode
+    .filter(id => !ignoredIds.has(id))
+    .filter(id => !idsChecked.includes(id));
 
   return {
     idsNotInCode,
