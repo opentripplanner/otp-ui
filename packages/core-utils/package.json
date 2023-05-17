@@ -31,7 +31,7 @@
     "tsc": "tsc"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^5.0.0",
+    "@opentripplanner/types": "6.0.0-alpha.4",
     "@types/chroma-js": "^2.1.4"
   }
 }
