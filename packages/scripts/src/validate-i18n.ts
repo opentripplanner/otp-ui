@@ -59,8 +59,9 @@ async function checkI18n({ exceptionFiles, sourceFiles, ymlFilesByLocale }) {
       allI18nMessages.forEach(i18nMessages => {
         const flattenedMessages = flatten(i18nMessages);
 
-        // Message ids from code must be present in yml.
+        // Message ids from code must be present in yml (except those in ignoredIds).
         messageIdsFromCode
+          .filter(id => !ignoredIds.has(id))
           .filter(id => flattenedMessages[id])
           .forEach(id => idsChecked.push(id));
 
