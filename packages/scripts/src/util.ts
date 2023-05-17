@@ -62,21 +62,35 @@ export async function sortSourceAndYmlFiles(
   // Note: reminder that node.js provides the first two argv values:
   // - argv[0] is the name of the executable file.
   // - argv[1] is the path to the script file.
-  // - argv[2] and beyond are the folders passed to the script.
+  // - argv[2] and beyond are the files and folders passed to the script.
   const allGlobPromises = [];
+  const allStatPromises = [];
+  const allStatFiles = [];
   for (let i = 2; i < argv.length; i++) {
     // List the files recursively (glob) for this folder.
     const arg = argv[i];
 
-    // If argument ends with .yml, treat as a file.
     if (arg.endsWith(".yml")) {
+      // If argument ends with .yml, treat as a file.
       sortFile(arg);
+      // Also include any exception file in that folder, if it exists.
+      const parsedArg = path.parse(arg);
+      const exceptionFile = `${parsedArg.dir}/${exceptionFileName}`;
+      allStatFiles.push(exceptionFile);
+      allStatPromises.push(fs.stat(exceptionFile));
     } else {
       // Otherwise, it is a folder, and use glob to get files recursively.
       // For glob argument info, see their docs at https://github.com/ahmadnassri/node-glob-promise#api.
       allGlobPromises.push(glob(`${arg}/**/*.{{j,t}s{,x},yml}`));
     }
   }
+
+  const allStats = await Promise.allSettled(allStatPromises);
+  allStats.forEach((stat, i) => {
+    if (stat.status === "fulfilled") {
+      sortFile(allStatFiles[i]);
+    }
+  });
 
   const allFileLists = await Promise.all(allGlobPromises);
   allFileLists.forEach(files =>
