@@ -112,7 +112,6 @@ query PlanQuery(
           lat
           lon
           name
-          stopIndex
           vertexType
           rentalVehicle {
             network
@@ -133,7 +132,6 @@ query PlanQuery(
           lat
           lon
           name
-          stopIndex
           vertexType
           rentalVehicle {
             network
