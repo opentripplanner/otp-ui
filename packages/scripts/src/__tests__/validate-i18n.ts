@@ -10,12 +10,12 @@ describe("validate-i18n", () => {
         `${mocksFolderFromCwd}/i18n2/i18n-exceptions.json`
       ];
       const { ignoredIds } = await combineExceptionFiles(exceptionFiles);
-      expect(ignoredIds.length).toBe(2);
+      expect(ignoredIds.size).toBe(2);
       expect(
-        ignoredIds.includes("otpUi.TestComponent1.unusedTextThatIsIgnored")
+        ignoredIds.has("otpUi.TestComponent1.unusedTextThatIsIgnored")
       ).toBe(true);
       expect(
-        ignoredIds.includes("otpUi.TestComponent2.unusedTextThatIsIgnored")
+        ignoredIds.has("otpUi.TestComponent2.unusedTextThatIsIgnored")
       ).toBe(true);
     });
   });

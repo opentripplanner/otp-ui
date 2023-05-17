@@ -1,3 +1,6 @@
 {
-  "ignoredIds": ["otpUi.TestComponent2.unusedTextThatIsIgnored"]
+  "ignoredIds": [
+    "otpUi.TestComponent1.unusedTextThatIsIgnored",
+    "otpUi.TestComponent2.unusedTextThatIsIgnored"
+  ]
 }

@@ -6,7 +6,7 @@ import { extract } from "@formatjs/cli";
 import { isNotSpecialId, loadYamlFile, sortSourceAndYmlFiles } from "./util";
 
 interface CheckException {
-  ignoredIds: string[];
+  ignoredIds: Set<string>;
 }
 
 /**
@@ -23,8 +23,9 @@ export async function combineExceptionFiles(
       allIgnoredIds = allIgnoredIds.concat(jsonObject.ignoredIds);
     })
   );
+  // Make sure ignored ids are unique
   return {
-    ignoredIds: allIgnoredIds
+    ignoredIds: new Set(allIgnoredIds)
   };
 }
 
@@ -67,7 +68,7 @@ async function checkI18n({ exceptionFiles, sourceFiles, ymlFilesByLocale }) {
         // must be present in code.
         Object.keys(flattenedMessages)
           .filter(isNotSpecialId)
-          .filter(id => !ignoredIds.includes(id))
+          .filter(id => !ignoredIds.has(id))
           .filter(id => !messageIdsFromCode.includes(id))
           .filter(id => !idsNotInCode.includes(id))
           .forEach(id => idsNotInCode.push(id));
