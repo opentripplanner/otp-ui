@@ -35,10 +35,13 @@ export async function combineExceptionFiles(
 async function checkI18n({ exceptionFiles, sourceFiles, ymlFilesByLocale }) {
   // Gather message ids from code.
   const messagesFromCode = JSON.parse(await extract(sourceFiles, {}));
-  const messageIdsFromCode = Object.keys(messagesFromCode);
+  const messageIdsFromCode = messagesFromCode
+    ? Object.keys(messagesFromCode)
+    : [];
+  const englishUsYmls = ymlFilesByLocale["en-US"];
   console.log(
     `Checking ${messageIdsFromCode.length} strings from ${
-      Object.keys(ymlFilesByLocale["en-US"]).length
+      englishUsYmls ? Object.keys(englishUsYmls).length : 0
     } message files against ${sourceFiles.length} source files (${
       exceptionFiles.length
     } exception files).`

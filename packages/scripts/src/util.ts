@@ -81,7 +81,7 @@ export async function sortSourceAndYmlFiles(
     } else {
       // Otherwise, it is a folder, and use glob to get files recursively.
       // For glob argument info, see their docs at https://github.com/ahmadnassri/node-glob-promise#api.
-      allGlobPromises.push(glob(`${arg}/**/*.{{j,t}s{,x},yml}`));
+      allGlobPromises.push(glob(`${arg}/**/*.{{j,t}s{,x},yml,json}`));
     }
   }
 

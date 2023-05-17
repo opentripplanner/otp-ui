@@ -1,6 +1,6 @@
 import { combineExceptionFiles } from "../validate-i18n";
 
-const mocksFolderFromCwd = `${process.cwd()}/packages/scripts/src/__tests__/__mocks__`;
+import { mocksFolderFromCwd } from "./util";
 
 describe("validate-i18n", () => {
   describe("combineExceptionFiles", () => {
