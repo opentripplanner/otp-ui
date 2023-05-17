@@ -50,6 +50,7 @@ export function convertModeSettingValue(
 ): string | boolean | number {
   switch (setting.type) {
     case "CHECKBOX":
+    case "SUBMODE":
       return value === "true" || value === true;
     case "SLIDER":
       return Number(value);
