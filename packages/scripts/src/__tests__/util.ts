@@ -1,6 +1,7 @@
-import { sortSourceAndYmlFiles } from "../util";
+import { shouldProcessFile, sortSourceAndYmlFiles } from "../util";
 
-export const mocksFolderFromCwd = `${process.cwd()}/packages/scripts/src/mocks`;
+const packagesFolder = `${process.cwd()}/packages`;
+export const mocksFolderFromCwd = `${packagesFolder}/scripts/src/__tests__/__mocks__`;
 
 const fromToPickerSrcFolder = "from-to-location-picker/src";
 
@@ -20,7 +21,7 @@ describe("util", () => {
         "node",
         "script-name.js",
         `${mocksFolderFromCwd}/i18n1`,
-        `${mocksFolderFromCwd}/../../../${fromToPickerSrcFolder}`
+        `${packagesFolder}/${fromToPickerSrcFolder}`
       ];
       const {
         exceptionFiles,
@@ -47,6 +48,20 @@ describe("util", () => {
         );
         expect(sourceFileList.includes(trimmedName));
       });
+    });
+  });
+
+  describe("shouldProcessFile", () => {
+    it("should not process */__* files except when /__ is present in the CLI parameters", async () => {
+      expect(
+        shouldProcessFile("/some/folder/__tests__/source.ts", "/some/folder")
+      ).toBe(false);
+      expect(
+        shouldProcessFile(
+          "/some/folder/__tests__/source.ts",
+          "/some/folder/__tests__"
+        )
+      ).toBe(true);
     });
   });
 });

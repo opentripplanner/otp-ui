@@ -9,9 +9,9 @@ export interface SourceFilesAndYmlFilesByLocale {
   ymlFilesByLocale: Record<string, string[]>;
 }
 
-function shouldProcessFile(fileName: string): boolean {
+export function shouldProcessFile(fileName: string, folder: string): boolean {
   return (
-    !fileName.includes("/__") &&
+    (!fileName.includes("/__") || folder.includes("/__")) &&
     !fileName.includes("node_modules") &&
     !fileName.endsWith(".d.ts")
   );
@@ -66,6 +66,7 @@ export async function sortSourceAndYmlFiles(
   // - argv[1] is the path to the script file.
   // - argv[2] and beyond are the files and folders passed to the script.
   const allGlobPromises = [];
+  const allGlobs = [];
   const allStatPromises = [];
   const allStatFiles = [];
   for (let i = 2; i < argv.length; i++) {
@@ -83,6 +84,7 @@ export async function sortSourceAndYmlFiles(
     } else {
       // Otherwise, it is a folder, and use glob to get files recursively.
       // For glob argument info, see their docs at https://github.com/ahmadnassri/node-glob-promise#api.
+      allGlobs.push(arg);
       allGlobPromises.push(glob(`${arg}/**/*.{{j,t}s{,x},yml,json}`));
     }
   }
@@ -95,8 +97,8 @@ export async function sortSourceAndYmlFiles(
   });
 
   const allFileLists = await Promise.all(allGlobPromises);
-  allFileLists.forEach(files =>
-    files.filter(shouldProcessFile).forEach(sortFile)
+  allFileLists.forEach((files, i) =>
+    files.filter(f => shouldProcessFile(f, allGlobs[i])).forEach(sortFile)
   );
 
   return {
