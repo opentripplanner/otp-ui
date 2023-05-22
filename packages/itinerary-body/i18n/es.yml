@@ -14,10 +14,10 @@ otpUi:
       bookRide: Reservar un viaje
       bookRideLater: Espere hasta las {timeMillis, time, short} para reservar
       estimatedCost: "Costo estimado: {minFare} - {maxFare}"
-      estimatedTravelTime: "Tiempo de viaje estimado: {duration} (no tiene en cuenta\
-        \ el tráfico)"
-      waitForPickup: "Espera al conductor {company}{minutes, plural, =0 {} other {\
-        \ # minutos}}"
+      estimatedTravelTime: "Tiempo de viaje estimado: {duration} (no tiene en cuenta
+        el tráfico)"
+      waitForPickup: "Espera al conductor {company}{minutes, plural, =0 {} other {
+        # minutos}}"
     LegDiagramPreview:
       elevationChart: Gráfico de elevación
       noElevationData: No hay datos de elevación disponibles.
@@ -67,10 +67,10 @@ otpUi:
       vehicle: Vehículo
     stepDepart: Dirígete hacia {heading} por {street}
   ItineraryBody:
-    stayOnBoard: Quédate a bordo de {place}
+    stayOnBoard: Quédate a bordo en {place}
     travelBy: Viajar {mode}
     common:
-      durationShort: "{horas, plural, =0 {} otro {# hr }}{minutes} min"
+      durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"
     viewOnMap: Ver en el mapa
     flexPickupMessage: "Para tomar esta ruta, tiene que {action}{advanceNotice}."
     flexCallAhead: llama con anticipación
@@ -80,8 +80,8 @@ otpUi:
       car: en carro
       escooter: en patineta
       walk: a pie
-    flexAdvanceNotice: " al menos {leadDays, plural, one {# día} other {# días}} de\
-      \ antelación"
+    flexAdvanceNotice: " al menos {leadDays, plural, one {# día} other {# días}} de
+      antelación"
   TransitLegBody:
     agencyExternalLink: "{agencyName} (Enlace external)"
     AlertsBody:
