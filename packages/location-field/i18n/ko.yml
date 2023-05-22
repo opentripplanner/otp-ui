@@ -23,3 +23,4 @@ otpUi:
     suggestedLocationsLong: 추천 위치 목록 표시 전환
     useCurrentLocation: 현재 위치 사용
     workLocation: 직장
+    beginTypingPrompt: 위치 검색 입력 시작
