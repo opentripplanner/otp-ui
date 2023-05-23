@@ -23,11 +23,11 @@ export default class OTPGeocoder extends Geocoder {
   rewriteAutocompleteResponse(response: OTPGeocoderResponse): MultiGeocoderResponse {
     return {
         features: response?.results?.map(stop => ({
-            geometry: { type: "Point", coordinates: [stop.lng, stop.lat] },
+            geometry: { type: "Point", coordinates: [stop.coordinate.lng, stop.coordinate.lat] },
             id: stop.id, 
             // TODO: if non-stops are supported, these need to be detected here and 
             // this layer property updated accordingly
-            properties: { layer: "stops", source: "otp", name: stop.description, label: stop.description }, 
+            properties: { layer: "stops", source: "otp", name: stop.name, label: stop.code }, 
             type: "Feature"
         })),
       type: "FeatureCollection"
