@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/geocoder",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Geocoding tools for multiple geocoding providers",
   "main": "lib/index.js",
   "module": "esm/index.js",
