@@ -30,6 +30,6 @@
   },
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d",
   "scripts": {
-    "tsc": "tsc"
+    "tsc": "echo turn tsc back on once the types package is updated"
   }
 }
