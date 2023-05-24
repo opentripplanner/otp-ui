@@ -1,5 +1,6 @@
 otpUi:
   LocationField:
+    beginTypingPrompt: Comience a escribir para buscar ubicaciones
     clearLocation: Restablecer la ubicación
     currentLocationUnavailable: Ubicación actual no disponible
     fetchingLocation: Buscando la ubicación…
@@ -25,4 +26,3 @@ otpUi:
     suggestedLocationsLong: Alternar la visualización de la lista de lugares recomendamos
     useCurrentLocation: Usar ubicación actual
     workLocation: Ubicación de trabajo
-    beginTypingPrompt: Comience a escribir para buscar ubicaciones

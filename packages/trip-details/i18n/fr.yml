@@ -16,8 +16,7 @@ otpUi:
       special: Spécial
       youth: Jeunes
     hideDetail: Masquer les détails
-    minutesActive: "Activité physique : <strong>{minutes, plural, one {# minute} other
-      {# minutes}}</strong>"
+    minutesActive: "Activité physique\_: <strong>{minutes, plural, one {# minute} other {# minutes}}</strong>"
     showDetail: Afficher les détails
     timeActiveDescription: >
       Sur ce trajet, vous effectuerez <strong>{walkMinutes, plural, one {#
@@ -25,8 +24,7 @@ otpUi:
       plural, one {# minute} other {# minutes}}</strong> à vélo.
     title: Détails du trajet
     tncFare: "Tarif {companies} : <strong>{minTNCFare} - {maxTNCFare}</strong>"
-    transferDiscountExplanation: Cette correspondance vous donne une réduction de
-      {transferAmount}
+    transferDiscountExplanation: Cette correspondance vous donne une réduction de {transferAmount}
     transitFare: Tarif en transports
     transitFareEntry: "{name} : <strong>{value}</strong>"
     transitFareUnknown: Tarif inconnu
