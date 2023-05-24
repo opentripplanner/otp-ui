@@ -79,6 +79,10 @@ export function legDropoffRequiresAdvanceBooking(leg: Leg): boolean {
   return isAdvanceBookingRequired(leg.dropOffBookingInfo);
 }
 
+export function isRideshareLeg(leg: Leg): boolean {
+  return !!leg.rideHailingEstimate?.provider?.id;
+}
+
 export function isWalk(mode: string): boolean {
   if (!mode) return false;
 
@@ -194,12 +198,19 @@ export function toSentenceCase(str: string): string {
  */
 export function getCompanyFromLeg(leg: Leg): string {
   if (!leg) return null;
-  const { from, mode, rentedBike, rentedCar, rentedVehicle, tncData } = leg;
+  const {
+    from,
+    mode,
+    rentedBike,
+    rentedCar,
+    rentedVehicle,
+    rideHailingEstimate
+  } = leg;
   if (mode === "CAR" && rentedCar) {
     return from.networks[0];
   }
-  if (mode === "CAR" && tncData) {
-    return tncData.company;
+  if (mode === "CAR" && rideHailingEstimate) {
+    return rideHailingEstimate.provider.id;
   }
   if (mode === "BICYCLE" && rentedBike && from.networks) {
     return from.networks[0];
@@ -441,15 +452,15 @@ export function calculateTncFares(
   itinerary: ItineraryOnlyLegsRequired
 ): TncFare {
   return itinerary.legs
-    .filter(leg => leg.mode === "CAR" && leg.hailedCar && leg.tncData)
+    .filter(leg => leg.mode === "CAR" && leg.rideHailingEstimate)
     .reduce(
-      ({ maxTNCFare, minTNCFare }, { tncData }) => {
-        const { currency, maxCost, minCost } = tncData;
+      ({ maxTNCFare, minTNCFare }, { rideHailingEstimate }) => {
+        const { minPrice, maxPrice } = rideHailingEstimate;
         return {
           // Assumes a single currency for entire itinerary.
-          currencyCode: currency,
-          maxTNCFare: maxTNCFare + maxCost,
-          minTNCFare: minTNCFare + minCost
+          currencyCode: minPrice.currency.code,
+          maxTNCFare: maxTNCFare + maxPrice.amount,
+          minTNCFare: minTNCFare + minPrice.amount
         };
       },
       {

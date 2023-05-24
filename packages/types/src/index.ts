@@ -307,6 +307,14 @@ export type Leg = {
   mode: string;
   pathway: boolean;
   pickupBookingInfo?: FlexPickupBookingInfo;
+  rideHailingEstimate?: {
+    provider: {
+      id: string;
+    };
+    arrival: string;
+    minPrice: Price;
+    maxPrice: Price;
+  };
   realTime: boolean;
   rentedBike: boolean;
   rentedCar: boolean;
@@ -321,16 +329,6 @@ export type Leg = {
   serviceDate?: string;
   startTime: number;
   steps: Step[];
-  tncData?: {
-    company: string;
-    currency: string;
-    displayName: string;
-    estimatedArrival: number;
-    maxCost: number;
-    minCost: number;
-    productId: string;
-    travelDuration: number;
-  };
   to: Place;
   transitLeg: boolean;
   tripBlockId?: string;
@@ -341,6 +339,13 @@ export type Leg = {
    * They are not returned in the API response
    */
   fareProducts?: Array<FareProduct>;
+};
+
+type Price = {
+  currency: {
+    code: string;
+  };
+  amount: number;
 };
 
 /**

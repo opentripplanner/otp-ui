@@ -126,8 +126,8 @@ export function TripDetails({
 
   let companies = "";
   itinerary.legs.forEach(leg => {
-    if (leg.tncData) {
-      companies = leg.tncData.company;
+    if (leg.rideHailingEstimate) {
+      companies = leg.rideHailingEstimate.provider.id;
     }
   });
   let fare;
@@ -184,31 +184,30 @@ export function TripDetails({
             })
           )}
         </TransitFareWrapper>
-        {minTNCFare !== 0 && (
-          <S.TNCFare>
-            <br />
-            <FormattedMessage
-              defaultMessage={defaultMessages["otpUi.TripDetails.tncFare"]}
-              description="Text showing the price paid to transportation network companies."
-              id="otpUi.TripDetails.tncFare"
-              values={{
-                companies: (
-                  // S.TNCFareCompanies capitalizes the TNC company ID (e.g. "COMPANY")
-                  // after it is converted to lowercase, so it renders as "Company".
-                  <S.TNCFareCompanies>
-                    {companies.toLowerCase()}
-                  </S.TNCFareCompanies>
-                ),
-                maxTNCFare: renderFare(currencyCode, maxTNCFare),
-                minTNCFare: renderFare(currencyCode, minTNCFare),
-                strong: boldText
-              }}
-            />
-          </S.TNCFare>
-        )}
       </S.Fare>
     );
   }
+  const tncFare = minTNCFare !== 0 && (
+    <S.Fare>
+      <S.TNCFare>
+        <FormattedMessage
+          defaultMessage={defaultMessages["otpUi.TripDetails.tncFare"]}
+          description="Text showing the price paid to transportation network companies."
+          id="otpUi.TripDetails.tncFare"
+          values={{
+            companies: (
+              // S.TNCFareCompanies capitalizes the TNC company ID (e.g. "COMPANY")
+              // after it is converted to lowercase, so it renders as "Company".
+              <S.TNCFareCompanies>{companies.toLowerCase()}</S.TNCFareCompanies>
+            ),
+            maxTNCFare: renderFare(currencyCode, maxTNCFare),
+            minTNCFare: renderFare(currencyCode, minTNCFare),
+            strong: boldText
+          }}
+        />
+      </S.TNCFare>
+    </S.Fare>
+  );
 
   const departureDate = new Date(itinerary.startTime);
 
@@ -295,6 +294,22 @@ export function TripDetails({
             }
             icon={<MoneyBillAlt size={17} />}
             summary={fare}
+          />
+        )}
+        {tncFare && (
+          <TripDetail
+            // Any custom description for the transit fare needs to be handled by the slot.
+            description={
+              FareDetails && (
+                <FareDetails
+                  maxTNCFare={maxTNCFare}
+                  minTNCFare={minTNCFare}
+                  transitFares={transitFares}
+                />
+              )
+            }
+            icon={<MoneyBillAlt size={17} />}
+            summary={tncFare}
           />
         )}
         {displayTimeActive && minutesActive > 0 && (

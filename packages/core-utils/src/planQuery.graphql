@@ -54,6 +54,24 @@ query PlanQuery(
         duration
         endTime
         mode
+        rideHailingEstimate {
+          provider {
+            id
+          }
+          arrival
+          minPrice {
+            currency {
+              code
+            }
+            amount
+          }
+          maxPrice {
+            currency {
+              code
+            }
+            amount
+          }
+        }
         realTime
         realtimeState
         startTime
