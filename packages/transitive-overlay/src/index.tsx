@@ -28,7 +28,7 @@ const modeColorMap = {
 };
 
 /**
- * Apply a thin, white halo around the (black) text.
+ * Apply a thin, white halo around the (black) text
  */
 const defaultTextPaintParams = {
   "text-halo-blur": 1,

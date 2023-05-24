@@ -140,7 +140,7 @@ export function TripDetails({
       defaultFare = "regular";
     }
 
-    // Depending on if there are additional fares to display either render a <span> or a <details>
+    // Depending on if there are additional fares to display either render a <span> or a <details>.
     const TransitFareWrapper =
       transitFares && fareKeys.length > 1 ? S.TransitFare : S.TransitFareSingle;
 
