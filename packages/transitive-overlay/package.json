@@ -21,7 +21,7 @@
   "dependencies": {
     "@mapbox/polyline": "^1.1.1",
     "@opentripplanner/base-map": "^3.0.11",
-    "@opentripplanner/core-utils": "^8.2.1",
+    "@opentripplanner/core-utils": "9.0.0-alpha.26",
     "@opentripplanner/itinerary-body": "^4.1.17",
     "@turf/bbox": "^6.5.0",
     "@turf/bearing": "^6.5.0",
