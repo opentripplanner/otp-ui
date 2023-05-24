@@ -46,6 +46,13 @@ query PlanQuery(
       waitingTime
       walkTime
       legs {
+        pickupType
+        dropoffType
+        pickupBookingInfo {
+          earliestBookingTime {
+            daysPrior
+          }
+        }
         rentedBike
         interlineWithPreviousLeg
         departureDelay
