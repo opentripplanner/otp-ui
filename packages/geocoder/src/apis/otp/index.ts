@@ -9,17 +9,19 @@ type FetchArgs = {
 
 type OTPGeocoderResponse = {
   results: {
-    lat: number,
-    lng: number,
-    description: string,
+    coordinate: {
+      lat: number,
+      lng: number,
+    },
+    code: string,
+    name: string,
     id: string
   }[]
 } | undefined
 
 
 function run({ query, url }: FetchArgs): Promise<OTPGeocoderResponse> {
-  // TODO: Support corners/osm nodes?
-  return fetch(`${url}/geocode/stopClusters?corners=false&query=${query}`)
+  return fetch(`${url}/geocode/stopClusters?query=${query}`)
     .then(res => res.text())
     .then(res => JSON.parse(`{"results": ${res}}`));
 }

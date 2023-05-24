@@ -1,5 +1,8 @@
 # OTP-UI React Component Library
 
+[![Join the chat at https://gitter.im/opentripplanner/otp-react-redux](https://badges.gitter.im/repo.png)](https://gitter.im/opentripplanner/otp-react-redux)
+[![Build process badge](https://img.shields.io/github/actions/workflow/status/opentripplanner/otp-ui/node-ci.yml)](https://github.com/opentripplanner/otp-ui/actions/workflows/node-ci.yml)
+
 ## Description
 
 React component library, which can be used to build trip planner webapps.
@@ -18,6 +21,8 @@ See:
 ```
 
 ## Development
+
+You can chat with the main OTP-RR developers in our [Gitter chat](https://gitter.im/opentripplanner/otp-react-redux). Support is not guaranteed, but we may be able to answer questions and assist people wishing to make contributions.
 
 Some packages in otp-ui depend on sibling packages (e.g., `@opentripplanner/core-utils` is used by many of its siblings). In order to test a package with local changes you have made to its sibling, you can run the following find/replace operations to make sure you're depending on your latest work (and not the released version):
 

@@ -115,7 +115,7 @@
     "semantic-release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo",
     "test": "yarn lint:js && yarn lint:styles && yarn check:i18n-en-fr && yarn typescript && yarn unit && yarn a11y-test",
     "typescript": "lerna run tsc",
-    "unit": "jest --testPathIgnorePatterns a11y",
+    "unit": "jest --testPathIgnorePatterns a11y .d.ts",
     "update-internal-dependencies": "node scripts/update-internal-dependencies.js"
   },
   "eslintConfig": {

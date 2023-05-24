@@ -1,0 +1,8 @@
+otpUi:
+  FromToLocationPicker:
+    from: From here
+    planATrip: "Plan a trip:"
+    to: To here
+  TestComponent1:
+    unusedText: I am unused.
+    unusedTextThatIsIgnored: I am unused and ignored.
