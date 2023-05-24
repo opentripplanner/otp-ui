@@ -12,7 +12,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "echo turn tsc back on once the types package is updated"
+    "tsc": "tsc"
   },
   "repository": {
     "type": "git",
@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@opentripplanner/endpoints-overlay": "^2.0.6",
-    "@opentripplanner/types": "^5.0.0"
+    "@opentripplanner/types": "6.0.0-alpha.6"
   },
   "peerDependencies": {
     "react": "^16.14.0",

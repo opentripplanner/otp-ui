@@ -17,7 +17,7 @@
     "react-animate-height": "^3.0.4"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^5.0.0",
+    "@opentripplanner/types": "6.0.0-alpha.6",
     "@types/flat": "^5.0.2"
   },
   "peerDependencies": {
@@ -30,6 +30,6 @@
   },
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d",
   "scripts": {
-    "tsc": "echo turn tsc back on once the types package is updated"
+    "tsc": "tsc"
   }
 }
