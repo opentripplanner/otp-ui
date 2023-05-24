@@ -12,7 +12,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "tsc"
+    "tsc": "echo turn tsc back on once the types package is updated"
   },
   "repository": {
     "type": "git",
