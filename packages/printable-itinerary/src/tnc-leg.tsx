@@ -3,6 +3,7 @@ import { GradationMap, Leg, LegIconComponent } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
+import { getCompanyForNetwork } from "@opentripplanner/core-utils/lib/itinerary";
 import AccessibilityAnnotation from "./accessibility-annotation";
 import * as S from "./styled";
 
@@ -19,8 +20,8 @@ export default function TNCLeg({
   leg,
   LegIcon
 }: Props): ReactElement {
-  const { tncData } = leg;
-  if (!tncData) return null;
+  const { rideHailingEstimate } = leg;
+  if (!rideHailingEstimate) return null;
 
   return (
     <S.Leg>
@@ -39,7 +40,7 @@ export default function TNCLeg({
             description="Summary text for TNC leg"
             id="otpUi.PrintableItinerary.TncLeg.header"
             values={{
-              company: tncData.displayName,
+              company: getCompanyForNetwork(rideHailingEstimate.provider.id),
               place: leg.to.name,
               strong: strongText
             }}
@@ -56,9 +57,7 @@ export default function TNCLeg({
               description="Describes the estimated TNC wait time."
               id="otpUi.PrintableItinerary.TncLeg.estimatedWaitTime"
               values={{
-                duration: (
-                  <Defaults.Duration seconds={tncData.estimatedArrival} />
-                ),
+                duration: <Defaults.Duration seconds={leg.startTime} />,
                 strong: strongText
               }}
             />
