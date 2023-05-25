@@ -240,6 +240,7 @@ export type Place = {
   lon: number;
   name: string;
   networks?: string[];
+  rentalVehicle?: { network: string };
   stopCode?: string;
   stopId?: string;
   stopIndex?: number;
@@ -298,7 +299,6 @@ export type Leg = {
   duration: number;
   endTime: number;
   from: Place;
-  hailedCar: boolean;
   headsign?: string;
   interlineWithPreviousLeg: boolean;
   intermediateStops: Place[];

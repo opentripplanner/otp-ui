@@ -3,6 +3,7 @@ import { lazy } from "react";
 
 const companyLookup = {
   biketown: lazy(() => import("./biketown-icon")),
+  lyft_pdx: lazy(() => import("./biketown-icon")),
   bird: lazy(() => import("./bird-icon")),
   bolt: lazy(() => import("./bolt-icon")),
   boltEu: lazy(() => import("./bolt-eu-icon")),

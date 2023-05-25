@@ -55,7 +55,10 @@ export default function TNCLeg({
           description="Action text for waiting for a ride-hail vehicle."
           id="otpUi.AccessLegBody.TncLeg.waitForPickup"
           values={{
-            company: getCompanyForNetwork(rideHailingEstimate.provider.id),
+            company: getCompanyForNetwork(
+              rideHailingEstimate.provider.id,
+              config.companies
+            )?.label,
             minutes: followsTransit ? 0 : rideHailingEstimate.arrival
           }}
         />
