@@ -9,7 +9,14 @@ describe("validate-i18n", () => {
         `${mocksFolderFromCwd}/i18n1/i18n-exceptions.json`,
         `${mocksFolderFromCwd}/i18n2/i18n-exceptions.json`
       ];
-      const { ignoredIds } = await combineExceptionFiles(exceptionFiles);
+      const { groups, ignoredIds } = await combineExceptionFiles(
+        exceptionFiles
+      );
+
+      const groupKeys = Object.keys(groups);
+      expect(groupKeys.length).toBe(1);
+      expect(groupKeys[0]).toBe("otpUi.OtherComponent.*Message");
+
       expect(ignoredIds.size).toBe(2);
       expect(
         ignoredIds.has("otpUi.TestComponent1.unusedTextThatIsIgnored")
@@ -21,7 +28,7 @@ describe("validate-i18n", () => {
   });
 
   describe("checkLocale", () => {
-    it("should detect unused message ids", async () => {
+    it("should detect unused message ids, excluding declared groups", async () => {
       const ignoredIds = new Set([
         "otpUi.TestComponent1.unusedTextThatIsIgnored",
         "otpUi.ExtraId.fromCodeThatIsIgnored"

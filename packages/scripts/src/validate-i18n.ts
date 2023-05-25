@@ -6,6 +6,7 @@ import { extract } from "@formatjs/cli";
 import { isNotSpecialId, loadYamlFile, sortSourceAndYmlFiles } from "./util";
 
 interface CheckException {
+  groups: Record<string, string[]>;
   ignoredIds: Set<string>;
 }
 
@@ -16,15 +17,24 @@ export async function combineExceptionFiles(
   exceptionFiles: string[]
 ): Promise<CheckException> {
   let allIgnoredIds = [];
+  const allGroups = [];
   await Promise.all(
     exceptionFiles.map(async file => {
       const rawJson = (await fs.readFile(file)).toString();
       const jsonObject = JSON.parse(rawJson);
       allIgnoredIds = allIgnoredIds.concat(jsonObject.ignoredIds);
+      if (jsonObject.groups) {
+        allGroups.push(jsonObject.groups);
+      }
     })
   );
   // Make sure ignored ids are unique
+  const groups = allGroups.reduce(
+    (result, group) => ({ ...result, ...group }),
+    {}
+  );
   return {
+    groups,
     ignoredIds: new Set(allIgnoredIds)
   };
 }
