@@ -33,13 +33,13 @@ export async function combineExceptionFiles(
       }
     })
   );
-  // Make sure ignored ids are unique
   const groups = allGroups.reduce(
     (result, group) => ({ ...result, ...group }),
     {}
   );
   return {
     groups,
+    // Make sure ignored ids are unique
     ignoredIds: new Set(allIgnoredIds)
   };
 }
@@ -56,13 +56,15 @@ export async function checkLocale(
   idsNotInCode: string[];
   missingIdsForLocale: string[];
 }> {
-  const idsChecked = [];
+  const idsChecked = new Set();
   const idsNotInCode = [];
 
   const allI18nPromises = ymlFilesForLocale.map(loadYamlFile);
   const allI18nMessages = await Promise.all(allI18nPromises);
 
-  const idsFromGroups = new Set(expandGroupIds(groups));
+  const idsFromGroupsArray = expandGroupIds(groups);
+  const idsFromGroups = new Set(idsFromGroupsArray);
+  const idsFromGroupsNotInYml = new Set(idsFromGroupsArray);
 
   allI18nMessages.forEach(i18nMessages => {
     const flattenedMessages = flatten(i18nMessages);
@@ -70,23 +72,27 @@ export async function checkLocale(
     // Message ids from code must be present in yml (except those in ignoredIds).
     messageIdsFromCode
       .filter(id => flattenedMessages[id])
-      .forEach(id => idsChecked.push(id));
+      .forEach(id => idsChecked.add(id));
 
     // Message ids from yml must be present in code,
     // except those starting with "_" or those in ignoredIds or groups.
-    Object.keys(flattenedMessages)
+    const messageKeys = Object.keys(flattenedMessages);
+    messageKeys
       .filter(isNotSpecialId)
       .filter(id => !ignoredIds.has(id))
       .filter(id => !idsFromGroups.has(id))
       .filter(id => !messageIdsFromCode.includes(id))
       .filter(id => !idsNotInCode.includes(id))
       .forEach(id => idsNotInCode.push(id));
+
+    // Filter out ids from groups found in YML file.
+    messageKeys.forEach(id => idsFromGroupsNotInYml.delete(id));
   });
 
-  // Collect ids in code not found in yml.
-  const missingIdsForLocale = messageIdsFromCode
+  // Collect ids in code and groups not found in yml.
+  const missingIdsForLocale = [...messageIdsFromCode, ...idsFromGroupsNotInYml]
     .filter(id => !ignoredIds.has(id))
-    .filter(id => !idsChecked.includes(id));
+    .filter(id => !idsChecked.has(id));
 
   return {
     idsNotInCode,

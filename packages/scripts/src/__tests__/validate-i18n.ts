@@ -34,7 +34,7 @@ describe("validate-i18n", () => {
         "otpUi.ExtraId.fromCodeThatIsIgnored"
       ]);
       const groups = {
-        "otpUi.OtherComponent.*Message": ["key1", "key2"]
+        "otpUi.OtherComponent.*Message": ["key1", "key2", "extraKey"]
       };
       const ymlFiles = [`${mocksFolderFromCwd}/i18n1/en-US.yml`];
       const messageIdsFromCode = [
@@ -53,8 +53,11 @@ describe("validate-i18n", () => {
         groups
       );
 
-      expect(missingIdsForLocale.length).toBe(1);
-      expect(missingIdsForLocale[0]).toBe("otpUi.ExtraId.fromCode");
+      expect(missingIdsForLocale.length).toBe(2);
+      expect(missingIdsForLocale.includes("otpUi.ExtraId.fromCode")).toBe(true);
+      expect(
+        missingIdsForLocale.includes("otpUi.OtherComponent.extraKeyMessage")
+      ).toBe(true);
 
       expect(idsNotInCode.length).toBe(1);
       expect(idsNotInCode[0]).toBe("otpUi.TestComponent1.unusedText");
