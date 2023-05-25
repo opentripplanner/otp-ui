@@ -2,7 +2,13 @@
 import { extract } from "@formatjs/cli";
 import flatten from "flat";
 
-import { isNotSpecialId, loadYamlFile, sortSourceAndYmlFiles } from "./util";
+import {
+  combineExceptionFiles,
+  expandGroupIds,
+  isNotSpecialId,
+  loadYamlFile,
+  sortSourceAndYmlFiles
+} from "./util";
 
 // The data that corresponds to rows in the CSV output.
 type MessageData = Record<
@@ -13,22 +19,22 @@ type MessageData = Record<
 >;
 
 /**
- * Collect all messages and create a formatted output.
+ * Collect all messages in a translation table.
  */
-async function collectAndPrintOutMessages({ sourceFiles, ymlFilesByLocale }) {
-  // Gather message ids from code.
-  const messagesFromCode = JSON.parse(await extract(sourceFiles, {}));
+export async function buildTranslationTable(
+  ymlFilesByLocale: Record<string, string[]>,
+  messagesFromCode: Record<string, { description?: string }>,
+  groups: Record<string, string[]>
+): Promise<MessageData> {
   const messageIdsFromCode = Object.keys(messagesFromCode);
   const allLocales = Object.keys(ymlFilesByLocale);
-
-  // CSV heading
-  console.log(`ID,Description,${allLocales.join(",")}`);
 
   // Will contain id, description, and a column for each selected language.
   const messageData: MessageData = {};
 
-  // For each locale, check that all ids in messages are in the yml files.
-  // Accessorily, log message ids from yml files that are not used in the code.
+  const idsFromGroups = expandGroupIds(groups);
+  const messagesToReport = [...messageIdsFromCode, ...idsFromGroups];
+
   await Promise.all(
     allLocales.map(async locale => {
       const allI18nPromises = ymlFilesByLocale[locale].map(loadYamlFile);
@@ -43,8 +49,8 @@ async function collectAndPrintOutMessages({ sourceFiles, ymlFilesByLocale }) {
         };
       });
 
-      messageIdsFromCode.filter(isNotSpecialId).forEach(id => {
-        const { description } = messagesFromCode[id];
+      messagesToReport.filter(isNotSpecialId).forEach(id => {
+        const { description } = messagesFromCode[id] || {};
         const message = allI18nMessagesFlattened[id]?.trim() || undefined;
 
         if (!messageData[id]) {
@@ -56,6 +62,32 @@ async function collectAndPrintOutMessages({ sourceFiles, ymlFilesByLocale }) {
       });
     })
   );
+
+  return messageData;
+}
+
+/**
+ * Collect all messages and create a formatted output.
+ */
+async function collectAndPrintOutMessages({
+  exceptionFiles,
+  sourceFiles,
+  ymlFilesByLocale
+}) {
+  // Gather message ids from code.
+  const messagesFromCode = JSON.parse(await extract(sourceFiles, {}));
+  const { groups } = await combineExceptionFiles(exceptionFiles);
+
+  // Will contain id, description, and a column for each selected language.
+  const messageData = await buildTranslationTable(
+    ymlFilesByLocale,
+    messagesFromCode,
+    groups
+  );
+
+  const allLocales = Object.keys(ymlFilesByLocale);
+  // CSV heading
+  console.log(`ID,Description,${allLocales.join(",")}`);
 
   Object.keys(messageData).forEach(id => {
     const row = messageData[id];
