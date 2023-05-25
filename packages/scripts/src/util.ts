@@ -126,3 +126,37 @@ export function expandGroupIds(groups: Record<string, string[]>): string[] {
     []
   );
 }
+
+interface CheckException {
+  groups: Record<string, string[]>;
+  ignoredIds: Set<string>;
+}
+
+/**
+ * Combines exception files into a single exception object.
+ */
+export async function combineExceptionFiles(
+  exceptionFiles: string[]
+): Promise<CheckException> {
+  let allIgnoredIds = [];
+  const allGroups = [];
+  await Promise.all(
+    exceptionFiles.map(async file => {
+      const rawJson = (await fs.readFile(file)).toString();
+      const jsonObject = JSON.parse(rawJson);
+      allIgnoredIds = allIgnoredIds.concat(jsonObject.ignoredIds);
+      if (jsonObject.groups) {
+        allGroups.push(jsonObject.groups);
+      }
+    })
+  );
+  const groups = allGroups.reduce(
+    (result, group) => ({ ...result, ...group }),
+    {}
+  );
+  return {
+    groups,
+    // Make sure ignored ids are unique
+    ignoredIds: new Set(allIgnoredIds)
+  };
+}

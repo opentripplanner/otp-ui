@@ -1,32 +1,8 @@
-import { checkLocale, combineExceptionFiles } from "../validate-i18n";
+import { checkLocale } from "../validate-i18n";
 
 import { mocksFolderFromCwd } from "./util";
 
 describe("validate-i18n", () => {
-  describe("combineExceptionFiles", () => {
-    it("should combine ignored ids", async () => {
-      const exceptionFiles = [
-        `${mocksFolderFromCwd}/i18n1/i18n-exceptions.json`,
-        `${mocksFolderFromCwd}/i18n2/i18n-exceptions.json`
-      ];
-      const { groups, ignoredIds } = await combineExceptionFiles(
-        exceptionFiles
-      );
-
-      const groupKeys = Object.keys(groups);
-      expect(groupKeys.length).toBe(1);
-      expect(groupKeys[0]).toBe("otpUi.OtherComponent.*Message");
-
-      expect(ignoredIds.size).toBe(2);
-      expect(
-        ignoredIds.has("otpUi.TestComponent1.unusedTextThatIsIgnored")
-      ).toBe(true);
-      expect(
-        ignoredIds.has("otpUi.TestComponent2.unusedTextThatIsIgnored")
-      ).toBe(true);
-    });
-  });
-
   describe("checkLocale", () => {
     it("should detect unused message ids, excluding declared groups", async () => {
       const ignoredIds = new Set([
