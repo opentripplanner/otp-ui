@@ -33,6 +33,9 @@ describe("validate-i18n", () => {
         "otpUi.TestComponent1.unusedTextThatIsIgnored",
         "otpUi.ExtraId.fromCodeThatIsIgnored"
       ]);
+      const groups = {
+        "otpUi.OtherComponent.*Message": ["key1", "key2"]
+      };
       const ymlFiles = [`${mocksFolderFromCwd}/i18n1/en-US.yml`];
       const messageIdsFromCode = [
         "otpUi.FromToLocationPicker.from",
@@ -46,7 +49,8 @@ describe("validate-i18n", () => {
       const { idsNotInCode, missingIdsForLocale } = await checkLocale(
         ymlFiles,
         messageIdsFromCode,
-        ignoredIds
+        ignoredIds,
+        groups
       );
 
       expect(missingIdsForLocale.length).toBe(1);

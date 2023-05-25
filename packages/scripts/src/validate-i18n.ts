@@ -3,7 +3,12 @@ import flatten from "flat";
 import { promises as fs } from "fs";
 import { extract } from "@formatjs/cli";
 
-import { isNotSpecialId, loadYamlFile, sortSourceAndYmlFiles } from "./util";
+import {
+  expandGroupIds,
+  isNotSpecialId,
+  loadYamlFile,
+  sortSourceAndYmlFiles
+} from "./util";
 
 interface CheckException {
   groups: Record<string, string[]>;
@@ -45,7 +50,8 @@ export async function combineExceptionFiles(
 export async function checkLocale(
   ymlFilesForLocale: string[],
   messageIdsFromCode: string[],
-  ignoredIds: Set<string>
+  ignoredIds: Set<string>,
+  groups: Record<string, string[]>
 ): Promise<{
   idsNotInCode: string[];
   missingIdsForLocale: string[];
@@ -56,6 +62,8 @@ export async function checkLocale(
   const allI18nPromises = ymlFilesForLocale.map(loadYamlFile);
   const allI18nMessages = await Promise.all(allI18nPromises);
 
+  const idsFromGroups = new Set(expandGroupIds(groups));
+
   allI18nMessages.forEach(i18nMessages => {
     const flattenedMessages = flatten(i18nMessages);
 
@@ -64,11 +72,12 @@ export async function checkLocale(
       .filter(id => flattenedMessages[id])
       .forEach(id => idsChecked.push(id));
 
-    // Message ids from yml (except those starting with "_" or those in ignoredIds)
-    // must be present in code.
+    // Message ids from yml must be present in code,
+    // except those starting with "_" or those in ignoredIds or groups.
     Object.keys(flattenedMessages)
       .filter(isNotSpecialId)
       .filter(id => !ignoredIds.has(id))
+      .filter(id => !idsFromGroups.has(id))
       .filter(id => !messageIdsFromCode.includes(id))
       .filter(id => !idsNotInCode.includes(id))
       .forEach(id => idsNotInCode.push(id));
