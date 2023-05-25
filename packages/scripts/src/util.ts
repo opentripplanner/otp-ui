@@ -115,3 +115,14 @@ export async function sortSourceAndYmlFiles(
 export async function loadYamlFile(filename: string): Promise<any> {
   return load(await fs.readFile(filename));
 }
+
+/**
+ * Convert a groups object into a list of corresponding message ids.
+ */
+export function expandGroupIds(groups: Record<string, string[]>): string[] {
+  return Object.keys(groups).reduce(
+    (result, group) =>
+      result.concat(groups[group].map(key => group.replace("*", key))),
+    []
+  );
+}

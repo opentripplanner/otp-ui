@@ -1,4 +1,8 @@
-import { shouldProcessFile, sortSourceAndYmlFiles } from "../util";
+import {
+  expandGroupIds,
+  shouldProcessFile,
+  sortSourceAndYmlFiles
+} from "../util";
 
 const packagesFolder = `${process.cwd()}/packages`;
 export const mocksFolderFromCwd = `${packagesFolder}/scripts/src/__tests__/__mocks__`;
@@ -62,6 +66,22 @@ describe("util", () => {
           "/some/folder/__tests__"
         )
       ).toBe(true);
+    });
+  });
+
+  describe("expandGroupIds", () => {
+    it("should expand group ids", () => {
+      const groups = {
+        "group1.*Message": ["key1", "key2"],
+        "group2.*": ["key3", "key4", "key5"]
+      };
+      const idsFromGroups = expandGroupIds(groups);
+      expect(idsFromGroups.length).toBe(5);
+      expect(idsFromGroups.includes("group1.key1Message")).toBe(true);
+      expect(idsFromGroups.includes("group1.key2Message")).toBe(true);
+      expect(idsFromGroups.includes("group2.key3")).toBe(true);
+      expect(idsFromGroups.includes("group2.key4")).toBe(true);
+      expect(idsFromGroups.includes("group2.key5")).toBe(true);
     });
   });
 });
