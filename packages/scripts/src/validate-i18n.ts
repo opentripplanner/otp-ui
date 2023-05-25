@@ -118,7 +118,7 @@ async function checkI18n({ exceptionFiles, sourceFiles, ymlFilesByLocale }) {
     } exception files).`
   );
 
-  const { ignoredIds } = await combineExceptionFiles(exceptionFiles);
+  const { groups, ignoredIds } = await combineExceptionFiles(exceptionFiles);
   let errorCount = 0;
   // For each locale, check that all ids in messages are in the yml files.
   // Accessorily, log message ids from yml files that are not used in the code.
@@ -127,7 +127,8 @@ async function checkI18n({ exceptionFiles, sourceFiles, ymlFilesByLocale }) {
       const { idsNotInCode, missingIdsForLocale } = await checkLocale(
         ymlFilesByLocale[locale],
         messageIdsFromCode,
-        ignoredIds
+        ignoredIds,
+        groups
       );
 
       // Print errors.
