@@ -14,7 +14,6 @@ otpUi:
       transit: 대중 교통
       walk: 걷기
     settings:
-      addTram-label: 시가 전차
       bikeTolerance-label: 자전거 허용 오차
       bikeTolerance-labelHigh: 더 많은 자전거 타기
       bikeTolerance-labelLow: 덜 자전거 타기
