@@ -6,9 +6,37 @@ otpUi:
     dateTimeSelector: 날짜 및 시간 선택기
     time: 시간
     date: 날짜
+  ModeSelector:
+    labels:
+      bicycle: 자전거
+      car: 운전
+      rent: 렌탈
+      transit: 대중 교통
+      walk: 걷기
+    settings:
+      addBus-label: 버스
+      addRail-label: 기차
+      addSubway-label: 지하철
+      addTram-label: 시가 전차
+      allowBikeRental-label: 공유자전거
+      bikeTolerance-label: 자전거 허용 오차
+      bikeTolerance-labelHigh: 더 많은 자전거 타기
+      bikeTolerance-labelLow: 덜 자전거 타기
+      busColor-label: Bus Color
+      busColor-options-blue: Blue
+      carTolerance-label: 운전 공차
+      carTolerance-labelHigh: 더 많은 운전
+      carTolerance-labelLow: 덜 운전
+      walkTolerance-label: 걷기 내성
+      walkTolerance-labelHigh: 더 많이 걷기
+      walkTolerance-labelLow: 덜 걷기
+      wheelchair-label: 액세스 가능한 라우팅
+    settingsLabel: "{mode} 설정"
+
   queryParameters:
     bikeSpeed: 자전거 속도
-    optimizeFor: 최적화
+    distanceInMiles: |
+      {miles, number, :: unit/mile unit-width-full-name}
     maxBikeDistance: 최대 자전거
     maxBikeTime: 최대 자전거 시간
     maxEScooterDistance: 최대 전동스쿠터 거리
@@ -17,6 +45,7 @@ otpUi:
     optimizeBikeFlat: 플랫 트립
     optimizeBikeFriendly: 자전거 친화적 트립
     optimizeBikeSpeed: 속도
+    optimizeFor: 최적화
     speedInMilesPerHour: "{mph} MPH"
     walkReluctance: 걷기 제외
     walkReluctanceHigh: 대중 교통 더 이용
@@ -28,7 +57,6 @@ otpUi:
     watts250entryLevelEscooter: 초급형 스쿠터 (18 km/h)
     watts500robustEscooter: 견고한 전동스쿠터 (30 km/h)
     wheelchair: 휠체어 접근이 가능한 경로 선호
-    distanceInMiles: "{miles, number, :: unit/mile unit-width-full-name}\n"
   SettingsSelectorPanel:
     useCompanies: 회사 이용
     bikeOnly: 자전거 전용

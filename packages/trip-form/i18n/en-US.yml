@@ -6,6 +6,30 @@ otpUi:
     depart: Depart at
     now: Leave now
     time: Time
+  ModeSelector:
+    labels:
+      bicycle: Bike
+      car: Drive
+      rent: Rent
+      transit: Transit
+      walk: Walk
+    settings:
+      bikeTolerance-label: Biking Tolerance
+      bikeTolerance-labelHigh: More Biking
+      bikeTolerance-labelLow: Less Biking
+      bus-label: Bus
+      carTolerance-label: Driving Tolerance
+      carTolerance-labelHigh: More Driving
+      carTolerance-labelLow: Less Driving
+      ferry-label: Ferry
+      rail-label: Train
+      subway-label: Subway
+      tram-label: Tram
+      walkTolerance-label: Walking Tolerance
+      walkTolerance-labelHigh: More Walking
+      walkTolerance-labelLow: Less Walking
+      wheelchair-label: Accessible Routing
+    settingsLabel: "{mode} settings"
   SettingsSelectorPanel:
     bikeOnly: Bike Only
     escooterOnly: E-scooter Only

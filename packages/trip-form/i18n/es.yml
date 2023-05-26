@@ -1,12 +1,54 @@
 otpUi:
+  DateTimeSelector:
+    arrive: Llegada por
+    depart: Salida a las
+    now: Sortir ahora
+    dateTimeSelector: Selector de fecha y hora
+    time: Hora
+    date: Fecha
+  ModeSelector:
+    labels:
+      bicycle: Bicicleta
+      car: Coche
+      rent: Alquiler
+      transit: Transportes
+      walk: Caminar
+    settings:
+      addBus-label: Autobús
+      addRail-label: Tren
+      addSubway-label: Metro
+      addTram-label: Tranvía
+      allowBikeRental-label: Alquiler de bicicleta
+      bikeTolerance-label: Tolerancia para la bicicleta
+      bikeTolerance-labelHigh: Más bicicleta
+      bikeTolerance-labelLow: Menos bicicleta
+      busColor-label: Bus Color
+      busColor-options-blue: Blue
+      carTolerance-label: Tolerancia para el coche
+      carTolerance-labelHigh: Más coche
+      carTolerance-labelLow: Menos coche
+      walkTolerance-label: Tolerancia para caminar
+      walkTolerance-labelHigh: Más caminar
+      walkTolerance-labelLow: Menos caminar
+      wheelchair-label: Acceso con discapacidades
+    settingsLabel: Ajustes para {mode}
+  SettingsSelectorPanel:
+    bikeOnly: Solo bicicleta
+    takeTransit: Tomar tránsito
+    travelPreferences: Preferencias de viaje
+    useCompanies: Usar las empresas
+    walkOnly: Solo caminar
+    escooterOnly: Solo scooters eléctricos
+    use: Usar
   queryParameters:
     bikeSpeed: Velocidad de la bicicleta
+    distanceInMiles: |
+      {miles, number, :: unit/mile unit-width-full-name}
     maxBikeDistance: Máximo de bicicleta
     maxBikeTime: Tiempo máximo en bicicleta
     maxEScooterDistance: Distancia máxima del scooter eléctrico
     maxWalkDistance: Máximo de caminata
     maxWalkTime: Tiempo máximo de caminata
-    distanceInMiles: "{miles, number, :: unit/mile unit-width-full-name}\n"
     optimizeBikeFlat: Viaje plano
     optimizeBikeFriendly: Viaje en bicicleta
     optimizeBikeSpeed: Velocidad
@@ -22,18 +64,3 @@ otpUi:
     walkReluctance: Evasión de caminata
     watts250entryLevelEscooter: Scooter básico (18 km/h)
     watts500robustEscooter: Scooter eléctrico robusto (30 km/h)
-  DateTimeSelector:
-    arrive: Llegada por
-    depart: Salida a las
-    now: Salir ahora
-    dateTimeSelector: Selector de fecha y hora
-    time: Hora
-    date: Fecha
-  SettingsSelectorPanel:
-    bikeOnly: Solo bicicleta
-    takeTransit: Tomar tránsito
-    travelPreferences: Preferencias de viaje
-    useCompanies: Usar las empresas
-    walkOnly: Solo caminar
-    escooterOnly: Solo scooters eléctricos
-    use: Usar

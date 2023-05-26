@@ -717,24 +717,38 @@ export type SliderOptions = {
 export type CheckboxOptions = {
   addTransportMode?: TransportMode;
   default?: boolean;
-  icon: JSX.Element;
   label: string;
   type: "CHECKBOX";
   value?: boolean;
 };
 
+export type TransitSubmodeCheckboxOption = {
+  addTransportMode: TransportMode;
+  default?: boolean;
+  label: string;
+  type: "SUBMODE";
+  value?: boolean;
+};
+
 export type ModeSettingBase = {
   applicableMode: string;
+  iconName?: string;
+  icon?: JSX.Element;
   key: string;
 };
 
-export type ModeSetting = (CheckboxOptions | SliderOptions | DropdownOptions) &
+export type ModeSetting = (
+  | CheckboxOptions
+  | SliderOptions
+  | DropdownOptions
+  | TransitSubmodeCheckboxOption
+) &
   ModeSettingBase;
 export type ModeSettingValues = Record<string, number | string | boolean>;
 
 /**
- * Transportation mode is usually an OTP mode string,
- * but it can be anything for more flexibility.
+ * TransportModes correspond with the OTP GraphQL TransportMode.
+ * Could be anything from walk, bike (qualifier: rent) to transit, tram, or bus.
  */
 export type TransportMode = {
   mode: string;
@@ -748,13 +762,14 @@ export type TransportMode = {
  */
 export type ModeButtonDefinition = {
   enabled?: boolean; // User has enabled this mode
-  Icon: StyledIcon; // From iconName (below)
+  Icon: StyledIcon | React.ComponentType; // From iconName (below)
   iconName: string; // From config
   key: string; // From config
   label: string; // From config
   modes?: TransportMode[]; // This comes from config
   modeSettings?: ModeSetting[]; // From OTP definitions + config
 };
+
 export type FareProduct = {
   amount: Money;
   id: string;

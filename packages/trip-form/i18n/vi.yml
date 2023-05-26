@@ -1,12 +1,4 @@
 otpUi:
-  SettingsSelectorPanel:
-    takeTransit: Sử dụng phương tiện công cộng
-    bikeOnly: Chỉ dành cho xe đạp
-    escooterOnly: Chỉ xe tay ga điện
-    travelPreferences: Sở thích Du lịch
-    use: Sử dụng
-    useCompanies: Sử dụng các công ty
-    walkOnly: Chỉ đi bộ
   DateTimeSelector:
     depart: Khởi hành lúc
     now: Rời đi ngay bây giờ
@@ -14,8 +6,44 @@ otpUi:
     date: Ngày
     dateTimeSelector: Bộ chọn ngày và giờ
     time: Giờ
+  ModeSelector:
+    labels:
+      bicycle: Xe đạp
+      car: Lái xe
+      rent: Thuê xe
+      transit: Giao thông công cộng
+      walk: Đi bộ
+    settings:
+      addBus-label: Xe buýt
+      addRail-label: Xe lửa
+      addSubway-label: Tàu điện
+      addTram-label: Xe điện
+      allowBikeRental-label: Xe đạp thuê
+      bikeTolerance-label: Sức chịu đựng đi xe đạp
+      bikeTolerance-labelHigh: Đi xe đạp nhiều hơn
+      bikeTolerance-labelLow: Ít đi xe đạp
+      busColor-label: Bus Color
+      busColor-options-blue: Blue
+      carTolerance-label: Sức chịu đựng lái xe
+      carTolerance-labelHigh: Lái xe nhiều hơn
+      carTolerance-labelLow: Ít lái xe
+      walkTolerance-label: Sức chịu đựng đi bộ
+      walkTolerance-labelHigh: Đi bộ nhiều hơn
+      walkTolerance-labelLow: Ít đi bộ
+      wheelchair-label: Định tuyến có thể truy cập
+    settingsLabel: Cài đặt {mode}
+  SettingsSelectorPanel:
+    bikeOnly: Chỉ dành cho xe đạp
+    escooterOnly: Chỉ xe tay ga điện
+    takeTransit: Sử dụng phương tiện công cộng
+    travelPreferences: Sở thích Du lịch
+    use: Sử dụng
+    useCompanies: Sử dụng các công ty
+    walkOnly: Chỉ đi bộ
   queryParameters:
     bikeSpeed: Tốc độ xe đạp
+    distanceInMiles: |
+      {miles, number, :: unit/mile unit-width-full-name}
     maxBikeDistance: Xe đạp tối đa
     maxBikeTime: Thời gian đạp xe tối đa
     maxEScooterDistance: Khoảng cách xe tay ga điện tối đa
@@ -36,4 +64,3 @@ otpUi:
     watts250entryLevelEscooter: Xe tay ga dành cho người mới biết chạy (18 km/h)
     watts500robustEscooter: Xe tay ga điện công suất trung bình (30 km/h)
     wheelchair: Ưu tiên các tuyến đường mà xe lăn có thể đi được
-    distanceInMiles: "{miles, number, :: unit/mile unit-width-full-name}\n"
