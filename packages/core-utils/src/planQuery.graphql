@@ -47,6 +47,28 @@ query PlanQuery(
       walkTime
       accessibilityScore
       legs {
+        fareProducts {
+          id
+          product {
+            id
+            name
+            price {
+              currency {
+                code
+                digits
+              }
+              amount
+            }
+            riderCategory {
+              id
+              name
+            }
+            medium {
+              id
+              name
+            }
+          }
+        }
         pickupType
         dropoffType
         pickupBookingInfo {
