@@ -14,12 +14,10 @@ otpUi:
       transit: Giao thông công cộng
       walk: Đi bộ
     settings:
-      addRail-label: Xe lửa
       addTram-label: Xe điện
       bikeTolerance-label: Sức chịu đựng đi xe đạp
       bikeTolerance-labelHigh: Đi xe đạp nhiều hơn
       bikeTolerance-labelLow: Ít đi xe đạp
-      busColor-options-blue: Blue
       carTolerance-label: Sức chịu đựng lái xe
       carTolerance-labelHigh: Lái xe nhiều hơn
       carTolerance-labelLow: Ít lái xe
