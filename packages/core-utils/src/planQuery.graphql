@@ -16,23 +16,23 @@ query Plan(
   $numItineraries: Int
 ) {
   plan(
-    fromPlace: $fromPlace
-    toPlace: $toPlace
-    transportModes: $modes
-    # Currently only supporting EN locale, used for times and text
-    locale: "en"
-    time: $time
-    date: $date
-    wheelchair: $wheelchair
+    arriveBy: $arriveBy
+    banned: $banned
     bikeReluctance: $bikeReluctance
     carReluctance: $carReluctance
-    walkReluctance: $walkReluctance
-    arriveBy: $arriveBy
+    date: $date
+    fromPlace: $fromPlace
     intermediatePlaces: $intermediatePlaces
-    preferred: $preferred
-    unpreferred: $unpreferred
-    banned: $banned
+    # Currently only supporting EN locale, used for times and text
+    locale: "en"
     numItineraries: $numItineraries
+    preferred: $preferred
+    time: $time
+    toPlace: $toPlace
+    transportModes: $modes
+    unpreferred: $unpreferred
+    walkReluctance: $walkReluctance
+    wheelchair: $wheelchair
   ) {
     itineraries {
       accessibilityScore

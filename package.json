@@ -217,6 +217,10 @@
             {
               "selections": [
                 "OperationDefinition"
+              ],
+              "arguments": [
+                "Field",
+                "FieldDefinition"
               ]
             }
           ]
