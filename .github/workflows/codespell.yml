@@ -1,8 +1,3 @@
-# GitHub Action to automate the identification of common misspellings in text files.
-# https://github.com/codespell-project/actions-codespell
-# https://github.com/codespell-project/codespell
-name: codespell
-on: pull_request
 jobs:
   codespell:
     name: Check for spelling errors
@@ -12,5 +7,7 @@ jobs:
       - uses: codespell-project/actions-codespell@master
         with:
           check_filenames: true
-          # skip git, yarn, mocks, and i18n resources.
-          skip: ./.git,yarn.lock,*__mocks__/*,*__snapshots__/*,*i18n/*
+          skip: >-
+            ./.git,yarn.lock,*__mocks__/*,*__snapshots__/*,*i18n/*,otpSchema.json
+name: codespell
+"on": pull_request
