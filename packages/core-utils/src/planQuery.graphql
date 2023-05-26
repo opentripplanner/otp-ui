@@ -1,4 +1,4 @@
-query PlanQuery(
+query Plan(
   $fromPlace: String!
   $toPlace: String!
   $modes: [TransportMode]
@@ -34,143 +34,150 @@ query PlanQuery(
     banned: $banned
     numItineraries: $numItineraries
   ) {
-    routingErrors {
-      code
-      inputField
-      description
-    }
     itineraries {
+      accessibilityScore
       duration
       endTime
-      startTime
-      waitingTime
-      walkTime
-      accessibilityScore
-      legs {
-        pickupType
-        dropoffType
-        pickupBookingInfo {
-          earliestBookingTime {
-            daysPrior
-          }
-        }
-        rentedBike
-        interlineWithPreviousLeg
-        departureDelay
-        arrivalDelay
-        distance
-        duration
-        endTime
-        mode
-        realTime
-        realtimeState
-        startTime
-        transitLeg
+        legs {
         accessibilityScore
-        trip {
-          id
-          gtfsId
-          tripHeadsign
-        }
         agency {
-          name
-          id
-          timezone
-          url
           alerts {
-            alertHeaderText
             alertDescriptionText
+            alertHeaderText
             alertUrl
             effectiveStartDate
+            id
           }
+          id
+          name
+          timezone
+          url
+        }
+        arrivalDelay
+        departureDelay
+        distance
+        dropoffType
+        duration
+        endTime
+        from {
+          lat
+          lon
+          name
+          rentalVehicle {
+            id
+            network
+          }
+          stop {
+            alerts {
+              alertDescriptionText
+              alertHeaderText
+              alertUrl
+              effectiveStartDate
+              id
+            }
+            code
+            gtfsId
+            id
+          }
+          vertexType
+        }
+        interlineWithPreviousLeg
+        intermediateStops {
+          lat
+          locationType
+          lon
+          name
+          stopCode: code
+          stopId: id
         }
         legGeometry {
           length
           points
         }
-        intermediateStops {
-          lat
-          lon
-          name
-          stopCode: code
-          stopId: id
-          locationType
+        mode
+        pickupBookingInfo {
+          earliestBookingTime {
+            daysPrior
+          }
         }
+        pickupType
+        realTime
+        realtimeState
+        rentedBike
         route {
-          shortName
-          longName
-          color
-          textColor
-          id
-          type
           alerts {
-            alertHeaderText
             alertDescriptionText
+            alertHeaderText
             alertUrl
             effectiveStartDate
+            id
           }
+          color
+          id
+          longName
+          shortName
+          textColor
+          type
         }
-        from {
+        startTime
+        steps {
+          absoluteDirection
+          alerts {
+            alertDescriptionText
+            alertHeaderText
+            alertUrl
+            effectiveStartDate
+            id
+          }
+          area
+          distance
+          elevationProfile {
+            distance
+            elevation
+          }
           lat
           lon
-          name
-          vertexType
-          rentalVehicle {
-            network
-          }
-          stop {
-            id
-            code
-            gtfsId
-            alerts {
-              alertHeaderText
-              alertDescriptionText
-              alertUrl
-              effectiveStartDate
-            }
-          }
+        relativeDirection
+          stayOn
+          streetName
         }
         to {
           lat
           lon
           name
-          vertexType
           rentalVehicle {
+            id
             network
           }
           stop {
-            id
-            code
-            gtfsId
             alerts {
-              alertHeaderText
               alertDescriptionText
+              alertHeaderText
               alertUrl
               effectiveStartDate
+              id
             }
+            code
+            gtfsId
+            id
           }
+          vertexType
         }
-        steps {
-          distance
-          lat
-          lon
-          relativeDirection
-          absoluteDirection
-          stayOn
-          streetName
-          area
-          alerts {
-            alertHeaderText
-            alertDescriptionText
-            alertUrl
-            effectiveStartDate
-          }
-          elevationProfile {
-            distance
-            elevation
-          }
+        transitLeg
+        trip {
+          gtfsId
+          id
+          tripHeadsign
         }
       }
+      startTime
+      waitingTime
+      walkTime
+    }
+    routingErrors {
+      code
+      description
+      inputField
     }
   }
 }
