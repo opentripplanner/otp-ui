@@ -102,6 +102,7 @@ export default function TNCLeg({
                     description="Hint text to book a ride at a later time."
                     id="otpUi.AccessLegBody.TncLeg.bookRideLater"
                     values={{
+                      // TODO: Format correctly
                       timeMillis: rideHailingEstimate.arrival
                     }}
                   />

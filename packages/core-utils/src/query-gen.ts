@@ -58,7 +58,11 @@ export function extractAdditionalModes(
     }
 
     // In checkboxes, mode must be enabled and have a transport mode in it
-    if (cur.type === "CHECKBOX" && cur.addTransportMode && cur.value) {
+    if (
+      (cur.type === "CHECKBOX" || cur.type === "SUBMODE") &&
+      cur.addTransportMode &&
+      cur.value
+    ) {
       return [...prev, cur.addTransportMode];
     }
     if (cur.type === "DROPDOWN") {

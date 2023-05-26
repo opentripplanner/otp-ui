@@ -58,6 +58,7 @@ export default function TNCLeg({
               description="Describes the estimated TNC wait time."
               id="otpUi.PrintableItinerary.TncLeg.estimatedWaitTime"
               values={{
+                // TODO: Correctly format
                 duration: <Defaults.Duration seconds={leg.startTime} />,
                 strong: strongText
               }}

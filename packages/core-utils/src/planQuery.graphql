@@ -45,7 +45,15 @@ query PlanQuery(
       startTime
       waitingTime
       walkTime
+      accessibilityScore
       legs {
+        pickupType
+        dropoffType
+        pickupBookingInfo {
+          earliestBookingTime {
+            daysPrior
+          }
+        }
         rentedBike
         interlineWithPreviousLeg
         departureDelay
@@ -76,6 +84,7 @@ query PlanQuery(
         realtimeState
         startTime
         transitLeg
+        accessibilityScore
         trip {
           id
           gtfsId

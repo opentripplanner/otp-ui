@@ -1,11 +1,35 @@
 otpUi:
   DateTimeSelector:
     arrive: Arrivée
-    depart: Départ
-    now: Maintenant
     date: Date
     dateTimeSelector: Sélecteur de date et heure
+    depart: Départ
+    now: Maintenant
     time: Heure
+  ModeSelector:
+    labels:
+      bicycle: Vélo
+      car: Voiture
+      rent: Location
+      transit: Transports
+      walk: Marche
+    settings:
+      bikeTolerance-label: Tolérance pour le vélo
+      bikeTolerance-labelHigh: Plus de vélo
+      bikeTolerance-labelLow: Moins de vélo
+      bus-label: Bus
+      carTolerance-label: Tolérance pour la voiture
+      carTolerance-labelHigh: Plus de voiture
+      carTolerance-labelLow: Moins de voiture
+      ferry-label: Ferry
+      rail-label: Train
+      subway-label: Métro
+      tram-label: Tram
+      walkTolerance-label: Tolérance pour la marche
+      walkTolerance-labelHigh: Plus de marche
+      walkTolerance-labelLow: Moins de marche
+      wheelchair-label: Accès avec mobilité réduite
+    settingsLabel: "Paramètres pour : {mode}"
   SettingsSelectorPanel:
     bikeOnly: Vélo uniquement
     escooterOnly: Trottinette uniquement
