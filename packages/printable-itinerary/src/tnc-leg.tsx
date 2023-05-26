@@ -40,7 +40,8 @@ export default function TNCLeg({
             description="Summary text for TNC leg"
             id="otpUi.PrintableItinerary.TncLeg.header"
             values={{
-              company: getCompanyForNetwork(rideHailingEstimate.provider.id),
+              company: getCompanyForNetwork(rideHailingEstimate.provider.id)
+                ?.label,
               place: leg.to.name,
               strong: strongText
             }}
