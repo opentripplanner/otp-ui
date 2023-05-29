@@ -3250,6 +3250,25 @@
     maplibre-gl "^2.1.9"
     react-map-gl "^7.0.15"
 
+"@opentripplanner/core-utils@9.0.0-alpha.26":
+  version "9.0.0-alpha.26"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-9.0.0-alpha.26.tgz#3bcba7a3e2d61f2b94a31137c73ba48c5fdf1777"
+  integrity sha512-tksrfGdNM9v3gQz65A8JYzTLBVlwIpsJoISLjgLR9l/TXEX1B4V9cZZH9N1wBCBStISKHeRpbeQdNMs0PxSOpg==
+  dependencies:
+    "@conveyal/lonlat" "^1.4.1"
+    "@mapbox/polyline" "^1.1.0"
+    "@opentripplanner/geocoder" "^1.4.0"
+    "@styled-icons/foundation" "^10.34.0"
+    "@turf/along" "^6.0.1"
+    bowser "^2.7.0"
+    chroma-js "^2.4.2"
+    date-fns "^2.28.0"
+    date-fns-tz "^1.2.2"
+    graphql "^16.6.0"
+    lodash.clonedeep "^4.5.0"
+    lodash.isequal "^4.5.0"
+    qs "^6.9.1"
+
 "@opentripplanner/core-utils@^7.0.5":
   version "7.0.10"
   resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-7.0.10.tgz#697aa2309cee35716bcc3f38311739a75353172c"
@@ -3296,6 +3315,16 @@
     isomorphic-mapzen-search "^1.6.1"
     lodash.memoize "^4.1.2"
 
+"@opentripplanner/geocoder@^1.3.2", "@opentripplanner/geocoder@^1.4.0":
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/geocoder/-/geocoder-1.4.1.tgz#ee1aa00ce6938ab7a7b9ed4e0fa894a226352ee1"
+  integrity sha512-P2tvUkJRYcuT71UMC5MalJuHwVCT+JXw/C/rAVTrwhvFXn+4mceHlBBNLXGzQyzVceBE5lER0xC1PB7xBQeL0w==
+  dependencies:
+    "@conveyal/geocoder-arcgis-geojson" "^0.0.3"
+    "@conveyal/lonlat" "^1.4.1"
+    isomorphic-mapzen-search "^1.6.1"
+    lodash.memoize "^4.1.2"
+
 "@opentripplanner/icons@^2.0.1":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@opentripplanner/icons/-/icons-2.0.1.tgz#d17b6e58318ffdcc9a39b03851ff4bc73b3d3458"
@@ -3303,6 +3332,24 @@
   dependencies:
     "@opentripplanner/core-utils" "^7.0.5"
     prop-types "^15.7.2"
+
+"@opentripplanner/itinerary-body@^4.1.17":
+  version "4.1.19"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/itinerary-body/-/itinerary-body-4.1.19.tgz#e9b6e02ed5cc63bcda1eedf99fb7ba250997ba5c"
+  integrity sha512-VCbZRdgt3Av9k9XClEtclJIm6hltkG7kJPLn7AVwUZe7dpf/JIi91TmfmpGgvbtmv4CLmf08xZ8sWaHFlt5OKw==
+  dependencies:
+    "@opentripplanner/core-utils" "^8.2.1"
+    "@opentripplanner/humanize-distance" "^1.2.0"
+    "@opentripplanner/icons" "^2.0.1"
+    "@opentripplanner/location-icon" "^1.4.1"
+    "@styled-icons/fa-solid" "^10.34.0"
+    "@styled-icons/foundation" "^10.34.0"
+    date-fns "^2.28.0"
+    date-fns-tz "^1.2.2"
+    flat "^5.0.2"
+    react-animate-height "^3.0.4"
+    react-resize-detector "^4.2.1"
+    string-similarity "^4.0.4"
 
 "@opentripplanner/types@6.0.0-alpha.4":
   version "6.0.0-alpha.4"
