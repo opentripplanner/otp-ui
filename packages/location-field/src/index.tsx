@@ -212,6 +212,10 @@ const LocationField = ({
           return;
         }
         setFetching(true);
+
+        // Cancel all pending requests
+        window.stop();
+
         setMessage(
           intl.formatMessage({
             defaultMessage: "Fetching suggestions…",
