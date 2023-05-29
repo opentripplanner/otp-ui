@@ -177,8 +177,6 @@ const LocationField = ({
 
   const listBoxId = `listbox-${optionKey}`;
 
-  let controller = new AbortController();
-
   const intl = useIntl();
 
   const [activeIndex, setActiveIndex] = useState(null);
@@ -187,6 +185,9 @@ const LocationField = ({
   const [isFetching, setFetching] = useState(false);
   const [stateMessage, setMessage] = useState(null);
   const [stateValue, setValue] = useState(getValueFromLocation());
+  const [abortControllers, setAbortController] = useState([
+    new AbortController()
+  ]);
 
   const inputRef = useRef(null);
 
@@ -210,9 +211,6 @@ const LocationField = ({
       return;
     }
     setFetching(true);
-    controller.abort();
-    controller = new AbortController();
-
     setMessage(
       intl.formatMessage({
         defaultMessage: "Fetching suggestions…",
@@ -220,10 +218,12 @@ const LocationField = ({
         id: "otpUi.LocationField.fetchingSuggestions"
       })
     );
+    const newController = new AbortController();
+    setAbortController([...abortControllers, newController]);
 
     getGeocoder(geocoderConfig)
       // .autocomplete({ text })
-      .autocomplete({ text, options: { signal: controller.signal } })
+      .autocomplete({ text, options: { signal: newController.signal } })
       // TODO: Better type?
       .then(
         (result: {
@@ -393,6 +393,9 @@ const LocationField = ({
     const { value } = evt.target;
     setValue(value);
     setMenuVisible(true);
+
+    abortControllers.forEach(ac => ac.abort());
+
     geocodeAutocomplete(value);
   };
 
