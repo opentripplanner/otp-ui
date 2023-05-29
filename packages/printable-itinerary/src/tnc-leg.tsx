@@ -4,6 +4,7 @@ import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
 import { getCompanyForNetwork } from "@opentripplanner/core-utils/lib/itinerary";
+import { parseOTP2Minute } from "@opentripplanner/itinerary-body/src/util";
 import AccessibilityAnnotation from "./accessibility-annotation";
 import * as S from "./styled";
 
@@ -48,22 +49,32 @@ export default function TNCLeg({
           />
         </S.LegHeader>
         <S.LegDetails>
-          <S.LegDetail>
-            <FormattedMessage
-              defaultMessage={
-                defaultMessages[
-                  "otpUi.PrintableItinerary.TncLeg.estimatedWaitTime"
-                ]
-              }
-              description="Describes the estimated TNC wait time."
-              id="otpUi.PrintableItinerary.TncLeg.estimatedWaitTime"
-              values={{
-                // TODO: Correctly format
-                duration: <Defaults.Duration seconds={leg.startTime} />,
-                strong: strongText
-              }}
-            />
-          </S.LegDetail>
+          {typeof leg?.rideHailingEstimate?.arrival === "string" && (
+            <S.LegDetail>
+              <FormattedMessage
+                defaultMessage={
+                  defaultMessages[
+                    "otpUi.PrintableItinerary.TncLeg.estimatedWaitTime"
+                  ]
+                }
+                description="Describes the estimated TNC wait time."
+                id="otpUi.PrintableItinerary.TncLeg.estimatedWaitTime"
+                values={{
+                  duration: (
+                    <Defaults.Duration
+                      seconds={
+                        parseInt(
+                          parseOTP2Minute(leg.rideHailingEstimate.arrival),
+                          10
+                        ) * 60
+                      }
+                    />
+                  ),
+                  strong: strongText
+                }}
+              />
+            </S.LegDetail>
+          )}
           <S.LegDetail>
             <FormattedMessage
               defaultMessage={

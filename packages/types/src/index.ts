@@ -327,7 +327,7 @@ export type Leg = {
   routeTextColor?: string;
   routeType?: number;
   serviceDate?: string;
-  startTime: number;
+  startTime: number | string;
   steps: Step[];
   to: Place;
   transitLeg: boolean;

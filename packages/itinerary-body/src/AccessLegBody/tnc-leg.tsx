@@ -6,7 +6,7 @@ import { getCompanyForNetwork } from "@opentripplanner/core-utils/lib/itinerary"
 import { Duration } from "../defaults";
 
 import * as S from "../styled";
-import { defaultMessages } from "../util";
+import { defaultMessages, parseOTP2Minute } from "../util";
 
 import AccessLegSummary from "./access-leg-summary";
 
@@ -59,7 +59,9 @@ export default function TNCLeg({
               rideHailingEstimate.provider.id,
               config.companies
             )?.label,
-            minutes: followsTransit ? 0 : rideHailingEstimate.arrival
+            minutes: followsTransit
+              ? 0
+              : parseInt(parseOTP2Minute(leg.rideHailingEstimate.arrival), 10)
           }}
         />
       </S.PlaceSubheader>
@@ -89,7 +91,7 @@ export default function TNCLeg({
             />
           </S.BookTNCRideButton>
           {followsTransit && <S.BookLaterPointer />}
-          {followsTransit && (
+          {followsTransit && typeof leg.startTime === "number" && (
             <S.BookLaterContainer>
               <S.BookLaterInnerContainer>
                 <S.BookLaterText>
@@ -102,8 +104,12 @@ export default function TNCLeg({
                     description="Hint text to book a ride at a later time."
                     id="otpUi.AccessLegBody.TncLeg.bookRideLater"
                     values={{
-                      // TODO: Format correctly
-                      timeMillis: rideHailingEstimate.arrival
+                      timeMillis:
+                        leg.startTime -
+                        parseInt(
+                          parseOTP2Minute(rideHailingEstimate.arrival),
+                          10
+                        )
                     }}
                   />
                 </S.BookLaterText>
