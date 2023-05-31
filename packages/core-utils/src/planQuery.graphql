@@ -59,6 +59,28 @@ query Plan(
         dropoffType
         duration
         endTime
+        fareProducts {
+          id
+          product {
+            id
+            medium {
+              id
+              name
+            }
+            name
+            price {
+              amount
+              currency {
+                code
+                digits
+              }
+            }
+            riderCategory {
+              id
+              name
+            }
+          }
+        }
         from {
           lat
           lon
