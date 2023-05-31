@@ -259,6 +259,10 @@
       "prettier --write",
       "git add"
     ],
+    "*.{graphql}": [
+      "yarn lint:graphql --fix",
+      "git add"
+    ],
     "!(.github/**).{yml,yaml}": [
       "prettier --write",
       "yaml-sort --quotingStyle double --input",
