@@ -185,9 +185,7 @@ const LocationField = ({
   const [isFetching, setFetching] = useState(false);
   const [stateMessage, setMessage] = useState(null);
   const [stateValue, setValue] = useState(getValueFromLocation());
-  const [abortControllers, setAbortController] = useState([
-    new AbortController()
-  ]);
+  const [abortControllers, setAbortController] = useState([]);
 
   const inputRef = useRef(null);
 
@@ -222,7 +220,6 @@ const LocationField = ({
     setAbortController([...abortControllers, newController]);
 
     getGeocoder(geocoderConfig)
-      // .autocomplete({ text })
       .autocomplete({ text, options: { signal: newController.signal } })
       // TODO: Better type?
       .then(
