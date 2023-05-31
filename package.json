@@ -259,7 +259,7 @@
       "prettier --write",
       "git add"
     ],
-    "*.{yml,yaml}": [
+    "!(.github/**).{yml,yaml}": [
       "prettier --write",
       "yaml-sort --quotingStyle double --input",
       "git add"
