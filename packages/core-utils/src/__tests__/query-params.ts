@@ -163,6 +163,26 @@ describe("query-gen", () => {
         ["WALK"]
       ]
     );
+
+    expectModes(
+      ["CAR_HAIL", "TRANSIT"],
+      [["TRANSIT"], ["CAR_HAIL", "TRANSIT"]]
+    );
+    expectModes(
+      ["CAR_HAIL", "BICYCLE_RENT", "TRANSIT"],
+      [["TRANSIT"], ["CAR_HAIL", "TRANSIT"], ["BICYCLE_RENT", "TRANSIT"]]
+    );
+    expectModes(
+      ["CAR_HAIL", "BICYCLE_RENT", "TRANSIT", "WALK"],
+      [
+        ["TRANSIT"],
+        ["CAR_HAIL", "TRANSIT"],
+        ["CAR_HAIL", "WALK"],
+        ["BICYCLE_RENT", "TRANSIT"],
+        ["BICYCLE_RENT", "WALK"],
+        ["WALK"]
+      ]
+    );
     expectModes(
       ["FLEX", "TRANSIT", "WALK"],
       [["TRANSIT"], ["FLEX", "TRANSIT"], ["FLEX", "WALK"], ["WALK"]]
