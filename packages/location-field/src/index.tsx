@@ -568,6 +568,46 @@ const LocationField = ({
   let itemIndex = 0; // the index of the current location-associated menu item (excluding non-selectable items)
   const locationSelectedLookup = {}; // maps itemIndex to a location selection handler (for use by the onKeyDown method)
 
+  /* 0) Include user saved locations if the typed text contains those locations name. */
+  if (
+    userLocationsAndRecentPlaces.length > 0 &&
+    showUserSettings &&
+    stateValue !== ""
+  ) {
+    const matchingUserLocations = userLocationsAndRecentPlaces.filter(loc => {
+      const fullName = getStoredPlaceName(loc);
+      return fullName.toLowerCase().indexOf(stateValue.toLowerCase()) !== -1;
+    });
+    if (matchingUserLocations.length) {
+      // Iterate through any saved locations
+      menuItems = menuItems.concat(
+        matchingUserLocations.map(userLocation => {
+          // Create the location-selected handler
+          const locationSelected = () => {
+            setLocation(userLocation, "SAVED");
+          };
+
+          // Add to the selection handler lookup (for use in onKeyDown)
+          locationSelectedLookup[itemIndex] = locationSelected;
+
+          // Create and return the option menu item
+          const option = (
+            <Option
+              icon={<UserLocationIconComponent userLocation={userLocation} />}
+              id={getOptionId(itemIndex)}
+              isActive={itemIndex === activeIndex}
+              key={optionKey++}
+              onClick={locationSelected}
+              title={getStoredPlaceName(userLocation)}
+            />
+          );
+          itemIndex++;
+          return option;
+        })
+      );
+    }
+  }
+
   /* 1) Process geocode search result option(s) */
   if (geocodedFeatures.length > 0) {
     const {
