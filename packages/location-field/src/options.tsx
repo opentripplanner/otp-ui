@@ -181,6 +181,7 @@ export function getStoredPlaceName(
   location: UserLocation,
   withDetails = true
 ): string {
+  // The useIntl hook works here somehow!
   const intl = useIntl();
   let detailText;
   if (withDetails) {
@@ -195,4 +196,16 @@ export function getStoredPlaceName(
   }
 
   return addInParentheses(intl, getLocationName(location, intl), detailText);
+}
+
+/**
+ * Helper to populate the display name for a user-saved location.
+ */
+export function withDisplayName(
+  location: UserLocation
+): UserLocationWithDisplayName {
+  return {
+    ...location,
+    displayName: getStoredPlaceName(location)
+  };
 }

@@ -311,3 +311,7 @@ export interface Label {
   main: string;
   secondary?: string;
 }
+
+export interface UserLocationWithDisplayName extends UserLocation {
+  displayName: string;
+}
