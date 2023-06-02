@@ -13,7 +13,8 @@ import * as S from "./styled";
 import {
   UserLocationIconType,
   UserLocationSelectedHandler,
-  UserLocationRenderData
+  UserLocationRenderData,
+  UserLocationIconProps
 } from "./types";
 import { addInParentheses } from "./utils";
 
@@ -155,9 +156,7 @@ export function TransitStopOption({
 
 export function UserLocationIcon({
   userLocation
-}: {
-  userLocation: UserLocation;
-}): React.ReactElement {
+}: UserLocationIconProps): React.ReactElement {
   if (userLocation.icon === "work") return <Briefcase size={ICON_SIZE} />;
   if (userLocation.icon === "home") return <Home size={ICON_SIZE} />;
   return <MapMarker size={ICON_SIZE} />;

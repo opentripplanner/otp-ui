@@ -17,7 +17,7 @@ export interface LocationSelectedEvent {
   resultType: ResultType;
 }
 
-interface UserLocationIconProps {
+export interface UserLocationIconProps {
   userLocation: UserLocation
 }
 
