@@ -1,4 +1,4 @@
-import { getMatchingUserLocations } from "../utils";
+import { getMatchingLocations } from "../utils";
 
 const places = [
   {
@@ -19,7 +19,7 @@ const places = [
 ];
 
 describe("location-field > options", () => {
-  describe("getMatchingUserLocations", () => {
+  describe("getMatchingLocations", () => {
     it("matches a location when passing substrings of its name or address", () => {
       const testCases = [
         {
@@ -37,7 +37,7 @@ describe("location-field > options", () => {
       ];
       testCases.forEach(({ expected, strings }) => {
         strings.forEach(text => {
-          const match = getMatchingUserLocations(places, text);
+          const match = getMatchingLocations(places, text);
           expect(match.length).toBe(1);
           expect(match[0]).toBe(expected);
         });

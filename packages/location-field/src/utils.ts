@@ -107,7 +107,7 @@ export const getGeocoderErrorMessage = (
 /**
  * Helper to compute matching user locations as you type.
  */
-export function getMatchingUserLocations(
+export function getMatchingLocations(
   places: UserLocationWithRenderData[],
   text: string
 ): UserLocationWithRenderData[] {

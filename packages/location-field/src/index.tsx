@@ -30,7 +30,7 @@ import {
   generateLabel,
   getCombinedLabel,
   getGeocoderErrorMessage,
-  getMatchingUserLocations
+  getMatchingLocations
 } from "./utils";
 
 const optionIdPrefix = "otpui-locf-option";
@@ -568,27 +568,29 @@ const LocationField = ({
   let menuItems = []; // array of menu items for display (may include non-selectable items e.g. dividers/headings)
   let itemIndex = 0; // the index of the current location-associated menu item (excluding non-selectable items)
   const locationSelectedLookup = {}; // maps itemIndex to a location selection handler (for use by the onKeyDown method)
-  const locationsWithRenderData = userLocationsAndRecentPlaces.map(loc =>
-    addRenderData(loc, setLocation)
-  );
+  const locationsWithRenderData = showUserSettings
+    ? userLocationsAndRecentPlaces.map(loc =>
+        addRenderData(loc, setLocation, UserLocationIconComponent)
+      )
+    : [];
 
   /* 0) Include user saved locations if the typed text contains those locations name. */
   if (showUserSettings) {
-    const matchingUserLocations = getMatchingUserLocations(
+    const matchingLocations = getMatchingLocations(
       locationsWithRenderData,
       stateValue
     );
-    if (matchingUserLocations.length) {
+    if (matchingLocations.length) {
       // Iterate through any saved locations
       menuItems = menuItems.concat(
-        matchingUserLocations.map(userLocation => {
+        matchingLocations.map(userLocation => {
           // Add to the selection handler lookup (for use in onKeyDown)
           locationSelectedLookup[itemIndex] = userLocation.locationSelected;
 
           // Create and return the option menu item
           const option = (
             <Option
-              icon={<UserLocationIconComponent userLocation={userLocation} />}
+              icon={userLocation.icon}
               id={getOptionId(itemIndex)}
               isActive={itemIndex === activeIndex}
               key={optionKey++}
@@ -774,7 +776,7 @@ const LocationField = ({
         // Create and return the option menu item
         const option = (
           <Option
-            icon={<UserLocationIconComponent userLocation={userLocation} />}
+            icon={userLocation.icon}
             id={getOptionId(itemIndex)}
             isActive={itemIndex === activeIndex}
             key={optionKey++}

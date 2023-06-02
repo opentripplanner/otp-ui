@@ -11,6 +11,7 @@ import { MapPin } from "@styled-icons/fa-solid/MapPin";
 
 import * as S from "./styled";
 import {
+  UserLocationIconType,
   UserLocationSelectedHandler,
   UserLocationWithRenderData
 } from "./types";
@@ -207,11 +208,13 @@ export function getStoredPlaceName(
  */
 export function addRenderData(
   location: UserLocation,
-  setLocation: UserLocationSelectedHandler
+  setLocation: UserLocationSelectedHandler,
+  Icon: UserLocationIconType
 ): UserLocationWithRenderData {
   return {
     ...location,
     displayName: getStoredPlaceName(location),
+    icon: <Icon userLocation={location} />,
     // Create the event handler for when the location is selected
     locationSelected: () => setLocation(location, "SAVED")
   };
