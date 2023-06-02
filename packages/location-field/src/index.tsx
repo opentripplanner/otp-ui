@@ -21,7 +21,7 @@ import {
   Option,
   TransitStopOption,
   UserLocationIcon,
-  addRenderData
+  getRenderData
 } from "./options";
 import * as S from "./styled";
 import { LocationFieldProps, ResultType } from "./types";
@@ -568,16 +568,16 @@ const LocationField = ({
   let menuItems = []; // array of menu items for display (may include non-selectable items e.g. dividers/headings)
   let itemIndex = 0; // the index of the current location-associated menu item (excluding non-selectable items)
   const locationSelectedLookup = {}; // maps itemIndex to a location selection handler (for use by the onKeyDown method)
-  const locationsWithRenderData = showUserSettings
+  const userLocationRenderData = showUserSettings
     ? userLocationsAndRecentPlaces.map(loc =>
-        addRenderData(loc, setLocation, UserLocationIconComponent)
+        getRenderData(loc, setLocation, UserLocationIconComponent)
       )
     : [];
 
   /* 0) Include user saved locations if the typed text contains those locations name. */
   if (showUserSettings) {
     const matchingLocations = getMatchingLocations(
-      locationsWithRenderData,
+      userLocationRenderData,
       stateValue
     );
     if (matchingLocations.length) {
@@ -769,7 +769,7 @@ const LocationField = ({
 
     // Iterate through any saved locations
     menuItems = menuItems.concat(
-      locationsWithRenderData.map(userLocation => {
+      userLocationRenderData.map(userLocation => {
         // Add to the selection handler lookup (for use in onKeyDown)
         locationSelectedLookup[itemIndex] = userLocation.locationSelected;
 

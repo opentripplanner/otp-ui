@@ -2,19 +2,13 @@ import { getMatchingLocations } from "../utils";
 
 const places = [
   {
-    displayName: "Work (123 Main Street)",
-    lat: 1,
-    lon: 2
+    displayName: "Work (123 Main Street)"
   },
   {
-    displayName: "Home (123 Quiet Street)",
-    lat: 1,
-    lon: 2
+    displayName: "Home (123 Quiet Street)"
   },
   {
-    displayName: "Coffee Shop (Best Coffee, 456 River Street)",
-    lat: 1,
-    lon: 2
+    displayName: "Coffee Shop (Best Coffee, 456 River Street)"
   }
 ];
 

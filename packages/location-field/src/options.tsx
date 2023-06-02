@@ -13,7 +13,7 @@ import * as S from "./styled";
 import {
   UserLocationIconType,
   UserLocationSelectedHandler,
-  UserLocationWithRenderData
+  UserLocationRenderData
 } from "./types";
 import { addInParentheses } from "./utils";
 
@@ -206,13 +206,12 @@ export function getStoredPlaceName(
 /**
  * Helper to populate the display name for a user-saved location.
  */
-export function addRenderData(
+export function getRenderData(
   location: UserLocation,
   setLocation: UserLocationSelectedHandler,
   Icon: UserLocationIconType
-): UserLocationWithRenderData {
+): UserLocationRenderData {
   return {
-    ...location,
     displayName: getStoredPlaceName(location),
     icon: <Icon userLocation={location} />,
     // Create the event handler for when the location is selected

@@ -1,5 +1,5 @@
 import { Location, Stop, UserLocation, UserPosition } from "@opentripplanner/types";
-import React, { ComponentType } from "react";
+import React, { ComponentType, ReactNode } from "react";
 // eslint-disable-next-line prettier/prettier
 import type { IntlShape } from "react-intl";
 
@@ -318,7 +318,8 @@ export interface Label {
 
 export type UserLocationSelectedHandler = (newLocation: Location, resultType: ResultType) => void;
 
-export interface UserLocationWithRenderData extends UserLocation {
+export interface UserLocationRenderData {
   displayName: string;
+  icon?: ReactNode;
   locationSelected?: () => void
 }
