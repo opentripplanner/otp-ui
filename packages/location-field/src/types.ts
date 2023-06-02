@@ -312,6 +312,9 @@ export interface Label {
   secondary?: string;
 }
 
-export interface UserLocationWithDisplayName extends UserLocation {
+export type UserLocationSelectedHandler = (newLocation: Location, resultType: ResultType) => void;
+
+export interface UserLocationWithRenderData extends UserLocation {
   displayName: string;
+  locationSelected?: () => void
 }

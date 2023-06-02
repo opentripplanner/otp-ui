@@ -1,5 +1,6 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceStringImperial } from "@opentripplanner/humanize-distance";
+import { Stop, UserLocation } from "@opentripplanner/types";
 import React from "react";
 import { IntlShape, useIntl } from "react-intl";
 import { Bus } from "@styled-icons/fa-solid/Bus";
@@ -8,8 +9,11 @@ import { Home } from "@styled-icons/fa-solid/Home";
 import { MapMarker } from "@styled-icons/fa-solid/MapMarker";
 import { MapPin } from "@styled-icons/fa-solid/MapPin";
 
-import { Stop, UserLocation } from "@opentripplanner/types";
 import * as S from "./styled";
+import {
+  UserLocationSelectedHandler,
+  UserLocationWithRenderData
+} from "./types";
 import { addInParentheses } from "./utils";
 
 export const ICON_SIZE = 13;
@@ -201,11 +205,14 @@ export function getStoredPlaceName(
 /**
  * Helper to populate the display name for a user-saved location.
  */
-export function withDisplayName(
-  location: UserLocation
-): UserLocationWithDisplayName {
+export function addRenderData(
+  location: UserLocation,
+  setLocation: UserLocationSelectedHandler
+): UserLocationWithRenderData {
   return {
     ...location,
-    displayName: getStoredPlaceName(location)
+    displayName: getStoredPlaceName(location),
+    // Create the event handler for when the location is selected
+    locationSelected: () => setLocation(location, "SAVED")
   };
 }
