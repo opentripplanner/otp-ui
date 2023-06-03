@@ -127,6 +127,25 @@ function getFeaturesByCategoryWithLimit(
   };
 }
 
+/**
+ * Helper to render and register a user-saved location.
+ */
+function makeUserOption(userLocation, index, key, activeIndex, selectHandlers) {
+  const { displayName, icon, locationSelected } = userLocation;
+  // Add to the selection handler lookup (for use in onKeyDown)
+  selectHandlers[index] = locationSelected;
+  return (
+    <Option
+      icon={icon}
+      id={getOptionId(index)}
+      isActive={index === activeIndex}
+      key={key}
+      onClick={locationSelected}
+      title={displayName}
+    />
+  );
+}
+
 const LocationField = ({
   addLocationSearch = () => {},
   autoFocus = false,
@@ -583,24 +602,15 @@ const LocationField = ({
     if (matchingLocations.length) {
       // Iterate through any saved locations
       menuItems = menuItems.concat(
-        matchingLocations.map(userLocation => {
-          // Add to the selection handler lookup (for use in onKeyDown)
-          locationSelectedLookup[itemIndex] = userLocation.locationSelected;
-
-          // Create and return the option menu item
-          const option = (
-            <Option
-              icon={userLocation.icon}
-              id={getOptionId(itemIndex)}
-              isActive={itemIndex === activeIndex}
-              key={optionKey++}
-              onClick={userLocation.locationSelected}
-              title={userLocation.displayName}
-            />
-          );
-          itemIndex++;
-          return option;
-        })
+        matchingLocations.map(userLocation =>
+          makeUserOption(
+            userLocation,
+            itemIndex++,
+            optionKey++,
+            itemIndex === activeIndex,
+            locationSelectedLookup
+          )
+        )
       );
     }
   }
@@ -769,24 +779,15 @@ const LocationField = ({
 
     // Iterate through any saved locations
     menuItems = menuItems.concat(
-      userLocationRenderData.map(userLocation => {
-        // Add to the selection handler lookup (for use in onKeyDown)
-        locationSelectedLookup[itemIndex] = userLocation.locationSelected;
-
-        // Create and return the option menu item
-        const option = (
-          <Option
-            icon={userLocation.icon}
-            id={getOptionId(itemIndex)}
-            isActive={itemIndex === activeIndex}
-            key={optionKey++}
-            onClick={userLocation.locationSelected}
-            title={userLocation.displayName}
-          />
-        );
-        itemIndex++;
-        return option;
-      })
+      userLocationRenderData.map(userLocation =>
+        makeUserOption(
+          userLocation,
+          itemIndex++,
+          optionKey++,
+          itemIndex === activeIndex,
+          locationSelectedLookup
+        )
+      )
     );
   }
 
