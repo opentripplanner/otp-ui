@@ -127,7 +127,7 @@ const VALID_COMBOS = [
   ["TRANSIT", "CAR"]
 ];
 
-const BANNED_TOGETHER = ["SCOOTER", "BICYCLE"];
+const BANNED_TOGETHER = ["SCOOTER", "BICYCLE", "CAR"];
 
 export const TRANSIT_SUBMODES = Object.keys(SIMPLIFICATIONS).filter(
   mode => SIMPLIFICATIONS[mode] === "TRANSIT" && mode !== "TRANSIT"
@@ -168,7 +168,9 @@ function isCombinationValid(
   }
 
   // OTP doesn't support multiple non-walk modes
-  if (BANNED_TOGETHER.every(m => combo.find(c => c.mode === m))) return false;
+  if (BANNED_TOGETHER.filter(m => combo.find(c => c.mode === m)).length > 1) {
+    return false;
+  }
 
   return !!VALID_COMBOS.find(
     vc =>
