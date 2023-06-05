@@ -37,5 +37,15 @@ describe("location-field > options", () => {
         });
       });
     });
+    it("matches two locations if they have the typed content", () => {
+      const match = getMatchingLocations(places, "123");
+      expect(match.length).toBe(2);
+      expect(match.includes(places[0])).toBe(true);
+      expect(match.includes(places[1])).toBe(true);
+    });
+    it("matches no location when passing irrelevant text", () => {
+      const match = getMatchingLocations(places, "stuff");
+      expect(match.length).toBe(0);
+    });
   });
 });
