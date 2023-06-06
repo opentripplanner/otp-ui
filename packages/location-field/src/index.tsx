@@ -5,7 +5,7 @@ import getGeocoder from "@opentripplanner/geocoder";
 // @ts-ignore Not Typescripted Yet
 import LocationIcon from "@opentripplanner/location-icon";
 import { Location } from "@opentripplanner/types";
-import React, { useEffect, useMemo, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { FormattedList, FormattedMessage, useIntl } from "react-intl";
 import { Ban } from "@styled-icons/fa-solid/Ban";
 import { Bus } from "@styled-icons/fa-solid/Bus";
@@ -185,6 +185,7 @@ const LocationField = ({
   const [isFetching, setFetching] = useState(false);
   const [stateMessage, setMessage] = useState(null);
   const [stateValue, setValue] = useState(getValueFromLocation());
+  const [abortControllers, setAbortController] = useState([]);
 
   const inputRef = useRef(null);
 
@@ -201,132 +202,129 @@ const LocationField = ({
     }
   }, [initialSearchResults]);
 
-  const geocodeAutocomplete = useMemo(
-    () =>
-      debounce(300, (text: string) => {
-        if (!text) {
-          console.warn(
-            "No text entry provided for geocode autocomplete search."
-          );
-          setMessage(null);
-          return;
-        }
-        setFetching(true);
-        setMessage(
-          intl.formatMessage({
-            defaultMessage: "Fetching suggestions…",
-            description:
-              "Hint shown while geocoder suggestions are being fetched",
-            id: "otpUi.LocationField.fetchingSuggestions"
-          })
-        );
+  // TODO: is it possible to restore the useCallback while also setting
+  // a new abort controller?
+  const geocodeAutocomplete = debounce(300, (text: string) => {
+    if (!text) {
+      console.warn("No text entry provided for geocode autocomplete search.");
+      setMessage(null);
+      return;
+    }
+    setFetching(true);
+    setMessage(
+      intl.formatMessage({
+        defaultMessage: "Fetching suggestions…",
+        description: "Hint shown while geocoder suggestions are being fetched",
+        id: "otpUi.LocationField.fetchingSuggestions"
+      })
+    );
+    const newController = new AbortController();
+    setAbortController([...abortControllers, newController]);
 
-        getGeocoder(geocoderConfig)
-          .autocomplete({ text })
-          // TODO: Better type?
-          .then(
-            (result: {
-              features: Location[];
-              results: { error: { message: string } };
-            }) => {
-              let message: string;
-              // If no features found in response, default to empty array.
-              let geocodedFeatures = result?.features;
-              if (!geocodedFeatures) {
-                // Get the Pelias error message if exists.
-                // TODO: determine how other geocoders return error messages.
-                const errorMessage = result?.results?.error?.message;
-                // If the result did not contain a list of features, add special note.
-                message = getGeocoderErrorMessage(intl, errorMessage);
-                geocodedFeatures = [];
-              } else {
-                const {
-                  otherFeatures,
-                  stationFeatures,
-                  stopFeatures
-                } = getFeaturesByCategoryWithLimit(
-                  geocodedFeatures,
-                  suggestionCount,
-                  sortByDistance,
-                  preferredLayers
-                );
-                // Breakdown results found by type.
-                const parts = [];
-                if (stopFeatures.length) {
-                  parts.push(
-                    intl.formatMessage(
-                      {
-                        description: "Shows the count of transit stops",
-                        id: "otpUi.LocationField.stopCount"
-                      },
-                      { count: stopFeatures.length }
-                    )
-                  );
-                }
-                if (stationFeatures.length) {
-                  parts.push(
-                    intl.formatMessage(
-                      {
-                        description: "Shows the count of stations",
-                        id: "otpUi.LocationField.stationCount"
-                      },
-                      { count: stationFeatures.length }
-                    )
-                  );
-                }
-                if (otherFeatures.length) {
-                  parts.push(
-                    intl.formatMessage(
-                      {
-                        description: "Shows the count of other places",
-                        id: "otpUi.LocationField.otherCount"
-                      },
-                      { count: otherFeatures.length }
-                    )
-                  );
-                }
-                const hasResults = parts.length !== 0;
-                const results = hasResults
-                  ? intl.formatList(parts, { type: "conjunction" })
-                  : intl.formatMessage({
-                      description: "Indicates no results",
-                      id: "otpUi.LocationField.noResults"
-                    });
-                const resultsFoundText = intl.formatMessage(
+    getGeocoder(geocoderConfig)
+      .autocomplete({ text, options: { signal: newController.signal } })
+      // TODO: Better type?
+      .then(
+        (result: {
+          features: Location[];
+          results: { error: { message: string } };
+        }) => {
+          let message: string;
+          // If no features found in response, default to empty array.
+          let geocodedFeatures = result?.features;
+          if (!geocodedFeatures) {
+            // Get the Pelias error message if exists.
+            // TODO: determine how other geocoders return error messages.
+            const errorMessage = result?.results?.error?.message;
+            // If the result did not contain a list of features, add special note.
+            message = getGeocoderErrorMessage(intl, errorMessage);
+            geocodedFeatures = [];
+          } else {
+            const {
+              otherFeatures,
+              stationFeatures,
+              stopFeatures
+            } = getFeaturesByCategoryWithLimit(
+              geocodedFeatures,
+              suggestionCount,
+              sortByDistance,
+              preferredLayers
+            );
+            // Breakdown results found by type.
+            const parts = [];
+            if (stopFeatures.length) {
+              parts.push(
+                intl.formatMessage(
                   {
-                    description: "Text about geocoder results found",
-                    id: "otpUi.LocationField.resultsFound"
+                    description: "Shows the count of transit stops",
+                    id: "otpUi.LocationField.stopCount"
                   },
-                  {
-                    input: text,
-                    results
-                  }
-                );
-                if (hasResults) {
-                  // If there are results, concatenate sentences about results found and
-                  // instructions for assistive technology users on how to access results.
-                  const instructions = intl.formatMessage({
-                    description: "Instructions on accessing geocoder results",
-                    id: "otpUi.LocationField.howToAccessResults"
-                  });
-                  message = `${resultsFoundText} ${instructions}`;
-                } else {
-                  message = resultsFoundText;
-                }
-              }
-              setGeocodedFeatures(geocodedFeatures);
-              setMessage(message);
-              setFetching(false);
+                  { count: stopFeatures.length }
+                )
+              );
             }
-          )
-          .catch((err: unknown) => {
-            console.error(err);
-            const message = getGeocoderErrorMessage(intl, err.toString());
-            setMessage(message);
-          });
-      }),
-    []
-  );
+            if (stationFeatures.length) {
+              parts.push(
+                intl.formatMessage(
+                  {
+                    description: "Shows the count of stations",
+                    id: "otpUi.LocationField.stationCount"
+                  },
+                  { count: stationFeatures.length }
+                )
+              );
+            }
+            if (otherFeatures.length) {
+              parts.push(
+                intl.formatMessage(
+                  {
+                    description: "Shows the count of other places",
+                    id: "otpUi.LocationField.otherCount"
+                  },
+                  { count: otherFeatures.length }
+                )
+              );
+            }
+            const hasResults = parts.length !== 0;
+            const results = hasResults
+              ? intl.formatList(parts, { type: "conjunction" })
+              : intl.formatMessage({
+                  description: "Indicates no results",
+                  id: "otpUi.LocationField.noResults"
+                });
+            const resultsFoundText = intl.formatMessage(
+              {
+                description: "Text about geocoder results found",
+                id: "otpUi.LocationField.resultsFound"
+              },
+              {
+                input: text,
+                results
+              }
+            );
+            if (hasResults) {
+              // If there are results, concatenate sentences about results found and
+              // instructions for assistive technology users on how to access results.
+              const instructions = intl.formatMessage({
+                description: "Instructions on accessing geocoder results",
+                id: "otpUi.LocationField.howToAccessResults"
+              });
+              message = `${resultsFoundText} ${instructions}`;
+            } else {
+              message = resultsFoundText;
+            }
+          }
+          setGeocodedFeatures(geocodedFeatures);
+          setMessage(message);
+          setFetching(false);
+        }
+      )
+      .catch((err: unknown) => {
+        console.error(err);
+        const message = getGeocoderErrorMessage(intl, err.toString());
+        setMessage(message);
+      });
+  });
 
   const getFormControlClassname = () => {
     return `${locationType}-form-control`;
@@ -394,6 +392,10 @@ const LocationField = ({
     const { value } = evt.target;
     setValue(value);
     setMenuVisible(true);
+
+    // Cancel all pending requests
+    abortControllers.forEach(ac => ac.abort());
+
     geocodeAutocomplete(value);
   };
 
