@@ -202,6 +202,8 @@ const LocationField = ({
     }
   }, [initialSearchResults]);
 
+  // TODO: is it possible to restore the useCallback while also setting
+  // a new abort controller?
   const geocodeAutocomplete = debounce(300, (text: string) => {
     if (!text) {
       console.warn("No text entry provided for geocode autocomplete search.");
@@ -391,6 +393,7 @@ const LocationField = ({
     setValue(value);
     setMenuVisible(true);
 
+    // Cancel all pending requests
     abortControllers.forEach(ac => ac.abort());
 
     geocodeAutocomplete(value);
