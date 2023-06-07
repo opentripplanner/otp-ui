@@ -2057,12 +2057,12 @@
       "alerts": [
         {
           "alertUrl": "https://news.trimet.org/2019/11/next-up-for-elevator-improvements-sunset-transit-center-park-ride/",
-          "effectiveStartDate": 1573083439000,
+          "effectiveStartDate": 1573083439,
           "alertDescriptionText": "The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages."
         },
         {
           "alertUrl": "http://trimet.org/alerts/",
-          "effectiveStartDate": 1572827580000,
+          "effectiveStartDate": 1572827580,
           "alertDescriptionText": "The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms. "
         }
       ],
