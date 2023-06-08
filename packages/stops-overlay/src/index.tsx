@@ -8,6 +8,10 @@ import StopPopup from "@opentripplanner/map-popup";
 
 type Props = {
   /**
+   * Custom stop color passed from user config
+   */
+  stopsColor?: string;
+  /**
    * An optional id to override the active stop with
    */
   activeStop?: string;
@@ -44,6 +48,7 @@ type Props = {
 const StopsOverlay = (props: Props): JSX.Element => {
   const { current: map } = useMap();
   const {
+    stopsColor,
     activeStop,
     minZoom,
     refreshStops,
@@ -143,9 +148,9 @@ const StopsOverlay = (props: Props): JSX.Element => {
           id="stops"
           minzoom={minZoom || 10}
           paint={{
-            "circle-color": "#fff",
+            "circle-color": stopsColor || "#fff",
             "circle-opacity": 0.9,
-            "circle-stroke-color": "#333",
+            "circle-stroke-color": stopsColor ? "#fff" : "#333",
             "circle-stroke-width": 2
           }}
           type="circle"
