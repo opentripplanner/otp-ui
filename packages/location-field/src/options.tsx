@@ -2,7 +2,7 @@ import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceStringImperial } from "@opentripplanner/humanize-distance";
 import { Stop, UserLocation } from "@opentripplanner/types";
 import React from "react";
-import { IntlShape, useIntl } from "react-intl";
+import { IntlShape } from "react-intl";
 import { Bus } from "@styled-icons/fa-solid/Bus";
 import { Briefcase } from "@styled-icons/fa-solid/Briefcase";
 import { Home } from "@styled-icons/fa-solid/Home";
@@ -183,10 +183,9 @@ function getLocationName(location: UserLocation, intl: IntlShape): string {
 
 export function getStoredPlaceName(
   location: UserLocation,
+  intl: IntlShape,
   withDetails = true
 ): string {
-  // The useIntl hook works here somehow!
-  const intl = useIntl();
   let detailText;
   if (withDetails) {
     if (location.type === "home" || location.type === "work") {
@@ -208,10 +207,11 @@ export function getStoredPlaceName(
 export function getRenderData(
   location: UserLocation,
   setLocation: UserLocationSelectedHandler,
-  Icon: UserLocationIconType
+  Icon: UserLocationIconType,
+  intl: IntlShape
 ): UserLocationRenderData {
   return {
-    displayName: getStoredPlaceName(location),
+    displayName: getStoredPlaceName(location, intl),
     icon: <Icon userLocation={location} />,
     // Create the event handler for when the location is selected
     locationSelected: () => setLocation(location, "SAVED")

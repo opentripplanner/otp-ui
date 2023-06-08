@@ -589,7 +589,7 @@ const LocationField = ({
   const locationSelectedLookup = {}; // maps itemIndex to a location selection handler (for use by the onKeyDown method)
   const userLocationRenderData = showUserSettings
     ? userLocationsAndRecentPlaces.map(loc =>
-        getRenderData(loc, setLocation, UserLocationIconComponent)
+        getRenderData(loc, setLocation, UserLocationIconComponent, intl)
       )
     : [];
 
