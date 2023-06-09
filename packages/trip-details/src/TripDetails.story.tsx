@@ -9,6 +9,7 @@ import {
 } from "@storybook/react";
 import styled from "styled-components";
 // The below eslint-disable is due to https://github.com/storybookjs/storybook/issues/13408
+import { convertGraphQLResponseToLegacy } from "@opentripplanner/core-utils/lib/itinerary";
 // eslint-disable-next-line import/no-named-as-default
 import TripDetails, { FareLegTable } from ".";
 import * as TripDetailsClasses from "./styled";
@@ -17,7 +18,6 @@ import {
   DepartureDetailsProps,
   FareDetailsProps,
   FareTableLayout,
-  FareTableText,
   TripDetailsProps
 } from "./types";
 
@@ -37,10 +37,10 @@ const walkInterlinedTransitItinerary = require("@opentripplanner/itinerary-body/
 const walkOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-only.json");
 const walkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json");
 const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json");
-const fareComponentsItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/fare-components.json");
+const fareProductsItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/leg-fare-products.json");
 const flexItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/flex-itinerary.json");
 const otp2ScooterItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-scooter.json");
-const otp2FareProducts = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-with-fareproducts.json");
+const otp2FareProducts = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/leg-fare-products.json");
 
 const flattenedEnglishMessages = flatten(customEnglishMessages);
 const flattenedFrenchMessages = flatten(customFrenchMessages);
@@ -59,97 +59,52 @@ const StyledTripDetails = styled(TripDetails)`
 
 const otp2FareByLegLayout: FareTableLayout[] = [
   {
-    header: "regular" as FareTableText,
+    headerKey: "regular",
     cols: [
       {
-        header: "cash" as FareTableText,
-        riderCategory: "regular",
-        fareContainer: "cash"
+        columnHeaderKey: "cash",
+        riderCategoryId: "orca:regular",
+        mediumId: "orca:cash"
       },
       {
-        header: "electronic" as FareTableText,
-        riderCategory: "regular",
-        fareContainer: "electronic"
+        columnHeaderKey: "electronic",
+        riderCategoryId: "orca:regular",
+        mediumId: "orca:electronic"
       },
       {
-        header: "special" as FareTableText,
-        riderCategory: "special",
-        fareContainer: "electronic"
+        columnHeaderKey: "special",
+        riderCategoryId: "orca:special",
+        mediumId: "orca:electronic"
       }
     ]
   },
   {
-    header: "youth" as FareTableText,
+    headerKey: "youth",
     cols: [
       {
-        header: "cash" as FareTableText,
-        riderCategory: "youth",
-        fareContainer: "cash"
+        columnHeaderKey: "cash",
+        riderCategoryId: "orca:youth",
+        mediumId: "orca:cash"
       },
       {
-        header: "electronic" as FareTableText,
-        riderCategory: "youth",
-        fareContainer: "electronic"
+        columnHeaderKey: "electronic",
+        riderCategoryId: "orca:youth",
+        mediumId: "orca:electronic"
       }
     ]
   },
   {
-    header: "senior" as FareTableText,
+    headerKey: "senior",
     cols: [
       {
-        header: "cash" as FareTableText,
-        riderCategory: "senior",
-        fareContainer: "cash"
+        columnHeaderKey: "cash",
+        riderCategoryId: "orca:senior",
+        mediumId: "orca:cash"
       },
       {
-        header: "electronic" as FareTableText,
-        riderCategory: "senior",
-        fareContainer: "electronic"
-      }
-    ]
-  }
-];
-const fareByLegLayout: FareTableLayout[] = [
-  {
-    header: "regular" as FareTableText,
-    cols: [
-      {
-        header: "cash" as FareTableText,
-        key: "regular"
-      },
-      {
-        header: "electronic" as FareTableText,
-        key: "electronicRegular"
-      },
-      {
-        header: "special" as FareTableText,
-        key: "electronicSpecial"
-      }
-    ]
-  },
-  {
-    header: "youth" as FareTableText,
-    cols: [
-      {
-        header: "cash" as FareTableText,
-        key: "youth"
-      },
-      {
-        header: "electronic" as FareTableText,
-        key: "electronicYouth"
-      }
-    ]
-  },
-  {
-    header: "senior" as FareTableText,
-    cols: [
-      {
-        header: "cash" as FareTableText,
-        key: "cash"
-      },
-      {
-        header: "electronic" as FareTableText,
-        key: "electronic"
+        columnHeaderKey: "electronic",
+        riderCategoryId: "orca:senior",
+        mediumId: "orca:electronic"
       }
     ]
   }
@@ -313,8 +268,8 @@ export const BikeTransitBikeItinerary = makeStory({
 
 export const WalkInterlinedTransitItinerary = makeStory(
   {
-    defaultFareKey: "electronicRegular",
-    fareDetailsLayout: fareByLegLayout,
+    // defaultFareKey: "electronicRegular",
+    // fareDetailsLayout: fareByLegLayout,
     itinerary: walkInterlinedTransitItinerary
   },
   {
@@ -373,7 +328,11 @@ export const TncTransitItinerary = makeStory(
 export const TncTransitItineraryWithCustomMessages = makeStory(
   {
     TimeActiveDetails: CustomTimeActiveDetails,
-    defaultFareKey: "electronicRegular",
+    defaultFareType: {
+      headerKey: "electronicRegular",
+      mediumId: "orca:electronic",
+      riderCategoryId: "orca:regular"
+    },
     DepartureDetails: CustomDepartureDetails,
     itinerary: tncTransitTncItinerary
   },
@@ -392,22 +351,12 @@ export const TncTransitItineraryWithCustomMessages = makeStory(
 );
 
 export const FareComponentsItinerary = makeStory({
-  itinerary: fareComponentsItinerary
+  itinerary: fareProductsItinerary
 });
 
 export const OTP2FlexItinerary = makeStory({ itinerary: flexItinerary });
 
-export const FareLegTableStory = (): ReactElement => {
-  return (
-    <FareLegTable
-      layout={fareByLegLayout}
-      itinerary={walkInterlinedTransitItinerary}
-    />
-  );
-};
-
 export const FareLegTableStoryLegProducts = (): ReactElement => {
-  return (
-    <FareLegTable layout={otp2FareByLegLayout} itinerary={otp2FareProducts} />
-  );
+  const otp1legs = otp2FareProducts.legs.map(convertGraphQLResponseToLegacy);
+  return <FareLegTable layout={otp2FareByLegLayout} legs={otp1legs} />;
 };

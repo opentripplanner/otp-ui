@@ -1,16 +1,15 @@
-import { Leg, Money } from "@opentripplanner/types";
+import { Leg } from "@opentripplanner/types";
 import React from "react";
 import styled from "styled-components";
 import { Transfer } from "@styled-icons/boxicons-regular/Transfer";
 
 import {
   getItineraryCost,
-  getLegCost,
-  getLegsWithFares
+  getLegCost
 } from "@opentripplanner/core-utils/lib/itinerary";
 import { useIntl } from "react-intl";
 import { flatten } from "flat";
-import { boldText, getFormattedTextForConfigKey, renderFare } from "./utils";
+import { boldText, renderFare } from "./utils";
 
 import { FareLegTableProps, FareTableLayout } from "./types";
 
@@ -23,14 +22,8 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 // - the yaml loader for jest returns messages with flattened ids.
 const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
-type LegAndFare = Leg & {
-  fares: Record<string, { price: Money; isTransfer?: boolean }>;
-};
-
 interface FareTypeTableProps extends FareTableLayout {
-  fareTotals: Record<string, Money>;
-  legs: LegAndFare[];
-  hasLegProducts?: boolean;
+  legs: Leg[];
 }
 
 const TableHeader = styled.thead`
@@ -73,63 +66,73 @@ const TransferIcon = styled(Transfer)`
   padding-left: 4px;
 `;
 
+const useGetHeaderString = (headerKey: string): string => {
+  const intl = useIntl();
+  return intl.formatMessage({
+    id: `otpUi.TripDetails.FareTable.${headerKey}`,
+    description: `Fare leg table header for key ${headerKey}`,
+    defaultMessage:
+      defaultEnglishMessages[`otpUi.TripDetails.FareTable.${headerKey}`]
+  });
+};
+
 const FareTypeTable = ({
   cols,
-  fareTotals,
-  header,
-  legs,
-  hasLegProducts
+  headerKey,
+  legs
 }: FareTypeTableProps): JSX.Element => {
-  const colsToRender = cols.filter(col =>
-    hasLegProducts
-      ? getItineraryCost(legs, col.riderCategory, col.fareContainer)
-      : fareTotals[col.key]
-  );
-
   const intl = useIntl();
+  // FIXME: Is there a nicer way to do this?
+  const colsToRender = cols
+    .filter(col => getItineraryCost(legs, col.riderCategoryId, col.mediumId))
+    .map(col => ({
+      ...col,
+      total: getItineraryCost(legs, col.riderCategoryId, col.mediumId)
+    }));
 
+  const headerString = useGetHeaderString(headerKey);
+
+  const filteredLegs = legs.filter(leg => leg.fareProducts?.length > 0);
   if (colsToRender.length) {
     return (
       <Table>
         <TableHeader>
           <th className="main" scope="col">
-            {boldText(getFormattedTextForConfigKey(header))}
+            {boldText(headerString)}
           </th>
           {colsToRender.map(col => {
-            const fare = hasLegProducts
-              ? getItineraryCost(legs, col.riderCategory, col.fareContainer)
-              : fareTotals[col.key];
+            const fare = col.total;
             return (
               <th
                 scope="col"
-                key={col.key || `${col.fareContainer}-${col.riderCategory}`}
+                key={
+                  col.columnHeaderKey ||
+                  `${col.mediumId}-${col.riderCategoryId}`
+                }
               >
-                {boldText(getFormattedTextForConfigKey(col.header))}
+                {boldText(useGetHeaderString(col.columnHeaderKey))}
                 <br />
                 {renderFare(
-                  fare?.currency?.currencyCode,
-                  (fare?.cents || 0) / 100
+                  fare?.currency?.code,
+                  (fare?.amount || 0) / 10 ** fare?.currency?.digits
                 )}
               </th>
             );
           })}
         </TableHeader>
-        {legs.map((leg, index) => (
+        {filteredLegs.map((leg, index) => (
           <tr key={index}>
             <td className="no-zebra">
               {leg.routeShortName || leg.route || leg.routeLongName}
             </td>
             {colsToRender.map(col => {
-              const fare = hasLegProducts
-                ? getLegCost(leg, col.riderCategory, col.fareContainer)
-                : leg.fares[col.key];
-
+              const fare = getLegCost(leg, col.mediumId, col.riderCategoryId);
               return (
                 <td
-                  key={col.key}
+                  key={col.columnHeaderKey}
                   title={
                     "transferAmount" in fare &&
-                    fare?.transferAmount &&
+                    fare?.transferAmount?.amount > 0 &&
                     intl.formatMessage(
                       {
                         defaultMessage:
@@ -142,9 +145,10 @@ const FareTypeTable = ({
                       },
                       {
                         transferAmount: intl.formatNumber(
-                          fare.transferAmount / 100,
+                          fare?.transferAmount?.amount /
+                            10 ** fare?.transferAmount?.currency.digits,
                           {
-                            currency: fare?.price?.currency?.currencyCode,
+                            currency: fare?.price?.currency?.code,
                             currencyDisplay: "narrowSymbol",
                             style: "currency"
                           }
@@ -153,15 +157,16 @@ const FareTypeTable = ({
                     )
                   }
                 >
-                  {(("isTransfer" in fare && fare?.isTransfer) ||
-                    ("transferAmount" in fare && fare?.transferAmount)) && (
-                    <>
-                      <TransferIcon size={16} />{" "}
-                    </>
-                  )}
+                  {"transferAmount" in fare &&
+                    fare?.transferAmount?.amount > 0 && (
+                      <>
+                        <TransferIcon size={16} />{" "}
+                      </>
+                    )}
                   {renderFare(
-                    fare?.price?.currency?.currencyCode,
-                    (fare?.price?.cents || 0) / 100
+                    fare?.price?.currency?.code,
+                    (fare?.price?.amount || 0) /
+                      10 ** fare?.price?.currency?.digits
                   )}
                 </td>
               );
@@ -174,53 +179,20 @@ const FareTypeTable = ({
   return null;
 };
 
-const FareLegDetails = ({
-  layout,
-  itinerary
-}: FareLegTableProps): JSX.Element => {
-  const hasLegProducts = !!itinerary?.fare?.legProducts;
-  const fareKeys = Object.keys(itinerary?.fare?.details);
-
-  let legsWithFares;
-
-  if (!hasLegProducts) {
-    // OTP1 Logic
-    legsWithFares = itinerary.legs
-      .map((leg, index) => {
-        const fares = fareKeys.reduce((prev, key) => {
-          const fareForKey = itinerary.fare.details[key]?.find(
-            detail => detail.legIndex === index
-          );
-          if (fareForKey) {
-            prev[key] = fareForKey;
-          }
-          return prev;
-        }, {});
-        return {
-          ...leg,
-          fares
-        };
-      })
-      .filter(leg => leg.transitLeg);
-  } else {
-    // OTP2 Logic using core-utils function
-    legsWithFares = getLegsWithFares(itinerary).filter(leg => leg.transitLeg);
-  }
-
+const FareLegTable = ({ layout, legs }: FareLegTableProps): JSX.Element => {
+  // the layout argument contains an object for every table to be displayed
   return (
     <div>
       {layout.map(config => (
         <FareTypeTable
           cols={config.cols}
-          fareTotals={itinerary.fare.fare}
-          header={config.header}
-          key={config.header}
-          legs={legsWithFares}
-          hasLegProducts={hasLegProducts}
+          headerKey={config.headerKey}
+          key={config.headerKey}
+          legs={legs}
         />
       ))}
     </div>
   );
 };
 
-export default FareLegDetails;
+export default FareLegTable;

@@ -1,6 +1,6 @@
 // Prettier does not recognize the import type syntax.
 // eslint-disable-next-line prettier/prettier
-import type { MassUnitOption, Fare, Itinerary, Money } from "@opentripplanner/types";
+import type { MassUnitOption, Itinerary, Money, Leg } from "@opentripplanner/types";
 import type { ReactElement } from "react";
 
 export interface TimeActiveDetailsProps {
@@ -19,47 +19,47 @@ export interface DepartureDetailsProps {
   departureDate: Date;
 }
 
-export enum FareTableText {
-  regular = "regular",
-  youth = "youth",
-  senior = "senior",
-  special = "special",
-  cash = "cash",
-  electronic = "electronic"
+export interface FareType {
+  riderCategoryId: string;
+  mediumId: string;
 }
 
+/**
+ * This is the interface used to define the layout for a particular fare table.
+ * The table with be rendered with the columsn defined here,
+ * with each row being an individual transit leg from the itinerary.
+ */
 export interface FareTableLayout {
-  cols: {
-    header: FareTableText;
-    key?: string;
-    riderCategory?: string;
-    fareContainer?: string;
-  }[];
-  header: FareTableText;
+  cols: (FareType & {
+    columnHeaderKey: string;
+  })[]
+  headerKey: string;
 }
-export interface TransitFareData {
-  [key: string]: Money
+export interface FareLegTableProps {
+  layout?: FareTableLayout[];
+  legs: Leg[];
+}
+
+// Total fare amount corresponding to a fare key
+export type FareTotals = (FareType & { price: Money })[]
+
+export interface TransitFareProps {
+  headerKey: string;
+  fareMediumId: string
+  riderCategoryId: string
+  fareNameFallback?: ReactElement;
+  fareKeyNameMap: {
+    [key: string]: string;
+  };
+  fareTotals: FareTotals;
 }
 
 export interface FareDetailsProps {
   maxTNCFare: number;
   minTNCFare: number;
-  transitFares: TransitFareData;
+  legs: Leg[];
 }
 
-export interface FareLegTableProps {
-  layout?: FareTableLayout[];
-  itinerary: Itinerary;
-}
-
-export interface TransitFareProps {
-  fareKey: string;
-  fareNameFallback?: ReactElement;
-  fareKeyNameMap: {
-    [key: string]: string;
-  };
-  transitFares: Fare;
-}
 
 export interface TripDetailsProps {
   /**
@@ -73,7 +73,7 @@ export interface TripDetailsProps {
   /**
    * Determines which transit fare should be displayed by default, should there be multiple transit fare types.
    */
-  defaultFareKey?: string;
+  defaultFareType?: { headerKey: string } & FareType;
   /**
    * Slot for a custom component to render the expandable section for departure.
    */
