@@ -629,3 +629,48 @@ export function getItineraryCost(
       { cents: 0, currency: null }
     );
 }
+
+const pickupDropoffTypeToOtp1 = otp2Type => {
+  switch (otp2Type) {
+    case "COORDINATE_WITH_DRIVER":
+      return "coordinateWithDriver";
+    case "CALL_AGENCY":
+      return "mustPhone";
+    case "SCHEDULED":
+      return "scheduled";
+    case "NONE":
+      return "none";
+    default:
+      return null;
+  }
+};
+
+export const convertGraphQLResponseToLegacy = (leg: any): any => ({
+  ...leg,
+  agencyBrandingUrl: leg.agency?.url,
+  agencyName: leg.agency?.name,
+  agencyUrl: leg.agency?.url,
+  alightRule: pickupDropoffTypeToOtp1(leg.dropoffType),
+  boardRule: pickupDropoffTypeToOtp1(leg.pickupType),
+  dropOffBookingInfo: {
+    latestBookingTime: leg.dropOffBookingInfo
+  },
+  from: {
+    ...leg.from,
+    stopCode: leg.from.stop?.code,
+    stopId: leg.from.stop?.gtfsId
+  },
+  route: leg.route?.shortName,
+  routeColor: leg.route?.color,
+  routeId: leg.route?.id,
+  routeLongName: leg.route?.longName,
+  routeShortName: leg.route?.shortName,
+  routeTextColor: leg.route?.textColor,
+  to: {
+    ...leg.to,
+    stopCode: leg.to.stop?.code,
+    stopId: leg.to.stop?.gtfsId
+  },
+  tripHeadsign: leg.trip?.tripHeadsign,
+  tripId: leg.trip?.gtfsId
+});
