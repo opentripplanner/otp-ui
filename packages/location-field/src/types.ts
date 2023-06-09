@@ -1,5 +1,5 @@
 import { Location, Stop, UserLocation, UserPosition } from "@opentripplanner/types";
-import React from "react";
+import React, { ComponentType, ReactNode } from "react";
 // eslint-disable-next-line prettier/prettier
 import type { IntlShape } from "react-intl";
 
@@ -16,6 +16,12 @@ export interface LocationSelectedEvent {
   location: Location;
   resultType: ResultType;
 }
+
+export interface UserLocationIconProps {
+  userLocation: UserLocation
+}
+
+export type UserLocationIconType = ComponentType<UserLocationIconProps>;
 
 export interface LocationFieldProps {
   /**
@@ -262,9 +268,7 @@ export interface LocationFieldProps {
    * user locations or recent places. The component will be sent a single prop
    * of `userLocation` which is a userLocationType.
    */
-  UserLocationIconComponent?: React.FunctionComponent<{
-    userLocation: UserLocation;
-  }>;
+  UserLocationIconComponent?: UserLocationIconType;
   /**
    * An array of recent locations and places a user has searched for.
    */
@@ -310,4 +314,12 @@ export interface Properties {
 export interface Label {
   main: string;
   secondary?: string;
+}
+
+export type UserLocationSelectedHandler = (newLocation: Location, resultType: ResultType) => void;
+
+export interface UserLocationRenderData {
+  displayName: string;
+  icon?: ReactNode;
+  locationSelected?: () => void
 }
