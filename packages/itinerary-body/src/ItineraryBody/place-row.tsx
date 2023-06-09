@@ -22,7 +22,6 @@ export default function PlaceRow({
   alwaysCollapseAlerts,
   config,
   diagramVisible,
-  fare,
   followsTransit,
   frameLeg,
   isDestination,
@@ -135,7 +134,6 @@ export default function PlaceRow({
               AlertBodyIcon={AlertBodyIcon}
               AlertToggleIcon={AlertToggleIcon}
               alwaysCollapseAlerts={alwaysCollapseAlerts}
-              fare={fare}
               leg={leg}
               LegIcon={LegIcon}
               legIndex={legIndex}

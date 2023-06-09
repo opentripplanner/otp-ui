@@ -2,7 +2,6 @@ import { FunctionComponent } from "react";
 
 import {
   Config,
-  Fare,
   GradationMap,
   Itinerary,
   Leg,
@@ -184,8 +183,6 @@ interface ItineraryBodySharedProps {
   showLegIcon?: boolean;
   /** If true, will show the right column with the map button */
   showMapButtonColumn?: boolean;
-  /** If true, will show fare information in transit leg bodies */
-  showRouteFares?: boolean;
   /** If true, shows the view trip button in transit leg bodies */
   showViewTripButton?: boolean;
   /**
@@ -216,8 +213,6 @@ interface ItineraryBodySharedProps {
 export interface PlaceRowProps
   extends ItineraryBodySharedProps,
     LegSharedProps {
-  /** The fare information to be displayed for the corresponding leg. */
-  fare: Fare;
   /** Indicates whether this leg directly follows a transit leg */
   followsTransit?: boolean;
 }

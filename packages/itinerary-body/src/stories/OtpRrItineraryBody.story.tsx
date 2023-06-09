@@ -22,7 +22,7 @@ const bikeRentalTransitBikeRentalItinerary = require("../__mocks__/itineraries/b
 const bikeTransitBikeItinerary = require("../__mocks__/itineraries/bike-transit-bike.json");
 const eScooterRentalItinerary = require("../__mocks__/itineraries/e-scooter-rental.json");
 const eScooterRentalTransiteScooterRentalItinerary = require("../__mocks__/itineraries/e-scooter-transit-e-scooter.json");
-const fareComponentsItinerary = require("../__mocks__/itineraries/fare-components.json");
+const fareProductsItinerary = require("../__mocks__/itineraries/leg-fare-products.json");
 const parkAndRideItinerary = require("../__mocks__/itineraries/park-and-ride.json");
 const tncTransitTncItinerary = require("../__mocks__/itineraries/tnc-transit-tnc.json");
 const walkInterlinedTransitItinerary = require("../__mocks__/itineraries/walk-interlined-transit-walk.json");
@@ -148,10 +148,7 @@ export const OTP2FlexItinerary = (): ReactElement => (
 );
 
 export const IndividualLegFareComponents = (): ReactElement => (
-  <OtpRRItineraryBodyWrapper
-    itinerary={fareComponentsItinerary}
-    showRouteFares
-  />
+  <OtpRRItineraryBodyWrapper itinerary={fareProductsItinerary} showRouteFares />
 );
 
 export const CustomTimeColumn = (): ReactElement => (
