@@ -17,11 +17,11 @@ import { debounce } from "throttle-debounce";
 
 import {
   GeocodedOptionIcon,
-  getStoredPlaceName,
   ICON_SIZE,
   Option,
   TransitStopOption,
-  UserLocationIcon
+  UserLocationIcon,
+  getRenderData
 } from "./options";
 import * as S from "./styled";
 import { LocationFieldProps, ResultType } from "./types";
@@ -29,7 +29,8 @@ import {
   addInParentheses,
   generateLabel,
   getCombinedLabel,
-  getGeocoderErrorMessage
+  getGeocoderErrorMessage,
+  getMatchingLocations
 } from "./utils";
 
 const optionIdPrefix = "otpui-locf-option";
@@ -124,6 +125,25 @@ function getFeaturesByCategoryWithLimit(
     stationFeatures,
     stopFeatures
   };
+}
+
+/**
+ * Helper to render and register a user-saved location.
+ */
+function makeUserOption(userLocation, index, key, activeIndex, selectHandlers) {
+  const { displayName, icon, locationSelected } = userLocation;
+  // Add to the selection handler lookup (for use in onKeyDown)
+  selectHandlers[index] = locationSelected;
+  return (
+    <Option
+      icon={icon}
+      id={getOptionId(index)}
+      isActive={index === activeIndex}
+      key={key}
+      onClick={locationSelected}
+      title={displayName}
+    />
+  );
 }
 
 const LocationField = ({
@@ -569,6 +589,33 @@ const LocationField = ({
   let menuItems = []; // array of menu items for display (may include non-selectable items e.g. dividers/headings)
   let itemIndex = 0; // the index of the current location-associated menu item (excluding non-selectable items)
   const locationSelectedLookup = {}; // maps itemIndex to a location selection handler (for use by the onKeyDown method)
+  const userLocationRenderData = showUserSettings
+    ? userLocationsAndRecentPlaces.map(loc =>
+        getRenderData(loc, setLocation, UserLocationIconComponent, intl)
+      )
+    : [];
+
+  /* 0) Include user saved locations if the typed text contains those locations name. */
+  if (showUserSettings) {
+    const matchingLocations = getMatchingLocations(
+      userLocationRenderData,
+      stateValue
+    );
+    if (matchingLocations.length) {
+      // Iterate through any saved locations
+      menuItems = menuItems.concat(
+        matchingLocations.map(userLocation =>
+          makeUserOption(
+            userLocation,
+            itemIndex++,
+            optionKey++,
+            itemIndex === activeIndex,
+            locationSelectedLookup
+          )
+        )
+      );
+    }
+  }
 
   /* 1) Process geocode search result option(s) */
   if (geocodedFeatures.length > 0) {
@@ -734,29 +781,15 @@ const LocationField = ({
 
     // Iterate through any saved locations
     menuItems = menuItems.concat(
-      userLocationsAndRecentPlaces.map(userLocation => {
-        // Create the location-selected handler
-        const locationSelected = () => {
-          setLocation(userLocation, "SAVED");
-        };
-
-        // Add to the selection handler lookup (for use in onKeyDown)
-        locationSelectedLookup[itemIndex] = locationSelected;
-
-        // Create and return the option menu item
-        const option = (
-          <Option
-            icon={<UserLocationIconComponent userLocation={userLocation} />}
-            id={getOptionId(itemIndex)}
-            isActive={itemIndex === activeIndex}
-            key={optionKey++}
-            onClick={locationSelected}
-            title={getStoredPlaceName(userLocation)}
-          />
-        );
-        itemIndex++;
-        return option;
-      })
+      userLocationRenderData.map(userLocation =>
+        makeUserOption(
+          userLocation,
+          itemIndex++,
+          optionKey++,
+          itemIndex === activeIndex,
+          locationSelectedLookup
+        )
+      )
     );
   }
 
