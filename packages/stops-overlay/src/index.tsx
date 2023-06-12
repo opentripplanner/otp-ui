@@ -150,6 +150,7 @@ const StopsOverlay = (props: Props): JSX.Element => {
           paint={{
             "circle-color": color || "#fff",
             "circle-opacity": 0.9,
+            // TODO: Use tinycolor to generate outline with appropriate contrast
             "circle-stroke-color": color ? "#fff" : "#333",
             "circle-stroke-width": 2
           }}
