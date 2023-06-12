@@ -10,7 +10,7 @@ type Props = {
   /**
    * Custom stop color passed from user config
    */
-  stopsColor?: string;
+  color?: string;
   /**
    * An optional id to override the active stop with
    */
@@ -48,8 +48,8 @@ type Props = {
 const StopsOverlay = (props: Props): JSX.Element => {
   const { current: map } = useMap();
   const {
-    stopsColor,
     activeStop,
+    color,
     minZoom,
     refreshStops,
     setLocation,
@@ -148,9 +148,9 @@ const StopsOverlay = (props: Props): JSX.Element => {
           id="stops"
           minzoom={minZoom || 10}
           paint={{
-            "circle-color": stopsColor || "#fff",
+            "circle-color": color || "#fff",
             "circle-opacity": 0.9,
-            "circle-stroke-color": stopsColor ? "#fff" : "#333",
+            "circle-stroke-color": color ? "#fff" : "#333",
             "circle-stroke-width": 2
           }}
           type="circle"
