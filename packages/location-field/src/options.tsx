@@ -1,15 +1,21 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceStringImperial } from "@opentripplanner/humanize-distance";
+import { Stop, UserLocation } from "@opentripplanner/types";
 import React from "react";
-import { IntlShape, useIntl } from "react-intl";
+import { IntlShape } from "react-intl";
 import { Bus } from "@styled-icons/fa-solid/Bus";
 import { Briefcase } from "@styled-icons/fa-solid/Briefcase";
 import { Home } from "@styled-icons/fa-solid/Home";
 import { MapMarker } from "@styled-icons/fa-solid/MapMarker";
 import { MapPin } from "@styled-icons/fa-solid/MapPin";
 
-import { Stop, UserLocation } from "@opentripplanner/types";
 import * as S from "./styled";
+import {
+  UserLocationIconType,
+  UserLocationSelectedHandler,
+  UserLocationRenderData,
+  UserLocationIconProps
+} from "./types";
 import { addInParentheses } from "./utils";
 
 export const ICON_SIZE = 13;
@@ -150,9 +156,7 @@ export function TransitStopOption({
 
 export function UserLocationIcon({
   userLocation
-}: {
-  userLocation: UserLocation;
-}): React.ReactElement {
+}: UserLocationIconProps): React.ReactElement {
   if (userLocation.icon === "work") return <Briefcase size={ICON_SIZE} />;
   if (userLocation.icon === "home") return <Home size={ICON_SIZE} />;
   return <MapMarker size={ICON_SIZE} />;
@@ -179,9 +183,9 @@ function getLocationName(location: UserLocation, intl: IntlShape): string {
 
 export function getStoredPlaceName(
   location: UserLocation,
+  intl: IntlShape,
   withDetails = true
 ): string {
-  const intl = useIntl();
   let detailText;
   if (withDetails) {
     if (location.type === "home" || location.type === "work") {
@@ -195,4 +199,21 @@ export function getStoredPlaceName(
   }
 
   return addInParentheses(intl, getLocationName(location, intl), detailText);
+}
+
+/**
+ * Helper to populate the display name for a user-saved location.
+ */
+export function getRenderData(
+  location: UserLocation,
+  setLocation: UserLocationSelectedHandler,
+  Icon: UserLocationIconType,
+  intl: IntlShape
+): UserLocationRenderData {
+  return {
+    displayName: getStoredPlaceName(location, intl),
+    icon: <Icon userLocation={location} />,
+    // Create the event handler for when the location is selected
+    locationSelected: () => setLocation(location, "SAVED")
+  };
 }

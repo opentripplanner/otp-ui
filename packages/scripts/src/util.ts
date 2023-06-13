@@ -115,3 +115,48 @@ export async function sortSourceAndYmlFiles(
 export async function loadYamlFile(filename: string): Promise<any> {
   return load(await fs.readFile(filename));
 }
+
+/**
+ * Convert a groups object into a list of corresponding message ids.
+ */
+export function expandGroupIds(groups: Record<string, string[]>): string[] {
+  return Object.keys(groups).reduce(
+    (result, group) =>
+      result.concat(groups[group].map(key => group.replace("*", key))),
+    []
+  );
+}
+
+interface CheckException {
+  groups: Record<string, string[]>;
+  ignoredIds: Set<string>;
+}
+
+/**
+ * Combines exception files into a single exception object.
+ */
+export async function combineExceptionFiles(
+  exceptionFiles: string[]
+): Promise<CheckException> {
+  let allIgnoredIds = [];
+  const allGroups = [];
+  await Promise.all(
+    exceptionFiles.map(async file => {
+      const rawJson = (await fs.readFile(file)).toString();
+      const jsonObject = JSON.parse(rawJson);
+      allIgnoredIds = allIgnoredIds.concat(jsonObject.ignoredIds);
+      if (jsonObject.groups) {
+        allGroups.push(jsonObject.groups);
+      }
+    })
+  );
+  const groups = allGroups.reduce(
+    (result, group) => ({ ...result, ...group }),
+    {}
+  );
+  return {
+    groups,
+    // Make sure ignored ids are unique
+    ignoredIds: new Set(allIgnoredIds)
+  };
+}

@@ -121,23 +121,48 @@ To use the YML files in your react-intl application:
 - Pass the resulting object to the messages prop of `IntlProvider`.
   See `packages/from-to-location-picker/src/index.story.tsx` for an example of how to initialize localized messages with `IntlProvider`.
 
-### Using internationalizable content in the code
+### Using internationalized content in the code
 
-Use message id **literals** (no variables or other dynamic content) with either
+Access the internationalized content in code, typically using either
 
 ```jsx
+import { FormattedMessage } from "react-intl";
+...
 <FormattedMessage id="..." />
 ```
 
-or
+or, if you need a `string`,
 
 ```js
+// Obtain `intl` using `injectIntl` or `useIntl`.
 intl.formatMessage({ id: ... })
 ```
 
-The reason for passing **literals** to `FormattedMessage` and `intl.formatMessage` is that we have a checker script `yarn check:i18n` that is based on the `formatJS` CLI and that detects unused messages in the code and exports translation tables.
-Passing variables or dynamic content will cause the `formatJS` CLI and the checker to ignore the corresponding messages and
-incorrectly claim that a string is unused or missing from a translation file.
+where the id passed to `FormattedMessage` and `intl.formatMessage` can be literal or a computed value.
+See [Internationalization checks and reporting](#internationalization-checks-and-reporting) for caveats.
+
+### Internationalization checks and reporting
+
+Code and translation integrity is checked by scripts that you can run locally.
+`check:i18n-all` checks for all languages. `check:i18n-en-fr` checks for English (US) and French and is run on GitHub after each push.
+
+These scripts check the following:
+
+- All entries in the applicable translation files are used in the code.
+- All message ids used in the code have translations.
+
+For the scripts to work best, you should use **literal** ids as much as possible with `<FormattedMessage>` or `intl.formatMessage`.
+This is because the scripts use the `formatJS` CLI, and the `formatJS` CLI simply ignores message ids that are not literals.
+
+### Exceptions to checks
+
+Exceptions to the checks above can be defined when:
+
+- Reusing a message defined in another package,
+- A message id needs to be computed, with some portion of it coming from a parameter,
+  and implementing a `switch` case does not provide substantial benefits.
+
+Exceptions are defined in optional files named `i18n-exceptions.json`. See the [scripts package README](./packages/scripts/README.md#exceptions) for setting these files up.
 
 ### Contributing translations
 
