@@ -183,6 +183,8 @@ interface ItineraryBodySharedProps {
   showLegIcon?: boolean;
   /** If true, will show the right column with the map button */
   showMapButtonColumn?: boolean;
+  /** If true, will show fare information in transit leg bodies */
+  showRouteFares?: boolean;
   /** If true, shows the view trip button in transit leg bodies */
   showViewTripButton?: boolean;
   /**
