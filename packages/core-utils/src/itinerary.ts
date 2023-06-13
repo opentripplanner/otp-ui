@@ -79,6 +79,7 @@ export function legDropoffRequiresAdvanceBooking(leg: Leg): boolean {
   return isAdvanceBookingRequired(leg.dropOffBookingInfo);
 }
 
+// alpha-only comment
 export function isRideshareLeg(leg: Leg): boolean {
   return !!leg.rideHailingEstimate?.provider?.id;
 }
