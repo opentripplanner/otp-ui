@@ -1,33 +1,14 @@
 /* eslint-disable no-console */
 import flatten from "flat";
-import { promises as fs } from "fs";
 import { extract } from "@formatjs/cli";
 
-import { isNotSpecialId, loadYamlFile, sortSourceAndYmlFiles } from "./util";
-
-interface CheckException {
-  ignoredIds: Set<string>;
-}
-
-/**
- * Combines exception files into a single exception object.
- */
-export async function combineExceptionFiles(
-  exceptionFiles: string[]
-): Promise<CheckException> {
-  let allIgnoredIds = [];
-  await Promise.all(
-    exceptionFiles.map(async file => {
-      const rawJson = (await fs.readFile(file)).toString();
-      const jsonObject = JSON.parse(rawJson);
-      allIgnoredIds = allIgnoredIds.concat(jsonObject.ignoredIds);
-    })
-  );
-  // Make sure ignored ids are unique
-  return {
-    ignoredIds: new Set(allIgnoredIds)
-  };
-}
+import {
+  combineExceptionFiles,
+  expandGroupIds,
+  isNotSpecialId,
+  loadYamlFile,
+  sortSourceAndYmlFiles
+} from "./util";
 
 /**
  * Computes the unused ids from code or YML file for a given locale.
@@ -35,16 +16,21 @@ export async function combineExceptionFiles(
 export async function checkLocale(
   ymlFilesForLocale: string[],
   messageIdsFromCode: string[],
-  ignoredIds: Set<string>
+  ignoredIds: Set<string>,
+  groups: Record<string, string[]>
 ): Promise<{
   idsNotInCode: string[];
   missingIdsForLocale: string[];
 }> {
-  const idsChecked = [];
+  const idsChecked = new Set();
   const idsNotInCode = [];
 
   const allI18nPromises = ymlFilesForLocale.map(loadYamlFile);
   const allI18nMessages = await Promise.all(allI18nPromises);
+
+  const idsFromGroupsArray = expandGroupIds(groups);
+  const idsFromGroups = new Set(idsFromGroupsArray);
+  const idsFromGroupsNotInYml = new Set(idsFromGroupsArray);
 
   allI18nMessages.forEach(i18nMessages => {
     const flattenedMessages = flatten(i18nMessages);
@@ -52,22 +38,27 @@ export async function checkLocale(
     // Message ids from code must be present in yml (except those in ignoredIds).
     messageIdsFromCode
       .filter(id => flattenedMessages[id])
-      .forEach(id => idsChecked.push(id));
+      .forEach(id => idsChecked.add(id));
 
-    // Message ids from yml (except those starting with "_" or those in ignoredIds)
-    // must be present in code.
-    Object.keys(flattenedMessages)
+    // Message ids from yml must be present in code,
+    // except those starting with "_" or those in ignoredIds or groups.
+    const messageKeys = Object.keys(flattenedMessages);
+    messageKeys
       .filter(isNotSpecialId)
       .filter(id => !ignoredIds.has(id))
+      .filter(id => !idsFromGroups.has(id))
       .filter(id => !messageIdsFromCode.includes(id))
       .filter(id => !idsNotInCode.includes(id))
       .forEach(id => idsNotInCode.push(id));
+
+    // Filter out ids from groups found in YML file.
+    messageKeys.forEach(id => idsFromGroupsNotInYml.delete(id));
   });
 
-  // Collect ids in code not found in yml.
-  const missingIdsForLocale = messageIdsFromCode
+  // Collect ids in code and groups not found in yml.
+  const missingIdsForLocale = [...messageIdsFromCode, ...idsFromGroupsNotInYml]
     .filter(id => !ignoredIds.has(id))
-    .filter(id => !idsChecked.includes(id));
+    .filter(id => !idsChecked.has(id));
 
   return {
     idsNotInCode,
@@ -93,7 +84,7 @@ async function checkI18n({ exceptionFiles, sourceFiles, ymlFilesByLocale }) {
     } exception files).`
   );
 
-  const { ignoredIds } = await combineExceptionFiles(exceptionFiles);
+  const { groups, ignoredIds } = await combineExceptionFiles(exceptionFiles);
   let errorCount = 0;
   // For each locale, check that all ids in messages are in the yml files.
   // Accessorily, log message ids from yml files that are not used in the code.
@@ -102,7 +93,8 @@ async function checkI18n({ exceptionFiles, sourceFiles, ymlFilesByLocale }) {
       const { idsNotInCode, missingIdsForLocale } = await checkLocale(
         ymlFilesByLocale[locale],
         messageIdsFromCode,
-        ignoredIds
+        ignoredIds,
+        groups
       );
 
       // Print errors.

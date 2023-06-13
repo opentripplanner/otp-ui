@@ -17,11 +17,11 @@ import { debounce } from "throttle-debounce";
 
 import {
   GeocodedOptionIcon,
-  getStoredPlaceName,
   ICON_SIZE,
   Option,
   TransitStopOption,
-  UserLocationIcon
+  UserLocationIcon,
+  getRenderData
 } from "./options";
 import * as S from "./styled";
 import { LocationFieldProps, ResultType } from "./types";
@@ -29,7 +29,8 @@ import {
   addInParentheses,
   generateLabel,
   getCombinedLabel,
-  getGeocoderErrorMessage
+  getGeocoderErrorMessage,
+  getMatchingLocations
 } from "./utils";
 
 const optionIdPrefix = "otpui-locf-option";
@@ -126,6 +127,25 @@ function getFeaturesByCategoryWithLimit(
   };
 }
 
+/**
+ * Helper to render and register a user-saved location.
+ */
+function makeUserOption(userLocation, index, key, activeIndex, selectHandlers) {
+  const { displayName, icon, locationSelected } = userLocation;
+  // Add to the selection handler lookup (for use in onKeyDown)
+  selectHandlers[index] = locationSelected;
+  return (
+    <Option
+      icon={icon}
+      id={getOptionId(index)}
+      isActive={index === activeIndex}
+      key={key}
+      onClick={locationSelected}
+      title={displayName}
+    />
+  );
+}
+
 const LocationField = ({
   addLocationSearch = () => {},
   autoFocus = false,
@@ -177,8 +197,6 @@ const LocationField = ({
 
   const listBoxId = `listbox-${optionKey}`;
 
-  let controller = new AbortController();
-
   const intl = useIntl();
 
   const [activeIndex, setActiveIndex] = useState(null);
@@ -187,6 +205,7 @@ const LocationField = ({
   const [isFetching, setFetching] = useState(false);
   const [stateMessage, setMessage] = useState(null);
   const [stateValue, setValue] = useState(getValueFromLocation());
+  const [abortControllers, setAbortController] = useState([]);
 
   const inputRef = useRef(null);
 
@@ -203,6 +222,8 @@ const LocationField = ({
     }
   }, [initialSearchResults]);
 
+  // TODO: is it possible to restore the useCallback while also setting
+  // a new abort controller?
   const geocodeAutocomplete = debounce(300, (text: string) => {
     if (!text) {
       console.warn("No text entry provided for geocode autocomplete search.");
@@ -210,9 +231,6 @@ const LocationField = ({
       return;
     }
     setFetching(true);
-    controller.abort();
-    controller = new AbortController();
-
     setMessage(
       intl.formatMessage({
         defaultMessage: "Fetching suggestions…",
@@ -220,10 +238,11 @@ const LocationField = ({
         id: "otpUi.LocationField.fetchingSuggestions"
       })
     );
+    const newController = new AbortController();
+    setAbortController([...abortControllers, newController]);
 
     getGeocoder(geocoderConfig)
-      // .autocomplete({ text })
-      .autocomplete({ text, options: { signal: controller.signal } })
+      .autocomplete({ text, options: { signal: newController.signal } })
       // TODO: Better type?
       .then(
         (result: {
@@ -393,6 +412,10 @@ const LocationField = ({
     const { value } = evt.target;
     setValue(value);
     setMenuVisible(true);
+
+    // Cancel all pending requests
+    abortControllers.forEach(ac => ac.abort());
+
     geocodeAutocomplete(value);
   };
 
@@ -566,6 +589,33 @@ const LocationField = ({
   let menuItems = []; // array of menu items for display (may include non-selectable items e.g. dividers/headings)
   let itemIndex = 0; // the index of the current location-associated menu item (excluding non-selectable items)
   const locationSelectedLookup = {}; // maps itemIndex to a location selection handler (for use by the onKeyDown method)
+  const userLocationRenderData = showUserSettings
+    ? userLocationsAndRecentPlaces.map(loc =>
+        getRenderData(loc, setLocation, UserLocationIconComponent, intl)
+      )
+    : [];
+
+  /* 0) Include user saved locations if the typed text contains those locations name. */
+  if (showUserSettings) {
+    const matchingLocations = getMatchingLocations(
+      userLocationRenderData,
+      stateValue
+    );
+    if (matchingLocations.length) {
+      // Iterate through any saved locations
+      menuItems = menuItems.concat(
+        matchingLocations.map(userLocation =>
+          makeUserOption(
+            userLocation,
+            itemIndex++,
+            optionKey++,
+            itemIndex === activeIndex,
+            locationSelectedLookup
+          )
+        )
+      );
+    }
+  }
 
   /* 1) Process geocode search result option(s) */
   if (geocodedFeatures.length > 0) {
@@ -731,29 +781,15 @@ const LocationField = ({
 
     // Iterate through any saved locations
     menuItems = menuItems.concat(
-      userLocationsAndRecentPlaces.map(userLocation => {
-        // Create the location-selected handler
-        const locationSelected = () => {
-          setLocation(userLocation, "SAVED");
-        };
-
-        // Add to the selection handler lookup (for use in onKeyDown)
-        locationSelectedLookup[itemIndex] = locationSelected;
-
-        // Create and return the option menu item
-        const option = (
-          <Option
-            icon={<UserLocationIconComponent userLocation={userLocation} />}
-            id={getOptionId(itemIndex)}
-            isActive={itemIndex === activeIndex}
-            key={optionKey++}
-            onClick={locationSelected}
-            title={getStoredPlaceName(userLocation)}
-          />
-        );
-        itemIndex++;
-        return option;
-      })
+      userLocationRenderData.map(userLocation =>
+        makeUserOption(
+          userLocation,
+          itemIndex++,
+          optionKey++,
+          itemIndex === activeIndex,
+          locationSelectedLookup
+        )
+      )
     );
   }
 

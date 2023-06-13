@@ -1,5 +1,6 @@
 import { IntlShape } from "react-intl";
-import { Properties, Label } from "./types";
+
+import { Properties, Label, UserLocationRenderData } from "./types";
 
 // A mapping of Pelias layers to display modes. The label generator will run the generator
 // based on the layer of the feature. Adding a new method to this mapping will support
@@ -102,3 +103,20 @@ export const getGeocoderErrorMessage = (
 
   return addInParentheses(intl, geocoderUnreachableText, errorText);
 };
+
+/**
+ * Helper to compute matching user locations as you type.
+ */
+export function getMatchingLocations(
+  places: UserLocationRenderData[],
+  text: string
+): UserLocationRenderData[] {
+  if (places?.length > 0 && text && text !== "") {
+    const lowerCaseText = text.toLowerCase();
+    return places.filter(
+      place => place.displayName.toLowerCase().indexOf(lowerCaseText) !== -1
+    );
+  }
+
+  return [];
+}
