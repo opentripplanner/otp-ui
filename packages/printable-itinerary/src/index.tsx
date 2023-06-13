@@ -57,7 +57,7 @@ function PrintableItinerary({
             leg={leg}
             LegIcon={LegIcon}
           />
-        ) : leg.hailedCar ? (
+        ) : leg.rideHailingEstimate ? (
           <TNCLeg leg={leg} LegIcon={LegIcon} key={k} />
         ) : (
           <AccessLeg config={config} key={k} leg={leg} LegIcon={LegIcon} />

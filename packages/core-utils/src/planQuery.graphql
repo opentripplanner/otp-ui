@@ -177,7 +177,7 @@ query Plan(
           }
           lat
           lon
-        relativeDirection
+          relativeDirection
           stayOn
           streetName
         }

@@ -75,7 +75,7 @@ class AccessLegBody extends Component<Props, State> {
     } = this.props;
     const { expanded } = this.state;
 
-    if (leg.mode === "CAR" && leg.hailedCar) {
+    if (leg.mode === "CAR" && leg.rideHailingEstimate) {
       return (
         <TNCLeg
           config={config}
