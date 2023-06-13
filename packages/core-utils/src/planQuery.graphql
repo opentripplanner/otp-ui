@@ -1,18 +1,18 @@
 query Plan(
-  $fromPlace: String!
-  $toPlace: String!
-  $modes: [TransportMode]
-  $time: String
-  $date: String
-  $wheelchair: Boolean
-  $bikeReluctance: Float
-  $carReluctance: Float
-  $walkReluctance: Float
-  $arriveBy: Boolean
-  $intermediatePlaces: [InputCoordinates]
-  $preferred: InputPreferred
-  $unpreferred: InputUnpreferred
-  $banned: InputBanned
+  $fromPlace: String!, 
+  $toPlace: String!, 
+  $modes: [TransportMode],
+  $time: String,
+  $date: String, 
+  $wheelchair: Boolean, 
+  $bikeReluctance: Float, 
+  $carReluctance: Float, 
+  $walkReluctance: Float, 
+  $arriveBy: Boolean, 
+  $intermediatePlaces: [InputCoordinates], 
+  $preferred: InputPreferred, 
+  $unpreferred: InputUnpreferred, 
+  $banned: InputBanned,
   $numItineraries: Int
 ) {
   plan(
@@ -23,7 +23,6 @@ query Plan(
     date: $date
     fromPlace: $fromPlace
     intermediatePlaces: $intermediatePlaces
-    # Currently only supporting EN locale, used for times and text
     locale: "en"
     numItineraries: $numItineraries
     preferred: $preferred
@@ -38,7 +37,7 @@ query Plan(
       accessibilityScore
       duration
       endTime
-        legs {
+      legs {
         accessibilityScore
         agency {
           alerts {
@@ -59,6 +58,28 @@ query Plan(
         dropoffType
         duration
         endTime
+        fareProducts {
+          id
+          product {
+            id
+            medium {
+              id
+              name
+            }
+            name
+            price {
+              amount
+              currency {
+                code
+                digits
+              }
+            }
+            riderCategory {
+              id
+              name
+            }
+          }
+        }
         from {
           lat
           lon
@@ -137,7 +158,7 @@ query Plan(
           }
           lat
           lon
-        relativeDirection
+          relativeDirection
           stayOn
           streetName
         }
