@@ -15,7 +15,7 @@ import {
   Train,
 } from "styled-icons/fa-solid";
 
-import { GeocodedFeature, Stop, UserLocation } from "@opentripplanner/types";
+import { GeocodedFeature, Stop } from "@opentripplanner/types";
 import LocationField from "..";
 import {
   badGeocoderConfig,
@@ -32,7 +32,7 @@ import {
 import * as LocationFieldClasses from "../styled";
 
 // eslint-disable-next-line prettier/prettier
-import type { LocationType } from "../types"
+import type { LocationType, UserLocationIconProps } from "../types"
 
 const nearbyStops = ["1", "2"];
 const sessionSearches = [
@@ -75,7 +75,7 @@ function LocationIconComponent({ locationType }: { locationType: LocationType })
   return <PlaneArrival size={13} />;
 }
 
-function UserLocationIconComponent({ userLocation }: { userLocation: UserLocation }) {
+function UserLocationIconComponent({ userLocation }: UserLocationIconProps) {
   if (userLocation.icon === "work") return <Building size={13} />;
   return <Star size={13} />;
 }
