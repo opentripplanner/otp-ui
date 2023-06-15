@@ -1,18 +1,18 @@
 query Plan(
-  $fromPlace: String!, 
-  $toPlace: String!, 
-  $modes: [TransportMode],
-  $time: String,
-  $date: String, 
-  $wheelchair: Boolean, 
-  $bikeReluctance: Float, 
-  $carReluctance: Float, 
-  $walkReluctance: Float, 
-  $arriveBy: Boolean, 
-  $intermediatePlaces: [InputCoordinates], 
-  $preferred: InputPreferred, 
-  $unpreferred: InputUnpreferred, 
-  $banned: InputBanned,
+  $fromPlace: String! 
+  $toPlace: String! 
+  $modes: [TransportMode]
+  $time: String
+  $date: String 
+  $wheelchair: Boolean 
+  $bikeReluctance: Float 
+  $carReluctance: Float 
+  $walkReluctance: Float 
+  $arriveBy: Boolean 
+  $intermediatePlaces: [InputCoordinates] 
+  $preferred: InputPreferred 
+  $unpreferred: InputUnpreferred 
+  $banned: InputBanned
   $numItineraries: Int
 ) {
   plan(
@@ -23,6 +23,7 @@ query Plan(
     date: $date
     fromPlace: $fromPlace
     intermediatePlaces: $intermediatePlaces
+    # Currently only supporting EN locale, used for times and text
     locale: "en"
     numItineraries: $numItineraries
     preferred: $preferred
