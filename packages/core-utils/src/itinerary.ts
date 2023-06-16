@@ -216,7 +216,9 @@ export function getCompanyFromLeg(leg: Leg): string {
   if (mode === "BICYCLE" && rentedBike && from.networks) {
     return from.networks[0];
   }
+  // @ts-expect-error ALPHA ONLY TEMPORARY TO GET IT TO BUILD
   if (from.rentalVehicle) {
+    // @ts-expect-error ALPHA ONLY TEMPORARY TO GET IT TO BUILD
     return from.rentalVehicle.network;
   }
   if (
