@@ -2,6 +2,7 @@ import {
   calculateTncFares,
   getCompanyFromLeg,
   getDisplayedStopId,
+  getLegCost,
   isTransit
 } from "../itinerary";
 
@@ -84,6 +85,57 @@ describe("util > itinerary", () => {
     });
     it("should return null if stopId is null (and no stopCode is provided)", () => {
       expect(getDisplayedStopId(basePlace)).toBeFalsy();
+    });
+  });
+
+  describe("getLegCost", () => {
+    it("should return the total cost for a leg", () => {
+      const leg = {
+        fareProducts: [
+          {
+            product: {
+              medium: { id: "cash" },
+              riderCategory: { id: "regular" },
+              name: "rideCost",
+              price: { amount: 200, currency: "USD" }
+            }
+          }
+        ]
+      };
+      const result = getLegCost(leg, "cash", "regular");
+      expect(result.price).toEqual({ amount: 200, currency: "USD" });
+    });
+
+    it("should return the transfer discount amount if a transfer was used", () => {
+      const leg = {
+        fareProducts: [
+          {
+            product: {
+              medium: { id: "cash" },
+              riderCategory: { id: "regular" },
+              name: "rideCost",
+              price: { amount: 200, currency: "USD" }
+            }
+          },
+          {
+            product: {
+              name: "transfer",
+              price: { amount: 50, currency: "USD" },
+              medium: { id: "cash" },
+              riderCategory: { id: "regular" }
+            }
+          }
+        ]
+      };
+      const result = getLegCost(leg, "cash", "regular");
+      expect(result.price).toEqual({ amount: 200, currency: "USD" });
+      expect(result.transferAmount).toEqual({ amount: 50, currency: "USD" });
+    });
+
+    it("should return undefined if no fare products exist on the leg", () => {
+      const leg = {};
+      const result = getLegCost(leg, "cash", "regular");
+      expect(result.price).toBeUndefined();
     });
   });
 });

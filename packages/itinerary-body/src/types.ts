@@ -2,7 +2,6 @@ import { FunctionComponent } from "react";
 
 import {
   Config,
-  Fare,
   GradationMap,
   Itinerary,
   Leg,
@@ -216,8 +215,6 @@ interface ItineraryBodySharedProps {
 export interface PlaceRowProps
   extends ItineraryBodySharedProps,
     LegSharedProps {
-  /** The fare information to be displayed for the corresponding leg. */
-  fare: Fare;
   /** Indicates whether this leg directly follows a transit leg */
   followsTransit?: boolean;
 }

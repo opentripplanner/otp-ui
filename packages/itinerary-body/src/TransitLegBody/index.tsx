@@ -1,6 +1,5 @@
 import coreUtils from "@opentripplanner/core-utils";
 import {
-  Fare,
   FlexBookingInfo,
   Leg,
   LegIconComponent,
@@ -8,12 +7,7 @@ import {
 } from "@opentripplanner/types";
 import React, { Component, FunctionComponent, ReactElement } from "react";
 import AnimateHeight from "react-animate-height";
-import {
-  FormattedMessage,
-  FormattedNumber,
-  injectIntl,
-  IntlShape
-} from "react-intl";
+import { FormattedMessage, injectIntl, IntlShape } from "react-intl";
 import { Duration } from "../defaults";
 
 import * as S from "../styled";
@@ -34,7 +28,6 @@ interface Props {
   AlertBodyIcon?: FunctionComponent;
   AlertToggleIcon?: FunctionComponent;
   alwaysCollapseAlerts: boolean;
-  fare?: Fare;
   intl: IntlShape;
   leg: Leg;
   LegIcon: LegIconComponent;
@@ -108,16 +101,6 @@ class TransitLegBody extends Component<Props, State> {
     };
   }
 
-  getFareForLeg = (leg: Leg, fare: Fare) => {
-    let fareForLeg;
-    fare?.details?.regular?.forEach(fareComponent => {
-      if (fareComponent.routes?.includes(leg.routeId)) {
-        fareForLeg = coreUtils.itinerary.getTransitFare(fareComponent.price);
-      }
-    });
-    return fareForLeg;
-  };
-
   onToggleStopsClick = () => {
     const { stopsExpanded } = this.state;
     this.setState({ stopsExpanded: !stopsExpanded });
@@ -138,7 +121,6 @@ class TransitLegBody extends Component<Props, State> {
       AlertToggleIcon = S.DefaultAlertToggleIcon,
       AlertBodyIcon,
       alwaysCollapseAlerts,
-      fare,
       intl,
       leg,
       LegIcon,
@@ -177,7 +159,6 @@ class TransitLegBody extends Component<Props, State> {
     const shouldOnlyShowAlertsExpanded =
       !(shouldCollapseDueToAlertCount || alwaysCollapseAlerts) || !leg.alerts;
     const expandAlerts = alertsExpanded || shouldOnlyShowAlertsExpanded;
-    const fareForLeg = this.getFareForLeg(leg, fare);
 
     return (
       <>
@@ -337,7 +318,7 @@ class TransitLegBody extends Component<Props, State> {
                 >
                   <S.TransitLegExpandedBody>
                     <IntermediateStops stops={leg.intermediateStops} />
-                    {fareForLeg && (
+                    {/* {leg.fareProducts && (
                       <S.TransitLegFare>
                         <FormattedMessage
                           defaultMessage={
@@ -359,7 +340,7 @@ class TransitLegBody extends Component<Props, State> {
                           }}
                         />
                       </S.TransitLegFare>
-                    )}
+                    )} */}
                   </S.TransitLegExpandedBody>
                 </AnimateHeight>
 
