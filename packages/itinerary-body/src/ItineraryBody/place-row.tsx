@@ -168,6 +168,7 @@ export default function PlaceRow({
               setLegDiagram={setLegDiagram}
               showElevationProfile={showElevationProfile}
               showLegIcon={showLegIcon}
+              TransitLegSubheader={TransitLegSubheader}
             />
           ))}
       </S.PlaceDetails>
