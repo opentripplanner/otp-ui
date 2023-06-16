@@ -2,7 +2,6 @@ import {
   calculateTncFares,
   getCompanyFromLeg,
   getDisplayedStopId,
-  getTransitFare,
   isTransit
 } from "../itinerary";
 
@@ -32,30 +31,6 @@ describe("util > itinerary", () => {
     it("should return company for TNC leg", () => {
       const company = getCompanyFromLeg(tncItinerary.legs[0]);
       expect(company).toEqual("uber");
-    });
-  });
-
-  describe("getTransitFare", () => {
-    it("should return defaults with missing fare", () => {
-      const { transitFare } = getTransitFare(null);
-      // transit fare value should be zero
-      expect(transitFare).toMatchSnapshot();
-    });
-
-    it("should work with valid fare component", () => {
-      const fareComponent = {
-        currency: {
-          currency: "USD",
-          defaultFractionDigits: 2,
-          currencyCode: "USD",
-          symbol: "$"
-        },
-        cents: 575
-      };
-      const { currencyCode, transitFare } = getTransitFare(fareComponent);
-      expect(currencyCode).toEqual(fareComponent.currency.currencyCode);
-      // Snapshot tests
-      expect(transitFare).toMatchSnapshot();
     });
   });
 
