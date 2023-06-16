@@ -187,11 +187,6 @@ export type Config = {
   transitOperators?: TransitOperator[];
 };
 
-type FeedScopedId = {
-  agencyId?: string;
-  id?: string;
-};
-
 export type EncodedPolyline = {
   length: number;
   points: string;
@@ -334,11 +329,7 @@ export type Leg = {
   tripBlockId?: string;
   tripId?: string;
   walkingBike?: boolean;
-  /**
-   * Below this are extra properties added in OTP-RR
-   * They are not returned in the API response
-   */
-  fareProducts?: Array<FareProduct>;
+  fareProducts?: Array<{ id: string; product: FareProduct }>;
 };
 
 type Price = {
@@ -352,42 +343,11 @@ type Price = {
  * Describes the cost of an itinerary leg.
  */
 export type Money = {
-  cents: number;
+  amount: number;
   currency: {
-    defaultFractionDigits: number;
-    currencyCode: string;
-    symbol: string;
-    currency: string;
+    code: string;
+    digits: number;
   };
-};
-
-/**
- * Describes a fare id or route to which a fare applies.
- */
-type ApplicableId = string | FeedScopedId;
-
-export type FareDetail = {
-  fareId?: ApplicableId;
-  isTransfer?: boolean;
-  legIndex?: number;
-  price: Money;
-  routes?: ApplicableId[];
-};
-
-export type FareDetails = Record<string, FareDetail[]>;
-
-/**
- * Represents the fare component of an itinerary of an OTP plan response. See
- * detailed documentation in OTP webservice documentation here:
- * http://otp-docs.ibi-transit.com/api/json_Fare.html
- *
- * NOTE: so far the fare includes ONLY a fare encountered on public transit and
- * not any bike rental or TNC rental fees.
- */
-export type Fare = {
-  details?: FareDetails;
-  fare?: Record<string, Money>;
-  legProducts?: Array<LegProduct>;
 };
 
 /**
@@ -402,7 +362,6 @@ export type Itinerary = {
   elevationGained: number;
   elevationLost: number;
   endTime: number;
-  fare?: Fare;
   legs: Leg[];
   startTime: number;
   tooSloped?: boolean;
@@ -776,22 +735,17 @@ export type ModeButtonDefinition = {
 };
 
 export type FareProduct = {
-  amount: Money;
+  price: Money;
   id: string;
   name: string;
-  category: {
+  riderCategory?: {
     id: string;
     name: string;
   };
-  container: {
+  medium?: {
     id: string;
     name: string;
   };
-};
-
-export type LegProduct = {
-  legIndices: Array<number>;
-  products: Array<FareProduct>;
 };
 
 /**
