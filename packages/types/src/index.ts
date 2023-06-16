@@ -312,8 +312,9 @@ export type Leg = {
       id: string;
     };
     arrival: string;
-    minPrice: Price;
-    maxPrice: Price;
+    minPrice: TemporaryTNCPriceType;
+    maxPrice: TemporaryTNCPriceType;
+    productName?: string;
   };
   realTime: boolean;
   rentedBike: boolean;
@@ -341,7 +342,7 @@ export type Leg = {
   fareProducts?: Array<FareProduct>;
 };
 
-type Price = {
+type TemporaryTNCPriceType = {
   currency: {
     code: string;
   };
