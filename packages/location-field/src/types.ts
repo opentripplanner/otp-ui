@@ -31,7 +31,7 @@ export interface LocationFieldProps {
    * { location: geocodedLocation }
    * ```
    */
-  addLocationSearch?: ({ location: GeocodedLocation }) => void;
+  addLocationSearch?: (Props: { location: Geolocation }) => void;
   /**
    * Determines whether the input field of this component should auto-focus on first display.
    */
@@ -52,7 +52,7 @@ export interface LocationFieldProps {
    * { locationType: string }
    * ```
    */
-  clearLocation?: ({ locationType: LocationType }) => void;
+  clearLocation?: (Props: { locationType: LocationType }) => void;
   /**
    * The current position of the user if it is available.
    */

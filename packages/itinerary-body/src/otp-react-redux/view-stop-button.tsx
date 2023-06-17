@@ -5,7 +5,7 @@ import * as S from "../styled";
 import { defaultMessages } from "../util";
 
 interface Props {
-  onStopClick: ({ stopId: string }) => void;
+  onStopClick: (Args: { stopId: string }) => void;
   stopId: string;
 }
 
