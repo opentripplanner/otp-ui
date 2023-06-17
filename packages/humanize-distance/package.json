@@ -11,7 +11,9 @@
   "private": false,
   "gitHead": "644c72e0d08f8daf93b44eaf0deec88a1e16f414",
   "scripts": {
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "build:cjs": "../../scripts/build-cjs.sh",
+    "build:esm": "../../scripts/build-esm.sh"
   },
   "peerDependencies": {
     "react-intl": "^5.24.6"
