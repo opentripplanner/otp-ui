@@ -1,0 +1,32 @@
+{
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": [
+          "test",
+          "tsc",
+          "build:cjs",
+          "build:esm",
+          "collect-i18n",
+          "validate-i18n"
+        ]
+      }
+    }
+  },
+  "targetDefaults": {
+    "tsc": {
+      "dependsOn": ["^tsc"],
+      "outputs": ["{projectRoot}/lib"]
+    },
+    "test": {
+      "outputs": ["{projectRoot}/src/__tests__/__snapshots__"]
+    },
+    "build:cjs": {
+      "outputs": ["{projectRoot}/lib"]
+    },
+    "build:esm": {
+      "outputs": ["{projectRoot}/esm"]
+    }
+  }
+}
