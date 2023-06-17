@@ -10,7 +10,6 @@
   "repository": "https://github.com/opentripplanner/otp-ui.git",
   "author": "Evan Siroky",
   "license": "MIT",
-  "private": false,
   "dependencies": {
     "@conveyal/lonlat": "^1.4.1",
     "@mapbox/polyline": "^1.1.0",

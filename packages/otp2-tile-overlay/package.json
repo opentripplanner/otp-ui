@@ -7,7 +7,6 @@
   "types": "lib/index.d.ts",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
   "license": "MIT",
-  "private": false,
   "scripts": {
     "tsc": "tsc",
     "build:cjs": "../../scripts/build-cjs.sh",
