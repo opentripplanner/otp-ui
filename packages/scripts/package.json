@@ -9,6 +9,7 @@
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "author": "Binh Dam",
   "license": "MIT",
+  "private": false,
   "dependencies": {
     "@formatjs/cli": "^4.2.33",
     "flat": "^5.0.2",
