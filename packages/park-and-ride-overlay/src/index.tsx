@@ -12,11 +12,11 @@ type Props = {
   id?: string;
   keyboard?: boolean;
   parkAndRideLocations: { name: string; x: number; y: number }[];
-  setLocation: ({
+  setLocation: (Args: {
     // eslint-disable-next-line @typescript-eslint/no-shadow
-    location: Location,
-    locationType: string,
-    reverseGeocode: boolean
+    location: Location;
+    locationType: string;
+    reverseGeocode: boolean;
   }) => void;
 };
 

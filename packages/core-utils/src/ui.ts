@@ -11,7 +11,7 @@ export function isMobile(): boolean {
  * Returns true if the user is using a [redacted] browser
  */
 export function isIE(): boolean {
-  return bowser.parse(navigator.userAgent).browser === "Internet Explorer";
+  return bowser.parse(navigator.userAgent).browser.name === "Internet Explorer";
 }
 
 /**

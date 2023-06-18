@@ -9,6 +9,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "build:cjs": "../../scripts/build-cjs.sh",
+    "build:esm": "../../scripts/build-esm.sh"
   }
 }

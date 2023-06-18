@@ -73,7 +73,7 @@ export type SetViewedTripFunction = (tripSection: TripSection) => void;
 
 export interface TransitLegSubheaderProps {
   leg: Leg;
-  onStopClick?: ({ stopId: string }) => void;
+  onStopClick?: (Args: { stopId: string }) => void;
 }
 
 export interface TransitLegSummaryProps {
