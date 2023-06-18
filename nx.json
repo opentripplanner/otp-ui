@@ -16,7 +16,6 @@
   },
   "targetDefaults": {
     "tsc": {
-      "dependsOn": ["^tsc"],
       "outputs": ["{projectRoot}/lib"]
     },
     "test": {

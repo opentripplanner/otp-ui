@@ -102,7 +102,7 @@
     "build:esm": "lerna run build:esm",
     "check:i18n-all": "node packages/scripts/lib/run-validate-i18n.js packages/**/src packages/**/i18n",
     "check:i18n-en-fr": "node packages/scripts/lib/run-validate-i18n.js packages/**/src packages/**/i18n/en-US.yml packages/**/i18n/fr.yml",
-    "prepublish": "yarn tsc && yarn build:cjs && yarn build:esm",
+    "prepublish": "lerna run tsc,build:cjs,build:esm",
     "check-eslint-config": "eslint --print-config jestconfig.js | eslint-config-prettier-check",
     "coverage": "jest --coverage",
     "deploy-storybook": "storybook-to-ghpages",
