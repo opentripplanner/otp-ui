@@ -270,6 +270,5 @@
   },
   "msw": {
     "workerDirectory": "public"
-  },
-  "packageManager": "yarn@3.6.0"
+  }
 }
