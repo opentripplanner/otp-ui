@@ -110,6 +110,12 @@ const otp2FareByLegLayout: FareTableLayout[] = [
   }
 ];
 
+const otp2defaultFareType = {
+  headerKey: "cash-regular",
+  mediumId: "orca:cash",
+  riderCategoryId: "orca:regular"
+};
+
 const englishFareKeyMap = {
   regular: "Transit Fare",
   student: "Student Fare",
@@ -186,6 +192,7 @@ function createTripDetailsTemplate(
       DepartureDetails,
       FareDetails,
       fareDetailsLayout,
+      defaultFareType,
       itinerary
     }: TripDetailsProps,
     { globals, parameters }: StoryContext
@@ -206,6 +213,7 @@ function createTripDetailsTemplate(
         fareKeyNameMap={fareKeyNameMap}
         itinerary={itinerary}
         co2Config={defaultCo2Config}
+        defaultFareType={defaultFareType}
       />
     );
   };
@@ -264,6 +272,12 @@ export const StyledWalkTransitWalkItinerary = makeStory(
 
 export const BikeTransitBikeItinerary = makeStory({
   itinerary: bikeTransitBikeItinerary
+});
+
+export const LegFareProductsItinerary = makeStory({
+  itinerary: otp2FareProducts,
+  fareDetailsLayout: otp2FareByLegLayout,
+  defaultFareType: otp2defaultFareType
 });
 
 export const WalkInterlinedTransitItinerary = makeStory(

@@ -11,6 +11,7 @@ import SubmodeSelector from "./SubmodeSelector";
 import MetroModeSelector from "./MetroModeSelector";
 import {
   addSettingsToButton,
+  aggregateModes,
   convertModeSettingValue,
   generateModeSettingValues,
   populateSettingWithValue
@@ -20,6 +21,7 @@ import defaultModeSettings from "../modeSettings.yml";
 
 export {
   addSettingsToButton,
+  aggregateModes,
   CheckboxSelector,
   convertModeSettingValue,
   DateTimeSelector,
