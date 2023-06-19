@@ -1,5 +1,5 @@
 export function filterProfileOptions(response) {
-  // Filter out similar options. TODO: handle on server?
+  // Filter out similar options. TODO: handle on server??
   const optStrs = [];
   const filteredIndices = [];
 
