@@ -205,6 +205,18 @@ query Plan(
         }
         transitLeg
         trip {
+          arrivalStoptime {
+            stop {
+              gtfsId
+            }
+            stopPosition
+          }
+          departureStoptime {
+            stop {
+              gtfsId
+            }
+            stopPosition
+          }
           gtfsId
           id
           tripHeadsign
