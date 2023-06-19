@@ -615,12 +615,12 @@ export function getLegCost(
  */
 export function getItineraryCost(
   legs: Leg[],
-  category: string,
-  container: string
+  mediumId: string,
+  riderCategoryId: string
 ): Money {
   return legs
-    .filter(leg => !!leg.fareProducts)
-    .map(leg => getLegCost(leg, category, container).price)
+    .filter(leg => leg.fareProducts?.length > 0)
+    .map(leg => getLegCost(leg, mediumId, riderCategoryId).price)
     .reduce<Money>(
       (prev, cur) => ({
         cents: prev.cents + cur?.cents || 0,
