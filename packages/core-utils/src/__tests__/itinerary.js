@@ -2,12 +2,14 @@ import {
   calculateTncFares,
   getCompanyFromLeg,
   getDisplayedStopId,
+  getItineraryCost,
   getLegCost,
   isTransit
 } from "../itinerary";
 
 const bikeRentalItinerary = require("./__mocks__/bike-rental-itinerary.json");
 const tncItinerary = require("./__mocks__/tnc-itinerary.json");
+const fareProductItinerary = require("./__mocks__/fare-products-itinerary.json");
 
 const basePlace = {
   lat: 0,
@@ -136,6 +138,18 @@ describe("util > itinerary", () => {
       const leg = {};
       const result = getLegCost(leg, "cash", "regular");
       expect(result.price).toBeUndefined();
+    });
+  });
+
+  describe("getItineraryCost", () => {
+    it("should calculate the total cost of an itinerary", () => {
+      const result = getItineraryCost(
+        fareProductItinerary.legs,
+        "orca:cash",
+        "orca:regular"
+      );
+      expect(result.amount).toEqual(5.75);
+      expect(result.currency).toMatchSnapshot();
     });
   });
 });
