@@ -24,7 +24,7 @@
     "string-similarity": "^4.0.4"
   },
   "devDependencies": {
-    "@opentripplanner/types": "6.0.0-alpha.6",
+    "@opentripplanner/types": "6.0.0-alpha.8",
     "@types/flat": "^5.0.2"
   },
   "peerDependencies": {

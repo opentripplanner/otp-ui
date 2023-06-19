@@ -176,7 +176,7 @@ export default function LineColumnContent({
     );
   } else if (
     ((leg.from.bikeShareId || leg.from.rentalVehicle) &&
-      leg.mode.startsWith("BICYCLE")) || // @ts-expect-error ALPHA ONLY TEMPORARY TO GET IT TO BUILD
+      leg.mode.startsWith("BICYCLE")) ||
     (lastLeg.from.bikeShareId && leg.mode === "WALK")
   ) {
     // start or end of a bike rental leg (not including origin or
@@ -185,9 +185,7 @@ export default function LineColumnContent({
   } else if (
     leg.from.vertexType === "VEHICLERENTAL" ||
     leg.from.vertexType === "BIKESHARE" ||
-    // @ts-expect-error ALPHA ONLY TEMPORARY TO GET IT TO BUILD
     (lastLeg.from.vertexType === "VEHICLERENTAL" && leg.mode === "WALK") ||
-    // @ts-expect-error ALPHA ONLY TEMPORARY TO GET IT TO BUILD
     (lastLeg.from.vertexType === "BIKESHARE" && leg.mode === "WALK")
   ) {
     // start or end of a vehicle rental leg (not including origin or
