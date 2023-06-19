@@ -333,6 +333,13 @@ export type Leg = {
   };
   to: Place;
   transitLeg: boolean;
+  trip?: {
+    arrivalStoptime?: TripStopTime;
+    departureStoptime?: TripStopTime;
+    gtfsId?: string;
+    id: string;
+    tripHeadsign?: string;
+  };
   tripBlockId?: string;
   tripId?: string;
   walkingBike?: boolean;
@@ -341,6 +348,14 @@ export type Leg = {
    * They are not returned in the API response
    */
   fareProducts?: Array<FareProduct>;
+};
+
+type TripStopTime = {
+  stopPosition: number;
+  stop: {
+    gtfsId: string;
+    id: string;
+  };
 };
 
 /**
