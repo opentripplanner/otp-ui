@@ -1,5 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`util > itinerary getTransitFare should return defaults with missing fare 1`] = `0`;
-
-exports[`util > itinerary getTransitFare should work with valid fare component 1`] = `575`;
+exports[`util > itinerary getItineraryCost should calculate the total cost of an itinerary 1`] = `
+Object {
+  "code": "USD",
+  "digits": 2,
+}
+`;
