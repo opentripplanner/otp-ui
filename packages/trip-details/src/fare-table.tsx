@@ -84,7 +84,7 @@ const FareTypeTable = ({
   const intl = useIntl();
   // FIXME: Is there a nicer way to do this?
   const colsToRender = cols
-    .filter(col => getItineraryCost(legs, col.riderCategoryId, col.mediumId))
+    .filter(col => getItineraryCost(legs, col.mediumId, col.riderCategoryId))
     .map(col => ({
       ...col,
       total: getItineraryCost(legs, col.riderCategoryId, col.mediumId)
@@ -112,10 +112,7 @@ const FareTypeTable = ({
               >
                 {boldText(useGetHeaderString(col.columnHeaderKey))}
                 <br />
-                {renderFare(
-                  fare?.currency?.code,
-                  (fare?.amount || 0) / 10 ** fare?.currency?.digits
-                )}
+                {renderFare(fare?.currency?.code, fare?.amount || 0)}
               </th>
             );
           })}
@@ -123,10 +120,12 @@ const FareTypeTable = ({
         {filteredLegs.map((leg, index) => (
           <tr key={index}>
             <td className="no-zebra">
-              {leg.routeShortName || leg.route || leg.routeLongName}
+              {leg.routeShortName || leg.routeLongName}
             </td>
             {colsToRender.map(col => {
               const fare = getLegCost(leg, col.mediumId, col.riderCategoryId);
+              console.log(fare);
+
               return (
                 <td
                   key={col.columnHeaderKey}
@@ -145,8 +144,7 @@ const FareTypeTable = ({
                       },
                       {
                         transferAmount: intl.formatNumber(
-                          fare?.transferAmount?.amount /
-                            10 ** fare?.transferAmount?.currency.digits,
+                          fare?.transferAmount?.amount,
                           {
                             currency: fare?.price?.currency?.code,
                             currencyDisplay: "narrowSymbol",
@@ -165,8 +163,7 @@ const FareTypeTable = ({
                     )}
                   {renderFare(
                     fare?.price?.currency?.code,
-                    (fare?.price?.amount || 0) /
-                      10 ** fare?.price?.currency?.digits
+                    fare?.price?.amount || 0
                   )}
                 </td>
               );

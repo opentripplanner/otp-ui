@@ -66,11 +66,7 @@ function DefaultTimeActiveDetails({
 export function TripDetails({
   className = "",
   co2Config,
-  defaultFareType = {
-    headerKey: "cash-regular",
-    mediumId: "cash",
-    riderCategoryId: "regular"
-  },
+  defaultFareType,
   DepartureDetails = null,
   displayTimeActive = true,
   FareDetails = null,
@@ -96,12 +92,10 @@ export function TripDetails({
           const mediumId = fp.product.medium.id;
           const riderCategoryId = fp.product.riderCategory.id;
           if (
-            prev.fareTypes.find(
+            !prev.fareTypes.find(
               ft =>
-                !(
-                  ft.mediumId === mediumId &&
-                  ft.riderCategoryId === riderCategoryId
-                )
+                ft.mediumId === mediumId &&
+                ft.riderCategoryId === riderCategoryId
             )
           ) {
             prev.fareTypes.push({ mediumId, riderCategoryId });
@@ -114,11 +108,11 @@ export function TripDetails({
   );
 
   let fare;
-  if (fareTypes.length > 0) {
+  if (fareTypes.length > 0 && defaultFareType) {
     const defaultFareTotal = getItineraryCost(
       itinerary.legs,
-      defaultFareType.riderCategoryId,
-      defaultFareType.mediumId
+      defaultFareType.mediumId,
+      defaultFareType.riderCategoryId
     );
     // Depending on if there are additional fares to display either render a <span> or a <details>
     const TransitFareWrapper =
@@ -284,7 +278,7 @@ export function TripDetails({
             </S.Timing>
           }
         />
-        {fare && (
+        {!!fare && (
           <TripDetail
             // Any custom description for the transit fare needs to be handled by the slot.
             description={
