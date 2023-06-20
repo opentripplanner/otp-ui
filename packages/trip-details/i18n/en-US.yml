@@ -1,5 +1,12 @@
 otpUi:
   TripDetails:
+    FareTable:
+      cash: Cash
+      electronic: Electronic
+      regular: Adult
+      senior: Senior
+      special: Special
+      youth: Youth
     co2: "CO₂ Emitted: <strong>{co2}</strong>"
     co2description: >-
       CO₂ intensity is calculated by multiplying the distance of each leg of a

@@ -1,5 +1,12 @@
 otpUi:
   TripDetails:
+    FareTable:
+      cash: Espèces
+      electronic: Électronique
+      regular: Normal
+      senior: Séniors
+      special: Spécial
+      youth: Jeunes
     co2: "CO₂ émis : <strong>{co2}</strong>"
     co2description: >-
       L'intensité carbone est calculée en multipliant la distance de chaque
