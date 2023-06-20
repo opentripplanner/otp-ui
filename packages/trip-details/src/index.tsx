@@ -89,8 +89,8 @@ export function TripDetails({
       }
       if (leg.fareProducts) {
         leg.fareProducts.forEach(fp => {
-          const mediumId = fp.product.medium.id;
-          const riderCategoryId = fp.product.riderCategory.id;
+          const mediumId = fp.product.medium?.id;
+          const riderCategoryId = fp.product.riderCategory?.id;
           if (
             !prev.fareTypes.find(
               ft =>
