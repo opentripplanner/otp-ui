@@ -143,7 +143,7 @@ export function TripDetails({
                 strong: boldText,
                 value: renderFare(
                   defaultFareTotal.currency?.code || "USD",
-                  defaultFareTotal?.amount / defaultFareTotal?.currency?.digits
+                  defaultFareTotal?.amount
                 )
               }}
             />

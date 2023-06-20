@@ -84,11 +84,11 @@ const FareTypeTable = ({
   const intl = useIntl();
   // FIXME: Is there a nicer way to do this?
   const colsToRender = cols
-    .filter(col => getItineraryCost(legs, col.mediumId, col.riderCategoryId))
     .map(col => ({
       ...col,
-      total: getItineraryCost(legs, col.riderCategoryId, col.mediumId)
-    }));
+      total: getItineraryCost(legs, col.mediumId, col.riderCategoryId)
+    }))
+    .filter(col => col.total);
 
   const headerString = useGetHeaderString(headerKey);
   const filteredLegs = legs.filter(leg => leg.fareProducts?.length > 0);
@@ -123,8 +123,6 @@ const FareTypeTable = ({
             </td>
             {colsToRender.map(col => {
               const fare = getLegCost(leg, col.mediumId, col.riderCategoryId);
-              console.log(fare);
-
               return (
                 <td
                   key={col.columnHeaderKey}
