@@ -91,7 +91,6 @@ const FareTypeTable = ({
     }));
 
   const headerString = useGetHeaderString(headerKey);
-
   const filteredLegs = legs.filter(leg => leg.fareProducts?.length > 0);
   if (colsToRender.length) {
     return (
