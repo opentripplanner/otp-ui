@@ -18,11 +18,8 @@ otpUi:
       bookRide: Reservar un viaje
       bookRideLater: Espere hasta las {timeMillis, time, short} para reservar
       estimatedCost: "Costo estimado: {minFare} - {maxFare}"
-      estimatedTravelTime: "Tiempo de viaje estimado: {duration} (no tiene en cuenta
-        el tráfico)"
-      waitForPickup: "Espera al conductor {company}{minutes, plural, =0 {} other {
-        # minutos}}"
-    summary: "{mode} a {place}"
+      estimatedTravelTime: "Tiempo de viaje estimado: {duration} (no tiene en cuenta el tráfico)"
+      waitForPickup: "Espera al conductor {company}{minutes, plural, =0 {} other { # minutos}}"
     mapillaryTooltip: Mostrar imágenes de la calle en esta ubicación
     step:
       circleClockwise: Siga el círculo en el sentido de las agujas del reloj
@@ -67,30 +64,20 @@ otpUi:
       escooter: Patineta
       vehicle: Vehículo
   ItineraryBody:
-<<<<<<< HEAD
-=======
-    stayOnBoard: Quédate a bordo en {place}
-    travelBy: Viajar {mode}
->>>>>>> master
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"
     flexAdvanceNotice: " al menos {leadDays, plural, one {# día} other {# días}} de antelación"
     flexCallAhead: llama con anticipación
     flexCallNumber: llama {phoneNumber}
     flexPickupMessage: Para tomar esta ruta, tiene que {action}{advanceNotice}.
-    stayOnBoard: Permanecer a bordo a {place}
+    stayOnBoard: Quédate a bordo en {place}
     travelBy: Viajar {mode}
     travelByMode:
       bike: en bicicleta
       car: en carro
       escooter: en patineta
       walk: a pie
-<<<<<<< HEAD
     viewOnMap: Ver en el mapa
-=======
-    flexAdvanceNotice: " al menos {leadDays, plural, one {# día} other {# días}} de
-      antelación"
->>>>>>> master
   TransitLegBody:
     AlertsBody:
       effectiveDate: A partir de {dateTime, date, long}
