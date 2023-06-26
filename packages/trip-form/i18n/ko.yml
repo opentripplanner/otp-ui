@@ -1,11 +1,11 @@
 otpUi:
   DateTimeSelector:
-    now: 지금 출발
-    depart: 출발 시간
     arrive: 도착 시간
-    dateTimeSelector: 날짜 및 시간 선택기
-    time: 시간
     date: 날짜
+    dateTimeSelector: 날짜 및 시간 선택기
+    depart: 출발 시간
+    now: 지금 출발
+    time: 시간
   ModeSelector:
     labels:
       bicycle: 자전거
@@ -32,7 +32,14 @@ otpUi:
       walkTolerance-labelLow: 덜 걷기
       wheelchair-label: 액세스 가능한 라우팅
     settingsLabel: "{mode} 설정"
-
+  SettingsSelectorPanel:
+    bikeOnly: 자전거 전용
+    escooterOnly: 전동스쿠터 전용
+    takeTransit: 대중 교통 이용
+    travelPreferences: 이동 환경설정
+    use: 이용
+    useCompanies: 회사 이용
+    walkOnly: 도보 전용
   queryParameters:
     bikeSpeed: 자전거 속도
     distanceInMiles: |
@@ -57,11 +64,3 @@ otpUi:
     watts250entryLevelEscooter: 초급형 스쿠터 (18 km/h)
     watts500robustEscooter: 견고한 전동스쿠터 (30 km/h)
     wheelchair: 휠체어 접근이 가능한 경로 선호
-  SettingsSelectorPanel:
-    useCompanies: 회사 이용
-    bikeOnly: 자전거 전용
-    escooterOnly: 전동스쿠터 전용
-    takeTransit: 대중 교통 이용
-    travelPreferences: 이동 환경설정
-    use: 이용
-    walkOnly: 도보 전용

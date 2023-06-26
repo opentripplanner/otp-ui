@@ -174,3 +174,8 @@ export function getPlaceName(
   // Default to place name
   return place.name;
 }
+
+// TODO: is this the best way to do this?
+export const parseOTP2Minute = (otp2Minute: string): string => {
+  return otp2Minute.split("PT")[1].split("M")[0];
+};

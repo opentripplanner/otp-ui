@@ -240,6 +240,7 @@ export type Place = {
   lon: number;
   name: string;
   networks?: string[];
+  rentalVehicle?: { network: string };
   stopCode?: string;
   stopId?: string;
   stopIndex?: number;
@@ -298,7 +299,6 @@ export type Leg = {
   duration: number;
   endTime: number;
   from: Place;
-  hailedCar: boolean;
   headsign?: string;
   interlineWithPreviousLeg: boolean;
   intermediateStops: Place[];
@@ -307,6 +307,15 @@ export type Leg = {
   mode: string;
   pathway: boolean;
   pickupBookingInfo?: FlexPickupBookingInfo;
+  rideHailingEstimate?: {
+    provider: {
+      id: string;
+    };
+    arrival: string;
+    minPrice: TemporaryTNCPriceType;
+    maxPrice: TemporaryTNCPriceType;
+    productName?: string;
+  };
   realTime: boolean;
   rentedBike: boolean;
   rentedCar: boolean;
@@ -319,18 +328,8 @@ export type Leg = {
   routeTextColor?: string;
   routeType?: number;
   serviceDate?: string;
-  startTime: number;
+  startTime: number | string;
   steps: Step[];
-  tncData?: {
-    company: string;
-    currency: string;
-    displayName: string;
-    estimatedArrival: number;
-    maxCost: number;
-    minCost: number;
-    productId: string;
-    travelDuration: number;
-  };
   to: Place;
   transitLeg: boolean;
   tripBlockId?: string;
@@ -341,6 +340,13 @@ export type Leg = {
    * They are not returned in the API response
    */
   fareProducts?: Array<FareProduct>;
+};
+
+type TemporaryTNCPriceType = {
+  currency: {
+    code: string;
+  };
+  amount: number;
 };
 
 /**

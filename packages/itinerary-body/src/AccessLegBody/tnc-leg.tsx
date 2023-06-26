@@ -2,10 +2,11 @@ import coreUtils from "@opentripplanner/core-utils";
 import { Config, Leg, LegIconComponent } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage, FormattedNumber } from "react-intl";
+import { getCompanyForNetwork } from "@opentripplanner/core-utils/lib/itinerary";
 import { Duration } from "../defaults";
 
 import * as S from "../styled";
-import { defaultMessages } from "../util";
+import { defaultMessages, parseOTP2Minute } from "../util";
 
 import AccessLegSummary from "./access-leg-summary";
 
@@ -31,7 +32,7 @@ export default function TNCLeg({
   UBER_CLIENT_ID = ""
 }: Props): ReactElement {
   const universalLinks = {
-    UBER: `https://m.uber.com/${
+    uber: `https://m.uber.com/${
       coreUtils.ui.isMobile() ? "ul/" : ""
     }?client_id=${UBER_CLIENT_ID}&action=setPickup&pickup[latitude]=${
       leg.from.lat
@@ -40,10 +41,10 @@ export default function TNCLeg({
     )}&dropoff[latitude]=${leg.to.lat}&dropoff[longitude]=${
       leg.to.lon
     }&dropoff[formatted_address]=${encodeURI(leg.to.name)}`,
-    LYFT: `https://lyft.com/ride?id=lyft&partner=${LYFT_CLIENT_ID}&pickup[latitude]=${leg.from.lat}&pickup[longitude]=${leg.from.lon}&destination[latitude]=${leg.to.lat}&destination[longitude]=${leg.to.lon}`
+    lyft: `https://lyft.com/ride?id=lyft&partner=${LYFT_CLIENT_ID}&pickup[latitude]=${leg.from.lat}&pickup[longitude]=${leg.from.lon}&destination[latitude]=${leg.to.lat}&destination[longitude]=${leg.to.lon}`
   };
-  const { tncData } = leg;
-  if (!tncData || !tncData.estimatedArrival) return null;
+  const { rideHailingEstimate } = leg;
+  if (!rideHailingEstimate) return null;
   return (
     <div>
       <S.PlaceSubheader>
@@ -54,10 +55,13 @@ export default function TNCLeg({
           description="Action text for waiting for a ride-hail vehicle."
           id="otpUi.AccessLegBody.TncLeg.waitForPickup"
           values={{
-            company: tncData.displayName,
+            company: getCompanyForNetwork(
+              rideHailingEstimate.provider.id,
+              config.companies
+            )?.label,
             minutes: followsTransit
               ? 0
-              : Math.round(tncData.estimatedArrival / 60)
+              : parseInt(parseOTP2Minute(leg.rideHailingEstimate.arrival), 10)
           }}
         />
       </S.PlaceSubheader>
@@ -75,7 +79,7 @@ export default function TNCLeg({
         {/* The "Book Ride" button */}
         <S.BookTNCRideButtonContainer>
           <S.BookTNCRideButton
-            href={universalLinks[tncData.company]}
+            href={universalLinks[rideHailingEstimate.provider.id]}
             target={coreUtils.ui.isMobile() ? "_self" : "_blank"}
           >
             <FormattedMessage
@@ -87,7 +91,7 @@ export default function TNCLeg({
             />
           </S.BookTNCRideButton>
           {followsTransit && <S.BookLaterPointer />}
-          {followsTransit && (
+          {followsTransit && typeof leg.startTime === "number" && (
             <S.BookLaterContainer>
               <S.BookLaterInnerContainer>
                 <S.BookLaterText>
@@ -101,7 +105,11 @@ export default function TNCLeg({
                     id="otpUi.AccessLegBody.TncLeg.bookRideLater"
                     values={{
                       timeMillis:
-                        leg.startTime - tncData.estimatedArrival * 1000
+                        leg.startTime -
+                        parseInt(
+                          parseOTP2Minute(rideHailingEstimate.arrival),
+                          10
+                        )
                     }}
                   />
                 </S.BookLaterText>
@@ -125,7 +133,7 @@ export default function TNCLeg({
         </S.TNCTravelTime>
 
         {/* The estimated travel cost */}
-        {tncData.minCost && (
+        {rideHailingEstimate.minPrice && (
           <S.TNCCost>
             <FormattedMessage
               defaultMessage={
@@ -136,22 +144,22 @@ export default function TNCLeg({
               values={{
                 maxFare: (
                   <FormattedNumber
-                    currency={tncData.currency}
+                    currency={rideHailingEstimate.maxPrice.currency.code}
                     currencyDisplay="narrowSymbol"
                     // This isn't a "real" style prop
                     // eslint-disable-next-line react/style-prop-object
                     style="currency"
-                    value={tncData.maxCost}
+                    value={rideHailingEstimate.maxPrice.amount}
                   />
                 ),
                 minFare: (
                   <FormattedNumber
-                    currency={tncData.currency}
+                    currency={rideHailingEstimate.minPrice.currency.code}
                     currencyDisplay="narrowSymbol"
                     // This isn't a "real" style prop
                     // eslint-disable-next-line react/style-prop-object
                     style="currency"
-                    value={tncData.minCost}
+                    value={rideHailingEstimate.minPrice.amount}
                   />
                 )
               }}
