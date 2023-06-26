@@ -260,7 +260,7 @@ class TransitLegBody extends Component<Props, State> {
                             agencyName
                           }
                         )}
-                        href={agencyUrl}
+                        href={agencyUrl || "#"}
                         rel="noopener noreferrer"
                         target="_blank"
                       >

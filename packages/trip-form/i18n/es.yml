@@ -1,11 +1,11 @@
 otpUi:
   DateTimeSelector:
     arrive: Llegada por
+    date: Fecha
+    dateTimeSelector: Selector de fecha y hora
     depart: Salida a las
     now: Sortir ahora
-    dateTimeSelector: Selector de fecha y hora
     time: Hora
-    date: Fecha
   ModeSelector:
     labels:
       bicycle: Bicicleta
@@ -34,12 +34,12 @@ otpUi:
     settingsLabel: Ajustes para {mode}
   SettingsSelectorPanel:
     bikeOnly: Solo bicicleta
+    escooterOnly: Solo scooters eléctricos
     takeTransit: Tomar tránsito
     travelPreferences: Preferencias de viaje
+    use: Usar
     useCompanies: Usar las empresas
     walkOnly: Solo caminar
-    escooterOnly: Solo scooters eléctricos
-    use: Usar
   queryParameters:
     bikeSpeed: Velocidad de la bicicleta
     distanceInMiles: |
@@ -54,13 +54,13 @@ otpUi:
     optimizeBikeSpeed: Velocidad
     optimizeFor: Optimizar para
     speedInMilesPerHour: "{mph} MPH"
-    walkSpeed: Velocidad de caminata
+    walkReluctance: Evasión de caminata
     walkReluctanceHigh: Más Tránsito
     walkReluctanceLow: Más Caminata
+    walkSpeed: Velocidad de caminata
     watts: Potencia del scooter eléctrico
     watts125kidsHoverboard: Hoverboard para niños (10 km/h)
     watts1500powerfulEscooter: Scooter eléctrico potente (40km/h)
-    wheelchair: Prefiera las rutas accesibles para las sillas de ruedas
-    walkReluctance: Evasión de caminata
     watts250entryLevelEscooter: Scooter básico (18 km/h)
     watts500robustEscooter: Scooter eléctrico robusto (30 km/h)
+    wheelchair: Prefiera las rutas accesibles para las sillas de ruedas

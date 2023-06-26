@@ -102,6 +102,24 @@ query Plan(
         realTime
         realtimeState
         rentedBike
+        rideHailingEstimate {
+          arrival
+          maxPrice {
+            amount
+            currency {
+              code
+            }
+          }
+          minPrice {
+            amount
+            currency {
+              code
+            }
+          }
+          provider {
+            id
+          }
+        }
         route {
           alerts {
             alertDescriptionText
