@@ -18,7 +18,7 @@ jobs:
       - name: i18n check (en-US, fr only)
         run: yarn check:i18n-en-fr
       - name: Type check
-        run: yarn typescript
+        run: yarn tsc
       - name: Run tests
         run: yarn unit
       - name: Run a11y tests
