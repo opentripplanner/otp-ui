@@ -1,9 +1,9 @@
 otpUi:
   DateTimeSelector:
-    dateTimeSelector: 日期和时间选择器
-    time: 时间
     date: 日期
+    dateTimeSelector: 日期和时间选择器
     now: 现在离开
+    time: 时间
   ModeSelector:
     labels:
       bicycle: 自行车
