@@ -60,22 +60,25 @@ query Plan(
         fareProducts {
           id
           product {
+            __typename
             id
             medium {
               id
               name
             }
             name
-            price {
-              amount
-              currency {
-                code
-                digits
-              }
-            }
             riderCategory {
               id
               name
+            }
+            ... on DefaultFareProduct {
+              price {
+                amount
+                currency {
+                  code
+                  digits
+                }
+              }
             }
           }
         }
