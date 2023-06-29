@@ -259,6 +259,7 @@
       "git add"
     ],
     "*.graphql": [
+      "prettier --write",
       "yarn lint:graphql --fix",
       "git add"
     ],
