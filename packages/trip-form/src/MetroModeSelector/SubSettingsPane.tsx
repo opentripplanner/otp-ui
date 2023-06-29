@@ -58,8 +58,8 @@ export const SubSettingsCheckbox = styled(CheckboxSelector)<{
 `;
 
 const FormLabelIconWrapper = styled.span`
-  display: flex;
   align-items: center;
+  display: flex;
   gap: 4px;
   svg {
     width: 16px;
