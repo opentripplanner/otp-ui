@@ -9,7 +9,6 @@ query Plan(
   $carReluctance: Float 
   $walkReluctance: Float 
   $arriveBy: Boolean 
-  $intermediatePlaces: [InputCoordinates] 
   $preferred: InputPreferred 
   $unpreferred: InputUnpreferred 
   $banned: InputBanned
@@ -22,8 +21,6 @@ query Plan(
     carReluctance: $carReluctance
     date: $date
     fromPlace: $fromPlace
-    intermediatePlaces: $intermediatePlaces
-    # Currently only supporting EN locale, used for times and text
     locale: "en"
     numItineraries: $numItineraries
     preferred: $preferred
@@ -62,22 +59,25 @@ query Plan(
         fareProducts {
           id
           product {
+            __typename
             id
             medium {
               id
               name
             }
             name
-            price {
-              amount
-              currency {
-                code
-                digits
-              }
-            }
             riderCategory {
               id
               name
+            }
+            ... on DefaultFareProduct {
+              price {
+                amount
+                currency {
+                  code
+                  digits
+                }
+              }
             }
           }
         }
