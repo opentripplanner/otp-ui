@@ -50,7 +50,7 @@ const SettingsPanel = styled.fieldset`
 export const SubSettingsCheckbox = styled(CheckboxSelector)<{
   flexbox: boolean;
 }>`
-  display: ${props => (props.flexbox ? "flex" : "box")};
+  display: ${props => (props.flexbox ? "flex" : "block")};
   margin-left: 4px;
   input {
     vertical-align: middle;

@@ -71,6 +71,14 @@ const modeSettingDefinitionsWithDropdown = [
   ...modeSettingDefinitions,
   {
     applicableMode: "TRANSIT",
+    default: "blue",
+    key: "busColor",
+    label: "Bus Color",
+    options: [{ value: "blue", text: "Blue" }],
+    type: "DROPDOWN"
+  },
+  {
+    applicableMode: "TRANSIT",
     default: true,
     key: "tram",
     iconName: "tram",
