@@ -9,7 +9,6 @@ query Plan(
   $carReluctance: Float
   $walkReluctance: Float
   $arriveBy: Boolean
-  $intermediatePlaces: [InputCoordinates]
   $preferred: InputPreferred
   $unpreferred: InputUnpreferred
   $banned: InputBanned
@@ -22,7 +21,6 @@ query Plan(
     carReluctance: $carReluctance
     date: $date
     fromPlace: $fromPlace
-    intermediatePlaces: $intermediatePlaces
     # Currently only supporting EN locale, used for times and text
     locale: "en"
     numItineraries: $numItineraries
@@ -38,7 +36,7 @@ query Plan(
       accessibilityScore
       duration
       endTime
-        legs {
+      legs {
         accessibilityScore
         agency {
           alerts {
@@ -104,6 +102,24 @@ query Plan(
         realTime
         realtimeState
         rentedBike
+        rideHailingEstimate {
+          arrival
+          maxPrice {
+            amount
+            currency {
+              code
+            }
+          }
+          minPrice {
+            amount
+            currency {
+              code
+            }
+          }
+          provider {
+            id
+          }
+        }
         route {
           alerts {
             alertDescriptionText
@@ -137,7 +153,7 @@ query Plan(
           }
           lat
           lon
-        relativeDirection
+          relativeDirection
           stayOn
           streetName
         }
@@ -165,6 +181,21 @@ query Plan(
         }
         transitLeg
         trip {
+          arrivalStoptime {
+            stop {
+              gtfsId
+              id
+            }
+            stopPosition
+          }
+          departureStoptime {
+            stop {
+              gtfsId
+              id
+            }
+            stopPosition
+          }
+
           gtfsId
           id
           tripHeadsign

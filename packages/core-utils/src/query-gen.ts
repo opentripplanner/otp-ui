@@ -6,7 +6,7 @@ import {
   TransportMode
 } from "@opentripplanner/types";
 
-import PlanQuery from "./planQuery.graphql";
+import DefaultPlanQuery from "./planQuery.graphql";
 
 type InputBanned = {
   routes?: string;
@@ -201,18 +201,27 @@ export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
     .map(combo => ({ ...params, modes: combo }));
 }
 
-export function generateOtp2Query({
-  arriveBy,
-  banned,
-  date,
-  from,
-  modes,
-  modeSettings,
-  numItineraries,
-  preferred,
-  time,
-  to
-}: OTPQueryParams): GraphQLQuery {
+/**
+ * Generates a query for OTP GraphQL API based on parameters.
+ * @param param0 OTP2 Parameters for the query
+ * @param planQuery Override the default query for OTP
+ * @returns A fully formed query+variables ready to be sent to GraphQL backend
+ */
+export function generateOtp2Query(
+  {
+    arriveBy,
+    banned,
+    date,
+    from,
+    modes,
+    modeSettings,
+    numItineraries,
+    preferred,
+    time,
+    to
+  }: OTPQueryParams,
+  planQuery = DefaultPlanQuery
+): GraphQLQuery {
   // This extracts the values from the mode settings to key value pairs
   const modeSettingValues = modeSettings.reduce((prev, cur) => {
     if (cur.type === "SLIDER" && cur.inverseKey) {
@@ -230,7 +239,7 @@ export function generateOtp2Query({
   } = modeSettingValues;
 
   return {
-    query: print(PlanQuery),
+    query: print(planQuery),
     variables: {
       arriveBy,
       banned,
