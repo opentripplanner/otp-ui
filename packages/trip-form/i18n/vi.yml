@@ -14,7 +14,6 @@ otpUi:
       transit: Giao thông công cộng
       walk: Đi bộ
     settings:
-      addTram-label: Xe điện
       bikeTolerance-label: Sức chịu đựng đi xe đạp
       bikeTolerance-labelHigh: Đi xe đạp nhiều hơn
       bikeTolerance-labelLow: Ít đi xe đạp
