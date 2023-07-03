@@ -17,7 +17,7 @@
     "react-animate-height": "^3.0.4"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^5.0.0",
+    "@opentripplanner/types": "^6.0.0-alpha.9",
     "@types/flat": "^5.0.2"
   },
   "peerDependencies": {
