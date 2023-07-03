@@ -91,52 +91,44 @@ describe("util > itinerary", () => {
   });
 
   describe("getLegCost", () => {
-    it("should return the total cost for a leg", () => {
-      const leg = {
-        fareProducts: [
-          {
-            product: {
-              medium: { id: "cash" },
-              riderCategory: { id: "regular" },
-              name: "rideCost",
-              price: { amount: 200, currency: "USD" }
-            }
+    const leg = {
+      fareProducts: [
+        {
+          product: {
+            medium: { id: "cash" },
+            riderCategory: { id: "regular" },
+            name: "rideCost",
+            price: { amount: 200, currency: "USD" }
           }
-        ]
-      };
+        },
+        {
+          product: {
+            name: "transfer",
+            price: { amount: 50, currency: "USD" },
+            medium: { id: "cash" },
+            riderCategory: { id: "regular" }
+          }
+        }
+      ]
+    };
+    it("should return the total cost for a leg", () => {
       const result = getLegCost(leg, "cash", "regular");
       expect(result.price).toEqual({ amount: 200, currency: "USD" });
     });
 
     it("should return the transfer discount amount if a transfer was used", () => {
-      const leg = {
-        fareProducts: [
-          {
-            product: {
-              medium: { id: "cash" },
-              riderCategory: { id: "regular" },
-              name: "rideCost",
-              price: { amount: 200, currency: "USD" }
-            }
-          },
-          {
-            product: {
-              name: "transfer",
-              price: { amount: 50, currency: "USD" },
-              medium: { id: "cash" },
-              riderCategory: { id: "regular" }
-            }
-          }
-        ]
-      };
       const result = getLegCost(leg, "cash", "regular");
       expect(result.price).toEqual({ amount: 200, currency: "USD" });
       expect(result.transferAmount).toEqual({ amount: 50, currency: "USD" });
     });
 
     it("should return undefined if no fare products exist on the leg", () => {
-      const leg = {};
-      const result = getLegCost(leg, "cash", "regular");
+      const emptyleg = {};
+      const result = getLegCost(emptyleg, "cash", "regular");
+      expect(result.price).toBeUndefined();
+    });
+    it("should return undefined if the keys are invalid", () => {
+      const result = getLegCost(leg, "invalidkey", "invalidkey");
       expect(result.price).toBeUndefined();
     });
   });
@@ -150,6 +142,14 @@ describe("util > itinerary", () => {
       );
       expect(result.amount).toEqual(5.75);
       expect(result.currency).toMatchSnapshot();
+    });
+    it("should return undefined when the keys are invalid", () => {
+      const result = getItineraryCost(
+        fareProductItinerary.legs,
+        "invalidkey",
+        "invalidkey"
+      );
+      expect(result).toBeUndefined();
     });
   });
 });
