@@ -617,15 +617,17 @@ export function getItineraryCost(
   legs: Leg[],
   mediumId: string,
   riderCategoryId: string
-): Money {
-  return legs
+): Money | undefined {
+  const legCosts = legs
     .filter(leg => leg.fareProducts?.length > 0)
     .map(leg => getLegCost(leg, mediumId, riderCategoryId).price)
-    .reduce<Money>(
-      (prev, cur) => ({
-        cents: prev.cents + cur?.cents || 0,
-        currency: prev.currency ?? cur?.currency
-      }),
-      { cents: 0, currency: null }
-    );
+    .filter(cost => cost !== undefined);
+  if (legCosts.length === 0) return undefined;
+  return legCosts.reduce<Money>(
+    (prev, cur) => ({
+      amount: prev.amount + cur?.amount || 0,
+      currency: prev.currency ?? cur?.currency
+    }),
+    { amount: 0, currency: null }
+  );
 }
