@@ -302,7 +302,7 @@ export function TripDetails({
                 <FareDetails
                   maxTNCFare={maxTNCFare}
                   minTNCFare={minTNCFare}
-                  transitFares={transitFares}
+                  legs={itinerary.legs}
                 />
               )
             }
