@@ -343,7 +343,6 @@ class TransitLegBody extends Component<Props, State> {
                     <IntermediateStops stops={leg.intermediateStops} />
                   </S.TransitLegExpandedBody>
                 </AnimateHeight>
-                testest
                 {legCost && (
                   <S.TransitLegFare>
                     <FormattedMessage
