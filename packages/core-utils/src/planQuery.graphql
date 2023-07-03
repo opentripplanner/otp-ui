@@ -3,15 +3,14 @@ query Plan(
   $toPlace: String! 
   $modes: [TransportMode]
   $time: String
-  $date: String 
-  $wheelchair: Boolean 
-  $bikeReluctance: Float 
-  $carReluctance: Float 
-  $walkReluctance: Float 
-  $arriveBy: Boolean 
-  $intermediatePlaces: [InputCoordinates] 
-  $preferred: InputPreferred 
-  $unpreferred: InputUnpreferred 
+  $date: String
+  $wheelchair: Boolean
+  $bikeReluctance: Float
+  $carReluctance: Float
+  $walkReluctance: Float
+  $arriveBy: Boolean
+  $preferred: InputPreferred
+  $unpreferred: InputUnpreferred
   $banned: InputBanned
   $numItineraries: Int
 ) {
@@ -22,7 +21,6 @@ query Plan(
     carReluctance: $carReluctance
     date: $date
     fromPlace: $fromPlace
-    intermediatePlaces: $intermediatePlaces
     # Currently only supporting EN locale, used for times and text
     locale: "en"
     numItineraries: $numItineraries
@@ -126,6 +124,24 @@ query Plan(
         realTime
         realtimeState
         rentedBike
+        rideHailingEstimate {
+          arrival
+          maxPrice {
+            amount
+            currency {
+              code
+            }
+          }
+          minPrice {
+            amount
+            currency {
+              code
+            }
+          }
+          provider {
+            id
+          }
+        }
         route {
           alerts {
             alertDescriptionText
@@ -187,6 +203,21 @@ query Plan(
         }
         transitLeg
         trip {
+          arrivalStoptime {
+            stop {
+              gtfsId
+              id
+            }
+            stopPosition
+          }
+          departureStoptime {
+            stop {
+              gtfsId
+              id
+            }
+            stopPosition
+          }
+
           gtfsId
           id
           tripHeadsign

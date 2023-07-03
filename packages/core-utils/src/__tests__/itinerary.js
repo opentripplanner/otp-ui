@@ -33,7 +33,7 @@ describe("util > itinerary", () => {
 
     it("should return company for TNC leg", () => {
       const company = getCompanyFromLeg(tncItinerary.legs[0]);
-      expect(company).toEqual("UBER");
+      expect(company).toEqual("uber");
     });
   });
 
@@ -41,8 +41,8 @@ describe("util > itinerary", () => {
     it("should return the correct amounts and currency for an itinerary with TNC", () => {
       const fareResult = calculateTncFares(tncItinerary, true);
       expect(fareResult.currencyCode).toEqual("USD");
-      expect(fareResult.maxTNCFare).toEqual(19);
-      expect(fareResult.minTNCFare).toEqual(17);
+      expect(fareResult.maxTNCFare).toEqual(38);
+      expect(fareResult.minTNCFare).toEqual(34);
     });
   });
 

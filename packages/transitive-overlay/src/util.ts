@@ -1,4 +1,12 @@
 import { Anchor } from "mapbox-gl";
+
+import lineArc from "@turf/line-arc";
+import lineDistance from "@turf/line-distance";
+import midpoint from "@turf/midpoint";
+import destination from "@turf/destination";
+import bearing from "@turf/bearing";
+import distance from "@turf/distance";
+
 import {
   Company,
   Itinerary,
@@ -12,7 +20,13 @@ import coreUtils from "@opentripplanner/core-utils";
 import { getPlaceName } from "@opentripplanner/itinerary-body";
 import { IntlShape } from "react-intl";
 
-const { getLegBounds, isAccessMode, isFlex, isTransit } = coreUtils.itinerary;
+const {
+  getLegBounds,
+  isAccessMode,
+  isFlex,
+  isRideshareLeg,
+  isTransit
+} = coreUtils.itinerary;
 
 const CAR_PARK_ITIN_PREFIX = "itin_car_";
 
@@ -284,14 +298,12 @@ export function itineraryToTransitive(
       }
 
       const segment = {
-        arc: false,
+        arc: leg.mode === "CAR" && isRideshareLeg(leg),
         type: leg.mode,
         streetEdges: [streetEdgeId],
         from: { type: "PLACE", place_id: fromPlaceId },
         to: { type: "PLACE", place_id: toPlaceId }
       };
-      // For TNC segments, draw using an arc
-      if (leg.mode === "CAR" && leg.hailedCar) segment.arc = true;
       journey.segments.push(segment);
 
       tdata.streetEdges.push({
@@ -303,7 +315,7 @@ export function itineraryToTransitive(
     if (leg.transitLeg || isTransit(leg.mode)) {
       // Flex routes sometimes have the same from and to IDs, but
       // these stops still need to be rendered separately!
-      if (leg.from.stopId === leg.to.stopId) {
+      if (isFlex(leg)) {
         leg.to.stopId = `${leg.to.stopId}_flexed_to`;
       }
 
@@ -419,4 +431,29 @@ export function itineraryToTransitive(
   return tdata;
 }
 
+// typescript TODO: TYPE
+const drawArc = (straight: any) => {
+  // Create clone of plain route that only includes first and last point
+  straight.coordinates = [
+    straight.coordinates[0],
+    straight.coordinates[straight.coordinates.length - 1]
+  ];
+
+  const orig = straight.coordinates[0];
+  const dest = straight.coordinates[1];
+  // Adapted from https://github.com/Turfjs/turf/issues/1218#issuecomment-592421977
+  const length = lineDistance(straight, "kilometers");
+  const mp = midpoint(orig, dest);
+  const center = destination(mp, length, bearing(orig, dest) - 90);
+
+  return lineArc(
+    center,
+    distance(center, orig),
+    bearing(center, dest),
+    bearing(center, orig),
+    { steps: 500 }
+  ).geometry;
+};
+
+export { drawArc };
 export default { itineraryToTransitive };

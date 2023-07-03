@@ -13,7 +13,7 @@ import {
 import bbox from "@turf/bbox";
 
 import { getRouteLayerLayout, patternToRouteFeature } from "./route-layers";
-import { getFromToAnchors, itineraryToTransitive } from "./util";
+import { drawArc, getFromToAnchors, itineraryToTransitive } from "./util";
 
 export { itineraryToTransitive };
 
@@ -132,6 +132,9 @@ const TransitiveCanvasOverlay = ({
                 }))
                 .flatMap(segment => {
                   return segment.geometries.map(geometry => {
+                    const straight = polyline.toGeoJSON(
+                      geometry.geometry.points
+                    );
                     return {
                       type: "Feature",
                       properties: {
@@ -139,7 +142,7 @@ const TransitiveCanvasOverlay = ({
                         color: modeColorMap[segment.type] || "#008",
                         mode: segment.type
                       },
-                      geometry: polyline.toGeoJSON(geometry.geometry.points)
+                      geometry: segment.arc ? drawArc(straight) : straight
                     };
                   });
                 })

@@ -66,15 +66,23 @@
       "rentedCar": false,
       "rentedVehicle": false,
       "hailedCar": true,
-      "tncData": {
-        "company": "UBER",
-        "currency": "USD",
-        "travelDuration": 300,
-        "maxCost": 10,
-        "minCost": 9,
-        "productId": "a6eef2e1-c99a-436f-bde9-fefb9181c0b0",
-        "displayName": "UberX",
-        "estimatedArrival": 240
+      "rideHailingEstimate": {
+        "provider": {
+          "id": "uber"
+        },
+        "arrival": "PT4M",
+        "minPrice": {
+          "currency": {
+            "code": "USD"
+          },
+          "amount": 17
+        },
+        "maxPrice": {
+          "currency": {
+            "code": "USD"
+          },
+          "amount": 19
+        }
       },
       "duration": 180,
       "transitLeg": false,
@@ -1045,15 +1053,23 @@
       "rentedCar": false,
       "rentedVehicle": false,
       "hailedCar": true,
-      "tncData": {
-        "company": "UBER",
-        "currency": "USD",
-        "travelDuration": 300,
-        "maxCost": 9,
-        "minCost": 8,
-        "productId": "a6eef2e1-c99a-436f-bde9-fefb9181c0b0",
-        "displayName": "UberX",
-        "estimatedArrival": 240
+      "rideHailingEstimate": {
+        "provider": {
+          "id": "uber"
+        },
+        "arrival": "PT4M",
+        "minPrice": {
+          "currency": {
+            "code": "USD"
+          },
+          "amount": 17
+        },
+        "maxPrice": {
+          "currency": {
+            "code": "USD"
+          },
+          "amount": 19
+        }
       },
       "duration": 341,
       "transitLeg": false,
