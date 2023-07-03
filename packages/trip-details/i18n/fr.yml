@@ -15,13 +15,6 @@ otpUi:
     departure: >-
       Départ le <strong>{departureDate, date, long}</strong> à
       <strong>{departureDate, time, short}</strong>
-    fareDetailsHeaders:
-      cash: Espèces
-      electronic: Électronique
-      regular: Normal
-      senior: Séniors
-      special: Spécial
-      youth: Jeunes
     hideDetail: Masquer les détails
     minutesActive: "Activité physique\_: <strong>{minutes, plural, one {# minute} other {# minutes}}</strong>"
     showDetail: Afficher les détails

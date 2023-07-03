@@ -1,4 +1,4 @@
 otpUi:
   TripDetails:
-    fareDetailsHeaders:
+    FareTable:
       cash: Kontanter

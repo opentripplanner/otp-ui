@@ -1,0 +1,11 @@
+{
+  "groups": {
+    "otpUi.TripDetails.FareTable.*": [
+      "cash",
+      "electronic",
+      "regular",
+      "special",
+      "youth"
+    ]
+  }
+}
