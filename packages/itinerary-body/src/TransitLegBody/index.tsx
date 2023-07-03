@@ -1,5 +1,6 @@
 import coreUtils from "@opentripplanner/core-utils";
 import {
+  FareProductSelector,
   FlexBookingInfo,
   Leg,
   LegIconComponent,
@@ -7,7 +8,13 @@ import {
 } from "@opentripplanner/types";
 import React, { Component, FunctionComponent, ReactElement } from "react";
 import AnimateHeight from "react-animate-height";
-import { FormattedMessage, injectIntl, IntlShape } from "react-intl";
+import {
+  FormattedMessage,
+  FormattedNumber,
+  injectIntl,
+  IntlShape
+} from "react-intl";
+import { getLegCost } from "@opentripplanner/core-utils/lib/itinerary";
 import { Duration } from "../defaults";
 
 import * as S from "../styled";
@@ -42,6 +49,7 @@ interface Props {
   TransitLegSubheader?: FunctionComponent<TransitLegSubheaderProps>;
   TransitLegSummary: FunctionComponent<TransitLegSummaryProps>;
   transitOperator?: TransitOperator;
+  defaultFareSelector?: FareProductSelector;
 }
 
 interface State {
@@ -132,7 +140,8 @@ class TransitLegBody extends Component<Props, State> {
       timeZone,
       TransitLegSubheader,
       TransitLegSummary,
-      transitOperator
+      transitOperator,
+      defaultFareSelector
     } = this.props;
     const { agencyBrandingUrl, agencyName, agencyUrl, alerts } = leg;
     const { alertsExpanded, stopsExpanded } = this.state;
@@ -159,6 +168,14 @@ class TransitLegBody extends Component<Props, State> {
     const shouldOnlyShowAlertsExpanded =
       !(shouldCollapseDueToAlertCount || alwaysCollapseAlerts) || !leg.alerts;
     const expandAlerts = alertsExpanded || shouldOnlyShowAlertsExpanded;
+
+    const legCost =
+      defaultFareSelector &&
+      getLegCost(
+        leg,
+        defaultFareSelector.mediumId,
+        defaultFareSelector.riderCategoryId
+      );
 
     return (
       <>
@@ -324,32 +341,32 @@ class TransitLegBody extends Component<Props, State> {
                 >
                   <S.TransitLegExpandedBody>
                     <IntermediateStops stops={leg.intermediateStops} />
-                    {/* {leg.fareProducts && (
-                      <S.TransitLegFare>
-                        <FormattedMessage
-                          defaultMessage={
-                            defaultMessages["otpUi.TransitLegBody.fare"]
-                          }
-                          description="Describes the fare for a leg"
-                          id="otpUi.TransitLegBody.fare"
-                          values={{
-                            fare: (
-                              <FormattedNumber
-                                currency={fareForLeg.currencyCode}
-                                currencyDisplay="narrowSymbol"
-                                // This isn't a "real" style prop
-                                // eslint-disable-next-line react/style-prop-object
-                                style="currency"
-                                value={fareForLeg.transitFare / 100}
-                              />
-                            )
-                          }}
-                        />
-                      </S.TransitLegFare>
-                    )} */}
                   </S.TransitLegExpandedBody>
                 </AnimateHeight>
-
+                testest
+                {legCost && (
+                  <S.TransitLegFare>
+                    <FormattedMessage
+                      defaultMessage={
+                        defaultMessages["otpUi.TransitLegBody.fare"]
+                      }
+                      description="Describes the fare for a leg"
+                      id="otpUi.TransitLegBody.fare"
+                      values={{
+                        fare: (
+                          <FormattedNumber
+                            currency={legCost.price.currency.code}
+                            currencyDisplay="narrowSymbol"
+                            // This isn't a "real" style prop
+                            // eslint-disable-next-line react/style-prop-object
+                            style="currency"
+                            value={legCost.price.amount}
+                          />
+                        )
+                      }}
+                    />
+                  </S.TransitLegFare>
+                )}
                 {/* Average wait details, if present */}
                 {leg.averageWait && (
                   <span>
