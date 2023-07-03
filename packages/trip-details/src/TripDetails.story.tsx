@@ -90,6 +90,11 @@ const otp2FareByLegLayout: FareTableLayout[] = [
         columnHeaderKey: "electronic",
         riderCategoryId: "orca:youth",
         mediumId: "orca:electronic"
+      },
+      {
+        columnHeaderKey: "test",
+        riderCategoryId: "invalidkey",
+        mediumId: "invalidkey"
       }
     ]
   },
