@@ -50,7 +50,7 @@ const SettingsPanel = styled.fieldset`
 export const SubSettingsCheckbox = styled(CheckboxSelector)<{
   flexbox: boolean;
 }>`
-  display: ${props => (props.flexbox ? "flex" : "block")};
+  display: ${props => (props.flexbox ? "flex" : "inherit")};
   margin-left: 4px;
   input {
     vertical-align: middle;
@@ -88,7 +88,7 @@ const ModeSettingRenderer = ({
     "icon" in setting ? (
       <FormLabelIconWrapper>
         <div role="none">{setting.icon}</div>
-        <div> {label}</div>
+        <div>{label}</div>
       </FormLabelIconWrapper>
     ) : (
       label
