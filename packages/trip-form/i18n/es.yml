@@ -19,19 +19,19 @@ otpUi:
       bikeTolerance-label: Tolerancia para la bicicleta
       bikeTolerance-labelHigh: Más bicicleta
       bikeTolerance-labelLow: Menos bicicleta
+      bus-label: Autobús
       busColor-options-blue: Blue
       carTolerance-label: Tolerancia para el coche
       carTolerance-labelHigh: Más coche
       carTolerance-labelLow: Menos coche
-      walkTolerance-label: Tolerancia para caminar
-      walkTolerance-labelHigh: Más caminar
-      walkTolerance-labelLow: Menos caminar
-      wheelchair-label: Acceso con discapacidades
-      bus-label: Autobús
       ferry-label: Ferri
       rail-label: Tren
       subway-label: Metro
       tram-label: Tranvía
+      walkTolerance-label: Tolerancia para caminar
+      walkTolerance-labelHigh: Más caminar
+      walkTolerance-labelLow: Menos caminar
+      wheelchair-label: Acceso con discapacidades
     settingsLabel: Ajustes para {mode}
   SettingsSelectorPanel:
     bikeOnly: Solo bicicleta

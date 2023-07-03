@@ -19,19 +19,19 @@ otpUi:
       bikeTolerance-label: 자전거 허용 오차
       bikeTolerance-labelHigh: 더 많은 자전거 타기
       bikeTolerance-labelLow: 덜 자전거 타기
+      bus-label: 버스
       busColor-options-blue: Blue
       carTolerance-label: 운전 공차
       carTolerance-labelHigh: 더 많은 운전
       carTolerance-labelLow: 덜 운전
+      ferry-label: 페리
+      rail-label: 기차
+      subway-label: 지하철
+      tram-label: 시가 전차
       walkTolerance-label: 걷기 내성
       walkTolerance-labelHigh: 더 많이 걷기
       walkTolerance-labelLow: 덜 걷기
       wheelchair-label: 액세스 가능한 라우팅
-      bus-label: 버스
-      rail-label: 기차
-      ferry-label: 페리
-      subway-label: 지하철
-      tram-label: 시가 전차
     settingsLabel: "{mode} 설정"
   SettingsSelectorPanel:
     bikeOnly: 자전거 전용

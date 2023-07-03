@@ -85,7 +85,7 @@ export const AnchorButton = styled.a`
   }
 `;
 
-export const LinkButton = styled(TransparentButton)`
+export const LinkButton = styled.a`
   color: #008;
   cursor: pointer;
   margin-left: 5px;
