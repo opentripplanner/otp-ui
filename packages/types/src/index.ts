@@ -748,6 +748,11 @@ export type FareProduct = {
   };
 };
 
+export type FareProductSelector = {
+  riderCategoryId: string;
+  mediumId: string;
+};
+
 /**
  * Options for units of mass (used in CO₂ calculation config)
  */
