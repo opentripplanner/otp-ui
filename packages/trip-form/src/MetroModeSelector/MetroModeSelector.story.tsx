@@ -81,7 +81,8 @@ const modeSettingDefinitionsWithDropdown = [
     applicableMode: "TRANSIT",
     default: true,
     key: "tram",
-    label: "Tram",
+    iconName: "tram",
+    label: "Tram but long",
     addTransportMode: {
       mode: "TRAM"
     },
@@ -91,7 +92,7 @@ const modeSettingDefinitionsWithDropdown = [
     applicableMode: "TRANSIT",
     default: true,
     key: "bus",
-    label: "Bus",
+    label: "MARTA Rail",
     iconName: "bus",
     addTransportMode: {
       mode: "BUS"
