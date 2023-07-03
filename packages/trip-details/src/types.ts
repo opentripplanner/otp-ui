@@ -26,7 +26,7 @@ export interface FareType {
 
 /**
  * This is the interface used to define the layout for a particular fare table.
- * The table with be rendered with the columsn defined here,
+ * The table with be rendered with the columns defined here,
  * with each row being an individual transit leg from the itinerary.
  */
 export interface FareTableLayout {
