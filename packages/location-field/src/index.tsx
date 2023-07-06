@@ -195,7 +195,9 @@ const LocationField = ({
     return location && !hideExistingValue ? label : "";
   };
 
-  const listBoxId = `listbox-${optionKey}`;
+  const formControlClassname = `${locationType}-form-control`;
+
+  const listBoxId = `${locationType}-listbox`;
 
   const intl = useIntl();
 
@@ -345,10 +347,6 @@ const LocationField = ({
         setMessage(message);
       });
   });
-
-  const getFormControlClassname = () => {
-    return `${locationType}-form-control`;
-  };
 
   const setLocation = (newLocation: Location, resultType: ResultType) => {
     onLocationSelected({
@@ -888,7 +886,7 @@ const LocationField = ({
       aria-label={defaultPlaceholder}
       aria-required={isRequired}
       autoFocus={autoFocus}
-      className={getFormControlClassname()}
+      className={formControlClassname}
       onChange={onTextInputChange}
       onClick={handleTextInputClick}
       onKeyDown={onKeyDown}
