@@ -866,7 +866,7 @@ const LocationField = ({
     currentPosition && currentPosition.fetching
       ? intl.formatMessage({ id: "otpUi.LocationField.fetchingLocation" })
       : defaultPlaceholder;
-  const shouldRenderList = isStatic || menuVisible;
+  const isExpanded = isStatic || menuVisible;
 
   const textControl = (
     <S.Input
@@ -875,7 +875,7 @@ const LocationField = ({
       }
       aria-autocomplete="list"
       aria-controls={listBoxId}
-      aria-expanded={menuVisible}
+      aria-expanded={isExpanded}
       aria-haspopup="listbox"
       aria-invalid={!isValid}
       aria-label={defaultPlaceholder}
@@ -912,7 +912,7 @@ const LocationField = ({
     <S.InputGroup className={className} onBlur={onBlurFormGroup} role="group">
       <S.DropdownButton
         aria-controls={listBoxId}
-        aria-expanded={shouldRenderList}
+        aria-expanded={isExpanded}
         aria-label={intl.formatMessage({
           defaultMessage: "Open the list of location suggestions",
           description:
