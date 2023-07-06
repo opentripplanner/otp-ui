@@ -1,12 +1,16 @@
-import styled, { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { Spinner as FASpinner } from "@styled-icons/fa-solid/Spinner";
 
-export const HiddenContent = styled.span`
+const hiddenCss = css`
   clip: rect(0, 0, 0, 0);
   display: inline-block;
   height: 0;
   overflow: hidden;
   width: 0;
+`;
+
+export const HiddenContent = styled.span`
+  ${hiddenCss}
 `;
 
 export const BaseButton = styled.button`
@@ -48,6 +52,11 @@ export const MenuItemList = styled.ul.attrs({
   top: 100%;
   /* this is an annoyingly high number, but is needed to be on top of some otp-rr components */
   z-index: 1000000;
+
+  /* If the associated button is not in an expanded state, hide the list. */
+  ${DropdownButton} [aria-expanded="false"] ~ & {
+    ${hiddenCss}
+  }
 `;
 
 export const Input = styled.input`
