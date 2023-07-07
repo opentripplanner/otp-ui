@@ -868,6 +868,7 @@ const LocationField = ({
     currentPosition && currentPosition.fetching
       ? intl.formatMessage({ id: "otpUi.LocationField.fetchingLocation" })
       : defaultPlaceholder;
+  const hasNoEnabledOptions = menuItemCount === 0;
   const isExpanded = isStatic || menuVisible;
 
   const textControl = (
@@ -941,6 +942,8 @@ const LocationField = ({
       {/* The results list is always in the DOM (but hidden in desktop if no results are shown),
           so that assistive technology can associate the list with the button and input controls. */}
       <ItemList
+        // Hide the list from screen readers if no enabled options are shown.
+        aria-hidden={hasNoEnabledOptions}
         aria-label={intl.formatMessage({
           defaultMessage: "Suggested locations",
           description:
