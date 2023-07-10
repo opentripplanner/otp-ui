@@ -94,18 +94,20 @@ describe("util > itinerary", () => {
     const leg = {
       fareProducts: [
         {
+          id: "testId",
           product: {
             medium: { id: "cash" },
-            riderCategory: { id: "regular" },
             name: "rideCost",
-            price: { amount: 200, currency: "USD" }
+            price: { amount: 200, currency: "USD" },
+            riderCategory: { id: "regular" }
           }
         },
         {
+          id: "testId",
           product: {
+            medium: { id: "cash" },
             name: "transfer",
             price: { amount: 50, currency: "USD" },
-            medium: { id: "cash" },
             riderCategory: { id: "regular" }
           }
         }

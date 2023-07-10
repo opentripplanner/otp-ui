@@ -59,57 +59,57 @@ const StyledTripDetails = styled(TripDetails)`
 
 const otp2FareByLegLayout: FareTableLayout[] = [
   {
-    headerKey: "regular",
     cols: [
       {
         columnHeaderKey: "cash",
-        riderCategoryId: "orca:regular",
-        mediumId: "orca:cash"
+        mediumId: "orca:cash",
+        riderCategoryId: "orca:regular"
       },
       {
         columnHeaderKey: "electronic",
-        riderCategoryId: "orca:regular",
-        mediumId: "orca:electronic"
+        mediumId: "orca:electronic",
+        riderCategoryId: "orca:regular"
       },
       {
         columnHeaderKey: "special",
-        riderCategoryId: "orca:special",
-        mediumId: "orca:electronic"
+        mediumId: "orca:electronic",
+        riderCategoryId: "orca:special"
       }
-    ]
+    ],
+    headerKey: "regular"
   },
   {
-    headerKey: "youth",
     cols: [
       {
         columnHeaderKey: "cash",
-        riderCategoryId: "orca:youth",
-        mediumId: "orca:cash"
+        mediumId: "orca:cash",
+        riderCategoryId: "orca:youth"
       },
       {
         columnHeaderKey: "electronic",
-        riderCategoryId: "orca:youth",
-        mediumId: "orca:electronic"
+        mediumId: "orca:electronic",
+        riderCategoryId: "orca:youth"
       },
       {
         columnHeaderKey: "test",
-        riderCategoryId: "invalidkey",
-        mediumId: "invalidkey"
+        mediumId: "invalidkey",
+        riderCategoryId: "invalidkey"
       }
-    ]
+    ],
+    headerKey: "youth"
   },
   {
     headerKey: "senior",
     cols: [
       {
         columnHeaderKey: "cash",
-        riderCategoryId: "orca:senior",
-        mediumId: "orca:cash"
+        mediumId: "orca:cash",
+        riderCategoryId: "orca:senior"
       },
       {
         columnHeaderKey: "electronic",
-        riderCategoryId: "orca:senior",
-        mediumId: "orca:electronic"
+        mediumId: "orca:electronic",
+        riderCategoryId: "orca:senior"
       }
     ]
   }
@@ -193,11 +193,11 @@ function createTripDetailsTemplate(
 ): ComponentStory<typeof TripDetails> {
   const TripDetailsTemplate = (
     {
-      TimeActiveDetails,
+      defaultFareType,
       DepartureDetails,
       FareDetails,
       fareDetailsLayout,
-      defaultFareType,
+      TimeActiveDetails,
       itinerary
     }: TripDetailsProps,
     { globals, parameters }: StoryContext
@@ -280,9 +280,9 @@ export const BikeTransitBikeItinerary = makeStory({
 });
 
 export const LegFareProductsItinerary = makeStory({
-  itinerary: otp2FareProducts,
+  defaultFareType: otp2defaultFareType,
   fareDetailsLayout: otp2FareByLegLayout,
-  defaultFareType: otp2defaultFareType
+  itinerary: otp2FareProducts
 });
 
 export const WalkInterlinedTransitItinerary = makeStory(
@@ -346,14 +346,14 @@ export const TncTransitItinerary = makeStory(
 
 export const TncTransitItineraryWithCustomMessages = makeStory(
   {
-    TimeActiveDetails: CustomTimeActiveDetails,
     defaultFareType: {
       headerKey: "electronicRegular",
       mediumId: "orca:electronic",
       riderCategoryId: "orca:regular"
     },
     DepartureDetails: CustomDepartureDetails,
-    itinerary: tncTransitTncItinerary
+    itinerary: tncTransitTncItinerary,
+    TimeActiveDetails: CustomTimeActiveDetails
   },
   {
     // For illustration purposes,

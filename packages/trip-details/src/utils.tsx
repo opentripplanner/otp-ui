@@ -1,10 +1,10 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, ReactNode } from "react";
 import { FormattedNumber } from "react-intl";
 
 /**
  * Format text bold (used with FormattedMessage).
  */
-export function boldText(contents: ReactElement | string): ReactElement {
+export function boldText(contents: ReactNode): ReactElement {
   return <strong>{contents}</strong>;
 }
 

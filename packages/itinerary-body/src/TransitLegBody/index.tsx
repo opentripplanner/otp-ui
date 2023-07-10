@@ -14,7 +14,7 @@ import {
   injectIntl,
   IntlShape
 } from "react-intl";
-import { getLegCost } from "@opentripplanner/core-utils/lib/itinerary";
+
 import { Duration } from "../defaults";
 
 import * as S from "../styled";
@@ -35,11 +35,12 @@ interface Props {
   AlertBodyIcon?: FunctionComponent;
   AlertToggleIcon?: FunctionComponent;
   alwaysCollapseAlerts: boolean;
+  defaultFareSelector?: FareProductSelector;
   intl: IntlShape;
   leg: Leg;
+  legDestination: string;
   LegIcon: LegIconComponent;
   legIndex: number;
-  legDestination: string;
   RouteDescription: FunctionComponent<RouteDescriptionProps>;
   setActiveLeg: SetActiveLegFunction;
   setViewedTrip: SetViewedTripFunction;
@@ -49,7 +50,6 @@ interface Props {
   TransitLegSubheader?: FunctionComponent<TransitLegSubheaderProps>;
   TransitLegSummary: FunctionComponent<TransitLegSummaryProps>;
   transitOperator?: TransitOperator;
-  defaultFareSelector?: FareProductSelector;
 }
 
 interface State {
@@ -126,13 +126,14 @@ class TransitLegBody extends Component<Props, State> {
 
   render(): ReactElement {
     const {
-      AlertToggleIcon = S.DefaultAlertToggleIcon,
       AlertBodyIcon,
+      AlertToggleIcon = S.DefaultAlertToggleIcon,
       alwaysCollapseAlerts,
+      defaultFareSelector,
       intl,
       leg,
-      LegIcon,
       legDestination,
+      LegIcon,
       RouteDescription,
       setViewedTrip,
       showAgencyInfo,
@@ -140,8 +141,7 @@ class TransitLegBody extends Component<Props, State> {
       timeZone,
       TransitLegSubheader,
       TransitLegSummary,
-      transitOperator,
-      defaultFareSelector
+      transitOperator
     } = this.props;
     const { agencyBrandingUrl, agencyName, agencyUrl, alerts } = leg;
     const { alertsExpanded, stopsExpanded } = this.state;
@@ -171,7 +171,7 @@ class TransitLegBody extends Component<Props, State> {
 
     const legCost =
       defaultFareSelector &&
-      getLegCost(
+      coreUtils.itinerary.getLegCost(
         leg,
         defaultFareSelector.mediumId,
         defaultFareSelector.riderCategoryId
