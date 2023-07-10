@@ -307,8 +307,9 @@ export type Leg = {
       id: string;
     };
     arrival: string;
-    minPrice: Price;
-    maxPrice: Price;
+    minPrice: TemporaryTNCPriceType;
+    maxPrice: TemporaryTNCPriceType;
+    productName?: string;
   };
   realTime: boolean;
   rentedBike: boolean;
@@ -326,13 +327,28 @@ export type Leg = {
   steps: Step[];
   to: Place;
   transitLeg: boolean;
+  trip?: {
+    arrivalStoptime?: TripStopTime;
+    departureStoptime?: TripStopTime;
+    gtfsId?: string;
+    id: string;
+    tripHeadsign?: string;
+  };
   tripBlockId?: string;
   tripId?: string;
   walkingBike?: boolean;
   fareProducts?: Array<{ id: string; product: FareProduct }>;
 };
 
-type Price = {
+type TripStopTime = {
+  stopPosition: number;
+  stop: {
+    gtfsId: string;
+    id: string;
+  };
+};
+
+type TemporaryTNCPriceType = {
   currency: {
     code: string;
   };

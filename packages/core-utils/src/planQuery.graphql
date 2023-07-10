@@ -1,16 +1,16 @@
 query Plan(
-  $fromPlace: String! 
-  $toPlace: String! 
+  $fromPlace: String!
+  $toPlace: String!
   $modes: [TransportMode]
   $time: String
-  $date: String 
-  $wheelchair: Boolean 
-  $bikeReluctance: Float 
-  $carReluctance: Float 
-  $walkReluctance: Float 
-  $arriveBy: Boolean 
-  $preferred: InputPreferred 
-  $unpreferred: InputUnpreferred 
+  $date: String
+  $wheelchair: Boolean
+  $bikeReluctance: Float
+  $carReluctance: Float
+  $walkReluctance: Float
+  $arriveBy: Boolean
+  $preferred: InputPreferred
+  $unpreferred: InputUnpreferred
   $banned: InputBanned
   $numItineraries: Int
 ) {

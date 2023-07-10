@@ -1,7 +1,9 @@
 otpUi:
   DateTimeSelector:
+    arrive: 到达
     date: 日期
     dateTimeSelector: 日期和时间选择器
+    depart: 离开
     now: 现在离开
     time: 时间
   ModeSelector:
@@ -12,19 +14,20 @@ otpUi:
       transit: 公共交通
       walk: 步行
     settings:
-      addBus-label: 公共汽车
       addRail-label: 火车
-      addSubway-label: 地铁
       addTram-label: 电车
-      allowBikeRental-label: 共享单车
       bikeTolerance-label: 骑自行车的容忍度
       bikeTolerance-labelHigh: 更多骑自行车
       bikeTolerance-labelLow: 少骑自行车
-      busColor-label: Bus Color
+      bus-label: 公共汽车
       busColor-options-blue: Blue
       carTolerance-label: 驾驶容忍度
       carTolerance-labelHigh: 更多驾驶
       carTolerance-labelLow: 少开车
+      ferry-label: 渡船
+      rail-label: 火车
+      subway-label: 地铁
+      tram-label: 电车
       walkTolerance-label: 步行公差
       walkTolerance-labelHigh: 多走路
       walkTolerance-labelLow: 少走路

@@ -201,6 +201,12 @@ export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
     .map(combo => ({ ...params, modes: combo }));
 }
 
+/**
+ * Generates a query for OTP GraphQL API based on parameters.
+ * @param param0 OTP2 Parameters for the query
+ * @param planQuery Override the default query for OTP
+ * @returns A fully formed query+variables ready to be sent to GraphQL backend
+ */
 export function generateOtp2Query(
   {
     arriveBy,

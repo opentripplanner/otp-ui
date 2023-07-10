@@ -305,9 +305,15 @@ class TransitLegBody extends Component<Props, State> {
                   {showViewTripButton && (
                     <ViewTripButton
                       tripId={leg.tripId}
-                      fromIndex={leg.from.stopIndex}
+                      fromIndex={
+                        leg.from.stopIndex ||
+                        leg?.trip?.departureStoptime?.stopPosition
+                      }
                       setViewedTrip={setViewedTrip}
-                      toIndex={leg.to.stopIndex}
+                      toIndex={
+                        leg.to.stopIndex ||
+                        leg?.trip?.arrivalStoptime?.stopPosition
+                      }
                     />
                   )}
                 </S.TransitLegDetailsHeader>
