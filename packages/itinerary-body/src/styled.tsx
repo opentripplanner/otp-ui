@@ -9,6 +9,7 @@ import { ExclamationTriangle } from "@styled-icons/fa-solid/ExclamationTriangle"
 
 import { toModeBorder, toModeColor, toSafeRouteColor } from "./util";
 
+// Props for a light border div
 interface LightBorderDivProps {
   hideBorder: string;
   theme?: {
