@@ -293,6 +293,7 @@ export type Leg = {
   dropOffBookingInfo?: FlexDropOffBookingInfo;
   duration: number;
   endTime: number;
+  fareProducts?: { id: string; product: FareProduct }[];
   from: Place;
   headsign?: string;
   interlineWithPreviousLeg: boolean;
@@ -337,7 +338,6 @@ export type Leg = {
   tripBlockId?: string;
   tripId?: string;
   walkingBike?: boolean;
-  fareProducts?: Array<{ id: string; product: FareProduct }>;
 };
 
 type TripStopTime = {
@@ -754,22 +754,22 @@ export type ModeButtonDefinition = {
  * Definition for a fare product used to pay the fare for a leg in a transit journey
  */
 export type FareProduct = {
-  price: Money;
   id: string;
-  name: string;
-  riderCategory?: {
+  medium?: {
     id: string;
     name: string;
   };
-  medium?: {
+  name: string;
+  price: Money;
+  riderCategory?: {
     id: string;
     name: string;
   };
 };
 
 export type FareProductSelector = {
-  riderCategoryId: string;
   mediumId: string;
+  riderCategoryId: string;
 };
 
 /**
