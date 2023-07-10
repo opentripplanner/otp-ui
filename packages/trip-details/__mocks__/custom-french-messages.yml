@@ -3,7 +3,7 @@ otpUi:
     FareTable:
       cash: Espèces
       electronic: ORCA
-      regular: Ordinaire
+      regular: Plein tarif
       senior: Senior
       special: LIFT
       youth: Jeune

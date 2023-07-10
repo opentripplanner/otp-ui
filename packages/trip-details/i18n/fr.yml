@@ -3,7 +3,7 @@ otpUi:
     FareTable:
       cash: Espèces
       electronic: Électronique
-      regular: Normal
+      regular: Plein tarif
       senior: Séniors
       special: Spécial
       youth: Jeunes
