@@ -37,7 +37,6 @@ const walkInterlinedTransitItinerary = require("@opentripplanner/itinerary-body/
 const walkOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-only.json");
 const walkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json");
 const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json");
-const fareProductsItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/leg-fare-products.json");
 const flexItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/flex-itinerary.json");
 const otp2ScooterItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-scooter.json");
 const otp2FareProducts = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/leg-fare-products.json");
@@ -368,10 +367,6 @@ export const TncTransitItineraryWithCustomMessages = makeStory(
   },
   StyledTripDetails
 );
-
-export const FareComponentsItinerary = makeStory({
-  itinerary: fareProductsItinerary
-});
 
 export const OTP2FlexItinerary = makeStory({ itinerary: flexItinerary });
 
