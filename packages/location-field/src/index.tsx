@@ -195,10 +195,8 @@ const LocationField = ({
     return location && !hideExistingValue ? label : "";
   };
 
-  // FIXME: This class name seems only used in OTP-RR for Percy tests to identify the component.
   const formControlClassname = `${locationType}-form-control`;
 
-  // We assume there is only up to one location field component for each value in LocationType.
   const listBoxId = `${locationType}-listbox`;
 
   const intl = useIntl();
@@ -939,8 +937,6 @@ const LocationField = ({
           value={statusMessages}
         />
       </S.HiddenContent>
-      {/* The results list is always in the DOM (but hidden in desktop if no results are shown),
-          so that assistive technology can associate the list with the button and input controls. */}
       <ItemList
         // Hide the list from screen readers if no enabled options are shown.
         aria-hidden={hasNoEnabledOptions}
