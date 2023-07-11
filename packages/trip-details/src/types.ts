@@ -1,7 +1,12 @@
 // Prettier does not recognize the import type syntax.
 // eslint-disable-next-line prettier/prettier
-import type { FareProductSelector, Itinerary, Leg, Money, MassUnitOption, } from "@opentripplanner/types";
-import type { ReactElement } from "react";
+import type { 
+  FareProductSelector, 
+  Itinerary, 
+  Leg, 
+  MassUnitOption,
+  Money
+ } from "@opentripplanner/types";
 
 export interface TimeActiveDetailsProps {
   bikeMinutes: number;
@@ -30,6 +35,9 @@ export interface FareTableLayout {
   })[]
   headerKey: string;
 }
+/**
+ * Interface containing the lgs and the layout of the fare table.
+ */
 export interface FareLegTableProps {
   layout?: FareTableLayout[];
   legs: Leg[];
@@ -37,17 +45,6 @@ export interface FareLegTableProps {
 
 // Total fare amount corresponding to a fare key
 export type FareTotals = (FareProductSelector & { price: Money })[]
-
-export interface TransitFareProps {
-  headerKey: string;
-  fareMediumId: string
-  riderCategoryId: string
-  fareNameFallback?: ReactElement;
-  fareKeyNameMap: {
-    [key: string]: string;
-  };
-  fareTotals: FareTotals;
-}
 
 export interface FareDetailsProps {
   legs: Leg[];
