@@ -147,10 +147,7 @@ export const OTP2FlexItinerary = (): ReactElement => (
 );
 
 export const IndividualLegFareComponents = (): ReactElement => (
-  <ItineraryBodyDefaultsWrapper
-    itinerary={fareProductsItinerary}
-    showRouteFares
-  />
+  <ItineraryBodyDefaultsWrapper itinerary={fareProductsItinerary} />
 );
 
 export const CustomAlertIconsItinerary = (): ReactElement => (

@@ -1,4 +1,4 @@
-import { Itinerary } from "@opentripplanner/types";
+import { FareProductSelector, Itinerary } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 
 import ItineraryBody from "..";
@@ -47,20 +47,21 @@ if (!isRunningJest()) {
 
 interface StoryWrapperProps {
   itinerary: Itinerary;
-  showRouteFares: boolean;
-  TimeColumnContent: FunctionComponent<TimeColumnContentProps>;
-  alwaysCollapseAlerts: boolean;
+  TimeColumnContent?: FunctionComponent<TimeColumnContentProps>;
+  defaultFareSelector?: FareProductSelector;
+  alwaysCollapseAlerts?: boolean;
 }
 
 function OtpRRItineraryBodyWrapper({
+  alwaysCollapseAlerts,
+  defaultFareSelector,
   itinerary,
-  showRouteFares,
-  TimeColumnContent,
-  alwaysCollapseAlerts
+  TimeColumnContent
 }: StoryWrapperProps): ReactElement {
   return (
     <ItineraryBodyDefaultsWrapper
       alwaysCollapseAlerts={alwaysCollapseAlerts}
+      defaultFareSelector={defaultFareSelector}
       itinerary={itinerary}
       LegIcon={LegIconWithA11y}
       LineColumnContent={OtpRRLineColumnContent}
@@ -69,7 +70,6 @@ function OtpRRItineraryBodyWrapper({
       showAgencyInfo
       showLegIcon
       showMapButtonColumn={false}
-      showRouteFares={showRouteFares}
       showViewTripButton
       styledItinerary="otp-rr"
       TimeColumnContent={TimeColumnContent}
@@ -148,7 +148,13 @@ export const OTP2FlexItinerary = (): ReactElement => (
 );
 
 export const IndividualLegFareComponents = (): ReactElement => (
-  <OtpRRItineraryBodyWrapper itinerary={fareProductsItinerary} showRouteFares />
+  <OtpRRItineraryBodyWrapper
+    itinerary={fareProductsItinerary}
+    defaultFareSelector={{
+      mediumId: "orca:cash",
+      riderCategoryId: "orca:regular"
+    }}
+  />
 );
 
 export const CustomTimeColumn = (): ReactElement => (

@@ -2,6 +2,7 @@ import { FunctionComponent } from "react";
 
 import {
   Config,
+  FareProductSelector,
   GradationMap,
   Itinerary,
   Leg,
@@ -109,6 +110,12 @@ interface ItineraryBodySharedProps {
   /** Contains OTP configuration details. */
   config: Config;
   /**
+   * Allows selection of a fare product type for display in the itinerary body.
+   * When fare leg information is available, it will be shown per-leg.
+   * Example: regular, cash or regular, electronic.
+   */
+  defaultFareSelector?: FareProductSelector;
+  /**
    * Should be either null or a legType. Indicates that a particular leg diagram
    * has been selected and is active.
    */
@@ -183,8 +190,6 @@ interface ItineraryBodySharedProps {
   showLegIcon?: boolean;
   /** If true, will show the right column with the map button */
   showMapButtonColumn?: boolean;
-  /** If true, will show fare information in transit leg bodies */
-  showRouteFares?: boolean;
   /** If true, shows the view trip button in transit leg bodies */
   showViewTripButton?: boolean;
   /**

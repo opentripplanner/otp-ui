@@ -341,31 +341,31 @@ class TransitLegBody extends Component<Props, State> {
                 >
                   <S.TransitLegExpandedBody>
                     <IntermediateStops stops={leg.intermediateStops} />
+                    {legCost?.price && (
+                      <S.TransitLegFare>
+                        <FormattedMessage
+                          defaultMessage={
+                            defaultMessages["otpUi.TransitLegBody.fare"]
+                          }
+                          description="Describes the fare for a leg"
+                          id="otpUi.TransitLegBody.fare"
+                          values={{
+                            fare: (
+                              <FormattedNumber
+                                currency={legCost.price.currency.code}
+                                currencyDisplay="narrowSymbol"
+                                // This isn't a "real" style prop
+                                // eslint-disable-next-line react/style-prop-object
+                                style="currency"
+                                value={legCost.price.amount}
+                              />
+                            )
+                          }}
+                        />
+                      </S.TransitLegFare>
+                    )}
                   </S.TransitLegExpandedBody>
                 </AnimateHeight>
-                {legCost && (
-                  <S.TransitLegFare>
-                    <FormattedMessage
-                      defaultMessage={
-                        defaultMessages["otpUi.TransitLegBody.fare"]
-                      }
-                      description="Describes the fare for a leg"
-                      id="otpUi.TransitLegBody.fare"
-                      values={{
-                        fare: (
-                          <FormattedNumber
-                            currency={legCost.price.currency.code}
-                            currencyDisplay="narrowSymbol"
-                            // This isn't a "real" style prop
-                            // eslint-disable-next-line react/style-prop-object
-                            style="currency"
-                            value={legCost.price.amount}
-                          />
-                        )
-                      }}
-                    />
-                  </S.TransitLegFare>
-                )}
                 {/* Average wait details, if present */}
                 {leg.averageWait && (
                   <span>
