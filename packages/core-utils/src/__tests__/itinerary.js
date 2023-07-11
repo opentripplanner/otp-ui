@@ -143,7 +143,10 @@ describe("util > itinerary", () => {
         "orca:regular"
       );
       expect(result.amount).toEqual(5.75);
-      expect(result.currency).toMatchSnapshot();
+      expect(result.currency).toEqual({
+        code: "USD",
+        digits: 2
+      });
     });
     it("should return undefined when the keys are invalid", () => {
       const result = getItineraryCost(
