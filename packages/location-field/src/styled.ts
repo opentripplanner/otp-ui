@@ -53,8 +53,8 @@ export const MenuItemList = styled.ul.attrs({
   /* this is an annoyingly high number, but is needed to be on top of some otp-rr components */
   z-index: 1000000;
 
-  /* If the associated button is not in an expanded state, hide the list. */
-  ${DropdownButton} [aria-expanded="false"] ~ & {
+  /* If the associated input is not in an expanded state, hide the list. */
+  input[aria-expanded="false"] ~ & {
     ${hiddenCss}
   }
 `;
