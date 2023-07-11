@@ -26,14 +26,7 @@ import customFrenchMessages from "../__mocks__/custom-french-messages.yml";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json");
-const bikeRentalItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-rental.json");
-const bikeRentalTransitBikeRentalItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-rental-transit-bike-rental.json");
-const bikeTransitBikeItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-transit-bike.json");
-const eScooterRentalItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/e-scooter-rental.json");
-const eScooterRentalTransiteScooterRentalItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/e-scooter-transit-e-scooter.json");
-const parkAndRideItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/park-and-ride.json");
 const tncTransitTncItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/tnc-transit-tnc.json");
-const walkInterlinedTransitItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-interlined-transit-walk.json");
 const walkOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-only.json");
 const walkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json");
 const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json");
@@ -56,7 +49,7 @@ const StyledTripDetails = styled(TripDetails)`
   }
 `;
 
-const otp2FareByLegLayout: FareTableLayout[] = [
+const orcaFareByLegLayout: FareTableLayout[] = [
   {
     cols: [
       {
@@ -114,7 +107,7 @@ const otp2FareByLegLayout: FareTableLayout[] = [
   }
 ];
 
-const otp2defaultFareType = {
+const orcaDefaultFareType = {
   headerKey: "cash-regular",
   mediumId: "orca:cash",
   riderCategoryId: "orca:regular"
@@ -266,7 +259,7 @@ export const WalkTransitWalkItinerary = makeStory({
   itinerary: walkTransitWalkItinerary
 });
 
-export const StyledWalkTransitWalkItinerary = makeStory(
+export const StyledItinerary = makeStory(
   {
     itinerary: walkTransitWalkItinerary
   },
@@ -274,57 +267,10 @@ export const StyledWalkTransitWalkItinerary = makeStory(
   StyledTripDetails
 );
 
-export const BikeTransitBikeItinerary = makeStory({
-  itinerary: bikeTransitBikeItinerary
-});
-
 export const LegFareProductsItinerary = makeStory({
-  defaultFareType: otp2defaultFareType,
-  fareDetailsLayout: otp2FareByLegLayout,
+  defaultFareType: orcaDefaultFareType,
+  fareDetailsLayout: orcaFareByLegLayout,
   itinerary: otp2FareProducts
-});
-
-export const WalkInterlinedTransitItinerary = makeStory(
-  {
-    // defaultFareKey: "electronicRegular",
-    // fareDetailsLayout: fareByLegLayout,
-    itinerary: walkInterlinedTransitItinerary
-  },
-  {
-    useCustomFareKeyMap: true,
-    // For illustration purposes,
-    // override a subset of localized strings with custom messages.
-    reactIntl: {
-      messages: {
-        "en-US": flattenedEnglishMessages,
-        fr: flattenedFrenchMessages
-      }
-    }
-  }
-);
-
-export const WalkTransitTransferItinerary = makeStory({
-  itinerary: walkTransitWalkTransitWalkItinerary
-});
-
-export const BikeRentalItinerary = makeStory({
-  itinerary: bikeRentalItinerary
-});
-
-export const EScooterRentalItinerary = makeStory({
-  itinerary: eScooterRentalItinerary
-});
-
-export const ParkAndRideItinerary = makeStory({
-  itinerary: parkAndRideItinerary
-});
-
-export const BikeRentalTransitItinerary = makeStory({
-  itinerary: bikeRentalTransitBikeRentalItinerary
-});
-
-export const EScooterRentalTransitItinerary = makeStory({
-  itinerary: eScooterRentalTransiteScooterRentalItinerary
 });
 
 // The render of this itinerary is uninteresting, but the test
@@ -372,5 +318,5 @@ export const OTP2FlexItinerary = makeStory({ itinerary: flexItinerary });
 
 export const FareLegTableStoryLegProducts = (): ReactElement => {
   const otp1legs = otp2FareProducts.legs.map(convertGraphQLResponseToLegacy);
-  return <FareLegTable layout={otp2FareByLegLayout} legs={otp1legs} />;
+  return <FareLegTable layout={orcaFareByLegLayout} legs={otp1legs} />;
 };
