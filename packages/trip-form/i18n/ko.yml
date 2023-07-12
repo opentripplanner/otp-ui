@@ -14,13 +14,11 @@ otpUi:
       transit: 대중 교통
       walk: 걷기
     settings:
-      addRail-label: 기차
       addTram-label: 시가 전차
       bikeTolerance-label: 자전거 허용 오차
       bikeTolerance-labelHigh: 더 많은 자전거 타기
       bikeTolerance-labelLow: 덜 자전거 타기
       bus-label: 버스
-      busColor-options-blue: Blue
       carTolerance-label: 운전 공차
       carTolerance-labelHigh: 더 많은 운전
       carTolerance-labelLow: 덜 운전

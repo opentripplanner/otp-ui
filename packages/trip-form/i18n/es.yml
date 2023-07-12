@@ -14,13 +14,11 @@ otpUi:
       transit: Transportes
       walk: Caminar
     settings:
-      addRail-label: Tren
       addTram-label: Tranvía
       bikeTolerance-label: Tolerancia para la bicicleta
       bikeTolerance-labelHigh: Más bicicleta
       bikeTolerance-labelLow: Menos bicicleta
       bus-label: Autobús
-      busColor-options-blue: Blue
       carTolerance-label: Tolerancia para el coche
       carTolerance-labelHigh: Más coche
       carTolerance-labelLow: Menos coche
