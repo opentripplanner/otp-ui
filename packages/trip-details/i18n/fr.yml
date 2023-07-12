@@ -3,7 +3,7 @@ otpUi:
     FareTable:
       cash: Espèces
       electronic: Électronique
-      regular: Normal
+      regular: Plein tarif
       senior: Séniors
       special: Spécial
       youth: Jeunes
@@ -15,13 +15,6 @@ otpUi:
     departure: >-
       Départ le <strong>{departureDate, date, long}</strong> à
       <strong>{departureDate, time, short}</strong>
-    fareDetailsHeaders:
-      cash: Espèces
-      electronic: Électronique
-      regular: Normal
-      senior: Séniors
-      special: Spécial
-      youth: Jeunes
     hideDetail: Masquer les détails
     minutesActive: "Activité physique\_: <strong>{minutes, plural, one {# minute} other {# minutes}}</strong>"
     showDetail: Afficher les détails
@@ -34,5 +27,4 @@ otpUi:
     transferDiscountExplanation: Cette correspondance vous donne une réduction de {transferAmount}
     transitFare: Tarif en transports
     transitFareEntry: "{name} : <strong>{value}</strong>"
-    transitFareUnknown: Tarif inconnu
     tripIncludesFlex: Ce trajet comprend un service à la demande (Flex). {extraMessage}

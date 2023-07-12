@@ -1,5 +1,6 @@
 import coreUtils from "@opentripplanner/core-utils";
 import {
+  FareProductSelector,
   FlexBookingInfo,
   Leg,
   LegIconComponent,
@@ -7,7 +8,13 @@ import {
 } from "@opentripplanner/types";
 import React, { Component, FunctionComponent, ReactElement } from "react";
 import AnimateHeight from "react-animate-height";
-import { FormattedMessage, injectIntl, IntlShape } from "react-intl";
+import {
+  FormattedMessage,
+  FormattedNumber,
+  injectIntl,
+  IntlShape
+} from "react-intl";
+
 import { Duration } from "../defaults";
 
 import * as S from "../styled";
@@ -28,11 +35,12 @@ interface Props {
   AlertBodyIcon?: FunctionComponent;
   AlertToggleIcon?: FunctionComponent;
   alwaysCollapseAlerts: boolean;
+  defaultFareSelector?: FareProductSelector;
   intl: IntlShape;
   leg: Leg;
+  legDestination: string;
   LegIcon: LegIconComponent;
   legIndex: number;
-  legDestination: string;
   RouteDescription: FunctionComponent<RouteDescriptionProps>;
   setActiveLeg: SetActiveLegFunction;
   setViewedTrip: SetViewedTripFunction;
@@ -118,13 +126,14 @@ class TransitLegBody extends Component<Props, State> {
 
   render(): ReactElement {
     const {
-      AlertToggleIcon = S.DefaultAlertToggleIcon,
       AlertBodyIcon,
+      AlertToggleIcon = S.DefaultAlertToggleIcon,
       alwaysCollapseAlerts,
+      defaultFareSelector,
       intl,
       leg,
-      LegIcon,
       legDestination,
+      LegIcon,
       RouteDescription,
       setViewedTrip,
       showAgencyInfo,
@@ -159,6 +168,14 @@ class TransitLegBody extends Component<Props, State> {
     const shouldOnlyShowAlertsExpanded =
       !(shouldCollapseDueToAlertCount || alwaysCollapseAlerts) || !leg.alerts;
     const expandAlerts = alertsExpanded || shouldOnlyShowAlertsExpanded;
+
+    const legCost =
+      defaultFareSelector &&
+      coreUtils.itinerary.getLegCost(
+        leg,
+        defaultFareSelector.mediumId,
+        defaultFareSelector.riderCategoryId
+      );
 
     return (
       <>
@@ -324,7 +341,7 @@ class TransitLegBody extends Component<Props, State> {
                 >
                   <S.TransitLegExpandedBody>
                     <IntermediateStops stops={leg.intermediateStops} />
-                    {/* {leg.fareProducts && (
+                    {legCost?.price && (
                       <S.TransitLegFare>
                         <FormattedMessage
                           defaultMessage={
@@ -335,21 +352,20 @@ class TransitLegBody extends Component<Props, State> {
                           values={{
                             fare: (
                               <FormattedNumber
-                                currency={fareForLeg.currencyCode}
+                                currency={legCost.price.currency.code}
                                 currencyDisplay="narrowSymbol"
                                 // This isn't a "real" style prop
                                 // eslint-disable-next-line react/style-prop-object
                                 style="currency"
-                                value={fareForLeg.transitFare / 100}
+                                value={legCost.price.amount}
                               />
                             )
                           }}
                         />
                       </S.TransitLegFare>
-                    )} */}
+                    )}
                   </S.TransitLegExpandedBody>
                 </AnimateHeight>
-
                 {/* Average wait details, if present */}
                 {leg.averageWait && (
                   <span>

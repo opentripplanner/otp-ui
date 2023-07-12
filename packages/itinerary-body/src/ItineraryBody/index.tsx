@@ -18,6 +18,7 @@ const ItineraryBody = ({
   alwaysCollapseAlerts = false,
   className,
   config,
+  defaultFareSelector,
   diagramVisible,
   frameLeg = noop,
   itinerary,
@@ -61,6 +62,7 @@ const ItineraryBody = ({
           // eslint-disable-next-line react/no-array-index-key
           key={i + (isDestination ? 1 : 0)}
           config={config}
+          defaultFareSelector={defaultFareSelector}
           diagramVisible={diagramVisible}
           followsTransit={followsTransit}
           frameLeg={frameLeg}

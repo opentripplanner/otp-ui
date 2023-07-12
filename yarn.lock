@@ -3356,6 +3356,11 @@
   resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-6.0.0-alpha.4.tgz#dee3c06675e30c596159d182ed707e7710cd937c"
   integrity sha512-FlYsHm/tk+x0ldrEG1X9Ph1R1k3way1oEdKX7XSnhu9lNTzL4lO0hfT1PLzNXMfBRar7TzK94PHNDibJsod8Kw==
 
+"@opentripplanner/types@6.0.0-alpha.8":
+  version "6.0.0-alpha.8"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-6.0.0-alpha.8.tgz#92a13c09b8be55ec83eba1d405bac5a791bba9d2"
+  integrity sha512-38YX9HJiYg/FonohTPrPdBoHV3Wff8GOgz/QgWMU7iiKdgDZvneYU3jJosuoAL3k035DCbA0NL4ngR7VyTbJmA==
+
 "@opentripplanner/types@^5.0.0":
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-5.0.0.tgz#c7f1ed0119d8dbe02e863dccb27c46d6ba68a2cf"

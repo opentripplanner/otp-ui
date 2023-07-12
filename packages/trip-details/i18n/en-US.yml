@@ -15,13 +15,6 @@ otpUi:
     departure: >-
       Depart <strong>{departureDate, date, long}</strong> at
       <strong>{departureDate, time, short}</strong>
-    fareDetailsHeaders:
-      cash: Cash
-      electronic: Electronic
-      regular: Adult
-      senior: Senior
-      special: Special
-      youth: Youth
     hideDetail: Hide details
     minutesActive: >-
       Time Spent Active: <strong>{minutes, plural, one {# minute} other {#
@@ -36,5 +29,4 @@ otpUi:
     transferDiscountExplanation: Transfer discount of {transferAmount} is applied
     transitFare: Transit Fare
     transitFareEntry: "{name}: <strong>{value}</strong>"
-    transitFareUnknown: No fare info
     tripIncludesFlex: This trip includes flexible routes. {extraMessage}

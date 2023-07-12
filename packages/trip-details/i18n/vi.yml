@@ -1,5 +1,12 @@
 otpUi:
   TripDetails:
+    FareTable:
+      cash: Tiền mặt
+      electronic: Điện tử
+      regular: Người lớn
+      senior: Người lớn tuổi
+      special: Đặc biệt
+      youth: Thiếu niên
     co2: "CO₂ thải ra: <strong>{co2}</strong>"
     co2description: >-
       Nồng độ CO₂ được tính bằng cách nhân khoảng cách của mỗi chặng của một
@@ -8,13 +15,6 @@ otpUi:
     departure: >-
       Khởi hành <strong>{departureDate, date, long}</strong> lúc
       <strong>{departureDate, time, short}</strong>
-    fareDetailsHeaders:
-      cash: Tiền mặt
-      electronic: Điện tử
-      regular: Người lớn
-      senior: Người lớn tuổi
-      special: Đặc biệt
-      youth: Thiếu niên
     hideDetail: Ẩn chi tiết
     showDetail: Hiển thị chi tiết
     title: Chi tiết chuyến đi
@@ -22,5 +22,4 @@ otpUi:
     transferDiscountExplanation: Giảm giá chuyển khoản {transferAmount} được áp dụng
     transitFare: Giá vé xe công cộng
     transitFareEntry: "{name}: <strong>{value}</strong>"
-    transitFareUnknown: Không có thông tin giá vé
     tripIncludesFlex: Chuyến đi này bao gồm các tuyến đường linh hoạt. {extraMessage}

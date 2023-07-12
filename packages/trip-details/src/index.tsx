@@ -1,4 +1,5 @@
 import coreUtils from "@opentripplanner/core-utils";
+import { FareProductSelector } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage, FormattedNumber } from "react-intl";
 import { CalendarAlt } from "@styled-icons/fa-solid/CalendarAlt";
@@ -6,15 +7,13 @@ import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
 import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
 import { Leaf } from "@styled-icons/fa-solid/Leaf";
 import { Route } from "@styled-icons/fa-solid/Route";
-
-import { getItineraryCost } from "@opentripplanner/core-utils/lib/itinerary";
 import { flatten } from "flat";
 import * as S from "./styled";
 import TripDetail from "./trip-detail";
 import FareLegTable from "./fare-table";
 import { boldText, renderFare } from "./utils";
 
-import { FareType, TimeActiveDetailsProps, TripDetailsProps } from "./types";
+import { TimeActiveDetailsProps, TripDetailsProps } from "./types";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
@@ -79,15 +78,15 @@ export function TripDetails({
   const fareResult = coreUtils.itinerary.calculateTncFares(itinerary);
   const { currencyCode, maxTNCFare, minTNCFare } = fareResult;
 
-  // Depending on if there are additional fares to display either render a <span> or a <details>.
   const { companies, fareTypes } = itinerary.legs.reduce<{
     companies: string;
-    fareTypes: FareType[];
+    fareTypes: FareProductSelector[];
   }>(
     (prev, leg) => {
       if (leg.rideHailingEstimate) {
         prev.companies = leg.rideHailingEstimate.provider.id;
       }
+
       if (leg.fareProducts) {
         leg.fareProducts.forEach(fp => {
           const mediumId = fp.product?.medium?.id;
@@ -110,7 +109,7 @@ export function TripDetails({
 
   let fare;
   if (fareTypes.length > 0 && defaultFareType) {
-    const defaultFareTotal = getItineraryCost(
+    const defaultFareTotal = coreUtils.itinerary.getItineraryCost(
       itinerary.legs,
       defaultFareType.mediumId,
       defaultFareType.riderCategoryId
@@ -127,7 +126,7 @@ export function TripDetails({
       />
     );
 
-    fare = defaultFareTotal.amount && (
+    fare = defaultFareTotal?.amount && (
       <S.Fare>
         <TransitFareWrapper>
           <summary style={{ display: fareTypes.length > 1 ? "list-item" : "" }}>
@@ -160,12 +159,12 @@ export function TripDetails({
               }
               return (
                 <FormattedMessage
-                  key={Object.values(fareType).join("-")}
                   defaultMessage={
                     defaultMessages["otpUi.TripDetails.transitFareEntry"]
                   }
                   description="Text showing the price of tickets on public transportation."
                   id="otpUi.TripDetails.transitFareEntry"
+                  key={Object.values(fareType).join("-")}
                   values={{
                     name:
                       fareKeyNameMap[defaultFareType.headerKey] ||
@@ -284,9 +283,9 @@ export function TripDetails({
             description={
               FareDetails && (
                 <FareDetails
+                  legs={itinerary.legs}
                   maxTNCFare={maxTNCFare}
                   minTNCFare={minTNCFare}
-                  legs={itinerary.legs}
                 />
               )
             }
@@ -300,9 +299,9 @@ export function TripDetails({
             description={
               FareDetails && (
                 <FareDetails
+                  legs={itinerary.legs}
                   maxTNCFare={maxTNCFare}
                   minTNCFare={minTNCFare}
-                  legs={itinerary.legs}
                 />
               )
             }

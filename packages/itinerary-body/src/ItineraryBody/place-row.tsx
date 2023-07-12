@@ -45,6 +45,7 @@ export default function PlaceRow({
   TimeColumnContent = DefaultTimeColumnContent,
   toRouteAbbreviation,
   TransitLegSubheader,
+  defaultFareSelector,
   TransitLegSummary
 }: PlaceRowProps): ReactElement {
   // NOTE: Previously there was a check for itineraries that changed vehicles
@@ -146,6 +147,7 @@ export default function PlaceRow({
               timeZone={config.homeTimezone}
               TransitLegSubheader={TransitLegSubheader}
               TransitLegSummary={TransitLegSummary}
+              defaultFareSelector={defaultFareSelector}
               transitOperator={coreUtils.route.getTransitOperatorFromLeg(
                 leg,
                 config.transitOperators
