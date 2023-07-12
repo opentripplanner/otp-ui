@@ -1,5 +1,5 @@
-import flatten from "flat";
 import coreUtils from "@opentripplanner/core-utils";
+import { FareProductSelector } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage, FormattedNumber } from "react-intl";
 import { CalendarAlt } from "@styled-icons/fa-solid/CalendarAlt";
@@ -7,17 +7,13 @@ import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
 import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
 import { Leaf } from "@styled-icons/fa-solid/Leaf";
 import { Route } from "@styled-icons/fa-solid/Route";
-
+import { flatten } from "flat";
 import * as S from "./styled";
 import TripDetail from "./trip-detail";
 import FareLegTable from "./fare-table";
 import { boldText, renderFare } from "./utils";
 
-import {
-  TimeActiveDetailsProps,
-  TransitFareProps,
-  TripDetailsProps
-} from "./types";
+import { TimeActiveDetailsProps, TripDetailsProps } from "./types";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
@@ -64,53 +60,12 @@ function DefaultTimeActiveDetails({
 }
 
 /**
- * Helper component that renders a transit fare entry.
- */
-const TransitFare = ({
-  fareKey,
-  fareNameFallback,
-  fareKeyNameMap,
-  transitFares
-}: TransitFareProps): ReactElement => {
-  const currentFare = transitFares[fareKey];
-
-  // TODO: Is this needed? Every implementation of TransitFare does a check for currentFare's existence, although not the cents field
-  if (typeof currentFare?.cents !== "number") {
-    return (
-      <FormattedMessage
-        defaultMessage={defaultMessages["otpUi.TripDetails.transitFareUnknown"]}
-        description="Text showing that no fare information is present."
-        id="otpUi.TripDetails.transitFareUnknown"
-      />
-    );
-  }
-
-  return (
-    <span>
-      <FormattedMessage
-        defaultMessage={defaultMessages["otpUi.TripDetails.transitFareEntry"]}
-        description="Text showing the price of tickets on public transportation."
-        id="otpUi.TripDetails.transitFareEntry"
-        values={{
-          name: fareKeyNameMap[fareKey] || fareNameFallback || fareKey,
-          strong: boldText,
-          value: renderFare(
-            currentFare?.currency?.currencyCode || "USD",
-            currentFare.cents / 100
-          )
-        }}
-      />
-    </span>
-  );
-};
-
-/**
  * Renders trip details such as departure instructions, fare amount, and minutes active.
  */
 export function TripDetails({
   className = "",
   co2Config,
-  defaultFareKey = "regular",
+  defaultFareType,
   DepartureDetails = null,
   displayTimeActive = true,
   FareDetails = null,
@@ -122,63 +77,105 @@ export function TripDetails({
   // process the transit fare
   const fareResult = coreUtils.itinerary.calculateTncFares(itinerary);
   const { currencyCode, maxTNCFare, minTNCFare } = fareResult;
-  const transitFares = itinerary?.fare?.fare;
 
-  let companies = "";
-  itinerary.legs.forEach(leg => {
-    if (leg.rideHailingEstimate) {
-      companies = leg.rideHailingEstimate.provider.id;
-    }
-  });
+  const { companies, fareTypes } = itinerary.legs.reduce<{
+    companies: string;
+    fareTypes: FareProductSelector[];
+  }>(
+    (prev, leg) => {
+      if (leg.rideHailingEstimate) {
+        prev.companies = leg.rideHailingEstimate.provider.id;
+      }
+
+      if (leg.fareProducts) {
+        leg.fareProducts.forEach(fp => {
+          const mediumId = fp.product.medium?.id;
+          const riderCategoryId = fp.product.riderCategory?.id;
+          if (
+            !prev.fareTypes.find(
+              ft =>
+                ft.mediumId === mediumId &&
+                ft.riderCategoryId === riderCategoryId
+            )
+          ) {
+            prev.fareTypes.push({ mediumId, riderCategoryId });
+          }
+        });
+      }
+      return prev;
+    },
+    { companies: "", fareTypes: [] }
+  );
+
   let fare;
-
-  const fareKeys = transitFares && Object.keys(transitFares).sort();
-
-  if (transitFares && fareKeys.length > 0) {
-    let defaultFare = defaultFareKey;
-    if (!transitFares[defaultFareKey]) {
-      defaultFare = "regular";
-    }
-
+  if (fareTypes.length > 0 && defaultFareType) {
+    const defaultFareTotal = coreUtils.itinerary.getItineraryCost(
+      itinerary.legs,
+      defaultFareType.mediumId,
+      defaultFareType.riderCategoryId
+    );
     // Depending on if there are additional fares to display either render a <span> or a <details>
     const TransitFareWrapper =
-      transitFares && fareKeys.length > 1 ? S.TransitFare : S.TransitFareSingle;
+      fareTypes.length > 1 ? S.TransitFare : S.TransitFareSingle;
 
-    fare = transitFares?.[defaultFare] && (
+    const fareNameFallback = (
+      <FormattedMessage
+        defaultMessage={defaultMessages["otpUi.TripDetails.transitFare"]}
+        description="Text showing the price of tickets on public transportation."
+        id="otpUi.TripDetails.transitFare"
+      />
+    );
+
+    fare = defaultFareTotal?.amount && (
       <S.Fare>
         <TransitFareWrapper>
-          <summary style={{ display: fareKeys.length > 1 ? "list-item" : "" }}>
-            <TransitFare
-              fareNameFallback={
-                <FormattedMessage
-                  defaultMessage={
-                    defaultMessages["otpUi.TripDetails.transitFare"]
-                  }
-                  description="Text showing the price of tickets on public transportation."
-                  id="otpUi.TripDetails.transitFare"
-                />
+          <summary style={{ display: fareTypes.length > 1 ? "list-item" : "" }}>
+            <FormattedMessage
+              defaultMessage={
+                defaultMessages["otpUi.TripDetails.transitFareEntry"]
               }
-              fareKey={defaultFare}
-              fareKeyNameMap={fareKeyNameMap}
-              transitFares={transitFares}
+              description="Text showing the price of tickets on public transportation."
+              id="otpUi.TripDetails.transitFareEntry"
+              values={{
+                name:
+                  fareKeyNameMap[defaultFareType.headerKey] || fareNameFallback,
+                strong: boldText,
+                value: renderFare(
+                  defaultFareTotal.currency?.code || "USD",
+                  defaultFareTotal?.amount
+                )
+              }}
             />
           </summary>
           {fareDetailsLayout ? (
             // Show full ƒare details by leg
-            <FareLegTable layout={fareDetailsLayout} itinerary={itinerary} />
+            <FareLegTable layout={fareDetailsLayout} legs={itinerary.legs} />
           ) : (
             // Just show the fares for each payment type
-            fareKeys.map(fareKey => {
+            fareTypes.map(fareType => {
               // Don't show the default fare twice!
-              if (fareKey === defaultFare) {
+              if (fareType) {
                 return null;
               }
               return (
-                <TransitFare
-                  fareKey={fareKey}
-                  fareKeyNameMap={fareKeyNameMap}
-                  key={fareKey}
-                  transitFares={transitFares}
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages["otpUi.TripDetails.transitFareEntry"]
+                  }
+                  description="Text showing the price of tickets on public transportation."
+                  id="otpUi.TripDetails.transitFareEntry"
+                  key={Object.values(fareType).join("-")}
+                  values={{
+                    name:
+                      fareKeyNameMap[defaultFareType.headerKey] ||
+                      fareNameFallback,
+                    strong: boldText,
+                    value: renderFare(
+                      defaultFareTotal.currency?.code || "USD",
+                      defaultFareTotal?.amount /
+                        defaultFareTotal?.currency?.digits
+                    )
+                  }}
                 />
               );
             })
@@ -280,15 +277,15 @@ export function TripDetails({
             </S.Timing>
           }
         />
-        {fare && (
+        {!!fare && (
           <TripDetail
             // Any custom description for the transit fare needs to be handled by the slot.
             description={
               FareDetails && (
                 <FareDetails
+                  legs={itinerary.legs}
                   maxTNCFare={maxTNCFare}
                   minTNCFare={minTNCFare}
-                  transitFares={transitFares}
                 />
               )
             }
@@ -302,9 +299,9 @@ export function TripDetails({
             description={
               FareDetails && (
                 <FareDetails
+                  legs={itinerary.legs}
                   maxTNCFare={maxTNCFare}
                   minTNCFare={minTNCFare}
-                  transitFares={transitFares}
                 />
               )
             }

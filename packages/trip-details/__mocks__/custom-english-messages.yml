@@ -1,14 +1,14 @@
 otpUi:
   TripDetails:
-    departure: >-
-      <strong>Leave</strong> at <strong>{departureDate, time, short}</strong> on
-      <strong>{departureDate, date, long}</strong>
-    fareDetailsHeaders:
+    FareTable:
       cash: Cash
       electronic: ORCA
       regular: Regular
       senior: Senior
       special: LIFT
       youth: Youth
+    departure: >-
+      <strong>Leave</strong> at <strong>{departureDate, time, short}</strong> on
+      <strong>{departureDate, date, long}</strong>
     title: Custom Trip Details Title
     tncFare: Pay <strong>{minTNCFare}-{maxTNCFare}</strong> to {companies}

@@ -42,6 +42,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
   render(): ReactElement {
     const {
       alwaysCollapseAlerts,
+      defaultFareSelector,
       itinerary,
       LegIcon = TriMetLegIcon,
       LineColumnContent,
@@ -50,7 +51,6 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
       showAgencyInfo,
       showLegIcon,
       showMapButtonColumn = true,
-      showRouteFares,
       showViewTripButton,
       styledItinerary,
       TimeColumnContent,
@@ -78,6 +78,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
         AlertToggleIcon={AlertToggleIcon}
         alwaysCollapseAlerts={alwaysCollapseAlerts}
         config={config}
+        defaultFareSelector={defaultFareSelector}
         diagramVisible={diagramVisible}
         frameLeg={action("frameLeg")}
         itinerary={itinerary}
@@ -94,7 +95,6 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
         showElevationProfile
         showLegIcon={showLegIcon}
         showMapButtonColumn={showMapButtonColumn}
-        showRouteFares={showRouteFares}
         showViewTripButton={showViewTripButton}
         TimeColumnContent={TimeColumnContent}
         toRouteAbbreviation={toRouteAbbreviation}
