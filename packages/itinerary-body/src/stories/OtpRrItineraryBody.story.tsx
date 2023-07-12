@@ -46,10 +46,10 @@ if (!isRunningJest()) {
 }
 
 interface StoryWrapperProps {
+  alwaysCollapseAlerts?: boolean;
+  defaultFareSelector?: FareProductSelector;
   itinerary: Itinerary;
   TimeColumnContent?: FunctionComponent<TimeColumnContentProps>;
-  defaultFareSelector?: FareProductSelector;
-  alwaysCollapseAlerts?: boolean;
 }
 
 function OtpRRItineraryBodyWrapper({
@@ -149,11 +149,11 @@ export const OTP2FlexItinerary = (): ReactElement => (
 
 export const IndividualLegFareComponents = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
-    itinerary={fareProductsItinerary}
     defaultFareSelector={{
       mediumId: "orca:cash",
       riderCategoryId: "orca:regular"
     }}
+    itinerary={fareProductsItinerary}
   />
 );
 
