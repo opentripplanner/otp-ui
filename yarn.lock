@@ -2727,6 +2727,25 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
+"@opentripplanner/core-utils@^8.2.1":
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-8.3.2.tgz#5095dd3ae8493e478b3f599353c6804b35f1e1dd"
+  integrity sha512-Rij/vfnvB9+uoxfNoq/gPRr+T9YWiqrxnYHzzEbh+R4Jro7D8iwRbD08cHJF9RRMTv/s4Y2IQrzAnmZVXiLw6w==
+  dependencies:
+    "@conveyal/lonlat" "^1.4.1"
+    "@mapbox/polyline" "^1.1.0"
+    "@opentripplanner/geocoder" "^1.4.0"
+    "@styled-icons/foundation" "^10.34.0"
+    "@turf/along" "^6.0.1"
+    bowser "^2.7.0"
+    chroma-js "^2.4.2"
+    date-fns "^2.28.0"
+    date-fns-tz "^1.2.2"
+    graphql "^16.6.0"
+    lodash.clonedeep "^4.5.0"
+    lodash.isequal "^4.5.0"
+    qs "^6.9.1"
+
 "@opentripplanner/geocoder@1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@opentripplanner/geocoder/-/geocoder-1.4.0.tgz#728afec6585cf3748a1931493b3a3566421f445d"
@@ -2737,10 +2756,33 @@
     isomorphic-mapzen-search "^1.6.1"
     lodash.memoize "^4.1.2"
 
+"@opentripplanner/itinerary-body@^4.1.17":
+  version "4.1.24"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/itinerary-body/-/itinerary-body-4.1.24.tgz#76b1e28e891e317c857763f755b653f60b9a86cb"
+  integrity sha512-3aH+i/jJtsdayX3NkzuoSuFLCUW0MTmy6CGjICK2v1hRajVhbJyujeoNo3eEhpaQiM3NbvDEDn8g9kJe2cZ11w==
+  dependencies:
+    "@opentripplanner/core-utils" "^8.2.1"
+    "@opentripplanner/humanize-distance" "^1.2.0"
+    "@opentripplanner/icons" "^2.0.1"
+    "@opentripplanner/location-icon" "^1.4.1"
+    "@styled-icons/fa-solid" "^10.34.0"
+    "@styled-icons/foundation" "^10.34.0"
+    date-fns "^2.28.0"
+    date-fns-tz "^1.2.2"
+    flat "^5.0.2"
+    react-animate-height "^3.0.4"
+    react-resize-detector "^4.2.1"
+    string-similarity "^4.0.4"
+
 "@opentripplanner/types@6.0.0-alpha.4":
   version "6.0.0-alpha.4"
   resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-6.0.0-alpha.4.tgz#dee3c06675e30c596159d182ed707e7710cd937c"
   integrity sha512-FlYsHm/tk+x0ldrEG1X9Ph1R1k3way1oEdKX7XSnhu9lNTzL4lO0hfT1PLzNXMfBRar7TzK94PHNDibJsod8Kw==
+
+"@opentripplanner/types@^5.0.0":
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-5.0.3.tgz#e264126daee5d60bdb7e9dc3c3a412f1fdd6fe8e"
+  integrity sha512-othzn1qeqVxhlT9sHUs0wFT6LXm9mcD/JVAcFK18Ncdboy32iFFUy9X8nVtNOLRdaGkkzr+lQK8e+jUE5yjXIw==
 
 "@parcel/watcher@2.0.4":
   version "2.0.4"

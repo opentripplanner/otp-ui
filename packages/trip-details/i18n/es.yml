@@ -1,5 +1,12 @@
 otpUi:
   TripDetails:
+    FareTable:
+      cash: Efectivo
+      electronic: Electrónico
+      regular: Adulto
+      senior: Major edad
+      special: Especial
+      youth: Juventud
     co2: "CO₂ emitido: <strong>{co2}</strong>"
     co2description: >-
       La intensidad de CO₂ se calcula multiplicando la distancia de cada tramo
@@ -8,24 +15,18 @@ otpUi:
     departure: >-
       Salida <strong>{departureDate, date, long}</strong> a las
       <strong>{departureDate, time, short}</strong>
-    fareDetailsHeaders:
-      cash: Efectivo
-      electronic: Electrónico
-      regular: Adulto
-      senior: Major edad
-      special: Especial
-      youth: Juventud
     hideDetail: Ocultar detalles
+    minutesActive: >-
+      Tiempo de actividad: <strong>{minutes, plural, one {# minuto} other {#
+      minutos}}</strong>
     showDetail: Mostrar detalles
+    timeActiveDescription: >
+      Al hacer este viaje, gastarás <strong>{walkMinutes, plural, one {# minuto}
+      other {# minutos}}</strong> caminando y <strong>{bikeMinutes, plural, one
+      {# minuto} other {# minutos}}</strong> en bicicleta.
     title: Detalles del viaje
     tncFare: "{companies} Tarifa: <strong>{minTNCFare} - {maxTNCFare}</strong>"
     transferDiscountExplanation: Se aplica un descuento de transferencia de {transferAmount}
     transitFare: Tarifa de tránsito
     transitFareEntry: "{name} : <strong>{value}</strong>"
-    transitFareUnknown: No hay información sobre las tarifas
     tripIncludesFlex: Este viaje incluye rutas flexibles. {extraMessage}
-    minutesActive: 'Tiempo de actividad: <strong>{minutes, plural, one {# minuto}
-      other {# minutos}}</strong>'
-    timeActiveDescription: "Al hacer este viaje, gastarás <strong>{walkMinutes, plural,
-      one {# minuto} other {# minutos}}</strong> caminando y <strong>{bikeMinutes,
-      plural, one {# minuto} other {# minutos}}</strong> en bicicleta.\n"

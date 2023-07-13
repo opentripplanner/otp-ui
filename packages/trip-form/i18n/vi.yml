@@ -14,19 +14,20 @@ otpUi:
       transit: Giao thông công cộng
       walk: Đi bộ
     settings:
-      addBus-label: Xe buýt
       addRail-label: Xe lửa
-      addSubway-label: Tàu điện
       addTram-label: Xe điện
-      allowBikeRental-label: Xe đạp thuê
       bikeTolerance-label: Sức chịu đựng đi xe đạp
       bikeTolerance-labelHigh: Đi xe đạp nhiều hơn
       bikeTolerance-labelLow: Ít đi xe đạp
-      busColor-label: Bus Color
+      bus-label: Xe buýt
       busColor-options-blue: Blue
       carTolerance-label: Sức chịu đựng lái xe
       carTolerance-labelHigh: Lái xe nhiều hơn
       carTolerance-labelLow: Ít lái xe
+      ferry-label: Phà
+      rail-label: Xe lửa
+      subway-label: Metro
+      tram-label: Xe điện
       walkTolerance-label: Sức chịu đựng đi bộ
       walkTolerance-labelHigh: Đi bộ nhiều hơn
       walkTolerance-labelLow: Ít đi bộ

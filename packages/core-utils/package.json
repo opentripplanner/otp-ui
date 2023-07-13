@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/core-utils",
-  "version": "8.3.2",
+  "version": "9.0.0",
   "description": "Core functionality that is shared among numerous UI components",
   "engines": {
     "node": ">=13"
@@ -33,7 +33,7 @@
     "build:esm": "../../scripts/build-esm.sh"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^5.0.0",
+    "@opentripplanner/types": "^6.0.0-alpha.9",
     "@types/chroma-js": "^2.1.4"
   }
 }
