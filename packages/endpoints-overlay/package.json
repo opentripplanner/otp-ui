@@ -20,10 +20,10 @@
   },
   "dependencies": {
     "@opentripplanner/base-map": "^3.0.11",
-    "@opentripplanner/location-icon": "^1.4.1",
     "@opentripplanner/core-utils": "^8.2.1",
-    "flat": "^5.0.2",
-    "@styled-icons/fa-solid": "^10.34.0"
+    "@opentripplanner/location-icon": "^1.4.1",
+    "@styled-icons/fa-solid": "^10.34.0",
+    "flat": "^5.0.2"
   },
   "devDependencies": {
     "@types/flat": "^5.0.2"

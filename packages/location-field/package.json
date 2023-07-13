@@ -7,7 +7,6 @@
   "repository": "https://github.com/opentripplanner/otp-ui.git",
   "author": "Evan  Siroky",
   "license": "MIT",
-  "private": false,
   "dependencies": {
     "@conveyal/geocoder-arcgis-geojson": "^0.0.3",
     "@opentripplanner/core-utils": "^8.2.1",
