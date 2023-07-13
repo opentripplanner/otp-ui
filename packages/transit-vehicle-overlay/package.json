@@ -28,7 +28,9 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "build:cjs": "../../scripts/build-cjs.sh",
+    "build:esm": "../../scripts/build-esm.sh"
   },
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"

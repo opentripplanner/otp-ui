@@ -8,7 +8,9 @@
   "author": "Binh Dam",
   "license": "MIT",
   "scripts": {
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "build:cjs": "../../scripts/build-cjs.sh",
+    "build:esm": "../../scripts/build-esm.sh"
   },
   "dependencies": {
     "@styled-icons/styled-icon": "^10.7.0",

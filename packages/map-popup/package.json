@@ -27,6 +27,8 @@
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
   "scripts": {
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "build:cjs": "../../scripts/build-cjs.sh",
+    "build:esm": "../../scripts/build-esm.sh"
   }
 }

@@ -8,7 +8,9 @@
   "repository": "https://github.com/opentripplanner/otp-ui.git",
   "license": "MIT",
   "scripts": {
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "build:cjs": "../../scripts/build-cjs.sh",
+    "build:esm": "../../scripts/build-esm.sh"
   },
   "peerDependencies": {
     "react": "^16.14.0",
