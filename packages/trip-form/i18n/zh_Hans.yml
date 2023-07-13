@@ -14,7 +14,6 @@ otpUi:
       transit: 公共交通
       walk: 步行
     settings:
-      addTram-label: 电车
       bikeTolerance-label: 骑自行车的容忍度
       bikeTolerance-labelHigh: 更多骑自行车
       bikeTolerance-labelLow: 少骑自行车
