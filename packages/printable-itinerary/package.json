@@ -9,11 +9,11 @@
   "author": "Evan Siroky",
   "license": "MIT",
   "dependencies": {
-    "@opentripplanner/core-utils": "^8.2.1",
-    "@opentripplanner/itinerary-body": "^4.1.17"
+    "@opentripplanner/core-utils": "^9.0.0",
+    "@opentripplanner/itinerary-body": "^5.0.0"
   },
   "devDependencies": {
-    "@opentripplanner/icons": "^2.0.1"
+    "@opentripplanner/icons": "^2.0.3"
   },
   "peerDependencies": {
     "react": "^16.14.0",

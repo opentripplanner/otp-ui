@@ -9,7 +9,7 @@
   "author": "Evan Siroky",
   "license": "MIT",
   "dependencies": {
-    "@opentripplanner/core-utils": "^8.2.1",
+    "@opentripplanner/core-utils": "^9.0.0",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {

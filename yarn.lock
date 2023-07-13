@@ -4245,7 +4245,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@opentripplanner/base-map@^3.0.11, @opentripplanner/base-map@workspace:packages/base-map":
+"@opentripplanner/base-map@^3.0.13, @opentripplanner/base-map@workspace:packages/base-map":
   version: 0.0.0-use.local
   resolution: "@opentripplanner/base-map@workspace:packages/base-map"
   dependencies:
@@ -4253,19 +4253,19 @@ __metadata:
     maplibre-gl: ^2.1.9
     react-map-gl: ^7.0.15
   peerDependencies:
-    "@opentripplanner/types": ^5.0.0
+    "@opentripplanner/types": ^6.0.0
     react: ^16.14.0
     styled-components: ^5.3.0
   languageName: unknown
   linkType: soft
 
-"@opentripplanner/core-utils@^9.0.0-alpha.36, @opentripplanner/core-utils@workspace:packages/core-utils":
+"@opentripplanner/core-utils@^9.0.0, @opentripplanner/core-utils@^9.0.0-alpha.36, @opentripplanner/core-utils@workspace:packages/core-utils":
   version: 0.0.0-use.local
   resolution: "@opentripplanner/core-utils@workspace:packages/core-utils"
   dependencies:
     "@conveyal/lonlat": ^1.4.1
     "@mapbox/polyline": ^1.1.0
-    "@opentripplanner/geocoder": ^1.4.0
+    "@opentripplanner/geocoder": ^1.4.1
     "@opentripplanner/types": ^6.0.0-alpha.9
     "@styled-icons/foundation": ^10.34.0
     "@turf/along": ^6.0.1
@@ -4281,39 +4281,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@opentripplanner/core-utils@npm:^8.2.1":
-  version: 8.3.2
-  resolution: "@opentripplanner/core-utils@npm:8.3.2"
-  dependencies:
-    "@conveyal/lonlat": ^1.4.1
-    "@mapbox/polyline": ^1.1.0
-    "@opentripplanner/geocoder": ^1.4.0
-    "@styled-icons/foundation": ^10.34.0
-    "@turf/along": ^6.0.1
-    bowser: ^2.7.0
-    chroma-js: ^2.4.2
-    date-fns: ^2.28.0
-    date-fns-tz: ^1.2.2
-    graphql: ^16.6.0
-    lodash.clonedeep: ^4.5.0
-    lodash.isequal: ^4.5.0
-    qs: ^6.9.1
-  checksum: cbcba32d6fdaed04e7cae44313eb9ac465ac76d80a7ea662a962254a9efb32c9c1dfb89bb5d41131e906fbadba2bc3720a120a7018999a821f1d3951d6933825
-  languageName: node
-  linkType: hard
-
-"@opentripplanner/endpoints-overlay@^2.0.6, @opentripplanner/endpoints-overlay@workspace:packages/endpoints-overlay":
+"@opentripplanner/endpoints-overlay@^2.0.7, @opentripplanner/endpoints-overlay@workspace:packages/endpoints-overlay":
   version: 0.0.0-use.local
   resolution: "@opentripplanner/endpoints-overlay@workspace:packages/endpoints-overlay"
   dependencies:
-    "@opentripplanner/base-map": ^3.0.11
-    "@opentripplanner/core-utils": ^8.2.1
+    "@opentripplanner/base-map": ^3.0.13
+    "@opentripplanner/core-utils": ^9.0.0
     "@opentripplanner/location-icon": ^1.4.1
     "@styled-icons/fa-solid": ^10.34.0
     "@types/flat": ^5.0.2
     flat: ^5.0.2
   peerDependencies:
-    "@opentripplanner/types": ^5.0.0
+    "@opentripplanner/types": ^6.0.0
     react: ^16.14.0
     react-dom: ^16.8.6
     react-intl: ^5.24.6
@@ -4322,12 +4301,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@opentripplanner/from-to-location-picker@^2.1.6, @opentripplanner/from-to-location-picker@workspace:packages/from-to-location-picker":
+"@opentripplanner/from-to-location-picker@^2.1.7, @opentripplanner/from-to-location-picker@workspace:packages/from-to-location-picker":
   version: 0.0.0-use.local
   resolution: "@opentripplanner/from-to-location-picker@workspace:packages/from-to-location-picker"
   dependencies:
     "@opentripplanner/location-icon": ^1.4.1
-    "@opentripplanner/types": ^5.0.0
+    "@opentripplanner/types": ^6.0.0
     flat: ^5.0.2
   peerDependencies:
     react: ^16.14.0
@@ -4336,28 +4315,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@opentripplanner/geocoder@^1.4.0, @opentripplanner/geocoder@workspace:packages/geocoder":
+"@opentripplanner/geocoder@1.4.1, @opentripplanner/geocoder@^1.4.1, @opentripplanner/geocoder@workspace:packages/geocoder":
   version: 0.0.0-use.local
   resolution: "@opentripplanner/geocoder@workspace:packages/geocoder"
   dependencies:
     "@conveyal/geocoder-arcgis-geojson": ^0.0.3
     "@conveyal/lonlat": ^1.4.1
+    "@types/geojson": ^7946.0.10
     isomorphic-mapzen-search: ^1.6.1
     lodash.memoize: ^4.1.2
   languageName: unknown
   linkType: soft
-
-"@opentripplanner/geocoder@npm:1.4.0":
-  version: 1.4.0
-  resolution: "@opentripplanner/geocoder@npm:1.4.0"
-  dependencies:
-    "@conveyal/geocoder-arcgis-geojson": ^0.0.3
-    "@conveyal/lonlat": ^1.4.1
-    isomorphic-mapzen-search: ^1.6.1
-    lodash.memoize: ^4.1.2
-  checksum: be4ea8016f24c2c83dc550fdaf3844b01280b016e66d863edeffdce4401fc4d5832a0aa4e6dc60205c0a79f248287e44a1f735703c73a7d591d192fef0568935
-  languageName: node
-  linkType: hard
 
 "@opentripplanner/humanize-distance@^1.2.0, @opentripplanner/humanize-distance@workspace:packages/humanize-distance":
   version: 0.0.0-use.local
@@ -4367,49 +4335,26 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@opentripplanner/icons@^2.0.1, @opentripplanner/icons@workspace:packages/icons":
+"@opentripplanner/icons@^2.0.3, @opentripplanner/icons@workspace:packages/icons":
   version: 0.0.0-use.local
   resolution: "@opentripplanner/icons@workspace:packages/icons"
   dependencies:
-    "@opentripplanner/core-utils": ^8.2.1
+    "@opentripplanner/core-utils": ^9.0.0
     prop-types: ^15.7.2
   peerDependencies:
     react: ^16.14.0
   languageName: unknown
   linkType: soft
 
-"@opentripplanner/itinerary-body@npm:^4.1.17":
-  version: 4.1.24
-  resolution: "@opentripplanner/itinerary-body@npm:4.1.24"
-  dependencies:
-    "@opentripplanner/core-utils": ^8.2.1
-    "@opentripplanner/humanize-distance": ^1.2.0
-    "@opentripplanner/icons": ^2.0.1
-    "@opentripplanner/location-icon": ^1.4.1
-    "@styled-icons/fa-solid": ^10.34.0
-    "@styled-icons/foundation": ^10.34.0
-    date-fns: ^2.28.0
-    date-fns-tz: ^1.2.2
-    flat: ^5.0.2
-    react-animate-height: ^3.0.4
-    react-resize-detector: ^4.2.1
-    string-similarity: ^4.0.4
-  peerDependencies:
-    react: ^16.14.0
-    styled-components: ^5.3.0
-  checksum: 8e404ff870cc50818be5112e81a4392b3469fcdcc9c1704a8a09c27a3f50767b11be9bbd402aa35b32923d34ec252192010c0b267175fdb8512d1067a240115c
-  languageName: node
-  linkType: hard
-
-"@opentripplanner/itinerary-body@workspace:packages/itinerary-body":
+"@opentripplanner/itinerary-body@^5.0.0, @opentripplanner/itinerary-body@workspace:packages/itinerary-body":
   version: 0.0.0-use.local
   resolution: "@opentripplanner/itinerary-body@workspace:packages/itinerary-body"
   dependencies:
-    "@opentripplanner/core-utils": ^8.2.1
+    "@opentripplanner/core-utils": ^9.0.0
     "@opentripplanner/humanize-distance": ^1.2.0
-    "@opentripplanner/icons": ^2.0.1
+    "@opentripplanner/icons": ^2.0.3
     "@opentripplanner/location-icon": ^1.4.1
-    "@opentripplanner/types": ^5.0.0
+    "@opentripplanner/types": ^6.0.0
     "@styled-icons/fa-solid": ^10.34.0
     "@styled-icons/foundation": ^10.34.0
     "@types/flat": ^5.0.2
@@ -4430,8 +4375,8 @@ __metadata:
   resolution: "@opentripplanner/location-field@workspace:packages/location-field"
   dependencies:
     "@conveyal/geocoder-arcgis-geojson": ^0.0.3
-    "@opentripplanner/core-utils": ^8.2.1
-    "@opentripplanner/geocoder": 1.4.0
+    "@opentripplanner/core-utils": ^9.0.0
+    "@opentripplanner/geocoder": 1.4.1
     "@opentripplanner/humanize-distance": ^1.2.0
     "@opentripplanner/location-icon": ^1.4.1
     "@styled-icons/fa-solid": ^10.34.0
@@ -4456,14 +4401,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@opentripplanner/map-popup@^2.0.3, @opentripplanner/map-popup@workspace:packages/map-popup":
+"@opentripplanner/map-popup@^2.0.4, @opentripplanner/map-popup@workspace:packages/map-popup":
   version: 0.0.0-use.local
   resolution: "@opentripplanner/map-popup@workspace:packages/map-popup"
   dependencies:
-    "@opentripplanner/base-map": ^3.0.11
-    "@opentripplanner/core-utils": ^8.2.1
-    "@opentripplanner/from-to-location-picker": ^2.1.6
-    "@opentripplanner/types": ^5.0.0
+    "@opentripplanner/base-map": ^3.0.13
+    "@opentripplanner/core-utils": ^9.0.0
+    "@opentripplanner/from-to-location-picker": ^2.1.7
+    "@opentripplanner/types": ^6.0.0
     flat: ^5.0.2
   peerDependencies:
     react: ^16.14.0
@@ -4565,9 +4510,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@opentripplanner/otp2-tile-overlay@workspace:packages/otp2-tile-overlay"
   dependencies:
-    "@opentripplanner/base-map": ^3.0.11
-    "@opentripplanner/map-popup": ^2.0.3
-    "@opentripplanner/types": ^5.0.0
+    "@opentripplanner/base-map": ^3.0.13
+    "@opentripplanner/map-popup": ^2.0.4
+    "@opentripplanner/types": ^6.0.0
   peerDependencies:
     react: ^16.14.0
     react-map-gl: ^7.0.15
@@ -4578,8 +4523,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@opentripplanner/park-and-ride-overlay@workspace:packages/park-and-ride-overlay"
   dependencies:
-    "@opentripplanner/base-map": ^3.0.11
-    "@opentripplanner/from-to-location-picker": ^2.1.6
+    "@opentripplanner/base-map": ^3.0.13
+    "@opentripplanner/from-to-location-picker": ^2.1.7
+    "@opentripplanner/types": "workspace:^"
   peerDependencies:
     react: ^16.14.0
     react-dom: ^16.8.6
@@ -4592,9 +4538,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@opentripplanner/printable-itinerary@workspace:packages/printable-itinerary"
   dependencies:
-    "@opentripplanner/core-utils": ^8.2.1
-    "@opentripplanner/icons": ^2.0.1
-    "@opentripplanner/itinerary-body": ^4.1.17
+    "@opentripplanner/core-utils": ^9.0.0
+    "@opentripplanner/icons": ^2.0.3
+    "@opentripplanner/itinerary-body": ^5.0.0
   peerDependencies:
     react: ^16.14.0
     styled-components: ^5.3.0
@@ -4606,12 +4552,14 @@ __metadata:
   resolution: "@opentripplanner/route-viewer-overlay@workspace:packages/route-viewer-overlay"
   dependencies:
     "@mapbox/polyline": ^1.1.0
-    "@opentripplanner/base-map": ^3.0.11
-    "@opentripplanner/core-utils": ^8.2.1
-    "@opentripplanner/types": ^5.0.0
+    "@opentripplanner/base-map": ^3.0.13
+    "@opentripplanner/core-utils": ^9.0.0
+    "@opentripplanner/types": ^6.0.0
     point-in-polygon: ^1.1.0
   peerDependencies:
+    maplibre-gl: ^2.1.9
     react: ^16.14.0
+    react-map-gl: ^7.0.15
   languageName: unknown
   linkType: soft
 
@@ -4631,9 +4579,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@opentripplanner/stop-viewer-overlay@workspace:packages/stop-viewer-overlay"
   dependencies:
-    "@opentripplanner/base-map": ^3.0.11
-    "@opentripplanner/core-utils": ^8.2.1
-    "@opentripplanner/types": ^5.0.0
+    "@opentripplanner/base-map": ^3.0.13
+    "@opentripplanner/core-utils": ^9.0.0
+    "@opentripplanner/types": ^6.0.0
   peerDependencies:
     react: ^16.14.0
     react-map-gl: ^7.0.15
@@ -4644,10 +4592,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@opentripplanner/stops-overlay@workspace:packages/stops-overlay"
   dependencies:
-    "@opentripplanner/base-map": ^3.0.11
-    "@opentripplanner/from-to-location-picker": ^2.1.6
-    "@opentripplanner/map-popup": ^2.0.3
-    "@opentripplanner/types": ^5.0.0
+    "@opentripplanner/base-map": ^3.0.13
+    "@opentripplanner/from-to-location-picker": ^2.1.7
+    "@opentripplanner/map-popup": ^2.0.4
+    "@opentripplanner/types": ^6.0.0
     flat: ^5.0.2
     styled-icons: ^10.34.0
   peerDependencies:
@@ -4662,10 +4610,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@opentripplanner/transit-vehicle-overlay@workspace:packages/transit-vehicle-overlay"
   dependencies:
-    "@opentripplanner/base-map": ^3.0.11
-    "@opentripplanner/core-utils": ^8.2.1
-    "@opentripplanner/icons": ^2.0.1
-    "@opentripplanner/types": ^5.0.0
+    "@opentripplanner/base-map": ^3.0.13
+    "@opentripplanner/core-utils": ^9.0.0
+    "@opentripplanner/icons": ^2.0.3
+    "@opentripplanner/types": ^6.0.0
     flat: ^5.0.2
   peerDependencies:
     react: ^16.14.0
@@ -4680,11 +4628,11 @@ __metadata:
   resolution: "@opentripplanner/transitive-overlay@workspace:packages/transitive-overlay"
   dependencies:
     "@mapbox/polyline": ^1.1.1
-    "@opentripplanner/base-map": ^3.0.11
-    "@opentripplanner/core-utils": ^8.2.1
-    "@opentripplanner/endpoints-overlay": ^2.0.6
-    "@opentripplanner/itinerary-body": ^4.1.17
-    "@opentripplanner/types": ^5.0.0
+    "@opentripplanner/base-map": ^3.0.13
+    "@opentripplanner/core-utils": ^9.0.0
+    "@opentripplanner/endpoints-overlay": ^2.0.7
+    "@opentripplanner/itinerary-body": ^5.0.0
+    "@opentripplanner/types": ^6.0.0
     "@turf/bbox": ^6.5.0
     "@turf/bearing": ^6.5.0
     "@turf/destination": ^6.5.0
@@ -4720,7 +4668,7 @@ __metadata:
   resolution: "@opentripplanner/trip-form@workspace:packages/trip-form"
   dependencies:
     "@floating-ui/react": ^0.19.2
-    "@opentripplanner/core-utils": ^8.2.1
+    "@opentripplanner/core-utils": ^9.0.0
     "@opentripplanner/types": 6.0.0-alpha.4
     "@styled-icons/bootstrap": ^10.34.0
     "@styled-icons/boxicons-regular": ^10.38.0
@@ -4743,17 +4691,20 @@ __metadata:
   resolution: "@opentripplanner/trip-viewer-overlay@workspace:packages/trip-viewer-overlay"
   dependencies:
     "@mapbox/polyline": ^1.1.0
-    "@opentripplanner/base-map": ^3.0.11
-    "@opentripplanner/core-utils": ^8.2.1
+    "@opentripplanner/base-map": ^3.0.13
+    "@opentripplanner/core-utils": ^9.0.0
   peerDependencies:
     react: ^16.14.0
     react-map-gl: ^7.0.15
   languageName: unknown
   linkType: soft
 
-"@opentripplanner/types@^6.0.0-alpha.9, @opentripplanner/types@workspace:packages/types":
+"@opentripplanner/types@^6.0.0, @opentripplanner/types@^6.0.0-alpha.9, @opentripplanner/types@workspace:^, @opentripplanner/types@workspace:packages/types":
   version: 0.0.0-use.local
   resolution: "@opentripplanner/types@workspace:packages/types"
+  dependencies:
+    "@styled-icons/styled-icon": ^10.7.0
+    "@types/geojson": ^7946.0.10
   languageName: unknown
   linkType: soft
 
@@ -4764,22 +4715,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@opentripplanner/types@npm:^5.0.0":
-  version: 5.0.3
-  resolution: "@opentripplanner/types@npm:5.0.3"
-  checksum: 033516b29b999d787bf7a469dda457f091e3a178239aff2416a7c3788ed6c87ec3c2bce323fd432891841db0b33ef9fe96bbb3b69df6b4f9125ae8ad57fa09c3
-  languageName: node
-  linkType: hard
-
 "@opentripplanner/vehicle-rental-overlay@workspace:packages/vehicle-rental-overlay":
   version: 0.0.0-use.local
   resolution: "@opentripplanner/vehicle-rental-overlay@workspace:packages/vehicle-rental-overlay"
   dependencies:
-    "@opentripplanner/base-map": ^3.0.11
-    "@opentripplanner/core-utils": ^8.2.1
-    "@opentripplanner/from-to-location-picker": ^2.1.6
-    "@opentripplanner/map-popup": ^2.0.3
-    "@opentripplanner/types": ^5.0.0
+    "@opentripplanner/base-map": ^3.0.13
+    "@opentripplanner/core-utils": ^9.0.0
+    "@opentripplanner/from-to-location-picker": ^2.1.7
+    "@opentripplanner/map-popup": ^2.0.4
+    "@opentripplanner/types": ^6.0.0
     "@styled-icons/fa-solid": ^10.34.0
     flat: ^5.0.2
     lodash.memoize: ^4.1.2
@@ -4796,9 +4740,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@opentripplanner/zoom-based-markers@workspace:packages/zoom-based-markers"
   dependencies:
-    "@opentripplanner/base-map": ^3.0.11
-    "@opentripplanner/core-utils": ^8.2.1
-    "@opentripplanner/types": ^5.0.0
+    "@opentripplanner/base-map": ^3.0.13
+    "@opentripplanner/core-utils": ^9.0.0
+    "@opentripplanner/types": ^6.0.0
   peerDependencies:
     react: ^16.14.0
     react-map-gl: ^7.0.15
@@ -7158,6 +7102,13 @@ __metadata:
   version: 7946.0.8
   resolution: "@types/geojson@npm:7946.0.8"
   checksum: 6049a39b025cfe323d5cf87333d87c133ec963cdbd349c49295bee779827ee4b46a3041fd8bd2e7a4b02d6d1e26f3002968875928941bbed08477bfd5f6f9284
+  languageName: node
+  linkType: hard
+
+"@types/geojson@npm:^7946.0.10":
+  version: 7946.0.10
+  resolution: "@types/geojson@npm:7946.0.10"
+  checksum: 12c407c2dc93ecb26c08af533ee732f1506a9b29456616ba7ba1d525df96206c28ddf44a528f6a5415d7d22893e9d967420940a9c095ee5e539c1eba5fefc1f4
   languageName: node
   linkType: hard
 

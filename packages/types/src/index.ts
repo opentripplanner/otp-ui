@@ -5,6 +5,7 @@
 
 import React, { FunctionComponent, ReactElement } from "react";
 import { StyledIcon } from "@styled-icons/styled-icon";
+import { Polygon } from "geojson";
 import { ConfiguredModes } from "./deprecated";
 
 type ZeroOrOne = 0 | 1;
@@ -453,7 +454,7 @@ export type Stop = {
   code?: string;
   color?: string;
   dist?: number;
-  geometries?: { geoJson?: GeoJSON.Polygon };
+  geometries?: { geoJson?: Polygon };
   id: string;
   lat: number;
   lon: number;

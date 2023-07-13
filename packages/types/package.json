@@ -9,5 +9,9 @@
   "license": "MIT",
   "scripts": {
     "tsc": "tsc"
+  },
+  "dependencies": {
+    "@styled-icons/styled-icon": "^10.7.0",
+    "@types/geojson": "^7946.0.10"
   }
 }

@@ -9,8 +9,8 @@
   "license": "MIT",
   "dependencies": {
     "@conveyal/geocoder-arcgis-geojson": "^0.0.3",
-    "@opentripplanner/core-utils": "^8.2.1",
-    "@opentripplanner/geocoder": "1.4.0",
+    "@opentripplanner/core-utils": "^9.0.0",
+    "@opentripplanner/geocoder": "1.4.1",
     "@opentripplanner/humanize-distance": "^1.2.0",
     "@opentripplanner/location-icon": "^1.4.1",
     "@styled-icons/fa-solid": "^10.34.0",
