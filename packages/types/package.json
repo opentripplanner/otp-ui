@@ -13,7 +13,7 @@
     "build:esm": "../../scripts/build-esm.sh"
   },
   "dependencies": {
-    "@styled-icons/styled-icon": "^10.7.0",
+    "@styled-icons/styled-icon": "^10.6.3",
     "@types/geojson": "^7946.0.10"
   }
 }

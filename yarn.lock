@@ -3662,7 +3662,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@opentripplanner/base-map@^3.0.13, @opentripplanner/base-map@workspace:packages/base-map":
+"@opentripplanner/base-map@^3.0.13, @opentripplanner/base-map@workspace:^, @opentripplanner/base-map@workspace:packages/base-map":
   version: 0.0.0-use.local
   resolution: "@opentripplanner/base-map@workspace:packages/base-map"
   dependencies:
@@ -3718,7 +3718,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@opentripplanner/from-to-location-picker@^2.1.7, @opentripplanner/from-to-location-picker@workspace:packages/from-to-location-picker":
+"@opentripplanner/from-to-location-picker@^2.1.7, @opentripplanner/from-to-location-picker@workspace:^, @opentripplanner/from-to-location-picker@workspace:packages/from-to-location-picker":
   version: 0.0.0-use.local
   resolution: "@opentripplanner/from-to-location-picker@workspace:packages/from-to-location-picker"
   dependencies:
@@ -3796,6 +3796,7 @@ __metadata:
     "@opentripplanner/geocoder": 1.4.1
     "@opentripplanner/humanize-distance": ^1.2.0
     "@opentripplanner/location-icon": ^1.4.1
+    "@opentripplanner/types": "workspace:^"
     "@styled-icons/fa-solid": ^10.34.0
     "@types/throttle-debounce": ^2.1.0
     throttle-debounce: ^2.1.0
@@ -3941,8 +3942,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@opentripplanner/park-and-ride-overlay@workspace:packages/park-and-ride-overlay"
   dependencies:
-    "@opentripplanner/base-map": ^3.0.13
-    "@opentripplanner/from-to-location-picker": ^2.1.7
+    "@opentripplanner/base-map": "workspace:^"
+    "@opentripplanner/from-to-location-picker": "workspace:^"
     "@opentripplanner/types": "workspace:^"
   peerDependencies:
     react: ^16.14.0
@@ -4091,7 +4092,7 @@ __metadata:
     "@styled-icons/bootstrap": ^10.34.0
     "@styled-icons/boxicons-regular": ^10.38.0
     "@styled-icons/fa-regular": ^10.37.0
-    "@styled-icons/fa-solid": ^10.37.0
+    "@styled-icons/fa-solid": ^10.34.0
     "@types/flat": ^5.0.2
     date-fns: ^2.28.0
     flat: ^5.0.2
@@ -4121,7 +4122,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@opentripplanner/types@workspace:packages/types"
   dependencies:
-    "@styled-icons/styled-icon": ^10.7.0
+    "@styled-icons/styled-icon": ^10.6.3
     "@types/geojson": ^7946.0.10
   languageName: unknown
   linkType: soft
@@ -5950,19 +5951,6 @@ __metadata:
     react: "*"
     styled-components: "*"
   checksum: 5d6a0cd0bae532e5fc3533a2f8a30a0a0785ae70ebe3189e87224e5bc0949df8cbce8ee03e2b75de147af5aecd8e12a9849cbb1c813d3f64b869e68bdbc8f05b
-  languageName: node
-  linkType: hard
-
-"@styled-icons/fa-solid@npm:^10.37.0":
-  version: 10.47.0
-  resolution: "@styled-icons/fa-solid@npm:10.47.0"
-  dependencies:
-    "@babel/runtime": ^7.20.7
-    "@styled-icons/styled-icon": ^10.7.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: cf70ecea3e4b6dc292f1af1e2b767b3ad0314f1db8aae4fe021f05912d0a03f471f6f3159fd1b4f5fdf404987a45897dc7a7f0370ab084163dd6b50e1729b27f
   languageName: node
   linkType: hard
 

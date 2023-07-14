@@ -17,6 +17,7 @@
     "throttle-debounce": "^2.1.0"
   },
   "devDependencies": {
+    "@opentripplanner/types": "workspace:^",
     "@types/throttle-debounce": "^2.1.0"
   },
   "peerDependencies": {
