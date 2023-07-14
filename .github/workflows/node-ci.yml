@@ -10,7 +10,6 @@ jobs:
         with:
           node-version: 16.x
           cache: 'yarn'
-          cache-dependency-path: 'yarn.lock'
       - name: Lint code
         run: yarn lint:js
       - name: Lint styles
