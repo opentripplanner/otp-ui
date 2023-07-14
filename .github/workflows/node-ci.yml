@@ -6,11 +6,11 @@ jobs:
         with:
           persist-credentials: false
       - name: Use Node.js 16.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: 16.x
-      - name: Install npm packages using cache
-        uses: bahmutov/npm-install@v1
+          cache: 'yarn'
+          cache-dependency-path: 'yarn.lock'
       - name: Lint code
         run: yarn lint:js
       - name: Lint styles
