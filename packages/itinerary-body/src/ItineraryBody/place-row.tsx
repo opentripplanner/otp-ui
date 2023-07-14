@@ -21,8 +21,8 @@ export default function PlaceRow({
   AlertToggleIcon,
   alwaysCollapseAlerts,
   config,
+  defaultFareSelector,
   diagramVisible,
-  fare,
   followsTransit,
   frameLeg,
   isDestination,
@@ -135,11 +135,11 @@ export default function PlaceRow({
               AlertBodyIcon={AlertBodyIcon}
               AlertToggleIcon={AlertToggleIcon}
               alwaysCollapseAlerts={alwaysCollapseAlerts}
-              fare={fare}
+              defaultFareSelector={defaultFareSelector}
               leg={leg}
+              legDestination={formattedPlace(leg.to)}
               LegIcon={LegIcon}
               legIndex={legIndex}
-              legDestination={formattedPlace(leg.to)}
               RouteDescription={RouteDescription}
               setActiveLeg={setActiveLeg}
               setViewedTrip={setViewedTrip}

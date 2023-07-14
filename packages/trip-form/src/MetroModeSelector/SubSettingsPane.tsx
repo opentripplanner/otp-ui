@@ -47,7 +47,10 @@ const SettingsPanel = styled.fieldset`
   }
 `;
 
-export const SubSettingsCheckbox = styled(CheckboxSelector)`
+export const SubSettingsCheckbox = styled(CheckboxSelector)<{
+  flexbox: boolean;
+}>`
+  display: ${props => (props.flexbox ? "flex" : "inherit")};
   margin-left: 4px;
   input {
     vertical-align: middle;
@@ -55,6 +58,9 @@ export const SubSettingsCheckbox = styled(CheckboxSelector)`
 `;
 
 const FormLabelIconWrapper = styled.span`
+  align-items: center;
+  display: flex;
+  gap: 4px;
   svg {
     width: 16px;
     height: 16px;
@@ -81,7 +87,8 @@ const ModeSettingRenderer = ({
   const labelWithIcon =
     "icon" in setting ? (
       <FormLabelIconWrapper>
-        <span role="none">{setting.icon}</span> {label}
+        <div role="none">{setting.icon}</div>
+        <div>{label}</div>
       </FormLabelIconWrapper>
     ) : (
       label
@@ -92,6 +99,7 @@ const ModeSettingRenderer = ({
     case "SUBMODE":
       return (
         <SubSettingsCheckbox
+          flexbox={setting.type === "SUBMODE"}
           label={labelWithIcon}
           name={setting.key}
           onChange={onChange}

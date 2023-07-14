@@ -250,7 +250,8 @@ function ModeButton({
     useDismiss(context)
   ]);
 
-  const renderDropdown = open && modeButton.enabled;
+  const renderDropdown =
+    open && modeButton.enabled && modeButton.modeSettings?.length > 0;
   const interactionProps = getReferenceProps();
 
   // ARIA roles are added by the `useRole` hook.

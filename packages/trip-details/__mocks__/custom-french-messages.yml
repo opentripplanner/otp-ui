@@ -1,10 +1,9 @@
-# Example used to overwrite a subset of the messages from /i18n/en-US.yml.
 otpUi:
   TripDetails:
-    fareDetailsHeaders:
-      regular: "Ordinaire"
-      youth: "Jeune"
-      senior: "Senior"
-      cash: "Espèces"
-      electronic: "ORCA"
-      special: "LIFT"
+    FareTable:
+      cash: Espèces
+      electronic: ORCA
+      regular: Plein tarif
+      senior: Senior
+      special: LIFT
+      youth: Jeune
