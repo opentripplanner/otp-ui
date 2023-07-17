@@ -148,6 +148,14 @@ describe("util > itinerary", () => {
         digits: 2
       });
     });
+    it("should calculate the total cost of an itinerary will null ids", () => {
+      const result = getItineraryCost(fareProductItinerary.legs, null, null);
+      expect(result.amount).toEqual(2.75);
+      expect(result.currency).toEqual({
+        code: "USD",
+        digits: 2
+      });
+    });
     it("should return undefined when the keys are invalid", () => {
       const result = getItineraryCost(
         fareProductItinerary.legs,
