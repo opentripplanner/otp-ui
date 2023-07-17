@@ -151,6 +151,22 @@
           }
         },
         {
+          "id": "77a8ba05-8081-301f-9fe4-777dcd10ae02",
+          "product": {
+            "id": "regular",
+            "name": "regular",
+            "price": {
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              },
+              "amount": 2.75
+            },
+            "riderCategory": null,
+            "medium": null
+          }
+        },
+        {
           "id": "0740913d-0e0a-34ab-9518-014f2025b1a8",
           "product": {
             "id": "orca:farePayment",
