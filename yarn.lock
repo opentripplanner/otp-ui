@@ -3241,44 +3241,10 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
-"@opentripplanner/core-utils@^9.0.0-alpha.36":
-  version "9.0.0-alpha.36"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-9.0.0-alpha.36.tgz#d28a8f602eea198e23c017cea2dce87fbb41ff1b"
-  integrity sha512-/Jo4x810D41Htr1eJXekU2MBgqxw2tO7ZTejt2jBuwMwRgL68qPCt45MKcLfXGrJLXv8J/0lVwmkqbcqK95D+A==
-  dependencies:
-    "@conveyal/lonlat" "^1.4.1"
-    "@mapbox/polyline" "^1.1.0"
-    "@opentripplanner/geocoder" "^1.4.0"
-    "@styled-icons/foundation" "^10.34.0"
-    "@turf/along" "^6.0.1"
-    bowser "^2.7.0"
-    chroma-js "^2.4.2"
-    date-fns "^2.28.0"
-    date-fns-tz "^1.2.2"
-    graphql "^16.6.0"
-    lodash.clonedeep "^4.5.0"
-    lodash.isequal "^4.5.0"
-    qs "^6.9.1"
-
-"@opentripplanner/geocoder@1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/geocoder/-/geocoder-1.4.0.tgz#728afec6585cf3748a1931493b3a3566421f445d"
-  integrity sha512-FECrLmzYvQmgQDE1Ad19pPdo/HRvz7b0POyD9lXNg/uKTyVXhXxHdYd6sWot6ZiGdiqZTUamNKG3RaWaJvdqoA==
-  dependencies:
-    "@conveyal/geocoder-arcgis-geojson" "^0.0.3"
-    "@conveyal/lonlat" "^1.4.1"
-    isomorphic-mapzen-search "^1.6.1"
-    lodash.memoize "^4.1.2"
-
 "@opentripplanner/types@6.0.0-alpha.4":
   version "6.0.0-alpha.4"
   resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-6.0.0-alpha.4.tgz#dee3c06675e30c596159d182ed707e7710cd937c"
   integrity sha512-FlYsHm/tk+x0ldrEG1X9Ph1R1k3way1oEdKX7XSnhu9lNTzL4lO0hfT1PLzNXMfBRar7TzK94PHNDibJsod8Kw==
-
-"@opentripplanner/types@^6.0.0-alpha.9":
-  version "6.0.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-6.0.0-alpha.10.tgz#1489c55f7741ef46df6882c682580ea96ca23d62"
-  integrity sha512-s0xBgA3WLqvda5itUYzv7PGyMV/dqITfnA2zpdwsbyzuNQeOYTk1tSQLWr+QH7mbUYJXAs5i8qzC/VNvDSZQqg==
 
 "@peculiar/asn1-schema@^2.1.6", "@peculiar/asn1-schema@^2.3.0":
   version "2.3.3"
