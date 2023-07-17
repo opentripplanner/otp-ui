@@ -21,6 +21,7 @@ export default function PlaceRow({
   AlertToggleIcon,
   alwaysCollapseAlerts,
   config,
+  defaultFareSelector,
   diagramVisible,
   followsTransit,
   frameLeg,
@@ -45,7 +46,6 @@ export default function PlaceRow({
   TimeColumnContent = DefaultTimeColumnContent,
   toRouteAbbreviation,
   TransitLegSubheader,
-  defaultFareSelector,
   TransitLegSummary
 }: PlaceRowProps): ReactElement {
   // NOTE: Previously there was a check for itineraries that changed vehicles
@@ -135,10 +135,11 @@ export default function PlaceRow({
               AlertBodyIcon={AlertBodyIcon}
               AlertToggleIcon={AlertToggleIcon}
               alwaysCollapseAlerts={alwaysCollapseAlerts}
+              defaultFareSelector={defaultFareSelector}
               leg={leg}
+              legDestination={formattedPlace(leg.to)}
               LegIcon={LegIcon}
               legIndex={legIndex}
-              legDestination={formattedPlace(leg.to)}
               RouteDescription={RouteDescription}
               setActiveLeg={setActiveLeg}
               setViewedTrip={setViewedTrip}
@@ -147,7 +148,6 @@ export default function PlaceRow({
               timeZone={config.homeTimezone}
               TransitLegSubheader={TransitLegSubheader}
               TransitLegSummary={TransitLegSummary}
-              defaultFareSelector={defaultFareSelector}
               transitOperator={coreUtils.route.getTransitOperatorFromLeg(
                 leg,
                 config.transitOperators
