@@ -108,7 +108,7 @@
     "deploy-storybook": "storybook-to-ghpages",
     "dev": "start-storybook -s ./public -p 5555",
     "predev": "yarn",
-    "postinstall": "lerna run tsc,build:cjs,build:esm",
+    "build": "lerna run tsc,build:cjs,build:esm",
     "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-pattern esm --ignore-pattern lib --ignore-pattern node_modules --ignore-pattern storybook-static --quiet",
     "lint:graphql": "eslint . --ext .graphql --ignore-pattern esm --ignore-pattern lib --ignore-pattern node_modules --ignore-pattern storybook-static",
     "lint:fixjs": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-pattern esm --ignore-pattern lib --ignore-pattern node_modules --ignore-pattern storybook-static --fix",

@@ -12,6 +12,8 @@ jobs:
           cache: 'yarn'
       - name: Install npm packages using cache
         uses: bahmutov/npm-install@v1
+      - name: Build project
+        run: yarn build
       - name: Lint code
         run: yarn lint:js
       - name: Lint styles
