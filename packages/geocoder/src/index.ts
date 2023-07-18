@@ -40,4 +40,9 @@ const getGeocoder = memoize((geocoderConfig: GeocoderConfig & { type: string }) 
 });
 
 export default getGeocoder;
-export type { SearchQuery, AutocompleteQuery, ReverseQuery };
+export type {
+  AutocompleteQuery,
+  GeocoderConfig,
+  ReverseQuery,
+  SearchQuery
+};
