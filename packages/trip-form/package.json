@@ -10,7 +10,7 @@
   "types": "lib/index.d.ts",
   "dependencies": {
     "@floating-ui/react": "^0.19.2",
-    "@opentripplanner/core-utils": "^9.0.0",
+    "@opentripplanner/core-utils": "workspace:^",
     "@styled-icons/bootstrap": "^10.34.0",
     "@styled-icons/boxicons-regular": "^10.38.0",
     "@styled-icons/fa-regular": "^10.37.0",
@@ -21,7 +21,7 @@
     "react-inlinesvg": "^2.3.0"
   },
   "devDependencies": {
-    "@opentripplanner/types": "6.0.0-alpha.4",
+    "@opentripplanner/types": "workspace:^",
     "@types/flat": "^5.0.2"
   },
   "peerDependencies": {
