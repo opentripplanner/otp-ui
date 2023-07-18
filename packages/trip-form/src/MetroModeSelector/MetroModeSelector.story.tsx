@@ -1,12 +1,5 @@
 import { ModeButtonDefinition } from "@opentripplanner/types";
-import {
-  Bus,
-  Car,
-  PersonWalking,
-  Train,
-  TrainSubway,
-  TrainTram
-} from "@styled-icons/fa-solid";
+import { Bus, Car, Walking, Train, Subway, Tram } from "@styled-icons/fa-solid";
 import { ClassicBike } from "@opentripplanner/icons/lib/classic";
 import React, { ReactElement, useState } from "react";
 import * as Core from "..";
@@ -25,9 +18,9 @@ const getIcon = (iconName: string): JSX.Element | null => {
     case "bus":
       return <Bus />;
     case "tram":
-      return <TrainTram />;
+      return <Tram />;
     case "subway":
-      return <TrainSubway />;
+      return <Subway />;
     case "train":
       return <Train />;
     default:
@@ -44,7 +37,7 @@ const defaultModeButtonDefinitions = [
     modes: [{ mode: "TRANSIT" }]
   },
   {
-    Icon: PersonWalking,
+    Icon: Walking,
     iconName: "person-walking",
     key: "walk",
     label: "Walk",
