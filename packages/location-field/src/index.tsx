@@ -195,7 +195,9 @@ const LocationField = ({
     return location && !hideExistingValue ? label : "";
   };
 
-  const listBoxId = `listbox-${optionKey}`;
+  const formControlClassname = `${locationType}-form-control`;
+
+  const listBoxId = `${locationType}-listbox`;
 
   const intl = useIntl();
 
@@ -345,10 +347,6 @@ const LocationField = ({
         setMessage(message);
       });
   });
-
-  const getFormControlClassname = () => {
-    return `${locationType}-form-control`;
-  };
 
   const setLocation = (newLocation: Location, resultType: ResultType) => {
     onLocationSelected({
@@ -868,12 +866,8 @@ const LocationField = ({
     currentPosition && currentPosition.fetching
       ? intl.formatMessage({ id: "otpUi.LocationField.fetchingLocation" })
       : defaultPlaceholder;
-  const shouldRenderList = isStatic || menuVisible;
   const hasNoEnabledOptions = menuItemCount === 0;
-  // Only populate the aria-controls fields if the suggestion list is shown
-  // and the list has an enabled option.
-  const controlledId =
-    shouldRenderList && !hasNoEnabledOptions ? listBoxId : undefined;
+  const isExpanded = isStatic || menuVisible;
 
   const textControl = (
     <S.Input
@@ -881,14 +875,14 @@ const LocationField = ({
         activeIndex !== null ? getOptionId(activeIndex) : null
       }
       aria-autocomplete="list"
-      aria-controls={controlledId}
-      aria-expanded={menuVisible}
+      aria-controls={listBoxId}
+      aria-expanded={isExpanded}
       aria-haspopup="listbox"
       aria-invalid={!isValid}
       aria-label={defaultPlaceholder}
       aria-required={isRequired}
       autoFocus={autoFocus}
-      className={getFormControlClassname()}
+      className={formControlClassname}
       onChange={onTextInputChange}
       onClick={handleTextInputClick}
       onKeyDown={onKeyDown}
@@ -918,8 +912,8 @@ const LocationField = ({
   return (
     <S.InputGroup className={className} onBlur={onBlurFormGroup} role="group">
       <S.DropdownButton
-        aria-controls={controlledId}
-        aria-expanded={shouldRenderList}
+        aria-controls={listBoxId}
+        aria-expanded={isExpanded}
         aria-label={intl.formatMessage({
           defaultMessage: "Open the list of location suggestions",
           description:
@@ -943,35 +937,33 @@ const LocationField = ({
           value={statusMessages}
         />
       </S.HiddenContent>
-      {shouldRenderList && (
-        <ItemList
-          // Hide the list from screen readers if no enabled options are shown.
-          aria-hidden={hasNoEnabledOptions}
-          aria-label={intl.formatMessage({
-            defaultMessage: "Suggested locations",
-            description:
-              "Text to show as a label for the dropdown list of locations",
-            id: "otpUi.LocationField.suggestedLocations"
-          })}
-          id={listBoxId}
-        >
-          {isStatic ? (
-            menuItems.length > 0 ? ( // Show typing prompt to avoid empty screen
-              menuItems
-            ) : (
-              <S.MenuGroupHeader as="div">
-                <FormattedMessage
-                  defaultMessage="Begin typing to search for locations"
-                  description="Text to show as initial placeholder in location search field"
-                  id="otpUi.LocationField.beginTypingPrompt"
-                />
-              </S.MenuGroupHeader>
-            )
+      <ItemList
+        // Hide the list from screen readers if no enabled options are shown.
+        aria-hidden={hasNoEnabledOptions}
+        aria-label={intl.formatMessage({
+          defaultMessage: "Suggested locations",
+          description:
+            "Text to show as a label for the dropdown list of locations",
+          id: "otpUi.LocationField.suggestedLocations"
+        })}
+        id={listBoxId}
+      >
+        {isStatic ? (
+          menuItems.length > 0 ? ( // Show typing prompt to avoid empty screen
+            menuItems
           ) : (
-            menuVisible && menuItems
-          )}
-        </ItemList>
-      )}
+            <S.MenuGroupHeader as="div">
+              <FormattedMessage
+                defaultMessage="Begin typing to search for locations"
+                description="Text to show as initial placeholder in location search field"
+                id="otpUi.LocationField.beginTypingPrompt"
+              />
+            </S.MenuGroupHeader>
+          )
+        ) : (
+          menuVisible && menuItems
+        )}
+      </ItemList>
     </S.InputGroup>
   );
 };
