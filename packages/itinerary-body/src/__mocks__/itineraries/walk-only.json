@@ -52,7 +52,7 @@
       "intermediateStops": [],
       "steps": [
         {
-          "distance": 47.236999999999995,
+          "distance": 0,
           "relativeDirection": "DEPART",
           "streetName": "path",
           "absoluteDirection": "NORTHWEST",
@@ -97,7 +97,7 @@
           ]
         },
         {
-          "distance": 3.287,
+          "distance": null,
           "relativeDirection": "LEFT",
           "streetName": "path",
           "absoluteDirection": "WEST",

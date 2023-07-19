@@ -74,7 +74,7 @@ export default function AccessLegStep({
     <span className={className} style={style}>
       {stepContent}
       {/* TODO: Implement metric vs imperial (up until now it's just imperial). */}
-      {step?.distance && (
+      {step?.distance > 0 && (
         <S.StepLength>
           {humanizeDistanceString(step.distance, false, intl)}
         </S.StepLength>
