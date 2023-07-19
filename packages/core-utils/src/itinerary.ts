@@ -564,18 +564,22 @@ export function getDisplayedStopId(placeOrStop: Place | Stop): string {
  */
 export function getLegCost(
   leg: Leg,
-  mediumId: string,
-  riderCategoryId: string
+  mediumId: string | null,
+  riderCategoryId: string | null
 ): { price?: Money; transferAmount?: Money | undefined } {
   if (!leg.fareProducts) return { price: undefined };
   const relevantFareProducts = leg.fareProducts.filter(({ product }) => {
+    // riderCategory and medium can be specifically defined as null to handle
+    // generic GTFS based fares from OTP when there is no fare model
     return (
-      product.riderCategory.id === riderCategoryId &&
-      product.medium.id === mediumId
+      (product.riderCategory === null ? null : product.riderCategory.id) ===
+        riderCategoryId &&
+      (product.medium === null ? null : product.medium.id) === mediumId
     );
   });
+  // Custom fare models return "rideCost", generic GTFS fares return "regular"
   const totalCost = relevantFareProducts.find(
-    fp => fp.product.name === "rideCost"
+    fp => fp.product.name === "rideCost" || fp.product.name === "regular"
   )?.product?.price;
   const transferFareProduct = relevantFareProducts.find(
     fp => fp.product.name === "transfer"
@@ -596,8 +600,8 @@ export function getLegCost(
  */
 export function getItineraryCost(
   legs: Leg[],
-  mediumId: string,
-  riderCategoryId: string
+  mediumId: string | null,
+  riderCategoryId: string | null
 ): Money | undefined {
   const legCosts = legs
     .filter(leg => leg.fareProducts?.length > 0)
