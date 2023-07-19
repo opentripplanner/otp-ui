@@ -7,7 +7,6 @@
   "license": "MIT",
   "main": "lib/index.js",
   "module": "esm/index.js",
-  "private": false,
   "dependencies": {
     "@opentripplanner/base-map": "^3.0.13",
     "@opentripplanner/core-utils": "^9.0.0",
@@ -29,7 +28,9 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "build:cjs": "../../scripts/build-cjs.sh",
+    "build:esm": "../../scripts/build-esm.sh"
   },
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"

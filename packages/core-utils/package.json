@@ -10,7 +10,6 @@
   "repository": "https://github.com/opentripplanner/otp-ui.git",
   "author": "Evan Siroky",
   "license": "MIT",
-  "private": false,
   "dependencies": {
     "@conveyal/lonlat": "^1.4.1",
     "@mapbox/polyline": "^1.1.0",
@@ -28,7 +27,9 @@
   },
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d",
   "scripts": {
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "build:cjs": "../../scripts/build-cjs.sh",
+    "build:esm": "../../scripts/build-esm.sh"
   },
   "devDependencies": {
     "@opentripplanner/types": "^6.0.0-alpha.9",

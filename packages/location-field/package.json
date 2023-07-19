@@ -7,7 +7,6 @@
   "repository": "https://github.com/opentripplanner/otp-ui.git",
   "author": "Evan  Siroky",
   "license": "MIT",
-  "private": false,
   "dependencies": {
     "@conveyal/geocoder-arcgis-geojson": "^0.0.3",
     "@opentripplanner/core-utils": "^9.0.0",
@@ -18,6 +17,7 @@
     "throttle-debounce": "^2.1.0"
   },
   "devDependencies": {
+    "@opentripplanner/types": "workspace:^",
     "@types/throttle-debounce": "^2.1.0"
   },
   "peerDependencies": {
@@ -27,6 +27,8 @@
   },
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d",
   "scripts": {
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "build:cjs": "../../scripts/build-cjs.sh",
+    "build:esm": "../../scripts/build-esm.sh"
   }
 }

@@ -9,7 +9,9 @@
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "build:cjs": "../../scripts/build-cjs.sh",
+    "build:esm": "../../scripts/build-esm.sh"
   },
   "repository": {
     "type": "git",
@@ -29,7 +31,9 @@
     "point-in-polygon": "^1.1.0"
   },
   "peerDependencies": {
-    "react": "^16.14.0"
+    "maplibre-gl": "^2.1.9",
+    "react": "^16.14.0",
+    "react-map-gl": "^7.0.15"
   },
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"
 }

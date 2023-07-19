@@ -8,7 +8,6 @@
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "author": "Evan Siroky",
   "license": "MIT",
-  "private": false,
   "dependencies": {
     "@opentripplanner/core-utils": "^9.0.0",
     "@opentripplanner/humanize-distance": "^1.2.0",
@@ -35,7 +34,9 @@
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
   "scripts": {
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "build:cjs": "../../scripts/build-cjs.sh",
+    "build:esm": "../../scripts/build-esm.sh"
   },
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"
 }

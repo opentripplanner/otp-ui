@@ -9,7 +9,9 @@
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "build:cjs": "../../scripts/build-cjs.sh",
+    "build:esm": "../../scripts/build-esm.sh"
   },
   "repository": {
     "type": "git",
@@ -19,8 +21,9 @@
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
   "dependencies": {
-    "@opentripplanner/base-map": "^3.0.13",
-    "@opentripplanner/from-to-location-picker": "^2.1.7"
+    "@opentripplanner/base-map": "workspace:^",
+    "@opentripplanner/from-to-location-picker": "workspace:^",
+    "@opentripplanner/types": "workspace:^"
   },
   "peerDependencies": {
     "react": "^16.14.0",

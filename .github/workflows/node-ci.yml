@@ -6,11 +6,14 @@ jobs:
         with:
           persist-credentials: false
       - name: Use Node.js 16.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: 16.x
+          cache: 'yarn'
       - name: Install npm packages using cache
         uses: bahmutov/npm-install@v1
+      - name: Build project
+        run: yarn build
       - name: Lint code
         run: yarn lint:js
       - name: Lint styles
@@ -18,7 +21,7 @@ jobs:
       - name: i18n check (en-US, fr only)
         run: yarn check:i18n-en-fr
       - name: Type check
-        run: yarn typescript
+        run: yarn tsc
       - name: Run tests
         run: yarn unit
       - name: Run a11y tests

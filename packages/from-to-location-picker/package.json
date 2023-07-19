@@ -7,7 +7,6 @@
   "license": "MIT",
   "main": "lib/index.js",
   "module": "esm/index.js",
-  "private": false,
   "dependencies": {
     "@opentripplanner/location-icon": "^1.4.1",
     "flat": "^5.0.2"
@@ -25,7 +24,9 @@
     "url": "git+https://github.com/opentripplanner/otp-ui.git"
   },
   "scripts": {
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "build:cjs": "../../scripts/build-cjs.sh",
+    "build:esm": "../../scripts/build-esm.sh"
   },
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"
