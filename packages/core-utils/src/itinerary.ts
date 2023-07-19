@@ -569,12 +569,15 @@ export function getLegCost(
 ): { price?: Money; transferAmount?: Money | undefined } {
   if (!leg.fareProducts) return { price: undefined };
   const relevantFareProducts = leg.fareProducts.filter(({ product }) => {
+    // riderCategory and medium can be specifically defined as null to handle
+    // generic GTFS based fares from OTP when there is no fare model
     return (
       (product.riderCategory === null ? null : product.riderCategory.id) ===
         riderCategoryId &&
       (product.medium === null ? null : product.medium.id) === mediumId
     );
   });
+  // Custom fare models return "rideCost", generic GTFS fares return "regular"
   const totalCost = relevantFareProducts.find(
     fp => fp.product.name === "rideCost" || fp.product.name === "regular"
   )?.product?.price;
