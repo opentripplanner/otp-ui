@@ -20,8 +20,8 @@
   },
   "dependencies": {
     "@mapbox/polyline": "^1.1.0",
-    "@opentripplanner/base-map": "^3.0.13",
-    "@opentripplanner/core-utils": "^9.0.0",
+    "@opentripplanner/base-map": "^3.0.14",
+    "@opentripplanner/core-utils": "^9.0.2",
     "point-in-polygon": "^1.1.0"
   },
   "devDependencies": {
