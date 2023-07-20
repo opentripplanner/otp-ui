@@ -14,6 +14,7 @@ import { LAYER_PAINT } from "./util"
 const SOURCE_ID = "otp2-tiles"
 
 const OTP2TileLayerWithPopup = ({
+  color,
   configCompanies,
   id,
   network,
@@ -27,6 +28,7 @@ const OTP2TileLayerWithPopup = ({
    * bikeshare companies. If this is provided, scooter/bikeshare company names can be rendered in the
    * default scooter/bike popup.
    */
+  color?: string;
   configCompanies?: ConfiguredCompany[]
   id: string
   name?: string
@@ -129,7 +131,7 @@ const OTP2TileLayerWithPopup = ({
         filter={network ? ["all", ["==", "network", network]] : ["all"]}
         id={id}
         key={id}
-        paint={LAYER_PAINT[type]}
+        paint={LAYER_PAINT(color)[type]}
         source={SOURCE_ID}
         source-layer={type}
         type="circle"
@@ -168,12 +170,13 @@ const OTP2TileLayerWithPopup = ({
  * @returns               Array of <Source> and <OTP2TileLayerWithPopup> components
  */
 const generateOTP2TileLayers = (
-  layers: { name?: string; network?: string; type: string, initiallyVisible?: boolean }[],
+  layers: { color?: string; name?: string; network?: string; type: string, initiallyVisible?: boolean }[],
   endpoint: string,
   setLocation?: (location: MapLocationActionArg) => void,
   setViewedStop?: ({ stopId }: { stopId: string }) => void,
   configCompanies?: ConfiguredCompany[]
 ): JSX.Element[] => {
+  console.log(layers)
   return [
     <Source
       // @ts-expect-error we use a nonstandard prop
@@ -185,11 +188,12 @@ const generateOTP2TileLayers = (
       url={`${endpoint}/${layers.map((l) => l.type).join(",")}/tilejson.json`}
     />,
     ...layers.map((layer) => {
-      const { name, network, type, initiallyVisible } = layer
+      const { color, name, network, type, initiallyVisible } = layer
 
       const id = `${type}${network ? `-${network}` : ""}`
       return (
         <OTP2TileLayerWithPopup
+          color={color}
           configCompanies={configCompanies}
           id={id}
           key={id}
