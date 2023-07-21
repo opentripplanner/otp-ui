@@ -14,13 +14,10 @@ otpUi:
       transit: 公共交通
       walk: 步行
     settings:
-      addRail-label: 火车
-      addTram-label: 电车
       bikeTolerance-label: 骑自行车的容忍度
       bikeTolerance-labelHigh: 更多骑自行车
       bikeTolerance-labelLow: 少骑自行车
       bus-label: 公共汽车
-      busColor-options-blue: Blue
       carTolerance-label: 驾驶容忍度
       carTolerance-labelHigh: 更多驾驶
       carTolerance-labelLow: 少开车
