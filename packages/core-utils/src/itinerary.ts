@@ -587,9 +587,9 @@ export function getLegCost(
   );
 
   return {
-    price: totalCostProduct.product.price,
+    price: totalCostProduct?.product.price,
     transferAmount: transferFareProduct?.product.price,
-    useId: totalCostProduct.id
+    useId: totalCostProduct?.id
   };
 }
 
@@ -615,7 +615,7 @@ export function getItineraryCost(
     // One fare product can be used on multiple legs,
     // and we don't want to count it more than once.
     .reduce<{ useId: string; price: Money }[]>((prev, cur) => {
-      if (prev.some(p => p.useId !== cur.useId)) {
+      if (!prev.some(p => p.useId === cur.useId)) {
         prev.push({ useId: cur.useId, price: cur.price });
       }
       return prev;
