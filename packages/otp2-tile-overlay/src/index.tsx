@@ -176,7 +176,6 @@ const generateOTP2TileLayers = (
   setViewedStop?: ({ stopId }: { stopId: string }) => void,
   configCompanies?: ConfiguredCompany[]
 ): JSX.Element[] => {
-  console.log(layers)
   return [
     <Source
       // @ts-expect-error we use a nonstandard prop
