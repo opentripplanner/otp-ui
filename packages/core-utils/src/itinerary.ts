@@ -620,7 +620,7 @@ export function getItineraryCost(
       }
       return prev;
     }, [])
-    .map(prodUse => prodUse.price);
+    .map(productUse => productUse.price);
 
   if (legCosts.length === 0) return undefined;
   // Calculate the total
