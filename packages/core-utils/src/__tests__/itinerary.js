@@ -164,5 +164,20 @@ describe("util > itinerary", () => {
       );
       expect(result).toBeUndefined();
     });
+    it("should exclude duplicated fareProduct uses based on ID", () => {
+      const legsWithDuplicatedProducts = [...fareProductItinerary.legs];
+      legsWithDuplicatedProducts[3].fareProducts =
+        legsWithDuplicatedProducts[1].fareProducts;
+      const result = getItineraryCost(
+        fareProductItinerary.legs,
+        "orca:cash",
+        "orca:regular"
+      );
+      expect(result.amount).toEqual(2.75);
+      expect(result.currency).toEqual({
+        code: "USD",
+        digits: 2
+      });
+    });
   });
 });
