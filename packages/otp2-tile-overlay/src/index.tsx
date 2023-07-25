@@ -9,7 +9,7 @@ import React, { useCallback, useEffect, useState } from "react"
 import { Layer, Popup, Source, useMap } from "react-map-gl"
 
 // eslint-disable-next-line prettier/prettier
-import { LAYER_PAINT } from "./util"
+import { generateLayerPaint } from "./util"
 
 const SOURCE_ID = "otp2-tiles"
 
@@ -131,7 +131,7 @@ const OTP2TileLayerWithPopup = ({
         filter={network ? ["all", ["==", "network", network]] : ["all"]}
         id={id}
         key={id}
-        paint={LAYER_PAINT(color)[type]}
+        paint={generateLayerPaint(color)[type]}
         source={SOURCE_ID}
         source-layer={type}
         type="circle"

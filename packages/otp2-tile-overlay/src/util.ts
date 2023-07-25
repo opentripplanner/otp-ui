@@ -8,7 +8,7 @@ const generateFloatingVehicleColor = (formFactor: string) => [
 ];
 
 // eslint-disable-next-line import/prefer-default-export
-export const LAYER_PAINT = (color?: string): any => {
+export const generateLayerPaint = (color?: string): any => {
   return {
     rentalStations: {
       "circle-color": color || generateFloatingVehicleColor("formFactors"),
