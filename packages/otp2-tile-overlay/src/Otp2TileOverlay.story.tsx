@@ -6,8 +6,6 @@ export default {
   title: "OTP2 Tile Layer"
 };
 
-// TODO: Add story to illustrate "color" prop passed from overlay.
-
 export const OtpTileLayer = (): JSX.Element => {
   const [endpoint, setEndpoint] = useState("https://fake-otp-server.com/otp");
   return (
