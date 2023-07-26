@@ -566,7 +566,11 @@ export function getLegCost(
   leg: Leg,
   mediumId: string | null,
   riderCategoryId: string | null
-): { price?: Money; transferAmount?: Money | undefined } {
+): {
+  price?: Money;
+  transferAmount?: Money | undefined;
+  productUseId?: string;
+} {
   if (!leg.fareProducts) return { price: undefined };
   const relevantFareProducts = leg.fareProducts.filter(({ product }) => {
     // riderCategory and medium can be specifically defined as null to handle
@@ -577,17 +581,19 @@ export function getLegCost(
       (product.medium === null ? null : product.medium.id) === mediumId
     );
   });
+
   // Custom fare models return "rideCost", generic GTFS fares return "regular"
-  const totalCost = relevantFareProducts.find(
+  const totalCostProduct = relevantFareProducts.find(
     fp => fp.product.name === "rideCost" || fp.product.name === "regular"
-  )?.product?.price;
+  );
   const transferFareProduct = relevantFareProducts.find(
     fp => fp.product.name === "transfer"
   );
 
   return {
-    price: totalCost,
-    transferAmount: transferFareProduct?.product.price
+    price: totalCostProduct?.product.price,
+    transferAmount: transferFareProduct?.product.price,
+    productUseId: totalCostProduct?.id
   };
 }
 
@@ -604,10 +610,24 @@ export function getItineraryCost(
   riderCategoryId: string | null
 ): Money | undefined {
   const legCosts = legs
+    // Only legs with fares (no walking legs)
     .filter(leg => leg.fareProducts?.length > 0)
-    .map(leg => getLegCost(leg, mediumId, riderCategoryId).price)
-    .filter(cost => cost !== undefined);
+    // Get the leg cost object of each leg
+    .map(leg => getLegCost(leg, mediumId, riderCategoryId))
+    .filter(cost => cost.price !== undefined)
+    // Filter out duplicate use IDs
+    // One fare product can be used on multiple legs,
+    // and we don't want to count it more than once.
+    .reduce<{ productUseId: string; price: Money }[]>((prev, cur) => {
+      if (!prev.some(p => p.productUseId === cur.productUseId)) {
+        prev.push({ productUseId: cur.productUseId, price: cur.price });
+      }
+      return prev;
+    }, [])
+    .map(productUse => productUse.price);
+
   if (legCosts.length === 0) return undefined;
+  // Calculate the total
   return legCosts.reduce<Money>(
     (prev, cur) => ({
       amount: prev.amount + cur?.amount || 0,
