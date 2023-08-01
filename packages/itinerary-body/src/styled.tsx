@@ -576,7 +576,7 @@ export const StepsHeader = styled(TransparentButton)`
   color: #676767;
   font-size: 13px;
   font-style: normal;
-  width: 100%;
+  padding: 0;
 `;
 
 export const StepIconContainer = styled.div`
