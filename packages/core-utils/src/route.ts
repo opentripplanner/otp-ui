@@ -471,14 +471,3 @@ export function getMostReadableTextColor(
   // When generating colors, white is preferred.
   return chroma(backgroundColor).luminance() < 0.4 ? "#ffffff" : "#000000";
 }
-
-/** Extracts the route number for a leg returned from OTP1 or OTP2. */
-export const getLegRouteNumber = (
-  leg: Pick<Leg, "route" | "routeShortName">
-): string => {
-  const { route, routeShortName } = leg;
-  if (typeof route === "string") {
-    return typeof routeShortName === "string" ? routeShortName : route;
-  }
-  return route?.shortName;
-};

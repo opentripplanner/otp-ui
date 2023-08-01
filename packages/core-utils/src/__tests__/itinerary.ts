@@ -4,6 +4,7 @@ import {
   getDisplayedStopId,
   getItineraryCost,
   getLegCost,
+  getLegRouteNumber,
   isTransit
 } from "../itinerary";
 
@@ -178,6 +179,23 @@ describe("util > itinerary", () => {
         code: "USD",
         digits: 2
       });
+    });
+  });
+  describe("getLegRouteNumber", () => {
+    it("should extract a route number from an OTP1 leg", () => {
+      expect(getLegRouteNumber({ route: "15" })).toBe("15");
+      expect(getLegRouteNumber({ route: "15", routeShortName: "31" })).toBe(
+        "31"
+      );
+    });
+
+    it("should extract a route number from an OTP2 leg", () => {
+      expect(
+        getLegRouteNumber({
+          route: { id: "id15", shortName: "15" },
+          routeShortName: "31"
+        })
+      ).toBe("15");
     });
   });
 });
