@@ -692,3 +692,11 @@ export const getLegRouteShortName = (
   }
   return route?.shortName;
 };
+
+/** Extract the route ling name for a leg returned from OTP1 or OTP2. */
+export const getLegRouteLongName = (
+  leg: Pick<Leg, "route" | "routeLongName">
+): string => {
+  const { route, routeLongName } = leg;
+  return typeof route === "string" ? routeLongName : route?.longName;
+};
