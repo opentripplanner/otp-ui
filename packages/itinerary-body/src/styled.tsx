@@ -286,7 +286,7 @@ export const LegDescription = styled.span`
 
 // additional description added to ClickableLeg for screenreaders
 export const InvisibleAdditionalDetails = styled.span`
-  display: block;
+  display: inline-block;
   grid-row-start: 2;
   grid-column-start: 1;
   height: 0;
@@ -468,6 +468,9 @@ export const PlaceSubheader = styled.div`
   padding-top: 1px;
 
   /* Reduce vertical space and fix horizontal alignment of stop id and stop viewer link for transit stops. */
+  /* Also, increase vertical space after so that transit/access instructions
+     aren't too squeezed with the stop id and Stop Viewer link. */
+  margin-bottom: 10px;
   margin-top: -14px;
 `;
 
