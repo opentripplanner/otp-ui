@@ -5,7 +5,9 @@ import { Transfer } from "@styled-icons/boxicons-regular/Transfer";
 
 import {
   getItineraryCost,
-  getLegCost
+  getLegCost,
+  getLegRouteLongName,
+  getLegRouteShortName
 } from "@opentripplanner/core-utils/lib/itinerary";
 import { useIntl } from "react-intl";
 import { flatten } from "flat";
@@ -120,7 +122,7 @@ const FareTypeTable = ({
         {filteredLegs.map((leg, index) => (
           <tr key={index}>
             <td className="no-zebra">
-              {leg.routeShortName || leg.routeLongName}
+              {getLegRouteShortName(leg) || getLegRouteLongName(leg)}
             </td>
             {colsToRender.map(col => {
               const fare = getLegCost(leg, col.mediumId, col.riderCategoryId);
