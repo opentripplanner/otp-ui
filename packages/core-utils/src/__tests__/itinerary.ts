@@ -4,7 +4,7 @@ import {
   getDisplayedStopId,
   getItineraryCost,
   getLegCost,
-  getLegRouteNumber,
+  getLegRouteShortName,
   isTransit
 } from "../itinerary";
 
@@ -181,17 +181,17 @@ describe("util > itinerary", () => {
       });
     });
   });
-  describe("getLegRouteNumber", () => {
+  describe("getLegRouteShortName", () => {
     it("should extract a route number from an OTP1 leg", () => {
-      expect(getLegRouteNumber({ route: "15" })).toBe("15");
-      expect(getLegRouteNumber({ route: "15", routeShortName: "31" })).toBe(
+      expect(getLegRouteShortName({ route: "15" })).toBe("15");
+      expect(getLegRouteShortName({ route: "15", routeShortName: "31" })).toBe(
         "31"
       );
     });
 
     it("should extract a route number from an OTP2 leg", () => {
       expect(
-        getLegRouteNumber({
+        getLegRouteShortName({
           route: { id: "id15", shortName: "15" },
           routeShortName: "31"
         })

@@ -683,7 +683,7 @@ export const convertGraphQLResponseToLegacy = (leg: any): any => ({
 });
 
 /** Extracts the route number for a leg returned from OTP1 or OTP2. */
-export const getLegRouteNumber = (
+export const getLegRouteShortName = (
   leg: Pick<Leg, "route" | "routeShortName">
 ): string => {
   const { route, routeShortName } = leg;
