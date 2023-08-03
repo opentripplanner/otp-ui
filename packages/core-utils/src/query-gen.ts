@@ -230,7 +230,7 @@ export function generateOtp2Query(
     prev[cur.key] = cur.value;
 
     if (cur.type === "CHECKBOX" && cur.truthValue) {
-      prev[cur.key] = cur.value === true ? cur.truthValue : cur.value;
+      prev[cur.key] = cur.value === true ? cur.truthValue : null;
     }
     return prev;
   }, {}) as ModeSettingValues;
