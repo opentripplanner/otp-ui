@@ -25,6 +25,7 @@ otpUi:
       rail-label: Train
       subway-label: Subway
       tram-label: Tram
+      walkReluctance-label: Avoid Walking?
       walkTolerance-label: Walking Tolerance
       walkTolerance-labelHigh: More Walking
       walkTolerance-labelLow: Less Walking
