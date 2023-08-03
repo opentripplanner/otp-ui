@@ -67,7 +67,7 @@ export function extractAdditionalModes(
     }
     if (cur.type === "DROPDOWN") {
       const transportMode = cur.options.find(o => o.value === cur.value)
-        .addTransportMode;
+        ?.addTransportMode;
       if (transportMode) {
         return [...prev, transportMode];
       }
@@ -230,7 +230,7 @@ export function generateOtp2Query(
     prev[cur.key] = cur.value;
 
     if (cur.type === "CHECKBOX" && cur.truthValue) {
-      prev[cur.key] = cur.value === true ? cur.truthValue : cur.value;
+      prev[cur.key] = cur.value === true ? cur.truthValue : null;
     }
     return prev;
   }, {}) as ModeSettingValues;
