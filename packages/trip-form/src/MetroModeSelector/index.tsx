@@ -11,7 +11,7 @@ import {
   useInteractions,
   useRole
 } from "@floating-ui/react";
-import { ModeButtonDefinition } from "@opentripplanner/types";
+import { ModeButtonDefinition, ModeSetting } from "@opentripplanner/types";
 import { CaretDown } from "@styled-icons/fa-solid/CaretDown";
 import { CaretUp } from "@styled-icons/fa-solid/CaretUp";
 import React, { ReactElement, useCallback, useRef, useState } from "react";
@@ -193,6 +193,7 @@ interface ModeButtonProps {
   onPopupKeyboardExpand: (id: string) => void;
   onSettingsUpdate: (QueryParamChangeEvent) => void;
   onToggle: () => void;
+  subsettingOverrides?: Array<ModeSetting>;
 }
 
 function ModeButton({
@@ -205,7 +206,8 @@ function ModeButton({
   onPopupClose,
   onPopupKeyboardExpand,
   onSettingsUpdate,
-  onToggle
+  onToggle,
+  subsettingOverrides
 }: ModeButtonProps) {
   const intl = useIntl();
 
@@ -360,6 +362,7 @@ function ModeButton({
               <SubSettingsPane
                 modeButton={modeButton}
                 onSettingUpdate={onSettingsUpdate}
+                subsettingOverrides={subsettingOverrides}
               />
             </HoverInnerContainer>
           </HoverPanel>
@@ -399,6 +402,11 @@ interface Props {
    * @param key Mode button to be toggled
    */
   onToggleModeButton: (key: string, newState: boolean) => void;
+  /**
+   * Array of configurable overrides for mode subsettings. For example, walk reluctance defaults
+   * to checkmark but slider is also supported.
+   */
+  subsettingOverrides?: Array<ModeSetting>;
 }
 
 export default function ModeSelector({
@@ -408,7 +416,8 @@ export default function ModeSelector({
   label,
   modeButtons = [],
   onSettingsUpdate,
-  onToggleModeButton
+  onToggleModeButton,
+  subsettingOverrides
 }: Props): ReactElement {
   // State that holds the id of the active mode combination popup that was triggered via keyboard.
   // It is used to enable/disable hover effects to avoid keyboard focus being stolen
@@ -434,6 +443,7 @@ export default function ModeSelector({
           onToggle={useCallback(() => {
             onToggleModeButton(button.key, !button.enabled);
           }, [button, onToggleModeButton])}
+          subsettingOverrides={subsettingOverrides}
         />
       ))}
     </ModeBar>
