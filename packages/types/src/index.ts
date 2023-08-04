@@ -684,7 +684,6 @@ export type DropdownOptions = {
 export type SliderOptions = {
   default?: number;
   high: number;
-  id?: string;
   inverseKey?: string;
   label: string;
   labelHigh: string;
@@ -698,7 +697,6 @@ export type SliderOptions = {
 export type CheckboxOptions = {
   addTransportMode?: TransportMode;
   default?: boolean;
-  id?: string;
   label: string;
   type: "CHECKBOX";
   truthValue?: boolean | string | number;
@@ -717,7 +715,6 @@ export type ModeSettingBase = {
   applicableMode: string;
   iconName?: string;
   icon?: JSX.Element;
-  id?: string;
   key: string;
 };
 

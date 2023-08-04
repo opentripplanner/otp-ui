@@ -17,9 +17,8 @@
   step: 0.1
   type: SLIDER
 - applicableMode: TRANSIT
-  default: false
+  default: true
   graphQLQueryParam: true
-  id: walkReluctance
   key: walkReluctance
   truthValue: 5
   type: CHECKBOX

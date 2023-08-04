@@ -145,17 +145,13 @@ const ModeSettingRenderer = ({
 interface Props {
   modeButton: ModeButtonDefinition;
   onSettingUpdate: (QueryParamChangeEvent) => void;
-  subsettingOverrides: Array<ModeSetting>;
 }
 export default function SubSettingsPane({
   modeButton,
-  onSettingUpdate,
-  subsettingOverrides
+  onSettingUpdate
 }: Props): ReactElement {
   const intl = useIntl();
   const label = generateModeButtonLabel(modeButton.key, intl, modeButton.label);
-
-  const overridesIds = subsettingOverrides?.map(x => x.id);
 
   // Split the mode settings out based on whether they're submodes or not
   // This is so we can display submodes in a grid at the top
@@ -164,12 +160,7 @@ export default function SubSettingsPane({
     settingsOnlySubmodes
   } = modeButton.modeSettings.reduce(
     (accumulator, cur) => {
-      const overrideIndex = overridesIds?.indexOf(cur.id);
-
-      // If there is a setting override in the config, use that setting instead of the default.
-      if (subsettingOverrides && overrideIndex > -1) {
-        accumulator.settingsNoSubmodes.push(subsettingOverrides[overrideIndex]);
-      } else if (cur.type === "SUBMODE") {
+      if (cur.type === "SUBMODE") {
         accumulator.settingsOnlySubmodes.push(cur);
       } else {
         accumulator.settingsNoSubmodes.push(cur);
