@@ -38,8 +38,9 @@ const Container = styled.a`
   }
 
   &::before {
-    content: "| ";
+    content: "|";
     cursor: auto;
+    margin: 0 0.25em;
   }
 `;
 
