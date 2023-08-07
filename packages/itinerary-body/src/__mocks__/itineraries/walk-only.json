@@ -1,592 +1,124 @@
 {
-  "accessibilityScore": null,
-  "duration": 1444,
-  "endTime": 1691428469000,
+  "duration": 61,
+  "startTime": 1576265340000,
+  "endTime": 1576265401000,
+  "walkTime": 61,
+  "transitTime": 0,
+  "waitingTime": 0,
+  "walkDistance": 50.6389253702716,
+  "walkLimitExceeded": false,
+  "elevationLost": 0.6900000000000002,
+  "elevationGained": 2.9800000000000004,
+  "transfers": 0,
   "legs": [
     {
-      "accessibilityScore": null,
-      "agency": null,
-      "arrivalDelay": 0,
+      "startTime": 1576265340000,
+      "endTime": 1576265401000,
       "departureDelay": 0,
-      "distance": 62.92,
-      "dropoffType": "SCHEDULED",
-      "duration": 52,
-      "endTime": 1691427077000,
-      "fareProducts": [],
+      "arrivalDelay": 0,
+      "realTime": false,
+      "distance": 50.523999999999994,
+      "pathway": false,
+      "mode": "WALK",
+      "route": "",
+      "agencyTimeZoneOffset": -28800000,
+      "interlineWithPreviousLeg": false,
       "from": {
-        "lat": 39.9799656,
-        "lon": -75.1638267,
-        "name": "1707 North 18th Street, Philadelphia, PA, USA",
-        "rentalVehicle": null,
-        "stop": null,
+        "name": "KGW Studio on the Sq, Portland, OR, USA",
+        "lon": -122.67914856500536,
+        "lat": 45.5187219673841,
+        "departure": 1576265340000,
+        "orig": "KGW Studio on the Sq, Portland, OR, USA",
         "vertexType": "NORMAL"
       },
-      "interlineWithPreviousLeg": false,
-      "intermediateStops": null,
-      "legGeometry": {
-        "length": 4,
-        "points": "_r_sF`owiM`BTCNJB"
-      },
-      "mode": "WALK",
-      "pickupBookingInfo": null,
-      "pickupType": "SCHEDULED",
-      "realTime": false,
-      "realtimeState": null,
-      "rentedBike": false,
-      "rideHailingEstimate": null,
-      "route": null,
-      "startTime": 1691427025000,
-      "steps": [
-        {
-          "absoluteDirection": "SOUTH",
-          "alerts": [],
-          "area": false,
-          "distance": 55.32,
-          "elevationProfile": [],
-          "lat": 39.9800092,
-          "lon": -75.1641621,
-          "relativeDirection": "DEPART",
-          "stayOn": false,
-          "streetName": "North 18th Street"
-        },
-        {
-          "absoluteDirection": "WEST",
-          "alerts": [],
-          "area": false,
-          "distance": 7.6,
-          "elevationProfile": [],
-          "lat": 39.9795187,
-          "lon": -75.1642708,
-          "relativeDirection": "RIGHT",
-          "stayOn": false,
-          "streetName": "Cecil B Moore Avenue"
-        }
-      ],
       "to": {
-        "lat": 39.979471,
-        "lon": -75.164372,
-        "name": "Cecil B Moore Av & 18th St",
-        "rentalVehicle": null,
-        "stop": {
-          "alerts": [],
-          "code": "CEC18TEA",
-          "gtfsId": "SEPTA-Bus:25382",
-          "id": "U3RvcDpTRVBUQS1CdXM6MjUzODI"
-        },
-        "vertexType": "TRANSIT"
-      },
-      "transitLeg": false,
-      "trip": null
-    },
-    {
-      "accessibilityScore": null,
-      "agency": {
-        "alerts": [],
-        "id": "QWdlbmN5OlNFUFRBLUJ1czox",
-        "name": "SEPTA",
-        "timezone": "America/New_York",
-        "url": "https://www5.septa.org/"
-      },
-      "arrivalDelay": 0,
-      "departureDelay": 0,
-      "distance": 553.84,
-      "dropoffType": "SCHEDULED",
-      "duration": 163,
-      "endTime": 1691427240000,
-      "fareProducts": [
-        {
-          "id": "08acf774-1626-3319-8104-1517ce06f406",
-          "product": {
-            "__typename": "DefaultFareProduct",
-            "id": "SEPTA-Bus:2",
-            "medium": null,
-            "name": "regular",
-            "riderCategory": null,
-            "price": {
-              "amount": 3.5,
-              "currency": {
-                "code": "USD",
-                "digits": 2
-              }
-            }
-          }
-        }
-      ],
-      "from": {
-        "lat": 39.979471,
-        "lon": -75.164372,
-        "name": "Cecil B Moore Av & 18th St",
-        "rentalVehicle": null,
-        "stop": {
-          "alerts": [],
-          "code": "CEC18TEA",
-          "gtfsId": "SEPTA-Bus:25382",
-          "id": "U3RvcDpTRVBUQS1CdXM6MjUzODI"
-        },
-        "vertexType": "TRANSIT"
-      },
-      "interlineWithPreviousLeg": false,
-      "intermediateStops": [
-        {
-          "lat": 39.979254,
-          "locationType": "STOP",
-          "lon": -75.162814,
-          "name": "Cecil B Moore Av & 17th St",
-          "stopCode": "CEC17TEA",
-          "stopId": "U3RvcDpTRVBUQS1CdXM6MjUzODM"
-        },
-        {
-          "lat": 39.979054,
-          "locationType": "STOP",
-          "lon": -75.161231,
-          "name": "Cecil B Moore Av & 16th St",
-          "stopCode": "CEC16TEA",
-          "stopId": "U3RvcDpTRVBUQS1CdXM6MjUzODQ"
-        },
-        {
-          "lat": 39.978854,
-          "locationType": "STOP",
-          "lon": -75.159661,
-          "name": "Cecil B Moore Av & 15th St",
-          "stopCode": "CEC15TEA",
-          "stopId": "U3RvcDpTRVBUQS1CdXM6MjUzODU"
-        }
-      ],
-      "legGeometry": {
-        "length": 17,
-        "points": "ao_sFhpwiM@QV}CPiC??@OR}CF}@HoA??@QR{CPkC??@QRsCXkD"
-      },
-      "mode": "BUS",
-      "pickupBookingInfo": null,
-      "pickupType": "SCHEDULED",
-      "realTime": false,
-      "realtimeState": null,
-      "rentedBike": null,
-      "rideHailingEstimate": null,
-      "route": {
-        "alerts": [],
-        "color": "000000",
-        "id": "Um91dGU6U0VQVEEtQnVzOjM",
-        "longName": "33rd-Cecil B. Moore to FTC",
-        "shortName": "3",
-        "textColor": "FFFFFF",
-        "type": 3
-      },
-      "startTime": 1691427077000,
-      "steps": [],
-      "to": {
-        "lat": 39.978618,
-        "lon": -75.157972,
-        "name": "Cecil B Moore Av & Broad St",
-        "rentalVehicle": null,
-        "stop": {
-          "alerts": [],
-          "code": "CECBROEA",
-          "gtfsId": "SEPTA-Bus:58",
-          "id": "U3RvcDpTRVBUQS1CdXM6NTg"
-        },
-        "vertexType": "TRANSIT"
-      },
-      "transitLeg": true,
-      "trip": {
-        "arrivalStoptime": {
-          "stop": {
-            "gtfsId": "SEPTA-Bus:21204",
-            "id": "U3RvcDpTRVBUQS1CdXM6MjEyMDQ"
-          },
-          "stopPosition": 73
-        },
-        "departureStoptime": {
-          "stop": {
-            "gtfsId": "SEPTA-Bus:55",
-            "id": "U3RvcDpTRVBUQS1CdXM6NTU"
-          },
-          "stopPosition": 1
-        },
-        "gtfsId": "SEPTA-Bus:9393676",
-        "id": "VHJpcDpTRVBUQS1CdXM6OTM5MzY3Ng",
-        "tripHeadsign": "Frankford Transportation Center"
-      }
-    },
-    {
-      "accessibilityScore": null,
-      "agency": null,
-      "arrivalDelay": 0,
-      "departureDelay": 0,
-      "distance": 19.08,
-      "dropoffType": "SCHEDULED",
-      "duration": 144,
-      "endTime": 1691427384000,
-      "fareProducts": [],
-      "from": {
-        "lat": 39.978618,
-        "lon": -75.157972,
-        "name": "Cecil B Moore Av & Broad St",
-        "rentalVehicle": null,
-        "stop": {
-          "alerts": [],
-          "code": "CECBROEA",
-          "gtfsId": "SEPTA-Bus:58",
-          "id": "U3RvcDpTRVBUQS1CdXM6NTg"
-        },
-        "vertexType": "TRANSIT"
-      },
-      "interlineWithPreviousLeg": false,
-      "intermediateStops": null,
-      "legGeometry": {
-        "length": 6,
-        "points": "ii_sFjhviMA?@QKAAH@?"
-      },
-      "mode": "WALK",
-      "pickupBookingInfo": null,
-      "pickupType": "SCHEDULED",
-      "realTime": false,
-      "realtimeState": null,
-      "rentedBike": false,
-      "rideHailingEstimate": null,
-      "route": null,
-      "startTime": 1691427240000,
-      "steps": [
-        {
-          "absoluteDirection": "EAST",
-          "alerts": [],
-          "area": false,
-          "distance": 7.52,
-          "elevationProfile": [],
-          "lat": 39.9786241,
-          "lon": -75.1579705,
-          "relativeDirection": "DEPART",
-          "stayOn": false,
-          "streetName": "path"
-        },
-        {
-          "absoluteDirection": "NORTH",
-          "alerts": [],
-          "area": false,
-          "distance": 7,
-          "elevationProfile": [],
-          "lat": 39.9786117,
-          "lon": -75.1578838,
-          "relativeDirection": "LEFT",
-          "stayOn": false,
-          "streetName": "North Broad Street"
-        },
-        {
-          "absoluteDirection": "WEST",
-          "alerts": [],
-          "area": false,
-          "distance": 4.57,
-          "elevationProfile": [],
-          "lat": 39.9786738,
-          "lon": -75.1578703,
-          "relativeDirection": "LEFT",
-          "stayOn": false,
-          "streetName": "Cecil B Moore Avenue"
-        }
-      ],
-      "to": {
-        "lat": 39.978672,
-        "lon": -75.157925,
-        "name": "Cecil B Moore",
-        "rentalVehicle": null,
-        "stop": {
-          "alerts": [],
-          "code": "CECILBSO",
-          "gtfsId": "SEPTA-Bus:1277",
-          "id": "U3RvcDpTRVBUQS1CdXM6MTI3Nw"
-        },
-        "vertexType": "TRANSIT"
-      },
-      "transitLeg": false,
-      "trip": null
-    },
-    {
-      "accessibilityScore": null,
-      "agency": {
-        "alerts": [],
-        "id": "QWdlbmN5OlNFUFRBLUJ1czox",
-        "name": "SEPTA",
-        "timezone": "America/New_York",
-        "url": "https://www5.septa.org/"
-      },
-      "arrivalDelay": 0,
-      "departureDelay": 0,
-      "distance": 2990.48,
-      "dropoffType": "SCHEDULED",
-      "duration": 495,
-      "endTime": 1691428020000,
-      "fareProducts": [
-        {
-          "id": "08acf774-1626-3319-8104-1517ce06f406",
-          "product": {
-            "__typename": "DefaultFareProduct",
-            "id": "SEPTA-Bus:2",
-            "medium": null,
-            "name": "regular",
-            "riderCategory": null,
-            "price": {
-              "amount": 3.5,
-              "currency": {
-                "code": "USD",
-                "digits": 2
-              }
-            }
-          }
-        }
-      ],
-      "from": {
-        "lat": 39.978672,
-        "lon": -75.157925,
-        "name": "Cecil B Moore",
-        "rentalVehicle": null,
-        "stop": {
-          "alerts": [],
-          "code": "CECILBSO",
-          "gtfsId": "SEPTA-Bus:1277",
-          "id": "U3RvcDpTRVBUQS1CdXM6MTI3Nw"
-        },
-        "vertexType": "TRANSIT"
-      },
-      "interlineWithPreviousLeg": false,
-      "intermediateStops": [
-        {
-          "lat": 39.971473,
-          "locationType": "STOP",
-          "lon": -75.159488,
-          "name": "Girard Station - BSL",
-          "stopCode": "GIRARDSO",
-          "stopId": "U3RvcDpTRVBUQS1CdXM6MjA5NjY"
-        },
-        {
-          "lat": 39.967039,
-          "locationType": "STOP",
-          "lon": -75.160461,
-          "name": "Fairmount",
-          "stopCode": "FAIRMOSO",
-          "stopId": "U3RvcDpTRVBUQS1CdXM6MTI3OA"
-        },
-        {
-          "lat": 39.962392,
-          "locationType": "STOP",
-          "lon": -75.161471,
-          "name": "Spring Garden Station - BSL",
-          "stopCode": "SPRINGSO",
-          "stopId": "U3RvcDpTRVBUQS1CdXM6MTI3OQ"
-        },
-        {
-          "lat": 39.95703,
-          "locationType": "STOP",
-          "lon": -75.162601,
-          "name": "Race-Vine",
-          "stopCode": "RACVINSO",
-          "stopId": "U3RvcDpTRVBUQS1CdXM6MTI4MA"
-        }
-      ],
-      "legGeometry": {
-        "length": 59,
-        "points": "si_sFvgviMZDVDxC^ZFj@FjAL^D~@Jd@HPBv@LtGz@`Gz@zC`@xDd@???@xFt@pFx@`D`@dFn@@???`ANtHbAxDf@`@Dr@J`@Dd@Fx@Lp@H\\FTB`@FN@??@@PBxJvA~C^vC^tC\\dALhC\\B@??|Cd@lJjA|AVZ`@Pf@Rr@L\\HLTFj@CfCK"
-      },
-      "mode": "SUBWAY",
-      "pickupBookingInfo": null,
-      "pickupType": "SCHEDULED",
-      "realTime": false,
-      "realtimeState": null,
-      "rentedBike": null,
-      "rideHailingEstimate": null,
-      "route": {
-        "alerts": [],
-        "color": "F26100",
-        "id": "Um91dGU6U0VQVEEtQnVzOkIx",
-        "longName": "Broad Street Line Local",
-        "shortName": "B1",
-        "textColor": "000000",
-        "type": 1
-      },
-      "startTime": 1691427525000,
-      "steps": [],
-      "to": {
-        "lat": 39.952473,
-        "lon": -75.164129,
-        "name": "City Hall Station - BSL",
-        "rentalVehicle": null,
-        "stop": {
-          "alerts": [],
-          "code": "CITYHASO",
-          "gtfsId": "SEPTA-Bus:1281",
-          "id": "U3RvcDpTRVBUQS1CdXM6MTI4MQ"
-        },
-        "vertexType": "TRANSIT"
-      },
-      "transitLeg": true,
-      "trip": {
-        "arrivalStoptime": {
-          "stop": {
-            "gtfsId": "SEPTA-Bus:152",
-            "id": "U3RvcDpTRVBUQS1CdXM6MTUy"
-          },
-          "stopPosition": 22
-        },
-        "departureStoptime": {
-          "stop": {
-            "gtfsId": "SEPTA-Bus:20965",
-            "id": "U3RvcDpTRVBUQS1CdXM6MjA5NjU"
-          },
-          "stopPosition": 1
-        },
-        "gtfsId": "SEPTA-Bus:9471423",
-        "id": "VHJpcDpTRVBUQS1CdXM6OTQ3MTQyMw",
-        "tripHeadsign": "NRG"
-      }
-    },
-    {
-      "accessibilityScore": null,
-      "agency": null,
-      "arrivalDelay": 0,
-      "departureDelay": 0,
-      "distance": 391.24,
-      "dropoffType": "SCHEDULED",
-      "duration": 449,
-      "endTime": 1691428469000,
-      "fareProducts": [],
-      "from": {
-        "lat": 39.952473,
-        "lon": -75.164129,
-        "name": "City Hall Station - BSL",
-        "rentalVehicle": null,
-        "stop": {
-          "alerts": [],
-          "code": "CITYHASO",
-          "gtfsId": "SEPTA-Bus:1281",
-          "id": "U3RvcDpTRVBUQS1CdXM6MTI4MQ"
-        },
-        "vertexType": "TRANSIT"
-      },
-      "interlineWithPreviousLeg": false,
-      "intermediateStops": null,
-      "legGeometry": {
-        "length": 15,
-        "points": "}ezrFxnwiMB@En@QnCWAEPZFALEh@a@lGARTBAPQhChAL"
-      },
-      "mode": "WALK",
-      "pickupBookingInfo": null,
-      "pickupType": "SCHEDULED",
-      "realTime": false,
-      "realtimeState": null,
-      "rentedBike": false,
-      "rideHailingEstimate": null,
-      "route": null,
-      "startTime": 1691428020000,
-      "steps": [
-        {
-          "absoluteDirection": "WEST",
-          "alerts": [],
-          "area": false,
-          "distance": 105.01,
-          "elevationProfile": [],
-          "lat": 39.952457,
-          "lon": -75.1641324,
-          "relativeDirection": "DEPART",
-          "stayOn": false,
-          "streetName": "path"
-        },
-        {
-          "absoluteDirection": "SOUTH",
-          "alerts": [],
-          "area": false,
-          "distance": 16.08,
-          "elevationProfile": [],
-          "lat": 39.9527267,
-          "lon": -75.1651784,
-          "relativeDirection": "LEFT",
-          "stayOn": false,
-          "streetName": "North 15th Street"
-        },
-        {
-          "absoluteDirection": "WEST",
-          "alerts": [],
-          "area": false,
-          "distance": 23.87,
-          "elevationProfile": [],
-          "lat": 39.952585,
-          "lon": -75.1652162,
-          "relativeDirection": "RIGHT",
-          "stayOn": false,
-          "streetName": "Underground Concourse"
-        },
-        {
-          "absoluteDirection": "WEST",
-          "alerts": [],
-          "area": false,
-          "distance": 116.73,
-          "elevationProfile": [],
-          "lat": 39.952621,
-          "lon": -75.1654923,
-          "relativeDirection": "CONTINUE",
-          "stayOn": false,
-          "streetName": "underpass"
-        },
-        {
-          "absoluteDirection": "WEST",
-          "alerts": [],
-          "area": false,
-          "distance": 8.94,
-          "elevationProfile": [],
-          "lat": 39.9527904,
-          "lon": -75.1668438,
-          "relativeDirection": "CONTINUE",
-          "stayOn": false,
-          "streetName": "Market Street"
-        },
-        {
-          "absoluteDirection": "SOUTH",
-          "alerts": [],
-          "area": false,
-          "distance": 11.82,
-          "elevationProfile": [],
-          "lat": 39.9528019,
-          "lon": -75.1669476,
-          "relativeDirection": "LEFT",
-          "stayOn": false,
-          "streetName": "path"
-        },
-        {
-          "absoluteDirection": "WEST",
-          "alerts": [],
-          "area": false,
-          "distance": 66.82,
-          "elevationProfile": [],
-          "lat": 39.952697,
-          "lon": -75.1669698,
-          "relativeDirection": "RIGHT",
-          "stayOn": true,
-          "streetName": "sidewalk"
-        },
-        {
-          "absoluteDirection": "SOUTH",
-          "alerts": [],
-          "area": false,
-          "distance": 41.98,
-          "elevationProfile": [],
-          "lat": 39.9527935,
-          "lon": -75.1677435,
-          "relativeDirection": "LEFT",
-          "stayOn": true,
-          "streetName": "path"
-        }
-      ],
-      "to": {
-        "lat": 39.9520736,
-        "lon": -75.1679466,
-        "name": "Smoothie King, Philadelphia, PA, USA",
-        "rentalVehicle": null,
-        "stop": null,
+        "name": "701 SW 6th Ave, Portland, OR, USA 97204",
+        "lon": -122.67962369485272,
+        "lat": 45.51890847886523,
+        "arrival": 1576265401000,
+        "orig": "701 SW 6th Ave, Portland, OR, USA 97204",
         "vertexType": "NORMAL"
       },
+      "legGeometry": {
+        "points": "_kytGvwwkVGBBJ@H@JAHAH??CFEDEDEBG@AD??",
+        "length": 15
+      },
+      "rentedBike": false,
+      "rentedCar": false,
+      "rentedVehicle": false,
+      "hailedCar": false,
+      "duration": 61,
       "transitLeg": false,
-      "trip": null
+      "intermediateStops": [],
+      "steps": [
+        {
+          "distance": 0,
+          "relativeDirection": "DEPART",
+          "streetName": "path",
+          "absoluteDirection": "NORTHWEST",
+          "stayOn": false,
+          "area": false,
+          "bogusName": true,
+          "lon": -122.67915385043655,
+          "lat": 45.51872034540038,
+          "elevation": [
+            {
+              "first": 0,
+              "second": 15.172842545446779
+            },
+            {
+              "first": 4.82,
+              "second": 15.222842545446778
+            },
+            {
+              "first": 4.825,
+              "second": 15.022842545446778
+            },
+            {
+              "first": 14.825,
+              "second": 16.282842545446776
+            },
+            {
+              "first": 26.285,
+              "second": 16.832842545446777
+            },
+            {
+              "first": 26.308,
+              "second": 16.832842545446777
+            },
+            {
+              "first": 36.308,
+              "second": 17.55284254544678
+            },
+            {
+              "first": 47.248000000000005,
+              "second": 16.862842545446778
+            }
+          ]
+        },
+        {
+          "distance": null,
+          "relativeDirection": "LEFT",
+          "streetName": "path",
+          "absoluteDirection": "WEST",
+          "stayOn": true,
+          "area": false,
+          "bogusName": true,
+          "lon": -122.6795756,
+          "lat": 45.5188999,
+          "elevation": [
+            {
+              "first": 0,
+              "second": 16.862842545446778
+            },
+            {
+              "first": 2.43,
+              "second": 17.26284254544678
+            }
+          ]
+        }
+      ]
     }
   ],
-  "startTime": 1691427025000,
-  "waitingTime": 141,
-  "walkTime": 645
+  "tooSloped": false
 }
