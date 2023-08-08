@@ -348,6 +348,7 @@ function ModeButton({
             aria-labelledby={`metro-mode-selector-${modeButton.key}-button-label`}
             // This is a workaround for a bug in Firefox.
             // https://github.com/floating-ui/floating-ui/issues/2299
+            // https://bugzilla.mozilla.org/show_bug.cgi?id=1829500
             onPointerDown={() => {
               setHoverEnabled(false);
               setTimeout(() => setHoverEnabled(true), 100);
