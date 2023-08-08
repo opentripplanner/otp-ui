@@ -492,6 +492,7 @@ export type Route = BasicRouteInfo & {
   agency: Agency;
   agencyId?: string | number;
   agencyName?: string | number;
+  // TODO: Add support for enum values, see /packages/core-utils/src/otpSchema.json#L1289.
   bikesAllowed?: ZeroOrOne;
   eligibilityRestricted?: ZeroOrOne;
   mode?: string;
