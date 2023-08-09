@@ -67,7 +67,7 @@ export function extractAdditionalModes(
     }
     if (cur.type === "DROPDOWN") {
       const transportMode = cur.options.find(o => o.value === cur.value)
-        .addTransportMode;
+        ?.addTransportMode;
       if (transportMode) {
         return [...prev, transportMode];
       }
