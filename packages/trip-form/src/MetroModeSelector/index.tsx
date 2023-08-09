@@ -210,6 +210,7 @@ function ModeButton({
   const intl = useIntl();
 
   const [open, setOpen] = useState(false);
+  const [hoverEnabled, setHoverEnabled] = useState(true);
   const arrowRef = useRef(null);
   const onOpenChange = useCallback(
     value => {
@@ -238,7 +239,7 @@ function ModeButton({
     useHover(context, {
       // Enable hover only if no popup has been triggered via keyboard.
       // (This is to avoid focus being stolen by hovering out of another button.)
-      enabled: itemWithKeyboard === null,
+      enabled: itemWithKeyboard === null && hoverEnabled,
       handleClose: safePolygon({
         blockPointerEvents: false,
         restMs: 500,
@@ -345,6 +346,13 @@ function ModeButton({
             {...getFloatingProps()}
             // Matches ID on Header element in SubSettingsPane
             aria-labelledby={`metro-mode-selector-${modeButton.key}-button-label`}
+            // This is a workaround for a bug in Firefox.
+            // https://github.com/floating-ui/floating-ui/issues/2299
+            // https://bugzilla.mozilla.org/show_bug.cgi?id=1829500
+            onPointerDown={() => {
+              setHoverEnabled(false);
+              setTimeout(() => setHoverEnabled(true), 100);
+            }}
             ref={floating}
             style={{
               left: x ?? 0,
