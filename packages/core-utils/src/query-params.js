@@ -365,31 +365,6 @@ const queryParams = [
       }
     ]
   },
-
-  {
-    /* walkSpeed -- the user's walking speed in m/s */
-    name: "walkSpeed",
-    routingTypes: ["ITINERARY", "PROFILE"],
-    default: 1.34,
-    selector: "DROPDOWN",
-    label: "Walk Speed",
-    applicable: query => query.mode && query.mode.indexOf("WALK") !== -1,
-    options: [
-      {
-        text: "2 MPH",
-        value: 0.89
-      },
-      {
-        text: "3 MPH",
-        value: 1.34
-      },
-      {
-        text: "4 MPH",
-        value: 1.79
-      }
-    ]
-  },
-
   {
     name: "walkReluctance",
     routingTypes: ["ITINERARY", "PROFILE"],
