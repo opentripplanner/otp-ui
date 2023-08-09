@@ -731,6 +731,7 @@ export type ModeSettingBase = {
   icon?: JSX.Element;
   id?: string;
   key: string;
+  typeOverride?: "STRING" | "NUMBER" | "BOOLEAN";
 };
 
 export type ModeSetting = (
