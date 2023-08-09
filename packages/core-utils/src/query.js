@@ -19,7 +19,6 @@ export const defaultParams = [
   "maxWalkDistance",
   "walkReluctance",
   "maxWalkTime",
-  "walkSpeed",
   "maxBikeDistance",
   "maxBikeTime",
   "bikeSpeed",
