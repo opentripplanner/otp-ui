@@ -3241,7 +3241,35 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
-"@opentripplanner/geocoder@1.4.1", "@opentripplanner/geocoder@^1.4.1":
+"@opentripplanner/base-map@^3.0.14":
+  version "3.0.14"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/base-map/-/base-map-3.0.14.tgz#538fc45fa5663695bab05452021125366b98e06a"
+  integrity sha512-vtTWlgZBta8nB9Imb2Bjpc5z6g8HamN7iXyGcNRRpOK01XRQsn5WA04VbeOhRpqRcN40vUvL0K1b3EBJFnTZqg==
+  dependencies:
+    mapbox-gl "npm:empty-npm-package@1.0.0"
+    maplibre-gl "^2.1.9"
+    react-map-gl "^7.0.15"
+
+"@opentripplanner/core-utils@^9.0.0", "@opentripplanner/core-utils@^9.0.2", "@opentripplanner/core-utils@^9.0.3":
+  version "9.0.3"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-9.0.3.tgz#c1ebdcc3ad5999fb28427102c9be7d7268f6bd37"
+  integrity sha512-8P3Bi41jF7z18P/soo6lEw+nrqarsyGMAxivsF1/kMJdRo4wnakp0zcrVZjDXTxoR6LPtj6Kkuxv3JQFO9jKiw==
+  dependencies:
+    "@conveyal/lonlat" "^1.4.1"
+    "@mapbox/polyline" "^1.1.0"
+    "@opentripplanner/geocoder" "^1.4.1"
+    "@styled-icons/foundation" "^10.34.0"
+    "@turf/along" "^6.0.1"
+    bowser "^2.7.0"
+    chroma-js "^2.4.2"
+    date-fns "^2.28.0"
+    date-fns-tz "^1.2.2"
+    graphql "^16.6.0"
+    lodash.clonedeep "^4.5.0"
+    lodash.isequal "^4.5.0"
+    qs "^6.9.1"
+
+"@opentripplanner/geocoder@^1.4.1":
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/@opentripplanner/geocoder/-/geocoder-1.4.1.tgz#ee1aa00ce6938ab7a7b9ed4e0fa894a226352ee1"
   integrity sha512-P2tvUkJRYcuT71UMC5MalJuHwVCT+JXw/C/rAVTrwhvFXn+4mceHlBBNLXGzQyzVceBE5lER0xC1PB7xBQeL0w==
@@ -3251,10 +3279,51 @@
     isomorphic-mapzen-search "^1.6.1"
     lodash.memoize "^4.1.2"
 
+"@opentripplanner/geocoder@^1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/geocoder/-/geocoder-1.4.2.tgz#0f827dffca42c7f7a23063b54990a291dd028b80"
+  integrity sha512-yzMVrKXEHO6Y50j9kntk1+odvHaqn9K9D4aKJAd+EabhiZckesfScLb0updmWRUloEWjN45nuDSFto8fbU7Uiw==
+  dependencies:
+    "@conveyal/geocoder-arcgis-geojson" "^0.0.3"
+    "@conveyal/lonlat" "^1.4.1"
+    isomorphic-mapzen-search "^1.6.1"
+    lodash.memoize "^4.1.2"
+
+"@opentripplanner/icons@^2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/icons/-/icons-2.0.4.tgz#6c5d7236bd63c73526000cc0c253ef9cd1057e03"
+  integrity sha512-9KYuC22iy8jw9drV9mKn+T4kfAW90mh5ltHgfhrP082TOlc8k1urCnm3KCG5C80s/Ov2JlMP09oOsLWVdmn97w==
+  dependencies:
+    "@opentripplanner/core-utils" "^9.0.0"
+    prop-types "^15.7.2"
+
+"@opentripplanner/itinerary-body@^5.0.2":
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/itinerary-body/-/itinerary-body-5.0.3.tgz#b7eed8a38a0d1e6a3d0b80ff2697386feb45df71"
+  integrity sha512-5uANv+z5FdUSDN1uo+xsON+Z8TR3uXjYh11zP/glv7d9hOZ7I7U2eHOSf6iHsUDiPnVS5hpe3WikxPaSkNdXvg==
+  dependencies:
+    "@opentripplanner/core-utils" "^9.0.2"
+    "@opentripplanner/humanize-distance" "^1.2.0"
+    "@opentripplanner/icons" "^2.0.4"
+    "@opentripplanner/location-icon" "^1.4.1"
+    "@styled-icons/fa-solid" "^10.34.0"
+    "@styled-icons/foundation" "^10.34.0"
+    date-fns "^2.28.0"
+    date-fns-tz "^1.2.2"
+    flat "^5.0.2"
+    react-animate-height "^3.0.4"
+    react-resize-detector "^4.2.1"
+    string-similarity "^4.0.4"
+
 "@opentripplanner/types@6.0.0-alpha.4":
   version "6.0.0-alpha.4"
   resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-6.0.0-alpha.4.tgz#dee3c06675e30c596159d182ed707e7710cd937c"
   integrity sha512-FlYsHm/tk+x0ldrEG1X9Ph1R1k3way1oEdKX7XSnhu9lNTzL4lO0hfT1PLzNXMfBRar7TzK94PHNDibJsod8Kw==
+
+"@opentripplanner/types@^6.0.0", "@opentripplanner/types@^6.0.0-alpha.9":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-6.0.1.tgz#83981808b022d30b2dc84d5688880fa8fd3d0384"
+  integrity sha512-B7JOyW3aoWvHK7RembEUV5V6eNhOnYsgVnbrRj3QkPhbzsLk7YoNiybUho2PywCn5Auvm1kUjwEOujRXcGdYRw==
 
 "@peculiar/asn1-schema@^2.1.6", "@peculiar/asn1-schema@^2.3.0":
   version "2.3.3"
