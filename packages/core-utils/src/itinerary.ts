@@ -570,7 +570,11 @@ export function getLegCost(
   leg: Leg,
   mediumId: string | null,
   riderCategoryId: string | null
-): { price?: Money; transferAmount?: Money | undefined; useId?: string } {
+): {
+  price?: Money;
+  transferAmount?: Money | undefined;
+  productUseId?: string;
+} {
   if (!leg.fareProducts) return { price: undefined };
   const relevantFareProducts = leg.fareProducts.filter(({ product }) => {
     // riderCategory and medium can be specifically defined as null to handle
@@ -593,7 +597,7 @@ export function getLegCost(
   return {
     price: totalCostProduct?.product.price,
     transferAmount: transferFareProduct?.product.price,
-    useId: totalCostProduct?.id
+    productUseId: totalCostProduct?.id
   };
 }
 
@@ -618,13 +622,13 @@ export function getItineraryCost(
     // Filter out duplicate use IDs
     // One fare product can be used on multiple legs,
     // and we don't want to count it more than once.
-    .reduce<{ useId: string; price: Money }[]>((prev, cur) => {
-      if (!prev.some(p => p.useId === cur.useId)) {
-        prev.push({ useId: cur.useId, price: cur.price });
+    .reduce<{ productUseId: string; price: Money }[]>((prev, cur) => {
+      if (!prev.some(p => p.productUseId === cur.productUseId)) {
+        prev.push({ productUseId: cur.productUseId, price: cur.price });
       }
       return prev;
     }, [])
-    .map(prodUse => prodUse.price);
+    .map(productUse => productUse.price);
 
   if (legCosts.length === 0) return undefined;
   // Calculate the total

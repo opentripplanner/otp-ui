@@ -65,6 +65,8 @@ export default function LineColumnContent({
     }
   );
 
+  const routeShortName = typeof route === "string" ? route : route?.shortName;
+
   return (
     <S.LegLine>
       {!isDestination && <S.InnerLine mode={mode} routeColor={routeColor} />}
@@ -72,7 +74,9 @@ export default function LineColumnContent({
         {/* TODO: This is a placeholder for a routebadge when we create the transit leg */}
         {!interline && !isDestination && transitLeg && (
           <RouteBadge
-            abbreviation={toRouteAbbreviation(parseInt(route, 10) || route)}
+            abbreviation={toRouteAbbreviation(
+              parseInt(routeShortName, 10) || routeShortName
+            )}
             color={routeColor}
             name={routeLongName || ""}
           />
