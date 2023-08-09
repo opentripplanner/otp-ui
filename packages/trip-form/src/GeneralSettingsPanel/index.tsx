@@ -86,7 +86,7 @@ export default function GeneralSettingsPanel({
           .getCustomQueryParams(queryParamMessages)
           .find(qp => qp.name === param);
         // Check that the parameter applies to the specified routingType
-        if (!paramInfo.routingTypes.includes(query.routingType)) return null;
+        if (!paramInfo?.routingTypes.includes(query.routingType)) return null;
 
         // Check that the applicability test (if provided) is satisfied
         if (
