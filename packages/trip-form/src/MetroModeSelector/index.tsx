@@ -399,10 +399,6 @@ interface Props {
    * @param key Mode button to be toggled
    */
   onToggleModeButton: (key: string, newState: boolean) => void;
-  /**
-   * Array of configurable overrides for mode subsettings. For example, walk reluctance defaults
-   * to checkmark but slider is also supported.
-   */
 }
 
 export default function ModeSelector({
