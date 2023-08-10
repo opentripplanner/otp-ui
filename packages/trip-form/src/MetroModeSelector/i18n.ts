@@ -57,6 +57,13 @@ export default function generateModeButtonLabel(
 
 function generateMainSettingLabel(key: string, intl: IntlShape): string {
   switch (key) {
+    case "walkReluctance":
+      return intl.formatMessage({
+        defaultMessage:
+          defaultMessages["otpUi.ModeSelector.settings.walkReluctance-label"],
+        description: `Metro Mode Selector Setting Label (Walk Reluctance)`,
+        id: "otpUi.ModeSelector.settings.walkReluctance-label"
+      });
     case "walkTolerance":
       return intl.formatMessage({
         defaultMessage:
