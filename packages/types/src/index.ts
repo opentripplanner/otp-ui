@@ -238,9 +238,22 @@ export type Place = {
   name: string;
   networks?: string[];
   rentalVehicle?: { network: string };
+  stop?: Stop;
+  /**
+   * @deprecated Only for OTP1 support, removal is immenent
+   */
   stopCode?: string;
+  /**
+   * @deprecated Only for OTP1 support, removal is immenent
+   */
   stopId?: string;
+  /**
+   * @deprecated Only for OTP1 support, removal is immenent
+   */
   stopIndex?: number;
+  /**
+   * @deprecated Only for OTP1 support, removal is immenent
+   */
   stopSequence?: number;
   vertexType: string;
   zoneId?: string;
