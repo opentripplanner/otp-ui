@@ -1,18 +1,19 @@
 import React, { Component, ReactElement } from "react";
+import { Stop } from "@opentripplanner/types";
 import { FormattedMessage } from "react-intl";
 
 import * as S from "../styled";
 import { defaultMessages } from "../util";
 
 interface Props {
-  onStopClick: ({ stopId: string }) => void;
-  stopId: string;
+  onStopClick: (stop: Stop) => void;
+  stop: Stop;
 }
 
 export default class ViewStopButton extends Component<Props> {
   onClick = (): void => {
-    const { onStopClick, stopId } = this.props;
-    onStopClick({ stopId });
+    const { onStopClick, stop } = this.props;
+    onStopClick(stop);
   };
 
   render(): ReactElement {
