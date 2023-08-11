@@ -486,10 +486,11 @@ export type Stop = {
   dist?: number;
   geometries?: { geoJson?: GeoJSON.Polygon };
   id: string;
-  lat: number;
-  lon: number;
+  lat?: number;
+  lon?: number;
   name: string;
   routes?: Route[];
+  gtfsId: string;
 };
 
 export type Agency = {
