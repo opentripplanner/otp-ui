@@ -20,6 +20,15 @@ export interface RouteDescriptionProps {
   transitOperator: TransitOperator;
 }
 
+export interface RouteDescriptionFooterProps {
+  /** Contains details about leg object that is being displayed */
+  leg: Leg;
+  /** A component class that is used to render icons for legs of an itinerary */
+  LegIcon: LegIconComponent;
+  /** The transit operator associated with the route if available */
+  transitOperator: TransitOperator;
+}
+
 export type ToRouteAbbreviationFunction = (route: string | number) => string;
 
 export interface LegDestination {
@@ -165,6 +174,11 @@ interface ItineraryBodySharedProps {
    * - transitOperator: the transit operator associated with the route if available
    */
   RouteDescription: FunctionComponent<RouteDescriptionProps>;
+  /**
+   * A component to render the footer and contained elements
+   * therein
+   */
+  RouteDescriptionFooter: FunctionComponent<RouteDescriptionFooterProps>;
   /** TODO: Routing Type is usually 'ITINERARY' but we should get more details on what this does */
   routingType?: string;
   /**
