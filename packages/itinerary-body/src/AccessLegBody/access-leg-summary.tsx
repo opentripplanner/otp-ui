@@ -12,6 +12,7 @@ interface Props {
   LegIcon: LegIconComponent;
   onSummaryClick: () => void;
   showLegIcon: boolean;
+  RouteDescriptionFooterClickMethod: () => void;
 }
 
 export default function AccessLegSummary({
@@ -19,11 +20,12 @@ export default function AccessLegSummary({
   leg,
   LegIcon,
   onSummaryClick,
-  showLegIcon
+  showLegIcon,
+  RouteDescriptionFooterClickMethod
 }: Props): ReactElement {
   return (
     <S.LegClickable>
-      <S.LegDescription>
+      <S.LegDescription onClick={RouteDescriptionFooterClickMethod}>
         <S.LegIconAndRouteShortName>
           {showLegIcon && (
             <S.LegIconContainer>

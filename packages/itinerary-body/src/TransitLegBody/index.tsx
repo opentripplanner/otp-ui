@@ -19,6 +19,7 @@ import { Duration } from "../defaults";
 import * as S from "../styled";
 import {
   RouteDescriptionProps,
+  RouteDescriptionFooterProps,
   SetActiveLegFunction,
   SetViewedTripFunction,
   TransitLegSubheaderProps,
@@ -41,6 +42,8 @@ interface Props {
   legIndex: number;
   legDestination: string;
   RouteDescription: FunctionComponent<RouteDescriptionProps>;
+  RouteDescriptionFooter: FunctionComponent<RouteDescriptionFooterProps>;
+  RouteDescriptionFooterClickMethod: () => void;
   setActiveLeg: SetActiveLegFunction;
   setViewedTrip: SetViewedTripFunction;
   showAgencyInfo: boolean;
@@ -144,6 +147,8 @@ class TransitLegBody extends Component<Props, State> {
       LegIcon,
       legDestination,
       RouteDescription,
+      RouteDescriptionFooter,
+      RouteDescriptionFooterClickMethod,
       setViewedTrip,
       showAgencyInfo,
       showViewTripButton,
@@ -185,7 +190,7 @@ class TransitLegBody extends Component<Props, State> {
         <S.LegBody>
           {/* The Route Icon/Name Bar */}
           <S.LegClickable>
-            <S.LegDescription>
+            <S.LegDescription onClick={RouteDescriptionFooterClickMethod}>
               <span>
                 <S.InvisibleAdditionalDetails>
                   {" - "}
@@ -230,6 +235,13 @@ class TransitLegBody extends Component<Props, State> {
               </S.LegClickableButton>
             </S.LegDescription>
           </S.LegClickable>
+          {RouteDescriptionFooter && (
+            <RouteDescriptionFooter
+              leg={leg}
+              LegIcon={LegIcon}
+              transitOperator={transitOperator}
+            />
+          )}
           <div
             // Creates a group of leg details for screenreaders after the initial leg description.
             aria-label={intl.formatMessage({
