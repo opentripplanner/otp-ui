@@ -8,6 +8,7 @@ import {
   Leg,
   LegIconComponent,
   Place,
+  Stop,
   TransitOperator
 } from "@opentripplanner/types";
 
@@ -73,7 +74,7 @@ export type SetViewedTripFunction = (tripSection: TripSection) => void;
 
 export interface TransitLegSubheaderProps {
   leg: Leg;
-  onStopClick?: ({ stopId: string }) => void;
+  onStopClick?: (stop: Stop) => void;
 }
 
 export interface TransitLegSummaryProps {
