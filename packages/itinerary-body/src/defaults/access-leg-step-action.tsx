@@ -5,6 +5,9 @@ export enum Action {
   circleClockwise = "CIRCLE_CLOCKWISE",
   circleCounterClockwise = "CIRCLE_COUNTERCLOCKWISE",
   continue = "CONTINUE",
+  enterStation = "ENTER_STATION",
+  exitStation = "EXIT_STATION",
+  followSigns = "FOLLOW_SIGNS",
   hardLeft = "HARD_LEFT",
   hardRight = "HARD_RIGHT",
   left = "LEFT",
@@ -114,7 +117,31 @@ export default function AccessLegStepAction({ action }: Props): ReactElement {
           id="otpUi.AccessLegBody.step.uTurnRight"
         />
       );
+    case Action.enterStation:
+      return (
+        <FormattedMessage
+          defaultMessage={action}
+          description="Step action enter station"
+          id="otpUi.AcessLegBody.step.enterStation"
+        />
+      );
+    case Action.exitStation:
+      return (
+        <FormattedMessage
+          defaultMessage={action}
+          description="Step action exit station"
+          id="otpUi.AcessLegBody.step.exitStation"
+        />
+      );
+    case Action.followSigns:
+      return (
+        <FormattedMessage
+          defaultMessage={action}
+          description="Step action follow signs"
+          id="otpUi.AcessLegBody.step.followSigns"
+        />
+      );
     default:
-      throw new Error(`Invalid step action: ${action}`);
+      return <></>;
   }
 }
