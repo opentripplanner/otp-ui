@@ -143,9 +143,6 @@ export default function PlaceRow({
               legDestination={formattedPlace(leg.to)}
               RouteDescription={RouteDescription}
               RouteDescriptionFooter={RouteDescriptionFooter}
-              RouteDescriptionFooterClickMethod={() => {
-                frameLeg({ isDestination, leg, legIndex, place });
-              }}
               setActiveLeg={setActiveLeg}
               setViewedTrip={setViewedTrip}
               showAgencyInfo={showAgencyInfo}
@@ -173,9 +170,6 @@ export default function PlaceRow({
               setLegDiagram={setLegDiagram}
               showElevationProfile={showElevationProfile}
               showLegIcon={showLegIcon}
-              RouteDescriptionFooterClickMethod={() => {
-                frameLeg({ isDestination, leg, legIndex, place });
-              }}
             />
           ))}
       </S.PlaceDetails>

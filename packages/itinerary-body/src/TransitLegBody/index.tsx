@@ -43,7 +43,6 @@ interface Props {
   legDestination: string;
   RouteDescription: FunctionComponent<RouteDescriptionProps>;
   RouteDescriptionFooter: FunctionComponent<RouteDescriptionFooterProps>;
-  RouteDescriptionFooterClickMethod: () => void;
   setActiveLeg: SetActiveLegFunction;
   setViewedTrip: SetViewedTripFunction;
   showAgencyInfo: boolean;
@@ -148,7 +147,6 @@ class TransitLegBody extends Component<Props, State> {
       legDestination,
       RouteDescription,
       RouteDescriptionFooter,
-      RouteDescriptionFooterClickMethod,
       setViewedTrip,
       showAgencyInfo,
       showViewTripButton,
@@ -190,7 +188,7 @@ class TransitLegBody extends Component<Props, State> {
         <S.LegBody>
           {/* The Route Icon/Name Bar */}
           <S.LegClickable>
-            <S.LegDescription onClick={RouteDescriptionFooterClickMethod}>
+            <S.LegDescription>
               <span>
                 <S.InvisibleAdditionalDetails>
                   {" - "}

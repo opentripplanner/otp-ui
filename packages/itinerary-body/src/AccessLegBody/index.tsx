@@ -33,7 +33,6 @@ interface Props {
   setLegDiagram: (leg: Leg) => void;
   showElevationProfile: boolean;
   showLegIcon: boolean;
-  RouteDescriptionFooterClickMethod: () => void;
 }
 
 interface State {
@@ -72,8 +71,7 @@ class AccessLegBody extends Component<Props, State> {
       mapillaryKey,
       setLegDiagram,
       showElevationProfile,
-      showLegIcon,
-      RouteDescriptionFooterClickMethod
+      showLegIcon
     } = this.props;
     const { expanded } = this.state;
 
@@ -86,7 +84,6 @@ class AccessLegBody extends Component<Props, State> {
           LegIcon={LegIcon}
           onSummaryClick={this.onSummaryClick}
           showLegIcon={showLegIcon}
-          RouteDescriptionFooterClickMethod={RouteDescriptionFooterClickMethod}
         />
       );
     }
@@ -105,9 +102,6 @@ class AccessLegBody extends Component<Props, State> {
             LegIcon={LegIcon}
             onSummaryClick={this.onSummaryClick}
             showLegIcon={showLegIcon}
-            RouteDescriptionFooterClickMethod={
-              RouteDescriptionFooterClickMethod
-            }
           />
           <S.LegDetails>
             <S.StepsHeaderAndMapLink>
