@@ -3241,7 +3241,7 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
-"@opentripplanner/base-map@^3.0.14":
+"@opentripplanner/base-map@^3.0.13", "@opentripplanner/base-map@^3.0.14":
   version "3.0.14"
   resolved "https://registry.yarnpkg.com/@opentripplanner/base-map/-/base-map-3.0.14.tgz#538fc45fa5663695bab05452021125366b98e06a"
   integrity sha512-vtTWlgZBta8nB9Imb2Bjpc5z6g8HamN7iXyGcNRRpOK01XRQsn5WA04VbeOhRpqRcN40vUvL0K1b3EBJFnTZqg==
@@ -3314,6 +3314,16 @@
     react-animate-height "^3.0.4"
     react-resize-detector "^4.2.1"
     string-similarity "^4.0.4"
+
+"@opentripplanner/map-popup@^2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/map-popup/-/map-popup-2.0.5.tgz#a6974712e841e522b3b2add520e7226dea797c0c"
+  integrity sha512-tpIWibuWjWbeNEK0URI9lRaZfMRZo+8iucWaSJ8uHTLbQyLj0htIRTDx2Jf+WYJVIjsiwjoAzfSSEbzub3lrvA==
+  dependencies:
+    "@opentripplanner/base-map" "^3.0.13"
+    "@opentripplanner/core-utils" "^9.0.0"
+    "@opentripplanner/from-to-location-picker" "^2.1.7"
+    flat "^5.0.2"
 
 "@opentripplanner/types@7.0.0-alpha.2":
   version "7.0.0-alpha.2"
