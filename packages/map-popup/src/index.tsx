@@ -61,16 +61,16 @@ const StationHubDetails = ({ station }: { station: Station }) => {
 const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: () => void; }) => {
   return (
     <BaseMapStyled.PopupRow>
-        <strong>
-          <FormattedMessage
-            defaultMessage={defaultMessages["otpUi.MapPopup.stopId"]}
-            description="Displays the stop id"
-            id="otpUi.MapPopup.stopId"
-            values={{
-              stopId: id
-            }}
-          />
-        </strong>
+      <strong>
+        <FormattedMessage
+          defaultMessage={defaultMessages["otpUi.MapPopup.stopId"]}
+          description="Displays the stop id"
+          id="otpUi.MapPopup.stopId"
+          values={{
+            stopId: id
+          }}
+        />
+      </strong>
       <S.ViewStopButton onClick={setViewedStop}>
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.MapPopup.stopViewer"]}
@@ -88,8 +88,12 @@ type Props = {
   entity: Entity
   getEntityName?: (entity: Entity, configCompanies: Company[],) => string;
   setLocation?: ({ location, locationType }: { location: Location, locationType: string }) => void;
-  setViewedStop?: ({ stopId }: { stopId: string }) => void;
+  setViewedStop?: (stop: Stop) => void;
 };
+
+function entityIsStation(entity: Entity): entity is Station {
+  return "bikesAvailable" in entity
+}
 
 /**
  * Renders a map popup for a stop, scooter, or shared bike
@@ -102,9 +106,8 @@ export function MapPopup({ configCompanies, entity, getEntityName, setLocation, 
   const name = getNameFunc(entity, configCompanies);
 
 
-  const bikesAvailablePresent = "bikesAvailable" in entity
+  const bikesAvailablePresent = entityIsStation(entity)
   const entityIsStationHub = bikesAvailablePresent && entity?.bikesAvailable !== undefined && !entity?.isFloatingBike;
-  // @ts-expect-error ts doesn't understand entityIsStop
   const stopId = !bikesAvailablePresent && entity?.code || entity.id.split(":")[1] || entity.id
 
   return (
@@ -114,7 +117,12 @@ export function MapPopup({ configCompanies, entity, getEntityName, setLocation, 
       {entityIsStationHub && <StationHubDetails station={entity} />}
 
       {/* render stop viewer link if available */}
-      {setViewedStop && !bikesAvailablePresent && <StopDetails id={stopId} setViewedStop={useCallback(() => setViewedStop({ stopId: entity.id }), [entity.id])} />}
+      {setViewedStop && !bikesAvailablePresent && (
+        <StopDetails
+          id={stopId}
+          setViewedStop={useCallback(() => setViewedStop(entity), [entity])}
+        />
+      )}
 
       {/* The "Set as [from/to]" ButtonGroup */}
       {setLocation && (
