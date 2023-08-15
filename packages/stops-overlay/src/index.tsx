@@ -40,7 +40,7 @@ type Props = {
   /**
    * A method fired when the stop viewer is opened in the popup
    */
-  setViewedStop?: ({ stopId: string }) => void;
+  setViewedStop?: (stop: Stop) => void;
 };
 
 /**
