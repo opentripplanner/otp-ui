@@ -104,6 +104,7 @@ query Plan(
           }
           vertexType
         }
+        headsign
         interlineWithPreviousLeg
         intermediateStops {
           lat
@@ -220,10 +221,8 @@ query Plan(
             }
             stopPosition
           }
-
           gtfsId
           id
-          tripHeadsign
         }
       }
       startTime
