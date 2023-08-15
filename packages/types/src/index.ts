@@ -271,6 +271,16 @@ type FlexPickupBookingInfo = {
   pickupMessage?: string;
 } & FlexBookingInfo;
 
+export type Agency = {
+  id: string;
+  lang?: string;
+  name?: string;
+  fareUrl?: string;
+  phone?: string;
+  timezone?: string;
+  url?: string;
+};
+
 /** Basic transit route attributes */
 interface BasicRouteInfo {
   color?: string;
@@ -282,10 +292,15 @@ interface BasicRouteInfo {
   type?: number;
 }
 
-/** Transit route attributes from itinerary legs */
-export type LegRoute = BasicRouteInfo & {
+interface Alerts {
   alerts?: Alert[];
-};
+}
+
+/** Transit route attributes from itinerary legs */
+export type LegRoute = BasicRouteInfo & Alerts;
+
+/** Transit agency attribute from itinerary legs */
+export type LegAgency = Agency & Alerts;
 
 /**
  * Represents a leg in an itinerary of an OTP plan response. Each leg represents
@@ -296,6 +311,7 @@ export type LegRoute = BasicRouteInfo & {
  */
 export type Leg = {
   accessibilityScore?: number;
+  agency?: LegAgency;
   agencyBrandingUrl?: string;
   agencyId?: string;
   agencyName?: string;
@@ -479,15 +495,6 @@ export type Stop = {
   routes?: Route[];
 };
 
-export type Agency = {
-  id: string;
-  name?: string;
-  url?: string;
-  timezone?: string;
-  lang?: string;
-  phone?: string;
-  fareUrl?: string;
-};
 export type Route = BasicRouteInfo & {
   agency: Agency;
   agencyId?: string | number;
