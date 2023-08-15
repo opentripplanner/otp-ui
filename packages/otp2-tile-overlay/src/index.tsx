@@ -2,6 +2,7 @@ import EntityPopup from "@opentripplanner/map-popup"
 import {
   ConfiguredCompany,
   MapLocationActionArg,
+  Stop,
 } from "@opentripplanner/types"
 // eslint-disable-next-line prettier/prettier
 import type { EventData } from "mapbox-gl"
@@ -52,7 +53,7 @@ const OTP2TileLayerWithPopup = ({
    * A method fired when the stop viewer is opened in the default popup. If this method is
    * not passed, the stop viewer link will not be shown.
    */
-  setViewedStop?: ({ stopId }: { stopId: string }) => void
+  setViewedStop?: (stop: Stop) => void
   /**
    * Determines which layer of the OTP2 tile data to display. Also determines icon color.
    */
@@ -173,7 +174,7 @@ const generateOTP2TileLayers = (
   layers: { color?: string; name?: string; network?: string; type: string, initiallyVisible?: boolean }[],
   endpoint: string,
   setLocation?: (location: MapLocationActionArg) => void,
-  setViewedStop?: ({ stopId }: { stopId: string }) => void,
+  setViewedStop?: (stop: Stop) => void,
   configCompanies?: ConfiguredCompany[]
 ): JSX.Element[] => {
   return [
