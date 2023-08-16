@@ -81,6 +81,7 @@ const ItineraryBody = ({
           mapillaryKey={mapillaryKey}
           PlaceName={PlaceName}
           RouteDescription={RouteDescription}
+          RouteDescriptionFooter={RouteDescriptionFooter}
           routingType={routingType}
           setActiveLeg={setActiveLeg}
           setLegDiagram={setLegDiagram}
@@ -94,7 +95,6 @@ const ItineraryBody = ({
           toRouteAbbreviation={toRouteAbbreviation}
           TransitLegSubheader={TransitLegSubheader}
           TransitLegSummary={TransitLegSummary}
-          RouteDescriptionFooter={RouteDescriptionFooter}
         />
       );
     }

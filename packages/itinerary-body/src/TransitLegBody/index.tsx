@@ -35,6 +35,8 @@ interface Props {
   AlertBodyIcon?: FunctionComponent;
   AlertToggleIcon?: FunctionComponent;
   alwaysCollapseAlerts: boolean;
+  arrivalText: string;
+  arrivalTripId: string;
   fare?: Fare;
   intl: IntlShape;
   leg: Leg;
@@ -140,6 +142,8 @@ class TransitLegBody extends Component<Props, State> {
       AlertToggleIcon = S.DefaultAlertToggleIcon,
       AlertBodyIcon,
       alwaysCollapseAlerts,
+      arrivalText,
+      arrivalTripId,
       fare,
       intl,
       leg,
@@ -235,6 +239,8 @@ class TransitLegBody extends Component<Props, State> {
           </S.LegClickable>
           {RouteDescriptionFooter && (
             <RouteDescriptionFooter
+              arrivalText={arrivalText}
+              arrivalTripId={arrivalTripId}
               leg={leg}
               LegIcon={LegIcon}
               transitOperator={transitOperator}

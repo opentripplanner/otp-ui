@@ -5,8 +5,8 @@ import React, { ReactElement } from "react";
 import styled from "styled-components";
 import { CaretDown } from "@styled-icons/fa-solid/CaretDown";
 import { CaretUp } from "@styled-icons/fa-solid/CaretUp";
+import { WifiTethering } from "@styled-icons/material-outlined/WifiTethering";
 import { ExclamationTriangle } from "@styled-icons/fa-solid/ExclamationTriangle";
-
 import { toModeBorder, toModeColor, toSafeRouteColor } from "./util";
 
 interface LightBorderDivProps {
@@ -129,6 +129,20 @@ export const AccessBadge = styled.div<ModeRouteProps>`
   justify-content: center;
   padding-left: 1px;
   /* Add in border for dark mode */
+`;
+
+export const ArrivalTimeContainer = styled.div`
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  font-size: 0.9em;
+  color: #008ab0;
+  margin-top: 5px;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.focusVisible};
+  }
 `;
 
 export const CallAheadWarning = styled.div`
@@ -614,6 +628,12 @@ export const StopName = styled.div`
 export const StopRow = styled.li`
   z-index: 30;
   position: relative;
+`;
+
+export const TrackerIcon = styled(WifiTethering).attrs({
+  size: 20
+})`
+  padding-right: 8px;
 `;
 
 export const TransitAlert = styled.a`
