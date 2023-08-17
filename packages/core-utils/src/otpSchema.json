@@ -2292,7 +2292,7 @@
           "fields": [
             {
               "name": "id",
-              "description": "Identifier local to the itinerary that allows to cross-reference and deduplicate\nfare products that span more than one leg.\n\nIf you want to uniquely identify the fare product itself (not its use) use the product's `id`.\n\n### Example: Day pass\n\nWhen a day pass is valid for all three legs in the itinerary it will appear\nfor each leg but with the same use-`id`.\n\n*It is the responsibility of the API consumers to display the day pass as a product for the\nentire itinerary rather than three day passes!*\n\n### Example: Several single tickets\n\nIf you have two legs and need to buy two single tickets they will appear in each leg with the\nsame `product.id` but different use-`id`.",
+              "description": "Represents the use of a single instance of a fare product throughout the itinerary. It can\nbe used to cross-reference and de-duplicate fare products that are applicable for more than one\nleg.\n\nIf you want to uniquely identify the fare product itself (not its use) use the product's `id`.\n\n### Example: Day pass\n\nThe day pass is valid for both legs in the itinerary. It is listed as the applicable `product` for each leg,\nand the same FareProductUse id is shown, indicating that only one pass was used/bought.\n\n**Illustration**\n```yaml\nitinerary:\n  leg1:\n    fareProducts:\n      id: \"AAA\" // id of a FareProductUse instance\n      product:\n        id: \"day-pass\" // product id\n        name: \"Day Pass\"\n  leg2:\n    fareProducts:\n      id: \"AAA\" // identical to leg1. the passenger needs to buy ONE pass, not two.\n      product:\n        id: \"day-pass\"  // product id\n        name: \"Day Pass\"\n```\n\n**It is the responsibility of the API consumers to display the day pass as a product for the\nentire itinerary rather than two day passes!**\n\n### Example: Several single tickets\n\nIf you have two legs and need to buy two single tickets they will appear in each leg with the\nsame `FareProduct.id` but different `FareProductUse.id`.\n\n**Illustration**\n```yaml\nitinerary:\n  leg1:\n    fareProducts:\n      id: \"AAA\" // id of a FareProductUse instance, not product id\n      product:\n        id: \"single-ticket\" // product id\n        name: \"Single Ticket\"\n  leg2:\n    fareProducts:\n      id: \"BBB\" // different to leg1. the passenger needs to buy two single tickets.\n      product:\n        id: \"single-ticket\"  // product id\n        name: \"Single Ticket\"\n```",
               "args": [],
               "type": {
                 "kind": "NON_NULL",
@@ -3558,7 +3558,7 @@
             },
             {
               "name": "steps",
-              "description": null,
+              "description": "The turn-by-turn navigation instructions.",
               "args": [],
               "type": {
                 "kind": "LIST",
@@ -3568,6 +3568,18 @@
                   "name": "step",
                   "ofType": null
                 }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "headsign",
+              "description": "For transit legs, the headsign that the vehicle shows at the stop where the passenger boards.\nFor non-transit legs, null.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -8446,49 +8458,43 @@
           "enumValues": [
             {
               "name": "NO_TRANSIT_CONNECTION",
-              "description": "No transit connection was found between the origin and destination withing the operating day or the next day",
+              "description": "No transit connection was found between the origin and destination within the operating day or\nthe next day, not even sub-optimal ones.",
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
               "name": "NO_TRANSIT_CONNECTION_IN_SEARCH_WINDOW",
-              "description": "Transit connection was found, but it was outside the search window, see metadata for the next search window",
+              "description": "A transit connection was found, but it was outside the search window. See the metadata for a token\nfor retrieving the result outside the search window.",
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
               "name": "OUTSIDE_SERVICE_PERIOD",
-              "description": "The date specified is outside the range of data currently loaded into the system",
+              "description": "The date specified is outside the range of data currently loaded into the system as it is too\nfar into the future or the past.\n\nThe specific date range of the system is configurable by an administrator and also depends on\nthe input data provided.",
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
               "name": "OUTSIDE_BOUNDS",
-              "description": "The coordinates are outside the bounds of the data currently loaded into the system",
+              "description": "The coordinates are outside the geographic bounds of the transit and street data currently loaded\ninto the system and therefore cannot return any results.",
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
               "name": "LOCATION_NOT_FOUND",
-              "description": "The specified location is not close to any streets or transit stops",
+              "description": "The specified location is not close to any streets or transit stops currently loaded into the\nsystem, even though it is generally within its bounds.\n\nThis can happen when there is only transit but no street data coverage at the location in\nquestion.",
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
               "name": "NO_STOPS_IN_RANGE",
-              "description": "No stops are reachable from the location specified. You can try searching using a different access or egress mode",
+              "description": "No stops are reachable from the start or end locations specified.\n\nYou can try searching using a different access or egress mode, for example cycling instead of walking,\nincrease the walking/cycling/driving speed or have an administrator change the system's configuration\nso that stops further away are considered.",
               "isDeprecated": false,
               "deprecationReason": null
             },
             {
               "name": "WALKING_BETTER_THAN_TRANSIT",
-              "description": "The origin and destination are so close to each other, that walking is always better, but no direct mode was specified for the search",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "SYSTEM_ERROR",
-              "description": "An unknown error happened during the search. The details have been logged to the server logs",
+              "description": "Transit connections were requested and found but because it is easier to just walk all the way\nto the destination they were removed.\n\nIf you want to still show the transit results, you need to make walking less desirable by\nincreasing the walk reluctance.",
               "isDeprecated": false,
               "deprecationReason": null
             }
@@ -10059,7 +10065,7 @@
               "args": [
                 {
                   "name": "language",
-                  "description": "If translated headsign is found from gtfs translation.txt and wanted language is not same as\nfeed's language then returns wanted translation. Otherwise uses name from trip_headsign.txt.",
+                  "description": "If a translated headsign is found from GTFS translation.txt and wanted language is not same as\nfeed's language then returns wanted translation. Otherwise uses name from trip_headsign.txt.",
                   "type": {
                     "kind": "SCALAR",
                     "name": "String",
