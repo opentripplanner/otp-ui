@@ -122,7 +122,7 @@ export default function AccessLegStepAction({ action }: Props): ReactElement {
         <FormattedMessage
           defaultMessage={action}
           description="Step action enter station"
-          id="otpUi.AcessLegBody.step.enterStation"
+          id="otpUi.AccessLegBody.step.enterStation"
         />
       );
     case Action.exitStation:
@@ -130,15 +130,7 @@ export default function AccessLegStepAction({ action }: Props): ReactElement {
         <FormattedMessage
           defaultMessage={action}
           description="Step action exit station"
-          id="otpUi.AcessLegBody.step.exitStation"
-        />
-      );
-    case Action.followSigns:
-      return (
-        <FormattedMessage
-          defaultMessage={action}
-          description="Step action follow signs"
-          id="otpUi.AcessLegBody.step.followSigns"
+          id="otpUi.AccessLegBody.step.exitStation"
         />
       );
     default:

@@ -55,6 +55,21 @@
       },
       "steps": [
         {
+          "relativeDirection": "ENTER_STATION",
+          "stayOn": false,
+          "streetName": "fake station name"
+        },
+        {
+          "relativeDirection": "FOLLOW_SIGNS",
+          "stayOn": false,
+          "streetName": "fake station exit"
+        },
+        {
+          "relativeDirection": "EXIT_STATION",
+          "stayOn": false,
+          "streetName": "fake station name"
+        },
+        {
           "distance": 36.61,
           "lat": 47.7791959,
           "lon": -122.290319,

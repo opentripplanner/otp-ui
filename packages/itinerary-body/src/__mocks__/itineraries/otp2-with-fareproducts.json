@@ -37,6 +37,18 @@
       "startTime": 1686620636000,
       "steps": [
         {
+          "absoluteDirection": "EAST",
+          "alerts": [],
+          "area": false,
+          "distance": 0,
+          "elevationProfile": [],
+          "lat": 47.5990191,
+          "lon": -122.3279188,
+          "relativeDirection": "ENTER_STATION",
+          "stayOn": false,
+          "streetName": "fake station name"
+        },
+        {
           "absoluteDirection": "WEST",
           "alerts": [],
           "area": false,
