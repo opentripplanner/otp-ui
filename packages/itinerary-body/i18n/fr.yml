@@ -29,7 +29,7 @@ otpUi:
       circleClockwise: Prenez le rond-point par la gauche
       circleCounterClockwise: Prenez le rond-point par la droite
       continue: Continuez
-      enterStation: TODO
+      enterStation: Entrez dans la station
       exitStation: TODO
       hardLeft: Virage à gauche
       hardRight: Virage à droite
