@@ -57,7 +57,7 @@
         {
           "relativeDirection": "ENTER_STATION",
           "stayOn": false,
-          "streetName": "fake station name"
+          "streetName": "fake station entrance name"
         },
         {
           "relativeDirection": "FOLLOW_SIGNS",
