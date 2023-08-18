@@ -67,7 +67,7 @@
         {
           "relativeDirection": "EXIT_STATION",
           "stayOn": false,
-          "streetName": "fake station name"
+          "streetName": "fake station entrance name"
         },
         {
           "distance": 36.61,
