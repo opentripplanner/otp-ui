@@ -52,7 +52,7 @@ otpUi:
       southeast: le sud-est
       southwest: le sud-ouest
       west: l'ouest
-    stepStation: "{step} TODO {street}"
+    stepStation: "{step} par {street}"
     summary: "{mode} vers {place}"
     summaryAndDistance: "{mode} - {distance} vers {place}"
     summaryMode:
