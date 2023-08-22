@@ -3241,7 +3241,7 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
-"@opentripplanner/core-utils@^9.0.3":
+"@opentripplanner/core-utils@^9.0.2", "@opentripplanner/core-utils@^9.0.3":
   version "9.0.3"
   resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-9.0.3.tgz#c1ebdcc3ad5999fb28427102c9be7d7268f6bd37"
   integrity sha512-8P3Bi41jF7z18P/soo6lEw+nrqarsyGMAxivsF1/kMJdRo4wnakp0zcrVZjDXTxoR6LPtj6Kkuxv3JQFO9jKiw==
@@ -3260,10 +3260,10 @@
     lodash.isequal "^4.5.0"
     qs "^6.9.1"
 
-"@opentripplanner/types@6.0.0-alpha.4":
-  version "6.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-6.0.0-alpha.4.tgz#dee3c06675e30c596159d182ed707e7710cd937c"
-  integrity sha512-FlYsHm/tk+x0ldrEG1X9Ph1R1k3way1oEdKX7XSnhu9lNTzL4lO0hfT1PLzNXMfBRar7TzK94PHNDibJsod8Kw==
+"@opentripplanner/types@7.0.0-alpha.2":
+  version "7.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-7.0.0-alpha.2.tgz#d10c69f99b2da6d1e80ab5989520bde8e558627b"
+  integrity sha512-IzQwBcxkoyM+r/W7u+nzICf/6QnreLKppkrZZNl0yVxFiT6RBOd0U2UxMxLPYuRd/3awQabI3/qQ3/6ZxMWPfA==
 
 "@peculiar/asn1-schema@^2.1.6", "@peculiar/asn1-schema@^2.3.0":
   version "2.3.3"
