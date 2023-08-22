@@ -21,18 +21,12 @@ export interface RouteDescriptionProps {
 }
 
 export interface RouteDescriptionFooterProps {
-  /** text for arrival time */
-  arrivalText: string;
-  /** String that contains the trip id number */
-  arrivalTripId: string;
-  /** Contains details about leg object that is being displayed */
+  /* Contains details about the leg object */
   leg: Leg;
-  /** A component class that is used to render icons for legs of an itinerary */
-  LegIcon: LegIconComponent;
   /** Method for navigating to arrival vehicle if available */
   navigateToArrivalVehicle?: () => void;
-  /** The transit operator associated with the route if available */
-  transitOperator: TransitOperator;
+  /** Number of minutes for the arrival time */
+  waitMinutes?: number;
 }
 
 export type ToRouteAbbreviationFunction = (route: string | number) => string;

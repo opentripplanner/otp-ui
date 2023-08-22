@@ -1,24 +1,38 @@
 import React, { ReactElement } from "react";
-
+import { differenceInMinutes } from "date-fns";
+import { Leg } from "@opentripplanner/types";
 import * as S from "../styled";
-import * as mock from "../__mocks__/route-description-footer/route-description-footer-props.json";
 import { RouteDescriptionFooterProps } from "../types";
 
 export default function DefaultRouteDescriptionFooter({
-  leg,
-  arrivalText = mock.default.arrivalText,
-  arrivalTripId = leg.tripId,
-  navigateToArrivalVehicle = () => null
+  navigateToArrivalVehicle = () => null,
+  waitMinutes
 }: RouteDescriptionFooterProps): ReactElement {
-  const { tripId } = leg;
-  return arrivalText && tripId === arrivalTripId ? (
+  return (
     <S.ArrivalTimeContainer
       onClick={() => {
         navigateToArrivalVehicle();
       }}
     >
-      <S.TrackerIcon />
-      {arrivalText}
+      Arrives in {waitMinutes} minutes
     </S.ArrivalTimeContainer>
-  ) : null;
+  );
+}
+
+export function makeRouteDescriptionFooter(): (props: {
+  leg: Leg;
+}) => JSX.Element {
+  const NewComponent = ({ leg }: { leg: Leg }) => {
+    const toTime = leg.to.arrival;
+    const fromTime = leg.from.arrival;
+    const waitMinutes = differenceInMinutes(
+      new Date(toTime),
+      new Date(fromTime)
+    );
+    return (
+      <DefaultRouteDescriptionFooter leg={leg} waitMinutes={waitMinutes} />
+    );
+  };
+
+  return NewComponent;
 }

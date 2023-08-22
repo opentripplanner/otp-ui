@@ -1,5 +1,5 @@
 import { Itinerary } from "@opentripplanner/types";
-import React, { ReactElement } from "react";
+import React, { FunctionComponent, ReactElement } from "react";
 
 import ItineraryBody from "..";
 import {
@@ -14,6 +14,7 @@ import { TimeColumnContentProps } from "../types";
 
 import ItineraryBodyDefaultsWrapper from "./itinerary-body-defaults-wrapper";
 import LegIconWithA11y from "./LegIconWithA11y";
+import { makeRouteDescriptionFooter } from "../defaults/route-description-footer";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("../__mocks__/itineraries/bike-only.json");
@@ -52,6 +53,8 @@ interface StoryWrapperProps {
   alwaysCollapseAlerts: boolean;
 }
 
+const RouteDescriptionFooterWithWaitTimes = makeRouteDescriptionFooter();
+
 function OtpRRItineraryBodyWrapper({
   itinerary,
   showRouteFares,
@@ -66,6 +69,7 @@ function OtpRRItineraryBodyWrapper({
       LineColumnContent={OtpRRLineColumnContent}
       PlaceName={OtpRRPlaceName}
       RouteDescription={OtpRRRouteDescription}
+      RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
       showAgencyInfo
       showLegIcon
       showMapButtonColumn={false}

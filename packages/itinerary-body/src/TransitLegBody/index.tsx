@@ -142,8 +142,6 @@ class TransitLegBody extends Component<Props, State> {
       AlertToggleIcon = S.DefaultAlertToggleIcon,
       AlertBodyIcon,
       alwaysCollapseAlerts,
-      arrivalText,
-      arrivalTripId,
       fare,
       intl,
       leg,
@@ -237,15 +235,7 @@ class TransitLegBody extends Component<Props, State> {
               </S.LegClickableButton>
             </S.LegDescription>
           </S.LegClickable>
-          {RouteDescriptionFooter && (
-            <RouteDescriptionFooter
-              arrivalText={arrivalText}
-              arrivalTripId={arrivalTripId}
-              leg={leg}
-              LegIcon={LegIcon}
-              transitOperator={transitOperator}
-            />
-          )}
+          {RouteDescriptionFooter && <RouteDescriptionFooter leg={leg} />}
           <div
             // Creates a group of leg details for screenreaders after the initial leg description.
             aria-label={intl.formatMessage({
