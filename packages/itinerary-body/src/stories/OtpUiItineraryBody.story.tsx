@@ -1,11 +1,8 @@
 import React, { ReactElement } from "react";
-import { Leg } from "@opentripplanner/types";
-import { differenceInMinutes } from "date-fns";
 import { Bomb } from "@styled-icons/fa-solid/Bomb";
 import { Bolt } from "@styled-icons/fa-solid/Bolt";
 import styled from "styled-components";
-import { DefaultRouteDescriptionFooter } from "../defaults/route-description-footer";
-import { RouteDescriptionFooterProps } from "../types";
+import RouteDescriptionFooterWithWaitTimes from "../ItineraryBody/components";
 
 import ItineraryBody from "..";
 import {
@@ -35,17 +32,6 @@ const flexItinerary = require("../__mocks__/itineraries/flex-itinerary.json");
 
 const a11yOverrideParameters = {
   a11y: { config: { rules: [{ id: "color-contrast", reviewOnFail: true }] } }
-};
-
-const RouteDescriptionFooterWithWaitTimes = ({ leg }: { leg: Leg }) => {
-  const toTime = leg.to.arrival || 0;
-  const fromTime = leg.from.arrival || 0;
-  const waitMinutes = differenceInMinutes(new Date(toTime), new Date(fromTime));
-  const TypedRouteDescriptionFooter = DefaultRouteDescriptionFooter as React.FC<
-    RouteDescriptionFooterProps
-  >;
-
-  return <TypedRouteDescriptionFooter leg={leg} waitMinutes={waitMinutes} />;
 };
 
 export default {
