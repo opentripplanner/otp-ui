@@ -202,6 +202,8 @@ export type Alert = {
   alertDescriptionText?: string;
   alertUrl?: string;
   effectiveStartDate?: number;
+  /** Returned by OTP2 graphql queries, but not by OTP1 */
+  id?: string;
 };
 
 /**
@@ -269,6 +271,22 @@ type FlexPickupBookingInfo = {
   pickupMessage?: string;
 } & FlexBookingInfo;
 
+/** Basic transit route attributes */
+interface BasicRouteInfo {
+  color?: string;
+  id: string;
+  longName?: string;
+  shortName: string;
+  textColor?: string;
+  // TS TODO: route type enum
+  type?: number;
+}
+
+/** Transit route attributes from itinerary legs */
+export type LegRoute = BasicRouteInfo & {
+  alerts?: Alert[];
+};
+
 /**
  * Represents a leg in an itinerary of an OTP plan response. Each leg represents
  * a portion of the overall itinerary that is done until either reaching the
@@ -316,7 +334,7 @@ export type Leg = {
   rentedBike: boolean;
   rentedCar: boolean;
   rentedVehicle: boolean;
-  route?: string;
+  route?: string | LegRoute;
   routeColor?: string;
   routeId?: string;
   routeLongName?: string;
@@ -470,22 +488,16 @@ export type Agency = {
   phone?: string;
   fareUrl?: string;
 };
-export type Route = {
+export type Route = BasicRouteInfo & {
   agency: Agency;
   agencyId?: string | number;
   agencyName?: string | number;
-  shortName: string;
-  longName?: string;
-  mode?: string;
-  id: string;
-  // TS TODO: route type enum
-  type?: number;
-  color?: string;
-  textColor?: string;
-  routeBikesAllowed?: ZeroOrOne;
+  // TODO: Add support for enum values, see /packages/core-utils/src/otpSchema.json#L1289.
   bikesAllowed?: ZeroOrOne;
-  sortOrder: number;
   eligibilityRestricted?: ZeroOrOne;
+  mode?: string;
+  routeBikesAllowed?: ZeroOrOne;
+  sortOrder: number;
   sortOrderSet: boolean;
 };
 
@@ -699,6 +711,7 @@ export type CheckboxOptions = {
   default?: boolean;
   label: string;
   type: "CHECKBOX";
+  truthValue?: boolean | string | number;
   value?: boolean;
 };
 

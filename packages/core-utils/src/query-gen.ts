@@ -67,7 +67,7 @@ export function extractAdditionalModes(
     }
     if (cur.type === "DROPDOWN") {
       const transportMode = cur.options.find(o => o.value === cur.value)
-        .addTransportMode;
+        ?.addTransportMode;
       if (transportMode) {
         return [...prev, transportMode];
       }
@@ -228,12 +228,18 @@ export function generateOtp2Query(
       prev[cur.inverseKey] = cur.high - cur.value + cur.low;
     }
     prev[cur.key] = cur.value;
+
+    // If we assign a value on true, return the value (or null) instead of a boolean.
+    if (cur.type === "CHECKBOX" && cur.truthValue) {
+      prev[cur.key] = cur.value === true ? cur.truthValue : null;
+    }
     return prev;
   }, {}) as ModeSettingValues;
 
   const {
     bikeReluctance,
     carReluctance,
+    walkSpeed,
     walkReluctance,
     wheelchair
   } = modeSettingValues;
@@ -253,6 +259,7 @@ export function generateOtp2Query(
       time,
       toPlace: `${to.name}::${to.lat},${to.lon}}`,
       walkReluctance,
+      walkSpeed,
       wheelchair
     }
   };
