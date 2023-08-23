@@ -9,7 +9,7 @@ import ItineraryBody from "..";
 import DefaultLineColumnContent from "../defaults/line-column-content";
 import DefaultPlaceName from "../defaults/place-name";
 import DefaultRouteDescription from "../defaults/route-description";
-import DefaultRouteDescriptionFooter from "../defaults/route-description-footer";
+import { DefaultRouteDescriptionFooter } from "../defaults/route-description-footer";
 import DefaultTransitLegSummary from "../defaults/transit-leg-summary";
 import { StyledItineraryBody } from "../demos";
 import OtpRRStyledItineraryBody from "../otp-react-redux/itinerary-body";

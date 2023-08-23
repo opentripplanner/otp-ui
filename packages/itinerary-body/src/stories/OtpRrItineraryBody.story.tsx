@@ -1,6 +1,7 @@
-import { Itinerary } from "@opentripplanner/types";
+import { Itinerary, Leg } from "@opentripplanner/types";
 import React, { FunctionComponent, ReactElement } from "react";
 
+import { differenceInMinutes } from "date-fns";
 import ItineraryBody from "..";
 import {
   CustomTimeColumnContent,
@@ -10,11 +11,11 @@ import OtpRRLineColumnContent from "../otp-react-redux/line-column-content";
 import { PlaceName as OtpRRPlaceName } from "../otp-react-redux";
 import OtpRRRouteDescription from "../otp-react-redux/route-description";
 import { isRunningJest } from "../../../../.storybook/react-intl";
-import { TimeColumnContentProps } from "../types";
+import { RouteDescriptionFooterProps, TimeColumnContentProps } from "../types";
 
 import ItineraryBodyDefaultsWrapper from "./itinerary-body-defaults-wrapper";
 import LegIconWithA11y from "./LegIconWithA11y";
-import { makeRouteDescriptionFooter } from "../defaults/route-description-footer";
+import { DefaultRouteDescriptionFooter } from "../defaults/route-description-footer";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("../__mocks__/itineraries/bike-only.json");
@@ -53,7 +54,16 @@ interface StoryWrapperProps {
   alwaysCollapseAlerts: boolean;
 }
 
-const RouteDescriptionFooterWithWaitTimes = makeRouteDescriptionFooter();
+const RouteDescriptionFooterWithWaitTimes = ({ leg }: { leg: Leg }) => {
+  const toTime = leg?.to?.arrival || 0;
+  const fromTime = leg?.from?.arrival || 0;
+  const waitMinutes = differenceInMinutes(new Date(toTime), new Date(fromTime));
+  const TypedRouteDescriptionFooter = DefaultRouteDescriptionFooter as React.FC<
+    RouteDescriptionFooterProps
+  >;
+
+  return <TypedRouteDescriptionFooter waitMinutes={waitMinutes} />;
+};
 
 function OtpRRItineraryBodyWrapper({
   itinerary,

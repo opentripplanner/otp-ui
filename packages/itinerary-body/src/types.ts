@@ -22,7 +22,7 @@ export interface RouteDescriptionProps {
 
 export interface RouteDescriptionFooterProps {
   /* Contains details about the leg object */
-  leg: Leg;
+  leg?: Leg;
   /** Method for navigating to arrival vehicle if available */
   navigateToArrivalVehicle?: () => void;
   /** Number of minutes for the arrival time */

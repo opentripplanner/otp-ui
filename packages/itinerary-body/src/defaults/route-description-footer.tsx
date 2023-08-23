@@ -1,10 +1,10 @@
+/* eslint-disable import/prefer-default-export */
 import React, { ReactElement } from "react";
-import { differenceInMinutes } from "date-fns";
-import { Leg } from "@opentripplanner/types";
+import PropTypes from "prop-types";
 import * as S from "../styled";
 import { RouteDescriptionFooterProps } from "../types";
 
-export default function DefaultRouteDescriptionFooter({
+export function DefaultRouteDescriptionFooter({
   navigateToArrivalVehicle = () => null,
   waitMinutes
 }: RouteDescriptionFooterProps): ReactElement {
@@ -19,20 +19,11 @@ export default function DefaultRouteDescriptionFooter({
   );
 }
 
-export function makeRouteDescriptionFooter(): (props: {
-  leg: Leg;
-}) => JSX.Element {
-  const NewComponent = ({ leg }: { leg: Leg }) => {
-    const toTime = leg.to.arrival;
-    const fromTime = leg.from.arrival;
-    const waitMinutes = differenceInMinutes(
-      new Date(toTime),
-      new Date(fromTime)
-    );
-    return (
-      <DefaultRouteDescriptionFooter leg={leg} waitMinutes={waitMinutes} />
-    );
-  };
+DefaultRouteDescriptionFooter.propTypes = {
+  waitMinutes: PropTypes.number.isRequired,
+  navigateToArrivalVehicle: PropTypes.func
+};
 
-  return NewComponent;
-}
+DefaultRouteDescriptionFooter.defaultProps = {
+  navigateToArrivalVehicle: () => {}
+};
