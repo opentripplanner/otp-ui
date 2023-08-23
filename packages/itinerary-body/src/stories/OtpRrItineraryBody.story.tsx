@@ -55,14 +55,14 @@ interface StoryWrapperProps {
 }
 
 const RouteDescriptionFooterWithWaitTimes = ({ leg }: { leg: Leg }) => {
-  const toTime = leg?.to?.arrival || 0;
-  const fromTime = leg?.from?.arrival || 0;
+  const toTime = leg.to.arrival || 0;
+  const fromTime = leg.from.arrival || 0;
   const waitMinutes = differenceInMinutes(new Date(toTime), new Date(fromTime));
   const TypedRouteDescriptionFooter = DefaultRouteDescriptionFooter as React.FC<
     RouteDescriptionFooterProps
   >;
 
-  return <TypedRouteDescriptionFooter waitMinutes={waitMinutes} />;
+  return <TypedRouteDescriptionFooter leg={leg} waitMinutes={waitMinutes} />;
 };
 
 function OtpRRItineraryBodyWrapper({

@@ -183,7 +183,7 @@ class TransitLegBody extends Component<Props, State> {
       !(shouldCollapseDueToAlertCount || alwaysCollapseAlerts) || !leg.alerts;
     const expandAlerts = alertsExpanded || shouldOnlyShowAlertsExpanded;
     const fareForLeg = this.getFareForLeg(leg, fare);
-
+    console.log("jibbits", leg);
     return (
       <>
         {TransitLegSubheader && <TransitLegSubheader leg={leg} />}
