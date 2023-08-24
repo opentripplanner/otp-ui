@@ -379,6 +379,7 @@ const LocationField = ({
   const onClearButtonClick = () => {
     clearLocation({ locationType });
     setValue("");
+    setMessage(null);
     setGeocodedFeatures([]);
     inputRef.current.focus();
     handleTextInputClick();
@@ -399,10 +400,14 @@ const LocationField = ({
     const target =
       e.relatedTarget !== null ? e.relatedTarget : document.activeElement;
     if (!target || target.getAttribute("role") !== "option") {
-      setGeocodedFeatures([]);
+      // Hide the menu and messages, but:
+      // - don't remove features,
+      //   so that when the component gets focus again later, these features are shown
+      //   (unless the location prop changed, in which case the features will be cleared by othe code),
+      // - don't revert the input text to previous location, so that users don't have to re-enter their text
+      //   (unless the location prop changed, in which case the text will be updated by other code).
       setMenuVisible(false);
       setMessage(null);
-      setValue(getValueFromLocation());
     }
   };
 
@@ -469,6 +474,7 @@ const LocationField = ({
           if (locationSelected) locationSelected();
 
           // Clear selection & hide the menu
+          setMessage(null);
           setMenuVisible(false);
           setActiveIndex(null);
         } else {
@@ -535,6 +541,11 @@ const LocationField = ({
           // Add to the location search history. This is intended to
           // populate the sessionSearches array.
           addLocationSearch({ location: geocodedLocation });
+
+          // Clear messages and hide menu (copied code).
+          setMessage(null);
+          setMenuVisible(false);
+          setActiveIndex(null);
         });
     };
 
@@ -702,6 +713,10 @@ const LocationField = ({
         // Create the location selected handler
         const locationSelected = () => {
           setLocation(stopLocation, "STOP");
+          // Hide menu and messages (copied code).
+          setMessage(null);
+          setMenuVisible(false);
+          setActiveIndex(null);
         };
 
         // Add to the selection handler lookup (for use in onKeyDown)
@@ -742,6 +757,10 @@ const LocationField = ({
         // Create the location-selected handler
         const locationSelected = () => {
           setLocation(sessionLocation, "SESSION");
+          // Hide menu and messages (copied code)
+          setMessage(null);
+          setMenuVisible(false);
+          setActiveIndex(null);
         };
 
         // Add to the selection handler lookup (for use in onKeyDown)
