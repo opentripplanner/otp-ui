@@ -30,7 +30,7 @@ export function getSummaryMode(leg: Leg, intl: IntlShape): string {
         id: "otpUi.AccessLegBody.summaryMode.bikeshare"
       });
     case "CAR":
-      return leg.hailedCar
+      return leg.rideHailingEstimate
         ? intl.formatMessage({
             defaultMessage:
               defaultMessages["otpUi.AccessLegBody.summaryMode.carHail"],

@@ -22,7 +22,7 @@
     "@babel/preset-react": "^7.10",
     "@babel/preset-typescript": "^7.13.0",
     "@formatjs/cli": "^4.2.32",
-    "@graphql-eslint/eslint-plugin": "^3.12.0",
+    "@graphql-eslint/eslint-plugin": "^3.19.1",
     "@semantic-release/git": "^9.0.0",
     "@storybook/addon-a11y": "^6.4.19",
     "@storybook/addon-actions": "^6.4.19",
@@ -58,6 +58,7 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "7.14.3",
     "flat": "^5.0.2",
+    "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6",
     "husky": "^2.4.1",
     "identity-obj-proxy": "^3.0.0",
@@ -65,7 +66,6 @@
     "jest-haste-map": "^24.8.0",
     "jest-resolve": "^24.8.0",
     "jest-styled-components": "^7.0.5",
-    "jest-yaml-transform": "^0.2.0",
     "js-yaml": "^4.1.0",
     "json-loader": "^0.5.7",
     "lerna": "^3.18.4",
@@ -91,6 +91,7 @@
     "stylelint-processor-styled-components": "^1.8.0",
     "typescript": "^4.2.4",
     "webpack": "^4.33.0",
+    "yaml-jest": "^1.2.0",
     "yaml-loader": "^0.6.0",
     "yaml-sort": "^2.0.0"
   },
@@ -99,7 +100,8 @@
     "bootstrap": "lerna bootstrap --use-workspaces",
     "build:cjs": "lerna exec --parallel -- babel --extensions '.js,.ts,.tsx' --ignore **/*.story.js,**/*.story.ts,**/*.story.d.ts,**/*.story.tsx,**/*.spec.js,**/*.spec.ts,**/*.test.js,**/*.test.ts,**/__tests__/**,**/__unpublished__/** --root-mode upward --source-maps true src -d lib",
     "build:esm": "lerna exec --parallel -- cross-env BABEL_ENV=esm babel --extensions '.js,.ts,.tsx' --ignore **/*.story.js,**/*.story.ts,**/*.story.d.ts,**/*.story.tsx,**/*.spec.js,**/*.spec.ts,**/*.test.js,**/*.test.ts,**/__tests__/**,**/__unpublished__/** --root-mode upward --source-maps true src -d esm",
-    "check:i18n": "node packages/scripts/lib/run-validate-i18n.js packages/**/src packages/**/i18n",
+    "check:i18n-all": "node packages/scripts/lib/run-validate-i18n.js packages/**/src packages/**/i18n",
+    "check:i18n-en-fr": "node packages/scripts/lib/run-validate-i18n.js packages/**/src packages/**/i18n/en-US.yml packages/**/i18n/fr.yml",
     "prepublish": "yarn typescript && yarn build:cjs && yarn build:esm",
     "check-eslint-config": "eslint --print-config jestconfig.js | eslint-config-prettier-check",
     "coverage": "jest --coverage",
@@ -107,94 +109,125 @@
     "dev": "start-storybook -s ./public -p 5555",
     "predev": "yarn",
     "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-pattern esm --ignore-pattern lib --ignore-pattern node_modules --ignore-pattern storybook-static --quiet",
+    "lint:graphql": "eslint . --ext .graphql --ignore-pattern esm --ignore-pattern lib --ignore-pattern node_modules --ignore-pattern storybook-static",
     "lint:fixjs": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-pattern esm --ignore-pattern lib --ignore-pattern node_modules --ignore-pattern storybook-static --fix",
     "lint:styles": "stylelint \"packages/**/!(*.d).{j,t}s{,x}\"",
-    "lint": "yarn lint:js && yarn lint:styles",
+    "lint": "yarn lint:js && yarn lint:styles && yarn lint:graphql",
     "prettier": "prettier --write \"**/*.{json,md,yml}\"",
     "semantic-release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo",
-    "test": "yarn lint:js && yarn lint:styles && yarn check:i18n && yarn typescript && yarn unit && yarn a11y-test",
+    "test": "yarn lint:js && yarn lint:styles && yarn check:i18n-en-fr && yarn typescript && yarn unit && yarn a11y-test",
     "typescript": "lerna run tsc",
-    "unit": "jest --testPathIgnorePatterns a11y",
+    "unit": "jest --testPathIgnorePatterns a11y .d.ts",
     "update-internal-dependencies": "node scripts/update-internal-dependencies.js"
   },
   "eslintConfig": {
-    "extends": [
-      "airbnb-typescript",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:react/recommended",
-      "plugin:prettier/recommended",
-      "prettier/react"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-      "project": "./tsconfig.eslint.json"
-    },
-    "plugins": [
-      "@typescript-eslint"
-    ],
-    "rules": {
-      "class-methods-use-this": 0,
-      "no-alert": 0,
-      "no-nested-ternary": 0,
-      "no-param-reassign": 0,
-      "no-plusplus": 0,
-      "no-use-before-define": "off",
-      "@typescript-eslint/comma-dangle": "off",
-      "@typescript-eslint/func-call-spacing": "off",
-      "@typescript-eslint/indent": "off",
-      "@typescript-eslint/no-empty-function": 0,
-      "@typescript-eslint/no-unused-expressions": [
-        "error",
-        {
-          "allowShortCircuit": true,
-          "allowTernary": true
-        }
-      ],
-      "@typescript-eslint/no-unused-vars": "error",
-      "@typescript-eslint/no-use-before-define": "error",
-      "@typescript-eslint/no-var-requires": 0,
-      "@typescript-eslint/quotes": [
-        "error",
-        "double",
-        {
-          "avoidEscape": true,
-          "allowTemplateLiterals": true
-        }
-      ],
-      "@typescript-eslint/semi": "off",
-      "@typescript-eslint/space-before-function-paren": "off",
-      "prefer-destructuring": 0,
-      "prettier/prettier": [
-        "error"
-      ],
-      "react/no-array-index-key": 0,
-      "react/no-string-refs": 0,
-      "react/jsx-filename-extension": [
-        1,
-        {
-          "extensions": [
-            ".js",
-            ".jsx",
-            ".tsx"
-          ]
-        }
-      ],
-      "react/prop-types": [
-        2,
-        {
-          "ignore": [
-            "style"
-          ]
-        }
-      ],
-      "node/no-extraneous-import": "off",
-      "import/no-extraneous-dependencies": "off",
-      "import/no-unresolved": "off"
-    },
     "env": {
       "browser": true,
       "jest": true
-    }
+    },
+    "overrides": [
+      {
+        "files": "*",
+        "excludedFiles": "*.graphql",
+        "extends": [
+          "airbnb-typescript",
+          "plugin:@typescript-eslint/recommended",
+          "plugin:react/recommended",
+          "plugin:prettier/recommended",
+          "prettier/react"
+        ],
+        "parser": "@typescript-eslint/parser",
+        "parserOptions": {
+          "project": "./tsconfig.eslint.json"
+        },
+        "plugins": [
+          "@typescript-eslint"
+        ],
+        "rules": {
+          "class-methods-use-this": 0,
+          "no-alert": 0,
+          "no-nested-ternary": 0,
+          "no-param-reassign": 0,
+          "no-plusplus": 0,
+          "no-use-before-define": "off",
+          "@typescript-eslint/comma-dangle": "off",
+          "@typescript-eslint/func-call-spacing": "off",
+          "@typescript-eslint/indent": "off",
+          "@typescript-eslint/no-empty-function": 0,
+          "@typescript-eslint/no-unused-expressions": [
+            "error",
+            {
+              "allowShortCircuit": true,
+              "allowTernary": true
+            }
+          ],
+          "@typescript-eslint/no-unused-vars": "error",
+          "@typescript-eslint/no-use-before-define": "error",
+          "@typescript-eslint/no-var-requires": 0,
+          "@typescript-eslint/quotes": [
+            "error",
+            "double",
+            {
+              "avoidEscape": true,
+              "allowTemplateLiterals": true
+            }
+          ],
+          "@typescript-eslint/semi": "off",
+          "@typescript-eslint/space-before-function-paren": "off",
+          "prefer-destructuring": 0,
+          "prettier/prettier": [
+            "error"
+          ],
+          "react/no-array-index-key": 0,
+          "react/no-string-refs": 0,
+          "react/jsx-filename-extension": [
+            1,
+            {
+              "extensions": [
+                ".js",
+                ".jsx",
+                ".tsx"
+              ]
+            }
+          ],
+          "react/prop-types": [
+            2,
+            {
+              "ignore": [
+                "style"
+              ]
+            }
+          ],
+          "node/no-extraneous-import": "off",
+          "import/no-extraneous-dependencies": "off",
+          "import/no-unresolved": "off"
+        }
+      },
+      {
+        "parserOptions": {
+          "schema": "./packages/core-utils/src/otpSchema.json",
+          "operations": "./packages/**/*.graphql"
+        },
+        "files": [
+          "*.graphql"
+        ],
+        "rules": {
+          "@graphql-eslint/alphabetize": [
+            "error",
+            {
+              "selections": [
+                "OperationDefinition"
+              ],
+              "arguments": [
+                "Field",
+                "FieldDefinition"
+              ]
+            }
+          ]
+        },
+        "extends": "plugin:@graphql-eslint/operations-recommended"
+      }
+    ]
   },
   "stylelint": {
     "processors": [
@@ -225,7 +258,12 @@
       "prettier --write",
       "git add"
     ],
-    "*.{yml,yaml}": [
+    "*.graphql": [
+      "prettier --write",
+      "yarn lint:graphql --fix",
+      "git add"
+    ],
+    "!(.github/**).{yml,yaml}": [
       "prettier --write",
       "yaml-sort --quotingStyle double --input",
       "git add"

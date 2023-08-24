@@ -55,7 +55,7 @@ export const LeafletStyleMarker = styled.div<LeafletStyleMarkerProps>`
 export const LayerSelector = styled.aside`
   display: flex;
   justify-content: end;
-  margin: 1em;
+  margin: 10px;
   position: relative;
   right: 0;
   top: 0;
@@ -74,14 +74,11 @@ export const LayerSelector = styled.aside`
 
   .layers-list {
     background: rgba(255, 255, 255, 0.95);
-    border-radius: 0.5em;
-    box-shadow: 0px -1px 15px -3px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
     list-style-type: none;
     padding: 1em;
     position: absolute;
     right: 0;
+    z-index: 1000;
 
     label {
       display: block;
@@ -102,11 +99,16 @@ export const LayerSelector = styled.aside`
 
     &:hover,
     &.fake-mobile-hover {
+      box-shadow: 0px -1px 15px -3px rgba(0, 0, 0, 0.1);
       label {
-        display: block;
         height: unset;
         overflow: unset;
         width: unset;
+      }
+      li:first-child {
+        /* Prevent most accidental toggling of the first selectable layer on touch screens.
+           Toggling is still possible if you touch the left-most area of the globe "button". */
+        margin-right: 2em;
       }
       &::after {
         display: none;

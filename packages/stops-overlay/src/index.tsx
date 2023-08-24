@@ -5,8 +5,13 @@ import { Layer, Source, useMap } from "react-map-gl";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 
 import StopPopup from "@opentripplanner/map-popup";
+import { isGeoJsonFlex } from "./utils";
 
 type Props = {
+  /**
+   * Custom stop color passed from user config
+   */
+  color?: string;
   /**
    * An optional id to override the active stop with
    */
@@ -45,6 +50,7 @@ const StopsOverlay = (props: Props): JSX.Element => {
   const { current: map } = useMap();
   const {
     activeStop,
+    color,
     minZoom,
     refreshStops,
     setLocation,
@@ -110,7 +116,7 @@ const StopsOverlay = (props: Props): JSX.Element => {
   }, [clickedStop]);
 
   const flexStops = useMemo(
-    () => stops.filter(stop => stop?.geometries?.geoJson?.type === "Polygon"),
+    () => stops.filter(stop => isGeoJsonFlex(stop?.geometries?.geoJson)),
     [stops]
   );
 
@@ -121,7 +127,7 @@ const StopsOverlay = (props: Props): JSX.Element => {
         type: "Feature",
         properties: {
           ...stop,
-          flex: stop?.geometries?.geoJson?.type === "Polygon"
+          flex: isGeoJsonFlex(stop?.geometries?.geoJson)
         },
         geometry: { type: "Point", coordinates: [stop.lon, stop.lat] }
       }))
@@ -143,9 +149,10 @@ const StopsOverlay = (props: Props): JSX.Element => {
           id="stops"
           minzoom={minZoom || 10}
           paint={{
-            "circle-color": "#fff",
+            "circle-color": color || "#fff",
             "circle-opacity": 0.9,
-            "circle-stroke-color": "#333",
+            // TODO: Use tinycolor to generate outline with appropriate contrast.
+            "circle-stroke-color": color ? "#fff" : "#333",
             "circle-stroke-width": 2
           }}
           type="circle"

@@ -2,12 +2,14 @@ import {
   calculateTncFares,
   getCompanyFromLeg,
   getDisplayedStopId,
-  getTransitFare,
+  getItineraryCost,
+  getLegCost,
   isTransit
 } from "../itinerary";
 
 const bikeRentalItinerary = require("./__mocks__/bike-rental-itinerary.json");
 const tncItinerary = require("./__mocks__/tnc-itinerary.json");
+const fareProductItinerary = require("./__mocks__/fare-products-itinerary.json");
 
 const basePlace = {
   lat: 0,
@@ -31,31 +33,7 @@ describe("util > itinerary", () => {
 
     it("should return company for TNC leg", () => {
       const company = getCompanyFromLeg(tncItinerary.legs[0]);
-      expect(company).toEqual("UBER");
-    });
-  });
-
-  describe("getTransitFare", () => {
-    it("should return defaults with missing fare", () => {
-      const { transitFare } = getTransitFare(null);
-      // transit fare value should be zero
-      expect(transitFare).toMatchSnapshot();
-    });
-
-    it("should work with valid fare component", () => {
-      const fareComponent = {
-        currency: {
-          currency: "USD",
-          defaultFractionDigits: 2,
-          currencyCode: "USD",
-          symbol: "$"
-        },
-        cents: 575
-      };
-      const { currencyCode, transitFare } = getTransitFare(fareComponent);
-      expect(currencyCode).toEqual(fareComponent.currency.currencyCode);
-      // Snapshot tests
-      expect(transitFare).toMatchSnapshot();
+      expect(company).toEqual("uber");
     });
   });
 
@@ -63,8 +41,8 @@ describe("util > itinerary", () => {
     it("should return the correct amounts and currency for an itinerary with TNC", () => {
       const fareResult = calculateTncFares(tncItinerary, true);
       expect(fareResult.currencyCode).toEqual("USD");
-      expect(fareResult.maxTNCFare).toEqual(19);
-      expect(fareResult.minTNCFare).toEqual(17);
+      expect(fareResult.maxTNCFare).toEqual(38);
+      expect(fareResult.minTNCFare).toEqual(34);
     });
   });
 
@@ -109,6 +87,97 @@ describe("util > itinerary", () => {
     });
     it("should return null if stopId is null (and no stopCode is provided)", () => {
       expect(getDisplayedStopId(basePlace)).toBeFalsy();
+    });
+  });
+
+  describe("getLegCost", () => {
+    const leg = {
+      fareProducts: [
+        {
+          id: "testId",
+          product: {
+            medium: { id: "cash" },
+            name: "rideCost",
+            price: { amount: 200, currency: "USD" },
+            riderCategory: { id: "regular" }
+          }
+        },
+        {
+          id: "testId",
+          product: {
+            medium: { id: "cash" },
+            name: "transfer",
+            price: { amount: 50, currency: "USD" },
+            riderCategory: { id: "regular" }
+          }
+        }
+      ]
+    };
+    it("should return the total cost for a leg", () => {
+      const result = getLegCost(leg, "cash", "regular");
+      expect(result.price).toEqual({ amount: 200, currency: "USD" });
+    });
+
+    it("should return the transfer discount amount if a transfer was used", () => {
+      const result = getLegCost(leg, "cash", "regular");
+      expect(result.price).toEqual({ amount: 200, currency: "USD" });
+      expect(result.transferAmount).toEqual({ amount: 50, currency: "USD" });
+    });
+
+    it("should return undefined if no fare products exist on the leg", () => {
+      const emptyleg = {};
+      const result = getLegCost(emptyleg, "cash", "regular");
+      expect(result.price).toBeUndefined();
+    });
+    it("should return undefined if the keys are invalid", () => {
+      const result = getLegCost(leg, "invalidkey", "invalidkey");
+      expect(result.price).toBeUndefined();
+    });
+  });
+
+  describe("getItineraryCost", () => {
+    it("should calculate the total cost of an itinerary", () => {
+      const result = getItineraryCost(
+        fareProductItinerary.legs,
+        "orca:cash",
+        "orca:regular"
+      );
+      expect(result.amount).toEqual(5.75);
+      expect(result.currency).toEqual({
+        code: "USD",
+        digits: 2
+      });
+    });
+    it("should calculate the total cost of an itinerary will null ids", () => {
+      const result = getItineraryCost(fareProductItinerary.legs, null, null);
+      expect(result.amount).toEqual(2.75);
+      expect(result.currency).toEqual({
+        code: "USD",
+        digits: 2
+      });
+    });
+    it("should return undefined when the keys are invalid", () => {
+      const result = getItineraryCost(
+        fareProductItinerary.legs,
+        "invalidkey",
+        "invalidkey"
+      );
+      expect(result).toBeUndefined();
+    });
+    it("should exclude duplicated fareProduct uses based on ID", () => {
+      const legsWithDuplicatedProducts = [...fareProductItinerary.legs];
+      legsWithDuplicatedProducts[3].fareProducts =
+        legsWithDuplicatedProducts[1].fareProducts;
+      const result = getItineraryCost(
+        fareProductItinerary.legs,
+        "orca:cash",
+        "orca:regular"
+      );
+      expect(result.amount).toEqual(2.75);
+      expect(result.currency).toEqual({
+        code: "USD",
+        digits: 2
+      });
     });
   });
 });

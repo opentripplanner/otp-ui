@@ -15,7 +15,7 @@ import {
   Train,
 } from "styled-icons/fa-solid";
 
-import { GeocodedFeature, Stop, UserLocation } from "@opentripplanner/types";
+import { GeocodedFeature, Stop } from "@opentripplanner/types";
 import LocationField from "..";
 import {
   badGeocoderConfig,
@@ -26,12 +26,13 @@ import {
   onLocationSelected,
   selectedLocation,
   slowGeocoderConfig,
-  unreachableGeocoderConfig
+  unreachableGeocoderConfig,
+  userLocationsAndRecentPlaces
 } from "./common";
 import * as LocationFieldClasses from "../styled";
 
 // eslint-disable-next-line prettier/prettier
-import type { LocationType } from "../types"
+import type { LocationType, UserLocationIconProps } from "../types"
 
 const nearbyStops = ["1", "2"];
 const sessionSearches = [
@@ -61,28 +62,6 @@ const stopsIndex: { [key: string]: Stop } = {
     routes: [{ shortName: "2" }]
   }
 };
-const userLocationsAndRecentPlaces: UserLocation[] = [
-  {
-    icon: "home",
-    lat: 45.89,
-    lon: 67.12,
-    name: "456 Suburb St",
-    type: "home"
-  },
-  {
-    icon: "work",
-    lat: 54.32,
-    lon: 43.21,
-    name: "789 Busy St",
-    type: "work"
-  },
-  {
-    lat: 12.34,
-    lon: 34.45,
-    name: "123 Main St",
-    type: "recent"
-  }
-];
 
 function GeocodedOptionIconComponent({ feature }: { feature: GeocodedFeature }) {
   if (feature.properties.layer === "stops") return <MapSigns size={13} />;
@@ -96,7 +75,7 @@ function LocationIconComponent({ locationType }: { locationType: LocationType })
   return <PlaneArrival size={13} />;
 }
 
-function UserLocationIconComponent({ userLocation }: { userLocation: UserLocation }) {
+function UserLocationIconComponent({ userLocation }: UserLocationIconProps) {
   if (userLocation.icon === "work") return <Building size={13} />;
   return <Star size={13} />;
 }

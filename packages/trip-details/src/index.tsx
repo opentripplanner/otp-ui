@@ -1,5 +1,5 @@
-import flatten from "flat";
 import coreUtils from "@opentripplanner/core-utils";
+import { FareProductSelector } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage, FormattedNumber } from "react-intl";
 import { CalendarAlt } from "@styled-icons/fa-solid/CalendarAlt";
@@ -7,17 +7,13 @@ import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
 import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
 import { Leaf } from "@styled-icons/fa-solid/Leaf";
 import { Route } from "@styled-icons/fa-solid/Route";
-
+import { flatten } from "flat";
 import * as S from "./styled";
 import TripDetail from "./trip-detail";
 import FareLegTable from "./fare-table";
 import { boldText, renderFare } from "./utils";
 
-import {
-  CaloriesDetailsProps,
-  TransitFareProps,
-  TripDetailsProps
-} from "./types";
+import { TimeActiveDetailsProps, TripDetailsProps } from "./types";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
@@ -27,21 +23,6 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 // - the yaml loader for webpack returns a nested object,
 // - the yaml loader for jest returns messages with flattened ids.
 const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
-
-/**
- * Helper function to specify the link to dietary table.
- */
-function dietaryLink(contents: ReactElement): ReactElement {
-  return (
-    <a
-      href="https://health.gov/dietaryguidelines/dga2005/document/html/chapter3.htm#table4"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      {contents}
-    </a>
-  );
-}
 
 function CO2DescriptionLink(contents: ReactElement): ReactElement {
   return (
@@ -54,187 +35,191 @@ function CO2DescriptionLink(contents: ReactElement): ReactElement {
     </a>
   );
 }
-
 /**
- * Default rendering if no component is provided for the CaloriesDetails
+ * Default rendering if no component is provided for the TimeActiveDetails
  * slot in the TripDetails component.
  */
-function DefaultCaloriesDetails({
-  bikeSeconds,
-  calories,
-  walkSeconds
-}: CaloriesDetailsProps): ReactElement {
+function DefaultTimeActiveDetails({
+  bikeMinutes,
+  walkMinutes
+}: TimeActiveDetailsProps): ReactElement {
   return (
     <FormattedMessage
-      defaultMessage={defaultMessages["otpUi.TripDetails.caloriesDescription"]}
-      description="Text describing how the calories relate to the walking and biking duration of a trip."
-      id="otpUi.TripDetails.caloriesDescription"
+      defaultMessage={
+        defaultMessages["otpUi.TripDetails.timeActiveDescription"]
+      }
+      description="Text describing the walking and biking durations of a trip."
+      id="otpUi.TripDetails.timeActiveDescription"
       values={{
-        bikeMinutes: Math.round(bikeSeconds / 60),
-        calories: Math.round(calories),
-        dietaryLink,
+        bikeMinutes,
         strong: boldText,
-        walkMinutes: Math.round(walkSeconds / 60)
+        walkMinutes
       }}
     />
   );
 }
 
 /**
- * Helper component that renders a transit fare entry.
- */
-const TransitFare = ({
-  fareKey,
-  fareNameFallback,
-  fareKeyNameMap,
-  transitFares
-}: TransitFareProps): ReactElement => {
-  const currentFare = transitFares[fareKey];
-
-  // TODO: Is this needed? Every implementation of TransitFare does a check for currentFare's existence, although not the cents field
-  if (typeof currentFare?.cents !== "number") {
-    return (
-      <FormattedMessage
-        defaultMessage={defaultMessages["otpUi.TripDetails.transitFareUnknown"]}
-        description="Text showing that no fare information is present."
-        id="otpUi.TripDetails.transitFareUnknown"
-      />
-    );
-  }
-
-  return (
-    <span>
-      <FormattedMessage
-        defaultMessage={defaultMessages["otpUi.TripDetails.transitFareEntry"]}
-        description="Text showing the price of tickets on public transportation."
-        id="otpUi.TripDetails.transitFareEntry"
-        values={{
-          name: fareKeyNameMap[fareKey] || fareNameFallback || fareKey,
-          strong: boldText,
-          value: renderFare(
-            currentFare?.currency?.currencyCode || "USD",
-            currentFare.cents / 100
-          )
-        }}
-      />
-    </span>
-  );
-};
-
-/**
- * Renders trip details such as departure instructions, fare amount, and calories spent.
+ * Renders trip details such as departure instructions, fare amount, and minutes active.
  */
 export function TripDetails({
-  CaloriesDetails = DefaultCaloriesDetails,
   className = "",
-  defaultFareKey = "regular",
-  displayCalories = true,
+  co2Config,
+  defaultFareType,
   DepartureDetails = null,
+  displayTimeActive = true,
   FareDetails = null,
   fareDetailsLayout,
   fareKeyNameMap = {},
   itinerary,
-  co2Config
+  TimeActiveDetails = DefaultTimeActiveDetails
 }: TripDetailsProps): ReactElement {
   // process the transit fare
   const fareResult = coreUtils.itinerary.calculateTncFares(itinerary);
   const { currencyCode, maxTNCFare, minTNCFare } = fareResult;
-  const transitFares = itinerary?.fare?.fare;
 
-  let companies = "";
-  itinerary.legs.forEach(leg => {
-    if (leg.tncData) {
-      companies = leg.tncData.company;
-    }
-  });
+  const { companies, fareTypes } = itinerary.legs.reduce<{
+    companies: string;
+    fareTypes: FareProductSelector[];
+  }>(
+    (prev, leg) => {
+      if (leg.rideHailingEstimate) {
+        prev.companies = leg.rideHailingEstimate.provider.id;
+      }
+
+      if (leg.fareProducts) {
+        leg.fareProducts.forEach(fp => {
+          const mediumId = fp.product.medium?.id;
+          const riderCategoryId = fp.product.riderCategory?.id;
+          if (
+            !prev.fareTypes.find(
+              ft =>
+                ft.mediumId === mediumId &&
+                ft.riderCategoryId === riderCategoryId
+            )
+          ) {
+            prev.fareTypes.push({ mediumId, riderCategoryId });
+          }
+        });
+      }
+      return prev;
+    },
+    { companies: "", fareTypes: [] }
+  );
+
   let fare;
-
-  const fareKeys = transitFares && Object.keys(transitFares).sort();
-
-  if (transitFares && fareKeys.length > 0) {
-    let defaultFare = defaultFareKey;
-    if (!transitFares[defaultFareKey]) {
-      defaultFare = "regular";
-    }
-
+  if (fareTypes.length > 0 && defaultFareType) {
+    const defaultFareTotal = coreUtils.itinerary.getItineraryCost(
+      itinerary.legs,
+      defaultFareType.mediumId,
+      defaultFareType.riderCategoryId
+    );
     // Depending on if there are additional fares to display either render a <span> or a <details>
     const TransitFareWrapper =
-      transitFares && fareKeys.length > 1 ? S.TransitFare : S.TransitFareSingle;
+      fareTypes.length > 1 ? S.TransitFare : S.TransitFareSingle;
 
-    fare = transitFares?.[defaultFare] && (
+    const fareNameFallback = (
+      <FormattedMessage
+        defaultMessage={defaultMessages["otpUi.TripDetails.transitFare"]}
+        description="Text showing the price of tickets on public transportation."
+        id="otpUi.TripDetails.transitFare"
+      />
+    );
+
+    fare = defaultFareTotal?.amount && (
       <S.Fare>
         <TransitFareWrapper>
-          <summary style={{ display: fareKeys.length > 1 ? "list-item" : "" }}>
-            <TransitFare
-              fareNameFallback={
-                <FormattedMessage
-                  defaultMessage={
-                    defaultMessages["otpUi.TripDetails.transitFare"]
-                  }
-                  description="Text showing the price of tickets on public transportation."
-                  id="otpUi.TripDetails.transitFare"
-                />
+          <summary style={{ display: fareTypes.length > 1 ? "list-item" : "" }}>
+            <FormattedMessage
+              defaultMessage={
+                defaultMessages["otpUi.TripDetails.transitFareEntry"]
               }
-              fareKey={defaultFare}
-              fareKeyNameMap={fareKeyNameMap}
-              transitFares={transitFares}
+              description="Text showing the price of tickets on public transportation."
+              id="otpUi.TripDetails.transitFareEntry"
+              values={{
+                name:
+                  fareKeyNameMap[defaultFareType.headerKey] || fareNameFallback,
+                strong: boldText,
+                value: renderFare(
+                  defaultFareTotal.currency?.code || "USD",
+                  defaultFareTotal?.amount
+                )
+              }}
             />
           </summary>
           {fareDetailsLayout ? (
             // Show full ƒare details by leg
-            <FareLegTable layout={fareDetailsLayout} itinerary={itinerary} />
+            <FareLegTable layout={fareDetailsLayout} legs={itinerary.legs} />
           ) : (
             // Just show the fares for each payment type
-            fareKeys.map(fareKey => {
+            fareTypes.map(fareType => {
               // Don't show the default fare twice!
-              if (fareKey === defaultFare) {
+              if (fareType) {
                 return null;
               }
               return (
-                <TransitFare
-                  fareKey={fareKey}
-                  fareKeyNameMap={fareKeyNameMap}
-                  key={fareKey}
-                  transitFares={transitFares}
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages["otpUi.TripDetails.transitFareEntry"]
+                  }
+                  description="Text showing the price of tickets on public transportation."
+                  id="otpUi.TripDetails.transitFareEntry"
+                  key={Object.values(fareType).join("-")}
+                  values={{
+                    name:
+                      fareKeyNameMap[defaultFareType.headerKey] ||
+                      fareNameFallback,
+                    strong: boldText,
+                    value: renderFare(
+                      defaultFareTotal.currency?.code || "USD",
+                      defaultFareTotal?.amount /
+                        defaultFareTotal?.currency?.digits
+                    )
+                  }}
                 />
               );
             })
           )}
         </TransitFareWrapper>
-        {minTNCFare !== 0 && (
-          <S.TNCFare>
-            <br />
-            <FormattedMessage
-              defaultMessage={defaultMessages["otpUi.TripDetails.tncFare"]}
-              description="Text showing the price paid to transportation network companies."
-              id="otpUi.TripDetails.tncFare"
-              values={{
-                companies: (
-                  // S.TNCFareCompanies capitalizes the TNC company ID (e.g. "COMPANY")
-                  // after it is converted to lowercase, so it renders as "Company".
-                  <S.TNCFareCompanies>
-                    {companies.toLowerCase()}
-                  </S.TNCFareCompanies>
-                ),
-                maxTNCFare: renderFare(currencyCode, maxTNCFare),
-                minTNCFare: renderFare(currencyCode, minTNCFare),
-                strong: boldText
-              }}
-            />
-          </S.TNCFare>
-        )}
       </S.Fare>
     );
   }
+  const tncFare = minTNCFare !== 0 && (
+    <S.Fare>
+      <S.TNCFare>
+        <FormattedMessage
+          defaultMessage={defaultMessages["otpUi.TripDetails.tncFare"]}
+          description="Text showing the price paid to transportation network companies."
+          id="otpUi.TripDetails.tncFare"
+          values={{
+            companies: (
+              // S.TNCFareCompanies capitalizes the TNC company ID (e.g. "COMPANY")
+              // after it is converted to lowercase, so it renders as "Company".
+              <S.TNCFareCompanies>{companies.toLowerCase()}</S.TNCFareCompanies>
+            ),
+            maxTNCFare: renderFare(currencyCode, maxTNCFare),
+            minTNCFare: renderFare(currencyCode, minTNCFare),
+            strong: boldText
+          }}
+        />
+      </S.TNCFare>
+    </S.Fare>
+  );
 
   const departureDate = new Date(itinerary.startTime);
 
-  // Compute calories burned.
-  const {
-    bikeDuration,
-    caloriesBurned,
-    walkDuration
-  } = coreUtils.itinerary.calculatePhysicalActivity(itinerary);
+  // Compute total time spent active.
+
+  // TODO: separate into two reducers
+  let walkDurationSeconds = 0;
+  let bikeDurationSeconds = 0;
+  itinerary.legs.forEach(leg => {
+    if (leg.mode.startsWith("WALK")) walkDurationSeconds += leg.duration;
+    if (leg.mode.startsWith("BICYCLE")) bikeDurationSeconds += leg.duration;
+  });
+  const bikeMinutes = Math.round(bikeDurationSeconds / 60);
+  const walkMinutes = Math.round(walkDurationSeconds / 60);
+  const minutesActive = bikeMinutes + walkMinutes;
 
   // Calculate CO₂ if it's not provided by the itinerary
   const co2 =
@@ -292,15 +277,15 @@ export function TripDetails({
             </S.Timing>
           }
         />
-        {fare && (
+        {!!fare && (
           <TripDetail
             // Any custom description for the transit fare needs to be handled by the slot.
             description={
               FareDetails && (
                 <FareDetails
+                  legs={itinerary.legs}
                   maxTNCFare={maxTNCFare}
                   minTNCFare={minTNCFare}
-                  transitFares={transitFares}
                 />
               )
             }
@@ -308,28 +293,43 @@ export function TripDetails({
             summary={fare}
           />
         )}
-        {displayCalories && caloriesBurned > 0 && (
+        {tncFare && (
+          <TripDetail
+            // Any custom description for the transit fare needs to be handled by the slot.
+            description={
+              FareDetails && (
+                <FareDetails
+                  legs={itinerary.legs}
+                  maxTNCFare={maxTNCFare}
+                  minTNCFare={minTNCFare}
+                />
+              )
+            }
+            icon={<MoneyBillAlt size={17} />}
+            summary={tncFare}
+          />
+        )}
+        {displayTimeActive && minutesActive > 0 && (
           <TripDetail
             icon={<Heartbeat size={17} />}
             summary={
-              <S.CaloriesSummary>
-                <FormattedMessage
-                  defaultMessage={defaultMessages["otpUi.TripDetails.calories"]}
-                  description="Text showing the number of calories for the walking and biking legs of a trip."
-                  id="otpUi.TripDetails.calories"
-                  values={{
-                    calories: caloriesBurned,
-                    strong: boldText
-                  }}
-                />
-              </S.CaloriesSummary>
+              <FormattedMessage
+                defaultMessage={
+                  defaultMessages["otpUi.TripDetails.minutesActive"]
+                }
+                description="Text showing the number of minutes spent walking or biking throughout trip."
+                id="otpUi.TripDetails.minutesActive"
+                values={{
+                  minutes: minutesActive,
+                  strong: boldText
+                }}
+              />
             }
             description={
-              CaloriesDetails && (
-                <CaloriesDetails
-                  bikeSeconds={bikeDuration}
-                  calories={caloriesBurned}
-                  walkSeconds={walkDuration}
+              TimeActiveDetails && (
+                <TimeActiveDetails
+                  bikeMinutes={bikeMinutes}
+                  walkMinutes={walkMinutes}
                 />
               )
             }

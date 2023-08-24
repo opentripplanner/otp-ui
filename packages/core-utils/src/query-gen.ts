@@ -6,13 +6,33 @@ import {
   TransportMode
 } from "@opentripplanner/types";
 
-import PlanQuery from "./planQuery.graphql";
+import DefaultPlanQuery from "./planQuery.graphql";
+
+type InputBanned = {
+  routes?: string;
+  agencies?: string;
+  trips?: string;
+  stops?: string;
+  stopsHard?: string;
+};
+
+type InputPreferred = {
+  routes?: string;
+  agencies?: string;
+  unpreferredCost?: string;
+};
 
 type OTPQueryParams = {
+  arriveBy: boolean;
+  date?: string;
   from: LonLatOutput & { name?: string };
   modes: TransportMode[];
   modeSettings: ModeSetting[];
+  time?: string;
+  numItineraries?: number;
   to: LonLatOutput & { name?: string };
+  banned?: InputBanned;
+  preferred?: InputPreferred;
 };
 
 type GraphQLQuery = {
@@ -38,12 +58,16 @@ export function extractAdditionalModes(
     }
 
     // In checkboxes, mode must be enabled and have a transport mode in it
-    if (cur.type === "CHECKBOX" && cur.addTransportMode && cur.value) {
+    if (
+      (cur.type === "CHECKBOX" || cur.type === "SUBMODE") &&
+      cur.addTransportMode &&
+      cur.value
+    ) {
       return [...prev, cur.addTransportMode];
     }
     if (cur.type === "DROPDOWN") {
       const transportMode = cur.options.find(o => o.value === cur.value)
-        .addTransportMode;
+        ?.addTransportMode;
       if (transportMode) {
         return [...prev, transportMode];
       }
@@ -103,7 +127,7 @@ const VALID_COMBOS = [
   ["TRANSIT", "CAR"]
 ];
 
-const BANNED_TOGETHER = ["SCOOTER", "BICYCLE"];
+const BANNED_TOGETHER = ["SCOOTER", "BICYCLE", "CAR"];
 
 export const TRANSIT_SUBMODES = Object.keys(SIMPLIFICATIONS).filter(
   mode => SIMPLIFICATIONS[mode] === "TRANSIT" && mode !== "TRANSIT"
@@ -144,7 +168,9 @@ function isCombinationValid(
   }
 
   // OTP doesn't support multiple non-walk modes
-  if (BANNED_TOGETHER.every(m => combo.find(c => c.mode === m))) return false;
+  if (BANNED_TOGETHER.filter(m => combo.find(c => c.mode === m)).length > 1) {
+    return false;
+  }
 
   return !!VALID_COMBOS.find(
     vc =>
@@ -175,34 +201,65 @@ export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
     .map(combo => ({ ...params, modes: combo }));
 }
 
-export function generateOtp2Query({
-  from,
-  modeSettings,
-  modes,
-  to
-}: OTPQueryParams): GraphQLQuery {
+/**
+ * Generates a query for OTP GraphQL API based on parameters.
+ * @param param0 OTP2 Parameters for the query
+ * @param planQuery Override the default query for OTP
+ * @returns A fully formed query+variables ready to be sent to GraphQL backend
+ */
+export function generateOtp2Query(
+  {
+    arriveBy,
+    banned,
+    date,
+    from,
+    modes,
+    modeSettings,
+    numItineraries,
+    preferred,
+    time,
+    to
+  }: OTPQueryParams,
+  planQuery = DefaultPlanQuery
+): GraphQLQuery {
   // This extracts the values from the mode settings to key value pairs
   const modeSettingValues = modeSettings.reduce((prev, cur) => {
+    if (cur.type === "SLIDER" && cur.inverseKey) {
+      prev[cur.inverseKey] = cur.high - cur.value + cur.low;
+    }
     prev[cur.key] = cur.value;
+
+    // If we assign a value on true, return the value (or null) instead of a boolean.
+    if (cur.type === "CHECKBOX" && cur.truthValue) {
+      prev[cur.key] = cur.value === true ? cur.truthValue : null;
+    }
     return prev;
   }, {}) as ModeSettingValues;
 
   const {
     bikeReluctance,
     carReluctance,
+    walkSpeed,
     walkReluctance,
     wheelchair
   } = modeSettingValues;
 
   return {
-    query: print(PlanQuery),
+    query: print(planQuery),
     variables: {
+      arriveBy,
+      banned,
       bikeReluctance,
       carReluctance,
+      date,
       fromPlace: `${from.name}::${from.lat},${from.lon}}`,
       modes,
+      numItineraries,
+      preferred,
+      time,
       toPlace: `${to.name}::${to.lat},${to.lon}}`,
       walkReluctance,
+      walkSpeed,
       wheelchair
     }
   };

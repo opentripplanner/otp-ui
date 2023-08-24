@@ -1144,12 +1144,12 @@
       "alerts": [
         {
           "alertUrl": "http://trimet.org/alerts/",
-          "effectiveStartDate": 1562950483000,
+          "effectiveStartDate": 1562950483,
           "alertDescriptionText": "For trips to Parkrose/Sumner Transit Center, no service to the stop at NE Sandy & 47th (Stop ID 5094) due to long-term construction. Use the temporary stop located at NE Sandy & 48th (Stop ID 14073)."
         },
         {
           "alertUrl": "http://trimet.org/alerts/",
-          "effectiveStartDate": 1564601290000,
+          "effectiveStartDate": 1564601290,
           "alertDescriptionText": "For trips to Tigard Transit Center, no service to the stop at NE Sandy & 91st (Stop ID 5145) due to PBOT sidewalk construction. Use temporary stop on the west side of 91st.  "
         }
       ],

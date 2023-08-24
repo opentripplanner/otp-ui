@@ -2,50 +2,99 @@
 import flatten from "flat";
 import { extract } from "@formatjs/cli";
 
-import { isNotSpecialId, loadYamlFile, sortSourceAndYmlFiles } from "./util";
+import {
+  combineExceptionFiles,
+  expandGroupIds,
+  isNotSpecialId,
+  loadYamlFile,
+  sortSourceAndYmlFiles
+} from "./util";
+
+/**
+ * Computes the unused ids from code or YML file for a given locale.
+ */
+export async function checkLocale(
+  ymlFilesForLocale: string[],
+  messageIdsFromCode: string[],
+  ignoredIds: Set<string>,
+  groups: Record<string, string[]>
+): Promise<{
+  idsNotInCode: string[];
+  missingIdsForLocale: string[];
+}> {
+  const idsChecked = new Set();
+  const idsNotInCode = [];
+
+  const allI18nPromises = ymlFilesForLocale.map(loadYamlFile);
+  const allI18nMessages = await Promise.all(allI18nPromises);
+
+  const idsFromGroupsArray = expandGroupIds(groups);
+  const idsFromGroups = new Set(idsFromGroupsArray);
+  const idsFromGroupsNotInYml = new Set(idsFromGroupsArray);
+
+  allI18nMessages.forEach(i18nMessages => {
+    const flattenedMessages = flatten(i18nMessages);
+
+    // Message ids from code must be present in yml (except those in ignoredIds).
+    messageIdsFromCode
+      .filter(id => flattenedMessages[id])
+      .forEach(id => idsChecked.add(id));
+
+    // Message ids from yml must be present in code,
+    // except those starting with "_" or those in ignoredIds or groups.
+    const messageKeys = Object.keys(flattenedMessages);
+    messageKeys
+      .filter(isNotSpecialId)
+      .filter(id => !ignoredIds.has(id))
+      .filter(id => !idsFromGroups.has(id))
+      .filter(id => !messageIdsFromCode.includes(id))
+      .filter(id => !idsNotInCode.includes(id))
+      .forEach(id => idsNotInCode.push(id));
+
+    // Filter out ids from groups found in YML file.
+    messageKeys.forEach(id => idsFromGroupsNotInYml.delete(id));
+  });
+
+  // Collect ids in code and groups not found in yml.
+  const missingIdsForLocale = [...messageIdsFromCode, ...idsFromGroupsNotInYml]
+    .filter(id => !ignoredIds.has(id))
+    .filter(id => !idsChecked.has(id));
+
+  return {
+    idsNotInCode,
+    missingIdsForLocale
+  };
+}
 
 /**
  * Checks message ids completeness between code and yml files for all locales in repo.
  */
-async function checkI18n({ sourceFiles, ymlFilesByLocale }) {
+async function checkI18n({ exceptionFiles, sourceFiles, ymlFilesByLocale }) {
   // Gather message ids from code.
   const messagesFromCode = JSON.parse(await extract(sourceFiles, {}));
-  const messageIdsFromCode = Object.keys(messagesFromCode);
+  const messageIdsFromCode = messagesFromCode
+    ? Object.keys(messagesFromCode)
+    : [];
+  const englishUsYmls = ymlFilesByLocale["en-US"];
   console.log(
     `Checking ${messageIdsFromCode.length} strings from ${
-      Object.keys(ymlFilesByLocale["en-US"]).length
-    } message files against ${sourceFiles.length} source files.`
+      englishUsYmls ? Object.keys(englishUsYmls).length : 0
+    } message files against ${sourceFiles.length} source files (${
+      exceptionFiles.length
+    } exception files).`
   );
-  let errorCount = 0;
 
+  const { groups, ignoredIds } = await combineExceptionFiles(exceptionFiles);
+  let errorCount = 0;
   // For each locale, check that all ids in messages are in the yml files.
   // Accessorily, log message ids from yml files that are not used in the code.
   await Promise.all(
     Object.keys(ymlFilesByLocale).map(async locale => {
-      const idsChecked = [];
-      const idsNotInCode = [];
-
-      const allI18nPromises = ymlFilesByLocale[locale].map(loadYamlFile);
-      const allI18nMessages = await Promise.all(allI18nPromises);
-
-      allI18nMessages.forEach(i18nMessages => {
-        const flattenedMessages = flatten(i18nMessages);
-
-        // Message ids from code must be present in yml.
-        messageIdsFromCode
-          .filter(id => flattenedMessages[id])
-          .forEach(id => idsChecked.push(id));
-
-        // Message ids from yml (except those starting with "_") must be present in code.
-        Object.keys(flattenedMessages)
-          .filter(isNotSpecialId)
-          .filter(id => !messageIdsFromCode.includes(id))
-          .forEach(id => idsNotInCode.push(id));
-      });
-
-      // Collect ids in code not found in yml.
-      const missingIdsForLocale = messageIdsFromCode.filter(
-        id => !idsChecked.includes(id)
+      const { idsNotInCode, missingIdsForLocale } = await checkLocale(
+        ymlFilesByLocale[locale],
+        messageIdsFromCode,
+        ignoredIds,
+        groups
       );
 
       // Print errors.
