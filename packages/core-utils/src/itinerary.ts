@@ -688,15 +688,18 @@ export const getLegRouteShortName = (
 ): string => {
   const { route, routeShortName } = leg;
   if (typeof route === "string") {
+    // typeof route === "string" denotes OTP1 responses.
     return typeof routeShortName === "string" ? routeShortName : route;
   }
+  // This applies to newer OTP2 responses.
   return route?.shortName;
 };
 
-/** Extract the route ling name for a leg returned from OTP1 or OTP2. */
+/** Extract the route long name for a leg returned from OTP1 or OTP2. */
 export const getLegRouteLongName = (
   leg: Pick<Leg, "route" | "routeLongName">
 ): string => {
   const { route, routeLongName } = leg;
+  // typeof route === "string" denotes OTP1 responses.
   return typeof route === "string" ? routeLongName : route?.longName;
 };
