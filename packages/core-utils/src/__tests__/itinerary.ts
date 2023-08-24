@@ -5,6 +5,7 @@ import {
   getItineraryCost,
   getLegCost,
   getLegRouteLongName,
+  getLegRouteName,
   getLegRouteShortName,
   isTransit
 } from "../itinerary";
@@ -211,6 +212,41 @@ describe("util > itinerary", () => {
         getLegRouteLongName({
           route: { id: "id15", longName: "15" },
           routeLongName: "31"
+        })
+      ).toBe("15");
+    });
+  });
+  describe("getLegRouteName", () => {
+    it("should extract a route name from an OTP1 leg where a route short name is provided", () => {
+      expect(
+        getLegRouteName({
+          route: "15",
+          routeShortName: "31",
+          routeLongName: "Route 31"
+        })
+      ).toBe("31");
+    });
+    it("should extract a route name from an OTP1 leg where a route short name is not provided", () => {
+      expect(
+        getLegRouteName({
+          routeLongName: "Route 31"
+        })
+      ).toBe("Route 31");
+    });
+    it("should extract a route name from an OTP2 leg where a route short name is provided", () => {
+      expect(
+        getLegRouteName({
+          route: { id: "id15", longName: "15", shortName: "10" },
+          routeLongName: "31"
+        })
+      ).toBe("10");
+    });
+    it("should extract a route name from an OTP2 leg where a route short name is not provided", () => {
+      expect(
+        getLegRouteName({
+          route: { id: "id15", longName: "15" },
+          routeLongName: "31",
+          routeShortName: "31"
         })
       ).toBe("15");
     });
