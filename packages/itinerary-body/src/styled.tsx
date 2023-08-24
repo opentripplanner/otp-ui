@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { CaretDown } from "@styled-icons/fa-solid/CaretDown";
 import { CaretUp } from "@styled-icons/fa-solid/CaretUp";
 import { ExclamationTriangle } from "@styled-icons/fa-solid/ExclamationTriangle";
+
 import { toModeBorder, toModeColor, toSafeRouteColor } from "./util";
 
 interface LightBorderDivProps {
@@ -130,17 +131,20 @@ export const AccessBadge = styled.div<ModeRouteProps>`
   /* Add in border for dark mode */
 `;
 
-export const ArrivalTimeContainer = styled.div`
+export const ArrivalTimeContainer = styled.button`
   align-items: center;
+  background: none;
+  border: none;
   color: #008ab0;
   cursor: pointer;
   display: flex;
   font-size: 0.9em;
+  font-family: inherit;
+  margin: 0;
   margin-top: 5px;
-  width: fit-content;
-  &:focus-visible {
-    outline: 2px solid ${({ theme }) => theme.focusVisible};
-  }
+  outline: inherit;
+  padding: 0;
+  text-align: inherit;
 `;
 
 export const CallAheadWarning = styled.div`

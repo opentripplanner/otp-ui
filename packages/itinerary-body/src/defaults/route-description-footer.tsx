@@ -1,11 +1,10 @@
 /* eslint-disable import/prefer-default-export */
 import React, { ReactElement } from "react";
-import PropTypes from "prop-types";
 import * as S from "../styled";
 import { RouteDescriptionFooterProps } from "../types";
 
 export function DefaultRouteDescriptionFooter({
-  navigateToArrivalVehicle = () => null,
+  navigateToArrivalVehicle = null,
   waitMinutes
 }: RouteDescriptionFooterProps): ReactElement {
   return (
@@ -18,12 +17,3 @@ export function DefaultRouteDescriptionFooter({
     </S.ArrivalTimeContainer>
   );
 }
-
-DefaultRouteDescriptionFooter.propTypes = {
-  waitMinutes: PropTypes.number.isRequired,
-  navigateToArrivalVehicle: PropTypes.func
-};
-
-DefaultRouteDescriptionFooter.defaultProps = {
-  navigateToArrivalVehicle: () => {}
-};

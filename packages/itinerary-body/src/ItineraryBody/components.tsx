@@ -5,6 +5,11 @@ import { Leg } from "@opentripplanner/types";
 import { RouteDescriptionFooterProps } from "../types";
 import { DefaultRouteDescriptionFooter } from "../defaults/route-description-footer";
 
+/**
+ * This method returns a RouteDescriptionFooter element with falsy wait-times
+ * generated from legs' to and from arrival-times. It is only meant for
+ * illustrative purposes.
+ */
 const RouteDescriptionFooterWithWaitTimes = ({
   leg
 }: {
