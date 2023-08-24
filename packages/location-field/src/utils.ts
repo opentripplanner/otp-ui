@@ -1,7 +1,6 @@
-// Prettier doesn't understand type imports
-// eslint-disable-next-line prettier/prettier
-import type { Properties, Label } from "./types";
+import { IntlShape } from "react-intl";
 
+import { Properties, Label, UserLocationRenderData } from "./types";
 
 // A mapping of Pelias layers to display modes. The label generator will run the generator
 // based on the layer of the feature. Adding a new method to this mapping will support
@@ -15,17 +14,25 @@ const layerDisplayMap = {
       neighbourhood,
       region_a: state,
       region,
-      street,
+      street
     } = properties;
     return {
       // if the housenumber is available, combining that with the street can
       // avoid duplicates which might be present in the name
       main: housenumber ? `${housenumber} ${street}` : name,
-      secondary: [locality, neighbourhood, state || region].filter(item => !!item).join(", ")
+      secondary: [locality, neighbourhood, state || region]
+        .filter(item => !!item)
+        .join(", ")
     };
   },
   venue: (properties: Properties): Label => {
-    const { region_a: state, neighbourhood, locality, name, street } = properties;
+    const {
+      locality,
+      name,
+      neighbourhood,
+      region_a: state,
+      street
+    } = properties;
     return {
       main: name,
       secondary: [street, neighbourhood, locality, state]
@@ -64,3 +71,52 @@ export const getCombinedLabel = (properties: Properties): string => {
   }
   return properties?.label || "";
 };
+
+/**
+ * Helper method to append text in parentheses to some other text,
+ * if the added text is not null or blank.
+ */
+export const addInParentheses = (
+  intl: IntlShape,
+  mainText: string,
+  extraText?: string
+): string => {
+  return extraText && extraText !== ""
+    ? intl.formatMessage(
+        { id: "otpUi.LocationField.parenthesisFormat" },
+        { detail: extraText, main: mainText }
+      )
+    : mainText;
+};
+
+/**
+ * Helper function to assemble a geocoder error message.
+ */
+export const getGeocoderErrorMessage = (
+  intl: IntlShape,
+  errorText?: string
+): string => {
+  const geocoderUnreachableText = intl.formatMessage({
+    description: "Geocoder unreachable status",
+    id: "otpUi.LocationField.geocoderUnreachable"
+  });
+
+  return addInParentheses(intl, geocoderUnreachableText, errorText);
+};
+
+/**
+ * Helper to compute matching user locations as you type.
+ */
+export function getMatchingLocations(
+  places: UserLocationRenderData[],
+  text: string
+): UserLocationRenderData[] {
+  if (places?.length > 0 && text && text !== "") {
+    const lowerCaseText = text.toLowerCase();
+    return places.filter(
+      place => place.displayName.toLowerCase().indexOf(lowerCaseText) !== -1
+    );
+  }
+
+  return [];
+}

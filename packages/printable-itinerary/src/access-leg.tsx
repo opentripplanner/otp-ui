@@ -32,7 +32,7 @@ export default function AccessLeg({
       />
       <S.LegBody>
         <S.AccessLegDescription config={config} leg={leg} />
-        {!leg.hailedCar && (
+        {!leg.rideHailingEstimate && (
           <S.LegDetails>
             {leg.steps.map((step, k) => (
               <S.LegDetail key={k}>

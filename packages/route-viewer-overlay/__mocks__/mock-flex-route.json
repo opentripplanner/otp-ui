@@ -18,10 +18,7 @@
     {
       "id": "UGF0dGVybjpDb2JiLWZsZXg6cG8wcDowOjAx",
       "name": "Zone 3 to Zone 3 - Downtown Austell (Cobb-flex:urnz)",
-      "geometry": {
-        "points": "kfsmEjojcOa@eBRKfBfHR|ALjB@pEhF`ElFrEhPpN|B|AtBbAfA`@fCf@|@JfGd@vEl@jB\\rWdGrC`@tF`@vOTrD^|B`@~C|@xIhDvChA|\\rNjBt@`Bj@lIzBxAf@jDrArBh@|@R`CR|BBnAAx@EdDYtAAtAHhCb@LARKHMDWAy@Gi@[y@_@c@]Su@Mk@Ae@B]Ft@nEpG|]fGb^`@jC^|CTxCTvFZzI???DLdArAvGXGjBq@FV",
-        "length": 71
-      },
+      "geometry": {},
       "stops": [
         {
           "code": null,

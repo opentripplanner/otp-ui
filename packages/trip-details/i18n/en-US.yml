@@ -1,12 +1,12 @@
 otpUi:
   TripDetails:
-    calories: "Calories Burned: <strong>{calories, number, ::.}</strong>"
-    caloriesDescription: >
-      Calories burned is based on <strong>{walkMinutes, plural, one {# minute}
-      other {# minutes}}</strong> spent walking and <strong>{bikeMinutes,
-      plural, one {# minute} other {# minutes}}</strong> spent biking during
-      this trip. Adapted from <dietaryLink>Dietary Guidelines for Americans
-      2005, page 16, Table 4</dietaryLink>.
+    FareTable:
+      cash: Cash
+      electronic: Electronic
+      regular: Adult
+      senior: Senior
+      special: Special
+      youth: Youth
     co2: "CO₂ Emitted: <strong>{co2}</strong>"
     co2description: >-
       CO₂ intensity is calculated by multiplying the distance of each leg of a
@@ -15,19 +15,18 @@ otpUi:
     departure: >-
       Depart <strong>{departureDate, date, long}</strong> at
       <strong>{departureDate, time, short}</strong>
-    fareDetailsHeaders:
-      cash: Cash
-      electronic: Electronic
-      regular: Adult
-      senior: Senior
-      special: Special
-      youth: Youth
     hideDetail: Hide details
+    minutesActive: >-
+      Time Spent Active: <strong>{minutes, plural, one {# minute} other {#
+      minutes}}</strong>
     showDetail: Show details
+    timeActiveDescription: >
+      By taking this trip, you'll spend <strong>{walkMinutes, plural, one {#
+      minute} other {# minutes}}</strong> walking and <strong>{bikeMinutes,
+      plural, one {# minute} other {# minutes}}</strong> biking.
     title: Trip Details
     tncFare: "{companies} Fare: <strong>{minTNCFare} - {maxTNCFare}</strong>"
     transferDiscountExplanation: Transfer discount of {transferAmount} is applied
     transitFare: Transit Fare
     transitFareEntry: "{name}: <strong>{value}</strong>"
-    transitFareUnknown: No fare info
     tripIncludesFlex: This trip includes flexible routes. {extraMessage}

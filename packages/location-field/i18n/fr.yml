@@ -1,28 +1,26 @@
 otpUi:
   LocationField:
-    beingTypingPrompt: Tapez pour rechercher des lieux
+    beginTypingPrompt: Tapez pour rechercher des lieux
     clearLocation: Effacer le lieu
-    currentLocationUnavailable: >-
-      Position actuelle non disponible{error, select, undefined {} other {
-      ({error})}}
+    currentLocationUnavailable: Position actuelle non disponible
     fetchingLocation: Chargement du lieu…
     fetchingSuggestions: Chargement des suggestions…
-    geocoderUnreachable: Géocodeur introuvable{error, select, undefined {} other { ({error})}}
+    geocoderUnreachable: Impossible d'obtenir des suggestions
     homeLocation: Domicile
+    howToAccessResults: >-
+      Utilisez la touche Flèche bas pour parcourir la liste des résultats. Pour
+      sélectioner un résultat, utilisez la touche Entrée.
     myPlaces: Mes lieux
     nearby: Arrêts à proximité
-    noResultsFound: |
-      Aucun résultat trouvé pour {input, select,
-        null {votre requête}
-        other {{input}}
-      }
+    noResults: Aucun résultat
     other: Autres
-    placeNameWithDetails: "{placeName} ({details})"
+    otherCount: "{count, plural, =1 {# autre point} other {# autres points}} d'intérêt"
+    parenthesisFormat: "{main} ({detail})"
     recentlySearched: Recherches récentes
-    resultsFound: >
-      {count, plural, =0 {Aucun résultat} =1 {# résultat} other {# résultats}}
-      du géocodeur pour {input, select, null {votre requête} other {"{input}"}}
+    resultsFound: "{results} pour \"{input}\"."
+    stationCount: "{count, plural, =1 {# station} other {# stations}}"
     stations: Stations
+    stopCount: "{count, plural, =1 {# arrêt} other {# arrêts}}"
     stops: Arrêts
     suggestedLocations: Lieux suggérés
     suggestedLocationsLong: Basculer l'affichage de la liste de lieux suggérés

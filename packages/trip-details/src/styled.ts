@@ -17,10 +17,6 @@ const BaseButton = styled.button`
   white-space: nowrap;
 `;
 
-export const CaloriesDescription = styled.span``;
-
-export const CaloriesSummary = styled.span``;
-
 export const CO2Description = styled.span``;
 
 export const CO2Summary = styled.span``;
@@ -98,4 +94,5 @@ export const TripDetailSummary = styled.div`
   padding-top: 2px;
   display: flex;
   align-items: baseline;
+  white-space: pre;
 `;

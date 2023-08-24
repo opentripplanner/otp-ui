@@ -4,7 +4,6 @@ import {
   Config,
   ElevationProfile,
   FlexBookingInfo,
-  Itinerary,
   ItineraryOnlyLegsRequired,
   LatLngArray,
   Leg,
@@ -77,6 +76,10 @@ export function isAdvanceBookingRequired(info: FlexBookingInfo): boolean {
 }
 export function legDropoffRequiresAdvanceBooking(leg: Leg): boolean {
   return isAdvanceBookingRequired(leg.dropOffBookingInfo);
+}
+
+export function isRideshareLeg(leg: Leg): boolean {
+  return !!leg.rideHailingEstimate?.provider?.id;
 }
 
 export function isWalk(mode: string): boolean {
@@ -194,15 +197,25 @@ export function toSentenceCase(str: string): string {
  */
 export function getCompanyFromLeg(leg: Leg): string {
   if (!leg) return null;
-  const { from, mode, rentedBike, rentedCar, rentedVehicle, tncData } = leg;
+  const {
+    from,
+    mode,
+    rentedBike,
+    rentedCar,
+    rentedVehicle,
+    rideHailingEstimate
+  } = leg;
   if (mode === "CAR" && rentedCar) {
     return from.networks[0];
   }
-  if (mode === "CAR" && tncData) {
-    return tncData.company;
+  if (mode === "CAR" && rideHailingEstimate) {
+    return rideHailingEstimate.provider.id;
   }
   if (mode === "BICYCLE" && rentedBike && from.networks) {
     return from.networks[0];
+  }
+  if (from.rentalVehicle) {
+    return from.rentalVehicle.network;
   }
   if (
     (mode === "MICROMOBILITY" || mode === "SCOOTER") &&
@@ -441,15 +454,15 @@ export function calculateTncFares(
   itinerary: ItineraryOnlyLegsRequired
 ): TncFare {
   return itinerary.legs
-    .filter(leg => leg.mode === "CAR" && leg.hailedCar && leg.tncData)
+    .filter(leg => leg.mode === "CAR" && leg.rideHailingEstimate)
     .reduce(
-      ({ maxTNCFare, minTNCFare }, { tncData }) => {
-        const { currency, maxCost, minCost } = tncData;
+      ({ maxTNCFare, minTNCFare }, { rideHailingEstimate }) => {
+        const { minPrice, maxPrice } = rideHailingEstimate;
         return {
           // Assumes a single currency for entire itinerary.
-          currencyCode: currency,
-          maxTNCFare: maxTNCFare + maxCost,
-          minTNCFare: minTNCFare + minCost
+          currencyCode: minPrice.currency.code,
+          maxTNCFare: maxTNCFare + maxPrice.amount,
+          minTNCFare: minTNCFare + minPrice.amount
         };
       },
       {
@@ -458,27 +471,6 @@ export function calculateTncFares(
         minTNCFare: 0
       }
     );
-}
-
-/**
- * For a given fare component (either total fare or component parts), returns
- * an object with the fare value (in cents).
- */
-export function getTransitFare(
-  fareComponent: Money
-): {
-  currencyCode: string;
-  transitFare: number;
-} {
-  return fareComponent
-    ? {
-        currencyCode: fareComponent.currency.currencyCode,
-        transitFare: fareComponent.cents
-      }
-    : {
-        currencyCode: "USD",
-        transitFare: 0
-      };
 }
 
 /**
@@ -564,20 +556,6 @@ export function getDisplayedStopId(placeOrStop: Place | Stop): string {
 }
 
 /**
- * Adds the fare product info to each leg in an itinerary, from the itinerary's fare property
- * @param itinerary Itinerary with legProducts in fare object
- * @returns Itinerary with legs that have fare products attached to them
- */
-export function getLegsWithFares(itinerary: Itinerary): Leg[] {
-  return itinerary.legs.map((leg, i) => ({
-    ...leg,
-    fareProducts: itinerary.fare?.legProducts
-      ?.filter(lp => lp?.legIndices?.includes(i))
-      .flatMap(lp => lp.products)
-  }));
-}
-
-/**
  * Extracts useful data from the fare products on a leg, such as the leg cost and transfer info.
  * @param leg Leg with fare products (must have used getLegsWithFares)
  * @param category Rider category
@@ -586,23 +564,36 @@ export function getLegsWithFares(itinerary: Itinerary): Leg[] {
  */
 export function getLegCost(
   leg: Leg,
-  category: string,
-  container: string
-): { price?: Money; transferAmount?: number } {
+  mediumId: string | null,
+  riderCategoryId: string | null
+): {
+  price?: Money;
+  transferAmount?: Money | undefined;
+  productUseId?: string;
+} {
   if (!leg.fareProducts) return { price: undefined };
+  const relevantFareProducts = leg.fareProducts.filter(({ product }) => {
+    // riderCategory and medium can be specifically defined as null to handle
+    // generic GTFS based fares from OTP when there is no fare model
+    return (
+      (product.riderCategory === null ? null : product.riderCategory.id) ===
+        riderCategoryId &&
+      (product.medium === null ? null : product.medium.id) === mediumId
+    );
+  });
 
-  const relevantFareProducts = leg.fareProducts.filter(
-    fp => fp.category.name === category && fp.container.name === container
+  // Custom fare models return "rideCost", generic GTFS fares return "regular"
+  const totalCostProduct = relevantFareProducts.find(
+    fp => fp.product.name === "rideCost" || fp.product.name === "regular"
   );
-  const totalCost = relevantFareProducts.find(fp => fp.name === "rideCost")
-    ?.amount;
   const transferFareProduct = relevantFareProducts.find(
-    fp => fp.name === "transfer"
+    fp => fp.product.name === "transfer"
   );
 
   return {
-    price: totalCost,
-    transferAmount: transferFareProduct?.amount?.cents
+    price: totalCostProduct?.product.price,
+    transferAmount: transferFareProduct?.product.price,
+    productUseId: totalCostProduct?.id
   };
 }
 
@@ -615,17 +606,78 @@ export function getLegCost(
  */
 export function getItineraryCost(
   legs: Leg[],
-  category: string,
-  container: string
-): Money {
-  return legs
-    .filter(leg => !!leg.fareProducts)
-    .map(leg => getLegCost(leg, category, container).price)
-    .reduce<Money>(
-      (prev, cur) => ({
-        cents: prev.cents + cur?.cents || 0,
-        currency: prev.currency ?? cur?.currency
-      }),
-      { cents: 0, currency: null }
-    );
+  mediumId: string | null,
+  riderCategoryId: string | null
+): Money | undefined {
+  const legCosts = legs
+    // Only legs with fares (no walking legs)
+    .filter(leg => leg.fareProducts?.length > 0)
+    // Get the leg cost object of each leg
+    .map(leg => getLegCost(leg, mediumId, riderCategoryId))
+    .filter(cost => cost.price !== undefined)
+    // Filter out duplicate use IDs
+    // One fare product can be used on multiple legs,
+    // and we don't want to count it more than once.
+    .reduce<{ productUseId: string; price: Money }[]>((prev, cur) => {
+      if (!prev.some(p => p.productUseId === cur.productUseId)) {
+        prev.push({ productUseId: cur.productUseId, price: cur.price });
+      }
+      return prev;
+    }, [])
+    .map(productUse => productUse.price);
+
+  if (legCosts.length === 0) return undefined;
+  // Calculate the total
+  return legCosts.reduce<Money>(
+    (prev, cur) => ({
+      amount: prev.amount + cur?.amount || 0,
+      currency: prev.currency ?? cur?.currency
+    }),
+    { amount: 0, currency: null }
+  );
 }
+
+const pickupDropoffTypeToOtp1 = otp2Type => {
+  switch (otp2Type) {
+    case "COORDINATE_WITH_DRIVER":
+      return "coordinateWithDriver";
+    case "CALL_AGENCY":
+      return "mustPhone";
+    case "SCHEDULED":
+      return "scheduled";
+    case "NONE":
+      return "none";
+    default:
+      return null;
+  }
+};
+
+export const convertGraphQLResponseToLegacy = (leg: any): any => ({
+  ...leg,
+  agencyBrandingUrl: leg.agency?.url,
+  agencyName: leg.agency?.name,
+  agencyUrl: leg.agency?.url,
+  alightRule: pickupDropoffTypeToOtp1(leg.dropoffType),
+  boardRule: pickupDropoffTypeToOtp1(leg.pickupType),
+  dropOffBookingInfo: {
+    latestBookingTime: leg.dropOffBookingInfo
+  },
+  from: {
+    ...leg.from,
+    stopCode: leg.from.stop?.code,
+    stopId: leg.from.stop?.gtfsId
+  },
+  route: leg.route?.shortName,
+  routeColor: leg.route?.color,
+  routeId: leg.route?.id,
+  routeLongName: leg.route?.longName,
+  routeShortName: leg.route?.shortName,
+  routeTextColor: leg.route?.textColor,
+  to: {
+    ...leg.to,
+    stopCode: leg.to.stop?.code,
+    stopId: leg.to.stop?.gtfsId
+  },
+  tripHeadsign: leg.trip?.tripHeadsign,
+  tripId: leg.trip?.gtfsId
+});

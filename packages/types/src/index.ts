@@ -187,11 +187,6 @@ export type Config = {
   transitOperators?: TransitOperator[];
 };
 
-type FeedScopedId = {
-  agencyId?: string;
-  id?: string;
-};
-
 export type EncodedPolyline = {
   length: number;
   points: string;
@@ -207,6 +202,8 @@ export type Alert = {
   alertDescriptionText?: string;
   alertUrl?: string;
   effectiveStartDate?: number;
+  /** Returned by OTP2 graphql queries, but not by OTP1 */
+  id?: string;
 };
 
 /**
@@ -240,6 +237,7 @@ export type Place = {
   lon: number;
   name: string;
   networks?: string[];
+  rentalVehicle?: { network: string };
   stopCode?: string;
   stopId?: string;
   stopIndex?: number;
@@ -273,6 +271,22 @@ type FlexPickupBookingInfo = {
   pickupMessage?: string;
 } & FlexBookingInfo;
 
+/** Basic transit route attributes */
+interface BasicRouteInfo {
+  color?: string;
+  id: string;
+  longName?: string;
+  shortName: string;
+  textColor?: string;
+  // TS TODO: route type enum
+  type?: number;
+}
+
+/** Transit route attributes from itinerary legs */
+export type LegRoute = BasicRouteInfo & {
+  alerts?: Alert[];
+};
+
 /**
  * Represents a leg in an itinerary of an OTP plan response. Each leg represents
  * a portion of the overall itinerary that is done until either reaching the
@@ -297,8 +311,8 @@ export type Leg = {
   dropOffBookingInfo?: FlexDropOffBookingInfo;
   duration: number;
   endTime: number;
+  fareProducts?: { id: string; product: FareProduct }[];
   from: Place;
-  hailedCar: boolean;
   headsign?: string;
   interlineWithPreviousLeg: boolean;
   intermediateStops: Place[];
@@ -307,11 +321,20 @@ export type Leg = {
   mode: string;
   pathway: boolean;
   pickupBookingInfo?: FlexPickupBookingInfo;
+  rideHailingEstimate?: {
+    provider: {
+      id: string;
+    };
+    arrival: string;
+    minPrice: TemporaryTNCPriceType;
+    maxPrice: TemporaryTNCPriceType;
+    productName?: string;
+  };
   realTime: boolean;
   rentedBike: boolean;
   rentedCar: boolean;
   rentedVehicle: boolean;
-  route?: string;
+  route?: string | LegRoute;
   routeColor?: string;
   routeId?: string;
   routeLongName?: string;
@@ -319,70 +342,46 @@ export type Leg = {
   routeTextColor?: string;
   routeType?: number;
   serviceDate?: string;
-  startTime: number;
+  startTime: number | string;
   steps: Step[];
-  tncData?: {
-    company: string;
-    currency: string;
-    displayName: string;
-    estimatedArrival: number;
-    maxCost: number;
-    minCost: number;
-    productId: string;
-    travelDuration: number;
-  };
   to: Place;
   transitLeg: boolean;
+  trip?: {
+    arrivalStoptime?: TripStopTime;
+    departureStoptime?: TripStopTime;
+    gtfsId?: string;
+    id: string;
+    tripHeadsign?: string;
+  };
   tripBlockId?: string;
   tripId?: string;
   walkingBike?: boolean;
-  /**
-   * Below this are extra properties added in OTP-RR
-   * They are not returned in the API response
-   */
-  fareProducts?: Array<FareProduct>;
+};
+
+type TripStopTime = {
+  stopPosition: number;
+  stop: {
+    gtfsId: string;
+    id: string;
+  };
+};
+
+type TemporaryTNCPriceType = {
+  currency: {
+    code: string;
+  };
+  amount: number;
 };
 
 /**
  * Describes the cost of an itinerary leg.
  */
 export type Money = {
-  cents: number;
+  amount: number;
   currency: {
-    defaultFractionDigits: number;
-    currencyCode: string;
-    symbol: string;
-    currency: string;
+    code: string;
+    digits: number;
   };
-};
-
-/**
- * Describes a fare id or route to which a fare applies.
- */
-type ApplicableId = string | FeedScopedId;
-
-export type FareDetail = {
-  fareId?: ApplicableId;
-  isTransfer?: boolean;
-  legIndex?: number;
-  price: Money;
-  routes?: ApplicableId[];
-};
-
-export type FareDetails = Record<string, FareDetail[]>;
-
-/**
- * Represents the fare component of an itinerary of an OTP plan response. See
- * detailed documentation in OTP webservice documentation here:
- * http://otp-docs.ibi-transit.com/api/json_Fare.html
- *
- * NOTE: so far the fare includes ONLY a fare encountered on public transit and
- * not any bike rental or TNC rental fees.
- */
-export type Fare = {
-  details?: FareDetails;
-  fare?: Record<string, Money>;
-  legProducts?: Array<LegProduct>;
 };
 
 /**
@@ -397,7 +396,6 @@ export type Itinerary = {
   elevationGained: number;
   elevationLost: number;
   endTime: number;
-  fare?: Fare;
   legs: Leg[];
   startTime: number;
   tooSloped?: boolean;
@@ -490,22 +488,16 @@ export type Agency = {
   phone?: string;
   fareUrl?: string;
 };
-export type Route = {
+export type Route = BasicRouteInfo & {
   agency: Agency;
   agencyId?: string | number;
   agencyName?: string | number;
-  shortName: string;
-  longName?: string;
-  mode?: string;
-  id: string;
-  // TS TODO: route type enum
-  type?: number;
-  color?: string;
-  textColor?: string;
-  routeBikesAllowed?: ZeroOrOne;
+  // TODO: Add support for enum values, see /packages/core-utils/src/otpSchema.json#L1289.
   bikesAllowed?: ZeroOrOne;
-  sortOrder: number;
   eligibilityRestricted?: ZeroOrOne;
+  mode?: string;
+  routeBikesAllowed?: ZeroOrOne;
+  sortOrder: number;
   sortOrderSet: boolean;
 };
 
@@ -717,24 +709,39 @@ export type SliderOptions = {
 export type CheckboxOptions = {
   addTransportMode?: TransportMode;
   default?: boolean;
-  icon: JSX.Element;
   label: string;
   type: "CHECKBOX";
+  truthValue?: boolean | string | number;
+  value?: boolean;
+};
+
+export type TransitSubmodeCheckboxOption = {
+  addTransportMode: TransportMode;
+  default?: boolean;
+  label: string;
+  type: "SUBMODE";
   value?: boolean;
 };
 
 export type ModeSettingBase = {
   applicableMode: string;
+  iconName?: string;
+  icon?: JSX.Element;
   key: string;
 };
 
-export type ModeSetting = (CheckboxOptions | SliderOptions | DropdownOptions) &
+export type ModeSetting = (
+  | CheckboxOptions
+  | SliderOptions
+  | DropdownOptions
+  | TransitSubmodeCheckboxOption
+) &
   ModeSettingBase;
 export type ModeSettingValues = Record<string, number | string | boolean>;
 
 /**
- * Transportation mode is usually an OTP mode string,
- * but it can be anything for more flexibility.
+ * TransportModes correspond with the OTP GraphQL TransportMode.
+ * Could be anything from walk, bike (qualifier: rent) to transit, tram, or bus.
  */
 export type TransportMode = {
   mode: string;
@@ -748,30 +755,34 @@ export type TransportMode = {
  */
 export type ModeButtonDefinition = {
   enabled?: boolean; // User has enabled this mode
-  Icon: StyledIcon; // From iconName (below)
+  Icon: StyledIcon | React.ComponentType; // From iconName (below)
   iconName: string; // From config
   key: string; // From config
   label: string; // From config
   modes?: TransportMode[]; // This comes from config
   modeSettings?: ModeSetting[]; // From OTP definitions + config
 };
+
+/**
+ * Definition for a fare product used to pay the fare for a leg in a transit journey
+ */
 export type FareProduct = {
-  amount: Money;
   id: string;
-  name: string;
-  category: {
+  medium?: {
     id: string;
     name: string;
   };
-  container: {
+  name: string;
+  price: Money;
+  riderCategory?: {
     id: string;
     name: string;
   };
 };
 
-export type LegProduct = {
-  legIndices: Array<number>;
-  products: Array<FareProduct>;
+export type FareProductSelector = {
+  mediumId: string;
+  riderCategoryId: string;
 };
 
 /**

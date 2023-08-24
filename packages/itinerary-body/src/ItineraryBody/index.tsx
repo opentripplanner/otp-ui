@@ -18,6 +18,7 @@ const ItineraryBody = ({
   alwaysCollapseAlerts = false,
   className,
   config,
+  defaultFareSelector,
   diagramVisible,
   frameLeg = noop,
   itinerary,
@@ -36,7 +37,6 @@ const ItineraryBody = ({
   showElevationProfile,
   showLegIcon,
   showMapButtonColumn = true,
-  showRouteFares,
   showViewTripButton,
   TimeColumnContent,
   toRouteAbbreviation = defaultRouteAbbr,
@@ -51,7 +51,6 @@ const ItineraryBody = ({
   const rows = [];
   let followsTransit = false;
   let lastLeg;
-  const { fare } = itinerary;
   itinerary.legs.forEach((leg, i) => {
     function createPlaceRow(isDestination) {
       // Create a row containing this leg's start place and leg traversal details
@@ -64,11 +63,8 @@ const ItineraryBody = ({
           // eslint-disable-next-line react/no-array-index-key
           key={i + (isDestination ? 1 : 0)}
           config={config}
+          defaultFareSelector={defaultFareSelector}
           diagramVisible={diagramVisible}
-          // Itinerary fare is only passed as prop if showRouteFares is enabled.
-          // The fare details will be processed in the TransitLeg component and
-          // shown for all legs.
-          fare={showRouteFares ? fare : null}
           followsTransit={followsTransit}
           frameLeg={frameLeg}
           isDestination={isDestination}

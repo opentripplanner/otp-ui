@@ -29,6 +29,8 @@ otpUi:
       circleClockwise: Prenez le rond-point par la gauche
       circleCounterClockwise: Prenez le rond-point par la droite
       continue: Continuez
+      enterStation: Entrez dans la station
+      exitStation: Sortez de la station
       hardLeft: Virage à gauche
       hardRight: Virage à droite
       left: Tournez à gauche
@@ -39,6 +41,7 @@ otpUi:
       uTurnRight: Demi-tour par la droite
     stepDepart: Dirigez-vous vers {heading} sur {street}
     stepElevator: Prenez l'ascenseur jusqu'à {street}
+    stepFollowSigns: Suivez les panneaux vers {street}
     stepGeneric: "{step} sur {street}"
     stepHeading:
       east: l'est
@@ -49,6 +52,7 @@ otpUi:
       southeast: le sud-est
       southwest: le sud-ouest
       west: l'ouest
+    stepStation: "{step} par {street}"
     summary: "{mode} vers {place}"
     summaryAndDistance: "{mode} - {distance} vers {place}"
     summaryMode:
@@ -70,8 +74,7 @@ otpUi:
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# h }}{minutes} min"
-    flexAdvanceNotice: " au moins {leadDays, plural, one {# jour} other {# jours}}\
-      \ à l'avance"
+    flexAdvanceNotice: " au moins {leadDays, plural, one {# jour} other {# jours}} à l'avance"
     flexCallAhead: réserver au préalable
     flexCallNumber: réserver au {phoneNumber}
     flexPickupMessage: Pour emprunter cette ligne, vous devez {action}{advanceNotice}.
@@ -100,8 +103,7 @@ otpUi:
     legDetails: Détails de l'étape
     operatedBy: Exploité par {agencyLink}
     ride: Prenez la ligne
-    rideDurationAndStops: "Trajet : {duration}{numStops, plural, =1 {} other { / #\
-      \ arrêts}}"
+    rideDurationAndStops: "Trajet : {duration}{numStops, plural, =1 {} other { / # arrêts}}"
     routeDescription: "{routeName} <toPrefix>vers</toPrefix> {headsign}"
     stopId: Arrêt n°{stopId}
     stopIdBasic: Arrêt n°{stopId}

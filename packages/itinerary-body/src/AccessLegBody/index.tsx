@@ -1,11 +1,11 @@
 import { Config, Leg, LegIconComponent } from "@opentripplanner/types";
-import React, { Component, ReactElement } from "react";
+import React, { Component, FunctionComponent, ReactElement } from "react";
 import AnimateHeight from "react-animate-height";
 import { FormattedMessage } from "react-intl";
 import { Duration } from "../defaults";
 
 import * as S from "../styled";
-import { SetActiveLegFunction } from "../types";
+import { SetActiveLegFunction, TransitLegSubheaderProps } from "../types";
 
 import AccessLegSteps from "./access-leg-steps";
 import AccessLegSummary from "./access-leg-summary";
@@ -29,10 +29,12 @@ interface Props {
   legIndex: number;
   mapillaryCallback?: (id: string) => void;
   mapillaryKey?: string;
+  RouteDescriptionFooterClickMethod: () => void;
   setActiveLeg: SetActiveLegFunction;
   setLegDiagram: (leg: Leg) => void;
   showElevationProfile: boolean;
   showLegIcon: boolean;
+  TransitLegSubheader?: FunctionComponent<TransitLegSubheaderProps>;
 }
 
 interface State {
@@ -71,11 +73,13 @@ class AccessLegBody extends Component<Props, State> {
       mapillaryKey,
       setLegDiagram,
       showElevationProfile,
-      showLegIcon
+      showLegIcon,
+      RouteDescriptionFooterClickMethod,
+      TransitLegSubheader
     } = this.props;
     const { expanded } = this.state;
 
-    if (leg.mode === "CAR" && leg.hailedCar) {
+    if (leg.mode === "CAR" && leg.rideHailingEstimate) {
       return (
         <TNCLeg
           config={config}
@@ -84,6 +88,7 @@ class AccessLegBody extends Component<Props, State> {
           LegIcon={LegIcon}
           onSummaryClick={this.onSummaryClick}
           showLegIcon={showLegIcon}
+          RouteDescriptionFooterClickMethod={RouteDescriptionFooterClickMethod}
         />
       );
     }
@@ -95,6 +100,9 @@ class AccessLegBody extends Component<Props, State> {
         {leg && (leg.rentedVehicle || leg.rentedBike || leg.rentedCar) && (
           <RentedVehicleSubheader config={config} leg={leg} />
         )}
+        {leg.from.stopId && TransitLegSubheader && (
+          <TransitLegSubheader leg={leg} />
+        )}
         <S.LegBody>
           <AccessLegSummary
             config={config}
@@ -102,6 +110,9 @@ class AccessLegBody extends Component<Props, State> {
             LegIcon={LegIcon}
             onSummaryClick={this.onSummaryClick}
             showLegIcon={showLegIcon}
+            RouteDescriptionFooterClickMethod={
+              RouteDescriptionFooterClickMethod
+            }
           />
           <S.LegDetails>
             <S.StepsHeaderAndMapLink>

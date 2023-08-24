@@ -85,7 +85,7 @@ export const AnchorButton = styled.a`
   }
 `;
 
-export const LinkButton = styled(TransparentButton)`
+export const LinkButton = styled.a`
   color: #008;
   cursor: pointer;
   margin-left: 5px;
@@ -302,7 +302,7 @@ export const LegDescription = styled.span`
 
 // additional description added to ClickableLeg for screenreaders
 export const InvisibleAdditionalDetails = styled.span`
-  display: block;
+  display: inline-block;
   grid-row-start: 2;
   grid-column-start: 1;
   height: 0;
@@ -484,6 +484,9 @@ export const PlaceSubheader = styled.div`
   padding-top: 1px;
 
   /* Reduce vertical space and fix horizontal alignment of stop id and stop viewer link for transit stops. */
+  /* Also, increase vertical space after so that transit/access instructions
+     aren't too squeezed with the stop id and Stop Viewer link. */
+  margin-bottom: 10px;
   margin-top: -14px;
 `;
 
@@ -589,7 +592,7 @@ export const StepsHeader = styled(TransparentButton)`
   color: #676767;
   font-size: 13px;
   font-style: normal;
-  width: 100%;
+  padding: 0;
 `;
 
 export const StepIconContainer = styled.div`
@@ -608,6 +611,13 @@ export const StepRow = styled.li`
 
 export const StepStreetName = styled.span`
   font-weight: 500;
+`;
+
+export const StepLength = styled.span`
+  font-weight: 200;
+  /* This is the lowest opacity which still meets AA text color contrast standards */
+  opacity: 0.8975;
+  padding-left: 1ch;
 `;
 
 export const StopIdSpan = styled.span`

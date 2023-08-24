@@ -21,8 +21,8 @@ export default function PlaceRow({
   AlertToggleIcon,
   alwaysCollapseAlerts,
   config,
+  defaultFareSelector,
   diagramVisible,
-  fare,
   followsTransit,
   frameLeg,
   isDestination,
@@ -136,11 +136,11 @@ export default function PlaceRow({
               AlertBodyIcon={AlertBodyIcon}
               AlertToggleIcon={AlertToggleIcon}
               alwaysCollapseAlerts={alwaysCollapseAlerts}
-              fare={fare}
+              defaultFareSelector={defaultFareSelector}
               leg={leg}
+              legDestination={formattedPlace(leg.to)}
               LegIcon={LegIcon}
               legIndex={legIndex}
-              legDestination={formattedPlace(leg.to)}
               RouteDescription={RouteDescription}
               RouteDescriptionFooter={RouteDescriptionFooter}
               setActiveLeg={setActiveLeg}
@@ -166,10 +166,14 @@ export default function PlaceRow({
               legIndex={legIndex}
               mapillaryCallback={mapillaryCallback}
               mapillaryKey={mapillaryKey}
+              RouteDescriptionFooterClickMethod={() => {
+                frameLeg({ isDestination, leg, legIndex, place });
+              }}
               setActiveLeg={setActiveLeg}
               setLegDiagram={setLegDiagram}
               showElevationProfile={showElevationProfile}
               showLegIcon={showLegIcon}
+              TransitLegSubheader={TransitLegSubheader}
             />
           ))}
       </S.PlaceDetails>

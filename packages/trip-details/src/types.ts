@@ -1,12 +1,17 @@
 // Prettier does not recognize the import type syntax.
 // eslint-disable-next-line prettier/prettier
-import type { MassUnitOption, Fare, Itinerary, Money } from "@opentripplanner/types";
-import type { ReactElement } from "react";
+import type { 
+  FareProductSelector, 
+  Itinerary, 
+  Leg, 
+  MassUnitOption,
+  Money
+ } from "@opentripplanner/types";
 
-export interface CaloriesDetailsProps {
-  bikeSeconds: number;
-  calories: number;
-  walkSeconds: number;
+export interface TimeActiveDetailsProps {
+  bikeMinutes: number;
+  minutesActive?: number;
+  walkMinutes: number;
 }
 
 export interface CO2ConfigType {
@@ -19,70 +24,57 @@ export interface DepartureDetailsProps {
   departureDate: Date;
 }
 
-export enum FareTableText {
-  regular = "regular",
-  youth = "youth",
-  senior = "senior",
-  special = "special",
-  cash = "cash",
-  electronic = "electronic"
-}
-
+/**
+ * This is the interface used to define the layout for a particular fare table.
+ * The table with be rendered with the columns defined here,
+ * with each row being an individual transit leg from the itinerary.
+ */
 export interface FareTableLayout {
-  cols: {
-    header: FareTableText;
-    key?: string;
-    riderCategory?: string;
-    fareContainer?: string;
-  }[];
-  header: FareTableText;
+  cols: (FareProductSelector & {
+    columnHeaderKey: string;
+  })[]
+  headerKey: string;
 }
-export interface TransitFareData {
-  [key: string]: Money
-}
-
-export interface FareDetailsProps {
-  maxTNCFare: number;
-  minTNCFare: number;
-  transitFares: TransitFareData;
-}
-
+/**
+ * Interface containing the lgs and the layout of the fare table.
+ */
 export interface FareLegTableProps {
   layout?: FareTableLayout[];
-  itinerary: Itinerary;
+  legs: Leg[];
 }
 
-export interface TransitFareProps {
-  fareKey: string;
-  fareNameFallback?: ReactElement;
-  fareKeyNameMap: {
-    [key: string]: string;
-  };
-  transitFares: Fare;
+// Total fare amount corresponding to a fare key
+export type FareTotals = (FareProductSelector & { price: Money })[]
+
+export interface FareDetailsProps {
+  legs: Leg[];
+  maxTNCFare: number;
+  minTNCFare: number;
 }
+
 
 export interface TripDetailsProps {
-  /**
-   * Slot for a custom component to render the expandable section for calories.
-   */
-  CaloriesDetails?: React.ElementType<CaloriesDetailsProps>;
   /**
    * Used for additional styling with styled components for example.
    */
   className?: string;
+    /**
+   * Object containing the CO₂ config.
+   */
+  co2Config?: CO2ConfigType;
   /**
    * Determines which transit fare should be displayed by default, should there be multiple transit fare types.
    */
-  defaultFareKey?: string;
+  defaultFareType?: { headerKey: string } & FareProductSelector;
   /**
    * Slot for a custom component to render the expandable section for departure.
    */
   DepartureDetails?: React.ElementType<DepartureDetailsProps>;
   /**
    * If this is set to true, a row will be added to the trip details displaying how
-   * many calories were burned on the active legs of the trip.
+   * many minutes in total the user will spend walking or biking.
    */
-  displayCalories?: boolean;
+  displayTimeActive?: boolean;
   /**
    * Slot for a custom component to render the expandable section for fares.
    */
@@ -101,8 +93,8 @@ export interface TripDetailsProps {
    * Itinerary that the user has selected to view, contains multiple legs.
    */
   itinerary: Itinerary;
-  /**
-   * Object containing the CO₂ config.
+    /**
+   * Slot for a custom component to render the expandable section for time active.
    */
-  co2Config?: CO2ConfigType;
+  TimeActiveDetails?: React.ElementType<TimeActiveDetailsProps>;
 }

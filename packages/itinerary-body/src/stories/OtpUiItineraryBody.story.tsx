@@ -25,7 +25,6 @@ const walkInterlinedTransitItinerary = require("../__mocks__/itineraries/walk-in
 const walkOnlyItinerary = require("../__mocks__/itineraries/walk-only.json");
 const walkTransitWalkItinerary = require("../__mocks__/itineraries/walk-transit-walk.json");
 const walkTransitWalkTransitWalkItinerary = require("../__mocks__/itineraries/walk-transit-walk-transit-walk.json");
-const fareComponentsItinerary = require("../__mocks__/itineraries/fare-components.json");
 const walkTransitWalkTransitWalkA11yItinerary = require("../__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json");
 const otp2ScooterItinerary = require("../__mocks__/itineraries/otp2-scooter.json");
 const flexItinerary = require("../__mocks__/itineraries/flex-itinerary.json");

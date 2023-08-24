@@ -5,6 +5,7 @@ import routeData2 from "../__mocks__/mock-route2.json";
 import routeDataOtp2 from "../__mocks__/mock-route-otp2.json";
 import flexRouteData from "../__mocks__/mock-flex-route.json";
 import flexRouteData2 from "../__mocks__/mock-flex-route2.json";
+import flexRouteData3 from "../__mocks__/mock-flex-route3.json";
 
 import StopsOverlay from "../../stops-overlay/src";
 import { withMap } from "../../../.storybook/base-map-wrapper";
@@ -123,3 +124,22 @@ FlexRoute2.argTypes = {
   clipToPatternStops: { control: "boolean" }
 };
 FlexRoute2.decorators = [withMap(POWDER_SPRINGS, zoom)];
+
+export const FlexRoute3 = Template.bind({});
+FlexRoute3.args = {
+  extraLayer: (
+    <StopsOverlay
+      // Tests stop area with GeometryCollection
+      stops={Object.values(flexRouteData3.patterns)[2]
+        .stops.filter(
+          stop =>
+            stop?.geometries?.geoJson?.type === "Polygon" ||
+            stop?.geometries?.geoJson?.type === "GeometryCollection"
+        )
+        .map(stop => ({ ...stop, color: `#333` }))}
+      symbols={[]}
+      visible
+    />
+  ),
+  routeData: flexRouteData3
+};

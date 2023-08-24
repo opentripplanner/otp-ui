@@ -1,0 +1,6 @@
+{
+  "ignoredIds": ["otpUi.TestComponent1.unusedTextThatIsIgnored"],
+  "groups": {
+    "otpUi.OtherComponent.*Message": ["key1", "key2"]
+  }
+}
