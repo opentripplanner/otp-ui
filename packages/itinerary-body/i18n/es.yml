@@ -38,6 +38,8 @@ otpUi:
       slightlyLeft: Ligeramente a la izquierda
       slightlyRight: Ligeramente a la derecha
       uTurnRight: Media vuelta a la derecha
+      exitStation: Salir de la estación
+      enterStation: Entrar a la estación
     stepHeading:
       east: el este
       northeast: el noreste
@@ -66,11 +68,13 @@ otpUi:
       escooter: Patineta
       vehicle: Vehículo
     stepDepart: Dirígete hacia {heading} por {street}
+    stepFollowSigns: Sigue las señales hasta {street}
+    stepStation: '{step} en {street}'
   ItineraryBody:
     stayOnBoard: Quédate a bordo en {place}
     travelBy: Viajar {mode}
     common:
-      durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"
+      durationShort: "{hours, plural, =0 {} other {# hr. }}{minutes} min"
     viewOnMap: Ver en el mapa
     flexPickupMessage: "Para tomar esta ruta, tiene que {action}{advanceNotice}."
     flexCallAhead: llama con anticipación
