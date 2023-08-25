@@ -20,6 +20,8 @@ otpUi:
       estimatedCost: "Costo estimado: {minFare} - {maxFare}"
       estimatedTravelTime: "Tiempo de viaje estimado: {duration} (no tiene en cuenta el tráfico)"
       waitForPickup: "Espera al conductor {company}{minutes, plural, =0 {} other { # minutos}}"
+    enterStation: Entrar a la estación
+    exitStation: Salir de la estación
     mapillaryTooltip: Mostrar imágenes de la calle en esta ubicación
     step:
       circleClockwise: Siga el círculo en el sentido de las agujas del reloj
@@ -35,6 +37,7 @@ otpUi:
       uTurnRight: Media vuelta a la derecha
     stepDepart: Dirígete hacia {heading} por {street}
     stepElevator: Toma el ascensor hasta {street}
+    stepFollowSigns: Sigue las señales hasta {street}
     stepGeneric: "{step} por {street}"
     stepHeading:
       east: el este
@@ -45,6 +48,7 @@ otpUi:
       southeast: el sureste
       southwest: el suroeste
       west: el oeste
+    stepStation: "{step} en {street}"
     summary: "{mode} a {place}"
     summaryAndDistance: "{mode} - {distance} a {place}"
     summaryMode:
