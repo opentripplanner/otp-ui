@@ -1,6 +1,6 @@
 import React, { FunctionComponent, ReactElement } from "react";
 import { FareProductSelector, Itinerary } from "@opentripplanner/types";
-import RouteDescriptionFooterWithWaitTimes from "../ItineraryBody/components";
+import RouteDescriptionFooterWithWaitTimes from "./components";
 import ItineraryBody from "..";
 import {
   CustomTimeColumnContent,
