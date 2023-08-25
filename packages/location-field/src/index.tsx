@@ -5,7 +5,7 @@ import getGeocoder from "@opentripplanner/geocoder";
 // @ts-ignore Not Typescripted Yet
 import LocationIcon from "@opentripplanner/location-icon";
 import { Location } from "@opentripplanner/types";
-import React, { useCallback, useEffect, useState, useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { FormattedList, FormattedMessage, useIntl } from "react-intl";
 import { Ban } from "@styled-icons/fa-solid/Ban";
 import { Bus } from "@styled-icons/fa-solid/Bus";
@@ -350,7 +350,6 @@ const LocationField = ({
 
   /** Clear selection & hide the menu. */
   const closeMenu = useCallback(() => {
-    setMessage(null);
     setMenuVisible(false);
     setActiveIndex(null);
   }, [setMessage, setMenuVisible, setActiveIndex]);
@@ -362,6 +361,7 @@ const LocationField = ({
       resultType
     });
     closeMenu();
+    setMessage(null);
   };
 
   const useCurrentLocation = () => {
@@ -410,7 +410,7 @@ const LocationField = ({
       // Hide the menu and messages, but:
       // - don't remove features,
       //   so that when the component gets focus again later, these features are shown
-      //   (unless the location prop changed, in which case the features will be cleared by othe code),
+      //   (unless the location prop changed, in which case the features will be cleared by other code),
       // - don't revert the input text to previous location, so that users don't have to re-enter their text
       //   (unless the location prop changed, in which case the text will be updated by other code).
       closeMenu();
@@ -480,6 +480,7 @@ const LocationField = ({
           if (locationSelected) locationSelected();
 
           closeMenu();
+          setMessage(null);
         } else {
           // Menu not active; get geocode 'search' results
           geocodeSearch(evt.target.value);
@@ -937,12 +938,16 @@ const LocationField = ({
       {/* Note: always render this status tag regardless of the open state,
           so that assistive technologies correctly set up status monitoring. */}
       <S.HiddenContent role="status">
-        <FormattedList
-          // eslint-disable-next-line react/style-prop-object
-          style="narrow"
-          type="conjunction"
-          value={statusMessages}
-        />
+        {/* However, only render the status if the menu is expanded, so that
+            assistive technology reminds user on how to navigate the options. */}
+        {isExpanded && (
+          <FormattedList
+            // eslint-disable-next-line react/style-prop-object
+            style="narrow"
+            type="conjunction"
+            value={statusMessages}
+          />
+        )}
       </S.HiddenContent>
       <ItemList
         // Hide the list from screen readers if no enabled options are shown.
