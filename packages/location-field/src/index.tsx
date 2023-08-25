@@ -5,7 +5,7 @@ import getGeocoder from "@opentripplanner/geocoder";
 // @ts-ignore Not Typescripted Yet
 import LocationIcon from "@opentripplanner/location-icon";
 import { Location } from "@opentripplanner/types";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useCallback, useEffect, useState, useRef } from "react";
 import { FormattedList, FormattedMessage, useIntl } from "react-intl";
 import { Ban } from "@styled-icons/fa-solid/Ban";
 import { Bus } from "@styled-icons/fa-solid/Bus";
@@ -389,6 +389,13 @@ const LocationField = ({
     setMenuVisible(!menuVisible);
   };
 
+  // Clear selection & hide the menu
+  const closeMenu = useCallback(() => {
+    setMessage(null);
+    setMenuVisible(false);
+    setActiveIndex(null);
+  }, [setMessage, setMenuVisible, setActiveIndex]);
+
   /**
    * Only hide menu if the target clicked is not a menu item in the dropdown.
    * Otherwise, the click will not "finish" and the menu will hide without the
@@ -406,8 +413,7 @@ const LocationField = ({
       //   (unless the location prop changed, in which case the features will be cleared by othe code),
       // - don't revert the input text to previous location, so that users don't have to re-enter their text
       //   (unless the location prop changed, in which case the text will be updated by other code).
-      setMenuVisible(false);
-      setMessage(null);
+      closeMenu();
     }
   };
 
@@ -473,10 +479,7 @@ const LocationField = ({
           const locationSelected = locationSelectedLookup[activeIndex];
           if (locationSelected) locationSelected();
 
-          // Clear selection & hide the menu
-          setMessage(null);
-          setMenuVisible(false);
-          setActiveIndex(null);
+          closeMenu();
         } else {
           // Menu not active; get geocode 'search' results
           geocodeSearch(evt.target.value);
@@ -489,9 +492,7 @@ const LocationField = ({
         break;
       case "Escape":
       case "Tab":
-        // Clear selection & hide the menu
-        setMenuVisible(false);
-        setActiveIndex(null);
+        closeMenu();
         break;
       // Any other key pressed: clear active selection
       default:
@@ -542,10 +543,7 @@ const LocationField = ({
           // populate the sessionSearches array.
           addLocationSearch({ location: geocodedLocation });
 
-          // Clear messages and hide menu (copied code).
-          setMessage(null);
-          setMenuVisible(false);
-          setActiveIndex(null);
+          closeMenu();
         });
     };
 
@@ -713,10 +711,7 @@ const LocationField = ({
         // Create the location selected handler
         const locationSelected = () => {
           setLocation(stopLocation, "STOP");
-          // Hide menu and messages (copied code).
-          setMessage(null);
-          setMenuVisible(false);
-          setActiveIndex(null);
+          closeMenu();
         };
 
         // Add to the selection handler lookup (for use in onKeyDown)
@@ -757,10 +752,7 @@ const LocationField = ({
         // Create the location-selected handler
         const locationSelected = () => {
           setLocation(sessionLocation, "SESSION");
-          // Hide menu and messages (copied code)
-          setMessage(null);
-          setMenuVisible(false);
-          setActiveIndex(null);
+          closeMenu();
         };
 
         // Add to the selection handler lookup (for use in onKeyDown)
