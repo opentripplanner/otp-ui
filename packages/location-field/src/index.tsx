@@ -348,13 +348,20 @@ const LocationField = ({
       });
   });
 
+  /** Clear selection & hide the menu. */
+  const closeMenu = useCallback(() => {
+    setMessage(null);
+    setMenuVisible(false);
+    setActiveIndex(null);
+  }, [setMessage, setMenuVisible, setActiveIndex]);
+
   const setLocation = (newLocation: Location, resultType: ResultType) => {
     onLocationSelected({
       location: newLocation,
       locationType,
       resultType
     });
-    setMenuVisible(false);
+    closeMenu();
   };
 
   const useCurrentLocation = () => {
@@ -388,13 +395,6 @@ const LocationField = ({
   const onDropdownToggle = () => {
     setMenuVisible(!menuVisible);
   };
-
-  // Clear selection & hide the menu
-  const closeMenu = useCallback(() => {
-    setMessage(null);
-    setMenuVisible(false);
-    setActiveIndex(null);
-  }, [setMessage, setMenuVisible, setActiveIndex]);
 
   /**
    * Only hide menu if the target clicked is not a menu item in the dropdown.
@@ -542,8 +542,6 @@ const LocationField = ({
           // Add to the location search history. This is intended to
           // populate the sessionSearches array.
           addLocationSearch({ location: geocodedLocation });
-
-          closeMenu();
         });
     };
 
@@ -711,7 +709,6 @@ const LocationField = ({
         // Create the location selected handler
         const locationSelected = () => {
           setLocation(stopLocation, "STOP");
-          closeMenu();
         };
 
         // Add to the selection handler lookup (for use in onKeyDown)
@@ -752,7 +749,6 @@ const LocationField = ({
         // Create the location-selected handler
         const locationSelected = () => {
           setLocation(sessionLocation, "SESSION");
-          closeMenu();
         };
 
         // Add to the selection handler lookup (for use in onKeyDown)
