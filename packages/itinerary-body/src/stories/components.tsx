@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import { differenceInMinutes } from "date-fns";
-
 import { Leg } from "@opentripplanner/types";
+
 import { RouteDescriptionFooterProps } from "../types";
 import { DefaultRouteDescriptionFooter } from "../defaults/route-description-footer";
 

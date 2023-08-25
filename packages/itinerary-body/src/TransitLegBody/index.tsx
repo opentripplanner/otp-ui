@@ -36,7 +36,6 @@ interface Props {
   AlertBodyIcon?: FunctionComponent;
   AlertToggleIcon?: FunctionComponent;
   alwaysCollapseAlerts: boolean;
-  arrivalText: string;
   fare?: Fare;
   defaultFareSelector?: FareProductSelector;
   intl: IntlShape;
