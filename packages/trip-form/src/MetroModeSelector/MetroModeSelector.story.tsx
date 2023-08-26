@@ -18,8 +18,6 @@ import {
   setModeButtonEnabled
 } from "./utils";
 
-import modeSettingDefinitions from "../../modeSettings.yml";
-
 const getIcon = (iconName: string): JSX.Element | null => {
   switch (iconName) {
     case "bus":
@@ -67,8 +65,8 @@ const defaultModeButtonDefinitions = [
   }
 ];
 
+// TODO: add more test settings?
 const modeSettingDefinitionsWithDropdown = [
-  ...modeSettingDefinitions,
   {
     applicableMode: "TRANSIT",
     default: "blue",

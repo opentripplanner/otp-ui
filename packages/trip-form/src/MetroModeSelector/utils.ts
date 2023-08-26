@@ -48,6 +48,19 @@ export function convertModeSettingValue(
   setting: ModeSetting,
   value: string | boolean | number
 ): string | boolean | number {
+  // Assume the type of the output value based on the type of the default value.
+  if (setting.default) {
+    switch (typeof setting.default) {
+      case "bigint":
+      case "number":
+        return Number(value);
+      case "boolean":
+        return value === "true" || value === true;
+      default:
+        return value;
+    }
+  }
+  // In case no default is provided.
   switch (setting.type) {
     case "CHECKBOX":
     case "SUBMODE":

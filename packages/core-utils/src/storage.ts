@@ -6,10 +6,12 @@ const STORAGE_PREFIX = "otp";
  * Store a javascript object at the specified key.
  */
 export function storeItem(key: string, object: unknown): void {
-  window.localStorage.setItem(
-    `${STORAGE_PREFIX}.${key}`,
-    JSON.stringify(object)
-  );
+  if (window) {
+    window.localStorage.setItem(
+      `${STORAGE_PREFIX}.${key}`,
+      JSON.stringify(object)
+    );
+  }
 }
 
 /**
@@ -34,7 +36,9 @@ export function getItem(key: string, notFoundValue: unknown = null): unknown {
  * Remove item at specified key.
  */
 export function removeItem(key: string): void {
-  window.localStorage.removeItem(`${STORAGE_PREFIX}.${key}`);
+  if (window) {
+    window.localStorage.removeItem(`${STORAGE_PREFIX}.${key}`);
+  }
 }
 
 /**

@@ -239,6 +239,7 @@ export function generateOtp2Query(
   const {
     bikeReluctance,
     carReluctance,
+    walkSpeed,
     walkReluctance,
     wheelchair
   } = modeSettingValues;
@@ -258,6 +259,7 @@ export function generateOtp2Query(
       time,
       toPlace: `${to.name}::${to.lat},${to.lon}}`,
       walkReluctance,
+      walkSpeed,
       wheelchair
     }
   };

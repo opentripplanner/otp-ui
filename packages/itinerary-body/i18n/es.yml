@@ -25,6 +25,8 @@ otpUi:
       circleClockwise: Siga el círculo en el sentido de las agujas del reloj
       circleCounterClockwise: Siga el círculo en sentido contrario a las agujas del reloj
       continue: Continuar
+      enterStation: Entrar a la estación
+      exitStation: Salir de la estación
       hardLeft: Giro a la izquierda
       hardRight: Giro a la derecha
       left: Vire a la izquierda
@@ -65,8 +67,7 @@ otpUi:
       vehicle: Vehículo
   ItineraryBody:
     common:
-      durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"
-    flexAdvanceNotice: " al menos {leadDays, plural, one {# día} other {# días}} de antelación"
+      durationShort: "{hours, plural, =0 {} other {# hr. }}{minutes} min"
     flexCallAhead: llama con anticipación
     flexCallNumber: llama {phoneNumber}
     flexPickupMessage: Para tomar esta ruta, tiene que {action}{advanceNotice}.
