@@ -72,7 +72,10 @@ export function ensureSingleAccessMode(queryModes) {
 }
 
 export function getUrlParams() {
-  return qs.parse(window.location.href.split("?")[1]);
+  if (window) {
+    return qs.parse(window.location.href.split("?")[1]);
+  }
+  return undefined;
 }
 
 export function getOtpUrlParams() {
