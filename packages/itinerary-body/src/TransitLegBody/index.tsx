@@ -1,6 +1,5 @@
 import coreUtils from "@opentripplanner/core-utils";
 import {
-  Fare,
   FareProductSelector,
   FlexBookingInfo,
   Leg,
@@ -38,7 +37,6 @@ interface Props {
   AlertToggleIcon?: FunctionComponent;
   alwaysCollapseAlerts: boolean;
   defaultFareSelector?: FareProductSelector;
-  fare?: Fare;
   intl: IntlShape;
   leg: Leg;
   legDestination: string;
