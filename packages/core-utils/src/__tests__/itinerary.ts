@@ -4,6 +4,9 @@ import {
   getDisplayedStopId,
   getItineraryCost,
   getLegCost,
+  getLegRouteLongName,
+  getLegRouteName,
+  getLegRouteShortName,
   isTransit
 } from "../itinerary";
 
@@ -178,6 +181,74 @@ describe("util > itinerary", () => {
         code: "USD",
         digits: 2
       });
+    });
+  });
+  describe("getLegRouteShortName", () => {
+    it("should extract a route short name from an OTP1 leg", () => {
+      expect(getLegRouteShortName({ route: "15" })).toBe("15");
+      expect(getLegRouteShortName({ route: "15", routeShortName: "31" })).toBe(
+        "31"
+      );
+    });
+
+    it("should extract a route short name from an OTP2 leg", () => {
+      expect(
+        getLegRouteShortName({
+          route: { id: "id15", shortName: "15" },
+          routeShortName: "31"
+        })
+      ).toBe("15");
+    });
+  });
+  describe("getLegRouteLongName", () => {
+    it("should extract a route long name from an OTP1 leg", () => {
+      expect(getLegRouteLongName({ route: "15" })).toBeUndefined();
+      expect(
+        getLegRouteLongName({ route: "15", routeLongName: "Candler Road" })
+      ).toBe("Candler Road");
+    });
+    it("should extract a route long name from an OTP2 leg", () => {
+      expect(
+        getLegRouteLongName({
+          route: { id: "id15", longName: "15" },
+          routeLongName: "31"
+        })
+      ).toBe("15");
+    });
+  });
+  describe("getLegRouteName", () => {
+    it("should extract a route name from an OTP1 leg where a route short name is provided", () => {
+      expect(
+        getLegRouteName({
+          route: "15",
+          routeShortName: "31",
+          routeLongName: "Route 31"
+        })
+      ).toBe("31");
+    });
+    it("should extract a route name from an OTP1 leg where a route short name is not provided", () => {
+      expect(
+        getLegRouteName({
+          routeLongName: "Route 31"
+        })
+      ).toBe("Route 31");
+    });
+    it("should extract a route name from an OTP2 leg where a route short name is provided", () => {
+      expect(
+        getLegRouteName({
+          route: { id: "id15", longName: "15", shortName: "10" },
+          routeLongName: "31"
+        })
+      ).toBe("10");
+    });
+    it("should extract a route name from an OTP2 leg where a route short name is not provided", () => {
+      expect(
+        getLegRouteName({
+          route: { id: "id15", longName: "15" },
+          routeLongName: "31",
+          routeShortName: "31"
+        })
+      ).toBe("15");
     });
   });
 });
