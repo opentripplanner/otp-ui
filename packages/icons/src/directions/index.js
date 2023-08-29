@@ -44,6 +44,14 @@ function DirectionIcon({ relativeDirection }) {
       return <CircleCounterclockwise />;
     case "ELEVATOR":
       return <Elevator />;
+    case "FOLLOW_SIGNS":
+      // TODO: Better/custom icon?
+      return <Straight />;
+    case "ENTER_STATION":
+    case "EXIT_STATION":
+      // TODO: Better/custom icon?
+      return <Straight />;
+
     default:
       return null;
   }

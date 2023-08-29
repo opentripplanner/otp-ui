@@ -685,18 +685,29 @@ export const convertGraphQLResponseToLegacy = (leg: any): any => ({
 /** Extracts the route number for a leg returned from OTP1 or OTP2. */
 export const getLegRouteShortName = (
   leg: Pick<Leg, "route" | "routeShortName">
-): string => {
+): string | null => {
   const { route, routeShortName } = leg;
-  if (typeof route === "string") {
-    return typeof routeShortName === "string" ? routeShortName : route;
-  }
-  return route?.shortName;
+  // typeof route === "object" denotes newer OTP2 responses. routeShortName and route as string is OTP1.
+  return typeof route === "object"
+    ? route?.shortName
+    : routeShortName || (route as string);
 };
 
-/** Extract the route ling name for a leg returned from OTP1 or OTP2. */
+/** Extract the route long name for a leg returned from OTP1 or OTP2. */
 export const getLegRouteLongName = (
   leg: Pick<Leg, "route" | "routeLongName">
-): string => {
+): string | null => {
   const { route, routeLongName } = leg;
-  return typeof route === "string" ? routeLongName : route?.longName;
+  // typeof route === "object" denotes newer OTP2 responses. routeLongName is OTP1.
+  return typeof route === "object" ? route?.longName : routeLongName;
+};
+
+/**
+ * Returns the route short name, or the route long name if no short name is provided.
+ * This is happens with Seattle area streetcars and ferries.
+ */
+export const getLegRouteName = (
+  leg: Pick<Leg, "route" | "routeLongName" | "routeShortName">
+): string => {
+  return getLegRouteShortName(leg) || getLegRouteLongName(leg);
 };
