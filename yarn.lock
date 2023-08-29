@@ -3260,7 +3260,7 @@
     lodash.isequal "^4.5.0"
     qs "^6.9.1"
 
-"@opentripplanner/core-utils@^9.0.2", "@opentripplanner/core-utils@^9.0.3":
+"@opentripplanner/core-utils@^9.0.2":
   version "9.0.3"
   resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-9.0.3.tgz#c1ebdcc3ad5999fb28427102c9be7d7268f6bd37"
   integrity sha512-8P3Bi41jF7z18P/soo6lEw+nrqarsyGMAxivsF1/kMJdRo4wnakp0zcrVZjDXTxoR6LPtj6Kkuxv3JQFO9jKiw==
