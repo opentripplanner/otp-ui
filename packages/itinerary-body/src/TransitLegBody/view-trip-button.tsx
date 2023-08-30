@@ -13,9 +13,9 @@ class ViewTripButton extends Component<Props> {
   onClick = (): void => {
     const {
       fromIndex,
-      toIndex,
       fromStopId,
       setViewedTrip,
+      toIndex,
       toStopId,
       tripId
     } = this.props;
