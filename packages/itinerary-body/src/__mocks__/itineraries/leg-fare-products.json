@@ -293,8 +293,6 @@
       "transitLeg": true,
       "accessibilityScore": null,
       "trip": {
-        "fromStopId": "mock:fromStopId",
-        "toStopId": "mock:toStopId",
         "gtfsId": "kcm:541480853",
         "id": "VHJpcDprY206NTQxNDgwODUz",
         "tripHeadsign": "Northgate Station Ridgecrest"
@@ -946,8 +944,6 @@
       "trip": {
         "id": "VHJpcDo0MDpMTFJfMjAyMy0wMy0xOC0yMDIzLTA5LTA0X1dlZWtkYXlfMjA4Ng",
         "gtfsId": "40:LLR_2023-03-18-2023-09-04_Weekday_2086",
-        "fromStopId": "mock:fromStopId",
-        "toStopId": "mock:toStopId",
         "tripHeadsign": "Angle Lake"
       },
       "agency": {
