@@ -655,6 +655,7 @@ const pickupDropoffTypeToOtp1 = otp2Type => {
 export const convertGraphQLResponseToLegacy = (leg: any): any => ({
   ...leg,
   agencyBrandingUrl: leg.agency?.url,
+  agencyId: leg.agency?.id,
   agencyName: leg.agency?.name,
   agencyUrl: leg.agency?.url,
   alightRule: pickupDropoffTypeToOtp1(leg.dropoffType),
