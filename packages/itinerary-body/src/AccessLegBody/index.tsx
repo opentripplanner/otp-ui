@@ -29,7 +29,6 @@ interface Props {
   legIndex: number;
   mapillaryCallback?: (id: string) => void;
   mapillaryKey?: string;
-  RouteDescriptionFooterClickMethod: () => void;
   setActiveLeg: SetActiveLegFunction;
   setLegDiagram: (leg: Leg) => void;
   showElevationProfile: boolean;
@@ -74,8 +73,7 @@ class AccessLegBody extends Component<Props, State> {
       setLegDiagram,
       showElevationProfile,
       showLegIcon,
-      RouteDescriptionFooterClickMethod,
-      TransitLegSubheader
+      TransitLegSubheader,
     } = this.props;
     const { expanded } = this.state;
 
@@ -88,7 +86,6 @@ class AccessLegBody extends Component<Props, State> {
           LegIcon={LegIcon}
           onSummaryClick={this.onSummaryClick}
           showLegIcon={showLegIcon}
-          RouteDescriptionFooterClickMethod={RouteDescriptionFooterClickMethod}
         />
       );
     }
@@ -110,9 +107,6 @@ class AccessLegBody extends Component<Props, State> {
             LegIcon={LegIcon}
             onSummaryClick={this.onSummaryClick}
             showLegIcon={showLegIcon}
-            RouteDescriptionFooterClickMethod={
-              RouteDescriptionFooterClickMethod
-            }
           />
           <S.LegDetails>
             <S.StepsHeaderAndMapLink>
@@ -170,5 +164,5 @@ export {
   LegDiagramPreview,
   RentedVehicleSubheader,
   S as Styled,
-  TNCLeg
+  TNCLeg,
 };

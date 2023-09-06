@@ -12,7 +12,6 @@ interface Props {
   LegIcon: LegIconComponent;
   onSummaryClick: () => void;
   showLegIcon: boolean;
-  RouteDescriptionFooterClickMethod: () => void;
 }
 
 export default function AccessLegSummary({
