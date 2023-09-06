@@ -4765,9 +4765,7 @@ input[aria-expanded="false"] ~ .c7 {
   <span
     className="c6"
     role="status"
-  >
-    otpUi.LocationField.currentLocationUnavailable
-  </span>
+  />
   <ul
     aria-hidden={true}
     aria-label="Suggested locations"

@@ -1,13 +1,12 @@
+import { getCompanyForNetwork } from "@opentripplanner/core-utils/lib/itinerary";
 import { Defaults } from "@opentripplanner/itinerary-body";
+import { parseOTP2Minute } from "@opentripplanner/itinerary-body/lib/util";
 import { GradationMap, Leg, LegIconComponent } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
-import { getCompanyForNetwork } from "@opentripplanner/core-utils/lib/itinerary";
-import { parseOTP2Minute } from "@opentripplanner/itinerary-body/src/util";
 import AccessibilityAnnotation from "./accessibility-annotation";
 import * as S from "./styled";
-
 import { defaultMessages, strongText } from "./util";
 
 interface Props {
