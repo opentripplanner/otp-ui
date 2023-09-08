@@ -28,6 +28,7 @@ const ItineraryBody = ({
   mapillaryKey,
   PlaceName,
   RouteDescription,
+  RouteDescriptionFooter,
   routingType = "ITINERARY",
   setActiveLeg,
   setLegDiagram,
@@ -40,7 +41,7 @@ const ItineraryBody = ({
   TimeColumnContent,
   toRouteAbbreviation = defaultRouteAbbr,
   TransitLegSubheader,
-  TransitLegSummary
+  TransitLegSummary,
 }: ItineraryBodyProps): ReactElement => {
   /*
     TODO: replace component should update logic? companies is simply used to
@@ -76,6 +77,7 @@ const ItineraryBody = ({
           mapillaryKey={mapillaryKey}
           PlaceName={PlaceName}
           RouteDescription={RouteDescription}
+          RouteDescriptionFooter={RouteDescriptionFooter}
           routingType={routingType}
           setActiveLeg={setActiveLeg}
           setLegDiagram={setLegDiagram}

@@ -2,6 +2,7 @@ import React, { ReactElement } from "react";
 import { Bomb } from "@styled-icons/fa-solid/Bomb";
 import { Bolt } from "@styled-icons/fa-solid/Bolt";
 import styled from "styled-components";
+import RouteDescriptionFooterWithWaitTimes from "./components";
 
 import ItineraryBody from "..";
 import {
@@ -47,12 +48,16 @@ export const BikeOnlyItinerary = (): ReactElement => (
 );
 
 export const WalkTransitWalkItinerary = (): ReactElement => (
-  <ItineraryBodyDefaultsWrapper itinerary={walkTransitWalkItinerary} />
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
+  />
 );
 
 export const WalkTransitTransferWithA11yItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     itinerary={walkTransitWalkTransitWalkA11yItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
   />
 );
 
@@ -60,6 +65,7 @@ export const StyledWalkTransitWalkItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     itinerary={walkTransitWalkItinerary}
     styledItinerary="pink-legs"
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
   />
 );
 // Custom styling for this story only, not in production
@@ -69,6 +75,7 @@ export const WalkTransitWalkItineraryWithAgencyInformation = (): ReactElement =>
   <ItineraryBodyDefaultsWrapper
     itinerary={walkTransitWalkItinerary}
     showAgencyInfo
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
   />
 );
 
@@ -76,6 +83,7 @@ export const WalkTransitWalkItineraryWithCustomTransitLegSummaryComponent = (): 
   <ItineraryBodyDefaultsWrapper
     itinerary={walkTransitWalkItinerary}
     TransitLegSummary={CustomTransitLegSummary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
   />
 );
 
@@ -83,6 +91,7 @@ export const WalkTransitWalkItineraryWithCustomPlaceNameComponent = (): ReactEle
   <ItineraryBodyDefaultsWrapper
     itinerary={walkTransitWalkItinerary}
     PlaceName={CustomPlaceName}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
   />
 );
 
@@ -91,15 +100,22 @@ export const WalkTransitWalkItineraryWithCustomViewTripButtonActivatedAndCustomR
     itinerary={walkTransitWalkItinerary}
     showViewTripButton
     toRouteAbbreviation={customToRouteAbbreviation}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
   />
 );
 
 export const BikeTransitBikeItinerary = (): ReactElement => (
-  <ItineraryBodyDefaultsWrapper itinerary={bikeTransitBikeItinerary} />
+  <ItineraryBodyDefaultsWrapper
+    itinerary={bikeTransitBikeItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
+  />
 );
 
 export const WalkInterlinedTransitItinerary = (): ReactElement => (
-  <ItineraryBodyDefaultsWrapper itinerary={walkInterlinedTransitItinerary} />
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkInterlinedTransitItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
+  />
 );
 // Custom styling for this story only, not in production
 WalkInterlinedTransitItinerary.parameters = a11yOverrideParameters;
@@ -107,6 +123,7 @@ WalkInterlinedTransitItinerary.parameters = a11yOverrideParameters;
 export const WalkTransitTransferItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     itinerary={walkTransitWalkTransitWalkItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
   />
 );
 
@@ -119,23 +136,31 @@ export const EScooterRentalItinerary = (): ReactElement => (
 );
 
 export const ParkAndRideItinerary = (): ReactElement => (
-  <ItineraryBodyDefaultsWrapper itinerary={parkAndRideItinerary} />
+  <ItineraryBodyDefaultsWrapper
+    itinerary={parkAndRideItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
+  />
 );
 
 export const BikeRentalTransitItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     itinerary={bikeRentalTransitBikeRentalItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
   />
 );
 
 export const EScooterRentalTransitItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     itinerary={eScooterRentalTransiteScooterRentalItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
   />
 );
 
 export const TncTransitItinerary = (): ReactElement => (
-  <ItineraryBodyDefaultsWrapper itinerary={tncTransitTncItinerary} />
+  <ItineraryBodyDefaultsWrapper
+    itinerary={tncTransitTncItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
+  />
 );
 
 export const OTP2ScooterItinerary = (): ReactElement => (
@@ -143,11 +168,18 @@ export const OTP2ScooterItinerary = (): ReactElement => (
 );
 
 export const OTP2FlexItinerary = (): ReactElement => (
-  <ItineraryBodyDefaultsWrapper itinerary={flexItinerary} />
+  <ItineraryBodyDefaultsWrapper
+    itinerary={flexItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
+  />
 );
 
 export const IndividualLegFareComponents = (): ReactElement => (
-  <ItineraryBodyDefaultsWrapper itinerary={fareProductsItinerary} />
+  <ItineraryBodyDefaultsWrapper
+    itinerary={fareProductsItinerary}
+    showRouteFares
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
+  />
 );
 
 export const CustomAlertIconsItinerary = (): ReactElement => (
@@ -155,6 +187,7 @@ export const CustomAlertIconsItinerary = (): ReactElement => (
     itinerary={walkTransitWalkItinerary}
     AlertToggleIcon={styled(Bolt).attrs({ size: 15 })``}
     AlertBodyIcon={styled(Bomb).attrs({ size: 18 })``}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
   />
 );
 
@@ -162,6 +195,7 @@ export const ThreeAlertsAlwaysCollapsing = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     alwaysCollapseAlerts
     itinerary={walkTransitWalkItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
   />
 );
 
@@ -169,6 +203,7 @@ export const TwoAlertsAlwaysCollapsing = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     alwaysCollapseAlerts
     itinerary={parkAndRideItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
   />
 );
 
@@ -176,6 +211,7 @@ export const ZeroAlertsAlwaysCollapsing = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     alwaysCollapseAlerts
     itinerary={walkInterlinedTransitItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
   />
 );
 
@@ -183,6 +219,7 @@ export const ThreeAlertsNotAlwaysCollapsing = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     alwaysCollapseAlerts={false}
     itinerary={walkTransitWalkItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
   />
 );
 
@@ -190,6 +227,7 @@ export const TwoAlertsNotAlwaysCollapsing = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     alwaysCollapseAlerts={false}
     itinerary={parkAndRideItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
   />
 );
 
@@ -197,17 +235,27 @@ export const ZeroAlertsNotAlwaysCollapsing = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     alwaysCollapseAlerts={false}
     itinerary={walkInterlinedTransitItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
   />
 );
 
 export const ThreeAlertsWithoutCollapsingProp = (): ReactElement => (
-  <ItineraryBodyDefaultsWrapper itinerary={walkTransitWalkItinerary} />
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
+  />
 );
 
 export const TwoAlertWithoutCollapsingProp = (): ReactElement => (
-  <ItineraryBodyDefaultsWrapper itinerary={parkAndRideItinerary} />
+  <ItineraryBodyDefaultsWrapper
+    itinerary={parkAndRideItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
+  />
 );
 
 export const ZeroAlertsWithoutCollapsingProp = (): ReactElement => (
-  <ItineraryBodyDefaultsWrapper itinerary={walkInterlinedTransitItinerary} />
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkInterlinedTransitItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
+  />
 );
