@@ -20,6 +20,6 @@
   },
   "devDependencies": {
     "@opentripplanner/base-map": "^3.0.14",
-    "@opentripplanner/types": "^6.0.0"
+    "@opentripplanner/types": "^6.1.0"
   }
 }
