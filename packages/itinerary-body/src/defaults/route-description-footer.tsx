@@ -4,13 +4,13 @@ import * as S from "../styled";
 import { RouteDescriptionFooterProps } from "../types";
 
 export function DefaultRouteDescriptionFooter({
-  navigateToArrivalVehicle = null,
+  onClick = null,
   waitMinutes
 }: RouteDescriptionFooterProps): ReactElement {
   return (
     <S.ArrivalTimeContainer
       onClick={() => {
-        navigateToArrivalVehicle();
+        onClick();
       }}
     >
       Arrives in {waitMinutes} minutes
