@@ -47,7 +47,7 @@ export default function PlaceRow({
   TimeColumnContent = DefaultTimeColumnContent,
   toRouteAbbreviation,
   TransitLegSubheader,
-  TransitLegSummary,
+  TransitLegSummary
 }: PlaceRowProps): ReactElement {
   // NOTE: Previously there was a check for itineraries that changed vehicles
   // at a single stop, which would render the stop place the same as the
@@ -68,10 +68,10 @@ export default function PlaceRow({
   const viewOnMapMessage = intl.formatMessage({
     defaultMessage: defaultMessages["otpUi.ItineraryBody.viewOnMap"],
     description: "Text describing the view-on-map button",
-    id: "otpUi.ItineraryBody.viewOnMap",
+    id: "otpUi.ItineraryBody.viewOnMap"
   });
 
-  const formattedPlace = (direction) => (
+  const formattedPlace = direction => (
     <PlaceName config={config} interline={interline} place={direction} />
   );
 
@@ -115,7 +115,7 @@ export default function PlaceRow({
             description="Add starting location for access legs"
             id="otpUi.TransitLegBody.fromLocation"
             values={{
-              location: formattedPlace(leg.from),
+              location: formattedPlace(leg.from)
             }}
           />
         ) : (

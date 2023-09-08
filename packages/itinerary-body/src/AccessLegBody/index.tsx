@@ -73,7 +73,7 @@ class AccessLegBody extends Component<Props, State> {
       setLegDiagram,
       showElevationProfile,
       showLegIcon,
-      TransitLegSubheader,
+      TransitLegSubheader
     } = this.props;
     const { expanded } = this.state;
 
@@ -164,5 +164,5 @@ export {
   LegDiagramPreview,
   RentedVehicleSubheader,
   S as Styled,
-  TNCLeg,
+  TNCLeg
 };

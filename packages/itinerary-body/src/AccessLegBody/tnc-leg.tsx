@@ -29,7 +29,7 @@ export default function TNCLeg({
   LYFT_CLIENT_ID = "",
   onSummaryClick,
   showLegIcon,
-  UBER_CLIENT_ID = "",
+  UBER_CLIENT_ID = ""
 }: Props): ReactElement {
   const universalLinks = {
     uber: `https://m.uber.com/${
@@ -41,7 +41,7 @@ export default function TNCLeg({
     )}&dropoff[latitude]=${leg.to.lat}&dropoff[longitude]=${
       leg.to.lon
     }&dropoff[formatted_address]=${encodeURI(leg.to.name)}`,
-    lyft: `https://lyft.com/ride?id=lyft&partner=${LYFT_CLIENT_ID}&pickup[latitude]=${leg.from.lat}&pickup[longitude]=${leg.from.lon}&destination[latitude]=${leg.to.lat}&destination[longitude]=${leg.to.lon}`,
+    lyft: `https://lyft.com/ride?id=lyft&partner=${LYFT_CLIENT_ID}&pickup[latitude]=${leg.from.lat}&pickup[longitude]=${leg.from.lon}&destination[latitude]=${leg.to.lat}&destination[longitude]=${leg.to.lon}`
   };
   const { rideHailingEstimate } = leg;
   if (!rideHailingEstimate) return null;
@@ -61,7 +61,7 @@ export default function TNCLeg({
             )?.label,
             minutes: followsTransit
               ? 0
-              : parseInt(parseOTP2Minute(leg.rideHailingEstimate.arrival), 10),
+              : parseInt(parseOTP2Minute(leg.rideHailingEstimate.arrival), 10)
           }}
         />
       </S.PlaceSubheader>
@@ -109,7 +109,7 @@ export default function TNCLeg({
                         parseInt(
                           parseOTP2Minute(rideHailingEstimate.arrival),
                           10
-                        ),
+                        )
                     }}
                   />
                 </S.BookLaterText>
@@ -127,7 +127,7 @@ export default function TNCLeg({
             description="Describes the estimated travel time."
             id="otpUi.AccessLegBody.TncLeg.estimatedTravelTime"
             values={{
-              duration: <Duration seconds={leg.duration} />,
+              duration: <Duration seconds={leg.duration} />
             }}
           />
         </S.TNCTravelTime>
@@ -161,7 +161,7 @@ export default function TNCLeg({
                     style="currency"
                     value={rideHailingEstimate.minPrice.amount}
                   />
-                ),
+                )
               }}
             />
           </S.TNCCost>
