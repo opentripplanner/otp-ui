@@ -1,3 +1,4 @@
+import path from "path";
 import {
   combineExceptionFiles,
   expandGroupIds,
@@ -5,8 +6,15 @@ import {
   sortSourceAndYmlFiles
 } from "../util";
 
-const packagesFolder = `${process.cwd()}/packages`;
-export const mocksFolderFromCwd = `${packagesFolder}/scripts/src/__tests__/__mocks__`;
+const packagesFolder = path.join(process.cwd(), "packages");
+
+export const mocksFolderFromCwd = path.join(
+  packagesFolder,
+  "scripts",
+  "src",
+  "__tests__",
+  "__mocks__"
+);
 
 const fromToPickerSrcFolder = "from-to-location-picker/src";
 
@@ -25,8 +33,8 @@ describe("util", () => {
       const args = [
         "node",
         "script-name.js",
-        `${mocksFolderFromCwd}/i18n1`,
-        `${packagesFolder}/${fromToPickerSrcFolder}`
+        path.join(mocksFolderFromCwd, "i18n1"),
+        path.join(packagesFolder, fromToPickerSrcFolder)
       ];
       const {
         exceptionFiles,
