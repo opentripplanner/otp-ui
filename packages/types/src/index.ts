@@ -724,6 +724,7 @@ export type SliderOptions = {
 export type CheckboxOptions = {
   addTransportMode?: TransportMode;
   default?: boolean;
+  falseValue?: boolean | string | number;
   id?: string;
   label: string;
   truthValue?: boolean | string | number;
