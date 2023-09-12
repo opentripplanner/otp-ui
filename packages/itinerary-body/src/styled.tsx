@@ -135,7 +135,7 @@ export const ArrivalTimeContainer = styled.button`
   align-items: center;
   background: none;
   border: none;
-  color: #008ab0;
+  color: #007899;
   cursor: pointer;
   display: flex;
   font-size: 0.9em;
