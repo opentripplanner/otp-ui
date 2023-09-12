@@ -52,6 +52,7 @@ interface Props {
   TransitLegSubheader?: FunctionComponent<TransitLegSubheaderProps>;
   TransitLegSummary: FunctionComponent<TransitLegSummaryProps>;
   transitOperator?: TransitOperator;
+  trimetMode: boolean;
 }
 
 interface State {
@@ -144,7 +145,8 @@ class TransitLegBody extends Component<Props, State> {
       timeZone,
       TransitLegSubheader,
       TransitLegSummary,
-      transitOperator
+      transitOperator,
+      trimetMode
     } = this.props;
     const { agencyBrandingUrl, agencyName, agencyUrl, alerts } = leg;
     const { alertsExpanded, stopsExpanded } = this.state;
@@ -231,7 +233,9 @@ class TransitLegBody extends Component<Props, State> {
               </S.LegClickableButton>
             </S.LegDescription>
           </S.LegClickable>
-          {RouteDescriptionFooter && <RouteDescriptionFooter leg={leg} />}
+          {RouteDescriptionFooter && trimetMode && (
+            <RouteDescriptionFooter leg={leg} />
+          )}
           <div
             // Creates a group of leg details for screenreaders after the initial leg description.
             aria-label={intl.formatMessage({

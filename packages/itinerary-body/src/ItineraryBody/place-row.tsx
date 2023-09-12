@@ -47,7 +47,8 @@ export default function PlaceRow({
   TimeColumnContent = DefaultTimeColumnContent,
   toRouteAbbreviation,
   TransitLegSubheader,
-  TransitLegSummary
+  TransitLegSummary,
+  trimetMode
 }: PlaceRowProps): ReactElement {
   // NOTE: Previously there was a check for itineraries that changed vehicles
   // at a single stop, which would render the stop place the same as the
@@ -154,6 +155,7 @@ export default function PlaceRow({
                 leg,
                 config.transitOperators
               )}
+              trimetMode={trimetMode}
             />
           ) : (
             /* This is an access (e.g. walk/bike/etc.) leg */
