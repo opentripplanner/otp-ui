@@ -2,7 +2,7 @@ import React, { ReactElement } from "react";
 import { Bomb } from "@styled-icons/fa-solid/Bomb";
 import { Bolt } from "@styled-icons/fa-solid/Bolt";
 import styled from "styled-components";
-import RouteDescriptionFooterWithWaitTimes from "./components";
+import RouteDescriptionFooterWithWaitTimes from "./footer-with-wait-times";
 
 import ItineraryBody from "..";
 import {
