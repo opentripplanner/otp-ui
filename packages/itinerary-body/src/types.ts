@@ -229,11 +229,6 @@ interface ItineraryBodySharedProps {
    * - stopsExpanded: whether the intermediate stop display is currently expanded
    */
   TransitLegSummary: FunctionComponent<TransitLegSummaryProps>;
-  /**
-   * A custom prop for use by Trimet that will toggle whether the ArrivalTimeContainer
-   * is rendered or not. Defaults to false.
-   */
-  trimetMode: boolean;
 }
 
 export interface PlaceRowProps
