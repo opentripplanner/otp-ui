@@ -8,20 +8,21 @@ fragment StopParameters on Stop {
 }
 
 query Plan(
-  $fromPlace: String!
-  $toPlace: String!
-  $modes: [TransportMode]
-  $time: String
-  $date: String
-  $wheelchair: Boolean
+  $arriveBy: Boolean
+  $banned: InputBanned
   $bikeReluctance: Float
   $carReluctance: Float
-  $walkReluctance: Float
-  $arriveBy: Boolean
-  $preferred: InputPreferred
-  $unpreferred: InputUnpreferred
-  $banned: InputBanned
+  $date: String
+  $fromPlace: String!
+  $modes: [TransportMode]
   $numItineraries: Int
+  $preferred: InputPreferred
+  $time: String
+  $toPlace: String!
+  $unpreferred: InputUnpreferred
+  $walkReluctance: Float
+  $walkSpeed: Float
+  $wheelchair: Boolean
 ) {
   plan(
     arriveBy: $arriveBy
@@ -39,6 +40,7 @@ query Plan(
     transportModes: $modes
     unpreferred: $unpreferred
     walkReluctance: $walkReluctance
+    walkSpeed: $walkSpeed
     wheelchair: $wheelchair
   ) {
     itineraries {
@@ -111,6 +113,7 @@ query Plan(
           }
           vertexType
         }
+        headsign
         interlineWithPreviousLeg
         intermediateStops {
           lat
@@ -223,10 +226,8 @@ query Plan(
             }
             stopPosition
           }
-
           gtfsId
           id
-          tripHeadsign
         }
       }
       startTime

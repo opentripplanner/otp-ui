@@ -65,8 +65,10 @@ export type FrameLegFunction = (
 ) => void;
 
 export interface TripSection {
-  fromIndex: number;
-  toIndex: number;
+  fromIndex?: number;
+  fromStopId?: string;
+  toIndex?: number;
+  toStopId?: string;
   tripId: string;
 }
 

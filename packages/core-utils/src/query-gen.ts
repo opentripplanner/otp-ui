@@ -231,7 +231,8 @@ export function generateOtp2Query(
 
     // If we assign a value on true, return the value (or null) instead of a boolean.
     if (cur.type === "CHECKBOX" && cur.truthValue) {
-      prev[cur.key] = cur.value === true ? cur.truthValue : null;
+      prev[cur.key] =
+        cur.value === true ? cur.truthValue : cur.falseValue ?? null;
     }
     return prev;
   }, {}) as ModeSettingValues;
@@ -239,6 +240,7 @@ export function generateOtp2Query(
   const {
     bikeReluctance,
     carReluctance,
+    walkSpeed,
     walkReluctance,
     wheelchair
   } = modeSettingValues;
@@ -258,6 +260,7 @@ export function generateOtp2Query(
       time,
       toPlace: `${to.name}::${to.lat},${to.lon}}`,
       walkReluctance,
+      walkSpeed,
       wheelchair
     }
   };

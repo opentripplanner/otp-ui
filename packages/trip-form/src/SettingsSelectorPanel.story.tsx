@@ -92,8 +92,8 @@ const SettingsPanelTemplate = (args: StoryArgs, context: StoryContext) => {
         queryParamMessages={
           args.useCustomMessages
             ? {
-                walkSpeed: {
-                  label: "Custom walk speed label",
+                maxWalkDistance: {
+                  label: "Custom max walk distance label",
                   options: [
                     {
                       text: "3 kph custom speed value",
