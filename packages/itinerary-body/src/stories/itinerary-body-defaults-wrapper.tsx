@@ -49,7 +49,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
       LineColumnContent,
       PlaceName,
       RouteDescription,
-      RouteDescriptionFooter,
+      RouteDescriptionFooter = undefined,
       showAgencyInfo,
       showLegIcon,
       showMapButtonColumn = true,
