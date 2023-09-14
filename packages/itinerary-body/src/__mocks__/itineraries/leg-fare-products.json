@@ -293,8 +293,8 @@
       "transitLeg": true,
       "accessibilityScore": null,
       "trip": {
-        "id": "VHJpcDprY206NTQxNDgwODUz",
         "gtfsId": "kcm:541480853",
+        "id": "VHJpcDprY206NTQxNDgwODUz",
         "tripHeadsign": "Northgate Station Ridgecrest"
       },
       "agency": {

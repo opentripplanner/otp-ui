@@ -1,3 +1,4 @@
+import { getLegRouteLongName } from "@opentripplanner/core-utils/lib/itinerary";
 import { Leg } from "@opentripplanner/types";
 import React, { HTMLAttributes, ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
@@ -24,7 +25,9 @@ export default function RouteLongName({
   leg,
   style
 }: Props): ReactElement {
-  const { headsign, routeLongName } = leg;
+  const { headsign: otp1Headsign, trip } = leg;
+  const headsign = trip?.tripHeadsign || otp1Headsign;
+  const routeLongName = getLegRouteLongName(leg);
   // Hide route long name if it contains similar information to the headsign
   const hideRouteLongName =
     compareTwoStrings(headsign || "", routeLongName || "") > 0.25 ||

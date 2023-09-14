@@ -11,8 +11,19 @@ type Props = TripSection & {
 
 class ViewTripButton extends Component<Props> {
   onClick = (): void => {
-    const { fromIndex, setViewedTrip, toIndex, tripId } = this.props;
-    setViewedTrip({ fromIndex, toIndex, tripId });
+    const {
+      fromIndex,
+      fromStopId,
+      setViewedTrip,
+      toIndex,
+      toStopId,
+      tripId
+    } = this.props;
+    if (fromIndex || toIndex) {
+      setViewedTrip({ fromIndex, toIndex, tripId });
+    } else {
+      setViewedTrip({ fromStopId, toStopId, tripId });
+    }
   };
 
   render(): ReactElement {

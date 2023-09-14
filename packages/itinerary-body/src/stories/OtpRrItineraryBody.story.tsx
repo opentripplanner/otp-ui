@@ -1,3 +1,4 @@
+import { convertGraphQLResponseToLegacy } from "@opentripplanner/core-utils/lib/itinerary";
 import { FareProductSelector, Itinerary } from "@opentripplanner/types";
 import React, { FunctionComponent, ReactElement } from "react";
 
@@ -32,6 +33,13 @@ const walkTransitWalkTransitWalkItinerary = require("../__mocks__/itineraries/wa
 const walkTransitWalkTransitWalkA11yItinerary = require("../__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json");
 const otp2ScooterItinerary = require("../__mocks__/itineraries/otp2-scooter.json");
 const flexItinerary = require("../__mocks__/itineraries/flex-itinerary.json");
+
+function withLegacyLegs(itinerary) {
+  return {
+    ...itinerary,
+    legs: itinerary.legs.map(convertGraphQLResponseToLegacy)
+  };
+}
 
 if (!isRunningJest()) {
   // Generate same-day/next day alerts at a fixed time for the walk-transit-walk itinerary
@@ -136,7 +144,9 @@ export const EScooterRentalTransitItinerary = (): ReactElement => (
 );
 
 export const TncTransitItinerary = (): ReactElement => (
-  <OtpRRItineraryBodyWrapper itinerary={tncTransitTncItinerary} />
+  <OtpRRItineraryBodyWrapper
+    itinerary={withLegacyLegs(tncTransitTncItinerary)}
+  />
 );
 
 export const OTP2ScooterItinerary = (): ReactElement => (
@@ -153,7 +163,7 @@ export const IndividualLegFareComponents = (): ReactElement => (
       mediumId: "orca:cash",
       riderCategoryId: "orca:regular"
     }}
-    itinerary={fareProductsItinerary}
+    itinerary={withLegacyLegs(fareProductsItinerary)}
   />
 );
 

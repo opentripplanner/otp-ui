@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/transitive-overlay",
-  "version": "3.0.14",
+  "version": "3.0.15",
   "description": "A map overlay to show an itinerary based on transitive.js",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -22,7 +22,7 @@
     "@mapbox/polyline": "^1.1.1",
     "@opentripplanner/base-map": "^3.0.14",
     "@opentripplanner/core-utils": "^11.0.2",
-    "@opentripplanner/itinerary-body": "^5.0.5",
+    "@opentripplanner/itinerary-body": "^5.0.2",
     "@turf/bbox": "^6.5.0",
     "@turf/bearing": "^6.5.0",
     "@turf/destination": "^6.5.0",

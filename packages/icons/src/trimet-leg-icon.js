@@ -1,12 +1,14 @@
 import React from "react";
 
+import { getLegRouteLongName } from "@opentripplanner/core-utils/lib/itinerary";
 import LegIcon from "./leg-icon";
 import TriMetModeIcon from "./trimet-mode-icon";
 import BiketownIcon from "./companies/biketown-icon";
 
 const TriMetLegIcon = ({ leg, ...props }) => {
   // Custom TriMet icon logic.
-  if (leg.routeLongName && leg.routeLongName.startsWith("Portland Streetcar")) {
+  const routeLongName = getLegRouteLongName(leg);
+  if (routeLongName && routeLongName.startsWith("Portland Streetcar")) {
     return <TriMetModeIcon mode="STREETCAR" {...props} />;
   }
   if (leg.rentedBike) {
