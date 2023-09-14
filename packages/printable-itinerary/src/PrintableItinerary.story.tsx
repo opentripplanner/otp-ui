@@ -1,3 +1,4 @@
+import { convertGraphQLResponseToLegacy } from "@opentripplanner/core-utils/lib/itinerary";
 import { ClassicLegIcon, TriMetLegIcon } from "@opentripplanner/icons";
 import React from "react";
 import styled from "styled-components";
@@ -27,6 +28,13 @@ const StyledPrintableItinerary = styled(PrintableItinerary)`
     background-color: pink;
   }
 `;
+
+function withLegacyLegs(itinerary) {
+  return {
+    ...itinerary,
+    legs: itinerary.legs.map(convertGraphQLResponseToLegacy)
+  };
+}
 
 export default {
   title: "PrintableItinerary",
@@ -140,7 +148,7 @@ export const EScooterRentalTransitItinerary = () => (
 export const TncTransitItinerary = () => (
   <PrintableItinerary
     config={config}
-    itinerary={tncTransitTncItinerary}
+    itinerary={withLegacyLegs(tncTransitTncItinerary)}
     LegIcon={TriMetLegIcon}
   />
 );

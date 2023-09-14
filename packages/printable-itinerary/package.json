@@ -11,7 +11,7 @@
   "private": false,
   "dependencies": {
     "@opentripplanner/core-utils": "^11.0.2",
-    "@opentripplanner/itinerary-body": "^5.0.5"
+    "@opentripplanner/itinerary-body": "^5.0.7"
   },
   "devDependencies": {
     "@opentripplanner/icons": "^2.0.4"
