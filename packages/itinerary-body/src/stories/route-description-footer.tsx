@@ -7,12 +7,9 @@ export function DefaultRouteDescriptionFooter({
   onClick = null,
   waitMinutes
 }: RouteDescriptionFooterProps): ReactElement {
-  const JSX =
-    waitMinutes > 0 ? (
-      <S.ArrivalTimeContainer onClick={onClick}>
-        Arrives in {waitMinutes} minutes
-      </S.ArrivalTimeContainer>
-    ) : null;
-
-  return JSX;
+  return waitMinutes > 0 ? (
+    <S.ArrivalTimeContainer onClick={onClick}>
+      Arrives in {waitMinutes} minutes
+    </S.ArrivalTimeContainer>
+  ) : null;
 }

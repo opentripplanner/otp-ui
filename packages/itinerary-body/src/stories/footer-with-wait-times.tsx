@@ -3,7 +3,7 @@ import { differenceInMinutes } from "date-fns";
 import { Leg } from "@opentripplanner/types";
 
 import { RouteDescriptionFooterProps } from "../types";
-import { DefaultRouteDescriptionFooter } from "../defaults/route-description-footer";
+import { DefaultRouteDescriptionFooter } from "./route-description-footer";
 
 /**
  * This method returns a RouteDescriptionFooter element with falsy wait-times
