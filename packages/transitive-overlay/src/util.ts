@@ -8,6 +8,16 @@ import bearing from "@turf/bearing";
 import distance from "@turf/distance";
 
 import {
+  getLegBounds,
+  getLegRouteLongName,
+  getLegRouteShortName,
+  isAccessMode,
+  isFlex,
+  isRideshareLeg,
+  isTransit
+} from "@opentripplanner/core-utils/lib/itinerary";
+import { getPlaceName } from "@opentripplanner/itinerary-body";
+import {
   Company,
   Itinerary,
   Leg,
@@ -16,17 +26,7 @@ import {
   TransitivePlace,
   TransitiveStop
 } from "@opentripplanner/types";
-import coreUtils from "@opentripplanner/core-utils";
-import { getPlaceName } from "@opentripplanner/itinerary-body";
 import { IntlShape } from "react-intl";
-
-const {
-  getLegBounds,
-  isAccessMode,
-  isFlex,
-  isRideshareLeg,
-  isTransit
-} = coreUtils.itinerary;
 
 const CAR_PARK_ITIN_PREFIX = "itin_car_";
 
@@ -385,12 +385,12 @@ export function itineraryToTransitive(
       const routeLabel =
         typeof getRouteLabel === "function"
           ? getRouteLabel(leg)
-          : leg.routeShortName;
+          : getLegRouteShortName(leg);
       routes[leg.routeId] = {
         agency_id: leg.agencyId,
         route_id: leg.routeId,
         route_short_name: routeLabel || "",
-        route_long_name: leg.routeLongName || "",
+        route_long_name: getLegRouteLongName(leg) || "",
         route_type: leg.routeType,
         route_color: leg.routeColor,
         route_text_color: leg.routeTextColor
