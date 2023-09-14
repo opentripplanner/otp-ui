@@ -1,4 +1,3 @@
-import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceStringImperial } from "@opentripplanner/humanize-distance";
 import { Stop, UserLocation } from "@opentripplanner/types";
 import React from "react";
@@ -90,29 +89,18 @@ export function Option({
 }): React.ReactElement {
   return (
     <MenuItem active={isActive} disabled={disabled} id={id} onClick={onClick}>
-      {coreUtils.ui.isIE() ? (
-        // In internet explorer 11, some really weird stuff is happening where it
-        // is not possible to click the text of the title, but if you click just
-        // above it, then it works. So, if using IE 11, just return the title text
-        // and avoid all the extra fancy stuff.
-        // See https://github.com/ibi-group/trimet-mod-otp/issues/237
-        title
-      ) : (
-        <S.OptionContainer className={classes}>
-          <S.OptionIconContainer style={{ color }}>
-            {icon}
-          </S.OptionIconContainer>
-          <S.OptionContent>
-            {title}
-            {subTitle && (
-              <S.OptionSubTitle>
-                <S.HiddenContent>, </S.HiddenContent>
-                {subTitle}
-              </S.OptionSubTitle>
-            )}
-          </S.OptionContent>
-        </S.OptionContainer>
-      )}
+      <S.OptionContainer className={classes}>
+        <S.OptionIconContainer style={{ color }}>{icon}</S.OptionIconContainer>
+        <S.OptionContent>
+          {title}
+          {subTitle && (
+            <S.OptionSubTitle>
+              <S.HiddenContent>, </S.HiddenContent>
+              {subTitle}
+            </S.OptionSubTitle>
+          )}
+        </S.OptionContent>
+      </S.OptionContainer>
     </MenuItem>
   );
 }
