@@ -1,6 +1,6 @@
 import { convertGraphQLResponseToLegacy } from "@opentripplanner/core-utils/lib/itinerary";
 import { FareProductSelector, Itinerary } from "@opentripplanner/types";
-import React, { ReactElement } from "react";
+import React, { FunctionComponent, ReactElement } from "react";
 
 import ItineraryBody from "..";
 import {

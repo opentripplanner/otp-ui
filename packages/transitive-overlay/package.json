@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@opentripplanner/endpoints-overlay": "^2.0.8",
-    "@opentripplanner/types": "^6.0.0"
+    "@opentripplanner/types": "^6.1.0"
   },
   "peerDependencies": {
     "react": "^16.14.0",
