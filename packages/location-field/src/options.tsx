@@ -53,17 +53,14 @@ export const MenuItem = ({
   <S.MenuItemLi
     // Hide disabled choices from screen readers (a relevant status is already provided).
     aria-hidden={disabled || undefined}
-    role={disabled ? undefined : "none"}
+    active={active}
+    id={id}
+    onClick={disabled ? null : onClick}
+    role="option"
+    aria-selected={active}
+    tabIndex={-1}
   >
-    <S.MenuItemA
-      active={active}
-      id={id}
-      onClick={disabled ? null : onClick}
-      role="option"
-      tabIndex={-1}
-    >
-      {children}
-    </S.MenuItemA>
+    {children}
   </S.MenuItemLi>
 );
 
