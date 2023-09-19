@@ -77,6 +77,9 @@ class AccessLegBody extends Component<Props, State> {
     } = this.props;
     const { expanded } = this.state;
 
+    const hideDrivingDirections =
+      config?.itinerary?.hideDrivingDirections && leg.mode === "CAR";
+
     if (leg.mode === "CAR" && leg.rideHailingEstimate) {
       return (
         <TNCLeg
@@ -111,38 +114,47 @@ class AccessLegBody extends Component<Props, State> {
           <S.LegDetails>
             <S.StepsHeaderAndMapLink>
               <S.StepsHeader
-                aria-expanded={expanded}
-                onClick={this.onStepsHeaderClick}
+                aria-expanded={!hideDrivingDirections ? expanded : undefined}
+                as={hideDrivingDirections && "span"}
+                autoCursor={hideDrivingDirections}
+                onClick={!hideDrivingDirections && this.onStepsHeaderClick}
               >
                 <Duration seconds={leg.duration} />
-                {leg.steps && <S.CaretToggle expanded={expanded} />}
-                <S.InvisibleAdditionalDetails>
-                  <FormattedMessage
-                    defaultMessage={
-                      defaultMessages["otpUi.TransitLegBody.expandDetails"]
-                    }
-                    description="Screen reader text added to expand steps"
-                    id="otpUi.TransitLegBody.expandDetails"
-                  />
-                </S.InvisibleAdditionalDetails>
+                {leg.steps && !hideDrivingDirections && (
+                  <S.CaretToggle expanded={expanded} />
+                )}
+                {!hideDrivingDirections && (
+                  <S.InvisibleAdditionalDetails>
+                    <FormattedMessage
+                      defaultMessage={
+                        defaultMessages["otpUi.TransitLegBody.expandDetails"]
+                      }
+                      description="Screen reader text added to expand steps"
+                      id="otpUi.TransitLegBody.expandDetails"
+                    />
+                  </S.InvisibleAdditionalDetails>
+                )}
               </S.StepsHeader>
               <MapillaryButton
                 clickCallback={mapillaryCallback}
                 coords={leg.from}
+                hideDrivingDirections={hideDrivingDirections}
                 mapillaryKey={mapillaryKey}
               />
             </S.StepsHeaderAndMapLink>
-            <AnimateHeight
-              duration={500}
-              height={expanded ? "auto" : 0}
-              style={{ gridColumn: "1 / span 2" }}
-            >
-              <AccessLegSteps
-                mapillaryCallback={mapillaryCallback}
-                mapillaryKey={mapillaryKey}
-                steps={leg.steps}
-              />
-            </AnimateHeight>
+            {!hideDrivingDirections && (
+              <AnimateHeight
+                duration={500}
+                height={expanded ? "auto" : 0}
+                style={{ gridColumn: "1 / span 2" }}
+              >
+                <AccessLegSteps
+                  mapillaryCallback={mapillaryCallback}
+                  mapillaryKey={mapillaryKey}
+                  steps={leg.steps}
+                />
+              </AnimateHeight>
+            )}
             <LegDiagramPreview
               diagramVisible={diagramVisible}
               leg={leg}

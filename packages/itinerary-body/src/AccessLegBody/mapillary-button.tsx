@@ -27,7 +27,8 @@ const generateBoundingBoxFromCoordinate = ({
   return [west, south, east, north];
 };
 
-const Container = styled.a`
+const Container = styled.a<{ hideDrivingDirections: boolean }>`
+  margin-left: ${props => (props.hideDrivingDirections ? ".4em" : "0")};
   &:hover {
     cursor: pointer;
     text-decoration: none;
@@ -60,10 +61,12 @@ const Icon = styled(StreetView)`
 const MapillaryButton = ({
   clickCallback,
   coords,
+  hideDrivingDirections,
   mapillaryKey
 }: {
   clickCallback?: (id: string) => void;
   coords: { lat: number; lon: number };
+  hideDrivingDirections: boolean;
   mapillaryKey: string;
 }): JSX.Element => {
   const [imageId, setImageId] = useState(null);
@@ -105,6 +108,7 @@ const MapillaryButton = ({
   return (
     <Container
       aria-label={mapilaryLabel}
+      hideDrivingDirections={hideDrivingDirections}
       onClick={handleClick}
       role="link"
       title={mapilaryLabel}

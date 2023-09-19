@@ -588,8 +588,11 @@ export const StepsHeaderAndMapLink = styled.span`
   }
 `;
 
-export const StepsHeader = styled(TransparentButton)`
+export const StepsHeader = styled(TransparentButton)<{
+  autoCursor: boolean;
+}>`
   color: #676767;
+  cursor: ${props => (props.autoCursor ? "auto" : "pointer")};
   font-size: 13px;
   font-style: normal;
   padding: 0;
