@@ -148,6 +148,9 @@ export type Config = {
     longDateFormat?: string;
   };
   homeTimezone: string;
+  itinerary?: {
+    hideDrivingDirections?: boolean;
+  };
   /** @deprecated */
   modes?: ConfiguredModes;
   // TODO: add full typing
