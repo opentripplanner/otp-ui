@@ -66,7 +66,7 @@ const MapillaryButton = ({
 }: {
   clickCallback?: (id: string) => void;
   coords: { lat: number; lon: number };
-  hideDrivingDirections: boolean;
+  hideDrivingDirections?: boolean;
   mapillaryKey: string;
 }): JSX.Element => {
   const [imageId, setImageId] = useState(null);
