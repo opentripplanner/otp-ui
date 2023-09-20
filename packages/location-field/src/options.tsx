@@ -53,6 +53,9 @@ export const MenuItem = ({
   <S.MenuItemLi
     // Hide disabled choices from screen readers (a relevant status is already provided).
     aria-hidden={disabled || undefined}
+    /* A known issue prevents combobox results to be read out on Voiceover. This is a hack to ensure 
+    AT hear all options - see https://react-spectrum.adobe.com/blog/building-a-combobox.html#voiceover */
+    aria-live={active ? "assertive" : "off"}
     active={active}
     id={id}
     onClick={disabled ? null : onClick}
