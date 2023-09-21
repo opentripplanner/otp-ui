@@ -874,6 +874,7 @@ const LocationField = ({
     currentPosition && currentPosition.fetching
       ? intl.formatMessage({ id: "otpUi.LocationField.fetchingLocation" })
       : defaultPlaceholder;
+  const hasNoEnabledOptions = menuItemCount === 0;
   const isExpanded = isStatic || menuVisible;
 
   const textControl = (
@@ -950,6 +951,7 @@ const LocationField = ({
       </S.HiddenContent>
       <ItemList
         // Hide the list from screen readers if no enabled options are shown.
+        aria-hidden={hasNoEnabledOptions}
         aria-label={intl.formatMessage({
           defaultMessage: "Suggested locations",
           description:

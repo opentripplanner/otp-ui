@@ -114,18 +114,6 @@ export const MenuItemLi = styled.li<{ active?: boolean }>`
   white-space: nowrap;
 `;
 
-export const MenuItemA = styled.span<{ active?: boolean }>`
-  background-color: ${props => (props.active ? "#337ab7" : "transparent")};
-  clear: both;
-  color: ${props => (props.active ? "#fff" : "#333")};
-  display: block;
-  font-weight: 400;
-  line-height: 1.42857143;
-  padding: 3px 20px;
-  text-decoration: none;
-  white-space: nowrap;
-`;
-
 export const OptionContainer = styled.span`
   display: block;
   padding-top: 5px;
