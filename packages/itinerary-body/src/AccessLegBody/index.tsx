@@ -97,7 +97,7 @@ class AccessLegBody extends Component<Props, State> {
       );
     }
 
-    const Mapillary = () => (
+    const mapillary = (
       <MapillaryButton
         clickCallback={mapillaryCallback}
         coords={leg.from}
@@ -128,7 +128,7 @@ class AccessLegBody extends Component<Props, State> {
                 <S.StepsHeaderSpan>
                   <Duration seconds={leg.duration} />
                 </S.StepsHeaderSpan>
-                <Mapillary />
+                {mapillary}
               </S.StepsHeaderAndMapLink>
             ) : (
               <>
@@ -150,7 +150,7 @@ class AccessLegBody extends Component<Props, State> {
                       />
                     </S.InvisibleAdditionalDetails>
                   </S.StepsHeaderButton>
-                  <Mapillary />
+                  {mapillary}
                 </S.StepsHeaderAndMapLink>
                 <AnimateHeight
                   duration={500}
