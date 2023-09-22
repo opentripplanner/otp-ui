@@ -2,7 +2,7 @@
 // @ts-ignore FIXME: Create TypeScript types for the icons package.
 import { Map } from "@opentripplanner/icons";
 import React, { ReactElement } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { CaretDown } from "@styled-icons/fa-solid/CaretDown";
 import { CaretUp } from "@styled-icons/fa-solid/CaretUp";
 import { ExclamationTriangle } from "@styled-icons/fa-solid/ExclamationTriangle";
@@ -588,15 +588,20 @@ export const StepsHeaderAndMapLink = styled.span`
   }
 `;
 
-export const StepsHeader = styled(TransparentButton)<{
-  span?: boolean;
-}>`
+const stepsHeaderStyling = css`
   color: #676767;
-  cursor: ${props => (props.span ? "auto" : "pointer")};
   font-size: 13px;
   font-style: normal;
-  margin-right: ${props => (props.span ? ".4em" : "0")};
   padding: 0;
+`;
+
+export const StepsHeaderButton = styled(TransparentButton)`
+  ${stepsHeaderStyling}
+`;
+
+export const StepsHeaderSpan = styled.span`
+  ${stepsHeaderStyling}
+  margin-right: 0.4em;
 `;
 
 export const StepIconContainer = styled.div`

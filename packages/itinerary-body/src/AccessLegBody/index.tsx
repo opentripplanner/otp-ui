@@ -17,7 +17,11 @@ import TNCLeg from "./tnc-leg";
 import { defaultMessages } from "../util";
 
 interface Props {
-  config: Config;
+  config: Config & {
+    itinerary?: {
+      hideDrivingDirections?: boolean;
+    };
+  };
   /**
    * Should be either null or a legType. Indicates that a particular leg diagram
    * has been selected and is active.
@@ -93,6 +97,13 @@ class AccessLegBody extends Component<Props, State> {
       );
     }
 
+    const Mapillary = () => (
+      <MapillaryButton
+        clickCallback={mapillaryCallback}
+        coords={leg.from}
+        mapillaryKey={mapillaryKey}
+      />
+    );
     return (
       <>
         {/* Place subheading: rented vehicle (e.g., scooter, bike, car)
@@ -114,24 +125,21 @@ class AccessLegBody extends Component<Props, State> {
           <S.LegDetails>
             {hideDrivingDirections ? (
               <S.StepsHeaderAndMapLink>
-                <S.StepsHeader as="span" span>
+                <S.StepsHeaderSpan>
                   <Duration seconds={leg.duration} />
-                </S.StepsHeader>
-                <MapillaryButton
-                  clickCallback={mapillaryCallback}
-                  coords={leg.from}
-                  mapillaryKey={mapillaryKey}
-                />
+                </S.StepsHeaderSpan>
+                <Mapillary />
               </S.StepsHeaderAndMapLink>
             ) : (
-              <S.StepsHeaderAndMapLink>
-                <S.StepsHeader
-                  aria-expanded={expanded}
-                  onClick={this.onStepsHeaderClick}
-                >
-                  <Duration seconds={leg.duration} />
-                  {leg.steps && <S.CaretToggle expanded={expanded} />}
-                  {!hideDrivingDirections && (
+              <>
+                <S.StepsHeaderAndMapLink>
+                  <S.StepsHeaderButton
+                    aria-expanded={expanded}
+                    onClick={this.onStepsHeaderClick}
+                  >
+                    <Duration seconds={leg.duration} />
+                    {leg.steps && <S.CaretToggle expanded={expanded} />}
+
                     <S.InvisibleAdditionalDetails>
                       <FormattedMessage
                         defaultMessage={
@@ -141,27 +149,21 @@ class AccessLegBody extends Component<Props, State> {
                         id="otpUi.TransitLegBody.expandDetails"
                       />
                     </S.InvisibleAdditionalDetails>
-                  )}
-                </S.StepsHeader>
-                <MapillaryButton
-                  clickCallback={mapillaryCallback}
-                  coords={leg.from}
-                  mapillaryKey={mapillaryKey}
-                />
-              </S.StepsHeaderAndMapLink>
-            )}
-            {!hideDrivingDirections && (
-              <AnimateHeight
-                duration={500}
-                height={expanded ? "auto" : 0}
-                style={{ gridColumn: "1 / span 2" }}
-              >
-                <AccessLegSteps
-                  mapillaryCallback={mapillaryCallback}
-                  mapillaryKey={mapillaryKey}
-                  steps={leg.steps}
-                />
-              </AnimateHeight>
+                  </S.StepsHeaderButton>
+                  <Mapillary />
+                </S.StepsHeaderAndMapLink>
+                <AnimateHeight
+                  duration={500}
+                  height={expanded ? "auto" : 0}
+                  style={{ gridColumn: "1 / span 2" }}
+                >
+                  <AccessLegSteps
+                    mapillaryCallback={mapillaryCallback}
+                    mapillaryKey={mapillaryKey}
+                    steps={leg.steps}
+                  />
+                </AnimateHeight>
+              </>
             )}
             <LegDiagramPreview
               diagramVisible={diagramVisible}
