@@ -589,12 +589,13 @@ export const StepsHeaderAndMapLink = styled.span`
 `;
 
 export const StepsHeader = styled(TransparentButton)<{
-  autoCursor: boolean;
+  span?: boolean;
 }>`
   color: #676767;
-  cursor: ${props => (props.autoCursor ? "auto" : "pointer")};
+  cursor: ${props => (props.span ? "auto" : "pointer")};
   font-size: 13px;
   font-style: normal;
+  margin-right: ${props => (props.span ? ".4em" : "0")};
   padding: 0;
 `;
 

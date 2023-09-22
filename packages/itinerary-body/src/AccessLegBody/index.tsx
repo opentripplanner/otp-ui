@@ -112,36 +112,44 @@ class AccessLegBody extends Component<Props, State> {
             showLegIcon={showLegIcon}
           />
           <S.LegDetails>
-            <S.StepsHeaderAndMapLink>
-              <S.StepsHeader
-                aria-expanded={!hideDrivingDirections ? expanded : undefined}
-                as={hideDrivingDirections && "span"}
-                autoCursor={hideDrivingDirections}
-                onClick={!hideDrivingDirections && this.onStepsHeaderClick}
-              >
-                <Duration seconds={leg.duration} />
-                {leg.steps && !hideDrivingDirections && (
-                  <S.CaretToggle expanded={expanded} />
-                )}
-                {!hideDrivingDirections && (
-                  <S.InvisibleAdditionalDetails>
-                    <FormattedMessage
-                      defaultMessage={
-                        defaultMessages["otpUi.TransitLegBody.expandDetails"]
-                      }
-                      description="Screen reader text added to expand steps"
-                      id="otpUi.TransitLegBody.expandDetails"
-                    />
-                  </S.InvisibleAdditionalDetails>
-                )}
-              </S.StepsHeader>
-              <MapillaryButton
-                clickCallback={mapillaryCallback}
-                coords={leg.from}
-                hideDrivingDirections={hideDrivingDirections}
-                mapillaryKey={mapillaryKey}
-              />
-            </S.StepsHeaderAndMapLink>
+            {hideDrivingDirections ? (
+              <S.StepsHeaderAndMapLink>
+                <S.StepsHeader as="span" span>
+                  <Duration seconds={leg.duration} />
+                </S.StepsHeader>
+                <MapillaryButton
+                  clickCallback={mapillaryCallback}
+                  coords={leg.from}
+                  mapillaryKey={mapillaryKey}
+                />
+              </S.StepsHeaderAndMapLink>
+            ) : (
+              <S.StepsHeaderAndMapLink>
+                <S.StepsHeader
+                  aria-expanded={expanded}
+                  onClick={this.onStepsHeaderClick}
+                >
+                  <Duration seconds={leg.duration} />
+                  {leg.steps && <S.CaretToggle expanded={expanded} />}
+                  {!hideDrivingDirections && (
+                    <S.InvisibleAdditionalDetails>
+                      <FormattedMessage
+                        defaultMessage={
+                          defaultMessages["otpUi.TransitLegBody.expandDetails"]
+                        }
+                        description="Screen reader text added to expand steps"
+                        id="otpUi.TransitLegBody.expandDetails"
+                      />
+                    </S.InvisibleAdditionalDetails>
+                  )}
+                </S.StepsHeader>
+                <MapillaryButton
+                  clickCallback={mapillaryCallback}
+                  coords={leg.from}
+                  mapillaryKey={mapillaryKey}
+                />
+              </S.StepsHeaderAndMapLink>
+            )}
             {!hideDrivingDirections && (
               <AnimateHeight
                 duration={500}
