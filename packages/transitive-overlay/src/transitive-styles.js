@@ -1,7 +1,7 @@
 import coreUtils from "@opentripplanner/core-utils";
 
 const STYLES = {};
-
+// TODO: THIS IS WHERE THE DOTS FOR THINGS ARE MADE, NOT THE PATHS
 /**
  * Transitive style overrides for places (basically any point that isn't a
  * transit stop)

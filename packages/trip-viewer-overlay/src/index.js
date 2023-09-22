@@ -1,6 +1,6 @@
 import React from "react";
-import { FeatureGroup, MapLayer, Polyline, withLeaflet } from "react-leaflet";
-
+import { FeatureGroup, MapLayer, withLeaflet } from "react-leaflet";
+import Polyline from "react-leaflet-arrowheads";
 import polyline from "@mapbox/polyline";
 
 /**
@@ -33,7 +33,7 @@ class TripViewerOverlay extends MapLayer {
     return (
       <FeatureGroup>
         {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-        <Polyline {...leafletPath} positions={pts} />
+        <Polyline {...leafletPath} positions={pts} arrowheads />
       </FeatureGroup>
     );
   }

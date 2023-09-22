@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { FeatureGroup, MapLayer, Polyline, withLeaflet } from "react-leaflet";
+import { FeatureGroup, MapLayer, withLeaflet } from "react-leaflet";
+import Polyline from "react-leaflet-arrowheads";
 
 import polyline from "@mapbox/polyline";
 import pointInPolygon from "point-in-polygon";
@@ -95,6 +96,7 @@ class RouteViewerOverlay extends MapLayer {
           color={routeColor}
           key={pattern.id}
           positions={clippedPts}
+          arrowheads
         />
       );
     });

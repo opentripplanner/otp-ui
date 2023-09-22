@@ -122,7 +122,7 @@ export function itineraryToTransitive(
       // For TNC segments, draw using an arc
       if (leg.mode === "CAR" && leg.hailedCar) segment.arc = true;
       journey.segments.push(segment);
-
+      // TODO: WHERE THE LINE COMES IN - LOOK HERE
       tdata.streetEdges.push({
         edge_id: streetEdgeId,
         geometry: leg.legGeometry

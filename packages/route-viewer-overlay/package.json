@@ -20,8 +20,10 @@
   "dependencies": {
     "@mapbox/polyline": "^1.1.0",
     "@opentripplanner/core-utils": "^7.0.0",
+    "leaflet-polylinedecorator": "^1.6.0",
     "point-in-polygon": "^1.1.0",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "react-leaflet-arrowheads": "^1.1.0"
   },
   "peerDependencies": {
     "@opentripplanner/base-map": "^2.0.0",

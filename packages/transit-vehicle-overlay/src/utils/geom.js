@@ -3,7 +3,7 @@
  * sections, of has already travelled, and to be travelled, etc...
  */
 import React from "react";
-import { Polyline } from "react-leaflet";
+import Polyline from "react-leaflet-arrowheads";
 import * as turf from "@turf/helpers";
 import nearestPointOnLine from "@turf/nearest-point-on-line";
 
@@ -23,6 +23,7 @@ export function makeSplitLine(splitGeom, highlight, lowlight) {
         key={splitGeom[0].key}
         positions={splitGeom[0].geometry}
         {...lowlight} // eslint-disable-line react/jsx-props-no-spreading
+        arrowheads
       />
     );
     segments.push(
@@ -30,6 +31,7 @@ export function makeSplitLine(splitGeom, highlight, lowlight) {
         key={splitGeom[1].key}
         positions={splitGeom[1].geometry}
         {...highlight} // eslint-disable-line react/jsx-props-no-spreading
+        arrowheads
       />
     );
   }
