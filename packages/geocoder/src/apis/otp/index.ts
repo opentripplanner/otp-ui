@@ -11,11 +11,12 @@ type OTPGeocoderResponse = {
   results: {
     coordinate: {
       lat: number,
-      lng: number,
+      lon: number,
     },
     code: string,
     name: string,
-    id: string
+    id: string,
+    modes: string[]
   }[]
 } | undefined
 
