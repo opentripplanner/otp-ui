@@ -50,7 +50,7 @@ const Table = styled.table`
   padding: 0;
 
   td {
-    text-align: right;
+    text-align: center;
   }
   td:nth-of-type(2n + 1) {
     background: #cccccc22;
