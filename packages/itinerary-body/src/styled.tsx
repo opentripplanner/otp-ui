@@ -132,6 +132,22 @@ export const AccessBadge = styled.div<ModeRouteProps>`
   /* Add in border for dark mode */
 `;
 
+export const ArrivalTimeContainer = styled.button`
+  align-items: center;
+  background: none;
+  border: none;
+  color: #007899;
+  cursor: pointer;
+  display: flex;
+  font-size: 0.9em;
+  font-family: inherit;
+  margin: 0;
+  margin-top: 5px;
+  outline: inherit;
+  padding: 0;
+  text-align: inherit;
+`;
+
 export const CallAheadWarning = styled.div`
   color: #b22727;
   margin-top: 5px;

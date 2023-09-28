@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/stops-overlay",
-  "version": "5.1.2-alpha.2",
+  "version": "5.1.2",
   "description": "A map overlay to show transit stops",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -25,7 +25,7 @@
     "flat": "^5.0.2"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^6.0.0",
+    "@opentripplanner/types": "^6.1.0",
     "styled-icons": "^10.34.0"
   },
   "peerDependencies": {

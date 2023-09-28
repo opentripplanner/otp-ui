@@ -72,8 +72,8 @@ class AccessLegBody extends Component<Props, State> {
       mapillaryKey,
       setLegDiagram,
       showElevationProfile,
-      TransitLegSubheader,
-      showLegIcon
+      showLegIcon,
+      TransitLegSubheader
     } = this.props;
     const { expanded } = this.state;
 

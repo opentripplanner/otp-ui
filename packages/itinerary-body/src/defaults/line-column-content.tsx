@@ -1,3 +1,7 @@
+import {
+  getLegRouteLongName,
+  getLegRouteShortName
+} from "@opentripplanner/core-utils/lib/itinerary";
 import LocationIcon from "@opentripplanner/location-icon";
 import React, { ReactElement } from "react";
 import { IntlShape, useIntl } from "react-intl";
@@ -52,7 +56,7 @@ export default function LineColumnContent({
   LegIcon,
   toRouteAbbreviation
 }: LineColumnContentProps): ReactElement {
-  const { mode, route, routeColor, routeLongName, transitLeg } = leg;
+  const { mode, routeColor, transitLeg } = leg;
   const intl = useIntl();
   const travelByMessage = intl.formatMessage(
     {
@@ -65,7 +69,7 @@ export default function LineColumnContent({
     }
   );
 
-  const routeShortName = typeof route === "string" ? route : route?.shortName;
+  const routeShortName = getLegRouteShortName(leg);
 
   return (
     <S.LegLine>
@@ -78,7 +82,7 @@ export default function LineColumnContent({
               parseInt(routeShortName, 10) || routeShortName
             )}
             color={routeColor}
-            name={routeLongName || ""}
+            name={getLegRouteLongName(leg) || ""}
           />
         )}
         {!interline && !isDestination && !transitLeg && (

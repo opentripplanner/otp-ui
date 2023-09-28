@@ -2,6 +2,7 @@ import React, { ReactElement } from "react";
 import { Bomb } from "@styled-icons/fa-solid/Bomb";
 import { Bolt } from "@styled-icons/fa-solid/Bolt";
 import styled from "styled-components";
+import RouteDescriptionFooterWithWaitTimes from "./footer-with-wait-times";
 
 import ItineraryBody from "..";
 import {
@@ -47,12 +48,16 @@ export const BikeOnlyItinerary = (): ReactElement => (
 );
 
 export const WalkTransitWalkItinerary = (): ReactElement => (
-  <ItineraryBodyDefaultsWrapper itinerary={walkTransitWalkItinerary} />
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
+  />
 );
 
 export const WalkTransitTransferWithA11yItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     itinerary={walkTransitWalkTransitWalkA11yItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
   />
 );
 
@@ -147,7 +152,10 @@ export const OTP2FlexItinerary = (): ReactElement => (
 );
 
 export const IndividualLegFareComponents = (): ReactElement => (
-  <ItineraryBodyDefaultsWrapper itinerary={fareProductsItinerary} />
+  <ItineraryBodyDefaultsWrapper
+    itinerary={fareProductsItinerary}
+    showRouteFares
+  />
 );
 
 export const CustomAlertIconsItinerary = (): ReactElement => (

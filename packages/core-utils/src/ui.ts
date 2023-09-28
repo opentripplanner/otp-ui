@@ -1,19 +1,9 @@
-import bowser from "bowser";
-
 export function isMobile(): boolean {
   // TODO: consider using 3rd-party library?
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
     navigator.userAgent
   );
 }
-
-/**
- * Returns true if the user is using a [redacted] browser
- */
-export function isIE(): boolean {
-  return bowser.parse(navigator.userAgent).browser === "Internet Explorer";
-}
-
 /**
  * Enables scrolling for a specified selector, while disabling scrolling for all
  * other targets. This is adapted from https://stackoverflow.com/a/41601290/915811

@@ -21,6 +21,15 @@ export interface RouteDescriptionProps {
   transitOperator: TransitOperator;
 }
 
+export interface RouteDescriptionFooterProps {
+  /* Contains details about the leg object */
+  leg?: Leg;
+  /** Method for navigating to arrival vehicle if available */
+  onClick?: () => void;
+  /** Number of minutes for the arrival time */
+  waitMinutes?: number;
+}
+
 export type ToRouteAbbreviationFunction = (route: string | number) => string;
 
 export interface LegDestination {
@@ -65,8 +74,10 @@ export type FrameLegFunction = (
 ) => void;
 
 export interface TripSection {
-  fromIndex: number;
-  toIndex: number;
+  fromIndex?: number;
+  fromStopId?: string;
+  toIndex?: number;
+  toStopId?: string;
   tripId: string;
 }
 
@@ -172,6 +183,11 @@ interface ItineraryBodySharedProps {
    * - transitOperator: the transit operator associated with the route if available
    */
   RouteDescription: FunctionComponent<RouteDescriptionProps>;
+  /**
+   * A component to render the footer and contained elements
+   * therein
+   */
+  RouteDescriptionFooter: FunctionComponent<RouteDescriptionFooterProps>;
   /** TODO: Routing Type is usually 'ITINERARY' but we should get more details on what this does */
   routingType?: string;
   /**

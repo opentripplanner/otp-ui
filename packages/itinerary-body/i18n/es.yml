@@ -37,6 +37,7 @@ otpUi:
       uTurnRight: Media vuelta a la derecha
     stepDepart: Dirígete hacia {heading} por {street}
     stepElevator: Toma el ascensor hasta {street}
+    stepFollowSigns: Sigue las señales hasta {street}
     stepGeneric: "{step} por {street}"
     stepHeading:
       east: el este
@@ -47,6 +48,7 @@ otpUi:
       southeast: el sureste
       southwest: el suroeste
       west: el oeste
+    stepStation: "{step} en {street}"
     summary: "{mode} a {place}"
     summaryAndDistance: "{mode} - {distance} a {place}"
     summaryMode:
@@ -68,6 +70,7 @@ otpUi:
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# hr. }}{minutes} min"
+    flexAdvanceNotice: " al menos {leadDays, plural, one {# día} other {# días}} de antelación"
     flexCallAhead: llama con anticipación
     flexCallNumber: llama {phoneNumber}
     flexPickupMessage: Para tomar esta ruta, tiene que {action}{advanceNotice}.
