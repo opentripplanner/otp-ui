@@ -3307,6 +3307,14 @@
     isomorphic-mapzen-search "^1.6.1"
     lodash.memoize "^4.1.2"
 
+"@opentripplanner/icons@^2.0.4", "@opentripplanner/icons@^2.0.5":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/icons/-/icons-2.0.6.tgz#e1339f75a1c9cb52ad5bddf0b024a260e8f63725"
+  integrity sha512-bKwwtugFN9RPpKmqXcukXC4TcWHjmOqPWaMEvjtnnV5LdeuoaOBQ8dJeUUnEKd/dPeOJAF9l3oBVtvM3VAc8jg==
+  dependencies:
+    "@opentripplanner/core-utils" "^11.0.2"
+    prop-types "^15.7.2"
+
 "@opentripplanner/itinerary-body@^5.0.2":
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/@opentripplanner/itinerary-body/-/itinerary-body-5.0.3.tgz#b7eed8a38a0d1e6a3d0b80ff2697386feb45df71"
@@ -3342,6 +3350,16 @@
     react-animate-height "^3.0.4"
     react-resize-detector "^4.2.1"
     string-similarity "^4.0.4"
+
+"@opentripplanner/map-popup@^2.0.5":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/map-popup/-/map-popup-2.0.6.tgz#c45617493452616dcc208cc7fcfe606b5e13a376"
+  integrity sha512-BRJRNaqRglK/WjjDvs2o7Vraa6yg7DfJMzUGczOjmdZsB/3Zo/7XHVv++bxjvEJR7Gds+hfseqODa1882lvy+Q==
+  dependencies:
+    "@opentripplanner/base-map" "^3.0.14"
+    "@opentripplanner/core-utils" "^11.0.2"
+    "@opentripplanner/from-to-location-picker" "^2.1.8"
+    flat "^5.0.2"
 
 "@opentripplanner/types@7.0.0-alpha.2":
   version "7.0.0-alpha.2"
