@@ -7,6 +7,9 @@ declare const blue: {
   500: "#6690B7";
   600: "#4D7EAB";
   700: "#336B9E";
+  // 800 and above are WCAG AAA accessible on white backgrounds.
   800: "#1A5992";
   900: "#004686";
 };
+
+export default blue;
