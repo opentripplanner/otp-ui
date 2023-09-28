@@ -157,7 +157,7 @@ query Plan(
             id
           }
           color
-          id
+          id: gtfsId
           longName
           shortName
           textColor
