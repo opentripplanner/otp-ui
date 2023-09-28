@@ -35,6 +35,7 @@ export default function PlaceRow({
   mapillaryKey,
   PlaceName,
   RouteDescription,
+  RouteDescriptionFooter,
   setActiveLeg,
   setLegDiagram,
   setViewedTrip,
@@ -141,6 +142,7 @@ export default function PlaceRow({
               LegIcon={LegIcon}
               legIndex={legIndex}
               RouteDescription={RouteDescription}
+              RouteDescriptionFooter={RouteDescriptionFooter}
               setActiveLeg={setActiveLeg}
               setViewedTrip={setViewedTrip}
               showAgencyInfo={showAgencyInfo}

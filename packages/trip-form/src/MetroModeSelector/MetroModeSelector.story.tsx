@@ -7,7 +7,7 @@ import {
   TrainSubway,
   TrainTram
 } from "@styled-icons/fa-solid";
-import { ClassicBike } from "@opentripplanner/icons/lib/classic";
+import { ClassicBike } from "@opentripplanner/icons/src/classic";
 import React, { ReactElement, useState } from "react";
 import * as Core from "..";
 import { QueryParamChangeEvent } from "../types";

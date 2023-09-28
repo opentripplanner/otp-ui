@@ -9,6 +9,7 @@ import ItineraryBody from "..";
 import DefaultLineColumnContent from "../defaults/line-column-content";
 import DefaultPlaceName from "../defaults/place-name";
 import DefaultRouteDescription from "../defaults/route-description";
+import { DefaultRouteDescriptionFooter } from "./route-description-footer";
 import DefaultTransitLegSummary from "../defaults/transit-leg-summary";
 import { StyledItineraryBody } from "../demos";
 import OtpRRStyledItineraryBody from "../otp-react-redux/itinerary-body";
@@ -48,6 +49,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
       LineColumnContent,
       PlaceName,
       RouteDescription,
+      RouteDescriptionFooter = undefined,
       showAgencyInfo,
       showLegIcon,
       showMapButtonColumn = true,
@@ -87,6 +89,9 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
         mapillaryKey="fake key, but ok because the api response is also fake"
         PlaceName={PlaceName || DefaultPlaceName}
         RouteDescription={RouteDescription || DefaultRouteDescription}
+        RouteDescriptionFooter={
+          RouteDescriptionFooter || DefaultRouteDescriptionFooter
+        }
         routingType="ITINERARY"
         setActiveLeg={action("setActiveLeg")}
         setLegDiagram={this.setLegDiagram}
