@@ -19,10 +19,11 @@ export const defaultMessages: Record<string, string> = flatten(
 );
 
 const SubmodeGrid = styled.div`
+  align-items: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 100%;
   grid-column: span 2;
+  width: 100%;
 `;
 
 const SettingsPanel = styled.fieldset`
@@ -52,9 +53,6 @@ export const SubSettingsCheckbox = styled(CheckboxSelector)<{
 }>`
   display: ${props => (props.flexbox ? "flex" : "inherit")};
   margin-left: 4px;
-  input {
-    vertical-align: middle;
-  }
 `;
 
 const FormLabelIconWrapper = styled.span`
