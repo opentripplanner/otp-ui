@@ -12,14 +12,23 @@ interface Props {
 }
 
 const ColorBlock = styled.div<{ hex: string }>`
-  height: 40px;
-  width: 300px;
+  align-items: center;
   background-color: ${props => props.hex};
   color: ${props => getMostReadableTextColor(props.hex, "#ffffff")};
-  margin: 0;
   display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 40px;
   justify-content: space-between;
+  margin: 0;
   padding: 10px;
+  width: 300px;
+
+  &:first-of-type {
+    border-radius: 8px 8px 0 0;
+  }
+  &:last-of-type {
+    border-radius: 0 0 8px 8px;
+  }
 `;
 
 const ColorPalette = ({ color }: Props): JSX.Element => {
