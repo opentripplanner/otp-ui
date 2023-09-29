@@ -21,8 +21,8 @@ export const defaultMessages: Record<string, string> = flatten(
 const SubmodeGrid = styled.div`
   align-items: center;
   display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-column: span 2;
+  grid-template-columns: 1fr 1fr;
   width: 100%;
 `;
 
