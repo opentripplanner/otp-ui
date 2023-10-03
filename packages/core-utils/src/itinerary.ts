@@ -372,7 +372,7 @@ export function getTextWidth(text: string, font = "22px Arial"): number {
   // Create custom type for function including reused canvas object
   type GetTextWidth = typeof getTextWidth & { canvas: HTMLCanvasElement };
 
-  // re-use canvas object for better performance
+  // reuse canvas object for better performance
   const canvas =
     (getTextWidth as GetTextWidth).canvas ||
     ((getTextWidth as GetTextWidth).canvas = document.createElement("canvas"));
