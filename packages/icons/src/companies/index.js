@@ -20,7 +20,9 @@ const companyLookup = {
 };
 
 function getCompanyIcon(name) {
-  const icon = companyLookup[name.toLowerCase()];
+  const icon =
+    companyLookup[name.toLowerCase()] ||
+    companyLookup[name.toLowerCase().slice(4)];
   if (!icon) {
     console.warn(`No Company Icon found for: '${name}'!`);
   }
