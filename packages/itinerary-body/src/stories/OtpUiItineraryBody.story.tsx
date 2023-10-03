@@ -219,3 +219,10 @@ export const TwoAlertWithoutCollapsingProp = (): ReactElement => (
 export const ZeroAlertsWithoutCollapsingProp = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper itinerary={walkInterlinedTransitItinerary} />
 );
+
+export const HideDrivingDirections = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    hideDrivingDirections
+    itinerary={parkAndRideItinerary}
+  />
+);
