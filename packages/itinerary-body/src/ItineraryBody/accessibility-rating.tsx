@@ -2,10 +2,13 @@ import { GradationMap } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 import { Wheelchair } from "@styled-icons/foundation/Wheelchair";
+import { IntlShape } from "react-intl";
+import { InvisibleAdditionalDetails } from "../styled";
 
 interface WrapperProps {
   border: boolean;
   color: string;
+  leg: boolean;
   large: boolean;
 }
 
@@ -14,10 +17,14 @@ const Wrapper = styled.div<WrapperProps>`
   border: ${props => (props.border ? "1px solid #333" : "none")};
   background-color: ${props => props.color};
   border-radius: ${props => (props.large ? "4px" : "20px")};
+  color: #676767;
   display: flex;
+  grid-column: ${props => (props.leg ? 1 : "")};
+  grid-row: ${props => (props.leg ? 2 : "")};
   justify-content: space-between;
-  margin-top: 0.25em;
-  max-width: 75px;
+  margin-top: -0.3em;
+  max-width: 56px;
+  font-size: 0.9em;
   height: ${props => (props.large ? "40px" : "30px")};
   padding: 0.25em 0.6em 0.25em 0.4em;
   word-wrap: anywhere; /* this can often look quite bad, but helps encourage icons */
@@ -39,7 +46,9 @@ const TextWrapper = styled.span`
 interface Props {
   gradationMap?: GradationMap;
   grayscale?: boolean;
+  intl: IntlShape;
   large?: boolean;
+  leg: boolean;
   score: number;
 }
 
@@ -50,17 +59,41 @@ interface Props {
 const AccessibilityRating = ({
   gradationMap,
   grayscale = false,
+  intl,
   large = false,
+  leg,
   score
 }: Props): ReactElement => {
   // Provide default mapping
   const mapping = gradationMap || {
-    0.0: { color: "#ffe4e5", text: "❌" },
+    0.0: {
+      color: "#ffe4e5",
+      text: "❌",
+      label: intl.formatMessage(
+        { id: "otpUi.ItineraryBody.tripAccessibility.tripIsInaccessible" },
+        { leg }
+      )
+    },
     0.5: {
       color: "#dbe9ff",
-      text: "？"
+      text: "？",
+      label: intl.formatMessage(
+        {
+          id: "otpUi.ItineraryBody.tripAccessibility.tripAccessibilityUnclear"
+        },
+        { leg }
+      )
     },
-    0.9: { color: "#bfffb5", text: "✅" }
+    0.9: {
+      color: "#bfffb5",
+      text: "✅",
+      label: intl.formatMessage(
+        {
+          id: "otpUi.ItineraryBody.tripAccessibility.tripIsAccessible"
+        },
+        { leg }
+      )
+    }
   };
 
   // Find the highest (including equality) key for our score.
@@ -80,10 +113,12 @@ const AccessibilityRating = ({
       border={grayscale}
       color={grayscale ? "transparent" : mapped.color}
       large={large}
-      title={mapped.text}
+      leg
+      title={mapped.label}
     >
+      <InvisibleAdditionalDetails>{mapped.label}</InvisibleAdditionalDetails>
       <Wheelchair style={{ flex: "2", height: "100%", minWidth: "20px" }} />
-      <StatusWrapper>
+      <StatusWrapper aria-hidden>
         {/* Show either icon or text if no icon given */}
         {mapped.icon || <TextWrapper>{mapped.text}</TextWrapper>}
       </StatusWrapper>

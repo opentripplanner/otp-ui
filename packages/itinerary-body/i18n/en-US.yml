@@ -81,6 +81,16 @@ otpUi:
       car: by car
       escooter: by e-scooter
       walk: by walking
+    tripAccessibility:
+      tripAccessibilityUnclear: >
+        The wheelchair accessibility for this {leg, select, true {leg of your
+        itinerary} other {itinerary} } is unknown.
+      tripIsAccessible: >
+        This {leg, select, true {leg of your itinerary} other {itinerary} } is
+        likely wheelchair accessible.
+      tripIsInaccessible: >
+        This {leg, select, true {leg of your itinerary} other {itinerary} } is
+        wheelchair inaccessible.
     viewOnMap: View on map
   TransitLegBody:
     AlertsBody:
