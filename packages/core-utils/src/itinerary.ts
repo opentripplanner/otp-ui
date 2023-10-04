@@ -670,7 +670,7 @@ export const convertGraphQLResponseToLegacy = (leg: any): any => ({
   },
   route: leg.route?.shortName,
   routeColor: leg.route?.color,
-  routeId: leg.route?.id,
+  routeId: leg.route?.gtfsId,
   routeLongName: leg.route?.longName,
   routeShortName: leg.route?.shortName,
   routeTextColor: leg.route?.textColor,
