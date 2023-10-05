@@ -48,7 +48,7 @@ interface Props {
   grayscale?: boolean;
   intl: IntlShape;
   large?: boolean;
-  leg: boolean;
+  leg?: boolean;
   score: number;
 }
 
@@ -61,7 +61,7 @@ const AccessibilityRating = ({
   grayscale = false,
   intl,
   large = false,
-  leg,
+  leg = false,
   score
 }: Props): ReactElement => {
   // Provide default mapping
@@ -69,30 +69,17 @@ const AccessibilityRating = ({
     0.0: {
       color: "#ffe4e5",
       text: "❌",
-      label: intl.formatMessage(
-        { id: "otpUi.ItineraryBody.tripAccessibility.tripIsInaccessible" },
-        { leg }
-      )
+      labelId: "tripIsInaccessible"
     },
     0.5: {
       color: "#dbe9ff",
       text: "？",
-      label: intl.formatMessage(
-        {
-          id: "otpUi.ItineraryBody.tripAccessibility.tripAccessibilityUnclear"
-        },
-        { leg }
-      )
+      labelId: "tripAccessibilityUnclear"
     },
     0.9: {
       color: "#bfffb5",
       text: "✅",
-      label: intl.formatMessage(
-        {
-          id: "otpUi.ItineraryBody.tripAccessibility.tripIsAccessible"
-        },
-        { leg }
-      )
+      labelId: "tripIsLikelyAccessible"
     }
   };
 
@@ -108,15 +95,24 @@ const AccessibilityRating = ({
   // External configuration may report "0.0" as 0, so include fallback
   const mapped = mapping[mappedKey] || mapping[0.0];
 
+  const accessibilityLabel = intl.formatMessage(
+    {
+      id: `otpUi.ItineraryBody.tripAccessibility.${mapped.labelId}`
+    },
+    { leg }
+  );
+
   return (
     <Wrapper
       border={grayscale}
       color={grayscale ? "transparent" : mapped.color}
       large={large}
       leg
-      title={mapped.label}
+      title={accessibilityLabel}
     >
-      <InvisibleAdditionalDetails>{mapped.label}</InvisibleAdditionalDetails>
+      <InvisibleAdditionalDetails>
+        {accessibilityLabel}
+      </InvisibleAdditionalDetails>
       <Wheelchair style={{ flex: "2", height: "100%", minWidth: "20px" }} />
       <StatusWrapper aria-hidden>
         {/* Show either icon or text if no icon given */}
