@@ -17,14 +17,10 @@ const Wrapper = styled.div<WrapperProps>`
   border: ${props => (props.border ? "1px solid #333" : "none")};
   background-color: ${props => props.color};
   border-radius: ${props => (props.large ? "4px" : "20px")};
-  color: #676767;
   display: flex;
-  grid-column: ${props => (props.leg ? 1 : "")};
-  grid-row: ${props => (props.leg ? 2 : "")};
   justify-content: space-between;
-  margin-top: -0.3em;
-  max-width: 56px;
-  font-size: 0.9em;
+  margin-top: 0.25em;
+  max-width: 75px;
   height: ${props => (props.large ? "40px" : "30px")};
   padding: 0.25em 0.6em 0.25em 0.4em;
   word-wrap: anywhere; /* this can often look quite bad, but helps encourage icons */

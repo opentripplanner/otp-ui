@@ -102,6 +102,15 @@ export default function PlaceRow({
       <S.TimeColumn>
         {/* Custom rendering of the departure/arrival time of the specified leg. */}
         <TimeColumnContent isDestination={isDestination} leg={leg} />
+        {!isDestination && leg.accessibilityScore && (
+          // TODO: Reorder markup so accessibility info doesn't fall between time and destination.
+          <AccessibilityRating
+            gradationMap={accessibilityScoreGradationMap}
+            intl={intl}
+            leg
+            score={leg.accessibilityScore}
+          />
+        )}
       </S.TimeColumn>
       <S.InvisibleAdditionalDetails>
         {!isDestination ? (
@@ -121,14 +130,6 @@ export default function PlaceRow({
           />
         )}
       </S.InvisibleAdditionalDetails>
-      {!isDestination && leg.accessibilityScore && (
-        <AccessibilityRating
-          gradationMap={accessibilityScoreGradationMap}
-          intl={intl}
-          leg
-          score={leg.accessibilityScore}
-        />
-      )}
       <S.PlaceDetails>
         {/* Show the leg, if not rendering the destination */}
         {!isDestination &&
