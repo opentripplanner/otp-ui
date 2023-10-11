@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { getMostReadableTextColor } from "@opentripplanner/core-utils/lib/route";
 
-interface Hue {
+export interface Hue {
   [key: number]: string;
 }
 
