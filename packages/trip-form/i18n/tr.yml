@@ -1,1 +1,19 @@
-{}
+otpUi:
+  DateTimeSelector:
+    depart: Kalkış saati
+    dateTimeSelector: Tarih/Saat Seçici
+    date: Tarih
+    time: Zaman
+  ModeSelector:
+    settings:
+      ferry-label: Feribot
+      bus-label: Otobüs
+      tram-label: Tramvay
+      subway-label: Metro
+      rail-label: Tren
+    labels:
+      bicycle: Bisiklet
+      walk: Yürüme
+      car: Sürücü
+      rent: Kira
+      transit: Geçiş
