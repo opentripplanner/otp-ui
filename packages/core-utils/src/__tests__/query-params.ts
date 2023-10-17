@@ -70,6 +70,16 @@ describe("extract-modes", () => {
     value: true
   };
 
+  const checkboxModeSettingWithModeArray: ModeSetting = {
+    addTransportMode: [mode, mode],
+    applicableMode: testTransportMode.mode,
+    icon: null,
+    key: "test",
+    label: "test",
+    type: "CHECKBOX",
+    value: true
+  };
+
   const dropdownModeSetting: ModeSetting = {
     applicableMode: testTransportMode.mode,
     key: "test",
@@ -83,6 +93,14 @@ describe("extract-modes", () => {
     expect(
       extractAdditionalModes([checkboxModeSetting], [testTransportMode])
     ).toEqual([mode]);
+  });
+  it("determines whether a checkbox setting with an array of modes is extracted correctly", () => {
+    expect(
+      extractAdditionalModes(
+        [checkboxModeSettingWithModeArray],
+        [testTransportMode]
+      )
+    ).toEqual([mode, mode]);
   });
   it("determines whether a dropdown setting is extracted correctly", () => {
     expect(
