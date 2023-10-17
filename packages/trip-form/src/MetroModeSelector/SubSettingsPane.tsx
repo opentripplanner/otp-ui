@@ -50,7 +50,7 @@ const SettingsPanel = styled.fieldset`
 export const SubSettingsCheckbox = styled(CheckboxSelector)<{
   flexbox: boolean;
 }>`
-  ${props => (props.flexbox ? "align-items: center;" : "")};
+  ${props => (props.flexbox ? "align-items: baseline;" : "")};
   display: ${props => (props.flexbox ? "flex" : "inherit")};
   margin-left: 4px;
 
@@ -60,13 +60,14 @@ export const SubSettingsCheckbox = styled(CheckboxSelector)<{
 `;
 
 const FormLabelIconWrapper = styled.span`
-  align-items: center;
+  align-items: baseline;
   display: flex;
   gap: 4px;
   svg {
     width: 16px;
     height: 16px;
     display: inline-block;
+    margin-bottom: 4px;
     vertical-align: middle;
     overflow: hidden;
   }
