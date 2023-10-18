@@ -20,9 +20,9 @@ export const defaultMessages: Record<string, string> = flatten(
 
 const SubmodeGrid = styled.div`
   display: grid;
+  grid-column: span 2;
   grid-template-columns: 1fr 1fr;
   width: 100%;
-  grid-column: span 2;
 `;
 
 const SettingsPanel = styled.fieldset`
@@ -50,10 +50,12 @@ const SettingsPanel = styled.fieldset`
 export const SubSettingsCheckbox = styled(CheckboxSelector)<{
   flexbox: boolean;
 }>`
+  ${props => (props.flexbox ? "align-items: center;" : "")};
   display: ${props => (props.flexbox ? "flex" : "inherit")};
   margin-left: 4px;
+
   input {
-    vertical-align: middle;
+    flex-shrink: 0;
   }
 `;
 
@@ -87,7 +89,7 @@ const ModeSettingRenderer = ({
   const labelWithIcon =
     "icon" in setting ? (
       <FormLabelIconWrapper>
-        <div role="none">{setting.icon}</div>
+        {setting.icon && <div role="none">{setting.icon}</div>}
         <div>{label}</div>
       </FormLabelIconWrapper>
     ) : (

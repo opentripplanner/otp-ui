@@ -104,13 +104,12 @@ const ModeButtonWrapper = styled.span<{
     bottom: 0;
     left: 4px;
     position: absolute;
-    right: 4px;
   }
 
   & > button:focus {
     clip: initial;
     height: initial;
-    width: initial;
+    width: calc(100% - 8px);
   }
 
   & > input:checked + label {

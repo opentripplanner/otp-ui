@@ -56,6 +56,7 @@ if (!isRunningJest()) {
 interface StoryWrapperProps {
   alwaysCollapseAlerts?: boolean;
   defaultFareSelector?: FareProductSelector;
+  hideDrivingDirections?: boolean;
   itinerary: Itinerary;
   TimeColumnContent?: FunctionComponent<TimeColumnContentProps>;
 }
@@ -63,6 +64,7 @@ interface StoryWrapperProps {
 function OtpRRItineraryBodyWrapper({
   alwaysCollapseAlerts,
   defaultFareSelector,
+  hideDrivingDirections = false,
   itinerary,
   TimeColumnContent
 }: StoryWrapperProps): ReactElement {
@@ -70,6 +72,7 @@ function OtpRRItineraryBodyWrapper({
     <ItineraryBodyDefaultsWrapper
       alwaysCollapseAlerts={alwaysCollapseAlerts}
       defaultFareSelector={defaultFareSelector}
+      hideDrivingDirections={hideDrivingDirections}
       itinerary={itinerary}
       LegIcon={LegIconWithA11y}
       LineColumnContent={OtpRRLineColumnContent}
@@ -226,4 +229,11 @@ export const TwoAlertsWithoutCollapsingProp = (): ReactElement => (
 
 export const ZeroAlertsWithoutCollapsingProp = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkInterlinedTransitItinerary} />
+);
+
+export const HideDrivingDirections = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    hideDrivingDirections
+    itinerary={parkAndRideItinerary}
+  />
 );
