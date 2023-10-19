@@ -81,6 +81,13 @@ otpUi:
       car: by car
       escooter: by e-scooter
       walk: by walking
+    tripAccessibility:
+      itineraryAccessibility: "Wheelchair accessibility of this trip: "
+      legAccessibility: "Wheelchair accessibility of this trip leg: "
+      tripAccessibilityUnclear: unknown
+      tripIsAccessible: wheelchair accessible
+      tripIsInaccessible: wheelchair inaccessible
+      tripIsLikelyAccessible: likely wheelchair accessible
     viewOnMap: View on map
   TransitLegBody:
     AlertsBody:

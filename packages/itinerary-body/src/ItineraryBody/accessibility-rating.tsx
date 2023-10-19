@@ -2,10 +2,13 @@ import { GradationMap } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 import { Wheelchair } from "@styled-icons/foundation/Wheelchair";
+import { useIntl } from "react-intl";
+import { InvisibleAdditionalDetails } from "../styled";
 
 interface WrapperProps {
   border: boolean;
   color: string;
+  leg: boolean;
   large: boolean;
 }
 
@@ -40,6 +43,7 @@ interface Props {
   gradationMap?: GradationMap;
   grayscale?: boolean;
   large?: boolean;
+  leg?: boolean;
   score: number;
 }
 
@@ -51,16 +55,33 @@ const AccessibilityRating = ({
   gradationMap,
   grayscale = false,
   large = false,
+  leg = false,
   score
 }: Props): ReactElement => {
+  const intl = useIntl();
   // Provide default mapping
   const mapping = gradationMap || {
-    0.0: { color: "#ffe4e5", text: "❌" },
+    0.0: {
+      color: "#ffe4e5",
+      icon: "❌",
+      text: intl.formatMessage({
+        id: `otpUi.ItineraryBody.tripAccessibility.tripIsInaccessible`
+      })
+    },
     0.5: {
       color: "#dbe9ff",
-      text: "？"
+      icon: "？",
+      text: intl.formatMessage({
+        id: `otpUi.ItineraryBody.tripAccessibility.tripAccessibilityUnclear`
+      })
     },
-    0.9: { color: "#bfffb5", text: "✅" }
+    0.9: {
+      color: "#bfffb5",
+      icon: "✅",
+      text: intl.formatMessage({
+        id: `otpUi.ItineraryBody.tripAccessibility.tripIsLikelyAccessible`
+      })
+    }
   };
 
   // Find the highest (including equality) key for our score.
@@ -75,15 +96,29 @@ const AccessibilityRating = ({
   // External configuration may report "0.0" as 0, so include fallback
   const mapped = mapping[mappedKey] || mapping[0.0];
 
+  const accessibilityPreface = intl.formatMessage({
+    id: `otpUi.ItineraryBody.tripAccessibility.${
+      leg ? "legAccessibility" : "itineraryAccessibility"
+    }`
+  });
+
+  const accessibilityScore = mapped.text;
+
+  const accessibilityLabel = accessibilityPreface + accessibilityScore;
+
   return (
     <Wrapper
       border={grayscale}
       color={grayscale ? "transparent" : mapped.color}
       large={large}
-      title={mapped.text}
+      leg
+      title={accessibilityLabel}
     >
+      <InvisibleAdditionalDetails>
+        {accessibilityLabel}
+      </InvisibleAdditionalDetails>
       <Wheelchair style={{ flex: "2", height: "100%", minWidth: "20px" }} />
-      <StatusWrapper>
+      <StatusWrapper aria-hidden>
         {/* Show either icon or text if no icon given */}
         {mapped.icon || <TextWrapper>{mapped.text}</TextWrapper>}
       </StatusWrapper>
