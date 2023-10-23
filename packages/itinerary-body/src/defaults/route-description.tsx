@@ -1,3 +1,4 @@
+import { getLegRouteShortName } from "@opentripplanner/core-utils/lib/itinerary";
 import React, { ReactElement } from "react";
 
 import * as S from "../styled";
@@ -8,7 +9,7 @@ import RouteLongName from "./route-long-name";
 export default function RouteDescription({
   leg
 }: RouteDescriptionProps): ReactElement {
-  const { routeShortName } = leg;
+  const routeShortName = getLegRouteShortName(leg);
   return (
     <S.LegDescriptionForTransit>
       {routeShortName && (

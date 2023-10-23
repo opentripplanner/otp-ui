@@ -228,6 +228,12 @@ export function generateOtp2Query(
       prev[cur.inverseKey] = cur.high - cur.value + cur.low;
     }
     prev[cur.key] = cur.value;
+
+    // If we assign a value on true, return the value (or null) instead of a boolean.
+    if (cur.type === "CHECKBOX" && cur.truthValue) {
+      prev[cur.key] =
+        cur.value === true ? cur.truthValue : cur.falseValue ?? null;
+    }
     return prev;
   }, {}) as ModeSettingValues;
 

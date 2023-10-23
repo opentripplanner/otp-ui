@@ -293,7 +293,7 @@ export function legElevationAtDistance(
     const elevDistanceSpan = points[i][0] - start[0];
     if (distance >= traversed && distance <= traversed + elevDistanceSpan) {
       // Distance falls within this point and the previous one;
-      // compute & return iterpolated elevation value
+      // compute & return interpolated elevation value
       if (start[1] === null) {
         console.warn(
           "Elevation value does not exist for distance.",
@@ -369,10 +369,10 @@ export function getElevationProfile(
  * @see https://stackoverflow.com/questions/118241/calculate-text-width-with-javascript/21015393#21015393
  */
 export function getTextWidth(text: string, font = "22px Arial"): number {
-  // Create custom type for function including re-used canvas object
+  // Create custom type for function including reused canvas object
   type GetTextWidth = typeof getTextWidth & { canvas: HTMLCanvasElement };
 
-  // re-use canvas object for better performance
+  // reuse canvas object for better performance
   const canvas =
     (getTextWidth as GetTextWidth).canvas ||
     ((getTextWidth as GetTextWidth).canvas = document.createElement("canvas"));
@@ -655,6 +655,7 @@ const pickupDropoffTypeToOtp1 = otp2Type => {
 export const convertGraphQLResponseToLegacy = (leg: any): any => ({
   ...leg,
   agencyBrandingUrl: leg.agency?.url,
+  agencyId: leg.agency?.id,
   agencyName: leg.agency?.name,
   agencyUrl: leg.agency?.url,
   alightRule: pickupDropoffTypeToOtp1(leg.dropoffType),
@@ -669,7 +670,7 @@ export const convertGraphQLResponseToLegacy = (leg: any): any => ({
   },
   route: leg.route?.shortName,
   routeColor: leg.route?.color,
-  routeId: leg.route?.id,
+  routeId: leg.route?.gtfsId,
   routeLongName: leg.route?.longName,
   routeShortName: leg.route?.shortName,
   routeTextColor: leg.route?.textColor,
@@ -681,3 +682,33 @@ export const convertGraphQLResponseToLegacy = (leg: any): any => ({
   tripHeadsign: leg.trip?.tripHeadsign,
   tripId: leg.trip?.gtfsId
 });
+
+/** Extracts the route number for a leg returned from OTP1 or OTP2. */
+export const getLegRouteShortName = (
+  leg: Pick<Leg, "route" | "routeShortName">
+): string | null => {
+  const { route, routeShortName } = leg;
+  // typeof route === "object" denotes newer OTP2 responses. routeShortName and route as string is OTP1.
+  return typeof route === "object"
+    ? route?.shortName
+    : routeShortName || (route as string);
+};
+
+/** Extract the route long name for a leg returned from OTP1 or OTP2. */
+export const getLegRouteLongName = (
+  leg: Pick<Leg, "route" | "routeLongName">
+): string | null => {
+  const { route, routeLongName } = leg;
+  // typeof route === "object" denotes newer OTP2 responses. routeLongName is OTP1.
+  return typeof route === "object" ? route?.longName : routeLongName;
+};
+
+/**
+ * Returns the route short name, or the route long name if no short name is provided.
+ * This is happens with Seattle area streetcars and ferries.
+ */
+export const getLegRouteName = (
+  leg: Pick<Leg, "route" | "routeLongName" | "routeShortName">
+): string => {
+  return getLegRouteShortName(leg) || getLegRouteLongName(leg);
+};

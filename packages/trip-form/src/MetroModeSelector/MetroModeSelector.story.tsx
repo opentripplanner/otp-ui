@@ -7,7 +7,7 @@ import {
   TrainSubway,
   TrainTram
 } from "@styled-icons/fa-solid";
-import { ClassicBike } from "@opentripplanner/icons/lib/classic";
+import { ClassicBike } from "@opentripplanner/icons/src/classic";
 import React, { ReactElement, useState } from "react";
 import * as Core from "..";
 import { QueryParamChangeEvent } from "../types";
@@ -80,7 +80,7 @@ const modeSettingDefinitionsWithDropdown = [
     default: true,
     key: "tram",
     iconName: "tram",
-    label: "Tram but long",
+    label: "Tram",
     addTransportMode: {
       mode: "TRAM"
     },

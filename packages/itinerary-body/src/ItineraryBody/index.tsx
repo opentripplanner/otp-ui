@@ -28,6 +28,7 @@ const ItineraryBody = ({
   mapillaryKey,
   PlaceName,
   RouteDescription,
+  RouteDescriptionFooter,
   routingType = "ITINERARY",
   setActiveLeg,
   setLegDiagram,
@@ -76,6 +77,7 @@ const ItineraryBody = ({
           mapillaryKey={mapillaryKey}
           PlaceName={PlaceName}
           RouteDescription={RouteDescription}
+          RouteDescriptionFooter={RouteDescriptionFooter}
           routingType={routingType}
           setActiveLeg={setActiveLeg}
           setLegDiagram={setLegDiagram}

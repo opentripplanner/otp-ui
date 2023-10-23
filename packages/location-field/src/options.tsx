@@ -1,4 +1,3 @@
-import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceStringImperial } from "@opentripplanner/humanize-distance";
 import { Stop, UserLocation } from "@opentripplanner/types";
 import React from "react";
@@ -53,17 +52,17 @@ export const MenuItem = ({
   <S.MenuItemLi
     // Hide disabled choices from screen readers (a relevant status is already provided).
     aria-hidden={disabled || undefined}
-    role={disabled ? undefined : "none"}
+    /* A known issue prevents combobox results to be read out on Voiceover. This is a hack to ensure 
+    AT hear all options - see https://react-spectrum.adobe.com/blog/building-a-combobox.html#voiceover */
+    aria-live={active ? "assertive" : "off"}
+    active={active}
+    id={id}
+    onClick={disabled ? null : onClick}
+    role="option"
+    aria-selected={active}
+    tabIndex={-1}
   >
-    <S.MenuItemA
-      active={active}
-      id={id}
-      onClick={disabled ? null : onClick}
-      role="option"
-      tabIndex={-1}
-    >
-      {children}
-    </S.MenuItemA>
+    {children}
   </S.MenuItemLi>
 );
 
@@ -90,29 +89,18 @@ export function Option({
 }): React.ReactElement {
   return (
     <MenuItem active={isActive} disabled={disabled} id={id} onClick={onClick}>
-      {coreUtils.ui.isIE() ? (
-        // In internet explorer 11, some really weird stuff is happening where it
-        // is not possible to click the text of the title, but if you click just
-        // above it, then it works. So, if using IE 11, just return the title text
-        // and avoid all the extra fancy stuff.
-        // See https://github.com/ibi-group/trimet-mod-otp/issues/237
-        title
-      ) : (
-        <S.OptionContainer className={classes}>
-          <S.OptionIconContainer style={{ color }}>
-            {icon}
-          </S.OptionIconContainer>
-          <S.OptionContent>
-            {title}
-            {subTitle && (
-              <S.OptionSubTitle>
-                <S.HiddenContent>, </S.HiddenContent>
-                {subTitle}
-              </S.OptionSubTitle>
-            )}
-          </S.OptionContent>
-        </S.OptionContainer>
-      )}
+      <S.OptionContainer className={classes}>
+        <S.OptionIconContainer style={{ color }}>{icon}</S.OptionIconContainer>
+        <S.OptionContent>
+          {title}
+          {subTitle && (
+            <S.OptionSubTitle>
+              <S.HiddenContent>, </S.HiddenContent>
+              {subTitle}
+            </S.OptionSubTitle>
+          )}
+        </S.OptionContent>
+      </S.OptionContainer>
     </MenuItem>
   );
 }

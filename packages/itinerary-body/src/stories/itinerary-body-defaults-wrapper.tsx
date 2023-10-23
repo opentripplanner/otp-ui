@@ -9,6 +9,7 @@ import ItineraryBody from "..";
 import DefaultLineColumnContent from "../defaults/line-column-content";
 import DefaultPlaceName from "../defaults/place-name";
 import DefaultRouteDescription from "../defaults/route-description";
+import { DefaultRouteDescriptionFooter } from "./route-description-footer";
 import DefaultTransitLegSummary from "../defaults/transit-leg-summary";
 import { StyledItineraryBody } from "../demos";
 import OtpRRStyledItineraryBody from "../otp-react-redux/itinerary-body";
@@ -17,6 +18,7 @@ import { ItineraryBodyProps } from "../types";
 const config = require("../__mocks__/config.json");
 
 type Props = ItineraryBodyProps & {
+  hideDrivingDirections?: boolean;
   styledItinerary?: string;
 };
 
@@ -43,11 +45,13 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
     const {
       alwaysCollapseAlerts,
       defaultFareSelector,
+      hideDrivingDirections = false,
       itinerary,
       LegIcon = TriMetLegIcon,
       LineColumnContent,
       PlaceName,
       RouteDescription,
+      RouteDescriptionFooter = undefined,
       showAgencyInfo,
       showLegIcon,
       showMapButtonColumn = true,
@@ -72,6 +76,11 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
       default:
         ItineraryBodyComponent = ItineraryBody;
     }
+
+    config.itinerary = {
+      hideDrivingDirections
+    };
+
     return (
       <ItineraryBodyComponent
         AlertBodyIcon={AlertBodyIcon}
@@ -87,6 +96,9 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
         mapillaryKey="fake key, but ok because the api response is also fake"
         PlaceName={PlaceName || DefaultPlaceName}
         RouteDescription={RouteDescription || DefaultRouteDescription}
+        RouteDescriptionFooter={
+          RouteDescriptionFooter || DefaultRouteDescriptionFooter
+        }
         routingType="ITINERARY"
         setActiveLeg={action("setActiveLeg")}
         setLegDiagram={this.setLegDiagram}

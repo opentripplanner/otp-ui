@@ -2,7 +2,7 @@
 // @ts-ignore FIXME: Create TypeScript types for the icons package.
 import { Map } from "@opentripplanner/icons";
 import React, { ReactElement } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { CaretDown } from "@styled-icons/fa-solid/CaretDown";
 import { CaretUp } from "@styled-icons/fa-solid/CaretUp";
 import { ExclamationTriangle } from "@styled-icons/fa-solid/ExclamationTriangle";
@@ -129,6 +129,22 @@ export const AccessBadge = styled.div<ModeRouteProps>`
   justify-content: center;
   padding-left: 1px;
   /* Add in border for dark mode */
+`;
+
+export const ArrivalTimeContainer = styled.button`
+  align-items: center;
+  background: none;
+  border: none;
+  color: #007899;
+  cursor: pointer;
+  display: flex;
+  font-size: 0.9em;
+  font-family: inherit;
+  margin: 0;
+  margin-top: 5px;
+  outline: inherit;
+  padding: 0;
+  text-align: inherit;
 `;
 
 export const CallAheadWarning = styled.div`
@@ -572,11 +588,20 @@ export const StepsHeaderAndMapLink = styled.span`
   }
 `;
 
-export const StepsHeader = styled(TransparentButton)`
+const stepsHeaderStyling = css`
   color: #676767;
   font-size: 13px;
   font-style: normal;
   padding: 0;
+`;
+
+export const StepsHeaderButton = styled(TransparentButton)`
+  ${stepsHeaderStyling}
+`;
+
+export const StepsHeaderSpan = styled.span`
+  ${stepsHeaderStyling}
+  margin-right: 0.4em;
 `;
 
 export const StepIconContainer = styled.div`

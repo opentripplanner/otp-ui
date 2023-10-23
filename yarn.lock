@@ -3241,10 +3241,15 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
-"@opentripplanner/types@6.0.0-alpha.4":
-  version "6.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-6.0.0-alpha.4.tgz#dee3c06675e30c596159d182ed707e7710cd937c"
-  integrity sha512-FlYsHm/tk+x0ldrEG1X9Ph1R1k3way1oEdKX7XSnhu9lNTzL4lO0hfT1PLzNXMfBRar7TzK94PHNDibJsod8Kw==
+"@opentripplanner/types@7.0.0-alpha.2":
+  version "7.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-7.0.0-alpha.2.tgz#d10c69f99b2da6d1e80ab5989520bde8e558627b"
+  integrity sha512-IzQwBcxkoyM+r/W7u+nzICf/6QnreLKppkrZZNl0yVxFiT6RBOd0U2UxMxLPYuRd/3awQabI3/qQ3/6ZxMWPfA==
+
+"@opentripplanner/types@^7.0.0-alpha.9":
+  version "7.0.0-alpha.9"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-7.0.0-alpha.9.tgz#175ede990d9b08815779a65d4e2bd24c97e3c33d"
+  integrity sha512-joGI+ae2qwdSdypOyjg1lmYF6BVKquGHbjBGA7uzO1vosMnFR3pPNCWmOC4pHW6w8PI5w5Z7wmVFDbdsQamDEA==
 
 "@peculiar/asn1-schema@^2.1.6", "@peculiar/asn1-schema@^2.3.0":
   version "2.3.3"
@@ -6559,11 +6564,6 @@ bottleneck@^2.18.1:
   resolved "https://registry.yarnpkg.com/bottleneck/-/bottleneck-2.19.5.tgz#5df0b90f59fd47656ebe63c78a98419205cadd91"
   integrity sha512-VHiNCbI1lKdl44tGrhNfU3lup0Tj/ZBMJB5/2ZbNXRCPuRCO7ed2mgcK4r17y+KB2EfuYuRaVlwNbAeaWGSpbw==
 
-bowser@^2.7.0:
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/bowser/-/bowser-2.11.0.tgz#5ca3c35757a7aa5771500c70a73a9f91ef420a8f"
-  integrity sha512-AlcaJBi/pqqJBIQ8U9Mcpc9i8Aqxn88Skv5d+xBX006BY5u8N3mGLHa5Lgppa7L/HfwgwLgZ6NYs+Ag6uUmJRA==
-
 boxen@^5.1.2:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/boxen/-/boxen-5.1.2.tgz#788cb686fc83c1f486dfa8a40c68fc2b831d2b50"
@@ -6970,9 +6970,9 @@ camelize@^1.0.0:
   integrity sha1-FkpUg+Yw+kMh5a8HAg5TGDGyYJs=
 
 caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001219:
-  version "1.0.30001431"
-  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001431.tgz"
-  integrity sha512-zBUoFU0ZcxpvSt9IU66dXVT/3ctO1cy4y9cscs1szkPlcWb6pasYM144GqrUygUbT+k7cmUCW61cvskjcv0enQ==
+  version "1.0.30001534"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001534.tgz"
+  integrity sha512-vlPVrhsCS7XaSh2VvWluIQEzVhefrUQcEsQWSS5A5V+dM07uv1qHeQzAOTGIMy9i3e9bH15+muvI/UHojVgS/Q==
 
 capture-exit@^2.0.0:
   version "2.0.0"

@@ -1,5 +1,6 @@
+import { convertGraphQLResponseToLegacy } from "@opentripplanner/core-utils/lib/itinerary";
 import { FareProductSelector, Itinerary } from "@opentripplanner/types";
-import React, { ReactElement } from "react";
+import React, { FunctionComponent, ReactElement } from "react";
 
 import ItineraryBody from "..";
 import {
@@ -33,6 +34,13 @@ const walkTransitWalkTransitWalkA11yItinerary = require("../__mocks__/itinerarie
 const otp2ScooterItinerary = require("../__mocks__/itineraries/otp2-scooter.json");
 const flexItinerary = require("../__mocks__/itineraries/flex-itinerary.json");
 
+function withLegacyLegs(itinerary) {
+  return {
+    ...itinerary,
+    legs: itinerary.legs.map(convertGraphQLResponseToLegacy)
+  };
+}
+
 if (!isRunningJest()) {
   // Generate same-day/next day alerts at a fixed time for the walk-transit-walk itinerary
   // for illustration outside of the CI environment.
@@ -48,6 +56,7 @@ if (!isRunningJest()) {
 interface StoryWrapperProps {
   alwaysCollapseAlerts?: boolean;
   defaultFareSelector?: FareProductSelector;
+  hideDrivingDirections?: boolean;
   itinerary: Itinerary;
   TimeColumnContent?: FunctionComponent<TimeColumnContentProps>;
 }
@@ -55,6 +64,7 @@ interface StoryWrapperProps {
 function OtpRRItineraryBodyWrapper({
   alwaysCollapseAlerts,
   defaultFareSelector,
+  hideDrivingDirections = false,
   itinerary,
   TimeColumnContent
 }: StoryWrapperProps): ReactElement {
@@ -62,6 +72,7 @@ function OtpRRItineraryBodyWrapper({
     <ItineraryBodyDefaultsWrapper
       alwaysCollapseAlerts={alwaysCollapseAlerts}
       defaultFareSelector={defaultFareSelector}
+      hideDrivingDirections={hideDrivingDirections}
       itinerary={itinerary}
       LegIcon={LegIconWithA11y}
       LineColumnContent={OtpRRLineColumnContent}
@@ -136,7 +147,9 @@ export const EScooterRentalTransitItinerary = (): ReactElement => (
 );
 
 export const TncTransitItinerary = (): ReactElement => (
-  <OtpRRItineraryBodyWrapper itinerary={tncTransitTncItinerary} />
+  <OtpRRItineraryBodyWrapper
+    itinerary={withLegacyLegs(tncTransitTncItinerary)}
+  />
 );
 
 export const OTP2ScooterItinerary = (): ReactElement => (
@@ -153,7 +166,7 @@ export const IndividualLegFareComponents = (): ReactElement => (
       mediumId: "orca:cash",
       riderCategoryId: "orca:regular"
     }}
-    itinerary={fareProductsItinerary}
+    itinerary={withLegacyLegs(fareProductsItinerary)}
   />
 );
 
@@ -216,4 +229,11 @@ export const TwoAlertsWithoutCollapsingProp = (): ReactElement => (
 
 export const ZeroAlertsWithoutCollapsingProp = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkInterlinedTransitItinerary} />
+);
+
+export const HideDrivingDirections = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    hideDrivingDirections
+    itinerary={parkAndRideItinerary}
+  />
 );

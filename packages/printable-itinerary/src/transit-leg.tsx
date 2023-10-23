@@ -1,4 +1,7 @@
-import coreUtils from "@opentripplanner/core-utils";
+import {
+  getDisplayedStopId,
+  getLegRouteShortName
+} from "@opentripplanner/core-utils/lib/itinerary";
 import { Defaults } from "@opentripplanner/itinerary-body";
 import { GradationMap, Leg, LegIconComponent } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
@@ -7,8 +10,6 @@ import { FormattedMessage } from "react-intl";
 import AccessibilityAnnotation from "./accessibility-annotation";
 import * as S from "./styled";
 import { defaultMessages, strongText } from "./util";
-
-const { getDisplayedStopId } = coreUtils.itinerary;
 
 interface Props {
   accessibilityScoreGradationMap?: GradationMap;
@@ -28,7 +29,7 @@ export default function TransitLeg({
 
   const routeDescription = (
     <>
-      <strong>{leg.routeShortName}</strong> <S.RouteLongName leg={leg} />
+      <strong>{getLegRouteShortName(leg)}</strong> <S.RouteLongName leg={leg} />
     </>
   );
 

@@ -711,6 +711,8 @@ export type CheckboxOptions = {
   default?: boolean;
   label: string;
   type: "CHECKBOX";
+  truthValue?: boolean | string | number;
+  falseValue?: boolean | string | number;
   value?: boolean;
 };
 

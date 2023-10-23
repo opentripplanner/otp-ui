@@ -20,6 +20,7 @@ import { Duration } from "../defaults";
 import * as S from "../styled";
 import {
   RouteDescriptionProps,
+  RouteDescriptionFooterProps,
   SetActiveLegFunction,
   SetViewedTripFunction,
   TransitLegSubheaderProps,
@@ -42,6 +43,7 @@ interface Props {
   LegIcon: LegIconComponent;
   legIndex: number;
   RouteDescription: FunctionComponent<RouteDescriptionProps>;
+  RouteDescriptionFooter: FunctionComponent<RouteDescriptionFooterProps>;
   setActiveLeg: SetActiveLegFunction;
   setViewedTrip: SetViewedTripFunction;
   showAgencyInfo: boolean;
@@ -67,7 +69,7 @@ function getFlexMessageValues(info: FlexBookingInfo) {
   // if the leadTime check is ever to be more than just checking the value of
   // daysPrior (which can be done within react-intl)
   const hasPhone = !!info?.contactInfo?.phoneNumber;
-  const leadDays = info.latestBookingTime.daysPrior;
+  const leadDays = info?.latestBookingTime?.daysPrior;
   const phoneNumber = info?.contactInfo?.phoneNumber;
   return {
     action: hasPhone ? (
@@ -135,6 +137,7 @@ class TransitLegBody extends Component<Props, State> {
       legDestination,
       LegIcon,
       RouteDescription,
+      RouteDescriptionFooter,
       setViewedTrip,
       showAgencyInfo,
       showViewTripButton,
@@ -228,6 +231,7 @@ class TransitLegBody extends Component<Props, State> {
               </S.LegClickableButton>
             </S.LegDescription>
           </S.LegClickable>
+          {RouteDescriptionFooter && <RouteDescriptionFooter leg={leg} />}
           <div
             // Creates a group of leg details for screenreaders after the initial leg description.
             aria-label={intl.formatMessage({
@@ -321,16 +325,12 @@ class TransitLegBody extends Component<Props, State> {
 
                   {showViewTripButton && (
                     <ViewTripButton
-                      tripId={leg.tripId}
-                      fromIndex={
-                        leg.from.stopIndex ||
-                        leg?.trip?.departureStoptime?.stopPosition
-                      }
+                      fromIndex={leg.from?.stopIndex}
+                      fromStopId={leg?.from?.stopId}
                       setViewedTrip={setViewedTrip}
-                      toIndex={
-                        leg.to.stopIndex ||
-                        leg?.trip?.arrivalStoptime?.stopPosition
-                      }
+                      toIndex={leg.to?.stopIndex}
+                      toStopId={leg?.to?.stopId}
+                      tripId={leg.tripId}
                     />
                   )}
                 </S.TransitLegDetailsHeader>

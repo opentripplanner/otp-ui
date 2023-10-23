@@ -48,7 +48,7 @@ query Plan(
             effectiveStartDate
             id
           }
-          id
+          gtfsId: id
           name
           timezone
           url
@@ -106,6 +106,7 @@ query Plan(
           }
           vertexType
         }
+        headsign
         interlineWithPreviousLeg
         intermediateStops {
           lat
@@ -156,7 +157,8 @@ query Plan(
             id
           }
           color
-          id
+          gtfsId
+          id: gtfsId
           longName
           shortName
           textColor
@@ -222,10 +224,8 @@ query Plan(
             }
             stopPosition
           }
-
           gtfsId
           id
-          tripHeadsign
         }
       }
       startTime
