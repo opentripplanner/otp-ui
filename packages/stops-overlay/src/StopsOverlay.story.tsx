@@ -13,7 +13,8 @@ const Example = ({
   minZoom = 15,
   setLocation = action("setLocation"),
   setViewedStop = action("setViewedStop"),
-  stops = mockStops
+  stops = mockStops,
+  highlightedStop = "8338"
 }: StopProps & { mapCenter?: [number, number] }) => {
   return (
     <StopsOverlay
@@ -21,6 +22,7 @@ const Example = ({
       setLocation={setLocation}
       setViewedStop={setViewedStop}
       stops={stops}
+      highlightedStop={highlightedStop}
       visible
     />
   );

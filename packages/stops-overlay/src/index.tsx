@@ -17,6 +17,10 @@ type Props = {
    */
   activeStop?: string;
   /**
+   * An optional id to highlight a stop on the map
+   */
+  highlightedStop?: string;
+  /**
    * The list of stops to create stop markers for.
    */
   stops?: Stop[];
@@ -51,6 +55,7 @@ const StopsOverlay = (props: Props): JSX.Element => {
   const {
     activeStop,
     color,
+    highlightedStop,
     minZoom,
     refreshStops,
     setLocation,
@@ -127,7 +132,8 @@ const StopsOverlay = (props: Props): JSX.Element => {
         type: "Feature",
         properties: {
           ...stop,
-          flex: isGeoJsonFlex(stop?.geometries?.geoJson)
+          flex: isGeoJsonFlex(stop?.geometries?.geoJson),
+          highlighted: stop.id === highlightedStop
         },
         geometry: { type: "Point", coordinates: [stop.lon, stop.lat] }
       }))
@@ -151,6 +157,19 @@ const StopsOverlay = (props: Props): JSX.Element => {
           paint={{
             "circle-color": color || "#fff",
             "circle-opacity": 0.9,
+            // TODO: Use tinycolor to generate outline with appropriate contrast.
+            "circle-stroke-color": color ? "#fff" : "#333",
+            "circle-stroke-width": 2
+          }}
+          type="circle"
+        />
+        <Layer
+          id="higlightedStop"
+          filter={["==", "highlighted", true]}
+          paint={{
+            "circle-color": color || "#ff0000",
+            "circle-opacity": 1,
+            "circle-radius": 10,
             // TODO: Use tinycolor to generate outline with appropriate contrast.
             "circle-stroke-color": color ? "#fff" : "#333",
             "circle-stroke-width": 2
