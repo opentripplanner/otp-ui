@@ -138,7 +138,7 @@ const StopsOverlay = (props: Props): JSX.Element => {
         geometry: { type: "Point", coordinates: [stop.lon, stop.lat] }
       }))
     }),
-    [stops]
+    [stops, highlightedStop]
   );
 
   // Don't render if no map or no stops are defined.
