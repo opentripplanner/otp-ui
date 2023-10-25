@@ -15,6 +15,10 @@ const ColorBlock = styled.div<{ hex: string }>`
   align-items: center;
   background-color: ${props => props.hex};
   color: ${props => getMostReadableTextColor(props.hex, "#ffffff")};
+  text-shadow: ${props =>
+    getMostReadableTextColor(props.hex, "#ffffff") === "#ffffff"
+      ? "1px 1px 2px black"
+      : ""};
   display: flex;
   font-family: Arial, Helvetica, sans-serif;
   height: 40px;
