@@ -8,7 +8,6 @@ import { InvisibleAdditionalDetails } from "../styled";
 interface WrapperProps {
   border: boolean;
   color: string;
-  leg: boolean;
   large: boolean;
 }
 
@@ -111,7 +110,6 @@ const AccessibilityRating = ({
       border={grayscale}
       color={grayscale ? "transparent" : mapped.color}
       large={large}
-      leg
       title={accessibilityLabel}
     >
       <InvisibleAdditionalDetails>
