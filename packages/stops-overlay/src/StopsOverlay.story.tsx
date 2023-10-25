@@ -23,6 +23,7 @@ const Example = ({
       setViewedStop={setViewedStop}
       stops={stops}
       highlightedStop={highlightedStop}
+      highlightedStopColor="#0000ff"
       visible
     />
   );

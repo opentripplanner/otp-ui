@@ -21,6 +21,10 @@ type Props = {
    */
   highlightedStop?: string;
   /**
+   * A color to use for the highlighted stop
+   */
+  highlightedStopColor?: string;
+  /**
    * The list of stops to create stop markers for.
    */
   stops?: Stop[];
@@ -56,6 +60,7 @@ const StopsOverlay = (props: Props): JSX.Element => {
     activeStop,
     color,
     highlightedStop,
+    highlightedStopColor,
     minZoom,
     refreshStops,
     setLocation,
@@ -167,7 +172,7 @@ const StopsOverlay = (props: Props): JSX.Element => {
           id="higlightedStop"
           filter={["==", "highlighted", true]}
           paint={{
-            "circle-color": color || "#ff0000",
+            "circle-color": highlightedStopColor || "#ff0000",
             "circle-opacity": 1,
             "circle-radius": 10,
             // TODO: Use tinycolor to generate outline with appropriate contrast.

@@ -3286,6 +3286,24 @@
     "@opentripplanner/core-utils" "^11.0.2"
     prop-types "^15.7.2"
 
+"@opentripplanner/itinerary-body@^5.0.2", "@opentripplanner/itinerary-body@^5.0.7":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/itinerary-body/-/itinerary-body-5.1.1.tgz#bcd76d6bc079c6407088223d021a5777358ab060"
+  integrity sha512-obsPBhgvpvVkJuTsgNhQFN+3QKpxlzrNU3FGUZT+PAkgUHQxFo/6FQ0LNGSC+dTBBS1t7EKDfC0czQz4KZPQiw==
+  dependencies:
+    "@opentripplanner/core-utils" "^11.0.2"
+    "@opentripplanner/humanize-distance" "^1.2.0"
+    "@opentripplanner/icons" "^2.0.5"
+    "@opentripplanner/location-icon" "^1.4.1"
+    "@styled-icons/fa-solid" "^10.34.0"
+    "@styled-icons/foundation" "^10.34.0"
+    date-fns "^2.28.0"
+    date-fns-tz "^1.2.2"
+    flat "^5.0.2"
+    react-animate-height "^3.0.4"
+    react-resize-detector "^4.2.1"
+    string-similarity "^4.0.4"
+
 "@opentripplanner/map-popup@^2.0.5":
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/@opentripplanner/map-popup/-/map-popup-2.0.6.tgz#c45617493452616dcc208cc7fcfe606b5e13a376"
