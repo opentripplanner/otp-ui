@@ -106,7 +106,7 @@ export default function PlaceRow({
           // TODO: Reorder markup so accessibility info doesn't fall between time and destination.
           <AccessibilityRating
             gradationMap={accessibilityScoreGradationMap}
-            leg
+            isLeg
             score={leg.accessibilityScore}
           />
         )}

@@ -42,7 +42,7 @@ interface Props {
   gradationMap?: GradationMap;
   grayscale?: boolean;
   large?: boolean;
-  leg?: boolean;
+  isLeg?: boolean;
   score: number;
 }
 
@@ -54,7 +54,7 @@ const AccessibilityRating = ({
   gradationMap,
   grayscale = false,
   large = false,
-  leg = false,
+  isLeg = false,
   score
 }: Props): ReactElement => {
   const intl = useIntl();
@@ -64,21 +64,21 @@ const AccessibilityRating = ({
       color: "#ffe4e5",
       icon: "❌",
       text: intl.formatMessage({
-        id: `otpUi.ItineraryBody.tripAccessibility.tripIsInaccessible`
+        id: `otpUi.ItineraryBody.tripAccessibility.inaccessible`
       })
     },
     0.5: {
       color: "#dbe9ff",
       icon: "？",
       text: intl.formatMessage({
-        id: `otpUi.ItineraryBody.tripAccessibility.tripAccessibilityUnclear`
+        id: `otpUi.ItineraryBody.tripAccessibility.unclear`
       })
     },
     0.9: {
       color: "#bfffb5",
       icon: "✅",
       text: intl.formatMessage({
-        id: `otpUi.ItineraryBody.tripAccessibility.tripIsLikelyAccessible`
+        id: `otpUi.ItineraryBody.tripAccessibility.likelyAccessible`
       })
     }
   };
@@ -97,7 +97,7 @@ const AccessibilityRating = ({
 
   const accessibilityPreface = intl.formatMessage({
     id: `otpUi.ItineraryBody.tripAccessibility.${
-      leg ? "legAccessibility" : "itineraryAccessibility"
+      isLeg ? "legAccessibility" : "itineraryAccessibility"
     }`
   });
 
