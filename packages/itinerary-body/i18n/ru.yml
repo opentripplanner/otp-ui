@@ -1,1 +1,41 @@
-{}
+otpUi:
+  TransitLegBody:
+    fare: 'Стоимость проезда: {fare}'
+    AlertsBody:
+      yesterday: Вчера
+      tomorrow: Завтра
+      today: Сегодня
+    rideDurationAndStops: 'Поездка: {duration}{numStops, plural, =1 {} other { / остановки
+      (#)}}'
+    stopViewer: Средство просмотра остановок
+    tripViewer: Средство просмотра поездки
+    stopId: Идентификатор остановки {stopId}
+    typicalWait: 'Типичное время ожидания: {waitTime}'
+    stopIdBasic: Идентификатор {stopId}
+    operatedBy: Услуги, предоставляемые агентством «{agencyLink}»
+  AccessLegBody:
+    LegDiagramPreview:
+      toggleElevationChart: Переключить график высот
+      elevationChart: График высот
+      noElevationData: Нет данных по высоте.
+    RentedVehicleSubheader:
+      resumeRentalRide: Продолжить аренду
+      walkVehicle: Проведите средство вдоль места «{place}»
+    vehicleType:
+      car: Авто
+      bike: Велосипед
+    TncLeg:
+      estimatedTravelTime: 'Предполагаемое время поездки: {duration} (без учета дорожного
+        движения)'
+      estimatedCost: 'Предполагаемая стоимость: {minFare} — {maxFare}'
+      bookRideLater: Для бронирования подождите до {timeMillis, time, short}
+      bookRide: Забронировать поездку
+    summaryMode:
+      walk: Пешком
+      bikeshare: Прокат велосипедов
+      carDrive: Поездка в транспортном средстве
+    mapillaryTooltip: Показать изображения улиц для этого местоположения
+  ItineraryBody:
+    viewOnMap: Просмотреть на карте
+    common:
+      durationShort: '{hours, plural, =0 {} other {# ч }}{minutes} мин'
