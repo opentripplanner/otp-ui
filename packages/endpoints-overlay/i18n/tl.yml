@@ -1,1 +1,8 @@
-{}
+otpUi:
+  EndpointsOverlay:
+    forgetWork: Kalimutan ang trabaho
+    swapLocation: Gawing lokasyon ng {locationType}
+    saveAsWork: I-save bilang trabaho
+    forgetHome: Kalimutan ang tirahan
+    clearLocation: Alisin ang lokasyon ng {locationType}
+    saveAsHome: I-save bilang tirahan
