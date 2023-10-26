@@ -1,0 +1,6 @@
+{
+  "ignoredIds": ["otpUi.ItineraryBody.tripAccessibility.accessible"],
+  "groups": {
+    "otpUi.ItineraryBody.tripAccessibility.*Accessibility": ["itinerary", "leg"]
+  }
+}
