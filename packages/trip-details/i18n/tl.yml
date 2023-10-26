@@ -1,1 +1,15 @@
-{}
+otpUi:
+  TripDetails:
+    transitFareEntry: '{name}: <strong>{value}</strong>'
+    tncFare: '{companies} Fare: <strong>{minTNCFare} - {maxTNCFare}</strong>'
+    departure: Aalis <strong>{departureDate, date, long}</strong> nang <strong>{departureDate,
+      time, short}</strong>
+    FareTable:
+      senior: Nakatatanda
+      youth: Kabataan
+      electronic: Electronic
+      special: Espesyal
+      regular: Nasa Hustong Gulang
+      cash: Cash
+    title: Mga Detalye ng Biyahe
+    transitFare: Pamasahe sa Pampublikong Transportasyon
