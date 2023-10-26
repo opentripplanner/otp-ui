@@ -1,1 +1,44 @@
-{}
+otpUi:
+  queryParameters:
+    maxEScooterDistance: Максимальная дальность поездки на электросамокате
+    wheelchair: Предпочитать маршруты с возможностью передвижения на инвалидной коляске
+    maxWalkTime: Максимальное время прогулки
+    optimizeBikeSpeed: Скорость
+    maxWalkDistance: Максимальная дальность прогулки
+    watts: Мощность электросамоката
+    walkSpeed: Скорость ходьбы
+    watts1500powerfulEscooter: Мощный электросамокат (24 мили в час)
+    walkReluctanceLow: Больше этапов пешком
+    maxBikeTime: Максимальное время езды на велосипеде
+    optimizeBikeFlat: Поездка на велосипеде по ровной местности
+    watts125kidsHoverboard: Детский ховерборд (6 миль в час)
+    watts500robustEscooter: Электросамокат среднего уровня (18 миль в час)
+    optimizeFor: Оптимизировать для
+    maxBikeDistance: Максимальная дальность езды на велосипеде
+    optimizeBikeFriendly: Поездка на велосипеде
+    walkReluctanceHigh: Больше общественного транспорта
+    walkReluctance: Без этапов прогулки пешком
+    watts250entryLevelEscooter: Самокат начального уровня (11 миль в час)
+    speedInMilesPerHour: '{mph} миль/ч'
+    bikeSpeed: Скорость велосипеда
+  DateTimeSelector:
+    depart: Отправление в
+    arrive: Прибытие к
+    now: Выйти
+  ModeSelector:
+    settings:
+      ferry-label: Паром
+      bus-label: Автобус
+    labels:
+      bicycle: Велосипед
+      walk: Пешком
+      car: Поездка в транспортном средстве
+      transit: Общественный транспорт
+  SettingsSelectorPanel:
+    use: Воспользоваться
+    useCompanies: Воспользоваться услугами компаний
+    bikeOnly: Только велосипед
+    takeTransit: Воспользуйтесь общественным транспортом
+    travelPreferences: Параметры поездок
+    walkOnly: Только пешком
+    escooterOnly: Только электросамокат
