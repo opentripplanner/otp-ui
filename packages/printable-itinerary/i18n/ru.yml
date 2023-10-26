@@ -1,1 +1,11 @@
-{}
+otpUi:
+  PrintableItinerary:
+    TncLeg:
+      estimatedWaitTime: 'Предполагаемое время до посадки: <strong>{duration}</strong>'
+      estimatedTravelTime: 'Предполагаемое время поездки: <strong>{duration}</strong>
+        (без учета дорожного движения)'
+      header: <strong>Воспользуйтесь услугами компании {company}</strong>, чтобы добраться
+        к месту <strong>{place}</strong>
+    TransitLeg:
+      continuesAs: 'Продолжение: {routeDescription}'
+    depart: <strong>Отправление</strong> с места <strong>{place}</strong>
