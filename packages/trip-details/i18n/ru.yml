@@ -1,1 +1,15 @@
-{}
+otpUi:
+  TripDetails:
+    transitFareEntry: '{name}: <strong>{value}</strong>'
+    tncFare: 'Стоимость проезда в компаниях {companies}: <strong>{minTNCFare} — {maxTNCFare}</strong>'
+    departure: 'Прибытие: <strong>{departureDate, date, long}</strong> в <strong>{departureDate,
+      time, short}</strong>'
+    FareTable:
+      senior: Пожилые
+      youth: Детский
+      electronic: Электронный
+      special: Особые
+      regular: Взрослые
+      cash: Наличные
+    title: Подробные сведения о поездке
+    transitFare: Стоимость проезда в общественном транспорте
