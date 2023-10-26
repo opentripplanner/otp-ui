@@ -1,1 +1,40 @@
-{}
+otpUi:
+  TransitLegBody:
+    fare: 'Pamasahe: {fare}'
+    AlertsBody:
+      yesterday: Kahapon
+      tomorrow: Bukas
+      today: Ngayong Araw
+    rideDurationAndStops: 'Ride {duration}{numStops, plural, =1 {} other { / # stops}}'
+    stopViewer: Ihinto ang Viewer
+    tripViewer: Viewer ng Biyahe
+    stopId: ID ng Hintuan {stopId}
+    typicalWait: 'Karaniwang tagal ng paghihintay: {waitTime}'
+    stopIdBasic: ID {stopId}
+    operatedBy: Ang serbisyo ay pinapatakbo ng {agencyLink}
+  AccessLegBody:
+    LegDiagramPreview:
+      toggleElevationChart: I-toggle ang chart ng elevation
+      elevationChart: Chart ng elevation
+      noElevationData: Walang available na data ng elevation.
+    RentedVehicleSubheader:
+      resumeRentalRide: Magpatuloy gamit ang rental
+      walkVehicle: Dumaan sa {place}
+    vehicleType:
+      car: Sasakyan
+      bike: Bisikleta
+    TncLeg:
+      estimatedTravelTime: 'Tinatayang tagal ng biyahe: {duration} (hindi isinasaalang-alang
+        ang trapiko)'
+      estimatedCost: 'Tinatayang halaga: {minFare} - {maxFare}'
+      bookRideLater: Maghintay hanggang {timeMillis, time, short} para mag-book
+      bookRide: Mag-book ng Ride
+    summaryMode:
+      walk: Naglalakad
+      bikeshare: Bikeshare
+      carDrive: Nagmamaneho
+    mapillaryTooltip: Ipakita ang larawan ng kalye sa lokasyong ito
+  ItineraryBody:
+    viewOnMap: Tingnan sa mapa
+    common:
+      durationShort: '{hours, plural, =0 {} other {# hr }}{minutes} (na) minuto'
