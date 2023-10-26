@@ -1,1 +1,8 @@
-{}
+otpUi:
+  MapPopup:
+    availableDocks: 'Mga available na dock: {value}'
+    floatingBike: 'Free-floating na bisikleta: {name}'
+    stopViewer: Ihinto ang Viewer
+    stopId: 'Stop ID: {stopId}'
+    floatingCar: '{company} {name}'
+    availableBikes: 'Mga available na bisikleta: {value}'
