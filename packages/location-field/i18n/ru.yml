@@ -1,1 +1,13 @@
-{}
+otpUi:
+  LocationField:
+    myPlaces: Мои места
+    stops: Остановки
+    beginTypingPrompt: Начните вводить название, чтобы выполнить поиск местоположений
+    other: Другое
+    recentlySearched: Недавние поисковые запросы
+    nearby: Остановки поблизости
+    homeLocation: Дом
+    workLocation: Работа
+    stations: Станции
+    clearLocation: Очистить местоположение
+    useCurrentLocation: Использовать текущее местоположение
