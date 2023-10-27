@@ -21,21 +21,73 @@ otpUi:
     RentedVehicleSubheader:
       resumeRentalRide: Продолжить аренду
       walkVehicle: Проведите средство вдоль места «{place}»
+      vehicleType:
+        bike: велосипед
+        escooter: Электросамокат
+        car: aвто
+        bikeshare: велосипед в прокат
+        vehicle: транспортное средство
+      pickupRental: Возьмите {vehicleType} «{company}» {vehicleName}
     vehicleType:
       car: Авто
       bike: Велосипед
+      escooter: Электросамокат
     TncLeg:
       estimatedTravelTime: 'Предполагаемое время поездки: {duration} (без учета дорожного
         движения)'
       estimatedCost: 'Предполагаемая стоимость: {minFare} — {maxFare}'
       bookRideLater: Для бронирования подождите до {timeMillis, time, short}
       bookRide: Забронировать поездку
+      waitForPickup: 'Подождите{minutes, plural, =0 {} other { # мин}} до приезда
+        {company}'
     summaryMode:
       walk: Пешком
       bikeshare: Прокат велосипедов
-      carDrive: Поездка в транспортном средстве
+      carDrive: Вождение
+      bike: Велосипед
+      escooter: Электросамокат
+      carHail: Поездка
     mapillaryTooltip: Показать изображения улиц для этого местоположения
+    unnamedRoad: Неизвестная дорога
+    stepHeading:
+      southwest: на юго-запад
+      south: на юг
+      southeast: на юго-восток
+      northwest: на северо-запад
+      northeast: на северо-восток
+      north: на север
+      west: на запад
+      east: на восток
+    step:
+      slightlyRight: Немного правее
+      hardLeft: Строго налево
+      circleClockwise: Двигайтесь по кругу по часовой стрелке
+      continue: Продолжайте движение
+      slightlyLeft: Немного левее
+      uTurnLeft: Левый разворот
+      uTurnRight: Правый разворот
+      circleCounterClockwise: Двигайтесь по кругу против часовой стрелки
+      right: Направо
+      hardRight: Строго направо
+      left: Налево
+    stepDepart: Направляйтесь {heading} на улице {street}
+    stepElevator: Воспользуйтесь подъемом к улице {street}
+    summary: '{mode} до места «{place}»'
+    stepGeneric: '{step} на улице {street}'
+    summaryAndDistance: '{mode}{distance} до места «{place}»'
+    unnamedPath: Неизвестный путь
+    vehicleTitle: '{vehicleType} «{company}»'
   ItineraryBody:
     viewOnMap: Просмотреть на карте
     common:
       durationShort: '{hours, plural, =0 {} other {# ч }}{minutes} мин'
+    flexPickupMessage: Чтобы воспользоваться этим маршрутом, {action}{advanceNotice}.
+    flexCallNumber: наберите {phoneNumber}
+    travelByMode:
+      car: на авто
+      bike: на велосипеде
+      escooter: на электросамокате
+      walk: пешком
+    stayOnBoard: Не выходите в месте {place}
+    flexCallAhead: наберите заранее
+    travelBy: Передвижение {mode}
