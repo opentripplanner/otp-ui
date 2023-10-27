@@ -6,3 +6,4 @@ otpUi:
     stopId: 'Идентификатор остановки: {stopId}'
     floatingCar: '{company} {name}'
     availableBikes: 'Доступные велосипеды: {value}'
+    floatingEScooter: 'Электросамокат: {name}'
