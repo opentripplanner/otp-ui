@@ -11,3 +11,9 @@ otpUi:
     stations: Mga Istasyon
     clearLocation: I-clear ang lokasyon
     useCurrentLocation: Gamitin ang Kasalukuyang Lokasyon
+    noResults: Walang nakitang resulta
+    stationCount: '{count} mga istasyon'
+    currentLocationUnavailable: Hindi available ang kasalukuyang lokasyon
+    fetchingLocation: Fine-fetch ang lokasyon…
+    parenthesisFormat: '{main} ({detail})'
+    geocoderUnreachable: Hind maabot ang geocoder
