@@ -6,3 +6,4 @@ otpUi:
     forgetHome: Kalimutan ang tirahan
     clearLocation: Alisin ang lokasyon ng {locationType}
     saveAsHome: I-save bilang tirahan
+    coordinates: '{lat, number, ::.00000}, {lon, number, ::.00000}'
