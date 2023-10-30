@@ -5,6 +5,8 @@ otpUi:
       yesterday: Kahapon
       tomorrow: Bukas
       today: Ngayong Araw
+      effectiveTimeAndDate: May bisa simula {dateTime, time, short}, {day}
+      effectiveDate: May bisa simula {dateTime, date, long}
     rideDurationAndStops: 'Ride {duration}{numStops, plural, =1 {} other { / # stops}}'
     stopViewer: Ihinto ang Viewer
     tripViewer: Viewer ng Biyahe
@@ -12,6 +14,11 @@ otpUi:
     typicalWait: 'Karaniwang tagal ng paghihintay: {waitTime}'
     stopIdBasic: ID {stopId}
     operatedBy: Ang serbisyo ay pinapatakbo ng {agencyLink}
+    arriveAt: Darating nang {place}
+    disembarkAt: Bumaba sa {legDestination}
+    alertsHeader: '{alertCount, plural, =1 {# alert} other {# alerts}}'
+    routeDescription: '{routeName} <toPrefix>papuntang</toPrefix> {headsign}'
+    fromLocation: mula sa {location}
   AccessLegBody:
     LegDiagramPreview:
       toggleElevationChart: I-toggle ang chart ng elevation
