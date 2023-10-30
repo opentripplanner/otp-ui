@@ -21,6 +21,7 @@ otpUi:
     watts250entryLevelEscooter: Самокат начального уровня (11 миль в час)
     speedInMilesPerHour: '{mph} миль/ч'
     bikeSpeed: Скорость велосипеда
+    distanceInMiles: "{miles, number, :: unit/mile unit-width-full-name}\n"
   DateTimeSelector:
     depart: Отправление в
     arrive: Прибытие к
@@ -29,11 +30,13 @@ otpUi:
     settings:
       ferry-label: Паром
       bus-label: Автобус
+      rail-label: Рельсовый транспорт
     labels:
       bicycle: Велосипед
       walk: Пешком
       car: Поездка в транспортном средстве
       transit: Общественный транспорт
+      rent: Прокат
   SettingsSelectorPanel:
     use: Воспользоваться
     useCompanies: Воспользоваться услугами компаний
