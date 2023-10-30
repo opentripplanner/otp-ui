@@ -665,7 +665,7 @@
           "phoneNumber": "555-352-9348",
           "infoUrl": "https://60plusride.org/"
         },
-        "earliestBookingTime": { "time": 0, "daysPrior": 0 },
+        "earliestBookingTime": { "time": 0 },
         "latestBookingTime": { "time": 57600, "daysPrior": 7 },
         "message": "This is the first dropoff booking info message."
       },

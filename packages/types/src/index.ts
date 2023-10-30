@@ -253,10 +253,10 @@ export type Place = {
  */
 export type FlexBookingInfo = {
   contactInfo?: {
-    phoneNumber: string;
+    phoneNumber?: string;
   };
   latestBookingTime?: {
-    daysPrior: number;
+    daysPrior?: number;
   };
   message?: string;
 };
