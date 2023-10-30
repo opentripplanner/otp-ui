@@ -13,3 +13,8 @@ otpUi:
       cash: Cash
     title: Mga Detalye ng Biyahe
     transitFare: Pamasahe sa Pampublikong Transportasyon
+    co2description: Kinakalkula ang intensity ng CO₂ sa pamamagitan ng pag-multiply
+      sa distansya ng bawat leg ng biyahe sa intensity ng CO₂ ng bawat mode. Ang intensity
+      ng CO₂ ng bawat mode ay nagmumula sa <link>spreadsheet na ito</link>.
+    tripIncludesFlex: May mga flexible na ruta ang biyaheng ito. {extraMessage}
+    co2: 'Na-emit na CO₂: <strong>{co2}</strong>'
