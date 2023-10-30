@@ -7,4 +7,6 @@ otpUi:
       header: <strong>Gamitin ang {company}</strong> papuntang <strong>{place}</strong>
     TransitLeg:
       continuesAs: Magpapatuloy bilang {routeDescription}
+      alight: Bumaba sa <strong>{place}</strong> ({stopId}) nang <strong>{time, time,
+        short}</strong>
     depart: <strong>Aalis</strong> sa <strong>{place}</strong>
