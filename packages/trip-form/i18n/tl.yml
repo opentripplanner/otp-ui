@@ -21,6 +21,7 @@ otpUi:
     watts250entryLevelEscooter: Entry-level na scooter (11 mph)
     speedInMilesPerHour: '{mph} MPH'
     bikeSpeed: Bilis ng Bisikleta
+    distanceInMiles: "{miles, number, :: unit/mile unit-width-full-name}\n"
   DateTimeSelector:
     depart: Umalis nang
     arrive: Dumating bago ang
@@ -29,11 +30,13 @@ otpUi:
     settings:
       ferry-label: Ferry
       bus-label: Bus
+      rail-label: Tren
     labels:
       bicycle: Bisikleta
       walk: Naglalakad
       car: Nagmamaneho
       transit: Pampublikong Transportasyon
+      rent: Rental
   SettingsSelectorPanel:
     use: Gamitin
     useCompanies: Gumamit ng mga kumpanya
