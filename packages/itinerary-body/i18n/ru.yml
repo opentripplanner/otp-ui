@@ -5,6 +5,8 @@ otpUi:
       yesterday: Вчера
       tomorrow: Завтра
       today: Сегодня
+      effectiveTimeAndDate: Актуально на {dateTime, time, short}, {day}
+      effectiveDate: Актуально на {dateTime, date, long}
     rideDurationAndStops: 'Поездка: {duration}{numStops, plural, =1 {} other { / остановки
       (#)}}'
     stopViewer: Средство просмотра остановок
@@ -13,6 +15,12 @@ otpUi:
     typicalWait: 'Типичное время ожидания: {waitTime}'
     stopIdBasic: Идентификатор {stopId}
     operatedBy: Услуги, предоставляемые агентством «{agencyLink}»
+    arriveAt: Прибытие в {place}
+    disembarkAt: Выходите в месте {legDestination}
+    alertsHeader: '{alertCount, plural, =1 {# предупреждение!} other {Несколько предупреждений
+      (#)!}}'
+    routeDescription: '{routeName} <toPrefix>—</toPrefix> {headsign}'
+    fromLocation: Из места «{location}»
   AccessLegBody:
     LegDiagramPreview:
       toggleElevationChart: Переключить график высот
