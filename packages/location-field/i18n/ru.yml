@@ -1,0 +1,20 @@
+otpUi:
+  LocationField:
+    myPlaces: Мои места
+    stops: Остановки
+    beginTypingPrompt: Начните вводить название, чтобы выполнить поиск местоположений
+    other: Другое
+    recentlySearched: Недавние поисковые запросы
+    nearby: Остановки поблизости
+    homeLocation: Дом
+    workLocation: Работа
+    stations: Станции
+    clearLocation: Очистить местоположение
+    useCurrentLocation: Использовать текущее местоположение
+    noResults: Нет результатов
+    stationCount: '{count, plural, =1 {# станция} other {# cтанции}}'
+    stopCount: '{count, plural, =1 {# остановка} other {# oстановки}}'
+    currentLocationUnavailable: Текущее местоположение недоступно
+    fetchingLocation: Получение местоположения…
+    parenthesisFormat: '{main} ({detail})'
+    geocoderUnreachable: Не удалось связаться с геокодером
