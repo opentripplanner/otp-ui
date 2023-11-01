@@ -86,7 +86,6 @@ otpUi:
       escooter: en trottinette
       walk: à pied
     tripAccessibility:
-      accessible: accessible
       inaccessible: inaccessible
       itineraryAccessibility: "Accessibilité de ce trajet en fauteuil roulant : "
       legAccessibility: "Accessibilité de cette étape en fauteuil roulant : "

@@ -41,8 +41,8 @@ const TextWrapper = styled.span`
 interface Props {
   gradationMap?: GradationMap;
   grayscale?: boolean;
-  large?: boolean;
   isLeg?: boolean;
+  large?: boolean;
   score: number;
 }
 
@@ -53,8 +53,8 @@ interface Props {
 const AccessibilityRating = ({
   gradationMap,
   grayscale = false,
-  large = false,
   isLeg = false,
+  large = false,
   score
 }: Props): ReactElement => {
   const intl = useIntl();

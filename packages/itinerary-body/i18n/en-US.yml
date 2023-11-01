@@ -82,7 +82,6 @@ otpUi:
       escooter: by e-scooter
       walk: by walking
     tripAccessibility:
-      accessible: accessible
       inaccessible: inaccessible
       itineraryAccessibility: "Wheelchair accessibility of this trip: "
       legAccessibility: "Wheelchair accessibility of this trip leg: "
