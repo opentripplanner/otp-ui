@@ -1,0 +1,20 @@
+otpUi:
+  LocationField:
+    beginTypingPrompt: Начните вводить название, чтобы выполнить поиск местоположений
+    clearLocation: Очистить местоположение
+    currentLocationUnavailable: Текущее местоположение недоступно
+    fetchingLocation: Получение местоположения…
+    geocoderUnreachable: Не удалось связаться с геокодером
+    homeLocation: Дом
+    myPlaces: Мои места
+    nearby: Остановки поблизости
+    noResults: Нет результатов
+    other: Другое
+    parenthesisFormat: "{main} ({detail})"
+    recentlySearched: Недавние поисковые запросы
+    stationCount: "{count, plural, =1 {# станция} other {# cтанции}}"
+    stations: Станции
+    stopCount: "{count, plural, =1 {# остановка} other {# oстановки}}"
+    stops: Остановки
+    useCurrentLocation: Использовать текущее местоположение
+    workLocation: Работа

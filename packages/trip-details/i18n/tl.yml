@@ -1,0 +1,23 @@
+otpUi:
+  TripDetails:
+    FareTable:
+      cash: Cash
+      electronic: Electronic
+      regular: Nasa Hustong Gulang
+      senior: Nakatatanda
+      special: Espesyal
+      youth: Kabataan
+    co2: "Na-emit na CO₂: <strong>{co2}</strong>"
+    co2description: >-
+      Kinakalkula ang intensity ng CO₂ sa pamamagitan ng pag-multiply sa
+      distansya ng bawat leg ng biyahe sa intensity ng CO₂ ng bawat mode. Ang
+      intensity ng CO₂ ng bawat mode ay nagmumula sa <link>spreadsheet na
+      ito</link>.
+    departure: >-
+      Aalis <strong>{departureDate, date, long}</strong> nang
+      <strong>{departureDate, time, short}</strong>
+    title: Mga Detalye ng Biyahe
+    tncFare: "{companies} Fare: <strong>{minTNCFare} - {maxTNCFare}</strong>"
+    transitFare: Pamasahe sa Pampublikong Transportasyon
+    transitFareEntry: "{name}: <strong>{value}</strong>"
+    tripIncludesFlex: May mga flexible na ruta ang biyaheng ito. {extraMessage}
