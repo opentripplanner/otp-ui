@@ -1,0 +1,48 @@
+otpUi:
+  DateTimeSelector:
+    arrive: Dumating bago ang
+    depart: Umalis nang
+    now: Umalis ngayon
+  ModeSelector:
+    labels:
+      bicycle: Bisikleta
+      car: Nagmamaneho
+      rent: Rental
+      transit: Pampublikong Transportasyon
+      walk: Naglalakad
+    settings:
+      bus-label: Bus
+      ferry-label: Ferry
+      rail-label: Tren
+  SettingsSelectorPanel:
+    bikeOnly: Bisikleta Lang
+    escooterOnly: E-scooter Lang
+    takeTransit: Gumamit ng Pampublikong Transportasyon
+    travelPreferences: Mga Kagustuhan sa Paglalakbay
+    use: Gamitin
+    useCompanies: Gumamit ng mga kumpanya
+    walkOnly: Maglakad Lang
+  queryParameters:
+    bikeSpeed: Bilis ng Bisikleta
+    distanceInMiles: |
+      {miles, number, :: unit/mile unit-width-full-name}
+    maxBikeDistance: Maximum na Pagbibisikleta
+    maxBikeTime: Max na Tagal ng Pagbibisikleta
+    maxEScooterDistance: Maximum na Layo ng E-scooter
+    maxWalkDistance: Maximum na Paglalakad
+    maxWalkTime: Max na Tagal ng Paglalakad
+    optimizeBikeFlat: Flat na Biyahe
+    optimizeBikeFriendly: Biyaheng Puwedeng Gumamit ng Bisikleta
+    optimizeBikeSpeed: Bilis
+    optimizeFor: I-optimize para sa
+    speedInMilesPerHour: "{mph} MPH"
+    walkReluctance: Pag-iwas sa Paglalakad
+    walkReluctanceHigh: Higit Pang Pampublikong Transportasyon
+    walkReluctanceLow: Higit Pang Paglalakad
+    walkSpeed: Bilis ng Paglalakad
+    watts: Power ng E-scooter
+    watts125kidsHoverboard: Pambatang hoverboard (6 mph)
+    watts1500powerfulEscooter: Powerful na E-scooter (24 mph)
+    watts250entryLevelEscooter: Entry-level na scooter (11 mph)
+    watts500robustEscooter: Robust na E-scooter (18 mph)
+    wheelchair: Mas Gusto ang Mga Ruta Kung Saan Accessible ang Wheelchair

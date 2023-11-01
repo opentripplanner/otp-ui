@@ -16,6 +16,7 @@ otpUi:
       Khởi hành <strong>{departureDate, date, long}</strong> lúc
       <strong>{departureDate, time, short}</strong>
     hideDetail: Ẩn chi tiết
+    minutesActive: "Thời gian hoạt động: <strong>{minutes} phút</strong>"
     showDetail: Hiển thị chi tiết
     title: Chi tiết chuyến đi
     tncFare: "{companies} Giá vé: <strong>{minTNCFare} - {maxTNCFare}</strong>"

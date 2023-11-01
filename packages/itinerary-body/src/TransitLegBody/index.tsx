@@ -69,7 +69,7 @@ function getFlexMessageValues(info: FlexBookingInfo) {
   // if the leadTime check is ever to be more than just checking the value of
   // daysPrior (which can be done within react-intl)
   const hasPhone = !!info?.contactInfo?.phoneNumber;
-  const leadDays = info.latestBookingTime?.daysPrior;
+  const leadDays = info?.latestBookingTime?.daysPrior;
   const phoneNumber = info?.contactInfo?.phoneNumber;
   return {
     action: hasPhone ? (

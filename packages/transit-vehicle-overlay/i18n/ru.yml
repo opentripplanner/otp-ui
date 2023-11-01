@@ -1,0 +1,8 @@
+otpUi:
+  TransitVehicleOverlay:
+    defaultTooltip: "{route}: {duration} назад"
+    durationWithSeconds: >-
+      {hours, plural, =0 {} other {# ч }}{minutes, plural, =0 {{seconds, plural,
+      =0 {# мин} other {}}} other {# мин}}{seconds, plural, =0 {} other { # с}}
+    routeTitle: "{type} {name}"
+    transitLine: Линия
