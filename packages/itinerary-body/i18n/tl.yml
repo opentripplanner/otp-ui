@@ -1,0 +1,97 @@
+otpUi:
+  TransitLegBody:
+    fare: 'Pamasahe: {fare}'
+    AlertsBody:
+      yesterday: Kahapon
+      tomorrow: Bukas
+      today: Ngayong Araw
+      effectiveTimeAndDate: May bisa simula {dateTime, time, short}, {day}
+      effectiveDate: May bisa simula {dateTime, date, long}
+    rideDurationAndStops: 'Ride {duration}{numStops, plural, =1 {} other { / # stops}}'
+    stopViewer: Ihinto ang Viewer
+    tripViewer: Viewer ng Biyahe
+    stopId: ID ng Hintuan {stopId}
+    typicalWait: 'Karaniwang tagal ng paghihintay: {waitTime}'
+    stopIdBasic: ID {stopId}
+    operatedBy: Ang serbisyo ay pinapatakbo ng {agencyLink}
+    arriveAt: Darating nang {place}
+    disembarkAt: Bumaba sa {legDestination}
+    alertsHeader: '{alertCount, plural, =1 {# alert} other {# alerts}}'
+    routeDescription: '{routeName} <toPrefix>papuntang</toPrefix> {headsign}'
+    fromLocation: mula sa {location}
+  AccessLegBody:
+    LegDiagramPreview:
+      toggleElevationChart: I-toggle ang chart ng elevation
+      elevationChart: Chart ng elevation
+      noElevationData: Walang available na data ng elevation.
+    RentedVehicleSubheader:
+      resumeRentalRide: Magpatuloy gamit ang rental
+      walkVehicle: Dumaan sa {place}
+      vehicleType:
+        bike: bisikleta
+        escooter: E-scooter
+        car: Sasakyan
+        bikeshare: shared bike
+        vehicle: sasakyan
+      pickupRental: Pag-pick up {company} {vehicleType} {vehicleName}
+    vehicleType:
+      car: Sasakyan
+      bike: Bisikleta
+      escooter: E-scooter
+    TncLeg:
+      estimatedTravelTime: 'Tinatayang tagal ng biyahe: {duration} (hindi isinasaalang-alang
+        ang trapiko)'
+      estimatedCost: 'Tinatayang halaga: {minFare} - {maxFare}'
+      bookRideLater: Maghintay hanggang {timeMillis, time, short} para mag-book
+      bookRide: Mag-book ng Ride
+      waitForPickup: 'Tagal ng paghihintay{minutes, plural, =0 {} other { # minutes}}
+        para sa pag-pick up ng {company}'
+    summaryMode:
+      walk: Naglalakad
+      bikeshare: Bikeshare
+      carDrive: Nagmamaneho
+      bike: Bisikleta
+      escooter: E-Scooter
+      carHail: Ride
+    mapillaryTooltip: Ipakita ang larawan ng kalye sa lokasyong ito
+    unnamedRoad: Unnamed Road
+    step:
+      slightlyRight: Slight right
+      hardLeft: Hard left
+      circleClockwise: Follow circle clockwise
+      continue: Continue
+      slightlyLeft: Slight left
+      uTurnLeft: Left U-turn
+      uTurnRight: Right U-turn
+      circleCounterClockwise: Follow circle counterclockwise
+      right: Right
+      hardRight: Hard right
+      left: Left
+    stepHeading:
+      south: south
+      southeast: southeast
+      northwest: northwest
+      northeast: northeast
+      north: north
+      west: west
+      east: east
+    stepDepart: Head {heading} on {street}
+    stepElevator: Take elevator to {street}
+    summary: '{mode} to {place}'
+    stepGeneric: '{step} on {street}'
+    summaryAndDistance: '{mode} {distance} to {place}'
+    unnamedPath: Unnamed Path
+    vehicleTitle: '{company} {vehicleType}'
+  ItineraryBody:
+    viewOnMap: Tingnan sa mapa
+    common:
+      durationShort: '{hours, plural, =0 {} other {# hr }}{minutes} (na) minuto'
+    flexPickupMessage: Para gamitin ang rutang ito, {action}{advanceNotice}.
+    travelByMode:
+      car: sasakyan
+      bike: bisikleta
+      escooter: e-scooter
+      walk: walking
+    stayOnBoard: Manatiling on board sa {place}
+    flexCallAhead: ''
+    travelBy: Maglakbay sa pamamagitan ng {mode}

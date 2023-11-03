@@ -18,6 +18,7 @@ import { ItineraryBodyProps } from "../types";
 const config = require("../__mocks__/config.json");
 
 type Props = ItineraryBodyProps & {
+  hideDrivingDirections?: boolean;
   styledItinerary?: string;
 };
 
@@ -44,6 +45,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
     const {
       alwaysCollapseAlerts,
       defaultFareSelector,
+      hideDrivingDirections = false,
       itinerary,
       LegIcon = TriMetLegIcon,
       LineColumnContent,
@@ -74,6 +76,11 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
       default:
         ItineraryBodyComponent = ItineraryBody;
     }
+
+    config.itinerary = {
+      hideDrivingDirections
+    };
+
     return (
       <ItineraryBodyComponent
         AlertBodyIcon={AlertBodyIcon}

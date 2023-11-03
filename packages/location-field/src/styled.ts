@@ -74,18 +74,6 @@ export const InputGroup = styled.div`
   position: relative;
 `;
 
-export const MenuItemA = styled.a<{ active?: boolean }>`
-  background-color: ${props => (props.active ? "#337ab7" : "transparent")};
-  clear: both;
-  color: ${props => (props.active ? "#fff" : "#333")};
-  display: block;
-  font-weight: 400;
-  line-height: 1.42857143;
-  padding: 3px 20px;
-  text-decoration: none;
-  white-space: nowrap;
-`;
-
 export const MenuGroupHeader = styled.h2<{
   bgColor?: string;
   fgColor?: string;
@@ -101,7 +89,7 @@ export const MenuGroupHeader = styled.h2<{
   white-space: nowrap;
 `;
 
-export const MenuItemLi = styled.li`
+export const MenuItemLi = styled.li<{ active?: boolean }>`
   &:hover {
     /* TODO: adjust highlight color based on props.color? */
     background-color: #f5f5f5;
@@ -114,6 +102,16 @@ export const MenuItemLi = styled.li`
     background-color: unset;
     cursor: default;
   }
+
+  background-color: ${props => (props.active ? "#337ab7" : "transparent")};
+  clear: both;
+  color: ${props => (props.active ? "#fff" : "#333")};
+  display: block;
+  font-weight: 400;
+  line-height: 1.42857143;
+  padding: 3px 20px;
+  text-decoration: none;
+  white-space: nowrap;
 `;
 
 export const OptionContainer = styled.span`
