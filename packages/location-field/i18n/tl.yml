@@ -1,0 +1,19 @@
+otpUi:
+  LocationField:
+    beginTypingPrompt: Simulang mag-type para maghanap ng mga lokasyon
+    clearLocation: I-clear ang lokasyon
+    currentLocationUnavailable: Hindi available ang kasalukuyang lokasyon
+    fetchingLocation: Fine-fetch ang lokasyon…
+    geocoderUnreachable: Hind maabot ang geocoder
+    homeLocation: Tirahan
+    myPlaces: Aking Mga Lugar
+    nearby: Mga Hintuan sa Malapit
+    noResults: Walang nakitang resulta
+    other: Iba pa
+    parenthesisFormat: "{main} ({detail})"
+    recentlySearched: Kamakailang Hinanap
+    stationCount: "{count} mga istasyon"
+    stations: Mga Istasyon
+    stops: Mga Hintuan
+    useCurrentLocation: Gamitin ang Kasalukuyang Lokasyon
+    workLocation: Trabaho
