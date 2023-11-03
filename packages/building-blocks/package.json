@@ -12,7 +12,7 @@
     "mapbox-gl": "npm:empty-npm-package@1.0.0",
     "maplibre-gl": "^2.1.9",
     "react-map-gl": "^7.0.15",
-    "@opentripplanner/core-utils": "9.0.3"
+    "@opentripplanner/core-utils": "11.1.2"
   },
   "peerDependencies": {
     "@opentripplanner/types": "^6.1.0",
