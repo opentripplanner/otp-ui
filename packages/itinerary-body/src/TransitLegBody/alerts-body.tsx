@@ -113,7 +113,7 @@ export default function AlertsBody({
                       description="Text with the time and date an alert takes effect"
                       id="otpUi.TransitLegBody.AlertsBody.effectiveTimeAndDate"
                       values={{
-                        dateTime: effectiveStartDate * 1000,
+                        dateTime: effectiveStartDate,
                         day: <AlertDay dayDiff={dayDiff} />
                       }}
                     />
@@ -127,7 +127,7 @@ export default function AlertsBody({
                       description="Text with the date an alert takes effect"
                       id="otpUi.TransitLegBody.AlertsBody.effectiveDate"
                       values={{
-                        dateTime: effectiveStartDate * 1000
+                        dateTime: effectiveStartDate
                       }}
                     />
                   )}
