@@ -20,3 +20,4 @@ otpUi:
     transitFare: 公共交通费
     transitFareEntry: "{name}: <strong>{value}</strong>"
     tripIncludesFlex: 这个行程包括灵活的路线. {extraMessage}
+    minutesActive: '活动时间: <strong>{minutes} 分钟</strong>'

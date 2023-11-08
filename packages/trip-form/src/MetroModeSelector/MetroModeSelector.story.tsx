@@ -80,7 +80,7 @@ const modeSettingDefinitionsWithDropdown = [
     default: true,
     key: "tram",
     iconName: "tram",
-    label: "Tram but long",
+    label: "Tram",
     addTransportMode: {
       mode: "TRAM"
     },

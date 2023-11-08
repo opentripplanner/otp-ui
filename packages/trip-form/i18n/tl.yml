@@ -1,0 +1,47 @@
+otpUi:
+  queryParameters:
+    maxEScooterDistance: Maximum na Layo ng E-scooter
+    wheelchair: Mas Gusto ang Mga Ruta Kung Saan Accessible ang Wheelchair
+    maxWalkTime: Max na Tagal ng Paglalakad
+    optimizeBikeSpeed: Bilis
+    maxWalkDistance: Maximum na Paglalakad
+    watts: Power ng E-scooter
+    walkSpeed: Bilis ng Paglalakad
+    watts1500powerfulEscooter: Powerful na E-scooter (24 mph)
+    walkReluctanceLow: Higit Pang Paglalakad
+    maxBikeTime: Max na Tagal ng Pagbibisikleta
+    optimizeBikeFlat: Flat na Biyahe
+    watts125kidsHoverboard: Pambatang hoverboard (6 mph)
+    watts500robustEscooter: Robust na E-scooter (18 mph)
+    optimizeFor: I-optimize para sa
+    maxBikeDistance: Maximum na Pagbibisikleta
+    optimizeBikeFriendly: Biyaheng Puwedeng Gumamit ng Bisikleta
+    walkReluctanceHigh: Higit Pang Pampublikong Transportasyon
+    walkReluctance: Pag-iwas sa Paglalakad
+    watts250entryLevelEscooter: Entry-level na scooter (11 mph)
+    speedInMilesPerHour: '{mph} MPH'
+    bikeSpeed: Bilis ng Bisikleta
+    distanceInMiles: "{miles, number, :: unit/mile unit-width-full-name}\n"
+  DateTimeSelector:
+    depart: Umalis nang
+    arrive: Dumating bago ang
+    now: Umalis ngayon
+  ModeSelector:
+    settings:
+      ferry-label: Ferry
+      bus-label: Bus
+      rail-label: Tren
+    labels:
+      bicycle: Bisikleta
+      walk: Naglalakad
+      car: Nagmamaneho
+      transit: Pampublikong Transportasyon
+      rent: Rental
+  SettingsSelectorPanel:
+    use: Gamitin
+    useCompanies: Gumamit ng mga kumpanya
+    bikeOnly: Bisikleta Lang
+    takeTransit: Gumamit ng Pampublikong Transportasyon
+    travelPreferences: Mga Kagustuhan sa Paglalakbay
+    walkOnly: Maglakad Lang
+    escooterOnly: E-scooter Lang
