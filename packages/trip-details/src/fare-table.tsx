@@ -89,7 +89,7 @@ const FareTypeTable = ({
       ...col,
       total: getItineraryCost(legs, col.mediumId, col.riderCategoryId)
     }))
-    .filter(col => col.total);
+    .filter(col => col.total !== undefined);
 
   const headerString = useGetHeaderString(headerKey);
 
