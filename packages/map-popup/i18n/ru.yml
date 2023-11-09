@@ -1,9 +1,0 @@
-otpUi:
-  MapPopup:
-    availableBikes: "Доступные велосипеды: {value}"
-    availableDocks: "Доступные станции: {value}"
-    floatingBike: "Арендный велосипед не на станции: {name}"
-    floatingCar: "{company} {name}"
-    floatingEScooter: "Электросамокат: {name}"
-    stopId: "Идентификатор остановки: {stopId}"
-    stopViewer: Средство просмотра остановок

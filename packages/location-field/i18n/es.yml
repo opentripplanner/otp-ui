@@ -1,6 +1,5 @@
 otpUi:
   LocationField:
-    beginTypingPrompt: Comience a escribir para buscar ubicaciones
     clearLocation: Restablecer la ubicación
     currentLocationUnavailable: Ubicación actual no disponible
     fetchingLocation: Buscando la ubicación…
@@ -8,8 +7,8 @@ otpUi:
     geocoderUnreachable: No se pueden obtener sugerencias
     homeLocation: Hogar
     howToAccessResults: >-
-      Utiliza la tecla de flecha abajo para navegar por la lista de los
-      resultados. Para seleccionar un resultado, utiliza la tecla Intro.
+      Utilice la tecla de flecha hacia abajo para desplazarse por la lista de
+      resultados. Para seleccionar un resultado, utilice la tecla Intro.
     myPlaces: Mis lugares
     nearby: Paradas cercanas
     noResults: Ningún resultado
@@ -26,3 +25,4 @@ otpUi:
     suggestedLocationsLong: Alternar la visualización de la lista de lugares recomendamos
     useCurrentLocation: Usar ubicación actual
     workLocation: Ubicación de trabajo
+    beginTypingPrompt: Comience a escribir para buscar ubicaciones

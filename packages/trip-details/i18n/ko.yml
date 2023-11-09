@@ -15,7 +15,6 @@ otpUi:
       <strong>{departureDate, time, short}</strong>에 <strong>{departureDate,
       date, long}</strong> 출발
     hideDetail: 세부정보 숨기기
-    minutesActive: "활동 시간: <strong>{minutes} 분</strong>"
     showDetail: 세부정보 표시
     title: 트립 상세정보
     tncFare: "{companies} 운임: <strong>{minTNCFare} - {maxTNCFare}</strong>"
