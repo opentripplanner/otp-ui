@@ -485,12 +485,12 @@ export type Stop = {
   color?: string;
   dist?: number;
   geometries?: { geoJson?: GeoJSON.Polygon };
+  gtfsId: string;
   id: string;
   lat?: number;
   lon?: number;
   name: string;
   routes?: Route[];
-  gtfsId: string;
 };
 
 export type Agency = {
