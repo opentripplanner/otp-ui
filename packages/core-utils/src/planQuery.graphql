@@ -53,13 +53,6 @@ query Plan(
           timezone
           url
         }
-        alerts {
-          alertDescriptionText
-          alertHeaderText
-          alertUrl
-          effectiveStartDate
-          id
-        }
         arrivalDelay
         departureDelay
         distance

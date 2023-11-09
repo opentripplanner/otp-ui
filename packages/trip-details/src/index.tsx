@@ -126,7 +126,7 @@ export function TripDetails({
       />
     );
 
-    fare = defaultFareTotal !== undefined && (
+    fare = defaultFareTotal?.amount && (
       <S.Fare>
         <TransitFareWrapper>
           <summary style={{ display: fareTypes.length > 1 ? "list-item" : "" }}>
