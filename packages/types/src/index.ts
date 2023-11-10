@@ -473,7 +473,7 @@ export type StopLayerStop = LayerEntity & {
   name: string;
 };
 
-export type StopEventHanlder = (stop: Stop | { stopId: string }) => void;
+export type StopEventHandler = (stop: Stop | { stopId: string }) => void;
 
 /**
  * This models data about a stop and it's associated routes that is obtained
@@ -489,8 +489,8 @@ export type Stop = {
   geometries?: { geoJson?: GeoJSON.Polygon };
   gtfsId: string;
   id: string;
-  lat?: number;
-  lon?: number;
+  lat: number;
+  lon: number;
   name: string;
   routes?: Route[];
 };
