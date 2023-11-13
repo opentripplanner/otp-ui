@@ -1,0 +1,21 @@
+otpUi:
+  TripDetails:
+    transitFareEntry: '{name}: <strong>{value}</strong>'
+    tncFare: 'Стоимость проезда в компаниях {companies}: <strong>{minTNCFare} — {maxTNCFare}</strong>'
+    departure: 'Прибытие: <strong>{departureDate, date, long}</strong> в <strong>{departureDate,
+      time, short}</strong>'
+    FareTable:
+      senior: Пожилые
+      youth: Детский
+      electronic: Электронный
+      special: Особые
+      regular: Взрослые
+      cash: Наличные
+    title: Подробные сведения о поездке
+    transitFare: Стоимость проезда в общественном транспорте
+    co2description: Интенсивность выбросов CO₂ рассчитывается умножением расстояния
+      каждого этапа поездки на интенсивность выбросов CO₂ для каждого вида транспорта.
+      Данные об интенсивности выбросов CO₂ для каждого вида транспорта взяты из <link>этой
+      таблицы</link>.
+    tripIncludesFlex: Эта поездка включает гибкие маршруты. {extraMessage}
+    co2: 'Выбросы CO₂: <strong>{co2}</strong>'

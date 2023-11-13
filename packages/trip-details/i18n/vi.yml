@@ -23,3 +23,4 @@ otpUi:
     transitFare: Giá vé xe công cộng
     transitFareEntry: "{name}: <strong>{value}</strong>"
     tripIncludesFlex: Chuyến đi này bao gồm các tuyến đường linh hoạt. {extraMessage}
+    minutesActive: 'Thời gian hoạt động: <strong>{minutes} phút</strong>'

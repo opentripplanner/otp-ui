@@ -171,7 +171,7 @@ export function expandOtpFlexMode(mode) {
   const modes = reduceOtpFlexModes(mode.split(","));
   return modes
     .map(m => {
-      // If both the expanded and shrunk modes are included, remove the exapnded one
+      // If both the expanded and shrunk modes are included, remove the expanded one
       if (m === "FLEX_EGRESS" || m === "FLEX_ACCESS" || m === "FLEX_DIRECT") {
         if (mode.includes("FLEX")) return "";
       }

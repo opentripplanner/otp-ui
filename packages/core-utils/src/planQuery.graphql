@@ -48,10 +48,17 @@ query Plan(
             effectiveStartDate
             id
           }
-          id
+          gtfsId: id
           name
           timezone
           url
+        }
+        alerts {
+          alertDescriptionText
+          alertHeaderText
+          alertUrl
+          effectiveStartDate
+          id
         }
         arrivalDelay
         departureDelay
@@ -157,7 +164,8 @@ query Plan(
             id
           }
           color
-          id
+          gtfsId
+          id: gtfsId
           longName
           shortName
           textColor

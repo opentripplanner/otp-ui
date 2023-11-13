@@ -17,7 +17,11 @@ import TNCLeg from "./tnc-leg";
 import { defaultMessages } from "../util";
 
 interface Props {
-  config: Config;
+  config: Config & {
+    itinerary?: {
+      hideDrivingDirections?: boolean;
+    };
+  };
   /**
    * Should be either null or a legType. Indicates that a particular leg diagram
    * has been selected and is active.
@@ -77,6 +81,9 @@ class AccessLegBody extends Component<Props, State> {
     } = this.props;
     const { expanded } = this.state;
 
+    const hideDrivingDirections =
+      config?.itinerary?.hideDrivingDirections && leg.mode === "CAR";
+
     if (leg.mode === "CAR" && leg.rideHailingEstimate) {
       return (
         <TNCLeg
@@ -90,6 +97,13 @@ class AccessLegBody extends Component<Props, State> {
       );
     }
 
+    const mapillary = (
+      <MapillaryButton
+        clickCallback={mapillaryCallback}
+        coords={leg.from}
+        mapillaryKey={mapillaryKey}
+      />
+    );
     return (
       <>
         {/* Place subheading: rented vehicle (e.g., scooter, bike, car)
@@ -109,40 +123,48 @@ class AccessLegBody extends Component<Props, State> {
             showLegIcon={showLegIcon}
           />
           <S.LegDetails>
-            <S.StepsHeaderAndMapLink>
-              <S.StepsHeader
-                aria-expanded={expanded}
-                onClick={this.onStepsHeaderClick}
-              >
-                <Duration seconds={leg.duration} />
-                {leg.steps && <S.CaretToggle expanded={expanded} />}
-                <S.InvisibleAdditionalDetails>
-                  <FormattedMessage
-                    defaultMessage={
-                      defaultMessages["otpUi.TransitLegBody.expandDetails"]
-                    }
-                    description="Screen reader text added to expand steps"
-                    id="otpUi.TransitLegBody.expandDetails"
+            {hideDrivingDirections ? (
+              <S.StepsHeaderAndMapLink>
+                <S.StepsHeaderSpan>
+                  <Duration seconds={leg.duration} />
+                </S.StepsHeaderSpan>
+                {mapillary}
+              </S.StepsHeaderAndMapLink>
+            ) : (
+              <>
+                <S.StepsHeaderAndMapLink>
+                  <S.StepsHeaderButton
+                    aria-expanded={expanded}
+                    onClick={this.onStepsHeaderClick}
+                  >
+                    <Duration seconds={leg.duration} />
+                    {leg.steps && <S.CaretToggle expanded={expanded} />}
+
+                    <S.InvisibleAdditionalDetails>
+                      <FormattedMessage
+                        defaultMessage={
+                          defaultMessages["otpUi.TransitLegBody.expandDetails"]
+                        }
+                        description="Screen reader text added to expand steps"
+                        id="otpUi.TransitLegBody.expandDetails"
+                      />
+                    </S.InvisibleAdditionalDetails>
+                  </S.StepsHeaderButton>
+                  {mapillary}
+                </S.StepsHeaderAndMapLink>
+                <AnimateHeight
+                  duration={500}
+                  height={expanded ? "auto" : 0}
+                  style={{ gridColumn: "1 / span 2" }}
+                >
+                  <AccessLegSteps
+                    mapillaryCallback={mapillaryCallback}
+                    mapillaryKey={mapillaryKey}
+                    steps={leg.steps}
                   />
-                </S.InvisibleAdditionalDetails>
-              </S.StepsHeader>
-              <MapillaryButton
-                clickCallback={mapillaryCallback}
-                coords={leg.from}
-                mapillaryKey={mapillaryKey}
-              />
-            </S.StepsHeaderAndMapLink>
-            <AnimateHeight
-              duration={500}
-              height={expanded ? "auto" : 0}
-              style={{ gridColumn: "1 / span 2" }}
-            >
-              <AccessLegSteps
-                mapillaryCallback={mapillaryCallback}
-                mapillaryKey={mapillaryKey}
-                steps={leg.steps}
-              />
-            </AnimateHeight>
+                </AnimateHeight>
+              </>
+            )}
             <LegDiagramPreview
               diagramVisible={diagramVisible}
               leg={leg}

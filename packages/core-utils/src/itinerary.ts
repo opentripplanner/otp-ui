@@ -293,7 +293,7 @@ export function legElevationAtDistance(
     const elevDistanceSpan = points[i][0] - start[0];
     if (distance >= traversed && distance <= traversed + elevDistanceSpan) {
       // Distance falls within this point and the previous one;
-      // compute & return iterpolated elevation value
+      // compute & return interpolated elevation value
       if (start[1] === null) {
         console.warn(
           "Elevation value does not exist for distance.",
@@ -369,10 +369,10 @@ export function getElevationProfile(
  * @see https://stackoverflow.com/questions/118241/calculate-text-width-with-javascript/21015393#21015393
  */
 export function getTextWidth(text: string, font = "22px Arial"): number {
-  // Create custom type for function including re-used canvas object
+  // Create custom type for function including reused canvas object
   type GetTextWidth = typeof getTextWidth & { canvas: HTMLCanvasElement };
 
-  // re-use canvas object for better performance
+  // reuse canvas object for better performance
   const canvas =
     (getTextWidth as GetTextWidth).canvas ||
     ((getTextWidth as GetTextWidth).canvas = document.createElement("canvas"));
@@ -670,7 +670,7 @@ export const convertGraphQLResponseToLegacy = (leg: any): any => ({
   },
   route: leg.route?.shortName,
   routeColor: leg.route?.color,
-  routeId: leg.route?.id,
+  routeId: leg.route?.gtfsId,
   routeLongName: leg.route?.longName,
   routeShortName: leg.route?.shortName,
   routeTextColor: leg.route?.textColor,

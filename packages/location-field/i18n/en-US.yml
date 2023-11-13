@@ -8,7 +8,7 @@ otpUi:
     geocoderUnreachable: Unable to obtain suggestions
     homeLocation: Home
     howToAccessResults: >-
-      Use the down arrow key browse the results list. To select a result, use
+      Use the down arrow key to browse the results list. To select a result, use
       the Enter key.
     myPlaces: My Places
     nearby: Nearby Stops
