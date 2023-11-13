@@ -19,7 +19,7 @@
     "@opentripplanner/map-popup": "^2.0.7-alpha.1"
   },
   "devDependencies": {
-    "@opentripplanner/base-map": "^3.0.14",
-    "@opentripplanner/types": "^6.1.0"
+    "@opentripplanner/base-map": "^3.0.15",
+    "@opentripplanner/types": "^6.1.1"
   }
 }

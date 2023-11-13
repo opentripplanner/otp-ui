@@ -10,11 +10,11 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^11.0.2",
-    "@opentripplanner/itinerary-body": "^5.0.7"
+    "@opentripplanner/core-utils": "^11.1.2",
+    "@opentripplanner/itinerary-body": "^5.1.2"
   },
   "devDependencies": {
-    "@opentripplanner/icons": "^2.0.5"
+    "@opentripplanner/icons": "^2.0.6"
   },
   "peerDependencies": {
     "react": "^16.14.0",

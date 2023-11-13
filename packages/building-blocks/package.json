@@ -15,7 +15,7 @@
     "@opentripplanner/core-utils": "11.1.2"
   },
   "peerDependencies": {
-    "@opentripplanner/types": "^6.1.0",
+    "@opentripplanner/types": "^6.1.1",
     "react": "^16.14.0",
     "styled-components": "^5.3.0"
   },
