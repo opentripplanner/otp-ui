@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import ColorPalette from "./color-stories/ColorPalette";
+import ColorPalette from "./color-stories/ColorPalette.story";
 
 import grey from "../colors/grey";
 import blue from "../colors/blue";
