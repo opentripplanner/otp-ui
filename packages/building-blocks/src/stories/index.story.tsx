@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import ColorPalette from "./ColorPalette";
+import ColorPalette from "./color-stories/ColorPalette";
 
 import grey from "../colors/grey";
 import blue from "../colors/blue";
@@ -10,13 +10,13 @@ export default {
 };
 
 export const Grey = (): ReactElement => {
-  return <ColorPalette color={grey} />;
+  return <ColorPalette color={grey} label="Grey" />;
 };
 
 export const Blue = (): ReactElement => {
-  return <ColorPalette color={blue} />;
+  return <ColorPalette color={blue} label="Blue" />;
 };
 
 export const Red = (): ReactElement => {
-  return <ColorPalette color={red} />;
+  return <ColorPalette color={red} label="Red" />;
 };
