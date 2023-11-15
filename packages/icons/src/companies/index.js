@@ -22,6 +22,11 @@ const companyLookup = {
 function getCompanyIcon(name) {
   const icon =
     companyLookup[name.toLowerCase()] ||
+    /*
+    Some company names are lyft_pdx instead of just Lyft. 
+    This PR matches based on the first 4 characters to hopefully 
+    match more company icons.
+    */
     companyLookup[name.toLowerCase().slice(4)];
   if (!icon) {
     console.warn(`No Company Icon found for: '${name}'!`);
