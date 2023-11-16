@@ -1,12 +1,3 @@
-fragment StopParameters on Stop {
-  code
-  gtfsId
-  name
-  id
-  lat
-  lon
-}
-
 query Plan(
   $arriveBy: Boolean
   $banned: InputBanned
@@ -116,7 +107,9 @@ query Plan(
               effectiveStartDate
               id
             }
-            ...StopParameters
+            code
+            gtfsId
+            id
           }
           vertexType
         }
@@ -216,7 +209,9 @@ query Plan(
               effectiveStartDate
               id
             }
-            ...StopParameters
+            code
+            gtfsId
+            id
           }
           vertexType
         }
@@ -224,13 +219,15 @@ query Plan(
         trip {
           arrivalStoptime {
             stop {
-              ...StopParameters
+              gtfsId
+              id
             }
             stopPosition
           }
           departureStoptime {
             stop {
-              ...StopParameters
+              gtfsId
+              id
             }
             stopPosition
           }
