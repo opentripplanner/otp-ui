@@ -1,1 +1,9 @@
-{}
+otpUi:
+  EndpointsOverlay:
+    forgetWork: İşi unut
+    swapLocation: '{locationType} konumuna değiştir'
+    saveAsWork: İşi Kaydet
+    forgetHome: Evi unut
+    coordinates: '{lat, number, ::.00000}, {lon, number, ::.00000}'
+    clearLocation: '{locationType} konumu olarak kaldır'
+    saveAsHome: Evi kaydet
