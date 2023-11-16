@@ -24,3 +24,5 @@ otpUi:
     transitFareEntry: "{name}: <strong>{value}</strong>"
     tripIncludesFlex: Chuyến đi này bao gồm các tuyến đường linh hoạt. {extraMessage}
     minutesActive: 'Thời gian hoạt động: <strong>{minutes} phút</strong>'
+    timeActiveDescription: "Nếu thực hiện chuyến đi này, quý vị sẽ dành <strong>{walkMinutes}
+      phút</strong> để đi bộ và <strong>{bikeMinutes} phút</strong> để đi xe đạp.\n"
