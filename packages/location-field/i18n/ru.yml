@@ -12,9 +12,17 @@ otpUi:
     clearLocation: Очистить местоположение
     useCurrentLocation: Использовать текущее местоположение
     noResults: Нет результатов
-    stationCount: '{count, plural, =1 {# станция} other {# cтанции}}'
-    stopCount: '{count, plural, =1 {# остановка} other {# oстановки}}'
+    stationCount: '{count, plural, =1 {# станция} other {# станции}}'
+    stopCount: '{count, plural, =1 {# остановка} other {# остановки}}'
     currentLocationUnavailable: Текущее местоположение недоступно
     fetchingLocation: Получение местоположения…
     parenthesisFormat: '{main} ({detail})'
     geocoderUnreachable: Не удалось связаться с геокодером
+    fetchingSuggestions: Получение предложений…
+    suggestedLocationsLong: Переключить отображение списка предлагаемых мест
+    resultsFound: '{results} найдено для "{input}".'
+    otherCount: '{count, plural, =1 {# другой интересный момент} other {# другие интересные
+      моменты}}'
+    howToAccessResults: Используйте клавишу со стрелкой вниз для просмотра списка
+      результатов. Для выбора результата используйте клавишу «Вход».
+    suggestedLocations: Рекомендуемые места
