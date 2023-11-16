@@ -19,6 +19,11 @@ otpUi:
     alertsHeader: '{alertCount, plural, =1 {# alert} other {# alerts}}'
     routeDescription: '{routeName} <toPrefix>papuntang</toPrefix> {headsign}'
     fromLocation: mula sa {location}
+    agencyExternalLink: '{agencyName} (External na Link)'
+    legDetails: Mga detalye ng Paggalaw
+    expandDetails: (I-expand ang mga detalye)
+    zoomToLeg: Mag-zoom sa leg sa mapa
+    ride: Sumakay
   AccessLegBody:
     LegDiagramPreview:
       toggleElevationChart: I-toggle ang chart ng elevation
@@ -38,6 +43,8 @@ otpUi:
       car: Sasakyan
       bike: Bisikleta
       escooter: E-scooter
+      vehicle: Sasakyan
+      bikeshare: Shared na Bisikleta
     TncLeg:
       estimatedTravelTime: 'Tinatayang tagal ng biyahe: {duration} (hindi isinasaalang-alang
         ang trapiko)'
@@ -67,6 +74,8 @@ otpUi:
       right: Right
       hardRight: Hard right
       left: Left
+      enterStation: I-enter ang istasyon
+      exitStation: Lumabas sa Istasyon
     stepHeading:
       south: south
       southeast: southeast
@@ -75,6 +84,7 @@ otpUi:
       north: north
       west: west
       east: east
+      southwest: southwest
     stepDepart: Head {heading} on {street}
     stepElevator: Take elevator to {street}
     summary: '{mode} to {place}'
@@ -82,6 +92,8 @@ otpUi:
     summaryAndDistance: '{mode} {distance} to {place}'
     unnamedPath: Unnamed Path
     vehicleTitle: '{company} {vehicleType}'
+    stepFollowSigns: Sundin ang mga palatandaan sa {street}
+    stepStation: '{step} sa {street}'
   ItineraryBody:
     viewOnMap: Tingnan sa mapa
     common:
@@ -93,5 +105,6 @@ otpUi:
       escooter: e-scooter
       walk: walking
     stayOnBoard: Manatiling on board sa {place}
-    flexCallAhead: ''
+    flexCallAhead: 'tumawag nang maaga'
     travelBy: Maglakbay sa pamamagitan ng {mode}
+    flexCallNumber: tumawag sa {phoneNumber}
