@@ -1,1 +1,4 @@
-{}
+otpUi:
+  AccessLegBody:
+    LegDiagramPreview:
+      elevationChart: Yükseklik tablosu
