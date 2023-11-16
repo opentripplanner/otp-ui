@@ -1,12 +1,12 @@
 import React, { Component, ReactElement } from "react";
-import { Stop } from "@opentripplanner/types";
+import { Stop, StopEventHandler } from "@opentripplanner/types";
 import { FormattedMessage } from "react-intl";
 
 import * as S from "../styled";
 import { defaultMessages } from "../util";
 
 interface Props {
-  onStopClick: (stop: Stop) => void;
+  onStopClick: StopEventHandler;
   stop: Stop;
 }
 
