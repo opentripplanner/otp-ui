@@ -21,8 +21,8 @@ otpUi:
       bookRide: Đặt trước một chuyến đi
       bookRideLater: Chờ cho đến {timeMillis, time, short} để đặt chỗ
       estimatedCost: "Chi phí ước tính: {minFare} - {maxFare}"
-      estimatedTravelTime: "Thời gian di chuyển ước tính: {duration} (không tính đến\
-        \ giao thông)"
+      estimatedTravelTime: "Thời gian di chuyển ước tính: {duration} (không tính đến
+        giao thông)"
       waitForPickup: "Chờ{minutes, plural, =0 {} other { # phút}} cho {company} đón"
     LegDiagramPreview:
       elevationChart: Biểu đồ cao độ
@@ -41,6 +41,8 @@ otpUi:
       slightlyRight: Hơi rẽ phải
       uTurnLeft: Quay mặt bên trái
       uTurnRight: Quay mặt bên phải
+      enterStation: Nhập trạm
+      exitStation: Rời khỏi trạm
     stepDepart: Đi về hướng {heading} trên đường {street}
     stepHeading:
       east: đông
@@ -64,6 +66,8 @@ otpUi:
       escooter: Xe tay ga điện
     stepElevator: Đi thang máy đến {street}
     summary: "{mode} đến {place}"
+    stepFollowSigns: Đi theo biển hiệu đến {street}
+    stepStation: '{step} tại {street}'
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# giờ }}{minutes} phút"
@@ -96,8 +100,8 @@ otpUi:
     legDetails: Chi tiết sân khấu
     operatedBy: Dịch vụ được điều hành bởi {agencyLink}
     ride: Đi đường
-    rideDurationAndStops: "Đi {duration}{numStops, plural, =1 {} other { / # điểm\
-      \ dừng}}"
+    rideDurationAndStops: "Đi {duration}{numStops, plural, =1 {} other { / # điểm
+      dừng}}"
     routeDescription: "{routeName} <toPrefix>hướng</toPrefix> {headsign}"
     stopId: Điểm dừng số {stopId}
     stopIdBasic: Điểm dừng số {stopId}
