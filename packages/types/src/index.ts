@@ -493,7 +493,6 @@ export type Stop = {
   lon?: number;
   name: string;
   routes?: Route[];
-  gtfsId: string;
 };
 
 export type Agency = {
