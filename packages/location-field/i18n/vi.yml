@@ -8,19 +8,19 @@ otpUi:
     geocoderUnreachable: Không thể nhận đề xuất
     homeLocation: Nhà
     howToAccessResults: >-
-      Sử dụng phím mũi tên xuống duyệt danh sách kết quả. Để chọn một kết quả,
-      hãy sử dụng phím Enter.
+      Sử dụng phím mũi tên xuống duyệt danh sách kết quả. Để chọn một kết quả, hãy
+      sử dụng phím Enter.
     myPlaces: Những địa điểm của tôi
     nearby: Điểm dừng liền kề
     noResults: Không có kết quả
     other: Khác
-    otherCount: "{count} điểm ưa thích"
+    otherCount: "{count, plural, =1 {# địa điểm} other {# địa điểm}} quan tâm khác"
     parenthesisFormat: "{main} ({detail})"
     recentlySearched: Gần đây đã tìm kiếm
     resultsFound: "{results} tìm cho \"{input}\"."
-    stationCount: "{count} ga"
+    stationCount: "{count, plural, =1 {# trạm} other {# trạm}}"
     stations: Ga
-    stopCount: "{count} điểm dừng"
+    stopCount: "{count, plural, =1 {# trạm dừng} other {# trạm dừng}}"
     stops: Điểm dừng
     suggestedLocations: Địa điểm được đề xuất
     suggestedLocationsLong: Bật tắt hiển thị danh sách địa điểm gợi ý
