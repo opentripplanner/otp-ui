@@ -26,17 +26,34 @@ otpUi:
     depart: Отправление в
     arrive: Прибытие к
     now: Выйти
+    dateTimeSelector: Выбор даты/времени
+    date: Дата
+    time: Время
   ModeSelector:
     settings:
       ferry-label: Паром
       bus-label: Автобус
       rail-label: Рельсовый транспорт
+      carTolerance-label: Выносливость для езды
+      walkTolerance-labelHigh: Больше ходьбы пешком
+      tram-label: Трамвай
+      bikeTolerance-labelLow: Меньше на велосипеде
+      bikeTolerance-labelHigh: Больше на велосипеде
+      bikeTolerance-label: Выносливость для езды на велосипеде
+      walkReluctance-label: Избегать ходьбы пешком
+      subway-label: Метро
+      carTolerance-labelHigh: Больше на машине
+      walkTolerance-labelLow: Меньше ходьбы пешком
+      walkTolerance-label: Выносливость для ходьбы пешком
+      wheelchair-label: Доступная маршрутизация
+      carTolerance-labelLow: Меньше на машине
     labels:
       bicycle: Велосипед
       walk: Пешком
       car: Поездка в транспортном средстве
       transit: Общественный транспорт
       rent: Прокат
+    settingsLabel: '{mode} настройки'
   SettingsSelectorPanel:
     use: Воспользоваться
     useCompanies: Воспользоваться услугами компаний
