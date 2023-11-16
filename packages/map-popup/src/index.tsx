@@ -3,7 +3,7 @@ import React, { useCallback } from "react";
 import { Styled as BaseMapStyled } from "@opentripplanner/base-map";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 // eslint-disable-next-line prettier/prettier
-import type { Company, ConfiguredCompany, Location, Station, Stop } from "@opentripplanner/types";
+import type { Company, ConfiguredCompany, Location, Station, Stop, StopEventHandler } from "@opentripplanner/types";
 
 import { FormattedMessage, useIntl } from "react-intl";
 import { flatten } from "flat";
@@ -88,7 +88,7 @@ type Props = {
   entity: Entity
   getEntityName?: (entity: Entity, configCompanies: Company[],) => string;
   setLocation?: ({ location, locationType }: { location: Location, locationType: string }) => void;
-  setViewedStop?: (stop: Stop) => void;
+  setViewedStop?: StopEventHandler;
 };
 
 function entityIsStation(entity: Entity): entity is Station {
