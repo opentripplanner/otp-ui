@@ -12,13 +12,13 @@ otpUi:
     nearby: 附近的车站
     noResults: 未找到结果
     other: 其他
-    otherCount: "{count, plural, =1 {#个其他} other {#个其他}}兴趣点"
+    otherCount: "{count}个其他兴趣点"
     parenthesisFormat: "{main}（{detail}）"
     recentlySearched: 最近搜索到的
     resultsFound: 为 "{input}" 找到 {results}。
-    stationCount: "{count, plural, =1 {#个站台} other {#个站台}}"
+    stationCount: "{count}个站台"
     stations: 站台
-    stopCount: "{count, plural, =1 {#个车站} other {#个车站}}"
+    stopCount: "{count}个车站"
     stops: 车站
     suggestedLocations: 建议地点
     suggestedLocationsLong: 切换显示建议位置列表
