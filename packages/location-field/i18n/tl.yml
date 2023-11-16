@@ -20,7 +20,7 @@ otpUi:
     fetchingSuggestions: Kumukuha ng mga mungkahi…
     suggestedLocationsLong: I-toggle ang pagpapakita ng listahan ng mga iminumungkahing
       lokasyon
-    resultsFound: '{results} natagpuan para sa “{input}".'
+    resultsFound: '{results} natagpuan para sa "{input}".'
     stopCount: '{count, plural, =1 {# hintuan} other {# mga hintuan}}'
     otherCount: '{count, plural, =1 {# iba pang punto} other {# iba pang mga punto}}
       ng interes'
