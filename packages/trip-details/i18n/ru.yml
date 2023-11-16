@@ -23,7 +23,7 @@ otpUi:
     showDetail: Показать детали
     timeActiveDescription: "Проделав этот маршрут, вы потратите <strong>{walkMinutes,
       plural, one {# минуту} other {# минуты}}</strong> на ходьбу и<strong>{bikeMinutes,
-      plural, one  {# минуту}other {# минут} }</strong> на езду на велосипеде.\n"
+      plural, one {# минуту}other {# минуты} }</strong> на езду на велосипеде.\n"
     minutesActive: 'Время в активном режиме: <strong>{minutes, plural, one {# минуту}
       other {# минуты}}</strong>'
     hideDetail: Скрыть детали
