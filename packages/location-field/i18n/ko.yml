@@ -11,13 +11,13 @@ otpUi:
     nearby: 근처 정류장
     noResults: 검색된 결과가 없
     other: 기타
-    otherCount: "{count}관심 지점"
+    otherCount: "{count, plural, =1 {# 다른 위치} other {# 다른 위치}} 관심"
     parenthesisFormat: "{main}({detail})"
     recentlySearched: 최근 검색 내역
     resultsFound: "\"{input}\" 에 대해 {results} 습니다."
-    stationCount: "{count}역"
+    stationCount: "{count, plural, =1 {# 역} other {# 역}}"
     stations: 역
-    stopCount: "{count}정류장"
+    stopCount: "{count, plural, =1 {# 정류장} other {# 정류장}}"
     stops: 정류장
     suggestedLocations: 제안된 위치
     suggestedLocationsLong: 추천 위치 목록 표시 전환
