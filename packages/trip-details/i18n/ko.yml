@@ -22,4 +22,6 @@ otpUi:
     transitFare: 대중 교통 운임
     transitFareEntry: "{name} : <strong>{value}</strong>"
     tripIncludesFlex: 이 트립에는 가변 경로가 포함되어 있습니다. {extraMessage}
-    minutesActive: '활동 시간: <strong>{minutes} 분</strong>'
+    minutesActive: '소요 시간 사용 중: <strong>{minutes} 분</strong>'
+    timeActiveDescription: "이 이동편을 이용하면, 도보로 <strong>{walkMinutes} 분</strong> 및 자전거로
+      <strong>{bikeMinutes} 분</strong> 소요됩니다.\n"
