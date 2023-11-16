@@ -13,7 +13,7 @@ interface Props {
 export default class ViewStopButton extends Component<Props> {
   onClick = (): void => {
     const { onStopClick, stop } = this.props;
-    onStopClick(stop);
+    onStopClick({ ...stop, stopId: stop.gtfsId });
   };
 
   render(): ReactElement {
