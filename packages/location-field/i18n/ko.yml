@@ -11,7 +11,7 @@ otpUi:
     nearby: 근처 정류장
     noResults: 검색된 결과가 없
     other: 기타
-    otherCount: "{count}관심 지점"
+    otherCount: "{count} 다른 위치 관심"
     parenthesisFormat: "{main}({detail})"
     recentlySearched: 최근 검색 내역
     resultsFound: "\"{input}\" 에 대해 {results} 습니다."

@@ -1,1 +1,8 @@
-{}
+otpUi:
+  PrintableItinerary:
+    TncLeg:
+      estimatedWaitTime: 'Teslim alma için tahmini bekleme süresi: <strong>{duration}</strong>'
+      estimatedTravelTime: 'Tahmini seyahat süresi: <strong>{duration}</strong> (trafiği
+        hesaba katmaz)'
+    TransitLeg:
+      continuesAs: '{routeDescription} olarak devam et'

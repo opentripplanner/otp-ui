@@ -21,3 +21,5 @@ otpUi:
     transitFareEntry: "{name}: <strong>{value}</strong>"
     tripIncludesFlex: 这个行程包括灵活的路线. {extraMessage}
     minutesActive: '活动时间: <strong>{minutes} 分钟</strong>'
+    timeActiveDescription: "在本次行程中，您将步行 <strong>{walkMinutes} 分钟</strong>，骑行<strong>{bikeMinutes}
+      分钟</strong>。\n"

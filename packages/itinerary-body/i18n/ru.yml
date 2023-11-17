@@ -21,6 +21,11 @@ otpUi:
       (#)!}}'
     routeDescription: '{routeName} <toPrefix>—</toPrefix> {headsign}'
     fromLocation: Из места «{location}»
+    agencyExternalLink: '{agencyName} (Ссылка на внешний источник)'
+    legDetails: Детальное описание отрезка маршрута
+    expandDetails: (Развернуть детали)
+    zoomToLeg: Приблизить отрезок на карте
+    ride: Поездка
   AccessLegBody:
     LegDiagramPreview:
       toggleElevationChart: Переключить график высот
@@ -40,6 +45,8 @@ otpUi:
       car: Авто
       bike: Велосипед
       escooter: Электросамокат
+      vehicle: Транспортное средство
+      bikeshare: Bелосипед в прокат
     TncLeg:
       estimatedTravelTime: 'Предполагаемое время поездки: {duration} (без учета дорожного
         движения)'
@@ -78,6 +85,8 @@ otpUi:
       right: Направо
       hardRight: Строго направо
       left: Налево
+      enterStation: Введите станцию
+      exitStation: Выйти из станции
     stepDepart: Направляйтесь {heading} на улице {street}
     stepElevator: Воспользуйтесь подъемом к улице {street}
     summary: '{mode} до места «{place}»'
@@ -85,17 +94,19 @@ otpUi:
     summaryAndDistance: '{mode}{distance} до места «{place}»'
     unnamedPath: Неизвестный путь
     vehicleTitle: '{vehicleType} «{company}»'
+    stepFollowSigns: Следуйте указателям {street}
+    stepStation: '{step} __ {street}'
   ItineraryBody:
     viewOnMap: Просмотреть на карте
     common:
       durationShort: '{hours, plural, =0 {} other {# ч }}{minutes} мин'
     flexPickupMessage: Чтобы воспользоваться этим маршрутом, {action}{advanceNotice}.
-    flexCallNumber: наберите {phoneNumber}
+    flexCallNumber: звоните {phoneNumber}
     travelByMode:
       car: на авто
       bike: на велосипеде
       escooter: на электросамокате
       walk: пешком
     stayOnBoard: Не выходите в месте {place}
-    flexCallAhead: наберите заранее
+    flexCallAhead: звоните заранее
     travelBy: Передвижение {mode}

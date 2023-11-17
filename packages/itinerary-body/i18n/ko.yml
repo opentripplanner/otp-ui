@@ -26,6 +26,8 @@ otpUi:
       circleCounterClockwise: 시계 반대 방향으로 서클을 따르십시오
       left: 왼쪽
       slightlyRight: 약간 오른쪽
+      enterStation: 역 입력
+      exitStation: 역 나가기
     stepHeading:
       east: 동쪽
       north: 북쪽
@@ -63,6 +65,8 @@ otpUi:
     summaryAndDistance: "{place} 에 {mode} {distance}"
     mapillaryTooltip: 이 위치의 거리 이미지 보기
     summary: "{place} 에 {mode}"
+    stepFollowSigns: '다음까지 표지판을 따라가십시오: {street}'
+    stepStation: '{step} 에서 {street}'
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# 시간 }}{minutes} 분"

@@ -12,8 +12,18 @@ otpUi:
     clearLocation: I-clear ang lokasyon
     useCurrentLocation: Gamitin ang Kasalukuyang Lokasyon
     noResults: Walang nakitang resulta
-    stationCount: '{count} mga istasyon'
+    stationCount: '{count, plural, =1 {# istasyon} other {# mga istasyon}}'
     currentLocationUnavailable: Hindi available ang kasalukuyang lokasyon
     fetchingLocation: Fine-fetch ang lokasyon…
     parenthesisFormat: '{main} ({detail})'
     geocoderUnreachable: Hind maabot ang geocoder
+    fetchingSuggestions: Kumukuha ng mga mungkahi…
+    suggestedLocationsLong: I-toggle ang pagpapakita ng listahan ng mga iminumungkahing
+      lokasyon
+    resultsFound: '{results} natagpuan para sa "{input}".'
+    stopCount: '{count, plural, =1 {# hintuan} other {# mga hintuan}}'
+    otherCount: '{count, plural, =1 {# iba pang punto} other {# iba pang mga punto}}
+      ng interes'
+    howToAccessResults: Gamitin ang key na pababang arrow para mag-browse sa listahan
+      ng mga resulta. Para pumili ng resulta, gamitin ang Enter key.
+    suggestedLocations: Mga iminungkahing lokasyon

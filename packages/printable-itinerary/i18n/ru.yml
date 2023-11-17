@@ -10,4 +10,6 @@ otpUi:
       continuesAs: 'Продолжение: {routeDescription}'
       alight: Выходите в месте <strong>{place}</strong> ({stopId}) в <strong>{time,
         time, short}</strong>
+      board: Садитесь в транспорт в месте <strong>{place}</strong> ({stopId}) в <strong>{time,
+        time, short}</strong>
     depart: <strong>Отправление</strong> с места <strong>{place}</strong>

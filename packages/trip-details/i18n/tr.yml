@@ -1,1 +1,18 @@
-{}
+otpUi:
+  TripDetails:
+    departure: Kalkış <strong>{departureDate, date, long}</strong> <strong>{departureDate,
+      time, short}</strong>
+    showDetail: Detayları göster
+    co2description: CO2 yoğunluğu, her modun CO2 yoğunluğu ile bir gezinin her bacağının
+      mesafesini çarparak hesaplanır. Her modun CO2 yoğunluğu <link>bu tablodan</link>
+      elde edilir.
+    FareTable:
+      senior: Kıdemli
+      youth: Gençlik
+      electronic: Elektronik
+      special: Özel
+      regular: Yetişkin
+      cash: Nakit
+    co2: 'CO₂ Yayılımı: <strong>{co2}</strong>'
+    title: Yolculuk detayları
+    hideDetail: Detayları gizle

@@ -26,17 +26,34 @@ otpUi:
     depart: Umalis nang
     arrive: Dumating bago ang
     now: Umalis ngayon
+    dateTimeSelector: Selector ng Petsa/Oras
+    date: Petsa
+    time: Oras
   ModeSelector:
     settings:
       ferry-label: Ferry
       bus-label: Bus
       rail-label: Tren
+      carTolerance-label: Tolerance ng Pagmamaneho
+      walkTolerance-labelHigh: Mas Maraming Paglalakad
+      tram-label: Tram
+      bikeTolerance-labelLow: Mas Kaunting Pagbibisikleta
+      bikeTolerance-labelHigh: Mas Maraming Pagbibisikleta
+      bikeTolerance-label: Tolerance sa Pagbibisikleta
+      walkReluctance-label: Iwasan ang Paglalakad
+      subway-label: Subway
+      carTolerance-labelHigh: Mas Maraming Pagmamaneho
+      walkTolerance-labelLow: Mas Kaunting Paglalakad
+      walkTolerance-label: Tolerance sa Paglalakad
+      wheelchair-label: Accessible na Pagruruta
+      carTolerance-labelLow: Mas Kaunting Pagmamaneho
     labels:
       bicycle: Bisikleta
       walk: Naglalakad
       car: Nagmamaneho
       transit: Pampublikong Transportasyon
-      rent: Rental
+      rent: Magrenta
+    settingsLabel: '{mode} mga setting'
   SettingsSelectorPanel:
     use: Gamitin
     useCompanies: Gumamit ng mga kumpanya

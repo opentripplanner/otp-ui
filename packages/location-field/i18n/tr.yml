@@ -1,1 +1,27 @@
-{}
+otpUi:
+  LocationField:
+    myPlaces: Yerlerim
+    stops: Duraklar
+    noResults: Sonuç yok
+    fetchingSuggestions: Öneriler getiriliyor…
+    suggestedLocationsLong: Önerilen konumların listesini görüntülemeyi açın/kapatın
+    beginTypingPrompt: Konumları aramak için yazmaya başlayın
+    stationCount: '{count, plural, =1 {# station} diğer {# stations}}'
+    resultsFound: '"{input}" için bulunan {results}.'
+    other: Diğer
+    stopCount: '{count, plural, =1 {# stop} diğer {# stops}}'
+    recentlySearched: Son Arananlar
+    otherCount: '{count, plural, =1 {# other point} diğer {# other points}} ilgi'
+    nearby: Yakındaki Duraklar
+    homeLocation: Ev
+    currentLocationUnavailable: Geçerli konum mevcut değil
+    howToAccessResults: Sonuçlar listesine göz atmak için aşağı ok tuşunu kullanın.
+      Bir sonucu seçmek için Enter tuşunu kullanın.
+    suggestedLocations: Önerilen konumlar
+    workLocation: İş
+    stations: İstasyonlar
+    fetchingLocation: Konum getiriliyor…
+    clearLocation: Konumu temizle
+    parenthesisFormat: '{main} ({detail})'
+    geocoderUnreachable: Öneriler alınamıyor
+    useCurrentLocation: Mevcut Konumu Kullan
