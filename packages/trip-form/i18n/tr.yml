@@ -4,6 +4,7 @@ otpUi:
     dateTimeSelector: Tarih/Saat Seçici
     date: Tarih
     time: Zaman
+    now: Şimdi Git
   ModeSelector:
     settings:
       ferry-label: Feribot
@@ -11,6 +12,7 @@ otpUi:
       tram-label: Tramvay
       subway-label: Metro
       rail-label: Tren
+      bikeTolerance-label: Bisiklet Toleransı
     labels:
       bicycle: Bisiklet
       walk: Yürüme
