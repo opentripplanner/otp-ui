@@ -27,7 +27,7 @@ function getCompanyIcon(name) {
     This PR matches based on the first 4 characters to hopefully 
     match more company icons.
     */
-    companyLookup[name.toLowerCase().slice(4)];
+    companyLookup[name.toLowerCase().slice(0, 4)];
   if (!icon) {
     console.warn(`No Company Icon found for: '${name}'!`);
   }
