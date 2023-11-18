@@ -5,15 +5,23 @@ import { FormattedMessage } from "react-intl";
 import * as S from "../styled";
 import { defaultMessages } from "../util";
 
-interface Props {
+interface PropsWithStopId {
   onStopClick: StopEventHandler;
-  stop: Stop;
+  stopId?: string;
+  stop?: never;
 }
+interface PropsWithStop {
+  onStopClick: StopEventHandler;
+  stopId?: never;
+  stop?: Stop;
+}
+
+type Props = PropsWithStop | PropsWithStopId;
 
 export default class ViewStopButton extends Component<Props> {
   onClick = (): void => {
-    const { onStopClick, stop } = this.props;
-    onStopClick({ ...stop, stopId: stop.gtfsId });
+    const { onStopClick, stop, stopId } = this.props;
+    onStopClick({ ...stop, stopId: "gtfsId" in stop ? stop.gtfsId : stopId });
   };
 
   render(): ReactElement {
