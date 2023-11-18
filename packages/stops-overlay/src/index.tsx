@@ -173,8 +173,8 @@ const StopsOverlay = (props: Props): JSX.Element => {
           type="circle"
         />
         <Layer
-          id="higlightedStop"
           filter={["==", "highlighted", true]}
+          id="higlightedStop"
           paint={{
             "circle-color": highlightedStopColor || "#ff0000",
             "circle-opacity": 1,

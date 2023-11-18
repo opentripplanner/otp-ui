@@ -10,20 +10,20 @@ import StopsOverlay, { StopProps } from ".";
 const center: [number, number] = [45.523092, -122.671202];
 
 const Example = ({
+  highlightedStop = "8338",
   minZoom = 15,
   setLocation = action("setLocation"),
   setViewedStop = action("setViewedStop"),
-  stops = mockStops,
-  highlightedStop = "8338"
+  stops = mockStops
 }: StopProps & { mapCenter?: [number, number] }) => {
   return (
     <StopsOverlay
+      highlightedStop={highlightedStop}
+      highlightedStopColor="#0000ff"
       minZoom={minZoom}
       setLocation={setLocation}
       setViewedStop={setViewedStop}
       stops={stops}
-      highlightedStop={highlightedStop}
-      highlightedStopColor="#0000ff"
       visible
     />
   );
