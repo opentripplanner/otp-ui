@@ -21,11 +21,11 @@
   "dependencies": {
     "@mapbox/polyline": "^1.1.0",
     "@opentripplanner/base-map": "^3.0.15",
-    "@opentripplanner/core-utils": "^11.1.2",
+    "@opentripplanner/core-utils": "^11.1.3",
     "point-in-polygon": "^1.1.0"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^6.1.1",
+    "@opentripplanner/types": "^6.2.0",
     "point-in-polygon": "^1.1.0"
   },
   "peerDependencies": {
