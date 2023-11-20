@@ -19,7 +19,6 @@ import { makeDefaultGetEntityName } from "./util";
 // - the yaml loader for jest returns messages with flattened ids.
 export const defaultMessages: { [key: string]: string } = flatten(defaultEnglishMessages);
 
-
 const generateLocation = (entity: Entity, name: string) => {
   // @ts-expect-error some of these values may be null, but that's ok
   const { lon: entityLon, lat: entityLat, x, y } = entity
