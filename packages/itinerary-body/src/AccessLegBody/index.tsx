@@ -138,7 +138,9 @@ class AccessLegBody extends Component<Props, State> {
                     onClick={this.onStepsHeaderClick}
                   >
                     <Duration seconds={leg.duration} />
-                    {leg.steps && <S.CaretToggle expanded={expanded} />}
+                    {leg.steps && leg.steps.length > 0 && (
+                      <S.CaretToggle expanded={expanded} />
+                    )}
 
                     <S.InvisibleAdditionalDetails>
                       <FormattedMessage
