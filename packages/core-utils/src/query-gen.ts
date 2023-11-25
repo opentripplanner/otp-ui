@@ -63,7 +63,10 @@ export function extractAdditionalModes(
       cur.addTransportMode &&
       cur.value
     ) {
-      return [...prev, cur.addTransportMode];
+      const { addTransportMode } = cur;
+      return Array.isArray(addTransportMode)
+        ? [...prev, ...addTransportMode]
+        : [...prev, addTransportMode];
     }
     if (cur.type === "DROPDOWN") {
       const transportMode = cur.options.find(o => o.value === cur.value)
