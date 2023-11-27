@@ -26,7 +26,7 @@
     "@styled-icons/fa-solid": "^10.34.0"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^6.2.0",
+    "@opentripplanner/types": "^6.2.1",
     "@types/flat": "^5.0.2"
   },
   "peerDependencies": {
