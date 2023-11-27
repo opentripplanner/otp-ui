@@ -1,47 +1,65 @@
 otpUi:
-  queryParameters:
-    maxEScooterDistance: Максимальная дальность поездки на электросамокате
-    wheelchair: Предпочитать маршруты с возможностью передвижения на инвалидной коляске
-    maxWalkTime: Максимальное время прогулки
-    optimizeBikeSpeed: Скорость
-    maxWalkDistance: Максимальная дальность прогулки
-    watts: Мощность электросамоката
-    walkSpeed: Скорость ходьбы
-    watts1500powerfulEscooter: Мощный электросамокат (24 мили в час)
-    walkReluctanceLow: Больше этапов пешком
-    maxBikeTime: Максимальное время езды на велосипеде
-    optimizeBikeFlat: Поездка на велосипеде по ровной местности
-    watts125kidsHoverboard: Детский ховерборд (6 миль в час)
-    watts500robustEscooter: Электросамокат среднего уровня (18 миль в час)
-    optimizeFor: Оптимизировать для
-    maxBikeDistance: Максимальная дальность езды на велосипеде
-    optimizeBikeFriendly: Поездка на велосипеде
-    walkReluctanceHigh: Больше общественного транспорта
-    walkReluctance: Без этапов прогулки пешком
-    watts250entryLevelEscooter: Самокат начального уровня (11 миль в час)
-    speedInMilesPerHour: '{mph} миль/ч'
-    bikeSpeed: Скорость велосипеда
-    distanceInMiles: "{miles, number, :: unit/mile unit-width-full-name}\n"
   DateTimeSelector:
-    depart: Отправление в
     arrive: Прибытие к
+    date: Дата
+    dateTimeSelector: Выбор даты/времени
+    depart: Отправление в
     now: Выйти
+    time: Время
   ModeSelector:
-    settings:
-      ferry-label: Паром
-      bus-label: Автобус
-      rail-label: Рельсовый транспорт
     labels:
       bicycle: Велосипед
-      walk: Пешком
       car: Поездка в транспортном средстве
-      transit: Общественный транспорт
       rent: Прокат
+      transit: Общественный транспорт
+      walk: Пешком
+    settings:
+      bikeTolerance-label: Выносливость для езды на велосипеде
+      bikeTolerance-labelHigh: Больше на велосипеде
+      bikeTolerance-labelLow: Меньше на велосипеде
+      bus-label: Автобус
+      carTolerance-label: Выносливость для езды
+      carTolerance-labelHigh: Больше на машине
+      carTolerance-labelLow: Меньше на машине
+      ferry-label: Паром
+      rail-label: Рельсовый транспорт
+      subway-label: Метро
+      tram-label: Трамвай
+      walkReluctance-label: Избегать ходьбы пешком
+      walkTolerance-label: Выносливость для ходьбы пешком
+      walkTolerance-labelHigh: Больше ходьбы пешком
+      walkTolerance-labelLow: Меньше ходьбы пешком
+      wheelchair-label: Доступная маршрутизация
+    settingsLabel: "{mode} настройки"
   SettingsSelectorPanel:
-    use: Воспользоваться
-    useCompanies: Воспользоваться услугами компаний
     bikeOnly: Только велосипед
+    escooterOnly: Только электросамокат
     takeTransit: Воспользуйтесь общественным транспортом
     travelPreferences: Параметры поездок
+    use: Воспользоваться
+    useCompanies: Воспользоваться услугами компаний
     walkOnly: Только пешком
-    escooterOnly: Только электросамокат
+  queryParameters:
+    bikeSpeed: Скорость велосипеда
+    distanceInMiles: |
+      {miles, number, :: unit/mile unit-width-full-name}
+    maxBikeDistance: Максимальная дальность езды на велосипеде
+    maxBikeTime: Максимальное время езды на велосипеде
+    maxEScooterDistance: Максимальная дальность поездки на электросамокате
+    maxWalkDistance: Максимальная дальность прогулки
+    maxWalkTime: Максимальное время прогулки
+    optimizeBikeFlat: Поездка на велосипеде по ровной местности
+    optimizeBikeFriendly: Поездка на велосипеде
+    optimizeBikeSpeed: Скорость
+    optimizeFor: Оптимизировать для
+    speedInMilesPerHour: "{mph} миль/ч"
+    walkReluctance: Без этапов прогулки пешком
+    walkReluctanceHigh: Больше общественного транспорта
+    walkReluctanceLow: Больше этапов пешком
+    walkSpeed: Скорость ходьбы
+    watts: Мощность электросамоката
+    watts125kidsHoverboard: "Детский ховерборд (6\_миль в час)"
+    watts1500powerfulEscooter: "Мощный электросамокат (24\_мили в час)"
+    watts250entryLevelEscooter: "Самокат начального уровня (11\_миль в час)"
+    watts500robustEscooter: "Электросамокат среднего уровня (18\_миль в час)"
+    wheelchair: Предпочитать маршруты с возможностью передвижения на инвалидной коляске

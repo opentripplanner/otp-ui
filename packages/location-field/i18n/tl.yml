@@ -1,19 +1,30 @@
 otpUi:
   LocationField:
-    myPlaces: Aking Mga Lugar
-    stops: Mga Hintuan
     beginTypingPrompt: Simulang mag-type para maghanap ng mga lokasyon
-    other: Iba pa
-    recentlySearched: Kamakailang Hinanap
-    nearby: Mga Hintuan sa Malapit
-    homeLocation: Tirahan
-    workLocation: Trabaho
-    stations: Mga Istasyon
     clearLocation: I-clear ang lokasyon
-    useCurrentLocation: Gamitin ang Kasalukuyang Lokasyon
-    noResults: Walang nakitang resulta
-    stationCount: '{count} mga istasyon'
     currentLocationUnavailable: Hindi available ang kasalukuyang lokasyon
     fetchingLocation: Fine-fetch ang lokasyon…
-    parenthesisFormat: '{main} ({detail})'
+    fetchingSuggestions: Kumukuha ng mga mungkahi…
     geocoderUnreachable: Hind maabot ang geocoder
+    homeLocation: Tirahan
+    howToAccessResults: >-
+      Gamitin ang key na pababang arrow para mag-browse sa listahan ng mga
+      resulta. Para pumili ng resulta, gamitin ang Enter key.
+    myPlaces: Aking Mga Lugar
+    nearby: Mga Hintuan sa Malapit
+    noResults: Walang nakitang resulta
+    other: Iba pa
+    otherCount: >-
+      {count, plural, =1 {# iba pang punto} other {# iba pang mga punto}} ng
+      interes
+    parenthesisFormat: "{main} ({detail})"
+    recentlySearched: Kamakailang Hinanap
+    resultsFound: "{results} natagpuan para sa \"{input}\"."
+    stationCount: "{count, plural, =1 {# istasyon} other {# mga istasyon}}"
+    stations: Mga Istasyon
+    stopCount: "{count, plural, =1 {# hintuan} other {# mga hintuan}}"
+    stops: Mga Hintuan
+    suggestedLocations: Mga iminungkahing lokasyon
+    suggestedLocationsLong: I-toggle ang pagpapakita ng listahan ng mga iminumungkahing lokasyon
+    useCurrentLocation: Gamitin ang Kasalukuyang Lokasyon
+    workLocation: Trabaho

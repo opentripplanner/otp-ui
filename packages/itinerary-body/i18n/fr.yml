@@ -85,6 +85,12 @@ otpUi:
       car: en voiture
       escooter: en trottinette
       walk: à pied
+    tripAccessibility:
+      inaccessible: inaccessible
+      itineraryAccessibility: "Accessibilité de ce trajet en fauteuil roulant : "
+      legAccessibility: "Accessibilité de cette étape en fauteuil roulant : "
+      likelyAccessible: probablement accessible
+      unclear: inconnue
     viewOnMap: Afficher sur le plan
   TransitLegBody:
     AlertsBody:

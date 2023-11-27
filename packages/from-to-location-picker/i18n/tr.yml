@@ -1,1 +1,5 @@
-{}
+otpUi:
+  FromToLocationPicker:
+    from: Buradan
+    planATrip: "Bir yolculuk planla:"
+    to: Buraya
