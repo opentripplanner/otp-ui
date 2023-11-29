@@ -1,112 +1,110 @@
 otpUi:
-  TransitLegBody:
-    fare: 'Стоимость проезда: {fare}'
-    AlertsBody:
-      yesterday: Вчера
-      tomorrow: Завтра
-      today: Сегодня
-      effectiveTimeAndDate: Актуально на {dateTime, time, short}, {day}
-      effectiveDate: Актуально на {dateTime, date, long}
-    rideDurationAndStops: 'Поездка: {duration}{numStops, plural, =1 {} other { / остановки
-      (#)}}'
-    stopViewer: Средство просмотра остановок
-    tripViewer: Средство просмотра поездки
-    stopId: Идентификатор остановки {stopId}
-    typicalWait: 'Типичное время ожидания: {waitTime}'
-    stopIdBasic: Идентификатор {stopId}
-    operatedBy: Услуги, предоставляемые агентством «{agencyLink}»
-    arriveAt: Прибытие в {place}
-    disembarkAt: Выходите в месте {legDestination}
-    alertsHeader: '{alertCount, plural, =1 {# предупреждение!} other {Несколько предупреждений
-      (#)!}}'
-    routeDescription: '{routeName} <toPrefix>—</toPrefix> {headsign}'
-    fromLocation: Из места «{location}»
-    agencyExternalLink: '{agencyName} (Ссылка на внешний источник)'
-    legDetails: Детальное описание отрезка маршрута
-    expandDetails: (Развернуть детали)
-    zoomToLeg: Приблизить отрезок на карте
-    ride: Поездка
   AccessLegBody:
     LegDiagramPreview:
-      toggleElevationChart: Переключить график высот
       elevationChart: График высот
       noElevationData: Нет данных по высоте.
+      toggleElevationChart: Переключить график высот
     RentedVehicleSubheader:
+      pickupRental: Возьмите {vehicleType} «{company}» {vehicleName}
       resumeRentalRide: Продолжить аренду
-      walkVehicle: Проведите средство вдоль места «{place}»
       vehicleType:
         bike: велосипед
-        escooter: Электросамокат
-        car: aвто
         bikeshare: велосипед в прокат
+        car: aвто
+        escooter: Электросамокат
         vehicle: транспортное средство
-      pickupRental: Возьмите {vehicleType} «{company}» {vehicleName}
-    vehicleType:
-      car: Авто
-      bike: Велосипед
-      escooter: Электросамокат
-      vehicle: Транспортное средство
-      bikeshare: Bелосипед в прокат
+      walkVehicle: Проведите средство вдоль места «{place}»
     TncLeg:
-      estimatedTravelTime: 'Предполагаемое время поездки: {duration} (без учета дорожного
-        движения)'
-      estimatedCost: 'Предполагаемая стоимость: {minFare} — {maxFare}'
-      bookRideLater: Для бронирования подождите до {timeMillis, time, short}
       bookRide: Забронировать поездку
-      waitForPickup: 'Подождите{minutes, plural, =0 {} other { # мин}} до приезда
-        {company}'
-    summaryMode:
-      walk: Пешком
-      bikeshare: Прокат велосипедов
-      carDrive: Вождение
-      bike: Велосипед
-      escooter: Электросамокат
-      carHail: Поездка
+      bookRideLater: Для бронирования подождите до {timeMillis, time, short}
+      estimatedCost: "Предполагаемая стоимость: {minFare}\_— {maxFare}"
+      estimatedTravelTime: "Предполагаемое время поездки: {duration} (без учета дорожного движения)"
+      waitForPickup: "Подождите{minutes, plural, =0 {} other { # мин}} до приезда {company}"
     mapillaryTooltip: Показать изображения улиц для этого местоположения
-    unnamedRoad: Неизвестная дорога
-    stepHeading:
-      southwest: на юго-запад
-      south: на юг
-      southeast: на юго-восток
-      northwest: на северо-запад
-      northeast: на северо-восток
-      north: на север
-      west: на запад
-      east: на восток
     step:
-      slightlyRight: Немного правее
-      hardLeft: Строго налево
       circleClockwise: Двигайтесь по кругу по часовой стрелке
-      continue: Продолжайте движение
-      slightlyLeft: Немного левее
-      uTurnLeft: Левый разворот
-      uTurnRight: Правый разворот
       circleCounterClockwise: Двигайтесь по кругу против часовой стрелки
-      right: Направо
-      hardRight: Строго направо
-      left: Налево
+      continue: Продолжайте движение
       enterStation: Введите станцию
       exitStation: Выйти из станции
+      hardLeft: Строго налево
+      hardRight: Строго направо
+      left: Налево
+      right: Направо
+      slightlyLeft: Немного левее
+      slightlyRight: Немного правее
+      uTurnLeft: Левый разворот
+      uTurnRight: Правый разворот
     stepDepart: Направляйтесь {heading} на улице {street}
     stepElevator: Воспользуйтесь подъемом к улице {street}
-    summary: '{mode} до места «{place}»'
-    stepGeneric: '{step} на улице {street}'
-    summaryAndDistance: '{mode}{distance} до места «{place}»'
-    unnamedPath: Неизвестный путь
-    vehicleTitle: '{vehicleType} «{company}»'
     stepFollowSigns: Следуйте указателям {street}
-    stepStation: '{step} __ {street}'
+    stepGeneric: "{step} на улице {street}"
+    stepHeading:
+      east: на восток
+      north: на север
+      northeast: на северо-восток
+      northwest: на северо-запад
+      south: на юг
+      southeast: на юго-восток
+      southwest: на юго-запад
+      west: на запад
+    stepStation: "{step} __ {street}"
+    summary: "{mode} до места «{place}»"
+    summaryAndDistance: "{mode}{distance} до места «{place}»"
+    summaryMode:
+      bike: Велосипед
+      bikeshare: Прокат велосипедов
+      carDrive: Вождение
+      carHail: Поездка
+      escooter: Электросамокат
+      walk: Пешком
+    unnamedPath: Неизвестный путь
+    unnamedRoad: Неизвестная дорога
+    vehicleTitle: "{vehicleType} «{company}»"
+    vehicleType:
+      bike: Велосипед
+      bikeshare: Bелосипед в прокат
+      car: Авто
+      escooter: Электросамокат
+      vehicle: Транспортное средство
   ItineraryBody:
-    viewOnMap: Просмотреть на карте
     common:
-      durationShort: '{hours, plural, =0 {} other {# ч }}{minutes} мин'
-    flexPickupMessage: Чтобы воспользоваться этим маршрутом, {action}{advanceNotice}.
+      durationShort: "{hours, plural, =0 {} other {# ч }}{minutes} мин"
+    flexCallAhead: звоните заранее
     flexCallNumber: звоните {phoneNumber}
+    flexPickupMessage: Чтобы воспользоваться этим маршрутом, {action}{advanceNotice}.
+    stayOnBoard: Не выходите в месте {place}
+    travelBy: Передвижение {mode}
     travelByMode:
-      car: на авто
       bike: на велосипеде
+      car: на авто
       escooter: на электросамокате
       walk: пешком
-    stayOnBoard: Не выходите в месте {place}
-    flexCallAhead: звоните заранее
-    travelBy: Передвижение {mode}
+    viewOnMap: Просмотреть на карте
+  TransitLegBody:
+    AlertsBody:
+      effectiveDate: Актуально на {dateTime, date, long}
+      effectiveTimeAndDate: Актуально на {dateTime, time, short}, {day}
+      today: Сегодня
+      tomorrow: Завтра
+      yesterday: Вчера
+    agencyExternalLink: "{agencyName} (Ссылка на внешний источник)"
+    alertsHeader: >-
+      {alertCount, plural, =1 {# предупреждение!} other {Несколько
+      предупреждений (#)!}}
+    arriveAt: Прибытие в {place}
+    disembarkAt: Выходите в месте {legDestination}
+    expandDetails: (Развернуть детали)
+    fare: "Стоимость проезда: {fare}"
+    fromLocation: Из места «{location}»
+    legDetails: Детальное описание отрезка маршрута
+    operatedBy: Услуги, предоставляемые агентством «{agencyLink}»
+    ride: Поездка
+    rideDurationAndStops: "Поездка: {duration}{numStops, plural, =1 {} other { / остановки (#)}}"
+    routeDescription: "{routeName} <toPrefix>—</toPrefix> {headsign}"
+    stopId: Идентификатор остановки {stopId}
+    stopIdBasic: Идентификатор {stopId}
+    stopViewer: Средство просмотра остановок
+    tripViewer: Средство просмотра поездки
+    typicalWait: "Типичное время ожидания: {waitTime}"
+    zoomToLeg: Приблизить отрезок на карте

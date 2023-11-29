@@ -1,5 +1,5 @@
 otpUi:
   FromToLocationPicker:
-    planATrip: 'Bir yolculuk planla:'
     from: Buradan
+    planATrip: "Bir yolculuk planla:"
     to: Buraya

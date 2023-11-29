@@ -1,21 +1,21 @@
 otpUi:
   DateTimeSelector:
-    depart: Kalkış saati
-    dateTimeSelector: Tarih/Saat Seçici
     date: Tarih
-    time: Zaman
+    dateTimeSelector: Tarih/Saat Seçici
+    depart: Kalkış saati
     now: Şimdi Git
+    time: Zaman
   ModeSelector:
-    settings:
-      ferry-label: Feribot
-      bus-label: Otobüs
-      tram-label: Tramvay
-      subway-label: Metro
-      rail-label: Tren
-      bikeTolerance-label: Bisiklet Toleransı
     labels:
       bicycle: Bisiklet
-      walk: Yürüme
       car: Sürücü
       rent: Kira
       transit: Geçiş
+      walk: Yürüme
+    settings:
+      bikeTolerance-label: Bisiklet Toleransı
+      bus-label: Otobüs
+      ferry-label: Feribot
+      rail-label: Tren
+      subway-label: Metro
+      tram-label: Tramvay

@@ -15,13 +15,14 @@ otpUi:
       <strong>{departureDate, time, short}</strong>에 <strong>{departureDate,
       date, long}</strong> 출발
     hideDetail: 세부정보 숨기기
+    minutesActive: "소요 시간 사용 중: <strong>{minutes} 분</strong>"
     showDetail: 세부정보 표시
+    timeActiveDescription: >
+      이 이동편을 이용하면, 도보로 <strong>{walkMinutes} 분</strong> 및 자전거로
+      <strong>{bikeMinutes} 분</strong> 소요됩니다.
     title: 트립 상세정보
     tncFare: "{companies} 운임: <strong>{minTNCFare} - {maxTNCFare}</strong>"
     transferDiscountExplanation: 환승 할인 {transferAmount} 적용
     transitFare: 대중 교통 운임
     transitFareEntry: "{name} : <strong>{value}</strong>"
     tripIncludesFlex: 이 트립에는 가변 경로가 포함되어 있습니다. {extraMessage}
-    minutesActive: '소요 시간 사용 중: <strong>{minutes} 분</strong>'
-    timeActiveDescription: "이 이동편을 이용하면, 도보로 <strong>{walkMinutes} 분</strong> 및 자전거로
-      <strong>{bikeMinutes} 분</strong> 소요됩니다.\n"

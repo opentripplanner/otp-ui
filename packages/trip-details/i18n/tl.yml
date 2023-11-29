@@ -1,27 +1,31 @@
 otpUi:
   TripDetails:
-    transitFareEntry: '{name}: <strong>{value}</strong>'
-    tncFare: '{companies} Pamasahe: <strong>{minTNCFare} - {maxTNCFare}</strong>'
-    departure: Aalis <strong>{departureDate, date, long}</strong> nang <strong>{departureDate,
-      time, short}</strong>
     FareTable:
-      senior: Nakatatanda
-      youth: Kabataan
-      electronic: Electronic
-      special: Espesyal
-      regular: Nasa Hustong Gulang
       cash: Cash
-    title: Mga Detalye ng Biyahe
-    transitFare: Pamasahe sa Pampublikong Transportasyon
-    co2description: Kinakalkula ang intensity ng CO₂ sa pamamagitan ng pag-multiply
-      sa distansya ng bawat leg ng biyahe sa intensity ng CO₂ ng bawat mode. Ang intensity
-      ng CO₂ ng bawat mode ay nagmumula sa <link>spreadsheet na ito</link>.
-    tripIncludesFlex: May mga flexible na ruta ang biyaheng ito. {extraMessage}
-    co2: 'Na-emit na CO₂: <strong>{co2}</strong>'
-    transferDiscountExplanation: Inilapat ang diskwento sa paglipat na {transferAmount}
-    showDetail: Ipakita ang mga detalye
-    timeActiveDescription: "Sa pagbiyahe nang ganitong paraan, gugugol ka ng <strong>{walkMinutes}
-      (na) minuto</strong> sa paglalakad at <strong>{bikeMinutes} (na) minuto</strong>
-      sa pagbibisikleta.\n"
-    minutesActive: 'Oras na Ginugol sa pagiging Aktibo: <strong>{minutes} minuto</strong>'
+      electronic: Electronic
+      regular: Nasa Hustong Gulang
+      senior: Nakatatanda
+      special: Espesyal
+      youth: Kabataan
+    co2: "Na-emit na CO₂: <strong>{co2}</strong>"
+    co2description: >-
+      Kinakalkula ang intensity ng CO₂ sa pamamagitan ng pag-multiply sa
+      distansya ng bawat leg ng biyahe sa intensity ng CO₂ ng bawat mode. Ang
+      intensity ng CO₂ ng bawat mode ay nagmumula sa <link>spreadsheet na
+      ito</link>.
+    departure: >-
+      Aalis <strong>{departureDate, date, long}</strong> nang
+      <strong>{departureDate, time, short}</strong>
     hideDetail: Itago ang mga detalye
+    minutesActive: "Oras na Ginugol sa pagiging Aktibo: <strong>{minutes} minuto</strong>"
+    showDetail: Ipakita ang mga detalye
+    timeActiveDescription: >
+      Sa pagbiyahe nang ganitong paraan, gugugol ka ng <strong>{walkMinutes}
+      (na) minuto</strong> sa paglalakad at <strong>{bikeMinutes} (na)
+      minuto</strong> sa pagbibisikleta.
+    title: Mga Detalye ng Biyahe
+    tncFare: "{companies} Pamasahe: <strong>{minTNCFare} - {maxTNCFare}</strong>"
+    transferDiscountExplanation: Inilapat ang diskwento sa paglipat na {transferAmount}
+    transitFare: Pamasahe sa Pampublikong Transportasyon
+    transitFareEntry: "{name}: <strong>{value}</strong>"
+    tripIncludesFlex: May mga flexible na ruta ang biyaheng ito. {extraMessage}

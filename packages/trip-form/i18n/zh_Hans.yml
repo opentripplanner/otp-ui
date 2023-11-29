@@ -25,11 +25,11 @@ otpUi:
       rail-label: 火车
       subway-label: 地铁
       tram-label: 电车
+      walkReluctance-label: 避免步行
       walkTolerance-label: 步行容忍度
       walkTolerance-labelHigh: 多走路
       walkTolerance-labelLow: 少走路
       wheelchair-label: 无障碍路由
-      walkReluctance-label: 避免步行
     settingsLabel: "{mode} 设置"
   SettingsSelectorPanel:
     bikeOnly: 仅限单车

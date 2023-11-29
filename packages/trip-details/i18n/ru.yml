@@ -1,29 +1,33 @@
 otpUi:
   TripDetails:
-    transitFareEntry: '{name}: <strong>{value}</strong>'
-    tncFare: 'Стоимость проезда в компаниях {companies}: <strong>{minTNCFare} — {maxTNCFare}</strong>'
-    departure: 'Прибытие: <strong>{departureDate, date, long}</strong> в <strong>{departureDate,
-      time, short}</strong>'
     FareTable:
-      senior: Пожилые
-      youth: Детский
-      electronic: Электронный
-      special: Особые
-      regular: Взрослые
       cash: Наличные
-    title: Подробные сведения о поездке
-    transitFare: Стоимость проезда в общественном транспорте
-    co2description: Интенсивность выбросов CO₂ рассчитывается умножением расстояния
-      каждого этапа поездки на интенсивность выбросов CO₂ для каждого вида транспорта.
-      Данные об интенсивности выбросов CO₂ для каждого вида транспорта взяты из <link>этой
-      таблицы</link>.
-    tripIncludesFlex: Эта поездка включает гибкие маршруты. {extraMessage}
-    co2: 'Выбросы CO₂: <strong>{co2}</strong>'
-    transferDiscountExplanation: Применяется скидка на пересадку в размере {transferAmount}
-    showDetail: Показать детали
-    timeActiveDescription: "Проделав этот маршрут, вы потратите <strong>{walkMinutes,
-      plural, one {# минуту} other {# минуты}}</strong> на ходьбу и<strong>{bikeMinutes,
-      plural, one {# минуту} other {# минуты}}</strong> на езду на велосипеде.\n"
-    minutesActive: 'Время в активном режиме: <strong>{minutes, plural, one {# минуту}
-      other {# минуты}}</strong>'
+      electronic: Электронный
+      regular: Взрослые
+      senior: Пожилые
+      special: Особые
+      youth: Детский
+    co2: "Выбросы CO₂: <strong>{co2}</strong>"
+    co2description: >-
+      Интенсивность выбросов CO₂ рассчитывается умножением расстояния каждого
+      этапа поездки на интенсивность выбросов CO₂ для каждого вида транспорта.
+      Данные об интенсивности выбросов CO₂ для каждого вида транспорта взяты из
+      <link>этой таблицы</link>.
+    departure: >-
+      Прибытие: <strong>{departureDate, date, long}</strong> в
+      <strong>{departureDate, time, short}</strong>
     hideDetail: Скрыть детали
+    minutesActive: >-
+      Время в активном режиме: <strong>{minutes, plural, one {# минуту} other {#
+      минуты}}</strong>
+    showDetail: Показать детали
+    timeActiveDescription: >
+      Проделав этот маршрут, вы потратите <strong>{walkMinutes, plural, one {#
+      минуту} other {# минуты}}</strong> на ходьбу и<strong>{bikeMinutes,
+      plural, one {# минуту} other {# минуты}}</strong> на езду на велосипеде.
+    title: Подробные сведения о поездке
+    tncFare: "Стоимость проезда в компаниях {companies}: <strong>{minTNCFare}\_— {maxTNCFare}</strong>"
+    transferDiscountExplanation: Применяется скидка на пересадку в размере {transferAmount}
+    transitFare: Стоимость проезда в общественном транспорте
+    transitFareEntry: "{name}: <strong>{value}</strong>"
+    tripIncludesFlex: Эта поездка включает гибкие маршруты. {extraMessage}

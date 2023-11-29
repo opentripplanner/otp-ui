@@ -489,8 +489,8 @@ export type Stop = {
   geometries?: { geoJson?: GeoJSON.Polygon };
   gtfsId: string;
   id: string;
-  lat: number;
-  lon: number;
+  lat?: number;
+  lon?: number;
   name: string;
   routes?: Route[];
 };

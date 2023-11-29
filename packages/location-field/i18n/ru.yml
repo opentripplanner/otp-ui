@@ -1,28 +1,30 @@
 otpUi:
   LocationField:
-    myPlaces: Мои места
-    stops: Остановки
     beginTypingPrompt: Начните вводить название, чтобы выполнить поиск местоположений
-    other: Другое
-    recentlySearched: Недавние поисковые запросы
-    nearby: Остановки поблизости
-    homeLocation: Дом
-    workLocation: Работа
-    stations: Станции
     clearLocation: Очистить местоположение
-    useCurrentLocation: Использовать текущее местоположение
-    noResults: Нет результатов
-    stationCount: '{count, plural, =1 {# станция} other {# станции}}'
-    stopCount: '{count, plural, =1 {# остановка} other {# остановки}}'
     currentLocationUnavailable: Текущее местоположение недоступно
     fetchingLocation: Получение местоположения…
-    parenthesisFormat: '{main} ({detail})'
-    geocoderUnreachable: Не удалось связаться с геокодером
     fetchingSuggestions: Получение предложений…
-    suggestedLocationsLong: Переключить отображение списка предлагаемых мест
-    resultsFound: '{results} найдено для "{input}".'
-    otherCount: '{count, plural, =1 {# другой интересный момент} other {# другие интересные
-      моменты}}'
-    howToAccessResults: Используйте клавишу со стрелкой вниз для просмотра списка
-      результатов. Для выбора результата используйте клавишу «Вход».
+    geocoderUnreachable: Не удалось связаться с геокодером
+    homeLocation: Дом
+    howToAccessResults: >-
+      Используйте клавишу со стрелкой вниз для просмотра списка результатов. Для
+      выбора результата используйте клавишу «Вход».
+    myPlaces: Мои места
+    nearby: Остановки поблизости
+    noResults: Нет результатов
+    other: Другое
+    otherCount: >-
+      {count, plural, =1 {# другой интересный момент} other {# другие интересные
+      моменты}}
+    parenthesisFormat: "{main} ({detail})"
+    recentlySearched: Недавние поисковые запросы
+    resultsFound: "{results} найдено для \"{input}\"."
+    stationCount: "{count, plural, =1 {# станция} other {# станции}}"
+    stations: Станции
+    stopCount: "{count, plural, =1 {# остановка} other {# остановки}}"
+    stops: Остановки
     suggestedLocations: Рекомендуемые места
+    suggestedLocationsLong: Переключить отображение списка предлагаемых мест
+    useCurrentLocation: Использовать текущее местоположение
+    workLocation: Работа

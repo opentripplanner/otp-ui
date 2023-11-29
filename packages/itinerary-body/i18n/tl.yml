@@ -1,110 +1,112 @@
 otpUi:
-  TransitLegBody:
-    fare: 'Pamasahe: {fare}'
-    AlertsBody:
-      yesterday: Kahapon
-      tomorrow: Bukas
-      today: Ngayong Araw
-      effectiveTimeAndDate: May bisa simula {dateTime, time, short}, {day}
-      effectiveDate: May bisa simula {dateTime, date, long}
-    rideDurationAndStops: 'Ride {duration}{numStops, plural, =1 {} other { / # stops}}'
-    stopViewer: Ihinto ang Viewer
-    tripViewer: Viewer ng Biyahe
-    stopId: ID ng Hintuan {stopId}
-    typicalWait: 'Karaniwang tagal ng paghihintay: {waitTime}'
-    stopIdBasic: ID {stopId}
-    operatedBy: Ang serbisyo ay pinapatakbo ng {agencyLink}
-    arriveAt: Darating nang {place}
-    disembarkAt: Bumaba sa {legDestination}
-    alertsHeader: '{alertCount, plural, =1 {# alert} other {# alerts}}'
-    routeDescription: '{routeName} <toPrefix>papuntang</toPrefix> {headsign}'
-    fromLocation: mula sa {location}
-    agencyExternalLink: '{agencyName} (External na Link)'
-    legDetails: Mga detalye ng Paggalaw
-    expandDetails: (I-expand ang mga detalye)
-    zoomToLeg: Mag-zoom sa leg sa mapa
-    ride: Sumakay
   AccessLegBody:
     LegDiagramPreview:
-      toggleElevationChart: I-toggle ang chart ng elevation
       elevationChart: Chart ng elevation
       noElevationData: Walang available na data ng elevation.
+      toggleElevationChart: I-toggle ang chart ng elevation
     RentedVehicleSubheader:
+      pickupRental: Pag-pick up {company} {vehicleType} {vehicleName}
       resumeRentalRide: Magpatuloy gamit ang rental
-      walkVehicle: Dumaan sa {place}
       vehicleType:
         bike: bisikleta
-        escooter: E-scooter
-        car: Sasakyan
         bikeshare: shared bike
+        car: Sasakyan
+        escooter: E-scooter
         vehicle: sasakyan
-      pickupRental: Pag-pick up {company} {vehicleType} {vehicleName}
-    vehicleType:
-      car: Sasakyan
-      bike: Bisikleta
-      escooter: E-scooter
-      vehicle: Sasakyan
-      bikeshare: Shared na Bisikleta
+      walkVehicle: Dumaan sa {place}
     TncLeg:
-      estimatedTravelTime: 'Tinatayang tagal ng biyahe: {duration} (hindi isinasaalang-alang
-        ang trapiko)'
-      estimatedCost: 'Tinatayang halaga: {minFare} - {maxFare}'
-      bookRideLater: Maghintay hanggang {timeMillis, time, short} para mag-book
       bookRide: Mag-book ng Ride
-      waitForPickup: 'Tagal ng paghihintay{minutes, plural, =0 {} other { # minutes}}
-        para sa pag-pick up ng {company}'
-    summaryMode:
-      walk: Naglalakad
-      bikeshare: Bikeshare
-      carDrive: Nagmamaneho
-      bike: Bisikleta
-      escooter: E-Scooter
-      carHail: Ride
+      bookRideLater: Maghintay hanggang {timeMillis, time, short} para mag-book
+      estimatedCost: "Tinatayang halaga: {minFare} - {maxFare}"
+      estimatedTravelTime: >-
+        Tinatayang tagal ng biyahe: {duration} (hindi isinasaalang-alang ang
+        trapiko)
+      waitForPickup: >-
+        Tagal ng paghihintay{minutes, plural, =0 {} other { # minutes}} para sa
+        pag-pick up ng {company}
     mapillaryTooltip: Ipakita ang larawan ng kalye sa lokasyong ito
-    unnamedRoad: Unnamed Road
     step:
-      slightlyRight: Slight right
-      hardLeft: Hard left
       circleClockwise: Follow circle clockwise
-      continue: Continue
-      slightlyLeft: Slight left
-      uTurnLeft: Left U-turn
-      uTurnRight: Right U-turn
       circleCounterClockwise: Follow circle counterclockwise
-      right: Right
-      hardRight: Hard right
-      left: Left
+      continue: Continue
       enterStation: I-enter ang istasyon
       exitStation: Lumabas sa Istasyon
-    stepHeading:
-      south: south
-      southeast: southeast
-      northwest: northwest
-      northeast: northeast
-      north: north
-      west: west
-      east: east
-      southwest: southwest
+      hardLeft: Hard left
+      hardRight: Hard right
+      left: Left
+      right: Right
+      slightlyLeft: Slight left
+      slightlyRight: Slight right
+      uTurnLeft: Left U-turn
+      uTurnRight: Right U-turn
     stepDepart: Head {heading} on {street}
     stepElevator: Take elevator to {street}
-    summary: '{mode} to {place}'
-    stepGeneric: '{step} on {street}'
-    summaryAndDistance: '{mode} {distance} to {place}'
-    unnamedPath: Unnamed Path
-    vehicleTitle: '{company} {vehicleType}'
     stepFollowSigns: Sundin ang mga palatandaan sa {street}
-    stepStation: '{step} sa {street}'
+    stepGeneric: "{step} on {street}"
+    stepHeading:
+      east: east
+      north: north
+      northeast: northeast
+      northwest: northwest
+      south: south
+      southeast: southeast
+      southwest: southwest
+      west: west
+    stepStation: "{step} sa {street}"
+    summary: "{mode} to {place}"
+    summaryAndDistance: "{mode} {distance} to {place}"
+    summaryMode:
+      bike: Bisikleta
+      bikeshare: Bikeshare
+      carDrive: Nagmamaneho
+      carHail: Ride
+      escooter: E-Scooter
+      walk: Naglalakad
+    unnamedPath: Unnamed Path
+    unnamedRoad: Unnamed Road
+    vehicleTitle: "{company} {vehicleType}"
+    vehicleType:
+      bike: Bisikleta
+      bikeshare: Shared na Bisikleta
+      car: Sasakyan
+      escooter: E-scooter
+      vehicle: Sasakyan
   ItineraryBody:
-    viewOnMap: Tingnan sa mapa
     common:
-      durationShort: '{hours, plural, =0 {} other {# hr }}{minutes} (na) minuto'
+      durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} (na) minuto"
+    flexCallAhead: tumawag nang maaga
+    flexCallNumber: tumawag sa {phoneNumber}
     flexPickupMessage: Para gamitin ang rutang ito, {action}{advanceNotice}.
+    stayOnBoard: Manatiling on board sa {place}
+    travelBy: Maglakbay sa pamamagitan ng {mode}
     travelByMode:
-      car: sasakyan
       bike: bisikleta
+      car: sasakyan
       escooter: e-scooter
       walk: walking
-    stayOnBoard: Manatiling on board sa {place}
-    flexCallAhead: 'tumawag nang maaga'
-    travelBy: Maglakbay sa pamamagitan ng {mode}
-    flexCallNumber: tumawag sa {phoneNumber}
+    viewOnMap: Tingnan sa mapa
+  TransitLegBody:
+    AlertsBody:
+      effectiveDate: May bisa simula {dateTime, date, long}
+      effectiveTimeAndDate: May bisa simula {dateTime, time, short}, {day}
+      today: Ngayong Araw
+      tomorrow: Bukas
+      yesterday: Kahapon
+    agencyExternalLink: "{agencyName} (External na Link)"
+    alertsHeader: "{alertCount, plural, =1 {# alert} other {# alerts}}"
+    arriveAt: Darating nang {place}
+    disembarkAt: Bumaba sa {legDestination}
+    expandDetails: (I-expand ang mga detalye)
+    fare: "Pamasahe: {fare}"
+    fromLocation: mula sa {location}
+    legDetails: Mga detalye ng Paggalaw
+    operatedBy: Ang serbisyo ay pinapatakbo ng {agencyLink}
+    ride: Sumakay
+    rideDurationAndStops: "Ride {duration}{numStops, plural, =1 {} other { / # stops}}"
+    routeDescription: "{routeName} <toPrefix>papuntang</toPrefix> {headsign}"
+    stopId: ID ng Hintuan {stopId}
+    stopIdBasic: ID {stopId}
+    stopViewer: Ihinto ang Viewer
+    tripViewer: Viewer ng Biyahe
+    typicalWait: "Karaniwang tagal ng paghihintay: {waitTime}"
+    zoomToLeg: Mag-zoom sa leg sa mapa

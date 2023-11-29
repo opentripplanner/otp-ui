@@ -16,13 +16,15 @@ otpUi:
       Khởi hành <strong>{departureDate, date, long}</strong> lúc
       <strong>{departureDate, time, short}</strong>
     hideDetail: Ẩn chi tiết
+    minutesActive: "Thời gian hoạt động: <strong>{minutes} phút</strong>"
     showDetail: Hiển thị chi tiết
+    timeActiveDescription: >
+      Nếu thực hiện chuyến đi này, quý vị sẽ dành <strong>{walkMinutes}
+      phút</strong> để đi bộ và <strong>{bikeMinutes} phút</strong> để đi xe
+      đạp.
     title: Chi tiết chuyến đi
     tncFare: "{companies} Giá vé: <strong>{minTNCFare} - {maxTNCFare}</strong>"
     transferDiscountExplanation: Giảm giá chuyển khoản {transferAmount} được áp dụng
     transitFare: Giá vé xe công cộng
     transitFareEntry: "{name}: <strong>{value}</strong>"
     tripIncludesFlex: Chuyến đi này bao gồm các tuyến đường linh hoạt. {extraMessage}
-    minutesActive: 'Thời gian hoạt động: <strong>{minutes} phút</strong>'
-    timeActiveDescription: "Nếu thực hiện chuyến đi này, quý vị sẽ dành <strong>{walkMinutes}
-      phút</strong> để đi bộ và <strong>{bikeMinutes} phút</strong> để đi xe đạp.\n"

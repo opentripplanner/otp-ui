@@ -8,8 +8,8 @@ otpUi:
     geocoderUnreachable: Không thể nhận đề xuất
     homeLocation: Nhà
     howToAccessResults: >-
-      Sử dụng phím mũi tên xuống duyệt danh sách kết quả. Để chọn một kết quả, hãy
-      sử dụng phím Enter.
+      Sử dụng phím mũi tên xuống duyệt danh sách kết quả. Để chọn một kết quả,
+      hãy sử dụng phím Enter.
     myPlaces: Những địa điểm của tôi
     nearby: Điểm dừng liền kề
     noResults: Không có kết quả

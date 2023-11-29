@@ -1,14 +1,21 @@
 otpUi:
   PrintableItinerary:
     TncLeg:
-      estimatedWaitTime: 'Tinatayang tagal ng paghihintay para sa pag-pick up: <strong>{duration}</strong>'
-      estimatedTravelTime: 'Tinatayang tagal ng biyahe: <strong>{duration}</strong>
-        (hindi isinasaalang-alang ang trapiko)'
-      header: <strong>Gamitin ang {company}</strong> papuntang <strong>{place}</strong>
+      estimatedTravelTime: >-
+        Tinatayang tagal ng biyahe: <strong>{duration}</strong> (hindi
+        isinasaalang-alang ang trapiko)
+      estimatedWaitTime: >-
+        Tinatayang tagal ng paghihintay para sa pag-pick up:
+        <strong>{duration}</strong>
+      header: >-
+        <strong>Gamitin ang {company}</strong> papuntang
+        <strong>{place}</strong>
     TransitLeg:
+      alight: >-
+        Bumaba sa <strong>{place}</strong> ({stopId}) nang <strong>{time, time,
+        short}</strong>
+      board: >-
+        Sumakay sa <strong>{place}</strong> ({stopId}) nang <strong>{time, time,
+        short}</strong>
       continuesAs: Magpapatuloy bilang {routeDescription}
-      alight: Bumaba sa <strong>{place}</strong> ({stopId}) nang <strong>{time, time,
-        short}</strong>
-      board: Sumakay sa <strong>{place}</strong> ({stopId}) nang <strong>{time, time,
-        short}</strong>
     depart: <strong>Aalis</strong> sa <strong>{place}</strong>

@@ -1,5 +1,9 @@
 import { Popup } from "@opentripplanner/base-map";
-import { MapLocationActionArg, Stop } from "@opentripplanner/types";
+import {
+  MapLocationActionArg,
+  Stop,
+  StopEventHandler
+} from "@opentripplanner/types";
 import { EventData } from "mapbox-gl";
 import { Layer, Source, useMap } from "react-map-gl";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
@@ -16,6 +20,14 @@ type Props = {
    * An optional id to override the active stop with
    */
   activeStop?: string;
+  /**
+   * An optional id to highlight a stop on the map
+   */
+  highlightedStop?: string;
+  /**
+   * A color to use for the highlighted stop
+   */
+  highlightedStopColor?: string;
   /**
    * The list of stops to create stop markers for.
    */
@@ -40,7 +52,7 @@ type Props = {
   /**
    * A method fired when the stop viewer is opened in the popup
    */
-  setViewedStop?: ({ stopId: string }) => void;
+  setViewedStop?: StopEventHandler;
 };
 
 /**
@@ -51,6 +63,8 @@ const StopsOverlay = (props: Props): JSX.Element => {
   const {
     activeStop,
     color,
+    highlightedStop,
+    highlightedStopColor,
     minZoom,
     refreshStops,
     setLocation,
@@ -127,12 +141,13 @@ const StopsOverlay = (props: Props): JSX.Element => {
         type: "Feature",
         properties: {
           ...stop,
-          flex: isGeoJsonFlex(stop?.geometries?.geoJson)
+          flex: isGeoJsonFlex(stop?.geometries?.geoJson),
+          highlighted: stop.id === highlightedStop
         },
         geometry: { type: "Point", coordinates: [stop.lon, stop.lat] }
       }))
     }),
-    [stops]
+    [stops, highlightedStop]
   );
 
   // Don't render if no map or no stops are defined.
@@ -151,6 +166,19 @@ const StopsOverlay = (props: Props): JSX.Element => {
           paint={{
             "circle-color": color || "#fff",
             "circle-opacity": 0.9,
+            // TODO: Use tinycolor to generate outline with appropriate contrast.
+            "circle-stroke-color": color ? "#fff" : "#333",
+            "circle-stroke-width": 2
+          }}
+          type="circle"
+        />
+        <Layer
+          filter={["==", "highlighted", true]}
+          id="higlightedStop"
+          paint={{
+            "circle-color": highlightedStopColor || "#ff0000",
+            "circle-opacity": 1,
+            "circle-radius": 10,
             // TODO: Use tinycolor to generate outline with appropriate contrast.
             "circle-stroke-color": color ? "#fff" : "#333",
             "circle-stroke-width": 2

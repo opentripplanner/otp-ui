@@ -1,27 +1,28 @@
 otpUi:
   LocationField:
-    myPlaces: Yerlerim
-    stops: Duraklar
-    noResults: Sonuç yok
-    fetchingSuggestions: Öneriler getiriliyor…
-    suggestedLocationsLong: Önerilen konumların listesini görüntülemeyi açın/kapatın
     beginTypingPrompt: Konumları aramak için yazmaya başlayın
-    stationCount: '{count, plural, =1 {# station} diğer {# stations}}'
-    resultsFound: '"{input}" için bulunan {results}.'
-    other: Diğer
-    stopCount: '{count, plural, =1 {# stop} diğer {# stops}}'
-    recentlySearched: Son Arananlar
-    otherCount: '{count, plural, =1 {# other point} diğer {# other points}} ilgi'
-    nearby: Yakındaki Duraklar
-    homeLocation: Ev
-    currentLocationUnavailable: Geçerli konum mevcut değil
-    howToAccessResults: Sonuçlar listesine göz atmak için aşağı ok tuşunu kullanın.
-      Bir sonucu seçmek için Enter tuşunu kullanın.
-    suggestedLocations: Önerilen konumlar
-    workLocation: İş
-    stations: İstasyonlar
-    fetchingLocation: Konum getiriliyor…
     clearLocation: Konumu temizle
-    parenthesisFormat: '{main} ({detail})'
+    currentLocationUnavailable: Geçerli konum mevcut değil
+    fetchingLocation: Konum getiriliyor…
+    fetchingSuggestions: Öneriler getiriliyor…
     geocoderUnreachable: Öneriler alınamıyor
+    homeLocation: Ev
+    howToAccessResults: >-
+      Sonuçlar listesine göz atmak için aşağı ok tuşunu kullanın. Bir sonucu
+      seçmek için Enter tuşunu kullanın.
+    myPlaces: Yerlerim
+    nearby: Yakındaki Duraklar
+    noResults: Sonuç yok
+    other: Diğer
+    otherCount: "{count, plural, =1 {# other point} diğer {# other points}} ilgi"
+    parenthesisFormat: "{main} ({detail})"
+    recentlySearched: Son Arananlar
+    resultsFound: "\"{input}\" için bulunan {results}."
+    stationCount: "{count, plural, =1 {# station} diğer {# stations}}"
+    stations: İstasyonlar
+    stopCount: "{count, plural, =1 {# stop} diğer {# stops}}"
+    stops: Duraklar
+    suggestedLocations: Önerilen konumlar
+    suggestedLocationsLong: Önerilen konumların listesini görüntülemeyi açın/kapatın
     useCurrentLocation: Mevcut Konumu Kullan
+    workLocation: İş

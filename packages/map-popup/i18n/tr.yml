@@ -1,9 +1,9 @@
 otpUi:
   MapPopup:
-    availableDocks: 'Mevcut rıhtım: {value}'
-    floatingBike: 'Serbest gezen bisiklet: {name}'
+    availableBikes: "Mevcut bisiklet: {value}"
+    availableDocks: "Mevcut rıhtım: {value}"
+    floatingBike: "Serbest gezen bisiklet: {name}"
+    floatingCar: "{company} {name}"
+    floatingEScooter: "E-skuter: {name}"
+    stopId: "Durak ID: {stopId}"
     stopViewer: Durak Gösterici
-    stopId: 'Durak ID: {stopId}'
-    floatingCar: '{company} {name}'
-    availableBikes: 'Mevcut bisiklet: {value}'
-    floatingEScooter: 'E-skuter: {name}'
