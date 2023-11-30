@@ -51,8 +51,6 @@ const FailContainer = styled(ScorePill)`
 const pass = <PassContainer>Pass</PassContainer>;
 const fail = <FailContainer>Fail</FailContainer>;
 
-// const wcagPassOrFail = () => {};
-
 const WcagChecker = ({ hue, background }: Props): any => {
   const wcagScore = chroma.contrast(hue, background);
 
