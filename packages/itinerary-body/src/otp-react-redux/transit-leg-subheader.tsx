@@ -26,7 +26,7 @@ export default function TransitLegSubheader({
         }}
       />
       {!isFlex(leg) && (
-        <ViewStopButton onStopClick={onStopClick} stopId={from.stopId} />
+        <ViewStopButton onStopClick={onStopClick} stop={from.stop} />
       )}
     </S.PlaceSubheader>
   );

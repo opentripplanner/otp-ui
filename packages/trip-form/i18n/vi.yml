@@ -25,6 +25,7 @@ otpUi:
       rail-label: Xe lửa
       subway-label: Metro
       tram-label: Xe điện
+      walkReluctance-label: Tránh Đi Bộ
       walkTolerance-label: Sức chịu đựng đi bộ
       walkTolerance-labelHigh: Đi bộ nhiều hơn
       walkTolerance-labelLow: Ít đi bộ

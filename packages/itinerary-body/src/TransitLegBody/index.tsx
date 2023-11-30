@@ -300,7 +300,9 @@ class TransitLegBody extends Component<Props, State> {
                     alertCount: alerts.length
                   }}
                 />
-                <S.CaretToggle expanded={alertsExpanded} />
+                {!shouldOnlyShowAlertsExpanded && (
+                  <S.CaretToggle expanded={alertsExpanded} />
+                )}
               </S.TransitAlertToggle>
             )}
 

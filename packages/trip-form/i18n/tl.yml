@@ -1,47 +1,65 @@
 otpUi:
-  queryParameters:
-    maxEScooterDistance: Maximum na Layo ng E-scooter
-    wheelchair: Mas Gusto ang Mga Ruta Kung Saan Accessible ang Wheelchair
-    maxWalkTime: Max na Tagal ng Paglalakad
-    optimizeBikeSpeed: Bilis
-    maxWalkDistance: Maximum na Paglalakad
-    watts: Power ng E-scooter
-    walkSpeed: Bilis ng Paglalakad
-    watts1500powerfulEscooter: Powerful na E-scooter (24 mph)
-    walkReluctanceLow: Higit Pang Paglalakad
-    maxBikeTime: Max na Tagal ng Pagbibisikleta
-    optimizeBikeFlat: Flat na Biyahe
-    watts125kidsHoverboard: Pambatang hoverboard (6 mph)
-    watts500robustEscooter: Robust na E-scooter (18 mph)
-    optimizeFor: I-optimize para sa
-    maxBikeDistance: Maximum na Pagbibisikleta
-    optimizeBikeFriendly: Biyaheng Puwedeng Gumamit ng Bisikleta
-    walkReluctanceHigh: Higit Pang Pampublikong Transportasyon
-    walkReluctance: Pag-iwas sa Paglalakad
-    watts250entryLevelEscooter: Entry-level na scooter (11 mph)
-    speedInMilesPerHour: '{mph} MPH'
-    bikeSpeed: Bilis ng Bisikleta
-    distanceInMiles: "{miles, number, :: unit/mile unit-width-full-name}\n"
   DateTimeSelector:
-    depart: Umalis nang
     arrive: Dumating bago ang
+    date: Petsa
+    dateTimeSelector: Selector ng Petsa/Oras
+    depart: Umalis nang
     now: Umalis ngayon
+    time: Oras
   ModeSelector:
-    settings:
-      ferry-label: Ferry
-      bus-label: Bus
-      rail-label: Tren
     labels:
       bicycle: Bisikleta
-      walk: Naglalakad
       car: Nagmamaneho
+      rent: Magrenta
       transit: Pampublikong Transportasyon
-      rent: Rental
+      walk: Naglalakad
+    settings:
+      bikeTolerance-label: Tolerance sa Pagbibisikleta
+      bikeTolerance-labelHigh: Mas Maraming Pagbibisikleta
+      bikeTolerance-labelLow: Mas Kaunting Pagbibisikleta
+      bus-label: Bus
+      carTolerance-label: Tolerance ng Pagmamaneho
+      carTolerance-labelHigh: Mas Maraming Pagmamaneho
+      carTolerance-labelLow: Mas Kaunting Pagmamaneho
+      ferry-label: Ferry
+      rail-label: Tren
+      subway-label: Subway
+      tram-label: Tram
+      walkReluctance-label: Iwasan ang Paglalakad
+      walkTolerance-label: Tolerance sa Paglalakad
+      walkTolerance-labelHigh: Mas Maraming Paglalakad
+      walkTolerance-labelLow: Mas Kaunting Paglalakad
+      wheelchair-label: Accessible na Pagruruta
+    settingsLabel: "{mode} mga setting"
   SettingsSelectorPanel:
-    use: Gamitin
-    useCompanies: Gumamit ng mga kumpanya
     bikeOnly: Bisikleta Lang
+    escooterOnly: E-scooter Lang
     takeTransit: Gumamit ng Pampublikong Transportasyon
     travelPreferences: Mga Kagustuhan sa Paglalakbay
+    use: Gamitin
+    useCompanies: Gumamit ng mga kumpanya
     walkOnly: Maglakad Lang
-    escooterOnly: E-scooter Lang
+  queryParameters:
+    bikeSpeed: Bilis ng Bisikleta
+    distanceInMiles: |
+      {miles, number, :: unit/mile unit-width-full-name}
+    maxBikeDistance: Maximum na Pagbibisikleta
+    maxBikeTime: Max na Tagal ng Pagbibisikleta
+    maxEScooterDistance: Maximum na Layo ng E-scooter
+    maxWalkDistance: Maximum na Paglalakad
+    maxWalkTime: Max na Tagal ng Paglalakad
+    optimizeBikeFlat: Flat na Biyahe
+    optimizeBikeFriendly: Biyaheng Puwedeng Gumamit ng Bisikleta
+    optimizeBikeSpeed: Bilis
+    optimizeFor: I-optimize para sa
+    speedInMilesPerHour: "{mph} MPH"
+    walkReluctance: Pag-iwas sa Paglalakad
+    walkReluctanceHigh: Higit Pang Pampublikong Transportasyon
+    walkReluctanceLow: Higit Pang Paglalakad
+    walkSpeed: Bilis ng Paglalakad
+    watts: Power ng E-scooter
+    watts125kidsHoverboard: Pambatang hoverboard (6 mph)
+    watts1500powerfulEscooter: Powerful na E-scooter (24 mph)
+    watts250entryLevelEscooter: Entry-level na scooter (11 mph)
+    watts500robustEscooter: Robust na E-scooter (18 mph)
+    wheelchair: Mas Gusto ang Mga Ruta Kung Saan Accessible ang Wheelchair

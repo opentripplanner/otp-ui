@@ -1,1 +1,9 @@
-{}
+otpUi:
+  MapPopup:
+    availableBikes: "Mevcut bisiklet: {value}"
+    availableDocks: "Mevcut rıhtım: {value}"
+    floatingBike: "Serbest gezen bisiklet: {name}"
+    floatingCar: "{company} {name}"
+    floatingEScooter: "E-skuter: {name}"
+    stopId: "Durak ID: {stopId}"
+    stopViewer: Durak Gösterici

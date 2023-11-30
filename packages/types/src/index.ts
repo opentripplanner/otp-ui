@@ -238,9 +238,22 @@ export type Place = {
   name: string;
   networks?: string[];
   rentalVehicle?: { network: string };
+  stop?: Stop;
+  /**
+   * @deprecated Only for OTP1 support, removal is immenent
+   */
   stopCode?: string;
+  /**
+   * @deprecated Only for OTP1 support, removal is immenent
+   */
   stopId?: string;
+  /**
+   * @deprecated Only for OTP1 support, removal is immenent
+   */
   stopIndex?: number;
+  /**
+   * @deprecated Only for OTP1 support, removal is immenent
+   */
   stopSequence?: number;
   vertexType: string;
   zoneId?: string;
@@ -460,6 +473,8 @@ export type StopLayerStop = LayerEntity & {
   name: string;
 };
 
+export type StopEventHandler = (stop: Stop | { stopId: string }) => void;
+
 /**
  * This models data about a stop and it's associated routes that is obtained
  * from a transit index API.
@@ -472,9 +487,10 @@ export type Stop = {
   color?: string;
   dist?: number;
   geometries?: { geoJson?: GeoJSON.Polygon };
+  gtfsId: string;
   id: string;
-  lat: number;
-  lon: number;
+  lat?: number;
+  lon?: number;
   name: string;
   routes?: Route[];
 };
@@ -707,7 +723,7 @@ export type SliderOptions = {
 };
 
 export type CheckboxOptions = {
-  addTransportMode?: TransportMode;
+  addTransportMode?: TransportMode | TransportMode[];
   default?: boolean;
   label: string;
   type: "CHECKBOX";
