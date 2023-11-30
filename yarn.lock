@@ -3241,6 +3241,24 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
+"@opentripplanner/core-utils@11.1.2":
+  version "11.1.2"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-11.1.2.tgz#a99d1fa4fb1f587d58fae8fcfd70a3bfe4eed424"
+  integrity sha512-Rn1tBm5F+nt/A4/0cpq6cyNTprSsxfFslujMoZ4P4r6fZ7YTx0d25di+MZ/CZgSlCzHJIiGAfi8DsfJ7yStcTA==
+  dependencies:
+    "@conveyal/lonlat" "^1.4.1"
+    "@mapbox/polyline" "^1.1.0"
+    "@opentripplanner/geocoder" "^1.4.2"
+    "@styled-icons/foundation" "^10.34.0"
+    "@turf/along" "^6.0.1"
+    chroma-js "^2.4.2"
+    date-fns "^2.28.0"
+    date-fns-tz "^1.2.2"
+    graphql "^16.6.0"
+    lodash.clonedeep "^4.5.0"
+    lodash.isequal "^4.5.0"
+    qs "^6.9.1"
+
 "@opentripplanner/types@7.0.0-alpha.2":
   version "7.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-7.0.0-alpha.2.tgz#d10c69f99b2da6d1e80ab5989520bde8e558627b"

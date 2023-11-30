@@ -8,6 +8,9 @@
   "main": "lib/index.js",
   "module": "esm/index.js",
   "private": false,
+  "dependencies": {
+    "chroma-js": "^2.4.2"
+  },
   "devDependencies": {
     "@opentripplanner/types": "^6.2.1",
     "@opentripplanner/core-utils": "^11.1.3"
