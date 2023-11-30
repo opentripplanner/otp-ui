@@ -21,7 +21,7 @@ const SelectedColorContainer = styled.div`
 `;
 
 const SelectedColor = styled.div<{ color: string }>`
-  width: 100xpx;
+  width: 100px;
   height: 50px;
   background-color: ${props => props.color};
   border-radius: 5px 5px 0 0;
@@ -30,7 +30,7 @@ const SelectedColor = styled.div<{ color: string }>`
 const SelectedColorSwatch = styled.div`
   border: 1px solid grey;
   border-radius: 5px;
-  min-width 85px;
+  min-width: 85px;
 
   p {
     padding: 10px;
