@@ -1,5 +1,5 @@
 import React from "react";
-import colorContrast from "color-contrast";
+import chroma from "chroma-js";
 import styled from "styled-components";
 import grey from "../../colors/grey";
 import red from "../../colors/red";
@@ -54,7 +54,7 @@ const fail = <FailContainer>Fail</FailContainer>;
 // const wcagPassOrFail = () => {};
 
 const WcagChecker = ({ hue, background }: Props): any => {
-  const wcagScore = colorContrast(hue, background);
+  const wcagScore = chroma.contrast(hue, background);
 
   const returnPassFail = (benchmark: number) => {
     const sufficientContrast = wcagScore >= benchmark;
