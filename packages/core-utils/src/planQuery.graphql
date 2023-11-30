@@ -48,7 +48,8 @@ query Plan(
             effectiveStartDate
             id
           }
-          gtfsId: id
+          gtfsId
+          id: gtfsId
           name
           timezone
           url
