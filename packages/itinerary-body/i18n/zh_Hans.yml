@@ -25,6 +25,8 @@ otpUi:
       circleClockwise: 顺时针跟随圆圈
       circleCounterClockwise: 逆时针跟随圆圈
       continue: 继续
+      enterStation: 输入车站
+      exitStation: 退出车站
       hardLeft: 硬左
       hardRight: 硬右
       left: 左转
@@ -35,6 +37,7 @@ otpUi:
       uTurnRight: 右掉头
     stepDepart: 走{heading}在{street}
     stepElevator: 乘坐电梯到 {street}
+    stepFollowSigns: 跟随指示牌 {street}
     stepGeneric: "{street} 在 {step}"
     stepHeading:
       east: 向东
@@ -45,6 +48,7 @@ otpUi:
       southeast: 东南
       southwest: 西南
       west: 向西
+    stepStation: "{step} 位于 {street}"
     summary: "{place} 至 {mode}"
     summaryAndDistance: "{place} 至 {distance} {mode}"
     summaryMode:
@@ -69,7 +73,7 @@ otpUi:
     flexAdvanceNotice: " 至少提前 {leadDays} 天"
     flexCallAhead: 提前打电话
     flexCallNumber: 拨打 {phoneNumber}
-    flexPickupMessage: 要走这条路，你必须{action}
+    flexPickupMessage: 要走这条路，你必须{action}{advanceNotice}
     stayOnBoard: 留在 {place} 的巴士上
     travelBy: "{mode} 旅行"
     travelByMode:
@@ -92,7 +96,7 @@ otpUi:
     expandDetails: (展开详情)
     fare: "票价: {fare}"
     fromLocation: 从 {location}
-    legDetails: 腿的细节
+    legDetails: 腿部情况
     operatedBy: 服务运营商 {agencyLink}
     ride: 乘坐
     rideDurationAndStops: "乘坐 {duration}{numStops, plural, =1 {} other { / # 站}}"

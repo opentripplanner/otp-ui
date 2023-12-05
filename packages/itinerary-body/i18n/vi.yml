@@ -25,6 +25,8 @@ otpUi:
       circleClockwise: Đi theo vòng tròn theo chiều kim đồng hồ
       circleCounterClockwise: Đi theo vòng tròn ngược chiều kim đồng hồ
       continue: Tiếp tục
+      enterStation: Nhập trạm
+      exitStation: Rời khỏi trạm
       hardLeft: Rẽ trái đột ngột
       hardRight: Rẽ phải đột ngột
       left: Rẽ trái
@@ -35,6 +37,7 @@ otpUi:
       uTurnRight: Quay mặt bên phải
     stepDepart: Đi về hướng {heading} trên đường {street}
     stepElevator: Đi thang máy đến {street}
+    stepFollowSigns: Đi theo biển hiệu đến {street}
     stepGeneric: "{step} trên đường {street}"
     stepHeading:
       east: đông
@@ -45,6 +48,7 @@ otpUi:
       southeast: đông nam
       southwest: tây nam
       west: tây
+    stepStation: "{step} tại {street}"
     summary: "{mode} đến {place}"
     summaryAndDistance: "{mode} {distance} đến {place}"
     summaryMode:

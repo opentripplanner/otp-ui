@@ -14,7 +14,7 @@ otpUi:
       transit: 公共交通
       walk: 步行
     settings:
-      bikeTolerance-label: 骑自行车的容忍度
+      bikeTolerance-label: 骑行容忍度
       bikeTolerance-labelHigh: 更多骑自行车
       bikeTolerance-labelLow: 少骑自行车
       bus-label: 公共汽车
@@ -25,7 +25,8 @@ otpUi:
       rail-label: 火车
       subway-label: 地铁
       tram-label: 电车
-      walkTolerance-label: 步行公差
+      walkReluctance-label: 避免步行
+      walkTolerance-label: 步行容忍度
       walkTolerance-labelHigh: 多走路
       walkTolerance-labelLow: 少走路
       wheelchair-label: 无障碍路由

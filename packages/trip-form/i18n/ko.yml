@@ -25,6 +25,7 @@ otpUi:
       rail-label: 기차
       subway-label: 지하철
       tram-label: 시가 전차
+      walkReluctance-label: 도보를 피하세요
       walkTolerance-label: 걷기 내성
       walkTolerance-labelHigh: 더 많이 걷기
       walkTolerance-labelLow: 덜 걷기

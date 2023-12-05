@@ -29,6 +29,8 @@ otpUi:
       circleClockwise: Follow circle clockwise
       circleCounterClockwise: Follow circle counterclockwise
       continue: Continue
+      enterStation: I-enter ang istasyon
+      exitStation: Lumabas sa Istasyon
       hardLeft: Hard left
       hardRight: Hard right
       left: Left
@@ -39,6 +41,7 @@ otpUi:
       uTurnRight: Right U-turn
     stepDepart: Head {heading} on {street}
     stepElevator: Take elevator to {street}
+    stepFollowSigns: Sundin ang mga palatandaan sa {street}
     stepGeneric: "{step} on {street}"
     stepHeading:
       east: east
@@ -47,7 +50,9 @@ otpUi:
       northwest: northwest
       south: south
       southeast: southeast
+      southwest: southwest
       west: west
+    stepStation: "{step} sa {street}"
     summary: "{mode} to {place}"
     summaryAndDistance: "{mode} {distance} to {place}"
     summaryMode:
@@ -62,12 +67,15 @@ otpUi:
     vehicleTitle: "{company} {vehicleType}"
     vehicleType:
       bike: Bisikleta
+      bikeshare: Shared na Bisikleta
       car: Sasakyan
       escooter: E-scooter
+      vehicle: Sasakyan
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} (na) minuto"
-    flexCallAhead: ""
+    flexCallAhead: tumawag nang maaga
+    flexCallNumber: tumawag sa {phoneNumber}
     flexPickupMessage: Para gamitin ang rutang ito, {action}{advanceNotice}.
     stayOnBoard: Manatiling on board sa {place}
     travelBy: Maglakbay sa pamamagitan ng {mode}
@@ -84,12 +92,16 @@ otpUi:
       today: Ngayong Araw
       tomorrow: Bukas
       yesterday: Kahapon
+    agencyExternalLink: "{agencyName} (External na Link)"
     alertsHeader: "{alertCount, plural, =1 {# alert} other {# alerts}}"
     arriveAt: Darating nang {place}
     disembarkAt: Bumaba sa {legDestination}
+    expandDetails: (I-expand ang mga detalye)
     fare: "Pamasahe: {fare}"
     fromLocation: mula sa {location}
+    legDetails: Mga detalye ng Paggalaw
     operatedBy: Ang serbisyo ay pinapatakbo ng {agencyLink}
+    ride: Sumakay
     rideDurationAndStops: "Ride {duration}{numStops, plural, =1 {} other { / # stops}}"
     routeDescription: "{routeName} <toPrefix>papuntang</toPrefix> {headsign}"
     stopId: ID ng Hintuan {stopId}
@@ -97,3 +109,4 @@ otpUi:
     stopViewer: Ihinto ang Viewer
     tripViewer: Viewer ng Biyahe
     typicalWait: "Karaniwang tagal ng paghihintay: {waitTime}"
+    zoomToLeg: Mag-zoom sa leg sa mapa

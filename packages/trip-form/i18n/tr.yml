@@ -3,6 +3,7 @@ otpUi:
     date: Tarih
     dateTimeSelector: Tarih/Saat Seçici
     depart: Kalkış saati
+    now: Şimdi Git
     time: Zaman
   ModeSelector:
     labels:
@@ -12,6 +13,7 @@ otpUi:
       transit: Geçiş
       walk: Yürüme
     settings:
+      bikeTolerance-label: Bisiklet Toleransı
       bus-label: Otobüs
       ferry-label: Feribot
       rail-label: Tren

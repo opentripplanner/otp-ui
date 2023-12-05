@@ -14,5 +14,8 @@ otpUi:
       alight: >-
         Bumaba sa <strong>{place}</strong> ({stopId}) nang <strong>{time, time,
         short}</strong>
+      board: >-
+        Sumakay sa <strong>{place}</strong> ({stopId}) nang <strong>{time, time,
+        short}</strong>
       continuesAs: Magpapatuloy bilang {routeDescription}
     depart: <strong>Aalis</strong> sa <strong>{place}</strong>

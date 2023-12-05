@@ -1,19 +1,36 @@
 otpUi:
   DateTimeSelector:
     arrive: Dumating bago ang
+    date: Petsa
+    dateTimeSelector: Selector ng Petsa/Oras
     depart: Umalis nang
     now: Umalis ngayon
+    time: Oras
   ModeSelector:
     labels:
       bicycle: Bisikleta
       car: Nagmamaneho
-      rent: Rental
+      rent: Magrenta
       transit: Pampublikong Transportasyon
       walk: Naglalakad
     settings:
+      bikeTolerance-label: Tolerance sa Pagbibisikleta
+      bikeTolerance-labelHigh: Mas Maraming Pagbibisikleta
+      bikeTolerance-labelLow: Mas Kaunting Pagbibisikleta
       bus-label: Bus
+      carTolerance-label: Tolerance ng Pagmamaneho
+      carTolerance-labelHigh: Mas Maraming Pagmamaneho
+      carTolerance-labelLow: Mas Kaunting Pagmamaneho
       ferry-label: Ferry
       rail-label: Tren
+      subway-label: Subway
+      tram-label: Tram
+      walkReluctance-label: Iwasan ang Paglalakad
+      walkTolerance-label: Tolerance sa Paglalakad
+      walkTolerance-labelHigh: Mas Maraming Paglalakad
+      walkTolerance-labelLow: Mas Kaunting Paglalakad
+      wheelchair-label: Accessible na Pagruruta
+    settingsLabel: "{mode} mga setting"
   SettingsSelectorPanel:
     bikeOnly: Bisikleta Lang
     escooterOnly: E-scooter Lang

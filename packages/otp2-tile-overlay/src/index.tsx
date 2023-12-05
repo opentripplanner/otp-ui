@@ -3,6 +3,7 @@ import {
   ConfiguredCompany,
   MapLocationActionArg,
   Stop,
+  StopEventHandler,
 } from "@opentripplanner/types"
 // eslint-disable-next-line prettier/prettier
 import type { EventData } from "mapbox-gl"
@@ -53,7 +54,7 @@ const OTP2TileLayerWithPopup = ({
    * A method fired when the stop viewer is opened in the default popup. If this method is
    * not passed, the stop viewer link will not be shown.
    */
-  setViewedStop?: (stop: Stop) => void
+  setViewedStop?: StopEventHandler
   /**
    * Determines which layer of the OTP2 tile data to display. Also determines icon color.
    */
@@ -120,10 +121,10 @@ const OTP2TileLayerWithPopup = ({
     map?.on("click", id, onMapClick || defaultClickHandler)
 
     return () => {
-        map?.off("mouseenter", id, onLayerEnter);
-        map?.off("mouseleave", id, onLayerLeave);
-        map?.off("click", id, onMapClick || defaultClickHandler);
-      };
+      map?.off("mouseenter", id, onLayerEnter);
+      map?.off("mouseleave", id, onLayerLeave);
+      map?.off("click", id, onMapClick || defaultClickHandler);
+    };
   }, [id, map])
 
   return (
@@ -145,13 +146,13 @@ const OTP2TileLayerWithPopup = ({
           // TODO: only set null if the x is clicked, not a new stop
           onClose={() => setClickedEntity(null)}
         >
-            <EntityPopup
-              configCompanies={configCompanies}
-              entity={{ ...clickedEntity, id: clickedEntity?.id || clickedEntity?.gtfsId }}
-              setLocation={setLocation ? (location) => { setClickedEntity(null); setLocation(location) } : null}
-              setViewedStop={setViewedStop}
-            />
-         
+          <EntityPopup
+            configCompanies={configCompanies}
+            entity={{ ...clickedEntity, id: clickedEntity?.id || clickedEntity?.gtfsId }}
+            setLocation={setLocation ? (location) => { setClickedEntity(null); setLocation(location) } : null}
+            setViewedStop={setViewedStop}
+          />
+
         </Popup>
       )}
     </>

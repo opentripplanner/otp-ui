@@ -15,6 +15,9 @@ otpUi:
     hideDetail: 隐藏细节
     minutesActive: "活动时间: <strong>{minutes} 分钟</strong>"
     showDetail: 显示详细资料
+    timeActiveDescription: >
+      在本次行程中，您将步行 <strong>{walkMinutes} 分钟</strong>，骑行<strong>{bikeMinutes}
+      分钟</strong>。
     title: 行程详情
     tncFare: "{companies} 票价: <strong>{minTNCFare} - {maxTNCFare}</strong>"
     transferDiscountExplanation: 应用了 {transferAmount} 的转让折扣

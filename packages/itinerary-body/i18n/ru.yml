@@ -25,6 +25,8 @@ otpUi:
       circleClockwise: Двигайтесь по кругу по часовой стрелке
       circleCounterClockwise: Двигайтесь по кругу против часовой стрелки
       continue: Продолжайте движение
+      enterStation: Введите станцию
+      exitStation: Выйти из станции
       hardLeft: Строго налево
       hardRight: Строго направо
       left: Налево
@@ -35,6 +37,7 @@ otpUi:
       uTurnRight: Правый разворот
     stepDepart: Направляйтесь {heading} на улице {street}
     stepElevator: Воспользуйтесь подъемом к улице {street}
+    stepFollowSigns: Следуйте указателям {street}
     stepGeneric: "{step} на улице {street}"
     stepHeading:
       east: на восток
@@ -45,6 +48,7 @@ otpUi:
       southeast: на юго-восток
       southwest: на юго-запад
       west: на запад
+    stepStation: "{step} __ {street}"
     summary: "{mode} до места «{place}»"
     summaryAndDistance: "{mode}{distance} до места «{place}»"
     summaryMode:
@@ -59,13 +63,15 @@ otpUi:
     vehicleTitle: "{vehicleType} «{company}»"
     vehicleType:
       bike: Велосипед
+      bikeshare: Bелосипед в прокат
       car: Авто
       escooter: Электросамокат
+      vehicle: Транспортное средство
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# ч }}{minutes} мин"
-    flexCallAhead: наберите заранее
-    flexCallNumber: наберите {phoneNumber}
+    flexCallAhead: звоните заранее
+    flexCallNumber: звоните {phoneNumber}
     flexPickupMessage: Чтобы воспользоваться этим маршрутом, {action}{advanceNotice}.
     stayOnBoard: Не выходите в месте {place}
     travelBy: Передвижение {mode}
@@ -82,14 +88,18 @@ otpUi:
       today: Сегодня
       tomorrow: Завтра
       yesterday: Вчера
+    agencyExternalLink: "{agencyName} (Ссылка на внешний источник)"
     alertsHeader: >-
       {alertCount, plural, =1 {# предупреждение!} other {Несколько
       предупреждений (#)!}}
     arriveAt: Прибытие в {place}
     disembarkAt: Выходите в месте {legDestination}
+    expandDetails: (Развернуть детали)
     fare: "Стоимость проезда: {fare}"
     fromLocation: Из места «{location}»
+    legDetails: Детальное описание отрезка маршрута
     operatedBy: Услуги, предоставляемые агентством «{agencyLink}»
+    ride: Поездка
     rideDurationAndStops: "Поездка: {duration}{numStops, plural, =1 {} other { / остановки (#)}}"
     routeDescription: "{routeName} <toPrefix>—</toPrefix> {headsign}"
     stopId: Идентификатор остановки {stopId}
@@ -97,3 +107,4 @@ otpUi:
     stopViewer: Средство просмотра остановок
     tripViewer: Средство просмотра поездки
     typicalWait: "Типичное время ожидания: {waitTime}"
+    zoomToLeg: Приблизить отрезок на карте

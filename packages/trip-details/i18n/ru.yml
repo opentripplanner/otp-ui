@@ -16,8 +16,18 @@ otpUi:
     departure: >-
       Прибытие: <strong>{departureDate, date, long}</strong> в
       <strong>{departureDate, time, short}</strong>
+    hideDetail: Скрыть детали
+    minutesActive: >-
+      Время в активном режиме: <strong>{minutes, plural, one {# минуту} other {#
+      минуты}}</strong>
+    showDetail: Показать детали
+    timeActiveDescription: >
+      Проделав этот маршрут, вы потратите <strong>{walkMinutes, plural, one {#
+      минуту} other {# минуты}}</strong> на ходьбу и<strong>{bikeMinutes,
+      plural, one {# минуту} other {# минуты}}</strong> на езду на велосипеде.
     title: Подробные сведения о поездке
     tncFare: "Стоимость проезда в компаниях {companies}: <strong>{minTNCFare}\_— {maxTNCFare}</strong>"
+    transferDiscountExplanation: Применяется скидка на пересадку в размере {transferAmount}
     transitFare: Стоимость проезда в общественном транспорте
     transitFareEntry: "{name}: <strong>{value}</strong>"
     tripIncludesFlex: Эта поездка включает гибкие маршруты. {extraMessage}

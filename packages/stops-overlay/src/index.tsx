@@ -1,5 +1,9 @@
 import { Popup } from "@opentripplanner/base-map";
-import { MapLocationActionArg, Stop } from "@opentripplanner/types";
+import {
+  MapLocationActionArg,
+  Stop,
+  StopEventHandler
+} from "@opentripplanner/types";
 import { EventData } from "mapbox-gl";
 import { Layer, Source, useMap } from "react-map-gl";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
@@ -48,7 +52,7 @@ type Props = {
   /**
    * A method fired when the stop viewer is opened in the popup
    */
-  setViewedStop?: (stop: Stop) => void;
+  setViewedStop?: StopEventHandler;
 };
 
 /**
@@ -169,8 +173,8 @@ const StopsOverlay = (props: Props): JSX.Element => {
           type="circle"
         />
         <Layer
-          id="higlightedStop"
           filter={["==", "highlighted", true]}
+          id="higlightedStop"
           paint={{
             "circle-color": highlightedStopColor || "#ff0000",
             "circle-opacity": 1,

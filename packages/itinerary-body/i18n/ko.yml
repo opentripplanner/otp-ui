@@ -25,6 +25,8 @@ otpUi:
       circleClockwise: 시계 방향으로 원을 따라갑니다
       circleCounterClockwise: 시계 반대 방향으로 서클을 따르십시오
       continue: 계속
+      enterStation: 역 입력
+      exitStation: 역 나가기
       hardLeft: 날카로운 왼쪽
       hardRight: 날카로운 권리
       left: 왼쪽
@@ -35,6 +37,7 @@ otpUi:
       uTurnRight: 유턴
     stepDepart: "{street} 에서 {heading}으로 향하다"
     stepElevator: 엘리베이터를 타고 {street} 이동
+    stepFollowSigns: "다음까지 표지판을 따라가십시오: {street}"
     stepGeneric: "{street} 에 {step}"
     stepHeading:
       east: 동쪽
@@ -45,6 +48,7 @@ otpUi:
       southeast: 남동쪽
       southwest: 남서쪽
       west: 서쪽
+    stepStation: "{step} 에서 {street}"
     summary: "{place} 에 {mode}"
     summaryAndDistance: "{place} 에 {mode} {distance}"
     summaryMode:
