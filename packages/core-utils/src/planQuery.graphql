@@ -236,8 +236,8 @@ query Plan(
           id
         }
       }
-      numberOfTransfers
       startTime
+      transfers: numberOfTransfers
       waitingTime
       walkTime
     }
