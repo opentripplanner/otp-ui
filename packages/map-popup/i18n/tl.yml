@@ -3,7 +3,7 @@ otpUi:
     availableDocks: 'Mga available na dock: {value}'
     floatingBike: 'Free-floating na bisikleta: {name}'
     stopViewer: Ihinto ang Viewer
-    stopId: 'Stop ID: {stopId}'
+    stopId: 'ID ng Hintuan: {stopId}'
     floatingCar: '{company} {name}'
     availableBikes: 'Mga available na bisikleta: {value}'
     floatingEScooter: 'E-scooter: {name}'
