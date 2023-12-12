@@ -215,6 +215,16 @@ describe("query-gen", () => {
       [["BUS", "RAIL", "GONDOLA", "TRAM"]]
     );
     expectModes(
+      // Trolleybus exists
+      ["TROLLEYBUS", "TRANSIT"],
+      [["TROLLEYBUS"]]
+    );
+    expectModes(
+      // Trolleybus exists
+      ["TROLLEYBUS", "BUS", "TRANSIT"],
+      [["TROLLEYBUS", "BUS"]]
+    );
+    expectModes(
       // Transit is required to enable other transit submodes
       ["TRANSIT"],
       [["TRANSIT"]]
