@@ -16,6 +16,7 @@ import {
   generateModeSettingValues,
   populateSettingWithValue
 } from "./MetroModeSelector/utils";
+import { ModeSettingRenderer } from "./MetroModeSelector/SubSettingsPane";
 import TripOptions, { Styled as TripOptionsStyled } from "./TripOptions";
 import defaultModeSettings from "../modeSettings.yml";
 
@@ -32,6 +33,7 @@ export {
   MetroModeSelector,
   ModeButton,
   ModeSelector,
+  ModeSettingRenderer,
   populateSettingWithValue,
   SettingsSelectorPanel,
   SliderSelector,

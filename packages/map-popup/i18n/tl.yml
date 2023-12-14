@@ -5,5 +5,5 @@ otpUi:
     floatingBike: "Free-floating na bisikleta: {name}"
     floatingCar: "{company} {name}"
     floatingEScooter: "E-scooter: {name}"
-    stopId: "Stop ID: {stopId}"
+    stopId: "ID ng Hintuan: {stopId}"
     stopViewer: Ihinto ang Viewer

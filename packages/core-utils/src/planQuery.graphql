@@ -241,6 +241,7 @@ query Plan(
         }
       }
       startTime
+      transfers: numberOfTransfers
       waitingTime
       walkTime
     }

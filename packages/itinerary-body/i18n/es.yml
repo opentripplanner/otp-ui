@@ -81,6 +81,12 @@ otpUi:
       car: en carro
       escooter: en patineta
       walk: a pie
+    tripAccessibility:
+      inaccessible: inaccesible
+      itineraryAccessibility: "Accesibilidad para sillas de ruedas en este viaje: "
+      legAccessibility: "Accesibilidad para sillas de ruedas en este tramo del viaje: "
+      likelyAccessible: probablemente accesible
+      unclear: desconocido
     viewOnMap: Ver en el mapa
   TransitLegBody:
     AlertsBody:
