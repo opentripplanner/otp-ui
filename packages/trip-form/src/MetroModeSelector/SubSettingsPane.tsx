@@ -73,13 +73,18 @@ const FormLabelIconWrapper = styled.span`
   }
 `;
 
-const ModeSettingRenderer = ({
+/**
+ * Renders a mode setting definition
+ * @param onChange function for when the value changes, and the setting to be rendered
+ * @returns JSX Element to render
+ */
+export const ModeSettingRenderer = ({
   onChange,
   setting
 }: {
   onChange: (QueryParamChangeEvent) => void;
   setting: ModeSetting;
-}) => {
+}): JSX.Element => {
   const intl = useIntl();
   const { label, labelHigh, labelLow } = generateModeSettingLabels(
     setting.type,
