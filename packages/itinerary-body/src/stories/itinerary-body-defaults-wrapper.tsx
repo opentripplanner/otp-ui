@@ -58,7 +58,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
       showViewTripButton,
       styledItinerary,
       TimeColumnContent,
-      toRouteAbbreviation = r => r.toString().substr(0, 2),
+      toRouteAbbreviation = r => r?.toString()?.substr(0, 2),
       TransitLegSubheader,
       TransitLegSummary,
       AlertToggleIcon,
