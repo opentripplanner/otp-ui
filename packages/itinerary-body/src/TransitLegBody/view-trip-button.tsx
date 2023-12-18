@@ -28,13 +28,13 @@ class ViewTripButton extends Component<Props> {
 
   render(): ReactElement {
     return (
-      <S.ViewerButton onClick={this.onClick} type="button">
+      <S.ViewerLink onClick={this.onClick} tabIndex={0}>
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.TransitLegBody.tripViewer"]}
           description="Link text to the trip viewer"
           id="otpUi.TransitLegBody.tripViewer"
         />
-      </S.ViewerButton>
+      </S.ViewerLink>
     );
   }
 }

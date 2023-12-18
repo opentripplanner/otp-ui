@@ -85,7 +85,7 @@ export const AnchorButton = styled.a`
   }
 `;
 
-export const LinkButton = styled.a`
+export const StyledLink = styled.a`
   color: #008;
   cursor: pointer;
   margin-left: 5px;
@@ -95,7 +95,7 @@ export const LinkButton = styled.a`
   }
 `;
 
-export const ViewerButton = styled(LinkButton)`
+export const ViewerLink = styled(StyledLink)`
   padding-left: 0px;
 
   &:before {
@@ -429,7 +429,7 @@ export const TimeColumn = styled.div`
   font-size: 0.9em;
 `;
 
-export const MapButton = styled(LinkButton)`
+export const MapButton = styled(StyledLink)`
   padding: 3px 10px 3px 10px;
   border: 0;
   margin-top: -15px;
