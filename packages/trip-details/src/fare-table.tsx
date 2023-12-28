@@ -122,13 +122,16 @@ const FareTypeTable = ({
           <tr key={index}>
             <td className="no-zebra">{getLegRouteName(leg)}</td>
             {colsToRender.map(col => {
-              const fare = getLegCost(leg, col.mediumId, col.riderCategoryId);
+              const { price, transferAmount } = getLegCost(
+                leg,
+                col.mediumId,
+                col.riderCategoryId
+              );
               return (
                 <td
                   key={col.columnHeaderKey}
                   title={
-                    "transferAmount" in fare &&
-                    fare?.transferAmount?.amount > 0 &&
+                    transferAmount?.amount > 0 &&
                     intl.formatMessage(
                       {
                         defaultMessage:
@@ -141,9 +144,9 @@ const FareTypeTable = ({
                       },
                       {
                         transferAmount: intl.formatNumber(
-                          fare?.transferAmount?.amount,
+                          transferAmount?.amount,
                           {
-                            currency: fare?.price?.currency?.code,
+                            currency: price?.currency?.code,
                             currencyDisplay: "narrowSymbol",
                             style: "currency"
                           }
@@ -152,16 +155,14 @@ const FareTypeTable = ({
                     )
                   }
                 >
-                  {"transferAmount" in fare &&
-                    fare?.transferAmount?.amount > 0 && (
-                      <>
-                        <TransferIcon size={16} />{" "}
-                      </>
-                    )}
-                  {renderFare(
-                    fare?.price?.currency?.code,
-                    fare?.price?.amount || 0
+                  {transferAmount?.amount > 0 && (
+                    <>
+                      <TransferIcon size={16} />{" "}
+                    </>
                   )}
+                  {price
+                    ? renderFare(price?.currency?.code, price?.amount)
+                    : "-"}
                 </td>
               );
             })}
