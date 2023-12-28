@@ -1,4 +1,4 @@
-import { Leg } from "@opentripplanner/types";
+import { FareProductSelector, Leg } from "@opentripplanner/types";
 import React from "react";
 import styled from "styled-components";
 import { Transfer } from "@styled-icons/boxicons-regular/Transfer";
@@ -77,23 +77,28 @@ const useGetHeaderString = (headerKey: string): string => {
   });
 };
 
+const hasFareInfo = (column: FareProductSelector) => (leg: Leg) =>
+  getLegCost(leg, column.mediumId, column.riderCategoryId).price !== undefined;
+
 const FareTypeTable = ({
   cols,
   headerKey,
   legs
 }: FareTypeTableProps): JSX.Element => {
   const intl = useIntl();
-  // FIXME: Is there a nicer way to do this?
+
+  const filteredLegs = legs.filter(leg => leg.fareProducts?.length > 0);
   const colsToRender = cols
+    .filter(col => filteredLegs.some(hasFareInfo(col)))
     .map(col => ({
       ...col,
-      total: getItineraryCost(legs, col.mediumId, col.riderCategoryId)
-    }))
-    .filter(col => col.total !== undefined);
+      total: filteredLegs.every(hasFareInfo(col))
+        ? getItineraryCost(filteredLegs, col.mediumId, col.riderCategoryId)
+        : undefined
+    }));
 
   const headerString = useGetHeaderString(headerKey);
 
-  const filteredLegs = legs.filter(leg => leg.fareProducts?.length > 0);
   if (colsToRender.length) {
     return (
       <Table>
@@ -113,7 +118,9 @@ const FareTypeTable = ({
               >
                 {boldText(useGetHeaderString(col.columnHeaderKey))}
                 <br />
-                {renderFare(fare?.currency?.code, fare?.amount || 0)}
+                {fare?.amount !== undefined
+                  ? renderFare(fare?.currency?.code, fare?.amount)
+                  : "-"}
               </th>
             );
           })}
