@@ -26,6 +26,7 @@ type OTPQueryParams = {
   arriveBy: boolean;
   date?: string;
   from: LonLatOutput & { name?: string };
+  mobilityProfile?: string;
   modes: TransportMode[];
   modeSettings: ModeSetting[];
   time?: string;
@@ -217,6 +218,7 @@ export function generateOtp2Query(
     banned,
     date,
     from,
+    mobilityProfile,
     modes,
     modeSettings,
     numItineraries,
@@ -258,6 +260,7 @@ export function generateOtp2Query(
       carReluctance,
       date,
       fromPlace: `${from.name}::${from.lat},${from.lon}}`,
+      mobilityProfile,
       modes,
       numItineraries,
       preferred,
