@@ -111,6 +111,8 @@ query Plan(
             code
             gtfsId
             id
+            lat
+            lon
           }
           vertexType
         }
@@ -213,6 +215,8 @@ query Plan(
             code
             gtfsId
             id
+            lat
+            lon
           }
           vertexType
         }
