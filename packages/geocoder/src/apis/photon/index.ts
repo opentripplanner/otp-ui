@@ -7,8 +7,7 @@ import type { LonLatOutput } from "@conveyal/lonlat"
 import type { AutocompleteQuery, ReverseQuery, SearchQuery } from "../../geocoders/types"
 import type { PhotonResponse } from "./types";
 
-const AUTOCOMPLETE_URL =
-    "https://photon.komoot.io/api";
+const AUTOCOMPLETE_URL = "https://photon.komoot.io/api";
 const GEOCODE_URL = "https://photon.komoot.io/api";
 const REVERSE_URL = "https://photon.komoot.io/reverse";
 
@@ -59,7 +58,8 @@ async function autocomplete({
   focusPoint,
   options,
   size = 20,
-  text
+  text,
+  url = AUTOCOMPLETE_URL
 }: AutocompleteQuery): Promise<PhotonResponse> {
   // build query
   const query: PhotonQuery = { limit: size, q: text };
@@ -68,12 +68,8 @@ async function autocomplete({
     const { lat, lon }: LonLatOutput = normalize(focusPoint);
     query.lat = lat.toString();
     query.lon = lon.toString();
-    const res = await run({
-      options,
-      query,
-      url: AUTOCOMPLETE_URL
-    });
-    return res
+    const res = await run({ options, query, url });
+    return res;
   }
   if (boundary) {
     const { country, rect } = boundary;
@@ -88,11 +84,7 @@ async function autocomplete({
     }
   }
 
-  return run({
-    options,
-    query,
-    url: AUTOCOMPLETE_URL
-  });
+  return run({ options, query, url });
 }
 
 /**
@@ -111,7 +103,8 @@ function search({
   focusPoint,
   options,
   size = 10,
-  text
+  text,
+  url = GEOCODE_URL
 }: SearchQuery): Promise<PhotonResponse> {
   if (!text) return Promise.resolve({ items: [] });
 
@@ -126,7 +119,7 @@ function search({
     query.lon = lon.toString();
   }
 
-  return run({ options, query, url: GEOCODE_URL });
+  return run({ options, query, url });
 }
 
 /**
@@ -139,7 +132,7 @@ function search({
  * @param  {Object} $0.options                  options to pass to fetch (e.g., custom headers)
  * @return {Promise}                            A Promise that'll get resolved with search result
  */
-function reverse({ options, point }: ReverseQuery): Promise<PhotonResponse> {
+function reverse({ options, point, url = REVERSE_URL }: ReverseQuery): Promise<PhotonResponse> {
   const query: PhotonQuery = {
   };
 
@@ -151,7 +144,7 @@ function reverse({ options, point }: ReverseQuery): Promise<PhotonResponse> {
     throw new GeocoderException("No point provided for reverse geocoder.");
   }
 
-  return run({ options, query, url: REVERSE_URL }).then(res => ({
+  return run({ options, query, url }).then(res => ({
     ...res,
     point
   }));

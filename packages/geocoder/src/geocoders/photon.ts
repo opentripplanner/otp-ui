@@ -40,7 +40,7 @@ export default class PhotonGeocoder extends Geocoder {
       focusPoint,
       options,
       size,
-      url: baseUrl ? `${baseUrl}/autocomplete` : undefined,
+      url: baseUrl ? `${baseUrl}/api` : undefined,
       ...query
     };
   }
@@ -58,7 +58,7 @@ export default class PhotonGeocoder extends Geocoder {
       focusPoint,
       options,
       size,
-      url: baseUrl ? `${baseUrl}/search` : undefined,
+      url: baseUrl ? `${baseUrl}/api` : undefined,
       ...query
     };
   }
