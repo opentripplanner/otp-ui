@@ -19,13 +19,13 @@ export default class ViewStopButton extends Component<Props> {
 
   render(): ReactElement {
     return (
-      <S.ViewerLink onClick={this.onClick} tabIndex={0}>
+      <S.ViewerButton href="#" onClick={this.onClick} tabIndex={0}>
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.TransitLegBody.stopViewer"]}
           description="Text for link that opens the stop viewer"
           id="otpUi.TransitLegBody.stopViewer"
         />
-      </S.ViewerLink>
+      </S.ViewerButton>
     );
   }
 }
