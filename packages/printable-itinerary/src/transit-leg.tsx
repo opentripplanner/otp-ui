@@ -27,6 +27,12 @@ export default function TransitLeg({
   const stopIdFrom = getDisplayedStopId(leg.from);
   const stopIdTo = getDisplayedStopId(leg.to);
 
+  // TODO: core-utils needs some larger-scale type fixes
+  // null is an object, so we need to redefine it as undefined to prevent
+  // it from being read as an object. The long term solution is to avoid
+  // using type checks for this purpose
+  if (leg.route === null) leg.route = undefined;
+
   const routeDescription = (
     <>
       <strong>{getLegRouteShortName(leg)}</strong> <S.RouteLongName leg={leg} />
