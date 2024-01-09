@@ -38,7 +38,8 @@ export function getBannedRoutesFromSubmodes(
   const disabledSubmodes = modeSettings.reduce<string[]>((prev, cur) => {
     if (cur.type === "SUBMODE") {
       if (!cur.value) {
-        prev.push(cur.addTransportMode.mode);
+        const modeName = cur.modeOverride || cur.addTransportMode.mode;
+        prev.push(modeName);
       }
     }
     return prev;
