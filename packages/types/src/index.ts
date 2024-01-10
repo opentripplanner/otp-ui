@@ -736,6 +736,7 @@ export type TransitSubmodeCheckboxOption = {
   addTransportMode: TransportMode;
   default?: boolean;
   label: string;
+  modeOverride?: string;
   type: "SUBMODE";
   value?: boolean;
 };
