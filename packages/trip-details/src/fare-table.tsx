@@ -8,7 +8,7 @@ import {
   getLegCost,
   getLegRouteName
 } from "@opentripplanner/core-utils/lib/itinerary";
-import { useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { flatten } from "flat";
 import { boldText, renderFare } from "./utils";
 
@@ -16,6 +16,7 @@ import { FareLegTableProps, FareTableLayout } from "./types";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
+import { InvisibleA11yLabel } from "./styled";
 
 // HACK: We should flatten the messages loaded above because
 // the YAML loaders behave differently between webpack and our version of jest:
@@ -118,9 +119,16 @@ const FareTypeTable = ({
               >
                 {boldText(useGetHeaderString(col.columnHeaderKey))}
                 <br />
-                {fare?.amount !== undefined
-                  ? renderFare(fare?.currency?.code, fare?.amount)
-                  : "-"}
+                {fare?.amount !== undefined ? (
+                  renderFare(fare?.currency?.code, fare?.amount)
+                ) : (
+                  <>
+                    -
+                    <InvisibleA11yLabel>
+                      <FormattedMessage id="otpUi.TripDetails.legMissingFareInfo" />
+                    </InvisibleA11yLabel>
+                  </>
+                )}
               </th>
             );
           })}
@@ -167,9 +175,16 @@ const FareTypeTable = ({
                       <TransferIcon size={16} />{" "}
                     </>
                   )}
-                  {price
-                    ? renderFare(price?.currency?.code, price?.amount)
-                    : "-"}
+                  {price ? (
+                    renderFare(price?.currency?.code, price?.amount)
+                  ) : (
+                    <>
+                      -
+                      <InvisibleA11yLabel>
+                        <FormattedMessage id="otpUi.TripDetails.missingFareTotal" />
+                      </InvisibleA11yLabel>
+                    </>
+                  )}
                 </td>
               );
             })}
