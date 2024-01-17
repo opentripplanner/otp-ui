@@ -22,7 +22,7 @@ export default function AccessibilityAnnotation({
       <S.ModeIcon>
         <LegIcon leg={leg} />
       </S.ModeIcon>
-      {leg.accessibilityScore !== null && leg.accessibilityScore > -1 && (
+      {!(leg.accessibilityScore === undefined) && (
         <AccessibilityRating
           gradationMap={accessibilityScoreGradationMap}
           grayscale={grayscale}
