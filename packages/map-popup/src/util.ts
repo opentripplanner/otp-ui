@@ -21,7 +21,11 @@ export function makeDefaultGetEntityName(
     let stationName: string | null = entity.name || entity.id;
     // If the station name or id is a giant UUID (with more than 3 "-" characters)
     // best not to show that at all. The company name will still be shown.
-    if ((stationName.match(/-/g) || []).length > 3) {
+    // Also ignore "Default Vehicle Type"
+    if (
+      (stationName.match(/-/g) || []).length > 3 ||
+      stationName === "Default vehicle type"
+    ) {
       stationName = null;
     }
 

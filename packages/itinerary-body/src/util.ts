@@ -157,10 +157,12 @@ export function getPlaceName(
     companies
   );
   if (
+    // Don't ever show this useless OTP default string
+    place.name === "Default vehicle type" ||
     (place.name.match(/-/g) || []).length > 3 ||
     company?.overridePlaceNames
   ) {
-    if (company && intl) {
+    if (intl) {
       return intl.formatMessage(
         {
           defaultMessage: defaultMessages["otpUi.AccessLegBody.vehicleTitle"],
@@ -168,7 +170,7 @@ export function getPlaceName(
           id: "otpUi.AccessLegBody.vehicleTitle"
         },
         {
-          company: company.label,
+          company: company?.label,
           vehicleType: getVehicleType(place.vertexType, intl)
         }
       );
