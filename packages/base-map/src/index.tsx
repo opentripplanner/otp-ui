@@ -61,6 +61,7 @@ const BaseMap = ({
   maxZoom,
   onClick,
   onContextMenu,
+  showEverything,
   onViewportChanged,
   style,
   zoom: initZoom = 12
@@ -81,7 +82,6 @@ const BaseMap = ({
       onViewportChanged(viewState);
     }
   }, [viewState]);
-
   useEffect(() => {
     if (center?.[0] === null || center?.[1] === null) return;
 
@@ -111,6 +111,13 @@ const BaseMap = ({
   const [hiddenLayers, setHiddenLayers] = useState(
     toggleableLayers.filter(layer => !layer?.visible).map(layer => layer.id)
   );
+
+  useEffect(() => {
+    if (showEverything && hiddenLayers.length > 0) {
+      setHiddenLayers([]);
+    }
+  }, [showEverything, hiddenLayers]);
+
   const [activeBaseLayer, setActiveBaseLayer] = useState(
     typeof baseLayer === "object" ? baseLayer?.[0] : baseLayer
   );
@@ -194,6 +201,7 @@ const BaseMap = ({
                   <label>
                     <input
                       checked={!hiddenLayers.includes(layer.id)}
+                      disabled={showEverything}
                       id={layer.id}
                       onChange={() => {
                         const updatedLayers = [...hiddenLayers];
