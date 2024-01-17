@@ -41,6 +41,10 @@ type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
   onContextMenu?: (e: unknown) => void;
   /** A callback method which is fired when the map zoom or map bounds change */
   onViewportChanged?: (e: State) => void;
+  /** When set to true, all hidden layers will be removed. No layers will be uncheckable until
+   * it is set to false
+   */
+  showEverything?: boolean;
   /** An initial zoom value for the map */
   zoom?: number;
 };
