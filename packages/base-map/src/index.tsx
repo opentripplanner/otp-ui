@@ -115,12 +115,8 @@ const BaseMap = ({
   const [hiddenLayers, setHiddenLayers] = useState(
     toggleableLayers.filter(layer => !layer?.visible).map(layer => layer.id)
   );
-
-  useEffect(() => {
-    if (showEverything && hiddenLayers.length > 0) {
-      setHiddenLayers([]);
-    }
-  }, [showEverything, hiddenLayers]);
+  const computedHiddenLayers =
+    showEverything && hiddenLayers.length > 0 ? [] : hiddenLayers;
 
   const [activeBaseLayer, setActiveBaseLayer] = useState(
     typeof baseLayer === "object" ? baseLayer?.[0] : baseLayer
@@ -204,7 +200,7 @@ const BaseMap = ({
                   {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                   <label>
                     <input
-                      checked={!hiddenLayers.includes(layer.id)}
+                      checked={!computedHiddenLayers.includes(layer.id)}
                       disabled={showEverything}
                       id={layer.id}
                       onChange={() => {
@@ -232,7 +228,7 @@ const BaseMap = ({
       {Array.isArray(children)
         ? children
             .flat(10)
-            .filter(child => !hiddenLayers.includes(child?.props?.id))
+            .filter(child => !computedHiddenLayers.includes(child?.props?.id))
         : children}
     </Map>
   );
