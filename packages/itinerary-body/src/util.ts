@@ -162,19 +162,17 @@ export function getPlaceName(
     (place.name.match(/-/g) || []).length > 3 ||
     company?.overridePlaceNames
   ) {
-    if (intl) {
-      return intl.formatMessage(
-        {
-          defaultMessage: defaultMessages["otpUi.AccessLegBody.vehicleTitle"],
-          description: "Formats rental vehicle company and type",
-          id: "otpUi.AccessLegBody.vehicleTitle"
-        },
-        {
-          company: company?.label,
-          vehicleType: getVehicleType(place.vertexType, intl)
-        }
-      );
-    }
+    return intl.formatMessage(
+      {
+        defaultMessage: defaultMessages["otpUi.AccessLegBody.vehicleTitle"],
+        description: "Formats rental vehicle company and type",
+        id: "otpUi.AccessLegBody.vehicleTitle"
+      },
+      {
+        company: company?.label,
+        vehicleType: getVehicleType(place.vertexType, intl)
+      }
+    );
   }
   // Default to place name
   return place.name;
