@@ -157,10 +157,11 @@ export function getPlaceName(
     companies
   );
   if (
+    intl &&
     // Don't ever show this useless OTP default string
-    place.name === "Default vehicle type" ||
-    (place.name.match(/-/g) || []).length > 3 ||
-    company?.overridePlaceNames
+    (place.name === "Default vehicle type" ||
+      (place.name.match(/-/g) || []).length > 3 ||
+      company?.overridePlaceNames)
   ) {
     return intl.formatMessage(
       {
