@@ -125,7 +125,7 @@ const FareTypeTable = ({
                   <>
                     -
                     <InvisibleA11yLabel>
-                      <FormattedMessage id="otpUi.TripDetails.legMissingFareInfo" />
+                      <FormattedMessage id="otpUi.TripDetails.missingFareTotal" />
                     </InvisibleA11yLabel>
                   </>
                 )}
@@ -181,7 +181,7 @@ const FareTypeTable = ({
                     <>
                       -
                       <InvisibleA11yLabel>
-                        <FormattedMessage id="otpUi.TripDetails.missingFareTotal" />
+                        <FormattedMessage id="otpUi.TripDetails.legMissingFareInfo" />
                       </InvisibleA11yLabel>
                     </>
                   )}
