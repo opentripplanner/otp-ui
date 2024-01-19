@@ -59,29 +59,32 @@ const AccessibilityRating = ({
 }: Props): ReactElement => {
   const intl = useIntl();
   // Provide default mapping
-  const mapping = gradationMap || {
-    0.0: {
-      color: "#ffe4e5",
-      icon: "❌",
-      text: intl.formatMessage({
-        id: `otpUi.ItineraryBody.tripAccessibility.inaccessible`
-      })
-    },
-    0.5: {
-      color: "#dbe9ff",
-      icon: "？",
-      text: intl.formatMessage({
-        id: `otpUi.ItineraryBody.tripAccessibility.unclear`
-      })
-    },
-    0.9: {
-      color: "#bfffb5",
-      icon: "✅",
-      text: intl.formatMessage({
-        id: `otpUi.ItineraryBody.tripAccessibility.likelyAccessible`
-      })
-    }
-  };
+  const mapping =
+    gradationMap && Object.keys(gradationMap).length
+      ? gradationMap
+      : {
+          0.0: {
+            color: "#ffe4e5",
+            icon: "❌",
+            text: intl.formatMessage({
+              id: `otpUi.ItineraryBody.tripAccessibility.inaccessible`
+            })
+          },
+          0.5: {
+            color: "#dbe9ff",
+            icon: "？",
+            text: intl.formatMessage({
+              id: `otpUi.ItineraryBody.tripAccessibility.unclear`
+            })
+          },
+          0.9: {
+            color: "#bfffb5",
+            icon: "✅",
+            text: intl.formatMessage({
+              id: `otpUi.ItineraryBody.tripAccessibility.likelyAccessible`
+            })
+          }
+        };
 
   // Find the highest (including equality) key for our score.
   const mappedKey: number = parseFloat(
