@@ -21,13 +21,15 @@ export default class OTPGeocoder extends Geocoder {
 
 
   rewriteAutocompleteResponse(response: OTPGeocoderResponse): MultiGeocoderResponse {
+    const generateLabel = stop => stop.code ? `${stop.name} (${stop.code})` : stop.name
+
     return {
         features: response?.results?.map(stop => ({
             geometry: { type: "Point", coordinates: [stop.coordinate.lon, stop.coordinate.lat] },
             id: stop.id, 
             // TODO: if non-stops are supported, these need to be detected here and 
             // this layer property updated accordingly
-            properties: { layer: "stops", source: "otp", modes: stop.modes, name: stop.name, label: `${stop.name} (${stop.code})` }, 
+            properties: { layer: "stops", source: "otp", modes: stop.modes, name: stop.name, label: generateLabel(stop) }, 
             type: "Feature"
         })),
       type: "FeatureCollection"
