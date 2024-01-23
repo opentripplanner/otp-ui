@@ -30,3 +30,5 @@ otpUi:
     transitFare: Tarifa de tránsito
     transitFareEntry: "{name} : <strong>{value}</strong>"
     tripIncludesFlex: Este viaje incluye rutas flexibles. {extraMessage}
+    missingFareTotal: No hay tarifas disponibles
+    legMissingFareInfo: No hay información sobre tarifas para este tramo
