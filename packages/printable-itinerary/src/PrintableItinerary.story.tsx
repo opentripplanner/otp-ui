@@ -41,6 +41,8 @@ export const WalkOnlyItinerary = () => (
     LegIcon={TriMetLegIcon}
   />
 );
+
+// OTP 2.4 type data
 export const OTP24Itinerary = () => (
   <PrintableItinerary
     config={config}

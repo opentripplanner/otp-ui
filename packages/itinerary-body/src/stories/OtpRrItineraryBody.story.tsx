@@ -99,6 +99,7 @@ export const WalkOnlyItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkOnlyItinerary} />
 );
 
+// OTP2.4 type data
 export const Otp24Itinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={otp24Itinerary} />
 );
