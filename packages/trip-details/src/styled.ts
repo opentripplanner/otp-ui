@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
+export const InvisibleA11yLabel = styled.span`
+  display: inline-block;
+  clip: rect(0, 0, 0, 0);
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+`;
+
 const BaseButton = styled.button`
   background: transparent;
   border: 0;

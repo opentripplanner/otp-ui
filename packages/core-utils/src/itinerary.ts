@@ -19,6 +19,7 @@ import turfAlong from "@turf/along";
 // All OTP transit modes
 export const transitModes = [
   "TRAM",
+  "TROLLEYBUS",
   "BUS",
   "SUBWAY",
   "FERRY",
@@ -177,6 +178,7 @@ export function getMapColor(mode: string): string {
   if (mode === "SUBWAY") return "#e60000";
   if (mode === "RAIL") return "#b00";
   if (mode === "BUS") return "#080";
+  if (mode === "TROLLEYBUS") return "#080";
   if (mode === "TRAM") return "#800";
   if (mode === "FERRY") return "#008";
   if (mode === "CAR") return "#444";
@@ -408,10 +410,10 @@ export function getCompanyForNetwork(
  * @return {string}  A label for use in presentation on a website.
  */
 export function getCompaniesLabelFromNetworks(
-  networks: string[],
+  networks: string[] | string,
   companies: Company[] = []
 ): string {
-  return networks
+  return (Array.isArray(networks) ? networks : [networks])
     .map(network => getCompanyForNetwork(network, companies))
     .filter(co => !!co)
     .map(co => co.label)
@@ -485,6 +487,7 @@ const CARBON_INTENSITY_DEFAULTS = {
   bicycle: 0.017,
   car: 0.162,
   tram: 0.066,
+  trolleybus: 0.066,
   subway: 0.066,
   rail: 0.066,
   bus: 0.09,

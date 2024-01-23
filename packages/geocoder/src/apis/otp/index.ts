@@ -13,7 +13,7 @@ type OTPGeocoderResponse = {
       lat: number,
       lon: number,
     },
-    code: string,
+    code?: string | undefined,
     name: string,
     id: string,
     modes: string[]

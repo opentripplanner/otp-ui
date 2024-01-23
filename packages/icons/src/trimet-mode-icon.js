@@ -32,6 +32,7 @@ function TriMetModeIcon({ mode, ...props }) {
       // case "bicycle_rent": // Commented means using the company logo instead.
       return <Bicycle {...props} />;
     case "bus":
+    case "trolleybus":
       return <Bus {...props} />;
     case "car":
     case "car_park":

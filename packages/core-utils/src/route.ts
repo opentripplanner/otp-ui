@@ -184,6 +184,7 @@ function getSortValues(
 const modeComparatorValue = {
   SUBWAY: 1,
   TRAM: 2,
+  TROLLEYBUS: 9,
   RAIL: 3,
   GONDOLA: 4,
   FERRY: 5,
@@ -207,7 +208,8 @@ const routeTypeComparatorValue = {
   // TODO: 11 and 12 are not a part of OTP as of 2019-02-14, but for now just
   // associate them with bus/rail.
   11: modeComparatorValue.BUS, // - Trolleybus.
-  12: modeComparatorValue.RAIL // - Monorail.
+  12: modeComparatorValue.RAIL, // - Monorail.
+  13: modeComparatorValue.TROLLEYBUS
 };
 
 // Gets a comparator value for a given route's type (OTP mode).
