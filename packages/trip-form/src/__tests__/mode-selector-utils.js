@@ -146,10 +146,11 @@ const modeSettingDefinitions = [
     type: "CHECKBOX"
   },
   {
-    addTransportMode: { mode: "HOVERCRAFT", qualifier: "RENT" },
+    addTransportMode: { mode: "BUS" },
     applicableMode: "TRANSIT",
     default: true,
     key: "enableHovercraft",
+    overrideMode: "HOVERCRAFT",
     type: "SUBMODE"
   }
 ];
