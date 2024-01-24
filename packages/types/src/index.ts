@@ -723,6 +723,7 @@ export type SliderOptions = {
 };
 
 export type CheckboxOptions = {
+  // This transport mode should match an OTP transport mode
   addTransportMode?: TransportMode | TransportMode[];
   default?: boolean;
   label: string;
@@ -733,10 +734,13 @@ export type CheckboxOptions = {
 };
 
 export type TransitSubmodeCheckboxOption = {
-  addTransportMode: TransportMode;
+  // This transport mode should match an OTP transport mode
+  addTransportMode: TransportMode | TransportMode[];
   default?: boolean;
   label: string;
-  modeOverride?: string;
+  // We might want to specify a secondary, "override" mode to this checkbox.
+  // This can be used to generate a list of banned routes that have a matching mode.
+  overrideMode?: string;
   type: "SUBMODE";
   value?: boolean;
 };
