@@ -16,12 +16,12 @@ Array [
       },
       Object {
         "addTransportMode": Object {
-          "mode": "HOVERCRAFT",
-          "qualifier": "RENT",
+          "mode": "BUS",
         },
         "applicableMode": "TRANSIT",
         "default": true,
         "key": "enableHovercraft",
+        "overrideMode": "HOVERCRAFT",
         "type": "SUBMODE",
       },
     ],
@@ -172,12 +172,12 @@ Array [
   },
   Object {
     "addTransportMode": Object {
-      "mode": "HOVERCRAFT",
-      "qualifier": "RENT",
+      "mode": "BUS",
     },
     "applicableMode": "TRANSIT",
     "default": true,
     "key": "enableHovercraft",
+    "overrideMode": "HOVERCRAFT",
     "type": "SUBMODE",
     "value": false,
   },
