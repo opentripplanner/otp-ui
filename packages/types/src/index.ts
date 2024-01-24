@@ -735,7 +735,7 @@ export type CheckboxOptions = {
 
 export type TransitSubmodeCheckboxOption = {
   // This transport mode should match an OTP transport mode
-  addTransportMode: TransportMode | TransportMode[];
+  addTransportMode: TransportMode;
   default?: boolean;
   label: string;
   // We might want to specify a secondary, "override" mode to this checkbox.
