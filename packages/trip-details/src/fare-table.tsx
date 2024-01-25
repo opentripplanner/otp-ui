@@ -1,4 +1,4 @@
-import { Leg } from "@opentripplanner/types";
+import { FareProductSelector, Leg } from "@opentripplanner/types";
 import React from "react";
 import styled from "styled-components";
 import { Transfer } from "@styled-icons/boxicons-regular/Transfer";
@@ -8,7 +8,7 @@ import {
   getLegCost,
   getLegRouteName
 } from "@opentripplanner/core-utils/lib/itinerary";
-import { useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { flatten } from "flat";
 import { boldText, renderFare } from "./utils";
 
@@ -16,6 +16,7 @@ import { FareLegTableProps, FareTableLayout } from "./types";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
+import { InvisibleA11yLabel } from "./styled";
 
 // HACK: We should flatten the messages loaded above because
 // the YAML loaders behave differently between webpack and our version of jest:
@@ -77,23 +78,28 @@ const useGetHeaderString = (headerKey: string): string => {
   });
 };
 
+const hasFareInfo = (column: FareProductSelector) => (leg: Leg) =>
+  getLegCost(leg, column.mediumId, column.riderCategoryId).price !== undefined;
+
 const FareTypeTable = ({
   cols,
   headerKey,
   legs
 }: FareTypeTableProps): JSX.Element => {
   const intl = useIntl();
-  // FIXME: Is there a nicer way to do this?
+
+  const filteredLegs = legs.filter(leg => leg.fareProducts?.length > 0);
   const colsToRender = cols
+    .filter(col => filteredLegs.some(hasFareInfo(col)))
     .map(col => ({
       ...col,
-      total: getItineraryCost(legs, col.mediumId, col.riderCategoryId)
-    }))
-    .filter(col => col.total !== undefined);
+      total: filteredLegs.every(hasFareInfo(col))
+        ? getItineraryCost(filteredLegs, col.mediumId, col.riderCategoryId)
+        : undefined
+    }));
 
   const headerString = useGetHeaderString(headerKey);
 
-  const filteredLegs = legs.filter(leg => leg.fareProducts?.length > 0);
   if (colsToRender.length) {
     return (
       <Table>
@@ -113,7 +119,16 @@ const FareTypeTable = ({
               >
                 {boldText(useGetHeaderString(col.columnHeaderKey))}
                 <br />
-                {renderFare(fare?.currency?.code, fare?.amount || 0)}
+                {fare?.amount !== undefined ? (
+                  renderFare(fare?.currency?.code, fare?.amount)
+                ) : (
+                  <>
+                    -
+                    <InvisibleA11yLabel>
+                      <FormattedMessage id="otpUi.TripDetails.missingFareTotal" />
+                    </InvisibleA11yLabel>
+                  </>
+                )}
               </th>
             );
           })}
@@ -122,13 +137,16 @@ const FareTypeTable = ({
           <tr key={index}>
             <td className="no-zebra">{getLegRouteName(leg)}</td>
             {colsToRender.map(col => {
-              const fare = getLegCost(leg, col.mediumId, col.riderCategoryId);
+              const { price, transferAmount } = getLegCost(
+                leg,
+                col.mediumId,
+                col.riderCategoryId
+              );
               return (
                 <td
                   key={col.columnHeaderKey}
                   title={
-                    "transferAmount" in fare &&
-                    fare?.transferAmount?.amount > 0 &&
+                    transferAmount?.amount > 0 &&
                     intl.formatMessage(
                       {
                         defaultMessage:
@@ -141,9 +159,9 @@ const FareTypeTable = ({
                       },
                       {
                         transferAmount: intl.formatNumber(
-                          fare?.transferAmount?.amount,
+                          transferAmount?.amount,
                           {
-                            currency: fare?.price?.currency?.code,
+                            currency: price?.currency?.code,
                             currencyDisplay: "narrowSymbol",
                             style: "currency"
                           }
@@ -152,15 +170,20 @@ const FareTypeTable = ({
                     )
                   }
                 >
-                  {"transferAmount" in fare &&
-                    fare?.transferAmount?.amount > 0 && (
-                      <>
-                        <TransferIcon size={16} />{" "}
-                      </>
-                    )}
-                  {renderFare(
-                    fare?.price?.currency?.code,
-                    fare?.price?.amount || 0
+                  {transferAmount?.amount > 0 && (
+                    <>
+                      <TransferIcon size={16} />{" "}
+                    </>
+                  )}
+                  {price ? (
+                    renderFare(price?.currency?.code, price?.amount)
+                  ) : (
+                    <>
+                      -
+                      <InvisibleA11yLabel>
+                        <FormattedMessage id="otpUi.TripDetails.legMissingFareInfo" />
+                      </InvisibleA11yLabel>
+                    </>
                   )}
                 </td>
               );

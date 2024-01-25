@@ -19,7 +19,7 @@ export default class ViewStopButton extends Component<Props> {
 
   render(): ReactElement {
     return (
-      <S.ViewerButton onClick={this.onClick}>
+      <S.ViewerButton onClick={this.onClick} role="link">
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.TransitLegBody.stopViewer"]}
           description="Text for link that opens the stop viewer"

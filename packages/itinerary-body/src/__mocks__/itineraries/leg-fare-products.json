@@ -1,1298 +1,2221 @@
 {
-  "duration": 6952,
-  "endTime": 1685146739000,
-  "startTime": 1685139787000,
-  "waitingTime": 184,
-  "walkTime": 2436,
   "accessibilityScore": null,
+  "duration": 10552,
+  "endTime": 1703810306000,
   "legs": [
     {
-      "fareProducts": [],
-      "pickupType": "SCHEDULED",
-      "dropoffType": "SCHEDULED",
-      "pickupBookingInfo": null,
-      "rentedBike": false,
-      "interlineWithPreviousLeg": false,
-      "departureDelay": 0,
+      "accessibilityScore": null,
+      "agency": null,
+      "alerts": [],
       "arrivalDelay": 0,
-      "distance": 825.81,
-      "duration": 641,
-      "endTime": 1685140428000,
+      "departureDelay": 0,
+      "distance": 1220.4,
+      "dropoffType": "SCHEDULED",
+      "duration": 1046,
+      "endTime": 1703800800000,
+      "fareProducts": [],
+      "from": {
+        "lat": 48.4210613,
+        "lon": -122.3272304,
+        "name": "100 South 11th Street, Mount Vernon, WA, USA",
+        "rentalVehicle": null,
+        "stop": null,
+        "vertexType": "NORMAL"
+      },
+      "headsign": null,
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": null,
+      "legGeometry": {
+        "length": 91,
+        "points": "wfpfHd`siV?l@?LJ?D?F?@Th@?`B?B@H?F@DAAzA?zAvC@F?F@F?D@?B?HxCB?L@D?zAH?@xAF@@?~CB@?D??LBTF@vD@HG~@?LFBDBJBFCBMFc@f@[b@[b@U\\W\\KJY`@SXQVU`@MTK\\ADQb@INAL?NALEXANBNAnD?L?LEFCFCDCF?@HLHN@J?F?DABCDC@C@AACC?CAAC??ToAB?G"
+      },
       "mode": "WALK",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
       "realTime": false,
       "realtimeState": null,
-      "startTime": 1685139787000,
-      "transitLeg": false,
-      "accessibilityScore": null,
-      "trip": null,
-      "agency": null,
-      "legGeometry": {
-        "length": 16,
-        "points": "}zrbHnykiV@GHk@Dg@dC@j@BhDh@AlD?tCCzKGfV?T?NO?a@???"
-      },
-      "intermediateStops": null,
+      "rentedBike": false,
+      "rideHailingEstimate": null,
       "route": null,
-      "from": {
-        "lat": 47.7791977,
-        "lon": -122.2903181,
-        "name": "47.7792, -122.29032",
-        "vertexType": "NORMAL",
-        "rentalVehicle": null,
-        "stop": null
-      },
-      "to": {
-        "lat": 47.7776833,
-        "lon": -122.297684,
-        "name": "48th Ave W & 244th St SW",
-        "vertexType": "TRANSIT",
-        "rentalVehicle": null,
-        "stop": {
-          "id": "U3RvcDprY206ODI0MDU",
-          "code": "82405",
-          "gtfsId": "kcm:82405",
-          "alerts": []
-        }
-      },
+      "startTime": 1703799754000,
       "steps": [
         {
-          "relativeDirection": "ENTER_STATION",
-          "stayOn": false,
-          "streetName": "fake station entrance name"
-        },
-        {
-          "relativeDirection": "FOLLOW_SIGNS",
-          "stayOn": false,
-          "streetName": "fake station exit"
-        },
-        {
-          "relativeDirection": "EXIT_STATION",
-          "stayOn": false,
-          "streetName": "fake station entrance name"
-        },
-        {
-          "distance": 36.61,
-          "lat": 47.7791959,
-          "lon": -122.290319,
-          "relativeDirection": "DEPART",
-          "absoluteDirection": "EAST",
-          "stayOn": false,
-          "streetName": "242nd Street Southwest",
-          "area": false,
-          "alerts": [],
-          "elevationProfile": []
-        },
-        {
-          "distance": 194.04,
-          "lat": 47.7791005,
-          "lon": -122.2898502,
-          "relativeDirection": "RIGHT",
-          "absoluteDirection": "SOUTH",
-          "stayOn": false,
-          "streetName": "Cedar Way",
-          "area": false,
-          "alerts": [],
-          "elevationProfile": []
-        },
-        {
-          "distance": 567.32,
-          "lat": 47.7773669,
-          "lon": -122.2900921,
-          "relativeDirection": "RIGHT",
           "absoluteDirection": "WEST",
-          "stayOn": false,
-          "streetName": "Northeast 205th Street - 244th Street Southwest",
-          "area": false,
           "alerts": [],
-          "elevationProfile": []
+          "area": false,
+          "distance": 22.07,
+          "elevationProfile": [],
+          "lat": 48.4210849,
+          "lon": -122.3272295,
+          "relativeDirection": "DEPART",
+          "stayOn": false,
+          "streetName": "East Division Street"
         },
         {
-          "distance": 27.83,
-          "lat": 47.7774331,
-          "lon": -122.2976837,
-          "relativeDirection": "RIGHT",
-          "absoluteDirection": "NORTH",
-          "stayOn": false,
-          "streetName": "path",
-          "area": false,
+          "absoluteDirection": "SOUTH",
           "alerts": [],
-          "elevationProfile": []
+          "area": false,
+          "distance": 14.56,
+          "elevationProfile": [],
+          "lat": 48.4210885,
+          "lon": -122.3275286,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "South 11th Street"
+        },
+        {
+          "absoluteDirection": "WEST",
+          "alerts": [],
+          "area": false,
+          "distance": 8.2,
+          "elevationProfile": [],
+          "lat": 48.4209576,
+          "lon": -122.3275294,
+          "relativeDirection": "RIGHT",
+          "stayOn": false,
+          "streetName": "service road"
+        },
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": false,
+          "distance": 266.99,
+          "elevationProfile": [],
+          "lat": 48.4209413,
+          "lon": -122.3276378,
+          "relativeDirection": "LEFT",
+          "stayOn": true,
+          "streetName": "sidewalk"
+        },
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": false,
+          "distance": 85.84,
+          "elevationProfile": [],
+          "lat": 48.4192078,
+          "lon": -122.3286699,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "South 10th Street"
+        },
+        {
+          "absoluteDirection": "WEST",
+          "alerts": [],
+          "area": false,
+          "distance": 41.37,
+          "elevationProfile": [],
+          "lat": 48.4184359,
+          "lon": -122.3286837,
+          "relativeDirection": "RIGHT",
+          "stayOn": false,
+          "streetName": "path"
+        },
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": false,
+          "distance": 5.17,
+          "elevationProfile": [],
+          "lat": 48.4184225,
+          "lon": -122.3292434,
+          "relativeDirection": "LEFT",
+          "stayOn": true,
+          "streetName": "alley"
+        },
+        {
+          "absoluteDirection": "WEST",
+          "alerts": [],
+          "area": false,
+          "distance": 33.31,
+          "elevationProfile": [],
+          "lat": 48.418376,
+          "lon": -122.3292453,
+          "relativeDirection": "RIGHT",
+          "stayOn": false,
+          "streetName": "East Montgomery Street"
+        },
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": false,
+          "distance": 281.67,
+          "elevationProfile": [],
+          "lat": 48.4183664,
+          "lon": -122.3296964,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "path"
+        },
+        {
+          "absoluteDirection": "NORTH",
+          "alerts": [],
+          "area": false,
+          "distance": 391.04,
+          "elevationProfile": [],
+          "lat": 48.4159968,
+          "lon": -122.3300554,
+          "relativeDirection": "RIGHT",
+          "stayOn": true,
+          "streetName": "sidewalk"
+        },
+        {
+          "absoluteDirection": "NORTH",
+          "alerts": [],
+          "area": false,
+          "distance": 16.98,
+          "elevationProfile": [],
+          "lat": 48.4175858,
+          "lon": -122.3341631,
+          "relativeDirection": "RIGHT",
+          "stayOn": true,
+          "streetName": "sidewalk"
+        },
+        {
+          "absoluteDirection": "WEST",
+          "alerts": [],
+          "area": false,
+          "distance": 53.21,
+          "elevationProfile": [],
+          "lat": 48.4177074,
+          "lon": -122.3341571,
+          "relativeDirection": "LEFT",
+          "stayOn": true,
+          "streetName": "service road"
         }
-      ]
+      ],
+      "to": {
+        "lat": 48.418107,
+        "lon": -122.334242,
+        "name": "Skagit Station Gate 3",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "6233",
+          "gtfsId": "Skagit:f134b89d-a89d-49bf-a4ce-85dd1b2bb4cc",
+          "id": "U3RvcDpTa2FnaXQ6ZjEzNGI4OWQtYTg5ZC00OWJmLWE0Y2UtODVkZDFiMmJiNGNj"
+        },
+        "vertexType": "TRANSIT"
+      },
+      "transitLeg": false,
+      "trip": null
     },
     {
+      "accessibilityScore": null,
+      "agency": {
+        "alerts": [],
+        "gtfsId": "Skagit:e0e4541a-2714-487b-b30c-f5c6cb4a310f",
+        "id": "Skagit:e0e4541a-2714-487b-b30c-f5c6cb4a310f",
+        "name": "Skagit Transit",
+        "timezone": "America/Los_Angeles",
+        "url": "https://www.skagittransit.org"
+      },
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 54296.86,
+      "dropoffType": "SCHEDULED",
+      "duration": 3600,
+      "endTime": 1703804400000,
       "fareProducts": [
         {
-          "id": "3ff3d12d-6747-3b47-842a-92c7bf167015",
+          "id": "a138b712-9a09-30cc-ae82-9e0976975730",
           "product": {
-            "id": "orca:farePayment",
-            "name": "rideCost",
+            "__typename": "DefaultFareProduct",
+            "id": "orca:electronicSpecial",
+            "medium": null,
+            "name": "electronicSpecial",
+            "riderCategory": null,
             "price": {
+              "amount": 1,
               "currency": {
                 "code": "USD",
                 "digits": 2
-              },
-              "amount": 2.75
+              }
+            }
+          }
+        },
+        {
+          "id": "2650c809-c9ee-348b-9876-5abfa6630a94",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:electronicRegular",
+            "medium": null,
+            "name": "electronicRegular",
+            "riderCategory": null,
+            "price": {
+              "amount": 3.25,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "9804c231-c562-33ec-9bf8-aae525a16f61",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:regular",
+            "medium": null,
+            "name": "regular",
+            "riderCategory": null,
+            "price": {
+              "amount": 10.25,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "5cd659c7-ba5b-325c-97a1-fc018378a8e4",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:electronicSenior",
+            "medium": null,
+            "name": "electronicSenior",
+            "riderCategory": null,
+            "price": {
+              "amount": 1,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "a1baf48c-9f9e-3623-a1c2-92ed79973c9d",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:youth",
+            "medium": null,
+            "name": "youth",
+            "riderCategory": null,
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "c4bd89a1-a953-3759-9944-b65e69ea7434",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:senior",
+            "medium": null,
+            "name": "senior",
+            "riderCategory": null,
+            "price": {
+              "amount": 9.75,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "b34eee2a-1d2c-340c-89d6-c7f0315d15be",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:electronicYouth",
+            "medium": null,
+            "name": "electronicYouth",
+            "riderCategory": null,
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "52780e0f-41d5-3d3f-9199-229f77e541a1",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:cash",
+              "name": "cash"
             },
+            "name": "rideCost",
             "riderCategory": {
               "id": "orca:regular",
               "name": "regular"
             },
+            "price": {
+              "amount": 1,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "361aaee0-7d82-351a-875f-6d03b39c42ae",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
             "medium": {
               "id": "orca:cash",
               "name": "cash"
-            }
-          }
-        },
-        {
-          "id": "77a8ba05-8081-301f-9fe4-777dcd10ae02",
-          "product": {
-            "id": "orca:farePayment",
+            },
             "name": "rideCost",
-            "price": {
-              "currency": {
-                "code": "USD",
-                "digits": 2
-              },
-              "amount": 2.75
-            },
-            "riderCategory": {
-              "id": "orca:regular",
-              "name": "regular"
-            },
-            "medium": {
-              "id": "orca:electronic",
-              "name": "electronic"
-            }
-          }
-        },
-        {
-          "id": "0740913d-0e0a-34ab-9518-014f2025b1a8",
-          "product": {
-            "id": "orca:farePayment",
-            "name": "rideCost",
-            "price": {
-              "currency": {
-                "code": "USD",
-                "digits": 2
-              },
-              "amount": 1
-            },
-            "riderCategory": {
-              "id": "orca:senior",
-              "name": "senior"
-            },
-            "medium": {
-              "id": "orca:cash",
-              "name": "cash"
-            }
-          }
-        },
-        {
-          "id": "16ac6750-91b2-347c-b991-e63f8c483de9",
-          "product": {
-            "id": "orca:farePayment",
-            "name": "rideCost",
-            "price": {
-              "currency": {
-                "code": "USD",
-                "digits": 2
-              },
-              "amount": 0
-            },
             "riderCategory": {
               "id": "orca:youth",
               "name": "youth"
             },
-            "medium": {
-              "id": "orca:electronic",
-              "name": "electronic"
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
             }
           }
         },
         {
-          "id": "cf501333-167f-31b1-b99a-0e9b17d4a16c",
+          "id": "ac3b9350-a1b1-3754-9711-e23b48921a01",
           "product": {
+            "__typename": "DefaultFareProduct",
             "id": "orca:farePayment",
-            "name": "rideCost",
-            "price": {
-              "currency": {
-                "code": "USD",
-                "digits": 2
-              },
-              "amount": 1.5
-            },
-            "riderCategory": {
-              "id": "orca:special",
-              "name": "special"
-            },
-            "medium": {
-              "id": "orca:electronic",
-              "name": "electronic"
-            }
-          }
-        },
-        {
-          "id": "1b2d9477-8ce5-3eec-a63d-7d2534fa3bef",
-          "product": {
-            "id": "orca:farePayment",
-            "name": "rideCost",
-            "price": {
-              "currency": {
-                "code": "USD",
-                "digits": 2
-              },
-              "amount": 0
-            },
-            "riderCategory": {
-              "id": "orca:youth",
-              "name": "youth"
-            },
             "medium": {
               "id": "orca:cash",
               "name": "cash"
-            }
-          }
-        },
-        {
-          "id": "105e04d3-a575-3f65-96c1-e33d5199f339",
-          "product": {
-            "id": "orca:farePayment",
-            "name": "rideCost",
-            "price": {
-              "currency": {
-                "code": "USD",
-                "digits": 2
-              },
-              "amount": 1
             },
+            "name": "rideCost",
             "riderCategory": {
               "id": "orca:senior",
               "name": "senior"
             },
-            "medium": {
-              "id": "orca:electronic",
-              "name": "electronic"
+            "price": {
+              "amount": 0.5,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
             }
           }
         }
       ],
-      "pickupType": "SCHEDULED",
-      "dropoffType": "SCHEDULED",
-      "pickupBookingInfo": null,
-      "rentedBike": null,
+      "from": {
+        "lat": 48.418107,
+        "lon": -122.334242,
+        "name": "Skagit Station Gate 3",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "6233",
+          "gtfsId": "Skagit:f134b89d-a89d-49bf-a4ce-85dd1b2bb4cc",
+          "id": "U3RvcDpTa2FnaXQ6ZjEzNGI4OWQtYTg5ZC00OWJmLWE0Y2UtODVkZDFiMmJiNGNj"
+        },
+        "vertexType": "TRANSIT"
+      },
+      "headsign": "Everett",
       "interlineWithPreviousLeg": false,
-      "departureDelay": 0,
-      "arrivalDelay": 0,
-      "distance": 12180.55,
-      "duration": 2112,
-      "endTime": 1685142540000,
+      "intermediateStops": [
+        {
+          "lat": 48.385578,
+          "locationType": "STOP",
+          "lon": -122.336336,
+          "name": "South Mount Vernon Park & Ride",
+          "stopCode": "6500",
+          "stopId": "U3RvcDpTa2FnaXQ6YzlhYzA2MzQtZWIxOC00ZWI2LTllNWQtNGM1NjdkZWRkNTli"
+        },
+        {
+          "lat": 48.006217,
+          "locationType": "STOP",
+          "lon": -122.197084,
+          "name": "Broadway - Everett Community College",
+          "stopCode": "7006",
+          "stopId": "U3RvcDpTa2FnaXQ6ZTY4MzU0OGItYmY4Ny00NzhjLTk2YmMtOWU1YmM1MWVkZmVi"
+        },
+        {
+          "lat": 47.998791,
+          "locationType": "STOP",
+          "lon": -122.201234,
+          "name": "Broadway & 14th  (near hospital)",
+          "stopCode": "7008",
+          "stopId": "U3RvcDpTa2FnaXQ6ZmJlOWQ2ZDEtZDUwNC00NmE5LWFkM2QtZWVhMjVkMWZiZWYz"
+        },
+        {
+          "lat": 47.977675,
+          "locationType": "STOP",
+          "lon": -122.201682,
+          "name": "Broadway just South of the Event Center",
+          "stopCode": "7009",
+          "stopId": "U3RvcDpTa2FnaXQ6NTljZjM5MDctN2FlOS00Yzc4LWFhZTctMTUyYjJmM2M2ZDYy"
+        }
+      ],
+      "legGeometry": {
+        "length": 313,
+        "points": "ctofH`ltiVwARMGEOYCM?kAb@OJKJMVQfAUxA|@f@pAl@xAp@\\FbD@@}GDuBCuBZKnEwChDaBzBu@~A[dBOpBOf@G|@MlGUz^iAnTk@d@LhABzA@fBLvBh@v@TnBn@h@N\\b@Rd@FvTpUVbVP|a@NdCA@^l@hA??p@mAD[~A@vBS|@Sx@i@`@g@\\o@t@yBh@WRCj@DlAN`BRhB^|Bt@hCz@lCp@x@Hn@?nCf@xAJzAHdEDdEBnKBfEBdEBjKHjKJnKH|WNnKFlKBlK@lKB|WJnKDhEChEAxF]|CUdIaArFq@xBWxBWdSgCbIcAjIeA`Eu@`B_@bCo@zDaBxDgBjIgEdDcBfDeBxFuCxFwCpGeDnGcDlGqDdCyAdCuAxNuIzFmD~BuAtBqA`DiC|A{AbDcExBqDtBoDfCoEhB_DrDwFpAgBxD_FzAmB|AiBnBeCnBcCv_@ke@fXq\\nKyMfEmFfEmFvKyMhEmFhEoFlXy\\lXw\\vKwMnEmFfEiFtCmDrCkDrHsIzHoI`I_I|S}RjDyCdD{CpIwH`PyNrVyTzJ}IlJaJn_@ia@xJmKxDeExDgExFeGdG_GrQwPpEeElBcBfBcBbIeIbDeD`DaDlBmBvAeBnEuF|BaDtBaDvBmDnBqDtF{JxByDvAaCd@s@r@aAvAcB`AiAvAkAzB}A|BiAt@WtDuAxDoAdFeBbFcBbMuEfU}IjEeBjDaAjI}BfJoDrv@aZpEcBnAi@~@g@~@k@hAu@vAoAfDuCtO_Nh_@_\\fScQ`I_H`DmCpAgA`BsAzAaAz@k@^SfAm@dAa@`A]|Bs@zA[nBYrBSbNuAtFi@~BWxBSfTwBvI}@pI{@h^qDpNuAvFk@|Fk@bv@yHvI}@rI{@xIy@nF[~Hi@vHYnN]rNYz]g@jw@_Bjw@MloBOroB@hSPrSK|b@u@xb@ChH@nCc@jEsAxEsBjYaN^KhAG|DS~BH`CZtB^jAN`AZdKbBbPlC`fAxQfNbDrNrCbKhBpIrAbEx@zD|AhDrBhDfDtA|AnAbB`DnEdFbHVHlEnGxFbJ??~AxAbIzKt@dAz@bA|@p@bAj@z@X`AN`AF`A?jGF`CBbD`@??rVM|pAbAvOHtHX??hEg@pOWE{HEaIGwCRKFe@U]kAL"
+      },
       "mode": "BUS",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
       "realTime": false,
       "realtimeState": null,
-      "startTime": 1685140428000,
-      "transitLeg": true,
-      "accessibilityScore": null,
-      "trip": {
-        "gtfsId": "kcm:541480853",
-        "id": "VHJpcDprY206NTQxNDgwODUz",
-        "tripHeadsign": "Northgate Station Ridgecrest"
-      },
-      "agency": {
-        "name": "Metro Transit",
-        "id": "QWdlbmN5OmtjbTox",
-        "timezone": "America/Los_Angeles",
-        "url": "https://kingcounty.gov/en/dept/metro",
-        "alerts": []
-      },
-      "legGeometry": {
-        "length": 262,
-        "points": "oqrbH~fmiVp@??fEC|DCjE?fN?h@??AfEAvCAxA@n@AdCAhD?tAAtCA~@???hDAfF?bBAn@???ZA`A?`@Av@Ax@AhB?R@NBNFLLPVXN@T?R?l@A??fCGnCEzBE??hBErAApIM??nGKX?R?L?N@XFLBFBJ@LFLHPHPJTNXV^ZTPRRrAl@F@??d@Jb@DT?TCxCIVCl@Ab@CTEHCTGNGTKb@Sp@c@TINIPC??FCPEVAVAV?b@?V@^A\\IZEZKf@UrAq@|@a@d@W`@_@f@_@NM??x@m@b@Cz@M\\C^?z@Px@XZPZXn@r@r@f@ZLb@Rb@FZFb@?z@???tA?rF@|I?AjD??CbJA|FA|C??AtBEpOEtOxCC??Z?|BAzEGdECf@???dIEhJG`DE??jAAfFEzCE??J?zA?xACdDE??N?pDCpDE`BCp@A??pFG~CC^A^???fBAbEEvCE\\?X???bCA|@F`E?f@?@mG???C@yGFwO@qG@gF???]DyOtAC??tGAt@???vHEn@???~HE|HA??n@?|G?tC?xA?~D@Z???lI?p@???rHBB?pAC??vGIp@???xHI|@C??|CCt@?ZBRJRNRR`@h@LTpFhI??~@xAbD~E`A|A|AzB\\Z^Vf@Rx@R~CArAC?fB??CvLA|OnA???hDEbFGx@???|DErDAvDA?jB??AfCA`HA~G?pB?P|A?lA?"
-      },
-      "intermediateStops": [
-        {
-          "lat": 47.7775421,
-          "lon": -122.303215,
-          "name": "NE 205th St & 52nd Ave W",
-          "stopCode": "82410",
-          "stopId": "U3RvcDprY206ODI0MTA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7775955,
-          "lon": -122.308685,
-          "name": "NE 205th St & 56th Ave W",
-          "stopCode": "82430",
-          "stopId": "U3RvcDprY206ODI0MzA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7776146,
-          "lon": -122.311432,
-          "name": "NE 205th St & 58th Pl W",
-          "stopCode": "82440",
-          "stopId": "U3RvcDprY206ODI0NDA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7768135,
-          "lon": -122.31382,
-          "name": "15th Ave NE & Ballinger Way NE",
-          "stopCode": "77400",
-          "stopId": "U3RvcDprY206Nzc0MDA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7747955,
-          "lon": -122.313721,
-          "name": "15th Ave NE & Forest Park Dr NE",
-          "stopCode": "77410",
-          "stopId": "U3RvcDprY206Nzc0MTA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7721519,
-          "lon": -122.313614,
-          "name": "15th Ave NE & NE 200th Ct",
-          "stopCode": "77418",
-          "stopId": "U3RvcDprY206Nzc0MTg",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.768734,
-          "lon": -122.314636,
-          "name": "15th Ave NE & NE 192nd St",
-          "stopCode": "77940",
-          "stopId": "U3RvcDprY206Nzc5NDA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7656479,
-          "lon": -122.313995,
-          "name": "15th Ave NE & NE Perkins Way",
-          "stopCode": "77440",
-          "stopId": "U3RvcDprY206Nzc0NDA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7626801,
-          "lon": -122.312752,
-          "name": "15th Ave NE & 24th Ave NE",
-          "stopCode": "77450",
-          "stopId": "U3RvcDprY206Nzc0NTA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7591515,
-          "lon": -122.31356,
-          "name": "15th Ave NE & NE 180th St",
-          "stopCode": "77460",
-          "stopId": "U3RvcDprY206Nzc0NjA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7558212,
-          "lon": -122.314339,
-          "name": "NE 175th St & 15th Ave NE",
-          "stopCode": "77738",
-          "stopId": "U3RvcDprY206Nzc3Mzg",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7558632,
-          "lon": -122.318176,
-          "name": "NE 175th St & 10th Ave NE",
-          "stopCode": "77737",
-          "stopId": "U3RvcDprY206Nzc3Mzc",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7550964,
-          "lon": -122.324158,
-          "name": "5th Ave NE & NE 174th St",
-          "stopCode": "81246",
-          "stopId": "U3RvcDprY206ODEyNDY",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.752037,
-          "lon": -122.324104,
-          "name": "5th Ave NE & NE 170th St",
-          "stopCode": "81248",
-          "stopId": "U3RvcDprY206ODEyNDg",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7477875,
-          "lon": -122.324013,
-          "name": "5th Ave NE & NE 163rd St",
-          "stopCode": "77560",
-          "stopId": "U3RvcDprY206Nzc1NjA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7454681,
-          "lon": -122.323944,
-          "name": "5th Ave NE & NE 161st St",
-          "stopCode": "77570",
-          "stopId": "U3RvcDprY206Nzc1NzA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7436676,
-          "lon": -122.323883,
-          "name": "5th Ave NE & NE 158th St",
-          "stopCode": "77580",
-          "stopId": "U3RvcDprY206Nzc1ODA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.741066,
-          "lon": -122.323792,
-          "name": "5th Ave NE & NE 155th St",
-          "stopCode": "81252",
-          "stopId": "U3RvcDprY206ODEyNTI",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7387314,
-          "lon": -122.323723,
-          "name": "5th Ave NE & NE 152nd St",
-          "stopCode": "81254",
-          "stopId": "U3RvcDprY206ODEyNTQ",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7361908,
-          "lon": -122.323654,
-          "name": "5th Ave NE & NE 148th St",
-          "stopCode": "81256",
-          "stopId": "U3RvcDprY206ODEyNTY",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7339783,
-          "lon": -122.322235,
-          "name": "NE 145th St & 6th Ave NE",
-          "stopCode": "82200",
-          "stopId": "U3RvcDprY206ODIyMDA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7339096,
-          "lon": -122.315598,
-          "name": "NE 145th St & 12th Ave NE",
-          "stopCode": "82220",
-          "stopId": "U3RvcDprY206ODIyMjA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7335167,
-          "lon": -122.312851,
-          "name": "15th Ave NE & NE 145th St",
-          "stopCode": "38830",
-          "stopId": "U3RvcDprY206Mzg4MzA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7318573,
-          "lon": -122.31282,
-          "name": "15th Ave NE & NE 143rd St",
-          "stopCode": "38840",
-          "stopId": "U3RvcDprY206Mzg4NDA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7300568,
-          "lon": -122.312798,
-          "name": "15th Ave NE & NE 140th St",
-          "stopCode": "38850",
-          "stopId": "U3RvcDprY206Mzg4NTA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7268677,
-          "lon": -122.312752,
-          "name": "15th Ave NE & NE 135th St",
-          "stopCode": "38870",
-          "stopId": "U3RvcDprY206Mzg4NzA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7228928,
-          "lon": -122.312767,
-          "name": "15th Ave NE & NE 130th St",
-          "stopCode": "38890",
-          "stopId": "U3RvcDprY206Mzg4OTA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7209663,
-          "lon": -122.312782,
-          "name": "15th Ave NE & NE 127th St",
-          "stopCode": "38900",
-          "stopId": "U3RvcDprY206Mzg5MDA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7190018,
-          "lon": -122.312767,
-          "name": "15th Ave NE & NE 125th St",
-          "stopCode": "38910",
-          "stopId": "U3RvcDprY206Mzg5MTA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.71735,
-          "lon": -122.312714,
-          "name": "15th Ave NE & NE 123rd St",
-          "stopCode": "38920",
-          "stopId": "U3RvcDprY206Mzg5MjA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7154694,
-          "lon": -122.312645,
-          "name": "15th Ave NE & NE 120th St",
-          "stopCode": "38930",
-          "stopId": "U3RvcDprY206Mzg5MzA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7125664,
-          "lon": -122.314827,
-          "name": "Pinehurst Way NE & NE 115th St",
-          "stopCode": "38962",
-          "stopId": "U3RvcDprY206Mzg5NjI",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7086334,
-          "lon": -122.318367,
-          "name": "NE Northgate Way & Roosevelt Way NE",
-          "stopCode": "82198",
-          "stopId": "U3RvcDprY206ODIxOTg",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7081947,
-          "lon": -122.323364,
-          "name": "5th Ave NE & NE Northgate Way",
-          "stopCode": "23230",
-          "stopId": "U3RvcDprY206MjMyMzA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7059097,
-          "lon": -122.323296,
-          "name": "5th Ave NE & Northgate Mall",
-          "stopCode": "23250",
-          "stopId": "U3RvcDprY206MjMyNTA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.7032166,
-          "lon": -122.323692,
-          "name": "NE 103rd St & 5th Ave NE",
-          "stopCode": "35290",
-          "stopId": "U3RvcDprY206MzUyOTA",
-          "locationType": "STOP"
-        }
-      ],
+      "rentedBike": null,
+      "rideHailingEstimate": null,
       "route": {
-        "shortName": "347",
-        "longName": null,
-        "color": null,
-        "textColor": null,
-        "id": "Um91dGU6a2NtOjEwMDIwNA",
-        "type": 3,
-        "alerts": []
+        "alerts": [],
+        "color": "006400",
+        "gtfsId": "Skagit:9e73e434-981f-46e2-a587-5b4b047455b3",
+        "id": "Skagit:9e73e434-981f-46e2-a587-5b4b047455b3",
+        "longName": "County Connector Snohomish/Skagit",
+        "shortName": "90X",
+        "textColor": "FFFFFF",
+        "type": 3
       },
-      "from": {
-        "lat": 47.7776833,
-        "lon": -122.297684,
-        "name": "48th Ave W & 244th St SW",
-        "vertexType": "TRANSIT",
-        "rentalVehicle": null,
-        "stop": {
-          "id": "U3RvcDprY206ODI0MDU",
-          "code": "82405",
-          "gtfsId": "kcm:82405",
-          "alerts": []
-        }
-      },
+      "startTime": 1703800800000,
+      "steps": [],
       "to": {
-        "lat": 47.7023087,
-        "lon": -122.328026,
-        "name": "Northgate Station - Bay 4",
-        "vertexType": "TRANSIT",
+        "lat": 47.974461,
+        "lon": -122.197088,
+        "name": "Everett Station",
         "rentalVehicle": null,
         "stop": {
-          "id": "U3RvcDprY206MzUzMTg",
-          "code": "35318",
-          "gtfsId": "kcm:35318",
-          "alerts": []
-        }
+          "alerts": [],
+          "code": "7010",
+          "gtfsId": "Skagit:ade1ce0f-9913-4bbc-9f1f-992b17d79f50",
+          "id": "U3RvcDpTa2FnaXQ6YWRlMWNlMGYtOTkxMy00YmJjLTlmMWYtOTkyYjE3ZDc5ZjUw"
+        },
+        "vertexType": "TRANSIT"
       },
-      "steps": []
+      "transitLeg": true,
+      "trip": {
+        "arrivalStoptime": {
+          "stop": {
+            "gtfsId": "Skagit:ade1ce0f-9913-4bbc-9f1f-992b17d79f50",
+            "id": "U3RvcDpTa2FnaXQ6YWRlMWNlMGYtOTkxMy00YmJjLTlmMWYtOTkyYjE3ZDc5ZjUw"
+          },
+          "stopPosition": 6
+        },
+        "departureStoptime": {
+          "stop": {
+            "gtfsId": "Skagit:3c26978c-8788-4955-88ee-18354d3987bb",
+            "id": "U3RvcDpTa2FnaXQ6M2MyNjk3OGMtODc4OC00OTU1LTg4ZWUtMTgzNTRkMzk4N2Ji"
+          },
+          "stopPosition": 0
+        },
+        "gtfsId": "Skagit:ce802e5d-15ec-4dc4-8bfd-1378ad8c816a",
+        "id": "VHJpcDpTa2FnaXQ6Y2U4MDJlNWQtMTVlYy00ZGM0LThiZmQtMTM3OGFkOGM4MTZh"
+      }
     },
     {
-      "fareProducts": [],
-      "pickupType": "SCHEDULED",
-      "dropoffType": "SCHEDULED",
-      "pickupBookingInfo": null,
-      "rentedBike": false,
-      "interlineWithPreviousLeg": false,
-      "departureDelay": 0,
+      "accessibilityScore": null,
+      "agency": null,
+      "alerts": [],
       "arrivalDelay": 0,
-      "distance": 60.87,
-      "duration": 56,
-      "endTime": 1685142596000,
+      "departureDelay": 0,
+      "distance": 96.96,
+      "dropoffType": "SCHEDULED",
+      "duration": 87,
+      "endTime": 1703804487000,
+      "fareProducts": [],
+      "from": {
+        "lat": 47.974461,
+        "lon": -122.197088,
+        "name": "Everett Station",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "7010",
+          "gtfsId": "Skagit:ade1ce0f-9913-4bbc-9f1f-992b17d79f50",
+          "id": "U3RvcDpTa2FnaXQ6YWRlMWNlMGYtOTkxMy00YmJjLTlmMWYtOTkyYjE3ZDc5ZjUw"
+        },
+        "vertexType": "TRANSIT"
+      },
+      "headsign": null,
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": null,
+      "legGeometry": {
+        "length": 11,
+        "points": "k_ycHxryhV?Em@Rq@TMD@JBLBV@JPG@H"
+      },
       "mode": "WALK",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
       "realTime": false,
       "realtimeState": null,
-      "startTime": 1685142540000,
-      "transitLeg": false,
-      "accessibilityScore": null,
-      "trip": null,
-      "agency": null,
-      "legGeometry": {
-        "length": 9,
-        "points": "kzcbHdesiV?Ce@?Q??L?V?RO??B"
-      },
-      "intermediateStops": null,
+      "rentedBike": false,
+      "rideHailingEstimate": null,
       "route": null,
-      "from": {
-        "lat": 47.7023087,
-        "lon": -122.328026,
-        "name": "Northgate Station - Bay 4",
-        "vertexType": "TRANSIT",
-        "rentalVehicle": null,
-        "stop": {
-          "id": "U3RvcDprY206MzUzMTg",
-          "code": "35318",
-          "gtfsId": "kcm:35318",
-          "alerts": []
-        }
-      },
-      "to": {
-        "lat": 47.702662,
-        "lon": -122.32832,
-        "name": "Northgate Station",
-        "vertexType": "TRANSIT",
-        "rentalVehicle": null,
-        "stop": {
-          "id": "U3RvcDo0MDo5OTAwMDU",
-          "code": "N11-T1",
-          "gtfsId": "40:990005",
-          "alerts": []
-        }
-      },
+      "startTime": 1703804400000,
       "steps": [
         {
-          "distance": 60.87,
-          "lat": 47.7023088,
-          "lon": -122.3280018,
-          "relativeDirection": "DEPART",
           "absoluteDirection": "NORTH",
-          "stayOn": false,
-          "streetName": "path",
-          "area": false,
           "alerts": [],
-          "elevationProfile": []
+          "area": false,
+          "distance": 96.96,
+          "elevationProfile": [],
+          "lat": 47.974468,
+          "lon": -122.1970535,
+          "relativeDirection": "DEPART",
+          "stayOn": false,
+          "streetName": "path"
         }
-      ]
+      ],
+      "to": {
+        "lat": 47.974851,
+        "lon": -122.197619,
+        "name": "Everett Station Bay C1",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "2345",
+          "gtfsId": "CommTrans:2345",
+          "id": "U3RvcDpDb21tVHJhbnM6MjM0NQ"
+        },
+        "vertexType": "TRANSIT"
+      },
+      "transitLeg": false,
+      "trip": null
     },
     {
+      "accessibilityScore": null,
+      "agency": {
+        "alerts": [],
+        "gtfsId": "CommTrans:40",
+        "id": "CommTrans:40",
+        "name": "Sound Transit",
+        "timezone": "America/Los_Angeles",
+        "url": "https://www.soundtransit.org/"
+      },
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 23085.4,
+      "dropoffType": "SCHEDULED",
+      "duration": 1560,
+      "endTime": 1703806140000,
       "fareProducts": [
         {
-          "id": "0f76bb4a-7491-34b9-95ce-5d6f4e6b4d53",
+          "id": "a138b712-9a09-30cc-ae82-9e0976975730",
           "product": {
-            "id": "orca:farePayment",
-            "name": "rideCost",
+            "__typename": "DefaultFareProduct",
+            "id": "orca:electronicSpecial",
+            "medium": null,
+            "name": "electronicSpecial",
+            "riderCategory": null,
             "price": {
+              "amount": 1,
               "currency": {
                 "code": "USD",
                 "digits": 2
-              },
-              "amount": 3
-            },
-            "riderCategory": {
-              "id": "orca:regular",
-              "name": "regular"
-            },
-            "medium": {
-              "id": "orca:cash",
-              "name": "cash"
+              }
             }
           }
         },
         {
-          "id": "ab8213b7-eddd-3d20-9b2d-a5ed8d8573a4",
+          "id": "2650c809-c9ee-348b-9876-5abfa6630a94",
           "product": {
-            "id": "orca:farePayment",
-            "name": "rideCost",
+            "__typename": "DefaultFareProduct",
+            "id": "orca:electronicRegular",
+            "medium": null,
+            "name": "electronicRegular",
+            "riderCategory": null,
             "price": {
+              "amount": 3.25,
               "currency": {
                 "code": "USD",
                 "digits": 2
-              },
-              "amount": 0.25
-            },
-            "riderCategory": {
-              "id": "orca:regular",
-              "name": "regular"
-            },
+              }
+            }
+          }
+        },
+        {
+          "id": "9804c231-c562-33ec-9bf8-aae525a16f61",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:regular",
+            "medium": null,
+            "name": "regular",
+            "riderCategory": null,
+            "price": {
+              "amount": 10.25,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "5cd659c7-ba5b-325c-97a1-fc018378a8e4",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:electronicSenior",
+            "medium": null,
+            "name": "electronicSenior",
+            "riderCategory": null,
+            "price": {
+              "amount": 1,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "a1baf48c-9f9e-3623-a1c2-92ed79973c9d",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:youth",
+            "medium": null,
+            "name": "youth",
+            "riderCategory": null,
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "c4bd89a1-a953-3759-9944-b65e69ea7434",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:senior",
+            "medium": null,
+            "name": "senior",
+            "riderCategory": null,
+            "price": {
+              "amount": 9.75,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "b34eee2a-1d2c-340c-89d6-c7f0315d15be",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:electronicYouth",
+            "medium": null,
+            "name": "electronicYouth",
+            "riderCategory": null,
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "f954cd5f-e059-3606-a7fe-524be3729654",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
             "medium": {
               "id": "orca:electronic",
               "name": "electronic"
-            }
-          }
-        },
-        {
-          "id": "75fef4dc-142b-3589-ac62-d484f5b41143",
-          "product": {
-            "id": "orca:farePayment",
-            "name": "transfer",
-            "price": {
-              "currency": {
-                "code": "USD",
-                "digits": 2
-              },
-              "amount": 2.75
             },
-            "riderCategory": {
-              "id": "orca:regular",
-              "name": "regular"
-            },
-            "medium": {
-              "id": "orca:electronic",
-              "name": "electronic"
-            }
-          }
-        },
-        {
-          "id": "69bafcef-e2ee-3a6c-a355-0883f3d5561f",
-          "product": {
-            "id": "orca:farePayment",
             "name": "rideCost",
-            "price": {
-              "currency": {
-                "code": "USD",
-                "digits": 2
-              },
-              "amount": 1
-            },
-            "riderCategory": {
-              "id": "orca:senior",
-              "name": "senior"
-            },
-            "medium": {
-              "id": "orca:cash",
-              "name": "cash"
-            }
-          }
-        },
-        {
-          "id": "b0026496-8eea-31c8-8468-a67b00abc2b5",
-          "product": {
-            "id": "orca:farePayment",
-            "name": "rideCost",
-            "price": {
-              "currency": {
-                "code": "USD",
-                "digits": 2
-              },
-              "amount": 0
-            },
-            "riderCategory": {
-              "id": "orca:youth",
-              "name": "youth"
-            },
-            "medium": {
-              "id": "orca:electronic",
-              "name": "electronic"
-            }
-          }
-        },
-        {
-          "id": "8e77f7c7-7eda-32a8-ad44-23372b079942",
-          "product": {
-            "id": "orca:farePayment",
-            "name": "rideCost",
-            "price": {
-              "currency": {
-                "code": "USD",
-                "digits": 2
-              },
-              "amount": 0
-            },
             "riderCategory": {
               "id": "orca:special",
               "name": "special"
             },
-            "medium": {
-              "id": "orca:electronic",
-              "name": "electronic"
-            }
-          }
-        },
-        {
-          "id": "e8e69341-c5f3-3833-9a0a-de3118460842",
-          "product": {
-            "id": "orca:farePayment",
-            "name": "transfer",
             "price": {
+              "amount": 1,
               "currency": {
                 "code": "USD",
                 "digits": 2
-              },
-              "amount": 1.5
-            },
-            "riderCategory": {
-              "id": "orca:special",
-              "name": "special"
-            },
-            "medium": {
-              "id": "orca:electronic",
-              "name": "electronic"
+              }
             }
           }
         },
         {
-          "id": "7ab667f5-3bb1-3973-b065-46ac5bffe3a4",
+          "id": "ee035a88-af6e-3d10-993d-754e8fe2907b",
           "product": {
+            "__typename": "DefaultFareProduct",
             "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:electronic",
+              "name": "electronic"
+            },
             "name": "rideCost",
+            "riderCategory": {
+              "id": "orca:regular",
+              "name": "regular"
+            },
             "price": {
+              "amount": 3.25,
               "currency": {
                 "code": "USD",
                 "digits": 2
-              },
-              "amount": 0
+              }
+            }
+          }
+        },
+        {
+          "id": "7e6ce90f-4659-3699-b8bb-aedad17d267e",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:cash",
+              "name": "cash"
             },
+            "name": "rideCost",
+            "riderCategory": {
+              "id": "orca:regular",
+              "name": "regular"
+            },
+            "price": {
+              "amount": 3.25,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "1365f8f6-a9ad-36ae-b4d8-1004b8310092",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:electronic",
+              "name": "electronic"
+            },
+            "name": "rideCost",
+            "riderCategory": {
+              "id": "orca:senior",
+              "name": "senior"
+            },
+            "price": {
+              "amount": 1,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "521bba28-380d-336c-a48a-8be8bda68020",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:cash",
+              "name": "cash"
+            },
+            "name": "rideCost",
             "riderCategory": {
               "id": "orca:youth",
               "name": "youth"
             },
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "623c06c6-eccf-3062-a2d5-f0c7d92da471",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
             "medium": {
               "id": "orca:cash",
               "name": "cash"
-            }
-          }
-        },
-        {
-          "id": "b3ff8f6e-f55f-3098-bb23-2bc49441d81f",
-          "product": {
-            "id": "orca:farePayment",
+            },
             "name": "rideCost",
-            "price": {
-              "currency": {
-                "code": "USD",
-                "digits": 2
-              },
-              "amount": 0
-            },
             "riderCategory": {
               "id": "orca:senior",
               "name": "senior"
             },
-            "medium": {
-              "id": "orca:electronic",
-              "name": "electronic"
+            "price": {
+              "amount": 3.25,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
             }
           }
         },
         {
-          "id": "2fe47d57-d05f-3f51-9d4b-4d060a68abd9",
+          "id": "96a36579-c8f3-300e-ae19-1186bea1199e",
           "product": {
+            "__typename": "DefaultFareProduct",
             "id": "orca:farePayment",
-            "name": "transfer",
-            "price": {
-              "currency": {
-                "code": "USD",
-                "digits": 2
-              },
-              "amount": 1
-            },
-            "riderCategory": {
-              "id": "orca:senior",
-              "name": "senior"
-            },
             "medium": {
               "id": "orca:electronic",
               "name": "electronic"
+            },
+            "name": "rideCost",
+            "riderCategory": {
+              "id": "orca:youth",
+              "name": "youth"
+            },
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
             }
           }
         }
       ],
-      "pickupType": "SCHEDULED",
-      "dropoffType": "SCHEDULED",
-      "pickupBookingInfo": null,
-      "rentedBike": null,
+      "from": {
+        "lat": 47.974851,
+        "lon": -122.197619,
+        "name": "Everett Station Bay C1",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "2345",
+          "gtfsId": "CommTrans:2345",
+          "id": "U3RvcDpDb21tVHJhbnM6MjM0NQ"
+        },
+        "vertexType": "TRANSIT"
+      },
+      "headsign": "Northgate Station",
       "interlineWithPreviousLeg": false,
-      "departureDelay": 0,
-      "arrivalDelay": 0,
-      "distance": 23087.2,
-      "duration": 2220,
-      "endTime": 1685145000000,
-      "mode": "TRAM",
-      "realTime": false,
-      "realtimeState": null,
-      "startTime": 1685142780000,
-      "transitLeg": true,
-      "accessibilityScore": null,
-      "trip": {
-        "id": "VHJpcDo0MDpMTFJfMjAyMy0wMy0xOC0yMDIzLTA5LTA0X1dlZWtkYXlfMjA4Ng",
-        "gtfsId": "40:LLR_2023-03-18-2023-09-04_Weekday_2086",
-        "tripHeadsign": "Angle Lake"
-      },
-      "agency": {
-        "name": "Sound Transit",
-        "id": "QWdlbmN5OjQwOjQw",
-        "timezone": "America/Los_Angeles",
-        "url": "https://www.soundtransit.org",
-        "alerts": []
-      },
-      "legGeometry": {
-        "length": 509,
-        "points": "s|cbHhgsiVJ?dA?pAApA@nAHnANnALnANnALnALpAFnABpACpAGnAKr@G^CnAKpAEnA?pA@pA?nA@pA@pA@nA@pA@pA?nACpAKlASlAWjA]fAc@fAi@`Ak@`Aq@z@u@z@w@v@{@r@{@r@_Ar@}@r@}@r@_Ar@}@r@}@r@_Ar@}@r@_Ar@}@r@}@r@_Ar@}@r@}@r@_Ar@}@r@}@r@_Ar@}@r@}@r@_Ar@}@r@}@r@_Ar@}@r@}@r@}@v@{@x@w@~@s@bAk@fAe@hA_@nAWnAMnACpAApAAnA?V???x@ApACnAGnAKpAMnAMnAKnAMnAMnAMnAMpAKnAMnAMnAMnAKnAMnAMpAMnAKnAMnAMnAMnAMnAKpAMnAKnAIpAInAEpAGnACpAApAApA?nA?pA@pA@nABpA@h@???f@@nAAnAQfAc@~@q@v@{@j@cAd@gAZkARmANoAJqAJoAHoAJqAJoAJoALoALoARoATmAZkA^kA`@iAf@eAj@cAp@aAt@{@x@w@~@q@dAk@hAa@jAYnAOpAEnAApAApAAnAApAAbDAb@Cb@???H?p@Ar@?|FGx@?hA?rA@pADzAHtAHrALrARrAPzAV`BZxA^`Bd@rBn@|Aj@lBx@lBz@|Ax@fB`AhBlAbBlAfE`DrB~Avh@da@bHlFbDdCjEfDdK~HrB~A~@r@n@d@bAh@|@d@jAd@jA^tAVpAR~@HfADtA?n@A????vFC~A?x@?|@HbAPbAZbA`@x@b@dAz@v@r@~@jAr@dAp@rAd@fA`@jAd@bBZxAVbBRfBH~AFtA@|AAdBGpAIzAOdBWzASxAKx@Ix@?f@?n@@l@Dr@Jx@Hf@Jh@JZjAnDb@tAhBzFXvAhB|FnBlG??@?FTj@fABBRh@PVNRLHLDR@N?VGXMNInJoIlC_Cp@o@RQ????t@s@lCaC|GcGnCcClCaC\\[nBgBlBgB@???VUVURWVc@Xe@PYpBeDx@sAx@mAV_@TQ\\Sp@MzCA|FF@@??N@RFNFN@LB~BCF?D?fCAF?N?NCN?NALAHCJAJAHCNEPC^KxDeAxCy@NGJAJCJALAL?h@CrC???nHBrB?V?X@R@VBn@HVDP@T@z@?b@?z@?vp@B??@?zG?L?N?JCF?JAHEDABCF?@CDABCDCBCBEDCBEBCBGBEBC@EBGBEBG@E@E@GBE@G@E?CBM?IBI@K?I?SDeAFeBBqAJ_D@q@@o@?y@?s@?qAAgI@y@@o@Ds@JiBXkE@s@Bm@?{@Aw@Ey@Gy@Gg@Gi@Ie@Ke@UaAoDiNa@aBc@kBkAwF???AoAcGKg@Ii@Ge@Gg@Ee@Ek@Am@Ak@Ak@@k@Bg@Bk@@e@Dk@Fc@Hk@Js@Rw@zDsPNs@Lm@RqAPqAHgAf@kHLiBDc@BWFWDUFUHUJUJULUJONSNKPQtCmB??~BcBb@Ud@STEVGVCVA^?pHDvOFjLCx@?pDH`@Bb@Cb@?^Ib@G^I\\M\\O\\Qhg@oX~@e@????|L{GjDgB|@c@f@QtE_BpAe@lO}FbJkDdQwGrFyBt[{LnSqI?A"
-      },
       "intermediateStops": [
         {
-          "lat": 47.676107,
-          "lon": -122.316041,
-          "name": "Roosevelt Station",
-          "stopCode": "N09-T1",
-          "stopId": "U3RvcDo0MDo5OTAwMDM",
-          "locationType": "STOP"
+          "lat": 47.972819,
+          "locationType": "STOP",
+          "lon": -122.201491,
+          "name": "Broadway & 34th St",
+          "stopCode": "2367",
+          "stopId": "U3RvcDpDb21tVHJhbnM6MjM2Nw"
         },
         {
-          "lat": 47.659875,
-          "lon": -122.314194,
-          "name": "U District Station",
-          "stopCode": "N07-T1",
-          "stopId": "U3RvcDo0MDo5OTAwMDE",
-          "locationType": "STOP"
+          "lat": 47.899018,
+          "locationType": "STOP",
+          "lon": -122.214478,
+          "name": "South Everett Fwy Station Bay 3",
+          "stopCode": "2868",
+          "stopId": "U3RvcDpDb21tVHJhbnM6Mjg2OA"
         },
         {
-          "lat": 47.649349,
-          "lon": -122.303795,
-          "name": "Univ of Washington Station",
-          "stopCode": "N05-T1",
-          "stopId": "U3RvcDo0MDo5OTYwNA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.61956,
-          "lon": -122.320389,
-          "name": "Capitol Hill Station",
-          "stopCode": "N03-T1",
-          "stopId": "U3RvcDo0MDo5OTYxMA",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.61145,
-          "lon": -122.337532,
-          "name": "Westlake Station",
-          "stopCode": "C03-T1",
-          "stopId": "U3RvcDo0MDoxMTA4",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.607246,
-          "lon": -122.335754,
-          "name": "University St Station",
-          "stopCode": "C05-T1",
-          "stopId": "U3RvcDo0MDo0NTU",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.602139,
-          "lon": -122.331055,
-          "name": "Pioneer Square Station",
-          "stopCode": "C07-T1",
-          "stopId": "U3RvcDo0MDo1MDE",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.59766,
-          "lon": -122.328217,
-          "name": "Int'l Dist/Chinatown Station",
-          "stopCode": "C09-T1",
-          "stopId": "U3RvcDo0MDo2MjM",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.591824,
-          "lon": -122.327354,
-          "name": "Stadium Station",
-          "stopCode": "C13-T1",
-          "stopId": "U3RvcDo0MDo5OTEwMQ",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.579952,
-          "lon": -122.327522,
-          "name": "SODO Station",
-          "stopCode": "C15-T1",
-          "stopId": "U3RvcDo0MDo5OTExMQ",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.579124,
-          "lon": -122.311279,
-          "name": "Beacon Hill Station",
-          "stopCode": "C19-T1",
-          "stopId": "U3RvcDo0MDo5OTEyMQ",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.576439,
-          "lon": -122.297737,
-          "name": "Mount Baker Station",
-          "stopCode": "C23-T1",
-          "stopId": "U3RvcDo0MDo1NTk0OQ",
-          "locationType": "STOP"
-        },
-        {
-          "lat": 47.559025,
-          "lon": -122.292389,
-          "name": "Columbia City Station",
-          "stopCode": "C25-T1",
-          "stopId": "U3RvcDo0MDo1NjAzOQ",
-          "locationType": "STOP"
+          "lat": 47.852713,
+          "locationType": "STOP",
+          "lon": -122.258448,
+          "name": "Ash Way Park & Ride Bay 1",
+          "stopCode": "2164",
+          "stopId": "U3RvcDpDb21tVHJhbnM6MjE2NA"
         }
       ],
-      "route": {
-        "shortName": "1-Line",
-        "longName": "Northgate - Angle Lake",
-        "color": "28813F",
-        "textColor": "FFFFFF",
-        "id": "Um91dGU6NDA6MTAwNDc5",
-        "type": 0,
-        "alerts": []
+      "legGeometry": {
+        "length": 517,
+        "points": "uaycHxvyhVe@NGq@?KDIpDsAJAHFHTATELSJDv@B`D@`C?V@v@?J?z@D|C?bCr@Aj@AJ?vACj@A????XAd@AX?\\AdBC~@Af@AP?b@Al@AR?`@AZAd@Ab@ARAJ?ZAP?D?TAr@ChACf@AH?R?\\Ad@AZ?V?hAA~@AxAC`@AdAA`BCd@Ab@Af@Ah@A|AIRC\\Ep@In@I\\Gt@Kv@AZAf@G`@Cr@OVEh@ExAI|AGr@E`@C\\G^In@SxAk@x@U^Id@En@C~@A\\?v@?~B?vAAhACxACfCErACvB@n@@tADfABh@B`AD|ENNA`AGxAO`AOJAv@MbAQnAWj@MbAUp@Oh@Kb@KxFmAzMuCfDs@`AQp@Iv@Et@Al@Ap@Bx@F~ANd@DbBLVBZBd@D\\B\\BT@X@`@@f@?P?r@Ct@Gp@Ip@K`@GpB[r@KzB]f@I`BWx@Mp@KrASd@Ib@I`@Gb@Gn@Ij@Gb@Cj@Cz@Af@B^B`@Dr@Jl@L\\Hz@ZPHNF\\N^RZPt@h@bAz@j@l@\\^\\b@X`@Zd@^n@\\p@l@lAx@hBl@nAf@fAx@fB|@fBj@bA^j@PVb@j@`@d@XZf@f@n@f@t@h@h@ZVL~@^h@RZJnA`@tBn@lCx@fCv@xBt@f@PdEtAzCdAlDjAvBp@NFxFpB`LvDpS`HlGjBlP`FdBj@xAj@pDjApGvBtCf@jGxArJtCZeCZJxCjAzAl@????lAd@nCfA[jBpCnAhD|A|DnBvBfBhAlAd@j@fAzAjBtCjBhDb@j@v@bAr@bAp@|@r@`ArAnBp@z@fClDzHnKhQhVr@`AtG~IlJtMlAbBxG`JvBtClIhL`DjEjA~AlBhCv@hA`ApAx@dAz@bAbAbA|@x@`BlA|@j@rAp@nAf@fA^jAZ~AXfC`@pBZhG~@tDj@xB\\rBZbBVz@LlAR^Fd@JdAX`AZZLbA`@nAn@v@d@r@f@ZTlA`ApAdA|@r@dA|@RNRP`@\\z[bXjI|GvK~Iz@p@Zl@NTRTb@b@n@l@`@`@PPLNLNLPZd@Xb@tAnBPTTXTVPPJHFDJFFBHBF@N@H?PHLFLJJRHV?j@AfBAdBkE[iAIc@Ca@G]Ic@Qc@Ue@]OMQQe@o@Yg@c@w@k@kAUe@MU_@k@Ya@b@q@Lc@b@f@BZNn@Pf@Zn@PZ\\@JWEi@UY????AAs@}@[_@OEc@g@Bm@C_AB}AJiAVkAJOHGJAL@t@l@bAt@vAz@rAl@tAf@dBb@lB^f@J`LjBp@V`@Fd@HRHJHHLN`@x@LxEt@vDb@`BXVDdC`@hBZrDl@`Dh@fFx@nCd@bEp@xIvAzB^xDl@fAR~AXdAVzAd@h@Rn@TLFh@Tv@^VLXNdAf@`Aj@n@^r@f@dAv@t@n@`A|@hAhA~@fAv@~@b@h@^d@`@l@d@p@b@p@v@pAp@pA\\n@`@z@z@jBb@|@Xl@~AxD~@xBVn@P`@`A|B`@|@Xn@pAvCl@pAxB|EtA~CbA`ClAvCl@tAv@hBhExJhE~JnFbM`AzBzD~InBpElBlE~AnCx@~Av@~AzA|Cj@fAjC`Gp@~A|BpFW^W\\[\\g@j@]Xg@Xq@T[DW@Y?a@?wDEgAA?jAKBEFEJAJ?LE`I@LBHDHDBH?FCDEBI@KBgE??"
       },
-      "from": {
-        "lat": 47.702662,
-        "lon": -122.32832,
-        "name": "Northgate Station",
-        "vertexType": "TRANSIT",
-        "rentalVehicle": null,
-        "stop": {
-          "id": "U3RvcDo0MDo5OTAwMDU",
-          "code": "N11-T1",
-          "gtfsId": "40:990005",
-          "alerts": []
-        }
-      },
-      "to": {
-        "lat": 47.537529,
-        "lon": -122.281471,
-        "name": "Othello Station",
-        "vertexType": "TRANSIT",
-        "rentalVehicle": null,
-        "stop": {
-          "id": "U3RvcDo0MDo1NjE1OQ",
-          "code": "C27-T1",
-          "gtfsId": "40:56159",
-          "alerts": []
-        }
-      },
-      "steps": []
-    },
-    {
-      "fareProducts": [],
-      "pickupType": "SCHEDULED",
-      "dropoffType": "SCHEDULED",
+      "mode": "BUS",
       "pickupBookingInfo": null,
-      "rentedBike": false,
-      "interlineWithPreviousLeg": false,
-      "departureDelay": 0,
-      "arrivalDelay": 0,
-      "distance": 2167.47,
-      "duration": 1739,
-      "endTime": 1685146739000,
-      "mode": "WALK",
+      "pickupType": "SCHEDULED",
       "realTime": false,
       "realtimeState": null,
-      "startTime": 1685145000000,
-      "transitLeg": false,
-      "accessibilityScore": null,
-      "trip": null,
-      "agency": null,
-      "legGeometry": {
-        "length": 135,
-        "points": "otcaHfbjiV?BXMF\\\\??fC?NJ?@|@BbC?R?TAB?|A?t@@f@?L@B?V?TA@@D?D?vA?h@?X?TAXCXANCPCPKd@ERCLCH@@HFLJ@@@?@@@@B@F?F?D?DAENDAHCFCFNPTDBD?RIl@Wb@Qn@c@h@[ZONGPCD?LEFAL@Ad@@vF?pAApA?nH@\\@J@DBPJLEFIFI^ENQf@EBCFHJP^BL@J@PAhFA|A?bAArB?hA@JBFDDDHl@b@RHTFXD\\@P@PCjB[hB[h@M`A]lAk@vBoAlAu@h@YLCPAJ@J@LFLHHJHJFNHTv@dGFb@@NK@KCOCM@{Ad@e@F_@LM@"
+      "rentedBike": null,
+      "rideHailingEstimate": null,
+      "route": {
+        "alerts": [],
+        "color": "2B376E",
+        "gtfsId": "CommTrans:512",
+        "id": "CommTrans:512",
+        "longName": "Everett - Northgate Station",
+        "shortName": "512",
+        "textColor": "FFFFFF",
+        "type": 3
       },
-      "intermediateStops": null,
-      "route": null,
-      "from": {
-        "lat": 47.537529,
-        "lon": -122.281471,
-        "name": "Othello Station",
-        "vertexType": "TRANSIT",
+      "startTime": 1703804580000,
+      "steps": [],
+      "to": {
+        "lat": 47.81588,
+        "lon": -122.296301,
+        "name": "Lynnwood Transit Center Bay D3",
         "rentalVehicle": null,
         "stop": {
-          "id": "U3RvcDo0MDo1NjE1OQ",
-          "code": "C27-T1",
-          "gtfsId": "40:56159",
-          "alerts": []
-        }
+          "alerts": [],
+          "code": "2422",
+          "gtfsId": "CommTrans:2422",
+          "id": "U3RvcDpDb21tVHJhbnM6MjQyMg"
+        },
+        "vertexType": "TRANSIT"
       },
-      "to": {
-        "lat": 47.5312889,
-        "lon": -122.2958113,
-        "name": "New Light Christian Church, Seattle, WA, USA",
-        "vertexType": "NORMAL",
+      "transitLeg": true,
+      "trip": {
+        "arrivalStoptime": {
+          "stop": {
+            "gtfsId": "kcm:35319",
+            "id": "U3RvcDprY206MzUzMTk"
+          },
+          "stopPosition": 7
+        },
+        "departureStoptime": {
+          "stop": {
+            "gtfsId": "CommTrans:2345",
+            "id": "U3RvcDpDb21tVHJhbnM6MjM0NQ"
+          },
+          "stopPosition": 1
+        },
+        "gtfsId": "CommTrans:11590062__KPOB-CS:221:0:Weekday:3:23SEP:85039:12345",
+        "id": "VHJpcDpDb21tVHJhbnM6MTE1OTAwNjJfX0tQT0ItQ1M6MjIxOjA6V2Vla2RheTozOjIzU0VQOjg1MDM5OjEyMzQ1"
+      }
+    },
+    {
+      "accessibilityScore": null,
+      "agency": null,
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 53.55,
+      "dropoffType": "SCHEDULED",
+      "duration": 41,
+      "endTime": 1703806181000,
+      "fareProducts": [],
+      "from": {
+        "lat": 47.81588,
+        "lon": -122.296301,
+        "name": "Lynnwood Transit Center Bay D3",
         "rentalVehicle": null,
-        "stop": null
+        "stop": {
+          "alerts": [],
+          "code": "2422",
+          "gtfsId": "CommTrans:2422",
+          "id": "U3RvcDpDb21tVHJhbnM6MjQyMg"
+        },
+        "vertexType": "TRANSIT"
       },
+      "headsign": null,
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": null,
+      "legGeometry": {
+        "length": 6,
+        "points": "g`zbH|~liV??Az@?lA?B??"
+      },
+      "mode": "WALK",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": null,
+      "rentedBike": false,
+      "rideHailingEstimate": null,
+      "route": null,
+      "startTime": 1703806140000,
       "steps": [
         {
-          "distance": 14.92,
-          "lat": 47.5375246,
-          "lon": -122.2814907,
+          "absoluteDirection": "WEST",
+          "alerts": [],
+          "area": false,
+          "distance": 53.55,
+          "elevationProfile": [],
+          "lat": 47.8158856,
+          "lon": -122.2963008,
           "relativeDirection": "DEPART",
-          "absoluteDirection": "SOUTH",
           "stayOn": false,
-          "streetName": "Martin Luther King Junior Way South",
-          "area": false,
-          "alerts": [],
-          "elevationProfile": []
-        },
-        {
-          "distance": 12.32,
-          "lat": 47.5373972,
-          "lon": -122.2814286,
-          "relativeDirection": "RIGHT",
-          "absoluteDirection": "SOUTHWEST",
-          "stayOn": false,
-          "streetName": "service road",
-          "area": false,
-          "alerts": [],
-          "elevationProfile": []
-        },
-        {
-          "distance": 79.38,
-          "lat": 47.537352,
-          "lon": -122.2815784,
-          "relativeDirection": "LEFT",
-          "absoluteDirection": "SOUTH",
-          "stayOn": true,
-          "streetName": "parking aisle",
-          "area": false,
-          "alerts": [],
-          "elevationProfile": []
-        },
-        {
-          "distance": 186.19,
-          "lat": 47.5371499,
-          "lon": -122.2823392,
-          "relativeDirection": "RIGHT",
-          "absoluteDirection": "WEST",
-          "stayOn": true,
-          "streetName": "sidewalk",
-          "area": false,
-          "alerts": [],
-          "elevationProfile": []
-        },
-        {
-          "distance": 185.66,
-          "lat": 47.5371051,
-          "lon": -122.2847952,
-          "relativeDirection": "RIGHT",
-          "absoluteDirection": "NORTHWEST",
-          "stayOn": true,
-          "streetName": "sidewalk",
-          "area": false,
-          "alerts": [],
-          "elevationProfile": []
-        },
-        {
-          "distance": 223.22,
-          "lat": 47.5369894,
-          "lon": -122.2868292,
-          "relativeDirection": "HARD_RIGHT",
-          "absoluteDirection": "NORTHWEST",
-          "stayOn": true,
-          "streetName": "path",
-          "area": false,
-          "alerts": [null],
-          "elevationProfile": []
-        },
-        {
-          "distance": 316.7,
-          "lat": 47.535227,
-          "lon": -122.2863141,
-          "relativeDirection": "RIGHT",
-          "absoluteDirection": "WEST",
-          "stayOn": false,
-          "streetName": "South Webster Street",
-          "area": false,
-          "alerts": [],
-          "elevationProfile": []
-        },
-        {
-          "distance": 55.15,
-          "lat": 47.5351293,
-          "lon": -122.2904874,
-          "relativeDirection": "RIGHT",
-          "absoluteDirection": "NORTHWEST",
-          "stayOn": false,
-          "streetName": "path",
-          "area": false,
-          "alerts": [],
-          "elevationProfile": []
-        },
-        {
-          "distance": 259.82,
-          "lat": 47.5354239,
-          "lon": -122.2910651,
-          "relativeDirection": "LEFT",
-          "absoluteDirection": "SOUTHWEST",
-          "stayOn": false,
-          "streetName": "South Webster Street",
-          "area": false,
-          "alerts": [],
-          "elevationProfile": []
-        },
-        {
-          "distance": 57.96,
-          "lat": 47.5352763,
-          "lon": -122.2944348,
-          "relativeDirection": "SLIGHTLY_LEFT",
-          "absoluteDirection": "SOUTHWEST",
-          "stayOn": false,
-          "streetName": "29th Avenue South",
-          "area": false,
-          "alerts": [],
-          "elevationProfile": []
-        },
-        {
-          "distance": 644.09,
-          "lat": 47.5348545,
-          "lon": -122.2948441,
-          "relativeDirection": "CONTINUE",
-          "absoluteDirection": "SOUTH",
-          "stayOn": false,
-          "streetName": "Military Road South",
-          "area": false,
-          "alerts": [],
-          "elevationProfile": []
-        },
-        {
-          "distance": 132.1,
-          "lat": 47.5301402,
-          "lon": -122.2953592,
-          "relativeDirection": "RIGHT",
-          "absoluteDirection": "NORTH",
-          "stayOn": false,
-          "streetName": "service road",
-          "area": false,
-          "alerts": [],
-          "elevationProfile": []
+          "streetName": "platform"
         }
-      ]
+      ],
+      "to": {
+        "lat": 47.815891,
+        "lon": -122.297018,
+        "name": "Lynnwood Transit Center Bay D1",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "2113",
+          "gtfsId": "CommTrans:2113",
+          "id": "U3RvcDpDb21tVHJhbnM6MjExMw"
+        },
+        "vertexType": "TRANSIT"
+      },
+      "transitLeg": false,
+      "trip": null
+    },
+    {
+      "accessibilityScore": null,
+      "agency": {
+        "alerts": [],
+        "gtfsId": "CommTrans:40",
+        "id": "CommTrans:40",
+        "name": "Sound Transit",
+        "timezone": "America/Los_Angeles",
+        "url": "https://www.soundtransit.org/"
+      },
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 16571.89,
+      "dropoffType": "SCHEDULED",
+      "duration": 1500,
+      "endTime": 1703808300000,
+      "fareProducts": [
+        {
+          "id": "a138b712-9a09-30cc-ae82-9e0976975730",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:electronicSpecial",
+            "medium": null,
+            "name": "electronicSpecial",
+            "riderCategory": null,
+            "price": {
+              "amount": 1,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "2650c809-c9ee-348b-9876-5abfa6630a94",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:electronicRegular",
+            "medium": null,
+            "name": "electronicRegular",
+            "riderCategory": null,
+            "price": {
+              "amount": 3.25,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "9804c231-c562-33ec-9bf8-aae525a16f61",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:regular",
+            "medium": null,
+            "name": "regular",
+            "riderCategory": null,
+            "price": {
+              "amount": 10.25,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "5cd659c7-ba5b-325c-97a1-fc018378a8e4",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:electronicSenior",
+            "medium": null,
+            "name": "electronicSenior",
+            "riderCategory": null,
+            "price": {
+              "amount": 1,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "a1baf48c-9f9e-3623-a1c2-92ed79973c9d",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:youth",
+            "medium": null,
+            "name": "youth",
+            "riderCategory": null,
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "c4bd89a1-a953-3759-9944-b65e69ea7434",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:senior",
+            "medium": null,
+            "name": "senior",
+            "riderCategory": null,
+            "price": {
+              "amount": 9.75,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "b34eee2a-1d2c-340c-89d6-c7f0315d15be",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:electronicYouth",
+            "medium": null,
+            "name": "electronicYouth",
+            "riderCategory": null,
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "544f0b72-3146-32f9-ac66-d3acf2272bdf",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:electronic",
+              "name": "electronic"
+            },
+            "name": "rideCost",
+            "riderCategory": {
+              "id": "orca:special",
+              "name": "special"
+            },
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "0c0fe3d1-9841-3b81-adb4-ebf985ba8f93",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:electronic",
+              "name": "electronic"
+            },
+            "name": "transfer",
+            "riderCategory": {
+              "id": "orca:special",
+              "name": "special"
+            },
+            "price": {
+              "amount": 1,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "fc6f273b-66b6-31d5-b898-990fcb78bcd6",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:electronic",
+              "name": "electronic"
+            },
+            "name": "rideCost",
+            "riderCategory": {
+              "id": "orca:regular",
+              "name": "regular"
+            },
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "91b7fdbd-bc61-3efb-933c-db5bce8f61a7",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:electronic",
+              "name": "electronic"
+            },
+            "name": "transfer",
+            "riderCategory": {
+              "id": "orca:regular",
+              "name": "regular"
+            },
+            "price": {
+              "amount": 3.25,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "a0b6c6a8-3b07-317d-8d1b-53105c67ac63",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:cash",
+              "name": "cash"
+            },
+            "name": "rideCost",
+            "riderCategory": {
+              "id": "orca:regular",
+              "name": "regular"
+            },
+            "price": {
+              "amount": 3.25,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "0fc53bce-fd03-3431-b098-ca3c78b22219",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:electronic",
+              "name": "electronic"
+            },
+            "name": "rideCost",
+            "riderCategory": {
+              "id": "orca:senior",
+              "name": "senior"
+            },
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "9e58c8d8-ca88-3017-b29f-137bcf10981c",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:electronic",
+              "name": "electronic"
+            },
+            "name": "transfer",
+            "riderCategory": {
+              "id": "orca:senior",
+              "name": "senior"
+            },
+            "price": {
+              "amount": 1,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "12546d66-1a10-3a13-bd3c-702f70d3bd3e",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:cash",
+              "name": "cash"
+            },
+            "name": "rideCost",
+            "riderCategory": {
+              "id": "orca:youth",
+              "name": "youth"
+            },
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "c6e8ec40-72da-3b34-955a-ba922aa432ab",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:cash",
+              "name": "cash"
+            },
+            "name": "rideCost",
+            "riderCategory": {
+              "id": "orca:senior",
+              "name": "senior"
+            },
+            "price": {
+              "amount": 3.25,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "bd5873d4-6a65-33fc-96a8-1bae00afccb1",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:electronic",
+              "name": "electronic"
+            },
+            "name": "rideCost",
+            "riderCategory": {
+              "id": "orca:youth",
+              "name": "youth"
+            },
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        }
+      ],
+      "from": {
+        "lat": 47.815891,
+        "lon": -122.297018,
+        "name": "Lynnwood Transit Center Bay D1",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "2113",
+          "gtfsId": "CommTrans:2113",
+          "id": "U3RvcDpDb21tVHJhbnM6MjExMw"
+        },
+        "vertexType": "TRANSIT"
+      },
+      "headsign": "Bellevue",
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": [
+        {
+          "lat": 47.829303,
+          "locationType": "STOP",
+          "lon": -122.268359,
+          "name": "Alderwood Mall Pkwy & Beech Rd",
+          "stopCode": "814",
+          "stopId": "U3RvcDpDb21tVHJhbnM6ODE0"
+        },
+        {
+          "lat": 47.831614,
+          "locationType": "STOP",
+          "lon": -122.268401,
+          "name": "Alderwood Mall Pkwy & 184th St SW",
+          "stopCode": "2431",
+          "stopId": "U3RvcDpDb21tVHJhbnM6MjQzMQ"
+        },
+        {
+          "lat": 47.793847,
+          "locationType": "STOP",
+          "lon": -122.214072,
+          "name": "Canyon Park Fwy Station Bay 4",
+          "stopCode": "2736",
+          "stopId": "U3RvcDpDb21tVHJhbnM6MjczNg"
+        },
+        {
+          "lat": 47.767936,
+          "locationType": "STOP",
+          "lon": -122.191257,
+          "name": "Beardslee Blvd & Ross Rd",
+          "stopCode": "2325",
+          "stopId": "U3RvcDpDb21tVHJhbnM6MjMyNQ"
+        },
+        {
+          "lat": 47.761773,
+          "locationType": "STOP",
+          "lon": -122.192425,
+          "name": "UW Bothell & Cascadia College",
+          "stopCode": "2229",
+          "stopId": "U3RvcDpDb21tVHJhbnM6MjIyOQ"
+        }
+      ],
+      "legGeometry": {
+        "length": 549,
+        "points": "y`zbHjcmiVBuGAOCKEIIE?kAa@@U?w@?W?M?mB@@eC?S?aC?_B?s@?iB@}B?y@?k@@aB?mA?m@?K@_B?O?eAAs@A}@?e@G}@CQAKCMEYKi@_@sAoA}Cg@mAIQwAcDcByDi@oASa@Q]a@w@o@kAYk@o@uAe@eAOa@k@}Ac@kASm@{@{B_A{BqAuC}AqDuC{Ga@_A{BcFsA_DeC{Fi@oAm@uAeB{DiAeC_AqBM[K[Ia@E[C]q@KqAQs@Mk@Ke@G]C]AE?sA@????mA@q@?uB@_B@I?U?s@?c@@????o@?O?iA@_@@e@@c@?G?[@YBWFIBMDa@VIHGDIF[\\MP_@f@m@x@g@n@a@h@_BtBoA~A}@hAaAtAOPORMPIJYZc@^y@f@[Lm@P_@DQ@y@?e@G[EJy@N{@Rq@Ne@Vo@\\q@T]Zc@r@w@r@{@~@iA\\e@^i@N[J]Zc@`@k@zAcCTa@nA}BxAuCtAkCTc@xBgE~A{CbB}Cl@kAXk@p@oAh@aADGVi@j@mAXk@lBoDtDgHdBgDxAmCr@gAl@{@b@e@`@a@j@q@r@u@`AaA|@{@`A{@h@[HI^]v@y@~@aAr@w@\\a@^g@~@wAVc@d@y@z@kBn@_Bd@uAj@qBd@oBx@uDZuAXqAt@}Cd@qBf@sBZoABKV_A^sA`@oA\\_A\\_A\\{@^y@l@kAh@gAd@s@v@oAPYVa@r@eAf@y@PY`@o@`A{ANW`@m@d@u@j@aAf@y@hAsBtAiC|A}C~@gB~A{C`B}Ct@yAt@uAd@{@\\o@`A}Az@kAl@u@n@s@l@o@p@k@x@q@x@k@`Am@t@c@~@a@l@WbBm@tDqAtFqBzAi@dA_@|@]x@]dAc@z@_@ZOfB{@xC}AxAs@dCqAdDeBdB}@n@]|@i@d@Yv@k@ROj@g@VSn@o@bAgAz@eAx@iAd@w@d@w@h@cAt@}AfAkCPe@Zu@Tk@l@{A~A}Df@mAJUZu@t@cARa@FK^w@p@qAb@w@PYTYTUZU^UVMPIn@U\\Kj@SPIRONUJ[F]T{AA}@?_@@]D]?????IBY^sDHc@Vm@H[FWV{@d@_Bx@yCvA{Dr@yBjAcDb@mAh@sAl@uAp@cBl@yAd@kAXs@zBuFbBeE~@{BfAmC^}@L[LYN[Rc@P_@N[LWLWNYTa@P[Ve@Xe@T_@R[T_@Ze@RYRYRYPUPUX_@V[Z_@Z_@VYX[Z[XY\\]ZYZYh@e@RQd@_@XU^YVQh@_@f@[n@a@x@e@~A}@~BoA~Q}JrF{CZQ\\SVMVM^QXMTKRI^MRIXKVIVI`@K^I^I`@I\\GZEjH_AbAM~FMpDOx@A~@BJ@`@DTBfCVd@B`@?b@CZEb@KDZFb@@DHVLNNHLDJ?NC????LERINEVGTEVCv@AN@H?h@DV@`@@p@B`@Hr@Tf@X^\\X^Vb@f@z@LRp@fANTJPv@pA`@s@LGXERBd@Tp@b@XRVHRBp@BN?t@ATAr@If@Gf@GAm@CUMWYg@?C????Ma@Uj@CV?^DtAs@HU@u@@O?q@CSCWIYSq@c@e@USCYDMFa@r@|@xAFJn@dAT`@f@z@|@xALPp@hA^l@Tb@N^L`@Ld@Lr@Jl@Jd@Nb@BFP`@t@`BRb@HP\\v@LXTr@HXPv@Lv@TfB@HDVHl@Fd@BVFb@Fd@TdBTGLIT[LYL]h@mBd@eBHU"
+      },
+      "mode": "BUS",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": null,
+      "rentedBike": null,
+      "rideHailingEstimate": null,
+      "route": {
+        "alerts": [],
+        "color": "2B376E",
+        "gtfsId": "CommTrans:535",
+        "id": "CommTrans:535",
+        "longName": "Lynnwood - Bellevue",
+        "shortName": "535",
+        "textColor": "FFFFFF",
+        "type": 3
+      },
+      "startTime": 1703806800000,
+      "steps": [],
+      "to": {
+        "lat": 47.759468,
+        "lon": -122.199971,
+        "name": "Bothell Park & Ride Bay 2",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "1399",
+          "gtfsId": "CommTrans:1399",
+          "id": "U3RvcDpDb21tVHJhbnM6MTM5OQ"
+        },
+        "vertexType": "TRANSIT"
+      },
+      "transitLeg": true,
+      "trip": {
+        "arrivalStoptime": {
+          "stop": {
+            "gtfsId": "CommTrans:2856",
+            "id": "U3RvcDpDb21tVHJhbnM6Mjg1Ng"
+          },
+          "stopPosition": 13
+        },
+        "departureStoptime": {
+          "stop": {
+            "gtfsId": "CommTrans:2113",
+            "id": "U3RvcDpDb21tVHJhbnM6MjExMw"
+          },
+          "stopPosition": 1
+        },
+        "gtfsId": "CommTrans:11589968__KPOB-CS:221:0:Weekday:3:23SEP:85038:12345",
+        "id": "VHJpcDpDb21tVHJhbnM6MTE1ODk5NjhfX0tQT0ItQ1M6MjIxOjA6V2Vla2RheTozOjIzU0VQOjg1MDM4OjEyMzQ1"
+      }
+    },
+    {
+      "accessibilityScore": null,
+      "agency": null,
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 0.2,
+      "dropoffType": "SCHEDULED",
+      "duration": 1,
+      "endTime": 1703808301000,
+      "fareProducts": [],
+      "from": {
+        "lat": 47.759468,
+        "lon": -122.199971,
+        "name": "Bothell Park & Ride Bay 2",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "1399",
+          "gtfsId": "CommTrans:1399",
+          "id": "U3RvcDpDb21tVHJhbnM6MTM5OQ"
+        },
+        "vertexType": "TRANSIT"
+      },
+      "headsign": null,
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": null,
+      "legGeometry": {
+        "length": 4,
+        "points": "s_obHzdzhVAA?@@?"
+      },
+      "mode": "WALK",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": null,
+      "rentedBike": false,
+      "rideHailingEstimate": null,
+      "route": null,
+      "startTime": 1703808300000,
+      "steps": [
+        {
+          "absoluteDirection": "NORTHWEST",
+          "alerts": [],
+          "area": false,
+          "distance": 0.2,
+          "elevationProfile": [],
+          "lat": 47.7594718,
+          "lon": -122.1999678,
+          "relativeDirection": "DEPART",
+          "stayOn": false,
+          "streetName": "sidewalk"
+        }
+      ],
+      "to": {
+        "lat": 47.7594681,
+        "lon": -122.199974,
+        "name": "Kaysner Way & Woodinville Dr",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "76300",
+          "gtfsId": "kcm:76300",
+          "id": "U3RvcDprY206NzYzMDA"
+        },
+        "vertexType": "TRANSIT"
+      },
+      "transitLeg": false,
+      "trip": null
+    },
+    {
+      "accessibilityScore": null,
+      "agency": {
+        "alerts": [],
+        "gtfsId": "kcm:1",
+        "id": "kcm:1",
+        "name": "Metro Transit",
+        "timezone": "America/Los_Angeles",
+        "url": "https://kingcounty.gov/en/dept/metro"
+      },
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 5795.1,
+      "dropoffType": "SCHEDULED",
+      "duration": 685,
+      "endTime": 1703809765000,
+      "fareProducts": [
+        {
+          "id": "a138b712-9a09-30cc-ae82-9e0976975730",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:electronicSpecial",
+            "medium": null,
+            "name": "electronicSpecial",
+            "riderCategory": null,
+            "price": {
+              "amount": 1,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "2650c809-c9ee-348b-9876-5abfa6630a94",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:electronicRegular",
+            "medium": null,
+            "name": "electronicRegular",
+            "riderCategory": null,
+            "price": {
+              "amount": 3.25,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "9804c231-c562-33ec-9bf8-aae525a16f61",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:regular",
+            "medium": null,
+            "name": "regular",
+            "riderCategory": null,
+            "price": {
+              "amount": 10.25,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "5cd659c7-ba5b-325c-97a1-fc018378a8e4",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:electronicSenior",
+            "medium": null,
+            "name": "electronicSenior",
+            "riderCategory": null,
+            "price": {
+              "amount": 1,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "a1baf48c-9f9e-3623-a1c2-92ed79973c9d",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:youth",
+            "medium": null,
+            "name": "youth",
+            "riderCategory": null,
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "c4bd89a1-a953-3759-9944-b65e69ea7434",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:senior",
+            "medium": null,
+            "name": "senior",
+            "riderCategory": null,
+            "price": {
+              "amount": 9.75,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "b34eee2a-1d2c-340c-89d6-c7f0315d15be",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:electronicYouth",
+            "medium": null,
+            "name": "electronicYouth",
+            "riderCategory": null,
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "e1a412d5-5750-3b12-a0cb-8b5493b2cc1b",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:electronic",
+              "name": "electronic"
+            },
+            "name": "rideCost",
+            "riderCategory": {
+              "id": "orca:special",
+              "name": "special"
+            },
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "1c8be9ea-99e6-3126-b2a1-e2cad47159d4",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:electronic",
+              "name": "electronic"
+            },
+            "name": "transfer",
+            "riderCategory": {
+              "id": "orca:special",
+              "name": "special"
+            },
+            "price": {
+              "amount": 1,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "b4896bb5-302a-341d-880f-a68aaf3c7a57",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:electronic",
+              "name": "electronic"
+            },
+            "name": "rideCost",
+            "riderCategory": {
+              "id": "orca:regular",
+              "name": "regular"
+            },
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "9f7ee2d1-f79a-3955-adb9-cbcd5ac7cc24",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:electronic",
+              "name": "electronic"
+            },
+            "name": "transfer",
+            "riderCategory": {
+              "id": "orca:regular",
+              "name": "regular"
+            },
+            "price": {
+              "amount": 3.25,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "74e50686-34a2-36f4-939a-b2f46490be70",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:cash",
+              "name": "cash"
+            },
+            "name": "rideCost",
+            "riderCategory": {
+              "id": "orca:regular",
+              "name": "regular"
+            },
+            "price": {
+              "amount": 2.75,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "e7088b29-1332-35a9-a402-c50716bddfb1",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:electronic",
+              "name": "electronic"
+            },
+            "name": "rideCost",
+            "riderCategory": {
+              "id": "orca:senior",
+              "name": "senior"
+            },
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "a0d7e2e8-3fc8-389e-b889-a1a4cbf40a23",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:electronic",
+              "name": "electronic"
+            },
+            "name": "transfer",
+            "riderCategory": {
+              "id": "orca:senior",
+              "name": "senior"
+            },
+            "price": {
+              "amount": 1,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "f3fefd37-2f3b-3659-9f98-595d19da8159",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:cash",
+              "name": "cash"
+            },
+            "name": "rideCost",
+            "riderCategory": {
+              "id": "orca:youth",
+              "name": "youth"
+            },
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "b49c79b9-3c31-38e6-a78c-3b475b2c5341",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:cash",
+              "name": "cash"
+            },
+            "name": "rideCost",
+            "riderCategory": {
+              "id": "orca:senior",
+              "name": "senior"
+            },
+            "price": {
+              "amount": 2.75,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "089a0301-6bca-37e6-ac60-8a4b0d068514",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:electronic",
+              "name": "electronic"
+            },
+            "name": "rideCost",
+            "riderCategory": {
+              "id": "orca:youth",
+              "name": "youth"
+            },
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        }
+      ],
+      "from": {
+        "lat": 47.7594681,
+        "lon": -122.199974,
+        "name": "Kaysner Way & Woodinville Dr",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "76300",
+          "gtfsId": "kcm:76300",
+          "id": "U3RvcDprY206NzYzMDA"
+        },
+        "vertexType": "TRANSIT"
+      },
+      "headsign": "U-District Station Lake City",
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": [
+        {
+          "lat": 47.7593193,
+          "locationType": "STOP",
+          "lon": -122.20108,
+          "name": "Woodinville Dr & Kaysner Way",
+          "stopCode": "76302",
+          "stopId": "U3RvcDprY206NzYzMDI"
+        },
+        {
+          "lat": 47.7577782,
+          "locationType": "STOP",
+          "lon": -122.211487,
+          "name": "Bothell Way NE & NE 180th St",
+          "stopCode": "76310",
+          "stopId": "U3RvcDprY206NzYzMTA"
+        },
+        {
+          "lat": 47.750988,
+          "locationType": "STOP",
+          "lon": -122.21228,
+          "name": "NE Bothell Way & 96th Ave NE",
+          "stopCode": "76330",
+          "stopId": "U3RvcDprY206NzYzMzA"
+        },
+        {
+          "lat": 47.7530708,
+          "locationType": "STOP",
+          "lon": -122.225342,
+          "name": "NE Bothell Way & 91st Ave NE",
+          "stopCode": "76340",
+          "stopId": "U3RvcDprY206NzYzNDA"
+        },
+        {
+          "lat": 47.7547722,
+          "locationType": "STOP",
+          "lon": -122.230774,
+          "name": "NE Bothell Way & 83rd Pl NE",
+          "stopCode": "76350",
+          "stopId": "U3RvcDprY206NzYzNTA"
+        },
+        {
+          "lat": 47.7559776,
+          "locationType": "STOP",
+          "lon": -122.234688,
+          "name": "NE Bothell Way & 80th Ave NE",
+          "stopCode": "76360",
+          "stopId": "U3RvcDprY206NzYzNjA"
+        },
+        {
+          "lat": 47.7563553,
+          "locationType": "STOP",
+          "lon": -122.236954,
+          "name": "NE Bothell Way & 77th Ct NE",
+          "stopCode": "76370",
+          "stopId": "U3RvcDprY206NzYzNzA"
+        },
+        {
+          "lat": 47.7571831,
+          "locationType": "STOP",
+          "lon": -122.241859,
+          "name": "NE Bothell Way & Kenmore Park & Ride",
+          "stopCode": "76372",
+          "stopId": "U3RvcDprY206NzYzNzI"
+        },
+        {
+          "lat": 47.7584076,
+          "locationType": "STOP",
+          "lon": -122.249435,
+          "name": "NE Bothell Way & 68th Ave NE",
+          "stopCode": "76390",
+          "stopId": "U3RvcDprY206NzYzOTA"
+        }
+      ],
+      "legGeometry": {
+        "length": 178,
+        "points": "_`obHpdzhVFWJYDMFGJ?L@NPCLARCTAd@Cn@AtACx@??EhDMfIC`BClA?jA@dB@b@Bd@@^Fh@Fj@RjAHl@Fj@Dj@Dz@DpAB|ABx@Dz@Hp@Db@H`@Hd@Pl@Rh@Pb@Rb@Xd@\\`@XXTTPP??DBXRVL`@PZHXHVHZFlBf@~@Xf@J`@L`@F\\H\\B`@B\\@h@?d@Av@Gj@Kr@Oz@U~E{A\\IXAV?XDf@NZPRJPNNRLP??@BNVRj@Pl@Jf@Fr@D|@Az@Gx@Mv@Sx@{ApFiBxGw@rCUz@Sr@Mh@Kr@Mn@Kt@Kz@MfAEt@Ej@Cn@E|@Al@ArAEbCGjFEdAExAEd@Gt@Gl@CL??Eb@Kp@SbAUnAsBpJYtAg@xBy@bDg@pB??q@fCu@vCs@hCQr@Ov@Id@G\\Gd@Ed@Gp@Ir@??kAbM??En@w@hIg@tFg@dFUzB??}@hJu@rIu@bIi@tFMlAGz@Cj@G~@??Ex@a@`LQ|DCz@C~@Al@?f@Ap@BjA^hVNvJ@r@B~ADpDBfCD`DB|@"
+      },
+      "mode": "BUS",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": null,
+      "rentedBike": null,
+      "rideHailingEstimate": null,
+      "route": {
+        "alerts": [],
+        "color": null,
+        "gtfsId": "kcm:100214",
+        "id": "kcm:100214",
+        "longName": null,
+        "shortName": "372",
+        "textColor": null,
+        "type": 3
+      },
+      "startTime": 1703809080000,
+      "steps": [],
+      "to": {
+        "lat": 47.7583733,
+        "lon": -122.263519,
+        "name": "NE Bothell Way & 61st Ave NE",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "76420",
+          "gtfsId": "kcm:76420",
+          "id": "U3RvcDprY206NzY0MjA"
+        },
+        "vertexType": "TRANSIT"
+      },
+      "transitLeg": true,
+      "trip": {
+        "arrivalStoptime": {
+          "stop": {
+            "gtfsId": "kcm:9650",
+            "id": "U3RvcDprY206OTY1MA"
+          },
+          "stopPosition": 597
+        },
+        "departureStoptime": {
+          "stop": {
+            "gtfsId": "CommTrans:2229",
+            "id": "U3RvcDpDb21tVHJhbnM6MjIyOQ"
+          },
+          "stopPosition": 1
+        },
+        "gtfsId": "kcm:604669915",
+        "id": "VHJpcDprY206NjA0NjY5OTE1"
+      }
+    },
+    {
+      "accessibilityScore": null,
+      "agency": null,
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 701.25,
+      "dropoffType": "SCHEDULED",
+      "duration": 541,
+      "endTime": 1703810306000,
+      "fareProducts": [],
+      "from": {
+        "lat": 47.7583733,
+        "lon": -122.263519,
+        "name": "NE Bothell Way & 61st Ave NE",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "76420",
+          "gtfsId": "kcm:76420",
+          "id": "U3RvcDprY206NzY0MjA"
+        },
+        "vertexType": "TRANSIT"
+      },
+      "headsign": null,
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": null,
+      "legGeometry": {
+        "length": 10,
+        "points": "yxnbH~qfiVB??@@z@gBFHtP@dIgGp@qCLgBF"
+      },
+      "mode": "WALK",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": null,
+      "rentedBike": false,
+      "rideHailingEstimate": null,
+      "route": null,
+      "startTime": 1703809765000,
+      "steps": [
+        {
+          "absoluteDirection": "WEST",
+          "alerts": [],
+          "area": false,
+          "distance": 22.69,
+          "elevationProfile": [],
+          "lat": 47.7583563,
+          "lon": -122.2635175,
+          "relativeDirection": "DEPART",
+          "stayOn": false,
+          "streetName": "Bothell Way Northeast"
+        },
+        {
+          "absoluteDirection": "NORTH",
+          "alerts": [],
+          "area": false,
+          "distance": 57.91,
+          "elevationProfile": [],
+          "lat": 47.7583437,
+          "lon": -122.2638205,
+          "relativeDirection": "RIGHT",
+          "stayOn": false,
+          "streetName": "60th Avenue Northeast"
+        },
+        {
+          "absoluteDirection": "WEST",
+          "alerts": [],
+          "area": false,
+          "distance": 333.45,
+          "elevationProfile": [],
+          "lat": 47.7588638,
+          "lon": -122.2638603,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "Northeast 180th Street"
+        },
+        {
+          "absoluteDirection": "NORTH",
+          "alerts": [],
+          "area": false,
+          "distance": 287.2,
+          "elevationProfile": [],
+          "lat": 47.7588074,
+          "lon": -122.2683202,
+          "relativeDirection": "RIGHT",
+          "stayOn": false,
+          "streetName": "57th Avenue Northeast"
+        }
+      ],
+      "to": {
+        "lat": 47.7613589,
+        "lon": -122.2691495,
+        "name": "18311 57th Avenue NE, Kenmore, WA, USA",
+        "rentalVehicle": null,
+        "stop": null,
+        "vertexType": "NORMAL"
+      },
+      "transitLeg": false,
+      "trip": null
     }
-  ]
+  ],
+  "startTime": 1703799754000,
+  "transfers": 3,
+  "waitingTime": 1491,
+  "walkTime": 1716
 }

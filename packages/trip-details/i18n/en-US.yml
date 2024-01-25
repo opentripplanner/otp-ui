@@ -16,9 +16,11 @@ otpUi:
       Depart <strong>{departureDate, date, long}</strong> at
       <strong>{departureDate, time, short}</strong>
     hideDetail: Hide details
+    legMissingFareInfo: No fare information for this leg
     minutesActive: >-
       Time Spent Active: <strong>{minutes, plural, one {# minute} other {#
       minutes}}</strong>
+    missingFareTotal: No fare total available
     showDetail: Show details
     timeActiveDescription: >
       By taking this trip, you'll spend <strong>{walkMinutes, plural, one {#
