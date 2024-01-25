@@ -8,8 +8,8 @@ import {
   StoryContext
 } from "@storybook/react";
 import styled from "styled-components";
-// The below eslint-disable is due to https://github.com/storybookjs/storybook/issues/13408
 import { convertGraphQLResponseToLegacy } from "@opentripplanner/core-utils/lib/itinerary";
+// The below eslint-disable is due to https://github.com/storybookjs/storybook/issues/13408
 // eslint-disable-next-line import/no-named-as-default
 import TripDetails, { FareLegTable } from ".";
 import * as TripDetailsClasses from "./styled";
