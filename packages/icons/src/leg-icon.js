@@ -20,7 +20,13 @@ const LegIcon = ({ getCompanyIcon, leg, ModeIcon, ...props }) => {
   // Do this for P&R, K&R and TNC trips without company icon
   if (iconStr && iconStr.startsWith("CAR")) iconStr = "CAR";
 
-  return <ModeIcon mode={iconStr} leg={leg} {...props} />;
+  const shorterLeg = {
+    longName: leg.longName,
+    shortName: leg.shortName,
+    routeId: leg.routeId
+  };
+
+  return <ModeIcon mode={iconStr} leg={shorterLeg} {...props} />;
 };
 
 LegIcon.propTypes = {
