@@ -85,9 +85,8 @@ export const AnchorButton = styled.a`
   }
 `;
 
-export const LinkButton = styled.a`
+export const LinkButton = styled(TransparentButton)`
   color: #008;
-  cursor: pointer;
   margin-left: 5px;
 
   &:hover {

@@ -150,7 +150,7 @@ const OTP2TileLayerWithPopup = ({
             configCompanies={configCompanies}
             entity={{ ...clickedEntity, id: clickedEntity?.id || clickedEntity?.gtfsId }}
             setLocation={setLocation ? (location) => { setClickedEntity(null); setLocation(location) } : null}
-            setViewedStop={setViewedStop}
+            setViewedStop={setViewedStop ? (stop) => { setClickedEntity(null);setViewedStop(stop) } : null}
           />
 
         </Popup>
