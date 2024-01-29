@@ -14,7 +14,7 @@ const Title = styled.span`
 export default function VehicleTooltip({
   vehicle
 }: VehicleComponentProps): JSX.Element {
-  const { routeShortName, routeType, seconds } = vehicle;
+  const { routeShortName, routeLongName, routeType, seconds } = vehicle;
 
   let name: JSX.Element = <>{routeShortName}</>;
   // This condition avoids processing long route names such as "Portland Streetcar".
@@ -29,7 +29,7 @@ export default function VehicleTooltip({
         description="Formats a route title"
         id="otpUi.TransitVehicleOverlay.routeTitle"
         values={{
-          name: routeShortName,
+          name: routeShortName || routeLongName,
           type: routeType || (
             <FormattedMessage
               defaultMessage={
