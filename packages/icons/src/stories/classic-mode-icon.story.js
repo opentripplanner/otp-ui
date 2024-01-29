@@ -14,4 +14,4 @@ export const ClassicModeIconExamples = () => (
   <ModeIconRenderer component={ClassicModeIcon} />
 );
 
-export const ModeIconOverrideByRouteId = () => <CustomModeIconRenderer />;
+export const ModeIconOverrideByRouteId = CustomModeIconRenderer;
