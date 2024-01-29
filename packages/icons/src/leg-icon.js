@@ -22,11 +22,11 @@ const LegIcon = ({ getCompanyIcon, leg, ModeIcon, ...props }) => {
 
   const shorterLeg = {
     longName: leg.longName,
-    shortName: leg.shortName,
-    routeId: leg.routeId
+    routeId: leg.routeId,
+    shortName: leg.shortName
   };
 
-  return <ModeIcon mode={iconStr} leg={shorterLeg} {...props} />;
+  return <ModeIcon leg={shorterLeg} mode={iconStr} {...props} />;
 };
 
 LegIcon.propTypes = {
