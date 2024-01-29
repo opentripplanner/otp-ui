@@ -27,7 +27,7 @@ export function aggregateModes(
 
 /**
  * Generates a list of banned route IDs based on deselected submodes
- * We support arbitrary modes (behond GTFS spec), but OTP doesn't
+ * We support arbitrary modes (beyond GTFS spec), but OTP doesn't
  * Therefore we might need to use the banned routes API to exclude those routes
  * when their mode is deselected.
  */
