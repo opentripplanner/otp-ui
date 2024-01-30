@@ -5,6 +5,7 @@ import {
   convertModeSettingValue,
   extractModeSettingDefaultsToObject,
   filterModeDefitionsByKey,
+  getBannedRoutesFromSubmodes,
   populateSettingWithValue
 } from "../MetroModeSelector/utils";
 
@@ -143,6 +144,14 @@ const modeSettingDefinitions = [
     key: "wheelchair",
     label: "Use Accessible Routing",
     type: "CHECKBOX"
+  },
+  {
+    addTransportMode: { mode: "BUS" },
+    applicableMode: "TRANSIT",
+    default: true,
+    key: "enableHovercraft",
+    overrideMode: "HOVERCRAFT",
+    type: "SUBMODE"
   }
 ];
 
@@ -151,7 +160,8 @@ const valueObject = {
   bikeReluctance: 2,
   carReluctance: 3,
   walkReluctance: 2,
-  wheelchair: false
+  wheelchair: false,
+  enableHovercraft: false
 };
 
 function stringsToTransportModes(strs) {
@@ -247,6 +257,21 @@ describe("mode selector utils", () => {
           addSettingsToButton(modeSettingDefinitions)
         )
       ).toMatchSnapshot();
+    });
+  });
+
+  describe("get banned routes from submodes", () => {
+    it("should list the banned route IDs from a disabled submode setting", () => {
+      const routeModeOverrides = {
+        "soundtransit:hover1": "HOVERCRAFT",
+        "soundtransit:train": "LIGHT_RAIL"
+      };
+      const modeSettingsWithValues = modeSettingDefinitions.map(
+        populateSettingWithValue(valueObject)
+      );
+      expect(
+        getBannedRoutesFromSubmodes(modeSettingsWithValues, routeModeOverrides)
+      ).toEqual(["soundtransit:hover1"]);
     });
   });
 });

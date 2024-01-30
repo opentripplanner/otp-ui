@@ -26,6 +26,31 @@ export function aggregateModes(
 }
 
 /**
+ * Generates a list of banned route IDs based on deselected submodes
+ * We support arbitrary modes (beyond GTFS spec), but OTP doesn't
+ * Therefore we might need to use the banned routes API to exclude those routes
+ * when their mode is deselected.
+ */
+export function getBannedRoutesFromSubmodes(
+  modeSettings: ModeSetting[],
+  routeModeOverrides: Record<string, string>
+): string[] {
+  const disabledSubmodes = modeSettings.reduce<string[]>((prev, cur) => {
+    // Find the disabled override modes
+    if (cur.type === "SUBMODE" && !cur.value) {
+      prev.push(cur.overrideMode);
+    }
+    return prev;
+  }, []);
+  // routeModeOverrides has shape {"routeId": "arbitraryMode", ...}
+  const bannedRouteIds = Object.keys(routeModeOverrides).filter(routeId =>
+    disabledSubmodes.includes(routeModeOverrides[routeId])
+  );
+
+  return bannedRouteIds;
+}
+
+/**
  * Filters mode buttons by list of keys, used to find enabled buttons.
  * TODO: Remove this function? Is it needed?
  * @param modeButtonDefinitions All mode definitions
