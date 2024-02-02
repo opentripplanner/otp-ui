@@ -97,7 +97,9 @@ const TransitVehicleOverlay = ({
       popupProps={{ offset: [-iconPixels / 2 - iconPadding, 0] }}
       position={[vehicle.lat, vehicle.lon]}
       tooltipContents={
-        vehicle.routeShortName && <TooltipSlot vehicle={vehicle} />
+        (vehicle.routeShortName || vehicle.routeLongName) && (
+          <TooltipSlot vehicle={vehicle} />
+        )
       }
     >
       <StyledContainer vehicle={vehicle}>
