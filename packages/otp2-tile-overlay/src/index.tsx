@@ -127,10 +127,18 @@ const OTP2TileLayerWithPopup = ({
     };
   }, [id, map])
 
+  let filter: any[] = ["all"]
+  if (network) {
+    filter = ["all", ["==", "network", network]]
+  }
+  if (type === "stops") {
+    filter = ["all", ["length", "routes", [">", 0]]]
+  }
+
   return (
     <>
       <Layer
-        filter={network ? ["all", ["==", "network", network]] : ["all"]}
+        filter={filter}
         id={id}
         key={id}
         paint={generateLayerPaint(color)[type]}
