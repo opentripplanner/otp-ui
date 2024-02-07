@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/trip-viewer-overlay",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "A map overlay to show a trip of a route",
   "main": "lib/index.js",
   "module": "esm/index.js",
