@@ -132,7 +132,7 @@ const OTP2TileLayerWithPopup = ({
     filter = ["all", ["==", "network", network]]
   }
   if (type === "stops") {
-    filter = ["all", ["length", "routes", [">", 0]]]
+    filter = ["!=", ["get", "routes"],  ["literal", "[]"]]
   }
 
   return (
