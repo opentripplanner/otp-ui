@@ -21,7 +21,22 @@ export default class OTPGeocoder extends Geocoder {
 
 
   rewriteAutocompleteResponse(response: OTPGeocoderResponse): MultiGeocoderResponse {
-    const generateLabel = stop => stop.code ? `${stop.name} (${stop?.agencies?.[0] ? `${stop?.agencies?.[0].name} ` : ""}${stop.code})` : stop.name
+
+    const generateLabel = stop => {
+      let brackets = ""
+      if (stop?.agencies?.[0]?.name) {
+        brackets += stop.agencies[0].name
+      } else if (stop?.feedPublisher?.name) {
+        brackets += stop.feedPublisher.name
+      } 
+      if (stop?.code) {
+        brackets += ` ${stop.code}`
+      }
+
+      if (brackets === "") return stop.name
+
+    return `${stop.name} (${brackets})`
+    }
 
     return {
         features: response?.results?.map(stop => ({

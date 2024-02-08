@@ -17,6 +17,7 @@ type OTPGeocoderResponse = {
     name: string,
     id: string,
     agencies?: { id: string, name: string }[]
+    feedPublisher?: { name: string }
     modes: string[]
   }[]
 } | undefined
