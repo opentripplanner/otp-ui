@@ -30,7 +30,8 @@ export default class OTPGeocoder extends Geocoder {
         brackets += stop.feedPublisher.name
       } 
       if (stop?.code) {
-        brackets += ` ${stop.code}`
+        if (brackets !== "") brackets += " "
+        brackets += stop.code
       }
 
       if (brackets === "") return stop.name
