@@ -95,7 +95,7 @@ const VehicleRentalOverlay = ({
   visible
 }: Props): JSX.Element => {
   const { current: map } = useMap();
-  const [zoom, setZoom] = useState(0);
+  const [zoom, setZoom] = useState(map?.getZoom());
 
   const layerId = `rental-vehicles-${id}`;
   const [clickedVehicle, setClickedVehicle] = useState(null);
