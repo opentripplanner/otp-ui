@@ -123,9 +123,9 @@ const VehicleRentalOverlay = ({
         setClickedVehicle(event.features?.[0].properties);
       });
     });
-    map.on("zoom", () => {
+    map.on("zoom", e => {
       // Avoid too many re-renders by only updating state if we are a whole number value different
-      const newZoom = map.getZoom();
+      const newZoom = e.map.getZoom();
       if (Math.floor(zoom) !== Math.floor(newZoom)) {
         setZoom(newZoom);
       }
