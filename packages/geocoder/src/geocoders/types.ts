@@ -26,6 +26,8 @@ export type GeocoderConfig = {
   sources?: string;
   size?: number;
   reverseUseFeatureCollection?: boolean;
+  // Type used to denote which geocoder to use in getGeocoder
+  type?: string;
 };
 
 export type ReverseQuery = {
