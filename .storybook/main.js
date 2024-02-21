@@ -42,6 +42,16 @@ module.exports = {
       loader: 'graphql-tag/loader',
     });
 
+    config.module.rules.push({ test: /uFuzzy/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: [
+          ['@babel/preset-env', { targets: 'defaults' }]
+        ]
+      }
+    }})
+
     // Return the altered config
     return config;
   }
