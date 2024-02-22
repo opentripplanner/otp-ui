@@ -17,7 +17,7 @@ import OTPGeocoder from "./geocoders/otp";
 import type { AutocompleteQuery, GeocoderConfig, ReverseQuery, SearchQuery } from "./geocoders/types"
 
 // Create a memoized getter to avoid recreating new geocoders each time.
-const getGeocoder = memoize((geocoderConfig: GeocoderConfig & { type: string }) => {
+const getGeocoder = memoize((geocoderConfig: GeocoderConfig) => {
   if (!geocoderConfig || !geocoderConfig.type) {
     return new NoApiGeocoder();
   }

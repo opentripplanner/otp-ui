@@ -1,0 +1,115 @@
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [-122.67325034999999, 45.51621765],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "osm_type": "W",
+        "osm_id": 156366633,
+        "extent": [-122.673255, 45.5162209, -122.6732457, 45.5162144],
+        "country": "États-Unis d'Amérique",
+        "osm_key": "leisure",
+        "countrycode": "US",
+        "osm_value": "park",
+        "name": "Mill Ends Park",
+        "type": "locality"
+      }
+    },
+    {
+      "geometry": {
+        "coordinates": [-122.6733766, 45.5162784],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "osm_id": 4243944023,
+        "country": "États-Unis d'Amérique",
+        "city": "Portland",
+        "countrycode": "US",
+        "postcode": "97204",
+        "county": "Multnomah",
+        "type": "house",
+        "osm_type": "N",
+        "osm_key": "tourism",
+        "street": "Southwest Naito Parkway",
+        "district": "Downtown",
+        "osm_value": "information",
+        "name": "Mill Ends Park",
+        "state": "OR"
+      }
+    },
+    {
+      "geometry": {
+        "coordinates": [-2.4756598, 53.7547536],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "osm_id": 130281365,
+        "extent": [-2.4758741, 53.7548952, -2.4749263, 53.7544719],
+        "country": "Royaume-Uni",
+        "city": "Blackburn",
+        "countrycode": "GB",
+        "postcode": "BB1 6JS",
+        "county": "Blackburn with Darwen",
+        "type": "street",
+        "osm_type": "W",
+        "osm_key": "highway",
+        "district": "Four Lane Ends",
+        "osm_value": "residential",
+        "name": "New Mill Street",
+        "state": "Angleterre"
+      }
+    },
+    {
+      "geometry": {
+        "coordinates": [-2.0318091, 53.8904692],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "osm_id": 194668944,
+        "extent": [-2.0319873, 53.8905873, -2.0317233, 53.8903037],
+        "country": "Royaume-Uni",
+        "city": "Cowling",
+        "countrycode": "GB",
+        "postcode": "BD22 0JT",
+        "locality": "Lane Ends",
+        "county": "North Yorkshire",
+        "type": "street",
+        "osm_type": "W",
+        "osm_key": "highway",
+        "district": "Cowling",
+        "osm_value": "residential",
+        "name": "The Old Saw Mill",
+        "state": "Angleterre"
+      }
+    },
+    {
+      "geometry": {
+        "coordinates": [-74.4846831, 40.7940011],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "osm_id": 9634530317,
+        "country": "États-Unis d'Amérique",
+        "city": "Morristown",
+        "countrycode": "US",
+        "postcode": "07960",
+        "county": "Morris",
+        "type": "house",
+        "osm_type": "N",
+        "osm_key": "shop",
+        "street": "Mount Kemble Avenue",
+        "osm_value": "interior_decoration",
+        "name": "The Decorating Store at Terminal Mill Ends",
+        "state": "NJ"
+      }
+    }
+  ],
+  "type": "FeatureCollection"
+}

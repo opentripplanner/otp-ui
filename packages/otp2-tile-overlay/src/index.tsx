@@ -127,10 +127,18 @@ const OTP2TileLayerWithPopup = ({
     };
   }, [id, map])
 
+  let filter: any[] = ["all"]
+  if (network) {
+    filter = ["all", ["==", "network", network]]
+  }
+  if (type === "stops") {
+    filter = ["!=", ["get", "routes"],  ["literal", "[]"]]
+  }
+
   return (
     <>
       <Layer
-        filter={network ? ["all", ["==", "network", network]] : ["all"]}
+        filter={filter}
         id={id}
         key={id}
         paint={generateLayerPaint(color)[type]}
@@ -150,7 +158,7 @@ const OTP2TileLayerWithPopup = ({
             configCompanies={configCompanies}
             entity={{ ...clickedEntity, id: clickedEntity?.id || clickedEntity?.gtfsId }}
             setLocation={setLocation ? (location) => { setClickedEntity(null); setLocation(location) } : null}
-            setViewedStop={setViewedStop}
+            setViewedStop={setViewedStop ? (stop) => { setClickedEntity(null);setViewedStop(stop) } : null}
           />
 
         </Popup>

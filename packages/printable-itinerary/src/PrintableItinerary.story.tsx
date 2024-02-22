@@ -21,6 +21,7 @@ const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-
 const walkTransitWalkTransitWalkA11yItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json");
 const config = require("@opentripplanner/itinerary-body/src/__mocks__/config.json");
 const otp2ScooterItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-scooter.json");
+const otp24Itinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2.4-transit-itinerary.json");
 
 const StyledPrintableItinerary = styled(PrintableItinerary)`
   ${PrintableItineraryClasses.LegBody} {
@@ -37,6 +38,15 @@ export const WalkOnlyItinerary = () => (
   <PrintableItinerary
     config={config}
     itinerary={walkOnlyItinerary}
+    LegIcon={TriMetLegIcon}
+  />
+);
+
+// OTP 2.4 type data
+export const OTP24Itinerary = () => (
+  <PrintableItinerary
+    config={config}
+    itinerary={otp24Itinerary}
     LegIcon={TriMetLegIcon}
   />
 );

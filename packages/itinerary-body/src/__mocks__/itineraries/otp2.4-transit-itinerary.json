@@ -1,0 +1,2137 @@
+{
+  "accessibilityScore": null,
+  "duration": 6051,
+  "endTime": 1705685729000,
+  "legs": [
+    {
+      "accessibilityScore": null,
+      "agency": null,
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 1467.37,
+      "dropoffType": "SCHEDULED",
+      "duration": 1237,
+      "endTime": 1705680915000,
+      "fareProducts": [],
+      "from": {
+        "lat": 45.5298414,
+        "lon": -122.9019646,
+        "name": "1375 NE Cherry Lane, Hillsboro",
+        "rentalVehicle": null,
+        "stop": null,
+        "vertexType": "NORMAL"
+      },
+      "headsign": null,
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": null,
+      "legGeometry": {
+        "length": 91,
+        "points": "yp{tGbicmVKIEMAMDMb@m@LSIKQ[Q[e@w@CGEGIESGA?QGCRGVGZGTUl@EJc@lACLITGVERCTEXGp@CZCXA\\AZ?T?X@|E?P@jC?dD@f@@N@RDTBX@\\?T@rF@hG?lB@t@?fG@TAVAzBAbAELA`BBPARCTCNEZMf@CLELRL\\PTHXJNBLBN@J?DDDBD??HAF?B?nA?HH??CB???D?F??T?jA"
+      },
+      "mode": "WALK",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": null,
+      "rentedBike": false,
+      "rideHailingEstimate": null,
+      "startTime": 1705679678000,
+      "steps": [
+        {
+          "absoluteDirection": "NORTHEAST",
+          "alerts": [],
+          "area": false,
+          "distance": 64.63,
+          "elevationProfile": [
+            {
+              "distance": 0,
+              "elevation": 53.55
+            },
+            {
+              "distance": 9.21,
+              "elevation": 53.69
+            },
+            {
+              "distance": 19.21,
+              "elevation": 53.86
+            },
+            {
+              "distance": 29.21,
+              "elevation": 53.83
+            },
+            {
+              "distance": 39.21,
+              "elevation": 53.62
+            },
+            {
+              "distance": 49.21,
+              "elevation": 53.06
+            },
+            {
+              "distance": 59.21,
+              "elevation": 52.96
+            },
+            {
+              "distance": 64.63,
+              "elevation": 53.03
+            }
+          ],
+          "lat": 45.5298919,
+          "lon": -122.9020982,
+          "relativeDirection": "DEPART",
+          "stayOn": false,
+          "streetName": "parking aisle"
+        },
+        {
+          "absoluteDirection": "NORTHEAST",
+          "alerts": [],
+          "area": false,
+          "distance": 104.26,
+          "elevationProfile": [
+            {
+              "distance": 0,
+              "elevation": 53.03
+            },
+            {
+              "distance": 10,
+              "elevation": 53.12
+            },
+            {
+              "distance": 22.1,
+              "elevation": 53.3
+            },
+            {
+              "distance": 37.02,
+              "elevation": 53.6
+            },
+            {
+              "distance": 47.02,
+              "elevation": 53.71
+            },
+            {
+              "distance": 57.02,
+              "elevation": 53.7
+            },
+            {
+              "distance": 67.17,
+              "elevation": 53.81
+            },
+            {
+              "distance": 77.17,
+              "elevation": 53.9
+            },
+            {
+              "distance": 87.17,
+              "elevation": 54.08
+            },
+            {
+              "distance": 97.17,
+              "elevation": 54.05
+            },
+            {
+              "distance": 104.26,
+              "elevation": 54.05
+            }
+          ],
+          "lat": 45.5297147,
+          "lon": -122.9015049,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "Northeast Cherry Lane"
+        },
+        {
+          "absoluteDirection": "WEST",
+          "alerts": [],
+          "area": false,
+          "distance": 1097.36,
+          "elevationProfile": [
+            {
+              "distance": 0,
+              "elevation": 54.05
+            },
+            {
+              "distance": 10,
+              "elevation": 54.37
+            },
+            {
+              "distance": 20,
+              "elevation": 54.74
+            },
+            {
+              "distance": 30,
+              "elevation": 55.07
+            },
+            {
+              "distance": 40,
+              "elevation": 55.46
+            },
+            {
+              "distance": 50,
+              "elevation": 55.81
+            },
+            {
+              "distance": 61.44,
+              "elevation": 56.37
+            },
+            {
+              "distance": 71.44,
+              "elevation": 56.84
+            },
+            {
+              "distance": 81.44,
+              "elevation": 57.27
+            },
+            {
+              "distance": 91.44,
+              "elevation": 58.06
+            },
+            {
+              "distance": 101.44,
+              "elevation": 58.79
+            },
+            {
+              "distance": 111.44,
+              "elevation": 59.15
+            },
+            {
+              "distance": 121.44,
+              "elevation": 59.66
+            },
+            {
+              "distance": 131.44,
+              "elevation": 59.94
+            },
+            {
+              "distance": 141.44,
+              "elevation": 60.08
+            },
+            {
+              "distance": 147.41,
+              "elevation": 60.13
+            },
+            {
+              "distance": 157.41,
+              "elevation": 60.12
+            },
+            {
+              "distance": 167.41,
+              "elevation": 60.15
+            },
+            {
+              "distance": 177.41,
+              "elevation": 60.11
+            },
+            {
+              "distance": 187.41,
+              "elevation": 60
+            },
+            {
+              "distance": 197.41,
+              "elevation": 59.75
+            },
+            {
+              "distance": 207.41,
+              "elevation": 59.42
+            },
+            {
+              "distance": 217.41,
+              "elevation": 59.05
+            },
+            {
+              "distance": 227.41,
+              "elevation": 58.63
+            },
+            {
+              "distance": 237.41,
+              "elevation": 58.29
+            },
+            {
+              "distance": 247.41,
+              "elevation": 57.96
+            },
+            {
+              "distance": 257.41,
+              "elevation": 57.65
+            },
+            {
+              "distance": 267.41,
+              "elevation": 57.31
+            },
+            {
+              "distance": 277.41,
+              "elevation": 57.01
+            },
+            {
+              "distance": 287.41,
+              "elevation": 56.74
+            },
+            {
+              "distance": 297.41,
+              "elevation": 56.46
+            },
+            {
+              "distance": 307.41,
+              "elevation": 56.26
+            },
+            {
+              "distance": 317.41,
+              "elevation": 56.08
+            },
+            {
+              "distance": 327.4,
+              "elevation": 55.97
+            },
+            {
+              "distance": 333.92,
+              "elevation": 55.8
+            },
+            {
+              "distance": 343.92,
+              "elevation": 55.88
+            },
+            {
+              "distance": 353.92,
+              "elevation": 56.1
+            },
+            {
+              "distance": 363.92,
+              "elevation": 56.25
+            },
+            {
+              "distance": 373.92,
+              "elevation": 56.42
+            },
+            {
+              "distance": 388.76,
+              "elevation": 56.84
+            },
+            {
+              "distance": 398.76,
+              "elevation": 57.11
+            },
+            {
+              "distance": 408.76,
+              "elevation": 57.41
+            },
+            {
+              "distance": 418.76,
+              "elevation": 57.69
+            },
+            {
+              "distance": 428.76,
+              "elevation": 57.97
+            },
+            {
+              "distance": 438.76,
+              "elevation": 58.25
+            },
+            {
+              "distance": 448.76,
+              "elevation": 58.53
+            },
+            {
+              "distance": 458.76,
+              "elevation": 58.81
+            },
+            {
+              "distance": 468.76,
+              "elevation": 59.1
+            },
+            {
+              "distance": 478.76,
+              "elevation": 59.43
+            },
+            {
+              "distance": 488.76,
+              "elevation": 59.67
+            },
+            {
+              "distance": 498.76,
+              "elevation": 59.86
+            },
+            {
+              "distance": 508.76,
+              "elevation": 59.98
+            },
+            {
+              "distance": 514.06,
+              "elevation": 59.89
+            },
+            {
+              "distance": 524.06,
+              "elevation": 60.02
+            },
+            {
+              "distance": 534.06,
+              "elevation": 60.34
+            },
+            {
+              "distance": 544.06,
+              "elevation": 60.47
+            },
+            {
+              "distance": 554.06,
+              "elevation": 60.62
+            },
+            {
+              "distance": 564.06,
+              "elevation": 60.73
+            },
+            {
+              "distance": 574.06,
+              "elevation": 60.85
+            },
+            {
+              "distance": 584.06,
+              "elevation": 60.99
+            },
+            {
+              "distance": 594.06,
+              "elevation": 61.08
+            },
+            {
+              "distance": 604.06,
+              "elevation": 61.23
+            },
+            {
+              "distance": 614.06,
+              "elevation": 61.34
+            },
+            {
+              "distance": 624.06,
+              "elevation": 61.47
+            },
+            {
+              "distance": 634.06,
+              "elevation": 61.57
+            },
+            {
+              "distance": 644.06,
+              "elevation": 61.71
+            },
+            {
+              "distance": 654.06,
+              "elevation": 61.83
+            },
+            {
+              "distance": 664.06,
+              "elevation": 61.95
+            },
+            {
+              "distance": 674.06,
+              "elevation": 61.96
+            },
+            {
+              "distance": 684.06,
+              "elevation": 62.01
+            },
+            {
+              "distance": 694.06,
+              "elevation": 61.93
+            },
+            {
+              "distance": 704.06,
+              "elevation": 61.97
+            },
+            {
+              "distance": 714.06,
+              "elevation": 61.89
+            },
+            {
+              "distance": 721.72,
+              "elevation": 61.84
+            },
+            {
+              "distance": 731.72,
+              "elevation": 61.88
+            },
+            {
+              "distance": 741.72,
+              "elevation": 62.06
+            },
+            {
+              "distance": 751.72,
+              "elevation": 62.1
+            },
+            {
+              "distance": 761.72,
+              "elevation": 62.25
+            },
+            {
+              "distance": 771.72,
+              "elevation": 62.35
+            },
+            {
+              "distance": 781.72,
+              "elevation": 62.29
+            },
+            {
+              "distance": 791.72,
+              "elevation": 62.21
+            },
+            {
+              "distance": 801.72,
+              "elevation": 62.19
+            },
+            {
+              "distance": 811.72,
+              "elevation": 62.45
+            },
+            {
+              "distance": 821.72,
+              "elevation": 62.47
+            },
+            {
+              "distance": 831.72,
+              "elevation": 62.41
+            },
+            {
+              "distance": 841.72,
+              "elevation": 62.24
+            },
+            {
+              "distance": 851.72,
+              "elevation": 62.27
+            },
+            {
+              "distance": 861.72,
+              "elevation": 62.28
+            },
+            {
+              "distance": 871.72,
+              "elevation": 62.28
+            },
+            {
+              "distance": 881.72,
+              "elevation": 62.2
+            },
+            {
+              "distance": 887.83,
+              "elevation": 62.24
+            },
+            {
+              "distance": 896.43,
+              "elevation": 61.75
+            },
+            {
+              "distance": 906.34,
+              "elevation": 61.64
+            },
+            {
+              "distance": 916.34,
+              "elevation": 61.59
+            },
+            {
+              "distance": 926.34,
+              "elevation": 61.54
+            },
+            {
+              "distance": 936.34,
+              "elevation": 61.46
+            },
+            {
+              "distance": 946.34,
+              "elevation": 61.41
+            },
+            {
+              "distance": 956.34,
+              "elevation": 61.41
+            },
+            {
+              "distance": 966.34,
+              "elevation": 61.36
+            },
+            {
+              "distance": 980.59,
+              "elevation": 61.35
+            },
+            {
+              "distance": 990.59,
+              "elevation": 61.25
+            },
+            {
+              "distance": 1000.59,
+              "elevation": 61.3
+            },
+            {
+              "distance": 1010.59,
+              "elevation": 61.3
+            },
+            {
+              "distance": 1020.59,
+              "elevation": 61.35
+            },
+            {
+              "distance": 1032.9,
+              "elevation": 61.51
+            },
+            {
+              "distance": 1042.9,
+              "elevation": 61.44
+            },
+            {
+              "distance": 1052.9,
+              "elevation": 61.39
+            },
+            {
+              "distance": 1062.9,
+              "elevation": 61.4
+            },
+            {
+              "distance": 1072.9,
+              "elevation": 61.28
+            },
+            {
+              "distance": 1084.91,
+              "elevation": 61.21
+            },
+            {
+              "distance": 1090.71,
+              "elevation": 61.21
+            },
+            {
+              "distance": 1097.36,
+              "elevation": 61.24
+            }
+          ],
+          "lat": 45.5304318,
+          "lon": -122.9006968,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "Northeast Cherry Drive"
+        },
+        {
+          "absoluteDirection": "SOUTHWEST",
+          "alerts": [],
+          "area": false,
+          "distance": 101.17,
+          "elevationProfile": [
+            {
+              "distance": 0,
+              "elevation": 61.24
+            },
+            {
+              "distance": 12.06,
+              "elevation": 61.3
+            },
+            {
+              "distance": 22.06,
+              "elevation": 61.28
+            },
+            {
+              "distance": 32.06,
+              "elevation": 61.34
+            },
+            {
+              "distance": 42.06,
+              "elevation": 61.33
+            },
+            {
+              "distance": 52.06,
+              "elevation": 61.47
+            },
+            {
+              "distance": 58.19,
+              "elevation": 61.46
+            },
+            {
+              "distance": 68.19,
+              "elevation": 61.4
+            },
+            {
+              "distance": 78.19,
+              "elevation": 61.41
+            },
+            {
+              "distance": 90.14,
+              "elevation": 61.57
+            },
+            {
+              "distance": 94.75,
+              "elevation": 61.7
+            },
+            {
+              "distance": 98.2,
+              "elevation": 61.67
+            },
+            {
+              "distance": 101.18,
+              "elevation": 61.63
+            }
+          ],
+          "lat": 45.5312806,
+          "lon": -122.9144498,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "Northeast Century Boulevard"
+        },
+        {
+          "absoluteDirection": "WEST",
+          "alerts": [],
+          "area": false,
+          "distance": 8.03,
+          "elevationProfile": [
+            {
+              "distance": 0,
+              "elevation": 61.63
+            },
+            {
+              "distance": 3.63,
+              "elevation": 61.6
+            },
+            {
+              "distance": 6.87,
+              "elevation": 61.5
+            },
+            {
+              "distance": 8.04,
+              "elevation": 61.52
+            }
+          ],
+          "lat": 45.5304176,
+          "lon": -122.9148179,
+          "relativeDirection": "RIGHT",
+          "stayOn": true,
+          "streetName": "Northeast Century Boulevard (path)"
+        },
+        {
+          "absoluteDirection": "WEST",
+          "alerts": [],
+          "area": false,
+          "distance": 62.13,
+          "elevationProfile": [
+            {
+              "distance": 0,
+              "elevation": 61.52
+            },
+            {
+              "distance": 10,
+              "elevation": 61.44
+            },
+            {
+              "distance": 20,
+              "elevation": 61.39
+            },
+            {
+              "distance": 31.21,
+              "elevation": 61.36
+            },
+            {
+              "distance": 35.31,
+              "elevation": 61.33
+            },
+            {
+              "distance": 45.23,
+              "elevation": 61.11
+            },
+            {
+              "distance": 53.17,
+              "elevation": 61.33
+            },
+            {
+              "distance": 62.12,
+              "elevation": 61.2
+            }
+          ],
+          "lat": 45.5304228,
+          "lon": -122.9149208,
+          "relativeDirection": "CONTINUE",
+          "stayOn": false,
+          "streetName": "path"
+        },
+        {
+          "absoluteDirection": "WEST",
+          "alerts": [],
+          "area": true,
+          "distance": 29.79,
+          "elevationProfile": [
+            {
+              "distance": 0,
+              "elevation": 61.2
+            },
+            {
+              "distance": 10,
+              "elevation": 60.63
+            },
+            {
+              "distance": 20,
+              "elevation": 60.62
+            },
+            {
+              "distance": 29.79,
+              "elevation": 60.6
+            }
+          ],
+          "lat": 45.5302845,
+          "lon": -122.9154672,
+          "relativeDirection": "CONTINUE",
+          "stayOn": false,
+          "streetName": "Orenco"
+        }
+      ],
+      "to": {
+        "lat": 45.530257,
+        "lon": -122.915467,
+        "name": "Orenco MAX Station",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "9835",
+          "gtfsId": "3:9835",
+          "id": "U3RvcDozOjk4MzU",
+          "lat": 45.530257,
+          "lon": -122.915467
+        },
+        "vertexType": "TRANSIT",
+        "stopCode": "9835",
+        "stopId": "3:9835"
+      },
+      "transitLeg": false,
+      "trip": null,
+      "alightRule": "scheduled",
+      "boardRule": "scheduled",
+      "dropOffBookingInfo": {},
+      "routeColor": "333333"
+    },
+    {
+      "accessibilityScore": null,
+      "agency": {
+        "alerts": [],
+        "gtfsId": "3:TRIMET",
+        "id": "3:TRIMET",
+        "name": "TriMet",
+        "timezone": "America/Los_Angeles",
+        "url": "https://trimet.org/"
+      },
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 21421.32,
+      "dropoffType": "SCHEDULED",
+      "duration": 2050,
+      "endTime": 1705682965000,
+      "fareProducts": [
+        {
+          "id": "8b15224e-ad13-3e1d-bbe4-610c55ef9a66",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "3:regular",
+            "medium": null,
+            "name": "regular",
+            "riderCategory": null,
+            "price": {
+              "amount": 2.8,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "861936ac-5c9f-3202-b1aa-9e7372e065bd",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "3:RB",
+            "medium": null,
+            "name": "regular",
+            "riderCategory": null,
+            "price": {
+              "amount": 2.8,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        }
+      ],
+      "from": {
+        "lat": 45.530257,
+        "lon": -122.915467,
+        "name": "Orenco MAX Station",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "9835",
+          "gtfsId": "3:9835",
+          "id": "U3RvcDozOjk4MzU",
+          "lat": 45.530257,
+          "lon": -122.915467
+        },
+        "vertexType": "TRANSIT",
+        "stopCode": "9835",
+        "stopId": "3:9835"
+      },
+      "headsign": "Gresham",
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": [
+        {
+          "lat": 45.523082,
+          "locationType": "STOP",
+          "lon": -122.888511,
+          "name": "Quatama MAX Station",
+          "stopCode": "9834",
+          "stopId": "U3RvcDozOjk4MzQ"
+        },
+        {
+          "lat": 45.517117,
+          "locationType": "STOP",
+          "lon": -122.869874,
+          "name": "Willow Creek/SW 185th Ave TC MAX Station",
+          "stopCode": "9831",
+          "stopId": "U3RvcDozOjk4MzE"
+        },
+        {
+          "lat": 45.509777,
+          "locationType": "STOP",
+          "lon": -122.851193,
+          "name": "Elmonica/SW 170th Ave MAX Station",
+          "stopCode": "9830",
+          "stopId": "U3RvcDozOjk4MzA"
+        },
+        {
+          "lat": 45.505058,
+          "locationType": "STOP",
+          "lon": -122.841872,
+          "name": "Merlo Rd/SW 158th Ave MAX Station",
+          "stopCode": "9828",
+          "stopId": "U3RvcDozOjk4Mjg"
+        },
+        {
+          "lat": 45.500249,
+          "locationType": "STOP",
+          "lon": -122.832785,
+          "name": "Beaverton Creek MAX Station",
+          "stopCode": "9822",
+          "stopId": "U3RvcDozOjk4MjI"
+        },
+        {
+          "lat": 45.495102,
+          "locationType": "STOP",
+          "lon": -122.821238,
+          "name": "Millikan Way MAX Station",
+          "stopCode": "9826",
+          "stopId": "U3RvcDozOjk4MjY"
+        },
+        {
+          "lat": 45.490501,
+          "locationType": "STOP",
+          "lon": -122.806766,
+          "name": "Beaverton Central MAX Station",
+          "stopCode": "9824",
+          "stopId": "U3RvcDozOjk4MjQ"
+        },
+        {
+          "lat": 45.491696,
+          "locationType": "STOP",
+          "lon": -122.8012,
+          "name": "Beaverton TC MAX Station",
+          "stopCode": "9821",
+          "stopId": "U3RvcDozOjk4MjE"
+        },
+        {
+          "lat": 45.510098,
+          "locationType": "STOP",
+          "lon": -122.780757,
+          "name": "Sunset TC MAX Station",
+          "stopCode": "9969",
+          "stopId": "U3RvcDozOjk5Njk"
+        },
+        {
+          "lat": 45.510653,
+          "locationType": "STOP",
+          "lon": -122.71634,
+          "name": "Washington Park MAX Station",
+          "stopCode": "10120",
+          "stopId": "U3RvcDozOjEwMTIw"
+        },
+        {
+          "lat": 45.517989,
+          "locationType": "STOP",
+          "lon": -122.693544,
+          "name": "Goose Hollow/SW Jefferson St MAX Station",
+          "stopCode": "10118",
+          "stopId": "U3RvcDozOjEwMTE4"
+        }
+      ],
+      "legGeometry": {
+        "length": 633,
+        "points": "_s{tGt|emV?U?yA?S?S?UAqA?k@@e@?k@@g@@qABq@Bs@Bq@Bo@@[Dk@Dk@Fy@Fy@Fm@Fi@NqAPqAPoAJk@Hg@Ji@Ji@Lm@j@kCbD_OhAgFj@iCTeAVgA|@}DXqAfB_Ih@eCf@yBd@yBf@yBlAoFd@wBf@yBlAsFbDyNvAkGn@uC??H]`@gBDSH_@DSJa@d@yBNs@^kBt@wDZwAX{AZ}A\\eB`@gB`AoEfA_FhAaFrCiMz@}D|@}D|@aE|@cEViAXiAr@qCXgATeAfA{E??FUHa@Je@Lg@Ji@Lg@d@sB^}ANk@H]FYJa@\\wAZwAPw@RaAf@wBd@sBd@wBjAmFd@sBd@wBl@kCl@kCR_AR_ALi@Le@Nm@Pi@Lg@Nc@Pe@Ne@b@iAr@iBXs@v@oB`@eATk@v@sBx@qBv@sBv@qBp@cB~@cCJUjAyC??DMd@kARi@Xs@r@iB^_A^}@`A}B`C{FlEoK`@cAnByEfBgEJWFKBKbAaC??f@mA\\w@HU^y@b@eAZq@~AaD^u@\\u@f@kAf@kAlAyCzCmHjEiKjBsE??HQpByEnByEPk@Ni@Zu@f@{@`@aAVo@f@qAZaAPe@Pk@dAmDnB{GdAmDdAoDHWHUhA}Dn@wB|@wC??DSNg@HWDOdD_LrAqE~@aD`A_D`A_D~@_DHWTu@tBiHjC}I~@aD`@uANg@Ni@DQBO@KDW@Q?Q@Q?YAM?GCQAOCOWaBc@qC??CQGYKs@G_@C[CSCYAMAOASAWAS?UAS?Y@k@?y@ByB?WCq@EmACu@?UCm@AMAKAICOGSIQGOIK[]}AeB??KKWWMOMSIOGQGQGQEWEWAUAO?W?eA?W@m@Bc@@i@?}A?aCBgC@_B?u@Aq@?e@AM?SAOAe@C_@C[CUCYE[E[G_@CSGYK]K[I[Sg@Se@KSIMOUKOW]UWe@c@UQWQm@[g@Qc@M{@MSC]EsBW_AG[CeI[w@Go@Go@Mw@SSGi@SSIu@a@u@e@c@[a@]WWk@k@Y]W[k@{@e@u@g@eAUg@m@yAk@uA{@oB_@{@kBeEc@cAyAeD{AkDq@uA_@s@[m@a@q@e@s@[c@y@gAu@{@w@{@m@m@iAqAeAyAQUa@c@c@[e@Y]O]Ki@E_@@OBWFYLWPUTQTOTWn@k@bBc@rAWx@WbACJIXCHADEHCF_AfAGFKJMHMFKFKBI@GASCGCIEEGGGCGCGCKCQ?U?S@UBU@OBODSd@cBp@eC@E??DOH]Po@Pq@Jc@Rs@h@uBl@yBZoAFUNo@Po@JYJ[HWJYFSTk@\\w@Xw@L]J[Tq@La@J_@Ja@H_@l@kCTgAHc@Hc@Lu@LcAt@aGJ}@J{@J}@^wDRyBHcAH_APcCNaCJcCJiCJgCJgCFiCBeA@cA@eA@gA@gC@mC@_E?aBA_BAcAA_ACaACcAIiBIuBE]MqAGwAOkC?Q?q@AaACs@YsFKcAWqBa@mDO}@uBsMeBmKq@mDUsASoAUuASsAc@oCa@gCmAoHGa@Ig@[mDWwCEa@SsEGuAG{AKwDAU?kACoFCsBIcHGqCOyHOiKKwGKuGGgFEgFKmKAcDCcDEaHGkEA_@??CqACsAM}CIsAIqAa@mEG_@G[WoAq@uC{BwIwAwFcAcDs@aCq@{BUw@iCkJKW[y@cAkCEKIK}BaDe@o@OOYUk@YkAg@oCsAaCgAm@U{@SWGGEIEWQGEKKMMMMKOIMO]Kg@COGk@Cq@?c@Bi@RoCHcA?ELqAFs@LcAPaAf@{CHe@d@cBJg@DYl@gD??Jm@BQ@Y?G?IAIAIAGISEGGEIG_Bu@KE}BcAKGIEYM]UWSSWSQg@g@YQk@_@QKc@SKEu@[i@WCCACACCEAEAIAG?G?I@G@E@GLu@"
+      },
+      "mode": "TRAM",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": null,
+      "rentedBike": null,
+      "rideHailingEstimate": null,
+      "route": null,
+      "startTime": 1705680915000,
+      "steps": [],
+      "to": {
+        "lat": 45.521321,
+        "lon": -122.689886,
+        "name": "Providence Park MAX Station",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "9758",
+          "gtfsId": "3:9758",
+          "id": "U3RvcDozOjk3NTg",
+          "lat": 45.521321,
+          "lon": -122.689886
+        },
+        "vertexType": "TRANSIT",
+        "stopCode": "9758",
+        "stopId": "3:9758"
+      },
+      "transitLeg": true,
+      "trip": {
+        "arrivalStoptime": {
+          "stop": {
+            "gtfsId": "3:8342",
+            "id": "U3RvcDozOjgzNDI"
+          },
+          "stopPosition": 28
+        },
+        "departureStoptime": {
+          "stop": {
+            "gtfsId": "3:9848",
+            "id": "U3RvcDozOjk4NDg"
+          },
+          "stopPosition": 1
+        },
+        "gtfsId": "3:13248752",
+        "id": "VHJpcDozOjEzMjQ4NzUy"
+      },
+      "origColor": "114C96",
+      "agencyBrandingUrl": "https://trimet.org/",
+      "agencyId": "3:TRIMET",
+      "agencyName": "TriMet",
+      "agencyUrl": "https://trimet.org/",
+      "alightRule": "scheduled",
+      "boardRule": "scheduled",
+      "dropOffBookingInfo": {},
+      "routeColor": "114C96",
+      "routeId": "3:100",
+      "routeLongName": "MAX Blue Line",
+      "routeShortName": null,
+      "routeTextColor": "FFFFFF",
+      "tripId": "3:13248752"
+    },
+    {
+      "accessibilityScore": null,
+      "agency": null,
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 316.09,
+      "dropoffType": "SCHEDULED",
+      "duration": 268,
+      "endTime": 1705683233000,
+      "fareProducts": [],
+      "from": {
+        "lat": 45.521321,
+        "lon": -122.689886,
+        "name": "Providence Park MAX Station",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "9758",
+          "gtfsId": "3:9758",
+          "id": "U3RvcDozOjk3NTg",
+          "lat": 45.521321,
+          "lon": -122.689886
+        },
+        "vertexType": "TRANSIT",
+        "stopCode": "9758",
+        "stopId": "3:9758"
+      },
+      "headsign": null,
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": null,
+      "legGeometry": {
+        "length": 24,
+        "points": "e{ytGrzykVJ}@A?GCBMSGKCcAa@MICAC?KEi@UoAo@OGm@YC?GAAj@CnAATAh@AZL@"
+      },
+      "mode": "WALK",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": null,
+      "rentedBike": false,
+      "rideHailingEstimate": null,
+      "startTime": 1705682965000,
+      "steps": [
+        {
+          "absoluteDirection": "EAST",
+          "alerts": [],
+          "area": true,
+          "distance": 24.64,
+          "elevationProfile": [
+            {
+              "distance": 0,
+              "elevation": 31.52
+            },
+            {
+              "distance": 10,
+              "elevation": 31.73
+            },
+            {
+              "distance": 24.64,
+              "elevation": 31.86
+            }
+          ],
+          "lat": 45.5213169,
+          "lon": -122.6898529,
+          "relativeDirection": "DEPART",
+          "stayOn": false,
+          "streetName": "Providence Park"
+        },
+        {
+          "absoluteDirection": "NORTH",
+          "alerts": [],
+          "area": false,
+          "distance": 5.76,
+          "elevationProfile": [
+            {
+              "distance": 0,
+              "elevation": 31.86
+            },
+            {
+              "distance": 5.76,
+              "elevation": 31.77
+            }
+          ],
+          "lat": 45.5212571,
+          "lon": -122.6895483,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "path"
+        },
+        {
+          "absoluteDirection": "SOUTHEAST",
+          "alerts": [],
+          "area": false,
+          "distance": 5.93,
+          "elevationProfile": [
+            {
+              "distance": 0,
+              "elevation": 31.77
+            },
+            {
+              "distance": 5.93,
+              "elevation": 31.81
+            }
+          ],
+          "lat": 45.5213053,
+          "lon": -122.6895213,
+          "relativeDirection": "RIGHT",
+          "stayOn": true,
+          "streetName": "path"
+        },
+        {
+          "absoluteDirection": "NORTH",
+          "alerts": [],
+          "area": false,
+          "distance": 195.62,
+          "elevationProfile": [
+            {
+              "distance": 0,
+              "elevation": 31.81
+            },
+            {
+              "distance": 10,
+              "elevation": 31.68
+            },
+            {
+              "distance": 20,
+              "elevation": 31.44
+            },
+            {
+              "distance": 30,
+              "elevation": 31.12
+            },
+            {
+              "distance": 40,
+              "elevation": 30.82
+            },
+            {
+              "distance": 50,
+              "elevation": 30.46
+            },
+            {
+              "distance": 58.13,
+              "elevation": 30.06
+            },
+            {
+              "distance": 71.93,
+              "elevation": 29.5
+            },
+            {
+              "distance": 81.93,
+              "elevation": 29.05
+            },
+            {
+              "distance": 91.93,
+              "elevation": 28.58
+            },
+            {
+              "distance": 101.93,
+              "elevation": 28.05
+            },
+            {
+              "distance": 111.93,
+              "elevation": 27.78
+            },
+            {
+              "distance": 121.93,
+              "elevation": 27.6
+            },
+            {
+              "distance": 131.93,
+              "elevation": 26.91
+            },
+            {
+              "distance": 141.93,
+              "elevation": 26.08
+            },
+            {
+              "distance": 151.27,
+              "elevation": 25.72
+            },
+            {
+              "distance": 161.27,
+              "elevation": 25.57
+            },
+            {
+              "distance": 171.27,
+              "elevation": 25.15
+            },
+            {
+              "distance": 181.27,
+              "elevation": 24.5
+            },
+            {
+              "distance": 195.62,
+              "elevation": 23.99
+            }
+          ],
+          "lat": 45.5212848,
+          "lon": -122.689451,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "Southwest 17th Avenue"
+        },
+        {
+          "absoluteDirection": "WEST",
+          "alerts": [],
+          "area": false,
+          "distance": 84.15,
+          "elevationProfile": [
+            {
+              "distance": 0,
+              "elevation": 23.99
+            },
+            {
+              "distance": 10,
+              "elevation": 24.2
+            },
+            {
+              "distance": 16.65,
+              "elevation": 24.3
+            },
+            {
+              "distance": 26.65,
+              "elevation": 24.58
+            },
+            {
+              "distance": 36.65,
+              "elevation": 24.95
+            },
+            {
+              "distance": 48,
+              "elevation": 25.3
+            },
+            {
+              "distance": 56.66,
+              "elevation": 25.65
+            },
+            {
+              "distance": 66.66,
+              "elevation": 25.76
+            },
+            {
+              "distance": 76.66,
+              "elevation": 26.01
+            },
+            {
+              "distance": 84.15,
+              "elevation": 25.86
+            }
+          ],
+          "lat": 45.522938,
+          "lon": -122.6886081,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "West Burnside Street"
+        }
+      ],
+      "to": {
+        "lat": 45.522923,
+        "lon": -122.689692,
+        "name": "W Burnside & SW 18th",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "9860",
+          "gtfsId": "3:9860",
+          "id": "U3RvcDozOjk4NjA",
+          "lat": 45.522923,
+          "lon": -122.689692
+        },
+        "vertexType": "TRANSIT",
+        "stopCode": "9860",
+        "stopId": "3:9860"
+      },
+      "transitLeg": false,
+      "trip": null,
+      "alightRule": "scheduled",
+      "boardRule": "scheduled",
+      "dropOffBookingInfo": {},
+      "routeColor": "333333"
+    },
+    {
+      "accessibilityScore": null,
+      "agency": {
+        "alerts": [],
+        "gtfsId": "3:TRIMET",
+        "id": "3:TRIMET",
+        "name": "TriMet",
+        "timezone": "America/Los_Angeles",
+        "url": "https://trimet.org/"
+      },
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 9650.47,
+      "dropoffType": "SCHEDULED",
+      "duration": 1720,
+      "endTime": 1705685140000,
+      "fareProducts": [
+        {
+          "id": "8b15224e-ad13-3e1d-bbe4-610c55ef9a66",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "3:regular",
+            "medium": null,
+            "name": "regular",
+            "riderCategory": null,
+            "price": {
+              "amount": 2.8,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "861936ac-5c9f-3202-b1aa-9e7372e065bd",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "3:RB",
+            "medium": null,
+            "name": "regular",
+            "riderCategory": null,
+            "price": {
+              "amount": 2.8,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        }
+      ],
+      "from": {
+        "lat": 45.522923,
+        "lon": -122.689692,
+        "name": "W Burnside & SW 18th",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "9860",
+          "gtfsId": "3:9860",
+          "id": "U3RvcDozOjk4NjA",
+          "lat": 45.522923,
+          "lon": -122.689692
+        },
+        "vertexType": "TRANSIT",
+        "stopCode": "9860",
+        "stopId": "3:9860"
+      },
+      "headsign": "Gresham TC",
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": [
+        {
+          "lat": 45.522812,
+          "locationType": "STOP",
+          "lon": -122.686675,
+          "name": "W Burnside & SW 15th",
+          "stopCode": "725",
+          "stopId": "U3RvcDozOjcyNQ"
+        },
+        {
+          "lat": 45.522857,
+          "locationType": "STOP",
+          "lon": -122.684296,
+          "name": "W Burnside & SW 13th",
+          "stopCode": "723",
+          "stopId": "U3RvcDozOjcyMw"
+        },
+        {
+          "lat": 45.522905,
+          "locationType": "STOP",
+          "lon": -122.681294,
+          "name": "W Burnside & SW 10th",
+          "stopCode": "10792",
+          "stopId": "U3RvcDozOjEwNzky"
+        },
+        {
+          "lat": 45.522948,
+          "locationType": "STOP",
+          "lon": -122.676635,
+          "name": "W Burnside & SW 6th",
+          "stopCode": "792",
+          "stopId": "U3RvcDozOjc5Mg"
+        },
+        {
+          "lat": 45.523009,
+          "locationType": "STOP",
+          "lon": -122.672529,
+          "name": "W Burnside & SW 2nd",
+          "stopCode": "9526",
+          "stopId": "U3RvcDozOjk1MjY"
+        },
+        {
+          "lat": 45.522869,
+          "locationType": "STOP",
+          "lon": -122.660911,
+          "name": "E Burnside & NE Grand",
+          "stopCode": "704",
+          "stopId": "U3RvcDozOjcwNA"
+        },
+        {
+          "lat": 45.522847,
+          "locationType": "STOP",
+          "lon": -122.657843,
+          "name": "E Burnside & SE 8th Ave",
+          "stopCode": "820",
+          "stopId": "U3RvcDozOjgyMA"
+        },
+        {
+          "lat": 45.522823,
+          "locationType": "STOP",
+          "lon": -122.653824,
+          "name": "E Burnside & SE 12th Ave",
+          "stopCode": "13327",
+          "stopId": "U3RvcDozOjEzMzI3"
+        },
+        {
+          "lat": 45.52281,
+          "locationType": "STOP",
+          "lon": -122.649193,
+          "name": "E Burnside & SE 16th",
+          "stopCode": "726",
+          "stopId": "U3RvcDozOjcyNg"
+        },
+        {
+          "lat": 45.522781,
+          "locationType": "STOP",
+          "lon": -122.64566,
+          "name": "E Burnside & SE 20th",
+          "stopCode": "740",
+          "stopId": "U3RvcDozOjc0MA"
+        },
+        {
+          "lat": 45.5228,
+          "locationType": "STOP",
+          "lon": -122.64111,
+          "name": "E Burnside & SE 24th",
+          "stopCode": "759",
+          "stopId": "U3RvcDozOjc1OQ"
+        },
+        {
+          "lat": 45.522793,
+          "locationType": "STOP",
+          "lon": -122.636923,
+          "name": "E Burnside & SE 28th",
+          "stopCode": "763",
+          "stopId": "U3RvcDozOjc2Mw"
+        },
+        {
+          "lat": 45.522775,
+          "locationType": "STOP",
+          "lon": -122.631813,
+          "name": "E Burnside & SE 32nd",
+          "stopCode": "769",
+          "stopId": "U3RvcDozOjc2OQ"
+        },
+        {
+          "lat": 45.522781,
+          "locationType": "STOP",
+          "lon": -122.62898,
+          "name": "E Burnside & SE Floral",
+          "stopCode": "701",
+          "stopId": "U3RvcDozOjcwMQ"
+        },
+        {
+          "lat": 45.523111,
+          "locationType": "STOP",
+          "lon": -122.62548,
+          "name": "E Burnside & SE Laurelhurst",
+          "stopCode": "710",
+          "stopId": "U3RvcDozOjcxMA"
+        },
+        {
+          "lat": 45.523442,
+          "locationType": "STOP",
+          "lon": -122.62321,
+          "name": "E Burnside & SE Cesar Chavez Blvd",
+          "stopCode": "770",
+          "stopId": "U3RvcDozOjc3MA"
+        },
+        {
+          "lat": 45.522994,
+          "locationType": "STOP",
+          "lon": -122.620138,
+          "name": "E Burnside & SE 41st",
+          "stopCode": "774",
+          "stopId": "U3RvcDozOjc3NA"
+        },
+        {
+          "lat": 45.522967,
+          "locationType": "STOP",
+          "lon": -122.617467,
+          "name": "E Burnside & SE 44th",
+          "stopCode": "776",
+          "stopId": "U3RvcDozOjc3Ng"
+        },
+        {
+          "lat": 45.522825,
+          "locationType": "STOP",
+          "lon": -122.614334,
+          "name": "E Burnside & SE 47th",
+          "stopCode": "779",
+          "stopId": "U3RvcDozOjc3OQ"
+        },
+        {
+          "lat": 45.522824,
+          "locationType": "STOP",
+          "lon": -122.60998,
+          "name": "E Burnside & SE 52nd",
+          "stopCode": "786",
+          "stopId": "U3RvcDozOjc4Ng"
+        },
+        {
+          "lat": 45.522811,
+          "locationType": "STOP",
+          "lon": -122.607143,
+          "name": "E Burnside & SE 55th",
+          "stopCode": "787",
+          "stopId": "U3RvcDozOjc4Nw"
+        },
+        {
+          "lat": 45.52281,
+          "locationType": "STOP",
+          "lon": -122.604655,
+          "name": "E Burnside & SE 57th",
+          "stopCode": "12955",
+          "stopId": "U3RvcDozOjEyOTU1"
+        },
+        {
+          "lat": 45.522783,
+          "locationType": "STOP",
+          "lon": -122.602492,
+          "name": "E Burnside & SE 60th",
+          "stopCode": "793",
+          "stopId": "U3RvcDozOjc5Mw"
+        },
+        {
+          "lat": 45.52286,
+          "locationType": "STOP",
+          "lon": -122.59812,
+          "name": "E Burnside & 63rd",
+          "stopCode": "13155",
+          "stopId": "U3RvcDozOjEzMTU1"
+        },
+        {
+          "lat": 45.523045,
+          "locationType": "STOP",
+          "lon": -122.595376,
+          "name": "E Burnside & SE 67th",
+          "stopCode": "799",
+          "stopId": "U3RvcDozOjc5OQ"
+        },
+        {
+          "lat": 45.52304,
+          "locationType": "STOP",
+          "lon": -122.591438,
+          "name": "E Burnside & SE 69th",
+          "stopCode": "12761",
+          "stopId": "U3RvcDozOjEyNzYx"
+        },
+        {
+          "lat": 45.523035,
+          "locationType": "STOP",
+          "lon": -122.589044,
+          "name": "E Burnside & SE 72nd",
+          "stopCode": "806",
+          "stopId": "U3RvcDozOjgwNg"
+        },
+        {
+          "lat": 45.522775,
+          "locationType": "STOP",
+          "lon": -122.586932,
+          "name": "E Burnside & SE 74th",
+          "stopCode": "808",
+          "stopId": "U3RvcDozOjgwOA"
+        },
+        {
+          "lat": 45.522748,
+          "locationType": "STOP",
+          "lon": -122.582532,
+          "name": "E Burnside & SE 79th",
+          "stopCode": "812",
+          "stopId": "U3RvcDozOjgxMg"
+        },
+        {
+          "lat": 45.522729,
+          "locationType": "STOP",
+          "lon": -122.579492,
+          "name": "E Burnside & SE 82nd",
+          "stopCode": "813",
+          "stopId": "U3RvcDozOjgxMw"
+        },
+        {
+          "lat": 45.522685,
+          "locationType": "STOP",
+          "lon": -122.574027,
+          "name": "E Burnside & SE 87th",
+          "stopCode": "817",
+          "stopId": "U3RvcDozOjgxNw"
+        },
+        {
+          "lat": 45.52266,
+          "locationType": "STOP",
+          "lon": -122.570564,
+          "name": "9100 Block E Burnside",
+          "stopCode": "696",
+          "stopId": "U3RvcDozOjY5Ng"
+        }
+      ],
+      "legGeometry": {
+        "length": 392,
+        "points": "ueztGtyykVBiA@i@B{@@k@@mADqB@_@@Y?[?]?i@Ac@???C?U?w@A_CAiAC_E???[?_@CyC?Q?SCqD?C?w@AmB???c@ACAaDDMAW?SEOAeCFS?KA}B?O?{DC_D???]?C?k@AeBA}@?GA{@AiCAY?e@CiCCiD???_@?[@kBIS@}A@iC@aAFaL@yA@{AF{LDiHBkCFUA}@?iAAO?K?iD???g@?K?_@?kA?e@@m@?aB?gB?gA?A?}A???a@?aC?iA@aC?gA?U?uD@U?iC???I?_@?]?w@?_B?U?O@eA?kADW?M?OEa@?{@?}A?sD?W?S?s@???aC@kE?{E?aB?w@???I?S?U@{@?}A?gF@sKFS?WEK??AE?sA?}G?aFAwA?U?aA?S?q@???yB?a@?E?g@?kA?oB@{A?gB?qD?aG???W@}O???o@?sA?g@Ac@A{@C}@Eu@Co@Gu@IaAIw@Kq@Gc@????Gg@Mq@Io@Io@Eo@Go@C]Cm@?o@Au@??AM?K?W?K@W?e@@a@@G@a@Ba@D_@Dg@Fg@Fg@N{@D]B]Da@BYDSFa@@C??BMDSFQJ]FSFWDSBY@S@K@M?_@?YAWCWCWEWESKc@K]EYCYAI??AGA[C]Cc@A[?Y?mB?}A@W@Q@I@IF]F[BSBQBU@S@S?s@??BaC?gI?eJ?w@??@}E?iG?mA???wC?wA?eB?{A@_A???_A?uD?S?U?sA?}@??@G?U?S?cAAeD?c@?_G@iEAO?OAOCWCQ??UkBK{@AM?Q?mBA}A?uC???u@A_A?_DAq@AgCAcB?Y?M@MBY@S@W?S?oA???iB?mE?eD???S@qC?Q@QBQ?CBMDOBORw@DM@M@M?M?e@?C??@O?eE@yE?iC@sA@U?W@sD???Q@_E?_E@m@?k@?I?KAc@?k@?M???w@?[@cB@eB?W@sD@iE?kE@cDA_@???A?SA_@?i@@wB?_C?_A@uB?S?s@Ak@?q@???o@?S?U@U@[@i@?]@eB?uB@oD?gC?}@"
+      },
+      "mode": "BUS",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": null,
+      "rentedBike": null,
+      "rideHailingEstimate": null,
+      "route": "20",
+      "startTime": 1705683420000,
+      "steps": [],
+      "to": {
+        "lat": 45.522618,
+        "lon": -122.566533,
+        "name": "E Burnside & SE 94th",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "822",
+          "gtfsId": "3:822",
+          "id": "U3RvcDozOjgyMg",
+          "lat": 45.522618,
+          "lon": -122.566533
+        },
+        "vertexType": "TRANSIT",
+        "stopCode": "822",
+        "stopId": "3:822"
+      },
+      "transitLeg": true,
+      "trip": {
+        "arrivalStoptime": {
+          "stop": {
+            "gtfsId": "3:14201",
+            "id": "U3RvcDozOjE0MjAx"
+          },
+          "stopPosition": 131
+        },
+        "departureStoptime": {
+          "stop": {
+            "gtfsId": "3:9654",
+            "id": "U3RvcDozOjk2NTQ"
+          },
+          "stopPosition": 1
+        },
+        "gtfsId": "3:13234129",
+        "id": "VHJpcDozOjEzMjM0MTI5"
+      },
+      "origColor": "084C8D",
+      "agencyBrandingUrl": "https://trimet.org/",
+      "agencyId": "3:TRIMET",
+      "agencyName": "TriMet",
+      "agencyUrl": "https://trimet.org/",
+      "alightRule": "scheduled",
+      "boardRule": "scheduled",
+      "dropOffBookingInfo": {},
+      "routeColor": "084C8D",
+      "routeId": "3:20",
+      "routeLongName": "Burnside/Stark",
+      "routeShortName": "20",
+      "routeTextColor": "FFFFFF",
+      "tripId": "3:13234129"
+    },
+    {
+      "accessibilityScore": null,
+      "agency": null,
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 748.93,
+      "dropoffType": "SCHEDULED",
+      "duration": 589,
+      "endTime": 1705685729000,
+      "fareProducts": [],
+      "from": {
+        "lat": 45.522618,
+        "lon": -122.566533,
+        "name": "E Burnside & SE 94th",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "822",
+          "gtfsId": "3:822",
+          "id": "U3RvcDozOjgyMg",
+          "lat": 45.522618,
+          "lon": -122.566533
+        },
+        "vertexType": "TRANSIT",
+        "stopCode": "822",
+        "stopId": "3:822"
+      },
+      "headsign": null,
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": null,
+      "legGeometry": {
+        "length": 17,
+        "points": "icztGzwakV?l@?NO?O?}KG_CAq@?m@?iAA?ZaAAoDCeCA}@?k@??sA"
+      },
+      "mode": "WALK",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": null,
+      "rentedBike": false,
+      "rideHailingEstimate": null,
+      "startTime": 1705685140000,
+      "steps": [
+        {
+          "absoluteDirection": "WEST",
+          "alerts": [],
+          "area": false,
+          "distance": 23.98,
+          "elevationProfile": [
+            {
+              "distance": 0,
+              "elevation": 87.37
+            },
+            {
+              "distance": 10,
+              "elevation": 87.32
+            },
+            {
+              "distance": 17.75,
+              "elevation": 86.81
+            },
+            {
+              "distance": 35.5,
+              "elevation": 86.81
+            },
+            {
+              "distance": 41.73,
+              "elevation": 86.66
+            }
+          ],
+          "lat": 45.5226109,
+          "lon": -122.5665357,
+          "relativeDirection": "DEPART",
+          "stayOn": false,
+          "streetName": "East Burnside Street (sidewalk)"
+        },
+        {
+          "absoluteDirection": "NORTH",
+          "alerts": [],
+          "area": false,
+          "distance": 8.42,
+          "elevationProfile": [
+            {
+              "distance": 0,
+              "elevation": 86.66
+            },
+            {
+              "distance": 8.42,
+              "elevation": 86.61
+            }
+          ],
+          "lat": 45.5226183,
+          "lon": -122.5668433,
+          "relativeDirection": "RIGHT",
+          "stayOn": false,
+          "streetName": "Southeast 94th Avenue"
+        },
+        {
+          "absoluteDirection": "NORTH",
+          "alerts": [],
+          "area": false,
+          "distance": 684.02,
+          "elevationProfile": [
+            {
+              "distance": 0,
+              "elevation": 86.61
+            },
+            {
+              "distance": 10,
+              "elevation": 86.89
+            },
+            {
+              "distance": 20,
+              "elevation": 86.69
+            },
+            {
+              "distance": 30,
+              "elevation": 87.01
+            },
+            {
+              "distance": 40,
+              "elevation": 87.25
+            },
+            {
+              "distance": 50,
+              "elevation": 87.4
+            },
+            {
+              "distance": 60,
+              "elevation": 87.55
+            },
+            {
+              "distance": 70,
+              "elevation": 87.64
+            },
+            {
+              "distance": 80,
+              "elevation": 87.68
+            },
+            {
+              "distance": 90,
+              "elevation": 87.68
+            },
+            {
+              "distance": 100,
+              "elevation": 87.67
+            },
+            {
+              "distance": 110,
+              "elevation": 87.62
+            },
+            {
+              "distance": 120,
+              "elevation": 87.54
+            },
+            {
+              "distance": 130,
+              "elevation": 87.49
+            },
+            {
+              "distance": 140,
+              "elevation": 87.38
+            },
+            {
+              "distance": 150,
+              "elevation": 87.33
+            },
+            {
+              "distance": 160,
+              "elevation": 87.38
+            },
+            {
+              "distance": 170,
+              "elevation": 87.46
+            },
+            {
+              "distance": 180,
+              "elevation": 87.55
+            },
+            {
+              "distance": 190,
+              "elevation": 87.62
+            },
+            {
+              "distance": 200,
+              "elevation": 87.66
+            },
+            {
+              "distance": 210,
+              "elevation": 87.72
+            },
+            {
+              "distance": 220,
+              "elevation": 87.79
+            },
+            {
+              "distance": 230,
+              "elevation": 87.88
+            },
+            {
+              "distance": 238.82,
+              "elevation": 87.98
+            },
+            {
+              "distance": 248.82,
+              "elevation": 88.08
+            },
+            {
+              "distance": 258.82,
+              "elevation": 88.11
+            },
+            {
+              "distance": 268.82,
+              "elevation": 88.15
+            },
+            {
+              "distance": 278.82,
+              "elevation": 88.18
+            },
+            {
+              "distance": 288.82,
+              "elevation": 88.19
+            },
+            {
+              "distance": 298.82,
+              "elevation": 88.15
+            },
+            {
+              "distance": 310.49,
+              "elevation": 88.1
+            },
+            {
+              "distance": 320.49,
+              "elevation": 88.03
+            },
+            {
+              "distance": 330.49,
+              "elevation": 87.97
+            },
+            {
+              "distance": 338.42,
+              "elevation": 87.96
+            },
+            {
+              "distance": 348.42,
+              "elevation": 87.94
+            },
+            {
+              "distance": 358.42,
+              "elevation": 87.99
+            },
+            {
+              "distance": 363.61,
+              "elevation": 88.01
+            },
+            {
+              "distance": 373.61,
+              "elevation": 88.06
+            },
+            {
+              "distance": 383.61,
+              "elevation": 88.13
+            },
+            {
+              "distance": 393.61,
+              "elevation": 88.22
+            },
+            {
+              "distance": 404.77,
+              "elevation": 88.39
+            },
+            {
+              "distance": 0,
+              "elevation": 88.39
+            },
+            {
+              "distance": 10.73,
+              "elevation": 88.51
+            },
+            {
+              "distance": 452.13,
+              "elevation": 88.72
+            },
+            {
+              "distance": 462.13,
+              "elevation": 88.64
+            },
+            {
+              "distance": 472.13,
+              "elevation": 88.56
+            },
+            {
+              "distance": 482.13,
+              "elevation": 88.52
+            },
+            {
+              "distance": 492.13,
+              "elevation": 88.4
+            },
+            {
+              "distance": 502.13,
+              "elevation": 88.3
+            },
+            {
+              "distance": 512.13,
+              "elevation": 88.16
+            },
+            {
+              "distance": 522.13,
+              "elevation": 88.07
+            },
+            {
+              "distance": 532.13,
+              "elevation": 88.02
+            },
+            {
+              "distance": 542.13,
+              "elevation": 88.04
+            },
+            {
+              "distance": 550.01,
+              "elevation": 87.99
+            },
+            {
+              "distance": 560.01,
+              "elevation": 87.79
+            },
+            {
+              "distance": 570.01,
+              "elevation": 87.54
+            },
+            {
+              "distance": 580.01,
+              "elevation": 87.34
+            },
+            {
+              "distance": 590.01,
+              "elevation": 87.11
+            },
+            {
+              "distance": 600.01,
+              "elevation": 86.91
+            },
+            {
+              "distance": 610.01,
+              "elevation": 86.78
+            },
+            {
+              "distance": 624.12,
+              "elevation": 86.66
+            },
+            {
+              "distance": 634.12,
+              "elevation": 86.61
+            },
+            {
+              "distance": 644.12,
+              "elevation": 86.52
+            },
+            {
+              "distance": 658.8,
+              "elevation": 86.33
+            },
+            {
+              "distance": 668.8,
+              "elevation": 86.19
+            },
+            {
+              "distance": 678.8,
+              "elevation": 86.09
+            },
+            {
+              "distance": 684.03,
+              "elevation": 86.02
+            }
+          ],
+          "lat": 45.522694,
+          "lon": -122.5668425,
+          "relativeDirection": "CONTINUE",
+          "stayOn": false,
+          "streetName": "Northeast 94th Avenue"
+        },
+        {
+          "absoluteDirection": "EAST",
+          "alerts": [],
+          "area": false,
+          "distance": 32.51,
+          "elevationProfile": [
+            {
+              "distance": 0,
+              "elevation": 86.02
+            },
+            {
+              "distance": 10,
+              "elevation": 86.29
+            },
+            {
+              "distance": 20,
+              "elevation": 86.41
+            },
+            {
+              "distance": 32.51,
+              "elevation": 86.55
+            }
+          ],
+          "lat": 45.5287499,
+          "lon": -122.5668821,
+          "relativeDirection": "RIGHT",
+          "stayOn": false,
+          "streetName": "Northeast Oregon Street"
+        }
+      ],
+      "to": {
+        "lat": 45.5287004,
+        "lon": -122.5656386,
+        "name": "766 NE 94th Avenue, Portland",
+        "rentalVehicle": null,
+        "stop": null,
+        "vertexType": "NORMAL"
+      },
+      "transitLeg": false,
+      "trip": null,
+      "alightRule": "scheduled",
+      "boardRule": "scheduled",
+      "dropOffBookingInfo": {},
+      "routeColor": "333333"
+    }
+  ],
+  "startTime": 1705679678000,
+  "transfers": 1,
+  "waitingTime": 187,
+  "walkTime": 2094,
+  "index": 0,
+  "rank": 1533.7500000000002,
+  "totalFare": 2.8
+}

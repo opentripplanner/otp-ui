@@ -33,6 +33,7 @@ const walkTransitWalkTransitWalkItinerary = require("../__mocks__/itineraries/wa
 const walkTransitWalkTransitWalkA11yItinerary = require("../__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json");
 const otp2ScooterItinerary = require("../__mocks__/itineraries/otp2-scooter.json");
 const flexItinerary = require("../__mocks__/itineraries/flex-itinerary.json");
+const otp24Itinerary = require("../__mocks__/itineraries/otp2.4-transit-itinerary.json");
 
 function withLegacyLegs(itinerary) {
   return {
@@ -96,6 +97,11 @@ export default {
 
 export const WalkOnlyItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkOnlyItinerary} />
+);
+
+// OTP2.4 type data
+export const Otp24Itinerary = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper itinerary={otp24Itinerary} />
 );
 
 export const BikeOnlyItinerary = (): ReactElement => (

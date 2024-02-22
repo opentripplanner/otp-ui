@@ -139,21 +139,26 @@ export const customLocationPopupContent = () => (
   </Styled.StoryMapContainer>
 );
 
-export const optionalLayers = () => (
-  <Styled.StoryMapContainer>
-    <BaseMap center={center}>
-      <LayerWrapper
-        id="layer-1"
-        name="This layer has a name prop, the second one doesn't"
-        visible
-      >
-        <MarkerWithPopup position={[center[0], center[1]]} />
-        <MarkerWithPopup position={[center[0] + 0.01, center[1]]} />
-      </LayerWrapper>
-      <AllVehiclesOverlay id="layer-2" />
-    </BaseMap>
-  </Styled.StoryMapContainer>
-);
+export const optionalLayers = {
+  args: { showEverything: false },
+  // eslint-disable-next-line react/display-name
+  render: (props: any): JSX.Element => (
+    <Styled.StoryMapContainer>
+      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+      <BaseMap {...props}>
+        <LayerWrapper
+          id="layer-1"
+          name="This layer has a name prop, the second one doesn't"
+          visible
+        >
+          <MarkerWithPopup position={[center[0], center[1]]} />
+          <MarkerWithPopup position={[center[0] + 0.01, center[1]]} />
+        </LayerWrapper>
+        <AllVehiclesOverlay id="layer-2" />
+      </BaseMap>
+    </Styled.StoryMapContainer>
+  )
+};
 // Custom styling for this story only, not in production
 customLocationPopupContent.parameters = a11yOverrideParameters;
 

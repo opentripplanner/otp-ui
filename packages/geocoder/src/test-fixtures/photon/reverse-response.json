@@ -1,0 +1,23 @@
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [-122.67325034999999, 45.51621765],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "osm_type": "W",
+        "osm_id": 156366633,
+        "extent": [-122.673255, 45.5162209, -122.6732457, 45.5162144],
+        "country": "États-Unis d'Amérique",
+        "osm_key": "leisure",
+        "countrycode": "US",
+        "osm_value": "park",
+        "name": "Mill Ends Park",
+        "type": "locality"
+      }
+    }
+  ],
+  "type": "FeatureCollection"
+}
