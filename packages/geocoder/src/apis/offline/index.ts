@@ -1,13 +1,13 @@
 import uFuzzy from "@leeoniya/ufuzzy";
 
-type OfflineResponse = {
+export type OfflineResponse = {
   label: string;
   lat: number;
   lon: number;
 }[];
 
 type OfflineQuery = {
-  text: string;
+  text?: string;
   items: OfflineResponse;
 };
 /**
@@ -32,7 +32,7 @@ async function autocomplete({
   return idxs.map(index => items[index]);
 }
 
-function search(args: OfflineQuery): Promise<unknown> {
+function search(args: OfflineQuery): Promise<OfflineResponse> {
   return autocomplete(args);
 }
 function reverse(): Promise<unknown> {

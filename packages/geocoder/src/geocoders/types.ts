@@ -2,6 +2,7 @@
 // eslint-disable-next-line prettier/prettier
 import type { LonLatInput } from "@conveyal/lonlat"
 import type { Feature, FeatureCollection } from "geojson"
+import { OfflineResponse } from "../apis/offline";
 
 type Rect = {
   maxLat: number;
@@ -45,6 +46,7 @@ export type AutocompleteQuery = {
   layers?: string;
   options?: RequestInit;
   size?: number;
+  items?: OfflineResponse
   sources?: string;
   text?: string;
   url?: string;

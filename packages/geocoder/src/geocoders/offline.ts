@@ -3,6 +3,7 @@ import Geocoder from "./abstract-geocoder";
 // eslint-disable-next-line prettier/prettier
 import type { AutocompleteQuery, SearchQuery } from "..";
 import { MultiGeocoderResponse } from "./types";
+import { OfflineResponse } from "../apis/offline";
 
 /**
  * Geocoder implementation for an offline geocoder.
@@ -22,12 +23,25 @@ export default class OfflineGeocoder extends Geocoder {
     };
   }
 
-  rewriteAutocompleteResponse(response: MultiGeocoderResponse): MultiGeocoderResponse {
-    return response;
+  rewriteAutocompleteResponse(response: OfflineResponse): MultiGeocoderResponse {
+    return {
+      features: response?.map((r, index) => ({
+        geometry: { type: "Point", coordinates: [r.lon, r.lat] },
+        properties: {
+          layer: "custom",
+          id: `custom-${index}`,
+          source: "offline",
+          name: r.label,
+          label: r.label
+        },
+        type: "Feature"
+      })),
+      type: "FeatureCollection"
+    };
   }
 
 
-  rewriteSearchResponse(response: MultiGeocoderResponse): MultiGeocoderResponse {
-    return response;
+  rewriteSearchResponse(response: OfflineResponse): MultiGeocoderResponse {
+    return this.rewriteAutocompleteResponse(response);
   }
 }
