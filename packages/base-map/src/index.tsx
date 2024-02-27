@@ -7,7 +7,7 @@ import { useIntl } from "react-intl";
 import * as Styled from "./styled";
 import * as util from "./util";
 import MarkerWithPopup from "./MarkerWithPopup";
-import mapControlFields from "./mapControlLocale";
+import mapControlTranslationObject from "./mapControlLocale";
 
 /**
  * The BaseMap component renders a MapLibre map
@@ -137,7 +137,7 @@ const BaseMap = ({
       {...mapLibreProps}
       id={id}
       latitude={viewState.latitude}
-      locale={mapControlFields(intl)}
+      locale={mapControlTranslationObject(intl)}
       longitude={viewState.longitude}
       mapLib={maplibregl}
       mapStyle={activeBaseLayer}

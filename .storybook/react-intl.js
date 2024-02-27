@@ -36,7 +36,6 @@ if (!isRunningJest()) {
   // Populate messages if not running snapshots.
   // (Message printouts would be unnecessary replicated in snapshots without that check.)
   packages.forEach((pkg) => {
-    console.log(pkg)
     locales.forEach((locale) => {
       // Chinese-simplified is assigned a special file name by Weblate.
       const localeFile = locale === "zh" ? "zh_Hans" : locale;
