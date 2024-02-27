@@ -15,6 +15,7 @@ const locales = ["en-US", "fr", "es", "vi", "ko", "zh", "unknown"];
  * FIXME: remove in favor of a loop on package names.
  */ 
 const packages = [
+  "base-map",
   "endpoints-overlay",
   "from-to-location-picker",
   "itinerary-body",
@@ -35,6 +36,7 @@ if (!isRunningJest()) {
   // Populate messages if not running snapshots.
   // (Message printouts would be unnecessary replicated in snapshots without that check.)
   packages.forEach((pkg) => {
+    console.log(pkg)
     locales.forEach((locale) => {
       // Chinese-simplified is assigned a special file name by Weblate.
       const localeFile = locale === "zh" ? "zh_Hans" : locale;
