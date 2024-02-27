@@ -26,7 +26,9 @@ const MAP_CONTROL_TRANSLATION_KEYS = [
   "CooperativeGesturesHandler.MobileHelpText"
 ];
 
-const mapControlTranslationObject = (intl: IntlShape): any => {
+const mapControlTranslationObject = (
+  intl: IntlShape
+): { [key: string]: string } => {
   const languageObject = {};
 
   MAP_CONTROL_TRANSLATION_KEYS.forEach(x => {
