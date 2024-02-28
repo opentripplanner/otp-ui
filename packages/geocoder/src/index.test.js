@@ -24,6 +24,9 @@ describe("geocoder", () => {
       apiKey: "dummy-here-key",
       type: "HERE"
     },
+    {
+      type: "PHOTON"
+    },
     // this entry represents no geocoder configuration. In this case it is
     // expected that the NoApiGeocoder will be used.
     undefined
@@ -96,6 +99,19 @@ describe("geocoder", () => {
     .query(true)
     .replyWithFile(200, mockResponsePath("here", "reverse-response.json"));
 
+  // nocks for PHOTON
+  nock("https://photon.komoot.io/")
+    // autocomplete & search
+    .get("/api")
+    .twice()
+    .query(true)
+    .replyWithFile(200, mockResponsePath("photon", "search-response.json"))
+    // reverse
+    .get("/reverse")
+    .twice()
+    .query(true)
+    .replyWithFile(200, mockResponsePath("photon", "reverse-response.json"));
+
   geocoders.forEach(geocoder => {
     const geocoderType = geocoder ? geocoder.type : "NoApiGeocoder";
     // the describe is in quotes to bypass a lint rule
@@ -162,6 +178,25 @@ describe("geocoder", () => {
               },
               properties: {
                 label: "Mill Ends Park, Portland, OR, USA"
+              }
+            };
+            break;
+          case "PHOTON":
+            mockFeature = {
+              geometry: {
+                coordinates: [-122.67325, 45.51621],
+                type: "Point"
+              },
+              properties: {
+                label:
+                  "Mill Ends Park, Southwest Naito Parkway, Downtown, OR, 97204, Portland, États-Unis d'Amérique",
+                country: "États-Unis d'Amérique",
+                city: "Portland",
+                postcode: "97204",
+                street: "Southwest Naito Parkway",
+                district: "Downtown",
+                name: "Mill Ends Park",
+                state: "OR"
               }
             };
             break;
