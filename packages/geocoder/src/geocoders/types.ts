@@ -43,10 +43,10 @@ export type AutocompleteQuery = {
   boundary?: Boundary;
   focusPoint?: LonLatInput;
   format?: boolean;
+  items?: OfflineResponse
   layers?: string;
   options?: RequestInit;
   size?: number;
-  items?: OfflineResponse
   sources?: string;
   text?: string;
   url?: string;

@@ -7,8 +7,8 @@ export type OfflineResponse = {
 }[];
 
 type OfflineQuery = {
-  text?: string;
   items: OfflineResponse;
+  text?: string;
 };
 /**
  * Search for an address using offline geocoder
@@ -19,8 +19,8 @@ type OfflineQuery = {
  * @return {Promise}        A Promise that'll get resolved with the autocomplete result
  */
 async function autocomplete({
-  text,
-  items
+  items,
+  text
 }: OfflineQuery): Promise<OfflineResponse> {
   // eslint-disable-next-line new-cap
   const u = new uFuzzy();

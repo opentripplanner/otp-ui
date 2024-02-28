@@ -28,11 +28,11 @@ export default class OfflineGeocoder extends Geocoder {
       features: response?.map((r, index) => ({
         geometry: { type: "Point", coordinates: [r.lon, r.lat] },
         properties: {
-          layer: "custom",
           id: `custom-${index}`,
-          source: "offline",
+          label: r.label,
+          layer: "custom",
           name: r.label,
-          label: r.label
+          source: "offline",
         },
         type: "Feature"
       })),
