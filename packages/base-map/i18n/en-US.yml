@@ -1,20 +1,9 @@
 otpUi:
   mapControls:
-    AttributionControl:
-      MapFeedback: Map feedback
-      ToggleAttribution: Toggle attribution
     CooperativeGesturesHandler:
       MacHelpText: Use ⌘ + scroll to zoom the map
       MobileHelpText: Use two fingers to move the map
       WindowsHelpText: Use Ctrl + scroll to zoom the map
-    FullscreenControl:
-      Enter: Enter fullscreen
-      Exit: Exit fullscreen
-    GeolocateControl:
-      FindMyLocation: Find my location
-      LocationNotAvailable: Location not available
-    LogoControl:
-      Title: MapLibre logo
     NavigationControl:
       ResetBearing: Reset bearing to north
       ZoomIn: Zoom in
@@ -25,6 +14,3 @@ otpUi:
       Meters: m
       Miles: mi
       NauticalMiles: nm
-    TerrainControl:
-      Disable: Disable terrain
-      Enable: Enable terrain
