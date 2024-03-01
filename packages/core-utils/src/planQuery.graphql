@@ -5,6 +5,7 @@ query Plan(
   $carReluctance: Float
   $date: String
   $fromPlace: String!
+  $mobilityProfile: String
   $modes: [TransportMode]
   $numItineraries: Int
   $preferred: InputPreferred
@@ -24,6 +25,7 @@ query Plan(
     fromPlace: $fromPlace
     # Currently only supporting EN locale, used for times and text
     locale: "en"
+    mobilityProfile: $mobilityProfile
     numItineraries: $numItineraries
     preferred: $preferred
     time: $time
