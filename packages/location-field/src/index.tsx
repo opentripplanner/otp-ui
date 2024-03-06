@@ -850,7 +850,7 @@ const LocationField = ({
     );
     if (!positionUnavailable) itemIndex++;
   }
-  if (message) {
+  if (message && !message.includes("AbortError")) {
     if (geocodedFeatures.length === 0) {
       const icon = isFetching ? (
         <S.Spinner size={ICON_SIZE} />
