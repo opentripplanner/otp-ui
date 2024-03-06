@@ -5,7 +5,7 @@
       "MobileHelpText",
       "WindowsHelpText"
     ],
-    "otpUi.mapControls.NavigationControl.*Controls": [
+    "otpUi.mapControls.NavigationControl.*": [
       "ResetBearing",
       "ZoomIn",
       "ZoomOut"
