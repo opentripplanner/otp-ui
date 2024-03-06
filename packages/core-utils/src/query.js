@@ -16,16 +16,9 @@ import {
 
 export const defaultParams = [
   "wheelchair",
-  "maxWalkDistance",
   "walkReluctance",
-  "maxWalkTime",
   "maxBikeDistance",
-  "maxBikeTime",
-  "bikeSpeed",
-  "optimize",
-  "optimizeBike",
-  "maxEScooterDistance",
-  "watts"
+  "bikeSpeed"
 ];
 
 /**
