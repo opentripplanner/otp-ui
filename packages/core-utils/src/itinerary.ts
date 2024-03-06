@@ -1,7 +1,6 @@
 import polyline from "@mapbox/polyline";
 import {
   Company,
-  Config,
   ElevationProfile,
   FlexBookingInfo,
   ItineraryOnlyLegsRequired,
@@ -26,20 +25,6 @@ export const transitModes = [
   "RAIL",
   "GONDOLA"
 ];
-
-/**
- * @param  {config} config OTP-RR configuration object
- * @return {Array}  List of all transit modes defined in config; otherwise default mode list
- */
-
-export function getTransitModes(config: Config): string[] {
-  if (!config || !config.modes || !config.modes.transitModes)
-    return transitModes;
-
-  return config.modes.transitModes.map(tm =>
-    typeof tm !== "string" ? tm.mode : tm
-  );
-}
 
 export function isTransit(mode: string): boolean {
   return transitModes.includes(mode) || mode === "TRANSIT";

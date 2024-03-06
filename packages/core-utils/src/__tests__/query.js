@@ -1,5 +1,3 @@
-import clone from "lodash/cloneDeep";
-
 import {
   restoreDateNowBehavior,
   setDefaultTestTime
@@ -8,12 +6,9 @@ import {
 import {
   getDefaultQuery,
   getRoutingParams,
-  isNotDefaultQuery,
   parseLocationString,
   planParamsToQuery
 } from "../query";
-
-const config = require("./__mocks__/config.json");
 
 describe("query", () => {
   afterEach(restoreDateNowBehavior);
@@ -161,44 +156,6 @@ describe("query", () => {
             "FLEX_EGRESS,FLEX,FLEX_EGRESS,FLEX_ACCESS,FLEX_DIRECT,FLEX,WALK,BIKE,WALK,TRANSIT,BUS"
         })
       ).toMatchSnapshot();
-    });
-  });
-
-  describe("isNotDefaultQuery", () => {
-    it("should return false for default query", () => {
-      setDefaultTestTime();
-      expect(isNotDefaultQuery(getDefaultQuery(config), config)).toBe(false);
-    });
-
-    it("should return false for default query with config overrides", () => {
-      // Clone default config and add new default maxWalkDistance
-      const configWithQueryParamOverrides = clone(config);
-      configWithQueryParamOverrides.defaultQueryParams = {
-        maxWalkDistance: 3219
-      };
-      setDefaultTestTime();
-      expect(
-        isNotDefaultQuery(
-          getDefaultQuery(configWithQueryParamOverrides),
-          configWithQueryParamOverrides
-        )
-      ).toBe(false);
-    });
-
-    it("should return true for query with modified maxWalkDistance", () => {
-      setDefaultTestTime();
-      const query = getDefaultQuery(config);
-      // Double the max walk distance
-      query.maxWalkDistance *= 2;
-      expect(isNotDefaultQuery(query, config)).toBe(true);
-    });
-
-    it("should return true for query with non-default mode", () => {
-      setDefaultTestTime();
-      const query = getDefaultQuery(config);
-      // Set the mode to walk
-      query.mode = "WALK";
-      expect(isNotDefaultQuery(query, config)).toBe(true);
     });
   });
 

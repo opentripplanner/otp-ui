@@ -2,7 +2,7 @@ import { format, isMatch, parse } from "date-fns";
 import getGeocoder from "@opentripplanner/geocoder/lib";
 import qs from "qs";
 
-import { getTransitModes, hasCar, isAccessMode } from "./itinerary";
+import { hasCar, isAccessMode } from "./itinerary";
 import { coordsToString, stringToCoords } from "./map";
 import queryParams from "./query-params";
 import {
@@ -11,15 +11,6 @@ import {
   OTP_API_DATE_FORMAT,
   OTP_API_TIME_FORMAT
 } from "./time";
-
-/* The list of default parameters considered in the settings panel */
-
-export const defaultParams = [
-  "wheelchair",
-  "walkReluctance",
-  "maxBikeDistance",
-  "bikeSpeed"
-];
 
 /**
  * List of time formats to parse when reading query params.
@@ -117,23 +108,6 @@ export function getDefaultQuery(config = null) {
 }
 
 /**
- * Determine if the specified query param applies to the given query (based on
- * routing type and the param's own applicable function).
- * @param  paramInfo an entry from query-params.js
- * @param  query     the query against which to check if the param applies
- * @param  config    OTP config
- * @return {Boolean}
- */
-function isParamApplicable(paramInfo, query, config) {
-  const { applicable, routingTypes } = paramInfo;
-  if (!routingTypes.includes(query.routingType)) return false;
-  if (typeof applicable === "function" && !applicable(query, config)) {
-    return false;
-  }
-  return true;
-}
-
-/**
  * Helper method which replaces OTP flex modes with single FLEX mode that's
  * more useful and easier to work with.
  */
@@ -174,50 +148,6 @@ export function expandOtpFlexMode(mode) {
       return m;
     })
     .join(",");
-}
-
-/**
- * Determines whether the specified query differs from the default query, i.e.,
- * whether the user has modified any trip options (including mode) from their
- * default values.
- */
-export function isNotDefaultQuery(query, config) {
-  const activeModes = reduceOtpFlexModes(
-    query.mode.split(",").sort(),
-    config.modes?.mergeFlex
-  );
-  if (
-    activeModes.length !== 2 ||
-    activeModes[0] !== "TRANSIT" ||
-    activeModes[1] !== "WALK"
-  ) {
-    // Default mode is TRANSIT,WALK. If general TRANSIT is not used, check
-    // against available transit modes in config.
-    const defaultModes = getTransitModes(config)
-      .concat(["WALK"])
-      .sort();
-    const modesEqual =
-      activeModes.length === defaultModes.length &&
-      activeModes.every((value, index) => {
-        return value === defaultModes[index];
-      });
-    if (!modesEqual) return true;
-  }
-  // If modes are equal, check the remaining params.
-  const defaultQuery = getDefaultQuery(config);
-  for (let i = 0; i < defaultParams.length; i++) {
-    const param = defaultParams[i];
-    const paramInfo = queryParams.find(qp => qp.name === param);
-    // If the parameter applies to the query and does not match the default
-    // value, the query is not default.
-    if (
-      isParamApplicable(paramInfo, query, config) &&
-      query[param] !== defaultQuery[param]
-    ) {
-      return true;
-    }
-  }
-  return false;
 }
 
 /**
