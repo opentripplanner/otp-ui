@@ -388,19 +388,15 @@ export async function planParamsToQueryAsync(params, config = {}) {
  *   does not use realtime data.
  */
 export function getRoutingParams(config, currentQuery, ignoreRealtimeUpdates) {
-  const routingType = currentQuery.routingType;
-  const isItinerary = routingType === "ITINERARY";
   let params = {};
 
   // Start with the universe of OTP parameters defined in query-params.js:
   queryParams
     .filter(qp => {
       // A given parameter is included in the request if all of the following:
-      // 1. Must apply to the active routing type (ITINERARY or PROFILE)
-      // 2. Must be included in the current user-defined query
-      // 3. Must pass the parameter's applicability test, if one is specified
+      // 1. Must be included in the current user-defined query
+      // 2. Must pass the parameter's applicability test, if one is specified
       return (
-        qp.routingTypes.indexOf(routingType) !== -1 &&
         qp.name in currentQuery &&
         (typeof qp.applicable !== "function" ||
           qp.applicable(currentQuery, config))
@@ -409,58 +405,42 @@ export function getRoutingParams(config, currentQuery, ignoreRealtimeUpdates) {
     .forEach(qp => {
       // Translate the applicable parameters according to their rewrite
       // functions (if provided)
-      const rewriteFunction = isItinerary
-        ? qp.itineraryRewrite
-        : qp.profileRewrite;
       params = Object.assign(
         params,
-        rewriteFunction
-          ? rewriteFunction(currentQuery[qp.name])
+        qp.itineraryRewrite
+          ? qp.itineraryRewrite(currentQuery[qp.name])
           : { [qp.name]: currentQuery[qp.name] }
       );
     });
 
   // Additional processing specific to ITINERARY mode
-  if (isItinerary) {
-    // override ignoreRealtimeUpdates if provided
-    if (typeof ignoreRealtimeUpdates === "boolean") {
-      params.ignoreRealtimeUpdates = ignoreRealtimeUpdates;
-    }
+  // override ignoreRealtimeUpdates if provided
+  if (typeof ignoreRealtimeUpdates === "boolean") {
+    params.ignoreRealtimeUpdates = ignoreRealtimeUpdates;
+  }
 
-    // check date/time validity; ignore both if either is invalid
-    const dateValid = isMatch(params.date, OTP_API_DATE_FORMAT);
-    const timeValid = isMatch(params.time, OTP_API_TIME_FORMAT);
+  // check date/time validity; ignore both if either is invalid
+  const dateValid = isMatch(params.date, OTP_API_DATE_FORMAT);
+  const timeValid = isMatch(params.time, OTP_API_TIME_FORMAT);
 
-    if (!dateValid || !timeValid) {
-      delete params.time;
-      delete params.date;
-    }
+  if (!dateValid || !timeValid) {
+    delete params.time;
+    delete params.date;
+  }
 
-    // temp: set additional parameters for CAR_HAIL or CAR_RENT trips
-    if (
-      params.mode &&
-      (params.mode.includes("CAR_HAIL") || params.mode.includes("CAR_RENT"))
-    ) {
-      params.minTransitDistance = "50%";
-      // increase search timeout because these queries can take a while
-      params.searchTimeout = 10000;
-    }
+  // temp: set additional parameters for CAR_HAIL or CAR_RENT trips
+  if (
+    params.mode &&
+    (params.mode.includes("CAR_HAIL") || params.mode.includes("CAR_RENT"))
+  ) {
+    params.minTransitDistance = "50%";
+    // increase search timeout because these queries can take a while
+    params.searchTimeout = 10000;
+  }
 
-    // set onlyTransitTrips for car rental searches
-    if (params.mode && params.mode.includes("CAR_RENT")) {
-      params.onlyTransitTrips = true;
-    }
-
-    // Additional processing specific to PROFILE mode
-  } else {
-    // check start and end time validity; ignore both if either is invalid
-    const startTimeValid = isMatch(params.startTime, OTP_API_TIME_FORMAT);
-    const endTimeValid = isMatch(params.endTime, OTP_API_TIME_FORMAT);
-
-    if (!startTimeValid || !endTimeValid) {
-      delete params.startTimeValid;
-      delete params.endTimeValid;
-    }
+  // set onlyTransitTrips for car rental searches
+  if (params.mode && params.mode.includes("CAR_RENT")) {
+    params.onlyTransitTrips = true;
   }
 
   // TODO: check that valid from/to locations are provided
