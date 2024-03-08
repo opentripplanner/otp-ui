@@ -1,6 +1,6 @@
 {
   "groups": {
-    "otpUi.mapControls.CooperativeGesturesHandler.*HelpText": [
+    "otpUi.mapControls.CooperativeGesturesHandler.*": [
       "MacHelpText",
       "MobileHelpText",
       "WindowsHelpText"
@@ -10,7 +10,7 @@
       "ZoomIn",
       "ZoomOut"
     ],
-    "otpUi.mapControls.ScaleControl.*Measurements": [
+    "otpUi.mapControls.ScaleControl.*": [
       "Feet",
       "Kilometers",
       "Meters",
