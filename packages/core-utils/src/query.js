@@ -12,6 +12,22 @@ import {
   OTP_API_TIME_FORMAT
 } from "./time";
 
+/* The list of default parameters considered in the settings panel */
+
+export const defaultParams = [
+  "wheelchair",
+  "maxWalkDistance",
+  "walkReluctance",
+  "maxWalkTime",
+  "maxBikeDistance",
+  "maxBikeTime",
+  "bikeSpeed",
+  "optimize",
+  "optimizeBike",
+  "maxEScooterDistance",
+  "watts"
+];
+
 /**
  * List of time formats to parse when reading query params.
  */
