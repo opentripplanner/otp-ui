@@ -14,6 +14,7 @@ import { Layer, Popup, Source, useMap } from "react-map-gl"
 import { generateLayerPaint } from "./util"
 
 const SOURCE_ID = "otp2-tiles"
+const AREA_TYPES = ["areaStops"]
 
 const OTP2TileLayerWithPopup = ({
   color,
@@ -131,13 +132,48 @@ const OTP2TileLayerWithPopup = ({
   if (network) {
     filter = ["all", ["==", "network", network]]
   }
-  if (type === "stops") {
-    filter = ["!=", ["get", "routes"],  ["literal", "[]"]]
+  if (type === "stops" || type === "areaStops") {
+    filter = ["!=", ["get", "routes"], ["literal", "[]"]]
   }
 
+  // Weird bug: the isArea layers only work properly with node 16!
+  const isArea = AREA_TYPES.includes(type)
   return (
     <>
-      <Layer
+      {isArea && <Layer
+        filter={filter}
+        id={`${id}-fill`}
+        source={SOURCE_ID}
+        source-layer={type}
+        paint={{
+          "fill-color": [
+            "concat",
+            "#",
+            ["case", ["!=", ["index-of", ",", ["get", "routeColors"]], -1], ["slice", ["get", "routeColors"], 0, ["index-of", ",", ["get", "routeColors"]]], ["get", "routeColors"]]
+          ],
+          "fill-opacity": 0.3,
+          "fill-outline-color": "#333",
+        }}
+        type="fill"
+      />}
+      {isArea && <Layer
+        filter={filter}
+        id={`${id}-outline`}
+        layout={{ "line-join": "round", "line-cap": "round" }}
+        source={SOURCE_ID}
+        source-layer={type}
+        paint={{
+          "line-color": [
+            "concat",
+            "#",
+            ["case", ["!=", ["index-of", ",", ["get", "routeColors"]], -1], ["slice", ["get", "routeColors"], 0, ["index-of", ",", ["get", "routeColors"]]], ["get", "routeColors"]]
+          ],
+          "line-opacity": 1,
+          "line-width": 4
+        }}
+        type="line"
+      />}
+      {!isArea && <Layer
         filter={filter}
         id={id}
         key={id}
@@ -145,7 +181,7 @@ const OTP2TileLayerWithPopup = ({
         source={SOURCE_ID}
         source-layer={type}
         type="circle"
-      />
+      />}
       {clickedEntity && (
         <Popup
           latitude={clickedEntity.lat}

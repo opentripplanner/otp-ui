@@ -29,6 +29,26 @@ export const generateLayerPaint = (color?: string): any => {
       "circle-stroke-color": "#333",
       "circle-stroke-width": 3
     },
+    areaStops: {
+      "circle-color": [
+        "concat",
+        "#",
+        [
+          "case",
+          ["!=", ["index-of", ",", ["get", "routeColors"]], -1],
+          [
+            "slice",
+            ["get", "routeColors"],
+            0,
+            ["index-of", ",", ["get", "routeColors"]]
+          ],
+          ["get", "routeColors"]
+        ]
+      ],
+      "circle-opacity": 0.9,
+      "circle-stroke-color": "#333",
+      "circle-stroke-width": 2
+    },
     stops: {
       "circle-color": color || "#fff",
       "circle-opacity": 0.9,
