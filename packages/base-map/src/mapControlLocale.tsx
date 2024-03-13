@@ -3,6 +3,7 @@ import { IntlShape } from "react-intl";
 // Creates a language file to pass to MapLibre that has this format:
 // https://github.com/maplibre/maplibre-gl-js/blob/main/src/ui/default_locale.ts
 
+// TODO: Generate keys from YAML
 const MAP_CONTROL_TRANSLATION_KEYS = [
   "NavigationControl.ResetBearing",
   "NavigationControl.ZoomIn",
@@ -17,7 +18,7 @@ const MAP_CONTROL_TRANSLATION_KEYS = [
   "CooperativeGesturesHandler.MobileHelpText"
 ];
 
-const mapControlTranslationObject = (
+const generateMapControlTranslations = (
   intl: IntlShape
 ): Record<string, string> => {
   const languageObject = {};
@@ -31,4 +32,4 @@ const mapControlTranslationObject = (
   return languageObject;
 };
 
-export default mapControlTranslationObject;
+export default generateMapControlTranslations;
