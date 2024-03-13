@@ -81,6 +81,12 @@ otpUi:
       car: 차로
       escooter: 전자 스쿠터로
       walk: 걸어서
+    tripAccessibility:
+      inaccessible: 액세스 불가
+      itineraryAccessibility: "이 이동편의 휠체어 액세스 가능 여부:\_"
+      legAccessibility: "이 이동편 구간의 휠체어 액세스 가능 여부:\_"
+      likelyAccessible: 액세스 가능 확률 높음
+      unclear: 알 수 없음
     viewOnMap: 지도 보기
   TransitLegBody:
     AlertsBody:

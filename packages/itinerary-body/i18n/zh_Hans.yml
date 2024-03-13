@@ -81,6 +81,12 @@ otpUi:
       car: 乘车
       escooter: 乘坐电动滑板车
       walk: 步行出
+    tripAccessibility:
+      inaccessible: 无法访问
+      itineraryAccessibility: 这段行程的轮椅无障碍通道情况：
+      legAccessibility: 这段步行行程的轮椅无障碍通道情况：
+      likelyAccessible: 可能可访问
+      unclear: 未知
     viewOnMap: 在地图上查看
   TransitLegBody:
     AlertsBody:
