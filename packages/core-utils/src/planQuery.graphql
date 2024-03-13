@@ -213,9 +213,9 @@ query Plan(
           }
           area
           distance
-          elevationProfile {
-            distance
-            elevation
+          elevation: elevationProfile {
+            first: distance
+            second: elevation
           }
           lat
           lon
