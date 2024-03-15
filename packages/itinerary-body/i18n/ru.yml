@@ -80,6 +80,12 @@ otpUi:
       car: на авто
       escooter: на электросамокате
       walk: пешком
+    tripAccessibility:
+      inaccessible: недоступно
+      itineraryAccessibility: "Доступность для инвалидных колясок на этом отрезке поездки: \_"
+      legAccessibility: "Доступность для инвалидных колясок на этом отрезке поездки: \_"
+      likelyAccessible: Скорее всего доступно
+      unclear: неизвестно
     viewOnMap: Просмотреть на карте
   TransitLegBody:
     AlertsBody:
