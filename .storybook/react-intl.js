@@ -21,11 +21,9 @@ const packages = [
   "location-field",
   "printable-itinerary",
   "map-popup",
-  "stops-overlay",
   "transit-vehicle-overlay",
   "trip-details",
-  "trip-form",
-  "vehicle-rental-overlay"
+  "trip-form"
 ];
 
 /** Messages for all packages AND locales above. */

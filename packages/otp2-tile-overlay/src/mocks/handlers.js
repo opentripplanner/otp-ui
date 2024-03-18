@@ -3,9 +3,12 @@ import { rest } from "msw";
 
 import tilejson from "./tilejson.json";
 
-import seventy from "!url-loader!./4770-6206.pbf";
-import seventyOne from "!url-loader!./4771-6206.pbf";
-import seventyTwo from "!url-loader!./4772-6206.pbf";
+// import seventy from "./4770-6206.pbf";
+// import seventyOne from "./4771-6206.pbf";
+// import seventyTwo from "./4772-6206.pbf";
+const seventy = new URL("./4770-6206.pbf", import.meta.url);
+const seventyOne = new URL("./4771-6206.pbf", import.meta.url);
+const seventyTwo = new URL("./4772-6206.pbf", import.meta.url);
 
 export default [
   rest.get(

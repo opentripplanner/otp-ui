@@ -11,5 +11,12 @@
     "jsx": "react",
     "noEmit": false
   },
-  "exclude": ["**/*.test.ts", "**/*.story.tsx", "node_modules", "lib", "esm"]
+  "exclude": [
+    "**/*.test.ts",
+    "**/*.story.tsx",
+    "node_modules",
+    "lib",
+    "esm",
+    "**/__tests__/**/*"
+  ]
 }
