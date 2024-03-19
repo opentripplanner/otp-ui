@@ -36,6 +36,7 @@
     "@storybook/react": "7.6.17",
     "@storybook/react-webpack5": "7.6.17",
     "@storybook/storybook-deployer": "^2.8.10",
+    "@storybook/test-runner": "^0.17.0",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.0.0",
     "@types/styled-components": "^5.1.9",
@@ -119,7 +120,8 @@
     "test": "yarn lint:js && yarn lint:styles && yarn check:i18n-en-fr && yarn typescript && yarn unit && yarn a11y-test",
     "typescript": "lerna run tsc",
     "unit": "jest --testPathIgnorePatterns a11y .d.ts",
-    "update-internal-dependencies": "node scripts/update-internal-dependencies.js"
+    "update-internal-dependencies": "node scripts/update-internal-dependencies.js",
+    "test-storybook": "test-storybook"
   },
   "eslintConfig": {
     "env": {
