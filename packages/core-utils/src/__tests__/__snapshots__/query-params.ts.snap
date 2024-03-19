@@ -222,21 +222,6 @@ Array [
   },
   Object {
     "applicable": [Function],
-    "high": 10,
-    "label": "walk reluctance",
-    "labelHigh": "More Transit",
-    "labelLow": "More Walking",
-    "low": 1,
-    "name": "walkReluctance",
-    "routingTypes": Array [
-      "ITINERARY",
-      "PROFILE",
-    ],
-    "selector": "SLIDER",
-    "step": 0.5,
-  },
-  Object {
-    "applicable": [Function],
     "default": 20,
     "label": "Max Bike Time",
     "name": "maxBikeTime",
@@ -399,18 +384,6 @@ Array [
     "routingTypes": Array [
       "ITINERARY",
     ],
-  },
-  Object {
-    "applicable": [Function],
-    "default": false,
-    "icon": <ForwardRef(Wheelchair) />,
-    "label": "Prefer Wheelchair Accessible Routes",
-    "name": "wheelchair",
-    "routingTypes": Array [
-      "ITINERARY",
-      "PROFILE",
-    ],
-    "selector": "CHECKBOX",
   },
   Object {
     "name": "bannedRoutes",

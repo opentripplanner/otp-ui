@@ -15,9 +15,7 @@ import {
 /* The list of default parameters considered in the settings panel */
 
 export const defaultParams = [
-  "wheelchair",
   "maxWalkDistance",
-  "walkReluctance",
   "maxWalkTime",
   "maxBikeDistance",
   "maxBikeTime",
