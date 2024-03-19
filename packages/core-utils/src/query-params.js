@@ -3,8 +3,6 @@
 
 // This is only used within stories
 import cloneDeep from "lodash.clonedeep";
-import React from "react";
-import { Wheelchair } from "@styled-icons/foundation/Wheelchair";
 
 import {
   isTransit,
@@ -366,23 +364,6 @@ const queryParams = [
     ]
   },
   {
-    name: "walkReluctance",
-    routingTypes: ["ITINERARY", "PROFILE"],
-    selector: "SLIDER",
-    low: 1,
-    high: 10,
-    step: 0.5,
-    label: "walk reluctance",
-    labelLow: "More Walking",
-    labelHigh: "More Transit",
-    applicable: query =>
-      /* Since this query variable isn't in this list, it's not included in the generated query
-       * It does however allow us to determine if we should show the OTP1 max walk distance
-       * dropdown or the OTP2 walk reluctance slider
-       */
-      !!query.otp2 && query.mode && query.mode.indexOf("WALK") !== -1
-  },
-  {
     /* maxBikeTime -- the maximum time the user will spend biking in minutes */
     name: "maxBikeTime",
     routingTypes: ["PROFILE"],
@@ -599,34 +580,6 @@ const queryParams = [
     name: "companies",
     routingTypes: ["ITINERARY"]
   },
-
-  {
-    /* wheelchair -- whether the user requires a wheelchair-accessible trip */
-    name: "wheelchair",
-    routingTypes: ["ITINERARY", "PROFILE"],
-    default: false,
-    selector: "CHECKBOX",
-    label: "Prefer Wheelchair Accessible Routes",
-    icon: <Wheelchair />,
-    applicable: (query, config) => {
-      if (!query.mode || !config.modes) return false;
-      const configModes = (config.modes.accessModes || []).concat(
-        config.modes.transitModes || []
-      );
-      return query.mode.split(",").some(mode => {
-        const configMode = configModes.find(m => m.mode === mode);
-        if (!configMode || !configMode.showWheelchairSetting) return false;
-        if (
-          configMode.company &&
-          (!query.companies ||
-            !query.companies.split(",").includes(configMode.company))
-        )
-          return false;
-        return true;
-      });
-    }
-  },
-
   {
     name: "bannedRoutes",
     routingTypes: ["ITINERARY"]
