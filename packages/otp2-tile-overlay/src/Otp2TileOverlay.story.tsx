@@ -29,7 +29,7 @@ export const OtpTileLayer = (): JSX.Element => {
       stops loaded from OTP tiles.
       <BaseMap center={[0, 0]} zoom={3} style={{ height: "80vh" }}>
         {generateOTP2TileLayers(
-          [{ type: "stops" }],
+          [{ type: "stops" }, { type: "areaStops" }],
           `${endpoint}/routers/default/vectorTiles`
         )}
       </BaseMap>
