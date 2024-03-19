@@ -143,8 +143,6 @@ const OTP2TileLayerWithPopup = ({
       {isArea && <Layer
         filter={filter}
         id={`${id}-fill`}
-        source={SOURCE_ID}
-        source-layer={type}
         paint={{
           "fill-color": [
             "concat",
@@ -154,6 +152,8 @@ const OTP2TileLayerWithPopup = ({
           "fill-opacity": 0.3,
           "fill-outline-color": "#333",
         }}
+        source-layer={type}
+        source={SOURCE_ID}
         type="fill"
       />}
       {isArea && <Layer
