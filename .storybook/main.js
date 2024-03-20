@@ -21,7 +21,7 @@ module.exports = {
       }
     },
     getAbsolutePath("@storybook/addon-viewport"),
-    getAbsolutePath("storybook-react-intl")
+    "storybook-react-intl"
   ],
 
   stories: [
