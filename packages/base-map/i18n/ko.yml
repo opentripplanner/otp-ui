@@ -1,0 +1,16 @@
+otpUi:
+  mapControls:
+    CooperativeGesturesHandler:
+      MacHelpText: Use ⌘ + scroll to zoom the map
+      MobileHelpText: Use two fingers to move the map
+      WindowsHelpText: Use Ctrl + scroll to zoom the map
+    NavigationControl:
+      ResetBearing: 북쪽 방향 재설정
+      ZoomIn: 확대
+      ZoomOut: 축소
+    ScaleControl:
+      Feet: ft
+      Kilometers: km
+      Meters: m
+      Miles: mi
+      NauticalMiles: nm
