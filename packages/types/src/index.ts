@@ -104,6 +104,7 @@ export type TransitVehicle = {
 
   status?: string;
   reportDate?: string;
+  lastUpdated?: number;
   seconds?: number;
 
   stopSequence?: number;
