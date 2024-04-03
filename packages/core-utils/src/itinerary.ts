@@ -2,6 +2,7 @@ import polyline from "@mapbox/polyline";
 import {
   Company,
   Config,
+  ElevationData,
   ElevationProfile,
   FlexBookingInfo,
   ItineraryOnlyLegsRequired,
@@ -329,30 +330,33 @@ export function getElevationProfile(
   let traversed = 0;
   let gain = 0;
   let loss = 0;
-  let previous = null;
+  let previous: ElevationData | null = null;
   const points = [];
   steps.forEach(step => {
-    if (!step.elevation || step.elevation.length === 0) {
+    if (!step.elevationProfile || step.elevationProfile.length === 0) {
       traversed += step.distance;
       return;
     }
-    for (let i = 0; i < step.elevation.length; i++) {
-      const elev = step.elevation[i];
+    for (let i = 0; i < step.elevationProfile.length; i++) {
+      const elev = step.elevationProfile[i];
       if (previous) {
-        const diff = (elev.second - previous.second) * unitConversion;
+        const diff = (elev.elevation - previous.elevation) * unitConversion;
         if (diff > 0) gain += diff;
         else loss += diff;
       }
-      if (i === 0 && elev.first !== 0) {
+      if (i === 0 && elev.distance !== 0) {
         // console.warn(`No elevation data available for step ${stepIndex}-${i} at beginning of segment`, elev)
       }
-      const convertedElevation = elev.second * unitConversion;
+      const convertedElevation = elev.elevation * unitConversion;
       if (convertedElevation < minElev) minElev = convertedElevation;
       if (convertedElevation > maxElev) maxElev = convertedElevation;
-      points.push([traversed + elev.first, elev.second]);
+      points.push([traversed + elev.distance, elev.elevation]);
       // Insert "filler" point if the last point in elevation profile does not
       // reach the full distance of the step.
-      if (i === step.elevation.length - 1 && elev.first !== step.distance) {
+      if (
+        i === step.elevationProfile.length - 1 &&
+        elev.distance !== step.distance
+      ) {
         // points.push([traversed + step.distance, elev.second])
       }
       previous = elev;
