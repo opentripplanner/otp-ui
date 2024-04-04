@@ -1,9 +1,9 @@
 otpUi:
   mapControls:
     CooperativeGesturesHandler:
-      MacHelpText: Use ⌘ + scroll to zoom the map
-      MobileHelpText: Use two fingers to move the map
-      WindowsHelpText: Use Ctrl + scroll to zoom the map
+      MacHelpText: Gamitin ang ⌘ + scroll para mag-zoom sa mapa
+      MobileHelpText: Gumamit ng dalawang daliri para igalaw ang mapa
+      WindowsHelpText: Gamitin ang Ctrl + scroll para mag-zoom sa mapa
     NavigationControl:
       ResetBearing: I-reset ang bearing sa hilaga
       ZoomIn: Mag-zoom In

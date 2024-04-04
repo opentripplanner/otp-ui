@@ -1,9 +1,9 @@
 otpUi:
   mapControls:
     CooperativeGesturesHandler:
-      MacHelpText: Use ⌘ + scroll to zoom the map
-      MobileHelpText: Use two fingers to move the map
-      WindowsHelpText: Use Ctrl + scroll to zoom the map
+      MacHelpText: Используйте комбинацию ⌘ + прокрутка, чтобы изменить масштаб карты
+      MobileHelpText: Перемещение карты выполняется с помощью двух пальцев
+      WindowsHelpText: Используйте комбинацию Ctrl + прокрутка, чтобы изменить масштаб карты
     NavigationControl:
       ResetBearing: Сбросить азимут на север
       ZoomIn: Увеличить масштаб

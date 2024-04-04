@@ -1,9 +1,9 @@
 otpUi:
   mapControls:
     CooperativeGesturesHandler:
-      MacHelpText: Use ⌘ + scroll to zoom the map
-      MobileHelpText: Use two fingers to move the map
-      WindowsHelpText: Use Ctrl + scroll to zoom the map
+      MacHelpText: ⌘ + 스크롤을 사용하여 지도를 확대 또는 축소
+      MobileHelpText: 두 손가락을 사용하여 지도 이동
+      WindowsHelpText: 스크롤을 사용하여 지도를 확대 또는 축소
     NavigationControl:
       ResetBearing: 북쪽 방향 재설정
       ZoomIn: 확대
