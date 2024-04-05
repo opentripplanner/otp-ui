@@ -1,0 +1,1259 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransitVehicleOverlay CustomModeIcon smoke-test 1`] = `
+<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+  <div class="maplibregl-map mapboxgl-map"
+       style="position: relative; width: 100%; height: 100%;"
+  >
+    <div class="maplibregl-canvas-container mapboxgl-canvas-container maplibregl-interactive mapboxgl-interactive maplibregl-touch-drag-pan mapboxgl-touch-drag-pan maplibregl-touch-zoom-rotate mapboxgl-touch-zoom-rotate">
+      <canvas class="maplibregl-canvas mapboxgl-canvas"
+              tabindex="0"
+              aria-label="Map"
+              role="region"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
+      >
+      </canvas>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 version="1.0"
+                 viewbox="0 0 81.59 99.992"
+                 height="100%"
+                 width="100%"
+            >
+              <path d="M68.848,68.51">
+              </path>
+              <path d="M12.687,68.51">
+              </path>
+              <g>
+                <path d="M77.619,14.775c-1.098-5.528-4.622-7.731-9.931-9.93C62.499,2.668,50.02,0.079,40.794,0 c-9.243,0.079-21.722,2.668-26.948,4.846c-5.271,2.199-8.795,4.402-9.875,9.93L0,45.284v42.091h6.84v6.564 c-0.027,8.071,11.745,8.071,11.75,0v-6.564h21.737h0.054H63v6.564c-0.014,8.071,11.759,8.071,11.75,0v-6.564h6.84V45.284 L77.619,14.775z M23.996,7.715h16.385h17.212c3.286-0.009,3.286,4.949,0,4.965H40.327H23.996 C20.694,12.664,20.694,7.706,23.996,7.715z M12.687,74.191c-3.101-0.015-5.631-2.542-5.627-5.682 c-0.004-3.099,2.526-5.627,5.627-5.627c3.136,0,5.665,2.528,5.683,5.627C18.352,71.649,15.823,74.177,12.687,74.191z M40.381,48.482H10.426c-2.925,0.028-3.54-2.081-3.253-4.192l3.088-22.177c0.425-2.67,1.336-4.443,4.854-4.468h25.213h26.149 c3.498,0.025,4.412,1.797,4.854,4.468l3.09,22.177c0.266,2.112-0.348,4.22-3.256,4.192H40.381z M68.848,74.191 c-3.1-0.015-5.628-2.542-5.628-5.682c0-3.099,2.528-5.627,5.628-5.627c3.137,0,5.667,2.528,5.681,5.627 C74.515,71.649,71.985,74.177,68.848,74.191z">
+                </path>
+                <path d="M40.381-0.007c0.135,0,0.277,0.006,0.414,0.007c0.137-0.001,0.278-0.007,0.414-0.007H40.381z">
+                </path>
+              </g>
+            </svg>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 version="1.0"
+                 viewbox="0 0 66.461 100"
+                 height="100%"
+                 width="100%"
+            >
+              <path d="M28.549,7.023c-1.933-0.007-3.508-1.582-3.512-3.511C25.041,1.555,26.616-0.021,28.549,0  c1.952-0.021,3.526,1.555,3.511,3.512C32.075,5.441,30.5,7.016,28.549,7.023L28.549,7.023z">
+              </path>
+              <path d="M37.913,7.023c1.936-0.007,3.512-1.582,3.512-3.511c0-1.957-1.576-3.532-3.512-3.512c-1.95-0.021-3.525,1.555-3.512,3.512  C34.388,5.441,35.963,7.016,37.913,7.023L37.913,7.023z">
+              </path>
+              <path d="M51.856,78.064c4.872-0.809,9.73-5.898,9.719-12.109V20.611C61.587,14.218,56.2,8.34,48.903,8.347H33.281H17.606  C10.265,8.34,4.878,14.218,4.885,20.611v45.344c-0.007,6.211,4.852,11.301,9.719,12.109L0,100h8.446l10.432-15.37H33.23h14.351  L58.063,100h8.397L51.856,78.064z M24.986,13.031c0.002-1.136,0.969-2.072,2.085-2.088h6.158h6.159  c1.117,0.016,2.088,0.952,2.088,2.088v3.559c0,1.133-0.916,2.092-2.088,2.088H33.23h-6.158c-1.167,0.004-2.083-0.955-2.085-2.088  V13.031z M17.301,71.45c-3.059-0.023-5.553-2.517-5.546-5.598c-0.007-3.071,2.487-5.562,5.546-5.547  c3.09-0.016,5.584,2.476,5.598,5.547C22.886,68.934,20.391,71.427,17.301,71.45z M18.014,41.986  c-3.508-0.021-6.369-2.421-6.362-6.363v-8.141c0.025-3.396,2.219-6.356,6.362-6.363H33.23h15.215  c4.148,0.007,6.343,2.967,6.363,6.363v8.141c0.011,3.942-2.85,6.343-6.363,6.363H33.23H18.014z M43.46,65.853  c-0.009-3.071,2.482-5.562,5.545-5.547c3.09-0.016,5.584,2.476,5.6,5.547c-0.016,3.081-2.51,5.574-5.6,5.598  C45.942,71.427,43.451,68.934,43.46,65.853z">
+              </path>
+            </svg>
+            <div rotate="258"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 pfpr bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 version="1.0"
+                 viewbox="0 0 81.59 99.992"
+                 height="100%"
+                 width="100%"
+            >
+              <path d="M68.848,68.51">
+              </path>
+              <path d="M12.687,68.51">
+              </path>
+              <g>
+                <path d="M77.619,14.775c-1.098-5.528-4.622-7.731-9.931-9.93C62.499,2.668,50.02,0.079,40.794,0 c-9.243,0.079-21.722,2.668-26.948,4.846c-5.271,2.199-8.795,4.402-9.875,9.93L0,45.284v42.091h6.84v6.564 c-0.027,8.071,11.745,8.071,11.75,0v-6.564h21.737h0.054H63v6.564c-0.014,8.071,11.759,8.071,11.75,0v-6.564h6.84V45.284 L77.619,14.775z M23.996,7.715h16.385h17.212c3.286-0.009,3.286,4.949,0,4.965H40.327H23.996 C20.694,12.664,20.694,7.706,23.996,7.715z M12.687,74.191c-3.101-0.015-5.631-2.542-5.627-5.682 c-0.004-3.099,2.526-5.627,5.627-5.627c3.136,0,5.665,2.528,5.683,5.627C18.352,71.649,15.823,74.177,12.687,74.191z M40.381,48.482H10.426c-2.925,0.028-3.54-2.081-3.253-4.192l3.088-22.177c0.425-2.67,1.336-4.443,4.854-4.468h25.213h26.149 c3.498,0.025,4.412,1.797,4.854,4.468l3.09,22.177c0.266,2.112-0.348,4.22-3.256,4.192H40.381z M68.848,74.191 c-3.1-0.015-5.628-2.542-5.628-5.682c0-3.099,2.528-5.627,5.628-5.627c3.137,0,5.667,2.528,5.681,5.627 C74.515,71.649,71.985,74.177,68.848,74.191z">
+                </path>
+                <path d="M40.381-0.007c0.135,0,0.277,0.006,0.414,0.007c0.137-0.001,0.278-0.007,0.414-0.007H40.381z">
+                </path>
+              </g>
+            </svg>
+            <div rotate="135"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 cTpSJj bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+            <svg viewbox="0 0 24 24">
+              <text text-anchor="middle"
+                    x="50%"
+                    y="16.5"
+              >
+                FHH
+              </text>
+            </svg>
+            <div rotate="278"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 ihmJtJ bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 version="1.0"
+                 viewbox="0 0 81.59 99.992"
+                 height="100%"
+                 width="100%"
+            >
+              <path d="M68.848,68.51">
+              </path>
+              <path d="M12.687,68.51">
+              </path>
+              <g>
+                <path d="M77.619,14.775c-1.098-5.528-4.622-7.731-9.931-9.93C62.499,2.668,50.02,0.079,40.794,0 c-9.243,0.079-21.722,2.668-26.948,4.846c-5.271,2.199-8.795,4.402-9.875,9.93L0,45.284v42.091h6.84v6.564 c-0.027,8.071,11.745,8.071,11.75,0v-6.564h21.737h0.054H63v6.564c-0.014,8.071,11.759,8.071,11.75,0v-6.564h6.84V45.284 L77.619,14.775z M23.996,7.715h16.385h17.212c3.286-0.009,3.286,4.949,0,4.965H40.327H23.996 C20.694,12.664,20.694,7.706,23.996,7.715z M12.687,74.191c-3.101-0.015-5.631-2.542-5.627-5.682 c-0.004-3.099,2.526-5.627,5.627-5.627c3.136,0,5.665,2.528,5.683,5.627C18.352,71.649,15.823,74.177,12.687,74.191z M40.381,48.482H10.426c-2.925,0.028-3.54-2.081-3.253-4.192l3.088-22.177c0.425-2.67,1.336-4.443,4.854-4.468h25.213h26.149 c3.498,0.025,4.412,1.797,4.854,4.468l3.09,22.177c0.266,2.112-0.348,4.22-3.256,4.192H40.381z M68.848,74.191 c-3.1-0.015-5.628-2.542-5.628-5.682c0-3.099,2.528-5.627,5.628-5.627c3.137,0,5.667,2.528,5.681,5.627 C74.515,71.649,71.985,74.177,68.848,74.191z">
+                </path>
+                <path d="M40.381-0.007c0.135,0,0.277,0.006,0.414,0.007c0.137-0.001,0.278-0.007,0.414-0.007H40.381z">
+                </path>
+              </g>
+            </svg>
+            <div rotate="180"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 QYfgd bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div class="maplibregl-control-container mapboxgl-control-container">
+      <div class="maplibregl-ctrl-top-left mapboxgl-ctrl-top-left">
+      </div>
+      <div class="maplibregl-ctrl-top-right mapboxgl-ctrl-top-right">
+      </div>
+      <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
+      </div>
+      <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
+        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
+                 open
+        >
+          <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
+                   title="Toggle attribution"
+                   aria-label="Toggle attribution"
+          >
+          </summary>
+          <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TransitVehicleOverlay Default smoke-test 1`] = `
+<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+  <div class="maplibregl-map mapboxgl-map"
+       style="position: relative; width: 100%; height: 100%;"
+  >
+    <div class="maplibregl-canvas-container mapboxgl-canvas-container maplibregl-interactive mapboxgl-interactive maplibregl-touch-drag-pan mapboxgl-touch-drag-pan maplibregl-touch-zoom-rotate mapboxgl-touch-zoom-rotate">
+      <canvas class="maplibregl-canvas mapboxgl-canvas"
+              tabindex="0"
+              aria-label="Map"
+              role="region"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
+      >
+      </canvas>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
+              </path>
+            </svg>
+            <div rotate="258"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 pfpr bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+            <div rotate="135"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 cTpSJj bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+            <svg viewbox="0 0 24 24">
+              <text text-anchor="middle"
+                    x="50%"
+                    y="16.5"
+              >
+                FHH
+              </text>
+            </svg>
+            <div rotate="278"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 ihmJtJ bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+            <div rotate="180"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 QYfgd bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div class="maplibregl-control-container mapboxgl-control-container">
+      <div class="maplibregl-ctrl-top-left mapboxgl-ctrl-top-left">
+      </div>
+      <div class="maplibregl-ctrl-top-right mapboxgl-ctrl-top-right">
+      </div>
+      <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
+      </div>
+      <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
+        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
+                 open
+        >
+          <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
+                   title="Toggle attribution"
+                   aria-label="Toggle attribution"
+          >
+          </summary>
+          <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TransitVehicleOverlay DefaultRouteColorWhenVehicleRouteColorAbsent smoke-test 1`] = `
+<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+  <div class="maplibregl-map mapboxgl-map"
+       style="position: relative; width: 100%; height: 100%;"
+  >
+    <div class="maplibregl-canvas-container mapboxgl-canvas-container maplibregl-interactive mapboxgl-interactive maplibregl-touch-drag-pan mapboxgl-touch-drag-pan maplibregl-touch-zoom-rotate mapboxgl-touch-zoom-rotate">
+      <canvas class="maplibregl-canvas mapboxgl-canvas"
+              tabindex="0"
+              aria-label="Map"
+              role="region"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
+      >
+      </canvas>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 krMePp HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 krMePp HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
+              </path>
+            </svg>
+            <div rotate="258"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 pfpr bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 krMePp HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+            <div rotate="135"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 cTpSJj bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 krMePp HMiXB">
+            <svg viewbox="0 0 24 24">
+              <text text-anchor="middle"
+                    x="50%"
+                    y="16.5"
+              >
+                FHH
+              </text>
+            </svg>
+            <div rotate="278"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 ihmJtJ bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 krMePp HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+            <div rotate="180"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 QYfgd bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div class="maplibregl-control-container mapboxgl-control-container">
+      <div class="maplibregl-ctrl-top-left mapboxgl-ctrl-top-left">
+      </div>
+      <div class="maplibregl-ctrl-top-right mapboxgl-ctrl-top-right">
+      </div>
+      <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
+      </div>
+      <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
+        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
+                 open
+        >
+          <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
+                   title="Toggle attribution"
+                   aria-label="Toggle attribution"
+          >
+          </summary>
+          <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TransitVehicleOverlay InnerCaret smoke-test 1`] = `
+<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+  <div class="maplibregl-map mapboxgl-map"
+       style="position: relative; width: 100%; height: 100%;"
+  >
+    <div class="maplibregl-canvas-container mapboxgl-canvas-container maplibregl-interactive mapboxgl-interactive maplibregl-touch-drag-pan mapboxgl-touch-drag-pan maplibregl-touch-zoom-rotate mapboxgl-touch-zoom-rotate">
+      <canvas class="maplibregl-canvas mapboxgl-canvas"
+              tabindex="0"
+              aria-label="Map"
+              role="region"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
+      >
+      </canvas>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
+              </path>
+            </svg>
+            <div rotate="258"
+                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 pfpr"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+            <div rotate="135"
+                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 cTpSJj"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+            <svg viewbox="0 0 24 24">
+              <text text-anchor="middle"
+                    x="50%"
+                    y="16.5"
+              >
+                FHH
+              </text>
+            </svg>
+            <div rotate="278"
+                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 ihmJtJ"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+            <div rotate="180"
+                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 QYfgd"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div class="maplibregl-control-container mapboxgl-control-container">
+      <div class="maplibregl-ctrl-top-left mapboxgl-ctrl-top-left">
+      </div>
+      <div class="maplibregl-ctrl-top-right mapboxgl-ctrl-top-right">
+      </div>
+      <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
+      </div>
+      <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
+        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
+                 open
+        >
+          <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
+                   title="Toggle attribution"
+                   aria-label="Toggle attribution"
+          >
+          </summary>
+          <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TransitVehicleOverlay OuterCaretWithCustomSize smoke-test 1`] = `
+<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+  <div class="maplibregl-map mapboxgl-map"
+       style="position: relative; width: 100%; height: 100%;"
+  >
+    <div class="maplibregl-canvas-container mapboxgl-canvas-container maplibregl-interactive mapboxgl-interactive maplibregl-touch-drag-pan mapboxgl-touch-drag-pan maplibregl-touch-zoom-rotate mapboxgl-touch-zoom-rotate">
+      <canvas class="maplibregl-canvas mapboxgl-canvas"
+              tabindex="0"
+              aria-label="Map"
+              role="region"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
+      >
+      </canvas>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 dXuoik">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 dXuoik">
+            <svg viewbox="0 0 390 390">
+              <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
+              </path>
+            </svg>
+            <div rotate="258"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 pfpr bVotOj jYLjCv"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 dXuoik">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+            <div rotate="135"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 cTpSJj bVotOj jYLjCv"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 dXuoik">
+            <svg viewbox="0 0 24 24">
+              <text text-anchor="middle"
+                    x="50%"
+                    y="16.5"
+              >
+                FHH
+              </text>
+            </svg>
+            <div rotate="278"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 ihmJtJ bVotOj jYLjCv"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 dXuoik">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+            <div rotate="180"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 QYfgd bVotOj jYLjCv"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div class="maplibregl-control-container mapboxgl-control-container">
+      <div class="maplibregl-ctrl-top-left mapboxgl-ctrl-top-left">
+      </div>
+      <div class="maplibregl-ctrl-top-right mapboxgl-ctrl-top-right">
+      </div>
+      <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
+      </div>
+      <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
+        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
+                 open
+        >
+          <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
+                   title="Toggle attribution"
+                   aria-label="Toggle attribution"
+          >
+          </summary>
+          <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TransitVehicleOverlay RotatingIconsNoCaret smoke-test 1`] = `
+<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+  <div class="maplibregl-map mapboxgl-map"
+       style="position: relative; width: 100%; height: 100%;"
+  >
+    <div class="maplibregl-canvas-container mapboxgl-canvas-container maplibregl-interactive mapboxgl-interactive maplibregl-touch-drag-pan mapboxgl-touch-drag-pan maplibregl-touch-zoom-rotate mapboxgl-touch-zoom-rotate">
+      <canvas class="maplibregl-canvas mapboxgl-canvas"
+              tabindex="0"
+              aria-label="Map"
+              role="region"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
+      >
+      </canvas>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 styled__RotatingCircle-sc-wxby8t-1 styled-sc-wxby8t-6 fwqRMz bwaOvg HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 styled__RotatingCircle-sc-wxby8t-1 styled-sc-wxby8t-6 fwqRMz bYkaJj HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
+              </path>
+            </svg>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 styled__RotatingCircle-sc-wxby8t-1 styled-sc-wxby8t-6 fwqRMz iLfgwv HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 styled__RotatingCircle-sc-wxby8t-1 styled-sc-wxby8t-6 fwqRMz jGHdSh HMiXB">
+            <svg viewbox="0 0 24 24">
+              <text text-anchor="middle"
+                    x="50%"
+                    y="16.5"
+              >
+                FHH
+              </text>
+            </svg>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 styled__RotatingCircle-sc-wxby8t-1 styled-sc-wxby8t-6 fwqRMz aLJAl HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div class="maplibregl-control-container mapboxgl-control-container">
+      <div class="maplibregl-ctrl-top-left mapboxgl-ctrl-top-left">
+      </div>
+      <div class="maplibregl-ctrl-top-right mapboxgl-ctrl-top-right">
+      </div>
+      <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
+      </div>
+      <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
+        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
+                 open
+        >
+          <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
+                   title="Toggle attribution"
+                   aria-label="Toggle attribution"
+          >
+          </summary>
+          <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TransitVehicleOverlay RouteColorBackground smoke-test 1`] = `
+<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+  <div class="maplibregl-map mapboxgl-map"
+       style="position: relative; width: 100%; height: 100%;"
+  >
+    <div class="maplibregl-canvas-container mapboxgl-canvas-container maplibregl-interactive mapboxgl-interactive maplibregl-touch-drag-pan mapboxgl-touch-drag-pan maplibregl-touch-zoom-rotate mapboxgl-touch-zoom-rotate">
+      <canvas class="maplibregl-canvas mapboxgl-canvas"
+              tabindex="0"
+              aria-label="Map"
+              role="region"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
+      >
+      </canvas>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 gZSOUR HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 hcXAzV HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
+              </path>
+            </svg>
+            <div rotate="258"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 pfpr bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 ddZmDF HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+            <div rotate="135"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 cTpSJj bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 grdVQl HMiXB">
+            <svg viewbox="0 0 24 24">
+              <text text-anchor="middle"
+                    x="50%"
+                    y="16.5"
+              >
+                FHH
+              </text>
+            </svg>
+            <div rotate="278"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 ihmJtJ bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 hbGXmJ HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+            <div rotate="180"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 QYfgd bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div class="maplibregl-control-container mapboxgl-control-container">
+      <div class="maplibregl-ctrl-top-left mapboxgl-ctrl-top-left">
+      </div>
+      <div class="maplibregl-ctrl-top-right mapboxgl-ctrl-top-right">
+      </div>
+      <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
+      </div>
+      <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
+        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
+                 open
+        >
+          <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
+                   title="Toggle attribution"
+                   aria-label="Toggle attribution"
+          >
+          </summary>
+          <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TransitVehicleOverlay RouteColorBackgroundWithInnerCaret smoke-test 1`] = `
+<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+  <div class="maplibregl-map mapboxgl-map"
+       style="position: relative; width: 100%; height: 100%;"
+  >
+    <div class="maplibregl-canvas-container mapboxgl-canvas-container maplibregl-interactive mapboxgl-interactive maplibregl-touch-drag-pan mapboxgl-touch-drag-pan maplibregl-touch-zoom-rotate mapboxgl-touch-zoom-rotate">
+      <canvas class="maplibregl-canvas mapboxgl-canvas"
+              tabindex="0"
+              aria-label="Map"
+              role="region"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
+      >
+      </canvas>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 gZSOUR cUNhVn">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 hcXAzV cUNhVn">
+            <svg viewbox="0 0 390 390">
+              <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
+              </path>
+            </svg>
+            <div rotate="258"
+                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 pfpr"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 ddZmDF cUNhVn">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+            <div rotate="135"
+                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 cTpSJj"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 grdVQl cUNhVn">
+            <svg viewbox="0 0 24 24">
+              <text text-anchor="middle"
+                    x="50%"
+                    y="16.5"
+              >
+                FHH
+              </text>
+            </svg>
+            <div rotate="278"
+                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 ihmJtJ"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 hbGXmJ cUNhVn">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+            <div rotate="180"
+                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 QYfgd"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div class="maplibregl-control-container mapboxgl-control-container">
+      <div class="maplibregl-ctrl-top-left mapboxgl-ctrl-top-left">
+      </div>
+      <div class="maplibregl-ctrl-top-right mapboxgl-ctrl-top-right">
+      </div>
+      <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
+      </div>
+      <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
+        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
+                 open
+        >
+          <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
+                   title="Toggle attribution"
+                   aria-label="Toggle attribution"
+          >
+          </summary>
+          <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TransitVehicleOverlay RouteColorBackgroundWithTransparencyOnHover smoke-test 1`] = `
+<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+  <div class="maplibregl-map mapboxgl-map"
+       style="position: relative; width: 100%; height: 100%;"
+  >
+    <div class="maplibregl-canvas-container mapboxgl-canvas-container maplibregl-interactive mapboxgl-interactive maplibregl-touch-drag-pan mapboxgl-touch-drag-pan maplibregl-touch-zoom-rotate mapboxgl-touch-zoom-rotate">
+      <canvas class="maplibregl-canvas mapboxgl-canvas"
+              tabindex="0"
+              aria-label="Map"
+              role="region"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
+      >
+      </canvas>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 dwOluC HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 jIXtxG HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
+              </path>
+            </svg>
+            <div rotate="258"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 pfpr bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 edTNha HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+            <div rotate="135"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 cTpSJj bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 bMSwDy HMiXB">
+            <svg viewbox="0 0 24 24">
+              <text text-anchor="middle"
+                    x="50%"
+                    y="16.5"
+              >
+                FHH
+              </text>
+            </svg>
+            <div rotate="278"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 ihmJtJ bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 eohqge HMiXB">
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+            <div rotate="180"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 QYfgd bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div class="maplibregl-control-container mapboxgl-control-container">
+      <div class="maplibregl-ctrl-top-left mapboxgl-ctrl-top-left">
+      </div>
+      <div class="maplibregl-ctrl-top-right mapboxgl-ctrl-top-right">
+      </div>
+      <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
+      </div>
+      <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
+        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
+                 open
+        >
+          <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
+                   title="Toggle attribution"
+                   aria-label="Toggle attribution"
+          >
+          </summary>
+          <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TransitVehicleOverlay RouteNumbersOnlyWithCustomSizeAndPadding smoke-test 1`] = `
+<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+  <div class="maplibregl-map mapboxgl-map"
+       style="position: relative; width: 100%; height: 100%;"
+  >
+    <div class="maplibregl-canvas-container mapboxgl-canvas-container maplibregl-interactive mapboxgl-interactive maplibregl-touch-drag-pan mapboxgl-touch-drag-pan maplibregl-touch-zoom-rotate mapboxgl-touch-zoom-rotate">
+      <canvas class="maplibregl-canvas mapboxgl-canvas"
+              tabindex="0"
+              aria-label="Map"
+              role="region"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
+      >
+      </canvas>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+            <svg viewbox="0 0 20 20">
+              <text text-anchor="middle"
+                    x="50%"
+                    y="14.5"
+              >
+                FH
+              </text>
+            </svg>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+            <svg viewbox="0 0 20 20">
+              <text text-anchor="middle"
+                    x="50%"
+                    y="14.5"
+              >
+                FH
+              </text>
+            </svg>
+            <div rotate="258"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 pfpr bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+            <svg viewbox="0 0 20 20">
+              <text text-anchor="middle"
+                    x="50%"
+                    y="14.5"
+              >
+                FH
+              </text>
+            </svg>
+            <div rotate="135"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 cTpSJj bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+            <svg viewbox="0 0 24 24">
+              <text text-anchor="middle"
+                    x="50%"
+                    y="16.5"
+              >
+                FHH
+              </text>
+            </svg>
+            <div rotate="278"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 ihmJtJ bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
+           style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+      >
+        <span>
+          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+            <svg viewbox="0 0 20 20">
+              <text text-anchor="middle"
+                    x="50%"
+                    y="14.5"
+              >
+                FH
+              </text>
+            </svg>
+            <div rotate="180"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 QYfgd bVotOj iVEKod"
+            >
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div class="maplibregl-control-container mapboxgl-control-container">
+      <div class="maplibregl-ctrl-top-left mapboxgl-ctrl-top-left">
+      </div>
+      <div class="maplibregl-ctrl-top-right mapboxgl-ctrl-top-right">
+      </div>
+      <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
+      </div>
+      <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
+        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
+                 open
+        >
+          <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
+                   title="Toggle attribution"
+                   aria-label="Toggle attribution"
+          >
+          </summary>
+          <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>
+`;
