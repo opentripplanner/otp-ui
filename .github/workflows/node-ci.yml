@@ -11,6 +11,8 @@ jobs:
           node-version: 16.x
       - name: Install npm packages using cache
         uses: bahmutov/npm-install@v1
+      - name: Install Playwright
+        run: npx playwright install --with-deps
       - name: Lint code
         run: yarn lint:js
       - name: Lint styles
@@ -19,10 +21,15 @@ jobs:
         run: yarn check:i18n-en-fr
       - name: Type check
         run: yarn typescript
-      - name: Run tests
-        run: yarn unit
-      - name: Run a11y tests
-        run: yarn a11y-test
+      - name: Build Storybook
+        run: yarn build-storybook --quiet
+      - name: Serve Storybook and run tests
+        run: |
+          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "npx http-server storybook-static --port 6006 --silent" \
+            "npx wait-on tcp:6006 && yarn unit"
+      # - name: Run a11y tests
+      #   run: yarn a11y-test
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
