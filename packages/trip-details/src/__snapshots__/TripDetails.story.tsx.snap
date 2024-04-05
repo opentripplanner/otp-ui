@@ -47,7 +47,7 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="cbd123e2-f581-4014-9a51-ff8803588f8c"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -99,7 +99,7 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
           7 minutes
         </strong>
         <button aria-label="otpUi.TripDetails.showDetail"
-                aria-controls="cd1f1f2e-d3a7-427e-b775-896adfc65405"
+                aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
@@ -127,7 +127,7 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="cd1f1f2e-d3a7-427e-b775-896adfc65405"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -190,7 +190,7 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
           </strong>
         </span>
         <button aria-label="otpUi.TripDetails.showDetail"
-                aria-controls="907fdcfd-1322-4fd3-9874-2ca5aae9ad34"
+                aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
@@ -218,7 +218,7 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="907fdcfd-1322-4fd3-9874-2ca5aae9ad34"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -629,7 +629,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="257319d9-3fa8-4c81-9959-22c8ae502ad2"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -1017,7 +1017,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="a3c0008d-6697-4c36-b799-1e7618ecada5"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -1069,7 +1069,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
           29 minutes
         </strong>
         <button aria-label="otpUi.TripDetails.showDetail"
-                aria-controls="1071efc7-c935-4a75-a590-58de58908e2b"
+                aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
@@ -1097,7 +1097,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="1071efc7-c935-4a75-a590-58de58908e2b"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -1160,7 +1160,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
           </strong>
         </span>
         <button aria-label="otpUi.TripDetails.showDetail"
-                aria-controls="928d9d35-049b-4735-b645-5c9f261adca8"
+                aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
@@ -1188,7 +1188,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="928d9d35-049b-4735-b645-5c9f261adca8"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -1272,7 +1272,7 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="71a2ede6-98d1-481e-85cb-83493cee9ba3"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -1324,7 +1324,7 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
           5 minutes
         </strong>
         <button aria-label="otpUi.TripDetails.showDetail"
-                aria-controls="9a9ddbec-f74d-4f7c-8870-5e2bf564b148"
+                aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
@@ -1352,7 +1352,7 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="9a9ddbec-f74d-4f7c-8870-5e2bf564b148"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -1415,7 +1415,7 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
           </strong>
         </span>
         <button aria-label="otpUi.TripDetails.showDetail"
-                aria-controls="ab27c96d-3648-4415-9f23-9f26b5d3567b"
+                aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
@@ -1443,7 +1443,7 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="ab27c96d-3648-4415-9f23-9f26b5d3567b"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -1527,7 +1527,7 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="a718cf90-82b0-4d14-aec0-fc8c4e481d09"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -1579,7 +1579,7 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
           12 minutes
         </strong>
         <button aria-label="otpUi.TripDetails.showDetail"
-                aria-controls="1a0aa985-8314-4e99-bc7e-10983d08aa12"
+                aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
@@ -1607,7 +1607,7 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="1a0aa985-8314-4e99-bc7e-10983d08aa12"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -1670,7 +1670,7 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
           </strong>
         </span>
         <button aria-label="otpUi.TripDetails.showDetail"
-                aria-controls="f618efb0-9e9f-439d-8c5e-a183d983183f"
+                aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
@@ -1698,7 +1698,7 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="f618efb0-9e9f-439d-8c5e-a183d983183f"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -1763,7 +1763,7 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="cf49f33e-0460-42e2-8026-751286c0d3b1"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -1839,7 +1839,7 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="e4c58dc6-ea9a-4537-931e-979f3a8f9171"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -1891,7 +1891,7 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
           2 minutes
         </strong>
         <button aria-label="otpUi.TripDetails.showDetail"
-                aria-controls="5d1092b0-6bd4-4d5d-8cfc-88ce73f43f28"
+                aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
@@ -1919,7 +1919,7 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="5d1092b0-6bd4-4d5d-8cfc-88ce73f43f28"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -1982,7 +1982,7 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
           </strong>
         </span>
         <button aria-label="otpUi.TripDetails.showDetail"
-                aria-controls="72ad29d6-bd6d-4992-a072-d4d8a43e7241"
+                aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
@@ -2010,7 +2010,7 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="72ad29d6-bd6d-4992-a072-d4d8a43e7241"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -2094,7 +2094,7 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="191636c1-4625-4223-84e8-f6a50dfc12ab"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -2153,7 +2153,7 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
           </span>
         </span>
         <button aria-label="otpUi.TripDetails.showDetail"
-                aria-controls="21586cc4-d5d8-44db-b7d1-661eee52a689"
+                aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
@@ -2181,7 +2181,7 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="21586cc4-d5d8-44db-b7d1-661eee52a689"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -2234,7 +2234,7 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
           2 minutes
         </strong>
         <button aria-label="otpUi.TripDetails.showDetail"
-                aria-controls="e8a56cc2-5026-4f5a-99ab-b3ae58af817b"
+                aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
@@ -2262,7 +2262,7 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="e8a56cc2-5026-4f5a-99ab-b3ae58af817b"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -2325,7 +2325,7 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
           </strong>
         </span>
         <button aria-label="otpUi.TripDetails.showDetail"
-                aria-controls="339f6932-4c12-46ea-b5ad-75ca54ecca1c"
+                aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
@@ -2353,7 +2353,7 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="339f6932-4c12-46ea-b5ad-75ca54ecca1c"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -2434,7 +2434,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
           </strong>
         </span>
         <button aria-label="otpUi.TripDetails.showDetail"
-                aria-controls="61be8246-affe-49c3-9777-773539ab8912"
+                aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
@@ -2462,7 +2462,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="61be8246-affe-49c3-9777-773539ab8912"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -2529,7 +2529,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="39689684-5d07-4e5b-9059-495093e8b91d"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -2581,7 +2581,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
           2 minutes
         </strong>
         <button aria-label="otpUi.TripDetails.showDetail"
-                aria-controls="3dea76c0-41d3-4883-b263-4e85fff254c2"
+                aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
@@ -2609,7 +2609,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="3dea76c0-41d3-4883-b263-4e85fff254c2"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -2664,7 +2664,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
           </strong>
         </span>
         <button aria-label="otpUi.TripDetails.showDetail"
-                aria-controls="826d03d7-c181-4230-bd93-a21085a77916"
+                aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
@@ -2692,7 +2692,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="826d03d7-c181-4230-bd93-a21085a77916"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -2776,7 +2776,7 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="b0db7570-0bbf-469c-a679-7f09f3e16d93"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -2828,7 +2828,7 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
           1 minute
         </strong>
         <button aria-label="otpUi.TripDetails.showDetail"
-                aria-controls="fd336421-d5b4-4fbc-bc17-202ec4fa9028"
+                aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
@@ -2856,7 +2856,7 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="fd336421-d5b4-4fbc-bc17-202ec4fa9028"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -2919,7 +2919,7 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
           </strong>
         </span>
         <button aria-label="otpUi.TripDetails.showDetail"
-                aria-controls="02a47783-6140-45f2-9786-65f659a9eada"
+                aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
@@ -2947,7 +2947,7 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="02a47783-6140-45f2-9786-65f659a9eada"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -3031,7 +3031,7 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="7c73f65c-2795-4131-a130-661047bb95cc"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -3083,7 +3083,7 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
           2 minutes
         </strong>
         <button aria-label="otpUi.TripDetails.showDetail"
-                aria-controls="8477b9e8-373b-42df-ab20-5bef6567a151"
+                aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
@@ -3111,7 +3111,7 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="8477b9e8-373b-42df-ab20-5bef6567a151"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
@@ -3174,7 +3174,7 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
           </strong>
         </span>
         <button aria-label="otpUi.TripDetails.showDetail"
-                aria-controls="ba904c6a-1e4d-4855-86ad-f3dacbcdb591"
+                aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
@@ -3202,7 +3202,7 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
       >
         <div style="display: none;">
           <div aria-labelledby="expand-button"
-               id="ba904c6a-1e4d-4855-86ad-f3dacbcdb591"
+               id="mocked_id"
                class="styled__TripDetailDescription-sc-6q2ok2-14 jhFGkr"
           >
             <button role="presentation"
