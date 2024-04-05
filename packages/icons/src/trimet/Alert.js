@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgAlert = ({ title, ...props }) => (
+const Alert = ({ title, ...props }) => (
   <svg viewBox="0 0 390 390" {...props}>
     {title ? <title>{title}</title> : null}
     <path d="M195.1 44.9L357.6 370H32.5L195.1 44.9m0-44.9L0 390h390L195.1 0z" />
@@ -9,4 +9,4 @@ const SvgAlert = ({ title, ...props }) => (
   </svg>
 );
 
-export default SvgAlert;
+export default Alert;
