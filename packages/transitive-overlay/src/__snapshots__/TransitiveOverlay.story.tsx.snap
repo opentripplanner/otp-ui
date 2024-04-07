@@ -52,7 +52,7 @@ exports[`TransitiveOverlay BikeOnlyItinerary smoke-test 1`] = `
           >
           </canvas>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(1078.41px, 420.432px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(1049.67px, 413.947px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="503 SW Alder St, Portland, OR, USA 97204"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -88,7 +88,7 @@ exports[`TransitiveOverlay BikeOnlyItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(103.293px, 126.598px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(146.835px, 141.893px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="1737 SW Morrison St, Portland, OR, USA 97205"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -177,7 +177,7 @@ exports[`TransitiveOverlay BikeRentalItinerary smoke-test 1`] = `
       <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
       </div>
       <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
+        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
                  open
         >
           <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
@@ -186,20 +186,6 @@ exports[`TransitiveOverlay BikeRentalItinerary smoke-test 1`] = `
           >
           </summary>
           <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-            ©
-            <a href="https://carto.com/about-carto/"
-               target="_blank"
-               rel="noopener"
-            >
-              CARTO
-            </a>
-            , ©
-            <a href="http://www.openstreetmap.org/about/"
-               target="_blank"
-            >
-              OpenStreetMap
-            </a>
-            contributors
           </div>
         </details>
       </div>
@@ -219,7 +205,7 @@ exports[`TransitiveOverlay BikeRentalItinerary smoke-test 1`] = `
           >
           </canvas>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(568.691px, 500.161px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(625.416px, 507.465px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="2624 SE 30th Ave, Portland, OR, USA 97202"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -255,7 +241,7 @@ exports[`TransitiveOverlay BikeRentalItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(490.028px, 193.287px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(537.987px, 166.395px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="1415 SE 28th Ave, Portland, OR, USA 97214"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -299,7 +285,7 @@ exports[`TransitiveOverlay BikeRentalItinerary smoke-test 1`] = `
           <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
           </div>
           <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-            <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
+            <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
                      open
             >
               <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
@@ -308,20 +294,6 @@ exports[`TransitiveOverlay BikeRentalItinerary smoke-test 1`] = `
               >
               </summary>
               <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-                ©
-                <a href="https://carto.com/about-carto/"
-                   target="_blank"
-                   rel="noopener"
-                >
-                  CARTO
-                </a>
-                , ©
-                <a href="http://www.openstreetmap.org/about/"
-                   target="_blank"
-                >
-                  OpenStreetMap
-                </a>
-                contributors
               </div>
             </details>
           </div>
@@ -358,7 +330,7 @@ exports[`TransitiveOverlay BikeRentalTransitItinerary smoke-test 1`] = `
       <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
       </div>
       <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
+        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
                  open
         >
           <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
@@ -367,20 +339,6 @@ exports[`TransitiveOverlay BikeRentalTransitItinerary smoke-test 1`] = `
           >
           </summary>
           <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-            ©
-            <a href="https://carto.com/about-carto/"
-               target="_blank"
-               rel="noopener"
-            >
-              CARTO
-            </a>
-            , ©
-            <a href="http://www.openstreetmap.org/about/"
-               target="_blank"
-            >
-              OpenStreetMap
-            </a>
-            contributors
           </div>
         </details>
       </div>
@@ -400,7 +358,7 @@ exports[`TransitiveOverlay BikeRentalTransitItinerary smoke-test 1`] = `
           >
           </canvas>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(580.875px, 494.98px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(535.628px, 514.124px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="2943 SE Washington St, Portland, OR, USA 97214"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -436,7 +394,7 @@ exports[`TransitiveOverlay BikeRentalTransitItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(782.866px, 166.526px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(767.454px, 137.156px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="5916 NE Going St, Portland, OR, USA 97218"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -480,7 +438,7 @@ exports[`TransitiveOverlay BikeRentalTransitItinerary smoke-test 1`] = `
           <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
           </div>
           <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-            <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
+            <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
                      open
             >
               <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
@@ -489,20 +447,6 @@ exports[`TransitiveOverlay BikeRentalTransitItinerary smoke-test 1`] = `
               >
               </summary>
               <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-                ©
-                <a href="https://carto.com/about-carto/"
-                   target="_blank"
-                   rel="noopener"
-                >
-                  CARTO
-                </a>
-                , ©
-                <a href="http://www.openstreetmap.org/about/"
-                   target="_blank"
-                >
-                  OpenStreetMap
-                </a>
-                contributors
               </div>
             </details>
           </div>
@@ -567,7 +511,7 @@ exports[`TransitiveOverlay BikeTransitBikeItinerary smoke-test 1`] = `
           >
           </canvas>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(965.901px, 493.753px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(968.702px, 509.378px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="KGW Studio on the Sq, Portland, OR, USA"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -603,7 +547,7 @@ exports[`TransitiveOverlay BikeTransitBikeItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(208.041px, 136.769px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(154.567px, 125.887px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="1737 SW Morrison St, Portland, OR, USA 97205"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -692,7 +636,7 @@ exports[`TransitiveOverlay EScooterRentalItinerary smoke-test 1`] = `
       <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
       </div>
       <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
+        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
                  open
         >
           <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
@@ -701,20 +645,6 @@ exports[`TransitiveOverlay EScooterRentalItinerary smoke-test 1`] = `
           >
           </summary>
           <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-            ©
-            <a href="https://carto.com/about-carto/"
-               target="_blank"
-               rel="noopener"
-            >
-              CARTO
-            </a>
-            , ©
-            <a href="http://www.openstreetmap.org/about/"
-               target="_blank"
-            >
-              OpenStreetMap
-            </a>
-            contributors
           </div>
         </details>
       </div>
@@ -734,7 +664,7 @@ exports[`TransitiveOverlay EScooterRentalItinerary smoke-test 1`] = `
           >
           </canvas>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(465.216px, 494.529px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(487.114px, 483.186px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="600 SW 5th Ave, Portland, OR, USA 97204"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -770,7 +700,7 @@ exports[`TransitiveOverlay EScooterRentalItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(816.591px, 185.147px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(827.162px, 183.779px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="205 SW Pine St, Portland, OR, USA 97204"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -814,7 +744,7 @@ exports[`TransitiveOverlay EScooterRentalItinerary smoke-test 1`] = `
           <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
           </div>
           <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-            <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
+            <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
                      open
             >
               <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
@@ -823,20 +753,6 @@ exports[`TransitiveOverlay EScooterRentalItinerary smoke-test 1`] = `
               >
               </summary>
               <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-                ©
-                <a href="https://carto.com/about-carto/"
-                   target="_blank"
-                   rel="noopener"
-                >
-                  CARTO
-                </a>
-                , ©
-                <a href="http://www.openstreetmap.org/about/"
-                   target="_blank"
-                >
-                  OpenStreetMap
-                </a>
-                contributors
               </div>
             </details>
           </div>
@@ -873,7 +789,7 @@ exports[`TransitiveOverlay EScooterRentalTransitItinerary smoke-test 1`] = `
       <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
       </div>
       <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
+        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
                  open
         >
           <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
@@ -882,20 +798,6 @@ exports[`TransitiveOverlay EScooterRentalTransitItinerary smoke-test 1`] = `
           >
           </summary>
           <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-            ©
-            <a href="https://carto.com/about-carto/"
-               target="_blank"
-               rel="noopener"
-            >
-              CARTO
-            </a>
-            , ©
-            <a href="http://www.openstreetmap.org/about/"
-               target="_blank"
-            >
-              OpenStreetMap
-            </a>
-            contributors
           </div>
         </details>
       </div>
@@ -915,7 +817,7 @@ exports[`TransitiveOverlay EScooterRentalTransitItinerary smoke-test 1`] = `
           >
           </canvas>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(582.228px, 485.586px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(586.799px, 486.489px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="2943 SE Washington St, Portland, OR, USA 97214"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -951,7 +853,7 @@ exports[`TransitiveOverlay EScooterRentalTransitItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(701.387px, 137.165px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(705.177px, 140.35px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="5112 NE 47th Pl, Portland, OR, USA 97218"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -995,7 +897,7 @@ exports[`TransitiveOverlay EScooterRentalTransitItinerary smoke-test 1`] = `
           <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
           </div>
           <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-            <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
+            <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
                      open
             >
               <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
@@ -1004,20 +906,6 @@ exports[`TransitiveOverlay EScooterRentalTransitItinerary smoke-test 1`] = `
               >
               </summary>
               <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-                ©
-                <a href="https://carto.com/about-carto/"
-                   target="_blank"
-                   rel="noopener"
-                >
-                  CARTO
-                </a>
-                , ©
-                <a href="http://www.openstreetmap.org/about/"
-                   target="_blank"
-                >
-                  OpenStreetMap
-                </a>
-                contributors
               </div>
             </details>
           </div>
@@ -1095,7 +983,7 @@ exports[`TransitiveOverlay FlexItinerary smoke-test 1`] = `
       <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
       </div>
       <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
+        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
                  open
         >
           <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
@@ -1104,20 +992,6 @@ exports[`TransitiveOverlay FlexItinerary smoke-test 1`] = `
           >
           </summary>
           <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-            ©
-            <a href="https://carto.com/about-carto/"
-               target="_blank"
-               rel="noopener"
-            >
-              CARTO
-            </a>
-            , ©
-            <a href="http://www.openstreetmap.org/about/"
-               target="_blank"
-            >
-              OpenStreetMap
-            </a>
-            contributors
           </div>
         </details>
       </div>
@@ -1137,7 +1011,7 @@ exports[`TransitiveOverlay FlexItinerary smoke-test 1`] = `
           >
           </canvas>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(532.851px, 120.709px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(547.489px, 256.464px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="2nd Avenue, Longmont, CO, USA"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -1173,7 +1047,7 @@ exports[`TransitiveOverlay FlexItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(732.807px, -44.6868px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(698.674px, 131.41px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="60plusride-co-us:area_626"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -1217,7 +1091,7 @@ exports[`TransitiveOverlay FlexItinerary smoke-test 1`] = `
           <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
           </div>
           <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-            <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
+            <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
                      open
             >
               <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
@@ -1226,20 +1100,6 @@ exports[`TransitiveOverlay FlexItinerary smoke-test 1`] = `
               >
               </summary>
               <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-                ©
-                <a href="https://carto.com/about-carto/"
-                   target="_blank"
-                   rel="noopener"
-                >
-                  CARTO
-                </a>
-                , ©
-                <a href="http://www.openstreetmap.org/about/"
-                   target="_blank"
-                >
-                  OpenStreetMap
-                </a>
-                contributors
               </div>
             </details>
           </div>
@@ -1276,7 +1136,7 @@ exports[`TransitiveOverlay OTP2ScooterItinerary smoke-test 1`] = `
       <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
       </div>
       <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
+        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
                  open
         >
           <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
@@ -1285,20 +1145,6 @@ exports[`TransitiveOverlay OTP2ScooterItinerary smoke-test 1`] = `
           >
           </summary>
           <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-            ©
-            <a href="https://carto.com/about-carto/"
-               target="_blank"
-               rel="noopener"
-            >
-              CARTO
-            </a>
-            , ©
-            <a href="http://www.openstreetmap.org/about/"
-               target="_blank"
-            >
-              OpenStreetMap
-            </a>
-            contributors
           </div>
         </details>
       </div>
@@ -1318,7 +1164,7 @@ exports[`TransitiveOverlay OTP2ScooterItinerary smoke-test 1`] = `
           >
           </canvas>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(655.121px, 252.729px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(691.83px, 184.232px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="300 Courtland St NE, Atlanta, GA 30303-12ND, United States"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -1354,7 +1200,7 @@ exports[`TransitiveOverlay OTP2ScooterItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(590.896px, 378.095px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(551.937px, 457.299px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="126 Mitchell St SW, Atlanta, GA 30303-3524, United States"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -1398,7 +1244,7 @@ exports[`TransitiveOverlay OTP2ScooterItinerary smoke-test 1`] = `
           <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
           </div>
           <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-            <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
+            <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
                      open
             >
               <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
@@ -1407,20 +1253,6 @@ exports[`TransitiveOverlay OTP2ScooterItinerary smoke-test 1`] = `
               >
               </summary>
               <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-                ©
-                <a href="https://carto.com/about-carto/"
-                   target="_blank"
-                   rel="noopener"
-                >
-                  CARTO
-                </a>
-                , ©
-                <a href="http://www.openstreetmap.org/about/"
-                   target="_blank"
-                >
-                  OpenStreetMap
-                </a>
-                contributors
               </div>
             </details>
           </div>
@@ -1457,7 +1289,7 @@ exports[`TransitiveOverlay ParkAndRideItinerary smoke-test 1`] = `
       <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
       </div>
       <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
+        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
                  open
         >
           <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
@@ -1466,20 +1298,6 @@ exports[`TransitiveOverlay ParkAndRideItinerary smoke-test 1`] = `
           >
           </summary>
           <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-            ©
-            <a href="https://carto.com/about-carto/"
-               target="_blank"
-               rel="noopener"
-            >
-              CARTO
-            </a>
-            , ©
-            <a href="http://www.openstreetmap.org/about/"
-               target="_blank"
-            >
-              OpenStreetMap
-            </a>
-            contributors
           </div>
         </details>
       </div>
@@ -1499,7 +1317,7 @@ exports[`TransitiveOverlay ParkAndRideItinerary smoke-test 1`] = `
           >
           </canvas>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(-1.3968px, 305.311px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(-31.4964px, 305.399px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="330 SW Murray Blvd, Washington County, OR, USA 97005"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -1535,7 +1353,7 @@ exports[`TransitiveOverlay ParkAndRideItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(1387.6px, 243.14px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(1430.77px, 239.949px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="205 SW Pine St, Portland, OR, USA 97204"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -1579,7 +1397,7 @@ exports[`TransitiveOverlay ParkAndRideItinerary smoke-test 1`] = `
           <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
           </div>
           <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-            <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
+            <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
                      open
             >
               <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
@@ -1588,20 +1406,6 @@ exports[`TransitiveOverlay ParkAndRideItinerary smoke-test 1`] = `
               >
               </summary>
               <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-                ©
-                <a href="https://carto.com/about-carto/"
-                   target="_blank"
-                   rel="noopener"
-                >
-                  CARTO
-                </a>
-                , ©
-                <a href="http://www.openstreetmap.org/about/"
-                   target="_blank"
-                >
-                  OpenStreetMap
-                </a>
-                contributors
               </div>
             </details>
           </div>
@@ -1638,7 +1442,7 @@ exports[`TransitiveOverlay TncTransitItinerary smoke-test 1`] = `
       <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
       </div>
       <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
+        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
                  open
         >
           <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
@@ -1647,20 +1451,6 @@ exports[`TransitiveOverlay TncTransitItinerary smoke-test 1`] = `
           >
           </summary>
           <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-            ©
-            <a href="https://carto.com/about-carto/"
-               target="_blank"
-               rel="noopener"
-            >
-              CARTO
-            </a>
-            , ©
-            <a href="http://www.openstreetmap.org/about/"
-               target="_blank"
-            >
-              OpenStreetMap
-            </a>
-            contributors
           </div>
         </details>
       </div>
@@ -1680,7 +1470,7 @@ exports[`TransitiveOverlay TncTransitItinerary smoke-test 1`] = `
           >
           </canvas>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(365.73px, 363.757px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(374.273px, 382.01px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="128 NW 12th Ave, Portland"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -1716,7 +1506,7 @@ exports[`TransitiveOverlay TncTransitItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(745.053px, 333.984px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(667.798px, 358.971px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="407 NE 12th Ave, Portland"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -1760,7 +1550,7 @@ exports[`TransitiveOverlay TncTransitItinerary smoke-test 1`] = `
           <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
           </div>
           <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-            <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
+            <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
                      open
             >
               <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
@@ -1769,20 +1559,6 @@ exports[`TransitiveOverlay TncTransitItinerary smoke-test 1`] = `
               >
               </summary>
               <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-                ©
-                <a href="https://carto.com/about-carto/"
-                   target="_blank"
-                   rel="noopener"
-                >
-                  CARTO
-                </a>
-                , ©
-                <a href="http://www.openstreetmap.org/about/"
-                   target="_blank"
-                >
-                  OpenStreetMap
-                </a>
-                contributors
               </div>
             </details>
           </div>
@@ -1847,7 +1623,7 @@ exports[`TransitiveOverlay WalkInterlinedTransitItinerary smoke-test 1`] = `
           >
           </canvas>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(838.24px, -375.186px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(955.395px, -745.893px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="47.97767, -122.20034"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -1883,7 +1659,7 @@ exports[`TransitiveOverlay WalkInterlinedTransitItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(602.661px, 623.814px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(604.504px, 742.097px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="208 James St, Seattle, WA 98104-2212, United States"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -2000,7 +1776,7 @@ exports[`TransitiveOverlay WalkTransitTransferItinerary smoke-test 1`] = `
           >
           </canvas>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(822.609px, 504.626px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(829.675px, 496.051px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="3940 SE Brooklyn St, Portland, OR, USA 97202"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -2036,7 +1812,7 @@ exports[`TransitiveOverlay WalkTransitTransferItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(457.268px, 127.53px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(463.98px, 118.589px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="1415 SE 28th Ave, Portland, OR, USA 97214"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -2153,7 +1929,7 @@ exports[`TransitiveOverlay WalkTransitWalkItinerary smoke-test 1`] = `
           >
           </canvas>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(983.27px, 539.209px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(984.669px, 518.169px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="KGW Studio on the Sq, Portland, OR, USA"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -2189,7 +1965,7 @@ exports[`TransitiveOverlay WalkTransitWalkItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(66.9508px, 107.585px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(158.572px, 129.043px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="1737 SW Morrison St, Portland, OR, USA 97205"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -2306,7 +2082,7 @@ exports[`TransitiveOverlay WalkTransitWalkItineraryWithNoIntermediateStops smoke
           >
           </canvas>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(1400.71px, 229.216px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(1282.32px, 242.202px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="1205 NE 81st Ave, Portland, OR, USA 97213"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -2342,7 +2118,7 @@ exports[`TransitiveOverlay WalkTransitWalkItineraryWithNoIntermediateStops smoke
             </span>
           </div>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(277.78px, 435.393px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(279.574px, 426.312px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="Weather Machine, Portland, OR, USA"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -2459,7 +2235,7 @@ exports[`TransitiveOverlay WalkingItinerary smoke-test 1`] = `
           >
           </canvas>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(859.826px, 479.377px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(832.32px, 471.606px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="KGW Studio on the Sq, Portland, OR, USA"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -2495,7 +2271,7 @@ exports[`TransitiveOverlay WalkingItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(339.278px, 187.744px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(351.955px, 202.484px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="701 SW 6th Ave, Portland, OR, USA 97204"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"

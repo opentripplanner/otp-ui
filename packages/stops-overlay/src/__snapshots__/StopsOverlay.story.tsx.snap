@@ -24,7 +24,7 @@ exports[`StopsOverlay Default smoke-test 1`] = `
       <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
       </div>
       <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
+        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
                  open
         >
           <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
@@ -33,6 +33,20 @@ exports[`StopsOverlay Default smoke-test 1`] = `
           >
           </summary>
           <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
+            ©
+            <a href="https://carto.com/about-carto/"
+               target="_blank"
+               rel="noopener"
+            >
+              CARTO
+            </a>
+            , ©
+            <a href="http://www.openstreetmap.org/about/"
+               target="_blank"
+            >
+              OpenStreetMap
+            </a>
+            contributors
           </div>
         </details>
       </div>
@@ -65,7 +79,7 @@ exports[`StopsOverlay FlexStops smoke-test 1`] = `
       <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
       </div>
       <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
+        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
                  open
         >
           <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
@@ -74,6 +88,20 @@ exports[`StopsOverlay FlexStops smoke-test 1`] = `
           >
           </summary>
           <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
+            ©
+            <a href="https://carto.com/about-carto/"
+               target="_blank"
+               rel="noopener"
+            >
+              CARTO
+            </a>
+            , ©
+            <a href="http://www.openstreetmap.org/about/"
+               target="_blank"
+            >
+              OpenStreetMap
+            </a>
+            contributors
           </div>
         </details>
       </div>
@@ -101,7 +129,7 @@ exports[`StopsOverlay FlexStops smoke-test 1`] = `
           <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
           </div>
           <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-            <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
+            <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
                      open
             >
               <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
@@ -110,6 +138,20 @@ exports[`StopsOverlay FlexStops smoke-test 1`] = `
               >
               </summary>
               <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
+                ©
+                <a href="https://carto.com/about-carto/"
+                   target="_blank"
+                   rel="noopener"
+                >
+                  CARTO
+                </a>
+                , ©
+                <a href="http://www.openstreetmap.org/about/"
+                   target="_blank"
+                >
+                  OpenStreetMap
+                </a>
+                contributors
               </div>
             </details>
           </div>
@@ -144,7 +186,7 @@ exports[`StopsOverlay NoMinZoom smoke-test 1`] = `
       <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
       </div>
       <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib maplibregl-attrib-empty mapboxgl-attrib-empty"
+        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
                  open
         >
           <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
@@ -153,6 +195,20 @@ exports[`StopsOverlay NoMinZoom smoke-test 1`] = `
           >
           </summary>
           <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
+            ©
+            <a href="https://carto.com/about-carto/"
+               target="_blank"
+               rel="noopener"
+            >
+              CARTO
+            </a>
+            , ©
+            <a href="http://www.openstreetmap.org/about/"
+               target="_blank"
+            >
+              OpenStreetMap
+            </a>
+            contributors
           </div>
         </details>
       </div>
