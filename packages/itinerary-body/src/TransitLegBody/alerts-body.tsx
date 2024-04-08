@@ -5,6 +5,7 @@ import { Alert } from "@opentripplanner/types";
 import React, { FunctionComponent, ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
+import { ExternalLinkAlt } from "@styled-icons/fa-solid";
 import * as S from "../styled";
 import { defaultMessages } from "../util";
 
@@ -94,7 +95,7 @@ export default function AlertsBody({
             const dayDiff = differenceInCalendarDays(compareDate, today);
 
             return (
-              <S.TransitAlert key={i} href={alertUrl}>
+              <S.TransitAlert key={i}>
                 <S.TransitAlertIconContainer>
                   <AlertIcon />
                 </S.TransitAlertIconContainer>
@@ -130,6 +131,24 @@ export default function AlertsBody({
                         dateTime: effectiveStartDate * 1000
                       }}
                     />
+                  )}
+                  <br />
+                  {alertUrl.trim() && (
+                    <S.TransitAlertExternalLink href={alertUrl} target="_blank">
+                      <ExternalLinkAlt height={10} />
+                      <FormattedMessage
+                        defaultMessage={
+                          defaultMessages[
+                            "otpUi.TransitLegBody.AlertsBody.alertLinkText"
+                          ]
+                        }
+                        description="Text with the date an alert takes effect"
+                        id="otpUi.TransitLegBody.AlertsBody.alertLinkText"
+                      />{" "}
+                      <S.InvisibleAdditionalDetails>
+                        <FormattedMessage id="otpUi.TransitLegBody.AlertsBody.externalLink" />
+                      </S.InvisibleAdditionalDetails>
+                    </S.TransitAlertExternalLink>
                   )}
                 </S.TransitAlertEffectiveDate>
               </S.TransitAlert>

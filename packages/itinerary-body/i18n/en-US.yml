@@ -90,8 +90,10 @@ otpUi:
     viewOnMap: View on map
   TransitLegBody:
     AlertsBody:
+      alertLinkText: See alert on agency website
       effectiveDate: Effective as of {dateTime, date, long}
       effectiveTimeAndDate: Effective as of {dateTime, time, short}, {day}
+      externalLink: (External link)
       today: Today
       tomorrow: Tomorrow
       yesterday: Yesterday

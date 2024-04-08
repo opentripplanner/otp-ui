@@ -303,6 +303,15 @@ class TransitLegBody extends Component<Props, State> {
                 {!shouldOnlyShowAlertsExpanded && (
                   <S.CaretToggle expanded={alertsExpanded} />
                 )}
+                <S.InvisibleAdditionalDetails>
+                  <FormattedMessage
+                    defaultMessage={
+                      defaultMessages["otpUi.TransitLegBody.expandDetails"]
+                    }
+                    description="Screen reader text added to expand steps"
+                    id="otpUi.TransitLegBody.expandDetails"
+                  />
+                </S.InvisibleAdditionalDetails>
               </S.TransitAlertToggle>
             )}
 

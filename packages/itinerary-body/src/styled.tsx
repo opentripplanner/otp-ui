@@ -650,13 +650,20 @@ export const StopRow = styled.li`
   position: relative;
 `;
 
-export const TransitAlert = styled.a`
+export const TransitAlert = styled.li`
   background-color: #eee;
   border-radius: 4px;
   color: #000;
   display: block;
   margin-top: 5px;
   padding: 8px;
+  text-decoration: none;
+`;
+
+export const TransitAlertExternalLink = styled.a`
+  align-items: center;
+  display: flex;
+  gap: 5px;
   text-decoration: none;
 `;
 
@@ -684,7 +691,7 @@ export const TransitAlertIconContainer = styled.div`
   font-size: 18px;
 `;
 
-export const TransitAlerts = styled.div`
+export const TransitAlerts = styled.ul`
   display: block;
   margin-top: 3px;
 `;
