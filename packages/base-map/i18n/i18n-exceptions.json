@@ -1,0 +1,21 @@
+{
+  "groups": {
+    "otpUi.mapControls.CooperativeGesturesHandler.*": [
+      "MacHelpText",
+      "MobileHelpText",
+      "WindowsHelpText"
+    ],
+    "otpUi.mapControls.NavigationControl.*": [
+      "ResetBearing",
+      "ZoomIn",
+      "ZoomOut"
+    ],
+    "otpUi.mapControls.ScaleControl.*": [
+      "Feet",
+      "Kilometers",
+      "Meters",
+      "Miles",
+      "NauticalMiles"
+    ]
+  }
+}
