@@ -2,6 +2,7 @@
 const jestSerializerHtml = require("jest-serializer-html");
 
 const DYNAMIC_ID_PATTERN = /"\b[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}\b"/g;
+const CLASS_PATTERN = /(?<=class=").*?(?=")/g;
 
 module.exports = {
   /*
@@ -10,7 +11,9 @@ module.exports = {
    * For instance, from <label id="react-aria970235672-:rl:" for="react-aria970235672-:rk:">Favorite color</label> to <label id="react-mocked_id" for="react-mocked_id">Favorite color</label>
    */
   serialize(val) {
-    const withFixedIds = val.replace(DYNAMIC_ID_PATTERN, "mocked_id");
+    const withFixedIds = val
+      .replace(DYNAMIC_ID_PATTERN, "mocked_id")
+      .replace(CLASS_PATTERN, "CLASS_NAME_FILLER");
     return jestSerializerHtml.print(withFixedIds);
   },
   test(val) {

@@ -3,16 +3,16 @@
 exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
 <div>
   <div aria-label="Travel Preferences"
-       class="styled__SettingsSelectorPanel-sc-122ziys-20"
+       class="CLASS_NAME_FILLER"
        role="group"
   >
-    <div class="styled__ModeSelector-sc-122ziys-7"
+    <div class="CLASS_NAME_FILLER"
          style="margin: 0px -5px; padding-bottom: 8px;"
     >
-      <div class="styled__MainRow-sc-122ziys-8 elboRP">
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+      <div class="CLASS_NAME_FILLER">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="true"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ active "
+                  class="CLASS_NAME_FILLER"
                   title="Take Transit"
           >
             <span>
@@ -46,10 +46,10 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
           </button>
         </div>
       </div>
-      <div class="styled__SecondaryRow-sc-122ziys-9 jpyRQp">
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+      <div class="CLASS_NAME_FILLER">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="true"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ active "
+                  class="CLASS_NAME_FILLER"
                   title="Saunter"
           >
             <span>
@@ -85,15 +85,15 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
               </svg>
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 bdhDvI active "
+          <div class="CLASS_NAME_FILLER"
                title="Saunter"
           >
             Saunter
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="Transit + Personal Bike"
           >
             <span>
@@ -131,15 +131,15 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
               </svg>
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 bdhDvI  "
+          <div class="CLASS_NAME_FILLER"
                title="Transit + Personal Bike"
           >
             Transit + Personal Bike
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="Transit + Biketown"
           >
             <span>
@@ -206,15 +206,15 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
               </svg>
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 bdhDvI  "
+          <div class="CLASS_NAME_FILLER"
                title="Transit + Biketown"
           >
             Transit + Biketown
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="Transit + E-scooter"
           >
             <span>
@@ -250,15 +250,15 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
               </svg>
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 bdhDvI  "
+          <div class="CLASS_NAME_FILLER"
                title="Transit + E-scooter"
           >
             Transit + E-scooter
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="Park &amp; Ride"
           >
             <span>
@@ -299,15 +299,15 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
               </svg>
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 bdhDvI  "
+          <div class="CLASS_NAME_FILLER"
                title="Park &amp; Ride"
           >
             Park &amp; Ride
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="Transit + Uber"
           >
             <span>
@@ -353,15 +353,15 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
               </svg>
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 bdhDvI  "
+          <div class="CLASS_NAME_FILLER"
                title="Transit + Uber"
           >
             Transit + Uber
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="Transit + ReachNow"
           >
             <span>
@@ -414,15 +414,15 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
               </svg>
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 bdhDvI  "
+          <div class="CLASS_NAME_FILLER"
                title="Transit + ReachNow"
           >
             Transit + ReachNow
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="Transit + Car2Go"
           >
             <span>
@@ -484,17 +484,17 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
               </svg>
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 bdhDvI  "
+          <div class="CLASS_NAME_FILLER"
                title="Transit + Car2Go"
           >
             Transit + Car2Go
           </div>
         </div>
       </div>
-      <div class="styled__TertiaryRow-sc-122ziys-10 cJUVRf">
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+      <div class="CLASS_NAME_FILLER">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="Walk Only"
           >
             <span>
@@ -506,9 +506,9 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
             </span>
           </button>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="Bike Only"
           >
             <span>
@@ -522,9 +522,9 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
             </span>
           </button>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="E-scooter Only"
           >
             <span>
@@ -538,22 +538,22 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
         </div>
       </div>
     </div>
-    <div class="styled__SettingsHeader-sc-122ziys-0">
+    <div class="CLASS_NAME_FILLER">
       Travel Preferences
     </div>
     <div aria-label="Use"
-         class="styled__SettingsSection-sc-122ziys-1 styled__SubmodeSelector-sc-122ziys-11"
+         class="CLASS_NAME_FILLER"
          role="group"
     >
       <span aria-hidden="true"
-            class="styled__SettingLabel-sc-122ziys-2 eVCgjF"
+            class="CLASS_NAME_FILLER"
       >
         Use
       </span>
-      <div class="styled__submodeRow-sc-122ziys-12">
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+      <div class="CLASS_NAME_FILLER">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="Buses"
           >
             <span>
@@ -565,9 +565,9 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
             </span>
           </button>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="MAX and Portland Streetcar"
           >
             <span>
@@ -579,9 +579,9 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
             </span>
           </button>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="WES Commuter Rail"
           >
             <span>
@@ -603,9 +603,9 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
             </span>
           </button>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="Aerial Tram"
           >
             <span>
@@ -619,11 +619,11 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
         </div>
       </div>
     </div>
-    <div class="styled__GeneralSettingsPanel-sc-122ziys-19">
-      <div class="styled__DropdownSelector-sc-122ziys-17 LDCgM">
+    <div class="CLASS_NAME_FILLER">
+      <div class="CLASS_NAME_FILLER">
         <div>
           <label for="id-query-param-maxWalkDistance"
-                 class="styled__SettingLabel-sc-122ziys-2 eVCgjF"
+                 class="CLASS_NAME_FILLER"
           >
             Maximum Walk
           </label>
@@ -662,16 +662,16 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
 exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test 1`] = `
 <div>
   <div aria-label="Travel Preferences"
-       class="styled__SettingsSelectorPanel-sc-122ziys-20"
+       class="CLASS_NAME_FILLER"
        role="group"
   >
-    <div class="styled__ModeSelector-sc-122ziys-7"
+    <div class="CLASS_NAME_FILLER"
          style="margin: 0px -5px; padding-bottom: 8px;"
     >
-      <div class="styled__MainRow-sc-122ziys-8 elboRP">
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+      <div class="CLASS_NAME_FILLER">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="true"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ active "
+                  class="CLASS_NAME_FILLER"
                   title="Take Transit"
           >
             <span>
@@ -697,10 +697,10 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
           </button>
         </div>
       </div>
-      <div class="styled__SecondaryRow-sc-122ziys-9 jpyRQp">
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+      <div class="CLASS_NAME_FILLER">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="true"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ active "
+                  class="CLASS_NAME_FILLER"
                   title="Saunter"
           >
             <span>
@@ -737,15 +737,15 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
               </svg>
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 bdhDvI active "
+          <div class="CLASS_NAME_FILLER"
                title="Saunter"
           >
             Saunter
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="Transit + Personal Bike"
           >
             <span>
@@ -778,15 +778,15 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
               </svg>
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 bdhDvI  "
+          <div class="CLASS_NAME_FILLER"
                title="Transit + Personal Bike"
           >
             Transit + Personal Bike
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="Transit + Biketown"
           >
             <span>
@@ -819,15 +819,15 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
               </svg>
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 bdhDvI  "
+          <div class="CLASS_NAME_FILLER"
                title="Transit + Biketown"
           >
             Transit + Biketown
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="Transit + E-scooter"
           >
             <span>
@@ -859,15 +859,15 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
               </svg>
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 bdhDvI  "
+          <div class="CLASS_NAME_FILLER"
                title="Transit + E-scooter"
           >
             Transit + E-scooter
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="Park &amp; Ride"
           >
             <span>
@@ -899,15 +899,15 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
               </svg>
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 bdhDvI  "
+          <div class="CLASS_NAME_FILLER"
                title="Park &amp; Ride"
           >
             Park &amp; Ride
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="Transit + Uber"
           >
             <span>
@@ -945,15 +945,15 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
               </svg>
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 bdhDvI  "
+          <div class="CLASS_NAME_FILLER"
                title="Transit + Uber"
           >
             Transit + Uber
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="Transit + ReachNow"
           >
             <span>
@@ -998,15 +998,15 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
               </svg>
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 bdhDvI  "
+          <div class="CLASS_NAME_FILLER"
                title="Transit + ReachNow"
           >
             Transit + ReachNow
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="Transit + Car2Go"
           >
             <span>
@@ -1060,17 +1060,17 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
               </svg>
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 bdhDvI  "
+          <div class="CLASS_NAME_FILLER"
                title="Transit + Car2Go"
           >
             Transit + Car2Go
           </div>
         </div>
       </div>
-      <div class="styled__TertiaryRow-sc-122ziys-10 cJUVRf">
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+      <div class="CLASS_NAME_FILLER">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="Walk Only"
           >
             <span>
@@ -1091,9 +1091,9 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
             </span>
           </button>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="Bike Only"
           >
             <span>
@@ -1110,9 +1110,9 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
             </span>
           </button>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="E-scooter Only"
           >
             <span>
@@ -1130,22 +1130,22 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
         </div>
       </div>
     </div>
-    <div class="styled__SettingsHeader-sc-122ziys-0">
+    <div class="CLASS_NAME_FILLER">
       Travel Preferences
     </div>
     <div aria-label="Use"
-         class="styled__SettingsSection-sc-122ziys-1 styled__SubmodeSelector-sc-122ziys-11"
+         class="CLASS_NAME_FILLER"
          role="group"
     >
       <span aria-hidden="true"
-            class="styled__SettingLabel-sc-122ziys-2 eVCgjF"
+            class="CLASS_NAME_FILLER"
       >
         Use
       </span>
-      <div class="styled__submodeRow-sc-122ziys-12">
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+      <div class="CLASS_NAME_FILLER">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="Buses"
           >
             <span>
@@ -1170,9 +1170,9 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
             </span>
           </button>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="MAX and Portland Streetcar"
           >
             <span>
@@ -1193,9 +1193,9 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
             </span>
           </button>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="WES Commuter Rail"
           >
             <span>
@@ -1216,9 +1216,9 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
             </span>
           </button>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ  "
+                  class="CLASS_NAME_FILLER"
                   title="Aerial Tram"
           >
             <span>
@@ -1243,11 +1243,11 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
         </div>
       </div>
     </div>
-    <div class="styled__GeneralSettingsPanel-sc-122ziys-19">
-      <div class="styled__DropdownSelector-sc-122ziys-17 LDCgM">
+    <div class="CLASS_NAME_FILLER">
+      <div class="CLASS_NAME_FILLER">
         <div>
           <label for="id-query-param-maxWalkDistance"
-                 class="styled__SettingLabel-sc-122ziys-2 eVCgjF"
+                 class="CLASS_NAME_FILLER"
           >
             Maximum Walk
           </label>
@@ -1286,16 +1286,16 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
 exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithUndefinedParams smoke-test 1`] = `
 <div>
   <div aria-label="Travel Preferences"
-       class="styled__SettingsSelectorPanel-sc-122ziys-20"
+       class="CLASS_NAME_FILLER"
        role="group"
   >
-    <div class="styled__ModeSelector-sc-122ziys-7"
+    <div class="CLASS_NAME_FILLER"
          style="margin: 0px -5px; padding-bottom: 8px;"
     >
-      <div class="styled__MainRow-sc-122ziys-8 elboRP">
-        <div class="styled__ModeButton-sc-122ziys-14 eMpnzN">
+      <div class="CLASS_NAME_FILLER">
+        <div class="CLASS_NAME_FILLER">
           <button aria-pressed="true"
-                  class="styled__Button-sc-122ziys-16 fGXiXQ active "
+                  class="CLASS_NAME_FILLER"
                   title="Take Transit"
           >
             <span>
@@ -1329,17 +1329,17 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithUndefinedParams smoke-
           </button>
         </div>
       </div>
-      <div class="styled__TertiaryRow-sc-122ziys-10 cJUVRf">
+      <div class="CLASS_NAME_FILLER">
       </div>
     </div>
-    <div class="styled__SettingsHeader-sc-122ziys-0">
+    <div class="CLASS_NAME_FILLER">
       Travel Preferences
     </div>
-    <div class="styled__GeneralSettingsPanel-sc-122ziys-19">
-      <div class="styled__DropdownSelector-sc-122ziys-17 LDCgM">
+    <div class="CLASS_NAME_FILLER">
+      <div class="CLASS_NAME_FILLER">
         <div>
           <label for="id-query-param-maxWalkDistance"
-                 class="styled__SettingLabel-sc-122ziys-2 eVCgjF"
+                 class="CLASS_NAME_FILLER"
           >
             Maximum Walk
           </label>

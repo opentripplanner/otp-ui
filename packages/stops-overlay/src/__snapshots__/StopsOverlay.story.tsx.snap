@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`StopsOverlay Default smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
-  <div class="maplibregl-map mapboxgl-map"
+<div class="CLASS_NAME_FILLER">
+  <div class="CLASS_NAME_FILLER"
        style="position: relative; width: 100%; height: 100%;"
   >
-    <div class="maplibregl-canvas-container mapboxgl-canvas-container maplibregl-interactive mapboxgl-interactive maplibregl-touch-drag-pan mapboxgl-touch-drag-pan maplibregl-touch-zoom-rotate mapboxgl-touch-zoom-rotate">
-      <canvas class="maplibregl-canvas mapboxgl-canvas"
+    <div class="CLASS_NAME_FILLER">
+      <canvas class="CLASS_NAME_FILLER"
               tabindex="0"
               aria-label="Map"
               role="region"
@@ -16,23 +16,23 @@ exports[`StopsOverlay Default smoke-test 1`] = `
       >
       </canvas>
     </div>
-    <div class="maplibregl-control-container mapboxgl-control-container">
-      <div class="maplibregl-ctrl-top-left mapboxgl-ctrl-top-left">
+    <div class="CLASS_NAME_FILLER">
+      <div class="CLASS_NAME_FILLER">
       </div>
-      <div class="maplibregl-ctrl-top-right mapboxgl-ctrl-top-right">
+      <div class="CLASS_NAME_FILLER">
       </div>
-      <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
+      <div class="CLASS_NAME_FILLER">
       </div>
-      <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
+      <div class="CLASS_NAME_FILLER">
+        <details class="CLASS_NAME_FILLER"
                  open
         >
-          <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
+          <summary class="CLASS_NAME_FILLER"
                    title="Toggle attribution"
                    aria-label="Toggle attribution"
           >
           </summary>
-          <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
+          <div class="CLASS_NAME_FILLER">
             ©
             <a href="https://carto.com/about-carto/"
                target="_blank"
@@ -56,12 +56,12 @@ exports[`StopsOverlay Default smoke-test 1`] = `
 `;
 
 exports[`StopsOverlay FlexStops smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
-  <div class="maplibregl-map mapboxgl-map"
+<div class="CLASS_NAME_FILLER">
+  <div class="CLASS_NAME_FILLER"
        style="position: relative; width: 100%; height: 100%;"
   >
-    <div class="maplibregl-canvas-container mapboxgl-canvas-container maplibregl-interactive mapboxgl-interactive maplibregl-touch-drag-pan mapboxgl-touch-drag-pan maplibregl-touch-zoom-rotate mapboxgl-touch-zoom-rotate">
-      <canvas class="maplibregl-canvas mapboxgl-canvas"
+    <div class="CLASS_NAME_FILLER">
+      <canvas class="CLASS_NAME_FILLER"
               tabindex="0"
               aria-label="Map"
               role="region"
@@ -71,23 +71,23 @@ exports[`StopsOverlay FlexStops smoke-test 1`] = `
       >
       </canvas>
     </div>
-    <div class="maplibregl-control-container mapboxgl-control-container">
-      <div class="maplibregl-ctrl-top-left mapboxgl-ctrl-top-left">
+    <div class="CLASS_NAME_FILLER">
+      <div class="CLASS_NAME_FILLER">
       </div>
-      <div class="maplibregl-ctrl-top-right mapboxgl-ctrl-top-right">
+      <div class="CLASS_NAME_FILLER">
       </div>
-      <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
+      <div class="CLASS_NAME_FILLER">
       </div>
-      <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
+      <div class="CLASS_NAME_FILLER">
+        <details class="CLASS_NAME_FILLER"
                  open
         >
-          <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
+          <summary class="CLASS_NAME_FILLER"
                    title="Toggle attribution"
                    aria-label="Toggle attribution"
           >
           </summary>
-          <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
+          <div class="CLASS_NAME_FILLER">
             ©
             <a href="https://carto.com/about-carto/"
                target="_blank"
@@ -106,12 +106,12 @@ exports[`StopsOverlay FlexStops smoke-test 1`] = `
         </details>
       </div>
     </div>
-    <div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
-      <div class="maplibregl-map mapboxgl-map"
+    <div class="CLASS_NAME_FILLER">
+      <div class="CLASS_NAME_FILLER"
            style="position: relative; width: 100%; height: 100%;"
       >
-        <div class="maplibregl-canvas-container mapboxgl-canvas-container maplibregl-interactive mapboxgl-interactive maplibregl-touch-drag-pan mapboxgl-touch-drag-pan maplibregl-touch-zoom-rotate mapboxgl-touch-zoom-rotate">
-          <canvas class="maplibregl-canvas mapboxgl-canvas"
+        <div class="CLASS_NAME_FILLER">
+          <canvas class="CLASS_NAME_FILLER"
                   tabindex="0"
                   aria-label="Map"
                   role="region"
@@ -121,23 +121,23 @@ exports[`StopsOverlay FlexStops smoke-test 1`] = `
           >
           </canvas>
         </div>
-        <div class="maplibregl-control-container mapboxgl-control-container">
-          <div class="maplibregl-ctrl-top-left mapboxgl-ctrl-top-left">
+        <div class="CLASS_NAME_FILLER">
+          <div class="CLASS_NAME_FILLER">
           </div>
-          <div class="maplibregl-ctrl-top-right mapboxgl-ctrl-top-right">
+          <div class="CLASS_NAME_FILLER">
           </div>
-          <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
+          <div class="CLASS_NAME_FILLER">
           </div>
-          <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-            <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
+          <div class="CLASS_NAME_FILLER">
+            <details class="CLASS_NAME_FILLER"
                      open
             >
-              <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
+              <summary class="CLASS_NAME_FILLER"
                        title="Toggle attribution"
                        aria-label="Toggle attribution"
               >
               </summary>
-              <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
+              <div class="CLASS_NAME_FILLER">
                 ©
                 <a href="https://carto.com/about-carto/"
                    target="_blank"
@@ -163,12 +163,12 @@ exports[`StopsOverlay FlexStops smoke-test 1`] = `
 `;
 
 exports[`StopsOverlay NoMinZoom smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
-  <div class="maplibregl-map mapboxgl-map"
+<div class="CLASS_NAME_FILLER">
+  <div class="CLASS_NAME_FILLER"
        style="position: relative; width: 100%; height: 100%;"
   >
-    <div class="maplibregl-canvas-container mapboxgl-canvas-container maplibregl-interactive mapboxgl-interactive maplibregl-touch-drag-pan mapboxgl-touch-drag-pan maplibregl-touch-zoom-rotate mapboxgl-touch-zoom-rotate">
-      <canvas class="maplibregl-canvas mapboxgl-canvas"
+    <div class="CLASS_NAME_FILLER">
+      <canvas class="CLASS_NAME_FILLER"
               tabindex="0"
               aria-label="Map"
               role="region"
@@ -178,23 +178,23 @@ exports[`StopsOverlay NoMinZoom smoke-test 1`] = `
       >
       </canvas>
     </div>
-    <div class="maplibregl-control-container mapboxgl-control-container">
-      <div class="maplibregl-ctrl-top-left mapboxgl-ctrl-top-left">
+    <div class="CLASS_NAME_FILLER">
+      <div class="CLASS_NAME_FILLER">
       </div>
-      <div class="maplibregl-ctrl-top-right mapboxgl-ctrl-top-right">
+      <div class="CLASS_NAME_FILLER">
       </div>
-      <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
+      <div class="CLASS_NAME_FILLER">
       </div>
-      <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
-        <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
+      <div class="CLASS_NAME_FILLER">
+        <details class="CLASS_NAME_FILLER"
                  open
         >
-          <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
+          <summary class="CLASS_NAME_FILLER"
                    title="Toggle attribution"
                    aria-label="Toggle attribution"
           >
           </summary>
-          <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
+          <div class="CLASS_NAME_FILLER">
             ©
             <a href="https://carto.com/about-carto/"
                target="_blank"
