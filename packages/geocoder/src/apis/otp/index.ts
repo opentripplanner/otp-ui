@@ -1,6 +1,6 @@
 
 // eslint-disable-next-line prettier/prettier
-import type { AutocompleteQuery } from "../../geocoders/types"
+import type { AutocompleteQuery, SearchQuery } from "../../geocoders/types"
 
 type FetchArgs = {
   url: string
@@ -48,8 +48,11 @@ async function autocomplete({
   })
 }
 
-function search(): Promise<unknown> { console.warn("Not implemented"); return null }
-function reverse(): Promise<unknown> { console.warn("Not implemented"); return null }
+async function search(args: SearchQuery): Promise<OTPGeocoderResponse> {
+  return autocomplete(args);
+} 
+
+function reverse(): Promise<OTPGeocoderResponse> { console.warn("Not implemented"); return null }
 
 
 export { autocomplete, reverse, search };
