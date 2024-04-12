@@ -81,6 +81,12 @@ otpUi:
       car: bằng xe hơi
       escooter: bằng xe tay ga điện tử
       walk: bằng cách đi bộ
+    tripAccessibility:
+      inaccessible: không thể tiếp cận
+      itineraryAccessibility: "Khả năng tiếp cận của xe lăn trong chuyến đi này:\_"
+      legAccessibility: "Khả năng tiếp cận của xe lăn trong đoạn này của chuyến đi:\_"
+      likelyAccessible: có thể tiếp cận
+      unclear: không rõ
     viewOnMap: Xem trên bản đồ
   TransitLegBody:
     AlertsBody:

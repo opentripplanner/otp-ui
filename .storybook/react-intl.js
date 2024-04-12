@@ -15,6 +15,7 @@ const locales = ["en-US", "fr", "es", "vi", "ko", "zh", "unknown"];
  * FIXME: remove in favor of a loop on package names.
  */ 
 const packages = [
+  "base-map",
   "endpoints-overlay",
   "from-to-location-picker",
   "itinerary-body",
