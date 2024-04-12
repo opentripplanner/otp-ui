@@ -136,7 +136,6 @@ const OTP2TileLayerWithPopup = ({
     filter = ["!=", ["get", "routes"], ["literal", "[]"]]
   }
 
-  // Weird bug: the isArea layers only work properly with node 16!
   const isArea = AREA_TYPES.includes(type)
   return (
     <>
@@ -149,8 +148,7 @@ const OTP2TileLayerWithPopup = ({
             "#",
             ["case", ["!=", ["index-of", ",", ["get", "routeColors"]], -1], ["slice", ["get", "routeColors"], 0, ["index-of", ",", ["get", "routeColors"]]], ["get", "routeColors"]]
           ],
-          "fill-opacity": 0.3,
-          "fill-outline-color": "#333",
+          "fill-opacity": 0.2,
         }}
         source-layer={type}
         source={SOURCE_ID}
@@ -160,17 +158,17 @@ const OTP2TileLayerWithPopup = ({
         filter={filter}
         id={`${id}-outline`}
         layout={{ "line-join": "round", "line-cap": "round" }}
-        source={SOURCE_ID}
-        source-layer={type}
         paint={{
           "line-color": [
             "concat",
             "#",
             ["case", ["!=", ["index-of", ",", ["get", "routeColors"]], -1], ["slice", ["get", "routeColors"], 0, ["index-of", ",", ["get", "routeColors"]]], ["get", "routeColors"]]
           ],
-          "line-opacity": 1,
-          "line-width": 4
+          "line-opacity": 0.8,
+          "line-width": 3
         }}
+        source-layer={type}
+        source={SOURCE_ID}
         type="line"
       />}
       {!isArea && <Layer
