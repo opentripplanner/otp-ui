@@ -11,7 +11,7 @@ import React, { useCallback, useEffect, useState } from "react"
 import { Layer, Popup, Source, useMap } from "react-map-gl"
 
 // eslint-disable-next-line prettier/prettier
-import { generateLayerPaint } from "./util"
+import { generateLayerPaint, ROUTE_COLOR_EXPRESSION } from "./util"
 
 const SOURCE_ID = "otp2-tiles"
 const AREA_TYPES = ["areaStops"]
@@ -143,11 +143,7 @@ const OTP2TileLayerWithPopup = ({
         filter={filter}
         id={`${id}-fill`}
         paint={{
-          "fill-color": [
-            "concat",
-            "#",
-            ["case", ["!=", ["index-of", ",", ["get", "routeColors"]], -1], ["slice", ["get", "routeColors"], 0, ["index-of", ",", ["get", "routeColors"]]], ["get", "routeColors"]]
-          ],
+          "fill-color": ROUTE_COLOR_EXPRESSION,
           "fill-opacity": 0.2,
         }}
         source-layer={type}
@@ -159,11 +155,7 @@ const OTP2TileLayerWithPopup = ({
         id={`${id}-outline`}
         layout={{ "line-join": "round", "line-cap": "round" }}
         paint={{
-          "line-color": [
-            "concat",
-            "#",
-            ["case", ["!=", ["index-of", ",", ["get", "routeColors"]], -1], ["slice", ["get", "routeColors"], 0, ["index-of", ",", ["get", "routeColors"]]], ["get", "routeColors"]]
-          ],
+          "line-color": ROUTE_COLOR_EXPRESSION,
           "line-opacity": 0.8,
           "line-width": 3
         }}
