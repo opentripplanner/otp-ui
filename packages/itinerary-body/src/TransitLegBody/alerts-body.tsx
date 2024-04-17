@@ -12,6 +12,7 @@ import { defaultMessages } from "../util";
 const { getUserTimezone, getCurrentDate } = coreUtils.time;
 
 interface Props {
+  agencyName: string;
   alerts: Alert[];
   AlertIcon?: FunctionComponent;
   timeZone?: string;
@@ -63,6 +64,7 @@ function AlertDay({ dayDiff }: AlertDayProps) {
 }
 
 export default function AlertsBody({
+  agencyName,
   alerts,
   AlertIcon = S.DefaultAlertBodyIcon,
   timeZone = getUserTimezone()
@@ -144,6 +146,7 @@ export default function AlertsBody({
                         }
                         description="Text with the date an alert takes effect"
                         id="otpUi.TransitLegBody.AlertsBody.alertLinkText"
+                        values={{ agency: agencyName }}
                       />{" "}
                       <S.InvisibleAdditionalDetails>
                         <FormattedMessage id="otpUi.TransitLegBody.AlertsBody.externalLink" />

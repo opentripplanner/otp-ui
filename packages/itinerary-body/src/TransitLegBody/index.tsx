@@ -318,6 +318,7 @@ class TransitLegBody extends Component<Props, State> {
             {/* The Alerts body, if visible */}
             <AnimateHeight duration={500} height={expandAlerts ? "auto" : 0}>
               <AlertsBody
+                agencyName={agencyName}
                 alerts={leg.alerts}
                 AlertIcon={AlertBodyIcon}
                 timeZone={timeZone}

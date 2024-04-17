@@ -665,6 +665,10 @@ export const TransitAlertExternalLink = styled.a`
   display: flex;
   gap: 5px;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 export const TransitAlertBody = styled.div`
