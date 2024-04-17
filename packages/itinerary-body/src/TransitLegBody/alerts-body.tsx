@@ -134,7 +134,6 @@ export default function AlertsBody({
                       }}
                     />
                   )}
-                  <br />
                   {alertUrl.trim() && (
                     <S.TransitAlertExternalLink href={alertUrl} target="_blank">
                       <ExternalLinkAlt height={10} />
