@@ -334,12 +334,13 @@ export function getElevationProfile(
   const points = [];
   steps.forEach(step => {
     // Support for old REST response data (in step.elevation)
-    const stepElevationProfile = step.elevationProfile
-      ? step.elevationProfile
-      : step.elevation.map<ElevationProfileComponent>(elev => ({
+    const stepElevationProfile =
+      step.elevationProfile ||
+      (Array.isArray(step.elevation) &&
+        step.elevation?.map<ElevationProfileComponent>(elev => ({
           distance: elev.first,
           elevation: elev.second
-        }));
+        })));
 
     if (!stepElevationProfile || stepElevationProfile.length === 0) {
       traversed += step.distance;
