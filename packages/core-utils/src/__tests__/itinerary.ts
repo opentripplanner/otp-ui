@@ -34,7 +34,8 @@ describe("util > itinerary", () => {
           elevationProfile: step.elevation.map(elev => ({
             distance: elev.first,
             elevation: elev.second
-          }))
+          })),
+          elevation: null
         }))
       );
       expect(legacyOutput).toEqual<ElevationProfile>(graphqlOutput);
