@@ -192,10 +192,15 @@ export type EncodedPolyline = {
   points: string;
 };
 
-export type ElevationData = {
+export type ElevationProfileComponent = {
   distance: number;
   elevation: number;
 };
+
+export type ElevationData = {
+  first: number;
+  second: number;
+}[];
 
 export type Alert = {
   alertHeaderText?: string;
@@ -217,7 +222,8 @@ export type Step = {
   area: boolean;
   bogusName: boolean;
   distance: number;
-  elevationProfile: ElevationData[];
+  elevation?: ElevationData;
+  elevationProfile?: ElevationProfileComponent[];
   lat: number;
   lon: number;
   relativeDirection: string;
