@@ -207,6 +207,21 @@ export const WithNearbyStops = (): JSX.Element => (
   />
 );
 
+export const WithNearbyStopsMetricUnits = (): JSX.Element => (
+  <LocationField
+    currentPosition={currentPosition}
+    geocoderConfig={geocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    isStatic
+    layerColorMap={layerColorMap}
+    locationType="to"
+    nearbyStops={nearbyStops}
+    onLocationSelected={onLocationSelected}
+    stopsIndex={stopsIndex}
+    useMetricUnits
+  />
+);
+
 export const WithSessionSearches = (): JSX.Element => (
   <LocationField
     currentPosition={currentPosition}

@@ -273,6 +273,8 @@ export interface LocationFieldProps {
    * An array of recent locations and places a user has searched for.
    */
   userLocationsAndRecentPlaces?: UserLocation[];
+  /** If true, metric units (km, m) will be used. By default imperial units (mile, feet) will be used */
+  useMetricUnits?: boolean;
 }
 
 export interface Properties {
