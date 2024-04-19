@@ -2,9 +2,12 @@ import React, { useCallback, useEffect, useState } from "react";
 import { Map, MapProps } from "react-map-gl";
 import maplibregl, { Event } from "maplibre-gl";
 
+import { useIntl } from "react-intl";
+
 import * as Styled from "./styled";
 import * as util from "./util";
 import MarkerWithPopup from "./MarkerWithPopup";
+import generateMapControlTranslations from "./mapControlLocale";
 
 /**
  * The BaseMap component renders a MapLibre map
@@ -76,6 +79,8 @@ const BaseMap = ({
     zoom: initZoom
   });
 
+  const intl = useIntl();
+
   // Firefox and Safari on iOS: hover is not triggered when the user touches the layer selector
   // (unlike Firefox or Chromium on Android), so we have to detect touch and trigger hover ourselves.
   const [fakeMobileHover, setFakeHover] = useState(false);
@@ -132,6 +137,7 @@ const BaseMap = ({
       {...mapLibreProps}
       id={id}
       latitude={viewState.latitude}
+      locale={generateMapControlTranslations(intl)}
       longitude={viewState.longitude}
       mapLib={maplibregl}
       mapStyle={activeBaseLayer}

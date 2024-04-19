@@ -1,0 +1,16 @@
+otpUi:
+  mapControls:
+    CooperativeGesturesHandler:
+      MacHelpText: ⌘ + 스크롤을 사용하여 지도를 확대 또는 축소
+      MobileHelpText: 두 손가락을 사용하여 지도 이동
+      WindowsHelpText: 스크롤을 사용하여 지도를 확대 또는 축소
+    NavigationControl:
+      ResetBearing: 북쪽 방향 재설정
+      ZoomIn: 확대
+      ZoomOut: 축소
+    ScaleControl:
+      Feet: ft
+      Kilometers: km
+      Meters: m
+      Miles: mi
+      NauticalMiles: nm

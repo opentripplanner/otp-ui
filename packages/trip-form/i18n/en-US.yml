@@ -39,6 +39,9 @@ otpUi:
     use: Use
     useCompanies: Use companies
     walkOnly: Walk Only
+  TripOptions:
+    openApp: Open app
+    transitOnly: Go by Transit
   queryParameters:
     bikeSpeed: Bicycle Speed
     distanceInMiles: |

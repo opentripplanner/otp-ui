@@ -5,8 +5,10 @@ import React, {
   useEffect,
   useState
 } from "react";
+import { useIntl } from "react-intl";
 
 import GeneralSettingsPanel from "../GeneralSettingsPanel";
+import { getQueryParamMessagesWithI18n } from "../SettingsSelectorPanel/query-params-i18n";
 
 import FeaturedOption from "./FeaturedOption";
 import FeaturedOptionOverlay from "./FeaturedOptionOverlay";
@@ -200,6 +202,8 @@ export default function TripOptions(props: Props): ReactElement {
     updateQueryParams(newParams);
   };
 
+  const intl = useIntl();
+
   if (featuredOption) {
     return (
       <S.TripOptionsContainer className={className}>
@@ -239,6 +243,7 @@ export default function TripOptions(props: Props): ReactElement {
         <GeneralSettingsPanel
           onQueryParamChange={onQueryParamChange}
           query={queryParams}
+          queryParamMessages={getQueryParamMessagesWithI18n(intl)}
           supportedModes={supportedModes}
         />
         <TransitOptions

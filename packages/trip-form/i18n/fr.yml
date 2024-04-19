@@ -39,6 +39,9 @@ otpUi:
     use: Utiliser
     useCompanies: Prestataires
     walkOnly: À pied uniquement
+  TripOptions:
+    openApp: Ouvrir l'application
+    transitOnly: En transports publics
   queryParameters:
     bikeSpeed: Vitesse à vélo
     distanceInMiles: "{miles, number, :: unit/mile unit-width-full-name}"

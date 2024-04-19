@@ -1,0 +1,16 @@
+otpUi:
+  mapControls:
+    CooperativeGesturesHandler:
+      MacHelpText: 使用⌘並捲動，可縮放地圖
+      MobileHelpText: 以兩指移動地圖
+      WindowsHelpText: 使用Ctrl並捲動，可縮放地圖
+    NavigationControl:
+      ResetBearing: 將方位重設為北方
+      ZoomIn: 放大
+      ZoomOut: 缩小
+    ScaleControl:
+      Feet: ft
+      Kilometers: km
+      Meters: m
+      Miles: mi
+      NauticalMiles: nm
