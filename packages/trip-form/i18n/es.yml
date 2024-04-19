@@ -39,6 +39,9 @@ otpUi:
     use: Usar
     useCompanies: Usar las empresas
     walkOnly: Solo caminar
+  TripOptions:
+    transitOnly: Ir en transporte público
+    openApp: Abrir aplicación
   queryParameters:
     bikeSpeed: Velocidad de la bicicleta
     distanceInMiles: |

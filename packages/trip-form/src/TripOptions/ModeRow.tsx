@@ -1,5 +1,6 @@
 import coreUtils from "@opentripplanner/core-utils";
 import React, { useRef, useEffect } from "react";
+import { useIntl } from "react-intl";
 
 import {
   categoryIsActive,
@@ -57,11 +58,16 @@ const ModeRow = ({
     }
   }, []);
 
+  const intl = useIntl();
+  const transitOnlyText = intl.formatMessage({
+    id: "otpUi.TripOptions.transitOnly"
+  });
+
   return (
     /* Not hiding the scrollbars here ensures the user can still scroll. Scrollbars are hidden using CSS. */
     <S.ScrollableRow hideScrollbars={false}>
       <Checkbox
-        ariaLabel="Go by Transit"
+        ariaLabel={transitOnlyText}
         checkboxIcons={checkboxIcons}
         checked={hasTransit}
         // Prettier conflicts with jsx style rules
@@ -70,7 +76,7 @@ const ModeRow = ({
         selected={hasTransit}
         SimpleModeIcon={SimpleModeIcon}
       >
-        Go by Transit
+        {transitOnlyText}
       </Checkbox>
       {categories.map(category => {
         const selectedModeAndCategoryActive = categoryIsActive(
