@@ -8,7 +8,7 @@ const config: TestRunnerConfig = {
   },
   async postVisit(page, context) {
     // the #storybook-root element wraps the story. In Storybook 6.x, the selector is #root
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 3000));
     const elementHandler = await page.$('#storybook-root');
     const innerHTML = await elementHandler?.innerHTML();
     expect(innerHTML).toMatchSnapshot();
