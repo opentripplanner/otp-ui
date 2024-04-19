@@ -9,6 +9,7 @@ import { defaultMessages, getPlaceName } from "../util";
 interface Props extends HTMLAttributes<HTMLSpanElement> {
   config: Config;
   leg: Leg;
+  useMetricUnits?: boolean;
 }
 
 /**
@@ -71,7 +72,8 @@ export default function AccessLegDescription({
   className,
   config,
   leg,
-  style
+  style,
+  useMetricUnits
 }: Props): ReactElement {
   const intl = useIntl();
   // Replace the Vertex Type for BIKESHARE with VEHICLE as we do not know that
@@ -98,8 +100,11 @@ export default function AccessLegDescription({
           description="Summarizes an access leg, including distance"
           id="otpUi.AccessLegBody.summaryAndDistance"
           values={{
-            // TODO: Implement metric vs imperial (up until now it's just imperial).
-            distance: humanizeDistanceString(leg.distance, false, intl),
+            distance: humanizeDistanceString(
+              leg.distance,
+              useMetricUnits,
+              intl
+            ),
             mode: modeContent,
             place: placeContent
           }}

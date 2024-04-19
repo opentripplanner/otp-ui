@@ -12,6 +12,7 @@ interface Props {
   LegIcon: LegIconComponent;
   onSummaryClick: () => void;
   showLegIcon: boolean;
+  useMetricUnits?: boolean;
 }
 
 export default function AccessLegSummary({
@@ -19,7 +20,8 @@ export default function AccessLegSummary({
   leg,
   LegIcon,
   onSummaryClick,
-  showLegIcon
+  showLegIcon,
+  useMetricUnits = false
 }: Props): ReactElement {
   return (
     <S.LegClickable>
@@ -32,7 +34,11 @@ export default function AccessLegSummary({
           )}
         </S.LegIconAndRouteShortName>
         <S.InvisibleAdditionalDetails> - </S.InvisibleAdditionalDetails>
-        <AccessLegDescription config={config} leg={leg} />
+        <AccessLegDescription
+          config={config}
+          leg={leg}
+          useMetricUnits={useMetricUnits}
+        />
         <S.LegClickableButton onClick={onSummaryClick}>
           <S.InvisibleAdditionalDetails>
             <FormattedMessage

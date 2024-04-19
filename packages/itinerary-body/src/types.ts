@@ -232,6 +232,8 @@ interface ItineraryBodySharedProps {
    * - stopsExpanded: whether the intermediate stop display is currently expanded
    */
   TransitLegSummary: FunctionComponent<TransitLegSummaryProps>;
+  /** If true, metric units (km, m) will be used. By default imperial units (mile, feet) will be used */
+  useMetricUnits?: boolean;
 }
 
 export interface PlaceRowProps

@@ -38,6 +38,7 @@ interface Props {
   showElevationProfile: boolean;
   showLegIcon: boolean;
   TransitLegSubheader?: FunctionComponent<TransitLegSubheaderProps>;
+  useMetricUnits?: boolean;
 }
 
 interface State {
@@ -77,7 +78,8 @@ class AccessLegBody extends Component<Props, State> {
       setLegDiagram,
       showElevationProfile,
       showLegIcon,
-      TransitLegSubheader
+      TransitLegSubheader,
+      useMetricUnits = false
     } = this.props;
     const { expanded } = this.state;
 
@@ -93,6 +95,7 @@ class AccessLegBody extends Component<Props, State> {
           LegIcon={LegIcon}
           onSummaryClick={this.onSummaryClick}
           showLegIcon={showLegIcon}
+          useMetricUnits={useMetricUnits}
         />
       );
     }
@@ -121,6 +124,7 @@ class AccessLegBody extends Component<Props, State> {
             LegIcon={LegIcon}
             onSummaryClick={this.onSummaryClick}
             showLegIcon={showLegIcon}
+            useMetricUnits={useMetricUnits}
           />
           <S.LegDetails>
             {hideDrivingDirections ? (
@@ -163,6 +167,7 @@ class AccessLegBody extends Component<Props, State> {
                     mapillaryCallback={mapillaryCallback}
                     mapillaryKey={mapillaryKey}
                     steps={leg.steps}
+                    useMetricUnits={useMetricUnits}
                   />
                 </AnimateHeight>
               </>

@@ -60,6 +60,7 @@ interface StoryWrapperProps {
   hideDrivingDirections?: boolean;
   itinerary: Itinerary;
   TimeColumnContent?: FunctionComponent<TimeColumnContentProps>;
+  useMetricUnits?: boolean;
 }
 
 function OtpRRItineraryBodyWrapper({
@@ -67,7 +68,8 @@ function OtpRRItineraryBodyWrapper({
   defaultFareSelector,
   hideDrivingDirections = false,
   itinerary,
-  TimeColumnContent
+  TimeColumnContent,
+  useMetricUnits = false
 }: StoryWrapperProps): ReactElement {
   return (
     <ItineraryBodyDefaultsWrapper
@@ -86,6 +88,7 @@ function OtpRRItineraryBodyWrapper({
       styledItinerary="otp-rr"
       TimeColumnContent={TimeColumnContent}
       TransitLegSubheader={WrappedOtpRRTransitLegSubheader}
+      useMetricUnits={useMetricUnits}
     />
   );
 }
@@ -99,9 +102,17 @@ export const WalkOnlyItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkOnlyItinerary} />
 );
 
+export const WalkOnlyItineraryMetricUnits = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper itinerary={walkOnlyItinerary} useMetricUnits />
+);
+
 // OTP2.4 type data
 export const Otp24Itinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={otp24Itinerary} />
+);
+
+export const Otp24ItineraryMetricUnits = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper itinerary={otp24Itinerary} useMetricUnits />
 );
 
 export const BikeOnlyItinerary = (): ReactElement => (
@@ -110,6 +121,13 @@ export const BikeOnlyItinerary = (): ReactElement => (
 
 export const WalkTransitWalkItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkItinerary} />
+);
+
+export const WalkTransitWalkItineraryUseMetricUnits = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    itinerary={walkTransitWalkItinerary}
+    useMetricUnits
+  />
 );
 
 export const BikeTransitBikeItinerary = (): ReactElement => (

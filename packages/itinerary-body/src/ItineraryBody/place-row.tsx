@@ -47,7 +47,8 @@ export default function PlaceRow({
   TimeColumnContent = DefaultTimeColumnContent,
   toRouteAbbreviation,
   TransitLegSubheader,
-  TransitLegSummary
+  TransitLegSummary,
+  useMetricUnits
 }: PlaceRowProps): ReactElement {
   // NOTE: Previously there was a check for itineraries that changed vehicles
   // at a single stop, which would render the stop place the same as the
@@ -175,6 +176,7 @@ export default function PlaceRow({
               showElevationProfile={showElevationProfile}
               showLegIcon={showLegIcon}
               TransitLegSubheader={TransitLegSubheader}
+              useMetricUnits={useMetricUnits}
             />
           ))}
       </S.PlaceDetails>
