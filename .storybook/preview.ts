@@ -7,6 +7,7 @@ import tileLayerHandlers from '../packages/otp2-tile-overlay/src/mocks/handlers'
 
 import { reactIntl } from './react-intl.js';
 import { Preview } from "@storybook/react";
+import { mockDateDecorator } from "storybook-mock-date-decorator";
 
 // Only install worker when running in browser
 if (typeof global.process === "undefined") {
@@ -56,12 +57,8 @@ export const parameters = {
   reactIntl
 };
 
-// Per https://www.npmjs.com/package/@storybook/addon-storyshots,
-// explicitly export the storybook-react-intl decorator
-// so it is included in jest snapshots.
-// export const decorators = [withReactIntl];
-
 const preview: Preview = {
+  decorators: [mockDateDecorator],
   globals: {
     locale: reactIntl.defaultLocale,
     locales: {

@@ -33,11 +33,11 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
         <span class="CLASS_NAME_FILLER">
           Depart
           <strong>
-            November 14, 2019
+            November 13, 2019
           </strong>
           at
           <strong>
-            7:42 AM
+            3:42 PM
           </strong>
         </span>
       </div>
@@ -615,11 +615,11 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
         <span class="CLASS_NAME_FILLER">
           Depart
           <strong>
-            December 29, 2023
+            December 28, 2023
           </strong>
           at
           <strong>
-            5:42 AM
+            1:42 PM
           </strong>
         </span>
       </div>
@@ -1258,11 +1258,11 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
         <span class="CLASS_NAME_FILLER">
           Depart
           <strong>
-            June 16, 2022
+            June 15, 2022
           </strong>
           at
           <strong>
-            12:15 AM
+            9:15 AM
           </strong>
         </span>
       </div>
@@ -1513,11 +1513,11 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
         <span class="CLASS_NAME_FILLER">
           Depart
           <strong>
-            June 23, 2022
+            June 22, 2022
           </strong>
           at
           <strong>
-            7:59 AM
+            4:59 PM
           </strong>
         </span>
       </div>
@@ -1825,11 +1825,11 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
         <span class="CLASS_NAME_FILLER">
           Depart
           <strong>
-            November 14, 2019
+            November 13, 2019
           </strong>
           at
           <strong>
-            7:44 AM
+            3:44 PM
           </strong>
         </span>
       </div>
@@ -2080,11 +2080,11 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
         <span class="CLASS_NAME_FILLER">
           Depart
           <strong>
-            May 24, 2023
+            May 23, 2023
           </strong>
           at
           <strong>
-            1:58 AM
+            10:58 AM
           </strong>
         </span>
       </div>
@@ -2426,11 +2426,11 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
           </strong>
           at
           <strong>
-            1:58 AM
+            10:58 AM
           </strong>
           on
           <strong>
-            May 24, 2023
+            May 23, 2023
           </strong>
         </span>
         <button aria-label="otpUi.TripDetails.showDetail"
@@ -2483,7 +2483,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
                 </path>
               </svg>
             </button>
-            Custom messages about May 24, 2023 can be constructed dynamically using any markup.
+            Custom messages about May 23, 2023 can be constructed dynamically using any markup.
           </div>
         </div>
       </div>
@@ -2762,11 +2762,11 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
         <span class="CLASS_NAME_FILLER">
           Depart
           <strong>
-            December 14, 2019
+            December 13, 2019
           </strong>
           at
           <strong>
-            3:29 AM
+            11:29 AM
           </strong>
         </span>
       </div>
@@ -3017,11 +3017,11 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
         <span class="CLASS_NAME_FILLER">
           Depart
           <strong>
-            November 14, 2019
+            November 13, 2019
           </strong>
           at
           <strong>
-            7:44 AM
+            3:44 PM
           </strong>
         </span>
       </div>

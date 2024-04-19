@@ -38,7 +38,7 @@ exports[`ItineraryBody/otp-ui BikeOnlyItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:42 AM
+      3:42 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -241,7 +241,7 @@ exports[`ItineraryBody/otp-ui BikeOnlyItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:49 AM
+      3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 1737 SW Morrison St, Portland, OR, USA 97205
@@ -307,7 +307,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:45 AM
+      3:45 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -493,7 +493,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:48 AM
+      3:48 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -721,7 +721,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:55 AM
+      3:55 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -895,7 +895,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:58 AM
+      3:58 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 1415 SE 28th Ave, Portland, OR, USA 97214
@@ -961,7 +961,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:50 AM
+      3:50 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -1166,7 +1166,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:53 AM
+      3:53 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -1451,7 +1451,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:59 AM
+      3:59 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -1626,7 +1626,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:02 AM
+      4:02 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -1718,7 +1718,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                     For trips to Tigard Transit Center, no service to the stop at NE Sandy &amp; 91st (Stop ID 5145) due to PBOT sidewalk construction. Use temporary stop on the west side of 91st.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of August 1, 2019
+                    Effective as of July 31, 2019
                   </div>
                 </a>
                 <a href="http://trimet.org/alerts/"
@@ -1744,7 +1744,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                     For trips to Parkrose/Sumner Transit Center, no service to the stop at NE Sandy &amp; 47th (Stop ID 5094) due to long-term construction. Use the temporary stop located at NE Sandy &amp; 48th (Stop ID 14073).
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of July 13, 2019
+                    Effective as of July 12, 2019
                   </div>
                 </a>
               </div>
@@ -1943,7 +1943,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:14 AM
+      4:14 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -2129,7 +2129,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:16 AM
+      4:16 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -2357,7 +2357,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:24 AM
+      4:24 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -2512,7 +2512,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:26 AM
+      4:26 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 5916 NE Going St, Portland, OR, USA 97218
@@ -2578,7 +2578,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:44 AM
+      3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -2719,7 +2719,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:44 AM
+      3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -2915,7 +2915,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:45 AM
+      3:45 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -3052,7 +3052,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:46 AM
+      3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -3144,7 +3144,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
                     The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 7, 2019
+                    Effective as of November 6, 2019
                   </div>
                 </a>
                 <a href="http://trimet.org/alerts/"
@@ -3170,7 +3170,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
                     The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 4, 2019
+                    Effective as of November 3, 2019
                   </div>
                 </a>
               </div>
@@ -3281,7 +3281,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:49 AM
+      3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -3422,7 +3422,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:49 AM
+      3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -3596,7 +3596,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:50 AM
+      3:50 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 1737 SW Morrison St, Portland, OR, USA 97205
@@ -3662,7 +3662,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:44 AM
+      3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -3818,7 +3818,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:46 AM
+      3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -3926,7 +3926,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
                     TriMet Customer Service will be unavailable to serve text messages or Twitter responses from 9:00 p.m.- 11:30 p.m. For immediate assistance regarding safety or security concerns, please contact the police via 911.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of December 16, 2019
+                    Effective as of December 15, 2019
                   </div>
                 </a>
                 <a href="https://news.trimet.org/2019/11/next-up-for-elevator-improvements-sunset-transit-center-park-ride/"
@@ -3952,7 +3952,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
                     The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 7, 2019
+                    Effective as of November 6, 2019
                   </div>
                 </a>
                 <a href="http://trimet.org/alerts/"
@@ -3978,7 +3978,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
                     The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 4, 2019
+                    Effective as of November 3, 2019
                   </div>
                 </a>
               </div>
@@ -4092,7 +4092,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:49 AM
+      3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -4285,7 +4285,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:50 AM
+      3:50 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 1737 SW Morrison St, Portland, OR, USA 97205
@@ -4351,7 +4351,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:45 AM
+      3:45 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -4487,26 +4487,9 @@ exports[`ItineraryBody/otp-ui EScooterRentalItinerary smoke-test 1`] = `
                mode="MICROMOBILITY"
                class="CLASS_NAME_FILLER"
           >
-            <svg version="1.1"
-                 viewbox="0 0 1186 406.9"
-                 width="66%"
-            >
-              <title>
-                Travel by e-scooter
-              </title>
-              <g>
-                <path d="M476.4,292.1l-1.3-105.8c0-50.5-51.8-58.5-124.8-58.5c-25.9,0-31.2,9.8-31.2,16.9c0,19,20.4,16.9,40.2,16.9 c17.7,0,34.9,0.5,34.9,13.8c0,13.5-5.6,17.2-37,17.2c-75.4,0-106.3,36.5-102.1,68.2c4,30.9,35.4,49.7,87.8,49.7h108.7 C467.7,310.9,478.2,306.1,476.4,292.1 M382.5,276.8c-24.6,11.6-50.3,8.7-57.4-6.1c-6.9-14.8,7.4-36.2,32.3-47.6 c24.6-11.6,50.3-8.7,57.4,6.1C421.6,244,407.4,265.4,382.5,276.8">
-                </path>
-                <path d="M202.9,235.8c-2.6-3.4-3.4-7.7-3.4-12.7c0-5.6,4.5-11.9,14-19.8c7.1-4.5,12.2-7.9,15.9-10.6 c4.5-3.4,7.1-5.6,13.2-13.5c7.1-10.6,10.6-21.2,10.6-33.1c0-46.6-37.8-72.7-102.9-72.7H76.5c-32.8,0-74.6,6.6-74.6,71.9v137.5 c0,26.4,14,27.2,37,27.2c20.1,0,41.3-3.4,41.3-21.7v-41.3c0-10.1,7.9-17.2,18.2-17.2c15.6,0,16.9,3.4,39.4,30.4l31.7,36 c7.1,6.9,17.5,14,32.5,14h31.7c15.9,0,25.7-4.2,23.8-11.4C252.9,285.2,202.9,235.8,202.9,235.8 M134.7,184.7 c-29.1,13.5-59.2,10.3-67.4-7.1s8.7-42.6,37.8-56.1s59.2-10.3,67.4,7.1C180.7,146.1,163.8,171,134.7,184.7">
-                </path>
-                <path d="M664.4,277h-32.8c-16.4,0-43.1-0.5-22.2-21.2c3.7-3.7,68.5-74.1,68.5-74.1c12.4-12.4,23.5-20.6,29.6-36.8 c4-10.8-4.8-17.2-19.8-17.2H552c-15.9,0-25.9,6.3-25.9,16.4c0,11.9,10.3,17.2,22.5,17.2h14.5c15.3,0,45.8-1.3,32.3,12.2 c-7.7,7.4-81.5,82.8-81.5,82.8c-12.7,11.6-24.1,27-24.1,37.3c0,14.3,6.6,17.5,22,17.5h141.8c21.4,0,41.5-5.8,43.1-16.7 C698,285.5,682.4,277,664.4,277">
-                </path>
-                <path d="M1106.1,128.4c-17.2,0-37.6-1.9-78.8,5.8c-41,7.7-52.9,15.3-52.9,32.3v116.9c0,17.7,4.8,27.2,40.7,27.2 c37.6,0,42.8-8.7,42.8-25.9l-0.3-20.4c0-71.9-7.4-95.7,40.7-102.6c38.4-5.3,85.4,20.4,85.4-11.4 C1183.9,137.7,1152.4,128.4,1106.1,128.4">
-                </path>
-                <path d="M953,190l-0.3-1.1l-0.3-1.3c-12.7-40.7-73.3-62.2-118.8-62.2H825c-45.2,0-105.8,21.4-118.5,62.2L706,189 l-0.3,1.1c-2.6,9.5-4.2,19.6-4.2,29.9c0,10.6,1.3,20.4,4,30.2l0.5,1.6c11.6,41.3,72.7,61.9,118.5,61.9h9 c46.8,0,110.3-21.7,119.8-64.8c2.4-9.3,3.7-19,3.7-28.8C957,209.6,955.6,199.5,953,190 M849.8,262.2c-38.6,18-79.1,13.8-89.9-9.3 c-10.8-23.3,11.9-56.9,50.5-74.9c38.9-18,79.1-13.8,89.9,9.5C911.2,210.7,888.7,244.2,849.8,262.2">
-                </path>
-              </g>
-            </svg>
+            <span>
+              RAZOR
+            </span>
           </div>
         </div>
       </div>
@@ -4519,7 +4502,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:46 AM
+      3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -4677,7 +4660,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:48 AM
+      3:48 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 205 SW Pine St, Portland, OR, USA 97204
@@ -4743,7 +4726,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:45 AM
+      3:45 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -4980,7 +4963,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:54 AM
+      3:54 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -5284,7 +5267,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:03 AM
+      4:03 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -5418,7 +5401,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:08 AM
+      4:08 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -5632,7 +5615,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:17 AM
+      4:17 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -5850,7 +5833,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:25 AM
+      4:25 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -6094,7 +6077,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:31 AM
+      4:31 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 5112 NE 47th Pl, Portland, OR, USA 97218
@@ -6165,7 +6148,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:50 AM
+      3:50 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -6255,7 +6238,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:02 AM
+      4:02 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -6449,7 +6432,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:05 AM
+      4:05 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -6541,7 +6524,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
                     The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 7, 2019
+                    Effective as of November 6, 2019
                   </div>
                 </a>
                 <a href="http://trimet.org/alerts/"
@@ -6567,7 +6550,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
                     The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 4, 2019
+                    Effective as of November 3, 2019
                   </div>
                 </a>
               </div>
@@ -6734,7 +6717,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:27 AM
+      4:27 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -6946,7 +6929,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:29 AM
+      4:29 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 205 SW Pine St, Portland, OR, USA 97204
@@ -7012,7 +6995,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      5:42 AM
+      1:42 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -7375,7 +7358,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      6:00 AM
+      2:00 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -7553,7 +7536,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:00 AM
+      3:00 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -7687,7 +7670,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:03 AM
+      3:03 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -7853,7 +7836,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:29 AM
+      3:29 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -7987,7 +7970,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:40 AM
+      3:40 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -8169,7 +8152,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:05 AM
+      4:05 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -8302,7 +8285,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:18 AM
+      4:18 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -8516,7 +8499,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:29 AM
+      4:29 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -8729,7 +8712,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:38 AM
+      4:38 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 18311 57th Avenue NE, Kenmore, WA, USA
@@ -8795,7 +8778,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:59 AM
+      4:59 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -9009,7 +8992,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:06 AM
+      5:06 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -9247,7 +9230,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:25 AM
+      5:25 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -9403,7 +9386,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      9:00 AM
+      6:00 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -9609,7 +9592,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      9:12 AM
+      6:12 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -9765,7 +9748,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      9:12 AM
+      6:12 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -9874,7 +9857,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      9:37 AM
+      6:37 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 60plusride-co-us:area_626
@@ -9943,7 +9926,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      12:15 AM
+      9:15 AM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -10121,7 +10104,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      12:19 AM
+      9:19 AM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -10432,7 +10415,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      12:26 AM
+      9:26 AM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 126 Mitchell St SW, Atlanta, GA 30303-3524, United States
@@ -10503,7 +10486,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:50 AM
+      3:50 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -10813,7 +10796,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:02 AM
+      4:02 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -11007,7 +10990,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:05 AM
+      4:05 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -11099,7 +11082,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                     The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 7, 2019
+                    Effective as of November 6, 2019
                   </div>
                 </a>
                 <a href="http://trimet.org/alerts/"
@@ -11125,7 +11108,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                     The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 4, 2019
+                    Effective as of November 3, 2019
                   </div>
                 </a>
               </div>
@@ -11292,7 +11275,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:27 AM
+      4:27 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -11504,7 +11487,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:29 AM
+      4:29 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 205 SW Pine St, Portland, OR, USA 97204
@@ -11570,7 +11553,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:44 AM
+      3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -11726,7 +11709,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:46 AM
+      3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -11834,7 +11817,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
                     TriMet Customer Service will be unavailable to serve text messages or Twitter responses from 9:00 p.m.- 11:30 p.m. For immediate assistance regarding safety or security concerns, please contact the police via 911.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of December 16, 2019
+                    Effective as of December 15, 2019
                   </div>
                 </a>
                 <a href="https://news.trimet.org/2019/11/next-up-for-elevator-improvements-sunset-transit-center-park-ride/"
@@ -11860,7 +11843,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
                     The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 7, 2019
+                    Effective as of November 6, 2019
                   </div>
                 </a>
                 <a href="http://trimet.org/alerts/"
@@ -11886,7 +11869,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
                     The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 4, 2019
+                    Effective as of November 3, 2019
                   </div>
                 </a>
               </div>
@@ -12000,7 +11983,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:49 AM
+      3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -12193,7 +12176,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:50 AM
+      3:50 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 1737 SW Morrison St, Portland, OR, USA 97205
@@ -12259,7 +12242,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:44 AM
+      3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -12415,7 +12398,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:46 AM
+      3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -12523,7 +12506,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
                     TriMet Customer Service will be unavailable to serve text messages or Twitter responses from 9:00 p.m.- 11:30 p.m. For immediate assistance regarding safety or security concerns, please contact the police via 911.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of December 16, 2019
+                    Effective as of December 15, 2019
                   </div>
                 </a>
                 <a href="https://news.trimet.org/2019/11/next-up-for-elevator-improvements-sunset-transit-center-park-ride/"
@@ -12549,7 +12532,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
                     The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 7, 2019
+                    Effective as of November 6, 2019
                   </div>
                 </a>
                 <a href="http://trimet.org/alerts/"
@@ -12575,7 +12558,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
                     The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 4, 2019
+                    Effective as of November 3, 2019
                   </div>
                 </a>
               </div>
@@ -12689,7 +12672,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:49 AM
+      3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -12882,7 +12865,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:50 AM
+      3:50 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 1737 SW Morrison St, Portland, OR, USA 97205
@@ -12948,7 +12931,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:44 AM
+      3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -13104,7 +13087,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:46 AM
+      3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -13212,7 +13195,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
                     TriMet Customer Service will be unavailable to serve text messages or Twitter responses from 9:00 p.m.- 11:30 p.m. For immediate assistance regarding safety or security concerns, please contact the police via 911.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of December 16, 2019
+                    Effective as of December 15, 2019
                   </div>
                 </a>
                 <a href="https://news.trimet.org/2019/11/next-up-for-elevator-improvements-sunset-transit-center-park-ride/"
@@ -13238,7 +13221,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
                     The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 7, 2019
+                    Effective as of November 6, 2019
                   </div>
                 </a>
                 <a href="http://trimet.org/alerts/"
@@ -13264,7 +13247,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
                     The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 4, 2019
+                    Effective as of November 3, 2019
                   </div>
                 </a>
               </div>
@@ -13378,7 +13361,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:49 AM
+      3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -13571,7 +13554,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:50 AM
+      3:50 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 1737 SW Morrison St, Portland, OR, USA 97205
@@ -13637,7 +13620,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:44 AM
+      3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -13793,7 +13776,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:46 AM
+      3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -13901,7 +13884,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
                     TriMet Customer Service will be unavailable to serve text messages or Twitter responses from 9:00 p.m.- 11:30 p.m. For immediate assistance regarding safety or security concerns, please contact the police via 911.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of December 16, 2019
+                    Effective as of December 15, 2019
                   </div>
                 </a>
                 <a href="https://news.trimet.org/2019/11/next-up-for-elevator-improvements-sunset-transit-center-park-ride/"
@@ -13927,7 +13910,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
                     The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 7, 2019
+                    Effective as of November 6, 2019
                   </div>
                 </a>
                 <a href="http://trimet.org/alerts/"
@@ -13953,7 +13936,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
                     The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 4, 2019
+                    Effective as of November 3, 2019
                   </div>
                 </a>
               </div>
@@ -14067,7 +14050,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:49 AM
+      3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -14260,7 +14243,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:50 AM
+      3:50 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 1737 SW Morrison St, Portland, OR, USA 97205
@@ -14333,7 +14316,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      1:58 AM
+      10:58 AM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -14435,7 +14418,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      2:01 AM
+      11:01 AM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -14534,7 +14517,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      2:02 AM
+      11:02 AM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -14690,7 +14673,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      2:08 AM
+      11:08 AM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -14801,7 +14784,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      2:09 AM
+      11:09 AM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -14844,7 +14827,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
             <div class="CLASS_NAME_FILLER">
               <div class="CLASS_NAME_FILLER">
                 <div class="CLASS_NAME_FILLER">
-                  Wait until 2:08 AM to book
+                  Wait until 11:08 AM to book
                 </div>
               </div>
             </div>
@@ -14909,7 +14892,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      2:10 AM
+      11:10 AM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 407 NE 12th Ave, Portland
@@ -14980,7 +14963,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:50 AM
+      3:50 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -15290,7 +15273,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:02 AM
+      4:02 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -15484,7 +15467,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:05 AM
+      4:05 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -15576,7 +15559,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                     The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 7, 2019
+                    Effective as of November 6, 2019
                   </div>
                 </a>
                 <a href="http://trimet.org/alerts/"
@@ -15602,7 +15585,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                     The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 4, 2019
+                    Effective as of November 3, 2019
                   </div>
                 </a>
               </div>
@@ -15769,7 +15752,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:27 AM
+      4:27 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -15981,7 +15964,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:29 AM
+      4:29 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 205 SW Pine St, Portland, OR, USA 97204
@@ -16052,7 +16035,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:50 AM
+      3:50 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -16362,7 +16345,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:02 AM
+      4:02 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -16556,7 +16539,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:05 AM
+      4:05 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -16664,7 +16647,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                     The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 7, 2019
+                    Effective as of November 6, 2019
                   </div>
                 </a>
                 <a href="http://trimet.org/alerts/"
@@ -16690,7 +16673,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                     The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 4, 2019
+                    Effective as of November 3, 2019
                   </div>
                 </a>
               </div>
@@ -16857,7 +16840,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:27 AM
+      4:27 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -17069,7 +17052,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:29 AM
+      4:29 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 205 SW Pine St, Portland, OR, USA 97204
@@ -17140,7 +17123,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:50 AM
+      3:50 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -17450,7 +17433,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:02 AM
+      4:02 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -17644,7 +17627,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:05 AM
+      4:05 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -17736,7 +17719,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                     The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 7, 2019
+                    Effective as of November 6, 2019
                   </div>
                 </a>
                 <a href="http://trimet.org/alerts/"
@@ -17762,7 +17745,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                     The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 4, 2019
+                    Effective as of November 3, 2019
                   </div>
                 </a>
               </div>
@@ -17929,7 +17912,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:27 AM
+      4:27 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -18141,7 +18124,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:29 AM
+      4:29 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 205 SW Pine St, Portland, OR, USA 97204
@@ -18207,7 +18190,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      3:57 AM
+      12:57 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -18439,7 +18422,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      4:04 AM
+      1:04 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -18625,7 +18608,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      4:51 AM
+      1:51 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -18726,7 +18709,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      4:55 AM
+      1:55 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -18928,7 +18911,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      5:06 AM
+      2:06 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -19102,7 +19085,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      5:07 AM
+      2:07 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -19376,7 +19359,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      5:39 AM
+      2:39 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -19531,7 +19514,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      5:41 AM
+      2:41 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 208 James St, Seattle, WA 98104-2212, United States
@@ -19597,7 +19580,7 @@ exports[`ItineraryBody/otp-ui WalkOnlyItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      3:29 AM
+      11:29 AM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -19746,7 +19729,7 @@ exports[`ItineraryBody/otp-ui WalkOnlyItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      3:30 AM
+      11:30 AM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 701 SW 6th Ave, Portland, OR, USA 97204
@@ -19812,7 +19795,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:46 AM
+      3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -19968,7 +19951,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:47 AM
+      3:47 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -20150,7 +20133,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:52 AM
+      3:52 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -20325,7 +20308,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:00 AM
+      4:00 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -20507,7 +20490,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:04 AM
+      4:04 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -20681,7 +20664,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:06 AM
+      4:06 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 1415 SE 28th Ave, Portland, OR, USA 97214
@@ -20747,7 +20730,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:46 AM
+      3:46 PM
       <div color="#bfffb5"
            title="otpUi.ItineraryBody.tripAccessibility.legAccessibilityotpUi.ItineraryBody.tripAccessibility.likelyAccessible"
            class="CLASS_NAME_FILLER"
@@ -20934,7 +20917,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:47 AM
+      3:47 PM
       <div color="#dbe9ff"
            title="otpUi.ItineraryBody.tripAccessibility.legAccessibilityotpUi.ItineraryBody.tripAccessibility.unclear"
            class="CLASS_NAME_FILLER"
@@ -21150,7 +21133,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:52 AM
+      3:52 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -21325,7 +21308,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:00 AM
+      4:00 PM
       <div color="#ffe4e5"
            title="otpUi.ItineraryBody.tripAccessibility.legAccessibilityotpUi.ItineraryBody.tripAccessibility.inaccessible"
            class="CLASS_NAME_FILLER"
@@ -21541,7 +21524,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:04 AM
+      4:04 PM
       <div color="#ffe4e5"
            title="otpUi.ItineraryBody.tripAccessibility.legAccessibilityotpUi.ItineraryBody.tripAccessibility.inaccessible"
            class="CLASS_NAME_FILLER"
@@ -21746,7 +21729,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      8:06 AM
+      4:06 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 1415 SE 28th Ave, Portland, OR, USA 97214
@@ -21812,7 +21795,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:44 AM
+      3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -21968,7 +21951,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:46 AM
+      3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -22079,7 +22062,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
                     TriMet Customer Service will be unavailable to serve text messages or Twitter responses from 9:00 p.m.- 11:30 p.m. For immediate assistance regarding safety or security concerns, please contact the police via 911.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of December 16, 2019
+                    Effective as of December 15, 2019
                   </div>
                 </a>
                 <a href="https://news.trimet.org/2019/11/next-up-for-elevator-improvements-sunset-transit-center-park-ride/"
@@ -22105,7 +22088,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
                     The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 7, 2019
+                    Effective as of November 6, 2019
                   </div>
                 </a>
                 <a href="http://trimet.org/alerts/"
@@ -22131,7 +22114,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
                     The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 4, 2019
+                    Effective as of November 3, 2019
                   </div>
                 </a>
               </div>
@@ -22245,7 +22228,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:49 AM
+      3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -22438,7 +22421,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:50 AM
+      3:50 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 1737 SW Morrison St, Portland, OR, USA 97205
@@ -22504,7 +22487,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:44 AM
+      3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -22660,7 +22643,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:46 AM
+      3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -22782,7 +22765,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
                     TriMet Customer Service will be unavailable to serve text messages or Twitter responses from 9:00 p.m.- 11:30 p.m. For immediate assistance regarding safety or security concerns, please contact the police via 911.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of December 16, 2019
+                    Effective as of December 15, 2019
                   </div>
                 </a>
                 <a href="https://news.trimet.org/2019/11/next-up-for-elevator-improvements-sunset-transit-center-park-ride/"
@@ -22808,7 +22791,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
                     The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 7, 2019
+                    Effective as of November 6, 2019
                   </div>
                 </a>
                 <a href="http://trimet.org/alerts/"
@@ -22834,7 +22817,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
                     The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 4, 2019
+                    Effective as of November 3, 2019
                   </div>
                 </a>
               </div>
@@ -22948,7 +22931,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:49 AM
+      3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -23141,7 +23124,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:50 AM
+      3:50 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 1737 SW Morrison St, Portland, OR, USA 97205
@@ -23207,7 +23190,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:44 AM
+      3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -23360,7 +23343,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:46 AM
+      3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -23465,7 +23448,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
                     TriMet Customer Service will be unavailable to serve text messages or Twitter responses from 9:00 p.m.- 11:30 p.m. For immediate assistance regarding safety or security concerns, please contact the police via 911.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of December 16, 2019
+                    Effective as of December 15, 2019
                   </div>
                 </a>
                 <a href="https://news.trimet.org/2019/11/next-up-for-elevator-improvements-sunset-transit-center-park-ride/"
@@ -23491,7 +23474,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
                     The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 7, 2019
+                    Effective as of November 6, 2019
                   </div>
                 </a>
                 <a href="http://trimet.org/alerts/"
@@ -23517,7 +23500,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
                     The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 4, 2019
+                    Effective as of November 3, 2019
                   </div>
                 </a>
               </div>
@@ -23628,7 +23611,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:49 AM
+      3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -23821,7 +23804,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:50 AM
+      3:50 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 🎉✨🎊 1737 SW Morrison St, Portland, OR, USA 97205 🎉✨🎊
@@ -23887,7 +23870,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:44 AM
+      3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -24043,7 +24026,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:46 AM
+      3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -24151,7 +24134,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
                     TriMet Customer Service will be unavailable to serve text messages or Twitter responses from 9:00 p.m.- 11:30 p.m. For immediate assistance regarding safety or security concerns, please contact the police via 911.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of December 16, 2019
+                    Effective as of December 15, 2019
                   </div>
                 </a>
                 <a href="https://news.trimet.org/2019/11/next-up-for-elevator-improvements-sunset-transit-center-park-ride/"
@@ -24177,7 +24160,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
                     The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 7, 2019
+                    Effective as of November 6, 2019
                   </div>
                 </a>
                 <a href="http://trimet.org/alerts/"
@@ -24203,7 +24186,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
                     The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 4, 2019
+                    Effective as of November 3, 2019
                   </div>
                 </a>
               </div>
@@ -24319,7 +24302,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:49 AM
+      3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -24512,7 +24495,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:50 AM
+      3:50 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 1737 SW Morrison St, Portland, OR, USA 97205
@@ -24578,7 +24561,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:44 AM
+      3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -24733,7 +24716,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:46 AM
+      3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -24841,7 +24824,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
                     TriMet Customer Service will be unavailable to serve text messages or Twitter responses from 9:00 p.m.- 11:30 p.m. For immediate assistance regarding safety or security concerns, please contact the police via 911.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of December 16, 2019
+                    Effective as of December 15, 2019
                   </div>
                 </a>
                 <a href="https://news.trimet.org/2019/11/next-up-for-elevator-improvements-sunset-transit-center-park-ride/"
@@ -24867,7 +24850,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
                     The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 7, 2019
+                    Effective as of November 6, 2019
                   </div>
                 </a>
                 <a href="http://trimet.org/alerts/"
@@ -24893,7 +24876,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
                     The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
                   </div>
                   <div class="CLASS_NAME_FILLER">
-                    Effective as of November 4, 2019
+                    Effective as of November 3, 2019
                   </div>
                 </a>
               </div>
@@ -25012,7 +24995,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:49 AM
+      3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -25205,7 +25188,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      7:50 AM
+      3:50 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 1737 SW Morrison St, Portland, OR, USA 97205
@@ -25271,7 +25254,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      3:57 AM
+      12:57 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -25503,7 +25486,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      4:04 AM
+      1:04 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -25689,7 +25672,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      4:51 AM
+      1:51 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -25790,7 +25773,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      4:55 AM
+      1:55 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -25992,7 +25975,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      5:06 AM
+      2:06 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -26166,7 +26149,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      5:07 AM
+      2:07 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -26440,7 +26423,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      5:39 AM
+      2:39 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -26595,7 +26578,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      5:41 AM
+      2:41 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 208 James St, Seattle, WA 98104-2212, United States
@@ -26661,7 +26644,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      3:57 AM
+      12:57 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -26893,7 +26876,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      4:04 AM
+      1:04 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -27079,7 +27062,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      4:51 AM
+      1:51 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -27180,7 +27163,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      4:55 AM
+      1:55 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -27382,7 +27365,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      5:06 AM
+      2:06 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -27556,7 +27539,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      5:07 AM
+      2:07 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -27830,7 +27813,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      5:39 AM
+      2:39 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -27985,7 +27968,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      5:41 AM
+      2:41 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 208 James St, Seattle, WA 98104-2212, United States
@@ -28051,7 +28034,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      3:57 AM
+      12:57 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -28283,7 +28266,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      4:04 AM
+      1:04 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -28469,7 +28452,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      4:51 AM
+      1:51 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -28570,7 +28553,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      4:55 AM
+      1:55 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -28772,7 +28755,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      5:06 AM
+      2:06 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -28946,7 +28929,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      5:07 AM
+      2:07 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -29220,7 +29203,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      5:39 AM
+      2:39 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       otpUi.TransitLegBody.fromLocation
@@ -29375,7 +29358,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
       </span>
     </div>
     <div class="CLASS_NAME_FILLER">
-      5:41 AM
+      2:41 PM
     </div>
     <span class="CLASS_NAME_FILLER">
       Arrive at 208 James St, Seattle, WA 98104-2212, United States

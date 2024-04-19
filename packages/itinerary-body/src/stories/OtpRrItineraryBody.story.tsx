@@ -2,6 +2,7 @@ import { convertGraphQLResponseToLegacy } from "@opentripplanner/core-utils/lib/
 import { FareProductSelector, Itinerary } from "@opentripplanner/types";
 import React, { FunctionComponent, ReactElement } from "react";
 
+import { Meta } from "@storybook/react";
 import ItineraryBody from "..";
 import {
   CustomTimeColumnContent,
@@ -92,8 +93,9 @@ function OtpRRItineraryBodyWrapper({
 
 export default {
   title: "ItineraryBody/otp-react-redux",
-  component: ItineraryBody
-};
+  component: ItineraryBody,
+  parameters: { date: new Date("March 10, 2021 10:00:00") }
+} as Meta;
 
 export const WalkOnlyItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkOnlyItinerary} />

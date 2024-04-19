@@ -16407,6 +16407,11 @@ mkdirp@^0.5.4:
   dependencies:
     minimist "^1.2.6"
 
+mockdate@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/mockdate/-/mockdate-3.0.5.tgz#789be686deb3149e7df2b663d2bc4392bc3284fb"
+  integrity sha512-iniQP4rj1FhBdBYS/+eQv7j1tadJ9lJtdzgOpvsOHng/GbcDh2Fhdeq+ZRldrPYdXvCyfFUmFeEwEGXZB5I/AQ==
+
 modify-values@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/modify-values/-/modify-values-1.0.1.tgz#b3939fa605546474e3e3e3c63d64bd43b4ee6022"
@@ -20348,6 +20353,13 @@ storybook-i18n@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/storybook-i18n/-/storybook-i18n-3.0.1.tgz#9320f6e091deb006c6db2e4ce632cccff8429047"
   integrity sha512-euCfw6ABqq8jSZ4fCaAIsNwk1FBIrSIr4kMP900bjUgO/mGgzZzXmrYmZaXs51mx9A2p87xo0OktPPZUuKYCTQ==
+
+storybook-mock-date-decorator@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/storybook-mock-date-decorator/-/storybook-mock-date-decorator-1.0.2.tgz#7c360265147a59d36999896d6519702045e02147"
+  integrity sha512-aLM/mRtrgQIiBrgtaWI8r+Jo66pRvlxTYdRoZ3uX3+uMFHGvjIf2AJ7/fAJsQVhTwSQpQ3JBKMiBGqjgRXefYA==
+  dependencies:
+    mockdate "^3.0.5"
 
 storybook-react-intl@^3.0.1:
   version "3.0.1"

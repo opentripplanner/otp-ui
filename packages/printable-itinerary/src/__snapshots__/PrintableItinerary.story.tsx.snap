@@ -572,7 +572,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
           </strong>
           (5066) at
           <strong>
-            8:02 AM
+            4:02 PM
           </strong>
         </div>
         <div class="CLASS_NAME_FILLER">
@@ -582,7 +582,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
           </strong>
           (5104) at
           <strong>
-            8:14 AM
+            4:14 PM
           </strong>
         </div>
       </div>
@@ -955,7 +955,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
           </strong>
           (8383) at
           <strong>
-            7:46 AM
+            3:46 PM
           </strong>
         </div>
         <div class="CLASS_NAME_FILLER">
@@ -965,7 +965,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
           </strong>
           (9757) at
           <strong>
-            7:49 AM
+            3:49 PM
           </strong>
         </div>
       </div>
@@ -1328,7 +1328,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
           </strong>
           (2600) at
           <strong>
-            8:05 AM
+            4:05 PM
           </strong>
         </div>
         <div class="CLASS_NAME_FILLER">
@@ -1338,7 +1338,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
           </strong>
           (8337) at
           <strong>
-            8:27 AM
+            4:27 PM
           </strong>
         </div>
       </div>
@@ -1813,7 +1813,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
           </strong>
           (638) at
           <strong>
-            8:08 AM
+            4:08 PM
           </strong>
         </div>
         <div class="CLASS_NAME_FILLER">
@@ -1823,7 +1823,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
           </strong>
           (7393) at
           <strong>
-            8:17 AM
+            4:17 PM
           </strong>
         </div>
       </div>
@@ -2326,7 +2326,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
           </strong>
           (9835) at
           <strong>
-            12:15 AM
+            8:15 AM
           </strong>
         </div>
         <div class="CLASS_NAME_FILLER">
@@ -2336,7 +2336,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
           </strong>
           (9758) at
           <strong>
-            12:49 AM
+            8:49 AM
           </strong>
         </div>
       </div>
@@ -2451,7 +2451,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
           </strong>
           (9860) at
           <strong>
-            12:57 AM
+            8:57 AM
           </strong>
         </div>
         <div class="CLASS_NAME_FILLER">
@@ -2461,7 +2461,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
           </strong>
           (822) at
           <strong>
-            1:25 AM
+            9:25 AM
           </strong>
         </div>
       </div>
@@ -2786,7 +2786,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
           </strong>
           (2600) at
           <strong>
-            8:05 AM
+            4:05 PM
           </strong>
         </div>
         <div class="CLASS_NAME_FILLER">
@@ -2796,7 +2796,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
           </strong>
           (8337) at
           <strong>
-            8:27 AM
+            4:27 PM
           </strong>
         </div>
       </div>
@@ -2973,7 +2973,7 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
           </strong>
           (8383) at
           <strong>
-            7:46 AM
+            3:46 PM
           </strong>
         </div>
         <div class="CLASS_NAME_FILLER">
@@ -2983,7 +2983,7 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
           </strong>
           (9757) at
           <strong>
-            7:49 AM
+            3:49 PM
           </strong>
         </div>
       </div>
@@ -3169,7 +3169,7 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
           </strong>
           () at
           <strong>
-            2:02 AM
+            11:02 AM
           </strong>
         </div>
         <div class="CLASS_NAME_FILLER">
@@ -3179,7 +3179,7 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
           </strong>
           () at
           <strong>
-            2:08 AM
+            11:08 AM
           </strong>
         </div>
       </div>
@@ -3387,7 +3387,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
           </strong>
           (2345) at
           <strong>
-            4:04 AM
+            1:04 PM
           </strong>
         </div>
         <div class="CLASS_NAME_FILLER">
@@ -3397,7 +3397,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
           </strong>
           (2191) at
           <strong>
-            4:51 AM
+            1:51 PM
           </strong>
         </div>
       </div>
@@ -3453,7 +3453,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
           </strong>
           (35318) at
           <strong>
-            4:55 AM
+            1:55 PM
           </strong>
         </div>
         <div class="CLASS_NAME_FILLER">
@@ -3463,7 +3463,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
           </strong>
           (40032) at
           <strong>
-            5:06 AM
+            2:06 PM
           </strong>
         </div>
       </div>
@@ -3552,7 +3552,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
           </strong>
           (7080) at
           <strong>
-            5:07 AM
+            2:07 PM
           </strong>
         </div>
         <div class="CLASS_NAME_FILLER">
@@ -3562,7 +3562,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
           </strong>
           (490) at
           <strong>
-            5:39 AM
+            2:39 PM
           </strong>
         </div>
       </div>
@@ -3762,7 +3762,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
           </strong>
           (7439) at
           <strong>
-            7:47 AM
+            3:47 PM
           </strong>
         </div>
         <div class="CLASS_NAME_FILLER">
@@ -3772,7 +3772,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
           </strong>
           (7459) at
           <strong>
-            7:52 AM
+            3:52 PM
           </strong>
         </div>
       </div>
@@ -3865,7 +3865,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
           </strong>
           (2626) at
           <strong>
-            8:00 AM
+            4:00 PM
           </strong>
         </div>
         <div class="CLASS_NAME_FILLER">
@@ -3875,7 +3875,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
           </strong>
           (2613) at
           <strong>
-            8:04 AM
+            4:04 PM
           </strong>
         </div>
       </div>
@@ -4092,7 +4092,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
           </strong>
           (7439) at
           <strong>
-            7:47 AM
+            3:47 PM
           </strong>
         </div>
         <div class="CLASS_NAME_FILLER">
@@ -4102,7 +4102,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
           </strong>
           (7459) at
           <strong>
-            7:52 AM
+            3:52 PM
           </strong>
         </div>
       </div>
@@ -4226,7 +4226,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
           </strong>
           (2626) at
           <strong>
-            8:00 AM
+            4:00 PM
           </strong>
         </div>
         <div class="CLASS_NAME_FILLER">
@@ -4236,7 +4236,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
           </strong>
           (2613) at
           <strong>
-            8:04 AM
+            4:04 PM
           </strong>
         </div>
       </div>
@@ -4422,7 +4422,7 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
           </strong>
           (8383) at
           <strong>
-            7:46 AM
+            3:46 PM
           </strong>
         </div>
         <div class="CLASS_NAME_FILLER">
@@ -4432,7 +4432,7 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
           </strong>
           (9757) at
           <strong>
-            7:49 AM
+            3:49 PM
           </strong>
         </div>
       </div>
