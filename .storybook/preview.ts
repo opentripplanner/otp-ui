@@ -5,7 +5,7 @@ import itineraryBodyHandlers from "../packages/itinerary-body/src/__mocks__/hand
 import geocoderHandlers from "../packages/geocoder/src/test-fixtures/handlers";
 import tileLayerHandlers from '../packages/otp2-tile-overlay/src/mocks/handlers'
 
-import { reactIntl } from './react-intl.js';
+import { reactIntl } from './react-intl.ts';
 import { Preview } from "@storybook/react";
 import { mockDateDecorator } from "storybook-mock-date-decorator";
 

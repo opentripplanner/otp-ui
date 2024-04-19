@@ -57,5 +57,6 @@ export const reactIntl = {
   defaultLocale: "en-US",
   formats,
   locales,
-  messages
+  messages,
+  timeZone: 'America/Los_Angeles'
 };
