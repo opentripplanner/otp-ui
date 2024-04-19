@@ -23,11 +23,16 @@ jobs:
         run: yarn typescript
       - name: Build Storybook
         run: yarn build-storybook --quiet
-      - name: Serve Storybook and run tests
+      - name: Serve Storybook and run snapshots
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "npx http-server storybook-static --port 6006 --silent" \
-            "npx wait-on tcp:6006 && yarn test-storybook"
+            "npx wait-on tcp:6006 && RUN_ONLY=SNAPSHOTS yarn test-storybook"
+      - name: Serve Storybook and run a11y tests
+        run: |
+          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "npx http-server storybook-static --port 6006 --silent" \
+            "npx wait-on tcp:6006 && RUN_ONLY=A11Y yarn test-storybook"
       # - name: Run a11y tests
       #   run: yarn a11y-test
       - env:
