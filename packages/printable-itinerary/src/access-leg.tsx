@@ -14,13 +14,15 @@ interface Props {
   config: Config;
   leg: Leg;
   LegIcon: LegIconComponent;
+  useMetricUnits?: boolean;
 }
 
 export default function AccessLeg({
   accessibilityScoreGradationMap,
   config,
   leg,
-  LegIcon
+  LegIcon,
+  useMetricUnits = false
 }: Props): ReactElement {
   return (
     <S.Leg>
@@ -31,12 +33,16 @@ export default function AccessLeg({
         LegIcon={LegIcon}
       />
       <S.LegBody>
-        <S.AccessLegDescription config={config} leg={leg} />
+        <S.AccessLegDescription
+          config={config}
+          leg={leg}
+          useMetricUnits={useMetricUnits}
+        />
         {!leg.rideHailingEstimate && (
           <S.LegDetails>
             {leg.steps.map((step, k) => (
               <S.LegDetail key={k}>
-                <S.AccessLegStep step={step} />
+                <S.AccessLegStep step={step} useMetricUnits={useMetricUnits} />
               </S.LegDetail>
             ))}
           </S.LegDetails>
