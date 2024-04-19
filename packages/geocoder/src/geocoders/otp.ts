@@ -1,6 +1,6 @@
 // Prettier does not support typescript annotation
 // eslint-disable-next-line prettier/prettier
-import type { AutocompleteQuery, MultiGeocoderResponse } from "./types";
+import type { AutocompleteQuery, MultiGeocoderResponse, SearchQuery } from "./types";
 
 import Geocoder from "./abstract-geocoder";
 import { OTPGeocoderResponse } from "../apis/otp";
@@ -35,6 +35,10 @@ export default class OTPGeocoder extends Geocoder {
       url: baseUrl,
       ...query
     };
+  }
+
+  getSearchQuery(query: SearchQuery): SearchQuery {
+      return this.getAutocompleteQuery(query)
   }
 
 
