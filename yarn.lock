@@ -2163,6 +2163,13 @@
   resolved "https://registry.yarnpkg.com/@conveyal/lonlat/-/lonlat-1.4.1.tgz#9970f33a2dc810ac08e89c844901405f18da478b"
   integrity sha512-Z4W1NmvDsnkylhPMDWCk7kLaAjRtA9BVixASFxDPVkQwAiceOxaLEo4UVbZys4jNFzdtbcZ1UVPr6SQHBmEsrA==
 
+"@danielhep/storybook-react-intl@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@danielhep/storybook-react-intl/-/storybook-react-intl-3.0.1.tgz#d979c0a2d3920c95d759829724461dda75638094"
+  integrity sha512-OTwG+B9Bz7gOSP8R8jD/YfiCcIkJG784N2x+kWLtJjYHoYkwDnn88ri1vCi2QQ6d2hMQ6paGiS1meOJNGZxwcA==
+  dependencies:
+    storybook-i18n "^3.0.1"
+
 "@discoveryjs/json-ext@^0.5.3":
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
@@ -4532,6 +4539,11 @@
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
+
+"@opentripplanner/types@6.4.0":
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-6.4.0.tgz#6f7a3475ea982c7b7d8b2f1383a6d775dfabe62a"
+  integrity sha512-PS+CUwETLf0WzAUZg3qiey+SBigaf0CfknKF1XMOM+zJVc2c8nN34hgnwV7sS+RKs030KZFAgIn8p035ErcBuQ==
 
 "@peculiar/asn1-schema@^2.1.6", "@peculiar/asn1-schema@^2.3.0":
   version "2.3.3"
@@ -20360,13 +20372,6 @@ storybook-mock-date-decorator@^1.0.2:
   integrity sha512-aLM/mRtrgQIiBrgtaWI8r+Jo66pRvlxTYdRoZ3uX3+uMFHGvjIf2AJ7/fAJsQVhTwSQpQ3JBKMiBGqjgRXefYA==
   dependencies:
     mockdate "^3.0.5"
-
-storybook-react-intl@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/storybook-react-intl/-/storybook-react-intl-3.0.1.tgz#29187f481e1996f858c9b55e3017e10879e5e468"
-  integrity sha512-ZKZibA3F17+dfSDQ7UpGNDwO0OMcakR5nZRGMVF+egmdtb/ADkEb7E1orQgXD/i57xxWDkL0IemRoI1I7rA1Kw==
-  dependencies:
-    storybook-i18n "^3.0.1"
 
 storybook@7.6.17:
   version "7.6.17"
