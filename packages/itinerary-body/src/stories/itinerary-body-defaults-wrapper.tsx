@@ -82,37 +82,39 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
     };
 
     return (
-      <ItineraryBodyComponent
-        AlertBodyIcon={AlertBodyIcon}
-        AlertToggleIcon={AlertToggleIcon}
-        alwaysCollapseAlerts={alwaysCollapseAlerts}
-        config={config}
-        defaultFareSelector={defaultFareSelector}
-        diagramVisible={diagramVisible}
-        frameLeg={action("frameLeg")}
-        itinerary={itinerary}
-        LegIcon={LegIcon}
-        LineColumnContent={LineColumnContent || DefaultLineColumnContent}
-        mapillaryKey="fake key, but ok because the api response is also fake"
-        PlaceName={PlaceName || DefaultPlaceName}
-        RouteDescription={RouteDescription || DefaultRouteDescription}
-        RouteDescriptionFooter={
-          RouteDescriptionFooter || DefaultRouteDescriptionFooter
-        }
-        routingType="ITINERARY"
-        setActiveLeg={action("setActiveLeg")}
-        setLegDiagram={this.setLegDiagram}
-        setViewedTrip={action("setViewedTrip")}
-        showAgencyInfo={showAgencyInfo}
-        showElevationProfile
-        showLegIcon={showLegIcon}
-        showMapButtonColumn={showMapButtonColumn}
-        showViewTripButton={showViewTripButton}
-        TimeColumnContent={TimeColumnContent}
-        toRouteAbbreviation={toRouteAbbreviation}
-        TransitLegSubheader={TransitLegSubheader}
-        TransitLegSummary={TransitLegSummary || DefaultTransitLegSummary}
-      />
+      <div style={{ width: "600px" }}>
+        <ItineraryBodyComponent
+          AlertBodyIcon={AlertBodyIcon}
+          AlertToggleIcon={AlertToggleIcon}
+          alwaysCollapseAlerts={alwaysCollapseAlerts}
+          config={config}
+          defaultFareSelector={defaultFareSelector}
+          diagramVisible={diagramVisible}
+          frameLeg={action("frameLeg")}
+          itinerary={itinerary}
+          LegIcon={LegIcon}
+          LineColumnContent={LineColumnContent || DefaultLineColumnContent}
+          mapillaryKey="fake key, but ok because the api response is also fake"
+          PlaceName={PlaceName || DefaultPlaceName}
+          RouteDescription={RouteDescription || DefaultRouteDescription}
+          RouteDescriptionFooter={
+            RouteDescriptionFooter || DefaultRouteDescriptionFooter
+          }
+          routingType="ITINERARY"
+          setActiveLeg={action("setActiveLeg")}
+          setLegDiagram={this.setLegDiagram}
+          setViewedTrip={action("setViewedTrip")}
+          showAgencyInfo={showAgencyInfo}
+          showElevationProfile
+          showLegIcon={showLegIcon}
+          showMapButtonColumn={showMapButtonColumn}
+          showViewTripButton={showViewTripButton}
+          TimeColumnContent={TimeColumnContent}
+          toRouteAbbreviation={toRouteAbbreviation}
+          TransitLegSubheader={TransitLegSubheader}
+          TransitLegSummary={TransitLegSummary || DefaultTransitLegSummary}
+        />
+      </div>
     );
   }
 }
