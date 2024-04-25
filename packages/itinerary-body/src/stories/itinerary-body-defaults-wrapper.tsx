@@ -82,7 +82,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
     };
 
     return (
-      <div style={{ width: "600px", position: "relative" }}>
+      <div style={{ width: "600px" }}>
         <ItineraryBodyComponent
           AlertBodyIcon={AlertBodyIcon}
           AlertToggleIcon={AlertToggleIcon}
