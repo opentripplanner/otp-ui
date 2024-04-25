@@ -1,5 +1,5 @@
 import coreUtils from "@opentripplanner/core-utils";
-import { Leg, ElevationProfile } from "@opentripplanner/types";
+import { Leg } from "@opentripplanner/types";
 import React, { Component, ReactElement } from "react";
 import { FormattedMessage, injectIntl, IntlShape } from "react-intl";
 import ReactResizeDetector from "react-resize-detector";
@@ -22,7 +22,7 @@ interface State {
 
 const METERS_TO_FEET = 3.28084;
 
-function generateSvg(profile: ElevationProfile, width) {
+function generateSvg(profile, width) {
   const height = 30;
   const { points: ptArr, traversed } = profile;
   let { minElev, maxElev } = profile;
