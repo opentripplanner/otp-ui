@@ -98,7 +98,7 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
         <strong>
           7 minutes
         </strong>
-        <button aria-label="otpUi.TripDetails.showDetail"
+        <button aria-label="Show details"
                 aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
@@ -189,7 +189,7 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
             19g
           </strong>
         </span>
-        <button aria-label="otpUi.TripDetails.showDetail"
+        <button aria-label="Show details"
                 aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
@@ -263,34 +263,34 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
           scope="col"
       >
         <strong>
-          otpUi.TripDetails.FareTable.regular
+          Adult
         </strong>
       </th>
       <th scope="col">
         <strong>
-          otpUi.TripDetails.FareTable.cash
+          Cash
         </strong>
         <br>
         $10.25
       </th>
       <th scope="col">
         <strong>
-          otpUi.TripDetails.FareTable.electronic
+          Electronic
         </strong>
         <br>
         -
         <span class="CLASS_NAME_FILLER">
-          otpUi.TripDetails.missingFareTotal
+          No fare total available
         </span>
       </th>
       <th scope="col">
         <strong>
-          otpUi.TripDetails.FareTable.special
+          Special
         </strong>
         <br>
         -
         <span class="CLASS_NAME_FILLER">
-          otpUi.TripDetails.missingFareTotal
+          No fare total available
         </span>
       </th>
     </thead>
@@ -304,13 +304,13 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
       <td>
         -
         <span class="CLASS_NAME_FILLER">
-          otpUi.TripDetails.legMissingFareInfo
+          No fare information for this leg
         </span>
       </td>
       <td>
         -
         <span class="CLASS_NAME_FILLER">
-          otpUi.TripDetails.legMissingFareInfo
+          No fare information for this leg
         </span>
       </td>
     </tr>
@@ -411,24 +411,24 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
           scope="col"
       >
         <strong>
-          otpUi.TripDetails.FareTable.youth
+          Youth
         </strong>
       </th>
       <th scope="col">
         <strong>
-          otpUi.TripDetails.FareTable.cash
+          Cash
         </strong>
         <br>
         $0.00
       </th>
       <th scope="col">
         <strong>
-          otpUi.TripDetails.FareTable.electronic
+          Electronic
         </strong>
         <br>
         -
         <span class="CLASS_NAME_FILLER">
-          otpUi.TripDetails.missingFareTotal
+          No fare total available
         </span>
       </th>
     </thead>
@@ -442,7 +442,7 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
       <td>
         -
         <span class="CLASS_NAME_FILLER">
-          otpUi.TripDetails.legMissingFareInfo
+          No fare information for this leg
         </span>
       </td>
     </tr>
@@ -486,24 +486,24 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
           scope="col"
       >
         <strong>
-          otpUi.TripDetails.FareTable.senior
+          Senior
         </strong>
       </th>
       <th scope="col">
         <strong>
-          otpUi.TripDetails.FareTable.cash
+          Cash
         </strong>
         <br>
         $9.75
       </th>
       <th scope="col">
         <strong>
-          otpUi.TripDetails.FareTable.electronic
+          Electronic
         </strong>
         <br>
         -
         <span class="CLASS_NAME_FILLER">
-          otpUi.TripDetails.missingFareTotal
+          No fare total available
         </span>
       </th>
     </thead>
@@ -517,7 +517,7 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
       <td>
         -
         <span class="CLASS_NAME_FILLER">
-          otpUi.TripDetails.legMissingFareInfo
+          No fare information for this leg
         </span>
       </td>
     </tr>
@@ -691,34 +691,34 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                       scope="col"
                   >
                     <strong>
-                      otpUi.TripDetails.FareTable.regular
+                      Adult
                     </strong>
                   </th>
                   <th scope="col">
                     <strong>
-                      otpUi.TripDetails.FareTable.cash
+                      Cash
                     </strong>
                     <br>
                     $10.25
                   </th>
                   <th scope="col">
                     <strong>
-                      otpUi.TripDetails.FareTable.electronic
+                      Electronic
                     </strong>
                     <br>
                     -
                     <span class="CLASS_NAME_FILLER">
-                      otpUi.TripDetails.missingFareTotal
+                      No fare total available
                     </span>
                   </th>
                   <th scope="col">
                     <strong>
-                      otpUi.TripDetails.FareTable.special
+                      Special
                     </strong>
                     <br>
                     -
                     <span class="CLASS_NAME_FILLER">
-                      otpUi.TripDetails.missingFareTotal
+                      No fare total available
                     </span>
                   </th>
                 </thead>
@@ -732,13 +732,13 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                   <td>
                     -
                     <span class="CLASS_NAME_FILLER">
-                      otpUi.TripDetails.legMissingFareInfo
+                      No fare information for this leg
                     </span>
                   </td>
                   <td>
                     -
                     <span class="CLASS_NAME_FILLER">
-                      otpUi.TripDetails.legMissingFareInfo
+                      No fare information for this leg
                     </span>
                   </td>
                 </tr>
@@ -839,24 +839,24 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                       scope="col"
                   >
                     <strong>
-                      otpUi.TripDetails.FareTable.youth
+                      Youth
                     </strong>
                   </th>
                   <th scope="col">
                     <strong>
-                      otpUi.TripDetails.FareTable.cash
+                      Cash
                     </strong>
                     <br>
                     $0.00
                   </th>
                   <th scope="col">
                     <strong>
-                      otpUi.TripDetails.FareTable.electronic
+                      Electronic
                     </strong>
                     <br>
                     -
                     <span class="CLASS_NAME_FILLER">
-                      otpUi.TripDetails.missingFareTotal
+                      No fare total available
                     </span>
                   </th>
                 </thead>
@@ -870,7 +870,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                   <td>
                     -
                     <span class="CLASS_NAME_FILLER">
-                      otpUi.TripDetails.legMissingFareInfo
+                      No fare information for this leg
                     </span>
                   </td>
                 </tr>
@@ -914,24 +914,24 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                       scope="col"
                   >
                     <strong>
-                      otpUi.TripDetails.FareTable.senior
+                      Senior
                     </strong>
                   </th>
                   <th scope="col">
                     <strong>
-                      otpUi.TripDetails.FareTable.cash
+                      Cash
                     </strong>
                     <br>
                     $9.75
                   </th>
                   <th scope="col">
                     <strong>
-                      otpUi.TripDetails.FareTable.electronic
+                      Electronic
                     </strong>
                     <br>
                     -
                     <span class="CLASS_NAME_FILLER">
-                      otpUi.TripDetails.missingFareTotal
+                      No fare total available
                     </span>
                   </th>
                 </thead>
@@ -945,7 +945,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                   <td>
                     -
                     <span class="CLASS_NAME_FILLER">
-                      otpUi.TripDetails.legMissingFareInfo
+                      No fare information for this leg
                     </span>
                   </td>
                 </tr>
@@ -1068,7 +1068,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
         <strong>
           29 minutes
         </strong>
-        <button aria-label="otpUi.TripDetails.showDetail"
+        <button aria-label="Show details"
                 aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
@@ -1159,7 +1159,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
             9,031g
           </strong>
         </span>
-        <button aria-label="otpUi.TripDetails.showDetail"
+        <button aria-label="Show details"
                 aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
@@ -1323,7 +1323,7 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
         <strong>
           5 minutes
         </strong>
-        <button aria-label="otpUi.TripDetails.showDetail"
+        <button aria-label="Show details"
                 aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
@@ -1414,7 +1414,7 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
             7g
           </strong>
         </span>
-        <button aria-label="otpUi.TripDetails.showDetail"
+        <button aria-label="Show details"
                 aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
@@ -1578,7 +1578,7 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
         <strong>
           12 minutes
         </strong>
-        <button aria-label="otpUi.TripDetails.showDetail"
+        <button aria-label="Show details"
                 aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
@@ -1669,7 +1669,7 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
             4,682g
           </strong>
         </span>
-        <button aria-label="otpUi.TripDetails.showDetail"
+        <button aria-label="Show details"
                 aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
@@ -1890,7 +1890,7 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
         <strong>
           2 minutes
         </strong>
-        <button aria-label="otpUi.TripDetails.showDetail"
+        <button aria-label="Show details"
                 aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
@@ -1981,7 +1981,7 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
             61g
           </strong>
         </span>
-        <button aria-label="otpUi.TripDetails.showDetail"
+        <button aria-label="Show details"
                 aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
@@ -2152,7 +2152,7 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
             </strong>
           </span>
         </span>
-        <button aria-label="otpUi.TripDetails.showDetail"
+        <button aria-label="Show details"
                 aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
@@ -2233,7 +2233,7 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
         <strong>
           2 minutes
         </strong>
-        <button aria-label="otpUi.TripDetails.showDetail"
+        <button aria-label="Show details"
                 aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
@@ -2324,7 +2324,7 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
             319g
           </strong>
         </span>
-        <button aria-label="otpUi.TripDetails.showDetail"
+        <button aria-label="Show details"
                 aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
@@ -2433,7 +2433,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
             May 23, 2023
           </strong>
         </span>
-        <button aria-label="otpUi.TripDetails.showDetail"
+        <button aria-label="Show details"
                 aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
@@ -2580,7 +2580,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
         <strong>
           2 minutes
         </strong>
-        <button aria-label="otpUi.TripDetails.showDetail"
+        <button aria-label="Show details"
                 aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
@@ -2663,7 +2663,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
             319g
           </strong>
         </span>
-        <button aria-label="otpUi.TripDetails.showDetail"
+        <button aria-label="Show details"
                 aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
@@ -2827,7 +2827,7 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
         <strong>
           1 minute
         </strong>
-        <button aria-label="otpUi.TripDetails.showDetail"
+        <button aria-label="Show details"
                 aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
@@ -2918,7 +2918,7 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
             1g
           </strong>
         </span>
-        <button aria-label="otpUi.TripDetails.showDetail"
+        <button aria-label="Show details"
                 aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
@@ -3082,7 +3082,7 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
         <strong>
           2 minutes
         </strong>
-        <button aria-label="otpUi.TripDetails.showDetail"
+        <button aria-label="Show details"
                 aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
@@ -3173,7 +3173,7 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
             61g
           </strong>
         </span>
-        <button aria-label="otpUi.TripDetails.showDetail"
+        <button aria-label="Show details"
                 aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"

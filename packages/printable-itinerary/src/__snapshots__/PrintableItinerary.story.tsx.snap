@@ -38,7 +38,7 @@ exports[`PrintableItinerary BikeOnlyItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head EAST on
+            Head east on
             <span class="CLASS_NAME_FILLER">
               SW Alder St
             </span>
@@ -49,7 +49,7 @@ exports[`PrintableItinerary BikeOnlyItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SW 5th Ave
             </span>
@@ -60,7 +60,7 @@ exports[`PrintableItinerary BikeOnlyItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SW Morrison St
             </span>
@@ -111,7 +111,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head WEST on
+            Head west on
             <span class="CLASS_NAME_FILLER">
               SE Clinton St
             </span>
@@ -122,7 +122,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SE 30th Ave
             </span>
@@ -184,7 +184,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               SE 30th Ave
             </span>
@@ -195,7 +195,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               SE Harrison St
             </span>
@@ -206,7 +206,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SE 29th Ave
             </span>
@@ -217,7 +217,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               SE Hawthorne Blvd
             </span>
@@ -250,7 +250,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               SE Hawthorne Blvd
             </span>
@@ -261,7 +261,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SE 28th Ave
             </span>
@@ -272,7 +272,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               SE Madison St
             </span>
@@ -323,7 +323,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head NORTH on
+            Head north on
             <span class="CLASS_NAME_FILLER">
               SE 30th Ave
             </span>
@@ -334,7 +334,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SE Stark St
             </span>
@@ -345,7 +345,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SE 29th Ave
             </span>
@@ -407,7 +407,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               SE 29th Ave
             </span>
@@ -418,7 +418,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               SE Pine St
             </span>
@@ -429,7 +429,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SE 28th Ave
             </span>
@@ -440,7 +440,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               SE Ankeny St
             </span>
@@ -451,7 +451,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SE 24th Ave
             </span>
@@ -462,7 +462,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               NE 24th Ave
             </span>
@@ -473,7 +473,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               NE Glisan St
             </span>
@@ -506,7 +506,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            HARD_LEFT on
+            Hard left on
             <span class="CLASS_NAME_FILLER">
               NE Glisan St
             </span>
@@ -517,7 +517,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               NE 24th Ave
             </span>
@@ -528,7 +528,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               NE Sandy Blvd
             </span>
@@ -609,7 +609,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head NORTHEAST on
+            Head northeast on
             <span class="CLASS_NAME_FILLER">
               NE Sandy Blvd
             </span>
@@ -620,7 +620,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            HARD_LEFT on
+            Hard left on
             <span class="CLASS_NAME_FILLER">
               NE Alameda St
             </span>
@@ -682,7 +682,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            HARD_LEFT on
+            Hard left on
             <span class="CLASS_NAME_FILLER">
               NE Alameda St
             </span>
@@ -693,7 +693,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            HARD_LEFT on
+            Hard left on
             <span class="CLASS_NAME_FILLER">
               NE 57th Ave
             </span>
@@ -704,7 +704,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               NE Cully Blvd
             </span>
@@ -715,7 +715,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               NE 60th Ave
             </span>
@@ -748,7 +748,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               NE 60th Ave
             </span>
@@ -759,7 +759,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               NE Going St
             </span>
@@ -810,7 +810,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head SOUTHEAST on
+            Head southeast on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -845,7 +845,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -856,7 +856,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               SW 6th Ave
             </span>
@@ -867,7 +867,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               SW Morrison St
             </span>
@@ -878,7 +878,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -911,7 +911,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               Pioneer Sq N (path)
             </span>
@@ -992,7 +992,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head WEST on
+            Head west on
             <span class="CLASS_NAME_FILLER">
               Providence Park (path)
             </span>
@@ -1027,7 +1027,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -1038,7 +1038,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -1049,7 +1049,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SW Morrison St
             </span>
@@ -1103,7 +1103,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head SOUTHWEST on
+            Head southwest on
             <span class="CLASS_NAME_FILLER">
               parking aisle
             </span>
@@ -1114,7 +1114,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SW Murray Blvd
             </span>
@@ -1125,7 +1125,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               NW Murray Blvd
             </span>
@@ -1136,7 +1136,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            SLIGHTLY_RIGHT on
+            Slight right on
             <span class="CLASS_NAME_FILLER">
               NW Murray Blvd
             </span>
@@ -1147,7 +1147,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               NW Sunset Hwy
             </span>
@@ -1158,7 +1158,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               NW Sunset Hwy
             </span>
@@ -1169,7 +1169,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               SW Cedar Hills Blvd
             </span>
@@ -1180,7 +1180,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SW Barnes Rd
             </span>
@@ -1191,7 +1191,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               service road
             </span>
@@ -1202,7 +1202,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               Sunset TC
             </span>
@@ -1243,7 +1243,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            SLIGHTLY_RIGHT on
+            Slight right on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -1254,7 +1254,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               steps
             </span>
@@ -1265,7 +1265,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -1276,7 +1276,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               Sunset TC (path)
             </span>
@@ -1373,7 +1373,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head NORTHEAST on
+            Head northeast on
             <span class="CLASS_NAME_FILLER">
               Oak/SW 1st Ave (path)
             </span>
@@ -1384,7 +1384,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -1395,7 +1395,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               SW Oak St
             </span>
@@ -1406,7 +1406,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SW 1st Ave
             </span>
@@ -1417,7 +1417,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               SW Pine St
             </span>
@@ -1468,7 +1468,7 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head EAST on
+            Head east on
             <span class="CLASS_NAME_FILLER">
               SW Alder St
             </span>
@@ -1479,7 +1479,7 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               SW 4th Ave
             </span>
@@ -1522,7 +1522,7 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               SW 4th Ave
             </span>
@@ -1533,7 +1533,7 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SW Pine St
             </span>
@@ -1584,7 +1584,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head SOUTH on
+            Head south on
             <span class="CLASS_NAME_FILLER">
               SE 30th Ave
             </span>
@@ -1595,7 +1595,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SE Belmont St
             </span>
@@ -1606,7 +1606,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               SE 29th Ave
             </span>
@@ -1617,7 +1617,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SE Taylor St
             </span>
@@ -1662,7 +1662,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               SE Taylor St
             </span>
@@ -1673,7 +1673,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SE 28th Ave
             </span>
@@ -1684,7 +1684,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               NE 28th Ave
             </span>
@@ -1695,7 +1695,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            SLIGHTLY_RIGHT on
+            Slight right on
             <span class="CLASS_NAME_FILLER">
               NE Halsey St
             </span>
@@ -1706,7 +1706,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               NE Halsey St
             </span>
@@ -1717,7 +1717,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            SLIGHTLY_LEFT on
+            Slight left on
             <span class="CLASS_NAME_FILLER">
               NE 28th Ave
             </span>
@@ -1728,7 +1728,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            SLIGHTLY_LEFT on
+            Slight left on
             <span class="CLASS_NAME_FILLER">
               NE 28th Ave
             </span>
@@ -1739,7 +1739,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               NE Broadway
             </span>
@@ -1772,7 +1772,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               street transit link
             </span>
@@ -1850,7 +1850,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head NORTH on
+            Head north on
             <span class="CLASS_NAME_FILLER">
               NE 33rd Ave
             </span>
@@ -1861,7 +1861,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               NE Shaver St
             </span>
@@ -1872,7 +1872,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               NE 38th Ave
             </span>
@@ -1917,7 +1917,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               NE 38th Ave
             </span>
@@ -1928,7 +1928,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               NE Skidmore St
             </span>
@@ -1939,7 +1939,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               NE 42nd Ave
             </span>
@@ -1950,7 +1950,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               NE Alberta St
             </span>
@@ -1961,7 +1961,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               NE 47th Pl
             </span>
@@ -2020,7 +2020,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head SOUTH on
+            Head south on
             <span class="CLASS_NAME_FILLER">
               Courtland Street Northeast
             </span>
@@ -2031,7 +2031,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -2042,7 +2042,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               Peachtree Center Avenue Northeast
             </span>
@@ -2078,7 +2078,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            HARD_RIGHT on
+            Hard right on
             <span class="CLASS_NAME_FILLER">
               Peachtree Center Avenue Northeast
             </span>
@@ -2089,7 +2089,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               service road
             </span>
@@ -2100,7 +2100,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               Peachtree Center Cycle Track
             </span>
@@ -2111,7 +2111,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               Edgewood Avenue Northeast
             </span>
@@ -2122,7 +2122,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               Pryor Street Southwest
             </span>
@@ -2133,7 +2133,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               Pryor Street
             </span>
@@ -2144,7 +2144,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               Pryor Street Southwest
             </span>
@@ -2155,7 +2155,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -2166,7 +2166,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               sidewalk
             </span>
@@ -2217,7 +2217,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head NORTHEAST on
+            Head northeast on
             <span class="CLASS_NAME_FILLER">
               parking aisle
             </span>
@@ -2228,7 +2228,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               Northeast Cherry Lane
             </span>
@@ -2239,7 +2239,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               Northeast Cherry Drive
             </span>
@@ -2250,7 +2250,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               Northeast Century Boulevard
             </span>
@@ -2261,7 +2261,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               Northeast Century Boulevard (path)
             </span>
@@ -2272,7 +2272,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -2283,7 +2283,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               Orenco
             </span>
@@ -2363,7 +2363,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head EAST on
+            Head east on
             <span class="CLASS_NAME_FILLER">
               Providence Park
             </span>
@@ -2374,7 +2374,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -2385,7 +2385,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -2396,7 +2396,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               Southwest 17th Avenue
             </span>
@@ -2407,7 +2407,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               West Burnside Street
             </span>
@@ -2488,7 +2488,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head WEST on
+            Head west on
             <span class="CLASS_NAME_FILLER">
               East Burnside Street (sidewalk)
             </span>
@@ -2499,7 +2499,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               Southeast 94th Avenue
             </span>
@@ -2510,7 +2510,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               Northeast 94th Avenue
             </span>
@@ -2521,7 +2521,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               Northeast Oregon Street
             </span>
@@ -2577,7 +2577,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head SOUTHWEST on
+            Head southwest on
             <span class="CLASS_NAME_FILLER">
               parking aisle
             </span>
@@ -2588,7 +2588,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SW Murray Blvd
             </span>
@@ -2599,7 +2599,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               NW Murray Blvd
             </span>
@@ -2610,7 +2610,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            SLIGHTLY_RIGHT on
+            Slight right on
             <span class="CLASS_NAME_FILLER">
               NW Murray Blvd
             </span>
@@ -2621,7 +2621,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               NW Sunset Hwy
             </span>
@@ -2632,7 +2632,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               NW Sunset Hwy
             </span>
@@ -2643,7 +2643,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               SW Cedar Hills Blvd
             </span>
@@ -2654,7 +2654,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SW Barnes Rd
             </span>
@@ -2665,7 +2665,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               service road
             </span>
@@ -2676,7 +2676,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               Sunset TC
             </span>
@@ -2709,7 +2709,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            SLIGHTLY_RIGHT on
+            Slight right on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -2720,7 +2720,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               steps
             </span>
@@ -2731,7 +2731,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -2742,7 +2742,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               Sunset TC (path)
             </span>
@@ -2823,7 +2823,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head NORTHEAST on
+            Head northeast on
             <span class="CLASS_NAME_FILLER">
               Oak/SW 1st Ave (path)
             </span>
@@ -2834,7 +2834,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -2845,7 +2845,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               SW Oak St
             </span>
@@ -2856,7 +2856,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SW 1st Ave
             </span>
@@ -2867,7 +2867,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               SW Pine St
             </span>
@@ -2918,7 +2918,7 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head NORTHWEST on
+            Head northwest on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -2929,7 +2929,7 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               Pioneer Sq N (path)
             </span>
@@ -3010,7 +3010,7 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head WEST on
+            Head west on
             <span class="CLASS_NAME_FILLER">
               Providence Park (path)
             </span>
@@ -3021,7 +3021,7 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -3032,7 +3032,7 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -3043,7 +3043,7 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SW Morrison St
             </span>
@@ -3292,7 +3292,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head SOUTH on
+            Head south on
             <span class="CLASS_NAME_FILLER">
               service road
             </span>
@@ -3303,7 +3303,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               Smith Avenue
             </span>
@@ -3314,7 +3314,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            CONTINUE on
+            Continue on
             <span class="CLASS_NAME_FILLER">
               Paine Avenue
             </span>
@@ -3325,7 +3325,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               32nd Street
             </span>
@@ -3336,7 +3336,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               32nd Street
             </span>
@@ -3347,7 +3347,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -3490,7 +3490,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head EAST on
+            Head east on
             <span class="CLASS_NAME_FILLER">
               North 105th Street
             </span>
@@ -3501,7 +3501,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               service road
             </span>
@@ -3512,7 +3512,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -3589,7 +3589,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head SOUTHEAST on
+            Head southeast on
             <span class="CLASS_NAME_FILLER">
               sidewalk
             </span>
@@ -3600,7 +3600,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            UTURN_RIGHT on
+            Right U-turn on
             <span class="CLASS_NAME_FILLER">
               sidewalk
             </span>
@@ -3651,7 +3651,7 @@ exports[`PrintableItinerary WalkOnlyItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head NORTHWEST on
+            Head northwest on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -3659,7 +3659,7 @@ exports[`PrintableItinerary WalkOnlyItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -3707,7 +3707,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head WEST on
+            Head west on
             <span class="CLASS_NAME_FILLER">
               SE Brooklyn St
             </span>
@@ -3718,7 +3718,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SE Cesar E. Chavez Blvd
             </span>
@@ -3799,7 +3799,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head SOUTH on
+            Head south on
             <span class="CLASS_NAME_FILLER">
               service road
             </span>
@@ -3810,7 +3810,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SE Cesar E. Chavez Blvd
             </span>
@@ -3821,7 +3821,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               SE Hawthorne Blvd
             </span>
@@ -3902,7 +3902,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head WEST on
+            Head west on
             <span class="CLASS_NAME_FILLER">
               SE Hawthorne Blvd
             </span>
@@ -3913,7 +3913,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SE 27th Ave
             </span>
@@ -3924,7 +3924,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SE Madison St
             </span>
@@ -3965,11 +3965,11 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
         </svg>
       </div>
       <div color="transparent"
-           title="otpUi.ItineraryBody.tripAccessibility.itineraryAccessibilityotpUi.ItineraryBody.tripAccessibility.likelyAccessible"
+           title="Wheelchair accessibility of this trip: likely accessible"
            class="CLASS_NAME_FILLER"
       >
         <span class="CLASS_NAME_FILLER">
-          otpUi.ItineraryBody.tripAccessibility.itineraryAccessibilityotpUi.ItineraryBody.tripAccessibility.likelyAccessible
+          Wheelchair accessibility of this trip: likely accessible
         </span>
         <svg viewbox="0 0 100 100"
              aria-hidden="true"
@@ -4006,7 +4006,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head WEST on
+            Head west on
             <span class="CLASS_NAME_FILLER">
               SE Brooklyn St
             </span>
@@ -4017,7 +4017,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SE Cesar E. Chavez Blvd
             </span>
@@ -4040,11 +4040,11 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
         </svg>
       </div>
       <div color="transparent"
-           title="otpUi.ItineraryBody.tripAccessibility.itineraryAccessibilityotpUi.ItineraryBody.tripAccessibility.unclear"
+           title="Wheelchair accessibility of this trip: unknown"
            class="CLASS_NAME_FILLER"
       >
         <span class="CLASS_NAME_FILLER">
-          otpUi.ItineraryBody.tripAccessibility.itineraryAccessibilityotpUi.ItineraryBody.tripAccessibility.unclear
+          Wheelchair accessibility of this trip: unknown
         </span>
         <svg viewbox="0 0 100 100"
              aria-hidden="true"
@@ -4129,7 +4129,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head SOUTH on
+            Head south on
             <span class="CLASS_NAME_FILLER">
               service road
             </span>
@@ -4140,7 +4140,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SE Cesar E. Chavez Blvd
             </span>
@@ -4151,7 +4151,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               SE Hawthorne Blvd
             </span>
@@ -4174,11 +4174,11 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
         </svg>
       </div>
       <div color="transparent"
-           title="otpUi.ItineraryBody.tripAccessibility.itineraryAccessibilityotpUi.ItineraryBody.tripAccessibility.inaccessible"
+           title="Wheelchair accessibility of this trip: inaccessible"
            class="CLASS_NAME_FILLER"
       >
         <span class="CLASS_NAME_FILLER">
-          otpUi.ItineraryBody.tripAccessibility.itineraryAccessibilityotpUi.ItineraryBody.tripAccessibility.inaccessible
+          Wheelchair accessibility of this trip: inaccessible
         </span>
         <svg viewbox="0 0 100 100"
              aria-hidden="true"
@@ -4253,11 +4253,11 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
         </svg>
       </div>
       <div color="transparent"
-           title="otpUi.ItineraryBody.tripAccessibility.itineraryAccessibilityotpUi.ItineraryBody.tripAccessibility.inaccessible"
+           title="Wheelchair accessibility of this trip: inaccessible"
            class="CLASS_NAME_FILLER"
       >
         <span class="CLASS_NAME_FILLER">
-          otpUi.ItineraryBody.tripAccessibility.itineraryAccessibilityotpUi.ItineraryBody.tripAccessibility.inaccessible
+          Wheelchair accessibility of this trip: inaccessible
         </span>
         <svg viewbox="0 0 100 100"
              aria-hidden="true"
@@ -4294,7 +4294,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head WEST on
+            Head west on
             <span class="CLASS_NAME_FILLER">
               SE Hawthorne Blvd
             </span>
@@ -4305,7 +4305,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SE 27th Ave
             </span>
@@ -4316,7 +4316,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SE Madison St
             </span>
@@ -4367,7 +4367,7 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head NORTHWEST on
+            Head northwest on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -4378,7 +4378,7 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            LEFT on
+            Left on
             <span class="CLASS_NAME_FILLER">
               Pioneer Sq N (path)
             </span>
@@ -4459,7 +4459,7 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
       <div class="CLASS_NAME_FILLER">
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            Head WEST on
+            Head west on
             <span class="CLASS_NAME_FILLER">
               Providence Park (path)
             </span>
@@ -4470,7 +4470,7 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -4481,7 +4481,7 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               Unnamed Path
             </span>
@@ -4492,7 +4492,7 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
         </div>
         <div class="CLASS_NAME_FILLER">
           <span class="CLASS_NAME_FILLER">
-            RIGHT on
+            Right on
             <span class="CLASS_NAME_FILLER">
               SW Morrison St
             </span>

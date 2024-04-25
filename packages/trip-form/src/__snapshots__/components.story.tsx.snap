@@ -40,7 +40,7 @@ exports[`Trip Form Components dateTimeSelector smoke-test 1`] = `
   Plain
 </p>
 <div>
-  <div aria-label="otpUi.DateTimeSelector.dateTimeSelector"
+  <div aria-label="Date/Time Selector"
        class="CLASS_NAME_FILLER"
        role="group"
   >
@@ -74,7 +74,7 @@ exports[`Trip Form Components dateTimeSelector smoke-test 1`] = `
 </p>
 <div>
   <div class="CLASS_NAME_FILLER">
-    <div aria-label="otpUi.DateTimeSelector.dateTimeSelector"
+    <div aria-label="Date/Time Selector"
          class="CLASS_NAME_FILLER"
          role="group"
     >

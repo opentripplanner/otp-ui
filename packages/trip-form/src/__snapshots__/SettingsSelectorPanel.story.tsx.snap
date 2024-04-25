@@ -631,19 +631,19 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
         <div>
           <select id="id-query-param-maxWalkDistance">
             <option value="160.9">
-              0.1 miles
+              1/10 mile
             </option>
             <option value="402.3">
-              0.25 miles
+              1/4 mile
             </option>
             <option value="804.7">
-              0.5 miles
+              1/2 mile
             </option>
             <option value="1207">
-              0.75 miles
+              3/4 mile
             </option>
             <option value="1609">
-              1 miles
+              1 mile
             </option>
             <option value="3219">
               2 miles
@@ -1255,19 +1255,19 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
         <div>
           <select id="id-query-param-maxWalkDistance">
             <option value="160.9">
-              0.1 miles
+              1/10 mile
             </option>
             <option value="402.3">
-              0.25 miles
+              1/4 mile
             </option>
             <option value="804.7">
-              0.5 miles
+              1/2 mile
             </option>
             <option value="1207">
-              0.75 miles
+              3/4 mile
             </option>
             <option value="1609">
-              1 miles
+              1 mile
             </option>
             <option value="3219">
               2 miles
@@ -1347,19 +1347,19 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithUndefinedParams smoke-
         <div>
           <select id="id-query-param-maxWalkDistance">
             <option value="160.9">
-              0.1 miles
+              1/10 mile
             </option>
             <option value="402.3">
-              0.25 miles
+              1/4 mile
             </option>
             <option value="804.7">
-              0.5 miles
+              1/2 mile
             </option>
             <option value="1207">
-              0.75 miles
+              3/4 mile
             </option>
             <option value="1609">
-              1 miles
+              1 mile
             </option>
             <option value="3219">
               2 miles

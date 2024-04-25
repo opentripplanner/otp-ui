@@ -41,7 +41,7 @@ exports[`ItineraryBody/otp-ui BikeOnlyItinerary smoke-test 1`] = `
       3:42 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 503 SW Alder St, Portland, OR, USA 97204
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -107,7 +107,7 @@ exports[`ItineraryBody/otp-ui BikeOnlyItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head EAST on
+                      Head east on
                       <span class="CLASS_NAME_FILLER">
                         SW Alder St
                       </span>
@@ -126,7 +126,7 @@ exports[`ItineraryBody/otp-ui BikeOnlyItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW 5th Ave
                       </span>
@@ -145,7 +145,7 @@ exports[`ItineraryBody/otp-ui BikeOnlyItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW Morrison St
                       </span>
@@ -310,7 +310,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
       3:45 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 2624 SE 30th Ave, Portland, OR, USA 97202
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -376,7 +376,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head WEST on
+                      Head west on
                       <span class="CLASS_NAME_FILLER">
                         SE Clinton St
                       </span>
@@ -395,7 +395,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SE 30th Ave
                       </span>
@@ -496,7 +496,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
       3:48 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from SE 30th at Division
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -565,7 +565,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         SE 30th Ave
                       </span>
@@ -584,7 +584,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SE Harrison St
                       </span>
@@ -603,7 +603,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SE 29th Ave
                       </span>
@@ -622,7 +622,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SE Hawthorne Blvd
                       </span>
@@ -724,7 +724,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
       3:55 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from SE 29th at Hawthorne
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -790,7 +790,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         SE Hawthorne Blvd
                       </span>
@@ -809,7 +809,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SE 28th Ave
                       </span>
@@ -828,7 +828,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SE Madison St
                       </span>
@@ -964,7 +964,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
       3:50 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 2943 SE Washington St, Portland, OR, USA 97214
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -1030,7 +1030,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head NORTH on
+                      Head north on
                       <span class="CLASS_NAME_FILLER">
                         SE 30th Ave
                       </span>
@@ -1049,7 +1049,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SE Stark St
                       </span>
@@ -1068,7 +1068,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SE 29th Ave
                       </span>
@@ -1169,7 +1169,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
       3:53 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from SE 29th at Stark
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -1238,7 +1238,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         SE 29th Ave
                       </span>
@@ -1257,7 +1257,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SE Pine St
                       </span>
@@ -1276,7 +1276,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SE 28th Ave
                       </span>
@@ -1295,7 +1295,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SE Ankeny St
                       </span>
@@ -1314,7 +1314,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SE 24th Ave
                       </span>
@@ -1333,7 +1333,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         NE 24th Ave
                       </span>
@@ -1352,7 +1352,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         NE Glisan St
                       </span>
@@ -1454,7 +1454,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
       3:59 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from NE Glisan at 24th
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -1520,7 +1520,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      HARD_LEFT on
+                      Hard left on
                       <span class="CLASS_NAME_FILLER">
                         NE Glisan St
                       </span>
@@ -1539,7 +1539,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         NE 24th Ave
                       </span>
@@ -1558,7 +1558,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         NE Sandy Blvd
                       </span>
@@ -1629,7 +1629,10 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
       4:02 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from NE Sandy &amp; 24th
+      <span class="CLASS_NAME_FILLER">
+        ID 5066
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -1946,7 +1949,10 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
       4:14 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from NE Sandy &amp; 57th
+      <span class="CLASS_NAME_FILLER">
+        ID 5104
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -2012,7 +2018,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head NORTHEAST on
+                      Head northeast on
                       <span class="CLASS_NAME_FILLER">
                         NE Sandy Blvd
                       </span>
@@ -2031,7 +2037,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      HARD_LEFT on
+                      Hard left on
                       <span class="CLASS_NAME_FILLER">
                         NE Alameda St
                       </span>
@@ -2132,7 +2138,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
       4:16 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 0086 BIKETOWN
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -2201,7 +2207,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      HARD_LEFT on
+                      Hard left on
                       <span class="CLASS_NAME_FILLER">
                         NE Alameda St
                       </span>
@@ -2220,7 +2226,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      HARD_LEFT on
+                      Hard left on
                       <span class="CLASS_NAME_FILLER">
                         NE 57th Ave
                       </span>
@@ -2239,7 +2245,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         NE Cully Blvd
                       </span>
@@ -2258,7 +2264,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         NE 60th Ave
                       </span>
@@ -2360,7 +2366,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
       4:24 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from NE 60th at Cully
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -2426,7 +2432,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         NE 60th Ave
                       </span>
@@ -2445,7 +2451,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         NE Going St
                       </span>
@@ -2581,7 +2587,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
       3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -2647,7 +2653,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head SOUTHEAST on
+                      Head southeast on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -2722,7 +2728,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
       3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from corner of path and Pioneer Courthouse Sq (pedestrian street)
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -2788,7 +2794,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -2807,7 +2813,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SW 6th Ave
                       </span>
@@ -2826,7 +2832,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SW Morrison St
                       </span>
@@ -2845,7 +2851,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -2918,7 +2924,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
       3:45 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from corner of path and Pioneer Sq N (path)
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -2984,7 +2990,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Pioneer Sq N (path)
                       </span>
@@ -3055,7 +3061,10 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
       3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Pioneer Square North MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 8383
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -3284,7 +3293,10 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
       3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Providence Park MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 9757
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -3350,7 +3362,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head WEST on
+                      Head west on
                       <span class="CLASS_NAME_FILLER">
                         Providence Park (path)
                       </span>
@@ -3425,7 +3437,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
       3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from corner of path and Providence Park (path)
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -3491,7 +3503,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -3510,7 +3522,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -3529,7 +3541,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW Morrison St
                       </span>
@@ -3665,7 +3677,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
       3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -3731,7 +3743,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head NORTHWEST on
+                      Head northwest on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -3750,7 +3762,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Pioneer Sq N (path)
                       </span>
@@ -3821,7 +3833,10 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
       3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Pioneer Square North MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 8383
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -4095,7 +4110,10 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
       3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Providence Park MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 9757
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -4161,7 +4179,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head WEST on
+                      Head west on
                       <span class="CLASS_NAME_FILLER">
                         Providence Park (path)
                       </span>
@@ -4180,7 +4198,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -4199,7 +4217,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -4218,7 +4236,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW Morrison St
                       </span>
@@ -4354,7 +4372,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalItinerary smoke-test 1`] = `
       3:45 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 600 SW 5th Ave, Portland, OR, USA 97204
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -4420,7 +4438,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head EAST on
+                      Head east on
                       <span class="CLASS_NAME_FILLER">
                         SW Alder St
                       </span>
@@ -4439,7 +4457,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SW 4th Ave
                       </span>
@@ -4522,7 +4540,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalItinerary smoke-test 1`] = `
       3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from EMAQ
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -4591,7 +4609,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         SW 4th Ave
                       </span>
@@ -4610,7 +4628,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW Pine St
                       </span>
@@ -4746,7 +4764,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
       3:45 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 2943 SE Washington St, Portland, OR, USA 97214
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -4812,7 +4830,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head SOUTH on
+                      Head south on
                       <span class="CLASS_NAME_FILLER">
                         SE 30th Ave
                       </span>
@@ -4831,7 +4849,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SE Belmont St
                       </span>
@@ -4850,7 +4868,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SE 29th Ave
                       </span>
@@ -4869,7 +4887,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SE Taylor St
                       </span>
@@ -4983,7 +5001,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
       3:54 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Shared E-scooter
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -5052,7 +5070,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         SE Taylor St
                       </span>
@@ -5071,7 +5089,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SE 28th Ave
                       </span>
@@ -5090,7 +5108,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         NE 28th Ave
                       </span>
@@ -5109,7 +5127,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      SLIGHTLY_RIGHT on
+                      Slight right on
                       <span class="CLASS_NAME_FILLER">
                         NE Halsey St
                       </span>
@@ -5128,7 +5146,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         NE Halsey St
                       </span>
@@ -5147,7 +5165,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      SLIGHTLY_LEFT on
+                      Slight left on
                       <span class="CLASS_NAME_FILLER">
                         NE 28th Ave
                       </span>
@@ -5166,7 +5184,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      SLIGHTLY_LEFT on
+                      Slight left on
                       <span class="CLASS_NAME_FILLER">
                         NE 28th Ave
                       </span>
@@ -5185,7 +5203,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         NE Broadway
                       </span>
@@ -5287,7 +5305,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
       4:03 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from NE Broadway
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -5353,7 +5371,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         street transit link
                       </span>
@@ -5421,7 +5439,10 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
       4:08 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from NE Broadway &amp; 28th
+      <span class="CLASS_NAME_FILLER">
+        ID 638
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -5635,7 +5656,10 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
       4:17 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from NE 33rd &amp; Shaver
+      <span class="CLASS_NAME_FILLER">
+        ID 7393
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -5701,7 +5725,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head NORTH on
+                      Head north on
                       <span class="CLASS_NAME_FILLER">
                         NE 33rd Ave
                       </span>
@@ -5720,7 +5744,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         NE Shaver St
                       </span>
@@ -5739,7 +5763,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         NE 38th Ave
                       </span>
@@ -5853,7 +5877,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
       4:25 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Shared E-scooter
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -5922,7 +5946,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         NE 38th Ave
                       </span>
@@ -5941,7 +5965,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         NE Skidmore St
                       </span>
@@ -5960,7 +5984,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         NE 42nd Ave
                       </span>
@@ -5979,7 +6003,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         NE Alberta St
                       </span>
@@ -5998,7 +6022,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         NE 47th Pl
                       </span>
@@ -6168,7 +6192,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
       3:50 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 330 SW Murray Blvd, Washington County, OR, USA 97005
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -6258,7 +6282,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
       4:02 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from P+R Sunset TC
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -6324,7 +6348,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      SLIGHTLY_RIGHT on
+                      Slight right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -6343,7 +6367,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         steps
                       </span>
@@ -6362,7 +6386,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -6381,7 +6405,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Sunset TC (path)
                       </span>
@@ -6452,7 +6476,10 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
       4:05 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Sunset TC MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 9969
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -6737,7 +6764,10 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
       4:27 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Oak/ SW 1st Ave MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 8337
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -6803,7 +6833,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head NORTHEAST on
+                      Head northeast on
                       <span class="CLASS_NAME_FILLER">
                         Oak/SW 1st Ave (path)
                       </span>
@@ -6822,7 +6852,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -6841,7 +6871,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SW Oak St
                       </span>
@@ -6860,7 +6890,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW 1st Ave
                       </span>
@@ -6879,7 +6909,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SW Pine St
                       </span>
@@ -7015,7 +7045,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       1:42 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 100 South 11th Street, Mount Vernon, WA, USA
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -7081,7 +7111,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head WEST on
+                      Head west on
                       <span class="CLASS_NAME_FILLER">
                         East Division Street
                       </span>
@@ -7100,7 +7130,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         South 11th Street
                       </span>
@@ -7119,7 +7149,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         service road
                       </span>
@@ -7138,7 +7168,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         sidewalk
                       </span>
@@ -7157,7 +7187,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         South 10th Street
                       </span>
@@ -7176,7 +7206,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -7195,7 +7225,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         alley
                       </span>
@@ -7214,7 +7244,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         East Montgomery Street
                       </span>
@@ -7233,7 +7263,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -7252,7 +7282,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         sidewalk
                       </span>
@@ -7271,7 +7301,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         sidewalk
                       </span>
@@ -7290,7 +7320,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         service road
                       </span>
@@ -7378,7 +7408,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       2:00 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Skagit Station Gate 3
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -7556,7 +7586,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       3:00 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Everett Station
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -7622,7 +7652,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head NORTH on
+                      Head north on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -7690,7 +7720,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       3:03 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Everett Station Bay C1
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -7856,7 +7886,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       3:29 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Lynnwood Transit Center Bay D3
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -7922,7 +7952,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head WEST on
+                      Head west on
                       <span class="CLASS_NAME_FILLER">
                         platform
                       </span>
@@ -7990,7 +8020,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       3:40 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Lynnwood Transit Center Bay D1
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -8172,7 +8202,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       4:05 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Bothell Park &amp; Ride Bay 2
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -8238,7 +8268,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head NORTHWEST on
+                      Head northwest on
                       <span class="CLASS_NAME_FILLER">
                         sidewalk
                       </span>
@@ -8305,7 +8335,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       4:18 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Kaysner Way &amp; Woodinville Dr
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -8519,7 +8549,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       4:29 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from NE Bothell Way &amp; 61st Ave NE
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -8585,7 +8615,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head WEST on
+                      Head west on
                       <span class="CLASS_NAME_FILLER">
                         Bothell Way Northeast
                       </span>
@@ -8604,7 +8634,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         60th Avenue Northeast
                       </span>
@@ -8623,7 +8653,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Northeast 180th Street
                       </span>
@@ -8642,7 +8672,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         57th Avenue Northeast
                       </span>
@@ -8798,7 +8828,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
       4:59 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 2nd Avenue, Longmont, CO, USA
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -8864,7 +8894,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head WEST on
+                      Head west on
                       <span class="CLASS_NAME_FILLER">
                         parking aisle
                       </span>
@@ -8883,7 +8913,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Emery Street
                       </span>
@@ -8902,7 +8932,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         1st Avenue
                       </span>
@@ -8921,7 +8951,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         parking aisle
                       </span>
@@ -9012,7 +9042,10 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
       5:06 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from S Main St &amp; 1st Ave
+      <span class="CLASS_NAME_FILLER">
+        ID 25633
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -9250,7 +9283,10 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
       5:25 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from US 287 &amp; Arapahoe Rd
+      <span class="CLASS_NAME_FILLER">
+        ID 33109
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -9316,7 +9352,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head SOUTH on
+                      Head south on
                       <span class="CLASS_NAME_FILLER">
                         US Highway 287
                       </span>
@@ -9335,7 +9371,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Arapahoe Road
                       </span>
@@ -9406,7 +9442,10 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
       6:00 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Arapahoe Rd &amp; Stonehenge Dr
+      <span class="CLASS_NAME_FILLER">
+        ID 33465
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -9612,7 +9651,10 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
       6:12 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Erie Community Center
+      <span class="CLASS_NAME_FILLER">
+        ID 33200
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -9678,7 +9720,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head WEST on
+                      Head west on
                       <span class="CLASS_NAME_FILLER">
                         sidewalk
                       </span>
@@ -9697,7 +9739,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -9768,7 +9810,10 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
       6:12 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 60plusride-co-us:area_626
+      <span class="CLASS_NAME_FILLER">
+        ID area_626
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -9946,7 +9991,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
       9:15 AM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 300 Courtland St NE, Atlanta, GA 30303-12ND, United States
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -10012,7 +10057,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head SOUTH on
+                      Head south on
                       <span class="CLASS_NAME_FILLER">
                         Courtland Street Northeast
                       </span>
@@ -10031,7 +10076,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -10050,7 +10095,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Peachtree Center Avenue Northeast
                       </span>
@@ -10124,7 +10169,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
       9:19 AM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Razor Shared bike
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -10193,7 +10238,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      HARD_RIGHT on
+                      Hard right on
                       <span class="CLASS_NAME_FILLER">
                         Peachtree Center Avenue Northeast
                       </span>
@@ -10212,7 +10257,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         service road
                       </span>
@@ -10231,7 +10276,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Peachtree Center Cycle Track
                       </span>
@@ -10250,7 +10295,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Edgewood Avenue Northeast
                       </span>
@@ -10269,7 +10314,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Pryor Street Southwest
                       </span>
@@ -10288,7 +10333,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         Pryor Street
                       </span>
@@ -10307,7 +10352,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         Pryor Street Southwest
                       </span>
@@ -10326,7 +10371,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -10345,7 +10390,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         sidewalk
                       </span>
@@ -10506,7 +10551,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
       3:50 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 330 SW Murray Blvd, Washington County, OR, USA 97005
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -10572,7 +10617,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head SOUTHWEST on
+                      Head southwest on
                       <span class="CLASS_NAME_FILLER">
                         parking aisle
                       </span>
@@ -10591,7 +10636,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW Murray Blvd
                       </span>
@@ -10610,7 +10655,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         NW Murray Blvd
                       </span>
@@ -10629,7 +10674,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      SLIGHTLY_RIGHT on
+                      Slight right on
                       <span class="CLASS_NAME_FILLER">
                         NW Murray Blvd
                       </span>
@@ -10648,7 +10693,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         NW Sunset Hwy
                       </span>
@@ -10667,7 +10712,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         NW Sunset Hwy
                       </span>
@@ -10686,7 +10731,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SW Cedar Hills Blvd
                       </span>
@@ -10705,7 +10750,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW Barnes Rd
                       </span>
@@ -10724,7 +10769,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         service road
                       </span>
@@ -10743,7 +10788,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Sunset TC
                       </span>
@@ -10816,7 +10861,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
       4:02 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from P+R Sunset TC
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -10882,7 +10927,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      SLIGHTLY_RIGHT on
+                      Slight right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -10901,7 +10946,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         steps
                       </span>
@@ -10920,7 +10965,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -10939,7 +10984,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Sunset TC (path)
                       </span>
@@ -11010,7 +11055,10 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
       4:05 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Sunset TC MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 9969
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -11295,7 +11343,10 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
       4:27 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Oak/ SW 1st Ave MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 8337
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -11361,7 +11412,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head NORTHEAST on
+                      Head northeast on
                       <span class="CLASS_NAME_FILLER">
                         Oak/SW 1st Ave (path)
                       </span>
@@ -11380,7 +11431,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -11399,7 +11450,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SW Oak St
                       </span>
@@ -11418,7 +11469,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW 1st Ave
                       </span>
@@ -11437,7 +11488,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SW Pine St
                       </span>
@@ -11573,7 +11624,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
       3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -11639,7 +11690,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head NORTHWEST on
+                      Head northwest on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -11658,7 +11709,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Pioneer Sq N (path)
                       </span>
@@ -11729,7 +11780,10 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
       3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Pioneer Square North MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 8383
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -12003,7 +12057,10 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
       3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Providence Park MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 9757
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -12069,7 +12126,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head WEST on
+                      Head west on
                       <span class="CLASS_NAME_FILLER">
                         Providence Park (path)
                       </span>
@@ -12088,7 +12145,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -12107,7 +12164,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -12126,7 +12183,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW Morrison St
                       </span>
@@ -12262,7 +12319,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
       3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -12328,7 +12385,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head NORTHWEST on
+                      Head northwest on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -12347,7 +12404,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Pioneer Sq N (path)
                       </span>
@@ -12418,7 +12475,10 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
       3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Pioneer Square North MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 8383
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -12692,7 +12752,10 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
       3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Providence Park MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 9757
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -12758,7 +12821,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head WEST on
+                      Head west on
                       <span class="CLASS_NAME_FILLER">
                         Providence Park (path)
                       </span>
@@ -12777,7 +12840,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -12796,7 +12859,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -12815,7 +12878,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW Morrison St
                       </span>
@@ -12951,7 +13014,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
       3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -13017,7 +13080,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head NORTHWEST on
+                      Head northwest on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -13036,7 +13099,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Pioneer Sq N (path)
                       </span>
@@ -13107,7 +13170,10 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
       3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Pioneer Square North MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 8383
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -13381,7 +13447,10 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
       3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Providence Park MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 9757
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -13447,7 +13516,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head WEST on
+                      Head west on
                       <span class="CLASS_NAME_FILLER">
                         Providence Park (path)
                       </span>
@@ -13466,7 +13535,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -13485,7 +13554,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -13504,7 +13573,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW Morrison St
                       </span>
@@ -13640,7 +13709,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
       3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -13706,7 +13775,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head NORTHWEST on
+                      Head northwest on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -13725,7 +13794,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Pioneer Sq N (path)
                       </span>
@@ -13796,7 +13865,10 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
       3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Pioneer Square North MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 8383
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -14070,7 +14142,10 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
       3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Providence Park MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 9757
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -14136,7 +14211,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head WEST on
+                      Head west on
                       <span class="CLASS_NAME_FILLER">
                         Providence Park (path)
                       </span>
@@ -14155,7 +14230,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -14174,7 +14249,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -14193,7 +14268,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW Morrison St
                       </span>
@@ -14336,7 +14411,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
       10:58 AM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 128 NW 12th Ave, Portland
     </span>
     <div class="CLASS_NAME_FILLER">
       <div>
@@ -14438,7 +14513,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
       11:01 AM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from West Burnside Street
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -14537,7 +14612,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
       11:02 AM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from W Burnside &amp; SW 6th
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -14693,7 +14768,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
       11:08 AM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from E Burnside &amp; SE 12th
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -14804,7 +14879,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
       11:09 AM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from East Burnside Street
     </span>
     <div class="CLASS_NAME_FILLER">
       <div>
@@ -14983,7 +15058,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
       3:50 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 330 SW Murray Blvd, Washington County, OR, USA 97005
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -15049,7 +15124,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head SOUTHWEST on
+                      Head southwest on
                       <span class="CLASS_NAME_FILLER">
                         parking aisle
                       </span>
@@ -15068,7 +15143,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW Murray Blvd
                       </span>
@@ -15087,7 +15162,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         NW Murray Blvd
                       </span>
@@ -15106,7 +15181,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      SLIGHTLY_RIGHT on
+                      Slight right on
                       <span class="CLASS_NAME_FILLER">
                         NW Murray Blvd
                       </span>
@@ -15125,7 +15200,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         NW Sunset Hwy
                       </span>
@@ -15144,7 +15219,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         NW Sunset Hwy
                       </span>
@@ -15163,7 +15238,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SW Cedar Hills Blvd
                       </span>
@@ -15182,7 +15257,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW Barnes Rd
                       </span>
@@ -15201,7 +15276,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         service road
                       </span>
@@ -15220,7 +15295,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Sunset TC
                       </span>
@@ -15293,7 +15368,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
       4:02 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from P+R Sunset TC
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -15359,7 +15434,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      SLIGHTLY_RIGHT on
+                      Slight right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -15378,7 +15453,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         steps
                       </span>
@@ -15397,7 +15472,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -15416,7 +15491,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Sunset TC (path)
                       </span>
@@ -15487,7 +15562,10 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
       4:05 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Sunset TC MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 9969
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -15772,7 +15850,10 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
       4:27 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Oak/ SW 1st Ave MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 8337
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -15838,7 +15919,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head NORTHEAST on
+                      Head northeast on
                       <span class="CLASS_NAME_FILLER">
                         Oak/SW 1st Ave (path)
                       </span>
@@ -15857,7 +15938,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -15876,7 +15957,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SW Oak St
                       </span>
@@ -15895,7 +15976,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW 1st Ave
                       </span>
@@ -15914,7 +15995,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SW Pine St
                       </span>
@@ -16055,7 +16136,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
       3:50 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 330 SW Murray Blvd, Washington County, OR, USA 97005
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -16121,7 +16202,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head SOUTHWEST on
+                      Head southwest on
                       <span class="CLASS_NAME_FILLER">
                         parking aisle
                       </span>
@@ -16140,7 +16221,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW Murray Blvd
                       </span>
@@ -16159,7 +16240,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         NW Murray Blvd
                       </span>
@@ -16178,7 +16259,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      SLIGHTLY_RIGHT on
+                      Slight right on
                       <span class="CLASS_NAME_FILLER">
                         NW Murray Blvd
                       </span>
@@ -16197,7 +16278,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         NW Sunset Hwy
                       </span>
@@ -16216,7 +16297,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         NW Sunset Hwy
                       </span>
@@ -16235,7 +16316,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SW Cedar Hills Blvd
                       </span>
@@ -16254,7 +16335,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW Barnes Rd
                       </span>
@@ -16273,7 +16354,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         service road
                       </span>
@@ -16292,7 +16373,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Sunset TC
                       </span>
@@ -16365,7 +16446,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
       4:02 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from P+R Sunset TC
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -16431,7 +16512,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      SLIGHTLY_RIGHT on
+                      Slight right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -16450,7 +16531,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         steps
                       </span>
@@ -16469,7 +16550,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -16488,7 +16569,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Sunset TC (path)
                       </span>
@@ -16559,7 +16640,10 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
       4:05 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Sunset TC MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 9969
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -16860,7 +16944,10 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
       4:27 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Oak/ SW 1st Ave MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 8337
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -16926,7 +17013,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head NORTHEAST on
+                      Head northeast on
                       <span class="CLASS_NAME_FILLER">
                         Oak/SW 1st Ave (path)
                       </span>
@@ -16945,7 +17032,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -16964,7 +17051,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SW Oak St
                       </span>
@@ -16983,7 +17070,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW 1st Ave
                       </span>
@@ -17002,7 +17089,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SW Pine St
                       </span>
@@ -17143,7 +17230,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
       3:50 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 330 SW Murray Blvd, Washington County, OR, USA 97005
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -17209,7 +17296,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head SOUTHWEST on
+                      Head southwest on
                       <span class="CLASS_NAME_FILLER">
                         parking aisle
                       </span>
@@ -17228,7 +17315,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW Murray Blvd
                       </span>
@@ -17247,7 +17334,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         NW Murray Blvd
                       </span>
@@ -17266,7 +17353,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      SLIGHTLY_RIGHT on
+                      Slight right on
                       <span class="CLASS_NAME_FILLER">
                         NW Murray Blvd
                       </span>
@@ -17285,7 +17372,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         NW Sunset Hwy
                       </span>
@@ -17304,7 +17391,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         NW Sunset Hwy
                       </span>
@@ -17323,7 +17410,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SW Cedar Hills Blvd
                       </span>
@@ -17342,7 +17429,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW Barnes Rd
                       </span>
@@ -17361,7 +17448,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         service road
                       </span>
@@ -17380,7 +17467,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Sunset TC
                       </span>
@@ -17453,7 +17540,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
       4:02 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from P+R Sunset TC
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -17519,7 +17606,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      SLIGHTLY_RIGHT on
+                      Slight right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -17538,7 +17625,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         steps
                       </span>
@@ -17557,7 +17644,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -17576,7 +17663,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Sunset TC (path)
                       </span>
@@ -17647,7 +17734,10 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
       4:05 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Sunset TC MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 9969
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -17932,7 +18022,10 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
       4:27 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Oak/ SW 1st Ave MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 8337
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -17998,7 +18091,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head NORTHEAST on
+                      Head northeast on
                       <span class="CLASS_NAME_FILLER">
                         Oak/SW 1st Ave (path)
                       </span>
@@ -18017,7 +18110,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -18036,7 +18129,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SW Oak St
                       </span>
@@ -18055,7 +18148,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW 1st Ave
                       </span>
@@ -18074,7 +18167,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SW Pine St
                       </span>
@@ -18210,7 +18303,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
       12:57 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 47.97767, -122.20034
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -18276,7 +18369,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head SOUTH on
+                      Head south on
                       <span class="CLASS_NAME_FILLER">
                         service road
                       </span>
@@ -18295,7 +18388,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Smith Avenue
                       </span>
@@ -18314,7 +18407,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         Paine Avenue
                       </span>
@@ -18333,7 +18426,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         32nd Street
                       </span>
@@ -18352,7 +18445,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         32nd Street
                       </span>
@@ -18371,7 +18464,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -18442,7 +18535,10 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
       1:04 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Everett Station Bay C1
+      <span class="CLASS_NAME_FILLER">
+        ID 2345
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -18628,7 +18724,10 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
       1:51 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Northgate Station
+      <span class="CLASS_NAME_FILLER">
+        ID 2191
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -18729,7 +18828,10 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
       1:55 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Northgate Station - Bay 4
+      <span class="CLASS_NAME_FILLER">
+        ID 35318
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -18931,7 +19033,10 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
       2:06 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from N 105th St &amp; Aurora Ave N
+      <span class="CLASS_NAME_FILLER">
+        ID 40032
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -18997,7 +19102,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head EAST on
+                      Head east on
                       <span class="CLASS_NAME_FILLER">
                         North 105th Street
                       </span>
@@ -19016,7 +19121,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         service road
                       </span>
@@ -19035,7 +19140,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -19105,7 +19210,10 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
       2:07 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Aurora Ave N &amp; N 105th St
+      <span class="CLASS_NAME_FILLER">
+        ID 7080
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -19379,7 +19487,10 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
       2:39 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 3rd Ave &amp; Cherry St
+      <span class="CLASS_NAME_FILLER">
+        ID 490
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -19445,7 +19556,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head SOUTHEAST on
+                      Head southeast on
                       <span class="CLASS_NAME_FILLER">
                         sidewalk
                       </span>
@@ -19464,7 +19575,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      UTURN_RIGHT on
+                      Right U-turn on
                       <span class="CLASS_NAME_FILLER">
                         sidewalk
                       </span>
@@ -19600,7 +19711,7 @@ exports[`ItineraryBody/otp-ui WalkOnlyItinerary smoke-test 1`] = `
       11:29 AM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -19666,7 +19777,7 @@ exports[`ItineraryBody/otp-ui WalkOnlyItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head NORTHWEST on
+                      Head northwest on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -19682,7 +19793,7 @@ exports[`ItineraryBody/otp-ui WalkOnlyItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -19815,7 +19926,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
       3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 3940 SE Brooklyn St, Portland, OR, USA 97202
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -19881,7 +19992,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head WEST on
+                      Head west on
                       <span class="CLASS_NAME_FILLER">
                         SE Brooklyn St
                       </span>
@@ -19900,7 +20011,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SE Cesar E. Chavez Blvd
                       </span>
@@ -19971,7 +20082,10 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
       3:47 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from SE Cesar Chavez Blvd &amp; Brooklyn
+      <span class="CLASS_NAME_FILLER">
+        ID 7439
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -20153,7 +20267,10 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
       3:52 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from SE Cesar Chavez Blvd &amp; Hawthorne
+      <span class="CLASS_NAME_FILLER">
+        ID 7459
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -20219,7 +20336,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head SOUTH on
+                      Head south on
                       <span class="CLASS_NAME_FILLER">
                         service road
                       </span>
@@ -20238,7 +20355,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SE Cesar E. Chavez Blvd
                       </span>
@@ -20257,7 +20374,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SE Hawthorne Blvd
                       </span>
@@ -20328,7 +20445,10 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
       4:00 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from SE Hawthorne &amp; Cesar Chavez Blvd
+      <span class="CLASS_NAME_FILLER">
+        ID 2626
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -20510,7 +20630,10 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
       4:04 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from SE Hawthorne &amp; 27th
+      <span class="CLASS_NAME_FILLER">
+        ID 2613
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -20576,7 +20699,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head WEST on
+                      Head west on
                       <span class="CLASS_NAME_FILLER">
                         SE Hawthorne Blvd
                       </span>
@@ -20595,7 +20718,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SE 27th Ave
                       </span>
@@ -20614,7 +20737,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SE Madison St
                       </span>
@@ -20749,11 +20872,11 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
     <div class="CLASS_NAME_FILLER">
       3:46 PM
       <div color="#bfffb5"
-           title="otpUi.ItineraryBody.tripAccessibility.legAccessibilityotpUi.ItineraryBody.tripAccessibility.likelyAccessible"
+           title="Wheelchair accessibility of this trip leg: likely accessible"
            class="CLASS_NAME_FILLER"
       >
         <span class="CLASS_NAME_FILLER">
-          otpUi.ItineraryBody.tripAccessibility.legAccessibilityotpUi.ItineraryBody.tripAccessibility.likelyAccessible
+          Wheelchair accessibility of this trip leg: likely accessible
         </span>
         <svg viewbox="0 0 100 100"
              aria-hidden="true"
@@ -20781,7 +20904,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
       </div>
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 3940 SE Brooklyn St, Portland, OR, USA 97202
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -20847,7 +20970,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head WEST on
+                      Head west on
                       <span class="CLASS_NAME_FILLER">
                         SE Brooklyn St
                       </span>
@@ -20866,7 +20989,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SE Cesar E. Chavez Blvd
                       </span>
@@ -20936,11 +21059,11 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
     <div class="CLASS_NAME_FILLER">
       3:47 PM
       <div color="#dbe9ff"
-           title="otpUi.ItineraryBody.tripAccessibility.legAccessibilityotpUi.ItineraryBody.tripAccessibility.unclear"
+           title="Wheelchair accessibility of this trip leg: unknown"
            class="CLASS_NAME_FILLER"
       >
         <span class="CLASS_NAME_FILLER">
-          otpUi.ItineraryBody.tripAccessibility.legAccessibilityotpUi.ItineraryBody.tripAccessibility.unclear
+          Wheelchair accessibility of this trip leg: unknown
         </span>
         <svg viewbox="0 0 100 100"
              aria-hidden="true"
@@ -20968,7 +21091,10 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
       </div>
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from SE Cesar Chavez Blvd &amp; Brooklyn
+      <span class="CLASS_NAME_FILLER">
+        ID 7439
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -21153,7 +21279,10 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
       3:52 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from SE Cesar Chavez Blvd &amp; Hawthorne
+      <span class="CLASS_NAME_FILLER">
+        ID 7459
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -21219,7 +21348,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head SOUTH on
+                      Head south on
                       <span class="CLASS_NAME_FILLER">
                         service road
                       </span>
@@ -21238,7 +21367,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SE Cesar E. Chavez Blvd
                       </span>
@@ -21257,7 +21386,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         SE Hawthorne Blvd
                       </span>
@@ -21327,11 +21456,11 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
     <div class="CLASS_NAME_FILLER">
       4:00 PM
       <div color="#ffe4e5"
-           title="otpUi.ItineraryBody.tripAccessibility.legAccessibilityotpUi.ItineraryBody.tripAccessibility.inaccessible"
+           title="Wheelchair accessibility of this trip leg: inaccessible"
            class="CLASS_NAME_FILLER"
       >
         <span class="CLASS_NAME_FILLER">
-          otpUi.ItineraryBody.tripAccessibility.legAccessibilityotpUi.ItineraryBody.tripAccessibility.inaccessible
+          Wheelchair accessibility of this trip leg: inaccessible
         </span>
         <svg viewbox="0 0 100 100"
              aria-hidden="true"
@@ -21359,7 +21488,10 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
       </div>
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from SE Hawthorne &amp; Cesar Chavez Blvd
+      <span class="CLASS_NAME_FILLER">
+        ID 2626
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -21543,11 +21675,11 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
     <div class="CLASS_NAME_FILLER">
       4:04 PM
       <div color="#ffe4e5"
-           title="otpUi.ItineraryBody.tripAccessibility.legAccessibilityotpUi.ItineraryBody.tripAccessibility.inaccessible"
+           title="Wheelchair accessibility of this trip leg: inaccessible"
            class="CLASS_NAME_FILLER"
       >
         <span class="CLASS_NAME_FILLER">
-          otpUi.ItineraryBody.tripAccessibility.legAccessibilityotpUi.ItineraryBody.tripAccessibility.inaccessible
+          Wheelchair accessibility of this trip leg: inaccessible
         </span>
         <svg viewbox="0 0 100 100"
              aria-hidden="true"
@@ -21575,7 +21707,10 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
       </div>
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from SE Hawthorne &amp; 27th
+      <span class="CLASS_NAME_FILLER">
+        ID 2613
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -21641,7 +21776,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head WEST on
+                      Head west on
                       <span class="CLASS_NAME_FILLER">
                         SE Hawthorne Blvd
                       </span>
@@ -21660,7 +21795,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SE 27th Ave
                       </span>
@@ -21679,7 +21814,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SE Madison St
                       </span>
@@ -21815,7 +21950,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
       3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -21881,7 +22016,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head NORTHWEST on
+                      Head northwest on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -21900,7 +22035,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Pioneer Sq N (path)
                       </span>
@@ -21971,7 +22106,10 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
       3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Pioneer Square North MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 8383
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -22248,7 +22386,10 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
       3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Providence Park MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 9757
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -22314,7 +22455,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head WEST on
+                      Head west on
                       <span class="CLASS_NAME_FILLER">
                         Providence Park (path)
                       </span>
@@ -22333,7 +22474,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -22352,7 +22493,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -22371,7 +22512,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW Morrison St
                       </span>
@@ -22507,7 +22648,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
       3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -22573,7 +22714,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head NORTHWEST on
+                      Head northwest on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -22592,7 +22733,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Pioneer Sq N (path)
                       </span>
@@ -22663,7 +22804,10 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
       3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Pioneer Square North MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 8383
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -22708,7 +22852,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
         >
           <div class="CLASS_NAME_FILLER">
             Service operated by
-            <a aria-label="otpUi.TransitLegBody.agencyExternalLink"
+            <a aria-label="TriMet (External Link)"
                href="http://trimet.org/"
                rel="noopener noreferrer"
                target="_blank"
@@ -22951,7 +23095,10 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
       3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Providence Park MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 9757
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -23017,7 +23164,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head WEST on
+                      Head west on
                       <span class="CLASS_NAME_FILLER">
                         Providence Park (path)
                       </span>
@@ -23036,7 +23183,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -23055,7 +23202,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -23074,7 +23221,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW Morrison St
                       </span>
@@ -23210,7 +23357,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
       3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 🎉✨🎊 KGW Studio on the Sq, Portland, OR, USA 🎉✨🎊
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -23276,7 +23423,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head NORTHWEST on
+                      Head northwest on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -23295,7 +23442,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Pioneer Sq N (path)
                       </span>
@@ -23363,7 +23510,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
       3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 🎉✨🎊 Pioneer Square North MAX Station 🎉✨🎊
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -23631,7 +23778,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
       3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 🎉✨🎊 Providence Park MAX Station 🎉✨🎊
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -23697,7 +23844,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head WEST on
+                      Head west on
                       <span class="CLASS_NAME_FILLER">
                         Providence Park (path)
                       </span>
@@ -23716,7 +23863,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -23735,7 +23882,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -23754,7 +23901,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW Morrison St
                       </span>
@@ -23890,7 +24037,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
       3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -23956,7 +24103,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head NORTHWEST on
+                      Head northwest on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -23975,7 +24122,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Pioneer Sq N (path)
                       </span>
@@ -24046,7 +24193,10 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
       3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Pioneer Square North MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 8383
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -24322,7 +24472,10 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
       3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Providence Park MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 9757
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -24388,7 +24541,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head WEST on
+                      Head west on
                       <span class="CLASS_NAME_FILLER">
                         Providence Park (path)
                       </span>
@@ -24407,7 +24560,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -24426,7 +24579,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -24445,7 +24598,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW Morrison St
                       </span>
@@ -24581,7 +24734,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
       3:44 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -24647,7 +24800,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head NORTHWEST on
+                      Head northwest on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -24666,7 +24819,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Pioneer Sq N (path)
                       </span>
@@ -24736,7 +24889,10 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
       3:46 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Pioneer Square North MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 8383
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -25015,7 +25171,10 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
       3:49 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Providence Park MAX Station
+      <span class="CLASS_NAME_FILLER">
+        ID 9757
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -25081,7 +25240,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head WEST on
+                      Head west on
                       <span class="CLASS_NAME_FILLER">
                         Providence Park (path)
                       </span>
@@ -25100,7 +25259,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -25119,7 +25278,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -25138,7 +25297,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         SW Morrison St
                       </span>
@@ -25274,7 +25433,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
       12:57 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 47.97767, -122.20034
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -25340,7 +25499,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head SOUTH on
+                      Head south on
                       <span class="CLASS_NAME_FILLER">
                         service road
                       </span>
@@ -25359,7 +25518,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Smith Avenue
                       </span>
@@ -25378,7 +25537,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         Paine Avenue
                       </span>
@@ -25397,7 +25556,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         32nd Street
                       </span>
@@ -25416,7 +25575,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         32nd Street
                       </span>
@@ -25435,7 +25594,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -25506,7 +25665,10 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
       1:04 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Everett Station Bay C1
+      <span class="CLASS_NAME_FILLER">
+        ID 2345
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -25692,7 +25854,10 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
       1:51 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Northgate Station
+      <span class="CLASS_NAME_FILLER">
+        ID 2191
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -25793,7 +25958,10 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
       1:55 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Northgate Station - Bay 4
+      <span class="CLASS_NAME_FILLER">
+        ID 35318
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -25995,7 +26163,10 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
       2:06 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from N 105th St &amp; Aurora Ave N
+      <span class="CLASS_NAME_FILLER">
+        ID 40032
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -26061,7 +26232,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head EAST on
+                      Head east on
                       <span class="CLASS_NAME_FILLER">
                         North 105th Street
                       </span>
@@ -26080,7 +26251,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         service road
                       </span>
@@ -26099,7 +26270,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -26169,7 +26340,10 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
       2:07 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Aurora Ave N &amp; N 105th St
+      <span class="CLASS_NAME_FILLER">
+        ID 7080
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -26443,7 +26617,10 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
       2:39 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 3rd Ave &amp; Cherry St
+      <span class="CLASS_NAME_FILLER">
+        ID 490
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -26509,7 +26686,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head SOUTHEAST on
+                      Head southeast on
                       <span class="CLASS_NAME_FILLER">
                         sidewalk
                       </span>
@@ -26528,7 +26705,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      UTURN_RIGHT on
+                      Right U-turn on
                       <span class="CLASS_NAME_FILLER">
                         sidewalk
                       </span>
@@ -26664,7 +26841,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
       12:57 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 47.97767, -122.20034
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -26730,7 +26907,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head SOUTH on
+                      Head south on
                       <span class="CLASS_NAME_FILLER">
                         service road
                       </span>
@@ -26749,7 +26926,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Smith Avenue
                       </span>
@@ -26768,7 +26945,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         Paine Avenue
                       </span>
@@ -26787,7 +26964,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         32nd Street
                       </span>
@@ -26806,7 +26983,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         32nd Street
                       </span>
@@ -26825,7 +27002,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -26896,7 +27073,10 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
       1:04 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Everett Station Bay C1
+      <span class="CLASS_NAME_FILLER">
+        ID 2345
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -27082,7 +27262,10 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
       1:51 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Northgate Station
+      <span class="CLASS_NAME_FILLER">
+        ID 2191
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -27183,7 +27366,10 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
       1:55 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Northgate Station - Bay 4
+      <span class="CLASS_NAME_FILLER">
+        ID 35318
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -27385,7 +27571,10 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
       2:06 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from N 105th St &amp; Aurora Ave N
+      <span class="CLASS_NAME_FILLER">
+        ID 40032
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -27451,7 +27640,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head EAST on
+                      Head east on
                       <span class="CLASS_NAME_FILLER">
                         North 105th Street
                       </span>
@@ -27470,7 +27659,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         service road
                       </span>
@@ -27489,7 +27678,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -27559,7 +27748,10 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
       2:07 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Aurora Ave N &amp; N 105th St
+      <span class="CLASS_NAME_FILLER">
+        ID 7080
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -27833,7 +28025,10 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
       2:39 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 3rd Ave &amp; Cherry St
+      <span class="CLASS_NAME_FILLER">
+        ID 490
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -27899,7 +28094,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head SOUTHEAST on
+                      Head southeast on
                       <span class="CLASS_NAME_FILLER">
                         sidewalk
                       </span>
@@ -27918,7 +28113,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      UTURN_RIGHT on
+                      Right U-turn on
                       <span class="CLASS_NAME_FILLER">
                         sidewalk
                       </span>
@@ -28054,7 +28249,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
       12:57 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 47.97767, -122.20034
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -28120,7 +28315,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head SOUTH on
+                      Head south on
                       <span class="CLASS_NAME_FILLER">
                         service road
                       </span>
@@ -28139,7 +28334,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         Smith Avenue
                       </span>
@@ -28158,7 +28353,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      CONTINUE on
+                      Continue on
                       <span class="CLASS_NAME_FILLER">
                         Paine Avenue
                       </span>
@@ -28177,7 +28372,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         32nd Street
                       </span>
@@ -28196,7 +28391,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         32nd Street
                       </span>
@@ -28215,7 +28410,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -28286,7 +28481,10 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
       1:04 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Everett Station Bay C1
+      <span class="CLASS_NAME_FILLER">
+        ID 2345
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -28472,7 +28670,10 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
       1:51 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Northgate Station
+      <span class="CLASS_NAME_FILLER">
+        ID 2191
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -28573,7 +28774,10 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
       1:55 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Northgate Station - Bay 4
+      <span class="CLASS_NAME_FILLER">
+        ID 35318
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -28775,7 +28979,10 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
       2:06 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from N 105th St &amp; Aurora Ave N
+      <span class="CLASS_NAME_FILLER">
+        ID 40032
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -28841,7 +29048,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head EAST on
+                      Head east on
                       <span class="CLASS_NAME_FILLER">
                         North 105th Street
                       </span>
@@ -28860,7 +29067,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      RIGHT on
+                      Right on
                       <span class="CLASS_NAME_FILLER">
                         service road
                       </span>
@@ -28879,7 +29086,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      LEFT on
+                      Left on
                       <span class="CLASS_NAME_FILLER">
                         Unnamed Path
                       </span>
@@ -28949,7 +29156,10 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
       2:07 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from Aurora Ave N &amp; N 105th St
+      <span class="CLASS_NAME_FILLER">
+        ID 7080
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -29223,7 +29433,10 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
       2:39 PM
     </div>
     <span class="CLASS_NAME_FILLER">
-      otpUi.TransitLegBody.fromLocation
+      from 3rd Ave &amp; Cherry St
+      <span class="CLASS_NAME_FILLER">
+        ID 490
+      </span>
     </span>
     <div class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -29289,7 +29502,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      Head SOUTHEAST on
+                      Head southeast on
                       <span class="CLASS_NAME_FILLER">
                         sidewalk
                       </span>
@@ -29308,7 +29521,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
                   </div>
                   <div class="CLASS_NAME_FILLER">
                     <span>
-                      UTURN_RIGHT on
+                      Right U-turn on
                       <span class="CLASS_NAME_FILLER">
                         sidewalk
                       </span>

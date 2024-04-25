@@ -40,7 +40,7 @@ if (!isRunningJest()) {
       try {
         messages[locale] = {
           ...messages[locale],
-          ...flatten(require(`../packages/${pkg}/i18n/${localeFile}.yml`))
+          ...flatten(require(`../packages/${pkg}/i18n/${localeFile}.yml`).default)
         };
       } catch (e) {
         // There is no yml files for the "unknown" locale,

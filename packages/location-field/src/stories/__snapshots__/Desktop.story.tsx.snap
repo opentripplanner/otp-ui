@@ -13,7 +13,7 @@ exports[`LocationField/Desktop Context AutoFocusWithMultipleControls smoke-test 
   >
     <button aria-controls="from-listbox"
             aria-expanded="false"
-            aria-label="Open the list of location suggestions"
+            aria-label="Toggle displaying the list of suggested locations"
             tabindex="-1"
             class="CLASS_NAME_FILLER"
     >
@@ -65,7 +65,7 @@ exports[`LocationField/Desktop Context Blank smoke-test 1`] = `
 >
   <button aria-controls="from-listbox"
           aria-expanded="false"
-          aria-label="Open the list of location suggestions"
+          aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           class="CLASS_NAME_FILLER"
   >
@@ -116,7 +116,7 @@ exports[`LocationField/Desktop Context GeocoderNoResults smoke-test 1`] = `
 >
   <button aria-controls="from-listbox"
           aria-expanded="false"
-          aria-label="Open the list of location suggestions"
+          aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           class="CLASS_NAME_FILLER"
   >
@@ -167,7 +167,7 @@ exports[`LocationField/Desktop Context GeocoderUnreachable smoke-test 1`] = `
 >
   <button aria-controls="from-listbox"
           aria-expanded="false"
-          aria-label="Open the list of location suggestions"
+          aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           class="CLASS_NAME_FILLER"
   >
@@ -218,7 +218,7 @@ exports[`LocationField/Desktop Context HereGeocoder smoke-test 1`] = `
 >
   <button aria-controls="from-listbox"
           aria-expanded="false"
-          aria-label="Open the list of location suggestions"
+          aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           class="CLASS_NAME_FILLER"
   >
@@ -269,7 +269,7 @@ exports[`LocationField/Desktop Context LocationUnavailable smoke-test 1`] = `
 >
   <button aria-controls="from-listbox"
           aria-expanded="false"
-          aria-label="Open the list of location suggestions"
+          aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           class="CLASS_NAME_FILLER"
   >
@@ -327,7 +327,7 @@ exports[`LocationField/Desktop Context NoAutoFocusWithMultipleControls smoke-tes
   >
     <button aria-controls="from-listbox"
             aria-expanded="false"
-            aria-label="Open the list of location suggestions"
+            aria-label="Toggle displaying the list of suggested locations"
             tabindex="-1"
             class="CLASS_NAME_FILLER"
     >
@@ -379,7 +379,7 @@ exports[`LocationField/Desktop Context RequiredAndInvalidState smoke-test 1`] = 
 >
   <button aria-controls="from-listbox"
           aria-expanded="false"
-          aria-label="Open the list of location suggestions"
+          aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           class="CLASS_NAME_FILLER"
   >
@@ -430,7 +430,7 @@ exports[`LocationField/Desktop Context SelectedLocation smoke-test 1`] = `
 >
   <button aria-controls="to-listbox"
           aria-expanded="false"
-          aria-label="Open the list of location suggestions"
+          aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           class="CLASS_NAME_FILLER"
   >
@@ -461,7 +461,7 @@ exports[`LocationField/Desktop Context SelectedLocation smoke-test 1`] = `
          role="combobox"
          value="123 Main St"
   >
-  <button aria-label="otpUi.LocationField.clearLocation"
+  <button aria-label="Clear location"
           class="CLASS_NAME_FILLER"
   >
     <svg viewbox="0 0 352 512"
@@ -499,7 +499,7 @@ exports[`LocationField/Desktop Context SelectedLocationCustomClear smoke-test 1`
 >
   <button aria-controls="to-listbox"
           aria-expanded="false"
-          aria-label="Open the list of location suggestions"
+          aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           class="CLASS_NAME_FILLER"
   >
@@ -530,7 +530,7 @@ exports[`LocationField/Desktop Context SelectedLocationCustomClear smoke-test 1`
          role="combobox"
          value="123 Main St"
   >
-  <button aria-label="otpUi.LocationField.clearLocation"
+  <button aria-label="Clear location"
           class="CLASS_NAME_FILLER"
   >
     <svg viewbox="0 0 512 512"
@@ -568,7 +568,7 @@ exports[`LocationField/Desktop Context SlowGeocoder smoke-test 1`] = `
 >
   <button aria-controls="from-listbox"
           aria-expanded="false"
-          aria-label="Open the list of location suggestions"
+          aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           class="CLASS_NAME_FILLER"
   >
@@ -619,7 +619,7 @@ exports[`LocationField/Desktop Context WithBadApiKeyHandlesBadAutocomplete smoke
 >
   <button aria-controls="from-listbox"
           aria-expanded="false"
-          aria-label="Open the list of location suggestions"
+          aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           class="CLASS_NAME_FILLER"
   >
@@ -670,7 +670,7 @@ exports[`LocationField/Desktop Context WithCustomResultColorsAndIcons smoke-test
 >
   <button aria-controls="from-listbox"
           aria-expanded="false"
-          aria-label="Open the list of location suggestions"
+          aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           class="CLASS_NAME_FILLER"
   >
@@ -721,7 +721,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
 >
   <button aria-controls="from-listbox"
           aria-expanded="true"
-          aria-label="Open the list of location suggestions"
+          aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           class="CLASS_NAME_FILLER"
   >
@@ -763,7 +763,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
       class="CLASS_NAME_FILLER"
   >
     <h2 class="CLASS_NAME_FILLER">
-      otpUi.LocationField.stations
+      Stations
     </h2>
     <li aria-live="off"
         id="otpui-locf-option-0"
@@ -797,7 +797,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
       </span>
     </li>
     <h2 class="CLASS_NAME_FILLER">
-      otpUi.LocationField.stops
+      Stops
     </h2>
     <li aria-live="off"
         id="otpui-locf-option-1"
@@ -893,7 +893,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
       </span>
     </li>
     <h2 class="CLASS_NAME_FILLER">
-      otpUi.LocationField.other
+      Other
     </h2>
     <li aria-live="off"
         id="otpui-locf-option-4"
@@ -1019,7 +1019,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
           </svg>
         </span>
         <span class="CLASS_NAME_FILLER">
-          otpUi.LocationField.useCurrentLocation
+          Use Current Location
         </span>
       </span>
     </li>
@@ -1033,7 +1033,7 @@ exports[`LocationField/Desktop Context WithUserSettings smoke-test 1`] = `
 >
   <button aria-controls="from-listbox"
           aria-expanded="false"
-          aria-label="Open the list of location suggestions"
+          aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           class="CLASS_NAME_FILLER"
   >
