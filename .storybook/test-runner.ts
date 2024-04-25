@@ -21,10 +21,6 @@ async function runA11yTest(page: Page) {
 
 const config: TestRunnerConfig = {
   async preVisit(page) {
-    await page.setViewportSize({
-      width: 640,
-      height: 480,
-    });
     await injectAxe(page);
   },
   async postVisit(page, context) {
