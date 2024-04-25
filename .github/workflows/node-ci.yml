@@ -24,15 +24,17 @@ jobs:
       - name: Build Storybook
         run: yarn build-storybook --quiet
       - name: Serve Storybook and run snapshots
+        env: RUN_ONLY=SNAPSHOTS
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "npx http-server storybook-static --port 6006 --silent" \
-            "npx wait-on tcp:6006 && RUN_ONLY=SNAPSHOTS yarn test-storybook"
+            "npx wait-on tcp:6006 && yarn test-storybook"
       - name: Serve Storybook and run a11y tests
+        env: RUN_ONLY=A11Y
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "npx http-server storybook-static --port 6006 --silent" \
-            "npx wait-on tcp:6006 && RUN_ONLY=A11Y yarn test-storybook"
+            "npx wait-on tcp:6006 && yarn test-storybook"
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
