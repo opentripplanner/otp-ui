@@ -10,9 +10,9 @@ exports[`TransitiveOverlay BikeOnlyItinerary smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
     </div>
@@ -60,13 +60,13 @@ exports[`TransitiveOverlay BikeOnlyItinerary smoke-test 1`] = `
                   tabindex="0"
                   aria-label="Map"
                   role="region"
-                  width="1248"
-                  height="648"
-                  style="width: 1248px; height: 648px;"
+                  width="608"
+                  height="432"
+                  style="width: 608px; height: 432px;"
           >
           </canvas>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(982.198px, 398.525px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(478.507px, 252.307px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="503 SW Alder St, Portland, OR, USA 97204"
                   class="CLASS_NAME_FILLER"
@@ -102,7 +102,7 @@ exports[`TransitiveOverlay BikeOnlyItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(254.479px, 179.24px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(123.977px, 145.476px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="1737 SW Morrison St, Portland, OR, USA 97205"
                   class="CLASS_NAME_FILLER"
@@ -191,9 +191,9 @@ exports[`TransitiveOverlay BikeRentalItinerary smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
     </div>
@@ -241,13 +241,13 @@ exports[`TransitiveOverlay BikeRentalItinerary smoke-test 1`] = `
                   tabindex="0"
                   aria-label="Map"
                   role="region"
-                  width="1248"
-                  height="648"
-                  style="width: 1248px; height: 648px;"
+                  width="608"
+                  height="432"
+                  style="width: 608px; height: 432px;"
           >
           </canvas>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(672.058px, 516.329px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(336.039px, 344.219px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="2624 SE 30th Ave, Portland, OR, USA 97202"
                   class="CLASS_NAME_FILLER"
@@ -283,7 +283,7 @@ exports[`TransitiveOverlay BikeRentalItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(576.061px, 141.836px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(272.041px, 94.5576px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="1415 SE 28th Ave, Portland, OR, USA 97214"
                   class="CLASS_NAME_FILLER"
@@ -372,9 +372,9 @@ exports[`TransitiveOverlay BikeRentalTransitItinerary smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
     </div>
@@ -422,13 +422,13 @@ exports[`TransitiveOverlay BikeRentalTransitItinerary smoke-test 1`] = `
                   tabindex="0"
                   aria-label="Map"
                   role="region"
-                  width="1248"
-                  height="648"
-                  style="width: 1248px; height: 648px;"
+                  width="608"
+                  height="432"
+                  style="width: 608px; height: 432px;"
           >
           </canvas>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(526.506px, 518.388px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(239.004px, 345.592px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="2943 SE Washington St, Portland, OR, USA 97214"
                   class="CLASS_NAME_FILLER"
@@ -464,7 +464,7 @@ exports[`TransitiveOverlay BikeRentalTransitItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(764.807px, 130.892px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(397.871px, 87.2611px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="5916 NE Going St, Portland, OR, USA 97218"
                   class="CLASS_NAME_FILLER"
@@ -553,9 +553,9 @@ exports[`TransitiveOverlay BikeTransitBikeItinerary smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
     </div>
@@ -603,13 +603,13 @@ exports[`TransitiveOverlay BikeTransitBikeItinerary smoke-test 1`] = `
                   tabindex="0"
                   aria-label="Map"
                   role="region"
-                  width="1248"
-                  height="648"
-                  style="width: 1248px; height: 648px;"
+                  width="608"
+                  height="432"
+                  style="width: 608px; height: 432px;"
           >
           </canvas>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(965.71px, 473.123px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(470.474px, 288.65px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="KGW Studio on the Sq, Portland, OR, USA"
                   class="CLASS_NAME_FILLER"
@@ -645,7 +645,7 @@ exports[`TransitiveOverlay BikeTransitBikeItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(280.504px, 150.362px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(136.656px, 131.407px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="1737 SW Morrison St, Portland, OR, USA 97205"
                   class="CLASS_NAME_FILLER"
@@ -734,9 +734,9 @@ exports[`TransitiveOverlay EScooterRentalItinerary smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
     </div>
@@ -784,13 +784,13 @@ exports[`TransitiveOverlay EScooterRentalItinerary smoke-test 1`] = `
                   tabindex="0"
                   aria-label="Map"
                   role="region"
-                  width="1248"
-                  height="648"
-                  style="width: 1248px; height: 648px;"
+                  width="608"
+                  height="432"
+                  style="width: 608px; height: 432px;"
           >
           </canvas>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(436.194px, 509.816px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(178.796px, 339.877px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="600 SW 5th Ave, Portland, OR, USA 97204"
                   class="CLASS_NAME_FILLER"
@@ -826,7 +826,7 @@ exports[`TransitiveOverlay EScooterRentalItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(803.362px, 186.53px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(423.575px, 124.353px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="205 SW Pine St, Portland, OR, USA 97204"
                   class="CLASS_NAME_FILLER"
@@ -915,9 +915,9 @@ exports[`TransitiveOverlay EScooterRentalTransitItinerary smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
     </div>
@@ -965,13 +965,13 @@ exports[`TransitiveOverlay EScooterRentalTransitItinerary smoke-test 1`] = `
                   tabindex="0"
                   aria-label="Map"
                   role="region"
-                  width="1248"
-                  height="648"
-                  style="width: 1248px; height: 648px;"
+                  width="608"
+                  height="432"
+                  style="width: 608px; height: 432px;"
           >
           </canvas>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(571.46px, 483.526px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(268.974px, 322.351px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="2943 SE Washington St, Portland, OR, USA 97214"
                   class="CLASS_NAME_FILLER"
@@ -1007,7 +1007,7 @@ exports[`TransitiveOverlay EScooterRentalTransitItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(692.502px, 129.6px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(349.668px, 86.4px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="5112 NE 47th Pl, Portland, OR, USA 97218"
                   class="CLASS_NAME_FILLER"
@@ -1096,9 +1096,9 @@ exports[`TransitiveOverlay Empty smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
     </div>
@@ -1151,9 +1151,9 @@ exports[`TransitiveOverlay FlexItinerary smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
     </div>
@@ -1201,13 +1201,13 @@ exports[`TransitiveOverlay FlexItinerary smoke-test 1`] = `
                   tabindex="0"
                   aria-label="Map"
                   role="region"
-                  width="1248"
-                  height="648"
-                  style="width: 1248px; height: 648px;"
+                  width="608"
+                  height="432"
+                  style="width: 608px; height: 432px;"
           >
           </canvas>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(547.489px, 256.464px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(252.993px, 170.976px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="2nd Avenue, Longmont, CO, USA"
                   class="CLASS_NAME_FILLER"
@@ -1243,7 +1243,7 @@ exports[`TransitiveOverlay FlexItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(698.674px, 131.41px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(353.783px, 87.6065px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="60plusride-co-us:area_626"
                   class="CLASS_NAME_FILLER"
@@ -1332,9 +1332,9 @@ exports[`TransitiveOverlay OTP2ScooterItinerary smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
     </div>
@@ -1382,13 +1382,13 @@ exports[`TransitiveOverlay OTP2ScooterItinerary smoke-test 1`] = `
                   tabindex="0"
                   aria-label="Map"
                   role="region"
-                  width="1248"
-                  height="648"
-                  style="width: 1248px; height: 648px;"
+                  width="608"
+                  height="432"
+                  style="width: 608px; height: 432px;"
           >
           </canvas>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(719.761px, 129.6px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(367.841px, 86.4px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="300 Courtland St NE, Atlanta, GA 30303-12ND, United States"
                   class="CLASS_NAME_FILLER"
@@ -1424,7 +1424,7 @@ exports[`TransitiveOverlay OTP2ScooterItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(522.279px, 515.08px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(236.186px, 343.386px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="126 Mitchell St SW, Atlanta, GA 30303-3524, United States"
                   class="CLASS_NAME_FILLER"
@@ -1513,9 +1513,9 @@ exports[`TransitiveOverlay ParkAndRideItinerary smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
     </div>
@@ -1563,13 +1563,13 @@ exports[`TransitiveOverlay ParkAndRideItinerary smoke-test 1`] = `
                   tabindex="0"
                   aria-label="Map"
                   role="region"
-                  width="1248"
-                  height="648"
-                  style="width: 1248px; height: 648px;"
+                  width="608"
+                  height="432"
+                  style="width: 608px; height: 432px;"
           >
           </canvas>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(253.162px, 299.904px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(123.335px, 204.261px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="330 SW Murray Blvd, Washington County, OR, USA 97005"
                   class="CLASS_NAME_FILLER"
@@ -1605,7 +1605,7 @@ exports[`TransitiveOverlay ParkAndRideItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(992.268px, 266.822px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(483.413px, 188.144px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="205 SW Pine St, Portland, OR, USA 97204"
                   class="CLASS_NAME_FILLER"
@@ -1694,9 +1694,9 @@ exports[`TransitiveOverlay TncTransitItinerary smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
     </div>
@@ -1744,13 +1744,13 @@ exports[`TransitiveOverlay TncTransitItinerary smoke-test 1`] = `
                   tabindex="0"
                   aria-label="Map"
                   role="region"
-                  width="1248"
-                  height="648"
-                  style="width: 1248px; height: 648px;"
+                  width="608"
+                  height="432"
+                  style="width: 608px; height: 432px;"
           >
           </canvas>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(253.598px, 329.247px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(123.548px, 218.556px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="128 NW 12th Ave, Portland"
                   class="CLASS_NAME_FILLER"
@@ -1786,7 +1786,7 @@ exports[`TransitiveOverlay TncTransitItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(991.41px, 271.337px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(482.995px, 190.344px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="407 NE 12th Ave, Portland"
                   class="CLASS_NAME_FILLER"
@@ -1875,9 +1875,9 @@ exports[`TransitiveOverlay WalkInterlinedTransitItinerary smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
     </div>
@@ -1925,13 +1925,13 @@ exports[`TransitiveOverlay WalkInterlinedTransitItinerary smoke-test 1`] = `
                   tabindex="0"
                   aria-label="Map"
                   role="region"
-                  width="1248"
-                  height="648"
-                  style="width: 1248px; height: 648px;"
+                  width="608"
+                  height="432"
+                  style="width: 608px; height: 432px;"
           >
           </canvas>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(673.837px, 129.6px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(337.225px, 86.4px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="47.97767, -122.20034"
                   class="CLASS_NAME_FILLER"
@@ -1967,7 +1967,7 @@ exports[`TransitiveOverlay WalkInterlinedTransitItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(582.156px, 518.387px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(276.104px, 345.591px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="208 James St, Seattle, WA 98104-2212, United States"
                   class="CLASS_NAME_FILLER"
@@ -2056,9 +2056,9 @@ exports[`TransitiveOverlay WalkTransitTransferItinerary smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
     </div>
@@ -2106,13 +2106,13 @@ exports[`TransitiveOverlay WalkTransitTransferItinerary smoke-test 1`] = `
                   tabindex="0"
                   aria-label="Map"
                   role="region"
-                  width="1248"
-                  height="648"
-                  style="width: 1248px; height: 648px;"
+                  width="608"
+                  height="432"
+                  style="width: 608px; height: 432px;"
           >
           </canvas>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(813.299px, 516.136px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(430.199px, 344.09px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="3940 SE Brooklyn St, Portland, OR, USA 97202"
                   class="CLASS_NAME_FILLER"
@@ -2148,7 +2148,7 @@ exports[`TransitiveOverlay WalkTransitTransferItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(448.246px, 139.337px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(186.831px, 92.8915px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="1415 SE 28th Ave, Portland, OR, USA 97214"
                   class="CLASS_NAME_FILLER"
@@ -2237,9 +2237,9 @@ exports[`TransitiveOverlay WalkTransitWalkItinerary smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
     </div>
@@ -2287,13 +2287,13 @@ exports[`TransitiveOverlay WalkTransitWalkItinerary smoke-test 1`] = `
                   tabindex="0"
                   aria-label="Map"
                   role="region"
-                  width="1248"
-                  height="648"
-                  style="width: 1248px; height: 648px;"
+                  width="608"
+                  height="432"
+                  style="width: 608px; height: 432px;"
           >
           </canvas>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(996.447px, 492.211px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(485.448px, 297.949px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="KGW Studio on the Sq, Portland, OR, USA"
                   class="CLASS_NAME_FILLER"
@@ -2329,7 +2329,7 @@ exports[`TransitiveOverlay WalkTransitWalkItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(281.83px, 155.597px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(137.302px, 133.958px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="1737 SW Morrison St, Portland, OR, USA 97205"
                   class="CLASS_NAME_FILLER"
@@ -2418,9 +2418,9 @@ exports[`TransitiveOverlay WalkTransitWalkItineraryWithNoIntermediateStops smoke
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
     </div>
@@ -2468,13 +2468,13 @@ exports[`TransitiveOverlay WalkTransitWalkItineraryWithNoIntermediateStops smoke
                   tabindex="0"
                   aria-label="Map"
                   role="region"
-                  width="1248"
-                  height="648"
-                  style="width: 1248px; height: 648px;"
+                  width="608"
+                  height="432"
+                  style="width: 608px; height: 432px;"
           >
           </canvas>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(985.991px, 273.749px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(480.355px, 191.519px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="1205 NE 81st Ave, Portland, OR, USA 97213"
                   class="CLASS_NAME_FILLER"
@@ -2510,7 +2510,7 @@ exports[`TransitiveOverlay WalkTransitWalkItineraryWithNoIntermediateStops smoke
             </span>
           </div>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(250.676px, 408.757px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(122.124px, 257.292px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="Weather Machine, Portland, OR, USA"
                   class="CLASS_NAME_FILLER"
@@ -2599,9 +2599,9 @@ exports[`TransitiveOverlay WalkingItinerary smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
     </div>
@@ -2649,13 +2649,13 @@ exports[`TransitiveOverlay WalkingItinerary smoke-test 1`] = `
                   tabindex="0"
                   aria-label="Map"
                   role="region"
-                  width="1248"
-                  height="648"
-                  style="width: 1248px; height: 648px;"
+                  width="608"
+                  height="432"
+                  style="width: 608px; height: 432px;"
           >
           </canvas>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(967.37px, 514.342px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(486.4px, 317.11px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="KGW Studio on the Sq, Portland, OR, USA"
                   class="CLASS_NAME_FILLER"
@@ -2691,7 +2691,7 @@ exports[`TransitiveOverlay WalkingItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="CLASS_NAME_FILLER"
-               style="transform: translate(-50%, -50%) translate(280.63px, 129.6px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(121.6px, 112.734px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="701 SW 6th Ave, Portland, OR, USA 97204"
                   class="CLASS_NAME_FILLER"

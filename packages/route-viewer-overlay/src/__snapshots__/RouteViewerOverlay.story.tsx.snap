@@ -10,9 +10,9 @@ exports[`RouteViewerOverlay Default smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
     </div>
@@ -65,9 +65,9 @@ exports[`RouteViewerOverlay FlexRoute smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
     </div>
@@ -115,9 +115,9 @@ exports[`RouteViewerOverlay FlexRoute smoke-test 1`] = `
                   tabindex="0"
                   aria-label="Map"
                   role="region"
-                  width="1248"
-                  height="648"
-                  style="width: 1248px; height: 648px;"
+                  width="608"
+                  height="432"
+                  style="width: 608px; height: 432px;"
           >
           </canvas>
         </div>
@@ -172,9 +172,9 @@ exports[`RouteViewerOverlay FlexRoute2 smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
     </div>
@@ -222,9 +222,9 @@ exports[`RouteViewerOverlay FlexRoute2 smoke-test 1`] = `
                   tabindex="0"
                   aria-label="Map"
                   role="region"
-                  width="1248"
-                  height="648"
-                  style="width: 1248px; height: 648px;"
+                  width="608"
+                  height="432"
+                  style="width: 608px; height: 432px;"
           >
           </canvas>
         </div>
@@ -279,9 +279,9 @@ exports[`RouteViewerOverlay FlexRoute3 smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
     </div>
@@ -334,9 +334,9 @@ exports[`RouteViewerOverlay OTP2RouteOutsideOfInitialView smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
     </div>
@@ -389,9 +389,9 @@ exports[`RouteViewerOverlay WithChangingPath smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
     </div>
@@ -444,9 +444,9 @@ exports[`RouteViewerOverlay WithPathStyling smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
     </div>

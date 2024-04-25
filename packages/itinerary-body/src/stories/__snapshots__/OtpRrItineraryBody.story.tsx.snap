@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ItineraryBody/otp-react-redux BikeOnlyItinerary smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -267,7 +267,7 @@ exports[`ItineraryBody/otp-react-redux BikeOnlyItinerary smoke-test 1`] = `
 `;
 
 exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -876,7 +876,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
 `;
 
 exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -2454,7 +2454,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
 `;
 
 exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -3599,7 +3599,7 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
 `;
 
 exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -4389,7 +4389,7 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
 `;
 
 exports[`ItineraryBody/otp-react-redux EScooterRentalItinerary smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -4767,7 +4767,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalItinerary smoke-test 1`] = 
 `;
 
 exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -6200,7 +6200,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
 `;
 
 exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -7084,7 +7084,7 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
 `;
 
 exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -9125,7 +9125,7 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
 `;
 
 exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -10389,7 +10389,7 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
 `;
 
 exports[`ItineraryBody/otp-react-redux OTP2ScooterItinerary smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -10932,7 +10932,7 @@ exports[`ItineraryBody/otp-react-redux OTP2ScooterItinerary smoke-test 1`] = `
 `;
 
 exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -12437,7 +12437,7 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
 `;
 
 exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -13541,7 +13541,7 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
 `;
 
 exports[`ItineraryBody/otp-react-redux ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -14279,7 +14279,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsAlwaysCollapsing smoke-test 1`
 `;
 
 exports[`ItineraryBody/otp-react-redux ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -15017,7 +15017,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsNotAlwaysCollapsing smoke-test
 `;
 
 exports[`ItineraryBody/otp-react-redux ThreeAlertsWithoutCollapsingProp smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -15755,7 +15755,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsWithoutCollapsingProp smoke-te
 `;
 
 exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -16438,7 +16438,7 @@ exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
 `;
 
 exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -17558,7 +17558,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
 `;
 
 exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -18662,7 +18662,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
 `;
 
 exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -19766,7 +19766,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
 `;
 
 exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -21303,7 +21303,7 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
 `;
 
 exports[`ItineraryBody/otp-react-redux WalkOnlyItinerary smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -21519,7 +21519,7 @@ exports[`ItineraryBody/otp-react-redux WalkOnlyItinerary smoke-test 1`] = `
 `;
 
 exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -22559,7 +22559,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
 `;
 
 exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -23723,7 +23723,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
 `;
 
 exports[`ItineraryBody/otp-react-redux WalkTransitWalkItinerary smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -24461,7 +24461,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItinerary smoke-test 1`] =
 `;
 
 exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -25998,7 +25998,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
 `;
 
 exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">
@@ -27535,7 +27535,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
 `;
 
 exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
-<div style="width: 600px;">
+<div style="width: 600px; position: relative;">
   <ol class="CLASS_NAME_FILLER">
     <li class="CLASS_NAME_FILLER">
       <div class="CLASS_NAME_FILLER">

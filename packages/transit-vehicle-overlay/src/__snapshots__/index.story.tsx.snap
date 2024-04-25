@@ -10,13 +10,13 @@ exports[`TransitVehicleOverlay CustomModeIcon smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(183px, 90px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -41,7 +41,7 @@ exports[`TransitVehicleOverlay CustomModeIcon smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(204px, 201px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -66,7 +66,7 @@ exports[`TransitVehicleOverlay CustomModeIcon smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(1369px, -318px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -95,7 +95,7 @@ exports[`TransitVehicleOverlay CustomModeIcon smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(110px, 222px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -115,7 +115,7 @@ exports[`TransitVehicleOverlay CustomModeIcon smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(692px, -643px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -193,13 +193,13 @@ exports[`TransitVehicleOverlay Default smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(183px, 90px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -211,7 +211,7 @@ exports[`TransitVehicleOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(204px, 201px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -227,7 +227,7 @@ exports[`TransitVehicleOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(1369px, -318px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -243,7 +243,7 @@ exports[`TransitVehicleOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(110px, 222px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -263,7 +263,7 @@ exports[`TransitVehicleOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(692px, -643px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -328,13 +328,13 @@ exports[`TransitVehicleOverlay DefaultRouteColorWhenVehicleRouteColorAbsent smok
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(183px, 90px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -346,7 +346,7 @@ exports[`TransitVehicleOverlay DefaultRouteColorWhenVehicleRouteColorAbsent smok
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(204px, 201px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -362,7 +362,7 @@ exports[`TransitVehicleOverlay DefaultRouteColorWhenVehicleRouteColorAbsent smok
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(1369px, -318px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -378,7 +378,7 @@ exports[`TransitVehicleOverlay DefaultRouteColorWhenVehicleRouteColorAbsent smok
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(110px, 222px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -398,7 +398,7 @@ exports[`TransitVehicleOverlay DefaultRouteColorWhenVehicleRouteColorAbsent smok
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(692px, -643px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -463,13 +463,13 @@ exports[`TransitVehicleOverlay InnerCaret smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(183px, 90px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -481,7 +481,7 @@ exports[`TransitVehicleOverlay InnerCaret smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(204px, 201px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -497,7 +497,7 @@ exports[`TransitVehicleOverlay InnerCaret smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(1369px, -318px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -513,7 +513,7 @@ exports[`TransitVehicleOverlay InnerCaret smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(110px, 222px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -533,7 +533,7 @@ exports[`TransitVehicleOverlay InnerCaret smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(692px, -643px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -598,13 +598,13 @@ exports[`TransitVehicleOverlay OuterCaretWithCustomSize smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(183px, 90px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -616,7 +616,7 @@ exports[`TransitVehicleOverlay OuterCaretWithCustomSize smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(204px, 201px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -632,7 +632,7 @@ exports[`TransitVehicleOverlay OuterCaretWithCustomSize smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(1369px, -318px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -648,7 +648,7 @@ exports[`TransitVehicleOverlay OuterCaretWithCustomSize smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(110px, 222px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -668,7 +668,7 @@ exports[`TransitVehicleOverlay OuterCaretWithCustomSize smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(692px, -643px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -733,13 +733,13 @@ exports[`TransitVehicleOverlay RotatingIconsNoCaret smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(183px, 90px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -751,7 +751,7 @@ exports[`TransitVehicleOverlay RotatingIconsNoCaret smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(204px, 201px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -763,7 +763,7 @@ exports[`TransitVehicleOverlay RotatingIconsNoCaret smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(1369px, -318px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -775,7 +775,7 @@ exports[`TransitVehicleOverlay RotatingIconsNoCaret smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(110px, 222px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -791,7 +791,7 @@ exports[`TransitVehicleOverlay RotatingIconsNoCaret smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(692px, -643px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -852,13 +852,13 @@ exports[`TransitVehicleOverlay RouteColorBackground smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(183px, 90px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -870,7 +870,7 @@ exports[`TransitVehicleOverlay RouteColorBackground smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(204px, 201px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -886,7 +886,7 @@ exports[`TransitVehicleOverlay RouteColorBackground smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(1369px, -318px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -902,7 +902,7 @@ exports[`TransitVehicleOverlay RouteColorBackground smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(110px, 222px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -922,7 +922,7 @@ exports[`TransitVehicleOverlay RouteColorBackground smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(692px, -643px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -987,13 +987,13 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithInnerCaret smoke-test 1`]
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(183px, 90px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -1005,7 +1005,7 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithInnerCaret smoke-test 1`]
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(204px, 201px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -1021,7 +1021,7 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithInnerCaret smoke-test 1`]
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(1369px, -318px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -1037,7 +1037,7 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithInnerCaret smoke-test 1`]
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(110px, 222px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -1057,7 +1057,7 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithInnerCaret smoke-test 1`]
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(692px, -643px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -1122,13 +1122,13 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithTransparencyOnHover smoke
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(183px, 90px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -1140,7 +1140,7 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithTransparencyOnHover smoke
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(204px, 201px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -1156,7 +1156,7 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithTransparencyOnHover smoke
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(1369px, -318px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -1172,7 +1172,7 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithTransparencyOnHover smoke
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(110px, 222px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -1192,7 +1192,7 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithTransparencyOnHover smoke
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(692px, -643px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -1257,13 +1257,13 @@ exports[`TransitVehicleOverlay RouteNumbersOnlyWithCustomSizeAndPadding smoke-te
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(183px, 90px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -1279,7 +1279,7 @@ exports[`TransitVehicleOverlay RouteNumbersOnlyWithCustomSizeAndPadding smoke-te
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(204px, 201px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -1299,7 +1299,7 @@ exports[`TransitVehicleOverlay RouteNumbersOnlyWithCustomSizeAndPadding smoke-te
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(1369px, -318px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -1319,7 +1319,7 @@ exports[`TransitVehicleOverlay RouteNumbersOnlyWithCustomSizeAndPadding smoke-te
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(110px, 222px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -1339,7 +1339,7 @@ exports[`TransitVehicleOverlay RouteNumbersOnlyWithCustomSizeAndPadding smoke-te
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(692px, -643px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">

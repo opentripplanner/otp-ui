@@ -10,13 +10,13 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1844px, 703px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(1524px, 595px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -25,7 +25,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1885px, 97px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(1565px, -11px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -34,7 +34,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1453px, -1745px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(1133px, -1853px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -43,7 +43,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1042px, 1795px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(722px, 1687px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -52,7 +52,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-3096px, 274px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-3416px, 166px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -61,7 +61,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-915px, 196px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-1235px, 88px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -70,7 +70,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-1237px, 643px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-1557px, 535px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -79,7 +79,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1543px, 793px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(1223px, 685px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -88,7 +88,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(3486px, 570px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(3166px, 462px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -97,7 +97,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(3362px, 538px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(3042px, 430px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -106,7 +106,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-522px, 1792px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-842px, 1684px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -115,7 +115,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(988px, 1416px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(668px, 1308px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -124,7 +124,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(3568px, 585px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(3248px, 477px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -133,7 +133,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2915px, 273px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(2595px, 165px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -142,7 +142,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(160px, 818px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-160px, 710px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -151,7 +151,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(999px, -1357px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(679px, -1465px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -160,7 +160,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-2583px, 165px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-2903px, 57px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -169,7 +169,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1746px, 1401px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(1426px, 1293px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -178,7 +178,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(4572px, 4196px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(4252px, 4088px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -187,7 +187,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1407px, 3321px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(1087px, 3213px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -196,7 +196,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(701px, -2546px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(381px, -2654px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -205,7 +205,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-832px, 483px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-1152px, 375px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -214,7 +214,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(450px, -971px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(130px, -1079px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -223,7 +223,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-1915px, 246px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-2235px, 138px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -232,7 +232,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-725px, 1350px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-1045px, 1242px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -241,7 +241,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(512px, 2167px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(192px, 2059px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -250,7 +250,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-600px, 3752px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-920px, 3644px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -259,7 +259,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-803px, 2039px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-1123px, 1931px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -268,7 +268,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(83px, 1381px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-237px, 1273px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -277,7 +277,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(556px, 1957px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(236px, 1849px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -286,7 +286,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(146px, 1972px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-174px, 1864px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -295,7 +295,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-1197px, 1051px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-1517px, 943px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -304,7 +304,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-2247px, 115px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-2567px, 7px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -313,7 +313,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2553px, -937px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(2233px, -1045px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -322,7 +322,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2557px, -955px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(2237px, -1063px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -331,7 +331,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2194px, 262px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(1874px, 154px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -340,7 +340,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-1368px, 3031px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-1688px, 2923px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -349,7 +349,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-408px, 2684px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-728px, 2576px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -358,7 +358,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1017px, 1628px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(697px, 1520px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -367,7 +367,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(754px, -3054px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(434px, -3162px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -376,7 +376,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-2951px, 286px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-3271px, 178px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -385,7 +385,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-1468px, 447px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-1788px, 339px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -394,7 +394,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-1348px, 2800px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-1668px, 2692px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -403,7 +403,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-415px, 801px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-735px, 693px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -412,7 +412,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-276px, 2338px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-596px, 2230px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -421,7 +421,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-280px, 2369px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-600px, 2261px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -430,7 +430,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(452px, -1139px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(132px, -1247px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -439,7 +439,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(895px, 944px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(575px, 836px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -448,7 +448,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-465px, 2561px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-785px, 2453px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -457,7 +457,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-464px, 2585px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-784px, 2477px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -466,7 +466,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(985px, 2504px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(665px, 2396px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -475,7 +475,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-951px, 908px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-1271px, 800px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -484,7 +484,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-360px, 1699px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-680px, 1591px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -493,7 +493,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(4500px, 3985px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(4180px, 3877px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -502,7 +502,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1694px, 277px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(1374px, 169px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -511,7 +511,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-326px, 1656px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-646px, 1548px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -520,7 +520,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1045px, 1815px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(725px, 1707px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -529,7 +529,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(149px, -664px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-171px, -772px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -538,7 +538,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-538px, 2771px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-858px, 2663px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -547,7 +547,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-688px, 1369px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-1008px, 1261px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -556,7 +556,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2250px, -1617px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(1930px, -1725px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -565,7 +565,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-670px, 448px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-990px, 340px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -574,7 +574,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-1129px, 695px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-1449px, 587px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -583,7 +583,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1011px, 1252px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(691px, 1144px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -592,7 +592,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1820px, 1685px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(1500px, 1577px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -601,7 +601,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1872px, -356px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(1552px, -464px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -610,7 +610,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-917px, 1141px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-1237px, 1033px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -619,7 +619,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1864px, 381px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(1544px, 273px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -628,7 +628,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-1708px, 316px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(-2028px, 208px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -637,7 +637,7 @@ exports[`ParkAndRideOverlay Default smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1842px, 775px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(1522px, 667px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">

@@ -10,13 +10,13 @@ exports[`StopViewerOverlay Default smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(624px, 324px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
+           style="transform: translate(-50%, -50%) translate(304px, 216px) rotateX(0deg) rotateZ(0deg); cursor: pointer;"
       >
         <span>
           <div color="#00FFFF"
@@ -77,14 +77,14 @@ exports[`StopViewerOverlay WithCustomMarker smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="1248"
-              height="648"
-              style="width: 1248px; height: 648px;"
+              width="608"
+              height="432"
+              style="width: 608px; height: 432px;"
       >
       </canvas>
       <div aria-label="Map marker"
            class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(624px, 310px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(304px, 202px) rotateX(0deg) rotateZ(0deg);"
       >
         <svg display="block"
              height="41px"
