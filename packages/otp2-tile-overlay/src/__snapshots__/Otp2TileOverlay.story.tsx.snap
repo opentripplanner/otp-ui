@@ -19,9 +19,9 @@ mocks downtown Philadelphia stop tile data. Check stops in the layer selector an
             tabindex="0"
             aria-label="Map"
             role="region"
-            width="608"
-            height="384"
-            style="width: 608px; height: 384px;"
+            width="1248"
+            height="576"
+            style="width: 1248px; height: 576px;"
     >
     </canvas>
   </div>

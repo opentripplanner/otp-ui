@@ -10,13 +10,13 @@ exports[`EndpointsOverlay EndpointsOverlayWithCustomMapMarkers smoke-test 1`] = 
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="608"
-              height="432"
-              style="width: 608px; height: 432px;"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
       >
       </canvas>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1252px, 83px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1572px, 191px) rotateX(0deg) rotateZ(0deg);"
       >
         <svg viewbox="0 0 512 512"
              height="40"
@@ -35,7 +35,7 @@ exports[`EndpointsOverlay EndpointsOverlayWithCustomMapMarkers smoke-test 1`] = 
         </svg>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-397px, 276px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-77px, 384px) rotateX(0deg) rotateZ(0deg);"
       >
         <svg viewbox="0 0 576 512"
              height="40"
@@ -104,13 +104,13 @@ exports[`EndpointsOverlay EndpointsOverlayWithIntermediatePlace smoke-test 1`] =
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="608"
-              height="432"
-              style="width: 608px; height: 432px;"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
       >
       </canvas>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1252px, 83px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1572px, 191px) rotateX(0deg) rotateZ(0deg);"
       >
         <span title="Portland City Grill"
               class="CLASS_NAME_FILLER"
@@ -146,7 +146,7 @@ exports[`EndpointsOverlay EndpointsOverlayWithIntermediatePlace smoke-test 1`] =
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(739px, -9px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1059px, 99px) rotateX(0deg) rotateZ(0deg);"
       >
         <span title="Powell's City of Books"
               class="CLASS_NAME_FILLER"
@@ -182,7 +182,7 @@ exports[`EndpointsOverlay EndpointsOverlayWithIntermediatePlace smoke-test 1`] =
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-397px, 276px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-77px, 384px) rotateX(0deg) rotateZ(0deg);"
       >
         <span title="Portland Towers"
               class="CLASS_NAME_FILLER"
@@ -269,13 +269,13 @@ exports[`EndpointsOverlay EndpointsOverlayWithUnnamedPlace smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="608"
-              height="432"
-              style="width: 608px; height: 432px;"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
       >
       </canvas>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1252px, 83px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1572px, 191px) rotateX(0deg) rotateZ(0deg);"
       >
         <span class="CLASS_NAME_FILLER">
           <svg viewbox="0 0 512 512"
@@ -309,7 +309,7 @@ exports[`EndpointsOverlay EndpointsOverlayWithUnnamedPlace smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-397px, 276px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-77px, 384px) rotateX(0deg) rotateZ(0deg);"
       >
         <span class="CLASS_NAME_FILLER">
           <svg viewbox="0 0 384 512"
@@ -394,13 +394,13 @@ exports[`EndpointsOverlay EndpointsOverlayWithUserSettings smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="608"
-              height="432"
-              style="width: 608px; height: 432px;"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
       >
       </canvas>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1252px, 83px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1572px, 191px) rotateX(0deg) rotateZ(0deg);"
       >
         <span title="Portland City Grill"
               class="CLASS_NAME_FILLER"
@@ -436,7 +436,7 @@ exports[`EndpointsOverlay EndpointsOverlayWithUserSettings smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-397px, 276px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-77px, 384px) rotateX(0deg) rotateZ(0deg);"
       >
         <span title="Portland Towers"
               class="CLASS_NAME_FILLER"
@@ -523,13 +523,13 @@ exports[`EndpointsOverlay EndpointsOverlayWithoutUserSettings smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="608"
-              height="432"
-              style="width: 608px; height: 432px;"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
       >
       </canvas>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1252px, 83px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1572px, 191px) rotateX(0deg) rotateZ(0deg);"
       >
         <span title="Portland City Grill"
               class="CLASS_NAME_FILLER"
@@ -565,7 +565,7 @@ exports[`EndpointsOverlay EndpointsOverlayWithoutUserSettings smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-397px, 276px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-77px, 384px) rotateX(0deg) rotateZ(0deg);"
       >
         <span title="Portland Towers"
               class="CLASS_NAME_FILLER"

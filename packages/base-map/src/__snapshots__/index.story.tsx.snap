@@ -10,9 +10,9 @@ exports[`BaseMap clickAndViewportchangedEvents smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="608"
-              height="432"
-              style="width: 608px; height: 432px;"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
       >
       </canvas>
     </div>
@@ -59,9 +59,9 @@ exports[`BaseMap clickAndViewportchangedEvents smoke-test 1`] = `
                 tabindex="0"
                 aria-label="Map"
                 role="region"
-                width="608"
-                height="432"
-                style="width: 608px; height: 432px;"
+                width="1248"
+                height="648"
+                style="width: 1248px; height: 648px;"
         >
         </canvas>
       </div>
@@ -119,9 +119,9 @@ exports[`BaseMap clickToSetBounds smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="608"
-              height="432"
-              style="width: 608px; height: 432px;"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
       >
       </canvas>
     </div>
@@ -174,9 +174,9 @@ exports[`BaseMap customLocationPopupContent smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="608"
-              height="432"
-              style="width: 608px; height: 432px;"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
       >
       </canvas>
     </div>
@@ -216,7 +216,7 @@ exports[`BaseMap customLocationPopupContent smoke-test 1`] = `
       </div>
     </div>
     <div class="CLASS_NAME_FILLER"
-         style="max-width: 240px; transform: translate(-50%, -100%) translate(304px, 216px);"
+         style="max-width: 240px; transform: translate(-50%, -100%) translate(624px, 324px);"
     >
       <div class="CLASS_NAME_FILLER">
       </div>
@@ -257,9 +257,9 @@ exports[`BaseMap maxZoom smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="608"
-              height="432"
-              style="width: 608px; height: 432px;"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
       >
       </canvas>
     </div>
@@ -306,9 +306,9 @@ exports[`BaseMap maxZoom smoke-test 1`] = `
                 tabindex="0"
                 aria-label="Map"
                 role="region"
-                width="608"
-                height="432"
-                style="width: 608px; height: 432px;"
+                width="1248"
+                height="648"
+                style="width: 1248px; height: 648px;"
         >
         </canvas>
       </div>
@@ -362,9 +362,9 @@ exports[`BaseMap onContextMenuPopup smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="608"
-              height="432"
-              style="width: 608px; height: 432px;"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
       >
       </canvas>
     </div>
@@ -417,13 +417,13 @@ exports[`BaseMap optionalLayers smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="608"
-              height="432"
-              style="width: 608px; height: 432px;"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
       >
       </canvas>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(304px, 216px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(624px, 324px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -431,7 +431,7 @@ exports[`BaseMap optionalLayers smoke-test 1`] = `
         </span>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(304px, 133px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(624px, 241px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -511,13 +511,13 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="608"
-              height="432"
-              style="width: 608px; height: 432px;"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
       >
       </canvas>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(231px, 3189px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(551px, 3297px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -526,7 +526,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1756px, 1335px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(2076px, 1443px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -535,7 +535,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(5070px, 5108px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(5390px, 5216px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -544,7 +544,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(13915px, 6202px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(14235px, 6310px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -553,7 +553,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11501px, 5852px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11821px, 5960px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -562,7 +562,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(8950px, 5329px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(9270px, 5437px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -571,7 +571,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11609px, -4716px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11929px, -4608px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -580,7 +580,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-6543px, 11584px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-6223px, 11692px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -589,7 +589,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(672px, 1729px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(992px, 1837px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -598,7 +598,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(7178px, -2150px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(7498px, -2042px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -607,7 +607,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-7055px, 11869px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-6735px, 11977px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -616,7 +616,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11677px, -4731px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11997px, -4623px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -625,7 +625,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(7563px, -2343px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(7883px, -2235px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -634,7 +634,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-939px, 7781px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-619px, 7889px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -643,7 +643,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-7427px, 12373px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-7107px, 12481px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -652,7 +652,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-1778px, 8471px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-1458px, 8579px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -661,7 +661,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1373px, -4px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1693px, 104px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -670,7 +670,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11645px, -4660px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11965px, -4552px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -679,7 +679,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(773px, 955px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1093px, 1063px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -688,7 +688,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(5925px, 1473px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(6245px, 1581px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -697,7 +697,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(8941px, 4631px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(9261px, 4739px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -706,7 +706,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11491px, 5849px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11811px, 5957px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -715,7 +715,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11524px, 5862px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11844px, 5970px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -724,7 +724,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(7296px, 3456px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(7616px, 3564px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -733,7 +733,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(4569px, 1469px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(4889px, 1577px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -742,7 +742,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1436px, 593px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1756px, 701px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -751,7 +751,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-743px, -33px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-423px, 75px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -760,7 +760,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-2063px, -2907px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-1743px, -2799px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -769,7 +769,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-1593px, -1627px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-1273px, -1519px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -778,7 +778,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-877px, -1776px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-557px, -1668px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -787,7 +787,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(231px, 240px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(551px, 348px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -796,7 +796,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(4133px, 811px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(4453px, 919px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -805,7 +805,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(8953px, 823px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(9273px, 931px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -814,7 +814,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(12462px, 995px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(12782px, 1103px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -823,7 +823,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11714px, -960px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(12034px, -852px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -832,7 +832,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11704px, -1000px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(12024px, -892px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -841,7 +841,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11806px, 777px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(12126px, 885px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -850,7 +850,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(6664px, 873px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(6984px, 981px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -859,7 +859,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-11711px, -14148px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-11391px, -14040px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -868,7 +868,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-6232px, -8782px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-5912px, -8674px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -877,7 +877,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1320px, -899px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1640px, -791px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -886,7 +886,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1108px, -537px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1428px, -429px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -895,7 +895,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2866px, 2333px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(3186px, 2441px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -904,7 +904,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(10260px, 4370px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(10580px, 4478px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -913,7 +913,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(15441px, 4579px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(15761px, 4687px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -922,7 +922,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(15145px, 4450px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(15465px, 4558px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -931,7 +931,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(8421px, 4370px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(8741px, 4478px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -940,7 +940,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(3284px, 2850px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(3604px, 2958px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -949,7 +949,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1122px, -16px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1442px, 92px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -958,7 +958,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(4991px, -3632px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(5311px, -3524px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -967,7 +967,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(4613px, -6616px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(4933px, -6508px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -976,7 +976,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(4992px, -4138px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(5312px, -4030px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -985,7 +985,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11625px, -425px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11945px, -317px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -994,7 +994,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(6179px, -406px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(6499px, -298px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1003,7 +1003,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(710px, 1331px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1030px, 1439px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1012,7 +1012,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(7270px, 5845px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(7590px, 5953px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1021,7 +1021,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11559px, 7283px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11879px, 7391px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1030,7 +1030,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(5506px, 5842px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(5826px, 5950px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1039,7 +1039,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(3421px, 3885px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(3741px, 3993px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1048,7 +1048,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1275px, 143px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1595px, 251px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1057,7 +1057,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(7384px, -450px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(7704px, -342px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1066,7 +1066,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11710px, -979px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(12030px, -871px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1075,7 +1075,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(3552px, 4301px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(3872px, 4409px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1084,7 +1084,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(24262px, 2641px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(24582px, 2749px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1093,7 +1093,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(943px, 710px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1263px, 818px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1102,7 +1102,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-10368px, 4236px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-10048px, 4344px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1111,7 +1111,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-9736px, 1206px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-9416px, 1314px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1120,7 +1120,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1265px, -1px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1585px, 107px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1129,7 +1129,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(5764px, 32px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(6084px, 140px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1138,7 +1138,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(16685px, 529px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(17005px, 637px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1147,7 +1147,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(23905px, 538px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(24225px, 646px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1156,7 +1156,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(24332px, 2670px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(24652px, 2778px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1165,7 +1165,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(24443px, 2705px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(24763px, 2813px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1174,7 +1174,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(27075px, 549px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(27395px, 657px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1183,7 +1183,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(12375px, 639px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(12695px, 747px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1192,7 +1192,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-4553px, 520px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-4233px, 628px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1201,7 +1201,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-9317px, 1055px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-8997px, 1163px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1210,7 +1210,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-10383px, 4259px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-10063px, 4367px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1219,7 +1219,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(780px, 19px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1100px, 127px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1228,7 +1228,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-3828px, 588px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-3508px, 696px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1237,7 +1237,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(12225px, 129px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(12545px, 237px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1246,7 +1246,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(25746px, 2433px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(26066px, 2541px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1255,7 +1255,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(24467px, 2711px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(24787px, 2819px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1264,7 +1264,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(20256px, 535px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(20576px, 643px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1273,7 +1273,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(6545px, 45px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(6865px, 153px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1282,7 +1282,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(25181px, -1845px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(25501px, -1737px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1291,7 +1291,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11626px, -4650px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11946px, -4542px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1300,7 +1300,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(16859px, -3856px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(17179px, -3748px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1309,7 +1309,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(24495px, 2719px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(24815px, 2827px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1318,7 +1318,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(12248px, -1552px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(12568px, -1444px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1327,7 +1327,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(12274px, -3307px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(12594px, -3199px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1336,7 +1336,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11722px, -936px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(12042px, -828px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1345,7 +1345,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(15438px, -439px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(15758px, -331px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1354,7 +1354,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(13594px, 2524px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(13914px, 2632px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1363,7 +1363,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(7263px, 2370px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(7583px, 2478px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1372,7 +1372,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2863px, 2159px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(3183px, 2267px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1381,7 +1381,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1304px, -246px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1624px, -138px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1390,7 +1390,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1310px, -601px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1630px, -493px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1399,7 +1399,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(4598px, 2436px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(4918px, 2544px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1408,7 +1408,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(10264px, 2418px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(10584px, 2526px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1417,7 +1417,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(15369px, 2535px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(15689px, 2643px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1426,7 +1426,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(19692px, 2467px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(20012px, 2575px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1435,7 +1435,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(20024px, 2469px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(20344px, 2577px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1444,7 +1444,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-3px, -888px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(317px, -780px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1453,7 +1453,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-876px, -1712px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-556px, -1604px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1462,7 +1462,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(7205px, -3347px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(7525px, -3239px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1471,7 +1471,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11699px, -1023px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(12019px, -915px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1480,7 +1480,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(7901px, -3343px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(8221px, -3235px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1489,7 +1489,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11304px, 11573px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11624px, 11681px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1498,7 +1498,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(33126px, 31462px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(33446px, 31570px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1507,7 +1507,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11307px, 11595px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11627px, 11703px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1516,7 +1516,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(9265px, 14222px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(9585px, 14330px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1525,7 +1525,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(10063px, 25270px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(10383px, 25378px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1534,7 +1534,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(8223px, 19576px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(8543px, 19684px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1543,7 +1543,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(8228px, 20549px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(8548px, 20657px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1552,7 +1552,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(5862px, 15158px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(6182px, 15266px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1561,7 +1561,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(5578px, 10174px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(5898px, 10282px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1570,7 +1570,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11306px, 11590px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11626px, 11698px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1579,7 +1579,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11298px, 11527px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11618px, 11635px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1588,7 +1588,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(5801px, 10169px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(6121px, 10277px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1597,7 +1597,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(5361px, 14200px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(5681px, 14308px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1606,7 +1606,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(8191px, 19857px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(8511px, 19965px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1615,7 +1615,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(7872px, 24313px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(8192px, 24421px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1624,7 +1624,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(10619px, 26759px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(10939px, 26867px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1633,7 +1633,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(10608px, 26778px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(10928px, 26886px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1642,7 +1642,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(8502px, 25117px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(8822px, 25225px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1651,7 +1651,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-3671px, -7166px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-3351px, -7058px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1660,7 +1660,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(7902px, 21591px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(8222px, 21699px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1669,7 +1669,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-355px, -4512px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-35px, -4404px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1678,7 +1678,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1547px, 3556px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1867px, 3664px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1687,7 +1687,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2446px, 13947px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(2766px, 14055px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1696,7 +1696,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(866px, 1219px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1186px, 1327px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1705,7 +1705,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2124px, -3195px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(2444px, -3087px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1714,7 +1714,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(926px, 1116px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1246px, 1224px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1723,7 +1723,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1297px, -3648px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1617px, -3540px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1732,7 +1732,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-3123px, -9067px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-2803px, -8959px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1741,7 +1741,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(617px, 1875px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(937px, 1983px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1750,7 +1750,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-3505px, 11063px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-3185px, 11171px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1759,7 +1759,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-5763px, -8720px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-5443px, -8612px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1768,7 +1768,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-6801px, -10518px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-6481px, -10410px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1777,7 +1777,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-1162px, -6574px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-842px, -6466px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1786,7 +1786,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2189px, -737px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(2509px, -629px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1795,7 +1795,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-1027px, 6065px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-707px, 6173px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1804,7 +1804,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-3505px, 11061px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-3185px, 11169px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1813,7 +1813,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1989px, -2731px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(2309px, -2623px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1822,7 +1822,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-9667px, 10262px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-9347px, 10370px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1831,7 +1831,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-2706px, 7511px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-2386px, 7619px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1840,7 +1840,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1632px, -497px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1952px, -389px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1849,7 +1849,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(240px, -7254px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(560px, -7146px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1858,7 +1858,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-5807px, -8623px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-5487px, -8515px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1867,7 +1867,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-6374px, -8994px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-6054px, -8886px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1876,7 +1876,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-3072px, -9066px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-2752px, -8958px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1885,7 +1885,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1363px, -6703px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1683px, -6595px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1894,7 +1894,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1211px, -85px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1531px, 23px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1903,7 +1903,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-27535px, 208px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-27215px, 316px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1912,7 +1912,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-15523px, -2785px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-15203px, -2677px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1921,7 +1921,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-15380px, -5303px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-15060px, -5195px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1930,7 +1930,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-15981px, -5354px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-15661px, -5246px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1939,7 +1939,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-21130px, -1098px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-20810px, -990px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1948,7 +1948,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-28550px, -2291px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-28230px, -2183px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1957,7 +1957,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-8639px, 1727px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-8319px, 1835px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1966,7 +1966,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-15530px, -1599px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-15210px, -1491px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1975,7 +1975,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-27627px, 211px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-27307px, 319px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1984,7 +1984,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-25738px, -1005px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-25418px, -897px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -1993,7 +1993,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11305px, 11584px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11625px, 11692px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2002,7 +2002,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(7845px, 12255px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(8165px, 12363px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2011,7 +2011,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-10396px, 4199px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-10076px, 4307px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2020,7 +2020,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-10409px, 4615px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-10089px, 4723px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2029,7 +2029,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-16598px, 931px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-16278px, 1039px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2038,7 +2038,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-15838px, -5700px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-15518px, -5592px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2047,7 +2047,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-15762px, -5677px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-15442px, -5569px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2056,7 +2056,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-16559px, 3879px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-16239px, 3987px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2065,7 +2065,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11335px, 19999px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11655px, 20107px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2074,7 +2074,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(805px, 1677px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1125px, 1785px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2083,7 +2083,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(821px, 5326px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1141px, 5434px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2092,7 +2092,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-10437px, 4259px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-10117px, 4367px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2101,7 +2101,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-3899px, 4799px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-3579px, 4907px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2110,7 +2110,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1125px, 51px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1445px, 159px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2119,7 +2119,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-6148px, 5313px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-5828px, 5421px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2128,7 +2128,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-8511px, 8913px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-8191px, 9021px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2137,7 +2137,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11255px, 11536px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11575px, 11644px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2146,7 +2146,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(16451px, 13063px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(16771px, 13171px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2155,7 +2155,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-27509px, 405px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-27189px, 513px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2164,7 +2164,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-24882px, 2431px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-24562px, 2539px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2173,7 +2173,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-15996px, 3978px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-15676px, 4086px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2182,7 +2182,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-10421px, 4236px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-10101px, 4344px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2191,7 +2191,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-10398px, 4201px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-10078px, 4309px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2200,7 +2200,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-21873px, 3109px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-21553px, 3217px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2209,7 +2209,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-25639px, 1989px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-25319px, 2097px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2218,7 +2218,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-29352px, 482px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-29032px, 590px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2227,7 +2227,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-37776px, 618px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-37456px, 726px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2236,7 +2236,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-39713px, 603px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-39393px, 711px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2245,7 +2245,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-37353px, 398px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-37033px, 506px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2254,7 +2254,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1044px, 1260px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1364px, 1368px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2263,7 +2263,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(191px, 836px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(511px, 944px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2272,7 +2272,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-9935px, 10364px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-9615px, 10472px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2281,7 +2281,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-8635px, 1729px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-8315px, 1837px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2290,7 +2290,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-12739px, 4869px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-12419px, 4977px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2299,7 +2299,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2621px, -7631px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(2941px, -7523px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2308,7 +2308,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1046px, 1059px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1366px, 1167px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2317,7 +2317,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2591px, -2157px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(2911px, -2049px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2326,7 +2326,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2614px, -5617px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(2934px, -5509px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2335,7 +2335,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1278px, -9786px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1598px, -9678px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2344,7 +2344,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(773px, -11689px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1093px, -11581px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2353,7 +2353,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2603px, -2532px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(2923px, -2424px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2362,7 +2362,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(5478px, -2846px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(5798px, -2738px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2371,7 +2371,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(3954px, 7901px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(4274px, 8009px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2380,7 +2380,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(4508px, 10409px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(4828px, 10517px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2389,7 +2389,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(3953px, 8366px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(4273px, 8474px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2398,7 +2398,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(3237px, 2198px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(3557px, 2306px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2407,7 +2407,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(3747px, -1111px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(4067px, -1003px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2416,7 +2416,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(4373px, -7821px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(4693px, -7713px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2425,7 +2425,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(5005px, -8882px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(5325px, -8774px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2434,7 +2434,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11301px, 11553px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11621px, 11661px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2443,7 +2443,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11256px, 11542px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11576px, 11650px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2452,7 +2452,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(10303px, 10824px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(10623px, 10932px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2461,7 +2461,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(7495px, 3449px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(7815px, 3557px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2470,7 +2470,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(8034px, -3923px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(8354px, -3815px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2479,7 +2479,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11684px, -4719px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(12004px, -4611px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2488,7 +2488,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(7718px, 2006px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(8038px, 2114px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2497,7 +2497,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(8893px, 7244px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(9213px, 7352px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2506,7 +2506,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2614px, -4876px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(2934px, -4768px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2515,7 +2515,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(10310px, 4666px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(10630px, 4774px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2524,7 +2524,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(10301px, 5254px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(10621px, 5362px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2533,7 +2533,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(10297px, 730px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(10617px, 838px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2542,7 +2542,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(10309px, -2600px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(10629px, -2492px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2551,7 +2551,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(10264px, -5248px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(10584px, -5140px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2560,7 +2560,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(5086px, -5234px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(5406px, -5126px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2569,7 +2569,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2242px, -5270px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(2562px, -5162px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2578,7 +2578,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-1340px, -4473px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-1020px, -4365px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2587,7 +2587,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-1168px, -4539px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-848px, -4431px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2596,7 +2596,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-859px, -4396px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-539px, -4288px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2605,7 +2605,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(5087px, -5135px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(5407px, -5027px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2614,7 +2614,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(10319px, -3294px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(10639px, -3186px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2623,7 +2623,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(10325px, 1992px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(10645px, 2100px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2632,7 +2632,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(10291px, 7201px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(10611px, 7309px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2641,7 +2641,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(10324px, 11279px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(10644px, 11387px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2650,7 +2650,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11302px, 11557px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11622px, 11665px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2659,7 +2659,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11305px, 11579px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11625px, 11687px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2668,7 +2668,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11298px, 11526px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11618px, 11634px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2677,7 +2677,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(10285px, 8890px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(10605px, 8998px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2686,7 +2686,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(14141px, 4523px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(14461px, 4631px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2695,7 +2695,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11342px, 5790px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11662px, 5898px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2704,7 +2704,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(14141px, 4527px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(14461px, 4635px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2713,7 +2713,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(14150px, -1442px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(14470px, -1334px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2722,7 +2722,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11300px, -4432px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11620px, -4324px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2731,7 +2731,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11635px, -4746px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11955px, -4638px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2740,7 +2740,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11367px, -4294px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11687px, -4186px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2749,7 +2749,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(14140px, -400px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(14460px, -292px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2758,7 +2758,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2620px, -7032px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(2940px, -6924px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2767,7 +2767,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(376px, -7187px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(696px, -7079px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2776,7 +2776,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-6062px, -8917px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-5742px, -8809px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2785,7 +2785,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-6831px, -10519px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-6511px, -10411px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2794,7 +2794,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-1290px, -7187px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-970px, -7079px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2803,7 +2803,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(630px, -7188px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(950px, -7080px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2812,7 +2812,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(6434px, -5784px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(6754px, -5676px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2821,7 +2821,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(6198px, -63px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(6518px, 45px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2830,7 +2830,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(6228px, 3887px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(6548px, 3995px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2839,7 +2839,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(6427px, 8339px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(6747px, 8447px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2848,7 +2848,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(4572px, 10369px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(4892px, 10477px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2857,7 +2857,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(4570px, 10357px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(4890px, 10465px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2866,7 +2866,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(6859px, 7984px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(7179px, 8092px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2875,7 +2875,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(6198px, 892px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(6518px, 1000px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2884,7 +2884,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(6316px, -2877px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(6636px, -2769px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2893,7 +2893,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-7493px, 11720px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-7173px, 11828px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2902,7 +2902,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-6988px, 14799px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-6668px, 14907px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2911,7 +2911,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-10846px, 4622px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-10526px, 4730px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2920,7 +2920,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-4941px, 19294px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-4621px, 19402px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2929,7 +2929,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-1334px, -1825px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-1014px, -1717px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2938,7 +2938,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-1959px, -1931px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-1639px, -1823px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2947,7 +2947,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2479px, -1062px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(2799px, -954px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2956,7 +2956,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(6941px, -1586px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(7261px, -1478px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2965,7 +2965,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(15539px, -1390px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(15859px, -1282px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2974,7 +2974,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(17474px, -1402px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(17794px, -1294px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2983,7 +2983,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(6941px, -1455px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(7261px, -1347px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -2992,7 +2992,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2186px, -1020px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(2506px, -912px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3001,7 +3001,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(27144px, -2829px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(27464px, -2721px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3010,7 +3010,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(27671px, -2841px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(27991px, -2733px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3019,7 +3019,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1386px, 13639px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1706px, 13747px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3028,7 +3028,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-8599px, 8856px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-8279px, 8964px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3037,7 +3037,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-10436px, 4258px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-10116px, 4366px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3046,7 +3046,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-10672px, 4695px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-10352px, 4803px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3055,7 +3055,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-4819px, 11258px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-4499px, 11366px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3064,7 +3064,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(10274px, 18396px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(10594px, 18504px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3073,7 +3073,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11259px, 11644px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11579px, 11752px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3082,7 +3082,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2147px, -912px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(2467px, -804px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3091,7 +3091,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(3644px, -3944px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(3964px, -3836px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3100,7 +3100,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(24476px, 2687px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(24796px, 2795px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3109,7 +3109,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(3704px, -5270px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(4024px, -5162px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3118,7 +3118,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(677px, 1417px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(997px, 1525px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3127,7 +3127,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(27773px, -3110px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(28093px, -3002px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3136,7 +3136,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1134px, -2377px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1454px, -2269px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3145,7 +3145,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(551px, 2040px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(871px, 2148px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3154,7 +3154,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2134px, -961px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(2454px, -853px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3163,7 +3163,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(13164px, -5998px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(13484px, -5890px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3172,7 +3172,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(20134px, 4443px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(20454px, 4551px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3181,7 +3181,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(19798px, -507px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(20118px, -399px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3190,7 +3190,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11773px, -938px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(12093px, -830px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3199,7 +3199,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-17923px, 6414px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-17603px, 6522px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3208,7 +3208,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-15355px, 5594px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-15035px, 5702px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3217,7 +3217,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2279px, -926px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(2599px, -818px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3226,7 +3226,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-6007px, 2243px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-5687px, 2351px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3235,7 +3235,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-9652px, 3991px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-9332px, 4099px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3244,7 +3244,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-27704px, 235px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-27384px, 343px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3253,7 +3253,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(15847px, 3267px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(16167px, 3375px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3262,7 +3262,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11818px, 57px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(12138px, 165px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3271,7 +3271,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-15313px, 1603px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-14993px, 1711px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3280,7 +3280,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-28112px, 129px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-27792px, 237px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3289,7 +3289,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11655px, 3453px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11975px, 3561px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3298,7 +3298,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-15308px, 1601px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-14988px, 1709px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3307,7 +3307,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-8589px, 1680px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-8269px, 1788px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3316,7 +3316,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(652px, 403px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(972px, 511px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3325,7 +3325,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2410px, -930px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(2730px, -822px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3334,7 +3334,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-27144px, 238px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-26824px, 346px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3343,7 +3343,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(20243px, 264px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(20563px, 372px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3352,7 +3352,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(25253px, 2833px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(25573px, 2941px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3361,7 +3361,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(19818px, 151px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(20138px, 259px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3370,7 +3370,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11709px, -1046px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(12029px, -938px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3379,7 +3379,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(12265px, -6528px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(12585px, -6420px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3388,7 +3388,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11965px, -5236px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(12285px, -5128px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3397,7 +3397,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1302px, 749px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1622px, 857px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3406,7 +3406,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(6427px, -1286px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(6747px, -1178px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3415,7 +3415,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-10174px, 4101px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-9854px, 4209px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3424,7 +3424,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-931px, 520px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-611px, 628px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3433,7 +3433,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(8982px, -8569px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(9302px, -8461px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3442,7 +3442,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-5963px, 2236px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-5643px, 2344px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3451,7 +3451,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(5167px, -1114px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(5487px, -1006px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3460,7 +3460,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1610px, 361px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1930px, 469px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3469,7 +3469,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(794px, -3959px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1114px, -3851px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3478,7 +3478,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(2469px, 2215px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(2789px, 2323px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3487,7 +3487,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(4791px, 10386px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(5111px, 10494px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3496,7 +3496,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1308px, -96px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1628px, 12px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3505,7 +3505,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1629px, 2727px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1949px, 2835px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3514,7 +3514,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(664px, -4346px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(984px, -4238px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3523,7 +3523,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(340px, -10922px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(660px, -10814px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3532,7 +3532,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(343px, -10928px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(663px, -10820px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3541,7 +3541,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1202px, -543px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1522px, -435px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3550,7 +3550,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(4940px, 8393px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(5260px, 8501px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3559,7 +3559,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(5071px, 12272px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(5391px, 12380px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3568,7 +3568,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(534px, 1918px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(854px, 2026px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3577,7 +3577,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(3007px, -924px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(3327px, -816px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3586,7 +3586,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11270px, -1186px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11590px, -1078px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3595,7 +3595,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11334px, 11597px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11654px, 11705px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3604,7 +3604,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11337px, 11613px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11657px, 11721px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3613,7 +3613,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1861px, -574px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(2181px, -466px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3622,7 +3622,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11648px, 359px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11968px, 467px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3631,7 +3631,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(11492px, 6478px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11812px, 6586px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3640,7 +3640,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(840px, 988px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1160px, 1096px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3649,7 +3649,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(6565px, 3402px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(6885px, 3510px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3658,7 +3658,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1981px, 2523px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(2301px, 2631px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3667,7 +3667,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-3538px, 9618px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-3218px, 9726px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3676,7 +3676,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-14629px, 20692px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-14309px, 20800px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3685,7 +3685,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-11562px, 18302px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-11242px, 18410px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3694,7 +3694,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1307px, -598px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1627px, -490px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3703,7 +3703,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1332px, -584px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1652px, -476px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3712,7 +3712,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-7951px, 12529px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-7631px, 12637px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3721,7 +3721,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1320px, -616px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1640px, -508px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3730,7 +3730,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(1044px, 440px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(1364px, 548px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3739,7 +3739,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(5813px, 3477px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(6133px, 3585px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3748,7 +3748,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(10854px, 3417px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(11174px, 3525px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3757,7 +3757,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(24371px, 2983px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(24691px, 3091px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3766,7 +3766,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(24275px, 2646px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(24595px, 2754px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3775,7 +3775,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(24311px, 2661px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(24631px, 2769px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3784,7 +3784,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(17962px, 3767px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(18282px, 3875px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3793,7 +3793,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(489px, 7033px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(809px, 7141px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3802,7 +3802,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(528px, 965px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(848px, 1073px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3811,7 +3811,7 @@ exports[`BaseMap overlayWithLargeDataSet smoke-test 1`] = `
         </div>
       </div>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(-6317px, 18122px) rotateX(0deg) rotateZ(0deg);"
+           style="transform: translate(-50%, -50%) translate(-5997px, 18230px) rotateX(0deg) rotateZ(0deg);"
       >
         <div color="#333333"
              stroke="3"
@@ -3890,9 +3890,9 @@ exports[`BaseMap withOptionalControls smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="608"
-              height="432"
-              style="width: 608px; height: 432px;"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
       >
       </canvas>
     </div>
@@ -3939,9 +3939,9 @@ exports[`BaseMap withOptionalControls smoke-test 1`] = `
                 tabindex="0"
                 aria-label="Map"
                 role="region"
-                width="608"
-                height="432"
-                style="width: 608px; height: 432px;"
+                width="1248"
+                height="648"
+                style="width: 1248px; height: 648px;"
         >
         </canvas>
       </div>
@@ -4035,13 +4035,13 @@ exports[`BaseMap withSampleMarkers smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="608"
-              height="432"
-              style="width: 608px; height: 432px;"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
       >
       </canvas>
       <div class="CLASS_NAME_FILLER"
-           style="transform: translate(-50%, -50%) translate(304px, 216px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
+           style="transform: translate(-50%, -50%) translate(624px, 324px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
           <div class="CLASS_NAME_FILLER">
@@ -4098,9 +4098,9 @@ exports[`BaseMap zoomed smoke-test 1`] = `
               tabindex="0"
               aria-label="Map"
               role="region"
-              width="608"
-              height="432"
-              style="width: 608px; height: 432px;"
+              width="1248"
+              height="648"
+              style="width: 1248px; height: 648px;"
       >
       </canvas>
     </div>
@@ -4147,9 +4147,9 @@ exports[`BaseMap zoomed smoke-test 1`] = `
                 tabindex="0"
                 aria-label="Map"
                 role="region"
-                width="608"
-                height="432"
-                style="width: 608px; height: 432px;"
+                width="1248"
+                height="648"
+                style="width: 1248px; height: 648px;"
         >
         </canvas>
       </div>
