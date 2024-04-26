@@ -30,7 +30,7 @@
     "@types/flat": "^5.0.2"
   },
   "peerDependencies": {
-    "react": "^16.14.0",
+    "react": "^18.2.0",
     "react-dom": "^16.8.6",
     "react-intl": "^5.24.6",
     "react-map-gl": "^7.0.15",

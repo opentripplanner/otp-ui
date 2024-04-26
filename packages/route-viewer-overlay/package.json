@@ -29,7 +29,7 @@
     "point-in-polygon": "^1.1.0"
   },
   "peerDependencies": {
-    "react": "^16.14.0"
+    "react": "^18.2.0"
   },
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"
 }
