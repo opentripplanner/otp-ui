@@ -43,16 +43,8 @@ export const WalkOnlyItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper itinerary={walkOnlyItinerary} />
 );
 
-export const WalkOnlyItineraryMetricUnits = (): ReactElement => (
-  <ItineraryBodyDefaultsWrapper itinerary={walkOnlyItinerary} useMetricUnits />
-);
-
 export const BikeOnlyItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper itinerary={bikeOnlyItinerary} />
-);
-
-export const BikeOnlyItineraryMetricUnits = (): ReactElement => (
-  <ItineraryBodyDefaultsWrapper itinerary={bikeOnlyItinerary} useMetricUnits />
 );
 
 export const WalkTransitWalkItinerary = (): ReactElement => (
@@ -104,15 +96,6 @@ export const WalkTransitWalkItineraryWithCustomViewTripButtonActivatedAndCustomR
     itinerary={walkTransitWalkItinerary}
     showViewTripButton
     toRouteAbbreviation={customToRouteAbbreviation}
-  />
-);
-
-export const WalkTransitWalkItineraryWithCustomViewTripButtonActivatedAndCustomRouteAbbreviationUseMetricUnits = (): ReactElement => (
-  <ItineraryBodyDefaultsWrapper
-    itinerary={walkTransitWalkItinerary}
-    showViewTripButton
-    toRouteAbbreviation={customToRouteAbbreviation}
-    useMetricUnits
   />
 );
 
