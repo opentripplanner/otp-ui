@@ -12,7 +12,6 @@ interface Props {
   mapillaryCallback?: (id: string) => void;
   mapillaryKey?: string;
   steps: Step[];
-  useMetricUnits?: boolean;
 }
 
 /**
@@ -21,8 +20,7 @@ interface Props {
 export default function AccessLegSteps({
   steps,
   mapillaryCallback,
-  mapillaryKey,
-  useMetricUnits = false
+  mapillaryKey
 }: Props): ReactElement {
   return (
     <S.Steps>
@@ -35,7 +33,7 @@ export default function AccessLegSteps({
             </S.StepIconContainer>
 
             <S.StepDescriptionContainer>
-              <AccessLegStep step={step} useMetricUnits={useMetricUnits} />
+              <AccessLegStep step={step} />
               <MapillaryButton
                 clickCallback={mapillaryCallback}
                 coords={{ lat, lon }}

@@ -1,5 +1,6 @@
 import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
 import { Stop, UserLocation } from "@opentripplanner/types";
+import coreUtils from "@opentripplanner/core-utils";
 import React from "react";
 import { IntlShape, useIntl } from "react-intl";
 import { Bus } from "@styled-icons/fa-solid/Bus";
@@ -110,15 +111,13 @@ export function TransitStopOption({
   isActive = false,
   onClick,
   stop,
-  stopOptionIcon,
-  useMetricUnits = false
+  stopOptionIcon
 }: {
   id?: string;
   isActive?: boolean;
   onClick: () => void;
   stop: Stop;
   stopOptionIcon: React.ReactNode;
-  useMetricUnits?: boolean;
 }): React.ReactElement {
   const intl = useIntl();
   return (
@@ -126,7 +125,11 @@ export function TransitStopOption({
       <S.StopIconAndDistanceContainer>
         {stopOptionIcon}
         <S.StopDistance>
-          {humanizeDistanceString(stop.dist, useMetricUnits, intl)}
+          {humanizeDistanceString(
+            stop.dist,
+            coreUtils.metricUnits.areMetricUnitsUsed(intl.locale),
+            intl
+          )}
         </S.StopDistance>
       </S.StopIconAndDistanceContainer>
       <S.StopContentContainer>

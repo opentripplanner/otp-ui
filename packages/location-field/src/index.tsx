@@ -185,8 +185,7 @@ const LocationField = ({
   suggestionHeadingType: headingType,
   suppressNearby = false,
   UserLocationIconComponent = UserLocationIcon,
-  userLocationsAndRecentPlaces = [],
-  useMetricUnits = false
+  userLocationsAndRecentPlaces = []
 }: LocationFieldProps): React.ReactElement => {
   /**
    * Gets the initial value to place in the input field.
@@ -725,7 +724,6 @@ const LocationField = ({
             onClick={locationSelected}
             stop={stop}
             stopOptionIcon={stopOptionIcon}
-            useMetricUnits={useMetricUnits}
           />
         );
         itemIndex++;

@@ -1,3 +1,4 @@
+import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
 import { Config, Leg } from "@opentripplanner/types";
 import React, { HTMLAttributes, ReactElement } from "react";
@@ -9,7 +10,6 @@ import { defaultMessages, getPlaceName } from "../util";
 interface Props extends HTMLAttributes<HTMLSpanElement> {
   config: Config;
   leg: Leg;
-  useMetricUnits?: boolean;
 }
 
 /**
@@ -72,8 +72,7 @@ export default function AccessLegDescription({
   className,
   config,
   leg,
-  style,
-  useMetricUnits
+  style
 }: Props): ReactElement {
   const intl = useIntl();
   // Replace the Vertex Type for BIKESHARE with VEHICLE as we do not know that
@@ -102,7 +101,7 @@ export default function AccessLegDescription({
           values={{
             distance: humanizeDistanceString(
               leg.distance,
-              useMetricUnits,
+              coreUtils.metricUnits.areMetricUnitsUsed(intl.locale),
               intl
             ),
             mode: modeContent,

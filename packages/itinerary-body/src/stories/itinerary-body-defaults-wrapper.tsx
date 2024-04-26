@@ -20,7 +20,6 @@ const config = require("../__mocks__/config.json");
 type Props = ItineraryBodyProps & {
   hideDrivingDirections?: boolean;
   styledItinerary?: string;
-  useMetricUnits?: boolean;
 };
 
 interface State {
@@ -63,8 +62,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
       TransitLegSubheader,
       TransitLegSummary,
       AlertToggleIcon,
-      AlertBodyIcon,
-      useMetricUnits = false
+      AlertBodyIcon
     } = this.props;
     const { diagramVisible } = this.state;
     let ItineraryBodyComponent;
@@ -114,7 +112,6 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
         toRouteAbbreviation={toRouteAbbreviation}
         TransitLegSubheader={TransitLegSubheader}
         TransitLegSummary={TransitLegSummary || DefaultTransitLegSummary}
-        useMetricUnits={useMetricUnits}
       />
     );
   }

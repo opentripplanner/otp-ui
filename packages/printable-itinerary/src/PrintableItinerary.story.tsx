@@ -42,15 +42,6 @@ export const WalkOnlyItinerary = () => (
   />
 );
 
-export const WalkOnlyItineraryMetricUnits = () => (
-  <PrintableItinerary
-    config={config}
-    itinerary={walkOnlyItinerary}
-    LegIcon={TriMetLegIcon}
-    useMetricUnits
-  />
-);
-
 // OTP 2.4 type data
 export const OTP24Itinerary = () => (
   <PrintableItinerary
@@ -60,29 +51,11 @@ export const OTP24Itinerary = () => (
   />
 );
 
-export const OTP24ItineraryMetricUnits = () => (
-  <PrintableItinerary
-    config={config}
-    itinerary={otp24Itinerary}
-    LegIcon={TriMetLegIcon}
-    useMetricUnits
-  />
-);
-
 export const BikeOnlyItinerary = () => (
   <PrintableItinerary
     config={config}
     itinerary={bikeOnlyItinerary}
     LegIcon={TriMetLegIcon}
-  />
-);
-
-export const BikeOnlyItineraryUseMetric = () => (
-  <PrintableItinerary
-    config={config}
-    itinerary={bikeOnlyItinerary}
-    LegIcon={TriMetLegIcon}
-    useMetricUnits
   />
 );
 

@@ -19,7 +19,6 @@ interface Props {
   onSummaryClick: () => void;
   showLegIcon: boolean;
   UBER_CLIENT_ID?: string;
-  useMetricUnits?: boolean;
 }
 
 export default function TNCLeg({
@@ -30,8 +29,7 @@ export default function TNCLeg({
   LYFT_CLIENT_ID = "",
   onSummaryClick,
   showLegIcon,
-  UBER_CLIENT_ID = "",
-  useMetricUnits = false
+  UBER_CLIENT_ID = ""
 }: Props): ReactElement {
   const universalLinks = {
     uber: `https://m.uber.com/${
@@ -76,7 +74,6 @@ export default function TNCLeg({
           LegIcon={LegIcon}
           onSummaryClick={onSummaryClick}
           showLegIcon={showLegIcon}
-          useMetricUnits={useMetricUnits}
         />
 
         {/* The "Book Ride" button */}

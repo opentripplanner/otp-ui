@@ -17,16 +17,13 @@ interface Props {
   itinerary: Itinerary;
   /** A component class that is used to render icons for legs of an itinerary. */
   LegIcon: LegIconComponent;
-  /** If true, metric units (km, m) will be used. By default imperial units (mile, feet) will be used */
-  useMetricUnits?: boolean;
 }
 
 function PrintableItinerary({
   className,
   config,
   itinerary,
-  LegIcon,
-  useMetricUnits = false
+  LegIcon
 }: Props): ReactElement {
   return (
     <S.PrintableItinerary className={className}>
@@ -63,13 +60,7 @@ function PrintableItinerary({
         ) : leg.rideHailingEstimate ? (
           <TNCLeg leg={leg} LegIcon={LegIcon} key={k} />
         ) : (
-          <AccessLeg
-            config={config}
-            key={k}
-            leg={leg}
-            LegIcon={LegIcon}
-            useMetricUnits={useMetricUnits}
-          />
+          <AccessLeg config={config} key={k} leg={leg} LegIcon={LegIcon} />
         )
       )}
     </S.PrintableItinerary>
