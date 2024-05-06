@@ -1,6 +1,6 @@
 
 // eslint-disable-next-line prettier/prettier
-import type { AutocompleteQuery } from "../../geocoders/types"
+import type { AutocompleteQuery, SearchQuery } from "../../geocoders/types"
 
 type FetchArgs = {
   url: string
@@ -16,6 +16,8 @@ type OTPGeocoderResponse = {
     code?: string | undefined,
     name: string,
     id: string,
+    agencies?: { id: string, name: string }[]
+    feedPublisher?: { name: string }
     modes: string[]
   }[]
 } | undefined
@@ -24,7 +26,17 @@ type OTPGeocoderResponse = {
 function run({ query, url }: FetchArgs): Promise<OTPGeocoderResponse> {
   return fetch(`${url}/geocode/stopClusters?query=${query}`)
     .then(res => res.text())
-    .then(res => JSON.parse(`{"results": ${res}}`));
+    .then(res => {
+      let parsed = { results: [] }
+
+      try {
+        parsed = JSON.parse(`{"results": ${res}}`)
+      } catch (e) {
+        console.warn("Invalid response from OTP Geocoder!")
+      }
+
+      return parsed
+});
 }
 
 /**
@@ -46,8 +58,11 @@ async function autocomplete({
   })
 }
 
-function search(): Promise<unknown> { console.warn("Not implemented"); return null }
-function reverse(): Promise<unknown> { console.warn("Not implemented"); return null }
+async function search(args: SearchQuery): Promise<OTPGeocoderResponse> {
+  return autocomplete(args);
+} 
+
+function reverse(): Promise<OTPGeocoderResponse> { console.warn("Not implemented"); return null }
 
 
 export { autocomplete, reverse, search };

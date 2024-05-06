@@ -1,5 +1,6 @@
 import { ExternalLinkAlt } from "@styled-icons/fa-solid/ExternalLinkAlt";
 import React, { FunctionComponent } from "react";
+import { FormattedMessage } from "react-intl";
 
 import * as S from "./styled";
 import { Company, Modes } from "./types";
@@ -58,7 +59,7 @@ const FeaturedOptionOverlay = ({
                     defaultImageRender(o)}
                 </span>
                 <span className="open-link">
-                  Open app
+                  <FormattedMessage id="otpUi.TripOptions.openApp" />
                   <ExternalLinkAlt
                     style={{ height: "1em", width: "1em", marginLeft: "1ch" }}
                   />

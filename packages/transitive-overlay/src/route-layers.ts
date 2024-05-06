@@ -37,7 +37,7 @@ export function patternToRouteFeature(
   const properties = {
     color: `#${route.route_color || "000080"}`,
     name: routeName,
-    nameUpper: routeNameUpper,
+    nameUpper: routeName.length === 0 ? "" : routeNameUpper,
     routeType: route.route_type,
     textColor: `#${route.route_text_color || "eee"}`,
     type: "route"

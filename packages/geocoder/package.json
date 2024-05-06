@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/geocoder",
-  "version": "2.0.1",
+  "version": "2.2.2",
   "description": "Geocoding tools for multiple geocoding providers",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -12,6 +12,7 @@
   "dependencies": {
     "@conveyal/geocoder-arcgis-geojson": "^0.0.3",
     "@conveyal/lonlat": "^1.4.1",
+    "@leeoniya/ufuzzy": "^1.0.14",
     "isomorphic-mapzen-search": "^1.6.1",
     "lodash.memoize": "^4.1.2"
   },

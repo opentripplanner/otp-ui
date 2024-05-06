@@ -982,3 +982,409 @@ Object {
   "type": "FeatureCollection",
 }
 `;
+
+exports[`geocoder PHOTON should get location from geocode feature 1`] = `
+Object {
+  "lat": 45.51621,
+  "lon": -122.67325,
+  "name": "Mill Ends Park, Southwest Naito Parkway, Downtown, OR, 97204, Portland, États-Unis d'Amérique",
+  "rawGeocodedFeature": Object {
+    "geometry": Object {
+      "coordinates": Array [
+        -122.67325,
+        45.51621,
+      ],
+      "type": "Point",
+    },
+    "properties": Object {
+      "city": "Portland",
+      "country": "États-Unis d'Amérique",
+      "district": "Downtown",
+      "label": "Mill Ends Park, Southwest Naito Parkway, Downtown, OR, 97204, Portland, États-Unis d'Amérique",
+      "name": "Mill Ends Park",
+      "postcode": "97204",
+      "state": "OR",
+      "street": "Southwest Naito Parkway",
+    },
+  },
+}
+`;
+
+exports[`geocoder PHOTON should make autocomplete query 1`] = `
+Object {
+  "features": Array [
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.67325034999999,
+          45.51621765,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "country": "États-Unis d'Amérique",
+        "countrycode": "US",
+        "extent": Array [
+          -122.673255,
+          45.5162209,
+          -122.6732457,
+          45.5162144,
+        ],
+        "label": "Mill Ends Park, États-Unis d'Amérique",
+        "name": "Mill Ends Park",
+        "osm_id": 156366633,
+        "osm_key": "leisure",
+        "osm_type": "W",
+        "osm_value": "park",
+        "type": "locality",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.6733766,
+          45.5162784,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "city": "Portland",
+        "country": "États-Unis d'Amérique",
+        "countrycode": "US",
+        "county": "Multnomah",
+        "district": "Downtown",
+        "label": "Mill Ends Park, Southwest Naito Parkway, Downtown, OR, 97204, Portland, États-Unis d'Amérique",
+        "name": "Mill Ends Park",
+        "osm_id": 4243944023,
+        "osm_key": "tourism",
+        "osm_type": "N",
+        "osm_value": "information",
+        "postcode": "97204",
+        "state": "OR",
+        "street": "Southwest Naito Parkway",
+        "type": "house",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -2.4756598,
+          53.7547536,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "city": "Blackburn",
+        "country": "Royaume-Uni",
+        "countrycode": "GB",
+        "county": "Blackburn with Darwen",
+        "district": "Four Lane Ends",
+        "extent": Array [
+          -2.4758741,
+          53.7548952,
+          -2.4749263,
+          53.7544719,
+        ],
+        "label": "New Mill Street, Four Lane Ends, Angleterre, BB1 6JS, Blackburn, Royaume-Uni",
+        "name": "New Mill Street",
+        "osm_id": 130281365,
+        "osm_key": "highway",
+        "osm_type": "W",
+        "osm_value": "residential",
+        "postcode": "BB1 6JS",
+        "state": "Angleterre",
+        "type": "street",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -2.0318091,
+          53.8904692,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "city": "Cowling",
+        "country": "Royaume-Uni",
+        "countrycode": "GB",
+        "county": "North Yorkshire",
+        "district": "Cowling",
+        "extent": Array [
+          -2.0319873,
+          53.8905873,
+          -2.0317233,
+          53.8903037,
+        ],
+        "label": "The Old Saw Mill, Cowling, Angleterre, BD22 0JT, Cowling, Royaume-Uni",
+        "locality": "Lane Ends",
+        "name": "The Old Saw Mill",
+        "osm_id": 194668944,
+        "osm_key": "highway",
+        "osm_type": "W",
+        "osm_value": "residential",
+        "postcode": "BD22 0JT",
+        "state": "Angleterre",
+        "type": "street",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -74.4846831,
+          40.7940011,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "city": "Morristown",
+        "country": "États-Unis d'Amérique",
+        "countrycode": "US",
+        "county": "Morris",
+        "label": "The Decorating Store at Terminal Mill Ends, Mount Kemble Avenue, NJ, 07960, Morristown, États-Unis d'Amérique",
+        "name": "The Decorating Store at Terminal Mill Ends",
+        "osm_id": 9634530317,
+        "osm_key": "shop",
+        "osm_type": "N",
+        "osm_value": "interior_decoration",
+        "postcode": "07960",
+        "state": "NJ",
+        "street": "Mount Kemble Avenue",
+        "type": "house",
+      },
+      "type": "Feature",
+    },
+  ],
+  "type": "FeatureCollection",
+}
+`;
+
+exports[`geocoder PHOTON should make reverse query 1`] = `
+Object {
+  "lat": 45.516198,
+  "lon": -122.67324,
+  "name": "Mill Ends Park, États-Unis d'Amérique",
+  "rawGeocodedFeature": Object {
+    "geometry": Object {
+      "coordinates": Array [
+        -122.67325034999999,
+        45.51621765,
+      ],
+      "type": "Point",
+    },
+    "properties": Object {
+      "country": "États-Unis d'Amérique",
+      "countrycode": "US",
+      "extent": Array [
+        -122.673255,
+        45.5162209,
+        -122.6732457,
+        45.5162144,
+      ],
+      "name": "Mill Ends Park",
+      "osm_id": 156366633,
+      "osm_key": "leisure",
+      "osm_type": "W",
+      "osm_value": "park",
+      "type": "locality",
+    },
+    "type": "Feature",
+  },
+}
+`;
+
+exports[`geocoder PHOTON should make reverse query with featurecollection enabled 1`] = `
+Object {
+  "features": Array [
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.67325034999999,
+          45.51621765,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "country": "États-Unis d'Amérique",
+        "countrycode": "US",
+        "extent": Array [
+          -122.673255,
+          45.5162209,
+          -122.6732457,
+          45.5162144,
+        ],
+        "label": "Mill Ends Park, États-Unis d'Amérique",
+        "name": "Mill Ends Park",
+        "osm_id": 156366633,
+        "osm_key": "leisure",
+        "osm_type": "W",
+        "osm_value": "park",
+        "type": "locality",
+      },
+      "type": "Feature",
+    },
+  ],
+  "point": Object {
+    "lat": 45.516198,
+    "lon": -122.67324,
+  },
+  "type": "FeatureCollection",
+}
+`;
+
+exports[`geocoder PHOTON should make search query 1`] = `
+Object {
+  "features": Array [
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.67325034999999,
+          45.51621765,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "country": "États-Unis d'Amérique",
+        "countrycode": "US",
+        "extent": Array [
+          -122.673255,
+          45.5162209,
+          -122.6732457,
+          45.5162144,
+        ],
+        "label": "Mill Ends Park, États-Unis d'Amérique",
+        "name": "Mill Ends Park",
+        "osm_id": 156366633,
+        "osm_key": "leisure",
+        "osm_type": "W",
+        "osm_value": "park",
+        "type": "locality",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.6733766,
+          45.5162784,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "city": "Portland",
+        "country": "États-Unis d'Amérique",
+        "countrycode": "US",
+        "county": "Multnomah",
+        "district": "Downtown",
+        "label": "Mill Ends Park, Southwest Naito Parkway, Downtown, OR, 97204, Portland, États-Unis d'Amérique",
+        "name": "Mill Ends Park",
+        "osm_id": 4243944023,
+        "osm_key": "tourism",
+        "osm_type": "N",
+        "osm_value": "information",
+        "postcode": "97204",
+        "state": "OR",
+        "street": "Southwest Naito Parkway",
+        "type": "house",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -2.4756598,
+          53.7547536,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "city": "Blackburn",
+        "country": "Royaume-Uni",
+        "countrycode": "GB",
+        "county": "Blackburn with Darwen",
+        "district": "Four Lane Ends",
+        "extent": Array [
+          -2.4758741,
+          53.7548952,
+          -2.4749263,
+          53.7544719,
+        ],
+        "label": "New Mill Street, Four Lane Ends, Angleterre, BB1 6JS, Blackburn, Royaume-Uni",
+        "name": "New Mill Street",
+        "osm_id": 130281365,
+        "osm_key": "highway",
+        "osm_type": "W",
+        "osm_value": "residential",
+        "postcode": "BB1 6JS",
+        "state": "Angleterre",
+        "type": "street",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -2.0318091,
+          53.8904692,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "city": "Cowling",
+        "country": "Royaume-Uni",
+        "countrycode": "GB",
+        "county": "North Yorkshire",
+        "district": "Cowling",
+        "extent": Array [
+          -2.0319873,
+          53.8905873,
+          -2.0317233,
+          53.8903037,
+        ],
+        "label": "The Old Saw Mill, Cowling, Angleterre, BD22 0JT, Cowling, Royaume-Uni",
+        "locality": "Lane Ends",
+        "name": "The Old Saw Mill",
+        "osm_id": 194668944,
+        "osm_key": "highway",
+        "osm_type": "W",
+        "osm_value": "residential",
+        "postcode": "BD22 0JT",
+        "state": "Angleterre",
+        "type": "street",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -74.4846831,
+          40.7940011,
+        ],
+        "type": "Point",
+      },
+      "properties": Object {
+        "city": "Morristown",
+        "country": "États-Unis d'Amérique",
+        "countrycode": "US",
+        "county": "Morris",
+        "label": "The Decorating Store at Terminal Mill Ends, Mount Kemble Avenue, NJ, 07960, Morristown, États-Unis d'Amérique",
+        "name": "The Decorating Store at Terminal Mill Ends",
+        "osm_id": 9634530317,
+        "osm_key": "shop",
+        "osm_type": "N",
+        "osm_value": "interior_decoration",
+        "postcode": "07960",
+        "state": "NJ",
+        "street": "Mount Kemble Avenue",
+        "type": "house",
+      },
+      "type": "Feature",
+    },
+  ],
+  "type": "FeatureCollection",
+}
+`;

@@ -4,6 +4,7 @@ import memoize from "lodash.memoize";
 import * as here from "./apis/here";
 import * as photon from "./apis/photon";
 import * as otp from "./apis/otp";
+import * as offline from "./apis/offline";
 
 import ArcGISGeocoder from "./geocoders/arcgis";
 import NoApiGeocoder from "./geocoders/noapi";
@@ -15,6 +16,7 @@ import OTPGeocoder from "./geocoders/otp";
 // Prettier does not support typescript annotation
 // eslint-disable-next-line prettier/prettier
 import type { AutocompleteQuery, GeocoderConfig, ReverseQuery, SearchQuery } from "./geocoders/types"
+import OfflineGeocoder from "./geocoders/offline";
 
 // Create a memoized getter to avoid recreating new geocoders each time.
 const getGeocoder = memoize((geocoderConfig: GeocoderConfig & { type: string }) => {
@@ -33,6 +35,8 @@ const getGeocoder = memoize((geocoderConfig: GeocoderConfig & { type: string }) 
       return new PhotonGeocoder(photon, geocoderConfig);
     case "OTP":
       return new OTPGeocoder(otp, geocoderConfig);
+    case "OFFLINE":
+      return new OfflineGeocoder(offline, geocoderConfig);
     default:
       console.error(`Unknown geocoder type: "${type}". Using NoApiGeocoder.`);
       return new NoApiGeocoder();

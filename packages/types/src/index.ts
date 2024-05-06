@@ -97,24 +97,25 @@ export type ZoomBasedSymbol = {
  * Describes the objects from the real-time vehicle service.
  */
 export type TransitVehicle = {
-  routeShortName?: string;
-  routeLongName?: string;
-  routeType?: string;
   routeColor?: string;
+  routeLongName?: string;
+  routeShortName?: string;
+  routeType?: string;
 
-  status?: string;
+  lastUpdated?: number;
   reportDate?: string;
   seconds?: number;
+  status?: string;
 
-  stopSequence?: number;
-  stopId?: string;
-  vehicleId?: string;
-  tripId?: string;
   blockId?: string;
+  stopId?: string;
+  stopSequence?: number;
+  tripId?: string;
+  vehicleId?: string;
 
+  heading?: number;
   lat?: number;
   lon?: number;
-  heading?: number;
 };
 
 export type OTPTransitVehicle = TransitVehicle & {

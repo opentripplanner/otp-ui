@@ -1,0 +1,16 @@
+otpUi:
+  mapControls:
+    CooperativeGesturesHandler:
+      MacHelpText: Используйте комбинацию ⌘ + прокрутка, чтобы изменить масштаб карты
+      MobileHelpText: Перемещение карты выполняется с помощью двух пальцев
+      WindowsHelpText: Используйте комбинацию Ctrl + прокрутка, чтобы изменить масштаб карты
+    NavigationControl:
+      ResetBearing: Сбросить азимут на север
+      ZoomIn: Увеличить масштаб
+      ZoomOut: Уменьшить масштаб
+    ScaleControl:
+      Feet: ft
+      Kilometers: km
+      Meters: m
+      Miles: mi
+      NauticalMiles: nm
