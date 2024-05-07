@@ -26,7 +26,17 @@ type OTPGeocoderResponse = {
 function run({ query, url }: FetchArgs): Promise<OTPGeocoderResponse> {
   return fetch(`${url}/geocode/stopClusters?query=${query}`)
     .then(res => res.text())
-    .then(res => JSON.parse(`{"results": ${res}}`));
+    .then(res => {
+      let parsed = { results: [] }
+
+      try {
+        parsed = JSON.parse(`{"results": ${res}}`)
+      } catch (e) {
+        console.warn("Invalid response from OTP Geocoder!")
+      }
+
+      return parsed
+});
 }
 
 /**
