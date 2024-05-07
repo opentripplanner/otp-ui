@@ -3,4 +3,5 @@ import { MapPopup } from "./MapPopup";
 import FocusTrapWrapper from "./FocusTrapWrapper";
 import * as S from "./styled";
 
-export { S as Styled, EndpointPopup, FocusTrapWrapper, MapPopup };
+export default MapPopup;
+export { S as Styled, EndpointPopup, FocusTrapWrapper };
