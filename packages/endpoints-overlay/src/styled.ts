@@ -12,8 +12,8 @@ export const Button = styled.button`
   padding-left: 0.2em;
 
   :hover {
-    text-decoration: underline;
     cursor: pointer;
+    text-decoration: underline;
   }
 `;
 

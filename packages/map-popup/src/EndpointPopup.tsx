@@ -1,8 +1,9 @@
 import React from "react";
-import { Popup } from "@opentripplanner/base-map";
-import { FormattedMessage } from "react-intl";
 import styled from "styled-components";
+import { FormattedMessage } from "react-intl";
+import { Popup } from "@opentripplanner/base-map";
 import { Location } from "@opentripplanner/types";
+
 import FocusTrapWrapper from "./FocusTrapWrapper";
 
 type EndpointProps = {
