@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { ReactChild } from "react";
 
 import { Styled as BaseMapStyled } from "@opentripplanner/base-map";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
@@ -30,8 +30,7 @@ const generateLocation = (entity: Entity, name: string) => {
   return { lat, lon, name };
 }
 
-const StationHubDetails = ({ station }: { station: Station }) => {
-  return (
+const StationHubDetails = ({ station }: { station: Station }) => (
     <BaseMapStyled.PopupRow>
       <div>
         <FormattedMessage
@@ -55,13 +54,11 @@ const StationHubDetails = ({ station }: { station: Station }) => {
       </div>
     </BaseMapStyled.PopupRow>
   )
-}
 /**
  * Renders a map popup for a stop, scooter, or shared bike
  */
 
-const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: () => void; }) => {
-  return (
+const StopDetails = ({ id, children }: { id: string, children: ReactChild }) => (
     <BaseMapStyled.PopupRow>
       <strong>
         <FormattedMessage
@@ -73,16 +70,9 @@ const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: () => v
           }}
         />
       </strong>
-      <S.ViewStopButton onClick={setViewedStop}>
-        <FormattedMessage
-          defaultMessage={defaultMessages["otpUi.MapPopup.stopViewer"]}
-          description="Text for link that opens the stop viewer"
-          id="otpUi.MapPopup.stopViewer"
-        />
-      </S.ViewStopButton>
+      {children}
     </BaseMapStyled.PopupRow>
   )
-}
 
 type Entity = Stop | Station
 type Props = {
@@ -123,28 +113,35 @@ export function MapPopup({
 
   return (
     <BaseMapStyled.MapOverlayPopup>
-      <BaseMapStyled.PopupTitle>{name}</BaseMapStyled.PopupTitle>
-      {/* render dock info if it is available */}
-      {entityIsStationHub && <StationHubDetails station={entity} />}
+        <BaseMapStyled.PopupTitle>{name}</BaseMapStyled.PopupTitle>
+        {/* render dock info if it is available */}
+        {entityIsStationHub && <StationHubDetails station={entity} />}
 
-      {/* render stop viewer link if available */}
-      {setViewedStop && !bikesAvailablePresent && (
-        <StopDetails
-          id={stopId}
-          setViewedStop={useCallback(() => setViewedStop(entity), [entity])}
-        />
-      )}
+        {/* render stop viewer link if available */}
+        {setViewedStop && !bikesAvailablePresent && (
+          <StopDetails
+            id={stopId}
+          >
+            <S.ViewStopButton onClick={() => setViewedStop}>
+              <FormattedMessage
+                defaultMessage={defaultMessages["otpUi.MapPopup.stopViewer"]}
+                description="Text for link that opens the stop viewer"
+                id="otpUi.MapPopup.stopViewer"
+              />
+            </S.ViewStopButton>
+          </StopDetails>  
+        )}
 
-      {/* The "Set as [from/to]" ButtonGroup */}
-      {setLocation && (
-        <BaseMapStyled.PopupRow>
-          <FromToLocationPicker
-            label
-            location={generateLocation(entity, name)}
-            setLocation={setLocation}
-          />
-        </BaseMapStyled.PopupRow>
-      )}
-    </BaseMapStyled.MapOverlayPopup>
+        {/* The "Set as [from/to]" ButtonGroup */}
+        {setLocation && (
+          <BaseMapStyled.PopupRow>
+            <FromToLocationPicker
+              label
+              location={generateLocation(entity, name)}
+              setLocation={setLocation}
+            />
+          </BaseMapStyled.PopupRow>
+        )}      
+      </BaseMapStyled.MapOverlayPopup>
   );
 }

@@ -1,23 +1,23 @@
-import React, { useCallback, useMemo } from "react";
+import React from "react";
 import { Popup } from "@opentripplanner/base-map";
 import { FormattedMessage } from "react-intl";
 import styled from "styled-components";
 import { Location } from "@opentripplanner/types";
-import { getEntryRelativeTo } from "./util";
+import FocusTrapWrapper from "./FocusTrapWrapper";
 
 type EndpointProps = {
+  clearLocation: () => void;
+  forgetHome: () => void;
+  forgetWork: () => void;
   location?: Location;
-  UserLocationIcon: any;
   isWork: boolean;
   isHome: boolean;
-  forgetHome: () => void;
   rememberAsHome: () => void;
-  forgetWork: () => void;
   rememberAsWork: () => void;
-  clearLocation: () => void;
-  swapLocation: () => void;
   setShowPopup: (arg: boolean) => void;
+  swapLocation: () => void;
   type: string;
+  UserLocationIcon: any;
 };
 
 const Button = styled.button`
@@ -28,10 +28,9 @@ const Button = styled.button`
   font-size: inherit;
   line-height: inherit;
   padding-left: 0.2em;
-
   :hover {
-    text-decoration: underline;
     cursor: pointer;
+    text-decoration: underline;
   }
 `;
 
@@ -51,46 +50,10 @@ function EndpointPopup({
 }: EndpointProps): JSX.Element {
   const otherType = type === "from" ? "to" : "from";
   const icon = isWork ? "briefcase" : isHome ? "home" : "map-marker";
-  let keysDown: string[] = useMemo(() => [], []);
 
-  const queryId = `${type}-endpoint-popup button`;
-
-  const handleKeyDown = useCallback(
-    e => {
-      keysDown.push(e.key);
-      const element = e.target as HTMLElement;
-      switch (e.key) {
-        case "Escape":
-          setShowPopup(false);
-          break;
-        case "Tab":
-          if (keysDown.includes("Shift")) {
-            e.preventDefault();
-            getEntryRelativeTo(queryId, element, -1)?.focus();
-          } else {
-            e.preventDefault();
-            getEntryRelativeTo(queryId, element, 1)?.focus();
-          }
-          break;
-        case " ":
-          break;
-        default:
-      }
-    },
-    [setShowPopup, keysDown]
-  );
-
-  const handleKeyUp = (e: any) => {
-    keysDown = keysDown.filter(key => key !== e.key);
-  };
   return (
     <Popup latitude={location.lat} longitude={location.lon}>
-      <div
-        role="presentation"
-        onKeyDown={handleKeyDown}
-        onKeyUp={handleKeyUp}
-        id={`${type}-endpoint-popup`}
-      >
+      <FocusTrapWrapper id={`${type}-endpoint-popup`} setPopup={setShowPopup}>
         <strong>
           <UserLocationIcon type={icon} />
           {location.name}
@@ -163,7 +126,7 @@ function EndpointPopup({
             />
           </Button>
         </div>
-      </div>
+      </FocusTrapWrapper>
     </Popup>
   );
 }
