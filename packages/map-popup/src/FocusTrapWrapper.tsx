@@ -54,7 +54,7 @@ const FocusTrapWrapper = ({
   id: string;
   setPopup: any;
 }): JSX.Element => {
-  const queryId = `${id}-popup-focus-trap button`;
+  const queryId = `#${id}-popup-focus-trap button`;
   const handleKeyDown = useCallback(
     e => {
       const element = e.target as HTMLElement;
