@@ -10,23 +10,39 @@ import React, { useCallback } from "react";
  * @returns {HTMLElement} - element to be focused
  */
 
-export function getEntryRelativeTo(
-  query: string,
-  element: EventTarget,
-  offset: 1 | -1
-): HTMLElement {
+function getEntries(query: string) {
   const entries = Array.from(document.querySelectorAll(query));
   const firstElement = entries[0];
   const lastElement = entries[entries.length - 1];
+
+  return { entries, firstElement, lastElement };
+}
+
+export function getNextSibling(
+  query: string,
+  element: EventTarget
+): HTMLElement {
+  const { entries, firstElement, lastElement } = getEntries(query);
   const elementIndex = entries.indexOf(element as HTMLButtonElement);
 
-  if (element === firstElement && offset === -1) {
-    return lastElement as HTMLElement;
-  }
-  if (element === lastElement && offset === 1) {
+  if (element === lastElement) {
     return firstElement as HTMLElement;
   }
-  return entries[elementIndex + offset] as HTMLElement;
+  return entries[elementIndex + 1] as HTMLElement;
+}
+
+export function getPrevSibling(
+  query: string,
+  element: EventTarget
+): HTMLElement {
+  const { entries, firstElement, lastElement } = getEntries(query);
+  const elementIndex = entries.indexOf(element as HTMLButtonElement);
+
+  if (element === firstElement) {
+    return lastElement as HTMLElement;
+  }
+
+  return entries[elementIndex - 1] as HTMLElement;
 }
 
 const FocusTrapWrapper = ({
@@ -49,10 +65,10 @@ const FocusTrapWrapper = ({
         case "Tab":
           if (e.shiftKey) {
             e.preventDefault();
-            getEntryRelativeTo(queryId, element, -1)?.focus();
+            getPrevSibling(queryId, element)?.focus();
           } else {
             e.preventDefault();
-            getEntryRelativeTo(queryId, element, 1)?.focus();
+            getNextSibling(queryId, element)?.focus();
           }
           break;
         default:
