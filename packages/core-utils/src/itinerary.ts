@@ -319,6 +319,16 @@ export function legElevationAtDistance(
   return null;
 }
 
+export function mapOldElevationComponentToNew(oldElev: {
+  first: number;
+  second: number;
+}): ElevationProfileComponent {
+  return {
+    distance: oldElev.first,
+    elevation: oldElev.second
+  };
+}
+
 // Iterate through the steps, building the array of elevation points and
 // keeping track of the minimum and maximum elevations reached
 export function getElevationProfile(
@@ -337,10 +347,9 @@ export function getElevationProfile(
     const stepElevationProfile =
       step.elevationProfile ||
       (Array.isArray(step.elevation) &&
-        step.elevation?.map<ElevationProfileComponent>(elev => ({
-          distance: elev.first,
-          elevation: elev.second
-        })));
+        step.elevation?.map<ElevationProfileComponent>(
+          mapOldElevationComponentToNew
+        ));
 
     if (!stepElevationProfile || stepElevationProfile.length === 0) {
       traversed += step.distance;

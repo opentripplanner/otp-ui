@@ -9,7 +9,8 @@ import {
   getLegRouteLongName,
   getLegRouteName,
   getLegRouteShortName,
-  isTransit
+  isTransit,
+  mapOldElevationComponentToNew
 } from "../itinerary";
 
 const bikeRentalItinerary = require("./__mocks__/bike-rental-itinerary.json");
@@ -31,10 +32,7 @@ describe("util > itinerary", () => {
       const graphqlOutput = getElevationProfile(
         bikeRentalItinerary.legs[1].steps.map(step => ({
           ...step,
-          elevationProfile: step.elevation.map(elev => ({
-            distance: elev.first,
-            elevation: elev.second
-          })),
+          elevationProfile: step.elevation.map(mapOldElevationComponentToNew),
           elevation: null
         }))
       );
