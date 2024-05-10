@@ -1,14 +1,4 @@
-import React, { useCallback } from "react";
-
-/**
- * Helper method to find the element within the app menu at the given offset
- * (e.g. previous or next) relative to the specified element.
- *
- * @param {string} query  - Argument that gets passed to document.querySelectorAll
- * @param {HTMLElement} element - Specified element (e.target)
- * @param {1 | -1} offset - Determines direction to move within array of focusable elements (previous or next)
- * @returns {HTMLElement} - element to be focused
- */
+import React, { ReactNode, useCallback } from "react";
 
 function getEntries(query: string) {
   const entries = Array.from(document.querySelectorAll(query));
@@ -18,41 +8,56 @@ function getEntries(query: string) {
   return { entries, firstElement, lastElement };
 }
 
+/**
+ * Helper method to find the next focusable sibling element relative to the
+ * specified element.
+ *
+ * @param {string} query  - Argument that gets passed to document.querySelectorAll
+ * @param {HTMLElement} element - Specified element (e.target)
+ * @returns {HTMLElement} - element to be focused
+ */
 export function getNextSibling(
   query: string,
   element: EventTarget
 ): HTMLElement {
   const { entries, firstElement, lastElement } = getEntries(query);
-  const elementIndex = entries.indexOf(element as HTMLButtonElement);
 
   if (element === lastElement) {
     return firstElement as HTMLElement;
   }
+  const elementIndex = entries.indexOf(element as HTMLElement);
   return entries[elementIndex + 1] as HTMLElement;
 }
 
-export function getPrevSibling(
+/**
+ * Helper method to find the previous focusable sibling element relative to the
+ * specified element.
+ *
+ * @param {string} query  - Argument that gets passed to document.querySelectorAll
+ * @param {HTMLElement} element - Specified element (e.target)
+ * @returns {HTMLElement} - element to be focused
+ */
+export function getPreviousSibling(
   query: string,
   element: EventTarget
 ): HTMLElement {
   const { entries, firstElement, lastElement } = getEntries(query);
-  const elementIndex = entries.indexOf(element as HTMLButtonElement);
 
   if (element === firstElement) {
     return lastElement as HTMLElement;
   }
-
+  const elementIndex = entries.indexOf(element as HTMLButtonElement);
   return entries[elementIndex - 1] as HTMLElement;
 }
 
 const FocusTrapWrapper = ({
   children,
   id,
-  setPopup
+  closePopup
 }: {
-  children: JSX.Element | JSX.Element[];
+  children: ReactNode | ReactNode[];
   id: string;
-  setPopup: any;
+  closePopup: (arg?: boolean) => void;
 }): JSX.Element => {
   const queryId = `#${id}-popup-focus-trap button`;
   const handleKeyDown = useCallback(
@@ -60,21 +65,20 @@ const FocusTrapWrapper = ({
       const element = e.target as HTMLElement;
       switch (e.key) {
         case "Escape":
-          setPopup(false);
+          closePopup();
           break;
         case "Tab":
+          e.preventDefault();
           if (e.shiftKey) {
-            e.preventDefault();
-            getPrevSibling(queryId, element)?.focus();
+            getPreviousSibling(queryId, element)?.focus();
           } else {
-            e.preventDefault();
             getNextSibling(queryId, element)?.focus();
           }
           break;
         default:
       }
     },
-    [setPopup]
+    [closePopup]
   );
 
   return (
