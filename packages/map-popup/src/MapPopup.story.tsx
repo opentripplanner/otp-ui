@@ -1,5 +1,6 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
+import { EndpointPopupContent } from "./EndpointPopup";
 import MapPopupContents, { FocusTrapWrapper } from "./index";
 
 export default {
@@ -12,6 +13,13 @@ const STOP = {
   lat: 45.523009,
   lon: -122.672529,
   name: "W Burnside & SW 2nd"
+};
+
+const LOCATION = {
+  lat: 45.523009,
+  lon: -122.672529,
+  name: "W Burnside & SW 2nd",
+  type: "home"
 };
 
 const STATION = {
@@ -84,4 +92,20 @@ export const StopEntityWithFocusTrap = (): JSX.Element => (
       setViewedStop={action("setViewedStop")}
     />
   </FocusTrapWrapper>
+);
+
+export const EndpointOverlayContent = (): JSX.Element => (
+  <EndpointPopupContent
+    clearLocation={() => {}}
+    location={LOCATION}
+    forgetHome={() => {}}
+    forgetWork={() => {}}
+    isWork={false}
+    isHome
+    rememberAsHome={() => {}}
+    rememberAsWork={() => {}}
+    swapLocation={() => {}}
+    type="home"
+    UserLocationIcon={() => null}
+  />
 );
