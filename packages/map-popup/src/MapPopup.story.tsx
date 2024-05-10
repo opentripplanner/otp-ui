@@ -48,48 +48,40 @@ const FLOATING_VEHICLE = {
   y: 45.525486666666666
 };
 
-export const StopEntity = (): JSX.Element => {
-  return (
+export const StopEntity = (): JSX.Element => (
+  <MapPopupContents
+    entity={STOP}
+    setLocation={action("setLocation")}
+    setViewedStop={action("setViewedStop")}
+  />
+);
+
+export const StopEntityNoHandlers = (): JSX.Element => (
+  <MapPopupContents entity={STOP} />
+);
+
+export const StationEntity = (): JSX.Element => (
+  <MapPopupContents
+    entity={STATION}
+    setLocation={action("setLocation")}
+    setViewedStop={action("setViewedStop")}
+  />
+);
+
+export const FloatingVehicleEntity = (): JSX.Element => (
+  <MapPopupContents
+    entity={FLOATING_VEHICLE}
+    setLocation={action("setLocation")}
+    setViewedStop={action("setViewedStop")}
+  />
+);
+
+export const StopEntityWithFocusTrap = (): JSX.Element => (
+  <FocusTrapWrapper id="storybook-stop" setPopup={() => {}}>
     <MapPopupContents
       entity={STOP}
       setLocation={action("setLocation")}
       setViewedStop={action("setViewedStop")}
     />
-  );
-};
-
-export const StopEntityNoHandlers = (): JSX.Element => {
-  return <MapPopupContents entity={STOP} />;
-};
-
-export const StationEntity = (): JSX.Element => {
-  return (
-    <MapPopupContents
-      entity={STATION}
-      setLocation={action("setLocation")}
-      setViewedStop={action("setViewedStop")}
-    />
-  );
-};
-
-export const FloatingVehicleEntity = (): JSX.Element => {
-  return (
-    <MapPopupContents
-      entity={FLOATING_VEHICLE}
-      setLocation={action("setLocation")}
-      setViewedStop={action("setViewedStop")}
-    />
-  );
-};
-
-export const StopEntityWithFocusTrap = (): JSX.Element => {
-  return (
-    <FocusTrapWrapper id="storybook-stop" setPopup={() => {}}>
-      <MapPopupContents
-        entity={STOP}
-        setLocation={action("setLocation")}
-        setViewedStop={action("setViewedStop")}
-      />
-    </FocusTrapWrapper>
-  );
-};
+  </FocusTrapWrapper>
+);

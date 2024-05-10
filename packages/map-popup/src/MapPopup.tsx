@@ -31,48 +31,48 @@ const generateLocation = (entity: Entity, name: string) => {
 }
 
 const StationHubDetails = ({ station }: { station: Station }) => (
-    <BaseMapStyled.PopupRow>
-      <div>
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.MapPopup.availableBikes"]
-          }
-          description="Label text for the number of bikes available"
-          id="otpUi.MapPopup.availableBikes"
-          values={{ value: station.bikesAvailable }}
-        />
-      </div>
-      <div>
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.MapPopup.availableDocks"]
-          }
-          description="Label text for the number of docks available"
-          id="otpUi.MapPopup.availableDocks"
-          values={{ value: station.spacesAvailable }}
-        />
-      </div>
-    </BaseMapStyled.PopupRow>
-  )
+  <BaseMapStyled.PopupRow>
+    <div>
+      <FormattedMessage
+        defaultMessage={
+          defaultMessages["otpUi.MapPopup.availableBikes"]
+        }
+        description="Label text for the number of bikes available"
+        id="otpUi.MapPopup.availableBikes"
+        values={{ value: station.bikesAvailable }}
+      />
+    </div>
+    <div>
+      <FormattedMessage
+        defaultMessage={
+          defaultMessages["otpUi.MapPopup.availableDocks"]
+        }
+        description="Label text for the number of docks available"
+        id="otpUi.MapPopup.availableDocks"
+        values={{ value: station.spacesAvailable }}
+      />
+    </div>
+  </BaseMapStyled.PopupRow>
+)
 /**
  * Renders a map popup for a stop, scooter, or shared bike
  */
 
 const StopDetails = ({ id, children }: { id: string, children: ReactChild }) => (
-    <BaseMapStyled.PopupRow>
-      <strong>
-        <FormattedMessage
-          defaultMessage={defaultMessages["otpUi.MapPopup.stopId"]}
-          description="Displays the stop id"
-          id="otpUi.MapPopup.stopId"
-          values={{
-            stopId: id
-          }}
-        />
-      </strong>
-      {children}
-    </BaseMapStyled.PopupRow>
-  )
+  <BaseMapStyled.PopupRow>
+    <strong>
+      <FormattedMessage
+        defaultMessage={defaultMessages["otpUi.MapPopup.stopId"]}
+        description="Displays the stop id"
+        id="otpUi.MapPopup.stopId"
+        values={{
+          stopId: id
+        }}
+      />
+    </strong>
+    {children}
+  </BaseMapStyled.PopupRow>
+)
 
 type Entity = Stop | Station
 type Props = {
@@ -113,7 +113,7 @@ export function MapPopup({
 
   return (
     <BaseMapStyled.MapOverlayPopup>
-        <BaseMapStyled.PopupTitle>{name}</BaseMapStyled.PopupTitle>
+      <BaseMapStyled.PopupTitle>{name}</BaseMapStyled.PopupTitle>
         {/* render dock info if it is available */}
         {entityIsStationHub && <StationHubDetails station={entity} />}
 
