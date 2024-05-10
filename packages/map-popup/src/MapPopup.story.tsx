@@ -77,7 +77,7 @@ export const FloatingVehicleEntity = (): JSX.Element => (
 );
 
 export const StopEntityWithFocusTrap = (): JSX.Element => (
-  <FocusTrapWrapper id="storybook-stop" setPopup={() => {}}>
+  <FocusTrapWrapper id="storybook-stop" closePopup={() => {}}>
     <MapPopupContents
       entity={STOP}
       setLocation={action("setLocation")}

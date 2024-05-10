@@ -54,7 +54,10 @@ function EndpointPopup({
 
   return (
     <Popup latitude={location.lat} longitude={location.lon}>
-      <FocusTrapWrapper id={`${type}-endpoint-popup`} setPopup={setShowPopup}>
+      <FocusTrapWrapper
+        id={`${type}-endpoint-popup`}
+        closePopup={() => setShowPopup(false)}
+      >
         <strong>
           <UserLocationIcon type={icon} />
           {location.name}
