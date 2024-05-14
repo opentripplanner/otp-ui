@@ -87,7 +87,7 @@ function entityIsStation(entity: Entity): entity is Station {
   return "bikesAvailable" in entity
 }
 
-export function MapPopup({
+function MapPopup({
   configCompanies,
   entity,
   getEntityName,
@@ -145,3 +145,5 @@ export function MapPopup({
       </BaseMapStyled.MapOverlayPopup>
   );
 }
+
+export default MapPopup;
