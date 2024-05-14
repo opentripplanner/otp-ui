@@ -1,13 +1,16 @@
+import { ElevationProfile } from "@opentripplanner/types";
 import {
   calculateTncFares,
   getCompanyFromLeg,
   getDisplayedStopId,
+  getElevationProfile,
   getItineraryCost,
   getLegCost,
   getLegRouteLongName,
   getLegRouteName,
   getLegRouteShortName,
-  isTransit
+  isTransit,
+  mapOldElevationComponentToNew
 } from "../itinerary";
 
 const bikeRentalItinerary = require("./__mocks__/bike-rental-itinerary.json");
@@ -21,6 +24,22 @@ const basePlace = {
 };
 
 describe("util > itinerary", () => {
+  describe("getElevationProfile", () => {
+    it("should work with REST legacy data and GraphQL elevationProfile", () => {
+      const legacyOutput = getElevationProfile(
+        bikeRentalItinerary.legs[1].steps
+      );
+      const graphqlOutput = getElevationProfile(
+        bikeRentalItinerary.legs[1].steps.map(step => ({
+          ...step,
+          elevationProfile: step.elevation.map(mapOldElevationComponentToNew),
+          elevation: null
+        }))
+      );
+      expect(legacyOutput).toEqual<ElevationProfile>(graphqlOutput);
+    });
+  });
+
   describe("isTransit", () => {
     it("should work", () => {
       expect(isTransit("CAR")).toBeFalsy();
