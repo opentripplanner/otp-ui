@@ -3,9 +3,6 @@ import { rest } from "msw";
 
 import tilejson from "./tilejson.json";
 
-// import seventy from "./4770-6206.pbf";
-// import seventyOne from "./4771-6206.pbf";
-// import seventyTwo from "./4772-6206.pbf";
 const seventy = new URL("./4770-6206.pbf", import.meta.url);
 const seventyOne = new URL("./4771-6206.pbf", import.meta.url);
 const seventyTwo = new URL("./4772-6206.pbf", import.meta.url);
