@@ -81,20 +81,20 @@ export const RentalBicycles = () => (
 );
 
 export const RentalBicyclesVisibilityControlledByKnob = ({
-  isOverlayVisible
+  visible
 }: {
-  isOverlayVisible: boolean;
+  visible: boolean;
 }): ReactNode => {
   return (
     <ZoomControlledMapWithVehicleRentalOverlay
       companies={["BIKETOWN"]}
       refreshVehicles={action("refresh bicycles")}
       stations={bikeRentalStations}
-      visible={isOverlayVisible}
+      visible={visible}
     />
   );
 };
-RentalBicyclesVisibilityControlledByKnob.args = { isOverlayVisible: false };
+RentalBicyclesVisibilityControlledByKnob.args = { visible: true };
 
 export const RentalCars = () => (
   <ZoomControlledMapWithVehicleRentalOverlay
