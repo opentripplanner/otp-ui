@@ -145,8 +145,8 @@ function EndpointPopup({
   return (
     <Popup latitude={location.lat} longitude={location.lon}>
       <FocusTrapWrapper
-        id={`${type}-endpoint-popup`}
         closePopup={() => setShowPopup(false)}
+        id={`${type}-endpoint-popup`}
       >
         <EndpointPopupContent
           clearLocation={clearLocation}

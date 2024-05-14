@@ -52,12 +52,12 @@ export function getPreviousSibling(
 
 const FocusTrapWrapper = ({
   children,
-  id,
-  closePopup
+  closePopup,
+  id
 }: {
   children: ReactNode | ReactNode[];
-  id: string;
   closePopup: (arg?: boolean) => void;
+  id: string;
 }): JSX.Element => {
   const queryId = `#${id}-popup-focus-trap button`;
   const handleKeyDown = useCallback(
