@@ -46,8 +46,10 @@ export const MenuItemList = styled.ul.attrs({
   list-style: none;
   margin: 2px 0 0;
   min-width: 160px;
+  max-height: 75vh;
   padding: 5px 0;
   position: absolute;
+  overflow: scroll;
   text-align: left;
   top: 100%;
   /* this is an annoyingly high number, but is needed to be on top of some otp-rr components */
