@@ -52,11 +52,11 @@ export function getPreviousSibling(
 
 const FocusTrapWrapper = ({
   children,
-  closePopup,
+  closePopup = null,
   id
 }: {
   children: ReactNode | ReactNode[];
-  closePopup: (arg?: boolean) => void;
+  closePopup?: (arg?: boolean) => void;
   id: string;
 }): JSX.Element => {
   const queryId = `#${id}-popup-focus-trap button`;
