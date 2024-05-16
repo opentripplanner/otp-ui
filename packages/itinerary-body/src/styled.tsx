@@ -661,7 +661,7 @@ export const TransitAlert = styled.li`
 `;
 
 export const TransitAlertExternalLink = styled.a`
-  align-items: center;
+  align-items: baseline;
   display: flex;
   gap: 5px;
   margin-top: 0.5em;

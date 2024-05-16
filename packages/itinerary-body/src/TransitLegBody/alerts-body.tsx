@@ -3,7 +3,7 @@ import { toDate, utcToZonedTime } from "date-fns-tz";
 import coreUtils from "@opentripplanner/core-utils";
 import { Alert } from "@opentripplanner/types";
 import React, { FunctionComponent, ReactElement } from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 
 import { ExternalLinkAlt } from "@styled-icons/fa-solid";
 import * as S from "../styled";
@@ -12,7 +12,7 @@ import { defaultMessages } from "../util";
 const { getUserTimezone, getCurrentDate } = coreUtils.time;
 
 interface Props {
-  agencyName: string;
+  agencyName?: string;
   alerts: Alert[];
   AlertIcon?: FunctionComponent;
   timeZone?: string;
@@ -70,6 +70,10 @@ export default function AlertsBody({
   timeZone = getUserTimezone()
 }: Props): ReactElement {
   if (typeof alerts !== "object") return null;
+  const intl = useIntl();
+  const defaultAgencyName = intl.formatMessage({
+    id: "otpUi.TransitLegBody.AlertsBody.agency"
+  });
   return (
     <S.TransitAlerts>
       {alerts
@@ -145,9 +149,10 @@ export default function AlertsBody({
                         }
                         description="Text with the date an alert takes effect"
                         id="otpUi.TransitLegBody.AlertsBody.alertLinkText"
-                        values={{ agency: agencyName }}
-                      />{" "}
+                        values={{ agency: agencyName || defaultAgencyName }}
+                      />
                       <S.InvisibleAdditionalDetails>
+                        {" "}
                         <FormattedMessage id="otpUi.TransitLegBody.AlertsBody.externalLink" />
                       </S.InvisibleAdditionalDetails>
                     </S.TransitAlertExternalLink>
