@@ -130,7 +130,7 @@ sliderSelector.parameters = {
 export const dateTimeSelector = makeStory(Core.DateTimeSelector, {
   date: "2020-02-15",
   dateFormatLegacy: "YY-M-d",
-  departArrive: "NOW",
+  departArrive: "DEPART",
   forceLegacy: false,
   onQueryParamChange,
   time: "14:17",
