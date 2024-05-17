@@ -2,7 +2,7 @@ import CSS from "csstype";
 import { format, parse } from "date-fns";
 import flatten from "flat";
 import coreUtils from "@opentripplanner/core-utils";
-import React, { ChangeEvent, ReactElement, ReactNode, useCallback } from "react";
+import React, { ChangeEvent, ReactElement, ReactNode, useCallback, useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 
 import ModeButton from "../ModeButton";
@@ -137,6 +137,8 @@ export default function DateTimeSelector({
   timeZone = getUserTimezone()
 }: DateTimeSelectorProps): ReactElement {
   const intl = useIntl()
+  const [internalTime, setInternalTime] = useState(time)
+  const [internalDate, setInternalDate] = useState(date)
 
   const handleQueryParamChange = useCallback(
     (queryParam: QueryParamChangeEvent): void => {
@@ -147,16 +149,21 @@ export default function DateTimeSelector({
     [onQueryParamChange]
   );
 
-  const handleInputChange = (key: string) => useCallback(
-    (evt: ChangeEvent<HTMLInputElement>): void => {
-      handleQueryParamChange({ [key]: evt.target.value });
+  const handleInputChangeDate = useCallback(
+    (value: string): void => {
+      setInternalDate(value)
+      handleQueryParamChange({ date: value });
     },
-    [onQueryParamChange, key]
+    [onQueryParamChange]
   );
 
-  const handleDateChange = handleInputChange("date");
-
-  const handleTimeChange = handleInputChange("time");
+  const handleInputChangeTime = useCallback(
+    (value: string): void => {
+      setInternalTime(value)
+      handleQueryParamChange({ time: value });
+    },
+    [onQueryParamChange]
+  );
 
   const handleTimeChangeLegacy = useCallback(
     (evt: ChangeEvent<HTMLInputElement>): void => {
@@ -256,19 +263,19 @@ export default function DateTimeSelector({
           <div>
             <input
               aria-label={intl.formatMessage({ id: "otpUi.DateTimeSelector.time" })}
-              onChange={handleTimeChange}
+              onChange={(e) => handleInputChangeTime(e.target.value)}
               required
               type="time"
-              value={time}
+              value={internalTime}
             />
           </div>
           <div>
             <input
               aria-label={intl.formatMessage({ id: "otpUi.DateTimeSelector.date" })}
-              onChange={handleDateChange}
+              onChange={(e) => handleInputChangeDate(e.target.value)}
               required
               type="date"
-              value={date}
+              value={internalDate}
             />
           </div>
         </S.DateTimeSelector.DateTimeRow>
