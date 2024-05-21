@@ -288,7 +288,11 @@ class TransitLegBody extends Component<Props, State> {
             )}
             {/* Alerts toggle */}
             {alerts?.length > 0 && (
-              <S.TransitAlertToggle onClick={this.onToggleAlertsClick}>
+              <S.TransitAlertToggle
+                isButton={!shouldOnlyShowAlertsExpanded}
+                as={shouldOnlyShowAlertsExpanded && "div"}
+                onClick={this.onToggleAlertsClick}
+              >
                 <AlertToggleIcon />{" "}
                 <FormattedMessage
                   defaultMessage={
@@ -301,17 +305,19 @@ class TransitLegBody extends Component<Props, State> {
                   }}
                 />
                 {!shouldOnlyShowAlertsExpanded && (
-                  <S.CaretToggle expanded={alertsExpanded} />
+                  <>
+                    <S.CaretToggle expanded={alertsExpanded} />
+                    <S.InvisibleAdditionalDetails>
+                      <FormattedMessage
+                        defaultMessage={
+                          defaultMessages["otpUi.TransitLegBody.expandDetails"]
+                        }
+                        description="Screen reader text added to expand steps"
+                        id="otpUi.TransitLegBody.expandDetails"
+                      />
+                    </S.InvisibleAdditionalDetails>
+                  </>
                 )}
-                <S.InvisibleAdditionalDetails>
-                  <FormattedMessage
-                    defaultMessage={
-                      defaultMessages["otpUi.TransitLegBody.expandDetails"]
-                    }
-                    description="Screen reader text added to expand steps"
-                    id="otpUi.TransitLegBody.expandDetails"
-                  />
-                </S.InvisibleAdditionalDetails>
               </S.TransitAlertToggle>
             )}
 

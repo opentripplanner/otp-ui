@@ -699,11 +699,14 @@ export const TransitAlertIconContainer = styled.div`
 export const TransitAlerts = styled.ul`
   display: block;
   margin-top: 3px;
+  padding: 0;
 `;
 
-export const TransitAlertToggle = styled(TransparentButton)`
+export const TransitAlertToggle = styled(TransparentButton)<{
+  isButton?: boolean;
+}>`
   color: #d14727;
-  cursor: pointer;
+  cursor: ${props => (props.isButton ? "cursor" : "auto")};
   display: inline-block;
   font-weight: 400;
   margin-top: 8px;
