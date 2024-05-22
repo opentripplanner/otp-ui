@@ -93,7 +93,6 @@ otpUi:
       alertLinkText: See alert on {agency} website
       effectiveDate: Effective as of {dateTime, date, long}
       effectiveTimeAndDate: Effective as of {dateTime, time, short}, {day}
-      externalLink: (External link)
       linkOpensNewWindow: (Opens new window)
       noAgencyAlertLinkText: See alert on agency website
       today: Today
