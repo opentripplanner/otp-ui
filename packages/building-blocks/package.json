@@ -10,8 +10,7 @@
   "private": false,
   "devDependencies": {
     "@opentripplanner/core-utils": "^11.2.3",
-    "@opentripplanner/types": "^6.4.0",
-    "styled-icons": "^10.34.0"
+    "@opentripplanner/types": "^6.4.0"
   },
   "peerDependencies": {
     "react": "^16.14.0",
