@@ -99,6 +99,9 @@ otpUi:
       today: Hoy
       tomorrow: Mañana
       yesterday: Ayer
+      linkOpensNewWindow: (Abrir una nueva ventana)
+      noAgencyAlertLinkText: Ver alerta en la web de la agencia
+      alertLinkText: Ver la alerta en la web {agency}
     agencyExternalLink: "{agencyName} (Enlace external)"
     alertsHeader: "{alertCount, plural, =1 {# alerta} other {# alertas}}"
     arriveAt: Llegada a {place}
