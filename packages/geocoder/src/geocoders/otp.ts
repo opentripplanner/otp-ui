@@ -45,16 +45,17 @@ export default class OTPGeocoder extends Geocoder {
   rewriteAutocompleteResponse(response: OTPGeocoderResponse): MultiGeocoderResponse {
     return {
       features: response?.results?.map(stop => ({
-        geometry: { type: "Point", coordinates: [stop.coordinate.lon, stop.coordinate.lat] },
-        id: stop.id,
+        geometry: { type: "Point", coordinates: [stop.primary.coordinate.lon, stop.primary.coordinate.lat] },
+        id: stop.primary.id,
         // TODO: if non-stops are supported, these need to be detected here and 
         // this layer property updated accordingly
         properties: {
           layer: "stops",
           source: "otp",
-          modes: stop.modes,
-          name: stop.name,
-          label: generateLabel(stop)
+          modes: stop.primary.modes,
+          name: stop.primary.name,
+          label: generateLabel(stop),
+          secondaryLabels: stop.secondaries.map(s=>generateLabel(s)) 
         },
         type: "Feature"
       })),

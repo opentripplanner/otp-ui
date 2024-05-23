@@ -7,18 +7,23 @@ type FetchArgs = {
   query: string
 }
 
+type OTPGeocoderStop = {
+  coordinate: {
+    lat: number,
+    lon: number,
+  },
+  code?: string | undefined,
+  name: string,
+  id: string,
+  agencies?: { id: string, name: string }[]
+  feedPublisher?: { name: string }
+  modes: string[] 
+}
+
 type OTPGeocoderResponse = {
   results: {
-    coordinate: {
-      lat: number,
-      lon: number,
-    },
-    code?: string | undefined,
-    name: string,
-    id: string,
-    agencies?: { id: string, name: string }[]
-    feedPublisher?: { name: string }
-    modes: string[]
+    primary: OTPGeocoderStop
+    secondaries: OTPGeocoderStop[]
   }[]
 } | undefined
 
