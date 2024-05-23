@@ -572,6 +572,565 @@ Object {
 }
 `;
 
+exports[`geocoder OTP should make autocomplete query 1`] = `
+Object {
+  "features": Array [
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.29541,
+          47.81606,
+        ],
+        "type": "Point",
+      },
+      "id": "CommTrans:lynntc",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "Lynnwood Transit Center",
+        "secondaryLabels": Array [
+          "Lynnwood Transit Center Bay C1 (Community Transit 2109)",
+          "Lynnwood Transit Center Bay B3 (Community Transit 2119)",
+          "Lynnwood Transit Center Bay B5 (Community Transit 2108)",
+          "Lynnwood Transit Center Bay B1 (Community Transit 2167)",
+          "Lynnwood Transit Center (Community Transit 2035)",
+          "Lynnwood Transit Center Bay B2 (Community Transit 2168)",
+          "Lynnwood Transit Center Bay D1 (Community Transit 2113)",
+          "Lynnwood Transit Center Bay D3 (Community Transit 2422)",
+          "Lynnwood Transit Center Bay D4 (Community Transit 2543)",
+          "Lynnwood Transit Center Bay D2 (Community Transit 2114)",
+          "Lynnwood Transit Center Bay A2 (Community Transit 2115)",
+          "Lynnwood Transit Center Bay B4 (Community Transit 2120)",
+          "Lynnwood Transit Center Bay C2 (Community Transit 2110)",
+          "Lynnwood Transit Center Bay C4 (Community Transit 2177)",
+          "Lynnwood Transit Center Bay C3 (Community Transit 2111)",
+        ],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.259953,
+          47.930175,
+        ],
+        "type": "Point",
+      },
+      "id": "CommTrans:3199",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "Seaway Transit Center",
+        "secondaryLabels": Array [],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.259948,
+          47.930222,
+        ],
+        "type": "Point",
+      },
+      "id": "CommTrans:seaway",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [],
+        "name": "Seaway Transit Center",
+        "secondaryLabels": Array [],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.193674,
+          47.615541,
+        ],
+        "type": "Point",
+      },
+      "id": "CommTrans:blvtc",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "Bellevue Transit Center",
+        "secondaryLabels": Array [
+          "Bellevue Transit Center Bay 4 (Community Transit 355)",
+          "Bellevue Transit Center Bay 8 (Community Transit 2860)",
+        ],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.10446,
+          47.99976,
+        ],
+        "type": "Point",
+      },
+      "id": "CommTrans:lkspr",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "Lake Stevens Transit Center",
+        "secondaryLabels": Array [
+          "Lake Stevens Transit Center Bay 2 (Community Transit 2666)",
+          "Lake Stevens Transit Center (Community Transit 2982)",
+          "Lake Stevens Transit Center Bay 1 (Community Transit 2665)",
+        ],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.635696,
+          47.5425906,
+        ],
+        "type": "Point",
+      },
+      "id": "Kitsap:1248",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "Port Orchard Transit Center",
+        "secondaryLabels": Array [],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.6929522,
+          47.6637255,
+        ],
+        "type": "Point",
+      },
+      "id": "Kitsap:214",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "Silverdale Transit Center (STC)",
+        "secondaryLabels": Array [],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.260421,
+          47.929989,
+        ],
+        "type": "Point",
+      },
+      "id": "CommTrans:3017",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "Seaway Transit Center Station",
+        "secondaryLabels": Array [],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.651086,
+          47.75944,
+        ],
+        "type": "Point",
+      },
+      "id": "Kitsap:1066",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "N. Viking Transit Center",
+        "secondaryLabels": Array [],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.340638,
+          47.774171,
+        ],
+        "type": "Point",
+      },
+      "id": "CommTrans:arvil",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "Aurora Village Transit Center",
+        "secondaryLabels": Array [
+          "Aurora Village Transit Center Bay 5 (Community Transit 2875)",
+          "Aurora Village Transit Center Bay 7 (Community Transit 2876)",
+          "Aurora Village Transit Center (Community Transit 2877)",
+          "Aurora Village Station (Community Transit 2742)",
+        ],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.337318,
+          47.4694099,
+        ],
+        "type": "Point",
+      },
+      "id": "kcm:52306",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "Burien Transit Center - Bay 6",
+        "secondaryLabels": Array [],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.629476,
+          47.600636,
+        ],
+        "type": "Point",
+      },
+      "id": "Kitsap:1340",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "Wheaton Way Transit Center Southbound",
+        "secondaryLabels": Array [],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.208549,
+          47.4807777,
+        ],
+        "type": "Point",
+      },
+      "id": "kcm:46477",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "Renton Transit Center - Bay 2",
+        "secondaryLabels": Array [],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.208786,
+          47.4807777,
+        ],
+        "type": "Point",
+      },
+      "id": "kcm:46476",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "Renton Transit Center - Bay 1",
+        "secondaryLabels": Array [],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.629983,
+          47.600601,
+        ],
+        "type": "Point",
+      },
+      "id": "Kitsap:1324",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "Wheaton Way Transit Center (WWTC)",
+        "secondaryLabels": Array [],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.207756,
+          47.4800987,
+        ],
+        "type": "Point",
+      },
+      "id": "kcm:46463",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "Renton Transit Center - Bay 10",
+        "secondaryLabels": Array [],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.194389,
+          47.6155014,
+        ],
+        "type": "Point",
+      },
+      "id": "kcm:67655",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "Bellevue Transit Center - Bay 8",
+        "secondaryLabels": Array [],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.193909,
+          47.6155052,
+        ],
+        "type": "Point",
+      },
+      "id": "kcm:67654",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "Bellevue Transit Center - Bay 7",
+        "secondaryLabels": Array [],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.19426,
+          47.6155014,
+        ],
+        "type": "Point",
+      },
+      "id": "kcm:68005",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "Bellevue Transit Center - Bay 5",
+        "secondaryLabels": Array [],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.208717,
+          47.4804993,
+        ],
+        "type": "Point",
+      },
+      "id": "kcm:46478",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "Renton Transit Center - Bay 3",
+        "secondaryLabels": Array [],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.124939,
+          47.6765938,
+        ],
+        "type": "Point",
+      },
+      "id": "kcm:73227",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "Redmond Transit Center - Bay 1",
+        "secondaryLabels": Array [],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.232079,
+          47.3057899,
+        ],
+        "type": "Point",
+      },
+      "id": "kcm:57774",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "Auburn Transit Center - Bay 2",
+        "secondaryLabels": Array [],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.06221,
+          47.5424728,
+        ],
+        "type": "Point",
+      },
+      "id": "kcm:64593",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "Issaquah Transit Center - Bay 4",
+        "secondaryLabels": Array [],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.232079,
+          47.3062248,
+        ],
+        "type": "Point",
+      },
+      "id": "kcm:57773",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "Auburn Transit Center - Bay 1",
+        "secondaryLabels": Array [],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+    Object {
+      "geometry": Object {
+        "coordinates": Array [
+          -122.062302,
+          47.541584,
+        ],
+        "type": "Point",
+      },
+      "id": "kcm:64585",
+      "properties": Object {
+        "label": undefined,
+        "layer": "stops",
+        "modes": Array [
+          "BUS",
+        ],
+        "name": "Issaquah Transit Center - Bay 3",
+        "secondaryLabels": Array [],
+        "source": "otp",
+      },
+      "type": "Feature",
+    },
+  ],
+  "type": "FeatureCollection",
+}
+`;
+
 exports[`geocoder OTP should make search query 1`] = `
 Object {
   "results": Array [
