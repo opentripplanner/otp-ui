@@ -8,6 +8,7 @@ import type { Company, ConfiguredCompany, Location, Station, Stop, StopEventHand
 import { FormattedMessage, useIntl } from "react-intl";
 import { flatten } from "flat";
 import * as S from "./styled";
+import FocusTrapWrapper from "./FocusTrapWrapper";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
@@ -140,4 +141,4 @@ export function MapPopup({ configCompanies, entity, getEntityName, setLocation, 
 export default MapPopup;
 
 // Rename styled components for export.
-export { S as Styled };
+export { S as Styled, FocusTrapWrapper };
