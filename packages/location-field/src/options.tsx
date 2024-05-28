@@ -75,7 +75,8 @@ export function Option({
   isActive = false,
   onClick,
   subTitle = null,
-  title = null
+  title = null,
+  secondaryLabels = []
 }: {
   classes?: string;
   color?: string;
@@ -85,6 +86,7 @@ export function Option({
   isActive?: boolean;
   onClick?: () => void;
   subTitle?: React.ReactNode;
+  secondaryLabels?: string[];
   title?: React.ReactNode;
 }): React.ReactElement {
   return (
@@ -99,6 +101,12 @@ export function Option({
               {subTitle}
             </S.OptionSubTitle>
           )}
+          {secondaryLabels?.map((label, idx) => (
+            <S.OptionAltLabel key={idx}>
+              <S.HiddenContent>, </S.HiddenContent>
+              {label}
+            </S.OptionAltLabel>
+          ))}
         </S.OptionContent>
       </S.OptionContainer>
     </MenuItem>
