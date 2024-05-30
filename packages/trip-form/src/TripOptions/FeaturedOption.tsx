@@ -44,7 +44,7 @@ const FeaturedOption = ({
   );
   const optionsAreCheckboxes = Boolean(category.mode);
 
-  // FIXME: the entire selectOption method could probably be repalced
+  // FIXME: the entire selectOption method could probably be replaced
   // with a better useEffect hook
 
   const selectOption = (isChecked: boolean, o: ModeOption) => {
