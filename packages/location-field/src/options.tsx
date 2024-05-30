@@ -101,7 +101,8 @@ export function Option({
               {subTitle}
             </S.OptionSubTitle>
           )}
-          {secondaryLabels?.map((label, idx) => (
+          {/* Only show top 5 results to avoid chaos */}
+          {secondaryLabels?.slice(0, 5).map((label, idx) => (
             <S.OptionAltLabel key={idx}>
               <S.HiddenContent>, </S.HiddenContent>
               {label}
