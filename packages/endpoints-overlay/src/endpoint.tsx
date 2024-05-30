@@ -15,6 +15,7 @@ import { Times } from "@styled-icons/fa-solid/Times";
 import coreUtils from "@opentripplanner/core-utils";
 import flatten from "flat";
 import React, { ComponentType, useState } from "react";
+import { FocusTrapWrapper } from "@opentripplanner/map-popup/lib";
 
 import * as S from "./styled";
 
@@ -176,7 +177,10 @@ const Endpoint = (props: Props): JSX.Element => {
           latitude={location.lat}
           longitude={location.lon}
         >
-          <div>
+          <FocusTrapWrapper
+            id="endpoint-overlay"
+            closePopup={() => setShowPopup(false)}
+          >
             <strong>
               <UserLocationIcon type={icon} />
               {location.name}
@@ -267,7 +271,7 @@ const Endpoint = (props: Props): JSX.Element => {
                 />
               </S.Button>
             </div>
-          </div>
+          </FocusTrapWrapper>
         </Popup>
       )}
     </Marker>
