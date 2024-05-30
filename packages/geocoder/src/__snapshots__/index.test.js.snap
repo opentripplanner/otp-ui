@@ -1154,6 +1154,7 @@ Object {
           "BUS",
         ],
         "name": "Lynnwood Transit Center",
+        "type": "STATION",
       },
       "secondaries": Array [
         Object {
@@ -1176,6 +1177,7 @@ Object {
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay C1",
+          "type": "STOP",
         },
         Object {
           "agencies": Array [
@@ -1197,6 +1199,7 @@ Object {
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay B3",
+          "type": "STOP",
         },
         Object {
           "agencies": Array [
@@ -1218,6 +1221,7 @@ Object {
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay B5",
+          "type": "STOP",
         },
         Object {
           "agencies": Array [
@@ -1239,6 +1243,7 @@ Object {
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay B1",
+          "type": "STOP",
         },
         Object {
           "agencies": Array [
@@ -1260,6 +1265,7 @@ Object {
             "BUS",
           ],
           "name": "Lynnwood Transit Center",
+          "type": "STOP",
         },
         Object {
           "agencies": Array [
@@ -1281,6 +1287,7 @@ Object {
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay B2",
+          "type": "STOP",
         },
         Object {
           "agencies": Array [
@@ -1302,6 +1309,7 @@ Object {
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay D1",
+          "type": "STOP",
         },
         Object {
           "agencies": Array [
@@ -1323,6 +1331,7 @@ Object {
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay D3",
+          "type": "STOP",
         },
         Object {
           "agencies": Array [
@@ -1344,6 +1353,7 @@ Object {
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay D4",
+          "type": "STOP",
         },
         Object {
           "agencies": Array [
@@ -1365,6 +1375,7 @@ Object {
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay D2",
+          "type": "STOP",
         },
         Object {
           "agencies": Array [
@@ -1386,6 +1397,7 @@ Object {
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay A2",
+          "type": "STOP",
         },
         Object {
           "agencies": Array [
@@ -1407,6 +1419,7 @@ Object {
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay B4",
+          "type": "STOP",
         },
         Object {
           "agencies": Array [
@@ -1428,6 +1441,7 @@ Object {
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay C2",
+          "type": "STOP",
         },
         Object {
           "agencies": Array [
@@ -1449,6 +1463,7 @@ Object {
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay C4",
+          "type": "STOP",
         },
         Object {
           "agencies": Array [
@@ -1470,6 +1485,7 @@ Object {
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay C3",
+          "type": "STOP",
         },
       ],
     },
@@ -1494,6 +1510,7 @@ Object {
           "BUS",
         ],
         "name": "Seaway Transit Center",
+        "type": "STOP",
       },
       "secondaries": Array [],
     },
@@ -1510,6 +1527,7 @@ Object {
         "id": "CommTrans:seaway",
         "modes": Array [],
         "name": "Seaway Transit Center",
+        "type": "STATION",
       },
       "secondaries": Array [],
     },
@@ -1533,6 +1551,7 @@ Object {
           "BUS",
         ],
         "name": "Bellevue Transit Center",
+        "type": "STATION",
       },
       "secondaries": Array [
         Object {
@@ -1555,6 +1574,7 @@ Object {
             "BUS",
           ],
           "name": "Bellevue Transit Center Bay 4",
+          "type": "STOP",
         },
         Object {
           "agencies": Array [
@@ -1576,6 +1596,7 @@ Object {
             "BUS",
           ],
           "name": "Bellevue Transit Center Bay 8",
+          "type": "STOP",
         },
       ],
     },
@@ -1599,6 +1620,7 @@ Object {
           "BUS",
         ],
         "name": "Lake Stevens Transit Center",
+        "type": "STATION",
       },
       "secondaries": Array [
         Object {
@@ -1621,6 +1643,7 @@ Object {
             "BUS",
           ],
           "name": "Lake Stevens Transit Center Bay 2",
+          "type": "STOP",
         },
         Object {
           "agencies": Array [
@@ -1642,6 +1665,7 @@ Object {
             "BUS",
           ],
           "name": "Lake Stevens Transit Center",
+          "type": "STOP",
         },
         Object {
           "agencies": Array [
@@ -1663,6 +1687,7 @@ Object {
             "BUS",
           ],
           "name": "Lake Stevens Transit Center Bay 1",
+          "type": "STOP",
         },
       ],
     },
@@ -1686,6 +1711,7 @@ Object {
           "BUS",
         ],
         "name": "Port Orchard Transit Center",
+        "type": "STOP",
       },
       "secondaries": Array [],
     },
@@ -1709,6 +1735,7 @@ Object {
           "BUS",
         ],
         "name": "Silverdale Transit Center (STC)",
+        "type": "STOP",
       },
       "secondaries": Array [],
     },
@@ -1733,6 +1760,7 @@ Object {
           "BUS",
         ],
         "name": "Seaway Transit Center Station",
+        "type": "STOP",
       },
       "secondaries": Array [],
     },
@@ -1756,6 +1784,7 @@ Object {
           "BUS",
         ],
         "name": "N. Viking Transit Center",
+        "type": "STOP",
       },
       "secondaries": Array [],
     },
@@ -1779,6 +1808,7 @@ Object {
           "BUS",
         ],
         "name": "Aurora Village Transit Center",
+        "type": "STATION",
       },
       "secondaries": Array [
         Object {
@@ -1801,6 +1831,7 @@ Object {
             "BUS",
           ],
           "name": "Aurora Village Transit Center Bay 5",
+          "type": "STOP",
         },
         Object {
           "agencies": Array [
@@ -1822,6 +1853,7 @@ Object {
             "BUS",
           ],
           "name": "Aurora Village Transit Center Bay 7",
+          "type": "STOP",
         },
         Object {
           "agencies": Array [
@@ -1843,6 +1875,7 @@ Object {
             "BUS",
           ],
           "name": "Aurora Village Transit Center",
+          "type": "STOP",
         },
         Object {
           "agencies": Array [
@@ -1864,6 +1897,7 @@ Object {
             "BUS",
           ],
           "name": "Aurora Village Station",
+          "type": "STOP",
         },
       ],
     },
@@ -1888,6 +1922,7 @@ Object {
           "BUS",
         ],
         "name": "Burien Transit Center - Bay 6",
+        "type": "STOP",
       },
       "secondaries": Array [],
     },
@@ -1911,6 +1946,7 @@ Object {
           "BUS",
         ],
         "name": "Wheaton Way Transit Center Southbound",
+        "type": "STOP",
       },
       "secondaries": Array [],
     },
@@ -1935,6 +1971,7 @@ Object {
           "BUS",
         ],
         "name": "Renton Transit Center - Bay 2",
+        "type": "STOP",
       },
       "secondaries": Array [],
     },
@@ -1963,6 +2000,7 @@ Object {
           "BUS",
         ],
         "name": "Renton Transit Center - Bay 1",
+        "type": "STOP",
       },
       "secondaries": Array [],
     },
@@ -1986,6 +2024,7 @@ Object {
           "BUS",
         ],
         "name": "Wheaton Way Transit Center (WWTC)",
+        "type": "STOP",
       },
       "secondaries": Array [],
     },
@@ -2010,6 +2049,7 @@ Object {
           "BUS",
         ],
         "name": "Renton Transit Center - Bay 10",
+        "type": "STOP",
       },
       "secondaries": Array [],
     },
@@ -2038,6 +2078,7 @@ Object {
           "BUS",
         ],
         "name": "Bellevue Transit Center - Bay 8",
+        "type": "STOP",
       },
       "secondaries": Array [],
     },
@@ -2062,6 +2103,7 @@ Object {
           "BUS",
         ],
         "name": "Bellevue Transit Center - Bay 7",
+        "type": "STOP",
       },
       "secondaries": Array [],
     },
@@ -2090,6 +2132,7 @@ Object {
           "BUS",
         ],
         "name": "Bellevue Transit Center - Bay 5",
+        "type": "STOP",
       },
       "secondaries": Array [],
     },
@@ -2114,6 +2157,7 @@ Object {
           "BUS",
         ],
         "name": "Renton Transit Center - Bay 3",
+        "type": "STOP",
       },
       "secondaries": Array [],
     },
@@ -2142,6 +2186,7 @@ Object {
           "BUS",
         ],
         "name": "Redmond Transit Center - Bay 1",
+        "type": "STOP",
       },
       "secondaries": Array [],
     },
@@ -2170,6 +2215,7 @@ Object {
           "BUS",
         ],
         "name": "Auburn Transit Center - Bay 2",
+        "type": "STOP",
       },
       "secondaries": Array [],
     },
@@ -2194,6 +2240,7 @@ Object {
           "BUS",
         ],
         "name": "Issaquah Transit Center - Bay 4",
+        "type": "STOP",
       },
       "secondaries": Array [],
     },
@@ -2218,6 +2265,7 @@ Object {
           "BUS",
         ],
         "name": "Auburn Transit Center - Bay 1",
+        "type": "STOP",
       },
       "secondaries": Array [],
     },
@@ -2246,6 +2294,7 @@ Object {
           "BUS",
         ],
         "name": "Issaquah Transit Center - Bay 3",
+        "type": "STOP",
       },
       "secondaries": Array [],
     },

@@ -15,6 +15,7 @@ type OTPGeocoderStop = {
   code?: string | undefined,
   name: string,
   id: string,
+  type: "STOP" | "STATION"
   agencies?: { id: string, name: string }[]
   feedPublisher?: { name: string }
   modes: string[] 
