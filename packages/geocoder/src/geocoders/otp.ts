@@ -55,8 +55,9 @@ export default class OTPGeocoder extends Geocoder {
           modes: stop.primary.modes,
           name: stop.primary.name,
           label: generateLabel(stop),
+          // Don't render labels for station children
           // TODO: filter out duplicates?
-          secondaryLabels: stop.secondaries.map(s => generateLabel(s)) 
+          secondaryLabels: stop.primary.type !== "STATION" ? stop.secondaries.map(s => generateLabel(s)) : []
         },
         type: "Feature"
       })),
