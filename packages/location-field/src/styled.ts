@@ -128,8 +128,9 @@ export const OptionSubTitle = styled.span`
   margin-left: 6px;
 `;
 
-export const OptionAltLabel = styled.div`
+export const OptionAltLabel = styled.span`
   color: #686868;
+  display: block;
   font-size: 11px;
   margin-left: 46px; /* This is a bit brittle. TODO: Calculate */
 `;
