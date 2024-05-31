@@ -74,9 +74,9 @@ export function Option({
   id,
   isActive = false,
   onClick,
+  secondaryLabels = [],
   subTitle = null,
-  title = null,
-  secondaryLabels = []
+  title = null
 }: {
   classes?: string;
   color?: string;
@@ -85,8 +85,8 @@ export function Option({
   id?: string;
   isActive?: boolean;
   onClick?: () => void;
-  subTitle?: React.ReactNode;
   secondaryLabels?: string[];
+  subTitle?: React.ReactNode;
   title?: React.ReactNode;
 }): React.ReactElement {
   return (

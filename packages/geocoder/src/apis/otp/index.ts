@@ -8,22 +8,23 @@ type FetchArgs = {
 }
 
 type OTPGeocoderStop = {
+  agencies?: { id: string, name: string }[]
+  code?: string,
   coordinate: {
     lat: number,
     lon: number,
   },
-  code?: string | undefined,
-  name: string,
-  id: string,
-  type: "STOP" | "STATION"
-  agencies?: { id: string, name: string }[]
   feedPublisher?: { name: string }
+  id: string,
   modes: string[] 
+  name: string,
+  type: "STOP" | "STATION"
 }
 
 type OTPGeocoderResponse = {
   results: {
     primary: OTPGeocoderStop
+    // Secondaries is always defined: https://github.com/opentripplanner/OpenTripPlanner/pull/5879
     secondaries: OTPGeocoderStop[]
   }[]
 } | undefined
