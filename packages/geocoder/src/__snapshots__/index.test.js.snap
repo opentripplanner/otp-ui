@@ -585,7 +585,7 @@ Object {
       },
       "id": "CommTrans:lynntc",
       "properties": Object {
-        "label": undefined,
+        "label": "Lynnwood Transit Center (Community Transit)",
         "layer": "stops",
         "modes": Array [
           "BUS",
@@ -606,7 +606,7 @@ Object {
       },
       "id": "CommTrans:3199",
       "properties": Object {
-        "label": undefined,
+        "label": "Seaway Transit Center (Community Transit 3199)",
         "layer": "stops",
         "modes": Array [
           "BUS",
@@ -627,7 +627,7 @@ Object {
       },
       "id": "CommTrans:seaway",
       "properties": Object {
-        "label": undefined,
+        "label": "Seaway Transit Center (Community Transit)",
         "layer": "stops",
         "modes": Array [],
         "name": "Seaway Transit Center",
@@ -646,7 +646,7 @@ Object {
       },
       "id": "CommTrans:blvtc",
       "properties": Object {
-        "label": undefined,
+        "label": "Bellevue Transit Center (Community Transit)",
         "layer": "stops",
         "modes": Array [
           "BUS",
@@ -667,7 +667,7 @@ Object {
       },
       "id": "CommTrans:lkspr",
       "properties": Object {
-        "label": undefined,
+        "label": "Lake Stevens Transit Center (Community Transit)",
         "layer": "stops",
         "modes": Array [
           "BUS",
@@ -688,7 +688,7 @@ Object {
       },
       "id": "Kitsap:1248",
       "properties": Object {
-        "label": undefined,
+        "label": "Port Orchard Transit Center (Kitsap Transit)",
         "layer": "stops",
         "modes": Array [
           "BUS",
@@ -709,7 +709,7 @@ Object {
       },
       "id": "Kitsap:214",
       "properties": Object {
-        "label": undefined,
+        "label": "Silverdale Transit Center (STC) (Kitsap Transit)",
         "layer": "stops",
         "modes": Array [
           "BUS",
@@ -730,7 +730,7 @@ Object {
       },
       "id": "CommTrans:3017",
       "properties": Object {
-        "label": undefined,
+        "label": "Seaway Transit Center Station (Community Transit 3017)",
         "layer": "stops",
         "modes": Array [
           "BUS",
@@ -751,7 +751,7 @@ Object {
       },
       "id": "Kitsap:1066",
       "properties": Object {
-        "label": undefined,
+        "label": "N. Viking Transit Center (Kitsap Transit)",
         "layer": "stops",
         "modes": Array [
           "BUS",
@@ -772,7 +772,7 @@ Object {
       },
       "id": "CommTrans:arvil",
       "properties": Object {
-        "label": undefined,
+        "label": "Aurora Village Transit Center (Community Transit)",
         "layer": "stops",
         "modes": Array [
           "BUS",
@@ -793,7 +793,7 @@ Object {
       },
       "id": "kcm:52306",
       "properties": Object {
-        "label": undefined,
+        "label": "Burien Transit Center - Bay 6 (Metro Transit 52306)",
         "layer": "stops",
         "modes": Array [
           "BUS",
@@ -814,7 +814,7 @@ Object {
       },
       "id": "Kitsap:1340",
       "properties": Object {
-        "label": undefined,
+        "label": "Wheaton Way Transit Center Southbound (Kitsap Transit)",
         "layer": "stops",
         "modes": Array [
           "BUS",
@@ -835,7 +835,7 @@ Object {
       },
       "id": "kcm:46477",
       "properties": Object {
-        "label": undefined,
+        "label": "Renton Transit Center - Bay 2 (Metro Transit 46477)",
         "layer": "stops",
         "modes": Array [
           "BUS",
@@ -856,7 +856,7 @@ Object {
       },
       "id": "kcm:46476",
       "properties": Object {
-        "label": undefined,
+        "label": "Renton Transit Center - Bay 1 (Sound Transit 46476)",
         "layer": "stops",
         "modes": Array [
           "BUS",
@@ -877,7 +877,7 @@ Object {
       },
       "id": "Kitsap:1324",
       "properties": Object {
-        "label": undefined,
+        "label": "Wheaton Way Transit Center (WWTC) (Kitsap Transit)",
         "layer": "stops",
         "modes": Array [
           "BUS",
@@ -898,7 +898,7 @@ Object {
       },
       "id": "kcm:46463",
       "properties": Object {
-        "label": undefined,
+        "label": "Renton Transit Center - Bay 10 (Metro Transit 46463)",
         "layer": "stops",
         "modes": Array [
           "BUS",
@@ -919,7 +919,7 @@ Object {
       },
       "id": "kcm:67655",
       "properties": Object {
-        "label": undefined,
+        "label": "Bellevue Transit Center - Bay 8 (Metro Transit 67655)",
         "layer": "stops",
         "modes": Array [
           "BUS",
@@ -940,7 +940,7 @@ Object {
       },
       "id": "kcm:67654",
       "properties": Object {
-        "label": undefined,
+        "label": "Bellevue Transit Center - Bay 7 (Metro Transit 67654)",
         "layer": "stops",
         "modes": Array [
           "BUS",
@@ -961,7 +961,7 @@ Object {
       },
       "id": "kcm:68005",
       "properties": Object {
-        "label": undefined,
+        "label": "Bellevue Transit Center - Bay 5 (Metro Transit 68005)",
         "layer": "stops",
         "modes": Array [
           "BUS",
@@ -982,7 +982,7 @@ Object {
       },
       "id": "kcm:46478",
       "properties": Object {
-        "label": undefined,
+        "label": "Renton Transit Center - Bay 3 (Metro Transit 46478)",
         "layer": "stops",
         "modes": Array [
           "BUS",
@@ -1003,7 +1003,7 @@ Object {
       },
       "id": "kcm:73227",
       "properties": Object {
-        "label": undefined,
+        "label": "Redmond Transit Center - Bay 1 (Sound Transit 73227)",
         "layer": "stops",
         "modes": Array [
           "BUS",
@@ -1024,7 +1024,7 @@ Object {
       },
       "id": "kcm:57774",
       "properties": Object {
-        "label": undefined,
+        "label": "Auburn Transit Center - Bay 2 (Metro Transit 57774)",
         "layer": "stops",
         "modes": Array [
           "BUS",
@@ -1045,7 +1045,7 @@ Object {
       },
       "id": "kcm:64593",
       "properties": Object {
-        "label": undefined,
+        "label": "Issaquah Transit Center - Bay 4 (Metro Transit 64593)",
         "layer": "stops",
         "modes": Array [
           "BUS",
@@ -1066,7 +1066,7 @@ Object {
       },
       "id": "kcm:57773",
       "properties": Object {
-        "label": undefined,
+        "label": "Auburn Transit Center - Bay 1 (Metro Transit 57773)",
         "layer": "stops",
         "modes": Array [
           "BUS",
@@ -1087,7 +1087,7 @@ Object {
       },
       "id": "kcm:64585",
       "properties": Object {
-        "label": undefined,
+        "label": "Issaquah Transit Center - Bay 3 (Metro Transit 64585)",
         "layer": "stops",
         "modes": Array [
           "BUS",
