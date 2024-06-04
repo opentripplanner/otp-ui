@@ -33,6 +33,7 @@ type OTPQueryParams = {
   to: LonLatOutput & { name?: string };
   banned?: InputBanned;
   preferred?: InputPreferred;
+  unpreferred?: InputPreferred;
 };
 
 type GraphQLQuery = {
@@ -222,6 +223,7 @@ export function generateOtp2Query(
     modeSettings,
     numItineraries,
     preferred,
+    unpreferred,
     time,
     to
   }: OTPQueryParams,
@@ -262,6 +264,7 @@ export function generateOtp2Query(
       modes,
       numItineraries,
       preferred,
+      unpreferred,
       time,
       toPlace: `${to.name}::${to.lat},${to.lon}}`,
       walkReluctance,
