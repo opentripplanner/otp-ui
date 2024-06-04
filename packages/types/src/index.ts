@@ -193,6 +193,11 @@ export type EncodedPolyline = {
   points: string;
 };
 
+export type ElevationProfileComponent = {
+  distance: number;
+  elevation: number;
+};
+
 export type ElevationData = {
   first: number;
   second: number;
