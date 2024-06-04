@@ -223,9 +223,9 @@ export function generateOtp2Query(
     modeSettings,
     numItineraries,
     preferred,
-    unpreferred,
     time,
-    to
+    to,
+    unpreferred
   }: OTPQueryParams,
   planQuery = DefaultPlanQuery
 ): GraphQLQuery {
@@ -264,9 +264,9 @@ export function generateOtp2Query(
       modes,
       numItineraries,
       preferred,
-      unpreferred,
       time,
       toPlace: `${to.name}::${to.lat},${to.lon}}`,
+      unpreferred,
       walkReluctance,
       walkSpeed,
       wheelchair
