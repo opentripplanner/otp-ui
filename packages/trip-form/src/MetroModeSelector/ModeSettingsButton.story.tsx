@@ -1,4 +1,3 @@
-import { ModeButtonDefinition } from "@opentripplanner/types";
 import React, { ReactElement, useState } from "react";
 import * as Core from "..";
 import { QueryParamChangeEvent } from "../types";
@@ -9,9 +8,9 @@ import {
   setModeButtonEnabled
 } from "./utils";
 import {
-  modeSettingDefinitionsWithDropdown,
+  defaultModeButtonDefinitions,
   getIcon,
-  defaultModeButtonDefinitions
+  modeSettingDefinitionsWithDropdown
 } from "./mockButtons.story";
 
 const initialState = {
@@ -23,14 +22,14 @@ function pipe<T>(...fns: Array<(arg: T) => T>) {
   return (value: T) => fns.reduce((acc, fn) => fn(acc), value);
 }
 
-const MetroModeSelectorComponent = ({
+const MetroModeSubsettingsComponent = ({
   fillModeIcons,
   modeButtonDefinitions,
   onSetModeSettingValue,
   onToggleModeButton
 }: {
   fillModeIcons?: boolean;
-  modeButtonDefinitions: ModeButtonDefinition[];
+  modeButtonDefinitions: any;
   onSetModeSettingValue: (event: QueryParamChangeEvent) => void;
   onToggleModeButton: (key: string, newState: boolean) => void;
 }): ReactElement => {
@@ -81,7 +80,7 @@ const MetroModeSelectorComponent = ({
   };
 
   return (
-    <Core.MetroModeSelector
+    <Core.ModeSubsettingsContainer
       fillModeIcons={fillModeIcons}
       label="Select a transit mode"
       modeButtons={processedModeButtons}
@@ -96,12 +95,14 @@ const Template = (args: {
   onSetModeSettingValue: (event: QueryParamChangeEvent) => void;
   onToggleModeButton: (key: string, newState: boolean) => void;
 }): ReactElement => (
-  <MetroModeSelectorComponent
+  <MetroModeSubsettingsComponent
     modeButtonDefinitions={defaultModeButtonDefinitions}
     // eslint-disable-next-line react/jsx-props-no-spreading
     {...args}
   />
 );
+
+export const ModeSettingsButtons = Template.bind({});
 
 export default {
   argTypes: {
@@ -109,13 +110,6 @@ export default {
     onSetModeSettingValue: { action: "set mode setting value" },
     onToggleModeButton: { action: "toggle button" }
   },
-  component: MetroModeSelectorComponent,
-  title: "Trip Form Components/Metro Mode Selector"
+  component: MetroModeSubsettingsComponent,
+  title: "Trip Form Components/Mode Settings Buttons"
 };
-
-export const MetroModeSelector = Template.bind({});
-
-const a11yOverrideParameters = {
-  a11y: { config: { rules: [{ id: "label", reviewOnFail: true }] } }
-};
-MetroModeSelector.parameters = a11yOverrideParameters;
