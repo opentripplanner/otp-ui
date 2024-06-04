@@ -24,7 +24,8 @@ const modeColorMap = {
   SCOOTER: "#f5a729",
   MICROMOBILITY: "#f5a729",
   MICROMOBILITY_RENT: "#f5a729",
-  WALK: "#86cdf9"
+  WALK: "#86cdf9",
+  TRIMET_TEAL: "#5cc3ff"
 };
 
 /**
@@ -88,11 +89,13 @@ const accessLegFilter = [
 type Props = {
   activeLeg?: Leg;
   transitiveData?: TransitiveData;
+  trimetMode: boolean;
 };
 
 const TransitiveCanvasOverlay = ({
   activeLeg,
-  transitiveData
+  transitiveData,
+  trimetMode
 }: Props): JSX.Element => {
   const { current: map } = useMap();
 
@@ -139,7 +142,12 @@ const TransitiveCanvasOverlay = ({
                       type: "Feature",
                       properties: {
                         type: "street-edge",
-                        color: modeColorMap[segment.type] || "#008",
+                        color:
+                          segment?.route_color ||
+                          modeColorMap[segment.type] ||
+                          trimetMode
+                            ? modeColorMap.TRIMET_TEAL
+                            : "#008",
                         mode: segment.type
                       },
                       geometry: segment.arc ? drawArc(straight) : straight
@@ -269,7 +277,25 @@ const TransitiveCanvasOverlay = ({
         }}
         type="line"
       />
-
+      {trimetMode && (
+        <Layer
+          id="route-arrows"
+          type="symbol"
+          layout={{
+            "symbol-placement": "line",
+            "icon-image": "arrow-icon",
+            "icon-size": 0.1,
+            "symbol-spacing": 10,
+            "icon-allow-overlap": true,
+            "icon-ignore-placement": true,
+            "icon-offset": [0, 8000]
+          }}
+          paint={{
+            "icon-color": ["get", "color"],
+            "icon-opacity": 0.8
+          }}
+        />
+      )}
       {/* Render access leg places then transit stops so that they appear sandwiched between text and lines,
           with transit stops appearing above access leg places. */}
       <Layer

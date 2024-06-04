@@ -97,25 +97,24 @@ export type ZoomBasedSymbol = {
  * Describes the objects from the real-time vehicle service.
  */
 export type TransitVehicle = {
-  routeColor?: string;
-  routeLongName?: string;
   routeShortName?: string;
+  routeLongName?: string;
   routeType?: string;
+  routeColor?: string;
 
-  lastUpdated?: number;
+  status?: string;
   reportDate?: string;
   seconds?: number;
-  status?: string;
 
-  blockId?: string;
-  stopId?: string;
   stopSequence?: number;
-  tripId?: string;
+  stopId?: string;
   vehicleId?: string;
+  tripId?: string;
+  blockId?: string;
 
-  heading?: number;
   lat?: number;
   lon?: number;
+  heading?: number;
 };
 
 export type OTPTransitVehicle = TransitVehicle & {
@@ -193,11 +192,6 @@ export type EncodedPolyline = {
   points: string;
 };
 
-export type ElevationProfileComponent = {
-  distance: number;
-  elevation: number;
-};
-
 export type ElevationData = {
   first: number;
   second: number;
@@ -223,8 +217,7 @@ export type Step = {
   area: boolean;
   bogusName: boolean;
   distance: number;
-  elevation?: ElevationData;
-  elevationProfile?: ElevationProfileComponent[];
+  elevation: ElevationData;
   lat: number;
   lon: number;
   relativeDirection: string;
@@ -545,6 +538,7 @@ export type TransitiveJourney = {
     streetEdges: number[];
     to: TransitivePlace;
     type: string;
+    route_color?: string;
   }[];
 };
 export type TransitivePattern = {
