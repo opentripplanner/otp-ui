@@ -108,7 +108,7 @@ export const SIMPLIFICATIONS = {
   CABLE_CAR: "TRANSIT",
   CAR: "CAR",
   FERRY: "TRANSIT",
-  FLEX: "SHARED", // TODO: this allows FLEX+WALK. Is this reasonable?
+  FLEX: "FLEX", // FLEX_DIRECT gets labeled as FLEX_DIRECT
   FUNICULAR: "TRANSIT",
   GONDOLA: "TRANSIT",
   RAIL: "TRANSIT",
@@ -121,6 +121,16 @@ export const SIMPLIFICATIONS = {
   WALK: "WALK"
 };
 
+export function simplifyMode(tm: TransportMode): string {
+  if (tm.mode === "FLEX" && tm.qualifier === "DIRECT") {
+    return "FLEX_DIRECT";
+  }
+  if (["RENT", "PICKUP", "DROPOFF", "DROPOFF", "HAIL"].includes(tm.qualifier)) {
+    return "SHARED";
+  }
+  return SIMPLIFICATIONS[tm.mode];
+}
+
 // Inclusion of "TRANSIT" alone automatically implies "WALK" in OTP
 const VALID_COMBOS = [
   ["WALK"],
@@ -129,7 +139,9 @@ const VALID_COMBOS = [
   ["WALK", "SHARED"],
   ["TRANSIT"],
   ["TRANSIT", "PERSONAL"],
-  ["TRANSIT", "CAR"]
+  ["TRANSIT", "CAR"],
+  ["FLEX_DIRECT"],
+  ["FLEX", "TRANSIT"]
 ];
 
 const BANNED_TOGETHER = ["SCOOTER", "BICYCLE", "CAR"];
@@ -148,9 +160,7 @@ function isCombinationValid(
   if (combo.length === 0) return false;
 
   // All current qualifiers currently simplify to "SHARED"
-  const simplifiedModes = Array.from(
-    new Set(combo.map(c => (c.qualifier ? "SHARED" : SIMPLIFICATIONS[c.mode])))
-  );
+  const simplifiedModes = Array.from(new Set(combo.map(simplifyMode)));
 
   // Ensure that if we have one transit mode, then we include ALL transit modes
   if (simplifiedModes.includes("TRANSIT")) {

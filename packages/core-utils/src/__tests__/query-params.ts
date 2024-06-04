@@ -22,6 +22,12 @@ function modeStrToTransportMode(m): TransportMode {
     qualifier: splitVals?.[1] || null
   };
 }
+function transportModeToModeStr(m: TransportMode): string {
+  if (m.qualifier) {
+    return `${m.mode}_${m.qualifier}`;
+  }
+  return m.mode;
+}
 
 const mockLatLon = {
   lat: 1,
@@ -33,22 +39,17 @@ function expectModes(modes: string[], expectedModes: string[][]) {
     from: mockLatLon,
     modes: modes.map(modeStrToTransportMode),
     modeSettings: [],
-    to: mockLatLon
+    to: mockLatLon,
+    arriveBy: false
   });
-  const expandedExpectedModesList = expectedModes.map(em => ({
-    from: mockLatLon,
-    modes: em.map(modeStrToTransportMode),
-    modeSettings: [],
-    to: mockLatLon
-  }));
-  return it(
-    modes.join(" "),
-    () =>
-      expect(generatedModesList.length === expandedExpectedModesList.length) &&
-      expect(new Set(generatedModesList)).toEqual(
-        new Set(expandedExpectedModesList)
-      )
+
+  const generatedModesListStrings = generatedModesList.map(qp =>
+    qp.modes.map(transportModeToModeStr)
   );
+  return it(modes.join(" "), () => {
+    // expect(generatedModesList.length).toEqual(expectedModes.length);
+    expect(new Set(generatedModesListStrings)).toEqual(new Set(expectedModes));
+  });
 }
 
 describe("extract-modes", () => {
@@ -184,8 +185,8 @@ describe("query-gen", () => {
       ]
     );
     expectModes(
-      ["FLEX", "TRANSIT", "WALK"],
-      [["TRANSIT"], ["FLEX", "TRANSIT"], ["FLEX", "WALK"], ["WALK"]]
+      ["FLEX_DIRECT", "TRANSIT", "WALK"],
+      [["TRANSIT"], ["FLEX_DIRECT"], ["WALK"]]
     );
     expectModes(
       ["FLEX", "SCOOTER_RENT", "TRANSIT", "WALK"],
@@ -193,21 +194,17 @@ describe("query-gen", () => {
         ["TRANSIT"],
         ["FLEX", "TRANSIT"],
         ["WALK"],
-        ["FLEX", "WALK"],
-        ["FLEX", "SCOOTER_RENT", "WALK"], // Is this sensible?
-        ["FLEX", "SCOOTER_RENT", "TRANSIT"],
         ["SCOOTER_RENT", "WALK"],
         ["SCOOTER_RENT", "TRANSIT"]
       ]
     );
     expectModes(
       ["FLEX", "SCOOTER_RENT", "TRANSIT"],
-      [
-        ["TRANSIT"],
-        ["FLEX", "TRANSIT"],
-        ["FLEX", "SCOOTER_RENT", "TRANSIT"],
-        ["SCOOTER_RENT", "TRANSIT"]
-      ]
+      [["TRANSIT"], ["FLEX", "TRANSIT"], ["SCOOTER_RENT", "TRANSIT"]]
+    );
+    expectModes(
+      ["FLEX", "BICYCLE", "TRANSIT"],
+      [["BICYCLE", "TRANSIT"], ["BICYCLE"], ["TRANSIT"], ["FLEX", "TRANSIT"]]
     );
     expectModes(
       // Transit is required to enable other transit submodes
