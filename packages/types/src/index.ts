@@ -97,6 +97,7 @@ export type ZoomBasedSymbol = {
  * Describes the objects from the real-time vehicle service.
  */
 export type TransitVehicle = {
+  lastUpdated?: any;
   routeShortName?: string;
   routeLongName?: string;
   routeType?: string;
@@ -218,6 +219,7 @@ export type Step = {
   bogusName: boolean;
   distance: number;
   elevation: ElevationData;
+  elevationProfile: any;
   lat: number;
   lon: number;
   relativeDirection: string;

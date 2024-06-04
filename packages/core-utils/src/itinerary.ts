@@ -3,7 +3,7 @@ import {
   Company,
   Config,
   ElevationProfile,
-  ElevationProfileComponent,
+  // ElevationProfileComponent,
   FlexBookingInfo,
   ItineraryOnlyLegsRequired,
   LatLngArray,
@@ -16,6 +16,11 @@ import {
   TncFare
 } from "@opentripplanner/types";
 import turfAlong from "@turf/along";
+
+interface ElevationProfileComponent {
+  distance: number;
+  elevation: number;
+}
 
 // All OTP transit modes
 export const transitModes = [
