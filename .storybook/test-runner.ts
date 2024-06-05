@@ -25,7 +25,6 @@ const config: TestRunnerConfig = {
   },
   async postVisit(page, context) {
     // the #storybook-root element wraps the story. In Storybook 6.x, the selector is #root
-    await new Promise((resolve) => setTimeout(resolve, 3000));
     if (!ONLY_RUN || ONLY_RUN === "SNAPSHOTS") {
       await runSnapshots(page);
     }

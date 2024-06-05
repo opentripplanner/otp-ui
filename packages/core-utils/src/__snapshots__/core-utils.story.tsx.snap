@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`core-utils RouteColorTester smoke-test 1`] = `
-<div class="CLASS_NAME_FILLER">
-  <div class="CLASS_NAME_FILLER">
+<div class="core-utilsstory__ColorBlockWrapper-sc-1u8rrx8-1 dQZJDC">
+  <div class="core-utilsstory__ColorBlock-sc-1u8rrx8-0 gZGDOC">
     Provided color pair
   </div>
-  <div class="CLASS_NAME_FILLER">
+  <div class="core-utilsstory__ColorBlock-sc-1u8rrx8-0 gZGDOC">
     Corrected color pair
   </div>
 </div>

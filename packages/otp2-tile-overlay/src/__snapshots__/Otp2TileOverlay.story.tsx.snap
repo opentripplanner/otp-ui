@@ -11,11 +11,11 @@ exports[`OTP2 Tile Layer OtpTileLayer smoke-test 1`] = `
   https://fake-otp-server.com/otp
 </pre>
 mocks downtown Philadelphia stop tile data. Check stops in the layer selector and zoom in on downtown Philadelphia (near city hall) to see some stops loaded from OTP tiles.
-<div class="CLASS_NAME_FILLER"
+<div class="maplibregl-map mapboxgl-map"
      style="position: relative; width: 100%; height: 80vh;"
 >
-  <div class="CLASS_NAME_FILLER">
-    <canvas class="CLASS_NAME_FILLER"
+  <div class="maplibregl-canvas-container mapboxgl-canvas-container maplibregl-interactive mapboxgl-interactive maplibregl-touch-drag-pan mapboxgl-touch-drag-pan maplibregl-touch-zoom-rotate mapboxgl-touch-zoom-rotate">
+    <canvas class="maplibregl-canvas mapboxgl-canvas"
             tabindex="0"
             aria-label="Map"
             role="region"
@@ -25,23 +25,23 @@ mocks downtown Philadelphia stop tile data. Check stops in the layer selector an
     >
     </canvas>
   </div>
-  <div class="CLASS_NAME_FILLER">
-    <div class="CLASS_NAME_FILLER">
+  <div class="maplibregl-control-container mapboxgl-control-container">
+    <div class="maplibregl-ctrl-top-left mapboxgl-ctrl-top-left">
     </div>
-    <div class="CLASS_NAME_FILLER">
+    <div class="maplibregl-ctrl-top-right mapboxgl-ctrl-top-right">
     </div>
-    <div class="CLASS_NAME_FILLER">
+    <div class="maplibregl-ctrl-bottom-left mapboxgl-ctrl-bottom-left">
     </div>
-    <div class="CLASS_NAME_FILLER">
-      <details class="CLASS_NAME_FILLER"
+    <div class="maplibregl-ctrl-bottom-right mapboxgl-ctrl-bottom-right">
+      <details class="maplibregl-ctrl maplibregl-ctrl-attrib mapboxgl-ctrl mapboxgl-ctrl-attrib"
                open
       >
-        <summary class="CLASS_NAME_FILLER"
+        <summary class="maplibregl-ctrl-attrib-button mapboxgl-ctrl-attrib-button"
                  title="Toggle attribution"
                  aria-label="Toggle attribution"
         >
         </summary>
-        <div class="CLASS_NAME_FILLER">
+        <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
           ©
           <a href="https://carto.com/about-carto/"
              target="_blank"
@@ -60,16 +60,24 @@ mocks downtown Philadelphia stop tile data. Check stops in the layer selector an
       </details>
     </div>
   </div>
-  <aside class="CLASS_NAME_FILLER"
+  <aside class="styled__LayerSelector-sc-12kjso7-5 kdylvV filter-group"
          id="filter-group"
   >
-    <ul class="CLASS_NAME_FILLER">
+    <ul class="maplibregl-ctrl-group layers-list ">
       <li>
         <label>
           <input id="stops"
                  type="checkbox"
           >
           stops
+        </label>
+      </li>
+      <li>
+        <label>
+          <input id="areaStops"
+                 type="checkbox"
+          >
+          areaStops
         </label>
       </li>
     </ul>
