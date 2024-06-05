@@ -8,7 +8,8 @@ import {
   TransitiveData,
   TransitiveJourney,
   TransitivePattern,
-  TransitivePlace
+  TransitivePlace,
+  TrimetModeProps
 } from "@opentripplanner/types";
 import bbox from "@turf/bbox";
 
@@ -24,8 +25,7 @@ const modeColorMap = {
   SCOOTER: "#f5a729",
   MICROMOBILITY: "#f5a729",
   MICROMOBILITY_RENT: "#f5a729",
-  WALK: "#86cdf9",
-  TRIMET_TEAL: "#5cc3ff"
+  WALK: "#86cdf9"
 };
 
 /**
@@ -89,15 +89,27 @@ const accessLegFilter = [
 type Props = {
   activeLeg?: Leg;
   transitiveData?: TransitiveData;
-  trimetMode: boolean;
+  trimetModeProps: TrimetModeProps;
 };
 
 const TransitiveCanvasOverlay = ({
   activeLeg,
   transitiveData,
-  trimetMode
+  trimetModeProps
 }: Props): JSX.Element => {
+  const { showRouteArrows = null, ignoreRouteColor = null, trimetTeal = null } =
+    trimetModeProps || {};
   const { current: map } = useMap();
+
+  const calculateColor = segmentData => {
+    let color;
+    if (ignoreRouteColor) {
+      color = segmentData?.route_color || trimetTeal;
+    } else {
+      color = modeColorMap[segmentData.type] || "#008";
+    }
+    return color;
+  };
 
   const geojson: GeoJSON.FeatureCollection<
     GeoJSON.Geometry,
@@ -134,6 +146,7 @@ const TransitiveCanvasOverlay = ({
                   })
                 }))
                 .flatMap(segment => {
+                  const routeColor = calculateColor(segment);
                   return segment.geometries.map(geometry => {
                     const straight = polyline.toGeoJSON(
                       geometry.geometry.points
@@ -142,12 +155,7 @@ const TransitiveCanvasOverlay = ({
                       type: "Feature",
                       properties: {
                         type: "street-edge",
-                        color:
-                          segment?.route_color ||
-                          modeColorMap[segment.type] ||
-                          trimetMode
-                            ? modeColorMap.TRIMET_TEAL
-                            : "#008",
+                        color: routeColor,
                         mode: segment.type
                       },
                       geometry: segment.arc ? drawArc(straight) : straight
@@ -277,7 +285,7 @@ const TransitiveCanvasOverlay = ({
         }}
         type="line"
       />
-      {trimetMode && (
+      {showRouteArrows && (
         <Layer
           id="route-arrows"
           type="symbol"

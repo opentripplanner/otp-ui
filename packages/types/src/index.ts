@@ -587,6 +587,12 @@ export type TransitiveData = {
   streetEdges: TransitiveStreetEdge[];
 };
 
+export type TrimetModeProps = {
+  showRouteArrows: boolean;
+  ignoreRouteColor: boolean;
+  trimetTeal: string;
+};
+
 export type Station = {
   bikesAvailable?: number;
   id: string;
