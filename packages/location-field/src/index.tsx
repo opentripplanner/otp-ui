@@ -550,7 +550,7 @@ const LocationField = ({
     locationSelectedLookup[itemIndex] = locationSelected;
 
     // Extract GTFS/POI info and assign to class
-    const { id, source, layer } = feature.properties;
+    const { id, layer, secondaryLabels, source } = feature.properties;
     const classNames = [];
     let operatorIcon;
     // Operator only exists on transit features
@@ -578,6 +578,7 @@ const LocationField = ({
         onClick={locationSelected}
         title={main}
         subTitle={secondary}
+        secondaryLabels={secondaryLabels}
       />
     );
   };

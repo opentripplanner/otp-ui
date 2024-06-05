@@ -1,6 +1,6 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import MapPopupContents from "./index";
+import MapPopupContents, { FocusTrapWrapper } from "./index";
 
 export default {
   title: "Map Popup"
@@ -48,36 +48,40 @@ const FLOATING_VEHICLE = {
   y: 45.525486666666666
 };
 
-export const StopEntity = (): JSX.Element => {
-  return (
+export const StopEntity = (): JSX.Element => (
+  <MapPopupContents
+    entity={STOP}
+    setLocation={action("setLocation")}
+    setViewedStop={action("setViewedStop")}
+  />
+);
+
+export const StopEntityNoHandlers = (): JSX.Element => (
+  <MapPopupContents entity={STOP} />
+);
+
+export const StationEntity = (): JSX.Element => (
+  <MapPopupContents
+    entity={STATION}
+    setLocation={action("setLocation")}
+    setViewedStop={action("setViewedStop")}
+  />
+);
+
+export const FloatingVehicleEntity = (): JSX.Element => (
+  <MapPopupContents
+    entity={FLOATING_VEHICLE}
+    setLocation={action("setLocation")}
+    setViewedStop={action("setViewedStop")}
+  />
+);
+
+export const StopEntityWithFocusTrap = (): JSX.Element => (
+  <FocusTrapWrapper closePopup={() => {}} id="storybook-stop">
     <MapPopupContents
       entity={STOP}
       setLocation={action("setLocation")}
       setViewedStop={action("setViewedStop")}
     />
-  );
-};
-
-export const StopEntityNoHandlers = (): JSX.Element => {
-  return <MapPopupContents entity={STOP} />;
-};
-
-export const StationEntity = (): JSX.Element => {
-  return (
-    <MapPopupContents
-      entity={STATION}
-      setLocation={action("setLocation")}
-      setViewedStop={action("setViewedStop")}
-    />
-  );
-};
-
-export const FloatingVehicleEntity = (): JSX.Element => {
-  return (
-    <MapPopupContents
-      entity={FLOATING_VEHICLE}
-      setLocation={action("setLocation")}
-      setViewedStop={action("setViewedStop")}
-    />
-  );
-};
+  </FocusTrapWrapper>
+);

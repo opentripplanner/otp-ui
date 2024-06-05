@@ -4540,10 +4540,16 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
-"@opentripplanner/types@6.4.0":
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-6.4.0.tgz#6f7a3475ea982c7b7d8b2f1383a6d775dfabe62a"
-  integrity sha512-PS+CUwETLf0WzAUZg3qiey+SBigaf0CfknKF1XMOM+zJVc2c8nN34hgnwV7sS+RKs030KZFAgIn8p035ErcBuQ==
+"@opentripplanner/geocoder@^2.2.2":
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/geocoder/-/geocoder-2.2.2.tgz#8ddc669287ccdfff1a5cce14d1fa8049421c6480"
+  integrity sha512-tJIOOE5N9kpMj0ji1YyVfWwg4yAFVs7Ks+EET67acql768bXwRE6rHoX6oaHvKhbCDjaQ7kuPIwi1BYWHQgg0Q==
+  dependencies:
+    "@conveyal/geocoder-arcgis-geojson" "^0.0.3"
+    "@conveyal/lonlat" "^1.4.1"
+    "@leeoniya/ufuzzy" "^1.0.14"
+    isomorphic-mapzen-search "^1.6.1"
+    lodash.memoize "^4.1.2"
 
 "@peculiar/asn1-schema@^2.1.6", "@peculiar/asn1-schema@^2.3.0":
   version "2.3.3"
