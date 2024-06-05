@@ -22,6 +22,8 @@ jobs:
       - name: Type check
         run: yarn typescript
       - name: Build Storybook
+        run: yarn unit
+      - name: Build Storybook
         run: yarn build-storybook --quiet
       - name: Serve Storybook and run snapshots
         env: 

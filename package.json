@@ -119,11 +119,11 @@
     "lint": "yarn lint:js && yarn lint:styles && yarn lint:graphql",
     "prettier": "prettier --write \"**/*.{json,md,yml}\"",
     "semantic-release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo",
-    "test": "yarn lint:js && yarn lint:styles && yarn check:i18n-en-fr && yarn typescript && yarn unit && yarn a11y-test",
+    "test": "yarn lint:js && yarn lint:styles && yarn check:i18n-en-fr && yarn typescript && yarn unit && yarn test-storybook && yarn a11y-test",
     "typescript": "lerna run tsc",
     "unit": "jest --testPathIgnorePatterns a11y .d.ts",
     "update-internal-dependencies": "node scripts/update-internal-dependencies.js",
-    "test-storybook": "test-storybook"
+    "test-storybook": "test-storybook --url http://localhost:5555"
   },
   "eslintConfig": {
     "env": {

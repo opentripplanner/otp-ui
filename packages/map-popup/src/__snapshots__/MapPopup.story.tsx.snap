@@ -182,3 +182,68 @@ exports[`Map Popup StopEntityNoHandlers smoke-test 1`] = `
   </header>
 </div>
 `;
+
+exports[`Map Popup StopEntityWithFocusTrap smoke-test 1`] = `
+<div id="storybook-stop-popup-focus-trap"
+     role="presentation"
+>
+  <div class="CLASS_NAME_FILLER">
+    <header class="CLASS_NAME_FILLER">
+      W Burnside &amp; SW 2nd
+    </header>
+    <p class="CLASS_NAME_FILLER">
+      <strong>
+        Stop ID: 9526
+      </strong>
+      <button class="CLASS_NAME_FILLER">
+        Stop Viewer
+      </button>
+    </p>
+    <p class="CLASS_NAME_FILLER">
+      <strong>
+        Plan a trip:
+      </strong>
+      <span class="CLASS_NAME_FILLER">
+        <span class="CLASS_NAME_FILLER">
+          <svg viewbox="0 0 512 512"
+               height="0.9em"
+               width="0.9em"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="CLASS_NAME_FILLER"
+          >
+            <path fill="currentColor"
+                  d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
+            >
+            </path>
+          </svg>
+          <button class="CLASS_NAME_FILLER">
+            From here
+          </button>
+        </span>
+        <span class="CLASS_NAME_FILLER">
+          <svg viewbox="0 0 384 512"
+               height="0.9em"
+               width="0.9em"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="CLASS_NAME_FILLER"
+          >
+            <path fill="currentColor"
+                  d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+            >
+            </path>
+          </svg>
+          <button class="CLASS_NAME_FILLER">
+            To here
+          </button>
+        </span>
+      </span>
+    </p>
+  </div>
+</div>
+`;

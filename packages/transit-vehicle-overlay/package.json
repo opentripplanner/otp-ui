@@ -10,7 +10,7 @@
   "private": false,
   "dependencies": {
     "@opentripplanner/base-map": "^3.1.0",
-    "@opentripplanner/core-utils": "^11.3.1",
+    "@opentripplanner/core-utils": "^11.4.1",
     "@opentripplanner/icons": "^2.0.10",
     "flat": "^5.0.2"
   },
