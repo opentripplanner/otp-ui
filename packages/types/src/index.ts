@@ -97,25 +97,31 @@ export type ZoomBasedSymbol = {
  * Describes the objects from the real-time vehicle service.
  */
 export type TransitVehicle = {
-  lastUpdated?: any;
-  routeShortName?: string;
-  routeLongName?: string;
-  routeType?: string;
   routeColor?: string;
+  routeLongName?: string;
+  routeShortName?: string;
+  routeType?: string;
 
-  status?: string;
+  lastUpdated?: number;
   reportDate?: string;
   seconds?: number;
+  status?: string;
 
-  stopSequence?: number;
-  stopId?: string;
-  vehicleId?: string;
-  tripId?: string;
   blockId?: string;
+  stopId?: string;
+  stopSequence?: number;
+  tripId?: string;
+  vehicleId?: string;
 
+  heading?: number;
   lat?: number;
   lon?: number;
-  heading?: number;
+};
+
+export type TrimetModeProps = {
+  showRouteArrows: boolean;
+  ignoreRouteColor: boolean;
+  trimetTeal: string;
 };
 
 export type OTPTransitVehicle = TransitVehicle & {
@@ -223,8 +229,8 @@ export type Step = {
   area: boolean;
   bogusName: boolean;
   distance: number;
-  elevation: ElevationData;
-  elevationProfile: any;
+  elevation?: ElevationData;
+  elevationProfile?: ElevationProfileComponent[];
   lat: number;
   lon: number;
   relativeDirection: string;
@@ -545,7 +551,6 @@ export type TransitiveJourney = {
     streetEdges: number[];
     to: TransitivePlace;
     type: string;
-    route_color?: string;
   }[];
 };
 export type TransitivePattern = {
@@ -585,12 +590,6 @@ export type TransitiveData = {
   routes: TransitiveRoute[];
   stops: TransitiveStop[];
   streetEdges: TransitiveStreetEdge[];
-};
-
-export type TrimetModeProps = {
-  showRouteArrows: boolean;
-  ignoreRouteColor: boolean;
-  trimetTeal: string;
 };
 
 export type Station = {
