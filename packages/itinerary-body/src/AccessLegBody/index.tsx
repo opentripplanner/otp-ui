@@ -34,6 +34,7 @@ interface Props {
   mapillaryCallback?: (id: string) => void;
   mapillaryKey?: string;
   setActiveLeg: SetActiveLegFunction;
+  showApproximatePrefixNonTransitLegs?: boolean;
   setLegDiagram: (leg: Leg) => void;
   showElevationProfile: boolean;
   showLegIcon: boolean;
@@ -75,6 +76,7 @@ class AccessLegBody extends Component<Props, State> {
       mapillaryCallback,
       mapillaryKey,
       setLegDiagram,
+      showApproximatePrefixNonTransitLegs,
       showElevationProfile,
       showLegIcon,
       TransitLegSubheader
@@ -137,7 +139,13 @@ class AccessLegBody extends Component<Props, State> {
                     aria-expanded={expanded}
                     onClick={this.onStepsHeaderClick}
                   >
-                    <Duration seconds={leg.duration} />
+                    <Duration
+                      seconds={leg.duration}
+                      mode={leg.mode}
+                      showApproximatePrefixNonTransitLegs={
+                        showApproximatePrefixNonTransitLegs
+                      }
+                    />
                     {leg.steps && leg.steps.length > 0 && (
                       <S.CaretToggle expanded={expanded} />
                     )}

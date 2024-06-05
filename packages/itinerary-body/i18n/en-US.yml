@@ -70,6 +70,7 @@ otpUi:
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"
+      durationShortWalk: About {hours, plural, =0 {} other {# hr }}{minutes} min
     flexAdvanceNotice: " at least {leadDays, plural, one {# day} other {# days}} in advance"
     flexCallAhead: call ahead
     flexCallNumber: call {phoneNumber}
