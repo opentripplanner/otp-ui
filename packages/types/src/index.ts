@@ -118,12 +118,6 @@ export type TransitVehicle = {
   lon?: number;
 };
 
-export type TrimetModeProps = {
-  showRouteArrows: boolean;
-  ignoreRouteColor: boolean;
-  trimetTeal: string;
-};
-
 export type OTPTransitVehicle = TransitVehicle & {
   label?: string;
   nextStopName?: string;
@@ -551,6 +545,7 @@ export type TransitiveJourney = {
     streetEdges: number[];
     to: TransitivePlace;
     type: string;
+    route_color?: string;
   }[];
 };
 export type TransitivePattern = {

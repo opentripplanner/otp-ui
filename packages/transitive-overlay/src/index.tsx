@@ -8,8 +8,7 @@ import {
   TransitiveData,
   TransitiveJourney,
   TransitivePattern,
-  TransitivePlace,
-  TrimetModeProps
+  TransitivePlace
 } from "@opentripplanner/types";
 import bbox from "@turf/bbox";
 
@@ -89,27 +88,19 @@ const accessLegFilter = [
 type Props = {
   activeLeg?: Leg;
   transitiveData?: TransitiveData;
-  trimetModeProps: TrimetModeProps;
+  showRouteArrows?: boolean;
+  ignoreRouteColor?: boolean;
+  defaultColorOverride?: string;
 };
 
 const TransitiveCanvasOverlay = ({
   activeLeg,
   transitiveData,
-  trimetModeProps
+  showRouteArrows,
+  ignoreRouteColor,
+  defaultColorOverride
 }: Props): JSX.Element => {
-  const { showRouteArrows = null, ignoreRouteColor = null, trimetTeal = null } =
-    trimetModeProps || {};
   const { current: map } = useMap();
-
-  const calculateColor = segmentData => {
-    let color;
-    if (ignoreRouteColor) {
-      color = segmentData?.route_color || trimetTeal;
-    } else {
-      color = modeColorMap[segmentData.type] || "#008";
-    }
-    return color;
-  };
 
   const geojson: GeoJSON.FeatureCollection<
     GeoJSON.Geometry,
@@ -146,7 +137,6 @@ const TransitiveCanvasOverlay = ({
                   })
                 }))
                 .flatMap(segment => {
-                  const routeColor = calculateColor(segment);
                   return segment.geometries.map(geometry => {
                     const straight = polyline.toGeoJSON(
                       geometry.geometry.points
@@ -155,7 +145,9 @@ const TransitiveCanvasOverlay = ({
                       type: "Feature",
                       properties: {
                         type: "street-edge",
-                        color: routeColor,
+                        color: ignoreRouteColor
+                          ? segment?.route_color || defaultColorOverride
+                          : modeColorMap[segment.type] || "#008",
                         mode: segment.type
                       },
                       geometry: segment.arc ? drawArc(straight) : straight
