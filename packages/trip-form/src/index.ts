@@ -9,8 +9,8 @@ import SliderSelector from "./SliderSelector";
 import * as Styled from "./styled";
 import SubmodeSelector from "./SubmodeSelector";
 import MetroModeSelector from "./MetroModeSelector";
-import ModeSettingsButton from "./MetroModeSelector/ModeSettingsButton";
-import ModeSubsettingsContainer from "./MetroModeSelector/ModeSubsettingsContainer";
+import AdvancedModeSettingsButton from "./MetroModeSelector/AdvancedModeSettingsButton";
+import AdvancedModeSubsettingsContainer from "./MetroModeSelector/AdvancedModeSubsettingsContainer";
 import {
   addSettingsToButton,
   aggregateModes,
@@ -33,8 +33,8 @@ export {
   GeneralSettingsPanel,
   getBannedRoutesFromSubmodes,
   MetroModeSelector,
-  ModeSettingsButton,
-  ModeSubsettingsContainer,
+  AdvancedModeSettingsButton,
+  AdvancedModeSubsettingsContainer,
   ModeButton,
   ModeSelector,
   ModeSettingRenderer,

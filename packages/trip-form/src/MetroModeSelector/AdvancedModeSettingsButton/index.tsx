@@ -11,14 +11,6 @@ import { invisibleCss } from "..";
 
 const { blue, grey } = colors;
 
-interface Props {
-  accentColor?: string;
-  modeButton: ModeButtonDefinition;
-  onSettingsUpdate: () => void;
-  id: string;
-  onToggle: () => void;
-}
-
 const SettingsContainer = styled.div`
   width: 100%;
   max-width: 500px;
@@ -29,18 +21,18 @@ const StyledModeSettingsButton = styled.div<{ accentColor: string }>`
     ${invisibleCss}
   }
   & > label {
-    width: 100%;
+    align-items: center;
     background-color: #fff;
-    color: ${props => props.accentColor};
-    height: 51px;
     border: 1px solid ${props => props.accentColor};
     border-left-width: 2px;
     border-right-width: 2px;
+    color: ${props => props.accentColor};
     display: grid;
-    grid-template-columns: 40px auto 40px;
     gap: 20px;
-    align-items: center;
+    grid-template-columns: 40px auto 40px;
+    height: 51px;
     justify-items: center;
+    padding: 0 10px;
   }
 
   & > input:checked + label {
@@ -53,8 +45,8 @@ const StyledModeSettingsButton = styled.div<{ accentColor: string }>`
   }
 
   svg {
-    height: 24px;
-    width: 24px;
+    height: 26px;
+    width: 26px;
   }
 
   &:hover {
@@ -68,13 +60,21 @@ const StyledSettingsContainer = styled.div`
   padding: 1em;
 `;
 
-const ModeSettingsButton = ({
+interface Props {
+  accentColor?: string;
+  id: string;
+  modeButton: ModeButtonDefinition;
+  onSettingsUpdate: () => void;
+  onToggle: () => void;
+}
+
+const AdvancedModeSettingsButton = ({
   accentColor = blue[700],
+  id,
   modeButton,
   onSettingsUpdate,
-  onToggle,
-  id
-}: Props) => {
+  onToggle
+}: Props): JSX.Element => {
   const intl = useIntl();
   const label = generateModeButtonLabel(modeButton.key, intl, modeButton.label);
   const checkboxId = `metro-submode-selector-mode-${id}`;
@@ -108,4 +108,4 @@ const ModeSettingsButton = ({
   );
 };
 
-export default ModeSettingsButton;
+export default AdvancedModeSettingsButton;

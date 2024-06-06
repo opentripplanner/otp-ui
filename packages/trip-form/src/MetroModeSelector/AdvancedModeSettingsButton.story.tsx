@@ -1,4 +1,5 @@
 import React, { ReactElement, useState } from "react";
+import { ModeButtonDefinition } from "@opentripplanner/types";
 import * as Core from "..";
 import { QueryParamChangeEvent } from "../types";
 import {
@@ -29,7 +30,7 @@ const MetroModeSubsettingsComponent = ({
   onToggleModeButton
 }: {
   fillModeIcons?: boolean;
-  modeButtonDefinitions: any;
+  modeButtonDefinitions: Array<ModeButtonDefinition>;
   onSetModeSettingValue: (event: QueryParamChangeEvent) => void;
   onToggleModeButton: (key: string, newState: boolean) => void;
 }): ReactElement => {
@@ -80,7 +81,7 @@ const MetroModeSubsettingsComponent = ({
   };
 
   return (
-    <Core.ModeSubsettingsContainer
+    <Core.AdvancedModeSubsettingsContainer
       fillModeIcons={fillModeIcons}
       label="Select a transit mode"
       modeButtons={processedModeButtons}
@@ -102,7 +103,7 @@ const Template = (args: {
   />
 );
 
-export const ModeSettingsButtons = Template.bind({});
+export const AdvancedModeSettingsButtons = Template.bind({});
 
 export default {
   argTypes: {
@@ -111,5 +112,5 @@ export default {
     onToggleModeButton: { action: "toggle button" }
   },
   component: MetroModeSubsettingsComponent,
-  title: "Trip Form Components/Mode Settings Buttons"
+  title: "Trip Form Components/Advanced Mode Settings Buttons"
 };

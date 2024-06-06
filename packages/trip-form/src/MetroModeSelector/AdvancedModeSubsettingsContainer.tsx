@@ -1,15 +1,16 @@
 import styled from "styled-components";
 import React, { useCallback } from "react";
 import { ModeButtonDefinition } from "@opentripplanner/types";
-import ModeSettingsButton from "./ModeSettingsButton";
+import AdvancedModeSettingsButton from "./AdvancedModeSettingsButton";
+import { invisibleCss } from ".";
 
 const SubsettingsContainer = styled.fieldset`
   border: none;
-  width: 90%;
   margin: 0;
+  width: 90%;
 
   legend {
-    display: none;
+    ${invisibleCss}
   }
 
   display: flex;
@@ -17,10 +18,12 @@ const SubsettingsContainer = styled.fieldset`
 
   div:first-of-type div label {
     border-top-width: 2px;
+    border-radius: 8px 8px 0 0;
   }
 
   div:last-of-type div label {
     border-bottom-width: 2px;
+    border-radius: 0 0 8px 8px;
   }
 `;
 
@@ -32,7 +35,7 @@ interface Props {
   onToggleModeButton: any;
 }
 
-const ModeSubsettingsContainer = ({
+const AdvancedModeSubsettingsContainer = ({
   modeButtons,
   label,
   onSettingsUpdate,
@@ -43,7 +46,7 @@ const ModeSubsettingsContainer = ({
       <legend>{label}</legend>
       {modeButtons.map(button => {
         return (
-          <ModeSettingsButton
+          <AdvancedModeSettingsButton
             key={button.label}
             modeButton={button}
             onSettingsUpdate={onSettingsUpdate}
@@ -58,4 +61,4 @@ const ModeSubsettingsContainer = ({
   );
 };
 
-export default ModeSubsettingsContainer;
+export default AdvancedModeSubsettingsContainer;
