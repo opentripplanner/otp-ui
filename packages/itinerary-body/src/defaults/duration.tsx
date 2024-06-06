@@ -1,7 +1,8 @@
-import coreUtils from "@opentripplanner/core-utils";
 import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
+import coreUtils from "@opentripplanner/core-utils";
+import { isTransit } from "@opentripplanner/core-utils/lib/itinerary";
 import { defaultMessages } from "../util";
 
 interface Props {
@@ -29,7 +30,7 @@ export default function Duration({
       values={{
         ...coreUtils.time.toHoursMinutesSeconds(seconds),
         approximatePrefix:
-          showApproximatePrefixNonTransitLegs && mode === "WALK"
+          showApproximatePrefixNonTransitLegs && !isTransit(mode)
       }}
     />
   );
