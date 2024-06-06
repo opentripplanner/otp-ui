@@ -15,7 +15,7 @@ export const defaultModeButtonDefinitions = [
     Icon: Bus,
     iconName: "bus",
     key: "transit",
-    label: "Bus",
+    label: "Transit",
     modes: [{ mode: "TRANSIT" }]
   },
   {

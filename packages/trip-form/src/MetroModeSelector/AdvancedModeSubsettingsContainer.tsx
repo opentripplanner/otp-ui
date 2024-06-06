@@ -3,6 +3,7 @@ import React, { useCallback } from "react";
 import { ModeButtonDefinition } from "@opentripplanner/types";
 import AdvancedModeSettingsButton from "./AdvancedModeSettingsButton";
 import { invisibleCss } from ".";
+import { QueryParamChangeEvent } from "../types";
 
 const SubsettingsContainer = styled.fieldset`
   border: none;
@@ -25,17 +26,22 @@ const SubsettingsContainer = styled.fieldset`
     border-bottom-width: 2px;
     border-radius: 0 0 8px 8px;
   }
+
+  div.advanced-submode-container:last-of-type div:last-child {
+    border-radius: 0 0 8px 8px;
+  }
 `;
 
 interface Props {
-  fillModeIcons: any;
+  fillModeIcons: boolean | undefined;
   label: string;
   modeButtons: ModeButtonDefinition[];
-  onSettingsUpdate: any;
-  onToggleModeButton: any;
+  onSettingsUpdate: (event: QueryParamChangeEvent) => void;
+  onToggleModeButton: (key: string, newState: boolean) => void;
 }
 
 const AdvancedModeSubsettingsContainer = ({
+  fillModeIcons,
   modeButtons,
   label,
   onSettingsUpdate,
@@ -47,6 +53,7 @@ const AdvancedModeSubsettingsContainer = ({
       {modeButtons.map(button => {
         return (
           <AdvancedModeSettingsButton
+            fillModeIcons={fillModeIcons}
             key={button.label}
             modeButton={button}
             onSettingsUpdate={onSettingsUpdate}

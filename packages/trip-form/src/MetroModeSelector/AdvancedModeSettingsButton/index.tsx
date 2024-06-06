@@ -8,6 +8,7 @@ import { useIntl } from "react-intl";
 import SubSettingsPane from "../SubSettingsPane";
 import generateModeButtonLabel from "../i18n";
 import { invisibleCss } from "..";
+import { QueryParamChangeEvent } from "../../types";
 
 const { blue, grey } = colors;
 
@@ -16,7 +17,11 @@ const SettingsContainer = styled.div`
   max-width: 500px;
 `;
 
-const StyledModeSettingsButton = styled.div<{ accentColor: string }>`
+const StyledModeSettingsButton = styled.div<{
+  accentColor: string;
+  fillModeIcons: boolean;
+  subsettings: boolean;
+}>`
   & > input {
     ${invisibleCss}
   }
@@ -38,6 +43,8 @@ const StyledModeSettingsButton = styled.div<{ accentColor: string }>`
   & > input:checked + label {
     background-color: ${props => props.accentColor};
     color: #fff;
+    border-bottom-left-radius: ${props => props.subsettings && 0} !important;
+    border-bottom-right-radius: ${props => props.subsettings && 0} !important;
   }
 
   span {
@@ -47,6 +54,8 @@ const StyledModeSettingsButton = styled.div<{ accentColor: string }>`
   svg {
     height: 26px;
     width: 26px;
+    fill: ${props =>
+      props.fillModeIcons === false ? "inherit" : "currentcolor"};
   }
 
   &:hover {
@@ -62,14 +71,16 @@ const StyledSettingsContainer = styled.div`
 
 interface Props {
   accentColor?: string;
+  fillModeIcons: boolean;
   id: string;
   modeButton: ModeButtonDefinition;
-  onSettingsUpdate: () => void;
+  onSettingsUpdate: (event: QueryParamChangeEvent) => void;
   onToggle: () => void;
 }
 
 const AdvancedModeSettingsButton = ({
   accentColor = blue[700],
+  fillModeIcons,
   id,
   modeButton,
   onSettingsUpdate,
@@ -79,8 +90,13 @@ const AdvancedModeSettingsButton = ({
   const label = generateModeButtonLabel(modeButton.key, intl, modeButton.label);
   const checkboxId = `metro-submode-selector-mode-${id}`;
   return (
-    <SettingsContainer>
-      <StyledModeSettingsButton accentColor={accentColor} id={modeButton.key}>
+    <SettingsContainer className="advanced-submode-container">
+      <StyledModeSettingsButton
+        accentColor={accentColor}
+        fillModeIcons={fillModeIcons}
+        id={modeButton.key}
+        subsettings={modeButton.modeSettings.length > 0}
+      >
         <input
           aria-label={label}
           checked={modeButton.enabled ?? undefined}
