@@ -19,17 +19,18 @@ export default function Duration({
   mode,
   showApproximatePrefixNonTransitLegs
 }: Props): ReactElement {
-  const message =
-    showApproximatePrefixNonTransitLegs && mode === "WALK"
-      ? defaultMessages["otpUi.ItineraryBody.common.durationShortWalk"]
-      : defaultMessages["otpUi.ItineraryBody.common.durationShort"];
-
   return (
     <FormattedMessage
-      defaultMessage={message}
+      defaultMessage={
+        defaultMessages["otpUi.ItineraryBody.common.durationShort"]
+      }
       description="Duration in abbreviated hours (if over one hour) and minutes"
       id="otpUi.ItineraryBody.common.durationShort"
-      values={coreUtils.time.toHoursMinutesSeconds(seconds)}
+      values={{
+        ...coreUtils.time.toHoursMinutesSeconds(seconds),
+        approximatePrefix:
+          showApproximatePrefixNonTransitLegs && mode === "WALK"
+      }}
     />
   );
 }
