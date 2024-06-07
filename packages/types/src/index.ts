@@ -545,7 +545,6 @@ export type TransitiveJourney = {
     streetEdges: number[];
     to: TransitivePlace;
     type: string;
-    route_color?: string;
   }[];
 };
 export type TransitivePattern = {

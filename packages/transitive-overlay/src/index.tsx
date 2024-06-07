@@ -89,7 +89,6 @@ type Props = {
   activeLeg?: Leg;
   transitiveData?: TransitiveData;
   showRouteArrows?: boolean;
-  ignoreRouteColor?: boolean;
   defaultColorOverride?: string;
   defaultColorOverrideArrow?: string;
 };
@@ -98,7 +97,6 @@ const TransitiveCanvasOverlay = ({
   activeLeg,
   transitiveData,
   showRouteArrows,
-  ignoreRouteColor,
   defaultColorOverride,
   defaultColorOverrideArrow
 }: Props): JSX.Element => {
@@ -147,9 +145,10 @@ const TransitiveCanvasOverlay = ({
                       type: "Feature",
                       properties: {
                         type: "street-edge",
-                        color: ignoreRouteColor
-                          ? defaultColorOverride
-                          : modeColorMap[segment.type] || "#008",
+                        color:
+                          defaultColorOverride ||
+                          modeColorMap[segment.type] ||
+                          "#008",
                         mode: segment.type
                       },
                       geometry: segment.arc ? drawArc(straight) : straight
@@ -218,6 +217,7 @@ const TransitiveCanvasOverlay = ({
   if (!transitiveData) return <></>;
 
   const { fromAnchor, toAnchor } = getFromToAnchors(transitiveData);
+
   // Generally speaking, text/symbol layers placed first will be rendered in a lower layer
   // (or, if it is text, rendered with a lower priority or not at all if higher-priority text overlaps).
   return (
