@@ -168,7 +168,11 @@ const Endpoint = (props: Props): JSX.Element => {
       longitude={location.lon}
       onDragEnd={onDragEnd}
       onDragStart={() => setShowPopup(false)}
-      onClick={() => setShowPopup(true)}
+      onClick={e => {
+        // prevent Popup onClose from triggering immediately
+        e.originalEvent.stopPropagation();
+        setShowPopup(true);
+      }}
     >
       {iconHtml}
       {showPopup && showUserSettings && (
