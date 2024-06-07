@@ -91,6 +91,7 @@ type Props = {
   showRouteArrows?: boolean;
   ignoreRouteColor?: boolean;
   defaultColorOverride?: string;
+  defaultColorOverrideArrow?: string;
 };
 
 const TransitiveCanvasOverlay = ({
@@ -98,7 +99,8 @@ const TransitiveCanvasOverlay = ({
   transitiveData,
   showRouteArrows,
   ignoreRouteColor,
-  defaultColorOverride
+  defaultColorOverride,
+  defaultColorOverrideArrow
 }: Props): JSX.Element => {
   const { current: map } = useMap();
 
@@ -146,7 +148,7 @@ const TransitiveCanvasOverlay = ({
                       properties: {
                         type: "street-edge",
                         color: ignoreRouteColor
-                          ? segment?.route_color || defaultColorOverride
+                          ? defaultColorOverride
                           : modeColorMap[segment.type] || "#008",
                         mode: segment.type
                       },
@@ -216,7 +218,6 @@ const TransitiveCanvasOverlay = ({
   if (!transitiveData) return <></>;
 
   const { fromAnchor, toAnchor } = getFromToAnchors(transitiveData);
-
   // Generally speaking, text/symbol layers placed first will be rendered in a lower layer
   // (or, if it is text, rendered with a lower priority or not at all if higher-priority text overlaps).
   return (
@@ -279,8 +280,37 @@ const TransitiveCanvasOverlay = ({
       />
       {showRouteArrows && (
         <Layer
+          id="route-arrows-walk"
+          filter={[
+            "all",
+            ["==", "type", "street-edge"],
+            ["==", "mode", "WALK"]
+          ]}
+          type="symbol"
+          layout={{
+            "symbol-placement": "line",
+            "icon-image": "arrow-icon",
+            "icon-size": 0.1,
+            "symbol-spacing": 10,
+            "icon-allow-overlap": true,
+            "icon-ignore-placement": true,
+            "icon-offset": [0, 8000]
+          }}
+          paint={{
+            "icon-color": defaultColorOverrideArrow,
+            "icon-opacity": 0.8
+          }}
+        />
+      )}
+      {showRouteArrows && (
+        <Layer
           id="route-arrows"
           type="symbol"
+          filter={[
+            "all",
+            ["!=", "type", "street-edge"],
+            ["!=", "mode", "WALK"]
+          ]}
           layout={{
             "symbol-placement": "line",
             "icon-image": "arrow-icon",
