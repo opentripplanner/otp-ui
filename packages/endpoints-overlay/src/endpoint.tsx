@@ -189,66 +189,64 @@ const Endpoint = (props: Props): JSX.Element => {
               <UserLocationIcon type={icon} />
               {location.name}
             </strong>
-            <div>
-              <S.Button
-                disabled={isWork}
-                onClick={isHome ? forgetHome : rememberAsHome}
-              >
-                {isHome ? (
-                  <>
-                    <UserLocationIcon type="times" />
-                    <FormattedMessage
-                      defaultMessage={
-                        defaultMessages["otpUi.EndpointsOverlay.forgetHome"]
-                      }
-                      description="Button text to forget the home location"
-                      id="otpUi.EndpointsOverlay.forgetHome"
-                    />
-                  </>
-                ) : (
-                  <>
-                    <UserLocationIcon type="home" />
-                    <FormattedMessage
-                      defaultMessage={
-                        defaultMessages["otpUi.EndpointsOverlay.saveAsHome"]
-                      }
-                      description="Button text to save the location as home location"
-                      id="otpUi.EndpointsOverlay.saveAsHome"
-                    />
-                  </>
-                )}
-              </S.Button>
-            </div>
-            <div>
-              <S.Button
-                disabled={isHome}
-                onClick={isWork ? forgetWork : rememberAsWork}
-              >
-                {isWork ? (
-                  <>
-                    <UserLocationIcon type="times" />
-                    <FormattedMessage
-                      defaultMessage={
-                        defaultMessages["otpUi.EndpointsOverlay.forgetWork"]
-                      }
-                      description="Button text to forget the work location"
-                      id="otpUi.EndpointsOverlay.forgetWork"
-                    />
-                  </>
-                ) : (
-                  <>
-                    <UserLocationIcon type="briefcase" />
-                    <FormattedMessage
-                      defaultMessage={
-                        defaultMessages["otpUi.EndpointsOverlay.saveAsWork"]
-                      }
-                      description="Button text to save the location as work location"
-                      id="otpUi.EndpointsOverlay.saveAsWork"
-                    />
-                  </>
-                )}
-              </S.Button>
-            </div>
+            {!isWork && (
+              <div>
+                <S.Button onClick={isHome ? forgetHome : rememberAsHome}>
+                  {isHome ? (
+                    <>
+                      <UserLocationIcon type="times" />
+                      <FormattedMessage
+                        defaultMessage={
+                          defaultMessages["otpUi.EndpointsOverlay.forgetHome"]
+                        }
+                        description="Button text to forget the home location"
+                        id="otpUi.EndpointsOverlay.forgetHome"
+                      />
+                    </>
+                  ) : (
+                    <>
+                      <UserLocationIcon type="home" />
+                      <FormattedMessage
+                        defaultMessage={
+                          defaultMessages["otpUi.EndpointsOverlay.saveAsHome"]
+                        }
+                        description="Button text to save the location as home location"
+                        id="otpUi.EndpointsOverlay.saveAsHome"
+                      />
+                    </>
+                  )}
+                </S.Button>
+              </div>
+            )}
+            {!isHome && (
+              <div>
+                <S.Button onClick={isWork ? forgetWork : rememberAsWork}>
+                  {isWork ? (
+                    <>
+                      <UserLocationIcon type="times" />
+                      <FormattedMessage
+                        defaultMessage={
+                          defaultMessages["otpUi.EndpointsOverlay.forgetWork"]
+                        }
+                        description="Button text to forget the work location"
+                        id="otpUi.EndpointsOverlay.forgetWork"
+                      />
+                    </>
+                  ) : (
+                    <>
+                      <UserLocationIcon type="briefcase" />
+                      <FormattedMessage
+                        defaultMessage={
+                          defaultMessages["otpUi.EndpointsOverlay.saveAsWork"]
+                        }
+                        description="Button text to save the location as work location"
+                        id="otpUi.EndpointsOverlay.saveAsWork"
+                      />
+                    </>
+                  )}
+                </S.Button>
+              </div>
+            )}
             <div>
               <S.Button onClick={clearLocation}>
                 <UserLocationIcon type="times" />
