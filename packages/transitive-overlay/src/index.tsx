@@ -90,15 +90,13 @@ type Props = {
   transitiveData?: TransitiveData;
   showRouteArrows?: boolean;
   defaultColorOverride?: string;
-  defaultColorOverrideArrow?: string;
 };
 
 const TransitiveCanvasOverlay = ({
   activeLeg,
   transitiveData,
   showRouteArrows,
-  defaultColorOverride,
-  defaultColorOverrideArrow
+  defaultColorOverride
 }: Props): JSX.Element => {
   const { current: map } = useMap();
 
@@ -280,37 +278,8 @@ const TransitiveCanvasOverlay = ({
       />
       {showRouteArrows && (
         <Layer
-          id="route-arrows-walk"
-          filter={[
-            "all",
-            ["==", "type", "street-edge"],
-            ["==", "mode", "WALK"]
-          ]}
-          type="symbol"
-          layout={{
-            "symbol-placement": "line",
-            "icon-image": "arrow-icon",
-            "icon-size": 0.1,
-            "symbol-spacing": 10,
-            "icon-allow-overlap": true,
-            "icon-ignore-placement": true,
-            "icon-offset": [0, 8000]
-          }}
-          paint={{
-            "icon-color": defaultColorOverrideArrow,
-            "icon-opacity": 0.8
-          }}
-        />
-      )}
-      {showRouteArrows && (
-        <Layer
           id="route-arrows"
           type="symbol"
-          filter={[
-            "all",
-            ["!=", "type", "street-edge"],
-            ["!=", "mode", "WALK"]
-          ]}
           layout={{
             "symbol-placement": "line",
             "icon-image": "arrow-icon",
