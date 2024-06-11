@@ -89,14 +89,14 @@ type Props = {
   activeLeg?: Leg;
   transitiveData?: TransitiveData;
   showRouteArrows?: boolean;
-  defaultColorOverride?: string;
+  colorOverride?: string;
 };
 
 const TransitiveCanvasOverlay = ({
   activeLeg,
   transitiveData,
   showRouteArrows,
-  defaultColorOverride
+  colorOverride
 }: Props): JSX.Element => {
   const { current: map } = useMap();
 
@@ -144,9 +144,7 @@ const TransitiveCanvasOverlay = ({
                       properties: {
                         type: "street-edge",
                         color:
-                          defaultColorOverride ||
-                          modeColorMap[segment.type] ||
-                          "#008",
+                          colorOverride || modeColorMap[segment.type] || "#008",
                         mode: segment.type
                       },
                       geometry: segment.arc ? drawArc(straight) : straight
