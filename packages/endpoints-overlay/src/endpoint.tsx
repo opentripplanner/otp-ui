@@ -13,9 +13,9 @@ import { Marker, MarkerDragEvent } from "react-map-gl";
 import { Sync } from "@styled-icons/fa-solid/Sync";
 import { Times } from "@styled-icons/fa-solid/Times";
 import coreUtils from "@opentripplanner/core-utils";
+import { FocusTrapWrapper } from "@opentripplanner/map-popup";
 import flatten from "flat";
 import React, { ComponentType, useState } from "react";
-import { FocusTrapWrapper } from "@opentripplanner/map-popup/lib";
 
 import * as S from "./styled";
 
@@ -166,24 +166,24 @@ const Endpoint = (props: Props): JSX.Element => {
       draggable
       latitude={location.lat}
       longitude={location.lon}
-      onDragEnd={onDragEnd}
-      onDragStart={() => setShowPopup(false)}
       onClick={e => {
         // prevent Popup onClose from triggering immediately
         e.originalEvent.stopPropagation();
         setShowPopup(true);
       }}
+      onDragEnd={onDragEnd}
+      onDragStart={() => setShowPopup(false)}
     >
       {iconHtml}
       {showPopup && showUserSettings && (
         <Popup
-          onClose={() => setShowPopup(false)}
           latitude={location.lat}
           longitude={location.lon}
+          onClose={() => setShowPopup(false)}
         >
           <FocusTrapWrapper
-            id="endpoint-overlay"
             closePopup={() => setShowPopup(false)}
+            id="endpoint-overlay"
           >
             <strong>
               <UserLocationIcon type={icon} />
