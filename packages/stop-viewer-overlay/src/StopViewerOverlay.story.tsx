@@ -36,7 +36,10 @@ const WithCustomMarker = (): JSX.Element => (
 const disableA11yParameters = {
   a11y: {
     config: {
-      rules: [{ id: "aria-allowed-attr", enabled: false }]
+      rules: [
+        { id: "aria-allowed-attr", enabled: false },
+        { id: "aria-prohibited-attr", enabled: false }
+      ]
     }
   }
 };

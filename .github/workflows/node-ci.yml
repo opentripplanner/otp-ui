@@ -21,7 +21,7 @@ jobs:
         run: yarn check:i18n-en-fr
       - name: Type check
         run: yarn typescript
-      - name: Build Storybook
+      - name: Run unit tests
         run: yarn unit
       - name: Build Storybook
         run: yarn build-storybook --quiet

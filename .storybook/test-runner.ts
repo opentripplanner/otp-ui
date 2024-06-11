@@ -1,6 +1,7 @@
-import type { TestRunnerConfig } from '@storybook/test-runner';
-import { injectAxe, checkA11y } from 'axe-playwright';
+import { getStoryContext, TestContext, type TestRunnerConfig } from '@storybook/test-runner';
+import { injectAxe, checkA11y, configureAxe } from 'axe-playwright';
 import { Page } from 'playwright-core'
+import parameters from './previewParameters';
 
 const ONLY_RUN = process.env.ONLY_RUN
 
@@ -10,7 +11,15 @@ async function runSnapshots(page: Page) {
   expect(innerHTML).toMatchSnapshot();
 }
 
-async function runA11yTest(page: Page) {
+async function runA11yTest(page: Page, context: TestContext) {
+  // Get the entire context of a story, including parameters, args, argTypes, etc.
+  const storyContext = await getStoryContext(page, context);
+
+  const globalOverrides = parameters.a11y
+  // Apply story-level a11y rules
+  await configureAxe(page, {
+    rules: [...storyContext.parameters?.a11y?.config?.rules, ...globalOverrides.config.rules],
+  });
   await checkA11y(page, '#storybook-root', {
     detailedReport: true,
     detailedReportOptions: {
@@ -29,7 +38,7 @@ const config: TestRunnerConfig = {
       await runSnapshots(page);
     }
     if (!ONLY_RUN || ONLY_RUN === "A11Y") {
-      await runA11yTest(page);
+      await runA11yTest(page, context);
     }
   },
 };

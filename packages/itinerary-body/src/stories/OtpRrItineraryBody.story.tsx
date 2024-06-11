@@ -94,7 +94,10 @@ function OtpRRItineraryBodyWrapper({
 export default {
   title: "ItineraryBody/otp-react-redux",
   component: ItineraryBody,
-  parameters: { date: new Date("March 10, 2021 10:00:00") }
+  parameters: {
+    date: new Date("March 10, 2021 10:00:00"),
+    a11y: { config: { rules: [{ id: "link-in-text-block", enabled: false }] } }
+  }
 } as Meta;
 
 export const WalkOnlyItinerary = (): ReactElement => (

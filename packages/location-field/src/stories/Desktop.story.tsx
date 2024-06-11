@@ -39,8 +39,12 @@ const invalidKeyGeocoderConfig = {
 const a11yOverrideParameters = {
   a11y: {
     config: {
-      // This is a story issue, not a production issue
-      rules: [{ id: "label", enabled: false }]
+      rules: [
+        // This is a story issue, not a production issue
+        { id: "label", enabled: false },
+        // The options don't appear until click
+        { id: "aria-required-children", enabled: false }
+      ]
     }
   }
 };

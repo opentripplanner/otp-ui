@@ -4,6 +4,7 @@ import locationFieldHandlers from "../packages/location-field/src/mocks/handlers
 import itineraryBodyHandlers from "../packages/itinerary-body/src/__mocks__/handlers";
 import geocoderHandlers from "../packages/geocoder/src/test-fixtures/handlers";
 import tileLayerHandlers from '../packages/otp2-tile-overlay/src/mocks/handlers'
+import parameters from './previewParameters'
 
 import { reactIntl } from './react-intl.ts';
 import { Preview } from "@storybook/react";
@@ -20,42 +21,7 @@ if (typeof global.process === "undefined") {
   worker.start({ onUnhandledRequest: "bypass" });
 }
 
-export const parameters = {
-  a11y: {
-    config: {
-      rules: [
-        {
-          //  moved to technical backlog
-          id: "aria-required-parent",
-          reviewOnFail: true,
-        },
-        {
-          // Appears to be a story bug
-          id: "duplicate-id",
-          reviewOnFail: true
-        },
-        {
-          // Appears to be a story bug
-          id: "duplicate-id-aria",
-          reviewOnFail: true
-        },
-        {
-          // Not really applicable to stories and causes problems with the WithMap decorator
-          id: "landmark-unique", 
-          enabled: false
-        }
-      ],
-    },
-  },
-  actions: { argTypesRegex: "^on[A-Z].*" },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
-    },
-  },
-  reactIntl
-};
+export { parameters }
 
 const preview: Preview = {
   decorators: [mockDateDecorator],
