@@ -204,8 +204,9 @@ const StopsOverlay = (props: Props): JSX.Element => {
           maxWidth="100%"
           onClose={setNullStop}
         >
-          <FocusTrapWrapper id="stop-popup" closePopup={setNullStop}>
+          <FocusTrapWrapper closePopup={setNullStop} id="stop-popup">
             <StopPopup
+              entity={clickedStop}
               setLocation={location => {
                 setNullStop();
                 setLocation(location);
@@ -214,7 +215,6 @@ const StopsOverlay = (props: Props): JSX.Element => {
                 setNullStop();
                 setViewedStop(stop);
               }}
-              entity={clickedStop}
             />
           </FocusTrapWrapper>
         </Popup>
