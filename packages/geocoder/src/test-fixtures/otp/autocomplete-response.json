@@ -1,0 +1,579 @@
+[
+  {
+    "primary": {
+      "id": "CommTrans:lynntc",
+      "type": "STATION",
+      "name": "Lynnwood Transit Center",
+      "coordinate": { "lat": 47.81606, "lon": -122.29541 },
+      "modes": ["BUS"],
+      "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+      "feedPublisher": { "name": "Community Transit" }
+    },
+    "secondaries": [
+      {
+        "id": "CommTrans:2109",
+        "code": "2109",
+        "type": "STOP",
+        "name": "Lynnwood Transit Center Bay C1",
+        "coordinate": { "lat": 47.816065, "lon": -122.297267 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      },
+      {
+        "id": "CommTrans:2119",
+        "code": "2119",
+        "type": "STOP",
+        "name": "Lynnwood Transit Center Bay B3",
+        "coordinate": { "lat": 47.816131, "lon": -122.296293 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      },
+      {
+        "id": "CommTrans:2108",
+        "code": "2108",
+        "type": "STOP",
+        "name": "Lynnwood Transit Center Bay B5",
+        "coordinate": { "lat": 47.81612, "lon": -122.295584 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      },
+      {
+        "id": "CommTrans:2167",
+        "code": "2167",
+        "type": "STOP",
+        "name": "Lynnwood Transit Center Bay B1",
+        "coordinate": { "lat": 47.816142, "lon": -122.29701 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      },
+      {
+        "id": "CommTrans:2035",
+        "code": "2035",
+        "type": "STOP",
+        "name": "Lynnwood Transit Center",
+        "coordinate": { "lat": 47.816082, "lon": -122.296421 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      },
+      {
+        "id": "CommTrans:2168",
+        "code": "2168",
+        "type": "STOP",
+        "name": "Lynnwood Transit Center Bay B2",
+        "coordinate": { "lat": 47.816135, "lon": -122.296598 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      },
+      {
+        "id": "CommTrans:2113",
+        "code": "2113",
+        "type": "STOP",
+        "name": "Lynnwood Transit Center Bay D1",
+        "coordinate": { "lat": 47.815891, "lon": -122.297018 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      },
+      {
+        "id": "CommTrans:2422",
+        "code": "2422",
+        "type": "STOP",
+        "name": "Lynnwood Transit Center Bay D3",
+        "coordinate": { "lat": 47.81588, "lon": -122.296301 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      },
+      {
+        "id": "CommTrans:2543",
+        "code": "2543",
+        "type": "STOP",
+        "name": "Lynnwood Transit Center Bay D4",
+        "coordinate": { "lat": 47.815875, "lon": -122.295946 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      },
+      {
+        "id": "CommTrans:2114",
+        "code": "2114",
+        "type": "STOP",
+        "name": "Lynnwood Transit Center Bay D2",
+        "coordinate": { "lat": 47.815884, "lon": -122.296606 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      },
+      {
+        "id": "CommTrans:2115",
+        "code": "2115",
+        "type": "STOP",
+        "name": "Lynnwood Transit Center Bay A2",
+        "coordinate": { "lat": 47.816311, "lon": -122.296907 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      },
+      {
+        "id": "CommTrans:2120",
+        "code": "2120",
+        "type": "STOP",
+        "name": "Lynnwood Transit Center Bay B4",
+        "coordinate": { "lat": 47.816125, "lon": -122.295937 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      },
+      {
+        "id": "CommTrans:2110",
+        "code": "2110",
+        "type": "STOP",
+        "name": "Lynnwood Transit Center Bay C2",
+        "coordinate": { "lat": 47.816059, "lon": -122.296915 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      },
+      {
+        "id": "CommTrans:2177",
+        "code": "2177",
+        "type": "STOP",
+        "name": "Lynnwood Transit Center Bay C4",
+        "coordinate": { "lat": 47.816049, "lon": -122.296254 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      },
+      {
+        "id": "CommTrans:2111",
+        "code": "2111",
+        "type": "STOP",
+        "name": "Lynnwood Transit Center Bay C3",
+        "coordinate": { "lat": 47.816053, "lon": -122.296559 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      }
+    ]
+  },
+  {
+    "primary": {
+      "id": "CommTrans:3199",
+      "code": "3199",
+      "type": "STOP",
+      "name": "Seaway Transit Center",
+      "coordinate": { "lat": 47.930175, "lon": -122.259953 },
+      "modes": ["BUS"],
+      "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+      "feedPublisher": { "name": "Community Transit" }
+    },
+    "secondaries": []
+  },
+  {
+    "primary": {
+      "id": "CommTrans:seaway",
+      "type": "STATION",
+      "name": "Seaway Transit Center",
+      "coordinate": { "lat": 47.930222, "lon": -122.259948 },
+      "modes": [],
+      "agencies": [],
+      "feedPublisher": { "name": "Community Transit" }
+    },
+    "secondaries": []
+  },
+  {
+    "primary": {
+      "id": "CommTrans:blvtc",
+      "type": "STATION",
+      "name": "Bellevue Transit Center",
+      "coordinate": { "lat": 47.615541, "lon": -122.193674 },
+      "modes": ["BUS"],
+      "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+      "feedPublisher": { "name": "Community Transit" }
+    },
+    "secondaries": [
+      {
+        "id": "CommTrans:355",
+        "code": "355",
+        "type": "STOP",
+        "name": "Bellevue Transit Center Bay 4",
+        "coordinate": { "lat": 47.615535, "lon": -122.194839 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      },
+      {
+        "id": "CommTrans:2860",
+        "code": "2860",
+        "type": "STOP",
+        "name": "Bellevue Transit Center Bay 8",
+        "coordinate": { "lat": 47.615437, "lon": -122.194537 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      }
+    ]
+  },
+  {
+    "primary": {
+      "id": "CommTrans:lkspr",
+      "type": "STATION",
+      "name": "Lake Stevens Transit Center",
+      "coordinate": { "lat": 47.99976, "lon": -122.10446 },
+      "modes": ["BUS"],
+      "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+      "feedPublisher": { "name": "Community Transit" }
+    },
+    "secondaries": [
+      {
+        "id": "CommTrans:2666",
+        "code": "2666",
+        "type": "STOP",
+        "name": "Lake Stevens Transit Center Bay 2",
+        "coordinate": { "lat": 47.999689, "lon": -122.103689 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      },
+      {
+        "id": "CommTrans:2982",
+        "code": "2982",
+        "type": "STOP",
+        "name": "Lake Stevens Transit Center",
+        "coordinate": { "lat": 47.999423, "lon": -122.104467 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      },
+      {
+        "id": "CommTrans:2665",
+        "code": "2665",
+        "type": "STOP",
+        "name": "Lake Stevens Transit Center Bay 1",
+        "coordinate": { "lat": 47.999479, "lon": -122.104383 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      }
+    ]
+  },
+  {
+    "primary": {
+      "id": "Kitsap:1248",
+      "type": "STOP",
+      "name": "Port Orchard Transit Center",
+      "coordinate": { "lat": 47.5425906, "lon": -122.635696 },
+      "modes": ["BUS"],
+      "agencies": [{ "id": "Kitsap:kt", "name": "Kitsap Transit" }],
+      "feedPublisher": { "name": "Kitsap Transit" }
+    },
+    "secondaries": []
+  },
+  {
+    "primary": {
+      "id": "Kitsap:214",
+      "type": "STOP",
+      "name": "Silverdale Transit Center (STC)",
+      "coordinate": { "lat": 47.6637255, "lon": -122.6929522 },
+      "modes": ["BUS"],
+      "agencies": [{ "id": "Kitsap:kt", "name": "Kitsap Transit" }],
+      "feedPublisher": { "name": "Kitsap Transit" }
+    },
+    "secondaries": []
+  },
+  {
+    "primary": {
+      "id": "CommTrans:3017",
+      "code": "3017",
+      "type": "STOP",
+      "name": "Seaway Transit Center Station",
+      "coordinate": { "lat": 47.929989, "lon": -122.260421 },
+      "modes": ["BUS"],
+      "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+      "feedPublisher": { "name": "Community Transit" }
+    },
+    "secondaries": []
+  },
+  {
+    "primary": {
+      "id": "Kitsap:1066",
+      "type": "STOP",
+      "name": "N. Viking Transit Center",
+      "coordinate": { "lat": 47.75944, "lon": -122.651086 },
+      "modes": ["BUS"],
+      "agencies": [{ "id": "Kitsap:kt", "name": "Kitsap Transit" }],
+      "feedPublisher": { "name": "Kitsap Transit" }
+    },
+    "secondaries": []
+  },
+  {
+    "primary": {
+      "id": "CommTrans:arvil",
+      "type": "STATION",
+      "name": "Aurora Village Transit Center",
+      "coordinate": { "lat": 47.774171, "lon": -122.340638 },
+      "modes": ["BUS"],
+      "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+      "feedPublisher": { "name": "Community Transit" }
+    },
+    "secondaries": [
+      {
+        "id": "CommTrans:2875",
+        "code": "2875",
+        "type": "STOP",
+        "name": "Aurora Village Transit Center Bay 5",
+        "coordinate": { "lat": 47.774427, "lon": -122.341362 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      },
+      {
+        "id": "CommTrans:2876",
+        "code": "2876",
+        "type": "STOP",
+        "name": "Aurora Village Transit Center Bay 7",
+        "coordinate": { "lat": 47.774305, "lon": -122.342002 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      },
+      {
+        "id": "CommTrans:2877",
+        "code": "2877",
+        "type": "STOP",
+        "name": "Aurora Village Transit Center",
+        "coordinate": { "lat": 47.77435, "lon": -122.34277 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      },
+      {
+        "id": "CommTrans:2742",
+        "code": "2742",
+        "type": "STOP",
+        "name": "Aurora Village Station",
+        "coordinate": { "lat": 47.774297, "lon": -122.341069 },
+        "modes": ["BUS"],
+        "agencies": [{ "id": "CommTrans:29", "name": "Community Transit" }],
+        "feedPublisher": { "name": "Community Transit" }
+      }
+    ]
+  },
+  {
+    "primary": {
+      "id": "kcm:52306",
+      "code": "52306",
+      "type": "STOP",
+      "name": "Burien Transit Center - Bay 6",
+      "coordinate": { "lat": 47.4694099, "lon": -122.337318 },
+      "modes": ["BUS"],
+      "agencies": [{ "id": "kcm:1", "name": "Metro Transit" }],
+      "feedPublisher": { "name": "King County Transit" }
+    },
+    "secondaries": []
+  },
+  {
+    "primary": {
+      "id": "Kitsap:1340",
+      "type": "STOP",
+      "name": "Wheaton Way Transit Center Southbound",
+      "coordinate": { "lat": 47.600636, "lon": -122.629476 },
+      "modes": ["BUS"],
+      "agencies": [{ "id": "Kitsap:kt", "name": "Kitsap Transit" }],
+      "feedPublisher": { "name": "Kitsap Transit" }
+    },
+    "secondaries": []
+  },
+  {
+    "primary": {
+      "id": "kcm:46477",
+      "code": "46477",
+      "type": "STOP",
+      "name": "Renton Transit Center - Bay 2",
+      "coordinate": { "lat": 47.4807777, "lon": -122.208549 },
+      "modes": ["BUS"],
+      "agencies": [{ "id": "kcm:1", "name": "Metro Transit" }],
+      "feedPublisher": { "name": "King County Transit" }
+    },
+    "secondaries": []
+  },
+  {
+    "primary": {
+      "id": "kcm:46476",
+      "code": "46476",
+      "type": "STOP",
+      "name": "Renton Transit Center - Bay 1",
+      "coordinate": { "lat": 47.4807777, "lon": -122.208786 },
+      "modes": ["BUS"],
+      "agencies": [
+        { "id": "kcm:40", "name": "Sound Transit" },
+        { "id": "kcm:1", "name": "Metro Transit" }
+      ],
+      "feedPublisher": { "name": "King County Transit" }
+    },
+    "secondaries": []
+  },
+  {
+    "primary": {
+      "id": "Kitsap:1324",
+      "type": "STOP",
+      "name": "Wheaton Way Transit Center (WWTC)",
+      "coordinate": { "lat": 47.600601, "lon": -122.629983 },
+      "modes": ["BUS"],
+      "agencies": [{ "id": "Kitsap:kt", "name": "Kitsap Transit" }],
+      "feedPublisher": { "name": "Kitsap Transit" }
+    },
+    "secondaries": []
+  },
+  {
+    "primary": {
+      "id": "kcm:46463",
+      "code": "46463",
+      "type": "STOP",
+      "name": "Renton Transit Center - Bay 10",
+      "coordinate": { "lat": 47.4800987, "lon": -122.207756 },
+      "modes": ["BUS"],
+      "agencies": [{ "id": "kcm:1", "name": "Metro Transit" }],
+      "feedPublisher": { "name": "King County Transit" }
+    },
+    "secondaries": []
+  },
+  {
+    "primary": {
+      "id": "kcm:67655",
+      "code": "67655",
+      "type": "STOP",
+      "name": "Bellevue Transit Center - Bay 8",
+      "coordinate": { "lat": 47.6155014, "lon": -122.194389 },
+      "modes": ["BUS"],
+      "agencies": [
+        { "id": "kcm:1", "name": "Metro Transit" },
+        { "id": "kcm:40", "name": "Sound Transit" }
+      ],
+      "feedPublisher": { "name": "King County Transit" }
+    },
+    "secondaries": []
+  },
+  {
+    "primary": {
+      "id": "kcm:67654",
+      "code": "67654",
+      "type": "STOP",
+      "name": "Bellevue Transit Center - Bay 7",
+      "coordinate": { "lat": 47.6155052, "lon": -122.193909 },
+      "modes": ["BUS"],
+      "agencies": [{ "id": "kcm:1", "name": "Metro Transit" }],
+      "feedPublisher": { "name": "King County Transit" }
+    },
+    "secondaries": []
+  },
+  {
+    "primary": {
+      "id": "kcm:68005",
+      "code": "68005",
+      "type": "STOP",
+      "name": "Bellevue Transit Center - Bay 5",
+      "coordinate": { "lat": 47.6155014, "lon": -122.19426 },
+      "modes": ["BUS"],
+      "agencies": [
+        { "id": "kcm:1", "name": "Metro Transit" },
+        { "id": "kcm:40", "name": "Sound Transit" }
+      ],
+      "feedPublisher": { "name": "King County Transit" }
+    },
+    "secondaries": []
+  },
+  {
+    "primary": {
+      "id": "kcm:46478",
+      "code": "46478",
+      "type": "STOP",
+      "name": "Renton Transit Center - Bay 3",
+      "coordinate": { "lat": 47.4804993, "lon": -122.208717 },
+      "modes": ["BUS"],
+      "agencies": [{ "id": "kcm:1", "name": "Metro Transit" }],
+      "feedPublisher": { "name": "King County Transit" }
+    },
+    "secondaries": []
+  },
+  {
+    "primary": {
+      "id": "kcm:73227",
+      "code": "73227",
+      "type": "STOP",
+      "name": "Redmond Transit Center - Bay 1",
+      "coordinate": { "lat": 47.6765938, "lon": -122.124939 },
+      "modes": ["BUS"],
+      "agencies": [
+        { "id": "kcm:40", "name": "Sound Transit" },
+        { "id": "kcm:1", "name": "Metro Transit" }
+      ],
+      "feedPublisher": { "name": "King County Transit" }
+    },
+    "secondaries": []
+  },
+  {
+    "primary": {
+      "id": "kcm:57774",
+      "code": "57774",
+      "type": "STOP",
+      "name": "Auburn Transit Center - Bay 2",
+      "coordinate": { "lat": 47.3057899, "lon": -122.232079 },
+      "modes": ["BUS"],
+      "agencies": [
+        { "id": "kcm:1", "name": "Metro Transit" },
+        { "id": "kcm:40", "name": "Sound Transit" }
+      ],
+      "feedPublisher": { "name": "King County Transit" }
+    },
+    "secondaries": []
+  },
+  {
+    "primary": {
+      "id": "kcm:64593",
+      "code": "64593",
+      "type": "STOP",
+      "name": "Issaquah Transit Center - Bay 4",
+      "coordinate": { "lat": 47.5424728, "lon": -122.06221 },
+      "modes": ["BUS"],
+      "agencies": [{ "id": "kcm:1", "name": "Metro Transit" }],
+      "feedPublisher": { "name": "King County Transit" }
+    },
+    "secondaries": []
+  },
+  {
+    "primary": {
+      "id": "kcm:57773",
+      "code": "57773",
+      "type": "STOP",
+      "name": "Auburn Transit Center - Bay 1",
+      "coordinate": { "lat": 47.3062248, "lon": -122.232079 },
+      "modes": ["BUS"],
+      "agencies": [{ "id": "kcm:1", "name": "Metro Transit" }],
+      "feedPublisher": { "name": "King County Transit" }
+    },
+    "secondaries": []
+  },
+  {
+    "primary": {
+      "id": "kcm:64585",
+      "code": "64585",
+      "type": "STOP",
+      "name": "Issaquah Transit Center - Bay 3",
+      "coordinate": { "lat": 47.541584, "lon": -122.062302 },
+      "modes": ["BUS"],
+      "agencies": [
+        { "id": "kcm:1", "name": "Metro Transit" },
+        { "id": "kcm:40", "name": "Sound Transit" }
+      ],
+      "feedPublisher": { "name": "King County Transit" }
+    },
+    "secondaries": []
+  }
+]
