@@ -9,6 +9,8 @@ import SliderSelector from "./SliderSelector";
 import * as Styled from "./styled";
 import SubmodeSelector from "./SubmodeSelector";
 import MetroModeSelector from "./MetroModeSelector";
+import AdvancedModeSettingsButton from "./MetroModeSelector/AdvancedModeSettingsButton";
+import AdvancedModeSubsettingsContainer from "./MetroModeSelector/AdvancedModeSubsettingsContainer";
 import {
   addSettingsToButton,
   aggregateModes,
@@ -33,6 +35,8 @@ export {
   generateModeSettingValues,
   getBannedRoutesFromSubmodes,
   MetroModeSelector,
+  AdvancedModeSettingsButton,
+  AdvancedModeSubsettingsContainer,
   ModeButton,
   ModeSelector,
   ModeSettingRenderer,
