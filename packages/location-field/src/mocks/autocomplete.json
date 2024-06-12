@@ -71,6 +71,11 @@
         "source": "transit",
         "source_id": "5::WA State Ferry::stops",
         "name": "Clinton (WA State Ferry Stop)",
+        "secondaryLabels": [
+          "Clinton Ferry Pier",
+          "Another label",
+          "Really just way too long a name I mean this name is just unconscionably long! Who would possibly approve a stop name this long"
+        ],
         "accuracy": "centroid",
         "label": "Clinton (WA State Ferry Stop)"
       }
