@@ -2092,6 +2092,11 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
+"@leeoniya/ufuzzy@^1.0.14":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@leeoniya/ufuzzy/-/ufuzzy-1.0.14.tgz#01572c0de9cfa1420cf6ecac76dd59db5ebd1337"
+  integrity sha512-/xF4baYuCQMo+L/fMSUrZnibcu0BquEGnbxfVPiZhs/NbJeKj4c/UmFpQzW9Us0w45ui/yYW3vyaqawhNYsTzA==
+
 "@lerna/add@3.21.0":
   version "3.21.0"
   resolved "https://registry.yarnpkg.com/@lerna/add/-/add-3.21.0.tgz#27007bde71cc7b0a2969ab3c2f0ae41578b4577b"
@@ -3241,83 +3246,13 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
-"@opentripplanner/base-map@^3.0.16":
-  version "3.0.17"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/base-map/-/base-map-3.0.17.tgz#01862a7925b59be355e3229edac954ef876343cb"
-  integrity sha512-cWfhquu7PrLnqte03Mj5XQJW3OSrRtwq10/s2Az523X9yeheZsiO4sm/Bfmizr9xhqec/UTl882nOVKjESHzHA==
-  dependencies:
-    mapbox-gl "npm:empty-npm-package@1.0.0"
-    maplibre-gl "^2.1.9"
-    react-map-gl "^7.0.15"
-
-"@opentripplanner/core-utils@^11.2.3":
-  version "11.3.0"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/core-utils/-/core-utils-11.3.0.tgz#5d9764bf2684d78e24911d20435b6488ab7a9632"
-  integrity sha512-qAx/z3GK1ccGYDlSHUJ5zPbD8FUCG+rDHwMSbtKgj1ciBxVL3KpcnfBGQAzcTysBRlw1lDmeondAGd5fsykuBg==
-  dependencies:
-    "@conveyal/lonlat" "^1.4.1"
-    "@mapbox/polyline" "^1.1.0"
-    "@opentripplanner/geocoder" "^2.0.1"
-    "@styled-icons/foundation" "^10.34.0"
-    "@turf/along" "^6.0.1"
-    chroma-js "^2.4.2"
-    date-fns "^2.28.0"
-    date-fns-tz "^1.2.2"
-    graphql "^16.6.0"
-    lodash.clonedeep "^4.5.0"
-    lodash.isequal "^4.5.0"
-    qs "^6.9.1"
-
-"@opentripplanner/geocoder@^2.0.1":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/geocoder/-/geocoder-2.1.0.tgz#43bd5848edabedc9aa5d7fbc564f4f50e480f4d1"
-  integrity sha512-AfWjB4cXQZHqdWNckmKQKABIoYMeYntTwGr7EURCCsxQsZlBs2E3MoFTz4N495UsMgWpKkoaY/JyWioXFnCLhQ==
-  dependencies:
-    "@conveyal/geocoder-arcgis-geojson" "^0.0.3"
-    "@conveyal/lonlat" "^1.4.1"
-    isomorphic-mapzen-search "^1.6.1"
-    lodash.memoize "^4.1.2"
-
-"@opentripplanner/icons@^2.0.9":
+"@opentripplanner/icons@^2.0.10":
   version "2.0.10"
   resolved "https://registry.yarnpkg.com/@opentripplanner/icons/-/icons-2.0.10.tgz#688e75190ebe772ad45bb852517e93bdde28df74"
   integrity sha512-9X6kV6jDsNnQT4foZU9X530zTN7kjYLtWBjWmeA5EVHth0qZx5T3iFjzqeG4wK+rwZKUMLGS5lAhLIQdaXKZMQ==
   dependencies:
     "@opentripplanner/core-utils" "^11.2.3"
     prop-types "^15.7.2"
-
-"@opentripplanner/itinerary-body@^5.2.6":
-  version "5.2.7"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/itinerary-body/-/itinerary-body-5.2.7.tgz#f12d52540a912e14ff3b704604de06608301ff35"
-  integrity sha512-aCjhCAlFfMNbjLQc2jG8CPch7TipQcUnzunYxT2ZvwIH5/CUGVjuO0BXxKpXAb3p53eeRwe2VoHoynoMiM7Iuw==
-  dependencies:
-    "@opentripplanner/core-utils" "^11.2.3"
-    "@opentripplanner/humanize-distance" "^1.2.0"
-    "@opentripplanner/icons" "^2.0.9"
-    "@opentripplanner/location-icon" "^1.4.1"
-    "@styled-icons/fa-solid" "^10.34.0"
-    "@styled-icons/foundation" "^10.34.0"
-    date-fns "^2.28.0"
-    date-fns-tz "^1.2.2"
-    flat "^5.0.2"
-    react-animate-height "^3.0.4"
-    react-resize-detector "^4.2.1"
-    string-similarity "^4.0.4"
-
-"@opentripplanner/map-popup@^3.0.2":
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/map-popup/-/map-popup-3.0.3.tgz#4ded505bcf23f505b07abfe5d24142eb2faa483a"
-  integrity sha512-AvXLUfnEj5PoDHd8eFdpMXsXqmLyreSPPeiVIggNvZUDTm6uHpCAovSrSOOoFT3nOIEaUw4TCcjamJeV0gaNJw==
-  dependencies:
-    "@opentripplanner/base-map" "^3.0.16"
-    "@opentripplanner/core-utils" "^11.2.3"
-    "@opentripplanner/from-to-location-picker" "^2.1.11"
-    flat "^5.0.2"
-
-"@opentripplanner/types@6.4.0", "@opentripplanner/types@^6.4.0":
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-6.4.0.tgz#6f7a3475ea982c7b7d8b2f1383a6d775dfabe62a"
-  integrity sha512-PS+CUwETLf0WzAUZg3qiey+SBigaf0CfknKF1XMOM+zJVc2c8nN34hgnwV7sS+RKs030KZFAgIn8p035ErcBuQ==
 
 "@peculiar/asn1-schema@^2.1.6", "@peculiar/asn1-schema@^2.3.0":
   version "2.3.3"

@@ -651,7 +651,7 @@ export const StopRow = styled.li`
   position: relative;
 `;
 
-export const TransitAlert = styled.a`
+export const TransitAlert = styled.li`
   background-color: #eee;
   border-radius: 4px;
   color: #000;
@@ -659,6 +659,18 @@ export const TransitAlert = styled.a`
   margin-top: 5px;
   padding: 8px;
   text-decoration: none;
+`;
+
+export const TransitAlertExternalLink = styled.a`
+  align-items: baseline;
+  display: flex;
+  gap: 5px;
+  margin-top: 0.5em;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 export const TransitAlertBody = styled.div`
@@ -685,14 +697,17 @@ export const TransitAlertIconContainer = styled.div`
   font-size: 18px;
 `;
 
-export const TransitAlerts = styled.div`
+export const TransitAlerts = styled.ul`
   display: block;
   margin-top: 3px;
+  padding: 0;
 `;
 
-export const TransitAlertToggle = styled(TransparentButton)`
+export const TransitAlertToggle = styled(TransparentButton)<{
+  isButton?: boolean;
+}>`
   color: #d14727;
-  cursor: pointer;
+  cursor: ${props => (props.isButton ? "cursor" : "auto")};
   display: inline-block;
   font-weight: 400;
   margin-top: 8px;

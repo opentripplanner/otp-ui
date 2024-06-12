@@ -6,7 +6,7 @@ otpUi:
     fetchingLocation: Buscando la ubicación…
     fetchingSuggestions: Buscando sugerencias…
     geocoderUnreachable: No se pueden obtener sugerencias
-    homeLocation: Hogar
+    homeLocation: Residencia
     howToAccessResults: >-
       Utiliza la tecla de flecha abajo para navegar por la lista de los
       resultados. Para seleccionar un resultado, utiliza la tecla Intro.

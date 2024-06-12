@@ -4,7 +4,7 @@ otpUi:
     date: Fecha
     dateTimeSelector: Selector de fecha y hora
     depart: Salida a las
-    now: Sortir ahora
+    now: Salir ahora
     time: Hora
   ModeSelector:
     labels:
@@ -39,6 +39,9 @@ otpUi:
     use: Usar
     useCompanies: Usar las empresas
     walkOnly: Solo caminar
+  TripOptions:
+    openApp: Abrir aplicación
+    transitOnly: Ir en transporte público
   queryParameters:
     bikeSpeed: Velocidad de la bicicleta
     distanceInMiles: |

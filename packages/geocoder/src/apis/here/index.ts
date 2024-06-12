@@ -81,7 +81,7 @@ async function autocomplete({
       query,
       url: AUTOCOMPLETE_URL
     });
-    if (boundary?.rect) {
+    if (boundary?.rect && res.items) {
       // HERE does not support a boundary when you use a focus point
       // This workaround filters the results internally to the boundary
       res.items = res.items.filter(checkItemInBoundary(boundary))

@@ -5,12 +5,14 @@ import { Alert } from "@opentripplanner/types";
 import React, { FunctionComponent, ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
+import { ExternalLinkAlt } from "@styled-icons/fa-solid";
 import * as S from "../styled";
 import { defaultMessages } from "../util";
 
 const { getUserTimezone, getCurrentDate } = coreUtils.time;
 
 interface Props {
+  agencyName?: string;
   alerts: Alert[];
   AlertIcon?: FunctionComponent;
   timeZone?: string;
@@ -62,6 +64,7 @@ function AlertDay({ dayDiff }: AlertDayProps) {
 }
 
 export default function AlertsBody({
+  agencyName,
   alerts,
   AlertIcon = S.DefaultAlertBodyIcon,
   timeZone = getUserTimezone()
@@ -94,7 +97,7 @@ export default function AlertsBody({
             const dayDiff = differenceInCalendarDays(compareDate, today);
 
             return (
-              <S.TransitAlert key={i} href={alertUrl}>
+              <S.TransitAlert key={i}>
                 <S.TransitAlertIconContainer>
                   <AlertIcon />
                 </S.TransitAlertIconContainer>
@@ -130,6 +133,38 @@ export default function AlertsBody({
                         dateTime: effectiveStartDate * 1000
                       }}
                     />
+                  )}
+                  {alertUrl?.trim() && (
+                    <S.TransitAlertExternalLink href={alertUrl} target="_blank">
+                      <ExternalLinkAlt height={10} />
+                      {agencyName ? (
+                        <FormattedMessage
+                          defaultMessage={
+                            defaultMessages[
+                              "otpUi.TransitLegBody.AlertsBody.alertLinkText"
+                            ]
+                          }
+                          description="Describes how link directs to agency website"
+                          id="otpUi.TransitLegBody.AlertsBody.alertLinkText"
+                          values={{ agency: agencyName }}
+                        />
+                      ) : (
+                        <FormattedMessage
+                          defaultMessage={
+                            defaultMessages[
+                              "otpUi.TransitLegBody.AlertsBody.noAgencyAlertLinkText"
+                            ]
+                          }
+                          description="Describes how link directs to agency website, but does not name agency"
+                          id="otpUi.TransitLegBody.AlertsBody.noAgencyAlertLinkText"
+                        />
+                      )}
+
+                      <S.InvisibleAdditionalDetails>
+                        {" "}
+                        <FormattedMessage id="otpUi.TransitLegBody.AlertsBody.linkOpensNewWindow" />
+                      </S.InvisibleAdditionalDetails>
+                    </S.TransitAlertExternalLink>
                   )}
                 </S.TransitAlertEffectiveDate>
               </S.TransitAlert>

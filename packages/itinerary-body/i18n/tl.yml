@@ -84,6 +84,12 @@ otpUi:
       car: sasakyan
       escooter: e-scooter
       walk: walking
+    tripAccessibility:
+      inaccessible: hindi ma-access
+      itineraryAccessibility: "Pagiging accessible sa wheelchair ng biyaheng ito:\_"
+      legAccessibility: "Pagiging accessible sa wheelchair ng leg ng biyaheng ito:\_"
+      likelyAccessible: malamang na naa-access
+      unclear: hindi alam
     viewOnMap: Tingnan sa mapa
   TransitLegBody:
     AlertsBody:
