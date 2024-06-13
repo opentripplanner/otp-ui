@@ -337,3 +337,28 @@ export const OTP2ScooterItinerary = injectIntl(({ intl }) => (
   </>
 ));
 OTP2ScooterItinerary.decorators = [withMap([33.749, -84.388], 11)];
+
+// Story to illustrate TransitiveCanvasOverlay with showRouteArrows set to true
+export const ShowRouteArrows = (): JSX.Element => (
+  <>
+    <TransitiveOverlay
+      showRouteArrows
+      transitiveData={itineraryToTransitive(bikeOnlyItinerary, { companies })}
+      visible
+    />
+  </>
+);
+ShowRouteArrows.decorators = [withMap([45.520441, -122.68302], 16)];
+
+// Story to illustrate TransitiveCanvasOverlay with colorOverride prop set
+export const ColorOverride = (): JSX.Element => (
+  <>
+    <TransitiveOverlay
+      colorOverride="#484848" // Example color override
+      showRouteArrows
+      transitiveData={itineraryToTransitive(bikeOnlyItinerary, { companies })}
+      visible
+    />
+  </>
+);
+ColorOverride.decorators = [withMap([45.520441, -122.68302], 16)];

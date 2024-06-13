@@ -11,6 +11,7 @@ import {
   TransitivePlace
 } from "@opentripplanner/types";
 import bbox from "@turf/bbox";
+import routeArrow from "./images/route_arrow.svg";
 
 import { getRouteLayerLayout, patternToRouteFeature } from "./route-layers";
 import { drawArc, getFromToAnchors, itineraryToTransitive } from "./util";
@@ -87,18 +88,47 @@ const accessLegFilter = [
 
 type Props = {
   activeLeg?: Leg;
-  transitiveData?: TransitiveData;
-  showRouteArrows?: boolean;
   colorOverride?: string;
+  showRouteArrows?: boolean;
+  transitiveData?: TransitiveData;
 };
 
 const TransitiveCanvasOverlay = ({
   activeLeg,
-  transitiveData,
+  colorOverride,
   showRouteArrows,
-  colorOverride
+  transitiveData
 }: Props): JSX.Element => {
   const { current: map } = useMap();
+  const images = [
+    {
+      url: routeArrow,
+      id: "arrow-icon"
+    }
+  ];
+
+  useEffect(() => {
+    if (!map) return;
+    const loadImages = () => {
+      images.forEach(img => {
+        map.loadImage(img.url, (error, image) => {
+          if (error) {
+            console.error(`Error loading image ${img.id}:`, error);
+            return;
+          }
+          if (!map.hasImage(img.id)) {
+            map.addImage(img.id, image, { sdf: true });
+          }
+        });
+      });
+    };
+
+    if (map) {
+      loadImages();
+    } else {
+      map.on("load", loadImages);
+    }
+  }, [map, images]);
 
   const geojson: GeoJSON.FeatureCollection<
     GeoJSON.Geometry,
@@ -277,7 +307,6 @@ const TransitiveCanvasOverlay = ({
       {showRouteArrows && (
         <Layer
           id="route-arrows"
-          type="symbol"
           layout={{
             "symbol-placement": "line",
             "icon-image": "arrow-icon",
@@ -291,6 +320,7 @@ const TransitiveCanvasOverlay = ({
             "icon-color": ["get", "color"],
             "icon-opacity": 0.8
           }}
+          type="symbol"
         />
       )}
       {/* Render access leg places then transit stops so that they appear sandwiched between text and lines,
