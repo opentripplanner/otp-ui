@@ -1,4 +1,5 @@
 import { Config, Leg, LegIconComponent } from "@opentripplanner/types";
+import { isTransit } from "@opentripplanner/core-utils/lib/itinerary";
 import React, { Component, FunctionComponent, ReactElement } from "react";
 import AnimateHeight from "react-animate-height";
 import { FormattedMessage } from "react-intl";
@@ -141,9 +142,9 @@ class AccessLegBody extends Component<Props, State> {
                   >
                     <Duration
                       seconds={leg.duration}
-                      mode={leg.mode}
                       showApproximatePrefixNonTransitLegs={
-                        showApproximatePrefixNonTransitLegs
+                        showApproximatePrefixNonTransitLegs &&
+                        !isTransit(leg.mode)
                       }
                     />
                     {leg.steps && leg.steps.length > 0 && (

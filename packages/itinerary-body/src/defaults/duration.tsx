@@ -2,12 +2,10 @@ import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
 import coreUtils from "@opentripplanner/core-utils";
-import { isTransit } from "@opentripplanner/core-utils/lib/itinerary";
 import { defaultMessages } from "../util";
 
 interface Props {
   seconds: number;
-  mode?: string;
   showApproximatePrefixNonTransitLegs?: boolean;
 }
 
@@ -17,7 +15,6 @@ interface Props {
  */
 export default function Duration({
   seconds,
-  mode,
   showApproximatePrefixNonTransitLegs
 }: Props): ReactElement {
   return (
@@ -29,8 +26,7 @@ export default function Duration({
       id="otpUi.ItineraryBody.common.durationShort"
       values={{
         ...coreUtils.time.toHoursMinutesSeconds(seconds),
-        approximatePrefix:
-          showApproximatePrefixNonTransitLegs && !isTransit(mode)
+        approximatePrefix: showApproximatePrefixNonTransitLegs
       }}
     />
   );
