@@ -108,7 +108,7 @@ const TransitiveCanvasOverlay = ({
 }: Props): JSX.Element => {
   const { current: map } = useMap();
   useEffect(() => {
-    if (!map) return;
+    if (!map || !showRouteArrows) return;
     const loadImages = () => {
       images.forEach(img => {
         map.loadImage(img.url, (error, image) => {
