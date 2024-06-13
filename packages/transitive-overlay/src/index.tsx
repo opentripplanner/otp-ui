@@ -11,12 +11,12 @@ import {
   TransitivePlace
 } from "@opentripplanner/types";
 import bbox from "@turf/bbox";
-import routeArrow from "./images/route_arrow.svg";
 
 import { getRouteLayerLayout, patternToRouteFeature } from "./route-layers";
 import { drawArc, getFromToAnchors, itineraryToTransitive } from "./util";
 
 export { itineraryToTransitive };
+const routeArrow = require("./images/route_arrow.png");
 
 // TODO: BETTER COLORS
 const modeColorMap = {
@@ -93,6 +93,13 @@ type Props = {
   transitiveData?: TransitiveData;
 };
 
+const images = [
+  {
+    url: routeArrow,
+    id: "arrow-icon"
+  }
+];
+
 const TransitiveCanvasOverlay = ({
   activeLeg,
   colorOverride,
@@ -100,19 +107,13 @@ const TransitiveCanvasOverlay = ({
   transitiveData
 }: Props): JSX.Element => {
   const { current: map } = useMap();
-  const images = [
-    {
-      url: routeArrow,
-      id: "arrow-icon"
-    }
-  ];
-
   useEffect(() => {
     if (!map) return;
     const loadImages = () => {
       images.forEach(img => {
         map.loadImage(img.url, (error, image) => {
           if (error) {
+            // eslint-disable-next-line no-console
             console.error(`Error loading image ${img.id}:`, error);
             return;
           }
