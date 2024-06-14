@@ -16,6 +16,8 @@ import { getRouteLayerLayout, patternToRouteFeature } from "./route-layers";
 import { drawArc, getFromToAnchors, itineraryToTransitive } from "./util";
 
 export { itineraryToTransitive };
+// import routeArrow from "./images/route_arrow.png";
+
 const routeArrow = require("./images/route_arrow.png");
 
 // TODO: BETTER COLORS
@@ -95,8 +97,8 @@ type Props = {
 
 const images = [
   {
-    url: routeArrow,
-    id: "arrow-icon"
+    id: "arrow-icon",
+    url: routeArrow
   }
 ];
 
@@ -108,7 +110,7 @@ const TransitiveCanvasOverlay = ({
 }: Props): JSX.Element => {
   const { current: map } = useMap();
   useEffect(() => {
-    if (!map || !showRouteArrows) return;
+    if (!map) return;
     const loadImages = () => {
       images.forEach(img => {
         map.loadImage(img.url, (error, image) => {
