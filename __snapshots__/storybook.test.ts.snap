@@ -13151,22 +13151,6 @@ exports[`Storyshots Map Popup Floating Vehicle Entity 1`] = `
 `;
 
 exports[`Storyshots Map Popup Floating Vehicle Entity 2`] = `
-.c0 {
-  font-size: 12px;
-  line-height: 1.5;
-  min-width: 250px;
-}
-
-.c2 {
-  margin-top: 6px;
-}
-
-.c1 {
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 6px;
-}
-
 .c5 {
   display: inline-block;
   vertical-align: middle;
@@ -13204,6 +13188,22 @@ exports[`Storyshots Map Popup Floating Vehicle Entity 2`] = `
   -webkit-text-decoration: underline;
   text-decoration: underline;
   cursor: pointer;
+}
+
+.c0 {
+  font-size: 12px;
+  line-height: 1.5;
+  min-width: 250px;
+}
+
+.c2 {
+  margin-top: 6px;
+}
+
+.c1 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 6px;
 }
 
 <div
@@ -13317,22 +13317,6 @@ exports[`Storyshots Map Popup Station Entity 1`] = `
 `;
 
 exports[`Storyshots Map Popup Station Entity 2`] = `
-.c0 {
-  font-size: 12px;
-  line-height: 1.5;
-  min-width: 250px;
-}
-
-.c2 {
-  margin-top: 6px;
-}
-
-.c1 {
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 6px;
-}
-
 .c5 {
   display: inline-block;
   vertical-align: middle;
@@ -13370,6 +13354,22 @@ exports[`Storyshots Map Popup Station Entity 2`] = `
   -webkit-text-decoration: underline;
   text-decoration: underline;
   cursor: pointer;
+}
+
+.c0 {
+  font-size: 12px;
+  line-height: 1.5;
+  min-width: 250px;
+}
+
+.c2 {
+  margin-top: 6px;
+}
+
+.c1 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 6px;
 }
 
 <div
@@ -13482,22 +13482,6 @@ exports[`Storyshots Map Popup Stop Entity 1`] = `
 `;
 
 exports[`Storyshots Map Popup Stop Entity 2`] = `
-.c0 {
-  font-size: 12px;
-  line-height: 1.5;
-  min-width: 250px;
-}
-
-.c2 {
-  margin-top: 6px;
-}
-
-.c1 {
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 6px;
-}
-
 .c6 {
   display: inline-block;
   vertical-align: middle;
@@ -13547,6 +13531,22 @@ exports[`Storyshots Map Popup Stop Entity 2`] = `
   font-family: inherit;
   margin-left: 5px;
   padding-top: 0;
+}
+
+.c0 {
+  font-size: 12px;
+  line-height: 1.5;
+  min-width: 250px;
+}
+
+.c2 {
+  margin-top: 6px;
+}
+
+.c1 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 6px;
 }
 
 <div
@@ -13716,22 +13716,6 @@ exports[`Storyshots Map Popup Stop Entity With Focus Trap 1`] = `
 `;
 
 exports[`Storyshots Map Popup Stop Entity With Focus Trap 2`] = `
-.c0 {
-  font-size: 12px;
-  line-height: 1.5;
-  min-width: 250px;
-}
-
-.c2 {
-  margin-top: 6px;
-}
-
-.c1 {
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 6px;
-}
-
 .c6 {
   display: inline-block;
   vertical-align: middle;
@@ -13781,6 +13765,22 @@ exports[`Storyshots Map Popup Stop Entity With Focus Trap 2`] = `
   font-family: inherit;
   margin-left: 5px;
   padding-top: 0;
+}
+
+.c0 {
+  font-size: 12px;
+  line-height: 1.5;
+  min-width: 250px;
+}
+
+.c2 {
+  margin-top: 6px;
+}
+
+.c1 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 6px;
 }
 
 <div

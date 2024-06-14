@@ -8,7 +8,7 @@ import { EventData } from "mapbox-gl";
 import { Layer, Source, useMap } from "react-map-gl";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 
-import StopPopup from "@opentripplanner/map-popup";
+import StopPopup, { FocusTrapWrapper } from "@opentripplanner/map-popup";
 import { isGeoJsonFlex } from "./utils";
 
 type Props = {
@@ -204,17 +204,19 @@ const StopsOverlay = (props: Props): JSX.Element => {
           maxWidth="100%"
           onClose={setNullStop}
         >
-          <StopPopup
-            setLocation={location => {
-              setNullStop();
-              setLocation(location);
-            }}
-            setViewedStop={stop => {
-              setNullStop();
-              setViewedStop(stop);
-            }}
-            entity={clickedStop}
-          />
+          <FocusTrapWrapper closePopup={setNullStop} id="stop-popup">
+            <StopPopup
+              entity={clickedStop}
+              setLocation={location => {
+                setNullStop();
+                setLocation(location);
+              }}
+              setViewedStop={stop => {
+                setNullStop();
+                setViewedStop(stop);
+              }}
+            />
+          </FocusTrapWrapper>
         </Popup>
       )}
       {flexStops.map(stop => (
