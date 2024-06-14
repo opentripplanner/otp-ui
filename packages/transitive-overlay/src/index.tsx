@@ -18,7 +18,7 @@ import { drawArc, getFromToAnchors, itineraryToTransitive } from "./util";
 export { itineraryToTransitive };
 // import routeArrow from "./images/route_arrow.png";
 
-const routeArrow = require("./images/route_arrow.png");
+// const routeArrow = require("./images/route_arrow.png");
 
 // TODO: BETTER COLORS
 const modeColorMap = {
@@ -95,43 +95,44 @@ type Props = {
   transitiveData?: TransitiveData;
 };
 
-const images = [
-  {
-    id: "arrow-icon",
-    url: routeArrow
-  }
-];
+// const images = [
+//   {
+//     id: "arrow-icon",
+//     url: routeArrow
+//   }
+// ];
 
 const TransitiveCanvasOverlay = ({
   activeLeg,
   colorOverride,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   showRouteArrows,
   transitiveData
 }: Props): JSX.Element => {
   const { current: map } = useMap();
-  useEffect(() => {
-    if (!map) return;
-    const loadImages = () => {
-      images.forEach(img => {
-        map.loadImage(img.url, (error, image) => {
-          if (error) {
-            // eslint-disable-next-line no-console
-            console.error(`Error loading image ${img.id}:`, error);
-            return;
-          }
-          if (!map.hasImage(img.id)) {
-            map.addImage(img.id, image, { sdf: true });
-          }
-        });
-      });
-    };
+  // useEffect(() => {
+  //   if (!map) return;
+  //   const loadImages = () => {
+  //     images.forEach(img => {
+  //       map.loadImage(img.url, (error, image) => {
+  //         if (error) {
+  //           // eslint-disable-next-line no-console
+  //           console.error(`Error loading image ${img.id}:`, error);
+  //           return;
+  //         }
+  //         if (!map.hasImage(img.id)) {
+  //           map.addImage(img.id, image, { sdf: true });
+  //         }
+  //       });
+  //     });
+  //   };
 
-    if (map) {
-      loadImages();
-    } else {
-      map.on("load", loadImages);
-    }
-  }, [map, images]);
+  //   if (map) {
+  //     loadImages();
+  //   } else {
+  //     map.on("load", loadImages);
+  //   }
+  // }, [map, images]);
 
   const geojson: GeoJSON.FeatureCollection<
     GeoJSON.Geometry,
@@ -307,7 +308,7 @@ const TransitiveCanvasOverlay = ({
         }}
         type="line"
       />
-      {showRouteArrows && (
+      {/* {showRouteArrows && (
         <Layer
           id="route-arrows"
           layout={{
@@ -325,7 +326,7 @@ const TransitiveCanvasOverlay = ({
           }}
           type="symbol"
         />
-      )}
+      )} */}
       {/* Render access leg places then transit stops so that they appear sandwiched between text and lines,
           with transit stops appearing above access leg places. */}
       <Layer
