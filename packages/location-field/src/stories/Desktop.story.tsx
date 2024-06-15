@@ -223,6 +223,7 @@ export const WithPrefilledSearch = (): JSX.Element => (
     style={{ fontFamily: "sans-serif" }}
   />
 );
+WithPrefilledSearch.parameters = a11yOverrideParameters;
 
 export const RequiredAndInvalidState = (): JSX.Element => (
   <LocationField
