@@ -19,7 +19,7 @@
     "@styled-icons/fa-solid": "^10.37.0",
     "date-fns": "^2.28.0",
     "flat": "^5.0.2",
-    "react-animate-height": "^3.2.3",
+    "react-animate-height": "^3.0.4",
     "react-indiana-drag-scroll": "^2.0.1",
     "react-inlinesvg": "^2.3.0"
   },
