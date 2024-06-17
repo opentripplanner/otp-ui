@@ -4,6 +4,7 @@ import locationFieldHandlers from "../packages/location-field/src/mocks/handlers
 import itineraryBodyHandlers from "../packages/itinerary-body/src/__mocks__/handlers";
 import geocoderHandlers from "../packages/geocoder/src/test-fixtures/handlers";
 import tileLayerHandlers from '../packages/otp2-tile-overlay/src/mocks/handlers'
+import baseMapHandlers from '../packages/base-map/src/mocks/handlers';
 import parameters from './previewParameters'
 
 import { reactIntl } from './react-intl.ts';
@@ -16,7 +17,8 @@ if (typeof global.process === "undefined") {
     ...locationFieldHandlers,
     ...itineraryBodyHandlers,
     ...geocoderHandlers,
-    ...tileLayerHandlers
+    ...tileLayerHandlers,
+    ...baseMapHandlers
   );
   worker.start({ onUnhandledRequest: "bypass" });
 }
