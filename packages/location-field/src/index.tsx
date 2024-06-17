@@ -177,6 +177,7 @@ const LocationField = ({
   sessionOptionIcon = <Search size={ICON_SIZE} />,
   sessionSearches = [],
   showClearButton = true,
+  showSecondaryLabels = true,
   showUserSettings = false,
   sortByDistance = false,
   stopOptionIcon = <Bus size={ICON_SIZE} />,
@@ -579,6 +580,7 @@ const LocationField = ({
         title={main}
         subTitle={secondary}
         secondaryLabels={secondaryLabels}
+        showSecondaryLabels={showSecondaryLabels}
       />
     );
   };
