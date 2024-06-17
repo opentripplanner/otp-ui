@@ -41,7 +41,7 @@ exports[`LocationField/Mobile Context Blank smoke-test 1`] = `
         class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
   >
   </span>
-  <ul aria-hidden="false"
+  <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
@@ -121,7 +121,7 @@ exports[`LocationField/Mobile Context GeocoderNoResults smoke-test 1`] = `
         class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
   >
   </span>
-  <ul aria-hidden="false"
+  <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
@@ -201,7 +201,7 @@ exports[`LocationField/Mobile Context GeocoderUnreachable smoke-test 1`] = `
         class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
   >
   </span>
-  <ul aria-hidden="false"
+  <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
@@ -381,7 +381,7 @@ exports[`LocationField/Mobile Context SelectedLocation smoke-test 1`] = `
         class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
   >
   </span>
-  <ul aria-hidden="false"
+  <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="to-listbox"
       role="listbox"
@@ -479,7 +479,7 @@ exports[`LocationField/Mobile Context SelectedLocationCustomClear smoke-test 1`]
         class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
   >
   </span>
-  <ul aria-hidden="false"
+  <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="to-listbox"
       role="listbox"
@@ -559,7 +559,7 @@ exports[`LocationField/Mobile Context SlowGeocoder smoke-test 1`] = `
         class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
   >
   </span>
-  <ul aria-hidden="false"
+  <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
@@ -639,7 +639,7 @@ exports[`LocationField/Mobile Context Styled smoke-test 1`] = `
         class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
   >
   </span>
-  <ul aria-hidden="false"
+  <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
@@ -719,7 +719,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
         class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
   >
   </span>
-  <ul aria-hidden="false"
+  <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="to-listbox"
       role="listbox"
@@ -1031,7 +1031,7 @@ exports[`LocationField/Mobile Context WithNearbyStops smoke-test 1`] = `
         class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
   >
   </span>
-  <ul aria-hidden="false"
+  <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="to-listbox"
       role="listbox"
@@ -1192,7 +1192,7 @@ exports[`LocationField/Mobile Context WithSessionSearches smoke-test 1`] = `
         class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
   >
   </span>
-  <ul aria-hidden="false"
+  <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="to-listbox"
       role="listbox"
@@ -1304,7 +1304,7 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
         class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
   >
   </span>
-  <ul aria-hidden="false"
+  <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="to-listbox"
       role="listbox"

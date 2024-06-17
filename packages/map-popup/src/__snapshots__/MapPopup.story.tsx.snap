@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Map Popup FloatingVehicleEntity smoke-test 1`] = `
-<div class="styled__MapOverlayPopup-sc-12kjso7-1 bDBqqa">
-  <header class="styled__PopupTitle-sc-12kjso7-3 bkAJZJ">
+<div class="styled__MapOverlayPopup-sc-12v7ov3-2 kAROjU">
+  <header class="styled__PopupTitle-sc-12v7ov3-4 jJhCYb">
     Free-floating bike: 0541 BIKETOWN
   </header>
-  <p class="styled__PopupRow-sc-12kjso7-2 iXgkLT">
+  <p class="styled__PopupRow-sc-12v7ov3-3 hYbzDD">
     <strong>
       Plan a trip:
     </strong>
@@ -54,11 +54,11 @@ exports[`Map Popup FloatingVehicleEntity smoke-test 1`] = `
 `;
 
 exports[`Map Popup StationEntity smoke-test 1`] = `
-<div class="styled__MapOverlayPopup-sc-12kjso7-1 bDBqqa">
-  <header class="styled__PopupTitle-sc-12kjso7-3 bkAJZJ">
+<div class="styled__MapOverlayPopup-sc-12v7ov3-2 kAROjU">
+  <header class="styled__PopupTitle-sc-12v7ov3-4 jJhCYb">
     SW Morrison at 18th
   </header>
-  <p class="styled__PopupRow-sc-12kjso7-2 iXgkLT">
+  <p class="styled__PopupRow-sc-12v7ov3-3 hYbzDD">
     <div>
       Available bikes: 6
     </div>
@@ -66,7 +66,7 @@ exports[`Map Popup StationEntity smoke-test 1`] = `
       Available docks: 11
     </div>
   </p>
-  <p class="styled__PopupRow-sc-12kjso7-2 iXgkLT">
+  <p class="styled__PopupRow-sc-12v7ov3-3 hYbzDD">
     <strong>
       Plan a trip:
     </strong>
@@ -115,11 +115,11 @@ exports[`Map Popup StationEntity smoke-test 1`] = `
 `;
 
 exports[`Map Popup StopEntity smoke-test 1`] = `
-<div class="styled__MapOverlayPopup-sc-12kjso7-1 bDBqqa">
-  <header class="styled__PopupTitle-sc-12kjso7-3 bkAJZJ">
+<div class="styled__MapOverlayPopup-sc-12v7ov3-2 kAROjU">
+  <header class="styled__PopupTitle-sc-12v7ov3-4 jJhCYb">
     W Burnside &amp; SW 2nd
   </header>
-  <p class="styled__PopupRow-sc-12kjso7-2 iXgkLT">
+  <p class="styled__PopupRow-sc-12v7ov3-3 hYbzDD">
     <strong>
       Stop ID: 9526
     </strong>
@@ -127,7 +127,7 @@ exports[`Map Popup StopEntity smoke-test 1`] = `
       Stop Viewer
     </button>
   </p>
-  <p class="styled__PopupRow-sc-12kjso7-2 iXgkLT">
+  <p class="styled__PopupRow-sc-12v7ov3-3 hYbzDD">
     <strong>
       Plan a trip:
     </strong>
@@ -176,8 +176,8 @@ exports[`Map Popup StopEntity smoke-test 1`] = `
 `;
 
 exports[`Map Popup StopEntityNoHandlers smoke-test 1`] = `
-<div class="styled__MapOverlayPopup-sc-12kjso7-1 bDBqqa">
-  <header class="styled__PopupTitle-sc-12kjso7-3 bkAJZJ">
+<div class="styled__MapOverlayPopup-sc-12v7ov3-2 kAROjU">
+  <header class="styled__PopupTitle-sc-12v7ov3-4 jJhCYb">
     W Burnside &amp; SW 2nd
   </header>
 </div>
@@ -187,11 +187,11 @@ exports[`Map Popup StopEntityWithFocusTrap smoke-test 1`] = `
 <div id="storybook-stop-popup-focus-trap"
      role="presentation"
 >
-  <div class="styled__MapOverlayPopup-sc-12kjso7-1 bDBqqa">
-    <header class="styled__PopupTitle-sc-12kjso7-3 bkAJZJ">
+  <div class="styled__MapOverlayPopup-sc-12v7ov3-2 kAROjU">
+    <header class="styled__PopupTitle-sc-12v7ov3-4 jJhCYb">
       W Burnside &amp; SW 2nd
     </header>
-    <p class="styled__PopupRow-sc-12kjso7-2 iXgkLT">
+    <p class="styled__PopupRow-sc-12v7ov3-3 hYbzDD">
       <strong>
         Stop ID: 9526
       </strong>
@@ -199,7 +199,7 @@ exports[`Map Popup StopEntityWithFocusTrap smoke-test 1`] = `
         Stop Viewer
       </button>
     </p>
-    <p class="styled__PopupRow-sc-12kjso7-2 iXgkLT">
+    <p class="styled__PopupRow-sc-12v7ov3-3 hYbzDD">
       <strong>
         Plan a trip:
       </strong>

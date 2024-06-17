@@ -48,7 +48,7 @@ exports[`LocationField/Desktop Context AutoFocusWithMultipleControls smoke-test 
           class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
     >
     </span>
-    <ul aria-hidden="false"
+    <ul aria-hidden="true"
         aria-label="Suggested locations"
         id="from-listbox"
         role="listbox"
@@ -100,7 +100,7 @@ exports[`LocationField/Desktop Context Blank smoke-test 1`] = `
         class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
   >
   </span>
-  <ul aria-hidden="false"
+  <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
@@ -151,7 +151,7 @@ exports[`LocationField/Desktop Context GeocoderNoResults smoke-test 1`] = `
         class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
   >
   </span>
-  <ul aria-hidden="false"
+  <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
@@ -202,7 +202,7 @@ exports[`LocationField/Desktop Context GeocoderUnreachable smoke-test 1`] = `
         class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
   >
   </span>
-  <ul aria-hidden="false"
+  <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
@@ -253,7 +253,7 @@ exports[`LocationField/Desktop Context HereGeocoder smoke-test 1`] = `
         class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
   >
   </span>
-  <ul aria-hidden="false"
+  <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
@@ -362,7 +362,7 @@ exports[`LocationField/Desktop Context NoAutoFocusWithMultipleControls smoke-tes
           class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
     >
     </span>
-    <ul aria-hidden="false"
+    <ul aria-hidden="true"
         aria-label="Suggested locations"
         id="from-listbox"
         role="listbox"
@@ -414,7 +414,7 @@ exports[`LocationField/Desktop Context RequiredAndInvalidState smoke-test 1`] = 
         class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
   >
   </span>
-  <ul aria-hidden="false"
+  <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
@@ -483,7 +483,7 @@ exports[`LocationField/Desktop Context SelectedLocation smoke-test 1`] = `
         class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
   >
   </span>
-  <ul aria-hidden="false"
+  <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="to-listbox"
       role="listbox"
@@ -552,7 +552,7 @@ exports[`LocationField/Desktop Context SelectedLocationCustomClear smoke-test 1`
         class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
   >
   </span>
-  <ul aria-hidden="false"
+  <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="to-listbox"
       role="listbox"
@@ -603,7 +603,7 @@ exports[`LocationField/Desktop Context SlowGeocoder smoke-test 1`] = `
         class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
   >
   </span>
-  <ul aria-hidden="false"
+  <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
@@ -654,7 +654,7 @@ exports[`LocationField/Desktop Context WithBadApiKeyHandlesBadAutocomplete smoke
         class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
   >
   </span>
-  <ul aria-hidden="false"
+  <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
@@ -705,7 +705,7 @@ exports[`LocationField/Desktop Context WithCustomResultColorsAndIcons smoke-test
         class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
   >
   </span>
-  <ul aria-hidden="false"
+  <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
@@ -1086,7 +1086,7 @@ exports[`LocationField/Desktop Context WithUserSettings smoke-test 1`] = `
         class="styled__HiddenContent-sc-xahsq2-0 izsvDP"
   >
   </span>
-  <ul aria-hidden="false"
+  <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
