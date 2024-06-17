@@ -971,7 +971,7 @@ exports[`TransitiveOverlay EScooterRentalTransitItinerary smoke-test 1`] = `
           >
           </canvas>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(571.46px, 483.526px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(571.564px, 483.545px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="2943 SE Washington St, Portland, OR, USA 97214"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -1007,7 +1007,7 @@ exports[`TransitiveOverlay EScooterRentalTransitItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(692.502px, 129.6px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(692.587px, 129.673px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="5112 NE 47th Pl, Portland, OR, USA 97218"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -1207,7 +1207,7 @@ exports[`TransitiveOverlay FlexItinerary smoke-test 1`] = `
           >
           </canvas>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(545.272px, 230.688px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(544.224px, 219.52px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="2nd Avenue, Longmont, CO, USA"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -1243,7 +1243,7 @@ exports[`TransitiveOverlay FlexItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(704.687px, 98.8268px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(707.364px, 84.5772px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="60plusride-co-us:area_626"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -1388,7 +1388,7 @@ exports[`TransitiveOverlay OTP2ScooterItinerary smoke-test 1`] = `
           >
           </canvas>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(719.761px, 129.6px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(654.51px, 253.771px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="300 Courtland St NE, Atlanta, GA 30303-12ND, United States"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -1424,7 +1424,7 @@ exports[`TransitiveOverlay OTP2ScooterItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(522.279px, 515.08px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(591.544px, 376.677px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="126 Mitchell St SW, Atlanta, GA 30303-3524, United States"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -1750,7 +1750,7 @@ exports[`TransitiveOverlay TncTransitItinerary smoke-test 1`] = `
           >
           </canvas>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(253.598px, 329.247px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(270.175px, 332.095px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="128 NW 12th Ave, Portland"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
@@ -1786,7 +1786,7 @@ exports[`TransitiveOverlay TncTransitItinerary smoke-test 1`] = `
             </span>
           </div>
           <div class="maplibregl-marker mapboxgl-marker maplibregl-marker-anchor-center mapboxgl-marker-anchor-center"
-               style="transform: translate(-50%, -50%) translate(991.41px, 271.337px) rotateX(0deg) rotateZ(0deg);"
+               style="transform: translate(-50%, -50%) translate(963.427px, 277.683px) rotateX(0deg) rotateZ(0deg);"
           >
             <span title="407 NE 12th Ave, Portland"
                   class="styled__StackedIconContainer-sc-50mmra-4 tjljC"
