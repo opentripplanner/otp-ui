@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RouteViewerOverlay Default smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >
@@ -56,7 +56,7 @@ exports[`RouteViewerOverlay Default smoke-test 1`] = `
 `;
 
 exports[`RouteViewerOverlay FlexRoute smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >
@@ -106,7 +106,7 @@ exports[`RouteViewerOverlay FlexRoute smoke-test 1`] = `
         </details>
       </div>
     </div>
-    <div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+    <div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
       <div class="maplibregl-map mapboxgl-map"
            style="position: relative; width: 100%; height: 100%;"
       >
@@ -163,7 +163,7 @@ exports[`RouteViewerOverlay FlexRoute smoke-test 1`] = `
 `;
 
 exports[`RouteViewerOverlay FlexRoute2 smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >
@@ -213,7 +213,7 @@ exports[`RouteViewerOverlay FlexRoute2 smoke-test 1`] = `
         </details>
       </div>
     </div>
-    <div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+    <div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
       <div class="maplibregl-map mapboxgl-map"
            style="position: relative; width: 100%; height: 100%;"
       >
@@ -270,7 +270,7 @@ exports[`RouteViewerOverlay FlexRoute2 smoke-test 1`] = `
 `;
 
 exports[`RouteViewerOverlay FlexRoute3 smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >
@@ -325,7 +325,7 @@ exports[`RouteViewerOverlay FlexRoute3 smoke-test 1`] = `
 `;
 
 exports[`RouteViewerOverlay OTP2RouteOutsideOfInitialView smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >
@@ -380,7 +380,7 @@ exports[`RouteViewerOverlay OTP2RouteOutsideOfInitialView smoke-test 1`] = `
 `;
 
 exports[`RouteViewerOverlay WithChangingPath smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >
@@ -435,7 +435,7 @@ exports[`RouteViewerOverlay WithChangingPath smoke-test 1`] = `
 `;
 
 exports[`RouteViewerOverlay WithPathStyling smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >

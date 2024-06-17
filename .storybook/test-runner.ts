@@ -1,4 +1,4 @@
-import { getStoryContext, TestContext, type TestRunnerConfig } from '@storybook/test-runner';
+import { getStoryContext, TestContext, waitForPageReady, type TestRunnerConfig } from '@storybook/test-runner';
 import { injectAxe, checkA11y, configureAxe } from 'axe-playwright';
 import { Page } from 'playwright-core'
 import parameters from './previewParameters';
@@ -6,6 +6,7 @@ import parameters from './previewParameters';
 const ONLY_RUN = process.env.ONLY_RUN
 
 async function runSnapshots(page: Page) {
+  await waitForPageReady(page);
   const elementHandler = await page.$('#storybook-root');
   const innerHTML = await elementHandler?.innerHTML();
   expect(innerHTML).toMatchSnapshot();

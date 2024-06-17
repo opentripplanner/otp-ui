@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TripViewerOverlay Default smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >
@@ -42,7 +42,7 @@ exports[`TripViewerOverlay Default smoke-test 1`] = `
 `;
 
 exports[`TripViewerOverlay WithPathStyling smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >

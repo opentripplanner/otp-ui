@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`StopViewerOverlay Default smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >
@@ -22,7 +22,7 @@ exports[`StopViewerOverlay Default smoke-test 1`] = `
           <div color="#00FFFF"
                size="18"
                stroke="3"
-               class="styled__LeafletStyleMarker-sc-12kjso7-4 kwcdtX"
+               class="styled__LeafletStyleMarker-sc-12kjso7-4 jFETRk"
           >
           </div>
         </span>
@@ -54,7 +54,7 @@ exports[`StopViewerOverlay Default smoke-test 1`] = `
 `;
 
 exports[`StopViewerOverlay WithCustomMarker smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >

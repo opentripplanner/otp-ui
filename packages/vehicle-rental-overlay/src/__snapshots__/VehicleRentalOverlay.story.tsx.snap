@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`VehicleRentalOverlay RentalBicycles smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >
@@ -42,7 +42,7 @@ exports[`VehicleRentalOverlay RentalBicycles smoke-test 1`] = `
 `;
 
 exports[`VehicleRentalOverlay RentalBicyclesVisibilityControlledByKnob smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >
@@ -97,7 +97,7 @@ exports[`VehicleRentalOverlay RentalBicyclesVisibilityControlledByKnob smoke-tes
 `;
 
 exports[`VehicleRentalOverlay RentalCars smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >
@@ -152,7 +152,7 @@ exports[`VehicleRentalOverlay RentalCars smoke-test 1`] = `
 `;
 
 exports[`VehicleRentalOverlay RentalEScooters smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >
@@ -207,7 +207,7 @@ exports[`VehicleRentalOverlay RentalEScooters smoke-test 1`] = `
 `;
 
 exports[`VehicleRentalOverlay RentalEScootersWithCustomNaming smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >

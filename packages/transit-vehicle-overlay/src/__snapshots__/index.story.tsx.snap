@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TransitVehicleOverlay CustomModeIcon smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >
@@ -19,7 +19,7 @@ exports[`TransitVehicleOverlay CustomModeIcon smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg xmlns="http://www.w3.org/2000/svg"
                  version="1.0"
                  viewbox="0 0 81.59 99.992"
@@ -44,7 +44,7 @@ exports[`TransitVehicleOverlay CustomModeIcon smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg xmlns="http://www.w3.org/2000/svg"
                  version="1.0"
                  viewbox="0 0 66.461 100"
@@ -59,7 +59,7 @@ exports[`TransitVehicleOverlay CustomModeIcon smoke-test 1`] = `
               </path>
             </svg>
             <div rotate="258"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 pfpr bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okgnu jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -69,7 +69,7 @@ exports[`TransitVehicleOverlay CustomModeIcon smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg xmlns="http://www.w3.org/2000/svg"
                  version="1.0"
                  viewbox="0 0 81.59 99.992"
@@ -88,7 +88,7 @@ exports[`TransitVehicleOverlay CustomModeIcon smoke-test 1`] = `
               </g>
             </svg>
             <div rotate="135"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 cTpSJj bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okape jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -98,7 +98,7 @@ exports[`TransitVehicleOverlay CustomModeIcon smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg viewbox="0 0 24 24">
               <text text-anchor="middle"
                     x="50%"
@@ -108,7 +108,7 @@ exports[`TransitVehicleOverlay CustomModeIcon smoke-test 1`] = `
               </text>
             </svg>
             <div rotate="278"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 ihmJtJ bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okgmk jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -118,7 +118,7 @@ exports[`TransitVehicleOverlay CustomModeIcon smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg xmlns="http://www.w3.org/2000/svg"
                  version="1.0"
                  viewbox="0 0 81.59 99.992"
@@ -137,7 +137,7 @@ exports[`TransitVehicleOverlay CustomModeIcon smoke-test 1`] = `
               </g>
             </svg>
             <div rotate="180"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 QYfgd bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okdls jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -184,7 +184,7 @@ exports[`TransitVehicleOverlay CustomModeIcon smoke-test 1`] = `
 `;
 
 exports[`TransitVehicleOverlay Default smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >
@@ -202,7 +202,7 @@ exports[`TransitVehicleOverlay Default smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
@@ -214,13 +214,13 @@ exports[`TransitVehicleOverlay Default smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
               </path>
             </svg>
             <div rotate="258"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 pfpr bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okgnu jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -230,13 +230,13 @@ exports[`TransitVehicleOverlay Default smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
             </svg>
             <div rotate="135"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 cTpSJj bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okape jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -246,7 +246,7 @@ exports[`TransitVehicleOverlay Default smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg viewbox="0 0 24 24">
               <text text-anchor="middle"
                     x="50%"
@@ -256,7 +256,7 @@ exports[`TransitVehicleOverlay Default smoke-test 1`] = `
               </text>
             </svg>
             <div rotate="278"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 ihmJtJ bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okgmk jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -266,13 +266,13 @@ exports[`TransitVehicleOverlay Default smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
             </svg>
             <div rotate="180"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 QYfgd bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okdls jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -305,7 +305,7 @@ exports[`TransitVehicleOverlay Default smoke-test 1`] = `
 `;
 
 exports[`TransitVehicleOverlay DefaultRouteColorWhenVehicleRouteColorAbsent smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >
@@ -323,7 +323,7 @@ exports[`TransitVehicleOverlay DefaultRouteColorWhenVehicleRouteColorAbsent smok
            style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 krMePp HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-5 styled-sc-wxby8t-6 dBkhqU fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
@@ -335,13 +335,13 @@ exports[`TransitVehicleOverlay DefaultRouteColorWhenVehicleRouteColorAbsent smok
            style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 krMePp HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-5 styled-sc-wxby8t-6 dBkhqU fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
               </path>
             </svg>
             <div rotate="258"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 pfpr bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okgnu jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -351,13 +351,13 @@ exports[`TransitVehicleOverlay DefaultRouteColorWhenVehicleRouteColorAbsent smok
            style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 krMePp HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-5 styled-sc-wxby8t-6 dBkhqU fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
             </svg>
             <div rotate="135"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 cTpSJj bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okape jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -367,7 +367,7 @@ exports[`TransitVehicleOverlay DefaultRouteColorWhenVehicleRouteColorAbsent smok
            style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 krMePp HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-5 styled-sc-wxby8t-6 dBkhqU fPfKFN">
             <svg viewbox="0 0 24 24">
               <text text-anchor="middle"
                     x="50%"
@@ -377,7 +377,7 @@ exports[`TransitVehicleOverlay DefaultRouteColorWhenVehicleRouteColorAbsent smok
               </text>
             </svg>
             <div rotate="278"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 ihmJtJ bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okgmk jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -387,13 +387,13 @@ exports[`TransitVehicleOverlay DefaultRouteColorWhenVehicleRouteColorAbsent smok
            style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 krMePp HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-5 styled-sc-wxby8t-6 dBkhqU fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
             </svg>
             <div rotate="180"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 QYfgd bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okdls jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -440,7 +440,7 @@ exports[`TransitVehicleOverlay DefaultRouteColorWhenVehicleRouteColorAbsent smok
 `;
 
 exports[`TransitVehicleOverlay InnerCaret smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >
@@ -458,7 +458,7 @@ exports[`TransitVehicleOverlay InnerCaret smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
@@ -470,13 +470,13 @@ exports[`TransitVehicleOverlay InnerCaret smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
               </path>
             </svg>
             <div rotate="258"
-                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 pfpr"
+                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 okgnu"
             >
             </div>
           </div>
@@ -486,13 +486,13 @@ exports[`TransitVehicleOverlay InnerCaret smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
             </svg>
             <div rotate="135"
-                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 cTpSJj"
+                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 okape"
             >
             </div>
           </div>
@@ -502,7 +502,7 @@ exports[`TransitVehicleOverlay InnerCaret smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg viewbox="0 0 24 24">
               <text text-anchor="middle"
                     x="50%"
@@ -512,7 +512,7 @@ exports[`TransitVehicleOverlay InnerCaret smoke-test 1`] = `
               </text>
             </svg>
             <div rotate="278"
-                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 ihmJtJ"
+                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 okgmk"
             >
             </div>
           </div>
@@ -522,13 +522,13 @@ exports[`TransitVehicleOverlay InnerCaret smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
             </svg>
             <div rotate="180"
-                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 QYfgd"
+                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 okdls"
             >
             </div>
           </div>
@@ -575,7 +575,7 @@ exports[`TransitVehicleOverlay InnerCaret smoke-test 1`] = `
 `;
 
 exports[`TransitVehicleOverlay OuterCaretWithCustomSize smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >
@@ -593,7 +593,7 @@ exports[`TransitVehicleOverlay OuterCaretWithCustomSize smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 dXuoik">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
@@ -605,13 +605,13 @@ exports[`TransitVehicleOverlay OuterCaretWithCustomSize smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 dXuoik">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
               </path>
             </svg>
             <div rotate="258"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 pfpr bVotOj jYLjCv"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okgnu jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -621,13 +621,13 @@ exports[`TransitVehicleOverlay OuterCaretWithCustomSize smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 dXuoik">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
             </svg>
             <div rotate="135"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 cTpSJj bVotOj jYLjCv"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okape jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -637,7 +637,7 @@ exports[`TransitVehicleOverlay OuterCaretWithCustomSize smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 dXuoik">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg viewbox="0 0 24 24">
               <text text-anchor="middle"
                     x="50%"
@@ -647,7 +647,7 @@ exports[`TransitVehicleOverlay OuterCaretWithCustomSize smoke-test 1`] = `
               </text>
             </svg>
             <div rotate="278"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 ihmJtJ bVotOj jYLjCv"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okgmk jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -657,13 +657,13 @@ exports[`TransitVehicleOverlay OuterCaretWithCustomSize smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 dXuoik">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
             </svg>
             <div rotate="180"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 QYfgd bVotOj jYLjCv"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okdls jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -710,7 +710,7 @@ exports[`TransitVehicleOverlay OuterCaretWithCustomSize smoke-test 1`] = `
 `;
 
 exports[`TransitVehicleOverlay RotatingIconsNoCaret smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >
@@ -728,7 +728,7 @@ exports[`TransitVehicleOverlay RotatingIconsNoCaret smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 styled__RotatingCircle-sc-wxby8t-1 styled-sc-wxby8t-6 fwqRMz bwaOvg HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 styled__RotatingCircle-sc-wxby8t-1 styled-sc-wxby8t-6 dRhyrt dPgkBF fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
@@ -740,7 +740,7 @@ exports[`TransitVehicleOverlay RotatingIconsNoCaret smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 styled__RotatingCircle-sc-wxby8t-1 styled-sc-wxby8t-6 fwqRMz bYkaJj HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 styled__RotatingCircle-sc-wxby8t-1 styled-sc-wxby8t-6 dRhyrt eVKwZy fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
               </path>
@@ -752,7 +752,7 @@ exports[`TransitVehicleOverlay RotatingIconsNoCaret smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 styled__RotatingCircle-sc-wxby8t-1 styled-sc-wxby8t-6 fwqRMz iLfgwv HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 styled__RotatingCircle-sc-wxby8t-1 styled-sc-wxby8t-6 dRhyrt eVKAEK fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
@@ -764,7 +764,7 @@ exports[`TransitVehicleOverlay RotatingIconsNoCaret smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 styled__RotatingCircle-sc-wxby8t-1 styled-sc-wxby8t-6 fwqRMz jGHdSh HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 styled__RotatingCircle-sc-wxby8t-1 styled-sc-wxby8t-6 dRhyrt eVKwYo fPfKFN">
             <svg viewbox="0 0 24 24">
               <text text-anchor="middle"
                     x="50%"
@@ -780,7 +780,7 @@ exports[`TransitVehicleOverlay RotatingIconsNoCaret smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 styled__RotatingCircle-sc-wxby8t-1 styled-sc-wxby8t-6 fwqRMz aLJAl HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 styled__RotatingCircle-sc-wxby8t-1 styled-sc-wxby8t-6 dRhyrt eVKAfo fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
@@ -829,7 +829,7 @@ exports[`TransitVehicleOverlay RotatingIconsNoCaret smoke-test 1`] = `
 `;
 
 exports[`TransitVehicleOverlay RouteColorBackground smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >
@@ -847,7 +847,7 @@ exports[`TransitVehicleOverlay RouteColorBackground smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 gZSOUR HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-5 styled-sc-wxby8t-6 XNBfk fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
@@ -859,13 +859,13 @@ exports[`TransitVehicleOverlay RouteColorBackground smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 hcXAzV HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-5 styled-sc-wxby8t-6 brSjYM fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
               </path>
             </svg>
             <div rotate="258"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 pfpr bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okgnu jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -875,13 +875,13 @@ exports[`TransitVehicleOverlay RouteColorBackground smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 ddZmDF HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-5 styled-sc-wxby8t-6 eATGdI fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
             </svg>
             <div rotate="135"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 cTpSJj bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okape jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -891,7 +891,7 @@ exports[`TransitVehicleOverlay RouteColorBackground smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 grdVQl HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-5 styled-sc-wxby8t-6 jyiKSo fPfKFN">
             <svg viewbox="0 0 24 24">
               <text text-anchor="middle"
                     x="50%"
@@ -901,7 +901,7 @@ exports[`TransitVehicleOverlay RouteColorBackground smoke-test 1`] = `
               </text>
             </svg>
             <div rotate="278"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 ihmJtJ bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okgmk jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -911,13 +911,13 @@ exports[`TransitVehicleOverlay RouteColorBackground smoke-test 1`] = `
            style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 hbGXmJ HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-5 styled-sc-wxby8t-6 eJqNNc fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
             </svg>
             <div rotate="180"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 QYfgd bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okdls jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -964,7 +964,7 @@ exports[`TransitVehicleOverlay RouteColorBackground smoke-test 1`] = `
 `;
 
 exports[`TransitVehicleOverlay RouteColorBackgroundWithInnerCaret smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >
@@ -982,7 +982,7 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithInnerCaret smoke-test 1`]
            style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 gZSOUR cUNhVn">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-5 styled-sc-wxby8t-6 XNBfk fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
@@ -994,13 +994,13 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithInnerCaret smoke-test 1`]
            style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 hcXAzV cUNhVn">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-5 styled-sc-wxby8t-6 brSjYM fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
               </path>
             </svg>
             <div rotate="258"
-                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 pfpr"
+                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 okgnu"
             >
             </div>
           </div>
@@ -1010,13 +1010,13 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithInnerCaret smoke-test 1`]
            style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 ddZmDF cUNhVn">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-5 styled-sc-wxby8t-6 eATGdI fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
             </svg>
             <div rotate="135"
-                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 cTpSJj"
+                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 okape"
             >
             </div>
           </div>
@@ -1026,7 +1026,7 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithInnerCaret smoke-test 1`]
            style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 grdVQl cUNhVn">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-5 styled-sc-wxby8t-6 jyiKSo fPfKFN">
             <svg viewbox="0 0 24 24">
               <text text-anchor="middle"
                     x="50%"
@@ -1036,7 +1036,7 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithInnerCaret smoke-test 1`]
               </text>
             </svg>
             <div rotate="278"
-                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 ihmJtJ"
+                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 okgmk"
             >
             </div>
           </div>
@@ -1046,13 +1046,13 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithInnerCaret smoke-test 1`]
            style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 hbGXmJ cUNhVn">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-5 styled-sc-wxby8t-6 eJqNNc fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
             </svg>
             <div rotate="180"
-                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 QYfgd"
+                 class="styled__Caret-sc-wxby8t-2 styled__InnerCaret-sc-wxby8t-3 okdls"
             >
             </div>
           </div>
@@ -1099,7 +1099,7 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithInnerCaret smoke-test 1`]
 `;
 
 exports[`TransitVehicleOverlay RouteColorBackgroundWithTransparencyOnHover smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >
@@ -1117,7 +1117,7 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithTransparencyOnHover smoke
            style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 dwOluC HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-5 styled-sc-wxby8t-6 isGiVv fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
@@ -1129,13 +1129,13 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithTransparencyOnHover smoke
            style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 jIXtxG HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-5 styled-sc-wxby8t-6 dWHUoj fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
               </path>
             </svg>
             <div rotate="258"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 pfpr bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okgnu jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -1145,13 +1145,13 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithTransparencyOnHover smoke
            style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 edTNha HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-5 styled-sc-wxby8t-6 kNMYgj fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
             </svg>
             <div rotate="135"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 cTpSJj bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okape jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -1161,7 +1161,7 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithTransparencyOnHover smoke
            style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 bMSwDy HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-5 styled-sc-wxby8t-6 deSRoz fPfKFN">
             <svg viewbox="0 0 24 24">
               <text text-anchor="middle"
                     x="50%"
@@ -1171,7 +1171,7 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithTransparencyOnHover smoke
               </text>
             </svg>
             <div rotate="278"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 ihmJtJ bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okgmk jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -1181,13 +1181,13 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithTransparencyOnHover smoke
            style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-5 styled-sc-wxby8t-6 eohqge HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-5 styled-sc-wxby8t-6 hLcUPn fPfKFN">
             <svg viewbox="0 0 390 390">
               <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
               </path>
             </svg>
             <div rotate="180"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 QYfgd bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okdls jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -1234,7 +1234,7 @@ exports[`TransitVehicleOverlay RouteColorBackgroundWithTransparencyOnHover smoke
 `;
 
 exports[`TransitVehicleOverlay RouteNumbersOnlyWithCustomSizeAndPadding smoke-test 1`] = `
-<div class="styled__StoryMapContainer-sc-12kjso7-6 dDcUzV">
+<div class="styled__StoryMapContainer-sc-12kjso7-6 jsxXhE">
   <div class="maplibregl-map mapboxgl-map"
        style="position: relative; width: 100%; height: 100%;"
   >
@@ -1252,7 +1252,7 @@ exports[`TransitVehicleOverlay RouteNumbersOnlyWithCustomSizeAndPadding smoke-te
            style="transform: translate(-50%, -50%) translate(503px, 198px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg viewbox="0 0 20 20">
               <text text-anchor="middle"
                     x="50%"
@@ -1268,7 +1268,7 @@ exports[`TransitVehicleOverlay RouteNumbersOnlyWithCustomSizeAndPadding smoke-te
            style="transform: translate(-50%, -50%) translate(524px, 309px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg viewbox="0 0 20 20">
               <text text-anchor="middle"
                     x="50%"
@@ -1278,7 +1278,7 @@ exports[`TransitVehicleOverlay RouteNumbersOnlyWithCustomSizeAndPadding smoke-te
               </text>
             </svg>
             <div rotate="258"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 pfpr bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okgnu jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -1288,7 +1288,7 @@ exports[`TransitVehicleOverlay RouteNumbersOnlyWithCustomSizeAndPadding smoke-te
            style="transform: translate(-50%, -50%) translate(1689px, -210px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg viewbox="0 0 20 20">
               <text text-anchor="middle"
                     x="50%"
@@ -1298,7 +1298,7 @@ exports[`TransitVehicleOverlay RouteNumbersOnlyWithCustomSizeAndPadding smoke-te
               </text>
             </svg>
             <div rotate="135"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 cTpSJj bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okape jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -1308,7 +1308,7 @@ exports[`TransitVehicleOverlay RouteNumbersOnlyWithCustomSizeAndPadding smoke-te
            style="transform: translate(-50%, -50%) translate(430px, 330px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg viewbox="0 0 24 24">
               <text text-anchor="middle"
                     x="50%"
@@ -1318,7 +1318,7 @@ exports[`TransitVehicleOverlay RouteNumbersOnlyWithCustomSizeAndPadding smoke-te
               </text>
             </svg>
             <div rotate="278"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 ihmJtJ bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okgmk jwTtiz cXfThL"
             >
             </div>
           </div>
@@ -1328,7 +1328,7 @@ exports[`TransitVehicleOverlay RouteNumbersOnlyWithCustomSizeAndPadding smoke-te
            style="transform: translate(-50%, -50%) translate(1012px, -535px) rotateX(0deg) rotateZ(0deg); cursor: inherit;"
       >
         <span>
-          <div class="styled__Circle-sc-wxby8t-0 fwqRMz styled-sc-wxby8t-6 HMiXB">
+          <div class="styled__Circle-sc-wxby8t-0 dRhyrt styled-sc-wxby8t-6 fPfKFN">
             <svg viewbox="0 0 20 20">
               <text text-anchor="middle"
                     x="50%"
@@ -1338,7 +1338,7 @@ exports[`TransitVehicleOverlay RouteNumbersOnlyWithCustomSizeAndPadding smoke-te
               </text>
             </svg>
             <div rotate="180"
-                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 QYfgd bVotOj iVEKod"
+                 class="styled__Caret-sc-wxby8t-2 styled__OuterCaret-sc-wxby8t-4 WithCaret__SizedCaret-sc-1th2rf7-0 okdls jwTtiz cXfThL"
             >
             </div>
           </div>
