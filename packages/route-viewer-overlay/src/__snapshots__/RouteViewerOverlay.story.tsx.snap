@@ -74,7 +74,7 @@ exports[`RouteViewerOverlay FlexRoute smoke-test 1`] = `
           >
           </summary>
           <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-            ©
+            (modified) ©
             <a href="https://carto.com/about-carto/"
                target="_blank"
                rel="noopener"
@@ -124,7 +124,7 @@ exports[`RouteViewerOverlay FlexRoute smoke-test 1`] = `
               >
               </summary>
               <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-                ©
+                (modified) ©
                 <a href="https://carto.com/about-carto/"
                    target="_blank"
                    rel="noopener"
@@ -181,7 +181,7 @@ exports[`RouteViewerOverlay FlexRoute2 smoke-test 1`] = `
           >
           </summary>
           <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-            ©
+            (modified) ©
             <a href="https://carto.com/about-carto/"
                target="_blank"
                rel="noopener"
@@ -231,7 +231,7 @@ exports[`RouteViewerOverlay FlexRoute2 smoke-test 1`] = `
               >
               </summary>
               <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-                ©
+                (modified) ©
                 <a href="https://carto.com/about-carto/"
                    target="_blank"
                    rel="noopener"
@@ -288,7 +288,7 @@ exports[`RouteViewerOverlay FlexRoute3 smoke-test 1`] = `
           >
           </summary>
           <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-            ©
+            (modified) ©
             <a href="https://carto.com/about-carto/"
                target="_blank"
                rel="noopener"
@@ -343,7 +343,7 @@ exports[`RouteViewerOverlay OTP2RouteOutsideOfInitialView smoke-test 1`] = `
           >
           </summary>
           <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-            ©
+            (modified) ©
             <a href="https://carto.com/about-carto/"
                target="_blank"
                rel="noopener"
@@ -398,7 +398,7 @@ exports[`RouteViewerOverlay WithChangingPath smoke-test 1`] = `
           >
           </summary>
           <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-            ©
+            (modified) ©
             <a href="https://carto.com/about-carto/"
                target="_blank"
                rel="noopener"

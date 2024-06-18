@@ -74,7 +74,7 @@ exports[`StopsOverlay FlexStops smoke-test 1`] = `
           >
           </summary>
           <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-            ©
+            (modified) ©
             <a href="https://carto.com/about-carto/"
                target="_blank"
                rel="noopener"
@@ -124,7 +124,7 @@ exports[`StopsOverlay FlexStops smoke-test 1`] = `
               >
               </summary>
               <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-                ©
+                (modified) ©
                 <a href="https://carto.com/about-carto/"
                    target="_blank"
                    rel="noopener"
@@ -181,7 +181,7 @@ exports[`StopsOverlay NoMinZoom smoke-test 1`] = `
           >
           </summary>
           <div class="maplibregl-ctrl-attrib-inner mapboxgl-ctrl-attrib-inner">
-            ©
+            (modified) ©
             <a href="https://carto.com/about-carto/"
                target="_blank"
                rel="noopener"

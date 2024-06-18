@@ -20,7 +20,7 @@ if (typeof global.process === "undefined") {
     ...tileLayerHandlers,
     ...baseMapHandlers
   );
-  await worker.start({ onUnhandledRequest: "bypass" });
+  worker.start({ onUnhandledRequest: "bypass" });
 }
 
 export { parameters }

@@ -108,7 +108,7 @@
     "check-eslint-config": "eslint --print-config jestconfig.js | eslint-config-prettier-check",
     "coverage": "jest --coverage",
     "deploy-storybook": "storybook-to-ghpages",
-    "dev": "storybook dev -s ./public -p 5555",
+    "dev": "storybook dev -p 5555",
     "predev": "yarn",
     "build-storybook": "storybook build",
     "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-pattern esm --ignore-pattern lib --ignore-pattern node_modules --ignore-pattern storybook-static --quiet",

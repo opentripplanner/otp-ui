@@ -29,6 +29,7 @@ module.exports = {
     "../packages/**/*.story.mdx",
     "../packages/**/*.story.@(js|jsx|ts|tsx)"
   ],
+  staticDirs: ['../public'],
 
   webpackFinal: async (config, { configType }) => {
     // This method is for altering Storybook's webpack configuration.
