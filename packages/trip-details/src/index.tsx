@@ -72,7 +72,7 @@ export function TripDetails({
   fareDetailsLayout,
   fareKeyNameMap = {},
   itinerary,
-  showApproximatePrefixNonTransitLegs,
+  showApproximatePrefixAccessLegs,
   TimeActiveDetails = DefaultTimeActiveDetails
 }: TripDetailsProps): ReactElement {
   // process the transit fare
@@ -321,7 +321,7 @@ export function TripDetails({
                 description="Text showing the number of minutes spent walking or biking throughout trip."
                 id="otpUi.TripDetails.minutesActive"
                 values={{
-                  approximatePrefix: showApproximatePrefixNonTransitLegs,
+                  approximatePrefix: showApproximatePrefixAccessLegs,
                   minutes: minutesActive,
                   strong: boldText
                 }}

@@ -6,7 +6,7 @@ import { defaultMessages } from "../util";
 
 interface Props {
   seconds: number;
-  showApproximatePrefixNonTransitLegs?: boolean;
+  showApproximatePrefixAccessLegs?: boolean;
 }
 
 /**
@@ -15,7 +15,7 @@ interface Props {
  */
 export default function Duration({
   seconds,
-  showApproximatePrefixNonTransitLegs
+  showApproximatePrefixAccessLegs
 }: Props): ReactElement {
   return (
     <FormattedMessage
@@ -26,7 +26,7 @@ export default function Duration({
       id="otpUi.ItineraryBody.common.durationShort"
       values={{
         ...coreUtils.time.toHoursMinutesSeconds(seconds),
-        approximatePrefix: showApproximatePrefixNonTransitLegs
+        approximatePrefix: showApproximatePrefixAccessLegs
       }}
     />
   );

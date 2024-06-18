@@ -33,7 +33,7 @@ const ItineraryBody = ({
   setActiveLeg,
   setLegDiagram,
   setViewedTrip,
-  showApproximatePrefixNonTransitLegs,
+  showApproximatePrefixAccessLegs,
   showAgencyInfo,
   showElevationProfile,
   showLegIcon,
@@ -83,9 +83,7 @@ const ItineraryBody = ({
           setActiveLeg={setActiveLeg}
           setLegDiagram={setLegDiagram}
           setViewedTrip={setViewedTrip}
-          showApproximatePrefixNonTransitLegs={
-            showApproximatePrefixNonTransitLegs
-          }
+          showApproximatePrefixAccessLegs={showApproximatePrefixAccessLegs}
           showAgencyInfo={showAgencyInfo}
           showElevationProfile={showElevationProfile}
           showLegIcon={showLegIcon}
