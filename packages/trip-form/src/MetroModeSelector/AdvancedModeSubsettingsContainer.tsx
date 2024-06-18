@@ -32,7 +32,7 @@ const SubsettingsContainer = styled.fieldset`
 `;
 
 interface Props {
-  accentColor: string;
+  accentColor?: string;
   fillModeIcons: boolean | undefined;
   label: string;
   modeButtons: ModeButtonDefinition[];
