@@ -8,7 +8,6 @@ import { QueryParamChangeEvent } from "../types";
 const SubsettingsContainer = styled.fieldset`
   border: none;
   margin: 0;
-  width: 90%;
 
   legend {
     ${invisibleCss}
@@ -33,6 +32,7 @@ const SubsettingsContainer = styled.fieldset`
 `;
 
 interface Props {
+  accentColor: string;
   fillModeIcons: boolean | undefined;
   label: string;
   modeButtons: ModeButtonDefinition[];
@@ -41,6 +41,7 @@ interface Props {
 }
 
 const AdvancedModeSubsettingsContainer = ({
+  accentColor,
   fillModeIcons,
   modeButtons,
   label,
@@ -53,6 +54,7 @@ const AdvancedModeSubsettingsContainer = ({
       {modeButtons.map(button => {
         return (
           <AdvancedModeSettingsButton
+            accentColor={accentColor}
             fillModeIcons={fillModeIcons}
             key={button.label}
             modeButton={button}
