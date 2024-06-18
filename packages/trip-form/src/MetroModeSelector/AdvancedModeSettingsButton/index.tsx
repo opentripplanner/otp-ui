@@ -33,10 +33,13 @@ const StyledModeSettingsButton = styled.div<{
     border-right-width: 2px;
     color: ${props => props.accentColor};
     display: grid;
+    font-size: 18px;
+    font-weight: 400;
     gap: 20px;
     grid-template-columns: 40px auto 40px;
     height: 51px;
     justify-items: center;
+    margin-bottom: 0;
     padding: 0 10px;
   }
 
