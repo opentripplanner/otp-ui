@@ -384,7 +384,7 @@ export const LineColumn = styled.div`
 
 export const LegDetails = styled.span`
   display: grid;
-  grid-template-columns: 100px auto;
+  grid-template-columns: 115px auto;
 `;
 
 export const PlaceRowWrapper = styled.li`
