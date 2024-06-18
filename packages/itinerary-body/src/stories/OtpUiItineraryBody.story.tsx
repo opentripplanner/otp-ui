@@ -226,3 +226,10 @@ export const HideDrivingDirections = (): ReactElement => (
     itinerary={parkAndRideItinerary}
   />
 );
+
+export const ApproximatePrefixItinerary = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    showApproximatePrefixAccessLegs
+    itinerary={parkAndRideItinerary}
+  />
+);
