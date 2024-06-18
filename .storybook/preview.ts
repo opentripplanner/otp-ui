@@ -1,4 +1,4 @@
-import { setupWorker } from "msw";
+import { setupWorker } from "msw/browser";
 
 import locationFieldHandlers from "../packages/location-field/src/mocks/handlers";
 import itineraryBodyHandlers from "../packages/itinerary-body/src/__mocks__/handlers";
@@ -20,7 +20,7 @@ if (typeof global.process === "undefined") {
     ...tileLayerHandlers,
     ...baseMapHandlers
   );
-  worker.start({ onUnhandledRequest: "bypass" });
+  await worker.start({ onUnhandledRequest: "bypass" });
 }
 
 export { parameters }
