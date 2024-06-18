@@ -32,6 +32,7 @@ const StyledModeSettingsButton = styled.div<{
     border-left-width: 2px;
     border-right-width: 2px;
     color: ${props => props.accentColor};
+    cursor: pointer;
     display: grid;
     font-size: 18px;
     font-weight: 400;
