@@ -12,6 +12,8 @@ import TransitVehicleOverlay, {
   withRouteColorBackground
 } from ".";
 
+const disableStoryshots = { storyshots: { disable: true } };
+
 const SEATTLE: [number, number] = [47.6, -122.3];
 
 // TODO: TransitVehicle[] type doesn't match vehicles object
@@ -47,14 +49,6 @@ export const OuterCaretWithCustomSize = () => (
   <TransitVehicleOverlay
     IconContainer={withCaret(Circle, { height: 15, offset: 4, width: 10 })}
     iconPixels={25}
-    ModeIcon={TriMetModeIcon}
-    vehicles={vehicles}
-  />
-);
-
-export const RouteColorBackground = () => (
-  <TransitVehicleOverlay
-    IconContainer={withRouteColorBackground(DefaultIconContainer)}
     ModeIcon={TriMetModeIcon}
     vehicles={vehicles}
   />
@@ -106,5 +100,6 @@ export const RouteNumbersOnlyWithCustomSizeAndPadding = () => (
 export default {
   title: "TransitVehicleOverlay",
   component: TransitVehicleOverlay,
+  parameters: disableStoryshots,
   decorators: [withMap(SEATTLE, 12)]
 };

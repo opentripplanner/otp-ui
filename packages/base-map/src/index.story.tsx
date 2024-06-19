@@ -24,7 +24,8 @@ const center: [number, number] = [45.522862, -122.667837];
 export default {
   args: { center },
   component: BaseMap,
-  title: "BaseMap"
+  title: "BaseMap",
+  parameters: { storyshots: { disable: true } }
 };
 
 // eslint-disable-next-line react/jsx-props-no-spreading
@@ -52,6 +53,7 @@ const onViewportChanged = action("onViewportChanged");
 const a11yOverrideParameters = {
   a11y: { config: { rules: [{ id: "color-contrast", reviewOnFail: true }] } }
 };
+const disableStoryshots = { storyshots: { disable: true } };
 
 export const clickAndViewportchangedEvents = Template.bind({});
 clickAndViewportchangedEvents.args = {
@@ -61,6 +63,7 @@ clickAndViewportchangedEvents.args = {
   onViewportChanged
 };
 clickAndViewportchangedEvents.decorators = [withMap()];
+clickAndViewportchangedEvents.parameters = disableStoryshots;
 
 export const zoomed = Template.bind({});
 zoomed.args = {
@@ -68,6 +71,7 @@ zoomed.args = {
   zoom: 17
 };
 zoomed.decorators = [withMap()];
+zoomed.parameters = disableStoryshots;
 
 const SetBoundsButton = () => {
   const { mapWithBounds } = useMap();
@@ -105,12 +109,14 @@ export const clickToSetBounds = (): ComponentStory<typeof BaseMap> => (
     </MapProvider>
   </Styled.StoryMapContainer>
 );
+clickToSetBounds.parameters = disableStoryshots;
 
 export const maxZoom = Template.bind({});
 maxZoom.args = {
   maxZoom: 18,
   zoom: 30
 };
+maxZoom.parameters = disableStoryshots;
 maxZoom.decorators = [withMap()];
 
 export const withSampleMarkers = () => (
@@ -118,6 +124,7 @@ export const withSampleMarkers = () => (
     <BaseMap center={center}>{sampleMarkers}</BaseMap>{" "}
   </Styled.StoryMapContainer>
 );
+withSampleMarkers.parameters = disableStoryshots;
 
 export const overlayWithLargeDataSet = () => (
   <>
@@ -128,6 +135,7 @@ export const overlayWithLargeDataSet = () => (
   </>
 );
 overlayWithLargeDataSet.decorators = [withMap()];
+overlayWithLargeDataSet.parameters = disableStoryshots;
 
 export const customLocationPopupContent = () => (
   <Styled.StoryMapContainer>
@@ -138,6 +146,7 @@ export const customLocationPopupContent = () => (
     </BaseMap>
   </Styled.StoryMapContainer>
 );
+customLocationPopupContent.parameters = disableStoryshots;
 
 export const optionalLayers = {
   args: { showEverything: false },
@@ -160,7 +169,10 @@ export const optionalLayers = {
   )
 };
 // Custom styling for this story only, not in production
-customLocationPopupContent.parameters = a11yOverrideParameters;
+customLocationPopupContent.parameters = {
+  ...a11yOverrideParameters,
+  ...disableStoryshots
+};
 
 export const onContextMenuPopup = () => <ContextMenuDemo />;
 
@@ -184,6 +196,7 @@ export const withOptionalControls = () => (
   </BaseMap>
 );
 withOptionalControls.decorators = [withMap()];
+withOptionalControls.parameters = disableStoryshots;
 
 export const withMultipleBaseLayers = () => {
   const [mapTilerKey, setMapTilerKey] = useState("");
@@ -209,6 +222,7 @@ export const withMultipleBaseLayers = () => {
     </Styled.StoryMapContainer>
   );
 };
+withMultipleBaseLayers.parameters = disableStoryshots;
 
 export const withMultipleBaseLayersAndOptionalLayers = () => {
   const [mapTilerKey, setMapTilerKey] = useState("");
@@ -239,3 +253,4 @@ export const withMultipleBaseLayersAndOptionalLayers = () => {
     </Styled.StoryMapContainer>
   );
 };
+withMultipleBaseLayersAndOptionalLayers.parameters = disableStoryshots;

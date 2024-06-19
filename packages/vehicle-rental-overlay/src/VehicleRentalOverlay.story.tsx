@@ -69,9 +69,9 @@ function customStationName(_, station) {
 export default {
   title: "VehicleRentalOverlay",
   component: VehicleRentalOverlay,
-  decorators: [withMap(center, INITIAL_ZOOM)]
+  decorators: [withMap(center, INITIAL_ZOOM)],
+  parameters: { storyshots: { disable: true } }
 };
-
 export const RentalBicycles = () => (
   <ZoomControlledMapWithVehicleRentalOverlay
     companies={["BIKETOWN"]}

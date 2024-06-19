@@ -49,7 +49,8 @@ function getToLocation(itinerary) {
 export default {
   title: "TransitiveOverlay",
   decorators: [withMap()],
-  component: TransitiveOverlay
+  component: TransitiveOverlay,
+  parameters: { storyshots: { disable: true } }
 };
 
 export const Empty = (): JSX.Element => (

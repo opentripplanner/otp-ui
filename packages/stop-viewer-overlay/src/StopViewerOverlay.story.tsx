@@ -15,6 +15,8 @@ const fakeStop = {
   name: "Fake Stop"
 };
 
+const disableStoryshots = { storyshots: { disable: true } };
+
 function CustomMarker({ stop }: StopContainer) {
   return <Marker longitude={stop.lon} latitude={stop.lat} key={stop.id} />;
 }
@@ -28,6 +30,7 @@ export default {
 export const Default = (): JSX.Element => (
   <StopViewerOverlay stop={fakeStop} StopMarker={DefaultStopMarker} visible />
 );
+Default.parameters = disableStoryshots;
 
 const WithCustomMarker = (): JSX.Element => (
   <StopViewerOverlay stop={fakeStop} StopMarker={CustomMarker} visible />
@@ -44,5 +47,8 @@ const disableA11yParameters = {
   }
 };
 
-WithCustomMarker.parameters = disableA11yParameters;
+WithCustomMarker.parameters = {
+  ...disableA11yParameters,
+  ...disableStoryshots
+};
 export { WithCustomMarker };

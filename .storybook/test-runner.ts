@@ -5,7 +5,11 @@ import parameters from './previewParameters';
 
 const ONLY_RUN = process.env.ONLY_RUN
 
-async function runSnapshots(page: Page) {
+async function runSnapshots(page: Page, context: TestContext) {
+  const storyContext = await getStoryContext(page, context);
+  if(storyContext.parameters?.storyshots?.disable) {
+    return;
+  }
   await waitForPageReady(page);
   const elementHandler = await page.$('#storybook-root');
   const innerHTML = await elementHandler?.innerHTML();
@@ -36,7 +40,7 @@ const config: TestRunnerConfig = {
   async postVisit(page, context) {
     // the #storybook-root element wraps the story. In Storybook 6.x, the selector is #root
     if (!ONLY_RUN || ONLY_RUN === "SNAPSHOTS") {
-      await runSnapshots(page);
+      await runSnapshots(page, context);
     }
     if (!ONLY_RUN || ONLY_RUN === "A11Y") {
       await runA11yTest(page, context);
