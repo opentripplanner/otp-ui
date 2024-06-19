@@ -14,7 +14,6 @@ const { blue, grey } = colors;
 
 const SettingsContainer = styled.div`
   width: 100%;
-  max-width: 500px;
 `;
 
 const StyledModeSettingsButton = styled.div<{
