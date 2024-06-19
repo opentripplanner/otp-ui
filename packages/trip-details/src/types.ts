@@ -96,7 +96,7 @@ export interface TripDetailsProps {
   /**
    * show the '~' symbol in the trip details panel
    */
-  showApproximatePrefixAccessLegs?: boolean;
+  showApproximateMinutesActive?: boolean;
   /**
    * Slot for a custom component to render the expandable section for time active.
    */

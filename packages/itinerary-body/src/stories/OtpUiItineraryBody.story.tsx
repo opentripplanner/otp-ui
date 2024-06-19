@@ -229,7 +229,7 @@ export const HideDrivingDirections = (): ReactElement => (
 
 export const ApproximatePrefixItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
-    showApproximatePrefixAccessLegs
     itinerary={parkAndRideItinerary}
+    showApproximateAccessLegTravelTimes
   />
 );

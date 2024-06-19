@@ -40,7 +40,7 @@ export default function PlaceRow({
   setLegDiagram,
   setViewedTrip,
   showAgencyInfo,
-  showApproximatePrefixAccessLegs,
+  showApproximateAccessLegTravelTimes,
   showElevationProfile,
   showLegIcon,
   showMapButtonColumn,
@@ -173,7 +173,7 @@ export default function PlaceRow({
               mapillaryKey={mapillaryKey}
               setActiveLeg={setActiveLeg}
               setLegDiagram={setLegDiagram}
-              showApproximatePrefixAccessLegs={showApproximatePrefixAccessLegs}
+              showApproximateTravelTime={showApproximateAccessLegTravelTimes}
               showElevationProfile={showElevationProfile}
               showLegIcon={showLegIcon}
               TransitLegSubheader={TransitLegSubheader}

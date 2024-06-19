@@ -53,7 +53,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
       RouteDescription,
       RouteDescriptionFooter = undefined,
       showAgencyInfo,
-      showApproximatePrefixAccessLegs = false,
+      showApproximateAccessLegTravelTimes = false,
       showLegIcon,
       showMapButtonColumn = true,
       showViewTripButton,
@@ -105,7 +105,9 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
         setLegDiagram={this.setLegDiagram}
         setViewedTrip={action("setViewedTrip")}
         showAgencyInfo={showAgencyInfo}
-        showApproximatePrefixAccessLegs={showApproximatePrefixAccessLegs}
+        showApproximateAccessLegTravelTimes={
+          showApproximateAccessLegTravelTimes
+        }
         showElevationProfile
         showLegIcon={showLegIcon}
         showMapButtonColumn={showMapButtonColumn}
