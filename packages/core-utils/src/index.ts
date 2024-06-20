@@ -7,6 +7,7 @@ import * as route from "./route";
 import * as storage from "./storage";
 import * as time from "./time";
 import * as ui from "./ui";
+import * as metricUnits from "./metricUnits";
 import * as queryGen from "./query-gen";
 
 const core = {
@@ -19,6 +20,7 @@ const core = {
   route,
   storage,
   time,
+  metricUnits,
   ui
 };
 
