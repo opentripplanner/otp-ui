@@ -11,7 +11,7 @@ import {
 import OtpRRLineColumnContent from "../otp-react-redux/line-column-content";
 import { PlaceName as OtpRRPlaceName } from "../otp-react-redux";
 import OtpRRRouteDescription from "../otp-react-redux/route-description";
-import { isRunningJest } from "../../../../.storybook/react-intl";
+import { isTestRunner } from "../../../../.storybook/react-intl";
 import { TimeColumnContentProps } from "../types";
 
 import ItineraryBodyDefaultsWrapper from "./itinerary-body-defaults-wrapper";
@@ -43,7 +43,7 @@ function withLegacyLegs(itinerary) {
   };
 }
 
-if (!isRunningJest()) {
+if (!isTestRunner()) {
   // Generate same-day/next day alerts at a fixed time for the walk-transit-walk itinerary
   // for illustration outside of the CI environment.
   const alerts = walkTransitWalkItinerary.legs[1].alerts;

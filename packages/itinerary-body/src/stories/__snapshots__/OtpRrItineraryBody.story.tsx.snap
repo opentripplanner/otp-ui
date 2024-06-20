@@ -17754,56 +17754,10 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsAlwaysCollapsing smoke-test 1`
                     </svg>
                   </div>
                   <div class="styled__TransitAlertBody-sc-1q8npbl-73 XSXTu">
-                    The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
-                  </div>
-                  <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
-                    Effective as of 4:01 PM, Tomorrow
-                    <a href="http://trimet.org/alerts/"
-                       target="_blank"
-                       class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
-                    >
-                      <svg viewbox="0 0 512 512"
-                           height="10"
-                           aria-hidden="true"
-                           focusable="false"
-                           fill="currentColor"
-                           xmlns="http://www.w3.org/2000/svg"
-                           class="StyledIconBase-ea9ulj-0 hPhvO"
-                      >
-                        <path fill="currentColor"
-                              d="M432 320h-32a16 16 0 0 0-16 16v112H64V128h144a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V336a16 16 0 0 0-16-16zM488 0H360c-21.37 0-32.05 25.91-17 41l35.73 35.73L135 320.37a24 24 0 0 0 0 34L157.67 377a24 24 0 0 0 34 0l243.61-243.68L471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z"
-                        >
-                        </path>
-                      </svg>
-                      See alert on TriMet website
-                      <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw">
-                        (Opens new window)
-                      </span>
-                    </a>
-                  </div>
-                </li>
-                <li class="styled__TransitAlert-sc-1q8npbl-71 dCIwGA">
-                  <div class="styled__TransitAlertIconContainer-sc-1q8npbl-76 Xalv">
-                    <svg viewbox="0 0 576 512"
-                         height="18"
-                         width="18"
-                         aria-hidden="true"
-                         focusable="false"
-                         fill="currentColor"
-                         xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-ea9ulj-0 hPhvO styled__DefaultAlertBodyIcon-sc-1q8npbl-85 cgxUCw"
-                    >
-                      <path fill="currentColor"
-                            d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
-                      >
-                      </path>
-                    </svg>
-                  </div>
-                  <div class="styled__TransitAlertBody-sc-1q8npbl-73 XSXTu">
                     TriMet Customer Service will be unavailable to serve text messages or Twitter responses from 9:00 p.m.- 11:30 p.m. For immediate assistance regarding safety or security concerns, please contact the police via 911.
                   </div>
                   <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
-                    Effective as of 4:01 PM, Today
+                    Effective as of December 15, 2019
                     <a href="http://trimet.org/alerts/"
                        target="_blank"
                        class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
@@ -17849,8 +17803,54 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsAlwaysCollapsing smoke-test 1`
                     The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
                   </div>
                   <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
-                    Effective as of 3:01 PM, Yesterday
+                    Effective as of November 6, 2019
                     <a href="https://news.trimet.org/2019/11/next-up-for-elevator-improvements-sunset-transit-center-park-ride/"
+                       target="_blank"
+                       class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           height="10"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO"
+                      >
+                        <path fill="currentColor"
+                              d="M432 320h-32a16 16 0 0 0-16 16v112H64V128h144a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V336a16 16 0 0 0-16-16zM488 0H360c-21.37 0-32.05 25.91-17 41l35.73 35.73L135 320.37a24 24 0 0 0 0 34L157.67 377a24 24 0 0 0 34 0l243.61-243.68L471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z"
+                        >
+                        </path>
+                      </svg>
+                      See alert on TriMet website
+                      <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw">
+                        (Opens new window)
+                      </span>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__TransitAlert-sc-1q8npbl-71 dCIwGA">
+                  <div class="styled__TransitAlertIconContainer-sc-1q8npbl-76 Xalv">
+                    <svg viewbox="0 0 576 512"
+                         height="18"
+                         width="18"
+                         aria-hidden="true"
+                         focusable="false"
+                         fill="currentColor"
+                         xmlns="http://www.w3.org/2000/svg"
+                         class="StyledIconBase-ea9ulj-0 hPhvO styled__DefaultAlertBodyIcon-sc-1q8npbl-85 cgxUCw"
+                    >
+                      <path fill="currentColor"
+                            d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+                      >
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__TransitAlertBody-sc-1q8npbl-73 XSXTu">
+                    The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
+                  </div>
+                  <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
+                    Effective as of November 3, 2019
+                    <a href="http://trimet.org/alerts/"
                        target="_blank"
                        class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
                     >
@@ -18705,56 +18705,10 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsNotAlwaysCollapsing smoke-test
                     </svg>
                   </div>
                   <div class="styled__TransitAlertBody-sc-1q8npbl-73 XSXTu">
-                    The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
-                  </div>
-                  <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
-                    Effective as of 4:01 PM, Tomorrow
-                    <a href="http://trimet.org/alerts/"
-                       target="_blank"
-                       class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
-                    >
-                      <svg viewbox="0 0 512 512"
-                           height="10"
-                           aria-hidden="true"
-                           focusable="false"
-                           fill="currentColor"
-                           xmlns="http://www.w3.org/2000/svg"
-                           class="StyledIconBase-ea9ulj-0 hPhvO"
-                      >
-                        <path fill="currentColor"
-                              d="M432 320h-32a16 16 0 0 0-16 16v112H64V128h144a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V336a16 16 0 0 0-16-16zM488 0H360c-21.37 0-32.05 25.91-17 41l35.73 35.73L135 320.37a24 24 0 0 0 0 34L157.67 377a24 24 0 0 0 34 0l243.61-243.68L471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z"
-                        >
-                        </path>
-                      </svg>
-                      See alert on TriMet website
-                      <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw">
-                        (Opens new window)
-                      </span>
-                    </a>
-                  </div>
-                </li>
-                <li class="styled__TransitAlert-sc-1q8npbl-71 dCIwGA">
-                  <div class="styled__TransitAlertIconContainer-sc-1q8npbl-76 Xalv">
-                    <svg viewbox="0 0 576 512"
-                         height="18"
-                         width="18"
-                         aria-hidden="true"
-                         focusable="false"
-                         fill="currentColor"
-                         xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-ea9ulj-0 hPhvO styled__DefaultAlertBodyIcon-sc-1q8npbl-85 cgxUCw"
-                    >
-                      <path fill="currentColor"
-                            d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
-                      >
-                      </path>
-                    </svg>
-                  </div>
-                  <div class="styled__TransitAlertBody-sc-1q8npbl-73 XSXTu">
                     TriMet Customer Service will be unavailable to serve text messages or Twitter responses from 9:00 p.m.- 11:30 p.m. For immediate assistance regarding safety or security concerns, please contact the police via 911.
                   </div>
                   <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
-                    Effective as of 4:01 PM, Today
+                    Effective as of December 15, 2019
                     <a href="http://trimet.org/alerts/"
                        target="_blank"
                        class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
@@ -18800,8 +18754,54 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsNotAlwaysCollapsing smoke-test
                     The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
                   </div>
                   <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
-                    Effective as of 3:01 PM, Yesterday
+                    Effective as of November 6, 2019
                     <a href="https://news.trimet.org/2019/11/next-up-for-elevator-improvements-sunset-transit-center-park-ride/"
+                       target="_blank"
+                       class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           height="10"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO"
+                      >
+                        <path fill="currentColor"
+                              d="M432 320h-32a16 16 0 0 0-16 16v112H64V128h144a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V336a16 16 0 0 0-16-16zM488 0H360c-21.37 0-32.05 25.91-17 41l35.73 35.73L135 320.37a24 24 0 0 0 0 34L157.67 377a24 24 0 0 0 34 0l243.61-243.68L471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z"
+                        >
+                        </path>
+                      </svg>
+                      See alert on TriMet website
+                      <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw">
+                        (Opens new window)
+                      </span>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__TransitAlert-sc-1q8npbl-71 dCIwGA">
+                  <div class="styled__TransitAlertIconContainer-sc-1q8npbl-76 Xalv">
+                    <svg viewbox="0 0 576 512"
+                         height="18"
+                         width="18"
+                         aria-hidden="true"
+                         focusable="false"
+                         fill="currentColor"
+                         xmlns="http://www.w3.org/2000/svg"
+                         class="StyledIconBase-ea9ulj-0 hPhvO styled__DefaultAlertBodyIcon-sc-1q8npbl-85 cgxUCw"
+                    >
+                      <path fill="currentColor"
+                            d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+                      >
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__TransitAlertBody-sc-1q8npbl-73 XSXTu">
+                    The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
+                  </div>
+                  <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
+                    Effective as of November 3, 2019
+                    <a href="http://trimet.org/alerts/"
                        target="_blank"
                        class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
                     >
@@ -19656,56 +19656,10 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsWithoutCollapsingProp smoke-te
                     </svg>
                   </div>
                   <div class="styled__TransitAlertBody-sc-1q8npbl-73 XSXTu">
-                    The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
-                  </div>
-                  <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
-                    Effective as of 4:01 PM, Tomorrow
-                    <a href="http://trimet.org/alerts/"
-                       target="_blank"
-                       class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
-                    >
-                      <svg viewbox="0 0 512 512"
-                           height="10"
-                           aria-hidden="true"
-                           focusable="false"
-                           fill="currentColor"
-                           xmlns="http://www.w3.org/2000/svg"
-                           class="StyledIconBase-ea9ulj-0 hPhvO"
-                      >
-                        <path fill="currentColor"
-                              d="M432 320h-32a16 16 0 0 0-16 16v112H64V128h144a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V336a16 16 0 0 0-16-16zM488 0H360c-21.37 0-32.05 25.91-17 41l35.73 35.73L135 320.37a24 24 0 0 0 0 34L157.67 377a24 24 0 0 0 34 0l243.61-243.68L471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z"
-                        >
-                        </path>
-                      </svg>
-                      See alert on TriMet website
-                      <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw">
-                        (Opens new window)
-                      </span>
-                    </a>
-                  </div>
-                </li>
-                <li class="styled__TransitAlert-sc-1q8npbl-71 dCIwGA">
-                  <div class="styled__TransitAlertIconContainer-sc-1q8npbl-76 Xalv">
-                    <svg viewbox="0 0 576 512"
-                         height="18"
-                         width="18"
-                         aria-hidden="true"
-                         focusable="false"
-                         fill="currentColor"
-                         xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-ea9ulj-0 hPhvO styled__DefaultAlertBodyIcon-sc-1q8npbl-85 cgxUCw"
-                    >
-                      <path fill="currentColor"
-                            d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
-                      >
-                      </path>
-                    </svg>
-                  </div>
-                  <div class="styled__TransitAlertBody-sc-1q8npbl-73 XSXTu">
                     TriMet Customer Service will be unavailable to serve text messages or Twitter responses from 9:00 p.m.- 11:30 p.m. For immediate assistance regarding safety or security concerns, please contact the police via 911.
                   </div>
                   <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
-                    Effective as of 4:01 PM, Today
+                    Effective as of December 15, 2019
                     <a href="http://trimet.org/alerts/"
                        target="_blank"
                        class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
@@ -19751,8 +19705,54 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsWithoutCollapsingProp smoke-te
                     The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
                   </div>
                   <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
-                    Effective as of 3:01 PM, Yesterday
+                    Effective as of November 6, 2019
                     <a href="https://news.trimet.org/2019/11/next-up-for-elevator-improvements-sunset-transit-center-park-ride/"
+                       target="_blank"
+                       class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           height="10"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO"
+                      >
+                        <path fill="currentColor"
+                              d="M432 320h-32a16 16 0 0 0-16 16v112H64V128h144a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V336a16 16 0 0 0-16-16zM488 0H360c-21.37 0-32.05 25.91-17 41l35.73 35.73L135 320.37a24 24 0 0 0 0 34L157.67 377a24 24 0 0 0 34 0l243.61-243.68L471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z"
+                        >
+                        </path>
+                      </svg>
+                      See alert on TriMet website
+                      <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw">
+                        (Opens new window)
+                      </span>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__TransitAlert-sc-1q8npbl-71 dCIwGA">
+                  <div class="styled__TransitAlertIconContainer-sc-1q8npbl-76 Xalv">
+                    <svg viewbox="0 0 576 512"
+                         height="18"
+                         width="18"
+                         aria-hidden="true"
+                         focusable="false"
+                         fill="currentColor"
+                         xmlns="http://www.w3.org/2000/svg"
+                         class="StyledIconBase-ea9ulj-0 hPhvO styled__DefaultAlertBodyIcon-sc-1q8npbl-85 cgxUCw"
+                    >
+                      <path fill="currentColor"
+                            d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+                      >
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__TransitAlertBody-sc-1q8npbl-73 XSXTu">
+                    The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
+                  </div>
+                  <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
+                    Effective as of November 3, 2019
+                    <a href="http://trimet.org/alerts/"
                        target="_blank"
                        class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
                     >
@@ -30724,56 +30724,10 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItinerary smoke-test 1`] =
                     </svg>
                   </div>
                   <div class="styled__TransitAlertBody-sc-1q8npbl-73 XSXTu">
-                    The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
-                  </div>
-                  <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
-                    Effective as of 4:01 PM, Tomorrow
-                    <a href="http://trimet.org/alerts/"
-                       target="_blank"
-                       class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
-                    >
-                      <svg viewbox="0 0 512 512"
-                           height="10"
-                           aria-hidden="true"
-                           focusable="false"
-                           fill="currentColor"
-                           xmlns="http://www.w3.org/2000/svg"
-                           class="StyledIconBase-ea9ulj-0 hPhvO"
-                      >
-                        <path fill="currentColor"
-                              d="M432 320h-32a16 16 0 0 0-16 16v112H64V128h144a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V336a16 16 0 0 0-16-16zM488 0H360c-21.37 0-32.05 25.91-17 41l35.73 35.73L135 320.37a24 24 0 0 0 0 34L157.67 377a24 24 0 0 0 34 0l243.61-243.68L471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z"
-                        >
-                        </path>
-                      </svg>
-                      See alert on TriMet website
-                      <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw">
-                        (Opens new window)
-                      </span>
-                    </a>
-                  </div>
-                </li>
-                <li class="styled__TransitAlert-sc-1q8npbl-71 dCIwGA">
-                  <div class="styled__TransitAlertIconContainer-sc-1q8npbl-76 Xalv">
-                    <svg viewbox="0 0 576 512"
-                         height="18"
-                         width="18"
-                         aria-hidden="true"
-                         focusable="false"
-                         fill="currentColor"
-                         xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-ea9ulj-0 hPhvO styled__DefaultAlertBodyIcon-sc-1q8npbl-85 cgxUCw"
-                    >
-                      <path fill="currentColor"
-                            d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
-                      >
-                      </path>
-                    </svg>
-                  </div>
-                  <div class="styled__TransitAlertBody-sc-1q8npbl-73 XSXTu">
                     TriMet Customer Service will be unavailable to serve text messages or Twitter responses from 9:00 p.m.- 11:30 p.m. For immediate assistance regarding safety or security concerns, please contact the police via 911.
                   </div>
                   <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
-                    Effective as of 4:01 PM, Today
+                    Effective as of December 15, 2019
                     <a href="http://trimet.org/alerts/"
                        target="_blank"
                        class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
@@ -30819,8 +30773,54 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItinerary smoke-test 1`] =
                     The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
                   </div>
                   <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
-                    Effective as of 3:01 PM, Yesterday
+                    Effective as of November 6, 2019
                     <a href="https://news.trimet.org/2019/11/next-up-for-elevator-improvements-sunset-transit-center-park-ride/"
+                       target="_blank"
+                       class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           height="10"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO"
+                      >
+                        <path fill="currentColor"
+                              d="M432 320h-32a16 16 0 0 0-16 16v112H64V128h144a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V336a16 16 0 0 0-16-16zM488 0H360c-21.37 0-32.05 25.91-17 41l35.73 35.73L135 320.37a24 24 0 0 0 0 34L157.67 377a24 24 0 0 0 34 0l243.61-243.68L471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z"
+                        >
+                        </path>
+                      </svg>
+                      See alert on TriMet website
+                      <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw">
+                        (Opens new window)
+                      </span>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__TransitAlert-sc-1q8npbl-71 dCIwGA">
+                  <div class="styled__TransitAlertIconContainer-sc-1q8npbl-76 Xalv">
+                    <svg viewbox="0 0 576 512"
+                         height="18"
+                         width="18"
+                         aria-hidden="true"
+                         focusable="false"
+                         fill="currentColor"
+                         xmlns="http://www.w3.org/2000/svg"
+                         class="StyledIconBase-ea9ulj-0 hPhvO styled__DefaultAlertBodyIcon-sc-1q8npbl-85 cgxUCw"
+                    >
+                      <path fill="currentColor"
+                            d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+                      >
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__TransitAlertBody-sc-1q8npbl-73 XSXTu">
+                    The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
+                  </div>
+                  <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
+                    Effective as of November 3, 2019
+                    <a href="http://trimet.org/alerts/"
                        target="_blank"
                        class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
                     >
