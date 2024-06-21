@@ -7162,6 +7162,7 @@ exports[`Storyshots LocationField/Desktop Context Slow Geocoder 1`] = `
     inputPlaceholder="Select from location"
     locationType="from"
     onLocationSelected={[Function]}
+    showSecondaryLabels={false}
   />
 </IntlProvider>
 `;
