@@ -10,7 +10,7 @@ type Props = {
 };
 
 export const NavbarButton = styled.button`
-  background: transparent;
+  background: orange;
   border: none;
   color: white;
   display: block;
