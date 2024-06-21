@@ -1,9 +1,12 @@
 import styled from "styled-components";
 import React, { useCallback } from "react";
 import { ModeButtonDefinition } from "@opentripplanner/types";
+import colors from "@opentripplanner/building-blocks";
 import AdvancedModeSettingsButton from "./AdvancedModeSettingsButton";
 import { invisibleCss } from ".";
 import { QueryParamChangeEvent } from "../types";
+
+const { grey } = colors;
 
 const SubsettingsContainer = styled.fieldset`
   border: none;
@@ -26,13 +29,14 @@ const SubsettingsContainer = styled.fieldset`
     border-radius: 0 0 8px 8px;
   }
 
-  div.advanced-submode-container:last-of-type div:last-child {
+  div.advanced-submode-container:last-of-type div.subsettings-container {
     border-radius: 0 0 8px 8px;
+    border-bottom: 1px solid ${grey[300]};
   }
 `;
 
 interface Props {
-  accentColor: string;
+  accentColor?: string;
   fillModeIcons: boolean | undefined;
   label: string;
   modeButtons: ModeButtonDefinition[];
