@@ -81,13 +81,15 @@ const MetroModeSubsettingsComponent = ({
   };
 
   return (
-    <Core.AdvancedModeSubsettingsContainer
-      fillModeIcons={fillModeIcons}
-      label="Select a transit mode"
-      modeButtons={processedModeButtons}
-      onSettingsUpdate={setModeSettingValueAction}
-      onToggleModeButton={toggleModeButtonAction}
-    />
+    <div style={{ maxWidth: "500px" }}>
+      <Core.AdvancedModeSubsettingsContainer
+        fillModeIcons={fillModeIcons}
+        label="Select a transit mode"
+        modeButtons={processedModeButtons}
+        onSettingsUpdate={setModeSettingValueAction}
+        onToggleModeButton={toggleModeButtonAction}
+      />
+    </div>
   );
 };
 

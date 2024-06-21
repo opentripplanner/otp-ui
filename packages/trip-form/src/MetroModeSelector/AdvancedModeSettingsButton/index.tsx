@@ -27,7 +27,7 @@ const StyledModeSettingsButton = styled.div<{
   & > label {
     align-items: center;
     background-color: #fff;
-    border: 1px solid ${props => props.accentColor};
+    border: 2px solid ${props => props.accentColor};
     border-left-width: 2px;
     border-right-width: 2px;
     color: ${props => props.accentColor};
@@ -40,6 +40,7 @@ const StyledModeSettingsButton = styled.div<{
     height: 51px;
     justify-items: center;
     margin-bottom: 0;
+    margin-top: -2px;
     padding: 0 10px;
   }
 
@@ -114,8 +115,8 @@ const AdvancedModeSettingsButton = ({
         </label>
       </StyledModeSettingsButton>
       {modeButton.modeSettings.length > 0 && (
-        <AnimateHeight duration={500} height={modeButton.enabled ? "auto" : 0}>
-          <StyledSettingsContainer>
+        <AnimateHeight duration={300} height={modeButton.enabled ? "auto" : 0}>
+          <StyledSettingsContainer className="subsettings-container">
             <SubSettingsPane
               onSettingUpdate={onSettingsUpdate}
               modeButton={modeButton}
