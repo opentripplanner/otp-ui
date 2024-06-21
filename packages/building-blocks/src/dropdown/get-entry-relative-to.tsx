@@ -1,6 +1,7 @@
 /**
  * Helper method to find the element within the app menu at the given offset
  * (e.g. previous or next) relative to the specified element.
+ * TODO: this is copied from otp-rr. extract to core-utils?
  *
  * @param {string} query  - Argument that gets passed to document.querySelectorAll
  * @param {HTMLElement} element - Specified element (e.target)

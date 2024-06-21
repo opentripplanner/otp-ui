@@ -9,9 +9,9 @@ import React, {
 
 import styled from "styled-components";
 import getEntryRelativeTo from "./get-entry-relative-to";
-import { NavbarButton } from "./nav-item";
+import grey from "../colors/grey";
 
-const DARK_TEXT_GREY = "#FFA500";
+const DARK_TEXT_GREY = "#333";
 
 interface Props extends HTMLAttributes<HTMLElement> {
   id: string;
@@ -22,7 +22,30 @@ interface Props extends HTMLAttributes<HTMLElement> {
   pullRight?: boolean;
 }
 
-const DropdownButton = styled(NavbarButton)``;
+const DropdownButton = styled.button`
+  background: transparent;
+  border: none;
+  color: white;
+  display: block;
+  float: right;
+  line-height: 20px;
+  padding: 15px;
+  transition: all 0.1s ease-in-out;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+
+  &:hover,
+  &[aria-expanded="true"] {
+    background: rgba(0, 0, 0, 0.05);
+    color: ${grey[50]};
+    cursor: pointer;
+  }
+  &.active {
+    background: rgba(0, 0, 0, 0.05);
+  }
+`;
 
 const DropdownMenu = styled.ul`
   background-clip: padding-box;
