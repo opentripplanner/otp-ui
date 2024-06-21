@@ -12,6 +12,7 @@ const options = [
 const Container = styled.span`
   position: relative;
   display: inline-block;
+  background: blue;
 `;
 
 export default {
