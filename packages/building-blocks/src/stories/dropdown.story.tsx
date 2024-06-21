@@ -26,7 +26,7 @@ export const DropdownWithLabel = (): React.ReactElement => (
       label="Dropdown with label"
       listLabel="Dropdown menu"
       name="Dropdown with label"
-      style={{ display: "block ruby" }}
+      style={{ display: "block ruby", marginLeft: "10px" }}
     >
       {options.map(option => (
         <li key={option.value} value={option.value}>
