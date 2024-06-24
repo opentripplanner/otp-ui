@@ -56,14 +56,14 @@ export default {
       control: "boolean",
       description: "Toggle to show or hide route arrows on the map"
     },
-    colorOverride: {
+    accessLegColorOverride: {
       control: "color",
       description: "Override the color of the route"
     }
   },
   args: {
     showRouteArrows: false,
-    colorOverride: null,
+    accessLegColorOverride: null,
     visible: true
   }
 };

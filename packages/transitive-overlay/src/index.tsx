@@ -89,7 +89,7 @@ const accessLegFilter = [
 
 type Props = {
   activeLeg?: Leg;
-  colorOverride?: string;
+  accessLegColorOverride?: string;
   showRouteArrows?: boolean;
   transitiveData?: TransitiveData;
 };
@@ -103,8 +103,7 @@ const images = [
 
 const TransitiveCanvasOverlay = ({
   activeLeg,
-  colorOverride,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  accessLegColorOverride,
   showRouteArrows,
   transitiveData
 }: Props): JSX.Element => {
@@ -177,7 +176,9 @@ const TransitiveCanvasOverlay = ({
                       properties: {
                         type: "street-edge",
                         color:
-                          colorOverride || modeColorMap[segment.type] || "#008",
+                          accessLegColorOverride ||
+                          modeColorMap[segment.type] ||
+                          "#008",
                         mode: segment.type
                       },
                       geometry: segment.arc ? drawArc(straight) : straight
