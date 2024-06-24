@@ -13,7 +13,7 @@ import grey from "../colors/grey";
 
 const DARK_TEXT_GREY = "#333";
 
-interface Props extends HTMLAttributes<HTMLElement> {
+export interface Props extends HTMLAttributes<HTMLElement> {
   id: string;
   label?: string;
   listLabel?: string;
