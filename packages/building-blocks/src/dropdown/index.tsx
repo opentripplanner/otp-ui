@@ -17,37 +17,45 @@ export interface Props extends HTMLAttributes<HTMLElement> {
   id: string;
   label?: string;
   listLabel?: string;
+  isList?: boolean;
   name?: JSX.Element | string;
   nav?: boolean;
   pullRight?: boolean;
 }
 
 const DropdownButton = styled.button`
-  background: transparent;
-  border: none;
-  color: white;
+  background: #fff;
+  border: 1px solid black;
+  color: inherit;
+  border-radius: 5px;
+  padding: 3px 7px;
   display: block;
   float: right;
   line-height: 20px;
-  padding: 15px;
   transition: all 0.1s ease-in-out;
 
-  @media (max-width: 768px) {
-    padding: 10px;
+  span.caret {
+    color: inherit;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 5px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
   }
 
   &:hover,
   &[aria-expanded="true"] {
-    background: rgba(0, 0, 0, 0.05);
-    color: ${grey[50]};
+    background: ${grey[50]};
+    color: black;
     cursor: pointer;
-  }
-  &.active {
-    background: rgba(0, 0, 0, 0.05);
   }
 `;
 
-const DropdownMenu = styled.ul`
+const DropdownMenu = styled.div`
   background-clip: padding-box;
   background-color: #fff;
   border-radius: 4px;
@@ -59,7 +67,7 @@ const DropdownMenu = styled.ul`
   min-width: 160px;
   padding: 5px 0;
   position: absolute;
-  right: 0;
+  left: 0;
   top: 100%;
   width: 100%;
   z-index: 1000;
@@ -69,23 +77,23 @@ const DropdownMenu = styled.ul`
     padding: 0;
   }
   a,
-  button,
-  li.header {
+  button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
     padding: 5px 15px;
     text-align: start;
     width: 100%;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
   }
-  a,
-  button {
-    cursor: pointer;
-  }
-  li.header {
-    cursor: default;
-    font-weight: 600;
-  }
-  li:not(.header):hover {
-    background: rgba(0, 0, 0, 0.1);
-  }
+`;
+
+const DropdownWrapper = styled.span<{ pullRight?: boolean }>`
+  float: ${props => (props.pullRight ? "right" : "left")};
+  position: relative;
 `;
 
 /**
@@ -99,6 +107,7 @@ export const Dropdown = ({
   id,
   label,
   listLabel,
+  isList,
   name,
   pullRight,
   style
@@ -159,13 +168,13 @@ export const Dropdown = ({
   );
 
   return (
-    <span
+    <DropdownWrapper
       className={className}
       id={`${id}-wrapper`}
       onKeyDown={handleKeyDown}
+      pullRight={pullRight}
       ref={containerRef}
       role="presentation"
-      style={{ float: pullRight ? "right" : "left" }}
     >
       <DropdownButton
         // Only set aria-controls when the dropdown is open
@@ -186,31 +195,17 @@ export const Dropdown = ({
       </DropdownButton>
       {open && (
         <DropdownMenu
+          as={isList && "ul"}
           aria-label={listLabel}
           aria-labelledby={listLabel ? undefined : `${id}-label`}
           id={id}
           onClick={toggleOpen}
-          role="list"
+          role={isList && "list"}
           tabIndex={-1}
         >
           {children}
         </DropdownMenu>
       )}
-    </span>
+    </DropdownWrapper>
   );
 };
-
-export const SortResultsDropdown = styled(Dropdown)`
-  position: relative;
-
-  ${DropdownButton} {
-    background: #fff;
-    border-radius: 5px;
-    color: inherit;
-    padding: 3px 7px;
-
-    span.caret {
-      color: inherit;
-    }
-  }
-`;
