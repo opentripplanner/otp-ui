@@ -17,6 +17,8 @@ import { drawArc, getFromToAnchors, itineraryToTransitive } from "./util";
 
 export { itineraryToTransitive };
 
+const routeArrow = require("./images/route_arrow.png");
+
 // TODO: BETTER COLORS
 const modeColorMap = {
   CAR: "#888",
@@ -87,14 +89,48 @@ const accessLegFilter = [
 
 type Props = {
   activeLeg?: Leg;
+  accessLegColorOverride?: string;
+  showRouteArrows?: boolean;
   transitiveData?: TransitiveData;
 };
 
+const images = [
+  {
+    id: "arrow-icon",
+    url: routeArrow
+  }
+];
+
 const TransitiveCanvasOverlay = ({
   activeLeg,
+  accessLegColorOverride,
+  showRouteArrows,
   transitiveData
 }: Props): JSX.Element => {
   const { current: map } = useMap();
+  useEffect(() => {
+    if (!map) return;
+    const loadImages = () => {
+      images.forEach(img => {
+        map.loadImage(img.url, (error, image) => {
+          if (error) {
+            // eslint-disable-next-line no-console
+            console.error(`Error loading image ${img.id}:`, error);
+            return;
+          }
+          if (!map.hasImage(img.id)) {
+            map.addImage(img.id, image, { sdf: true });
+          }
+        });
+      });
+    };
+
+    if (map) {
+      loadImages();
+    } else {
+      map.on("load", loadImages);
+    }
+  }, [map, images]);
 
   const geojson: GeoJSON.FeatureCollection<
     GeoJSON.Geometry,
@@ -139,7 +175,10 @@ const TransitiveCanvasOverlay = ({
                       type: "Feature",
                       properties: {
                         type: "street-edge",
-                        color: modeColorMap[segment.type] || "#008",
+                        color:
+                          accessLegColorOverride ||
+                          modeColorMap[segment.type] ||
+                          "#008",
                         mode: segment.type
                       },
                       geometry: segment.arc ? drawArc(straight) : straight
@@ -269,7 +308,25 @@ const TransitiveCanvasOverlay = ({
         }}
         type="line"
       />
-
+      {showRouteArrows && (
+        <Layer
+          id="route-arrows"
+          layout={{
+            "symbol-placement": "line",
+            "icon-image": "arrow-icon",
+            "icon-size": 0.1,
+            "symbol-spacing": 10,
+            "icon-allow-overlap": true,
+            "icon-ignore-placement": true,
+            "icon-offset": [0, 8000]
+          }}
+          paint={{
+            "icon-color": ["get", "color"],
+            "icon-opacity": 0.8
+          }}
+          type="symbol"
+        />
+      )}
       {/* Render access leg places then transit stops so that they appear sandwiched between text and lines,
           with transit stops appearing above access leg places. */}
       <Layer
