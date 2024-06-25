@@ -9,7 +9,8 @@
     "packages/*"
   ],
   "resolutions": {
-    "react": "17.0.2"
+    "react": "17.0.2",
+    "react-animate-height": "3.0.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.10",

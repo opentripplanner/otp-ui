@@ -21,7 +21,7 @@ import styled, { css } from "styled-components";
 import SubSettingsPane, { defaultMessages } from "./SubSettingsPane";
 import generateModeButtonLabel from "./i18n";
 
-const invisibleCss = css`
+export const invisibleCss = css`
   clip: rect(0, 0, 0, 0);
   height: 0;
   overflow: hidden;
