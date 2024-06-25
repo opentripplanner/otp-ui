@@ -3,8 +3,7 @@ import React from "react";
 import { Bike, Bus, Car, Rail, Walk, Metro } from "./septa";
 
 /**
- * These icons are not an entire set and are only used in the 2021
- * custom TriMet mode selector component
+ * These icons are not an entire set, but contain everything needed in southeastern Pennsylvania
  */
 function SeptaModeIcon({ mode, ...props }) {
   if (!mode) return null;
