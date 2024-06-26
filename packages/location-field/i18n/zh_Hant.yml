@@ -1,1 +1,18 @@
-{}
+otpUi:
+  LocationField:
+    clearLocation: 清除位置
+    currentLocationUnavailable: 目前的位置無法使用
+    fetchingLocation: 正在擷取位置……
+    noResults: 找不到符合
+    stationCount: '{count}車站'
+    stopCount: '{count}車站'
+    useCurrentLocation: 使用目前位置
+    workLocation: 工作
+    beginTypingPrompt: 開始輸入以搜尋位置
+    homeLocation: 住家
+    myPlaces: 我的地點
+    nearby: 附近的車站
+    other: 其他
+    recentlySearched: 最近搜尋過
+    stations: 車站
+    stops: 車站
