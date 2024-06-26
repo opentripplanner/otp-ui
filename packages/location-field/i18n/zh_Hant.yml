@@ -16,3 +16,10 @@ otpUi:
     recentlySearched: 最近搜尋過
     stations: 車站
     stops: 車站
+    fetchingSuggestions: 正在擷取建議…
+    howToAccessResults: 使用向下箭頭鍵瀏覽結果清單。若要選取結果，請使用Enter鍵。
+    otherCount: '{count}興趣點'
+    parenthesisFormat: '{main} ({detail})'
+    resultsFound: 為 "{input}" 找到 {results}。
+    suggestedLocations: 建議地點
+    suggestedLocationsLong: 顯示/不顯示建議位置清單
