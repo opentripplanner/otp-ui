@@ -1,3 +1,4 @@
+// stylelint-disable declaration-block-no-shorthand-property-overrides
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore FIXME: Create TypeScript types for the icons package.
 import { Map } from "@opentripplanner/icons";
@@ -454,6 +455,7 @@ export const MapIcon = styled(Map).attrs(props => ({
 export const PlaceDetails = styled.div`
   grid-row-start: 2;
   grid-column-start: 3;
+  grid-area: instructions;
 `;
 
 export const PlaceHeader = styled.div`
