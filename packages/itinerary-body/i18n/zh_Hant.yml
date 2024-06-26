@@ -9,6 +9,7 @@ otpUi:
         escooter: 電動滑板車
       walkVehicle: 沿著{place}牽車步行
       resumeRentalRide: 繼續使用租賃
+      pickupRental: 領取{company} {vehicleType} {vehicleName}
     TncLeg:
       bookRide: 預約乘車
       waitForPickup: '等待{minutes, plural, =0 {} other { #分鐘}}由{company}接車'
@@ -27,6 +28,8 @@ otpUi:
       hardRight: 向右急轉
       uTurnLeft: 左邊迴轉
       uTurnRight: 右邊迴轉
+      enterStation: 輸入車站
+      exitStation: 退出車站
     stepDepart: 往 {heading} 在 {street}
     stepHeading:
       west: 西
@@ -62,6 +65,8 @@ otpUi:
     stepGeneric: '{step} 在 {street}'
     stepElevator: 搭乘電梯到{street}
     unnamedPath: 未命名路線
+    stepFollowSigns: 跟著指示牌前往 {street}
+    stepStation: '{step} 在 {street}'
   ItineraryBody:
     flexAdvanceNotice: ' 至少提前{leadDays}天'
     flexCallNumber: 撥打{phoneNumber}
@@ -77,6 +82,12 @@ otpUi:
     flexPickupMessage: 若要使用此路線，您必須{action}{advanceNotice}.
     flexCallAhead: 撥打事先
     stayOnBoard: 留在{place}車上
+    tripAccessibility:
+      inaccessible: 無法到達
+      likelyAccessible: 可能可以到達
+      unclear: 未知
+      itineraryAccessibility: '此行程的輪椅無障礙設施： '
+      legAccessibility: '此行程路段的輪椅無障礙設施： '
   TransitLegBody:
     AlertsBody:
       today: 今天
@@ -84,10 +95,11 @@ otpUi:
       yesterday: 昨天
       effectiveDate: 自{dateTime, date, long}起生效
       effectiveTimeAndDate: 自{dateTime, time, short}, {day}起生效
+      linkOpensNewWindow: (開啟新視窗)
     fare: 票價：{fare}
     alertsHeader: '{alertCount}則警示'
     fromLocation: 從{location}
-    ride: 搭乘
+    ride: 搭車
     routeDescription: '{routeName}<toPrefix>到</toPrefix>{headsign}'
     tripViewer: 行程檢視器
     typicalWait: 一般等待時間：{waitTime}
@@ -96,3 +108,7 @@ otpUi:
     rideDurationAndStops: '搭乘{duration}{numStops, plural, =1 {} other { / # 站}}'
     stopId: 車站ID {stopId}
     stopIdBasic: ID {stopId}
+    expandDetails: (展開詳細資訊)
+    agencyExternalLink: '{agencyName} (外部連結)'
+    legDetails: 路段詳細資訊
+    zoomToLeg: 縮放至地圖上的路段
