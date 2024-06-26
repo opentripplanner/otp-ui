@@ -1,0 +1,9 @@
+otpUi:
+  EndpointsOverlay:
+    coordinates: '{lat, number, ::.00000}; {lon, number, ::.00000}'
+    clearLocation: 移除{locationType}位置
+    forgetHome: 忘記住家
+    forgetWork: 忘記工作
+    saveAsHome: 儲存為住家
+    saveAsWork: 儲存為工作
+    swapLocation: 變更為{locationType}位置
