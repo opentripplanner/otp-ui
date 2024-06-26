@@ -7,11 +7,8 @@ import React, {
   useState
 } from "react";
 
-import styled from "styled-components";
 import getEntryRelativeTo from "./get-entry-relative-to";
-import grey from "../colors/grey";
-
-const DARK_TEXT_GREY = "#333";
+import { DropdownButton, DropdownMenu, DropdownWrapper } from "./styled";
 
 export interface Props extends HTMLAttributes<HTMLElement> {
   id: string;
@@ -22,79 +19,6 @@ export interface Props extends HTMLAttributes<HTMLElement> {
   nav?: boolean;
   pullRight?: boolean;
 }
-
-const DropdownButton = styled.button`
-  background: #fff;
-  border: 1px solid black;
-  color: inherit;
-  border-radius: 5px;
-  padding: 3px 7px;
-  display: block;
-  float: right;
-  line-height: 20px;
-  transition: all 0.1s ease-in-out;
-
-  span.caret {
-    color: inherit;
-    display: inline-block;
-    width: 0;
-    height: 0;
-    margin-left: 5px;
-    vertical-align: middle;
-    border-top: 4px dashed;
-    border-top: 4px solid;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent;
-  }
-
-  &:hover,
-  &[aria-expanded="true"] {
-    background: ${grey[50]};
-    color: black;
-    cursor: pointer;
-  }
-`;
-
-const DropdownMenu = styled.div`
-  background-clip: padding-box;
-  background-color: #fff;
-  border-radius: 4px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  color: ${DARK_TEXT_GREY};
-  list-style: none;
-  margin: 2px 0 0;
-  min-width: 160px;
-  padding: 5px 0;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  width: 100%;
-  z-index: 1000;
-
-  hr {
-    margin: 0;
-    padding: 0;
-  }
-  a,
-  button {
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    padding: 5px 15px;
-    text-align: start;
-    width: 100%;
-
-    &:hover {
-      background: rgba(0, 0, 0, 0.05);
-    }
-  }
-`;
-
-const DropdownWrapper = styled.span<{ pullRight?: boolean }>`
-  float: ${props => (props.pullRight ? "right" : "left")};
-  position: relative;
-`;
 
 /**
  * Renders a dropdown menu. By default, only a passed "name" is rendered. If clicked,

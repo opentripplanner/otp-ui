@@ -52,11 +52,7 @@ export const DropdownWithLabel = (): React.ReactElement => (
     name="Dropdown with label"
     style={{ display: "block ruby" }}
   >
-    {options.map(option => (
-      <button key={option.value} type="button">
-        {option.label}
-      </button>
-    ))}
+    More content here
   </Dropdown>
 );
 
@@ -71,7 +67,7 @@ export const DropdownWithList = (): React.ReactElement => (
   >
     {options.map(option => (
       <li key={option.value} value={option.value}>
-        {option.label}
+        <button type="button">{option.label}</button>
       </li>
     ))}
   </Dropdown>
