@@ -301,7 +301,9 @@ export const LegDescription = styled.span`
 `;
 
 // additional description added to ClickableLeg for screenreaders
-export const InvisibleAdditionalDetails = styled.span`
+export const InvisibleAdditionalDetails = styled.span.attrs({
+  className: "invisible-additional-details"
+})`
   display: inline-block;
   grid-row-start: 2;
   grid-column-start: 1;
