@@ -29,7 +29,7 @@ export const DropdownButton = styled.button`
   }
 `;
 
-export const DropdownMenu = styled.div`
+export const DropdownMenu = styled.div<{ alignLeft?: boolean }>`
   background-clip: padding-box;
   background-color: #fff;
   border-radius: 4px;
@@ -42,6 +42,7 @@ export const DropdownMenu = styled.div`
   padding: 5px 0;
   position: absolute;
   right: 0;
+  ${props => (props.alignLeft ? "left: 0;" : "right: 0;")}
   top: 100%;
   width: 100%;
   z-index: 1000;

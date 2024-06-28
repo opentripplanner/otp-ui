@@ -71,6 +71,23 @@ export const DropdownWithList = (): React.ReactElement => (
   </Dropdown>
 );
 
+export const DropdownWithListAlignMenuLeft = (): React.ReactElement => (
+  <Dropdown
+    id="dropdown-with-ul"
+    isList
+    label="Dropdown with ul"
+    listLabel="Dropdown menu"
+    AlignMenuLeft
+    text="Dropdown with ul"
+  >
+    {options.map(option => (
+      <li key={option.value} value={option.value}>
+        <button type="button">{option.label}</button>
+      </li>
+    ))}
+  </Dropdown>
+);
+
 export const DropdownAsOtprrNavItem = (): React.ReactElement => (
   <NavItemWrapper>
     <Dropdown

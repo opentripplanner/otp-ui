@@ -17,7 +17,7 @@ export interface Props extends HTMLAttributes<HTMLElement> {
   listLabel?: string;
   text?: JSX.Element | string;
   nav?: boolean;
-  pullRight?: boolean;
+  AlignMenuLeft?: boolean;
 }
 
 /**
@@ -33,7 +33,7 @@ export const Dropdown = ({
   label,
   listLabel,
   text,
-  pullRight,
+  AlignMenuLeft,
   buttonStyle
 }: Props): JSX.Element => {
   const [open, setOpen] = useState(false);
@@ -96,7 +96,6 @@ export const Dropdown = ({
       className={className}
       id={`${id}-wrapper`}
       onKeyDown={handleKeyDown}
-      pullRight={pullRight}
       ref={containerRef}
     >
       <DropdownButton
@@ -121,6 +120,7 @@ export const Dropdown = ({
           aria-labelledby={listLabel ? undefined : `${id}-label`}
           id={id}
           onClick={toggleOpen}
+          alignLeft={AlignMenuLeft}
           role={isList && "list"}
           tabIndex={-1}
         >
