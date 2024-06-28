@@ -12,7 +12,6 @@ import { DropdownButton, DropdownMenu, DropdownWrapper } from "./styled";
 
 export interface Props extends HTMLAttributes<HTMLElement> {
   buttonStyle?: React.CSSProperties;
-  id: string;
   isList?: boolean;
   label?: string;
   listLabel?: string;
