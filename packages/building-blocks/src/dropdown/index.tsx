@@ -7,34 +7,35 @@ import React, {
   useState
 } from "react";
 
-import getEntryRelativeTo from "./get-entry-relative-to";
+import { getNextSibling, getPreviousSibling } from "../utils/dom-query";
 import { DropdownButton, DropdownMenu, DropdownWrapper } from "./styled";
 
 export interface Props extends HTMLAttributes<HTMLElement> {
+  buttonStyle?: React.CSSProperties;
   id: string;
+  isList?: boolean;
   label?: string;
   listLabel?: string;
-  isList?: boolean;
-  name?: JSX.Element | string;
+  text?: JSX.Element | string;
   nav?: boolean;
   pullRight?: boolean;
 }
 
 /**
- * Renders a dropdown menu. By default, only a passed "name" is rendered. If clicked,
- * a floating div is rendered below the "name" with list contents inside. Clicking anywhere
+ * Renders a dropdown menu. By default, only a passed "text" is rendered. If clicked,
+ * a floating div is rendered below the "text" with list contents inside. Clicking anywhere
  * outside the floating div will close the dropdown.
  */
 export const Dropdown = ({
   children,
   className,
   id,
+  isList,
   label,
   listLabel,
-  isList,
-  name,
+  text,
   pullRight,
-  style
+  buttonStyle
 }: Props): JSX.Element => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLLIElement>(null);
@@ -68,11 +69,11 @@ export const Dropdown = ({
       switch (e.key) {
         case "ArrowUp":
           e.preventDefault();
-          getEntryRelativeTo(queryId, element, -1)?.focus();
+          getPreviousSibling(queryId, element)?.focus();
           break;
         case "ArrowDown":
           e.preventDefault();
-          getEntryRelativeTo(queryId, element, 1)?.focus();
+          getNextSibling(queryId, element)?.focus();
           break;
         case "Escape":
           setOpen(false);
@@ -98,7 +99,6 @@ export const Dropdown = ({
       onKeyDown={handleKeyDown}
       pullRight={pullRight}
       ref={containerRef}
-      role="presentation"
     >
       <DropdownButton
         // Only set aria-controls when the dropdown is open
@@ -107,14 +107,12 @@ export const Dropdown = ({
         aria-expanded={open}
         aria-haspopup="listbox"
         aria-label={label}
-        className={`${open && "active"}`}
         id={`${id}-label`}
         onClick={toggleOpen}
-        style={style}
-        tabIndex={0}
+        style={buttonStyle}
         title={label}
       >
-        <span>{name}</span>
+        <span>{text}</span>
         <span className="caret" role="presentation" />
       </DropdownButton>
       {open && (

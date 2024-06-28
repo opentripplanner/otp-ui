@@ -11,13 +11,13 @@ const options = [
 ];
 
 const NavItemWrapper = styled.div`
+  align-items: center;
   background: ${blue[900]};
   display: flex;
-  align-items: center;
-  width: 100%;
   min-height: 50px;
   padding: 0 10px;
   position: relative;
+  width: 100%;
 
   .navBarItem {
     position: static;
@@ -49,8 +49,7 @@ export const DropdownWithLabel = (): React.ReactElement => (
     id="dropdown-with-label"
     label="Dropdown with label"
     listLabel="Dropdown menu"
-    name="Dropdown with label"
-    style={{ display: "block ruby" }}
+    text="Dropdown with label"
   >
     More content here
   </Dropdown>
@@ -62,8 +61,7 @@ export const DropdownWithList = (): React.ReactElement => (
     isList
     label="Dropdown with ul"
     listLabel="Dropdown menu"
-    name="Dropdown with ul"
-    style={{ display: "block ruby" }}
+    text="Dropdown with ul"
   >
     {options.map(option => (
       <li key={option.value} value={option.value}>
@@ -81,8 +79,7 @@ export const DropdownAsOtprrNavItem = (): React.ReactElement => (
       isList
       label="Dropdown navbar"
       listLabel="Dropdown wihtin navbar"
-      name="Icon"
-      style={{ display: "block ruby" }}
+      text="Icon"
     >
       {options.map(option => (
         <button key={option.value} type="button">

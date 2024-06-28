@@ -1,31 +1,24 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import grey from "../colors/grey";
-
-const caret = css`
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 4px solid;
-  color: inherit;
-  display: inline-block;
-  height: 0;
-  margin-left: 5px;
-  vertical-align: middle;
-  width: 0;
-`;
 
 export const DropdownButton = styled.button`
   background: #fff;
   border: 1px solid black;
-  color: inherit;
   border-radius: 5px;
-  padding: 3px 7px;
-  display: block;
-  float: right;
-  line-height: 20px;
+  color: inherit;
+  padding: 5px 7px;
   transition: all 0.1s ease-in-out;
 
   span.caret {
-    ${caret}
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid;
+    color: inherit;
+    display: inline-block;
+    height: 0;
+    margin-left: 5px;
+    vertical-align: middle;
+    width: 0;
   }
 
   &:hover,
