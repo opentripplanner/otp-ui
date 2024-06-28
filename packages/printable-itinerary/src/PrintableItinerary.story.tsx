@@ -2,6 +2,7 @@ import { ClassicLegIcon, TriMetLegIcon } from "@opentripplanner/icons";
 import React from "react";
 import styled from "styled-components";
 
+import { Meta } from "@storybook/react";
 import PrintableItinerary from ".";
 import * as PrintableItineraryClasses from "./styled";
 
@@ -31,8 +32,9 @@ const StyledPrintableItinerary = styled(PrintableItinerary)`
 
 export default {
   title: "PrintableItinerary",
-  component: PrintableItinerary
-};
+  component: PrintableItinerary,
+  parameters: { date: new Date("March 10, 2021 10:00:00") }
+} as Meta;
 
 export const WalkOnlyItinerary = () => (
   <PrintableItinerary

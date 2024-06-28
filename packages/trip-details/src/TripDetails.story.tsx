@@ -2,8 +2,8 @@ import flatten from "flat";
 import React, { ReactElement } from "react";
 import { FormattedDate } from "react-intl";
 import {
-  ComponentMeta,
   ComponentStory,
+  Meta,
   Parameters,
   StoryContext
 } from "@storybook/react";
@@ -237,6 +237,7 @@ export default {
   },
   component: TripDetails,
   parameters: {
+    date: new Date("March 10, 2021 10:00:00"),
     // Hide all controls
     // (there are no args that the user can interactively change for this component).
     controls: {
@@ -245,7 +246,7 @@ export default {
     }
   },
   title: "TripDetails"
-} as ComponentMeta<typeof TripDetails>;
+} as Meta;
 
 export const WalkOnlyItinerary = makeStory({
   itinerary: walkOnlyItinerary

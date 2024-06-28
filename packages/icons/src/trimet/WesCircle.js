@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgWescircle = ({ title, ...props }) => (
+const WesCircle = ({ title, ...props }) => (
   <svg viewBox="0 0 390 390" {...props}>
     {title ? <title>{title}</title> : null}
     <circle cx={116} cy={251} r={15} />
@@ -13,4 +13,4 @@ const SvgWescircle = ({ title, ...props }) => (
   </svg>
 );
 
-export default SvgWescircle;
+export default WesCircle;

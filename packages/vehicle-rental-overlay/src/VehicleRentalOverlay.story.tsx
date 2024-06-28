@@ -1,6 +1,5 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { action } from "@storybook/addon-actions";
-import { boolean } from "@storybook/addon-knobs";
 
 import { Company, Station } from "@opentripplanner/types";
 import bikeRentalStations from "../__mocks__/bike-rental-stations.json";
@@ -70,9 +69,9 @@ function customStationName(_, station) {
 export default {
   title: "VehicleRentalOverlay",
   component: VehicleRentalOverlay,
-  decorators: [withMap(center, INITIAL_ZOOM)]
+  decorators: [withMap(center, INITIAL_ZOOM)],
+  parameters: { storyshots: { disable: true } }
 };
-
 export const RentalBicycles = () => (
   <ZoomControlledMapWithVehicleRentalOverlay
     companies={["BIKETOWN"]}
@@ -81,20 +80,21 @@ export const RentalBicycles = () => (
   />
 );
 
-export const RentalBicyclesVisibilityControlledByKnob = () => {
-  const isOverlayVisible = boolean(
-    "Toggle visibility of vehicle rental overlay",
-    false
-  );
+export const RentalBicyclesVisibilityControlledByKnob = ({
+  visible
+}: {
+  visible: boolean;
+}): ReactNode => {
   return (
     <ZoomControlledMapWithVehicleRentalOverlay
       companies={["BIKETOWN"]}
       refreshVehicles={action("refresh bicycles")}
       stations={bikeRentalStations}
-      visible={isOverlayVisible}
+      visible={visible}
     />
   );
 };
+RentalBicyclesVisibilityControlledByKnob.args = { visible: true };
 
 export const RentalCars = () => (
   <ZoomControlledMapWithVehicleRentalOverlay

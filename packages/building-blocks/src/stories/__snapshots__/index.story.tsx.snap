@@ -1,0 +1,250 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Building-Blocks/Colors Blue smoke-test 1`] = `
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 bFLnsf">
+  <p>
+    50
+  </p>
+  <p>
+    #E5ECF3
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 fslHeP">
+  <p>
+    100
+  </p>
+  <p>
+    #CCDAE7
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 hYrXqS">
+  <p>
+    200
+  </p>
+  <p>
+    #B2C7DB
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 cwDhpW">
+  <p>
+    300
+  </p>
+  <p>
+    #99B5CF
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 kpjxeq">
+  <p>
+    400
+  </p>
+  <p>
+    #7FA2C2
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 cIdVEx">
+  <p>
+    500
+  </p>
+  <p>
+    #6690B7
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 YgYzo">
+  <p>
+    600
+  </p>
+  <p>
+    #4D7EAB
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 ixMEWR">
+  <p>
+    700
+  </p>
+  <p>
+    #336B9E
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 bwAoty">
+  <p>
+    800
+  </p>
+  <p>
+    #1A5992
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 dqaynR">
+  <p>
+    900
+  </p>
+  <p>
+    #004686
+  </p>
+</div>
+`;
+
+exports[`Building-Blocks/Colors Grey smoke-test 1`] = `
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 fQVZiO">
+  <p>
+    50
+  </p>
+  <p>
+    #ECECEC
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 oxwmZ">
+  <p>
+    100
+  </p>
+  <p>
+    #D9D9D9
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 jueztC">
+  <p>
+    200
+  </p>
+  <p>
+    #C5C5C5
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 ipjnjR">
+  <p>
+    300
+  </p>
+  <p>
+    #B3B3B3
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 KHVkK">
+  <p>
+    400
+  </p>
+  <p>
+    #9F9F9F
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 dtcMei">
+  <p>
+    500
+  </p>
+  <p>
+    #8C8C8C
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 iKIpwf">
+  <p>
+    600
+  </p>
+  <p>
+    #797979
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 foMzhh">
+  <p>
+    700
+  </p>
+  <p>
+    #666666
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 efnWWL">
+  <p>
+    800
+  </p>
+  <p>
+    #535353
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 hKGOgp">
+  <p>
+    900
+  </p>
+  <p>
+    #404040
+  </p>
+</div>
+`;
+
+exports[`Building-Blocks/Colors Red smoke-test 1`] = `
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 eLDsHA">
+  <p>
+    50
+  </p>
+  <p>
+    #F7E7E6
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 bwwaXk">
+  <p>
+    100
+  </p>
+  <p>
+    #EFCFCE
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 jTuSFc">
+  <p>
+    200
+  </p>
+  <p>
+    #E7B6B4
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 lnSWIY">
+  <p>
+    300
+  </p>
+  <p>
+    #DF9E9C
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 jeVJXr">
+  <p>
+    400
+  </p>
+  <p>
+    #D78683
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 dDTLvn">
+  <p>
+    500
+  </p>
+  <p>
+    #CF6E6B
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 jPUfgl">
+  <p>
+    600
+  </p>
+  <p>
+    #C75652
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 jjxBwB">
+  <p>
+    700
+  </p>
+  <p>
+    #BF3E3A
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 gAlgpe">
+  <p>
+    800
+  </p>
+  <p>
+    #B72620
+  </p>
+</div>
+<div class="ColorPalette__ColorBlock-sc-fil65c-0 lewmhT">
+  <p>
+    900
+  </p>
+  <p>
+    #AF0E08
+  </p>
+</div>
+`;

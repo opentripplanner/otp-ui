@@ -14,6 +14,7 @@ import RouteViewerOverlay from ".";
 const PORTLAND = [45.543092, -122.671202];
 const POWDER_SPRINGS = [33.8595, -84.67483];
 const zoom = 11;
+const disableStoryshots = { storyshots: { disable: true } };
 
 // Hide some story args completely.
 const hiddenProp = {
@@ -28,6 +29,7 @@ export default {
   },
   component: RouteViewerOverlay,
   decorators: [withMap(PORTLAND, zoom)],
+  parameters: disableStoryshots,
   title: "RouteViewerOverlay"
 };
 
@@ -64,6 +66,7 @@ export const Default = Template.bind({});
 Default.args = {
   routeData
 };
+Default.parameters = disableStoryshots;
 
 export const WithPathStyling = Template.bind({});
 WithPathStyling.args = {
@@ -73,13 +76,16 @@ WithPathStyling.args = {
   },
   routeData
 };
+WithPathStyling.parameters = disableStoryshots;
 
 export const OTP2RouteOutsideOfInitialView = Template.bind({});
 OTP2RouteOutsideOfInitialView.args = {
   routeData: routeDataOtp2
 };
+OTP2RouteOutsideOfInitialView.parameters = disableStoryshots;
 
 export const WithChangingPath = (): JSX.Element => <WithChangingRoute />;
+WithChangingPath.parameters = disableStoryshots;
 
 export const FlexRoute = Template.bind({});
 FlexRoute.args = {
@@ -102,6 +108,7 @@ FlexRoute.argTypes = {
   clipToPatternStops: { control: "boolean" }
 };
 FlexRoute.decorators = [withMap(POWDER_SPRINGS, zoom)];
+FlexRoute.parameters = disableStoryshots;
 
 export const FlexRoute2 = Template.bind({});
 FlexRoute2.args = {
@@ -124,6 +131,7 @@ FlexRoute2.argTypes = {
   clipToPatternStops: { control: "boolean" }
 };
 FlexRoute2.decorators = [withMap(POWDER_SPRINGS, zoom)];
+FlexRoute2.parameters = disableStoryshots;
 
 export const FlexRoute3 = Template.bind({});
 FlexRoute3.args = {
@@ -143,3 +151,4 @@ FlexRoute3.args = {
   ),
   routeData: flexRouteData3
 };
+FlexRoute3.parameters = disableStoryshots;

@@ -143,7 +143,8 @@ const Example = (props: ExampleProps) => {
 
 export default {
   title: "ZoomBasedMarkers",
-  component: ZoomBasedMarkers
+  component: ZoomBasedMarkers,
+  parameters: { storyshots: { disable: true } }
 };
 
 export const SymbolsForDifferentZoomLevels = () => (

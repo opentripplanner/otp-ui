@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgCar = () => (
+const Car = () => (
   <svg
     version="1.1"
     id="Layer_3"
@@ -24,4 +24,4 @@ const SvgCar = () => (
   </svg>
 );
 
-export default SvgCar;
+export default Car;

@@ -1,6 +1,6 @@
-import coreUtils from "@opentripplanner/core-utils";
+import coreUtils, { SafeSuspense } from "@opentripplanner/core-utils";
 import PropTypes from "prop-types";
-import React, { Suspense } from "react";
+import React from "react";
 
 import { getCompanyIcon as defaultGetCompanyIcon } from "./companies";
 
@@ -10,11 +10,9 @@ const LegIcon = ({ getCompanyIcon, leg, ModeIcon, ...props }) => {
   if (company && typeof getCompanyIcon === "function") {
     const CompanyIcon = getCompanyIcon(company);
     if (CompanyIcon)
-      return (
-        <Suspense fallback={<span>{company}</span>}>
-          <CompanyIcon {...props} />
-        </Suspense>
-      );
+      <SafeSuspense fallback={<span>{company}</span>}>
+        <CompanyIcon {...props} />
+      </SafeSuspense>;
   }
   let iconStr = leg.mode;
   // Do this for P&R, K&R and TNC trips without company icon

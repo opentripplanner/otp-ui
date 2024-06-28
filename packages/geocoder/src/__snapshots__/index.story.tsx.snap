@@ -1,0 +1,306 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Geocoder TestAutocomplete smoke-test 1`] = `
+<div>
+  <div>
+    <label for="otpHost">
+      OTP Host (ending with
+      <pre style="display: inline;">
+        /router/default
+      </pre>
+      )
+    </label>
+    <input id="otpHost">
+  </div>
+  <div>
+    <label for="maxLat">
+      maxLat:
+      <input disabled
+             id="maxLat"
+             type="text"
+             value="48.687912"
+      >
+    </label>
+    <label for="minLat">
+      minLat:
+      <input disabled
+             id="minLat"
+             type="text"
+             value="46.981852"
+      >
+    </label>
+    <label for="maxLon">
+      maxLon:
+      <input disabled
+             id="maxLon"
+             type="text"
+             value="-121.467028"
+      >
+    </label>
+    <label for="minLon">
+      minLon:
+      <input disabled
+             id="minLon"
+             type="text"
+             value="-123.148723"
+      >
+    </label>
+  </div>
+  <div>
+    <label for="lat">
+      lat:
+      <input id="lat"
+             type="text"
+             value="47.67552"
+      >
+    </label>
+    <label for="lng">
+      lng:
+      <input id="lng"
+             type="text"
+             value="-122.31831"
+      >
+    </label>
+  </div>
+  <div>
+    <label for="term">
+      search:
+      <input id="term"
+             type="text"
+             value
+      >
+    </label>
+  </div>
+  <div>
+    <label for="geocodeEarth">
+      Geocode.earth:
+      <input id="geocodeEarth"
+             type="checkbox"
+             checked
+      >
+    </label>
+    <label for="here">
+      Here:
+      <input id="here"
+             type="checkbox"
+             checked
+      >
+    </label>
+    <label for="photon">
+      Photon (Komoot):
+      <input id="photon"
+             type="checkbox"
+             checked
+      >
+    </label>
+    <label for="otp">
+      OTP:
+      <input id="otp"
+             type="checkbox"
+      >
+    </label>
+  </div>
+  <div>
+    <label for="enableFocusPoint">
+      Enable Focus Point:
+      <input id="enableFocusPoint"
+             type="checkbox"
+             checked
+      >
+    </label>
+    <label for="enableBoundary">
+      Enable Boundary Box:
+      <input id="enableBoundary"
+             type="checkbox"
+      >
+    </label>
+  </div>
+  <div>
+  </div>
+  <div>
+    <button type="button">
+      Search
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Geocoder TestReverse smoke-test 1`] = `
+<div>
+  <div>
+    <label for="lat">
+      lat:
+      <input id="lat"
+             type="text"
+             value="47.66427"
+      >
+    </label>
+    <label for="lng">
+      lng:
+      <input id="lng"
+             type="text"
+             value="-122.31388"
+      >
+    </label>
+  </div>
+  <div>
+    <label for="geocodeEarth">
+      Geocode.earth:
+      <input id="geocodeEarth"
+             type="checkbox"
+             checked
+      >
+    </label>
+    <label for="here">
+      Here:
+      <input id="here"
+             type="checkbox"
+             checked
+      >
+    </label>
+    <label for="photon">
+      Photon (Komoot):
+      <input id="photon"
+             type="checkbox"
+             checked
+      >
+    </label>
+    <label for="otp">
+      OTP:
+      <input id="otp"
+             type="checkbox"
+      >
+    </label>
+  </div>
+  <div>
+  </div>
+  <div>
+    <label for="reverseUseFeatureCollection">
+      Return Feature Collection:
+      <input id="reverseUseFeatureCollection"
+             type="checkbox"
+      >
+    </label>
+  </div>
+  <div>
+    <button type="button">
+      Search
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Geocoder TestSearch smoke-test 1`] = `
+<div>
+  <div>
+    <label for="maxLat">
+      maxLat:
+      <input disabled
+             id="maxLat"
+             type="text"
+             value="48.687912"
+      >
+    </label>
+    <label for="minLat">
+      minLat:
+      <input disabled
+             id="minLat"
+             type="text"
+             value="46.981852"
+      >
+    </label>
+    <label for="maxLon">
+      maxLon:
+      <input disabled
+             id="maxLon"
+             type="text"
+             value="-121.467028"
+      >
+    </label>
+    <label for="minLon">
+      minLon:
+      <input disabled
+             id="minLon"
+             type="text"
+             value="-123.148723"
+      >
+    </label>
+  </div>
+  <div>
+    <label for="lat">
+      lat:
+      <input id="lat"
+             type="text"
+             value="47.67552"
+      >
+    </label>
+    <label for="lng">
+      lng:
+      <input id="lng"
+             type="text"
+             value="-122.31831"
+      >
+    </label>
+  </div>
+  <div>
+    <label for="term">
+      search:
+      <input id="term"
+             type="text"
+             value
+      >
+    </label>
+  </div>
+  <div>
+    <label for="geocodeEarth">
+      Geocode.earth:
+      <input id="geocodeEarth"
+             type="checkbox"
+             checked
+      >
+    </label>
+    <label for="here">
+      Here:
+      <input id="here"
+             type="checkbox"
+             checked
+      >
+    </label>
+    <label for="photon">
+      Photon (Komoot):
+      <input id="photon"
+             type="checkbox"
+             checked
+      >
+    </label>
+    <label for="otp">
+      OTP:
+      <input id="otp"
+             type="checkbox"
+      >
+    </label>
+  </div>
+  <div>
+    <label for="enableFocusPoint">
+      Enable Focus Point:
+      <input id="enableFocusPoint"
+             type="checkbox"
+             checked
+      >
+    </label>
+    <label for="enableBoundary">
+      Enable Boundary Box:
+      <input id="enableBoundary"
+             type="checkbox"
+      >
+    </label>
+  </div>
+  <div>
+  </div>
+  <div>
+    <button type="button">
+      Search
+    </button>
+  </div>
+</div>
+`;

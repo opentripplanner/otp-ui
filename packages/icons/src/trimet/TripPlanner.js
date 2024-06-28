@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgTripplanner = ({ title, ...props }) => (
+const TripPlanner = ({ title, ...props }) => (
   <svg viewBox="0 0 390 390" {...props}>
     {title ? <title>{title}</title> : null}
     <path d="M343.2 255.9l-9.8-16.9c-10.9 6.3-22.3 11.6-33.9 15.5l6.4 18.5c12.8-4.4 25.3-10.2 37.3-17.1zM40.7 144.2l11.3 16c12.7-9 26-16.5 39.3-22.4l-7.9-17.9c-14.6 6.4-28.9 14.5-42.7 24.3zM179.5 125l-11.1 16.1c12.9 8.9 21.8 20.8 28.2 37.7l18.3-6.9c-7.8-20.7-19-35.7-35.4-46.9zM224.2 205.5c-1.2-5-2.4-10.2-3.8-15.5l-18.9 5c1.4 4.9 2.5 10 3.7 15 3.2 13.8 6.2 26.7 12 38.5l17.6-8.6c-4.9-9.8-7.7-21.7-10.6-34.4z" />
@@ -8,4 +8,4 @@ const SvgTripplanner = ({ title, ...props }) => (
   </svg>
 );
 
-export default SvgTripplanner;
+export default TripPlanner;

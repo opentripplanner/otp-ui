@@ -1,0 +1,983 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Trip Form Components checkboxSelector smoke-test 1`] = `
+<p>
+  Plain
+</p>
+<div>
+  <div style="display: inline-block; width: 250px;">
+    <input id="id-query-param-MyParam"
+           type="checkbox"
+    >
+    <label for="id-query-param-MyParam"
+           class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+    >
+      Check me.
+    </label>
+  </div>
+</div>
+<p>
+  Styled
+</p>
+<div>
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 eAInfX">
+    <div style="display: inline-block; width: 250px;">
+      <input id="id-query-param-MyParam"
+             type="checkbox"
+      >
+      <label for="id-query-param-MyParam"
+             class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+      >
+        Check me.
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Trip Form Components dateTimeSelector smoke-test 1`] = `
+<p>
+  Plain
+</p>
+<div>
+  <div aria-label="Date/Time Selector"
+       class="styled__DateTimeSelector-sc-122ziys-4 fXHZJj"
+       role="group"
+  >
+    <div class="styled__DepartureRow-sc-122ziys-5 iHMVJs">
+      <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <button aria-pressed="true"
+                class="styled__Button-sc-122ziys-16 dxnCjq active "
+        >
+          Leave now
+        </button>
+      </div>
+      <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <button aria-pressed="false"
+                class="styled__Button-sc-122ziys-16 dxnCjq  "
+        >
+          Depart at
+        </button>
+      </div>
+      <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <button aria-pressed="false"
+                class="styled__Button-sc-122ziys-16 dxnCjq  "
+        >
+          Arrive by
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<p>
+  Styled
+</p>
+<div>
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 eAInfX">
+    <div aria-label="Date/Time Selector"
+         class="styled__DateTimeSelector-sc-122ziys-4 fXHZJj"
+         role="group"
+    >
+      <div class="styled__DepartureRow-sc-122ziys-5 iHMVJs">
+        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+          <button aria-pressed="true"
+                  class="styled__Button-sc-122ziys-16 dxnCjq active "
+          >
+            Leave now
+          </button>
+        </div>
+        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+          <button aria-pressed="false"
+                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+          >
+            Depart at
+          </button>
+        </div>
+        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+          <button aria-pressed="false"
+                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+          >
+            Arrive by
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Trip Form Components dropdownSelector smoke-test 1`] = `
+<p>
+  Plain
+</p>
+<div>
+  <div class="styled__DropdownSelector-sc-122ziys-17 kiQdDP"
+       style="display: inline-block; width: 250px;"
+  >
+    <div>
+      <label for="id-query-param-MyParam"
+             class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+      >
+        Pick an option:
+      </label>
+    </div>
+    <div>
+      <select id="id-query-param-MyParam">
+        <option value="Value1">
+          Option 1
+        </option>
+        <option value="Value2">
+          Option 2
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+<p>
+  Styled
+</p>
+<div>
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 eAInfX">
+    <div class="styled__DropdownSelector-sc-122ziys-17 kiQdDP"
+         style="display: inline-block; width: 250px;"
+    >
+      <div>
+        <label for="id-query-param-MyParam"
+               class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+        >
+          Pick an option:
+        </label>
+      </div>
+      <div>
+        <select id="id-query-param-MyParam">
+          <option value="Value1">
+            Option 1
+          </option>
+          <option value="Value2">
+            Option 2
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Trip Form Components generalSettingsPanel smoke-test 1`] = `
+<p>
+  Plain
+</p>
+<div>
+  <div class="styled__GeneralSettingsPanel-sc-122ziys-19 hKJhWi">
+    <div class="styled__DropdownSelector-sc-122ziys-17 kiQdDP">
+      <div>
+        <label for="id-query-param-maxWalkDistance"
+               class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+        >
+          Maximum Walk
+        </label>
+      </div>
+      <div>
+        <select id="id-query-param-maxWalkDistance">
+          <option value="160.9">
+            1/10 mile
+          </option>
+          <option value="402.3">
+            1/4 mile
+          </option>
+          <option value="804.7">
+            1/2 mile
+          </option>
+          <option value="1207">
+            3/4 mile
+          </option>
+          <option value="1609">
+            1 mile
+          </option>
+          <option value="3219">
+            2 miles
+          </option>
+          <option value="8047">
+            5 miles
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+<p>
+  Styled
+</p>
+<div>
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 eAInfX">
+    <div class="styled__GeneralSettingsPanel-sc-122ziys-19 hKJhWi">
+      <div class="styled__DropdownSelector-sc-122ziys-17 kiQdDP">
+        <div>
+          <label for="id-query-param-maxWalkDistance"
+                 class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+          >
+            Maximum Walk
+          </label>
+        </div>
+        <div>
+          <select id="id-query-param-maxWalkDistance">
+            <option value="160.9">
+              1/10 mile
+            </option>
+            <option value="402.3">
+              1/4 mile
+            </option>
+            <option value="804.7">
+              1/2 mile
+            </option>
+            <option value="1207">
+              3/4 mile
+            </option>
+            <option value="1609">
+              1 mile
+            </option>
+            <option value="3219">
+              2 miles
+            </option>
+            <option value="8047">
+              5 miles
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Trip Form Components generalSettingsPanelWithCustomMessages smoke-test 1`] = `
+<p>
+  Plain
+</p>
+<div>
+  <div class="styled__GeneralSettingsPanel-sc-122ziys-19 hKJhWi">
+    <div class="styled__DropdownSelector-sc-122ziys-17 kiQdDP">
+      <div>
+        <label for="id-query-param-maxWalkDistance"
+               class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+        >
+          Max Walk Distance In Meters (custom)
+        </label>
+      </div>
+      <div>
+        <select id="id-query-param-maxWalkDistance">
+          <option value="200">
+            200 m (custom)
+          </option>
+          <option value="500">
+            500 m (custom)
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+<p>
+  Styled
+</p>
+<div>
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 eAInfX">
+    <div class="styled__GeneralSettingsPanel-sc-122ziys-19 hKJhWi">
+      <div class="styled__DropdownSelector-sc-122ziys-17 kiQdDP">
+        <div>
+          <label for="id-query-param-maxWalkDistance"
+                 class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+          >
+            Max Walk Distance In Meters (custom)
+          </label>
+        </div>
+        <div>
+          <select id="id-query-param-maxWalkDistance">
+            <option value="200">
+              200 m (custom)
+            </option>
+            <option value="500">
+              500 m (custom)
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Trip Form Components generalSettingsPanelWithOtp2 smoke-test 1`] = `
+<p>
+  Plain
+</p>
+<div>
+  <div class="styled__GeneralSettingsPanel-sc-122ziys-19 hKJhWi">
+    <div aria-label="walk reluctance"
+         class="styled__SliderSelector-sc-122ziys-18 qDJRa"
+         role="group"
+    >
+      <div>
+        <span aria-hidden="true"
+              class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+        >
+          More Walking
+        </span>
+        <input aria-label="walk reluctance: More Walking (1) - More Transit (10)"
+               id="id-query-param-walkReluctance"
+               max="10"
+               min="1"
+               step="0.5"
+               type="range"
+               value="1"
+        >
+        <span aria-hidden="true"
+              class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+              style="padding-left: 0px;"
+        >
+          More Transit
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<p>
+  Styled
+</p>
+<div>
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 eAInfX">
+    <div class="styled__GeneralSettingsPanel-sc-122ziys-19 hKJhWi">
+      <div aria-label="walk reluctance"
+           class="styled__SliderSelector-sc-122ziys-18 qDJRa"
+           role="group"
+      >
+        <div>
+          <span aria-hidden="true"
+                class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+          >
+            More Walking
+          </span>
+          <input aria-label="walk reluctance: More Walking (1) - More Transit (10)"
+                 id="id-query-param-walkReluctance"
+                 max="10"
+                 min="1"
+                 step="0.5"
+                 type="range"
+                 value="1"
+          >
+          <span aria-hidden="true"
+                class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+                style="padding-left: 0px;"
+          >
+            More Transit
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Trip Form Components modeButtons smoke-test 1`] = `
+<p>
+  Plain
+</p>
+<div>
+  <div>
+    <div>
+      <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <button aria-pressed="false"
+                class="styled__Button-sc-122ziys-16 dxnCjq  "
+                title="Normal"
+        >
+          <svg viewbox="0 0 390 390">
+            <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
+            </path>
+          </svg>
+          +
+          <svg viewbox="0 0 390 390">
+            <path d="M84.7 188.3C38 188.5 0 226.3 0 273s37.9 84.5 84.7 84.7c46.6-.2 84.5-38.1 84.5-84.7s-38.1-84.5-84.5-84.7zm45 129.8c-11.5 11.7-27.4 19-45.1 19s-33.6-7.3-45.3-19c-11.5-11.5-18.8-27.4-18.8-45.1 0-17.6 7.3-33.6 18.8-45.1C51 216.2 67 209.1 84.6 209.1s33.6 7 45.1 18.8c11.7 11.5 18.8 27.4 18.8 45.1.1 17.7-7 33.6-18.8 45.1zM234.3 94.1c17 0 31-14 31-31s-14-30.8-31-30.8c-16.9 0-30.8 13.8-30.8 30.8 0 17.2 13.9 31 30.8 31z">
+            </path>
+            <path d="M291.5 168.9c18.5 0 18.5-24.4-.8-24.4h-49.3l-33.5-55.6c-7.3-10-28.2-11.2-36.7-1.1l-59.8 59.6c-13.4 14.5-5.4 36 9.9 40.9l55.4 34.6V279c0 12.6 9.5 19.1 18.2 19.1 8.6 0 18.3-6.4 18.3-19.6v-71.7c0-6.5-.9-14.1-6.4-16.3l-36.4-23 30.3-32 18.2 24.3c3.1 7.8 11.4 9.2 18 9.2l54.6-.1z">
+            </path>
+            <path d="M305.4 187c-46.7 0-84.7 37.9-84.7 84.6.2 46.7 37.9 84.7 84.7 84.7 46.6 0 84.6-38 84.6-84.7S352 187 305.4 187zm45.2 129.8c-11.5 11.6-27.4 18.8-45.1 18.8s-33.6-7.2-45.3-18.8c-11.5-11.6-18.8-27.7-18.8-45.2 0-17.7 7.3-33.6 18.8-45.1 11.7-11.7 27.7-18.8 45.3-18.8 17.7 0 33.6 7 45.1 18.8 11.7 11.7 18.8 27.4 18.8 45.1 0 17.5-7.1 33.5-18.8 45.2z">
+            </path>
+          </svg>
+          Go by train
+          <span style="font-size: 150%; color: rgb(176, 48, 48);">
+            or
+          </span>
+          bike
+        </button>
+        <div class="styled__Title-sc-122ziys-15 gZuthv  "
+             title="Normal"
+        >
+          Normal
+        </div>
+      </div>
+      <span style="display: inline-block; width: 1em;">
+      </span>
+      <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <button aria-pressed="true"
+                class="styled__Button-sc-122ziys-16 dxnCjq active "
+                title="Active"
+        >
+          <svg viewbox="0 0 390 390">
+            <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
+            </path>
+          </svg>
+          Train
+        </button>
+        <div class="styled__Title-sc-122ziys-15 gZuthv active "
+             title="Active"
+        >
+          Active
+        </div>
+      </div>
+      <span style="display: inline-block; width: 1em;">
+      </span>
+      <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <button aria-pressed="false"
+                class="styled__Button-sc-122ziys-16 dxnCjq  disabled"
+                disabled
+                title="Disabled"
+        >
+          <svg viewbox="0 0 390 390">
+            <path d="M194.9 0L0 390h390L194.9 0zm-15.3 143.9h30.7v133.7h-30.7V143.9zm15.3 191.9c-10.1 0-18.3-8.2-18.3-18.3 0-10.1 8.2-18.3 18.3-18.3s18.3 8.2 18.3 18.3c.1 10.1-8.1 18.3-18.3 18.3z">
+            </path>
+          </svg>
+          Can't select!
+          <svg viewbox="0 0 390 390">
+            <path d="M195.1 44.9L357.6 370H32.5L195.1 44.9m0-44.9L0 390h390L195.1 0z">
+            </path>
+            <circle cx="195.1"
+                    cy="317.4"
+                    r="18.4"
+            >
+            </circle>
+            <path d="M179.7 143.8h30.6v133.7h-30.6z">
+            </path>
+          </svg>
+        </button>
+        <div class="styled__Title-sc-122ziys-15 gZuthv  disabled"
+             title="Disabled"
+        >
+          Disabled
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <button aria-pressed="false"
+                class="styled__Button-sc-122ziys-16 dxnCjq  "
+                title="Walk Only"
+        >
+          <svg viewbox="0 0 390 390">
+            <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
+            </path>
+          </svg>
+          Walk Only
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<p>
+  Styled
+</p>
+<div>
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 eAInfX">
+    <div>
+      <div>
+        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+          <button aria-pressed="false"
+                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  title="Normal"
+          >
+            <svg viewbox="0 0 390 390">
+              <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
+              </path>
+            </svg>
+            +
+            <svg viewbox="0 0 390 390">
+              <path d="M84.7 188.3C38 188.5 0 226.3 0 273s37.9 84.5 84.7 84.7c46.6-.2 84.5-38.1 84.5-84.7s-38.1-84.5-84.5-84.7zm45 129.8c-11.5 11.7-27.4 19-45.1 19s-33.6-7.3-45.3-19c-11.5-11.5-18.8-27.4-18.8-45.1 0-17.6 7.3-33.6 18.8-45.1C51 216.2 67 209.1 84.6 209.1s33.6 7 45.1 18.8c11.7 11.5 18.8 27.4 18.8 45.1.1 17.7-7 33.6-18.8 45.1zM234.3 94.1c17 0 31-14 31-31s-14-30.8-31-30.8c-16.9 0-30.8 13.8-30.8 30.8 0 17.2 13.9 31 30.8 31z">
+              </path>
+              <path d="M291.5 168.9c18.5 0 18.5-24.4-.8-24.4h-49.3l-33.5-55.6c-7.3-10-28.2-11.2-36.7-1.1l-59.8 59.6c-13.4 14.5-5.4 36 9.9 40.9l55.4 34.6V279c0 12.6 9.5 19.1 18.2 19.1 8.6 0 18.3-6.4 18.3-19.6v-71.7c0-6.5-.9-14.1-6.4-16.3l-36.4-23 30.3-32 18.2 24.3c3.1 7.8 11.4 9.2 18 9.2l54.6-.1z">
+              </path>
+              <path d="M305.4 187c-46.7 0-84.7 37.9-84.7 84.6.2 46.7 37.9 84.7 84.7 84.7 46.6 0 84.6-38 84.6-84.7S352 187 305.4 187zm45.2 129.8c-11.5 11.6-27.4 18.8-45.1 18.8s-33.6-7.2-45.3-18.8c-11.5-11.6-18.8-27.7-18.8-45.2 0-17.7 7.3-33.6 18.8-45.1 11.7-11.7 27.7-18.8 45.3-18.8 17.7 0 33.6 7 45.1 18.8 11.7 11.7 18.8 27.4 18.8 45.1 0 17.5-7.1 33.5-18.8 45.2z">
+              </path>
+            </svg>
+            Go by train
+            <span style="font-size: 150%; color: rgb(176, 48, 48);">
+              or
+            </span>
+            bike
+          </button>
+          <div class="styled__Title-sc-122ziys-15 gZuthv  "
+               title="Normal"
+          >
+            Normal
+          </div>
+        </div>
+        <span style="display: inline-block; width: 1em;">
+        </span>
+        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+          <button aria-pressed="true"
+                  class="styled__Button-sc-122ziys-16 dxnCjq active "
+                  title="Active"
+          >
+            <svg viewbox="0 0 390 390">
+              <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
+              </path>
+            </svg>
+            Train
+          </button>
+          <div class="styled__Title-sc-122ziys-15 gZuthv active "
+               title="Active"
+          >
+            Active
+          </div>
+        </div>
+        <span style="display: inline-block; width: 1em;">
+        </span>
+        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+          <button aria-pressed="false"
+                  class="styled__Button-sc-122ziys-16 dxnCjq  disabled"
+                  disabled
+                  title="Disabled"
+          >
+            <svg viewbox="0 0 390 390">
+              <path d="M194.9 0L0 390h390L194.9 0zm-15.3 143.9h30.7v133.7h-30.7V143.9zm15.3 191.9c-10.1 0-18.3-8.2-18.3-18.3 0-10.1 8.2-18.3 18.3-18.3s18.3 8.2 18.3 18.3c.1 10.1-8.1 18.3-18.3 18.3z">
+              </path>
+            </svg>
+            Can't select!
+            <svg viewbox="0 0 390 390">
+              <path d="M195.1 44.9L357.6 370H32.5L195.1 44.9m0-44.9L0 390h390L195.1 0z">
+              </path>
+              <circle cx="195.1"
+                      cy="317.4"
+                      r="18.4"
+              >
+              </circle>
+              <path d="M179.7 143.8h30.6v133.7h-30.6z">
+              </path>
+            </svg>
+          </button>
+          <div class="styled__Title-sc-122ziys-15 gZuthv  disabled"
+               title="Disabled"
+          >
+            Disabled
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+          <button aria-pressed="false"
+                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  title="Walk Only"
+          >
+            <svg viewbox="0 0 390 390">
+              <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
+              </path>
+            </svg>
+            Walk Only
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Trip Form Components modeSelector smoke-test 1`] = `
+<p>
+  Plain
+</p>
+<div>
+  <div class="styled__ModeSelector-sc-122ziys-7 kUleUC">
+    <div class="styled__MainRow-sc-122ziys-8 kIuztG">
+      <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <button aria-pressed="false"
+                class="styled__Button-sc-122ziys-16 dxnCjq  "
+                title="Primary Choice"
+        >
+          <span>
+            <svg viewbox="0 0 390 390">
+              <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
+              </path>
+            </svg>
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+            Primary Choice
+          </span>
+        </button>
+        <div class="styled__Title-sc-122ziys-15 gZuthv  "
+             title="Primary Choice"
+        >
+          Primary Choice
+        </div>
+      </div>
+    </div>
+    <div class="styled__SecondaryRow-sc-122ziys-9 hBmEla">
+      <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <button aria-pressed="false"
+                class="styled__Button-sc-122ziys-16 dxnCjq  "
+                title="Secondary 1"
+        >
+          <span>
+            <svg viewbox="0 0 390 390">
+              <path d="M84.7 188.3C38 188.5 0 226.3 0 273s37.9 84.5 84.7 84.7c46.6-.2 84.5-38.1 84.5-84.7s-38.1-84.5-84.5-84.7zm45 129.8c-11.5 11.7-27.4 19-45.1 19s-33.6-7.3-45.3-19c-11.5-11.5-18.8-27.4-18.8-45.1 0-17.6 7.3-33.6 18.8-45.1C51 216.2 67 209.1 84.6 209.1s33.6 7 45.1 18.8c11.7 11.5 18.8 27.4 18.8 45.1.1 17.7-7 33.6-18.8 45.1zM234.3 94.1c17 0 31-14 31-31s-14-30.8-31-30.8c-16.9 0-30.8 13.8-30.8 30.8 0 17.2 13.9 31 30.8 31z">
+              </path>
+              <path d="M291.5 168.9c18.5 0 18.5-24.4-.8-24.4h-49.3l-33.5-55.6c-7.3-10-28.2-11.2-36.7-1.1l-59.8 59.6c-13.4 14.5-5.4 36 9.9 40.9l55.4 34.6V279c0 12.6 9.5 19.1 18.2 19.1 8.6 0 18.3-6.4 18.3-19.6v-71.7c0-6.5-.9-14.1-6.4-16.3l-36.4-23 30.3-32 18.2 24.3c3.1 7.8 11.4 9.2 18 9.2l54.6-.1z">
+              </path>
+              <path d="M305.4 187c-46.7 0-84.7 37.9-84.7 84.6.2 46.7 37.9 84.7 84.7 84.7 46.6 0 84.6-38 84.6-84.7S352 187 305.4 187zm45.2 129.8c-11.5 11.6-27.4 18.8-45.1 18.8s-33.6-7.2-45.3-18.8c-11.5-11.6-18.8-27.7-18.8-45.2 0-17.7 7.3-33.6 18.8-45.1 11.7-11.7 27.7-18.8 45.3-18.8 17.7 0 33.6 7 45.1 18.8 11.7 11.7 18.8 27.4 18.8 45.1 0 17.5-7.1 33.5-18.8 45.2z">
+              </path>
+            </svg>
+            Sec. #1
+          </span>
+        </button>
+        <div class="styled__Title-sc-122ziys-15 gZuthv  "
+             title="Secondary 1"
+        >
+          Secondary 1
+        </div>
+      </div>
+      <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <button aria-pressed="true"
+                class="styled__Button-sc-122ziys-16 dxnCjq active "
+                title="Secondary 2"
+        >
+          <span>
+            Sec. #2
+            <svg viewbox="0 0 512 512">
+              <path d="M464.027 393.21L416.602 51.747C412.504 22.246 386.953 0 357.172 0H289v40h68.172c9.93 0 18.441 7.414 19.808 17.246l36.149 260.25C361 332.586 321.293 377.22 313.426 432H116.559c-8.254-23.277-30.485-40-56.559-40-33.086 0-60 26.914-60 60s26.914 60 60 60c26.074 0 48.305-16.723 56.559-40H352v-20c0-43.473 27.887-80.55 66.71-94.297l5.7 41.043C405.176 408.75 392 428.86 392 452c0 33.086 26.914 60 60 60s60-26.914 60-60c0-28.965-20.633-53.203-47.973-58.79zM60 472c-11.027 0-20-8.973-20-20s8.973-20 20-20 20 8.973 20 20-8.973 20-20 20zm392 0c-11.027 0-20-8.973-20-20s8.973-20 20-20 20 8.973 20 20-8.973 20-20 20zm0 0">
+              </path>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div class="styled__TertiaryRow-sc-122ziys-10 enlXGA">
+      <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <button aria-pressed="false"
+                class="styled__Button-sc-122ziys-16 dxnCjq  "
+                title="Other Mode"
+        >
+          <span>
+            Tertiary Mode
+          </span>
+        </button>
+        <div class="styled__Title-sc-122ziys-15 gZuthv  "
+             title="Other Mode"
+        >
+          Other Mode
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<p>
+  Styled
+</p>
+<div>
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 eAInfX">
+    <div class="styled__ModeSelector-sc-122ziys-7 kUleUC">
+      <div class="styled__MainRow-sc-122ziys-8 kIuztG">
+        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+          <button aria-pressed="false"
+                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  title="Primary Choice"
+          >
+            <span>
+              <svg viewbox="0 0 390 390">
+                <path d="M257.4 300h7.6c16.6 0 30-13.4 30-30V92c0-16.6-13.4-30-30-30h-56.5l40.3-29.9 11.6 9.9c.8.6 1.7 1 2.6 1 1.1 0 2.2-.5 3-1.4 1.4-1.7 1.2-4.2-.4-5.6l-14-12c-.7-.6-1.6-1-2.6-1H141c-1 0-1.9.3-2.6 1l-14 12c-1.7 1.4-1.9 4-.4 5.6 1.4 1.7 4 1.9 5.6.4l11.6-9.9L181.5 62H125c-16.6 0-30 13.4-30 30v178c0 16.6 13.4 30 30 30h7.6L84 372h26l10.8-16h148.4l10.8 16h26l-48.6-72zm6.6-34c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zM153.1 31h83.8L195 62l-41.9-31zm5.4 45h73c3.9 0 7 3.1 7 7s-3.1 7-7 7h-73c-3.9 0-7-3.1-7-7s3.1-7 7-7zM111 112c0-4.4 3.6-8 8-8h152c4.4 0 8 3.6 8 8v100c0 4.4-3.6 8-8 8H119c-4.4 0-8-3.6-8-8V112zm131.2 204h-94.4l10.8-16h72.8l10.8 16zM126 266c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm2.9 78l10.8-16h110.6l10.8 16H128.9z">
+                </path>
+              </svg>
+              <svg viewbox="0 0 390 390">
+                <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+                </path>
+              </svg>
+              Primary Choice
+            </span>
+          </button>
+          <div class="styled__Title-sc-122ziys-15 gZuthv  "
+               title="Primary Choice"
+          >
+            Primary Choice
+          </div>
+        </div>
+      </div>
+      <div class="styled__SecondaryRow-sc-122ziys-9 hBmEla">
+        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+          <button aria-pressed="false"
+                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  title="Secondary 1"
+          >
+            <span>
+              <svg viewbox="0 0 390 390">
+                <path d="M84.7 188.3C38 188.5 0 226.3 0 273s37.9 84.5 84.7 84.7c46.6-.2 84.5-38.1 84.5-84.7s-38.1-84.5-84.5-84.7zm45 129.8c-11.5 11.7-27.4 19-45.1 19s-33.6-7.3-45.3-19c-11.5-11.5-18.8-27.4-18.8-45.1 0-17.6 7.3-33.6 18.8-45.1C51 216.2 67 209.1 84.6 209.1s33.6 7 45.1 18.8c11.7 11.5 18.8 27.4 18.8 45.1.1 17.7-7 33.6-18.8 45.1zM234.3 94.1c17 0 31-14 31-31s-14-30.8-31-30.8c-16.9 0-30.8 13.8-30.8 30.8 0 17.2 13.9 31 30.8 31z">
+                </path>
+                <path d="M291.5 168.9c18.5 0 18.5-24.4-.8-24.4h-49.3l-33.5-55.6c-7.3-10-28.2-11.2-36.7-1.1l-59.8 59.6c-13.4 14.5-5.4 36 9.9 40.9l55.4 34.6V279c0 12.6 9.5 19.1 18.2 19.1 8.6 0 18.3-6.4 18.3-19.6v-71.7c0-6.5-.9-14.1-6.4-16.3l-36.4-23 30.3-32 18.2 24.3c3.1 7.8 11.4 9.2 18 9.2l54.6-.1z">
+                </path>
+                <path d="M305.4 187c-46.7 0-84.7 37.9-84.7 84.6.2 46.7 37.9 84.7 84.7 84.7 46.6 0 84.6-38 84.6-84.7S352 187 305.4 187zm45.2 129.8c-11.5 11.6-27.4 18.8-45.1 18.8s-33.6-7.2-45.3-18.8c-11.5-11.6-18.8-27.7-18.8-45.2 0-17.7 7.3-33.6 18.8-45.1 11.7-11.7 27.7-18.8 45.3-18.8 17.7 0 33.6 7 45.1 18.8 11.7 11.7 18.8 27.4 18.8 45.1 0 17.5-7.1 33.5-18.8 45.2z">
+                </path>
+              </svg>
+              Sec. #1
+            </span>
+          </button>
+          <div class="styled__Title-sc-122ziys-15 gZuthv  "
+               title="Secondary 1"
+          >
+            Secondary 1
+          </div>
+        </div>
+        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+          <button aria-pressed="true"
+                  class="styled__Button-sc-122ziys-16 dxnCjq active "
+                  title="Secondary 2"
+          >
+            <span>
+              Sec. #2
+              <svg viewbox="0 0 512 512">
+                <path d="M464.027 393.21L416.602 51.747C412.504 22.246 386.953 0 357.172 0H289v40h68.172c9.93 0 18.441 7.414 19.808 17.246l36.149 260.25C361 332.586 321.293 377.22 313.426 432H116.559c-8.254-23.277-30.485-40-56.559-40-33.086 0-60 26.914-60 60s26.914 60 60 60c26.074 0 48.305-16.723 56.559-40H352v-20c0-43.473 27.887-80.55 66.71-94.297l5.7 41.043C405.176 408.75 392 428.86 392 452c0 33.086 26.914 60 60 60s60-26.914 60-60c0-28.965-20.633-53.203-47.973-58.79zM60 472c-11.027 0-20-8.973-20-20s8.973-20 20-20 20 8.973 20 20-8.973 20-20 20zm392 0c-11.027 0-20-8.973-20-20s8.973-20 20-20 20 8.973 20 20-8.973 20-20 20zm0 0">
+                </path>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="styled__TertiaryRow-sc-122ziys-10 enlXGA">
+        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+          <button aria-pressed="false"
+                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  title="Other Mode"
+          >
+            <span>
+              Tertiary Mode
+            </span>
+          </button>
+          <div class="styled__Title-sc-122ziys-15 gZuthv  "
+               title="Other Mode"
+          >
+            Other Mode
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Trip Form Components sliderSelector smoke-test 1`] = `
+<p>
+  Plain
+</p>
+<div>
+  <div aria-label="Drag me."
+       class="styled__SliderSelector-sc-122ziys-18 qDJRa"
+       role="group"
+       style="display: inline-block; width: 250px;"
+  >
+    <div>
+      <span aria-hidden="true"
+            class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+      >
+        low
+      </span>
+      <input aria-label="Drag me.: low (0.5) - high (20)"
+             id="id-query-param-MyParam"
+             max="20"
+             min="0.5"
+             step="0.5"
+             type="range"
+             value="3"
+      >
+      <span aria-hidden="true"
+            class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+            style="padding-left: 0px;"
+      >
+        high
+      </span>
+    </div>
+  </div>
+</div>
+<p>
+  Styled
+</p>
+<div>
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 eAInfX">
+    <div aria-label="Drag me."
+         class="styled__SliderSelector-sc-122ziys-18 qDJRa"
+         role="group"
+         style="display: inline-block; width: 250px;"
+    >
+      <div>
+        <span aria-hidden="true"
+              class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+        >
+          low
+        </span>
+        <input aria-label="Drag me.: low (0.5) - high (20)"
+               id="id-query-param-MyParam"
+               max="20"
+               min="0.5"
+               step="0.5"
+               type="range"
+               value="3"
+        >
+        <span aria-hidden="true"
+              class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+              style="padding-left: 0px;"
+        >
+          high
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Trip Form Components submodeSelector smoke-test 1`] = `
+<p>
+  Plain
+</p>
+<div>
+  <div aria-label="Submodes:"
+       class="styled__SettingsSection-sc-122ziys-1 styled__SubmodeSelector-sc-122ziys-11 ilyYai dliLpR"
+       role="group"
+  >
+    <span aria-hidden="true"
+          class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+    >
+      Submodes:
+    </span>
+    <div class="styled__submodeRow-sc-122ziys-12 gItmJF">
+      <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <button aria-pressed="false"
+                class="styled__Button-sc-122ziys-16 dxnCjq  "
+                title="Use the bus"
+        >
+          <span>
+            <svg viewbox="0 0 390 390">
+              <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+              </path>
+            </svg>
+            Bus
+          </span>
+        </button>
+      </div>
+      <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <button aria-pressed="true"
+                class="styled__Button-sc-122ziys-16 dxnCjq active "
+                title="Use the streetcar"
+        >
+          <span>
+            <svg viewbox="0 0 390 390">
+              <path d="M115.4 309.3c3.1 6.6 11.1 12 18.8 13.9L102 371.9h29.4l31.7-48 60.7.1 31.5 48h29.6l-32.3-48.7c7.5-2 15-7.4 18.2-13.9l9.3-18.4c4-8.1 6.9-22.1 6.5-31.2L276.5 98.9c-.6-12-11.2-23.3-25.8-23.3h-23.2c4-10.1 11-27.5 11.7-29.4 10.4.7 12.6 2.1 13 2.4l.6 1.8-.6-1.2c.3 2.7 2.5 4.7 5.1 4.7 2.9 0 6-3.2 6-6 0-8.4-13-11-24.4-12.2-8.6-1-23.7-2.2-45.3-2.2-21.6 0-36.6 1.2-45.3 2.2-11.3 1.2-24.4 3.8-24.4 12.2 0 2.8 3.1 6 5.9 6 2.7 0 4.9-2 5.2-4.7l-.5 1.2s.7-1.7.7-1.8c.3-.4 2.6-1.7 12.9-2.4.7 1.9 7.7 19.3 11.7 29.4h-24.6c-13.8 0-25.9 11.9-25.9 23.3l-9.4 161c-.6 9 2.7 22.8 6.4 31l9.1 18.4zm30.4-5.5c-9.1 0-16.5-7.4-16.5-16.5 0-9 7.4-16.4 16.5-16.4s16.4 7.4 16.4 16.4c0 9.1-7.3 16.5-16.4 16.5zm94.3 0c-9 0-16.3-7.4-16.3-16.5 0-9 7.4-16.4 16.3-16.4 9.1 0 16.5 7.4 16.5 16.4 0 9.1-7.4 16.5-16.5 16.5zM193.6 45.4c6 0 24.3.3 32.9.4-1.5 3.7-8.1 20.1-11.9 29.7h-42c-3.9-9.6-10.4-26.1-11.9-29.7 8.6-.2 27-.4 32.9-.4zM139 109.5c0-7 5.7-12.7 12.6-12.7h82.8c6.9 0 12.6 5.6 12.6 12.7v4.3c0 6.9-5.6 12.6-12.6 12.6h-82.8c-6.9 0-12.6-5.7-12.6-12.6v-4.3zm-20.1 135.3l5.4-94.7c.4-6.9 6.8-12.8 13.7-12.8l111.3.1c6.9 0 12.9 5.7 13.4 12.6l5.6 94.9c.5 6.9-4.9 12.7-11.8 12.7h-126c-6.9-.1-12-5.9-11.6-12.8z">
+              </path>
+            </svg>
+            Streetcar
+          </span>
+        </button>
+      </div>
+      <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <button aria-pressed="true"
+                class="styled__Button-sc-122ziys-16 dxnCjq active "
+                title="Uber"
+        >
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 viewbox="0 0 926.91 321.78"
+                 height="100%"
+                 width="100%"
+            >
+              <path d="M53.33,229.81A79.25,79.25,0,0,0,69.6,256.47a70,70,0,0,0,24.63,16.95,80.36,80.36,0,0,0,31,5.88,76.61,76.61,0,0,0,30.51-6.1A75,75,0,0,0,180.55,256,77.86,77.86,0,0,0,197,229.58a95.52,95.52,0,0,0,5.88-34.35V0h47.45V316.35h-47V287a109,109,0,0,1-37.29,25.76,118.16,118.16,0,0,1-46.32,9A125.42,125.42,0,0,1,72.54,313a110.58,110.58,0,0,1-38-25.08A118.32,118.32,0,0,1,9.27,248.79Q0,226,0,197.95V0H47.45V195.24A97.36,97.36,0,0,0,53.33,229.81Z">
+              </path>
+              <path d="M332.17,0V115.24a120.88,120.88,0,0,1,36.61-25.08A109.74,109.74,0,0,1,414,80.9a119.18,119.18,0,0,1,47.45,9.49,119.55,119.55,0,0,1,64.18,64.18,118.06,118.06,0,0,1,9.49,47,116.44,116.44,0,0,1-9.49,46.77,120.14,120.14,0,0,1-64.17,63.95A119.18,119.18,0,0,1,414,321.78a111.31,111.31,0,0,1-45.42-9.27,120.06,120.06,0,0,1-36.83-25.08v28.92H286.52V0h45.64Zm5.2,232.75a78.63,78.63,0,0,0,16.95,25.31,81.78,81.78,0,0,0,25.31,17.17,76.94,76.94,0,0,0,31.18,6.33,75.83,75.83,0,0,0,30.73-6.33,79.06,79.06,0,0,0,25.08-17.17,83.82,83.82,0,0,0,16.95-25.31,76.93,76.93,0,0,0,6.33-31.18,78.54,78.54,0,0,0-6.33-31.41,83.07,83.07,0,0,0-16.95-25.53,76.09,76.09,0,0,0-25.08-16.95,79.45,79.45,0,0,0-86.77,16.95,81.07,81.07,0,0,0-17.17,25.53,78.54,78.54,0,0,0-6.33,31.41A79.38,79.38,0,0,0,337.36,232.75Z">
+              </path>
+              <path d="M560.84,155a123,123,0,0,1,24.86-38.19A119.57,119.57,0,0,1,716.31,90.39a109.34,109.34,0,0,1,36.61,25.08,114.65,114.65,0,0,1,24,38,129.58,129.58,0,0,1,8.59,47.68V216H597.9a77.29,77.29,0,0,0,9,26,78.34,78.34,0,0,0,16.95,20.79,77.45,77.45,0,0,0,23,13.78,75.27,75.27,0,0,0,27.34,5q41.13,0,66.43-33.9l33,24.4a122.74,122.74,0,0,1-42.48,36.15q-25.31,13.11-56.94,13.11a127.27,127.27,0,0,1-48.13-9A117.2,117.2,0,0,1,587.28,287a120.06,120.06,0,0,1-26-38.19A123.31,123.31,0,0,1,560.84,155Zm63.5-17.85q-19.21,16-25.53,42.71H739.36q-5.88-26.66-25.08-42.71t-45-16Q643.55,121.12,624.34,137.16Z">
+              </path>
+              <path d="M870.87,142.36q-14.46,15.82-14.46,42.93V316.35H810.76V85.87H856v28.47a64.24,64.24,0,0,1,22.37-22.15q13.78-8.14,32.77-8.14h15.82v42.48h-19Q885.33,126.54,870.87,142.36Z">
+              </path>
+            </svg>
+            Uber
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<p>
+  Styled
+</p>
+<div>
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 eAInfX">
+    <div aria-label="Submodes:"
+         class="styled__SettingsSection-sc-122ziys-1 styled__SubmodeSelector-sc-122ziys-11 ilyYai dliLpR"
+         role="group"
+    >
+      <span aria-hidden="true"
+            class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+      >
+        Submodes:
+      </span>
+      <div class="styled__submodeRow-sc-122ziys-12 gItmJF">
+        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+          <button aria-pressed="false"
+                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  title="Use the bus"
+          >
+            <span>
+              <svg viewbox="0 0 390 390">
+                <path d="m 325.28866,67.290913 c 0,-31.901057 -58.52714,-48.981938 -130.6185,-48.981938 -72.09137,0 -130.492908,17.080881 -130.618502,48.981938 L 56.515975,211.72483 v 90.4282 c 0,5.52615 4.521409,10.04757 10.047577,10.04757 h 8.79163 v 25.11894 c 0,8.28925 6.782114,15.07137 15.071365,15.07137 h 10.047583 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 158.24934 v 25.11894 c 0,8.28925 6.78211,15.07137 15.07136,15.07137 h 10.04759 c 8.28925,0 15.07136,-6.78212 15.07136,-15.07137 V 312.2006 h 8.79162 c 5.52617,0 10.04758,-4.52142 10.04758,-10.04757 v -90.4282 z M 148.82809,38.404129 h 91.68414 c 4.89819,0 8.79163,3.893436 8.79163,8.79163 0,4.898194 -3.89344,8.79163 -8.79163,8.79163 h -91.68414 c -4.89819,0 -8.79163,-3.893436 -8.79163,-8.79163 0,-4.898194 3.89344,-8.79163 8.79163,-8.79163 z M 95.450336,269.49839 c -10.424362,0 -18.839207,-8.41483 -18.839207,-18.8392 0,-10.42437 8.414845,-18.83921 18.839207,-18.83921 10.424364,0 18.839204,8.41484 18.839204,18.83921 0,10.42437 -8.41484,18.8392 -18.839204,18.8392 z m 198.439644,0 c -10.42436,0 -18.8392,-8.41483 -18.8392,-18.8392 0,-10.42437 8.41484,-18.83921 18.8392,-18.83921 10.42437,0 18.83921,8.41484 18.83921,18.83921 0,10.42437 -8.41484,18.8392 -18.83921,18.8392 z m 8.16366,-57.77356 H 87.286679 c -6.530924,0 -11.680308,-5.40057 -11.303524,-11.9315 L 82.137296,83.115846 C 82.388485,77.715274 86.7843,73.570648 92.184873,73.570648 H 296.02509 c 6.02855,0 10.92674,4.647004 11.30352,10.675551 l 6.02855,115.547131 c 0.37679,6.53093 -4.77259,11.9315 -11.30352,11.9315 z">
+                </path>
+              </svg>
+              Bus
+            </span>
+          </button>
+        </div>
+        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+          <button aria-pressed="true"
+                  class="styled__Button-sc-122ziys-16 dxnCjq active "
+                  title="Use the streetcar"
+          >
+            <span>
+              <svg viewbox="0 0 390 390">
+                <path d="M115.4 309.3c3.1 6.6 11.1 12 18.8 13.9L102 371.9h29.4l31.7-48 60.7.1 31.5 48h29.6l-32.3-48.7c7.5-2 15-7.4 18.2-13.9l9.3-18.4c4-8.1 6.9-22.1 6.5-31.2L276.5 98.9c-.6-12-11.2-23.3-25.8-23.3h-23.2c4-10.1 11-27.5 11.7-29.4 10.4.7 12.6 2.1 13 2.4l.6 1.8-.6-1.2c.3 2.7 2.5 4.7 5.1 4.7 2.9 0 6-3.2 6-6 0-8.4-13-11-24.4-12.2-8.6-1-23.7-2.2-45.3-2.2-21.6 0-36.6 1.2-45.3 2.2-11.3 1.2-24.4 3.8-24.4 12.2 0 2.8 3.1 6 5.9 6 2.7 0 4.9-2 5.2-4.7l-.5 1.2s.7-1.7.7-1.8c.3-.4 2.6-1.7 12.9-2.4.7 1.9 7.7 19.3 11.7 29.4h-24.6c-13.8 0-25.9 11.9-25.9 23.3l-9.4 161c-.6 9 2.7 22.8 6.4 31l9.1 18.4zm30.4-5.5c-9.1 0-16.5-7.4-16.5-16.5 0-9 7.4-16.4 16.5-16.4s16.4 7.4 16.4 16.4c0 9.1-7.3 16.5-16.4 16.5zm94.3 0c-9 0-16.3-7.4-16.3-16.5 0-9 7.4-16.4 16.3-16.4 9.1 0 16.5 7.4 16.5 16.4 0 9.1-7.4 16.5-16.5 16.5zM193.6 45.4c6 0 24.3.3 32.9.4-1.5 3.7-8.1 20.1-11.9 29.7h-42c-3.9-9.6-10.4-26.1-11.9-29.7 8.6-.2 27-.4 32.9-.4zM139 109.5c0-7 5.7-12.7 12.6-12.7h82.8c6.9 0 12.6 5.6 12.6 12.7v4.3c0 6.9-5.6 12.6-12.6 12.6h-82.8c-6.9 0-12.6-5.7-12.6-12.6v-4.3zm-20.1 135.3l5.4-94.7c.4-6.9 6.8-12.8 13.7-12.8l111.3.1c6.9 0 12.9 5.7 13.4 12.6l5.6 94.9c.5 6.9-4.9 12.7-11.8 12.7h-126c-6.9-.1-12-5.9-11.6-12.8z">
+                </path>
+              </svg>
+              Streetcar
+            </span>
+          </button>
+        </div>
+        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+          <button aria-pressed="true"
+                  class="styled__Button-sc-122ziys-16 dxnCjq active "
+                  title="Uber"
+          >
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg"
+                   viewbox="0 0 926.91 321.78"
+                   height="100%"
+                   width="100%"
+              >
+                <path d="M53.33,229.81A79.25,79.25,0,0,0,69.6,256.47a70,70,0,0,0,24.63,16.95,80.36,80.36,0,0,0,31,5.88,76.61,76.61,0,0,0,30.51-6.1A75,75,0,0,0,180.55,256,77.86,77.86,0,0,0,197,229.58a95.52,95.52,0,0,0,5.88-34.35V0h47.45V316.35h-47V287a109,109,0,0,1-37.29,25.76,118.16,118.16,0,0,1-46.32,9A125.42,125.42,0,0,1,72.54,313a110.58,110.58,0,0,1-38-25.08A118.32,118.32,0,0,1,9.27,248.79Q0,226,0,197.95V0H47.45V195.24A97.36,97.36,0,0,0,53.33,229.81Z">
+                </path>
+                <path d="M332.17,0V115.24a120.88,120.88,0,0,1,36.61-25.08A109.74,109.74,0,0,1,414,80.9a119.18,119.18,0,0,1,47.45,9.49,119.55,119.55,0,0,1,64.18,64.18,118.06,118.06,0,0,1,9.49,47,116.44,116.44,0,0,1-9.49,46.77,120.14,120.14,0,0,1-64.17,63.95A119.18,119.18,0,0,1,414,321.78a111.31,111.31,0,0,1-45.42-9.27,120.06,120.06,0,0,1-36.83-25.08v28.92H286.52V0h45.64Zm5.2,232.75a78.63,78.63,0,0,0,16.95,25.31,81.78,81.78,0,0,0,25.31,17.17,76.94,76.94,0,0,0,31.18,6.33,75.83,75.83,0,0,0,30.73-6.33,79.06,79.06,0,0,0,25.08-17.17,83.82,83.82,0,0,0,16.95-25.31,76.93,76.93,0,0,0,6.33-31.18,78.54,78.54,0,0,0-6.33-31.41,83.07,83.07,0,0,0-16.95-25.53,76.09,76.09,0,0,0-25.08-16.95,79.45,79.45,0,0,0-86.77,16.95,81.07,81.07,0,0,0-17.17,25.53,78.54,78.54,0,0,0-6.33,31.41A79.38,79.38,0,0,0,337.36,232.75Z">
+                </path>
+                <path d="M560.84,155a123,123,0,0,1,24.86-38.19A119.57,119.57,0,0,1,716.31,90.39a109.34,109.34,0,0,1,36.61,25.08,114.65,114.65,0,0,1,24,38,129.58,129.58,0,0,1,8.59,47.68V216H597.9a77.29,77.29,0,0,0,9,26,78.34,78.34,0,0,0,16.95,20.79,77.45,77.45,0,0,0,23,13.78,75.27,75.27,0,0,0,27.34,5q41.13,0,66.43-33.9l33,24.4a122.74,122.74,0,0,1-42.48,36.15q-25.31,13.11-56.94,13.11a127.27,127.27,0,0,1-48.13-9A117.2,117.2,0,0,1,587.28,287a120.06,120.06,0,0,1-26-38.19A123.31,123.31,0,0,1,560.84,155Zm63.5-17.85q-19.21,16-25.53,42.71H739.36q-5.88-26.66-25.08-42.71t-45-16Q643.55,121.12,624.34,137.16Z">
+                </path>
+                <path d="M870.87,142.36q-14.46,15.82-14.46,42.93V316.35H810.76V85.87H856v28.47a64.24,64.24,0,0,1,22.37-22.15q13.78-8.14,32.77-8.14h15.82v42.48h-19Q885.33,126.54,870.87,142.36Z">
+                </path>
+              </svg>
+              Uber
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

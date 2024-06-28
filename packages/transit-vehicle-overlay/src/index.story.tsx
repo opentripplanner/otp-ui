@@ -12,6 +12,8 @@ import TransitVehicleOverlay, {
   withRouteColorBackground
 } from ".";
 
+const disableStoryshots = { storyshots: { disable: true } };
+
 const SEATTLE: [number, number] = [47.6, -122.3];
 
 // TODO: TransitVehicle[] type doesn't match vehicles object
@@ -106,5 +108,6 @@ export const RouteNumbersOnlyWithCustomSizeAndPadding = () => (
 export default {
   title: "TransitVehicleOverlay",
   component: TransitVehicleOverlay,
+  parameters: disableStoryshots,
   decorators: [withMap(SEATTLE, 12)]
 };

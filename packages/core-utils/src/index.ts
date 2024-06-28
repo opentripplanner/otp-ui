@@ -8,6 +8,7 @@ import * as storage from "./storage";
 import * as time from "./time";
 import * as ui from "./ui";
 import * as queryGen from "./query-gen";
+import SafeSuspense from "./suspense";
 
 const core = {
   itinerary,
@@ -22,4 +23,5 @@ const core = {
   ui
 };
 
+export { SafeSuspense };
 export default core;

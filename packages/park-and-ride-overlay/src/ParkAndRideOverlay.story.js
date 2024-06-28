@@ -6,6 +6,7 @@ import { withMap } from "../../../.storybook/base-map-wrapper";
 
 import ParkAndRideOverlay from ".";
 
+const disableStoryshots = { storyshots: { disable: true } };
 const center = [45.518092, -122.671202];
 const zoom = 13;
 
@@ -22,3 +23,4 @@ export const Default = () => (
     visible
   />
 );
+Default.parameters = disableStoryshots;

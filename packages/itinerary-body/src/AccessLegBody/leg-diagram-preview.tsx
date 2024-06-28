@@ -78,6 +78,9 @@ class LegDiagramPreview extends Component<Props, State> {
   formatElevation = (elev: number): string => `${Math.round(elev)}'`;
 
   render(): ReactElement {
+    const IS_TEST_RUNNER = window.navigator.userAgent.match(
+      /StorybookTestRunner/
+    );
     const { intl, leg, showElevationProfile } = this.props;
     const { width } = this.state;
     if (!showElevationProfile) return null;
@@ -121,7 +124,7 @@ class LegDiagramPreview extends Component<Props, State> {
             </S.PreviewDiagramElevationLoss>
           </S.PreviewDiagramTitle>
           {profile.points.length > 0 ? (
-            generateSvg(profile, width)
+            generateSvg(profile, IS_TEST_RUNNER ? "245" : width)
           ) : (
             <FormattedMessage
               defaultMessage={

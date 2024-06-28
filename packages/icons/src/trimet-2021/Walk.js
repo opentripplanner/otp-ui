@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgWalk = () => (
+const Walk = () => (
   <svg
     version="1.1"
     id="bus_circle"
@@ -24,4 +24,4 @@ const SvgWalk = () => (
   </svg>
 );
 
-export default SvgWalk;
+export default Walk;
