@@ -54,6 +54,14 @@ export const OuterCaretWithCustomSize = () => (
   />
 );
 
+export const RouteColorBackground = () => (
+  <TransitVehicleOverlay
+    IconContainer={withRouteColorBackground(DefaultIconContainer)}
+    ModeIcon={TriMetModeIcon}
+    vehicles={vehicles}
+  />
+);
+
 export const RouteColorBackgroundWithTransparencyOnHover = () => (
   <TransitVehicleOverlay
     IconContainer={withRouteColorBackground(DefaultIconContainer, {
