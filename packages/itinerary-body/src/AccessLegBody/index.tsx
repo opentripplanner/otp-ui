@@ -1,4 +1,5 @@
 import { Config, Leg, LegIconComponent } from "@opentripplanner/types";
+import { isTransit } from "@opentripplanner/core-utils/lib/itinerary";
 import React, { Component, FunctionComponent, ReactElement } from "react";
 import AnimateHeight from "react-animate-height";
 import { FormattedMessage } from "react-intl";
@@ -35,6 +36,7 @@ interface Props {
   mapillaryKey?: string;
   setActiveLeg: SetActiveLegFunction;
   setLegDiagram: (leg: Leg) => void;
+  showApproximateTravelTime?: boolean;
   showElevationProfile: boolean;
   showLegIcon: boolean;
   TransitLegSubheader?: FunctionComponent<TransitLegSubheaderProps>;
@@ -75,6 +77,7 @@ class AccessLegBody extends Component<Props, State> {
       mapillaryCallback,
       mapillaryKey,
       setLegDiagram,
+      showApproximateTravelTime,
       showElevationProfile,
       showLegIcon,
       TransitLegSubheader
@@ -137,7 +140,12 @@ class AccessLegBody extends Component<Props, State> {
                     aria-expanded={expanded}
                     onClick={this.onStepsHeaderClick}
                   >
-                    <Duration seconds={leg.duration} />
+                    <Duration
+                      seconds={leg.duration}
+                      showApproximatePrefix={
+                        showApproximateTravelTime && !isTransit(leg.mode)
+                      }
+                    />
                     {leg.steps && leg.steps.length > 0 && (
                       <S.CaretToggle expanded={expanded} />
                     )}

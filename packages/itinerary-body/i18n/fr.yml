@@ -73,7 +73,9 @@ otpUi:
       vehicle: Véhicule
   ItineraryBody:
     common:
-      durationShort: "{hours, plural, =0 {} other {# h }}{minutes} min"
+      durationShort: >-
+        {approximatePrefix, select, true {Environ } other {}}{hours, plural, =0
+        {} other {# h }}{minutes} min
     flexAdvanceNotice: " au moins {leadDays, plural, one {# jour} other {# jours}} à l'avance"
     flexCallAhead: réserver au préalable
     flexCallNumber: réserver au {phoneNumber}

@@ -190,7 +190,8 @@ function createTripDetailsTemplate(
       FareDetails,
       fareDetailsLayout,
       TimeActiveDetails,
-      itinerary
+      itinerary,
+      showApproximateMinutesActive
     }: TripDetailsProps,
     { globals, parameters }: StoryContext
   ): ReactElement => {
@@ -211,6 +212,7 @@ function createTripDetailsTemplate(
         itinerary={itinerary}
         co2Config={defaultCo2Config}
         defaultFareType={defaultFareType}
+        showApproximateMinutesActive={showApproximateMinutesActive}
       />
     );
   };
@@ -249,6 +251,11 @@ export default {
 
 export const WalkOnlyItinerary = makeStory({
   itinerary: walkOnlyItinerary
+});
+
+export const ApproximatePrefixItinerary = makeStory({
+  itinerary: walkOnlyItinerary,
+  showApproximateMinutesActive: true
 });
 
 export const BikeOnlyItinerary = makeStory({

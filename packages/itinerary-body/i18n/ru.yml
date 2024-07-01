@@ -69,7 +69,9 @@ otpUi:
       vehicle: Транспортное средство
   ItineraryBody:
     common:
-      durationShort: "{hours, plural, =0 {} other {# ч }}{minutes} мин"
+      durationShort: >-
+        {approximatePrefix, select, true {Около } other {}}{hours, plural, =0 {}
+        other {# ч }}{minutes} мин
     flexCallAhead: звоните заранее
     flexCallNumber: звоните {phoneNumber}
     flexPickupMessage: Чтобы воспользоваться этим маршрутом, {action}{advanceNotice}.

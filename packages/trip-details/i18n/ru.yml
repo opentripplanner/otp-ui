@@ -18,8 +18,8 @@ otpUi:
       <strong>{departureDate, time, short}</strong>
     hideDetail: Скрыть детали
     minutesActive: >-
-      Время в активном режиме: <strong>{minutes, plural, one {# минуту} other {#
-      минуты}}</strong>
+      Время в активном режиме: <strong>{approximatePrefix, select, true {~}
+      other {}}{minutes, plural, one {# минуту} other {# минуты}}</strong>
     showDetail: Показать детали
     timeActiveDescription: >
       Проделав этот маршрут, вы потратите <strong>{walkMinutes, plural, one {#

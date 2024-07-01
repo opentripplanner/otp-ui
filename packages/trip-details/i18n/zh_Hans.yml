@@ -13,7 +13,9 @@ otpUi:
       <strong>{departureDate, date, long}</strong> <strong>{departureDate, time,
       short}</strong> 出发
     hideDetail: 隐藏细节
-    minutesActive: "活动时间: <strong>{minutes} 分钟</strong>"
+    minutesActive: >-
+      活动时间: <strong>{approximatePrefix, select, true {约 } other {}}{minutes}
+      分钟</strong>
     showDetail: 显示详细资料
     timeActiveDescription: >
       在本次行程中，您将步行 <strong>{walkMinutes} 分钟</strong>，骑行<strong>{bikeMinutes}

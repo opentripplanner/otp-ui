@@ -16,7 +16,9 @@ otpUi:
       Khởi hành <strong>{departureDate, date, long}</strong> lúc
       <strong>{departureDate, time, short}</strong>
     hideDetail: Ẩn chi tiết
-    minutesActive: "Thời gian hoạt động: <strong>{minutes} phút</strong>"
+    minutesActive: >-
+      Thời gian hoạt động: <strong>{approximatePrefix, select, true {~} other
+      {}}{minutes} phút</strong>
     showDetail: Hiển thị chi tiết
     timeActiveDescription: >
       Nếu thực hiện chuyến đi này, quý vị sẽ dành <strong>{walkMinutes}

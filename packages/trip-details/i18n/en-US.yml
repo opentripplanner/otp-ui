@@ -18,8 +18,8 @@ otpUi:
     hideDetail: Hide details
     legMissingFareInfo: No fare information for this leg
     minutesActive: >-
-      Time Spent Active: <strong>{minutes, plural, one {# minute} other {#
-      minutes}}</strong>
+      Time Spent Active: <strong>{approximatePrefix, select, true {~} other
+      {}}{minutes, plural, one {# minute} other {# minutes}}</strong>
     missingFareTotal: No fare total available
     showDetail: Show details
     timeActiveDescription: >

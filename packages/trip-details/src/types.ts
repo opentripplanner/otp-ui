@@ -93,7 +93,11 @@ export interface TripDetailsProps {
    * Itinerary that the user has selected to view, contains multiple legs.
    */
   itinerary: Itinerary;
-    /**
+  /**
+   * show the '~' symbol in the trip details panel
+   */
+  showApproximateMinutesActive?: boolean;
+  /**
    * Slot for a custom component to render the expandable section for time active.
    */
   TimeActiveDetails?: React.ElementType<TimeActiveDetailsProps>;

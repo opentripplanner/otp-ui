@@ -17,7 +17,7 @@ otpUi:
       <strong>{departureDate, time, short}</strong>
     hideDetail: Masquer les détails
     legMissingFareInfo: Tarif inconnu pour cette étape
-    minutesActive: "Activité physique\_: <strong>{minutes, plural, one {# minute} other {# minutes}}</strong>"
+    minutesActive: "Activité physique\_: <strong>{approximatePrefix, select, true {~} other {}}{minutes, plural, one {# minute} other {# minutes}}</strong>"
     missingFareTotal: Tarif total inconnu
     showDetail: Afficher les détails
     timeActiveDescription: >

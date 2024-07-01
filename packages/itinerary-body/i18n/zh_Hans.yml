@@ -69,7 +69,9 @@ otpUi:
       vehicle: 车辆
   ItineraryBody:
     common:
-      durationShort: "{hours, plural, =0 {} other {# 시간 }}{minutes} 分钟"
+      durationShort: >-
+        {approximatePrefix, select, true {约 } other {}}{hours, plural, =0 {}
+        other {# 시간 }}{minutes} 分钟
     flexAdvanceNotice: " 至少提前 {leadDays} 天"
     flexCallAhead: 提前打电话
     flexCallNumber: 拨打 {phoneNumber}
