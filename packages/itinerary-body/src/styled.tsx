@@ -394,6 +394,9 @@ export const PlaceRowWrapper = styled.li`
   /* needs to be a flexbox row */
   max-width: 500px;
   display: grid;
+  grid-template-areas:
+    "time line title"
+    "time line instructions";
   grid-template-columns: 65px 30px auto;
 `;
 
