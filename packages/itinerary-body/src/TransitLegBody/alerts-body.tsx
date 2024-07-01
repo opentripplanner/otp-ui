@@ -71,7 +71,7 @@ export default function AlertsBody({
 }: Props): ReactElement {
   if (typeof alerts !== "object") return null;
   return (
-    <S.TransitAlerts>
+    <S.TransitAlerts className="alert-body">
       {alerts
         .sort((a, b) => b.effectiveStartDate - a.effectiveStartDate)
         .map(

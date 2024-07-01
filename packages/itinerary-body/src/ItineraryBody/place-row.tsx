@@ -76,7 +76,10 @@ export default function PlaceRow({
   );
 
   return (
-    <S.PlaceRowWrapper key={legIndex || "destination-place"}>
+    <S.PlaceRowWrapper
+      className={`place-row-wrapper ${leg.transitLeg ? "transit" : ""}`}
+      key={legIndex || "destination-place"}
+    >
       <S.LineColumn>
         <LineColumnContent
           interline={interline}
@@ -131,7 +134,9 @@ export default function PlaceRow({
           />
         )}
       </S.InvisibleAdditionalDetails>
-      <S.PlaceDetails>
+      <S.PlaceDetails
+        className={`place-details ${leg.transitLeg ? "transit" : ""}`}
+      >
         {/* Show the leg, if not rendering the destination */}
         {!isDestination &&
           (leg.transitLeg ? (

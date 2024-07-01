@@ -37,6 +37,7 @@ const StyledItineraryBody = styled(ItineraryBody)`
   }
 
   ${ItineraryBodyClasses.LineColumn} {
+    grid-area: line;
     display: table-cell;
     max-width: 20px;
     width: 20px;
@@ -45,6 +46,7 @@ const StyledItineraryBody = styled(ItineraryBody)`
   }
 
   ${ItineraryBodyClasses.PlaceHeader} {
+    grid-area: title;
     color: #000;
     font-size: 18px;
     font-weight: 500;
@@ -65,6 +67,7 @@ const StyledItineraryBody = styled(ItineraryBody)`
   }
 
   ${ItineraryBodyClasses.TimeColumn} {
+    grid-area: time;
     color: #676767;
     display: table-cell;
     font-size: 14px;
