@@ -41,7 +41,6 @@ export const DropdownMenu = styled.div<{ alignLeft?: boolean }>`
   min-width: 160px;
   padding: 5px 0;
   position: absolute;
-  right: 0;
   ${props => (props.alignLeft ? "left: 0;" : "right: 0;")}
   top: 100%;
   width: 100%;

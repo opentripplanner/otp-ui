@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentMeta } from "@storybook/react";
 import styled from "styled-components";
-import { Dropdown } from "../dropdown";
+import Dropdown from "../dropdown";
 import blue from "../colors/blue";
 
 const options = [
@@ -73,11 +73,11 @@ export const DropdownWithList = (): React.ReactElement => (
 
 export const DropdownWithListAlignMenuLeft = (): React.ReactElement => (
   <Dropdown
+    alignMenuLeft
     id="dropdown-with-ul"
     isList
     label="Dropdown with ul"
     listLabel="Dropdown menu"
-    AlignMenuLeft
     text="Dropdown with ul"
   >
     {options.map(option => (
@@ -95,7 +95,7 @@ export const DropdownAsOtprrNavItem = (): React.ReactElement => (
       id="dropdown-navbar"
       isList
       label="Dropdown navbar"
-      listLabel="Dropdown wihtin navbar"
+      listLabel="Dropdown within navbar"
       text="Icon"
     >
       {options.map(option => (

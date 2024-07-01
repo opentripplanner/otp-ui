@@ -11,13 +11,13 @@ import { getNextSibling, getPreviousSibling } from "../utils/dom-query";
 import { DropdownButton, DropdownMenu, DropdownWrapper } from "./styled";
 
 export interface Props extends HTMLAttributes<HTMLElement> {
+  alignMenuLeft?: boolean;
   buttonStyle?: React.CSSProperties;
   isList?: boolean;
   label?: string;
   listLabel?: string;
   text?: JSX.Element | string;
   nav?: boolean;
-  AlignMenuLeft?: boolean;
 }
 
 /**
@@ -25,7 +25,8 @@ export interface Props extends HTMLAttributes<HTMLElement> {
  * a floating div is rendered below the "text" with list contents inside. Clicking anywhere
  * outside the floating div will close the dropdown.
  */
-export const Dropdown = ({
+const Dropdown = ({
+  alignMenuLeft,
   children,
   className,
   id,
@@ -33,7 +34,6 @@ export const Dropdown = ({
   label,
   listLabel,
   text,
-  AlignMenuLeft,
   buttonStyle
 }: Props): JSX.Element => {
   const [open, setOpen] = useState(false);
@@ -120,7 +120,7 @@ export const Dropdown = ({
           aria-labelledby={listLabel ? undefined : `${id}-label`}
           id={id}
           onClick={toggleOpen}
-          alignLeft={AlignMenuLeft}
+          alignLeft={alignMenuLeft}
           role={isList && "list"}
           tabIndex={-1}
         >
@@ -130,3 +130,5 @@ export const Dropdown = ({
     </DropdownWrapper>
   );
 };
+
+export default Dropdown;
