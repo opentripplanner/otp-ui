@@ -1,7 +1,7 @@
+import coreUtils from "@opentripplanner/core-utils";
 import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
-import coreUtils from "@opentripplanner/core-utils";
 import { defaultMessages } from "../util";
 
 interface Props {

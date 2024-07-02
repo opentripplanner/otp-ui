@@ -189,8 +189,8 @@ function createTripDetailsTemplate(
       DepartureDetails,
       FareDetails,
       fareDetailsLayout,
-      TimeActiveDetails,
       itinerary,
+      TimeActiveDetails,
       showApproximateMinutesActive
     }: TripDetailsProps,
     { globals, parameters }: StoryContext
