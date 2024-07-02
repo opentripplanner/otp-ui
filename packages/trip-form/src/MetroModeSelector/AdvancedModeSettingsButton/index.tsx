@@ -21,9 +21,6 @@ const StyledModeSettingsButton = styled.div<{
   fillModeIcons: boolean;
   subsettings: boolean;
 }>`
-  & > input {
-    ${invisibleCss}
-  }
   & > label {
     align-items: center;
     background-color: #fff;
@@ -43,12 +40,28 @@ const StyledModeSettingsButton = styled.div<{
     margin-top: -2px;
     padding: 0 10px;
   }
+  & > input {
+    ${invisibleCss}
 
-  & > input:checked + label {
-    background-color: ${props => props.accentColor};
-    color: #fff;
-    border-bottom-left-radius: ${props => props.subsettings && 0} !important;
-    border-bottom-right-radius: ${props => props.subsettings && 0} !important;
+    &:checked + label {
+      background-color: ${props => props.accentColor};
+      color: #fff;
+      border-bottom-left-radius: ${props => props.subsettings && 0} !important;
+      border-bottom-right-radius: ${props => props.subsettings && 0} !important;
+    }
+
+    &:focus-visible + label,
+    &:focus + label {
+      outline: ${props => props.accentColor} 1px solid;
+      outline-offset: -4px;
+    }
+  }
+
+  & > input:checked {
+    &:focus-visible + label,
+    &:focus + label {
+      outline: white 1px solid;
+    }
   }
 
   span {
