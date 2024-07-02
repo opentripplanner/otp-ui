@@ -96,8 +96,11 @@ otpUi:
     viewOnMap: Afficher sur le plan
   TransitLegBody:
     AlertsBody:
+      alertLinkText: Voir l'alerte sur le site de {agency}
       effectiveDate: À partir du {dateTime, date, long}
       effectiveTimeAndDate: À partir de {dateTime, time, short}, {day}
+      linkOpensNewWindow: (Ouvre une nouvelle fenêtre)
+      noAgencyAlertLinkText: Voir l'alerte sur le site du transporteur
       today: aujourd'hui
       tomorrow: demain
       yesterday: hier

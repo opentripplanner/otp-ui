@@ -46,8 +46,10 @@ export const MenuItemList = styled.ul.attrs({
   list-style: none;
   margin: 2px 0 0;
   min-width: 160px;
+  max-height: 75vh;
   padding: 5px 0;
   position: absolute;
+  overflow: scroll;
   text-align: left;
   top: 100%;
   /* this is an annoyingly high number, but is needed to be on top of some otp-rr components */
@@ -124,6 +126,13 @@ export const OptionSubTitle = styled.span`
   color: #686868;
   font-size: 12px;
   margin-left: 6px;
+`;
+
+export const OptionAltLabel = styled.span`
+  color: #686868;
+  display: block;
+  font-size: 11px;
+  margin-left: 46px; /* This is a bit brittle. TODO: Calculate */
 `;
 
 export const OptionContent = styled.span`

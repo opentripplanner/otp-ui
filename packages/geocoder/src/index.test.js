@@ -27,6 +27,10 @@ describe("geocoder", () => {
     {
       type: "PHOTON"
     },
+    {
+      type: "OTP",
+      baseUrl: "http://dummy.dummy/otp"
+    },
     // this entry represents no geocoder configuration. In this case it is
     // expected that the NoApiGeocoder will be used.
     undefined
@@ -112,6 +116,15 @@ describe("geocoder", () => {
     .query(true)
     .replyWithFile(200, mockResponsePath("photon", "reverse-response.json"));
 
+  // nocks for OTP
+  nock("http://dummy.dummy/")
+    // autocomplete & search
+    .get("/otp/geocode/stopClusters")
+    .twice()
+    .query(true)
+    .replyWithFile(200, mockResponsePath("otp", "autocomplete-response.json"));
+
+  const AUTOCOMPLETE_ONLY = ["OTP"];
   geocoders.forEach(geocoder => {
     const geocoderType = geocoder ? geocoder.type : "NoApiGeocoder";
     // the describe is in quotes to bypass a lint rule
@@ -131,6 +144,10 @@ describe("geocoder", () => {
       });
 
       it("should make reverse query", async () => {
+        if (AUTOCOMPLETE_ONLY.includes(geocoderType)) {
+          return;
+        }
+
         const result = await getGeocoder(geocoder).reverse({
           point: { lat: 45.516198, lon: -122.67324 }
         });
@@ -138,6 +155,10 @@ describe("geocoder", () => {
       });
 
       it("should make reverse query with featurecollection enabled", async () => {
+        if (AUTOCOMPLETE_ONLY.includes(geocoderType)) {
+          return;
+        }
+
         const result = await getGeocoder({
           ...geocoder,
           reverseUseFeatureCollection: true
@@ -148,6 +169,10 @@ describe("geocoder", () => {
       });
 
       it("should get location from geocode feature", async () => {
+        if (AUTOCOMPLETE_ONLY.includes(geocoderType)) {
+          return;
+        }
+
         let mockFeature;
         switch (geocoderType) {
           case "ARCGIS":

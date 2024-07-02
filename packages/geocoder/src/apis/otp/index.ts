@@ -7,18 +7,25 @@ type FetchArgs = {
   query: string
 }
 
+type OTPGeocoderStop = {
+  agencies?: { id: string, name: string }[]
+  code?: string,
+  coordinate: {
+    lat: number,
+    lon: number,
+  },
+  feedPublisher?: { name: string }
+  id: string,
+  modes: string[] 
+  name: string,
+  type: "STOP" | "STATION"
+}
+
 type OTPGeocoderResponse = {
   results: {
-    coordinate: {
-      lat: number,
-      lon: number,
-    },
-    code?: string | undefined,
-    name: string,
-    id: string,
-    agencies?: { id: string, name: string }[]
-    feedPublisher?: { name: string }
-    modes: string[]
+    primary: OTPGeocoderStop
+    // Secondaries is always defined: https://github.com/opentripplanner/OpenTripPlanner/pull/5879
+    secondaries: OTPGeocoderStop[]
   }[]
 } | undefined
 
@@ -26,7 +33,17 @@ type OTPGeocoderResponse = {
 function run({ query, url }: FetchArgs): Promise<OTPGeocoderResponse> {
   return fetch(`${url}/geocode/stopClusters?query=${query}`)
     .then(res => res.text())
-    .then(res => JSON.parse(`{"results": ${res}}`));
+    .then(res => {
+      let parsed = { results: [] }
+
+      try {
+        parsed = JSON.parse(`{"results": ${res}}`)
+      } catch (e) {
+        console.warn("Invalid response from OTP Geocoder!")
+      }
+
+      return parsed
+});
 }
 
 /**

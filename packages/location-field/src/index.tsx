@@ -177,6 +177,7 @@ const LocationField = ({
   sessionOptionIcon = <Search size={ICON_SIZE} />,
   sessionSearches = [],
   showClearButton = true,
+  showSecondaryLabels = true,
   showUserSettings = false,
   sortByDistance = false,
   stopOptionIcon = <Bus size={ICON_SIZE} />,
@@ -550,7 +551,7 @@ const LocationField = ({
     locationSelectedLookup[itemIndex] = locationSelected;
 
     // Extract GTFS/POI info and assign to class
-    const { id, source, layer } = feature.properties;
+    const { id, layer, secondaryLabels, source } = feature.properties;
     const classNames = [];
     let operatorIcon;
     // Operator only exists on transit features
@@ -578,6 +579,8 @@ const LocationField = ({
         onClick={locationSelected}
         title={main}
         subTitle={secondary}
+        secondaryLabels={secondaryLabels}
+        showSecondaryLabels={showSecondaryLabels}
       />
     );
   };
