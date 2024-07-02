@@ -110,6 +110,7 @@ const AdvancedModeSettingsButton = ({
     <SettingsContainer className="advanced-submode-container">
       <StyledModeSettingsButton
         accentColor={accentColor}
+        className="advanced-submode-mode-button"
         fillModeIcons={fillModeIcons}
         id={modeButton.key}
         subsettings={modeButton.modeSettings.length > 0}
