@@ -35,7 +35,8 @@ const Dropdown = ({
   buttonStyle
 }: Props): JSX.Element => {
   const [open, setOpen] = useState(false);
-  const containerRef = useRef<HTMLLIElement>(null);
+
+  const containerRef = useRef<HTMLSpanElement>(null);
 
   const toggleOpen = useCallback(() => setOpen(!open), [open, setOpen]);
 
@@ -43,8 +44,10 @@ const Dropdown = ({
   const queryId = `#${id} button, #${id}-label`;
 
   const isList = Array.isArray(children)
-    ? children.every(c => c.type === "li")
-    : children.type === "li";
+    ? children.every(
+        child => React.isValidElement(child) && child.type === "li"
+      )
+    : React.isValidElement(children) && children.type === "li";
 
   // Adding document event listeners allows us to close the dropdown
   // when the user interacts with any part of the page that isn't the dropdown
