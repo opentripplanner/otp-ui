@@ -1,13 +1,10 @@
 import {
   arrow,
-  FloatingFocusManager,
   offset,
-  safePolygon,
   shift,
   useClick,
   useDismiss,
   useFloating,
-  useHover,
   useInteractions,
   useRole
 } from "@floating-ui/react";
@@ -18,7 +15,7 @@ import React, { ReactElement, useCallback, useRef, useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import styled, { css } from "styled-components";
 
-import SubSettingsPane, { defaultMessages } from "./SubSettingsPane";
+import { defaultMessages } from "./SubSettingsPane";
 import generateModeButtonLabel from "./i18n";
 
 const invisibleCss = css`
@@ -151,34 +148,6 @@ const ModeButtonWrapper = styled.span<{
   }
 `;
 
-const HoverPanel = styled.div`
-  min-width: 300px;
-  padding: 0 10px;
-  width: 75%;
-  z-index: 100;
-`;
-
-const HoverInnerContainer = styled.div`
-  background: #fff;
-  border-radius: 4px;
-  color: #2e2e2e;
-  font-size: 90%;
-  font-weight: bold;
-  padding: 0px 20px 10px;
-  pointer-events: none;
-  ${boxShadowCss}
-`;
-
-const Arrow = styled.div`
-  background: #fff;
-  height: 10px;
-  margin-top: -5px;
-  position: absolute;
-  transform: rotate(-45deg);
-  width: 10px;
-  ${boxShadowCss}
-`;
-
 interface ModeButtonProps {
   // Optional properties for styling
   accentColor?: string;
@@ -199,17 +168,14 @@ function ModeButton({
   activeHoverColor,
   fillModeIcons,
   id,
-  itemWithKeyboard,
   modeButton,
   onPopupClose,
   onPopupKeyboardExpand,
-  onSettingsUpdate,
   onToggle
 }: ModeButtonProps) {
   const intl = useIntl();
 
   const [open, setOpen] = useState(false);
-  const [hoverEnabled, setHoverEnabled] = useState(true);
   const arrowRef = useRef(null);
   const onOpenChange = useCallback(
     value => {
@@ -220,38 +186,18 @@ function ModeButton({
     },
     [onPopupClose, setOpen]
   );
-  const {
-    context,
-    floating,
-    middlewareData: { arrow: { x: arrowX, y: arrowY } = {} },
-    reference,
-    strategy,
-    x,
-    y
-  } = useFloating({
+  const { context, reference } = useFloating({
     middleware: [offset(8), shift(), arrow({ element: arrowRef })],
     onOpenChange,
     open
   });
 
-  const { getFloatingProps, getReferenceProps } = useInteractions([
-    useHover(context, {
-      // Enable hover only if no popup has been triggered via keyboard.
-      // (This is to avoid focus being stolen by hovering out of another button.)
-      enabled: itemWithKeyboard === null && hoverEnabled,
-      handleClose: safePolygon({
-        blockPointerEvents: false,
-        restMs: 500,
-        buffer: 0
-      })
-    }),
+  const { getReferenceProps } = useInteractions([
     useClick(context),
     useRole(context),
     useDismiss(context)
   ]);
 
-  const renderDropdown =
-    open && modeButton.enabled && modeButton.modeSettings?.length > 0;
   const interactionProps = getReferenceProps();
 
   // ARIA roles are added by the `useRole` hook.
@@ -331,47 +277,6 @@ function ModeButton({
           />
         </InvisibleA11yLabel>
       </button>
-      {renderDropdown && (
-        <FloatingFocusManager
-          context={context}
-          // Restore the keyboard focus AND show focus cue on hovering out of the label
-          // only if this component triggered the popup using the keyboard.
-          // (Don't show focus cue if the popup was not triggered via keyboard.)
-          returnFocus={itemWithKeyboard === id}
-        >
-          <HoverPanel
-            // This library relies on prop spreading
-            // eslint-disable-next-line react/jsx-props-no-spreading
-            {...getFloatingProps()}
-            // Matches ID on Header element in SubSettingsPane
-            aria-labelledby={`metro-mode-selector-${modeButton.key}-button-label`}
-            // This is a workaround for a bug in Firefox.
-            // https://github.com/floating-ui/floating-ui/issues/2299
-            // https://bugzilla.mozilla.org/show_bug.cgi?id=1829500
-            onPointerDown={() => {
-              setHoverEnabled(false);
-              setTimeout(() => setHoverEnabled(true), 100);
-            }}
-            ref={floating}
-            style={{
-              left: x ?? 0,
-              position: strategy,
-              top: y ?? 0
-            }}
-          >
-            <Arrow
-              ref={arrowRef}
-              style={{ top: arrowY ?? 0, left: arrowX ?? 0 }}
-            />
-            <HoverInnerContainer>
-              <SubSettingsPane
-                modeButton={modeButton}
-                onSettingUpdate={onSettingsUpdate}
-              />
-            </HoverInnerContainer>
-          </HoverPanel>
-        </FloatingFocusManager>
-      )}
     </ModeButtonWrapper>
   );
 }
