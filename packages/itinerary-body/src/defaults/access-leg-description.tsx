@@ -1,3 +1,4 @@
+import coreUtils from "@opentripplanner/core-utils";
 import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
 import { Config, Leg } from "@opentripplanner/types";
 import React, { HTMLAttributes, ReactElement } from "react";
@@ -98,8 +99,11 @@ export default function AccessLegDescription({
           description="Summarizes an access leg, including distance"
           id="otpUi.AccessLegBody.summaryAndDistance"
           values={{
-            // TODO: Implement metric vs imperial (up until now it's just imperial).
-            distance: humanizeDistanceString(leg.distance, false, intl),
+            distance: humanizeDistanceString(
+              leg.distance,
+              coreUtils.metricUnits.areMetricUnitsUsed(intl.locale),
+              intl
+            ),
             mode: modeContent,
             place: placeContent
           }}

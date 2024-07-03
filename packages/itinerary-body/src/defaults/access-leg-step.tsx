@@ -1,5 +1,6 @@
 /* eslint-disable no-case-declarations */
 import { Step } from "@opentripplanner/types";
+import coreUtils from "@opentripplanner/core-utils";
 import React, { HTMLAttributes, ReactElement } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
@@ -104,10 +105,13 @@ export default function AccessLegStep({
     // for styled-components support.
     <span className={className} style={style}>
       {stepContent}
-      {/* TODO: Implement metric vs imperial (up until now it's just imperial). */}
       {step?.distance > 0 && (
         <S.StepLength>
-          {humanizeDistanceString(step.distance, false, intl)}
+          {humanizeDistanceString(
+            step.distance,
+            coreUtils.metricUnits.areMetricUnitsUsed(intl.locale),
+            intl
+          )}
         </S.StepLength>
       )}
     </span>

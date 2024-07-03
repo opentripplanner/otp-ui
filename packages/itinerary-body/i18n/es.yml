@@ -10,30 +10,27 @@ otpUi:
       vehicleType:
         bike: la bicicleta
         bikeshare: la bicicleta compartida
-        car: el carro
-        escooter: la patineta
+        car: el coche
+        escooter: el patín
         vehicle: el vehículo
-      walkVehicle: Caminar vehículo por la {place}
+      walkVehicle: Conduzca el vehículo por {place}
     TncLeg:
       bookRide: Reservar un viaje
-      bookRideLater: Espere hasta las {timeMillis, time, short} para reservar
+      bookRideLater: Espera hasta las {timeMillis, time, short} para reservar
       estimatedCost: "Costo estimado: {minFare} - {maxFare}"
-      estimatedTravelTime: "Tiempo de viaje estimado: {duration} (no tiene en cuenta
-        el tráfico)"
-      waitForPickup: "Espera al conductor {company}{minutes, plural, =0 {} other {
-        # minutos}}"
+      estimatedTravelTime: "Tiempo de viaje estimado: {duration} (no tiene en cuenta el tráfico)"
+      waitForPickup: "Espera al conductor {company}{minutes, plural, =0 {} other { # minutos}}"
     mapillaryTooltip: Mostrar imágenes de la calle en esta ubicación
     step:
-      circleClockwise: Siga el círculo en el sentido de las agujas del reloj
-      circleCounterClockwise: Siga el círculo en sentido contrario a las agujas del
-        reloj
-      continue: Continuar
-      enterStation: Entrar a la estación
-      exitStation: Salir de la estación
-      hardLeft: Giro a la izquierda
-      hardRight: Giro a la derecha
-      left: Vire a la izquierda
-      right: Vire a la derecha
+      circleClockwise: Sigue el círculo en el sentido de las agujas del reloj
+      circleCounterClockwise: Sigue el círculo en sentido contrario a las agujas del reloj
+      continue: Continua
+      enterStation: Entra en la estación
+      exitStation: Sal de la estación
+      hardLeft: Turce a la izquierda
+      hardRight: Tuerce a la derecha
+      left: Gira a la izquierda
+      right: Gira a la derecha
       slightlyLeft: Ligeramente a la izquierda
       slightlyRight: Ligeramente a la derecha
       uTurnLeft: Media vuelta a la izquierda
@@ -52,15 +49,15 @@ otpUi:
       southwest: el suroeste
       west: el oeste
     stepStation: "{step} en {street}"
-    summary: "{mode} a {place}"
-    summaryAndDistance: "{mode} - {distance} a {place}"
+    summary: "{mode} hacia {place}"
+    summaryAndDistance: "{mode} {distance} hacia {place}"
     summaryMode:
       bike: Bicicleta
       bikeshare: Bicicleta compartida
       carDrive: Coche
       carHail: Paseo
-      escooter: Patineta
-      walk: Caminar
+      escooter: Patín
+      walk: Camine
     unnamedPath: Sendero sin nombre
     unnamedRoad: Calle sin nombre
     vehicleTitle: "{vehicleType} {company}"
@@ -68,13 +65,12 @@ otpUi:
       bike: Bicicleta
       bikeshare: Bicicleta compartida
       car: Coche
-      escooter: Patineta
+      escooter: Patín
       vehicle: Vehículo
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# hr. }}{minutes} min"
-    flexAdvanceNotice: " al menos {leadDays, plural, one {# día} other {# días}} de
-      antelación"
+    flexAdvanceNotice: " al menos {leadDays, plural, one {# día} other {# días}} de antelación"
     flexCallAhead: llama con anticipación
     flexCallNumber: llama {phoneNumber}
     flexPickupMessage: Para tomar esta ruta, tiene que {action}{advanceNotice}.
@@ -85,13 +81,13 @@ otpUi:
       car: en carro
       escooter: en patineta
       walk: a pie
-    viewOnMap: Ver en el mapa
     tripAccessibility:
       inaccessible: inaccesible
-      unclear: desconocido
-      legAccessibility: 'Accesibilidad para sillas de ruedas en este tramo del viaje: '
+      itineraryAccessibility: "Accesibilidad para sillas de ruedas en este viaje: "
+      legAccessibility: "Accesibilidad para sillas de ruedas en este tramo del viaje: "
       likelyAccessible: probablemente accesible
-      itineraryAccessibility: 'Accesibilidad para sillas de ruedas en este viaje: '
+      unclear: desconocido
+    viewOnMap: Ver en el mapa
   TransitLegBody:
     AlertsBody:
       effectiveDate: A partir de {dateTime, date, long}
