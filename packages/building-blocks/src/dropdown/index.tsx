@@ -13,7 +13,6 @@ import { DropdownButton, DropdownMenu, DropdownWrapper } from "./styled";
 export interface Props extends HTMLAttributes<HTMLElement> {
   alignMenuLeft?: boolean;
   buttonStyle?: React.CSSProperties;
-  isList?: boolean;
   label?: string;
   listLabel?: string;
   text?: JSX.Element | string;
@@ -30,7 +29,6 @@ const Dropdown = ({
   children,
   className,
   id,
-  isList,
   label,
   listLabel,
   text,
@@ -43,6 +41,10 @@ const Dropdown = ({
 
   // Argument for document.querySelectorAll to target focusable elements.
   const queryId = `#${id} button, #${id}-label`;
+
+  const isList = Array.isArray(children)
+    ? children.every(c => c.type === "li")
+    : children.type === "li";
 
   // Adding document event listeners allows us to close the dropdown
   // when the user interacts with any part of the page that isn't the dropdown

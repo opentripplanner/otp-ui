@@ -58,7 +58,6 @@ export const DropdownWithLabel = (): React.ReactElement => (
 export const DropdownWithList = (): React.ReactElement => (
   <Dropdown
     id="dropdown-with-ul"
-    isList
     label="Dropdown with ul"
     listLabel="Dropdown menu"
     text="Dropdown with ul"
@@ -75,7 +74,6 @@ export const DropdownWithListAlignMenuLeft = (): React.ReactElement => (
   <Dropdown
     alignMenuLeft
     id="dropdown-with-ul"
-    isList
     label="Dropdown with ul"
     listLabel="Dropdown menu"
     text="Dropdown with ul"
@@ -93,7 +91,6 @@ export const DropdownAsOtprrNavItem = (): React.ReactElement => (
     <Dropdown
       className="navBarItem"
       id="dropdown-navbar"
-      isList
       label="Dropdown navbar"
       listLabel="Dropdown within navbar"
       text="Icon"
