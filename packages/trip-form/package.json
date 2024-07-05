@@ -11,7 +11,6 @@
   "private": false,
   "dependencies": {
     "@opentripplanner/core-utils": "^11.4.0",
-    "@floating-ui/react": "^0.19.2",
     "@styled-icons/bootstrap": "^10.34.0",
     "@styled-icons/boxicons-regular": "^10.38.0",
     "@styled-icons/fa-regular": "^10.37.0",

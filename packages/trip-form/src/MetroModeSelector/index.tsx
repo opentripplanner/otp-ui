@@ -1,21 +1,8 @@
-import {
-  arrow,
-  offset,
-  shift,
-  useClick,
-  useDismiss,
-  useFloating,
-  useInteractions,
-  useRole
-} from "@floating-ui/react";
 import { ModeButtonDefinition } from "@opentripplanner/types";
-import { CaretDown } from "@styled-icons/fa-solid/CaretDown";
-import { CaretUp } from "@styled-icons/fa-solid/CaretUp";
-import React, { ReactElement, useCallback, useRef, useState } from "react";
-import { FormattedMessage, useIntl } from "react-intl";
+import React, { ReactElement, useCallback } from "react";
+import { useIntl } from "react-intl";
 import styled, { css } from "styled-components";
 
-import { defaultMessages } from "./SubSettingsPane";
 import generateModeButtonLabel from "./i18n";
 
 const invisibleCss = css`
@@ -155,10 +142,7 @@ interface ModeButtonProps {
 
   fillModeIcons?: boolean;
   id: string;
-  itemWithKeyboard?: string;
   modeButton: ModeButtonDefinition;
-  onPopupClose: () => void;
-  onPopupKeyboardExpand: (id: string) => void;
   onSettingsUpdate: (QueryParamChangeEvent) => void;
   onToggle: () => void;
 }
@@ -169,60 +153,11 @@ function ModeButton({
   fillModeIcons,
   id,
   modeButton,
-  onPopupClose,
-  onPopupKeyboardExpand,
   onToggle
 }: ModeButtonProps) {
   const intl = useIntl();
 
-  const [open, setOpen] = useState(false);
-  const arrowRef = useRef(null);
-  const onOpenChange = useCallback(
-    value => {
-      setOpen(value);
-      if (!value && typeof onPopupClose === "function") {
-        onPopupClose();
-      }
-    },
-    [onPopupClose, setOpen]
-  );
-  const { context, reference } = useFloating({
-    middleware: [offset(8), shift(), arrow({ element: arrowRef })],
-    onOpenChange,
-    open
-  });
-
-  const { getReferenceProps } = useInteractions([
-    useClick(context),
-    useRole(context),
-    useDismiss(context)
-  ]);
-
-  const interactionProps = getReferenceProps();
-
-  // ARIA roles are added by the `useRole` hook.
-  // Remove the aria-controls, aria-expanded, and aria-haspopup props from the label, they will
-  // instead be passed to the button for keyboard/screen reader users to trigger the popup.
-  const {
-    "aria-controls": ariaControls,
-    "aria-expanded": ariaExpanded,
-    "aria-haspopup": ariaHasPopup,
-    ...labelInteractionProps
-  } = interactionProps;
-
   const checkboxId = `metro-mode-selector-mode-${id}`;
-
-  const handleButtonClick = useCallback(
-    e => {
-      if (typeof onPopupKeyboardExpand === "function") {
-        onPopupKeyboardExpand(id);
-      }
-      if (typeof interactionProps.onClick === "function") {
-        interactionProps.onClick(e);
-      }
-    },
-    [id, interactionProps, onPopupKeyboardExpand]
-  );
 
   const label = generateModeButtonLabel(modeButton.key, intl, modeButton.label);
 
@@ -245,38 +180,13 @@ function ModeButton({
       <label
         // This library relies on prop spreading
         // eslint-disable-next-line react/jsx-props-no-spreading
-        {...labelInteractionProps}
         htmlFor={checkboxId}
         // This will trigger mouse effects such as showing popup on hover of on check.
-        ref={reference}
         title={label}
       >
         <modeButton.Icon aria-hidden size={32} />
         <InvisibleA11yLabel>{label}</InvisibleA11yLabel>
       </label>
-      <button
-        // eslint-disable-next-line react/jsx-props-no-spreading
-        {...interactionProps}
-        // Disable button if mode is not checked (but keep in DOM for screen reader awareness)
-        disabled={!modeButton.enabled}
-        // Separate handler to communicate to the parent element
-        // which item had a popup triggered using the keyboard.
-        onClick={handleButtonClick}
-        // Required by linter settings
-        type="button"
-      >
-        <span role="none">
-          {open ? <CaretUp size={14} /> : <CaretDown size={14} />}
-        </span>
-        <InvisibleA11yLabel>
-          <FormattedMessage
-            defaultMessage={defaultMessages["otpUi.ModeSelector.settingsLabel"]}
-            description="Label for the button to open settings for a travel mode."
-            id="otpUi.ModeSelector.settingsLabel"
-            values={{ mode: label }}
-          />
-        </InvisibleA11yLabel>
-      </button>
     </ModeButtonWrapper>
   );
 }
@@ -322,10 +232,6 @@ export default function ModeSelector({
   onSettingsUpdate,
   onToggleModeButton
 }: Props): ReactElement {
-  // State that holds the id of the active mode combination popup that was triggered via keyboard.
-  // It is used to enable/disable hover effects to avoid keyboard focus being stolen
-  // and overlapping popups on mouse hover.
-  const [itemWithKeyboard, setItemWithKeyboard] = useState<string>(null);
   return (
     <ModeBar className="metro-mode-selector">
       <legend>{label}</legend>
@@ -335,13 +241,8 @@ export default function ModeSelector({
           activeHoverColor={activeHoverColor}
           fillModeIcons={fillModeIcons}
           id={button.key}
-          itemWithKeyboard={itemWithKeyboard}
           key={button.label}
           modeButton={button}
-          onPopupClose={useCallback(() => {
-            setItemWithKeyboard(null);
-          }, [setItemWithKeyboard])}
-          onPopupKeyboardExpand={setItemWithKeyboard}
           onSettingsUpdate={onSettingsUpdate}
           onToggle={useCallback(() => {
             onToggleModeButton(button.key, !button.enabled);
