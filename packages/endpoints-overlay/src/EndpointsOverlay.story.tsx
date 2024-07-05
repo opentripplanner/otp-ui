@@ -9,8 +9,6 @@ import { withMap } from "../../../.storybook/base-map-wrapper";
 
 import EndpointsOverlay from ".";
 
-const disableStoryshots = { storyshots: { disable: true } };
-
 // EndpointsOverlay props
 const clearLocation = action("clearLocation");
 const forgetPlace = action("forgetPlace");
@@ -43,7 +41,8 @@ function CatDogIcon({ type }: UserLocationAndType) {
 export default {
   component: EndpointsOverlay,
   decorators: [withMap()],
-  title: "EndpointsOverlay"
+  title: "EndpointsOverlay",
+  parameters: { storyshots: { disable: true } }
 } as ComponentMeta<typeof EndpointsOverlay>;
 
 export const EndpointsOverlayWithoutUserSettings: ComponentStory<typeof EndpointsOverlay> = () => (
@@ -53,7 +52,6 @@ export const EndpointsOverlayWithoutUserSettings: ComponentStory<typeof Endpoint
     toLocation={toLocation}
   />
 );
-EndpointsOverlayWithoutUserSettings.parameters = disableStoryshots;
 
 export const EndpointsOverlayWithUserSettings: ComponentStory<typeof EndpointsOverlay> = () => (
   <EndpointsOverlay
@@ -67,7 +65,6 @@ export const EndpointsOverlayWithUserSettings: ComponentStory<typeof EndpointsOv
     toLocation={toLocation}
   />
 );
-EndpointsOverlayWithUserSettings.parameters = disableStoryshots;
 
 export const EndpointsOverlayWithCustomMapMarkers: ComponentStory<typeof EndpointsOverlay> = () => (
   <EndpointsOverlay
@@ -77,7 +74,6 @@ export const EndpointsOverlayWithCustomMapMarkers: ComponentStory<typeof Endpoin
     toLocation={toLocation}
   />
 );
-EndpointsOverlayWithCustomMapMarkers.parameters = disableStoryshots;
 
 export const EndpointsOverlayWithIntermediatePlace: ComponentStory<typeof EndpointsOverlay> = () => (
   <EndpointsOverlay
@@ -94,7 +90,6 @@ export const EndpointsOverlayWithIntermediatePlace: ComponentStory<typeof Endpoi
     toLocation={toLocation}
   />
 );
-EndpointsOverlayWithIntermediatePlace.parameters = disableStoryshots;
 
 export const EndpointsOverlayWithUnnamedPlace: ComponentStory<typeof EndpointsOverlay> = () => (
   <EndpointsOverlay
@@ -104,4 +99,3 @@ export const EndpointsOverlayWithUnnamedPlace: ComponentStory<typeof EndpointsOv
     toLocation={unnamedToLocation}
   />
 );
-EndpointsOverlayWithUnnamedPlace.parameters = disableStoryshots;

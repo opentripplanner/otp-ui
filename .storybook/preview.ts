@@ -23,8 +23,6 @@ if (typeof global.process === "undefined") {
   worker.start({ onUnhandledRequest: "bypass" });
 }
 
-export { parameters }
-
 const preview: Preview = {
   decorators: [mockDateDecorator],
   globals: {

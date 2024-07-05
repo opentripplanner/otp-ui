@@ -8,7 +8,6 @@ import { withMap } from "../../../.storybook/base-map-wrapper";
 import StopsOverlay, { StopProps } from ".";
 
 const center: [number, number] = [45.523092, -122.671202];
-const disableStoryshots = { storyshots: { disable: true } };
 
 const Example = ({
   highlightedStop = "8338",
@@ -31,13 +30,13 @@ const Example = ({
 };
 
 export default {
-  title: "StopsOverlay",
   component: StopsOverlay,
-  decorators: [withMap(center)]
+  decorators: [withMap(center)],
+  parameters: { storyshots: { disable: true } },
+  title: "StopsOverlay"
 };
 
 export const Default = () => <Example />;
-Default.parameters = disableStoryshots;
 export const NoMinZoom = () => (
   <>
     <span style={{ position: "relative", zIndex: 1000 }}>
@@ -47,7 +46,6 @@ export const NoMinZoom = () => (
     <Example minZoom={null} />
   </>
 );
-NoMinZoom.parameters = disableStoryshots;
 
 // TODO: Re-add, and add support for old story
 // export const WithCustomMarkers = () => <Example symbols={customSymbols} />;
@@ -60,5 +58,4 @@ export const FlexStops = () => (
   />
 );
 
-FlexStops.parameters = disableStoryshots;
 FlexStops.decorators = [withMap([33.85, -84.61], 10)];

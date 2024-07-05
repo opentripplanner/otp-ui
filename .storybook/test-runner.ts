@@ -7,7 +7,7 @@ const ONLY_RUN = process.env.ONLY_RUN
 
 async function runSnapshots(page: Page, context: TestContext) {
   const storyContext = await getStoryContext(page, context);
-  if(storyContext.parameters?.storyshots?.disable) {
+  if (storyContext.parameters?.storyshots?.disable) {
     return;
   }
   await waitForPageReady(page);
@@ -38,7 +38,6 @@ const config: TestRunnerConfig = {
     await injectAxe(page);
   },
   async postVisit(page, context) {
-    // the #storybook-root element wraps the story. In Storybook 6.x, the selector is #root
     if (!ONLY_RUN || ONLY_RUN === "SNAPSHOTS") {
       await runSnapshots(page, context);
     }
