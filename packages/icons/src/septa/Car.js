@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgCar = () => (
+const Car = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="18.462"
@@ -15,4 +15,4 @@ const SvgCar = () => (
   </svg>
 );
 
-export default SvgCar;
+export default Car;

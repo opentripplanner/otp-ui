@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgBus = () => (
+const Bus = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="25.023"
@@ -34,4 +34,4 @@ const SvgBus = () => (
   </svg>
 );
 
-export default SvgBus;
+export default Bus;

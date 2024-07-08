@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgBicycle = () => (
+const Bike = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="20.469"
@@ -15,4 +15,4 @@ const SvgBicycle = () => (
   </svg>
 );
 
-export default SvgBicycle;
+export default Bike;

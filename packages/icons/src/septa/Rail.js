@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgRail = () => (
+const Rail = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="26.023"
@@ -240,4 +240,4 @@ const SvgRail = () => (
   </svg>
 );
 
-export default SvgRail;
+export default Rail;

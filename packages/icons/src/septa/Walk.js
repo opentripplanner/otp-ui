@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgWalk = () => (
+const Walk = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="16"
@@ -15,4 +15,4 @@ const SvgWalk = () => (
   </svg>
 );
 
-export default SvgWalk;
+export default Walk;

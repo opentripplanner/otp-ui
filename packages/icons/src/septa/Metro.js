@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgMetro = () => (
+const Metro = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="26.023"
@@ -32,4 +32,4 @@ const SvgMetro = () => (
   </svg>
 );
 
-export default SvgMetro;
+export default Metro;
