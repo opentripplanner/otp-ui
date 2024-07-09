@@ -209,7 +209,9 @@ export default function LineColumnContent({
 
   return (
     <>
-      {!isDestination && <LegLine leg={leg} routeColor={leg.routeColor} />}
+      {!isDestination && (
+        <LegLine className="leg-line" leg={leg} routeColor={leg.routeColor} />
+      )}
       <IconStacker>{legBadge}</IconStacker>
     </>
   );

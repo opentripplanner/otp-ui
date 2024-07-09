@@ -16,7 +16,7 @@ export default function TransitLegSubheader({
 }: TransitLegSubheaderProps): ReactElement {
   const { from } = leg;
   return (
-    <S.PlaceSubheader>
+    <S.PlaceSubheader className="transit-leg-subheader">
       <FormattedMessage
         defaultMessage={defaultMessages["otpUi.TransitLegBody.stopId"]}
         description="Displays the stop ID"
