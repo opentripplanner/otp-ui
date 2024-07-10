@@ -1,50 +1,51 @@
 otpUi:
   DateTimeSelector:
+    arrive: 最晚抵達時間
     date: 日期
     dateTimeSelector: 日期/時間選擇器
-    time: 時間
-    arrive: 最晚抵達時間
     depart: 出發時間
     now: 現在出發
+    time: 時間
   ModeSelector:
     labels:
-      rent: 租用
       bicycle: 騎行
       car: 駕車
+      rent: 租用
       transit: 公共交通
       walk: 步行
     settings:
       bikeTolerance-label: 自行車接受度
-      bus-label: 搭乘公車
-      rail-label: 火車
-      subway-label: 捷運
-      tram-label: 電車
-      walkTolerance-label: 步行接受度
-      wheelchair-label: 可到達路線
-      ferry-label: 渡船
-      walkReluctance-label: 避開步行路線
-      walkTolerance-labelHigh: 步行較多
-      walkTolerance-labelLow: 步行較少
       bikeTolerance-labelHigh: 自行車騎乘較多
       bikeTolerance-labelLow: 自行車騎乘較少
+      bus-label: 搭乘公車
       carTolerance-label: 駕車接受度
       carTolerance-labelHigh: 駕車較多
       carTolerance-labelLow: 駕車較少
-    settingsLabel: '{mode} 設定'
-  TripOptions:
-    transitOnly: 公共交通
+      ferry-label: 渡船
+      rail-label: 火車
+      subway-label: 捷運
+      tram-label: 電車
+      walkReluctance-label: 避開步行路線
+      walkTolerance-label: 步行接受度
+      walkTolerance-labelHigh: 步行較多
+      walkTolerance-labelLow: 步行較少
+      wheelchair-label: 可到達路線
+    settingsLabel: "{mode} 設定"
   SettingsSelectorPanel:
     bikeOnly: 僅限自行車
-    use: 使用
     escooterOnly: 僅限電動滑板車
     takeTransit: 使用公共交通
     travelPreferences: 旅行偏好
+    use: 使用
     useCompanies: 使用公司
     walkOnly: 僅限步行
+  TripOptions:
+    transitOnly: 公共交通
   queryParameters:
-    maxBikeDistance: 最大自行車
-    distanceInMiles: "{miles, number, :: unit/mile unit-width-full-name}\n"
     bikeSpeed: 自行車速度
+    distanceInMiles: |
+      {miles, number, :: unit/mile unit-width-full-name}
+    maxBikeDistance: 最大自行車
     maxBikeTime: 最大自行車時間
     maxEScooterDistance: 最大電動滑板車距離
     maxWalkDistance: 最大步行
@@ -53,7 +54,7 @@ otpUi:
     optimizeBikeFriendly: 適合自行車的行程
     optimizeBikeSpeed: 速度
     optimizeFor: 最佳化
-    speedInMilesPerHour: '{mph} MPH'
+    speedInMilesPerHour: "{mph} MPH"
     walkReluctance: 避免步行
     walkReluctanceHigh: 更多公共交通
     walkReluctanceLow: 步行較多

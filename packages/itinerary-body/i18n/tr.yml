@@ -9,12 +9,12 @@ otpUi:
       vehicleType:
         bike: bisiklet
         bikeshare: paylaşımlı bisiklet
-        vehicle: araç
         car: araba
         escooter: E-Skutır
+        vehicle: araç
     TncLeg:
-      estimatedCost: 'Tahmini maliyet: {minFare} - {maxFare}'
-      estimatedTravelTime: 'Tahmini seyahat süresi: {duration} (trafiği hesaba katmaz)'
+      estimatedCost: "Tahmini maliyet: {minFare} - {maxFare}"
+      estimatedTravelTime: "Tahmini seyahat süresi: {duration} (trafiği hesaba katmaz)"
     mapillaryTooltip: Bu konumdaki sokak görüntülerini göster
     step:
       continue: Devam et
