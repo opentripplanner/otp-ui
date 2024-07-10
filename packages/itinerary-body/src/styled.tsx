@@ -1,3 +1,4 @@
+// stylelint-disable declaration-block-no-shorthand-property-overrides
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore FIXME: Create TypeScript types for the icons package.
 import { Map } from "@opentripplanner/icons";
@@ -300,7 +301,9 @@ export const LegDescription = styled.span`
 `;
 
 // additional description added to ClickableLeg for screenreaders
-export const InvisibleAdditionalDetails = styled.span`
+export const InvisibleAdditionalDetails = styled.span.attrs({
+  className: "invisible-additional-details"
+})`
   display: inline-block;
   grid-row-start: 2;
   grid-column-start: 1;
@@ -384,13 +387,16 @@ export const LineColumn = styled.div`
 
 export const LegDetails = styled.span`
   display: grid;
-  grid-template-columns: 100px auto;
+  grid-template-columns: 130px auto;
 `;
 
 export const PlaceRowWrapper = styled.li`
   /* needs to be a flexbox row */
   max-width: 500px;
   display: grid;
+  grid-template-areas:
+    "time line title"
+    "time line instructions";
   grid-template-columns: 65px 30px auto;
 `;
 
@@ -454,6 +460,7 @@ export const MapIcon = styled(Map).attrs(props => ({
 export const PlaceDetails = styled.div`
   grid-row-start: 2;
   grid-column-start: 3;
+  grid-area: instructions;
 `;
 
 export const PlaceHeader = styled.div`

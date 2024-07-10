@@ -1,0 +1,25 @@
+otpUi:
+  LocationField:
+    beginTypingPrompt: 開始輸入以搜尋位置
+    clearLocation: 清除位置
+    currentLocationUnavailable: 目前的位置無法使用
+    fetchingLocation: 正在擷取位置……
+    fetchingSuggestions: 正在擷取建議…
+    homeLocation: 住家
+    howToAccessResults: 使用向下箭頭鍵瀏覽結果清單。若要選取結果，請使用Enter鍵。
+    myPlaces: 我的地點
+    nearby: 附近的車站
+    noResults: 找不到符合
+    other: 其他
+    otherCount: "{count}興趣點"
+    parenthesisFormat: "{main} ({detail})"
+    recentlySearched: 最近搜尋過
+    resultsFound: 為 "{input}" 找到 {results}。
+    stationCount: "{count}車站"
+    stations: 車站
+    stopCount: "{count}車站"
+    stops: 車站
+    suggestedLocations: 建議地點
+    suggestedLocationsLong: 顯示/不顯示建議位置清單
+    useCurrentLocation: 使用目前位置
+    workLocation: 工作
