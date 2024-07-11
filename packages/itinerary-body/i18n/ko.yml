@@ -69,7 +69,9 @@ otpUi:
       vehicle: 차량
   ItineraryBody:
     common:
-      durationShort: "{hours, plural, =0 {} other {# 시간 }}{minutes} 분"
+      durationShort: >-
+        {approximatePrefix, select, true {약 } other {}}{hours, plural, =0 {}
+        other {# 시간 }}{minutes} 분
     flexAdvanceNotice: " 최소 {leadDays}일 전에"
     flexCallAhead: 미리 전화
     flexCallNumber: "{phoneNumber}에 전화"
