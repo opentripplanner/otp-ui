@@ -16,9 +16,11 @@ otpUi:
       Salida <strong>{departureDate, date, long}</strong> a las
       <strong>{departureDate, time, short}</strong>
     hideDetail: Ocultar detalles
+    legMissingFareInfo: No hay información sobre tarifas para este tramo
     minutesActive: >-
-      Tiempo de actividad: <strong>{minutes, plural, one {# minuto} other {#
-      minutos}}</strong>
+      Tiempo de actividad: <strong>{approximatePrefix, select, true {~} other
+      {}}{minutes, plural, one {# minuto} other {# minutos}}</strong>
+    missingFareTotal: No hay tarifas disponibles
     showDetail: Mostrar detalles
     timeActiveDescription: >
       Al hacer este viaje, gastarás <strong>{walkMinutes, plural, one {# minuto}
@@ -30,5 +32,3 @@ otpUi:
     transitFare: Tarifa de tránsito
     transitFareEntry: "{name} : <strong>{value}</strong>"
     tripIncludesFlex: Este viaje incluye rutas flexibles. {extraMessage}
-    missingFareTotal: No hay tarifas disponibles
-    legMissingFareInfo: No hay información sobre tarifas para este tramo

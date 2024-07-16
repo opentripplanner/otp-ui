@@ -1,0 +1,26 @@
+otpUi:
+  TripDetails:
+    FareTable:
+      cash: 現金
+      electronic: 電子
+      regular: 成人
+      senior: 年長者
+      special: 特殊
+      youth: 青少年
+    co2: 排放的二氧化碳：<strong>{co2}</strong>
+    co2description: 二氧化碳密度是以一個行程每條腿的距離乘以各個模式的二氧化碳密度來計算。各個模式的二氧化碳密度是從<link>此試算表</link>中取得。
+    departure: >-
+      <strong>{departureDate, date, long}</strong>的<strong>{departureDate, time,
+      short}</strong>出發
+    hideDetail: 隱藏詳細資訊
+    minutesActive: 活躍時間：<strong>{minutes}分鐘前</strong>
+    showDetail: 顯示詳細資訊
+    timeActiveDescription: >
+      採用此行程即表示您將花費 <strong>{walkMinutes} 分鐘</strong>  的步行時間以及
+      <strong>{bikeMinutes} 分鐘</strong>  的自行車騎乘時間。
+    title: 行程詳細資訊
+    tncFare: "{companies} 票價：<strong>{minTNCFare} - {maxTNCFare}</strong>"
+    transferDiscountExplanation: 已套用{transferAmount}的轉乘折扣
+    transitFare: 公共交通票價
+    transitFareEntry: "{name}：<strong>{value}</strong>"
+    tripIncludesFlex: 此行程包括彈性的路線。{extraMessage}

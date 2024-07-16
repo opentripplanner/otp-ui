@@ -17,7 +17,9 @@ otpUi:
       Aalis <strong>{departureDate, date, long}</strong> nang
       <strong>{departureDate, time, short}</strong>
     hideDetail: Itago ang mga detalye
-    minutesActive: "Oras na Ginugol sa pagiging Aktibo: <strong>{minutes} minuto</strong>"
+    minutesActive: >-
+      Oras na Ginugol sa pagiging Aktibo: <strong>{approximatePrefix, select,
+      true {~} other {}}{minutes} minuto</strong>
     showDetail: Ipakita ang mga detalye
     timeActiveDescription: >
       Sa pagbiyahe nang ganitong paraan, gugugol ka ng <strong>{walkMinutes}

@@ -120,6 +120,7 @@ export const SlowGeocoder = (): JSX.Element => (
     inputPlaceholder="Select from location"
     locationType="from"
     onLocationSelected={onLocationSelected}
+    showSecondaryLabels={false}
   />
 );
 

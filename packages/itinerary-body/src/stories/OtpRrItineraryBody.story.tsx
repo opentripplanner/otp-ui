@@ -59,6 +59,7 @@ interface StoryWrapperProps {
   defaultFareSelector?: FareProductSelector;
   hideDrivingDirections?: boolean;
   itinerary: Itinerary;
+  showApproximateAccessLegTravelTimes?: boolean;
   TimeColumnContent?: FunctionComponent<TimeColumnContentProps>;
 }
 
@@ -67,6 +68,7 @@ function OtpRRItineraryBodyWrapper({
   defaultFareSelector,
   hideDrivingDirections = false,
   itinerary,
+  showApproximateAccessLegTravelTimes = false,
   TimeColumnContent
 }: StoryWrapperProps): ReactElement {
   return (
@@ -80,6 +82,7 @@ function OtpRRItineraryBodyWrapper({
       PlaceName={OtpRRPlaceName}
       RouteDescription={OtpRRRouteDescription}
       showAgencyInfo
+      showApproximateAccessLegTravelTimes={showApproximateAccessLegTravelTimes}
       showLegIcon
       showMapButtonColumn={false}
       showViewTripButton
@@ -241,5 +244,12 @@ export const HideDrivingDirections = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
     hideDrivingDirections
     itinerary={parkAndRideItinerary}
+  />
+);
+
+export const ApproximatePrefixItinerary = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    itinerary={walkTransitWalkItinerary}
+    showApproximateAccessLegTravelTimes
   />
 );

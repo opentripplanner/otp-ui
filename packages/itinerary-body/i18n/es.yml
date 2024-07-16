@@ -18,15 +18,12 @@ otpUi:
       bookRide: Reservar un viaje
       bookRideLater: Espere hasta las {timeMillis, time, short} para reservar
       estimatedCost: "Costo estimado: {minFare} - {maxFare}"
-      estimatedTravelTime: "Tiempo de viaje estimado: {duration} (no tiene en cuenta
-        el tráfico)"
-      waitForPickup: "Espera al conductor {company}{minutes, plural, =0 {} other {
-        # minutos}}"
+      estimatedTravelTime: "Tiempo de viaje estimado: {duration} (no tiene en cuenta el tráfico)"
+      waitForPickup: "Espera al conductor {company}{minutes, plural, =0 {} other { # minutos}}"
     mapillaryTooltip: Mostrar imágenes de la calle en esta ubicación
     step:
       circleClockwise: Siga el círculo en el sentido de las agujas del reloj
-      circleCounterClockwise: Siga el círculo en sentido contrario a las agujas del
-        reloj
+      circleCounterClockwise: Siga el círculo en sentido contrario a las agujas del reloj
       continue: Continuar
       enterStation: Entrar a la estación
       exitStation: Salir de la estación
@@ -72,9 +69,10 @@ otpUi:
       vehicle: Vehículo
   ItineraryBody:
     common:
-      durationShort: "{hours, plural, =0 {} other {# hr. }}{minutes} min"
-    flexAdvanceNotice: " al menos {leadDays, plural, one {# día} other {# días}} de
-      antelación"
+      durationShort: >-
+        {approximatePrefix, select, true {Unos } other {}}{hours, plural, =0 {}
+        other {# hr. }}{minutes} min
+    flexAdvanceNotice: " al menos {leadDays, plural, one {# día} other {# días}} de antelación"
     flexCallAhead: llama con anticipación
     flexCallNumber: llama {phoneNumber}
     flexPickupMessage: Para tomar esta ruta, tiene que {action}{advanceNotice}.
@@ -85,17 +83,20 @@ otpUi:
       car: en carro
       escooter: en patineta
       walk: a pie
-    viewOnMap: Ver en el mapa
     tripAccessibility:
       inaccessible: inaccesible
-      unclear: desconocido
-      legAccessibility: 'Accesibilidad para sillas de ruedas en este tramo del viaje: '
+      itineraryAccessibility: "Accesibilidad para sillas de ruedas en este viaje: "
+      legAccessibility: "Accesibilidad para sillas de ruedas en este tramo del viaje: "
       likelyAccessible: probablemente accesible
-      itineraryAccessibility: 'Accesibilidad para sillas de ruedas en este viaje: '
+      unclear: desconocido
+    viewOnMap: Ver en el mapa
   TransitLegBody:
     AlertsBody:
+      alertLinkText: Ver la alerta en la web {agency}
       effectiveDate: A partir de {dateTime, date, long}
       effectiveTimeAndDate: A partir de {dateTime, time, short}, {day}
+      linkOpensNewWindow: (Abrir una nueva ventana)
+      noAgencyAlertLinkText: Ver alerta en la web de la agencia
       today: Hoy
       tomorrow: Mañana
       yesterday: Ayer
