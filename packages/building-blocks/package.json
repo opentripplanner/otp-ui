@@ -9,8 +9,8 @@
   "module": "esm/index.js",
   "private": false,
   "devDependencies": {
-    "@opentripplanner/types": "^6.5.0",
-    "@opentripplanner/core-utils": "^11.4.0"
+    "@opentripplanner/types": "^6.5.1",
+    "@opentripplanner/core-utils": "^11.4.2"
   },
   "peerDependencies": {
     "react": "^16.14.0",
