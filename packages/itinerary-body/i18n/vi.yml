@@ -69,7 +69,9 @@ otpUi:
       vehicle: Xe
   ItineraryBody:
     common:
-      durationShort: "{hours, plural, =0 {} other {# giờ }}{minutes} phút"
+      durationShort: >-
+        {approximatePrefix, select, true {Khoảng } other {}}{hours, plural, =0
+        {} other {# giờ }}{minutes} phút
     flexAdvanceNotice: " ít nhất trước {leadDays} ngày"
     flexCallAhead: gọi điện trước khi đi
     flexCallNumber: gọi {phoneNumber}
