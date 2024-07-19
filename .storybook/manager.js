@@ -6,5 +6,7 @@ addons.setConfig({
     // nested hierarchies.
     // See https://storybook.js.org/docs/react/writing-stories/naming-components-and-hierarchy#roots
     showRoots: false
-  }
+  },
+  showPanel: true,
+  panelPosition: "bottom",
 })

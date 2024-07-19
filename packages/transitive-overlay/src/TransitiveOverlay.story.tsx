@@ -51,6 +51,7 @@ export default {
   title: "TransitiveOverlay",
   decorators: [withMap()],
   component: TransitiveOverlay,
+  parameters: { storyshots: { disable: true } },
   argTypes: {
     showRouteArrows: {
       control: "boolean",

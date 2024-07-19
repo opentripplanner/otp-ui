@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`From-To-Picker customStyleAndText smoke-test 1`] = `
+<div class="trimet-ambient">
+  <i style="color: rgb(255, 255, 0);">
+    Your trip:
+  </i>
+  <span class="styled__FromToPickerSpan-sc-vb4790-1 hmUShj">
+    <span class="styled__LocationPickerSpan-sc-vb4790-0 gwsIFy">
+      <button class="styled__Button-sc-vb4790-2 hNNoVB">
+        Start here
+      </button>
+    </span>
+    <span class="styled__LocationPickerSpan-sc-vb4790-0 gwsIFy">
+      <button class="styled__Button-sc-vb4790-2 hNNoVB">
+        Go here
+      </button>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`From-To-Picker fromTo smoke-test 1`] = `
+<span class="styled__FromToPickerSpan-sc-vb4790-1 hmUShj">
+  <span class="styled__LocationPickerSpan-sc-vb4790-0 gwsIFy">
+    <svg viewbox="0 0 512 512"
+         height="0.9em"
+         width="0.9em"
+         aria-hidden="true"
+         focusable="false"
+         fill="currentColor"
+         xmlns="http://www.w3.org/2000/svg"
+         class="StyledIconBase-ea9ulj-0 hPhvO styled__FromIcon-sc-n5xcvc-0 jTjMOf"
+    >
+      <path fill="currentColor"
+            d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
+      >
+      </path>
+    </svg>
+    <button class="styled__Button-sc-vb4790-2 hNNoVB">
+      From here
+    </button>
+  </span>
+  <span class="styled__LocationPickerSpan-sc-vb4790-0 gwsIFy">
+    <svg viewbox="0 0 384 512"
+         height="0.9em"
+         width="0.9em"
+         aria-hidden="true"
+         focusable="false"
+         fill="currentColor"
+         xmlns="http://www.w3.org/2000/svg"
+         class="StyledIconBase-ea9ulj-0 hPhvO styled__ToIcon-sc-n5xcvc-2 ipFnZE"
+    >
+      <path fill="currentColor"
+            d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+      >
+      </path>
+    </svg>
+    <button class="styled__Button-sc-vb4790-2 hNNoVB">
+      To here
+    </button>
+  </span>
+</span>
+`;
+
+exports[`From-To-Picker smallTextSansSerif smoke-test 1`] = `
+<span style="font-size: 75%; font-family: sans-serif;">
+  <strong>
+    Plan a trip:
+  </strong>
+  <span class="styled__FromToPickerSpan-sc-vb4790-1 hmUShj">
+    <span class="styled__LocationPickerSpan-sc-vb4790-0 gwsIFy">
+      <svg viewbox="0 0 512 512"
+           height="0.9em"
+           width="0.9em"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-ea9ulj-0 hPhvO styled__FromIcon-sc-n5xcvc-0 jTjMOf"
+      >
+        <path fill="currentColor"
+              d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
+        >
+        </path>
+      </svg>
+      <button class="styled__Button-sc-vb4790-2 hNNoVB">
+        From here
+      </button>
+    </span>
+    <span class="styled__LocationPickerSpan-sc-vb4790-0 gwsIFy">
+      <svg viewbox="0 0 384 512"
+           height="0.9em"
+           width="0.9em"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-ea9ulj-0 hPhvO styled__ToIcon-sc-n5xcvc-2 ipFnZE"
+      >
+        <path fill="currentColor"
+              d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+        >
+        </path>
+      </svg>
+      <button class="styled__Button-sc-vb4790-2 hNNoVB">
+        To here
+      </button>
+    </span>
+  </span>
+</span>
+`;
