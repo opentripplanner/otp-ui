@@ -1,7 +1,7 @@
 import { SymbolLayout } from "mapbox-gl";
 import { util } from "@opentripplanner/base-map";
 import React, { useEffect } from "react";
-import { Layer, Source, useMap } from "react-map-gl";
+import { Layer, MapRef, Source, useMap } from "react-map-gl";
 import polyline from "@mapbox/polyline";
 import {
   Leg,
@@ -14,10 +14,9 @@ import bbox from "@turf/bbox";
 
 import { getRouteLayerLayout, patternToRouteFeature } from "./route-layers";
 import { drawArc, getFromToAnchors, itineraryToTransitive } from "./util";
+import routeArrow from "./images/route_arrow.png";
 
 export { itineraryToTransitive };
-
-const routeArrow = require("./images/route_arrow.png");
 
 // TODO: BETTER COLORS
 const modeColorMap = {
@@ -94,12 +93,25 @@ type Props = {
   transitiveData?: TransitiveData;
 };
 
-const images = [
-  {
-    id: "arrow-icon",
-    url: routeArrow
-  }
-];
+type MapImage = {
+  id: string;
+  url: string;
+};
+
+const loadImages = (map: MapRef, images: MapImage[]) => {
+  images.forEach(img => {
+    map.loadImage(img.url, (error, image) => {
+      if (error) {
+        // eslint-disable-next-line no-console
+        console.error(`Error loading image ${img.id}:`, error);
+        return;
+      }
+      if (!map.hasImage(img.id)) {
+        map.addImage(img.id, image, { sdf: true });
+      }
+    });
+  });
+};
 
 const TransitiveCanvasOverlay = ({
   activeLeg,
@@ -108,29 +120,24 @@ const TransitiveCanvasOverlay = ({
   transitiveData
 }: Props): JSX.Element => {
   const { current: map } = useMap();
-  useEffect(() => {
-    if (!map) return;
-    const loadImages = () => {
-      images.forEach(img => {
-        map.loadImage(img.url, (error, image) => {
-          if (error) {
-            // eslint-disable-next-line no-console
-            console.error(`Error loading image ${img.id}:`, error);
-            return;
-          }
-          if (!map.hasImage(img.id)) {
-            map.addImage(img.id, image, { sdf: true });
-          }
-        });
-      });
-    };
 
+  const mapImages: MapImage[] = [];
+  // This is used to render arrows along the route
+  // Only load if that option is enabled to save bandwidth
+  if (showRouteArrows) {
+    mapImages.push({
+      id: "arrow-icon",
+      url: routeArrow
+    });
+  }
+
+  useEffect(() => {
     if (map) {
-      loadImages();
+      loadImages(map, mapImages);
     } else {
-      map.on("load", loadImages);
+      map.on("load", () => loadImages(map, mapImages));
     }
-  }, [map, images]);
+  }, [map, mapImages]);
 
   const geojson: GeoJSON.FeatureCollection<
     GeoJSON.Geometry,
