@@ -3928,7 +3928,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
            title="Wheelchair accessibility of this trip: likely accessible"
            class="accessibility-rating__Wrapper-sc-7g85t2-0 vTgcz"
       >
-        <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw">
+        <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
           Wheelchair accessibility of this trip: likely accessible
         </span>
         <svg viewbox="0 0 100 100"
@@ -4003,7 +4003,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
            title="Wheelchair accessibility of this trip: unknown"
            class="accessibility-rating__Wrapper-sc-7g85t2-0 vTgcz"
       >
-        <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw">
+        <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
           Wheelchair accessibility of this trip: unknown
         </span>
         <svg viewbox="0 0 100 100"
@@ -4137,7 +4137,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
            title="Wheelchair accessibility of this trip: inaccessible"
            class="accessibility-rating__Wrapper-sc-7g85t2-0 vTgcz"
       >
-        <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw">
+        <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
           Wheelchair accessibility of this trip: inaccessible
         </span>
         <svg viewbox="0 0 100 100"
@@ -4216,7 +4216,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
            title="Wheelchair accessibility of this trip: inaccessible"
            class="accessibility-rating__Wrapper-sc-7g85t2-0 vTgcz"
       >
-        <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw">
+        <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
           Wheelchair accessibility of this trip: inaccessible
         </span>
         <svg viewbox="0 0 100 100"
