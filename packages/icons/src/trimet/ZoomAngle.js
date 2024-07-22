@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgZoomangle = ({ title, ...props }) => (
+const ZoomAngle = ({ title, ...props }) => (
   <svg viewBox="0 0 390 390" {...props}>
     {title ? <title>{title}</title> : null}
     <path d="M137.5 81.8v55.7H81.8c-6.3 0-11.5 5.2-11.5 11.5s5.2 11.5 11.5 11.5h55.7v55.7c0 6.3 5.2 11.5 11.5 11.5s11.5-5.2 11.5-11.5v-55.7h55.7c6.3 0 11.5-5.2 11.5-11.5s-5.2-11.5-11.5-11.5h-55.7V81.8c0-6.3-5.2-11.5-11.5-11.5s-11.5 5.2-11.5 11.5z" />
@@ -8,4 +8,4 @@ const SvgZoomangle = ({ title, ...props }) => (
   </svg>
 );
 
-export default SvgZoomangle;
+export default ZoomAngle;

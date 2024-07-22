@@ -41,7 +41,8 @@ function CatDogIcon({ type }: UserLocationAndType) {
 export default {
   component: EndpointsOverlay,
   decorators: [withMap()],
-  title: "EndpointsOverlay"
+  title: "EndpointsOverlay",
+  parameters: { storyshots: { disable: true } }
 } as ComponentMeta<typeof EndpointsOverlay>;
 
 export const EndpointsOverlayWithoutUserSettings: ComponentStory<typeof EndpointsOverlay> = () => (

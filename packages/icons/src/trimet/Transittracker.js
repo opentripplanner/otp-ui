@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgTransittracker = ({ title, ...props }) => (
+const Transittracker = ({ title, ...props }) => (
   <svg viewBox="0 0 390 390" {...props}>
     {title ? <title>{title}</title> : null}
     <path d="M285.2 264.7l-105.5-60.9V47.1h30.6v139.1l90.1 52.1z" />
@@ -8,4 +8,4 @@ const SvgTransittracker = ({ title, ...props }) => (
   </svg>
 );
 
-export default SvgTransittracker;
+export default Transittracker;

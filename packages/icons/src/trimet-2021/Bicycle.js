@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgBicycle = () => (
+const Bicycle = () => (
   <svg
     version="1.1"
     id="Layer_2_1_"
@@ -32,4 +32,4 @@ const SvgBicycle = () => (
   </svg>
 );
 
-export default SvgBicycle;
+export default Bicycle;
