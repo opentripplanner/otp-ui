@@ -132,11 +132,7 @@ const TransitiveCanvasOverlay = ({
   }
 
   useEffect(() => {
-    if (map) {
-      loadImages(map, mapImages);
-    } else {
-      map.on("load", () => loadImages(map, mapImages));
-    }
+    loadImages(map, mapImages);
   }, [map, mapImages]);
 
   const geojson: GeoJSON.FeatureCollection<
