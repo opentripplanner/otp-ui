@@ -11,9 +11,10 @@ import React, { useCallback, useEffect, useState } from "react"
 import { Layer, Popup, Source, useMap } from "react-map-gl"
 
 // eslint-disable-next-line prettier/prettier
-import { generateLayerPaint } from "./util"
+import { generateLayerPaint, ROUTE_COLOR_EXPRESSION } from "./util"
 
 const SOURCE_ID = "otp2-tiles"
+const AREA_TYPES = ["areaStops"]
 
 const OTP2TileLayerWithPopup = ({
   color,
@@ -127,17 +128,50 @@ const OTP2TileLayerWithPopup = ({
     };
   }, [id, map])
 
+  let filter: any[] = ["all"]
+  if (network) {
+    filter = ["all", ["==", "network", network]]
+  }
+  if (type === "stops" || type === "areaStops") {
+    filter = ["!=", ["get", "routes"], ["literal", "[]"]]
+  }
+
+  const isArea = AREA_TYPES.includes(type)
   return (
     <>
-      <Layer
-        filter={network ? ["all", ["==", "network", network]] : ["all"]}
+      {isArea && <Layer
+        filter={filter}
+        id={`${id}-fill`}
+        paint={{
+          "fill-color": ROUTE_COLOR_EXPRESSION,
+          "fill-opacity": 0.2,
+        }}
+        source-layer={type}
+        source={SOURCE_ID}
+        type="fill"
+      />}
+      {isArea && <Layer
+        filter={filter}
+        id={`${id}-outline`}
+        layout={{ "line-join": "round", "line-cap": "round" }}
+        paint={{
+          "line-color": ROUTE_COLOR_EXPRESSION,
+          "line-opacity": 0.8,
+          "line-width": 3
+        }}
+        source-layer={type}
+        source={SOURCE_ID}
+        type="line"
+      />}
+      {!isArea && <Layer
+        filter={filter}
         id={id}
         key={id}
         paint={generateLayerPaint(color)[type]}
         source={SOURCE_ID}
         source-layer={type}
         type="circle"
-      />
+      />}
       {clickedEntity && (
         <Popup
           latitude={clickedEntity.lat}
@@ -150,7 +184,7 @@ const OTP2TileLayerWithPopup = ({
             configCompanies={configCompanies}
             entity={{ ...clickedEntity, id: clickedEntity?.id || clickedEntity?.gtfsId }}
             setLocation={setLocation ? (location) => { setClickedEntity(null); setLocation(location) } : null}
-            setViewedStop={setViewedStop}
+            setViewedStop={setViewedStop ? (stop) => { setClickedEntity(null);setViewedStop(stop) } : null}
           />
 
         </Popup>

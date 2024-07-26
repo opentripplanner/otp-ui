@@ -1,0 +1,15 @@
+otpUi:
+  PrintableItinerary:
+    TncLeg:
+      estimatedTravelTime: 預估行程時間：<strong>{duration}</strong> (不考慮車流)
+      estimatedWaitTime: 預估等待接車時間：<strong>{duration}</strong>
+      header: <strong>搭乘{company}</strong>前往<strong>{place}</strong>
+    TransitLeg:
+      alight: >-
+        <strong>{time, time, short}</strong>於<strong>{place}</strong>
+        ({stopId})下車
+      board: >-
+        <strong>{time, time, short}</strong>於<strong>{place}</strong>
+        ({stopId})上車
+      continuesAs: 繼續{routeDescription}
+    depart: <strong>從</strong>{place}<strong>出發</strong>

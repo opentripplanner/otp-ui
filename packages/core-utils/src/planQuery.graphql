@@ -66,6 +66,22 @@ query Plan(
         arrivalDelay
         departureDelay
         distance
+        dropOffBookingInfo {
+          contactInfo {
+            bookingUrl
+            infoUrl
+            phoneNumber
+          }
+          earliestBookingTime {
+            daysPrior
+            time
+          }
+          latestBookingTime {
+            daysPrior
+            time
+          }
+          message
+        }
         dropoffType
         duration
         endTime
@@ -134,9 +150,20 @@ query Plan(
         }
         mode
         pickupBookingInfo {
+          contactInfo {
+            bookingUrl
+            infoUrl
+            phoneNumber
+          }
           earliestBookingTime {
             daysPrior
+            time
           }
+          latestBookingTime {
+            daysPrior
+            time
+          }
+          message
         }
         pickupType
         realTime

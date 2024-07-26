@@ -2,9 +2,12 @@ import React, { useCallback, useEffect, useState } from "react";
 import { Map, MapProps } from "react-map-gl";
 import maplibregl, { Event } from "maplibre-gl";
 
+import { useIntl } from "react-intl";
+
 import * as Styled from "./styled";
 import * as util from "./util";
 import MarkerWithPopup from "./MarkerWithPopup";
+import generateMapControlTranslations from "./mapControlLocale";
 
 /**
  * The BaseMap component renders a MapLibre map
@@ -41,6 +44,10 @@ type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
   onContextMenu?: (e: unknown) => void;
   /** A callback method which is fired when the map zoom or map bounds change */
   onViewportChanged?: (e: State) => void;
+  /** When set to true, all hidden layers will be removed. No layers will be uncheckable until
+   * it is set to false
+   */
+  showEverything?: boolean;
   /** An initial zoom value for the map */
   zoom?: number;
 };
@@ -61,6 +68,7 @@ const BaseMap = ({
   maxZoom,
   onClick,
   onContextMenu,
+  showEverything,
   onViewportChanged,
   style,
   zoom: initZoom = 12
@@ -70,6 +78,8 @@ const BaseMap = ({
     longitude: center?.[1],
     zoom: initZoom
   });
+
+  const intl = useIntl();
 
   // Firefox and Safari on iOS: hover is not triggered when the user touches the layer selector
   // (unlike Firefox or Chromium on Android), so we have to detect touch and trigger hover ourselves.
@@ -81,7 +91,6 @@ const BaseMap = ({
       onViewportChanged(viewState);
     }
   }, [viewState]);
-
   useEffect(() => {
     if (center?.[0] === null || center?.[1] === null) return;
 
@@ -111,6 +120,9 @@ const BaseMap = ({
   const [hiddenLayers, setHiddenLayers] = useState(
     toggleableLayers.filter(layer => !layer?.visible).map(layer => layer.id)
   );
+  const computedHiddenLayers =
+    showEverything && hiddenLayers.length > 0 ? [] : hiddenLayers;
+
   const [activeBaseLayer, setActiveBaseLayer] = useState(
     typeof baseLayer === "object" ? baseLayer?.[0] : baseLayer
   );
@@ -125,6 +137,7 @@ const BaseMap = ({
       {...mapLibreProps}
       id={id}
       latitude={viewState.latitude}
+      locale={generateMapControlTranslations(intl)}
       longitude={viewState.longitude}
       mapLib={maplibregl}
       mapStyle={activeBaseLayer}
@@ -193,7 +206,8 @@ const BaseMap = ({
                   {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                   <label>
                     <input
-                      checked={!hiddenLayers.includes(layer.id)}
+                      checked={!computedHiddenLayers.includes(layer.id)}
+                      disabled={showEverything}
                       id={layer.id}
                       onChange={() => {
                         const updatedLayers = [...hiddenLayers];
@@ -220,7 +234,7 @@ const BaseMap = ({
       {Array.isArray(children)
         ? children
             .flat(10)
-            .filter(child => !hiddenLayers.includes(child?.props?.id))
+            .filter(child => !computedHiddenLayers.includes(child?.props?.id))
         : children}
     </Map>
   );

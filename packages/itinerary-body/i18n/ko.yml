@@ -69,7 +69,9 @@ otpUi:
       vehicle: 차량
   ItineraryBody:
     common:
-      durationShort: "{hours, plural, =0 {} other {# 시간 }}{minutes} 분"
+      durationShort: >-
+        {approximatePrefix, select, true {약 } other {}}{hours, plural, =0 {}
+        other {# 시간 }}{minutes} 분
     flexAdvanceNotice: " 최소 {leadDays}일 전에"
     flexCallAhead: 미리 전화
     flexCallNumber: "{phoneNumber}에 전화"
@@ -81,6 +83,12 @@ otpUi:
       car: 차로
       escooter: 전자 스쿠터로
       walk: 걸어서
+    tripAccessibility:
+      inaccessible: 액세스 불가
+      itineraryAccessibility: "이 이동편의 휠체어 액세스 가능 여부:\_"
+      legAccessibility: "이 이동편 구간의 휠체어 액세스 가능 여부:\_"
+      likelyAccessible: 액세스 가능 확률 높음
+      unclear: 알 수 없음
     viewOnMap: 지도 보기
   TransitLegBody:
     AlertsBody:

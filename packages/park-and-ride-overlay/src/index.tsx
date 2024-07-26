@@ -48,7 +48,14 @@ const ParkAndRideOverlay = (props: Props): JSX.Element => {
                       lon: location.x,
                       name
                     }}
-                    setLocation={setLocation}
+                    setLocation={
+                      setLocation
+                        ? l => {
+                            setLocation(null);
+                            setLocation(l);
+                          }
+                        : null
+                    }
                   />
                 </BaseMapStyled.PopupRow>
               </BaseMapStyled.MapOverlayPopup>

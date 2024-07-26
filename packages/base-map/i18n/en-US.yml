@@ -1,0 +1,16 @@
+otpUi:
+  mapControls:
+    CooperativeGesturesHandler:
+      MacHelpText: Use ⌘ + scroll to zoom the map
+      MobileHelpText: Use two fingers to move the map
+      WindowsHelpText: Use Ctrl + scroll to zoom the map
+    NavigationControl:
+      ResetBearing: Reset bearing to north
+      ZoomIn: Zoom in
+      ZoomOut: Zoom out
+    ScaleControl:
+      Feet: ft
+      Kilometers: km
+      Meters: m
+      Miles: mi
+      NauticalMiles: nm

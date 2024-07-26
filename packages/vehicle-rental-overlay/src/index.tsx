@@ -23,25 +23,6 @@ const getColorForStation = (v: Station) => {
   return "gray";
 };
 
-const checkIfPositionInViewport = (
-  bounds: mapboxgl.LngLatBounds,
-  lat: number,
-  lng: number
-): boolean => {
-  const PADDING = 0.001;
-  // @ts-expect-error types appear to be wrong? version issue?
-  // eslint-disable-next-line no-underscore-dangle
-  const [sw, ne] = [bounds._sw, bounds._ne];
-  if (!sw || !ne) return false;
-
-  return (
-    lat >= sw.lat - PADDING &&
-    lat <= ne.lat + PADDING &&
-    lng >= sw.lng - PADDING &&
-    lng <= ne.lng + PADDING
-  );
-};
-
 type Props = {
   /**
    * A list of companies that are applicable to just this instance of the
@@ -114,8 +95,7 @@ const VehicleRentalOverlay = ({
   visible
 }: Props): JSX.Element => {
   const { current: map } = useMap();
-  const zoom = map?.getZoom();
-  const bounds = map?.getBounds();
+  const [zoom, setZoom] = useState(map?.getZoom());
 
   const layerId = `rental-vehicles-${id}`;
   const [clickedVehicle, setClickedVehicle] = useState(null);
@@ -142,6 +122,13 @@ const VehicleRentalOverlay = ({
       map?.on("click", stopLayer, (event: EventData) => {
         setClickedVehicle(event.features?.[0].properties);
       });
+    });
+    map.on("zoom", e => {
+      // Avoid too many re-renders by only updating state if we are a whole number value different
+      const { zoom: newZoom } = e.viewState;
+      if (Math.floor(zoom / 2) !== Math.floor(newZoom / 2)) {
+        setZoom(newZoom);
+      }
     });
   }, [map]);
 
@@ -192,44 +179,40 @@ const VehicleRentalOverlay = ({
         </Source>
       )}
       {zoom >= DETAILED_MARKER_CUTOFF &&
-        stations
-          .filter(station =>
-            checkIfPositionInViewport(bounds, station.y, station.x)
-          )
-          .map(station => (
-            <MarkerWithPopup
-              key={station.id}
-              popupContents={
-                <StationPopup
-                  configCompanies={configCompanies}
-                  setLocation={location => {
-                    setClickedVehicle(null);
-                    setLocation(location);
-                  }}
-                  getEntityName={
-                    // @ts-expect-error no stop support. Avoid a breaking change
-                    getStationName && ((s, cc) => getStationName(cc, s))
-                  }
-                  entity={station}
-                />
-              }
-              position={[station.y, station.x]}
-            >
-              {station.bikesAvailable !== undefined &&
-              !station.isFloatingBike &&
-              !station.isFloatingVehicle &&
-              station.spacesAvailable !== undefined ? (
-                <BaseBikeRentalIcon
-                  percent={
-                    station?.bikesAvailable /
-                    (station?.bikesAvailable + station?.spacesAvailable)
-                  }
-                />
-              ) : (
-                <StationMarker width={12} color={getColorForStation(station)} />
-              )}
-            </MarkerWithPopup>
-          ))}
+        stations.map(station => (
+          <MarkerWithPopup
+            key={station.id}
+            popupContents={
+              <StationPopup
+                configCompanies={configCompanies}
+                setLocation={location => {
+                  setClickedVehicle(null);
+                  setLocation(location);
+                }}
+                getEntityName={
+                  // @ts-expect-error no stop support. Avoid a breaking change
+                  getStationName && ((s, cc) => getStationName(cc, s))
+                }
+                entity={station}
+              />
+            }
+            position={[station.y, station.x]}
+          >
+            {station.bikesAvailable !== undefined &&
+            !station.isFloatingBike &&
+            !station.isFloatingVehicle &&
+            station.spacesAvailable !== undefined ? (
+              <BaseBikeRentalIcon
+                percent={
+                  station?.bikesAvailable /
+                  (station?.bikesAvailable + station?.spacesAvailable)
+                }
+              />
+            ) : (
+              <StationMarker width={12} color={getColorForStation(station)} />
+            )}
+          </MarkerWithPopup>
+        ))}
       {clickedVehicle && (
         <Popup
           latitude={clickedVehicle.y}

@@ -26,7 +26,7 @@ export type FromToPickerProps = {
    * Passes an argument as follows:
    * { locationType: "from/to", location, reverseGeocode: false }
    */
-  setLocation?: ({
+  setLocation?: (_: {
     locationType: string,
     // eslint-disable-next-line @typescript-eslint/no-shadow
     location: Location,

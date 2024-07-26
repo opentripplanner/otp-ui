@@ -201,6 +201,8 @@ interface ItineraryBodySharedProps {
   setViewedTrip: SetViewedTripFunction;
   /** If true, will show agency information in transit legs */
   showAgencyInfo?: boolean;
+  /** Whether to prefix non transit legs with 'About' text */
+  showApproximateAccessLegTravelTimes?: boolean;
   /** If true, will show the elevation profile for walk/bike legs */
   showElevationProfile?: boolean;
   /** If true will show the leg icon in the leg body */

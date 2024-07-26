@@ -1,22 +1,31 @@
 
 // eslint-disable-next-line prettier/prettier
-import type { AutocompleteQuery } from "../../geocoders/types"
+import type { AutocompleteQuery, SearchQuery } from "../../geocoders/types"
 
 type FetchArgs = {
   url: string
   query: string
 }
 
+type OTPGeocoderStop = {
+  agencies?: { id: string, name: string }[]
+  code?: string,
+  coordinate: {
+    lat: number,
+    lon: number,
+  },
+  feedPublisher?: { name: string }
+  id: string,
+  modes: string[] 
+  name: string,
+  type: "STOP" | "STATION"
+}
+
 type OTPGeocoderResponse = {
   results: {
-    coordinate: {
-      lat: number,
-      lon: number,
-    },
-    code?: string | undefined,
-    name: string,
-    id: string,
-    modes: string[]
+    primary: OTPGeocoderStop
+    // Secondaries is always defined: https://github.com/opentripplanner/OpenTripPlanner/pull/5879
+    secondaries: OTPGeocoderStop[]
   }[]
 } | undefined
 
@@ -24,7 +33,17 @@ type OTPGeocoderResponse = {
 function run({ query, url }: FetchArgs): Promise<OTPGeocoderResponse> {
   return fetch(`${url}/geocode/stopClusters?query=${query}`)
     .then(res => res.text())
-    .then(res => JSON.parse(`{"results": ${res}}`));
+    .then(res => {
+      let parsed = { results: [] }
+
+      try {
+        parsed = JSON.parse(`{"results": ${res}}`)
+      } catch (e) {
+        console.warn("Invalid response from OTP Geocoder!")
+      }
+
+      return parsed
+});
 }
 
 /**
@@ -46,8 +65,11 @@ async function autocomplete({
   })
 }
 
-function search(): Promise<unknown> { console.warn("Not implemented"); return null }
-function reverse(): Promise<unknown> { console.warn("Not implemented"); return null }
+async function search(args: SearchQuery): Promise<OTPGeocoderResponse> {
+  return autocomplete(args);
+} 
+
+function reverse(): Promise<OTPGeocoderResponse> { console.warn("Not implemented"); return null }
 
 
 export { autocomplete, reverse, search };

@@ -15,7 +15,9 @@ otpUi:
       <strong>{departureDate, time, short}</strong>에 <strong>{departureDate,
       date, long}</strong> 출발
     hideDetail: 세부정보 숨기기
-    minutesActive: "소요 시간 사용 중: <strong>{minutes} 분</strong>"
+    minutesActive: >-
+      소요 시간 사용 중: <strong>{approximatePrefix, select, true {약 } other
+      {}}{minutes} 분</strong>
     showDetail: 세부정보 표시
     timeActiveDescription: >
       이 이동편을 이용하면, 도보로 <strong>{walkMinutes} 분</strong> 및 자전거로

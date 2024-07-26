@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledTable = styled.table`
+export const StyledTable = styled.table`
   border-collapse: collapse;
   border-spacing: 0;
   font-family: system-ui;

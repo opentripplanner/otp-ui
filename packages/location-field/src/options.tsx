@@ -74,6 +74,8 @@ export function Option({
   id,
   isActive = false,
   onClick,
+  secondaryLabels = [],
+  showSecondaryLabels = true,
   subTitle = null,
   title = null
 }: {
@@ -84,6 +86,8 @@ export function Option({
   id?: string;
   isActive?: boolean;
   onClick?: () => void;
+  secondaryLabels?: string[];
+  showSecondaryLabels?: boolean;
   subTitle?: React.ReactNode;
   title?: React.ReactNode;
 }): React.ReactElement {
@@ -99,6 +103,14 @@ export function Option({
               {subTitle}
             </S.OptionSubTitle>
           )}
+          {/* Only show top 5 results to avoid chaos */}
+          {showSecondaryLabels &&
+            secondaryLabels?.slice(0, 5).map((label, idx) => (
+              <S.OptionAltLabel key={idx}>
+                <S.HiddenContent>, </S.HiddenContent>
+                {label}
+              </S.OptionAltLabel>
+            ))}
         </S.OptionContent>
       </S.OptionContainer>
     </MenuItem>

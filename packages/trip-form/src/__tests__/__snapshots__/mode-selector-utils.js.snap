@@ -14,6 +14,16 @@ Array [
         "label": "Use Accessible Routing",
         "type": "CHECKBOX",
       },
+      Object {
+        "addTransportMode": Object {
+          "mode": "BUS",
+        },
+        "applicableMode": "TRANSIT",
+        "default": true,
+        "key": "enableHovercraft",
+        "overrideMode": "HOVERCRAFT",
+        "type": "SUBMODE",
+      },
     ],
     "modes": Array [
       Object {
@@ -93,6 +103,7 @@ Object {
   "allowBikeRental": true,
   "bikeReluctance": 2,
   "carReluctance": 3,
+  "enableHovercraft": true,
   "walkReluctance": 2,
   "wheelchair": false,
 }
@@ -157,6 +168,17 @@ Array [
     "key": "wheelchair",
     "label": "Use Accessible Routing",
     "type": "CHECKBOX",
+    "value": false,
+  },
+  Object {
+    "addTransportMode": Object {
+      "mode": "BUS",
+    },
+    "applicableMode": "TRANSIT",
+    "default": true,
+    "key": "enableHovercraft",
+    "overrideMode": "HOVERCRAFT",
+    "type": "SUBMODE",
     "value": false,
   },
 ]

@@ -40,6 +40,13 @@ type Props = {
   iconPixels?: number;
 
   /**
+   * This number of seconds is used to determine the cutoff for ignoring a realtime vehicle
+   * update. This is helpful to remove vehicles that have stopped broadcasting their location
+   * from the map.
+   */
+  maxVehicleAge: number;
+
+  /**
    * Component that renders the icons given transit modes.
    */
   ModeIcon: FC<ModeIconProps>;
@@ -70,13 +77,17 @@ const TransitVehicleOverlay = ({
   IconContainer = DefaultIconContainer,
   iconPadding = 2,
   iconPixels = 20,
+  maxVehicleAge = Infinity,
   ModeIcon,
   TooltipSlot = VehicleTooltip,
   VehicleIcon = DefaultVehicleIcon,
   vehicles
 }: Props): ReactNode => {
   const validVehicles = vehicles?.filter(
-    vehicle => !!vehicle?.lat && !!vehicle?.lon
+    vehicle =>
+      !!vehicle?.lat &&
+      !!vehicle?.lon &&
+      Date.now() - (vehicle?.lastUpdated || Date.now()) < maxVehicleAge
   );
   // Don't render if no map or no vehicles are defined.
   // (ZoomBasedMarkers will also not render below the minimum zoom threshold defined in the symbols prop.)
@@ -97,7 +108,9 @@ const TransitVehicleOverlay = ({
       popupProps={{ offset: [-iconPixels / 2 - iconPadding, 0] }}
       position={[vehicle.lat, vehicle.lon]}
       tooltipContents={
-        vehicle.routeShortName && <TooltipSlot vehicle={vehicle} />
+        (vehicle.routeShortName || vehicle.routeLongName) && (
+          <TooltipSlot vehicle={vehicle} />
+        )
       }
     >
       <StyledContainer vehicle={vehicle}>

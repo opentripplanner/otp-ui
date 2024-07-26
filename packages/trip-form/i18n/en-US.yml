@@ -31,6 +31,9 @@ otpUi:
       walkTolerance-labelLow: Less Walking
       wheelchair-label: Accessible Routing
     settingsLabel: "{mode} settings"
+  TripOptions:
+    transitOnly: Go by Transit
+    openApp: Open app
   SettingsSelectorPanel:
     bikeOnly: Bike Only
     escooterOnly: E-scooter Only

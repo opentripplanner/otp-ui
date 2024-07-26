@@ -2092,6 +2092,11 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
+"@leeoniya/ufuzzy@^1.0.14":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@leeoniya/ufuzzy/-/ufuzzy-1.0.14.tgz#01572c0de9cfa1420cf6ecac76dd59db5ebd1337"
+  integrity sha512-/xF4baYuCQMo+L/fMSUrZnibcu0BquEGnbxfVPiZhs/NbJeKj4c/UmFpQzW9Us0w45ui/yYW3vyaqawhNYsTzA==
+
 "@lerna/add@3.21.0":
   version "3.21.0"
   resolved "https://registry.yarnpkg.com/@lerna/add/-/add-3.21.0.tgz#27007bde71cc7b0a2969ab3c2f0ae41578b4577b"
@@ -3241,15 +3246,10 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-1.0.3.tgz#db9cc719191a62e7d9200f6e7bab21c5b848adca"
   integrity sha512-Aq58f5HiWdyDlFffbbSjAlv596h/cOnt2DO1w3DOC7OJ5EHs0hd/nycJfiu9RJbT6Yk6F1knnRRXNSpxoIVZ9Q==
 
-"@opentripplanner/map-popup@^2.0.8":
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/@opentripplanner/map-popup/-/map-popup-2.0.8.tgz#10ae146068e600848834b3451e98e6dc74a98e38"
-  integrity sha512-ohYPlpmUQ+IeGSoDlXfV1/zmEmubZ5gaMd3Yx1pI3nu+3QwqX4OSOtjrEr0aY317fi56zJw0zgUhtcEEVppPZw==
-  dependencies:
-    "@opentripplanner/base-map" "^3.0.14"
-    "@opentripplanner/core-utils" "^11.0.2"
-    "@opentripplanner/from-to-location-picker" "^2.1.8"
-    flat "^5.0.2"
+"@opentripplanner/types@6.5.0":
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/@opentripplanner/types/-/types-6.5.0.tgz#d8cca355bf30f0984283faa793113ad6c0dba38d"
+  integrity sha512-FllEyE+1WQ2GOSKXQOuzrk+OPcJEqr4+zacsHQLB9WVyfm5D/BPHR1/OjfuVngrwLTK5bKP8VlDRS1ba/R8rtg==
 
 "@peculiar/asn1-schema@^2.1.6", "@peculiar/asn1-schema@^2.3.0":
   version "2.3.3"

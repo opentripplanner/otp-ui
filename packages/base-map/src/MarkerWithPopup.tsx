@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
+import { FocusTrapWrapper } from "@opentripplanner/map-popup";
 import React, { useState } from "react";
 import { Marker, PopupProps } from "react-map-gl";
 import { LeafletStyleMarker, Popup } from "./styled";
@@ -61,7 +62,12 @@ const MarkerWithPopup = ({
           maxWidth="100%"
           onClose={() => setShowPopup(false)}
         >
-          {popupContents}
+          <FocusTrapWrapper
+            closePopup={() => setShowPopup(false)}
+            id="map-popup"
+          >
+            {popupContents}
+          </FocusTrapWrapper>
         </Popup>
       )}
     </Marker>
