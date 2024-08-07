@@ -133,7 +133,7 @@ const OTP2TileLayerWithPopup = ({
     filter = ["all", ["==", "network", network]]
   }
   if (type === "stops" || type === "areaStops") {
-    filter = ["!=", ["get", "routes"], ["literal", "[]"]]
+    filter = ["all", ["!", ["has", "parentStation"]], ["!=", ["get", "routes"], ["literal", "[]"]]]
   }
 
   const isArea = AREA_TYPES.includes(type)
