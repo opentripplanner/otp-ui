@@ -5,5 +5,6 @@ otpUi:
     floatingBike: "Vélo flottant : {name}"
     floatingCar: "{company} {name}"
     floatingEScooter: Trottinette {name}
+    popupTitle: "{stationNetwork, select, false {{name}} other {{stationNetwork} {name}}}"
     stopId: Arrêt n°{stopId}
     stopViewer: Info arrêt

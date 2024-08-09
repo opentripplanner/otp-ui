@@ -40,7 +40,7 @@ const FLOATING_VEHICLE = {
   id: '"bike_6861"',
   isCarStation: false,
   isFloatingBike: true,
-  name: "0541 BIKETOWN",
+  name: "0541",
   networks: ["BIKETOWN"],
   realTimeData: true,
   spacesAvailable: 0,
