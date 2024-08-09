@@ -1,4 +1,4 @@
-function getEntries(query: string) {
+export function getEntries(query: string) {
   const entries = Array.from(document.querySelectorAll(query));
   const firstElement = entries[0];
   const lastElement = entries[entries.length - 1];
