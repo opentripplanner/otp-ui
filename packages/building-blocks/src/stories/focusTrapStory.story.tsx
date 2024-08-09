@@ -18,12 +18,16 @@ export const FocusTrapAroundButtonSet = (): React.ReactElement => (
 export const FocusTrapWithVariousEls = (): React.ReactElement => (
   <FocusTrapWrapper
     id="various-els-story"
-    focusElements={["button", "a", "div", "input"]}
+    focusElements={["button", "a", "div", "input", "select"]}
   >
     <button type="button">Button 1</button>
     <a href="/">link</a>
     <div tabIndex={-1}>focusable div</div>
     <input disabled type="text"></input>
     <input type="text"></input>
+    <select>
+      <option>Option 1</option>
+      <option>Option 2</option>
+    </select>
   </FocusTrapWrapper>
 );

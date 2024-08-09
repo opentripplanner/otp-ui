@@ -5,7 +5,7 @@ const FocusTrapWrapper = ({
   children,
   closePopup = null,
   id,
-  focusElements = ["button", "a"]
+  focusElements = ["button", "a", "input", "select"]
 }: {
   children: ReactNode | ReactNode[];
   closePopup?: (arg?: boolean) => void;
