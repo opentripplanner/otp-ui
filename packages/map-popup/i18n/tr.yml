@@ -5,5 +5,6 @@ otpUi:
     floatingBike: "Serbest gezen bisiklet: {name}"
     floatingCar: "{company} {name}"
     floatingEScooter: "E-skuter: {name}"
+    popupTitle: "{stationNetwork, select, false {{name}} other {{stationNetwork} {name}}}"
     stopId: "Durak ID: {stopId}"
     stopViewer: Durak Gösterici

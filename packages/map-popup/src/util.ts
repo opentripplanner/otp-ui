@@ -11,6 +11,8 @@ export function makeDefaultGetEntityName(
     entity: Station | Stop,
     configCompanies: Company[]
   ): string | null {
+    // TODO: Stop generating this / passing it to the car string? Is it needed?
+    // In English we say "Car: " instead
     const stationNetworks =
       "networks" in entity &&
       (coreUtils.itinerary.getCompaniesLabelFromNetworks(
@@ -36,7 +38,7 @@ export function makeDefaultGetEntityName(
           description: "Popup title for a free-floating bike",
           id: "otpUi.MapPopup.floatingBike"
         },
-        { name: stationName || stationNetworks }
+        { name: stationName }
       );
     } else if ("isFloatingCar" in entity && entity.isFloatingCar) {
       stationName = intl.formatMessage(
@@ -59,7 +61,7 @@ export function makeDefaultGetEntityName(
           description: "Popup title for a free-floating e-scooter",
           id: "otpUi.MapPopup.floatingEScooter"
         },
-        { name: stationName || stationNetworks }
+        { name: stationName }
       );
     }
     return stationName;
