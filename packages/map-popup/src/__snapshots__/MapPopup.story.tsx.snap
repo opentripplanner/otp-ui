@@ -3,7 +3,7 @@
 exports[`Map Popup FloatingVehicleEntity smoke-test 1`] = `
 <div class="styled__MapOverlayPopup-sc-12v7ov3-2 hLIcgt">
   <header class="styled__PopupTitle-sc-12v7ov3-4 jMeCoZ">
-    Free-floating bike: 0541 BIKETOWN
+    BIKETOWN Free-floating bike: 0541
   </header>
   <p class="styled__PopupRow-sc-12v7ov3-3 bGmFCM">
     <strong>
@@ -56,7 +56,7 @@ exports[`Map Popup FloatingVehicleEntity smoke-test 1`] = `
 exports[`Map Popup StationEntity smoke-test 1`] = `
 <div class="styled__MapOverlayPopup-sc-12v7ov3-2 hLIcgt">
   <header class="styled__PopupTitle-sc-12v7ov3-4 jMeCoZ">
-    SW Morrison at 18th
+    BIKETOWN SW Morrison at 18th
   </header>
   <p class="styled__PopupRow-sc-12v7ov3-3 bGmFCM">
     <div>
