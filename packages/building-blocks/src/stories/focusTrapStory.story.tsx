@@ -2,8 +2,8 @@ import React from "react";
 import FocusTrapWrapper from "../focus-trap-wrapper";
 
 export default {
-  title: "Building-Blocks/FocusTrapWrapper",
-  component: FocusTrapWrapper
+  component: FocusTrapWrapper,
+  title: "Building-Blocks/FocusTrapWrapper"
 };
 
 export const FocusTrapAroundButtonSet = (): React.ReactElement => (
@@ -17,8 +17,8 @@ export const FocusTrapAroundButtonSet = (): React.ReactElement => (
 
 export const FocusTrapWithVariousEls = (): React.ReactElement => (
   <FocusTrapWrapper
-    id="various-els-story"
     focusElements={["button", "a", "div", "input", "select"]}
+    id="various-els-story"
   >
     <button type="button">Button 1</button>
     <a href="/">link</a>

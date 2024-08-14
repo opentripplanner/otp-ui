@@ -4,8 +4,8 @@ import { getNextSibling, getPreviousSibling } from "./dom-query";
 const FocusTrapWrapper = ({
   children,
   closePopup = null,
-  id,
-  focusElements = ["button", "a", "input", "select"]
+  focusElements = ["button", "a", "input", "select"],
+  id
 }: {
   children: ReactNode | ReactNode[];
   closePopup?: (arg?: boolean) => void;
