@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/otp2-tile-overlay",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Render data from OTP2's vector tile server",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -12,7 +12,7 @@
     "tsc": "tsc"
   },
   "peerDependencies": {
-    "react": "^16.14.0",
+    "react": "^18.2.0",
     "react-map-gl": "^7.0.15"
   },
   "dependencies": {

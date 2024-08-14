@@ -100,6 +100,13 @@ export default function AccessLegDescription({
           values={{
             // TODO: Implement metric vs imperial (up until now it's just imperial).
             distance: humanizeDistanceString(leg.distance, false, intl),
+            // This is not used by the default string,
+            // but supplying it allows a user who is overriding the string to use it
+            // This relies on `formatDuration` being passed into the itinerary body config.
+            // That method is used to generate the duration string
+            duration:
+              config?.formatDuration &&
+              config.formatDuration(leg.duration, intl, false),
             mode: modeContent,
             place: placeContent
           }}

@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgMicromobility = () => (
+const Micromobility = () => (
   <svg
     version="1.1"
     id="wes"
@@ -29,4 +29,4 @@ const SvgMicromobility = () => (
   </svg>
 );
 
-export default SvgMicromobility;
+export default Micromobility;
