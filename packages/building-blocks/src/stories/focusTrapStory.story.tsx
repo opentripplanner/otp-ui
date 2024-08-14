@@ -21,13 +21,26 @@ export const FocusTrapWithVariousEls = (): React.ReactElement => (
     id="various-els-story"
   >
     <button type="button">Button 1</button>
+    <br />
     <a href="/">link</a>
+    <br />
     <div tabIndex={-1}>focusable div</div>
-    <input disabled type="text"></input>
-    <input type="text"></input>
-    <select>
-      <option>Option 1</option>
-      <option>Option 2</option>
-    </select>
+    <label htmlFor="disabled-input">
+      Input (disabled) <input id="disabled-input" disabled type="text" />{" "}
+    </label>
+
+    <br />
+    <label htmlFor="input">
+      Input <input id="input" type="text" />
+    </label>
+
+    <br />
+    <label htmlFor="select">
+      Select{" "}
+      <select id="select">
+        <option>Option 1</option>
+        <option>Option 2</option>
+      </select>
+    </label>
   </FocusTrapWrapper>
 );
