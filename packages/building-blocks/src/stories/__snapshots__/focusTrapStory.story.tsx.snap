@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Building-Blocks/FocusTrapWrapper FocusTrapAroundButtonSet smoke-test 1`] = `
+<div id="button-set-story-focus-trap"
+     role="presentation"
+>
+  <button type="button">
+    Button 1
+  </button>
+  <button type="button">
+    Button 2
+  </button>
+  <button type="button">
+    Button 3
+  </button>
+  <button type="button">
+    Button 4
+  </button>
+</div>
+`;
+
+exports[`Building-Blocks/FocusTrapWrapper FocusTrapWithVariousEls smoke-test 1`] = `
+<div id="various-els-story-focus-trap"
+     role="presentation"
+>
+  <button type="button">
+    Button 1
+  </button>
+  <a href="/">
+    link
+  </a>
+  <div tabindex="-1">
+    focusable div
+  </div>
+  <input disabled
+         type="text"
+  >
+  <input type="text">
+  <select>
+    <option>
+      Option 1
+    </option>
+    <option>
+      Option 2
+    </option>
+  </select>
+</div>
+`;
