@@ -26,23 +26,39 @@ exports[`Building-Blocks/FocusTrapWrapper FocusTrapWithVariousEls smoke-test 1`]
   <button type="button">
     Button 1
   </button>
+  <br>
   <a href="/">
     link
   </a>
+  <br>
   <div tabindex="-1">
     focusable div
   </div>
-  <input disabled
-         type="text"
-  >
-  <input type="text">
-  <select>
-    <option>
-      Option 1
-    </option>
-    <option>
-      Option 2
-    </option>
-  </select>
+  <label for="disabled-input">
+    Input (disabled)
+    <input id="disabled-input"
+           disabled
+           type="text"
+    >
+  </label>
+  <br>
+  <label for="input">
+    Input
+    <input id="input"
+           type="text"
+    >
+  </label>
+  <br>
+  <label for="select">
+    Select
+    <select id="select">
+      <option>
+        Option 1
+      </option>
+      <option>
+        Option 2
+      </option>
+    </select>
+  </label>
 </div>
 `;
