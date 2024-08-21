@@ -1,5 +1,7 @@
 import React, { useCallback } from "react";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
+import coreUtils from "@opentripplanner/core-utils";
+
 // eslint-disable-next-line prettier/prettier
 import type { Company, ConfiguredCompany, Location, Station, Stop, StopEventHandler } from "@opentripplanner/types";
 
@@ -103,6 +105,7 @@ export function MapPopup({ configCompanies, entity, getEntityName, setLocation, 
   const getNameFunc = getEntityName || makeDefaultGetEntityName(intl, defaultMessages);
   const name = getNameFunc(entity, configCompanies);
 
+  const stationNetwork = "networks" in entity && (coreUtils.itinerary.getCompaniesLabelFromNetworks(entity?.networks || [], configCompanies) || entity?.networks?.[0]);
 
   const bikesAvailablePresent = entityIsStation(entity)
   const entityIsStationHub = bikesAvailablePresent && entity?.bikesAvailable !== undefined && !entity?.isFloatingBike;
@@ -110,7 +113,14 @@ export function MapPopup({ configCompanies, entity, getEntityName, setLocation, 
 
   return (
     <S.MapOverlayPopup>
-      <S.PopupTitle>{name}</S.PopupTitle>
+      <S.PopupTitle>
+        <FormattedMessage
+          defaultMessage={defaultMessages["otpUi.MapPopup.popupTitle"]}
+          description="Text for title of the popup, contains an optional company name"
+          id="otpUi.MapPopup.popupTitle"
+          values={{ name, stationNetwork }}
+        />
+      </S.PopupTitle>
       {/* render dock info if it is available */}
       {entityIsStationHub && <StationHubDetails station={entity} />}
 

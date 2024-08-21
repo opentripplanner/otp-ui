@@ -1,9 +1,10 @@
 otpUi:
   MapPopup:
-    availableDocks: 'Доступные станции: {value}'
-    floatingBike: 'Арендный велосипед не на станции: {name}'
+    availableBikes: "Доступные велосипеды: {value}"
+    availableDocks: "Доступные станции: {value}"
+    floatingBike: "Арендный велосипед не на станции: {name}"
+    floatingCar: "Авто: {name}"
+    floatingEScooter: "Электросамокат: {name}"
+    popupTitle: "{stationNetwork, select, false {{name}} other {{stationNetwork} {name}}}"
+    stopId: "Идентификатор остановки: {stopId}"
     stopViewer: Средство просмотра остановок
-    stopId: 'Идентификатор остановки: {stopId}'
-    floatingCar: '{company} {name}'
-    availableBikes: 'Доступные велосипеды: {value}'
-    floatingEScooter: 'Электросамокат: {name}'

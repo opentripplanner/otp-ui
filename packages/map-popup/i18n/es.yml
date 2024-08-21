@@ -3,8 +3,8 @@ otpUi:
     availableBikes: "Bicicletas disponibles: {value}"
     availableDocks: "Estaciones de carga disponibles: {value}"
     floatingBike: "Bicicleta flotante: {name}"
-    floatingCar: "{company} {name}"
-    floatingEScooter: "Scooter eléctrico {name}"
-
+    floatingCar: "Carro: {name}"
+    floatingEScooter: Scooter eléctrico {name}
+    popupTitle: "{stationNetwork, select, false {{name}} other {{stationNetwork} {name}}}"
     stopId: Parada n°{stopId}
     stopViewer: Visor de paradas

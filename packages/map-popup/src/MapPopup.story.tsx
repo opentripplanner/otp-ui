@@ -40,12 +40,28 @@ const FLOATING_VEHICLE = {
   id: '"bike_6861"',
   isCarStation: false,
   isFloatingBike: true,
-  name: "0541 BIKETOWN",
+  name: "0541",
   networks: ["BIKETOWN"],
   realTimeData: true,
   spacesAvailable: 0,
   x: -122.70486,
   y: 45.525486666666666
+};
+
+const FLOATING_CAR = {
+  "stroke-width": 1,
+  allowDropoff: false,
+  allowPickup: true,
+  color: "#333",
+  id: "car_6861",
+  isCarStation: false,
+  isFloatingCar: true,
+  name: "0541",
+  networks: ["MILES"], // https://miles-mobility.com
+  realTimeData: true,
+  spacesAvailable: 0,
+  x: 13.405,
+  y: 52.52
 };
 
 export const StopEntity = (): JSX.Element => (
@@ -66,6 +82,10 @@ export const StationEntity = (): JSX.Element => (
     setLocation={action("setLocation")}
     setViewedStop={action("setViewedStop")}
   />
+);
+
+export const FloatingCarEntity = (): JSX.Element => (
+  <MapPopupContents entity={FLOATING_CAR} setLocation={action("setLocation")} />
 );
 
 export const FloatingVehicleEntity = (): JSX.Element => (
