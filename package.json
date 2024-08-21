@@ -48,6 +48,7 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-import-graphql": "^2.8.1",
     "babel-plugin-styled-components": "^1.10.0",
+    "concurrently": "^8.2.2",
     "core-js": "2",
     "cross-env": "^7.0.3",
     "eslint": "^7.32.0",
@@ -122,7 +123,8 @@
     "typescript": "lerna run tsc",
     "unit": "jest --testPathIgnorePatterns a11y .d.ts",
     "update-internal-dependencies": "node scripts/update-internal-dependencies.js",
-    "test-storybook": "test-storybook --url http://localhost:5555"
+    "test-storybook": "test-storybook --url http://localhost:5555",
+    "update-snapshots": "yarn build-storybook; npx concurrently -k -s first -n \"SB,TEST\" \"npx http-server storybook-static --port 5555 --silent\" \"npx wait-on tcp:5555 && yarn test-storybook --url http://localhost:5555 -u\""
   },
   "eslintConfig": {
     "env": {
