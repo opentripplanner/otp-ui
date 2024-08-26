@@ -43,4 +43,6 @@ const FocusTrapWrapper = ({
   );
 };
 
+export { getNextSibling, getPreviousSibling };
+
 export default FocusTrapWrapper;
