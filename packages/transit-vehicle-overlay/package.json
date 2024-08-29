@@ -9,13 +9,13 @@
   "module": "esm/index.js",
   "private": false,
   "dependencies": {
-    "@opentripplanner/base-map": "^3.1.0",
-    "@opentripplanner/core-utils": "^11.4.1",
-    "@opentripplanner/icons": "^2.0.10",
+    "@opentripplanner/base-map": "^3.2.0",
+    "@opentripplanner/core-utils": "^11.4.3",
+    "@opentripplanner/icons": "^2.0.11",
     "flat": "^5.0.2"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^6.5.0"
+    "@opentripplanner/types": "^6.5.2"
   },
   "peerDependencies": {
     "react": "^18.2.0",
