@@ -7,5 +7,6 @@ import FocusTrapWrapper, {
   getPreviousSibling
 } from "./focus-trap-wrapper";
 
+// TODO: Fix exports
 export { Dropdown, FocusTrapWrapper, getNextSibling, getPreviousSibling };
 export default { blue, red, grey };
