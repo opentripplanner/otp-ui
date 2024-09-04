@@ -85,6 +85,7 @@ const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: () => v
 
 type Entity = Stop | Station
 type Props = {
+  closePopup?: (arg?: any) => void
   configCompanies?: ConfiguredCompany[];
   entity: Entity
   getEntityName?: (entity: Entity, configCompanies: Company[],) => string;
@@ -99,7 +100,7 @@ function entityIsStation(entity: Entity): entity is Station {
 /**
  * Renders a map popup for a stop, scooter, or shared bike
  */
-export function MapPopup({ configCompanies, entity, getEntityName, setLocation, setViewedStop }: Props): JSX.Element {
+export function MapPopup({ closePopup = null, configCompanies, entity, getEntityName, setLocation, setViewedStop }: Props): JSX.Element {
   const intl = useIntl()
   if (!entity) return <></>
 
@@ -114,7 +115,7 @@ export function MapPopup({ configCompanies, entity, getEntityName, setLocation, 
 
   return (
     <S.MapOverlayPopup>
-      <FocusTrapWrapper id="map-popup">
+      <FocusTrapWrapper closePopup={closePopup} id={`${entity.id}-popup`}>
       <S.PopupTitle>
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.MapPopup.popupTitle"]}
