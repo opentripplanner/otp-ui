@@ -1,6 +1,6 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import MapPopupContents, { FocusTrapWrapper } from "./index";
+import MapPopupContents from "./index";
 
 export default {
   title: "Map Popup"
@@ -66,6 +66,7 @@ const FLOATING_CAR = {
 
 export const StopEntity = (): JSX.Element => (
   <MapPopupContents
+    // @ts-expect-error idk
     entity={STOP}
     setLocation={action("setLocation")}
     setViewedStop={action("setViewedStop")}
@@ -73,6 +74,7 @@ export const StopEntity = (): JSX.Element => (
 );
 
 export const StopEntityNoHandlers = (): JSX.Element => (
+  // @ts-expect-error idk
   <MapPopupContents entity={STOP} />
 );
 
@@ -94,14 +96,4 @@ export const FloatingVehicleEntity = (): JSX.Element => (
     setLocation={action("setLocation")}
     setViewedStop={action("setViewedStop")}
   />
-);
-
-export const StopEntityWithFocusTrap = (): JSX.Element => (
-  <FocusTrapWrapper closePopup={() => {}} id="storybook-stop">
-    <MapPopupContents
-      entity={STOP}
-      setLocation={action("setLocation")}
-      setViewedStop={action("setViewedStop")}
-    />
-  </FocusTrapWrapper>
 );

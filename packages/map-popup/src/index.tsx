@@ -7,8 +7,9 @@ import type { Company, ConfiguredCompany, Location, Station, Stop, StopEventHand
 
 import { FormattedMessage, useIntl } from "react-intl";
 import { flatten } from "flat";
+
+import { FocusTrapWrapper } from "@opentripplanner/building-blocks";
 import * as S from "./styled";
-import FocusTrapWrapper from "./FocusTrapWrapper";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
@@ -113,6 +114,7 @@ export function MapPopup({ configCompanies, entity, getEntityName, setLocation, 
 
   return (
     <S.MapOverlayPopup>
+      <FocusTrapWrapper id="map-popup" closePopup={() =>  setViewedStop(null)}>
       <S.PopupTitle>
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.MapPopup.popupTitle"]}
@@ -142,6 +144,8 @@ export function MapPopup({ configCompanies, entity, getEntityName, setLocation, 
           />
         </S.PopupRow>
       )}
+      </FocusTrapWrapper>
+      
     </S.MapOverlayPopup>
   );
 }
@@ -149,4 +153,4 @@ export function MapPopup({ configCompanies, entity, getEntityName, setLocation, 
 export default MapPopup;
 
 // Rename styled components for export.
-export { S as Styled, FocusTrapWrapper };
+export { S as Styled };
