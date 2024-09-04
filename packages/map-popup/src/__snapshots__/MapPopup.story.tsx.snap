@@ -2,7 +2,7 @@
 
 exports[`Map Popup FloatingCarEntity smoke-test 1`] = `
 <div class="styled__MapOverlayPopup-sc-12v7ov3-2 hLIcgt">
-  <div id="map-popup-focus-trap"
+  <div id="car_6861-popup-focus-trap"
        role="presentation"
   >
     <header class="styled__PopupTitle-sc-12v7ov3-4 jMeCoZ">
@@ -59,7 +59,7 @@ exports[`Map Popup FloatingCarEntity smoke-test 1`] = `
 
 exports[`Map Popup FloatingVehicleEntity smoke-test 1`] = `
 <div class="styled__MapOverlayPopup-sc-12v7ov3-2 hLIcgt">
-  <div id="map-popup-focus-trap"
+  <div id="&quot;bike_6861&quot;-popup-focus-trap"
        role="presentation"
   >
     <header class="styled__PopupTitle-sc-12v7ov3-4 jMeCoZ">
@@ -116,7 +116,7 @@ exports[`Map Popup FloatingVehicleEntity smoke-test 1`] = `
 
 exports[`Map Popup StationEntity smoke-test 1`] = `
 <div class="styled__MapOverlayPopup-sc-12v7ov3-2 hLIcgt">
-  <div id="map-popup-focus-trap"
+  <div id="&quot;hub_1580&quot;-popup-focus-trap"
        role="presentation"
   >
     <header class="styled__PopupTitle-sc-12v7ov3-4 jMeCoZ">
@@ -181,7 +181,7 @@ exports[`Map Popup StationEntity smoke-test 1`] = `
 
 exports[`Map Popup StopEntity smoke-test 1`] = `
 <div class="styled__MapOverlayPopup-sc-12v7ov3-2 hLIcgt">
-  <div id="map-popup-focus-trap"
+  <div id="9526-popup-focus-trap"
        role="presentation"
   >
     <header class="styled__PopupTitle-sc-12v7ov3-4 jMeCoZ">
@@ -246,7 +246,7 @@ exports[`Map Popup StopEntity smoke-test 1`] = `
 
 exports[`Map Popup StopEntityNoHandlers smoke-test 1`] = `
 <div class="styled__MapOverlayPopup-sc-12v7ov3-2 hLIcgt">
-  <div id="map-popup-focus-trap"
+  <div id="9526-popup-focus-trap"
        role="presentation"
   >
     <header class="styled__PopupTitle-sc-12v7ov3-4 jMeCoZ">
