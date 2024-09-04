@@ -66,7 +66,6 @@ const FLOATING_CAR = {
 
 export const StopEntity = (): JSX.Element => (
   <MapPopupContents
-    // @ts-expect-error idk
     entity={STOP}
     setLocation={action("setLocation")}
     setViewedStop={action("setViewedStop")}
@@ -74,7 +73,6 @@ export const StopEntity = (): JSX.Element => (
 );
 
 export const StopEntityNoHandlers = (): JSX.Element => (
-  // @ts-expect-error idk
   <MapPopupContents entity={STOP} />
 );
 

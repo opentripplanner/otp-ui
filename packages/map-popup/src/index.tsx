@@ -114,7 +114,7 @@ export function MapPopup({ configCompanies, entity, getEntityName, setLocation, 
 
   return (
     <S.MapOverlayPopup>
-      <FocusTrapWrapper id="map-popup" closePopup={() =>  setViewedStop(null)}>
+      <FocusTrapWrapper id="map-popup">
       <S.PopupTitle>
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.MapPopup.popupTitle"]}
