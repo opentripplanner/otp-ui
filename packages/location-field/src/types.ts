@@ -215,6 +215,10 @@ export interface LocationFieldProps {
    */
   preferredLayers?: string[];
   /**
+   * If true, make "Other" category (addresses, POIs, etc.) first in the results container.
+   */
+  renderOtherFirst?: boolean;
+  /**
    * A slot for the icon to display for an option that was used during the
    * current session.
    */

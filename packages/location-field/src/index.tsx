@@ -174,6 +174,7 @@ const LocationField = ({
   onTextInputClick = null,
   operatorIconMap = {},
   preferredLayers = [],
+  renderOtherFirst = false,
   sessionOptionIcon = <Search size={ICON_SIZE} />,
   sessionSearches = [],
   showClearButton = true,
@@ -644,8 +645,25 @@ const LocationField = ({
     const transitFeaturesPresent =
       stopFeatures.length > 0 || stationFeatures.length > 0;
 
+    const OtherFeaturesHeader = () => (
+      <S.MenuGroupHeader as={headingType} bgColor="#333" key="other-header">
+        <FormattedMessage
+          description="Text for header above the 'other'"
+          id="otpUi.LocationField.other"
+        />
+      </S.MenuGroupHeader>
+    );
+
+    const otherFeaturesElements = otherFeatures.map(feature =>
+      renderFeature(itemIndex++, feature)
+    );
+
     // Iterate through the geocoder results
     menuItems = menuItems.concat(
+      renderOtherFirst &&
+        transitFeaturesPresent &&
+        otherFeatures.length > 0 && <OtherFeaturesHeader />,
+      renderOtherFirst && otherFeaturesElements,
       stationFeatures.length > 0 && (
         <S.MenuGroupHeader
           as={headingType}
@@ -673,16 +691,10 @@ const LocationField = ({
         </S.MenuGroupHeader>
       ),
       stopFeatures.map(feature => renderFeature(itemIndex++, feature)),
-
-      transitFeaturesPresent && otherFeatures.length > 0 && (
-        <S.MenuGroupHeader as={headingType} bgColor="#333" key="other-header">
-          <FormattedMessage
-            description="Text for header above the 'other'"
-            id="otpUi.LocationField.other"
-          />
-        </S.MenuGroupHeader>
-      ),
-      otherFeatures.map(feature => renderFeature(itemIndex++, feature))
+      !renderOtherFirst &&
+        transitFeaturesPresent &&
+        otherFeatures.length > 0 && <OtherFeaturesHeader />,
+      !renderOtherFirst && otherFeaturesElements
     );
   }
 
