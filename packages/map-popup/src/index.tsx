@@ -5,11 +5,11 @@ import coreUtils from "@opentripplanner/core-utils";
 // eslint-disable-next-line prettier/prettier
 import type { Company, ConfiguredCompany, Location, Station, Stop, StopEventHandler } from "@opentripplanner/types";
 
-import { FormattedMessage, useIntl } from "react-intl";
-import { flatten } from "flat";
-
 import { FocusTrapWrapper } from "@opentripplanner/building-blocks";
+import { flatten } from "flat";
+import { FormattedMessage, useIntl } from "react-intl";
 import { Styled } from "@opentripplanner/base-map";
+
 import { ViewStopButton } from "./styled";
 
 // Load the default messages.
