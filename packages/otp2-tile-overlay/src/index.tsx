@@ -26,12 +26,12 @@ const OTP2TileLayerWithPopup = ({
   setViewedStop,
   type
 }: {
+  color?: string;
   /**
    * Optional configuration item which allows for customizing properties of scooter and
    * bikeshare companies. If this is provided, scooter/bikeshare company names can be rendered in the
    * default scooter/bike popup.
    */
-  color?: string;
   configCompanies?: ConfiguredCompany[]
   id: string
   name?: string
