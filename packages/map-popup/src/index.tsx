@@ -9,7 +9,8 @@ import { FormattedMessage, useIntl } from "react-intl";
 import { flatten } from "flat";
 
 import { FocusTrapWrapper } from "@opentripplanner/building-blocks";
-import * as S from "./styled";
+import { Styled } from "@opentripplanner/base-map";
+import { ViewStopButton } from "./styled";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
@@ -34,7 +35,7 @@ const generateLocation = (entity: Entity, name: string) => {
 
 const StationHubDetails = ({ station }: { station: Station }) => {
   return (
-    <S.PopupRow>
+    <Styled.PopupRow>
       <div>
         <FormattedMessage
           defaultMessage={
@@ -55,13 +56,13 @@ const StationHubDetails = ({ station }: { station: Station }) => {
           values={{ value: station.spacesAvailable }}
         />
       </div>
-    </S.PopupRow>
+    </Styled.PopupRow>
   )
 }
 
 const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: () => void; }) => {
   return (
-    <S.PopupRow>
+    <Styled.PopupRow>
       <strong>
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.MapPopup.stopId"]}
@@ -72,14 +73,14 @@ const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: () => v
           }}
         />
       </strong>
-      <S.ViewStopButton onClick={setViewedStop}>
+      <ViewStopButton onClick={setViewedStop}>
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.MapPopup.stopViewer"]}
           description="Text for link that opens the stop viewer"
           id="otpUi.MapPopup.stopViewer"
         />
-      </S.ViewStopButton>
-    </S.PopupRow>
+      </ViewStopButton>
+    </Styled.PopupRow>
   )
 }
 
@@ -113,17 +114,20 @@ export function MapPopup({ closePopup = null, configCompanies, entity, getEntity
   const entityIsStationHub = bikesAvailablePresent && entity?.bikesAvailable !== undefined && !entity?.isFloatingBike;
   const stopId = !bikesAvailablePresent && entity?.code || entity.id.split(":")[1] || entity.id
 
+  // Double quotes make the query invalid, so remove them from the id just in case
+  const id = `focus-${entity.id}-popup`.replace(/"/g, "")
+
   return (
-    <S.MapOverlayPopup>
-      <FocusTrapWrapper closePopup={closePopup} id={`${entity.id}-popup`}>
-      <S.PopupTitle>
+    <Styled.MapOverlayPopup>
+      <FocusTrapWrapper closePopup={closePopup} id={id}>
+      <Styled.PopupTitle>
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.MapPopup.popupTitle"]}
           description="Text for title of the popup, contains an optional company name"
           id="otpUi.MapPopup.popupTitle"
           values={{ name, stationNetwork }}
         />
-      </S.PopupTitle>
+      </Styled.PopupTitle>
       {/* render dock info if it is available */}
       {entityIsStationHub && <StationHubDetails station={entity} />}
 
@@ -137,21 +141,18 @@ export function MapPopup({ closePopup = null, configCompanies, entity, getEntity
 
       {/* The "Set as [from/to]" ButtonGroup */}
       {setLocation && (
-        <S.PopupRow>
+        <Styled.PopupRow>
           <FromToLocationPicker
             label
             location={generateLocation(entity, name)}
             setLocation={setLocation}
           />
-        </S.PopupRow>
+        </Styled.PopupRow>
       )}
       </FocusTrapWrapper>
       
-    </S.MapOverlayPopup>
+    </Styled.MapOverlayPopup>
   );
 }
 
 export default MapPopup;
-
-// Rename styled components for export.
-export { S as Styled };
