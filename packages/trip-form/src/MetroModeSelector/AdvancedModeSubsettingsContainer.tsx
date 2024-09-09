@@ -40,6 +40,7 @@ interface Props {
   fillModeIcons: boolean | undefined;
   label: string;
   modeButtons: ModeButtonDefinition[];
+  onAllSubmodesDisabled?: (modeButton: ModeButtonDefinition) => void;
   onSettingsUpdate: (event: QueryParamChangeEvent) => void;
   onToggleModeButton: (key: string, newState: boolean) => void;
 }
@@ -49,6 +50,7 @@ const AdvancedModeSubsettingsContainer = ({
   fillModeIcons,
   modeButtons,
   label,
+  onAllSubmodesDisabled,
   onSettingsUpdate,
   onToggleModeButton
 }: Props): JSX.Element => {
@@ -63,6 +65,7 @@ const AdvancedModeSubsettingsContainer = ({
             key={button.label}
             modeButton={button}
             onSettingsUpdate={onSettingsUpdate}
+            onAllSubmodesDisabled={onAllSubmodesDisabled}
             onToggle={useCallback(() => {
               onToggleModeButton(button.key, !button.enabled);
             }, [button, onToggleModeButton])}

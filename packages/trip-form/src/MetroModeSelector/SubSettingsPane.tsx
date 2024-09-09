@@ -1,6 +1,11 @@
 import { flatten } from "flat";
-import { ModeButtonDefinition, ModeSetting } from "@opentripplanner/types";
-import React, { ReactElement } from "react";
+import {
+  ModeButtonDefinition,
+  ModeSetting,
+  ModeSettingBase,
+  TransitSubmodeCheckboxOption
+} from "@opentripplanner/types";
+import React, { ReactElement, useCallback } from "react";
 import { useIntl } from "react-intl";
 import styled from "styled-components";
 
@@ -10,6 +15,7 @@ import SliderSelector from "../SliderSelector";
 import generateModeButtonLabel, { generateModeSettingLabels } from "./i18n";
 
 import defaultEnglishMessages from "../../i18n/en-US.yml";
+import { QueryParamChangeEvent } from "../types";
 // HACK: We should flatten the messages loaded above because
 // the YAML loaders behave differently between webpack and our version of jest:
 // - the yaml loader for webpack returns a nested object,
@@ -153,10 +159,12 @@ export const ModeSettingRenderer = ({
 interface Props {
   modeButton: ModeButtonDefinition;
   onSettingUpdate: (QueryParamChangeEvent) => void;
+  onAllSubmodesDisabled?: (modeButton: ModeButtonDefinition) => void;
 }
 export default function SubSettingsPane({
   modeButton,
-  onSettingUpdate
+  onSettingUpdate,
+  onAllSubmodesDisabled
 }: Props): ReactElement {
   const intl = useIntl();
   const label = generateModeButtonLabel(modeButton.key, intl, modeButton.label);
@@ -166,7 +174,10 @@ export default function SubSettingsPane({
   const {
     settingsNoSubmodes,
     settingsOnlySubmodes
-  } = modeButton.modeSettings.reduce(
+  } = modeButton.modeSettings.reduce<{
+    settingsNoSubmodes: ModeSetting[];
+    settingsOnlySubmodes: (TransitSubmodeCheckboxOption & ModeSettingBase)[];
+  }>(
     (accumulator, cur) => {
       if (cur.type === "SUBMODE") {
         accumulator.settingsOnlySubmodes.push(cur);
@@ -176,6 +187,22 @@ export default function SubSettingsPane({
       return accumulator;
     },
     { settingsNoSubmodes: [], settingsOnlySubmodes: [] }
+  );
+
+  const handleSettingChange = useCallback(
+    (setting: ModeSetting) => (evt: QueryParamChangeEvent) => {
+      if (setting.type === "SUBMODE") {
+        if (
+          settingsOnlySubmodes.every(
+            s => Object.keys(evt).includes(s.key) || s.value === false
+          )
+        ) {
+          onAllSubmodesDisabled && onAllSubmodesDisabled(modeButton);
+        }
+      }
+      onSettingUpdate(evt);
+    },
+    [onSettingUpdate]
   );
 
   return (
@@ -189,7 +216,7 @@ export default function SubSettingsPane({
         {settingsOnlySubmodes.map(setting => (
           <ModeSettingRenderer
             key={setting.key}
-            onChange={onSettingUpdate}
+            onChange={handleSettingChange(setting)}
             setting={setting}
           />
         ))}
@@ -197,7 +224,7 @@ export default function SubSettingsPane({
       {settingsNoSubmodes.map(setting => (
         <ModeSettingRenderer
           key={setting.key}
-          onChange={onSettingUpdate}
+          onChange={handleSettingChange(setting)}
           setting={setting}
         />
       ))}
