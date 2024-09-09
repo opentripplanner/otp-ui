@@ -648,7 +648,7 @@ const LocationField = ({
     const OtherFeaturesHeader = () => (
       <S.MenuGroupHeader as={headingType} bgColor="#333" key="other-header">
         <FormattedMessage
-          description="Text for header above the 'other'"
+          description="Text for header above the 'other' category of geocoder results"
           id="otpUi.LocationField.other"
         />
       </S.MenuGroupHeader>
