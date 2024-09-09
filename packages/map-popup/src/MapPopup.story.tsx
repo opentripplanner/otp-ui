@@ -8,6 +8,7 @@ export default {
 
 const STOP = {
   flex: false,
+  gtfsId: "9526",
   id: "9526",
   lat: 45.523009,
   lon: -122.672529,
