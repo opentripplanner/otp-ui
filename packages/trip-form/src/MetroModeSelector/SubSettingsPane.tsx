@@ -191,7 +191,10 @@ export default function SubSettingsPane({
 
   const handleSettingChange = useCallback(
     (setting: ModeSetting) => (evt: QueryParamChangeEvent) => {
-      if (setting.type === "SUBMODE") {
+      if (
+        (setting.type === "CHECKBOX" || setting.type === "SUBMODE") &&
+        setting.addTransportMode
+      ) {
         if (
           settingsOnlySubmodes.every(
             s => Object.keys(evt).includes(s.key) || s.value === false
