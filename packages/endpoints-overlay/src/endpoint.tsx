@@ -13,7 +13,7 @@ import { Marker, MarkerDragEvent } from "react-map-gl";
 import { Sync } from "@styled-icons/fa-solid/Sync";
 import { Times } from "@styled-icons/fa-solid/Times";
 import coreUtils from "@opentripplanner/core-utils";
-import { FocusTrapWrapper } from "@opentripplanner/map-popup";
+import { FocusTrapWrapper } from "@opentripplanner/building-blocks";
 import flatten from "flat";
 import React, { ComponentType, useState } from "react";
 
