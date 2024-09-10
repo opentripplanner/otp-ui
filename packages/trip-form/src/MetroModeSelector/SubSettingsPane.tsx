@@ -191,18 +191,26 @@ export default function SubSettingsPane({
 
   const handleSettingChange = useCallback(
     (setting: ModeSetting) => (evt: QueryParamChangeEvent) => {
-      if (
-        (setting.type === "CHECKBOX" || setting.type === "SUBMODE") &&
-        setting.addTransportMode
-      ) {
+      // rental mode settings do not have type "SUBMODE"
+      const settingsWithTransportMode = modeButton.modeSettings.filter(
+        (s: ModeSetting) =>
+          (s.type === "CHECKBOX" || s.type === "SUBMODE") && s.addTransportMode
+      );
+      // check if setting is a transport mode setting
+      if (settingsWithTransportMode.find(s => s.key === setting.key)) {
+        // check if all submodes are disabled
         if (
-          settingsOnlySubmodes.every(
+          settingsWithTransportMode.every(
             s => Object.keys(evt).includes(s.key) || s.value === false
           )
         ) {
+          settingsWithTransportMode.forEach(s => {
+            evt[s.key] = Object.keys(evt).includes(s.key) || !s.value;
+          });
           onAllSubmodesDisabled && onAllSubmodesDisabled(modeButton);
         }
       }
+
       onSettingUpdate(evt);
     },
     [onSettingUpdate]
