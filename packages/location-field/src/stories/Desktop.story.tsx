@@ -282,3 +282,4 @@ export const WithOtherFirst = (): JSX.Element => {
     </>
   );
 };
+WithOtherFirst.parameters = a11yOverrideParameters;
