@@ -11,8 +11,8 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^11.4.3",
-    "@opentripplanner/from-to-location-picker": "^2.1.13",
+    "@opentripplanner/core-utils": "^11.4.4",
+    "@opentripplanner/from-to-location-picker": "^2.1.14",
     "flat": "^5.0.2"
   },
   "devDependencies": {
