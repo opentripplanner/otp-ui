@@ -9,9 +9,9 @@
   "module": "esm/index.js",
   "private": false,
   "dependencies": {
-    "@opentripplanner/base-map": "^3.2.0",
-    "@opentripplanner/core-utils": "^11.4.3",
-    "@opentripplanner/icons": "^2.0.11",
+    "@opentripplanner/base-map": "^3.2.2",
+    "@opentripplanner/core-utils": "^11.4.4",
+    "@opentripplanner/icons": "^2.0.12",
     "flat": "^5.0.2"
   },
   "devDependencies": {
