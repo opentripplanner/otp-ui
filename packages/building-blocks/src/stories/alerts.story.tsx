@@ -33,13 +33,15 @@ const alerts = [
   }
 ];
 
+const alertKey = crypto.randomUUID();
+
 const AlertContent = () => {
   return (
     <>
       {alerts.map((alert, i) => {
         return (
           <>
-            <div key={alert.alertDescriptionText}>
+            <div key={alertKey}>
               {`${i + 1}) `}
               {alert.alertDescriptionText}
             </div>

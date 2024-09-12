@@ -3,6 +3,7 @@ import styled from "styled-components";
 import AnimateHeight from "react-animate-height";
 import { ChevronUp } from "@styled-icons/bootstrap/ChevronUp";
 import { Bell } from "@styled-icons/bootstrap/Bell";
+import { StyledIcon } from "@styled-icons/styled-icon";
 import blue from "./colors/blue";
 
 interface Props {
@@ -11,7 +12,7 @@ interface Props {
   backgroundColor?: string;
   collapsible?: boolean;
   children?: ReactChild;
-  Icon?: any;
+  Icon?: StyledIcon;
 }
 
 const AlertContainer = styled.div<{
