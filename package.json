@@ -9,7 +9,7 @@
     "packages/*"
   ],
   "resolutions": {
-    "react": "17.0.2",
+    "react": "18.2.0",
     "react-animate-height": "3.0.4"
   },
   "devDependencies": {
