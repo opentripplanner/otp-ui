@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/icons",
-  "version": "2.0.10",
+  "version": "2.0.13",
   "description": "Icons for otp-ui",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -10,11 +10,11 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "^11.2.3",
+    "@opentripplanner/core-utils": "^11.4.4",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {
-    "react": "^16.14.0"
+    "react": "^18.2.0"
   },
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"

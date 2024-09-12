@@ -1,0 +1,114 @@
+otpUi:
+  AccessLegBody:
+    LegDiagramPreview:
+      elevationChart: 海拔圖表
+      noElevationData: 沒有可用的海拔資料。
+      toggleElevationChart: 切換海拔圖表
+    RentedVehicleSubheader:
+      pickupRental: 領取{company} {vehicleType} {vehicleName}
+      resumeRentalRide: 繼續使用租賃
+      vehicleType:
+        bike: 騎行
+        bikeshare: 自行車共享
+        car: 汽車
+        escooter: 電動滑板車
+        vehicle: 車輛
+      walkVehicle: 沿著{place}牽車步行
+    TncLeg:
+      bookRide: 預約乘車
+      bookRideLater: 等到{timeMillis, time, short}再預約
+      estimatedCost: 預估費用：{minFare} - {maxFare}
+      estimatedTravelTime: 預估行程時間：{duration} (不考慮車流)
+      waitForPickup: "等待{minutes, plural, =0 {} other { #分鐘}}由{company}接車"
+    mapillaryTooltip: 顯示此位置的街道影像
+    step:
+      circleClockwise: 順時鐘沿著圓環
+      circleCounterClockwise: 逆時鐘沿著圓環
+      continue: 繼續
+      enterStation: 輸入車站
+      exitStation: 退出車站
+      hardLeft: 向左急轉
+      hardRight: 向右急轉
+      left: 左
+      right: 右
+      slightlyLeft: 稍微向左
+      slightlyRight: 稍微向右
+      uTurnLeft: 左邊迴轉
+      uTurnRight: 右邊迴轉
+    stepDepart: 往 {heading} 在 {street}
+    stepElevator: 搭乘電梯到{street}
+    stepFollowSigns: 跟著指示牌前往 {street}
+    stepGeneric: "{step} 在 {street}"
+    stepHeading:
+      east: 東
+      north: 北
+      northeast: 東北
+      northwest: 西北
+      south: 南
+      southeast: 東南
+      southwest: 西南
+      west: 西
+    stepStation: "{step} 在 {street}"
+    summary: "{mode} 到{place}"
+    summaryAndDistance: "{mode} {distance} 到{place}"
+    summaryMode:
+      bike: 自行車
+      bikeshare: 自行車共享
+      carDrive: 駕車
+      carHail: 乘車
+      escooter: 騎車
+      walk: 步行
+    unnamedPath: 未命名路線
+    unnamedRoad: 未命名道路
+    vehicleTitle: "{company} {vehicleType}"
+    vehicleType:
+      bike: 騎行
+      bikeshare: 共享自行車
+      car: 汽車
+      escooter: 騎電動滑板車
+      vehicle: 車輛
+  ItineraryBody:
+    common:
+      durationShort: "{hours, plural, =0 {} other {#小時}}{minutes}分鐘"
+    flexAdvanceNotice: " 至少提前{leadDays}天"
+    flexCallAhead: 撥打事先
+    flexCallNumber: 撥打{phoneNumber}
+    flexPickupMessage: 若要使用此路線，您必須{action}{advanceNotice}.
+    stayOnBoard: 留在{place}車上
+    travelBy: 透過{mode}旅行
+    travelByMode:
+      bike: 騎自行車
+      car: 開車
+      escooter: 騎電動滑板車
+      walk: 步行
+    tripAccessibility:
+      inaccessible: 無法到達
+      itineraryAccessibility: "此行程的輪椅無障礙設施： "
+      legAccessibility: "此行程路段的輪椅無障礙設施： "
+      likelyAccessible: 可能可以到達
+      unclear: 未知
+    viewOnMap: 在地圖上檢視
+  TransitLegBody:
+    AlertsBody:
+      effectiveDate: 自{dateTime, date, long}起生效
+      effectiveTimeAndDate: 自{dateTime, time, short}, {day}起生效
+      linkOpensNewWindow: (開啟新視窗)
+      today: 今天
+      tomorrow: 明天
+      yesterday: 昨天
+    agencyExternalLink: "{agencyName} (外部連結)"
+    alertsHeader: "{alertCount}則警示"
+    expandDetails: (展開詳細資訊)
+    fare: 票價：{fare}
+    fromLocation: 從{location}
+    legDetails: 路段詳細資訊
+    operatedBy: 由{agencyLink}提供服務
+    ride: 搭車
+    rideDurationAndStops: "搭乘{duration}{numStops, plural, =1 {} other { / # 站}}"
+    routeDescription: "{routeName}<toPrefix>到</toPrefix>{headsign}"
+    stopId: 車站ID {stopId}
+    stopIdBasic: ID {stopId}
+    stopViewer: 車站檢視器
+    tripViewer: 行程檢視器
+    typicalWait: 一般等待時間：{waitTime}
+    zoomToLeg: 縮放至地圖上的路段

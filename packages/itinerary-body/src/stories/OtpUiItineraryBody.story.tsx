@@ -2,6 +2,7 @@ import React, { ReactElement } from "react";
 import { Bomb } from "@styled-icons/fa-solid/Bomb";
 import { Bolt } from "@styled-icons/fa-solid/Bolt";
 import styled from "styled-components";
+import { Meta } from "@storybook/react";
 import RouteDescriptionFooterWithWaitTimes from "./footer-with-wait-times";
 
 import ItineraryBody from "..";
@@ -36,8 +37,12 @@ const a11yOverrideParameters = {
 
 export default {
   title: "ItineraryBody/otp-ui",
-  component: ItineraryBody
-};
+  component: ItineraryBody,
+  parameters: {
+    date: new Date("March 10, 2021 10:00:00"),
+    a11y: { config: { rules: [{ id: "link-in-text-block", enabled: false }] } }
+  }
+} as Meta;
 
 export const WalkOnlyItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper itinerary={walkOnlyItinerary} />
@@ -224,5 +229,12 @@ export const HideDrivingDirections = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     hideDrivingDirections
     itinerary={parkAndRideItinerary}
+  />
+);
+
+export const ApproximatePrefixItinerary = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={parkAndRideItinerary}
+    showApproximateAccessLegTravelTimes
   />
 );

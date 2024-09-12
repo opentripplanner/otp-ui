@@ -205,6 +205,7 @@ const StopsOverlay = (props: Props): JSX.Element => {
           onClose={setNullStop}
         >
           <StopPopup
+            entity={clickedStop}
             setLocation={location => {
               setNullStop();
               setLocation(location);
@@ -213,7 +214,6 @@ const StopsOverlay = (props: Props): JSX.Element => {
               setNullStop();
               setViewedStop(stop);
             }}
-            entity={clickedStop}
           />
         </Popup>
       )}

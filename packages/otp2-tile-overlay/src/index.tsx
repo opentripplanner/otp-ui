@@ -11,9 +11,10 @@ import React, { useCallback, useEffect, useState } from "react"
 import { Layer, Popup, Source, useMap } from "react-map-gl"
 
 // eslint-disable-next-line prettier/prettier
-import { generateLayerPaint } from "./util"
+import { generateLayerPaint, ROUTE_COLOR_EXPRESSION } from "./util"
 
 const SOURCE_ID = "otp2-tiles"
+const AREA_TYPES = ["areaStops"]
 
 const OTP2TileLayerWithPopup = ({
   color,
@@ -131,13 +132,38 @@ const OTP2TileLayerWithPopup = ({
   if (network) {
     filter = ["all", ["==", "network", network]]
   }
-  if (type === "stops") {
-    filter = ["!=", ["get", "routes"],  ["literal", "[]"]]
+  if (type === "stops" || type === "areaStops") {
+    filter = ["all", ["!", ["has", "parentStation"]], ["!=", ["get", "routes"], ["literal", "[]"]]]
   }
 
+  const isArea = AREA_TYPES.includes(type)
   return (
     <>
-      <Layer
+      {isArea && <Layer
+        filter={filter}
+        id={`${id}-fill`}
+        paint={{
+          "fill-color": ROUTE_COLOR_EXPRESSION,
+          "fill-opacity": 0.2,
+        }}
+        source-layer={type}
+        source={SOURCE_ID}
+        type="fill"
+      />}
+      {isArea && <Layer
+        filter={filter}
+        id={`${id}-outline`}
+        layout={{ "line-join": "round", "line-cap": "round" }}
+        paint={{
+          "line-color": ROUTE_COLOR_EXPRESSION,
+          "line-opacity": 0.8,
+          "line-width": 3
+        }}
+        source-layer={type}
+        source={SOURCE_ID}
+        type="line"
+      />}
+      {!isArea && <Layer
         filter={filter}
         id={id}
         key={id}
@@ -145,7 +171,7 @@ const OTP2TileLayerWithPopup = ({
         source={SOURCE_ID}
         source-layer={type}
         type="circle"
-      />
+      />}
       {clickedEntity && (
         <Popup
           latitude={clickedEntity.lat}

@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgBikelocker = ({ title, ...props }) => (
+const BikeLocker = ({ title, ...props }) => (
   <svg
     id="bike_locker_svg__Layer_2_1_"
     x={0}
@@ -26,4 +26,4 @@ const SvgBikelocker = ({ title, ...props }) => (
   </svg>
 );
 
-export default SvgBikelocker;
+export default BikeLocker;

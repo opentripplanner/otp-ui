@@ -10,7 +10,8 @@ const zoom = 12;
 export default {
   title: "TripViewerOverlay",
   component: TripViewerOverlay,
-  decorators: [withMap(center, zoom)]
+  decorators: [withMap(center, zoom)],
+  parameters: { storyshots: { disable: true } }
 };
 
 export const Default = (): JSX.Element => (

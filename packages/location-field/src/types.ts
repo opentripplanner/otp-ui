@@ -229,6 +229,10 @@ export interface LocationFieldProps {
    */
   showClearButton?: boolean;
   /**
+   * Whether to show alternate stop names when they are provided
+   */
+  showSecondaryLabels?: boolean;
+  /**
    * Whether or not to show user settings dialog
    */
   showUserSettings?: boolean;

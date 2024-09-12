@@ -46,8 +46,10 @@ export const MenuItemList = styled.ul.attrs({
   list-style: none;
   margin: 2px 0 0;
   min-width: 160px;
-  padding: 5px 0;
+  max-height: 75vh;
+  padding: 0 0 5px 0;
   position: absolute;
+  overflow: auto;
   text-align: left;
   top: 100%;
   /* this is an annoyingly high number, but is needed to be on top of some otp-rr components */
@@ -84,7 +86,7 @@ export const MenuGroupHeader = styled.h2<{
   font-weight: normal;
   line-height: 1.42857143;
   margin: 0;
-  padding: 0px 10px;
+  padding: 2px 10px;
   text-align: center;
   white-space: nowrap;
 `;
@@ -124,6 +126,13 @@ export const OptionSubTitle = styled.span`
   color: #686868;
   font-size: 12px;
   margin-left: 6px;
+`;
+
+export const OptionAltLabel = styled.span`
+  color: #686868;
+  display: block;
+  font-size: 11px;
+  margin-left: 46px; /* This is a bit brittle. TODO: Calculate */
 `;
 
 export const OptionContent = styled.span`

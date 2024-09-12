@@ -20,9 +20,10 @@ function CustomMarker({ stop }: StopContainer) {
 }
 
 export default {
-  title: "StopViewerOverlay",
   component: StopViewerOverlay,
-  decorators: [withMap(center, zoom)]
+  decorators: [withMap(center, zoom)],
+  parameters: { storyshots: { disable: true } },
+  title: "StopViewerOverlay"
 };
 
 export const Default = (): JSX.Element => (
@@ -36,7 +37,10 @@ const WithCustomMarker = (): JSX.Element => (
 const disableA11yParameters = {
   a11y: {
     config: {
-      rules: [{ id: "aria-allowed-attr", enabled: false }]
+      rules: [
+        { id: "aria-allowed-attr", enabled: false },
+        { id: "aria-prohibited-attr", enabled: false }
+      ]
     }
   }
 };

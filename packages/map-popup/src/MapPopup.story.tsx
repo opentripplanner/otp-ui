@@ -40,7 +40,7 @@ const FLOATING_VEHICLE = {
   id: '"bike_6861"',
   isCarStation: false,
   isFloatingBike: true,
-  name: "0541 BIKETOWN",
+  name: "0541",
   networks: ["BIKETOWN"],
   realTimeData: true,
   spacesAvailable: 0,
@@ -48,36 +48,50 @@ const FLOATING_VEHICLE = {
   y: 45.525486666666666
 };
 
-export const StopEntity = (): JSX.Element => {
-  return (
-    <MapPopupContents
-      entity={STOP}
-      setLocation={action("setLocation")}
-      setViewedStop={action("setViewedStop")}
-    />
-  );
+const FLOATING_CAR = {
+  "stroke-width": 1,
+  allowDropoff: false,
+  allowPickup: true,
+  color: "#333",
+  id: "car_6861",
+  isCarStation: false,
+  isFloatingCar: true,
+  name: "0541",
+  networks: ["MILES"], // https://miles-mobility.com
+  realTimeData: true,
+  spacesAvailable: 0,
+  x: 13.405,
+  y: 52.52
 };
 
-export const StopEntityNoHandlers = (): JSX.Element => {
-  return <MapPopupContents entity={STOP} />;
-};
+export const StopEntity = (): JSX.Element => (
+  <MapPopupContents
+    entity={STOP}
+    setLocation={action("setLocation")}
+    setViewedStop={action("setViewedStop")}
+  />
+);
 
-export const StationEntity = (): JSX.Element => {
-  return (
-    <MapPopupContents
-      entity={STATION}
-      setLocation={action("setLocation")}
-      setViewedStop={action("setViewedStop")}
-    />
-  );
-};
+export const StopEntityNoHandlers = (): JSX.Element => (
+  <MapPopupContents entity={STOP} />
+);
 
-export const FloatingVehicleEntity = (): JSX.Element => {
-  return (
-    <MapPopupContents
-      entity={FLOATING_VEHICLE}
-      setLocation={action("setLocation")}
-      setViewedStop={action("setViewedStop")}
-    />
-  );
-};
+export const StationEntity = (): JSX.Element => (
+  <MapPopupContents
+    entity={STATION}
+    setLocation={action("setLocation")}
+    setViewedStop={action("setViewedStop")}
+  />
+);
+
+export const FloatingCarEntity = (): JSX.Element => (
+  <MapPopupContents entity={FLOATING_CAR} setLocation={action("setLocation")} />
+);
+
+export const FloatingVehicleEntity = (): JSX.Element => (
+  <MapPopupContents
+    entity={FLOATING_VEHICLE}
+    setLocation={action("setLocation")}
+    setViewedStop={action("setViewedStop")}
+  />
+);

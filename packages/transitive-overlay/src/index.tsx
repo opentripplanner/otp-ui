@@ -1,7 +1,7 @@
 import { SymbolLayout } from "mapbox-gl";
 import { util } from "@opentripplanner/base-map";
 import React, { useEffect } from "react";
-import { Layer, Source, useMap } from "react-map-gl";
+import { Layer, MapRef, Source, useMap } from "react-map-gl";
 import polyline from "@mapbox/polyline";
 import {
   Leg,
@@ -14,6 +14,7 @@ import bbox from "@turf/bbox";
 
 import { getRouteLayerLayout, patternToRouteFeature } from "./route-layers";
 import { drawArc, getFromToAnchors, itineraryToTransitive } from "./util";
+import routeArrow from "./images/route_arrow.png";
 
 export { itineraryToTransitive };
 
@@ -87,14 +88,52 @@ const accessLegFilter = [
 
 type Props = {
   activeLeg?: Leg;
+  accessLegColorOverride?: string;
+  showRouteArrows?: boolean;
   transitiveData?: TransitiveData;
+};
+
+type MapImage = {
+  id: string;
+  url: string;
+};
+
+const loadImages = (map: MapRef, images: MapImage[]) => {
+  images.forEach(img => {
+    map.loadImage(img.url, (error, image) => {
+      if (error) {
+        // eslint-disable-next-line no-console
+        console.error(`Error loading image ${img.id}:`, error);
+        return;
+      }
+      if (!map.hasImage(img.id)) {
+        map.addImage(img.id, image, { sdf: true });
+      }
+    });
+  });
 };
 
 const TransitiveCanvasOverlay = ({
   activeLeg,
+  accessLegColorOverride,
+  showRouteArrows,
   transitiveData
 }: Props): JSX.Element => {
   const { current: map } = useMap();
+
+  const mapImages: MapImage[] = [];
+  // This is used to render arrows along the route
+  // Only load if that option is enabled to save bandwidth
+  if (showRouteArrows) {
+    mapImages.push({
+      id: "arrow-icon",
+      url: routeArrow
+    });
+  }
+
+  useEffect(() => {
+    loadImages(map, mapImages);
+  }, [map, mapImages]);
 
   const geojson: GeoJSON.FeatureCollection<
     GeoJSON.Geometry,
@@ -139,7 +178,10 @@ const TransitiveCanvasOverlay = ({
                       type: "Feature",
                       properties: {
                         type: "street-edge",
-                        color: modeColorMap[segment.type] || "#008",
+                        color:
+                          accessLegColorOverride ||
+                          modeColorMap[segment.type] ||
+                          "#008",
                         mode: segment.type
                       },
                       geometry: segment.arc ? drawArc(straight) : straight
@@ -269,7 +311,25 @@ const TransitiveCanvasOverlay = ({
         }}
         type="line"
       />
-
+      {showRouteArrows && (
+        <Layer
+          id="route-arrows"
+          layout={{
+            "symbol-placement": "line",
+            "icon-image": "arrow-icon",
+            "icon-size": 0.1,
+            "symbol-spacing": 10,
+            "icon-allow-overlap": true,
+            "icon-ignore-placement": true,
+            "icon-offset": [0, 8000]
+          }}
+          paint={{
+            "icon-color": ["get", "color"],
+            "icon-opacity": 0.8
+          }}
+          type="symbol"
+        />
+      )}
       {/* Render access leg places then transit stops so that they appear sandwiched between text and lines,
           with transit stops appearing above access leg places. */}
       <Layer

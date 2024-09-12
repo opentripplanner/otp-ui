@@ -39,8 +39,12 @@ const invalidKeyGeocoderConfig = {
 const a11yOverrideParameters = {
   a11y: {
     config: {
-      // This is a story issue, not a production issue
-      rules: [{ id: "label", enabled: false }]
+      rules: [
+        // This is a story issue, not a production issue
+        { id: "label", enabled: false },
+        // The options don't appear until click
+        { id: "aria-required-children", enabled: false }
+      ]
     }
   }
 };
@@ -120,6 +124,7 @@ export const SlowGeocoder = (): JSX.Element => (
     inputPlaceholder="Select from location"
     locationType="from"
     onLocationSelected={onLocationSelected}
+    showSecondaryLabels={false}
   />
 );
 
@@ -219,6 +224,7 @@ export const WithPrefilledSearch = (): JSX.Element => (
     style={{ fontFamily: "sans-serif" }}
   />
 );
+WithPrefilledSearch.parameters = a11yOverrideParameters;
 
 export const RequiredAndInvalidState = (): JSX.Element => (
   <LocationField

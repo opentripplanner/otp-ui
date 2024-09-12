@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgBicycle = ({ title, ...props }) => (
+const Bicycle = ({ title, ...props }) => (
   <svg viewBox="0 0 390 390" {...props}>
     {title ? <title>{title}</title> : null}
     <path d="M117.1 116.3h33.8c4.7 0 8.4-3.8 8.4-8.4 0-4.7-3.8-8.4-8.4-8.4h-33.8c-4.7 0-8.4 3.8-8.4 8.4-.1 4.6 3.7 8.4 8.4 8.4z" />
@@ -8,4 +8,4 @@ const SvgBicycle = ({ title, ...props }) => (
   </svg>
 );
 
-export default SvgBicycle;
+export default Bicycle;

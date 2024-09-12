@@ -3,7 +3,8 @@ otpUi:
     availableBikes: "Xe đạp có sẵn: {value}"
     availableDocks: "Chỗ dựng xe đạp có sẵn: {value}"
     floatingBike: "Xe đạp để tự do: {name}"
-    floatingCar: "{company} {name}"
-    floatingEScooter: "Xe tay ga điện {name}"
+    floatingCar: "Xe hơi: {name}"
+    floatingEScooter: Xe tay ga điện {name}
+    popupTitle: "{stationNetwork, select, false {{name}} other {{stationNetwork} {name}}}"
+    stopId: Điểm dừng số {stopId}
     stopViewer: Xem điểm dừng
-    stopId: "Điểm dừng số {stopId}"
