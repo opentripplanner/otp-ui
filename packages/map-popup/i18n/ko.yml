@@ -1,10 +1,10 @@
 otpUi:
   MapPopup:
-    floatingEScooter: "{name} 전동스쿠터"
-    availableDocks: "사용 가능한 도크: {value}"
     availableBikes: "사용 가능한 자전거: {value}"
-    floatingCar: "{company} {name}"
+    availableDocks: "사용 가능한 도크: {value}"
     floatingBike: "프리-플로팅 자전거: {name}"
-
-    stopViewer: 정류장 뷰어
+    floatingCar: "자동차: {name}"
+    floatingEScooter: "{name} 전동스쿠터"
+    popupTitle: "{stationNetwork, select, false {{name}} other {{stationNetwork} {name}}}"
     stopId: "정류장 ID: {stopId}"
+    stopViewer: 정류장 뷰어

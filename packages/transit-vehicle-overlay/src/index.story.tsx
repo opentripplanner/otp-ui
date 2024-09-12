@@ -106,5 +106,6 @@ export const RouteNumbersOnlyWithCustomSizeAndPadding = () => (
 export default {
   title: "TransitVehicleOverlay",
   component: TransitVehicleOverlay,
+  parameters: { storyshots: { disable: true } },
   decorators: [withMap(SEATTLE, 12)]
 };

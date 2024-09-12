@@ -28,6 +28,7 @@ export default {
   },
   component: RouteViewerOverlay,
   decorators: [withMap(PORTLAND, zoom)],
+  parameters: { storyshots: { disable: true } },
   title: "RouteViewerOverlay"
 };
 

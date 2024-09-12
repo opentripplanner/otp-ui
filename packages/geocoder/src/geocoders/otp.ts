@@ -6,8 +6,20 @@ import Geocoder from "./abstract-geocoder";
 import { OTPGeocoderResponse } from "../apis/otp";
 
 const generateLabel = stop => {
+  // Check for a feed publisher / agency match
+  const { agencies } =  stop 
+  const feedPublisherAgency = agencies?.find(agency => agency.name === stop.feedPublisher?.name)
+
+  // Check for a agency / stop agency id match
+  const stopAgencyId = stop.id.split(":")?.[0]
+  const stopAgency = agencies?.find(agency => agency.id.split(":")[0] === stopAgencyId)
+
   let brackets = "";
-  if (stop?.agencies?.[0]?.name) {
+  if (feedPublisherAgency) {
+    brackets += feedPublisherAgency.name
+  } else if (stopAgency) {
+    brackets += stopAgency.name
+  } else if (stop?.agencies?.[0]?.name) {
     brackets += stop.agencies[0].name;
   } else if (stop?.feedPublisher?.name) {
     brackets += stop.feedPublisher.name;

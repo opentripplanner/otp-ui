@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/stop-viewer-overlay",
-  "version": "2.0.8",
+  "version": "2.0.10",
   "description": "A map overlay to show a stop",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -19,14 +19,14 @@
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
   "dependencies": {
-    "@opentripplanner/base-map": "^3.2.0",
-    "@opentripplanner/core-utils": "^11.4.2"
+    "@opentripplanner/base-map": "^3.2.2",
+    "@opentripplanner/core-utils": "^11.4.4"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^6.5.1"
+    "@opentripplanner/types": "^6.5.2"
   },
   "peerDependencies": {
-    "react": "^16.14.0",
+    "react": "^18.2.0",
     "react-map-gl": "^7.0.15"
   }
 }

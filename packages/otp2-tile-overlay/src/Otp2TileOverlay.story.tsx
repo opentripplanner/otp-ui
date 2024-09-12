@@ -3,7 +3,8 @@ import BaseMap from "@opentripplanner/base-map";
 import generateOTP2TileLayers from ".";
 
 export default {
-  title: "OTP2 Tile Layer"
+  title: "OTP2 Tile Layer",
+  parameters: { storyshots: { disable: true } }
 };
 
 // TODO: Add a story to illustrate "color" prop passed from overlay.
@@ -35,9 +36,4 @@ export const OtpTileLayer = (): JSX.Element => {
       </BaseMap>
     </>
   );
-};
-
-// Don't take a snapshot of an interactive component
-OtpTileLayer.parameters = {
-  storyshots: { disable: true }
 };

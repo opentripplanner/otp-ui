@@ -12,7 +12,8 @@ const zoom = 13;
 export default {
   title: "ParkAndRideOverlay",
   component: ParkAndRideOverlay,
-  decorators: [withMap(center, zoom)]
+  decorators: [withMap(center, zoom)],
+  parameters: { storyshots: { disable: true } }
 };
 
 export const Default = () => (

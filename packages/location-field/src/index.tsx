@@ -954,7 +954,7 @@ const LocationField = ({
       </S.HiddenContent>
       <ItemList
         // Hide the list from screen readers if no enabled options are shown.
-        aria-hidden={hasNoEnabledOptions}
+        aria-hidden={hasNoEnabledOptions || !menuVisible}
         aria-label={intl.formatMessage({
           defaultMessage: "Suggested locations",
           description:
