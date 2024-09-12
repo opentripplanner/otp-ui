@@ -30,6 +30,6 @@
   },
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d",
   "dependencies": {
-    "styled-icons": "^10.47.1"
+    "@styled-icons/bootstrap": "^10.47.0"
   }
 }

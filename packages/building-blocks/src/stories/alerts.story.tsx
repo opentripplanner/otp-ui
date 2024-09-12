@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import { Meta } from "@storybook/react";
-import { Warning } from "@styled-icons/fluentui-system-regular/Warning";
+import { ExclamationTriangle } from "@styled-icons/bootstrap/ExclamationTriangle";
 import Alert from "../Alert";
 import red from "../colors/red";
 
@@ -67,7 +67,7 @@ export const CollapsibleAlertWithTransitAlerts = (): ReactElement => {
     <Alert
       backgroundColor={red[50]}
       collapsible
-      Icon={Warning}
+      Icon={ExclamationTriangle}
       alertHeader="Your trip has alerts"
     >
       <AlertContent />
