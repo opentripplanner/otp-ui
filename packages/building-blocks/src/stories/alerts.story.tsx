@@ -62,11 +62,11 @@ export const BasicAlert = (): ReactElement => {
   );
 };
 
-export const CollapsableAlertWithTransitAlerts = (): ReactElement => {
+export const CollapsibleAlertWithTransitAlerts = (): ReactElement => {
   return (
     <Alert
       backgroundColor={red[50]}
-      collapsable
+      collapsible
       Icon={Warning}
       alertHeader="Your trip has alerts"
     >

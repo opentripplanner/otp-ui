@@ -9,14 +9,14 @@ interface Props {
   alertHeader: string;
   alertSubheader?: string;
   backgroundColor?: string;
-  collapsable?: boolean;
+  collapsible?: boolean;
   children?: ReactChild;
   Icon?: any;
 }
 
 const AlertContainer = styled.div<{
   backgroundColor: string;
-  collapsable: boolean;
+  collapsible: boolean;
   expandAlert: boolean;
 }>`
   background-color: ${props =>
@@ -75,9 +75,9 @@ const AlertContent = styled.div`
 `;
 
 const ContentPadding = styled.div<{
-  collapsable: boolean;
+  collapsible: boolean;
 }>`
-  margin-top: ${props => (props.collapsable ? "1em" : ".5em")};
+  margin-top: ${props => (props.collapsible ? "1em" : ".5em")};
 `;
 
 const Alert = ({
@@ -85,7 +85,7 @@ const Alert = ({
   alertSubheader,
   backgroundColor,
   children,
-  collapsable,
+  collapsible,
   Icon = Bell
 }: Props): JSX.Element => {
   const [expandAlert, setExpandAlert] = useState(false);
@@ -93,12 +93,12 @@ const Alert = ({
     <AlertContainer
       backgroundColor={backgroundColor}
       expandAlert={expandAlert}
-      collapsable={collapsable}
+      collapsible={collapsible}
     >
       <Icon size={24} />
       <AlertHeader>{alertHeader}</AlertHeader>
       <ButtonContainer>
-        {collapsable && (
+        {collapsible && (
           <button type="button" onClick={() => setExpandAlert(!expandAlert)}>
             <ChevronUp size={16} />
           </button>
@@ -109,9 +109,9 @@ const Alert = ({
         <AlertContent>
           <AnimateHeight
             duration={500}
-            height={collapsable ? (expandAlert ? "auto" : 0) : "auto"}
+            height={collapsible ? (expandAlert ? "auto" : 0) : "auto"}
           >
-            <ContentPadding collapsable={collapsable}>
+            <ContentPadding collapsible={collapsible}>
               {children}
             </ContentPadding>
           </AnimateHeight>
