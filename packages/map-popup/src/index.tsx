@@ -1,12 +1,16 @@
 import React, { useCallback } from "react";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
+import coreUtils from "@opentripplanner/core-utils";
+
 // eslint-disable-next-line prettier/prettier
 import type { Company, ConfiguredCompany, Location, Station, Stop, StopEventHandler } from "@opentripplanner/types";
 
-import { FormattedMessage, useIntl } from "react-intl";
+import { FocusTrapWrapper } from "@opentripplanner/building-blocks";
 import { flatten } from "flat";
-import * as S from "./styled";
-import FocusTrapWrapper from "./FocusTrapWrapper";
+import { FormattedMessage, useIntl } from "react-intl";
+import { Styled } from "@opentripplanner/base-map";
+
+import { ViewStopButton } from "./styled";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
@@ -31,7 +35,7 @@ const generateLocation = (entity: Entity, name: string) => {
 
 const StationHubDetails = ({ station }: { station: Station }) => {
   return (
-    <S.PopupRow>
+    <Styled.PopupRow>
       <div>
         <FormattedMessage
           defaultMessage={
@@ -52,13 +56,13 @@ const StationHubDetails = ({ station }: { station: Station }) => {
           values={{ value: station.spacesAvailable }}
         />
       </div>
-    </S.PopupRow>
+    </Styled.PopupRow>
   )
 }
 
 const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: () => void; }) => {
   return (
-    <S.PopupRow>
+    <Styled.PopupRow>
       <strong>
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.MapPopup.stopId"]}
@@ -69,19 +73,20 @@ const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: () => v
           }}
         />
       </strong>
-      <S.ViewStopButton onClick={setViewedStop}>
+      <ViewStopButton onClick={setViewedStop}>
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.MapPopup.stopViewer"]}
           description="Text for link that opens the stop viewer"
           id="otpUi.MapPopup.stopViewer"
         />
-      </S.ViewStopButton>
-    </S.PopupRow>
+      </ViewStopButton>
+    </Styled.PopupRow>
   )
 }
 
 type Entity = Stop | Station
 type Props = {
+  closePopup?: (arg?: any) => void
   configCompanies?: ConfiguredCompany[];
   entity: Entity
   getEntityName?: (entity: Entity, configCompanies: Company[],) => string;
@@ -96,21 +101,33 @@ function entityIsStation(entity: Entity): entity is Station {
 /**
  * Renders a map popup for a stop, scooter, or shared bike
  */
-export function MapPopup({ configCompanies, entity, getEntityName, setLocation, setViewedStop }: Props): JSX.Element {
+export function MapPopup({ closePopup = null, configCompanies, entity, getEntityName, setLocation, setViewedStop }: Props): JSX.Element {
   const intl = useIntl()
   if (!entity) return <></>
 
   const getNameFunc = getEntityName || makeDefaultGetEntityName(intl, defaultMessages);
   const name = getNameFunc(entity, configCompanies);
 
+  const stationNetwork = "networks" in entity && (coreUtils.itinerary.getCompaniesLabelFromNetworks(entity?.networks || [], configCompanies) || entity?.networks?.[0]);
 
   const bikesAvailablePresent = entityIsStation(entity)
   const entityIsStationHub = bikesAvailablePresent && entity?.bikesAvailable !== undefined && !entity?.isFloatingBike;
   const stopId = !bikesAvailablePresent && entity?.code || entity.id.split(":")[1] || entity.id
 
+  // Double quotes make the query invalid, so remove them from the id just in case
+  const id = `focus-${entity.id}-popup`.replace(/"/g, "")
+
   return (
-    <S.MapOverlayPopup>
-      <S.PopupTitle>{name}</S.PopupTitle>
+    <Styled.MapOverlayPopup>
+      <FocusTrapWrapper closePopup={closePopup} id={id}>
+      <Styled.PopupTitle>
+        <FormattedMessage
+          defaultMessage={defaultMessages["otpUi.MapPopup.popupTitle"]}
+          description="Text for title of the popup, contains an optional company name"
+          id="otpUi.MapPopup.popupTitle"
+          values={{ name, stationNetwork }}
+        />
+      </Styled.PopupTitle>
       {/* render dock info if it is available */}
       {entityIsStationHub && <StationHubDetails station={entity} />}
 
@@ -124,19 +141,18 @@ export function MapPopup({ configCompanies, entity, getEntityName, setLocation, 
 
       {/* The "Set as [from/to]" ButtonGroup */}
       {setLocation && (
-        <S.PopupRow>
+        <Styled.PopupRow>
           <FromToLocationPicker
             label
             location={generateLocation(entity, name)}
             setLocation={setLocation}
           />
-        </S.PopupRow>
+        </Styled.PopupRow>
       )}
-    </S.MapOverlayPopup>
+      </FocusTrapWrapper>
+      
+    </Styled.MapOverlayPopup>
   );
 }
 
 export default MapPopup;
-
-// Rename styled components for export.
-export { S as Styled, FocusTrapWrapper };

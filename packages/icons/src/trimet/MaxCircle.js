@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgMaxcircle = ({ title, ...props }) => (
+const MaxCircle = ({ title, ...props }) => (
   <svg viewBox="0 0 390 390" {...props}>
     {title ? <title>{title}</title> : null}
     <path d="M153.1 31L195 62l41.9-31z" />
@@ -12,4 +12,4 @@ const SvgMaxcircle = ({ title, ...props }) => (
   </svg>
 );
 
-export default SvgMaxcircle;
+export default MaxCircle;

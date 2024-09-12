@@ -47,9 +47,9 @@ export const MenuItemList = styled.ul.attrs({
   margin: 2px 0 0;
   min-width: 160px;
   max-height: 75vh;
-  padding: 5px 0;
+  padding: 0 0 5px 0;
   position: absolute;
-  overflow: scroll;
+  overflow: auto;
   text-align: left;
   top: 100%;
   /* this is an annoyingly high number, but is needed to be on top of some otp-rr components */
@@ -86,7 +86,7 @@ export const MenuGroupHeader = styled.h2<{
   font-weight: normal;
   line-height: 1.42857143;
   margin: 0;
-  padding: 0px 10px;
+  padding: 2px 10px;
   text-align: center;
   white-space: nowrap;
 `;

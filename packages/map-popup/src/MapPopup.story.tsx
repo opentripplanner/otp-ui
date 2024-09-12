@@ -1,6 +1,6 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import MapPopupContents, { FocusTrapWrapper } from "./index";
+import MapPopupContents from "./index";
 
 export default {
   title: "Map Popup"
@@ -40,12 +40,28 @@ const FLOATING_VEHICLE = {
   id: '"bike_6861"',
   isCarStation: false,
   isFloatingBike: true,
-  name: "0541 BIKETOWN",
+  name: "0541",
   networks: ["BIKETOWN"],
   realTimeData: true,
   spacesAvailable: 0,
   x: -122.70486,
   y: 45.525486666666666
+};
+
+const FLOATING_CAR = {
+  "stroke-width": 1,
+  allowDropoff: false,
+  allowPickup: true,
+  color: "#333",
+  id: "car_6861",
+  isCarStation: false,
+  isFloatingCar: true,
+  name: "0541",
+  networks: ["MILES"], // https://miles-mobility.com
+  realTimeData: true,
+  spacesAvailable: 0,
+  x: 13.405,
+  y: 52.52
 };
 
 export const StopEntity = (): JSX.Element => (
@@ -68,20 +84,14 @@ export const StationEntity = (): JSX.Element => (
   />
 );
 
+export const FloatingCarEntity = (): JSX.Element => (
+  <MapPopupContents entity={FLOATING_CAR} setLocation={action("setLocation")} />
+);
+
 export const FloatingVehicleEntity = (): JSX.Element => (
   <MapPopupContents
     entity={FLOATING_VEHICLE}
     setLocation={action("setLocation")}
     setViewedStop={action("setViewedStop")}
   />
-);
-
-export const StopEntityWithFocusTrap = (): JSX.Element => (
-  <FocusTrapWrapper closePopup={() => {}} id="storybook-stop">
-    <MapPopupContents
-      entity={STOP}
-      setLocation={action("setLocation")}
-      setViewedStop={action("setViewedStop")}
-    />
-  </FocusTrapWrapper>
 );

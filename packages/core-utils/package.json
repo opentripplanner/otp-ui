@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/core-utils",
-  "version": "11.4.2",
+  "version": "11.4.4",
   "description": "Core functionality that is shared among numerous UI components",
   "engines": {
     "node": ">=13"
@@ -14,7 +14,7 @@
   "dependencies": {
     "@conveyal/lonlat": "^1.4.1",
     "@mapbox/polyline": "^1.1.0",
-    "@opentripplanner/geocoder": "^3.0.1",
+    "@opentripplanner/geocoder": "^3.0.2",
     "@styled-icons/foundation": "^10.34.0",
     "@turf/along": "^6.0.1",
     "chroma-js": "^2.4.2",
@@ -30,7 +30,7 @@
     "tsc": "tsc"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^6.5.1",
+    "@opentripplanner/types": "^6.5.2",
     "@types/chroma-js": "^2.1.4"
   }
 }

@@ -8,6 +8,5 @@
     "lib": ["es2019", "dom"],
     "skipLibCheck": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["src/__tests__/**/*"]
+  "include": ["src/**/*"]
 }

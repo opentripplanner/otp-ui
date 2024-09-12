@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Building-Blocks/Dropdown DropdownAsOtprrNavItem smoke-test 1`] = `
+<div class="dropdownstory__NavItemWrapper-sc-giygrt-0 fXLCFd">
+  <span class="styled__DropdownWrapper-sc-kes9ha-2 dgncpu navBarItem"
+        id="dropdown-navbar-wrapper"
+  >
+    <button aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="Dropdown navbar"
+            id="dropdown-navbar-label"
+            title="Dropdown navbar"
+            class="styled__DropdownButton-sc-kes9ha-0 eBZyNH"
+    >
+      <span>
+        Icon
+      </span>
+      <span class="caret"
+            role="presentation"
+      >
+      </span>
+    </button>
+  </span>
+</div>
+`;
+
+exports[`Building-Blocks/Dropdown DropdownWithLabel smoke-test 1`] = `
+<span class="styled__DropdownWrapper-sc-kes9ha-2 dgncpu"
+      id="dropdown-with-label-wrapper"
+>
+  <button aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="Dropdown with label"
+          id="dropdown-with-label-label"
+          title="Dropdown with label"
+          class="styled__DropdownButton-sc-kes9ha-0 eBZyNH"
+  >
+    <span>
+      Dropdown with label
+    </span>
+    <span class="caret"
+          role="presentation"
+    >
+    </span>
+  </button>
+</span>
+`;
+
+exports[`Building-Blocks/Dropdown DropdownWithList smoke-test 1`] = `
+<span class="styled__DropdownWrapper-sc-kes9ha-2 dgncpu"
+      id="dropdown-with-ul-wrapper"
+>
+  <button aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="Dropdown with ul"
+          id="dropdown-with-ul-label"
+          title="Dropdown with ul"
+          class="styled__DropdownButton-sc-kes9ha-0 eBZyNH"
+  >
+    <span>
+      Dropdown with ul
+    </span>
+    <span class="caret"
+          role="presentation"
+    >
+    </span>
+  </button>
+</span>
+`;
+
+exports[`Building-Blocks/Dropdown DropdownWithListAlignMenuLeft smoke-test 1`] = `
+<span class="styled__DropdownWrapper-sc-kes9ha-2 dgncpu"
+      id="dropdown-with-ul-wrapper"
+>
+  <button aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="Dropdown with ul"
+          id="dropdown-with-ul-label"
+          title="Dropdown with ul"
+          class="styled__DropdownButton-sc-kes9ha-0 eBZyNH"
+  >
+    <span>
+      Dropdown with ul
+    </span>
+    <span class="caret"
+          role="presentation"
+    >
+    </span>
+  </button>
+</span>
+`;
