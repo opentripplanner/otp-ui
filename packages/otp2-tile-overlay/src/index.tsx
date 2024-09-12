@@ -2,6 +2,7 @@ import EntityPopup from "@opentripplanner/map-popup"
 import {
   ConfiguredCompany,
   MapLocationActionArg,
+  Station,
   Stop,
   StopEventHandler,
 } from "@opentripplanner/types"
@@ -19,6 +20,7 @@ const AREA_TYPES = ["areaStops"]
 const OTP2TileLayerWithPopup = ({
   color,
   configCompanies,
+  getEntityPrefix,
   id,
   network,
   onMapClick,
@@ -33,6 +35,7 @@ const OTP2TileLayerWithPopup = ({
    */
   color?: string;
   configCompanies?: ConfiguredCompany[]
+  getEntityPrefix?: (entity: Stop | Station) => JSX.Element
   id: string
   name?: string
   /**
@@ -183,6 +186,7 @@ const OTP2TileLayerWithPopup = ({
           <EntityPopup
             configCompanies={configCompanies}
             entity={{ ...clickedEntity, id: clickedEntity?.id || clickedEntity?.gtfsId }}
+            getEntityPrefix={getEntityPrefix}
             setLocation={setLocation ? (location) => { setClickedEntity(null); setLocation(location) } : null}
             setViewedStop={setViewedStop ? (stop) => { setClickedEntity(null);setViewedStop(stop) } : null}
           />
@@ -210,7 +214,8 @@ const generateOTP2TileLayers = (
   endpoint: string,
   setLocation?: (location: MapLocationActionArg) => void,
   setViewedStop?: (stop: Stop) => void,
-  configCompanies?: ConfiguredCompany[]
+  configCompanies?: ConfiguredCompany[],
+  getEntityPrefix?: (entity: Stop | Station) => JSX.Element
 ): JSX.Element[] => {
   return [
     <Source
@@ -230,6 +235,7 @@ const generateOTP2TileLayers = (
         <OTP2TileLayerWithPopup
           color={color}
           configCompanies={configCompanies}
+          getEntityPrefix={getEntityPrefix}
           id={id}
           key={id}
           name={name || id}
