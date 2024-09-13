@@ -202,12 +202,13 @@ export default function SubSettingsPane({
         if (
           settingsWithTransportMode.every(
             s => Object.keys(evt).includes(s.key) || s.value === false
-          )
+          ) &&
+          onAllSubmodesDisabled
         ) {
           settingsWithTransportMode.forEach(s => {
             evt[s.key] = Object.keys(evt).includes(s.key) || !s.value;
           });
-          onAllSubmodesDisabled && onAllSubmodesDisabled(modeButton);
+          onAllSubmodesDisabled(modeButton);
         }
       }
 
