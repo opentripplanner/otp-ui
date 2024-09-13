@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgParking = ({ title, ...props }) => (
+const Parking = ({ title, ...props }) => (
   <svg viewBox="0 0 390 390" {...props}>
     {title ? <title>{title}</title> : null}
     <path d="M195 0C87.3 0 0 87.3 0 195s87.3 195 195 195 195-87.3 195-195S302.7 0 195 0zm97.6 182.4c-4.7 11.8-11.4 20-20.2 26.5-8.8 6.6-17.4 11-25 13.1-8.3 2.2-20.6 3.6-38.1 3.6h-40.1v90.6h-57.8V73.6h95.9c20.9 0 37.8 2.3 49.1 6.8 11.2 4.6 20.9 12.1 29.9 24.4 8.9 11.6 13.3 25.6 13.3 42.9-.1 11.7-2.4 23.1-7 34.7z" />
@@ -8,4 +8,4 @@ const SvgParking = ({ title, ...props }) => (
   </svg>
 );
 
-export default SvgParking;
+export default Parking;

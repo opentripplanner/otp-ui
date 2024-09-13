@@ -7,7 +7,10 @@ import React, {
   useState
 } from "react";
 
-import { getNextSibling, getPreviousSibling } from "../utils/dom-query";
+import {
+  getNextSibling,
+  getPreviousSibling
+} from "../focus-trap-wrapper/dom-query";
 import { DropdownButton, DropdownMenu, DropdownWrapper } from "./styled";
 
 export interface Props extends HTMLAttributes<HTMLElement> {

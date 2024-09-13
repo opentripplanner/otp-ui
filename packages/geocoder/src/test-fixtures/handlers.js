@@ -1,4 +1,4 @@
-import { rest } from "msw";
+import { http } from "msw";
 
 import hereAutocomplete from "./here/autosuggest-response.json";
 import hereGeocode from "./here/search-response.json";
@@ -8,28 +8,22 @@ import peliasGeocode from "./pelias/search-response.json";
 import peliasReverse from "./pelias/reverse-response.json";
 
 export default [
-  rest.get(
-    "https://autosuggest.search.hereapi.com/v1/autosuggest",
-    (req, res, ctx) => {
-      return res(ctx.json(hereAutocomplete));
-    }
-  ),
-  rest.get("https://geocode.search.hereapi.com/v1/geocode", (req, res, ctx) => {
-    return res(ctx.json(hereGeocode));
+  http.get("https://autosuggest.search.hereapi.com/v1/autosuggest", () => {
+    return new Response(JSON.stringify(hereAutocomplete));
   }),
-  rest.get(
-    "https://revgeocode.search.hereapi.com/v1/revgeocode",
-    (req, res, ctx) => {
-      return res(ctx.json(hereReverse));
-    }
-  ),
-  rest.get("https://api.geocode.earth/v1/autocomplete", (req, res, ctx) => {
-    return res(ctx.json(peliasAutocomplete));
+  http.get("https://geocode.search.hereapi.com/v1/geocode", () => {
+    return new Response(JSON.stringify(hereGeocode));
   }),
-  rest.get("https://api.geocode.earth/v1/search", (req, res, ctx) => {
-    return res(ctx.json(peliasGeocode));
+  http.get("https://revgeocode.search.hereapi.com/v1/revgeocode", () => {
+    return new Response(JSON.stringify(hereReverse));
   }),
-  rest.get("https://api.geocode.earth/v1/reverse", (req, res, ctx) => {
-    return res(ctx.json(peliasReverse));
+  http.get("https://api.geocode.earth/v1/autocomplete", () => {
+    return new Response(JSON.stringify(peliasAutocomplete));
+  }),
+  http.get("https://api.geocode.earth/v1/search", () => {
+    return new Response(JSON.stringify(peliasGeocode));
+  }),
+  http.get("https://api.geocode.earth/v1/reverse", () => {
+    return new Response(JSON.stringify(peliasReverse));
   })
 ];

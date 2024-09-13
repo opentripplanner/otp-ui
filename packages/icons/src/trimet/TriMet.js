@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgTriMet = () => (
+const TriMet = () => (
   <svg viewBox="0 0 100.3 100.29" height="100%" width="100%">
     <path
       id="path15"
@@ -25,4 +25,4 @@ const SvgTriMet = () => (
   </svg>
 );
 
-export default SvgTriMet;
+export default TriMet;

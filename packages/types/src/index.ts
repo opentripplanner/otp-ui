@@ -4,6 +4,7 @@
  */
 
 import React, { FunctionComponent, ReactElement } from "react";
+import { IntlShape } from "react-intl";
 import { StyledIcon } from "@styled-icons/styled-icon";
 import { ConfiguredModes } from "./deprecated";
 
@@ -148,6 +149,11 @@ export type Config = {
     /** @deprecated */
     longDateFormat?: string;
   };
+  formatDuration?: (
+    duration: number,
+    intl: IntlShape,
+    includeSeconds: boolean
+  ) => string;
   homeTimezone: string;
   /** @deprecated */
   modes?: ConfiguredModes;

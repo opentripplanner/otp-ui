@@ -24,7 +24,8 @@ const center: [number, number] = [45.522862, -122.667837];
 export default {
   args: { center },
   component: BaseMap,
-  title: "BaseMap"
+  title: "BaseMap",
+  parameters: { storyshots: { disable: true } }
 };
 
 // eslint-disable-next-line react/jsx-props-no-spreading

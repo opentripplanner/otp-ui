@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgSchedule = ({ title, ...props }) => (
+const Schedule = ({ title, ...props }) => (
   <svg viewBox="0 0 390 390" {...props}>
     {title ? <title>{title}</title> : null}
     <path d="M253.1 390c-66.9 0-121.3-54.4-121.3-121.3s54.4-121.3 121.3-121.3 121.3 54.4 121.3 121.3S320.1 390 253.1 390zm0-223.4c-56.2 0-102 45.8-102 102s45.8 102 102 102 102-45.8 102-102-45.7-102-102-102z" />
@@ -10,4 +10,4 @@ const SvgSchedule = ({ title, ...props }) => (
   </svg>
 );
 
-export default SvgSchedule;
+export default Schedule;
