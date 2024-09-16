@@ -192,6 +192,7 @@ const OTP2TileLayerWithPopup = ({
           onClose={() => setClickedEntity(null)}
         >
           <EntityPopup
+            closePopup={() => setClickedEntity(null)}
             configCompanies={configCompanies}
             entity={{ ...clickedEntity, id: clickedEntity?.id || clickedEntity?.gtfsId }}
             setLocation={setLocation ? (location) => { setClickedEntity(null); setLocation(location) } : null}
