@@ -32,30 +32,6 @@ exports[`Trip Form Components/Metro Mode Selector MetroModeSelector smoke-test 1
         Transit
       </span>
     </label>
-    <button aria-expanded="false"
-            aria-haspopup="dialog"
-            type="button"
-    >
-      <span role="none">
-        <svg viewbox="0 0 320 512"
-             height="14"
-             width="14"
-             aria-hidden="true"
-             focusable="false"
-             fill="currentColor"
-             xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 kcHuPT"
-        >
-          <path fill="currentColor"
-                d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9S301 191.9 288 191.9L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
-          >
-          </path>
-        </svg>
-      </span>
-      <span class="MetroModeSelector__InvisibleA11yLabel-sc-n9bu6a-0 gcxxlD">
-        Transit settings
-      </span>
-    </button>
   </span>
   <span class="MetroModeSelector__ModeButtonWrapper-sc-n9bu6a-2 klXmgn">
     <input aria-label="Walk"
@@ -83,31 +59,6 @@ exports[`Trip Form Components/Metro Mode Selector MetroModeSelector smoke-test 1
         Walk
       </span>
     </label>
-    <button aria-expanded="false"
-            aria-haspopup="dialog"
-            disabled
-            type="button"
-    >
-      <span role="none">
-        <svg viewbox="0 0 320 512"
-             height="14"
-             width="14"
-             aria-hidden="true"
-             focusable="false"
-             fill="currentColor"
-             xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 kcHuPT"
-        >
-          <path fill="currentColor"
-                d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9S301 191.9 288 191.9L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
-          >
-          </path>
-        </svg>
-      </span>
-      <span class="MetroModeSelector__InvisibleA11yLabel-sc-n9bu6a-0 gcxxlD">
-        Walk settings
-      </span>
-    </button>
   </span>
   <span class="MetroModeSelector__ModeButtonWrapper-sc-n9bu6a-2 klXmgn">
     <input aria-label="Bike"
@@ -132,31 +83,6 @@ exports[`Trip Form Components/Metro Mode Selector MetroModeSelector smoke-test 1
         Bike
       </span>
     </label>
-    <button aria-expanded="false"
-            aria-haspopup="dialog"
-            disabled
-            type="button"
-    >
-      <span role="none">
-        <svg viewbox="0 0 320 512"
-             height="14"
-             width="14"
-             aria-hidden="true"
-             focusable="false"
-             fill="currentColor"
-             xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 kcHuPT"
-        >
-          <path fill="currentColor"
-                d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9S301 191.9 288 191.9L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
-          >
-          </path>
-        </svg>
-      </span>
-      <span class="MetroModeSelector__InvisibleA11yLabel-sc-n9bu6a-0 gcxxlD">
-        Bike settings
-      </span>
-    </button>
   </span>
   <span class="MetroModeSelector__ModeButtonWrapper-sc-n9bu6a-2 klXmgn">
     <input aria-label="Drive"
@@ -184,31 +110,6 @@ exports[`Trip Form Components/Metro Mode Selector MetroModeSelector smoke-test 1
         Drive
       </span>
     </label>
-    <button aria-expanded="false"
-            aria-haspopup="dialog"
-            disabled
-            type="button"
-    >
-      <span role="none">
-        <svg viewbox="0 0 320 512"
-             height="14"
-             width="14"
-             aria-hidden="true"
-             focusable="false"
-             fill="currentColor"
-             xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 kcHuPT"
-        >
-          <path fill="currentColor"
-                d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9S301 191.9 288 191.9L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
-          >
-          </path>
-        </svg>
-      </span>
-      <span class="MetroModeSelector__InvisibleA11yLabel-sc-n9bu6a-0 gcxxlD">
-        Drive settings
-      </span>
-    </button>
   </span>
 </fieldset>
 `;
