@@ -101,7 +101,7 @@ function entityIsStation(entity: Entity): entity is Station {
 /**
  * Renders a map popup for a stop, scooter, or shared bike
  */
-export function MapPopup({ closePopup = null, configCompanies, entity, getEntityName, setLocation, setViewedStop }: Props): JSX.Element {
+export function MapPopup({ closePopup = () => null, configCompanies, entity, getEntityName, setLocation, setViewedStop }: Props): JSX.Element {
   const intl = useIntl()
   if (!entity) return <></>
 
@@ -115,7 +115,7 @@ export function MapPopup({ closePopup = null, configCompanies, entity, getEntity
   const stopId = !bikesAvailablePresent && entity?.code || entity.id.split(":")[1] || entity.id
 
   // Double quotes make the query invalid, so remove them from the id just in case
-  const id = `focus-${entity.id}-popup`.replace(/"/g, "")
+  const id = `focus-${encodeURIComponent(entity.id).replace(/%/g, "")}-popup`
 
   return (
     <Styled.MapOverlayPopup>
