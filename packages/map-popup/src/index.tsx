@@ -101,7 +101,7 @@ function entityIsStation(entity: Entity): entity is Station {
 /**
  * Renders a map popup for a stop, scooter, or shared bike
  */
-export function MapPopup({ closePopup = () => null, configCompanies, entity, getEntityName, setLocation, setViewedStop }: Props): JSX.Element {
+export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEntityName, setLocation, setViewedStop }: Props): JSX.Element {
   const intl = useIntl()
   if (!entity) return <></>
 
