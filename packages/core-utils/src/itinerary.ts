@@ -42,6 +42,10 @@ export function getTransitModes(config: Config): string[] {
   );
 }
 
+export function isTransitLeg(leg: Leg): boolean {
+  return leg.transitLeg;
+}
+
 export function isTransit(mode: string): boolean {
   return transitModes.includes(mode) || mode === "TRANSIT";
 }
