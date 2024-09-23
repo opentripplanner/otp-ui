@@ -62,6 +62,7 @@ otpUi:
       carHail: Course en voiture
       escooter: Trottinette
       walk: Marche
+    transfer: Transfer{duration, select, undefined {} other {, wait {duration}}}
     unnamedPath: Chemin sans nom
     unnamedRoad: Route sans nom
     vehicleTitle: "{vehicleType} {company}"
