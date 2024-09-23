@@ -89,7 +89,7 @@ export const StopEntity = (): JSX.Element => (
 export const StopEntitywithEntityPrefix = (): JSX.Element => (
   <MapPopupContents
     entity={STOP}
-    getEntityPrefix={() => getEntityPrefixExample(STOP)}
+    getEntityPrefix={getEntityPrefixExample}
     setLocation={action("setLocation")}
     setViewedStop={action("setViewedStop")}
   />
