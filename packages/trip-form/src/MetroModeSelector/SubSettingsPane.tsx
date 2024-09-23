@@ -158,13 +158,13 @@ export const ModeSettingRenderer = ({
 
 interface Props {
   modeButton: ModeButtonDefinition;
-  onSettingUpdate: (QueryParamChangeEvent) => void;
   onAllSubmodesDisabled?: (modeButton: ModeButtonDefinition) => void;
+  onSettingUpdate: (QueryParamChangeEvent) => void;
 }
 export default function SubSettingsPane({
   modeButton,
-  onSettingUpdate,
-  onAllSubmodesDisabled
+  onAllSubmodesDisabled,
+  onSettingUpdate
 }: Props): ReactElement {
   const intl = useIntl();
   const label = generateModeButtonLabel(modeButton.key, intl, modeButton.label);
