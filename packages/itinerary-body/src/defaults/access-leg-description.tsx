@@ -2,6 +2,7 @@ import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
 import { Config, Leg } from "@opentripplanner/types";
 import React, { HTMLAttributes, ReactElement } from "react";
 import { FormattedMessage, IntlShape, useIntl } from "react-intl";
+import coreUtils from "@opentripplanner/core-utils";
 import * as S from "../styled";
 
 import { defaultMessages, getPlaceName } from "../util";
@@ -88,6 +89,7 @@ export default function AccessLegDescription({
     </S.LegDescriptionPlace>
   );
 
+  const isTransferLeg = leg.to.stopId === leg.from.stopId;
   return (
     // Return an HTML element which is passed a className (and style props)
     // for styled-components support.
@@ -109,6 +111,23 @@ export default function AccessLegDescription({
               config.formatDuration(leg.duration, intl, false),
             mode: modeContent,
             place: placeContent
+          }}
+        />
+      ) : isTransferLeg ? (
+        <FormattedMessage
+          defaultMessage="Transfer, wait {duration}"
+          description="Summarizes an transfer leg"
+          id="otpUi.AccessLegBody.transfer"
+          values={{
+            duration: intl.formatMessage(
+              {
+                id: "otpUi.ItineraryBody.common.durationShort"
+              },
+              {
+                approximatePrefix: false,
+                ...coreUtils.time.toHoursMinutesSeconds(leg.duration)
+              }
+            )
           }}
         />
       ) : (
