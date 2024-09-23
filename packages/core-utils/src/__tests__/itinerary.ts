@@ -9,6 +9,7 @@ import {
   getLegRouteLongName,
   getLegRouteName,
   getLegRouteShortName,
+  isFlex,
   isTransit,
   mapOldElevationComponentToNew
 } from "../itinerary";
@@ -16,6 +17,7 @@ import {
 const bikeRentalItinerary = require("./__mocks__/bike-rental-itinerary.json");
 const tncItinerary = require("./__mocks__/tnc-itinerary.json");
 const fareProductItinerary = require("./__mocks__/fare-products-itinerary.json");
+const flexItinerary = require("../../../itinerary-body/src/__mocks__/itineraries/flex-itinerary.json");
 
 const basePlace = {
   lat: 0,
@@ -40,6 +42,20 @@ describe("util > itinerary", () => {
     });
   });
 
+  describe("isFlex", () => {
+    it("should detect flex if present", () => {
+      fareProductItinerary.legs.forEach(leg => expect(isFlex(leg)).toBe(false));
+      tncItinerary.legs.forEach(leg => expect(isFlex(leg)).toBe(false));
+      expect(isFlex(flexItinerary.legs[0])).toBe(false);
+      expect(isFlex(flexItinerary.legs[1])).toBe(false);
+      expect(isFlex(flexItinerary.legs[2])).toBe(false);
+      expect(isFlex(flexItinerary.legs[3])).toBe(false);
+      expect(isFlex(flexItinerary.legs[4])).toBe(false);
+      expect(isFlex(flexItinerary.legs[5])).toBe(true);
+      expect(isFlex(flexItinerary.legs[6])).toBe(false); // Does not exist
+      expect(isFlex(flexItinerary.legs[7])).toBe(false); // Does not exist
+    });
+  });
   describe("isTransit", () => {
     it("should work", () => {
       expect(isTransit("CAR")).toBeFalsy();
