@@ -228,7 +228,7 @@ const generateOTP2TileLayers = (
   setLocation?: (location: MapLocationActionArg) => void,
   setViewedStop?: (stop: Stop) => void,
   stopsWhitelist?: string[],
-  configCompanies?: ConfiguredCompany[]
+  configCompanies?: ConfiguredCompany[],
   getEntityPrefix?: (entity: Stop | Station) => JSX.Element
 ): JSX.Element[] => {
   return [
