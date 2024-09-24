@@ -30,7 +30,6 @@ otpUi:
       walkTolerance-labelHigh: Más caminar
       walkTolerance-labelLow: Menos caminar
       wheelchair-label: Acceso con discapacidades
-    settingsLabel: Ajustes para {mode}
   SettingsSelectorPanel:
     bikeOnly: Solo bicicleta
     escooterOnly: Solo scooters eléctricos

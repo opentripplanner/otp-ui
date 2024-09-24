@@ -30,7 +30,6 @@ otpUi:
       walkTolerance-labelHigh: Đi bộ nhiều hơn
       walkTolerance-labelLow: Ít đi bộ
       wheelchair-label: Định tuyến có thể truy cập
-    settingsLabel: Cài đặt {mode}
   SettingsSelectorPanel:
     bikeOnly: Chỉ dành cho xe đạp
     escooterOnly: Chỉ xe tay ga điện

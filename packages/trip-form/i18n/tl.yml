@@ -30,7 +30,6 @@ otpUi:
       walkTolerance-labelHigh: Mas Maraming Paglalakad
       walkTolerance-labelLow: Mas Kaunting Paglalakad
       wheelchair-label: Accessible na Pagruruta
-    settingsLabel: "{mode} mga setting"
   SettingsSelectorPanel:
     bikeOnly: Bisikleta Lang
     escooterOnly: E-scooter Lang

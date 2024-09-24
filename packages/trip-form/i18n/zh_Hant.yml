@@ -30,7 +30,6 @@ otpUi:
       walkTolerance-labelHigh: 步行較多
       walkTolerance-labelLow: 步行較少
       wheelchair-label: 可到達路線
-    settingsLabel: "{mode} 設定"
   SettingsSelectorPanel:
     bikeOnly: 僅限自行車
     escooterOnly: 僅限電動滑板車

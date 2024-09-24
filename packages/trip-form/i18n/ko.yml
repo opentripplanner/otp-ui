@@ -30,7 +30,6 @@ otpUi:
       walkTolerance-labelHigh: 더 많이 걷기
       walkTolerance-labelLow: 덜 걷기
       wheelchair-label: 액세스 가능한 라우팅
-    settingsLabel: "{mode} 설정"
   SettingsSelectorPanel:
     bikeOnly: 자전거 전용
     escooterOnly: 전동스쿠터 전용
