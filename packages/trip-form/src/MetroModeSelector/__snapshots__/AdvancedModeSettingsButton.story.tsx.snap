@@ -1,0 +1,267 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Trip Form Components/Advanced Mode Settings Buttons AdvancedModeSettingsButtons smoke-test 1`] = `
+<div style="max-width: 500px;">
+  <fieldset class="AdvancedModeSubsettingsContainer__SubsettingsContainer-sc-9nar0m-0 crlQmk">
+    <legend>
+      Select a transit mode
+    </legend>
+    <div class="AdvancedModeSettingsButton__SettingsContainer-sc-1wd5ill-0 kpkCFG advanced-submode-container">
+      <div class="AdvancedModeSettingsButton__StyledModeSettingsButton-sc-1wd5ill-1 zVGEA advanced-submode-mode-button"
+           id="transit"
+      >
+        <input aria-label="Transit"
+               id="metro-submode-selector-mode-transit"
+               type="checkbox"
+               checked
+        >
+        <label for="metro-submode-selector-mode-transit">
+          <svg viewbox="0 0 512 512"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-sc-ea9ulj-0 kcHuPT"
+          >
+            <path fill="currentColor"
+                  d="M256 0c134.4 0 224 35.2 224 80v48c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32v160c0 17.7-14.3 32-32 32v32c0 17.7-14.3 32-32 32h-32c-17.7 0-32-14.3-32-32v-32H160v32c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32v-32c-17.7 0-32-14.3-32-32V256c-17.7 0-32-14.3-32-32v-64c0-17.7 14.3-32 32-32V80c0-44.8 89.6-80 224-80zM96 160v96c0 17.7 14.3 32 32 32h112V128H128c-17.7 0-32 14.3-32 32zm176 128h112c17.7 0 32-14.3 32-32v-96c0-17.7-14.3-32-32-32H272v160zM112 400c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32zm288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32zM352 80c0-8.8-7.2-16-16-16H176c-8.8 0-16 7.2-16 16s7.2 16 16 16h160c8.8 0 16-7.2 16-16z"
+            >
+            </path>
+          </svg>
+          <span>
+            Transit
+          </span>
+          <svg viewbox="0 0 16 16"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z">
+            </path>
+          </svg>
+        </label>
+      </div>
+      <div aria-hidden="false"
+           class="rah-static rah-static--height-auto "
+           style="height: auto; overflow: visible;"
+      >
+        <div>
+          <div class="AdvancedModeSettingsButton__StyledSettingsContainer-sc-1wd5ill-2 fCCIjP subsettings-container">
+            <fieldset class="SubSettingsPane__SettingsPanel-sc-ug95jb-1 jZPumr">
+              <legend>
+                <span id="metro-mode-selector-transit-button-label">
+                  Transit
+                </span>
+              </legend>
+              <div class="SubSettingsPane__SubmodeGrid-sc-ug95jb-0 VHUke">
+                <div class="SubSettingsPane__SubSettingsCheckbox-sc-ug95jb-2 bZjYwY">
+                  <input id="id-query-param-tram"
+                         type="checkbox"
+                         checked
+                  >
+                  <label for="id-query-param-tram"
+                         class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+                  >
+                    <span class="SubSettingsPane__FormLabelIconWrapper-sc-ug95jb-3 hYJFTK">
+                      <div role="none">
+                        <svg viewbox="0 0 448 512"
+                             aria-hidden="true"
+                             focusable="false"
+                             fill="currentColor"
+                             xmlns="http://www.w3.org/2000/svg"
+                             class="StyledIconBase-sc-ea9ulj-0 kcHuPT"
+                        >
+                          <path fill="currentColor"
+                                d="M86.8 48c-12.2 0-23.6 5.5-31.2 15L42.7 79C34.5 89.3 19.4 91 9 82.7S-3 59.4 5.3 49L18 33C34.7 12.2 60 0 86.8 0h274.4c26.7 0 52 12.2 68.7 33l12.8 16c8.3 10.4 6.6 25.5-3.7 33.7s-25.5 6.6-33.7-3.7l-12.8-16c-7.6-9.5-19.1-15-31.2-15H248v48h40c53 0 96 43 96 96v160c0 30.6-14.3 57.8-36.6 75.4l65.5 65.5C420 500 415 512 405 512h-39.7c-8.5 0-16.6-3.4-22.6-9.4L288 448H160l-54.6 54.6c-6 6-14.1 9.4-22.6 9.4H43c-10 0-15-12.1-7.9-19.1l65.5-65.5C78.3 409.8 64 382.6 64 352V192c0-53 43-96 96-96h40V48H86.8zM160 160c-17.7 0-32 14.3-32 32v32c0 17.7 14.3 32 32 32h128c17.7 0 32-14.3 32-32v-32c0-17.7-14.3-32-32-32H160zm32 192c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32zm96 32c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32z"
+                          >
+                          </path>
+                        </svg>
+                      </div>
+                      <div>
+                        Tram
+                      </div>
+                    </span>
+                  </label>
+                </div>
+                <div class="SubSettingsPane__SubSettingsCheckbox-sc-ug95jb-2 bZjYwY">
+                  <input id="id-query-param-bus"
+                         type="checkbox"
+                         checked
+                  >
+                  <label for="id-query-param-bus"
+                         class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+                  >
+                    <span class="SubSettingsPane__FormLabelIconWrapper-sc-ug95jb-3 hYJFTK">
+                      <div role="none">
+                        <svg viewbox="0 0 512 512"
+                             aria-hidden="true"
+                             focusable="false"
+                             fill="currentColor"
+                             xmlns="http://www.w3.org/2000/svg"
+                             class="StyledIconBase-sc-ea9ulj-0 kcHuPT"
+                        >
+                          <path fill="currentColor"
+                                d="M256 0c134.4 0 224 35.2 224 80v48c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32v160c0 17.7-14.3 32-32 32v32c0 17.7-14.3 32-32 32h-32c-17.7 0-32-14.3-32-32v-32H160v32c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32v-32c-17.7 0-32-14.3-32-32V256c-17.7 0-32-14.3-32-32v-64c0-17.7 14.3-32 32-32V80c0-44.8 89.6-80 224-80zM96 160v96c0 17.7 14.3 32 32 32h112V128H128c-17.7 0-32 14.3-32 32zm176 128h112c17.7 0 32-14.3 32-32v-96c0-17.7-14.3-32-32-32H272v160zM112 400c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32zm288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32zM352 80c0-8.8-7.2-16-16-16H176c-8.8 0-16 7.2-16 16s7.2 16 16 16h160c8.8 0 16-7.2 16-16z"
+                          >
+                          </path>
+                        </svg>
+                      </div>
+                      <div>
+                        MARTA Rail
+                      </div>
+                    </span>
+                  </label>
+                </div>
+                <div class="SubSettingsPane__SubSettingsCheckbox-sc-ug95jb-2 bZjYwY">
+                  <input id="id-query-param-subway"
+                         type="checkbox"
+                         checked
+                  >
+                  <label for="id-query-param-subway"
+                         class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+                  >
+                    <span class="SubSettingsPane__FormLabelIconWrapper-sc-ug95jb-3 hYJFTK">
+                      <div role="none">
+                        <svg viewbox="0 0 448 512"
+                             aria-hidden="true"
+                             focusable="false"
+                             fill="currentColor"
+                             xmlns="http://www.w3.org/2000/svg"
+                             class="StyledIconBase-sc-ea9ulj-0 kcHuPT"
+                        >
+                          <path fill="currentColor"
+                                d="M96 0C43 0 0 43 0 96v256c0 48 35.2 87.7 81.1 94.9l-46 46c-7 7-2 19.1 7.9 19.1h39.7c8.5 0 16.6-3.4 22.6-9.4L160 448h128l54.6 54.6c6 6 14.1 9.4 22.6 9.4H405c10 0 15-12.1 7.9-19.1l-46-46c46-7.1 81.1-46.9 81.1-94.9V96c0-53-43-96-96-96H96zM64 128c0-17.7 14.3-32 32-32h80c17.7 0 32 14.3 32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32v-96zm208-32h80c17.7 0 32 14.3 32 32v96c0 17.7-14.3 32-32 32h-80c-17.7 0-32-14.3-32-32v-96c0-17.7 14.3-32 32-32zM128 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32zm224 32c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"
+                          >
+                          </path>
+                        </svg>
+                      </div>
+                      <div>
+                        Subway
+                      </div>
+                    </span>
+                  </label>
+                </div>
+                <div class="SubSettingsPane__SubSettingsCheckbox-sc-ug95jb-2 bZjYwY">
+                  <input id="id-query-param-ferry"
+                         type="checkbox"
+                         checked
+                  >
+                  <label for="id-query-param-ferry"
+                         class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+                  >
+                    <span class="SubSettingsPane__FormLabelIconWrapper-sc-ug95jb-3 hYJFTK">
+                      <div>
+                        Ferry
+                      </div>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div class="styled__DropdownSelector-sc-122ziys-17 kiQdDP">
+                <div>
+                  <label for="id-query-param-busColor"
+                         class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+                  >
+                    <span class="SubSettingsPane__FormLabelIconWrapper-sc-ug95jb-3 hYJFTK">
+                      <div>
+                        Bus Color
+                      </div>
+                    </span>
+                  </label>
+                </div>
+                <div>
+                  <select id="id-query-param-busColor">
+                    <option value="blue">
+                      Blue
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="AdvancedModeSettingsButton__SettingsContainer-sc-1wd5ill-0 kpkCFG advanced-submode-container">
+      <div class="AdvancedModeSettingsButton__StyledModeSettingsButton-sc-1wd5ill-1 huYfyc advanced-submode-mode-button"
+           id="walk"
+      >
+        <input aria-label="Walk"
+               id="metro-submode-selector-mode-walk"
+               type="checkbox"
+        >
+        <label for="metro-submode-selector-mode-walk">
+          <svg viewbox="0 0 320 512"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-sc-ea9ulj-0 kcHuPT"
+          >
+            <path fill="currentColor"
+                  d="M256 48c0 26.5-21.5 48-48 48s-48-21.5-48-48 21.5-48 48-48 48 21.5 48 48zM126.5 199.3c-1 .4-1.9.8-2.9 1.2l-8 3.5c-16.4 7.3-29 21.2-34.7 38.2l-2.6 7.8c-5.6 16.8-23.7 25.8-40.5 20.2S12 246.5 17.6 229.7l2.6-7.8c11.4-34.1 36.6-61.9 69.4-76.5l8-3.5c20.8-9.2 43.3-14 66.1-14 44.6 0 84.8 26.8 101.9 67.9l15.4 36.9 21.4 10.7c15.8 7.9 22.2 27.1 14.3 42.9s-27.1 22.2-42.9 14.3L247 287.3c-10.3-5.2-18.4-13.8-22.8-24.5l-9.6-23-19.3 65.5 49.5 54c5.4 5.9 9.2 13 11.2 20.8l23 92.1c4.3 17.1-6.1 34.5-23.3 38.8s-34.5-6.1-38.8-23.3l-22-88.1-70.7-77.1c-14.8-16.1-20.3-38.6-14.7-59.7l16.9-63.5zM68.7 398l25-62.4c2.1 3 4.5 5.8 7 8.6l40.7 44.4-14.5 36.2c-2.4 6-6 11.5-10.6 16.1l-61.7 61.7c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L68.7 398z"
+            >
+            </path>
+          </svg>
+          <span>
+            Walk
+          </span>
+        </label>
+      </div>
+    </div>
+    <div class="AdvancedModeSettingsButton__SettingsContainer-sc-1wd5ill-0 kpkCFG advanced-submode-container">
+      <div class="AdvancedModeSettingsButton__StyledModeSettingsButton-sc-1wd5ill-1 huYfyc advanced-submode-mode-button"
+           id="bicycle"
+      >
+        <input aria-label="Bike"
+               id="metro-submode-selector-mode-bicycle"
+               type="checkbox"
+        >
+        <label for="metro-submode-selector-mode-bicycle">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               version="1.1"
+               viewbox="0 0 100 61.3"
+               height="100%"
+               width="100%"
+          >
+            <path d="M0,41.6C0,52.3,8.7,61,19.4,61c9.4,0,17.2-6.7,19-15.5c0.1,0,0.1,0,0.2,0c15.3-0.6,4.6,4.2,33-25.7c0.5,1.5,0.9,2.9,1.4,4.3  c-6.9,3-11.8,9.8-11.8,17.9c0,10.7,8.7,19.4,19.4,19.4c10.7,0,19.4-8.7,19.4-19.4s-8.7-19.4-19.4-19.4c-1.2,0-2.4,0.1-3.6,0.3  C69.5-1.5,71.9,0.1,57.9,0v3.9c10.2,0,8.9-0.6,11.2,7.3H35.3L34,7.5c7.6-1.7,9.7-1.7,8.2-3.7H25.1v3.8l4.5,0.1l1.3,3.6  c-2.1,4.6-3.8,8.5-5.3,11.9c-2-0.7-4-1-6.2-1C8.7,22.2,0,30.9,0,41.6z M74.4,28.4c4.8,15.4,4.4,15.1,6.3,15.3c1.1-0.1,1.9-0.9,1.9-2  c0-1.3,0.5,0.4-4.2-14.5c0.7-0.1,1.4-0.2,2.2-0.2c8.2,0,14.9,6.7,14.9,14.9s-6.7,14.9-14.9,14.9s-14.9-6.7-14.9-14.9  C65.7,35.9,69.3,30.7,74.4,28.4z M37,15.3l33,0.1L46.6,41L37,15.3z M29.4,24.9l3.6-8.1l9.4,24.6l-3.6,0C38.8,34.5,35,28.3,29.4,24.9  z M34.3,41.5l-12.3,0l5.6-12.4C31.6,31.8,34.2,36.3,34.3,41.5z M4.5,41.6c0-8.2,6.7-14.9,14.9-14.9c1.5,0,3,0.2,4.3,0.6  c-6.7,14.9-7,15.4-7,16.2c0.2,2.7,1.6,1.9,17.1,1.9c-1.7,6.3-7.5,11-14.3,11C11.2,56.4,4.5,49.8,4.5,41.6z">
+            </path>
+          </svg>
+          <span>
+            Bike
+          </span>
+        </label>
+      </div>
+    </div>
+    <div class="AdvancedModeSettingsButton__SettingsContainer-sc-1wd5ill-0 kpkCFG advanced-submode-container">
+      <div class="AdvancedModeSettingsButton__StyledModeSettingsButton-sc-1wd5ill-1 huYfyc advanced-submode-mode-button"
+           id="car"
+      >
+        <input aria-label="Drive"
+               id="metro-submode-selector-mode-car"
+               type="checkbox"
+        >
+        <label for="metro-submode-selector-mode-car">
+          <svg viewbox="0 0 512 512"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-sc-ea9ulj-0 kcHuPT"
+          >
+            <path fill="currentColor"
+                  d="M135.2 117.4 109.1 192h293.8l-26.1-74.6c-4.5-12.8-16.6-21.4-30.2-21.4H165.4c-13.6 0-25.7 8.6-30.2 21.4zm-95.6 79.4L74.8 96.3C88.3 57.8 124.6 32 165.4 32h181.2c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2v192c0 17.7-14.3 32-32 32h-32c-17.7 0-32-14.3-32-32v-48H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V256c0-26.7 16.4-49.6 39.6-59.2zM128 288c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32zm288 32c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32z"
+            >
+            </path>
+          </svg>
+          <span>
+            Car
+          </span>
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+`;
