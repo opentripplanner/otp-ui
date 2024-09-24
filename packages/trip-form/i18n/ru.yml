@@ -30,7 +30,6 @@ otpUi:
       walkTolerance-labelHigh: Больше ходьбы пешком
       walkTolerance-labelLow: Меньше ходьбы пешком
       wheelchair-label: Доступная маршрутизация
-    settingsLabel: "{mode} настройки"
   SettingsSelectorPanel:
     bikeOnly: Только велосипед
     escooterOnly: Только электросамокат
