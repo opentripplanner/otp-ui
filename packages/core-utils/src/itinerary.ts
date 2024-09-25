@@ -42,6 +42,10 @@ export function getTransitModes(config: Config): string[] {
   );
 }
 
+export function isTransitLeg(leg: Leg): boolean {
+  return leg.transitLeg;
+}
+
 export function isTransit(mode: string): boolean {
   return transitModes.includes(mode) || mode === "TRANSIT";
 }
@@ -52,7 +56,7 @@ export function isTransit(mode: string): boolean {
  * property which encodes this info.
  */
 export function isReservationRequired(leg: Leg): boolean {
-  return leg.boardRule === "mustPhone" || leg.alightRule === "mustPhone";
+  return leg?.boardRule === "mustPhone" || leg?.alightRule === "mustPhone";
 }
 /**
  * Returns true if a user must ask the driver to let the user off
@@ -61,25 +65,45 @@ export function isReservationRequired(leg: Leg): boolean {
  */
 export function isCoordinationRequired(leg: Leg): boolean {
   return (
-    leg.boardRule === "coordinateWithDriver" ||
-    leg.alightRule === "coordinateWithDriver"
+    leg?.boardRule === "coordinateWithDriver" ||
+    leg?.alightRule === "coordinateWithDriver"
   );
 }
+
+export function containsGeometry(place: Place): boolean {
+  return (
+    place?.stop?.geometries !== null && place?.stop?.geometries !== undefined
+  );
+}
+export function endsWithGeometry(leg: Leg): boolean {
+  return containsGeometry(leg?.to);
+}
+export function startsWithGeometry(leg: Leg): boolean {
+  return containsGeometry(leg?.from);
+}
+export function legContainsGeometry(leg: Leg): boolean {
+  return endsWithGeometry(leg) || startsWithGeometry(leg);
+}
+export function isAdvanceBookingRequired(info: FlexBookingInfo): boolean {
+  return info?.latestBookingTime?.daysPrior > 0;
+}
+export function legDropoffRequiresAdvanceBooking(leg: Leg): boolean {
+  return isAdvanceBookingRequired(leg?.dropOffBookingInfo);
+}
+
 /**
  * The two rules checked by the above two functions are the only values
  * returned by OTP when a leg is a flex leg.
  */
 export function isFlex(leg: Leg): boolean {
-  return isReservationRequired(leg) || isCoordinationRequired(leg);
+  return (
+    isReservationRequired(leg) ||
+    isCoordinationRequired(leg) ||
+    legDropoffRequiresAdvanceBooking(leg) ||
+    isAdvanceBookingRequired(leg?.pickupBookingInfo) ||
+    legContainsGeometry(leg)
+  );
 }
-
-export function isAdvanceBookingRequired(info: FlexBookingInfo): boolean {
-  return info?.latestBookingTime?.daysPrior > 0;
-}
-export function legDropoffRequiresAdvanceBooking(leg: Leg): boolean {
-  return isAdvanceBookingRequired(leg.dropOffBookingInfo);
-}
-
 export function isRideshareLeg(leg: Leg): boolean {
   return !!leg.rideHailingEstimate?.provider?.id;
 }

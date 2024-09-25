@@ -24,14 +24,15 @@ const OTP2TileLayerWithPopup = ({
   onMapClick,
   setLocation,
   setViewedStop,
+  stopsWhitelist,
   type
 }: {
+  color?: string;
   /**
    * Optional configuration item which allows for customizing properties of scooter and
    * bikeshare companies. If this is provided, scooter/bikeshare company names can be rendered in the
    * default scooter/bike popup.
    */
-  color?: string;
   configCompanies?: ConfiguredCompany[]
   id: string
   name?: string
@@ -56,6 +57,11 @@ const OTP2TileLayerWithPopup = ({
    * not passed, the stop viewer link will not be shown.
    */
   setViewedStop?: StopEventHandler
+  /**
+   * A list of GTFS stop ids (with agency prepended). If specified, all stops that
+   * are NOT in this list will be HIDDEN.
+   */
+  stopsWhitelist?: string[]
   /**
    * Determines which layer of the OTP2 tile data to display. Also determines icon color.
    */
@@ -135,6 +141,9 @@ const OTP2TileLayerWithPopup = ({
   if (type === "stops" || type === "areaStops") {
     filter = ["all", ["!", ["has", "parentStation"]], ["!=", ["get", "routes"], ["literal", "[]"]]]
   }
+  if (stopsWhitelist) {
+    filter = ["in", ["get", "gtfsId"], ["literal", stopsWhitelist]]
+  }
 
   const isArea = AREA_TYPES.includes(type)
   return (
@@ -148,6 +157,7 @@ const OTP2TileLayerWithPopup = ({
         }}
         source-layer={type}
         source={SOURCE_ID}
+        minzoom={stopsWhitelist ? 2 : 14}
         type="fill"
       />}
       {isArea && <Layer
@@ -169,6 +179,7 @@ const OTP2TileLayerWithPopup = ({
         key={id}
         paint={generateLayerPaint(color)[type]}
         source={SOURCE_ID}
+        minzoom={stopsWhitelist ? 2 : 14}
         source-layer={type}
         type="circle"
       />}
@@ -181,6 +192,7 @@ const OTP2TileLayerWithPopup = ({
           onClose={() => setClickedEntity(null)}
         >
           <EntityPopup
+            closePopup={() => setClickedEntity(null)}
             configCompanies={configCompanies}
             entity={{ ...clickedEntity, id: clickedEntity?.id || clickedEntity?.gtfsId }}
             setLocation={setLocation ? (location) => { setClickedEntity(null); setLocation(location) } : null}
@@ -202,6 +214,7 @@ const OTP2TileLayerWithPopup = ({
  * @param endpoint        The OTP endpoint to make the requests to
  * @param setLocation     An optional method to make from/to buttons functional. See component for more detail.
  * @param setViewedStop   An optional method to make stop viewer button functional. See component for more detail. 
+ * @param stopsWhitelist  An optional list of stops to display singularly. See component for more detail. 
  * @param configCompanies An optional list of companies used to prettify network information.
  * @returns               Array of <Source> and <OTP2TileLayerWithPopup> components
  */
@@ -210,6 +223,7 @@ const generateOTP2TileLayers = (
   endpoint: string,
   setLocation?: (location: MapLocationActionArg) => void,
   setViewedStop?: (stop: Stop) => void,
+  stopsWhitelist?: string[],
   configCompanies?: ConfiguredCompany[]
 ): JSX.Element[] => {
   return [
@@ -236,6 +250,7 @@ const generateOTP2TileLayers = (
           network={network}
           setLocation={setLocation}
           setViewedStop={setViewedStop}
+          stopsWhitelist={stopsWhitelist}
           type={type}
           visible={initiallyVisible}
         />
