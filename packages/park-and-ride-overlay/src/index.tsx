@@ -3,7 +3,6 @@ import {
   MarkerWithPopup
 } from "@opentripplanner/base-map";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Location } from "@opentripplanner/types";
 import React from "react";
 import ParkAndRideMarker from "./park-and-ride-marker";
