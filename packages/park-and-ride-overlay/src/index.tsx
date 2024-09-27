@@ -12,12 +12,13 @@ type Props = {
   id?: string;
   keyboard?: boolean;
   parkAndRideLocations: { name: string; x: number; y: number }[];
-  setLocation: ({
-    // eslint-disable-next-line @typescript-eslint/no-shadow
-    location: Location,
-    locationType: string,
-    reverseGeocode: boolean
-  }) => void;
+  setLocation: (
+    l: {
+      location: Location;
+      locationType: string;
+      reverseGeocode: boolean;
+    } | null
+  ) => void;
 };
 
 const ParkAndRideOverlay = (props: Props): JSX.Element => {
