@@ -167,6 +167,7 @@ const OTP2TileLayerWithPopup = ({
         filter={filter}
         id={`${id}-outline`}
         layout={{ "line-join": "round", "line-cap": "round" }}
+        minzoom={stopsWhitelist ? 2 : 14}
         paint={{
           "line-color": ROUTE_COLOR_EXPRESSION,
           "line-opacity": 0.8,
