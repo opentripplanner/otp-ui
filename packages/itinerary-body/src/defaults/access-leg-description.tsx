@@ -116,7 +116,7 @@ export default function AccessLegDescription({
       ) : isTransferLeg ? (
         <FormattedMessage
           defaultMessage="Transfer, wait {duration}"
-          description="Summarizes an transfer leg"
+          description="Summarizes a transfer leg"
           id="otpUi.AccessLegBody.transfer"
           values={{
             duration: intl.formatMessage(
