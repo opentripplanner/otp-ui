@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ComponentMeta } from "@storybook/react";
 
 import { Ship } from "@styled-icons/fa-solid/Ship";
@@ -252,34 +252,21 @@ export const WithUserSettings = (): JSX.Element => (
   />
 );
 
-export const WithOtherFirst = (): JSX.Element => {
-  const [otherControl, setOtherControl] = useState(false);
-  return (
-    <>
-      <label htmlFor="other-input">
-        renderOtherFirst?
-        <input
-          id="other-input"
-          type="checkbox"
-          checked={otherControl}
-          onChange={() => setOtherControl(!otherControl)}
-        />
-      </label>
-      <LocationField
-        currentPosition={currentPosition}
-        geocoderConfig={geocoderConfig}
-        getCurrentPosition={getCurrentPosition}
-        preferredLayers={["example_layer"]}
-        initialSearchResults={mockedGeocoderResponse.features}
-        inputPlaceholder="Select from location"
-        layerColorMap={layerColorMap}
-        locationType="from"
-        onLocationSelected={onLocationSelected}
-        renderOtherFirst={otherControl}
-        sortByDistance
-        style={{ fontFamily: "sans-serif" }}
-      />
-    </>
-  );
-};
-WithOtherFirst.parameters = a11yOverrideParameters;
+export const WithCustomResultsOrder = (): JSX.Element => (
+  <LocationField
+    currentPosition={currentPosition}
+    geocoderConfig={geocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    preferredLayers={["example_layer"]}
+    initialSearchResults={mockedGeocoderResponse.features}
+    inputPlaceholder="Select from location"
+    layerColorMap={layerColorMap}
+    locationType="from"
+    onLocationSelected={onLocationSelected}
+    geocoderResultsOrder={["OTHER", "STATIONS", "STOPS"]}
+    sortByDistance
+    style={{ fontFamily: "sans-serif" }}
+  />
+);
+
+WithCustomResultsOrder.parameters = a11yOverrideParameters;

@@ -113,6 +113,8 @@ export interface LocationFieldProps {
     maxNearbyStops?: number;
     type: string;
   };
+  /** Order of geocoder results to display */
+  geocoderResultsOrder?: Array<"STATIONS" | "STOPS" | "OTHER">;
   /**
    * This is dispatched when the current position is null. This indicates that
    * the user has requested to use the current position, but that the current
@@ -214,10 +216,6 @@ export interface LocationFieldProps {
    * Results are sorted by distance, but favored layers will always appear first.
    */
   preferredLayers?: string[];
-  /**
-   * If true, make "Other" category (addresses, POIs, etc.) first in the results container.
-   */
-  renderOtherFirst?: boolean;
   /**
    * A slot for the icon to display for an option that was used during the
    * current session.
