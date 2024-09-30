@@ -27,7 +27,7 @@ module.exports = {
 
   stories: [
     "../packages/**/*.story.mdx",
-    "../packages/**/*.story.@(js|jsx|ts|tsx)"
+    "../packages/*/src/**/*.story.@(js|jsx|ts|tsx)"
   ],
   staticDirs: ['../public'],
 
