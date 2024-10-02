@@ -22,7 +22,7 @@
     "@opentripplanner/base-map": "^4.0.0",
     "@opentripplanner/core-utils": "^12.0.0",
     "@opentripplanner/from-to-location-picker": "^3.0.0",
-    "@opentripplanner/map-popup": "^5.0.0",
+    "@opentripplanner/map-popup": "^5.1.0",
     "@styled-icons/fa-solid": "^10.34.0",
     "flat": "^5.0.2",
     "lodash.memoize": "^4.1.2"
