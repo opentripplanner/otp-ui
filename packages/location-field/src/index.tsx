@@ -648,30 +648,28 @@ const LocationField = ({
     const FeaturesElements = ({
       bgColor,
       key,
-      titleId,
+      title,
+      title118nId,
       featuresArray
     }: {
       bgColor: string;
       key: string;
-      titleId: string;
+      title: string;
+      title118nId: string;
       featuresArray: JSX.Element[];
     }) => {
       const Header = () => (
         <S.MenuGroupHeader as={headingType} bgColor={bgColor} key={key}>
           <FormattedMessage
             description="Text for header above the 'other' category of geocoder results"
-            id={`otpUi.LocationField.${titleId}`}
+            id={title118nId}
           />
         </S.MenuGroupHeader>
       );
       return (
         <>
           {/* Only include the header if there are features to show */}
-          {titleId === "other" ? (
-            <Header />
-          ) : (
-            transitFeaturesPresent && <Header />
-          )}
+          {(title === "other" || transitFeaturesPresent) && <Header />}
           {featuresArray.map(feature => renderFeature(itemIndex++, feature))}
         </>
       );
@@ -680,35 +678,43 @@ const LocationField = ({
     // Create an array of results to display based on the geocoderResultsOrder
     const featuresElementsArray = geocoderResultsOrder.map(result => {
       let Element;
-      if (result === "OTHER") {
-        Element = (
-          <FeaturesElements
-            bgColor="#333"
-            key="other-header"
-            featuresArray={otherFeatures}
-            titleId="other"
-          />
-        );
-      }
-      if (result === "STATIONS") {
-        Element = (
-          <FeaturesElements
-            bgColor={layerColorMap.stations}
-            key="gtfs-stations-header"
-            featuresArray={stationFeatures}
-            titleId="stations"
-          />
-        );
-      }
-      if (result === "STOPS") {
-        Element = (
-          <FeaturesElements
-            bgColor={layerColorMap.stops}
-            key="gtfs-stops-header"
-            featuresArray={stopFeatures}
-            titleId="stops"
-          />
-        );
+      switch (result) {
+        case "OTHER":
+          Element = (
+            <FeaturesElements
+              bgColor="#333"
+              key="other-header"
+              featuresArray={otherFeatures}
+              title="other"
+              title118nId="otpUi.LocationField.other"
+            />
+          );
+          break;
+        case "STATIONS":
+          Element = (
+            <FeaturesElements
+              bgColor={layerColorMap.stations}
+              key="gtfs-stations-header"
+              featuresArray={stationFeatures}
+              title="stations"
+              title118nId="otpUi.LocationField.stations"
+            />
+          );
+          break;
+        case "STOPS":
+          Element = (
+            <FeaturesElements
+              bgColor={layerColorMap.stops}
+              key="gtfs-stops-header"
+              featuresArray={stopFeatures}
+              title="stops"
+              title118nId="otpUi.LocationField.stops"
+            />
+          );
+          break;
+        default:
+          Element = null;
+          break;
       }
       return Element;
     });
