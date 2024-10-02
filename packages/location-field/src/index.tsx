@@ -647,19 +647,17 @@ const LocationField = ({
 
     const FeaturesElements = ({
       bgColor,
-      key,
       title,
       title118nId,
       featuresArray
     }: {
       bgColor: string;
-      key: string;
       title: string;
       title118nId: string;
       featuresArray: JSX.Element[];
     }) => {
       const Header = () => (
-        <S.MenuGroupHeader as={headingType} bgColor={bgColor} key={key}>
+        <S.MenuGroupHeader as={headingType} bgColor={bgColor} key={title}>
           <FormattedMessage
             description="Text for header above the 'other' category of geocoder results"
             id={title118nId}
