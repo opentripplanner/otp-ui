@@ -90,6 +90,7 @@ type Props = {
   configCompanies?: ConfiguredCompany[];
   entity: Entity
   getEntityName?: (entity: Entity, configCompanies: Company[],) => string;
+  getEntityPrefix?: (entity: Entity) => JSX.Element
   setLocation?: ({ location, locationType }: { location: Location, locationType: string }) => void;
   setViewedStop?: StopEventHandler;
 };
@@ -101,7 +102,8 @@ function entityIsStation(entity: Entity): entity is Station {
 /**
  * Renders a map popup for a stop, scooter, or shared bike
  */
-export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEntityName, setLocation, setViewedStop }: Props): JSX.Element {
+export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEntityName, getEntityPrefix, setLocation, setViewedStop }: Props): JSX.Element {
+
   const intl = useIntl()
   if (!entity) return <></>
 
@@ -121,6 +123,7 @@ export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEn
     <Styled.MapOverlayPopup>
       <FocusTrapWrapper closePopup={closePopup} id={id}>
       <Styled.PopupTitle>
+        {getEntityPrefix && getEntityPrefix(entity)}
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.MapPopup.popupTitle"]}
           description="Text for title of the popup, contains an optional company name"

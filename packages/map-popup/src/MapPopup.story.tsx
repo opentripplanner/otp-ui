@@ -1,5 +1,7 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
+import styled from "styled-components";
+import { Station, Stop } from "@opentripplanner/types";
 import MapPopupContents from "./index";
 
 export default {
@@ -8,6 +10,7 @@ export default {
 
 const STOP = {
   flex: false,
+  gtfsId: "9526",
   id: "9526",
   lat: 45.523009,
   lon: -122.672529,
@@ -64,9 +67,29 @@ const FLOATING_CAR = {
   y: 52.52
 };
 
+const getEntityPrefixExample = (entity: Stop | Station) => {
+  const DemoIcon = styled.span`
+    background-color: blue;
+    border-radius: 50px;
+    color: white;
+    margin-right: 0.5ch;
+    padding: 2px;
+  `;
+
+  return <DemoIcon>{entity.name?.charAt(0)}</DemoIcon>;
+};
+
 export const StopEntity = (): JSX.Element => (
   <MapPopupContents
     entity={STOP}
+    setLocation={action("setLocation")}
+    setViewedStop={action("setViewedStop")}
+  />
+);
+export const StopEntitywithEntityPrefix = (): JSX.Element => (
+  <MapPopupContents
+    entity={STOP}
+    getEntityPrefix={getEntityPrefixExample}
     setLocation={action("setLocation")}
     setViewedStop={action("setViewedStop")}
   />

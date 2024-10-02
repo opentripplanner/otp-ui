@@ -8,6 +8,10 @@
   "workspaces": [
     "packages/*"
   ],
+  "resolutions": {
+    "react": "18.2.0",
+    "react-animate-height": "3.0.4"
+  },
   "devDependencies": {
     "@babel/cli": "^7.10",
     "@babel/core": "^7.10",

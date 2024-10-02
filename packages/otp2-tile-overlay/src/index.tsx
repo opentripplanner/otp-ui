@@ -2,6 +2,7 @@ import EntityPopup from "@opentripplanner/map-popup"
 import {
   ConfiguredCompany,
   MapLocationActionArg,
+  Station,
   Stop,
   StopEventHandler,
 } from "@opentripplanner/types"
@@ -19,6 +20,7 @@ const AREA_TYPES = ["areaStops"]
 const OTP2TileLayerWithPopup = ({
   color,
   configCompanies,
+  getEntityPrefix,
   id,
   network,
   onMapClick,
@@ -34,6 +36,7 @@ const OTP2TileLayerWithPopup = ({
    * default scooter/bike popup.
    */
   configCompanies?: ConfiguredCompany[]
+  getEntityPrefix?: (entity: Stop | Station) => JSX.Element
   id: string
   name?: string
   /**
@@ -164,6 +167,7 @@ const OTP2TileLayerWithPopup = ({
         filter={filter}
         id={`${id}-outline`}
         layout={{ "line-join": "round", "line-cap": "round" }}
+        minzoom={stopsWhitelist ? 2 : 14}
         paint={{
           "line-color": ROUTE_COLOR_EXPRESSION,
           "line-opacity": 0.8,
@@ -195,6 +199,7 @@ const OTP2TileLayerWithPopup = ({
             closePopup={() => setClickedEntity(null)}
             configCompanies={configCompanies}
             entity={{ ...clickedEntity, id: clickedEntity?.id || clickedEntity?.gtfsId }}
+            getEntityPrefix={getEntityPrefix}
             setLocation={setLocation ? (location) => { setClickedEntity(null); setLocation(location) } : null}
             setViewedStop={setViewedStop ? (stop) => { setClickedEntity(null);setViewedStop(stop) } : null}
           />
@@ -224,7 +229,8 @@ const generateOTP2TileLayers = (
   setLocation?: (location: MapLocationActionArg) => void,
   setViewedStop?: (stop: Stop) => void,
   stopsWhitelist?: string[],
-  configCompanies?: ConfiguredCompany[]
+  configCompanies?: ConfiguredCompany[],
+  getEntityPrefix?: (entity: Stop | Station) => JSX.Element
 ): JSX.Element[] => {
   return [
     <Source
@@ -244,6 +250,7 @@ const generateOTP2TileLayers = (
         <OTP2TileLayerWithPopup
           color={color}
           configCompanies={configCompanies}
+          getEntityPrefix={getEntityPrefix}
           id={id}
           key={id}
           name={name || id}

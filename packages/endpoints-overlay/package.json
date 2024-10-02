@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/endpoints-overlay",
-  "version": "2.1.4",
+  "version": "3.0.0",
   "description": "A map overlay to show the from and to locations of an itinerary",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -19,12 +19,12 @@
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
   "dependencies": {
-    "@opentripplanner/base-map": "^3.2.2",
+    "@opentripplanner/base-map": "^4.0.0",
     "@opentripplanner/location-icon": "^1.4.1",
-    "@opentripplanner/core-utils": "^11.4.4",
+    "@opentripplanner/core-utils": "^12.0.0",
     "flat": "^5.0.2",
     "@styled-icons/fa-solid": "^10.34.0",
-    "@opentripplanner/building-blocks": "^1.2.2"
+    "@opentripplanner/building-blocks": "^2.0.0"
   },
   "devDependencies": {
     "@opentripplanner/types": "^6.5.2",

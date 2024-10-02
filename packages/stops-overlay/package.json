@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/stops-overlay",
-  "version": "5.3.3",
+  "version": "6.0.0",
   "description": "A map overlay to show transit stops",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -19,9 +19,9 @@
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
   "dependencies": {
-    "@opentripplanner/base-map": "^3.2.2",
-    "@opentripplanner/from-to-location-picker": "^2.1.14",
-    "@opentripplanner/map-popup": "^4.0.0",
+    "@opentripplanner/base-map": "^4.0.0",
+    "@opentripplanner/from-to-location-picker": "^3.0.0",
+    "@opentripplanner/map-popup": "^5.0.0",
     "flat": "^5.0.2"
   },
   "devDependencies": {
