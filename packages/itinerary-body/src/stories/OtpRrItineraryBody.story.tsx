@@ -35,6 +35,7 @@ const walkTransitWalkTransitWalkA11yItinerary = require("../__mocks__/itinerarie
 const otp2ScooterItinerary = require("../__mocks__/itineraries/otp2-scooter.json");
 const flexItinerary = require("../__mocks__/itineraries/flex-itinerary.json");
 const otp24Itinerary = require("../__mocks__/itineraries/otp2.4-transit-itinerary.json");
+const transferLegItinerary = require("../__mocks__/itineraries/otp2-transfer-leg.json");
 
 function withLegacyLegs(itinerary) {
   return {
@@ -257,4 +258,8 @@ export const ApproximatePrefixItinerary = (): ReactElement => (
     itinerary={walkTransitWalkItinerary}
     showApproximateAccessLegTravelTimes
   />
+);
+
+export const TransferLegItinerary = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper itinerary={transferLegItinerary} />
 );
