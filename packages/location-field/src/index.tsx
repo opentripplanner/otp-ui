@@ -28,6 +28,7 @@ import { LocationFieldProps, ResultType } from "./types";
 import {
   addInParentheses,
   generateLabel,
+  GeocoderResultsConstants,
   getCombinedLabel,
   getGeocoderErrorMessage,
   getMatchingLocations
@@ -648,20 +649,17 @@ const LocationField = ({
     const FeaturesElements = ({
       bgColor,
       title,
-      title118nId,
+      HeaderMessage,
       featuresArray
     }: {
       bgColor: string;
       title: string;
-      title118nId: string;
+      HeaderMessage: JSX.Element;
       featuresArray: JSX.Element[];
     }) => {
       const Header = () => (
         <S.MenuGroupHeader as={headingType} bgColor={bgColor} key={title}>
-          <FormattedMessage
-            description="Text for header above the 'other' category of geocoder results"
-            id={title118nId}
-          />
+          {HeaderMessage}
         </S.MenuGroupHeader>
       );
       return (
@@ -677,36 +675,51 @@ const LocationField = ({
     const featuresElementsArray = geocoderResultsOrder.map(result => {
       let Element;
       switch (result) {
-        case "OTHER":
+        case GeocoderResultsConstants.OTHER:
           Element = (
             <FeaturesElements
               bgColor="#333"
+              HeaderMessage={
+                <FormattedMessage
+                  id="otpUi.LocationField.other"
+                  description="Text for header above the 'other' category of geocoder results"
+                />
+              }
               key="other-header"
               featuresArray={otherFeatures}
               title="other"
-              title118nId="otpUi.LocationField.other"
             />
           );
           break;
-        case "STATIONS":
+        case GeocoderResultsConstants.STATIONS:
           Element = (
             <FeaturesElements
               bgColor={layerColorMap.stations}
+              HeaderMessage={
+                <FormattedMessage
+                  id="otpUi.LocationField.stations"
+                  description="Text for header above the 'stations' category of geocoder results"
+                />
+              }
               key="gtfs-stations-header"
               featuresArray={stationFeatures}
               title="stations"
-              title118nId="otpUi.LocationField.stations"
             />
           );
           break;
-        case "STOPS":
+        case GeocoderResultsConstants.STOPS:
           Element = (
             <FeaturesElements
               bgColor={layerColorMap.stops}
+              HeaderMessage={
+                <FormattedMessage
+                  id="otpUi.LocationField.stops"
+                  description="Text for header above the 'stops' category of geocoder results"
+                />
+              }
               key="gtfs-stops-header"
               featuresArray={stopFeatures}
               title="stops"
-              title118nId="otpUi.LocationField.stops"
             />
           );
           break;
