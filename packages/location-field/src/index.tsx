@@ -160,7 +160,11 @@ const LocationField = ({
   GeocodedOptionIconComponent = GeocodedOptionIcon,
   geocoderConfig,
   getCurrentPosition,
-  geocoderResultsOrder = ["STATIONS", "STOPS", "OTHER"],
+  geocoderResultsOrder = [
+    GeocoderResultsConstants.STATIONS,
+    GeocoderResultsConstants.STOPS,
+    GeocoderResultsConstants.OTHER
+  ],
   hideExistingValue = false,
   initialSearchResults = null,
   inputPlaceholder = null,
@@ -665,7 +669,8 @@ const LocationField = ({
       return (
         <>
           {/* Only include the header if there are features to show */}
-          {(title === "other" || transitFeaturesPresent) && <Header />}
+          {(title === GeocoderResultsConstants.other ||
+            transitFeaturesPresent) && <Header />}
           {featuresArray.map(feature => renderFeature(itemIndex++, feature))}
         </>
       );
