@@ -12,7 +12,7 @@ import {
   modeSettingDefinitionsWithDropdown,
   getIcon,
   defaultModeButtonDefinitions
-} from "./mockButtons";
+} from "../__mocks__/mode-selector-buttons";
 
 const initialState = {
   enabledModeButtons: ["transit"],
